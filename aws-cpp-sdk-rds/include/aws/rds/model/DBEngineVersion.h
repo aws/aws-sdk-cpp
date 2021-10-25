@@ -9,8 +9,11 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/CharacterSet.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/rds/model/ResponseMetadata.h>
 #include <aws/rds/model/UpgradeTarget.h>
 #include <aws/rds/model/Timezone.h>
+#include <aws/rds/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -660,56 +663,128 @@ namespace Model
 
 
     /**
-     * <p> A list of features supported by the DB engine. Supported feature names
-     * include the following. </p> <ul> <li> <p>s3Import</p> </li> </ul>
+     * <p> A list of features supported by the DB engine. </p> <p>The supported
+     * features vary by DB engine and DB engine version.</p> <p>To determine the
+     * supported features for a specific DB engine and DB engine version using the CLI,
+     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
+     * --engine &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code> </p>
+     * <p>For example, to determine the supported features for RDS for PostgreSQL
+     * version 13.3 using the CLI, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
+     * <p>The supported features are listed under <code>SupportedFeatureNames</code> in
+     * the output.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedFeatureNames() const{ return m_supportedFeatureNames; }
 
     /**
-     * <p> A list of features supported by the DB engine. Supported feature names
-     * include the following. </p> <ul> <li> <p>s3Import</p> </li> </ul>
+     * <p> A list of features supported by the DB engine. </p> <p>The supported
+     * features vary by DB engine and DB engine version.</p> <p>To determine the
+     * supported features for a specific DB engine and DB engine version using the CLI,
+     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
+     * --engine &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code> </p>
+     * <p>For example, to determine the supported features for RDS for PostgreSQL
+     * version 13.3 using the CLI, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
+     * <p>The supported features are listed under <code>SupportedFeatureNames</code> in
+     * the output.</p>
      */
     inline bool SupportedFeatureNamesHasBeenSet() const { return m_supportedFeatureNamesHasBeenSet; }
 
     /**
-     * <p> A list of features supported by the DB engine. Supported feature names
-     * include the following. </p> <ul> <li> <p>s3Import</p> </li> </ul>
+     * <p> A list of features supported by the DB engine. </p> <p>The supported
+     * features vary by DB engine and DB engine version.</p> <p>To determine the
+     * supported features for a specific DB engine and DB engine version using the CLI,
+     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
+     * --engine &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code> </p>
+     * <p>For example, to determine the supported features for RDS for PostgreSQL
+     * version 13.3 using the CLI, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
+     * <p>The supported features are listed under <code>SupportedFeatureNames</code> in
+     * the output.</p>
      */
     inline void SetSupportedFeatureNames(const Aws::Vector<Aws::String>& value) { m_supportedFeatureNamesHasBeenSet = true; m_supportedFeatureNames = value; }
 
     /**
-     * <p> A list of features supported by the DB engine. Supported feature names
-     * include the following. </p> <ul> <li> <p>s3Import</p> </li> </ul>
+     * <p> A list of features supported by the DB engine. </p> <p>The supported
+     * features vary by DB engine and DB engine version.</p> <p>To determine the
+     * supported features for a specific DB engine and DB engine version using the CLI,
+     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
+     * --engine &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code> </p>
+     * <p>For example, to determine the supported features for RDS for PostgreSQL
+     * version 13.3 using the CLI, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
+     * <p>The supported features are listed under <code>SupportedFeatureNames</code> in
+     * the output.</p>
      */
     inline void SetSupportedFeatureNames(Aws::Vector<Aws::String>&& value) { m_supportedFeatureNamesHasBeenSet = true; m_supportedFeatureNames = std::move(value); }
 
     /**
-     * <p> A list of features supported by the DB engine. Supported feature names
-     * include the following. </p> <ul> <li> <p>s3Import</p> </li> </ul>
+     * <p> A list of features supported by the DB engine. </p> <p>The supported
+     * features vary by DB engine and DB engine version.</p> <p>To determine the
+     * supported features for a specific DB engine and DB engine version using the CLI,
+     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
+     * --engine &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code> </p>
+     * <p>For example, to determine the supported features for RDS for PostgreSQL
+     * version 13.3 using the CLI, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
+     * <p>The supported features are listed under <code>SupportedFeatureNames</code> in
+     * the output.</p>
      */
     inline DBEngineVersion& WithSupportedFeatureNames(const Aws::Vector<Aws::String>& value) { SetSupportedFeatureNames(value); return *this;}
 
     /**
-     * <p> A list of features supported by the DB engine. Supported feature names
-     * include the following. </p> <ul> <li> <p>s3Import</p> </li> </ul>
+     * <p> A list of features supported by the DB engine. </p> <p>The supported
+     * features vary by DB engine and DB engine version.</p> <p>To determine the
+     * supported features for a specific DB engine and DB engine version using the CLI,
+     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
+     * --engine &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code> </p>
+     * <p>For example, to determine the supported features for RDS for PostgreSQL
+     * version 13.3 using the CLI, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
+     * <p>The supported features are listed under <code>SupportedFeatureNames</code> in
+     * the output.</p>
      */
     inline DBEngineVersion& WithSupportedFeatureNames(Aws::Vector<Aws::String>&& value) { SetSupportedFeatureNames(std::move(value)); return *this;}
 
     /**
-     * <p> A list of features supported by the DB engine. Supported feature names
-     * include the following. </p> <ul> <li> <p>s3Import</p> </li> </ul>
+     * <p> A list of features supported by the DB engine. </p> <p>The supported
+     * features vary by DB engine and DB engine version.</p> <p>To determine the
+     * supported features for a specific DB engine and DB engine version using the CLI,
+     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
+     * --engine &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code> </p>
+     * <p>For example, to determine the supported features for RDS for PostgreSQL
+     * version 13.3 using the CLI, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
+     * <p>The supported features are listed under <code>SupportedFeatureNames</code> in
+     * the output.</p>
      */
     inline DBEngineVersion& AddSupportedFeatureNames(const Aws::String& value) { m_supportedFeatureNamesHasBeenSet = true; m_supportedFeatureNames.push_back(value); return *this; }
 
     /**
-     * <p> A list of features supported by the DB engine. Supported feature names
-     * include the following. </p> <ul> <li> <p>s3Import</p> </li> </ul>
+     * <p> A list of features supported by the DB engine. </p> <p>The supported
+     * features vary by DB engine and DB engine version.</p> <p>To determine the
+     * supported features for a specific DB engine and DB engine version using the CLI,
+     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
+     * --engine &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code> </p>
+     * <p>For example, to determine the supported features for RDS for PostgreSQL
+     * version 13.3 using the CLI, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
+     * <p>The supported features are listed under <code>SupportedFeatureNames</code> in
+     * the output.</p>
      */
     inline DBEngineVersion& AddSupportedFeatureNames(Aws::String&& value) { m_supportedFeatureNamesHasBeenSet = true; m_supportedFeatureNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> A list of features supported by the DB engine. Supported feature names
-     * include the following. </p> <ul> <li> <p>s3Import</p> </li> </ul>
+     * <p> A list of features supported by the DB engine. </p> <p>The supported
+     * features vary by DB engine and DB engine version.</p> <p>To determine the
+     * supported features for a specific DB engine and DB engine version using the CLI,
+     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
+     * --engine &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code> </p>
+     * <p>For example, to determine the supported features for RDS for PostgreSQL
+     * version 13.3 using the CLI, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
+     * <p>The supported features are listed under <code>SupportedFeatureNames</code> in
+     * the output.</p>
      */
     inline DBEngineVersion& AddSupportedFeatureNames(const char* value) { m_supportedFeatureNamesHasBeenSet = true; m_supportedFeatureNames.push_back(value); return *this; }
 
@@ -812,6 +887,310 @@ namespace Model
      */
     inline DBEngineVersion& WithSupportsGlobalDatabases(bool value) { SetSupportsGlobalDatabases(value); return *this;}
 
+
+    /**
+     * <p>The major engine version of the CEV.</p>
+     */
+    inline const Aws::String& GetMajorEngineVersion() const{ return m_majorEngineVersion; }
+
+    /**
+     * <p>The major engine version of the CEV.</p>
+     */
+    inline bool MajorEngineVersionHasBeenSet() const { return m_majorEngineVersionHasBeenSet; }
+
+    /**
+     * <p>The major engine version of the CEV.</p>
+     */
+    inline void SetMajorEngineVersion(const Aws::String& value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion = value; }
+
+    /**
+     * <p>The major engine version of the CEV.</p>
+     */
+    inline void SetMajorEngineVersion(Aws::String&& value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion = std::move(value); }
+
+    /**
+     * <p>The major engine version of the CEV.</p>
+     */
+    inline void SetMajorEngineVersion(const char* value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion.assign(value); }
+
+    /**
+     * <p>The major engine version of the CEV.</p>
+     */
+    inline DBEngineVersion& WithMajorEngineVersion(const Aws::String& value) { SetMajorEngineVersion(value); return *this;}
+
+    /**
+     * <p>The major engine version of the CEV.</p>
+     */
+    inline DBEngineVersion& WithMajorEngineVersion(Aws::String&& value) { SetMajorEngineVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The major engine version of the CEV.</p>
+     */
+    inline DBEngineVersion& WithMajorEngineVersion(const char* value) { SetMajorEngineVersion(value); return *this;}
+
+
+    /**
+     * <p>The name of the Amazon S3 bucket that contains your database installation
+     * files.</p>
+     */
+    inline const Aws::String& GetDatabaseInstallationFilesS3BucketName() const{ return m_databaseInstallationFilesS3BucketName; }
+
+    /**
+     * <p>The name of the Amazon S3 bucket that contains your database installation
+     * files.</p>
+     */
+    inline bool DatabaseInstallationFilesS3BucketNameHasBeenSet() const { return m_databaseInstallationFilesS3BucketNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon S3 bucket that contains your database installation
+     * files.</p>
+     */
+    inline void SetDatabaseInstallationFilesS3BucketName(const Aws::String& value) { m_databaseInstallationFilesS3BucketNameHasBeenSet = true; m_databaseInstallationFilesS3BucketName = value; }
+
+    /**
+     * <p>The name of the Amazon S3 bucket that contains your database installation
+     * files.</p>
+     */
+    inline void SetDatabaseInstallationFilesS3BucketName(Aws::String&& value) { m_databaseInstallationFilesS3BucketNameHasBeenSet = true; m_databaseInstallationFilesS3BucketName = std::move(value); }
+
+    /**
+     * <p>The name of the Amazon S3 bucket that contains your database installation
+     * files.</p>
+     */
+    inline void SetDatabaseInstallationFilesS3BucketName(const char* value) { m_databaseInstallationFilesS3BucketNameHasBeenSet = true; m_databaseInstallationFilesS3BucketName.assign(value); }
+
+    /**
+     * <p>The name of the Amazon S3 bucket that contains your database installation
+     * files.</p>
+     */
+    inline DBEngineVersion& WithDatabaseInstallationFilesS3BucketName(const Aws::String& value) { SetDatabaseInstallationFilesS3BucketName(value); return *this;}
+
+    /**
+     * <p>The name of the Amazon S3 bucket that contains your database installation
+     * files.</p>
+     */
+    inline DBEngineVersion& WithDatabaseInstallationFilesS3BucketName(Aws::String&& value) { SetDatabaseInstallationFilesS3BucketName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the Amazon S3 bucket that contains your database installation
+     * files.</p>
+     */
+    inline DBEngineVersion& WithDatabaseInstallationFilesS3BucketName(const char* value) { SetDatabaseInstallationFilesS3BucketName(value); return *this;}
+
+
+    /**
+     * <p>The Amazon S3 directory that contains the database installation files. If not
+     * specified, then no prefix is assumed.</p>
+     */
+    inline const Aws::String& GetDatabaseInstallationFilesS3Prefix() const{ return m_databaseInstallationFilesS3Prefix; }
+
+    /**
+     * <p>The Amazon S3 directory that contains the database installation files. If not
+     * specified, then no prefix is assumed.</p>
+     */
+    inline bool DatabaseInstallationFilesS3PrefixHasBeenSet() const { return m_databaseInstallationFilesS3PrefixHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 directory that contains the database installation files. If not
+     * specified, then no prefix is assumed.</p>
+     */
+    inline void SetDatabaseInstallationFilesS3Prefix(const Aws::String& value) { m_databaseInstallationFilesS3PrefixHasBeenSet = true; m_databaseInstallationFilesS3Prefix = value; }
+
+    /**
+     * <p>The Amazon S3 directory that contains the database installation files. If not
+     * specified, then no prefix is assumed.</p>
+     */
+    inline void SetDatabaseInstallationFilesS3Prefix(Aws::String&& value) { m_databaseInstallationFilesS3PrefixHasBeenSet = true; m_databaseInstallationFilesS3Prefix = std::move(value); }
+
+    /**
+     * <p>The Amazon S3 directory that contains the database installation files. If not
+     * specified, then no prefix is assumed.</p>
+     */
+    inline void SetDatabaseInstallationFilesS3Prefix(const char* value) { m_databaseInstallationFilesS3PrefixHasBeenSet = true; m_databaseInstallationFilesS3Prefix.assign(value); }
+
+    /**
+     * <p>The Amazon S3 directory that contains the database installation files. If not
+     * specified, then no prefix is assumed.</p>
+     */
+    inline DBEngineVersion& WithDatabaseInstallationFilesS3Prefix(const Aws::String& value) { SetDatabaseInstallationFilesS3Prefix(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 directory that contains the database installation files. If not
+     * specified, then no prefix is assumed.</p>
+     */
+    inline DBEngineVersion& WithDatabaseInstallationFilesS3Prefix(Aws::String&& value) { SetDatabaseInstallationFilesS3Prefix(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon S3 directory that contains the database installation files. If not
+     * specified, then no prefix is assumed.</p>
+     */
+    inline DBEngineVersion& WithDatabaseInstallationFilesS3Prefix(const char* value) { SetDatabaseInstallationFilesS3Prefix(value); return *this;}
+
+
+    /**
+     * <p>The ARN of the custom engine version.</p>
+     */
+    inline const Aws::String& GetDBEngineVersionArn() const{ return m_dBEngineVersionArn; }
+
+    /**
+     * <p>The ARN of the custom engine version.</p>
+     */
+    inline bool DBEngineVersionArnHasBeenSet() const { return m_dBEngineVersionArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the custom engine version.</p>
+     */
+    inline void SetDBEngineVersionArn(const Aws::String& value) { m_dBEngineVersionArnHasBeenSet = true; m_dBEngineVersionArn = value; }
+
+    /**
+     * <p>The ARN of the custom engine version.</p>
+     */
+    inline void SetDBEngineVersionArn(Aws::String&& value) { m_dBEngineVersionArnHasBeenSet = true; m_dBEngineVersionArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the custom engine version.</p>
+     */
+    inline void SetDBEngineVersionArn(const char* value) { m_dBEngineVersionArnHasBeenSet = true; m_dBEngineVersionArn.assign(value); }
+
+    /**
+     * <p>The ARN of the custom engine version.</p>
+     */
+    inline DBEngineVersion& WithDBEngineVersionArn(const Aws::String& value) { SetDBEngineVersionArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the custom engine version.</p>
+     */
+    inline DBEngineVersion& WithDBEngineVersionArn(Aws::String&& value) { SetDBEngineVersionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the custom engine version.</p>
+     */
+    inline DBEngineVersion& WithDBEngineVersionArn(const char* value) { SetDBEngineVersionArn(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This
+     * parameter is required for RDS Custom, but optional for Amazon RDS.</p>
+     */
+    inline const Aws::String& GetKMSKeyId() const{ return m_kMSKeyId; }
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This
+     * parameter is required for RDS Custom, but optional for Amazon RDS.</p>
+     */
+    inline bool KMSKeyIdHasBeenSet() const { return m_kMSKeyIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This
+     * parameter is required for RDS Custom, but optional for Amazon RDS.</p>
+     */
+    inline void SetKMSKeyId(const Aws::String& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = value; }
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This
+     * parameter is required for RDS Custom, but optional for Amazon RDS.</p>
+     */
+    inline void SetKMSKeyId(Aws::String&& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = std::move(value); }
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This
+     * parameter is required for RDS Custom, but optional for Amazon RDS.</p>
+     */
+    inline void SetKMSKeyId(const char* value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId.assign(value); }
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This
+     * parameter is required for RDS Custom, but optional for Amazon RDS.</p>
+     */
+    inline DBEngineVersion& WithKMSKeyId(const Aws::String& value) { SetKMSKeyId(value); return *this;}
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This
+     * parameter is required for RDS Custom, but optional for Amazon RDS.</p>
+     */
+    inline DBEngineVersion& WithKMSKeyId(Aws::String&& value) { SetKMSKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This
+     * parameter is required for RDS Custom, but optional for Amazon RDS.</p>
+     */
+    inline DBEngineVersion& WithKMSKeyId(const char* value) { SetKMSKeyId(value); return *this;}
+
+
+    /**
+     * <p>The creation time of the DB engine version.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+
+    /**
+     * <p>The creation time of the DB engine version.</p>
+     */
+    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
+
+    /**
+     * <p>The creation time of the DB engine version.</p>
+     */
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+
+    /**
+     * <p>The creation time of the DB engine version.</p>
+     */
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
+
+    /**
+     * <p>The creation time of the DB engine version.</p>
+     */
+    inline DBEngineVersion& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+
+    /**
+     * <p>The creation time of the DB engine version.</p>
+     */
+    inline DBEngineVersion& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+
+
+    
+    inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
+
+    
+    inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
+
+    
+    inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagListHasBeenSet = true; m_tagList = value; }
+
+    
+    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagListHasBeenSet = true; m_tagList = std::move(value); }
+
+    
+    inline DBEngineVersion& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
+
+    
+    inline DBEngineVersion& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
+
+    
+    inline DBEngineVersion& AddTagList(const Tag& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
+
+    
+    inline DBEngineVersion& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
+
+
+    
+    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
+    
+    inline bool ResponseMetadataHasBeenSet() const { return m_responseMetadataHasBeenSet; }
+
+    
+    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = value; }
+
+    
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::move(value); }
+
+    
+    inline DBEngineVersion& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+
+    
+    inline DBEngineVersion& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_engine;
@@ -867,6 +1246,30 @@ namespace Model
 
     bool m_supportsGlobalDatabases;
     bool m_supportsGlobalDatabasesHasBeenSet;
+
+    Aws::String m_majorEngineVersion;
+    bool m_majorEngineVersionHasBeenSet;
+
+    Aws::String m_databaseInstallationFilesS3BucketName;
+    bool m_databaseInstallationFilesS3BucketNameHasBeenSet;
+
+    Aws::String m_databaseInstallationFilesS3Prefix;
+    bool m_databaseInstallationFilesS3PrefixHasBeenSet;
+
+    Aws::String m_dBEngineVersionArn;
+    bool m_dBEngineVersionArnHasBeenSet;
+
+    Aws::String m_kMSKeyId;
+    bool m_kMSKeyIdHasBeenSet;
+
+    Aws::Utils::DateTime m_createTime;
+    bool m_createTimeHasBeenSet;
+
+    Aws::Vector<Tag> m_tagList;
+    bool m_tagListHasBeenSet;
+
+    ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet;
   };
 
 } // namespace Model

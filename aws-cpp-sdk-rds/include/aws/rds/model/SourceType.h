@@ -21,7 +21,8 @@ namespace Model
     db_security_group,
     db_snapshot,
     db_cluster,
-    db_cluster_snapshot
+    db_cluster_snapshot,
+    custom_engine_version
   };
 
 namespace SourceTypeMapper

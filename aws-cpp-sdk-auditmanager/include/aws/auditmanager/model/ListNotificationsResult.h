@@ -71,37 +71,37 @@ namespace Model
 
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline ListNotificationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline ListNotificationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline ListNotificationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

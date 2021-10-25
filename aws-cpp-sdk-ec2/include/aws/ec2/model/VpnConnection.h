@@ -411,6 +411,129 @@ namespace Model
 
 
     /**
+     * <p>The ARN of the core network.</p>
+     */
+    inline const Aws::String& GetCoreNetworkArn() const{ return m_coreNetworkArn; }
+
+    /**
+     * <p>The ARN of the core network.</p>
+     */
+    inline bool CoreNetworkArnHasBeenSet() const { return m_coreNetworkArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the core network.</p>
+     */
+    inline void SetCoreNetworkArn(const Aws::String& value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn = value; }
+
+    /**
+     * <p>The ARN of the core network.</p>
+     */
+    inline void SetCoreNetworkArn(Aws::String&& value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the core network.</p>
+     */
+    inline void SetCoreNetworkArn(const char* value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn.assign(value); }
+
+    /**
+     * <p>The ARN of the core network.</p>
+     */
+    inline VpnConnection& WithCoreNetworkArn(const Aws::String& value) { SetCoreNetworkArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the core network.</p>
+     */
+    inline VpnConnection& WithCoreNetworkArn(Aws::String&& value) { SetCoreNetworkArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the core network.</p>
+     */
+    inline VpnConnection& WithCoreNetworkArn(const char* value) { SetCoreNetworkArn(value); return *this;}
+
+
+    /**
+     * <p>The ARN of the core network attachment.</p>
+     */
+    inline const Aws::String& GetCoreNetworkAttachmentArn() const{ return m_coreNetworkAttachmentArn; }
+
+    /**
+     * <p>The ARN of the core network attachment.</p>
+     */
+    inline bool CoreNetworkAttachmentArnHasBeenSet() const { return m_coreNetworkAttachmentArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the core network attachment.</p>
+     */
+    inline void SetCoreNetworkAttachmentArn(const Aws::String& value) { m_coreNetworkAttachmentArnHasBeenSet = true; m_coreNetworkAttachmentArn = value; }
+
+    /**
+     * <p>The ARN of the core network attachment.</p>
+     */
+    inline void SetCoreNetworkAttachmentArn(Aws::String&& value) { m_coreNetworkAttachmentArnHasBeenSet = true; m_coreNetworkAttachmentArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the core network attachment.</p>
+     */
+    inline void SetCoreNetworkAttachmentArn(const char* value) { m_coreNetworkAttachmentArnHasBeenSet = true; m_coreNetworkAttachmentArn.assign(value); }
+
+    /**
+     * <p>The ARN of the core network attachment.</p>
+     */
+    inline VpnConnection& WithCoreNetworkAttachmentArn(const Aws::String& value) { SetCoreNetworkAttachmentArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the core network attachment.</p>
+     */
+    inline VpnConnection& WithCoreNetworkAttachmentArn(Aws::String&& value) { SetCoreNetworkAttachmentArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the core network attachment.</p>
+     */
+    inline VpnConnection& WithCoreNetworkAttachmentArn(const char* value) { SetCoreNetworkAttachmentArn(value); return *this;}
+
+
+    /**
+     * <p>The current state of the gateway association.</p>
+     */
+    inline const Aws::String& GetGatewayAssociationState() const{ return m_gatewayAssociationState; }
+
+    /**
+     * <p>The current state of the gateway association.</p>
+     */
+    inline bool GatewayAssociationStateHasBeenSet() const { return m_gatewayAssociationStateHasBeenSet; }
+
+    /**
+     * <p>The current state of the gateway association.</p>
+     */
+    inline void SetGatewayAssociationState(const Aws::String& value) { m_gatewayAssociationStateHasBeenSet = true; m_gatewayAssociationState = value; }
+
+    /**
+     * <p>The current state of the gateway association.</p>
+     */
+    inline void SetGatewayAssociationState(Aws::String&& value) { m_gatewayAssociationStateHasBeenSet = true; m_gatewayAssociationState = std::move(value); }
+
+    /**
+     * <p>The current state of the gateway association.</p>
+     */
+    inline void SetGatewayAssociationState(const char* value) { m_gatewayAssociationStateHasBeenSet = true; m_gatewayAssociationState.assign(value); }
+
+    /**
+     * <p>The current state of the gateway association.</p>
+     */
+    inline VpnConnection& WithGatewayAssociationState(const Aws::String& value) { SetGatewayAssociationState(value); return *this;}
+
+    /**
+     * <p>The current state of the gateway association.</p>
+     */
+    inline VpnConnection& WithGatewayAssociationState(Aws::String&& value) { SetGatewayAssociationState(std::move(value)); return *this;}
+
+    /**
+     * <p>The current state of the gateway association.</p>
+     */
+    inline VpnConnection& WithGatewayAssociationState(const char* value) { SetGatewayAssociationState(value); return *this;}
+
+
+    /**
      * <p>The VPN connection options.</p>
      */
     inline const VpnConnectionOptions& GetOptions() const{ return m_options; }
@@ -588,6 +711,15 @@ namespace Model
 
     Aws::String m_transitGatewayId;
     bool m_transitGatewayIdHasBeenSet;
+
+    Aws::String m_coreNetworkArn;
+    bool m_coreNetworkArnHasBeenSet;
+
+    Aws::String m_coreNetworkAttachmentArn;
+    bool m_coreNetworkAttachmentArnHasBeenSet;
+
+    Aws::String m_gatewayAssociationState;
+    bool m_gatewayAssociationStateHasBeenSet;
 
     VpnConnectionOptions m_options;
     bool m_optionsHasBeenSet;

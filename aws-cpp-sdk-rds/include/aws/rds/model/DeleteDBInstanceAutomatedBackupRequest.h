@@ -93,6 +93,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the automated backups to delete, for
      * example,
      * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline const Aws::String& GetDBInstanceAutomatedBackupsArn() const{ return m_dBInstanceAutomatedBackupsArn; }
 
@@ -100,6 +101,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the automated backups to delete, for
      * example,
      * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool DBInstanceAutomatedBackupsArnHasBeenSet() const { return m_dBInstanceAutomatedBackupsArnHasBeenSet; }
 
@@ -107,6 +109,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the automated backups to delete, for
      * example,
      * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetDBInstanceAutomatedBackupsArn(const Aws::String& value) { m_dBInstanceAutomatedBackupsArnHasBeenSet = true; m_dBInstanceAutomatedBackupsArn = value; }
 
@@ -114,6 +117,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the automated backups to delete, for
      * example,
      * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetDBInstanceAutomatedBackupsArn(Aws::String&& value) { m_dBInstanceAutomatedBackupsArnHasBeenSet = true; m_dBInstanceAutomatedBackupsArn = std::move(value); }
 
@@ -121,6 +125,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the automated backups to delete, for
      * example,
      * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetDBInstanceAutomatedBackupsArn(const char* value) { m_dBInstanceAutomatedBackupsArnHasBeenSet = true; m_dBInstanceAutomatedBackupsArn.assign(value); }
 
@@ -128,6 +133,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the automated backups to delete, for
      * example,
      * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline DeleteDBInstanceAutomatedBackupRequest& WithDBInstanceAutomatedBackupsArn(const Aws::String& value) { SetDBInstanceAutomatedBackupsArn(value); return *this;}
 
@@ -135,6 +141,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the automated backups to delete, for
      * example,
      * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline DeleteDBInstanceAutomatedBackupRequest& WithDBInstanceAutomatedBackupsArn(Aws::String&& value) { SetDBInstanceAutomatedBackupsArn(std::move(value)); return *this;}
 
@@ -142,6 +149,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the automated backups to delete, for
      * example,
      * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline DeleteDBInstanceAutomatedBackupRequest& WithDBInstanceAutomatedBackupsArn(const char* value) { SetDBInstanceAutomatedBackupsArn(value); return *this;}
 

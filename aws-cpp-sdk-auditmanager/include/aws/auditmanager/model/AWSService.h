@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p> An Amazon Web Service such as Amazon S3, CloudTrail, and so on.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p> An Amazon Web Service such as Amazon S3 or CloudTrail. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/AWSService">AWS
    * API Reference</a></p>
    */

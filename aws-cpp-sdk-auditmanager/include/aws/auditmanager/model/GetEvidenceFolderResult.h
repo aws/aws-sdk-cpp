@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p> The folder in which evidence is stored. </p>
+     * <p> The folder that the evidence is stored in. </p>
      */
     inline const AssessmentEvidenceFolder& GetEvidenceFolder() const{ return m_evidenceFolder; }
 
     /**
-     * <p> The folder in which evidence is stored. </p>
+     * <p> The folder that the evidence is stored in. </p>
      */
     inline void SetEvidenceFolder(const AssessmentEvidenceFolder& value) { m_evidenceFolder = value; }
 
     /**
-     * <p> The folder in which evidence is stored. </p>
+     * <p> The folder that the evidence is stored in. </p>
      */
     inline void SetEvidenceFolder(AssessmentEvidenceFolder&& value) { m_evidenceFolder = std::move(value); }
 
     /**
-     * <p> The folder in which evidence is stored. </p>
+     * <p> The folder that the evidence is stored in. </p>
      */
     inline GetEvidenceFolderResult& WithEvidenceFolder(const AssessmentEvidenceFolder& value) { SetEvidenceFolder(value); return *this;}
 
     /**
-     * <p> The folder in which evidence is stored. </p>
+     * <p> The folder that the evidence is stored in. </p>
      */
     inline GetEvidenceFolderResult& WithEvidenceFolder(AssessmentEvidenceFolder&& value) { SetEvidenceFolder(std::move(value)); return *this;}
 

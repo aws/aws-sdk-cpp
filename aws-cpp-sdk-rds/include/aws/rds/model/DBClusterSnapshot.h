@@ -690,64 +690,64 @@ namespace Model
     /**
      * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
      * identifier for the encrypted DB cluster snapshot.</p> <p>The Amazon Web Services
-     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
-     * Amazon Web Services KMS customer master key (CMK).</p>
+     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
      * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
      * identifier for the encrypted DB cluster snapshot.</p> <p>The Amazon Web Services
-     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
-     * Amazon Web Services KMS customer master key (CMK).</p>
+     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
      * identifier for the encrypted DB cluster snapshot.</p> <p>The Amazon Web Services
-     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
-     * Amazon Web Services KMS customer master key (CMK).</p>
+     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
      * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
      * identifier for the encrypted DB cluster snapshot.</p> <p>The Amazon Web Services
-     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
-     * Amazon Web Services KMS customer master key (CMK).</p>
+     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
      * identifier for the encrypted DB cluster snapshot.</p> <p>The Amazon Web Services
-     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
-     * Amazon Web Services KMS customer master key (CMK).</p>
+     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
      * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
      * identifier for the encrypted DB cluster snapshot.</p> <p>The Amazon Web Services
-     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
-     * Amazon Web Services KMS customer master key (CMK).</p>
+     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline DBClusterSnapshot& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
      * identifier for the encrypted DB cluster snapshot.</p> <p>The Amazon Web Services
-     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
-     * Amazon Web Services KMS customer master key (CMK).</p>
+     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline DBClusterSnapshot& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
      * identifier for the encrypted DB cluster snapshot.</p> <p>The Amazon Web Services
-     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
-     * Amazon Web Services KMS customer master key (CMK).</p>
+     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline DBClusterSnapshot& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

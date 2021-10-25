@@ -23,6 +23,7 @@
 #include <aws/rds/model/CopyDBSnapshotResult.h>
 #include <aws/rds/model/CopyOptionGroupResult.h>
 #include <aws/rds/model/CreateCustomAvailabilityZoneResult.h>
+#include <aws/rds/model/CreateCustomDBEngineVersionResult.h>
 #include <aws/rds/model/CreateDBClusterResult.h>
 #include <aws/rds/model/CreateDBClusterEndpointResult.h>
 #include <aws/rds/model/CreateDBClusterParameterGroupResult.h>
@@ -39,6 +40,7 @@
 #include <aws/rds/model/CreateGlobalClusterResult.h>
 #include <aws/rds/model/CreateOptionGroupResult.h>
 #include <aws/rds/model/DeleteCustomAvailabilityZoneResult.h>
+#include <aws/rds/model/DeleteCustomDBEngineVersionResult.h>
 #include <aws/rds/model/DeleteDBClusterResult.h>
 #include <aws/rds/model/DeleteDBClusterEndpointResult.h>
 #include <aws/rds/model/DeleteDBClusterSnapshotResult.h>
@@ -98,6 +100,7 @@
 #include <aws/rds/model/ListTagsForResourceResult.h>
 #include <aws/rds/model/ModifyCertificatesResult.h>
 #include <aws/rds/model/ModifyCurrentDBClusterCapacityResult.h>
+#include <aws/rds/model/ModifyCustomDBEngineVersionResult.h>
 #include <aws/rds/model/ModifyDBClusterResult.h>
 #include <aws/rds/model/ModifyDBClusterEndpointResult.h>
 #include <aws/rds/model/ModifyDBClusterParameterGroupResult.h>
@@ -196,6 +199,7 @@ namespace Aws
         class CopyDBSnapshotRequest;
         class CopyOptionGroupRequest;
         class CreateCustomAvailabilityZoneRequest;
+        class CreateCustomDBEngineVersionRequest;
         class CreateDBClusterRequest;
         class CreateDBClusterEndpointRequest;
         class CreateDBClusterParameterGroupRequest;
@@ -212,6 +216,7 @@ namespace Aws
         class CreateGlobalClusterRequest;
         class CreateOptionGroupRequest;
         class DeleteCustomAvailabilityZoneRequest;
+        class DeleteCustomDBEngineVersionRequest;
         class DeleteDBClusterRequest;
         class DeleteDBClusterEndpointRequest;
         class DeleteDBClusterParameterGroupRequest;
@@ -276,6 +281,7 @@ namespace Aws
         class ListTagsForResourceRequest;
         class ModifyCertificatesRequest;
         class ModifyCurrentDBClusterCapacityRequest;
+        class ModifyCustomDBEngineVersionRequest;
         class ModifyDBClusterRequest;
         class ModifyDBClusterEndpointRequest;
         class ModifyDBClusterParameterGroupRequest;
@@ -334,6 +340,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<CopyDBSnapshotResult, RDSError> CopyDBSnapshotOutcome;
         typedef Aws::Utils::Outcome<CopyOptionGroupResult, RDSError> CopyOptionGroupOutcome;
         typedef Aws::Utils::Outcome<CreateCustomAvailabilityZoneResult, RDSError> CreateCustomAvailabilityZoneOutcome;
+        typedef Aws::Utils::Outcome<CreateCustomDBEngineVersionResult, RDSError> CreateCustomDBEngineVersionOutcome;
         typedef Aws::Utils::Outcome<CreateDBClusterResult, RDSError> CreateDBClusterOutcome;
         typedef Aws::Utils::Outcome<CreateDBClusterEndpointResult, RDSError> CreateDBClusterEndpointOutcome;
         typedef Aws::Utils::Outcome<CreateDBClusterParameterGroupResult, RDSError> CreateDBClusterParameterGroupOutcome;
@@ -350,6 +357,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<CreateGlobalClusterResult, RDSError> CreateGlobalClusterOutcome;
         typedef Aws::Utils::Outcome<CreateOptionGroupResult, RDSError> CreateOptionGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteCustomAvailabilityZoneResult, RDSError> DeleteCustomAvailabilityZoneOutcome;
+        typedef Aws::Utils::Outcome<DeleteCustomDBEngineVersionResult, RDSError> DeleteCustomDBEngineVersionOutcome;
         typedef Aws::Utils::Outcome<DeleteDBClusterResult, RDSError> DeleteDBClusterOutcome;
         typedef Aws::Utils::Outcome<DeleteDBClusterEndpointResult, RDSError> DeleteDBClusterEndpointOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, RDSError> DeleteDBClusterParameterGroupOutcome;
@@ -414,6 +422,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, RDSError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ModifyCertificatesResult, RDSError> ModifyCertificatesOutcome;
         typedef Aws::Utils::Outcome<ModifyCurrentDBClusterCapacityResult, RDSError> ModifyCurrentDBClusterCapacityOutcome;
+        typedef Aws::Utils::Outcome<ModifyCustomDBEngineVersionResult, RDSError> ModifyCustomDBEngineVersionOutcome;
         typedef Aws::Utils::Outcome<ModifyDBClusterResult, RDSError> ModifyDBClusterOutcome;
         typedef Aws::Utils::Outcome<ModifyDBClusterEndpointResult, RDSError> ModifyDBClusterEndpointOutcome;
         typedef Aws::Utils::Outcome<ModifyDBClusterParameterGroupResult, RDSError> ModifyDBClusterParameterGroupOutcome;
@@ -472,6 +481,7 @@ namespace Aws
         typedef std::future<CopyDBSnapshotOutcome> CopyDBSnapshotOutcomeCallable;
         typedef std::future<CopyOptionGroupOutcome> CopyOptionGroupOutcomeCallable;
         typedef std::future<CreateCustomAvailabilityZoneOutcome> CreateCustomAvailabilityZoneOutcomeCallable;
+        typedef std::future<CreateCustomDBEngineVersionOutcome> CreateCustomDBEngineVersionOutcomeCallable;
         typedef std::future<CreateDBClusterOutcome> CreateDBClusterOutcomeCallable;
         typedef std::future<CreateDBClusterEndpointOutcome> CreateDBClusterEndpointOutcomeCallable;
         typedef std::future<CreateDBClusterParameterGroupOutcome> CreateDBClusterParameterGroupOutcomeCallable;
@@ -488,6 +498,7 @@ namespace Aws
         typedef std::future<CreateGlobalClusterOutcome> CreateGlobalClusterOutcomeCallable;
         typedef std::future<CreateOptionGroupOutcome> CreateOptionGroupOutcomeCallable;
         typedef std::future<DeleteCustomAvailabilityZoneOutcome> DeleteCustomAvailabilityZoneOutcomeCallable;
+        typedef std::future<DeleteCustomDBEngineVersionOutcome> DeleteCustomDBEngineVersionOutcomeCallable;
         typedef std::future<DeleteDBClusterOutcome> DeleteDBClusterOutcomeCallable;
         typedef std::future<DeleteDBClusterEndpointOutcome> DeleteDBClusterEndpointOutcomeCallable;
         typedef std::future<DeleteDBClusterParameterGroupOutcome> DeleteDBClusterParameterGroupOutcomeCallable;
@@ -552,6 +563,7 @@ namespace Aws
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ModifyCertificatesOutcome> ModifyCertificatesOutcomeCallable;
         typedef std::future<ModifyCurrentDBClusterCapacityOutcome> ModifyCurrentDBClusterCapacityOutcomeCallable;
+        typedef std::future<ModifyCustomDBEngineVersionOutcome> ModifyCustomDBEngineVersionOutcomeCallable;
         typedef std::future<ModifyDBClusterOutcome> ModifyDBClusterOutcomeCallable;
         typedef std::future<ModifyDBClusterEndpointOutcome> ModifyDBClusterEndpointOutcomeCallable;
         typedef std::future<ModifyDBClusterParameterGroupOutcome> ModifyDBClusterParameterGroupOutcomeCallable;
@@ -613,6 +625,7 @@ namespace Aws
     typedef std::function<void(const RDSClient*, const Model::CopyDBSnapshotRequest&, const Model::CopyDBSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyDBSnapshotResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::CopyOptionGroupRequest&, const Model::CopyOptionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyOptionGroupResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::CreateCustomAvailabilityZoneRequest&, const Model::CreateCustomAvailabilityZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCustomAvailabilityZoneResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::CreateCustomDBEngineVersionRequest&, const Model::CreateCustomDBEngineVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCustomDBEngineVersionResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::CreateDBClusterRequest&, const Model::CreateDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDBClusterResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::CreateDBClusterEndpointRequest&, const Model::CreateDBClusterEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDBClusterEndpointResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::CreateDBClusterParameterGroupRequest&, const Model::CreateDBClusterParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDBClusterParameterGroupResponseReceivedHandler;
@@ -629,6 +642,7 @@ namespace Aws
     typedef std::function<void(const RDSClient*, const Model::CreateGlobalClusterRequest&, const Model::CreateGlobalClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGlobalClusterResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::CreateOptionGroupRequest&, const Model::CreateOptionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateOptionGroupResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DeleteCustomAvailabilityZoneRequest&, const Model::DeleteCustomAvailabilityZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomAvailabilityZoneResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::DeleteCustomDBEngineVersionRequest&, const Model::DeleteCustomDBEngineVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomDBEngineVersionResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DeleteDBClusterRequest&, const Model::DeleteDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBClusterResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DeleteDBClusterEndpointRequest&, const Model::DeleteDBClusterEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBClusterEndpointResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DeleteDBClusterParameterGroupRequest&, const Model::DeleteDBClusterParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBClusterParameterGroupResponseReceivedHandler;
@@ -693,6 +707,7 @@ namespace Aws
     typedef std::function<void(const RDSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyCertificatesRequest&, const Model::ModifyCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyCertificatesResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyCurrentDBClusterCapacityRequest&, const Model::ModifyCurrentDBClusterCapacityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyCurrentDBClusterCapacityResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::ModifyCustomDBEngineVersionRequest&, const Model::ModifyCustomDBEngineVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyCustomDBEngineVersionResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyDBClusterRequest&, const Model::ModifyDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBClusterResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyDBClusterEndpointRequest&, const Model::ModifyDBClusterEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBClusterEndpointResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyDBClusterParameterGroupRequest&, const Model::ModifyDBClusterParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBClusterParameterGroupResponseReceivedHandler;
@@ -857,8 +872,8 @@ namespace Aws
         /**
          * <p>Associates an Amazon Web Services Identity and Access Management (IAM) role
          * with a DB instance.</p>  <p>To add a role to a DB instance, the status of
-         * the DB instance must be <code>available</code>.</p> <p><h3>See Also:</h3>
-         * <a
+         * the DB instance must be <code>available</code>.</p>  <p>This command
+         * doesn't apply to RDS Custom.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBInstance">AWS
          * API Reference</a></p>
          */
@@ -867,8 +882,8 @@ namespace Aws
         /**
          * <p>Associates an Amazon Web Services Identity and Access Management (IAM) role
          * with a DB instance.</p>  <p>To add a role to a DB instance, the status of
-         * the DB instance must be <code>available</code>.</p> <p><h3>See Also:</h3>
-         * <a
+         * the DB instance must be <code>available</code>.</p>  <p>This command
+         * doesn't apply to RDS Custom.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBInstance">AWS
          * API Reference</a></p>
          *
@@ -879,8 +894,8 @@ namespace Aws
         /**
          * <p>Associates an Amazon Web Services Identity and Access Management (IAM) role
          * with a DB instance.</p>  <p>To add a role to a DB instance, the status of
-         * the DB instance must be <code>available</code>.</p> <p><h3>See Also:</h3>
-         * <a
+         * the DB instance must be <code>available</code>.</p>  <p>This command
+         * doesn't apply to RDS Custom.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBInstance">AWS
          * API Reference</a></p>
          *
@@ -1165,14 +1180,14 @@ namespace Aws
          * source Amazon Web Services Region that contains the encrypted DB cluster
          * snapshot to be copied.</p> <p>The pre-signed URL request must contain the
          * following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The Amazon
-         * Web Services KMS key identifier for the customer master key (CMK) to use to
-         * encrypt the copy of the DB cluster snapshot in the destination Amazon Web
-         * Services Region. This is the same identifier for both the
-         * <code>CopyDBClusterSnapshot</code> action that is called in the destination
-         * Amazon Web Services Region, and the action contained in the pre-signed URL.</p>
-         * </li> <li> <p> <code>DestinationRegion</code> - The name of the Amazon Web
-         * Services Region that the DB cluster snapshot is to be created in.</p> </li> <li>
-         * <p> <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
+         * Web Services KMS key identifier for the KMS key to use to encrypt the copy of
+         * the DB cluster snapshot in the destination Amazon Web Services Region. This is
+         * the same identifier for both the <code>CopyDBClusterSnapshot</code> action that
+         * is called in the destination Amazon Web Services Region, and the action
+         * contained in the pre-signed URL.</p> </li> <li> <p>
+         * <code>DestinationRegion</code> - The name of the Amazon Web Services Region that
+         * the DB cluster snapshot is to be created in.</p> </li> <li> <p>
+         * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
          * identifier for the encrypted DB cluster snapshot to be copied. This identifier
          * must be in the Amazon Resource Name (ARN) format for the source Amazon Web
          * Services Region. For example, if you are copying an encrypted DB cluster
@@ -1236,14 +1251,14 @@ namespace Aws
          * source Amazon Web Services Region that contains the encrypted DB cluster
          * snapshot to be copied.</p> <p>The pre-signed URL request must contain the
          * following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The Amazon
-         * Web Services KMS key identifier for the customer master key (CMK) to use to
-         * encrypt the copy of the DB cluster snapshot in the destination Amazon Web
-         * Services Region. This is the same identifier for both the
-         * <code>CopyDBClusterSnapshot</code> action that is called in the destination
-         * Amazon Web Services Region, and the action contained in the pre-signed URL.</p>
-         * </li> <li> <p> <code>DestinationRegion</code> - The name of the Amazon Web
-         * Services Region that the DB cluster snapshot is to be created in.</p> </li> <li>
-         * <p> <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
+         * Web Services KMS key identifier for the KMS key to use to encrypt the copy of
+         * the DB cluster snapshot in the destination Amazon Web Services Region. This is
+         * the same identifier for both the <code>CopyDBClusterSnapshot</code> action that
+         * is called in the destination Amazon Web Services Region, and the action
+         * contained in the pre-signed URL.</p> </li> <li> <p>
+         * <code>DestinationRegion</code> - The name of the Amazon Web Services Region that
+         * the DB cluster snapshot is to be created in.</p> </li> <li> <p>
+         * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
          * identifier for the encrypted DB cluster snapshot to be copied. This identifier
          * must be in the Amazon Resource Name (ARN) format for the source Amazon Web
          * Services Region. For example, if you are copying an encrypted DB cluster
@@ -1309,14 +1324,14 @@ namespace Aws
          * source Amazon Web Services Region that contains the encrypted DB cluster
          * snapshot to be copied.</p> <p>The pre-signed URL request must contain the
          * following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The Amazon
-         * Web Services KMS key identifier for the customer master key (CMK) to use to
-         * encrypt the copy of the DB cluster snapshot in the destination Amazon Web
-         * Services Region. This is the same identifier for both the
-         * <code>CopyDBClusterSnapshot</code> action that is called in the destination
-         * Amazon Web Services Region, and the action contained in the pre-signed URL.</p>
-         * </li> <li> <p> <code>DestinationRegion</code> - The name of the Amazon Web
-         * Services Region that the DB cluster snapshot is to be created in.</p> </li> <li>
-         * <p> <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
+         * Web Services KMS key identifier for the KMS key to use to encrypt the copy of
+         * the DB cluster snapshot in the destination Amazon Web Services Region. This is
+         * the same identifier for both the <code>CopyDBClusterSnapshot</code> action that
+         * is called in the destination Amazon Web Services Region, and the action
+         * contained in the pre-signed URL.</p> </li> <li> <p>
+         * <code>DestinationRegion</code> - The name of the Amazon Web Services Region that
+         * the DB cluster snapshot is to be created in.</p> </li> <li> <p>
+         * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
          * identifier for the encrypted DB cluster snapshot to be copied. This identifier
          * must be in the Amazon Resource Name (ARN) format for the source Amazon Web
          * Services Region. For example, if you are copying an encrypted DB cluster
@@ -1391,8 +1406,8 @@ namespace Aws
          * <code>available</code> state.</p> <p>You can copy a snapshot from one Amazon Web
          * Services Region to another. In that case, the Amazon Web Services Region where
          * you call the <code>CopyDBSnapshot</code> action is the destination Amazon Web
-         * Services Region for the DB snapshot copy. </p> <p>For more information about
-         * copying snapshots, see <a
+         * Services Region for the DB snapshot copy. </p> <p>This command doesn't apply to
+         * RDS Custom.</p> <p>For more information about copying snapshots, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBSnapshot">Copying
          * a DB Snapshot</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
          * <a
@@ -1406,8 +1421,8 @@ namespace Aws
          * <code>available</code> state.</p> <p>You can copy a snapshot from one Amazon Web
          * Services Region to another. In that case, the Amazon Web Services Region where
          * you call the <code>CopyDBSnapshot</code> action is the destination Amazon Web
-         * Services Region for the DB snapshot copy. </p> <p>For more information about
-         * copying snapshots, see <a
+         * Services Region for the DB snapshot copy. </p> <p>This command doesn't apply to
+         * RDS Custom.</p> <p>For more information about copying snapshots, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBSnapshot">Copying
          * a DB Snapshot</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
          * <a
@@ -1423,8 +1438,8 @@ namespace Aws
          * <code>available</code> state.</p> <p>You can copy a snapshot from one Amazon Web
          * Services Region to another. In that case, the Amazon Web Services Region where
          * you call the <code>CopyDBSnapshot</code> action is the destination Amazon Web
-         * Services Region for the DB snapshot copy. </p> <p>For more information about
-         * copying snapshots, see <a
+         * Services Region for the DB snapshot copy. </p> <p>This command doesn't apply to
+         * RDS Custom.</p> <p>For more information about copying snapshots, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBSnapshot">Copying
          * a DB Snapshot</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
          * <a
@@ -1496,6 +1511,130 @@ namespace Aws
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateCustomAvailabilityZoneAsync(const Model::CreateCustomAvailabilityZoneRequest& request, const CreateCustomAvailabilityZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a custom DB engine version (CEV). A CEV is a binary volume snapshot
+         * of a database engine and specific AMI. The only supported engine is Oracle
+         * Database 19c Enterprise Edition with the January 2021 or later RU/RUR. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest">
+         * Amazon RDS Custom requirements and limitations</a> in the <i>Amazon RDS User
+         * Guide</i>.</p> <p>Amazon RDS, which is a fully managed service, supplies the
+         * Amazon Machine Image (AMI) and database software. The Amazon RDS database
+         * software is preinstalled, so you need only select a DB engine and version, and
+         * create your database. With Amazon RDS Custom, you upload your database
+         * installation files in Amazon S3. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.html#custom-cev.preparing">
+         * Preparing to create a CEV</a> in the <i>Amazon RDS User Guide</i>.</p> <p>When
+         * you create a custom engine version, you specify the files in a JSON document
+         * called a CEV manifest. This document describes installation .zip files stored in
+         * Amazon S3. RDS Custom creates your CEV from the installation files that you
+         * provided. This service model is called Bring Your Own Media (BYOM).</p>
+         * <p>Creation takes approximately two hours. If creation fails, RDS Custom issues
+         * <code>RDS-EVENT-0196</code> with the message <code>Creation failed for custom
+         * engine version</code>, and includes details about the failure. For example, the
+         * event prints missing files. </p> <p>After you create the CEV, it is available
+         * for use. You can create multiple CEVs, and create multiple RDS Custom instances
+         * from any CEV. You can also change the status of a CEV to make it available or
+         * inactive.</p>  <p>The MediaImport service that imports files from Amazon
+         * S3 to create CEVs isn't integrated with Amazon Web Services CloudTrail. If you
+         * turn on data logging for Amazon RDS in CloudTrail, calls to the
+         * <code>CreateCustomDbEngineVersion</code> event aren't logged. However, you might
+         * see calls from the API gateway that accesses your Amazon S3 bucket. These calls
+         * originate from the MediaImport service for the
+         * <code>CreateCustomDbEngineVersion</code> event.</p>  <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.create">
+         * Creating a CEV</a> in the <i>Amazon RDS User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateCustomDBEngineVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCustomDBEngineVersionOutcome CreateCustomDBEngineVersion(const Model::CreateCustomDBEngineVersionRequest& request) const;
+
+        /**
+         * <p>Creates a custom DB engine version (CEV). A CEV is a binary volume snapshot
+         * of a database engine and specific AMI. The only supported engine is Oracle
+         * Database 19c Enterprise Edition with the January 2021 or later RU/RUR. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest">
+         * Amazon RDS Custom requirements and limitations</a> in the <i>Amazon RDS User
+         * Guide</i>.</p> <p>Amazon RDS, which is a fully managed service, supplies the
+         * Amazon Machine Image (AMI) and database software. The Amazon RDS database
+         * software is preinstalled, so you need only select a DB engine and version, and
+         * create your database. With Amazon RDS Custom, you upload your database
+         * installation files in Amazon S3. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.html#custom-cev.preparing">
+         * Preparing to create a CEV</a> in the <i>Amazon RDS User Guide</i>.</p> <p>When
+         * you create a custom engine version, you specify the files in a JSON document
+         * called a CEV manifest. This document describes installation .zip files stored in
+         * Amazon S3. RDS Custom creates your CEV from the installation files that you
+         * provided. This service model is called Bring Your Own Media (BYOM).</p>
+         * <p>Creation takes approximately two hours. If creation fails, RDS Custom issues
+         * <code>RDS-EVENT-0196</code> with the message <code>Creation failed for custom
+         * engine version</code>, and includes details about the failure. For example, the
+         * event prints missing files. </p> <p>After you create the CEV, it is available
+         * for use. You can create multiple CEVs, and create multiple RDS Custom instances
+         * from any CEV. You can also change the status of a CEV to make it available or
+         * inactive.</p>  <p>The MediaImport service that imports files from Amazon
+         * S3 to create CEVs isn't integrated with Amazon Web Services CloudTrail. If you
+         * turn on data logging for Amazon RDS in CloudTrail, calls to the
+         * <code>CreateCustomDbEngineVersion</code> event aren't logged. However, you might
+         * see calls from the API gateway that accesses your Amazon S3 bucket. These calls
+         * originate from the MediaImport service for the
+         * <code>CreateCustomDbEngineVersion</code> event.</p>  <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.create">
+         * Creating a CEV</a> in the <i>Amazon RDS User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateCustomDBEngineVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateCustomDBEngineVersionOutcomeCallable CreateCustomDBEngineVersionCallable(const Model::CreateCustomDBEngineVersionRequest& request) const;
+
+        /**
+         * <p>Creates a custom DB engine version (CEV). A CEV is a binary volume snapshot
+         * of a database engine and specific AMI. The only supported engine is Oracle
+         * Database 19c Enterprise Edition with the January 2021 or later RU/RUR. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest">
+         * Amazon RDS Custom requirements and limitations</a> in the <i>Amazon RDS User
+         * Guide</i>.</p> <p>Amazon RDS, which is a fully managed service, supplies the
+         * Amazon Machine Image (AMI) and database software. The Amazon RDS database
+         * software is preinstalled, so you need only select a DB engine and version, and
+         * create your database. With Amazon RDS Custom, you upload your database
+         * installation files in Amazon S3. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.html#custom-cev.preparing">
+         * Preparing to create a CEV</a> in the <i>Amazon RDS User Guide</i>.</p> <p>When
+         * you create a custom engine version, you specify the files in a JSON document
+         * called a CEV manifest. This document describes installation .zip files stored in
+         * Amazon S3. RDS Custom creates your CEV from the installation files that you
+         * provided. This service model is called Bring Your Own Media (BYOM).</p>
+         * <p>Creation takes approximately two hours. If creation fails, RDS Custom issues
+         * <code>RDS-EVENT-0196</code> with the message <code>Creation failed for custom
+         * engine version</code>, and includes details about the failure. For example, the
+         * event prints missing files. </p> <p>After you create the CEV, it is available
+         * for use. You can create multiple CEVs, and create multiple RDS Custom instances
+         * from any CEV. You can also change the status of a CEV to make it available or
+         * inactive.</p>  <p>The MediaImport service that imports files from Amazon
+         * S3 to create CEVs isn't integrated with Amazon Web Services CloudTrail. If you
+         * turn on data logging for Amazon RDS in CloudTrail, calls to the
+         * <code>CreateCustomDbEngineVersion</code> event aren't logged. However, you might
+         * see calls from the API gateway that accesses your Amazon S3 bucket. These calls
+         * originate from the MediaImport service for the
+         * <code>CreateCustomDbEngineVersion</code> event.</p>  <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.create">
+         * Creating a CEV</a> in the <i>Amazon RDS User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateCustomDBEngineVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateCustomDBEngineVersionAsync(const Model::CreateCustomDBEngineVersionRequest& request, const CreateCustomDBEngineVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new Amazon Aurora DB cluster.</p> <p>You can use the
@@ -1813,19 +1952,20 @@ namespace Aws
          * <p>Creates a new DB parameter group.</p> <p> A DB parameter group is initially
          * created with the default parameters for the database engine used by the DB
          * instance. To provide custom values for any of the parameters, you must modify
-         * the group after creating it using <i>ModifyDBParameterGroup</i>. Once you've
-         * created a DB parameter group, you need to associate it with your DB instance
-         * using <i>ModifyDBInstance</i>. When you associate a new DB parameter group with
-         * a running DB instance, you need to reboot the DB instance without failover for
-         * the new DB parameter group and associated settings to take effect. </p>
-         *  <p>After you create a DB parameter group, you should wait at least 5
-         * minutes before creating your first DB instance that uses that DB parameter group
-         * as the default parameter group. This allows Amazon RDS to fully complete the
-         * create action before the parameter group is used as the default for a new DB
-         * instance. This is especially important for parameters that are critical when
-         * creating the default database for a DB instance, such as the character set for
-         * the default database defined by the <code>character_set_database</code>
-         * parameter. You can use the <i>Parameter Groups</i> option of the <a
+         * the group after creating it using <code>ModifyDBParameterGroup</code>. Once
+         * you've created a DB parameter group, you need to associate it with your DB
+         * instance using <code>ModifyDBInstance</code>. When you associate a new DB
+         * parameter group with a running DB instance, you need to reboot the DB instance
+         * without failover for the new DB parameter group and associated settings to take
+         * effect. </p> <p>This command doesn't apply to RDS Custom.</p> 
+         * <p>After you create a DB parameter group, you should wait at least 5 minutes
+         * before creating your first DB instance that uses that DB parameter group as the
+         * default parameter group. This allows Amazon RDS to fully complete the create
+         * action before the parameter group is used as the default for a new DB instance.
+         * This is especially important for parameters that are critical when creating the
+         * default database for a DB instance, such as the character set for the default
+         * database defined by the <code>character_set_database</code> parameter. You can
+         * use the <i>Parameter Groups</i> option of the <a
          * href="https://console.aws.amazon.com/rds/">Amazon RDS console</a> or the
          * <i>DescribeDBParameters</i> command to verify that your DB parameter group has
          * been created or modified.</p> <p><h3>See Also:</h3>   <a
@@ -1838,19 +1978,20 @@ namespace Aws
          * <p>Creates a new DB parameter group.</p> <p> A DB parameter group is initially
          * created with the default parameters for the database engine used by the DB
          * instance. To provide custom values for any of the parameters, you must modify
-         * the group after creating it using <i>ModifyDBParameterGroup</i>. Once you've
-         * created a DB parameter group, you need to associate it with your DB instance
-         * using <i>ModifyDBInstance</i>. When you associate a new DB parameter group with
-         * a running DB instance, you need to reboot the DB instance without failover for
-         * the new DB parameter group and associated settings to take effect. </p>
-         *  <p>After you create a DB parameter group, you should wait at least 5
-         * minutes before creating your first DB instance that uses that DB parameter group
-         * as the default parameter group. This allows Amazon RDS to fully complete the
-         * create action before the parameter group is used as the default for a new DB
-         * instance. This is especially important for parameters that are critical when
-         * creating the default database for a DB instance, such as the character set for
-         * the default database defined by the <code>character_set_database</code>
-         * parameter. You can use the <i>Parameter Groups</i> option of the <a
+         * the group after creating it using <code>ModifyDBParameterGroup</code>. Once
+         * you've created a DB parameter group, you need to associate it with your DB
+         * instance using <code>ModifyDBInstance</code>. When you associate a new DB
+         * parameter group with a running DB instance, you need to reboot the DB instance
+         * without failover for the new DB parameter group and associated settings to take
+         * effect. </p> <p>This command doesn't apply to RDS Custom.</p> 
+         * <p>After you create a DB parameter group, you should wait at least 5 minutes
+         * before creating your first DB instance that uses that DB parameter group as the
+         * default parameter group. This allows Amazon RDS to fully complete the create
+         * action before the parameter group is used as the default for a new DB instance.
+         * This is especially important for parameters that are critical when creating the
+         * default database for a DB instance, such as the character set for the default
+         * database defined by the <code>character_set_database</code> parameter. You can
+         * use the <i>Parameter Groups</i> option of the <a
          * href="https://console.aws.amazon.com/rds/">Amazon RDS console</a> or the
          * <i>DescribeDBParameters</i> command to verify that your DB parameter group has
          * been created or modified.</p> <p><h3>See Also:</h3>   <a
@@ -1865,19 +2006,20 @@ namespace Aws
          * <p>Creates a new DB parameter group.</p> <p> A DB parameter group is initially
          * created with the default parameters for the database engine used by the DB
          * instance. To provide custom values for any of the parameters, you must modify
-         * the group after creating it using <i>ModifyDBParameterGroup</i>. Once you've
-         * created a DB parameter group, you need to associate it with your DB instance
-         * using <i>ModifyDBInstance</i>. When you associate a new DB parameter group with
-         * a running DB instance, you need to reboot the DB instance without failover for
-         * the new DB parameter group and associated settings to take effect. </p>
-         *  <p>After you create a DB parameter group, you should wait at least 5
-         * minutes before creating your first DB instance that uses that DB parameter group
-         * as the default parameter group. This allows Amazon RDS to fully complete the
-         * create action before the parameter group is used as the default for a new DB
-         * instance. This is especially important for parameters that are critical when
-         * creating the default database for a DB instance, such as the character set for
-         * the default database defined by the <code>character_set_database</code>
-         * parameter. You can use the <i>Parameter Groups</i> option of the <a
+         * the group after creating it using <code>ModifyDBParameterGroup</code>. Once
+         * you've created a DB parameter group, you need to associate it with your DB
+         * instance using <code>ModifyDBInstance</code>. When you associate a new DB
+         * parameter group with a running DB instance, you need to reboot the DB instance
+         * without failover for the new DB parameter group and associated settings to take
+         * effect. </p> <p>This command doesn't apply to RDS Custom.</p> 
+         * <p>After you create a DB parameter group, you should wait at least 5 minutes
+         * before creating your first DB instance that uses that DB parameter group as the
+         * default parameter group. This allows Amazon RDS to fully complete the create
+         * action before the parameter group is used as the default for a new DB instance.
+         * This is especially important for parameters that are critical when creating the
+         * default database for a DB instance, such as the character set for the default
+         * database defined by the <code>character_set_database</code> parameter. You can
+         * use the <i>Parameter Groups</i> option of the <a
          * href="https://console.aws.amazon.com/rds/">Amazon RDS console</a> or the
          * <i>DescribeDBParameters</i> command to verify that your DB parameter group has
          * been created or modified.</p> <p><h3>See Also:</h3>   <a
@@ -2184,16 +2326,16 @@ namespace Aws
         virtual void CreateGlobalClusterAsync(const Model::CreateGlobalClusterRequest& request, const CreateGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new option group. You can create up to 20 option
-         * groups.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new option group. You can create up to 20 option groups.</p>
+         * <p>This command doesn't apply to RDS Custom.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateOptionGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateOptionGroupOutcome CreateOptionGroup(const Model::CreateOptionGroupRequest& request) const;
 
         /**
-         * <p>Creates a new option group. You can create up to 20 option
-         * groups.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new option group. You can create up to 20 option groups.</p>
+         * <p>This command doesn't apply to RDS Custom.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateOptionGroup">AWS
          * API Reference</a></p>
          *
@@ -2202,8 +2344,8 @@ namespace Aws
         virtual Model::CreateOptionGroupOutcomeCallable CreateOptionGroupCallable(const Model::CreateOptionGroupRequest& request) const;
 
         /**
-         * <p>Creates a new option group. You can create up to 20 option
-         * groups.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new option group. You can create up to 20 option groups.</p>
+         * <p>This command doesn't apply to RDS Custom.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateOptionGroup">AWS
          * API Reference</a></p>
          *
@@ -2247,6 +2389,76 @@ namespace Aws
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteCustomAvailabilityZoneAsync(const Model::DeleteCustomAvailabilityZoneRequest& request, const DeleteCustomAvailabilityZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a custom engine version. To run this command, make sure you meet the
+         * following prerequisites:</p> <ul> <li> <p>The CEV must not be the default for
+         * RDS Custom. If it is, change the default before running this command.</p> </li>
+         * <li> <p>The CEV must not be associated with an RDS Custom DB instance, RDS
+         * Custom instance snapshot, or automated backup of your RDS Custom instance.</p>
+         * </li> </ul> <p>Typically, deletion takes a few minutes.</p>  <p>The
+         * MediaImport service that imports files from Amazon S3 to create CEVs isn't
+         * integrated with Amazon Web Services CloudTrail. If you turn on data logging for
+         * Amazon RDS in CloudTrail, calls to the <code>DeleteCustomDbEngineVersion</code>
+         * event aren't logged. However, you might see calls from the API gateway that
+         * accesses your Amazon S3 bucket. These calls originate from the MediaImport
+         * service for the <code>DeleteCustomDbEngineVersion</code> event.</p> 
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.delete">
+         * Deleting a CEV</a> in the <i>Amazon RDS User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteCustomDBEngineVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCustomDBEngineVersionOutcome DeleteCustomDBEngineVersion(const Model::DeleteCustomDBEngineVersionRequest& request) const;
+
+        /**
+         * <p>Deletes a custom engine version. To run this command, make sure you meet the
+         * following prerequisites:</p> <ul> <li> <p>The CEV must not be the default for
+         * RDS Custom. If it is, change the default before running this command.</p> </li>
+         * <li> <p>The CEV must not be associated with an RDS Custom DB instance, RDS
+         * Custom instance snapshot, or automated backup of your RDS Custom instance.</p>
+         * </li> </ul> <p>Typically, deletion takes a few minutes.</p>  <p>The
+         * MediaImport service that imports files from Amazon S3 to create CEVs isn't
+         * integrated with Amazon Web Services CloudTrail. If you turn on data logging for
+         * Amazon RDS in CloudTrail, calls to the <code>DeleteCustomDbEngineVersion</code>
+         * event aren't logged. However, you might see calls from the API gateway that
+         * accesses your Amazon S3 bucket. These calls originate from the MediaImport
+         * service for the <code>DeleteCustomDbEngineVersion</code> event.</p> 
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.delete">
+         * Deleting a CEV</a> in the <i>Amazon RDS User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteCustomDBEngineVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteCustomDBEngineVersionOutcomeCallable DeleteCustomDBEngineVersionCallable(const Model::DeleteCustomDBEngineVersionRequest& request) const;
+
+        /**
+         * <p>Deletes a custom engine version. To run this command, make sure you meet the
+         * following prerequisites:</p> <ul> <li> <p>The CEV must not be the default for
+         * RDS Custom. If it is, change the default before running this command.</p> </li>
+         * <li> <p>The CEV must not be associated with an RDS Custom DB instance, RDS
+         * Custom instance snapshot, or automated backup of your RDS Custom instance.</p>
+         * </li> </ul> <p>Typically, deletion takes a few minutes.</p>  <p>The
+         * MediaImport service that imports files from Amazon S3 to create CEVs isn't
+         * integrated with Amazon Web Services CloudTrail. If you turn on data logging for
+         * Amazon RDS in CloudTrail, calls to the <code>DeleteCustomDbEngineVersion</code>
+         * event aren't logged. However, you might see calls from the API gateway that
+         * accesses your Amazon S3 bucket. These calls originate from the MediaImport
+         * service for the <code>DeleteCustomDbEngineVersion</code> event.</p> 
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.delete">
+         * Deleting a CEV</a> in the <i>Amazon RDS User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteCustomDBEngineVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteCustomDBEngineVersionAsync(const Model::DeleteCustomDBEngineVersionRequest& request, const DeleteCustomDBEngineVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The DeleteDBCluster action deletes a previously provisioned DB cluster. When
@@ -3350,16 +3562,16 @@ namespace Aws
         virtual void DescribeDBInstancesAsync(const Model::DescribeDBInstancesRequest& request, const DescribeDBInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of DB log files for the DB instance.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Returns a list of DB log files for the DB instance.</p> <p>This command
+         * doesn't apply to RDS Custom.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBLogFiles">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeDBLogFilesOutcome DescribeDBLogFiles(const Model::DescribeDBLogFilesRequest& request) const;
 
         /**
-         * <p>Returns a list of DB log files for the DB instance.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Returns a list of DB log files for the DB instance.</p> <p>This command
+         * doesn't apply to RDS Custom.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBLogFiles">AWS
          * API Reference</a></p>
          *
@@ -3368,8 +3580,8 @@ namespace Aws
         virtual Model::DescribeDBLogFilesOutcomeCallable DescribeDBLogFilesCallable(const Model::DescribeDBLogFilesRequest& request) const;
 
         /**
-         * <p>Returns a list of DB log files for the DB instance.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Returns a list of DB log files for the DB instance.</p> <p>This command
+         * doesn't apply to RDS Custom.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBLogFiles">AWS
          * API Reference</a></p>
          *
@@ -4170,7 +4382,8 @@ namespace Aws
         /**
          * <p>You can call <code>DescribeValidDBInstanceModifications</code> to learn what
          * modifications you can make to your DB instance. You can use this information
-         * when you call <code>ModifyDBInstance</code>. </p><p><h3>See Also:</h3>   <a
+         * when you call <code>ModifyDBInstance</code>. </p> <p>This command doesn't apply
+         * to RDS Custom.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeValidDBInstanceModifications">AWS
          * API Reference</a></p>
          */
@@ -4179,7 +4392,8 @@ namespace Aws
         /**
          * <p>You can call <code>DescribeValidDBInstanceModifications</code> to learn what
          * modifications you can make to your DB instance. You can use this information
-         * when you call <code>ModifyDBInstance</code>. </p><p><h3>See Also:</h3>   <a
+         * when you call <code>ModifyDBInstance</code>. </p> <p>This command doesn't apply
+         * to RDS Custom.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeValidDBInstanceModifications">AWS
          * API Reference</a></p>
          *
@@ -4190,7 +4404,8 @@ namespace Aws
         /**
          * <p>You can call <code>DescribeValidDBInstanceModifications</code> to learn what
          * modifications you can make to your DB instance. You can use this information
-         * when you call <code>ModifyDBInstance</code>. </p><p><h3>See Also:</h3>   <a
+         * when you call <code>ModifyDBInstance</code>. </p> <p>This command doesn't apply
+         * to RDS Custom.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeValidDBInstanceModifications">AWS
          * API Reference</a></p>
          *
@@ -4199,16 +4414,16 @@ namespace Aws
         virtual void DescribeValidDBInstanceModificationsAsync(const Model::DescribeValidDBInstanceModificationsRequest& request, const DescribeValidDBInstanceModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Downloads all or a portion of the specified log file, up to 1 MB in
-         * size.</p><p><h3>See Also:</h3>   <a
+         * <p>Downloads all or a portion of the specified log file, up to 1 MB in size.</p>
+         * <p>This command doesn't apply to RDS Custom.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DownloadDBLogFilePortion">AWS
          * API Reference</a></p>
          */
         virtual Model::DownloadDBLogFilePortionOutcome DownloadDBLogFilePortion(const Model::DownloadDBLogFilePortionRequest& request) const;
 
         /**
-         * <p>Downloads all or a portion of the specified log file, up to 1 MB in
-         * size.</p><p><h3>See Also:</h3>   <a
+         * <p>Downloads all or a portion of the specified log file, up to 1 MB in size.</p>
+         * <p>This command doesn't apply to RDS Custom.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DownloadDBLogFilePortion">AWS
          * API Reference</a></p>
          *
@@ -4217,8 +4432,8 @@ namespace Aws
         virtual Model::DownloadDBLogFilePortionOutcomeCallable DownloadDBLogFilePortionCallable(const Model::DownloadDBLogFilePortionRequest& request) const;
 
         /**
-         * <p>Downloads all or a portion of the specified log file, up to 1 MB in
-         * size.</p><p><h3>See Also:</h3>   <a
+         * <p>Downloads all or a portion of the specified log file, up to 1 MB in size.</p>
+         * <p>This command doesn't apply to RDS Custom.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DownloadDBLogFilePortion">AWS
          * API Reference</a></p>
          *
@@ -4585,6 +4800,64 @@ namespace Aws
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ModifyCurrentDBClusterCapacityAsync(const Model::ModifyCurrentDBClusterCapacityRequest& request, const ModifyCurrentDBClusterCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Modifies the status of a custom engine version (CEV). You can find CEVs to
+         * modify by calling <code>DescribeDBEngineVersions</code>.</p>  <p>The
+         * MediaImport service that imports files from Amazon S3 to create CEVs isn't
+         * integrated with Amazon Web Services CloudTrail. If you turn on data logging for
+         * Amazon RDS in CloudTrail, calls to the <code>ModifyCustomDbEngineVersion</code>
+         * event aren't logged. However, you might see calls from the API gateway that
+         * accesses your Amazon S3 bucket. These calls originate from the MediaImport
+         * service for the <code>ModifyCustomDbEngineVersion</code> event.</p> 
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest">Modifying
+         * CEV status</a> in the <i>Amazon RDS User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCustomDBEngineVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyCustomDBEngineVersionOutcome ModifyCustomDBEngineVersion(const Model::ModifyCustomDBEngineVersionRequest& request) const;
+
+        /**
+         * <p>Modifies the status of a custom engine version (CEV). You can find CEVs to
+         * modify by calling <code>DescribeDBEngineVersions</code>.</p>  <p>The
+         * MediaImport service that imports files from Amazon S3 to create CEVs isn't
+         * integrated with Amazon Web Services CloudTrail. If you turn on data logging for
+         * Amazon RDS in CloudTrail, calls to the <code>ModifyCustomDbEngineVersion</code>
+         * event aren't logged. However, you might see calls from the API gateway that
+         * accesses your Amazon S3 bucket. These calls originate from the MediaImport
+         * service for the <code>ModifyCustomDbEngineVersion</code> event.</p> 
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest">Modifying
+         * CEV status</a> in the <i>Amazon RDS User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCustomDBEngineVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyCustomDBEngineVersionOutcomeCallable ModifyCustomDBEngineVersionCallable(const Model::ModifyCustomDBEngineVersionRequest& request) const;
+
+        /**
+         * <p>Modifies the status of a custom engine version (CEV). You can find CEVs to
+         * modify by calling <code>DescribeDBEngineVersions</code>.</p>  <p>The
+         * MediaImport service that imports files from Amazon S3 to create CEVs isn't
+         * integrated with Amazon Web Services CloudTrail. If you turn on data logging for
+         * Amazon RDS in CloudTrail, calls to the <code>ModifyCustomDbEngineVersion</code>
+         * event aren't logged. However, you might see calls from the API gateway that
+         * accesses your Amazon S3 bucket. These calls originate from the MediaImport
+         * service for the <code>ModifyCustomDbEngineVersion</code> event.</p> 
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest">Modifying
+         * CEV status</a> in the <i>Amazon RDS User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCustomDBEngineVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyCustomDBEngineVersionAsync(const Model::ModifyCustomDBEngineVersionRequest& request, const ModifyCustomDBEngineVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modify a setting for an Amazon Aurora DB cluster. You can change one or more
@@ -5021,8 +5294,8 @@ namespace Aws
         /**
          * <p>Updates a manual DB snapshot with a new engine version. The snapshot can be
          * encrypted or unencrypted, but not shared or public. </p> <p>Amazon RDS supports
-         * upgrading DB snapshots for MySQL, Oracle, and PostgreSQL. </p><p><h3>See
-         * Also:</h3>   <a
+         * upgrading DB snapshots for MySQL, PostgreSQL, and Oracle. This command doesn't
+         * apply to RDS Custom. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot">AWS
          * API Reference</a></p>
          */
@@ -5031,8 +5304,8 @@ namespace Aws
         /**
          * <p>Updates a manual DB snapshot with a new engine version. The snapshot can be
          * encrypted or unencrypted, but not shared or public. </p> <p>Amazon RDS supports
-         * upgrading DB snapshots for MySQL, Oracle, and PostgreSQL. </p><p><h3>See
-         * Also:</h3>   <a
+         * upgrading DB snapshots for MySQL, PostgreSQL, and Oracle. This command doesn't
+         * apply to RDS Custom. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot">AWS
          * API Reference</a></p>
          *
@@ -5043,8 +5316,8 @@ namespace Aws
         /**
          * <p>Updates a manual DB snapshot with a new engine version. The snapshot can be
          * encrypted or unencrypted, but not shared or public. </p> <p>Amazon RDS supports
-         * upgrading DB snapshots for MySQL, Oracle, and PostgreSQL. </p><p><h3>See
-         * Also:</h3>   <a
+         * upgrading DB snapshots for MySQL, PostgreSQL, and Oracle. This command doesn't
+         * apply to RDS Custom. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot">AWS
          * API Reference</a></p>
          *
@@ -5285,8 +5558,8 @@ namespace Aws
          * a standalone instance when it is in the <code>backing-up</code> status. If you
          * have enabled backups on your read replica, configure the automated backup window
          * so that daily backups do not interfere with read replica promotion.</p> </li>
-         * <li> <p>This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.</p>
-         * </li> </ul> <p><h3>See Also:</h3>   <a
+         * <li> <p>This command doesn't apply to Aurora MySQL, Aurora PostgreSQL, or RDS
+         * Custom.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplica">AWS
          * API Reference</a></p>
          */
@@ -5301,8 +5574,8 @@ namespace Aws
          * a standalone instance when it is in the <code>backing-up</code> status. If you
          * have enabled backups on your read replica, configure the automated backup window
          * so that daily backups do not interfere with read replica promotion.</p> </li>
-         * <li> <p>This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.</p>
-         * </li> </ul> <p><h3>See Also:</h3>   <a
+         * <li> <p>This command doesn't apply to Aurora MySQL, Aurora PostgreSQL, or RDS
+         * Custom.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplica">AWS
          * API Reference</a></p>
          *
@@ -5319,8 +5592,8 @@ namespace Aws
          * a standalone instance when it is in the <code>backing-up</code> status. If you
          * have enabled backups on your read replica, configure the automated backup window
          * so that daily backups do not interfere with read replica promotion.</p> </li>
-         * <li> <p>This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.</p>
-         * </li> </ul> <p><h3>See Also:</h3>   <a
+         * <li> <p>This command doesn't apply to Aurora MySQL, Aurora PostgreSQL, or RDS
+         * Custom.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplica">AWS
          * API Reference</a></p>
          *
@@ -5393,8 +5666,8 @@ namespace Aws
          * during which the DB instance status is set to rebooting. </p> <p>For more
          * information about rebooting, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RebootInstance.html">Rebooting
-         * a DB Instance</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
-         * <a
+         * a DB Instance</a> in the <i>Amazon RDS User Guide.</i> </p> <p>This command
+         * doesn't apply to RDS Custom.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBInstance">AWS
          * API Reference</a></p>
          */
@@ -5409,8 +5682,8 @@ namespace Aws
          * during which the DB instance status is set to rebooting. </p> <p>For more
          * information about rebooting, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RebootInstance.html">Rebooting
-         * a DB Instance</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
-         * <a
+         * a DB Instance</a> in the <i>Amazon RDS User Guide.</i> </p> <p>This command
+         * doesn't apply to RDS Custom.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBInstance">AWS
          * API Reference</a></p>
          *
@@ -5427,8 +5700,8 @@ namespace Aws
          * during which the DB instance status is set to rebooting. </p> <p>For more
          * information about rebooting, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RebootInstance.html">Rebooting
-         * a DB Instance</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
-         * <a
+         * a DB Instance</a> in the <i>Amazon RDS User Guide.</i> </p> <p>This command
+         * doesn't apply to RDS Custom.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBInstance">AWS
          * API Reference</a></p>
          *
@@ -6044,7 +6317,8 @@ namespace Aws
          * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Importing
          * Data into an Amazon RDS MySQL DB Instance</a> in the <i>Amazon RDS User
-         * Guide.</i> </p><p><h3>See Also:</h3>   <a
+         * Guide.</i> </p> <p>This command doesn't apply to RDS Custom.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3">AWS
          * API Reference</a></p>
          */
@@ -6058,7 +6332,8 @@ namespace Aws
          * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Importing
          * Data into an Amazon RDS MySQL DB Instance</a> in the <i>Amazon RDS User
-         * Guide.</i> </p><p><h3>See Also:</h3>   <a
+         * Guide.</i> </p> <p>This command doesn't apply to RDS Custom.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3">AWS
          * API Reference</a></p>
          *
@@ -6074,7 +6349,8 @@ namespace Aws
          * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Importing
          * Data into an Amazon RDS MySQL DB Instance</a> in the <i>Amazon RDS User
-         * Guide.</i> </p><p><h3>See Also:</h3>   <a
+         * Guide.</i> </p> <p>This command doesn't apply to RDS Custom.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3">AWS
          * API Reference</a></p>
          *
@@ -6263,8 +6539,8 @@ namespace Aws
          * action. </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StartInstance.html">
          * Starting an Amazon RDS DB instance That Was Previously Stopped</a> in the
-         * <i>Amazon RDS User Guide.</i> </p>  <p> This command doesn't apply to
-         * Aurora MySQL and Aurora PostgreSQL. For Aurora DB clusters, use
+         * <i>Amazon RDS User Guide.</i> </p>  <p> This command doesn't apply to RDS
+         * Custom, Aurora MySQL, and Aurora PostgreSQL. For Aurora DB clusters, use
          * <code>StartDBCluster</code> instead. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstance">AWS
          * API Reference</a></p>
@@ -6277,8 +6553,8 @@ namespace Aws
          * action. </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StartInstance.html">
          * Starting an Amazon RDS DB instance That Was Previously Stopped</a> in the
-         * <i>Amazon RDS User Guide.</i> </p>  <p> This command doesn't apply to
-         * Aurora MySQL and Aurora PostgreSQL. For Aurora DB clusters, use
+         * <i>Amazon RDS User Guide.</i> </p>  <p> This command doesn't apply to RDS
+         * Custom, Aurora MySQL, and Aurora PostgreSQL. For Aurora DB clusters, use
          * <code>StartDBCluster</code> instead. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstance">AWS
          * API Reference</a></p>
@@ -6293,8 +6569,8 @@ namespace Aws
          * action. </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StartInstance.html">
          * Starting an Amazon RDS DB instance That Was Previously Stopped</a> in the
-         * <i>Amazon RDS User Guide.</i> </p>  <p> This command doesn't apply to
-         * Aurora MySQL and Aurora PostgreSQL. For Aurora DB clusters, use
+         * <i>Amazon RDS User Guide.</i> </p>  <p> This command doesn't apply to RDS
+         * Custom, Aurora MySQL, and Aurora PostgreSQL. For Aurora DB clusters, use
          * <code>StartDBCluster</code> instead. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstance">AWS
          * API Reference</a></p>
@@ -6305,7 +6581,8 @@ namespace Aws
 
         /**
          * <p>Enables replication of automated backups to a different Amazon Web Services
-         * Region.</p> <p>For more information, see <a
+         * Region.</p> <p>This command doesn't apply to RDS Custom.</p> <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html">
          * Replicating Automated Backups to Another Amazon Web Services Region</a> in the
          * <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
@@ -6316,7 +6593,8 @@ namespace Aws
 
         /**
          * <p>Enables replication of automated backups to a different Amazon Web Services
-         * Region.</p> <p>For more information, see <a
+         * Region.</p> <p>This command doesn't apply to RDS Custom.</p> <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html">
          * Replicating Automated Backups to Another Amazon Web Services Region</a> in the
          * <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
@@ -6329,7 +6607,8 @@ namespace Aws
 
         /**
          * <p>Enables replication of automated backups to a different Amazon Web Services
-         * Region.</p> <p>For more information, see <a
+         * Region.</p> <p>This command doesn't apply to RDS Custom.</p> <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html">
          * Replicating Automated Backups to Another Amazon Web Services Region</a> in the
          * <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
@@ -6342,7 +6621,8 @@ namespace Aws
 
         /**
          * <p>Starts an export of a snapshot to Amazon S3. The provided IAM role must have
-         * access to the S3 bucket. </p><p><h3>See Also:</h3>   <a
+         * access to the S3 bucket. </p> <p>This command doesn't apply to RDS
+         * Custom.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartExportTask">AWS
          * API Reference</a></p>
          */
@@ -6350,7 +6630,8 @@ namespace Aws
 
         /**
          * <p>Starts an export of a snapshot to Amazon S3. The provided IAM role must have
-         * access to the S3 bucket. </p><p><h3>See Also:</h3>   <a
+         * access to the S3 bucket. </p> <p>This command doesn't apply to RDS
+         * Custom.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartExportTask">AWS
          * API Reference</a></p>
          *
@@ -6360,7 +6641,8 @@ namespace Aws
 
         /**
          * <p>Starts an export of a snapshot to Amazon S3. The provided IAM role must have
-         * access to the S3 bucket. </p><p><h3>See Also:</h3>   <a
+         * access to the S3 bucket. </p> <p>This command doesn't apply to RDS
+         * Custom.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartExportTask">AWS
          * API Reference</a></p>
          *
@@ -6462,9 +6744,9 @@ namespace Aws
          * <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StopInstance.html">
          * Stopping an Amazon RDS DB Instance Temporarily</a> in the <i>Amazon RDS User
-         * Guide.</i> </p>  <p> This command doesn't apply to Aurora MySQL and Aurora
-         * PostgreSQL. For Aurora clusters, use <code>StopDBCluster</code> instead. </p>
-         * <p><h3>See Also:</h3>   <a
+         * Guide.</i> </p>  <p> This command doesn't apply to RDS Custom, Aurora
+         * MySQL, and Aurora PostgreSQL. For Aurora clusters, use
+         * <code>StopDBCluster</code> instead. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBInstance">AWS
          * API Reference</a></p>
          */
@@ -6478,9 +6760,9 @@ namespace Aws
          * <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StopInstance.html">
          * Stopping an Amazon RDS DB Instance Temporarily</a> in the <i>Amazon RDS User
-         * Guide.</i> </p>  <p> This command doesn't apply to Aurora MySQL and Aurora
-         * PostgreSQL. For Aurora clusters, use <code>StopDBCluster</code> instead. </p>
-         * <p><h3>See Also:</h3>   <a
+         * Guide.</i> </p>  <p> This command doesn't apply to RDS Custom, Aurora
+         * MySQL, and Aurora PostgreSQL. For Aurora clusters, use
+         * <code>StopDBCluster</code> instead. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBInstance">AWS
          * API Reference</a></p>
          *
@@ -6496,9 +6778,9 @@ namespace Aws
          * <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StopInstance.html">
          * Stopping an Amazon RDS DB Instance Temporarily</a> in the <i>Amazon RDS User
-         * Guide.</i> </p>  <p> This command doesn't apply to Aurora MySQL and Aurora
-         * PostgreSQL. For Aurora clusters, use <code>StopDBCluster</code> instead. </p>
-         * <p><h3>See Also:</h3>   <a
+         * Guide.</i> </p>  <p> This command doesn't apply to RDS Custom, Aurora
+         * MySQL, and Aurora PostgreSQL. For Aurora clusters, use
+         * <code>StopDBCluster</code> instead. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBInstance">AWS
          * API Reference</a></p>
          *
@@ -6507,8 +6789,8 @@ namespace Aws
         virtual void StopDBInstanceAsync(const Model::StopDBInstanceRequest& request, const StopDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stops automated backup replication for a DB instance.</p> <p>For more
-         * information, see <a
+         * <p>Stops automated backup replication for a DB instance.</p> <p>This command
+         * doesn't apply to RDS Custom.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html">
          * Replicating Automated Backups to Another Amazon Web Services Region</a> in the
          * <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
@@ -6518,8 +6800,8 @@ namespace Aws
         virtual Model::StopDBInstanceAutomatedBackupsReplicationOutcome StopDBInstanceAutomatedBackupsReplication(const Model::StopDBInstanceAutomatedBackupsReplicationRequest& request) const;
 
         /**
-         * <p>Stops automated backup replication for a DB instance.</p> <p>For more
-         * information, see <a
+         * <p>Stops automated backup replication for a DB instance.</p> <p>This command
+         * doesn't apply to RDS Custom.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html">
          * Replicating Automated Backups to Another Amazon Web Services Region</a> in the
          * <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
@@ -6531,8 +6813,8 @@ namespace Aws
         virtual Model::StopDBInstanceAutomatedBackupsReplicationOutcomeCallable StopDBInstanceAutomatedBackupsReplicationCallable(const Model::StopDBInstanceAutomatedBackupsReplicationRequest& request) const;
 
         /**
-         * <p>Stops automated backup replication for a DB instance.</p> <p>For more
-         * information, see <a
+         * <p>Stops automated backup replication for a DB instance.</p> <p>This command
+         * doesn't apply to RDS Custom.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html">
          * Replicating Automated Backups to Another Amazon Web Services Region</a> in the
          * <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>   <a
@@ -6561,6 +6843,7 @@ namespace Aws
         void CopyDBSnapshotAsyncHelper(const Model::CopyDBSnapshotRequest& request, const CopyDBSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CopyOptionGroupAsyncHelper(const Model::CopyOptionGroupRequest& request, const CopyOptionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCustomAvailabilityZoneAsyncHelper(const Model::CreateCustomAvailabilityZoneRequest& request, const CreateCustomAvailabilityZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateCustomDBEngineVersionAsyncHelper(const Model::CreateCustomDBEngineVersionRequest& request, const CreateCustomDBEngineVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDBClusterAsyncHelper(const Model::CreateDBClusterRequest& request, const CreateDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDBClusterEndpointAsyncHelper(const Model::CreateDBClusterEndpointRequest& request, const CreateDBClusterEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDBClusterParameterGroupAsyncHelper(const Model::CreateDBClusterParameterGroupRequest& request, const CreateDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6577,6 +6860,7 @@ namespace Aws
         void CreateGlobalClusterAsyncHelper(const Model::CreateGlobalClusterRequest& request, const CreateGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateOptionGroupAsyncHelper(const Model::CreateOptionGroupRequest& request, const CreateOptionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCustomAvailabilityZoneAsyncHelper(const Model::DeleteCustomAvailabilityZoneRequest& request, const DeleteCustomAvailabilityZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteCustomDBEngineVersionAsyncHelper(const Model::DeleteCustomDBEngineVersionRequest& request, const DeleteCustomDBEngineVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDBClusterAsyncHelper(const Model::DeleteDBClusterRequest& request, const DeleteDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDBClusterEndpointAsyncHelper(const Model::DeleteDBClusterEndpointRequest& request, const DeleteDBClusterEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDBClusterParameterGroupAsyncHelper(const Model::DeleteDBClusterParameterGroupRequest& request, const DeleteDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6641,6 +6925,7 @@ namespace Aws
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyCertificatesAsyncHelper(const Model::ModifyCertificatesRequest& request, const ModifyCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyCurrentDBClusterCapacityAsyncHelper(const Model::ModifyCurrentDBClusterCapacityRequest& request, const ModifyCurrentDBClusterCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyCustomDBEngineVersionAsyncHelper(const Model::ModifyCustomDBEngineVersionRequest& request, const ModifyCustomDBEngineVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyDBClusterAsyncHelper(const Model::ModifyDBClusterRequest& request, const ModifyDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyDBClusterEndpointAsyncHelper(const Model::ModifyDBClusterEndpointRequest& request, const ModifyDBClusterEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyDBClusterParameterGroupAsyncHelper(const Model::ModifyDBClusterParameterGroupRequest& request, const ModifyDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

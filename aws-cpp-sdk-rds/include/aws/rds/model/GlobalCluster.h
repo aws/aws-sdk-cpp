@@ -95,64 +95,64 @@ namespace Model
     /**
      * <p> The Amazon Web Services Region-unique, immutable identifier for the global
      * database cluster. This identifier is found in Amazon Web Services CloudTrail log
-     * entries whenever the Amazon Web Services KMS customer master key (CMK) for the
-     * DB cluster is accessed. </p>
+     * entries whenever the Amazon Web Services KMS key for the DB cluster is accessed.
+     * </p>
      */
     inline const Aws::String& GetGlobalClusterResourceId() const{ return m_globalClusterResourceId; }
 
     /**
      * <p> The Amazon Web Services Region-unique, immutable identifier for the global
      * database cluster. This identifier is found in Amazon Web Services CloudTrail log
-     * entries whenever the Amazon Web Services KMS customer master key (CMK) for the
-     * DB cluster is accessed. </p>
+     * entries whenever the Amazon Web Services KMS key for the DB cluster is accessed.
+     * </p>
      */
     inline bool GlobalClusterResourceIdHasBeenSet() const { return m_globalClusterResourceIdHasBeenSet; }
 
     /**
      * <p> The Amazon Web Services Region-unique, immutable identifier for the global
      * database cluster. This identifier is found in Amazon Web Services CloudTrail log
-     * entries whenever the Amazon Web Services KMS customer master key (CMK) for the
-     * DB cluster is accessed. </p>
+     * entries whenever the Amazon Web Services KMS key for the DB cluster is accessed.
+     * </p>
      */
     inline void SetGlobalClusterResourceId(const Aws::String& value) { m_globalClusterResourceIdHasBeenSet = true; m_globalClusterResourceId = value; }
 
     /**
      * <p> The Amazon Web Services Region-unique, immutable identifier for the global
      * database cluster. This identifier is found in Amazon Web Services CloudTrail log
-     * entries whenever the Amazon Web Services KMS customer master key (CMK) for the
-     * DB cluster is accessed. </p>
+     * entries whenever the Amazon Web Services KMS key for the DB cluster is accessed.
+     * </p>
      */
     inline void SetGlobalClusterResourceId(Aws::String&& value) { m_globalClusterResourceIdHasBeenSet = true; m_globalClusterResourceId = std::move(value); }
 
     /**
      * <p> The Amazon Web Services Region-unique, immutable identifier for the global
      * database cluster. This identifier is found in Amazon Web Services CloudTrail log
-     * entries whenever the Amazon Web Services KMS customer master key (CMK) for the
-     * DB cluster is accessed. </p>
+     * entries whenever the Amazon Web Services KMS key for the DB cluster is accessed.
+     * </p>
      */
     inline void SetGlobalClusterResourceId(const char* value) { m_globalClusterResourceIdHasBeenSet = true; m_globalClusterResourceId.assign(value); }
 
     /**
      * <p> The Amazon Web Services Region-unique, immutable identifier for the global
      * database cluster. This identifier is found in Amazon Web Services CloudTrail log
-     * entries whenever the Amazon Web Services KMS customer master key (CMK) for the
-     * DB cluster is accessed. </p>
+     * entries whenever the Amazon Web Services KMS key for the DB cluster is accessed.
+     * </p>
      */
     inline GlobalCluster& WithGlobalClusterResourceId(const Aws::String& value) { SetGlobalClusterResourceId(value); return *this;}
 
     /**
      * <p> The Amazon Web Services Region-unique, immutable identifier for the global
      * database cluster. This identifier is found in Amazon Web Services CloudTrail log
-     * entries whenever the Amazon Web Services KMS customer master key (CMK) for the
-     * DB cluster is accessed. </p>
+     * entries whenever the Amazon Web Services KMS key for the DB cluster is accessed.
+     * </p>
      */
     inline GlobalCluster& WithGlobalClusterResourceId(Aws::String&& value) { SetGlobalClusterResourceId(std::move(value)); return *this;}
 
     /**
      * <p> The Amazon Web Services Region-unique, immutable identifier for the global
      * database cluster. This identifier is found in Amazon Web Services CloudTrail log
-     * entries whenever the Amazon Web Services KMS customer master key (CMK) for the
-     * DB cluster is accessed. </p>
+     * entries whenever the Amazon Web Services KMS key for the DB cluster is accessed.
+     * </p>
      */
     inline GlobalCluster& WithGlobalClusterResourceId(const char* value) { SetGlobalClusterResourceId(value); return *this;}
 

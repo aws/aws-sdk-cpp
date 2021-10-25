@@ -32,6 +32,7 @@
 #include <aws/auditmanager/model/CreateControlRequest.h>
 #include <aws/auditmanager/model/DeleteAssessmentRequest.h>
 #include <aws/auditmanager/model/DeleteAssessmentFrameworkRequest.h>
+#include <aws/auditmanager/model/DeleteAssessmentFrameworkShareRequest.h>
 #include <aws/auditmanager/model/DeleteAssessmentReportRequest.h>
 #include <aws/auditmanager/model/DeleteControlRequest.h>
 #include <aws/auditmanager/model/DeregisterAccountRequest.h>
@@ -52,6 +53,7 @@
 #include <aws/auditmanager/model/GetOrganizationAdminAccountRequest.h>
 #include <aws/auditmanager/model/GetServicesInScopeRequest.h>
 #include <aws/auditmanager/model/GetSettingsRequest.h>
+#include <aws/auditmanager/model/ListAssessmentFrameworkShareRequestsRequest.h>
 #include <aws/auditmanager/model/ListAssessmentFrameworksRequest.h>
 #include <aws/auditmanager/model/ListAssessmentReportsRequest.h>
 #include <aws/auditmanager/model/ListAssessmentsRequest.h>
@@ -61,12 +63,14 @@
 #include <aws/auditmanager/model/ListTagsForResourceRequest.h>
 #include <aws/auditmanager/model/RegisterAccountRequest.h>
 #include <aws/auditmanager/model/RegisterOrganizationAdminAccountRequest.h>
+#include <aws/auditmanager/model/StartAssessmentFrameworkShareRequest.h>
 #include <aws/auditmanager/model/TagResourceRequest.h>
 #include <aws/auditmanager/model/UntagResourceRequest.h>
 #include <aws/auditmanager/model/UpdateAssessmentRequest.h>
 #include <aws/auditmanager/model/UpdateAssessmentControlRequest.h>
 #include <aws/auditmanager/model/UpdateAssessmentControlSetStatusRequest.h>
 #include <aws/auditmanager/model/UpdateAssessmentFrameworkRequest.h>
+#include <aws/auditmanager/model/UpdateAssessmentFrameworkShareRequest.h>
 #include <aws/auditmanager/model/UpdateAssessmentStatusRequest.h>
 #include <aws/auditmanager/model/UpdateControlRequest.h>
 #include <aws/auditmanager/model/UpdateSettingsRequest.h>
@@ -518,6 +522,42 @@ void AuditManagerClient::DeleteAssessmentFrameworkAsync(const DeleteAssessmentFr
 void AuditManagerClient::DeleteAssessmentFrameworkAsyncHelper(const DeleteAssessmentFrameworkRequest& request, const DeleteAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteAssessmentFramework(request), context);
+}
+
+DeleteAssessmentFrameworkShareOutcome AuditManagerClient::DeleteAssessmentFrameworkShare(const DeleteAssessmentFrameworkShareRequest& request) const
+{
+  if (!request.RequestIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAssessmentFrameworkShare", "Required field: RequestId, is not set");
+    return DeleteAssessmentFrameworkShareOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RequestId]", false));
+  }
+  if (!request.RequestTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAssessmentFrameworkShare", "Required field: RequestType, is not set");
+    return DeleteAssessmentFrameworkShareOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RequestType]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/assessmentFrameworkShareRequests/");
+  uri.AddPathSegment(request.GetRequestId());
+  return DeleteAssessmentFrameworkShareOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteAssessmentFrameworkShareOutcomeCallable AuditManagerClient::DeleteAssessmentFrameworkShareCallable(const DeleteAssessmentFrameworkShareRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAssessmentFrameworkShareOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAssessmentFrameworkShare(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AuditManagerClient::DeleteAssessmentFrameworkShareAsync(const DeleteAssessmentFrameworkShareRequest& request, const DeleteAssessmentFrameworkShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAssessmentFrameworkShareAsyncHelper( request, handler, context ); } );
+}
+
+void AuditManagerClient::DeleteAssessmentFrameworkShareAsyncHelper(const DeleteAssessmentFrameworkShareRequest& request, const DeleteAssessmentFrameworkShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAssessmentFrameworkShare(request), context);
 }
 
 DeleteAssessmentReportOutcome AuditManagerClient::DeleteAssessmentReport(const DeleteAssessmentReportRequest& request) const
@@ -1185,6 +1225,36 @@ void AuditManagerClient::GetSettingsAsyncHelper(const GetSettingsRequest& reques
   handler(this, request, GetSettings(request), context);
 }
 
+ListAssessmentFrameworkShareRequestsOutcome AuditManagerClient::ListAssessmentFrameworkShareRequests(const ListAssessmentFrameworkShareRequestsRequest& request) const
+{
+  if (!request.RequestTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAssessmentFrameworkShareRequests", "Required field: RequestType, is not set");
+    return ListAssessmentFrameworkShareRequestsOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RequestType]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/assessmentFrameworkShareRequests");
+  return ListAssessmentFrameworkShareRequestsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAssessmentFrameworkShareRequestsOutcomeCallable AuditManagerClient::ListAssessmentFrameworkShareRequestsCallable(const ListAssessmentFrameworkShareRequestsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAssessmentFrameworkShareRequestsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssessmentFrameworkShareRequests(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AuditManagerClient::ListAssessmentFrameworkShareRequestsAsync(const ListAssessmentFrameworkShareRequestsRequest& request, const ListAssessmentFrameworkShareRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAssessmentFrameworkShareRequestsAsyncHelper( request, handler, context ); } );
+}
+
+void AuditManagerClient::ListAssessmentFrameworkShareRequestsAsyncHelper(const ListAssessmentFrameworkShareRequestsRequest& request, const ListAssessmentFrameworkShareRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAssessmentFrameworkShareRequests(request), context);
+}
+
 ListAssessmentFrameworksOutcome AuditManagerClient::ListAssessmentFrameworks(const ListAssessmentFrameworksRequest& request) const
 {
   if (!request.FrameworkTypeHasBeenSet())
@@ -1431,6 +1501,38 @@ void AuditManagerClient::RegisterOrganizationAdminAccountAsyncHelper(const Regis
   handler(this, request, RegisterOrganizationAdminAccount(request), context);
 }
 
+StartAssessmentFrameworkShareOutcome AuditManagerClient::StartAssessmentFrameworkShare(const StartAssessmentFrameworkShareRequest& request) const
+{
+  if (!request.FrameworkIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartAssessmentFrameworkShare", "Required field: FrameworkId, is not set");
+    return StartAssessmentFrameworkShareOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FrameworkId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/assessmentFrameworks/");
+  uri.AddPathSegment(request.GetFrameworkId());
+  uri.AddPathSegments("/shareRequests");
+  return StartAssessmentFrameworkShareOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartAssessmentFrameworkShareOutcomeCallable AuditManagerClient::StartAssessmentFrameworkShareCallable(const StartAssessmentFrameworkShareRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartAssessmentFrameworkShareOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartAssessmentFrameworkShare(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AuditManagerClient::StartAssessmentFrameworkShareAsync(const StartAssessmentFrameworkShareRequest& request, const StartAssessmentFrameworkShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartAssessmentFrameworkShareAsyncHelper( request, handler, context ); } );
+}
+
+void AuditManagerClient::StartAssessmentFrameworkShareAsyncHelper(const StartAssessmentFrameworkShareRequest& request, const StartAssessmentFrameworkShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartAssessmentFrameworkShare(request), context);
+}
+
 TagResourceOutcome AuditManagerClient::TagResource(const TagResourceRequest& request) const
 {
   if (!request.ResourceArnHasBeenSet())
@@ -1642,6 +1744,37 @@ void AuditManagerClient::UpdateAssessmentFrameworkAsync(const UpdateAssessmentFr
 void AuditManagerClient::UpdateAssessmentFrameworkAsyncHelper(const UpdateAssessmentFrameworkRequest& request, const UpdateAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateAssessmentFramework(request), context);
+}
+
+UpdateAssessmentFrameworkShareOutcome AuditManagerClient::UpdateAssessmentFrameworkShare(const UpdateAssessmentFrameworkShareRequest& request) const
+{
+  if (!request.RequestIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAssessmentFrameworkShare", "Required field: RequestId, is not set");
+    return UpdateAssessmentFrameworkShareOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RequestId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/assessmentFrameworkShareRequests/");
+  uri.AddPathSegment(request.GetRequestId());
+  return UpdateAssessmentFrameworkShareOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateAssessmentFrameworkShareOutcomeCallable AuditManagerClient::UpdateAssessmentFrameworkShareCallable(const UpdateAssessmentFrameworkShareRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAssessmentFrameworkShareOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAssessmentFrameworkShare(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AuditManagerClient::UpdateAssessmentFrameworkShareAsync(const UpdateAssessmentFrameworkShareRequest& request, const UpdateAssessmentFrameworkShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAssessmentFrameworkShareAsyncHelper( request, handler, context ); } );
+}
+
+void AuditManagerClient::UpdateAssessmentFrameworkShareAsyncHelper(const UpdateAssessmentFrameworkShareRequest& request, const UpdateAssessmentFrameworkShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateAssessmentFrameworkShare(request), context);
 }
 
 UpdateAssessmentStatusOutcome AuditManagerClient::UpdateAssessmentStatus(const UpdateAssessmentStatusRequest& request) const

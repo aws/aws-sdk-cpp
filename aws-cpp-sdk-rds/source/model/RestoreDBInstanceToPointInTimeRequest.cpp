@@ -56,7 +56,8 @@ RestoreDBInstanceToPointInTimeRequest::RestoreDBInstanceToPointInTimeRequest() :
     m_maxAllocatedStorageHasBeenSet(false),
     m_sourceDBInstanceAutomatedBackupsArnHasBeenSet(false),
     m_enableCustomerOwnedIp(false),
-    m_enableCustomerOwnedIpHasBeenSet(false)
+    m_enableCustomerOwnedIpHasBeenSet(false),
+    m_customIamInstanceProfileHasBeenSet(false)
 {
 }
 
@@ -254,6 +255,11 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
   if(m_enableCustomerOwnedIpHasBeenSet)
   {
     ss << "EnableCustomerOwnedIp=" << std::boolalpha << m_enableCustomerOwnedIp << "&";
+  }
+
+  if(m_customIamInstanceProfileHasBeenSet)
+  {
+    ss << "CustomIamInstanceProfile=" << StringUtils::URLEncode(m_customIamInstanceProfile.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

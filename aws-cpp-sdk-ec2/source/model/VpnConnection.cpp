@@ -31,6 +31,9 @@ VpnConnection::VpnConnection() :
     m_vpnConnectionIdHasBeenSet(false),
     m_vpnGatewayIdHasBeenSet(false),
     m_transitGatewayIdHasBeenSet(false),
+    m_coreNetworkArnHasBeenSet(false),
+    m_coreNetworkAttachmentArnHasBeenSet(false),
+    m_gatewayAssociationStateHasBeenSet(false),
     m_optionsHasBeenSet(false),
     m_routesHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -49,6 +52,9 @@ VpnConnection::VpnConnection(const XmlNode& xmlNode) :
     m_vpnConnectionIdHasBeenSet(false),
     m_vpnGatewayIdHasBeenSet(false),
     m_transitGatewayIdHasBeenSet(false),
+    m_coreNetworkArnHasBeenSet(false),
+    m_coreNetworkAttachmentArnHasBeenSet(false),
+    m_gatewayAssociationStateHasBeenSet(false),
     m_optionsHasBeenSet(false),
     m_routesHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -110,6 +116,24 @@ VpnConnection& VpnConnection::operator =(const XmlNode& xmlNode)
     {
       m_transitGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayIdNode.GetText());
       m_transitGatewayIdHasBeenSet = true;
+    }
+    XmlNode coreNetworkArnNode = resultNode.FirstChild("coreNetworkArn");
+    if(!coreNetworkArnNode.IsNull())
+    {
+      m_coreNetworkArn = Aws::Utils::Xml::DecodeEscapedXmlText(coreNetworkArnNode.GetText());
+      m_coreNetworkArnHasBeenSet = true;
+    }
+    XmlNode coreNetworkAttachmentArnNode = resultNode.FirstChild("coreNetworkAttachmentArn");
+    if(!coreNetworkAttachmentArnNode.IsNull())
+    {
+      m_coreNetworkAttachmentArn = Aws::Utils::Xml::DecodeEscapedXmlText(coreNetworkAttachmentArnNode.GetText());
+      m_coreNetworkAttachmentArnHasBeenSet = true;
+    }
+    XmlNode gatewayAssociationStateNode = resultNode.FirstChild("gatewayAssociationState");
+    if(!gatewayAssociationStateNode.IsNull())
+    {
+      m_gatewayAssociationState = Aws::Utils::Xml::DecodeEscapedXmlText(gatewayAssociationStateNode.GetText());
+      m_gatewayAssociationStateHasBeenSet = true;
     }
     XmlNode optionsNode = resultNode.FirstChild("options");
     if(!optionsNode.IsNull())
@@ -200,6 +224,21 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".TransitGatewayId=" << StringUtils::URLEncode(m_transitGatewayId.c_str()) << "&";
   }
 
+  if(m_coreNetworkArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CoreNetworkArn=" << StringUtils::URLEncode(m_coreNetworkArn.c_str()) << "&";
+  }
+
+  if(m_coreNetworkAttachmentArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CoreNetworkAttachmentArn=" << StringUtils::URLEncode(m_coreNetworkAttachmentArn.c_str()) << "&";
+  }
+
+  if(m_gatewayAssociationStateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".GatewayAssociationState=" << StringUtils::URLEncode(m_gatewayAssociationState.c_str()) << "&";
+  }
+
   if(m_optionsHasBeenSet)
   {
       Aws::StringStream optionsLocationAndMemberSs;
@@ -275,6 +314,18 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_transitGatewayIdHasBeenSet)
   {
       oStream << location << ".TransitGatewayId=" << StringUtils::URLEncode(m_transitGatewayId.c_str()) << "&";
+  }
+  if(m_coreNetworkArnHasBeenSet)
+  {
+      oStream << location << ".CoreNetworkArn=" << StringUtils::URLEncode(m_coreNetworkArn.c_str()) << "&";
+  }
+  if(m_coreNetworkAttachmentArnHasBeenSet)
+  {
+      oStream << location << ".CoreNetworkAttachmentArn=" << StringUtils::URLEncode(m_coreNetworkAttachmentArn.c_str()) << "&";
+  }
+  if(m_gatewayAssociationStateHasBeenSet)
+  {
+      oStream << location << ".GatewayAssociationState=" << StringUtils::URLEncode(m_gatewayAssociationState.c_str()) << "&";
   }
   if(m_optionsHasBeenSet)
   {

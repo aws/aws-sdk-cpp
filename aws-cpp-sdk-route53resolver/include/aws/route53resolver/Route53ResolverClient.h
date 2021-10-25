@@ -36,6 +36,7 @@
 #include <aws/route53resolver/model/GetFirewallRuleGroupResult.h>
 #include <aws/route53resolver/model/GetFirewallRuleGroupAssociationResult.h>
 #include <aws/route53resolver/model/GetFirewallRuleGroupPolicyResult.h>
+#include <aws/route53resolver/model/GetResolverConfigResult.h>
 #include <aws/route53resolver/model/GetResolverDnssecConfigResult.h>
 #include <aws/route53resolver/model/GetResolverEndpointResult.h>
 #include <aws/route53resolver/model/GetResolverQueryLogConfigResult.h>
@@ -51,6 +52,7 @@
 #include <aws/route53resolver/model/ListFirewallRuleGroupAssociationsResult.h>
 #include <aws/route53resolver/model/ListFirewallRuleGroupsResult.h>
 #include <aws/route53resolver/model/ListFirewallRulesResult.h>
+#include <aws/route53resolver/model/ListResolverConfigsResult.h>
 #include <aws/route53resolver/model/ListResolverDnssecConfigsResult.h>
 #include <aws/route53resolver/model/ListResolverEndpointIpAddressesResult.h>
 #include <aws/route53resolver/model/ListResolverEndpointsResult.h>
@@ -68,6 +70,7 @@
 #include <aws/route53resolver/model/UpdateFirewallDomainsResult.h>
 #include <aws/route53resolver/model/UpdateFirewallRuleResult.h>
 #include <aws/route53resolver/model/UpdateFirewallRuleGroupAssociationResult.h>
+#include <aws/route53resolver/model/UpdateResolverConfigResult.h>
 #include <aws/route53resolver/model/UpdateResolverDnssecConfigResult.h>
 #include <aws/route53resolver/model/UpdateResolverEndpointResult.h>
 #include <aws/route53resolver/model/UpdateResolverRuleResult.h>
@@ -135,6 +138,7 @@ namespace Model
         class GetFirewallRuleGroupRequest;
         class GetFirewallRuleGroupAssociationRequest;
         class GetFirewallRuleGroupPolicyRequest;
+        class GetResolverConfigRequest;
         class GetResolverDnssecConfigRequest;
         class GetResolverEndpointRequest;
         class GetResolverQueryLogConfigRequest;
@@ -150,6 +154,7 @@ namespace Model
         class ListFirewallRuleGroupAssociationsRequest;
         class ListFirewallRuleGroupsRequest;
         class ListFirewallRulesRequest;
+        class ListResolverConfigsRequest;
         class ListResolverDnssecConfigsRequest;
         class ListResolverEndpointIpAddressesRequest;
         class ListResolverEndpointsRequest;
@@ -167,6 +172,7 @@ namespace Model
         class UpdateFirewallDomainsRequest;
         class UpdateFirewallRuleRequest;
         class UpdateFirewallRuleGroupAssociationRequest;
+        class UpdateResolverConfigRequest;
         class UpdateResolverDnssecConfigRequest;
         class UpdateResolverEndpointRequest;
         class UpdateResolverRuleRequest;
@@ -196,6 +202,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetFirewallRuleGroupResult, Route53ResolverError> GetFirewallRuleGroupOutcome;
         typedef Aws::Utils::Outcome<GetFirewallRuleGroupAssociationResult, Route53ResolverError> GetFirewallRuleGroupAssociationOutcome;
         typedef Aws::Utils::Outcome<GetFirewallRuleGroupPolicyResult, Route53ResolverError> GetFirewallRuleGroupPolicyOutcome;
+        typedef Aws::Utils::Outcome<GetResolverConfigResult, Route53ResolverError> GetResolverConfigOutcome;
         typedef Aws::Utils::Outcome<GetResolverDnssecConfigResult, Route53ResolverError> GetResolverDnssecConfigOutcome;
         typedef Aws::Utils::Outcome<GetResolverEndpointResult, Route53ResolverError> GetResolverEndpointOutcome;
         typedef Aws::Utils::Outcome<GetResolverQueryLogConfigResult, Route53ResolverError> GetResolverQueryLogConfigOutcome;
@@ -211,6 +218,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListFirewallRuleGroupAssociationsResult, Route53ResolverError> ListFirewallRuleGroupAssociationsOutcome;
         typedef Aws::Utils::Outcome<ListFirewallRuleGroupsResult, Route53ResolverError> ListFirewallRuleGroupsOutcome;
         typedef Aws::Utils::Outcome<ListFirewallRulesResult, Route53ResolverError> ListFirewallRulesOutcome;
+        typedef Aws::Utils::Outcome<ListResolverConfigsResult, Route53ResolverError> ListResolverConfigsOutcome;
         typedef Aws::Utils::Outcome<ListResolverDnssecConfigsResult, Route53ResolverError> ListResolverDnssecConfigsOutcome;
         typedef Aws::Utils::Outcome<ListResolverEndpointIpAddressesResult, Route53ResolverError> ListResolverEndpointIpAddressesOutcome;
         typedef Aws::Utils::Outcome<ListResolverEndpointsResult, Route53ResolverError> ListResolverEndpointsOutcome;
@@ -228,6 +236,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateFirewallDomainsResult, Route53ResolverError> UpdateFirewallDomainsOutcome;
         typedef Aws::Utils::Outcome<UpdateFirewallRuleResult, Route53ResolverError> UpdateFirewallRuleOutcome;
         typedef Aws::Utils::Outcome<UpdateFirewallRuleGroupAssociationResult, Route53ResolverError> UpdateFirewallRuleGroupAssociationOutcome;
+        typedef Aws::Utils::Outcome<UpdateResolverConfigResult, Route53ResolverError> UpdateResolverConfigOutcome;
         typedef Aws::Utils::Outcome<UpdateResolverDnssecConfigResult, Route53ResolverError> UpdateResolverDnssecConfigOutcome;
         typedef Aws::Utils::Outcome<UpdateResolverEndpointResult, Route53ResolverError> UpdateResolverEndpointOutcome;
         typedef Aws::Utils::Outcome<UpdateResolverRuleResult, Route53ResolverError> UpdateResolverRuleOutcome;
@@ -257,6 +266,7 @@ namespace Model
         typedef std::future<GetFirewallRuleGroupOutcome> GetFirewallRuleGroupOutcomeCallable;
         typedef std::future<GetFirewallRuleGroupAssociationOutcome> GetFirewallRuleGroupAssociationOutcomeCallable;
         typedef std::future<GetFirewallRuleGroupPolicyOutcome> GetFirewallRuleGroupPolicyOutcomeCallable;
+        typedef std::future<GetResolverConfigOutcome> GetResolverConfigOutcomeCallable;
         typedef std::future<GetResolverDnssecConfigOutcome> GetResolverDnssecConfigOutcomeCallable;
         typedef std::future<GetResolverEndpointOutcome> GetResolverEndpointOutcomeCallable;
         typedef std::future<GetResolverQueryLogConfigOutcome> GetResolverQueryLogConfigOutcomeCallable;
@@ -272,6 +282,7 @@ namespace Model
         typedef std::future<ListFirewallRuleGroupAssociationsOutcome> ListFirewallRuleGroupAssociationsOutcomeCallable;
         typedef std::future<ListFirewallRuleGroupsOutcome> ListFirewallRuleGroupsOutcomeCallable;
         typedef std::future<ListFirewallRulesOutcome> ListFirewallRulesOutcomeCallable;
+        typedef std::future<ListResolverConfigsOutcome> ListResolverConfigsOutcomeCallable;
         typedef std::future<ListResolverDnssecConfigsOutcome> ListResolverDnssecConfigsOutcomeCallable;
         typedef std::future<ListResolverEndpointIpAddressesOutcome> ListResolverEndpointIpAddressesOutcomeCallable;
         typedef std::future<ListResolverEndpointsOutcome> ListResolverEndpointsOutcomeCallable;
@@ -289,6 +300,7 @@ namespace Model
         typedef std::future<UpdateFirewallDomainsOutcome> UpdateFirewallDomainsOutcomeCallable;
         typedef std::future<UpdateFirewallRuleOutcome> UpdateFirewallRuleOutcomeCallable;
         typedef std::future<UpdateFirewallRuleGroupAssociationOutcome> UpdateFirewallRuleGroupAssociationOutcomeCallable;
+        typedef std::future<UpdateResolverConfigOutcome> UpdateResolverConfigOutcomeCallable;
         typedef std::future<UpdateResolverDnssecConfigOutcome> UpdateResolverDnssecConfigOutcomeCallable;
         typedef std::future<UpdateResolverEndpointOutcome> UpdateResolverEndpointOutcomeCallable;
         typedef std::future<UpdateResolverRuleOutcome> UpdateResolverRuleOutcomeCallable;
@@ -321,6 +333,7 @@ namespace Model
     typedef std::function<void(const Route53ResolverClient*, const Model::GetFirewallRuleGroupRequest&, const Model::GetFirewallRuleGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFirewallRuleGroupResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::GetFirewallRuleGroupAssociationRequest&, const Model::GetFirewallRuleGroupAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFirewallRuleGroupAssociationResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::GetFirewallRuleGroupPolicyRequest&, const Model::GetFirewallRuleGroupPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFirewallRuleGroupPolicyResponseReceivedHandler;
+    typedef std::function<void(const Route53ResolverClient*, const Model::GetResolverConfigRequest&, const Model::GetResolverConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResolverConfigResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::GetResolverDnssecConfigRequest&, const Model::GetResolverDnssecConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResolverDnssecConfigResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::GetResolverEndpointRequest&, const Model::GetResolverEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResolverEndpointResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::GetResolverQueryLogConfigRequest&, const Model::GetResolverQueryLogConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResolverQueryLogConfigResponseReceivedHandler;
@@ -336,6 +349,7 @@ namespace Model
     typedef std::function<void(const Route53ResolverClient*, const Model::ListFirewallRuleGroupAssociationsRequest&, const Model::ListFirewallRuleGroupAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFirewallRuleGroupAssociationsResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::ListFirewallRuleGroupsRequest&, const Model::ListFirewallRuleGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFirewallRuleGroupsResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::ListFirewallRulesRequest&, const Model::ListFirewallRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFirewallRulesResponseReceivedHandler;
+    typedef std::function<void(const Route53ResolverClient*, const Model::ListResolverConfigsRequest&, const Model::ListResolverConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResolverConfigsResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::ListResolverDnssecConfigsRequest&, const Model::ListResolverDnssecConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResolverDnssecConfigsResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::ListResolverEndpointIpAddressesRequest&, const Model::ListResolverEndpointIpAddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResolverEndpointIpAddressesResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::ListResolverEndpointsRequest&, const Model::ListResolverEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResolverEndpointsResponseReceivedHandler;
@@ -353,6 +367,7 @@ namespace Model
     typedef std::function<void(const Route53ResolverClient*, const Model::UpdateFirewallDomainsRequest&, const Model::UpdateFirewallDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFirewallDomainsResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::UpdateFirewallRuleRequest&, const Model::UpdateFirewallRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFirewallRuleResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::UpdateFirewallRuleGroupAssociationRequest&, const Model::UpdateFirewallRuleGroupAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFirewallRuleGroupAssociationResponseReceivedHandler;
+    typedef std::function<void(const Route53ResolverClient*, const Model::UpdateResolverConfigRequest&, const Model::UpdateResolverConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResolverConfigResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::UpdateResolverDnssecConfigRequest&, const Model::UpdateResolverDnssecConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResolverDnssecConfigResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::UpdateResolverEndpointRequest&, const Model::UpdateResolverEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResolverEndpointResponseReceivedHandler;
     typedef std::function<void(const Route53ResolverClient*, const Model::UpdateResolverRuleRequest&, const Model::UpdateResolverRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResolverRuleResponseReceivedHandler;
@@ -1314,6 +1329,34 @@ namespace Model
         virtual void GetFirewallRuleGroupPolicyAsync(const Model::GetFirewallRuleGroupPolicyRequest& request, const GetFirewallRuleGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the behavior configuration of Route 53 Resolver behavior for a
+         * single VPC from Amazon Virtual Private Cloud.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResolverConfigOutcome GetResolverConfig(const Model::GetResolverConfigRequest& request) const;
+
+        /**
+         * <p>Retrieves the behavior configuration of Route 53 Resolver behavior for a
+         * single VPC from Amazon Virtual Private Cloud.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetResolverConfigOutcomeCallable GetResolverConfigCallable(const Model::GetResolverConfigRequest& request) const;
+
+        /**
+         * <p>Retrieves the behavior configuration of Route 53 Resolver behavior for a
+         * single VPC from Amazon Virtual Private Cloud.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetResolverConfigAsync(const Model::GetResolverConfigRequest& request, const GetResolverConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets DNSSEC validation information for a specified resource.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverDnssecConfig">AWS
@@ -1827,6 +1870,37 @@ namespace Model
         virtual void ListFirewallRulesAsync(const Model::ListFirewallRulesRequest& request, const ListFirewallRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the Resolver configurations that you have defined. Route 53
+         * Resolver uses the configurations to manage DNS resolution behavior for your
+         * VPCs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverConfigs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListResolverConfigsOutcome ListResolverConfigs(const Model::ListResolverConfigsRequest& request) const;
+
+        /**
+         * <p>Retrieves the Resolver configurations that you have defined. Route 53
+         * Resolver uses the configurations to manage DNS resolution behavior for your
+         * VPCs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverConfigs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListResolverConfigsOutcomeCallable ListResolverConfigsCallable(const Model::ListResolverConfigsRequest& request) const;
+
+        /**
+         * <p>Retrieves the Resolver configurations that you have defined. Route 53
+         * Resolver uses the configurations to manage DNS resolution behavior for your
+         * VPCs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverConfigs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListResolverConfigsAsync(const Model::ListResolverConfigsRequest& request, const ListResolverConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the configurations for DNSSEC validation that are associated with the
          * current Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverDnssecConfigs">AWS
@@ -2321,6 +2395,34 @@ namespace Model
         virtual void UpdateFirewallRuleGroupAssociationAsync(const Model::UpdateFirewallRuleGroupAssociationRequest& request, const UpdateFirewallRuleGroupAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the behavior configuration of Route 53 Resolver behavior for a single
+         * VPC from Amazon Virtual Private Cloud.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateResolverConfigOutcome UpdateResolverConfig(const Model::UpdateResolverConfigRequest& request) const;
+
+        /**
+         * <p>Updates the behavior configuration of Route 53 Resolver behavior for a single
+         * VPC from Amazon Virtual Private Cloud.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateResolverConfigOutcomeCallable UpdateResolverConfigCallable(const Model::UpdateResolverConfigRequest& request) const;
+
+        /**
+         * <p>Updates the behavior configuration of Route 53 Resolver behavior for a single
+         * VPC from Amazon Virtual Private Cloud.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateResolverConfigAsync(const Model::UpdateResolverConfigRequest& request, const UpdateResolverConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates an existing DNSSEC validation configuration. If there is no existing
          * DNSSEC validation configuration, one is created.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverDnssecConfig">AWS
@@ -2436,6 +2538,7 @@ namespace Model
         void GetFirewallRuleGroupAsyncHelper(const Model::GetFirewallRuleGroupRequest& request, const GetFirewallRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFirewallRuleGroupAssociationAsyncHelper(const Model::GetFirewallRuleGroupAssociationRequest& request, const GetFirewallRuleGroupAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFirewallRuleGroupPolicyAsyncHelper(const Model::GetFirewallRuleGroupPolicyRequest& request, const GetFirewallRuleGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetResolverConfigAsyncHelper(const Model::GetResolverConfigRequest& request, const GetResolverConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResolverDnssecConfigAsyncHelper(const Model::GetResolverDnssecConfigRequest& request, const GetResolverDnssecConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResolverEndpointAsyncHelper(const Model::GetResolverEndpointRequest& request, const GetResolverEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResolverQueryLogConfigAsyncHelper(const Model::GetResolverQueryLogConfigRequest& request, const GetResolverQueryLogConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2451,6 +2554,7 @@ namespace Model
         void ListFirewallRuleGroupAssociationsAsyncHelper(const Model::ListFirewallRuleGroupAssociationsRequest& request, const ListFirewallRuleGroupAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFirewallRuleGroupsAsyncHelper(const Model::ListFirewallRuleGroupsRequest& request, const ListFirewallRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFirewallRulesAsyncHelper(const Model::ListFirewallRulesRequest& request, const ListFirewallRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListResolverConfigsAsyncHelper(const Model::ListResolverConfigsRequest& request, const ListResolverConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListResolverDnssecConfigsAsyncHelper(const Model::ListResolverDnssecConfigsRequest& request, const ListResolverDnssecConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListResolverEndpointIpAddressesAsyncHelper(const Model::ListResolverEndpointIpAddressesRequest& request, const ListResolverEndpointIpAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListResolverEndpointsAsyncHelper(const Model::ListResolverEndpointsRequest& request, const ListResolverEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2468,6 +2572,7 @@ namespace Model
         void UpdateFirewallDomainsAsyncHelper(const Model::UpdateFirewallDomainsRequest& request, const UpdateFirewallDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFirewallRuleAsyncHelper(const Model::UpdateFirewallRuleRequest& request, const UpdateFirewallRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFirewallRuleGroupAssociationAsyncHelper(const Model::UpdateFirewallRuleGroupAssociationRequest& request, const UpdateFirewallRuleGroupAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateResolverConfigAsyncHelper(const Model::UpdateResolverConfigRequest& request, const UpdateResolverConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateResolverDnssecConfigAsyncHelper(const Model::UpdateResolverDnssecConfigRequest& request, const UpdateResolverDnssecConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateResolverEndpointAsyncHelper(const Model::UpdateResolverEndpointRequest& request, const UpdateResolverEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateResolverRuleAsyncHelper(const Model::UpdateResolverRuleRequest& request, const UpdateResolverRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

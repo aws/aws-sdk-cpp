@@ -26,10 +26,11 @@ namespace Model
 {
 
   /**
-   * <p> A finalized document generated from an Audit Manager assessment. These
-   * reports summarize the relevant evidence collected for your audit, and link to
-   * the relevant evidence folders which are named and organized according to the
-   * controls specified in your assessment. </p><p><h3>See Also:</h3>   <a
+   * <p> A finalized document that's generated from an Audit Manager assessment.
+   * These reports summarize the relevant evidence that was collected for your audit,
+   * and link to the relevant evidence folders. These evidence folders are named and
+   * organized according to the controls that are specified in your assessment.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/AssessmentReport">AWS
    * API Reference</a></p>
    */
@@ -43,83 +44,83 @@ namespace Model
 
 
     /**
-     * <p> The unique identifier for the specified assessment report. </p>
+     * <p> The unique identifier for the assessment report. </p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p> The unique identifier for the specified assessment report. </p>
+     * <p> The unique identifier for the assessment report. </p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p> The unique identifier for the specified assessment report. </p>
+     * <p> The unique identifier for the assessment report. </p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p> The unique identifier for the specified assessment report. </p>
+     * <p> The unique identifier for the assessment report. </p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p> The unique identifier for the specified assessment report. </p>
+     * <p> The unique identifier for the assessment report. </p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p> The unique identifier for the specified assessment report. </p>
+     * <p> The unique identifier for the assessment report. </p>
      */
     inline AssessmentReport& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p> The unique identifier for the specified assessment report. </p>
+     * <p> The unique identifier for the assessment report. </p>
      */
     inline AssessmentReport& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p> The unique identifier for the specified assessment report. </p>
+     * <p> The unique identifier for the assessment report. </p>
      */
     inline AssessmentReport& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p> The name given to the assessment report. </p>
+     * <p> The name that's given to the assessment report. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p> The name given to the assessment report. </p>
+     * <p> The name that's given to the assessment report. </p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p> The name given to the assessment report. </p>
+     * <p> The name that's given to the assessment report. </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p> The name given to the assessment report. </p>
+     * <p> The name that's given to the assessment report. </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p> The name given to the assessment report. </p>
+     * <p> The name that's given to the assessment report. </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p> The name given to the assessment report. </p>
+     * <p> The name that's given to the assessment report. </p>
      */
     inline AssessmentReport& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p> The name given to the assessment report. </p>
+     * <p> The name that's given to the assessment report. </p>
      */
     inline AssessmentReport& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p> The name given to the assessment report. </p>
+     * <p> The name that's given to the assessment report. </p>
      */
     inline AssessmentReport& WithName(const char* value) { SetName(value); return *this;}
 

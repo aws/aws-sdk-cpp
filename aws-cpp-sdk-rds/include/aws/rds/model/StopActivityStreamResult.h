@@ -37,56 +37,49 @@ namespace Model
     /**
      * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
      * the database activity stream.</p> <p>The Amazon Web Services KMS key identifier
-     * is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
-     * customer master key (CMK).</p>
+     * is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
      * the database activity stream.</p> <p>The Amazon Web Services KMS key identifier
-     * is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
-     * customer master key (CMK).</p>
+     * is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
      * the database activity stream.</p> <p>The Amazon Web Services KMS key identifier
-     * is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
-     * customer master key (CMK).</p>
+     * is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
 
     /**
      * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
      * the database activity stream.</p> <p>The Amazon Web Services KMS key identifier
-     * is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
-     * customer master key (CMK).</p>
+     * is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
 
     /**
      * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
      * the database activity stream.</p> <p>The Amazon Web Services KMS key identifier
-     * is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
-     * customer master key (CMK).</p>
+     * is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline StopActivityStreamResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
      * the database activity stream.</p> <p>The Amazon Web Services KMS key identifier
-     * is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
-     * customer master key (CMK).</p>
+     * is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline StopActivityStreamResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
      * the database activity stream.</p> <p>The Amazon Web Services KMS key identifier
-     * is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
-     * customer master key (CMK).</p>
+     * is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline StopActivityStreamResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

@@ -129,8 +129,11 @@ namespace Model
      * <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.</p>
      * </li> <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the
      * snapshot exported to Amazon S3</p> </li> <li> <p> <code>status</code> - The
-     * status of the export task. Must be lowercase, for example,
-     * <code>complete</code>.</p> </li> </ul>
+     * status of the export task. Must be lowercase. Valid statuses are the
+     * following:</p> <ul> <li> <p> <code>canceled</code> </p> </li> <li> <p>
+     * <code>canceling</code> </p> </li> <li> <p> <code>complete</code> </p> </li> <li>
+     * <p> <code>failed</code> </p> </li> <li> <p> <code>starting</code> </p> </li>
+     * </ul> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -143,8 +146,11 @@ namespace Model
      * <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.</p>
      * </li> <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the
      * snapshot exported to Amazon S3</p> </li> <li> <p> <code>status</code> - The
-     * status of the export task. Must be lowercase, for example,
-     * <code>complete</code>.</p> </li> </ul>
+     * status of the export task. Must be lowercase. Valid statuses are the
+     * following:</p> <ul> <li> <p> <code>canceled</code> </p> </li> <li> <p>
+     * <code>canceling</code> </p> </li> <li> <p> <code>complete</code> </p> </li> <li>
+     * <p> <code>failed</code> </p> </li> <li> <p> <code>starting</code> </p> </li>
+     * </ul> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -157,8 +163,11 @@ namespace Model
      * <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.</p>
      * </li> <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the
      * snapshot exported to Amazon S3</p> </li> <li> <p> <code>status</code> - The
-     * status of the export task. Must be lowercase, for example,
-     * <code>complete</code>.</p> </li> </ul>
+     * status of the export task. Must be lowercase. Valid statuses are the
+     * following:</p> <ul> <li> <p> <code>canceled</code> </p> </li> <li> <p>
+     * <code>canceling</code> </p> </li> <li> <p> <code>complete</code> </p> </li> <li>
+     * <p> <code>failed</code> </p> </li> <li> <p> <code>starting</code> </p> </li>
+     * </ul> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -171,8 +180,11 @@ namespace Model
      * <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.</p>
      * </li> <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the
      * snapshot exported to Amazon S3</p> </li> <li> <p> <code>status</code> - The
-     * status of the export task. Must be lowercase, for example,
-     * <code>complete</code>.</p> </li> </ul>
+     * status of the export task. Must be lowercase. Valid statuses are the
+     * following:</p> <ul> <li> <p> <code>canceled</code> </p> </li> <li> <p>
+     * <code>canceling</code> </p> </li> <li> <p> <code>complete</code> </p> </li> <li>
+     * <p> <code>failed</code> </p> </li> <li> <p> <code>starting</code> </p> </li>
+     * </ul> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -185,8 +197,11 @@ namespace Model
      * <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.</p>
      * </li> <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the
      * snapshot exported to Amazon S3</p> </li> <li> <p> <code>status</code> - The
-     * status of the export task. Must be lowercase, for example,
-     * <code>complete</code>.</p> </li> </ul>
+     * status of the export task. Must be lowercase. Valid statuses are the
+     * following:</p> <ul> <li> <p> <code>canceled</code> </p> </li> <li> <p>
+     * <code>canceling</code> </p> </li> <li> <p> <code>complete</code> </p> </li> <li>
+     * <p> <code>failed</code> </p> </li> <li> <p> <code>starting</code> </p> </li>
+     * </ul> </li> </ul>
      */
     inline DescribeExportTasksRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -199,8 +214,11 @@ namespace Model
      * <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.</p>
      * </li> <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the
      * snapshot exported to Amazon S3</p> </li> <li> <p> <code>status</code> - The
-     * status of the export task. Must be lowercase, for example,
-     * <code>complete</code>.</p> </li> </ul>
+     * status of the export task. Must be lowercase. Valid statuses are the
+     * following:</p> <ul> <li> <p> <code>canceled</code> </p> </li> <li> <p>
+     * <code>canceling</code> </p> </li> <li> <p> <code>complete</code> </p> </li> <li>
+     * <p> <code>failed</code> </p> </li> <li> <p> <code>starting</code> </p> </li>
+     * </ul> </li> </ul>
      */
     inline DescribeExportTasksRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -213,8 +231,11 @@ namespace Model
      * <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.</p>
      * </li> <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the
      * snapshot exported to Amazon S3</p> </li> <li> <p> <code>status</code> - The
-     * status of the export task. Must be lowercase, for example,
-     * <code>complete</code>.</p> </li> </ul>
+     * status of the export task. Must be lowercase. Valid statuses are the
+     * following:</p> <ul> <li> <p> <code>canceled</code> </p> </li> <li> <p>
+     * <code>canceling</code> </p> </li> <li> <p> <code>complete</code> </p> </li> <li>
+     * <p> <code>failed</code> </p> </li> <li> <p> <code>starting</code> </p> </li>
+     * </ul> </li> </ul>
      */
     inline DescribeExportTasksRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -227,8 +248,11 @@ namespace Model
      * <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.</p>
      * </li> <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the
      * snapshot exported to Amazon S3</p> </li> <li> <p> <code>status</code> - The
-     * status of the export task. Must be lowercase, for example,
-     * <code>complete</code>.</p> </li> </ul>
+     * status of the export task. Must be lowercase. Valid statuses are the
+     * following:</p> <ul> <li> <p> <code>canceled</code> </p> </li> <li> <p>
+     * <code>canceling</code> </p> </li> <li> <p> <code>complete</code> </p> </li> <li>
+     * <p> <code>failed</code> </p> </li> <li> <p> <code>starting</code> </p> </li>
+     * </ul> </li> </ul>
      */
     inline DescribeExportTasksRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

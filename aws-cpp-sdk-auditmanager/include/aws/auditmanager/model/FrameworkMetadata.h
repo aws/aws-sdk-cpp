@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p> The metadata of a framework, such as the name, ID, description, and so on.
+   * <p> The metadata of a framework, such as the name, ID, or description.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/FrameworkMetadata">AWS
    * API Reference</a></p>
@@ -121,91 +121,91 @@ namespace Model
 
 
     /**
-     * <p> The logo associated with the framework. </p>
+     * <p> The logo that's associated with the framework. </p>
      */
     inline const Aws::String& GetLogo() const{ return m_logo; }
 
     /**
-     * <p> The logo associated with the framework. </p>
+     * <p> The logo that's associated with the framework. </p>
      */
     inline bool LogoHasBeenSet() const { return m_logoHasBeenSet; }
 
     /**
-     * <p> The logo associated with the framework. </p>
+     * <p> The logo that's associated with the framework. </p>
      */
     inline void SetLogo(const Aws::String& value) { m_logoHasBeenSet = true; m_logo = value; }
 
     /**
-     * <p> The logo associated with the framework. </p>
+     * <p> The logo that's associated with the framework. </p>
      */
     inline void SetLogo(Aws::String&& value) { m_logoHasBeenSet = true; m_logo = std::move(value); }
 
     /**
-     * <p> The logo associated with the framework. </p>
+     * <p> The logo that's associated with the framework. </p>
      */
     inline void SetLogo(const char* value) { m_logoHasBeenSet = true; m_logo.assign(value); }
 
     /**
-     * <p> The logo associated with the framework. </p>
+     * <p> The logo that's associated with the framework. </p>
      */
     inline FrameworkMetadata& WithLogo(const Aws::String& value) { SetLogo(value); return *this;}
 
     /**
-     * <p> The logo associated with the framework. </p>
+     * <p> The logo that's associated with the framework. </p>
      */
     inline FrameworkMetadata& WithLogo(Aws::String&& value) { SetLogo(std::move(value)); return *this;}
 
     /**
-     * <p> The logo associated with the framework. </p>
+     * <p> The logo that's associated with the framework. </p>
      */
     inline FrameworkMetadata& WithLogo(const char* value) { SetLogo(value); return *this;}
 
 
     /**
-     * <p> The compliance standard associated with the framework, such as PCI-DSS or
-     * HIPAA. </p>
+     * <p> The compliance standard that's associated with the framework. For example,
+     * this could be PCI DSS or HIPAA. </p>
      */
     inline const Aws::String& GetComplianceType() const{ return m_complianceType; }
 
     /**
-     * <p> The compliance standard associated with the framework, such as PCI-DSS or
-     * HIPAA. </p>
+     * <p> The compliance standard that's associated with the framework. For example,
+     * this could be PCI DSS or HIPAA. </p>
      */
     inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
 
     /**
-     * <p> The compliance standard associated with the framework, such as PCI-DSS or
-     * HIPAA. </p>
+     * <p> The compliance standard that's associated with the framework. For example,
+     * this could be PCI DSS or HIPAA. </p>
      */
     inline void SetComplianceType(const Aws::String& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
 
     /**
-     * <p> The compliance standard associated with the framework, such as PCI-DSS or
-     * HIPAA. </p>
+     * <p> The compliance standard that's associated with the framework. For example,
+     * this could be PCI DSS or HIPAA. </p>
      */
     inline void SetComplianceType(Aws::String&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::move(value); }
 
     /**
-     * <p> The compliance standard associated with the framework, such as PCI-DSS or
-     * HIPAA. </p>
+     * <p> The compliance standard that's associated with the framework. For example,
+     * this could be PCI DSS or HIPAA. </p>
      */
     inline void SetComplianceType(const char* value) { m_complianceTypeHasBeenSet = true; m_complianceType.assign(value); }
 
     /**
-     * <p> The compliance standard associated with the framework, such as PCI-DSS or
-     * HIPAA. </p>
+     * <p> The compliance standard that's associated with the framework. For example,
+     * this could be PCI DSS or HIPAA. </p>
      */
     inline FrameworkMetadata& WithComplianceType(const Aws::String& value) { SetComplianceType(value); return *this;}
 
     /**
-     * <p> The compliance standard associated with the framework, such as PCI-DSS or
-     * HIPAA. </p>
+     * <p> The compliance standard that's associated with the framework. For example,
+     * this could be PCI DSS or HIPAA. </p>
      */
     inline FrameworkMetadata& WithComplianceType(Aws::String&& value) { SetComplianceType(std::move(value)); return *this;}
 
     /**
-     * <p> The compliance standard associated with the framework, such as PCI-DSS or
-     * HIPAA. </p>
+     * <p> The compliance standard that's associated with the framework. For example,
+     * this could be PCI DSS or HIPAA. </p>
      */
     inline FrameworkMetadata& WithComplianceType(const char* value) { SetComplianceType(value); return *this;}
 

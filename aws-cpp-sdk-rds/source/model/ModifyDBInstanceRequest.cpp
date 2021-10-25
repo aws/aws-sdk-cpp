@@ -76,7 +76,11 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_replicaModeHasBeenSet(false),
     m_enableCustomerOwnedIp(false),
     m_enableCustomerOwnedIpHasBeenSet(false),
-    m_awsBackupRecoveryPointArnHasBeenSet(false)
+    m_awsBackupRecoveryPointArnHasBeenSet(false),
+    m_automationMode(AutomationMode::NOT_SET),
+    m_automationModeHasBeenSet(false),
+    m_resumeFullAutomationModeMinutes(0),
+    m_resumeFullAutomationModeMinutesHasBeenSet(false)
 {
 }
 
@@ -324,6 +328,16 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   if(m_awsBackupRecoveryPointArnHasBeenSet)
   {
     ss << "AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
+  }
+
+  if(m_automationModeHasBeenSet)
+  {
+    ss << "AutomationMode=" << AutomationModeMapper::GetNameForAutomationMode(m_automationMode) << "&";
+  }
+
+  if(m_resumeFullAutomationModeMinutesHasBeenSet)
+  {
+    ss << "ResumeFullAutomationModeMinutes=" << m_resumeFullAutomationModeMinutes << "&";
   }
 
   ss << "Version=2014-10-31";

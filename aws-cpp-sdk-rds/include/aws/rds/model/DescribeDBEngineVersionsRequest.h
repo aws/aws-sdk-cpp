@@ -426,7 +426,10 @@ namespace Model
      * engine version.</p> <p>If this parameter is enabled and the requested engine
      * supports the <code>CharacterSetName</code> parameter for
      * <code>CreateDBInstance</code>, the response includes a list of supported
-     * character sets for each engine version. </p>
+     * character sets for each engine version.</p> <p>For RDS Custom, the default is
+     * not to list supported character sets. If you set
+     * <code>ListSupportedCharacterSets</code> to <code>true</code>, RDS Custom returns
+     * no results. </p>
      */
     inline bool GetListSupportedCharacterSets() const{ return m_listSupportedCharacterSets; }
 
@@ -435,7 +438,10 @@ namespace Model
      * engine version.</p> <p>If this parameter is enabled and the requested engine
      * supports the <code>CharacterSetName</code> parameter for
      * <code>CreateDBInstance</code>, the response includes a list of supported
-     * character sets for each engine version. </p>
+     * character sets for each engine version.</p> <p>For RDS Custom, the default is
+     * not to list supported character sets. If you set
+     * <code>ListSupportedCharacterSets</code> to <code>true</code>, RDS Custom returns
+     * no results. </p>
      */
     inline bool ListSupportedCharacterSetsHasBeenSet() const { return m_listSupportedCharacterSetsHasBeenSet; }
 
@@ -444,7 +450,10 @@ namespace Model
      * engine version.</p> <p>If this parameter is enabled and the requested engine
      * supports the <code>CharacterSetName</code> parameter for
      * <code>CreateDBInstance</code>, the response includes a list of supported
-     * character sets for each engine version. </p>
+     * character sets for each engine version.</p> <p>For RDS Custom, the default is
+     * not to list supported character sets. If you set
+     * <code>ListSupportedCharacterSets</code> to <code>true</code>, RDS Custom returns
+     * no results. </p>
      */
     inline void SetListSupportedCharacterSets(bool value) { m_listSupportedCharacterSetsHasBeenSet = true; m_listSupportedCharacterSets = value; }
 
@@ -453,7 +462,10 @@ namespace Model
      * engine version.</p> <p>If this parameter is enabled and the requested engine
      * supports the <code>CharacterSetName</code> parameter for
      * <code>CreateDBInstance</code>, the response includes a list of supported
-     * character sets for each engine version. </p>
+     * character sets for each engine version.</p> <p>For RDS Custom, the default is
+     * not to list supported character sets. If you set
+     * <code>ListSupportedCharacterSets</code> to <code>true</code>, RDS Custom returns
+     * no results. </p>
      */
     inline DescribeDBEngineVersionsRequest& WithListSupportedCharacterSets(bool value) { SetListSupportedCharacterSets(value); return *this;}
 
@@ -463,7 +475,9 @@ namespace Model
      * engine version.</p> <p>If this parameter is enabled and the requested engine
      * supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>,
      * the response includes a list of supported time zones for each engine version.
-     * </p>
+     * </p> <p>For RDS Custom, the default is not to list supported time zones. If you
+     * set <code>ListSupportedTimezones</code> to <code>true</code>, RDS Custom returns
+     * no results. </p>
      */
     inline bool GetListSupportedTimezones() const{ return m_listSupportedTimezones; }
 
@@ -472,7 +486,9 @@ namespace Model
      * engine version.</p> <p>If this parameter is enabled and the requested engine
      * supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>,
      * the response includes a list of supported time zones for each engine version.
-     * </p>
+     * </p> <p>For RDS Custom, the default is not to list supported time zones. If you
+     * set <code>ListSupportedTimezones</code> to <code>true</code>, RDS Custom returns
+     * no results. </p>
      */
     inline bool ListSupportedTimezonesHasBeenSet() const { return m_listSupportedTimezonesHasBeenSet; }
 
@@ -481,7 +497,9 @@ namespace Model
      * engine version.</p> <p>If this parameter is enabled and the requested engine
      * supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>,
      * the response includes a list of supported time zones for each engine version.
-     * </p>
+     * </p> <p>For RDS Custom, the default is not to list supported time zones. If you
+     * set <code>ListSupportedTimezones</code> to <code>true</code>, RDS Custom returns
+     * no results. </p>
      */
     inline void SetListSupportedTimezones(bool value) { m_listSupportedTimezonesHasBeenSet = true; m_listSupportedTimezones = value; }
 
@@ -490,7 +508,9 @@ namespace Model
      * engine version.</p> <p>If this parameter is enabled and the requested engine
      * supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>,
      * the response includes a list of supported time zones for each engine version.
-     * </p>
+     * </p> <p>For RDS Custom, the default is not to list supported time zones. If you
+     * set <code>ListSupportedTimezones</code> to <code>true</code>, RDS Custom returns
+     * no results. </p>
      */
     inline DescribeDBEngineVersionsRequest& WithListSupportedTimezones(bool value) { SetListSupportedTimezones(value); return *this;}
 

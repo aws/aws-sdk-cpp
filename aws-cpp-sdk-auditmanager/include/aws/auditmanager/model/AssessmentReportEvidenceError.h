@@ -81,99 +81,99 @@ namespace Model
 
 
     /**
-     * <p> The error code returned by the <code>AssessmentReportEvidence</code> API.
+     * <p> The error code that the <code>AssessmentReportEvidence</code> API returned.
      * </p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
 
     /**
-     * <p> The error code returned by the <code>AssessmentReportEvidence</code> API.
+     * <p> The error code that the <code>AssessmentReportEvidence</code> API returned.
      * </p>
      */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
-     * <p> The error code returned by the <code>AssessmentReportEvidence</code> API.
+     * <p> The error code that the <code>AssessmentReportEvidence</code> API returned.
      * </p>
      */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
-     * <p> The error code returned by the <code>AssessmentReportEvidence</code> API.
+     * <p> The error code that the <code>AssessmentReportEvidence</code> API returned.
      * </p>
      */
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
-     * <p> The error code returned by the <code>AssessmentReportEvidence</code> API.
+     * <p> The error code that the <code>AssessmentReportEvidence</code> API returned.
      * </p>
      */
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
 
     /**
-     * <p> The error code returned by the <code>AssessmentReportEvidence</code> API.
+     * <p> The error code that the <code>AssessmentReportEvidence</code> API returned.
      * </p>
      */
     inline AssessmentReportEvidenceError& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
 
     /**
-     * <p> The error code returned by the <code>AssessmentReportEvidence</code> API.
+     * <p> The error code that the <code>AssessmentReportEvidence</code> API returned.
      * </p>
      */
     inline AssessmentReportEvidenceError& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
 
     /**
-     * <p> The error code returned by the <code>AssessmentReportEvidence</code> API.
+     * <p> The error code that the <code>AssessmentReportEvidence</code> API returned.
      * </p>
      */
     inline AssessmentReportEvidenceError& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
 
 
     /**
-     * <p> The error message returned by the <code>AssessmentReportEvidence</code> API.
-     * </p>
+     * <p> The error message that the <code>AssessmentReportEvidence</code> API
+     * returned. </p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
 
     /**
-     * <p> The error message returned by the <code>AssessmentReportEvidence</code> API.
-     * </p>
+     * <p> The error message that the <code>AssessmentReportEvidence</code> API
+     * returned. </p>
      */
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
-     * <p> The error message returned by the <code>AssessmentReportEvidence</code> API.
-     * </p>
+     * <p> The error message that the <code>AssessmentReportEvidence</code> API
+     * returned. </p>
      */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
 
     /**
-     * <p> The error message returned by the <code>AssessmentReportEvidence</code> API.
-     * </p>
+     * <p> The error message that the <code>AssessmentReportEvidence</code> API
+     * returned. </p>
      */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
 
     /**
-     * <p> The error message returned by the <code>AssessmentReportEvidence</code> API.
-     * </p>
+     * <p> The error message that the <code>AssessmentReportEvidence</code> API
+     * returned. </p>
      */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
 
     /**
-     * <p> The error message returned by the <code>AssessmentReportEvidence</code> API.
-     * </p>
+     * <p> The error message that the <code>AssessmentReportEvidence</code> API
+     * returned. </p>
      */
     inline AssessmentReportEvidenceError& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
 
     /**
-     * <p> The error message returned by the <code>AssessmentReportEvidence</code> API.
-     * </p>
+     * <p> The error message that the <code>AssessmentReportEvidence</code> API
+     * returned. </p>
      */
     inline AssessmentReportEvidenceError& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
     /**
-     * <p> The error message returned by the <code>AssessmentReportEvidence</code> API.
-     * </p>
+     * <p> The error message that the <code>AssessmentReportEvidence</code> API
+     * returned. </p>
      */
     inline AssessmentReportEvidenceError& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 

@@ -262,49 +262,57 @@ namespace Model
 
     /**
      * <p>The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model.</p>
+     * available offerings matching the specified license model.</p> <p>RDS Custom
+     * supports only the BYOL licensing model.</p>
      */
     inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
 
     /**
      * <p>The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model.</p>
+     * available offerings matching the specified license model.</p> <p>RDS Custom
+     * supports only the BYOL licensing model.</p>
      */
     inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
 
     /**
      * <p>The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model.</p>
+     * available offerings matching the specified license model.</p> <p>RDS Custom
+     * supports only the BYOL licensing model.</p>
      */
     inline void SetLicenseModel(const Aws::String& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
 
     /**
      * <p>The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model.</p>
+     * available offerings matching the specified license model.</p> <p>RDS Custom
+     * supports only the BYOL licensing model.</p>
      */
     inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = std::move(value); }
 
     /**
      * <p>The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model.</p>
+     * available offerings matching the specified license model.</p> <p>RDS Custom
+     * supports only the BYOL licensing model.</p>
      */
     inline void SetLicenseModel(const char* value) { m_licenseModelHasBeenSet = true; m_licenseModel.assign(value); }
 
     /**
      * <p>The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model.</p>
+     * available offerings matching the specified license model.</p> <p>RDS Custom
+     * supports only the BYOL licensing model.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithLicenseModel(const Aws::String& value) { SetLicenseModel(value); return *this;}
 
     /**
      * <p>The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model.</p>
+     * available offerings matching the specified license model.</p> <p>RDS Custom
+     * supports only the BYOL licensing model.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithLicenseModel(Aws::String&& value) { SetLicenseModel(std::move(value)); return *this;}
 
     /**
      * <p>The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model.</p>
+     * available offerings matching the specified license model.</p> <p>RDS Custom
+     * supports only the BYOL licensing model.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
 
@@ -313,7 +321,7 @@ namespace Model
      * <p>The Availability Zone group associated with a Local Zone. Specify this
      * parameter to retrieve available offerings for the Local Zones in the group.</p>
      * <p>Omit this parameter to show the available offerings in the specified Amazon
-     * Web Services Region.</p>
+     * Web Services Region.</p> <p> This setting doesn't apply to RDS Custom.</p>
      */
     inline const Aws::String& GetAvailabilityZoneGroup() const{ return m_availabilityZoneGroup; }
 
@@ -321,7 +329,7 @@ namespace Model
      * <p>The Availability Zone group associated with a Local Zone. Specify this
      * parameter to retrieve available offerings for the Local Zones in the group.</p>
      * <p>Omit this parameter to show the available offerings in the specified Amazon
-     * Web Services Region.</p>
+     * Web Services Region.</p> <p> This setting doesn't apply to RDS Custom.</p>
      */
     inline bool AvailabilityZoneGroupHasBeenSet() const { return m_availabilityZoneGroupHasBeenSet; }
 
@@ -329,7 +337,7 @@ namespace Model
      * <p>The Availability Zone group associated with a Local Zone. Specify this
      * parameter to retrieve available offerings for the Local Zones in the group.</p>
      * <p>Omit this parameter to show the available offerings in the specified Amazon
-     * Web Services Region.</p>
+     * Web Services Region.</p> <p> This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetAvailabilityZoneGroup(const Aws::String& value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup = value; }
 
@@ -337,7 +345,7 @@ namespace Model
      * <p>The Availability Zone group associated with a Local Zone. Specify this
      * parameter to retrieve available offerings for the Local Zones in the group.</p>
      * <p>Omit this parameter to show the available offerings in the specified Amazon
-     * Web Services Region.</p>
+     * Web Services Region.</p> <p> This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetAvailabilityZoneGroup(Aws::String&& value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup = std::move(value); }
 
@@ -345,7 +353,7 @@ namespace Model
      * <p>The Availability Zone group associated with a Local Zone. Specify this
      * parameter to retrieve available offerings for the Local Zones in the group.</p>
      * <p>Omit this parameter to show the available offerings in the specified Amazon
-     * Web Services Region.</p>
+     * Web Services Region.</p> <p> This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetAvailabilityZoneGroup(const char* value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup.assign(value); }
 
@@ -353,7 +361,7 @@ namespace Model
      * <p>The Availability Zone group associated with a Local Zone. Specify this
      * parameter to retrieve available offerings for the Local Zones in the group.</p>
      * <p>Omit this parameter to show the available offerings in the specified Amazon
-     * Web Services Region.</p>
+     * Web Services Region.</p> <p> This setting doesn't apply to RDS Custom.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithAvailabilityZoneGroup(const Aws::String& value) { SetAvailabilityZoneGroup(value); return *this;}
 
@@ -361,7 +369,7 @@ namespace Model
      * <p>The Availability Zone group associated with a Local Zone. Specify this
      * parameter to retrieve available offerings for the Local Zones in the group.</p>
      * <p>Omit this parameter to show the available offerings in the specified Amazon
-     * Web Services Region.</p>
+     * Web Services Region.</p> <p> This setting doesn't apply to RDS Custom.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithAvailabilityZoneGroup(Aws::String&& value) { SetAvailabilityZoneGroup(std::move(value)); return *this;}
 
@@ -369,28 +377,40 @@ namespace Model
      * <p>The Availability Zone group associated with a Local Zone. Specify this
      * parameter to retrieve available offerings for the Local Zones in the group.</p>
      * <p>Omit this parameter to show the available offerings in the specified Amazon
-     * Web Services Region.</p>
+     * Web Services Region.</p> <p> This setting doesn't apply to RDS Custom.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithAvailabilityZoneGroup(const char* value) { SetAvailabilityZoneGroup(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether to show only VPC or non-VPC offerings.</p>
+     * <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS
+     * Custom supports only VPC offerings.</p> <p>RDS Custom supports only VPC
+     * offerings. If you describe non-VPC offerings for RDS Custom, the output shows
+     * VPC offerings.</p>
      */
     inline bool GetVpc() const{ return m_vpc; }
 
     /**
-     * <p>A value that indicates whether to show only VPC or non-VPC offerings.</p>
+     * <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS
+     * Custom supports only VPC offerings.</p> <p>RDS Custom supports only VPC
+     * offerings. If you describe non-VPC offerings for RDS Custom, the output shows
+     * VPC offerings.</p>
      */
     inline bool VpcHasBeenSet() const { return m_vpcHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to show only VPC or non-VPC offerings.</p>
+     * <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS
+     * Custom supports only VPC offerings.</p> <p>RDS Custom supports only VPC
+     * offerings. If you describe non-VPC offerings for RDS Custom, the output shows
+     * VPC offerings.</p>
      */
     inline void SetVpc(bool value) { m_vpcHasBeenSet = true; m_vpc = value; }
 
     /**
-     * <p>A value that indicates whether to show only VPC or non-VPC offerings.</p>
+     * <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS
+     * Custom supports only VPC offerings.</p> <p>RDS Custom supports only VPC
+     * offerings. If you describe non-VPC offerings for RDS Custom, the output shows
+     * VPC offerings.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithVpc(bool value) { SetVpc(value); return *this;}
 

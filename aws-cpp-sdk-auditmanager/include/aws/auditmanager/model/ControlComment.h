@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p> A comment posted by a user on a control. This includes the author's name,
-   * the comment text, and a timestamp. </p><p><h3>See Also:</h3>   <a
+   * <p> A comment that's posted by a user on a control. This includes the author's
+   * name, the comment text, and a timestamp. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ControlComment">AWS
    * API Reference</a></p>
    */

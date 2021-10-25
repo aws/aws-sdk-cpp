@@ -67,10 +67,16 @@ namespace Model
      * <code>ORCL</code> is used. You can't specify the string NULL, or any other
      * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
-     * </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p>
-     * <b>Amazon Aurora MySQL</b> </p> <p>The name of the database to create when the
-     * primary DB instance of the Aurora MySQL DB cluster is created. If this parameter
-     * isn't specified for an Aurora MySQL DB cluster, no database is created in the DB
+     * </ul> <p> <b>Amazon RDS Custom</b> </p> <p>The Oracle System ID (SID) of the
+     * created RDS Custom DB instance. If you don't specify a value, the default value
+     * is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 8 alphanumeric
+     * characters.</p> </li> <li> <p>It must contain a letter.</p> </li> <li> <p>It
+     * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>SQL
+     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora
+     * MySQL</b> </p> <p>The name of the database to create when the primary DB
+     * instance of the Aurora MySQL DB cluster is created. If this parameter isn't
+     * specified for an Aurora MySQL DB cluster, no database is created in the DB
      * cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 64
      * alphanumeric characters.</p> </li> <li> <p>It can't be a word reserved by the
      * database engine.</p> </li> </ul> <p> <b>Amazon Aurora PostgreSQL</b> </p> <p>The
@@ -110,10 +116,16 @@ namespace Model
      * <code>ORCL</code> is used. You can't specify the string NULL, or any other
      * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
-     * </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p>
-     * <b>Amazon Aurora MySQL</b> </p> <p>The name of the database to create when the
-     * primary DB instance of the Aurora MySQL DB cluster is created. If this parameter
-     * isn't specified for an Aurora MySQL DB cluster, no database is created in the DB
+     * </ul> <p> <b>Amazon RDS Custom</b> </p> <p>The Oracle System ID (SID) of the
+     * created RDS Custom DB instance. If you don't specify a value, the default value
+     * is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 8 alphanumeric
+     * characters.</p> </li> <li> <p>It must contain a letter.</p> </li> <li> <p>It
+     * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>SQL
+     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora
+     * MySQL</b> </p> <p>The name of the database to create when the primary DB
+     * instance of the Aurora MySQL DB cluster is created. If this parameter isn't
+     * specified for an Aurora MySQL DB cluster, no database is created in the DB
      * cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 64
      * alphanumeric characters.</p> </li> <li> <p>It can't be a word reserved by the
      * database engine.</p> </li> </ul> <p> <b>Amazon Aurora PostgreSQL</b> </p> <p>The
@@ -153,10 +165,16 @@ namespace Model
      * <code>ORCL</code> is used. You can't specify the string NULL, or any other
      * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
-     * </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p>
-     * <b>Amazon Aurora MySQL</b> </p> <p>The name of the database to create when the
-     * primary DB instance of the Aurora MySQL DB cluster is created. If this parameter
-     * isn't specified for an Aurora MySQL DB cluster, no database is created in the DB
+     * </ul> <p> <b>Amazon RDS Custom</b> </p> <p>The Oracle System ID (SID) of the
+     * created RDS Custom DB instance. If you don't specify a value, the default value
+     * is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 8 alphanumeric
+     * characters.</p> </li> <li> <p>It must contain a letter.</p> </li> <li> <p>It
+     * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>SQL
+     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora
+     * MySQL</b> </p> <p>The name of the database to create when the primary DB
+     * instance of the Aurora MySQL DB cluster is created. If this parameter isn't
+     * specified for an Aurora MySQL DB cluster, no database is created in the DB
      * cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 64
      * alphanumeric characters.</p> </li> <li> <p>It can't be a word reserved by the
      * database engine.</p> </li> </ul> <p> <b>Amazon Aurora PostgreSQL</b> </p> <p>The
@@ -196,10 +214,16 @@ namespace Model
      * <code>ORCL</code> is used. You can't specify the string NULL, or any other
      * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
-     * </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p>
-     * <b>Amazon Aurora MySQL</b> </p> <p>The name of the database to create when the
-     * primary DB instance of the Aurora MySQL DB cluster is created. If this parameter
-     * isn't specified for an Aurora MySQL DB cluster, no database is created in the DB
+     * </ul> <p> <b>Amazon RDS Custom</b> </p> <p>The Oracle System ID (SID) of the
+     * created RDS Custom DB instance. If you don't specify a value, the default value
+     * is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 8 alphanumeric
+     * characters.</p> </li> <li> <p>It must contain a letter.</p> </li> <li> <p>It
+     * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>SQL
+     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora
+     * MySQL</b> </p> <p>The name of the database to create when the primary DB
+     * instance of the Aurora MySQL DB cluster is created. If this parameter isn't
+     * specified for an Aurora MySQL DB cluster, no database is created in the DB
      * cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 64
      * alphanumeric characters.</p> </li> <li> <p>It can't be a word reserved by the
      * database engine.</p> </li> </ul> <p> <b>Amazon Aurora PostgreSQL</b> </p> <p>The
@@ -239,10 +263,16 @@ namespace Model
      * <code>ORCL</code> is used. You can't specify the string NULL, or any other
      * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
-     * </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p>
-     * <b>Amazon Aurora MySQL</b> </p> <p>The name of the database to create when the
-     * primary DB instance of the Aurora MySQL DB cluster is created. If this parameter
-     * isn't specified for an Aurora MySQL DB cluster, no database is created in the DB
+     * </ul> <p> <b>Amazon RDS Custom</b> </p> <p>The Oracle System ID (SID) of the
+     * created RDS Custom DB instance. If you don't specify a value, the default value
+     * is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 8 alphanumeric
+     * characters.</p> </li> <li> <p>It must contain a letter.</p> </li> <li> <p>It
+     * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>SQL
+     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora
+     * MySQL</b> </p> <p>The name of the database to create when the primary DB
+     * instance of the Aurora MySQL DB cluster is created. If this parameter isn't
+     * specified for an Aurora MySQL DB cluster, no database is created in the DB
      * cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 64
      * alphanumeric characters.</p> </li> <li> <p>It can't be a word reserved by the
      * database engine.</p> </li> </ul> <p> <b>Amazon Aurora PostgreSQL</b> </p> <p>The
@@ -282,10 +312,16 @@ namespace Model
      * <code>ORCL</code> is used. You can't specify the string NULL, or any other
      * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
-     * </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p>
-     * <b>Amazon Aurora MySQL</b> </p> <p>The name of the database to create when the
-     * primary DB instance of the Aurora MySQL DB cluster is created. If this parameter
-     * isn't specified for an Aurora MySQL DB cluster, no database is created in the DB
+     * </ul> <p> <b>Amazon RDS Custom</b> </p> <p>The Oracle System ID (SID) of the
+     * created RDS Custom DB instance. If you don't specify a value, the default value
+     * is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 8 alphanumeric
+     * characters.</p> </li> <li> <p>It must contain a letter.</p> </li> <li> <p>It
+     * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>SQL
+     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora
+     * MySQL</b> </p> <p>The name of the database to create when the primary DB
+     * instance of the Aurora MySQL DB cluster is created. If this parameter isn't
+     * specified for an Aurora MySQL DB cluster, no database is created in the DB
      * cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 64
      * alphanumeric characters.</p> </li> <li> <p>It can't be a word reserved by the
      * database engine.</p> </li> </ul> <p> <b>Amazon Aurora PostgreSQL</b> </p> <p>The
@@ -325,10 +361,16 @@ namespace Model
      * <code>ORCL</code> is used. You can't specify the string NULL, or any other
      * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
-     * </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p>
-     * <b>Amazon Aurora MySQL</b> </p> <p>The name of the database to create when the
-     * primary DB instance of the Aurora MySQL DB cluster is created. If this parameter
-     * isn't specified for an Aurora MySQL DB cluster, no database is created in the DB
+     * </ul> <p> <b>Amazon RDS Custom</b> </p> <p>The Oracle System ID (SID) of the
+     * created RDS Custom DB instance. If you don't specify a value, the default value
+     * is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 8 alphanumeric
+     * characters.</p> </li> <li> <p>It must contain a letter.</p> </li> <li> <p>It
+     * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>SQL
+     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora
+     * MySQL</b> </p> <p>The name of the database to create when the primary DB
+     * instance of the Aurora MySQL DB cluster is created. If this parameter isn't
+     * specified for an Aurora MySQL DB cluster, no database is created in the DB
      * cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 64
      * alphanumeric characters.</p> </li> <li> <p>It can't be a word reserved by the
      * database engine.</p> </li> </ul> <p> <b>Amazon Aurora PostgreSQL</b> </p> <p>The
@@ -368,10 +410,16 @@ namespace Model
      * <code>ORCL</code> is used. You can't specify the string NULL, or any other
      * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
-     * </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p>
-     * <b>Amazon Aurora MySQL</b> </p> <p>The name of the database to create when the
-     * primary DB instance of the Aurora MySQL DB cluster is created. If this parameter
-     * isn't specified for an Aurora MySQL DB cluster, no database is created in the DB
+     * </ul> <p> <b>Amazon RDS Custom</b> </p> <p>The Oracle System ID (SID) of the
+     * created RDS Custom DB instance. If you don't specify a value, the default value
+     * is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 8 alphanumeric
+     * characters.</p> </li> <li> <p>It must contain a letter.</p> </li> <li> <p>It
+     * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>SQL
+     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora
+     * MySQL</b> </p> <p>The name of the database to create when the primary DB
+     * instance of the Aurora MySQL DB cluster is created. If this parameter isn't
+     * specified for an Aurora MySQL DB cluster, no database is created in the DB
      * cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 64
      * alphanumeric characters.</p> </li> <li> <p>It can't be a word reserved by the
      * database engine.</p> </li> </ul> <p> <b>Amazon Aurora PostgreSQL</b> </p> <p>The
@@ -465,7 +513,11 @@ namespace Model
      * <p>Type: Integer</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Aurora
      * cluster volumes automatically grow as the amount of data in your database
      * increases, though you are only charged for the space that you use in an Aurora
-     * cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints to the amount of
+     * cluster volume.</p> <p> <b>Amazon RDS Custom</b> </p> <p>Constraints to the
+     * amount of storage for each storage type are the following: </p> <ul> <li>
+     * <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536.</p>
+     * </li> <li> <p>Provisioned IOPS storage (io1): Must be an integer from 40 to
+     * 65536.</p> </li> </ul> <p> <b>MySQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
      * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
      * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
@@ -504,7 +556,11 @@ namespace Model
      * <p>Type: Integer</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Aurora
      * cluster volumes automatically grow as the amount of data in your database
      * increases, though you are only charged for the space that you use in an Aurora
-     * cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints to the amount of
+     * cluster volume.</p> <p> <b>Amazon RDS Custom</b> </p> <p>Constraints to the
+     * amount of storage for each storage type are the following: </p> <ul> <li>
+     * <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536.</p>
+     * </li> <li> <p>Provisioned IOPS storage (io1): Must be an integer from 40 to
+     * 65536.</p> </li> </ul> <p> <b>MySQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
      * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
      * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
@@ -543,7 +599,11 @@ namespace Model
      * <p>Type: Integer</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Aurora
      * cluster volumes automatically grow as the amount of data in your database
      * increases, though you are only charged for the space that you use in an Aurora
-     * cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints to the amount of
+     * cluster volume.</p> <p> <b>Amazon RDS Custom</b> </p> <p>Constraints to the
+     * amount of storage for each storage type are the following: </p> <ul> <li>
+     * <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536.</p>
+     * </li> <li> <p>Provisioned IOPS storage (io1): Must be an integer from 40 to
+     * 65536.</p> </li> </ul> <p> <b>MySQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
      * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
      * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
@@ -582,7 +642,11 @@ namespace Model
      * <p>Type: Integer</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Aurora
      * cluster volumes automatically grow as the amount of data in your database
      * increases, though you are only charged for the space that you use in an Aurora
-     * cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints to the amount of
+     * cluster volume.</p> <p> <b>Amazon RDS Custom</b> </p> <p>Constraints to the
+     * amount of storage for each storage type are the following: </p> <ul> <li>
+     * <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536.</p>
+     * </li> <li> <p>Provisioned IOPS storage (io1): Must be an integer from 40 to
+     * 65536.</p> </li> </ul> <p> <b>MySQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
      * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
      * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
@@ -704,6 +768,7 @@ namespace Model
      * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
      * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
      * 5.7-compatible Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p>
+     * </li> <li> <p> <code>custom-oracle-ee (for RDS Custom instances)</code> </p>
      * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
      * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
      * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
@@ -720,6 +785,7 @@ namespace Model
      * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
      * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
      * 5.7-compatible Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p>
+     * </li> <li> <p> <code>custom-oracle-ee (for RDS Custom instances)</code> </p>
      * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
      * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
      * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
@@ -736,6 +802,7 @@ namespace Model
      * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
      * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
      * 5.7-compatible Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p>
+     * </li> <li> <p> <code>custom-oracle-ee (for RDS Custom instances)</code> </p>
      * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
      * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
      * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
@@ -752,6 +819,7 @@ namespace Model
      * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
      * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
      * 5.7-compatible Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p>
+     * </li> <li> <p> <code>custom-oracle-ee (for RDS Custom instances)</code> </p>
      * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
      * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
      * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
@@ -768,6 +836,7 @@ namespace Model
      * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
      * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
      * 5.7-compatible Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p>
+     * </li> <li> <p> <code>custom-oracle-ee (for RDS Custom instances)</code> </p>
      * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
      * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
      * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
@@ -784,6 +853,7 @@ namespace Model
      * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
      * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
      * 5.7-compatible Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p>
+     * </li> <li> <p> <code>custom-oracle-ee (for RDS Custom instances)</code> </p>
      * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
      * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
      * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
@@ -800,6 +870,7 @@ namespace Model
      * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
      * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
      * 5.7-compatible Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p>
+     * </li> <li> <p> <code>custom-oracle-ee (for RDS Custom instances)</code> </p>
      * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
      * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
      * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
@@ -816,6 +887,7 @@ namespace Model
      * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
      * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
      * 5.7-compatible Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p>
+     * </li> <li> <p> <code>custom-oracle-ee (for RDS Custom instances)</code> </p>
      * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
      * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
      * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
@@ -1547,80 +1619,80 @@ namespace Model
     /**
      * <p>The name of the DB parameter group to associate with this DB instance. If you
      * do not specify a value, then the default DB parameter group for the specified DB
-     * engine and version is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to
-     * 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * engine and version is used.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance. If you
      * do not specify a value, then the default DB parameter group for the specified DB
-     * engine and version is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to
-     * 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * engine and version is used.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline bool DBParameterGroupNameHasBeenSet() const { return m_dBParameterGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance. If you
      * do not specify a value, then the default DB parameter group for the specified DB
-     * engine and version is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to
-     * 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * engine and version is used.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance. If you
      * do not specify a value, then the default DB parameter group for the specified DB
-     * engine and version is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to
-     * 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * engine and version is used.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = std::move(value); }
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance. If you
      * do not specify a value, then the default DB parameter group for the specified DB
-     * engine and version is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to
-     * 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * engine and version is used.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName.assign(value); }
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance. If you
      * do not specify a value, then the default DB parameter group for the specified DB
-     * engine and version is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to
-     * 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * engine and version is used.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBParameterGroupName(const Aws::String& value) { SetDBParameterGroupName(value); return *this;}
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance. If you
      * do not specify a value, then the default DB parameter group for the specified DB
-     * engine and version is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to
-     * 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * engine and version is used.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance. If you
      * do not specify a value, then the default DB parameter group for the specified DB
-     * engine and version is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to
-     * 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * engine and version is used.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
 
@@ -1632,7 +1704,8 @@ namespace Model
      * The retention period for automated backups is managed by the DB cluster.</p>
      * <p>Default: 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to
      * 35</p> </li> <li> <p>Can't be set to 0 if the DB instance is a source to read
-     * replicas</p> </li> </ul>
+     * replicas</p> </li> <li> <p>Can't be set to 0 or 35 for an RDS Custom DB
+     * instance</p> </li> </ul>
      */
     inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
 
@@ -1643,7 +1716,8 @@ namespace Model
      * The retention period for automated backups is managed by the DB cluster.</p>
      * <p>Default: 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to
      * 35</p> </li> <li> <p>Can't be set to 0 if the DB instance is a source to read
-     * replicas</p> </li> </ul>
+     * replicas</p> </li> <li> <p>Can't be set to 0 or 35 for an RDS Custom DB
+     * instance</p> </li> </ul>
      */
     inline bool BackupRetentionPeriodHasBeenSet() const { return m_backupRetentionPeriodHasBeenSet; }
 
@@ -1654,7 +1728,8 @@ namespace Model
      * The retention period for automated backups is managed by the DB cluster.</p>
      * <p>Default: 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to
      * 35</p> </li> <li> <p>Can't be set to 0 if the DB instance is a source to read
-     * replicas</p> </li> </ul>
+     * replicas</p> </li> <li> <p>Can't be set to 0 or 35 for an RDS Custom DB
+     * instance</p> </li> </ul>
      */
     inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
@@ -1665,7 +1740,8 @@ namespace Model
      * The retention period for automated backups is managed by the DB cluster.</p>
      * <p>Default: 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to
      * 35</p> </li> <li> <p>Can't be set to 0 if the DB instance is a source to read
-     * replicas</p> </li> </ul>
+     * replicas</p> </li> <li> <p>Can't be set to 0 or 35 for an RDS Custom DB
+     * instance</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
 
@@ -1871,28 +1947,28 @@ namespace Model
     /**
      * <p>A value that indicates whether the DB instance is a Multi-AZ deployment. You
      * can't set the <code>AvailabilityZone</code> parameter if the DB instance is a
-     * Multi-AZ deployment.</p>
+     * Multi-AZ deployment.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
      * <p>A value that indicates whether the DB instance is a Multi-AZ deployment. You
      * can't set the <code>AvailabilityZone</code> parameter if the DB instance is a
-     * Multi-AZ deployment.</p>
+     * Multi-AZ deployment.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
     /**
      * <p>A value that indicates whether the DB instance is a Multi-AZ deployment. You
      * can't set the <code>AvailabilityZone</code> parameter if the DB instance is a
-     * Multi-AZ deployment.</p>
+     * Multi-AZ deployment.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
      * <p>A value that indicates whether the DB instance is a Multi-AZ deployment. You
      * can't set the <code>AvailabilityZone</code> parameter if the DB instance is a
-     * Multi-AZ deployment.</p>
+     * Multi-AZ deployment.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
@@ -1904,8 +1980,14 @@ namespace Model
      * major and minor versions that are available with Amazon RDS. Not every database
      * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The version number of the database engine to
-     * be used by the DB instance is managed by the DB cluster.</p> <p> <b>MariaDB</b>
-     * </p> <p>See <a
+     * be used by the DB instance is managed by the DB cluster.</p> <p> <b>Amazon RDS
+     * Custom</b> </p> <p>A custom engine version (CEV) that you have previously
+     * created. This setting is required for RDS Custom. The CEV name has the following
+     * format: <code>19.<i>customized_string</i> </code>. An example identifier is
+     * <code>19.my_cev1</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
+     * Creating an RDS Custom DB instance</a> in the <i>Amazon RDS User Guide.</i>.</p>
+     * <p> <b>MariaDB</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
@@ -1931,8 +2013,14 @@ namespace Model
      * major and minor versions that are available with Amazon RDS. Not every database
      * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The version number of the database engine to
-     * be used by the DB instance is managed by the DB cluster.</p> <p> <b>MariaDB</b>
-     * </p> <p>See <a
+     * be used by the DB instance is managed by the DB cluster.</p> <p> <b>Amazon RDS
+     * Custom</b> </p> <p>A custom engine version (CEV) that you have previously
+     * created. This setting is required for RDS Custom. The CEV name has the following
+     * format: <code>19.<i>customized_string</i> </code>. An example identifier is
+     * <code>19.my_cev1</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
+     * Creating an RDS Custom DB instance</a> in the <i>Amazon RDS User Guide.</i>.</p>
+     * <p> <b>MariaDB</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
@@ -1958,8 +2046,14 @@ namespace Model
      * major and minor versions that are available with Amazon RDS. Not every database
      * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The version number of the database engine to
-     * be used by the DB instance is managed by the DB cluster.</p> <p> <b>MariaDB</b>
-     * </p> <p>See <a
+     * be used by the DB instance is managed by the DB cluster.</p> <p> <b>Amazon RDS
+     * Custom</b> </p> <p>A custom engine version (CEV) that you have previously
+     * created. This setting is required for RDS Custom. The CEV name has the following
+     * format: <code>19.<i>customized_string</i> </code>. An example identifier is
+     * <code>19.my_cev1</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
+     * Creating an RDS Custom DB instance</a> in the <i>Amazon RDS User Guide.</i>.</p>
+     * <p> <b>MariaDB</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
@@ -1985,8 +2079,14 @@ namespace Model
      * major and minor versions that are available with Amazon RDS. Not every database
      * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The version number of the database engine to
-     * be used by the DB instance is managed by the DB cluster.</p> <p> <b>MariaDB</b>
-     * </p> <p>See <a
+     * be used by the DB instance is managed by the DB cluster.</p> <p> <b>Amazon RDS
+     * Custom</b> </p> <p>A custom engine version (CEV) that you have previously
+     * created. This setting is required for RDS Custom. The CEV name has the following
+     * format: <code>19.<i>customized_string</i> </code>. An example identifier is
+     * <code>19.my_cev1</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
+     * Creating an RDS Custom DB instance</a> in the <i>Amazon RDS User Guide.</i>.</p>
+     * <p> <b>MariaDB</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
@@ -2012,8 +2112,14 @@ namespace Model
      * major and minor versions that are available with Amazon RDS. Not every database
      * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The version number of the database engine to
-     * be used by the DB instance is managed by the DB cluster.</p> <p> <b>MariaDB</b>
-     * </p> <p>See <a
+     * be used by the DB instance is managed by the DB cluster.</p> <p> <b>Amazon RDS
+     * Custom</b> </p> <p>A custom engine version (CEV) that you have previously
+     * created. This setting is required for RDS Custom. The CEV name has the following
+     * format: <code>19.<i>customized_string</i> </code>. An example identifier is
+     * <code>19.my_cev1</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
+     * Creating an RDS Custom DB instance</a> in the <i>Amazon RDS User Guide.</i>.</p>
+     * <p> <b>MariaDB</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
@@ -2039,8 +2145,14 @@ namespace Model
      * major and minor versions that are available with Amazon RDS. Not every database
      * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The version number of the database engine to
-     * be used by the DB instance is managed by the DB cluster.</p> <p> <b>MariaDB</b>
-     * </p> <p>See <a
+     * be used by the DB instance is managed by the DB cluster.</p> <p> <b>Amazon RDS
+     * Custom</b> </p> <p>A custom engine version (CEV) that you have previously
+     * created. This setting is required for RDS Custom. The CEV name has the following
+     * format: <code>19.<i>customized_string</i> </code>. An example identifier is
+     * <code>19.my_cev1</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
+     * Creating an RDS Custom DB instance</a> in the <i>Amazon RDS User Guide.</i>.</p>
+     * <p> <b>MariaDB</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
@@ -2066,8 +2178,14 @@ namespace Model
      * major and minor versions that are available with Amazon RDS. Not every database
      * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The version number of the database engine to
-     * be used by the DB instance is managed by the DB cluster.</p> <p> <b>MariaDB</b>
-     * </p> <p>See <a
+     * be used by the DB instance is managed by the DB cluster.</p> <p> <b>Amazon RDS
+     * Custom</b> </p> <p>A custom engine version (CEV) that you have previously
+     * created. This setting is required for RDS Custom. The CEV name has the following
+     * format: <code>19.<i>customized_string</i> </code>. An example identifier is
+     * <code>19.my_cev1</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
+     * Creating an RDS Custom DB instance</a> in the <i>Amazon RDS User Guide.</i>.</p>
+     * <p> <b>MariaDB</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
@@ -2093,8 +2211,14 @@ namespace Model
      * major and minor versions that are available with Amazon RDS. Not every database
      * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The version number of the database engine to
-     * be used by the DB instance is managed by the DB cluster.</p> <p> <b>MariaDB</b>
-     * </p> <p>See <a
+     * be used by the DB instance is managed by the DB cluster.</p> <p> <b>Amazon RDS
+     * Custom</b> </p> <p>A custom engine version (CEV) that you have previously
+     * created. This setting is required for RDS Custom. The CEV name has the following
+     * format: <code>19.<i>customized_string</i> </code>. An example identifier is
+     * <code>19.my_cev1</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
+     * Creating an RDS Custom DB instance</a> in the <i>Amazon RDS User Guide.</i>.</p>
+     * <p> <b>MariaDB</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
@@ -2117,28 +2241,36 @@ namespace Model
     /**
      * <p>A value that indicates whether minor engine upgrades are applied
      * automatically to the DB instance during the maintenance window. By default,
-     * minor engine upgrades are applied automatically.</p>
+     * minor engine upgrades are applied automatically.</p> <p>If you create an RDS
+     * Custom DB instance, you must set <code>AutoMinorVersionUpgrade</code> to
+     * <code>false</code>.</p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
      * <p>A value that indicates whether minor engine upgrades are applied
      * automatically to the DB instance during the maintenance window. By default,
-     * minor engine upgrades are applied automatically.</p>
+     * minor engine upgrades are applied automatically.</p> <p>If you create an RDS
+     * Custom DB instance, you must set <code>AutoMinorVersionUpgrade</code> to
+     * <code>false</code>.</p>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
      * <p>A value that indicates whether minor engine upgrades are applied
      * automatically to the DB instance during the maintenance window. By default,
-     * minor engine upgrades are applied automatically.</p>
+     * minor engine upgrades are applied automatically.</p> <p>If you create an RDS
+     * Custom DB instance, you must set <code>AutoMinorVersionUpgrade</code> to
+     * <code>false</code>.</p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
      * <p>A value that indicates whether minor engine upgrades are applied
      * automatically to the DB instance during the maintenance window. By default,
-     * minor engine upgrades are applied automatically.</p>
+     * minor engine upgrades are applied automatically.</p> <p>If you create an RDS
+     * Custom DB instance, you must set <code>AutoMinorVersionUpgrade</code> to
+     * <code>false</code>.</p>
      */
     inline CreateDBInstanceRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
@@ -2146,56 +2278,64 @@ namespace Model
     /**
      * <p>License model information for this DB instance.</p> <p> Valid values:
      * <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <code>general-public-license</code> </p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
 
     /**
      * <p>License model information for this DB instance.</p> <p> Valid values:
      * <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <code>general-public-license</code> </p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
 
     /**
      * <p>License model information for this DB instance.</p> <p> Valid values:
      * <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <code>general-public-license</code> </p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline void SetLicenseModel(const Aws::String& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
 
     /**
      * <p>License model information for this DB instance.</p> <p> Valid values:
      * <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <code>general-public-license</code> </p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = std::move(value); }
 
     /**
      * <p>License model information for this DB instance.</p> <p> Valid values:
      * <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <code>general-public-license</code> </p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline void SetLicenseModel(const char* value) { m_licenseModelHasBeenSet = true; m_licenseModel.assign(value); }
 
     /**
      * <p>License model information for this DB instance.</p> <p> Valid values:
      * <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <code>general-public-license</code> </p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline CreateDBInstanceRequest& WithLicenseModel(const Aws::String& value) { SetLicenseModel(value); return *this;}
 
     /**
      * <p>License model information for this DB instance.</p> <p> Valid values:
      * <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <code>general-public-license</code> </p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline CreateDBInstanceRequest& WithLicenseModel(Aws::String&& value) { SetLicenseModel(std::move(value)); return *this;}
 
     /**
      * <p>License model information for this DB instance.</p> <p> Valid values:
      * <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <code>general-public-license</code> </p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline CreateDBInstanceRequest& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
 
@@ -2257,8 +2397,8 @@ namespace Model
      * <p>A value that indicates that the DB instance should be associated with the
      * specified option group.</p> <p>Permanent options, such as the TDE option for
      * Oracle Advanced Security TDE, can't be removed from an option group. Also, that
-     * option group can't be removed from a DB instance once it is associated with a DB
-     * instance</p>
+     * option group can't be removed from a DB instance after it is associated with a
+     * DB instance.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
@@ -2266,8 +2406,8 @@ namespace Model
      * <p>A value that indicates that the DB instance should be associated with the
      * specified option group.</p> <p>Permanent options, such as the TDE option for
      * Oracle Advanced Security TDE, can't be removed from an option group. Also, that
-     * option group can't be removed from a DB instance once it is associated with a DB
-     * instance</p>
+     * option group can't be removed from a DB instance after it is associated with a
+     * DB instance.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
 
@@ -2275,8 +2415,8 @@ namespace Model
      * <p>A value that indicates that the DB instance should be associated with the
      * specified option group.</p> <p>Permanent options, such as the TDE option for
      * Oracle Advanced Security TDE, can't be removed from an option group. Also, that
-     * option group can't be removed from a DB instance once it is associated with a DB
-     * instance</p>
+     * option group can't be removed from a DB instance after it is associated with a
+     * DB instance.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
@@ -2284,8 +2424,8 @@ namespace Model
      * <p>A value that indicates that the DB instance should be associated with the
      * specified option group.</p> <p>Permanent options, such as the TDE option for
      * Oracle Advanced Security TDE, can't be removed from an option group. Also, that
-     * option group can't be removed from a DB instance once it is associated with a DB
-     * instance</p>
+     * option group can't be removed from a DB instance after it is associated with a
+     * DB instance.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
@@ -2293,8 +2433,8 @@ namespace Model
      * <p>A value that indicates that the DB instance should be associated with the
      * specified option group.</p> <p>Permanent options, such as the TDE option for
      * Oracle Advanced Security TDE, can't be removed from an option group. Also, that
-     * option group can't be removed from a DB instance once it is associated with a DB
-     * instance</p>
+     * option group can't be removed from a DB instance after it is associated with a
+     * DB instance.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
@@ -2302,8 +2442,8 @@ namespace Model
      * <p>A value that indicates that the DB instance should be associated with the
      * specified option group.</p> <p>Permanent options, such as the TDE option for
      * Oracle Advanced Security TDE, can't be removed from an option group. Also, that
-     * option group can't be removed from a DB instance once it is associated with a DB
-     * instance</p>
+     * option group can't be removed from a DB instance after it is associated with a
+     * DB instance.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
@@ -2311,8 +2451,8 @@ namespace Model
      * <p>A value that indicates that the DB instance should be associated with the
      * specified option group.</p> <p>Permanent options, such as the TDE option for
      * Oracle Advanced Security TDE, can't be removed from an option group. Also, that
-     * option group can't be removed from a DB instance once it is associated with a DB
-     * instance</p>
+     * option group can't be removed from a DB instance after it is associated with a
+     * DB instance.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
@@ -2320,114 +2460,138 @@ namespace Model
      * <p>A value that indicates that the DB instance should be associated with the
      * specified option group.</p> <p>Permanent options, such as the TDE option for
      * Oracle Advanced Security TDE, can't be removed from an option group. Also, that
-     * option group can't be removed from a DB instance once it is associated with a DB
-     * instance</p>
+     * option group can't be removed from a DB instance after it is associated with a
+     * DB instance.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
 
     /**
-     * <p>For supported engines, indicates that the DB instance should be associated
-     * with the specified CharacterSet.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. The character set is managed by the DB cluster. For more
+     * <p>For supported engines, this value indicates that the DB instance should be
+     * associated with the specified <code>CharacterSet</code>.</p> <p>This setting
+     * doesn't apply to RDS Custom. However, if you need to change the character set,
+     * you can change it on the database itself.</p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. The character set is managed by the DB cluster. For more
      * information, see <code>CreateDBCluster</code>.</p>
      */
     inline const Aws::String& GetCharacterSetName() const{ return m_characterSetName; }
 
     /**
-     * <p>For supported engines, indicates that the DB instance should be associated
-     * with the specified CharacterSet.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. The character set is managed by the DB cluster. For more
+     * <p>For supported engines, this value indicates that the DB instance should be
+     * associated with the specified <code>CharacterSet</code>.</p> <p>This setting
+     * doesn't apply to RDS Custom. However, if you need to change the character set,
+     * you can change it on the database itself.</p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. The character set is managed by the DB cluster. For more
      * information, see <code>CreateDBCluster</code>.</p>
      */
     inline bool CharacterSetNameHasBeenSet() const { return m_characterSetNameHasBeenSet; }
 
     /**
-     * <p>For supported engines, indicates that the DB instance should be associated
-     * with the specified CharacterSet.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. The character set is managed by the DB cluster. For more
+     * <p>For supported engines, this value indicates that the DB instance should be
+     * associated with the specified <code>CharacterSet</code>.</p> <p>This setting
+     * doesn't apply to RDS Custom. However, if you need to change the character set,
+     * you can change it on the database itself.</p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. The character set is managed by the DB cluster. For more
      * information, see <code>CreateDBCluster</code>.</p>
      */
     inline void SetCharacterSetName(const Aws::String& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = value; }
 
     /**
-     * <p>For supported engines, indicates that the DB instance should be associated
-     * with the specified CharacterSet.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. The character set is managed by the DB cluster. For more
+     * <p>For supported engines, this value indicates that the DB instance should be
+     * associated with the specified <code>CharacterSet</code>.</p> <p>This setting
+     * doesn't apply to RDS Custom. However, if you need to change the character set,
+     * you can change it on the database itself.</p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. The character set is managed by the DB cluster. For more
      * information, see <code>CreateDBCluster</code>.</p>
      */
     inline void SetCharacterSetName(Aws::String&& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = std::move(value); }
 
     /**
-     * <p>For supported engines, indicates that the DB instance should be associated
-     * with the specified CharacterSet.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. The character set is managed by the DB cluster. For more
+     * <p>For supported engines, this value indicates that the DB instance should be
+     * associated with the specified <code>CharacterSet</code>.</p> <p>This setting
+     * doesn't apply to RDS Custom. However, if you need to change the character set,
+     * you can change it on the database itself.</p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. The character set is managed by the DB cluster. For more
      * information, see <code>CreateDBCluster</code>.</p>
      */
     inline void SetCharacterSetName(const char* value) { m_characterSetNameHasBeenSet = true; m_characterSetName.assign(value); }
 
     /**
-     * <p>For supported engines, indicates that the DB instance should be associated
-     * with the specified CharacterSet.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. The character set is managed by the DB cluster. For more
+     * <p>For supported engines, this value indicates that the DB instance should be
+     * associated with the specified <code>CharacterSet</code>.</p> <p>This setting
+     * doesn't apply to RDS Custom. However, if you need to change the character set,
+     * you can change it on the database itself.</p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. The character set is managed by the DB cluster. For more
      * information, see <code>CreateDBCluster</code>.</p>
      */
     inline CreateDBInstanceRequest& WithCharacterSetName(const Aws::String& value) { SetCharacterSetName(value); return *this;}
 
     /**
-     * <p>For supported engines, indicates that the DB instance should be associated
-     * with the specified CharacterSet.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. The character set is managed by the DB cluster. For more
+     * <p>For supported engines, this value indicates that the DB instance should be
+     * associated with the specified <code>CharacterSet</code>.</p> <p>This setting
+     * doesn't apply to RDS Custom. However, if you need to change the character set,
+     * you can change it on the database itself.</p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. The character set is managed by the DB cluster. For more
      * information, see <code>CreateDBCluster</code>.</p>
      */
     inline CreateDBInstanceRequest& WithCharacterSetName(Aws::String&& value) { SetCharacterSetName(std::move(value)); return *this;}
 
     /**
-     * <p>For supported engines, indicates that the DB instance should be associated
-     * with the specified CharacterSet.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. The character set is managed by the DB cluster. For more
+     * <p>For supported engines, this value indicates that the DB instance should be
+     * associated with the specified <code>CharacterSet</code>.</p> <p>This setting
+     * doesn't apply to RDS Custom. However, if you need to change the character set,
+     * you can change it on the database itself.</p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. The character set is managed by the DB cluster. For more
      * information, see <code>CreateDBCluster</code>.</p>
      */
     inline CreateDBInstanceRequest& WithCharacterSetName(const char* value) { SetCharacterSetName(value); return *this;}
 
 
     /**
-     * <p>The name of the NCHAR character set for the Oracle DB instance.</p>
+     * <p>The name of the NCHAR character set for the Oracle DB instance.</p> <p>This
+     * parameter doesn't apply to RDS Custom.</p>
      */
     inline const Aws::String& GetNcharCharacterSetName() const{ return m_ncharCharacterSetName; }
 
     /**
-     * <p>The name of the NCHAR character set for the Oracle DB instance.</p>
+     * <p>The name of the NCHAR character set for the Oracle DB instance.</p> <p>This
+     * parameter doesn't apply to RDS Custom.</p>
      */
     inline bool NcharCharacterSetNameHasBeenSet() const { return m_ncharCharacterSetNameHasBeenSet; }
 
     /**
-     * <p>The name of the NCHAR character set for the Oracle DB instance.</p>
+     * <p>The name of the NCHAR character set for the Oracle DB instance.</p> <p>This
+     * parameter doesn't apply to RDS Custom.</p>
      */
     inline void SetNcharCharacterSetName(const Aws::String& value) { m_ncharCharacterSetNameHasBeenSet = true; m_ncharCharacterSetName = value; }
 
     /**
-     * <p>The name of the NCHAR character set for the Oracle DB instance.</p>
+     * <p>The name of the NCHAR character set for the Oracle DB instance.</p> <p>This
+     * parameter doesn't apply to RDS Custom.</p>
      */
     inline void SetNcharCharacterSetName(Aws::String&& value) { m_ncharCharacterSetNameHasBeenSet = true; m_ncharCharacterSetName = std::move(value); }
 
     /**
-     * <p>The name of the NCHAR character set for the Oracle DB instance.</p>
+     * <p>The name of the NCHAR character set for the Oracle DB instance.</p> <p>This
+     * parameter doesn't apply to RDS Custom.</p>
      */
     inline void SetNcharCharacterSetName(const char* value) { m_ncharCharacterSetNameHasBeenSet = true; m_ncharCharacterSetName.assign(value); }
 
     /**
-     * <p>The name of the NCHAR character set for the Oracle DB instance.</p>
+     * <p>The name of the NCHAR character set for the Oracle DB instance.</p> <p>This
+     * parameter doesn't apply to RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithNcharCharacterSetName(const Aws::String& value) { SetNcharCharacterSetName(value); return *this;}
 
     /**
-     * <p>The name of the NCHAR character set for the Oracle DB instance.</p>
+     * <p>The name of the NCHAR character set for the Oracle DB instance.</p> <p>This
+     * parameter doesn't apply to RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithNcharCharacterSetName(Aws::String&& value) { SetNcharCharacterSetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the NCHAR character set for the Oracle DB instance.</p>
+     * <p>The name of the NCHAR character set for the Oracle DB instance.</p> <p>This
+     * parameter doesn't apply to RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithNcharCharacterSetName(const char* value) { SetNcharCharacterSetName(value); return *this;}
 
@@ -2572,41 +2736,49 @@ namespace Model
 
     /**
      * <p>The identifier of the DB cluster that the instance will belong to.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
 
     /**
      * <p>The identifier of the DB cluster that the instance will belong to.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
 
     /**
      * <p>The identifier of the DB cluster that the instance will belong to.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
      * <p>The identifier of the DB cluster that the instance will belong to.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the DB cluster that the instance will belong to.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
 
     /**
      * <p>The identifier of the DB cluster that the instance will belong to.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
 
     /**
      * <p>The identifier of the DB cluster that the instance will belong to.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the DB cluster that the instance will belong to.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 
@@ -2686,127 +2858,139 @@ namespace Model
 
     /**
      * <p>The ARN from the key store with which to associate the instance for TDE
-     * encryption.</p>
+     * encryption.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline const Aws::String& GetTdeCredentialArn() const{ return m_tdeCredentialArn; }
 
     /**
      * <p>The ARN from the key store with which to associate the instance for TDE
-     * encryption.</p>
+     * encryption.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool TdeCredentialArnHasBeenSet() const { return m_tdeCredentialArnHasBeenSet; }
 
     /**
      * <p>The ARN from the key store with which to associate the instance for TDE
-     * encryption.</p>
+     * encryption.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetTdeCredentialArn(const Aws::String& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = value; }
 
     /**
      * <p>The ARN from the key store with which to associate the instance for TDE
-     * encryption.</p>
+     * encryption.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetTdeCredentialArn(Aws::String&& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = std::move(value); }
 
     /**
      * <p>The ARN from the key store with which to associate the instance for TDE
-     * encryption.</p>
+     * encryption.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetTdeCredentialArn(const char* value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn.assign(value); }
 
     /**
      * <p>The ARN from the key store with which to associate the instance for TDE
-     * encryption.</p>
+     * encryption.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithTdeCredentialArn(const Aws::String& value) { SetTdeCredentialArn(value); return *this;}
 
     /**
      * <p>The ARN from the key store with which to associate the instance for TDE
-     * encryption.</p>
+     * encryption.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithTdeCredentialArn(Aws::String&& value) { SetTdeCredentialArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN from the key store with which to associate the instance for TDE
-     * encryption.</p>
+     * encryption.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithTdeCredentialArn(const char* value) { SetTdeCredentialArn(value); return *this;}
 
 
     /**
      * <p>The password for the given ARN from the key store in order to access the
-     * device.</p>
+     * device.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline const Aws::String& GetTdeCredentialPassword() const{ return m_tdeCredentialPassword; }
 
     /**
      * <p>The password for the given ARN from the key store in order to access the
-     * device.</p>
+     * device.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool TdeCredentialPasswordHasBeenSet() const { return m_tdeCredentialPasswordHasBeenSet; }
 
     /**
      * <p>The password for the given ARN from the key store in order to access the
-     * device.</p>
+     * device.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetTdeCredentialPassword(const Aws::String& value) { m_tdeCredentialPasswordHasBeenSet = true; m_tdeCredentialPassword = value; }
 
     /**
      * <p>The password for the given ARN from the key store in order to access the
-     * device.</p>
+     * device.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetTdeCredentialPassword(Aws::String&& value) { m_tdeCredentialPasswordHasBeenSet = true; m_tdeCredentialPassword = std::move(value); }
 
     /**
      * <p>The password for the given ARN from the key store in order to access the
-     * device.</p>
+     * device.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetTdeCredentialPassword(const char* value) { m_tdeCredentialPasswordHasBeenSet = true; m_tdeCredentialPassword.assign(value); }
 
     /**
      * <p>The password for the given ARN from the key store in order to access the
-     * device.</p>
+     * device.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithTdeCredentialPassword(const Aws::String& value) { SetTdeCredentialPassword(value); return *this;}
 
     /**
      * <p>The password for the given ARN from the key store in order to access the
-     * device.</p>
+     * device.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithTdeCredentialPassword(Aws::String&& value) { SetTdeCredentialPassword(std::move(value)); return *this;}
 
     /**
      * <p>The password for the given ARN from the key store in order to access the
-     * device.</p>
+     * device.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithTdeCredentialPassword(const char* value) { SetTdeCredentialPassword(value); return *this;}
 
 
     /**
      * <p>A value that indicates whether the DB instance is encrypted. By default, it
-     * isn't encrypted.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
-     * encryption for DB instances is managed by the DB cluster.</p>
+     * isn't encrypted.</p> <p>For RDS Custom Oracle instances, either set this
+     * parameter to <code>true</code> or leave it unset. If you set this parameter to
+     * <code>false</code>, RDS reports an error.</p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. The encryption for DB instances is managed by the DB
+     * cluster.</p>
      */
     inline bool GetStorageEncrypted() const{ return m_storageEncrypted; }
 
     /**
      * <p>A value that indicates whether the DB instance is encrypted. By default, it
-     * isn't encrypted.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
-     * encryption for DB instances is managed by the DB cluster.</p>
+     * isn't encrypted.</p> <p>For RDS Custom Oracle instances, either set this
+     * parameter to <code>true</code> or leave it unset. If you set this parameter to
+     * <code>false</code>, RDS reports an error.</p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. The encryption for DB instances is managed by the DB
+     * cluster.</p>
      */
     inline bool StorageEncryptedHasBeenSet() const { return m_storageEncryptedHasBeenSet; }
 
     /**
      * <p>A value that indicates whether the DB instance is encrypted. By default, it
-     * isn't encrypted.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
-     * encryption for DB instances is managed by the DB cluster.</p>
+     * isn't encrypted.</p> <p>For RDS Custom Oracle instances, either set this
+     * parameter to <code>true</code> or leave it unset. If you set this parameter to
+     * <code>false</code>, RDS reports an error.</p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. The encryption for DB instances is managed by the DB
+     * cluster.</p>
      */
     inline void SetStorageEncrypted(bool value) { m_storageEncryptedHasBeenSet = true; m_storageEncrypted = value; }
 
     /**
      * <p>A value that indicates whether the DB instance is encrypted. By default, it
-     * isn't encrypted.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
-     * encryption for DB instances is managed by the DB cluster.</p>
+     * isn't encrypted.</p> <p>For RDS Custom Oracle instances, either set this
+     * parameter to <code>true</code> or leave it unset. If you set this parameter to
+     * <code>false</code>, RDS reports an error.</p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. The encryption for DB instances is managed by the DB
+     * cluster.</p>
      */
     inline CreateDBInstanceRequest& WithStorageEncrypted(bool value) { SetStorageEncrypted(value); return *this;}
 
@@ -2814,120 +2998,152 @@ namespace Model
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
      * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
-     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
-     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
-     * ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The Amazon Web
-     * Services KMS key identifier is managed by the DB cluster. For more information,
-     * see <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
-     * enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter,
-     * then Amazon RDS uses your default CMK. There is a default CMK for your Amazon
-     * Web Services account. Your Amazon Web Services account has a different default
-     * CMK for each Amazon Web Services Region.</p>
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. The Amazon Web Services KMS key identifier is managed by
+     * the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, and you do not specify a value
+     * for the <code>KmsKeyId</code> parameter, then Amazon RDS uses your default KMS
+     * key. There is a default KMS key for your Amazon Web Services account. Your
+     * Amazon Web Services account has a different default KMS key for each Amazon Web
+     * Services Region.</p> <p> <b>Amazon RDS Custom</b> </p> <p>A KMS key is required
+     * for RDS Custom Oracle instances. For most RDS engines, if you leave this
+     * parameter empty while enabling <code>StorageEncrypted</code>, the engine uses
+     * the default KMS key. However, RDS Custom for Oracle doesn't use the default key
+     * when this parameter is empty. You must explicitly specify a key.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
      * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
-     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
-     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
-     * ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The Amazon Web
-     * Services KMS key identifier is managed by the DB cluster. For more information,
-     * see <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
-     * enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter,
-     * then Amazon RDS uses your default CMK. There is a default CMK for your Amazon
-     * Web Services account. Your Amazon Web Services account has a different default
-     * CMK for each Amazon Web Services Region.</p>
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. The Amazon Web Services KMS key identifier is managed by
+     * the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, and you do not specify a value
+     * for the <code>KmsKeyId</code> parameter, then Amazon RDS uses your default KMS
+     * key. There is a default KMS key for your Amazon Web Services account. Your
+     * Amazon Web Services account has a different default KMS key for each Amazon Web
+     * Services Region.</p> <p> <b>Amazon RDS Custom</b> </p> <p>A KMS key is required
+     * for RDS Custom Oracle instances. For most RDS engines, if you leave this
+     * parameter empty while enabling <code>StorageEncrypted</code>, the engine uses
+     * the default KMS key. However, RDS Custom for Oracle doesn't use the default key
+     * when this parameter is empty. You must explicitly specify a key.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
      * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
-     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
-     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
-     * ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The Amazon Web
-     * Services KMS key identifier is managed by the DB cluster. For more information,
-     * see <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
-     * enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter,
-     * then Amazon RDS uses your default CMK. There is a default CMK for your Amazon
-     * Web Services account. Your Amazon Web Services account has a different default
-     * CMK for each Amazon Web Services Region.</p>
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. The Amazon Web Services KMS key identifier is managed by
+     * the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, and you do not specify a value
+     * for the <code>KmsKeyId</code> parameter, then Amazon RDS uses your default KMS
+     * key. There is a default KMS key for your Amazon Web Services account. Your
+     * Amazon Web Services account has a different default KMS key for each Amazon Web
+     * Services Region.</p> <p> <b>Amazon RDS Custom</b> </p> <p>A KMS key is required
+     * for RDS Custom Oracle instances. For most RDS engines, if you leave this
+     * parameter empty while enabling <code>StorageEncrypted</code>, the engine uses
+     * the default KMS key. However, RDS Custom for Oracle doesn't use the default key
+     * when this parameter is empty. You must explicitly specify a key.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
      * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
-     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
-     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
-     * ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The Amazon Web
-     * Services KMS key identifier is managed by the DB cluster. For more information,
-     * see <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
-     * enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter,
-     * then Amazon RDS uses your default CMK. There is a default CMK for your Amazon
-     * Web Services account. Your Amazon Web Services account has a different default
-     * CMK for each Amazon Web Services Region.</p>
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. The Amazon Web Services KMS key identifier is managed by
+     * the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, and you do not specify a value
+     * for the <code>KmsKeyId</code> parameter, then Amazon RDS uses your default KMS
+     * key. There is a default KMS key for your Amazon Web Services account. Your
+     * Amazon Web Services account has a different default KMS key for each Amazon Web
+     * Services Region.</p> <p> <b>Amazon RDS Custom</b> </p> <p>A KMS key is required
+     * for RDS Custom Oracle instances. For most RDS engines, if you leave this
+     * parameter empty while enabling <code>StorageEncrypted</code>, the engine uses
+     * the default KMS key. However, RDS Custom for Oracle doesn't use the default key
+     * when this parameter is empty. You must explicitly specify a key.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
      * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
-     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
-     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
-     * ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The Amazon Web
-     * Services KMS key identifier is managed by the DB cluster. For more information,
-     * see <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
-     * enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter,
-     * then Amazon RDS uses your default CMK. There is a default CMK for your Amazon
-     * Web Services account. Your Amazon Web Services account has a different default
-     * CMK for each Amazon Web Services Region.</p>
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. The Amazon Web Services KMS key identifier is managed by
+     * the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, and you do not specify a value
+     * for the <code>KmsKeyId</code> parameter, then Amazon RDS uses your default KMS
+     * key. There is a default KMS key for your Amazon Web Services account. Your
+     * Amazon Web Services account has a different default KMS key for each Amazon Web
+     * Services Region.</p> <p> <b>Amazon RDS Custom</b> </p> <p>A KMS key is required
+     * for RDS Custom Oracle instances. For most RDS engines, if you leave this
+     * parameter empty while enabling <code>StorageEncrypted</code>, the engine uses
+     * the default KMS key. However, RDS Custom for Oracle doesn't use the default key
+     * when this parameter is empty. You must explicitly specify a key.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
      * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
-     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
-     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
-     * ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The Amazon Web
-     * Services KMS key identifier is managed by the DB cluster. For more information,
-     * see <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
-     * enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter,
-     * then Amazon RDS uses your default CMK. There is a default CMK for your Amazon
-     * Web Services account. Your Amazon Web Services account has a different default
-     * CMK for each Amazon Web Services Region.</p>
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. The Amazon Web Services KMS key identifier is managed by
+     * the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, and you do not specify a value
+     * for the <code>KmsKeyId</code> parameter, then Amazon RDS uses your default KMS
+     * key. There is a default KMS key for your Amazon Web Services account. Your
+     * Amazon Web Services account has a different default KMS key for each Amazon Web
+     * Services Region.</p> <p> <b>Amazon RDS Custom</b> </p> <p>A KMS key is required
+     * for RDS Custom Oracle instances. For most RDS engines, if you leave this
+     * parameter empty while enabling <code>StorageEncrypted</code>, the engine uses
+     * the default KMS key. However, RDS Custom for Oracle doesn't use the default key
+     * when this parameter is empty. You must explicitly specify a key.</p>
      */
     inline CreateDBInstanceRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
      * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
-     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
-     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
-     * ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The Amazon Web
-     * Services KMS key identifier is managed by the DB cluster. For more information,
-     * see <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
-     * enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter,
-     * then Amazon RDS uses your default CMK. There is a default CMK for your Amazon
-     * Web Services account. Your Amazon Web Services account has a different default
-     * CMK for each Amazon Web Services Region.</p>
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. The Amazon Web Services KMS key identifier is managed by
+     * the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, and you do not specify a value
+     * for the <code>KmsKeyId</code> parameter, then Amazon RDS uses your default KMS
+     * key. There is a default KMS key for your Amazon Web Services account. Your
+     * Amazon Web Services account has a different default KMS key for each Amazon Web
+     * Services Region.</p> <p> <b>Amazon RDS Custom</b> </p> <p>A KMS key is required
+     * for RDS Custom Oracle instances. For most RDS engines, if you leave this
+     * parameter empty while enabling <code>StorageEncrypted</code>, the engine uses
+     * the default KMS key. However, RDS Custom for Oracle doesn't use the default key
+     * when this parameter is empty. You must explicitly specify a key.</p>
      */
     inline CreateDBInstanceRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
      * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
-     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
-     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
-     * ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The Amazon Web
-     * Services KMS key identifier is managed by the DB cluster. For more information,
-     * see <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
-     * enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter,
-     * then Amazon RDS uses your default CMK. There is a default CMK for your Amazon
-     * Web Services account. Your Amazon Web Services account has a different default
-     * CMK for each Amazon Web Services Region.</p>
+     * or alias name for the KMS key. To use a KMS key in a different Amazon Web
+     * Services account, specify the key ARN or alias ARN.</p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. The Amazon Web Services KMS key identifier is managed by
+     * the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, and you do not specify a value
+     * for the <code>KmsKeyId</code> parameter, then Amazon RDS uses your default KMS
+     * key. There is a default KMS key for your Amazon Web Services account. Your
+     * Amazon Web Services account has a different default KMS key for each Amazon Web
+     * Services Region.</p> <p> <b>Amazon RDS Custom</b> </p> <p>A KMS key is required
+     * for RDS Custom Oracle instances. For most RDS engines, if you leave this
+     * parameter empty while enabling <code>StorageEncrypted</code>, the engine uses
+     * the default KMS key. However, RDS Custom for Oracle doesn't use the default key
+     * when this parameter is empty. You must explicitly specify a key.</p>
      */
     inline CreateDBInstanceRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -2937,7 +3153,8 @@ namespace Model
      * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
      * created in an Active Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
-     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting doesn't apply to RDS Custom.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
@@ -2946,7 +3163,8 @@ namespace Model
      * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
      * created in an Active Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
-     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting doesn't apply to RDS Custom.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
@@ -2955,7 +3173,8 @@ namespace Model
      * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
      * created in an Active Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
-     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting doesn't apply to RDS Custom.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
@@ -2964,7 +3183,8 @@ namespace Model
      * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
      * created in an Active Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
-     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting doesn't apply to RDS Custom.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
@@ -2973,7 +3193,8 @@ namespace Model
      * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
      * created in an Active Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
-     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting doesn't apply to RDS Custom.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
@@ -2982,7 +3203,8 @@ namespace Model
      * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
      * created in an Active Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
-     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting doesn't apply to RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
@@ -2991,7 +3213,8 @@ namespace Model
      * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
      * created in an Active Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
-     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting doesn't apply to RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
@@ -3000,7 +3223,8 @@ namespace Model
      * only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
      * created in an Active Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
-     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting doesn't apply to RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
@@ -3044,37 +3268,41 @@ namespace Model
 
     /**
      * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
-     * collected for the DB instance. To disable collecting Enhanced Monitoring
+     * collected for the DB instance. To disable collection of Enhanced Monitoring
      * metrics, specify 0. The default is 0.</p> <p>If <code>MonitoringRoleArn</code>
-     * is specified, then you must also set <code>MonitoringInterval</code> to a value
-     * other than 0.</p> <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
+     * is specified, then you must set <code>MonitoringInterval</code> to a value other
+     * than 0.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>Valid Values:
+     * <code>0, 1, 5, 10, 15, 30, 60</code> </p>
      */
     inline int GetMonitoringInterval() const{ return m_monitoringInterval; }
 
     /**
      * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
-     * collected for the DB instance. To disable collecting Enhanced Monitoring
+     * collected for the DB instance. To disable collection of Enhanced Monitoring
      * metrics, specify 0. The default is 0.</p> <p>If <code>MonitoringRoleArn</code>
-     * is specified, then you must also set <code>MonitoringInterval</code> to a value
-     * other than 0.</p> <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
+     * is specified, then you must set <code>MonitoringInterval</code> to a value other
+     * than 0.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>Valid Values:
+     * <code>0, 1, 5, 10, 15, 30, 60</code> </p>
      */
     inline bool MonitoringIntervalHasBeenSet() const { return m_monitoringIntervalHasBeenSet; }
 
     /**
      * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
-     * collected for the DB instance. To disable collecting Enhanced Monitoring
+     * collected for the DB instance. To disable collection of Enhanced Monitoring
      * metrics, specify 0. The default is 0.</p> <p>If <code>MonitoringRoleArn</code>
-     * is specified, then you must also set <code>MonitoringInterval</code> to a value
-     * other than 0.</p> <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
+     * is specified, then you must set <code>MonitoringInterval</code> to a value other
+     * than 0.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>Valid Values:
+     * <code>0, 1, 5, 10, 15, 30, 60</code> </p>
      */
     inline void SetMonitoringInterval(int value) { m_monitoringIntervalHasBeenSet = true; m_monitoringInterval = value; }
 
     /**
      * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
-     * collected for the DB instance. To disable collecting Enhanced Monitoring
+     * collected for the DB instance. To disable collection of Enhanced Monitoring
      * metrics, specify 0. The default is 0.</p> <p>If <code>MonitoringRoleArn</code>
-     * is specified, then you must also set <code>MonitoringInterval</code> to a value
-     * other than 0.</p> <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
+     * is specified, then you must set <code>MonitoringInterval</code> to a value other
+     * than 0.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>Valid Values:
+     * <code>0, 1, 5, 10, 15, 30, 60</code> </p>
      */
     inline CreateDBInstanceRequest& WithMonitoringInterval(int value) { SetMonitoringInterval(value); return *this;}
 
@@ -3083,11 +3311,12 @@ namespace Model
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
-     * a monitoring role, go to <a
+     * a monitoring role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
      * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you
-     * must supply a <code>MonitoringRoleArn</code> value.</p>
+     * must supply a <code>MonitoringRoleArn</code> value.</p> <p>This setting doesn't
+     * apply to RDS Custom.</p>
      */
     inline const Aws::String& GetMonitoringRoleArn() const{ return m_monitoringRoleArn; }
 
@@ -3095,11 +3324,12 @@ namespace Model
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
-     * a monitoring role, go to <a
+     * a monitoring role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
      * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you
-     * must supply a <code>MonitoringRoleArn</code> value.</p>
+     * must supply a <code>MonitoringRoleArn</code> value.</p> <p>This setting doesn't
+     * apply to RDS Custom.</p>
      */
     inline bool MonitoringRoleArnHasBeenSet() const { return m_monitoringRoleArnHasBeenSet; }
 
@@ -3107,11 +3337,12 @@ namespace Model
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
-     * a monitoring role, go to <a
+     * a monitoring role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
      * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you
-     * must supply a <code>MonitoringRoleArn</code> value.</p>
+     * must supply a <code>MonitoringRoleArn</code> value.</p> <p>This setting doesn't
+     * apply to RDS Custom.</p>
      */
     inline void SetMonitoringRoleArn(const Aws::String& value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn = value; }
 
@@ -3119,11 +3350,12 @@ namespace Model
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
-     * a monitoring role, go to <a
+     * a monitoring role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
      * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you
-     * must supply a <code>MonitoringRoleArn</code> value.</p>
+     * must supply a <code>MonitoringRoleArn</code> value.</p> <p>This setting doesn't
+     * apply to RDS Custom.</p>
      */
     inline void SetMonitoringRoleArn(Aws::String&& value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn = std::move(value); }
 
@@ -3131,11 +3363,12 @@ namespace Model
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
-     * a monitoring role, go to <a
+     * a monitoring role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
      * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you
-     * must supply a <code>MonitoringRoleArn</code> value.</p>
+     * must supply a <code>MonitoringRoleArn</code> value.</p> <p>This setting doesn't
+     * apply to RDS Custom.</p>
      */
     inline void SetMonitoringRoleArn(const char* value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn.assign(value); }
 
@@ -3143,11 +3376,12 @@ namespace Model
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
-     * a monitoring role, go to <a
+     * a monitoring role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
      * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you
-     * must supply a <code>MonitoringRoleArn</code> value.</p>
+     * must supply a <code>MonitoringRoleArn</code> value.</p> <p>This setting doesn't
+     * apply to RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithMonitoringRoleArn(const Aws::String& value) { SetMonitoringRoleArn(value); return *this;}
 
@@ -3155,11 +3389,12 @@ namespace Model
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
-     * a monitoring role, go to <a
+     * a monitoring role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
      * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you
-     * must supply a <code>MonitoringRoleArn</code> value.</p>
+     * must supply a <code>MonitoringRoleArn</code> value.</p> <p>This setting doesn't
+     * apply to RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithMonitoringRoleArn(Aws::String&& value) { SetMonitoringRoleArn(std::move(value)); return *this;}
 
@@ -3167,60 +3402,61 @@ namespace Model
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
-     * a monitoring role, go to <a
+     * a monitoring role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
      * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you
-     * must supply a <code>MonitoringRoleArn</code> value.</p>
+     * must supply a <code>MonitoringRoleArn</code> value.</p> <p>This setting doesn't
+     * apply to RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithMonitoringRoleArn(const char* value) { SetMonitoringRoleArn(value); return *this;}
 
 
     /**
      * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p>
+     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline const Aws::String& GetDomainIAMRoleName() const{ return m_domainIAMRoleName; }
 
     /**
      * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p>
+     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool DomainIAMRoleNameHasBeenSet() const { return m_domainIAMRoleNameHasBeenSet; }
 
     /**
      * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p>
+     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetDomainIAMRoleName(const Aws::String& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
 
     /**
      * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p>
+     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetDomainIAMRoleName(Aws::String&& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = std::move(value); }
 
     /**
      * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p>
+     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetDomainIAMRoleName(const char* value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName.assign(value); }
 
     /**
      * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p>
+     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithDomainIAMRoleName(const Aws::String& value) { SetDomainIAMRoleName(value); return *this;}
 
     /**
      * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p>
+     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithDomainIAMRoleName(Aws::String&& value) { SetDomainIAMRoleName(std::move(value)); return *this;}
 
     /**
      * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p>
+     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithDomainIAMRoleName(const char* value) { SetDomainIAMRoleName(value); return *this;}
 
@@ -3231,7 +3467,8 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
-     * Guide</i>. </p> <p>Default: 1</p> <p>Valid Values: 0 - 15</p>
+     * Guide</i>. </p> <p>This setting doesn't apply to RDS Custom.</p> <p>Default:
+     * 1</p> <p>Valid Values: 0 - 15</p>
      */
     inline int GetPromotionTier() const{ return m_promotionTier; }
 
@@ -3241,7 +3478,8 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
-     * Guide</i>. </p> <p>Default: 1</p> <p>Valid Values: 0 - 15</p>
+     * Guide</i>. </p> <p>This setting doesn't apply to RDS Custom.</p> <p>Default:
+     * 1</p> <p>Valid Values: 0 - 15</p>
      */
     inline bool PromotionTierHasBeenSet() const { return m_promotionTierHasBeenSet; }
 
@@ -3251,7 +3489,8 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
-     * Guide</i>. </p> <p>Default: 1</p> <p>Valid Values: 0 - 15</p>
+     * Guide</i>. </p> <p>This setting doesn't apply to RDS Custom.</p> <p>Default:
+     * 1</p> <p>Valid Values: 0 - 15</p>
      */
     inline void SetPromotionTier(int value) { m_promotionTierHasBeenSet = true; m_promotionTier = value; }
 
@@ -3261,7 +3500,8 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
-     * Guide</i>. </p> <p>Default: 1</p> <p>Valid Values: 0 - 15</p>
+     * Guide</i>. </p> <p>This setting doesn't apply to RDS Custom.</p> <p>Default:
+     * 1</p> <p>Valid Values: 0 - 15</p>
      */
     inline CreateDBInstanceRequest& WithPromotionTier(int value) { SetPromotionTier(value); return *this;}
 
@@ -3334,9 +3574,9 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of Amazon Web Services
      * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping is disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping
-     * Amazon Web Services IAM accounts to database accounts is managed by the DB
-     * cluster.</p> <p>For more information, see <a
+     * mapping is disabled.</p> <p>This setting doesn't apply to RDS Custom or Amazon
+     * Aurora. In Aurora, mapping Amazon Web Services IAM accounts to database accounts
+     * is managed by the DB cluster.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -3346,9 +3586,9 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of Amazon Web Services
      * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping is disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping
-     * Amazon Web Services IAM accounts to database accounts is managed by the DB
-     * cluster.</p> <p>For more information, see <a
+     * mapping is disabled.</p> <p>This setting doesn't apply to RDS Custom or Amazon
+     * Aurora. In Aurora, mapping Amazon Web Services IAM accounts to database accounts
+     * is managed by the DB cluster.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -3358,9 +3598,9 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of Amazon Web Services
      * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping is disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping
-     * Amazon Web Services IAM accounts to database accounts is managed by the DB
-     * cluster.</p> <p>For more information, see <a
+     * mapping is disabled.</p> <p>This setting doesn't apply to RDS Custom or Amazon
+     * Aurora. In Aurora, mapping Amazon Web Services IAM accounts to database accounts
+     * is managed by the DB cluster.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -3370,9 +3610,9 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of Amazon Web Services
      * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping is disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping
-     * Amazon Web Services IAM accounts to database accounts is managed by the DB
-     * cluster.</p> <p>For more information, see <a
+     * mapping is disabled.</p> <p>This setting doesn't apply to RDS Custom or Amazon
+     * Aurora. In Aurora, mapping Amazon Web Services IAM accounts to database accounts
+     * is managed by the DB cluster.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -3382,37 +3622,37 @@ namespace Model
 
     /**
      * <p>A value that indicates whether to enable Performance Insights for the DB
-     * instance. </p> <p>For more information, see <a
+     * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
-     * User Guide</i>. </p>
+     * User Guide</i>. </p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
 
     /**
      * <p>A value that indicates whether to enable Performance Insights for the DB
-     * instance. </p> <p>For more information, see <a
+     * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
-     * User Guide</i>. </p>
+     * User Guide</i>. </p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool EnablePerformanceInsightsHasBeenSet() const { return m_enablePerformanceInsightsHasBeenSet; }
 
     /**
      * <p>A value that indicates whether to enable Performance Insights for the DB
-     * instance. </p> <p>For more information, see <a
+     * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
-     * User Guide</i>. </p>
+     * User Guide</i>. </p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
 
     /**
      * <p>A value that indicates whether to enable Performance Insights for the DB
-     * instance. </p> <p>For more information, see <a
+     * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
-     * User Guide</i>. </p>
+     * User Guide</i>. </p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
 
@@ -3420,351 +3660,372 @@ namespace Model
     /**
      * <p>The Amazon Web Services KMS key identifier for encryption of Performance
      * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
-     * key (CMK).</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
-     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
-     * Services account has a different default CMK for each Amazon Web Services
-     * Region.</p>
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>If you do not specify a
+     * value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
+     * default KMS key. There is a default KMS key for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default KMS key for
+     * each Amazon Web Services Region.</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for encryption of Performance
      * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
-     * key (CMK).</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
-     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
-     * Services account has a different default CMK for each Amazon Web Services
-     * Region.</p>
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>If you do not specify a
+     * value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
+     * default KMS key. There is a default KMS key for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default KMS key for
+     * each Amazon Web Services Region.</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for encryption of Performance
      * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
-     * key (CMK).</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
-     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
-     * Services account has a different default CMK for each Amazon Web Services
-     * Region.</p>
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>If you do not specify a
+     * value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
+     * default KMS key. There is a default KMS key for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default KMS key for
+     * each Amazon Web Services Region.</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for encryption of Performance
      * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
-     * key (CMK).</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
-     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
-     * Services account has a different default CMK for each Amazon Web Services
-     * Region.</p>
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>If you do not specify a
+     * value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
+     * default KMS key. There is a default KMS key for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default KMS key for
+     * each Amazon Web Services Region.</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for encryption of Performance
      * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
-     * key (CMK).</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
-     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
-     * Services account has a different default CMK for each Amazon Web Services
-     * Region.</p>
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>If you do not specify a
+     * value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
+     * default KMS key. There is a default KMS key for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default KMS key for
+     * each Amazon Web Services Region.</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for encryption of Performance
      * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
-     * key (CMK).</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
-     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
-     * Services account has a different default CMK for each Amazon Web Services
-     * Region.</p>
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>If you do not specify a
+     * value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
+     * default KMS key. There is a default KMS key for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default KMS key for
+     * each Amazon Web Services Region.</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
     /**
      * <p>The Amazon Web Services KMS key identifier for encryption of Performance
      * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
-     * key (CMK).</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
-     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
-     * Services account has a different default CMK for each Amazon Web Services
-     * Region.</p>
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>If you do not specify a
+     * value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
+     * default KMS key. There is a default KMS key for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default KMS key for
+     * each Amazon Web Services Region.</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Web Services KMS key identifier for encryption of Performance
      * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
-     * key (CMK).</p> <p>If you do not specify a value for
-     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
-     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
-     * Services account has a different default CMK for each Amazon Web Services
-     * Region.</p>
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>If you do not specify a
+     * value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
+     * default KMS key. There is a default KMS key for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default KMS key for
+     * each Amazon Web Services Region.</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
 
     /**
      * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years). </p>
+     * values are 7 or 731 (2 years).</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline int GetPerformanceInsightsRetentionPeriod() const{ return m_performanceInsightsRetentionPeriod; }
 
     /**
      * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years). </p>
+     * values are 7 or 731 (2 years).</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline bool PerformanceInsightsRetentionPeriodHasBeenSet() const { return m_performanceInsightsRetentionPeriodHasBeenSet; }
 
     /**
      * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years). </p>
+     * values are 7 or 731 (2 years).</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline void SetPerformanceInsightsRetentionPeriod(int value) { m_performanceInsightsRetentionPeriodHasBeenSet = true; m_performanceInsightsRetentionPeriod = value; }
 
     /**
      * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years). </p>
+     * values are 7 or 731 (2 years).</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline CreateDBInstanceRequest& WithPerformanceInsightsRetentionPeriod(int value) { SetPerformanceInsightsRetentionPeriod(value); return *this;}
 
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
+     * Logs. The values in the list depend on the DB engine. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. CloudWatch Logs exports are managed by the DB cluster. </p> <p>
-     * <b>MariaDB</b> </p> <p>Possible values are <code>audit</code>,
-     * <code>error</code>, <code>general</code>, and <code>slowquery</code>. </p> <p>
-     * <b>Microsoft SQL Server</b> </p> <p>Possible values are <code>agent</code> and
-     * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
-     * <code>audit</code>, <code>error</code>, <code>general</code>, and
-     * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
-     * <code>alert</code>, <code>audit</code>, <code>listener</code>,
-     * <code>trace</code>, and <code>oemagent</code>. </p> <p> <b>PostgreSQL</b> </p>
-     * <p>Possible values are <code>postgresql</code> and <code>upgrade</code>. </p>
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
+     * Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
+     * CloudWatch Logs exports are managed by the DB cluster. </p> <p> <b>RDS
+     * Custom</b> </p> <p>Not applicable. </p> <p> <b>MariaDB</b> </p> <p>Possible
+     * values are <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
+     * values are <code>agent</code> and <code>error</code>. </p> <p> <b>MySQL</b> </p>
+     * <p>Possible values are <code>audit</code>, <code>error</code>,
+     * <code>general</code>, and <code>slowquery</code>. </p> <p> <b>Oracle</b> </p>
+     * <p>Possible values are <code>alert</code>, <code>audit</code>,
+     * <code>listener</code>, <code>trace</code>, and <code>oemagent</code>. </p> <p>
+     * <b>PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code> and
+     * <code>upgrade</code>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
+     * Logs. The values in the list depend on the DB engine. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. CloudWatch Logs exports are managed by the DB cluster. </p> <p>
-     * <b>MariaDB</b> </p> <p>Possible values are <code>audit</code>,
-     * <code>error</code>, <code>general</code>, and <code>slowquery</code>. </p> <p>
-     * <b>Microsoft SQL Server</b> </p> <p>Possible values are <code>agent</code> and
-     * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
-     * <code>audit</code>, <code>error</code>, <code>general</code>, and
-     * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
-     * <code>alert</code>, <code>audit</code>, <code>listener</code>,
-     * <code>trace</code>, and <code>oemagent</code>. </p> <p> <b>PostgreSQL</b> </p>
-     * <p>Possible values are <code>postgresql</code> and <code>upgrade</code>. </p>
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
+     * Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
+     * CloudWatch Logs exports are managed by the DB cluster. </p> <p> <b>RDS
+     * Custom</b> </p> <p>Not applicable. </p> <p> <b>MariaDB</b> </p> <p>Possible
+     * values are <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
+     * values are <code>agent</code> and <code>error</code>. </p> <p> <b>MySQL</b> </p>
+     * <p>Possible values are <code>audit</code>, <code>error</code>,
+     * <code>general</code>, and <code>slowquery</code>. </p> <p> <b>Oracle</b> </p>
+     * <p>Possible values are <code>alert</code>, <code>audit</code>,
+     * <code>listener</code>, <code>trace</code>, and <code>oemagent</code>. </p> <p>
+     * <b>PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code> and
+     * <code>upgrade</code>. </p>
      */
     inline bool EnableCloudwatchLogsExportsHasBeenSet() const { return m_enableCloudwatchLogsExportsHasBeenSet; }
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
+     * Logs. The values in the list depend on the DB engine. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. CloudWatch Logs exports are managed by the DB cluster. </p> <p>
-     * <b>MariaDB</b> </p> <p>Possible values are <code>audit</code>,
-     * <code>error</code>, <code>general</code>, and <code>slowquery</code>. </p> <p>
-     * <b>Microsoft SQL Server</b> </p> <p>Possible values are <code>agent</code> and
-     * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
-     * <code>audit</code>, <code>error</code>, <code>general</code>, and
-     * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
-     * <code>alert</code>, <code>audit</code>, <code>listener</code>,
-     * <code>trace</code>, and <code>oemagent</code>. </p> <p> <b>PostgreSQL</b> </p>
-     * <p>Possible values are <code>postgresql</code> and <code>upgrade</code>. </p>
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
+     * Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
+     * CloudWatch Logs exports are managed by the DB cluster. </p> <p> <b>RDS
+     * Custom</b> </p> <p>Not applicable. </p> <p> <b>MariaDB</b> </p> <p>Possible
+     * values are <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
+     * values are <code>agent</code> and <code>error</code>. </p> <p> <b>MySQL</b> </p>
+     * <p>Possible values are <code>audit</code>, <code>error</code>,
+     * <code>general</code>, and <code>slowquery</code>. </p> <p> <b>Oracle</b> </p>
+     * <p>Possible values are <code>alert</code>, <code>audit</code>,
+     * <code>listener</code>, <code>trace</code>, and <code>oemagent</code>. </p> <p>
+     * <b>PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code> and
+     * <code>upgrade</code>. </p>
      */
     inline void SetEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = value; }
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
+     * Logs. The values in the list depend on the DB engine. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. CloudWatch Logs exports are managed by the DB cluster. </p> <p>
-     * <b>MariaDB</b> </p> <p>Possible values are <code>audit</code>,
-     * <code>error</code>, <code>general</code>, and <code>slowquery</code>. </p> <p>
-     * <b>Microsoft SQL Server</b> </p> <p>Possible values are <code>agent</code> and
-     * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
-     * <code>audit</code>, <code>error</code>, <code>general</code>, and
-     * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
-     * <code>alert</code>, <code>audit</code>, <code>listener</code>,
-     * <code>trace</code>, and <code>oemagent</code>. </p> <p> <b>PostgreSQL</b> </p>
-     * <p>Possible values are <code>postgresql</code> and <code>upgrade</code>. </p>
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
+     * Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
+     * CloudWatch Logs exports are managed by the DB cluster. </p> <p> <b>RDS
+     * Custom</b> </p> <p>Not applicable. </p> <p> <b>MariaDB</b> </p> <p>Possible
+     * values are <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
+     * values are <code>agent</code> and <code>error</code>. </p> <p> <b>MySQL</b> </p>
+     * <p>Possible values are <code>audit</code>, <code>error</code>,
+     * <code>general</code>, and <code>slowquery</code>. </p> <p> <b>Oracle</b> </p>
+     * <p>Possible values are <code>alert</code>, <code>audit</code>,
+     * <code>listener</code>, <code>trace</code>, and <code>oemagent</code>. </p> <p>
+     * <b>PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code> and
+     * <code>upgrade</code>. </p>
      */
     inline void SetEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = std::move(value); }
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
+     * Logs. The values in the list depend on the DB engine. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. CloudWatch Logs exports are managed by the DB cluster. </p> <p>
-     * <b>MariaDB</b> </p> <p>Possible values are <code>audit</code>,
-     * <code>error</code>, <code>general</code>, and <code>slowquery</code>. </p> <p>
-     * <b>Microsoft SQL Server</b> </p> <p>Possible values are <code>agent</code> and
-     * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
-     * <code>audit</code>, <code>error</code>, <code>general</code>, and
-     * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
-     * <code>alert</code>, <code>audit</code>, <code>listener</code>,
-     * <code>trace</code>, and <code>oemagent</code>. </p> <p> <b>PostgreSQL</b> </p>
-     * <p>Possible values are <code>postgresql</code> and <code>upgrade</code>. </p>
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
+     * Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
+     * CloudWatch Logs exports are managed by the DB cluster. </p> <p> <b>RDS
+     * Custom</b> </p> <p>Not applicable. </p> <p> <b>MariaDB</b> </p> <p>Possible
+     * values are <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
+     * values are <code>agent</code> and <code>error</code>. </p> <p> <b>MySQL</b> </p>
+     * <p>Possible values are <code>audit</code>, <code>error</code>,
+     * <code>general</code>, and <code>slowquery</code>. </p> <p> <b>Oracle</b> </p>
+     * <p>Possible values are <code>alert</code>, <code>audit</code>,
+     * <code>listener</code>, <code>trace</code>, and <code>oemagent</code>. </p> <p>
+     * <b>PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code> and
+     * <code>upgrade</code>. </p>
      */
     inline CreateDBInstanceRequest& WithEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnableCloudwatchLogsExports(value); return *this;}
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
+     * Logs. The values in the list depend on the DB engine. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. CloudWatch Logs exports are managed by the DB cluster. </p> <p>
-     * <b>MariaDB</b> </p> <p>Possible values are <code>audit</code>,
-     * <code>error</code>, <code>general</code>, and <code>slowquery</code>. </p> <p>
-     * <b>Microsoft SQL Server</b> </p> <p>Possible values are <code>agent</code> and
-     * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
-     * <code>audit</code>, <code>error</code>, <code>general</code>, and
-     * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
-     * <code>alert</code>, <code>audit</code>, <code>listener</code>,
-     * <code>trace</code>, and <code>oemagent</code>. </p> <p> <b>PostgreSQL</b> </p>
-     * <p>Possible values are <code>postgresql</code> and <code>upgrade</code>. </p>
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
+     * Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
+     * CloudWatch Logs exports are managed by the DB cluster. </p> <p> <b>RDS
+     * Custom</b> </p> <p>Not applicable. </p> <p> <b>MariaDB</b> </p> <p>Possible
+     * values are <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
+     * values are <code>agent</code> and <code>error</code>. </p> <p> <b>MySQL</b> </p>
+     * <p>Possible values are <code>audit</code>, <code>error</code>,
+     * <code>general</code>, and <code>slowquery</code>. </p> <p> <b>Oracle</b> </p>
+     * <p>Possible values are <code>alert</code>, <code>audit</code>,
+     * <code>listener</code>, <code>trace</code>, and <code>oemagent</code>. </p> <p>
+     * <b>PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code> and
+     * <code>upgrade</code>. </p>
      */
     inline CreateDBInstanceRequest& WithEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnableCloudwatchLogsExports(std::move(value)); return *this;}
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
+     * Logs. The values in the list depend on the DB engine. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. CloudWatch Logs exports are managed by the DB cluster. </p> <p>
-     * <b>MariaDB</b> </p> <p>Possible values are <code>audit</code>,
-     * <code>error</code>, <code>general</code>, and <code>slowquery</code>. </p> <p>
-     * <b>Microsoft SQL Server</b> </p> <p>Possible values are <code>agent</code> and
-     * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
-     * <code>audit</code>, <code>error</code>, <code>general</code>, and
-     * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
-     * <code>alert</code>, <code>audit</code>, <code>listener</code>,
-     * <code>trace</code>, and <code>oemagent</code>. </p> <p> <b>PostgreSQL</b> </p>
-     * <p>Possible values are <code>postgresql</code> and <code>upgrade</code>. </p>
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
+     * Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
+     * CloudWatch Logs exports are managed by the DB cluster. </p> <p> <b>RDS
+     * Custom</b> </p> <p>Not applicable. </p> <p> <b>MariaDB</b> </p> <p>Possible
+     * values are <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
+     * values are <code>agent</code> and <code>error</code>. </p> <p> <b>MySQL</b> </p>
+     * <p>Possible values are <code>audit</code>, <code>error</code>,
+     * <code>general</code>, and <code>slowquery</code>. </p> <p> <b>Oracle</b> </p>
+     * <p>Possible values are <code>alert</code>, <code>audit</code>,
+     * <code>listener</code>, <code>trace</code>, and <code>oemagent</code>. </p> <p>
+     * <b>PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code> and
+     * <code>upgrade</code>. </p>
      */
     inline CreateDBInstanceRequest& AddEnableCloudwatchLogsExports(const Aws::String& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
+     * Logs. The values in the list depend on the DB engine. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. CloudWatch Logs exports are managed by the DB cluster. </p> <p>
-     * <b>MariaDB</b> </p> <p>Possible values are <code>audit</code>,
-     * <code>error</code>, <code>general</code>, and <code>slowquery</code>. </p> <p>
-     * <b>Microsoft SQL Server</b> </p> <p>Possible values are <code>agent</code> and
-     * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
-     * <code>audit</code>, <code>error</code>, <code>general</code>, and
-     * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
-     * <code>alert</code>, <code>audit</code>, <code>listener</code>,
-     * <code>trace</code>, and <code>oemagent</code>. </p> <p> <b>PostgreSQL</b> </p>
-     * <p>Possible values are <code>postgresql</code> and <code>upgrade</code>. </p>
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
+     * Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
+     * CloudWatch Logs exports are managed by the DB cluster. </p> <p> <b>RDS
+     * Custom</b> </p> <p>Not applicable. </p> <p> <b>MariaDB</b> </p> <p>Possible
+     * values are <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
+     * values are <code>agent</code> and <code>error</code>. </p> <p> <b>MySQL</b> </p>
+     * <p>Possible values are <code>audit</code>, <code>error</code>,
+     * <code>general</code>, and <code>slowquery</code>. </p> <p> <b>Oracle</b> </p>
+     * <p>Possible values are <code>alert</code>, <code>audit</code>,
+     * <code>listener</code>, <code>trace</code>, and <code>oemagent</code>. </p> <p>
+     * <b>PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code> and
+     * <code>upgrade</code>. </p>
      */
     inline CreateDBInstanceRequest& AddEnableCloudwatchLogsExports(Aws::String&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
-     * Logs. The values in the list depend on the DB engine being used. For more
-     * information, see <a
+     * Logs. The values in the list depend on the DB engine. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
-     * Database Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. CloudWatch Logs exports are managed by the DB cluster. </p> <p>
-     * <b>MariaDB</b> </p> <p>Possible values are <code>audit</code>,
-     * <code>error</code>, <code>general</code>, and <code>slowquery</code>. </p> <p>
-     * <b>Microsoft SQL Server</b> </p> <p>Possible values are <code>agent</code> and
-     * <code>error</code>. </p> <p> <b>MySQL</b> </p> <p>Possible values are
-     * <code>audit</code>, <code>error</code>, <code>general</code>, and
-     * <code>slowquery</code>. </p> <p> <b>Oracle</b> </p> <p>Possible values are
-     * <code>alert</code>, <code>audit</code>, <code>listener</code>,
-     * <code>trace</code>, and <code>oemagent</code>. </p> <p> <b>PostgreSQL</b> </p>
-     * <p>Possible values are <code>postgresql</code> and <code>upgrade</code>. </p>
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database
+     * Service User Guide</i>.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
+     * CloudWatch Logs exports are managed by the DB cluster. </p> <p> <b>RDS
+     * Custom</b> </p> <p>Not applicable. </p> <p> <b>MariaDB</b> </p> <p>Possible
+     * values are <code>audit</code>, <code>error</code>, <code>general</code>, and
+     * <code>slowquery</code>. </p> <p> <b>Microsoft SQL Server</b> </p> <p>Possible
+     * values are <code>agent</code> and <code>error</code>. </p> <p> <b>MySQL</b> </p>
+     * <p>Possible values are <code>audit</code>, <code>error</code>,
+     * <code>general</code>, and <code>slowquery</code>. </p> <p> <b>Oracle</b> </p>
+     * <p>Possible values are <code>alert</code>, <code>audit</code>,
+     * <code>listener</code>, <code>trace</code>, and <code>oemagent</code>. </p> <p>
+     * <b>PostgreSQL</b> </p> <p>Possible values are <code>postgresql</code> and
+     * <code>upgrade</code>. </p>
      */
     inline CreateDBInstanceRequest& AddEnableCloudwatchLogsExports(const char* value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 
 
     /**
      * <p>The number of CPU cores and the number of threads per core for the DB
-     * instance class of the DB instance.</p>
+     * instance class of the DB instance.</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline const Aws::Vector<ProcessorFeature>& GetProcessorFeatures() const{ return m_processorFeatures; }
 
     /**
      * <p>The number of CPU cores and the number of threads per core for the DB
-     * instance class of the DB instance.</p>
+     * instance class of the DB instance.</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline bool ProcessorFeaturesHasBeenSet() const { return m_processorFeaturesHasBeenSet; }
 
     /**
      * <p>The number of CPU cores and the number of threads per core for the DB
-     * instance class of the DB instance.</p>
+     * instance class of the DB instance.</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline void SetProcessorFeatures(const Aws::Vector<ProcessorFeature>& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures = value; }
 
     /**
      * <p>The number of CPU cores and the number of threads per core for the DB
-     * instance class of the DB instance.</p>
+     * instance class of the DB instance.</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline void SetProcessorFeatures(Aws::Vector<ProcessorFeature>&& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures = std::move(value); }
 
     /**
      * <p>The number of CPU cores and the number of threads per core for the DB
-     * instance class of the DB instance.</p>
+     * instance class of the DB instance.</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline CreateDBInstanceRequest& WithProcessorFeatures(const Aws::Vector<ProcessorFeature>& value) { SetProcessorFeatures(value); return *this;}
 
     /**
      * <p>The number of CPU cores and the number of threads per core for the DB
-     * instance class of the DB instance.</p>
+     * instance class of the DB instance.</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline CreateDBInstanceRequest& WithProcessorFeatures(Aws::Vector<ProcessorFeature>&& value) { SetProcessorFeatures(std::move(value)); return *this;}
 
     /**
      * <p>The number of CPU cores and the number of threads per core for the DB
-     * instance class of the DB instance.</p>
+     * instance class of the DB instance.</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline CreateDBInstanceRequest& AddProcessorFeatures(const ProcessorFeature& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures.push_back(value); return *this; }
 
     /**
      * <p>The number of CPU cores and the number of threads per core for the DB
-     * instance class of the DB instance.</p>
+     * instance class of the DB instance.</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline CreateDBInstanceRequest& AddProcessorFeatures(ProcessorFeature&& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures.push_back(std::move(value)); return *this; }
 
@@ -3828,7 +4089,8 @@ namespace Model
      * setting, including limitations that apply to it, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
      * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the
-     * <i>Amazon RDS User Guide</i>.</p>
+     * <i>Amazon RDS User Guide</i>.</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline int GetMaxAllocatedStorage() const{ return m_maxAllocatedStorage; }
 
@@ -3838,7 +4100,8 @@ namespace Model
      * setting, including limitations that apply to it, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
      * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the
-     * <i>Amazon RDS User Guide</i>.</p>
+     * <i>Amazon RDS User Guide</i>.</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline bool MaxAllocatedStorageHasBeenSet() const { return m_maxAllocatedStorageHasBeenSet; }
 
@@ -3848,7 +4111,8 @@ namespace Model
      * setting, including limitations that apply to it, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
      * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the
-     * <i>Amazon RDS User Guide</i>.</p>
+     * <i>Amazon RDS User Guide</i>.</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline void SetMaxAllocatedStorage(int value) { m_maxAllocatedStorageHasBeenSet = true; m_maxAllocatedStorage = value; }
 
@@ -3858,7 +4122,8 @@ namespace Model
      * setting, including limitations that apply to it, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
      * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the
-     * <i>Amazon RDS User Guide</i>.</p>
+     * <i>Amazon RDS User Guide</i>.</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline CreateDBInstanceRequest& WithMaxAllocatedStorage(int value) { SetMaxAllocatedStorage(value); return *this;}
 
@@ -3922,6 +4187,119 @@ namespace Model
      * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline CreateDBInstanceRequest& WithEnableCustomerOwnedIp(bool value) { SetEnableCustomerOwnedIp(value); return *this;}
+
+
+    /**
+     * <p>The instance profile associated with the underlying Amazon EC2 instance of an
+     * RDS Custom DB instance. The instance profile must meet the following
+     * requirements:</p> <ul> <li> <p>The profile must exist in your account.</p> </li>
+     * <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to
+     * assume.</p> </li> <li> <p>The instance profile name and the associated IAM role
+     * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
+     * <p>For the list of permissions required for the IAM role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     */
+    inline const Aws::String& GetCustomIamInstanceProfile() const{ return m_customIamInstanceProfile; }
+
+    /**
+     * <p>The instance profile associated with the underlying Amazon EC2 instance of an
+     * RDS Custom DB instance. The instance profile must meet the following
+     * requirements:</p> <ul> <li> <p>The profile must exist in your account.</p> </li>
+     * <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to
+     * assume.</p> </li> <li> <p>The instance profile name and the associated IAM role
+     * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
+     * <p>For the list of permissions required for the IAM role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     */
+    inline bool CustomIamInstanceProfileHasBeenSet() const { return m_customIamInstanceProfileHasBeenSet; }
+
+    /**
+     * <p>The instance profile associated with the underlying Amazon EC2 instance of an
+     * RDS Custom DB instance. The instance profile must meet the following
+     * requirements:</p> <ul> <li> <p>The profile must exist in your account.</p> </li>
+     * <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to
+     * assume.</p> </li> <li> <p>The instance profile name and the associated IAM role
+     * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
+     * <p>For the list of permissions required for the IAM role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     */
+    inline void SetCustomIamInstanceProfile(const Aws::String& value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile = value; }
+
+    /**
+     * <p>The instance profile associated with the underlying Amazon EC2 instance of an
+     * RDS Custom DB instance. The instance profile must meet the following
+     * requirements:</p> <ul> <li> <p>The profile must exist in your account.</p> </li>
+     * <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to
+     * assume.</p> </li> <li> <p>The instance profile name and the associated IAM role
+     * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
+     * <p>For the list of permissions required for the IAM role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     */
+    inline void SetCustomIamInstanceProfile(Aws::String&& value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile = std::move(value); }
+
+    /**
+     * <p>The instance profile associated with the underlying Amazon EC2 instance of an
+     * RDS Custom DB instance. The instance profile must meet the following
+     * requirements:</p> <ul> <li> <p>The profile must exist in your account.</p> </li>
+     * <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to
+     * assume.</p> </li> <li> <p>The instance profile name and the associated IAM role
+     * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
+     * <p>For the list of permissions required for the IAM role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     */
+    inline void SetCustomIamInstanceProfile(const char* value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile.assign(value); }
+
+    /**
+     * <p>The instance profile associated with the underlying Amazon EC2 instance of an
+     * RDS Custom DB instance. The instance profile must meet the following
+     * requirements:</p> <ul> <li> <p>The profile must exist in your account.</p> </li>
+     * <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to
+     * assume.</p> </li> <li> <p>The instance profile name and the associated IAM role
+     * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
+     * <p>For the list of permissions required for the IAM role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     */
+    inline CreateDBInstanceRequest& WithCustomIamInstanceProfile(const Aws::String& value) { SetCustomIamInstanceProfile(value); return *this;}
+
+    /**
+     * <p>The instance profile associated with the underlying Amazon EC2 instance of an
+     * RDS Custom DB instance. The instance profile must meet the following
+     * requirements:</p> <ul> <li> <p>The profile must exist in your account.</p> </li>
+     * <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to
+     * assume.</p> </li> <li> <p>The instance profile name and the associated IAM role
+     * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
+     * <p>For the list of permissions required for the IAM role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     */
+    inline CreateDBInstanceRequest& WithCustomIamInstanceProfile(Aws::String&& value) { SetCustomIamInstanceProfile(std::move(value)); return *this;}
+
+    /**
+     * <p>The instance profile associated with the underlying Amazon EC2 instance of an
+     * RDS Custom DB instance. The instance profile must meet the following
+     * requirements:</p> <ul> <li> <p>The profile must exist in your account.</p> </li>
+     * <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to
+     * assume.</p> </li> <li> <p>The instance profile name and the associated IAM role
+     * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
+     * <p>For the list of permissions required for the IAM role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     */
+    inline CreateDBInstanceRequest& WithCustomIamInstanceProfile(const char* value) { SetCustomIamInstanceProfile(value); return *this;}
 
   private:
 
@@ -4068,6 +4446,9 @@ namespace Model
 
     bool m_enableCustomerOwnedIp;
     bool m_enableCustomerOwnedIpHasBeenSet;
+
+    Aws::String m_customIamInstanceProfile;
+    bool m_customIamInstanceProfileHasBeenSet;
   };
 
 } // namespace Model

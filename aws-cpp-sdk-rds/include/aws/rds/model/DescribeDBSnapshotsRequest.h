@@ -625,7 +625,8 @@ namespace Model
      * has been given permission to copy or restore. By default, these snapshots are
      * not included.</p> <p>You can give an Amazon Web Services account permission to
      * restore a manual DB snapshot from another Amazon Web Services account by using
-     * the <code>ModifyDBSnapshotAttribute</code> API action.</p>
+     * the <code>ModifyDBSnapshotAttribute</code> API action.</p> <p>This setting
+     * doesn't apply to RDS Custom.</p>
      */
     inline bool GetIncludeShared() const{ return m_includeShared; }
 
@@ -635,7 +636,8 @@ namespace Model
      * has been given permission to copy or restore. By default, these snapshots are
      * not included.</p> <p>You can give an Amazon Web Services account permission to
      * restore a manual DB snapshot from another Amazon Web Services account by using
-     * the <code>ModifyDBSnapshotAttribute</code> API action.</p>
+     * the <code>ModifyDBSnapshotAttribute</code> API action.</p> <p>This setting
+     * doesn't apply to RDS Custom.</p>
      */
     inline bool IncludeSharedHasBeenSet() const { return m_includeSharedHasBeenSet; }
 
@@ -645,7 +647,8 @@ namespace Model
      * has been given permission to copy or restore. By default, these snapshots are
      * not included.</p> <p>You can give an Amazon Web Services account permission to
      * restore a manual DB snapshot from another Amazon Web Services account by using
-     * the <code>ModifyDBSnapshotAttribute</code> API action.</p>
+     * the <code>ModifyDBSnapshotAttribute</code> API action.</p> <p>This setting
+     * doesn't apply to RDS Custom.</p>
      */
     inline void SetIncludeShared(bool value) { m_includeSharedHasBeenSet = true; m_includeShared = value; }
 
@@ -655,7 +658,8 @@ namespace Model
      * has been given permission to copy or restore. By default, these snapshots are
      * not included.</p> <p>You can give an Amazon Web Services account permission to
      * restore a manual DB snapshot from another Amazon Web Services account by using
-     * the <code>ModifyDBSnapshotAttribute</code> API action.</p>
+     * the <code>ModifyDBSnapshotAttribute</code> API action.</p> <p>This setting
+     * doesn't apply to RDS Custom.</p>
      */
     inline DescribeDBSnapshotsRequest& WithIncludeShared(bool value) { SetIncludeShared(value); return *this;}
 
@@ -665,6 +669,7 @@ namespace Model
      * are public and can be copied or restored by any Amazon Web Services account. By
      * default, the public snapshots are not included.</p> <p>You can share a manual DB
      * snapshot as public by using the <a>ModifyDBSnapshotAttribute</a> API.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool GetIncludePublic() const{ return m_includePublic; }
 
@@ -673,6 +678,7 @@ namespace Model
      * are public and can be copied or restored by any Amazon Web Services account. By
      * default, the public snapshots are not included.</p> <p>You can share a manual DB
      * snapshot as public by using the <a>ModifyDBSnapshotAttribute</a> API.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool IncludePublicHasBeenSet() const { return m_includePublicHasBeenSet; }
 
@@ -681,6 +687,7 @@ namespace Model
      * are public and can be copied or restored by any Amazon Web Services account. By
      * default, the public snapshots are not included.</p> <p>You can share a manual DB
      * snapshot as public by using the <a>ModifyDBSnapshotAttribute</a> API.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetIncludePublic(bool value) { m_includePublicHasBeenSet = true; m_includePublic = value; }
 
@@ -689,6 +696,7 @@ namespace Model
      * are public and can be copied or restored by any Amazon Web Services account. By
      * default, the public snapshots are not included.</p> <p>You can share a manual DB
      * snapshot as public by using the <a>ModifyDBSnapshotAttribute</a> API.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline DescribeDBSnapshotsRequest& WithIncludePublic(bool value) { SetIncludePublic(value); return *this;}
 

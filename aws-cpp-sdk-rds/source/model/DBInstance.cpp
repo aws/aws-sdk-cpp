@@ -111,7 +111,11 @@ DBInstance::DBInstance() :
     m_activityStreamMode(ActivityStreamMode::NOT_SET),
     m_activityStreamModeHasBeenSet(false),
     m_activityStreamEngineNativeAuditFieldsIncluded(false),
-    m_activityStreamEngineNativeAuditFieldsIncludedHasBeenSet(false)
+    m_activityStreamEngineNativeAuditFieldsIncludedHasBeenSet(false),
+    m_automationMode(AutomationMode::NOT_SET),
+    m_automationModeHasBeenSet(false),
+    m_resumeFullAutomationModeTimeHasBeenSet(false),
+    m_customIamInstanceProfileHasBeenSet(false)
 {
 }
 
@@ -206,7 +210,11 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_activityStreamMode(ActivityStreamMode::NOT_SET),
     m_activityStreamModeHasBeenSet(false),
     m_activityStreamEngineNativeAuditFieldsIncluded(false),
-    m_activityStreamEngineNativeAuditFieldsIncludedHasBeenSet(false)
+    m_activityStreamEngineNativeAuditFieldsIncludedHasBeenSet(false),
+    m_automationMode(AutomationMode::NOT_SET),
+    m_automationModeHasBeenSet(false),
+    m_resumeFullAutomationModeTimeHasBeenSet(false),
+    m_customIamInstanceProfileHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -715,6 +723,24 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_activityStreamEngineNativeAuditFieldsIncluded = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(activityStreamEngineNativeAuditFieldsIncludedNode.GetText()).c_str()).c_str());
       m_activityStreamEngineNativeAuditFieldsIncludedHasBeenSet = true;
     }
+    XmlNode automationModeNode = resultNode.FirstChild("AutomationMode");
+    if(!automationModeNode.IsNull())
+    {
+      m_automationMode = AutomationModeMapper::GetAutomationModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(automationModeNode.GetText()).c_str()).c_str());
+      m_automationModeHasBeenSet = true;
+    }
+    XmlNode resumeFullAutomationModeTimeNode = resultNode.FirstChild("ResumeFullAutomationModeTime");
+    if(!resumeFullAutomationModeTimeNode.IsNull())
+    {
+      m_resumeFullAutomationModeTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resumeFullAutomationModeTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_resumeFullAutomationModeTimeHasBeenSet = true;
+    }
+    XmlNode customIamInstanceProfileNode = resultNode.FirstChild("CustomIamInstanceProfile");
+    if(!customIamInstanceProfileNode.IsNull())
+    {
+      m_customIamInstanceProfile = Aws::Utils::Xml::DecodeEscapedXmlText(customIamInstanceProfileNode.GetText());
+      m_customIamInstanceProfileHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1152,6 +1178,21 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".ActivityStreamEngineNativeAuditFieldsIncluded=" << std::boolalpha << m_activityStreamEngineNativeAuditFieldsIncluded << "&";
   }
 
+  if(m_automationModeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AutomationMode=" << AutomationModeMapper::GetNameForAutomationMode(m_automationMode) << "&";
+  }
+
+  if(m_resumeFullAutomationModeTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ResumeFullAutomationModeTime=" << StringUtils::URLEncode(m_resumeFullAutomationModeTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if(m_customIamInstanceProfileHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CustomIamInstanceProfile=" << StringUtils::URLEncode(m_customIamInstanceProfile.c_str()) << "&";
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1515,6 +1556,18 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_activityStreamEngineNativeAuditFieldsIncludedHasBeenSet)
   {
       oStream << location << ".ActivityStreamEngineNativeAuditFieldsIncluded=" << std::boolalpha << m_activityStreamEngineNativeAuditFieldsIncluded << "&";
+  }
+  if(m_automationModeHasBeenSet)
+  {
+      oStream << location << ".AutomationMode=" << AutomationModeMapper::GetNameForAutomationMode(m_automationMode) << "&";
+  }
+  if(m_resumeFullAutomationModeTimeHasBeenSet)
+  {
+      oStream << location << ".ResumeFullAutomationModeTime=" << StringUtils::URLEncode(m_resumeFullAutomationModeTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_customIamInstanceProfileHasBeenSet)
+  {
+      oStream << location << ".CustomIamInstanceProfile=" << StringUtils::URLEncode(m_customIamInstanceProfile.c_str()) << "&";
   }
 }
 

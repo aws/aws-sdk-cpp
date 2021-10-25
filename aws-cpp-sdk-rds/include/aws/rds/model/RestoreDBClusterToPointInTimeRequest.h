@@ -575,160 +575,144 @@ namespace Model
     /**
      * <p>The Amazon Web Services KMS key identifier to use when restoring an encrypted
      * DB cluster from an encrypted DB cluster.</p> <p>The Amazon Web Services KMS key
-     * identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
-     * Services KMS customer master key (CMK). To use a CMK in a different Amazon Web
-     * Services account, specify the key ARN or alias ARN.</p> <p>You can restore to a
-     * new DB cluster and encrypt the new DB cluster with a Amazon Web Services KMS CMK
-     * that is different than the Amazon Web Services KMS key used to encrypt the
-     * source DB cluster. The new DB cluster is encrypted with the Amazon Web Services
-     * KMS CMK identified by the <code>KmsKeyId</code> parameter.</p> <p>If you don't
-     * specify a value for the <code>KmsKeyId</code> parameter, then the following
-     * occurs:</p> <ul> <li> <p>If the DB cluster is encrypted, then the restored DB
-     * cluster is encrypted using the Amazon Web Services KMS CMK that was used to
-     * encrypt the source DB cluster.</p> </li> <li> <p>If the DB cluster isn't
-     * encrypted, then the restored DB cluster isn't encrypted.</p> </li> </ul> <p>If
-     * <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted,
-     * then the restore request is rejected.</p>
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To
+     * use a KMS key in a different Amazon Web Services account, specify the key ARN or
+     * alias ARN.</p> <p>You can restore to a new DB cluster and encrypt the new DB
+     * cluster with a KMS key that is different from the KMS key used to encrypt the
+     * source DB cluster. The new DB cluster is encrypted with the KMS key identified
+     * by the <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for
+     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
+     * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
+     * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
+     * <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't
+     * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
+     * cluster that isn't encrypted, then the restore request is rejected.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier to use when restoring an encrypted
      * DB cluster from an encrypted DB cluster.</p> <p>The Amazon Web Services KMS key
-     * identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
-     * Services KMS customer master key (CMK). To use a CMK in a different Amazon Web
-     * Services account, specify the key ARN or alias ARN.</p> <p>You can restore to a
-     * new DB cluster and encrypt the new DB cluster with a Amazon Web Services KMS CMK
-     * that is different than the Amazon Web Services KMS key used to encrypt the
-     * source DB cluster. The new DB cluster is encrypted with the Amazon Web Services
-     * KMS CMK identified by the <code>KmsKeyId</code> parameter.</p> <p>If you don't
-     * specify a value for the <code>KmsKeyId</code> parameter, then the following
-     * occurs:</p> <ul> <li> <p>If the DB cluster is encrypted, then the restored DB
-     * cluster is encrypted using the Amazon Web Services KMS CMK that was used to
-     * encrypt the source DB cluster.</p> </li> <li> <p>If the DB cluster isn't
-     * encrypted, then the restored DB cluster isn't encrypted.</p> </li> </ul> <p>If
-     * <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted,
-     * then the restore request is rejected.</p>
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To
+     * use a KMS key in a different Amazon Web Services account, specify the key ARN or
+     * alias ARN.</p> <p>You can restore to a new DB cluster and encrypt the new DB
+     * cluster with a KMS key that is different from the KMS key used to encrypt the
+     * source DB cluster. The new DB cluster is encrypted with the KMS key identified
+     * by the <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for
+     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
+     * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
+     * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
+     * <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't
+     * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
+     * cluster that isn't encrypted, then the restore request is rejected.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier to use when restoring an encrypted
      * DB cluster from an encrypted DB cluster.</p> <p>The Amazon Web Services KMS key
-     * identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
-     * Services KMS customer master key (CMK). To use a CMK in a different Amazon Web
-     * Services account, specify the key ARN or alias ARN.</p> <p>You can restore to a
-     * new DB cluster and encrypt the new DB cluster with a Amazon Web Services KMS CMK
-     * that is different than the Amazon Web Services KMS key used to encrypt the
-     * source DB cluster. The new DB cluster is encrypted with the Amazon Web Services
-     * KMS CMK identified by the <code>KmsKeyId</code> parameter.</p> <p>If you don't
-     * specify a value for the <code>KmsKeyId</code> parameter, then the following
-     * occurs:</p> <ul> <li> <p>If the DB cluster is encrypted, then the restored DB
-     * cluster is encrypted using the Amazon Web Services KMS CMK that was used to
-     * encrypt the source DB cluster.</p> </li> <li> <p>If the DB cluster isn't
-     * encrypted, then the restored DB cluster isn't encrypted.</p> </li> </ul> <p>If
-     * <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted,
-     * then the restore request is rejected.</p>
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To
+     * use a KMS key in a different Amazon Web Services account, specify the key ARN or
+     * alias ARN.</p> <p>You can restore to a new DB cluster and encrypt the new DB
+     * cluster with a KMS key that is different from the KMS key used to encrypt the
+     * source DB cluster. The new DB cluster is encrypted with the KMS key identified
+     * by the <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for
+     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
+     * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
+     * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
+     * <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't
+     * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
+     * cluster that isn't encrypted, then the restore request is rejected.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier to use when restoring an encrypted
      * DB cluster from an encrypted DB cluster.</p> <p>The Amazon Web Services KMS key
-     * identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
-     * Services KMS customer master key (CMK). To use a CMK in a different Amazon Web
-     * Services account, specify the key ARN or alias ARN.</p> <p>You can restore to a
-     * new DB cluster and encrypt the new DB cluster with a Amazon Web Services KMS CMK
-     * that is different than the Amazon Web Services KMS key used to encrypt the
-     * source DB cluster. The new DB cluster is encrypted with the Amazon Web Services
-     * KMS CMK identified by the <code>KmsKeyId</code> parameter.</p> <p>If you don't
-     * specify a value for the <code>KmsKeyId</code> parameter, then the following
-     * occurs:</p> <ul> <li> <p>If the DB cluster is encrypted, then the restored DB
-     * cluster is encrypted using the Amazon Web Services KMS CMK that was used to
-     * encrypt the source DB cluster.</p> </li> <li> <p>If the DB cluster isn't
-     * encrypted, then the restored DB cluster isn't encrypted.</p> </li> </ul> <p>If
-     * <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted,
-     * then the restore request is rejected.</p>
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To
+     * use a KMS key in a different Amazon Web Services account, specify the key ARN or
+     * alias ARN.</p> <p>You can restore to a new DB cluster and encrypt the new DB
+     * cluster with a KMS key that is different from the KMS key used to encrypt the
+     * source DB cluster. The new DB cluster is encrypted with the KMS key identified
+     * by the <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for
+     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
+     * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
+     * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
+     * <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't
+     * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
+     * cluster that isn't encrypted, then the restore request is rejected.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>The Amazon Web Services KMS key identifier to use when restoring an encrypted
      * DB cluster from an encrypted DB cluster.</p> <p>The Amazon Web Services KMS key
-     * identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
-     * Services KMS customer master key (CMK). To use a CMK in a different Amazon Web
-     * Services account, specify the key ARN or alias ARN.</p> <p>You can restore to a
-     * new DB cluster and encrypt the new DB cluster with a Amazon Web Services KMS CMK
-     * that is different than the Amazon Web Services KMS key used to encrypt the
-     * source DB cluster. The new DB cluster is encrypted with the Amazon Web Services
-     * KMS CMK identified by the <code>KmsKeyId</code> parameter.</p> <p>If you don't
-     * specify a value for the <code>KmsKeyId</code> parameter, then the following
-     * occurs:</p> <ul> <li> <p>If the DB cluster is encrypted, then the restored DB
-     * cluster is encrypted using the Amazon Web Services KMS CMK that was used to
-     * encrypt the source DB cluster.</p> </li> <li> <p>If the DB cluster isn't
-     * encrypted, then the restored DB cluster isn't encrypted.</p> </li> </ul> <p>If
-     * <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted,
-     * then the restore request is rejected.</p>
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To
+     * use a KMS key in a different Amazon Web Services account, specify the key ARN or
+     * alias ARN.</p> <p>You can restore to a new DB cluster and encrypt the new DB
+     * cluster with a KMS key that is different from the KMS key used to encrypt the
+     * source DB cluster. The new DB cluster is encrypted with the KMS key identified
+     * by the <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for
+     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
+     * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
+     * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
+     * <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't
+     * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
+     * cluster that isn't encrypted, then the restore request is rejected.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
      * <p>The Amazon Web Services KMS key identifier to use when restoring an encrypted
      * DB cluster from an encrypted DB cluster.</p> <p>The Amazon Web Services KMS key
-     * identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
-     * Services KMS customer master key (CMK). To use a CMK in a different Amazon Web
-     * Services account, specify the key ARN or alias ARN.</p> <p>You can restore to a
-     * new DB cluster and encrypt the new DB cluster with a Amazon Web Services KMS CMK
-     * that is different than the Amazon Web Services KMS key used to encrypt the
-     * source DB cluster. The new DB cluster is encrypted with the Amazon Web Services
-     * KMS CMK identified by the <code>KmsKeyId</code> parameter.</p> <p>If you don't
-     * specify a value for the <code>KmsKeyId</code> parameter, then the following
-     * occurs:</p> <ul> <li> <p>If the DB cluster is encrypted, then the restored DB
-     * cluster is encrypted using the Amazon Web Services KMS CMK that was used to
-     * encrypt the source DB cluster.</p> </li> <li> <p>If the DB cluster isn't
-     * encrypted, then the restored DB cluster isn't encrypted.</p> </li> </ul> <p>If
-     * <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted,
-     * then the restore request is rejected.</p>
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To
+     * use a KMS key in a different Amazon Web Services account, specify the key ARN or
+     * alias ARN.</p> <p>You can restore to a new DB cluster and encrypt the new DB
+     * cluster with a KMS key that is different from the KMS key used to encrypt the
+     * source DB cluster. The new DB cluster is encrypted with the KMS key identified
+     * by the <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for
+     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
+     * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
+     * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
+     * <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't
+     * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
+     * cluster that isn't encrypted, then the restore request is rejected.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p>The Amazon Web Services KMS key identifier to use when restoring an encrypted
      * DB cluster from an encrypted DB cluster.</p> <p>The Amazon Web Services KMS key
-     * identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
-     * Services KMS customer master key (CMK). To use a CMK in a different Amazon Web
-     * Services account, specify the key ARN or alias ARN.</p> <p>You can restore to a
-     * new DB cluster and encrypt the new DB cluster with a Amazon Web Services KMS CMK
-     * that is different than the Amazon Web Services KMS key used to encrypt the
-     * source DB cluster. The new DB cluster is encrypted with the Amazon Web Services
-     * KMS CMK identified by the <code>KmsKeyId</code> parameter.</p> <p>If you don't
-     * specify a value for the <code>KmsKeyId</code> parameter, then the following
-     * occurs:</p> <ul> <li> <p>If the DB cluster is encrypted, then the restored DB
-     * cluster is encrypted using the Amazon Web Services KMS CMK that was used to
-     * encrypt the source DB cluster.</p> </li> <li> <p>If the DB cluster isn't
-     * encrypted, then the restored DB cluster isn't encrypted.</p> </li> </ul> <p>If
-     * <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted,
-     * then the restore request is rejected.</p>
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To
+     * use a KMS key in a different Amazon Web Services account, specify the key ARN or
+     * alias ARN.</p> <p>You can restore to a new DB cluster and encrypt the new DB
+     * cluster with a KMS key that is different from the KMS key used to encrypt the
+     * source DB cluster. The new DB cluster is encrypted with the KMS key identified
+     * by the <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for
+     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
+     * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
+     * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
+     * <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't
+     * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
+     * cluster that isn't encrypted, then the restore request is rejected.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Web Services KMS key identifier to use when restoring an encrypted
      * DB cluster from an encrypted DB cluster.</p> <p>The Amazon Web Services KMS key
-     * identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
-     * Services KMS customer master key (CMK). To use a CMK in a different Amazon Web
-     * Services account, specify the key ARN or alias ARN.</p> <p>You can restore to a
-     * new DB cluster and encrypt the new DB cluster with a Amazon Web Services KMS CMK
-     * that is different than the Amazon Web Services KMS key used to encrypt the
-     * source DB cluster. The new DB cluster is encrypted with the Amazon Web Services
-     * KMS CMK identified by the <code>KmsKeyId</code> parameter.</p> <p>If you don't
-     * specify a value for the <code>KmsKeyId</code> parameter, then the following
-     * occurs:</p> <ul> <li> <p>If the DB cluster is encrypted, then the restored DB
-     * cluster is encrypted using the Amazon Web Services KMS CMK that was used to
-     * encrypt the source DB cluster.</p> </li> <li> <p>If the DB cluster isn't
-     * encrypted, then the restored DB cluster isn't encrypted.</p> </li> </ul> <p>If
-     * <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted,
-     * then the restore request is rejected.</p>
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To
+     * use a KMS key in a different Amazon Web Services account, specify the key ARN or
+     * alias ARN.</p> <p>You can restore to a new DB cluster and encrypt the new DB
+     * cluster with a KMS key that is different from the KMS key used to encrypt the
+     * source DB cluster. The new DB cluster is encrypted with the KMS key identified
+     * by the <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for
+     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
+     * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
+     * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
+     * <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't
+     * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
+     * cluster that isn't encrypted, then the restore request is rejected.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

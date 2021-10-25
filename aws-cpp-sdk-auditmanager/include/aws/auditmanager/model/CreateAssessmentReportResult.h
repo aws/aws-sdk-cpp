@@ -33,32 +33,32 @@ namespace Model
 
 
     /**
-     * <p> The new assessment report returned by the
-     * <code>CreateAssessmentReport</code> API. </p>
+     * <p> The new assessment report that the <code>CreateAssessmentReport</code> API
+     * returned. </p>
      */
     inline const AssessmentReport& GetAssessmentReport() const{ return m_assessmentReport; }
 
     /**
-     * <p> The new assessment report returned by the
-     * <code>CreateAssessmentReport</code> API. </p>
+     * <p> The new assessment report that the <code>CreateAssessmentReport</code> API
+     * returned. </p>
      */
     inline void SetAssessmentReport(const AssessmentReport& value) { m_assessmentReport = value; }
 
     /**
-     * <p> The new assessment report returned by the
-     * <code>CreateAssessmentReport</code> API. </p>
+     * <p> The new assessment report that the <code>CreateAssessmentReport</code> API
+     * returned. </p>
      */
     inline void SetAssessmentReport(AssessmentReport&& value) { m_assessmentReport = std::move(value); }
 
     /**
-     * <p> The new assessment report returned by the
-     * <code>CreateAssessmentReport</code> API. </p>
+     * <p> The new assessment report that the <code>CreateAssessmentReport</code> API
+     * returned. </p>
      */
     inline CreateAssessmentReportResult& WithAssessmentReport(const AssessmentReport& value) { SetAssessmentReport(value); return *this;}
 
     /**
-     * <p> The new assessment report returned by the
-     * <code>CreateAssessmentReport</code> API. </p>
+     * <p> The new assessment report that the <code>CreateAssessmentReport</code> API
+     * returned. </p>
      */
     inline CreateAssessmentReportResult& WithAssessmentReport(AssessmentReport&& value) { SetAssessmentReport(std::move(value)); return *this;}
 

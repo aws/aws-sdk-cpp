@@ -45,6 +45,7 @@
 #include <aws/route53resolver/model/GetFirewallRuleGroupRequest.h>
 #include <aws/route53resolver/model/GetFirewallRuleGroupAssociationRequest.h>
 #include <aws/route53resolver/model/GetFirewallRuleGroupPolicyRequest.h>
+#include <aws/route53resolver/model/GetResolverConfigRequest.h>
 #include <aws/route53resolver/model/GetResolverDnssecConfigRequest.h>
 #include <aws/route53resolver/model/GetResolverEndpointRequest.h>
 #include <aws/route53resolver/model/GetResolverQueryLogConfigRequest.h>
@@ -60,6 +61,7 @@
 #include <aws/route53resolver/model/ListFirewallRuleGroupAssociationsRequest.h>
 #include <aws/route53resolver/model/ListFirewallRuleGroupsRequest.h>
 #include <aws/route53resolver/model/ListFirewallRulesRequest.h>
+#include <aws/route53resolver/model/ListResolverConfigsRequest.h>
 #include <aws/route53resolver/model/ListResolverDnssecConfigsRequest.h>
 #include <aws/route53resolver/model/ListResolverEndpointIpAddressesRequest.h>
 #include <aws/route53resolver/model/ListResolverEndpointsRequest.h>
@@ -77,6 +79,7 @@
 #include <aws/route53resolver/model/UpdateFirewallDomainsRequest.h>
 #include <aws/route53resolver/model/UpdateFirewallRuleRequest.h>
 #include <aws/route53resolver/model/UpdateFirewallRuleGroupAssociationRequest.h>
+#include <aws/route53resolver/model/UpdateResolverConfigRequest.h>
 #include <aws/route53resolver/model/UpdateResolverDnssecConfigRequest.h>
 #include <aws/route53resolver/model/UpdateResolverEndpointRequest.h>
 #include <aws/route53resolver/model/UpdateResolverRuleRequest.h>
@@ -754,6 +757,30 @@ void Route53ResolverClient::GetFirewallRuleGroupPolicyAsyncHelper(const GetFirew
   handler(this, request, GetFirewallRuleGroupPolicy(request), context);
 }
 
+GetResolverConfigOutcome Route53ResolverClient::GetResolverConfig(const GetResolverConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetResolverConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetResolverConfigOutcomeCallable Route53ResolverClient::GetResolverConfigCallable(const GetResolverConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetResolverConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResolverConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::GetResolverConfigAsync(const GetResolverConfigRequest& request, const GetResolverConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetResolverConfigAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::GetResolverConfigAsyncHelper(const GetResolverConfigRequest& request, const GetResolverConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetResolverConfig(request), context);
+}
+
 GetResolverDnssecConfigOutcome Route53ResolverClient::GetResolverDnssecConfig(const GetResolverDnssecConfigRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1112,6 +1139,30 @@ void Route53ResolverClient::ListFirewallRulesAsync(const ListFirewallRulesReques
 void Route53ResolverClient::ListFirewallRulesAsyncHelper(const ListFirewallRulesRequest& request, const ListFirewallRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListFirewallRules(request), context);
+}
+
+ListResolverConfigsOutcome Route53ResolverClient::ListResolverConfigs(const ListResolverConfigsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListResolverConfigsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListResolverConfigsOutcomeCallable Route53ResolverClient::ListResolverConfigsCallable(const ListResolverConfigsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListResolverConfigsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResolverConfigs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::ListResolverConfigsAsync(const ListResolverConfigsRequest& request, const ListResolverConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListResolverConfigsAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::ListResolverConfigsAsyncHelper(const ListResolverConfigsRequest& request, const ListResolverConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListResolverConfigs(request), context);
 }
 
 ListResolverDnssecConfigsOutcome Route53ResolverClient::ListResolverDnssecConfigs(const ListResolverDnssecConfigsRequest& request) const
@@ -1520,6 +1571,30 @@ void Route53ResolverClient::UpdateFirewallRuleGroupAssociationAsync(const Update
 void Route53ResolverClient::UpdateFirewallRuleGroupAssociationAsyncHelper(const UpdateFirewallRuleGroupAssociationRequest& request, const UpdateFirewallRuleGroupAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateFirewallRuleGroupAssociation(request), context);
+}
+
+UpdateResolverConfigOutcome Route53ResolverClient::UpdateResolverConfig(const UpdateResolverConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateResolverConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateResolverConfigOutcomeCallable Route53ResolverClient::UpdateResolverConfigCallable(const UpdateResolverConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateResolverConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateResolverConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::UpdateResolverConfigAsync(const UpdateResolverConfigRequest& request, const UpdateResolverConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateResolverConfigAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::UpdateResolverConfigAsyncHelper(const UpdateResolverConfigRequest& request, const UpdateResolverConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateResolverConfig(request), context);
 }
 
 UpdateResolverDnssecConfigOutcome Route53ResolverClient::UpdateResolverDnssecConfig(const UpdateResolverDnssecConfigRequest& request) const

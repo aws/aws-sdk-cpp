@@ -15,6 +15,7 @@
 #include <aws/rds/model/ReplicaMode.h>
 #include <aws/rds/model/ActivityStreamStatus.h>
 #include <aws/rds/model/ActivityStreamMode.h>
+#include <aws/rds/model/AutomationMode.h>
 #include <aws/rds/model/DBSecurityGroupMembership.h>
 #include <aws/rds/model/VpcSecurityGroupMembership.h>
 #include <aws/rds/model/DBParameterGroupStatus.h>
@@ -966,22 +967,26 @@ namespace Model
 
 
     /**
-     * <p>Specifies if the DB instance is a Multi-AZ deployment.</p>
+     * <p>Specifies if the DB instance is a Multi-AZ deployment. This setting doesn't
+     * apply to RDS Custom.</p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
-     * <p>Specifies if the DB instance is a Multi-AZ deployment.</p>
+     * <p>Specifies if the DB instance is a Multi-AZ deployment. This setting doesn't
+     * apply to RDS Custom.</p>
      */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
     /**
-     * <p>Specifies if the DB instance is a Multi-AZ deployment.</p>
+     * <p>Specifies if the DB instance is a Multi-AZ deployment. This setting doesn't
+     * apply to RDS Custom.</p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
-     * <p>Specifies if the DB instance is a Multi-AZ deployment.</p>
+     * <p>Specifies if the DB instance is a Multi-AZ deployment. This setting doesn't
+     * apply to RDS Custom.</p>
      */
     inline DBInstance& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
@@ -1309,42 +1314,50 @@ namespace Model
 
 
     /**
-     * <p>License model information for this DB instance.</p>
+     * <p>License model information for this DB instance. This setting doesn't apply to
+     * RDS Custom.</p>
      */
     inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
 
     /**
-     * <p>License model information for this DB instance.</p>
+     * <p>License model information for this DB instance. This setting doesn't apply to
+     * RDS Custom.</p>
      */
     inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
 
     /**
-     * <p>License model information for this DB instance.</p>
+     * <p>License model information for this DB instance. This setting doesn't apply to
+     * RDS Custom.</p>
      */
     inline void SetLicenseModel(const Aws::String& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
 
     /**
-     * <p>License model information for this DB instance.</p>
+     * <p>License model information for this DB instance. This setting doesn't apply to
+     * RDS Custom.</p>
      */
     inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = std::move(value); }
 
     /**
-     * <p>License model information for this DB instance.</p>
+     * <p>License model information for this DB instance. This setting doesn't apply to
+     * RDS Custom.</p>
      */
     inline void SetLicenseModel(const char* value) { m_licenseModelHasBeenSet = true; m_licenseModel.assign(value); }
 
     /**
-     * <p>License model information for this DB instance.</p>
+     * <p>License model information for this DB instance. This setting doesn't apply to
+     * RDS Custom.</p>
      */
     inline DBInstance& WithLicenseModel(const Aws::String& value) { SetLicenseModel(value); return *this;}
 
     /**
-     * <p>License model information for this DB instance.</p>
+     * <p>License model information for this DB instance. This setting doesn't apply to
+     * RDS Custom.</p>
      */
     inline DBInstance& WithLicenseModel(Aws::String&& value) { SetLicenseModel(std::move(value)); return *this;}
 
     /**
-     * <p>License model information for this DB instance.</p>
+     * <p>License model information for this DB instance. This setting doesn't apply to
+     * RDS Custom.</p>
      */
     inline DBInstance& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
 
@@ -1856,64 +1869,64 @@ namespace Model
     /**
      * <p> If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
      * identifier for the encrypted DB instance. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
-     * Web Services KMS customer master key (CMK).</p>
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
      * <p> If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
      * identifier for the encrypted DB instance. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
-     * Web Services KMS customer master key (CMK).</p>
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p> If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
      * identifier for the encrypted DB instance. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
-     * Web Services KMS customer master key (CMK).</p>
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
      * <p> If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
      * identifier for the encrypted DB instance. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
-     * Web Services KMS customer master key (CMK).</p>
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p> If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
      * identifier for the encrypted DB instance. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
-     * Web Services KMS customer master key (CMK).</p>
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
      * <p> If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
      * identifier for the encrypted DB instance. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
-     * Web Services KMS customer master key (CMK).</p>
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline DBInstance& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p> If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
      * identifier for the encrypted DB instance. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
-     * Web Services KMS customer master key (CMK).</p>
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline DBInstance& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p> If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
      * identifier for the encrypted DB instance. </p> <p>The Amazon Web Services KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
-     * Web Services KMS customer master key (CMK).</p>
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     * key.</p>
      */
     inline DBInstance& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -1921,64 +1934,56 @@ namespace Model
     /**
      * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
      * instance. This identifier is found in Amazon Web Services CloudTrail log entries
-     * whenever the Amazon Web Services KMS customer master key (CMK) for the DB
-     * instance is accessed.</p>
+     * whenever the Amazon Web Services KMS key for the DB instance is accessed.</p>
      */
     inline const Aws::String& GetDbiResourceId() const{ return m_dbiResourceId; }
 
     /**
      * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
      * instance. This identifier is found in Amazon Web Services CloudTrail log entries
-     * whenever the Amazon Web Services KMS customer master key (CMK) for the DB
-     * instance is accessed.</p>
+     * whenever the Amazon Web Services KMS key for the DB instance is accessed.</p>
      */
     inline bool DbiResourceIdHasBeenSet() const { return m_dbiResourceIdHasBeenSet; }
 
     /**
      * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
      * instance. This identifier is found in Amazon Web Services CloudTrail log entries
-     * whenever the Amazon Web Services KMS customer master key (CMK) for the DB
-     * instance is accessed.</p>
+     * whenever the Amazon Web Services KMS key for the DB instance is accessed.</p>
      */
     inline void SetDbiResourceId(const Aws::String& value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId = value; }
 
     /**
      * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
      * instance. This identifier is found in Amazon Web Services CloudTrail log entries
-     * whenever the Amazon Web Services KMS customer master key (CMK) for the DB
-     * instance is accessed.</p>
+     * whenever the Amazon Web Services KMS key for the DB instance is accessed.</p>
      */
     inline void SetDbiResourceId(Aws::String&& value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId = std::move(value); }
 
     /**
      * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
      * instance. This identifier is found in Amazon Web Services CloudTrail log entries
-     * whenever the Amazon Web Services KMS customer master key (CMK) for the DB
-     * instance is accessed.</p>
+     * whenever the Amazon Web Services KMS key for the DB instance is accessed.</p>
      */
     inline void SetDbiResourceId(const char* value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId.assign(value); }
 
     /**
      * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
      * instance. This identifier is found in Amazon Web Services CloudTrail log entries
-     * whenever the Amazon Web Services KMS customer master key (CMK) for the DB
-     * instance is accessed.</p>
+     * whenever the Amazon Web Services KMS key for the DB instance is accessed.</p>
      */
     inline DBInstance& WithDbiResourceId(const Aws::String& value) { SetDbiResourceId(value); return *this;}
 
     /**
      * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
      * instance. This identifier is found in Amazon Web Services CloudTrail log entries
-     * whenever the Amazon Web Services KMS customer master key (CMK) for the DB
-     * instance is accessed.</p>
+     * whenever the Amazon Web Services KMS key for the DB instance is accessed.</p>
      */
     inline DBInstance& WithDbiResourceId(Aws::String&& value) { SetDbiResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
      * instance. This identifier is found in Amazon Web Services CloudTrail log entries
-     * whenever the Amazon Web Services KMS customer master key (CMK) for the DB
-     * instance is accessed.</p>
+     * whenever the Amazon Web Services KMS key for the DB instance is accessed.</p>
      */
     inline DBInstance& WithDbiResourceId(const char* value) { SetDbiResourceId(value); return *this;}
 
@@ -2445,64 +2450,56 @@ namespace Model
     /**
      * <p>The Amazon Web Services KMS key identifier for encryption of Performance
      * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
-     * key (CMK).</p>
+     * key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for encryption of Performance
      * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
-     * key (CMK).</p>
+     * key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for encryption of Performance
      * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
-     * key (CMK).</p>
+     * key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for encryption of Performance
      * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
-     * key (CMK).</p>
+     * key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for encryption of Performance
      * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
-     * key (CMK).</p>
+     * key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for encryption of Performance
      * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
-     * key (CMK).</p>
+     * key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline DBInstance& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
     /**
      * <p>The Amazon Web Services KMS key identifier for encryption of Performance
      * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
-     * key (CMK).</p>
+     * key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline DBInstance& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Web Services KMS key identifier for encryption of Performance
      * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
-     * key (CMK).</p>
+     * key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline DBInstance& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
@@ -3015,64 +3012,56 @@ namespace Model
     /**
      * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
      * the database activity stream. The Amazon Web Services KMS key identifier is the
-     * key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
-     * customer master key (CMK).</p>
+     * key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline const Aws::String& GetActivityStreamKmsKeyId() const{ return m_activityStreamKmsKeyId; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
      * the database activity stream. The Amazon Web Services KMS key identifier is the
-     * key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
-     * customer master key (CMK).</p>
+     * key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline bool ActivityStreamKmsKeyIdHasBeenSet() const { return m_activityStreamKmsKeyIdHasBeenSet; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
      * the database activity stream. The Amazon Web Services KMS key identifier is the
-     * key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
-     * customer master key (CMK).</p>
+     * key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline void SetActivityStreamKmsKeyId(const Aws::String& value) { m_activityStreamKmsKeyIdHasBeenSet = true; m_activityStreamKmsKeyId = value; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
      * the database activity stream. The Amazon Web Services KMS key identifier is the
-     * key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
-     * customer master key (CMK).</p>
+     * key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline void SetActivityStreamKmsKeyId(Aws::String&& value) { m_activityStreamKmsKeyIdHasBeenSet = true; m_activityStreamKmsKeyId = std::move(value); }
 
     /**
      * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
      * the database activity stream. The Amazon Web Services KMS key identifier is the
-     * key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
-     * customer master key (CMK).</p>
+     * key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline void SetActivityStreamKmsKeyId(const char* value) { m_activityStreamKmsKeyIdHasBeenSet = true; m_activityStreamKmsKeyId.assign(value); }
 
     /**
      * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
      * the database activity stream. The Amazon Web Services KMS key identifier is the
-     * key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
-     * customer master key (CMK).</p>
+     * key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline DBInstance& WithActivityStreamKmsKeyId(const Aws::String& value) { SetActivityStreamKmsKeyId(value); return *this;}
 
     /**
      * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
      * the database activity stream. The Amazon Web Services KMS key identifier is the
-     * key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
-     * customer master key (CMK).</p>
+     * key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline DBInstance& WithActivityStreamKmsKeyId(Aws::String&& value) { SetActivityStreamKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
      * the database activity stream. The Amazon Web Services KMS key identifier is the
-     * key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
-     * customer master key (CMK).</p>
+     * key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
      */
     inline DBInstance& WithActivityStreamKmsKeyId(const char* value) { SetActivityStreamKmsKeyId(value); return *this;}
 
@@ -3192,6 +3181,217 @@ namespace Model
      * activity stream.</p>
      */
     inline DBInstance& WithActivityStreamEngineNativeAuditFieldsIncluded(bool value) { SetActivityStreamEngineNativeAuditFieldsIncluded(value); return *this;}
+
+
+    /**
+     * <p>The automation mode of the RDS Custom DB instance: <code>full</code> or
+     * <code>all paused</code>. If <code>full</code>, the DB instance automates
+     * monitoring and instance recovery. If <code>all paused</code>, the instance
+     * pauses automation for the duration set by
+     * <code>--resume-full-automation-mode-minutes</code>.</p>
+     */
+    inline const AutomationMode& GetAutomationMode() const{ return m_automationMode; }
+
+    /**
+     * <p>The automation mode of the RDS Custom DB instance: <code>full</code> or
+     * <code>all paused</code>. If <code>full</code>, the DB instance automates
+     * monitoring and instance recovery. If <code>all paused</code>, the instance
+     * pauses automation for the duration set by
+     * <code>--resume-full-automation-mode-minutes</code>.</p>
+     */
+    inline bool AutomationModeHasBeenSet() const { return m_automationModeHasBeenSet; }
+
+    /**
+     * <p>The automation mode of the RDS Custom DB instance: <code>full</code> or
+     * <code>all paused</code>. If <code>full</code>, the DB instance automates
+     * monitoring and instance recovery. If <code>all paused</code>, the instance
+     * pauses automation for the duration set by
+     * <code>--resume-full-automation-mode-minutes</code>.</p>
+     */
+    inline void SetAutomationMode(const AutomationMode& value) { m_automationModeHasBeenSet = true; m_automationMode = value; }
+
+    /**
+     * <p>The automation mode of the RDS Custom DB instance: <code>full</code> or
+     * <code>all paused</code>. If <code>full</code>, the DB instance automates
+     * monitoring and instance recovery. If <code>all paused</code>, the instance
+     * pauses automation for the duration set by
+     * <code>--resume-full-automation-mode-minutes</code>.</p>
+     */
+    inline void SetAutomationMode(AutomationMode&& value) { m_automationModeHasBeenSet = true; m_automationMode = std::move(value); }
+
+    /**
+     * <p>The automation mode of the RDS Custom DB instance: <code>full</code> or
+     * <code>all paused</code>. If <code>full</code>, the DB instance automates
+     * monitoring and instance recovery. If <code>all paused</code>, the instance
+     * pauses automation for the duration set by
+     * <code>--resume-full-automation-mode-minutes</code>.</p>
+     */
+    inline DBInstance& WithAutomationMode(const AutomationMode& value) { SetAutomationMode(value); return *this;}
+
+    /**
+     * <p>The automation mode of the RDS Custom DB instance: <code>full</code> or
+     * <code>all paused</code>. If <code>full</code>, the DB instance automates
+     * monitoring and instance recovery. If <code>all paused</code>, the instance
+     * pauses automation for the duration set by
+     * <code>--resume-full-automation-mode-minutes</code>.</p>
+     */
+    inline DBInstance& WithAutomationMode(AutomationMode&& value) { SetAutomationMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The number of minutes to pause the automation. When the time period ends, RDS
+     * Custom resumes full automation. The minimum value is 60 (default). The maximum
+     * value is 1,440. </p>
+     */
+    inline const Aws::Utils::DateTime& GetResumeFullAutomationModeTime() const{ return m_resumeFullAutomationModeTime; }
+
+    /**
+     * <p>The number of minutes to pause the automation. When the time period ends, RDS
+     * Custom resumes full automation. The minimum value is 60 (default). The maximum
+     * value is 1,440. </p>
+     */
+    inline bool ResumeFullAutomationModeTimeHasBeenSet() const { return m_resumeFullAutomationModeTimeHasBeenSet; }
+
+    /**
+     * <p>The number of minutes to pause the automation. When the time period ends, RDS
+     * Custom resumes full automation. The minimum value is 60 (default). The maximum
+     * value is 1,440. </p>
+     */
+    inline void SetResumeFullAutomationModeTime(const Aws::Utils::DateTime& value) { m_resumeFullAutomationModeTimeHasBeenSet = true; m_resumeFullAutomationModeTime = value; }
+
+    /**
+     * <p>The number of minutes to pause the automation. When the time period ends, RDS
+     * Custom resumes full automation. The minimum value is 60 (default). The maximum
+     * value is 1,440. </p>
+     */
+    inline void SetResumeFullAutomationModeTime(Aws::Utils::DateTime&& value) { m_resumeFullAutomationModeTimeHasBeenSet = true; m_resumeFullAutomationModeTime = std::move(value); }
+
+    /**
+     * <p>The number of minutes to pause the automation. When the time period ends, RDS
+     * Custom resumes full automation. The minimum value is 60 (default). The maximum
+     * value is 1,440. </p>
+     */
+    inline DBInstance& WithResumeFullAutomationModeTime(const Aws::Utils::DateTime& value) { SetResumeFullAutomationModeTime(value); return *this;}
+
+    /**
+     * <p>The number of minutes to pause the automation. When the time period ends, RDS
+     * Custom resumes full automation. The minimum value is 60 (default). The maximum
+     * value is 1,440. </p>
+     */
+    inline DBInstance& WithResumeFullAutomationModeTime(Aws::Utils::DateTime&& value) { SetResumeFullAutomationModeTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The instance profile associated with the underlying Amazon EC2 instance of an
+     * RDS Custom DB instance. The instance profile must meet the following
+     * requirements:</p> <ul> <li> <p>The profile must exist in your account.</p> </li>
+     * <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to
+     * assume.</p> </li> <li> <p>The instance profile name and the associated IAM role
+     * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
+     * <p>For the list of permissions required for the IAM role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.</p>
+     */
+    inline const Aws::String& GetCustomIamInstanceProfile() const{ return m_customIamInstanceProfile; }
+
+    /**
+     * <p>The instance profile associated with the underlying Amazon EC2 instance of an
+     * RDS Custom DB instance. The instance profile must meet the following
+     * requirements:</p> <ul> <li> <p>The profile must exist in your account.</p> </li>
+     * <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to
+     * assume.</p> </li> <li> <p>The instance profile name and the associated IAM role
+     * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
+     * <p>For the list of permissions required for the IAM role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.</p>
+     */
+    inline bool CustomIamInstanceProfileHasBeenSet() const { return m_customIamInstanceProfileHasBeenSet; }
+
+    /**
+     * <p>The instance profile associated with the underlying Amazon EC2 instance of an
+     * RDS Custom DB instance. The instance profile must meet the following
+     * requirements:</p> <ul> <li> <p>The profile must exist in your account.</p> </li>
+     * <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to
+     * assume.</p> </li> <li> <p>The instance profile name and the associated IAM role
+     * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
+     * <p>For the list of permissions required for the IAM role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.</p>
+     */
+    inline void SetCustomIamInstanceProfile(const Aws::String& value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile = value; }
+
+    /**
+     * <p>The instance profile associated with the underlying Amazon EC2 instance of an
+     * RDS Custom DB instance. The instance profile must meet the following
+     * requirements:</p> <ul> <li> <p>The profile must exist in your account.</p> </li>
+     * <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to
+     * assume.</p> </li> <li> <p>The instance profile name and the associated IAM role
+     * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
+     * <p>For the list of permissions required for the IAM role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.</p>
+     */
+    inline void SetCustomIamInstanceProfile(Aws::String&& value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile = std::move(value); }
+
+    /**
+     * <p>The instance profile associated with the underlying Amazon EC2 instance of an
+     * RDS Custom DB instance. The instance profile must meet the following
+     * requirements:</p> <ul> <li> <p>The profile must exist in your account.</p> </li>
+     * <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to
+     * assume.</p> </li> <li> <p>The instance profile name and the associated IAM role
+     * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
+     * <p>For the list of permissions required for the IAM role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.</p>
+     */
+    inline void SetCustomIamInstanceProfile(const char* value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile.assign(value); }
+
+    /**
+     * <p>The instance profile associated with the underlying Amazon EC2 instance of an
+     * RDS Custom DB instance. The instance profile must meet the following
+     * requirements:</p> <ul> <li> <p>The profile must exist in your account.</p> </li>
+     * <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to
+     * assume.</p> </li> <li> <p>The instance profile name and the associated IAM role
+     * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
+     * <p>For the list of permissions required for the IAM role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.</p>
+     */
+    inline DBInstance& WithCustomIamInstanceProfile(const Aws::String& value) { SetCustomIamInstanceProfile(value); return *this;}
+
+    /**
+     * <p>The instance profile associated with the underlying Amazon EC2 instance of an
+     * RDS Custom DB instance. The instance profile must meet the following
+     * requirements:</p> <ul> <li> <p>The profile must exist in your account.</p> </li>
+     * <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to
+     * assume.</p> </li> <li> <p>The instance profile name and the associated IAM role
+     * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
+     * <p>For the list of permissions required for the IAM role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.</p>
+     */
+    inline DBInstance& WithCustomIamInstanceProfile(Aws::String&& value) { SetCustomIamInstanceProfile(std::move(value)); return *this;}
+
+    /**
+     * <p>The instance profile associated with the underlying Amazon EC2 instance of an
+     * RDS Custom DB instance. The instance profile must meet the following
+     * requirements:</p> <ul> <li> <p>The profile must exist in your account.</p> </li>
+     * <li> <p>The profile must have an IAM role that Amazon EC2 has permissions to
+     * assume.</p> </li> <li> <p>The instance profile name and the associated IAM role
+     * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
+     * <p>For the list of permissions required for the IAM role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
+     * Guide</i>.</p>
+     */
+    inline DBInstance& WithCustomIamInstanceProfile(const char* value) { SetCustomIamInstanceProfile(value); return *this;}
 
   private:
 
@@ -3404,6 +3604,15 @@ namespace Model
 
     bool m_activityStreamEngineNativeAuditFieldsIncluded;
     bool m_activityStreamEngineNativeAuditFieldsIncludedHasBeenSet;
+
+    AutomationMode m_automationMode;
+    bool m_automationModeHasBeenSet;
+
+    Aws::Utils::DateTime m_resumeFullAutomationModeTime;
+    bool m_resumeFullAutomationModeTimeHasBeenSet;
+
+    Aws::String m_customIamInstanceProfile;
+    bool m_customIamInstanceProfileHasBeenSet;
   };
 
 } // namespace Model

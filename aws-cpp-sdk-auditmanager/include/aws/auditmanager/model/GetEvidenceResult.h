@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p> The evidence returned by the <code>GetEvidenceResponse</code> API. </p>
+     * <p> The evidence that the <code>GetEvidenceResponse</code> API returned. </p>
      */
     inline const Evidence& GetEvidence() const{ return m_evidence; }
 
     /**
-     * <p> The evidence returned by the <code>GetEvidenceResponse</code> API. </p>
+     * <p> The evidence that the <code>GetEvidenceResponse</code> API returned. </p>
      */
     inline void SetEvidence(const Evidence& value) { m_evidence = value; }
 
     /**
-     * <p> The evidence returned by the <code>GetEvidenceResponse</code> API. </p>
+     * <p> The evidence that the <code>GetEvidenceResponse</code> API returned. </p>
      */
     inline void SetEvidence(Evidence&& value) { m_evidence = std::move(value); }
 
     /**
-     * <p> The evidence returned by the <code>GetEvidenceResponse</code> API. </p>
+     * <p> The evidence that the <code>GetEvidenceResponse</code> API returned. </p>
      */
     inline GetEvidenceResult& WithEvidence(const Evidence& value) { SetEvidence(value); return *this;}
 
     /**
-     * <p> The evidence returned by the <code>GetEvidenceResponse</code> API. </p>
+     * <p> The evidence that the <code>GetEvidenceResponse</code> API returned. </p>
      */
     inline GetEvidenceResult& WithEvidence(Evidence&& value) { SetEvidence(std::move(value)); return *this;}
 

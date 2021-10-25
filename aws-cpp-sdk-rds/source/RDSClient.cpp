@@ -34,6 +34,7 @@
 #include <aws/rds/model/CopyDBSnapshotRequest.h>
 #include <aws/rds/model/CopyOptionGroupRequest.h>
 #include <aws/rds/model/CreateCustomAvailabilityZoneRequest.h>
+#include <aws/rds/model/CreateCustomDBEngineVersionRequest.h>
 #include <aws/rds/model/CreateDBClusterRequest.h>
 #include <aws/rds/model/CreateDBClusterEndpointRequest.h>
 #include <aws/rds/model/CreateDBClusterParameterGroupRequest.h>
@@ -50,6 +51,7 @@
 #include <aws/rds/model/CreateGlobalClusterRequest.h>
 #include <aws/rds/model/CreateOptionGroupRequest.h>
 #include <aws/rds/model/DeleteCustomAvailabilityZoneRequest.h>
+#include <aws/rds/model/DeleteCustomDBEngineVersionRequest.h>
 #include <aws/rds/model/DeleteDBClusterRequest.h>
 #include <aws/rds/model/DeleteDBClusterEndpointRequest.h>
 #include <aws/rds/model/DeleteDBClusterParameterGroupRequest.h>
@@ -114,6 +116,7 @@
 #include <aws/rds/model/ListTagsForResourceRequest.h>
 #include <aws/rds/model/ModifyCertificatesRequest.h>
 #include <aws/rds/model/ModifyCurrentDBClusterCapacityRequest.h>
+#include <aws/rds/model/ModifyCustomDBEngineVersionRequest.h>
 #include <aws/rds/model/ModifyDBClusterRequest.h>
 #include <aws/rds/model/ModifyDBClusterEndpointRequest.h>
 #include <aws/rds/model/ModifyDBClusterParameterGroupRequest.h>
@@ -591,6 +594,30 @@ void RDSClient::CreateCustomAvailabilityZoneAsyncHelper(const CreateCustomAvaila
   handler(this, request, CreateCustomAvailabilityZone(request), context);
 }
 
+CreateCustomDBEngineVersionOutcome RDSClient::CreateCustomDBEngineVersion(const CreateCustomDBEngineVersionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateCustomDBEngineVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateCustomDBEngineVersionOutcomeCallable RDSClient::CreateCustomDBEngineVersionCallable(const CreateCustomDBEngineVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateCustomDBEngineVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCustomDBEngineVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RDSClient::CreateCustomDBEngineVersionAsync(const CreateCustomDBEngineVersionRequest& request, const CreateCustomDBEngineVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateCustomDBEngineVersionAsyncHelper( request, handler, context ); } );
+}
+
+void RDSClient::CreateCustomDBEngineVersionAsyncHelper(const CreateCustomDBEngineVersionRequest& request, const CreateCustomDBEngineVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateCustomDBEngineVersion(request), context);
+}
+
 CreateDBClusterOutcome RDSClient::CreateDBCluster(const CreateDBClusterRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -985,6 +1012,30 @@ void RDSClient::DeleteCustomAvailabilityZoneAsync(const DeleteCustomAvailability
 void RDSClient::DeleteCustomAvailabilityZoneAsyncHelper(const DeleteCustomAvailabilityZoneRequest& request, const DeleteCustomAvailabilityZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteCustomAvailabilityZone(request), context);
+}
+
+DeleteCustomDBEngineVersionOutcome RDSClient::DeleteCustomDBEngineVersion(const DeleteCustomDBEngineVersionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteCustomDBEngineVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeleteCustomDBEngineVersionOutcomeCallable RDSClient::DeleteCustomDBEngineVersionCallable(const DeleteCustomDBEngineVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteCustomDBEngineVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCustomDBEngineVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RDSClient::DeleteCustomDBEngineVersionAsync(const DeleteCustomDBEngineVersionRequest& request, const DeleteCustomDBEngineVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteCustomDBEngineVersionAsyncHelper( request, handler, context ); } );
+}
+
+void RDSClient::DeleteCustomDBEngineVersionAsyncHelper(const DeleteCustomDBEngineVersionRequest& request, const DeleteCustomDBEngineVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteCustomDBEngineVersion(request), context);
 }
 
 DeleteDBClusterOutcome RDSClient::DeleteDBCluster(const DeleteDBClusterRequest& request) const
@@ -2521,6 +2572,30 @@ void RDSClient::ModifyCurrentDBClusterCapacityAsync(const ModifyCurrentDBCluster
 void RDSClient::ModifyCurrentDBClusterCapacityAsyncHelper(const ModifyCurrentDBClusterCapacityRequest& request, const ModifyCurrentDBClusterCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifyCurrentDBClusterCapacity(request), context);
+}
+
+ModifyCustomDBEngineVersionOutcome RDSClient::ModifyCustomDBEngineVersion(const ModifyCustomDBEngineVersionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ModifyCustomDBEngineVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ModifyCustomDBEngineVersionOutcomeCallable RDSClient::ModifyCustomDBEngineVersionCallable(const ModifyCustomDBEngineVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyCustomDBEngineVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyCustomDBEngineVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RDSClient::ModifyCustomDBEngineVersionAsync(const ModifyCustomDBEngineVersionRequest& request, const ModifyCustomDBEngineVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyCustomDBEngineVersionAsyncHelper( request, handler, context ); } );
+}
+
+void RDSClient::ModifyCustomDBEngineVersionAsyncHelper(const ModifyCustomDBEngineVersionRequest& request, const ModifyCustomDBEngineVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyCustomDBEngineVersion(request), context);
 }
 
 ModifyDBClusterOutcome RDSClient::ModifyDBCluster(const ModifyDBClusterRequest& request) const

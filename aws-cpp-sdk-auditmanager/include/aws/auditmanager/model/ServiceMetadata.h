@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p> The metadata associated with the specified Amazon Web Service.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p> The metadata that's associated with the Amazon Web Service. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ServiceMetadata">AWS
    * API Reference</a></p>
    */
@@ -121,91 +121,91 @@ namespace Model
 
 
     /**
-     * <p> The description of the specified Amazon Web Service. </p>
+     * <p> The description of the Amazon Web Service. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p> The description of the specified Amazon Web Service. </p>
+     * <p> The description of the Amazon Web Service. </p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p> The description of the specified Amazon Web Service. </p>
+     * <p> The description of the Amazon Web Service. </p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p> The description of the specified Amazon Web Service. </p>
+     * <p> The description of the Amazon Web Service. </p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p> The description of the specified Amazon Web Service. </p>
+     * <p> The description of the Amazon Web Service. </p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p> The description of the specified Amazon Web Service. </p>
+     * <p> The description of the Amazon Web Service. </p>
      */
     inline ServiceMetadata& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p> The description of the specified Amazon Web Service. </p>
+     * <p> The description of the Amazon Web Service. </p>
      */
     inline ServiceMetadata& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p> The description of the specified Amazon Web Service. </p>
+     * <p> The description of the Amazon Web Service. </p>
      */
     inline ServiceMetadata& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p> The category in which the Amazon Web Service belongs, such as compute,
-     * storage, database, and so on. </p>
+     * <p> The category that the Amazon Web Service belongs to, such as compute,
+     * storage, or database. </p>
      */
     inline const Aws::String& GetCategory() const{ return m_category; }
 
     /**
-     * <p> The category in which the Amazon Web Service belongs, such as compute,
-     * storage, database, and so on. </p>
+     * <p> The category that the Amazon Web Service belongs to, such as compute,
+     * storage, or database. </p>
      */
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
 
     /**
-     * <p> The category in which the Amazon Web Service belongs, such as compute,
-     * storage, database, and so on. </p>
+     * <p> The category that the Amazon Web Service belongs to, such as compute,
+     * storage, or database. </p>
      */
     inline void SetCategory(const Aws::String& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
-     * <p> The category in which the Amazon Web Service belongs, such as compute,
-     * storage, database, and so on. </p>
+     * <p> The category that the Amazon Web Service belongs to, such as compute,
+     * storage, or database. </p>
      */
     inline void SetCategory(Aws::String&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
 
     /**
-     * <p> The category in which the Amazon Web Service belongs, such as compute,
-     * storage, database, and so on. </p>
+     * <p> The category that the Amazon Web Service belongs to, such as compute,
+     * storage, or database. </p>
      */
     inline void SetCategory(const char* value) { m_categoryHasBeenSet = true; m_category.assign(value); }
 
     /**
-     * <p> The category in which the Amazon Web Service belongs, such as compute,
-     * storage, database, and so on. </p>
+     * <p> The category that the Amazon Web Service belongs to, such as compute,
+     * storage, or database. </p>
      */
     inline ServiceMetadata& WithCategory(const Aws::String& value) { SetCategory(value); return *this;}
 
     /**
-     * <p> The category in which the Amazon Web Service belongs, such as compute,
-     * storage, database, and so on. </p>
+     * <p> The category that the Amazon Web Service belongs to, such as compute,
+     * storage, or database. </p>
      */
     inline ServiceMetadata& WithCategory(Aws::String&& value) { SetCategory(std::move(value)); return *this;}
 
     /**
-     * <p> The category in which the Amazon Web Service belongs, such as compute,
-     * storage, database, and so on. </p>
+     * <p> The category that the Amazon Web Service belongs to, such as compute,
+     * storage, or database. </p>
      */
     inline ServiceMetadata& WithCategory(const char* value) { SetCategory(value); return *this;}
 

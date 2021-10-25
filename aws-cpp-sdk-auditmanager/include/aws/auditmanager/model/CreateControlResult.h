@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p> The new control returned by the <code>CreateControl</code> API. </p>
+     * <p> The new control that the <code>CreateControl</code> API returned. </p>
      */
     inline const Control& GetControl() const{ return m_control; }
 
     /**
-     * <p> The new control returned by the <code>CreateControl</code> API. </p>
+     * <p> The new control that the <code>CreateControl</code> API returned. </p>
      */
     inline void SetControl(const Control& value) { m_control = value; }
 
     /**
-     * <p> The new control returned by the <code>CreateControl</code> API. </p>
+     * <p> The new control that the <code>CreateControl</code> API returned. </p>
      */
     inline void SetControl(Control&& value) { m_control = std::move(value); }
 
     /**
-     * <p> The new control returned by the <code>CreateControl</code> API. </p>
+     * <p> The new control that the <code>CreateControl</code> API returned. </p>
      */
     inline CreateControlResult& WithControl(const Control& value) { SetControl(value); return *this;}
 
     /**
-     * <p> The new control returned by the <code>CreateControl</code> API. </p>
+     * <p> The new control that the <code>CreateControl</code> API returned. </p>
      */
     inline CreateControlResult& WithControl(Control&& value) { SetControl(std::move(value)); return *this;}
 
