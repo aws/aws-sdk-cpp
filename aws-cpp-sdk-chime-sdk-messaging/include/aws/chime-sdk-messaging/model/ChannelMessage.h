@@ -11,6 +11,8 @@
 #include <aws/chime-sdk-messaging/model/Identity.h>
 #include <aws/chime-sdk-messaging/model/ChannelMessagePersistenceType.h>
 #include <aws/chime-sdk-messaging/model/ChannelMessageStatusStructure.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/chime-sdk-messaging/model/MessageAttributeValue.h>
 #include <utility>
 
 namespace Aws
@@ -443,6 +445,91 @@ namespace Model
      */
     inline ChannelMessage& WithStatus(ChannelMessageStatusStructure&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The attributes for the message, used for message filtering along with a
+     * <code>FilterRule</code> defined in the
+     * <code>PushNotificationPreferences</code>.</p>
+     */
+    inline const Aws::Map<Aws::String, MessageAttributeValue>& GetMessageAttributes() const{ return m_messageAttributes; }
+
+    /**
+     * <p>The attributes for the message, used for message filtering along with a
+     * <code>FilterRule</code> defined in the
+     * <code>PushNotificationPreferences</code>.</p>
+     */
+    inline bool MessageAttributesHasBeenSet() const { return m_messageAttributesHasBeenSet; }
+
+    /**
+     * <p>The attributes for the message, used for message filtering along with a
+     * <code>FilterRule</code> defined in the
+     * <code>PushNotificationPreferences</code>.</p>
+     */
+    inline void SetMessageAttributes(const Aws::Map<Aws::String, MessageAttributeValue>& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes = value; }
+
+    /**
+     * <p>The attributes for the message, used for message filtering along with a
+     * <code>FilterRule</code> defined in the
+     * <code>PushNotificationPreferences</code>.</p>
+     */
+    inline void SetMessageAttributes(Aws::Map<Aws::String, MessageAttributeValue>&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes = std::move(value); }
+
+    /**
+     * <p>The attributes for the message, used for message filtering along with a
+     * <code>FilterRule</code> defined in the
+     * <code>PushNotificationPreferences</code>.</p>
+     */
+    inline ChannelMessage& WithMessageAttributes(const Aws::Map<Aws::String, MessageAttributeValue>& value) { SetMessageAttributes(value); return *this;}
+
+    /**
+     * <p>The attributes for the message, used for message filtering along with a
+     * <code>FilterRule</code> defined in the
+     * <code>PushNotificationPreferences</code>.</p>
+     */
+    inline ChannelMessage& WithMessageAttributes(Aws::Map<Aws::String, MessageAttributeValue>&& value) { SetMessageAttributes(std::move(value)); return *this;}
+
+    /**
+     * <p>The attributes for the message, used for message filtering along with a
+     * <code>FilterRule</code> defined in the
+     * <code>PushNotificationPreferences</code>.</p>
+     */
+    inline ChannelMessage& AddMessageAttributes(const Aws::String& key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, value); return *this; }
+
+    /**
+     * <p>The attributes for the message, used for message filtering along with a
+     * <code>FilterRule</code> defined in the
+     * <code>PushNotificationPreferences</code>.</p>
+     */
+    inline ChannelMessage& AddMessageAttributes(Aws::String&& key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The attributes for the message, used for message filtering along with a
+     * <code>FilterRule</code> defined in the
+     * <code>PushNotificationPreferences</code>.</p>
+     */
+    inline ChannelMessage& AddMessageAttributes(const Aws::String& key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The attributes for the message, used for message filtering along with a
+     * <code>FilterRule</code> defined in the
+     * <code>PushNotificationPreferences</code>.</p>
+     */
+    inline ChannelMessage& AddMessageAttributes(Aws::String&& key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The attributes for the message, used for message filtering along with a
+     * <code>FilterRule</code> defined in the
+     * <code>PushNotificationPreferences</code>.</p>
+     */
+    inline ChannelMessage& AddMessageAttributes(const char* key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The attributes for the message, used for message filtering along with a
+     * <code>FilterRule</code> defined in the
+     * <code>PushNotificationPreferences</code>.</p>
+     */
+    inline ChannelMessage& AddMessageAttributes(const char* key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_channelArn;
@@ -480,6 +567,9 @@ namespace Model
 
     ChannelMessageStatusStructure m_status;
     bool m_statusHasBeenSet;
+
+    Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;
+    bool m_messageAttributesHasBeenSet;
   };
 
 } // namespace Model

@@ -139,47 +139,56 @@ namespace Model
 
 
     /**
-     * <p>The ARNs of the members you want to add to the channel.</p>
+     * <p>The <code>AppInstanceUserArn</code>s of the members you want to add to the
+     * channel.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMemberArns() const{ return m_memberArns; }
 
     /**
-     * <p>The ARNs of the members you want to add to the channel.</p>
+     * <p>The <code>AppInstanceUserArn</code>s of the members you want to add to the
+     * channel.</p>
      */
     inline bool MemberArnsHasBeenSet() const { return m_memberArnsHasBeenSet; }
 
     /**
-     * <p>The ARNs of the members you want to add to the channel.</p>
+     * <p>The <code>AppInstanceUserArn</code>s of the members you want to add to the
+     * channel.</p>
      */
     inline void SetMemberArns(const Aws::Vector<Aws::String>& value) { m_memberArnsHasBeenSet = true; m_memberArns = value; }
 
     /**
-     * <p>The ARNs of the members you want to add to the channel.</p>
+     * <p>The <code>AppInstanceUserArn</code>s of the members you want to add to the
+     * channel.</p>
      */
     inline void SetMemberArns(Aws::Vector<Aws::String>&& value) { m_memberArnsHasBeenSet = true; m_memberArns = std::move(value); }
 
     /**
-     * <p>The ARNs of the members you want to add to the channel.</p>
+     * <p>The <code>AppInstanceUserArn</code>s of the members you want to add to the
+     * channel.</p>
      */
     inline BatchCreateChannelMembershipRequest& WithMemberArns(const Aws::Vector<Aws::String>& value) { SetMemberArns(value); return *this;}
 
     /**
-     * <p>The ARNs of the members you want to add to the channel.</p>
+     * <p>The <code>AppInstanceUserArn</code>s of the members you want to add to the
+     * channel.</p>
      */
     inline BatchCreateChannelMembershipRequest& WithMemberArns(Aws::Vector<Aws::String>&& value) { SetMemberArns(std::move(value)); return *this;}
 
     /**
-     * <p>The ARNs of the members you want to add to the channel.</p>
+     * <p>The <code>AppInstanceUserArn</code>s of the members you want to add to the
+     * channel.</p>
      */
     inline BatchCreateChannelMembershipRequest& AddMemberArns(const Aws::String& value) { m_memberArnsHasBeenSet = true; m_memberArns.push_back(value); return *this; }
 
     /**
-     * <p>The ARNs of the members you want to add to the channel.</p>
+     * <p>The <code>AppInstanceUserArn</code>s of the members you want to add to the
+     * channel.</p>
      */
     inline BatchCreateChannelMembershipRequest& AddMemberArns(Aws::String&& value) { m_memberArnsHasBeenSet = true; m_memberArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The ARNs of the members you want to add to the channel.</p>
+     * <p>The <code>AppInstanceUserArn</code>s of the members you want to add to the
+     * channel.</p>
      */
     inline BatchCreateChannelMembershipRequest& AddMemberArns(const char* value) { m_memberArnsHasBeenSet = true; m_memberArns.push_back(value); return *this; }
 

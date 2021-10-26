@@ -76,42 +76,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the member.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the member.</p>
      */
     inline const Aws::String& GetMemberArn() const{ return m_memberArn; }
 
     /**
-     * <p>The ARN of the member.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the member.</p>
      */
     inline bool MemberArnHasBeenSet() const { return m_memberArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the member.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the member.</p>
      */
     inline void SetMemberArn(const Aws::String& value) { m_memberArnHasBeenSet = true; m_memberArn = value; }
 
     /**
-     * <p>The ARN of the member.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the member.</p>
      */
     inline void SetMemberArn(Aws::String&& value) { m_memberArnHasBeenSet = true; m_memberArn = std::move(value); }
 
     /**
-     * <p>The ARN of the member.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the member.</p>
      */
     inline void SetMemberArn(const char* value) { m_memberArnHasBeenSet = true; m_memberArn.assign(value); }
 
     /**
-     * <p>The ARN of the member.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the member.</p>
      */
     inline DescribeChannelMembershipRequest& WithMemberArn(const Aws::String& value) { SetMemberArn(value); return *this;}
 
     /**
-     * <p>The ARN of the member.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the member.</p>
      */
     inline DescribeChannelMembershipRequest& WithMemberArn(Aws::String&& value) { SetMemberArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the member.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the member.</p>
      */
     inline DescribeChannelMembershipRequest& WithMemberArn(const char* value) { SetMemberArn(value); return *this;}
 

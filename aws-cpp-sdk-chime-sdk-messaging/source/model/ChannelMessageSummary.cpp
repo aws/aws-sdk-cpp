@@ -30,7 +30,8 @@ ChannelMessageSummary::ChannelMessageSummary() :
     m_senderHasBeenSet(false),
     m_redacted(false),
     m_redactedHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_messageAttributesHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ ChannelMessageSummary::ChannelMessageSummary(JsonView jsonValue) :
     m_senderHasBeenSet(false),
     m_redacted(false),
     m_redactedHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_messageAttributesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -123,6 +125,16 @@ ChannelMessageSummary& ChannelMessageSummary::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MessageAttributes"))
+  {
+    Aws::Map<Aws::String, JsonView> messageAttributesJsonMap = jsonValue.GetObject("MessageAttributes").GetAllObjects();
+    for(auto& messageAttributesItem : messageAttributesJsonMap)
+    {
+      m_messageAttributes[messageAttributesItem.first] = messageAttributesItem.second.AsObject();
+    }
+    m_messageAttributesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -183,6 +195,17 @@ JsonValue ChannelMessageSummary::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithObject("Status", m_status.Jsonize());
+
+  }
+
+  if(m_messageAttributesHasBeenSet)
+  {
+   JsonValue messageAttributesJsonMap;
+   for(auto& messageAttributesItem : m_messageAttributes)
+   {
+     messageAttributesJsonMap.WithObject(messageAttributesItem.first, messageAttributesItem.second.Jsonize());
+   }
+   payload.WithObject("MessageAttributes", std::move(messageAttributesJsonMap));
 
   }
 

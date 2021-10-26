@@ -40,42 +40,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the member that the service couldn't add.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the member that the service couldn't
+     * add.</p>
      */
     inline const Aws::String& GetMemberArn() const{ return m_memberArn; }
 
     /**
-     * <p>The ARN of the member that the service couldn't add.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the member that the service couldn't
+     * add.</p>
      */
     inline bool MemberArnHasBeenSet() const { return m_memberArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the member that the service couldn't add.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the member that the service couldn't
+     * add.</p>
      */
     inline void SetMemberArn(const Aws::String& value) { m_memberArnHasBeenSet = true; m_memberArn = value; }
 
     /**
-     * <p>The ARN of the member that the service couldn't add.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the member that the service couldn't
+     * add.</p>
      */
     inline void SetMemberArn(Aws::String&& value) { m_memberArnHasBeenSet = true; m_memberArn = std::move(value); }
 
     /**
-     * <p>The ARN of the member that the service couldn't add.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the member that the service couldn't
+     * add.</p>
      */
     inline void SetMemberArn(const char* value) { m_memberArnHasBeenSet = true; m_memberArn.assign(value); }
 
     /**
-     * <p>The ARN of the member that the service couldn't add.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the member that the service couldn't
+     * add.</p>
      */
     inline BatchCreateChannelMembershipError& WithMemberArn(const Aws::String& value) { SetMemberArn(value); return *this;}
 
     /**
-     * <p>The ARN of the member that the service couldn't add.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the member that the service couldn't
+     * add.</p>
      */
     inline BatchCreateChannelMembershipError& WithMemberArn(Aws::String&& value) { SetMemberArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the member that the service couldn't add.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the member that the service couldn't
+     * add.</p>
      */
     inline BatchCreateChannelMembershipError& WithMemberArn(const char* value) { SetMemberArn(value); return *this;}
 

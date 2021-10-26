@@ -76,42 +76,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the moderator.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the moderator.</p>
      */
     inline const Aws::String& GetChannelModeratorArn() const{ return m_channelModeratorArn; }
 
     /**
-     * <p>The ARN of the moderator.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the moderator.</p>
      */
     inline bool ChannelModeratorArnHasBeenSet() const { return m_channelModeratorArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the moderator.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the moderator.</p>
      */
     inline void SetChannelModeratorArn(const Aws::String& value) { m_channelModeratorArnHasBeenSet = true; m_channelModeratorArn = value; }
 
     /**
-     * <p>The ARN of the moderator.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the moderator.</p>
      */
     inline void SetChannelModeratorArn(Aws::String&& value) { m_channelModeratorArnHasBeenSet = true; m_channelModeratorArn = std::move(value); }
 
     /**
-     * <p>The ARN of the moderator.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the moderator.</p>
      */
     inline void SetChannelModeratorArn(const char* value) { m_channelModeratorArnHasBeenSet = true; m_channelModeratorArn.assign(value); }
 
     /**
-     * <p>The ARN of the moderator.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the moderator.</p>
      */
     inline CreateChannelModeratorRequest& WithChannelModeratorArn(const Aws::String& value) { SetChannelModeratorArn(value); return *this;}
 
     /**
-     * <p>The ARN of the moderator.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the moderator.</p>
      */
     inline CreateChannelModeratorRequest& WithChannelModeratorArn(Aws::String&& value) { SetChannelModeratorArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the moderator.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the moderator.</p>
      */
     inline CreateChannelModeratorRequest& WithChannelModeratorArn(const char* value) { SetChannelModeratorArn(value); return *this;}
 

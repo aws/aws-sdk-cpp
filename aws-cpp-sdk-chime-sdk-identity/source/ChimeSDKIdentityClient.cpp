@@ -26,16 +26,24 @@
 #include <aws/chime-sdk-identity/model/DeleteAppInstanceRequest.h>
 #include <aws/chime-sdk-identity/model/DeleteAppInstanceAdminRequest.h>
 #include <aws/chime-sdk-identity/model/DeleteAppInstanceUserRequest.h>
+#include <aws/chime-sdk-identity/model/DeregisterAppInstanceUserEndpointRequest.h>
 #include <aws/chime-sdk-identity/model/DescribeAppInstanceRequest.h>
 #include <aws/chime-sdk-identity/model/DescribeAppInstanceAdminRequest.h>
 #include <aws/chime-sdk-identity/model/DescribeAppInstanceUserRequest.h>
+#include <aws/chime-sdk-identity/model/DescribeAppInstanceUserEndpointRequest.h>
 #include <aws/chime-sdk-identity/model/GetAppInstanceRetentionSettingsRequest.h>
 #include <aws/chime-sdk-identity/model/ListAppInstanceAdminsRequest.h>
+#include <aws/chime-sdk-identity/model/ListAppInstanceUserEndpointsRequest.h>
 #include <aws/chime-sdk-identity/model/ListAppInstanceUsersRequest.h>
 #include <aws/chime-sdk-identity/model/ListAppInstancesRequest.h>
+#include <aws/chime-sdk-identity/model/ListTagsForResourceRequest.h>
 #include <aws/chime-sdk-identity/model/PutAppInstanceRetentionSettingsRequest.h>
+#include <aws/chime-sdk-identity/model/RegisterAppInstanceUserEndpointRequest.h>
+#include <aws/chime-sdk-identity/model/TagResourceRequest.h>
+#include <aws/chime-sdk-identity/model/UntagResourceRequest.h>
 #include <aws/chime-sdk-identity/model/UpdateAppInstanceRequest.h>
 #include <aws/chime-sdk-identity/model/UpdateAppInstanceUserRequest.h>
+#include <aws/chime-sdk-identity/model/UpdateAppInstanceUserEndpointRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -292,6 +300,44 @@ void ChimeSDKIdentityClient::DeleteAppInstanceUserAsyncHelper(const DeleteAppIns
   handler(this, request, DeleteAppInstanceUser(request), context);
 }
 
+DeregisterAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::DeregisterAppInstanceUserEndpoint(const DeregisterAppInstanceUserEndpointRequest& request) const
+{
+  if (!request.AppInstanceUserArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeregisterAppInstanceUserEndpoint", "Required field: AppInstanceUserArn, is not set");
+    return DeregisterAppInstanceUserEndpointOutcome(Aws::Client::AWSError<ChimeSDKIdentityErrors>(ChimeSDKIdentityErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceUserArn]", false));
+  }
+  if (!request.EndpointIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeregisterAppInstanceUserEndpoint", "Required field: EndpointId, is not set");
+    return DeregisterAppInstanceUserEndpointOutcome(Aws::Client::AWSError<ChimeSDKIdentityErrors>(ChimeSDKIdentityErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndpointId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/app-instance-users/");
+  uri.AddPathSegment(request.GetAppInstanceUserArn());
+  uri.AddPathSegments("/endpoints/");
+  uri.AddPathSegment(request.GetEndpointId());
+  return DeregisterAppInstanceUserEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeregisterAppInstanceUserEndpointOutcomeCallable ChimeSDKIdentityClient::DeregisterAppInstanceUserEndpointCallable(const DeregisterAppInstanceUserEndpointRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeregisterAppInstanceUserEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterAppInstanceUserEndpoint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKIdentityClient::DeregisterAppInstanceUserEndpointAsync(const DeregisterAppInstanceUserEndpointRequest& request, const DeregisterAppInstanceUserEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeregisterAppInstanceUserEndpointAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKIdentityClient::DeregisterAppInstanceUserEndpointAsyncHelper(const DeregisterAppInstanceUserEndpointRequest& request, const DeregisterAppInstanceUserEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeregisterAppInstanceUserEndpoint(request), context);
+}
+
 DescribeAppInstanceOutcome ChimeSDKIdentityClient::DescribeAppInstance(const DescribeAppInstanceRequest& request) const
 {
   if (!request.AppInstanceArnHasBeenSet())
@@ -392,6 +438,44 @@ void ChimeSDKIdentityClient::DescribeAppInstanceUserAsyncHelper(const DescribeAp
   handler(this, request, DescribeAppInstanceUser(request), context);
 }
 
+DescribeAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::DescribeAppInstanceUserEndpoint(const DescribeAppInstanceUserEndpointRequest& request) const
+{
+  if (!request.AppInstanceUserArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeAppInstanceUserEndpoint", "Required field: AppInstanceUserArn, is not set");
+    return DescribeAppInstanceUserEndpointOutcome(Aws::Client::AWSError<ChimeSDKIdentityErrors>(ChimeSDKIdentityErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceUserArn]", false));
+  }
+  if (!request.EndpointIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeAppInstanceUserEndpoint", "Required field: EndpointId, is not set");
+    return DescribeAppInstanceUserEndpointOutcome(Aws::Client::AWSError<ChimeSDKIdentityErrors>(ChimeSDKIdentityErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndpointId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/app-instance-users/");
+  uri.AddPathSegment(request.GetAppInstanceUserArn());
+  uri.AddPathSegments("/endpoints/");
+  uri.AddPathSegment(request.GetEndpointId());
+  return DescribeAppInstanceUserEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeAppInstanceUserEndpointOutcomeCallable ChimeSDKIdentityClient::DescribeAppInstanceUserEndpointCallable(const DescribeAppInstanceUserEndpointRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAppInstanceUserEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAppInstanceUserEndpoint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKIdentityClient::DescribeAppInstanceUserEndpointAsync(const DescribeAppInstanceUserEndpointRequest& request, const DescribeAppInstanceUserEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAppInstanceUserEndpointAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKIdentityClient::DescribeAppInstanceUserEndpointAsyncHelper(const DescribeAppInstanceUserEndpointRequest& request, const DescribeAppInstanceUserEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAppInstanceUserEndpoint(request), context);
+}
+
 GetAppInstanceRetentionSettingsOutcome ChimeSDKIdentityClient::GetAppInstanceRetentionSettings(const GetAppInstanceRetentionSettingsRequest& request) const
 {
   if (!request.AppInstanceArnHasBeenSet())
@@ -456,6 +540,38 @@ void ChimeSDKIdentityClient::ListAppInstanceAdminsAsyncHelper(const ListAppInsta
   handler(this, request, ListAppInstanceAdmins(request), context);
 }
 
+ListAppInstanceUserEndpointsOutcome ChimeSDKIdentityClient::ListAppInstanceUserEndpoints(const ListAppInstanceUserEndpointsRequest& request) const
+{
+  if (!request.AppInstanceUserArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAppInstanceUserEndpoints", "Required field: AppInstanceUserArn, is not set");
+    return ListAppInstanceUserEndpointsOutcome(Aws::Client::AWSError<ChimeSDKIdentityErrors>(ChimeSDKIdentityErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceUserArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/app-instance-users/");
+  uri.AddPathSegment(request.GetAppInstanceUserArn());
+  uri.AddPathSegments("/endpoints");
+  return ListAppInstanceUserEndpointsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAppInstanceUserEndpointsOutcomeCallable ChimeSDKIdentityClient::ListAppInstanceUserEndpointsCallable(const ListAppInstanceUserEndpointsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAppInstanceUserEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAppInstanceUserEndpoints(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKIdentityClient::ListAppInstanceUserEndpointsAsync(const ListAppInstanceUserEndpointsRequest& request, const ListAppInstanceUserEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAppInstanceUserEndpointsAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKIdentityClient::ListAppInstanceUserEndpointsAsyncHelper(const ListAppInstanceUserEndpointsRequest& request, const ListAppInstanceUserEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAppInstanceUserEndpoints(request), context);
+}
+
 ListAppInstanceUsersOutcome ChimeSDKIdentityClient::ListAppInstanceUsers(const ListAppInstanceUsersRequest& request) const
 {
   if (!request.AppInstanceArnHasBeenSet())
@@ -511,6 +627,36 @@ void ChimeSDKIdentityClient::ListAppInstancesAsyncHelper(const ListAppInstancesR
   handler(this, request, ListAppInstances(request), context);
 }
 
+ListTagsForResourceOutcome ChimeSDKIdentityClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
+{
+  if (!request.ResourceARNHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceARN, is not set");
+    return ListTagsForResourceOutcome(Aws::Client::AWSError<ChimeSDKIdentityErrors>(ChimeSDKIdentityErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceARN]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/tags");
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListTagsForResourceOutcomeCallable ChimeSDKIdentityClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKIdentityClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKIdentityClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTagsForResource(request), context);
+}
+
 PutAppInstanceRetentionSettingsOutcome ChimeSDKIdentityClient::PutAppInstanceRetentionSettings(const PutAppInstanceRetentionSettingsRequest& request) const
 {
   if (!request.AppInstanceArnHasBeenSet())
@@ -541,6 +687,94 @@ void ChimeSDKIdentityClient::PutAppInstanceRetentionSettingsAsync(const PutAppIn
 void ChimeSDKIdentityClient::PutAppInstanceRetentionSettingsAsyncHelper(const PutAppInstanceRetentionSettingsRequest& request, const PutAppInstanceRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutAppInstanceRetentionSettings(request), context);
+}
+
+RegisterAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::RegisterAppInstanceUserEndpoint(const RegisterAppInstanceUserEndpointRequest& request) const
+{
+  if (!request.AppInstanceUserArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RegisterAppInstanceUserEndpoint", "Required field: AppInstanceUserArn, is not set");
+    return RegisterAppInstanceUserEndpointOutcome(Aws::Client::AWSError<ChimeSDKIdentityErrors>(ChimeSDKIdentityErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceUserArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/app-instance-users/");
+  uri.AddPathSegment(request.GetAppInstanceUserArn());
+  uri.AddPathSegments("/endpoints");
+  return RegisterAppInstanceUserEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RegisterAppInstanceUserEndpointOutcomeCallable ChimeSDKIdentityClient::RegisterAppInstanceUserEndpointCallable(const RegisterAppInstanceUserEndpointRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RegisterAppInstanceUserEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterAppInstanceUserEndpoint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKIdentityClient::RegisterAppInstanceUserEndpointAsync(const RegisterAppInstanceUserEndpointRequest& request, const RegisterAppInstanceUserEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RegisterAppInstanceUserEndpointAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKIdentityClient::RegisterAppInstanceUserEndpointAsyncHelper(const RegisterAppInstanceUserEndpointRequest& request, const RegisterAppInstanceUserEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RegisterAppInstanceUserEndpoint(request), context);
+}
+
+TagResourceOutcome ChimeSDKIdentityClient::TagResource(const TagResourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  uri.AddPathSegments("/tags");
+  ss.str("?operation=tag-resource");
+  uri.SetQueryString(ss.str());
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+TagResourceOutcomeCallable ChimeSDKIdentityClient::TagResourceCallable(const TagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKIdentityClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKIdentityClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TagResource(request), context);
+}
+
+UntagResourceOutcome ChimeSDKIdentityClient::UntagResource(const UntagResourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  uri.AddPathSegments("/tags");
+  ss.str("?operation=untag-resource");
+  uri.SetQueryString(ss.str());
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UntagResourceOutcomeCallable ChimeSDKIdentityClient::UntagResourceCallable(const UntagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKIdentityClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKIdentityClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UntagResource(request), context);
 }
 
 UpdateAppInstanceOutcome ChimeSDKIdentityClient::UpdateAppInstance(const UpdateAppInstanceRequest& request) const
@@ -603,5 +837,43 @@ void ChimeSDKIdentityClient::UpdateAppInstanceUserAsync(const UpdateAppInstanceU
 void ChimeSDKIdentityClient::UpdateAppInstanceUserAsyncHelper(const UpdateAppInstanceUserRequest& request, const UpdateAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateAppInstanceUser(request), context);
+}
+
+UpdateAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::UpdateAppInstanceUserEndpoint(const UpdateAppInstanceUserEndpointRequest& request) const
+{
+  if (!request.AppInstanceUserArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAppInstanceUserEndpoint", "Required field: AppInstanceUserArn, is not set");
+    return UpdateAppInstanceUserEndpointOutcome(Aws::Client::AWSError<ChimeSDKIdentityErrors>(ChimeSDKIdentityErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceUserArn]", false));
+  }
+  if (!request.EndpointIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAppInstanceUserEndpoint", "Required field: EndpointId, is not set");
+    return UpdateAppInstanceUserEndpointOutcome(Aws::Client::AWSError<ChimeSDKIdentityErrors>(ChimeSDKIdentityErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndpointId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/app-instance-users/");
+  uri.AddPathSegment(request.GetAppInstanceUserArn());
+  uri.AddPathSegments("/endpoints/");
+  uri.AddPathSegment(request.GetEndpointId());
+  return UpdateAppInstanceUserEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateAppInstanceUserEndpointOutcomeCallable ChimeSDKIdentityClient::UpdateAppInstanceUserEndpointCallable(const UpdateAppInstanceUserEndpointRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAppInstanceUserEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAppInstanceUserEndpoint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKIdentityClient::UpdateAppInstanceUserEndpointAsync(const UpdateAppInstanceUserEndpointRequest& request, const UpdateAppInstanceUserEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAppInstanceUserEndpointAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKIdentityClient::UpdateAppInstanceUserEndpointAsyncHelper(const UpdateAppInstanceUserEndpointRequest& request, const UpdateAppInstanceUserEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateAppInstanceUserEndpoint(request), context);
 }
 

@@ -25,6 +25,7 @@
 #include <aws/chime-sdk-messaging/model/DescribeChannelMembershipForAppInstanceUserResult.h>
 #include <aws/chime-sdk-messaging/model/DescribeChannelModeratedByAppInstanceUserResult.h>
 #include <aws/chime-sdk-messaging/model/DescribeChannelModeratorResult.h>
+#include <aws/chime-sdk-messaging/model/GetChannelMembershipPreferencesResult.h>
 #include <aws/chime-sdk-messaging/model/GetChannelMessageResult.h>
 #include <aws/chime-sdk-messaging/model/GetChannelMessageStatusResult.h>
 #include <aws/chime-sdk-messaging/model/GetMessagingSessionEndpointResult.h>
@@ -38,6 +39,7 @@
 #include <aws/chime-sdk-messaging/model/ListChannelsAssociatedWithChannelFlowResult.h>
 #include <aws/chime-sdk-messaging/model/ListChannelsModeratedByAppInstanceUserResult.h>
 #include <aws/chime-sdk-messaging/model/ListTagsForResourceResult.h>
+#include <aws/chime-sdk-messaging/model/PutChannelMembershipPreferencesResult.h>
 #include <aws/chime-sdk-messaging/model/RedactChannelMessageResult.h>
 #include <aws/chime-sdk-messaging/model/SendChannelMessageResult.h>
 #include <aws/chime-sdk-messaging/model/UpdateChannelResult.h>
@@ -106,6 +108,7 @@ namespace Model
         class DescribeChannelModeratedByAppInstanceUserRequest;
         class DescribeChannelModeratorRequest;
         class DisassociateChannelFlowRequest;
+        class GetChannelMembershipPreferencesRequest;
         class GetChannelMessageRequest;
         class GetChannelMessageStatusRequest;
         class GetMessagingSessionEndpointRequest;
@@ -119,6 +122,7 @@ namespace Model
         class ListChannelsAssociatedWithChannelFlowRequest;
         class ListChannelsModeratedByAppInstanceUserRequest;
         class ListTagsForResourceRequest;
+        class PutChannelMembershipPreferencesRequest;
         class RedactChannelMessageRequest;
         class SendChannelMessageRequest;
         class TagResourceRequest;
@@ -150,6 +154,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeChannelModeratedByAppInstanceUserResult, ChimeSDKMessagingError> DescribeChannelModeratedByAppInstanceUserOutcome;
         typedef Aws::Utils::Outcome<DescribeChannelModeratorResult, ChimeSDKMessagingError> DescribeChannelModeratorOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMessagingError> DisassociateChannelFlowOutcome;
+        typedef Aws::Utils::Outcome<GetChannelMembershipPreferencesResult, ChimeSDKMessagingError> GetChannelMembershipPreferencesOutcome;
         typedef Aws::Utils::Outcome<GetChannelMessageResult, ChimeSDKMessagingError> GetChannelMessageOutcome;
         typedef Aws::Utils::Outcome<GetChannelMessageStatusResult, ChimeSDKMessagingError> GetChannelMessageStatusOutcome;
         typedef Aws::Utils::Outcome<GetMessagingSessionEndpointResult, ChimeSDKMessagingError> GetMessagingSessionEndpointOutcome;
@@ -163,6 +168,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListChannelsAssociatedWithChannelFlowResult, ChimeSDKMessagingError> ListChannelsAssociatedWithChannelFlowOutcome;
         typedef Aws::Utils::Outcome<ListChannelsModeratedByAppInstanceUserResult, ChimeSDKMessagingError> ListChannelsModeratedByAppInstanceUserOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, ChimeSDKMessagingError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<PutChannelMembershipPreferencesResult, ChimeSDKMessagingError> PutChannelMembershipPreferencesOutcome;
         typedef Aws::Utils::Outcome<RedactChannelMessageResult, ChimeSDKMessagingError> RedactChannelMessageOutcome;
         typedef Aws::Utils::Outcome<SendChannelMessageResult, ChimeSDKMessagingError> SendChannelMessageOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMessagingError> TagResourceOutcome;
@@ -194,6 +200,7 @@ namespace Model
         typedef std::future<DescribeChannelModeratedByAppInstanceUserOutcome> DescribeChannelModeratedByAppInstanceUserOutcomeCallable;
         typedef std::future<DescribeChannelModeratorOutcome> DescribeChannelModeratorOutcomeCallable;
         typedef std::future<DisassociateChannelFlowOutcome> DisassociateChannelFlowOutcomeCallable;
+        typedef std::future<GetChannelMembershipPreferencesOutcome> GetChannelMembershipPreferencesOutcomeCallable;
         typedef std::future<GetChannelMessageOutcome> GetChannelMessageOutcomeCallable;
         typedef std::future<GetChannelMessageStatusOutcome> GetChannelMessageStatusOutcomeCallable;
         typedef std::future<GetMessagingSessionEndpointOutcome> GetMessagingSessionEndpointOutcomeCallable;
@@ -207,6 +214,7 @@ namespace Model
         typedef std::future<ListChannelsAssociatedWithChannelFlowOutcome> ListChannelsAssociatedWithChannelFlowOutcomeCallable;
         typedef std::future<ListChannelsModeratedByAppInstanceUserOutcome> ListChannelsModeratedByAppInstanceUserOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<PutChannelMembershipPreferencesOutcome> PutChannelMembershipPreferencesOutcomeCallable;
         typedef std::future<RedactChannelMessageOutcome> RedactChannelMessageOutcomeCallable;
         typedef std::future<SendChannelMessageOutcome> SendChannelMessageOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -241,6 +249,7 @@ namespace Model
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::DescribeChannelModeratedByAppInstanceUserRequest&, const Model::DescribeChannelModeratedByAppInstanceUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChannelModeratedByAppInstanceUserResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::DescribeChannelModeratorRequest&, const Model::DescribeChannelModeratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChannelModeratorResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::DisassociateChannelFlowRequest&, const Model::DisassociateChannelFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateChannelFlowResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMessagingClient*, const Model::GetChannelMembershipPreferencesRequest&, const Model::GetChannelMembershipPreferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChannelMembershipPreferencesResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::GetChannelMessageRequest&, const Model::GetChannelMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChannelMessageResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::GetChannelMessageStatusRequest&, const Model::GetChannelMessageStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChannelMessageStatusResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::GetMessagingSessionEndpointRequest&, const Model::GetMessagingSessionEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMessagingSessionEndpointResponseReceivedHandler;
@@ -254,6 +263,7 @@ namespace Model
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::ListChannelsAssociatedWithChannelFlowRequest&, const Model::ListChannelsAssociatedWithChannelFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelsAssociatedWithChannelFlowResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::ListChannelsModeratedByAppInstanceUserRequest&, const Model::ListChannelsModeratedByAppInstanceUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelsModeratedByAppInstanceUserResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMessagingClient*, const Model::PutChannelMembershipPreferencesRequest&, const Model::PutChannelMembershipPreferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutChannelMembershipPreferencesResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::RedactChannelMessageRequest&, const Model::RedactChannelMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RedactChannelMessageResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::SendChannelMessageRequest&, const Model::SendChannelMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendChannelMessageResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
@@ -545,34 +555,34 @@ namespace Model
         virtual void CreateChannelFlowAsync(const Model::CreateChannelFlowRequest& request, const CreateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds a user to a channel. The <code>InvitedBy</code> response field is
-         * derived from the request header. A channel member can:</p> <ul> <li> <p>List
-         * messages</p> </li> <li> <p>Send messages</p> </li> <li> <p>Receive messages</p>
-         * </li> <li> <p>Edit their own messages</p> </li> <li> <p>Leave the channel</p>
-         * </li> </ul> <p>Privacy settings impact this action as follows:</p> <ul> <li>
-         * <p>Public Channels: You do not need to be a member to list messages, but you
-         * must be a member to send messages.</p> </li> <li> <p>Private Channels: You must
-         * be a member to list or send messages.</p> </li> </ul>  <p>The
-         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
-         * in the header.</p> <p><h3>See Also:</h3>   <a
+         * <p>Adds a user to a channel. The <code>InvitedBy</code> field in
+         * <code>ChannelMembership</code> is derived from the request header. A channel
+         * member can:</p> <ul> <li> <p>List messages</p> </li> <li> <p>Send messages</p>
+         * </li> <li> <p>Receive messages</p> </li> <li> <p>Edit their own messages</p>
+         * </li> <li> <p>Leave the channel</p> </li> </ul> <p>Privacy settings impact this
+         * action as follows:</p> <ul> <li> <p>Public Channels: You do not need to be a
+         * member to list messages, but you must be a member to send messages.</p> </li>
+         * <li> <p>Private Channels: You must be a member to list or send messages.</p>
+         * </li> </ul>  <p>The <code>x-amz-chime-bearer</code> request header is
+         * mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the
+         * API call as the value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/CreateChannelMembership">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateChannelMembershipOutcome CreateChannelMembership(const Model::CreateChannelMembershipRequest& request) const;
 
         /**
-         * <p>Adds a user to a channel. The <code>InvitedBy</code> response field is
-         * derived from the request header. A channel member can:</p> <ul> <li> <p>List
-         * messages</p> </li> <li> <p>Send messages</p> </li> <li> <p>Receive messages</p>
-         * </li> <li> <p>Edit their own messages</p> </li> <li> <p>Leave the channel</p>
-         * </li> </ul> <p>Privacy settings impact this action as follows:</p> <ul> <li>
-         * <p>Public Channels: You do not need to be a member to list messages, but you
-         * must be a member to send messages.</p> </li> <li> <p>Private Channels: You must
-         * be a member to list or send messages.</p> </li> </ul>  <p>The
-         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
-         * in the header.</p> <p><h3>See Also:</h3>   <a
+         * <p>Adds a user to a channel. The <code>InvitedBy</code> field in
+         * <code>ChannelMembership</code> is derived from the request header. A channel
+         * member can:</p> <ul> <li> <p>List messages</p> </li> <li> <p>Send messages</p>
+         * </li> <li> <p>Receive messages</p> </li> <li> <p>Edit their own messages</p>
+         * </li> <li> <p>Leave the channel</p> </li> </ul> <p>Privacy settings impact this
+         * action as follows:</p> <ul> <li> <p>Public Channels: You do not need to be a
+         * member to list messages, but you must be a member to send messages.</p> </li>
+         * <li> <p>Private Channels: You must be a member to list or send messages.</p>
+         * </li> </ul>  <p>The <code>x-amz-chime-bearer</code> request header is
+         * mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the
+         * API call as the value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/CreateChannelMembership">AWS
          * API Reference</a></p>
          *
@@ -581,17 +591,17 @@ namespace Model
         virtual Model::CreateChannelMembershipOutcomeCallable CreateChannelMembershipCallable(const Model::CreateChannelMembershipRequest& request) const;
 
         /**
-         * <p>Adds a user to a channel. The <code>InvitedBy</code> response field is
-         * derived from the request header. A channel member can:</p> <ul> <li> <p>List
-         * messages</p> </li> <li> <p>Send messages</p> </li> <li> <p>Receive messages</p>
-         * </li> <li> <p>Edit their own messages</p> </li> <li> <p>Leave the channel</p>
-         * </li> </ul> <p>Privacy settings impact this action as follows:</p> <ul> <li>
-         * <p>Public Channels: You do not need to be a member to list messages, but you
-         * must be a member to send messages.</p> </li> <li> <p>Private Channels: You must
-         * be a member to list or send messages.</p> </li> </ul>  <p>The
-         * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-         * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
-         * in the header.</p> <p><h3>See Also:</h3>   <a
+         * <p>Adds a user to a channel. The <code>InvitedBy</code> field in
+         * <code>ChannelMembership</code> is derived from the request header. A channel
+         * member can:</p> <ul> <li> <p>List messages</p> </li> <li> <p>Send messages</p>
+         * </li> <li> <p>Receive messages</p> </li> <li> <p>Edit their own messages</p>
+         * </li> <li> <p>Leave the channel</p> </li> </ul> <p>Privacy settings impact this
+         * action as follows:</p> <ul> <li> <p>Public Channels: You do not need to be a
+         * member to list messages, but you must be a member to send messages.</p> </li>
+         * <li> <p>Private Channels: You must be a member to list or send messages.</p>
+         * </li> </ul>  <p>The <code>x-amz-chime-bearer</code> request header is
+         * mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the
+         * API call as the value in the header.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/CreateChannelMembership">AWS
          * API Reference</a></p>
          *
@@ -1146,6 +1156,49 @@ namespace Model
         virtual void DisassociateChannelFlowAsync(const Model::DisassociateChannelFlowRequest& request, const DisassociateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets the membership preferences of an <code>AppInstanceUser</code> for the
+         * specified channel. The <code>AppInstanceUser</code> must be a member of the
+         * channel. Only the <code>AppInstanceUser</code> who owns the membership can
+         * retrieve preferences. Users in the <code>AppInstanceAdmin</code> and channel
+         * moderator roles can't retrieve preferences for other users. Banned users can't
+         * retrieve membership preferences for the channel from which they are
+         * banned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/GetChannelMembershipPreferences">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetChannelMembershipPreferencesOutcome GetChannelMembershipPreferences(const Model::GetChannelMembershipPreferencesRequest& request) const;
+
+        /**
+         * <p>Gets the membership preferences of an <code>AppInstanceUser</code> for the
+         * specified channel. The <code>AppInstanceUser</code> must be a member of the
+         * channel. Only the <code>AppInstanceUser</code> who owns the membership can
+         * retrieve preferences. Users in the <code>AppInstanceAdmin</code> and channel
+         * moderator roles can't retrieve preferences for other users. Banned users can't
+         * retrieve membership preferences for the channel from which they are
+         * banned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/GetChannelMembershipPreferences">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetChannelMembershipPreferencesOutcomeCallable GetChannelMembershipPreferencesCallable(const Model::GetChannelMembershipPreferencesRequest& request) const;
+
+        /**
+         * <p>Gets the membership preferences of an <code>AppInstanceUser</code> for the
+         * specified channel. The <code>AppInstanceUser</code> must be a member of the
+         * channel. Only the <code>AppInstanceUser</code> who owns the membership can
+         * retrieve preferences. Users in the <code>AppInstanceAdmin</code> and channel
+         * moderator roles can't retrieve preferences for other users. Banned users can't
+         * retrieve membership preferences for the channel from which they are
+         * banned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/GetChannelMembershipPreferences">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetChannelMembershipPreferencesAsync(const Model::GetChannelMembershipPreferencesRequest& request, const GetChannelMembershipPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets the full details of a channel message.</p>  <p>The
          * x-amz-chime-bearer request header is mandatory. Use the
          * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
@@ -1337,7 +1390,10 @@ namespace Model
          * <p>Lists all channel memberships in a channel.</p>  <p>The
          * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
          * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
-         * in the header.</p> <p><h3>See Also:</h3>   <a
+         * in the header.</p>  <p>If you want to list the channels to which a
+         * specific app instance user belongs, see the <a
+         * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html">ListChannelMembershipsForAppInstanceUser</a>
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListChannelMemberships">AWS
          * API Reference</a></p>
          */
@@ -1347,7 +1403,10 @@ namespace Model
          * <p>Lists all channel memberships in a channel.</p>  <p>The
          * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
          * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
-         * in the header.</p> <p><h3>See Also:</h3>   <a
+         * in the header.</p>  <p>If you want to list the channels to which a
+         * specific app instance user belongs, see the <a
+         * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html">ListChannelMembershipsForAppInstanceUser</a>
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListChannelMemberships">AWS
          * API Reference</a></p>
          *
@@ -1359,7 +1418,10 @@ namespace Model
          * <p>Lists all channel memberships in a channel.</p>  <p>The
          * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
          * <code>AppInstanceUserArn</code> of the user that makes the API call as the value
-         * in the header.</p> <p><h3>See Also:</h3>   <a
+         * in the header.</p>  <p>If you want to list the channels to which a
+         * specific app instance user belongs, see the <a
+         * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html">ListChannelMembershipsForAppInstanceUser</a>
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListChannelMemberships">AWS
          * API Reference</a></p>
          *
@@ -1631,6 +1693,49 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Sets the membership preferences of an <code>AppInstanceUser</code> for the
+         * specified channel. The <code>AppInstanceUser</code> must be a member of the
+         * channel. Only the <code>AppInstanceUser</code> who owns the membership can set
+         * preferences. Users in the <code>AppInstanceAdmin</code> and channel moderator
+         * roles can't set preferences for other users. Banned users can't set membership
+         * preferences for the channel from which they are banned.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/PutChannelMembershipPreferences">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutChannelMembershipPreferencesOutcome PutChannelMembershipPreferences(const Model::PutChannelMembershipPreferencesRequest& request) const;
+
+        /**
+         * <p>Sets the membership preferences of an <code>AppInstanceUser</code> for the
+         * specified channel. The <code>AppInstanceUser</code> must be a member of the
+         * channel. Only the <code>AppInstanceUser</code> who owns the membership can set
+         * preferences. Users in the <code>AppInstanceAdmin</code> and channel moderator
+         * roles can't set preferences for other users. Banned users can't set membership
+         * preferences for the channel from which they are banned.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/PutChannelMembershipPreferences">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutChannelMembershipPreferencesOutcomeCallable PutChannelMembershipPreferencesCallable(const Model::PutChannelMembershipPreferencesRequest& request) const;
+
+        /**
+         * <p>Sets the membership preferences of an <code>AppInstanceUser</code> for the
+         * specified channel. The <code>AppInstanceUser</code> must be a member of the
+         * channel. Only the <code>AppInstanceUser</code> who owns the membership can set
+         * preferences. Users in the <code>AppInstanceAdmin</code> and channel moderator
+         * roles can't set preferences for other users. Banned users can't set membership
+         * preferences for the channel from which they are banned.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/PutChannelMembershipPreferences">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutChannelMembershipPreferencesAsync(const Model::PutChannelMembershipPreferencesRequest& request, const PutChannelMembershipPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Redacts message content, but not metadata. The message exists in the back
@@ -1924,6 +2029,7 @@ namespace Model
         void DescribeChannelModeratedByAppInstanceUserAsyncHelper(const Model::DescribeChannelModeratedByAppInstanceUserRequest& request, const DescribeChannelModeratedByAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeChannelModeratorAsyncHelper(const Model::DescribeChannelModeratorRequest& request, const DescribeChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateChannelFlowAsyncHelper(const Model::DisassociateChannelFlowRequest& request, const DisassociateChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetChannelMembershipPreferencesAsyncHelper(const Model::GetChannelMembershipPreferencesRequest& request, const GetChannelMembershipPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetChannelMessageAsyncHelper(const Model::GetChannelMessageRequest& request, const GetChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetChannelMessageStatusAsyncHelper(const Model::GetChannelMessageStatusRequest& request, const GetChannelMessageStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMessagingSessionEndpointAsyncHelper(const Model::GetMessagingSessionEndpointRequest& request, const GetMessagingSessionEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1937,6 +2043,7 @@ namespace Model
         void ListChannelsAssociatedWithChannelFlowAsyncHelper(const Model::ListChannelsAssociatedWithChannelFlowRequest& request, const ListChannelsAssociatedWithChannelFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListChannelsModeratedByAppInstanceUserAsyncHelper(const Model::ListChannelsModeratedByAppInstanceUserRequest& request, const ListChannelsModeratedByAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutChannelMembershipPreferencesAsyncHelper(const Model::PutChannelMembershipPreferencesRequest& request, const PutChannelMembershipPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RedactChannelMessageAsyncHelper(const Model::RedactChannelMessageRequest& request, const RedactChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendChannelMessageAsyncHelper(const Model::SendChannelMessageRequest& request, const SendChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

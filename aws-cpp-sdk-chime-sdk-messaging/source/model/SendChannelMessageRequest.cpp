@@ -23,7 +23,9 @@ SendChannelMessageRequest::SendChannelMessageRequest() :
     m_metadataHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
-    m_chimeBearerHasBeenSet(false)
+    m_chimeBearerHasBeenSet(false),
+    m_pushNotificationHasBeenSet(false),
+    m_messageAttributesHasBeenSet(false)
 {
 }
 
@@ -56,6 +58,23 @@ Aws::String SendChannelMessageRequest::SerializePayload() const
   if(m_clientRequestTokenHasBeenSet)
   {
    payload.WithString("ClientRequestToken", m_clientRequestToken);
+
+  }
+
+  if(m_pushNotificationHasBeenSet)
+  {
+   payload.WithObject("PushNotification", m_pushNotification.Jsonize());
+
+  }
+
+  if(m_messageAttributesHasBeenSet)
+  {
+   JsonValue messageAttributesJsonMap;
+   for(auto& messageAttributesItem : m_messageAttributes)
+   {
+     messageAttributesJsonMap.WithObject(messageAttributesItem.first, messageAttributesItem.second.Jsonize());
+   }
+   payload.WithObject("MessageAttributes", std::move(messageAttributesJsonMap));
 
   }
 

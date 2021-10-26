@@ -146,50 +146,74 @@ namespace Model
 
 
     /**
-     * <p>Determines whether to continue or stop processing if communication with
-     * processor fails. If the last processor in a channel flow sequence has a fallback
-     * action of CONTINUE, and communication with the processor fails, the message is
-     * considered processed and sent to the recipients in the channel.</p>
+     * <p>Determines whether to continue with message processing or stop it in cases
+     * where communication with a processor fails. If a processor has a fallback action
+     * of <code>ABORT</code> and communication with it fails, the processor sets the
+     * message status to <code>FAILED</code> and does not send the message to any
+     * recipients. Note that if the last processor in the channel flow sequence has a
+     * fallback action of <code>CONTINUE</code> and communication with the processor
+     * fails, then the message is considered processed and sent to recipients of the
+     * channel.</p>
      */
     inline const FallbackAction& GetFallbackAction() const{ return m_fallbackAction; }
 
     /**
-     * <p>Determines whether to continue or stop processing if communication with
-     * processor fails. If the last processor in a channel flow sequence has a fallback
-     * action of CONTINUE, and communication with the processor fails, the message is
-     * considered processed and sent to the recipients in the channel.</p>
+     * <p>Determines whether to continue with message processing or stop it in cases
+     * where communication with a processor fails. If a processor has a fallback action
+     * of <code>ABORT</code> and communication with it fails, the processor sets the
+     * message status to <code>FAILED</code> and does not send the message to any
+     * recipients. Note that if the last processor in the channel flow sequence has a
+     * fallback action of <code>CONTINUE</code> and communication with the processor
+     * fails, then the message is considered processed and sent to recipients of the
+     * channel.</p>
      */
     inline bool FallbackActionHasBeenSet() const { return m_fallbackActionHasBeenSet; }
 
     /**
-     * <p>Determines whether to continue or stop processing if communication with
-     * processor fails. If the last processor in a channel flow sequence has a fallback
-     * action of CONTINUE, and communication with the processor fails, the message is
-     * considered processed and sent to the recipients in the channel.</p>
+     * <p>Determines whether to continue with message processing or stop it in cases
+     * where communication with a processor fails. If a processor has a fallback action
+     * of <code>ABORT</code> and communication with it fails, the processor sets the
+     * message status to <code>FAILED</code> and does not send the message to any
+     * recipients. Note that if the last processor in the channel flow sequence has a
+     * fallback action of <code>CONTINUE</code> and communication with the processor
+     * fails, then the message is considered processed and sent to recipients of the
+     * channel.</p>
      */
     inline void SetFallbackAction(const FallbackAction& value) { m_fallbackActionHasBeenSet = true; m_fallbackAction = value; }
 
     /**
-     * <p>Determines whether to continue or stop processing if communication with
-     * processor fails. If the last processor in a channel flow sequence has a fallback
-     * action of CONTINUE, and communication with the processor fails, the message is
-     * considered processed and sent to the recipients in the channel.</p>
+     * <p>Determines whether to continue with message processing or stop it in cases
+     * where communication with a processor fails. If a processor has a fallback action
+     * of <code>ABORT</code> and communication with it fails, the processor sets the
+     * message status to <code>FAILED</code> and does not send the message to any
+     * recipients. Note that if the last processor in the channel flow sequence has a
+     * fallback action of <code>CONTINUE</code> and communication with the processor
+     * fails, then the message is considered processed and sent to recipients of the
+     * channel.</p>
      */
     inline void SetFallbackAction(FallbackAction&& value) { m_fallbackActionHasBeenSet = true; m_fallbackAction = std::move(value); }
 
     /**
-     * <p>Determines whether to continue or stop processing if communication with
-     * processor fails. If the last processor in a channel flow sequence has a fallback
-     * action of CONTINUE, and communication with the processor fails, the message is
-     * considered processed and sent to the recipients in the channel.</p>
+     * <p>Determines whether to continue with message processing or stop it in cases
+     * where communication with a processor fails. If a processor has a fallback action
+     * of <code>ABORT</code> and communication with it fails, the processor sets the
+     * message status to <code>FAILED</code> and does not send the message to any
+     * recipients. Note that if the last processor in the channel flow sequence has a
+     * fallback action of <code>CONTINUE</code> and communication with the processor
+     * fails, then the message is considered processed and sent to recipients of the
+     * channel.</p>
      */
     inline Processor& WithFallbackAction(const FallbackAction& value) { SetFallbackAction(value); return *this;}
 
     /**
-     * <p>Determines whether to continue or stop processing if communication with
-     * processor fails. If the last processor in a channel flow sequence has a fallback
-     * action of CONTINUE, and communication with the processor fails, the message is
-     * considered processed and sent to the recipients in the channel.</p>
+     * <p>Determines whether to continue with message processing or stop it in cases
+     * where communication with a processor fails. If a processor has a fallback action
+     * of <code>ABORT</code> and communication with it fails, the processor sets the
+     * message status to <code>FAILED</code> and does not send the message to any
+     * recipients. Note that if the last processor in the channel flow sequence has a
+     * fallback action of <code>CONTINUE</code> and communication with the processor
+     * fails, then the message is considered processed and sent to recipients of the
+     * channel.</p>
      */
     inline Processor& WithFallbackAction(FallbackAction&& value) { SetFallbackAction(std::move(value)); return *this;}
 

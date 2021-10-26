@@ -77,42 +77,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the member you want to add to the channel.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the member you want to add to the
+     * channel.</p>
      */
     inline const Aws::String& GetMemberArn() const{ return m_memberArn; }
 
     /**
-     * <p>The ARN of the member you want to add to the channel.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the member you want to add to the
+     * channel.</p>
      */
     inline bool MemberArnHasBeenSet() const { return m_memberArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the member you want to add to the channel.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the member you want to add to the
+     * channel.</p>
      */
     inline void SetMemberArn(const Aws::String& value) { m_memberArnHasBeenSet = true; m_memberArn = value; }
 
     /**
-     * <p>The ARN of the member you want to add to the channel.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the member you want to add to the
+     * channel.</p>
      */
     inline void SetMemberArn(Aws::String&& value) { m_memberArnHasBeenSet = true; m_memberArn = std::move(value); }
 
     /**
-     * <p>The ARN of the member you want to add to the channel.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the member you want to add to the
+     * channel.</p>
      */
     inline void SetMemberArn(const char* value) { m_memberArnHasBeenSet = true; m_memberArn.assign(value); }
 
     /**
-     * <p>The ARN of the member you want to add to the channel.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the member you want to add to the
+     * channel.</p>
      */
     inline CreateChannelMembershipRequest& WithMemberArn(const Aws::String& value) { SetMemberArn(value); return *this;}
 
     /**
-     * <p>The ARN of the member you want to add to the channel.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the member you want to add to the
+     * channel.</p>
      */
     inline CreateChannelMembershipRequest& WithMemberArn(Aws::String&& value) { SetMemberArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the member you want to add to the channel.</p>
+     * <p>The <code>AppInstanceUserArn</code> of the member you want to add to the
+     * channel.</p>
      */
     inline CreateChannelMembershipRequest& WithMemberArn(const char* value) { SetMemberArn(value); return *this;}
 

@@ -42,6 +42,7 @@
 #include <aws/chime-sdk-messaging/model/DescribeChannelModeratedByAppInstanceUserRequest.h>
 #include <aws/chime-sdk-messaging/model/DescribeChannelModeratorRequest.h>
 #include <aws/chime-sdk-messaging/model/DisassociateChannelFlowRequest.h>
+#include <aws/chime-sdk-messaging/model/GetChannelMembershipPreferencesRequest.h>
 #include <aws/chime-sdk-messaging/model/GetChannelMessageRequest.h>
 #include <aws/chime-sdk-messaging/model/GetChannelMessageStatusRequest.h>
 #include <aws/chime-sdk-messaging/model/GetMessagingSessionEndpointRequest.h>
@@ -55,6 +56,7 @@
 #include <aws/chime-sdk-messaging/model/ListChannelsAssociatedWithChannelFlowRequest.h>
 #include <aws/chime-sdk-messaging/model/ListChannelsModeratedByAppInstanceUserRequest.h>
 #include <aws/chime-sdk-messaging/model/ListTagsForResourceRequest.h>
+#include <aws/chime-sdk-messaging/model/PutChannelMembershipPreferencesRequest.h>
 #include <aws/chime-sdk-messaging/model/RedactChannelMessageRequest.h>
 #include <aws/chime-sdk-messaging/model/SendChannelMessageRequest.h>
 #include <aws/chime-sdk-messaging/model/TagResourceRequest.h>
@@ -980,6 +982,50 @@ void ChimeSDKMessagingClient::DisassociateChannelFlowAsyncHelper(const Disassoci
   handler(this, request, DisassociateChannelFlow(request), context);
 }
 
+GetChannelMembershipPreferencesOutcome ChimeSDKMessagingClient::GetChannelMembershipPreferences(const GetChannelMembershipPreferencesRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetChannelMembershipPreferences", "Required field: ChannelArn, is not set");
+    return GetChannelMembershipPreferencesOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  if (!request.MemberArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetChannelMembershipPreferences", "Required field: MemberArn, is not set");
+    return GetChannelMembershipPreferencesOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberArn]", false));
+  }
+  if (!request.ChimeBearerHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetChannelMembershipPreferences", "Required field: ChimeBearer, is not set");
+    return GetChannelMembershipPreferencesOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
+  uri.AddPathSegments("/memberships/");
+  uri.AddPathSegment(request.GetMemberArn());
+  uri.AddPathSegments("/preferences");
+  return GetChannelMembershipPreferencesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetChannelMembershipPreferencesOutcomeCallable ChimeSDKMessagingClient::GetChannelMembershipPreferencesCallable(const GetChannelMembershipPreferencesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetChannelMembershipPreferencesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetChannelMembershipPreferences(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKMessagingClient::GetChannelMembershipPreferencesAsync(const GetChannelMembershipPreferencesRequest& request, const GetChannelMembershipPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetChannelMembershipPreferencesAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKMessagingClient::GetChannelMembershipPreferencesAsyncHelper(const GetChannelMembershipPreferencesRequest& request, const GetChannelMembershipPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetChannelMembershipPreferences(request), context);
+}
+
 GetChannelMessageOutcome ChimeSDKMessagingClient::GetChannelMessage(const GetChannelMessageRequest& request) const
 {
   if (!request.ChannelArnHasBeenSet())
@@ -1434,6 +1480,50 @@ void ChimeSDKMessagingClient::ListTagsForResourceAsync(const ListTagsForResource
 void ChimeSDKMessagingClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+PutChannelMembershipPreferencesOutcome ChimeSDKMessagingClient::PutChannelMembershipPreferences(const PutChannelMembershipPreferencesRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutChannelMembershipPreferences", "Required field: ChannelArn, is not set");
+    return PutChannelMembershipPreferencesOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  if (!request.MemberArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutChannelMembershipPreferences", "Required field: MemberArn, is not set");
+    return PutChannelMembershipPreferencesOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberArn]", false));
+  }
+  if (!request.ChimeBearerHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutChannelMembershipPreferences", "Required field: ChimeBearer, is not set");
+    return PutChannelMembershipPreferencesOutcome(Aws::Client::AWSError<ChimeSDKMessagingErrors>(ChimeSDKMessagingErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChimeBearer]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
+  uri.AddPathSegments("/memberships/");
+  uri.AddPathSegment(request.GetMemberArn());
+  uri.AddPathSegments("/preferences");
+  return PutChannelMembershipPreferencesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutChannelMembershipPreferencesOutcomeCallable ChimeSDKMessagingClient::PutChannelMembershipPreferencesCallable(const PutChannelMembershipPreferencesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutChannelMembershipPreferencesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutChannelMembershipPreferences(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKMessagingClient::PutChannelMembershipPreferencesAsync(const PutChannelMembershipPreferencesRequest& request, const PutChannelMembershipPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutChannelMembershipPreferencesAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKMessagingClient::PutChannelMembershipPreferencesAsyncHelper(const PutChannelMembershipPreferencesRequest& request, const PutChannelMembershipPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutChannelMembershipPreferences(request), context);
 }
 
 RedactChannelMessageOutcome ChimeSDKMessagingClient::RedactChannelMessage(const RedactChannelMessageRequest& request) const

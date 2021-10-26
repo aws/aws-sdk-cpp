@@ -28,7 +28,7 @@ Endpoint::Endpoint() :
     m_stateHasBeenSet(false),
     m_releaseLabelHasBeenSet(false),
     m_executionRoleArnHasBeenSet(false),
-    m_certificateArnHasBeenSet(false),
+    m_certificateAuthorityHasBeenSet(false),
     m_configurationOverridesHasBeenSet(false),
     m_serverUrlHasBeenSet(false),
     m_createdAtHasBeenSet(false),
@@ -51,7 +51,7 @@ Endpoint::Endpoint(JsonView jsonValue) :
     m_stateHasBeenSet(false),
     m_releaseLabelHasBeenSet(false),
     m_executionRoleArnHasBeenSet(false),
-    m_certificateArnHasBeenSet(false),
+    m_certificateAuthorityHasBeenSet(false),
     m_configurationOverridesHasBeenSet(false),
     m_serverUrlHasBeenSet(false),
     m_createdAtHasBeenSet(false),
@@ -123,11 +123,11 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
     m_executionRoleArnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("certificateArn"))
+  if(jsonValue.ValueExists("certificateAuthority"))
   {
-    m_certificateArn = jsonValue.GetString("certificateArn");
+    m_certificateAuthority = jsonValue.GetObject("certificateAuthority");
 
-    m_certificateArnHasBeenSet = true;
+    m_certificateAuthorityHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("configurationOverrides"))
@@ -246,9 +246,9 @@ JsonValue Endpoint::Jsonize() const
 
   }
 
-  if(m_certificateArnHasBeenSet)
+  if(m_certificateAuthorityHasBeenSet)
   {
-   payload.WithString("certificateArn", m_certificateArn);
+   payload.WithObject("certificateAuthority", m_certificateAuthority.Jsonize());
 
   }
 
