@@ -16,8 +16,10 @@
 #include <aws/textract/model/DetectDocumentTextResult.h>
 #include <aws/textract/model/GetDocumentAnalysisResult.h>
 #include <aws/textract/model/GetDocumentTextDetectionResult.h>
+#include <aws/textract/model/GetExpenseAnalysisResult.h>
 #include <aws/textract/model/StartDocumentAnalysisResult.h>
 #include <aws/textract/model/StartDocumentTextDetectionResult.h>
+#include <aws/textract/model/StartExpenseAnalysisResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -62,24 +64,30 @@ namespace Model
         class DetectDocumentTextRequest;
         class GetDocumentAnalysisRequest;
         class GetDocumentTextDetectionRequest;
+        class GetExpenseAnalysisRequest;
         class StartDocumentAnalysisRequest;
         class StartDocumentTextDetectionRequest;
+        class StartExpenseAnalysisRequest;
 
         typedef Aws::Utils::Outcome<AnalyzeDocumentResult, TextractError> AnalyzeDocumentOutcome;
         typedef Aws::Utils::Outcome<AnalyzeExpenseResult, TextractError> AnalyzeExpenseOutcome;
         typedef Aws::Utils::Outcome<DetectDocumentTextResult, TextractError> DetectDocumentTextOutcome;
         typedef Aws::Utils::Outcome<GetDocumentAnalysisResult, TextractError> GetDocumentAnalysisOutcome;
         typedef Aws::Utils::Outcome<GetDocumentTextDetectionResult, TextractError> GetDocumentTextDetectionOutcome;
+        typedef Aws::Utils::Outcome<GetExpenseAnalysisResult, TextractError> GetExpenseAnalysisOutcome;
         typedef Aws::Utils::Outcome<StartDocumentAnalysisResult, TextractError> StartDocumentAnalysisOutcome;
         typedef Aws::Utils::Outcome<StartDocumentTextDetectionResult, TextractError> StartDocumentTextDetectionOutcome;
+        typedef Aws::Utils::Outcome<StartExpenseAnalysisResult, TextractError> StartExpenseAnalysisOutcome;
 
         typedef std::future<AnalyzeDocumentOutcome> AnalyzeDocumentOutcomeCallable;
         typedef std::future<AnalyzeExpenseOutcome> AnalyzeExpenseOutcomeCallable;
         typedef std::future<DetectDocumentTextOutcome> DetectDocumentTextOutcomeCallable;
         typedef std::future<GetDocumentAnalysisOutcome> GetDocumentAnalysisOutcomeCallable;
         typedef std::future<GetDocumentTextDetectionOutcome> GetDocumentTextDetectionOutcomeCallable;
+        typedef std::future<GetExpenseAnalysisOutcome> GetExpenseAnalysisOutcomeCallable;
         typedef std::future<StartDocumentAnalysisOutcome> StartDocumentAnalysisOutcomeCallable;
         typedef std::future<StartDocumentTextDetectionOutcome> StartDocumentTextDetectionOutcomeCallable;
+        typedef std::future<StartExpenseAnalysisOutcome> StartExpenseAnalysisOutcomeCallable;
 } // namespace Model
 
   class TextractClient;
@@ -89,8 +97,10 @@ namespace Model
     typedef std::function<void(const TextractClient*, const Model::DetectDocumentTextRequest&, const Model::DetectDocumentTextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectDocumentTextResponseReceivedHandler;
     typedef std::function<void(const TextractClient*, const Model::GetDocumentAnalysisRequest&, const Model::GetDocumentAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDocumentAnalysisResponseReceivedHandler;
     typedef std::function<void(const TextractClient*, const Model::GetDocumentTextDetectionRequest&, const Model::GetDocumentTextDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDocumentTextDetectionResponseReceivedHandler;
+    typedef std::function<void(const TextractClient*, const Model::GetExpenseAnalysisRequest&, const Model::GetExpenseAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetExpenseAnalysisResponseReceivedHandler;
     typedef std::function<void(const TextractClient*, const Model::StartDocumentAnalysisRequest&, const Model::StartDocumentAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDocumentAnalysisResponseReceivedHandler;
     typedef std::function<void(const TextractClient*, const Model::StartDocumentTextDetectionRequest&, const Model::StartDocumentTextDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDocumentTextDetectionResponseReceivedHandler;
+    typedef std::function<void(const TextractClient*, const Model::StartExpenseAnalysisRequest&, const Model::StartExpenseAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartExpenseAnalysisResponseReceivedHandler;
 
   /**
    * <p>Amazon Textract detects and analyzes text in documents and converts it into
@@ -565,14 +575,102 @@ namespace Model
         virtual void GetDocumentTextDetectionAsync(const Model::GetDocumentTextDetectionRequest& request, const GetDocumentTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets the results for an Amazon Textract asynchronous operation that analyzes
+         * invoices and receipts. Amazon Textract finds contact information, items
+         * purchased, and vendor name, from input invoices and receipts.</p> <p>You start
+         * asynchronous invoice/receipt analysis by calling <a>StartExpenseAnalysis</a>,
+         * which returns a job identifier (<code>JobId</code>). Upon completion of the
+         * invoice/receipt analysis, Amazon Textract publishes the completion status to the
+         * Amazon Simple Notification Service (Amazon SNS) topic. This topic must be
+         * registered in the initial call to <code>StartExpenseAnalysis</code>. To get the
+         * results of the invoice/receipt analysis operation, first ensure that the status
+         * value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
+         * <code>GetExpenseAnalysis</code>, and pass the job identifier
+         * (<code>JobId</code>) from the initial call to
+         * <code>StartExpenseAnalysis</code>.</p> <p>Use the MaxResults parameter to limit
+         * the number of blocks that are returned. If there are more results than specified
+         * in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation
+         * response contains a pagination token for getting the next set of results. To get
+         * the next page of results, call <code>GetExpenseAnalysis</code>, and populate the
+         * <code>NextToken</code> request parameter with the token value that's returned
+         * from the previous call to <code>GetExpenseAnalysis</code>.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/textract/latest/dg/invoices-receipts.html">Analyzing
+         * Invoices and Receipts</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetExpenseAnalysis">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetExpenseAnalysisOutcome GetExpenseAnalysis(const Model::GetExpenseAnalysisRequest& request) const;
+
+        /**
+         * <p>Gets the results for an Amazon Textract asynchronous operation that analyzes
+         * invoices and receipts. Amazon Textract finds contact information, items
+         * purchased, and vendor name, from input invoices and receipts.</p> <p>You start
+         * asynchronous invoice/receipt analysis by calling <a>StartExpenseAnalysis</a>,
+         * which returns a job identifier (<code>JobId</code>). Upon completion of the
+         * invoice/receipt analysis, Amazon Textract publishes the completion status to the
+         * Amazon Simple Notification Service (Amazon SNS) topic. This topic must be
+         * registered in the initial call to <code>StartExpenseAnalysis</code>. To get the
+         * results of the invoice/receipt analysis operation, first ensure that the status
+         * value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
+         * <code>GetExpenseAnalysis</code>, and pass the job identifier
+         * (<code>JobId</code>) from the initial call to
+         * <code>StartExpenseAnalysis</code>.</p> <p>Use the MaxResults parameter to limit
+         * the number of blocks that are returned. If there are more results than specified
+         * in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation
+         * response contains a pagination token for getting the next set of results. To get
+         * the next page of results, call <code>GetExpenseAnalysis</code>, and populate the
+         * <code>NextToken</code> request parameter with the token value that's returned
+         * from the previous call to <code>GetExpenseAnalysis</code>.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/textract/latest/dg/invoices-receipts.html">Analyzing
+         * Invoices and Receipts</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetExpenseAnalysis">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetExpenseAnalysisOutcomeCallable GetExpenseAnalysisCallable(const Model::GetExpenseAnalysisRequest& request) const;
+
+        /**
+         * <p>Gets the results for an Amazon Textract asynchronous operation that analyzes
+         * invoices and receipts. Amazon Textract finds contact information, items
+         * purchased, and vendor name, from input invoices and receipts.</p> <p>You start
+         * asynchronous invoice/receipt analysis by calling <a>StartExpenseAnalysis</a>,
+         * which returns a job identifier (<code>JobId</code>). Upon completion of the
+         * invoice/receipt analysis, Amazon Textract publishes the completion status to the
+         * Amazon Simple Notification Service (Amazon SNS) topic. This topic must be
+         * registered in the initial call to <code>StartExpenseAnalysis</code>. To get the
+         * results of the invoice/receipt analysis operation, first ensure that the status
+         * value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
+         * <code>GetExpenseAnalysis</code>, and pass the job identifier
+         * (<code>JobId</code>) from the initial call to
+         * <code>StartExpenseAnalysis</code>.</p> <p>Use the MaxResults parameter to limit
+         * the number of blocks that are returned. If there are more results than specified
+         * in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation
+         * response contains a pagination token for getting the next set of results. To get
+         * the next page of results, call <code>GetExpenseAnalysis</code>, and populate the
+         * <code>NextToken</code> request parameter with the token value that's returned
+         * from the previous call to <code>GetExpenseAnalysis</code>.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/textract/latest/dg/invoices-receipts.html">Analyzing
+         * Invoices and Receipts</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetExpenseAnalysis">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetExpenseAnalysisAsync(const Model::GetExpenseAnalysisRequest& request, const GetExpenseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Starts the asynchronous analysis of an input document for relationships
          * between detected items such as key-value pairs, tables, and selection
          * elements.</p> <p> <code>StartDocumentAnalysis</code> can analyze text in
-         * documents that are in JPEG, PNG, and PDF format. The documents are stored in an
-         * Amazon S3 bucket. Use <a>DocumentLocation</a> to specify the bucket name and
-         * file name of the document. </p> <p> <code>StartDocumentAnalysis</code> returns a
-         * job identifier (<code>JobId</code>) that you use to get the results of the
-         * operation. When text analysis is finished, Amazon Textract publishes a
+         * documents that are in JPEG, PNG, TIFF, and PDF format. The documents are stored
+         * in an Amazon S3 bucket. Use <a>DocumentLocation</a> to specify the bucket name
+         * and file name of the document. </p> <p> <code>StartDocumentAnalysis</code>
+         * returns a job identifier (<code>JobId</code>) that you use to get the results of
+         * the operation. When text analysis is finished, Amazon Textract publishes a
          * completion status to the Amazon Simple Notification Service (Amazon SNS) topic
          * that you specify in <code>NotificationChannel</code>. To get the results of the
          * text analysis operation, first check that the status value published to the
@@ -591,11 +689,11 @@ namespace Model
          * <p>Starts the asynchronous analysis of an input document for relationships
          * between detected items such as key-value pairs, tables, and selection
          * elements.</p> <p> <code>StartDocumentAnalysis</code> can analyze text in
-         * documents that are in JPEG, PNG, and PDF format. The documents are stored in an
-         * Amazon S3 bucket. Use <a>DocumentLocation</a> to specify the bucket name and
-         * file name of the document. </p> <p> <code>StartDocumentAnalysis</code> returns a
-         * job identifier (<code>JobId</code>) that you use to get the results of the
-         * operation. When text analysis is finished, Amazon Textract publishes a
+         * documents that are in JPEG, PNG, TIFF, and PDF format. The documents are stored
+         * in an Amazon S3 bucket. Use <a>DocumentLocation</a> to specify the bucket name
+         * and file name of the document. </p> <p> <code>StartDocumentAnalysis</code>
+         * returns a job identifier (<code>JobId</code>) that you use to get the results of
+         * the operation. When text analysis is finished, Amazon Textract publishes a
          * completion status to the Amazon Simple Notification Service (Amazon SNS) topic
          * that you specify in <code>NotificationChannel</code>. To get the results of the
          * text analysis operation, first check that the status value published to the
@@ -616,11 +714,11 @@ namespace Model
          * <p>Starts the asynchronous analysis of an input document for relationships
          * between detected items such as key-value pairs, tables, and selection
          * elements.</p> <p> <code>StartDocumentAnalysis</code> can analyze text in
-         * documents that are in JPEG, PNG, and PDF format. The documents are stored in an
-         * Amazon S3 bucket. Use <a>DocumentLocation</a> to specify the bucket name and
-         * file name of the document. </p> <p> <code>StartDocumentAnalysis</code> returns a
-         * job identifier (<code>JobId</code>) that you use to get the results of the
-         * operation. When text analysis is finished, Amazon Textract publishes a
+         * documents that are in JPEG, PNG, TIFF, and PDF format. The documents are stored
+         * in an Amazon S3 bucket. Use <a>DocumentLocation</a> to specify the bucket name
+         * and file name of the document. </p> <p> <code>StartDocumentAnalysis</code>
+         * returns a job identifier (<code>JobId</code>) that you use to get the results of
+         * the operation. When text analysis is finished, Amazon Textract publishes a
          * completion status to the Amazon Simple Notification Service (Amazon SNS) topic
          * that you specify in <code>NotificationChannel</code>. To get the results of the
          * text analysis operation, first check that the status value published to the
@@ -641,9 +739,9 @@ namespace Model
          * <p>Starts the asynchronous detection of text in a document. Amazon Textract can
          * detect lines of text and the words that make up a line of text.</p> <p>
          * <code>StartDocumentTextDetection</code> can analyze text in documents that are
-         * in JPEG, PNG, and PDF format. The documents are stored in an Amazon S3 bucket.
-         * Use <a>DocumentLocation</a> to specify the bucket name and file name of the
-         * document. </p> <p> <code>StartTextDetection</code> returns a job identifier
+         * in JPEG, PNG, TIFF, and PDF format. The documents are stored in an Amazon S3
+         * bucket. Use <a>DocumentLocation</a> to specify the bucket name and file name of
+         * the document. </p> <p> <code>StartTextDetection</code> returns a job identifier
          * (<code>JobId</code>) that you use to get the results of the operation. When text
          * detection is finished, Amazon Textract publishes a completion status to the
          * Amazon Simple Notification Service (Amazon SNS) topic that you specify in
@@ -663,9 +761,9 @@ namespace Model
          * <p>Starts the asynchronous detection of text in a document. Amazon Textract can
          * detect lines of text and the words that make up a line of text.</p> <p>
          * <code>StartDocumentTextDetection</code> can analyze text in documents that are
-         * in JPEG, PNG, and PDF format. The documents are stored in an Amazon S3 bucket.
-         * Use <a>DocumentLocation</a> to specify the bucket name and file name of the
-         * document. </p> <p> <code>StartTextDetection</code> returns a job identifier
+         * in JPEG, PNG, TIFF, and PDF format. The documents are stored in an Amazon S3
+         * bucket. Use <a>DocumentLocation</a> to specify the bucket name and file name of
+         * the document. </p> <p> <code>StartTextDetection</code> returns a job identifier
          * (<code>JobId</code>) that you use to get the results of the operation. When text
          * detection is finished, Amazon Textract publishes a completion status to the
          * Amazon Simple Notification Service (Amazon SNS) topic that you specify in
@@ -687,9 +785,9 @@ namespace Model
          * <p>Starts the asynchronous detection of text in a document. Amazon Textract can
          * detect lines of text and the words that make up a line of text.</p> <p>
          * <code>StartDocumentTextDetection</code> can analyze text in documents that are
-         * in JPEG, PNG, and PDF format. The documents are stored in an Amazon S3 bucket.
-         * Use <a>DocumentLocation</a> to specify the bucket name and file name of the
-         * document. </p> <p> <code>StartTextDetection</code> returns a job identifier
+         * in JPEG, PNG, TIFF, and PDF format. The documents are stored in an Amazon S3
+         * bucket. Use <a>DocumentLocation</a> to specify the bucket name and file name of
+         * the document. </p> <p> <code>StartTextDetection</code> returns a job identifier
          * (<code>JobId</code>) that you use to get the results of the operation. When text
          * detection is finished, Amazon Textract publishes a completion status to the
          * Amazon Simple Notification Service (Amazon SNS) topic that you specify in
@@ -707,6 +805,82 @@ namespace Model
          */
         virtual void StartDocumentTextDetectionAsync(const Model::StartDocumentTextDetectionRequest& request, const StartDocumentTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Starts the asynchronous analysis of invoices or receipts for data like
+         * contact information, items purchased, and vendor names.</p> <p>
+         * <code>StartExpenseAnalysis</code> can analyze text in documents that are in
+         * JPEG, PNG, and PDF format. The documents must be stored in an Amazon S3 bucket.
+         * Use the <a>DocumentLocation</a> parameter to specify the name of your S3 bucket
+         * and the name of the document in that bucket. </p> <p>
+         * <code>StartExpenseAnalysis</code> returns a job identifier (<code>JobId</code>)
+         * that you will provide to <code>GetExpenseAnalysis</code> to retrieve the results
+         * of the operation. When the analysis of the input invoices/receipts is finished,
+         * Amazon Textract publishes a completion status to the Amazon Simple Notification
+         * Service (Amazon SNS) topic that you provide to the
+         * <code>NotificationChannel</code>. To obtain the results of the invoice and
+         * receipt analysis operation, ensure that the status value published to the Amazon
+         * SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetExpenseAnalysis</a>, and
+         * pass the job identifier (<code>JobId</code>) that was returned by your call to
+         * <code>StartExpenseAnalysis</code>.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/textract/latest/dg/invoice-receipts.html">Analyzing
+         * Invoices and Receipts</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartExpenseAnalysis">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartExpenseAnalysisOutcome StartExpenseAnalysis(const Model::StartExpenseAnalysisRequest& request) const;
+
+        /**
+         * <p>Starts the asynchronous analysis of invoices or receipts for data like
+         * contact information, items purchased, and vendor names.</p> <p>
+         * <code>StartExpenseAnalysis</code> can analyze text in documents that are in
+         * JPEG, PNG, and PDF format. The documents must be stored in an Amazon S3 bucket.
+         * Use the <a>DocumentLocation</a> parameter to specify the name of your S3 bucket
+         * and the name of the document in that bucket. </p> <p>
+         * <code>StartExpenseAnalysis</code> returns a job identifier (<code>JobId</code>)
+         * that you will provide to <code>GetExpenseAnalysis</code> to retrieve the results
+         * of the operation. When the analysis of the input invoices/receipts is finished,
+         * Amazon Textract publishes a completion status to the Amazon Simple Notification
+         * Service (Amazon SNS) topic that you provide to the
+         * <code>NotificationChannel</code>. To obtain the results of the invoice and
+         * receipt analysis operation, ensure that the status value published to the Amazon
+         * SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetExpenseAnalysis</a>, and
+         * pass the job identifier (<code>JobId</code>) that was returned by your call to
+         * <code>StartExpenseAnalysis</code>.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/textract/latest/dg/invoice-receipts.html">Analyzing
+         * Invoices and Receipts</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartExpenseAnalysis">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartExpenseAnalysisOutcomeCallable StartExpenseAnalysisCallable(const Model::StartExpenseAnalysisRequest& request) const;
+
+        /**
+         * <p>Starts the asynchronous analysis of invoices or receipts for data like
+         * contact information, items purchased, and vendor names.</p> <p>
+         * <code>StartExpenseAnalysis</code> can analyze text in documents that are in
+         * JPEG, PNG, and PDF format. The documents must be stored in an Amazon S3 bucket.
+         * Use the <a>DocumentLocation</a> parameter to specify the name of your S3 bucket
+         * and the name of the document in that bucket. </p> <p>
+         * <code>StartExpenseAnalysis</code> returns a job identifier (<code>JobId</code>)
+         * that you will provide to <code>GetExpenseAnalysis</code> to retrieve the results
+         * of the operation. When the analysis of the input invoices/receipts is finished,
+         * Amazon Textract publishes a completion status to the Amazon Simple Notification
+         * Service (Amazon SNS) topic that you provide to the
+         * <code>NotificationChannel</code>. To obtain the results of the invoice and
+         * receipt analysis operation, ensure that the status value published to the Amazon
+         * SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetExpenseAnalysis</a>, and
+         * pass the job identifier (<code>JobId</code>) that was returned by your call to
+         * <code>StartExpenseAnalysis</code>.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/textract/latest/dg/invoice-receipts.html">Analyzing
+         * Invoices and Receipts</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartExpenseAnalysis">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartExpenseAnalysisAsync(const Model::StartExpenseAnalysisRequest& request, const StartExpenseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -716,8 +890,10 @@ namespace Model
         void DetectDocumentTextAsyncHelper(const Model::DetectDocumentTextRequest& request, const DetectDocumentTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDocumentAnalysisAsyncHelper(const Model::GetDocumentAnalysisRequest& request, const GetDocumentAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDocumentTextDetectionAsyncHelper(const Model::GetDocumentTextDetectionRequest& request, const GetDocumentTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetExpenseAnalysisAsyncHelper(const Model::GetExpenseAnalysisRequest& request, const GetExpenseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartDocumentAnalysisAsyncHelper(const Model::StartDocumentAnalysisRequest& request, const StartDocumentAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartDocumentTextDetectionAsyncHelper(const Model::StartDocumentTextDetectionRequest& request, const StartDocumentTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartExpenseAnalysisAsyncHelper(const Model::StartExpenseAnalysisRequest& request, const StartExpenseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

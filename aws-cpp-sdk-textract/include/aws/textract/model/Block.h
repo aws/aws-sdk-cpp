@@ -749,44 +749,44 @@ namespace Model
     /**
      * <p>The page on which a block was detected. <code>Page</code> is returned by
      * asynchronous operations. Page values greater than 1 are only returned for
-     * multipage documents that are in PDF format. A scanned image (JPEG/PNG), even if
-     * it contains multiple document pages, is considered to be a single-page document.
-     * The value of <code>Page</code> is always 1. Synchronous operations don't return
-     * <code>Page</code> because every input document is considered to be a single-page
-     * document.</p>
+     * multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG),
+     * even if it contains multiple document pages, is considered to be a single-page
+     * document. The value of <code>Page</code> is always 1. Synchronous operations
+     * don't return <code>Page</code> because every input document is considered to be
+     * a single-page document.</p>
      */
     inline int GetPage() const{ return m_page; }
 
     /**
      * <p>The page on which a block was detected. <code>Page</code> is returned by
      * asynchronous operations. Page values greater than 1 are only returned for
-     * multipage documents that are in PDF format. A scanned image (JPEG/PNG), even if
-     * it contains multiple document pages, is considered to be a single-page document.
-     * The value of <code>Page</code> is always 1. Synchronous operations don't return
-     * <code>Page</code> because every input document is considered to be a single-page
-     * document.</p>
+     * multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG),
+     * even if it contains multiple document pages, is considered to be a single-page
+     * document. The value of <code>Page</code> is always 1. Synchronous operations
+     * don't return <code>Page</code> because every input document is considered to be
+     * a single-page document.</p>
      */
     inline bool PageHasBeenSet() const { return m_pageHasBeenSet; }
 
     /**
      * <p>The page on which a block was detected. <code>Page</code> is returned by
      * asynchronous operations. Page values greater than 1 are only returned for
-     * multipage documents that are in PDF format. A scanned image (JPEG/PNG), even if
-     * it contains multiple document pages, is considered to be a single-page document.
-     * The value of <code>Page</code> is always 1. Synchronous operations don't return
-     * <code>Page</code> because every input document is considered to be a single-page
-     * document.</p>
+     * multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG),
+     * even if it contains multiple document pages, is considered to be a single-page
+     * document. The value of <code>Page</code> is always 1. Synchronous operations
+     * don't return <code>Page</code> because every input document is considered to be
+     * a single-page document.</p>
      */
     inline void SetPage(int value) { m_pageHasBeenSet = true; m_page = value; }
 
     /**
      * <p>The page on which a block was detected. <code>Page</code> is returned by
      * asynchronous operations. Page values greater than 1 are only returned for
-     * multipage documents that are in PDF format. A scanned image (JPEG/PNG), even if
-     * it contains multiple document pages, is considered to be a single-page document.
-     * The value of <code>Page</code> is always 1. Synchronous operations don't return
-     * <code>Page</code> because every input document is considered to be a single-page
-     * document.</p>
+     * multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG),
+     * even if it contains multiple document pages, is considered to be a single-page
+     * document. The value of <code>Page</code> is always 1. Synchronous operations
+     * don't return <code>Page</code> because every input document is considered to be
+     * a single-page document.</p>
      */
     inline Block& WithPage(int value) { SetPage(value); return *this;}
 

@@ -20,7 +20,8 @@ ModifyCapacityReservationRequest::ModifyCapacityReservationRequest() :
     m_accept(false),
     m_acceptHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_additionalInfoHasBeenSet(false)
 {
 }
 
@@ -56,6 +57,11 @@ Aws::String ModifyCapacityReservationRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_additionalInfoHasBeenSet)
+  {
+    ss << "AdditionalInfo=" << StringUtils::URLEncode(m_additionalInfo.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

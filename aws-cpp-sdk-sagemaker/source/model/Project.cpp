@@ -29,7 +29,9 @@ Project::Project() :
     m_projectStatusHasBeenSet(false),
     m_createdByHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_lastModifiedTimeHasBeenSet(false),
+    m_lastModifiedByHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ Project::Project(JsonView jsonValue) :
     m_projectStatusHasBeenSet(false),
     m_createdByHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_lastModifiedTimeHasBeenSet(false),
+    m_lastModifiedByHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -124,6 +128,20 @@ Project& Project::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LastModifiedTime"))
+  {
+    m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
+
+    m_lastModifiedTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastModifiedBy"))
+  {
+    m_lastModifiedBy = jsonValue.GetObject("LastModifiedBy");
+
+    m_lastModifiedByHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -191,6 +209,17 @@ JsonValue Project::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_lastModifiedTimeHasBeenSet)
+  {
+   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_lastModifiedByHasBeenSet)
+  {
+   payload.WithObject("LastModifiedBy", m_lastModifiedBy.Jsonize());
 
   }
 

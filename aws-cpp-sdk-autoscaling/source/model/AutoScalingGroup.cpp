@@ -61,7 +61,8 @@ AutoScalingGroup::AutoScalingGroup() :
     m_warmPoolConfigurationHasBeenSet(false),
     m_warmPoolSize(0),
     m_warmPoolSizeHasBeenSet(false),
-    m_contextHasBeenSet(false)
+    m_contextHasBeenSet(false),
+    m_desiredCapacityTypeHasBeenSet(false)
 {
 }
 
@@ -106,7 +107,8 @@ AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode) :
     m_warmPoolConfigurationHasBeenSet(false),
     m_warmPoolSize(0),
     m_warmPoolSizeHasBeenSet(false),
-    m_contextHasBeenSet(false)
+    m_contextHasBeenSet(false),
+    m_desiredCapacityTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -351,6 +353,12 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
       m_context = Aws::Utils::Xml::DecodeEscapedXmlText(contextNode.GetText());
       m_contextHasBeenSet = true;
     }
+    XmlNode desiredCapacityTypeNode = resultNode.FirstChild("DesiredCapacityType");
+    if(!desiredCapacityTypeNode.IsNull())
+    {
+      m_desiredCapacityType = Aws::Utils::Xml::DecodeEscapedXmlText(desiredCapacityTypeNode.GetText());
+      m_desiredCapacityTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -559,6 +567,11 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".Context=" << StringUtils::URLEncode(m_context.c_str()) << "&";
   }
 
+  if(m_desiredCapacityTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DesiredCapacityType=" << StringUtils::URLEncode(m_desiredCapacityType.c_str()) << "&";
+  }
+
 }
 
 void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -732,6 +745,10 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_contextHasBeenSet)
   {
       oStream << location << ".Context=" << StringUtils::URLEncode(m_context.c_str()) << "&";
+  }
+  if(m_desiredCapacityTypeHasBeenSet)
+  {
+      oStream << location << ".DesiredCapacityType=" << StringUtils::URLEncode(m_desiredCapacityType.c_str()) << "&";
   }
 }
 

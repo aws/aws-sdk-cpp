@@ -319,6 +319,47 @@ namespace Model
      */
     inline ModifyCapacityReservationRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline const Aws::String& GetAdditionalInfo() const{ return m_additionalInfo; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline bool AdditionalInfoHasBeenSet() const { return m_additionalInfoHasBeenSet; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetAdditionalInfo(const Aws::String& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetAdditionalInfo(Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = std::move(value); }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetAdditionalInfo(const char* value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.assign(value); }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline ModifyCapacityReservationRequest& WithAdditionalInfo(const Aws::String& value) { SetAdditionalInfo(value); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline ModifyCapacityReservationRequest& WithAdditionalInfo(Aws::String&& value) { SetAdditionalInfo(std::move(value)); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline ModifyCapacityReservationRequest& WithAdditionalInfo(const char* value) { SetAdditionalInfo(value); return *this;}
+
   private:
 
     Aws::String m_capacityReservationId;
@@ -338,6 +379,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
+    Aws::String m_additionalInfo;
+    bool m_additionalInfoHasBeenSet;
   };
 
 } // namespace Model

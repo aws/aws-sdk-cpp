@@ -14,6 +14,7 @@
 #include <aws/sagemaker/model/AddAssociationResult.h>
 #include <aws/sagemaker/model/AddTagsResult.h>
 #include <aws/sagemaker/model/AssociateTrialComponentResult.h>
+#include <aws/sagemaker/model/BatchDescribeModelPackageResult.h>
 #include <aws/sagemaker/model/CreateActionResult.h>
 #include <aws/sagemaker/model/CreateAlgorithmResult.h>
 #include <aws/sagemaker/model/CreateAppResult.h>
@@ -204,6 +205,7 @@
 #include <aws/sagemaker/model/UpdateNotebookInstanceLifecycleConfigResult.h>
 #include <aws/sagemaker/model/UpdatePipelineResult.h>
 #include <aws/sagemaker/model/UpdatePipelineExecutionResult.h>
+#include <aws/sagemaker/model/UpdateProjectResult.h>
 #include <aws/sagemaker/model/UpdateTrainingJobResult.h>
 #include <aws/sagemaker/model/UpdateTrialResult.h>
 #include <aws/sagemaker/model/UpdateTrialComponentResult.h>
@@ -253,6 +255,7 @@ namespace Model
         class AddAssociationRequest;
         class AddTagsRequest;
         class AssociateTrialComponentRequest;
+        class BatchDescribeModelPackageRequest;
         class CreateActionRequest;
         class CreateAlgorithmRequest;
         class CreateAppRequest;
@@ -484,6 +487,7 @@ namespace Model
         class UpdateNotebookInstanceLifecycleConfigRequest;
         class UpdatePipelineRequest;
         class UpdatePipelineExecutionRequest;
+        class UpdateProjectRequest;
         class UpdateTrainingJobRequest;
         class UpdateTrialRequest;
         class UpdateTrialComponentRequest;
@@ -494,6 +498,7 @@ namespace Model
         typedef Aws::Utils::Outcome<AddAssociationResult, SageMakerError> AddAssociationOutcome;
         typedef Aws::Utils::Outcome<AddTagsResult, SageMakerError> AddTagsOutcome;
         typedef Aws::Utils::Outcome<AssociateTrialComponentResult, SageMakerError> AssociateTrialComponentOutcome;
+        typedef Aws::Utils::Outcome<BatchDescribeModelPackageResult, SageMakerError> BatchDescribeModelPackageOutcome;
         typedef Aws::Utils::Outcome<CreateActionResult, SageMakerError> CreateActionOutcome;
         typedef Aws::Utils::Outcome<CreateAlgorithmResult, SageMakerError> CreateAlgorithmOutcome;
         typedef Aws::Utils::Outcome<CreateAppResult, SageMakerError> CreateAppOutcome;
@@ -725,6 +730,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateNotebookInstanceLifecycleConfigResult, SageMakerError> UpdateNotebookInstanceLifecycleConfigOutcome;
         typedef Aws::Utils::Outcome<UpdatePipelineResult, SageMakerError> UpdatePipelineOutcome;
         typedef Aws::Utils::Outcome<UpdatePipelineExecutionResult, SageMakerError> UpdatePipelineExecutionOutcome;
+        typedef Aws::Utils::Outcome<UpdateProjectResult, SageMakerError> UpdateProjectOutcome;
         typedef Aws::Utils::Outcome<UpdateTrainingJobResult, SageMakerError> UpdateTrainingJobOutcome;
         typedef Aws::Utils::Outcome<UpdateTrialResult, SageMakerError> UpdateTrialOutcome;
         typedef Aws::Utils::Outcome<UpdateTrialComponentResult, SageMakerError> UpdateTrialComponentOutcome;
@@ -735,6 +741,7 @@ namespace Model
         typedef std::future<AddAssociationOutcome> AddAssociationOutcomeCallable;
         typedef std::future<AddTagsOutcome> AddTagsOutcomeCallable;
         typedef std::future<AssociateTrialComponentOutcome> AssociateTrialComponentOutcomeCallable;
+        typedef std::future<BatchDescribeModelPackageOutcome> BatchDescribeModelPackageOutcomeCallable;
         typedef std::future<CreateActionOutcome> CreateActionOutcomeCallable;
         typedef std::future<CreateAlgorithmOutcome> CreateAlgorithmOutcomeCallable;
         typedef std::future<CreateAppOutcome> CreateAppOutcomeCallable;
@@ -966,6 +973,7 @@ namespace Model
         typedef std::future<UpdateNotebookInstanceLifecycleConfigOutcome> UpdateNotebookInstanceLifecycleConfigOutcomeCallable;
         typedef std::future<UpdatePipelineOutcome> UpdatePipelineOutcomeCallable;
         typedef std::future<UpdatePipelineExecutionOutcome> UpdatePipelineExecutionOutcomeCallable;
+        typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
         typedef std::future<UpdateTrainingJobOutcome> UpdateTrainingJobOutcomeCallable;
         typedef std::future<UpdateTrialOutcome> UpdateTrialOutcomeCallable;
         typedef std::future<UpdateTrialComponentOutcome> UpdateTrialComponentOutcomeCallable;
@@ -979,6 +987,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::AddAssociationRequest&, const Model::AddAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddAssociationResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::AddTagsRequest&, const Model::AddTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::AssociateTrialComponentRequest&, const Model::AssociateTrialComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateTrialComponentResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::BatchDescribeModelPackageRequest&, const Model::BatchDescribeModelPackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDescribeModelPackageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateActionRequest&, const Model::CreateActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateActionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateAlgorithmRequest&, const Model::CreateAlgorithmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAlgorithmResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateAppRequest&, const Model::CreateAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAppResponseReceivedHandler;
@@ -1210,6 +1219,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::UpdateNotebookInstanceLifecycleConfigRequest&, const Model::UpdateNotebookInstanceLifecycleConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNotebookInstanceLifecycleConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdatePipelineRequest&, const Model::UpdatePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePipelineResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdatePipelineExecutionRequest&, const Model::UpdatePipelineExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePipelineExecutionResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::UpdateProjectRequest&, const Model::UpdateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProjectResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateTrainingJobRequest&, const Model::UpdateTrainingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTrainingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateTrialRequest&, const Model::UpdateTrialOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTrialResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateTrialComponentRequest&, const Model::UpdateTrialComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTrialComponentResponseReceivedHandler;
@@ -1416,6 +1426,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateTrialComponentAsync(const Model::AssociateTrialComponentRequest& request, const AssociateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This action batch describes a list of versioned model packages</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchDescribeModelPackage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDescribeModelPackageOutcome BatchDescribeModelPackage(const Model::BatchDescribeModelPackageRequest& request) const;
+
+        /**
+         * <p>This action batch describes a list of versioned model packages</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchDescribeModelPackage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchDescribeModelPackageOutcomeCallable BatchDescribeModelPackageCallable(const Model::BatchDescribeModelPackageRequest& request) const;
+
+        /**
+         * <p>This action batch describes a list of versioned model packages</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchDescribeModelPackage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchDescribeModelPackageAsync(const Model::BatchDescribeModelPackageRequest& request, const BatchDescribeModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an <i>action</i>. An action is a lineage tracking entity that
@@ -5913,9 +5951,9 @@ namespace Model
 
         /**
          * <p>Returns a description of the specified model package, which is used to create
-         * Amazon SageMaker models or list them on Amazon Web Services Marketplace.</p>
-         * <p>To create models in Amazon SageMaker, buyers can subscribe to model packages
-         * listed on Amazon Web Services Marketplace.</p><p><h3>See Also:</h3>   <a
+         * SageMaker models or list them on Amazon Web Services Marketplace.</p> <p>To
+         * create models in SageMaker, buyers can subscribe to model packages listed on
+         * Amazon Web Services Marketplace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelPackage">AWS
          * API Reference</a></p>
          */
@@ -5923,9 +5961,9 @@ namespace Model
 
         /**
          * <p>Returns a description of the specified model package, which is used to create
-         * Amazon SageMaker models or list them on Amazon Web Services Marketplace.</p>
-         * <p>To create models in Amazon SageMaker, buyers can subscribe to model packages
-         * listed on Amazon Web Services Marketplace.</p><p><h3>See Also:</h3>   <a
+         * SageMaker models or list them on Amazon Web Services Marketplace.</p> <p>To
+         * create models in SageMaker, buyers can subscribe to model packages listed on
+         * Amazon Web Services Marketplace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelPackage">AWS
          * API Reference</a></p>
          *
@@ -5935,9 +5973,9 @@ namespace Model
 
         /**
          * <p>Returns a description of the specified model package, which is used to create
-         * Amazon SageMaker models or list them on Amazon Web Services Marketplace.</p>
-         * <p>To create models in Amazon SageMaker, buyers can subscribe to model packages
-         * listed on Amazon Web Services Marketplace.</p><p><h3>See Also:</h3>   <a
+         * SageMaker models or list them on Amazon Web Services Marketplace.</p> <p>To
+         * create models in SageMaker, buyers can subscribe to model packages listed on
+         * Amazon Web Services Marketplace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelPackage">AWS
          * API Reference</a></p>
          *
@@ -9545,6 +9583,46 @@ namespace Model
         virtual void UpdatePipelineExecutionAsync(const Model::UpdatePipelineExecutionRequest& request, const UpdatePipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates a machine learning (ML) project that is created from a template that
+         * sets up an ML pipeline from training to deploying an approved model.</p> 
+         * <p>You must not update a project that is in use. If you update the
+         * <code>ServiceCatalogProvisioningUpdateDetails</code> of a project that is active
+         * or being created, or updated, you may lose resources already created by the
+         * project.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateProject">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateProjectOutcome UpdateProject(const Model::UpdateProjectRequest& request) const;
+
+        /**
+         * <p>Updates a machine learning (ML) project that is created from a template that
+         * sets up an ML pipeline from training to deploying an approved model.</p> 
+         * <p>You must not update a project that is in use. If you update the
+         * <code>ServiceCatalogProvisioningUpdateDetails</code> of a project that is active
+         * or being created, or updated, you may lose resources already created by the
+         * project.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateProject">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateProjectOutcomeCallable UpdateProjectCallable(const Model::UpdateProjectRequest& request) const;
+
+        /**
+         * <p>Updates a machine learning (ML) project that is created from a template that
+         * sets up an ML pipeline from training to deploying an approved model.</p> 
+         * <p>You must not update a project that is in use. If you update the
+         * <code>ServiceCatalogProvisioningUpdateDetails</code> of a project that is active
+         * or being created, or updated, you may lose resources already created by the
+         * project.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateProject">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateProjectAsync(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Update a model training job to request a new Debugger profiling
          * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateTrainingJob">AWS
@@ -9764,6 +9842,7 @@ namespace Model
         void AddAssociationAsyncHelper(const Model::AddAssociationRequest& request, const AddAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddTagsAsyncHelper(const Model::AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateTrialComponentAsyncHelper(const Model::AssociateTrialComponentRequest& request, const AssociateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchDescribeModelPackageAsyncHelper(const Model::BatchDescribeModelPackageRequest& request, const BatchDescribeModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateActionAsyncHelper(const Model::CreateActionRequest& request, const CreateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAlgorithmAsyncHelper(const Model::CreateAlgorithmRequest& request, const CreateAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAppAsyncHelper(const Model::CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -9995,6 +10074,7 @@ namespace Model
         void UpdateNotebookInstanceLifecycleConfigAsyncHelper(const Model::UpdateNotebookInstanceLifecycleConfigRequest& request, const UpdateNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePipelineAsyncHelper(const Model::UpdatePipelineRequest& request, const UpdatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePipelineExecutionAsyncHelper(const Model::UpdatePipelineExecutionRequest& request, const UpdatePipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateProjectAsyncHelper(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTrainingJobAsyncHelper(const Model::UpdateTrainingJobRequest& request, const UpdateTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTrialAsyncHelper(const Model::UpdateTrialRequest& request, const UpdateTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTrialComponentAsyncHelper(const Model::UpdateTrialComponentRequest& request, const UpdateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

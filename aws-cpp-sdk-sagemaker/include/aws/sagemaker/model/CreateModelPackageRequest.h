@@ -14,6 +14,7 @@
 #include <aws/sagemaker/model/ModelApprovalStatus.h>
 #include <aws/sagemaker/model/MetadataProperties.h>
 #include <aws/sagemaker/model/ModelMetrics.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -101,58 +102,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the model group that this model version belongs to.</p> <p>This
-     * parameter is required for versioned models, and does not apply to unversioned
-     * models.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package group that this
+     * model version belongs to.</p> <p>This parameter is required for versioned
+     * models, and does not apply to unversioned models.</p>
      */
     inline const Aws::String& GetModelPackageGroupName() const{ return m_modelPackageGroupName; }
 
     /**
-     * <p>The name of the model group that this model version belongs to.</p> <p>This
-     * parameter is required for versioned models, and does not apply to unversioned
-     * models.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package group that this
+     * model version belongs to.</p> <p>This parameter is required for versioned
+     * models, and does not apply to unversioned models.</p>
      */
     inline bool ModelPackageGroupNameHasBeenSet() const { return m_modelPackageGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of the model group that this model version belongs to.</p> <p>This
-     * parameter is required for versioned models, and does not apply to unversioned
-     * models.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package group that this
+     * model version belongs to.</p> <p>This parameter is required for versioned
+     * models, and does not apply to unversioned models.</p>
      */
     inline void SetModelPackageGroupName(const Aws::String& value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName = value; }
 
     /**
-     * <p>The name of the model group that this model version belongs to.</p> <p>This
-     * parameter is required for versioned models, and does not apply to unversioned
-     * models.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package group that this
+     * model version belongs to.</p> <p>This parameter is required for versioned
+     * models, and does not apply to unversioned models.</p>
      */
     inline void SetModelPackageGroupName(Aws::String&& value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName = std::move(value); }
 
     /**
-     * <p>The name of the model group that this model version belongs to.</p> <p>This
-     * parameter is required for versioned models, and does not apply to unversioned
-     * models.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package group that this
+     * model version belongs to.</p> <p>This parameter is required for versioned
+     * models, and does not apply to unversioned models.</p>
      */
     inline void SetModelPackageGroupName(const char* value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName.assign(value); }
 
     /**
-     * <p>The name of the model group that this model version belongs to.</p> <p>This
-     * parameter is required for versioned models, and does not apply to unversioned
-     * models.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package group that this
+     * model version belongs to.</p> <p>This parameter is required for versioned
+     * models, and does not apply to unversioned models.</p>
      */
     inline CreateModelPackageRequest& WithModelPackageGroupName(const Aws::String& value) { SetModelPackageGroupName(value); return *this;}
 
     /**
-     * <p>The name of the model group that this model version belongs to.</p> <p>This
-     * parameter is required for versioned models, and does not apply to unversioned
-     * models.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package group that this
+     * model version belongs to.</p> <p>This parameter is required for versioned
+     * models, and does not apply to unversioned models.</p>
      */
     inline CreateModelPackageRequest& WithModelPackageGroupName(Aws::String&& value) { SetModelPackageGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the model group that this model version belongs to.</p> <p>This
-     * parameter is required for versioned models, and does not apply to unversioned
-     * models.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model package group that this
+     * model version belongs to.</p> <p>This parameter is required for versioned
+     * models, and does not apply to unversioned models.</p>
      */
     inline CreateModelPackageRequest& WithModelPackageGroupName(const char* value) { SetModelPackageGroupName(value); return *this;}
 
@@ -574,6 +575,72 @@ namespace Model
      */
     inline CreateModelPackageRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomerMetadataProperties() const{ return m_customerMetadataProperties; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline bool CustomerMetadataPropertiesHasBeenSet() const { return m_customerMetadataPropertiesHasBeenSet; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline void SetCustomerMetadataProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties = value; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline void SetCustomerMetadataProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties = std::move(value); }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline CreateModelPackageRequest& WithCustomerMetadataProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomerMetadataProperties(value); return *this;}
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline CreateModelPackageRequest& WithCustomerMetadataProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomerMetadataProperties(std::move(value)); return *this;}
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline CreateModelPackageRequest& AddCustomerMetadataProperties(const Aws::String& key, const Aws::String& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(key, value); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline CreateModelPackageRequest& AddCustomerMetadataProperties(Aws::String&& key, const Aws::String& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline CreateModelPackageRequest& AddCustomerMetadataProperties(const Aws::String& key, Aws::String&& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline CreateModelPackageRequest& AddCustomerMetadataProperties(Aws::String&& key, Aws::String&& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline CreateModelPackageRequest& AddCustomerMetadataProperties(const char* key, Aws::String&& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline CreateModelPackageRequest& AddCustomerMetadataProperties(Aws::String&& key, const char* value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline CreateModelPackageRequest& AddCustomerMetadataProperties(const char* key, const char* value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_modelPackageName;
@@ -611,6 +678,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_customerMetadataProperties;
+    bool m_customerMetadataPropertiesHasBeenSet;
   };
 
 } // namespace Model

@@ -150,6 +150,15 @@ DescribeModelPackageResult& DescribeModelPackageResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("CustomerMetadataProperties"))
+  {
+    Aws::Map<Aws::String, JsonView> customerMetadataPropertiesJsonMap = jsonValue.GetObject("CustomerMetadataProperties").GetAllObjects();
+    for(auto& customerMetadataPropertiesItem : customerMetadataPropertiesJsonMap)
+    {
+      m_customerMetadataProperties[customerMetadataPropertiesItem.first] = customerMetadataPropertiesItem.second.AsString();
+    }
+  }
+
 
 
   return *this;

@@ -20,6 +20,7 @@
 #include <aws/ec2/model/LaunchTemplateHibernationOptions.h>
 #include <aws/ec2/model/LaunchTemplateInstanceMetadataOptions.h>
 #include <aws/ec2/model/LaunchTemplateEnclaveOptions.h>
+#include <aws/ec2/model/InstanceRequirements.h>
 #include <aws/ec2/model/LaunchTemplateBlockDeviceMapping.h>
 #include <aws/ec2/model/LaunchTemplateInstanceNetworkInterfaceSpecification.h>
 #include <aws/ec2/model/LaunchTemplateTagSpecification.h>
@@ -1078,6 +1079,55 @@ namespace Model
      */
     inline ResponseLaunchTemplateData& WithEnclaveOptions(LaunchTemplateEnclaveOptions&& value) { SetEnclaveOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The attributes for the instance types. When you specify instance attributes,
+     * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
+     * specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p>
+     */
+    inline const InstanceRequirements& GetInstanceRequirements() const{ return m_instanceRequirements; }
+
+    /**
+     * <p>The attributes for the instance types. When you specify instance attributes,
+     * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
+     * specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p>
+     */
+    inline bool InstanceRequirementsHasBeenSet() const { return m_instanceRequirementsHasBeenSet; }
+
+    /**
+     * <p>The attributes for the instance types. When you specify instance attributes,
+     * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
+     * specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p>
+     */
+    inline void SetInstanceRequirements(const InstanceRequirements& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = value; }
+
+    /**
+     * <p>The attributes for the instance types. When you specify instance attributes,
+     * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
+     * specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p>
+     */
+    inline void SetInstanceRequirements(InstanceRequirements&& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = std::move(value); }
+
+    /**
+     * <p>The attributes for the instance types. When you specify instance attributes,
+     * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
+     * specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p>
+     */
+    inline ResponseLaunchTemplateData& WithInstanceRequirements(const InstanceRequirements& value) { SetInstanceRequirements(value); return *this;}
+
+    /**
+     * <p>The attributes for the instance types. When you specify instance attributes,
+     * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
+     * specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p>
+     */
+    inline ResponseLaunchTemplateData& WithInstanceRequirements(InstanceRequirements&& value) { SetInstanceRequirements(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_kernelId;
@@ -1160,6 +1210,9 @@ namespace Model
 
     LaunchTemplateEnclaveOptions m_enclaveOptions;
     bool m_enclaveOptionsHasBeenSet;
+
+    InstanceRequirements m_instanceRequirements;
+    bool m_instanceRequirementsHasBeenSet;
   };
 
 } // namespace Model

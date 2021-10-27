@@ -19,7 +19,9 @@ namespace Model
     AL2_x86_64,
     AL2_x86_64_GPU,
     AL2_ARM_64,
-    CUSTOM
+    CUSTOM,
+    BOTTLEROCKET_ARM_64,
+    BOTTLEROCKET_x86_64
   };
 
 namespace AMITypesMapper

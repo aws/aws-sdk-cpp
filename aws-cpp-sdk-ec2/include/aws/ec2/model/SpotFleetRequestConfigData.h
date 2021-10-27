@@ -16,6 +16,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/InstanceInterruptionBehavior.h>
 #include <aws/ec2/model/LoadBalancersConfig.h>
+#include <aws/ec2/model/TargetCapacityUnitType.h>
 #include <aws/ec2/model/SpotFleetLaunchSpecification.h>
 #include <aws/ec2/model/LaunchTemplateConfig.h>
 #include <aws/ec2/model/TagSpecification.h>
@@ -1443,6 +1444,43 @@ namespace Model
 
 
     /**
+     * <p>The unit for the target capacity.</p> <p>Default: <code>units</code>
+     * (translates to number of instances)</p>
+     */
+    inline const TargetCapacityUnitType& GetTargetCapacityUnitType() const{ return m_targetCapacityUnitType; }
+
+    /**
+     * <p>The unit for the target capacity.</p> <p>Default: <code>units</code>
+     * (translates to number of instances)</p>
+     */
+    inline bool TargetCapacityUnitTypeHasBeenSet() const { return m_targetCapacityUnitTypeHasBeenSet; }
+
+    /**
+     * <p>The unit for the target capacity.</p> <p>Default: <code>units</code>
+     * (translates to number of instances)</p>
+     */
+    inline void SetTargetCapacityUnitType(const TargetCapacityUnitType& value) { m_targetCapacityUnitTypeHasBeenSet = true; m_targetCapacityUnitType = value; }
+
+    /**
+     * <p>The unit for the target capacity.</p> <p>Default: <code>units</code>
+     * (translates to number of instances)</p>
+     */
+    inline void SetTargetCapacityUnitType(TargetCapacityUnitType&& value) { m_targetCapacityUnitTypeHasBeenSet = true; m_targetCapacityUnitType = std::move(value); }
+
+    /**
+     * <p>The unit for the target capacity.</p> <p>Default: <code>units</code>
+     * (translates to number of instances)</p>
+     */
+    inline SpotFleetRequestConfigData& WithTargetCapacityUnitType(const TargetCapacityUnitType& value) { SetTargetCapacityUnitType(value); return *this;}
+
+    /**
+     * <p>The unit for the target capacity.</p> <p>Default: <code>units</code>
+     * (translates to number of instances)</p>
+     */
+    inline SpotFleetRequestConfigData& WithTargetCapacityUnitType(TargetCapacityUnitType&& value) { SetTargetCapacityUnitType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The key-value pair for tagging the Spot Fleet request on creation. The value
      * for <code>ResourceType</code> must be <code>spot-fleet-request</code>, otherwise
      * the Spot Fleet request fails. To tag instances at launch, specify the tags in
@@ -1651,6 +1689,9 @@ namespace Model
 
     Aws::String m_context;
     bool m_contextHasBeenSet;
+
+    TargetCapacityUnitType m_targetCapacityUnitType;
+    bool m_targetCapacityUnitTypeHasBeenSet;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet;

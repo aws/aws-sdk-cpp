@@ -412,6 +412,56 @@ namespace Model
      */
     inline Project& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A timestamp container for when the project was last modified.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+
+    /**
+     * <p>A timestamp container for when the project was last modified.</p>
+     */
+    inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+
+    /**
+     * <p>A timestamp container for when the project was last modified.</p>
+     */
+    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
+
+    /**
+     * <p>A timestamp container for when the project was last modified.</p>
+     */
+    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
+
+    /**
+     * <p>A timestamp container for when the project was last modified.</p>
+     */
+    inline Project& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
+
+    /**
+     * <p>A timestamp container for when the project was last modified.</p>
+     */
+    inline Project& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+
+
+    
+    inline const UserContext& GetLastModifiedBy() const{ return m_lastModifiedBy; }
+
+    
+    inline bool LastModifiedByHasBeenSet() const { return m_lastModifiedByHasBeenSet; }
+
+    
+    inline void SetLastModifiedBy(const UserContext& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = value; }
+
+    
+    inline void SetLastModifiedBy(UserContext&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::move(value); }
+
+    
+    inline Project& WithLastModifiedBy(const UserContext& value) { SetLastModifiedBy(value); return *this;}
+
+    
+    inline Project& WithLastModifiedBy(UserContext&& value) { SetLastModifiedBy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_projectArn;
@@ -443,6 +493,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::Utils::DateTime m_lastModifiedTime;
+    bool m_lastModifiedTimeHasBeenSet;
+
+    UserContext m_lastModifiedBy;
+    bool m_lastModifiedByHasBeenSet;
   };
 
 } // namespace Model

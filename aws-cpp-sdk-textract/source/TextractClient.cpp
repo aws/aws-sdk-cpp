@@ -25,8 +25,10 @@
 #include <aws/textract/model/DetectDocumentTextRequest.h>
 #include <aws/textract/model/GetDocumentAnalysisRequest.h>
 #include <aws/textract/model/GetDocumentTextDetectionRequest.h>
+#include <aws/textract/model/GetExpenseAnalysisRequest.h>
 #include <aws/textract/model/StartDocumentAnalysisRequest.h>
 #include <aws/textract/model/StartDocumentTextDetectionRequest.h>
+#include <aws/textract/model/StartExpenseAnalysisRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -221,6 +223,30 @@ void TextractClient::GetDocumentTextDetectionAsyncHelper(const GetDocumentTextDe
   handler(this, request, GetDocumentTextDetection(request), context);
 }
 
+GetExpenseAnalysisOutcome TextractClient::GetExpenseAnalysis(const GetExpenseAnalysisRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetExpenseAnalysisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetExpenseAnalysisOutcomeCallable TextractClient::GetExpenseAnalysisCallable(const GetExpenseAnalysisRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetExpenseAnalysisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetExpenseAnalysis(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TextractClient::GetExpenseAnalysisAsync(const GetExpenseAnalysisRequest& request, const GetExpenseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetExpenseAnalysisAsyncHelper( request, handler, context ); } );
+}
+
+void TextractClient::GetExpenseAnalysisAsyncHelper(const GetExpenseAnalysisRequest& request, const GetExpenseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetExpenseAnalysis(request), context);
+}
+
 StartDocumentAnalysisOutcome TextractClient::StartDocumentAnalysis(const StartDocumentAnalysisRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -267,5 +293,29 @@ void TextractClient::StartDocumentTextDetectionAsync(const StartDocumentTextDete
 void TextractClient::StartDocumentTextDetectionAsyncHelper(const StartDocumentTextDetectionRequest& request, const StartDocumentTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartDocumentTextDetection(request), context);
+}
+
+StartExpenseAnalysisOutcome TextractClient::StartExpenseAnalysis(const StartExpenseAnalysisRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return StartExpenseAnalysisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartExpenseAnalysisOutcomeCallable TextractClient::StartExpenseAnalysisCallable(const StartExpenseAnalysisRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartExpenseAnalysisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartExpenseAnalysis(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TextractClient::StartExpenseAnalysisAsync(const StartExpenseAnalysisRequest& request, const StartExpenseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartExpenseAnalysisAsyncHelper( request, handler, context ); } );
+}
+
+void TextractClient::StartExpenseAnalysisAsyncHelper(const StartExpenseAnalysisRequest& request, const StartExpenseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartExpenseAnalysis(request), context);
 }
 

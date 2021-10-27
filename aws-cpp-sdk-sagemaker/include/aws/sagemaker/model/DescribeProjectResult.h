@@ -315,6 +315,48 @@ namespace Model
      */
     inline DescribeProjectResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The timestamp when project was last modified.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+
+    /**
+     * <p>The timestamp when project was last modified.</p>
+     */
+    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
+
+    /**
+     * <p>The timestamp when project was last modified.</p>
+     */
+    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
+
+    /**
+     * <p>The timestamp when project was last modified.</p>
+     */
+    inline DescribeProjectResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
+
+    /**
+     * <p>The timestamp when project was last modified.</p>
+     */
+    inline DescribeProjectResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+
+
+    
+    inline const UserContext& GetLastModifiedBy() const{ return m_lastModifiedBy; }
+
+    
+    inline void SetLastModifiedBy(const UserContext& value) { m_lastModifiedBy = value; }
+
+    
+    inline void SetLastModifiedBy(UserContext&& value) { m_lastModifiedBy = std::move(value); }
+
+    
+    inline DescribeProjectResult& WithLastModifiedBy(const UserContext& value) { SetLastModifiedBy(value); return *this;}
+
+    
+    inline DescribeProjectResult& WithLastModifiedBy(UserContext&& value) { SetLastModifiedBy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_projectArn;
@@ -334,6 +376,10 @@ namespace Model
     UserContext m_createdBy;
 
     Aws::Utils::DateTime m_creationTime;
+
+    Aws::Utils::DateTime m_lastModifiedTime;
+
+    UserContext m_lastModifiedBy;
   };
 
 } // namespace Model

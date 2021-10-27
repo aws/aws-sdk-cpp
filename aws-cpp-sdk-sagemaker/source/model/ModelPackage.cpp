@@ -42,7 +42,8 @@ ModelPackage::ModelPackage() :
     m_lastModifiedTimeHasBeenSet(false),
     m_lastModifiedByHasBeenSet(false),
     m_approvalDescriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_customerMetadataPropertiesHasBeenSet(false)
 {
 }
 
@@ -70,7 +71,8 @@ ModelPackage::ModelPackage(JsonView jsonValue) :
     m_lastModifiedTimeHasBeenSet(false),
     m_lastModifiedByHasBeenSet(false),
     m_approvalDescriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_customerMetadataPropertiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -220,6 +222,16 @@ ModelPackage& ModelPackage::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomerMetadataProperties"))
+  {
+    Aws::Map<Aws::String, JsonView> customerMetadataPropertiesJsonMap = jsonValue.GetObject("CustomerMetadataProperties").GetAllObjects();
+    for(auto& customerMetadataPropertiesItem : customerMetadataPropertiesJsonMap)
+    {
+      m_customerMetadataProperties[customerMetadataPropertiesItem.first] = customerMetadataPropertiesItem.second.AsString();
+    }
+    m_customerMetadataPropertiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -345,6 +357,17 @@ JsonValue ModelPackage::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_customerMetadataPropertiesHasBeenSet)
+  {
+   JsonValue customerMetadataPropertiesJsonMap;
+   for(auto& customerMetadataPropertiesItem : m_customerMetadataProperties)
+   {
+     customerMetadataPropertiesJsonMap.WithString(customerMetadataPropertiesItem.first, customerMetadataPropertiesItem.second);
+   }
+   payload.WithObject("CustomerMetadataProperties", std::move(customerMetadataPropertiesJsonMap));
 
   }
 

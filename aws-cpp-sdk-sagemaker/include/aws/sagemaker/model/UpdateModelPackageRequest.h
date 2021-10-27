@@ -8,6 +8,8 @@
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/ModelApprovalStatus.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -36,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model.</p>
+     * <p>The Amazon Resource Name (ARN) of the model package.</p>
      */
     inline const Aws::String& GetModelPackageArn() const{ return m_modelPackageArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model.</p>
+     * <p>The Amazon Resource Name (ARN) of the model package.</p>
      */
     inline bool ModelPackageArnHasBeenSet() const { return m_modelPackageArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model.</p>
+     * <p>The Amazon Resource Name (ARN) of the model package.</p>
      */
     inline void SetModelPackageArn(const Aws::String& value) { m_modelPackageArnHasBeenSet = true; m_modelPackageArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model.</p>
+     * <p>The Amazon Resource Name (ARN) of the model package.</p>
      */
     inline void SetModelPackageArn(Aws::String&& value) { m_modelPackageArnHasBeenSet = true; m_modelPackageArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model.</p>
+     * <p>The Amazon Resource Name (ARN) of the model package.</p>
      */
     inline void SetModelPackageArn(const char* value) { m_modelPackageArnHasBeenSet = true; m_modelPackageArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model.</p>
+     * <p>The Amazon Resource Name (ARN) of the model package.</p>
      */
     inline UpdateModelPackageRequest& WithModelPackageArn(const Aws::String& value) { SetModelPackageArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model.</p>
+     * <p>The Amazon Resource Name (ARN) of the model package.</p>
      */
     inline UpdateModelPackageRequest& WithModelPackageArn(Aws::String&& value) { SetModelPackageArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model.</p>
+     * <p>The Amazon Resource Name (ARN) of the model package.</p>
      */
     inline UpdateModelPackageRequest& WithModelPackageArn(const char* value) { SetModelPackageArn(value); return *this;}
 
@@ -147,6 +149,127 @@ namespace Model
      */
     inline UpdateModelPackageRequest& WithApprovalDescription(const char* value) { SetApprovalDescription(value); return *this;}
 
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomerMetadataProperties() const{ return m_customerMetadataProperties; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline bool CustomerMetadataPropertiesHasBeenSet() const { return m_customerMetadataPropertiesHasBeenSet; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline void SetCustomerMetadataProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties = value; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline void SetCustomerMetadataProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties = std::move(value); }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline UpdateModelPackageRequest& WithCustomerMetadataProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomerMetadataProperties(value); return *this;}
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline UpdateModelPackageRequest& WithCustomerMetadataProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomerMetadataProperties(std::move(value)); return *this;}
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline UpdateModelPackageRequest& AddCustomerMetadataProperties(const Aws::String& key, const Aws::String& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(key, value); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline UpdateModelPackageRequest& AddCustomerMetadataProperties(Aws::String&& key, const Aws::String& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline UpdateModelPackageRequest& AddCustomerMetadataProperties(const Aws::String& key, Aws::String&& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline UpdateModelPackageRequest& AddCustomerMetadataProperties(Aws::String&& key, Aws::String&& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline UpdateModelPackageRequest& AddCustomerMetadataProperties(const char* key, Aws::String&& value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline UpdateModelPackageRequest& AddCustomerMetadataProperties(Aws::String&& key, const char* value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline UpdateModelPackageRequest& AddCustomerMetadataProperties(const char* key, const char* value) { m_customerMetadataPropertiesHasBeenSet = true; m_customerMetadataProperties.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>The metadata properties associated with the model package versions to
+     * remove.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetCustomerMetadataPropertiesToRemove() const{ return m_customerMetadataPropertiesToRemove; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions to
+     * remove.</p>
+     */
+    inline bool CustomerMetadataPropertiesToRemoveHasBeenSet() const { return m_customerMetadataPropertiesToRemoveHasBeenSet; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions to
+     * remove.</p>
+     */
+    inline void SetCustomerMetadataPropertiesToRemove(const Aws::Vector<Aws::String>& value) { m_customerMetadataPropertiesToRemoveHasBeenSet = true; m_customerMetadataPropertiesToRemove = value; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions to
+     * remove.</p>
+     */
+    inline void SetCustomerMetadataPropertiesToRemove(Aws::Vector<Aws::String>&& value) { m_customerMetadataPropertiesToRemoveHasBeenSet = true; m_customerMetadataPropertiesToRemove = std::move(value); }
+
+    /**
+     * <p>The metadata properties associated with the model package versions to
+     * remove.</p>
+     */
+    inline UpdateModelPackageRequest& WithCustomerMetadataPropertiesToRemove(const Aws::Vector<Aws::String>& value) { SetCustomerMetadataPropertiesToRemove(value); return *this;}
+
+    /**
+     * <p>The metadata properties associated with the model package versions to
+     * remove.</p>
+     */
+    inline UpdateModelPackageRequest& WithCustomerMetadataPropertiesToRemove(Aws::Vector<Aws::String>&& value) { SetCustomerMetadataPropertiesToRemove(std::move(value)); return *this;}
+
+    /**
+     * <p>The metadata properties associated with the model package versions to
+     * remove.</p>
+     */
+    inline UpdateModelPackageRequest& AddCustomerMetadataPropertiesToRemove(const Aws::String& value) { m_customerMetadataPropertiesToRemoveHasBeenSet = true; m_customerMetadataPropertiesToRemove.push_back(value); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions to
+     * remove.</p>
+     */
+    inline UpdateModelPackageRequest& AddCustomerMetadataPropertiesToRemove(Aws::String&& value) { m_customerMetadataPropertiesToRemoveHasBeenSet = true; m_customerMetadataPropertiesToRemove.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions to
+     * remove.</p>
+     */
+    inline UpdateModelPackageRequest& AddCustomerMetadataPropertiesToRemove(const char* value) { m_customerMetadataPropertiesToRemoveHasBeenSet = true; m_customerMetadataPropertiesToRemove.push_back(value); return *this; }
+
   private:
 
     Aws::String m_modelPackageArn;
@@ -157,6 +280,12 @@ namespace Model
 
     Aws::String m_approvalDescription;
     bool m_approvalDescriptionHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_customerMetadataProperties;
+    bool m_customerMetadataPropertiesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_customerMetadataPropertiesToRemove;
+    bool m_customerMetadataPropertiesToRemoveHasBeenSet;
   };
 
 } // namespace Model

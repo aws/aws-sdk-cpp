@@ -16,6 +16,7 @@
 #include <aws/sagemaker/model/UserContext.h>
 #include <aws/sagemaker/model/MetadataProperties.h>
 #include <aws/sagemaker/model/ModelMetrics.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -293,32 +294,32 @@ namespace Model
 
 
     /**
-     * <p>Configurations for one or more transform jobs that Amazon SageMaker runs to
-     * test the model package.</p>
+     * <p>Configurations for one or more transform jobs that SageMaker runs to test the
+     * model package.</p>
      */
     inline const ModelPackageValidationSpecification& GetValidationSpecification() const{ return m_validationSpecification; }
 
     /**
-     * <p>Configurations for one or more transform jobs that Amazon SageMaker runs to
-     * test the model package.</p>
+     * <p>Configurations for one or more transform jobs that SageMaker runs to test the
+     * model package.</p>
      */
     inline void SetValidationSpecification(const ModelPackageValidationSpecification& value) { m_validationSpecification = value; }
 
     /**
-     * <p>Configurations for one or more transform jobs that Amazon SageMaker runs to
-     * test the model package.</p>
+     * <p>Configurations for one or more transform jobs that SageMaker runs to test the
+     * model package.</p>
      */
     inline void SetValidationSpecification(ModelPackageValidationSpecification&& value) { m_validationSpecification = std::move(value); }
 
     /**
-     * <p>Configurations for one or more transform jobs that Amazon SageMaker runs to
-     * test the model package.</p>
+     * <p>Configurations for one or more transform jobs that SageMaker runs to test the
+     * model package.</p>
      */
     inline DescribeModelPackageResult& WithValidationSpecification(const ModelPackageValidationSpecification& value) { SetValidationSpecification(value); return *this;}
 
     /**
-     * <p>Configurations for one or more transform jobs that Amazon SageMaker runs to
-     * test the model package.</p>
+     * <p>Configurations for one or more transform jobs that SageMaker runs to test the
+     * model package.</p>
      */
     inline DescribeModelPackageResult& WithValidationSpecification(ModelPackageValidationSpecification&& value) { SetValidationSpecification(std::move(value)); return *this;}
 
@@ -555,6 +556,67 @@ namespace Model
      */
     inline DescribeModelPackageResult& WithApprovalDescription(const char* value) { SetApprovalDescription(value); return *this;}
 
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomerMetadataProperties() const{ return m_customerMetadataProperties; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline void SetCustomerMetadataProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_customerMetadataProperties = value; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline void SetCustomerMetadataProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_customerMetadataProperties = std::move(value); }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline DescribeModelPackageResult& WithCustomerMetadataProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomerMetadataProperties(value); return *this;}
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline DescribeModelPackageResult& WithCustomerMetadataProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomerMetadataProperties(std::move(value)); return *this;}
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline DescribeModelPackageResult& AddCustomerMetadataProperties(const Aws::String& key, const Aws::String& value) { m_customerMetadataProperties.emplace(key, value); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline DescribeModelPackageResult& AddCustomerMetadataProperties(Aws::String&& key, const Aws::String& value) { m_customerMetadataProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline DescribeModelPackageResult& AddCustomerMetadataProperties(const Aws::String& key, Aws::String&& value) { m_customerMetadataProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline DescribeModelPackageResult& AddCustomerMetadataProperties(Aws::String&& key, Aws::String&& value) { m_customerMetadataProperties.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline DescribeModelPackageResult& AddCustomerMetadataProperties(const char* key, Aws::String&& value) { m_customerMetadataProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline DescribeModelPackageResult& AddCustomerMetadataProperties(Aws::String&& key, const char* value) { m_customerMetadataProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline DescribeModelPackageResult& AddCustomerMetadataProperties(const char* key, const char* value) { m_customerMetadataProperties.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_modelPackageName;
@@ -594,6 +656,8 @@ namespace Model
     UserContext m_lastModifiedBy;
 
     Aws::String m_approvalDescription;
+
+    Aws::Map<Aws::String, Aws::String> m_customerMetadataProperties;
   };
 
 } // namespace Model

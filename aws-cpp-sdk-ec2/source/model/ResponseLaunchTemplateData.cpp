@@ -51,7 +51,8 @@ ResponseLaunchTemplateData::ResponseLaunchTemplateData() :
     m_licenseSpecificationsHasBeenSet(false),
     m_hibernationOptionsHasBeenSet(false),
     m_metadataOptionsHasBeenSet(false),
-    m_enclaveOptionsHasBeenSet(false)
+    m_enclaveOptionsHasBeenSet(false),
+    m_instanceRequirementsHasBeenSet(false)
 {
 }
 
@@ -86,7 +87,8 @@ ResponseLaunchTemplateData::ResponseLaunchTemplateData(const XmlNode& xmlNode) :
     m_licenseSpecificationsHasBeenSet(false),
     m_hibernationOptionsHasBeenSet(false),
     m_metadataOptionsHasBeenSet(false),
-    m_enclaveOptionsHasBeenSet(false)
+    m_enclaveOptionsHasBeenSet(false),
+    m_instanceRequirementsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -307,6 +309,12 @@ ResponseLaunchTemplateData& ResponseLaunchTemplateData::operator =(const XmlNode
       m_enclaveOptions = enclaveOptionsNode;
       m_enclaveOptionsHasBeenSet = true;
     }
+    XmlNode instanceRequirementsNode = resultNode.FirstChild("instanceRequirements");
+    if(!instanceRequirementsNode.IsNull())
+    {
+      m_instanceRequirements = instanceRequirementsNode;
+      m_instanceRequirementsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -513,6 +521,13 @@ void ResponseLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const cha
       m_enclaveOptions.OutputToStream(oStream, enclaveOptionsLocationAndMemberSs.str().c_str());
   }
 
+  if(m_instanceRequirementsHasBeenSet)
+  {
+      Aws::StringStream instanceRequirementsLocationAndMemberSs;
+      instanceRequirementsLocationAndMemberSs << location << index << locationValue << ".InstanceRequirements";
+      m_instanceRequirements.OutputToStream(oStream, instanceRequirementsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void ResponseLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -688,6 +703,12 @@ void ResponseLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const cha
       Aws::String enclaveOptionsLocationAndMember(location);
       enclaveOptionsLocationAndMember += ".EnclaveOptions";
       m_enclaveOptions.OutputToStream(oStream, enclaveOptionsLocationAndMember.c_str());
+  }
+  if(m_instanceRequirementsHasBeenSet)
+  {
+      Aws::String instanceRequirementsLocationAndMember(location);
+      instanceRequirementsLocationAndMember += ".InstanceRequirements";
+      m_instanceRequirements.OutputToStream(oStream, instanceRequirementsLocationAndMember.c_str());
   }
 }
 

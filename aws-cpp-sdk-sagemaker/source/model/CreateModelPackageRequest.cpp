@@ -27,7 +27,8 @@ CreateModelPackageRequest::CreateModelPackageRequest() :
     m_metadataPropertiesHasBeenSet(false),
     m_modelMetricsHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_customerMetadataPropertiesHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,17 @@ Aws::String CreateModelPackageRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("ClientToken", m_clientToken);
+
+  }
+
+  if(m_customerMetadataPropertiesHasBeenSet)
+  {
+   JsonValue customerMetadataPropertiesJsonMap;
+   for(auto& customerMetadataPropertiesItem : m_customerMetadataProperties)
+   {
+     customerMetadataPropertiesJsonMap.WithString(customerMetadataPropertiesItem.first, customerMetadataPropertiesItem.second);
+   }
+   payload.WithObject("CustomerMetadataProperties", std::move(customerMetadataPropertiesJsonMap));
 
   }
 

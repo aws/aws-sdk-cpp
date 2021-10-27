@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/model/InstanceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/InstanceRequirements.h>
 #include <utility>
 
 namespace Aws
@@ -287,6 +288,67 @@ namespace Model
      */
     inline LaunchTemplateOverrides& WithPriority(double value) { SetPriority(value); return *this;}
 
+
+    /**
+     * <p>The instance requirements. When you specify instance requirements, Amazon EC2
+     * will identify instance types with the provided requirements, and then use your
+     * On-Demand and Spot allocation strategies to launch instances from these instance
+     * types, in the same way as when you specify a list of instance types.</p> 
+     * <p>If you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p> 
+     */
+    inline const InstanceRequirements& GetInstanceRequirements() const{ return m_instanceRequirements; }
+
+    /**
+     * <p>The instance requirements. When you specify instance requirements, Amazon EC2
+     * will identify instance types with the provided requirements, and then use your
+     * On-Demand and Spot allocation strategies to launch instances from these instance
+     * types, in the same way as when you specify a list of instance types.</p> 
+     * <p>If you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p> 
+     */
+    inline bool InstanceRequirementsHasBeenSet() const { return m_instanceRequirementsHasBeenSet; }
+
+    /**
+     * <p>The instance requirements. When you specify instance requirements, Amazon EC2
+     * will identify instance types with the provided requirements, and then use your
+     * On-Demand and Spot allocation strategies to launch instances from these instance
+     * types, in the same way as when you specify a list of instance types.</p> 
+     * <p>If you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p> 
+     */
+    inline void SetInstanceRequirements(const InstanceRequirements& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = value; }
+
+    /**
+     * <p>The instance requirements. When you specify instance requirements, Amazon EC2
+     * will identify instance types with the provided requirements, and then use your
+     * On-Demand and Spot allocation strategies to launch instances from these instance
+     * types, in the same way as when you specify a list of instance types.</p> 
+     * <p>If you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p> 
+     */
+    inline void SetInstanceRequirements(InstanceRequirements&& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = std::move(value); }
+
+    /**
+     * <p>The instance requirements. When you specify instance requirements, Amazon EC2
+     * will identify instance types with the provided requirements, and then use your
+     * On-Demand and Spot allocation strategies to launch instances from these instance
+     * types, in the same way as when you specify a list of instance types.</p> 
+     * <p>If you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p> 
+     */
+    inline LaunchTemplateOverrides& WithInstanceRequirements(const InstanceRequirements& value) { SetInstanceRequirements(value); return *this;}
+
+    /**
+     * <p>The instance requirements. When you specify instance requirements, Amazon EC2
+     * will identify instance types with the provided requirements, and then use your
+     * On-Demand and Spot allocation strategies to launch instances from these instance
+     * types, in the same way as when you specify a list of instance types.</p> 
+     * <p>If you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p> 
+     */
+    inline LaunchTemplateOverrides& WithInstanceRequirements(InstanceRequirements&& value) { SetInstanceRequirements(std::move(value)); return *this;}
+
   private:
 
     InstanceType m_instanceType;
@@ -306,6 +368,9 @@ namespace Model
 
     double m_priority;
     bool m_priorityHasBeenSet;
+
+    InstanceRequirements m_instanceRequirements;
+    bool m_instanceRequirementsHasBeenSet;
   };
 
 } // namespace Model
