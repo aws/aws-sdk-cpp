@@ -87,83 +87,91 @@ namespace Model
 
 
     /**
-     * <p>The metric definition, if the related item is a metric in CloudWatch.</p>
+     * <p>The metric definition, if the related item is a metric in Amazon
+     * CloudWatch.</p>
      */
     inline const Aws::String& GetMetricDefinition() const{ return m_metricDefinition; }
 
     /**
-     * <p>The metric definition, if the related item is a metric in CloudWatch.</p>
+     * <p>The metric definition, if the related item is a metric in Amazon
+     * CloudWatch.</p>
      */
     inline bool MetricDefinitionHasBeenSet() const { return m_metricDefinitionHasBeenSet; }
 
     /**
-     * <p>The metric definition, if the related item is a metric in CloudWatch.</p>
+     * <p>The metric definition, if the related item is a metric in Amazon
+     * CloudWatch.</p>
      */
     inline void SetMetricDefinition(const Aws::String& value) { m_metricDefinitionHasBeenSet = true; m_metricDefinition = value; }
 
     /**
-     * <p>The metric definition, if the related item is a metric in CloudWatch.</p>
+     * <p>The metric definition, if the related item is a metric in Amazon
+     * CloudWatch.</p>
      */
     inline void SetMetricDefinition(Aws::String&& value) { m_metricDefinitionHasBeenSet = true; m_metricDefinition = std::move(value); }
 
     /**
-     * <p>The metric definition, if the related item is a metric in CloudWatch.</p>
+     * <p>The metric definition, if the related item is a metric in Amazon
+     * CloudWatch.</p>
      */
     inline void SetMetricDefinition(const char* value) { m_metricDefinitionHasBeenSet = true; m_metricDefinition.assign(value); }
 
     /**
-     * <p>The metric definition, if the related item is a metric in CloudWatch.</p>
+     * <p>The metric definition, if the related item is a metric in Amazon
+     * CloudWatch.</p>
      */
     inline ItemValue& WithMetricDefinition(const Aws::String& value) { SetMetricDefinition(value); return *this;}
 
     /**
-     * <p>The metric definition, if the related item is a metric in CloudWatch.</p>
+     * <p>The metric definition, if the related item is a metric in Amazon
+     * CloudWatch.</p>
      */
     inline ItemValue& WithMetricDefinition(Aws::String&& value) { SetMetricDefinition(std::move(value)); return *this;}
 
     /**
-     * <p>The metric definition, if the related item is a metric in CloudWatch.</p>
+     * <p>The metric definition, if the related item is a metric in Amazon
+     * CloudWatch.</p>
      */
     inline ItemValue& WithMetricDefinition(const char* value) { SetMetricDefinition(value); return *this;}
 
 
     /**
-     * <p>The URL, if the related item is a non-AWS resource.</p>
+     * <p>The URL, if the related item is a non-Amazon Web Services resource.</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
 
     /**
-     * <p>The URL, if the related item is a non-AWS resource.</p>
+     * <p>The URL, if the related item is a non-Amazon Web Services resource.</p>
      */
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
-     * <p>The URL, if the related item is a non-AWS resource.</p>
+     * <p>The URL, if the related item is a non-Amazon Web Services resource.</p>
      */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
 
     /**
-     * <p>The URL, if the related item is a non-AWS resource.</p>
+     * <p>The URL, if the related item is a non-Amazon Web Services resource.</p>
      */
     inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
 
     /**
-     * <p>The URL, if the related item is a non-AWS resource.</p>
+     * <p>The URL, if the related item is a non-Amazon Web Services resource.</p>
      */
     inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
 
     /**
-     * <p>The URL, if the related item is a non-AWS resource.</p>
+     * <p>The URL, if the related item is a non-Amazon Web Services resource.</p>
      */
     inline ItemValue& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
 
     /**
-     * <p>The URL, if the related item is a non-AWS resource.</p>
+     * <p>The URL, if the related item is a non-Amazon Web Services resource.</p>
      */
     inline ItemValue& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL, if the related item is a non-AWS resource.</p>
+     * <p>The URL, if the related item is a non-Amazon Web Services resource.</p>
      */
     inline ItemValue& WithUrl(const char* value) { SetUrl(value); return *this;}
 

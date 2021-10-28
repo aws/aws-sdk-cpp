@@ -580,6 +580,79 @@ namespace Model
 
 
     /**
+     * <p>The operating system that your tasks in the service, or tasks are running on.
+     * A platform family is specified only for tasks using the Fargate launch type.
+     * </p> <p> All tasks that run as part of this service must use the same
+     * <code>platformFamily</code> value as the service, for example, <code>
+     * LINUX.</code>.</p>
+     */
+    inline const Aws::String& GetPlatformFamily() const{ return m_platformFamily; }
+
+    /**
+     * <p>The operating system that your tasks in the service, or tasks are running on.
+     * A platform family is specified only for tasks using the Fargate launch type.
+     * </p> <p> All tasks that run as part of this service must use the same
+     * <code>platformFamily</code> value as the service, for example, <code>
+     * LINUX.</code>.</p>
+     */
+    inline bool PlatformFamilyHasBeenSet() const { return m_platformFamilyHasBeenSet; }
+
+    /**
+     * <p>The operating system that your tasks in the service, or tasks are running on.
+     * A platform family is specified only for tasks using the Fargate launch type.
+     * </p> <p> All tasks that run as part of this service must use the same
+     * <code>platformFamily</code> value as the service, for example, <code>
+     * LINUX.</code>.</p>
+     */
+    inline void SetPlatformFamily(const Aws::String& value) { m_platformFamilyHasBeenSet = true; m_platformFamily = value; }
+
+    /**
+     * <p>The operating system that your tasks in the service, or tasks are running on.
+     * A platform family is specified only for tasks using the Fargate launch type.
+     * </p> <p> All tasks that run as part of this service must use the same
+     * <code>platformFamily</code> value as the service, for example, <code>
+     * LINUX.</code>.</p>
+     */
+    inline void SetPlatformFamily(Aws::String&& value) { m_platformFamilyHasBeenSet = true; m_platformFamily = std::move(value); }
+
+    /**
+     * <p>The operating system that your tasks in the service, or tasks are running on.
+     * A platform family is specified only for tasks using the Fargate launch type.
+     * </p> <p> All tasks that run as part of this service must use the same
+     * <code>platformFamily</code> value as the service, for example, <code>
+     * LINUX.</code>.</p>
+     */
+    inline void SetPlatformFamily(const char* value) { m_platformFamilyHasBeenSet = true; m_platformFamily.assign(value); }
+
+    /**
+     * <p>The operating system that your tasks in the service, or tasks are running on.
+     * A platform family is specified only for tasks using the Fargate launch type.
+     * </p> <p> All tasks that run as part of this service must use the same
+     * <code>platformFamily</code> value as the service, for example, <code>
+     * LINUX.</code>.</p>
+     */
+    inline Deployment& WithPlatformFamily(const Aws::String& value) { SetPlatformFamily(value); return *this;}
+
+    /**
+     * <p>The operating system that your tasks in the service, or tasks are running on.
+     * A platform family is specified only for tasks using the Fargate launch type.
+     * </p> <p> All tasks that run as part of this service must use the same
+     * <code>platformFamily</code> value as the service, for example, <code>
+     * LINUX.</code>.</p>
+     */
+    inline Deployment& WithPlatformFamily(Aws::String&& value) { SetPlatformFamily(std::move(value)); return *this;}
+
+    /**
+     * <p>The operating system that your tasks in the service, or tasks are running on.
+     * A platform family is specified only for tasks using the Fargate launch type.
+     * </p> <p> All tasks that run as part of this service must use the same
+     * <code>platformFamily</code> value as the service, for example, <code>
+     * LINUX.</code>.</p>
+     */
+    inline Deployment& WithPlatformFamily(const char* value) { SetPlatformFamily(value); return *this;}
+
+
+    /**
      * <p>The VPC subnet and security group configuration for tasks that receive their
      * own elastic network interface by using the <code>awsvpc</code> networking
      * mode.</p>
@@ -784,6 +857,9 @@ namespace Model
 
     Aws::String m_platformVersion;
     bool m_platformVersionHasBeenSet;
+
+    Aws::String m_platformFamily;
+    bool m_platformFamilyHasBeenSet;
 
     NetworkConfiguration m_networkConfiguration;
     bool m_networkConfigurationHasBeenSet;

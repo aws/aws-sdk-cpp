@@ -203,15 +203,15 @@ namespace Model
     typedef std::function<void(const SSMIncidentsClient*, const Model::UpdateTimelineEventRequest&, const Model::UpdateTimelineEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTimelineEventResponseReceivedHandler;
 
   /**
-   * <p>AWS Systems Manager Incident Manager is an incident management console
-   * designed to help users mitigate and recover from incidents affecting their
-   * AWS-hosted applications. An incident is any unplanned interruption or reduction
-   * in quality of services. </p> <p>Incident Manager increases incident resolution
-   * by notifying responders of impact, highlighting relevant troubleshooting data,
-   * and providing collaboration tools to get services back up and running. To
-   * achieve the primary goal of reducing the time-to-resolution of critical
-   * incidents, Incident Manager automates response plans and enables responder team
-   * escalation. </p>
+   * <p>Systems Manager Incident Manager is an incident management console designed
+   * to help users mitigate and recover from incidents affecting their Amazon Web
+   * Services-hosted applications. An incident is any unplanned interruption or
+   * reduction in quality of services. </p> <p>Incident Manager increases incident
+   * resolution by notifying responders of impact, highlighting relevant
+   * troubleshooting data, and providing collaboration tools to get services back up
+   * and running. To achieve the primary goal of reducing the time-to-resolution of
+   * critical incidents, Incident Manager automates response plans and enables
+   * responder team escalation. </p>
    */
   class AWS_SSMINCIDENTS_API SSMIncidentsClient : public Aws::Client::AWSJsonClient
   {
@@ -393,16 +393,16 @@ namespace Model
         virtual void DeleteReplicationSetAsync(const Model::DeleteReplicationSetRequest& request, const DeleteReplicationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the resource policy that AWS Resource Access Manager uses to share
-         * your Incident Manager resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the resource policy that Resource Access Manager uses to share your
+         * Incident Manager resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/DeleteResourcePolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
 
         /**
-         * <p>Deletes the resource policy that AWS Resource Access Manager uses to share
-         * your Incident Manager resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the resource policy that Resource Access Manager uses to share your
+         * Incident Manager resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/DeleteResourcePolicy">AWS
          * API Reference</a></p>
          *
@@ -411,8 +411,8 @@ namespace Model
         virtual Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const Model::DeleteResourcePolicyRequest& request) const;
 
         /**
-         * <p>Deletes the resource policy that AWS Resource Access Manager uses to share
-         * your Incident Manager resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the resource policy that Resource Access Manager uses to share your
+         * Incident Manager resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/DeleteResourcePolicy">AWS
          * API Reference</a></p>
          *
@@ -477,7 +477,7 @@ namespace Model
         virtual void DeleteTimelineEventAsync(const Model::DeleteTimelineEventRequest& request, const DeleteTimelineEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the details of the specified incident record.</p><p><h3>See
+         * <p>Returns the details for the specified incident record.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/GetIncidentRecord">AWS
          * API Reference</a></p>
@@ -485,7 +485,7 @@ namespace Model
         virtual Model::GetIncidentRecordOutcome GetIncidentRecord(const Model::GetIncidentRecordRequest& request) const;
 
         /**
-         * <p>Returns the details of the specified incident record.</p><p><h3>See
+         * <p>Returns the details for the specified incident record.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/GetIncidentRecord">AWS
          * API Reference</a></p>
@@ -495,7 +495,7 @@ namespace Model
         virtual Model::GetIncidentRecordOutcomeCallable GetIncidentRecordCallable(const Model::GetIncidentRecordRequest& request) const;
 
         /**
-         * <p>Returns the details of the specified incident record.</p><p><h3>See
+         * <p>Returns the details for the specified incident record.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/GetIncidentRecord">AWS
          * API Reference</a></p>
@@ -751,7 +751,7 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists timeline events of the specified incident record.</p><p><h3>See
+         * <p>Lists timeline events for the specified incident record.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListTimelineEvents">AWS
          * API Reference</a></p>
@@ -759,7 +759,7 @@ namespace Model
         virtual Model::ListTimelineEventsOutcome ListTimelineEvents(const Model::ListTimelineEventsRequest& request) const;
 
         /**
-         * <p>Lists timeline events of the specified incident record.</p><p><h3>See
+         * <p>Lists timeline events for the specified incident record.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListTimelineEvents">AWS
          * API Reference</a></p>
@@ -769,7 +769,7 @@ namespace Model
         virtual Model::ListTimelineEventsOutcomeCallable ListTimelineEventsCallable(const Model::ListTimelineEventsRequest& request) const;
 
         /**
-         * <p>Lists timeline events of the specified incident record.</p><p><h3>See
+         * <p>Lists timeline events for the specified incident record.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListTimelineEvents">AWS
          * API Reference</a></p>
@@ -913,9 +913,9 @@ namespace Model
         virtual void UpdateDeletionProtectionAsync(const Model::UpdateDeletionProtectionRequest& request, const UpdateDeletionProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Update the details of an incident record. You can use this action to update
-         * an incident record from the defined chat channel. For more information about
-         * using actions in chat channels, see <a
+         * <p>Update the details of an incident record. You can use this operation to
+         * update an incident record from the defined chat channel. For more information
+         * about using actions in chat channels, see <a
          * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/chat.html#chat-interact">Interacting
          * through chat</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/UpdateIncidentRecord">AWS
@@ -924,9 +924,9 @@ namespace Model
         virtual Model::UpdateIncidentRecordOutcome UpdateIncidentRecord(const Model::UpdateIncidentRecordRequest& request) const;
 
         /**
-         * <p>Update the details of an incident record. You can use this action to update
-         * an incident record from the defined chat channel. For more information about
-         * using actions in chat channels, see <a
+         * <p>Update the details of an incident record. You can use this operation to
+         * update an incident record from the defined chat channel. For more information
+         * about using actions in chat channels, see <a
          * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/chat.html#chat-interact">Interacting
          * through chat</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/UpdateIncidentRecord">AWS
@@ -937,9 +937,9 @@ namespace Model
         virtual Model::UpdateIncidentRecordOutcomeCallable UpdateIncidentRecordCallable(const Model::UpdateIncidentRecordRequest& request) const;
 
         /**
-         * <p>Update the details of an incident record. You can use this action to update
-         * an incident record from the defined chat channel. For more information about
-         * using actions in chat channels, see <a
+         * <p>Update the details of an incident record. You can use this operation to
+         * update an incident record from the defined chat channel. For more information
+         * about using actions in chat channels, see <a
          * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/chat.html#chat-interact">Interacting
          * through chat</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/UpdateIncidentRecord">AWS

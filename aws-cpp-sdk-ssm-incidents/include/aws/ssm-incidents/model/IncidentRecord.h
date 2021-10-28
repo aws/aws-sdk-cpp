@@ -199,49 +199,49 @@ namespace Model
 
     /**
      * <p>The string Incident Manager uses to prevent duplicate incidents from being
-     * created by the same incident.</p>
+     * created by the same incident in the same account.</p>
      */
     inline const Aws::String& GetDedupeString() const{ return m_dedupeString; }
 
     /**
      * <p>The string Incident Manager uses to prevent duplicate incidents from being
-     * created by the same incident.</p>
+     * created by the same incident in the same account.</p>
      */
     inline bool DedupeStringHasBeenSet() const { return m_dedupeStringHasBeenSet; }
 
     /**
      * <p>The string Incident Manager uses to prevent duplicate incidents from being
-     * created by the same incident.</p>
+     * created by the same incident in the same account.</p>
      */
     inline void SetDedupeString(const Aws::String& value) { m_dedupeStringHasBeenSet = true; m_dedupeString = value; }
 
     /**
      * <p>The string Incident Manager uses to prevent duplicate incidents from being
-     * created by the same incident.</p>
+     * created by the same incident in the same account.</p>
      */
     inline void SetDedupeString(Aws::String&& value) { m_dedupeStringHasBeenSet = true; m_dedupeString = std::move(value); }
 
     /**
      * <p>The string Incident Manager uses to prevent duplicate incidents from being
-     * created by the same incident.</p>
+     * created by the same incident in the same account.</p>
      */
     inline void SetDedupeString(const char* value) { m_dedupeStringHasBeenSet = true; m_dedupeString.assign(value); }
 
     /**
      * <p>The string Incident Manager uses to prevent duplicate incidents from being
-     * created by the same incident.</p>
+     * created by the same incident in the same account.</p>
      */
     inline IncidentRecord& WithDedupeString(const Aws::String& value) { SetDedupeString(value); return *this;}
 
     /**
      * <p>The string Incident Manager uses to prevent duplicate incidents from being
-     * created by the same incident.</p>
+     * created by the same incident in the same account.</p>
      */
     inline IncidentRecord& WithDedupeString(Aws::String&& value) { SetDedupeString(std::move(value)); return *this;}
 
     /**
      * <p>The string Incident Manager uses to prevent duplicate incidents from being
-     * created by the same incident.</p>
+     * created by the same incident in the same account.</p>
      */
     inline IncidentRecord& WithDedupeString(const char* value) { SetDedupeString(value); return *this;}
 
@@ -371,42 +371,50 @@ namespace Model
 
 
     /**
-     * <p>The SNS targets that are notified when updates are made to an incident.</p>
+     * <p>The Amazon SNS targets that are notified when updates are made to an
+     * incident.</p>
      */
     inline const Aws::Vector<NotificationTargetItem>& GetNotificationTargets() const{ return m_notificationTargets; }
 
     /**
-     * <p>The SNS targets that are notified when updates are made to an incident.</p>
+     * <p>The Amazon SNS targets that are notified when updates are made to an
+     * incident.</p>
      */
     inline bool NotificationTargetsHasBeenSet() const { return m_notificationTargetsHasBeenSet; }
 
     /**
-     * <p>The SNS targets that are notified when updates are made to an incident.</p>
+     * <p>The Amazon SNS targets that are notified when updates are made to an
+     * incident.</p>
      */
     inline void SetNotificationTargets(const Aws::Vector<NotificationTargetItem>& value) { m_notificationTargetsHasBeenSet = true; m_notificationTargets = value; }
 
     /**
-     * <p>The SNS targets that are notified when updates are made to an incident.</p>
+     * <p>The Amazon SNS targets that are notified when updates are made to an
+     * incident.</p>
      */
     inline void SetNotificationTargets(Aws::Vector<NotificationTargetItem>&& value) { m_notificationTargetsHasBeenSet = true; m_notificationTargets = std::move(value); }
 
     /**
-     * <p>The SNS targets that are notified when updates are made to an incident.</p>
+     * <p>The Amazon SNS targets that are notified when updates are made to an
+     * incident.</p>
      */
     inline IncidentRecord& WithNotificationTargets(const Aws::Vector<NotificationTargetItem>& value) { SetNotificationTargets(value); return *this;}
 
     /**
-     * <p>The SNS targets that are notified when updates are made to an incident.</p>
+     * <p>The Amazon SNS targets that are notified when updates are made to an
+     * incident.</p>
      */
     inline IncidentRecord& WithNotificationTargets(Aws::Vector<NotificationTargetItem>&& value) { SetNotificationTargets(std::move(value)); return *this;}
 
     /**
-     * <p>The SNS targets that are notified when updates are made to an incident.</p>
+     * <p>The Amazon SNS targets that are notified when updates are made to an
+     * incident.</p>
      */
     inline IncidentRecord& AddNotificationTargets(const NotificationTargetItem& value) { m_notificationTargetsHasBeenSet = true; m_notificationTargets.push_back(value); return *this; }
 
     /**
-     * <p>The SNS targets that are notified when updates are made to an incident.</p>
+     * <p>The Amazon SNS targets that are notified when updates are made to an
+     * incident.</p>
      */
     inline IncidentRecord& AddNotificationTargets(NotificationTargetItem&& value) { m_notificationTargetsHasBeenSet = true; m_notificationTargets.push_back(std::move(value)); return *this; }
 
@@ -481,49 +489,49 @@ namespace Model
 
     /**
      * <p>The summary of the incident. The summary is a brief synopsis of what
-     * occurred, what is currently happening, and context.</p>
+     * occurred, what's currently happening, and context of the incident.</p>
      */
     inline const Aws::String& GetSummary() const{ return m_summary; }
 
     /**
      * <p>The summary of the incident. The summary is a brief synopsis of what
-     * occurred, what is currently happening, and context.</p>
+     * occurred, what's currently happening, and context of the incident.</p>
      */
     inline bool SummaryHasBeenSet() const { return m_summaryHasBeenSet; }
 
     /**
      * <p>The summary of the incident. The summary is a brief synopsis of what
-     * occurred, what is currently happening, and context.</p>
+     * occurred, what's currently happening, and context of the incident.</p>
      */
     inline void SetSummary(const Aws::String& value) { m_summaryHasBeenSet = true; m_summary = value; }
 
     /**
      * <p>The summary of the incident. The summary is a brief synopsis of what
-     * occurred, what is currently happening, and context.</p>
+     * occurred, what's currently happening, and context of the incident.</p>
      */
     inline void SetSummary(Aws::String&& value) { m_summaryHasBeenSet = true; m_summary = std::move(value); }
 
     /**
      * <p>The summary of the incident. The summary is a brief synopsis of what
-     * occurred, what is currently happening, and context.</p>
+     * occurred, what's currently happening, and context of the incident.</p>
      */
     inline void SetSummary(const char* value) { m_summaryHasBeenSet = true; m_summary.assign(value); }
 
     /**
      * <p>The summary of the incident. The summary is a brief synopsis of what
-     * occurred, what is currently happening, and context.</p>
+     * occurred, what's currently happening, and context of the incident.</p>
      */
     inline IncidentRecord& WithSummary(const Aws::String& value) { SetSummary(value); return *this;}
 
     /**
      * <p>The summary of the incident. The summary is a brief synopsis of what
-     * occurred, what is currently happening, and context.</p>
+     * occurred, what's currently happening, and context of the incident.</p>
      */
     inline IncidentRecord& WithSummary(Aws::String&& value) { SetSummary(std::move(value)); return *this;}
 
     /**
      * <p>The summary of the incident. The summary is a brief synopsis of what
-     * occurred, what is currently happening, and context.</p>
+     * occurred, what's currently happening, and context of the incident.</p>
      */
     inline IncidentRecord& WithSummary(const char* value) { SetSummary(value); return *this;}
 

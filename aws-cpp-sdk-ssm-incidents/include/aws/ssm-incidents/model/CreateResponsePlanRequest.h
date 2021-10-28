@@ -88,80 +88,80 @@ namespace Model
 
 
     /**
-     * <p>The AWS Chatbot chat channel used for collaboration during an incident.</p>
+     * <p>The Chatbot chat channel used for collaboration during an incident.</p>
      */
     inline const ChatChannel& GetChatChannel() const{ return m_chatChannel; }
 
     /**
-     * <p>The AWS Chatbot chat channel used for collaboration during an incident.</p>
+     * <p>The Chatbot chat channel used for collaboration during an incident.</p>
      */
     inline bool ChatChannelHasBeenSet() const { return m_chatChannelHasBeenSet; }
 
     /**
-     * <p>The AWS Chatbot chat channel used for collaboration during an incident.</p>
+     * <p>The Chatbot chat channel used for collaboration during an incident.</p>
      */
     inline void SetChatChannel(const ChatChannel& value) { m_chatChannelHasBeenSet = true; m_chatChannel = value; }
 
     /**
-     * <p>The AWS Chatbot chat channel used for collaboration during an incident.</p>
+     * <p>The Chatbot chat channel used for collaboration during an incident.</p>
      */
     inline void SetChatChannel(ChatChannel&& value) { m_chatChannelHasBeenSet = true; m_chatChannel = std::move(value); }
 
     /**
-     * <p>The AWS Chatbot chat channel used for collaboration during an incident.</p>
+     * <p>The Chatbot chat channel used for collaboration during an incident.</p>
      */
     inline CreateResponsePlanRequest& WithChatChannel(const ChatChannel& value) { SetChatChannel(value); return *this;}
 
     /**
-     * <p>The AWS Chatbot chat channel used for collaboration during an incident.</p>
+     * <p>The Chatbot chat channel used for collaboration during an incident.</p>
      */
     inline CreateResponsePlanRequest& WithChatChannel(ChatChannel&& value) { SetChatChannel(std::move(value)); return *this;}
 
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline CreateResponsePlanRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline CreateResponsePlanRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline CreateResponsePlanRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}

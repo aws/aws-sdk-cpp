@@ -37,49 +37,49 @@ namespace Model
 
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline StartIncidentRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline StartIncidentRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline StartIncidentRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
@@ -144,98 +144,114 @@ namespace Model
 
     /**
      * <p>Add related items to the incident for other responders to use. Related items
-     * are AWS resources, external links, or files uploaded to an S3 bucket. </p>
+     * are AWS resources, external links, or files uploaded to an Amazon S3 bucket.
+     * </p>
      */
     inline const Aws::Vector<RelatedItem>& GetRelatedItems() const{ return m_relatedItems; }
 
     /**
      * <p>Add related items to the incident for other responders to use. Related items
-     * are AWS resources, external links, or files uploaded to an S3 bucket. </p>
+     * are AWS resources, external links, or files uploaded to an Amazon S3 bucket.
+     * </p>
      */
     inline bool RelatedItemsHasBeenSet() const { return m_relatedItemsHasBeenSet; }
 
     /**
      * <p>Add related items to the incident for other responders to use. Related items
-     * are AWS resources, external links, or files uploaded to an S3 bucket. </p>
+     * are AWS resources, external links, or files uploaded to an Amazon S3 bucket.
+     * </p>
      */
     inline void SetRelatedItems(const Aws::Vector<RelatedItem>& value) { m_relatedItemsHasBeenSet = true; m_relatedItems = value; }
 
     /**
      * <p>Add related items to the incident for other responders to use. Related items
-     * are AWS resources, external links, or files uploaded to an S3 bucket. </p>
+     * are AWS resources, external links, or files uploaded to an Amazon S3 bucket.
+     * </p>
      */
     inline void SetRelatedItems(Aws::Vector<RelatedItem>&& value) { m_relatedItemsHasBeenSet = true; m_relatedItems = std::move(value); }
 
     /**
      * <p>Add related items to the incident for other responders to use. Related items
-     * are AWS resources, external links, or files uploaded to an S3 bucket. </p>
+     * are AWS resources, external links, or files uploaded to an Amazon S3 bucket.
+     * </p>
      */
     inline StartIncidentRequest& WithRelatedItems(const Aws::Vector<RelatedItem>& value) { SetRelatedItems(value); return *this;}
 
     /**
      * <p>Add related items to the incident for other responders to use. Related items
-     * are AWS resources, external links, or files uploaded to an S3 bucket. </p>
+     * are AWS resources, external links, or files uploaded to an Amazon S3 bucket.
+     * </p>
      */
     inline StartIncidentRequest& WithRelatedItems(Aws::Vector<RelatedItem>&& value) { SetRelatedItems(std::move(value)); return *this;}
 
     /**
      * <p>Add related items to the incident for other responders to use. Related items
-     * are AWS resources, external links, or files uploaded to an S3 bucket. </p>
+     * are AWS resources, external links, or files uploaded to an Amazon S3 bucket.
+     * </p>
      */
     inline StartIncidentRequest& AddRelatedItems(const RelatedItem& value) { m_relatedItemsHasBeenSet = true; m_relatedItems.push_back(value); return *this; }
 
     /**
      * <p>Add related items to the incident for other responders to use. Related items
-     * are AWS resources, external links, or files uploaded to an S3 bucket. </p>
+     * are AWS resources, external links, or files uploaded to an Amazon S3 bucket.
+     * </p>
      */
     inline StartIncidentRequest& AddRelatedItems(RelatedItem&& value) { m_relatedItemsHasBeenSet = true; m_relatedItems.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary,
-     * chat channels, SNS topics, runbooks, title, and impact of the incident. </p>
+     * chat channels, Amazon SNS topics, runbooks, title, and impact of the incident.
+     * </p>
      */
     inline const Aws::String& GetResponsePlanArn() const{ return m_responsePlanArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary,
-     * chat channels, SNS topics, runbooks, title, and impact of the incident. </p>
+     * chat channels, Amazon SNS topics, runbooks, title, and impact of the incident.
+     * </p>
      */
     inline bool ResponsePlanArnHasBeenSet() const { return m_responsePlanArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary,
-     * chat channels, SNS topics, runbooks, title, and impact of the incident. </p>
+     * chat channels, Amazon SNS topics, runbooks, title, and impact of the incident.
+     * </p>
      */
     inline void SetResponsePlanArn(const Aws::String& value) { m_responsePlanArnHasBeenSet = true; m_responsePlanArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary,
-     * chat channels, SNS topics, runbooks, title, and impact of the incident. </p>
+     * chat channels, Amazon SNS topics, runbooks, title, and impact of the incident.
+     * </p>
      */
     inline void SetResponsePlanArn(Aws::String&& value) { m_responsePlanArnHasBeenSet = true; m_responsePlanArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary,
-     * chat channels, SNS topics, runbooks, title, and impact of the incident. </p>
+     * chat channels, Amazon SNS topics, runbooks, title, and impact of the incident.
+     * </p>
      */
     inline void SetResponsePlanArn(const char* value) { m_responsePlanArnHasBeenSet = true; m_responsePlanArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary,
-     * chat channels, SNS topics, runbooks, title, and impact of the incident. </p>
+     * chat channels, Amazon SNS topics, runbooks, title, and impact of the incident.
+     * </p>
      */
     inline StartIncidentRequest& WithResponsePlanArn(const Aws::String& value) { SetResponsePlanArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary,
-     * chat channels, SNS topics, runbooks, title, and impact of the incident. </p>
+     * chat channels, Amazon SNS topics, runbooks, title, and impact of the incident.
+     * </p>
      */
     inline StartIncidentRequest& WithResponsePlanArn(Aws::String&& value) { SetResponsePlanArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary,
-     * chat channels, SNS topics, runbooks, title, and impact of the incident. </p>
+     * chat channels, Amazon SNS topics, runbooks, title, and impact of the incident.
+     * </p>
      */
     inline StartIncidentRequest& WithResponsePlanArn(const char* value) { SetResponsePlanArn(value); return *this;}
 

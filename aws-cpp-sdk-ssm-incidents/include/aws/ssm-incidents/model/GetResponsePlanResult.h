@@ -116,27 +116,27 @@ namespace Model
 
 
     /**
-     * <p>The AWS Chatbot chat channel used for collaboration during an incident.</p>
+     * <p>The Chatbot chat channel used for collaboration during an incident.</p>
      */
     inline const ChatChannel& GetChatChannel() const{ return m_chatChannel; }
 
     /**
-     * <p>The AWS Chatbot chat channel used for collaboration during an incident.</p>
+     * <p>The Chatbot chat channel used for collaboration during an incident.</p>
      */
     inline void SetChatChannel(const ChatChannel& value) { m_chatChannel = value; }
 
     /**
-     * <p>The AWS Chatbot chat channel used for collaboration during an incident.</p>
+     * <p>The Chatbot chat channel used for collaboration during an incident.</p>
      */
     inline void SetChatChannel(ChatChannel&& value) { m_chatChannel = std::move(value); }
 
     /**
-     * <p>The AWS Chatbot chat channel used for collaboration during an incident.</p>
+     * <p>The Chatbot chat channel used for collaboration during an incident.</p>
      */
     inline GetResponsePlanResult& WithChatChannel(const ChatChannel& value) { SetChatChannel(value); return *this;}
 
     /**
-     * <p>The AWS Chatbot chat channel used for collaboration during an incident.</p>
+     * <p>The Chatbot chat channel used for collaboration during an incident.</p>
      */
     inline GetResponsePlanResult& WithChatChannel(ChatChannel&& value) { SetChatChannel(std::move(value)); return *this;}
 
@@ -253,37 +253,44 @@ namespace Model
 
 
     /**
-     * <p>The short format name of the response plan. Can't contain spaces.</p>
+     * <p>The short format name of the response plan. The name can't contain
+     * spaces.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The short format name of the response plan. Can't contain spaces.</p>
+     * <p>The short format name of the response plan. The name can't contain
+     * spaces.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>The short format name of the response plan. Can't contain spaces.</p>
+     * <p>The short format name of the response plan. The name can't contain
+     * spaces.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p>The short format name of the response plan. Can't contain spaces.</p>
+     * <p>The short format name of the response plan. The name can't contain
+     * spaces.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>The short format name of the response plan. Can't contain spaces.</p>
+     * <p>The short format name of the response plan. The name can't contain
+     * spaces.</p>
      */
     inline GetResponsePlanResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The short format name of the response plan. Can't contain spaces.</p>
+     * <p>The short format name of the response plan. The name can't contain
+     * spaces.</p>
      */
     inline GetResponsePlanResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The short format name of the response plan. Can't contain spaces.</p>
+     * <p>The short format name of the response plan. The name can't contain
+     * spaces.</p>
      */
     inline GetResponsePlanResult& WithName(const char* value) { SetName(value); return *this;}
 

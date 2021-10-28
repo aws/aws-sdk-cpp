@@ -930,6 +930,47 @@ namespace Model
      */
     inline NetworkInterface& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether a network interface with an IPv6 address is unreachable
+     * from the public internet. If the value is <code>true</code>, inbound traffic
+     * from the internet is dropped and you cannot assign an elastic IP address to the
+     * network interface. The network interface is reachable from peered VPCs and
+     * resources connected through a transit gateway, including on-premises
+     * networks.</p>
+     */
+    inline bool GetDenyAllIgwTraffic() const{ return m_denyAllIgwTraffic; }
+
+    /**
+     * <p>Indicates whether a network interface with an IPv6 address is unreachable
+     * from the public internet. If the value is <code>true</code>, inbound traffic
+     * from the internet is dropped and you cannot assign an elastic IP address to the
+     * network interface. The network interface is reachable from peered VPCs and
+     * resources connected through a transit gateway, including on-premises
+     * networks.</p>
+     */
+    inline bool DenyAllIgwTrafficHasBeenSet() const { return m_denyAllIgwTrafficHasBeenSet; }
+
+    /**
+     * <p>Indicates whether a network interface with an IPv6 address is unreachable
+     * from the public internet. If the value is <code>true</code>, inbound traffic
+     * from the internet is dropped and you cannot assign an elastic IP address to the
+     * network interface. The network interface is reachable from peered VPCs and
+     * resources connected through a transit gateway, including on-premises
+     * networks.</p>
+     */
+    inline void SetDenyAllIgwTraffic(bool value) { m_denyAllIgwTrafficHasBeenSet = true; m_denyAllIgwTraffic = value; }
+
+    /**
+     * <p>Indicates whether a network interface with an IPv6 address is unreachable
+     * from the public internet. If the value is <code>true</code>, inbound traffic
+     * from the internet is dropped and you cannot assign an elastic IP address to the
+     * network interface. The network interface is reachable from peered VPCs and
+     * resources connected through a transit gateway, including on-premises
+     * networks.</p>
+     */
+    inline NetworkInterface& WithDenyAllIgwTraffic(bool value) { SetDenyAllIgwTraffic(value); return *this;}
+
   private:
 
     NetworkInterfaceAssociation m_association;
@@ -1000,6 +1041,9 @@ namespace Model
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
+    bool m_denyAllIgwTraffic;
+    bool m_denyAllIgwTrafficHasBeenSet;
   };
 
 } // namespace Model

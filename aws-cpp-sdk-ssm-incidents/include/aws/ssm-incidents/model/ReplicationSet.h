@@ -28,8 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>The set of Regions that your Incident Manager data will be replicated to and
-   * the KMS key used to encrypt the data. </p><p><h3>See Also:</h3>   <a
+   * <p>The set of Amazon Web Services Region that your Incident Manager data will be
+   * replicated to and the KMS key used to encrypt the data. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ReplicationSet">AWS
    * API Reference</a></p>
    */
@@ -157,29 +158,29 @@ namespace Model
 
     /**
      * <p>Determines if the replication set deletion protection is enabled or not. If
-     * deletion protection is enabled, you can't delete the last Region in the
-     * replication set. </p>
+     * deletion protection is enabled, you can't delete the last Amazon Web Services
+     * Region in the replication set. </p>
      */
     inline bool GetDeletionProtected() const{ return m_deletionProtected; }
 
     /**
      * <p>Determines if the replication set deletion protection is enabled or not. If
-     * deletion protection is enabled, you can't delete the last Region in the
-     * replication set. </p>
+     * deletion protection is enabled, you can't delete the last Amazon Web Services
+     * Region in the replication set. </p>
      */
     inline bool DeletionProtectedHasBeenSet() const { return m_deletionProtectedHasBeenSet; }
 
     /**
      * <p>Determines if the replication set deletion protection is enabled or not. If
-     * deletion protection is enabled, you can't delete the last Region in the
-     * replication set. </p>
+     * deletion protection is enabled, you can't delete the last Amazon Web Services
+     * Region in the replication set. </p>
      */
     inline void SetDeletionProtected(bool value) { m_deletionProtectedHasBeenSet = true; m_deletionProtected = value; }
 
     /**
      * <p>Determines if the replication set deletion protection is enabled or not. If
-     * deletion protection is enabled, you can't delete the last Region in the
-     * replication set. </p>
+     * deletion protection is enabled, you can't delete the last Amazon Web Services
+     * Region in the replication set. </p>
      */
     inline ReplicationSet& WithDeletionProtected(bool value) { SetDeletionProtected(value); return *this;}
 
@@ -257,74 +258,74 @@ namespace Model
 
 
     /**
-     * <p>The map between each Region in your replication set and the KMS key that is
-     * used to encrypt the data in that Region.</p>
+     * <p>The map between each Amazon Web Services Region in your replication set and
+     * the KMS key that's used to encrypt the data in that Region.</p>
      */
     inline const Aws::Map<Aws::String, RegionInfo>& GetRegionMap() const{ return m_regionMap; }
 
     /**
-     * <p>The map between each Region in your replication set and the KMS key that is
-     * used to encrypt the data in that Region.</p>
+     * <p>The map between each Amazon Web Services Region in your replication set and
+     * the KMS key that's used to encrypt the data in that Region.</p>
      */
     inline bool RegionMapHasBeenSet() const { return m_regionMapHasBeenSet; }
 
     /**
-     * <p>The map between each Region in your replication set and the KMS key that is
-     * used to encrypt the data in that Region.</p>
+     * <p>The map between each Amazon Web Services Region in your replication set and
+     * the KMS key that's used to encrypt the data in that Region.</p>
      */
     inline void SetRegionMap(const Aws::Map<Aws::String, RegionInfo>& value) { m_regionMapHasBeenSet = true; m_regionMap = value; }
 
     /**
-     * <p>The map between each Region in your replication set and the KMS key that is
-     * used to encrypt the data in that Region.</p>
+     * <p>The map between each Amazon Web Services Region in your replication set and
+     * the KMS key that's used to encrypt the data in that Region.</p>
      */
     inline void SetRegionMap(Aws::Map<Aws::String, RegionInfo>&& value) { m_regionMapHasBeenSet = true; m_regionMap = std::move(value); }
 
     /**
-     * <p>The map between each Region in your replication set and the KMS key that is
-     * used to encrypt the data in that Region.</p>
+     * <p>The map between each Amazon Web Services Region in your replication set and
+     * the KMS key that's used to encrypt the data in that Region.</p>
      */
     inline ReplicationSet& WithRegionMap(const Aws::Map<Aws::String, RegionInfo>& value) { SetRegionMap(value); return *this;}
 
     /**
-     * <p>The map between each Region in your replication set and the KMS key that is
-     * used to encrypt the data in that Region.</p>
+     * <p>The map between each Amazon Web Services Region in your replication set and
+     * the KMS key that's used to encrypt the data in that Region.</p>
      */
     inline ReplicationSet& WithRegionMap(Aws::Map<Aws::String, RegionInfo>&& value) { SetRegionMap(std::move(value)); return *this;}
 
     /**
-     * <p>The map between each Region in your replication set and the KMS key that is
-     * used to encrypt the data in that Region.</p>
+     * <p>The map between each Amazon Web Services Region in your replication set and
+     * the KMS key that's used to encrypt the data in that Region.</p>
      */
     inline ReplicationSet& AddRegionMap(const Aws::String& key, const RegionInfo& value) { m_regionMapHasBeenSet = true; m_regionMap.emplace(key, value); return *this; }
 
     /**
-     * <p>The map between each Region in your replication set and the KMS key that is
-     * used to encrypt the data in that Region.</p>
+     * <p>The map between each Amazon Web Services Region in your replication set and
+     * the KMS key that's used to encrypt the data in that Region.</p>
      */
     inline ReplicationSet& AddRegionMap(Aws::String&& key, const RegionInfo& value) { m_regionMapHasBeenSet = true; m_regionMap.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The map between each Region in your replication set and the KMS key that is
-     * used to encrypt the data in that Region.</p>
+     * <p>The map between each Amazon Web Services Region in your replication set and
+     * the KMS key that's used to encrypt the data in that Region.</p>
      */
     inline ReplicationSet& AddRegionMap(const Aws::String& key, RegionInfo&& value) { m_regionMapHasBeenSet = true; m_regionMap.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The map between each Region in your replication set and the KMS key that is
-     * used to encrypt the data in that Region.</p>
+     * <p>The map between each Amazon Web Services Region in your replication set and
+     * the KMS key that's used to encrypt the data in that Region.</p>
      */
     inline ReplicationSet& AddRegionMap(Aws::String&& key, RegionInfo&& value) { m_regionMapHasBeenSet = true; m_regionMap.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The map between each Region in your replication set and the KMS key that is
-     * used to encrypt the data in that Region.</p>
+     * <p>The map between each Amazon Web Services Region in your replication set and
+     * the KMS key that's used to encrypt the data in that Region.</p>
      */
     inline ReplicationSet& AddRegionMap(const char* key, RegionInfo&& value) { m_regionMapHasBeenSet = true; m_regionMap.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The map between each Region in your replication set and the KMS key that is
-     * used to encrypt the data in that Region.</p>
+     * <p>The map between each Amazon Web Services Region in your replication set and
+     * the KMS key that's used to encrypt the data in that Region.</p>
      */
     inline ReplicationSet& AddRegionMap(const char* key, const RegionInfo& value) { m_regionMapHasBeenSet = true; m_regionMap.emplace(key, value); return *this; }
 

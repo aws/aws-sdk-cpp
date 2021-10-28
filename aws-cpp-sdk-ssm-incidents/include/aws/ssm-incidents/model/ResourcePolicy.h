@@ -121,42 +121,50 @@ namespace Model
 
 
     /**
-     * <p>The Region that policy allows resources to be used in.</p>
+     * <p>The Amazon Web Services Region that policy allows resources to be used
+     * in.</p>
      */
     inline const Aws::String& GetRamResourceShareRegion() const{ return m_ramResourceShareRegion; }
 
     /**
-     * <p>The Region that policy allows resources to be used in.</p>
+     * <p>The Amazon Web Services Region that policy allows resources to be used
+     * in.</p>
      */
     inline bool RamResourceShareRegionHasBeenSet() const { return m_ramResourceShareRegionHasBeenSet; }
 
     /**
-     * <p>The Region that policy allows resources to be used in.</p>
+     * <p>The Amazon Web Services Region that policy allows resources to be used
+     * in.</p>
      */
     inline void SetRamResourceShareRegion(const Aws::String& value) { m_ramResourceShareRegionHasBeenSet = true; m_ramResourceShareRegion = value; }
 
     /**
-     * <p>The Region that policy allows resources to be used in.</p>
+     * <p>The Amazon Web Services Region that policy allows resources to be used
+     * in.</p>
      */
     inline void SetRamResourceShareRegion(Aws::String&& value) { m_ramResourceShareRegionHasBeenSet = true; m_ramResourceShareRegion = std::move(value); }
 
     /**
-     * <p>The Region that policy allows resources to be used in.</p>
+     * <p>The Amazon Web Services Region that policy allows resources to be used
+     * in.</p>
      */
     inline void SetRamResourceShareRegion(const char* value) { m_ramResourceShareRegionHasBeenSet = true; m_ramResourceShareRegion.assign(value); }
 
     /**
-     * <p>The Region that policy allows resources to be used in.</p>
+     * <p>The Amazon Web Services Region that policy allows resources to be used
+     * in.</p>
      */
     inline ResourcePolicy& WithRamResourceShareRegion(const Aws::String& value) { SetRamResourceShareRegion(value); return *this;}
 
     /**
-     * <p>The Region that policy allows resources to be used in.</p>
+     * <p>The Amazon Web Services Region that policy allows resources to be used
+     * in.</p>
      */
     inline ResourcePolicy& WithRamResourceShareRegion(Aws::String&& value) { SetRamResourceShareRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The Region that policy allows resources to be used in.</p>
+     * <p>The Amazon Web Services Region that policy allows resources to be used
+     * in.</p>
      */
     inline ResourcePolicy& WithRamResourceShareRegion(const char* value) { SetRamResourceShareRegion(value); return *this;}
 

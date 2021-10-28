@@ -829,6 +829,63 @@ namespace Model
 
 
     /**
+     * <p>The operating system that your tasks in the set are running on. A platform
+     * family is specified only for tasks using the Fargate launch type. </p> <p> All
+     * tasks in the set must have the same value.</p>
+     */
+    inline const Aws::String& GetPlatformFamily() const{ return m_platformFamily; }
+
+    /**
+     * <p>The operating system that your tasks in the set are running on. A platform
+     * family is specified only for tasks using the Fargate launch type. </p> <p> All
+     * tasks in the set must have the same value.</p>
+     */
+    inline bool PlatformFamilyHasBeenSet() const { return m_platformFamilyHasBeenSet; }
+
+    /**
+     * <p>The operating system that your tasks in the set are running on. A platform
+     * family is specified only for tasks using the Fargate launch type. </p> <p> All
+     * tasks in the set must have the same value.</p>
+     */
+    inline void SetPlatformFamily(const Aws::String& value) { m_platformFamilyHasBeenSet = true; m_platformFamily = value; }
+
+    /**
+     * <p>The operating system that your tasks in the set are running on. A platform
+     * family is specified only for tasks using the Fargate launch type. </p> <p> All
+     * tasks in the set must have the same value.</p>
+     */
+    inline void SetPlatformFamily(Aws::String&& value) { m_platformFamilyHasBeenSet = true; m_platformFamily = std::move(value); }
+
+    /**
+     * <p>The operating system that your tasks in the set are running on. A platform
+     * family is specified only for tasks using the Fargate launch type. </p> <p> All
+     * tasks in the set must have the same value.</p>
+     */
+    inline void SetPlatformFamily(const char* value) { m_platformFamilyHasBeenSet = true; m_platformFamily.assign(value); }
+
+    /**
+     * <p>The operating system that your tasks in the set are running on. A platform
+     * family is specified only for tasks using the Fargate launch type. </p> <p> All
+     * tasks in the set must have the same value.</p>
+     */
+    inline TaskSet& WithPlatformFamily(const Aws::String& value) { SetPlatformFamily(value); return *this;}
+
+    /**
+     * <p>The operating system that your tasks in the set are running on. A platform
+     * family is specified only for tasks using the Fargate launch type. </p> <p> All
+     * tasks in the set must have the same value.</p>
+     */
+    inline TaskSet& WithPlatformFamily(Aws::String&& value) { SetPlatformFamily(std::move(value)); return *this;}
+
+    /**
+     * <p>The operating system that your tasks in the set are running on. A platform
+     * family is specified only for tasks using the Fargate launch type. </p> <p> All
+     * tasks in the set must have the same value.</p>
+     */
+    inline TaskSet& WithPlatformFamily(const char* value) { SetPlatformFamily(value); return *this;}
+
+
+    /**
      * <p>The network configuration for the task set.</p>
      */
     inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
@@ -1327,6 +1384,9 @@ namespace Model
 
     Aws::String m_platformVersion;
     bool m_platformVersionHasBeenSet;
+
+    Aws::String m_platformFamily;
+    bool m_platformFamilyHasBeenSet;
 
     NetworkConfiguration m_networkConfiguration;
     bool m_networkConfigurationHasBeenSet;

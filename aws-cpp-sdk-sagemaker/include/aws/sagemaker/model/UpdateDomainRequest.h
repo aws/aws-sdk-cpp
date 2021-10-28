@@ -8,6 +8,7 @@
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/UserSettings.h>
+#include <aws/sagemaker/model/DomainSettingsForUpdate.h>
 #include <utility>
 
 namespace Aws
@@ -106,6 +107,43 @@ namespace Model
      */
     inline UpdateDomainRequest& WithDefaultUserSettings(UserSettings&& value) { SetDefaultUserSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A collection of <code>DomainSettings</code> configuration values to
+     * update.</p>
+     */
+    inline const DomainSettingsForUpdate& GetDomainSettingsForUpdate() const{ return m_domainSettingsForUpdate; }
+
+    /**
+     * <p>A collection of <code>DomainSettings</code> configuration values to
+     * update.</p>
+     */
+    inline bool DomainSettingsForUpdateHasBeenSet() const { return m_domainSettingsForUpdateHasBeenSet; }
+
+    /**
+     * <p>A collection of <code>DomainSettings</code> configuration values to
+     * update.</p>
+     */
+    inline void SetDomainSettingsForUpdate(const DomainSettingsForUpdate& value) { m_domainSettingsForUpdateHasBeenSet = true; m_domainSettingsForUpdate = value; }
+
+    /**
+     * <p>A collection of <code>DomainSettings</code> configuration values to
+     * update.</p>
+     */
+    inline void SetDomainSettingsForUpdate(DomainSettingsForUpdate&& value) { m_domainSettingsForUpdateHasBeenSet = true; m_domainSettingsForUpdate = std::move(value); }
+
+    /**
+     * <p>A collection of <code>DomainSettings</code> configuration values to
+     * update.</p>
+     */
+    inline UpdateDomainRequest& WithDomainSettingsForUpdate(const DomainSettingsForUpdate& value) { SetDomainSettingsForUpdate(value); return *this;}
+
+    /**
+     * <p>A collection of <code>DomainSettings</code> configuration values to
+     * update.</p>
+     */
+    inline UpdateDomainRequest& WithDomainSettingsForUpdate(DomainSettingsForUpdate&& value) { SetDomainSettingsForUpdate(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainId;
@@ -113,6 +151,9 @@ namespace Model
 
     UserSettings m_defaultUserSettings;
     bool m_defaultUserSettingsHasBeenSet;
+
+    DomainSettingsForUpdate m_domainSettingsForUpdate;
+    bool m_domainSettingsForUpdateHasBeenSet;
   };
 
 } // namespace Model

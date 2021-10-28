@@ -1341,6 +1341,71 @@ namespace Model
 
 
     /**
+     * <p>The operating system that your tasks are running on. A platform family is
+     * specified only for tasks using the Fargate launch type. </p> <p> All tasks that
+     * run as part of this service must use the same <code>platformFamily</code> value
+     * as the service, for example, <code>LINUX.</code>.</p>
+     */
+    inline const Aws::String& GetPlatformFamily() const{ return m_platformFamily; }
+
+    /**
+     * <p>The operating system that your tasks are running on. A platform family is
+     * specified only for tasks using the Fargate launch type. </p> <p> All tasks that
+     * run as part of this service must use the same <code>platformFamily</code> value
+     * as the service, for example, <code>LINUX.</code>.</p>
+     */
+    inline bool PlatformFamilyHasBeenSet() const { return m_platformFamilyHasBeenSet; }
+
+    /**
+     * <p>The operating system that your tasks are running on. A platform family is
+     * specified only for tasks using the Fargate launch type. </p> <p> All tasks that
+     * run as part of this service must use the same <code>platformFamily</code> value
+     * as the service, for example, <code>LINUX.</code>.</p>
+     */
+    inline void SetPlatformFamily(const Aws::String& value) { m_platformFamilyHasBeenSet = true; m_platformFamily = value; }
+
+    /**
+     * <p>The operating system that your tasks are running on. A platform family is
+     * specified only for tasks using the Fargate launch type. </p> <p> All tasks that
+     * run as part of this service must use the same <code>platformFamily</code> value
+     * as the service, for example, <code>LINUX.</code>.</p>
+     */
+    inline void SetPlatformFamily(Aws::String&& value) { m_platformFamilyHasBeenSet = true; m_platformFamily = std::move(value); }
+
+    /**
+     * <p>The operating system that your tasks are running on. A platform family is
+     * specified only for tasks using the Fargate launch type. </p> <p> All tasks that
+     * run as part of this service must use the same <code>platformFamily</code> value
+     * as the service, for example, <code>LINUX.</code>.</p>
+     */
+    inline void SetPlatformFamily(const char* value) { m_platformFamilyHasBeenSet = true; m_platformFamily.assign(value); }
+
+    /**
+     * <p>The operating system that your tasks are running on. A platform family is
+     * specified only for tasks using the Fargate launch type. </p> <p> All tasks that
+     * run as part of this service must use the same <code>platformFamily</code> value
+     * as the service, for example, <code>LINUX.</code>.</p>
+     */
+    inline Task& WithPlatformFamily(const Aws::String& value) { SetPlatformFamily(value); return *this;}
+
+    /**
+     * <p>The operating system that your tasks are running on. A platform family is
+     * specified only for tasks using the Fargate launch type. </p> <p> All tasks that
+     * run as part of this service must use the same <code>platformFamily</code> value
+     * as the service, for example, <code>LINUX.</code>.</p>
+     */
+    inline Task& WithPlatformFamily(Aws::String&& value) { SetPlatformFamily(std::move(value)); return *this;}
+
+    /**
+     * <p>The operating system that your tasks are running on. A platform family is
+     * specified only for tasks using the Fargate launch type. </p> <p> All tasks that
+     * run as part of this service must use the same <code>platformFamily</code> value
+     * as the service, for example, <code>LINUX.</code>.</p>
+     */
+    inline Task& WithPlatformFamily(const char* value) { SetPlatformFamily(value); return *this;}
+
+
+    /**
      * <p>The Unix timestamp for when the container image pull began.</p>
      */
     inline const Aws::Utils::DateTime& GetPullStartedAt() const{ return m_pullStartedAt; }
@@ -2029,6 +2094,9 @@ namespace Model
 
     Aws::String m_platformVersion;
     bool m_platformVersionHasBeenSet;
+
+    Aws::String m_platformFamily;
+    bool m_platformFamilyHasBeenSet;
 
     Aws::Utils::DateTime m_pullStartedAt;
     bool m_pullStartedAtHasBeenSet;

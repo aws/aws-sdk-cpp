@@ -12,6 +12,8 @@
 #include <aws/sagemaker/model/UserSettings.h>
 #include <aws/sagemaker/model/AppNetworkAccessType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/DomainSettings.h>
+#include <aws/sagemaker/model/AppSecurityGroupManagement.h>
 #include <utility>
 
 namespace Aws
@@ -602,6 +604,121 @@ namespace Model
      */
     inline DescribeDomainResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline const DomainSettings& GetDomainSettings() const{ return m_domainSettings; }
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline void SetDomainSettings(const DomainSettings& value) { m_domainSettings = value; }
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline void SetDomainSettings(DomainSettings&& value) { m_domainSettings = std::move(value); }
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline DescribeDomainResult& WithDomainSettings(const DomainSettings& value) { SetDomainSettings(value); return *this;}
+
+    /**
+     * <p>A collection of <code>Domain</code> settings.</p>
+     */
+    inline DescribeDomainResult& WithDomainSettings(DomainSettings&& value) { SetDomainSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The entity that creates and manages the required security groups for
+     * inter-app communication in <code>VPCOnly</code> mode. Required when
+     * <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is provided.</p>
+     */
+    inline const AppSecurityGroupManagement& GetAppSecurityGroupManagement() const{ return m_appSecurityGroupManagement; }
+
+    /**
+     * <p>The entity that creates and manages the required security groups for
+     * inter-app communication in <code>VPCOnly</code> mode. Required when
+     * <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is provided.</p>
+     */
+    inline void SetAppSecurityGroupManagement(const AppSecurityGroupManagement& value) { m_appSecurityGroupManagement = value; }
+
+    /**
+     * <p>The entity that creates and manages the required security groups for
+     * inter-app communication in <code>VPCOnly</code> mode. Required when
+     * <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is provided.</p>
+     */
+    inline void SetAppSecurityGroupManagement(AppSecurityGroupManagement&& value) { m_appSecurityGroupManagement = std::move(value); }
+
+    /**
+     * <p>The entity that creates and manages the required security groups for
+     * inter-app communication in <code>VPCOnly</code> mode. Required when
+     * <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is provided.</p>
+     */
+    inline DescribeDomainResult& WithAppSecurityGroupManagement(const AppSecurityGroupManagement& value) { SetAppSecurityGroupManagement(value); return *this;}
+
+    /**
+     * <p>The entity that creates and manages the required security groups for
+     * inter-app communication in <code>VPCOnly</code> mode. Required when
+     * <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     * is provided.</p>
+     */
+    inline DescribeDomainResult& WithAppSecurityGroupManagement(AppSecurityGroupManagement&& value) { SetAppSecurityGroupManagement(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The ID of the security group that authorizes traffic between the
+     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+     */
+    inline const Aws::String& GetSecurityGroupIdForDomainBoundary() const{ return m_securityGroupIdForDomainBoundary; }
+
+    /**
+     * <p>The ID of the security group that authorizes traffic between the
+     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+     */
+    inline void SetSecurityGroupIdForDomainBoundary(const Aws::String& value) { m_securityGroupIdForDomainBoundary = value; }
+
+    /**
+     * <p>The ID of the security group that authorizes traffic between the
+     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+     */
+    inline void SetSecurityGroupIdForDomainBoundary(Aws::String&& value) { m_securityGroupIdForDomainBoundary = std::move(value); }
+
+    /**
+     * <p>The ID of the security group that authorizes traffic between the
+     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+     */
+    inline void SetSecurityGroupIdForDomainBoundary(const char* value) { m_securityGroupIdForDomainBoundary.assign(value); }
+
+    /**
+     * <p>The ID of the security group that authorizes traffic between the
+     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+     */
+    inline DescribeDomainResult& WithSecurityGroupIdForDomainBoundary(const Aws::String& value) { SetSecurityGroupIdForDomainBoundary(value); return *this;}
+
+    /**
+     * <p>The ID of the security group that authorizes traffic between the
+     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+     */
+    inline DescribeDomainResult& WithSecurityGroupIdForDomainBoundary(Aws::String&& value) { SetSecurityGroupIdForDomainBoundary(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the security group that authorizes traffic between the
+     * <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+     */
+    inline DescribeDomainResult& WithSecurityGroupIdForDomainBoundary(const char* value) { SetSecurityGroupIdForDomainBoundary(value); return *this;}
+
   private:
 
     Aws::String m_domainArn;
@@ -635,6 +752,12 @@ namespace Model
     Aws::String m_vpcId;
 
     Aws::String m_kmsKeyId;
+
+    DomainSettings m_domainSettings;
+
+    AppSecurityGroupManagement m_appSecurityGroupManagement;
+
+    Aws::String m_securityGroupIdForDomainBoundary;
   };
 
 } // namespace Model

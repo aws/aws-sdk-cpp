@@ -290,6 +290,7 @@ namespace Aws
         static const int d3en_6xlarge_HASH = HashingUtils::HashString("d3en.6xlarge");
         static const int d3en_8xlarge_HASH = HashingUtils::HashString("d3en.8xlarge");
         static const int d3en_12xlarge_HASH = HashingUtils::HashString("d3en.12xlarge");
+        static const int dl1_24xlarge_HASH = HashingUtils::HashString("dl1.24xlarge");
         static const int f1_2xlarge_HASH = HashingUtils::HashString("f1.2xlarge");
         static const int f1_4xlarge_HASH = HashingUtils::HashString("f1.4xlarge");
         static const int f1_16xlarge_HASH = HashingUtils::HashString("f1.16xlarge");
@@ -1806,6 +1807,11 @@ namespace Aws
             enumValue = InstanceType::d3en_12xlarge;
             return true;
           }
+          else if (hashCode == dl1_24xlarge_HASH)
+          {
+            enumValue = InstanceType::dl1_24xlarge;
+            return true;
+          }
           else if (hashCode == f1_2xlarge_HASH)
           {
             enumValue = InstanceType::f1_2xlarge;
@@ -2281,16 +2287,16 @@ namespace Aws
             enumValue = InstanceType::r5dn_16xlarge;
             return true;
           }
-          else if (hashCode == r5dn_24xlarge_HASH)
-          {
-            enumValue = InstanceType::r5dn_24xlarge;
-            return true;
-          }
           return false;
         }
         static bool GetEnumForNameHelper3(int hashCode, InstanceType& enumValue)
         {
-          if (hashCode == r5dn_metal_HASH)
+          if (hashCode == r5dn_24xlarge_HASH)
+          {
+            enumValue = InstanceType::r5dn_24xlarge;
+            return true;
+          }
+          else if (hashCode == r5dn_metal_HASH)
           {
             enumValue = InstanceType::r5dn_metal;
             return true;
@@ -3393,6 +3399,9 @@ namespace Aws
           case InstanceType::d3en_12xlarge:
             value = "d3en.12xlarge";
             return true;
+          case InstanceType::dl1_24xlarge:
+            value = "dl1.24xlarge";
+            return true;
           case InstanceType::f1_2xlarge:
             value = "f1.2xlarge";
             return true;
@@ -3678,9 +3687,6 @@ namespace Aws
           case InstanceType::r5dn_16xlarge:
             value = "r5dn.16xlarge";
             return true;
-          case InstanceType::r5dn_24xlarge:
-            value = "r5dn.24xlarge";
-            return true;
           default:
             return false;
           }
@@ -3689,6 +3695,9 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceType::r5dn_24xlarge:
+            value = "r5dn.24xlarge";
+            return true;
           case InstanceType::r5dn_metal:
             value = "r5dn.metal";
             return true;

@@ -41,9 +41,10 @@ namespace Model
    * <code>ecs-init</code>. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
    * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
-   * Guide</i>.</p>  <p>For tasks using the Fargate launch type, this parameter
-   * requires that the task or service uses platform version 1.3.0 or later.</p>
-   * <p><h3>See Also:</h3>   <a
+   * Guide</i>.</p>  <p>For tasks using the Fargate launch type, the task or
+   * service requires the followiwng platforms:</p> <ul> <li> <p>Linux platform
+   * version <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform version
+   * <code>1.0.0</code> or later.</p> </li> </ul> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ContainerDependency">AWS
    * API Reference</a></p>
    */

@@ -13,6 +13,7 @@
 #include <aws/ecs/model/IpcMode.h>
 #include <aws/ecs/model/ProxyConfiguration.h>
 #include <aws/ecs/model/EphemeralStorage.h>
+#include <aws/ecs/model/RuntimePlatform.h>
 #include <aws/ecs/model/ContainerDefinition.h>
 #include <aws/ecs/model/Volume.h>
 #include <aws/ecs/model/TaskDefinitionPlacementConstraint.h>
@@ -1695,8 +1696,10 @@ namespace Model
      * default amount, for tasks hosted on Fargate. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
      * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
-     * <p>This parameter is only supported for tasks hosted on Fargate using platform
-     * version <code>1.4.0</code> or later.</p> 
+     * <p>This parameter is only supported for tasks hosted on Fargate using the
+     * following platform versions:</p> <ul> <li> <p>Linux platform version
+     * <code>1.4.0</code> or later.</p> </li> <li> <p>Windows platform version
+     * <code>1.0.0</code> or later.</p> </li> </ul> 
      */
     inline const EphemeralStorage& GetEphemeralStorage() const{ return m_ephemeralStorage; }
 
@@ -1706,8 +1709,10 @@ namespace Model
      * default amount, for tasks hosted on Fargate. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
      * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
-     * <p>This parameter is only supported for tasks hosted on Fargate using platform
-     * version <code>1.4.0</code> or later.</p> 
+     * <p>This parameter is only supported for tasks hosted on Fargate using the
+     * following platform versions:</p> <ul> <li> <p>Linux platform version
+     * <code>1.4.0</code> or later.</p> </li> <li> <p>Windows platform version
+     * <code>1.0.0</code> or later.</p> </li> </ul> 
      */
     inline bool EphemeralStorageHasBeenSet() const { return m_ephemeralStorageHasBeenSet; }
 
@@ -1717,8 +1722,10 @@ namespace Model
      * default amount, for tasks hosted on Fargate. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
      * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
-     * <p>This parameter is only supported for tasks hosted on Fargate using platform
-     * version <code>1.4.0</code> or later.</p> 
+     * <p>This parameter is only supported for tasks hosted on Fargate using the
+     * following platform versions:</p> <ul> <li> <p>Linux platform version
+     * <code>1.4.0</code> or later.</p> </li> <li> <p>Windows platform version
+     * <code>1.0.0</code> or later.</p> </li> </ul> 
      */
     inline void SetEphemeralStorage(const EphemeralStorage& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = value; }
 
@@ -1728,8 +1735,10 @@ namespace Model
      * default amount, for tasks hosted on Fargate. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
      * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
-     * <p>This parameter is only supported for tasks hosted on Fargate using platform
-     * version <code>1.4.0</code> or later.</p> 
+     * <p>This parameter is only supported for tasks hosted on Fargate using the
+     * following platform versions:</p> <ul> <li> <p>Linux platform version
+     * <code>1.4.0</code> or later.</p> </li> <li> <p>Windows platform version
+     * <code>1.0.0</code> or later.</p> </li> </ul> 
      */
     inline void SetEphemeralStorage(EphemeralStorage&& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = std::move(value); }
 
@@ -1739,8 +1748,10 @@ namespace Model
      * default amount, for tasks hosted on Fargate. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
      * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
-     * <p>This parameter is only supported for tasks hosted on Fargate using platform
-     * version <code>1.4.0</code> or later.</p> 
+     * <p>This parameter is only supported for tasks hosted on Fargate using the
+     * following platform versions:</p> <ul> <li> <p>Linux platform version
+     * <code>1.4.0</code> or later.</p> </li> <li> <p>Windows platform version
+     * <code>1.0.0</code> or later.</p> </li> </ul> 
      */
     inline RegisterTaskDefinitionRequest& WithEphemeralStorage(const EphemeralStorage& value) { SetEphemeralStorage(value); return *this;}
 
@@ -1750,10 +1761,61 @@ namespace Model
      * default amount, for tasks hosted on Fargate. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
      * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
-     * <p>This parameter is only supported for tasks hosted on Fargate using platform
-     * version <code>1.4.0</code> or later.</p> 
+     * <p>This parameter is only supported for tasks hosted on Fargate using the
+     * following platform versions:</p> <ul> <li> <p>Linux platform version
+     * <code>1.4.0</code> or later.</p> </li> <li> <p>Windows platform version
+     * <code>1.0.0</code> or later.</p> </li> </ul> 
      */
     inline RegisterTaskDefinitionRequest& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The operating system that your tasks definitions run on. A platform family is
+     * specified only for tasks using the Fargate launch type. </p> <p>When you specify
+     * a task definition in a service, this value must match the
+     * <code>runtimePlatform</code> value of the service.</p>
+     */
+    inline const RuntimePlatform& GetRuntimePlatform() const{ return m_runtimePlatform; }
+
+    /**
+     * <p>The operating system that your tasks definitions run on. A platform family is
+     * specified only for tasks using the Fargate launch type. </p> <p>When you specify
+     * a task definition in a service, this value must match the
+     * <code>runtimePlatform</code> value of the service.</p>
+     */
+    inline bool RuntimePlatformHasBeenSet() const { return m_runtimePlatformHasBeenSet; }
+
+    /**
+     * <p>The operating system that your tasks definitions run on. A platform family is
+     * specified only for tasks using the Fargate launch type. </p> <p>When you specify
+     * a task definition in a service, this value must match the
+     * <code>runtimePlatform</code> value of the service.</p>
+     */
+    inline void SetRuntimePlatform(const RuntimePlatform& value) { m_runtimePlatformHasBeenSet = true; m_runtimePlatform = value; }
+
+    /**
+     * <p>The operating system that your tasks definitions run on. A platform family is
+     * specified only for tasks using the Fargate launch type. </p> <p>When you specify
+     * a task definition in a service, this value must match the
+     * <code>runtimePlatform</code> value of the service.</p>
+     */
+    inline void SetRuntimePlatform(RuntimePlatform&& value) { m_runtimePlatformHasBeenSet = true; m_runtimePlatform = std::move(value); }
+
+    /**
+     * <p>The operating system that your tasks definitions run on. A platform family is
+     * specified only for tasks using the Fargate launch type. </p> <p>When you specify
+     * a task definition in a service, this value must match the
+     * <code>runtimePlatform</code> value of the service.</p>
+     */
+    inline RegisterTaskDefinitionRequest& WithRuntimePlatform(const RuntimePlatform& value) { SetRuntimePlatform(value); return *this;}
+
+    /**
+     * <p>The operating system that your tasks definitions run on. A platform family is
+     * specified only for tasks using the Fargate launch type. </p> <p>When you specify
+     * a task definition in a service, this value must match the
+     * <code>runtimePlatform</code> value of the service.</p>
+     */
+    inline RegisterTaskDefinitionRequest& WithRuntimePlatform(RuntimePlatform&& value) { SetRuntimePlatform(std::move(value)); return *this;}
 
   private:
 
@@ -1804,6 +1866,9 @@ namespace Model
 
     EphemeralStorage m_ephemeralStorage;
     bool m_ephemeralStorageHasBeenSet;
+
+    RuntimePlatform m_runtimePlatform;
+    bool m_runtimePlatformHasBeenSet;
   };
 
 } // namespace Model

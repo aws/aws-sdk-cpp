@@ -11,6 +11,8 @@
 #include <aws/sagemaker/model/JupyterServerAppSettings.h>
 #include <aws/sagemaker/model/KernelGatewayAppSettings.h>
 #include <aws/sagemaker/model/TensorBoardAppSettings.h>
+#include <aws/sagemaker/model/RStudioServerProAppSettings.h>
+#include <aws/sagemaker/model/RSessionAppSettings.h>
 #include <utility>
 
 namespace Aws
@@ -322,6 +324,80 @@ namespace Model
      */
     inline UserSettings& WithTensorBoardAppSettings(TensorBoardAppSettings&& value) { SetTensorBoardAppSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A collection of settings that configure user interaction with the
+     * <code>RStudioServerPro</code> app.</p>
+     */
+    inline const RStudioServerProAppSettings& GetRStudioServerProAppSettings() const{ return m_rStudioServerProAppSettings; }
+
+    /**
+     * <p>A collection of settings that configure user interaction with the
+     * <code>RStudioServerPro</code> app.</p>
+     */
+    inline bool RStudioServerProAppSettingsHasBeenSet() const { return m_rStudioServerProAppSettingsHasBeenSet; }
+
+    /**
+     * <p>A collection of settings that configure user interaction with the
+     * <code>RStudioServerPro</code> app.</p>
+     */
+    inline void SetRStudioServerProAppSettings(const RStudioServerProAppSettings& value) { m_rStudioServerProAppSettingsHasBeenSet = true; m_rStudioServerProAppSettings = value; }
+
+    /**
+     * <p>A collection of settings that configure user interaction with the
+     * <code>RStudioServerPro</code> app.</p>
+     */
+    inline void SetRStudioServerProAppSettings(RStudioServerProAppSettings&& value) { m_rStudioServerProAppSettingsHasBeenSet = true; m_rStudioServerProAppSettings = std::move(value); }
+
+    /**
+     * <p>A collection of settings that configure user interaction with the
+     * <code>RStudioServerPro</code> app.</p>
+     */
+    inline UserSettings& WithRStudioServerProAppSettings(const RStudioServerProAppSettings& value) { SetRStudioServerProAppSettings(value); return *this;}
+
+    /**
+     * <p>A collection of settings that configure user interaction with the
+     * <code>RStudioServerPro</code> app.</p>
+     */
+    inline UserSettings& WithRStudioServerProAppSettings(RStudioServerProAppSettings&& value) { SetRStudioServerProAppSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A collection of settings that configure the <code>RSessionGateway</code>
+     * app.</p>
+     */
+    inline const RSessionAppSettings& GetRSessionAppSettings() const{ return m_rSessionAppSettings; }
+
+    /**
+     * <p>A collection of settings that configure the <code>RSessionGateway</code>
+     * app.</p>
+     */
+    inline bool RSessionAppSettingsHasBeenSet() const { return m_rSessionAppSettingsHasBeenSet; }
+
+    /**
+     * <p>A collection of settings that configure the <code>RSessionGateway</code>
+     * app.</p>
+     */
+    inline void SetRSessionAppSettings(const RSessionAppSettings& value) { m_rSessionAppSettingsHasBeenSet = true; m_rSessionAppSettings = value; }
+
+    /**
+     * <p>A collection of settings that configure the <code>RSessionGateway</code>
+     * app.</p>
+     */
+    inline void SetRSessionAppSettings(RSessionAppSettings&& value) { m_rSessionAppSettingsHasBeenSet = true; m_rSessionAppSettings = std::move(value); }
+
+    /**
+     * <p>A collection of settings that configure the <code>RSessionGateway</code>
+     * app.</p>
+     */
+    inline UserSettings& WithRSessionAppSettings(const RSessionAppSettings& value) { SetRSessionAppSettings(value); return *this;}
+
+    /**
+     * <p>A collection of settings that configure the <code>RSessionGateway</code>
+     * app.</p>
+     */
+    inline UserSettings& WithRSessionAppSettings(RSessionAppSettings&& value) { SetRSessionAppSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_executionRole;
@@ -341,6 +417,12 @@ namespace Model
 
     TensorBoardAppSettings m_tensorBoardAppSettings;
     bool m_tensorBoardAppSettingsHasBeenSet;
+
+    RStudioServerProAppSettings m_rStudioServerProAppSettings;
+    bool m_rStudioServerProAppSettingsHasBeenSet;
+
+    RSessionAppSettings m_rSessionAppSettings;
+    bool m_rSessionAppSettingsHasBeenSet;
   };
 
 } // namespace Model

@@ -7,6 +7,7 @@
 #include <aws/ssm-incidents/SSMIncidents_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm-incidents/model/ResourceType.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -135,6 +136,37 @@ namespace Model
      */
     inline ConflictException& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>If present in the output, the operation can be retried after this time</p>
+     */
+    inline const Aws::Utils::DateTime& GetRetryAfter() const{ return m_retryAfter; }
+
+    /**
+     * <p>If present in the output, the operation can be retried after this time</p>
+     */
+    inline bool RetryAfterHasBeenSet() const { return m_retryAfterHasBeenSet; }
+
+    /**
+     * <p>If present in the output, the operation can be retried after this time</p>
+     */
+    inline void SetRetryAfter(const Aws::Utils::DateTime& value) { m_retryAfterHasBeenSet = true; m_retryAfter = value; }
+
+    /**
+     * <p>If present in the output, the operation can be retried after this time</p>
+     */
+    inline void SetRetryAfter(Aws::Utils::DateTime&& value) { m_retryAfterHasBeenSet = true; m_retryAfter = std::move(value); }
+
+    /**
+     * <p>If present in the output, the operation can be retried after this time</p>
+     */
+    inline ConflictException& WithRetryAfter(const Aws::Utils::DateTime& value) { SetRetryAfter(value); return *this;}
+
+    /**
+     * <p>If present in the output, the operation can be retried after this time</p>
+     */
+    inline ConflictException& WithRetryAfter(Aws::Utils::DateTime&& value) { SetRetryAfter(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_message;
@@ -145,6 +177,9 @@ namespace Model
 
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
+    Aws::Utils::DateTime m_retryAfter;
+    bool m_retryAfterHasBeenSet;
   };
 
 } // namespace Model

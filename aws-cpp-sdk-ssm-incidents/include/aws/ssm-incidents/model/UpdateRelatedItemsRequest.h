@@ -35,99 +35,99 @@ namespace Model
 
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline UpdateRelatedItemsRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline UpdateRelatedItemsRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline UpdateRelatedItemsRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the incident record you are updating
-     * related items in.</p>
+     * <p>The Amazon Resource Name (ARN) of the incident record containing the related
+     * items you are updating.</p>
      */
     inline const Aws::String& GetIncidentRecordArn() const{ return m_incidentRecordArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the incident record you are updating
-     * related items in.</p>
+     * <p>The Amazon Resource Name (ARN) of the incident record containing the related
+     * items you are updating.</p>
      */
     inline bool IncidentRecordArnHasBeenSet() const { return m_incidentRecordArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the incident record you are updating
-     * related items in.</p>
+     * <p>The Amazon Resource Name (ARN) of the incident record containing the related
+     * items you are updating.</p>
      */
     inline void SetIncidentRecordArn(const Aws::String& value) { m_incidentRecordArnHasBeenSet = true; m_incidentRecordArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the incident record you are updating
-     * related items in.</p>
+     * <p>The Amazon Resource Name (ARN) of the incident record containing the related
+     * items you are updating.</p>
      */
     inline void SetIncidentRecordArn(Aws::String&& value) { m_incidentRecordArnHasBeenSet = true; m_incidentRecordArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the incident record you are updating
-     * related items in.</p>
+     * <p>The Amazon Resource Name (ARN) of the incident record containing the related
+     * items you are updating.</p>
      */
     inline void SetIncidentRecordArn(const char* value) { m_incidentRecordArnHasBeenSet = true; m_incidentRecordArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the incident record you are updating
-     * related items in.</p>
+     * <p>The Amazon Resource Name (ARN) of the incident record containing the related
+     * items you are updating.</p>
      */
     inline UpdateRelatedItemsRequest& WithIncidentRecordArn(const Aws::String& value) { SetIncidentRecordArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the incident record you are updating
-     * related items in.</p>
+     * <p>The Amazon Resource Name (ARN) of the incident record containing the related
+     * items you are updating.</p>
      */
     inline UpdateRelatedItemsRequest& WithIncidentRecordArn(Aws::String&& value) { SetIncidentRecordArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the incident record you are updating
-     * related items in.</p>
+     * <p>The Amazon Resource Name (ARN) of the incident record containing the related
+     * items you are updating.</p>
      */
     inline UpdateRelatedItemsRequest& WithIncidentRecordArn(const char* value) { SetIncidentRecordArn(value); return *this;}
 

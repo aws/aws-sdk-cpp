@@ -2278,7 +2278,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>For tasks using the Fargate launch type, the task or service
-     * requires platform version <code>1.3.0</code> or later.</p>
+     * requires the followiwng platforms:</p> <ul> <li> <p>Linux platform version
+     * <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform version
+     * <code>1.0.0</code> or later.</p> </li> </ul>
      */
     inline const Aws::Vector<ContainerDependency>& GetDependsOn() const{ return m_dependsOn; }
 
@@ -2300,7 +2302,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>For tasks using the Fargate launch type, the task or service
-     * requires platform version <code>1.3.0</code> or later.</p>
+     * requires the followiwng platforms:</p> <ul> <li> <p>Linux platform version
+     * <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform version
+     * <code>1.0.0</code> or later.</p> </li> </ul>
      */
     inline bool DependsOnHasBeenSet() const { return m_dependsOnHasBeenSet; }
 
@@ -2322,7 +2326,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>For tasks using the Fargate launch type, the task or service
-     * requires platform version <code>1.3.0</code> or later.</p>
+     * requires the followiwng platforms:</p> <ul> <li> <p>Linux platform version
+     * <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform version
+     * <code>1.0.0</code> or later.</p> </li> </ul>
      */
     inline void SetDependsOn(const Aws::Vector<ContainerDependency>& value) { m_dependsOnHasBeenSet = true; m_dependsOn = value; }
 
@@ -2344,7 +2350,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>For tasks using the Fargate launch type, the task or service
-     * requires platform version <code>1.3.0</code> or later.</p>
+     * requires the followiwng platforms:</p> <ul> <li> <p>Linux platform version
+     * <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform version
+     * <code>1.0.0</code> or later.</p> </li> </ul>
      */
     inline void SetDependsOn(Aws::Vector<ContainerDependency>&& value) { m_dependsOnHasBeenSet = true; m_dependsOn = std::move(value); }
 
@@ -2366,7 +2374,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>For tasks using the Fargate launch type, the task or service
-     * requires platform version <code>1.3.0</code> or later.</p>
+     * requires the followiwng platforms:</p> <ul> <li> <p>Linux platform version
+     * <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform version
+     * <code>1.0.0</code> or later.</p> </li> </ul>
      */
     inline ContainerDefinition& WithDependsOn(const Aws::Vector<ContainerDependency>& value) { SetDependsOn(value); return *this;}
 
@@ -2388,7 +2398,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>For tasks using the Fargate launch type, the task or service
-     * requires platform version <code>1.3.0</code> or later.</p>
+     * requires the followiwng platforms:</p> <ul> <li> <p>Linux platform version
+     * <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform version
+     * <code>1.0.0</code> or later.</p> </li> </ul>
      */
     inline ContainerDefinition& WithDependsOn(Aws::Vector<ContainerDependency>&& value) { SetDependsOn(std::move(value)); return *this;}
 
@@ -2410,7 +2422,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>For tasks using the Fargate launch type, the task or service
-     * requires platform version <code>1.3.0</code> or later.</p>
+     * requires the followiwng platforms:</p> <ul> <li> <p>Linux platform version
+     * <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform version
+     * <code>1.0.0</code> or later.</p> </li> </ul>
      */
     inline ContainerDefinition& AddDependsOn(const ContainerDependency& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(value); return *this; }
 
@@ -2432,7 +2446,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>For tasks using the Fargate launch type, the task or service
-     * requires platform version <code>1.3.0</code> or later.</p>
+     * requires the followiwng platforms:</p> <ul> <li> <p>Linux platform version
+     * <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform version
+     * <code>1.0.0</code> or later.</p> </li> </ul>
      */
     inline ContainerDefinition& AddDependsOn(ContainerDependency&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(std::move(value)); return *this; }
 
@@ -2447,13 +2463,14 @@ namespace Model
      * start. This results in the task transitioning to a <code>STOPPED</code>
      * state.</p>  <p>When the <code>ECS_CONTAINER_START_TIMEOUT</code> container
      * agent configuration variable is used, it is enforced indendently from this start
-     * timeout value.</p>  <p>For tasks using the Fargate launch type, this
-     * parameter requires that the task or service uses platform version 1.3.0 or
-     * later.</p> <p>For tasks using the EC2 launch type, your container instances
-     * require at least version <code>1.26.0</code> of the container agent to enable a
-     * container start timeout value. However, we recommend using the latest container
-     * agent version. For information about checking your agent version and updating to
-     * the latest version, see <a
+     * timeout value.</p>  <p>For tasks using the Fargate launch type, the task
+     * or service requires the followiwng platforms:</p> <ul> <li> <p>Linux platform
+     * version <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform version
+     * <code>1.0.0</code> or later.</p> </li> </ul> <p>For tasks using the EC2 launch
+     * type, your container instances require at least version <code>1.26.0</code> of
+     * the container agent to enable a container start timeout value. However, we
+     * recommend using the latest container agent version. For information about
+     * checking your agent version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
@@ -2477,13 +2494,14 @@ namespace Model
      * start. This results in the task transitioning to a <code>STOPPED</code>
      * state.</p>  <p>When the <code>ECS_CONTAINER_START_TIMEOUT</code> container
      * agent configuration variable is used, it is enforced indendently from this start
-     * timeout value.</p>  <p>For tasks using the Fargate launch type, this
-     * parameter requires that the task or service uses platform version 1.3.0 or
-     * later.</p> <p>For tasks using the EC2 launch type, your container instances
-     * require at least version <code>1.26.0</code> of the container agent to enable a
-     * container start timeout value. However, we recommend using the latest container
-     * agent version. For information about checking your agent version and updating to
-     * the latest version, see <a
+     * timeout value.</p>  <p>For tasks using the Fargate launch type, the task
+     * or service requires the followiwng platforms:</p> <ul> <li> <p>Linux platform
+     * version <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform version
+     * <code>1.0.0</code> or later.</p> </li> </ul> <p>For tasks using the EC2 launch
+     * type, your container instances require at least version <code>1.26.0</code> of
+     * the container agent to enable a container start timeout value. However, we
+     * recommend using the latest container agent version. For information about
+     * checking your agent version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
@@ -2507,13 +2525,14 @@ namespace Model
      * start. This results in the task transitioning to a <code>STOPPED</code>
      * state.</p>  <p>When the <code>ECS_CONTAINER_START_TIMEOUT</code> container
      * agent configuration variable is used, it is enforced indendently from this start
-     * timeout value.</p>  <p>For tasks using the Fargate launch type, this
-     * parameter requires that the task or service uses platform version 1.3.0 or
-     * later.</p> <p>For tasks using the EC2 launch type, your container instances
-     * require at least version <code>1.26.0</code> of the container agent to enable a
-     * container start timeout value. However, we recommend using the latest container
-     * agent version. For information about checking your agent version and updating to
-     * the latest version, see <a
+     * timeout value.</p>  <p>For tasks using the Fargate launch type, the task
+     * or service requires the followiwng platforms:</p> <ul> <li> <p>Linux platform
+     * version <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform version
+     * <code>1.0.0</code> or later.</p> </li> </ul> <p>For tasks using the EC2 launch
+     * type, your container instances require at least version <code>1.26.0</code> of
+     * the container agent to enable a container start timeout value. However, we
+     * recommend using the latest container agent version. For information about
+     * checking your agent version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
@@ -2537,13 +2556,14 @@ namespace Model
      * start. This results in the task transitioning to a <code>STOPPED</code>
      * state.</p>  <p>When the <code>ECS_CONTAINER_START_TIMEOUT</code> container
      * agent configuration variable is used, it is enforced indendently from this start
-     * timeout value.</p>  <p>For tasks using the Fargate launch type, this
-     * parameter requires that the task or service uses platform version 1.3.0 or
-     * later.</p> <p>For tasks using the EC2 launch type, your container instances
-     * require at least version <code>1.26.0</code> of the container agent to enable a
-     * container start timeout value. However, we recommend using the latest container
-     * agent version. For information about checking your agent version and updating to
-     * the latest version, see <a
+     * timeout value.</p>  <p>For tasks using the Fargate launch type, the task
+     * or service requires the followiwng platforms:</p> <ul> <li> <p>Linux platform
+     * version <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform version
+     * <code>1.0.0</code> or later.</p> </li> </ul> <p>For tasks using the EC2 launch
+     * type, your container instances require at least version <code>1.26.0</code> of
+     * the container agent to enable a container start timeout value. However, we
+     * recommend using the latest container agent version. For information about
+     * checking your agent version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
@@ -2561,7 +2581,9 @@ namespace Model
     /**
      * <p>Time duration (in seconds) to wait before the container is forcefully killed
      * if it doesn't exit normally on its own.</p> <p>For tasks using the Fargate
-     * launch type, the task or service requires platform version 1.3.0 or later. The
+     * launch type, the task or service requires the followiwng platforms:</p> <ul>
+     * <li> <p>Linux platform version <code>1.3.0</code> or later.</p> </li> <li>
+     * <p>Windows platform version <code>1.0.0</code> or later.</p> </li> </ul> <p>The
      * max stop timeout value is 120 seconds and if the parameter is not specified, the
      * default value of 30 seconds is used.</p> <p>For tasks using the EC2 launch type,
      * if the <code>stopTimeout</code> parameter is not specified, the value set for
@@ -2590,7 +2612,9 @@ namespace Model
     /**
      * <p>Time duration (in seconds) to wait before the container is forcefully killed
      * if it doesn't exit normally on its own.</p> <p>For tasks using the Fargate
-     * launch type, the task or service requires platform version 1.3.0 or later. The
+     * launch type, the task or service requires the followiwng platforms:</p> <ul>
+     * <li> <p>Linux platform version <code>1.3.0</code> or later.</p> </li> <li>
+     * <p>Windows platform version <code>1.0.0</code> or later.</p> </li> </ul> <p>The
      * max stop timeout value is 120 seconds and if the parameter is not specified, the
      * default value of 30 seconds is used.</p> <p>For tasks using the EC2 launch type,
      * if the <code>stopTimeout</code> parameter is not specified, the value set for
@@ -2619,7 +2643,9 @@ namespace Model
     /**
      * <p>Time duration (in seconds) to wait before the container is forcefully killed
      * if it doesn't exit normally on its own.</p> <p>For tasks using the Fargate
-     * launch type, the task or service requires platform version 1.3.0 or later. The
+     * launch type, the task or service requires the followiwng platforms:</p> <ul>
+     * <li> <p>Linux platform version <code>1.3.0</code> or later.</p> </li> <li>
+     * <p>Windows platform version <code>1.0.0</code> or later.</p> </li> </ul> <p>The
      * max stop timeout value is 120 seconds and if the parameter is not specified, the
      * default value of 30 seconds is used.</p> <p>For tasks using the EC2 launch type,
      * if the <code>stopTimeout</code> parameter is not specified, the value set for
@@ -2648,7 +2674,9 @@ namespace Model
     /**
      * <p>Time duration (in seconds) to wait before the container is forcefully killed
      * if it doesn't exit normally on its own.</p> <p>For tasks using the Fargate
-     * launch type, the task or service requires platform version 1.3.0 or later. The
+     * launch type, the task or service requires the followiwng platforms:</p> <ul>
+     * <li> <p>Linux platform version <code>1.3.0</code> or later.</p> </li> <li>
+     * <p>Windows platform version <code>1.0.0</code> or later.</p> </li> </ul> <p>The
      * max stop timeout value is 120 seconds and if the parameter is not specified, the
      * default value of 30 seconds is used.</p> <p>For tasks using the EC2 launch type,
      * if the <code>stopTimeout</code> parameter is not specified, the value set for

@@ -31,7 +31,8 @@ RegisterTaskDefinitionRequest::RegisterTaskDefinitionRequest() :
     m_ipcModeHasBeenSet(false),
     m_proxyConfigurationHasBeenSet(false),
     m_inferenceAcceleratorsHasBeenSet(false),
-    m_ephemeralStorageHasBeenSet(false)
+    m_ephemeralStorageHasBeenSet(false),
+    m_runtimePlatformHasBeenSet(false)
 {
 }
 
@@ -159,6 +160,12 @@ Aws::String RegisterTaskDefinitionRequest::SerializePayload() const
   if(m_ephemeralStorageHasBeenSet)
   {
    payload.WithObject("ephemeralStorage", m_ephemeralStorage.Jsonize());
+
+  }
+
+  if(m_runtimePlatformHasBeenSet)
+  {
+   payload.WithObject("runtimePlatform", m_runtimePlatform.Jsonize());
 
   }
 

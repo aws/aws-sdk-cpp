@@ -24,7 +24,9 @@ UserSettings::UserSettings() :
     m_sharingSettingsHasBeenSet(false),
     m_jupyterServerAppSettingsHasBeenSet(false),
     m_kernelGatewayAppSettingsHasBeenSet(false),
-    m_tensorBoardAppSettingsHasBeenSet(false)
+    m_tensorBoardAppSettingsHasBeenSet(false),
+    m_rStudioServerProAppSettingsHasBeenSet(false),
+    m_rSessionAppSettingsHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ UserSettings::UserSettings(JsonView jsonValue) :
     m_sharingSettingsHasBeenSet(false),
     m_jupyterServerAppSettingsHasBeenSet(false),
     m_kernelGatewayAppSettingsHasBeenSet(false),
-    m_tensorBoardAppSettingsHasBeenSet(false)
+    m_tensorBoardAppSettingsHasBeenSet(false),
+    m_rStudioServerProAppSettingsHasBeenSet(false),
+    m_rSessionAppSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +90,20 @@ UserSettings& UserSettings::operator =(JsonView jsonValue)
     m_tensorBoardAppSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RStudioServerProAppSettings"))
+  {
+    m_rStudioServerProAppSettings = jsonValue.GetObject("RStudioServerProAppSettings");
+
+    m_rStudioServerProAppSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RSessionAppSettings"))
+  {
+    m_rSessionAppSettings = jsonValue.GetObject("RSessionAppSettings");
+
+    m_rSessionAppSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -131,6 +149,18 @@ JsonValue UserSettings::Jsonize() const
   if(m_tensorBoardAppSettingsHasBeenSet)
   {
    payload.WithObject("TensorBoardAppSettings", m_tensorBoardAppSettings.Jsonize());
+
+  }
+
+  if(m_rStudioServerProAppSettingsHasBeenSet)
+  {
+   payload.WithObject("RStudioServerProAppSettings", m_rStudioServerProAppSettings.Jsonize());
+
+  }
+
+  if(m_rSessionAppSettingsHasBeenSet)
+  {
+   payload.WithObject("RSessionAppSettings", m_rSessionAppSettings.Jsonize());
 
   }
 

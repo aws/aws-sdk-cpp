@@ -34,6 +34,7 @@ TaskDefinition::TaskDefinition() :
     m_requiresAttributesHasBeenSet(false),
     m_placementConstraintsHasBeenSet(false),
     m_compatibilitiesHasBeenSet(false),
+    m_runtimePlatformHasBeenSet(false),
     m_requiresCompatibilitiesHasBeenSet(false),
     m_cpuHasBeenSet(false),
     m_memoryHasBeenSet(false),
@@ -66,6 +67,7 @@ TaskDefinition::TaskDefinition(JsonView jsonValue) :
     m_requiresAttributesHasBeenSet(false),
     m_placementConstraintsHasBeenSet(false),
     m_compatibilitiesHasBeenSet(false),
+    m_runtimePlatformHasBeenSet(false),
     m_requiresCompatibilitiesHasBeenSet(false),
     m_cpuHasBeenSet(false),
     m_memoryHasBeenSet(false),
@@ -182,6 +184,13 @@ TaskDefinition& TaskDefinition::operator =(JsonView jsonValue)
       m_compatibilities.push_back(CompatibilityMapper::GetCompatibilityForName(compatibilitiesJsonList[compatibilitiesIndex].AsString()));
     }
     m_compatibilitiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("runtimePlatform"))
+  {
+    m_runtimePlatform = jsonValue.GetObject("runtimePlatform");
+
+    m_runtimePlatformHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("requiresCompatibilities"))
@@ -366,6 +375,12 @@ JsonValue TaskDefinition::Jsonize() const
      compatibilitiesJsonList[compatibilitiesIndex].AsString(CompatibilityMapper::GetNameForCompatibility(m_compatibilities[compatibilitiesIndex]));
    }
    payload.WithArray("compatibilities", std::move(compatibilitiesJsonList));
+
+  }
+
+  if(m_runtimePlatformHasBeenSet)
+  {
+   payload.WithObject("runtimePlatform", m_runtimePlatform.Jsonize());
 
   }
 

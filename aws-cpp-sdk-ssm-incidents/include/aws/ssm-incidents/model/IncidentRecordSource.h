@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Details about how the incident record was created and when.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Details about what created the incident record and when it was
+   * created.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/IncidentRecordSource">AWS
    * API Reference</a></p>
    */
@@ -171,57 +171,57 @@ namespace Model
 
     /**
      * <p>The service that started the incident. This can be manually created from
-     * Incident Manager, automatically created using an AWS CloudWatch alarm, or Amazon
-     * EventBridge event.</p>
+     * Incident Manager, automatically created using an Amazon CloudWatch alarm, or
+     * Amazon EventBridge event.</p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
 
     /**
      * <p>The service that started the incident. This can be manually created from
-     * Incident Manager, automatically created using an AWS CloudWatch alarm, or Amazon
-     * EventBridge event.</p>
+     * Incident Manager, automatically created using an Amazon CloudWatch alarm, or
+     * Amazon EventBridge event.</p>
      */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
     /**
      * <p>The service that started the incident. This can be manually created from
-     * Incident Manager, automatically created using an AWS CloudWatch alarm, or Amazon
-     * EventBridge event.</p>
+     * Incident Manager, automatically created using an Amazon CloudWatch alarm, or
+     * Amazon EventBridge event.</p>
      */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
      * <p>The service that started the incident. This can be manually created from
-     * Incident Manager, automatically created using an AWS CloudWatch alarm, or Amazon
-     * EventBridge event.</p>
+     * Incident Manager, automatically created using an Amazon CloudWatch alarm, or
+     * Amazon EventBridge event.</p>
      */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
      * <p>The service that started the incident. This can be manually created from
-     * Incident Manager, automatically created using an AWS CloudWatch alarm, or Amazon
-     * EventBridge event.</p>
+     * Incident Manager, automatically created using an Amazon CloudWatch alarm, or
+     * Amazon EventBridge event.</p>
      */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
 
     /**
      * <p>The service that started the incident. This can be manually created from
-     * Incident Manager, automatically created using an AWS CloudWatch alarm, or Amazon
-     * EventBridge event.</p>
+     * Incident Manager, automatically created using an Amazon CloudWatch alarm, or
+     * Amazon EventBridge event.</p>
      */
     inline IncidentRecordSource& WithSource(const Aws::String& value) { SetSource(value); return *this;}
 
     /**
      * <p>The service that started the incident. This can be manually created from
-     * Incident Manager, automatically created using an AWS CloudWatch alarm, or Amazon
-     * EventBridge event.</p>
+     * Incident Manager, automatically created using an Amazon CloudWatch alarm, or
+     * Amazon EventBridge event.</p>
      */
     inline IncidentRecordSource& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
 
     /**
      * <p>The service that started the incident. This can be manually created from
-     * Incident Manager, automatically created using an AWS CloudWatch alarm, or Amazon
-     * EventBridge event.</p>
+     * Incident Manager, automatically created using an Amazon CloudWatch alarm, or
+     * Amazon EventBridge event.</p>
      */
     inline IncidentRecordSource& WithSource(const char* value) { SetSource(value); return *this;}
 

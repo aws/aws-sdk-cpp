@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/NetworkMode.h>
 #include <aws/ecs/model/TaskDefinitionStatus.h>
+#include <aws/ecs/model/RuntimePlatform.h>
 #include <aws/ecs/model/PidMode.h>
 #include <aws/ecs/model/IpcMode.h>
 #include <aws/ecs/model/ProxyConfiguration.h>
@@ -1062,6 +1063,55 @@ namespace Model
 
 
     /**
+     * <p>The operating system that your task definitions are running on. A platform
+     * family is specified only for tasks using the Fargate launch type. </p> <p>When
+     * you specify a task in a service, this value must match the
+     * <code>runtimePlatform</code> value of the service.</p>
+     */
+    inline const RuntimePlatform& GetRuntimePlatform() const{ return m_runtimePlatform; }
+
+    /**
+     * <p>The operating system that your task definitions are running on. A platform
+     * family is specified only for tasks using the Fargate launch type. </p> <p>When
+     * you specify a task in a service, this value must match the
+     * <code>runtimePlatform</code> value of the service.</p>
+     */
+    inline bool RuntimePlatformHasBeenSet() const { return m_runtimePlatformHasBeenSet; }
+
+    /**
+     * <p>The operating system that your task definitions are running on. A platform
+     * family is specified only for tasks using the Fargate launch type. </p> <p>When
+     * you specify a task in a service, this value must match the
+     * <code>runtimePlatform</code> value of the service.</p>
+     */
+    inline void SetRuntimePlatform(const RuntimePlatform& value) { m_runtimePlatformHasBeenSet = true; m_runtimePlatform = value; }
+
+    /**
+     * <p>The operating system that your task definitions are running on. A platform
+     * family is specified only for tasks using the Fargate launch type. </p> <p>When
+     * you specify a task in a service, this value must match the
+     * <code>runtimePlatform</code> value of the service.</p>
+     */
+    inline void SetRuntimePlatform(RuntimePlatform&& value) { m_runtimePlatformHasBeenSet = true; m_runtimePlatform = std::move(value); }
+
+    /**
+     * <p>The operating system that your task definitions are running on. A platform
+     * family is specified only for tasks using the Fargate launch type. </p> <p>When
+     * you specify a task in a service, this value must match the
+     * <code>runtimePlatform</code> value of the service.</p>
+     */
+    inline TaskDefinition& WithRuntimePlatform(const RuntimePlatform& value) { SetRuntimePlatform(value); return *this;}
+
+    /**
+     * <p>The operating system that your task definitions are running on. A platform
+     * family is specified only for tasks using the Fargate launch type. </p> <p>When
+     * you specify a task in a service, this value must match the
+     * <code>runtimePlatform</code> value of the service.</p>
+     */
+    inline TaskDefinition& WithRuntimePlatform(RuntimePlatform&& value) { SetRuntimePlatform(std::move(value)); return *this;}
+
+
+    /**
      * <p>The task launch types the task definition was validated against. To determine
      * which task launch types the task definition is validated for, see the
      * <a>TaskDefinition$compatibilities</a> parameter.</p>
@@ -2038,6 +2088,9 @@ namespace Model
 
     Aws::Vector<Compatibility> m_compatibilities;
     bool m_compatibilitiesHasBeenSet;
+
+    RuntimePlatform m_runtimePlatform;
+    bool m_runtimePlatformHasBeenSet;
 
     Aws::Vector<Compatibility> m_requiresCompatibilities;
     bool m_requiresCompatibilitiesHasBeenSet;

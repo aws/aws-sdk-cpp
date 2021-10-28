@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about a Region in your replication set.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>Information about a Amazon Web Services Region in your replication
+   * set.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/RegionInfo">AWS
    * API Reference</a></p>
    */
@@ -41,145 +41,159 @@ namespace Model
 
 
     /**
-     * <p>The ID of the KMS key used to encrypt the data in this Region.</p>
+     * <p>The ID of the KMS key used to encrypt the data in this Amazon Web Services
+     * Region.</p>
      */
     inline const Aws::String& GetSseKmsKeyId() const{ return m_sseKmsKeyId; }
 
     /**
-     * <p>The ID of the KMS key used to encrypt the data in this Region.</p>
+     * <p>The ID of the KMS key used to encrypt the data in this Amazon Web Services
+     * Region.</p>
      */
     inline bool SseKmsKeyIdHasBeenSet() const { return m_sseKmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the KMS key used to encrypt the data in this Region.</p>
+     * <p>The ID of the KMS key used to encrypt the data in this Amazon Web Services
+     * Region.</p>
      */
     inline void SetSseKmsKeyId(const Aws::String& value) { m_sseKmsKeyIdHasBeenSet = true; m_sseKmsKeyId = value; }
 
     /**
-     * <p>The ID of the KMS key used to encrypt the data in this Region.</p>
+     * <p>The ID of the KMS key used to encrypt the data in this Amazon Web Services
+     * Region.</p>
      */
     inline void SetSseKmsKeyId(Aws::String&& value) { m_sseKmsKeyIdHasBeenSet = true; m_sseKmsKeyId = std::move(value); }
 
     /**
-     * <p>The ID of the KMS key used to encrypt the data in this Region.</p>
+     * <p>The ID of the KMS key used to encrypt the data in this Amazon Web Services
+     * Region.</p>
      */
     inline void SetSseKmsKeyId(const char* value) { m_sseKmsKeyIdHasBeenSet = true; m_sseKmsKeyId.assign(value); }
 
     /**
-     * <p>The ID of the KMS key used to encrypt the data in this Region.</p>
+     * <p>The ID of the KMS key used to encrypt the data in this Amazon Web Services
+     * Region.</p>
      */
     inline RegionInfo& WithSseKmsKeyId(const Aws::String& value) { SetSseKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ID of the KMS key used to encrypt the data in this Region.</p>
+     * <p>The ID of the KMS key used to encrypt the data in this Amazon Web Services
+     * Region.</p>
      */
     inline RegionInfo& WithSseKmsKeyId(Aws::String&& value) { SetSseKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the KMS key used to encrypt the data in this Region.</p>
+     * <p>The ID of the KMS key used to encrypt the data in this Amazon Web Services
+     * Region.</p>
      */
     inline RegionInfo& WithSseKmsKeyId(const char* value) { SetSseKmsKeyId(value); return *this;}
 
 
     /**
-     * <p>The status of the Region in the replication set.</p>
+     * <p>The status of the Amazon Web Services Region in the replication set.</p>
      */
     inline const RegionStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the Region in the replication set.</p>
+     * <p>The status of the Amazon Web Services Region in the replication set.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the Region in the replication set.</p>
+     * <p>The status of the Amazon Web Services Region in the replication set.</p>
      */
     inline void SetStatus(const RegionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the Region in the replication set.</p>
+     * <p>The status of the Amazon Web Services Region in the replication set.</p>
      */
     inline void SetStatus(RegionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the Region in the replication set.</p>
+     * <p>The status of the Amazon Web Services Region in the replication set.</p>
      */
     inline RegionInfo& WithStatus(const RegionStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the Region in the replication set.</p>
+     * <p>The status of the Amazon Web Services Region in the replication set.</p>
      */
     inline RegionInfo& WithStatus(RegionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>Information displayed about the status of the Region.</p>
+     * <p>Information displayed about the status of the Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
 
     /**
-     * <p>Information displayed about the status of the Region.</p>
+     * <p>Information displayed about the status of the Amazon Web Services Region.</p>
      */
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
-     * <p>Information displayed about the status of the Region.</p>
+     * <p>Information displayed about the status of the Amazon Web Services Region.</p>
      */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
 
     /**
-     * <p>Information displayed about the status of the Region.</p>
+     * <p>Information displayed about the status of the Amazon Web Services Region.</p>
      */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
 
     /**
-     * <p>Information displayed about the status of the Region.</p>
+     * <p>Information displayed about the status of the Amazon Web Services Region.</p>
      */
     inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
 
     /**
-     * <p>Information displayed about the status of the Region.</p>
+     * <p>Information displayed about the status of the Amazon Web Services Region.</p>
      */
     inline RegionInfo& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
 
     /**
-     * <p>Information displayed about the status of the Region.</p>
+     * <p>Information displayed about the status of the Amazon Web Services Region.</p>
      */
     inline RegionInfo& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
 
     /**
-     * <p>Information displayed about the status of the Region.</p>
+     * <p>Information displayed about the status of the Amazon Web Services Region.</p>
      */
     inline RegionInfo& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
 
     /**
-     * <p>The most recent date and time that the Region's status was updated.</p>
+     * <p>The most recent date and time that Incident Manager updated the Amazon Web
+     * Services Region's status.</p>
      */
     inline const Aws::Utils::DateTime& GetStatusUpdateDateTime() const{ return m_statusUpdateDateTime; }
 
     /**
-     * <p>The most recent date and time that the Region's status was updated.</p>
+     * <p>The most recent date and time that Incident Manager updated the Amazon Web
+     * Services Region's status.</p>
      */
     inline bool StatusUpdateDateTimeHasBeenSet() const { return m_statusUpdateDateTimeHasBeenSet; }
 
     /**
-     * <p>The most recent date and time that the Region's status was updated.</p>
+     * <p>The most recent date and time that Incident Manager updated the Amazon Web
+     * Services Region's status.</p>
      */
     inline void SetStatusUpdateDateTime(const Aws::Utils::DateTime& value) { m_statusUpdateDateTimeHasBeenSet = true; m_statusUpdateDateTime = value; }
 
     /**
-     * <p>The most recent date and time that the Region's status was updated.</p>
+     * <p>The most recent date and time that Incident Manager updated the Amazon Web
+     * Services Region's status.</p>
      */
     inline void SetStatusUpdateDateTime(Aws::Utils::DateTime&& value) { m_statusUpdateDateTimeHasBeenSet = true; m_statusUpdateDateTime = std::move(value); }
 
     /**
-     * <p>The most recent date and time that the Region's status was updated.</p>
+     * <p>The most recent date and time that Incident Manager updated the Amazon Web
+     * Services Region's status.</p>
      */
     inline RegionInfo& WithStatusUpdateDateTime(const Aws::Utils::DateTime& value) { SetStatusUpdateDateTime(value); return *this;}
 
     /**
-     * <p>The most recent date and time that the Region's status was updated.</p>
+     * <p>The most recent date and time that Incident Manager updated the Amazon Web
+     * Services Region's status.</p>
      */
     inline RegionInfo& WithStatusUpdateDateTime(Aws::Utils::DateTime&& value) { SetStatusUpdateDateTime(std::move(value)); return *this;}
 

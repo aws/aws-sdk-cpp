@@ -84,50 +84,50 @@ namespace Model
 
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. A short description of
-     * the event.</p>
+     * <p>A short description of the event as a valid JSON string. There is no other
+     * schema imposed.</p>
      */
     inline const Aws::String& GetEventData() const{ return m_eventData; }
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. A short description of
-     * the event.</p>
+     * <p>A short description of the event as a valid JSON string. There is no other
+     * schema imposed.</p>
      */
     inline bool EventDataHasBeenSet() const { return m_eventDataHasBeenSet; }
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. A short description of
-     * the event.</p>
+     * <p>A short description of the event as a valid JSON string. There is no other
+     * schema imposed.</p>
      */
     inline void SetEventData(const Aws::String& value) { m_eventDataHasBeenSet = true; m_eventData = value; }
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. A short description of
-     * the event.</p>
+     * <p>A short description of the event as a valid JSON string. There is no other
+     * schema imposed.</p>
      */
     inline void SetEventData(Aws::String&& value) { m_eventDataHasBeenSet = true; m_eventData = std::move(value); }
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. A short description of
-     * the event.</p>
+     * <p>A short description of the event as a valid JSON string. There is no other
+     * schema imposed.</p>
      */
     inline void SetEventData(const char* value) { m_eventDataHasBeenSet = true; m_eventData.assign(value); }
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. A short description of
-     * the event.</p>
+     * <p>A short description of the event as a valid JSON string. There is no other
+     * schema imposed.</p>
      */
     inline CreateTimelineEventRequest& WithEventData(const Aws::String& value) { SetEventData(value); return *this;}
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. A short description of
-     * the event.</p>
+     * <p>A short description of the event as a valid JSON string. There is no other
+     * schema imposed.</p>
      */
     inline CreateTimelineEventRequest& WithEventData(Aws::String&& value) { SetEventData(std::move(value)); return *this;}
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. A short description of
-     * the event.</p>
+     * <p>A short description of the event as a valid JSON string. There is no other
+     * schema imposed.</p>
      */
     inline CreateTimelineEventRequest& WithEventData(const char* value) { SetEventData(value); return *this;}
 
@@ -213,50 +213,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the incident record you are adding the
-     * event to.</p>
+     * <p>The Amazon Resource Name (ARN) of the incident record to which the event will
+     * be added.</p>
      */
     inline const Aws::String& GetIncidentRecordArn() const{ return m_incidentRecordArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the incident record you are adding the
-     * event to.</p>
+     * <p>The Amazon Resource Name (ARN) of the incident record to which the event will
+     * be added.</p>
      */
     inline bool IncidentRecordArnHasBeenSet() const { return m_incidentRecordArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the incident record you are adding the
-     * event to.</p>
+     * <p>The Amazon Resource Name (ARN) of the incident record to which the event will
+     * be added.</p>
      */
     inline void SetIncidentRecordArn(const Aws::String& value) { m_incidentRecordArnHasBeenSet = true; m_incidentRecordArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the incident record you are adding the
-     * event to.</p>
+     * <p>The Amazon Resource Name (ARN) of the incident record to which the event will
+     * be added.</p>
      */
     inline void SetIncidentRecordArn(Aws::String&& value) { m_incidentRecordArnHasBeenSet = true; m_incidentRecordArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the incident record you are adding the
-     * event to.</p>
+     * <p>The Amazon Resource Name (ARN) of the incident record to which the event will
+     * be added.</p>
      */
     inline void SetIncidentRecordArn(const char* value) { m_incidentRecordArnHasBeenSet = true; m_incidentRecordArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the incident record you are adding the
-     * event to.</p>
+     * <p>The Amazon Resource Name (ARN) of the incident record to which the event will
+     * be added.</p>
      */
     inline CreateTimelineEventRequest& WithIncidentRecordArn(const Aws::String& value) { SetIncidentRecordArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the incident record you are adding the
-     * event to.</p>
+     * <p>The Amazon Resource Name (ARN) of the incident record to which the event will
+     * be added.</p>
      */
     inline CreateTimelineEventRequest& WithIncidentRecordArn(Aws::String&& value) { SetIncidentRecordArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the incident record you are adding the
-     * event to.</p>
+     * <p>The Amazon Resource Name (ARN) of the incident record to which the event will
+     * be added.</p>
      */
     inline CreateTimelineEventRequest& WithIncidentRecordArn(const char* value) { SetIncidentRecordArn(value); return *this;}
 

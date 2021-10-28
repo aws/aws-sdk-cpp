@@ -125,7 +125,7 @@ namespace Model
      * of the product, if you don't provide the provisioning artifact ID. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
-     * is AWS Service Catalog</a>. </p>
+     * is Amazon Web Services Service Catalog</a>. </p>
      */
     inline const ServiceCatalogProvisioningUpdateDetails& GetServiceCatalogProvisioningUpdateDetails() const{ return m_serviceCatalogProvisioningUpdateDetails; }
 
@@ -135,7 +135,7 @@ namespace Model
      * of the product, if you don't provide the provisioning artifact ID. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
-     * is AWS Service Catalog</a>. </p>
+     * is Amazon Web Services Service Catalog</a>. </p>
      */
     inline bool ServiceCatalogProvisioningUpdateDetailsHasBeenSet() const { return m_serviceCatalogProvisioningUpdateDetailsHasBeenSet; }
 
@@ -145,7 +145,7 @@ namespace Model
      * of the product, if you don't provide the provisioning artifact ID. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
-     * is AWS Service Catalog</a>. </p>
+     * is Amazon Web Services Service Catalog</a>. </p>
      */
     inline void SetServiceCatalogProvisioningUpdateDetails(const ServiceCatalogProvisioningUpdateDetails& value) { m_serviceCatalogProvisioningUpdateDetailsHasBeenSet = true; m_serviceCatalogProvisioningUpdateDetails = value; }
 
@@ -155,7 +155,7 @@ namespace Model
      * of the product, if you don't provide the provisioning artifact ID. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
-     * is AWS Service Catalog</a>. </p>
+     * is Amazon Web Services Service Catalog</a>. </p>
      */
     inline void SetServiceCatalogProvisioningUpdateDetails(ServiceCatalogProvisioningUpdateDetails&& value) { m_serviceCatalogProvisioningUpdateDetailsHasBeenSet = true; m_serviceCatalogProvisioningUpdateDetails = std::move(value); }
 
@@ -165,7 +165,7 @@ namespace Model
      * of the product, if you don't provide the provisioning artifact ID. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
-     * is AWS Service Catalog</a>. </p>
+     * is Amazon Web Services Service Catalog</a>. </p>
      */
     inline UpdateProjectRequest& WithServiceCatalogProvisioningUpdateDetails(const ServiceCatalogProvisioningUpdateDetails& value) { SetServiceCatalogProvisioningUpdateDetails(value); return *this;}
 
@@ -175,80 +175,80 @@ namespace Model
      * of the product, if you don't provide the provisioning artifact ID. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
-     * is AWS Service Catalog</a>. </p>
+     * is Amazon Web Services Service Catalog</a>. </p>
      */
     inline UpdateProjectRequest& WithServiceCatalogProvisioningUpdateDetails(ServiceCatalogProvisioningUpdateDetails&& value) { SetServiceCatalogProvisioningUpdateDetails(std::move(value)); return *this;}
 
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline UpdateProjectRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline UpdateProjectRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline UpdateProjectRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline UpdateProjectRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

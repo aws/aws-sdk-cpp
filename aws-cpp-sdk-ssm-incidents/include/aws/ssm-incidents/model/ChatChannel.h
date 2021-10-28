@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>The AWS Chatbot chat channel used for collaboration during an
+   * <p>The Chatbot chat channel used for collaboration during an
    * incident.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ChatChannel">AWS
    * API Reference</a></p>
@@ -41,65 +41,65 @@ namespace Model
 
 
     /**
-     * <p>The SNS targets that AWS Chatbot uses to notify the chat channel of updates
-     * to an incident. You can also make updates to the incident through the chat
-     * channel by using the SNS topics. </p>
+     * <p>The Amazon SNS targets that Chatbot uses to notify the chat channel of
+     * updates to an incident. You can also make updates to the incident through the
+     * chat channel by using the Amazon SNS topics. </p>
      */
     inline const Aws::Vector<Aws::String>& GetChatbotSns() const{ return m_chatbotSns; }
 
     /**
-     * <p>The SNS targets that AWS Chatbot uses to notify the chat channel of updates
-     * to an incident. You can also make updates to the incident through the chat
-     * channel by using the SNS topics. </p>
+     * <p>The Amazon SNS targets that Chatbot uses to notify the chat channel of
+     * updates to an incident. You can also make updates to the incident through the
+     * chat channel by using the Amazon SNS topics. </p>
      */
     inline bool ChatbotSnsHasBeenSet() const { return m_chatbotSnsHasBeenSet; }
 
     /**
-     * <p>The SNS targets that AWS Chatbot uses to notify the chat channel of updates
-     * to an incident. You can also make updates to the incident through the chat
-     * channel by using the SNS topics. </p>
+     * <p>The Amazon SNS targets that Chatbot uses to notify the chat channel of
+     * updates to an incident. You can also make updates to the incident through the
+     * chat channel by using the Amazon SNS topics. </p>
      */
     inline void SetChatbotSns(const Aws::Vector<Aws::String>& value) { m_chatbotSnsHasBeenSet = true; m_chatbotSns = value; }
 
     /**
-     * <p>The SNS targets that AWS Chatbot uses to notify the chat channel of updates
-     * to an incident. You can also make updates to the incident through the chat
-     * channel by using the SNS topics. </p>
+     * <p>The Amazon SNS targets that Chatbot uses to notify the chat channel of
+     * updates to an incident. You can also make updates to the incident through the
+     * chat channel by using the Amazon SNS topics. </p>
      */
     inline void SetChatbotSns(Aws::Vector<Aws::String>&& value) { m_chatbotSnsHasBeenSet = true; m_chatbotSns = std::move(value); }
 
     /**
-     * <p>The SNS targets that AWS Chatbot uses to notify the chat channel of updates
-     * to an incident. You can also make updates to the incident through the chat
-     * channel by using the SNS topics. </p>
+     * <p>The Amazon SNS targets that Chatbot uses to notify the chat channel of
+     * updates to an incident. You can also make updates to the incident through the
+     * chat channel by using the Amazon SNS topics. </p>
      */
     inline ChatChannel& WithChatbotSns(const Aws::Vector<Aws::String>& value) { SetChatbotSns(value); return *this;}
 
     /**
-     * <p>The SNS targets that AWS Chatbot uses to notify the chat channel of updates
-     * to an incident. You can also make updates to the incident through the chat
-     * channel by using the SNS topics. </p>
+     * <p>The Amazon SNS targets that Chatbot uses to notify the chat channel of
+     * updates to an incident. You can also make updates to the incident through the
+     * chat channel by using the Amazon SNS topics. </p>
      */
     inline ChatChannel& WithChatbotSns(Aws::Vector<Aws::String>&& value) { SetChatbotSns(std::move(value)); return *this;}
 
     /**
-     * <p>The SNS targets that AWS Chatbot uses to notify the chat channel of updates
-     * to an incident. You can also make updates to the incident through the chat
-     * channel by using the SNS topics. </p>
+     * <p>The Amazon SNS targets that Chatbot uses to notify the chat channel of
+     * updates to an incident. You can also make updates to the incident through the
+     * chat channel by using the Amazon SNS topics. </p>
      */
     inline ChatChannel& AddChatbotSns(const Aws::String& value) { m_chatbotSnsHasBeenSet = true; m_chatbotSns.push_back(value); return *this; }
 
     /**
-     * <p>The SNS targets that AWS Chatbot uses to notify the chat channel of updates
-     * to an incident. You can also make updates to the incident through the chat
-     * channel by using the SNS topics. </p>
+     * <p>The Amazon SNS targets that Chatbot uses to notify the chat channel of
+     * updates to an incident. You can also make updates to the incident through the
+     * chat channel by using the Amazon SNS topics. </p>
      */
     inline ChatChannel& AddChatbotSns(Aws::String&& value) { m_chatbotSnsHasBeenSet = true; m_chatbotSns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The SNS targets that AWS Chatbot uses to notify the chat channel of updates
-     * to an incident. You can also make updates to the incident through the chat
-     * channel by using the SNS topics. </p>
+     * <p>The Amazon SNS targets that Chatbot uses to notify the chat channel of
+     * updates to an incident. You can also make updates to the incident through the
+     * chat channel by using the Amazon SNS topics. </p>
      */
     inline ChatChannel& AddChatbotSns(const char* value) { m_chatbotSnsHasBeenSet = true; m_chatbotSns.push_back(value); return *this; }
 

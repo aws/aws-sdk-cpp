@@ -361,43 +361,55 @@ namespace Model
 
     /**
      * <p>The ephemeral storage setting override for the task.</p>  <p>This
-     * parameter is only supported for tasks hosted on Fargate using platform version
-     * <code>1.4.0</code> or later.</p> 
+     * parameter is only supported for tasks hosted on Fargate using the following
+     * platform versions:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
+     * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
+     * later.</p> </li> </ul> 
      */
     inline const EphemeralStorage& GetEphemeralStorage() const{ return m_ephemeralStorage; }
 
     /**
      * <p>The ephemeral storage setting override for the task.</p>  <p>This
-     * parameter is only supported for tasks hosted on Fargate using platform version
-     * <code>1.4.0</code> or later.</p> 
+     * parameter is only supported for tasks hosted on Fargate using the following
+     * platform versions:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
+     * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
+     * later.</p> </li> </ul> 
      */
     inline bool EphemeralStorageHasBeenSet() const { return m_ephemeralStorageHasBeenSet; }
 
     /**
      * <p>The ephemeral storage setting override for the task.</p>  <p>This
-     * parameter is only supported for tasks hosted on Fargate using platform version
-     * <code>1.4.0</code> or later.</p> 
+     * parameter is only supported for tasks hosted on Fargate using the following
+     * platform versions:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
+     * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
+     * later.</p> </li> </ul> 
      */
     inline void SetEphemeralStorage(const EphemeralStorage& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = value; }
 
     /**
      * <p>The ephemeral storage setting override for the task.</p>  <p>This
-     * parameter is only supported for tasks hosted on Fargate using platform version
-     * <code>1.4.0</code> or later.</p> 
+     * parameter is only supported for tasks hosted on Fargate using the following
+     * platform versions:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
+     * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
+     * later.</p> </li> </ul> 
      */
     inline void SetEphemeralStorage(EphemeralStorage&& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = std::move(value); }
 
     /**
      * <p>The ephemeral storage setting override for the task.</p>  <p>This
-     * parameter is only supported for tasks hosted on Fargate using platform version
-     * <code>1.4.0</code> or later.</p> 
+     * parameter is only supported for tasks hosted on Fargate using the following
+     * platform versions:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
+     * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
+     * later.</p> </li> </ul> 
      */
     inline TaskOverride& WithEphemeralStorage(const EphemeralStorage& value) { SetEphemeralStorage(value); return *this;}
 
     /**
      * <p>The ephemeral storage setting override for the task.</p>  <p>This
-     * parameter is only supported for tasks hosted on Fargate using platform version
-     * <code>1.4.0</code> or later.</p> 
+     * parameter is only supported for tasks hosted on Fargate using the following
+     * platform versions:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
+     * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
+     * later.</p> </li> </ul> 
      */
     inline TaskOverride& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
 

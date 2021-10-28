@@ -33,50 +33,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the incident record that you are listing
-     * related items for.</p>
+     * <p>The Amazon Resource Name (ARN) of the incident record containing the listed
+     * related items.</p>
      */
     inline const Aws::String& GetIncidentRecordArn() const{ return m_incidentRecordArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the incident record that you are listing
-     * related items for.</p>
+     * <p>The Amazon Resource Name (ARN) of the incident record containing the listed
+     * related items.</p>
      */
     inline bool IncidentRecordArnHasBeenSet() const { return m_incidentRecordArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the incident record that you are listing
-     * related items for.</p>
+     * <p>The Amazon Resource Name (ARN) of the incident record containing the listed
+     * related items.</p>
      */
     inline void SetIncidentRecordArn(const Aws::String& value) { m_incidentRecordArnHasBeenSet = true; m_incidentRecordArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the incident record that you are listing
-     * related items for.</p>
+     * <p>The Amazon Resource Name (ARN) of the incident record containing the listed
+     * related items.</p>
      */
     inline void SetIncidentRecordArn(Aws::String&& value) { m_incidentRecordArnHasBeenSet = true; m_incidentRecordArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the incident record that you are listing
-     * related items for.</p>
+     * <p>The Amazon Resource Name (ARN) of the incident record containing the listed
+     * related items.</p>
      */
     inline void SetIncidentRecordArn(const char* value) { m_incidentRecordArnHasBeenSet = true; m_incidentRecordArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the incident record that you are listing
-     * related items for.</p>
+     * <p>The Amazon Resource Name (ARN) of the incident record containing the listed
+     * related items.</p>
      */
     inline ListRelatedItemsRequest& WithIncidentRecordArn(const Aws::String& value) { SetIncidentRecordArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the incident record that you are listing
-     * related items for.</p>
+     * <p>The Amazon Resource Name (ARN) of the incident record containing the listed
+     * related items.</p>
      */
     inline ListRelatedItemsRequest& WithIncidentRecordArn(Aws::String&& value) { SetIncidentRecordArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the incident record that you are listing
-     * related items for.</p>
+     * <p>The Amazon Resource Name (ARN) of the incident record containing the listed
+     * related items.</p>
      */
     inline ListRelatedItemsRequest& WithIncidentRecordArn(const char* value) { SetIncidentRecordArn(value); return *this;}
 

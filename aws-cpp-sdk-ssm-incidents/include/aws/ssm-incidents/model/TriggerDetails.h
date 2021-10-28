@@ -40,115 +40,115 @@ namespace Model
 
 
     /**
-     * <p>Raw data passed from either EventBridge, CloudWatch, or Incident Manager when
-     * an incident is created.</p>
+     * <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or
+     * Incident Manager when an incident is created.</p>
      */
     inline const Aws::String& GetRawData() const{ return m_rawData; }
 
     /**
-     * <p>Raw data passed from either EventBridge, CloudWatch, or Incident Manager when
-     * an incident is created.</p>
+     * <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or
+     * Incident Manager when an incident is created.</p>
      */
     inline bool RawDataHasBeenSet() const { return m_rawDataHasBeenSet; }
 
     /**
-     * <p>Raw data passed from either EventBridge, CloudWatch, or Incident Manager when
-     * an incident is created.</p>
+     * <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or
+     * Incident Manager when an incident is created.</p>
      */
     inline void SetRawData(const Aws::String& value) { m_rawDataHasBeenSet = true; m_rawData = value; }
 
     /**
-     * <p>Raw data passed from either EventBridge, CloudWatch, or Incident Manager when
-     * an incident is created.</p>
+     * <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or
+     * Incident Manager when an incident is created.</p>
      */
     inline void SetRawData(Aws::String&& value) { m_rawDataHasBeenSet = true; m_rawData = std::move(value); }
 
     /**
-     * <p>Raw data passed from either EventBridge, CloudWatch, or Incident Manager when
-     * an incident is created.</p>
+     * <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or
+     * Incident Manager when an incident is created.</p>
      */
     inline void SetRawData(const char* value) { m_rawDataHasBeenSet = true; m_rawData.assign(value); }
 
     /**
-     * <p>Raw data passed from either EventBridge, CloudWatch, or Incident Manager when
-     * an incident is created.</p>
+     * <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or
+     * Incident Manager when an incident is created.</p>
      */
     inline TriggerDetails& WithRawData(const Aws::String& value) { SetRawData(value); return *this;}
 
     /**
-     * <p>Raw data passed from either EventBridge, CloudWatch, or Incident Manager when
-     * an incident is created.</p>
+     * <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or
+     * Incident Manager when an incident is created.</p>
      */
     inline TriggerDetails& WithRawData(Aws::String&& value) { SetRawData(std::move(value)); return *this;}
 
     /**
-     * <p>Raw data passed from either EventBridge, CloudWatch, or Incident Manager when
-     * an incident is created.</p>
+     * <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or
+     * Incident Manager when an incident is created.</p>
      */
     inline TriggerDetails& WithRawData(const char* value) { SetRawData(value); return *this;}
 
 
     /**
      * <p>Identifies the service that sourced the event. All events sourced from within
-     * AWS begin with "aws." Customer-generated events can have any value here, as long
-     * as it doesn't begin with "aws." We recommend the use of Java package-name style
-     * reverse domain-name strings. </p>
+     * Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can
+     * have any value here, as long as it doesn't begin with "<code>aws.</code>" We
+     * recommend the use of Java package-name style reverse domain-name strings. </p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
 
     /**
      * <p>Identifies the service that sourced the event. All events sourced from within
-     * AWS begin with "aws." Customer-generated events can have any value here, as long
-     * as it doesn't begin with "aws." We recommend the use of Java package-name style
-     * reverse domain-name strings. </p>
+     * Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can
+     * have any value here, as long as it doesn't begin with "<code>aws.</code>" We
+     * recommend the use of Java package-name style reverse domain-name strings. </p>
      */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
     /**
      * <p>Identifies the service that sourced the event. All events sourced from within
-     * AWS begin with "aws." Customer-generated events can have any value here, as long
-     * as it doesn't begin with "aws." We recommend the use of Java package-name style
-     * reverse domain-name strings. </p>
+     * Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can
+     * have any value here, as long as it doesn't begin with "<code>aws.</code>" We
+     * recommend the use of Java package-name style reverse domain-name strings. </p>
      */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
      * <p>Identifies the service that sourced the event. All events sourced from within
-     * AWS begin with "aws." Customer-generated events can have any value here, as long
-     * as it doesn't begin with "aws." We recommend the use of Java package-name style
-     * reverse domain-name strings. </p>
+     * Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can
+     * have any value here, as long as it doesn't begin with "<code>aws.</code>" We
+     * recommend the use of Java package-name style reverse domain-name strings. </p>
      */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
      * <p>Identifies the service that sourced the event. All events sourced from within
-     * AWS begin with "aws." Customer-generated events can have any value here, as long
-     * as it doesn't begin with "aws." We recommend the use of Java package-name style
-     * reverse domain-name strings. </p>
+     * Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can
+     * have any value here, as long as it doesn't begin with "<code>aws.</code>" We
+     * recommend the use of Java package-name style reverse domain-name strings. </p>
      */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
 
     /**
      * <p>Identifies the service that sourced the event. All events sourced from within
-     * AWS begin with "aws." Customer-generated events can have any value here, as long
-     * as it doesn't begin with "aws." We recommend the use of Java package-name style
-     * reverse domain-name strings. </p>
+     * Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can
+     * have any value here, as long as it doesn't begin with "<code>aws.</code>" We
+     * recommend the use of Java package-name style reverse domain-name strings. </p>
      */
     inline TriggerDetails& WithSource(const Aws::String& value) { SetSource(value); return *this;}
 
     /**
      * <p>Identifies the service that sourced the event. All events sourced from within
-     * AWS begin with "aws." Customer-generated events can have any value here, as long
-     * as it doesn't begin with "aws." We recommend the use of Java package-name style
-     * reverse domain-name strings. </p>
+     * Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can
+     * have any value here, as long as it doesn't begin with "<code>aws.</code>" We
+     * recommend the use of Java package-name style reverse domain-name strings. </p>
      */
     inline TriggerDetails& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
 
     /**
      * <p>Identifies the service that sourced the event. All events sourced from within
-     * AWS begin with "aws." Customer-generated events can have any value here, as long
-     * as it doesn't begin with "aws." We recommend the use of Java package-name style
-     * reverse domain-name strings. </p>
+     * Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can
+     * have any value here, as long as it doesn't begin with "<code>aws.</code>" We
+     * recommend the use of Java package-name style reverse domain-name strings. </p>
      */
     inline TriggerDetails& WithSource(const char* value) { SetSource(value); return *this;}
 
@@ -185,42 +185,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the source that detected the incident.</p>
+     * <p>The Amazon Resource Name (ARN) of the source that detected the incident.</p>
      */
     inline const Aws::String& GetTriggerArn() const{ return m_triggerArn; }
 
     /**
-     * <p>The ARN of the source that detected the incident.</p>
+     * <p>The Amazon Resource Name (ARN) of the source that detected the incident.</p>
      */
     inline bool TriggerArnHasBeenSet() const { return m_triggerArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the source that detected the incident.</p>
+     * <p>The Amazon Resource Name (ARN) of the source that detected the incident.</p>
      */
     inline void SetTriggerArn(const Aws::String& value) { m_triggerArnHasBeenSet = true; m_triggerArn = value; }
 
     /**
-     * <p>The ARN of the source that detected the incident.</p>
+     * <p>The Amazon Resource Name (ARN) of the source that detected the incident.</p>
      */
     inline void SetTriggerArn(Aws::String&& value) { m_triggerArnHasBeenSet = true; m_triggerArn = std::move(value); }
 
     /**
-     * <p>The ARN of the source that detected the incident.</p>
+     * <p>The Amazon Resource Name (ARN) of the source that detected the incident.</p>
      */
     inline void SetTriggerArn(const char* value) { m_triggerArnHasBeenSet = true; m_triggerArn.assign(value); }
 
     /**
-     * <p>The ARN of the source that detected the incident.</p>
+     * <p>The Amazon Resource Name (ARN) of the source that detected the incident.</p>
      */
     inline TriggerDetails& WithTriggerArn(const Aws::String& value) { SetTriggerArn(value); return *this;}
 
     /**
-     * <p>The ARN of the source that detected the incident.</p>
+     * <p>The Amazon Resource Name (ARN) of the source that detected the incident.</p>
      */
     inline TriggerDetails& WithTriggerArn(Aws::String&& value) { SetTriggerArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the source that detected the incident.</p>
+     * <p>The Amazon Resource Name (ARN) of the source that detected the incident.</p>
      */
     inline TriggerDetails& WithTriggerArn(const char* value) { SetTriggerArn(value); return *this;}
 

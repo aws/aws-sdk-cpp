@@ -128,42 +128,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS Chatbot chat channel used for collaboration during an incident.</p>
+     * <p>The Chatbot chat channel used for collaboration during an incident.</p>
      * <p>Use the empty structure to remove the chat channel from the response
      * plan.</p>
      */
     inline const ChatChannel& GetChatChannel() const{ return m_chatChannel; }
 
     /**
-     * <p>The AWS Chatbot chat channel used for collaboration during an incident.</p>
+     * <p>The Chatbot chat channel used for collaboration during an incident.</p>
      * <p>Use the empty structure to remove the chat channel from the response
      * plan.</p>
      */
     inline bool ChatChannelHasBeenSet() const { return m_chatChannelHasBeenSet; }
 
     /**
-     * <p>The AWS Chatbot chat channel used for collaboration during an incident.</p>
+     * <p>The Chatbot chat channel used for collaboration during an incident.</p>
      * <p>Use the empty structure to remove the chat channel from the response
      * plan.</p>
      */
     inline void SetChatChannel(const ChatChannel& value) { m_chatChannelHasBeenSet = true; m_chatChannel = value; }
 
     /**
-     * <p>The AWS Chatbot chat channel used for collaboration during an incident.</p>
+     * <p>The Chatbot chat channel used for collaboration during an incident.</p>
      * <p>Use the empty structure to remove the chat channel from the response
      * plan.</p>
      */
     inline void SetChatChannel(ChatChannel&& value) { m_chatChannelHasBeenSet = true; m_chatChannel = std::move(value); }
 
     /**
-     * <p>The AWS Chatbot chat channel used for collaboration during an incident.</p>
+     * <p>The Chatbot chat channel used for collaboration during an incident.</p>
      * <p>Use the empty structure to remove the chat channel from the response
      * plan.</p>
      */
     inline UpdateResponsePlanRequest& WithChatChannel(const ChatChannel& value) { SetChatChannel(value); return *this;}
 
     /**
-     * <p>The AWS Chatbot chat channel used for collaboration during an incident.</p>
+     * <p>The Chatbot chat channel used for collaboration during an incident.</p>
      * <p>Use the empty structure to remove the chat channel from the response
      * plan.</p>
      */
@@ -171,91 +171,99 @@ namespace Model
 
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline UpdateResponsePlanRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline UpdateResponsePlanRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
+     * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
     inline UpdateResponsePlanRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
 
     /**
-     * <p>The long format name of the response plan. Can't contain spaces.</p>
+     * <p>The long format name of the response plan. The display name can't contain
+     * spaces.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>The long format name of the response plan. Can't contain spaces.</p>
+     * <p>The long format name of the response plan. The display name can't contain
+     * spaces.</p>
      */
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
-     * <p>The long format name of the response plan. Can't contain spaces.</p>
+     * <p>The long format name of the response plan. The display name can't contain
+     * spaces.</p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>The long format name of the response plan. Can't contain spaces.</p>
+     * <p>The long format name of the response plan. The display name can't contain
+     * spaces.</p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>The long format name of the response plan. Can't contain spaces.</p>
+     * <p>The long format name of the response plan. The display name can't contain
+     * spaces.</p>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>The long format name of the response plan. Can't contain spaces.</p>
+     * <p>The long format name of the response plan. The display name can't contain
+     * spaces.</p>
      */
     inline UpdateResponsePlanRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>The long format name of the response plan. Can't contain spaces.</p>
+     * <p>The long format name of the response plan. The display name can't contain
+     * spaces.</p>
      */
     inline UpdateResponsePlanRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>The long format name of the response plan. Can't contain spaces.</p>
+     * <p>The long format name of the response plan. The display name can't contain
+     * spaces.</p>
      */
     inline UpdateResponsePlanRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
@@ -316,42 +324,50 @@ namespace Model
 
 
     /**
-     * <p>Used to create only one incident record for an incident.</p>
+     * <p>The string Incident Manager uses to prevent duplicate incidents from being
+     * created by the same incident in the same account.</p>
      */
     inline const Aws::String& GetIncidentTemplateDedupeString() const{ return m_incidentTemplateDedupeString; }
 
     /**
-     * <p>Used to create only one incident record for an incident.</p>
+     * <p>The string Incident Manager uses to prevent duplicate incidents from being
+     * created by the same incident in the same account.</p>
      */
     inline bool IncidentTemplateDedupeStringHasBeenSet() const { return m_incidentTemplateDedupeStringHasBeenSet; }
 
     /**
-     * <p>Used to create only one incident record for an incident.</p>
+     * <p>The string Incident Manager uses to prevent duplicate incidents from being
+     * created by the same incident in the same account.</p>
      */
     inline void SetIncidentTemplateDedupeString(const Aws::String& value) { m_incidentTemplateDedupeStringHasBeenSet = true; m_incidentTemplateDedupeString = value; }
 
     /**
-     * <p>Used to create only one incident record for an incident.</p>
+     * <p>The string Incident Manager uses to prevent duplicate incidents from being
+     * created by the same incident in the same account.</p>
      */
     inline void SetIncidentTemplateDedupeString(Aws::String&& value) { m_incidentTemplateDedupeStringHasBeenSet = true; m_incidentTemplateDedupeString = std::move(value); }
 
     /**
-     * <p>Used to create only one incident record for an incident.</p>
+     * <p>The string Incident Manager uses to prevent duplicate incidents from being
+     * created by the same incident in the same account.</p>
      */
     inline void SetIncidentTemplateDedupeString(const char* value) { m_incidentTemplateDedupeStringHasBeenSet = true; m_incidentTemplateDedupeString.assign(value); }
 
     /**
-     * <p>Used to create only one incident record for an incident.</p>
+     * <p>The string Incident Manager uses to prevent duplicate incidents from being
+     * created by the same incident in the same account.</p>
      */
     inline UpdateResponsePlanRequest& WithIncidentTemplateDedupeString(const Aws::String& value) { SetIncidentTemplateDedupeString(value); return *this;}
 
     /**
-     * <p>Used to create only one incident record for an incident.</p>
+     * <p>The string Incident Manager uses to prevent duplicate incidents from being
+     * created by the same incident in the same account.</p>
      */
     inline UpdateResponsePlanRequest& WithIncidentTemplateDedupeString(Aws::String&& value) { SetIncidentTemplateDedupeString(std::move(value)); return *this;}
 
     /**
-     * <p>Used to create only one incident record for an incident.</p>
+     * <p>The string Incident Manager uses to prevent duplicate incidents from being
+     * created by the same incident in the same account.</p>
      */
     inline UpdateResponsePlanRequest& WithIncidentTemplateDedupeString(const char* value) { SetIncidentTemplateDedupeString(value); return *this;}
 
@@ -398,42 +414,50 @@ namespace Model
 
 
     /**
-     * <p>The SNS targets that are notified when updates are made to an incident.</p>
+     * <p>The Amazon SNS targets that are notified when updates are made to an
+     * incident.</p>
      */
     inline const Aws::Vector<NotificationTargetItem>& GetIncidentTemplateNotificationTargets() const{ return m_incidentTemplateNotificationTargets; }
 
     /**
-     * <p>The SNS targets that are notified when updates are made to an incident.</p>
+     * <p>The Amazon SNS targets that are notified when updates are made to an
+     * incident.</p>
      */
     inline bool IncidentTemplateNotificationTargetsHasBeenSet() const { return m_incidentTemplateNotificationTargetsHasBeenSet; }
 
     /**
-     * <p>The SNS targets that are notified when updates are made to an incident.</p>
+     * <p>The Amazon SNS targets that are notified when updates are made to an
+     * incident.</p>
      */
     inline void SetIncidentTemplateNotificationTargets(const Aws::Vector<NotificationTargetItem>& value) { m_incidentTemplateNotificationTargetsHasBeenSet = true; m_incidentTemplateNotificationTargets = value; }
 
     /**
-     * <p>The SNS targets that are notified when updates are made to an incident.</p>
+     * <p>The Amazon SNS targets that are notified when updates are made to an
+     * incident.</p>
      */
     inline void SetIncidentTemplateNotificationTargets(Aws::Vector<NotificationTargetItem>&& value) { m_incidentTemplateNotificationTargetsHasBeenSet = true; m_incidentTemplateNotificationTargets = std::move(value); }
 
     /**
-     * <p>The SNS targets that are notified when updates are made to an incident.</p>
+     * <p>The Amazon SNS targets that are notified when updates are made to an
+     * incident.</p>
      */
     inline UpdateResponsePlanRequest& WithIncidentTemplateNotificationTargets(const Aws::Vector<NotificationTargetItem>& value) { SetIncidentTemplateNotificationTargets(value); return *this;}
 
     /**
-     * <p>The SNS targets that are notified when updates are made to an incident.</p>
+     * <p>The Amazon SNS targets that are notified when updates are made to an
+     * incident.</p>
      */
     inline UpdateResponsePlanRequest& WithIncidentTemplateNotificationTargets(Aws::Vector<NotificationTargetItem>&& value) { SetIncidentTemplateNotificationTargets(std::move(value)); return *this;}
 
     /**
-     * <p>The SNS targets that are notified when updates are made to an incident.</p>
+     * <p>The Amazon SNS targets that are notified when updates are made to an
+     * incident.</p>
      */
     inline UpdateResponsePlanRequest& AddIncidentTemplateNotificationTargets(const NotificationTargetItem& value) { m_incidentTemplateNotificationTargetsHasBeenSet = true; m_incidentTemplateNotificationTargets.push_back(value); return *this; }
 
     /**
-     * <p>The SNS targets that are notified when updates are made to an incident.</p>
+     * <p>The Amazon SNS targets that are notified when updates are made to an
+     * incident.</p>
      */
     inline UpdateResponsePlanRequest& AddIncidentTemplateNotificationTargets(NotificationTargetItem&& value) { m_incidentTemplateNotificationTargetsHasBeenSet = true; m_incidentTemplateNotificationTargets.push_back(std::move(value)); return *this; }
 
@@ -488,42 +512,42 @@ namespace Model
 
 
     /**
-     * <p>The short format name of the incident. Can't contain spaces.</p>
+     * <p>The short format name of the incident. The title can't contain spaces.</p>
      */
     inline const Aws::String& GetIncidentTemplateTitle() const{ return m_incidentTemplateTitle; }
 
     /**
-     * <p>The short format name of the incident. Can't contain spaces.</p>
+     * <p>The short format name of the incident. The title can't contain spaces.</p>
      */
     inline bool IncidentTemplateTitleHasBeenSet() const { return m_incidentTemplateTitleHasBeenSet; }
 
     /**
-     * <p>The short format name of the incident. Can't contain spaces.</p>
+     * <p>The short format name of the incident. The title can't contain spaces.</p>
      */
     inline void SetIncidentTemplateTitle(const Aws::String& value) { m_incidentTemplateTitleHasBeenSet = true; m_incidentTemplateTitle = value; }
 
     /**
-     * <p>The short format name of the incident. Can't contain spaces.</p>
+     * <p>The short format name of the incident. The title can't contain spaces.</p>
      */
     inline void SetIncidentTemplateTitle(Aws::String&& value) { m_incidentTemplateTitleHasBeenSet = true; m_incidentTemplateTitle = std::move(value); }
 
     /**
-     * <p>The short format name of the incident. Can't contain spaces.</p>
+     * <p>The short format name of the incident. The title can't contain spaces.</p>
      */
     inline void SetIncidentTemplateTitle(const char* value) { m_incidentTemplateTitleHasBeenSet = true; m_incidentTemplateTitle.assign(value); }
 
     /**
-     * <p>The short format name of the incident. Can't contain spaces.</p>
+     * <p>The short format name of the incident. The title can't contain spaces.</p>
      */
     inline UpdateResponsePlanRequest& WithIncidentTemplateTitle(const Aws::String& value) { SetIncidentTemplateTitle(value); return *this;}
 
     /**
-     * <p>The short format name of the incident. Can't contain spaces.</p>
+     * <p>The short format name of the incident. The title can't contain spaces.</p>
      */
     inline UpdateResponsePlanRequest& WithIncidentTemplateTitle(Aws::String&& value) { SetIncidentTemplateTitle(std::move(value)); return *this;}
 
     /**
-     * <p>The short format name of the incident. Can't contain spaces.</p>
+     * <p>The short format name of the incident. The title can't contain spaces.</p>
      */
     inline UpdateResponsePlanRequest& WithIncidentTemplateTitle(const char* value) { SetIncidentTemplateTitle(value); return *this;}
 

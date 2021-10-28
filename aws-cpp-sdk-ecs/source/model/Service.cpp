@@ -35,6 +35,7 @@ Service::Service() :
     m_launchTypeHasBeenSet(false),
     m_capacityProviderStrategyHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
+    m_platformFamilyHasBeenSet(false),
     m_taskDefinitionHasBeenSet(false),
     m_deploymentConfigurationHasBeenSet(false),
     m_taskSetsHasBeenSet(false),
@@ -78,6 +79,7 @@ Service::Service(JsonView jsonValue) :
     m_launchTypeHasBeenSet(false),
     m_capacityProviderStrategyHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
+    m_platformFamilyHasBeenSet(false),
     m_taskDefinitionHasBeenSet(false),
     m_deploymentConfigurationHasBeenSet(false),
     m_taskSetsHasBeenSet(false),
@@ -198,6 +200,13 @@ Service& Service::operator =(JsonView jsonValue)
     m_platformVersion = jsonValue.GetString("platformVersion");
 
     m_platformVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("platformFamily"))
+  {
+    m_platformFamily = jsonValue.GetString("platformFamily");
+
+    m_platformFamilyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("taskDefinition"))
@@ -434,6 +443,12 @@ JsonValue Service::Jsonize() const
   if(m_platformVersionHasBeenSet)
   {
    payload.WithString("platformVersion", m_platformVersion);
+
+  }
+
+  if(m_platformFamilyHasBeenSet)
+  {
+   payload.WithString("platformFamily", m_platformFamily);
 
   }
 

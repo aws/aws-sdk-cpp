@@ -45,6 +45,7 @@ Task::Task() :
     m_memoryHasBeenSet(false),
     m_overridesHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
+    m_platformFamilyHasBeenSet(false),
     m_pullStartedAtHasBeenSet(false),
     m_pullStoppedAtHasBeenSet(false),
     m_startedAtHasBeenSet(false),
@@ -90,6 +91,7 @@ Task::Task(JsonView jsonValue) :
     m_memoryHasBeenSet(false),
     m_overridesHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
+    m_platformFamilyHasBeenSet(false),
     m_pullStartedAtHasBeenSet(false),
     m_pullStoppedAtHasBeenSet(false),
     m_startedAtHasBeenSet(false),
@@ -275,6 +277,13 @@ Task& Task::operator =(JsonView jsonValue)
     m_platformVersion = jsonValue.GetString("platformVersion");
 
     m_platformVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("platformFamily"))
+  {
+    m_platformFamily = jsonValue.GetString("platformFamily");
+
+    m_platformFamilyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("pullStartedAt"))
@@ -521,6 +530,12 @@ JsonValue Task::Jsonize() const
   if(m_platformVersionHasBeenSet)
   {
    payload.WithString("platformVersion", m_platformVersion);
+
+  }
+
+  if(m_platformFamilyHasBeenSet)
+  {
+   payload.WithString("platformFamily", m_platformFamily);
 
   }
 

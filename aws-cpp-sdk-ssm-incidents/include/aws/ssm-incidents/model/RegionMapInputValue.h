@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The mapping between a Region and the key that's used to encrypt the
-   * data.</p><p><h3>See Also:</h3>   <a
+   * <p>The mapping between a Amazon Web Services Region and the key that's used to
+   * encrypt the data.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/RegionMapInputValue">AWS
    * API Reference</a></p>
    */

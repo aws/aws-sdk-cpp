@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>Details structure of the incident record.</p>
+     * <p>Details the structure of the incident record.</p>
      */
     inline const IncidentRecord& GetIncidentRecord() const{ return m_incidentRecord; }
 
     /**
-     * <p>Details structure of the incident record.</p>
+     * <p>Details the structure of the incident record.</p>
      */
     inline void SetIncidentRecord(const IncidentRecord& value) { m_incidentRecord = value; }
 
     /**
-     * <p>Details structure of the incident record.</p>
+     * <p>Details the structure of the incident record.</p>
      */
     inline void SetIncidentRecord(IncidentRecord&& value) { m_incidentRecord = std::move(value); }
 
     /**
-     * <p>Details structure of the incident record.</p>
+     * <p>Details the structure of the incident record.</p>
      */
     inline GetIncidentRecordResult& WithIncidentRecord(const IncidentRecord& value) { SetIncidentRecord(value); return *this;}
 
     /**
-     * <p>Details structure of the incident record.</p>
+     * <p>Details the structure of the incident record.</p>
      */
     inline GetIncidentRecordResult& WithIncidentRecord(IncidentRecord&& value) { SetIncidentRecord(std::move(value)); return *this;}
 

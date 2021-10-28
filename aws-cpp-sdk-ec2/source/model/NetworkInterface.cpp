@@ -47,7 +47,9 @@ NetworkInterface::NetworkInterface() :
     m_statusHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_tagSetHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_denyAllIgwTraffic(false),
+    m_denyAllIgwTrafficHasBeenSet(false)
 {
 }
 
@@ -78,7 +80,9 @@ NetworkInterface::NetworkInterface(const XmlNode& xmlNode) :
     m_statusHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_tagSetHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_denyAllIgwTraffic(false),
+    m_denyAllIgwTrafficHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -263,6 +267,12 @@ NetworkInterface& NetworkInterface::operator =(const XmlNode& xmlNode)
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
     }
+    XmlNode denyAllIgwTrafficNode = resultNode.FirstChild("denyAllIgwTraffic");
+    if(!denyAllIgwTrafficNode.IsNull())
+    {
+      m_denyAllIgwTraffic = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(denyAllIgwTrafficNode.GetText()).c_str()).c_str());
+      m_denyAllIgwTrafficHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -425,6 +435,11 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
+  if(m_denyAllIgwTrafficHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DenyAllIgwTraffic=" << std::boolalpha << m_denyAllIgwTraffic << "&";
+  }
+
 }
 
 void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -560,6 +575,10 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_vpcIdHasBeenSet)
   {
       oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+  if(m_denyAllIgwTrafficHasBeenSet)
+  {
+      oStream << location << ".DenyAllIgwTraffic=" << std::boolalpha << m_denyAllIgwTraffic << "&";
   }
 }
 

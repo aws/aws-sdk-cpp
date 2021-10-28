@@ -22,7 +22,8 @@ ConflictException::ConflictException() :
     m_messageHasBeenSet(false),
     m_resourceIdentifierHasBeenSet(false),
     m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_retryAfterHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ ConflictException::ConflictException(JsonView jsonValue) :
     m_messageHasBeenSet(false),
     m_resourceIdentifierHasBeenSet(false),
     m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_retryAfterHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +60,13 @@ ConflictException& ConflictException::operator =(JsonView jsonValue)
     m_resourceTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("retryAfter"))
+  {
+    m_retryAfter = jsonValue.GetDouble("retryAfter");
+
+    m_retryAfterHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -80,6 +89,11 @@ JsonValue ConflictException::Jsonize() const
   if(m_resourceTypeHasBeenSet)
   {
    payload.WithString("resourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
+  }
+
+  if(m_retryAfterHasBeenSet)
+  {
+   payload.WithDouble("retryAfter", m_retryAfter.SecondsWithMSPrecision());
   }
 
   return payload;

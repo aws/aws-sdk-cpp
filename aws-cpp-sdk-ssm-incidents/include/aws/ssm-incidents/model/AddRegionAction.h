@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Defines the Region and KMS key to add to the replication set. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Defines the Amazon Web Services Region and KMS key to add to the replication
+   * set. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/AddRegionAction">AWS
    * API Reference</a></p>
    */
@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The Region name to add to the replication set.</p>
+     * <p>The Amazon Web Services Region name to add to the replication set.</p>
      */
     inline const Aws::String& GetRegionName() const{ return m_regionName; }
 
     /**
-     * <p>The Region name to add to the replication set.</p>
+     * <p>The Amazon Web Services Region name to add to the replication set.</p>
      */
     inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
 
     /**
-     * <p>The Region name to add to the replication set.</p>
+     * <p>The Amazon Web Services Region name to add to the replication set.</p>
      */
     inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
 
     /**
-     * <p>The Region name to add to the replication set.</p>
+     * <p>The Amazon Web Services Region name to add to the replication set.</p>
      */
     inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = std::move(value); }
 
     /**
-     * <p>The Region name to add to the replication set.</p>
+     * <p>The Amazon Web Services Region name to add to the replication set.</p>
      */
     inline void SetRegionName(const char* value) { m_regionNameHasBeenSet = true; m_regionName.assign(value); }
 
     /**
-     * <p>The Region name to add to the replication set.</p>
+     * <p>The Amazon Web Services Region name to add to the replication set.</p>
      */
     inline AddRegionAction& WithRegionName(const Aws::String& value) { SetRegionName(value); return *this;}
 
     /**
-     * <p>The Region name to add to the replication set.</p>
+     * <p>The Amazon Web Services Region name to add to the replication set.</p>
      */
     inline AddRegionAction& WithRegionName(Aws::String&& value) { SetRegionName(std::move(value)); return *this;}
 
     /**
-     * <p>The Region name to add to the replication set.</p>
+     * <p>The Amazon Web Services Region name to add to the replication set.</p>
      */
     inline AddRegionAction& WithRegionName(const char* value) { SetRegionName(value); return *this;}
 

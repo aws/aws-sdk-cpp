@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 UpdateDomainRequest::UpdateDomainRequest() : 
     m_domainIdHasBeenSet(false),
-    m_defaultUserSettingsHasBeenSet(false)
+    m_defaultUserSettingsHasBeenSet(false),
+    m_domainSettingsForUpdateHasBeenSet(false)
 {
 }
 
@@ -31,6 +32,12 @@ Aws::String UpdateDomainRequest::SerializePayload() const
   if(m_defaultUserSettingsHasBeenSet)
   {
    payload.WithObject("DefaultUserSettings", m_defaultUserSettings.Jsonize());
+
+  }
+
+  if(m_domainSettingsForUpdateHasBeenSet)
+  {
+   payload.WithObject("DomainSettingsForUpdate", m_domainSettingsForUpdate.Jsonize());
 
   }
 

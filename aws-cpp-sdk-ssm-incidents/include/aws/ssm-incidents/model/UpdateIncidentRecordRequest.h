@@ -79,195 +79,195 @@ namespace Model
 
 
     /**
-     * <p>The AWS Chatbot chat channel for responders to collaborate in.</p>
+     * <p>The Chatbot chat channel where responders can collaborate.</p>
      */
     inline const ChatChannel& GetChatChannel() const{ return m_chatChannel; }
 
     /**
-     * <p>The AWS Chatbot chat channel for responders to collaborate in.</p>
+     * <p>The Chatbot chat channel where responders can collaborate.</p>
      */
     inline bool ChatChannelHasBeenSet() const { return m_chatChannelHasBeenSet; }
 
     /**
-     * <p>The AWS Chatbot chat channel for responders to collaborate in.</p>
+     * <p>The Chatbot chat channel where responders can collaborate.</p>
      */
     inline void SetChatChannel(const ChatChannel& value) { m_chatChannelHasBeenSet = true; m_chatChannel = value; }
 
     /**
-     * <p>The AWS Chatbot chat channel for responders to collaborate in.</p>
+     * <p>The Chatbot chat channel where responders can collaborate.</p>
      */
     inline void SetChatChannel(ChatChannel&& value) { m_chatChannelHasBeenSet = true; m_chatChannel = std::move(value); }
 
     /**
-     * <p>The AWS Chatbot chat channel for responders to collaborate in.</p>
+     * <p>The Chatbot chat channel where responders can collaborate.</p>
      */
     inline UpdateIncidentRecordRequest& WithChatChannel(const ChatChannel& value) { SetChatChannel(value); return *this;}
 
     /**
-     * <p>The AWS Chatbot chat channel for responders to collaborate in.</p>
+     * <p>The Chatbot chat channel where responders can collaborate.</p>
      */
     inline UpdateIncidentRecordRequest& WithChatChannel(ChatChannel&& value) { SetChatChannel(std::move(value)); return *this;}
 
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that the operation is called only once with the
+     * specified details.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that the operation is called only once with the
+     * specified details.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that the operation is called only once with the
+     * specified details.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that the operation is called only once with the
+     * specified details.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that the operation is called only once with the
+     * specified details.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that the operation is called only once with the
+     * specified details.</p>
      */
     inline UpdateIncidentRecordRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that the operation is called only once with the
+     * specified details.</p>
      */
     inline UpdateIncidentRecordRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token ensuring that the action is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that the operation is called only once with the
+     * specified details.</p>
      */
     inline UpdateIncidentRecordRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
 
     /**
-     * <p>Defines the impact to customers and applications. Providing an impact
-     * overwrites the impact provided by the response plan.</p> <p class="title">
-     * <b>Possible impacts:</b> </p> <ul> <li> <p> <code>1</code> - Critical impact,
-     * this typically relates to full application failure that impacts many to all
-     * customers. </p> </li> <li> <p> <code>2</code> - High impact, partial application
-     * failure with impact to many customers.</p> </li> <li> <p> <code>3</code> -
-     * Medium impact, the application is providing reduced service to customers.</p>
-     * </li> <li> <p> <code>4</code> - Low impact, customer might aren't impacted by
-     * the problem yet.</p> </li> <li> <p> <code>5</code> - No impact, customers aren't
-     * currently impacted but urgent action is needed to avoid impact.</p> </li> </ul>
+     * <p>Defines the impact of the incident to customers and applications. Providing
+     * an impact overwrites the impact provided by the response plan.</p> <p
+     * class="title"> <b>Possible impacts:</b> </p> <ul> <li> <p> <code>1</code> -
+     * Critical impact, full application failure that impacts many to all customers.
+     * </p> </li> <li> <p> <code>2</code> - High impact, partial application failure
+     * with impact to many customers.</p> </li> <li> <p> <code>3</code> - Medium
+     * impact, the application is providing reduced service to customers.</p> </li>
+     * <li> <p> <code>4</code> - Low impact, customer aren't impacted by the problem
+     * yet.</p> </li> <li> <p> <code>5</code> - No impact, customers aren't currently
+     * impacted but urgent action is needed to avoid impact.</p> </li> </ul>
      */
     inline int GetImpact() const{ return m_impact; }
 
     /**
-     * <p>Defines the impact to customers and applications. Providing an impact
-     * overwrites the impact provided by the response plan.</p> <p class="title">
-     * <b>Possible impacts:</b> </p> <ul> <li> <p> <code>1</code> - Critical impact,
-     * this typically relates to full application failure that impacts many to all
-     * customers. </p> </li> <li> <p> <code>2</code> - High impact, partial application
-     * failure with impact to many customers.</p> </li> <li> <p> <code>3</code> -
-     * Medium impact, the application is providing reduced service to customers.</p>
-     * </li> <li> <p> <code>4</code> - Low impact, customer might aren't impacted by
-     * the problem yet.</p> </li> <li> <p> <code>5</code> - No impact, customers aren't
-     * currently impacted but urgent action is needed to avoid impact.</p> </li> </ul>
+     * <p>Defines the impact of the incident to customers and applications. Providing
+     * an impact overwrites the impact provided by the response plan.</p> <p
+     * class="title"> <b>Possible impacts:</b> </p> <ul> <li> <p> <code>1</code> -
+     * Critical impact, full application failure that impacts many to all customers.
+     * </p> </li> <li> <p> <code>2</code> - High impact, partial application failure
+     * with impact to many customers.</p> </li> <li> <p> <code>3</code> - Medium
+     * impact, the application is providing reduced service to customers.</p> </li>
+     * <li> <p> <code>4</code> - Low impact, customer aren't impacted by the problem
+     * yet.</p> </li> <li> <p> <code>5</code> - No impact, customers aren't currently
+     * impacted but urgent action is needed to avoid impact.</p> </li> </ul>
      */
     inline bool ImpactHasBeenSet() const { return m_impactHasBeenSet; }
 
     /**
-     * <p>Defines the impact to customers and applications. Providing an impact
-     * overwrites the impact provided by the response plan.</p> <p class="title">
-     * <b>Possible impacts:</b> </p> <ul> <li> <p> <code>1</code> - Critical impact,
-     * this typically relates to full application failure that impacts many to all
-     * customers. </p> </li> <li> <p> <code>2</code> - High impact, partial application
-     * failure with impact to many customers.</p> </li> <li> <p> <code>3</code> -
-     * Medium impact, the application is providing reduced service to customers.</p>
-     * </li> <li> <p> <code>4</code> - Low impact, customer might aren't impacted by
-     * the problem yet.</p> </li> <li> <p> <code>5</code> - No impact, customers aren't
-     * currently impacted but urgent action is needed to avoid impact.</p> </li> </ul>
+     * <p>Defines the impact of the incident to customers and applications. Providing
+     * an impact overwrites the impact provided by the response plan.</p> <p
+     * class="title"> <b>Possible impacts:</b> </p> <ul> <li> <p> <code>1</code> -
+     * Critical impact, full application failure that impacts many to all customers.
+     * </p> </li> <li> <p> <code>2</code> - High impact, partial application failure
+     * with impact to many customers.</p> </li> <li> <p> <code>3</code> - Medium
+     * impact, the application is providing reduced service to customers.</p> </li>
+     * <li> <p> <code>4</code> - Low impact, customer aren't impacted by the problem
+     * yet.</p> </li> <li> <p> <code>5</code> - No impact, customers aren't currently
+     * impacted but urgent action is needed to avoid impact.</p> </li> </ul>
      */
     inline void SetImpact(int value) { m_impactHasBeenSet = true; m_impact = value; }
 
     /**
-     * <p>Defines the impact to customers and applications. Providing an impact
-     * overwrites the impact provided by the response plan.</p> <p class="title">
-     * <b>Possible impacts:</b> </p> <ul> <li> <p> <code>1</code> - Critical impact,
-     * this typically relates to full application failure that impacts many to all
-     * customers. </p> </li> <li> <p> <code>2</code> - High impact, partial application
-     * failure with impact to many customers.</p> </li> <li> <p> <code>3</code> -
-     * Medium impact, the application is providing reduced service to customers.</p>
-     * </li> <li> <p> <code>4</code> - Low impact, customer might aren't impacted by
-     * the problem yet.</p> </li> <li> <p> <code>5</code> - No impact, customers aren't
-     * currently impacted but urgent action is needed to avoid impact.</p> </li> </ul>
+     * <p>Defines the impact of the incident to customers and applications. Providing
+     * an impact overwrites the impact provided by the response plan.</p> <p
+     * class="title"> <b>Possible impacts:</b> </p> <ul> <li> <p> <code>1</code> -
+     * Critical impact, full application failure that impacts many to all customers.
+     * </p> </li> <li> <p> <code>2</code> - High impact, partial application failure
+     * with impact to many customers.</p> </li> <li> <p> <code>3</code> - Medium
+     * impact, the application is providing reduced service to customers.</p> </li>
+     * <li> <p> <code>4</code> - Low impact, customer aren't impacted by the problem
+     * yet.</p> </li> <li> <p> <code>5</code> - No impact, customers aren't currently
+     * impacted but urgent action is needed to avoid impact.</p> </li> </ul>
      */
     inline UpdateIncidentRecordRequest& WithImpact(int value) { SetImpact(value); return *this;}
 
 
     /**
-     * <p>The SNS targets that are notified when updates are made to an incident.</p>
-     * <p>Using multiple SNS topics creates redundancy in the case that a Region is
-     * down during the incident.</p>
+     * <p>The Amazon SNS targets that are notified when updates are made to an
+     * incident.</p> <p>Using multiple SNS topics creates redundancy in the event that
+     * a Region is down during the incident.</p>
      */
     inline const Aws::Vector<NotificationTargetItem>& GetNotificationTargets() const{ return m_notificationTargets; }
 
     /**
-     * <p>The SNS targets that are notified when updates are made to an incident.</p>
-     * <p>Using multiple SNS topics creates redundancy in the case that a Region is
-     * down during the incident.</p>
+     * <p>The Amazon SNS targets that are notified when updates are made to an
+     * incident.</p> <p>Using multiple SNS topics creates redundancy in the event that
+     * a Region is down during the incident.</p>
      */
     inline bool NotificationTargetsHasBeenSet() const { return m_notificationTargetsHasBeenSet; }
 
     /**
-     * <p>The SNS targets that are notified when updates are made to an incident.</p>
-     * <p>Using multiple SNS topics creates redundancy in the case that a Region is
-     * down during the incident.</p>
+     * <p>The Amazon SNS targets that are notified when updates are made to an
+     * incident.</p> <p>Using multiple SNS topics creates redundancy in the event that
+     * a Region is down during the incident.</p>
      */
     inline void SetNotificationTargets(const Aws::Vector<NotificationTargetItem>& value) { m_notificationTargetsHasBeenSet = true; m_notificationTargets = value; }
 
     /**
-     * <p>The SNS targets that are notified when updates are made to an incident.</p>
-     * <p>Using multiple SNS topics creates redundancy in the case that a Region is
-     * down during the incident.</p>
+     * <p>The Amazon SNS targets that are notified when updates are made to an
+     * incident.</p> <p>Using multiple SNS topics creates redundancy in the event that
+     * a Region is down during the incident.</p>
      */
     inline void SetNotificationTargets(Aws::Vector<NotificationTargetItem>&& value) { m_notificationTargetsHasBeenSet = true; m_notificationTargets = std::move(value); }
 
     /**
-     * <p>The SNS targets that are notified when updates are made to an incident.</p>
-     * <p>Using multiple SNS topics creates redundancy in the case that a Region is
-     * down during the incident.</p>
+     * <p>The Amazon SNS targets that are notified when updates are made to an
+     * incident.</p> <p>Using multiple SNS topics creates redundancy in the event that
+     * a Region is down during the incident.</p>
      */
     inline UpdateIncidentRecordRequest& WithNotificationTargets(const Aws::Vector<NotificationTargetItem>& value) { SetNotificationTargets(value); return *this;}
 
     /**
-     * <p>The SNS targets that are notified when updates are made to an incident.</p>
-     * <p>Using multiple SNS topics creates redundancy in the case that a Region is
-     * down during the incident.</p>
+     * <p>The Amazon SNS targets that are notified when updates are made to an
+     * incident.</p> <p>Using multiple SNS topics creates redundancy in the event that
+     * a Region is down during the incident.</p>
      */
     inline UpdateIncidentRecordRequest& WithNotificationTargets(Aws::Vector<NotificationTargetItem>&& value) { SetNotificationTargets(std::move(value)); return *this;}
 
     /**
-     * <p>The SNS targets that are notified when updates are made to an incident.</p>
-     * <p>Using multiple SNS topics creates redundancy in the case that a Region is
-     * down during the incident.</p>
+     * <p>The Amazon SNS targets that are notified when updates are made to an
+     * incident.</p> <p>Using multiple SNS topics creates redundancy in the event that
+     * a Region is down during the incident.</p>
      */
     inline UpdateIncidentRecordRequest& AddNotificationTargets(const NotificationTargetItem& value) { m_notificationTargetsHasBeenSet = true; m_notificationTargets.push_back(value); return *this; }
 
     /**
-     * <p>The SNS targets that are notified when updates are made to an incident.</p>
-     * <p>Using multiple SNS topics creates redundancy in the case that a Region is
-     * down during the incident.</p>
+     * <p>The Amazon SNS targets that are notified when updates are made to an
+     * incident.</p> <p>Using multiple SNS topics creates redundancy in the event that
+     * a Region is down during the incident.</p>
      */
     inline UpdateIncidentRecordRequest& AddNotificationTargets(NotificationTargetItem&& value) { m_notificationTargetsHasBeenSet = true; m_notificationTargets.push_back(std::move(value)); return *this; }
 
@@ -310,83 +310,83 @@ namespace Model
 
 
     /**
-     * <p>The summary describes what has happened during the incident.</p>
+     * <p>A longer description of what occurred during the incident.</p>
      */
     inline const Aws::String& GetSummary() const{ return m_summary; }
 
     /**
-     * <p>The summary describes what has happened during the incident.</p>
+     * <p>A longer description of what occurred during the incident.</p>
      */
     inline bool SummaryHasBeenSet() const { return m_summaryHasBeenSet; }
 
     /**
-     * <p>The summary describes what has happened during the incident.</p>
+     * <p>A longer description of what occurred during the incident.</p>
      */
     inline void SetSummary(const Aws::String& value) { m_summaryHasBeenSet = true; m_summary = value; }
 
     /**
-     * <p>The summary describes what has happened during the incident.</p>
+     * <p>A longer description of what occurred during the incident.</p>
      */
     inline void SetSummary(Aws::String&& value) { m_summaryHasBeenSet = true; m_summary = std::move(value); }
 
     /**
-     * <p>The summary describes what has happened during the incident.</p>
+     * <p>A longer description of what occurred during the incident.</p>
      */
     inline void SetSummary(const char* value) { m_summaryHasBeenSet = true; m_summary.assign(value); }
 
     /**
-     * <p>The summary describes what has happened during the incident.</p>
+     * <p>A longer description of what occurred during the incident.</p>
      */
     inline UpdateIncidentRecordRequest& WithSummary(const Aws::String& value) { SetSummary(value); return *this;}
 
     /**
-     * <p>The summary describes what has happened during the incident.</p>
+     * <p>A longer description of what occurred during the incident.</p>
      */
     inline UpdateIncidentRecordRequest& WithSummary(Aws::String&& value) { SetSummary(std::move(value)); return *this;}
 
     /**
-     * <p>The summary describes what has happened during the incident.</p>
+     * <p>A longer description of what occurred during the incident.</p>
      */
     inline UpdateIncidentRecordRequest& WithSummary(const char* value) { SetSummary(value); return *this;}
 
 
     /**
-     * <p>The title of the incident is a brief and easily recognizable.</p>
+     * <p>A brief description of the incident.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
 
     /**
-     * <p>The title of the incident is a brief and easily recognizable.</p>
+     * <p>A brief description of the incident.</p>
      */
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
 
     /**
-     * <p>The title of the incident is a brief and easily recognizable.</p>
+     * <p>A brief description of the incident.</p>
      */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
 
     /**
-     * <p>The title of the incident is a brief and easily recognizable.</p>
+     * <p>A brief description of the incident.</p>
      */
     inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
 
     /**
-     * <p>The title of the incident is a brief and easily recognizable.</p>
+     * <p>A brief description of the incident.</p>
      */
     inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
 
     /**
-     * <p>The title of the incident is a brief and easily recognizable.</p>
+     * <p>A brief description of the incident.</p>
      */
     inline UpdateIncidentRecordRequest& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
 
     /**
-     * <p>The title of the incident is a brief and easily recognizable.</p>
+     * <p>A brief description of the incident.</p>
      */
     inline UpdateIncidentRecordRequest& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
 
     /**
-     * <p>The title of the incident is a brief and easily recognizable.</p>
+     * <p>A brief description of the incident.</p>
      */
     inline UpdateIncidentRecordRequest& WithTitle(const char* value) { SetTitle(value); return *this;}
 

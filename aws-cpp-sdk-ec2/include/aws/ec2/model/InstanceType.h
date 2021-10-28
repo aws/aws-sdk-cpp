@@ -286,6 +286,7 @@ namespace Model
     d3en_6xlarge,
     d3en_8xlarge,
     d3en_12xlarge,
+    dl1_24xlarge,
     f1_2xlarge,
     f1_4xlarge,
     f1_16xlarge,
