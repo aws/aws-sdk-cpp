@@ -32,6 +32,11 @@ namespace Aws
         static const int POSTGRESQL_HASH = HashingUtils::HashString("POSTGRESQL");
         static const int JAVA_JMX_HASH = HashingUtils::HashString("JAVA_JMX");
         static const int ORACLE_HASH = HashingUtils::HashString("ORACLE");
+        static const int SAP_HANA_HASH = HashingUtils::HashString("SAP_HANA");
+        static const int SAP_HANA_MULTI_NODE_HASH = HashingUtils::HashString("SAP_HANA_MULTI_NODE");
+        static const int SAP_HANA_SINGLE_NODE_HASH = HashingUtils::HashString("SAP_HANA_SINGLE_NODE");
+        static const int SAP_HANA_HIGH_AVAILABILITY_HASH = HashingUtils::HashString("SAP_HANA_HIGH_AVAILABILITY");
+        static const int SQL_SERVER_FAILOVER_CLUSTER_INSTANCE_HASH = HashingUtils::HashString("SQL_SERVER_FAILOVER_CLUSTER_INSTANCE");
 
 
         Tier GetTierForName(const Aws::String& name)
@@ -85,6 +90,26 @@ namespace Aws
           {
             return Tier::ORACLE;
           }
+          else if (hashCode == SAP_HANA_HASH)
+          {
+            return Tier::SAP_HANA;
+          }
+          else if (hashCode == SAP_HANA_MULTI_NODE_HASH)
+          {
+            return Tier::SAP_HANA_MULTI_NODE;
+          }
+          else if (hashCode == SAP_HANA_SINGLE_NODE_HASH)
+          {
+            return Tier::SAP_HANA_SINGLE_NODE;
+          }
+          else if (hashCode == SAP_HANA_HIGH_AVAILABILITY_HASH)
+          {
+            return Tier::SAP_HANA_HIGH_AVAILABILITY;
+          }
+          else if (hashCode == SQL_SERVER_FAILOVER_CLUSTER_INSTANCE_HASH)
+          {
+            return Tier::SQL_SERVER_FAILOVER_CLUSTER_INSTANCE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -123,6 +148,16 @@ namespace Aws
             return "JAVA_JMX";
           case Tier::ORACLE:
             return "ORACLE";
+          case Tier::SAP_HANA:
+            return "SAP_HANA";
+          case Tier::SAP_HANA_MULTI_NODE:
+            return "SAP_HANA_MULTI_NODE";
+          case Tier::SAP_HANA_SINGLE_NODE:
+            return "SAP_HANA_SINGLE_NODE";
+          case Tier::SAP_HANA_HIGH_AVAILABILITY:
+            return "SAP_HANA_HIGH_AVAILABILITY";
+          case Tier::SQL_SERVER_FAILOVER_CLUSTER_INSTANCE:
+            return "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

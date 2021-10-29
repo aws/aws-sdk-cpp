@@ -140,56 +140,64 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that uniquely identifies the permissions
      * you've given Amazon Transcribe to access your Amazon S3 buckets containing your
-     * media files or text data.</p>
+     * media files or text data. ARNs have the format
+     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) that uniquely identifies the permissions
      * you've given Amazon Transcribe to access your Amazon S3 buckets containing your
-     * media files or text data.</p>
+     * media files or text data. ARNs have the format
+     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
      */
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) that uniquely identifies the permissions
      * you've given Amazon Transcribe to access your Amazon S3 buckets containing your
-     * media files or text data.</p>
+     * media files or text data. ARNs have the format
+     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
      */
     inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) that uniquely identifies the permissions
      * you've given Amazon Transcribe to access your Amazon S3 buckets containing your
-     * media files or text data.</p>
+     * media files or text data. ARNs have the format
+     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
      */
     inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) that uniquely identifies the permissions
      * you've given Amazon Transcribe to access your Amazon S3 buckets containing your
-     * media files or text data.</p>
+     * media files or text data. ARNs have the format
+     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
      */
     inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) that uniquely identifies the permissions
      * you've given Amazon Transcribe to access your Amazon S3 buckets containing your
-     * media files or text data.</p>
+     * media files or text data. ARNs have the format
+     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
      */
     inline InputDataConfig& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) that uniquely identifies the permissions
      * you've given Amazon Transcribe to access your Amazon S3 buckets containing your
-     * media files or text data.</p>
+     * media files or text data. ARNs have the format
+     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
      */
     inline InputDataConfig& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) that uniquely identifies the permissions
      * you've given Amazon Transcribe to access your Amazon S3 buckets containing your
-     * media files or text data.</p>
+     * media files or text data. ARNs have the format
+     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
      */
     inline InputDataConfig& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
 

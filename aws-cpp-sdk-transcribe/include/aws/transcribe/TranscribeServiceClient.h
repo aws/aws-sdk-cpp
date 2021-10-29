@@ -1286,7 +1286,7 @@ namespace Model
         virtual void StartTranscriptionJobAsync(const Model::StartTranscriptionJobRequest& request, const StartTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Tags a Amazon Transcribe resource with the given list of tags.</p><p><h3>See
+         * <p>Tags an Amazon Transcribe resource with the given list of tags.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/TagResource">AWS
          * API Reference</a></p>
@@ -1294,7 +1294,7 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Tags a Amazon Transcribe resource with the given list of tags.</p><p><h3>See
+         * <p>Tags an Amazon Transcribe resource with the given list of tags.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/TagResource">AWS
          * API Reference</a></p>
@@ -1304,7 +1304,7 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Tags a Amazon Transcribe resource with the given list of tags.</p><p><h3>See
+         * <p>Tags an Amazon Transcribe resource with the given list of tags.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/TagResource">AWS
          * API Reference</a></p>

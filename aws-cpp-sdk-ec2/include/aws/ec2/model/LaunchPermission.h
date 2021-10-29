@@ -119,6 +119,88 @@ namespace Model
      */
     inline LaunchPermission& WithUserId(const char* value) { SetUserId(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organization.</p>
+     */
+    inline const Aws::String& GetOrganizationArn() const{ return m_organizationArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organization.</p>
+     */
+    inline bool OrganizationArnHasBeenSet() const { return m_organizationArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organization.</p>
+     */
+    inline void SetOrganizationArn(const Aws::String& value) { m_organizationArnHasBeenSet = true; m_organizationArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organization.</p>
+     */
+    inline void SetOrganizationArn(Aws::String&& value) { m_organizationArnHasBeenSet = true; m_organizationArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organization.</p>
+     */
+    inline void SetOrganizationArn(const char* value) { m_organizationArnHasBeenSet = true; m_organizationArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organization.</p>
+     */
+    inline LaunchPermission& WithOrganizationArn(const Aws::String& value) { SetOrganizationArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organization.</p>
+     */
+    inline LaunchPermission& WithOrganizationArn(Aws::String&& value) { SetOrganizationArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organization.</p>
+     */
+    inline LaunchPermission& WithOrganizationArn(const char* value) { SetOrganizationArn(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organizational unit (OU).</p>
+     */
+    inline const Aws::String& GetOrganizationalUnitArn() const{ return m_organizationalUnitArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organizational unit (OU).</p>
+     */
+    inline bool OrganizationalUnitArnHasBeenSet() const { return m_organizationalUnitArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organizational unit (OU).</p>
+     */
+    inline void SetOrganizationalUnitArn(const Aws::String& value) { m_organizationalUnitArnHasBeenSet = true; m_organizationalUnitArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organizational unit (OU).</p>
+     */
+    inline void SetOrganizationalUnitArn(Aws::String&& value) { m_organizationalUnitArnHasBeenSet = true; m_organizationalUnitArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organizational unit (OU).</p>
+     */
+    inline void SetOrganizationalUnitArn(const char* value) { m_organizationalUnitArnHasBeenSet = true; m_organizationalUnitArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organizational unit (OU).</p>
+     */
+    inline LaunchPermission& WithOrganizationalUnitArn(const Aws::String& value) { SetOrganizationalUnitArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organizational unit (OU).</p>
+     */
+    inline LaunchPermission& WithOrganizationalUnitArn(Aws::String&& value) { SetOrganizationalUnitArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organizational unit (OU).</p>
+     */
+    inline LaunchPermission& WithOrganizationalUnitArn(const char* value) { SetOrganizationalUnitArn(value); return *this;}
+
   private:
 
     PermissionGroup m_group;
@@ -126,6 +208,12 @@ namespace Model
 
     Aws::String m_userId;
     bool m_userIdHasBeenSet;
+
+    Aws::String m_organizationArn;
+    bool m_organizationArnHasBeenSet;
+
+    Aws::String m_organizationalUnitArn;
+    bool m_organizationalUnitArnHasBeenSet;
   };
 
 } // namespace Model

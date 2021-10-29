@@ -45,50 +45,50 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the attribute to modify. The valid values are
-     * <code>description</code> and <code>launchPermission</code>.</p>
+     * <p>The name of the attribute to modify.</p> <p>Valid values:
+     * <code>description</code> | <code>launchPermission</code> </p>
      */
     inline const Aws::String& GetAttribute() const{ return m_attribute; }
 
     /**
-     * <p>The name of the attribute to modify. The valid values are
-     * <code>description</code> and <code>launchPermission</code>.</p>
+     * <p>The name of the attribute to modify.</p> <p>Valid values:
+     * <code>description</code> | <code>launchPermission</code> </p>
      */
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
 
     /**
-     * <p>The name of the attribute to modify. The valid values are
-     * <code>description</code> and <code>launchPermission</code>.</p>
+     * <p>The name of the attribute to modify.</p> <p>Valid values:
+     * <code>description</code> | <code>launchPermission</code> </p>
      */
     inline void SetAttribute(const Aws::String& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
-     * <p>The name of the attribute to modify. The valid values are
-     * <code>description</code> and <code>launchPermission</code>.</p>
+     * <p>The name of the attribute to modify.</p> <p>Valid values:
+     * <code>description</code> | <code>launchPermission</code> </p>
      */
     inline void SetAttribute(Aws::String&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
 
     /**
-     * <p>The name of the attribute to modify. The valid values are
-     * <code>description</code> and <code>launchPermission</code>.</p>
+     * <p>The name of the attribute to modify.</p> <p>Valid values:
+     * <code>description</code> | <code>launchPermission</code> </p>
      */
     inline void SetAttribute(const char* value) { m_attributeHasBeenSet = true; m_attribute.assign(value); }
 
     /**
-     * <p>The name of the attribute to modify. The valid values are
-     * <code>description</code> and <code>launchPermission</code>.</p>
+     * <p>The name of the attribute to modify.</p> <p>Valid values:
+     * <code>description</code> | <code>launchPermission</code> </p>
      */
     inline ModifyImageAttributeRequest& WithAttribute(const Aws::String& value) { SetAttribute(value); return *this;}
 
     /**
-     * <p>The name of the attribute to modify. The valid values are
-     * <code>description</code> and <code>launchPermission</code>.</p>
+     * <p>The name of the attribute to modify.</p> <p>Valid values:
+     * <code>description</code> | <code>launchPermission</code> </p>
      */
     inline ModifyImageAttributeRequest& WithAttribute(Aws::String&& value) { SetAttribute(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the attribute to modify. The valid values are
-     * <code>description</code> and <code>launchPermission</code>.</p>
+     * <p>The name of the attribute to modify.</p> <p>Valid values:
+     * <code>description</code> | <code>launchPermission</code> </p>
      */
     inline ModifyImageAttributeRequest& WithAttribute(const char* value) { SetAttribute(value); return *this;}
 
@@ -470,6 +470,134 @@ namespace Model
      */
     inline ModifyImageAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organization. This parameter can be used
+     * only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetOrganizationArns() const{ return m_organizationArns; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organization. This parameter can be used
+     * only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.</p>
+     */
+    inline bool OrganizationArnsHasBeenSet() const { return m_organizationArnsHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organization. This parameter can be used
+     * only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.</p>
+     */
+    inline void SetOrganizationArns(const Aws::Vector<Aws::String>& value) { m_organizationArnsHasBeenSet = true; m_organizationArns = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organization. This parameter can be used
+     * only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.</p>
+     */
+    inline void SetOrganizationArns(Aws::Vector<Aws::String>&& value) { m_organizationArnsHasBeenSet = true; m_organizationArns = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organization. This parameter can be used
+     * only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.</p>
+     */
+    inline ModifyImageAttributeRequest& WithOrganizationArns(const Aws::Vector<Aws::String>& value) { SetOrganizationArns(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organization. This parameter can be used
+     * only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.</p>
+     */
+    inline ModifyImageAttributeRequest& WithOrganizationArns(Aws::Vector<Aws::String>&& value) { SetOrganizationArns(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organization. This parameter can be used
+     * only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.</p>
+     */
+    inline ModifyImageAttributeRequest& AddOrganizationArns(const Aws::String& value) { m_organizationArnsHasBeenSet = true; m_organizationArns.push_back(value); return *this; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organization. This parameter can be used
+     * only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.</p>
+     */
+    inline ModifyImageAttributeRequest& AddOrganizationArns(Aws::String&& value) { m_organizationArnsHasBeenSet = true; m_organizationArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organization. This parameter can be used
+     * only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.</p>
+     */
+    inline ModifyImageAttributeRequest& AddOrganizationArns(const char* value) { m_organizationArnsHasBeenSet = true; m_organizationArns.push_back(value); return *this; }
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organizational unit (OU). This parameter
+     * can be used only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetOrganizationalUnitArns() const{ return m_organizationalUnitArns; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organizational unit (OU). This parameter
+     * can be used only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.</p>
+     */
+    inline bool OrganizationalUnitArnsHasBeenSet() const { return m_organizationalUnitArnsHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organizational unit (OU). This parameter
+     * can be used only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.</p>
+     */
+    inline void SetOrganizationalUnitArns(const Aws::Vector<Aws::String>& value) { m_organizationalUnitArnsHasBeenSet = true; m_organizationalUnitArns = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organizational unit (OU). This parameter
+     * can be used only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.</p>
+     */
+    inline void SetOrganizationalUnitArns(Aws::Vector<Aws::String>&& value) { m_organizationalUnitArnsHasBeenSet = true; m_organizationalUnitArns = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organizational unit (OU). This parameter
+     * can be used only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.</p>
+     */
+    inline ModifyImageAttributeRequest& WithOrganizationalUnitArns(const Aws::Vector<Aws::String>& value) { SetOrganizationalUnitArns(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organizational unit (OU). This parameter
+     * can be used only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.</p>
+     */
+    inline ModifyImageAttributeRequest& WithOrganizationalUnitArns(Aws::Vector<Aws::String>&& value) { SetOrganizationalUnitArns(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organizational unit (OU). This parameter
+     * can be used only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.</p>
+     */
+    inline ModifyImageAttributeRequest& AddOrganizationalUnitArns(const Aws::String& value) { m_organizationalUnitArnsHasBeenSet = true; m_organizationalUnitArns.push_back(value); return *this; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organizational unit (OU). This parameter
+     * can be used only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.</p>
+     */
+    inline ModifyImageAttributeRequest& AddOrganizationalUnitArns(Aws::String&& value) { m_organizationalUnitArnsHasBeenSet = true; m_organizationalUnitArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organizational unit (OU). This parameter
+     * can be used only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.</p>
+     */
+    inline ModifyImageAttributeRequest& AddOrganizationalUnitArns(const char* value) { m_organizationalUnitArnsHasBeenSet = true; m_organizationalUnitArns.push_back(value); return *this; }
+
   private:
 
     Aws::String m_attribute;
@@ -501,6 +629,12 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
+    Aws::Vector<Aws::String> m_organizationArns;
+    bool m_organizationArnsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_organizationalUnitArns;
+    bool m_organizationalUnitArnsHasBeenSet;
   };
 
 } // namespace Model

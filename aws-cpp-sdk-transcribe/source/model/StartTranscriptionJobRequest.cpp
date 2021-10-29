@@ -33,7 +33,8 @@ StartTranscriptionJobRequest::StartTranscriptionJobRequest() :
     m_identifyLanguageHasBeenSet(false),
     m_languageOptionsHasBeenSet(false),
     m_subtitlesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_languageIdSettingsHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,17 @@ Aws::String StartTranscriptionJobRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_languageIdSettingsHasBeenSet)
+  {
+   JsonValue languageIdSettingsJsonMap;
+   for(auto& languageIdSettingsItem : m_languageIdSettings)
+   {
+     languageIdSettingsJsonMap.WithObject(LanguageCodeMapper::GetNameForLanguageCode(languageIdSettingsItem.first), languageIdSettingsItem.second.Jsonize());
+   }
+   payload.WithObject("LanguageIdSettings", std::move(languageIdSettingsJsonMap));
 
   }
 

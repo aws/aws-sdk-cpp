@@ -273,9 +273,9 @@ namespace Model
      * family, type, size, or generation. The following are examples:
      * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
      * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
-     * <code>c5*.*</code>, Amazon EC2 will exclude the entire C5 instance family (all
-     * C5a and C5n instance types). If you specify <code>c5a.*</code>, Amazon EC2
-     * excludes all the C5a instance types, but does not exclude the C5n instance
+     * <code>c5*</code>,Amazon EC2 will exclude the entire C5 instance family, which
+     * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
+     * Amazon EC2 will exclude all the M5a instance types, but not the M5n instance
      * types.</p> <p>Default: No excluded instance types</p>
      */
     inline const Aws::Vector<Aws::String>& GetExcludedInstanceTypes() const{ return m_excludedInstanceTypes; }
@@ -286,9 +286,9 @@ namespace Model
      * family, type, size, or generation. The following are examples:
      * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
      * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
-     * <code>c5*.*</code>, Amazon EC2 will exclude the entire C5 instance family (all
-     * C5a and C5n instance types). If you specify <code>c5a.*</code>, Amazon EC2
-     * excludes all the C5a instance types, but does not exclude the C5n instance
+     * <code>c5*</code>,Amazon EC2 will exclude the entire C5 instance family, which
+     * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
+     * Amazon EC2 will exclude all the M5a instance types, but not the M5n instance
      * types.</p> <p>Default: No excluded instance types</p>
      */
     inline bool ExcludedInstanceTypesHasBeenSet() const { return m_excludedInstanceTypesHasBeenSet; }
@@ -299,9 +299,9 @@ namespace Model
      * family, type, size, or generation. The following are examples:
      * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
      * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
-     * <code>c5*.*</code>, Amazon EC2 will exclude the entire C5 instance family (all
-     * C5a and C5n instance types). If you specify <code>c5a.*</code>, Amazon EC2
-     * excludes all the C5a instance types, but does not exclude the C5n instance
+     * <code>c5*</code>,Amazon EC2 will exclude the entire C5 instance family, which
+     * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
+     * Amazon EC2 will exclude all the M5a instance types, but not the M5n instance
      * types.</p> <p>Default: No excluded instance types</p>
      */
     inline void SetExcludedInstanceTypes(const Aws::Vector<Aws::String>& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes = value; }
@@ -312,9 +312,9 @@ namespace Model
      * family, type, size, or generation. The following are examples:
      * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
      * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
-     * <code>c5*.*</code>, Amazon EC2 will exclude the entire C5 instance family (all
-     * C5a and C5n instance types). If you specify <code>c5a.*</code>, Amazon EC2
-     * excludes all the C5a instance types, but does not exclude the C5n instance
+     * <code>c5*</code>,Amazon EC2 will exclude the entire C5 instance family, which
+     * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
+     * Amazon EC2 will exclude all the M5a instance types, but not the M5n instance
      * types.</p> <p>Default: No excluded instance types</p>
      */
     inline void SetExcludedInstanceTypes(Aws::Vector<Aws::String>&& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes = std::move(value); }
@@ -325,9 +325,9 @@ namespace Model
      * family, type, size, or generation. The following are examples:
      * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
      * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
-     * <code>c5*.*</code>, Amazon EC2 will exclude the entire C5 instance family (all
-     * C5a and C5n instance types). If you specify <code>c5a.*</code>, Amazon EC2
-     * excludes all the C5a instance types, but does not exclude the C5n instance
+     * <code>c5*</code>,Amazon EC2 will exclude the entire C5 instance family, which
+     * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
+     * Amazon EC2 will exclude all the M5a instance types, but not the M5n instance
      * types.</p> <p>Default: No excluded instance types</p>
      */
     inline InstanceRequirementsRequest& WithExcludedInstanceTypes(const Aws::Vector<Aws::String>& value) { SetExcludedInstanceTypes(value); return *this;}
@@ -338,9 +338,9 @@ namespace Model
      * family, type, size, or generation. The following are examples:
      * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
      * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
-     * <code>c5*.*</code>, Amazon EC2 will exclude the entire C5 instance family (all
-     * C5a and C5n instance types). If you specify <code>c5a.*</code>, Amazon EC2
-     * excludes all the C5a instance types, but does not exclude the C5n instance
+     * <code>c5*</code>,Amazon EC2 will exclude the entire C5 instance family, which
+     * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
+     * Amazon EC2 will exclude all the M5a instance types, but not the M5n instance
      * types.</p> <p>Default: No excluded instance types</p>
      */
     inline InstanceRequirementsRequest& WithExcludedInstanceTypes(Aws::Vector<Aws::String>&& value) { SetExcludedInstanceTypes(std::move(value)); return *this;}
@@ -351,9 +351,9 @@ namespace Model
      * family, type, size, or generation. The following are examples:
      * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
      * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
-     * <code>c5*.*</code>, Amazon EC2 will exclude the entire C5 instance family (all
-     * C5a and C5n instance types). If you specify <code>c5a.*</code>, Amazon EC2
-     * excludes all the C5a instance types, but does not exclude the C5n instance
+     * <code>c5*</code>,Amazon EC2 will exclude the entire C5 instance family, which
+     * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
+     * Amazon EC2 will exclude all the M5a instance types, but not the M5n instance
      * types.</p> <p>Default: No excluded instance types</p>
      */
     inline InstanceRequirementsRequest& AddExcludedInstanceTypes(const Aws::String& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes.push_back(value); return *this; }
@@ -364,9 +364,9 @@ namespace Model
      * family, type, size, or generation. The following are examples:
      * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
      * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
-     * <code>c5*.*</code>, Amazon EC2 will exclude the entire C5 instance family (all
-     * C5a and C5n instance types). If you specify <code>c5a.*</code>, Amazon EC2
-     * excludes all the C5a instance types, but does not exclude the C5n instance
+     * <code>c5*</code>,Amazon EC2 will exclude the entire C5 instance family, which
+     * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
+     * Amazon EC2 will exclude all the M5a instance types, but not the M5n instance
      * types.</p> <p>Default: No excluded instance types</p>
      */
     inline InstanceRequirementsRequest& AddExcludedInstanceTypes(Aws::String&& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes.push_back(std::move(value)); return *this; }
@@ -377,9 +377,9 @@ namespace Model
      * family, type, size, or generation. The following are examples:
      * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
      * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
-     * <code>c5*.*</code>, Amazon EC2 will exclude the entire C5 instance family (all
-     * C5a and C5n instance types). If you specify <code>c5a.*</code>, Amazon EC2
-     * excludes all the C5a instance types, but does not exclude the C5n instance
+     * <code>c5*</code>,Amazon EC2 will exclude the entire C5 instance family, which
+     * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
+     * Amazon EC2 will exclude all the M5a instance types, but not the M5n instance
      * types.</p> <p>Default: No excluded instance types</p>
      */
     inline InstanceRequirementsRequest& AddExcludedInstanceTypes(const char* value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes.push_back(value); return *this; }

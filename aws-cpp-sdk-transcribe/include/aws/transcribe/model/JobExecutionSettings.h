@@ -92,82 +92,98 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a role that has access to the S3 bucket
-     * that contains the input files. Amazon Transcribe assumes this role to read
-     * queued media files. If you have specified an output S3 bucket for the
-     * transcription results, this role should have access to the output bucket as
-     * well.</p> <p>If you specify the <code>AllowDeferredExecution</code> field, you
-     * must specify the <code>DataAccessRoleArn</code> field.</p>
+     * <p>The Amazon Resource Name (ARN), in the form
+     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>,
+     * of a role that has access to the S3 bucket that contains the input files. Amazon
+     * Transcribe assumes this role to read queued media files. If you have specified
+     * an output S3 bucket for the transcription results, this role should have access
+     * to the output bucket as well.</p> <p>If you specify the
+     * <code>AllowDeferredExecution</code> field, you must specify the
+     * <code>DataAccessRoleArn</code> field.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a role that has access to the S3 bucket
-     * that contains the input files. Amazon Transcribe assumes this role to read
-     * queued media files. If you have specified an output S3 bucket for the
-     * transcription results, this role should have access to the output bucket as
-     * well.</p> <p>If you specify the <code>AllowDeferredExecution</code> field, you
-     * must specify the <code>DataAccessRoleArn</code> field.</p>
+     * <p>The Amazon Resource Name (ARN), in the form
+     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>,
+     * of a role that has access to the S3 bucket that contains the input files. Amazon
+     * Transcribe assumes this role to read queued media files. If you have specified
+     * an output S3 bucket for the transcription results, this role should have access
+     * to the output bucket as well.</p> <p>If you specify the
+     * <code>AllowDeferredExecution</code> field, you must specify the
+     * <code>DataAccessRoleArn</code> field.</p>
      */
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a role that has access to the S3 bucket
-     * that contains the input files. Amazon Transcribe assumes this role to read
-     * queued media files. If you have specified an output S3 bucket for the
-     * transcription results, this role should have access to the output bucket as
-     * well.</p> <p>If you specify the <code>AllowDeferredExecution</code> field, you
-     * must specify the <code>DataAccessRoleArn</code> field.</p>
+     * <p>The Amazon Resource Name (ARN), in the form
+     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>,
+     * of a role that has access to the S3 bucket that contains the input files. Amazon
+     * Transcribe assumes this role to read queued media files. If you have specified
+     * an output S3 bucket for the transcription results, this role should have access
+     * to the output bucket as well.</p> <p>If you specify the
+     * <code>AllowDeferredExecution</code> field, you must specify the
+     * <code>DataAccessRoleArn</code> field.</p>
      */
     inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a role that has access to the S3 bucket
-     * that contains the input files. Amazon Transcribe assumes this role to read
-     * queued media files. If you have specified an output S3 bucket for the
-     * transcription results, this role should have access to the output bucket as
-     * well.</p> <p>If you specify the <code>AllowDeferredExecution</code> field, you
-     * must specify the <code>DataAccessRoleArn</code> field.</p>
+     * <p>The Amazon Resource Name (ARN), in the form
+     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>,
+     * of a role that has access to the S3 bucket that contains the input files. Amazon
+     * Transcribe assumes this role to read queued media files. If you have specified
+     * an output S3 bucket for the transcription results, this role should have access
+     * to the output bucket as well.</p> <p>If you specify the
+     * <code>AllowDeferredExecution</code> field, you must specify the
+     * <code>DataAccessRoleArn</code> field.</p>
      */
     inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a role that has access to the S3 bucket
-     * that contains the input files. Amazon Transcribe assumes this role to read
-     * queued media files. If you have specified an output S3 bucket for the
-     * transcription results, this role should have access to the output bucket as
-     * well.</p> <p>If you specify the <code>AllowDeferredExecution</code> field, you
-     * must specify the <code>DataAccessRoleArn</code> field.</p>
+     * <p>The Amazon Resource Name (ARN), in the form
+     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>,
+     * of a role that has access to the S3 bucket that contains the input files. Amazon
+     * Transcribe assumes this role to read queued media files. If you have specified
+     * an output S3 bucket for the transcription results, this role should have access
+     * to the output bucket as well.</p> <p>If you specify the
+     * <code>AllowDeferredExecution</code> field, you must specify the
+     * <code>DataAccessRoleArn</code> field.</p>
      */
     inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a role that has access to the S3 bucket
-     * that contains the input files. Amazon Transcribe assumes this role to read
-     * queued media files. If you have specified an output S3 bucket for the
-     * transcription results, this role should have access to the output bucket as
-     * well.</p> <p>If you specify the <code>AllowDeferredExecution</code> field, you
-     * must specify the <code>DataAccessRoleArn</code> field.</p>
+     * <p>The Amazon Resource Name (ARN), in the form
+     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>,
+     * of a role that has access to the S3 bucket that contains the input files. Amazon
+     * Transcribe assumes this role to read queued media files. If you have specified
+     * an output S3 bucket for the transcription results, this role should have access
+     * to the output bucket as well.</p> <p>If you specify the
+     * <code>AllowDeferredExecution</code> field, you must specify the
+     * <code>DataAccessRoleArn</code> field.</p>
      */
     inline JobExecutionSettings& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a role that has access to the S3 bucket
-     * that contains the input files. Amazon Transcribe assumes this role to read
-     * queued media files. If you have specified an output S3 bucket for the
-     * transcription results, this role should have access to the output bucket as
-     * well.</p> <p>If you specify the <code>AllowDeferredExecution</code> field, you
-     * must specify the <code>DataAccessRoleArn</code> field.</p>
+     * <p>The Amazon Resource Name (ARN), in the form
+     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>,
+     * of a role that has access to the S3 bucket that contains the input files. Amazon
+     * Transcribe assumes this role to read queued media files. If you have specified
+     * an output S3 bucket for the transcription results, this role should have access
+     * to the output bucket as well.</p> <p>If you specify the
+     * <code>AllowDeferredExecution</code> field, you must specify the
+     * <code>DataAccessRoleArn</code> field.</p>
      */
     inline JobExecutionSettings& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a role that has access to the S3 bucket
-     * that contains the input files. Amazon Transcribe assumes this role to read
-     * queued media files. If you have specified an output S3 bucket for the
-     * transcription results, this role should have access to the output bucket as
-     * well.</p> <p>If you specify the <code>AllowDeferredExecution</code> field, you
-     * must specify the <code>DataAccessRoleArn</code> field.</p>
+     * <p>The Amazon Resource Name (ARN), in the form
+     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>,
+     * of a role that has access to the S3 bucket that contains the input files. Amazon
+     * Transcribe assumes this role to read queued media files. If you have specified
+     * an output S3 bucket for the transcription results, this role should have access
+     * to the output bucket as well.</p> <p>If you specify the
+     * <code>AllowDeferredExecution</code> field, you must specify the
+     * <code>DataAccessRoleArn</code> field.</p>
      */
     inline JobExecutionSettings& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
 

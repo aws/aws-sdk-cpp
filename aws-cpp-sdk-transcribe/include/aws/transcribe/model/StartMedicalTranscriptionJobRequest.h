@@ -543,13 +543,14 @@ namespace Model
      * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
      * identify a KMS key in the current account or another account:</p> <ul> <li>
      * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
-     * account: "arn:aws:kms:region:account
-     * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
-     * you don't specify an encryption key, the output of the medical transcription job
-     * is encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a
-     * KMS key to encrypt your output, you must also specify an output location in the
-     * <code>OutputBucketName</code> parameter.</p>
+     * account:
+     * "arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
+     * </li> <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account
+     * ID:alias/ExampleAlias"</p> </li> </ul> <p>If you don't specify an encryption
+     * key, the output of the medical transcription job is encrypted with the default
+     * Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your output,
+     * you must also specify an output location in the <code>OutputBucketName</code>
+     * parameter.</p>
      */
     inline const Aws::String& GetOutputEncryptionKMSKeyId() const{ return m_outputEncryptionKMSKeyId; }
 
@@ -563,13 +564,14 @@ namespace Model
      * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
      * identify a KMS key in the current account or another account:</p> <ul> <li>
      * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
-     * account: "arn:aws:kms:region:account
-     * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
-     * you don't specify an encryption key, the output of the medical transcription job
-     * is encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a
-     * KMS key to encrypt your output, you must also specify an output location in the
-     * <code>OutputBucketName</code> parameter.</p>
+     * account:
+     * "arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
+     * </li> <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account
+     * ID:alias/ExampleAlias"</p> </li> </ul> <p>If you don't specify an encryption
+     * key, the output of the medical transcription job is encrypted with the default
+     * Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your output,
+     * you must also specify an output location in the <code>OutputBucketName</code>
+     * parameter.</p>
      */
     inline bool OutputEncryptionKMSKeyIdHasBeenSet() const { return m_outputEncryptionKMSKeyIdHasBeenSet; }
 
@@ -583,13 +585,14 @@ namespace Model
      * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
      * identify a KMS key in the current account or another account:</p> <ul> <li>
      * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
-     * account: "arn:aws:kms:region:account
-     * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
-     * you don't specify an encryption key, the output of the medical transcription job
-     * is encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a
-     * KMS key to encrypt your output, you must also specify an output location in the
-     * <code>OutputBucketName</code> parameter.</p>
+     * account:
+     * "arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
+     * </li> <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account
+     * ID:alias/ExampleAlias"</p> </li> </ul> <p>If you don't specify an encryption
+     * key, the output of the medical transcription job is encrypted with the default
+     * Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your output,
+     * you must also specify an output location in the <code>OutputBucketName</code>
+     * parameter.</p>
      */
     inline void SetOutputEncryptionKMSKeyId(const Aws::String& value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId = value; }
 
@@ -603,13 +606,14 @@ namespace Model
      * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
      * identify a KMS key in the current account or another account:</p> <ul> <li>
      * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
-     * account: "arn:aws:kms:region:account
-     * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
-     * you don't specify an encryption key, the output of the medical transcription job
-     * is encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a
-     * KMS key to encrypt your output, you must also specify an output location in the
-     * <code>OutputBucketName</code> parameter.</p>
+     * account:
+     * "arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
+     * </li> <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account
+     * ID:alias/ExampleAlias"</p> </li> </ul> <p>If you don't specify an encryption
+     * key, the output of the medical transcription job is encrypted with the default
+     * Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your output,
+     * you must also specify an output location in the <code>OutputBucketName</code>
+     * parameter.</p>
      */
     inline void SetOutputEncryptionKMSKeyId(Aws::String&& value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId = std::move(value); }
 
@@ -623,13 +627,14 @@ namespace Model
      * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
      * identify a KMS key in the current account or another account:</p> <ul> <li>
      * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
-     * account: "arn:aws:kms:region:account
-     * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
-     * you don't specify an encryption key, the output of the medical transcription job
-     * is encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a
-     * KMS key to encrypt your output, you must also specify an output location in the
-     * <code>OutputBucketName</code> parameter.</p>
+     * account:
+     * "arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
+     * </li> <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account
+     * ID:alias/ExampleAlias"</p> </li> </ul> <p>If you don't specify an encryption
+     * key, the output of the medical transcription job is encrypted with the default
+     * Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your output,
+     * you must also specify an output location in the <code>OutputBucketName</code>
+     * parameter.</p>
      */
     inline void SetOutputEncryptionKMSKeyId(const char* value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId.assign(value); }
 
@@ -643,13 +648,14 @@ namespace Model
      * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
      * identify a KMS key in the current account or another account:</p> <ul> <li>
      * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
-     * account: "arn:aws:kms:region:account
-     * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
-     * you don't specify an encryption key, the output of the medical transcription job
-     * is encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a
-     * KMS key to encrypt your output, you must also specify an output location in the
-     * <code>OutputBucketName</code> parameter.</p>
+     * account:
+     * "arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
+     * </li> <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account
+     * ID:alias/ExampleAlias"</p> </li> </ul> <p>If you don't specify an encryption
+     * key, the output of the medical transcription job is encrypted with the default
+     * Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your output,
+     * you must also specify an output location in the <code>OutputBucketName</code>
+     * parameter.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithOutputEncryptionKMSKeyId(const Aws::String& value) { SetOutputEncryptionKMSKeyId(value); return *this;}
 
@@ -663,13 +669,14 @@ namespace Model
      * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
      * identify a KMS key in the current account or another account:</p> <ul> <li>
      * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
-     * account: "arn:aws:kms:region:account
-     * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
-     * you don't specify an encryption key, the output of the medical transcription job
-     * is encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a
-     * KMS key to encrypt your output, you must also specify an output location in the
-     * <code>OutputBucketName</code> parameter.</p>
+     * account:
+     * "arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
+     * </li> <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account
+     * ID:alias/ExampleAlias"</p> </li> </ul> <p>If you don't specify an encryption
+     * key, the output of the medical transcription job is encrypted with the default
+     * Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your output,
+     * you must also specify an output location in the <code>OutputBucketName</code>
+     * parameter.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithOutputEncryptionKMSKeyId(Aws::String&& value) { SetOutputEncryptionKMSKeyId(std::move(value)); return *this;}
 
@@ -683,13 +690,14 @@ namespace Model
      * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
      * identify a KMS key in the current account or another account:</p> <ul> <li>
      * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
-     * account: "arn:aws:kms:region:account
-     * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
-     * you don't specify an encryption key, the output of the medical transcription job
-     * is encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a
-     * KMS key to encrypt your output, you must also specify an output location in the
-     * <code>OutputBucketName</code> parameter.</p>
+     * account:
+     * "arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
+     * </li> <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account
+     * ID:alias/ExampleAlias"</p> </li> </ul> <p>If you don't specify an encryption
+     * key, the output of the medical transcription job is encrypted with the default
+     * Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS key to encrypt your output,
+     * you must also specify an output location in the <code>OutputBucketName</code>
+     * parameter.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithOutputEncryptionKMSKeyId(const char* value) { SetOutputEncryptionKMSKeyId(value); return *this;}
 

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/transcribe/model/Subtitles.h>
 #include <aws/transcribe/model/Tag.h>
+#include <aws/transcribe/model/LanguageIdSettings.h>
 #include <utility>
 
 namespace Aws
@@ -605,7 +606,7 @@ namespace Model
      * identify a KMS key in the current account or another account:</p> <ul> <li>
      * <p>Amazon Resource Name (ARN) of a KMS Key: "arn:aws:kms:region:account
      * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
+     * Alias: "arn:aws:kms:region:account-ID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the transcription job is
      * encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS
      * key to encrypt your output, you must also specify an output location in the
@@ -624,7 +625,7 @@ namespace Model
      * identify a KMS key in the current account or another account:</p> <ul> <li>
      * <p>Amazon Resource Name (ARN) of a KMS Key: "arn:aws:kms:region:account
      * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
+     * Alias: "arn:aws:kms:region:account-ID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the transcription job is
      * encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS
      * key to encrypt your output, you must also specify an output location in the
@@ -643,7 +644,7 @@ namespace Model
      * identify a KMS key in the current account or another account:</p> <ul> <li>
      * <p>Amazon Resource Name (ARN) of a KMS Key: "arn:aws:kms:region:account
      * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
+     * Alias: "arn:aws:kms:region:account-ID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the transcription job is
      * encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS
      * key to encrypt your output, you must also specify an output location in the
@@ -662,7 +663,7 @@ namespace Model
      * identify a KMS key in the current account or another account:</p> <ul> <li>
      * <p>Amazon Resource Name (ARN) of a KMS Key: "arn:aws:kms:region:account
      * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
+     * Alias: "arn:aws:kms:region:account-ID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the transcription job is
      * encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS
      * key to encrypt your output, you must also specify an output location in the
@@ -681,7 +682,7 @@ namespace Model
      * identify a KMS key in the current account or another account:</p> <ul> <li>
      * <p>Amazon Resource Name (ARN) of a KMS Key: "arn:aws:kms:region:account
      * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
+     * Alias: "arn:aws:kms:region:account-ID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the transcription job is
      * encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS
      * key to encrypt your output, you must also specify an output location in the
@@ -700,7 +701,7 @@ namespace Model
      * identify a KMS key in the current account or another account:</p> <ul> <li>
      * <p>Amazon Resource Name (ARN) of a KMS Key: "arn:aws:kms:region:account
      * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
+     * Alias: "arn:aws:kms:region:account-ID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the transcription job is
      * encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS
      * key to encrypt your output, you must also specify an output location in the
@@ -719,7 +720,7 @@ namespace Model
      * identify a KMS key in the current account or another account:</p> <ul> <li>
      * <p>Amazon Resource Name (ARN) of a KMS Key: "arn:aws:kms:region:account
      * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
+     * Alias: "arn:aws:kms:region:account-ID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the transcription job is
      * encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS
      * key to encrypt your output, you must also specify an output location in the
@@ -738,7 +739,7 @@ namespace Model
      * identify a KMS key in the current account or another account:</p> <ul> <li>
      * <p>Amazon Resource Name (ARN) of a KMS Key: "arn:aws:kms:region:account
      * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
+     * Alias: "arn:aws:kms:region:account-ID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the transcription job is
      * encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS
      * key to encrypt your output, you must also specify an output location in the
@@ -1157,6 +1158,77 @@ namespace Model
      */
     inline StartTranscriptionJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The language identification settings associated with your transcription job.
+     * These settings include <code>VocabularyName</code>,
+     * <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.</p>
+     */
+    inline const Aws::Map<LanguageCode, LanguageIdSettings>& GetLanguageIdSettings() const{ return m_languageIdSettings; }
+
+    /**
+     * <p>The language identification settings associated with your transcription job.
+     * These settings include <code>VocabularyName</code>,
+     * <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.</p>
+     */
+    inline bool LanguageIdSettingsHasBeenSet() const { return m_languageIdSettingsHasBeenSet; }
+
+    /**
+     * <p>The language identification settings associated with your transcription job.
+     * These settings include <code>VocabularyName</code>,
+     * <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.</p>
+     */
+    inline void SetLanguageIdSettings(const Aws::Map<LanguageCode, LanguageIdSettings>& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings = value; }
+
+    /**
+     * <p>The language identification settings associated with your transcription job.
+     * These settings include <code>VocabularyName</code>,
+     * <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.</p>
+     */
+    inline void SetLanguageIdSettings(Aws::Map<LanguageCode, LanguageIdSettings>&& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings = std::move(value); }
+
+    /**
+     * <p>The language identification settings associated with your transcription job.
+     * These settings include <code>VocabularyName</code>,
+     * <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.</p>
+     */
+    inline StartTranscriptionJobRequest& WithLanguageIdSettings(const Aws::Map<LanguageCode, LanguageIdSettings>& value) { SetLanguageIdSettings(value); return *this;}
+
+    /**
+     * <p>The language identification settings associated with your transcription job.
+     * These settings include <code>VocabularyName</code>,
+     * <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.</p>
+     */
+    inline StartTranscriptionJobRequest& WithLanguageIdSettings(Aws::Map<LanguageCode, LanguageIdSettings>&& value) { SetLanguageIdSettings(std::move(value)); return *this;}
+
+    /**
+     * <p>The language identification settings associated with your transcription job.
+     * These settings include <code>VocabularyName</code>,
+     * <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.</p>
+     */
+    inline StartTranscriptionJobRequest& AddLanguageIdSettings(const LanguageCode& key, const LanguageIdSettings& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(key, value); return *this; }
+
+    /**
+     * <p>The language identification settings associated with your transcription job.
+     * These settings include <code>VocabularyName</code>,
+     * <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.</p>
+     */
+    inline StartTranscriptionJobRequest& AddLanguageIdSettings(LanguageCode&& key, const LanguageIdSettings& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The language identification settings associated with your transcription job.
+     * These settings include <code>VocabularyName</code>,
+     * <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.</p>
+     */
+    inline StartTranscriptionJobRequest& AddLanguageIdSettings(const LanguageCode& key, LanguageIdSettings&& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The language identification settings associated with your transcription job.
+     * These settings include <code>VocabularyName</code>,
+     * <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.</p>
+     */
+    inline StartTranscriptionJobRequest& AddLanguageIdSettings(LanguageCode&& key, LanguageIdSettings&& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(std::move(key), std::move(value)); return *this; }
+
   private:
 
     Aws::String m_transcriptionJobName;
@@ -1209,6 +1281,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::Map<LanguageCode, LanguageIdSettings> m_languageIdSettings;
+    bool m_languageIdSettingsHasBeenSet;
   };
 
 } // namespace Model

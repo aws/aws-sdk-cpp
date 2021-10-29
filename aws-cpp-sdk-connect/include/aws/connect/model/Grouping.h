@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     QUEUE,
-    CHANNEL
+    CHANNEL,
+    ROUTING_PROFILE,
+    INSTANCE
   };
 
 namespace GroupingMapper

@@ -25,7 +25,8 @@ CallAnalyticsJobSettings::CallAnalyticsJobSettings() :
     m_vocabularyFilterMethodHasBeenSet(false),
     m_languageModelNameHasBeenSet(false),
     m_contentRedactionHasBeenSet(false),
-    m_languageOptionsHasBeenSet(false)
+    m_languageOptionsHasBeenSet(false),
+    m_languageIdSettingsHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ CallAnalyticsJobSettings::CallAnalyticsJobSettings(JsonView jsonValue) :
     m_vocabularyFilterMethodHasBeenSet(false),
     m_languageModelNameHasBeenSet(false),
     m_contentRedactionHasBeenSet(false),
-    m_languageOptionsHasBeenSet(false)
+    m_languageOptionsHasBeenSet(false),
+    m_languageIdSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -88,6 +90,16 @@ CallAnalyticsJobSettings& CallAnalyticsJobSettings::operator =(JsonView jsonValu
     m_languageOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LanguageIdSettings"))
+  {
+    Aws::Map<Aws::String, JsonView> languageIdSettingsJsonMap = jsonValue.GetObject("LanguageIdSettings").GetAllObjects();
+    for(auto& languageIdSettingsItem : languageIdSettingsJsonMap)
+    {
+      m_languageIdSettings[LanguageCodeMapper::GetLanguageCodeForName(languageIdSettingsItem.first)] = languageIdSettingsItem.second.AsObject();
+    }
+    m_languageIdSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -132,6 +144,17 @@ JsonValue CallAnalyticsJobSettings::Jsonize() const
      languageOptionsJsonList[languageOptionsIndex].AsString(LanguageCodeMapper::GetNameForLanguageCode(m_languageOptions[languageOptionsIndex]));
    }
    payload.WithArray("LanguageOptions", std::move(languageOptionsJsonList));
+
+  }
+
+  if(m_languageIdSettingsHasBeenSet)
+  {
+   JsonValue languageIdSettingsJsonMap;
+   for(auto& languageIdSettingsItem : m_languageIdSettings)
+   {
+     languageIdSettingsJsonMap.WithObject(LanguageCodeMapper::GetNameForLanguageCode(languageIdSettingsItem.first), languageIdSettingsItem.second.Jsonize());
+   }
+   payload.WithObject("LanguageIdSettings", std::move(languageIdSettingsJsonMap));
 
   }
 

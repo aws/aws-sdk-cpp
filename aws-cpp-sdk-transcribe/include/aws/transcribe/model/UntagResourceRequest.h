@@ -37,49 +37,105 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to
-     * remove tags from.</p>
+     * remove tags from. ARNs have the format
+     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>
+     * (for example,
+     * <code>arn:aws:transcribe:us-east-1:account-id:transcription-job/your-job-name</code>).
+     * Valid values for <code>resource-type</code> are: <code>transcription-job</code>,
+     * <code>medical-transcription-job</code>, <code>vocabulary</code>,
+     * <code>medical-vocabulary</code>, <code>vocabulary-filter</code>, and
+     * <code>language-model</code>.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to
-     * remove tags from.</p>
+     * remove tags from. ARNs have the format
+     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>
+     * (for example,
+     * <code>arn:aws:transcribe:us-east-1:account-id:transcription-job/your-job-name</code>).
+     * Valid values for <code>resource-type</code> are: <code>transcription-job</code>,
+     * <code>medical-transcription-job</code>, <code>vocabulary</code>,
+     * <code>medical-vocabulary</code>, <code>vocabulary-filter</code>, and
+     * <code>language-model</code>.</p>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to
-     * remove tags from.</p>
+     * remove tags from. ARNs have the format
+     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>
+     * (for example,
+     * <code>arn:aws:transcribe:us-east-1:account-id:transcription-job/your-job-name</code>).
+     * Valid values for <code>resource-type</code> are: <code>transcription-job</code>,
+     * <code>medical-transcription-job</code>, <code>vocabulary</code>,
+     * <code>medical-vocabulary</code>, <code>vocabulary-filter</code>, and
+     * <code>language-model</code>.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to
-     * remove tags from.</p>
+     * remove tags from. ARNs have the format
+     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>
+     * (for example,
+     * <code>arn:aws:transcribe:us-east-1:account-id:transcription-job/your-job-name</code>).
+     * Valid values for <code>resource-type</code> are: <code>transcription-job</code>,
+     * <code>medical-transcription-job</code>, <code>vocabulary</code>,
+     * <code>medical-vocabulary</code>, <code>vocabulary-filter</code>, and
+     * <code>language-model</code>.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to
-     * remove tags from.</p>
+     * remove tags from. ARNs have the format
+     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>
+     * (for example,
+     * <code>arn:aws:transcribe:us-east-1:account-id:transcription-job/your-job-name</code>).
+     * Valid values for <code>resource-type</code> are: <code>transcription-job</code>,
+     * <code>medical-transcription-job</code>, <code>vocabulary</code>,
+     * <code>medical-vocabulary</code>, <code>vocabulary-filter</code>, and
+     * <code>language-model</code>.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to
-     * remove tags from.</p>
+     * remove tags from. ARNs have the format
+     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>
+     * (for example,
+     * <code>arn:aws:transcribe:us-east-1:account-id:transcription-job/your-job-name</code>).
+     * Valid values for <code>resource-type</code> are: <code>transcription-job</code>,
+     * <code>medical-transcription-job</code>, <code>vocabulary</code>,
+     * <code>medical-vocabulary</code>, <code>vocabulary-filter</code>, and
+     * <code>language-model</code>.</p>
      */
     inline UntagResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to
-     * remove tags from.</p>
+     * remove tags from. ARNs have the format
+     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>
+     * (for example,
+     * <code>arn:aws:transcribe:us-east-1:account-id:transcription-job/your-job-name</code>).
+     * Valid values for <code>resource-type</code> are: <code>transcription-job</code>,
+     * <code>medical-transcription-job</code>, <code>vocabulary</code>,
+     * <code>medical-vocabulary</code>, <code>vocabulary-filter</code>, and
+     * <code>language-model</code>.</p>
      */
     inline UntagResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to
-     * remove tags from.</p>
+     * remove tags from. ARNs have the format
+     * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>
+     * (for example,
+     * <code>arn:aws:transcribe:us-east-1:account-id:transcription-job/your-job-name</code>).
+     * Valid values for <code>resource-type</code> are: <code>transcription-job</code>,
+     * <code>medical-transcription-job</code>, <code>vocabulary</code>,
+     * <code>medical-vocabulary</code>, <code>vocabulary-filter</code>, and
+     * <code>language-model</code>.</p>
      */
     inline UntagResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 

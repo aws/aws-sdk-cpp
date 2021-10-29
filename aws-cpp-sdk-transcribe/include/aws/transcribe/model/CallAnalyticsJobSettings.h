@@ -9,7 +9,9 @@
 #include <aws/transcribe/model/VocabularyFilterMethod.h>
 #include <aws/transcribe/model/ContentRedaction.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/transcribe/model/LanguageCode.h>
+#include <aws/transcribe/model/LanguageIdSettings.h>
 #include <utility>
 
 namespace Aws
@@ -365,6 +367,77 @@ namespace Model
      */
     inline CallAnalyticsJobSettings& AddLanguageOptions(LanguageCode&& value) { m_languageOptionsHasBeenSet = true; m_languageOptions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The language identification settings associated with your call analytics job.
+     * These settings include <code>VocabularyName</code>,
+     * <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.</p>
+     */
+    inline const Aws::Map<LanguageCode, LanguageIdSettings>& GetLanguageIdSettings() const{ return m_languageIdSettings; }
+
+    /**
+     * <p>The language identification settings associated with your call analytics job.
+     * These settings include <code>VocabularyName</code>,
+     * <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.</p>
+     */
+    inline bool LanguageIdSettingsHasBeenSet() const { return m_languageIdSettingsHasBeenSet; }
+
+    /**
+     * <p>The language identification settings associated with your call analytics job.
+     * These settings include <code>VocabularyName</code>,
+     * <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.</p>
+     */
+    inline void SetLanguageIdSettings(const Aws::Map<LanguageCode, LanguageIdSettings>& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings = value; }
+
+    /**
+     * <p>The language identification settings associated with your call analytics job.
+     * These settings include <code>VocabularyName</code>,
+     * <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.</p>
+     */
+    inline void SetLanguageIdSettings(Aws::Map<LanguageCode, LanguageIdSettings>&& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings = std::move(value); }
+
+    /**
+     * <p>The language identification settings associated with your call analytics job.
+     * These settings include <code>VocabularyName</code>,
+     * <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.</p>
+     */
+    inline CallAnalyticsJobSettings& WithLanguageIdSettings(const Aws::Map<LanguageCode, LanguageIdSettings>& value) { SetLanguageIdSettings(value); return *this;}
+
+    /**
+     * <p>The language identification settings associated with your call analytics job.
+     * These settings include <code>VocabularyName</code>,
+     * <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.</p>
+     */
+    inline CallAnalyticsJobSettings& WithLanguageIdSettings(Aws::Map<LanguageCode, LanguageIdSettings>&& value) { SetLanguageIdSettings(std::move(value)); return *this;}
+
+    /**
+     * <p>The language identification settings associated with your call analytics job.
+     * These settings include <code>VocabularyName</code>,
+     * <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.</p>
+     */
+    inline CallAnalyticsJobSettings& AddLanguageIdSettings(const LanguageCode& key, const LanguageIdSettings& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(key, value); return *this; }
+
+    /**
+     * <p>The language identification settings associated with your call analytics job.
+     * These settings include <code>VocabularyName</code>,
+     * <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.</p>
+     */
+    inline CallAnalyticsJobSettings& AddLanguageIdSettings(LanguageCode&& key, const LanguageIdSettings& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The language identification settings associated with your call analytics job.
+     * These settings include <code>VocabularyName</code>,
+     * <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.</p>
+     */
+    inline CallAnalyticsJobSettings& AddLanguageIdSettings(const LanguageCode& key, LanguageIdSettings&& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The language identification settings associated with your call analytics job.
+     * These settings include <code>VocabularyName</code>,
+     * <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.</p>
+     */
+    inline CallAnalyticsJobSettings& AddLanguageIdSettings(LanguageCode&& key, LanguageIdSettings&& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(std::move(key), std::move(value)); return *this; }
+
   private:
 
     Aws::String m_vocabularyName;
@@ -384,6 +457,9 @@ namespace Model
 
     Aws::Vector<LanguageCode> m_languageOptions;
     bool m_languageOptionsHasBeenSet;
+
+    Aws::Map<LanguageCode, LanguageIdSettings> m_languageIdSettings;
+    bool m_languageIdSettingsHasBeenSet;
   };
 
 } // namespace Model

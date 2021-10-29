@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>Lists all tags associated with the given Amazon Resource Name (ARN).</p>
+     * <p>Lists all tags associated with the given Amazon Resource Name (ARN). </p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p>Lists all tags associated with the given Amazon Resource Name (ARN).</p>
+     * <p>Lists all tags associated with the given Amazon Resource Name (ARN). </p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArn = value; }
 
     /**
-     * <p>Lists all tags associated with the given Amazon Resource Name (ARN).</p>
+     * <p>Lists all tags associated with the given Amazon Resource Name (ARN). </p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArn = std::move(value); }
 
     /**
-     * <p>Lists all tags associated with the given Amazon Resource Name (ARN).</p>
+     * <p>Lists all tags associated with the given Amazon Resource Name (ARN). </p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArn.assign(value); }
 
     /**
-     * <p>Lists all tags associated with the given Amazon Resource Name (ARN).</p>
+     * <p>Lists all tags associated with the given Amazon Resource Name (ARN). </p>
      */
     inline ListTagsForResourceResult& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p>Lists all tags associated with the given Amazon Resource Name (ARN).</p>
+     * <p>Lists all tags associated with the given Amazon Resource Name (ARN). </p>
      */
     inline ListTagsForResourceResult& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>Lists all tags associated with the given Amazon Resource Name (ARN).</p>
+     * <p>Lists all tags associated with the given Amazon Resource Name (ARN). </p>
      */
     inline ListTagsForResourceResult& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 

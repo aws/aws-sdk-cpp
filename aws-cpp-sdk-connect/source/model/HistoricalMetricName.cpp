@@ -32,6 +32,8 @@ namespace Aws
         static const int CONTACTS_TRANSFERRED_OUT_HASH = HashingUtils::HashString("CONTACTS_TRANSFERRED_OUT");
         static const int CONTACTS_TRANSFERRED_IN_FROM_QUEUE_HASH = HashingUtils::HashString("CONTACTS_TRANSFERRED_IN_FROM_QUEUE");
         static const int CONTACTS_TRANSFERRED_OUT_FROM_QUEUE_HASH = HashingUtils::HashString("CONTACTS_TRANSFERRED_OUT_FROM_QUEUE");
+        static const int CONTACTS_TRANSFERRED_IN_BY_AGENT_HASH = HashingUtils::HashString("CONTACTS_TRANSFERRED_IN_BY_AGENT");
+        static const int CONTACTS_TRANSFERRED_OUT_BY_AGENT_HASH = HashingUtils::HashString("CONTACTS_TRANSFERRED_OUT_BY_AGENT");
         static const int CONTACTS_MISSED_HASH = HashingUtils::HashString("CONTACTS_MISSED");
         static const int CALLBACK_CONTACTS_HANDLED_HASH = HashingUtils::HashString("CALLBACK_CONTACTS_HANDLED");
         static const int API_CONTACTS_HANDLED_HASH = HashingUtils::HashString("API_CONTACTS_HANDLED");
@@ -97,6 +99,14 @@ namespace Aws
           else if (hashCode == CONTACTS_TRANSFERRED_OUT_FROM_QUEUE_HASH)
           {
             return HistoricalMetricName::CONTACTS_TRANSFERRED_OUT_FROM_QUEUE;
+          }
+          else if (hashCode == CONTACTS_TRANSFERRED_IN_BY_AGENT_HASH)
+          {
+            return HistoricalMetricName::CONTACTS_TRANSFERRED_IN_BY_AGENT;
+          }
+          else if (hashCode == CONTACTS_TRANSFERRED_OUT_BY_AGENT_HASH)
+          {
+            return HistoricalMetricName::CONTACTS_TRANSFERRED_OUT_BY_AGENT;
           }
           else if (hashCode == CONTACTS_MISSED_HASH)
           {
@@ -188,6 +198,10 @@ namespace Aws
             return "CONTACTS_TRANSFERRED_IN_FROM_QUEUE";
           case HistoricalMetricName::CONTACTS_TRANSFERRED_OUT_FROM_QUEUE:
             return "CONTACTS_TRANSFERRED_OUT_FROM_QUEUE";
+          case HistoricalMetricName::CONTACTS_TRANSFERRED_IN_BY_AGENT:
+            return "CONTACTS_TRANSFERRED_IN_BY_AGENT";
+          case HistoricalMetricName::CONTACTS_TRANSFERRED_OUT_BY_AGENT:
+            return "CONTACTS_TRANSFERRED_OUT_BY_AGENT";
           case HistoricalMetricName::CONTACTS_MISSED:
             return "CONTACTS_MISSED";
           case HistoricalMetricName::CALLBACK_CONTACTS_HANDLED:

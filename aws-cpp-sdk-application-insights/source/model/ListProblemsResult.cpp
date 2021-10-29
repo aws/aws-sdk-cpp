@@ -43,6 +43,12 @@ ListProblemsResult& ListProblemsResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("ResourceGroupName"))
+  {
+    m_resourceGroupName = jsonValue.GetString("ResourceGroupName");
+
+  }
+
 
 
   return *this;

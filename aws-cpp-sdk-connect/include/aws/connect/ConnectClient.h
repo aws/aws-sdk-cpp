@@ -67,10 +67,12 @@
 #include <aws/connect/model/ResumeContactRecordingResult.h>
 #include <aws/connect/model/StartChatContactResult.h>
 #include <aws/connect/model/StartContactRecordingResult.h>
+#include <aws/connect/model/StartContactStreamingResult.h>
 #include <aws/connect/model/StartOutboundVoiceContactResult.h>
 #include <aws/connect/model/StartTaskContactResult.h>
 #include <aws/connect/model/StopContactResult.h>
 #include <aws/connect/model/StopContactRecordingResult.h>
+#include <aws/connect/model/StopContactStreamingResult.h>
 #include <aws/connect/model/SuspendContactRecordingResult.h>
 #include <aws/connect/model/UpdateContactAttributesResult.h>
 #include <aws/core/NoResult.h>
@@ -190,10 +192,12 @@ namespace Model
         class ResumeContactRecordingRequest;
         class StartChatContactRequest;
         class StartContactRecordingRequest;
+        class StartContactStreamingRequest;
         class StartOutboundVoiceContactRequest;
         class StartTaskContactRequest;
         class StopContactRequest;
         class StopContactRecordingRequest;
+        class StopContactStreamingRequest;
         class SuspendContactRecordingRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
@@ -300,10 +304,12 @@ namespace Model
         typedef Aws::Utils::Outcome<ResumeContactRecordingResult, ConnectError> ResumeContactRecordingOutcome;
         typedef Aws::Utils::Outcome<StartChatContactResult, ConnectError> StartChatContactOutcome;
         typedef Aws::Utils::Outcome<StartContactRecordingResult, ConnectError> StartContactRecordingOutcome;
+        typedef Aws::Utils::Outcome<StartContactStreamingResult, ConnectError> StartContactStreamingOutcome;
         typedef Aws::Utils::Outcome<StartOutboundVoiceContactResult, ConnectError> StartOutboundVoiceContactOutcome;
         typedef Aws::Utils::Outcome<StartTaskContactResult, ConnectError> StartTaskContactOutcome;
         typedef Aws::Utils::Outcome<StopContactResult, ConnectError> StopContactOutcome;
         typedef Aws::Utils::Outcome<StopContactRecordingResult, ConnectError> StopContactRecordingOutcome;
+        typedef Aws::Utils::Outcome<StopContactStreamingResult, ConnectError> StopContactStreamingOutcome;
         typedef Aws::Utils::Outcome<SuspendContactRecordingResult, ConnectError> SuspendContactRecordingOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UntagResourceOutcome;
@@ -410,10 +416,12 @@ namespace Model
         typedef std::future<ResumeContactRecordingOutcome> ResumeContactRecordingOutcomeCallable;
         typedef std::future<StartChatContactOutcome> StartChatContactOutcomeCallable;
         typedef std::future<StartContactRecordingOutcome> StartContactRecordingOutcomeCallable;
+        typedef std::future<StartContactStreamingOutcome> StartContactStreamingOutcomeCallable;
         typedef std::future<StartOutboundVoiceContactOutcome> StartOutboundVoiceContactOutcomeCallable;
         typedef std::future<StartTaskContactOutcome> StartTaskContactOutcomeCallable;
         typedef std::future<StopContactOutcome> StopContactOutcomeCallable;
         typedef std::future<StopContactRecordingOutcome> StopContactRecordingOutcomeCallable;
+        typedef std::future<StopContactStreamingOutcome> StopContactStreamingOutcomeCallable;
         typedef std::future<SuspendContactRecordingOutcome> SuspendContactRecordingOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -523,10 +531,12 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::ResumeContactRecordingRequest&, const Model::ResumeContactRecordingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeContactRecordingResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::StartChatContactRequest&, const Model::StartChatContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartChatContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::StartContactRecordingRequest&, const Model::StartContactRecordingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartContactRecordingResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::StartContactStreamingRequest&, const Model::StartContactStreamingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartContactStreamingResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::StartOutboundVoiceContactRequest&, const Model::StartOutboundVoiceContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartOutboundVoiceContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::StartTaskContactRequest&, const Model::StartTaskContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartTaskContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::StopContactRequest&, const Model::StopContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::StopContactRecordingRequest&, const Model::StopContactRecordingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopContactRecordingResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::StopContactStreamingRequest&, const Model::StopContactStreamingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopContactStreamingResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SuspendContactRecordingRequest&, const Model::SuspendContactRecordingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SuspendContactRecordingResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
@@ -3143,6 +3153,43 @@ namespace Model
         virtual void StartContactRecordingAsync(const Model::StartContactRecordingRequest& request, const StartContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Initiates real-time message streaming for a new chat contact.</p> <p> For
+         * more information about message streaming, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-message-streaming.html">Enable
+         * real-time chat message streaming</a> in the <i>Amazon Connect Administrator
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactStreaming">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartContactStreamingOutcome StartContactStreaming(const Model::StartContactStreamingRequest& request) const;
+
+        /**
+         * <p> Initiates real-time message streaming for a new chat contact.</p> <p> For
+         * more information about message streaming, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-message-streaming.html">Enable
+         * real-time chat message streaming</a> in the <i>Amazon Connect Administrator
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactStreaming">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartContactStreamingOutcomeCallable StartContactStreamingCallable(const Model::StartContactStreamingRequest& request) const;
+
+        /**
+         * <p> Initiates real-time message streaming for a new chat contact.</p> <p> For
+         * more information about message streaming, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-message-streaming.html">Enable
+         * real-time chat message streaming</a> in the <i>Amazon Connect Administrator
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactStreaming">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartContactStreamingAsync(const Model::StartContactStreamingRequest& request, const StartContactStreamingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Places an outbound call to a contact, and then initiates the contact flow. It
          * performs the actions in the contact flow that's specified (in
          * <code>ContactFlowId</code>).</p> <p>Agents do not initiate the outbound API,
@@ -3310,6 +3357,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StopContactRecordingAsync(const Model::StopContactRecordingRequest& request, const StopContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Ends message streaming on a specified contact. To restart message streaming
+         * on that contact, call the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a>
+         * API. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactStreaming">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopContactStreamingOutcome StopContactStreaming(const Model::StopContactStreamingRequest& request) const;
+
+        /**
+         * <p> Ends message streaming on a specified contact. To restart message streaming
+         * on that contact, call the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a>
+         * API. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactStreaming">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopContactStreamingOutcomeCallable StopContactStreamingCallable(const Model::StopContactStreamingRequest& request) const;
+
+        /**
+         * <p> Ends message streaming on a specified contact. To restart message streaming
+         * on that contact, call the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a>
+         * API. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactStreaming">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopContactStreamingAsync(const Model::StopContactStreamingRequest& request, const StopContactStreamingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>When a contact is being recorded, this API suspends recording the call. For
@@ -4314,10 +4395,12 @@ namespace Model
         void ResumeContactRecordingAsyncHelper(const Model::ResumeContactRecordingRequest& request, const ResumeContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartChatContactAsyncHelper(const Model::StartChatContactRequest& request, const StartChatContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartContactRecordingAsyncHelper(const Model::StartContactRecordingRequest& request, const StartContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartContactStreamingAsyncHelper(const Model::StartContactStreamingRequest& request, const StartContactStreamingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartOutboundVoiceContactAsyncHelper(const Model::StartOutboundVoiceContactRequest& request, const StartOutboundVoiceContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartTaskContactAsyncHelper(const Model::StartTaskContactRequest& request, const StartTaskContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopContactAsyncHelper(const Model::StopContactRequest& request, const StopContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopContactRecordingAsyncHelper(const Model::StopContactRecordingRequest& request, const StopContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopContactStreamingAsyncHelper(const Model::StopContactStreamingRequest& request, const StopContactStreamingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SuspendContactRecordingAsyncHelper(const Model::SuspendContactRecordingRequest& request, const SuspendContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

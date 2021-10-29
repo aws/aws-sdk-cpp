@@ -41,63 +41,135 @@ namespace Model
     /**
      * <p>Scopes the images by users with explicit launch permissions. Specify an
      * Amazon Web Services account ID, <code>self</code> (the sender of the request),
-     * or <code>all</code> (public AMIs).</p>
+     * or <code>all</code> (public AMIs).</p> <ul> <li> <p>If you specify an Amazon Web
+     * Services account ID that is not your own, only AMIs shared with that specific
+     * Amazon Web Services account ID are returned. However, AMIs that are shared with
+     * the account’s organization or organizational unit (OU) are not returned.</p>
+     * </li> <li> <p>If you specify <code>self</code> or your own Amazon Web Services
+     * account ID, AMIs shared with your account are returned. In addition, AMIs that
+     * are shared with the organization or OU of which you are member are also
+     * returned. </p> </li> <li> <p>If you specify <code>all</code>, all public AMIs
+     * are returned.</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetExecutableUsers() const{ return m_executableUsers; }
 
     /**
      * <p>Scopes the images by users with explicit launch permissions. Specify an
      * Amazon Web Services account ID, <code>self</code> (the sender of the request),
-     * or <code>all</code> (public AMIs).</p>
+     * or <code>all</code> (public AMIs).</p> <ul> <li> <p>If you specify an Amazon Web
+     * Services account ID that is not your own, only AMIs shared with that specific
+     * Amazon Web Services account ID are returned. However, AMIs that are shared with
+     * the account’s organization or organizational unit (OU) are not returned.</p>
+     * </li> <li> <p>If you specify <code>self</code> or your own Amazon Web Services
+     * account ID, AMIs shared with your account are returned. In addition, AMIs that
+     * are shared with the organization or OU of which you are member are also
+     * returned. </p> </li> <li> <p>If you specify <code>all</code>, all public AMIs
+     * are returned.</p> </li> </ul>
      */
     inline bool ExecutableUsersHasBeenSet() const { return m_executableUsersHasBeenSet; }
 
     /**
      * <p>Scopes the images by users with explicit launch permissions. Specify an
      * Amazon Web Services account ID, <code>self</code> (the sender of the request),
-     * or <code>all</code> (public AMIs).</p>
+     * or <code>all</code> (public AMIs).</p> <ul> <li> <p>If you specify an Amazon Web
+     * Services account ID that is not your own, only AMIs shared with that specific
+     * Amazon Web Services account ID are returned. However, AMIs that are shared with
+     * the account’s organization or organizational unit (OU) are not returned.</p>
+     * </li> <li> <p>If you specify <code>self</code> or your own Amazon Web Services
+     * account ID, AMIs shared with your account are returned. In addition, AMIs that
+     * are shared with the organization or OU of which you are member are also
+     * returned. </p> </li> <li> <p>If you specify <code>all</code>, all public AMIs
+     * are returned.</p> </li> </ul>
      */
     inline void SetExecutableUsers(const Aws::Vector<Aws::String>& value) { m_executableUsersHasBeenSet = true; m_executableUsers = value; }
 
     /**
      * <p>Scopes the images by users with explicit launch permissions. Specify an
      * Amazon Web Services account ID, <code>self</code> (the sender of the request),
-     * or <code>all</code> (public AMIs).</p>
+     * or <code>all</code> (public AMIs).</p> <ul> <li> <p>If you specify an Amazon Web
+     * Services account ID that is not your own, only AMIs shared with that specific
+     * Amazon Web Services account ID are returned. However, AMIs that are shared with
+     * the account’s organization or organizational unit (OU) are not returned.</p>
+     * </li> <li> <p>If you specify <code>self</code> or your own Amazon Web Services
+     * account ID, AMIs shared with your account are returned. In addition, AMIs that
+     * are shared with the organization or OU of which you are member are also
+     * returned. </p> </li> <li> <p>If you specify <code>all</code>, all public AMIs
+     * are returned.</p> </li> </ul>
      */
     inline void SetExecutableUsers(Aws::Vector<Aws::String>&& value) { m_executableUsersHasBeenSet = true; m_executableUsers = std::move(value); }
 
     /**
      * <p>Scopes the images by users with explicit launch permissions. Specify an
      * Amazon Web Services account ID, <code>self</code> (the sender of the request),
-     * or <code>all</code> (public AMIs).</p>
+     * or <code>all</code> (public AMIs).</p> <ul> <li> <p>If you specify an Amazon Web
+     * Services account ID that is not your own, only AMIs shared with that specific
+     * Amazon Web Services account ID are returned. However, AMIs that are shared with
+     * the account’s organization or organizational unit (OU) are not returned.</p>
+     * </li> <li> <p>If you specify <code>self</code> or your own Amazon Web Services
+     * account ID, AMIs shared with your account are returned. In addition, AMIs that
+     * are shared with the organization or OU of which you are member are also
+     * returned. </p> </li> <li> <p>If you specify <code>all</code>, all public AMIs
+     * are returned.</p> </li> </ul>
      */
     inline DescribeImagesRequest& WithExecutableUsers(const Aws::Vector<Aws::String>& value) { SetExecutableUsers(value); return *this;}
 
     /**
      * <p>Scopes the images by users with explicit launch permissions. Specify an
      * Amazon Web Services account ID, <code>self</code> (the sender of the request),
-     * or <code>all</code> (public AMIs).</p>
+     * or <code>all</code> (public AMIs).</p> <ul> <li> <p>If you specify an Amazon Web
+     * Services account ID that is not your own, only AMIs shared with that specific
+     * Amazon Web Services account ID are returned. However, AMIs that are shared with
+     * the account’s organization or organizational unit (OU) are not returned.</p>
+     * </li> <li> <p>If you specify <code>self</code> or your own Amazon Web Services
+     * account ID, AMIs shared with your account are returned. In addition, AMIs that
+     * are shared with the organization or OU of which you are member are also
+     * returned. </p> </li> <li> <p>If you specify <code>all</code>, all public AMIs
+     * are returned.</p> </li> </ul>
      */
     inline DescribeImagesRequest& WithExecutableUsers(Aws::Vector<Aws::String>&& value) { SetExecutableUsers(std::move(value)); return *this;}
 
     /**
      * <p>Scopes the images by users with explicit launch permissions. Specify an
      * Amazon Web Services account ID, <code>self</code> (the sender of the request),
-     * or <code>all</code> (public AMIs).</p>
+     * or <code>all</code> (public AMIs).</p> <ul> <li> <p>If you specify an Amazon Web
+     * Services account ID that is not your own, only AMIs shared with that specific
+     * Amazon Web Services account ID are returned. However, AMIs that are shared with
+     * the account’s organization or organizational unit (OU) are not returned.</p>
+     * </li> <li> <p>If you specify <code>self</code> or your own Amazon Web Services
+     * account ID, AMIs shared with your account are returned. In addition, AMIs that
+     * are shared with the organization or OU of which you are member are also
+     * returned. </p> </li> <li> <p>If you specify <code>all</code>, all public AMIs
+     * are returned.</p> </li> </ul>
      */
     inline DescribeImagesRequest& AddExecutableUsers(const Aws::String& value) { m_executableUsersHasBeenSet = true; m_executableUsers.push_back(value); return *this; }
 
     /**
      * <p>Scopes the images by users with explicit launch permissions. Specify an
      * Amazon Web Services account ID, <code>self</code> (the sender of the request),
-     * or <code>all</code> (public AMIs).</p>
+     * or <code>all</code> (public AMIs).</p> <ul> <li> <p>If you specify an Amazon Web
+     * Services account ID that is not your own, only AMIs shared with that specific
+     * Amazon Web Services account ID are returned. However, AMIs that are shared with
+     * the account’s organization or organizational unit (OU) are not returned.</p>
+     * </li> <li> <p>If you specify <code>self</code> or your own Amazon Web Services
+     * account ID, AMIs shared with your account are returned. In addition, AMIs that
+     * are shared with the organization or OU of which you are member are also
+     * returned. </p> </li> <li> <p>If you specify <code>all</code>, all public AMIs
+     * are returned.</p> </li> </ul>
      */
     inline DescribeImagesRequest& AddExecutableUsers(Aws::String&& value) { m_executableUsersHasBeenSet = true; m_executableUsers.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Scopes the images by users with explicit launch permissions. Specify an
      * Amazon Web Services account ID, <code>self</code> (the sender of the request),
-     * or <code>all</code> (public AMIs).</p>
+     * or <code>all</code> (public AMIs).</p> <ul> <li> <p>If you specify an Amazon Web
+     * Services account ID that is not your own, only AMIs shared with that specific
+     * Amazon Web Services account ID are returned. However, AMIs that are shared with
+     * the account’s organization or organizational unit (OU) are not returned.</p>
+     * </li> <li> <p>If you specify <code>self</code> or your own Amazon Web Services
+     * account ID, AMIs shared with your account are returned. In addition, AMIs that
+     * are shared with the organization or OU of which you are member are also
+     * returned. </p> </li> <li> <p>If you specify <code>all</code>, all public AMIs
+     * are returned.</p> </li> </ul>
      */
     inline DescribeImagesRequest& AddExecutableUsers(const char* value) { m_executableUsersHasBeenSet = true; m_executableUsers.push_back(value); return *this; }
 

@@ -20,13 +20,17 @@ namespace Model
 
 QueueReference::QueueReference() : 
     m_idHasBeenSet(false),
-    m_arnHasBeenSet(false)
+    m_arnHasBeenSet(false),
+    m_queueType(QueueType::NOT_SET),
+    m_queueTypeHasBeenSet(false)
 {
 }
 
 QueueReference::QueueReference(JsonView jsonValue) : 
     m_idHasBeenSet(false),
-    m_arnHasBeenSet(false)
+    m_arnHasBeenSet(false),
+    m_queueType(QueueType::NOT_SET),
+    m_queueTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +51,13 @@ QueueReference& QueueReference::operator =(JsonView jsonValue)
     m_arnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("QueueType"))
+  {
+    m_queueType = QueueTypeMapper::GetQueueTypeForName(jsonValue.GetString("QueueType"));
+
+    m_queueTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -64,6 +75,11 @@ JsonValue QueueReference::Jsonize() const
   {
    payload.WithString("Arn", m_arn);
 
+  }
+
+  if(m_queueTypeHasBeenSet)
+  {
+   payload.WithString("QueueType", QueueTypeMapper::GetNameForQueueType(m_queueType));
   }
 
   return payload;

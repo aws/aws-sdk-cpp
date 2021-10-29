@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/connect/model/QueueType.h>
 #include <utility>
 
 namespace Aws
@@ -119,6 +120,37 @@ namespace Model
      */
     inline QueueReference& WithArn(const char* value) { SetArn(value); return *this;}
 
+
+    /**
+     * <p>The type of queue.</p>
+     */
+    inline const QueueType& GetQueueType() const{ return m_queueType; }
+
+    /**
+     * <p>The type of queue.</p>
+     */
+    inline bool QueueTypeHasBeenSet() const { return m_queueTypeHasBeenSet; }
+
+    /**
+     * <p>The type of queue.</p>
+     */
+    inline void SetQueueType(const QueueType& value) { m_queueTypeHasBeenSet = true; m_queueType = value; }
+
+    /**
+     * <p>The type of queue.</p>
+     */
+    inline void SetQueueType(QueueType&& value) { m_queueTypeHasBeenSet = true; m_queueType = std::move(value); }
+
+    /**
+     * <p>The type of queue.</p>
+     */
+    inline QueueReference& WithQueueType(const QueueType& value) { SetQueueType(value); return *this;}
+
+    /**
+     * <p>The type of queue.</p>
+     */
+    inline QueueReference& WithQueueType(QueueType&& value) { SetQueueType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -126,6 +158,9 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
+    QueueType m_queueType;
+    bool m_queueTypeHasBeenSet;
   };
 
 } // namespace Model

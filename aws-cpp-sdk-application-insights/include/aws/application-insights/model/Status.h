@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     IGNORE,
     RESOLVED,
-    PENDING
+    PENDING,
+    RECURRING
   };
 
 namespace StatusMapper

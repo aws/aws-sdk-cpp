@@ -21,6 +21,11 @@ namespace Aws
       {
 
         static const int URL_HASH = HashingUtils::HashString("URL");
+        static const int ATTACHMENT_HASH = HashingUtils::HashString("ATTACHMENT");
+        static const int NUMBER_HASH = HashingUtils::HashString("NUMBER");
+        static const int STRING_HASH = HashingUtils::HashString("STRING");
+        static const int DATE_HASH = HashingUtils::HashString("DATE");
+        static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
 
 
         ReferenceType GetReferenceTypeForName(const Aws::String& name)
@@ -29,6 +34,26 @@ namespace Aws
           if (hashCode == URL_HASH)
           {
             return ReferenceType::URL;
+          }
+          else if (hashCode == ATTACHMENT_HASH)
+          {
+            return ReferenceType::ATTACHMENT;
+          }
+          else if (hashCode == NUMBER_HASH)
+          {
+            return ReferenceType::NUMBER;
+          }
+          else if (hashCode == STRING_HASH)
+          {
+            return ReferenceType::STRING;
+          }
+          else if (hashCode == DATE_HASH)
+          {
+            return ReferenceType::DATE;
+          }
+          else if (hashCode == EMAIL_HASH)
+          {
+            return ReferenceType::EMAIL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +71,16 @@ namespace Aws
           {
           case ReferenceType::URL:
             return "URL";
+          case ReferenceType::ATTACHMENT:
+            return "ATTACHMENT";
+          case ReferenceType::NUMBER:
+            return "NUMBER";
+          case ReferenceType::STRING:
+            return "STRING";
+          case ReferenceType::DATE:
+            return "DATE";
+          case ReferenceType::EMAIL:
+            return "EMAIL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

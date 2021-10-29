@@ -423,6 +423,38 @@ namespace Model
      */
     inline Problem& AddFeedback(FeedbackKey&& key, FeedbackValue&& value) { m_feedbackHasBeenSet = true; m_feedback.emplace(std::move(key), std::move(value)); return *this; }
 
+
+    
+    inline long long GetRecurringCount() const{ return m_recurringCount; }
+
+    
+    inline bool RecurringCountHasBeenSet() const { return m_recurringCountHasBeenSet; }
+
+    
+    inline void SetRecurringCount(long long value) { m_recurringCountHasBeenSet = true; m_recurringCount = value; }
+
+    
+    inline Problem& WithRecurringCount(long long value) { SetRecurringCount(value); return *this;}
+
+
+    
+    inline const Aws::Utils::DateTime& GetLastRecurrenceTime() const{ return m_lastRecurrenceTime; }
+
+    
+    inline bool LastRecurrenceTimeHasBeenSet() const { return m_lastRecurrenceTimeHasBeenSet; }
+
+    
+    inline void SetLastRecurrenceTime(const Aws::Utils::DateTime& value) { m_lastRecurrenceTimeHasBeenSet = true; m_lastRecurrenceTime = value; }
+
+    
+    inline void SetLastRecurrenceTime(Aws::Utils::DateTime&& value) { m_lastRecurrenceTimeHasBeenSet = true; m_lastRecurrenceTime = std::move(value); }
+
+    
+    inline Problem& WithLastRecurrenceTime(const Aws::Utils::DateTime& value) { SetLastRecurrenceTime(value); return *this;}
+
+    
+    inline Problem& WithLastRecurrenceTime(Aws::Utils::DateTime&& value) { SetLastRecurrenceTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -454,6 +486,12 @@ namespace Model
 
     Aws::Map<FeedbackKey, FeedbackValue> m_feedback;
     bool m_feedbackHasBeenSet;
+
+    long long m_recurringCount;
+    bool m_recurringCountHasBeenSet;
+
+    Aws::Utils::DateTime m_lastRecurrenceTime;
+    bool m_lastRecurrenceTimeHasBeenSet;
   };
 
 } // namespace Model

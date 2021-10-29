@@ -1682,8 +1682,8 @@ namespace Model
          * analysis started by <a>StartCelebrityRecognition</a>.</p> <p>Celebrity
          * recognition in a video is an asynchronous operation. Analysis is started by a
          * call to <a>StartCelebrityRecognition</a> which returns a job identifier
-         * (<code>JobId</code>). When the celebrity recognition operation finishes, Amazon
-         * Rekognition Video publishes a completion status to the Amazon Simple
+         * (<code>JobId</code>). </p> <p>When the celebrity recognition operation finishes,
+         * Amazon Rekognition Video publishes a completion status to the Amazon Simple
          * Notification Service topic registered in the initial call to
          * <code>StartCelebrityRecognition</code>. To get the results of the celebrity
          * recognition analysis, first check that the status value published to the Amazon
@@ -1696,18 +1696,22 @@ namespace Model
          * time(s) they are detected in an array (<code>Celebrities</code>) of
          * <a>CelebrityRecognition</a> objects. Each <code>CelebrityRecognition</code>
          * contains information about the celebrity in a <a>CelebrityDetail</a> object and
-         * the time, <code>Timestamp</code>, the celebrity was detected. </p>  <p>
-         * <code>GetCelebrityRecognition</code> only returns the default facial attributes
-         * (<code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>,
-         * <code>Pose</code>, and <code>Quality</code>). The other facial attributes listed
-         * in the <code>Face</code> object of the following response syntax are not
-         * returned. For more information, see FaceDetail in the Amazon Rekognition
-         * Developer Guide. </p>  <p>By default, the <code>Celebrities</code> array
-         * is sorted by time (milliseconds from the start of the video). You can also sort
-         * the array by celebrity by specifying the value <code>ID</code> in the
-         * <code>SortBy</code> input parameter.</p> <p>The <code>CelebrityDetail</code>
-         * object includes the celebrity identifer and additional information urls. If you
-         * don't store the additional information urls, you can get them later by calling
+         * the time, <code>Timestamp</code>, the celebrity was detected. This
+         * <a>CelebrityDetail</a> object stores information about the detected celebrity's
+         * face attributes, a face bounding box, known gender, the celebrity's name, and a
+         * confidence estimate.</p>  <p> <code>GetCelebrityRecognition</code> only
+         * returns the default facial attributes (<code>BoundingBox</code>,
+         * <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and
+         * <code>Quality</code>). The <code>BoundingBox</code> field only applies to the
+         * detected face instance. The other facial attributes listed in the
+         * <code>Face</code> object of the following response syntax are not returned. For
+         * more information, see FaceDetail in the Amazon Rekognition Developer Guide. </p>
+         *  <p>By default, the <code>Celebrities</code> array is sorted by time
+         * (milliseconds from the start of the video). You can also sort the array by
+         * celebrity by specifying the value <code>ID</code> in the <code>SortBy</code>
+         * input parameter.</p> <p>The <code>CelebrityDetail</code> object includes the
+         * celebrity identifer and additional information urls. If you don't store the
+         * additional information urls, you can get them later by calling
          * <a>GetCelebrityInfo</a> with the celebrity identifer.</p> <p>No information is
          * returned for faces not recognized as celebrities.</p> <p>Use MaxResults
          * parameter to limit the number of labels returned. If there are more results than
@@ -1727,8 +1731,8 @@ namespace Model
          * analysis started by <a>StartCelebrityRecognition</a>.</p> <p>Celebrity
          * recognition in a video is an asynchronous operation. Analysis is started by a
          * call to <a>StartCelebrityRecognition</a> which returns a job identifier
-         * (<code>JobId</code>). When the celebrity recognition operation finishes, Amazon
-         * Rekognition Video publishes a completion status to the Amazon Simple
+         * (<code>JobId</code>). </p> <p>When the celebrity recognition operation finishes,
+         * Amazon Rekognition Video publishes a completion status to the Amazon Simple
          * Notification Service topic registered in the initial call to
          * <code>StartCelebrityRecognition</code>. To get the results of the celebrity
          * recognition analysis, first check that the status value published to the Amazon
@@ -1741,18 +1745,22 @@ namespace Model
          * time(s) they are detected in an array (<code>Celebrities</code>) of
          * <a>CelebrityRecognition</a> objects. Each <code>CelebrityRecognition</code>
          * contains information about the celebrity in a <a>CelebrityDetail</a> object and
-         * the time, <code>Timestamp</code>, the celebrity was detected. </p>  <p>
-         * <code>GetCelebrityRecognition</code> only returns the default facial attributes
-         * (<code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>,
-         * <code>Pose</code>, and <code>Quality</code>). The other facial attributes listed
-         * in the <code>Face</code> object of the following response syntax are not
-         * returned. For more information, see FaceDetail in the Amazon Rekognition
-         * Developer Guide. </p>  <p>By default, the <code>Celebrities</code> array
-         * is sorted by time (milliseconds from the start of the video). You can also sort
-         * the array by celebrity by specifying the value <code>ID</code> in the
-         * <code>SortBy</code> input parameter.</p> <p>The <code>CelebrityDetail</code>
-         * object includes the celebrity identifer and additional information urls. If you
-         * don't store the additional information urls, you can get them later by calling
+         * the time, <code>Timestamp</code>, the celebrity was detected. This
+         * <a>CelebrityDetail</a> object stores information about the detected celebrity's
+         * face attributes, a face bounding box, known gender, the celebrity's name, and a
+         * confidence estimate.</p>  <p> <code>GetCelebrityRecognition</code> only
+         * returns the default facial attributes (<code>BoundingBox</code>,
+         * <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and
+         * <code>Quality</code>). The <code>BoundingBox</code> field only applies to the
+         * detected face instance. The other facial attributes listed in the
+         * <code>Face</code> object of the following response syntax are not returned. For
+         * more information, see FaceDetail in the Amazon Rekognition Developer Guide. </p>
+         *  <p>By default, the <code>Celebrities</code> array is sorted by time
+         * (milliseconds from the start of the video). You can also sort the array by
+         * celebrity by specifying the value <code>ID</code> in the <code>SortBy</code>
+         * input parameter.</p> <p>The <code>CelebrityDetail</code> object includes the
+         * celebrity identifer and additional information urls. If you don't store the
+         * additional information urls, you can get them later by calling
          * <a>GetCelebrityInfo</a> with the celebrity identifer.</p> <p>No information is
          * returned for faces not recognized as celebrities.</p> <p>Use MaxResults
          * parameter to limit the number of labels returned. If there are more results than
@@ -1774,8 +1782,8 @@ namespace Model
          * analysis started by <a>StartCelebrityRecognition</a>.</p> <p>Celebrity
          * recognition in a video is an asynchronous operation. Analysis is started by a
          * call to <a>StartCelebrityRecognition</a> which returns a job identifier
-         * (<code>JobId</code>). When the celebrity recognition operation finishes, Amazon
-         * Rekognition Video publishes a completion status to the Amazon Simple
+         * (<code>JobId</code>). </p> <p>When the celebrity recognition operation finishes,
+         * Amazon Rekognition Video publishes a completion status to the Amazon Simple
          * Notification Service topic registered in the initial call to
          * <code>StartCelebrityRecognition</code>. To get the results of the celebrity
          * recognition analysis, first check that the status value published to the Amazon
@@ -1788,18 +1796,22 @@ namespace Model
          * time(s) they are detected in an array (<code>Celebrities</code>) of
          * <a>CelebrityRecognition</a> objects. Each <code>CelebrityRecognition</code>
          * contains information about the celebrity in a <a>CelebrityDetail</a> object and
-         * the time, <code>Timestamp</code>, the celebrity was detected. </p>  <p>
-         * <code>GetCelebrityRecognition</code> only returns the default facial attributes
-         * (<code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>,
-         * <code>Pose</code>, and <code>Quality</code>). The other facial attributes listed
-         * in the <code>Face</code> object of the following response syntax are not
-         * returned. For more information, see FaceDetail in the Amazon Rekognition
-         * Developer Guide. </p>  <p>By default, the <code>Celebrities</code> array
-         * is sorted by time (milliseconds from the start of the video). You can also sort
-         * the array by celebrity by specifying the value <code>ID</code> in the
-         * <code>SortBy</code> input parameter.</p> <p>The <code>CelebrityDetail</code>
-         * object includes the celebrity identifer and additional information urls. If you
-         * don't store the additional information urls, you can get them later by calling
+         * the time, <code>Timestamp</code>, the celebrity was detected. This
+         * <a>CelebrityDetail</a> object stores information about the detected celebrity's
+         * face attributes, a face bounding box, known gender, the celebrity's name, and a
+         * confidence estimate.</p>  <p> <code>GetCelebrityRecognition</code> only
+         * returns the default facial attributes (<code>BoundingBox</code>,
+         * <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and
+         * <code>Quality</code>). The <code>BoundingBox</code> field only applies to the
+         * detected face instance. The other facial attributes listed in the
+         * <code>Face</code> object of the following response syntax are not returned. For
+         * more information, see FaceDetail in the Amazon Rekognition Developer Guide. </p>
+         *  <p>By default, the <code>Celebrities</code> array is sorted by time
+         * (milliseconds from the start of the video). You can also sort the array by
+         * celebrity by specifying the value <code>ID</code> in the <code>SortBy</code>
+         * input parameter.</p> <p>The <code>CelebrityDetail</code> object includes the
+         * celebrity identifer and additional information urls. If you don't store the
+         * additional information urls, you can get them later by calling
          * <a>GetCelebrityInfo</a> with the celebrity identifer.</p> <p>No information is
          * returned for faces not recognized as celebrities.</p> <p>Use MaxResults
          * parameter to limit the number of labels returned. If there are more results than
