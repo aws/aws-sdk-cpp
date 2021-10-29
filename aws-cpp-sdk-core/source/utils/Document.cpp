@@ -19,7 +19,7 @@ Document::Document() : m_wasParseSuccessful(true)
 }
 
 Document::Document(cJSON* value) :
-    m_json(cJSON_Duplicate(value, true /* recurse */)),
+    m_json(cJSON_AS4CPP_Duplicate(value, true /* recurse */)),
     m_wasParseSuccessful(true)
 {
 }
@@ -27,9 +27,9 @@ Document::Document(cJSON* value) :
 Document::Document(const Aws::String& value) : m_wasParseSuccessful(true)
 {
     const char* return_parse_end;
-    m_json = cJSON_ParseWithOpts(value.c_str(), &return_parse_end, 1/*require_null_terminated*/);
+    m_json = cJSON_AS4CPP_ParseWithOpts(value.c_str(), &return_parse_end, 1/*require_null_terminated*/);
 
-    if (!m_json || cJSON_IsInvalid(m_json))
+    if (!m_json || cJSON_AS4CPP_IsInvalid(m_json))
     {
         m_wasParseSuccessful = false;
         m_errorMessage = "Failed to parse JSON at: ";
@@ -43,9 +43,9 @@ Document::Document(Aws::IStream& istream) : m_wasParseSuccessful(true)
     std::copy(std::istreambuf_iterator<char>(istream), std::istreambuf_iterator<char>(), std::ostreambuf_iterator<char>(memoryStream));
     const char* return_parse_end;
     const auto input = memoryStream.str();
-    m_json = cJSON_ParseWithOpts(input.c_str(), &return_parse_end, 1/*require_null_terminated*/);
+    m_json = cJSON_AS4CPP_ParseWithOpts(input.c_str(), &return_parse_end, 1/*require_null_terminated*/);
 
-    if (!m_json || cJSON_IsInvalid(m_json))
+    if (!m_json || cJSON_AS4CPP_IsInvalid(m_json))
     {
         m_wasParseSuccessful = false;
         m_errorMessage = "Failed to parse JSON. Invalid input at: ";
@@ -54,7 +54,7 @@ Document::Document(Aws::IStream& istream) : m_wasParseSuccessful(true)
 }
 
 Document::Document(const Document& value) :
-    m_json(cJSON_Duplicate(value.m_json, true/*recurse*/)),
+    m_json(cJSON_AS4CPP_Duplicate(value.m_json, true/*recurse*/)),
     m_wasParseSuccessful(value.m_wasParseSuccessful),
     m_errorMessage(value.m_errorMessage)
 {
@@ -69,7 +69,7 @@ Document::Document(Document&& value) :
 }
 
 Document::Document(const Json::JsonView& view) :
-    m_json(cJSON_Duplicate(view.m_value, true/*recurse*/)),
+    m_json(cJSON_AS4CPP_Duplicate(view.m_value, true/*recurse*/)),
     m_wasParseSuccessful(true),
     m_errorMessage({})
 {
@@ -77,7 +77,7 @@ Document::Document(const Json::JsonView& view) :
 
 void Document::Destroy()
 {
-    cJSON_Delete(m_json);
+    cJSON_AS4CPP_Delete(m_json);
 }
 
 Document::~Document()
@@ -93,7 +93,7 @@ Document& Document::operator=(const Document& other)
     }
 
     Destroy();
-    m_json = cJSON_Duplicate(other.m_json, true /*recurse*/);
+    m_json = cJSON_AS4CPP_Duplicate(other.m_json, true /*recurse*/);
     m_wasParseSuccessful = other.m_wasParseSuccessful;
     m_errorMessage = other.m_errorMessage;
     return *this;
@@ -116,7 +116,7 @@ Document& Document::operator=(Document&& other)
 Document& Document::operator=(const Json::JsonView& other)
 {
     Destroy();
-    m_json = cJSON_Duplicate(other.m_value, true /*recurse*/);
+    m_json = cJSON_AS4CPP_Duplicate(other.m_value, true /*recurse*/);
     m_wasParseSuccessful = true;
     m_errorMessage = {};
     return *this;
@@ -124,7 +124,7 @@ Document& Document::operator=(const Json::JsonView& other)
 
 bool Document::operator==(const Document& other) const
 {
-    return cJSON_Compare(m_json, other.m_json, true /*case-sensitive*/) != 0;
+    return cJSON_AS4CPP_Compare(m_json, other.m_json, true /*case-sensitive*/) != 0;
 }
 
 bool Document::operator!=(const Document& other) const
@@ -134,14 +134,14 @@ bool Document::operator!=(const Document& other) const
 
 static void AddOrReplace(cJSON* root, const char* key, cJSON* value)
 {
-    const auto existing = cJSON_GetObjectItemCaseSensitive(root, key);
+    const auto existing = cJSON_AS4CPP_GetObjectItemCaseSensitive(root, key);
     if (existing)
     {
-        cJSON_ReplaceItemInObjectCaseSensitive(root, key, value);
+        cJSON_AS4CPP_ReplaceItemInObjectCaseSensitive(root, key, value);
     }
     else
     {
-        cJSON_AddItemToObject(root, key, value);
+        cJSON_AS4CPP_AddItemToObject(root, key, value);
     }
 }
 
@@ -149,10 +149,10 @@ Document& Document::WithString(const char* key, const Aws::String& value)
 {
     if (!m_json)
     {
-        m_json = cJSON_CreateObject();
+        m_json = cJSON_AS4CPP_CreateObject();
     }
 
-    const auto val = cJSON_CreateString(value.c_str());
+    const auto val = cJSON_AS4CPP_CreateString(value.c_str());
     AddOrReplace(m_json, key, val);
     return *this;
 }
@@ -165,7 +165,7 @@ Document& Document::WithString(const Aws::String& key, const Aws::String& value)
 Document& Document::AsString(const Aws::String& value)
 {
     Destroy();
-    m_json = cJSON_CreateString(value.c_str());
+    m_json = cJSON_AS4CPP_CreateString(value.c_str());
     return *this;
 }
 
@@ -173,10 +173,10 @@ Document& Document::WithBool(const char* key, bool value)
 {
     if (!m_json)
     {
-        m_json = cJSON_CreateObject();
+        m_json = cJSON_AS4CPP_CreateObject();
     }
 
-    const auto val = cJSON_CreateBool(value);
+    const auto val = cJSON_AS4CPP_CreateBool(value);
     AddOrReplace(m_json, key, val);
     return *this;
 }
@@ -189,7 +189,7 @@ Document& Document::WithBool(const Aws::String& key, bool value)
 Document& Document::AsBool(bool value)
 {
     Destroy();
-    m_json = cJSON_CreateBool(value);
+    m_json = cJSON_AS4CPP_CreateBool(value);
     return *this;
 }
 
@@ -206,7 +206,7 @@ Document& Document::WithInteger(const Aws::String& key, int value)
 Document& Document::AsInteger(int value)
 {
     Destroy();
-    m_json = cJSON_CreateNumber(static_cast<double>(value));
+    m_json = cJSON_AS4CPP_CreateNumber(static_cast<double>(value));
     return *this;
 }
 
@@ -214,10 +214,10 @@ Document& Document::WithInt64(const char* key, long long value)
 {
     if (!m_json)
     {
-        m_json = cJSON_CreateObject();
+        m_json = cJSON_AS4CPP_CreateObject();
     }
 
-    const auto val = cJSON_CreateInt64(value);
+    const auto val = cJSON_AS4CPP_CreateInt64(value);
     AddOrReplace(m_json, key, val);
     return *this;
 }
@@ -230,7 +230,7 @@ Document& Document::WithInt64(const Aws::String& key, long long value)
 Document& Document::AsInt64(long long value)
 {
     Destroy();
-    m_json = cJSON_CreateInt64(value);
+    m_json = cJSON_AS4CPP_CreateInt64(value);
     return *this;
 }
 
@@ -238,10 +238,10 @@ Document& Document::WithDouble(const char* key, double value)
 {
     if (!m_json)
     {
-        m_json = cJSON_CreateObject();
+        m_json = cJSON_AS4CPP_CreateObject();
     }
 
-    const auto val = cJSON_CreateNumber(value);
+    const auto val = cJSON_AS4CPP_CreateNumber(value);
     AddOrReplace(m_json, key, val);
     return *this;
 }
@@ -254,7 +254,7 @@ Document& Document::WithDouble(const Aws::String& key, double value)
 Document& Document::AsDouble(double value)
 {
     Destroy();
-    m_json = cJSON_CreateNumber(value);
+    m_json = cJSON_AS4CPP_CreateNumber(value);
     return *this;
 }
 
@@ -262,13 +262,13 @@ Document& Document::WithArray(const char* key, const Array<Aws::String>& array)
 {
     if (!m_json)
     {
-        m_json = cJSON_CreateObject();
+        m_json = cJSON_AS4CPP_CreateObject();
     }
 
-    auto arrayValue = cJSON_CreateArray();
+    auto arrayValue = cJSON_AS4CPP_CreateArray();
     for (unsigned i = 0; i < array.GetLength(); ++i)
     {
-        cJSON_AddItemToArray(arrayValue, cJSON_CreateString(array[i].c_str()));
+        cJSON_AS4CPP_AddItemToArray(arrayValue, cJSON_AS4CPP_CreateString(array[i].c_str()));
     }
 
     AddOrReplace(m_json, key, arrayValue);
@@ -284,13 +284,13 @@ Document& Document::WithArray(const Aws::String& key, const Array<Document>& arr
 {
     if (!m_json)
     {
-        m_json = cJSON_CreateObject();
+        m_json = cJSON_AS4CPP_CreateObject();
     }
 
-    auto arrayValue = cJSON_CreateArray();
+    auto arrayValue = cJSON_AS4CPP_CreateArray();
     for (unsigned i = 0; i < array.GetLength(); ++i)
     {
-        cJSON_AddItemToArray(arrayValue, cJSON_Duplicate(array[i].m_json, true /*recurse*/));
+        cJSON_AS4CPP_AddItemToArray(arrayValue, cJSON_AS4CPP_Duplicate(array[i].m_json, true /*recurse*/));
     }
 
     AddOrReplace(m_json, key.c_str(), arrayValue);
@@ -301,13 +301,13 @@ Document& Document::WithArray(const Aws::String& key, Array<Document>&& array)
 {
     if (!m_json)
     {
-        m_json = cJSON_CreateObject();
+        m_json = cJSON_AS4CPP_CreateObject();
     }
 
-    auto arrayValue = cJSON_CreateArray();
+    auto arrayValue = cJSON_AS4CPP_CreateArray();
     for (unsigned i = 0; i < array.GetLength(); ++i)
     {
-        cJSON_AddItemToArray(arrayValue, array[i].m_json);
+        cJSON_AS4CPP_AddItemToArray(arrayValue, array[i].m_json);
         array[i].m_json = nullptr;
     }
 
@@ -317,10 +317,10 @@ Document& Document::WithArray(const Aws::String& key, Array<Document>&& array)
 
 Document& Document::AsArray(const Array<Document>& array)
 {
-    auto arrayValue = cJSON_CreateArray();
+    auto arrayValue = cJSON_AS4CPP_CreateArray();
     for (unsigned i = 0; i < array.GetLength(); ++i)
     {
-        cJSON_AddItemToArray(arrayValue, cJSON_Duplicate(array[i].m_json, true /*recurse*/));
+        cJSON_AS4CPP_AddItemToArray(arrayValue, cJSON_AS4CPP_Duplicate(array[i].m_json, true /*recurse*/));
     }
 
     Destroy();
@@ -330,10 +330,10 @@ Document& Document::AsArray(const Array<Document>& array)
 
 Document& Document::AsArray(Array<Document>&& array)
 {
-    auto arrayValue = cJSON_CreateArray();
+    auto arrayValue = cJSON_AS4CPP_CreateArray();
     for (unsigned i = 0; i < array.GetLength(); ++i)
     {
-        cJSON_AddItemToArray(arrayValue, array[i].m_json);
+        cJSON_AS4CPP_AddItemToArray(arrayValue, array[i].m_json);
         array[i].m_json = nullptr;
     }
 
@@ -346,10 +346,10 @@ Document& Document::WithObject(const char* key, const Document& value)
 {
     if (!m_json)
     {
-        m_json = cJSON_CreateObject();
+        m_json = cJSON_AS4CPP_CreateObject();
     }
 
-    const auto copy = value.m_json == nullptr ? cJSON_CreateObject() : cJSON_Duplicate(value.m_json, true /*recurse*/);
+    const auto copy = value.m_json == nullptr ? cJSON_AS4CPP_CreateObject() : cJSON_AS4CPP_Duplicate(value.m_json, true /*recurse*/);
     AddOrReplace(m_json, key, copy);
     return *this;
 }
@@ -363,10 +363,10 @@ Document& Document::WithObject(const char* key, Document&& value)
 {
     if (!m_json)
     {
-        m_json = cJSON_CreateObject();
+        m_json = cJSON_AS4CPP_CreateObject();
     }
 
-    AddOrReplace(m_json, key, value.m_json == nullptr ? cJSON_CreateObject() : value.m_json);
+    AddOrReplace(m_json, key, value.m_json == nullptr ? cJSON_AS4CPP_CreateObject() : value.m_json);
     value.m_json = nullptr;
     return *this;
 }
@@ -420,14 +420,14 @@ DocumentView& DocumentView::operator=(cJSON* value)
 Aws::String DocumentView::GetString(const Aws::String& key) const
 {
     assert(m_json);
-    auto item = cJSON_GetObjectItemCaseSensitive(m_json, key.c_str());
-    auto str = cJSON_GetStringValue(item);
+    auto item = cJSON_AS4CPP_GetObjectItemCaseSensitive(m_json, key.c_str());
+    auto str = cJSON_AS4CPP_GetStringValue(item);
     return str ? str : "";
 }
 
 Aws::String DocumentView::AsString() const
 {
-    const char* str = cJSON_GetStringValue(m_json);
+    const char* str = cJSON_AS4CPP_GetStringValue(m_json);
     if (str == nullptr)
     {
         return {};
@@ -437,45 +437,45 @@ Aws::String DocumentView::AsString() const
 
 bool DocumentView::IsString() const
 {
-    return cJSON_IsString(m_json) != 0;
+    return cJSON_AS4CPP_IsString(m_json) != 0;
 }
 
 bool DocumentView::GetBool(const Aws::String& key) const
 {
     assert(m_json);
-    auto item = cJSON_GetObjectItemCaseSensitive(m_json, key.c_str());
+    auto item = cJSON_AS4CPP_GetObjectItemCaseSensitive(m_json, key.c_str());
     assert(item);
     return item->valueint != 0;
 }
 
 bool DocumentView::AsBool() const
 {
-    assert(cJSON_IsBool(m_json));
-    return cJSON_IsTrue(m_json) != 0;
+    assert(cJSON_AS4CPP_IsBool(m_json));
+    return cJSON_AS4CPP_IsTrue(m_json) != 0;
 }
 
 bool DocumentView::IsBool() const
 {
-    return cJSON_IsBool(m_json) != 0;
+    return cJSON_AS4CPP_IsBool(m_json) != 0;
 }
 
 int DocumentView::GetInteger(const Aws::String& key) const
 {
     assert(m_json);
-    auto item = cJSON_GetObjectItemCaseSensitive(m_json, key.c_str());
+    auto item = cJSON_AS4CPP_GetObjectItemCaseSensitive(m_json, key.c_str());
     assert(item);
     return item->valueint;
 }
 
 int DocumentView::AsInteger() const
 {
-    assert(cJSON_IsNumber(m_json)); // can be double or value larger than int_max, but at least not UB
+    assert(cJSON_AS4CPP_IsNumber(m_json)); // can be double or value larger than int_max, but at least not UB
     return m_json->valueint;
 }
 
 bool DocumentView::IsIntegerType() const
 {
-    if (!cJSON_IsNumber(m_json))
+    if (!cJSON_AS4CPP_IsNumber(m_json))
     {
         return false;
     }
@@ -491,7 +491,7 @@ bool DocumentView::IsIntegerType() const
 int64_t DocumentView::GetInt64(const Aws::String& key) const
 {
     assert(m_json);
-    auto item = cJSON_GetObjectItemCaseSensitive(m_json, key.c_str());
+    auto item = cJSON_AS4CPP_GetObjectItemCaseSensitive(m_json, key.c_str());
     assert(item);
     if (item->valuestring)
     {
@@ -505,7 +505,7 @@ int64_t DocumentView::GetInt64(const Aws::String& key) const
 
 int64_t DocumentView::AsInt64() const
 {
-    assert(cJSON_IsNumber(m_json));
+    assert(cJSON_AS4CPP_IsNumber(m_json));
     if (m_json->valuestring)
     {
         return Aws::Utils::StringUtils::ConvertToInt64(m_json->valuestring);
@@ -519,20 +519,20 @@ int64_t DocumentView::AsInt64() const
 double DocumentView::GetDouble(const Aws::String& key) const
 {
     assert(m_json);
-    auto item = cJSON_GetObjectItemCaseSensitive(m_json, key.c_str());
+    auto item = cJSON_AS4CPP_GetObjectItemCaseSensitive(m_json, key.c_str());
     assert(item);
     return item->valuedouble;
 }
 
 double DocumentView::AsDouble() const
 {
-    assert(cJSON_IsNumber(m_json));
+    assert(cJSON_AS4CPP_IsNumber(m_json));
     return m_json->valuedouble;
 }
 
 bool DocumentView::IsFloatingPointType() const
 {
-    if (!cJSON_IsNumber(m_json))
+    if (!cJSON_AS4CPP_IsNumber(m_json))
     {
         return false;
     }
@@ -548,9 +548,9 @@ bool DocumentView::IsFloatingPointType() const
 Array<DocumentView> DocumentView::GetArray(const Aws::String& key) const
 {
     assert(m_json);
-    auto array = cJSON_GetObjectItemCaseSensitive(m_json, key.c_str());
-    assert(cJSON_IsArray(array));
-    Array<DocumentView> returnArray(cJSON_GetArraySize(array));
+    auto array = cJSON_AS4CPP_GetObjectItemCaseSensitive(m_json, key.c_str());
+    assert(cJSON_AS4CPP_IsArray(array));
+    Array<DocumentView> returnArray(cJSON_AS4CPP_GetArraySize(array));
 
     auto element = array->child;
     for (unsigned i = 0; element && i < returnArray.GetLength(); ++i, element = element->next)
@@ -563,8 +563,8 @@ Array<DocumentView> DocumentView::GetArray(const Aws::String& key) const
 
 Array<DocumentView> DocumentView::AsArray() const
 {
-    assert(cJSON_IsArray(m_json));
-    Array<DocumentView> returnArray(cJSON_GetArraySize(m_json));
+    assert(cJSON_AS4CPP_IsArray(m_json));
+    Array<DocumentView> returnArray(cJSON_AS4CPP_GetArraySize(m_json));
 
     auto element = m_json->child;
 
@@ -578,30 +578,30 @@ Array<DocumentView> DocumentView::AsArray() const
 
 bool DocumentView::IsListType() const
 {
-    return cJSON_IsArray(m_json) != 0;
+    return cJSON_AS4CPP_IsArray(m_json) != 0;
 }
 
 DocumentView DocumentView::GetObject(const Aws::String& key) const
 {
     assert(m_json);
-    auto item = cJSON_GetObjectItemCaseSensitive(m_json, key.c_str());
+    auto item = cJSON_AS4CPP_GetObjectItemCaseSensitive(m_json, key.c_str());
     return item;
 }
 
 DocumentView DocumentView::AsObject() const
 {
-    assert(cJSON_IsObject(m_json) || cJSON_IsNull(m_json));
+    assert(cJSON_AS4CPP_IsObject(m_json) || cJSON_AS4CPP_IsNull(m_json));
     return m_json;
 }
 
 bool DocumentView::IsObject() const
 {
-    return cJSON_IsObject(m_json) != 0;
+    return cJSON_AS4CPP_IsObject(m_json) != 0;
 }
 
 bool DocumentView::IsNull() const
 {
-    return cJSON_IsNull(m_json) != 0;
+    return cJSON_AS4CPP_IsNull(m_json) != 0;
 }
 
 Aws::Map<Aws::String, DocumentView> DocumentView::GetAllObjects() const
@@ -622,23 +622,23 @@ Aws::Map<Aws::String, DocumentView> DocumentView::GetAllObjects() const
 
 bool DocumentView::ValueExists(const Aws::String& key) const
 {
-    if (!cJSON_IsObject(m_json))
+    if (!cJSON_AS4CPP_IsObject(m_json))
     {
         return false;
     }
 
-    auto item = cJSON_GetObjectItemCaseSensitive(m_json, key.c_str());
-    return !(item == nullptr || cJSON_IsNull(item));
+    auto item = cJSON_AS4CPP_GetObjectItemCaseSensitive(m_json, key.c_str());
+    return !(item == nullptr || cJSON_AS4CPP_IsNull(item));
 }
 
 bool DocumentView::KeyExists(const Aws::String& key) const
 {
-    if (!cJSON_IsObject(m_json))
+    if (!cJSON_AS4CPP_IsObject(m_json))
     {
         return false;
     }
 
-    return cJSON_GetObjectItemCaseSensitive(m_json, key.c_str()) != nullptr;;
+    return cJSON_AS4CPP_GetObjectItemCaseSensitive(m_json, key.c_str()) != nullptr;;
 }
 
 Aws::String DocumentView::WriteCompact() const
@@ -648,9 +648,9 @@ Aws::String DocumentView::WriteCompact() const
         return "null";
     }
 
-    auto temp = cJSON_PrintUnformatted(m_json);
+    auto temp = cJSON_AS4CPP_PrintUnformatted(m_json);
     Aws::String out(temp);
-    cJSON_free(temp);
+    cJSON_AS4CPP_free(temp);
     return out;
 }
 
@@ -661,9 +661,9 @@ Aws::String DocumentView::WriteReadable() const
         return "null";
     }
 
-    auto temp = cJSON_Print(m_json);
+    auto temp = cJSON_AS4CPP_Print(m_json);
     Aws::String out(temp);
-    cJSON_free(temp);
+    cJSON_AS4CPP_free(temp);
     return out;
 }
 
