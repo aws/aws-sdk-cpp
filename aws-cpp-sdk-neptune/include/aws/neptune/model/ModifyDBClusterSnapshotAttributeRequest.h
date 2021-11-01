@@ -142,7 +142,7 @@ namespace Model
      * Amazon account IDs, or <code>all</code> to make the manual DB cluster snapshot
      * restorable by any Amazon account. Do not add the <code>all</code> value for any
      * manual DB cluster snapshots that contain private information that you don't want
-     * available to all AWS accounts.</p>
+     * available to all Amazon accounts.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValuesToAdd() const{ return m_valuesToAdd; }
 
@@ -153,7 +153,7 @@ namespace Model
      * Amazon account IDs, or <code>all</code> to make the manual DB cluster snapshot
      * restorable by any Amazon account. Do not add the <code>all</code> value for any
      * manual DB cluster snapshots that contain private information that you don't want
-     * available to all AWS accounts.</p>
+     * available to all Amazon accounts.</p>
      */
     inline bool ValuesToAddHasBeenSet() const { return m_valuesToAddHasBeenSet; }
 
@@ -164,7 +164,7 @@ namespace Model
      * Amazon account IDs, or <code>all</code> to make the manual DB cluster snapshot
      * restorable by any Amazon account. Do not add the <code>all</code> value for any
      * manual DB cluster snapshots that contain private information that you don't want
-     * available to all AWS accounts.</p>
+     * available to all Amazon accounts.</p>
      */
     inline void SetValuesToAdd(const Aws::Vector<Aws::String>& value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd = value; }
 
@@ -175,7 +175,7 @@ namespace Model
      * Amazon account IDs, or <code>all</code> to make the manual DB cluster snapshot
      * restorable by any Amazon account. Do not add the <code>all</code> value for any
      * manual DB cluster snapshots that contain private information that you don't want
-     * available to all AWS accounts.</p>
+     * available to all Amazon accounts.</p>
      */
     inline void SetValuesToAdd(Aws::Vector<Aws::String>&& value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd = std::move(value); }
 
@@ -186,7 +186,7 @@ namespace Model
      * Amazon account IDs, or <code>all</code> to make the manual DB cluster snapshot
      * restorable by any Amazon account. Do not add the <code>all</code> value for any
      * manual DB cluster snapshots that contain private information that you don't want
-     * available to all AWS accounts.</p>
+     * available to all Amazon accounts.</p>
      */
     inline ModifyDBClusterSnapshotAttributeRequest& WithValuesToAdd(const Aws::Vector<Aws::String>& value) { SetValuesToAdd(value); return *this;}
 
@@ -197,7 +197,7 @@ namespace Model
      * Amazon account IDs, or <code>all</code> to make the manual DB cluster snapshot
      * restorable by any Amazon account. Do not add the <code>all</code> value for any
      * manual DB cluster snapshots that contain private information that you don't want
-     * available to all AWS accounts.</p>
+     * available to all Amazon accounts.</p>
      */
     inline ModifyDBClusterSnapshotAttributeRequest& WithValuesToAdd(Aws::Vector<Aws::String>&& value) { SetValuesToAdd(std::move(value)); return *this;}
 
@@ -208,7 +208,7 @@ namespace Model
      * Amazon account IDs, or <code>all</code> to make the manual DB cluster snapshot
      * restorable by any Amazon account. Do not add the <code>all</code> value for any
      * manual DB cluster snapshots that contain private information that you don't want
-     * available to all AWS accounts.</p>
+     * available to all Amazon accounts.</p>
      */
     inline ModifyDBClusterSnapshotAttributeRequest& AddValuesToAdd(const Aws::String& value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd.push_back(value); return *this; }
 
@@ -219,7 +219,7 @@ namespace Model
      * Amazon account IDs, or <code>all</code> to make the manual DB cluster snapshot
      * restorable by any Amazon account. Do not add the <code>all</code> value for any
      * manual DB cluster snapshots that contain private information that you don't want
-     * available to all AWS accounts.</p>
+     * available to all Amazon accounts.</p>
      */
     inline ModifyDBClusterSnapshotAttributeRequest& AddValuesToAdd(Aws::String&& value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd.push_back(std::move(value)); return *this; }
 
@@ -230,7 +230,7 @@ namespace Model
      * Amazon account IDs, or <code>all</code> to make the manual DB cluster snapshot
      * restorable by any Amazon account. Do not add the <code>all</code> value for any
      * manual DB cluster snapshots that contain private information that you don't want
-     * available to all AWS accounts.</p>
+     * available to all Amazon accounts.</p>
      */
     inline ModifyDBClusterSnapshotAttributeRequest& AddValuesToAdd(const char* value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd.push_back(value); return *this; }
 

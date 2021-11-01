@@ -22,15 +22,18 @@
 #include <aws/rekognition/RekognitionErrorMarshaller.h>
 #include <aws/rekognition/model/CompareFacesRequest.h>
 #include <aws/rekognition/model/CreateCollectionRequest.h>
+#include <aws/rekognition/model/CreateDatasetRequest.h>
 #include <aws/rekognition/model/CreateProjectRequest.h>
 #include <aws/rekognition/model/CreateProjectVersionRequest.h>
 #include <aws/rekognition/model/CreateStreamProcessorRequest.h>
 #include <aws/rekognition/model/DeleteCollectionRequest.h>
+#include <aws/rekognition/model/DeleteDatasetRequest.h>
 #include <aws/rekognition/model/DeleteFacesRequest.h>
 #include <aws/rekognition/model/DeleteProjectRequest.h>
 #include <aws/rekognition/model/DeleteProjectVersionRequest.h>
 #include <aws/rekognition/model/DeleteStreamProcessorRequest.h>
 #include <aws/rekognition/model/DescribeCollectionRequest.h>
+#include <aws/rekognition/model/DescribeDatasetRequest.h>
 #include <aws/rekognition/model/DescribeProjectVersionsRequest.h>
 #include <aws/rekognition/model/DescribeProjectsRequest.h>
 #include <aws/rekognition/model/DescribeStreamProcessorRequest.h>
@@ -40,6 +43,7 @@
 #include <aws/rekognition/model/DetectModerationLabelsRequest.h>
 #include <aws/rekognition/model/DetectProtectiveEquipmentRequest.h>
 #include <aws/rekognition/model/DetectTextRequest.h>
+#include <aws/rekognition/model/DistributeDatasetEntriesRequest.h>
 #include <aws/rekognition/model/GetCelebrityInfoRequest.h>
 #include <aws/rekognition/model/GetCelebrityRecognitionRequest.h>
 #include <aws/rekognition/model/GetContentModerationRequest.h>
@@ -51,6 +55,8 @@
 #include <aws/rekognition/model/GetTextDetectionRequest.h>
 #include <aws/rekognition/model/IndexFacesRequest.h>
 #include <aws/rekognition/model/ListCollectionsRequest.h>
+#include <aws/rekognition/model/ListDatasetEntriesRequest.h>
+#include <aws/rekognition/model/ListDatasetLabelsRequest.h>
 #include <aws/rekognition/model/ListFacesRequest.h>
 #include <aws/rekognition/model/ListStreamProcessorsRequest.h>
 #include <aws/rekognition/model/ListTagsForResourceRequest.h>
@@ -71,6 +77,7 @@
 #include <aws/rekognition/model/StopStreamProcessorRequest.h>
 #include <aws/rekognition/model/TagResourceRequest.h>
 #include <aws/rekognition/model/UntagResourceRequest.h>
+#include <aws/rekognition/model/UpdateDatasetEntriesRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -193,6 +200,30 @@ void RekognitionClient::CreateCollectionAsyncHelper(const CreateCollectionReques
   handler(this, request, CreateCollection(request), context);
 }
 
+CreateDatasetOutcome RekognitionClient::CreateDataset(const CreateDatasetRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateDatasetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateDatasetOutcomeCallable RekognitionClient::CreateDatasetCallable(const CreateDatasetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDataset(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RekognitionClient::CreateDatasetAsync(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDatasetAsyncHelper( request, handler, context ); } );
+}
+
+void RekognitionClient::CreateDatasetAsyncHelper(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateDataset(request), context);
+}
+
 CreateProjectOutcome RekognitionClient::CreateProject(const CreateProjectRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -287,6 +318,30 @@ void RekognitionClient::DeleteCollectionAsync(const DeleteCollectionRequest& req
 void RekognitionClient::DeleteCollectionAsyncHelper(const DeleteCollectionRequest& request, const DeleteCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteCollection(request), context);
+}
+
+DeleteDatasetOutcome RekognitionClient::DeleteDataset(const DeleteDatasetRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteDatasetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteDatasetOutcomeCallable RekognitionClient::DeleteDatasetCallable(const DeleteDatasetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDataset(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RekognitionClient::DeleteDatasetAsync(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteDatasetAsyncHelper( request, handler, context ); } );
+}
+
+void RekognitionClient::DeleteDatasetAsyncHelper(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteDataset(request), context);
 }
 
 DeleteFacesOutcome RekognitionClient::DeleteFaces(const DeleteFacesRequest& request) const
@@ -407,6 +462,30 @@ void RekognitionClient::DescribeCollectionAsync(const DescribeCollectionRequest&
 void RekognitionClient::DescribeCollectionAsyncHelper(const DescribeCollectionRequest& request, const DescribeCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeCollection(request), context);
+}
+
+DescribeDatasetOutcome RekognitionClient::DescribeDataset(const DescribeDatasetRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeDatasetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeDatasetOutcomeCallable RekognitionClient::DescribeDatasetCallable(const DescribeDatasetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDatasetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDataset(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RekognitionClient::DescribeDatasetAsync(const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDatasetAsyncHelper( request, handler, context ); } );
+}
+
+void RekognitionClient::DescribeDatasetAsyncHelper(const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDataset(request), context);
 }
 
 DescribeProjectVersionsOutcome RekognitionClient::DescribeProjectVersions(const DescribeProjectVersionsRequest& request) const
@@ -623,6 +702,30 @@ void RekognitionClient::DetectTextAsync(const DetectTextRequest& request, const 
 void RekognitionClient::DetectTextAsyncHelper(const DetectTextRequest& request, const DetectTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DetectText(request), context);
+}
+
+DistributeDatasetEntriesOutcome RekognitionClient::DistributeDatasetEntries(const DistributeDatasetEntriesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DistributeDatasetEntriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DistributeDatasetEntriesOutcomeCallable RekognitionClient::DistributeDatasetEntriesCallable(const DistributeDatasetEntriesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DistributeDatasetEntriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DistributeDatasetEntries(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RekognitionClient::DistributeDatasetEntriesAsync(const DistributeDatasetEntriesRequest& request, const DistributeDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DistributeDatasetEntriesAsyncHelper( request, handler, context ); } );
+}
+
+void RekognitionClient::DistributeDatasetEntriesAsyncHelper(const DistributeDatasetEntriesRequest& request, const DistributeDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DistributeDatasetEntries(request), context);
 }
 
 GetCelebrityInfoOutcome RekognitionClient::GetCelebrityInfo(const GetCelebrityInfoRequest& request) const
@@ -887,6 +990,54 @@ void RekognitionClient::ListCollectionsAsync(const ListCollectionsRequest& reque
 void RekognitionClient::ListCollectionsAsyncHelper(const ListCollectionsRequest& request, const ListCollectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListCollections(request), context);
+}
+
+ListDatasetEntriesOutcome RekognitionClient::ListDatasetEntries(const ListDatasetEntriesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListDatasetEntriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListDatasetEntriesOutcomeCallable RekognitionClient::ListDatasetEntriesCallable(const ListDatasetEntriesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDatasetEntriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDatasetEntries(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RekognitionClient::ListDatasetEntriesAsync(const ListDatasetEntriesRequest& request, const ListDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListDatasetEntriesAsyncHelper( request, handler, context ); } );
+}
+
+void RekognitionClient::ListDatasetEntriesAsyncHelper(const ListDatasetEntriesRequest& request, const ListDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListDatasetEntries(request), context);
+}
+
+ListDatasetLabelsOutcome RekognitionClient::ListDatasetLabels(const ListDatasetLabelsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListDatasetLabelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListDatasetLabelsOutcomeCallable RekognitionClient::ListDatasetLabelsCallable(const ListDatasetLabelsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDatasetLabelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDatasetLabels(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RekognitionClient::ListDatasetLabelsAsync(const ListDatasetLabelsRequest& request, const ListDatasetLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListDatasetLabelsAsyncHelper( request, handler, context ); } );
+}
+
+void RekognitionClient::ListDatasetLabelsAsyncHelper(const ListDatasetLabelsRequest& request, const ListDatasetLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListDatasetLabels(request), context);
 }
 
 ListFacesOutcome RekognitionClient::ListFaces(const ListFacesRequest& request) const
@@ -1367,5 +1518,29 @@ void RekognitionClient::UntagResourceAsync(const UntagResourceRequest& request, 
 void RekognitionClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateDatasetEntriesOutcome RekognitionClient::UpdateDatasetEntries(const UpdateDatasetEntriesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateDatasetEntriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateDatasetEntriesOutcomeCallable RekognitionClient::UpdateDatasetEntriesCallable(const UpdateDatasetEntriesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDatasetEntriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDatasetEntries(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RekognitionClient::UpdateDatasetEntriesAsync(const UpdateDatasetEntriesRequest& request, const UpdateDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateDatasetEntriesAsyncHelper( request, handler, context ); } );
+}
+
+void RekognitionClient::UpdateDatasetEntriesAsyncHelper(const UpdateDatasetEntriesRequest& request, const UpdateDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateDatasetEntries(request), context);
 }
 

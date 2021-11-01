@@ -802,6 +802,144 @@ namespace Model
 
 
     /**
+     * <p>A value that indicates whether upgrades between different major versions are
+     * allowed.</p> <p>Constraints: You must set the allow-major-version-upgrade flag
+     * when providing an <code>EngineVersion</code> parameter that uses a different
+     * major version than the DB cluster's current version.</p>
+     */
+    inline bool GetAllowMajorVersionUpgrade() const{ return m_allowMajorVersionUpgrade; }
+
+    /**
+     * <p>A value that indicates whether upgrades between different major versions are
+     * allowed.</p> <p>Constraints: You must set the allow-major-version-upgrade flag
+     * when providing an <code>EngineVersion</code> parameter that uses a different
+     * major version than the DB cluster's current version.</p>
+     */
+    inline bool AllowMajorVersionUpgradeHasBeenSet() const { return m_allowMajorVersionUpgradeHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether upgrades between different major versions are
+     * allowed.</p> <p>Constraints: You must set the allow-major-version-upgrade flag
+     * when providing an <code>EngineVersion</code> parameter that uses a different
+     * major version than the DB cluster's current version.</p>
+     */
+    inline void SetAllowMajorVersionUpgrade(bool value) { m_allowMajorVersionUpgradeHasBeenSet = true; m_allowMajorVersionUpgrade = value; }
+
+    /**
+     * <p>A value that indicates whether upgrades between different major versions are
+     * allowed.</p> <p>Constraints: You must set the allow-major-version-upgrade flag
+     * when providing an <code>EngineVersion</code> parameter that uses a different
+     * major version than the DB cluster's current version.</p>
+     */
+    inline ModifyDBClusterRequest& WithAllowMajorVersionUpgrade(bool value) { SetAllowMajorVersionUpgrade(value); return *this;}
+
+
+    /**
+     * <p>The name of the DB parameter group to apply to all instances of the DB
+     * cluster. </p>  <p>When you apply a parameter group using
+     * <code>DBInstanceParameterGroupName</code>, parameter changes aren't applied
+     * during the next maintenance window but instead are applied immediately.</p>
+     *  <p>Default: The existing name setting</p> <p>Constraints:</p> <ul> <li>
+     * <p>The DB parameter group must be in the same DB parameter group family as the
+     * target DB cluster version.</p> </li> <li> <p>The
+     * <code>DBInstanceParameterGroupName</code> parameter is only valid in combination
+     * with the <code>AllowMajorVersionUpgrade</code> parameter.</p> </li> </ul>
+     */
+    inline const Aws::String& GetDBInstanceParameterGroupName() const{ return m_dBInstanceParameterGroupName; }
+
+    /**
+     * <p>The name of the DB parameter group to apply to all instances of the DB
+     * cluster. </p>  <p>When you apply a parameter group using
+     * <code>DBInstanceParameterGroupName</code>, parameter changes aren't applied
+     * during the next maintenance window but instead are applied immediately.</p>
+     *  <p>Default: The existing name setting</p> <p>Constraints:</p> <ul> <li>
+     * <p>The DB parameter group must be in the same DB parameter group family as the
+     * target DB cluster version.</p> </li> <li> <p>The
+     * <code>DBInstanceParameterGroupName</code> parameter is only valid in combination
+     * with the <code>AllowMajorVersionUpgrade</code> parameter.</p> </li> </ul>
+     */
+    inline bool DBInstanceParameterGroupNameHasBeenSet() const { return m_dBInstanceParameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the DB parameter group to apply to all instances of the DB
+     * cluster. </p>  <p>When you apply a parameter group using
+     * <code>DBInstanceParameterGroupName</code>, parameter changes aren't applied
+     * during the next maintenance window but instead are applied immediately.</p>
+     *  <p>Default: The existing name setting</p> <p>Constraints:</p> <ul> <li>
+     * <p>The DB parameter group must be in the same DB parameter group family as the
+     * target DB cluster version.</p> </li> <li> <p>The
+     * <code>DBInstanceParameterGroupName</code> parameter is only valid in combination
+     * with the <code>AllowMajorVersionUpgrade</code> parameter.</p> </li> </ul>
+     */
+    inline void SetDBInstanceParameterGroupName(const Aws::String& value) { m_dBInstanceParameterGroupNameHasBeenSet = true; m_dBInstanceParameterGroupName = value; }
+
+    /**
+     * <p>The name of the DB parameter group to apply to all instances of the DB
+     * cluster. </p>  <p>When you apply a parameter group using
+     * <code>DBInstanceParameterGroupName</code>, parameter changes aren't applied
+     * during the next maintenance window but instead are applied immediately.</p>
+     *  <p>Default: The existing name setting</p> <p>Constraints:</p> <ul> <li>
+     * <p>The DB parameter group must be in the same DB parameter group family as the
+     * target DB cluster version.</p> </li> <li> <p>The
+     * <code>DBInstanceParameterGroupName</code> parameter is only valid in combination
+     * with the <code>AllowMajorVersionUpgrade</code> parameter.</p> </li> </ul>
+     */
+    inline void SetDBInstanceParameterGroupName(Aws::String&& value) { m_dBInstanceParameterGroupNameHasBeenSet = true; m_dBInstanceParameterGroupName = std::move(value); }
+
+    /**
+     * <p>The name of the DB parameter group to apply to all instances of the DB
+     * cluster. </p>  <p>When you apply a parameter group using
+     * <code>DBInstanceParameterGroupName</code>, parameter changes aren't applied
+     * during the next maintenance window but instead are applied immediately.</p>
+     *  <p>Default: The existing name setting</p> <p>Constraints:</p> <ul> <li>
+     * <p>The DB parameter group must be in the same DB parameter group family as the
+     * target DB cluster version.</p> </li> <li> <p>The
+     * <code>DBInstanceParameterGroupName</code> parameter is only valid in combination
+     * with the <code>AllowMajorVersionUpgrade</code> parameter.</p> </li> </ul>
+     */
+    inline void SetDBInstanceParameterGroupName(const char* value) { m_dBInstanceParameterGroupNameHasBeenSet = true; m_dBInstanceParameterGroupName.assign(value); }
+
+    /**
+     * <p>The name of the DB parameter group to apply to all instances of the DB
+     * cluster. </p>  <p>When you apply a parameter group using
+     * <code>DBInstanceParameterGroupName</code>, parameter changes aren't applied
+     * during the next maintenance window but instead are applied immediately.</p>
+     *  <p>Default: The existing name setting</p> <p>Constraints:</p> <ul> <li>
+     * <p>The DB parameter group must be in the same DB parameter group family as the
+     * target DB cluster version.</p> </li> <li> <p>The
+     * <code>DBInstanceParameterGroupName</code> parameter is only valid in combination
+     * with the <code>AllowMajorVersionUpgrade</code> parameter.</p> </li> </ul>
+     */
+    inline ModifyDBClusterRequest& WithDBInstanceParameterGroupName(const Aws::String& value) { SetDBInstanceParameterGroupName(value); return *this;}
+
+    /**
+     * <p>The name of the DB parameter group to apply to all instances of the DB
+     * cluster. </p>  <p>When you apply a parameter group using
+     * <code>DBInstanceParameterGroupName</code>, parameter changes aren't applied
+     * during the next maintenance window but instead are applied immediately.</p>
+     *  <p>Default: The existing name setting</p> <p>Constraints:</p> <ul> <li>
+     * <p>The DB parameter group must be in the same DB parameter group family as the
+     * target DB cluster version.</p> </li> <li> <p>The
+     * <code>DBInstanceParameterGroupName</code> parameter is only valid in combination
+     * with the <code>AllowMajorVersionUpgrade</code> parameter.</p> </li> </ul>
+     */
+    inline ModifyDBClusterRequest& WithDBInstanceParameterGroupName(Aws::String&& value) { SetDBInstanceParameterGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the DB parameter group to apply to all instances of the DB
+     * cluster. </p>  <p>When you apply a parameter group using
+     * <code>DBInstanceParameterGroupName</code>, parameter changes aren't applied
+     * during the next maintenance window but instead are applied immediately.</p>
+     *  <p>Default: The existing name setting</p> <p>Constraints:</p> <ul> <li>
+     * <p>The DB parameter group must be in the same DB parameter group family as the
+     * target DB cluster version.</p> </li> <li> <p>The
+     * <code>DBInstanceParameterGroupName</code> parameter is only valid in combination
+     * with the <code>AllowMajorVersionUpgrade</code> parameter.</p> </li> </ul>
+     */
+    inline ModifyDBClusterRequest& WithDBInstanceParameterGroupName(const char* value) { SetDBInstanceParameterGroupName(value); return *this;}
+
+
+    /**
      * <p>A value that indicates whether the DB cluster has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
      * default, deletion protection is disabled.</p>
@@ -897,6 +1035,12 @@ namespace Model
 
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
+    bool m_allowMajorVersionUpgrade;
+    bool m_allowMajorVersionUpgradeHasBeenSet;
+
+    Aws::String m_dBInstanceParameterGroupName;
+    bool m_dBInstanceParameterGroupNameHasBeenSet;
 
     bool m_deletionProtection;
     bool m_deletionProtectionHasBeenSet;

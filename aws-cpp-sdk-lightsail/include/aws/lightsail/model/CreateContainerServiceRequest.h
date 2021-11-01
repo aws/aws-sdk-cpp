@@ -291,72 +291,72 @@ namespace Model
 
 
     /**
-     * <p>The tag keys and optional values to add to the certificate during create.</p>
-     * <p>Use the <code>TagResource</code> action to tag a resource after it's
-     * created.</p> <p>For more information about tags in Lightsail, see the <a
+     * <p>The tag keys and optional values to add to the container service during
+     * create.</p> <p>Use the <code>TagResource</code> action to tag a resource after
+     * it's created.</p> <p>For more information about tags in Lightsail, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
      * Lightsail Developer Guide</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tag keys and optional values to add to the certificate during create.</p>
-     * <p>Use the <code>TagResource</code> action to tag a resource after it's
-     * created.</p> <p>For more information about tags in Lightsail, see the <a
+     * <p>The tag keys and optional values to add to the container service during
+     * create.</p> <p>Use the <code>TagResource</code> action to tag a resource after
+     * it's created.</p> <p>For more information about tags in Lightsail, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
      * Lightsail Developer Guide</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tag keys and optional values to add to the certificate during create.</p>
-     * <p>Use the <code>TagResource</code> action to tag a resource after it's
-     * created.</p> <p>For more information about tags in Lightsail, see the <a
+     * <p>The tag keys and optional values to add to the container service during
+     * create.</p> <p>Use the <code>TagResource</code> action to tag a resource after
+     * it's created.</p> <p>For more information about tags in Lightsail, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
      * Lightsail Developer Guide</a>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tag keys and optional values to add to the certificate during create.</p>
-     * <p>Use the <code>TagResource</code> action to tag a resource after it's
-     * created.</p> <p>For more information about tags in Lightsail, see the <a
+     * <p>The tag keys and optional values to add to the container service during
+     * create.</p> <p>Use the <code>TagResource</code> action to tag a resource after
+     * it's created.</p> <p>For more information about tags in Lightsail, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
      * Lightsail Developer Guide</a>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tag keys and optional values to add to the certificate during create.</p>
-     * <p>Use the <code>TagResource</code> action to tag a resource after it's
-     * created.</p> <p>For more information about tags in Lightsail, see the <a
+     * <p>The tag keys and optional values to add to the container service during
+     * create.</p> <p>Use the <code>TagResource</code> action to tag a resource after
+     * it's created.</p> <p>For more information about tags in Lightsail, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
      * Lightsail Developer Guide</a>.</p>
      */
     inline CreateContainerServiceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tag keys and optional values to add to the certificate during create.</p>
-     * <p>Use the <code>TagResource</code> action to tag a resource after it's
-     * created.</p> <p>For more information about tags in Lightsail, see the <a
+     * <p>The tag keys and optional values to add to the container service during
+     * create.</p> <p>Use the <code>TagResource</code> action to tag a resource after
+     * it's created.</p> <p>For more information about tags in Lightsail, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
      * Lightsail Developer Guide</a>.</p>
      */
     inline CreateContainerServiceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tag keys and optional values to add to the certificate during create.</p>
-     * <p>Use the <code>TagResource</code> action to tag a resource after it's
-     * created.</p> <p>For more information about tags in Lightsail, see the <a
+     * <p>The tag keys and optional values to add to the container service during
+     * create.</p> <p>Use the <code>TagResource</code> action to tag a resource after
+     * it's created.</p> <p>For more information about tags in Lightsail, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
      * Lightsail Developer Guide</a>.</p>
      */
     inline CreateContainerServiceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The tag keys and optional values to add to the certificate during create.</p>
-     * <p>Use the <code>TagResource</code> action to tag a resource after it's
-     * created.</p> <p>For more information about tags in Lightsail, see the <a
+     * <p>The tag keys and optional values to add to the container service during
+     * create.</p> <p>Use the <code>TagResource</code> action to tag a resource after
+     * it's created.</p> <p>For more information about tags in Lightsail, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
      * Lightsail Developer Guide</a>.</p>
      */

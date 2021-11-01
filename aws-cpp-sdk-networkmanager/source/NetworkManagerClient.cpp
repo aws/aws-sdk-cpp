@@ -43,17 +43,25 @@
 #include <aws/networkmanager/model/GetDevicesRequest.h>
 #include <aws/networkmanager/model/GetLinkAssociationsRequest.h>
 #include <aws/networkmanager/model/GetLinksRequest.h>
+#include <aws/networkmanager/model/GetNetworkResourceCountsRequest.h>
+#include <aws/networkmanager/model/GetNetworkResourceRelationshipsRequest.h>
+#include <aws/networkmanager/model/GetNetworkResourcesRequest.h>
+#include <aws/networkmanager/model/GetNetworkRoutesRequest.h>
+#include <aws/networkmanager/model/GetNetworkTelemetryRequest.h>
+#include <aws/networkmanager/model/GetRouteAnalysisRequest.h>
 #include <aws/networkmanager/model/GetSitesRequest.h>
 #include <aws/networkmanager/model/GetTransitGatewayConnectPeerAssociationsRequest.h>
 #include <aws/networkmanager/model/GetTransitGatewayRegistrationsRequest.h>
 #include <aws/networkmanager/model/ListTagsForResourceRequest.h>
 #include <aws/networkmanager/model/RegisterTransitGatewayRequest.h>
+#include <aws/networkmanager/model/StartRouteAnalysisRequest.h>
 #include <aws/networkmanager/model/TagResourceRequest.h>
 #include <aws/networkmanager/model/UntagResourceRequest.h>
 #include <aws/networkmanager/model/UpdateConnectionRequest.h>
 #include <aws/networkmanager/model/UpdateDeviceRequest.h>
 #include <aws/networkmanager/model/UpdateGlobalNetworkRequest.h>
 #include <aws/networkmanager/model/UpdateLinkRequest.h>
+#include <aws/networkmanager/model/UpdateNetworkResourceMetadataRequest.h>
 #include <aws/networkmanager/model/UpdateSiteRequest.h>
 
 using namespace Aws;
@@ -902,6 +910,204 @@ void NetworkManagerClient::GetLinksAsyncHelper(const GetLinksRequest& request, c
   handler(this, request, GetLinks(request), context);
 }
 
+GetNetworkResourceCountsOutcome NetworkManagerClient::GetNetworkResourceCounts(const GetNetworkResourceCountsRequest& request) const
+{
+  if (!request.GlobalNetworkIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetNetworkResourceCounts", "Required field: GlobalNetworkId, is not set");
+    return GetNetworkResourceCountsOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/network-resource-count");
+  return GetNetworkResourceCountsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetNetworkResourceCountsOutcomeCallable NetworkManagerClient::GetNetworkResourceCountsCallable(const GetNetworkResourceCountsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetNetworkResourceCountsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetNetworkResourceCounts(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NetworkManagerClient::GetNetworkResourceCountsAsync(const GetNetworkResourceCountsRequest& request, const GetNetworkResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetNetworkResourceCountsAsyncHelper( request, handler, context ); } );
+}
+
+void NetworkManagerClient::GetNetworkResourceCountsAsyncHelper(const GetNetworkResourceCountsRequest& request, const GetNetworkResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetNetworkResourceCounts(request), context);
+}
+
+GetNetworkResourceRelationshipsOutcome NetworkManagerClient::GetNetworkResourceRelationships(const GetNetworkResourceRelationshipsRequest& request) const
+{
+  if (!request.GlobalNetworkIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetNetworkResourceRelationships", "Required field: GlobalNetworkId, is not set");
+    return GetNetworkResourceRelationshipsOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/network-resource-relationships");
+  return GetNetworkResourceRelationshipsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetNetworkResourceRelationshipsOutcomeCallable NetworkManagerClient::GetNetworkResourceRelationshipsCallable(const GetNetworkResourceRelationshipsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetNetworkResourceRelationshipsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetNetworkResourceRelationships(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NetworkManagerClient::GetNetworkResourceRelationshipsAsync(const GetNetworkResourceRelationshipsRequest& request, const GetNetworkResourceRelationshipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetNetworkResourceRelationshipsAsyncHelper( request, handler, context ); } );
+}
+
+void NetworkManagerClient::GetNetworkResourceRelationshipsAsyncHelper(const GetNetworkResourceRelationshipsRequest& request, const GetNetworkResourceRelationshipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetNetworkResourceRelationships(request), context);
+}
+
+GetNetworkResourcesOutcome NetworkManagerClient::GetNetworkResources(const GetNetworkResourcesRequest& request) const
+{
+  if (!request.GlobalNetworkIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetNetworkResources", "Required field: GlobalNetworkId, is not set");
+    return GetNetworkResourcesOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/network-resources");
+  return GetNetworkResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetNetworkResourcesOutcomeCallable NetworkManagerClient::GetNetworkResourcesCallable(const GetNetworkResourcesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetNetworkResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetNetworkResources(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NetworkManagerClient::GetNetworkResourcesAsync(const GetNetworkResourcesRequest& request, const GetNetworkResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetNetworkResourcesAsyncHelper( request, handler, context ); } );
+}
+
+void NetworkManagerClient::GetNetworkResourcesAsyncHelper(const GetNetworkResourcesRequest& request, const GetNetworkResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetNetworkResources(request), context);
+}
+
+GetNetworkRoutesOutcome NetworkManagerClient::GetNetworkRoutes(const GetNetworkRoutesRequest& request) const
+{
+  if (!request.GlobalNetworkIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetNetworkRoutes", "Required field: GlobalNetworkId, is not set");
+    return GetNetworkRoutesOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/network-routes");
+  return GetNetworkRoutesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetNetworkRoutesOutcomeCallable NetworkManagerClient::GetNetworkRoutesCallable(const GetNetworkRoutesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetNetworkRoutesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetNetworkRoutes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NetworkManagerClient::GetNetworkRoutesAsync(const GetNetworkRoutesRequest& request, const GetNetworkRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetNetworkRoutesAsyncHelper( request, handler, context ); } );
+}
+
+void NetworkManagerClient::GetNetworkRoutesAsyncHelper(const GetNetworkRoutesRequest& request, const GetNetworkRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetNetworkRoutes(request), context);
+}
+
+GetNetworkTelemetryOutcome NetworkManagerClient::GetNetworkTelemetry(const GetNetworkTelemetryRequest& request) const
+{
+  if (!request.GlobalNetworkIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetNetworkTelemetry", "Required field: GlobalNetworkId, is not set");
+    return GetNetworkTelemetryOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/network-telemetry");
+  return GetNetworkTelemetryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetNetworkTelemetryOutcomeCallable NetworkManagerClient::GetNetworkTelemetryCallable(const GetNetworkTelemetryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetNetworkTelemetryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetNetworkTelemetry(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NetworkManagerClient::GetNetworkTelemetryAsync(const GetNetworkTelemetryRequest& request, const GetNetworkTelemetryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetNetworkTelemetryAsyncHelper( request, handler, context ); } );
+}
+
+void NetworkManagerClient::GetNetworkTelemetryAsyncHelper(const GetNetworkTelemetryRequest& request, const GetNetworkTelemetryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetNetworkTelemetry(request), context);
+}
+
+GetRouteAnalysisOutcome NetworkManagerClient::GetRouteAnalysis(const GetRouteAnalysisRequest& request) const
+{
+  if (!request.GlobalNetworkIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetRouteAnalysis", "Required field: GlobalNetworkId, is not set");
+    return GetRouteAnalysisOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
+  }
+  if (!request.RouteAnalysisIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetRouteAnalysis", "Required field: RouteAnalysisId, is not set");
+    return GetRouteAnalysisOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RouteAnalysisId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/route-analyses/");
+  uri.AddPathSegment(request.GetRouteAnalysisId());
+  return GetRouteAnalysisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetRouteAnalysisOutcomeCallable NetworkManagerClient::GetRouteAnalysisCallable(const GetRouteAnalysisRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRouteAnalysisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRouteAnalysis(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NetworkManagerClient::GetRouteAnalysisAsync(const GetRouteAnalysisRequest& request, const GetRouteAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRouteAnalysisAsyncHelper( request, handler, context ); } );
+}
+
+void NetworkManagerClient::GetRouteAnalysisAsyncHelper(const GetRouteAnalysisRequest& request, const GetRouteAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRouteAnalysis(request), context);
+}
+
 GetSitesOutcome NetworkManagerClient::GetSites(const GetSitesRequest& request) const
 {
   if (!request.GlobalNetworkIdHasBeenSet())
@@ -1059,6 +1265,38 @@ void NetworkManagerClient::RegisterTransitGatewayAsync(const RegisterTransitGate
 void NetworkManagerClient::RegisterTransitGatewayAsyncHelper(const RegisterTransitGatewayRequest& request, const RegisterTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RegisterTransitGateway(request), context);
+}
+
+StartRouteAnalysisOutcome NetworkManagerClient::StartRouteAnalysis(const StartRouteAnalysisRequest& request) const
+{
+  if (!request.GlobalNetworkIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartRouteAnalysis", "Required field: GlobalNetworkId, is not set");
+    return StartRouteAnalysisOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/route-analyses");
+  return StartRouteAnalysisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartRouteAnalysisOutcomeCallable NetworkManagerClient::StartRouteAnalysisCallable(const StartRouteAnalysisRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartRouteAnalysisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartRouteAnalysis(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NetworkManagerClient::StartRouteAnalysisAsync(const StartRouteAnalysisRequest& request, const StartRouteAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartRouteAnalysisAsyncHelper( request, handler, context ); } );
+}
+
+void NetworkManagerClient::StartRouteAnalysisAsyncHelper(const StartRouteAnalysisRequest& request, const StartRouteAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartRouteAnalysis(request), context);
 }
 
 TagResourceOutcome NetworkManagerClient::TagResource(const TagResourceRequest& request) const
@@ -1271,6 +1509,45 @@ void NetworkManagerClient::UpdateLinkAsync(const UpdateLinkRequest& request, con
 void NetworkManagerClient::UpdateLinkAsyncHelper(const UpdateLinkRequest& request, const UpdateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateLink(request), context);
+}
+
+UpdateNetworkResourceMetadataOutcome NetworkManagerClient::UpdateNetworkResourceMetadata(const UpdateNetworkResourceMetadataRequest& request) const
+{
+  if (!request.GlobalNetworkIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateNetworkResourceMetadata", "Required field: GlobalNetworkId, is not set");
+    return UpdateNetworkResourceMetadataOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
+  }
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateNetworkResourceMetadata", "Required field: ResourceArn, is not set");
+    return UpdateNetworkResourceMetadataOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/network-resources/");
+  uri.AddPathSegment(request.GetResourceArn());
+  uri.AddPathSegments("/metadata");
+  return UpdateNetworkResourceMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateNetworkResourceMetadataOutcomeCallable NetworkManagerClient::UpdateNetworkResourceMetadataCallable(const UpdateNetworkResourceMetadataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateNetworkResourceMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateNetworkResourceMetadata(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NetworkManagerClient::UpdateNetworkResourceMetadataAsync(const UpdateNetworkResourceMetadataRequest& request, const UpdateNetworkResourceMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateNetworkResourceMetadataAsyncHelper( request, handler, context ); } );
+}
+
+void NetworkManagerClient::UpdateNetworkResourceMetadataAsyncHelper(const UpdateNetworkResourceMetadataRequest& request, const UpdateNetworkResourceMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateNetworkResourceMetadata(request), context);
 }
 
 UpdateSiteOutcome NetworkManagerClient::UpdateSite(const UpdateSiteRequest& request) const

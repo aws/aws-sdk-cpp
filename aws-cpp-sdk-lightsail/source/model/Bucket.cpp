@@ -34,7 +34,8 @@ Bucket::Bucket() :
     m_ableToUpdateBundleHasBeenSet(false),
     m_readonlyAccessAccountsHasBeenSet(false),
     m_resourcesReceivingAccessHasBeenSet(false),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_accessLogConfigHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ Bucket::Bucket(JsonView jsonValue) :
     m_ableToUpdateBundleHasBeenSet(false),
     m_readonlyAccessAccountsHasBeenSet(false),
     m_resourcesReceivingAccessHasBeenSet(false),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_accessLogConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -175,6 +177,13 @@ Bucket& Bucket::operator =(JsonView jsonValue)
     m_stateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("accessLogConfig"))
+  {
+    m_accessLogConfig = jsonValue.GetObject("accessLogConfig");
+
+    m_accessLogConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -283,6 +292,12 @@ JsonValue Bucket::Jsonize() const
   if(m_stateHasBeenSet)
   {
    payload.WithObject("state", m_state.Jsonize());
+
+  }
+
+  if(m_accessLogConfigHasBeenSet)
+  {
+   payload.WithObject("accessLogConfig", m_accessLogConfig.Jsonize());
 
   }
 

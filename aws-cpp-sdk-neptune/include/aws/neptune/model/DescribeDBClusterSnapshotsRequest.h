@@ -197,7 +197,7 @@ namespace Model
      * following values:</p> <ul> <li> <p> <code>automated</code> - Return all DB
      * cluster snapshots that have been automatically taken by Amazon Neptune for my
      * Amazon account.</p> </li> <li> <p> <code>manual</code> - Return all DB cluster
-     * snapshots that have been taken by my AWS account.</p> </li> <li> <p>
+     * snapshots that have been taken by my Amazon account.</p> </li> <li> <p>
      * <code>shared</code> - Return all manual DB cluster snapshots that have been
      * shared to my Amazon account.</p> </li> <li> <p> <code>public</code> - Return all
      * DB cluster snapshots that have been marked as public.</p> </li> </ul> <p>If you
@@ -221,7 +221,7 @@ namespace Model
      * following values:</p> <ul> <li> <p> <code>automated</code> - Return all DB
      * cluster snapshots that have been automatically taken by Amazon Neptune for my
      * Amazon account.</p> </li> <li> <p> <code>manual</code> - Return all DB cluster
-     * snapshots that have been taken by my AWS account.</p> </li> <li> <p>
+     * snapshots that have been taken by my Amazon account.</p> </li> <li> <p>
      * <code>shared</code> - Return all manual DB cluster snapshots that have been
      * shared to my Amazon account.</p> </li> <li> <p> <code>public</code> - Return all
      * DB cluster snapshots that have been marked as public.</p> </li> </ul> <p>If you
@@ -245,7 +245,7 @@ namespace Model
      * following values:</p> <ul> <li> <p> <code>automated</code> - Return all DB
      * cluster snapshots that have been automatically taken by Amazon Neptune for my
      * Amazon account.</p> </li> <li> <p> <code>manual</code> - Return all DB cluster
-     * snapshots that have been taken by my AWS account.</p> </li> <li> <p>
+     * snapshots that have been taken by my Amazon account.</p> </li> <li> <p>
      * <code>shared</code> - Return all manual DB cluster snapshots that have been
      * shared to my Amazon account.</p> </li> <li> <p> <code>public</code> - Return all
      * DB cluster snapshots that have been marked as public.</p> </li> </ul> <p>If you
@@ -269,7 +269,7 @@ namespace Model
      * following values:</p> <ul> <li> <p> <code>automated</code> - Return all DB
      * cluster snapshots that have been automatically taken by Amazon Neptune for my
      * Amazon account.</p> </li> <li> <p> <code>manual</code> - Return all DB cluster
-     * snapshots that have been taken by my AWS account.</p> </li> <li> <p>
+     * snapshots that have been taken by my Amazon account.</p> </li> <li> <p>
      * <code>shared</code> - Return all manual DB cluster snapshots that have been
      * shared to my Amazon account.</p> </li> <li> <p> <code>public</code> - Return all
      * DB cluster snapshots that have been marked as public.</p> </li> </ul> <p>If you
@@ -293,7 +293,7 @@ namespace Model
      * following values:</p> <ul> <li> <p> <code>automated</code> - Return all DB
      * cluster snapshots that have been automatically taken by Amazon Neptune for my
      * Amazon account.</p> </li> <li> <p> <code>manual</code> - Return all DB cluster
-     * snapshots that have been taken by my AWS account.</p> </li> <li> <p>
+     * snapshots that have been taken by my Amazon account.</p> </li> <li> <p>
      * <code>shared</code> - Return all manual DB cluster snapshots that have been
      * shared to my Amazon account.</p> </li> <li> <p> <code>public</code> - Return all
      * DB cluster snapshots that have been marked as public.</p> </li> </ul> <p>If you
@@ -317,7 +317,7 @@ namespace Model
      * following values:</p> <ul> <li> <p> <code>automated</code> - Return all DB
      * cluster snapshots that have been automatically taken by Amazon Neptune for my
      * Amazon account.</p> </li> <li> <p> <code>manual</code> - Return all DB cluster
-     * snapshots that have been taken by my AWS account.</p> </li> <li> <p>
+     * snapshots that have been taken by my Amazon account.</p> </li> <li> <p>
      * <code>shared</code> - Return all manual DB cluster snapshots that have been
      * shared to my Amazon account.</p> </li> <li> <p> <code>public</code> - Return all
      * DB cluster snapshots that have been marked as public.</p> </li> </ul> <p>If you
@@ -341,7 +341,7 @@ namespace Model
      * following values:</p> <ul> <li> <p> <code>automated</code> - Return all DB
      * cluster snapshots that have been automatically taken by Amazon Neptune for my
      * Amazon account.</p> </li> <li> <p> <code>manual</code> - Return all DB cluster
-     * snapshots that have been taken by my AWS account.</p> </li> <li> <p>
+     * snapshots that have been taken by my Amazon account.</p> </li> <li> <p>
      * <code>shared</code> - Return all manual DB cluster snapshots that have been
      * shared to my Amazon account.</p> </li> <li> <p> <code>public</code> - Return all
      * DB cluster snapshots that have been marked as public.</p> </li> </ul> <p>If you
@@ -365,7 +365,7 @@ namespace Model
      * following values:</p> <ul> <li> <p> <code>automated</code> - Return all DB
      * cluster snapshots that have been automatically taken by Amazon Neptune for my
      * Amazon account.</p> </li> <li> <p> <code>manual</code> - Return all DB cluster
-     * snapshots that have been taken by my AWS account.</p> </li> <li> <p>
+     * snapshots that have been taken by my Amazon account.</p> </li> <li> <p>
      * <code>shared</code> - Return all manual DB cluster snapshots that have been
      * shared to my Amazon account.</p> </li> <li> <p> <code>public</code> - Return all
      * DB cluster snapshots that have been marked as public.</p> </li> </ul> <p>If you
@@ -526,7 +526,7 @@ namespace Model
 
     /**
      * <p>True to include shared manual DB cluster snapshots from other Amazon accounts
-     * that this AWS account has been given permission to copy or restore, and
+     * that this Amazon account has been given permission to copy or restore, and
      * otherwise false. The default is <code>false</code>.</p> <p>You can give an
      * Amazon account permission to restore a manual DB cluster snapshot from another
      * Amazon account by the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
@@ -535,7 +535,7 @@ namespace Model
 
     /**
      * <p>True to include shared manual DB cluster snapshots from other Amazon accounts
-     * that this AWS account has been given permission to copy or restore, and
+     * that this Amazon account has been given permission to copy or restore, and
      * otherwise false. The default is <code>false</code>.</p> <p>You can give an
      * Amazon account permission to restore a manual DB cluster snapshot from another
      * Amazon account by the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
@@ -544,7 +544,7 @@ namespace Model
 
     /**
      * <p>True to include shared manual DB cluster snapshots from other Amazon accounts
-     * that this AWS account has been given permission to copy or restore, and
+     * that this Amazon account has been given permission to copy or restore, and
      * otherwise false. The default is <code>false</code>.</p> <p>You can give an
      * Amazon account permission to restore a manual DB cluster snapshot from another
      * Amazon account by the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
@@ -553,7 +553,7 @@ namespace Model
 
     /**
      * <p>True to include shared manual DB cluster snapshots from other Amazon accounts
-     * that this AWS account has been given permission to copy or restore, and
+     * that this Amazon account has been given permission to copy or restore, and
      * otherwise false. The default is <code>false</code>.</p> <p>You can give an
      * Amazon account permission to restore a manual DB cluster snapshot from another
      * Amazon account by the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>

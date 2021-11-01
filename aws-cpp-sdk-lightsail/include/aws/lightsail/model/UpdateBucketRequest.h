@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lightsail/model/AccessRules.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lightsail/model/BucketAccessLogConfig.h>
 #include <utility>
 
 namespace Aws
@@ -249,6 +250,37 @@ namespace Model
      */
     inline UpdateBucketRequest& AddReadonlyAccessAccounts(const char* value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts.push_back(value); return *this; }
 
+
+    /**
+     * <p>An object that describes the access log configuration for the bucket.</p>
+     */
+    inline const BucketAccessLogConfig& GetAccessLogConfig() const{ return m_accessLogConfig; }
+
+    /**
+     * <p>An object that describes the access log configuration for the bucket.</p>
+     */
+    inline bool AccessLogConfigHasBeenSet() const { return m_accessLogConfigHasBeenSet; }
+
+    /**
+     * <p>An object that describes the access log configuration for the bucket.</p>
+     */
+    inline void SetAccessLogConfig(const BucketAccessLogConfig& value) { m_accessLogConfigHasBeenSet = true; m_accessLogConfig = value; }
+
+    /**
+     * <p>An object that describes the access log configuration for the bucket.</p>
+     */
+    inline void SetAccessLogConfig(BucketAccessLogConfig&& value) { m_accessLogConfigHasBeenSet = true; m_accessLogConfig = std::move(value); }
+
+    /**
+     * <p>An object that describes the access log configuration for the bucket.</p>
+     */
+    inline UpdateBucketRequest& WithAccessLogConfig(const BucketAccessLogConfig& value) { SetAccessLogConfig(value); return *this;}
+
+    /**
+     * <p>An object that describes the access log configuration for the bucket.</p>
+     */
+    inline UpdateBucketRequest& WithAccessLogConfig(BucketAccessLogConfig&& value) { SetAccessLogConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_bucketName;
@@ -262,6 +294,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_readonlyAccessAccounts;
     bool m_readonlyAccessAccountsHasBeenSet;
+
+    BucketAccessLogConfig m_accessLogConfig;
+    bool m_accessLogConfigHasBeenSet;
   };
 
 } // namespace Model

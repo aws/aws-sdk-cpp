@@ -34,17 +34,25 @@
 #include <aws/networkmanager/model/GetDevicesResult.h>
 #include <aws/networkmanager/model/GetLinkAssociationsResult.h>
 #include <aws/networkmanager/model/GetLinksResult.h>
+#include <aws/networkmanager/model/GetNetworkResourceCountsResult.h>
+#include <aws/networkmanager/model/GetNetworkResourceRelationshipsResult.h>
+#include <aws/networkmanager/model/GetNetworkResourcesResult.h>
+#include <aws/networkmanager/model/GetNetworkRoutesResult.h>
+#include <aws/networkmanager/model/GetNetworkTelemetryResult.h>
+#include <aws/networkmanager/model/GetRouteAnalysisResult.h>
 #include <aws/networkmanager/model/GetSitesResult.h>
 #include <aws/networkmanager/model/GetTransitGatewayConnectPeerAssociationsResult.h>
 #include <aws/networkmanager/model/GetTransitGatewayRegistrationsResult.h>
 #include <aws/networkmanager/model/ListTagsForResourceResult.h>
 #include <aws/networkmanager/model/RegisterTransitGatewayResult.h>
+#include <aws/networkmanager/model/StartRouteAnalysisResult.h>
 #include <aws/networkmanager/model/TagResourceResult.h>
 #include <aws/networkmanager/model/UntagResourceResult.h>
 #include <aws/networkmanager/model/UpdateConnectionResult.h>
 #include <aws/networkmanager/model/UpdateDeviceResult.h>
 #include <aws/networkmanager/model/UpdateGlobalNetworkResult.h>
 #include <aws/networkmanager/model/UpdateLinkResult.h>
+#include <aws/networkmanager/model/UpdateNetworkResourceMetadataResult.h>
 #include <aws/networkmanager/model/UpdateSiteResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -108,17 +116,25 @@ namespace Model
         class GetDevicesRequest;
         class GetLinkAssociationsRequest;
         class GetLinksRequest;
+        class GetNetworkResourceCountsRequest;
+        class GetNetworkResourceRelationshipsRequest;
+        class GetNetworkResourcesRequest;
+        class GetNetworkRoutesRequest;
+        class GetNetworkTelemetryRequest;
+        class GetRouteAnalysisRequest;
         class GetSitesRequest;
         class GetTransitGatewayConnectPeerAssociationsRequest;
         class GetTransitGatewayRegistrationsRequest;
         class ListTagsForResourceRequest;
         class RegisterTransitGatewayRequest;
+        class StartRouteAnalysisRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateConnectionRequest;
         class UpdateDeviceRequest;
         class UpdateGlobalNetworkRequest;
         class UpdateLinkRequest;
+        class UpdateNetworkResourceMetadataRequest;
         class UpdateSiteRequest;
 
         typedef Aws::Utils::Outcome<AssociateCustomerGatewayResult, NetworkManagerError> AssociateCustomerGatewayOutcome;
@@ -144,17 +160,25 @@ namespace Model
         typedef Aws::Utils::Outcome<GetDevicesResult, NetworkManagerError> GetDevicesOutcome;
         typedef Aws::Utils::Outcome<GetLinkAssociationsResult, NetworkManagerError> GetLinkAssociationsOutcome;
         typedef Aws::Utils::Outcome<GetLinksResult, NetworkManagerError> GetLinksOutcome;
+        typedef Aws::Utils::Outcome<GetNetworkResourceCountsResult, NetworkManagerError> GetNetworkResourceCountsOutcome;
+        typedef Aws::Utils::Outcome<GetNetworkResourceRelationshipsResult, NetworkManagerError> GetNetworkResourceRelationshipsOutcome;
+        typedef Aws::Utils::Outcome<GetNetworkResourcesResult, NetworkManagerError> GetNetworkResourcesOutcome;
+        typedef Aws::Utils::Outcome<GetNetworkRoutesResult, NetworkManagerError> GetNetworkRoutesOutcome;
+        typedef Aws::Utils::Outcome<GetNetworkTelemetryResult, NetworkManagerError> GetNetworkTelemetryOutcome;
+        typedef Aws::Utils::Outcome<GetRouteAnalysisResult, NetworkManagerError> GetRouteAnalysisOutcome;
         typedef Aws::Utils::Outcome<GetSitesResult, NetworkManagerError> GetSitesOutcome;
         typedef Aws::Utils::Outcome<GetTransitGatewayConnectPeerAssociationsResult, NetworkManagerError> GetTransitGatewayConnectPeerAssociationsOutcome;
         typedef Aws::Utils::Outcome<GetTransitGatewayRegistrationsResult, NetworkManagerError> GetTransitGatewayRegistrationsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, NetworkManagerError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<RegisterTransitGatewayResult, NetworkManagerError> RegisterTransitGatewayOutcome;
+        typedef Aws::Utils::Outcome<StartRouteAnalysisResult, NetworkManagerError> StartRouteAnalysisOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, NetworkManagerError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, NetworkManagerError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateConnectionResult, NetworkManagerError> UpdateConnectionOutcome;
         typedef Aws::Utils::Outcome<UpdateDeviceResult, NetworkManagerError> UpdateDeviceOutcome;
         typedef Aws::Utils::Outcome<UpdateGlobalNetworkResult, NetworkManagerError> UpdateGlobalNetworkOutcome;
         typedef Aws::Utils::Outcome<UpdateLinkResult, NetworkManagerError> UpdateLinkOutcome;
+        typedef Aws::Utils::Outcome<UpdateNetworkResourceMetadataResult, NetworkManagerError> UpdateNetworkResourceMetadataOutcome;
         typedef Aws::Utils::Outcome<UpdateSiteResult, NetworkManagerError> UpdateSiteOutcome;
 
         typedef std::future<AssociateCustomerGatewayOutcome> AssociateCustomerGatewayOutcomeCallable;
@@ -180,17 +204,25 @@ namespace Model
         typedef std::future<GetDevicesOutcome> GetDevicesOutcomeCallable;
         typedef std::future<GetLinkAssociationsOutcome> GetLinkAssociationsOutcomeCallable;
         typedef std::future<GetLinksOutcome> GetLinksOutcomeCallable;
+        typedef std::future<GetNetworkResourceCountsOutcome> GetNetworkResourceCountsOutcomeCallable;
+        typedef std::future<GetNetworkResourceRelationshipsOutcome> GetNetworkResourceRelationshipsOutcomeCallable;
+        typedef std::future<GetNetworkResourcesOutcome> GetNetworkResourcesOutcomeCallable;
+        typedef std::future<GetNetworkRoutesOutcome> GetNetworkRoutesOutcomeCallable;
+        typedef std::future<GetNetworkTelemetryOutcome> GetNetworkTelemetryOutcomeCallable;
+        typedef std::future<GetRouteAnalysisOutcome> GetRouteAnalysisOutcomeCallable;
         typedef std::future<GetSitesOutcome> GetSitesOutcomeCallable;
         typedef std::future<GetTransitGatewayConnectPeerAssociationsOutcome> GetTransitGatewayConnectPeerAssociationsOutcomeCallable;
         typedef std::future<GetTransitGatewayRegistrationsOutcome> GetTransitGatewayRegistrationsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<RegisterTransitGatewayOutcome> RegisterTransitGatewayOutcomeCallable;
+        typedef std::future<StartRouteAnalysisOutcome> StartRouteAnalysisOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateConnectionOutcome> UpdateConnectionOutcomeCallable;
         typedef std::future<UpdateDeviceOutcome> UpdateDeviceOutcomeCallable;
         typedef std::future<UpdateGlobalNetworkOutcome> UpdateGlobalNetworkOutcomeCallable;
         typedef std::future<UpdateLinkOutcome> UpdateLinkOutcomeCallable;
+        typedef std::future<UpdateNetworkResourceMetadataOutcome> UpdateNetworkResourceMetadataOutcomeCallable;
         typedef std::future<UpdateSiteOutcome> UpdateSiteOutcomeCallable;
 } // namespace Model
 
@@ -219,25 +251,31 @@ namespace Model
     typedef std::function<void(const NetworkManagerClient*, const Model::GetDevicesRequest&, const Model::GetDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDevicesResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::GetLinkAssociationsRequest&, const Model::GetLinkAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLinkAssociationsResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::GetLinksRequest&, const Model::GetLinksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLinksResponseReceivedHandler;
+    typedef std::function<void(const NetworkManagerClient*, const Model::GetNetworkResourceCountsRequest&, const Model::GetNetworkResourceCountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetNetworkResourceCountsResponseReceivedHandler;
+    typedef std::function<void(const NetworkManagerClient*, const Model::GetNetworkResourceRelationshipsRequest&, const Model::GetNetworkResourceRelationshipsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetNetworkResourceRelationshipsResponseReceivedHandler;
+    typedef std::function<void(const NetworkManagerClient*, const Model::GetNetworkResourcesRequest&, const Model::GetNetworkResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetNetworkResourcesResponseReceivedHandler;
+    typedef std::function<void(const NetworkManagerClient*, const Model::GetNetworkRoutesRequest&, const Model::GetNetworkRoutesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetNetworkRoutesResponseReceivedHandler;
+    typedef std::function<void(const NetworkManagerClient*, const Model::GetNetworkTelemetryRequest&, const Model::GetNetworkTelemetryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetNetworkTelemetryResponseReceivedHandler;
+    typedef std::function<void(const NetworkManagerClient*, const Model::GetRouteAnalysisRequest&, const Model::GetRouteAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRouteAnalysisResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::GetSitesRequest&, const Model::GetSitesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSitesResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::GetTransitGatewayConnectPeerAssociationsRequest&, const Model::GetTransitGatewayConnectPeerAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayConnectPeerAssociationsResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::GetTransitGatewayRegistrationsRequest&, const Model::GetTransitGatewayRegistrationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayRegistrationsResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::RegisterTransitGatewayRequest&, const Model::RegisterTransitGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterTransitGatewayResponseReceivedHandler;
+    typedef std::function<void(const NetworkManagerClient*, const Model::StartRouteAnalysisRequest&, const Model::StartRouteAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartRouteAnalysisResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::UpdateConnectionRequest&, const Model::UpdateConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConnectionResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::UpdateDeviceRequest&, const Model::UpdateDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeviceResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::UpdateGlobalNetworkRequest&, const Model::UpdateGlobalNetworkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGlobalNetworkResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::UpdateLinkRequest&, const Model::UpdateLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLinkResponseReceivedHandler;
+    typedef std::function<void(const NetworkManagerClient*, const Model::UpdateNetworkResourceMetadataRequest&, const Model::UpdateNetworkResourceMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNetworkResourceMetadataResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::UpdateSiteRequest&, const Model::UpdateSiteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSiteResponseReceivedHandler;
 
   /**
    * <p>Transit Gateway Network Manager (Network Manager) enables you to create a
-   * global network, in which you can monitor your AWS and on-premises networks that
-   * are built around transit gateways.</p> <p>The Network Manager APIs are supported
-   * in the US West (Oregon) Region only. You must specify the <code>us-west-2</code>
-   * Region in all requests made to Network Manager.</p>
+   * global network, in which you can monitor your Amazon Web Services and
+   * on-premises networks that are built around transit gateways.</p>
    */
   class AWS_NETWORKMANAGER_API NetworkManagerClient : public Aws::Client::AWSJsonClient
   {
@@ -977,6 +1015,180 @@ namespace Model
         virtual void GetLinksAsync(const Model::GetLinksRequest& request, const GetLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets the count of network resources, by resource type, for the specified
+         * global network.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResourceCounts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetNetworkResourceCountsOutcome GetNetworkResourceCounts(const Model::GetNetworkResourceCountsRequest& request) const;
+
+        /**
+         * <p>Gets the count of network resources, by resource type, for the specified
+         * global network.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResourceCounts">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetNetworkResourceCountsOutcomeCallable GetNetworkResourceCountsCallable(const Model::GetNetworkResourceCountsRequest& request) const;
+
+        /**
+         * <p>Gets the count of network resources, by resource type, for the specified
+         * global network.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResourceCounts">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetNetworkResourceCountsAsync(const Model::GetNetworkResourceCountsRequest& request, const GetNetworkResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the network resource relationships for the specified global
+         * network.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResourceRelationships">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetNetworkResourceRelationshipsOutcome GetNetworkResourceRelationships(const Model::GetNetworkResourceRelationshipsRequest& request) const;
+
+        /**
+         * <p>Gets the network resource relationships for the specified global
+         * network.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResourceRelationships">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetNetworkResourceRelationshipsOutcomeCallable GetNetworkResourceRelationshipsCallable(const Model::GetNetworkResourceRelationshipsRequest& request) const;
+
+        /**
+         * <p>Gets the network resource relationships for the specified global
+         * network.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResourceRelationships">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetNetworkResourceRelationshipsAsync(const Model::GetNetworkResourceRelationshipsRequest& request, const GetNetworkResourceRelationshipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the network resources for the specified global network.</p> <p>The
+         * results include information from the corresponding Describe call for the
+         * resource, minus any sensitive information such as pre-shared keys.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetNetworkResourcesOutcome GetNetworkResources(const Model::GetNetworkResourcesRequest& request) const;
+
+        /**
+         * <p>Describes the network resources for the specified global network.</p> <p>The
+         * results include information from the corresponding Describe call for the
+         * resource, minus any sensitive information such as pre-shared keys.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResources">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetNetworkResourcesOutcomeCallable GetNetworkResourcesCallable(const Model::GetNetworkResourcesRequest& request) const;
+
+        /**
+         * <p>Describes the network resources for the specified global network.</p> <p>The
+         * results include information from the corresponding Describe call for the
+         * resource, minus any sensitive information such as pre-shared keys.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResources">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetNetworkResourcesAsync(const Model::GetNetworkResourcesRequest& request, const GetNetworkResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the network routes of the specified global network.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkRoutes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetNetworkRoutesOutcome GetNetworkRoutes(const Model::GetNetworkRoutesRequest& request) const;
+
+        /**
+         * <p>Gets the network routes of the specified global network.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkRoutes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetNetworkRoutesOutcomeCallable GetNetworkRoutesCallable(const Model::GetNetworkRoutesRequest& request) const;
+
+        /**
+         * <p>Gets the network routes of the specified global network.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkRoutes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetNetworkRoutesAsync(const Model::GetNetworkRoutesRequest& request, const GetNetworkRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the network telemetry of the specified global network.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkTelemetry">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetNetworkTelemetryOutcome GetNetworkTelemetry(const Model::GetNetworkTelemetryRequest& request) const;
+
+        /**
+         * <p>Gets the network telemetry of the specified global network.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkTelemetry">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetNetworkTelemetryOutcomeCallable GetNetworkTelemetryCallable(const Model::GetNetworkTelemetryRequest& request) const;
+
+        /**
+         * <p>Gets the network telemetry of the specified global network.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkTelemetry">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetNetworkTelemetryAsync(const Model::GetNetworkTelemetryRequest& request, const GetNetworkTelemetryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets information about the specified route analysis.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetRouteAnalysis">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetRouteAnalysisOutcome GetRouteAnalysis(const Model::GetRouteAnalysisRequest& request) const;
+
+        /**
+         * <p>Gets information about the specified route analysis.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetRouteAnalysis">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetRouteAnalysisOutcomeCallable GetRouteAnalysisCallable(const Model::GetRouteAnalysisRequest& request) const;
+
+        /**
+         * <p>Gets information about the specified route analysis.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetRouteAnalysis">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetRouteAnalysisAsync(const Model::GetRouteAnalysisRequest& request, const GetRouteAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets information about one or more of your sites in a global
          * network.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetSites">AWS
@@ -1087,9 +1299,9 @@ namespace Model
 
         /**
          * <p>Registers a transit gateway in your global network. The transit gateway can
-         * be in any AWS Region, but it must be owned by the same AWS account that owns the
-         * global network. You cannot register a transit gateway in more than one global
-         * network.</p><p><h3>See Also:</h3>   <a
+         * be in any Amazon Web Services Region, but it must be owned by the same Amazon
+         * Web Services account that owns the global network. You cannot register a transit
+         * gateway in more than one global network.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RegisterTransitGateway">AWS
          * API Reference</a></p>
          */
@@ -1097,9 +1309,9 @@ namespace Model
 
         /**
          * <p>Registers a transit gateway in your global network. The transit gateway can
-         * be in any AWS Region, but it must be owned by the same AWS account that owns the
-         * global network. You cannot register a transit gateway in more than one global
-         * network.</p><p><h3>See Also:</h3>   <a
+         * be in any Amazon Web Services Region, but it must be owned by the same Amazon
+         * Web Services account that owns the global network. You cannot register a transit
+         * gateway in more than one global network.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RegisterTransitGateway">AWS
          * API Reference</a></p>
          *
@@ -1109,15 +1321,49 @@ namespace Model
 
         /**
          * <p>Registers a transit gateway in your global network. The transit gateway can
-         * be in any AWS Region, but it must be owned by the same AWS account that owns the
-         * global network. You cannot register a transit gateway in more than one global
-         * network.</p><p><h3>See Also:</h3>   <a
+         * be in any Amazon Web Services Region, but it must be owned by the same Amazon
+         * Web Services account that owns the global network. You cannot register a transit
+         * gateway in more than one global network.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RegisterTransitGateway">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RegisterTransitGatewayAsync(const Model::RegisterTransitGatewayRequest& request, const RegisterTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Starts analyzing the routing path between the specified source and
+         * destination. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/tgw/route-analyzer.html">Route
+         * Analyzer</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/StartRouteAnalysis">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartRouteAnalysisOutcome StartRouteAnalysis(const Model::StartRouteAnalysisRequest& request) const;
+
+        /**
+         * <p>Starts analyzing the routing path between the specified source and
+         * destination. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/tgw/route-analyzer.html">Route
+         * Analyzer</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/StartRouteAnalysis">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartRouteAnalysisOutcomeCallable StartRouteAnalysisCallable(const Model::StartRouteAnalysisRequest& request) const;
+
+        /**
+         * <p>Starts analyzing the routing path between the specified source and
+         * destination. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/tgw/route-analyzer.html">Route
+         * Analyzer</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/StartRouteAnalysis">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartRouteAnalysisAsync(const Model::StartRouteAnalysisRequest& request, const StartRouteAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Tags a specified resource.</p><p><h3>See Also:</h3>   <a
@@ -1282,6 +1528,34 @@ namespace Model
         virtual void UpdateLinkAsync(const Model::UpdateLinkRequest& request, const UpdateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the resource metadata for the specified global network.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateNetworkResourceMetadata">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateNetworkResourceMetadataOutcome UpdateNetworkResourceMetadata(const Model::UpdateNetworkResourceMetadataRequest& request) const;
+
+        /**
+         * <p>Updates the resource metadata for the specified global network.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateNetworkResourceMetadata">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateNetworkResourceMetadataOutcomeCallable UpdateNetworkResourceMetadataCallable(const Model::UpdateNetworkResourceMetadataRequest& request) const;
+
+        /**
+         * <p>Updates the resource metadata for the specified global network.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateNetworkResourceMetadata">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateNetworkResourceMetadataAsync(const Model::UpdateNetworkResourceMetadataRequest& request, const UpdateNetworkResourceMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the information for an existing site. To remove information for any
          * of the parameters, specify an empty string.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateSite">AWS
@@ -1336,17 +1610,25 @@ namespace Model
         void GetDevicesAsyncHelper(const Model::GetDevicesRequest& request, const GetDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLinkAssociationsAsyncHelper(const Model::GetLinkAssociationsRequest& request, const GetLinkAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLinksAsyncHelper(const Model::GetLinksRequest& request, const GetLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetNetworkResourceCountsAsyncHelper(const Model::GetNetworkResourceCountsRequest& request, const GetNetworkResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetNetworkResourceRelationshipsAsyncHelper(const Model::GetNetworkResourceRelationshipsRequest& request, const GetNetworkResourceRelationshipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetNetworkResourcesAsyncHelper(const Model::GetNetworkResourcesRequest& request, const GetNetworkResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetNetworkRoutesAsyncHelper(const Model::GetNetworkRoutesRequest& request, const GetNetworkRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetNetworkTelemetryAsyncHelper(const Model::GetNetworkTelemetryRequest& request, const GetNetworkTelemetryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetRouteAnalysisAsyncHelper(const Model::GetRouteAnalysisRequest& request, const GetRouteAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSitesAsyncHelper(const Model::GetSitesRequest& request, const GetSitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTransitGatewayConnectPeerAssociationsAsyncHelper(const Model::GetTransitGatewayConnectPeerAssociationsRequest& request, const GetTransitGatewayConnectPeerAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTransitGatewayRegistrationsAsyncHelper(const Model::GetTransitGatewayRegistrationsRequest& request, const GetTransitGatewayRegistrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterTransitGatewayAsyncHelper(const Model::RegisterTransitGatewayRequest& request, const RegisterTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartRouteAnalysisAsyncHelper(const Model::StartRouteAnalysisRequest& request, const StartRouteAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateConnectionAsyncHelper(const Model::UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDeviceAsyncHelper(const Model::UpdateDeviceRequest& request, const UpdateDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGlobalNetworkAsyncHelper(const Model::UpdateGlobalNetworkRequest& request, const UpdateGlobalNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateLinkAsyncHelper(const Model::UpdateLinkRequest& request, const UpdateLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateNetworkResourceMetadataAsyncHelper(const Model::UpdateNetworkResourceMetadataRequest& request, const UpdateNetworkResourceMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSiteAsyncHelper(const Model::UpdateSiteRequest& request, const UpdateSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

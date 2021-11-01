@@ -82,29 +82,33 @@ namespace Model
 
     /**
      * <p>Minimum face match confidence score that must be met to return a result for a
-     * recognized face. Default is 80. 0 is the lowest confidence. 100 is the highest
-     * confidence.</p>
+     * recognized face. The default is 80. 0 is the lowest confidence. 100 is the
+     * highest confidence. Values between 0 and 100 are accepted, and values lower than
+     * 80 are set to 80.</p>
      */
     inline double GetFaceMatchThreshold() const{ return m_faceMatchThreshold; }
 
     /**
      * <p>Minimum face match confidence score that must be met to return a result for a
-     * recognized face. Default is 80. 0 is the lowest confidence. 100 is the highest
-     * confidence.</p>
+     * recognized face. The default is 80. 0 is the lowest confidence. 100 is the
+     * highest confidence. Values between 0 and 100 are accepted, and values lower than
+     * 80 are set to 80.</p>
      */
     inline bool FaceMatchThresholdHasBeenSet() const { return m_faceMatchThresholdHasBeenSet; }
 
     /**
      * <p>Minimum face match confidence score that must be met to return a result for a
-     * recognized face. Default is 80. 0 is the lowest confidence. 100 is the highest
-     * confidence.</p>
+     * recognized face. The default is 80. 0 is the lowest confidence. 100 is the
+     * highest confidence. Values between 0 and 100 are accepted, and values lower than
+     * 80 are set to 80.</p>
      */
     inline void SetFaceMatchThreshold(double value) { m_faceMatchThresholdHasBeenSet = true; m_faceMatchThreshold = value; }
 
     /**
      * <p>Minimum face match confidence score that must be met to return a result for a
-     * recognized face. Default is 80. 0 is the lowest confidence. 100 is the highest
-     * confidence.</p>
+     * recognized face. The default is 80. 0 is the lowest confidence. 100 is the
+     * highest confidence. Values between 0 and 100 are accepted, and values lower than
+     * 80 are set to 80.</p>
      */
     inline FaceSearchSettings& WithFaceMatchThreshold(double value) { SetFaceMatchThreshold(value); return *this;}
 

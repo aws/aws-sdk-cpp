@@ -11,6 +11,7 @@
 #include <aws/lightsail/model/ResourceLocation.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lightsail/model/BucketState.h>
+#include <aws/lightsail/model/BucketAccessLogConfig.h>
 #include <aws/lightsail/model/Tag.h>
 #include <aws/lightsail/model/ResourceReceivingAccess.h>
 #include <utility>
@@ -732,6 +733,37 @@ namespace Model
      */
     inline Bucket& WithState(BucketState&& value) { SetState(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An object that describes the access log configuration for the bucket.</p>
+     */
+    inline const BucketAccessLogConfig& GetAccessLogConfig() const{ return m_accessLogConfig; }
+
+    /**
+     * <p>An object that describes the access log configuration for the bucket.</p>
+     */
+    inline bool AccessLogConfigHasBeenSet() const { return m_accessLogConfigHasBeenSet; }
+
+    /**
+     * <p>An object that describes the access log configuration for the bucket.</p>
+     */
+    inline void SetAccessLogConfig(const BucketAccessLogConfig& value) { m_accessLogConfigHasBeenSet = true; m_accessLogConfig = value; }
+
+    /**
+     * <p>An object that describes the access log configuration for the bucket.</p>
+     */
+    inline void SetAccessLogConfig(BucketAccessLogConfig&& value) { m_accessLogConfigHasBeenSet = true; m_accessLogConfig = std::move(value); }
+
+    /**
+     * <p>An object that describes the access log configuration for the bucket.</p>
+     */
+    inline Bucket& WithAccessLogConfig(const BucketAccessLogConfig& value) { SetAccessLogConfig(value); return *this;}
+
+    /**
+     * <p>An object that describes the access log configuration for the bucket.</p>
+     */
+    inline Bucket& WithAccessLogConfig(BucketAccessLogConfig&& value) { SetAccessLogConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_resourceType;
@@ -778,6 +810,9 @@ namespace Model
 
     BucketState m_state;
     bool m_stateHasBeenSet;
+
+    BucketAccessLogConfig m_accessLogConfig;
+    bool m_accessLogConfigHasBeenSet;
   };
 
 } // namespace Model

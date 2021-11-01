@@ -16,7 +16,8 @@ UpdateBucketRequest::UpdateBucketRequest() :
     m_bucketNameHasBeenSet(false),
     m_accessRulesHasBeenSet(false),
     m_versioningHasBeenSet(false),
-    m_readonlyAccessAccountsHasBeenSet(false)
+    m_readonlyAccessAccountsHasBeenSet(false),
+    m_accessLogConfigHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,12 @@ Aws::String UpdateBucketRequest::SerializePayload() const
      readonlyAccessAccountsJsonList[readonlyAccessAccountsIndex].AsString(m_readonlyAccessAccounts[readonlyAccessAccountsIndex]);
    }
    payload.WithArray("readonlyAccessAccounts", std::move(readonlyAccessAccountsJsonList));
+
+  }
+
+  if(m_accessLogConfigHasBeenSet)
+  {
+   payload.WithObject("accessLogConfig", m_accessLogConfig.Jsonize());
 
   }
 

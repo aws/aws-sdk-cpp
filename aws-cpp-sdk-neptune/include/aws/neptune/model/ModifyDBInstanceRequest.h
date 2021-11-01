@@ -118,80 +118,80 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions.</p> <p>If you modify the DB instance class, an outage occurs during the
-     * change. The change is applied during the next maintenance window, unless
-     * <code>ApplyImmediately</code> is specified as <code>true</code> for this
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Regions.</p> <p>If you modify the DB instance class, an outage occurs
+     * during the change. The change is applied during the next maintenance window,
+     * unless <code>ApplyImmediately</code> is specified as <code>true</code> for this
      * request.</p> <p>Default: Uses existing setting</p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions.</p> <p>If you modify the DB instance class, an outage occurs during the
-     * change. The change is applied during the next maintenance window, unless
-     * <code>ApplyImmediately</code> is specified as <code>true</code> for this
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Regions.</p> <p>If you modify the DB instance class, an outage occurs
+     * during the change. The change is applied during the next maintenance window,
+     * unless <code>ApplyImmediately</code> is specified as <code>true</code> for this
      * request.</p> <p>Default: Uses existing setting</p>
      */
     inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions.</p> <p>If you modify the DB instance class, an outage occurs during the
-     * change. The change is applied during the next maintenance window, unless
-     * <code>ApplyImmediately</code> is specified as <code>true</code> for this
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Regions.</p> <p>If you modify the DB instance class, an outage occurs
+     * during the change. The change is applied during the next maintenance window,
+     * unless <code>ApplyImmediately</code> is specified as <code>true</code> for this
      * request.</p> <p>Default: Uses existing setting</p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions.</p> <p>If you modify the DB instance class, an outage occurs during the
-     * change. The change is applied during the next maintenance window, unless
-     * <code>ApplyImmediately</code> is specified as <code>true</code> for this
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Regions.</p> <p>If you modify the DB instance class, an outage occurs
+     * during the change. The change is applied during the next maintenance window,
+     * unless <code>ApplyImmediately</code> is specified as <code>true</code> for this
      * request.</p> <p>Default: Uses existing setting</p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions.</p> <p>If you modify the DB instance class, an outage occurs during the
-     * change. The change is applied during the next maintenance window, unless
-     * <code>ApplyImmediately</code> is specified as <code>true</code> for this
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Regions.</p> <p>If you modify the DB instance class, an outage occurs
+     * during the change. The change is applied during the next maintenance window,
+     * unless <code>ApplyImmediately</code> is specified as <code>true</code> for this
      * request.</p> <p>Default: Uses existing setting</p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions.</p> <p>If you modify the DB instance class, an outage occurs during the
-     * change. The change is applied during the next maintenance window, unless
-     * <code>ApplyImmediately</code> is specified as <code>true</code> for this
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Regions.</p> <p>If you modify the DB instance class, an outage occurs
+     * during the change. The change is applied during the next maintenance window,
+     * unless <code>ApplyImmediately</code> is specified as <code>true</code> for this
      * request.</p> <p>Default: Uses existing setting</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions.</p> <p>If you modify the DB instance class, an outage occurs during the
-     * change. The change is applied during the next maintenance window, unless
-     * <code>ApplyImmediately</code> is specified as <code>true</code> for this
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Regions.</p> <p>If you modify the DB instance class, an outage occurs
+     * during the change. The change is applied during the next maintenance window,
+     * unless <code>ApplyImmediately</code> is specified as <code>true</code> for this
      * request.</p> <p>Default: Uses existing setting</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions.</p> <p>If you modify the DB instance class, an outage occurs during the
-     * change. The change is applied during the next maintenance window, unless
-     * <code>ApplyImmediately</code> is specified as <code>true</code> for this
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Regions.</p> <p>If you modify the DB instance class, an outage occurs
+     * during the change. The change is applied during the next maintenance window,
+     * unless <code>ApplyImmediately</code> is specified as <code>true</code> for this
      * request.</p> <p>Default: Uses existing setting</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}

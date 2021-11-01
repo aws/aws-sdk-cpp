@@ -427,7 +427,7 @@ namespace Model
 
 
         /**
-         * <p>Associates an Identity and Access Management (IAM) role from an Neptune DB
+         * <p>Associates an Identity and Access Management (IAM) role with an Neptune DB
          * cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/AddRoleToDBCluster">AWS
          * API Reference</a></p>
@@ -435,7 +435,7 @@ namespace Model
         virtual Model::AddRoleToDBClusterOutcome AddRoleToDBCluster(const Model::AddRoleToDBClusterRequest& request) const;
 
         /**
-         * <p>Associates an Identity and Access Management (IAM) role from an Neptune DB
+         * <p>Associates an Identity and Access Management (IAM) role with an Neptune DB
          * cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/AddRoleToDBCluster">AWS
          * API Reference</a></p>
@@ -445,7 +445,7 @@ namespace Model
         virtual Model::AddRoleToDBClusterOutcomeCallable AddRoleToDBClusterCallable(const Model::AddRoleToDBClusterRequest& request) const;
 
         /**
-         * <p>Associates an Identity and Access Management (IAM) role from an Neptune DB
+         * <p>Associates an Identity and Access Management (IAM) role with an Neptune DB
          * cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/AddRoleToDBCluster">AWS
          * API Reference</a></p>
@@ -2726,18 +2726,18 @@ namespace Model
         virtual void RestoreDBClusterToPointInTimeAsync(const Model::RestoreDBClusterToPointInTimeRequest& request, const RestoreDBClusterToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts an Amazon Neptune DB cluster that was stopped using the AWS console,
-         * the Amazon CLI stop-db-cluster command, or the StopDBCluster API.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Starts an Amazon Neptune DB cluster that was stopped using the Amazon
+         * console, the Amazon CLI stop-db-cluster command, or the StopDBCluster
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/StartDBCluster">AWS
          * API Reference</a></p>
          */
         virtual Model::StartDBClusterOutcome StartDBCluster(const Model::StartDBClusterRequest& request) const;
 
         /**
-         * <p>Starts an Amazon Neptune DB cluster that was stopped using the AWS console,
-         * the Amazon CLI stop-db-cluster command, or the StopDBCluster API.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Starts an Amazon Neptune DB cluster that was stopped using the Amazon
+         * console, the Amazon CLI stop-db-cluster command, or the StopDBCluster
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/StartDBCluster">AWS
          * API Reference</a></p>
          *
@@ -2746,9 +2746,9 @@ namespace Model
         virtual Model::StartDBClusterOutcomeCallable StartDBClusterCallable(const Model::StartDBClusterRequest& request) const;
 
         /**
-         * <p>Starts an Amazon Neptune DB cluster that was stopped using the AWS console,
-         * the Amazon CLI stop-db-cluster command, or the StopDBCluster API.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Starts an Amazon Neptune DB cluster that was stopped using the Amazon
+         * console, the Amazon CLI stop-db-cluster command, or the StopDBCluster
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/StartDBCluster">AWS
          * API Reference</a></p>
          *
