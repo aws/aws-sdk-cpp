@@ -30,7 +30,14 @@ namespace Model
 {
 
   /**
-   * <p><h3>See Also:</h3>   <a
+   * <p>A launch profile controls your artist workforce’s access to studio
+   * components, like compute farms, shared file systems, managed file systems, and
+   * license server configurations, as well as instance types and Amazon Machine
+   * Images (AMIs). </p> <pre><code> &lt;p&gt;Studio administrators create launch
+   * profiles in the Nimble Studio console. Artists can use their launch profiles to
+   * launch an instance from the Nimble Studio portal. Each user’s launch profile
+   * defines how they can launch a streaming session. By default, studio admins can
+   * use all launch profiles.&lt;/p&gt; </code></pre><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/LaunchProfile">AWS
    * API Reference</a></p>
    */

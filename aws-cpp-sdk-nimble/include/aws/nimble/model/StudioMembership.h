@@ -25,7 +25,16 @@ namespace Model
 {
 
   /**
-   * <p><h3>See Also:</h3>   <a
+   * <p>A studio member is an association of a user from your studio identity source
+   * to elevated permissions that they are granted in the studio.</p> <p>When you add
+   * a user to your studio using the Nimble Studio console, they are given access to
+   * the studio's AWS SSO application and are given access to log in to the Nimble
+   * Studio portal. These users have the permissions provided by the studio's user
+   * IAM role and do not appear in the studio membership collection. Only studio
+   * admins appear in studio membership.</p> <p>When you add a user to studio
+   * membership with the persona ADMIN, upon logging in to the Nimble Studio portal,
+   * they are granted permissions specified by the Studio's Admin IAM
+   * role.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StudioMembership">AWS
    * API Reference</a></p>
    */
@@ -150,6 +159,47 @@ namespace Model
      */
     inline StudioMembership& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
 
+
+    /**
+     * <p>The Active Directory Security Identifier for this user, if available.</p>
+     */
+    inline const Aws::String& GetSid() const{ return m_sid; }
+
+    /**
+     * <p>The Active Directory Security Identifier for this user, if available.</p>
+     */
+    inline bool SidHasBeenSet() const { return m_sidHasBeenSet; }
+
+    /**
+     * <p>The Active Directory Security Identifier for this user, if available.</p>
+     */
+    inline void SetSid(const Aws::String& value) { m_sidHasBeenSet = true; m_sid = value; }
+
+    /**
+     * <p>The Active Directory Security Identifier for this user, if available.</p>
+     */
+    inline void SetSid(Aws::String&& value) { m_sidHasBeenSet = true; m_sid = std::move(value); }
+
+    /**
+     * <p>The Active Directory Security Identifier for this user, if available.</p>
+     */
+    inline void SetSid(const char* value) { m_sidHasBeenSet = true; m_sid.assign(value); }
+
+    /**
+     * <p>The Active Directory Security Identifier for this user, if available.</p>
+     */
+    inline StudioMembership& WithSid(const Aws::String& value) { SetSid(value); return *this;}
+
+    /**
+     * <p>The Active Directory Security Identifier for this user, if available.</p>
+     */
+    inline StudioMembership& WithSid(Aws::String&& value) { SetSid(std::move(value)); return *this;}
+
+    /**
+     * <p>The Active Directory Security Identifier for this user, if available.</p>
+     */
+    inline StudioMembership& WithSid(const char* value) { SetSid(value); return *this;}
+
   private:
 
     Aws::String m_identityStoreId;
@@ -160,6 +210,9 @@ namespace Model
 
     Aws::String m_principalId;
     bool m_principalIdHasBeenSet;
+
+    Aws::String m_sid;
+    bool m_sidHasBeenSet;
   };
 
 } // namespace Model

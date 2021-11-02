@@ -21,18 +21,14 @@ namespace Model
 Dimensions::Dimensions() : 
     m_queueHasBeenSet(false),
     m_channel(Channel::NOT_SET),
-    m_channelHasBeenSet(false),
-    m_routingProfileHasBeenSet(false),
-    m_instanceReferenceHasBeenSet(false)
+    m_channelHasBeenSet(false)
 {
 }
 
 Dimensions::Dimensions(JsonView jsonValue) : 
     m_queueHasBeenSet(false),
     m_channel(Channel::NOT_SET),
-    m_channelHasBeenSet(false),
-    m_routingProfileHasBeenSet(false),
-    m_instanceReferenceHasBeenSet(false)
+    m_channelHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -53,20 +49,6 @@ Dimensions& Dimensions::operator =(JsonView jsonValue)
     m_channelHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("RoutingProfile"))
-  {
-    m_routingProfile = jsonValue.GetObject("RoutingProfile");
-
-    m_routingProfileHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("InstanceReference"))
-  {
-    m_instanceReference = jsonValue.GetObject("InstanceReference");
-
-    m_instanceReferenceHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -83,18 +65,6 @@ JsonValue Dimensions::Jsonize() const
   if(m_channelHasBeenSet)
   {
    payload.WithString("Channel", ChannelMapper::GetNameForChannel(m_channel));
-  }
-
-  if(m_routingProfileHasBeenSet)
-  {
-   payload.WithObject("RoutingProfile", m_routingProfile.Jsonize());
-
-  }
-
-  if(m_instanceReferenceHasBeenSet)
-  {
-   payload.WithObject("InstanceReference", m_instanceReference.Jsonize());
-
   }
 
   return payload;

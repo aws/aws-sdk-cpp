@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p></p><p><h3>See Also:</h3>   <a
+   * <p/><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StudioComponentSummary">AWS
    * API Reference</a></p>
    */

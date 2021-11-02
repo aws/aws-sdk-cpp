@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p><h3>See Also:</h3>   <a
+   * <p>The acceptance of a EULA, required to use Amazon-provided streaming
+   * images.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/EulaAcceptance">AWS
    * API Reference</a></p>
    */

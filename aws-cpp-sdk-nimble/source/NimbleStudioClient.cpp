@@ -57,7 +57,9 @@
 #include <aws/nimble/model/ListTagsForResourceRequest.h>
 #include <aws/nimble/model/PutLaunchProfileMembersRequest.h>
 #include <aws/nimble/model/PutStudioMembersRequest.h>
+#include <aws/nimble/model/StartStreamingSessionRequest.h>
 #include <aws/nimble/model/StartStudioSSOConfigurationRepairRequest.h>
+#include <aws/nimble/model/StopStreamingSessionRequest.h>
 #include <aws/nimble/model/TagResourceRequest.h>
 #include <aws/nimble/model/UntagResourceRequest.h>
 #include <aws/nimble/model/UpdateLaunchProfileRequest.h>
@@ -1447,6 +1449,45 @@ void NimbleStudioClient::PutStudioMembersAsyncHelper(const PutStudioMembersReque
   handler(this, request, PutStudioMembers(request), context);
 }
 
+StartStreamingSessionOutcome NimbleStudioClient::StartStreamingSession(const StartStreamingSessionRequest& request) const
+{
+  if (!request.SessionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartStreamingSession", "Required field: SessionId, is not set");
+    return StartStreamingSessionOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SessionId]", false));
+  }
+  if (!request.StudioIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartStreamingSession", "Required field: StudioId, is not set");
+    return StartStreamingSessionOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/streaming-sessions/");
+  uri.AddPathSegment(request.GetSessionId());
+  uri.AddPathSegments("/start");
+  return StartStreamingSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartStreamingSessionOutcomeCallable NimbleStudioClient::StartStreamingSessionCallable(const StartStreamingSessionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartStreamingSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartStreamingSession(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NimbleStudioClient::StartStreamingSessionAsync(const StartStreamingSessionRequest& request, const StartStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartStreamingSessionAsyncHelper( request, handler, context ); } );
+}
+
+void NimbleStudioClient::StartStreamingSessionAsyncHelper(const StartStreamingSessionRequest& request, const StartStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartStreamingSession(request), context);
+}
+
 StartStudioSSOConfigurationRepairOutcome NimbleStudioClient::StartStudioSSOConfigurationRepair(const StartStudioSSOConfigurationRepairRequest& request) const
 {
   if (!request.StudioIdHasBeenSet())
@@ -1477,6 +1518,45 @@ void NimbleStudioClient::StartStudioSSOConfigurationRepairAsync(const StartStudi
 void NimbleStudioClient::StartStudioSSOConfigurationRepairAsyncHelper(const StartStudioSSOConfigurationRepairRequest& request, const StartStudioSSOConfigurationRepairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartStudioSSOConfigurationRepair(request), context);
+}
+
+StopStreamingSessionOutcome NimbleStudioClient::StopStreamingSession(const StopStreamingSessionRequest& request) const
+{
+  if (!request.SessionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopStreamingSession", "Required field: SessionId, is not set");
+    return StopStreamingSessionOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SessionId]", false));
+  }
+  if (!request.StudioIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopStreamingSession", "Required field: StudioId, is not set");
+    return StopStreamingSessionOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/streaming-sessions/");
+  uri.AddPathSegment(request.GetSessionId());
+  uri.AddPathSegments("/stop");
+  return StopStreamingSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StopStreamingSessionOutcomeCallable NimbleStudioClient::StopStreamingSessionCallable(const StopStreamingSessionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopStreamingSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopStreamingSession(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NimbleStudioClient::StopStreamingSessionAsync(const StopStreamingSessionRequest& request, const StopStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopStreamingSessionAsyncHelper( request, handler, context ); } );
+}
+
+void NimbleStudioClient::StopStreamingSessionAsyncHelper(const StopStreamingSessionRequest& request, const StopStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopStreamingSession(request), context);
 }
 
 TagResourceOutcome NimbleStudioClient::TagResource(const TagResourceRequest& request) const

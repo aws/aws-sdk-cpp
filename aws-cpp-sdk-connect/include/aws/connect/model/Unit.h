@@ -17,7 +17,6 @@ namespace Model
   {
     NOT_SET,
     SECONDS,
-    MILLISECONDS,
     COUNT,
     PERCENT
   };

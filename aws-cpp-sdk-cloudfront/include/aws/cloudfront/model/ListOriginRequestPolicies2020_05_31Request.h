@@ -43,7 +43,8 @@ namespace Model
      * <p>A filter to return only the specified kinds of origin request policies. Valid
      * values are:</p> <ul> <li> <p> <code>managed</code> – Returns only the managed
      * policies created by Amazon Web Services.</p> </li> <li> <p> <code>custom</code>
-     * – Returns only the custom policies created in your account.</p> </li> </ul>
+     * – Returns only the custom policies created in your Amazon Web Services
+     * account.</p> </li> </ul>
      */
     inline const OriginRequestPolicyType& GetType() const{ return m_type; }
 
@@ -51,7 +52,8 @@ namespace Model
      * <p>A filter to return only the specified kinds of origin request policies. Valid
      * values are:</p> <ul> <li> <p> <code>managed</code> – Returns only the managed
      * policies created by Amazon Web Services.</p> </li> <li> <p> <code>custom</code>
-     * – Returns only the custom policies created in your account.</p> </li> </ul>
+     * – Returns only the custom policies created in your Amazon Web Services
+     * account.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -59,7 +61,8 @@ namespace Model
      * <p>A filter to return only the specified kinds of origin request policies. Valid
      * values are:</p> <ul> <li> <p> <code>managed</code> – Returns only the managed
      * policies created by Amazon Web Services.</p> </li> <li> <p> <code>custom</code>
-     * – Returns only the custom policies created in your account.</p> </li> </ul>
+     * – Returns only the custom policies created in your Amazon Web Services
+     * account.</p> </li> </ul>
      */
     inline void SetType(const OriginRequestPolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -67,7 +70,8 @@ namespace Model
      * <p>A filter to return only the specified kinds of origin request policies. Valid
      * values are:</p> <ul> <li> <p> <code>managed</code> – Returns only the managed
      * policies created by Amazon Web Services.</p> </li> <li> <p> <code>custom</code>
-     * – Returns only the custom policies created in your account.</p> </li> </ul>
+     * – Returns only the custom policies created in your Amazon Web Services
+     * account.</p> </li> </ul>
      */
     inline void SetType(OriginRequestPolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -75,7 +79,8 @@ namespace Model
      * <p>A filter to return only the specified kinds of origin request policies. Valid
      * values are:</p> <ul> <li> <p> <code>managed</code> – Returns only the managed
      * policies created by Amazon Web Services.</p> </li> <li> <p> <code>custom</code>
-     * – Returns only the custom policies created in your account.</p> </li> </ul>
+     * – Returns only the custom policies created in your Amazon Web Services
+     * account.</p> </li> </ul>
      */
     inline ListOriginRequestPolicies2020_05_31Request& WithType(const OriginRequestPolicyType& value) { SetType(value); return *this;}
 
@@ -83,7 +88,8 @@ namespace Model
      * <p>A filter to return only the specified kinds of origin request policies. Valid
      * values are:</p> <ul> <li> <p> <code>managed</code> – Returns only the managed
      * policies created by Amazon Web Services.</p> </li> <li> <p> <code>custom</code>
-     * – Returns only the custom policies created in your account.</p> </li> </ul>
+     * – Returns only the custom policies created in your Amazon Web Services
+     * account.</p> </li> </ul>
      */
     inline ListOriginRequestPolicies2020_05_31Request& WithType(OriginRequestPolicyType&& value) { SetType(std::move(value)); return *this;}
 

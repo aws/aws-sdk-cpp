@@ -40,88 +40,96 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the target resource for tagging operations.</p>
+     * <p>Identifies the Amazon Resource Name(ARN) key from which you are removing
+     * tags. </p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p>The ARN of the target resource for tagging operations.</p>
+     * <p>Identifies the Amazon Resource Name(ARN) key from which you are removing
+     * tags. </p>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the target resource for tagging operations.</p>
+     * <p>Identifies the Amazon Resource Name(ARN) key from which you are removing
+     * tags. </p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * <p>The ARN of the target resource for tagging operations.</p>
+     * <p>Identifies the Amazon Resource Name(ARN) key from which you are removing
+     * tags. </p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
-     * <p>The ARN of the target resource for tagging operations.</p>
+     * <p>Identifies the Amazon Resource Name(ARN) key from which you are removing
+     * tags. </p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * <p>The ARN of the target resource for tagging operations.</p>
+     * <p>Identifies the Amazon Resource Name(ARN) key from which you are removing
+     * tags. </p>
      */
     inline UntagResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p>The ARN of the target resource for tagging operations.</p>
+     * <p>Identifies the Amazon Resource Name(ARN) key from which you are removing
+     * tags. </p>
      */
     inline UntagResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the target resource for tagging operations.</p>
+     * <p>Identifies the Amazon Resource Name(ARN) key from which you are removing
+     * tags. </p>
      */
     inline UntagResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
 
     /**
-     * <p>An array of tag keys to delete.</p>
+     * <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
 
     /**
-     * <p>An array of tag keys to delete.</p>
+     * <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
      */
     inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
-     * <p>An array of tag keys to delete.</p>
+     * <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
      */
     inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
 
     /**
-     * <p>An array of tag keys to delete.</p>
+     * <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
      */
     inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
 
     /**
-     * <p>An array of tag keys to delete.</p>
+     * <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
      */
     inline UntagResourceRequest& WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
 
     /**
-     * <p>An array of tag keys to delete.</p>
+     * <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
      */
     inline UntagResourceRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
 
     /**
-     * <p>An array of tag keys to delete.</p>
+     * <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
      */
     inline UntagResourceRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
     /**
-     * <p>An array of tag keys to delete.</p>
+     * <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
      */
     inline UntagResourceRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of tag keys to delete.</p>
+     * <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
      */
     inline UntagResourceRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 

@@ -391,7 +391,7 @@ namespace Model
      * <p>The number of times that CloudFront attempts to connect to the origin. The
      * minimum number is 1, the maximum is 3, and the default (if you don’t specify
      * otherwise) is 3.</p> <p>For a custom origin (including an Amazon S3 bucket
-     * that��s configured with static website hosting), this value also specifies the
+     * that’s configured with static website hosting), this value also specifies the
      * number of times that CloudFront attempts to get a response from the origin, in
      * the case of an <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
@@ -405,7 +405,7 @@ namespace Model
      * <p>The number of times that CloudFront attempts to connect to the origin. The
      * minimum number is 1, the maximum is 3, and the default (if you don’t specify
      * otherwise) is 3.</p> <p>For a custom origin (including an Amazon S3 bucket
-     * that��s configured with static website hosting), this value also specifies the
+     * that’s configured with static website hosting), this value also specifies the
      * number of times that CloudFront attempts to get a response from the origin, in
      * the case of an <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
@@ -419,7 +419,7 @@ namespace Model
      * <p>The number of times that CloudFront attempts to connect to the origin. The
      * minimum number is 1, the maximum is 3, and the default (if you don’t specify
      * otherwise) is 3.</p> <p>For a custom origin (including an Amazon S3 bucket
-     * that��s configured with static website hosting), this value also specifies the
+     * that’s configured with static website hosting), this value also specifies the
      * number of times that CloudFront attempts to get a response from the origin, in
      * the case of an <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
@@ -433,7 +433,7 @@ namespace Model
      * <p>The number of times that CloudFront attempts to connect to the origin. The
      * minimum number is 1, the maximum is 3, and the default (if you don’t specify
      * otherwise) is 3.</p> <p>For a custom origin (including an Amazon S3 bucket
-     * that��s configured with static website hosting), this value also specifies the
+     * that’s configured with static website hosting), this value also specifies the
      * number of times that CloudFront attempts to get a response from the origin, in
      * the case of an <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin

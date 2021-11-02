@@ -97,14 +97,14 @@ namespace Model
 
     /**
      *  <p>We recommend using <code>TrustedKeyGroups</code> instead of
-     * <code>TrustedSigners</code>.</p>  <p>A list of account IDs whose
-     * public keys CloudFront can use to validate signed URLs or signed cookies.</p>
-     * <p>When a cache behavior contains trusted signers, CloudFront requires signed
-     * URLs or signed cookies for all requests that match the cache behavior. The URLs
-     * or cookies must be signed with the private key of a CloudFront key pair in a
-     * trusted signer’s account. The signed URL or cookie contains information about
-     * which public key CloudFront should use to verify the signature. For more
-     * information, see <a
+     * <code>TrustedSigners</code>.</p>  <p>A list of Amazon Web Services
+     * account IDs whose public keys CloudFront can use to validate signed URLs or
+     * signed cookies.</p> <p>When a cache behavior contains trusted signers,
+     * CloudFront requires signed URLs or signed cookies for all requests that match
+     * the cache behavior. The URLs or cookies must be signed with the private key of a
+     * CloudFront key pair in a trusted signer’s Amazon Web Services account. The
+     * signed URL or cookie contains information about which public key CloudFront
+     * should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
@@ -112,14 +112,14 @@ namespace Model
 
     /**
      *  <p>We recommend using <code>TrustedKeyGroups</code> instead of
-     * <code>TrustedSigners</code>.</p>  <p>A list of account IDs whose
-     * public keys CloudFront can use to validate signed URLs or signed cookies.</p>
-     * <p>When a cache behavior contains trusted signers, CloudFront requires signed
-     * URLs or signed cookies for all requests that match the cache behavior. The URLs
-     * or cookies must be signed with the private key of a CloudFront key pair in a
-     * trusted signer’s account. The signed URL or cookie contains information about
-     * which public key CloudFront should use to verify the signature. For more
-     * information, see <a
+     * <code>TrustedSigners</code>.</p>  <p>A list of Amazon Web Services
+     * account IDs whose public keys CloudFront can use to validate signed URLs or
+     * signed cookies.</p> <p>When a cache behavior contains trusted signers,
+     * CloudFront requires signed URLs or signed cookies for all requests that match
+     * the cache behavior. The URLs or cookies must be signed with the private key of a
+     * CloudFront key pair in a trusted signer’s Amazon Web Services account. The
+     * signed URL or cookie contains information about which public key CloudFront
+     * should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
@@ -127,14 +127,14 @@ namespace Model
 
     /**
      *  <p>We recommend using <code>TrustedKeyGroups</code> instead of
-     * <code>TrustedSigners</code>.</p>  <p>A list of account IDs whose
-     * public keys CloudFront can use to validate signed URLs or signed cookies.</p>
-     * <p>When a cache behavior contains trusted signers, CloudFront requires signed
-     * URLs or signed cookies for all requests that match the cache behavior. The URLs
-     * or cookies must be signed with the private key of a CloudFront key pair in a
-     * trusted signer’s account. The signed URL or cookie contains information about
-     * which public key CloudFront should use to verify the signature. For more
-     * information, see <a
+     * <code>TrustedSigners</code>.</p>  <p>A list of Amazon Web Services
+     * account IDs whose public keys CloudFront can use to validate signed URLs or
+     * signed cookies.</p> <p>When a cache behavior contains trusted signers,
+     * CloudFront requires signed URLs or signed cookies for all requests that match
+     * the cache behavior. The URLs or cookies must be signed with the private key of a
+     * CloudFront key pair in a trusted signer’s Amazon Web Services account. The
+     * signed URL or cookie contains information about which public key CloudFront
+     * should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
@@ -142,14 +142,14 @@ namespace Model
 
     /**
      *  <p>We recommend using <code>TrustedKeyGroups</code> instead of
-     * <code>TrustedSigners</code>.</p>  <p>A list of account IDs whose
-     * public keys CloudFront can use to validate signed URLs or signed cookies.</p>
-     * <p>When a cache behavior contains trusted signers, CloudFront requires signed
-     * URLs or signed cookies for all requests that match the cache behavior. The URLs
-     * or cookies must be signed with the private key of a CloudFront key pair in a
-     * trusted signer’s account. The signed URL or cookie contains information about
-     * which public key CloudFront should use to verify the signature. For more
-     * information, see <a
+     * <code>TrustedSigners</code>.</p>  <p>A list of Amazon Web Services
+     * account IDs whose public keys CloudFront can use to validate signed URLs or
+     * signed cookies.</p> <p>When a cache behavior contains trusted signers,
+     * CloudFront requires signed URLs or signed cookies for all requests that match
+     * the cache behavior. The URLs or cookies must be signed with the private key of a
+     * CloudFront key pair in a trusted signer’s Amazon Web Services account. The
+     * signed URL or cookie contains information about which public key CloudFront
+     * should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
@@ -157,14 +157,14 @@ namespace Model
 
     /**
      *  <p>We recommend using <code>TrustedKeyGroups</code> instead of
-     * <code>TrustedSigners</code>.</p>  <p>A list of account IDs whose
-     * public keys CloudFront can use to validate signed URLs or signed cookies.</p>
-     * <p>When a cache behavior contains trusted signers, CloudFront requires signed
-     * URLs or signed cookies for all requests that match the cache behavior. The URLs
-     * or cookies must be signed with the private key of a CloudFront key pair in a
-     * trusted signer’s account. The signed URL or cookie contains information about
-     * which public key CloudFront should use to verify the signature. For more
-     * information, see <a
+     * <code>TrustedSigners</code>.</p>  <p>A list of Amazon Web Services
+     * account IDs whose public keys CloudFront can use to validate signed URLs or
+     * signed cookies.</p> <p>When a cache behavior contains trusted signers,
+     * CloudFront requires signed URLs or signed cookies for all requests that match
+     * the cache behavior. The URLs or cookies must be signed with the private key of a
+     * CloudFront key pair in a trusted signer’s Amazon Web Services account. The
+     * signed URL or cookie contains information about which public key CloudFront
+     * should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
@@ -172,14 +172,14 @@ namespace Model
 
     /**
      *  <p>We recommend using <code>TrustedKeyGroups</code> instead of
-     * <code>TrustedSigners</code>.</p>  <p>A list of account IDs whose
-     * public keys CloudFront can use to validate signed URLs or signed cookies.</p>
-     * <p>When a cache behavior contains trusted signers, CloudFront requires signed
-     * URLs or signed cookies for all requests that match the cache behavior. The URLs
-     * or cookies must be signed with the private key of a CloudFront key pair in a
-     * trusted signer’s account. The signed URL or cookie contains information about
-     * which public key CloudFront should use to verify the signature. For more
-     * information, see <a
+     * <code>TrustedSigners</code>.</p>  <p>A list of Amazon Web Services
+     * account IDs whose public keys CloudFront can use to validate signed URLs or
+     * signed cookies.</p> <p>When a cache behavior contains trusted signers,
+     * CloudFront requires signed URLs or signed cookies for all requests that match
+     * the cache behavior. The URLs or cookies must be signed with the private key of a
+     * CloudFront key pair in a trusted signer’s Amazon Web Services account. The
+     * signed URL or cookie contains information about which public key CloudFront
+     * should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
@@ -914,6 +914,47 @@ namespace Model
      */
     inline DefaultCacheBehavior& WithOriginRequestPolicyId(const char* value) { SetOriginRequestPolicyId(value); return *this;}
 
+
+    /**
+     * <p>The identifier for a response headers policy.</p>
+     */
+    inline const Aws::String& GetResponseHeadersPolicyId() const{ return m_responseHeadersPolicyId; }
+
+    /**
+     * <p>The identifier for a response headers policy.</p>
+     */
+    inline bool ResponseHeadersPolicyIdHasBeenSet() const { return m_responseHeadersPolicyIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for a response headers policy.</p>
+     */
+    inline void SetResponseHeadersPolicyId(const Aws::String& value) { m_responseHeadersPolicyIdHasBeenSet = true; m_responseHeadersPolicyId = value; }
+
+    /**
+     * <p>The identifier for a response headers policy.</p>
+     */
+    inline void SetResponseHeadersPolicyId(Aws::String&& value) { m_responseHeadersPolicyIdHasBeenSet = true; m_responseHeadersPolicyId = std::move(value); }
+
+    /**
+     * <p>The identifier for a response headers policy.</p>
+     */
+    inline void SetResponseHeadersPolicyId(const char* value) { m_responseHeadersPolicyIdHasBeenSet = true; m_responseHeadersPolicyId.assign(value); }
+
+    /**
+     * <p>The identifier for a response headers policy.</p>
+     */
+    inline DefaultCacheBehavior& WithResponseHeadersPolicyId(const Aws::String& value) { SetResponseHeadersPolicyId(value); return *this;}
+
+    /**
+     * <p>The identifier for a response headers policy.</p>
+     */
+    inline DefaultCacheBehavior& WithResponseHeadersPolicyId(Aws::String&& value) { SetResponseHeadersPolicyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier for a response headers policy.</p>
+     */
+    inline DefaultCacheBehavior& WithResponseHeadersPolicyId(const char* value) { SetResponseHeadersPolicyId(value); return *this;}
+
   private:
 
     Aws::String m_targetOriginId;
@@ -954,6 +995,9 @@ namespace Model
 
     Aws::String m_originRequestPolicyId;
     bool m_originRequestPolicyIdHasBeenSet;
+
+    Aws::String m_responseHeadersPolicyId;
+    bool m_responseHeadersPolicyIdHasBeenSet;
   };
 
 } // namespace Model

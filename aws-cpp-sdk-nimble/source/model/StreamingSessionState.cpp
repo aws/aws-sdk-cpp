@@ -26,6 +26,11 @@ namespace Aws
         static const int DELETED_HASH = HashingUtils::HashString("DELETED");
         static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
         static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
+        static const int STOP_IN_PROGRESS_HASH = HashingUtils::HashString("STOP_IN_PROGRESS");
+        static const int START_IN_PROGRESS_HASH = HashingUtils::HashString("START_IN_PROGRESS");
+        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
+        static const int STOP_FAILED_HASH = HashingUtils::HashString("STOP_FAILED");
+        static const int START_FAILED_HASH = HashingUtils::HashString("START_FAILED");
 
 
         StreamingSessionState GetStreamingSessionStateForName(const Aws::String& name)
@@ -55,6 +60,26 @@ namespace Aws
           {
             return StreamingSessionState::DELETE_FAILED;
           }
+          else if (hashCode == STOP_IN_PROGRESS_HASH)
+          {
+            return StreamingSessionState::STOP_IN_PROGRESS;
+          }
+          else if (hashCode == START_IN_PROGRESS_HASH)
+          {
+            return StreamingSessionState::START_IN_PROGRESS;
+          }
+          else if (hashCode == STOPPED_HASH)
+          {
+            return StreamingSessionState::STOPPED;
+          }
+          else if (hashCode == STOP_FAILED_HASH)
+          {
+            return StreamingSessionState::STOP_FAILED;
+          }
+          else if (hashCode == START_FAILED_HASH)
+          {
+            return StreamingSessionState::START_FAILED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +106,16 @@ namespace Aws
             return "CREATE_FAILED";
           case StreamingSessionState::DELETE_FAILED:
             return "DELETE_FAILED";
+          case StreamingSessionState::STOP_IN_PROGRESS:
+            return "STOP_IN_PROGRESS";
+          case StreamingSessionState::START_IN_PROGRESS:
+            return "START_IN_PROGRESS";
+          case StreamingSessionState::STOPPED:
+            return "STOPPED";
+          case StreamingSessionState::STOP_FAILED:
+            return "STOP_FAILED";
+          case StreamingSessionState::START_FAILED:
+            return "START_FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

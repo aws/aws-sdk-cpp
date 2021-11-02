@@ -20,14 +20,12 @@ namespace Model
 
 Filters::Filters() : 
     m_queuesHasBeenSet(false),
-    m_routingProfilesHasBeenSet(false),
     m_channelsHasBeenSet(false)
 {
 }
 
 Filters::Filters(JsonView jsonValue) : 
     m_queuesHasBeenSet(false),
-    m_routingProfilesHasBeenSet(false),
     m_channelsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -43,16 +41,6 @@ Filters& Filters::operator =(JsonView jsonValue)
       m_queues.push_back(queuesJsonList[queuesIndex].AsString());
     }
     m_queuesHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("RoutingProfiles"))
-  {
-    Array<JsonView> routingProfilesJsonList = jsonValue.GetArray("RoutingProfiles");
-    for(unsigned routingProfilesIndex = 0; routingProfilesIndex < routingProfilesJsonList.GetLength(); ++routingProfilesIndex)
-    {
-      m_routingProfiles.push_back(routingProfilesJsonList[routingProfilesIndex].AsString());
-    }
-    m_routingProfilesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Channels"))
@@ -80,17 +68,6 @@ JsonValue Filters::Jsonize() const
      queuesJsonList[queuesIndex].AsString(m_queues[queuesIndex]);
    }
    payload.WithArray("Queues", std::move(queuesJsonList));
-
-  }
-
-  if(m_routingProfilesHasBeenSet)
-  {
-   Array<JsonValue> routingProfilesJsonList(m_routingProfiles.size());
-   for(unsigned routingProfilesIndex = 0; routingProfilesIndex < routingProfilesJsonList.GetLength(); ++routingProfilesIndex)
-   {
-     routingProfilesJsonList[routingProfilesIndex].AsString(m_routingProfiles[routingProfilesIndex]);
-   }
-   payload.WithArray("RoutingProfiles", std::move(routingProfilesJsonList));
 
   }
 

@@ -7,8 +7,8 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/nimble/NimbleStudioErrors.h>
 #include <aws/nimble/model/ConflictException.h>
-#include <aws/nimble/model/ServiceQuotaExceededException.h>
 #include <aws/nimble/model/ThrottlingException.h>
+#include <aws/nimble/model/ServiceQuotaExceededException.h>
 #include <aws/nimble/model/ResourceNotFoundException.h>
 #include <aws/nimble/model/ValidationException.h>
 #include <aws/nimble/model/AccessDeniedException.h>
@@ -29,16 +29,16 @@ template<> AWS_NIMBLESTUDIO_API ConflictException NimbleStudioError::GetModeledE
   return ConflictException(this->GetJsonPayload().View());
 }
 
-template<> AWS_NIMBLESTUDIO_API ServiceQuotaExceededException NimbleStudioError::GetModeledError()
-{
-  assert(this->GetErrorType() == NimbleStudioErrors::SERVICE_QUOTA_EXCEEDED);
-  return ServiceQuotaExceededException(this->GetJsonPayload().View());
-}
-
 template<> AWS_NIMBLESTUDIO_API ThrottlingException NimbleStudioError::GetModeledError()
 {
   assert(this->GetErrorType() == NimbleStudioErrors::THROTTLING);
   return ThrottlingException(this->GetJsonPayload().View());
+}
+
+template<> AWS_NIMBLESTUDIO_API ServiceQuotaExceededException NimbleStudioError::GetModeledError()
+{
+  assert(this->GetErrorType() == NimbleStudioErrors::SERVICE_QUOTA_EXCEEDED);
+  return ServiceQuotaExceededException(this->GetJsonPayload().View());
 }
 
 template<> AWS_NIMBLESTUDIO_API ResourceNotFoundException NimbleStudioError::GetModeledError()

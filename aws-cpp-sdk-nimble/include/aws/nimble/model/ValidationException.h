@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p><h3>See Also:</h3>   <a
+   * <p>One of the parameters in the request is invalid.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ValidationException">AWS
    * API Reference</a></p>
    */

@@ -27,7 +27,8 @@ namespace Model
 {
 
   /**
-   * <p><h3>See Also:</h3>   <a
+   * <p>Configuration for streaming workstations created using this launch
+   * profile.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StreamConfigurationCreate">AWS
    * API Reference</a></p>
    */
@@ -127,28 +128,69 @@ namespace Model
 
 
     /**
-     * <p>The length of time, in minutes, that a streaming session can run. After this
-     * point, Nimble Studio automatically terminates the session.</p>
+     * <p>The length of time, in minutes, that a streaming session can be active before
+     * it is stopped or terminated. After this point, Nimble Studio automatically
+     * terminates or stops the session. The default length of time is 690 minutes, and
+     * the maximum length of time is 30 days.</p>
      */
     inline int GetMaxSessionLengthInMinutes() const{ return m_maxSessionLengthInMinutes; }
 
     /**
-     * <p>The length of time, in minutes, that a streaming session can run. After this
-     * point, Nimble Studio automatically terminates the session.</p>
+     * <p>The length of time, in minutes, that a streaming session can be active before
+     * it is stopped or terminated. After this point, Nimble Studio automatically
+     * terminates or stops the session. The default length of time is 690 minutes, and
+     * the maximum length of time is 30 days.</p>
      */
     inline bool MaxSessionLengthInMinutesHasBeenSet() const { return m_maxSessionLengthInMinutesHasBeenSet; }
 
     /**
-     * <p>The length of time, in minutes, that a streaming session can run. After this
-     * point, Nimble Studio automatically terminates the session.</p>
+     * <p>The length of time, in minutes, that a streaming session can be active before
+     * it is stopped or terminated. After this point, Nimble Studio automatically
+     * terminates or stops the session. The default length of time is 690 minutes, and
+     * the maximum length of time is 30 days.</p>
      */
     inline void SetMaxSessionLengthInMinutes(int value) { m_maxSessionLengthInMinutesHasBeenSet = true; m_maxSessionLengthInMinutes = value; }
 
     /**
-     * <p>The length of time, in minutes, that a streaming session can run. After this
-     * point, Nimble Studio automatically terminates the session.</p>
+     * <p>The length of time, in minutes, that a streaming session can be active before
+     * it is stopped or terminated. After this point, Nimble Studio automatically
+     * terminates or stops the session. The default length of time is 690 minutes, and
+     * the maximum length of time is 30 days.</p>
      */
     inline StreamConfigurationCreate& WithMaxSessionLengthInMinutes(int value) { SetMaxSessionLengthInMinutes(value); return *this;}
+
+
+    /**
+     * <p>The length of time, in minutes, that a streaming session can be active before
+     * it is stopped or terminated. After this point, Nimble Studio automatically
+     * terminates or stops the session. The default length of time is 690 minutes, and
+     * the maximum length of time is 30 days.</p>
+     */
+    inline int GetMaxStoppedSessionLengthInMinutes() const{ return m_maxStoppedSessionLengthInMinutes; }
+
+    /**
+     * <p>The length of time, in minutes, that a streaming session can be active before
+     * it is stopped or terminated. After this point, Nimble Studio automatically
+     * terminates or stops the session. The default length of time is 690 minutes, and
+     * the maximum length of time is 30 days.</p>
+     */
+    inline bool MaxStoppedSessionLengthInMinutesHasBeenSet() const { return m_maxStoppedSessionLengthInMinutesHasBeenSet; }
+
+    /**
+     * <p>The length of time, in minutes, that a streaming session can be active before
+     * it is stopped or terminated. After this point, Nimble Studio automatically
+     * terminates or stops the session. The default length of time is 690 minutes, and
+     * the maximum length of time is 30 days.</p>
+     */
+    inline void SetMaxStoppedSessionLengthInMinutes(int value) { m_maxStoppedSessionLengthInMinutesHasBeenSet = true; m_maxStoppedSessionLengthInMinutes = value; }
+
+    /**
+     * <p>The length of time, in minutes, that a streaming session can be active before
+     * it is stopped or terminated. After this point, Nimble Studio automatically
+     * terminates or stops the session. The default length of time is 690 minutes, and
+     * the maximum length of time is 30 days.</p>
+     */
+    inline StreamConfigurationCreate& WithMaxStoppedSessionLengthInMinutes(int value) { SetMaxStoppedSessionLengthInMinutes(value); return *this;}
 
 
     /**
@@ -215,6 +257,9 @@ namespace Model
 
     int m_maxSessionLengthInMinutes;
     bool m_maxSessionLengthInMinutesHasBeenSet;
+
+    int m_maxStoppedSessionLengthInMinutes;
+    bool m_maxStoppedSessionLengthInMinutesHasBeenSet;
 
     Aws::Vector<Aws::String> m_streamingImageIds;
     bool m_streamingImageIdsHasBeenSet;

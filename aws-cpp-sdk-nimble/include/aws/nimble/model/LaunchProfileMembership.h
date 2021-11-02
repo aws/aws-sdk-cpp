@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p><h3>See Also:</h3>   <a
+   * <p/><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/LaunchProfileMembership">AWS
    * API Reference</a></p>
    */
@@ -150,6 +150,47 @@ namespace Model
      */
     inline LaunchProfileMembership& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
 
+
+    /**
+     * <p>The Active Directory Security Identifier for this user, if available.</p>
+     */
+    inline const Aws::String& GetSid() const{ return m_sid; }
+
+    /**
+     * <p>The Active Directory Security Identifier for this user, if available.</p>
+     */
+    inline bool SidHasBeenSet() const { return m_sidHasBeenSet; }
+
+    /**
+     * <p>The Active Directory Security Identifier for this user, if available.</p>
+     */
+    inline void SetSid(const Aws::String& value) { m_sidHasBeenSet = true; m_sid = value; }
+
+    /**
+     * <p>The Active Directory Security Identifier for this user, if available.</p>
+     */
+    inline void SetSid(Aws::String&& value) { m_sidHasBeenSet = true; m_sid = std::move(value); }
+
+    /**
+     * <p>The Active Directory Security Identifier for this user, if available.</p>
+     */
+    inline void SetSid(const char* value) { m_sidHasBeenSet = true; m_sid.assign(value); }
+
+    /**
+     * <p>The Active Directory Security Identifier for this user, if available.</p>
+     */
+    inline LaunchProfileMembership& WithSid(const Aws::String& value) { SetSid(value); return *this;}
+
+    /**
+     * <p>The Active Directory Security Identifier for this user, if available.</p>
+     */
+    inline LaunchProfileMembership& WithSid(Aws::String&& value) { SetSid(std::move(value)); return *this;}
+
+    /**
+     * <p>The Active Directory Security Identifier for this user, if available.</p>
+     */
+    inline LaunchProfileMembership& WithSid(const char* value) { SetSid(value); return *this;}
+
   private:
 
     Aws::String m_identityStoreId;
@@ -160,6 +201,9 @@ namespace Model
 
     Aws::String m_principalId;
     bool m_principalIdHasBeenSet;
+
+    Aws::String m_sid;
+    bool m_sidHasBeenSet;
   };
 
 } // namespace Model

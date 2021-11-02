@@ -96,52 +96,6 @@ namespace Model
 
 
     /**
-     * <p>The filters used to sort routing profiles. </p>
-     */
-    inline const Aws::Vector<Aws::String>& GetRoutingProfiles() const{ return m_routingProfiles; }
-
-    /**
-     * <p>The filters used to sort routing profiles. </p>
-     */
-    inline bool RoutingProfilesHasBeenSet() const { return m_routingProfilesHasBeenSet; }
-
-    /**
-     * <p>The filters used to sort routing profiles. </p>
-     */
-    inline void SetRoutingProfiles(const Aws::Vector<Aws::String>& value) { m_routingProfilesHasBeenSet = true; m_routingProfiles = value; }
-
-    /**
-     * <p>The filters used to sort routing profiles. </p>
-     */
-    inline void SetRoutingProfiles(Aws::Vector<Aws::String>&& value) { m_routingProfilesHasBeenSet = true; m_routingProfiles = std::move(value); }
-
-    /**
-     * <p>The filters used to sort routing profiles. </p>
-     */
-    inline Filters& WithRoutingProfiles(const Aws::Vector<Aws::String>& value) { SetRoutingProfiles(value); return *this;}
-
-    /**
-     * <p>The filters used to sort routing profiles. </p>
-     */
-    inline Filters& WithRoutingProfiles(Aws::Vector<Aws::String>&& value) { SetRoutingProfiles(std::move(value)); return *this;}
-
-    /**
-     * <p>The filters used to sort routing profiles. </p>
-     */
-    inline Filters& AddRoutingProfiles(const Aws::String& value) { m_routingProfilesHasBeenSet = true; m_routingProfiles.push_back(value); return *this; }
-
-    /**
-     * <p>The filters used to sort routing profiles. </p>
-     */
-    inline Filters& AddRoutingProfiles(Aws::String&& value) { m_routingProfilesHasBeenSet = true; m_routingProfiles.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The filters used to sort routing profiles. </p>
-     */
-    inline Filters& AddRoutingProfiles(const char* value) { m_routingProfilesHasBeenSet = true; m_routingProfiles.push_back(value); return *this; }
-
-
-    /**
      * <p>The channel to use to filter the metrics.</p>
      */
     inline const Aws::Vector<Channel>& GetChannels() const{ return m_channels; }
@@ -185,9 +139,6 @@ namespace Model
 
     Aws::Vector<Aws::String> m_queues;
     bool m_queuesHasBeenSet;
-
-    Aws::Vector<Aws::String> m_routingProfiles;
-    bool m_routingProfilesHasBeenSet;
 
     Aws::Vector<Channel> m_channels;
     bool m_channelsHasBeenSet;

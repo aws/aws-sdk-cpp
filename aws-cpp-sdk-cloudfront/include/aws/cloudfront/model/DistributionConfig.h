@@ -1098,7 +1098,7 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating
      * a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p> <p>If you're using an Route 53 Amazon Web Services Integration
+     * Guide</i>.</p> <p>If you're using an Route 53 Amazon Web Services Integration
      * alias resource record set to route traffic to your CloudFront distribution, you
      * need to create a second alias resource record set when both of the following are
      * true:</p> <ul> <li> <p>You enable IPv6 for the distribution</p> </li> <li>
@@ -1106,8 +1106,8 @@ namespace Model
      * </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
      * Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a>
-     * in the <i>Route 53 Amazon Web Services Integration Developer Guide</i>.</p>
-     * <p>If you created a CNAME resource record set, either with Route 53 Amazon Web
+     * in the <i>Route 53 Amazon Web Services Integration Developer Guide</i>.</p>
+     * <p>If you created a CNAME resource record set, either with Route 53 Amazon Web
      * Services Integration or with another DNS service, you don't need to make any
      * changes. A CNAME record will route traffic to your distribution regardless of
      * the IP address format of the viewer request.</p>
@@ -1130,7 +1130,7 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating
      * a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p> <p>If you're using an Route 53 Amazon Web Services Integration
+     * Guide</i>.</p> <p>If you're using an Route 53 Amazon Web Services Integration
      * alias resource record set to route traffic to your CloudFront distribution, you
      * need to create a second alias resource record set when both of the following are
      * true:</p> <ul> <li> <p>You enable IPv6 for the distribution</p> </li> <li>
@@ -1138,8 +1138,8 @@ namespace Model
      * </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
      * Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a>
-     * in the <i>Route 53 Amazon Web Services Integration Developer Guide</i>.</p>
-     * <p>If you created a CNAME resource record set, either with Route 53 Amazon Web
+     * in the <i>Route 53 Amazon Web Services Integration Developer Guide</i>.</p>
+     * <p>If you created a CNAME resource record set, either with Route 53 Amazon Web
      * Services Integration or with another DNS service, you don't need to make any
      * changes. A CNAME record will route traffic to your distribution regardless of
      * the IP address format of the viewer request.</p>
@@ -1162,7 +1162,7 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating
      * a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p> <p>If you're using an Route 53 Amazon Web Services Integration
+     * Guide</i>.</p> <p>If you're using an Route 53 Amazon Web Services Integration
      * alias resource record set to route traffic to your CloudFront distribution, you
      * need to create a second alias resource record set when both of the following are
      * true:</p> <ul> <li> <p>You enable IPv6 for the distribution</p> </li> <li>
@@ -1170,8 +1170,8 @@ namespace Model
      * </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
      * Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a>
-     * in the <i>Route 53 Amazon Web Services Integration Developer Guide</i>.</p>
-     * <p>If you created a CNAME resource record set, either with Route 53 Amazon Web
+     * in the <i>Route 53 Amazon Web Services Integration Developer Guide</i>.</p>
+     * <p>If you created a CNAME resource record set, either with Route 53 Amazon Web
      * Services Integration or with another DNS service, you don't need to make any
      * changes. A CNAME record will route traffic to your distribution regardless of
      * the IP address format of the viewer request.</p>
@@ -1194,7 +1194,7 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating
      * a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p> <p>If you're using an Route 53 Amazon Web Services Integration
+     * Guide</i>.</p> <p>If you're using an Route 53 Amazon Web Services Integration
      * alias resource record set to route traffic to your CloudFront distribution, you
      * need to create a second alias resource record set when both of the following are
      * true:</p> <ul> <li> <p>You enable IPv6 for the distribution</p> </li> <li>
@@ -1202,8 +1202,8 @@ namespace Model
      * </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
      * Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a>
-     * in the <i>Route 53 Amazon Web Services Integration Developer Guide</i>.</p>
-     * <p>If you created a CNAME resource record set, either with Route 53 Amazon Web
+     * in the <i>Route 53 Amazon Web Services Integration Developer Guide</i>.</p>
+     * <p>If you created a CNAME resource record set, either with Route 53 Amazon Web
      * Services Integration or with another DNS service, you don't need to make any
      * changes. A CNAME record will route traffic to your distribution regardless of
      * the IP address format of the viewer request.</p>

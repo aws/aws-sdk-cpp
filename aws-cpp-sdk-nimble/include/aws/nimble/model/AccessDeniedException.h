@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p><h3>See Also:</h3>   <a
+   * <p>You are not authorized to perform this operation. Check your IAM policies,
+   * and ensure that you are using the correct access keys.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/AccessDeniedException">AWS
    * API Reference</a></p>
    */

@@ -26,11 +26,16 @@ StreamingSession::StreamingSession() :
     m_launchProfileIdHasBeenSet(false),
     m_ownedByHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
+    m_startedAtHasBeenSet(false),
+    m_startedByHasBeenSet(false),
     m_state(StreamingSessionState::NOT_SET),
     m_stateHasBeenSet(false),
     m_statusCode(StreamingSessionStatusCode::NOT_SET),
     m_statusCodeHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
+    m_stopAtHasBeenSet(false),
+    m_stoppedAtHasBeenSet(false),
+    m_stoppedByHasBeenSet(false),
     m_streamingImageIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_terminateAtHasBeenSet(false),
@@ -47,11 +52,16 @@ StreamingSession::StreamingSession(JsonView jsonValue) :
     m_launchProfileIdHasBeenSet(false),
     m_ownedByHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
+    m_startedAtHasBeenSet(false),
+    m_startedByHasBeenSet(false),
     m_state(StreamingSessionState::NOT_SET),
     m_stateHasBeenSet(false),
     m_statusCode(StreamingSessionStatusCode::NOT_SET),
     m_statusCodeHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
+    m_stopAtHasBeenSet(false),
+    m_stoppedAtHasBeenSet(false),
+    m_stoppedByHasBeenSet(false),
     m_streamingImageIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_terminateAtHasBeenSet(false),
@@ -112,6 +122,20 @@ StreamingSession& StreamingSession::operator =(JsonView jsonValue)
     m_sessionIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("startedAt"))
+  {
+    m_startedAt = jsonValue.GetString("startedAt");
+
+    m_startedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("startedBy"))
+  {
+    m_startedBy = jsonValue.GetString("startedBy");
+
+    m_startedByHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("state"))
   {
     m_state = StreamingSessionStateMapper::GetStreamingSessionStateForName(jsonValue.GetString("state"));
@@ -131,6 +155,27 @@ StreamingSession& StreamingSession::operator =(JsonView jsonValue)
     m_statusMessage = jsonValue.GetString("statusMessage");
 
     m_statusMessageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("stopAt"))
+  {
+    m_stopAt = jsonValue.GetString("stopAt");
+
+    m_stopAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("stoppedAt"))
+  {
+    m_stoppedAt = jsonValue.GetString("stoppedAt");
+
+    m_stoppedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("stoppedBy"))
+  {
+    m_stoppedBy = jsonValue.GetString("stoppedBy");
+
+    m_stoppedByHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("streamingImageId"))
@@ -219,6 +264,17 @@ JsonValue StreamingSession::Jsonize() const
 
   }
 
+  if(m_startedAtHasBeenSet)
+  {
+   payload.WithString("startedAt", m_startedAt.ToGmtString(DateFormat::ISO_8601));
+  }
+
+  if(m_startedByHasBeenSet)
+  {
+   payload.WithString("startedBy", m_startedBy);
+
+  }
+
   if(m_stateHasBeenSet)
   {
    payload.WithString("state", StreamingSessionStateMapper::GetNameForStreamingSessionState(m_state));
@@ -232,6 +288,22 @@ JsonValue StreamingSession::Jsonize() const
   if(m_statusMessageHasBeenSet)
   {
    payload.WithString("statusMessage", m_statusMessage);
+
+  }
+
+  if(m_stopAtHasBeenSet)
+  {
+   payload.WithString("stopAt", m_stopAt.ToGmtString(DateFormat::ISO_8601));
+  }
+
+  if(m_stoppedAtHasBeenSet)
+  {
+   payload.WithString("stoppedAt", m_stoppedAt.ToGmtString(DateFormat::ISO_8601));
+  }
+
+  if(m_stoppedByHasBeenSet)
+  {
+   payload.WithString("stoppedBy", m_stoppedBy);
 
   }
 

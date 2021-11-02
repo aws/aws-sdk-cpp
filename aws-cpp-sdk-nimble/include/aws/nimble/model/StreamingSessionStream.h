@@ -27,7 +27,11 @@ namespace Model
 {
 
   /**
-   * <p><h3>See Also:</h3>   <a
+   * <p>A stream is an active connection to a streaming session, enabling a studio
+   * user to control the streaming session using a compatible client. Streaming
+   * session streams are compatible with the NICE DCV web client, included in the
+   * Nimble Studio portal, or the NICE DCV desktop client.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StreamingSessionStream">AWS
    * API Reference</a></p>
    */

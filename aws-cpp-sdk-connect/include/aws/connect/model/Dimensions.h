@@ -7,8 +7,6 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/QueueReference.h>
 #include <aws/connect/model/Channel.h>
-#include <aws/connect/model/RoutingProfileReference.h>
-#include <aws/connect/model/InstanceReference.h>
 #include <utility>
 
 namespace Aws
@@ -102,68 +100,6 @@ namespace Model
      */
     inline Dimensions& WithChannel(Channel&& value) { SetChannel(std::move(value)); return *this;}
 
-
-    /**
-     * <p>The routing profile.</p>
-     */
-    inline const RoutingProfileReference& GetRoutingProfile() const{ return m_routingProfile; }
-
-    /**
-     * <p>The routing profile.</p>
-     */
-    inline bool RoutingProfileHasBeenSet() const { return m_routingProfileHasBeenSet; }
-
-    /**
-     * <p>The routing profile.</p>
-     */
-    inline void SetRoutingProfile(const RoutingProfileReference& value) { m_routingProfileHasBeenSet = true; m_routingProfile = value; }
-
-    /**
-     * <p>The routing profile.</p>
-     */
-    inline void SetRoutingProfile(RoutingProfileReference&& value) { m_routingProfileHasBeenSet = true; m_routingProfile = std::move(value); }
-
-    /**
-     * <p>The routing profile.</p>
-     */
-    inline Dimensions& WithRoutingProfile(const RoutingProfileReference& value) { SetRoutingProfile(value); return *this;}
-
-    /**
-     * <p>The routing profile.</p>
-     */
-    inline Dimensions& WithRoutingProfile(RoutingProfileReference&& value) { SetRoutingProfile(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The instance reference.</p>
-     */
-    inline const InstanceReference& GetInstanceReference() const{ return m_instanceReference; }
-
-    /**
-     * <p>The instance reference.</p>
-     */
-    inline bool InstanceReferenceHasBeenSet() const { return m_instanceReferenceHasBeenSet; }
-
-    /**
-     * <p>The instance reference.</p>
-     */
-    inline void SetInstanceReference(const InstanceReference& value) { m_instanceReferenceHasBeenSet = true; m_instanceReference = value; }
-
-    /**
-     * <p>The instance reference.</p>
-     */
-    inline void SetInstanceReference(InstanceReference&& value) { m_instanceReferenceHasBeenSet = true; m_instanceReference = std::move(value); }
-
-    /**
-     * <p>The instance reference.</p>
-     */
-    inline Dimensions& WithInstanceReference(const InstanceReference& value) { SetInstanceReference(value); return *this;}
-
-    /**
-     * <p>The instance reference.</p>
-     */
-    inline Dimensions& WithInstanceReference(InstanceReference&& value) { SetInstanceReference(std::move(value)); return *this;}
-
   private:
 
     QueueReference m_queue;
@@ -171,12 +107,6 @@ namespace Model
 
     Channel m_channel;
     bool m_channelHasBeenSet;
-
-    RoutingProfileReference m_routingProfile;
-    bool m_routingProfileHasBeenSet;
-
-    InstanceReference m_instanceReference;
-    bool m_instanceReferenceHasBeenSet;
   };
 
 } // namespace Model

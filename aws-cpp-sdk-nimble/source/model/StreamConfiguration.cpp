@@ -24,6 +24,8 @@ StreamConfiguration::StreamConfiguration() :
     m_ec2InstanceTypesHasBeenSet(false),
     m_maxSessionLengthInMinutes(0),
     m_maxSessionLengthInMinutesHasBeenSet(false),
+    m_maxStoppedSessionLengthInMinutes(0),
+    m_maxStoppedSessionLengthInMinutesHasBeenSet(false),
     m_streamingImageIdsHasBeenSet(false)
 {
 }
@@ -34,6 +36,8 @@ StreamConfiguration::StreamConfiguration(JsonView jsonValue) :
     m_ec2InstanceTypesHasBeenSet(false),
     m_maxSessionLengthInMinutes(0),
     m_maxSessionLengthInMinutesHasBeenSet(false),
+    m_maxStoppedSessionLengthInMinutes(0),
+    m_maxStoppedSessionLengthInMinutesHasBeenSet(false),
     m_streamingImageIdsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -63,6 +67,13 @@ StreamConfiguration& StreamConfiguration::operator =(JsonView jsonValue)
     m_maxSessionLengthInMinutes = jsonValue.GetInteger("maxSessionLengthInMinutes");
 
     m_maxSessionLengthInMinutesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("maxStoppedSessionLengthInMinutes"))
+  {
+    m_maxStoppedSessionLengthInMinutes = jsonValue.GetInteger("maxStoppedSessionLengthInMinutes");
+
+    m_maxStoppedSessionLengthInMinutesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("streamingImageIds"))
@@ -101,6 +112,12 @@ JsonValue StreamConfiguration::Jsonize() const
   if(m_maxSessionLengthInMinutesHasBeenSet)
   {
    payload.WithInteger("maxSessionLengthInMinutes", m_maxSessionLengthInMinutes);
+
+  }
+
+  if(m_maxStoppedSessionLengthInMinutesHasBeenSet)
+  {
+   payload.WithInteger("maxStoppedSessionLengthInMinutes", m_maxStoppedSessionLengthInMinutes);
 
   }
 

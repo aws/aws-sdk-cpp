@@ -34,6 +34,7 @@
 #include <aws/cloudfront/model/CreateOriginRequestPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/CreatePublicKey2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateRealtimeLogConfig2020_05_31Request.h>
+#include <aws/cloudfront/model/CreateResponseHeadersPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateStreamingDistribution2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateStreamingDistributionWithTags2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteCachePolicy2020_05_31Request.h>
@@ -47,6 +48,7 @@
 #include <aws/cloudfront/model/DeleteOriginRequestPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/DeletePublicKey2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteRealtimeLogConfig2020_05_31Request.h>
+#include <aws/cloudfront/model/DeleteResponseHeadersPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteStreamingDistribution2020_05_31Request.h>
 #include <aws/cloudfront/model/DescribeFunction2020_05_31Request.h>
 #include <aws/cloudfront/model/GetCachePolicy2020_05_31Request.h>
@@ -69,6 +71,8 @@
 #include <aws/cloudfront/model/GetPublicKey2020_05_31Request.h>
 #include <aws/cloudfront/model/GetPublicKeyConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/GetRealtimeLogConfig2020_05_31Request.h>
+#include <aws/cloudfront/model/GetResponseHeadersPolicy2020_05_31Request.h>
+#include <aws/cloudfront/model/GetResponseHeadersPolicyConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/GetStreamingDistribution2020_05_31Request.h>
 #include <aws/cloudfront/model/GetStreamingDistributionConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/ListCachePolicies2020_05_31Request.h>
@@ -79,6 +83,7 @@
 #include <aws/cloudfront/model/ListDistributionsByKeyGroup2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributionsByOriginRequestPolicyId2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributionsByRealtimeLogConfig2020_05_31Request.h>
+#include <aws/cloudfront/model/ListDistributionsByResponseHeadersPolicyId2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributionsByWebACLId2020_05_31Request.h>
 #include <aws/cloudfront/model/ListFieldLevelEncryptionConfigs2020_05_31Request.h>
 #include <aws/cloudfront/model/ListFieldLevelEncryptionProfiles2020_05_31Request.h>
@@ -88,6 +93,7 @@
 #include <aws/cloudfront/model/ListOriginRequestPolicies2020_05_31Request.h>
 #include <aws/cloudfront/model/ListPublicKeys2020_05_31Request.h>
 #include <aws/cloudfront/model/ListRealtimeLogConfigs2020_05_31Request.h>
+#include <aws/cloudfront/model/ListResponseHeadersPolicies2020_05_31Request.h>
 #include <aws/cloudfront/model/ListStreamingDistributions2020_05_31Request.h>
 #include <aws/cloudfront/model/ListTagsForResource2020_05_31Request.h>
 #include <aws/cloudfront/model/PublishFunction2020_05_31Request.h>
@@ -104,6 +110,7 @@
 #include <aws/cloudfront/model/UpdateOriginRequestPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdatePublicKey2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateRealtimeLogConfig2020_05_31Request.h>
+#include <aws/cloudfront/model/UpdateResponseHeadersPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateStreamingDistribution2020_05_31Request.h>
 
 using namespace Aws;
@@ -559,6 +566,31 @@ void CloudFrontClient::CreateRealtimeLogConfig2020_05_31AsyncHelper(const Create
   handler(this, request, CreateRealtimeLogConfig2020_05_31(request), context);
 }
 
+CreateResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::CreateResponseHeadersPolicy2020_05_31(const CreateResponseHeadersPolicy2020_05_31Request& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/response-headers-policy");
+  return CreateResponseHeadersPolicy2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateResponseHeadersPolicy2020_05_31OutcomeCallable CloudFrontClient::CreateResponseHeadersPolicy2020_05_31Callable(const CreateResponseHeadersPolicy2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateResponseHeadersPolicy2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateResponseHeadersPolicy2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::CreateResponseHeadersPolicy2020_05_31Async(const CreateResponseHeadersPolicy2020_05_31Request& request, const CreateResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateResponseHeadersPolicy2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::CreateResponseHeadersPolicy2020_05_31AsyncHelper(const CreateResponseHeadersPolicy2020_05_31Request& request, const CreateResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateResponseHeadersPolicy2020_05_31(request), context);
+}
+
 CreateStreamingDistribution2020_05_31Outcome CloudFrontClient::CreateStreamingDistribution2020_05_31(const CreateStreamingDistribution2020_05_31Request& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -951,6 +983,37 @@ void CloudFrontClient::DeleteRealtimeLogConfig2020_05_31Async(const DeleteRealti
 void CloudFrontClient::DeleteRealtimeLogConfig2020_05_31AsyncHelper(const DeleteRealtimeLogConfig2020_05_31Request& request, const DeleteRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteRealtimeLogConfig2020_05_31(request), context);
+}
+
+DeleteResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::DeleteResponseHeadersPolicy2020_05_31(const DeleteResponseHeadersPolicy2020_05_31Request& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteResponseHeadersPolicy2020_05_31", "Required field: Id, is not set");
+    return DeleteResponseHeadersPolicy2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/response-headers-policy/");
+  uri.AddPathSegment(request.GetId());
+  return DeleteResponseHeadersPolicy2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
+}
+
+DeleteResponseHeadersPolicy2020_05_31OutcomeCallable CloudFrontClient::DeleteResponseHeadersPolicy2020_05_31Callable(const DeleteResponseHeadersPolicy2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteResponseHeadersPolicy2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResponseHeadersPolicy2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::DeleteResponseHeadersPolicy2020_05_31Async(const DeleteResponseHeadersPolicy2020_05_31Request& request, const DeleteResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteResponseHeadersPolicy2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::DeleteResponseHeadersPolicy2020_05_31AsyncHelper(const DeleteResponseHeadersPolicy2020_05_31Request& request, const DeleteResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteResponseHeadersPolicy2020_05_31(request), context);
 }
 
 DeleteStreamingDistribution2020_05_31Outcome CloudFrontClient::DeleteStreamingDistribution2020_05_31(const DeleteStreamingDistribution2020_05_31Request& request) const
@@ -1646,6 +1709,69 @@ void CloudFrontClient::GetRealtimeLogConfig2020_05_31AsyncHelper(const GetRealti
   handler(this, request, GetRealtimeLogConfig2020_05_31(request), context);
 }
 
+GetResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::GetResponseHeadersPolicy2020_05_31(const GetResponseHeadersPolicy2020_05_31Request& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetResponseHeadersPolicy2020_05_31", "Required field: Id, is not set");
+    return GetResponseHeadersPolicy2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/response-headers-policy/");
+  uri.AddPathSegment(request.GetId());
+  return GetResponseHeadersPolicy2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+GetResponseHeadersPolicy2020_05_31OutcomeCallable CloudFrontClient::GetResponseHeadersPolicy2020_05_31Callable(const GetResponseHeadersPolicy2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetResponseHeadersPolicy2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResponseHeadersPolicy2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::GetResponseHeadersPolicy2020_05_31Async(const GetResponseHeadersPolicy2020_05_31Request& request, const GetResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetResponseHeadersPolicy2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::GetResponseHeadersPolicy2020_05_31AsyncHelper(const GetResponseHeadersPolicy2020_05_31Request& request, const GetResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetResponseHeadersPolicy2020_05_31(request), context);
+}
+
+GetResponseHeadersPolicyConfig2020_05_31Outcome CloudFrontClient::GetResponseHeadersPolicyConfig2020_05_31(const GetResponseHeadersPolicyConfig2020_05_31Request& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetResponseHeadersPolicyConfig2020_05_31", "Required field: Id, is not set");
+    return GetResponseHeadersPolicyConfig2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/response-headers-policy/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/config");
+  return GetResponseHeadersPolicyConfig2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+GetResponseHeadersPolicyConfig2020_05_31OutcomeCallable CloudFrontClient::GetResponseHeadersPolicyConfig2020_05_31Callable(const GetResponseHeadersPolicyConfig2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetResponseHeadersPolicyConfig2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResponseHeadersPolicyConfig2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::GetResponseHeadersPolicyConfig2020_05_31Async(const GetResponseHeadersPolicyConfig2020_05_31Request& request, const GetResponseHeadersPolicyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetResponseHeadersPolicyConfig2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::GetResponseHeadersPolicyConfig2020_05_31AsyncHelper(const GetResponseHeadersPolicyConfig2020_05_31Request& request, const GetResponseHeadersPolicyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetResponseHeadersPolicyConfig2020_05_31(request), context);
+}
+
 GetStreamingDistribution2020_05_31Outcome CloudFrontClient::GetStreamingDistribution2020_05_31(const GetStreamingDistribution2020_05_31Request& request) const
 {
   if (!request.IdHasBeenSet())
@@ -1937,6 +2063,37 @@ void CloudFrontClient::ListDistributionsByRealtimeLogConfig2020_05_31AsyncHelper
   handler(this, request, ListDistributionsByRealtimeLogConfig2020_05_31(request), context);
 }
 
+ListDistributionsByResponseHeadersPolicyId2020_05_31Outcome CloudFrontClient::ListDistributionsByResponseHeadersPolicyId2020_05_31(const ListDistributionsByResponseHeadersPolicyId2020_05_31Request& request) const
+{
+  if (!request.ResponseHeadersPolicyIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListDistributionsByResponseHeadersPolicyId2020_05_31", "Required field: ResponseHeadersPolicyId, is not set");
+    return ListDistributionsByResponseHeadersPolicyId2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResponseHeadersPolicyId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/distributionsByResponseHeadersPolicyId/");
+  uri.AddPathSegment(request.GetResponseHeadersPolicyId());
+  return ListDistributionsByResponseHeadersPolicyId2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+ListDistributionsByResponseHeadersPolicyId2020_05_31OutcomeCallable CloudFrontClient::ListDistributionsByResponseHeadersPolicyId2020_05_31Callable(const ListDistributionsByResponseHeadersPolicyId2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDistributionsByResponseHeadersPolicyId2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDistributionsByResponseHeadersPolicyId2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::ListDistributionsByResponseHeadersPolicyId2020_05_31Async(const ListDistributionsByResponseHeadersPolicyId2020_05_31Request& request, const ListDistributionsByResponseHeadersPolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListDistributionsByResponseHeadersPolicyId2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::ListDistributionsByResponseHeadersPolicyId2020_05_31AsyncHelper(const ListDistributionsByResponseHeadersPolicyId2020_05_31Request& request, const ListDistributionsByResponseHeadersPolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListDistributionsByResponseHeadersPolicyId2020_05_31(request), context);
+}
+
 ListDistributionsByWebACLId2020_05_31Outcome CloudFrontClient::ListDistributionsByWebACLId2020_05_31(const ListDistributionsByWebACLId2020_05_31Request& request) const
 {
   if (!request.WebACLIdHasBeenSet())
@@ -2173,6 +2330,31 @@ void CloudFrontClient::ListRealtimeLogConfigs2020_05_31Async(const ListRealtimeL
 void CloudFrontClient::ListRealtimeLogConfigs2020_05_31AsyncHelper(const ListRealtimeLogConfigs2020_05_31Request& request, const ListRealtimeLogConfigs2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListRealtimeLogConfigs2020_05_31(request), context);
+}
+
+ListResponseHeadersPolicies2020_05_31Outcome CloudFrontClient::ListResponseHeadersPolicies2020_05_31(const ListResponseHeadersPolicies2020_05_31Request& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/response-headers-policy");
+  return ListResponseHeadersPolicies2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+ListResponseHeadersPolicies2020_05_31OutcomeCallable CloudFrontClient::ListResponseHeadersPolicies2020_05_31Callable(const ListResponseHeadersPolicies2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListResponseHeadersPolicies2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResponseHeadersPolicies2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::ListResponseHeadersPolicies2020_05_31Async(const ListResponseHeadersPolicies2020_05_31Request& request, const ListResponseHeadersPolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListResponseHeadersPolicies2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::ListResponseHeadersPolicies2020_05_31AsyncHelper(const ListResponseHeadersPolicies2020_05_31Request& request, const ListResponseHeadersPolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListResponseHeadersPolicies2020_05_31(request), context);
 }
 
 ListStreamingDistributions2020_05_31Outcome CloudFrontClient::ListStreamingDistributions2020_05_31(const ListStreamingDistributions2020_05_31Request& request) const
@@ -2682,6 +2864,37 @@ void CloudFrontClient::UpdateRealtimeLogConfig2020_05_31Async(const UpdateRealti
 void CloudFrontClient::UpdateRealtimeLogConfig2020_05_31AsyncHelper(const UpdateRealtimeLogConfig2020_05_31Request& request, const UpdateRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateRealtimeLogConfig2020_05_31(request), context);
+}
+
+UpdateResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::UpdateResponseHeadersPolicy2020_05_31(const UpdateResponseHeadersPolicy2020_05_31Request& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateResponseHeadersPolicy2020_05_31", "Required field: Id, is not set");
+    return UpdateResponseHeadersPolicy2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/response-headers-policy/");
+  uri.AddPathSegment(request.GetId());
+  return UpdateResponseHeadersPolicy2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT));
+}
+
+UpdateResponseHeadersPolicy2020_05_31OutcomeCallable CloudFrontClient::UpdateResponseHeadersPolicy2020_05_31Callable(const UpdateResponseHeadersPolicy2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateResponseHeadersPolicy2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateResponseHeadersPolicy2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::UpdateResponseHeadersPolicy2020_05_31Async(const UpdateResponseHeadersPolicy2020_05_31Request& request, const UpdateResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateResponseHeadersPolicy2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::UpdateResponseHeadersPolicy2020_05_31AsyncHelper(const UpdateResponseHeadersPolicy2020_05_31Request& request, const UpdateResponseHeadersPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateResponseHeadersPolicy2020_05_31(request), context);
 }
 
 UpdateStreamingDistribution2020_05_31Outcome CloudFrontClient::UpdateStreamingDistribution2020_05_31(const UpdateStreamingDistribution2020_05_31Request& request) const

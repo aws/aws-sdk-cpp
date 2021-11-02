@@ -21,7 +21,12 @@ namespace Model
     READY,
     DELETED,
     CREATE_FAILED,
-    DELETE_FAILED
+    DELETE_FAILED,
+    STOP_IN_PROGRESS,
+    START_IN_PROGRESS,
+    STOPPED,
+    STOP_FAILED,
+    START_FAILED
   };
 
 namespace StreamingSessionStateMapper

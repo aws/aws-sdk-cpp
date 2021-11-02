@@ -22,8 +22,6 @@ namespace Aws
 
         static const int QUEUE_HASH = HashingUtils::HashString("QUEUE");
         static const int CHANNEL_HASH = HashingUtils::HashString("CHANNEL");
-        static const int ROUTING_PROFILE_HASH = HashingUtils::HashString("ROUTING_PROFILE");
-        static const int INSTANCE_HASH = HashingUtils::HashString("INSTANCE");
 
 
         Grouping GetGroupingForName(const Aws::String& name)
@@ -36,14 +34,6 @@ namespace Aws
           else if (hashCode == CHANNEL_HASH)
           {
             return Grouping::CHANNEL;
-          }
-          else if (hashCode == ROUTING_PROFILE_HASH)
-          {
-            return Grouping::ROUTING_PROFILE;
-          }
-          else if (hashCode == INSTANCE_HASH)
-          {
-            return Grouping::INSTANCE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,10 +53,6 @@ namespace Aws
             return "QUEUE";
           case Grouping::CHANNEL:
             return "CHANNEL";
-          case Grouping::ROUTING_PROFILE:
-            return "ROUTING_PROFILE";
-          case Grouping::INSTANCE:
-            return "INSTANCE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

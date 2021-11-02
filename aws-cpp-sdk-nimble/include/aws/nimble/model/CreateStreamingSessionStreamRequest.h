@@ -18,7 +18,7 @@ namespace Model
 {
 
   /**
-   * <p>A list collection streams.</p><p><h3>See Also:</h3>   <a
+   * <zonbook></zonbook><xhtml></xhtml><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStreamingSessionStreamRequest">AWS
    * API Reference</a></p>
    */
@@ -39,90 +39,58 @@ namespace Model
 
 
     /**
-     * <p>To make an idempotent API request using one of these actions, specify a
-     * client token in the request. You should not reuse the same client token for
-     * other API requests. If you retry a request that completed successfully using the
-     * same client token and the same parameters, the retry succeeds without performing
-     * any further actions. If you retry a successful request using the same client
-     * token, but one or more of the parameters are different, the retry fails with a
-     * ValidationException error.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. If you don’t specify a client token, the AWS SDK automatically
+     * generates a client token and uses it for the request to ensure idempotency.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>To make an idempotent API request using one of these actions, specify a
-     * client token in the request. You should not reuse the same client token for
-     * other API requests. If you retry a request that completed successfully using the
-     * same client token and the same parameters, the retry succeeds without performing
-     * any further actions. If you retry a successful request using the same client
-     * token, but one or more of the parameters are different, the retry fails with a
-     * ValidationException error.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. If you don’t specify a client token, the AWS SDK automatically
+     * generates a client token and uses it for the request to ensure idempotency.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>To make an idempotent API request using one of these actions, specify a
-     * client token in the request. You should not reuse the same client token for
-     * other API requests. If you retry a request that completed successfully using the
-     * same client token and the same parameters, the retry succeeds without performing
-     * any further actions. If you retry a successful request using the same client
-     * token, but one or more of the parameters are different, the retry fails with a
-     * ValidationException error.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. If you don’t specify a client token, the AWS SDK automatically
+     * generates a client token and uses it for the request to ensure idempotency.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>To make an idempotent API request using one of these actions, specify a
-     * client token in the request. You should not reuse the same client token for
-     * other API requests. If you retry a request that completed successfully using the
-     * same client token and the same parameters, the retry succeeds without performing
-     * any further actions. If you retry a successful request using the same client
-     * token, but one or more of the parameters are different, the retry fails with a
-     * ValidationException error.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. If you don’t specify a client token, the AWS SDK automatically
+     * generates a client token and uses it for the request to ensure idempotency.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>To make an idempotent API request using one of these actions, specify a
-     * client token in the request. You should not reuse the same client token for
-     * other API requests. If you retry a request that completed successfully using the
-     * same client token and the same parameters, the retry succeeds without performing
-     * any further actions. If you retry a successful request using the same client
-     * token, but one or more of the parameters are different, the retry fails with a
-     * ValidationException error.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. If you don’t specify a client token, the AWS SDK automatically
+     * generates a client token and uses it for the request to ensure idempotency.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>To make an idempotent API request using one of these actions, specify a
-     * client token in the request. You should not reuse the same client token for
-     * other API requests. If you retry a request that completed successfully using the
-     * same client token and the same parameters, the retry succeeds without performing
-     * any further actions. If you retry a successful request using the same client
-     * token, but one or more of the parameters are different, the retry fails with a
-     * ValidationException error.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. If you don’t specify a client token, the AWS SDK automatically
+     * generates a client token and uses it for the request to ensure idempotency.</p>
      */
     inline CreateStreamingSessionStreamRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>To make an idempotent API request using one of these actions, specify a
-     * client token in the request. You should not reuse the same client token for
-     * other API requests. If you retry a request that completed successfully using the
-     * same client token and the same parameters, the retry succeeds without performing
-     * any further actions. If you retry a successful request using the same client
-     * token, but one or more of the parameters are different, the retry fails with a
-     * ValidationException error.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. If you don’t specify a client token, the AWS SDK automatically
+     * generates a client token and uses it for the request to ensure idempotency.</p>
      */
     inline CreateStreamingSessionStreamRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>To make an idempotent API request using one of these actions, specify a
-     * client token in the request. You should not reuse the same client token for
-     * other API requests. If you retry a request that completed successfully using the
-     * same client token and the same parameters, the retry succeeds without performing
-     * any further actions. If you retry a successful request using the same client
-     * token, but one or more of the parameters are different, the retry fails with a
-     * ValidationException error.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. If you don’t specify a client token, the AWS SDK automatically
+     * generates a client token and uses it for the request to ensure idempotency.</p>
      */
     inline CreateStreamingSessionStreamRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -149,83 +117,83 @@ namespace Model
 
 
     /**
-     * <p>The session ID.</p>
+     * <p>The streaming session ID.</p>
      */
     inline const Aws::String& GetSessionId() const{ return m_sessionId; }
 
     /**
-     * <p>The session ID.</p>
+     * <p>The streaming session ID.</p>
      */
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
 
     /**
-     * <p>The session ID.</p>
+     * <p>The streaming session ID.</p>
      */
     inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
 
     /**
-     * <p>The session ID.</p>
+     * <p>The streaming session ID.</p>
      */
     inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
 
     /**
-     * <p>The session ID.</p>
+     * <p>The streaming session ID.</p>
      */
     inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
 
     /**
-     * <p>The session ID.</p>
+     * <p>The streaming session ID.</p>
      */
     inline CreateStreamingSessionStreamRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
 
     /**
-     * <p>The session ID.</p>
+     * <p>The streaming session ID.</p>
      */
     inline CreateStreamingSessionStreamRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
 
     /**
-     * <p>The session ID.</p>
+     * <p>The streaming session ID.</p>
      */
     inline CreateStreamingSessionStreamRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
 
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline const Aws::String& GetStudioId() const{ return m_studioId; }
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline bool StudioIdHasBeenSet() const { return m_studioIdHasBeenSet; }
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline void SetStudioId(const Aws::String& value) { m_studioIdHasBeenSet = true; m_studioId = value; }
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline void SetStudioId(Aws::String&& value) { m_studioIdHasBeenSet = true; m_studioId = std::move(value); }
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline void SetStudioId(const char* value) { m_studioIdHasBeenSet = true; m_studioId.assign(value); }
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline CreateStreamingSessionStreamRequest& WithStudioId(const Aws::String& value) { SetStudioId(value); return *this;}
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline CreateStreamingSessionStreamRequest& WithStudioId(Aws::String&& value) { SetStudioId(std::move(value)); return *this;}
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline CreateStreamingSessionStreamRequest& WithStudioId(const char* value) { SetStudioId(value); return *this;}
 

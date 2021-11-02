@@ -22,7 +22,8 @@ StudioMembership::StudioMembership() :
     m_identityStoreIdHasBeenSet(false),
     m_persona(StudioPersona::NOT_SET),
     m_personaHasBeenSet(false),
-    m_principalIdHasBeenSet(false)
+    m_principalIdHasBeenSet(false),
+    m_sidHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ StudioMembership::StudioMembership(JsonView jsonValue) :
     m_identityStoreIdHasBeenSet(false),
     m_persona(StudioPersona::NOT_SET),
     m_personaHasBeenSet(false),
-    m_principalIdHasBeenSet(false)
+    m_principalIdHasBeenSet(false),
+    m_sidHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +60,13 @@ StudioMembership& StudioMembership::operator =(JsonView jsonValue)
     m_principalIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("sid"))
+  {
+    m_sid = jsonValue.GetString("sid");
+
+    m_sidHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -79,6 +88,12 @@ JsonValue StudioMembership::Jsonize() const
   if(m_principalIdHasBeenSet)
   {
    payload.WithString("principalId", m_principalId);
+
+  }
+
+  if(m_sidHasBeenSet)
+  {
+   payload.WithString("sid", m_sid);
 
   }
 

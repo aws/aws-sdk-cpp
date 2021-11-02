@@ -33,124 +33,132 @@ namespace Model
 
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The Launch Profile ID.</p>
      */
     inline const Aws::String& GetLaunchProfileId() const{ return m_launchProfileId; }
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The Launch Profile ID.</p>
      */
     inline bool LaunchProfileIdHasBeenSet() const { return m_launchProfileIdHasBeenSet; }
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The Launch Profile ID.</p>
      */
     inline void SetLaunchProfileId(const Aws::String& value) { m_launchProfileIdHasBeenSet = true; m_launchProfileId = value; }
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The Launch Profile ID.</p>
      */
     inline void SetLaunchProfileId(Aws::String&& value) { m_launchProfileIdHasBeenSet = true; m_launchProfileId = std::move(value); }
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The Launch Profile ID.</p>
      */
     inline void SetLaunchProfileId(const char* value) { m_launchProfileIdHasBeenSet = true; m_launchProfileId.assign(value); }
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The Launch Profile ID.</p>
      */
     inline GetLaunchProfileMemberRequest& WithLaunchProfileId(const Aws::String& value) { SetLaunchProfileId(value); return *this;}
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The Launch Profile ID.</p>
      */
     inline GetLaunchProfileMemberRequest& WithLaunchProfileId(Aws::String&& value) { SetLaunchProfileId(std::move(value)); return *this;}
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The Launch Profile ID.</p>
      */
     inline GetLaunchProfileMemberRequest& WithLaunchProfileId(const char* value) { SetLaunchProfileId(value); return *this;}
 
 
     /**
-     * <p>The principal ID.</p>
+     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * </p>
      */
     inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
 
     /**
-     * <p>The principal ID.</p>
+     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * </p>
      */
     inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
 
     /**
-     * <p>The principal ID.</p>
+     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * </p>
      */
     inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
 
     /**
-     * <p>The principal ID.</p>
+     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * </p>
      */
     inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
 
     /**
-     * <p>The principal ID.</p>
+     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * </p>
      */
     inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
 
     /**
-     * <p>The principal ID.</p>
+     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * </p>
      */
     inline GetLaunchProfileMemberRequest& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
 
     /**
-     * <p>The principal ID.</p>
+     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * </p>
      */
     inline GetLaunchProfileMemberRequest& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
 
     /**
-     * <p>The principal ID.</p>
+     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * </p>
      */
     inline GetLaunchProfileMemberRequest& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
 
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline const Aws::String& GetStudioId() const{ return m_studioId; }
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline bool StudioIdHasBeenSet() const { return m_studioIdHasBeenSet; }
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline void SetStudioId(const Aws::String& value) { m_studioIdHasBeenSet = true; m_studioId = value; }
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline void SetStudioId(Aws::String&& value) { m_studioIdHasBeenSet = true; m_studioId = std::move(value); }
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline void SetStudioId(const char* value) { m_studioIdHasBeenSet = true; m_studioId.assign(value); }
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline GetLaunchProfileMemberRequest& WithStudioId(const Aws::String& value) { SetStudioId(value); return *this;}
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline GetLaunchProfileMemberRequest& WithStudioId(Aws::String&& value) { SetStudioId(std::move(value)); return *this;}
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline GetLaunchProfileMemberRequest& WithStudioId(const char* value) { SetStudioId(value); return *this;}
 

@@ -40,199 +40,199 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results to be returned per request.</p>
+     * <p>The max number of results to return in the response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to be returned per request.</p>
+     * <p>The max number of results to return in the response.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results to be returned per request.</p>
+     * <p>The max number of results to return in the response.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to be returned per request.</p>
+     * <p>The max number of results to return in the response.</p>
      */
     inline ListLaunchProfilesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>The token for the next set of results, or null if there are no more
-     * results.</p>
+     * <p>The token to request the next page of results. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token for the next set of results, or null if there are no more
-     * results.</p>
+     * <p>The token to request the next page of results. </p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>The token for the next set of results, or null if there are no more
-     * results.</p>
+     * <p>The token to request the next page of results. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The token for the next set of results, or null if there are no more
-     * results.</p>
+     * <p>The token to request the next page of results. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The token for the next set of results, or null if there are no more
-     * results.</p>
+     * <p>The token to request the next page of results. </p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The token for the next set of results, or null if there are no more
-     * results.</p>
+     * <p>The token to request the next page of results. </p>
      */
     inline ListLaunchProfilesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token for the next set of results, or null if there are no more
-     * results.</p>
+     * <p>The token to request the next page of results. </p>
      */
     inline ListLaunchProfilesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token for the next set of results, or null if there are no more
-     * results.</p>
+     * <p>The token to request the next page of results. </p>
      */
     inline ListLaunchProfilesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>The principal ID.</p>
+     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * </p>
      */
     inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
 
     /**
-     * <p>The principal ID.</p>
+     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * </p>
      */
     inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
 
     /**
-     * <p>The principal ID.</p>
+     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * </p>
      */
     inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
 
     /**
-     * <p>The principal ID.</p>
+     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * </p>
      */
     inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
 
     /**
-     * <p>The principal ID.</p>
+     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * </p>
      */
     inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
 
     /**
-     * <p>The principal ID.</p>
+     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * </p>
      */
     inline ListLaunchProfilesRequest& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
 
     /**
-     * <p>The principal ID.</p>
+     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * </p>
      */
     inline ListLaunchProfilesRequest& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
 
     /**
-     * <p>The principal ID.</p>
+     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * </p>
      */
     inline ListLaunchProfilesRequest& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
 
 
     /**
-     * <p>A list of states.</p>
+     * <p>Filter this request to launch profiles in any of the given states.</p>
      */
     inline const Aws::Vector<Aws::String>& GetStates() const{ return m_states; }
 
     /**
-     * <p>A list of states.</p>
+     * <p>Filter this request to launch profiles in any of the given states.</p>
      */
     inline bool StatesHasBeenSet() const { return m_statesHasBeenSet; }
 
     /**
-     * <p>A list of states.</p>
+     * <p>Filter this request to launch profiles in any of the given states.</p>
      */
     inline void SetStates(const Aws::Vector<Aws::String>& value) { m_statesHasBeenSet = true; m_states = value; }
 
     /**
-     * <p>A list of states.</p>
+     * <p>Filter this request to launch profiles in any of the given states.</p>
      */
     inline void SetStates(Aws::Vector<Aws::String>&& value) { m_statesHasBeenSet = true; m_states = std::move(value); }
 
     /**
-     * <p>A list of states.</p>
+     * <p>Filter this request to launch profiles in any of the given states.</p>
      */
     inline ListLaunchProfilesRequest& WithStates(const Aws::Vector<Aws::String>& value) { SetStates(value); return *this;}
 
     /**
-     * <p>A list of states.</p>
+     * <p>Filter this request to launch profiles in any of the given states.</p>
      */
     inline ListLaunchProfilesRequest& WithStates(Aws::Vector<Aws::String>&& value) { SetStates(std::move(value)); return *this;}
 
     /**
-     * <p>A list of states.</p>
+     * <p>Filter this request to launch profiles in any of the given states.</p>
      */
     inline ListLaunchProfilesRequest& AddStates(const Aws::String& value) { m_statesHasBeenSet = true; m_states.push_back(value); return *this; }
 
     /**
-     * <p>A list of states.</p>
+     * <p>Filter this request to launch profiles in any of the given states.</p>
      */
     inline ListLaunchProfilesRequest& AddStates(Aws::String&& value) { m_statesHasBeenSet = true; m_states.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of states.</p>
+     * <p>Filter this request to launch profiles in any of the given states.</p>
      */
     inline ListLaunchProfilesRequest& AddStates(const char* value) { m_statesHasBeenSet = true; m_states.push_back(value); return *this; }
 
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline const Aws::String& GetStudioId() const{ return m_studioId; }
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline bool StudioIdHasBeenSet() const { return m_studioIdHasBeenSet; }
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline void SetStudioId(const Aws::String& value) { m_studioIdHasBeenSet = true; m_studioId = value; }
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline void SetStudioId(Aws::String&& value) { m_studioIdHasBeenSet = true; m_studioId = std::move(value); }
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline void SetStudioId(const char* value) { m_studioIdHasBeenSet = true; m_studioId.assign(value); }
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline ListLaunchProfilesRequest& WithStudioId(const Aws::String& value) { SetStudioId(value); return *this;}
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline ListLaunchProfilesRequest& WithStudioId(Aws::String&& value) { SetStudioId(std::move(value)); return *this;}
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline ListLaunchProfilesRequest& WithStudioId(const char* value) { SetStudioId(value); return *this;}
 

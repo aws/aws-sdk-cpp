@@ -28,7 +28,8 @@ namespace Model
 {
 
   /**
-   * <p><h3>See Also:</h3>   <a
+   * <p>A streaming session is a virtual workstation created using a particular
+   * launch profile.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StreamingSession">AWS
    * API Reference</a></p>
    */
@@ -327,6 +328,78 @@ namespace Model
 
 
     /**
+     * <p>The time the session entered START_IN_PROGRESS state.</p>
+     */
+    inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
+
+    /**
+     * <p>The time the session entered START_IN_PROGRESS state.</p>
+     */
+    inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
+
+    /**
+     * <p>The time the session entered START_IN_PROGRESS state.</p>
+     */
+    inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
+
+    /**
+     * <p>The time the session entered START_IN_PROGRESS state.</p>
+     */
+    inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAtHasBeenSet = true; m_startedAt = std::move(value); }
+
+    /**
+     * <p>The time the session entered START_IN_PROGRESS state.</p>
+     */
+    inline StreamingSession& WithStartedAt(const Aws::Utils::DateTime& value) { SetStartedAt(value); return *this;}
+
+    /**
+     * <p>The time the session entered START_IN_PROGRESS state.</p>
+     */
+    inline StreamingSession& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The user ID of the user that started the streaming session.</p>
+     */
+    inline const Aws::String& GetStartedBy() const{ return m_startedBy; }
+
+    /**
+     * <p>The user ID of the user that started the streaming session.</p>
+     */
+    inline bool StartedByHasBeenSet() const { return m_startedByHasBeenSet; }
+
+    /**
+     * <p>The user ID of the user that started the streaming session.</p>
+     */
+    inline void SetStartedBy(const Aws::String& value) { m_startedByHasBeenSet = true; m_startedBy = value; }
+
+    /**
+     * <p>The user ID of the user that started the streaming session.</p>
+     */
+    inline void SetStartedBy(Aws::String&& value) { m_startedByHasBeenSet = true; m_startedBy = std::move(value); }
+
+    /**
+     * <p>The user ID of the user that started the streaming session.</p>
+     */
+    inline void SetStartedBy(const char* value) { m_startedByHasBeenSet = true; m_startedBy.assign(value); }
+
+    /**
+     * <p>The user ID of the user that started the streaming session.</p>
+     */
+    inline StreamingSession& WithStartedBy(const Aws::String& value) { SetStartedBy(value); return *this;}
+
+    /**
+     * <p>The user ID of the user that started the streaming session.</p>
+     */
+    inline StreamingSession& WithStartedBy(Aws::String&& value) { SetStartedBy(std::move(value)); return *this;}
+
+    /**
+     * <p>The user ID of the user that started the streaming session.</p>
+     */
+    inline StreamingSession& WithStartedBy(const char* value) { SetStartedBy(value); return *this;}
+
+
+    /**
      * <p>The current state.</p>
      */
     inline const StreamingSessionState& GetState() const{ return m_state; }
@@ -427,6 +500,115 @@ namespace Model
      * <p>The status message for the streaming session.</p>
      */
     inline StreamingSession& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+
+
+    /**
+     * <p>The time the streaming session will automatically be stopped if the user
+     * doesn’t stop the session themselves. </p>
+     */
+    inline const Aws::Utils::DateTime& GetStopAt() const{ return m_stopAt; }
+
+    /**
+     * <p>The time the streaming session will automatically be stopped if the user
+     * doesn’t stop the session themselves. </p>
+     */
+    inline bool StopAtHasBeenSet() const { return m_stopAtHasBeenSet; }
+
+    /**
+     * <p>The time the streaming session will automatically be stopped if the user
+     * doesn’t stop the session themselves. </p>
+     */
+    inline void SetStopAt(const Aws::Utils::DateTime& value) { m_stopAtHasBeenSet = true; m_stopAt = value; }
+
+    /**
+     * <p>The time the streaming session will automatically be stopped if the user
+     * doesn’t stop the session themselves. </p>
+     */
+    inline void SetStopAt(Aws::Utils::DateTime&& value) { m_stopAtHasBeenSet = true; m_stopAt = std::move(value); }
+
+    /**
+     * <p>The time the streaming session will automatically be stopped if the user
+     * doesn’t stop the session themselves. </p>
+     */
+    inline StreamingSession& WithStopAt(const Aws::Utils::DateTime& value) { SetStopAt(value); return *this;}
+
+    /**
+     * <p>The time the streaming session will automatically be stopped if the user
+     * doesn’t stop the session themselves. </p>
+     */
+    inline StreamingSession& WithStopAt(Aws::Utils::DateTime&& value) { SetStopAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The time the session entered STOP_IN_PROGRESS state.</p>
+     */
+    inline const Aws::Utils::DateTime& GetStoppedAt() const{ return m_stoppedAt; }
+
+    /**
+     * <p>The time the session entered STOP_IN_PROGRESS state.</p>
+     */
+    inline bool StoppedAtHasBeenSet() const { return m_stoppedAtHasBeenSet; }
+
+    /**
+     * <p>The time the session entered STOP_IN_PROGRESS state.</p>
+     */
+    inline void SetStoppedAt(const Aws::Utils::DateTime& value) { m_stoppedAtHasBeenSet = true; m_stoppedAt = value; }
+
+    /**
+     * <p>The time the session entered STOP_IN_PROGRESS state.</p>
+     */
+    inline void SetStoppedAt(Aws::Utils::DateTime&& value) { m_stoppedAtHasBeenSet = true; m_stoppedAt = std::move(value); }
+
+    /**
+     * <p>The time the session entered STOP_IN_PROGRESS state.</p>
+     */
+    inline StreamingSession& WithStoppedAt(const Aws::Utils::DateTime& value) { SetStoppedAt(value); return *this;}
+
+    /**
+     * <p>The time the session entered STOP_IN_PROGRESS state.</p>
+     */
+    inline StreamingSession& WithStoppedAt(Aws::Utils::DateTime&& value) { SetStoppedAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The user ID of the user that stopped the streaming session.</p>
+     */
+    inline const Aws::String& GetStoppedBy() const{ return m_stoppedBy; }
+
+    /**
+     * <p>The user ID of the user that stopped the streaming session.</p>
+     */
+    inline bool StoppedByHasBeenSet() const { return m_stoppedByHasBeenSet; }
+
+    /**
+     * <p>The user ID of the user that stopped the streaming session.</p>
+     */
+    inline void SetStoppedBy(const Aws::String& value) { m_stoppedByHasBeenSet = true; m_stoppedBy = value; }
+
+    /**
+     * <p>The user ID of the user that stopped the streaming session.</p>
+     */
+    inline void SetStoppedBy(Aws::String&& value) { m_stoppedByHasBeenSet = true; m_stoppedBy = std::move(value); }
+
+    /**
+     * <p>The user ID of the user that stopped the streaming session.</p>
+     */
+    inline void SetStoppedBy(const char* value) { m_stoppedByHasBeenSet = true; m_stoppedBy.assign(value); }
+
+    /**
+     * <p>The user ID of the user that stopped the streaming session.</p>
+     */
+    inline StreamingSession& WithStoppedBy(const Aws::String& value) { SetStoppedBy(value); return *this;}
+
+    /**
+     * <p>The user ID of the user that stopped the streaming session.</p>
+     */
+    inline StreamingSession& WithStoppedBy(Aws::String&& value) { SetStoppedBy(std::move(value)); return *this;}
+
+    /**
+     * <p>The user ID of the user that stopped the streaming session.</p>
+     */
+    inline StreamingSession& WithStoppedBy(const char* value) { SetStoppedBy(value); return *this;}
 
 
     /**
@@ -680,6 +862,12 @@ namespace Model
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet;
 
+    Aws::Utils::DateTime m_startedAt;
+    bool m_startedAtHasBeenSet;
+
+    Aws::String m_startedBy;
+    bool m_startedByHasBeenSet;
+
     StreamingSessionState m_state;
     bool m_stateHasBeenSet;
 
@@ -688,6 +876,15 @@ namespace Model
 
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
+
+    Aws::Utils::DateTime m_stopAt;
+    bool m_stopAtHasBeenSet;
+
+    Aws::Utils::DateTime m_stoppedAt;
+    bool m_stoppedAtHasBeenSet;
+
+    Aws::String m_stoppedBy;
+    bool m_stoppedByHasBeenSet;
 
     Aws::String m_streamingImageId;
     bool m_streamingImageIdHasBeenSet;

@@ -31,6 +31,10 @@ namespace Aws
         static const int INITIALIZATION_SCRIPT_ERROR_HASH = HashingUtils::HashString("INITIALIZATION_SCRIPT_ERROR");
         static const int DECRYPT_STREAMING_IMAGE_ERROR_HASH = HashingUtils::HashString("DECRYPT_STREAMING_IMAGE_ERROR");
         static const int NETWORK_INTERFACE_ERROR_HASH = HashingUtils::HashString("NETWORK_INTERFACE_ERROR");
+        static const int STREAMING_SESSION_STOPPED_HASH = HashingUtils::HashString("STREAMING_SESSION_STOPPED");
+        static const int STREAMING_SESSION_STARTED_HASH = HashingUtils::HashString("STREAMING_SESSION_STARTED");
+        static const int STREAMING_SESSION_STOP_IN_PROGRESS_HASH = HashingUtils::HashString("STREAMING_SESSION_STOP_IN_PROGRESS");
+        static const int STREAMING_SESSION_START_IN_PROGRESS_HASH = HashingUtils::HashString("STREAMING_SESSION_START_IN_PROGRESS");
 
 
         StreamingSessionStatusCode GetStreamingSessionStatusCodeForName(const Aws::String& name)
@@ -80,6 +84,22 @@ namespace Aws
           {
             return StreamingSessionStatusCode::NETWORK_INTERFACE_ERROR;
           }
+          else if (hashCode == STREAMING_SESSION_STOPPED_HASH)
+          {
+            return StreamingSessionStatusCode::STREAMING_SESSION_STOPPED;
+          }
+          else if (hashCode == STREAMING_SESSION_STARTED_HASH)
+          {
+            return StreamingSessionStatusCode::STREAMING_SESSION_STARTED;
+          }
+          else if (hashCode == STREAMING_SESSION_STOP_IN_PROGRESS_HASH)
+          {
+            return StreamingSessionStatusCode::STREAMING_SESSION_STOP_IN_PROGRESS;
+          }
+          else if (hashCode == STREAMING_SESSION_START_IN_PROGRESS_HASH)
+          {
+            return StreamingSessionStatusCode::STREAMING_SESSION_START_IN_PROGRESS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -116,6 +136,14 @@ namespace Aws
             return "DECRYPT_STREAMING_IMAGE_ERROR";
           case StreamingSessionStatusCode::NETWORK_INTERFACE_ERROR:
             return "NETWORK_INTERFACE_ERROR";
+          case StreamingSessionStatusCode::STREAMING_SESSION_STOPPED:
+            return "STREAMING_SESSION_STOPPED";
+          case StreamingSessionStatusCode::STREAMING_SESSION_STARTED:
+            return "STREAMING_SESSION_STARTED";
+          case StreamingSessionStatusCode::STREAMING_SESSION_STOP_IN_PROGRESS:
+            return "STREAMING_SESSION_STOP_IN_PROGRESS";
+          case StreamingSessionStatusCode::STREAMING_SESSION_START_IN_PROGRESS:
+            return "STREAMING_SESSION_START_IN_PROGRESS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

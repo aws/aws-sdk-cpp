@@ -29,7 +29,13 @@ namespace Model
 {
 
   /**
-   * <p><h3>See Also:</h3>   <a
+   * <p>Represents a streaming image resource.</p> <p>Streaming images are used by
+   * studio users to select which operating system and software they want to use in a
+   * Nimble Studio streaming session.</p> <p>Amazon provides a number of streaming
+   * images that include popular 3rd-party software.</p> <p>You can create your own
+   * streaming images using an Amazon Elastic Compute Cloud (Amazon EC2) machine
+   * image that you create for this purpose. You can also include software that your
+   * users require.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StreamingImage">AWS
    * API Reference</a></p>
    */

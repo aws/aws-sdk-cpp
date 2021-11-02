@@ -29,7 +29,18 @@ namespace Model
 {
 
   /**
-   * <p><h3>See Also:</h3>   <a
+   * <p>Represents a studio resource.</p> <p>A studio is the core resource used with
+   * Nimble Studio. You must create a studio first, before any other resource type
+   * can be created. All other resources you create and manage in Nimble Studio are
+   * contained within a studio.</p> <p>When creating a studio, you must provides two
+   * IAM roles for use with the Nimble Studio portal. These roles are assumed by your
+   * users when they log in to the Nimble Studio portal via Amazon Web Services SSO
+   * and your identity source.</p> <p>The user role must have the
+   * AmazonNimbleStudio-StudioUser managed policy attached for the portal to function
+   * properly.</p> <p>The admin role must have the AmazonNimbleStudio-StudioAdmin
+   * managed policy attached for the portal to function properly.</p> <p>Your studio
+   * roles must trust the identity.nimble.amazonaws.com service principal to function
+   * properly.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/Studio">AWS API
    * Reference</a></p>
    */
@@ -256,56 +267,56 @@ namespace Model
     /**
      * <p>The Amazon Web Services SSO application client ID used to integrate with
      * Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to
-     * Nimble portal.</p>
+     * Nimble Studio portal.</p>
      */
     inline const Aws::String& GetSsoClientId() const{ return m_ssoClientId; }
 
     /**
      * <p>The Amazon Web Services SSO application client ID used to integrate with
      * Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to
-     * Nimble portal.</p>
+     * Nimble Studio portal.</p>
      */
     inline bool SsoClientIdHasBeenSet() const { return m_ssoClientIdHasBeenSet; }
 
     /**
      * <p>The Amazon Web Services SSO application client ID used to integrate with
      * Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to
-     * Nimble portal.</p>
+     * Nimble Studio portal.</p>
      */
     inline void SetSsoClientId(const Aws::String& value) { m_ssoClientIdHasBeenSet = true; m_ssoClientId = value; }
 
     /**
      * <p>The Amazon Web Services SSO application client ID used to integrate with
      * Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to
-     * Nimble portal.</p>
+     * Nimble Studio portal.</p>
      */
     inline void SetSsoClientId(Aws::String&& value) { m_ssoClientIdHasBeenSet = true; m_ssoClientId = std::move(value); }
 
     /**
      * <p>The Amazon Web Services SSO application client ID used to integrate with
      * Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to
-     * Nimble portal.</p>
+     * Nimble Studio portal.</p>
      */
     inline void SetSsoClientId(const char* value) { m_ssoClientIdHasBeenSet = true; m_ssoClientId.assign(value); }
 
     /**
      * <p>The Amazon Web Services SSO application client ID used to integrate with
      * Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to
-     * Nimble portal.</p>
+     * Nimble Studio portal.</p>
      */
     inline Studio& WithSsoClientId(const Aws::String& value) { SetSsoClientId(value); return *this;}
 
     /**
      * <p>The Amazon Web Services SSO application client ID used to integrate with
      * Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to
-     * Nimble portal.</p>
+     * Nimble Studio portal.</p>
      */
     inline Studio& WithSsoClientId(Aws::String&& value) { SetSsoClientId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Web Services SSO application client ID used to integrate with
      * Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to
-     * Nimble portal.</p>
+     * Nimble Studio portal.</p>
      */
     inline Studio& WithSsoClientId(const char* value) { SetSsoClientId(value); return *this;}
 

@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>The member.</p>
+     * <p>The updated member. </p>
      */
     inline const LaunchProfileMembership& GetMember() const{ return m_member; }
 
     /**
-     * <p>The member.</p>
+     * <p>The updated member. </p>
      */
     inline void SetMember(const LaunchProfileMembership& value) { m_member = value; }
 
     /**
-     * <p>The member.</p>
+     * <p>The updated member. </p>
      */
     inline void SetMember(LaunchProfileMembership&& value) { m_member = std::move(value); }
 
     /**
-     * <p>The member.</p>
+     * <p>The updated member. </p>
      */
     inline UpdateLaunchProfileMemberResult& WithMember(const LaunchProfileMembership& value) { SetMember(value); return *this;}
 
     /**
-     * <p>The member.</p>
+     * <p>The updated member. </p>
      */
     inline UpdateLaunchProfileMemberResult& WithMember(LaunchProfileMembership&& value) { SetMember(std::move(value)); return *this;}
 

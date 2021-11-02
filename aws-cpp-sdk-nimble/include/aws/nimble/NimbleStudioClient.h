@@ -48,7 +48,9 @@
 #include <aws/nimble/model/ListTagsForResourceResult.h>
 #include <aws/nimble/model/PutLaunchProfileMembersResult.h>
 #include <aws/nimble/model/PutStudioMembersResult.h>
+#include <aws/nimble/model/StartStreamingSessionResult.h>
 #include <aws/nimble/model/StartStudioSSOConfigurationRepairResult.h>
+#include <aws/nimble/model/StopStreamingSessionResult.h>
 #include <aws/nimble/model/TagResourceResult.h>
 #include <aws/nimble/model/UntagResourceResult.h>
 #include <aws/nimble/model/UpdateLaunchProfileResult.h>
@@ -132,7 +134,9 @@ namespace Model
         class ListTagsForResourceRequest;
         class PutLaunchProfileMembersRequest;
         class PutStudioMembersRequest;
+        class StartStreamingSessionRequest;
         class StartStudioSSOConfigurationRepairRequest;
+        class StopStreamingSessionRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateLaunchProfileRequest;
@@ -178,7 +182,9 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, NimbleStudioError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutLaunchProfileMembersResult, NimbleStudioError> PutLaunchProfileMembersOutcome;
         typedef Aws::Utils::Outcome<PutStudioMembersResult, NimbleStudioError> PutStudioMembersOutcome;
+        typedef Aws::Utils::Outcome<StartStreamingSessionResult, NimbleStudioError> StartStreamingSessionOutcome;
         typedef Aws::Utils::Outcome<StartStudioSSOConfigurationRepairResult, NimbleStudioError> StartStudioSSOConfigurationRepairOutcome;
+        typedef Aws::Utils::Outcome<StopStreamingSessionResult, NimbleStudioError> StopStreamingSessionOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, NimbleStudioError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, NimbleStudioError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateLaunchProfileResult, NimbleStudioError> UpdateLaunchProfileOutcome;
@@ -224,7 +230,9 @@ namespace Model
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutLaunchProfileMembersOutcome> PutLaunchProfileMembersOutcomeCallable;
         typedef std::future<PutStudioMembersOutcome> PutStudioMembersOutcomeCallable;
+        typedef std::future<StartStreamingSessionOutcome> StartStreamingSessionOutcomeCallable;
         typedef std::future<StartStudioSSOConfigurationRepairOutcome> StartStudioSSOConfigurationRepairOutcomeCallable;
+        typedef std::future<StopStreamingSessionOutcome> StopStreamingSessionOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateLaunchProfileOutcome> UpdateLaunchProfileOutcomeCallable;
@@ -273,7 +281,9 @@ namespace Model
     typedef std::function<void(const NimbleStudioClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const NimbleStudioClient*, const Model::PutLaunchProfileMembersRequest&, const Model::PutLaunchProfileMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLaunchProfileMembersResponseReceivedHandler;
     typedef std::function<void(const NimbleStudioClient*, const Model::PutStudioMembersRequest&, const Model::PutStudioMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutStudioMembersResponseReceivedHandler;
+    typedef std::function<void(const NimbleStudioClient*, const Model::StartStreamingSessionRequest&, const Model::StartStreamingSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartStreamingSessionResponseReceivedHandler;
     typedef std::function<void(const NimbleStudioClient*, const Model::StartStudioSSOConfigurationRepairRequest&, const Model::StartStudioSSOConfigurationRepairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartStudioSSOConfigurationRepairResponseReceivedHandler;
+    typedef std::function<void(const NimbleStudioClient*, const Model::StopStreamingSessionRequest&, const Model::StopStreamingSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopStreamingSessionResponseReceivedHandler;
     typedef std::function<void(const NimbleStudioClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const NimbleStudioClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const NimbleStudioClient*, const Model::UpdateLaunchProfileRequest&, const Model::UpdateLaunchProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLaunchProfileResponseReceivedHandler;
@@ -282,6 +292,13 @@ namespace Model
     typedef std::function<void(const NimbleStudioClient*, const Model::UpdateStudioRequest&, const Model::UpdateStudioOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStudioResponseReceivedHandler;
     typedef std::function<void(const NimbleStudioClient*, const Model::UpdateStudioComponentRequest&, const Model::UpdateStudioComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStudioComponentResponseReceivedHandler;
 
+  /**
+   * <p>Welcome to the Amazon Nimble Studio API reference. This API reference
+   * provides methods, schema, resources, parameters, and more to help you get the
+   * most out of Nimble Studio.</p> <p>Nimble Studio is a virtual studio that
+   * empowers visual effects, animation, and interactive content teams to create
+   * content securely within a scalable, private cloud service.</p>
+   */
   class AWS_NIMBLESTUDIO_API NimbleStudioClient : public Aws::Client::AWSJsonClient
   {
     public:
@@ -894,7 +911,7 @@ namespace Model
         virtual void GetStreamingImageAsync(const Model::GetStreamingImageRequest& request, const GetStreamingImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets StreamingSession resource.</p> <p>Invoke this operation to poll for a
+         * <p>Gets StreamingSession resource.</p> <p>anvoke this operation to poll for a
          * streaming session state while creating or deleting a session.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStreamingSession">AWS
@@ -903,7 +920,7 @@ namespace Model
         virtual Model::GetStreamingSessionOutcome GetStreamingSession(const Model::GetStreamingSessionRequest& request) const;
 
         /**
-         * <p>Gets StreamingSession resource.</p> <p>Invoke this operation to poll for a
+         * <p>Gets StreamingSession resource.</p> <p>anvoke this operation to poll for a
          * streaming session state while creating or deleting a session.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStreamingSession">AWS
@@ -914,7 +931,7 @@ namespace Model
         virtual Model::GetStreamingSessionOutcomeCallable GetStreamingSessionCallable(const Model::GetStreamingSessionRequest& request) const;
 
         /**
-         * <p>Gets StreamingSession resource.</p> <p>Invoke this operation to poll for a
+         * <p>Gets StreamingSession resource.</p> <p>anvoke this operation to poll for a
          * streaming session state while creating or deleting a session.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStreamingSession">AWS
@@ -1373,28 +1390,61 @@ namespace Model
         virtual void PutStudioMembersAsync(const Model::PutStudioMembersRequest& request, const PutStudioMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Repairs the SSO configuration for a given studio.</p> <p>If the studio has a
-         * valid Amazon Web Services SSO configuration currently associated with it, this
-         * operation will fail with a validation error.</p> <p>If the studio does not have
-         * a valid Amazon Web Services SSO configuration currently associated with it, then
-         * a new Amazon Web Services SSO application is created for the studio and the
-         * studio is changed to the READY state.</p> <p>After the Amazon Web Services SSO
-         * application is repaired, you must use the Amazon Nimble Studio console to add
-         * administrators and users to your studio.</p><p><h3>See Also:</h3>   <a
+         * <p> Transitions sessions from the STOPPED state into the READY state. The
+         * START_IN_PROGRESS state is the intermediate state between the STOPPED and READY
+         * states.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StartStreamingSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartStreamingSessionOutcome StartStreamingSession(const Model::StartStreamingSessionRequest& request) const;
+
+        /**
+         * <p> Transitions sessions from the STOPPED state into the READY state. The
+         * START_IN_PROGRESS state is the intermediate state between the STOPPED and READY
+         * states.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StartStreamingSession">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartStreamingSessionOutcomeCallable StartStreamingSessionCallable(const Model::StartStreamingSessionRequest& request) const;
+
+        /**
+         * <p> Transitions sessions from the STOPPED state into the READY state. The
+         * START_IN_PROGRESS state is the intermediate state between the STOPPED and READY
+         * states.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StartStreamingSession">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartStreamingSessionAsync(const Model::StartStreamingSessionRequest& request, const StartStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Repairs the Amazon Web Services SSO configuration for a given studio.</p>
+         * <p>If the studio has a valid Amazon Web Services SSO configuration currently
+         * associated with it, this operation will fail with a validation error.</p> <p>If
+         * the studio does not have a valid Amazon Web Services SSO configuration currently
+         * associated with it, then a new Amazon Web Services SSO application is created
+         * for the studio and the studio is changed to the READY state.</p> <p>After the
+         * Amazon Web Services SSO application is repaired, you must use the Amazon Nimble
+         * Studio console to add administrators and users to your studio.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StartStudioSSOConfigurationRepair">AWS
          * API Reference</a></p>
          */
         virtual Model::StartStudioSSOConfigurationRepairOutcome StartStudioSSOConfigurationRepair(const Model::StartStudioSSOConfigurationRepairRequest& request) const;
 
         /**
-         * <p>Repairs the SSO configuration for a given studio.</p> <p>If the studio has a
-         * valid Amazon Web Services SSO configuration currently associated with it, this
-         * operation will fail with a validation error.</p> <p>If the studio does not have
-         * a valid Amazon Web Services SSO configuration currently associated with it, then
-         * a new Amazon Web Services SSO application is created for the studio and the
-         * studio is changed to the READY state.</p> <p>After the Amazon Web Services SSO
-         * application is repaired, you must use the Amazon Nimble Studio console to add
-         * administrators and users to your studio.</p><p><h3>See Also:</h3>   <a
+         * <p>Repairs the Amazon Web Services SSO configuration for a given studio.</p>
+         * <p>If the studio has a valid Amazon Web Services SSO configuration currently
+         * associated with it, this operation will fail with a validation error.</p> <p>If
+         * the studio does not have a valid Amazon Web Services SSO configuration currently
+         * associated with it, then a new Amazon Web Services SSO application is created
+         * for the studio and the studio is changed to the READY state.</p> <p>After the
+         * Amazon Web Services SSO application is repaired, you must use the Amazon Nimble
+         * Studio console to add administrators and users to your studio.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StartStudioSSOConfigurationRepair">AWS
          * API Reference</a></p>
          *
@@ -1403,20 +1453,52 @@ namespace Model
         virtual Model::StartStudioSSOConfigurationRepairOutcomeCallable StartStudioSSOConfigurationRepairCallable(const Model::StartStudioSSOConfigurationRepairRequest& request) const;
 
         /**
-         * <p>Repairs the SSO configuration for a given studio.</p> <p>If the studio has a
-         * valid Amazon Web Services SSO configuration currently associated with it, this
-         * operation will fail with a validation error.</p> <p>If the studio does not have
-         * a valid Amazon Web Services SSO configuration currently associated with it, then
-         * a new Amazon Web Services SSO application is created for the studio and the
-         * studio is changed to the READY state.</p> <p>After the Amazon Web Services SSO
-         * application is repaired, you must use the Amazon Nimble Studio console to add
-         * administrators and users to your studio.</p><p><h3>See Also:</h3>   <a
+         * <p>Repairs the Amazon Web Services SSO configuration for a given studio.</p>
+         * <p>If the studio has a valid Amazon Web Services SSO configuration currently
+         * associated with it, this operation will fail with a validation error.</p> <p>If
+         * the studio does not have a valid Amazon Web Services SSO configuration currently
+         * associated with it, then a new Amazon Web Services SSO application is created
+         * for the studio and the studio is changed to the READY state.</p> <p>After the
+         * Amazon Web Services SSO application is repaired, you must use the Amazon Nimble
+         * Studio console to add administrators and users to your studio.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StartStudioSSOConfigurationRepair">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartStudioSSOConfigurationRepairAsync(const Model::StartStudioSSOConfigurationRepairRequest& request, const StartStudioSSOConfigurationRepairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Transitions sessions from the READY state into the STOPPED state. The
+         * STOP_IN_PROGRESS state is the intermediate state between the READY and STOPPED
+         * states.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StopStreamingSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopStreamingSessionOutcome StopStreamingSession(const Model::StopStreamingSessionRequest& request) const;
+
+        /**
+         * <p>Transitions sessions from the READY state into the STOPPED state. The
+         * STOP_IN_PROGRESS state is the intermediate state between the READY and STOPPED
+         * states.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StopStreamingSession">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopStreamingSessionOutcomeCallable StopStreamingSessionCallable(const Model::StopStreamingSessionRequest& request) const;
+
+        /**
+         * <p>Transitions sessions from the READY state into the STOPPED state. The
+         * STOP_IN_PROGRESS state is the intermediate state between the READY and STOPPED
+         * states.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StopStreamingSession">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopStreamingSessionAsync(const Model::StopStreamingSessionRequest& request, const StopStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates tags for a resource, given its ARN.</p><p><h3>See Also:</h3>   <a
@@ -1640,7 +1722,9 @@ namespace Model
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutLaunchProfileMembersAsyncHelper(const Model::PutLaunchProfileMembersRequest& request, const PutLaunchProfileMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutStudioMembersAsyncHelper(const Model::PutStudioMembersRequest& request, const PutStudioMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartStreamingSessionAsyncHelper(const Model::StartStreamingSessionRequest& request, const StartStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartStudioSSOConfigurationRepairAsyncHelper(const Model::StartStudioSSOConfigurationRepairRequest& request, const StartStudioSSOConfigurationRepairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopStreamingSessionAsyncHelper(const Model::StopStreamingSessionRequest& request, const StopStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateLaunchProfileAsyncHelper(const Model::UpdateLaunchProfileRequest& request, const UpdateLaunchProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

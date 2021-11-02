@@ -21,7 +21,6 @@ namespace Aws
       {
 
         static const int SECONDS_HASH = HashingUtils::HashString("SECONDS");
-        static const int MILLISECONDS_HASH = HashingUtils::HashString("MILLISECONDS");
         static const int COUNT_HASH = HashingUtils::HashString("COUNT");
         static const int PERCENT_HASH = HashingUtils::HashString("PERCENT");
 
@@ -32,10 +31,6 @@ namespace Aws
           if (hashCode == SECONDS_HASH)
           {
             return Unit::SECONDS;
-          }
-          else if (hashCode == MILLISECONDS_HASH)
-          {
-            return Unit::MILLISECONDS;
           }
           else if (hashCode == COUNT_HASH)
           {
@@ -61,8 +56,6 @@ namespace Aws
           {
           case Unit::SECONDS:
             return "SECONDS";
-          case Unit::MILLISECONDS:
-            return "MILLISECONDS";
           case Unit::COUNT:
             return "COUNT";
           case Unit::PERCENT:

@@ -19,7 +19,7 @@ namespace Model
 {
 
   /**
-   * <p>The principal ID.</p><p><h3>See Also:</h3>   <a
+   * <p/><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/UpdateLaunchProfileMemberRequest">AWS
    * API Reference</a></p>
    */
@@ -40,131 +40,99 @@ namespace Model
 
 
     /**
-     * <p>To make an idempotent API request using one of these actions, specify a
-     * client token in the request. You should not reuse the same client token for
-     * other API requests. If you retry a request that completed successfully using the
-     * same client token and the same parameters, the retry succeeds without performing
-     * any further actions. If you retry a successful request using the same client
-     * token, but one or more of the parameters are different, the retry fails with a
-     * ValidationException error.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. If you don’t specify a client token, the AWS SDK automatically
+     * generates a client token and uses it for the request to ensure idempotency.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>To make an idempotent API request using one of these actions, specify a
-     * client token in the request. You should not reuse the same client token for
-     * other API requests. If you retry a request that completed successfully using the
-     * same client token and the same parameters, the retry succeeds without performing
-     * any further actions. If you retry a successful request using the same client
-     * token, but one or more of the parameters are different, the retry fails with a
-     * ValidationException error.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. If you don’t specify a client token, the AWS SDK automatically
+     * generates a client token and uses it for the request to ensure idempotency.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>To make an idempotent API request using one of these actions, specify a
-     * client token in the request. You should not reuse the same client token for
-     * other API requests. If you retry a request that completed successfully using the
-     * same client token and the same parameters, the retry succeeds without performing
-     * any further actions. If you retry a successful request using the same client
-     * token, but one or more of the parameters are different, the retry fails with a
-     * ValidationException error.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. If you don’t specify a client token, the AWS SDK automatically
+     * generates a client token and uses it for the request to ensure idempotency.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>To make an idempotent API request using one of these actions, specify a
-     * client token in the request. You should not reuse the same client token for
-     * other API requests. If you retry a request that completed successfully using the
-     * same client token and the same parameters, the retry succeeds without performing
-     * any further actions. If you retry a successful request using the same client
-     * token, but one or more of the parameters are different, the retry fails with a
-     * ValidationException error.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. If you don’t specify a client token, the AWS SDK automatically
+     * generates a client token and uses it for the request to ensure idempotency.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>To make an idempotent API request using one of these actions, specify a
-     * client token in the request. You should not reuse the same client token for
-     * other API requests. If you retry a request that completed successfully using the
-     * same client token and the same parameters, the retry succeeds without performing
-     * any further actions. If you retry a successful request using the same client
-     * token, but one or more of the parameters are different, the retry fails with a
-     * ValidationException error.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. If you don’t specify a client token, the AWS SDK automatically
+     * generates a client token and uses it for the request to ensure idempotency.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>To make an idempotent API request using one of these actions, specify a
-     * client token in the request. You should not reuse the same client token for
-     * other API requests. If you retry a request that completed successfully using the
-     * same client token and the same parameters, the retry succeeds without performing
-     * any further actions. If you retry a successful request using the same client
-     * token, but one or more of the parameters are different, the retry fails with a
-     * ValidationException error.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. If you don’t specify a client token, the AWS SDK automatically
+     * generates a client token and uses it for the request to ensure idempotency.</p>
      */
     inline UpdateLaunchProfileMemberRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>To make an idempotent API request using one of these actions, specify a
-     * client token in the request. You should not reuse the same client token for
-     * other API requests. If you retry a request that completed successfully using the
-     * same client token and the same parameters, the retry succeeds without performing
-     * any further actions. If you retry a successful request using the same client
-     * token, but one or more of the parameters are different, the retry fails with a
-     * ValidationException error.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. If you don’t specify a client token, the AWS SDK automatically
+     * generates a client token and uses it for the request to ensure idempotency.</p>
      */
     inline UpdateLaunchProfileMemberRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>To make an idempotent API request using one of these actions, specify a
-     * client token in the request. You should not reuse the same client token for
-     * other API requests. If you retry a request that completed successfully using the
-     * same client token and the same parameters, the retry succeeds without performing
-     * any further actions. If you retry a successful request using the same client
-     * token, but one or more of the parameters are different, the retry fails with a
-     * ValidationException error.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. If you don’t specify a client token, the AWS SDK automatically
+     * generates a client token and uses it for the request to ensure idempotency.</p>
      */
     inline UpdateLaunchProfileMemberRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The Launch Profile ID.</p>
      */
     inline const Aws::String& GetLaunchProfileId() const{ return m_launchProfileId; }
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The Launch Profile ID.</p>
      */
     inline bool LaunchProfileIdHasBeenSet() const { return m_launchProfileIdHasBeenSet; }
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The Launch Profile ID.</p>
      */
     inline void SetLaunchProfileId(const Aws::String& value) { m_launchProfileIdHasBeenSet = true; m_launchProfileId = value; }
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The Launch Profile ID.</p>
      */
     inline void SetLaunchProfileId(Aws::String&& value) { m_launchProfileIdHasBeenSet = true; m_launchProfileId = std::move(value); }
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The Launch Profile ID.</p>
      */
     inline void SetLaunchProfileId(const char* value) { m_launchProfileIdHasBeenSet = true; m_launchProfileId.assign(value); }
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The Launch Profile ID.</p>
      */
     inline UpdateLaunchProfileMemberRequest& WithLaunchProfileId(const Aws::String& value) { SetLaunchProfileId(value); return *this;}
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The Launch Profile ID.</p>
      */
     inline UpdateLaunchProfileMemberRequest& WithLaunchProfileId(Aws::String&& value) { SetLaunchProfileId(std::move(value)); return *this;}
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The Launch Profile ID.</p>
      */
     inline UpdateLaunchProfileMemberRequest& WithLaunchProfileId(const char* value) { SetLaunchProfileId(value); return *this;}
 
@@ -201,83 +169,91 @@ namespace Model
 
 
     /**
-     * <p>The principal ID.</p>
+     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * </p>
      */
     inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
 
     /**
-     * <p>The principal ID.</p>
+     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * </p>
      */
     inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
 
     /**
-     * <p>The principal ID.</p>
+     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * </p>
      */
     inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
 
     /**
-     * <p>The principal ID.</p>
+     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * </p>
      */
     inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
 
     /**
-     * <p>The principal ID.</p>
+     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * </p>
      */
     inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
 
     /**
-     * <p>The principal ID.</p>
+     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * </p>
      */
     inline UpdateLaunchProfileMemberRequest& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
 
     /**
-     * <p>The principal ID.</p>
+     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * </p>
      */
     inline UpdateLaunchProfileMemberRequest& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
 
     /**
-     * <p>The principal ID.</p>
+     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
+     * </p>
      */
     inline UpdateLaunchProfileMemberRequest& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
 
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline const Aws::String& GetStudioId() const{ return m_studioId; }
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline bool StudioIdHasBeenSet() const { return m_studioIdHasBeenSet; }
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline void SetStudioId(const Aws::String& value) { m_studioIdHasBeenSet = true; m_studioId = value; }
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline void SetStudioId(Aws::String&& value) { m_studioIdHasBeenSet = true; m_studioId = std::move(value); }
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline void SetStudioId(const char* value) { m_studioIdHasBeenSet = true; m_studioId.assign(value); }
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline UpdateLaunchProfileMemberRequest& WithStudioId(const Aws::String& value) { SetStudioId(value); return *this;}
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline UpdateLaunchProfileMemberRequest& WithStudioId(Aws::String&& value) { SetStudioId(std::move(value)); return *this;}
 
     /**
-     * <p>The studio ID.</p>
+     * <p>The studio ID. </p>
      */
     inline UpdateLaunchProfileMemberRequest& WithStudioId(const char* value) { SetStudioId(value); return *this;}
 
