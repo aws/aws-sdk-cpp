@@ -1929,16 +1929,16 @@ namespace Model
         virtual void UpdateMacieSessionAsync(const Model::UpdateMacieSessionRequest& request, const UpdateMacieSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Enables an Amazon Macie administrator to suspend or re-enable a member
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables an Amazon Macie administrator to suspend or re-enable Macie for a
+         * member account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMemberSession">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateMemberSessionOutcome UpdateMemberSession(const Model::UpdateMemberSessionRequest& request) const;
 
         /**
-         * <p>Enables an Amazon Macie administrator to suspend or re-enable a member
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables an Amazon Macie administrator to suspend or re-enable Macie for a
+         * member account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMemberSession">AWS
          * API Reference</a></p>
          *
@@ -1947,8 +1947,8 @@ namespace Model
         virtual Model::UpdateMemberSessionOutcomeCallable UpdateMemberSessionCallable(const Model::UpdateMemberSessionRequest& request) const;
 
         /**
-         * <p>Enables an Amazon Macie administrator to suspend or re-enable a member
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables an Amazon Macie administrator to suspend or re-enable Macie for a
+         * member account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMemberSession">AWS
          * API Reference</a></p>
          *

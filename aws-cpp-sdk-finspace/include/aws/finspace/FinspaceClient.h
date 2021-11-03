@@ -98,8 +98,8 @@ namespace Model
     typedef std::function<void(const FinspaceClient*, const Model::UpdateEnvironmentRequest&, const Model::UpdateEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEnvironmentResponseReceivedHandler;
 
   /**
-   * <p>The FinSpace management service provides the APIs for managing the FinSpace
-   * environments. </p>
+   * <p>The FinSpace management service provides the APIs for managing FinSpace
+   * environments.</p>
    */
   class AWS_FINSPACE_API FinspaceClient : public Aws::Client::AWSJsonClient
   {

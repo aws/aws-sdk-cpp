@@ -103,71 +103,71 @@ namespace Model
     /**
      * <p>A list of filter rules that determines which files to include when running a
      * task. The pattern should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
-     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
+     * example, <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline const Aws::Vector<FilterRule>& GetIncludes() const{ return m_includes; }
 
     /**
      * <p>A list of filter rules that determines which files to include when running a
      * task. The pattern should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
-     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
+     * example, <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline bool IncludesHasBeenSet() const { return m_includesHasBeenSet; }
 
     /**
      * <p>A list of filter rules that determines which files to include when running a
      * task. The pattern should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
-     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
+     * example, <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline void SetIncludes(const Aws::Vector<FilterRule>& value) { m_includesHasBeenSet = true; m_includes = value; }
 
     /**
      * <p>A list of filter rules that determines which files to include when running a
      * task. The pattern should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
-     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
+     * example, <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline void SetIncludes(Aws::Vector<FilterRule>&& value) { m_includesHasBeenSet = true; m_includes = std::move(value); }
 
     /**
      * <p>A list of filter rules that determines which files to include when running a
      * task. The pattern should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
-     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
+     * example, <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline StartTaskExecutionRequest& WithIncludes(const Aws::Vector<FilterRule>& value) { SetIncludes(value); return *this;}
 
     /**
      * <p>A list of filter rules that determines which files to include when running a
      * task. The pattern should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
-     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
+     * example, <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline StartTaskExecutionRequest& WithIncludes(Aws::Vector<FilterRule>&& value) { SetIncludes(std::move(value)); return *this;}
 
     /**
      * <p>A list of filter rules that determines which files to include when running a
      * task. The pattern should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
-     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
+     * example, <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline StartTaskExecutionRequest& AddIncludes(const FilterRule& value) { m_includesHasBeenSet = true; m_includes.push_back(value); return *this; }
 
     /**
      * <p>A list of filter rules that determines which files to include when running a
      * task. The pattern should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
-     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
+     * example, <code>"/folder1|/folder2"</code>. </p> <p> </p>
      */
     inline StartTaskExecutionRequest& AddIncludes(FilterRule&& value) { m_includesHasBeenSet = true; m_includes.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
+     * The list contains a single filter string that consists of the patterns to
      * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
      * <code>"/folder1|/folder2"</code>. </p>
      */
@@ -175,7 +175,7 @@ namespace Model
 
     /**
      * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
+     * The list contains a single filter string that consists of the patterns to
      * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
      * <code>"/folder1|/folder2"</code>. </p>
      */
@@ -183,7 +183,7 @@ namespace Model
 
     /**
      * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
+     * The list contains a single filter string that consists of the patterns to
      * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
      * <code>"/folder1|/folder2"</code>. </p>
      */
@@ -191,7 +191,7 @@ namespace Model
 
     /**
      * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
+     * The list contains a single filter string that consists of the patterns to
      * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
      * <code>"/folder1|/folder2"</code>. </p>
      */
@@ -199,7 +199,7 @@ namespace Model
 
     /**
      * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
+     * The list contains a single filter string that consists of the patterns to
      * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
      * <code>"/folder1|/folder2"</code>. </p>
      */
@@ -207,7 +207,7 @@ namespace Model
 
     /**
      * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
+     * The list contains a single filter string that consists of the patterns to
      * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
      * <code>"/folder1|/folder2"</code>. </p>
      */
@@ -215,7 +215,7 @@ namespace Model
 
     /**
      * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
+     * The list contains a single filter string that consists of the patterns to
      * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
      * <code>"/folder1|/folder2"</code>. </p>
      */
@@ -223,7 +223,7 @@ namespace Model
 
     /**
      * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
+     * The list contains a single filter string that consists of the patterns to
      * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
      * <code>"/folder1|/folder2"</code>. </p>
      */

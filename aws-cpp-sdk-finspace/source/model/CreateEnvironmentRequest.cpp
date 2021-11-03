@@ -19,7 +19,9 @@ CreateEnvironmentRequest::CreateEnvironmentRequest() :
     m_tagsHasBeenSet(false),
     m_federationMode(FederationMode::NOT_SET),
     m_federationModeHasBeenSet(false),
-    m_federationParametersHasBeenSet(false)
+    m_federationParametersHasBeenSet(false),
+    m_superuserParametersHasBeenSet(false),
+    m_dataBundlesHasBeenSet(false)
 {
 }
 
@@ -64,6 +66,23 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const
   if(m_federationParametersHasBeenSet)
   {
    payload.WithObject("federationParameters", m_federationParameters.Jsonize());
+
+  }
+
+  if(m_superuserParametersHasBeenSet)
+  {
+   payload.WithObject("superuserParameters", m_superuserParameters.Jsonize());
+
+  }
+
+  if(m_dataBundlesHasBeenSet)
+  {
+   Array<JsonValue> dataBundlesJsonList(m_dataBundles.size());
+   for(unsigned dataBundlesIndex = 0; dataBundlesIndex < dataBundlesJsonList.GetLength(); ++dataBundlesIndex)
+   {
+     dataBundlesJsonList[dataBundlesIndex].AsString(m_dataBundles[dataBundlesIndex]);
+   }
+   payload.WithArray("dataBundles", std::move(dataBundlesJsonList));
 
   }
 

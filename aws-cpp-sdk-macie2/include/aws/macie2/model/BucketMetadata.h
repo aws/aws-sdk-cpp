@@ -39,10 +39,11 @@ namespace Model
    * <p>Provides statistical data and other information about an S3 bucket that
    * Amazon Macie monitors and analyzes for your account. If an error occurs when
    * Macie attempts to retrieve and process information about the bucket or the
-   * bucket's objects, the value for most of these properties is null. Exceptions are
-   * accountId, bucketArn, bucketCreatedAt, bucketName, lastUpdated, and region. To
-   * identify the cause of the error, refer to the errorCode and errorMessage
-   * values.</p><p><h3>See Also:</h3>   <a
+   * bucket's objects, the value for the versioning property is false and the value
+   * for most other properties is null. Exceptions are accountId, bucketArn,
+   * bucketCreatedAt, bucketName, lastUpdated, and region. To identify the cause of
+   * the error, refer to the errorCode and errorMessage values.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketMetadata">AWS
    * API Reference</a></p>
    */

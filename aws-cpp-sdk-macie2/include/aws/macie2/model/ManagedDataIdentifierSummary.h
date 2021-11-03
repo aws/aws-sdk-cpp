@@ -45,8 +45,8 @@ namespace Model
     /**
      * <p>The category of sensitive data that the managed data identifier detects:
      * CREDENTIALS, for credentials data such as private keys or Amazon Web Services
-     * secret keys; FINANCIAL_INFORMATION, for financial data such as credit card
-     * numbers; or, PERSONAL_INFORMATION, for personal health information, such as
+     * secret access keys; FINANCIAL_INFORMATION, for financial data such as credit
+     * card numbers; or, PERSONAL_INFORMATION, for personal health information, such as
      * health insurance identification numbers, or personally identifiable information,
      * such as passport numbers.</p>
      */
@@ -55,8 +55,8 @@ namespace Model
     /**
      * <p>The category of sensitive data that the managed data identifier detects:
      * CREDENTIALS, for credentials data such as private keys or Amazon Web Services
-     * secret keys; FINANCIAL_INFORMATION, for financial data such as credit card
-     * numbers; or, PERSONAL_INFORMATION, for personal health information, such as
+     * secret access keys; FINANCIAL_INFORMATION, for financial data such as credit
+     * card numbers; or, PERSONAL_INFORMATION, for personal health information, such as
      * health insurance identification numbers, or personally identifiable information,
      * such as passport numbers.</p>
      */
@@ -65,8 +65,8 @@ namespace Model
     /**
      * <p>The category of sensitive data that the managed data identifier detects:
      * CREDENTIALS, for credentials data such as private keys or Amazon Web Services
-     * secret keys; FINANCIAL_INFORMATION, for financial data such as credit card
-     * numbers; or, PERSONAL_INFORMATION, for personal health information, such as
+     * secret access keys; FINANCIAL_INFORMATION, for financial data such as credit
+     * card numbers; or, PERSONAL_INFORMATION, for personal health information, such as
      * health insurance identification numbers, or personally identifiable information,
      * such as passport numbers.</p>
      */
@@ -75,8 +75,8 @@ namespace Model
     /**
      * <p>The category of sensitive data that the managed data identifier detects:
      * CREDENTIALS, for credentials data such as private keys or Amazon Web Services
-     * secret keys; FINANCIAL_INFORMATION, for financial data such as credit card
-     * numbers; or, PERSONAL_INFORMATION, for personal health information, such as
+     * secret access keys; FINANCIAL_INFORMATION, for financial data such as credit
+     * card numbers; or, PERSONAL_INFORMATION, for personal health information, such as
      * health insurance identification numbers, or personally identifiable information,
      * such as passport numbers.</p>
      */
@@ -85,8 +85,8 @@ namespace Model
     /**
      * <p>The category of sensitive data that the managed data identifier detects:
      * CREDENTIALS, for credentials data such as private keys or Amazon Web Services
-     * secret keys; FINANCIAL_INFORMATION, for financial data such as credit card
-     * numbers; or, PERSONAL_INFORMATION, for personal health information, such as
+     * secret access keys; FINANCIAL_INFORMATION, for financial data such as credit
+     * card numbers; or, PERSONAL_INFORMATION, for personal health information, such as
      * health insurance identification numbers, or personally identifiable information,
      * such as passport numbers.</p>
      */
@@ -95,8 +95,8 @@ namespace Model
     /**
      * <p>The category of sensitive data that the managed data identifier detects:
      * CREDENTIALS, for credentials data such as private keys or Amazon Web Services
-     * secret keys; FINANCIAL_INFORMATION, for financial data such as credit card
-     * numbers; or, PERSONAL_INFORMATION, for personal health information, such as
+     * secret access keys; FINANCIAL_INFORMATION, for financial data such as credit
+     * card numbers; or, PERSONAL_INFORMATION, for personal health information, such as
      * health insurance identification numbers, or personally identifiable information,
      * such as passport numbers.</p>
      */

@@ -10,6 +10,8 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/finspace/model/FederationMode.h>
 #include <aws/finspace/model/FederationParameters.h>
+#include <aws/finspace/model/SuperuserParameters.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -309,6 +311,146 @@ namespace Model
      */
     inline CreateEnvironmentRequest& WithFederationParameters(FederationParameters&& value) { SetFederationParameters(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Configuration information for the superuser.</p>
+     */
+    inline const SuperuserParameters& GetSuperuserParameters() const{ return m_superuserParameters; }
+
+    /**
+     * <p>Configuration information for the superuser.</p>
+     */
+    inline bool SuperuserParametersHasBeenSet() const { return m_superuserParametersHasBeenSet; }
+
+    /**
+     * <p>Configuration information for the superuser.</p>
+     */
+    inline void SetSuperuserParameters(const SuperuserParameters& value) { m_superuserParametersHasBeenSet = true; m_superuserParameters = value; }
+
+    /**
+     * <p>Configuration information for the superuser.</p>
+     */
+    inline void SetSuperuserParameters(SuperuserParameters&& value) { m_superuserParametersHasBeenSet = true; m_superuserParameters = std::move(value); }
+
+    /**
+     * <p>Configuration information for the superuser.</p>
+     */
+    inline CreateEnvironmentRequest& WithSuperuserParameters(const SuperuserParameters& value) { SetSuperuserParameters(value); return *this;}
+
+    /**
+     * <p>Configuration information for the superuser.</p>
+     */
+    inline CreateEnvironmentRequest& WithSuperuserParameters(SuperuserParameters&& value) { SetSuperuserParameters(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The list of Amazon Resource Names (ARN) of the data bundles to install.
+     * Currently supported data bundle ARNs:</p> <ul> <li> <p>
+     * <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> -
+     * Contains sample Capital Markets datasets, categories and controlled
+     * vocabularies.</p> </li> <li> <p>
+     * <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains
+     * trades and quotes data in addition to sample Capital Markets data.</p> </li>
+     * </ul>
+     */
+    inline const Aws::Vector<Aws::String>& GetDataBundles() const{ return m_dataBundles; }
+
+    /**
+     * <p>The list of Amazon Resource Names (ARN) of the data bundles to install.
+     * Currently supported data bundle ARNs:</p> <ul> <li> <p>
+     * <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> -
+     * Contains sample Capital Markets datasets, categories and controlled
+     * vocabularies.</p> </li> <li> <p>
+     * <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains
+     * trades and quotes data in addition to sample Capital Markets data.</p> </li>
+     * </ul>
+     */
+    inline bool DataBundlesHasBeenSet() const { return m_dataBundlesHasBeenSet; }
+
+    /**
+     * <p>The list of Amazon Resource Names (ARN) of the data bundles to install.
+     * Currently supported data bundle ARNs:</p> <ul> <li> <p>
+     * <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> -
+     * Contains sample Capital Markets datasets, categories and controlled
+     * vocabularies.</p> </li> <li> <p>
+     * <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains
+     * trades and quotes data in addition to sample Capital Markets data.</p> </li>
+     * </ul>
+     */
+    inline void SetDataBundles(const Aws::Vector<Aws::String>& value) { m_dataBundlesHasBeenSet = true; m_dataBundles = value; }
+
+    /**
+     * <p>The list of Amazon Resource Names (ARN) of the data bundles to install.
+     * Currently supported data bundle ARNs:</p> <ul> <li> <p>
+     * <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> -
+     * Contains sample Capital Markets datasets, categories and controlled
+     * vocabularies.</p> </li> <li> <p>
+     * <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains
+     * trades and quotes data in addition to sample Capital Markets data.</p> </li>
+     * </ul>
+     */
+    inline void SetDataBundles(Aws::Vector<Aws::String>&& value) { m_dataBundlesHasBeenSet = true; m_dataBundles = std::move(value); }
+
+    /**
+     * <p>The list of Amazon Resource Names (ARN) of the data bundles to install.
+     * Currently supported data bundle ARNs:</p> <ul> <li> <p>
+     * <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> -
+     * Contains sample Capital Markets datasets, categories and controlled
+     * vocabularies.</p> </li> <li> <p>
+     * <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains
+     * trades and quotes data in addition to sample Capital Markets data.</p> </li>
+     * </ul>
+     */
+    inline CreateEnvironmentRequest& WithDataBundles(const Aws::Vector<Aws::String>& value) { SetDataBundles(value); return *this;}
+
+    /**
+     * <p>The list of Amazon Resource Names (ARN) of the data bundles to install.
+     * Currently supported data bundle ARNs:</p> <ul> <li> <p>
+     * <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> -
+     * Contains sample Capital Markets datasets, categories and controlled
+     * vocabularies.</p> </li> <li> <p>
+     * <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains
+     * trades and quotes data in addition to sample Capital Markets data.</p> </li>
+     * </ul>
+     */
+    inline CreateEnvironmentRequest& WithDataBundles(Aws::Vector<Aws::String>&& value) { SetDataBundles(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of Amazon Resource Names (ARN) of the data bundles to install.
+     * Currently supported data bundle ARNs:</p> <ul> <li> <p>
+     * <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> -
+     * Contains sample Capital Markets datasets, categories and controlled
+     * vocabularies.</p> </li> <li> <p>
+     * <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains
+     * trades and quotes data in addition to sample Capital Markets data.</p> </li>
+     * </ul>
+     */
+    inline CreateEnvironmentRequest& AddDataBundles(const Aws::String& value) { m_dataBundlesHasBeenSet = true; m_dataBundles.push_back(value); return *this; }
+
+    /**
+     * <p>The list of Amazon Resource Names (ARN) of the data bundles to install.
+     * Currently supported data bundle ARNs:</p> <ul> <li> <p>
+     * <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> -
+     * Contains sample Capital Markets datasets, categories and controlled
+     * vocabularies.</p> </li> <li> <p>
+     * <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains
+     * trades and quotes data in addition to sample Capital Markets data.</p> </li>
+     * </ul>
+     */
+    inline CreateEnvironmentRequest& AddDataBundles(Aws::String&& value) { m_dataBundlesHasBeenSet = true; m_dataBundles.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The list of Amazon Resource Names (ARN) of the data bundles to install.
+     * Currently supported data bundle ARNs:</p> <ul> <li> <p>
+     * <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> -
+     * Contains sample Capital Markets datasets, categories and controlled
+     * vocabularies.</p> </li> <li> <p>
+     * <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains
+     * trades and quotes data in addition to sample Capital Markets data.</p> </li>
+     * </ul>
+     */
+    inline CreateEnvironmentRequest& AddDataBundles(const char* value) { m_dataBundlesHasBeenSet = true; m_dataBundles.push_back(value); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -328,6 +470,12 @@ namespace Model
 
     FederationParameters m_federationParameters;
     bool m_federationParametersHasBeenSet;
+
+    SuperuserParameters m_superuserParameters;
+    bool m_superuserParametersHasBeenSet;
+
+    Aws::Vector<Aws::String> m_dataBundles;
+    bool m_dataBundlesHasBeenSet;
   };
 
 } // namespace Model

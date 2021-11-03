@@ -30,10 +30,6 @@ namespace Aws
         static const int EVENT_HASH = HashingUtils::HashString("EVENT");
         static const int ATTACHMENT_HASH = HashingUtils::HashString("ATTACHMENT");
         static const int CONNECTION_ACK_HASH = HashingUtils::HashString("CONNECTION_ACK");
-        static const int PARTICIPANT_ACTIVE_HASH = HashingUtils::HashString("PARTICIPANT_ACTIVE");
-        static const int PARTICIPANT_INACTIVE_HASH = HashingUtils::HashString("PARTICIPANT_INACTIVE");
-        static const int PARTICIPANT_ENGAGED_HASH = HashingUtils::HashString("PARTICIPANT_ENGAGED");
-        static const int PARTICIPANT_DISENGAGED_HASH = HashingUtils::HashString("PARTICIPANT_DISENGAGED");
 
 
         ChatItemType GetChatItemTypeForName(const Aws::String& name)
@@ -79,22 +75,6 @@ namespace Aws
           {
             return ChatItemType::CONNECTION_ACK;
           }
-          else if (hashCode == PARTICIPANT_ACTIVE_HASH)
-          {
-            return ChatItemType::PARTICIPANT_ACTIVE;
-          }
-          else if (hashCode == PARTICIPANT_INACTIVE_HASH)
-          {
-            return ChatItemType::PARTICIPANT_INACTIVE;
-          }
-          else if (hashCode == PARTICIPANT_ENGAGED_HASH)
-          {
-            return ChatItemType::PARTICIPANT_ENGAGED;
-          }
-          else if (hashCode == PARTICIPANT_DISENGAGED_HASH)
-          {
-            return ChatItemType::PARTICIPANT_DISENGAGED;
-          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -129,14 +109,6 @@ namespace Aws
             return "ATTACHMENT";
           case ChatItemType::CONNECTION_ACK:
             return "CONNECTION_ACK";
-          case ChatItemType::PARTICIPANT_ACTIVE:
-            return "PARTICIPANT_ACTIVE";
-          case ChatItemType::PARTICIPANT_INACTIVE:
-            return "PARTICIPANT_INACTIVE";
-          case ChatItemType::PARTICIPANT_ENGAGED:
-            return "PARTICIPANT_ENGAGED";
-          case ChatItemType::PARTICIPANT_DISENGAGED:
-            return "PARTICIPANT_DISENGAGED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

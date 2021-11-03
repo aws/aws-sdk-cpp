@@ -24,6 +24,7 @@
 #include <aws/datasync/model/CreateAgentRequest.h>
 #include <aws/datasync/model/CreateLocationEfsRequest.h>
 #include <aws/datasync/model/CreateLocationFsxWindowsRequest.h>
+#include <aws/datasync/model/CreateLocationHdfsRequest.h>
 #include <aws/datasync/model/CreateLocationNfsRequest.h>
 #include <aws/datasync/model/CreateLocationObjectStorageRequest.h>
 #include <aws/datasync/model/CreateLocationS3Request.h>
@@ -35,6 +36,7 @@
 #include <aws/datasync/model/DescribeAgentRequest.h>
 #include <aws/datasync/model/DescribeLocationEfsRequest.h>
 #include <aws/datasync/model/DescribeLocationFsxWindowsRequest.h>
+#include <aws/datasync/model/DescribeLocationHdfsRequest.h>
 #include <aws/datasync/model/DescribeLocationNfsRequest.h>
 #include <aws/datasync/model/DescribeLocationObjectStorageRequest.h>
 #include <aws/datasync/model/DescribeLocationS3Request.h>
@@ -50,6 +52,7 @@
 #include <aws/datasync/model/TagResourceRequest.h>
 #include <aws/datasync/model/UntagResourceRequest.h>
 #include <aws/datasync/model/UpdateAgentRequest.h>
+#include <aws/datasync/model/UpdateLocationHdfsRequest.h>
 #include <aws/datasync/model/UpdateLocationNfsRequest.h>
 #include <aws/datasync/model/UpdateLocationObjectStorageRequest.h>
 #include <aws/datasync/model/UpdateLocationSmbRequest.h>
@@ -223,6 +226,30 @@ void DataSyncClient::CreateLocationFsxWindowsAsync(const CreateLocationFsxWindow
 void DataSyncClient::CreateLocationFsxWindowsAsyncHelper(const CreateLocationFsxWindowsRequest& request, const CreateLocationFsxWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateLocationFsxWindows(request), context);
+}
+
+CreateLocationHdfsOutcome DataSyncClient::CreateLocationHdfs(const CreateLocationHdfsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateLocationHdfsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateLocationHdfsOutcomeCallable DataSyncClient::CreateLocationHdfsCallable(const CreateLocationHdfsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateLocationHdfsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLocationHdfs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataSyncClient::CreateLocationHdfsAsync(const CreateLocationHdfsRequest& request, const CreateLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateLocationHdfsAsyncHelper( request, handler, context ); } );
+}
+
+void DataSyncClient::CreateLocationHdfsAsyncHelper(const CreateLocationHdfsRequest& request, const CreateLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateLocationHdfs(request), context);
 }
 
 CreateLocationNfsOutcome DataSyncClient::CreateLocationNfs(const CreateLocationNfsRequest& request) const
@@ -487,6 +514,30 @@ void DataSyncClient::DescribeLocationFsxWindowsAsync(const DescribeLocationFsxWi
 void DataSyncClient::DescribeLocationFsxWindowsAsyncHelper(const DescribeLocationFsxWindowsRequest& request, const DescribeLocationFsxWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeLocationFsxWindows(request), context);
+}
+
+DescribeLocationHdfsOutcome DataSyncClient::DescribeLocationHdfs(const DescribeLocationHdfsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeLocationHdfsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeLocationHdfsOutcomeCallable DataSyncClient::DescribeLocationHdfsCallable(const DescribeLocationHdfsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLocationHdfsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLocationHdfs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataSyncClient::DescribeLocationHdfsAsync(const DescribeLocationHdfsRequest& request, const DescribeLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocationHdfsAsyncHelper( request, handler, context ); } );
+}
+
+void DataSyncClient::DescribeLocationHdfsAsyncHelper(const DescribeLocationHdfsRequest& request, const DescribeLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeLocationHdfs(request), context);
 }
 
 DescribeLocationNfsOutcome DataSyncClient::DescribeLocationNfs(const DescribeLocationNfsRequest& request) const
@@ -847,6 +898,30 @@ void DataSyncClient::UpdateAgentAsync(const UpdateAgentRequest& request, const U
 void DataSyncClient::UpdateAgentAsyncHelper(const UpdateAgentRequest& request, const UpdateAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateAgent(request), context);
+}
+
+UpdateLocationHdfsOutcome DataSyncClient::UpdateLocationHdfs(const UpdateLocationHdfsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateLocationHdfsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateLocationHdfsOutcomeCallable DataSyncClient::UpdateLocationHdfsCallable(const UpdateLocationHdfsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateLocationHdfsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLocationHdfs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataSyncClient::UpdateLocationHdfsAsync(const UpdateLocationHdfsRequest& request, const UpdateLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateLocationHdfsAsyncHelper( request, handler, context ); } );
+}
+
+void DataSyncClient::UpdateLocationHdfsAsyncHelper(const UpdateLocationHdfsRequest& request, const UpdateLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateLocationHdfs(request), context);
 }
 
 UpdateLocationNfsOutcome DataSyncClient::UpdateLocationNfs(const UpdateLocationNfsRequest& request) const
