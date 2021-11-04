@@ -89,32 +89,32 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The type of integration.</p>
      */
     inline const IntegrationType& GetIntegrationType() const{ return m_integrationType; }
 
     /**
-     * <p/>
+     * <p>The type of integration.</p>
      */
     inline bool IntegrationTypeHasBeenSet() const { return m_integrationTypeHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The type of integration.</p>
      */
     inline void SetIntegrationType(const IntegrationType& value) { m_integrationTypeHasBeenSet = true; m_integrationType = value; }
 
     /**
-     * <p/>
+     * <p>The type of integration.</p>
      */
     inline void SetIntegrationType(IntegrationType&& value) { m_integrationTypeHasBeenSet = true; m_integrationType = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The type of integration.</p>
      */
     inline ListIntegrationAssociationsRequest& WithIntegrationType(const IntegrationType& value) { SetIntegrationType(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The type of integration.</p>
      */
     inline ListIntegrationAssociationsRequest& WithIntegrationType(IntegrationType&& value) { SetIntegrationType(std::move(value)); return *this;}
 

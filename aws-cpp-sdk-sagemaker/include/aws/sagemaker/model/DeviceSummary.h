@@ -355,6 +355,47 @@ namespace Model
      */
     inline DeviceSummary& AddModels(EdgeModelSummary&& value) { m_modelsHasBeenSet = true; m_models.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Edge Manager agent version.</p>
+     */
+    inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
+
+    /**
+     * <p>Edge Manager agent version.</p>
+     */
+    inline bool AgentVersionHasBeenSet() const { return m_agentVersionHasBeenSet; }
+
+    /**
+     * <p>Edge Manager agent version.</p>
+     */
+    inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
+
+    /**
+     * <p>Edge Manager agent version.</p>
+     */
+    inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
+
+    /**
+     * <p>Edge Manager agent version.</p>
+     */
+    inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
+
+    /**
+     * <p>Edge Manager agent version.</p>
+     */
+    inline DeviceSummary& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
+
+    /**
+     * <p>Edge Manager agent version.</p>
+     */
+    inline DeviceSummary& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Edge Manager agent version.</p>
+     */
+    inline DeviceSummary& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+
   private:
 
     Aws::String m_deviceName;
@@ -380,6 +421,9 @@ namespace Model
 
     Aws::Vector<EdgeModelSummary> m_models;
     bool m_modelsHasBeenSet;
+
+    Aws::String m_agentVersion;
+    bool m_agentVersionHasBeenSet;
   };
 
 } // namespace Model

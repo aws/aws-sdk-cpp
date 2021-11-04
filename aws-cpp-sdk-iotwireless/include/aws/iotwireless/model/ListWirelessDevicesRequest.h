@@ -276,6 +276,56 @@ namespace Model
      */
     inline ListWirelessDevicesRequest& WithWirelessDeviceType(WirelessDeviceType&& value) { SetWirelessDeviceType(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetFuotaTaskId() const{ return m_fuotaTaskId; }
+
+    
+    inline bool FuotaTaskIdHasBeenSet() const { return m_fuotaTaskIdHasBeenSet; }
+
+    
+    inline void SetFuotaTaskId(const Aws::String& value) { m_fuotaTaskIdHasBeenSet = true; m_fuotaTaskId = value; }
+
+    
+    inline void SetFuotaTaskId(Aws::String&& value) { m_fuotaTaskIdHasBeenSet = true; m_fuotaTaskId = std::move(value); }
+
+    
+    inline void SetFuotaTaskId(const char* value) { m_fuotaTaskIdHasBeenSet = true; m_fuotaTaskId.assign(value); }
+
+    
+    inline ListWirelessDevicesRequest& WithFuotaTaskId(const Aws::String& value) { SetFuotaTaskId(value); return *this;}
+
+    
+    inline ListWirelessDevicesRequest& WithFuotaTaskId(Aws::String&& value) { SetFuotaTaskId(std::move(value)); return *this;}
+
+    
+    inline ListWirelessDevicesRequest& WithFuotaTaskId(const char* value) { SetFuotaTaskId(value); return *this;}
+
+
+    
+    inline const Aws::String& GetMulticastGroupId() const{ return m_multicastGroupId; }
+
+    
+    inline bool MulticastGroupIdHasBeenSet() const { return m_multicastGroupIdHasBeenSet; }
+
+    
+    inline void SetMulticastGroupId(const Aws::String& value) { m_multicastGroupIdHasBeenSet = true; m_multicastGroupId = value; }
+
+    
+    inline void SetMulticastGroupId(Aws::String&& value) { m_multicastGroupIdHasBeenSet = true; m_multicastGroupId = std::move(value); }
+
+    
+    inline void SetMulticastGroupId(const char* value) { m_multicastGroupIdHasBeenSet = true; m_multicastGroupId.assign(value); }
+
+    
+    inline ListWirelessDevicesRequest& WithMulticastGroupId(const Aws::String& value) { SetMulticastGroupId(value); return *this;}
+
+    
+    inline ListWirelessDevicesRequest& WithMulticastGroupId(Aws::String&& value) { SetMulticastGroupId(std::move(value)); return *this;}
+
+    
+    inline ListWirelessDevicesRequest& WithMulticastGroupId(const char* value) { SetMulticastGroupId(value); return *this;}
+
   private:
 
     int m_maxResults;
@@ -295,6 +345,12 @@ namespace Model
 
     WirelessDeviceType m_wirelessDeviceType;
     bool m_wirelessDeviceTypeHasBeenSet;
+
+    Aws::String m_fuotaTaskId;
+    bool m_fuotaTaskIdHasBeenSet;
+
+    Aws::String m_multicastGroupId;
+    bool m_multicastGroupIdHasBeenSet;
   };
 
 } // namespace Model

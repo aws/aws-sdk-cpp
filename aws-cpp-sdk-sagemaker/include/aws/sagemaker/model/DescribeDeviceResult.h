@@ -368,6 +368,42 @@ namespace Model
      */
     inline DescribeDeviceResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>Edge Manager agent version.</p>
+     */
+    inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
+
+    /**
+     * <p>Edge Manager agent version.</p>
+     */
+    inline void SetAgentVersion(const Aws::String& value) { m_agentVersion = value; }
+
+    /**
+     * <p>Edge Manager agent version.</p>
+     */
+    inline void SetAgentVersion(Aws::String&& value) { m_agentVersion = std::move(value); }
+
+    /**
+     * <p>Edge Manager agent version.</p>
+     */
+    inline void SetAgentVersion(const char* value) { m_agentVersion.assign(value); }
+
+    /**
+     * <p>Edge Manager agent version.</p>
+     */
+    inline DescribeDeviceResult& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
+
+    /**
+     * <p>Edge Manager agent version.</p>
+     */
+    inline DescribeDeviceResult& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Edge Manager agent version.</p>
+     */
+    inline DescribeDeviceResult& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+
   private:
 
     Aws::String m_deviceArn;
@@ -389,6 +425,8 @@ namespace Model
     int m_maxModels;
 
     Aws::String m_nextToken;
+
+    Aws::String m_agentVersion;
   };
 
 } // namespace Model

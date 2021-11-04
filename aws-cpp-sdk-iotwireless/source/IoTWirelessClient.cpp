@@ -21,11 +21,17 @@
 #include <aws/iotwireless/IoTWirelessEndpoint.h>
 #include <aws/iotwireless/IoTWirelessErrorMarshaller.h>
 #include <aws/iotwireless/model/AssociateAwsAccountWithPartnerAccountRequest.h>
+#include <aws/iotwireless/model/AssociateMulticastGroupWithFuotaTaskRequest.h>
+#include <aws/iotwireless/model/AssociateWirelessDeviceWithFuotaTaskRequest.h>
+#include <aws/iotwireless/model/AssociateWirelessDeviceWithMulticastGroupRequest.h>
 #include <aws/iotwireless/model/AssociateWirelessDeviceWithThingRequest.h>
 #include <aws/iotwireless/model/AssociateWirelessGatewayWithCertificateRequest.h>
 #include <aws/iotwireless/model/AssociateWirelessGatewayWithThingRequest.h>
+#include <aws/iotwireless/model/CancelMulticastGroupSessionRequest.h>
 #include <aws/iotwireless/model/CreateDestinationRequest.h>
 #include <aws/iotwireless/model/CreateDeviceProfileRequest.h>
+#include <aws/iotwireless/model/CreateFuotaTaskRequest.h>
+#include <aws/iotwireless/model/CreateMulticastGroupRequest.h>
 #include <aws/iotwireless/model/CreateServiceProfileRequest.h>
 #include <aws/iotwireless/model/CreateWirelessDeviceRequest.h>
 #include <aws/iotwireless/model/CreateWirelessGatewayRequest.h>
@@ -33,19 +39,28 @@
 #include <aws/iotwireless/model/CreateWirelessGatewayTaskDefinitionRequest.h>
 #include <aws/iotwireless/model/DeleteDestinationRequest.h>
 #include <aws/iotwireless/model/DeleteDeviceProfileRequest.h>
+#include <aws/iotwireless/model/DeleteFuotaTaskRequest.h>
+#include <aws/iotwireless/model/DeleteMulticastGroupRequest.h>
 #include <aws/iotwireless/model/DeleteServiceProfileRequest.h>
 #include <aws/iotwireless/model/DeleteWirelessDeviceRequest.h>
 #include <aws/iotwireless/model/DeleteWirelessGatewayRequest.h>
 #include <aws/iotwireless/model/DeleteWirelessGatewayTaskRequest.h>
 #include <aws/iotwireless/model/DeleteWirelessGatewayTaskDefinitionRequest.h>
 #include <aws/iotwireless/model/DisassociateAwsAccountFromPartnerAccountRequest.h>
+#include <aws/iotwireless/model/DisassociateMulticastGroupFromFuotaTaskRequest.h>
+#include <aws/iotwireless/model/DisassociateWirelessDeviceFromFuotaTaskRequest.h>
+#include <aws/iotwireless/model/DisassociateWirelessDeviceFromMulticastGroupRequest.h>
 #include <aws/iotwireless/model/DisassociateWirelessDeviceFromThingRequest.h>
 #include <aws/iotwireless/model/DisassociateWirelessGatewayFromCertificateRequest.h>
 #include <aws/iotwireless/model/DisassociateWirelessGatewayFromThingRequest.h>
 #include <aws/iotwireless/model/GetDestinationRequest.h>
 #include <aws/iotwireless/model/GetDeviceProfileRequest.h>
+#include <aws/iotwireless/model/GetFuotaTaskRequest.h>
 #include <aws/iotwireless/model/GetLogLevelsByResourceTypesRequest.h>
+#include <aws/iotwireless/model/GetMulticastGroupRequest.h>
+#include <aws/iotwireless/model/GetMulticastGroupSessionRequest.h>
 #include <aws/iotwireless/model/GetPartnerAccountRequest.h>
+#include <aws/iotwireless/model/GetResourceEventConfigurationRequest.h>
 #include <aws/iotwireless/model/GetResourceLogLevelRequest.h>
 #include <aws/iotwireless/model/GetServiceEndpointRequest.h>
 #include <aws/iotwireless/model/GetServiceProfileRequest.h>
@@ -59,6 +74,9 @@
 #include <aws/iotwireless/model/GetWirelessGatewayTaskDefinitionRequest.h>
 #include <aws/iotwireless/model/ListDestinationsRequest.h>
 #include <aws/iotwireless/model/ListDeviceProfilesRequest.h>
+#include <aws/iotwireless/model/ListFuotaTasksRequest.h>
+#include <aws/iotwireless/model/ListMulticastGroupsRequest.h>
+#include <aws/iotwireless/model/ListMulticastGroupsByFuotaTaskRequest.h>
 #include <aws/iotwireless/model/ListPartnerAccountsRequest.h>
 #include <aws/iotwireless/model/ListServiceProfilesRequest.h>
 #include <aws/iotwireless/model/ListTagsForResourceRequest.h>
@@ -68,13 +86,21 @@
 #include <aws/iotwireless/model/PutResourceLogLevelRequest.h>
 #include <aws/iotwireless/model/ResetAllResourceLogLevelsRequest.h>
 #include <aws/iotwireless/model/ResetResourceLogLevelRequest.h>
+#include <aws/iotwireless/model/SendDataToMulticastGroupRequest.h>
 #include <aws/iotwireless/model/SendDataToWirelessDeviceRequest.h>
+#include <aws/iotwireless/model/StartBulkAssociateWirelessDeviceWithMulticastGroupRequest.h>
+#include <aws/iotwireless/model/StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest.h>
+#include <aws/iotwireless/model/StartFuotaTaskRequest.h>
+#include <aws/iotwireless/model/StartMulticastGroupSessionRequest.h>
 #include <aws/iotwireless/model/TagResourceRequest.h>
 #include <aws/iotwireless/model/TestWirelessDeviceRequest.h>
 #include <aws/iotwireless/model/UntagResourceRequest.h>
 #include <aws/iotwireless/model/UpdateDestinationRequest.h>
+#include <aws/iotwireless/model/UpdateFuotaTaskRequest.h>
 #include <aws/iotwireless/model/UpdateLogLevelsByResourceTypesRequest.h>
+#include <aws/iotwireless/model/UpdateMulticastGroupRequest.h>
 #include <aws/iotwireless/model/UpdatePartnerAccountRequest.h>
+#include <aws/iotwireless/model/UpdateResourceEventConfigurationRequest.h>
 #include <aws/iotwireless/model/UpdateWirelessDeviceRequest.h>
 #include <aws/iotwireless/model/UpdateWirelessGatewayRequest.h>
 
@@ -176,6 +202,102 @@ void IoTWirelessClient::AssociateAwsAccountWithPartnerAccountAsyncHelper(const A
   handler(this, request, AssociateAwsAccountWithPartnerAccount(request), context);
 }
 
+AssociateMulticastGroupWithFuotaTaskOutcome IoTWirelessClient::AssociateMulticastGroupWithFuotaTask(const AssociateMulticastGroupWithFuotaTaskRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateMulticastGroupWithFuotaTask", "Required field: Id, is not set");
+    return AssociateMulticastGroupWithFuotaTaskOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/fuota-tasks/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/multicast-group");
+  return AssociateMulticastGroupWithFuotaTaskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateMulticastGroupWithFuotaTaskOutcomeCallable IoTWirelessClient::AssociateMulticastGroupWithFuotaTaskCallable(const AssociateMulticastGroupWithFuotaTaskRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateMulticastGroupWithFuotaTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateMulticastGroupWithFuotaTask(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::AssociateMulticastGroupWithFuotaTaskAsync(const AssociateMulticastGroupWithFuotaTaskRequest& request, const AssociateMulticastGroupWithFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateMulticastGroupWithFuotaTaskAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::AssociateMulticastGroupWithFuotaTaskAsyncHelper(const AssociateMulticastGroupWithFuotaTaskRequest& request, const AssociateMulticastGroupWithFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateMulticastGroupWithFuotaTask(request), context);
+}
+
+AssociateWirelessDeviceWithFuotaTaskOutcome IoTWirelessClient::AssociateWirelessDeviceWithFuotaTask(const AssociateWirelessDeviceWithFuotaTaskRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateWirelessDeviceWithFuotaTask", "Required field: Id, is not set");
+    return AssociateWirelessDeviceWithFuotaTaskOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/fuota-tasks/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/wireless-device");
+  return AssociateWirelessDeviceWithFuotaTaskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateWirelessDeviceWithFuotaTaskOutcomeCallable IoTWirelessClient::AssociateWirelessDeviceWithFuotaTaskCallable(const AssociateWirelessDeviceWithFuotaTaskRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateWirelessDeviceWithFuotaTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateWirelessDeviceWithFuotaTask(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::AssociateWirelessDeviceWithFuotaTaskAsync(const AssociateWirelessDeviceWithFuotaTaskRequest& request, const AssociateWirelessDeviceWithFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateWirelessDeviceWithFuotaTaskAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::AssociateWirelessDeviceWithFuotaTaskAsyncHelper(const AssociateWirelessDeviceWithFuotaTaskRequest& request, const AssociateWirelessDeviceWithFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateWirelessDeviceWithFuotaTask(request), context);
+}
+
+AssociateWirelessDeviceWithMulticastGroupOutcome IoTWirelessClient::AssociateWirelessDeviceWithMulticastGroup(const AssociateWirelessDeviceWithMulticastGroupRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateWirelessDeviceWithMulticastGroup", "Required field: Id, is not set");
+    return AssociateWirelessDeviceWithMulticastGroupOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/multicast-groups/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/wireless-device");
+  return AssociateWirelessDeviceWithMulticastGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateWirelessDeviceWithMulticastGroupOutcomeCallable IoTWirelessClient::AssociateWirelessDeviceWithMulticastGroupCallable(const AssociateWirelessDeviceWithMulticastGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateWirelessDeviceWithMulticastGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateWirelessDeviceWithMulticastGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::AssociateWirelessDeviceWithMulticastGroupAsync(const AssociateWirelessDeviceWithMulticastGroupRequest& request, const AssociateWirelessDeviceWithMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateWirelessDeviceWithMulticastGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::AssociateWirelessDeviceWithMulticastGroupAsyncHelper(const AssociateWirelessDeviceWithMulticastGroupRequest& request, const AssociateWirelessDeviceWithMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateWirelessDeviceWithMulticastGroup(request), context);
+}
+
 AssociateWirelessDeviceWithThingOutcome IoTWirelessClient::AssociateWirelessDeviceWithThing(const AssociateWirelessDeviceWithThingRequest& request) const
 {
   if (!request.IdHasBeenSet())
@@ -272,6 +394,38 @@ void IoTWirelessClient::AssociateWirelessGatewayWithThingAsyncHelper(const Assoc
   handler(this, request, AssociateWirelessGatewayWithThing(request), context);
 }
 
+CancelMulticastGroupSessionOutcome IoTWirelessClient::CancelMulticastGroupSession(const CancelMulticastGroupSessionRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CancelMulticastGroupSession", "Required field: Id, is not set");
+    return CancelMulticastGroupSessionOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/multicast-groups/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/session");
+  return CancelMulticastGroupSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+CancelMulticastGroupSessionOutcomeCallable IoTWirelessClient::CancelMulticastGroupSessionCallable(const CancelMulticastGroupSessionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelMulticastGroupSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelMulticastGroupSession(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::CancelMulticastGroupSessionAsync(const CancelMulticastGroupSessionRequest& request, const CancelMulticastGroupSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CancelMulticastGroupSessionAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::CancelMulticastGroupSessionAsyncHelper(const CancelMulticastGroupSessionRequest& request, const CancelMulticastGroupSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CancelMulticastGroupSession(request), context);
+}
+
 CreateDestinationOutcome IoTWirelessClient::CreateDestination(const CreateDestinationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -320,6 +474,56 @@ void IoTWirelessClient::CreateDeviceProfileAsync(const CreateDeviceProfileReques
 void IoTWirelessClient::CreateDeviceProfileAsyncHelper(const CreateDeviceProfileRequest& request, const CreateDeviceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateDeviceProfile(request), context);
+}
+
+CreateFuotaTaskOutcome IoTWirelessClient::CreateFuotaTask(const CreateFuotaTaskRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/fuota-tasks");
+  return CreateFuotaTaskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateFuotaTaskOutcomeCallable IoTWirelessClient::CreateFuotaTaskCallable(const CreateFuotaTaskRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateFuotaTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFuotaTask(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::CreateFuotaTaskAsync(const CreateFuotaTaskRequest& request, const CreateFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateFuotaTaskAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::CreateFuotaTaskAsyncHelper(const CreateFuotaTaskRequest& request, const CreateFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateFuotaTask(request), context);
+}
+
+CreateMulticastGroupOutcome IoTWirelessClient::CreateMulticastGroup(const CreateMulticastGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/multicast-groups");
+  return CreateMulticastGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateMulticastGroupOutcomeCallable IoTWirelessClient::CreateMulticastGroupCallable(const CreateMulticastGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateMulticastGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMulticastGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::CreateMulticastGroupAsync(const CreateMulticastGroupRequest& request, const CreateMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateMulticastGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::CreateMulticastGroupAsyncHelper(const CreateMulticastGroupRequest& request, const CreateMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateMulticastGroup(request), context);
 }
 
 CreateServiceProfileOutcome IoTWirelessClient::CreateServiceProfile(const CreateServiceProfileRequest& request) const
@@ -516,6 +720,68 @@ void IoTWirelessClient::DeleteDeviceProfileAsyncHelper(const DeleteDeviceProfile
   handler(this, request, DeleteDeviceProfile(request), context);
 }
 
+DeleteFuotaTaskOutcome IoTWirelessClient::DeleteFuotaTask(const DeleteFuotaTaskRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFuotaTask", "Required field: Id, is not set");
+    return DeleteFuotaTaskOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/fuota-tasks/");
+  uri.AddPathSegment(request.GetId());
+  return DeleteFuotaTaskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteFuotaTaskOutcomeCallable IoTWirelessClient::DeleteFuotaTaskCallable(const DeleteFuotaTaskRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFuotaTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFuotaTask(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::DeleteFuotaTaskAsync(const DeleteFuotaTaskRequest& request, const DeleteFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteFuotaTaskAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::DeleteFuotaTaskAsyncHelper(const DeleteFuotaTaskRequest& request, const DeleteFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteFuotaTask(request), context);
+}
+
+DeleteMulticastGroupOutcome IoTWirelessClient::DeleteMulticastGroup(const DeleteMulticastGroupRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteMulticastGroup", "Required field: Id, is not set");
+    return DeleteMulticastGroupOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/multicast-groups/");
+  uri.AddPathSegment(request.GetId());
+  return DeleteMulticastGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteMulticastGroupOutcomeCallable IoTWirelessClient::DeleteMulticastGroupCallable(const DeleteMulticastGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteMulticastGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMulticastGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::DeleteMulticastGroupAsync(const DeleteMulticastGroupRequest& request, const DeleteMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteMulticastGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::DeleteMulticastGroupAsyncHelper(const DeleteMulticastGroupRequest& request, const DeleteMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteMulticastGroup(request), context);
+}
+
 DeleteServiceProfileOutcome IoTWirelessClient::DeleteServiceProfile(const DeleteServiceProfileRequest& request) const
 {
   if (!request.IdHasBeenSet())
@@ -708,6 +974,120 @@ void IoTWirelessClient::DisassociateAwsAccountFromPartnerAccountAsyncHelper(cons
   handler(this, request, DisassociateAwsAccountFromPartnerAccount(request), context);
 }
 
+DisassociateMulticastGroupFromFuotaTaskOutcome IoTWirelessClient::DisassociateMulticastGroupFromFuotaTask(const DisassociateMulticastGroupFromFuotaTaskRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateMulticastGroupFromFuotaTask", "Required field: Id, is not set");
+    return DisassociateMulticastGroupFromFuotaTaskOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  if (!request.MulticastGroupIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateMulticastGroupFromFuotaTask", "Required field: MulticastGroupId, is not set");
+    return DisassociateMulticastGroupFromFuotaTaskOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MulticastGroupId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/fuota-tasks/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/multicast-groups/");
+  uri.AddPathSegment(request.GetMulticastGroupId());
+  return DisassociateMulticastGroupFromFuotaTaskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateMulticastGroupFromFuotaTaskOutcomeCallable IoTWirelessClient::DisassociateMulticastGroupFromFuotaTaskCallable(const DisassociateMulticastGroupFromFuotaTaskRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateMulticastGroupFromFuotaTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateMulticastGroupFromFuotaTask(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::DisassociateMulticastGroupFromFuotaTaskAsync(const DisassociateMulticastGroupFromFuotaTaskRequest& request, const DisassociateMulticastGroupFromFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateMulticastGroupFromFuotaTaskAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::DisassociateMulticastGroupFromFuotaTaskAsyncHelper(const DisassociateMulticastGroupFromFuotaTaskRequest& request, const DisassociateMulticastGroupFromFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateMulticastGroupFromFuotaTask(request), context);
+}
+
+DisassociateWirelessDeviceFromFuotaTaskOutcome IoTWirelessClient::DisassociateWirelessDeviceFromFuotaTask(const DisassociateWirelessDeviceFromFuotaTaskRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateWirelessDeviceFromFuotaTask", "Required field: Id, is not set");
+    return DisassociateWirelessDeviceFromFuotaTaskOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  if (!request.WirelessDeviceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateWirelessDeviceFromFuotaTask", "Required field: WirelessDeviceId, is not set");
+    return DisassociateWirelessDeviceFromFuotaTaskOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WirelessDeviceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/fuota-tasks/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/wireless-devices/");
+  uri.AddPathSegment(request.GetWirelessDeviceId());
+  return DisassociateWirelessDeviceFromFuotaTaskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateWirelessDeviceFromFuotaTaskOutcomeCallable IoTWirelessClient::DisassociateWirelessDeviceFromFuotaTaskCallable(const DisassociateWirelessDeviceFromFuotaTaskRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateWirelessDeviceFromFuotaTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateWirelessDeviceFromFuotaTask(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::DisassociateWirelessDeviceFromFuotaTaskAsync(const DisassociateWirelessDeviceFromFuotaTaskRequest& request, const DisassociateWirelessDeviceFromFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateWirelessDeviceFromFuotaTaskAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::DisassociateWirelessDeviceFromFuotaTaskAsyncHelper(const DisassociateWirelessDeviceFromFuotaTaskRequest& request, const DisassociateWirelessDeviceFromFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateWirelessDeviceFromFuotaTask(request), context);
+}
+
+DisassociateWirelessDeviceFromMulticastGroupOutcome IoTWirelessClient::DisassociateWirelessDeviceFromMulticastGroup(const DisassociateWirelessDeviceFromMulticastGroupRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateWirelessDeviceFromMulticastGroup", "Required field: Id, is not set");
+    return DisassociateWirelessDeviceFromMulticastGroupOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  if (!request.WirelessDeviceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateWirelessDeviceFromMulticastGroup", "Required field: WirelessDeviceId, is not set");
+    return DisassociateWirelessDeviceFromMulticastGroupOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WirelessDeviceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/multicast-groups/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/wireless-devices/");
+  uri.AddPathSegment(request.GetWirelessDeviceId());
+  return DisassociateWirelessDeviceFromMulticastGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateWirelessDeviceFromMulticastGroupOutcomeCallable IoTWirelessClient::DisassociateWirelessDeviceFromMulticastGroupCallable(const DisassociateWirelessDeviceFromMulticastGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateWirelessDeviceFromMulticastGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateWirelessDeviceFromMulticastGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::DisassociateWirelessDeviceFromMulticastGroupAsync(const DisassociateWirelessDeviceFromMulticastGroupRequest& request, const DisassociateWirelessDeviceFromMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateWirelessDeviceFromMulticastGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::DisassociateWirelessDeviceFromMulticastGroupAsyncHelper(const DisassociateWirelessDeviceFromMulticastGroupRequest& request, const DisassociateWirelessDeviceFromMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateWirelessDeviceFromMulticastGroup(request), context);
+}
+
 DisassociateWirelessDeviceFromThingOutcome IoTWirelessClient::DisassociateWirelessDeviceFromThing(const DisassociateWirelessDeviceFromThingRequest& request) const
 {
   if (!request.IdHasBeenSet())
@@ -866,6 +1246,37 @@ void IoTWirelessClient::GetDeviceProfileAsyncHelper(const GetDeviceProfileReques
   handler(this, request, GetDeviceProfile(request), context);
 }
 
+GetFuotaTaskOutcome IoTWirelessClient::GetFuotaTask(const GetFuotaTaskRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetFuotaTask", "Required field: Id, is not set");
+    return GetFuotaTaskOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/fuota-tasks/");
+  uri.AddPathSegment(request.GetId());
+  return GetFuotaTaskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetFuotaTaskOutcomeCallable IoTWirelessClient::GetFuotaTaskCallable(const GetFuotaTaskRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetFuotaTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFuotaTask(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::GetFuotaTaskAsync(const GetFuotaTaskRequest& request, const GetFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetFuotaTaskAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::GetFuotaTaskAsyncHelper(const GetFuotaTaskRequest& request, const GetFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetFuotaTask(request), context);
+}
+
 GetLogLevelsByResourceTypesOutcome IoTWirelessClient::GetLogLevelsByResourceTypes(const GetLogLevelsByResourceTypesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -889,6 +1300,69 @@ void IoTWirelessClient::GetLogLevelsByResourceTypesAsync(const GetLogLevelsByRes
 void IoTWirelessClient::GetLogLevelsByResourceTypesAsyncHelper(const GetLogLevelsByResourceTypesRequest& request, const GetLogLevelsByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetLogLevelsByResourceTypes(request), context);
+}
+
+GetMulticastGroupOutcome IoTWirelessClient::GetMulticastGroup(const GetMulticastGroupRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMulticastGroup", "Required field: Id, is not set");
+    return GetMulticastGroupOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/multicast-groups/");
+  uri.AddPathSegment(request.GetId());
+  return GetMulticastGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetMulticastGroupOutcomeCallable IoTWirelessClient::GetMulticastGroupCallable(const GetMulticastGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMulticastGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMulticastGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::GetMulticastGroupAsync(const GetMulticastGroupRequest& request, const GetMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMulticastGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::GetMulticastGroupAsyncHelper(const GetMulticastGroupRequest& request, const GetMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMulticastGroup(request), context);
+}
+
+GetMulticastGroupSessionOutcome IoTWirelessClient::GetMulticastGroupSession(const GetMulticastGroupSessionRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMulticastGroupSession", "Required field: Id, is not set");
+    return GetMulticastGroupSessionOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/multicast-groups/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/session");
+  return GetMulticastGroupSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetMulticastGroupSessionOutcomeCallable IoTWirelessClient::GetMulticastGroupSessionCallable(const GetMulticastGroupSessionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMulticastGroupSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMulticastGroupSession(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::GetMulticastGroupSessionAsync(const GetMulticastGroupSessionRequest& request, const GetMulticastGroupSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMulticastGroupSessionAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::GetMulticastGroupSessionAsyncHelper(const GetMulticastGroupSessionRequest& request, const GetMulticastGroupSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMulticastGroupSession(request), context);
 }
 
 GetPartnerAccountOutcome IoTWirelessClient::GetPartnerAccount(const GetPartnerAccountRequest& request) const
@@ -925,6 +1399,42 @@ void IoTWirelessClient::GetPartnerAccountAsync(const GetPartnerAccountRequest& r
 void IoTWirelessClient::GetPartnerAccountAsyncHelper(const GetPartnerAccountRequest& request, const GetPartnerAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetPartnerAccount(request), context);
+}
+
+GetResourceEventConfigurationOutcome IoTWirelessClient::GetResourceEventConfiguration(const GetResourceEventConfigurationRequest& request) const
+{
+  if (!request.IdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetResourceEventConfiguration", "Required field: Identifier, is not set");
+    return GetResourceEventConfigurationOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Identifier]", false));
+  }
+  if (!request.IdentifierTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetResourceEventConfiguration", "Required field: IdentifierType, is not set");
+    return GetResourceEventConfigurationOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IdentifierType]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/event-configurations/");
+  uri.AddPathSegment(request.GetIdentifier());
+  return GetResourceEventConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetResourceEventConfigurationOutcomeCallable IoTWirelessClient::GetResourceEventConfigurationCallable(const GetResourceEventConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetResourceEventConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResourceEventConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::GetResourceEventConfigurationAsync(const GetResourceEventConfigurationRequest& request, const GetResourceEventConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetResourceEventConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::GetResourceEventConfigurationAsyncHelper(const GetResourceEventConfigurationRequest& request, const GetResourceEventConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetResourceEventConfiguration(request), context);
 }
 
 GetResourceLogLevelOutcome IoTWirelessClient::GetResourceLogLevel(const GetResourceLogLevelRequest& request) const
@@ -1332,6 +1842,88 @@ void IoTWirelessClient::ListDeviceProfilesAsyncHelper(const ListDeviceProfilesRe
   handler(this, request, ListDeviceProfiles(request), context);
 }
 
+ListFuotaTasksOutcome IoTWirelessClient::ListFuotaTasks(const ListFuotaTasksRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/fuota-tasks");
+  return ListFuotaTasksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListFuotaTasksOutcomeCallable IoTWirelessClient::ListFuotaTasksCallable(const ListFuotaTasksRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListFuotaTasksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFuotaTasks(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::ListFuotaTasksAsync(const ListFuotaTasksRequest& request, const ListFuotaTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListFuotaTasksAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::ListFuotaTasksAsyncHelper(const ListFuotaTasksRequest& request, const ListFuotaTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListFuotaTasks(request), context);
+}
+
+ListMulticastGroupsOutcome IoTWirelessClient::ListMulticastGroups(const ListMulticastGroupsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/multicast-groups");
+  return ListMulticastGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListMulticastGroupsOutcomeCallable IoTWirelessClient::ListMulticastGroupsCallable(const ListMulticastGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListMulticastGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMulticastGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::ListMulticastGroupsAsync(const ListMulticastGroupsRequest& request, const ListMulticastGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListMulticastGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::ListMulticastGroupsAsyncHelper(const ListMulticastGroupsRequest& request, const ListMulticastGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListMulticastGroups(request), context);
+}
+
+ListMulticastGroupsByFuotaTaskOutcome IoTWirelessClient::ListMulticastGroupsByFuotaTask(const ListMulticastGroupsByFuotaTaskRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListMulticastGroupsByFuotaTask", "Required field: Id, is not set");
+    return ListMulticastGroupsByFuotaTaskOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/fuota-tasks/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/multicast-groups");
+  return ListMulticastGroupsByFuotaTaskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListMulticastGroupsByFuotaTaskOutcomeCallable IoTWirelessClient::ListMulticastGroupsByFuotaTaskCallable(const ListMulticastGroupsByFuotaTaskRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListMulticastGroupsByFuotaTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMulticastGroupsByFuotaTask(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::ListMulticastGroupsByFuotaTaskAsync(const ListMulticastGroupsByFuotaTaskRequest& request, const ListMulticastGroupsByFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListMulticastGroupsByFuotaTaskAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::ListMulticastGroupsByFuotaTaskAsyncHelper(const ListMulticastGroupsByFuotaTaskRequest& request, const ListMulticastGroupsByFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListMulticastGroupsByFuotaTask(request), context);
+}
+
 ListPartnerAccountsOutcome IoTWirelessClient::ListPartnerAccounts(const ListPartnerAccountsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1584,6 +2176,38 @@ void IoTWirelessClient::ResetResourceLogLevelAsyncHelper(const ResetResourceLogL
   handler(this, request, ResetResourceLogLevel(request), context);
 }
 
+SendDataToMulticastGroupOutcome IoTWirelessClient::SendDataToMulticastGroup(const SendDataToMulticastGroupRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SendDataToMulticastGroup", "Required field: Id, is not set");
+    return SendDataToMulticastGroupOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/multicast-groups/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/data");
+  return SendDataToMulticastGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SendDataToMulticastGroupOutcomeCallable IoTWirelessClient::SendDataToMulticastGroupCallable(const SendDataToMulticastGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SendDataToMulticastGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendDataToMulticastGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::SendDataToMulticastGroupAsync(const SendDataToMulticastGroupRequest& request, const SendDataToMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SendDataToMulticastGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::SendDataToMulticastGroupAsyncHelper(const SendDataToMulticastGroupRequest& request, const SendDataToMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SendDataToMulticastGroup(request), context);
+}
+
 SendDataToWirelessDeviceOutcome IoTWirelessClient::SendDataToWirelessDevice(const SendDataToWirelessDeviceRequest& request) const
 {
   if (!request.IdHasBeenSet())
@@ -1614,6 +2238,133 @@ void IoTWirelessClient::SendDataToWirelessDeviceAsync(const SendDataToWirelessDe
 void IoTWirelessClient::SendDataToWirelessDeviceAsyncHelper(const SendDataToWirelessDeviceRequest& request, const SendDataToWirelessDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SendDataToWirelessDevice(request), context);
+}
+
+StartBulkAssociateWirelessDeviceWithMulticastGroupOutcome IoTWirelessClient::StartBulkAssociateWirelessDeviceWithMulticastGroup(const StartBulkAssociateWirelessDeviceWithMulticastGroupRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartBulkAssociateWirelessDeviceWithMulticastGroup", "Required field: Id, is not set");
+    return StartBulkAssociateWirelessDeviceWithMulticastGroupOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/multicast-groups/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/bulk");
+  return StartBulkAssociateWirelessDeviceWithMulticastGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartBulkAssociateWirelessDeviceWithMulticastGroupOutcomeCallable IoTWirelessClient::StartBulkAssociateWirelessDeviceWithMulticastGroupCallable(const StartBulkAssociateWirelessDeviceWithMulticastGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartBulkAssociateWirelessDeviceWithMulticastGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartBulkAssociateWirelessDeviceWithMulticastGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::StartBulkAssociateWirelessDeviceWithMulticastGroupAsync(const StartBulkAssociateWirelessDeviceWithMulticastGroupRequest& request, const StartBulkAssociateWirelessDeviceWithMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartBulkAssociateWirelessDeviceWithMulticastGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::StartBulkAssociateWirelessDeviceWithMulticastGroupAsyncHelper(const StartBulkAssociateWirelessDeviceWithMulticastGroupRequest& request, const StartBulkAssociateWirelessDeviceWithMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartBulkAssociateWirelessDeviceWithMulticastGroup(request), context);
+}
+
+StartBulkDisassociateWirelessDeviceFromMulticastGroupOutcome IoTWirelessClient::StartBulkDisassociateWirelessDeviceFromMulticastGroup(const StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartBulkDisassociateWirelessDeviceFromMulticastGroup", "Required field: Id, is not set");
+    return StartBulkDisassociateWirelessDeviceFromMulticastGroupOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/multicast-groups/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/bulk");
+  return StartBulkDisassociateWirelessDeviceFromMulticastGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartBulkDisassociateWirelessDeviceFromMulticastGroupOutcomeCallable IoTWirelessClient::StartBulkDisassociateWirelessDeviceFromMulticastGroupCallable(const StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartBulkDisassociateWirelessDeviceFromMulticastGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartBulkDisassociateWirelessDeviceFromMulticastGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::StartBulkDisassociateWirelessDeviceFromMulticastGroupAsync(const StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest& request, const StartBulkDisassociateWirelessDeviceFromMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartBulkDisassociateWirelessDeviceFromMulticastGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::StartBulkDisassociateWirelessDeviceFromMulticastGroupAsyncHelper(const StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest& request, const StartBulkDisassociateWirelessDeviceFromMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartBulkDisassociateWirelessDeviceFromMulticastGroup(request), context);
+}
+
+StartFuotaTaskOutcome IoTWirelessClient::StartFuotaTask(const StartFuotaTaskRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartFuotaTask", "Required field: Id, is not set");
+    return StartFuotaTaskOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/fuota-tasks/");
+  uri.AddPathSegment(request.GetId());
+  return StartFuotaTaskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartFuotaTaskOutcomeCallable IoTWirelessClient::StartFuotaTaskCallable(const StartFuotaTaskRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartFuotaTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartFuotaTask(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::StartFuotaTaskAsync(const StartFuotaTaskRequest& request, const StartFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartFuotaTaskAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::StartFuotaTaskAsyncHelper(const StartFuotaTaskRequest& request, const StartFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartFuotaTask(request), context);
+}
+
+StartMulticastGroupSessionOutcome IoTWirelessClient::StartMulticastGroupSession(const StartMulticastGroupSessionRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartMulticastGroupSession", "Required field: Id, is not set");
+    return StartMulticastGroupSessionOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/multicast-groups/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/session");
+  return StartMulticastGroupSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartMulticastGroupSessionOutcomeCallable IoTWirelessClient::StartMulticastGroupSessionCallable(const StartMulticastGroupSessionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartMulticastGroupSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartMulticastGroupSession(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::StartMulticastGroupSessionAsync(const StartMulticastGroupSessionRequest& request, const StartMulticastGroupSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartMulticastGroupSessionAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::StartMulticastGroupSessionAsyncHelper(const StartMulticastGroupSessionRequest& request, const StartMulticastGroupSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartMulticastGroupSession(request), context);
 }
 
 TagResourceOutcome IoTWirelessClient::TagResource(const TagResourceRequest& request) const
@@ -1744,6 +2495,37 @@ void IoTWirelessClient::UpdateDestinationAsyncHelper(const UpdateDestinationRequ
   handler(this, request, UpdateDestination(request), context);
 }
 
+UpdateFuotaTaskOutcome IoTWirelessClient::UpdateFuotaTask(const UpdateFuotaTaskRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFuotaTask", "Required field: Id, is not set");
+    return UpdateFuotaTaskOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/fuota-tasks/");
+  uri.AddPathSegment(request.GetId());
+  return UpdateFuotaTaskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateFuotaTaskOutcomeCallable IoTWirelessClient::UpdateFuotaTaskCallable(const UpdateFuotaTaskRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateFuotaTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFuotaTask(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::UpdateFuotaTaskAsync(const UpdateFuotaTaskRequest& request, const UpdateFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateFuotaTaskAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::UpdateFuotaTaskAsyncHelper(const UpdateFuotaTaskRequest& request, const UpdateFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateFuotaTask(request), context);
+}
+
 UpdateLogLevelsByResourceTypesOutcome IoTWirelessClient::UpdateLogLevelsByResourceTypes(const UpdateLogLevelsByResourceTypesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1767,6 +2549,37 @@ void IoTWirelessClient::UpdateLogLevelsByResourceTypesAsync(const UpdateLogLevel
 void IoTWirelessClient::UpdateLogLevelsByResourceTypesAsyncHelper(const UpdateLogLevelsByResourceTypesRequest& request, const UpdateLogLevelsByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateLogLevelsByResourceTypes(request), context);
+}
+
+UpdateMulticastGroupOutcome IoTWirelessClient::UpdateMulticastGroup(const UpdateMulticastGroupRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateMulticastGroup", "Required field: Id, is not set");
+    return UpdateMulticastGroupOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/multicast-groups/");
+  uri.AddPathSegment(request.GetId());
+  return UpdateMulticastGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateMulticastGroupOutcomeCallable IoTWirelessClient::UpdateMulticastGroupCallable(const UpdateMulticastGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateMulticastGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateMulticastGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::UpdateMulticastGroupAsync(const UpdateMulticastGroupRequest& request, const UpdateMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateMulticastGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::UpdateMulticastGroupAsyncHelper(const UpdateMulticastGroupRequest& request, const UpdateMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateMulticastGroup(request), context);
 }
 
 UpdatePartnerAccountOutcome IoTWirelessClient::UpdatePartnerAccount(const UpdatePartnerAccountRequest& request) const
@@ -1803,6 +2616,42 @@ void IoTWirelessClient::UpdatePartnerAccountAsync(const UpdatePartnerAccountRequ
 void IoTWirelessClient::UpdatePartnerAccountAsyncHelper(const UpdatePartnerAccountRequest& request, const UpdatePartnerAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdatePartnerAccount(request), context);
+}
+
+UpdateResourceEventConfigurationOutcome IoTWirelessClient::UpdateResourceEventConfiguration(const UpdateResourceEventConfigurationRequest& request) const
+{
+  if (!request.IdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateResourceEventConfiguration", "Required field: Identifier, is not set");
+    return UpdateResourceEventConfigurationOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Identifier]", false));
+  }
+  if (!request.IdentifierTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateResourceEventConfiguration", "Required field: IdentifierType, is not set");
+    return UpdateResourceEventConfigurationOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IdentifierType]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/event-configurations/");
+  uri.AddPathSegment(request.GetIdentifier());
+  return UpdateResourceEventConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateResourceEventConfigurationOutcomeCallable IoTWirelessClient::UpdateResourceEventConfigurationCallable(const UpdateResourceEventConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateResourceEventConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateResourceEventConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::UpdateResourceEventConfigurationAsync(const UpdateResourceEventConfigurationRequest& request, const UpdateResourceEventConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateResourceEventConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::UpdateResourceEventConfigurationAsyncHelper(const UpdateResourceEventConfigurationRequest& request, const UpdateResourceEventConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateResourceEventConfiguration(request), context);
 }
 
 UpdateWirelessDeviceOutcome IoTWirelessClient::UpdateWirelessDevice(const UpdateWirelessDeviceRequest& request) const

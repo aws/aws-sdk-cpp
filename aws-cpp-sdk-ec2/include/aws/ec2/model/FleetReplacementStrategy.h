@@ -16,7 +16,8 @@ namespace Model
   enum class FleetReplacementStrategy
   {
     NOT_SET,
-    launch
+    launch,
+    launch_before_terminate
   };
 
 namespace FleetReplacementStrategyMapper

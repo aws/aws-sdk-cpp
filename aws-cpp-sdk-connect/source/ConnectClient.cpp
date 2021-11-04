@@ -36,6 +36,7 @@
 #include <aws/connect/model/CreateQueueRequest.h>
 #include <aws/connect/model/CreateQuickConnectRequest.h>
 #include <aws/connect/model/CreateRoutingProfileRequest.h>
+#include <aws/connect/model/CreateSecurityProfileRequest.h>
 #include <aws/connect/model/CreateUseCaseRequest.h>
 #include <aws/connect/model/CreateUserRequest.h>
 #include <aws/connect/model/CreateUserHierarchyGroupRequest.h>
@@ -43,6 +44,7 @@
 #include <aws/connect/model/DeleteInstanceRequest.h>
 #include <aws/connect/model/DeleteIntegrationAssociationRequest.h>
 #include <aws/connect/model/DeleteQuickConnectRequest.h>
+#include <aws/connect/model/DeleteSecurityProfileRequest.h>
 #include <aws/connect/model/DeleteUseCaseRequest.h>
 #include <aws/connect/model/DeleteUserRequest.h>
 #include <aws/connect/model/DeleteUserHierarchyGroupRequest.h>
@@ -55,6 +57,7 @@
 #include <aws/connect/model/DescribeQueueRequest.h>
 #include <aws/connect/model/DescribeQuickConnectRequest.h>
 #include <aws/connect/model/DescribeRoutingProfileRequest.h>
+#include <aws/connect/model/DescribeSecurityProfileRequest.h>
 #include <aws/connect/model/DescribeUserRequest.h>
 #include <aws/connect/model/DescribeUserHierarchyGroupRequest.h>
 #include <aws/connect/model/DescribeUserHierarchyStructureRequest.h>
@@ -89,6 +92,7 @@
 #include <aws/connect/model/ListRoutingProfileQueuesRequest.h>
 #include <aws/connect/model/ListRoutingProfilesRequest.h>
 #include <aws/connect/model/ListSecurityKeysRequest.h>
+#include <aws/connect/model/ListSecurityProfilePermissionsRequest.h>
 #include <aws/connect/model/ListSecurityProfilesRequest.h>
 #include <aws/connect/model/ListTagsForResourceRequest.h>
 #include <aws/connect/model/ListUseCasesRequest.h>
@@ -124,6 +128,7 @@
 #include <aws/connect/model/UpdateRoutingProfileDefaultOutboundQueueRequest.h>
 #include <aws/connect/model/UpdateRoutingProfileNameRequest.h>
 #include <aws/connect/model/UpdateRoutingProfileQueuesRequest.h>
+#include <aws/connect/model/UpdateSecurityProfileRequest.h>
 #include <aws/connect/model/UpdateUserHierarchyRequest.h>
 #include <aws/connect/model/UpdateUserHierarchyGroupNameRequest.h>
 #include <aws/connect/model/UpdateUserHierarchyStructureRequest.h>
@@ -716,6 +721,37 @@ void ConnectClient::CreateRoutingProfileAsyncHelper(const CreateRoutingProfileRe
   handler(this, request, CreateRoutingProfile(request), context);
 }
 
+CreateSecurityProfileOutcome ConnectClient::CreateSecurityProfile(const CreateSecurityProfileRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateSecurityProfile", "Required field: InstanceId, is not set");
+    return CreateSecurityProfileOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/security-profiles/");
+  uri.AddPathSegment(request.GetInstanceId());
+  return CreateSecurityProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateSecurityProfileOutcomeCallable ConnectClient::CreateSecurityProfileCallable(const CreateSecurityProfileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateSecurityProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSecurityProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::CreateSecurityProfileAsync(const CreateSecurityProfileRequest& request, const CreateSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateSecurityProfileAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::CreateSecurityProfileAsyncHelper(const CreateSecurityProfileRequest& request, const CreateSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateSecurityProfile(request), context);
+}
+
 CreateUseCaseOutcome ConnectClient::CreateUseCase(const CreateUseCaseRequest& request) const
 {
   if (!request.InstanceIdHasBeenSet())
@@ -958,6 +994,43 @@ void ConnectClient::DeleteQuickConnectAsync(const DeleteQuickConnectRequest& req
 void ConnectClient::DeleteQuickConnectAsyncHelper(const DeleteQuickConnectRequest& request, const DeleteQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteQuickConnect(request), context);
+}
+
+DeleteSecurityProfileOutcome ConnectClient::DeleteSecurityProfile(const DeleteSecurityProfileRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteSecurityProfile", "Required field: InstanceId, is not set");
+    return DeleteSecurityProfileOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.SecurityProfileIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteSecurityProfile", "Required field: SecurityProfileId, is not set");
+    return DeleteSecurityProfileOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SecurityProfileId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/security-profiles/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetSecurityProfileId());
+  return DeleteSecurityProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteSecurityProfileOutcomeCallable ConnectClient::DeleteSecurityProfileCallable(const DeleteSecurityProfileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteSecurityProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSecurityProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::DeleteSecurityProfileAsync(const DeleteSecurityProfileRequest& request, const DeleteSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteSecurityProfileAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::DeleteSecurityProfileAsyncHelper(const DeleteSecurityProfileRequest& request, const DeleteSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteSecurityProfile(request), context);
 }
 
 DeleteUseCaseOutcome ConnectClient::DeleteUseCase(const DeleteUseCaseRequest& request) const
@@ -1411,6 +1484,43 @@ void ConnectClient::DescribeRoutingProfileAsync(const DescribeRoutingProfileRequ
 void ConnectClient::DescribeRoutingProfileAsyncHelper(const DescribeRoutingProfileRequest& request, const DescribeRoutingProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeRoutingProfile(request), context);
+}
+
+DescribeSecurityProfileOutcome ConnectClient::DescribeSecurityProfile(const DescribeSecurityProfileRequest& request) const
+{
+  if (!request.SecurityProfileIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeSecurityProfile", "Required field: SecurityProfileId, is not set");
+    return DescribeSecurityProfileOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SecurityProfileId]", false));
+  }
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeSecurityProfile", "Required field: InstanceId, is not set");
+    return DescribeSecurityProfileOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/security-profiles/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetSecurityProfileId());
+  return DescribeSecurityProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeSecurityProfileOutcomeCallable ConnectClient::DescribeSecurityProfileCallable(const DescribeSecurityProfileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeSecurityProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSecurityProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::DescribeSecurityProfileAsync(const DescribeSecurityProfileRequest& request, const DescribeSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeSecurityProfileAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::DescribeSecurityProfileAsyncHelper(const DescribeSecurityProfileRequest& request, const DescribeSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeSecurityProfile(request), context);
 }
 
 DescribeUserOutcome ConnectClient::DescribeUser(const DescribeUserRequest& request) const
@@ -2568,6 +2678,43 @@ void ConnectClient::ListSecurityKeysAsyncHelper(const ListSecurityKeysRequest& r
   handler(this, request, ListSecurityKeys(request), context);
 }
 
+ListSecurityProfilePermissionsOutcome ConnectClient::ListSecurityProfilePermissions(const ListSecurityProfilePermissionsRequest& request) const
+{
+  if (!request.SecurityProfileIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListSecurityProfilePermissions", "Required field: SecurityProfileId, is not set");
+    return ListSecurityProfilePermissionsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SecurityProfileId]", false));
+  }
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListSecurityProfilePermissions", "Required field: InstanceId, is not set");
+    return ListSecurityProfilePermissionsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/security-profiles-permissions/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetSecurityProfileId());
+  return ListSecurityProfilePermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListSecurityProfilePermissionsOutcomeCallable ConnectClient::ListSecurityProfilePermissionsCallable(const ListSecurityProfilePermissionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSecurityProfilePermissionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSecurityProfilePermissions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::ListSecurityProfilePermissionsAsync(const ListSecurityProfilePermissionsRequest& request, const ListSecurityProfilePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListSecurityProfilePermissionsAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::ListSecurityProfilePermissionsAsyncHelper(const ListSecurityProfilePermissionsRequest& request, const ListSecurityProfilePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListSecurityProfilePermissions(request), context);
+}
+
 ListSecurityProfilesOutcome ConnectClient::ListSecurityProfiles(const ListSecurityProfilesRequest& request) const
 {
   if (!request.InstanceIdHasBeenSet())
@@ -3720,6 +3867,43 @@ void ConnectClient::UpdateRoutingProfileQueuesAsync(const UpdateRoutingProfileQu
 void ConnectClient::UpdateRoutingProfileQueuesAsyncHelper(const UpdateRoutingProfileQueuesRequest& request, const UpdateRoutingProfileQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateRoutingProfileQueues(request), context);
+}
+
+UpdateSecurityProfileOutcome ConnectClient::UpdateSecurityProfile(const UpdateSecurityProfileRequest& request) const
+{
+  if (!request.SecurityProfileIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateSecurityProfile", "Required field: SecurityProfileId, is not set");
+    return UpdateSecurityProfileOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SecurityProfileId]", false));
+  }
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateSecurityProfile", "Required field: InstanceId, is not set");
+    return UpdateSecurityProfileOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/security-profiles/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetSecurityProfileId());
+  return UpdateSecurityProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateSecurityProfileOutcomeCallable ConnectClient::UpdateSecurityProfileCallable(const UpdateSecurityProfileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateSecurityProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSecurityProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::UpdateSecurityProfileAsync(const UpdateSecurityProfileRequest& request, const UpdateSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateSecurityProfileAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::UpdateSecurityProfileAsyncHelper(const UpdateSecurityProfileRequest& request, const UpdateSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateSecurityProfile(request), context);
 }
 
 UpdateUserHierarchyOutcome ConnectClient::UpdateUserHierarchy(const UpdateUserHierarchyRequest& request) const

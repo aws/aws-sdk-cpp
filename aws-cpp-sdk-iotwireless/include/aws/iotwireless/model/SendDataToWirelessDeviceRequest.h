@@ -103,44 +103,28 @@ namespace Model
     inline SendDataToWirelessDeviceRequest& WithTransmitMode(int value) { SetTransmitMode(value); return *this;}
 
 
-    /**
-     * <p>The binary to be sent to the end device, encoded in base64.</p>
-     */
+    
     inline const Aws::String& GetPayloadData() const{ return m_payloadData; }
 
-    /**
-     * <p>The binary to be sent to the end device, encoded in base64.</p>
-     */
+    
     inline bool PayloadDataHasBeenSet() const { return m_payloadDataHasBeenSet; }
 
-    /**
-     * <p>The binary to be sent to the end device, encoded in base64.</p>
-     */
+    
     inline void SetPayloadData(const Aws::String& value) { m_payloadDataHasBeenSet = true; m_payloadData = value; }
 
-    /**
-     * <p>The binary to be sent to the end device, encoded in base64.</p>
-     */
+    
     inline void SetPayloadData(Aws::String&& value) { m_payloadDataHasBeenSet = true; m_payloadData = std::move(value); }
 
-    /**
-     * <p>The binary to be sent to the end device, encoded in base64.</p>
-     */
+    
     inline void SetPayloadData(const char* value) { m_payloadDataHasBeenSet = true; m_payloadData.assign(value); }
 
-    /**
-     * <p>The binary to be sent to the end device, encoded in base64.</p>
-     */
+    
     inline SendDataToWirelessDeviceRequest& WithPayloadData(const Aws::String& value) { SetPayloadData(value); return *this;}
 
-    /**
-     * <p>The binary to be sent to the end device, encoded in base64.</p>
-     */
+    
     inline SendDataToWirelessDeviceRequest& WithPayloadData(Aws::String&& value) { SetPayloadData(std::move(value)); return *this;}
 
-    /**
-     * <p>The binary to be sent to the end device, encoded in base64.</p>
-     */
+    
     inline SendDataToWirelessDeviceRequest& WithPayloadData(const char* value) { SetPayloadData(value); return *this;}
 
 

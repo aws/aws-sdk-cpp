@@ -21,6 +21,7 @@
 #include <aws/connect/model/CreateQueueResult.h>
 #include <aws/connect/model/CreateQuickConnectResult.h>
 #include <aws/connect/model/CreateRoutingProfileResult.h>
+#include <aws/connect/model/CreateSecurityProfileResult.h>
 #include <aws/connect/model/CreateUseCaseResult.h>
 #include <aws/connect/model/CreateUserResult.h>
 #include <aws/connect/model/CreateUserHierarchyGroupResult.h>
@@ -33,6 +34,7 @@
 #include <aws/connect/model/DescribeQueueResult.h>
 #include <aws/connect/model/DescribeQuickConnectResult.h>
 #include <aws/connect/model/DescribeRoutingProfileResult.h>
+#include <aws/connect/model/DescribeSecurityProfileResult.h>
 #include <aws/connect/model/DescribeUserResult.h>
 #include <aws/connect/model/DescribeUserHierarchyGroupResult.h>
 #include <aws/connect/model/DescribeUserHierarchyStructureResult.h>
@@ -59,6 +61,7 @@
 #include <aws/connect/model/ListRoutingProfileQueuesResult.h>
 #include <aws/connect/model/ListRoutingProfilesResult.h>
 #include <aws/connect/model/ListSecurityKeysResult.h>
+#include <aws/connect/model/ListSecurityProfilePermissionsResult.h>
 #include <aws/connect/model/ListSecurityProfilesResult.h>
 #include <aws/connect/model/ListTagsForResourceResult.h>
 #include <aws/connect/model/ListUseCasesResult.h>
@@ -131,6 +134,7 @@ namespace Model
         class CreateQueueRequest;
         class CreateQuickConnectRequest;
         class CreateRoutingProfileRequest;
+        class CreateSecurityProfileRequest;
         class CreateUseCaseRequest;
         class CreateUserRequest;
         class CreateUserHierarchyGroupRequest;
@@ -138,6 +142,7 @@ namespace Model
         class DeleteInstanceRequest;
         class DeleteIntegrationAssociationRequest;
         class DeleteQuickConnectRequest;
+        class DeleteSecurityProfileRequest;
         class DeleteUseCaseRequest;
         class DeleteUserRequest;
         class DeleteUserHierarchyGroupRequest;
@@ -150,6 +155,7 @@ namespace Model
         class DescribeQueueRequest;
         class DescribeQuickConnectRequest;
         class DescribeRoutingProfileRequest;
+        class DescribeSecurityProfileRequest;
         class DescribeUserRequest;
         class DescribeUserHierarchyGroupRequest;
         class DescribeUserHierarchyStructureRequest;
@@ -184,6 +190,7 @@ namespace Model
         class ListRoutingProfileQueuesRequest;
         class ListRoutingProfilesRequest;
         class ListSecurityKeysRequest;
+        class ListSecurityProfilePermissionsRequest;
         class ListSecurityProfilesRequest;
         class ListTagsForResourceRequest;
         class ListUseCasesRequest;
@@ -219,6 +226,7 @@ namespace Model
         class UpdateRoutingProfileDefaultOutboundQueueRequest;
         class UpdateRoutingProfileNameRequest;
         class UpdateRoutingProfileQueuesRequest;
+        class UpdateSecurityProfileRequest;
         class UpdateUserHierarchyRequest;
         class UpdateUserHierarchyGroupNameRequest;
         class UpdateUserHierarchyStructureRequest;
@@ -243,6 +251,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateQueueResult, ConnectError> CreateQueueOutcome;
         typedef Aws::Utils::Outcome<CreateQuickConnectResult, ConnectError> CreateQuickConnectOutcome;
         typedef Aws::Utils::Outcome<CreateRoutingProfileResult, ConnectError> CreateRoutingProfileOutcome;
+        typedef Aws::Utils::Outcome<CreateSecurityProfileResult, ConnectError> CreateSecurityProfileOutcome;
         typedef Aws::Utils::Outcome<CreateUseCaseResult, ConnectError> CreateUseCaseOutcome;
         typedef Aws::Utils::Outcome<CreateUserResult, ConnectError> CreateUserOutcome;
         typedef Aws::Utils::Outcome<CreateUserHierarchyGroupResult, ConnectError> CreateUserHierarchyGroupOutcome;
@@ -250,6 +259,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteInstanceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteIntegrationAssociationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteQuickConnectOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteSecurityProfileOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteUseCaseOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteUserOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteUserHierarchyGroupOutcome;
@@ -262,6 +272,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeQueueResult, ConnectError> DescribeQueueOutcome;
         typedef Aws::Utils::Outcome<DescribeQuickConnectResult, ConnectError> DescribeQuickConnectOutcome;
         typedef Aws::Utils::Outcome<DescribeRoutingProfileResult, ConnectError> DescribeRoutingProfileOutcome;
+        typedef Aws::Utils::Outcome<DescribeSecurityProfileResult, ConnectError> DescribeSecurityProfileOutcome;
         typedef Aws::Utils::Outcome<DescribeUserResult, ConnectError> DescribeUserOutcome;
         typedef Aws::Utils::Outcome<DescribeUserHierarchyGroupResult, ConnectError> DescribeUserHierarchyGroupOutcome;
         typedef Aws::Utils::Outcome<DescribeUserHierarchyStructureResult, ConnectError> DescribeUserHierarchyStructureOutcome;
@@ -296,6 +307,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListRoutingProfileQueuesResult, ConnectError> ListRoutingProfileQueuesOutcome;
         typedef Aws::Utils::Outcome<ListRoutingProfilesResult, ConnectError> ListRoutingProfilesOutcome;
         typedef Aws::Utils::Outcome<ListSecurityKeysResult, ConnectError> ListSecurityKeysOutcome;
+        typedef Aws::Utils::Outcome<ListSecurityProfilePermissionsResult, ConnectError> ListSecurityProfilePermissionsOutcome;
         typedef Aws::Utils::Outcome<ListSecurityProfilesResult, ConnectError> ListSecurityProfilesOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, ConnectError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListUseCasesResult, ConnectError> ListUseCasesOutcome;
@@ -331,6 +343,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateRoutingProfileDefaultOutboundQueueOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateRoutingProfileNameOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateRoutingProfileQueuesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateSecurityProfileOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserHierarchyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserHierarchyGroupNameOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserHierarchyStructureOutcome;
@@ -355,6 +368,7 @@ namespace Model
         typedef std::future<CreateQueueOutcome> CreateQueueOutcomeCallable;
         typedef std::future<CreateQuickConnectOutcome> CreateQuickConnectOutcomeCallable;
         typedef std::future<CreateRoutingProfileOutcome> CreateRoutingProfileOutcomeCallable;
+        typedef std::future<CreateSecurityProfileOutcome> CreateSecurityProfileOutcomeCallable;
         typedef std::future<CreateUseCaseOutcome> CreateUseCaseOutcomeCallable;
         typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
         typedef std::future<CreateUserHierarchyGroupOutcome> CreateUserHierarchyGroupOutcomeCallable;
@@ -362,6 +376,7 @@ namespace Model
         typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
         typedef std::future<DeleteIntegrationAssociationOutcome> DeleteIntegrationAssociationOutcomeCallable;
         typedef std::future<DeleteQuickConnectOutcome> DeleteQuickConnectOutcomeCallable;
+        typedef std::future<DeleteSecurityProfileOutcome> DeleteSecurityProfileOutcomeCallable;
         typedef std::future<DeleteUseCaseOutcome> DeleteUseCaseOutcomeCallable;
         typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
         typedef std::future<DeleteUserHierarchyGroupOutcome> DeleteUserHierarchyGroupOutcomeCallable;
@@ -374,6 +389,7 @@ namespace Model
         typedef std::future<DescribeQueueOutcome> DescribeQueueOutcomeCallable;
         typedef std::future<DescribeQuickConnectOutcome> DescribeQuickConnectOutcomeCallable;
         typedef std::future<DescribeRoutingProfileOutcome> DescribeRoutingProfileOutcomeCallable;
+        typedef std::future<DescribeSecurityProfileOutcome> DescribeSecurityProfileOutcomeCallable;
         typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
         typedef std::future<DescribeUserHierarchyGroupOutcome> DescribeUserHierarchyGroupOutcomeCallable;
         typedef std::future<DescribeUserHierarchyStructureOutcome> DescribeUserHierarchyStructureOutcomeCallable;
@@ -408,6 +424,7 @@ namespace Model
         typedef std::future<ListRoutingProfileQueuesOutcome> ListRoutingProfileQueuesOutcomeCallable;
         typedef std::future<ListRoutingProfilesOutcome> ListRoutingProfilesOutcomeCallable;
         typedef std::future<ListSecurityKeysOutcome> ListSecurityKeysOutcomeCallable;
+        typedef std::future<ListSecurityProfilePermissionsOutcome> ListSecurityProfilePermissionsOutcomeCallable;
         typedef std::future<ListSecurityProfilesOutcome> ListSecurityProfilesOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListUseCasesOutcome> ListUseCasesOutcomeCallable;
@@ -443,6 +460,7 @@ namespace Model
         typedef std::future<UpdateRoutingProfileDefaultOutboundQueueOutcome> UpdateRoutingProfileDefaultOutboundQueueOutcomeCallable;
         typedef std::future<UpdateRoutingProfileNameOutcome> UpdateRoutingProfileNameOutcomeCallable;
         typedef std::future<UpdateRoutingProfileQueuesOutcome> UpdateRoutingProfileQueuesOutcomeCallable;
+        typedef std::future<UpdateSecurityProfileOutcome> UpdateSecurityProfileOutcomeCallable;
         typedef std::future<UpdateUserHierarchyOutcome> UpdateUserHierarchyOutcomeCallable;
         typedef std::future<UpdateUserHierarchyGroupNameOutcome> UpdateUserHierarchyGroupNameOutcomeCallable;
         typedef std::future<UpdateUserHierarchyStructureOutcome> UpdateUserHierarchyStructureOutcomeCallable;
@@ -470,6 +488,7 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::CreateQueueRequest&, const Model::CreateQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQueueResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateQuickConnectRequest&, const Model::CreateQuickConnectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQuickConnectResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateRoutingProfileRequest&, const Model::CreateRoutingProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRoutingProfileResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::CreateSecurityProfileRequest&, const Model::CreateSecurityProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSecurityProfileResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateUseCaseRequest&, const Model::CreateUseCaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUseCaseResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateUserRequest&, const Model::CreateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateUserHierarchyGroupRequest&, const Model::CreateUserHierarchyGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserHierarchyGroupResponseReceivedHandler;
@@ -477,6 +496,7 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::DeleteInstanceRequest&, const Model::DeleteInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInstanceResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteIntegrationAssociationRequest&, const Model::DeleteIntegrationAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIntegrationAssociationResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteQuickConnectRequest&, const Model::DeleteQuickConnectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteQuickConnectResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::DeleteSecurityProfileRequest&, const Model::DeleteSecurityProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSecurityProfileResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteUseCaseRequest&, const Model::DeleteUseCaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUseCaseResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteUserHierarchyGroupRequest&, const Model::DeleteUserHierarchyGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserHierarchyGroupResponseReceivedHandler;
@@ -489,6 +509,7 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::DescribeQueueRequest&, const Model::DescribeQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeQueueResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeQuickConnectRequest&, const Model::DescribeQuickConnectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeQuickConnectResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeRoutingProfileRequest&, const Model::DescribeRoutingProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRoutingProfileResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::DescribeSecurityProfileRequest&, const Model::DescribeSecurityProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSecurityProfileResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeUserRequest&, const Model::DescribeUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeUserHierarchyGroupRequest&, const Model::DescribeUserHierarchyGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserHierarchyGroupResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeUserHierarchyStructureRequest&, const Model::DescribeUserHierarchyStructureOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserHierarchyStructureResponseReceivedHandler;
@@ -523,6 +544,7 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::ListRoutingProfileQueuesRequest&, const Model::ListRoutingProfileQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRoutingProfileQueuesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListRoutingProfilesRequest&, const Model::ListRoutingProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRoutingProfilesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListSecurityKeysRequest&, const Model::ListSecurityKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSecurityKeysResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::ListSecurityProfilePermissionsRequest&, const Model::ListSecurityProfilePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSecurityProfilePermissionsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListSecurityProfilesRequest&, const Model::ListSecurityProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSecurityProfilesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListUseCasesRequest&, const Model::ListUseCasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUseCasesResponseReceivedHandler;
@@ -558,6 +580,7 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::UpdateRoutingProfileDefaultOutboundQueueRequest&, const Model::UpdateRoutingProfileDefaultOutboundQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRoutingProfileDefaultOutboundQueueResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateRoutingProfileNameRequest&, const Model::UpdateRoutingProfileNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRoutingProfileNameResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateRoutingProfileQueuesRequest&, const Model::UpdateRoutingProfileQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRoutingProfileQueuesResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::UpdateSecurityProfileRequest&, const Model::UpdateSecurityProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSecurityProfileResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateUserHierarchyRequest&, const Model::UpdateUserHierarchyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserHierarchyResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateUserHierarchyGroupNameRequest&, const Model::UpdateUserHierarchyGroupNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserHierarchyGroupNameResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateUserHierarchyStructureRequest&, const Model::UpdateUserHierarchyStructureOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserHierarchyStructureResponseReceivedHandler;
@@ -577,8 +600,8 @@ namespace Model
    * make per second. For more information, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
    * Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-   * <p>You can connect programmatically to an AWS service by using an endpoint. For
-   * a list of Amazon Connect endpoints, see <a
+   * <p>You can connect programmatically to an Amazon Web Services service by using
+   * an endpoint. For a list of Amazon Connect endpoints, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
    * Connect Endpoints</a>.</p>  <p>Working with contact flows? Check out the
    * <a
@@ -1015,7 +1038,7 @@ namespace Model
         virtual void CreateInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an AWS resource association with an Amazon Connect
+         * <p>Creates an Amazon Web Services resource association with an Amazon Connect
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateIntegrationAssociation">AWS
          * API Reference</a></p>
@@ -1023,7 +1046,7 @@ namespace Model
         virtual Model::CreateIntegrationAssociationOutcome CreateIntegrationAssociation(const Model::CreateIntegrationAssociationRequest& request) const;
 
         /**
-         * <p>Creates an AWS resource association with an Amazon Connect
+         * <p>Creates an Amazon Web Services resource association with an Amazon Connect
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateIntegrationAssociation">AWS
          * API Reference</a></p>
@@ -1033,7 +1056,7 @@ namespace Model
         virtual Model::CreateIntegrationAssociationOutcomeCallable CreateIntegrationAssociationCallable(const Model::CreateIntegrationAssociationRequest& request) const;
 
         /**
-         * <p>Creates an AWS resource association with an Amazon Connect
+         * <p>Creates an Amazon Web Services resource association with an Amazon Connect
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateIntegrationAssociation">AWS
          * API Reference</a></p>
@@ -1125,6 +1148,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateRoutingProfileAsync(const Model::CreateRoutingProfileRequest& request, const CreateRoutingProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Creates a security profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateSecurityProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateSecurityProfileOutcome CreateSecurityProfile(const Model::CreateSecurityProfileRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Creates a security profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateSecurityProfile">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateSecurityProfileOutcomeCallable CreateSecurityProfileCallable(const Model::CreateSecurityProfileRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Creates a security profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateSecurityProfile">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateSecurityProfileAsync(const Model::CreateSecurityProfileRequest& request, const CreateSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a use case for an integration association.</p><p><h3>See Also:</h3>  
@@ -1288,18 +1339,18 @@ namespace Model
         virtual void DeleteInstanceAsync(const Model::DeleteInstanceRequest& request, const DeleteInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an AWS resource association from an Amazon Connect instance. The
-         * association must not have any use cases associated with it.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes an Amazon Web Services resource association from an Amazon Connect
+         * instance. The association must not have any use cases associated with
+         * it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteIntegrationAssociation">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteIntegrationAssociationOutcome DeleteIntegrationAssociation(const Model::DeleteIntegrationAssociationRequest& request) const;
 
         /**
-         * <p>Deletes an AWS resource association from an Amazon Connect instance. The
-         * association must not have any use cases associated with it.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes an Amazon Web Services resource association from an Amazon Connect
+         * instance. The association must not have any use cases associated with
+         * it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteIntegrationAssociation">AWS
          * API Reference</a></p>
          *
@@ -1308,9 +1359,9 @@ namespace Model
         virtual Model::DeleteIntegrationAssociationOutcomeCallable DeleteIntegrationAssociationCallable(const Model::DeleteIntegrationAssociationRequest& request) const;
 
         /**
-         * <p>Deletes an AWS resource association from an Amazon Connect instance. The
-         * association must not have any use cases associated with it.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes an Amazon Web Services resource association from an Amazon Connect
+         * instance. The association must not have any use cases associated with
+         * it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteIntegrationAssociation">AWS
          * API Reference</a></p>
          *
@@ -1342,6 +1393,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteQuickConnectAsync(const Model::DeleteQuickConnectRequest& request, const DeleteQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Deletes a security profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteSecurityProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteSecurityProfileOutcome DeleteSecurityProfile(const Model::DeleteSecurityProfileRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Deletes a security profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteSecurityProfile">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteSecurityProfileOutcomeCallable DeleteSecurityProfileCallable(const Model::DeleteSecurityProfileRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Deletes a security profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteSecurityProfile">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteSecurityProfileAsync(const Model::DeleteSecurityProfileRequest& request, const DeleteSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a use case from an integration association.</p><p><h3>See Also:</h3> 
@@ -1708,6 +1787,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeRoutingProfileAsync(const Model::DescribeRoutingProfileRequest& request, const DescribeRoutingProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Gets basic information about the security profle.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeSecurityProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeSecurityProfileOutcome DescribeSecurityProfile(const Model::DescribeSecurityProfileRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Gets basic information about the security profle.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeSecurityProfile">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeSecurityProfileOutcomeCallable DescribeSecurityProfileCallable(const Model::DescribeSecurityProfileRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Gets basic information about the security profle.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeSecurityProfile">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeSecurityProfileAsync(const Model::DescribeSecurityProfileRequest& request, const DescribeSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified user account. You can find the instance ID in the
@@ -2453,16 +2563,18 @@ namespace Model
         virtual void ListInstancesAsync(const Model::ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides summary information about the AWS resource associations for the
-         * specified Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides summary information about the Amazon Web Services resource
+         * associations for the specified Amazon Connect instance.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListIntegrationAssociations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListIntegrationAssociationsOutcome ListIntegrationAssociations(const Model::ListIntegrationAssociationsRequest& request) const;
 
         /**
-         * <p>Provides summary information about the AWS resource associations for the
-         * specified Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides summary information about the Amazon Web Services resource
+         * associations for the specified Amazon Connect instance.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListIntegrationAssociations">AWS
          * API Reference</a></p>
          *
@@ -2471,8 +2583,9 @@ namespace Model
         virtual Model::ListIntegrationAssociationsOutcomeCallable ListIntegrationAssociationsCallable(const Model::ListIntegrationAssociationsRequest& request) const;
 
         /**
-         * <p>Provides summary information about the AWS resource associations for the
-         * specified Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides summary information about the Amazon Web Services resource
+         * associations for the specified Amazon Connect instance.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListIntegrationAssociations">AWS
          * API Reference</a></p>
          *
@@ -2824,9 +2937,41 @@ namespace Model
         virtual void ListSecurityKeysAsync(const Model::ListSecurityKeysRequest& request, const ListSecurityKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides summary information about the security profiles for the specified
-         * Amazon Connect instance.</p> <p>For more information about security profiles,
-         * see <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Lists the permissions granted to a security
+         * profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfilePermissions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSecurityProfilePermissionsOutcome ListSecurityProfilePermissions(const Model::ListSecurityProfilePermissionsRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Lists the permissions granted to a security
+         * profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfilePermissions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListSecurityProfilePermissionsOutcomeCallable ListSecurityProfilePermissionsCallable(const Model::ListSecurityProfilePermissionsRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Lists the permissions granted to a security
+         * profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfilePermissions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListSecurityProfilePermissionsAsync(const Model::ListSecurityProfilePermissionsRequest& request, const ListSecurityProfilePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Provides summary information about the security profiles for the
+         * specified Amazon Connect instance.</p> <p>For more information about security
+         * profiles, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
          * Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2836,9 +2981,10 @@ namespace Model
         virtual Model::ListSecurityProfilesOutcome ListSecurityProfiles(const Model::ListSecurityProfilesRequest& request) const;
 
         /**
-         * <p>Provides summary information about the security profiles for the specified
-         * Amazon Connect instance.</p> <p>For more information about security profiles,
-         * see <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Provides summary information about the security profiles for the
+         * specified Amazon Connect instance.</p> <p>For more information about security
+         * profiles, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
          * Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2850,9 +2996,10 @@ namespace Model
         virtual Model::ListSecurityProfilesOutcomeCallable ListSecurityProfilesCallable(const Model::ListSecurityProfilesRequest& request) const;
 
         /**
-         * <p>Provides summary information about the security profiles for the specified
-         * Amazon Connect instance.</p> <p>For more information about security profiles,
-         * see <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Provides summary information about the security profiles for the
+         * specified Amazon Connect instance.</p> <p>For more information about security
+         * profiles, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
          * Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -4098,6 +4245,34 @@ namespace Model
         virtual void UpdateRoutingProfileQueuesAsync(const Model::UpdateRoutingProfileQueuesRequest& request, const UpdateRoutingProfileQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Updates a security profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateSecurityProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSecurityProfileOutcome UpdateSecurityProfile(const Model::UpdateSecurityProfileRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Updates a security profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateSecurityProfile">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateSecurityProfileOutcomeCallable UpdateSecurityProfileCallable(const Model::UpdateSecurityProfileRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Updates a security profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateSecurityProfile">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateSecurityProfileAsync(const Model::UpdateSecurityProfileRequest& request, const UpdateSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Assigns the specified hierarchy group to the specified user.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserHierarchy">AWS
@@ -4334,6 +4509,7 @@ namespace Model
         void CreateQueueAsyncHelper(const Model::CreateQueueRequest& request, const CreateQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateQuickConnectAsyncHelper(const Model::CreateQuickConnectRequest& request, const CreateQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRoutingProfileAsyncHelper(const Model::CreateRoutingProfileRequest& request, const CreateRoutingProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateSecurityProfileAsyncHelper(const Model::CreateSecurityProfileRequest& request, const CreateSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUseCaseAsyncHelper(const Model::CreateUseCaseRequest& request, const CreateUseCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUserAsyncHelper(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUserHierarchyGroupAsyncHelper(const Model::CreateUserHierarchyGroupRequest& request, const CreateUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4341,6 +4517,7 @@ namespace Model
         void DeleteInstanceAsyncHelper(const Model::DeleteInstanceRequest& request, const DeleteInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteIntegrationAssociationAsyncHelper(const Model::DeleteIntegrationAssociationRequest& request, const DeleteIntegrationAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteQuickConnectAsyncHelper(const Model::DeleteQuickConnectRequest& request, const DeleteQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteSecurityProfileAsyncHelper(const Model::DeleteSecurityProfileRequest& request, const DeleteSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUseCaseAsyncHelper(const Model::DeleteUseCaseRequest& request, const DeleteUseCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUserAsyncHelper(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUserHierarchyGroupAsyncHelper(const Model::DeleteUserHierarchyGroupRequest& request, const DeleteUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4353,6 +4530,7 @@ namespace Model
         void DescribeQueueAsyncHelper(const Model::DescribeQueueRequest& request, const DescribeQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeQuickConnectAsyncHelper(const Model::DescribeQuickConnectRequest& request, const DescribeQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRoutingProfileAsyncHelper(const Model::DescribeRoutingProfileRequest& request, const DescribeRoutingProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeSecurityProfileAsyncHelper(const Model::DescribeSecurityProfileRequest& request, const DescribeSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUserAsyncHelper(const Model::DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUserHierarchyGroupAsyncHelper(const Model::DescribeUserHierarchyGroupRequest& request, const DescribeUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUserHierarchyStructureAsyncHelper(const Model::DescribeUserHierarchyStructureRequest& request, const DescribeUserHierarchyStructureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4387,6 +4565,7 @@ namespace Model
         void ListRoutingProfileQueuesAsyncHelper(const Model::ListRoutingProfileQueuesRequest& request, const ListRoutingProfileQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRoutingProfilesAsyncHelper(const Model::ListRoutingProfilesRequest& request, const ListRoutingProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSecurityKeysAsyncHelper(const Model::ListSecurityKeysRequest& request, const ListSecurityKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListSecurityProfilePermissionsAsyncHelper(const Model::ListSecurityProfilePermissionsRequest& request, const ListSecurityProfilePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSecurityProfilesAsyncHelper(const Model::ListSecurityProfilesRequest& request, const ListSecurityProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUseCasesAsyncHelper(const Model::ListUseCasesRequest& request, const ListUseCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4422,6 +4601,7 @@ namespace Model
         void UpdateRoutingProfileDefaultOutboundQueueAsyncHelper(const Model::UpdateRoutingProfileDefaultOutboundQueueRequest& request, const UpdateRoutingProfileDefaultOutboundQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRoutingProfileNameAsyncHelper(const Model::UpdateRoutingProfileNameRequest& request, const UpdateRoutingProfileNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRoutingProfileQueuesAsyncHelper(const Model::UpdateRoutingProfileQueuesRequest& request, const UpdateRoutingProfileQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateSecurityProfileAsyncHelper(const Model::UpdateSecurityProfileRequest& request, const UpdateSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUserHierarchyAsyncHelper(const Model::UpdateUserHierarchyRequest& request, const UpdateUserHierarchyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUserHierarchyGroupNameAsyncHelper(const Model::UpdateUserHierarchyGroupNameRequest& request, const UpdateUserHierarchyGroupNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUserHierarchyStructureAsyncHelper(const Model::UpdateUserHierarchyStructureRequest& request, const UpdateUserHierarchyStructureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

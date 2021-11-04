@@ -288,67 +288,67 @@ namespace Model
 
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource.</p>
      */
     inline AgentStatus& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource.</p>
      */
     inline AgentStatus& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource.</p>
      */
     inline AgentStatus& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource.</p>
      */
     inline AgentStatus& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource.</p>
      */
     inline AgentStatus& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource.</p>
      */
     inline AgentStatus& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource.</p>
      */
     inline AgentStatus& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource.</p>
      */
     inline AgentStatus& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>One or more tags.</p>
+     * <p>The tags used to organize, track, or control access for this resource.</p>
      */
     inline AgentStatus& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

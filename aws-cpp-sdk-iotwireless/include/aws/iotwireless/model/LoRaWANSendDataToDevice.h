@@ -35,24 +35,16 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    /**
-     * <p>The Fport value.</p>
-     */
+    
     inline int GetFPort() const{ return m_fPort; }
 
-    /**
-     * <p>The Fport value.</p>
-     */
+    
     inline bool FPortHasBeenSet() const { return m_fPortHasBeenSet; }
 
-    /**
-     * <p>The Fport value.</p>
-     */
+    
     inline void SetFPort(int value) { m_fPortHasBeenSet = true; m_fPort = value; }
 
-    /**
-     * <p>The Fport value.</p>
-     */
+    
     inline LoRaWANSendDataToDevice& WithFPort(int value) { SetFPort(value); return *this;}
 
   private:
