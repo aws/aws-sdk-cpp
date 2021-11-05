@@ -85,44 +85,44 @@ namespace Model
 
 
     /**
-     * <p>A list of resource ARNs and the tags (keys and values) associated with those
-     * ARNs.</p>
+     * <p>A list of resource ARNs and the tags (keys and values) associated with
+     * each.</p>
      */
     inline const Aws::Vector<ResourceTagMapping>& GetResourceTagMappingList() const{ return m_resourceTagMappingList; }
 
     /**
-     * <p>A list of resource ARNs and the tags (keys and values) associated with those
-     * ARNs.</p>
+     * <p>A list of resource ARNs and the tags (keys and values) associated with
+     * each.</p>
      */
     inline void SetResourceTagMappingList(const Aws::Vector<ResourceTagMapping>& value) { m_resourceTagMappingList = value; }
 
     /**
-     * <p>A list of resource ARNs and the tags (keys and values) associated with those
-     * ARNs.</p>
+     * <p>A list of resource ARNs and the tags (keys and values) associated with
+     * each.</p>
      */
     inline void SetResourceTagMappingList(Aws::Vector<ResourceTagMapping>&& value) { m_resourceTagMappingList = std::move(value); }
 
     /**
-     * <p>A list of resource ARNs and the tags (keys and values) associated with those
-     * ARNs.</p>
+     * <p>A list of resource ARNs and the tags (keys and values) associated with
+     * each.</p>
      */
     inline GetResourcesResult& WithResourceTagMappingList(const Aws::Vector<ResourceTagMapping>& value) { SetResourceTagMappingList(value); return *this;}
 
     /**
-     * <p>A list of resource ARNs and the tags (keys and values) associated with those
-     * ARNs.</p>
+     * <p>A list of resource ARNs and the tags (keys and values) associated with
+     * each.</p>
      */
     inline GetResourcesResult& WithResourceTagMappingList(Aws::Vector<ResourceTagMapping>&& value) { SetResourceTagMappingList(std::move(value)); return *this;}
 
     /**
-     * <p>A list of resource ARNs and the tags (keys and values) associated with those
-     * ARNs.</p>
+     * <p>A list of resource ARNs and the tags (keys and values) associated with
+     * each.</p>
      */
     inline GetResourcesResult& AddResourceTagMappingList(const ResourceTagMapping& value) { m_resourceTagMappingList.push_back(value); return *this; }
 
     /**
-     * <p>A list of resource ARNs and the tags (keys and values) associated with those
-     * ARNs.</p>
+     * <p>A list of resource ARNs and the tags (keys and values) associated with
+     * each.</p>
      */
     inline GetResourcesResult& AddResourceTagMappingList(ResourceTagMapping&& value) { m_resourceTagMappingList.push_back(std::move(value)); return *this; }
 

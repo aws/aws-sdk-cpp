@@ -95,24 +95,24 @@ namespace Model
 
     /**
      * <p>Specifies a list of TagFilters (keys and values) to restrict the output to
-     * only those resources that have the specified tag and, if included, the specified
-     * value. Each <code>TagFilter</code> must contain a key with values optional. A
-     * request can include up to 50 keys, and each key can include up to 20 values.
-     * </p> <p>Note the following when deciding how to use TagFilters:</p> <ul> <li>
-     * <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes
-     * all resources that are currently tagged or ever had a tag. Resources that
-     * currently don't have tags are shown with an empty tag set, like this:
+     * only those resources that have tags with the specified keys and, if included,
+     * the specified values. Each <code>TagFilter</code> must contain a key with values
+     * optional. A request can include up to 50 keys, and each key can include up to 20
+     * values. </p> <p>Note the following when deciding how to use TagFilters:</p> <ul>
+     * <li> <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response
+     * includes all resources that are currently tagged or ever had a tag. Resources
+     * that currently don't have tags are shown with an empty tag set, like this:
      * <code>"Tags": []</code>.</p> </li> <li> <p>If you specify more than one filter
      * in a single request, the response returns only those resources that satisfy all
      * filters.</p> </li> <li> <p>If you specify a filter that contains more than one
-     * value for a key, the response returns resources that match any of the specified
-     * values for that key.</p> </li> <li> <p>If you don't specify any values for a
-     * key, the response returns resources that are tagged with that key and any or no
-     * value.</p> <p>For example, for the following filters: <code>filter1=
-     * {keyA,{value1}}</code>, <code>filter2={keyB,{value2,value3,value4}}</code>,
-     * <code>filter3= {keyC}</code>:</p> <ul> <li> <p>
-     * <code>GetResources({filter1})</code> returns resources tagged with
-     * <code>key1=value1</code> </p> </li> <li> <p>
+     * value for a key, the response returns resources that match <i>any</i> of the
+     * specified values for that key.</p> </li> <li> <p>If you don't specify a value
+     * for a key, the response returns all resources that are tagged with that key,
+     * with any or no value.</p> <p>For example, for the following filters:
+     * <code>filter1= {keyA,{value1}}</code>,
+     * <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3=
+     * {keyC}</code>:</p> <ul> <li> <p> <code>GetResources({filter1})</code> returns
+     * resources tagged with <code>key1=value1</code> </p> </li> <li> <p>
      * <code>GetResources({filter2})</code> returns resources tagged with
      * <code>key2=value2</code> or <code>key2=value3</code> or <code>key2=value4</code>
      * </p> </li> <li> <p> <code>GetResources({filter3})</code> returns resources
@@ -125,24 +125,24 @@ namespace Model
 
     /**
      * <p>Specifies a list of TagFilters (keys and values) to restrict the output to
-     * only those resources that have the specified tag and, if included, the specified
-     * value. Each <code>TagFilter</code> must contain a key with values optional. A
-     * request can include up to 50 keys, and each key can include up to 20 values.
-     * </p> <p>Note the following when deciding how to use TagFilters:</p> <ul> <li>
-     * <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes
-     * all resources that are currently tagged or ever had a tag. Resources that
-     * currently don't have tags are shown with an empty tag set, like this:
+     * only those resources that have tags with the specified keys and, if included,
+     * the specified values. Each <code>TagFilter</code> must contain a key with values
+     * optional. A request can include up to 50 keys, and each key can include up to 20
+     * values. </p> <p>Note the following when deciding how to use TagFilters:</p> <ul>
+     * <li> <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response
+     * includes all resources that are currently tagged or ever had a tag. Resources
+     * that currently don't have tags are shown with an empty tag set, like this:
      * <code>"Tags": []</code>.</p> </li> <li> <p>If you specify more than one filter
      * in a single request, the response returns only those resources that satisfy all
      * filters.</p> </li> <li> <p>If you specify a filter that contains more than one
-     * value for a key, the response returns resources that match any of the specified
-     * values for that key.</p> </li> <li> <p>If you don't specify any values for a
-     * key, the response returns resources that are tagged with that key and any or no
-     * value.</p> <p>For example, for the following filters: <code>filter1=
-     * {keyA,{value1}}</code>, <code>filter2={keyB,{value2,value3,value4}}</code>,
-     * <code>filter3= {keyC}</code>:</p> <ul> <li> <p>
-     * <code>GetResources({filter1})</code> returns resources tagged with
-     * <code>key1=value1</code> </p> </li> <li> <p>
+     * value for a key, the response returns resources that match <i>any</i> of the
+     * specified values for that key.</p> </li> <li> <p>If you don't specify a value
+     * for a key, the response returns all resources that are tagged with that key,
+     * with any or no value.</p> <p>For example, for the following filters:
+     * <code>filter1= {keyA,{value1}}</code>,
+     * <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3=
+     * {keyC}</code>:</p> <ul> <li> <p> <code>GetResources({filter1})</code> returns
+     * resources tagged with <code>key1=value1</code> </p> </li> <li> <p>
      * <code>GetResources({filter2})</code> returns resources tagged with
      * <code>key2=value2</code> or <code>key2=value3</code> or <code>key2=value4</code>
      * </p> </li> <li> <p> <code>GetResources({filter3})</code> returns resources
@@ -155,24 +155,24 @@ namespace Model
 
     /**
      * <p>Specifies a list of TagFilters (keys and values) to restrict the output to
-     * only those resources that have the specified tag and, if included, the specified
-     * value. Each <code>TagFilter</code> must contain a key with values optional. A
-     * request can include up to 50 keys, and each key can include up to 20 values.
-     * </p> <p>Note the following when deciding how to use TagFilters:</p> <ul> <li>
-     * <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes
-     * all resources that are currently tagged or ever had a tag. Resources that
-     * currently don't have tags are shown with an empty tag set, like this:
+     * only those resources that have tags with the specified keys and, if included,
+     * the specified values. Each <code>TagFilter</code> must contain a key with values
+     * optional. A request can include up to 50 keys, and each key can include up to 20
+     * values. </p> <p>Note the following when deciding how to use TagFilters:</p> <ul>
+     * <li> <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response
+     * includes all resources that are currently tagged or ever had a tag. Resources
+     * that currently don't have tags are shown with an empty tag set, like this:
      * <code>"Tags": []</code>.</p> </li> <li> <p>If you specify more than one filter
      * in a single request, the response returns only those resources that satisfy all
      * filters.</p> </li> <li> <p>If you specify a filter that contains more than one
-     * value for a key, the response returns resources that match any of the specified
-     * values for that key.</p> </li> <li> <p>If you don't specify any values for a
-     * key, the response returns resources that are tagged with that key and any or no
-     * value.</p> <p>For example, for the following filters: <code>filter1=
-     * {keyA,{value1}}</code>, <code>filter2={keyB,{value2,value3,value4}}</code>,
-     * <code>filter3= {keyC}</code>:</p> <ul> <li> <p>
-     * <code>GetResources({filter1})</code> returns resources tagged with
-     * <code>key1=value1</code> </p> </li> <li> <p>
+     * value for a key, the response returns resources that match <i>any</i> of the
+     * specified values for that key.</p> </li> <li> <p>If you don't specify a value
+     * for a key, the response returns all resources that are tagged with that key,
+     * with any or no value.</p> <p>For example, for the following filters:
+     * <code>filter1= {keyA,{value1}}</code>,
+     * <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3=
+     * {keyC}</code>:</p> <ul> <li> <p> <code>GetResources({filter1})</code> returns
+     * resources tagged with <code>key1=value1</code> </p> </li> <li> <p>
      * <code>GetResources({filter2})</code> returns resources tagged with
      * <code>key2=value2</code> or <code>key2=value3</code> or <code>key2=value4</code>
      * </p> </li> <li> <p> <code>GetResources({filter3})</code> returns resources
@@ -185,24 +185,24 @@ namespace Model
 
     /**
      * <p>Specifies a list of TagFilters (keys and values) to restrict the output to
-     * only those resources that have the specified tag and, if included, the specified
-     * value. Each <code>TagFilter</code> must contain a key with values optional. A
-     * request can include up to 50 keys, and each key can include up to 20 values.
-     * </p> <p>Note the following when deciding how to use TagFilters:</p> <ul> <li>
-     * <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes
-     * all resources that are currently tagged or ever had a tag. Resources that
-     * currently don't have tags are shown with an empty tag set, like this:
+     * only those resources that have tags with the specified keys and, if included,
+     * the specified values. Each <code>TagFilter</code> must contain a key with values
+     * optional. A request can include up to 50 keys, and each key can include up to 20
+     * values. </p> <p>Note the following when deciding how to use TagFilters:</p> <ul>
+     * <li> <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response
+     * includes all resources that are currently tagged or ever had a tag. Resources
+     * that currently don't have tags are shown with an empty tag set, like this:
      * <code>"Tags": []</code>.</p> </li> <li> <p>If you specify more than one filter
      * in a single request, the response returns only those resources that satisfy all
      * filters.</p> </li> <li> <p>If you specify a filter that contains more than one
-     * value for a key, the response returns resources that match any of the specified
-     * values for that key.</p> </li> <li> <p>If you don't specify any values for a
-     * key, the response returns resources that are tagged with that key and any or no
-     * value.</p> <p>For example, for the following filters: <code>filter1=
-     * {keyA,{value1}}</code>, <code>filter2={keyB,{value2,value3,value4}}</code>,
-     * <code>filter3= {keyC}</code>:</p> <ul> <li> <p>
-     * <code>GetResources({filter1})</code> returns resources tagged with
-     * <code>key1=value1</code> </p> </li> <li> <p>
+     * value for a key, the response returns resources that match <i>any</i> of the
+     * specified values for that key.</p> </li> <li> <p>If you don't specify a value
+     * for a key, the response returns all resources that are tagged with that key,
+     * with any or no value.</p> <p>For example, for the following filters:
+     * <code>filter1= {keyA,{value1}}</code>,
+     * <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3=
+     * {keyC}</code>:</p> <ul> <li> <p> <code>GetResources({filter1})</code> returns
+     * resources tagged with <code>key1=value1</code> </p> </li> <li> <p>
      * <code>GetResources({filter2})</code> returns resources tagged with
      * <code>key2=value2</code> or <code>key2=value3</code> or <code>key2=value4</code>
      * </p> </li> <li> <p> <code>GetResources({filter3})</code> returns resources
@@ -215,24 +215,24 @@ namespace Model
 
     /**
      * <p>Specifies a list of TagFilters (keys and values) to restrict the output to
-     * only those resources that have the specified tag and, if included, the specified
-     * value. Each <code>TagFilter</code> must contain a key with values optional. A
-     * request can include up to 50 keys, and each key can include up to 20 values.
-     * </p> <p>Note the following when deciding how to use TagFilters:</p> <ul> <li>
-     * <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes
-     * all resources that are currently tagged or ever had a tag. Resources that
-     * currently don't have tags are shown with an empty tag set, like this:
+     * only those resources that have tags with the specified keys and, if included,
+     * the specified values. Each <code>TagFilter</code> must contain a key with values
+     * optional. A request can include up to 50 keys, and each key can include up to 20
+     * values. </p> <p>Note the following when deciding how to use TagFilters:</p> <ul>
+     * <li> <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response
+     * includes all resources that are currently tagged or ever had a tag. Resources
+     * that currently don't have tags are shown with an empty tag set, like this:
      * <code>"Tags": []</code>.</p> </li> <li> <p>If you specify more than one filter
      * in a single request, the response returns only those resources that satisfy all
      * filters.</p> </li> <li> <p>If you specify a filter that contains more than one
-     * value for a key, the response returns resources that match any of the specified
-     * values for that key.</p> </li> <li> <p>If you don't specify any values for a
-     * key, the response returns resources that are tagged with that key and any or no
-     * value.</p> <p>For example, for the following filters: <code>filter1=
-     * {keyA,{value1}}</code>, <code>filter2={keyB,{value2,value3,value4}}</code>,
-     * <code>filter3= {keyC}</code>:</p> <ul> <li> <p>
-     * <code>GetResources({filter1})</code> returns resources tagged with
-     * <code>key1=value1</code> </p> </li> <li> <p>
+     * value for a key, the response returns resources that match <i>any</i> of the
+     * specified values for that key.</p> </li> <li> <p>If you don't specify a value
+     * for a key, the response returns all resources that are tagged with that key,
+     * with any or no value.</p> <p>For example, for the following filters:
+     * <code>filter1= {keyA,{value1}}</code>,
+     * <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3=
+     * {keyC}</code>:</p> <ul> <li> <p> <code>GetResources({filter1})</code> returns
+     * resources tagged with <code>key1=value1</code> </p> </li> <li> <p>
      * <code>GetResources({filter2})</code> returns resources tagged with
      * <code>key2=value2</code> or <code>key2=value3</code> or <code>key2=value4</code>
      * </p> </li> <li> <p> <code>GetResources({filter3})</code> returns resources
@@ -245,24 +245,24 @@ namespace Model
 
     /**
      * <p>Specifies a list of TagFilters (keys and values) to restrict the output to
-     * only those resources that have the specified tag and, if included, the specified
-     * value. Each <code>TagFilter</code> must contain a key with values optional. A
-     * request can include up to 50 keys, and each key can include up to 20 values.
-     * </p> <p>Note the following when deciding how to use TagFilters:</p> <ul> <li>
-     * <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes
-     * all resources that are currently tagged or ever had a tag. Resources that
-     * currently don't have tags are shown with an empty tag set, like this:
+     * only those resources that have tags with the specified keys and, if included,
+     * the specified values. Each <code>TagFilter</code> must contain a key with values
+     * optional. A request can include up to 50 keys, and each key can include up to 20
+     * values. </p> <p>Note the following when deciding how to use TagFilters:</p> <ul>
+     * <li> <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response
+     * includes all resources that are currently tagged or ever had a tag. Resources
+     * that currently don't have tags are shown with an empty tag set, like this:
      * <code>"Tags": []</code>.</p> </li> <li> <p>If you specify more than one filter
      * in a single request, the response returns only those resources that satisfy all
      * filters.</p> </li> <li> <p>If you specify a filter that contains more than one
-     * value for a key, the response returns resources that match any of the specified
-     * values for that key.</p> </li> <li> <p>If you don't specify any values for a
-     * key, the response returns resources that are tagged with that key and any or no
-     * value.</p> <p>For example, for the following filters: <code>filter1=
-     * {keyA,{value1}}</code>, <code>filter2={keyB,{value2,value3,value4}}</code>,
-     * <code>filter3= {keyC}</code>:</p> <ul> <li> <p>
-     * <code>GetResources({filter1})</code> returns resources tagged with
-     * <code>key1=value1</code> </p> </li> <li> <p>
+     * value for a key, the response returns resources that match <i>any</i> of the
+     * specified values for that key.</p> </li> <li> <p>If you don't specify a value
+     * for a key, the response returns all resources that are tagged with that key,
+     * with any or no value.</p> <p>For example, for the following filters:
+     * <code>filter1= {keyA,{value1}}</code>,
+     * <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3=
+     * {keyC}</code>:</p> <ul> <li> <p> <code>GetResources({filter1})</code> returns
+     * resources tagged with <code>key1=value1</code> </p> </li> <li> <p>
      * <code>GetResources({filter2})</code> returns resources tagged with
      * <code>key2=value2</code> or <code>key2=value3</code> or <code>key2=value4</code>
      * </p> </li> <li> <p> <code>GetResources({filter3})</code> returns resources
@@ -275,24 +275,24 @@ namespace Model
 
     /**
      * <p>Specifies a list of TagFilters (keys and values) to restrict the output to
-     * only those resources that have the specified tag and, if included, the specified
-     * value. Each <code>TagFilter</code> must contain a key with values optional. A
-     * request can include up to 50 keys, and each key can include up to 20 values.
-     * </p> <p>Note the following when deciding how to use TagFilters:</p> <ul> <li>
-     * <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes
-     * all resources that are currently tagged or ever had a tag. Resources that
-     * currently don't have tags are shown with an empty tag set, like this:
+     * only those resources that have tags with the specified keys and, if included,
+     * the specified values. Each <code>TagFilter</code> must contain a key with values
+     * optional. A request can include up to 50 keys, and each key can include up to 20
+     * values. </p> <p>Note the following when deciding how to use TagFilters:</p> <ul>
+     * <li> <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response
+     * includes all resources that are currently tagged or ever had a tag. Resources
+     * that currently don't have tags are shown with an empty tag set, like this:
      * <code>"Tags": []</code>.</p> </li> <li> <p>If you specify more than one filter
      * in a single request, the response returns only those resources that satisfy all
      * filters.</p> </li> <li> <p>If you specify a filter that contains more than one
-     * value for a key, the response returns resources that match any of the specified
-     * values for that key.</p> </li> <li> <p>If you don't specify any values for a
-     * key, the response returns resources that are tagged with that key and any or no
-     * value.</p> <p>For example, for the following filters: <code>filter1=
-     * {keyA,{value1}}</code>, <code>filter2={keyB,{value2,value3,value4}}</code>,
-     * <code>filter3= {keyC}</code>:</p> <ul> <li> <p>
-     * <code>GetResources({filter1})</code> returns resources tagged with
-     * <code>key1=value1</code> </p> </li> <li> <p>
+     * value for a key, the response returns resources that match <i>any</i> of the
+     * specified values for that key.</p> </li> <li> <p>If you don't specify a value
+     * for a key, the response returns all resources that are tagged with that key,
+     * with any or no value.</p> <p>For example, for the following filters:
+     * <code>filter1= {keyA,{value1}}</code>,
+     * <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3=
+     * {keyC}</code>:</p> <ul> <li> <p> <code>GetResources({filter1})</code> returns
+     * resources tagged with <code>key1=value1</code> </p> </li> <li> <p>
      * <code>GetResources({filter2})</code> returns resources tagged with
      * <code>key2=value2</code> or <code>key2=value3</code> or <code>key2=value4</code>
      * </p> </li> <li> <p> <code>GetResources({filter3})</code> returns resources
@@ -305,24 +305,24 @@ namespace Model
 
     /**
      * <p>Specifies a list of TagFilters (keys and values) to restrict the output to
-     * only those resources that have the specified tag and, if included, the specified
-     * value. Each <code>TagFilter</code> must contain a key with values optional. A
-     * request can include up to 50 keys, and each key can include up to 20 values.
-     * </p> <p>Note the following when deciding how to use TagFilters:</p> <ul> <li>
-     * <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes
-     * all resources that are currently tagged or ever had a tag. Resources that
-     * currently don't have tags are shown with an empty tag set, like this:
+     * only those resources that have tags with the specified keys and, if included,
+     * the specified values. Each <code>TagFilter</code> must contain a key with values
+     * optional. A request can include up to 50 keys, and each key can include up to 20
+     * values. </p> <p>Note the following when deciding how to use TagFilters:</p> <ul>
+     * <li> <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response
+     * includes all resources that are currently tagged or ever had a tag. Resources
+     * that currently don't have tags are shown with an empty tag set, like this:
      * <code>"Tags": []</code>.</p> </li> <li> <p>If you specify more than one filter
      * in a single request, the response returns only those resources that satisfy all
      * filters.</p> </li> <li> <p>If you specify a filter that contains more than one
-     * value for a key, the response returns resources that match any of the specified
-     * values for that key.</p> </li> <li> <p>If you don't specify any values for a
-     * key, the response returns resources that are tagged with that key and any or no
-     * value.</p> <p>For example, for the following filters: <code>filter1=
-     * {keyA,{value1}}</code>, <code>filter2={keyB,{value2,value3,value4}}</code>,
-     * <code>filter3= {keyC}</code>:</p> <ul> <li> <p>
-     * <code>GetResources({filter1})</code> returns resources tagged with
-     * <code>key1=value1</code> </p> </li> <li> <p>
+     * value for a key, the response returns resources that match <i>any</i> of the
+     * specified values for that key.</p> </li> <li> <p>If you don't specify a value
+     * for a key, the response returns all resources that are tagged with that key,
+     * with any or no value.</p> <p>For example, for the following filters:
+     * <code>filter1= {keyA,{value1}}</code>,
+     * <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3=
+     * {keyC}</code>:</p> <ul> <li> <p> <code>GetResources({filter1})</code> returns
+     * resources tagged with <code>key1=value1</code> </p> </li> <li> <p>
      * <code>GetResources({filter2})</code> returns resources tagged with
      * <code>key2=value2</code> or <code>key2=value3</code> or <code>key2=value4</code>
      * </p> </li> <li> <p> <code>GetResources({filter3})</code> returns resources
@@ -372,8 +372,8 @@ namespace Model
 
 
     /**
-     * <p>AWS recommends using <code>ResourcesPerPage</code> instead of this
-     * parameter.</p> <p>A limit that restricts the number of tags (key and value
+     * <p>Amazon Web Services recommends using <code>ResourcesPerPage</code> instead of
+     * this parameter.</p> <p>A limit that restricts the number of tags (key and value
      * pairs) returned by <code>GetResources</code> in paginated output. A resource
      * with no tags is counted as having one tag (one key and value pair).</p> <p>
      * <code>GetResources</code> does not split a resource and its associated tags
@@ -392,8 +392,8 @@ namespace Model
     inline int GetTagsPerPage() const{ return m_tagsPerPage; }
 
     /**
-     * <p>AWS recommends using <code>ResourcesPerPage</code> instead of this
-     * parameter.</p> <p>A limit that restricts the number of tags (key and value
+     * <p>Amazon Web Services recommends using <code>ResourcesPerPage</code> instead of
+     * this parameter.</p> <p>A limit that restricts the number of tags (key and value
      * pairs) returned by <code>GetResources</code> in paginated output. A resource
      * with no tags is counted as having one tag (one key and value pair).</p> <p>
      * <code>GetResources</code> does not split a resource and its associated tags
@@ -412,8 +412,8 @@ namespace Model
     inline bool TagsPerPageHasBeenSet() const { return m_tagsPerPageHasBeenSet; }
 
     /**
-     * <p>AWS recommends using <code>ResourcesPerPage</code> instead of this
-     * parameter.</p> <p>A limit that restricts the number of tags (key and value
+     * <p>Amazon Web Services recommends using <code>ResourcesPerPage</code> instead of
+     * this parameter.</p> <p>A limit that restricts the number of tags (key and value
      * pairs) returned by <code>GetResources</code> in paginated output. A resource
      * with no tags is counted as having one tag (one key and value pair).</p> <p>
      * <code>GetResources</code> does not split a resource and its associated tags
@@ -432,8 +432,8 @@ namespace Model
     inline void SetTagsPerPage(int value) { m_tagsPerPageHasBeenSet = true; m_tagsPerPage = value; }
 
     /**
-     * <p>AWS recommends using <code>ResourcesPerPage</code> instead of this
-     * parameter.</p> <p>A limit that restricts the number of tags (key and value
+     * <p>Amazon Web Services recommends using <code>ResourcesPerPage</code> instead of
+     * this parameter.</p> <p>A limit that restricts the number of tags (key and value
      * pairs) returned by <code>GetResources</code> in paginated output. A resource
      * with no tags is counted as having one tag (one key and value pair).</p> <p>
      * <code>GetResources</code> does not split a resource and its associated tags
@@ -459,13 +459,15 @@ namespace Model
      * resources (which includes EC2 instances). Specifying a resource type of
      * <code>ec2:instance</code> returns only EC2 instances. </p> <p>The string for
      * each service name and resource type is the same as that embedded in a resource's
-     * Amazon Resource Name (ARN). Consult the <i>AWS General Reference</i> for the
-     * following:</p> <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> <p>You can specify
+     * Amazon Resource Name (ARN). For the list of services whose resources you can use
+     * in this parameter, see <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services
+     * that support the Resource Groups Tagging API</a>.</p> <p>You can specify
      * multiple resource types by using an array. The array can include up to 100
      * items. Note that the length constraint requirement applies to each resource type
-     * filter. </p>
+     * filter. For example, the following string would limit the response to only
+     * Amazon EC2 instances, Amazon S3 buckets, or any Audit Manager resource:</p> <p>
+     * <code>ec2:instance,s3:bucket,auditmanager</code> </p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceTypeFilters() const{ return m_resourceTypeFilters; }
 
@@ -476,13 +478,15 @@ namespace Model
      * resources (which includes EC2 instances). Specifying a resource type of
      * <code>ec2:instance</code> returns only EC2 instances. </p> <p>The string for
      * each service name and resource type is the same as that embedded in a resource's
-     * Amazon Resource Name (ARN). Consult the <i>AWS General Reference</i> for the
-     * following:</p> <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> <p>You can specify
+     * Amazon Resource Name (ARN). For the list of services whose resources you can use
+     * in this parameter, see <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services
+     * that support the Resource Groups Tagging API</a>.</p> <p>You can specify
      * multiple resource types by using an array. The array can include up to 100
      * items. Note that the length constraint requirement applies to each resource type
-     * filter. </p>
+     * filter. For example, the following string would limit the response to only
+     * Amazon EC2 instances, Amazon S3 buckets, or any Audit Manager resource:</p> <p>
+     * <code>ec2:instance,s3:bucket,auditmanager</code> </p>
      */
     inline bool ResourceTypeFiltersHasBeenSet() const { return m_resourceTypeFiltersHasBeenSet; }
 
@@ -493,13 +497,15 @@ namespace Model
      * resources (which includes EC2 instances). Specifying a resource type of
      * <code>ec2:instance</code> returns only EC2 instances. </p> <p>The string for
      * each service name and resource type is the same as that embedded in a resource's
-     * Amazon Resource Name (ARN). Consult the <i>AWS General Reference</i> for the
-     * following:</p> <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> <p>You can specify
+     * Amazon Resource Name (ARN). For the list of services whose resources you can use
+     * in this parameter, see <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services
+     * that support the Resource Groups Tagging API</a>.</p> <p>You can specify
      * multiple resource types by using an array. The array can include up to 100
      * items. Note that the length constraint requirement applies to each resource type
-     * filter. </p>
+     * filter. For example, the following string would limit the response to only
+     * Amazon EC2 instances, Amazon S3 buckets, or any Audit Manager resource:</p> <p>
+     * <code>ec2:instance,s3:bucket,auditmanager</code> </p>
      */
     inline void SetResourceTypeFilters(const Aws::Vector<Aws::String>& value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters = value; }
 
@@ -510,13 +516,15 @@ namespace Model
      * resources (which includes EC2 instances). Specifying a resource type of
      * <code>ec2:instance</code> returns only EC2 instances. </p> <p>The string for
      * each service name and resource type is the same as that embedded in a resource's
-     * Amazon Resource Name (ARN). Consult the <i>AWS General Reference</i> for the
-     * following:</p> <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> <p>You can specify
+     * Amazon Resource Name (ARN). For the list of services whose resources you can use
+     * in this parameter, see <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services
+     * that support the Resource Groups Tagging API</a>.</p> <p>You can specify
      * multiple resource types by using an array. The array can include up to 100
      * items. Note that the length constraint requirement applies to each resource type
-     * filter. </p>
+     * filter. For example, the following string would limit the response to only
+     * Amazon EC2 instances, Amazon S3 buckets, or any Audit Manager resource:</p> <p>
+     * <code>ec2:instance,s3:bucket,auditmanager</code> </p>
      */
     inline void SetResourceTypeFilters(Aws::Vector<Aws::String>&& value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters = std::move(value); }
 
@@ -527,13 +535,15 @@ namespace Model
      * resources (which includes EC2 instances). Specifying a resource type of
      * <code>ec2:instance</code> returns only EC2 instances. </p> <p>The string for
      * each service name and resource type is the same as that embedded in a resource's
-     * Amazon Resource Name (ARN). Consult the <i>AWS General Reference</i> for the
-     * following:</p> <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> <p>You can specify
+     * Amazon Resource Name (ARN). For the list of services whose resources you can use
+     * in this parameter, see <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services
+     * that support the Resource Groups Tagging API</a>.</p> <p>You can specify
      * multiple resource types by using an array. The array can include up to 100
      * items. Note that the length constraint requirement applies to each resource type
-     * filter. </p>
+     * filter. For example, the following string would limit the response to only
+     * Amazon EC2 instances, Amazon S3 buckets, or any Audit Manager resource:</p> <p>
+     * <code>ec2:instance,s3:bucket,auditmanager</code> </p>
      */
     inline GetResourcesRequest& WithResourceTypeFilters(const Aws::Vector<Aws::String>& value) { SetResourceTypeFilters(value); return *this;}
 
@@ -544,13 +554,15 @@ namespace Model
      * resources (which includes EC2 instances). Specifying a resource type of
      * <code>ec2:instance</code> returns only EC2 instances. </p> <p>The string for
      * each service name and resource type is the same as that embedded in a resource's
-     * Amazon Resource Name (ARN). Consult the <i>AWS General Reference</i> for the
-     * following:</p> <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> <p>You can specify
+     * Amazon Resource Name (ARN). For the list of services whose resources you can use
+     * in this parameter, see <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services
+     * that support the Resource Groups Tagging API</a>.</p> <p>You can specify
      * multiple resource types by using an array. The array can include up to 100
      * items. Note that the length constraint requirement applies to each resource type
-     * filter. </p>
+     * filter. For example, the following string would limit the response to only
+     * Amazon EC2 instances, Amazon S3 buckets, or any Audit Manager resource:</p> <p>
+     * <code>ec2:instance,s3:bucket,auditmanager</code> </p>
      */
     inline GetResourcesRequest& WithResourceTypeFilters(Aws::Vector<Aws::String>&& value) { SetResourceTypeFilters(std::move(value)); return *this;}
 
@@ -561,13 +573,15 @@ namespace Model
      * resources (which includes EC2 instances). Specifying a resource type of
      * <code>ec2:instance</code> returns only EC2 instances. </p> <p>The string for
      * each service name and resource type is the same as that embedded in a resource's
-     * Amazon Resource Name (ARN). Consult the <i>AWS General Reference</i> for the
-     * following:</p> <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> <p>You can specify
+     * Amazon Resource Name (ARN). For the list of services whose resources you can use
+     * in this parameter, see <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services
+     * that support the Resource Groups Tagging API</a>.</p> <p>You can specify
      * multiple resource types by using an array. The array can include up to 100
      * items. Note that the length constraint requirement applies to each resource type
-     * filter. </p>
+     * filter. For example, the following string would limit the response to only
+     * Amazon EC2 instances, Amazon S3 buckets, or any Audit Manager resource:</p> <p>
+     * <code>ec2:instance,s3:bucket,auditmanager</code> </p>
      */
     inline GetResourcesRequest& AddResourceTypeFilters(const Aws::String& value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters.push_back(value); return *this; }
 
@@ -578,13 +592,15 @@ namespace Model
      * resources (which includes EC2 instances). Specifying a resource type of
      * <code>ec2:instance</code> returns only EC2 instances. </p> <p>The string for
      * each service name and resource type is the same as that embedded in a resource's
-     * Amazon Resource Name (ARN). Consult the <i>AWS General Reference</i> for the
-     * following:</p> <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> <p>You can specify
+     * Amazon Resource Name (ARN). For the list of services whose resources you can use
+     * in this parameter, see <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services
+     * that support the Resource Groups Tagging API</a>.</p> <p>You can specify
      * multiple resource types by using an array. The array can include up to 100
      * items. Note that the length constraint requirement applies to each resource type
-     * filter. </p>
+     * filter. For example, the following string would limit the response to only
+     * Amazon EC2 instances, Amazon S3 buckets, or any Audit Manager resource:</p> <p>
+     * <code>ec2:instance,s3:bucket,auditmanager</code> </p>
      */
     inline GetResourcesRequest& AddResourceTypeFilters(Aws::String&& value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters.push_back(std::move(value)); return *this; }
 
@@ -595,13 +611,15 @@ namespace Model
      * resources (which includes EC2 instances). Specifying a resource type of
      * <code>ec2:instance</code> returns only EC2 instances. </p> <p>The string for
      * each service name and resource type is the same as that embedded in a resource's
-     * Amazon Resource Name (ARN). Consult the <i>AWS General Reference</i> for the
-     * following:</p> <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> <p>You can specify
+     * Amazon Resource Name (ARN). For the list of services whose resources you can use
+     * in this parameter, see <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services
+     * that support the Resource Groups Tagging API</a>.</p> <p>You can specify
      * multiple resource types by using an array. The array can include up to 100
      * items. Note that the length constraint requirement applies to each resource type
-     * filter. </p>
+     * filter. For example, the following string would limit the response to only
+     * Amazon EC2 instances, Amazon S3 buckets, or any Audit Manager resource:</p> <p>
+     * <code>ec2:instance,s3:bucket,auditmanager</code> </p>
      */
     inline GetResourcesRequest& AddResourceTypeFilters(const char* value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters.push_back(value); return *this; }
 
@@ -681,9 +699,9 @@ namespace Model
      * this parameter doesn't exist, it doesn't generate an error; it simply isn't
      * included in the response.</p> <p>An ARN (Amazon Resource Name) uniquely
      * identifies a resource. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * <i>Amazon Web Services General Reference</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceARNList() const{ return m_resourceARNList; }
 
@@ -696,9 +714,9 @@ namespace Model
      * this parameter doesn't exist, it doesn't generate an error; it simply isn't
      * included in the response.</p> <p>An ARN (Amazon Resource Name) uniquely
      * identifies a resource. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * <i>Amazon Web Services General Reference</i>.</p>
      */
     inline bool ResourceARNListHasBeenSet() const { return m_resourceARNListHasBeenSet; }
 
@@ -711,9 +729,9 @@ namespace Model
      * this parameter doesn't exist, it doesn't generate an error; it simply isn't
      * included in the response.</p> <p>An ARN (Amazon Resource Name) uniquely
      * identifies a resource. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * <i>Amazon Web Services General Reference</i>.</p>
      */
     inline void SetResourceARNList(const Aws::Vector<Aws::String>& value) { m_resourceARNListHasBeenSet = true; m_resourceARNList = value; }
 
@@ -726,9 +744,9 @@ namespace Model
      * this parameter doesn't exist, it doesn't generate an error; it simply isn't
      * included in the response.</p> <p>An ARN (Amazon Resource Name) uniquely
      * identifies a resource. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * <i>Amazon Web Services General Reference</i>.</p>
      */
     inline void SetResourceARNList(Aws::Vector<Aws::String>&& value) { m_resourceARNListHasBeenSet = true; m_resourceARNList = std::move(value); }
 
@@ -741,9 +759,9 @@ namespace Model
      * this parameter doesn't exist, it doesn't generate an error; it simply isn't
      * included in the response.</p> <p>An ARN (Amazon Resource Name) uniquely
      * identifies a resource. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * <i>Amazon Web Services General Reference</i>.</p>
      */
     inline GetResourcesRequest& WithResourceARNList(const Aws::Vector<Aws::String>& value) { SetResourceARNList(value); return *this;}
 
@@ -756,9 +774,9 @@ namespace Model
      * this parameter doesn't exist, it doesn't generate an error; it simply isn't
      * included in the response.</p> <p>An ARN (Amazon Resource Name) uniquely
      * identifies a resource. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * <i>Amazon Web Services General Reference</i>.</p>
      */
     inline GetResourcesRequest& WithResourceARNList(Aws::Vector<Aws::String>&& value) { SetResourceARNList(std::move(value)); return *this;}
 
@@ -771,9 +789,9 @@ namespace Model
      * this parameter doesn't exist, it doesn't generate an error; it simply isn't
      * included in the response.</p> <p>An ARN (Amazon Resource Name) uniquely
      * identifies a resource. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * <i>Amazon Web Services General Reference</i>.</p>
      */
     inline GetResourcesRequest& AddResourceARNList(const Aws::String& value) { m_resourceARNListHasBeenSet = true; m_resourceARNList.push_back(value); return *this; }
 
@@ -786,9 +804,9 @@ namespace Model
      * this parameter doesn't exist, it doesn't generate an error; it simply isn't
      * included in the response.</p> <p>An ARN (Amazon Resource Name) uniquely
      * identifies a resource. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * <i>Amazon Web Services General Reference</i>.</p>
      */
     inline GetResourcesRequest& AddResourceARNList(Aws::String&& value) { m_resourceARNListHasBeenSet = true; m_resourceARNList.push_back(std::move(value)); return *this; }
 
@@ -801,9 +819,9 @@ namespace Model
      * this parameter doesn't exist, it doesn't generate an error; it simply isn't
      * included in the response.</p> <p>An ARN (Amazon Resource Name) uniquely
      * identifies a resource. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * <i>Amazon Web Services General Reference</i>.</p>
      */
     inline GetResourcesRequest& AddResourceARNList(const char* value) { m_resourceARNListHasBeenSet = true; m_resourceARNList.push_back(value); return *this; }
 

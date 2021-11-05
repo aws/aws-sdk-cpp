@@ -101,65 +101,65 @@ namespace Model
 
 
     /**
-     * <p>Specifies a list of AWS Regions to limit the output by. If you use this
-     * parameter, the count of returned noncompliant resources includes only resources
-     * in the specified Regions.</p>
+     * <p>Specifies a list of Amazon Web Services Regions to limit the output to. If
+     * you use this parameter, the count of returned noncompliant resources includes
+     * only resources in the specified Regions.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRegionFilters() const{ return m_regionFilters; }
 
     /**
-     * <p>Specifies a list of AWS Regions to limit the output by. If you use this
-     * parameter, the count of returned noncompliant resources includes only resources
-     * in the specified Regions.</p>
+     * <p>Specifies a list of Amazon Web Services Regions to limit the output to. If
+     * you use this parameter, the count of returned noncompliant resources includes
+     * only resources in the specified Regions.</p>
      */
     inline bool RegionFiltersHasBeenSet() const { return m_regionFiltersHasBeenSet; }
 
     /**
-     * <p>Specifies a list of AWS Regions to limit the output by. If you use this
-     * parameter, the count of returned noncompliant resources includes only resources
-     * in the specified Regions.</p>
+     * <p>Specifies a list of Amazon Web Services Regions to limit the output to. If
+     * you use this parameter, the count of returned noncompliant resources includes
+     * only resources in the specified Regions.</p>
      */
     inline void SetRegionFilters(const Aws::Vector<Aws::String>& value) { m_regionFiltersHasBeenSet = true; m_regionFilters = value; }
 
     /**
-     * <p>Specifies a list of AWS Regions to limit the output by. If you use this
-     * parameter, the count of returned noncompliant resources includes only resources
-     * in the specified Regions.</p>
+     * <p>Specifies a list of Amazon Web Services Regions to limit the output to. If
+     * you use this parameter, the count of returned noncompliant resources includes
+     * only resources in the specified Regions.</p>
      */
     inline void SetRegionFilters(Aws::Vector<Aws::String>&& value) { m_regionFiltersHasBeenSet = true; m_regionFilters = std::move(value); }
 
     /**
-     * <p>Specifies a list of AWS Regions to limit the output by. If you use this
-     * parameter, the count of returned noncompliant resources includes only resources
-     * in the specified Regions.</p>
+     * <p>Specifies a list of Amazon Web Services Regions to limit the output to. If
+     * you use this parameter, the count of returned noncompliant resources includes
+     * only resources in the specified Regions.</p>
      */
     inline GetComplianceSummaryRequest& WithRegionFilters(const Aws::Vector<Aws::String>& value) { SetRegionFilters(value); return *this;}
 
     /**
-     * <p>Specifies a list of AWS Regions to limit the output by. If you use this
-     * parameter, the count of returned noncompliant resources includes only resources
-     * in the specified Regions.</p>
+     * <p>Specifies a list of Amazon Web Services Regions to limit the output to. If
+     * you use this parameter, the count of returned noncompliant resources includes
+     * only resources in the specified Regions.</p>
      */
     inline GetComplianceSummaryRequest& WithRegionFilters(Aws::Vector<Aws::String>&& value) { SetRegionFilters(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies a list of AWS Regions to limit the output by. If you use this
-     * parameter, the count of returned noncompliant resources includes only resources
-     * in the specified Regions.</p>
+     * <p>Specifies a list of Amazon Web Services Regions to limit the output to. If
+     * you use this parameter, the count of returned noncompliant resources includes
+     * only resources in the specified Regions.</p>
      */
     inline GetComplianceSummaryRequest& AddRegionFilters(const Aws::String& value) { m_regionFiltersHasBeenSet = true; m_regionFilters.push_back(value); return *this; }
 
     /**
-     * <p>Specifies a list of AWS Regions to limit the output by. If you use this
-     * parameter, the count of returned noncompliant resources includes only resources
-     * in the specified Regions.</p>
+     * <p>Specifies a list of Amazon Web Services Regions to limit the output to. If
+     * you use this parameter, the count of returned noncompliant resources includes
+     * only resources in the specified Regions.</p>
      */
     inline GetComplianceSummaryRequest& AddRegionFilters(Aws::String&& value) { m_regionFiltersHasBeenSet = true; m_regionFilters.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Specifies a list of AWS Regions to limit the output by. If you use this
-     * parameter, the count of returned noncompliant resources includes only resources
-     * in the specified Regions.</p>
+     * <p>Specifies a list of Amazon Web Services Regions to limit the output to. If
+     * you use this parameter, the count of returned noncompliant resources includes
+     * only resources in the specified Regions.</p>
      */
     inline GetComplianceSummaryRequest& AddRegionFilters(const char* value) { m_regionFiltersHasBeenSet = true; m_regionFilters.push_back(value); return *this; }
 
@@ -170,19 +170,21 @@ namespace Model
      * <code>service[:resourceType]</code>. For example, specifying a resource type of
      * <code>ec2</code> returns all Amazon EC2 resources (which includes EC2
      * instances). Specifying a resource type of <code>ec2:instance</code> returns only
-     * EC2 instances. </p> <p>The string for each service name and resource type is the
+     * EC2 instances.</p> <p>The string for each service name and resource type is the
      * same as that embedded in a resource's Amazon Resource Name (ARN). Consult the
-     * <i>AWS General Reference</i> for the following:</p> <ul> <li> <p>For a list of
+     * <i> <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services
+     * General Reference</a> </i> for the following:</p> <ul> <li> <p>For a list of
      * service name strings, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a>.</p> </li> <li> <p>For resource type strings, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
+     * Web Services Service Namespaces</a>.</p> </li> <li> <p>For resource type
+     * strings, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
      * ARNs</a>.</p> </li> <li> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> </li> </ul> <p>You can
-     * specify multiple resource types by using a comma separated array. The array can
-     * include up to 100 items. Note that the length constraint requirement applies to
-     * each resource type filter. </p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p> </li>
+     * </ul> <p>You can specify multiple resource types by using a comma separated
+     * array. The array can include up to 100 items. Note that the length constraint
+     * requirement applies to each resource type filter. </p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceTypeFilters() const{ return m_resourceTypeFilters; }
 
@@ -192,19 +194,21 @@ namespace Model
      * <code>service[:resourceType]</code>. For example, specifying a resource type of
      * <code>ec2</code> returns all Amazon EC2 resources (which includes EC2
      * instances). Specifying a resource type of <code>ec2:instance</code> returns only
-     * EC2 instances. </p> <p>The string for each service name and resource type is the
+     * EC2 instances.</p> <p>The string for each service name and resource type is the
      * same as that embedded in a resource's Amazon Resource Name (ARN). Consult the
-     * <i>AWS General Reference</i> for the following:</p> <ul> <li> <p>For a list of
+     * <i> <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services
+     * General Reference</a> </i> for the following:</p> <ul> <li> <p>For a list of
      * service name strings, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a>.</p> </li> <li> <p>For resource type strings, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
+     * Web Services Service Namespaces</a>.</p> </li> <li> <p>For resource type
+     * strings, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
      * ARNs</a>.</p> </li> <li> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> </li> </ul> <p>You can
-     * specify multiple resource types by using a comma separated array. The array can
-     * include up to 100 items. Note that the length constraint requirement applies to
-     * each resource type filter. </p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p> </li>
+     * </ul> <p>You can specify multiple resource types by using a comma separated
+     * array. The array can include up to 100 items. Note that the length constraint
+     * requirement applies to each resource type filter. </p>
      */
     inline bool ResourceTypeFiltersHasBeenSet() const { return m_resourceTypeFiltersHasBeenSet; }
 
@@ -214,19 +218,21 @@ namespace Model
      * <code>service[:resourceType]</code>. For example, specifying a resource type of
      * <code>ec2</code> returns all Amazon EC2 resources (which includes EC2
      * instances). Specifying a resource type of <code>ec2:instance</code> returns only
-     * EC2 instances. </p> <p>The string for each service name and resource type is the
+     * EC2 instances.</p> <p>The string for each service name and resource type is the
      * same as that embedded in a resource's Amazon Resource Name (ARN). Consult the
-     * <i>AWS General Reference</i> for the following:</p> <ul> <li> <p>For a list of
+     * <i> <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services
+     * General Reference</a> </i> for the following:</p> <ul> <li> <p>For a list of
      * service name strings, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a>.</p> </li> <li> <p>For resource type strings, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
+     * Web Services Service Namespaces</a>.</p> </li> <li> <p>For resource type
+     * strings, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
      * ARNs</a>.</p> </li> <li> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> </li> </ul> <p>You can
-     * specify multiple resource types by using a comma separated array. The array can
-     * include up to 100 items. Note that the length constraint requirement applies to
-     * each resource type filter. </p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p> </li>
+     * </ul> <p>You can specify multiple resource types by using a comma separated
+     * array. The array can include up to 100 items. Note that the length constraint
+     * requirement applies to each resource type filter. </p>
      */
     inline void SetResourceTypeFilters(const Aws::Vector<Aws::String>& value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters = value; }
 
@@ -236,19 +242,21 @@ namespace Model
      * <code>service[:resourceType]</code>. For example, specifying a resource type of
      * <code>ec2</code> returns all Amazon EC2 resources (which includes EC2
      * instances). Specifying a resource type of <code>ec2:instance</code> returns only
-     * EC2 instances. </p> <p>The string for each service name and resource type is the
+     * EC2 instances.</p> <p>The string for each service name and resource type is the
      * same as that embedded in a resource's Amazon Resource Name (ARN). Consult the
-     * <i>AWS General Reference</i> for the following:</p> <ul> <li> <p>For a list of
+     * <i> <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services
+     * General Reference</a> </i> for the following:</p> <ul> <li> <p>For a list of
      * service name strings, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a>.</p> </li> <li> <p>For resource type strings, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
+     * Web Services Service Namespaces</a>.</p> </li> <li> <p>For resource type
+     * strings, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
      * ARNs</a>.</p> </li> <li> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> </li> </ul> <p>You can
-     * specify multiple resource types by using a comma separated array. The array can
-     * include up to 100 items. Note that the length constraint requirement applies to
-     * each resource type filter. </p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p> </li>
+     * </ul> <p>You can specify multiple resource types by using a comma separated
+     * array. The array can include up to 100 items. Note that the length constraint
+     * requirement applies to each resource type filter. </p>
      */
     inline void SetResourceTypeFilters(Aws::Vector<Aws::String>&& value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters = std::move(value); }
 
@@ -258,19 +266,21 @@ namespace Model
      * <code>service[:resourceType]</code>. For example, specifying a resource type of
      * <code>ec2</code> returns all Amazon EC2 resources (which includes EC2
      * instances). Specifying a resource type of <code>ec2:instance</code> returns only
-     * EC2 instances. </p> <p>The string for each service name and resource type is the
+     * EC2 instances.</p> <p>The string for each service name and resource type is the
      * same as that embedded in a resource's Amazon Resource Name (ARN). Consult the
-     * <i>AWS General Reference</i> for the following:</p> <ul> <li> <p>For a list of
+     * <i> <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services
+     * General Reference</a> </i> for the following:</p> <ul> <li> <p>For a list of
      * service name strings, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a>.</p> </li> <li> <p>For resource type strings, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
+     * Web Services Service Namespaces</a>.</p> </li> <li> <p>For resource type
+     * strings, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
      * ARNs</a>.</p> </li> <li> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> </li> </ul> <p>You can
-     * specify multiple resource types by using a comma separated array. The array can
-     * include up to 100 items. Note that the length constraint requirement applies to
-     * each resource type filter. </p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p> </li>
+     * </ul> <p>You can specify multiple resource types by using a comma separated
+     * array. The array can include up to 100 items. Note that the length constraint
+     * requirement applies to each resource type filter. </p>
      */
     inline GetComplianceSummaryRequest& WithResourceTypeFilters(const Aws::Vector<Aws::String>& value) { SetResourceTypeFilters(value); return *this;}
 
@@ -280,19 +290,21 @@ namespace Model
      * <code>service[:resourceType]</code>. For example, specifying a resource type of
      * <code>ec2</code> returns all Amazon EC2 resources (which includes EC2
      * instances). Specifying a resource type of <code>ec2:instance</code> returns only
-     * EC2 instances. </p> <p>The string for each service name and resource type is the
+     * EC2 instances.</p> <p>The string for each service name and resource type is the
      * same as that embedded in a resource's Amazon Resource Name (ARN). Consult the
-     * <i>AWS General Reference</i> for the following:</p> <ul> <li> <p>For a list of
+     * <i> <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services
+     * General Reference</a> </i> for the following:</p> <ul> <li> <p>For a list of
      * service name strings, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a>.</p> </li> <li> <p>For resource type strings, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
+     * Web Services Service Namespaces</a>.</p> </li> <li> <p>For resource type
+     * strings, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
      * ARNs</a>.</p> </li> <li> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> </li> </ul> <p>You can
-     * specify multiple resource types by using a comma separated array. The array can
-     * include up to 100 items. Note that the length constraint requirement applies to
-     * each resource type filter. </p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p> </li>
+     * </ul> <p>You can specify multiple resource types by using a comma separated
+     * array. The array can include up to 100 items. Note that the length constraint
+     * requirement applies to each resource type filter. </p>
      */
     inline GetComplianceSummaryRequest& WithResourceTypeFilters(Aws::Vector<Aws::String>&& value) { SetResourceTypeFilters(std::move(value)); return *this;}
 
@@ -302,19 +314,21 @@ namespace Model
      * <code>service[:resourceType]</code>. For example, specifying a resource type of
      * <code>ec2</code> returns all Amazon EC2 resources (which includes EC2
      * instances). Specifying a resource type of <code>ec2:instance</code> returns only
-     * EC2 instances. </p> <p>The string for each service name and resource type is the
+     * EC2 instances.</p> <p>The string for each service name and resource type is the
      * same as that embedded in a resource's Amazon Resource Name (ARN). Consult the
-     * <i>AWS General Reference</i> for the following:</p> <ul> <li> <p>For a list of
+     * <i> <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services
+     * General Reference</a> </i> for the following:</p> <ul> <li> <p>For a list of
      * service name strings, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a>.</p> </li> <li> <p>For resource type strings, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
+     * Web Services Service Namespaces</a>.</p> </li> <li> <p>For resource type
+     * strings, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
      * ARNs</a>.</p> </li> <li> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> </li> </ul> <p>You can
-     * specify multiple resource types by using a comma separated array. The array can
-     * include up to 100 items. Note that the length constraint requirement applies to
-     * each resource type filter. </p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p> </li>
+     * </ul> <p>You can specify multiple resource types by using a comma separated
+     * array. The array can include up to 100 items. Note that the length constraint
+     * requirement applies to each resource type filter. </p>
      */
     inline GetComplianceSummaryRequest& AddResourceTypeFilters(const Aws::String& value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters.push_back(value); return *this; }
 
@@ -324,19 +338,21 @@ namespace Model
      * <code>service[:resourceType]</code>. For example, specifying a resource type of
      * <code>ec2</code> returns all Amazon EC2 resources (which includes EC2
      * instances). Specifying a resource type of <code>ec2:instance</code> returns only
-     * EC2 instances. </p> <p>The string for each service name and resource type is the
+     * EC2 instances.</p> <p>The string for each service name and resource type is the
      * same as that embedded in a resource's Amazon Resource Name (ARN). Consult the
-     * <i>AWS General Reference</i> for the following:</p> <ul> <li> <p>For a list of
+     * <i> <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services
+     * General Reference</a> </i> for the following:</p> <ul> <li> <p>For a list of
      * service name strings, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a>.</p> </li> <li> <p>For resource type strings, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
+     * Web Services Service Namespaces</a>.</p> </li> <li> <p>For resource type
+     * strings, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
      * ARNs</a>.</p> </li> <li> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> </li> </ul> <p>You can
-     * specify multiple resource types by using a comma separated array. The array can
-     * include up to 100 items. Note that the length constraint requirement applies to
-     * each resource type filter. </p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p> </li>
+     * </ul> <p>You can specify multiple resource types by using a comma separated
+     * array. The array can include up to 100 items. Note that the length constraint
+     * requirement applies to each resource type filter. </p>
      */
     inline GetComplianceSummaryRequest& AddResourceTypeFilters(Aws::String&& value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters.push_back(std::move(value)); return *this; }
 
@@ -346,19 +362,21 @@ namespace Model
      * <code>service[:resourceType]</code>. For example, specifying a resource type of
      * <code>ec2</code> returns all Amazon EC2 resources (which includes EC2
      * instances). Specifying a resource type of <code>ec2:instance</code> returns only
-     * EC2 instances. </p> <p>The string for each service name and resource type is the
+     * EC2 instances.</p> <p>The string for each service name and resource type is the
      * same as that embedded in a resource's Amazon Resource Name (ARN). Consult the
-     * <i>AWS General Reference</i> for the following:</p> <ul> <li> <p>For a list of
+     * <i> <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services
+     * General Reference</a> </i> for the following:</p> <ul> <li> <p>For a list of
      * service name strings, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a>.</p> </li> <li> <p>For resource type strings, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
+     * Web Services Service Namespaces</a>.</p> </li> <li> <p>For resource type
+     * strings, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
      * ARNs</a>.</p> </li> <li> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> </li> </ul> <p>You can
-     * specify multiple resource types by using a comma separated array. The array can
-     * include up to 100 items. Note that the length constraint requirement applies to
-     * each resource type filter. </p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p> </li>
+     * </ul> <p>You can specify multiple resource types by using a comma separated
+     * array. The array can include up to 100 items. Note that the length constraint
+     * requirement applies to each resource type filter. </p>
      */
     inline GetComplianceSummaryRequest& AddResourceTypeFilters(const char* value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters.push_back(value); return *this; }
 

@@ -40,9 +40,9 @@ namespace Model
      * <p>Specifies the list of ARNs of the resources that you want to apply tags
      * to.</p> <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * <i>Amazon Web Services General Reference</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceARNList() const{ return m_resourceARNList; }
 
@@ -50,9 +50,9 @@ namespace Model
      * <p>Specifies the list of ARNs of the resources that you want to apply tags
      * to.</p> <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * <i>Amazon Web Services General Reference</i>.</p>
      */
     inline bool ResourceARNListHasBeenSet() const { return m_resourceARNListHasBeenSet; }
 
@@ -60,9 +60,9 @@ namespace Model
      * <p>Specifies the list of ARNs of the resources that you want to apply tags
      * to.</p> <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * <i>Amazon Web Services General Reference</i>.</p>
      */
     inline void SetResourceARNList(const Aws::Vector<Aws::String>& value) { m_resourceARNListHasBeenSet = true; m_resourceARNList = value; }
 
@@ -70,9 +70,9 @@ namespace Model
      * <p>Specifies the list of ARNs of the resources that you want to apply tags
      * to.</p> <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * <i>Amazon Web Services General Reference</i>.</p>
      */
     inline void SetResourceARNList(Aws::Vector<Aws::String>&& value) { m_resourceARNListHasBeenSet = true; m_resourceARNList = std::move(value); }
 
@@ -80,9 +80,9 @@ namespace Model
      * <p>Specifies the list of ARNs of the resources that you want to apply tags
      * to.</p> <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * <i>Amazon Web Services General Reference</i>.</p>
      */
     inline TagResourcesRequest& WithResourceARNList(const Aws::Vector<Aws::String>& value) { SetResourceARNList(value); return *this;}
 
@@ -90,9 +90,9 @@ namespace Model
      * <p>Specifies the list of ARNs of the resources that you want to apply tags
      * to.</p> <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * <i>Amazon Web Services General Reference</i>.</p>
      */
     inline TagResourcesRequest& WithResourceARNList(Aws::Vector<Aws::String>&& value) { SetResourceARNList(std::move(value)); return *this;}
 
@@ -100,9 +100,9 @@ namespace Model
      * <p>Specifies the list of ARNs of the resources that you want to apply tags
      * to.</p> <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * <i>Amazon Web Services General Reference</i>.</p>
      */
     inline TagResourcesRequest& AddResourceARNList(const Aws::String& value) { m_resourceARNListHasBeenSet = true; m_resourceARNList.push_back(value); return *this; }
 
@@ -110,9 +110,9 @@ namespace Model
      * <p>Specifies the list of ARNs of the resources that you want to apply tags
      * to.</p> <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * <i>Amazon Web Services General Reference</i>.</p>
      */
     inline TagResourcesRequest& AddResourceARNList(Aws::String&& value) { m_resourceARNListHasBeenSet = true; m_resourceARNList.push_back(std::move(value)); return *this; }
 
@@ -120,9 +120,9 @@ namespace Model
      * <p>Specifies the list of ARNs of the resources that you want to apply tags
      * to.</p> <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * <i>Amazon Web Services General Reference</i>.</p>
      */
     inline TagResourcesRequest& AddResourceARNList(const char* value) { m_resourceARNListHasBeenSet = true; m_resourceARNList.push_back(value); return *this; }
 

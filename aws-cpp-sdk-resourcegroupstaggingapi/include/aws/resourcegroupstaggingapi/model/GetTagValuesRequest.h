@@ -93,49 +93,57 @@ namespace Model
 
     /**
      * <p>Specifies the tag key for which you want to list all existing values that are
-     * currently used in the specified AWS Region for the calling AWS account.</p>
+     * currently used in the specified Amazon Web Services Region for the calling
+     * account.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
      * <p>Specifies the tag key for which you want to list all existing values that are
-     * currently used in the specified AWS Region for the calling AWS account.</p>
+     * currently used in the specified Amazon Web Services Region for the calling
+     * account.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p>Specifies the tag key for which you want to list all existing values that are
-     * currently used in the specified AWS Region for the calling AWS account.</p>
+     * currently used in the specified Amazon Web Services Region for the calling
+     * account.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
      * <p>Specifies the tag key for which you want to list all existing values that are
-     * currently used in the specified AWS Region for the calling AWS account.</p>
+     * currently used in the specified Amazon Web Services Region for the calling
+     * account.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>Specifies the tag key for which you want to list all existing values that are
-     * currently used in the specified AWS Region for the calling AWS account.</p>
+     * currently used in the specified Amazon Web Services Region for the calling
+     * account.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
      * <p>Specifies the tag key for which you want to list all existing values that are
-     * currently used in the specified AWS Region for the calling AWS account.</p>
+     * currently used in the specified Amazon Web Services Region for the calling
+     * account.</p>
      */
     inline GetTagValuesRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
      * <p>Specifies the tag key for which you want to list all existing values that are
-     * currently used in the specified AWS Region for the calling AWS account.</p>
+     * currently used in the specified Amazon Web Services Region for the calling
+     * account.</p>
      */
     inline GetTagValuesRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the tag key for which you want to list all existing values that are
-     * currently used in the specified AWS Region for the calling AWS account.</p>
+     * currently used in the specified Amazon Web Services Region for the calling
+     * account.</p>
      */
     inline GetTagValuesRequest& WithKey(const char* value) { SetKey(value); return *this;}
 

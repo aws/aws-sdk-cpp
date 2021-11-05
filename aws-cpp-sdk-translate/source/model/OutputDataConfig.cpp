@@ -19,12 +19,14 @@ namespace Model
 {
 
 OutputDataConfig::OutputDataConfig() : 
-    m_s3UriHasBeenSet(false)
+    m_s3UriHasBeenSet(false),
+    m_encryptionKeyHasBeenSet(false)
 {
 }
 
 OutputDataConfig::OutputDataConfig(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false)
+    m_s3UriHasBeenSet(false),
+    m_encryptionKeyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ OutputDataConfig& OutputDataConfig::operator =(JsonView jsonValue)
     m_s3UriHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EncryptionKey"))
+  {
+    m_encryptionKey = jsonValue.GetObject("EncryptionKey");
+
+    m_encryptionKeyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue OutputDataConfig::Jsonize() const
   if(m_s3UriHasBeenSet)
   {
    payload.WithString("S3Uri", m_s3Uri);
+
+  }
+
+  if(m_encryptionKeyHasBeenSet)
+  {
+   payload.WithObject("EncryptionKey", m_encryptionKey.Jsonize());
 
   }
 

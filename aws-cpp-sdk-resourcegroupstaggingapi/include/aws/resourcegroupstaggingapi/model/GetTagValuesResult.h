@@ -85,49 +85,49 @@ namespace Model
 
     /**
      * <p>A list of all tag values for the specified key currently used in the
-     * specified AWS Region for the calling AWS account.</p>
+     * specified Amazon Web Services Region for the calling account.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagValues() const{ return m_tagValues; }
 
     /**
      * <p>A list of all tag values for the specified key currently used in the
-     * specified AWS Region for the calling AWS account.</p>
+     * specified Amazon Web Services Region for the calling account.</p>
      */
     inline void SetTagValues(const Aws::Vector<Aws::String>& value) { m_tagValues = value; }
 
     /**
      * <p>A list of all tag values for the specified key currently used in the
-     * specified AWS Region for the calling AWS account.</p>
+     * specified Amazon Web Services Region for the calling account.</p>
      */
     inline void SetTagValues(Aws::Vector<Aws::String>&& value) { m_tagValues = std::move(value); }
 
     /**
      * <p>A list of all tag values for the specified key currently used in the
-     * specified AWS Region for the calling AWS account.</p>
+     * specified Amazon Web Services Region for the calling account.</p>
      */
     inline GetTagValuesResult& WithTagValues(const Aws::Vector<Aws::String>& value) { SetTagValues(value); return *this;}
 
     /**
      * <p>A list of all tag values for the specified key currently used in the
-     * specified AWS Region for the calling AWS account.</p>
+     * specified Amazon Web Services Region for the calling account.</p>
      */
     inline GetTagValuesResult& WithTagValues(Aws::Vector<Aws::String>&& value) { SetTagValues(std::move(value)); return *this;}
 
     /**
      * <p>A list of all tag values for the specified key currently used in the
-     * specified AWS Region for the calling AWS account.</p>
+     * specified Amazon Web Services Region for the calling account.</p>
      */
     inline GetTagValuesResult& AddTagValues(const Aws::String& value) { m_tagValues.push_back(value); return *this; }
 
     /**
      * <p>A list of all tag values for the specified key currently used in the
-     * specified AWS Region for the calling AWS account.</p>
+     * specified Amazon Web Services Region for the calling account.</p>
      */
     inline GetTagValuesResult& AddTagValues(Aws::String&& value) { m_tagValues.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of all tag values for the specified key currently used in the
-     * specified AWS Region for the calling AWS account.</p>
+     * specified Amazon Web Services Region for the calling account.</p>
      */
     inline GetTagValuesResult& AddTagValues(const char* value) { m_tagValues.push_back(value); return *this; }
 

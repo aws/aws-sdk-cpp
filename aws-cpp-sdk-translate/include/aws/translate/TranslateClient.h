@@ -160,10 +160,10 @@ namespace Model
 
         /**
          * <p>Creates a parallel data resource in Amazon Translate by importing an input
-         * file from Amazon S3. Parallel data files contain examples of source phrases and
-         * their translations from your translation memory. By adding parallel data, you
-         * can influence the style, tone, and word choice in your translation
-         * output.</p><p><h3>See Also:</h3>   <a
+         * file from Amazon S3. Parallel data files contain examples that show how you want
+         * segments of text to be translated. By adding parallel data, you can influence
+         * the style, tone, and word choice in your translation output.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/CreateParallelData">AWS
          * API Reference</a></p>
          */
@@ -171,10 +171,10 @@ namespace Model
 
         /**
          * <p>Creates a parallel data resource in Amazon Translate by importing an input
-         * file from Amazon S3. Parallel data files contain examples of source phrases and
-         * their translations from your translation memory. By adding parallel data, you
-         * can influence the style, tone, and word choice in your translation
-         * output.</p><p><h3>See Also:</h3>   <a
+         * file from Amazon S3. Parallel data files contain examples that show how you want
+         * segments of text to be translated. By adding parallel data, you can influence
+         * the style, tone, and word choice in your translation output.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/CreateParallelData">AWS
          * API Reference</a></p>
          *
@@ -184,10 +184,10 @@ namespace Model
 
         /**
          * <p>Creates a parallel data resource in Amazon Translate by importing an input
-         * file from Amazon S3. Parallel data files contain examples of source phrases and
-         * their translations from your translation memory. By adding parallel data, you
-         * can influence the style, tone, and word choice in your translation
-         * output.</p><p><h3>See Also:</h3>   <a
+         * file from Amazon S3. Parallel data files contain examples that show how you want
+         * segments of text to be translated. By adding parallel data, you can influence
+         * the style, tone, and word choice in your translation output.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/CreateParallelData">AWS
          * API Reference</a></p>
          *
@@ -252,7 +252,7 @@ namespace Model
         virtual void DeleteTerminologyAsync(const Model::DeleteTerminologyRequest& request, const DeleteTerminologyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the properties associated with an asycnhronous batch translation job
+         * <p>Gets the properties associated with an asynchronous batch translation job
          * including name, ID, status, source and target languages, input/output S3
          * buckets, and so on.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DescribeTextTranslationJob">AWS
@@ -261,7 +261,7 @@ namespace Model
         virtual Model::DescribeTextTranslationJobOutcome DescribeTextTranslationJob(const Model::DescribeTextTranslationJobRequest& request) const;
 
         /**
-         * <p>Gets the properties associated with an asycnhronous batch translation job
+         * <p>Gets the properties associated with an asynchronous batch translation job
          * including name, ID, status, source and target languages, input/output S3
          * buckets, and so on.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DescribeTextTranslationJob">AWS
@@ -272,7 +272,7 @@ namespace Model
         virtual Model::DescribeTextTranslationJobOutcomeCallable DescribeTextTranslationJobCallable(const Model::DescribeTextTranslationJobRequest& request) const;
 
         /**
-         * <p>Gets the properties associated with an asycnhronous batch translation job
+         * <p>Gets the properties associated with an asynchronous batch translation job
          * including name, ID, status, source and target languages, input/output S3
          * buckets, and so on.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DescribeTextTranslationJob">AWS
