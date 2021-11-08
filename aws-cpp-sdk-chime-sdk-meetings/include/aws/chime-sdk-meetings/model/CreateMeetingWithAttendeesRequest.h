@@ -86,50 +86,42 @@ namespace Model
 
 
     /**
-     * <p>The Region in which to create the meeting. Default:
-     * <code>us-east-1</code>.</p>
+     * <p>The Region in which to create the meeting.</p>
      */
     inline const Aws::String& GetMediaRegion() const{ return m_mediaRegion; }
 
     /**
-     * <p>The Region in which to create the meeting. Default:
-     * <code>us-east-1</code>.</p>
+     * <p>The Region in which to create the meeting.</p>
      */
     inline bool MediaRegionHasBeenSet() const { return m_mediaRegionHasBeenSet; }
 
     /**
-     * <p>The Region in which to create the meeting. Default:
-     * <code>us-east-1</code>.</p>
+     * <p>The Region in which to create the meeting.</p>
      */
     inline void SetMediaRegion(const Aws::String& value) { m_mediaRegionHasBeenSet = true; m_mediaRegion = value; }
 
     /**
-     * <p>The Region in which to create the meeting. Default:
-     * <code>us-east-1</code>.</p>
+     * <p>The Region in which to create the meeting.</p>
      */
     inline void SetMediaRegion(Aws::String&& value) { m_mediaRegionHasBeenSet = true; m_mediaRegion = std::move(value); }
 
     /**
-     * <p>The Region in which to create the meeting. Default:
-     * <code>us-east-1</code>.</p>
+     * <p>The Region in which to create the meeting.</p>
      */
     inline void SetMediaRegion(const char* value) { m_mediaRegionHasBeenSet = true; m_mediaRegion.assign(value); }
 
     /**
-     * <p>The Region in which to create the meeting. Default:
-     * <code>us-east-1</code>.</p>
+     * <p>The Region in which to create the meeting.</p>
      */
     inline CreateMeetingWithAttendeesRequest& WithMediaRegion(const Aws::String& value) { SetMediaRegion(value); return *this;}
 
     /**
-     * <p>The Region in which to create the meeting. Default:
-     * <code>us-east-1</code>.</p>
+     * <p>The Region in which to create the meeting.</p>
      */
     inline CreateMeetingWithAttendeesRequest& WithMediaRegion(Aws::String&& value) { SetMediaRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The Region in which to create the meeting. Default:
-     * <code>us-east-1</code>.</p>
+     * <p>The Region in which to create the meeting.</p>
      */
     inline CreateMeetingWithAttendeesRequest& WithMediaRegion(const char* value) { SetMediaRegion(value); return *this;}
 

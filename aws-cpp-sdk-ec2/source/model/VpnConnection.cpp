@@ -33,6 +33,7 @@ VpnConnection::VpnConnection() :
     m_transitGatewayIdHasBeenSet(false),
     m_coreNetworkArnHasBeenSet(false),
     m_coreNetworkAttachmentArnHasBeenSet(false),
+    m_gatewayAssociationState(GatewayAssociationState::NOT_SET),
     m_gatewayAssociationStateHasBeenSet(false),
     m_optionsHasBeenSet(false),
     m_routesHasBeenSet(false),
@@ -54,6 +55,7 @@ VpnConnection::VpnConnection(const XmlNode& xmlNode) :
     m_transitGatewayIdHasBeenSet(false),
     m_coreNetworkArnHasBeenSet(false),
     m_coreNetworkAttachmentArnHasBeenSet(false),
+    m_gatewayAssociationState(GatewayAssociationState::NOT_SET),
     m_gatewayAssociationStateHasBeenSet(false),
     m_optionsHasBeenSet(false),
     m_routesHasBeenSet(false),
@@ -132,7 +134,7 @@ VpnConnection& VpnConnection::operator =(const XmlNode& xmlNode)
     XmlNode gatewayAssociationStateNode = resultNode.FirstChild("gatewayAssociationState");
     if(!gatewayAssociationStateNode.IsNull())
     {
-      m_gatewayAssociationState = Aws::Utils::Xml::DecodeEscapedXmlText(gatewayAssociationStateNode.GetText());
+      m_gatewayAssociationState = GatewayAssociationStateMapper::GetGatewayAssociationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(gatewayAssociationStateNode.GetText()).c_str()).c_str());
       m_gatewayAssociationStateHasBeenSet = true;
     }
     XmlNode optionsNode = resultNode.FirstChild("options");
@@ -236,7 +238,7 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location, 
 
   if(m_gatewayAssociationStateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".GatewayAssociationState=" << StringUtils::URLEncode(m_gatewayAssociationState.c_str()) << "&";
+      oStream << location << index << locationValue << ".GatewayAssociationState=" << GatewayAssociationStateMapper::GetNameForGatewayAssociationState(m_gatewayAssociationState) << "&";
   }
 
   if(m_optionsHasBeenSet)
@@ -325,7 +327,7 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_gatewayAssociationStateHasBeenSet)
   {
-      oStream << location << ".GatewayAssociationState=" << StringUtils::URLEncode(m_gatewayAssociationState.c_str()) << "&";
+      oStream << location << ".GatewayAssociationState=" << GatewayAssociationStateMapper::GetNameForGatewayAssociationState(m_gatewayAssociationState) << "&";
   }
   if(m_optionsHasBeenSet)
   {

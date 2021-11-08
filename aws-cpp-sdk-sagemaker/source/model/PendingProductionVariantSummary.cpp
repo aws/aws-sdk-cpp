@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/ProductionVariantSummary.h>
+#include <aws/sagemaker/model/PendingProductionVariantSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -18,7 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ProductionVariantSummary::ProductionVariantSummary() : 
+PendingProductionVariantSummary::PendingProductionVariantSummary() : 
     m_variantNameHasBeenSet(false),
     m_deployedImagesHasBeenSet(false),
     m_currentWeight(0.0),
@@ -29,11 +29,15 @@ ProductionVariantSummary::ProductionVariantSummary() :
     m_currentInstanceCountHasBeenSet(false),
     m_desiredInstanceCount(0),
     m_desiredInstanceCountHasBeenSet(false),
+    m_instanceType(ProductionVariantInstanceType::NOT_SET),
+    m_instanceTypeHasBeenSet(false),
+    m_acceleratorType(ProductionVariantAcceleratorType::NOT_SET),
+    m_acceleratorTypeHasBeenSet(false),
     m_variantStatusHasBeenSet(false)
 {
 }
 
-ProductionVariantSummary::ProductionVariantSummary(JsonView jsonValue) : 
+PendingProductionVariantSummary::PendingProductionVariantSummary(JsonView jsonValue) : 
     m_variantNameHasBeenSet(false),
     m_deployedImagesHasBeenSet(false),
     m_currentWeight(0.0),
@@ -44,12 +48,16 @@ ProductionVariantSummary::ProductionVariantSummary(JsonView jsonValue) :
     m_currentInstanceCountHasBeenSet(false),
     m_desiredInstanceCount(0),
     m_desiredInstanceCountHasBeenSet(false),
+    m_instanceType(ProductionVariantInstanceType::NOT_SET),
+    m_instanceTypeHasBeenSet(false),
+    m_acceleratorType(ProductionVariantAcceleratorType::NOT_SET),
+    m_acceleratorTypeHasBeenSet(false),
     m_variantStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ProductionVariantSummary& ProductionVariantSummary::operator =(JsonView jsonValue)
+PendingProductionVariantSummary& PendingProductionVariantSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("VariantName"))
   {
@@ -96,6 +104,20 @@ ProductionVariantSummary& ProductionVariantSummary::operator =(JsonView jsonValu
     m_desiredInstanceCountHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InstanceType"))
+  {
+    m_instanceType = ProductionVariantInstanceTypeMapper::GetProductionVariantInstanceTypeForName(jsonValue.GetString("InstanceType"));
+
+    m_instanceTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AcceleratorType"))
+  {
+    m_acceleratorType = ProductionVariantAcceleratorTypeMapper::GetProductionVariantAcceleratorTypeForName(jsonValue.GetString("AcceleratorType"));
+
+    m_acceleratorTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("VariantStatus"))
   {
     Array<JsonView> variantStatusJsonList = jsonValue.GetArray("VariantStatus");
@@ -109,7 +131,7 @@ ProductionVariantSummary& ProductionVariantSummary::operator =(JsonView jsonValu
   return *this;
 }
 
-JsonValue ProductionVariantSummary::Jsonize() const
+JsonValue PendingProductionVariantSummary::Jsonize() const
 {
   JsonValue payload;
 
@@ -152,6 +174,16 @@ JsonValue ProductionVariantSummary::Jsonize() const
   {
    payload.WithInteger("DesiredInstanceCount", m_desiredInstanceCount);
 
+  }
+
+  if(m_instanceTypeHasBeenSet)
+  {
+   payload.WithString("InstanceType", ProductionVariantInstanceTypeMapper::GetNameForProductionVariantInstanceType(m_instanceType));
+  }
+
+  if(m_acceleratorTypeHasBeenSet)
+  {
+   payload.WithString("AcceleratorType", ProductionVariantAcceleratorTypeMapper::GetNameForProductionVariantAcceleratorType(m_acceleratorType));
   }
 
   if(m_variantStatusHasBeenSet)

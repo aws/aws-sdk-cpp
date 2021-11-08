@@ -8,6 +8,7 @@
 #include <aws/wafv2/model/BlockAction.h>
 #include <aws/wafv2/model/AllowAction.h>
 #include <aws/wafv2/model/CountAction.h>
+#include <aws/wafv2/model/CaptchaAction.h>
 #include <utility>
 
 namespace Aws
@@ -133,6 +134,43 @@ namespace Model
      */
     inline RuleAction& WithCount(CountAction&& value) { SetCount(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Instructs WAF to run a <code>CAPTCHA</code> check against the web
+     * request.</p>
+     */
+    inline const CaptchaAction& GetCaptcha() const{ return m_captcha; }
+
+    /**
+     * <p>Instructs WAF to run a <code>CAPTCHA</code> check against the web
+     * request.</p>
+     */
+    inline bool CaptchaHasBeenSet() const { return m_captchaHasBeenSet; }
+
+    /**
+     * <p>Instructs WAF to run a <code>CAPTCHA</code> check against the web
+     * request.</p>
+     */
+    inline void SetCaptcha(const CaptchaAction& value) { m_captchaHasBeenSet = true; m_captcha = value; }
+
+    /**
+     * <p>Instructs WAF to run a <code>CAPTCHA</code> check against the web
+     * request.</p>
+     */
+    inline void SetCaptcha(CaptchaAction&& value) { m_captchaHasBeenSet = true; m_captcha = std::move(value); }
+
+    /**
+     * <p>Instructs WAF to run a <code>CAPTCHA</code> check against the web
+     * request.</p>
+     */
+    inline RuleAction& WithCaptcha(const CaptchaAction& value) { SetCaptcha(value); return *this;}
+
+    /**
+     * <p>Instructs WAF to run a <code>CAPTCHA</code> check against the web
+     * request.</p>
+     */
+    inline RuleAction& WithCaptcha(CaptchaAction&& value) { SetCaptcha(std::move(value)); return *this;}
+
   private:
 
     BlockAction m_block;
@@ -143,6 +181,9 @@ namespace Model
 
     CountAction m_count;
     bool m_countHasBeenSet;
+
+    CaptchaAction m_captcha;
+    bool m_captchaHasBeenSet;
   };
 
 } // namespace Model

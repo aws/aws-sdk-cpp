@@ -161,98 +161,86 @@ namespace Model
 
 
     /**
-     * <p>The override action to apply to the rules in a rule group. Used only for rule
-     * statements that reference a rule group, like
+     * <p>The action to use in the place of the action that results from the rule group
+     * evaluation. Set the override action to none to leave the result of the rule
+     * group alone. Set it to count to override the result to count only. </p> <p>You
+     * can only use this for rule statements that reference a rule group, like
      * <code>RuleGroupReferenceStatement</code> and
-     * <code>ManagedRuleGroupStatement</code>. </p> <p>Set the override action to none
-     * to leave the rule actions in effect. Set it to count to only count matches,
-     * regardless of the rule action settings. </p> <p>In a <a>Rule</a>, you must
-     * specify either this <code>OverrideAction</code> setting or the rule
-     * <code>Action</code> setting, but not both:</p> <ul> <li> <p>If the rule
-     * statement references a rule group, use this override action setting and not the
-     * action setting. </p> </li> <li> <p>If the rule statement does not reference a
-     * rule group, use the rule action setting and not this rule override action
-     * setting. </p> </li> </ul>
+     * <code>ManagedRuleGroupStatement</code>. </p>  <p>This option is usually
+     * set to none. It does not affect how the rules in the rule group are evaluated.
+     * If you want the rules in the rule group to only count matches, do not use this
+     * and instead exclude those rules in your rule group reference statement settings.
+     * </p> 
      */
     inline const OverrideAction& GetOverrideAction() const{ return m_overrideAction; }
 
     /**
-     * <p>The override action to apply to the rules in a rule group. Used only for rule
-     * statements that reference a rule group, like
+     * <p>The action to use in the place of the action that results from the rule group
+     * evaluation. Set the override action to none to leave the result of the rule
+     * group alone. Set it to count to override the result to count only. </p> <p>You
+     * can only use this for rule statements that reference a rule group, like
      * <code>RuleGroupReferenceStatement</code> and
-     * <code>ManagedRuleGroupStatement</code>. </p> <p>Set the override action to none
-     * to leave the rule actions in effect. Set it to count to only count matches,
-     * regardless of the rule action settings. </p> <p>In a <a>Rule</a>, you must
-     * specify either this <code>OverrideAction</code> setting or the rule
-     * <code>Action</code> setting, but not both:</p> <ul> <li> <p>If the rule
-     * statement references a rule group, use this override action setting and not the
-     * action setting. </p> </li> <li> <p>If the rule statement does not reference a
-     * rule group, use the rule action setting and not this rule override action
-     * setting. </p> </li> </ul>
+     * <code>ManagedRuleGroupStatement</code>. </p>  <p>This option is usually
+     * set to none. It does not affect how the rules in the rule group are evaluated.
+     * If you want the rules in the rule group to only count matches, do not use this
+     * and instead exclude those rules in your rule group reference statement settings.
+     * </p> 
      */
     inline bool OverrideActionHasBeenSet() const { return m_overrideActionHasBeenSet; }
 
     /**
-     * <p>The override action to apply to the rules in a rule group. Used only for rule
-     * statements that reference a rule group, like
+     * <p>The action to use in the place of the action that results from the rule group
+     * evaluation. Set the override action to none to leave the result of the rule
+     * group alone. Set it to count to override the result to count only. </p> <p>You
+     * can only use this for rule statements that reference a rule group, like
      * <code>RuleGroupReferenceStatement</code> and
-     * <code>ManagedRuleGroupStatement</code>. </p> <p>Set the override action to none
-     * to leave the rule actions in effect. Set it to count to only count matches,
-     * regardless of the rule action settings. </p> <p>In a <a>Rule</a>, you must
-     * specify either this <code>OverrideAction</code> setting or the rule
-     * <code>Action</code> setting, but not both:</p> <ul> <li> <p>If the rule
-     * statement references a rule group, use this override action setting and not the
-     * action setting. </p> </li> <li> <p>If the rule statement does not reference a
-     * rule group, use the rule action setting and not this rule override action
-     * setting. </p> </li> </ul>
+     * <code>ManagedRuleGroupStatement</code>. </p>  <p>This option is usually
+     * set to none. It does not affect how the rules in the rule group are evaluated.
+     * If you want the rules in the rule group to only count matches, do not use this
+     * and instead exclude those rules in your rule group reference statement settings.
+     * </p> 
      */
     inline void SetOverrideAction(const OverrideAction& value) { m_overrideActionHasBeenSet = true; m_overrideAction = value; }
 
     /**
-     * <p>The override action to apply to the rules in a rule group. Used only for rule
-     * statements that reference a rule group, like
+     * <p>The action to use in the place of the action that results from the rule group
+     * evaluation. Set the override action to none to leave the result of the rule
+     * group alone. Set it to count to override the result to count only. </p> <p>You
+     * can only use this for rule statements that reference a rule group, like
      * <code>RuleGroupReferenceStatement</code> and
-     * <code>ManagedRuleGroupStatement</code>. </p> <p>Set the override action to none
-     * to leave the rule actions in effect. Set it to count to only count matches,
-     * regardless of the rule action settings. </p> <p>In a <a>Rule</a>, you must
-     * specify either this <code>OverrideAction</code> setting or the rule
-     * <code>Action</code> setting, but not both:</p> <ul> <li> <p>If the rule
-     * statement references a rule group, use this override action setting and not the
-     * action setting. </p> </li> <li> <p>If the rule statement does not reference a
-     * rule group, use the rule action setting and not this rule override action
-     * setting. </p> </li> </ul>
+     * <code>ManagedRuleGroupStatement</code>. </p>  <p>This option is usually
+     * set to none. It does not affect how the rules in the rule group are evaluated.
+     * If you want the rules in the rule group to only count matches, do not use this
+     * and instead exclude those rules in your rule group reference statement settings.
+     * </p> 
      */
     inline void SetOverrideAction(OverrideAction&& value) { m_overrideActionHasBeenSet = true; m_overrideAction = std::move(value); }
 
     /**
-     * <p>The override action to apply to the rules in a rule group. Used only for rule
-     * statements that reference a rule group, like
+     * <p>The action to use in the place of the action that results from the rule group
+     * evaluation. Set the override action to none to leave the result of the rule
+     * group alone. Set it to count to override the result to count only. </p> <p>You
+     * can only use this for rule statements that reference a rule group, like
      * <code>RuleGroupReferenceStatement</code> and
-     * <code>ManagedRuleGroupStatement</code>. </p> <p>Set the override action to none
-     * to leave the rule actions in effect. Set it to count to only count matches,
-     * regardless of the rule action settings. </p> <p>In a <a>Rule</a>, you must
-     * specify either this <code>OverrideAction</code> setting or the rule
-     * <code>Action</code> setting, but not both:</p> <ul> <li> <p>If the rule
-     * statement references a rule group, use this override action setting and not the
-     * action setting. </p> </li> <li> <p>If the rule statement does not reference a
-     * rule group, use the rule action setting and not this rule override action
-     * setting. </p> </li> </ul>
+     * <code>ManagedRuleGroupStatement</code>. </p>  <p>This option is usually
+     * set to none. It does not affect how the rules in the rule group are evaluated.
+     * If you want the rules in the rule group to only count matches, do not use this
+     * and instead exclude those rules in your rule group reference statement settings.
+     * </p> 
      */
     inline FirewallManagerRuleGroup& WithOverrideAction(const OverrideAction& value) { SetOverrideAction(value); return *this;}
 
     /**
-     * <p>The override action to apply to the rules in a rule group. Used only for rule
-     * statements that reference a rule group, like
+     * <p>The action to use in the place of the action that results from the rule group
+     * evaluation. Set the override action to none to leave the result of the rule
+     * group alone. Set it to count to override the result to count only. </p> <p>You
+     * can only use this for rule statements that reference a rule group, like
      * <code>RuleGroupReferenceStatement</code> and
-     * <code>ManagedRuleGroupStatement</code>. </p> <p>Set the override action to none
-     * to leave the rule actions in effect. Set it to count to only count matches,
-     * regardless of the rule action settings. </p> <p>In a <a>Rule</a>, you must
-     * specify either this <code>OverrideAction</code> setting or the rule
-     * <code>Action</code> setting, but not both:</p> <ul> <li> <p>If the rule
-     * statement references a rule group, use this override action setting and not the
-     * action setting. </p> </li> <li> <p>If the rule statement does not reference a
-     * rule group, use the rule action setting and not this rule override action
-     * setting. </p> </li> </ul>
+     * <code>ManagedRuleGroupStatement</code>. </p>  <p>This option is usually
+     * set to none. It does not affect how the rules in the rule group are evaluated.
+     * If you want the rules in the rule group to only count matches, do not use this
+     * and instead exclude those rules in your rule group reference statement settings.
+     * </p> 
      */
     inline FirewallManagerRuleGroup& WithOverrideAction(OverrideAction&& value) { SetOverrideAction(std::move(value)); return *this;}
 

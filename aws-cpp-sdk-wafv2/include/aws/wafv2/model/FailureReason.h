@@ -13,22 +13,19 @@ namespace WAFV2
 {
 namespace Model
 {
-  enum class ActionValue
+  enum class FailureReason
   {
     NOT_SET,
-    ALLOW,
-    BLOCK,
-    COUNT,
-    CAPTCHA,
-    EXCLUDED_AS_COUNT
+    TOKEN_MISSING,
+    TOKEN_EXPIRED
   };
 
-namespace ActionValueMapper
+namespace FailureReasonMapper
 {
-AWS_WAFV2_API ActionValue GetActionValueForName(const Aws::String& name);
+AWS_WAFV2_API FailureReason GetFailureReasonForName(const Aws::String& name);
 
-AWS_WAFV2_API Aws::String GetNameForActionValue(ActionValue value);
-} // namespace ActionValueMapper
+AWS_WAFV2_API Aws::String GetNameForFailureReason(FailureReason value);
+} // namespace FailureReasonMapper
 } // namespace Model
 } // namespace WAFV2
 } // namespace Aws

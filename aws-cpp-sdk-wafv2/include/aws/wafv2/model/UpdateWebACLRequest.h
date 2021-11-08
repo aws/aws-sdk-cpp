@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wafv2/model/VisibilityConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/wafv2/model/CaptchaConfig.h>
 #include <aws/wafv2/model/Rule.h>
 #include <aws/wafv2/model/CustomResponseBody.h>
 #include <utility>
@@ -713,6 +714,49 @@ namespace Model
      */
     inline UpdateWebACLRequest& AddCustomResponseBodies(const char* key, const CustomResponseBody& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules
+     * that don't have their own <code>CaptchaConfig</code> settings. If you don't
+     * specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
+     */
+    inline const CaptchaConfig& GetCaptchaConfig() const{ return m_captchaConfig; }
+
+    /**
+     * <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules
+     * that don't have their own <code>CaptchaConfig</code> settings. If you don't
+     * specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
+     */
+    inline bool CaptchaConfigHasBeenSet() const { return m_captchaConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules
+     * that don't have their own <code>CaptchaConfig</code> settings. If you don't
+     * specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
+     */
+    inline void SetCaptchaConfig(const CaptchaConfig& value) { m_captchaConfigHasBeenSet = true; m_captchaConfig = value; }
+
+    /**
+     * <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules
+     * that don't have their own <code>CaptchaConfig</code> settings. If you don't
+     * specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
+     */
+    inline void SetCaptchaConfig(CaptchaConfig&& value) { m_captchaConfigHasBeenSet = true; m_captchaConfig = std::move(value); }
+
+    /**
+     * <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules
+     * that don't have their own <code>CaptchaConfig</code> settings. If you don't
+     * specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
+     */
+    inline UpdateWebACLRequest& WithCaptchaConfig(const CaptchaConfig& value) { SetCaptchaConfig(value); return *this;}
+
+    /**
+     * <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules
+     * that don't have their own <code>CaptchaConfig</code> settings. If you don't
+     * specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
+     */
+    inline UpdateWebACLRequest& WithCaptchaConfig(CaptchaConfig&& value) { SetCaptchaConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -741,6 +785,9 @@ namespace Model
 
     Aws::Map<Aws::String, CustomResponseBody> m_customResponseBodies;
     bool m_customResponseBodiesHasBeenSet;
+
+    CaptchaConfig m_captchaConfig;
+    bool m_captchaConfigHasBeenSet;
   };
 
 } // namespace Model

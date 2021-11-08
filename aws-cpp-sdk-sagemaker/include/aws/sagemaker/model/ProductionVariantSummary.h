@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/DeployedImage.h>
+#include <aws/sagemaker/model/ProductionVariantStatus.h>
 #include <utility>
 
 namespace Aws
@@ -232,6 +233,55 @@ namespace Model
      */
     inline ProductionVariantSummary& WithDesiredInstanceCount(int value) { SetDesiredInstanceCount(value); return *this;}
 
+
+    /**
+     * <p>The endpoint variant status which describes the current deployment stage
+     * status or operational status.</p>
+     */
+    inline const Aws::Vector<ProductionVariantStatus>& GetVariantStatus() const{ return m_variantStatus; }
+
+    /**
+     * <p>The endpoint variant status which describes the current deployment stage
+     * status or operational status.</p>
+     */
+    inline bool VariantStatusHasBeenSet() const { return m_variantStatusHasBeenSet; }
+
+    /**
+     * <p>The endpoint variant status which describes the current deployment stage
+     * status or operational status.</p>
+     */
+    inline void SetVariantStatus(const Aws::Vector<ProductionVariantStatus>& value) { m_variantStatusHasBeenSet = true; m_variantStatus = value; }
+
+    /**
+     * <p>The endpoint variant status which describes the current deployment stage
+     * status or operational status.</p>
+     */
+    inline void SetVariantStatus(Aws::Vector<ProductionVariantStatus>&& value) { m_variantStatusHasBeenSet = true; m_variantStatus = std::move(value); }
+
+    /**
+     * <p>The endpoint variant status which describes the current deployment stage
+     * status or operational status.</p>
+     */
+    inline ProductionVariantSummary& WithVariantStatus(const Aws::Vector<ProductionVariantStatus>& value) { SetVariantStatus(value); return *this;}
+
+    /**
+     * <p>The endpoint variant status which describes the current deployment stage
+     * status or operational status.</p>
+     */
+    inline ProductionVariantSummary& WithVariantStatus(Aws::Vector<ProductionVariantStatus>&& value) { SetVariantStatus(std::move(value)); return *this;}
+
+    /**
+     * <p>The endpoint variant status which describes the current deployment stage
+     * status or operational status.</p>
+     */
+    inline ProductionVariantSummary& AddVariantStatus(const ProductionVariantStatus& value) { m_variantStatusHasBeenSet = true; m_variantStatus.push_back(value); return *this; }
+
+    /**
+     * <p>The endpoint variant status which describes the current deployment stage
+     * status or operational status.</p>
+     */
+    inline ProductionVariantSummary& AddVariantStatus(ProductionVariantStatus&& value) { m_variantStatusHasBeenSet = true; m_variantStatus.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_variantName;
@@ -251,6 +301,9 @@ namespace Model
 
     int m_desiredInstanceCount;
     bool m_desiredInstanceCountHasBeenSet;
+
+    Aws::Vector<ProductionVariantStatus> m_variantStatus;
+    bool m_variantStatusHasBeenSet;
   };
 
 } // namespace Model

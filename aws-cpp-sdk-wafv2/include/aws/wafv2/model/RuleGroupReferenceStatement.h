@@ -87,50 +87,74 @@ namespace Model
 
 
     /**
-     * <p>The names of rules that are in the referenced rule group, but that you want
-     * WAF to exclude from processing for this rule statement. </p>
+     * <p>The rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
+     * would if the rule action setting were <code>Count</code>. This is a useful
+     * option for testing the rules in a rule group without modifying how they handle
+     * your web traffic.</p>
      */
     inline const Aws::Vector<ExcludedRule>& GetExcludedRules() const{ return m_excludedRules; }
 
     /**
-     * <p>The names of rules that are in the referenced rule group, but that you want
-     * WAF to exclude from processing for this rule statement. </p>
+     * <p>The rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
+     * would if the rule action setting were <code>Count</code>. This is a useful
+     * option for testing the rules in a rule group without modifying how they handle
+     * your web traffic.</p>
      */
     inline bool ExcludedRulesHasBeenSet() const { return m_excludedRulesHasBeenSet; }
 
     /**
-     * <p>The names of rules that are in the referenced rule group, but that you want
-     * WAF to exclude from processing for this rule statement. </p>
+     * <p>The rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
+     * would if the rule action setting were <code>Count</code>. This is a useful
+     * option for testing the rules in a rule group without modifying how they handle
+     * your web traffic.</p>
      */
     inline void SetExcludedRules(const Aws::Vector<ExcludedRule>& value) { m_excludedRulesHasBeenSet = true; m_excludedRules = value; }
 
     /**
-     * <p>The names of rules that are in the referenced rule group, but that you want
-     * WAF to exclude from processing for this rule statement. </p>
+     * <p>The rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
+     * would if the rule action setting were <code>Count</code>. This is a useful
+     * option for testing the rules in a rule group without modifying how they handle
+     * your web traffic.</p>
      */
     inline void SetExcludedRules(Aws::Vector<ExcludedRule>&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules = std::move(value); }
 
     /**
-     * <p>The names of rules that are in the referenced rule group, but that you want
-     * WAF to exclude from processing for this rule statement. </p>
+     * <p>The rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
+     * would if the rule action setting were <code>Count</code>. This is a useful
+     * option for testing the rules in a rule group without modifying how they handle
+     * your web traffic.</p>
      */
     inline RuleGroupReferenceStatement& WithExcludedRules(const Aws::Vector<ExcludedRule>& value) { SetExcludedRules(value); return *this;}
 
     /**
-     * <p>The names of rules that are in the referenced rule group, but that you want
-     * WAF to exclude from processing for this rule statement. </p>
+     * <p>The rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
+     * would if the rule action setting were <code>Count</code>. This is a useful
+     * option for testing the rules in a rule group without modifying how they handle
+     * your web traffic.</p>
      */
     inline RuleGroupReferenceStatement& WithExcludedRules(Aws::Vector<ExcludedRule>&& value) { SetExcludedRules(std::move(value)); return *this;}
 
     /**
-     * <p>The names of rules that are in the referenced rule group, but that you want
-     * WAF to exclude from processing for this rule statement. </p>
+     * <p>The rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
+     * would if the rule action setting were <code>Count</code>. This is a useful
+     * option for testing the rules in a rule group without modifying how they handle
+     * your web traffic.</p>
      */
     inline RuleGroupReferenceStatement& AddExcludedRules(const ExcludedRule& value) { m_excludedRulesHasBeenSet = true; m_excludedRules.push_back(value); return *this; }
 
     /**
-     * <p>The names of rules that are in the referenced rule group, but that you want
-     * WAF to exclude from processing for this rule statement. </p>
+     * <p>The rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
+     * would if the rule action setting were <code>Count</code>. This is a useful
+     * option for testing the rules in a rule group without modifying how they handle
+     * your web traffic.</p>
      */
     inline RuleGroupReferenceStatement& AddExcludedRules(ExcludedRule&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules.push_back(std::move(value)); return *this; }
 

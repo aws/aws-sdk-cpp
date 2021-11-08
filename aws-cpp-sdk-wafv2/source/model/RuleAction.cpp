@@ -21,14 +21,16 @@ namespace Model
 RuleAction::RuleAction() : 
     m_blockHasBeenSet(false),
     m_allowHasBeenSet(false),
-    m_countHasBeenSet(false)
+    m_countHasBeenSet(false),
+    m_captchaHasBeenSet(false)
 {
 }
 
 RuleAction::RuleAction(JsonView jsonValue) : 
     m_blockHasBeenSet(false),
     m_allowHasBeenSet(false),
-    m_countHasBeenSet(false)
+    m_countHasBeenSet(false),
+    m_captchaHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ RuleAction& RuleAction::operator =(JsonView jsonValue)
     m_countHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Captcha"))
+  {
+    m_captcha = jsonValue.GetObject("Captcha");
+
+    m_captchaHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue RuleAction::Jsonize() const
   if(m_countHasBeenSet)
   {
    payload.WithObject("Count", m_count.Jsonize());
+
+  }
+
+  if(m_captchaHasBeenSet)
+  {
+   payload.WithObject("Captcha", m_captcha.Jsonize());
 
   }
 

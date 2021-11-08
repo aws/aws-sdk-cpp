@@ -13,20 +13,22 @@ namespace SageMaker
 {
 namespace Model
 {
-  enum class TrafficRoutingConfigType
+  enum class VariantStatus
   {
     NOT_SET,
-    ALL_AT_ONCE,
-    CANARY,
-    LINEAR
+    Creating,
+    Updating,
+    Deleting,
+    ActivatingTraffic,
+    Baking
   };
 
-namespace TrafficRoutingConfigTypeMapper
+namespace VariantStatusMapper
 {
-AWS_SAGEMAKER_API TrafficRoutingConfigType GetTrafficRoutingConfigTypeForName(const Aws::String& name);
+AWS_SAGEMAKER_API VariantStatus GetVariantStatusForName(const Aws::String& name);
 
-AWS_SAGEMAKER_API Aws::String GetNameForTrafficRoutingConfigType(TrafficRoutingConfigType value);
-} // namespace TrafficRoutingConfigTypeMapper
+AWS_SAGEMAKER_API Aws::String GetNameForVariantStatus(VariantStatus value);
+} // namespace VariantStatusMapper
 } // namespace Model
 } // namespace SageMaker
 } // namespace Aws

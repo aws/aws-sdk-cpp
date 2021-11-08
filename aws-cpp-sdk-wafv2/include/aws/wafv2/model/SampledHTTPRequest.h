@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/wafv2/model/CaptchaResponse.h>
 #include <aws/wafv2/model/HTTPHeader.h>
 #include <aws/wafv2/model/Label.h>
 #include <utility>
@@ -149,49 +150,49 @@ namespace Model
 
     /**
      * <p>The action for the <code>Rule</code> that the request matched:
-     * <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
+     * <code>Allow</code>, <code>Block</code>, or <code>Count</code>.</p>
      */
     inline const Aws::String& GetAction() const{ return m_action; }
 
     /**
      * <p>The action for the <code>Rule</code> that the request matched:
-     * <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
+     * <code>Allow</code>, <code>Block</code>, or <code>Count</code>.</p>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
      * <p>The action for the <code>Rule</code> that the request matched:
-     * <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
+     * <code>Allow</code>, <code>Block</code>, or <code>Count</code>.</p>
      */
     inline void SetAction(const Aws::String& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
      * <p>The action for the <code>Rule</code> that the request matched:
-     * <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
+     * <code>Allow</code>, <code>Block</code>, or <code>Count</code>.</p>
      */
     inline void SetAction(Aws::String&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
      * <p>The action for the <code>Rule</code> that the request matched:
-     * <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
+     * <code>Allow</code>, <code>Block</code>, or <code>Count</code>.</p>
      */
     inline void SetAction(const char* value) { m_actionHasBeenSet = true; m_action.assign(value); }
 
     /**
      * <p>The action for the <code>Rule</code> that the request matched:
-     * <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
+     * <code>Allow</code>, <code>Block</code>, or <code>Count</code>.</p>
      */
     inline SampledHTTPRequest& WithAction(const Aws::String& value) { SetAction(value); return *this;}
 
     /**
      * <p>The action for the <code>Rule</code> that the request matched:
-     * <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
+     * <code>Allow</code>, <code>Block</code>, or <code>Count</code>.</p>
      */
     inline SampledHTTPRequest& WithAction(Aws::String&& value) { SetAction(std::move(value)); return *this;}
 
     /**
      * <p>The action for the <code>Rule</code> that the request matched:
-     * <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
+     * <code>Allow</code>, <code>Block</code>, or <code>Count</code>.</p>
      */
     inline SampledHTTPRequest& WithAction(const char* value) { SetAction(value); return *this;}
 
@@ -419,6 +420,37 @@ namespace Model
      */
     inline SampledHTTPRequest& AddLabels(Label&& value) { m_labelsHasBeenSet = true; m_labels.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The <code>CAPTCHA</code> response for the request.</p>
+     */
+    inline const CaptchaResponse& GetCaptchaResponse() const{ return m_captchaResponse; }
+
+    /**
+     * <p>The <code>CAPTCHA</code> response for the request.</p>
+     */
+    inline bool CaptchaResponseHasBeenSet() const { return m_captchaResponseHasBeenSet; }
+
+    /**
+     * <p>The <code>CAPTCHA</code> response for the request.</p>
+     */
+    inline void SetCaptchaResponse(const CaptchaResponse& value) { m_captchaResponseHasBeenSet = true; m_captchaResponse = value; }
+
+    /**
+     * <p>The <code>CAPTCHA</code> response for the request.</p>
+     */
+    inline void SetCaptchaResponse(CaptchaResponse&& value) { m_captchaResponseHasBeenSet = true; m_captchaResponse = std::move(value); }
+
+    /**
+     * <p>The <code>CAPTCHA</code> response for the request.</p>
+     */
+    inline SampledHTTPRequest& WithCaptchaResponse(const CaptchaResponse& value) { SetCaptchaResponse(value); return *this;}
+
+    /**
+     * <p>The <code>CAPTCHA</code> response for the request.</p>
+     */
+    inline SampledHTTPRequest& WithCaptchaResponse(CaptchaResponse&& value) { SetCaptchaResponse(std::move(value)); return *this;}
+
   private:
 
     HTTPRequest m_request;
@@ -444,6 +476,9 @@ namespace Model
 
     Aws::Vector<Label> m_labels;
     bool m_labelsHasBeenSet;
+
+    CaptchaResponse m_captchaResponse;
+    bool m_captchaResponseHasBeenSet;
   };
 
 } // namespace Model

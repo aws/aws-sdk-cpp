@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/model/DeploymentConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
@@ -150,6 +151,25 @@ namespace Model
     inline CreateEndpointRequest& WithEndpointConfigName(const char* value) { SetEndpointConfigName(value); return *this;}
 
 
+    
+    inline const DeploymentConfig& GetDeploymentConfig() const{ return m_deploymentConfig; }
+
+    
+    inline bool DeploymentConfigHasBeenSet() const { return m_deploymentConfigHasBeenSet; }
+
+    
+    inline void SetDeploymentConfig(const DeploymentConfig& value) { m_deploymentConfigHasBeenSet = true; m_deploymentConfig = value; }
+
+    
+    inline void SetDeploymentConfig(DeploymentConfig&& value) { m_deploymentConfigHasBeenSet = true; m_deploymentConfig = std::move(value); }
+
+    
+    inline CreateEndpointRequest& WithDeploymentConfig(const DeploymentConfig& value) { SetDeploymentConfig(value); return *this;}
+
+    
+    inline CreateEndpointRequest& WithDeploymentConfig(DeploymentConfig&& value) { SetDeploymentConfig(std::move(value)); return *this;}
+
+
     /**
      * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
      * Services resources in different ways, for example, by purpose, owner, or
@@ -229,6 +249,9 @@ namespace Model
 
     Aws::String m_endpointConfigName;
     bool m_endpointConfigNameHasBeenSet;
+
+    DeploymentConfig m_deploymentConfig;
+    bool m_deploymentConfigHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

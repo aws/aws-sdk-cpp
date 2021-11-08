@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 CreateEndpointRequest::CreateEndpointRequest() : 
     m_endpointNameHasBeenSet(false),
     m_endpointConfigNameHasBeenSet(false),
+    m_deploymentConfigHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -32,6 +33,12 @@ Aws::String CreateEndpointRequest::SerializePayload() const
   if(m_endpointConfigNameHasBeenSet)
   {
    payload.WithString("EndpointConfigName", m_endpointConfigName);
+
+  }
+
+  if(m_deploymentConfigHasBeenSet)
+  {
+   payload.WithObject("DeploymentConfig", m_deploymentConfig.Jsonize());
 
   }
 

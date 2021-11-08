@@ -12,6 +12,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/DeploymentConfig.h>
 #include <aws/sagemaker/model/AsyncInferenceConfig.h>
+#include <aws/sagemaker/model/PendingDeploymentSummary.h>
 #include <aws/sagemaker/model/ProductionVariantSummary.h>
 #include <utility>
 
@@ -498,6 +499,37 @@ namespace Model
      */
     inline DescribeEndpointResult& WithAsyncInferenceConfig(AsyncInferenceConfig&& value) { SetAsyncInferenceConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Returns the summary of an in-progress deployment. This field is only returned
+     * when the endpoint is creating or updating with a new endpoint configuration.</p>
+     */
+    inline const PendingDeploymentSummary& GetPendingDeploymentSummary() const{ return m_pendingDeploymentSummary; }
+
+    /**
+     * <p>Returns the summary of an in-progress deployment. This field is only returned
+     * when the endpoint is creating or updating with a new endpoint configuration.</p>
+     */
+    inline void SetPendingDeploymentSummary(const PendingDeploymentSummary& value) { m_pendingDeploymentSummary = value; }
+
+    /**
+     * <p>Returns the summary of an in-progress deployment. This field is only returned
+     * when the endpoint is creating or updating with a new endpoint configuration.</p>
+     */
+    inline void SetPendingDeploymentSummary(PendingDeploymentSummary&& value) { m_pendingDeploymentSummary = std::move(value); }
+
+    /**
+     * <p>Returns the summary of an in-progress deployment. This field is only returned
+     * when the endpoint is creating or updating with a new endpoint configuration.</p>
+     */
+    inline DescribeEndpointResult& WithPendingDeploymentSummary(const PendingDeploymentSummary& value) { SetPendingDeploymentSummary(value); return *this;}
+
+    /**
+     * <p>Returns the summary of an in-progress deployment. This field is only returned
+     * when the endpoint is creating or updating with a new endpoint configuration.</p>
+     */
+    inline DescribeEndpointResult& WithPendingDeploymentSummary(PendingDeploymentSummary&& value) { SetPendingDeploymentSummary(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_endpointName;
@@ -521,6 +553,8 @@ namespace Model
     DeploymentConfig m_lastDeploymentConfig;
 
     AsyncInferenceConfig m_asyncInferenceConfig;
+
+    PendingDeploymentSummary m_pendingDeploymentSummary;
   };
 
 } // namespace Model

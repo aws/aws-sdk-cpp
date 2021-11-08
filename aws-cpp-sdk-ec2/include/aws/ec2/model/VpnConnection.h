@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/VpnState.h>
 #include <aws/ec2/model/GatewayType.h>
+#include <aws/ec2/model/GatewayAssociationState.h>
 #include <aws/ec2/model/VpnConnectionOptions.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/VpnStaticRoute.h>
@@ -495,7 +496,7 @@ namespace Model
     /**
      * <p>The current state of the gateway association.</p>
      */
-    inline const Aws::String& GetGatewayAssociationState() const{ return m_gatewayAssociationState; }
+    inline const GatewayAssociationState& GetGatewayAssociationState() const{ return m_gatewayAssociationState; }
 
     /**
      * <p>The current state of the gateway association.</p>
@@ -505,32 +506,22 @@ namespace Model
     /**
      * <p>The current state of the gateway association.</p>
      */
-    inline void SetGatewayAssociationState(const Aws::String& value) { m_gatewayAssociationStateHasBeenSet = true; m_gatewayAssociationState = value; }
+    inline void SetGatewayAssociationState(const GatewayAssociationState& value) { m_gatewayAssociationStateHasBeenSet = true; m_gatewayAssociationState = value; }
 
     /**
      * <p>The current state of the gateway association.</p>
      */
-    inline void SetGatewayAssociationState(Aws::String&& value) { m_gatewayAssociationStateHasBeenSet = true; m_gatewayAssociationState = std::move(value); }
+    inline void SetGatewayAssociationState(GatewayAssociationState&& value) { m_gatewayAssociationStateHasBeenSet = true; m_gatewayAssociationState = std::move(value); }
 
     /**
      * <p>The current state of the gateway association.</p>
      */
-    inline void SetGatewayAssociationState(const char* value) { m_gatewayAssociationStateHasBeenSet = true; m_gatewayAssociationState.assign(value); }
+    inline VpnConnection& WithGatewayAssociationState(const GatewayAssociationState& value) { SetGatewayAssociationState(value); return *this;}
 
     /**
      * <p>The current state of the gateway association.</p>
      */
-    inline VpnConnection& WithGatewayAssociationState(const Aws::String& value) { SetGatewayAssociationState(value); return *this;}
-
-    /**
-     * <p>The current state of the gateway association.</p>
-     */
-    inline VpnConnection& WithGatewayAssociationState(Aws::String&& value) { SetGatewayAssociationState(std::move(value)); return *this;}
-
-    /**
-     * <p>The current state of the gateway association.</p>
-     */
-    inline VpnConnection& WithGatewayAssociationState(const char* value) { SetGatewayAssociationState(value); return *this;}
+    inline VpnConnection& WithGatewayAssociationState(GatewayAssociationState&& value) { SetGatewayAssociationState(std::move(value)); return *this;}
 
 
     /**
@@ -718,7 +709,7 @@ namespace Model
     Aws::String m_coreNetworkAttachmentArn;
     bool m_coreNetworkAttachmentArnHasBeenSet;
 
-    Aws::String m_gatewayAssociationState;
+    GatewayAssociationState m_gatewayAssociationState;
     bool m_gatewayAssociationStateHasBeenSet;
 
     VpnConnectionOptions m_options;

@@ -28,7 +28,8 @@ SampledHTTPRequest::SampledHTTPRequest() :
     m_requestHeadersInsertedHasBeenSet(false),
     m_responseCodeSent(0),
     m_responseCodeSentHasBeenSet(false),
-    m_labelsHasBeenSet(false)
+    m_labelsHasBeenSet(false),
+    m_captchaResponseHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ SampledHTTPRequest::SampledHTTPRequest(JsonView jsonValue) :
     m_requestHeadersInsertedHasBeenSet(false),
     m_responseCodeSent(0),
     m_responseCodeSentHasBeenSet(false),
-    m_labelsHasBeenSet(false)
+    m_labelsHasBeenSet(false),
+    m_captchaResponseHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -111,6 +113,13 @@ SampledHTTPRequest& SampledHTTPRequest::operator =(JsonView jsonValue)
     m_labelsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CaptchaResponse"))
+  {
+    m_captchaResponse = jsonValue.GetObject("CaptchaResponse");
+
+    m_captchaResponseHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -172,6 +181,12 @@ JsonValue SampledHTTPRequest::Jsonize() const
      labelsJsonList[labelsIndex].AsObject(m_labels[labelsIndex].Jsonize());
    }
    payload.WithArray("Labels", std::move(labelsJsonList));
+
+  }
+
+  if(m_captchaResponseHasBeenSet)
+  {
+   payload.WithObject("CaptchaResponse", m_captchaResponse.Jsonize());
 
   }
 

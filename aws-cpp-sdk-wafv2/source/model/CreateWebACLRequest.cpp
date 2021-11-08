@@ -21,7 +21,8 @@ CreateWebACLRequest::CreateWebACLRequest() :
     m_rulesHasBeenSet(false),
     m_visibilityConfigHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_customResponseBodiesHasBeenSet(false)
+    m_customResponseBodiesHasBeenSet(false),
+    m_captchaConfigHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,12 @@ Aws::String CreateWebACLRequest::SerializePayload() const
      customResponseBodiesJsonMap.WithObject(customResponseBodiesItem.first, customResponseBodiesItem.second.Jsonize());
    }
    payload.WithObject("CustomResponseBodies", std::move(customResponseBodiesJsonMap));
+
+  }
+
+  if(m_captchaConfigHasBeenSet)
+  {
+   payload.WithObject("CaptchaConfig", m_captchaConfig.Jsonize());
 
   }
 

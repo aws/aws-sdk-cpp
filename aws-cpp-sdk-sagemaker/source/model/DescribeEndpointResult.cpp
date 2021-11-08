@@ -99,6 +99,12 @@ DescribeEndpointResult& DescribeEndpointResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("PendingDeploymentSummary"))
+  {
+    m_pendingDeploymentSummary = jsonValue.GetObject("PendingDeploymentSummary");
+
+  }
+
 
 
   return *this;
