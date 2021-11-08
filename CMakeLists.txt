@@ -257,6 +257,15 @@ else()
     set(ARCHIVE_DIRECTORY "${LIBRARY_DIRECTORY}")
 endif()
 
+# We need to point this to the directory containing import libraries or static
+# libraries on Windows, and to the directory containing the so / dylib
+# libraries on other platforms.
+if(WIN32)
+    set(PKG_CONFIG_LIB_DIRECTORY "${ARCHIVE_DIRECTORY}")
+else()
+    set(PKG_CONFIG_LIB_DIRECTORY "${LIBRARY_DIRECTORY}")
+endif()
+
 if (ENABLE_ADDRESS_SANITIZER)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address -g -fno-omit-frame-pointer")
     if (CMAKE_COMPILER_IS_GNUCXX AND CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 7.1)
