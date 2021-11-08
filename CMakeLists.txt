@@ -266,6 +266,13 @@ else()
     set(PKG_CONFIG_LIB_DIRECTORY "${LIBRARY_DIRECTORY}")
 endif()
 
+# MSVC consumers of the shared library need to define this macro when linking
+# to aws-cpp-sdk-* libs, or they will get undefined reference errors. Also
+# doesn't hurt to define this with MinGW, so add it unconditionally on Windows.
+if(WIN32 AND BUILD_SHARED_LIBS)
+    set(PKG_CONFIG_EXPORT_CFLAGS "-DUSE_IMPORT_EXPORT")
+endif()
+
 if (ENABLE_ADDRESS_SANITIZER)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address -g -fno-omit-frame-pointer")
     if (CMAKE_COMPILER_IS_GNUCXX AND CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 7.1)
