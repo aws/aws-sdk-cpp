@@ -95,8 +95,8 @@ namespace Model
      * <p>The number of vCPUs reserved for the container. For jobs that run on EC2
      * resources, you can specify the vCPU requirement for the job using
      * <code>resourceRequirements</code>, but you can't specify the vCPU requirements
-     * in both the <code>vcpus</code> and <code>resourceRequirement</code> object. This
-     * parameter maps to <code>CpuShares</code> in the <a
+     * in both the <code>vcpus</code> and <code>resourceRequirements</code> object.
+     * This parameter maps to <code>CpuShares</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -115,8 +115,8 @@ namespace Model
      * <p>The number of vCPUs reserved for the container. For jobs that run on EC2
      * resources, you can specify the vCPU requirement for the job using
      * <code>resourceRequirements</code>, but you can't specify the vCPU requirements
-     * in both the <code>vcpus</code> and <code>resourceRequirement</code> object. This
-     * parameter maps to <code>CpuShares</code> in the <a
+     * in both the <code>vcpus</code> and <code>resourceRequirements</code> object.
+     * This parameter maps to <code>CpuShares</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -135,8 +135,8 @@ namespace Model
      * <p>The number of vCPUs reserved for the container. For jobs that run on EC2
      * resources, you can specify the vCPU requirement for the job using
      * <code>resourceRequirements</code>, but you can't specify the vCPU requirements
-     * in both the <code>vcpus</code> and <code>resourceRequirement</code> object. This
-     * parameter maps to <code>CpuShares</code> in the <a
+     * in both the <code>vcpus</code> and <code>resourceRequirements</code> object.
+     * This parameter maps to <code>CpuShares</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -155,8 +155,8 @@ namespace Model
      * <p>The number of vCPUs reserved for the container. For jobs that run on EC2
      * resources, you can specify the vCPU requirement for the job using
      * <code>resourceRequirements</code>, but you can't specify the vCPU requirements
-     * in both the <code>vcpus</code> and <code>resourceRequirement</code> object. This
-     * parameter maps to <code>CpuShares</code> in the <a
+     * in both the <code>vcpus</code> and <code>resourceRequirements</code> object.
+     * This parameter maps to <code>CpuShares</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -174,7 +174,7 @@ namespace Model
 
     /**
      * <p>For jobs run on EC2 resources that didn't specify memory requirements using
-     * <code>ResourceRequirement</code>, the number of MiB of memory reserved for the
+     * <code>resourceRequirements</code>, the number of MiB of memory reserved for the
      * job. For other jobs, including all run on Fargate resources, see
      * <code>resourceRequirements</code>.</p>
      */
@@ -182,7 +182,7 @@ namespace Model
 
     /**
      * <p>For jobs run on EC2 resources that didn't specify memory requirements using
-     * <code>ResourceRequirement</code>, the number of MiB of memory reserved for the
+     * <code>resourceRequirements</code>, the number of MiB of memory reserved for the
      * job. For other jobs, including all run on Fargate resources, see
      * <code>resourceRequirements</code>.</p>
      */
@@ -190,7 +190,7 @@ namespace Model
 
     /**
      * <p>For jobs run on EC2 resources that didn't specify memory requirements using
-     * <code>ResourceRequirement</code>, the number of MiB of memory reserved for the
+     * <code>resourceRequirements</code>, the number of MiB of memory reserved for the
      * job. For other jobs, including all run on Fargate resources, see
      * <code>resourceRequirements</code>.</p>
      */
@@ -198,7 +198,7 @@ namespace Model
 
     /**
      * <p>For jobs run on EC2 resources that didn't specify memory requirements using
-     * <code>ResourceRequirement</code>, the number of MiB of memory reserved for the
+     * <code>resourceRequirements</code>, the number of MiB of memory reserved for the
      * job. For other jobs, including all run on Fargate resources, see
      * <code>resourceRequirements</code>.</p>
      */

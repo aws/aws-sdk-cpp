@@ -134,6 +134,31 @@ namespace Model
 
 
     /**
+     * <p>The maximum number of VCPUs expected to be used for an unmanaged compute
+     * environment.</p>
+     */
+    inline int GetUnmanagedvCpus() const{ return m_unmanagedvCpus; }
+
+    /**
+     * <p>The maximum number of VCPUs expected to be used for an unmanaged compute
+     * environment.</p>
+     */
+    inline bool UnmanagedvCpusHasBeenSet() const { return m_unmanagedvCpusHasBeenSet; }
+
+    /**
+     * <p>The maximum number of VCPUs expected to be used for an unmanaged compute
+     * environment.</p>
+     */
+    inline void SetUnmanagedvCpus(int value) { m_unmanagedvCpusHasBeenSet = true; m_unmanagedvCpus = value; }
+
+    /**
+     * <p>The maximum number of VCPUs expected to be used for an unmanaged compute
+     * environment.</p>
+     */
+    inline ComputeEnvironmentDetail& WithUnmanagedvCpus(int value) { SetUnmanagedvCpus(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by
      * the compute environment.</p>
      */
@@ -602,6 +627,9 @@ namespace Model
 
     Aws::String m_computeEnvironmentArn;
     bool m_computeEnvironmentArnHasBeenSet;
+
+    int m_unmanagedvCpus;
+    bool m_unmanagedvCpusHasBeenSet;
 
     Aws::String m_ecsClusterArn;
     bool m_ecsClusterArnHasBeenSet;

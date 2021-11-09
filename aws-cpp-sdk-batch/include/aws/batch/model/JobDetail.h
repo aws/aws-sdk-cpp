@@ -277,6 +277,76 @@ namespace Model
 
 
     /**
+     * <p>The share identifier for the job.</p>
+     */
+    inline const Aws::String& GetShareIdentifier() const{ return m_shareIdentifier; }
+
+    /**
+     * <p>The share identifier for the job.</p>
+     */
+    inline bool ShareIdentifierHasBeenSet() const { return m_shareIdentifierHasBeenSet; }
+
+    /**
+     * <p>The share identifier for the job.</p>
+     */
+    inline void SetShareIdentifier(const Aws::String& value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier = value; }
+
+    /**
+     * <p>The share identifier for the job.</p>
+     */
+    inline void SetShareIdentifier(Aws::String&& value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier = std::move(value); }
+
+    /**
+     * <p>The share identifier for the job.</p>
+     */
+    inline void SetShareIdentifier(const char* value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier.assign(value); }
+
+    /**
+     * <p>The share identifier for the job.</p>
+     */
+    inline JobDetail& WithShareIdentifier(const Aws::String& value) { SetShareIdentifier(value); return *this;}
+
+    /**
+     * <p>The share identifier for the job.</p>
+     */
+    inline JobDetail& WithShareIdentifier(Aws::String&& value) { SetShareIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>The share identifier for the job.</p>
+     */
+    inline JobDetail& WithShareIdentifier(const char* value) { SetShareIdentifier(value); return *this;}
+
+
+    /**
+     * <p>The scheduling policy of the job definition. This will only affect jobs in
+     * job queues with a fair share policy. Jobs with a higher scheduling priority will
+     * be scheduled before jobs with a lower scheduling priority.</p>
+     */
+    inline int GetSchedulingPriority() const{ return m_schedulingPriority; }
+
+    /**
+     * <p>The scheduling policy of the job definition. This will only affect jobs in
+     * job queues with a fair share policy. Jobs with a higher scheduling priority will
+     * be scheduled before jobs with a lower scheduling priority.</p>
+     */
+    inline bool SchedulingPriorityHasBeenSet() const { return m_schedulingPriorityHasBeenSet; }
+
+    /**
+     * <p>The scheduling policy of the job definition. This will only affect jobs in
+     * job queues with a fair share policy. Jobs with a higher scheduling priority will
+     * be scheduled before jobs with a lower scheduling priority.</p>
+     */
+    inline void SetSchedulingPriority(int value) { m_schedulingPriorityHasBeenSet = true; m_schedulingPriority = value; }
+
+    /**
+     * <p>The scheduling policy of the job definition. This will only affect jobs in
+     * job queues with a fair share policy. Jobs with a higher scheduling priority will
+     * be scheduled before jobs with a lower scheduling priority.</p>
+     */
+    inline JobDetail& WithSchedulingPriority(int value) { SetSchedulingPriority(value); return *this;}
+
+
+    /**
      * <p>A list of job attempts associated with this job.</p>
      */
     inline const Aws::Vector<AttemptDetail>& GetAttempts() const{ return m_attempts; }
@@ -1028,6 +1098,12 @@ namespace Model
 
     JobStatus m_status;
     bool m_statusHasBeenSet;
+
+    Aws::String m_shareIdentifier;
+    bool m_shareIdentifierHasBeenSet;
+
+    int m_schedulingPriority;
+    bool m_schedulingPriorityHasBeenSet;
 
     Aws::Vector<AttemptDetail> m_attempts;
     bool m_attemptsHasBeenSet;

@@ -96,11 +96,11 @@ namespace Model
      * specified for each node at least once.</p> <p>For jobs that are running on
      * Fargate resources, then <code>value</code> must match one of the supported
      * values and the <code>MEMORY</code> values must be one of the values supported
-     * for that VCPU value. The supported values are 0.25, 0.5, 1, 2, and 4</p> <dl>
-     * <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or 2048</p>
-     * </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048, 3072, or
-     * 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048, 3072,
-     * 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
+     * for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, and
+     * 4</p> <dl> <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or
+     * 2048</p> </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048,
+     * 3072, or 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048,
+     * 3072, 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
      * <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288,
      * 13312, 14336, 15360, or 16384</p> </dd> <dt>value = 4</dt> <dd> <p>
      * <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360,
@@ -165,11 +165,11 @@ namespace Model
      * specified for each node at least once.</p> <p>For jobs that are running on
      * Fargate resources, then <code>value</code> must match one of the supported
      * values and the <code>MEMORY</code> values must be one of the values supported
-     * for that VCPU value. The supported values are 0.25, 0.5, 1, 2, and 4</p> <dl>
-     * <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or 2048</p>
-     * </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048, 3072, or
-     * 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048, 3072,
-     * 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
+     * for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, and
+     * 4</p> <dl> <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or
+     * 2048</p> </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048,
+     * 3072, or 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048,
+     * 3072, 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
      * <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288,
      * 13312, 14336, 15360, or 16384</p> </dd> <dt>value = 4</dt> <dd> <p>
      * <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360,
@@ -234,11 +234,11 @@ namespace Model
      * specified for each node at least once.</p> <p>For jobs that are running on
      * Fargate resources, then <code>value</code> must match one of the supported
      * values and the <code>MEMORY</code> values must be one of the values supported
-     * for that VCPU value. The supported values are 0.25, 0.5, 1, 2, and 4</p> <dl>
-     * <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or 2048</p>
-     * </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048, 3072, or
-     * 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048, 3072,
-     * 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
+     * for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, and
+     * 4</p> <dl> <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or
+     * 2048</p> </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048,
+     * 3072, or 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048,
+     * 3072, 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
      * <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288,
      * 13312, 14336, 15360, or 16384</p> </dd> <dt>value = 4</dt> <dd> <p>
      * <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360,
@@ -303,11 +303,11 @@ namespace Model
      * specified for each node at least once.</p> <p>For jobs that are running on
      * Fargate resources, then <code>value</code> must match one of the supported
      * values and the <code>MEMORY</code> values must be one of the values supported
-     * for that VCPU value. The supported values are 0.25, 0.5, 1, 2, and 4</p> <dl>
-     * <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or 2048</p>
-     * </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048, 3072, or
-     * 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048, 3072,
-     * 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
+     * for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, and
+     * 4</p> <dl> <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or
+     * 2048</p> </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048,
+     * 3072, or 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048,
+     * 3072, 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
      * <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288,
      * 13312, 14336, 15360, or 16384</p> </dd> <dt>value = 4</dt> <dd> <p>
      * <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360,
@@ -372,11 +372,11 @@ namespace Model
      * specified for each node at least once.</p> <p>For jobs that are running on
      * Fargate resources, then <code>value</code> must match one of the supported
      * values and the <code>MEMORY</code> values must be one of the values supported
-     * for that VCPU value. The supported values are 0.25, 0.5, 1, 2, and 4</p> <dl>
-     * <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or 2048</p>
-     * </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048, 3072, or
-     * 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048, 3072,
-     * 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
+     * for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, and
+     * 4</p> <dl> <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or
+     * 2048</p> </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048,
+     * 3072, or 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048,
+     * 3072, 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
      * <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288,
      * 13312, 14336, 15360, or 16384</p> </dd> <dt>value = 4</dt> <dd> <p>
      * <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360,
@@ -441,11 +441,11 @@ namespace Model
      * specified for each node at least once.</p> <p>For jobs that are running on
      * Fargate resources, then <code>value</code> must match one of the supported
      * values and the <code>MEMORY</code> values must be one of the values supported
-     * for that VCPU value. The supported values are 0.25, 0.5, 1, 2, and 4</p> <dl>
-     * <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or 2048</p>
-     * </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048, 3072, or
-     * 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048, 3072,
-     * 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
+     * for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, and
+     * 4</p> <dl> <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or
+     * 2048</p> </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048,
+     * 3072, or 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048,
+     * 3072, 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
      * <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288,
      * 13312, 14336, 15360, or 16384</p> </dd> <dt>value = 4</dt> <dd> <p>
      * <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360,
@@ -510,11 +510,11 @@ namespace Model
      * specified for each node at least once.</p> <p>For jobs that are running on
      * Fargate resources, then <code>value</code> must match one of the supported
      * values and the <code>MEMORY</code> values must be one of the values supported
-     * for that VCPU value. The supported values are 0.25, 0.5, 1, 2, and 4</p> <dl>
-     * <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or 2048</p>
-     * </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048, 3072, or
-     * 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048, 3072,
-     * 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
+     * for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, and
+     * 4</p> <dl> <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or
+     * 2048</p> </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048,
+     * 3072, or 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048,
+     * 3072, 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
      * <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288,
      * 13312, 14336, 15360, or 16384</p> </dd> <dt>value = 4</dt> <dd> <p>
      * <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360,
@@ -579,11 +579,11 @@ namespace Model
      * specified for each node at least once.</p> <p>For jobs that are running on
      * Fargate resources, then <code>value</code> must match one of the supported
      * values and the <code>MEMORY</code> values must be one of the values supported
-     * for that VCPU value. The supported values are 0.25, 0.5, 1, 2, and 4</p> <dl>
-     * <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or 2048</p>
-     * </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048, 3072, or
-     * 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048, 3072,
-     * 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
+     * for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, and
+     * 4</p> <dl> <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or
+     * 2048</p> </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048,
+     * 3072, or 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048,
+     * 3072, 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
      * <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288,
      * 13312, 14336, 15360, or 16384</p> </dd> <dt>value = 4</dt> <dd> <p>
      * <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360,

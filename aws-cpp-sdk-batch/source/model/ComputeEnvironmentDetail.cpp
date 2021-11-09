@@ -21,6 +21,8 @@ namespace Model
 ComputeEnvironmentDetail::ComputeEnvironmentDetail() : 
     m_computeEnvironmentNameHasBeenSet(false),
     m_computeEnvironmentArnHasBeenSet(false),
+    m_unmanagedvCpus(0),
+    m_unmanagedvCpusHasBeenSet(false),
     m_ecsClusterArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_type(CEType::NOT_SET),
@@ -38,6 +40,8 @@ ComputeEnvironmentDetail::ComputeEnvironmentDetail() :
 ComputeEnvironmentDetail::ComputeEnvironmentDetail(JsonView jsonValue) : 
     m_computeEnvironmentNameHasBeenSet(false),
     m_computeEnvironmentArnHasBeenSet(false),
+    m_unmanagedvCpus(0),
+    m_unmanagedvCpusHasBeenSet(false),
     m_ecsClusterArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_type(CEType::NOT_SET),
@@ -67,6 +71,13 @@ ComputeEnvironmentDetail& ComputeEnvironmentDetail::operator =(JsonView jsonValu
     m_computeEnvironmentArn = jsonValue.GetString("computeEnvironmentArn");
 
     m_computeEnvironmentArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("unmanagedvCpus"))
+  {
+    m_unmanagedvCpus = jsonValue.GetInteger("unmanagedvCpus");
+
+    m_unmanagedvCpusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ecsClusterArn"))
@@ -144,6 +155,12 @@ JsonValue ComputeEnvironmentDetail::Jsonize() const
   if(m_computeEnvironmentArnHasBeenSet)
   {
    payload.WithString("computeEnvironmentArn", m_computeEnvironmentArn);
+
+  }
+
+  if(m_unmanagedvCpusHasBeenSet)
+  {
+   payload.WithInteger("unmanagedvCpus", m_unmanagedvCpus);
 
   }
 

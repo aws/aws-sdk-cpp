@@ -189,7 +189,8 @@ namespace Model
 
 
     /**
-     * <p>The type of job definition. If the job is run on Fargate resources, then
+     * <p>The type of job definition, either <code>container</code> or
+     * <code>multinode</code>. If the job is run on Fargate resources, then
      * <code>multinode</code> isn't supported. For more information about multi-node
      * parallel jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
@@ -198,7 +199,8 @@ namespace Model
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of job definition. If the job is run on Fargate resources, then
+     * <p>The type of job definition, either <code>container</code> or
+     * <code>multinode</code>. If the job is run on Fargate resources, then
      * <code>multinode</code> isn't supported. For more information about multi-node
      * parallel jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
@@ -207,7 +209,8 @@ namespace Model
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of job definition. If the job is run on Fargate resources, then
+     * <p>The type of job definition, either <code>container</code> or
+     * <code>multinode</code>. If the job is run on Fargate resources, then
      * <code>multinode</code> isn't supported. For more information about multi-node
      * parallel jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
@@ -216,7 +219,8 @@ namespace Model
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of job definition. If the job is run on Fargate resources, then
+     * <p>The type of job definition, either <code>container</code> or
+     * <code>multinode</code>. If the job is run on Fargate resources, then
      * <code>multinode</code> isn't supported. For more information about multi-node
      * parallel jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
@@ -225,7 +229,8 @@ namespace Model
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of job definition. If the job is run on Fargate resources, then
+     * <p>The type of job definition, either <code>container</code> or
+     * <code>multinode</code>. If the job is run on Fargate resources, then
      * <code>multinode</code> isn't supported. For more information about multi-node
      * parallel jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
@@ -234,7 +239,8 @@ namespace Model
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The type of job definition. If the job is run on Fargate resources, then
+     * <p>The type of job definition, either <code>container</code> or
+     * <code>multinode</code>. If the job is run on Fargate resources, then
      * <code>multinode</code> isn't supported. For more information about multi-node
      * parallel jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
@@ -243,7 +249,8 @@ namespace Model
     inline JobDefinition& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of job definition. If the job is run on Fargate resources, then
+     * <p>The type of job definition, either <code>container</code> or
+     * <code>multinode</code>. If the job is run on Fargate resources, then
      * <code>multinode</code> isn't supported. For more information about multi-node
      * parallel jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
@@ -252,13 +259,43 @@ namespace Model
     inline JobDefinition& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of job definition. If the job is run on Fargate resources, then
+     * <p>The type of job definition, either <code>container</code> or
+     * <code>multinode</code>. If the job is run on Fargate resources, then
      * <code>multinode</code> isn't supported. For more information about multi-node
      * parallel jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
      * a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
      */
     inline JobDefinition& WithType(const char* value) { SetType(value); return *this;}
+
+
+    /**
+     * <p>The scheduling priority of the job definition. This will only affect jobs in
+     * job queues with a fair share policy. Jobs with a higher scheduling priority will
+     * be scheduled before jobs with a lower scheduling priority.</p>
+     */
+    inline int GetSchedulingPriority() const{ return m_schedulingPriority; }
+
+    /**
+     * <p>The scheduling priority of the job definition. This will only affect jobs in
+     * job queues with a fair share policy. Jobs with a higher scheduling priority will
+     * be scheduled before jobs with a lower scheduling priority.</p>
+     */
+    inline bool SchedulingPriorityHasBeenSet() const { return m_schedulingPriorityHasBeenSet; }
+
+    /**
+     * <p>The scheduling priority of the job definition. This will only affect jobs in
+     * job queues with a fair share policy. Jobs with a higher scheduling priority will
+     * be scheduled before jobs with a lower scheduling priority.</p>
+     */
+    inline void SetSchedulingPriority(int value) { m_schedulingPriorityHasBeenSet = true; m_schedulingPriority = value; }
+
+    /**
+     * <p>The scheduling priority of the job definition. This will only affect jobs in
+     * job queues with a fair share policy. Jobs with a higher scheduling priority will
+     * be scheduled before jobs with a lower scheduling priority.</p>
+     */
+    inline JobDefinition& WithSchedulingPriority(int value) { SetSchedulingPriority(value); return *this;}
 
 
     /**
@@ -744,6 +781,9 @@ namespace Model
 
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
+    int m_schedulingPriority;
+    bool m_schedulingPriorityHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
     bool m_parametersHasBeenSet;

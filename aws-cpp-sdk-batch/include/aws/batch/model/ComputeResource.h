@@ -971,7 +971,7 @@ namespace Model
      * where String1 is the tag key and String2 is the tag value−for example, <code>{
      * "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing
      * your Batch instances in the Amazon EC2 console. These tags can't be updated or
-     * removed after the compute environment is created.Aany changes to these tags
+     * removed after the compute environment is created. Any changes to these tags
      * require that you create a new compute environment and remove the old compute
      * environment. These tags aren't seen when using the Batch
      * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
@@ -986,7 +986,7 @@ namespace Model
      * where String1 is the tag key and String2 is the tag value−for example, <code>{
      * "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing
      * your Batch instances in the Amazon EC2 console. These tags can't be updated or
-     * removed after the compute environment is created.Aany changes to these tags
+     * removed after the compute environment is created. Any changes to these tags
      * require that you create a new compute environment and remove the old compute
      * environment. These tags aren't seen when using the Batch
      * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
@@ -1001,7 +1001,7 @@ namespace Model
      * where String1 is the tag key and String2 is the tag value−for example, <code>{
      * "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing
      * your Batch instances in the Amazon EC2 console. These tags can't be updated or
-     * removed after the compute environment is created.Aany changes to these tags
+     * removed after the compute environment is created. Any changes to these tags
      * require that you create a new compute environment and remove the old compute
      * environment. These tags aren't seen when using the Batch
      * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
@@ -1016,7 +1016,7 @@ namespace Model
      * where String1 is the tag key and String2 is the tag value−for example, <code>{
      * "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing
      * your Batch instances in the Amazon EC2 console. These tags can't be updated or
-     * removed after the compute environment is created.Aany changes to these tags
+     * removed after the compute environment is created. Any changes to these tags
      * require that you create a new compute environment and remove the old compute
      * environment. These tags aren't seen when using the Batch
      * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
@@ -1031,7 +1031,7 @@ namespace Model
      * where String1 is the tag key and String2 is the tag value−for example, <code>{
      * "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing
      * your Batch instances in the Amazon EC2 console. These tags can't be updated or
-     * removed after the compute environment is created.Aany changes to these tags
+     * removed after the compute environment is created. Any changes to these tags
      * require that you create a new compute environment and remove the old compute
      * environment. These tags aren't seen when using the Batch
      * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
@@ -1046,7 +1046,7 @@ namespace Model
      * where String1 is the tag key and String2 is the tag value−for example, <code>{
      * "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing
      * your Batch instances in the Amazon EC2 console. These tags can't be updated or
-     * removed after the compute environment is created.Aany changes to these tags
+     * removed after the compute environment is created. Any changes to these tags
      * require that you create a new compute environment and remove the old compute
      * environment. These tags aren't seen when using the Batch
      * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
@@ -1061,7 +1061,7 @@ namespace Model
      * where String1 is the tag key and String2 is the tag value−for example, <code>{
      * "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing
      * your Batch instances in the Amazon EC2 console. These tags can't be updated or
-     * removed after the compute environment is created.Aany changes to these tags
+     * removed after the compute environment is created. Any changes to these tags
      * require that you create a new compute environment and remove the old compute
      * environment. These tags aren't seen when using the Batch
      * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
@@ -1076,7 +1076,7 @@ namespace Model
      * where String1 is the tag key and String2 is the tag value−for example, <code>{
      * "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing
      * your Batch instances in the Amazon EC2 console. These tags can't be updated or
-     * removed after the compute environment is created.Aany changes to these tags
+     * removed after the compute environment is created. Any changes to these tags
      * require that you create a new compute environment and remove the old compute
      * environment. These tags aren't seen when using the Batch
      * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
@@ -1091,7 +1091,7 @@ namespace Model
      * where String1 is the tag key and String2 is the tag value−for example, <code>{
      * "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing
      * your Batch instances in the Amazon EC2 console. These tags can't be updated or
-     * removed after the compute environment is created.Aany changes to these tags
+     * removed after the compute environment is created. Any changes to these tags
      * require that you create a new compute environment and remove the old compute
      * environment. These tags aren't seen when using the Batch
      * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
@@ -1106,7 +1106,7 @@ namespace Model
      * where String1 is the tag key and String2 is the tag value−for example, <code>{
      * "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing
      * your Batch instances in the Amazon EC2 console. These tags can't be updated or
-     * removed after the compute environment is created.Aany changes to these tags
+     * removed after the compute environment is created. Any changes to these tags
      * require that you create a new compute environment and remove the old compute
      * environment. These tags aren't seen when using the Batch
      * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
@@ -1121,7 +1121,7 @@ namespace Model
      * where String1 is the tag key and String2 is the tag value−for example, <code>{
      * "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing
      * your Batch instances in the Amazon EC2 console. These tags can't be updated or
-     * removed after the compute environment is created.Aany changes to these tags
+     * removed after the compute environment is created. Any changes to these tags
      * require that you create a new compute environment and remove the old compute
      * environment. These tags aren't seen when using the Batch
      * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
@@ -1136,7 +1136,7 @@ namespace Model
      * where String1 is the tag key and String2 is the tag value−for example, <code>{
      * "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing
      * your Batch instances in the Amazon EC2 console. These tags can't be updated or
-     * removed after the compute environment is created.Aany changes to these tags
+     * removed after the compute environment is created. Any changes to these tags
      * require that you create a new compute environment and remove the old compute
      * environment. These tags aren't seen when using the Batch
      * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
@@ -1151,7 +1151,7 @@ namespace Model
      * where String1 is the tag key and String2 is the tag value−for example, <code>{
      * "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing
      * your Batch instances in the Amazon EC2 console. These tags can't be updated or
-     * removed after the compute environment is created.Aany changes to these tags
+     * removed after the compute environment is created. Any changes to these tags
      * require that you create a new compute environment and remove the old compute
      * environment. These tags aren't seen when using the Batch
      * <code>ListTagsForResource</code> API operation.</p>  <p>This parameter
@@ -1558,72 +1558,72 @@ namespace Model
     /**
      * <p>Provides information used to select Amazon Machine Images (AMIs) for EC2
      * instances in the compute environment. If <code>Ec2Configuration</code> isn't
-     * specified, the default is <code>ECS_AL1</code>.</p>  <p>This parameter
-     * isn't applicable to jobs that are running on Fargate resources, and shouldn't be
-     * specified.</p> 
+     * specified, the default is <code>ECS_AL2</code>.</p> <p>One or two values can be
+     * provided.</p>  <p>This parameter isn't applicable to jobs that are running
+     * on Fargate resources, and shouldn't be specified.</p> 
      */
     inline const Aws::Vector<Ec2Configuration>& GetEc2Configuration() const{ return m_ec2Configuration; }
 
     /**
      * <p>Provides information used to select Amazon Machine Images (AMIs) for EC2
      * instances in the compute environment. If <code>Ec2Configuration</code> isn't
-     * specified, the default is <code>ECS_AL1</code>.</p>  <p>This parameter
-     * isn't applicable to jobs that are running on Fargate resources, and shouldn't be
-     * specified.</p> 
+     * specified, the default is <code>ECS_AL2</code>.</p> <p>One or two values can be
+     * provided.</p>  <p>This parameter isn't applicable to jobs that are running
+     * on Fargate resources, and shouldn't be specified.</p> 
      */
     inline bool Ec2ConfigurationHasBeenSet() const { return m_ec2ConfigurationHasBeenSet; }
 
     /**
      * <p>Provides information used to select Amazon Machine Images (AMIs) for EC2
      * instances in the compute environment. If <code>Ec2Configuration</code> isn't
-     * specified, the default is <code>ECS_AL1</code>.</p>  <p>This parameter
-     * isn't applicable to jobs that are running on Fargate resources, and shouldn't be
-     * specified.</p> 
+     * specified, the default is <code>ECS_AL2</code>.</p> <p>One or two values can be
+     * provided.</p>  <p>This parameter isn't applicable to jobs that are running
+     * on Fargate resources, and shouldn't be specified.</p> 
      */
     inline void SetEc2Configuration(const Aws::Vector<Ec2Configuration>& value) { m_ec2ConfigurationHasBeenSet = true; m_ec2Configuration = value; }
 
     /**
      * <p>Provides information used to select Amazon Machine Images (AMIs) for EC2
      * instances in the compute environment. If <code>Ec2Configuration</code> isn't
-     * specified, the default is <code>ECS_AL1</code>.</p>  <p>This parameter
-     * isn't applicable to jobs that are running on Fargate resources, and shouldn't be
-     * specified.</p> 
+     * specified, the default is <code>ECS_AL2</code>.</p> <p>One or two values can be
+     * provided.</p>  <p>This parameter isn't applicable to jobs that are running
+     * on Fargate resources, and shouldn't be specified.</p> 
      */
     inline void SetEc2Configuration(Aws::Vector<Ec2Configuration>&& value) { m_ec2ConfigurationHasBeenSet = true; m_ec2Configuration = std::move(value); }
 
     /**
      * <p>Provides information used to select Amazon Machine Images (AMIs) for EC2
      * instances in the compute environment. If <code>Ec2Configuration</code> isn't
-     * specified, the default is <code>ECS_AL1</code>.</p>  <p>This parameter
-     * isn't applicable to jobs that are running on Fargate resources, and shouldn't be
-     * specified.</p> 
+     * specified, the default is <code>ECS_AL2</code>.</p> <p>One or two values can be
+     * provided.</p>  <p>This parameter isn't applicable to jobs that are running
+     * on Fargate resources, and shouldn't be specified.</p> 
      */
     inline ComputeResource& WithEc2Configuration(const Aws::Vector<Ec2Configuration>& value) { SetEc2Configuration(value); return *this;}
 
     /**
      * <p>Provides information used to select Amazon Machine Images (AMIs) for EC2
      * instances in the compute environment. If <code>Ec2Configuration</code> isn't
-     * specified, the default is <code>ECS_AL1</code>.</p>  <p>This parameter
-     * isn't applicable to jobs that are running on Fargate resources, and shouldn't be
-     * specified.</p> 
+     * specified, the default is <code>ECS_AL2</code>.</p> <p>One or two values can be
+     * provided.</p>  <p>This parameter isn't applicable to jobs that are running
+     * on Fargate resources, and shouldn't be specified.</p> 
      */
     inline ComputeResource& WithEc2Configuration(Aws::Vector<Ec2Configuration>&& value) { SetEc2Configuration(std::move(value)); return *this;}
 
     /**
      * <p>Provides information used to select Amazon Machine Images (AMIs) for EC2
      * instances in the compute environment. If <code>Ec2Configuration</code> isn't
-     * specified, the default is <code>ECS_AL1</code>.</p>  <p>This parameter
-     * isn't applicable to jobs that are running on Fargate resources, and shouldn't be
-     * specified.</p> 
+     * specified, the default is <code>ECS_AL2</code>.</p> <p>One or two values can be
+     * provided.</p>  <p>This parameter isn't applicable to jobs that are running
+     * on Fargate resources, and shouldn't be specified.</p> 
      */
     inline ComputeResource& AddEc2Configuration(const Ec2Configuration& value) { m_ec2ConfigurationHasBeenSet = true; m_ec2Configuration.push_back(value); return *this; }
 
     /**
      * <p>Provides information used to select Amazon Machine Images (AMIs) for EC2
      * instances in the compute environment. If <code>Ec2Configuration</code> isn't
-     * specified, the default is <code>ECS_AL1</code>.</p>  <p>This parameter
-     * isn't applicable to jobs that are running on Fargate resources, and shouldn't be
-     * specified.</p> 
+     * specified, the default is <code>ECS_AL2</code>.</p> <p>One or two values can be
+     * provided.</p>  <p>This parameter isn't applicable to jobs that are running
+     * on Fargate resources, and shouldn't be specified.</p> 
      */
     inline ComputeResource& AddEc2Configuration(Ec2Configuration&& value) { m_ec2ConfigurationHasBeenSet = true; m_ec2Configuration.push_back(std::move(value)); return *this; }
 

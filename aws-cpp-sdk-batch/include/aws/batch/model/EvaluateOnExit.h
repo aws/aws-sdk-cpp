@@ -45,7 +45,8 @@ namespace Model
      * returned for a job. The pattern can be up to 512 characters in length. It can
      * contain letters, numbers, periods (.), colons (:), and white space (including
      * spaces or tabs). It can optionally end with an asterisk (*) so that only the
-     * start of the string needs to be an exact match.</p>
+     * start of the string needs to be an exact match.</p> <p>The string can be between
+     * 1 and 512 characters in length.</p>
      */
     inline const Aws::String& GetOnStatusReason() const{ return m_onStatusReason; }
 
@@ -54,7 +55,8 @@ namespace Model
      * returned for a job. The pattern can be up to 512 characters in length. It can
      * contain letters, numbers, periods (.), colons (:), and white space (including
      * spaces or tabs). It can optionally end with an asterisk (*) so that only the
-     * start of the string needs to be an exact match.</p>
+     * start of the string needs to be an exact match.</p> <p>The string can be between
+     * 1 and 512 characters in length.</p>
      */
     inline bool OnStatusReasonHasBeenSet() const { return m_onStatusReasonHasBeenSet; }
 
@@ -63,7 +65,8 @@ namespace Model
      * returned for a job. The pattern can be up to 512 characters in length. It can
      * contain letters, numbers, periods (.), colons (:), and white space (including
      * spaces or tabs). It can optionally end with an asterisk (*) so that only the
-     * start of the string needs to be an exact match.</p>
+     * start of the string needs to be an exact match.</p> <p>The string can be between
+     * 1 and 512 characters in length.</p>
      */
     inline void SetOnStatusReason(const Aws::String& value) { m_onStatusReasonHasBeenSet = true; m_onStatusReason = value; }
 
@@ -72,7 +75,8 @@ namespace Model
      * returned for a job. The pattern can be up to 512 characters in length. It can
      * contain letters, numbers, periods (.), colons (:), and white space (including
      * spaces or tabs). It can optionally end with an asterisk (*) so that only the
-     * start of the string needs to be an exact match.</p>
+     * start of the string needs to be an exact match.</p> <p>The string can be between
+     * 1 and 512 characters in length.</p>
      */
     inline void SetOnStatusReason(Aws::String&& value) { m_onStatusReasonHasBeenSet = true; m_onStatusReason = std::move(value); }
 
@@ -81,7 +85,8 @@ namespace Model
      * returned for a job. The pattern can be up to 512 characters in length. It can
      * contain letters, numbers, periods (.), colons (:), and white space (including
      * spaces or tabs). It can optionally end with an asterisk (*) so that only the
-     * start of the string needs to be an exact match.</p>
+     * start of the string needs to be an exact match.</p> <p>The string can be between
+     * 1 and 512 characters in length.</p>
      */
     inline void SetOnStatusReason(const char* value) { m_onStatusReasonHasBeenSet = true; m_onStatusReason.assign(value); }
 
@@ -90,7 +95,8 @@ namespace Model
      * returned for a job. The pattern can be up to 512 characters in length. It can
      * contain letters, numbers, periods (.), colons (:), and white space (including
      * spaces or tabs). It can optionally end with an asterisk (*) so that only the
-     * start of the string needs to be an exact match.</p>
+     * start of the string needs to be an exact match.</p> <p>The string can be between
+     * 1 and 512 characters in length.</p>
      */
     inline EvaluateOnExit& WithOnStatusReason(const Aws::String& value) { SetOnStatusReason(value); return *this;}
 
@@ -99,7 +105,8 @@ namespace Model
      * returned for a job. The pattern can be up to 512 characters in length. It can
      * contain letters, numbers, periods (.), colons (:), and white space (including
      * spaces or tabs). It can optionally end with an asterisk (*) so that only the
-     * start of the string needs to be an exact match.</p>
+     * start of the string needs to be an exact match.</p> <p>The string can be between
+     * 1 and 512 characters in length.</p>
      */
     inline EvaluateOnExit& WithOnStatusReason(Aws::String&& value) { SetOnStatusReason(std::move(value)); return *this;}
 
@@ -108,7 +115,8 @@ namespace Model
      * returned for a job. The pattern can be up to 512 characters in length. It can
      * contain letters, numbers, periods (.), colons (:), and white space (including
      * spaces or tabs). It can optionally end with an asterisk (*) so that only the
-     * start of the string needs to be an exact match.</p>
+     * start of the string needs to be an exact match.</p> <p>The string can be between
+     * 1 and 512 characters in length.</p>
      */
     inline EvaluateOnExit& WithOnStatusReason(const char* value) { SetOnStatusReason(value); return *this;}
 
@@ -118,7 +126,8 @@ namespace Model
      * a job. The pattern can be up to 512 characters in length. It can contain
      * letters, numbers, periods (.), colons (:), and white space (including spaces and
      * tabs). It can optionally end with an asterisk (*) so that only the start of the
-     * string needs to be an exact match.</p>
+     * string needs to be an exact match.</p> <p>The string can be between 1 and 512
+     * characters in length.</p>
      */
     inline const Aws::String& GetOnReason() const{ return m_onReason; }
 
@@ -127,7 +136,8 @@ namespace Model
      * a job. The pattern can be up to 512 characters in length. It can contain
      * letters, numbers, periods (.), colons (:), and white space (including spaces and
      * tabs). It can optionally end with an asterisk (*) so that only the start of the
-     * string needs to be an exact match.</p>
+     * string needs to be an exact match.</p> <p>The string can be between 1 and 512
+     * characters in length.</p>
      */
     inline bool OnReasonHasBeenSet() const { return m_onReasonHasBeenSet; }
 
@@ -136,7 +146,8 @@ namespace Model
      * a job. The pattern can be up to 512 characters in length. It can contain
      * letters, numbers, periods (.), colons (:), and white space (including spaces and
      * tabs). It can optionally end with an asterisk (*) so that only the start of the
-     * string needs to be an exact match.</p>
+     * string needs to be an exact match.</p> <p>The string can be between 1 and 512
+     * characters in length.</p>
      */
     inline void SetOnReason(const Aws::String& value) { m_onReasonHasBeenSet = true; m_onReason = value; }
 
@@ -145,7 +156,8 @@ namespace Model
      * a job. The pattern can be up to 512 characters in length. It can contain
      * letters, numbers, periods (.), colons (:), and white space (including spaces and
      * tabs). It can optionally end with an asterisk (*) so that only the start of the
-     * string needs to be an exact match.</p>
+     * string needs to be an exact match.</p> <p>The string can be between 1 and 512
+     * characters in length.</p>
      */
     inline void SetOnReason(Aws::String&& value) { m_onReasonHasBeenSet = true; m_onReason = std::move(value); }
 
@@ -154,7 +166,8 @@ namespace Model
      * a job. The pattern can be up to 512 characters in length. It can contain
      * letters, numbers, periods (.), colons (:), and white space (including spaces and
      * tabs). It can optionally end with an asterisk (*) so that only the start of the
-     * string needs to be an exact match.</p>
+     * string needs to be an exact match.</p> <p>The string can be between 1 and 512
+     * characters in length.</p>
      */
     inline void SetOnReason(const char* value) { m_onReasonHasBeenSet = true; m_onReason.assign(value); }
 
@@ -163,7 +176,8 @@ namespace Model
      * a job. The pattern can be up to 512 characters in length. It can contain
      * letters, numbers, periods (.), colons (:), and white space (including spaces and
      * tabs). It can optionally end with an asterisk (*) so that only the start of the
-     * string needs to be an exact match.</p>
+     * string needs to be an exact match.</p> <p>The string can be between 1 and 512
+     * characters in length.</p>
      */
     inline EvaluateOnExit& WithOnReason(const Aws::String& value) { SetOnReason(value); return *this;}
 
@@ -172,7 +186,8 @@ namespace Model
      * a job. The pattern can be up to 512 characters in length. It can contain
      * letters, numbers, periods (.), colons (:), and white space (including spaces and
      * tabs). It can optionally end with an asterisk (*) so that only the start of the
-     * string needs to be an exact match.</p>
+     * string needs to be an exact match.</p> <p>The string can be between 1 and 512
+     * characters in length.</p>
      */
     inline EvaluateOnExit& WithOnReason(Aws::String&& value) { SetOnReason(std::move(value)); return *this;}
 
@@ -181,7 +196,8 @@ namespace Model
      * a job. The pattern can be up to 512 characters in length. It can contain
      * letters, numbers, periods (.), colons (:), and white space (including spaces and
      * tabs). It can optionally end with an asterisk (*) so that only the start of the
-     * string needs to be an exact match.</p>
+     * string needs to be an exact match.</p> <p>The string can be between 1 and 512
+     * characters in length.</p>
      */
     inline EvaluateOnExit& WithOnReason(const char* value) { SetOnReason(value); return *this;}
 
@@ -191,7 +207,7 @@ namespace Model
      * <code>ExitCode</code> returned for a job. The pattern can be up to 512
      * characters in length. It can contain only numbers, and can optionally end with
      * an asterisk (*) so that only the start of the string needs to be an exact
-     * match.</p>
+     * match.</p> <p>The string can be between 1 and 512 characters in length.</p>
      */
     inline const Aws::String& GetOnExitCode() const{ return m_onExitCode; }
 
@@ -200,7 +216,7 @@ namespace Model
      * <code>ExitCode</code> returned for a job. The pattern can be up to 512
      * characters in length. It can contain only numbers, and can optionally end with
      * an asterisk (*) so that only the start of the string needs to be an exact
-     * match.</p>
+     * match.</p> <p>The string can be between 1 and 512 characters in length.</p>
      */
     inline bool OnExitCodeHasBeenSet() const { return m_onExitCodeHasBeenSet; }
 
@@ -209,7 +225,7 @@ namespace Model
      * <code>ExitCode</code> returned for a job. The pattern can be up to 512
      * characters in length. It can contain only numbers, and can optionally end with
      * an asterisk (*) so that only the start of the string needs to be an exact
-     * match.</p>
+     * match.</p> <p>The string can be between 1 and 512 characters in length.</p>
      */
     inline void SetOnExitCode(const Aws::String& value) { m_onExitCodeHasBeenSet = true; m_onExitCode = value; }
 
@@ -218,7 +234,7 @@ namespace Model
      * <code>ExitCode</code> returned for a job. The pattern can be up to 512
      * characters in length. It can contain only numbers, and can optionally end with
      * an asterisk (*) so that only the start of the string needs to be an exact
-     * match.</p>
+     * match.</p> <p>The string can be between 1 and 512 characters in length.</p>
      */
     inline void SetOnExitCode(Aws::String&& value) { m_onExitCodeHasBeenSet = true; m_onExitCode = std::move(value); }
 
@@ -227,7 +243,7 @@ namespace Model
      * <code>ExitCode</code> returned for a job. The pattern can be up to 512
      * characters in length. It can contain only numbers, and can optionally end with
      * an asterisk (*) so that only the start of the string needs to be an exact
-     * match.</p>
+     * match.</p> <p>The string can be between 1 and 512 characters in length.</p>
      */
     inline void SetOnExitCode(const char* value) { m_onExitCodeHasBeenSet = true; m_onExitCode.assign(value); }
 
@@ -236,7 +252,7 @@ namespace Model
      * <code>ExitCode</code> returned for a job. The pattern can be up to 512
      * characters in length. It can contain only numbers, and can optionally end with
      * an asterisk (*) so that only the start of the string needs to be an exact
-     * match.</p>
+     * match.</p> <p>The string can be between 1 and 512 characters in length.</p>
      */
     inline EvaluateOnExit& WithOnExitCode(const Aws::String& value) { SetOnExitCode(value); return *this;}
 
@@ -245,7 +261,7 @@ namespace Model
      * <code>ExitCode</code> returned for a job. The pattern can be up to 512
      * characters in length. It can contain only numbers, and can optionally end with
      * an asterisk (*) so that only the start of the string needs to be an exact
-     * match.</p>
+     * match.</p> <p>The string can be between 1 and 512 characters in length.</p>
      */
     inline EvaluateOnExit& WithOnExitCode(Aws::String&& value) { SetOnExitCode(std::move(value)); return *this;}
 
@@ -254,7 +270,7 @@ namespace Model
      * <code>ExitCode</code> returned for a job. The pattern can be up to 512
      * characters in length. It can contain only numbers, and can optionally end with
      * an asterisk (*) so that only the start of the string needs to be an exact
-     * match.</p>
+     * match.</p> <p>The string can be between 1 and 512 characters in length.</p>
      */
     inline EvaluateOnExit& WithOnExitCode(const char* value) { SetOnExitCode(value); return *this;}
 

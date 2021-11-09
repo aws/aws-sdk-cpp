@@ -185,6 +185,43 @@ namespace Model
 
 
     /**
+     * <p>The maximum number of vCPUs expected to be used for an unmanaged compute
+     * environment. This parameter should not be specified for a managed compute
+     * environment. This parameter is only used for fair share scheduling to reserve
+     * vCPU capacity for new share identifiers. If this parameter is not provided for a
+     * fair share job queue, no vCPU capacity will be reserved.</p>
+     */
+    inline int GetUnmanagedvCpus() const{ return m_unmanagedvCpus; }
+
+    /**
+     * <p>The maximum number of vCPUs expected to be used for an unmanaged compute
+     * environment. This parameter should not be specified for a managed compute
+     * environment. This parameter is only used for fair share scheduling to reserve
+     * vCPU capacity for new share identifiers. If this parameter is not provided for a
+     * fair share job queue, no vCPU capacity will be reserved.</p>
+     */
+    inline bool UnmanagedvCpusHasBeenSet() const { return m_unmanagedvCpusHasBeenSet; }
+
+    /**
+     * <p>The maximum number of vCPUs expected to be used for an unmanaged compute
+     * environment. This parameter should not be specified for a managed compute
+     * environment. This parameter is only used for fair share scheduling to reserve
+     * vCPU capacity for new share identifiers. If this parameter is not provided for a
+     * fair share job queue, no vCPU capacity will be reserved.</p>
+     */
+    inline void SetUnmanagedvCpus(int value) { m_unmanagedvCpusHasBeenSet = true; m_unmanagedvCpus = value; }
+
+    /**
+     * <p>The maximum number of vCPUs expected to be used for an unmanaged compute
+     * environment. This parameter should not be specified for a managed compute
+     * environment. This parameter is only used for fair share scheduling to reserve
+     * vCPU capacity for new share identifiers. If this parameter is not provided for a
+     * fair share job queue, no vCPU capacity will be reserved.</p>
+     */
+    inline UpdateComputeEnvironmentRequest& WithUnmanagedvCpus(int value) { SetUnmanagedvCpus(value); return *this;}
+
+
+    /**
      * <p>Details of the compute resources managed by the compute environment. Required
      * for a managed compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
@@ -400,6 +437,9 @@ namespace Model
 
     CEState m_state;
     bool m_stateHasBeenSet;
+
+    int m_unmanagedvCpus;
+    bool m_unmanagedvCpusHasBeenSet;
 
     ComputeResourceUpdate m_computeResources;
     bool m_computeResourcesHasBeenSet;

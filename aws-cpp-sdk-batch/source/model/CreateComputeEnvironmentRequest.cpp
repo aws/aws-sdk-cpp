@@ -18,6 +18,8 @@ CreateComputeEnvironmentRequest::CreateComputeEnvironmentRequest() :
     m_typeHasBeenSet(false),
     m_state(CEState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_unmanagedvCpus(0),
+    m_unmanagedvCpusHasBeenSet(false),
     m_computeResourcesHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -42,6 +44,12 @@ Aws::String CreateComputeEnvironmentRequest::SerializePayload() const
   if(m_stateHasBeenSet)
   {
    payload.WithString("state", CEStateMapper::GetNameForCEState(m_state));
+  }
+
+  if(m_unmanagedvCpusHasBeenSet)
+  {
+   payload.WithInteger("unmanagedvCpus", m_unmanagedvCpus);
+
   }
 
   if(m_computeResourcesHasBeenSet)

@@ -25,6 +25,9 @@ JobDetail::JobDetail() :
     m_jobQueueHasBeenSet(false),
     m_status(JobStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_shareIdentifierHasBeenSet(false),
+    m_schedulingPriority(0),
+    m_schedulingPriorityHasBeenSet(false),
     m_attemptsHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
     m_createdAt(0),
@@ -56,6 +59,9 @@ JobDetail::JobDetail(JsonView jsonValue) :
     m_jobQueueHasBeenSet(false),
     m_status(JobStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_shareIdentifierHasBeenSet(false),
+    m_schedulingPriority(0),
+    m_schedulingPriorityHasBeenSet(false),
     m_attemptsHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
     m_createdAt(0),
@@ -116,6 +122,20 @@ JobDetail& JobDetail::operator =(JsonView jsonValue)
     m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("status"));
 
     m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("shareIdentifier"))
+  {
+    m_shareIdentifier = jsonValue.GetString("shareIdentifier");
+
+    m_shareIdentifierHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("schedulingPriority"))
+  {
+    m_schedulingPriority = jsonValue.GetInteger("schedulingPriority");
+
+    m_schedulingPriorityHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("attempts"))
@@ -286,6 +306,18 @@ JsonValue JobDetail::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", JobStatusMapper::GetNameForJobStatus(m_status));
+  }
+
+  if(m_shareIdentifierHasBeenSet)
+  {
+   payload.WithString("shareIdentifier", m_shareIdentifier);
+
+  }
+
+  if(m_schedulingPriorityHasBeenSet)
+  {
+   payload.WithInteger("schedulingPriority", m_schedulingPriority);
+
   }
 
   if(m_attemptsHasBeenSet)

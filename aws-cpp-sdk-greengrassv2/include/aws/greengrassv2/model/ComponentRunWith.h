@@ -44,104 +44,112 @@ namespace Model
 
 
     /**
-     * <p>The POSIX system user and (optional) group to use to run this component.
-     * Specify the user and group separated by a colon (<code>:</code>) in the
-     * following format: <code>user:group</code>. The group is optional. If you don't
-     * specify a group, the IoT Greengrass Core software uses the primary user for the
-     * group.</p> <p>If you omit this parameter, the IoT Greengrass Core software uses
-     * the default system user and group that you configure on the Greengrass nucleus
-     * component. For more information, see <a
+     * <p>The POSIX system user and, optionally, group to use to run this component on
+     * Linux core devices. The user, and group if specified, must exist on each Linux
+     * core device. Specify the user and group separated by a colon (<code>:</code>) in
+     * the following format: <code>user:group</code>. The group is optional. If you
+     * don't specify a group, the IoT Greengrass Core software uses the primary user
+     * for the group.</p> <p>If you omit this parameter, the IoT Greengrass Core
+     * software uses the default system user and group that you configure on the
+     * Greengrass nucleus component. For more information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure
      * the user and group that run components</a>.</p>
      */
     inline const Aws::String& GetPosixUser() const{ return m_posixUser; }
 
     /**
-     * <p>The POSIX system user and (optional) group to use to run this component.
-     * Specify the user and group separated by a colon (<code>:</code>) in the
-     * following format: <code>user:group</code>. The group is optional. If you don't
-     * specify a group, the IoT Greengrass Core software uses the primary user for the
-     * group.</p> <p>If you omit this parameter, the IoT Greengrass Core software uses
-     * the default system user and group that you configure on the Greengrass nucleus
-     * component. For more information, see <a
+     * <p>The POSIX system user and, optionally, group to use to run this component on
+     * Linux core devices. The user, and group if specified, must exist on each Linux
+     * core device. Specify the user and group separated by a colon (<code>:</code>) in
+     * the following format: <code>user:group</code>. The group is optional. If you
+     * don't specify a group, the IoT Greengrass Core software uses the primary user
+     * for the group.</p> <p>If you omit this parameter, the IoT Greengrass Core
+     * software uses the default system user and group that you configure on the
+     * Greengrass nucleus component. For more information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure
      * the user and group that run components</a>.</p>
      */
     inline bool PosixUserHasBeenSet() const { return m_posixUserHasBeenSet; }
 
     /**
-     * <p>The POSIX system user and (optional) group to use to run this component.
-     * Specify the user and group separated by a colon (<code>:</code>) in the
-     * following format: <code>user:group</code>. The group is optional. If you don't
-     * specify a group, the IoT Greengrass Core software uses the primary user for the
-     * group.</p> <p>If you omit this parameter, the IoT Greengrass Core software uses
-     * the default system user and group that you configure on the Greengrass nucleus
-     * component. For more information, see <a
+     * <p>The POSIX system user and, optionally, group to use to run this component on
+     * Linux core devices. The user, and group if specified, must exist on each Linux
+     * core device. Specify the user and group separated by a colon (<code>:</code>) in
+     * the following format: <code>user:group</code>. The group is optional. If you
+     * don't specify a group, the IoT Greengrass Core software uses the primary user
+     * for the group.</p> <p>If you omit this parameter, the IoT Greengrass Core
+     * software uses the default system user and group that you configure on the
+     * Greengrass nucleus component. For more information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure
      * the user and group that run components</a>.</p>
      */
     inline void SetPosixUser(const Aws::String& value) { m_posixUserHasBeenSet = true; m_posixUser = value; }
 
     /**
-     * <p>The POSIX system user and (optional) group to use to run this component.
-     * Specify the user and group separated by a colon (<code>:</code>) in the
-     * following format: <code>user:group</code>. The group is optional. If you don't
-     * specify a group, the IoT Greengrass Core software uses the primary user for the
-     * group.</p> <p>If you omit this parameter, the IoT Greengrass Core software uses
-     * the default system user and group that you configure on the Greengrass nucleus
-     * component. For more information, see <a
+     * <p>The POSIX system user and, optionally, group to use to run this component on
+     * Linux core devices. The user, and group if specified, must exist on each Linux
+     * core device. Specify the user and group separated by a colon (<code>:</code>) in
+     * the following format: <code>user:group</code>. The group is optional. If you
+     * don't specify a group, the IoT Greengrass Core software uses the primary user
+     * for the group.</p> <p>If you omit this parameter, the IoT Greengrass Core
+     * software uses the default system user and group that you configure on the
+     * Greengrass nucleus component. For more information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure
      * the user and group that run components</a>.</p>
      */
     inline void SetPosixUser(Aws::String&& value) { m_posixUserHasBeenSet = true; m_posixUser = std::move(value); }
 
     /**
-     * <p>The POSIX system user and (optional) group to use to run this component.
-     * Specify the user and group separated by a colon (<code>:</code>) in the
-     * following format: <code>user:group</code>. The group is optional. If you don't
-     * specify a group, the IoT Greengrass Core software uses the primary user for the
-     * group.</p> <p>If you omit this parameter, the IoT Greengrass Core software uses
-     * the default system user and group that you configure on the Greengrass nucleus
-     * component. For more information, see <a
+     * <p>The POSIX system user and, optionally, group to use to run this component on
+     * Linux core devices. The user, and group if specified, must exist on each Linux
+     * core device. Specify the user and group separated by a colon (<code>:</code>) in
+     * the following format: <code>user:group</code>. The group is optional. If you
+     * don't specify a group, the IoT Greengrass Core software uses the primary user
+     * for the group.</p> <p>If you omit this parameter, the IoT Greengrass Core
+     * software uses the default system user and group that you configure on the
+     * Greengrass nucleus component. For more information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure
      * the user and group that run components</a>.</p>
      */
     inline void SetPosixUser(const char* value) { m_posixUserHasBeenSet = true; m_posixUser.assign(value); }
 
     /**
-     * <p>The POSIX system user and (optional) group to use to run this component.
-     * Specify the user and group separated by a colon (<code>:</code>) in the
-     * following format: <code>user:group</code>. The group is optional. If you don't
-     * specify a group, the IoT Greengrass Core software uses the primary user for the
-     * group.</p> <p>If you omit this parameter, the IoT Greengrass Core software uses
-     * the default system user and group that you configure on the Greengrass nucleus
-     * component. For more information, see <a
+     * <p>The POSIX system user and, optionally, group to use to run this component on
+     * Linux core devices. The user, and group if specified, must exist on each Linux
+     * core device. Specify the user and group separated by a colon (<code>:</code>) in
+     * the following format: <code>user:group</code>. The group is optional. If you
+     * don't specify a group, the IoT Greengrass Core software uses the primary user
+     * for the group.</p> <p>If you omit this parameter, the IoT Greengrass Core
+     * software uses the default system user and group that you configure on the
+     * Greengrass nucleus component. For more information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure
      * the user and group that run components</a>.</p>
      */
     inline ComponentRunWith& WithPosixUser(const Aws::String& value) { SetPosixUser(value); return *this;}
 
     /**
-     * <p>The POSIX system user and (optional) group to use to run this component.
-     * Specify the user and group separated by a colon (<code>:</code>) in the
-     * following format: <code>user:group</code>. The group is optional. If you don't
-     * specify a group, the IoT Greengrass Core software uses the primary user for the
-     * group.</p> <p>If you omit this parameter, the IoT Greengrass Core software uses
-     * the default system user and group that you configure on the Greengrass nucleus
-     * component. For more information, see <a
+     * <p>The POSIX system user and, optionally, group to use to run this component on
+     * Linux core devices. The user, and group if specified, must exist on each Linux
+     * core device. Specify the user and group separated by a colon (<code>:</code>) in
+     * the following format: <code>user:group</code>. The group is optional. If you
+     * don't specify a group, the IoT Greengrass Core software uses the primary user
+     * for the group.</p> <p>If you omit this parameter, the IoT Greengrass Core
+     * software uses the default system user and group that you configure on the
+     * Greengrass nucleus component. For more information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure
      * the user and group that run components</a>.</p>
      */
     inline ComponentRunWith& WithPosixUser(Aws::String&& value) { SetPosixUser(std::move(value)); return *this;}
 
     /**
-     * <p>The POSIX system user and (optional) group to use to run this component.
-     * Specify the user and group separated by a colon (<code>:</code>) in the
-     * following format: <code>user:group</code>. The group is optional. If you don't
-     * specify a group, the IoT Greengrass Core software uses the primary user for the
-     * group.</p> <p>If you omit this parameter, the IoT Greengrass Core software uses
-     * the default system user and group that you configure on the Greengrass nucleus
-     * component. For more information, see <a
+     * <p>The POSIX system user and, optionally, group to use to run this component on
+     * Linux core devices. The user, and group if specified, must exist on each Linux
+     * core device. Specify the user and group separated by a colon (<code>:</code>) in
+     * the following format: <code>user:group</code>. The group is optional. If you
+     * don't specify a group, the IoT Greengrass Core software uses the primary user
+     * for the group.</p> <p>If you omit this parameter, the IoT Greengrass Core
+     * software uses the default system user and group that you configure on the
+     * Greengrass nucleus component. For more information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure
      * the user and group that run components</a>.</p>
      */
@@ -150,9 +158,10 @@ namespace Model
 
     /**
      * <p>The system resource limits to apply to this component's process on the core
-     * device.</p> <p>If you omit this parameter, the IoT Greengrass Core software uses
-     * the default system resource limits that you configure on the Greengrass nucleus
-     * component. For more information, see <a
+     * device. IoT Greengrass currently supports this feature on only Linux core
+     * devices.</p> <p>If you omit this parameter, the IoT Greengrass Core software
+     * uses the default system resource limits that you configure on the Greengrass
+     * nucleus component. For more information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure
      * system resource limits for components</a>.</p>
      */
@@ -160,9 +169,10 @@ namespace Model
 
     /**
      * <p>The system resource limits to apply to this component's process on the core
-     * device.</p> <p>If you omit this parameter, the IoT Greengrass Core software uses
-     * the default system resource limits that you configure on the Greengrass nucleus
-     * component. For more information, see <a
+     * device. IoT Greengrass currently supports this feature on only Linux core
+     * devices.</p> <p>If you omit this parameter, the IoT Greengrass Core software
+     * uses the default system resource limits that you configure on the Greengrass
+     * nucleus component. For more information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure
      * system resource limits for components</a>.</p>
      */
@@ -170,9 +180,10 @@ namespace Model
 
     /**
      * <p>The system resource limits to apply to this component's process on the core
-     * device.</p> <p>If you omit this parameter, the IoT Greengrass Core software uses
-     * the default system resource limits that you configure on the Greengrass nucleus
-     * component. For more information, see <a
+     * device. IoT Greengrass currently supports this feature on only Linux core
+     * devices.</p> <p>If you omit this parameter, the IoT Greengrass Core software
+     * uses the default system resource limits that you configure on the Greengrass
+     * nucleus component. For more information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure
      * system resource limits for components</a>.</p>
      */
@@ -180,9 +191,10 @@ namespace Model
 
     /**
      * <p>The system resource limits to apply to this component's process on the core
-     * device.</p> <p>If you omit this parameter, the IoT Greengrass Core software uses
-     * the default system resource limits that you configure on the Greengrass nucleus
-     * component. For more information, see <a
+     * device. IoT Greengrass currently supports this feature on only Linux core
+     * devices.</p> <p>If you omit this parameter, the IoT Greengrass Core software
+     * uses the default system resource limits that you configure on the Greengrass
+     * nucleus component. For more information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure
      * system resource limits for components</a>.</p>
      */
@@ -190,9 +202,10 @@ namespace Model
 
     /**
      * <p>The system resource limits to apply to this component's process on the core
-     * device.</p> <p>If you omit this parameter, the IoT Greengrass Core software uses
-     * the default system resource limits that you configure on the Greengrass nucleus
-     * component. For more information, see <a
+     * device. IoT Greengrass currently supports this feature on only Linux core
+     * devices.</p> <p>If you omit this parameter, the IoT Greengrass Core software
+     * uses the default system resource limits that you configure on the Greengrass
+     * nucleus component. For more information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure
      * system resource limits for components</a>.</p>
      */
@@ -200,13 +213,111 @@ namespace Model
 
     /**
      * <p>The system resource limits to apply to this component's process on the core
-     * device.</p> <p>If you omit this parameter, the IoT Greengrass Core software uses
-     * the default system resource limits that you configure on the Greengrass nucleus
-     * component. For more information, see <a
+     * device. IoT Greengrass currently supports this feature on only Linux core
+     * devices.</p> <p>If you omit this parameter, the IoT Greengrass Core software
+     * uses the default system resource limits that you configure on the Greengrass
+     * nucleus component. For more information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure
      * system resource limits for components</a>.</p>
      */
     inline ComponentRunWith& WithSystemResourceLimits(SystemResourceLimits&& value) { SetSystemResourceLimits(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Windows user to use to run this component on Windows core devices. The
+     * user must exist on each Windows core device, and its name and password must be
+     * in the LocalSystem account's Credentials Manager instance.</p> <p>If you omit
+     * this parameter, the IoT Greengrass Core software uses the default Windows user
+     * that you configure on the Greengrass nucleus component. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure
+     * the user and group that run components</a>.</p>
+     */
+    inline const Aws::String& GetWindowsUser() const{ return m_windowsUser; }
+
+    /**
+     * <p>The Windows user to use to run this component on Windows core devices. The
+     * user must exist on each Windows core device, and its name and password must be
+     * in the LocalSystem account's Credentials Manager instance.</p> <p>If you omit
+     * this parameter, the IoT Greengrass Core software uses the default Windows user
+     * that you configure on the Greengrass nucleus component. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure
+     * the user and group that run components</a>.</p>
+     */
+    inline bool WindowsUserHasBeenSet() const { return m_windowsUserHasBeenSet; }
+
+    /**
+     * <p>The Windows user to use to run this component on Windows core devices. The
+     * user must exist on each Windows core device, and its name and password must be
+     * in the LocalSystem account's Credentials Manager instance.</p> <p>If you omit
+     * this parameter, the IoT Greengrass Core software uses the default Windows user
+     * that you configure on the Greengrass nucleus component. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure
+     * the user and group that run components</a>.</p>
+     */
+    inline void SetWindowsUser(const Aws::String& value) { m_windowsUserHasBeenSet = true; m_windowsUser = value; }
+
+    /**
+     * <p>The Windows user to use to run this component on Windows core devices. The
+     * user must exist on each Windows core device, and its name and password must be
+     * in the LocalSystem account's Credentials Manager instance.</p> <p>If you omit
+     * this parameter, the IoT Greengrass Core software uses the default Windows user
+     * that you configure on the Greengrass nucleus component. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure
+     * the user and group that run components</a>.</p>
+     */
+    inline void SetWindowsUser(Aws::String&& value) { m_windowsUserHasBeenSet = true; m_windowsUser = std::move(value); }
+
+    /**
+     * <p>The Windows user to use to run this component on Windows core devices. The
+     * user must exist on each Windows core device, and its name and password must be
+     * in the LocalSystem account's Credentials Manager instance.</p> <p>If you omit
+     * this parameter, the IoT Greengrass Core software uses the default Windows user
+     * that you configure on the Greengrass nucleus component. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure
+     * the user and group that run components</a>.</p>
+     */
+    inline void SetWindowsUser(const char* value) { m_windowsUserHasBeenSet = true; m_windowsUser.assign(value); }
+
+    /**
+     * <p>The Windows user to use to run this component on Windows core devices. The
+     * user must exist on each Windows core device, and its name and password must be
+     * in the LocalSystem account's Credentials Manager instance.</p> <p>If you omit
+     * this parameter, the IoT Greengrass Core software uses the default Windows user
+     * that you configure on the Greengrass nucleus component. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure
+     * the user and group that run components</a>.</p>
+     */
+    inline ComponentRunWith& WithWindowsUser(const Aws::String& value) { SetWindowsUser(value); return *this;}
+
+    /**
+     * <p>The Windows user to use to run this component on Windows core devices. The
+     * user must exist on each Windows core device, and its name and password must be
+     * in the LocalSystem account's Credentials Manager instance.</p> <p>If you omit
+     * this parameter, the IoT Greengrass Core software uses the default Windows user
+     * that you configure on the Greengrass nucleus component. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure
+     * the user and group that run components</a>.</p>
+     */
+    inline ComponentRunWith& WithWindowsUser(Aws::String&& value) { SetWindowsUser(std::move(value)); return *this;}
+
+    /**
+     * <p>The Windows user to use to run this component on Windows core devices. The
+     * user must exist on each Windows core device, and its name and password must be
+     * in the LocalSystem account's Credentials Manager instance.</p> <p>If you omit
+     * this parameter, the IoT Greengrass Core software uses the default Windows user
+     * that you configure on the Greengrass nucleus component. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure
+     * the user and group that run components</a>.</p>
+     */
+    inline ComponentRunWith& WithWindowsUser(const char* value) { SetWindowsUser(value); return *this;}
 
   private:
 
@@ -215,6 +326,9 @@ namespace Model
 
     SystemResourceLimits m_systemResourceLimits;
     bool m_systemResourceLimitsHasBeenSet;
+
+    Aws::String m_windowsUser;
+    bool m_windowsUserHasBeenSet;
   };
 
 } // namespace Model

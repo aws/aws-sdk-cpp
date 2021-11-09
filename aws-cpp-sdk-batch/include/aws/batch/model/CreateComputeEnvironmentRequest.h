@@ -236,6 +236,47 @@ namespace Model
 
 
     /**
+     * <p>The maximum number of vCPUs for an unmanaged compute environment. This
+     * parameter is only used for fair share scheduling to reserve vCPU capacity for
+     * new share identifiers. If this parameter is not provided for a fair share job
+     * queue, no vCPU capacity will be reserved.</p>  <p>This parameter is only
+     * supported when the <code>type</code> parameter is set to
+     * <code>UNMANAGED</code>/</p> 
+     */
+    inline int GetUnmanagedvCpus() const{ return m_unmanagedvCpus; }
+
+    /**
+     * <p>The maximum number of vCPUs for an unmanaged compute environment. This
+     * parameter is only used for fair share scheduling to reserve vCPU capacity for
+     * new share identifiers. If this parameter is not provided for a fair share job
+     * queue, no vCPU capacity will be reserved.</p>  <p>This parameter is only
+     * supported when the <code>type</code> parameter is set to
+     * <code>UNMANAGED</code>/</p> 
+     */
+    inline bool UnmanagedvCpusHasBeenSet() const { return m_unmanagedvCpusHasBeenSet; }
+
+    /**
+     * <p>The maximum number of vCPUs for an unmanaged compute environment. This
+     * parameter is only used for fair share scheduling to reserve vCPU capacity for
+     * new share identifiers. If this parameter is not provided for a fair share job
+     * queue, no vCPU capacity will be reserved.</p>  <p>This parameter is only
+     * supported when the <code>type</code> parameter is set to
+     * <code>UNMANAGED</code>/</p> 
+     */
+    inline void SetUnmanagedvCpus(int value) { m_unmanagedvCpusHasBeenSet = true; m_unmanagedvCpus = value; }
+
+    /**
+     * <p>The maximum number of vCPUs for an unmanaged compute environment. This
+     * parameter is only used for fair share scheduling to reserve vCPU capacity for
+     * new share identifiers. If this parameter is not provided for a fair share job
+     * queue, no vCPU capacity will be reserved.</p>  <p>This parameter is only
+     * supported when the <code>type</code> parameter is set to
+     * <code>UNMANAGED</code>/</p> 
+     */
+    inline CreateComputeEnvironmentRequest& WithUnmanagedvCpus(int value) { SetUnmanagedvCpus(value); return *this;}
+
+
+    /**
      * <p>Details about the compute resources managed by the compute environment. This
      * parameter is required for managed compute environments. For more information,
      * see <a
@@ -704,6 +745,9 @@ namespace Model
 
     CEState m_state;
     bool m_stateHasBeenSet;
+
+    int m_unmanagedvCpus;
+    bool m_unmanagedvCpusHasBeenSet;
 
     ComputeResource m_computeResources;
     bool m_computeResourcesHasBeenSet;

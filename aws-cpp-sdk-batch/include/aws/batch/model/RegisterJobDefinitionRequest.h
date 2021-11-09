@@ -260,6 +260,43 @@ namespace Model
 
 
     /**
+     * <p>The scheduling priority for jobs that are submitted with this job definition.
+     * This will only affect jobs in job queues with a fair share policy. Jobs with a
+     * higher scheduling priority will be scheduled before jobs with a lower scheduling
+     * priority.</p> <p>The minimum supported value is 0 and the maximum supported
+     * value is 9999.</p>
+     */
+    inline int GetSchedulingPriority() const{ return m_schedulingPriority; }
+
+    /**
+     * <p>The scheduling priority for jobs that are submitted with this job definition.
+     * This will only affect jobs in job queues with a fair share policy. Jobs with a
+     * higher scheduling priority will be scheduled before jobs with a lower scheduling
+     * priority.</p> <p>The minimum supported value is 0 and the maximum supported
+     * value is 9999.</p>
+     */
+    inline bool SchedulingPriorityHasBeenSet() const { return m_schedulingPriorityHasBeenSet; }
+
+    /**
+     * <p>The scheduling priority for jobs that are submitted with this job definition.
+     * This will only affect jobs in job queues with a fair share policy. Jobs with a
+     * higher scheduling priority will be scheduled before jobs with a lower scheduling
+     * priority.</p> <p>The minimum supported value is 0 and the maximum supported
+     * value is 9999.</p>
+     */
+    inline void SetSchedulingPriority(int value) { m_schedulingPriorityHasBeenSet = true; m_schedulingPriority = value; }
+
+    /**
+     * <p>The scheduling priority for jobs that are submitted with this job definition.
+     * This will only affect jobs in job queues with a fair share policy. Jobs with a
+     * higher scheduling priority will be scheduled before jobs with a lower scheduling
+     * priority.</p> <p>The minimum supported value is 0 and the maximum supported
+     * value is 9999.</p>
+     */
+    inline RegisterJobDefinitionRequest& WithSchedulingPriority(int value) { SetSchedulingPriority(value); return *this;}
+
+
+    /**
      * <p>An object with various properties specific to single-node container-based
      * jobs. If the job definition's <code>type</code> parameter is
      * <code>container</code>, then you must specify either
@@ -758,6 +795,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
     bool m_parametersHasBeenSet;
+
+    int m_schedulingPriority;
+    bool m_schedulingPriorityHasBeenSet;
 
     ContainerProperties m_containerProperties;
     bool m_containerPropertiesHasBeenSet;

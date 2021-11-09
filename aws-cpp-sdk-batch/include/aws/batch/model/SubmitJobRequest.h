@@ -151,6 +151,84 @@ namespace Model
 
 
     /**
+     * <p>The share identifier for the job.</p>
+     */
+    inline const Aws::String& GetShareIdentifier() const{ return m_shareIdentifier; }
+
+    /**
+     * <p>The share identifier for the job.</p>
+     */
+    inline bool ShareIdentifierHasBeenSet() const { return m_shareIdentifierHasBeenSet; }
+
+    /**
+     * <p>The share identifier for the job.</p>
+     */
+    inline void SetShareIdentifier(const Aws::String& value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier = value; }
+
+    /**
+     * <p>The share identifier for the job.</p>
+     */
+    inline void SetShareIdentifier(Aws::String&& value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier = std::move(value); }
+
+    /**
+     * <p>The share identifier for the job.</p>
+     */
+    inline void SetShareIdentifier(const char* value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier.assign(value); }
+
+    /**
+     * <p>The share identifier for the job.</p>
+     */
+    inline SubmitJobRequest& WithShareIdentifier(const Aws::String& value) { SetShareIdentifier(value); return *this;}
+
+    /**
+     * <p>The share identifier for the job.</p>
+     */
+    inline SubmitJobRequest& WithShareIdentifier(Aws::String&& value) { SetShareIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>The share identifier for the job.</p>
+     */
+    inline SubmitJobRequest& WithShareIdentifier(const char* value) { SetShareIdentifier(value); return *this;}
+
+
+    /**
+     * <p>The scheduling priority for the job. This will only affect jobs in job queues
+     * with a fair share policy. Jobs with a higher scheduling priority will be
+     * scheduled before jobs with a lower scheduling priority. This will override any
+     * scheduling priority in the job definition.</p> <p>The minimum supported value is
+     * 0 and the maximum supported value is 9999.</p>
+     */
+    inline int GetSchedulingPriorityOverride() const{ return m_schedulingPriorityOverride; }
+
+    /**
+     * <p>The scheduling priority for the job. This will only affect jobs in job queues
+     * with a fair share policy. Jobs with a higher scheduling priority will be
+     * scheduled before jobs with a lower scheduling priority. This will override any
+     * scheduling priority in the job definition.</p> <p>The minimum supported value is
+     * 0 and the maximum supported value is 9999.</p>
+     */
+    inline bool SchedulingPriorityOverrideHasBeenSet() const { return m_schedulingPriorityOverrideHasBeenSet; }
+
+    /**
+     * <p>The scheduling priority for the job. This will only affect jobs in job queues
+     * with a fair share policy. Jobs with a higher scheduling priority will be
+     * scheduled before jobs with a lower scheduling priority. This will override any
+     * scheduling priority in the job definition.</p> <p>The minimum supported value is
+     * 0 and the maximum supported value is 9999.</p>
+     */
+    inline void SetSchedulingPriorityOverride(int value) { m_schedulingPriorityOverrideHasBeenSet = true; m_schedulingPriorityOverride = value; }
+
+    /**
+     * <p>The scheduling priority for the job. This will only affect jobs in job queues
+     * with a fair share policy. Jobs with a higher scheduling priority will be
+     * scheduled before jobs with a lower scheduling priority. This will override any
+     * scheduling priority in the job definition.</p> <p>The minimum supported value is
+     * 0 and the maximum supported value is 9999.</p>
+     */
+    inline SubmitJobRequest& WithSchedulingPriorityOverride(int value) { SetSchedulingPriorityOverride(value); return *this;}
+
+
+    /**
      * <p>The array properties for the submitted job, such as the size of the array.
      * The array size can be between 2 and 10,000. If you specify array properties for
      * a job, it becomes an array job. For more information, see <a
@@ -878,6 +956,12 @@ namespace Model
 
     Aws::String m_jobQueue;
     bool m_jobQueueHasBeenSet;
+
+    Aws::String m_shareIdentifier;
+    bool m_shareIdentifierHasBeenSet;
+
+    int m_schedulingPriorityOverride;
+    bool m_schedulingPriorityOverrideHasBeenSet;
 
     ArrayProperties m_arrayProperties;
     bool m_arrayPropertiesHasBeenSet;

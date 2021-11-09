@@ -370,7 +370,8 @@ namespace Model
          * <li> <p>Node.js 10 – <code>nodejs10.x</code> </p> </li> <li> <p>Node.js 12 –
          * <code>nodejs12.x</code> </p> </li> </ul> <p>To create a component from a Lambda
          * function, specify <code>lambdaFunction</code> when you call this operation.</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         *  <p>IoT Greengrass currently supports Lambda functions on only Linux core
+         * devices.</p>  </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/CreateComponentVersion">AWS
          * API Reference</a></p>
          */
@@ -400,7 +401,8 @@ namespace Model
          * <li> <p>Node.js 10 – <code>nodejs10.x</code> </p> </li> <li> <p>Node.js 12 –
          * <code>nodejs12.x</code> </p> </li> </ul> <p>To create a component from a Lambda
          * function, specify <code>lambdaFunction</code> when you call this operation.</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         *  <p>IoT Greengrass currently supports Lambda functions on only Linux core
+         * devices.</p>  </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/CreateComponentVersion">AWS
          * API Reference</a></p>
          *
@@ -432,7 +434,8 @@ namespace Model
          * <li> <p>Node.js 10 – <code>nodejs10.x</code> </p> </li> <li> <p>Node.js 12 –
          * <code>nodejs12.x</code> </p> </li> </ul> <p>To create a component from a Lambda
          * function, specify <code>lambdaFunction</code> when you call this operation.</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         *  <p>IoT Greengrass currently supports Lambda functions on only Linux core
+         * devices.</p>  </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/CreateComponentVersion">AWS
          * API Reference</a></p>
          *

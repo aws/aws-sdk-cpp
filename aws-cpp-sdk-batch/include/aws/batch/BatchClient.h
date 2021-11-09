@@ -14,14 +14,18 @@
 #include <aws/batch/model/CancelJobResult.h>
 #include <aws/batch/model/CreateComputeEnvironmentResult.h>
 #include <aws/batch/model/CreateJobQueueResult.h>
+#include <aws/batch/model/CreateSchedulingPolicyResult.h>
 #include <aws/batch/model/DeleteComputeEnvironmentResult.h>
 #include <aws/batch/model/DeleteJobQueueResult.h>
+#include <aws/batch/model/DeleteSchedulingPolicyResult.h>
 #include <aws/batch/model/DeregisterJobDefinitionResult.h>
 #include <aws/batch/model/DescribeComputeEnvironmentsResult.h>
 #include <aws/batch/model/DescribeJobDefinitionsResult.h>
 #include <aws/batch/model/DescribeJobQueuesResult.h>
 #include <aws/batch/model/DescribeJobsResult.h>
+#include <aws/batch/model/DescribeSchedulingPoliciesResult.h>
 #include <aws/batch/model/ListJobsResult.h>
+#include <aws/batch/model/ListSchedulingPoliciesResult.h>
 #include <aws/batch/model/ListTagsForResourceResult.h>
 #include <aws/batch/model/RegisterJobDefinitionResult.h>
 #include <aws/batch/model/SubmitJobResult.h>
@@ -30,6 +34,7 @@
 #include <aws/batch/model/UntagResourceResult.h>
 #include <aws/batch/model/UpdateComputeEnvironmentResult.h>
 #include <aws/batch/model/UpdateJobQueueResult.h>
+#include <aws/batch/model/UpdateSchedulingPolicyResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -72,14 +77,18 @@ namespace Model
         class CancelJobRequest;
         class CreateComputeEnvironmentRequest;
         class CreateJobQueueRequest;
+        class CreateSchedulingPolicyRequest;
         class DeleteComputeEnvironmentRequest;
         class DeleteJobQueueRequest;
+        class DeleteSchedulingPolicyRequest;
         class DeregisterJobDefinitionRequest;
         class DescribeComputeEnvironmentsRequest;
         class DescribeJobDefinitionsRequest;
         class DescribeJobQueuesRequest;
         class DescribeJobsRequest;
+        class DescribeSchedulingPoliciesRequest;
         class ListJobsRequest;
+        class ListSchedulingPoliciesRequest;
         class ListTagsForResourceRequest;
         class RegisterJobDefinitionRequest;
         class SubmitJobRequest;
@@ -88,18 +97,23 @@ namespace Model
         class UntagResourceRequest;
         class UpdateComputeEnvironmentRequest;
         class UpdateJobQueueRequest;
+        class UpdateSchedulingPolicyRequest;
 
         typedef Aws::Utils::Outcome<CancelJobResult, BatchError> CancelJobOutcome;
         typedef Aws::Utils::Outcome<CreateComputeEnvironmentResult, BatchError> CreateComputeEnvironmentOutcome;
         typedef Aws::Utils::Outcome<CreateJobQueueResult, BatchError> CreateJobQueueOutcome;
+        typedef Aws::Utils::Outcome<CreateSchedulingPolicyResult, BatchError> CreateSchedulingPolicyOutcome;
         typedef Aws::Utils::Outcome<DeleteComputeEnvironmentResult, BatchError> DeleteComputeEnvironmentOutcome;
         typedef Aws::Utils::Outcome<DeleteJobQueueResult, BatchError> DeleteJobQueueOutcome;
+        typedef Aws::Utils::Outcome<DeleteSchedulingPolicyResult, BatchError> DeleteSchedulingPolicyOutcome;
         typedef Aws::Utils::Outcome<DeregisterJobDefinitionResult, BatchError> DeregisterJobDefinitionOutcome;
         typedef Aws::Utils::Outcome<DescribeComputeEnvironmentsResult, BatchError> DescribeComputeEnvironmentsOutcome;
         typedef Aws::Utils::Outcome<DescribeJobDefinitionsResult, BatchError> DescribeJobDefinitionsOutcome;
         typedef Aws::Utils::Outcome<DescribeJobQueuesResult, BatchError> DescribeJobQueuesOutcome;
         typedef Aws::Utils::Outcome<DescribeJobsResult, BatchError> DescribeJobsOutcome;
+        typedef Aws::Utils::Outcome<DescribeSchedulingPoliciesResult, BatchError> DescribeSchedulingPoliciesOutcome;
         typedef Aws::Utils::Outcome<ListJobsResult, BatchError> ListJobsOutcome;
+        typedef Aws::Utils::Outcome<ListSchedulingPoliciesResult, BatchError> ListSchedulingPoliciesOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, BatchError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<RegisterJobDefinitionResult, BatchError> RegisterJobDefinitionOutcome;
         typedef Aws::Utils::Outcome<SubmitJobResult, BatchError> SubmitJobOutcome;
@@ -108,18 +122,23 @@ namespace Model
         typedef Aws::Utils::Outcome<UntagResourceResult, BatchError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateComputeEnvironmentResult, BatchError> UpdateComputeEnvironmentOutcome;
         typedef Aws::Utils::Outcome<UpdateJobQueueResult, BatchError> UpdateJobQueueOutcome;
+        typedef Aws::Utils::Outcome<UpdateSchedulingPolicyResult, BatchError> UpdateSchedulingPolicyOutcome;
 
         typedef std::future<CancelJobOutcome> CancelJobOutcomeCallable;
         typedef std::future<CreateComputeEnvironmentOutcome> CreateComputeEnvironmentOutcomeCallable;
         typedef std::future<CreateJobQueueOutcome> CreateJobQueueOutcomeCallable;
+        typedef std::future<CreateSchedulingPolicyOutcome> CreateSchedulingPolicyOutcomeCallable;
         typedef std::future<DeleteComputeEnvironmentOutcome> DeleteComputeEnvironmentOutcomeCallable;
         typedef std::future<DeleteJobQueueOutcome> DeleteJobQueueOutcomeCallable;
+        typedef std::future<DeleteSchedulingPolicyOutcome> DeleteSchedulingPolicyOutcomeCallable;
         typedef std::future<DeregisterJobDefinitionOutcome> DeregisterJobDefinitionOutcomeCallable;
         typedef std::future<DescribeComputeEnvironmentsOutcome> DescribeComputeEnvironmentsOutcomeCallable;
         typedef std::future<DescribeJobDefinitionsOutcome> DescribeJobDefinitionsOutcomeCallable;
         typedef std::future<DescribeJobQueuesOutcome> DescribeJobQueuesOutcomeCallable;
         typedef std::future<DescribeJobsOutcome> DescribeJobsOutcomeCallable;
+        typedef std::future<DescribeSchedulingPoliciesOutcome> DescribeSchedulingPoliciesOutcomeCallable;
         typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
+        typedef std::future<ListSchedulingPoliciesOutcome> ListSchedulingPoliciesOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<RegisterJobDefinitionOutcome> RegisterJobDefinitionOutcomeCallable;
         typedef std::future<SubmitJobOutcome> SubmitJobOutcomeCallable;
@@ -128,6 +147,7 @@ namespace Model
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateComputeEnvironmentOutcome> UpdateComputeEnvironmentOutcomeCallable;
         typedef std::future<UpdateJobQueueOutcome> UpdateJobQueueOutcomeCallable;
+        typedef std::future<UpdateSchedulingPolicyOutcome> UpdateSchedulingPolicyOutcomeCallable;
 } // namespace Model
 
   class BatchClient;
@@ -135,14 +155,18 @@ namespace Model
     typedef std::function<void(const BatchClient*, const Model::CancelJobRequest&, const Model::CancelJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelJobResponseReceivedHandler;
     typedef std::function<void(const BatchClient*, const Model::CreateComputeEnvironmentRequest&, const Model::CreateComputeEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateComputeEnvironmentResponseReceivedHandler;
     typedef std::function<void(const BatchClient*, const Model::CreateJobQueueRequest&, const Model::CreateJobQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateJobQueueResponseReceivedHandler;
+    typedef std::function<void(const BatchClient*, const Model::CreateSchedulingPolicyRequest&, const Model::CreateSchedulingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSchedulingPolicyResponseReceivedHandler;
     typedef std::function<void(const BatchClient*, const Model::DeleteComputeEnvironmentRequest&, const Model::DeleteComputeEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteComputeEnvironmentResponseReceivedHandler;
     typedef std::function<void(const BatchClient*, const Model::DeleteJobQueueRequest&, const Model::DeleteJobQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteJobQueueResponseReceivedHandler;
+    typedef std::function<void(const BatchClient*, const Model::DeleteSchedulingPolicyRequest&, const Model::DeleteSchedulingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSchedulingPolicyResponseReceivedHandler;
     typedef std::function<void(const BatchClient*, const Model::DeregisterJobDefinitionRequest&, const Model::DeregisterJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterJobDefinitionResponseReceivedHandler;
     typedef std::function<void(const BatchClient*, const Model::DescribeComputeEnvironmentsRequest&, const Model::DescribeComputeEnvironmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeComputeEnvironmentsResponseReceivedHandler;
     typedef std::function<void(const BatchClient*, const Model::DescribeJobDefinitionsRequest&, const Model::DescribeJobDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobDefinitionsResponseReceivedHandler;
     typedef std::function<void(const BatchClient*, const Model::DescribeJobQueuesRequest&, const Model::DescribeJobQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobQueuesResponseReceivedHandler;
     typedef std::function<void(const BatchClient*, const Model::DescribeJobsRequest&, const Model::DescribeJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobsResponseReceivedHandler;
+    typedef std::function<void(const BatchClient*, const Model::DescribeSchedulingPoliciesRequest&, const Model::DescribeSchedulingPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSchedulingPoliciesResponseReceivedHandler;
     typedef std::function<void(const BatchClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
+    typedef std::function<void(const BatchClient*, const Model::ListSchedulingPoliciesRequest&, const Model::ListSchedulingPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSchedulingPoliciesResponseReceivedHandler;
     typedef std::function<void(const BatchClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const BatchClient*, const Model::RegisterJobDefinitionRequest&, const Model::RegisterJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterJobDefinitionResponseReceivedHandler;
     typedef std::function<void(const BatchClient*, const Model::SubmitJobRequest&, const Model::SubmitJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SubmitJobResponseReceivedHandler;
@@ -151,23 +175,24 @@ namespace Model
     typedef std::function<void(const BatchClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const BatchClient*, const Model::UpdateComputeEnvironmentRequest&, const Model::UpdateComputeEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateComputeEnvironmentResponseReceivedHandler;
     typedef std::function<void(const BatchClient*, const Model::UpdateJobQueueRequest&, const Model::UpdateJobQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateJobQueueResponseReceivedHandler;
+    typedef std::function<void(const BatchClient*, const Model::UpdateSchedulingPolicyRequest&, const Model::UpdateSchedulingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSchedulingPolicyResponseReceivedHandler;
 
   /**
    * <fullname>Batch</fullname> <p>Using Batch, you can run batch computing workloads
-   * on the Cloud. Batch computing is a common means for developers, scientists, and
-   * engineers to access large amounts of compute resources. Batch uses the
-   * advantages of this computing workload to remove the undifferentiated heavy
-   * lifting of configuring and managing required infrastructure. At the same time,
-   * it also adopts a familiar batch computing software approach. Given these
-   * advantages, Batch can help you to efficiently provision resources in response to
-   * jobs submitted, thus effectively helping you to eliminate capacity constraints,
-   * reduce compute costs, and deliver your results more quickly.</p> <p>As a fully
-   * managed service, Batch can run batch computing workloads of any scale. Batch
-   * automatically provisions compute resources and optimizes workload distribution
-   * based on the quantity and scale of your specific workloads. With Batch, there's
-   * no need to install or manage batch computing software. This means that you can
-   * focus your time and energy on analyzing results and solving your specific
-   * problems. </p>
+   * on the Amazon Web Services Cloud. Batch computing is a common means for
+   * developers, scientists, and engineers to access large amounts of compute
+   * resources. Batch uses the advantages of this computing workload to remove the
+   * undifferentiated heavy lifting of configuring and managing required
+   * infrastructure. At the same time, it also adopts a familiar batch computing
+   * software approach. Given these advantages, Batch can help you to efficiently
+   * provision resources in response to jobs submitted, thus effectively helping you
+   * to eliminate capacity constraints, reduce compute costs, and deliver your
+   * results more quickly.</p> <p>As a fully managed service, Batch can run batch
+   * computing workloads of any scale. Batch automatically provisions compute
+   * resources and optimizes workload distribution based on the quantity and scale of
+   * your specific workloads. With Batch, there's no need to install or manage batch
+   * computing software. This means that you can focus your time and energy on
+   * analyzing results and solving your specific problems.</p>
    */
   class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient
   {
@@ -419,6 +444,31 @@ namespace Model
         virtual void CreateJobQueueAsync(const Model::CreateJobQueueRequest& request, const CreateJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates an Batch scheduling policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateSchedulingPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateSchedulingPolicyOutcome CreateSchedulingPolicy(const Model::CreateSchedulingPolicyRequest& request) const;
+
+        /**
+         * <p>Creates an Batch scheduling policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateSchedulingPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateSchedulingPolicyOutcomeCallable CreateSchedulingPolicyCallable(const Model::CreateSchedulingPolicyRequest& request) const;
+
+        /**
+         * <p>Creates an Batch scheduling policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateSchedulingPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateSchedulingPolicyAsync(const Model::CreateSchedulingPolicyRequest& request, const CreateSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes an Batch compute environment.</p> <p>Before you can delete a compute
          * environment, you must set its state to <code>DISABLED</code> with the
          * <a>UpdateComputeEnvironment</a> API operation and disassociate it from any job
@@ -500,6 +550,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteJobQueueAsync(const Model::DeleteJobQueueRequest& request, const DeleteJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified scheduling policy.</p> <p>You can't delete a scheduling
+         * policy that is used in any job queues.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteSchedulingPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteSchedulingPolicyOutcome DeleteSchedulingPolicy(const Model::DeleteSchedulingPolicyRequest& request) const;
+
+        /**
+         * <p>Deletes the specified scheduling policy.</p> <p>You can't delete a scheduling
+         * policy that is used in any job queues.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteSchedulingPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteSchedulingPolicyOutcomeCallable DeleteSchedulingPolicyCallable(const Model::DeleteSchedulingPolicyRequest& request) const;
+
+        /**
+         * <p>Deletes the specified scheduling policy.</p> <p>You can't delete a scheduling
+         * policy that is used in any job queues.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteSchedulingPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteSchedulingPolicyAsync(const Model::DeleteSchedulingPolicyRequest& request, const DeleteSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deregisters an Batch job definition. Job definitions are permanently deleted
@@ -648,6 +726,34 @@ namespace Model
         virtual void DescribeJobsAsync(const Model::DescribeJobsRequest& request, const DescribeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes one or more of your scheduling policies.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeSchedulingPolicies">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeSchedulingPoliciesOutcome DescribeSchedulingPolicies(const Model::DescribeSchedulingPoliciesRequest& request) const;
+
+        /**
+         * <p>Describes one or more of your scheduling policies.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeSchedulingPolicies">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeSchedulingPoliciesOutcomeCallable DescribeSchedulingPoliciesCallable(const Model::DescribeSchedulingPoliciesRequest& request) const;
+
+        /**
+         * <p>Describes one or more of your scheduling policies.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeSchedulingPolicies">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeSchedulingPoliciesAsync(const Model::DescribeSchedulingPoliciesRequest& request, const DescribeSchedulingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a list of Batch jobs.</p> <p>You must specify only one of the
          * following items:</p> <ul> <li> <p>A job queue ID to return a list of jobs in
          * that job queue</p> </li> <li> <p>A multi-node parallel job ID to return a list
@@ -691,10 +797,35 @@ namespace Model
         virtual void ListJobsAsync(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of Batch scheduling policies.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListSchedulingPolicies">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSchedulingPoliciesOutcome ListSchedulingPolicies(const Model::ListSchedulingPoliciesRequest& request) const;
+
+        /**
+         * <p>Returns a list of Batch scheduling policies.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListSchedulingPolicies">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListSchedulingPoliciesOutcomeCallable ListSchedulingPoliciesCallable(const Model::ListSchedulingPoliciesRequest& request) const;
+
+        /**
+         * <p>Returns a list of Batch scheduling policies.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListSchedulingPolicies">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListSchedulingPoliciesAsync(const Model::ListSchedulingPoliciesRequest& request, const ListSchedulingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the tags for an Batch resource. Batch resources that support tags are
-         * compute environments, jobs, job definitions, and job queues. ARNs for child jobs
-         * of array and multi-node parallel (MNP) jobs are not supported.</p><p><h3>See
-         * Also:</h3>   <a
+         * compute environments, jobs, job definitions, job queues, and scheduling
+         * policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are
+         * not supported.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -702,9 +833,9 @@ namespace Model
 
         /**
          * <p>Lists the tags for an Batch resource. Batch resources that support tags are
-         * compute environments, jobs, job definitions, and job queues. ARNs for child jobs
-         * of array and multi-node parallel (MNP) jobs are not supported.</p><p><h3>See
-         * Also:</h3>   <a
+         * compute environments, jobs, job definitions, job queues, and scheduling
+         * policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are
+         * not supported.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -714,9 +845,9 @@ namespace Model
 
         /**
          * <p>Lists the tags for an Batch resource. Batch resources that support tags are
-         * compute environments, jobs, job definitions, and job queues. ARNs for child jobs
-         * of array and multi-node parallel (MNP) jobs are not supported.</p><p><h3>See
-         * Also:</h3>   <a
+         * compute environments, jobs, job definitions, job queues, and scheduling
+         * policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are
+         * not supported.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -753,16 +884,18 @@ namespace Model
          * <p>Submits an Batch job from a job definition. Parameters that are specified
          * during <a>SubmitJob</a> override parameters defined in the job definition. vCPU
          * and memory requirements that are specified in the
-         * <code>ResourceRequirements</code> objects in the job definition are the
+         * <code>resourceRequirements</code> objects in the job definition are the
          * exception. They can't be overridden this way using the <code>memory</code> and
          * <code>vcpus</code> parameters. Rather, you must specify updates to job
          * definition parameters in a <code>ResourceRequirements</code> object that's
-         * included in the <code>containerOverrides</code> parameter.</p> 
-         * <p>Jobs that run on Fargate resources can't be guaranteed to run for more than
-         * 14 days. This is because, after 14 days, Fargate resources might become
-         * unavailable and job might be terminated.</p> <p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitJob">AWS
-         * API Reference</a></p>
+         * included in the <code>containerOverrides</code> parameter.</p>  <p>Job
+         * queues with a scheduling policy are limited to 500 active fair share identifiers
+         * at a time. </p>   <p>Jobs that run on Fargate resources can't
+         * be guaranteed to run for more than 14 days. This is because, after 14 days,
+         * Fargate resources might become unavailable and job might be terminated.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitJob">AWS API
+         * Reference</a></p>
          */
         virtual Model::SubmitJobOutcome SubmitJob(const Model::SubmitJobRequest& request) const;
 
@@ -770,16 +903,18 @@ namespace Model
          * <p>Submits an Batch job from a job definition. Parameters that are specified
          * during <a>SubmitJob</a> override parameters defined in the job definition. vCPU
          * and memory requirements that are specified in the
-         * <code>ResourceRequirements</code> objects in the job definition are the
+         * <code>resourceRequirements</code> objects in the job definition are the
          * exception. They can't be overridden this way using the <code>memory</code> and
          * <code>vcpus</code> parameters. Rather, you must specify updates to job
          * definition parameters in a <code>ResourceRequirements</code> object that's
-         * included in the <code>containerOverrides</code> parameter.</p> 
-         * <p>Jobs that run on Fargate resources can't be guaranteed to run for more than
-         * 14 days. This is because, after 14 days, Fargate resources might become
-         * unavailable and job might be terminated.</p> <p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitJob">AWS
-         * API Reference</a></p>
+         * included in the <code>containerOverrides</code> parameter.</p>  <p>Job
+         * queues with a scheduling policy are limited to 500 active fair share identifiers
+         * at a time. </p>   <p>Jobs that run on Fargate resources can't
+         * be guaranteed to run for more than 14 days. This is because, after 14 days,
+         * Fargate resources might become unavailable and job might be terminated.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitJob">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -789,16 +924,18 @@ namespace Model
          * <p>Submits an Batch job from a job definition. Parameters that are specified
          * during <a>SubmitJob</a> override parameters defined in the job definition. vCPU
          * and memory requirements that are specified in the
-         * <code>ResourceRequirements</code> objects in the job definition are the
+         * <code>resourceRequirements</code> objects in the job definition are the
          * exception. They can't be overridden this way using the <code>memory</code> and
          * <code>vcpus</code> parameters. Rather, you must specify updates to job
          * definition parameters in a <code>ResourceRequirements</code> object that's
-         * included in the <code>containerOverrides</code> parameter.</p> 
-         * <p>Jobs that run on Fargate resources can't be guaranteed to run for more than
-         * 14 days. This is because, after 14 days, Fargate resources might become
-         * unavailable and job might be terminated.</p> <p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitJob">AWS
-         * API Reference</a></p>
+         * included in the <code>containerOverrides</code> parameter.</p>  <p>Job
+         * queues with a scheduling policy are limited to 500 active fair share identifiers
+         * at a time. </p>   <p>Jobs that run on Fargate resources can't
+         * be guaranteed to run for more than 14 days. This is because, after 14 days,
+         * Fargate resources might become unavailable and job might be terminated.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitJob">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -809,9 +946,9 @@ namespace Model
          * <code>resourceArn</code>. If existing tags on a resource aren't specified in the
          * request parameters, they aren't changed. When a resource is deleted, the tags
          * that are associated with that resource are deleted as well. Batch resources that
-         * support tags are compute environments, jobs, job definitions, and job queues.
-         * ARNs for child jobs of array and multi-node parallel (MNP) jobs are not
-         * supported.</p><p><h3>See Also:</h3>   <a
+         * support tags are compute environments, jobs, job definitions, job queues, and
+         * scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP)
+         * jobs are not supported.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TagResource">AWS
          * API Reference</a></p>
          */
@@ -822,9 +959,9 @@ namespace Model
          * <code>resourceArn</code>. If existing tags on a resource aren't specified in the
          * request parameters, they aren't changed. When a resource is deleted, the tags
          * that are associated with that resource are deleted as well. Batch resources that
-         * support tags are compute environments, jobs, job definitions, and job queues.
-         * ARNs for child jobs of array and multi-node parallel (MNP) jobs are not
-         * supported.</p><p><h3>See Also:</h3>   <a
+         * support tags are compute environments, jobs, job definitions, job queues, and
+         * scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP)
+         * jobs are not supported.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TagResource">AWS
          * API Reference</a></p>
          *
@@ -837,9 +974,9 @@ namespace Model
          * <code>resourceArn</code>. If existing tags on a resource aren't specified in the
          * request parameters, they aren't changed. When a resource is deleted, the tags
          * that are associated with that resource are deleted as well. Batch resources that
-         * support tags are compute environments, jobs, job definitions, and job queues.
-         * ARNs for child jobs of array and multi-node parallel (MNP) jobs are not
-         * supported.</p><p><h3>See Also:</h3>   <a
+         * support tags are compute environments, jobs, job definitions, job queues, and
+         * scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP)
+         * jobs are not supported.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TagResource">AWS
          * API Reference</a></p>
          *
@@ -956,6 +1093,31 @@ namespace Model
          */
         virtual void UpdateJobQueueAsync(const Model::UpdateJobQueueRequest& request, const UpdateJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates a scheduling policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateSchedulingPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSchedulingPolicyOutcome UpdateSchedulingPolicy(const Model::UpdateSchedulingPolicyRequest& request) const;
+
+        /**
+         * <p>Updates a scheduling policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateSchedulingPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateSchedulingPolicyOutcomeCallable UpdateSchedulingPolicyCallable(const Model::UpdateSchedulingPolicyRequest& request) const;
+
+        /**
+         * <p>Updates a scheduling policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateSchedulingPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateSchedulingPolicyAsync(const Model::UpdateSchedulingPolicyRequest& request, const UpdateSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -963,14 +1125,18 @@ namespace Model
         void CancelJobAsyncHelper(const Model::CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateComputeEnvironmentAsyncHelper(const Model::CreateComputeEnvironmentRequest& request, const CreateComputeEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateJobQueueAsyncHelper(const Model::CreateJobQueueRequest& request, const CreateJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateSchedulingPolicyAsyncHelper(const Model::CreateSchedulingPolicyRequest& request, const CreateSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteComputeEnvironmentAsyncHelper(const Model::DeleteComputeEnvironmentRequest& request, const DeleteComputeEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteJobQueueAsyncHelper(const Model::DeleteJobQueueRequest& request, const DeleteJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteSchedulingPolicyAsyncHelper(const Model::DeleteSchedulingPolicyRequest& request, const DeleteSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeregisterJobDefinitionAsyncHelper(const Model::DeregisterJobDefinitionRequest& request, const DeregisterJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeComputeEnvironmentsAsyncHelper(const Model::DescribeComputeEnvironmentsRequest& request, const DescribeComputeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeJobDefinitionsAsyncHelper(const Model::DescribeJobDefinitionsRequest& request, const DescribeJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeJobQueuesAsyncHelper(const Model::DescribeJobQueuesRequest& request, const DescribeJobQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeJobsAsyncHelper(const Model::DescribeJobsRequest& request, const DescribeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeSchedulingPoliciesAsyncHelper(const Model::DescribeSchedulingPoliciesRequest& request, const DescribeSchedulingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListJobsAsyncHelper(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListSchedulingPoliciesAsyncHelper(const Model::ListSchedulingPoliciesRequest& request, const ListSchedulingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterJobDefinitionAsyncHelper(const Model::RegisterJobDefinitionRequest& request, const RegisterJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SubmitJobAsyncHelper(const Model::SubmitJobRequest& request, const SubmitJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -979,6 +1145,7 @@ namespace Model
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateComputeEnvironmentAsyncHelper(const Model::UpdateComputeEnvironmentRequest& request, const UpdateComputeEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateJobQueueAsyncHelper(const Model::UpdateJobQueueRequest& request, const UpdateJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateSchedulingPolicyAsyncHelper(const Model::UpdateSchedulingPolicyRequest& request, const UpdateSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

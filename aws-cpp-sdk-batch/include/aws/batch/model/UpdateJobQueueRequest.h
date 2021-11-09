@@ -130,6 +130,87 @@ namespace Model
 
 
     /**
+     * <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job
+     * queue is created, the fair share scheduling policy can be replaced but not
+     * removed. The format is
+     * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+     * </code>. For example,
+     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     */
+    inline const Aws::String& GetSchedulingPolicyArn() const{ return m_schedulingPolicyArn; }
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job
+     * queue is created, the fair share scheduling policy can be replaced but not
+     * removed. The format is
+     * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+     * </code>. For example,
+     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     */
+    inline bool SchedulingPolicyArnHasBeenSet() const { return m_schedulingPolicyArnHasBeenSet; }
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job
+     * queue is created, the fair share scheduling policy can be replaced but not
+     * removed. The format is
+     * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+     * </code>. For example,
+     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     */
+    inline void SetSchedulingPolicyArn(const Aws::String& value) { m_schedulingPolicyArnHasBeenSet = true; m_schedulingPolicyArn = value; }
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job
+     * queue is created, the fair share scheduling policy can be replaced but not
+     * removed. The format is
+     * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+     * </code>. For example,
+     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     */
+    inline void SetSchedulingPolicyArn(Aws::String&& value) { m_schedulingPolicyArnHasBeenSet = true; m_schedulingPolicyArn = std::move(value); }
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job
+     * queue is created, the fair share scheduling policy can be replaced but not
+     * removed. The format is
+     * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+     * </code>. For example,
+     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     */
+    inline void SetSchedulingPolicyArn(const char* value) { m_schedulingPolicyArnHasBeenSet = true; m_schedulingPolicyArn.assign(value); }
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job
+     * queue is created, the fair share scheduling policy can be replaced but not
+     * removed. The format is
+     * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+     * </code>. For example,
+     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     */
+    inline UpdateJobQueueRequest& WithSchedulingPolicyArn(const Aws::String& value) { SetSchedulingPolicyArn(value); return *this;}
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job
+     * queue is created, the fair share scheduling policy can be replaced but not
+     * removed. The format is
+     * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+     * </code>. For example,
+     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     */
+    inline UpdateJobQueueRequest& WithSchedulingPolicyArn(Aws::String&& value) { SetSchedulingPolicyArn(std::move(value)); return *this;}
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job
+     * queue is created, the fair share scheduling policy can be replaced but not
+     * removed. The format is
+     * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+     * </code>. For example,
+     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     */
+    inline UpdateJobQueueRequest& WithSchedulingPolicyArn(const char* value) { SetSchedulingPolicyArn(value); return *this;}
+
+
+    /**
      * <p>The priority of the job queue. Job queues with a higher priority (or a higher
      * integer value for the <code>priority</code> parameter) are evaluated first when
      * associated with the same compute environment. Priority is determined in
@@ -301,6 +382,9 @@ namespace Model
 
     JQState m_state;
     bool m_stateHasBeenSet;
+
+    Aws::String m_schedulingPolicyArn;
+    bool m_schedulingPolicyArnHasBeenSet;
 
     int m_priority;
     bool m_priorityHasBeenSet;
