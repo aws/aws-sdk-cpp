@@ -57,7 +57,7 @@ namespace Model
 
 
     /**
-     * <p>The name of a container. If you are linking multiple containers together in a
+     * <p>The name of a container. If you're linking multiple containers together in a
      * task definition, the <code>name</code> of one container can be entered in the
      * <code>links</code> of another container to connect the containers. Up to 255
      * letters (uppercase and lowercase), numbers, underscores, and hyphens are
@@ -72,7 +72,7 @@ namespace Model
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of a container. If you are linking multiple containers together in a
+     * <p>The name of a container. If you're linking multiple containers together in a
      * task definition, the <code>name</code> of one container can be entered in the
      * <code>links</code> of another container to connect the containers. Up to 255
      * letters (uppercase and lowercase), numbers, underscores, and hyphens are
@@ -87,7 +87,7 @@ namespace Model
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of a container. If you are linking multiple containers together in a
+     * <p>The name of a container. If you're linking multiple containers together in a
      * task definition, the <code>name</code> of one container can be entered in the
      * <code>links</code> of another container to connect the containers. Up to 255
      * letters (uppercase and lowercase), numbers, underscores, and hyphens are
@@ -102,7 +102,7 @@ namespace Model
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of a container. If you are linking multiple containers together in a
+     * <p>The name of a container. If you're linking multiple containers together in a
      * task definition, the <code>name</code> of one container can be entered in the
      * <code>links</code> of another container to connect the containers. Up to 255
      * letters (uppercase and lowercase), numbers, underscores, and hyphens are
@@ -117,7 +117,7 @@ namespace Model
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of a container. If you are linking multiple containers together in a
+     * <p>The name of a container. If you're linking multiple containers together in a
      * task definition, the <code>name</code> of one container can be entered in the
      * <code>links</code> of another container to connect the containers. Up to 255
      * letters (uppercase and lowercase), numbers, underscores, and hyphens are
@@ -132,7 +132,7 @@ namespace Model
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of a container. If you are linking multiple containers together in a
+     * <p>The name of a container. If you're linking multiple containers together in a
      * task definition, the <code>name</code> of one container can be entered in the
      * <code>links</code> of another container to connect the containers. Up to 255
      * letters (uppercase and lowercase), numbers, underscores, and hyphens are
@@ -147,7 +147,7 @@ namespace Model
     inline ContainerDefinition& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of a container. If you are linking multiple containers together in a
+     * <p>The name of a container. If you're linking multiple containers together in a
      * task definition, the <code>name</code> of one container can be entered in the
      * <code>links</code> of another container to connect the containers. Up to 255
      * letters (uppercase and lowercase), numbers, underscores, and hyphens are
@@ -162,7 +162,7 @@ namespace Model
     inline ContainerDefinition& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of a container. If you are linking multiple containers together in a
+     * <p>The name of a container. If you're linking multiple containers together in a
      * task definition, the <code>name</code> of one container can be entered in the
      * <code>links</code> of another container to connect the containers. Up to 255
      * letters (uppercase and lowercase), numbers, underscores, and hyphens are
@@ -179,8 +179,8 @@ namespace Model
 
     /**
      * <p>The image used to start a container. This string is passed directly to the
-     * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with either <code>
+     * Docker daemon. By default, images in the Docker Hub registry are available.
+     * Other repositories are specified with either <code>
      * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code> or <code>
      * <i>repository-url</i>/<i>image</i>@<i>digest</i> </code>. Up to 255 letters
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
@@ -193,7 +193,7 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p> <ul> <li> <p>When a new task starts, the Amazon ECS container agent
      * pulls the latest version of the specified image and tag for the container to
-     * use. However, subsequent updates to a repository image are not propagated to
+     * use. However, subsequent updates to a repository image aren't propagated to
      * already running tasks.</p> </li> <li> <p>Images in Amazon ECR repositories can
      * be specified by either using the full <code>registry/repository:tag</code> or
      * <code>registry/repository@digest</code>. For example,
@@ -211,8 +211,8 @@ namespace Model
 
     /**
      * <p>The image used to start a container. This string is passed directly to the
-     * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with either <code>
+     * Docker daemon. By default, images in the Docker Hub registry are available.
+     * Other repositories are specified with either <code>
      * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code> or <code>
      * <i>repository-url</i>/<i>image</i>@<i>digest</i> </code>. Up to 255 letters
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
@@ -225,7 +225,7 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p> <ul> <li> <p>When a new task starts, the Amazon ECS container agent
      * pulls the latest version of the specified image and tag for the container to
-     * use. However, subsequent updates to a repository image are not propagated to
+     * use. However, subsequent updates to a repository image aren't propagated to
      * already running tasks.</p> </li> <li> <p>Images in Amazon ECR repositories can
      * be specified by either using the full <code>registry/repository:tag</code> or
      * <code>registry/repository@digest</code>. For example,
@@ -243,8 +243,8 @@ namespace Model
 
     /**
      * <p>The image used to start a container. This string is passed directly to the
-     * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with either <code>
+     * Docker daemon. By default, images in the Docker Hub registry are available.
+     * Other repositories are specified with either <code>
      * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code> or <code>
      * <i>repository-url</i>/<i>image</i>@<i>digest</i> </code>. Up to 255 letters
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
@@ -257,7 +257,7 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p> <ul> <li> <p>When a new task starts, the Amazon ECS container agent
      * pulls the latest version of the specified image and tag for the container to
-     * use. However, subsequent updates to a repository image are not propagated to
+     * use. However, subsequent updates to a repository image aren't propagated to
      * already running tasks.</p> </li> <li> <p>Images in Amazon ECR repositories can
      * be specified by either using the full <code>registry/repository:tag</code> or
      * <code>registry/repository@digest</code>. For example,
@@ -275,8 +275,8 @@ namespace Model
 
     /**
      * <p>The image used to start a container. This string is passed directly to the
-     * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with either <code>
+     * Docker daemon. By default, images in the Docker Hub registry are available.
+     * Other repositories are specified with either <code>
      * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code> or <code>
      * <i>repository-url</i>/<i>image</i>@<i>digest</i> </code>. Up to 255 letters
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
@@ -289,7 +289,7 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p> <ul> <li> <p>When a new task starts, the Amazon ECS container agent
      * pulls the latest version of the specified image and tag for the container to
-     * use. However, subsequent updates to a repository image are not propagated to
+     * use. However, subsequent updates to a repository image aren't propagated to
      * already running tasks.</p> </li> <li> <p>Images in Amazon ECR repositories can
      * be specified by either using the full <code>registry/repository:tag</code> or
      * <code>registry/repository@digest</code>. For example,
@@ -307,8 +307,8 @@ namespace Model
 
     /**
      * <p>The image used to start a container. This string is passed directly to the
-     * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with either <code>
+     * Docker daemon. By default, images in the Docker Hub registry are available.
+     * Other repositories are specified with either <code>
      * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code> or <code>
      * <i>repository-url</i>/<i>image</i>@<i>digest</i> </code>. Up to 255 letters
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
@@ -321,7 +321,7 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p> <ul> <li> <p>When a new task starts, the Amazon ECS container agent
      * pulls the latest version of the specified image and tag for the container to
-     * use. However, subsequent updates to a repository image are not propagated to
+     * use. However, subsequent updates to a repository image aren't propagated to
      * already running tasks.</p> </li> <li> <p>Images in Amazon ECR repositories can
      * be specified by either using the full <code>registry/repository:tag</code> or
      * <code>registry/repository@digest</code>. For example,
@@ -339,8 +339,8 @@ namespace Model
 
     /**
      * <p>The image used to start a container. This string is passed directly to the
-     * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with either <code>
+     * Docker daemon. By default, images in the Docker Hub registry are available.
+     * Other repositories are specified with either <code>
      * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code> or <code>
      * <i>repository-url</i>/<i>image</i>@<i>digest</i> </code>. Up to 255 letters
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
@@ -353,7 +353,7 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p> <ul> <li> <p>When a new task starts, the Amazon ECS container agent
      * pulls the latest version of the specified image and tag for the container to
-     * use. However, subsequent updates to a repository image are not propagated to
+     * use. However, subsequent updates to a repository image aren't propagated to
      * already running tasks.</p> </li> <li> <p>Images in Amazon ECR repositories can
      * be specified by either using the full <code>registry/repository:tag</code> or
      * <code>registry/repository@digest</code>. For example,
@@ -371,8 +371,8 @@ namespace Model
 
     /**
      * <p>The image used to start a container. This string is passed directly to the
-     * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with either <code>
+     * Docker daemon. By default, images in the Docker Hub registry are available.
+     * Other repositories are specified with either <code>
      * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code> or <code>
      * <i>repository-url</i>/<i>image</i>@<i>digest</i> </code>. Up to 255 letters
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
@@ -385,7 +385,7 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p> <ul> <li> <p>When a new task starts, the Amazon ECS container agent
      * pulls the latest version of the specified image and tag for the container to
-     * use. However, subsequent updates to a repository image are not propagated to
+     * use. However, subsequent updates to a repository image aren't propagated to
      * already running tasks.</p> </li> <li> <p>Images in Amazon ECR repositories can
      * be specified by either using the full <code>registry/repository:tag</code> or
      * <code>registry/repository@digest</code>. For example,
@@ -403,8 +403,8 @@ namespace Model
 
     /**
      * <p>The image used to start a container. This string is passed directly to the
-     * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with either <code>
+     * Docker daemon. By default, images in the Docker Hub registry are available.
+     * Other repositories are specified with either <code>
      * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code> or <code>
      * <i>repository-url</i>/<i>image</i>@<i>digest</i> </code>. Up to 255 letters
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
@@ -417,7 +417,7 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p> <ul> <li> <p>When a new task starts, the Amazon ECS container agent
      * pulls the latest version of the specified image and tag for the container to
-     * use. However, subsequent updates to a repository image are not propagated to
+     * use. However, subsequent updates to a repository image aren't propagated to
      * already running tasks.</p> </li> <li> <p>Images in Amazon ECR repositories can
      * be specified by either using the full <code>registry/repository:tag</code> or
      * <code>registry/repository@digest</code>. For example,
@@ -483,18 +483,18 @@ namespace Model
      * unallocated CPU units with other containers on the container instance with the
      * same ratio as their allocated amount. For example, if you run a single-container
      * task on a single-core instance type with 512 CPU units specified for that
-     * container, and that is the only task running on the container instance, that
+     * container, and that's the only task running on the container instance, that
      * container could use the full 1,024 CPU unit share at any given time. However, if
      * you launched another copy of the same task on that container instance, each task
-     * would be guaranteed a minimum of 512 CPU units when needed, and each container
-     * could float to higher CPU usage if the other container was not using it, but if
-     * both tasks were 100% active all of the time, they would be limited to 512 CPU
+     * is guaranteed a minimum of 512 CPU units when needed. Moreover, each container
+     * could float to higher CPU usage if the other container was not using it. If both
+     * tasks were 100% active all of the time, they would be limited to 512 CPU
      * units.</p> <p>On Linux container instances, the Docker daemon on the container
      * instance uses the CPU value to calculate the relative CPU share ratios for
      * running containers. For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#cpu-share-constraint">CPU
      * share constraint</a> in the Docker documentation. The minimum valid CPU share
-     * value that the Linux kernel allows is 2. However, the CPU parameter is not
+     * value that the Linux kernel allows is 2. However, the CPU parameter isn't
      * required, and you can use CPU values below 2 in your container definitions. For
      * CPU values below 2 (including null), the behavior varies based on your Amazon
      * ECS container agent version:</p> <ul> <li> <p> <b>Agent versions less than or
@@ -504,7 +504,7 @@ namespace Model
      * <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values
      * of 1 are passed to Docker as 2.</p> </li> </ul> <p>On Windows container
      * instances, the CPU limit is enforced as an absolute limit, or a quota. Windows
-     * containers only have access to the specified amount of CPU that is described in
+     * containers only have access to the specified amount of CPU that's described in
      * the task definition. A null or zero CPU value is passed to Docker as
      * <code>0</code>, which Windows interprets as 1% of one CPU.</p>
      */
@@ -528,18 +528,18 @@ namespace Model
      * unallocated CPU units with other containers on the container instance with the
      * same ratio as their allocated amount. For example, if you run a single-container
      * task on a single-core instance type with 512 CPU units specified for that
-     * container, and that is the only task running on the container instance, that
+     * container, and that's the only task running on the container instance, that
      * container could use the full 1,024 CPU unit share at any given time. However, if
      * you launched another copy of the same task on that container instance, each task
-     * would be guaranteed a minimum of 512 CPU units when needed, and each container
-     * could float to higher CPU usage if the other container was not using it, but if
-     * both tasks were 100% active all of the time, they would be limited to 512 CPU
+     * is guaranteed a minimum of 512 CPU units when needed. Moreover, each container
+     * could float to higher CPU usage if the other container was not using it. If both
+     * tasks were 100% active all of the time, they would be limited to 512 CPU
      * units.</p> <p>On Linux container instances, the Docker daemon on the container
      * instance uses the CPU value to calculate the relative CPU share ratios for
      * running containers. For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#cpu-share-constraint">CPU
      * share constraint</a> in the Docker documentation. The minimum valid CPU share
-     * value that the Linux kernel allows is 2. However, the CPU parameter is not
+     * value that the Linux kernel allows is 2. However, the CPU parameter isn't
      * required, and you can use CPU values below 2 in your container definitions. For
      * CPU values below 2 (including null), the behavior varies based on your Amazon
      * ECS container agent version:</p> <ul> <li> <p> <b>Agent versions less than or
@@ -549,7 +549,7 @@ namespace Model
      * <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values
      * of 1 are passed to Docker as 2.</p> </li> </ul> <p>On Windows container
      * instances, the CPU limit is enforced as an absolute limit, or a quota. Windows
-     * containers only have access to the specified amount of CPU that is described in
+     * containers only have access to the specified amount of CPU that's described in
      * the task definition. A null or zero CPU value is passed to Docker as
      * <code>0</code>, which Windows interprets as 1% of one CPU.</p>
      */
@@ -573,18 +573,18 @@ namespace Model
      * unallocated CPU units with other containers on the container instance with the
      * same ratio as their allocated amount. For example, if you run a single-container
      * task on a single-core instance type with 512 CPU units specified for that
-     * container, and that is the only task running on the container instance, that
+     * container, and that's the only task running on the container instance, that
      * container could use the full 1,024 CPU unit share at any given time. However, if
      * you launched another copy of the same task on that container instance, each task
-     * would be guaranteed a minimum of 512 CPU units when needed, and each container
-     * could float to higher CPU usage if the other container was not using it, but if
-     * both tasks were 100% active all of the time, they would be limited to 512 CPU
+     * is guaranteed a minimum of 512 CPU units when needed. Moreover, each container
+     * could float to higher CPU usage if the other container was not using it. If both
+     * tasks were 100% active all of the time, they would be limited to 512 CPU
      * units.</p> <p>On Linux container instances, the Docker daemon on the container
      * instance uses the CPU value to calculate the relative CPU share ratios for
      * running containers. For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#cpu-share-constraint">CPU
      * share constraint</a> in the Docker documentation. The minimum valid CPU share
-     * value that the Linux kernel allows is 2. However, the CPU parameter is not
+     * value that the Linux kernel allows is 2. However, the CPU parameter isn't
      * required, and you can use CPU values below 2 in your container definitions. For
      * CPU values below 2 (including null), the behavior varies based on your Amazon
      * ECS container agent version:</p> <ul> <li> <p> <b>Agent versions less than or
@@ -594,7 +594,7 @@ namespace Model
      * <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values
      * of 1 are passed to Docker as 2.</p> </li> </ul> <p>On Windows container
      * instances, the CPU limit is enforced as an absolute limit, or a quota. Windows
-     * containers only have access to the specified amount of CPU that is described in
+     * containers only have access to the specified amount of CPU that's described in
      * the task definition. A null or zero CPU value is passed to Docker as
      * <code>0</code>, which Windows interprets as 1% of one CPU.</p>
      */
@@ -618,18 +618,18 @@ namespace Model
      * unallocated CPU units with other containers on the container instance with the
      * same ratio as their allocated amount. For example, if you run a single-container
      * task on a single-core instance type with 512 CPU units specified for that
-     * container, and that is the only task running on the container instance, that
+     * container, and that's the only task running on the container instance, that
      * container could use the full 1,024 CPU unit share at any given time. However, if
      * you launched another copy of the same task on that container instance, each task
-     * would be guaranteed a minimum of 512 CPU units when needed, and each container
-     * could float to higher CPU usage if the other container was not using it, but if
-     * both tasks were 100% active all of the time, they would be limited to 512 CPU
+     * is guaranteed a minimum of 512 CPU units when needed. Moreover, each container
+     * could float to higher CPU usage if the other container was not using it. If both
+     * tasks were 100% active all of the time, they would be limited to 512 CPU
      * units.</p> <p>On Linux container instances, the Docker daemon on the container
      * instance uses the CPU value to calculate the relative CPU share ratios for
      * running containers. For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#cpu-share-constraint">CPU
      * share constraint</a> in the Docker documentation. The minimum valid CPU share
-     * value that the Linux kernel allows is 2. However, the CPU parameter is not
+     * value that the Linux kernel allows is 2. However, the CPU parameter isn't
      * required, and you can use CPU values below 2 in your container definitions. For
      * CPU values below 2 (including null), the behavior varies based on your Amazon
      * ECS container agent version:</p> <ul> <li> <p> <b>Agent versions less than or
@@ -639,7 +639,7 @@ namespace Model
      * <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values
      * of 1 are passed to Docker as 2.</p> </li> </ul> <p>On Windows container
      * instances, the CPU limit is enforced as an absolute limit, or a quota. Windows
-     * containers only have access to the specified amount of CPU that is described in
+     * containers only have access to the specified amount of CPU that's described in
      * the task definition. A null or zero CPU value is passed to Docker as
      * <code>0</code>, which Windows interprets as 1% of one CPU.</p>
      */
@@ -663,10 +663,10 @@ namespace Model
      * container-level <code>memory</code> and <code>memoryReservation</code> value,
      * <code>memory</code> must be greater than <code>memoryReservation</code>. If you
      * specify <code>memoryReservation</code>, then that value is subtracted from the
-     * available memory resources for the container instance on which the container is
+     * available memory resources for the container instance where the container is
      * placed. Otherwise, the value of <code>memory</code> is used.</p> <p>The Docker
-     * daemon reserves a minimum of 4 MiB of memory for a container, so you should not
-     * specify fewer than 4 MiB of memory for your containers.</p>
+     * daemon reserves a minimum of 4 MiB of memory for a container. Therefore, we
+     * recommend that you specify fewer than 4 MiB of memory for your containers.</p>
      */
     inline int GetMemory() const{ return m_memory; }
 
@@ -687,10 +687,10 @@ namespace Model
      * container-level <code>memory</code> and <code>memoryReservation</code> value,
      * <code>memory</code> must be greater than <code>memoryReservation</code>. If you
      * specify <code>memoryReservation</code>, then that value is subtracted from the
-     * available memory resources for the container instance on which the container is
+     * available memory resources for the container instance where the container is
      * placed. Otherwise, the value of <code>memory</code> is used.</p> <p>The Docker
-     * daemon reserves a minimum of 4 MiB of memory for a container, so you should not
-     * specify fewer than 4 MiB of memory for your containers.</p>
+     * daemon reserves a minimum of 4 MiB of memory for a container. Therefore, we
+     * recommend that you specify fewer than 4 MiB of memory for your containers.</p>
      */
     inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
 
@@ -711,10 +711,10 @@ namespace Model
      * container-level <code>memory</code> and <code>memoryReservation</code> value,
      * <code>memory</code> must be greater than <code>memoryReservation</code>. If you
      * specify <code>memoryReservation</code>, then that value is subtracted from the
-     * available memory resources for the container instance on which the container is
+     * available memory resources for the container instance where the container is
      * placed. Otherwise, the value of <code>memory</code> is used.</p> <p>The Docker
-     * daemon reserves a minimum of 4 MiB of memory for a container, so you should not
-     * specify fewer than 4 MiB of memory for your containers.</p>
+     * daemon reserves a minimum of 4 MiB of memory for a container. Therefore, we
+     * recommend that you specify fewer than 4 MiB of memory for your containers.</p>
      */
     inline void SetMemory(int value) { m_memoryHasBeenSet = true; m_memory = value; }
 
@@ -735,10 +735,10 @@ namespace Model
      * container-level <code>memory</code> and <code>memoryReservation</code> value,
      * <code>memory</code> must be greater than <code>memoryReservation</code>. If you
      * specify <code>memoryReservation</code>, then that value is subtracted from the
-     * available memory resources for the container instance on which the container is
+     * available memory resources for the container instance where the container is
      * placed. Otherwise, the value of <code>memory</code> is used.</p> <p>The Docker
-     * daemon reserves a minimum of 4 MiB of memory for a container, so you should not
-     * specify fewer than 4 MiB of memory for your containers.</p>
+     * daemon reserves a minimum of 4 MiB of memory for a container. Therefore, we
+     * recommend that you specify fewer than 4 MiB of memory for your containers.</p>
      */
     inline ContainerDefinition& WithMemory(int value) { SetMemory(value); return *this;}
 
@@ -761,7 +761,7 @@ namespace Model
      * <code>memoryReservation</code> in a container definition. If you specify both,
      * <code>memory</code> must be greater than <code>memoryReservation</code>. If you
      * specify <code>memoryReservation</code>, then that value is subtracted from the
-     * available memory resources for the container instance on which the container is
+     * available memory resources for the container instance where the container is
      * placed. Otherwise, the value of <code>memory</code> is used.</p> <p>For example,
      * if your container normally uses 128 MiB of memory, but occasionally bursts to
      * 256 MiB of memory for short periods of time, you can set a
@@ -769,8 +769,8 @@ namespace Model
      * of 300 MiB. This configuration would allow the container to only reserve 128 MiB
      * of memory from the remaining resources on the container instance, but also allow
      * the container to consume more memory resources when needed.</p> <p>The Docker
-     * daemon reserves a minimum of 4 MiB of memory for a container, so you should not
-     * specify fewer than 4 MiB of memory for your containers. </p>
+     * daemon reserves a minimum of 4 MiB of memory for a container. Therefore, we
+     * recommend that you specify fewer than 4 MiB of memory for your containers. </p>
      */
     inline int GetMemoryReservation() const{ return m_memoryReservation; }
 
@@ -792,7 +792,7 @@ namespace Model
      * <code>memoryReservation</code> in a container definition. If you specify both,
      * <code>memory</code> must be greater than <code>memoryReservation</code>. If you
      * specify <code>memoryReservation</code>, then that value is subtracted from the
-     * available memory resources for the container instance on which the container is
+     * available memory resources for the container instance where the container is
      * placed. Otherwise, the value of <code>memory</code> is used.</p> <p>For example,
      * if your container normally uses 128 MiB of memory, but occasionally bursts to
      * 256 MiB of memory for short periods of time, you can set a
@@ -800,8 +800,8 @@ namespace Model
      * of 300 MiB. This configuration would allow the container to only reserve 128 MiB
      * of memory from the remaining resources on the container instance, but also allow
      * the container to consume more memory resources when needed.</p> <p>The Docker
-     * daemon reserves a minimum of 4 MiB of memory for a container, so you should not
-     * specify fewer than 4 MiB of memory for your containers. </p>
+     * daemon reserves a minimum of 4 MiB of memory for a container. Therefore, we
+     * recommend that you specify fewer than 4 MiB of memory for your containers. </p>
      */
     inline bool MemoryReservationHasBeenSet() const { return m_memoryReservationHasBeenSet; }
 
@@ -823,7 +823,7 @@ namespace Model
      * <code>memoryReservation</code> in a container definition. If you specify both,
      * <code>memory</code> must be greater than <code>memoryReservation</code>. If you
      * specify <code>memoryReservation</code>, then that value is subtracted from the
-     * available memory resources for the container instance on which the container is
+     * available memory resources for the container instance where the container is
      * placed. Otherwise, the value of <code>memory</code> is used.</p> <p>For example,
      * if your container normally uses 128 MiB of memory, but occasionally bursts to
      * 256 MiB of memory for short periods of time, you can set a
@@ -831,8 +831,8 @@ namespace Model
      * of 300 MiB. This configuration would allow the container to only reserve 128 MiB
      * of memory from the remaining resources on the container instance, but also allow
      * the container to consume more memory resources when needed.</p> <p>The Docker
-     * daemon reserves a minimum of 4 MiB of memory for a container, so you should not
-     * specify fewer than 4 MiB of memory for your containers. </p>
+     * daemon reserves a minimum of 4 MiB of memory for a container. Therefore, we
+     * recommend that you specify fewer than 4 MiB of memory for your containers. </p>
      */
     inline void SetMemoryReservation(int value) { m_memoryReservationHasBeenSet = true; m_memoryReservation = value; }
 
@@ -854,7 +854,7 @@ namespace Model
      * <code>memoryReservation</code> in a container definition. If you specify both,
      * <code>memory</code> must be greater than <code>memoryReservation</code>. If you
      * specify <code>memoryReservation</code>, then that value is subtracted from the
-     * available memory resources for the container instance on which the container is
+     * available memory resources for the container instance where the container is
      * placed. Otherwise, the value of <code>memory</code> is used.</p> <p>For example,
      * if your container normally uses 128 MiB of memory, but occasionally bursts to
      * 256 MiB of memory for short periods of time, you can set a
@@ -862,8 +862,8 @@ namespace Model
      * of 300 MiB. This configuration would allow the container to only reserve 128 MiB
      * of memory from the remaining resources on the container instance, but also allow
      * the container to consume more memory resources when needed.</p> <p>The Docker
-     * daemon reserves a minimum of 4 MiB of memory for a container, so you should not
-     * specify fewer than 4 MiB of memory for your containers. </p>
+     * daemon reserves a minimum of 4 MiB of memory for a container. Therefore, we
+     * recommend that you specify fewer than 4 MiB of memory for your containers. </p>
      */
     inline ContainerDefinition& WithMemoryReservation(int value) { SetMemoryReservation(value); return *this;}
 
@@ -1079,14 +1079,13 @@ namespace Model
     /**
      * <p>The list of port mappings for the container. Port mappings allow containers
      * to access ports on the host container instance to send or receive traffic.</p>
-     * <p>For task definitions that use the <code>awsvpc</code> network mode, you
-     * should only specify the <code>containerPort</code>. The <code>hostPort</code>
-     * can be left blank or it must be the same value as the
-     * <code>containerPort</code>.</p> <p>Port mappings on Windows use the
-     * <code>NetNAT</code> gateway address rather than <code>localhost</code>. There is
-     * no loopback for port mappings on Windows, so you cannot access a container's
-     * mapped port from the host itself. </p> <p>This parameter maps to
-     * <code>PortBindings</code> in the <a
+     * <p>For task definitions that use the <code>awsvpc</code> network mode, only
+     * specify the <code>containerPort</code>. The <code>hostPort</code> can be left
+     * blank or it must be the same value as the <code>containerPort</code>.</p>
+     * <p>Port mappings on Windows use the <code>NetNAT</code> gateway address rather
+     * than <code>localhost</code>. There's no loopback for port mappings on Windows,
+     * so you can't access a container's mapped port from the host itself. </p> <p>This
+     * parameter maps to <code>PortBindings</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -1107,14 +1106,13 @@ namespace Model
     /**
      * <p>The list of port mappings for the container. Port mappings allow containers
      * to access ports on the host container instance to send or receive traffic.</p>
-     * <p>For task definitions that use the <code>awsvpc</code> network mode, you
-     * should only specify the <code>containerPort</code>. The <code>hostPort</code>
-     * can be left blank or it must be the same value as the
-     * <code>containerPort</code>.</p> <p>Port mappings on Windows use the
-     * <code>NetNAT</code> gateway address rather than <code>localhost</code>. There is
-     * no loopback for port mappings on Windows, so you cannot access a container's
-     * mapped port from the host itself. </p> <p>This parameter maps to
-     * <code>PortBindings</code> in the <a
+     * <p>For task definitions that use the <code>awsvpc</code> network mode, only
+     * specify the <code>containerPort</code>. The <code>hostPort</code> can be left
+     * blank or it must be the same value as the <code>containerPort</code>.</p>
+     * <p>Port mappings on Windows use the <code>NetNAT</code> gateway address rather
+     * than <code>localhost</code>. There's no loopback for port mappings on Windows,
+     * so you can't access a container's mapped port from the host itself. </p> <p>This
+     * parameter maps to <code>PortBindings</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -1135,14 +1133,13 @@ namespace Model
     /**
      * <p>The list of port mappings for the container. Port mappings allow containers
      * to access ports on the host container instance to send or receive traffic.</p>
-     * <p>For task definitions that use the <code>awsvpc</code> network mode, you
-     * should only specify the <code>containerPort</code>. The <code>hostPort</code>
-     * can be left blank or it must be the same value as the
-     * <code>containerPort</code>.</p> <p>Port mappings on Windows use the
-     * <code>NetNAT</code> gateway address rather than <code>localhost</code>. There is
-     * no loopback for port mappings on Windows, so you cannot access a container's
-     * mapped port from the host itself. </p> <p>This parameter maps to
-     * <code>PortBindings</code> in the <a
+     * <p>For task definitions that use the <code>awsvpc</code> network mode, only
+     * specify the <code>containerPort</code>. The <code>hostPort</code> can be left
+     * blank or it must be the same value as the <code>containerPort</code>.</p>
+     * <p>Port mappings on Windows use the <code>NetNAT</code> gateway address rather
+     * than <code>localhost</code>. There's no loopback for port mappings on Windows,
+     * so you can't access a container's mapped port from the host itself. </p> <p>This
+     * parameter maps to <code>PortBindings</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -1163,14 +1160,13 @@ namespace Model
     /**
      * <p>The list of port mappings for the container. Port mappings allow containers
      * to access ports on the host container instance to send or receive traffic.</p>
-     * <p>For task definitions that use the <code>awsvpc</code> network mode, you
-     * should only specify the <code>containerPort</code>. The <code>hostPort</code>
-     * can be left blank or it must be the same value as the
-     * <code>containerPort</code>.</p> <p>Port mappings on Windows use the
-     * <code>NetNAT</code> gateway address rather than <code>localhost</code>. There is
-     * no loopback for port mappings on Windows, so you cannot access a container's
-     * mapped port from the host itself. </p> <p>This parameter maps to
-     * <code>PortBindings</code> in the <a
+     * <p>For task definitions that use the <code>awsvpc</code> network mode, only
+     * specify the <code>containerPort</code>. The <code>hostPort</code> can be left
+     * blank or it must be the same value as the <code>containerPort</code>.</p>
+     * <p>Port mappings on Windows use the <code>NetNAT</code> gateway address rather
+     * than <code>localhost</code>. There's no loopback for port mappings on Windows,
+     * so you can't access a container's mapped port from the host itself. </p> <p>This
+     * parameter maps to <code>PortBindings</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -1191,14 +1187,13 @@ namespace Model
     /**
      * <p>The list of port mappings for the container. Port mappings allow containers
      * to access ports on the host container instance to send or receive traffic.</p>
-     * <p>For task definitions that use the <code>awsvpc</code> network mode, you
-     * should only specify the <code>containerPort</code>. The <code>hostPort</code>
-     * can be left blank or it must be the same value as the
-     * <code>containerPort</code>.</p> <p>Port mappings on Windows use the
-     * <code>NetNAT</code> gateway address rather than <code>localhost</code>. There is
-     * no loopback for port mappings on Windows, so you cannot access a container's
-     * mapped port from the host itself. </p> <p>This parameter maps to
-     * <code>PortBindings</code> in the <a
+     * <p>For task definitions that use the <code>awsvpc</code> network mode, only
+     * specify the <code>containerPort</code>. The <code>hostPort</code> can be left
+     * blank or it must be the same value as the <code>containerPort</code>.</p>
+     * <p>Port mappings on Windows use the <code>NetNAT</code> gateway address rather
+     * than <code>localhost</code>. There's no loopback for port mappings on Windows,
+     * so you can't access a container's mapped port from the host itself. </p> <p>This
+     * parameter maps to <code>PortBindings</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -1219,14 +1214,13 @@ namespace Model
     /**
      * <p>The list of port mappings for the container. Port mappings allow containers
      * to access ports on the host container instance to send or receive traffic.</p>
-     * <p>For task definitions that use the <code>awsvpc</code> network mode, you
-     * should only specify the <code>containerPort</code>. The <code>hostPort</code>
-     * can be left blank or it must be the same value as the
-     * <code>containerPort</code>.</p> <p>Port mappings on Windows use the
-     * <code>NetNAT</code> gateway address rather than <code>localhost</code>. There is
-     * no loopback for port mappings on Windows, so you cannot access a container's
-     * mapped port from the host itself. </p> <p>This parameter maps to
-     * <code>PortBindings</code> in the <a
+     * <p>For task definitions that use the <code>awsvpc</code> network mode, only
+     * specify the <code>containerPort</code>. The <code>hostPort</code> can be left
+     * blank or it must be the same value as the <code>containerPort</code>.</p>
+     * <p>Port mappings on Windows use the <code>NetNAT</code> gateway address rather
+     * than <code>localhost</code>. There's no loopback for port mappings on Windows,
+     * so you can't access a container's mapped port from the host itself. </p> <p>This
+     * parameter maps to <code>PortBindings</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -1247,14 +1241,13 @@ namespace Model
     /**
      * <p>The list of port mappings for the container. Port mappings allow containers
      * to access ports on the host container instance to send or receive traffic.</p>
-     * <p>For task definitions that use the <code>awsvpc</code> network mode, you
-     * should only specify the <code>containerPort</code>. The <code>hostPort</code>
-     * can be left blank or it must be the same value as the
-     * <code>containerPort</code>.</p> <p>Port mappings on Windows use the
-     * <code>NetNAT</code> gateway address rather than <code>localhost</code>. There is
-     * no loopback for port mappings on Windows, so you cannot access a container's
-     * mapped port from the host itself. </p> <p>This parameter maps to
-     * <code>PortBindings</code> in the <a
+     * <p>For task definitions that use the <code>awsvpc</code> network mode, only
+     * specify the <code>containerPort</code>. The <code>hostPort</code> can be left
+     * blank or it must be the same value as the <code>containerPort</code>.</p>
+     * <p>Port mappings on Windows use the <code>NetNAT</code> gateway address rather
+     * than <code>localhost</code>. There's no loopback for port mappings on Windows,
+     * so you can't access a container's mapped port from the host itself. </p> <p>This
+     * parameter maps to <code>PortBindings</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -1275,14 +1268,13 @@ namespace Model
     /**
      * <p>The list of port mappings for the container. Port mappings allow containers
      * to access ports on the host container instance to send or receive traffic.</p>
-     * <p>For task definitions that use the <code>awsvpc</code> network mode, you
-     * should only specify the <code>containerPort</code>. The <code>hostPort</code>
-     * can be left blank or it must be the same value as the
-     * <code>containerPort</code>.</p> <p>Port mappings on Windows use the
-     * <code>NetNAT</code> gateway address rather than <code>localhost</code>. There is
-     * no loopback for port mappings on Windows, so you cannot access a container's
-     * mapped port from the host itself. </p> <p>This parameter maps to
-     * <code>PortBindings</code> in the <a
+     * <p>For task definitions that use the <code>awsvpc</code> network mode, only
+     * specify the <code>containerPort</code>. The <code>hostPort</code> can be left
+     * blank or it must be the same value as the <code>containerPort</code>.</p>
+     * <p>Port mappings on Windows use the <code>NetNAT</code> gateway address rather
+     * than <code>localhost</code>. There's no loopback for port mappings on Windows,
+     * so you can't access a container's mapped port from the host itself. </p> <p>This
+     * parameter maps to <code>PortBindings</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -1305,13 +1297,13 @@ namespace Model
      * <p>If the <code>essential</code> parameter of a container is marked as
      * <code>true</code>, and that container fails or stops for any reason, all other
      * containers that are part of the task are stopped. If the <code>essential</code>
-     * parameter of a container is marked as <code>false</code>, then its failure does
-     * not affect the rest of the containers in a task. If this parameter is omitted, a
+     * parameter of a container is marked as <code>false</code>, its failure doesn't
+     * affect the rest of the containers in a task. If this parameter is omitted, a
      * container is assumed to be essential.</p> <p>All tasks must have at least one
-     * essential container. If you have an application that is composed of multiple
-     * containers, you should group containers that are used for a common purpose into
-     * components, and separate the different components into multiple task
-     * definitions. For more information, see <a
+     * essential container. If you have an application that's composed of multiple
+     * containers, group containers that are used for a common purpose into components,
+     * and separate the different components into multiple task definitions. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
      * Architecture</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -1322,13 +1314,13 @@ namespace Model
      * <p>If the <code>essential</code> parameter of a container is marked as
      * <code>true</code>, and that container fails or stops for any reason, all other
      * containers that are part of the task are stopped. If the <code>essential</code>
-     * parameter of a container is marked as <code>false</code>, then its failure does
-     * not affect the rest of the containers in a task. If this parameter is omitted, a
+     * parameter of a container is marked as <code>false</code>, its failure doesn't
+     * affect the rest of the containers in a task. If this parameter is omitted, a
      * container is assumed to be essential.</p> <p>All tasks must have at least one
-     * essential container. If you have an application that is composed of multiple
-     * containers, you should group containers that are used for a common purpose into
-     * components, and separate the different components into multiple task
-     * definitions. For more information, see <a
+     * essential container. If you have an application that's composed of multiple
+     * containers, group containers that are used for a common purpose into components,
+     * and separate the different components into multiple task definitions. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
      * Architecture</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -1339,13 +1331,13 @@ namespace Model
      * <p>If the <code>essential</code> parameter of a container is marked as
      * <code>true</code>, and that container fails or stops for any reason, all other
      * containers that are part of the task are stopped. If the <code>essential</code>
-     * parameter of a container is marked as <code>false</code>, then its failure does
-     * not affect the rest of the containers in a task. If this parameter is omitted, a
+     * parameter of a container is marked as <code>false</code>, its failure doesn't
+     * affect the rest of the containers in a task. If this parameter is omitted, a
      * container is assumed to be essential.</p> <p>All tasks must have at least one
-     * essential container. If you have an application that is composed of multiple
-     * containers, you should group containers that are used for a common purpose into
-     * components, and separate the different components into multiple task
-     * definitions. For more information, see <a
+     * essential container. If you have an application that's composed of multiple
+     * containers, group containers that are used for a common purpose into components,
+     * and separate the different components into multiple task definitions. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
      * Architecture</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -1356,13 +1348,13 @@ namespace Model
      * <p>If the <code>essential</code> parameter of a container is marked as
      * <code>true</code>, and that container fails or stops for any reason, all other
      * containers that are part of the task are stopped. If the <code>essential</code>
-     * parameter of a container is marked as <code>false</code>, then its failure does
-     * not affect the rest of the containers in a task. If this parameter is omitted, a
+     * parameter of a container is marked as <code>false</code>, its failure doesn't
+     * affect the rest of the containers in a task. If this parameter is omitted, a
      * container is assumed to be essential.</p> <p>All tasks must have at least one
-     * essential container. If you have an application that is composed of multiple
-     * containers, you should group containers that are used for a common purpose into
-     * components, and separate the different components into multiple task
-     * definitions. For more information, see <a
+     * essential container. If you have an application that's composed of multiple
+     * containers, group containers that are used for a common purpose into components,
+     * and separate the different components into multiple task definitions. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
      * Architecture</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -1371,11 +1363,11 @@ namespace Model
 
 
     /**
-     *  <p>Early versions of the Amazon ECS container agent do not properly
+     *  <p>Early versions of the Amazon ECS container agent don't properly
      * handle <code>entryPoint</code> parameters. If you have problems using
      * <code>entryPoint</code>, update your container agent or enter your commands and
      * arguments as <code>command</code> array items instead.</p>  <p>The
-     * entry point that is passed to the container. This parameter maps to
+     * entry point that's passed to the container. This parameter maps to
      * <code>Entrypoint</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -1388,11 +1380,11 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetEntryPoint() const{ return m_entryPoint; }
 
     /**
-     *  <p>Early versions of the Amazon ECS container agent do not properly
+     *  <p>Early versions of the Amazon ECS container agent don't properly
      * handle <code>entryPoint</code> parameters. If you have problems using
      * <code>entryPoint</code>, update your container agent or enter your commands and
      * arguments as <code>command</code> array items instead.</p>  <p>The
-     * entry point that is passed to the container. This parameter maps to
+     * entry point that's passed to the container. This parameter maps to
      * <code>Entrypoint</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -1405,11 +1397,11 @@ namespace Model
     inline bool EntryPointHasBeenSet() const { return m_entryPointHasBeenSet; }
 
     /**
-     *  <p>Early versions of the Amazon ECS container agent do not properly
+     *  <p>Early versions of the Amazon ECS container agent don't properly
      * handle <code>entryPoint</code> parameters. If you have problems using
      * <code>entryPoint</code>, update your container agent or enter your commands and
      * arguments as <code>command</code> array items instead.</p>  <p>The
-     * entry point that is passed to the container. This parameter maps to
+     * entry point that's passed to the container. This parameter maps to
      * <code>Entrypoint</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -1422,11 +1414,11 @@ namespace Model
     inline void SetEntryPoint(const Aws::Vector<Aws::String>& value) { m_entryPointHasBeenSet = true; m_entryPoint = value; }
 
     /**
-     *  <p>Early versions of the Amazon ECS container agent do not properly
+     *  <p>Early versions of the Amazon ECS container agent don't properly
      * handle <code>entryPoint</code> parameters. If you have problems using
      * <code>entryPoint</code>, update your container agent or enter your commands and
      * arguments as <code>command</code> array items instead.</p>  <p>The
-     * entry point that is passed to the container. This parameter maps to
+     * entry point that's passed to the container. This parameter maps to
      * <code>Entrypoint</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -1439,11 +1431,11 @@ namespace Model
     inline void SetEntryPoint(Aws::Vector<Aws::String>&& value) { m_entryPointHasBeenSet = true; m_entryPoint = std::move(value); }
 
     /**
-     *  <p>Early versions of the Amazon ECS container agent do not properly
+     *  <p>Early versions of the Amazon ECS container agent don't properly
      * handle <code>entryPoint</code> parameters. If you have problems using
      * <code>entryPoint</code>, update your container agent or enter your commands and
      * arguments as <code>command</code> array items instead.</p>  <p>The
-     * entry point that is passed to the container. This parameter maps to
+     * entry point that's passed to the container. This parameter maps to
      * <code>Entrypoint</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -1456,11 +1448,11 @@ namespace Model
     inline ContainerDefinition& WithEntryPoint(const Aws::Vector<Aws::String>& value) { SetEntryPoint(value); return *this;}
 
     /**
-     *  <p>Early versions of the Amazon ECS container agent do not properly
+     *  <p>Early versions of the Amazon ECS container agent don't properly
      * handle <code>entryPoint</code> parameters. If you have problems using
      * <code>entryPoint</code>, update your container agent or enter your commands and
      * arguments as <code>command</code> array items instead.</p>  <p>The
-     * entry point that is passed to the container. This parameter maps to
+     * entry point that's passed to the container. This parameter maps to
      * <code>Entrypoint</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -1473,11 +1465,11 @@ namespace Model
     inline ContainerDefinition& WithEntryPoint(Aws::Vector<Aws::String>&& value) { SetEntryPoint(std::move(value)); return *this;}
 
     /**
-     *  <p>Early versions of the Amazon ECS container agent do not properly
+     *  <p>Early versions of the Amazon ECS container agent don't properly
      * handle <code>entryPoint</code> parameters. If you have problems using
      * <code>entryPoint</code>, update your container agent or enter your commands and
      * arguments as <code>command</code> array items instead.</p>  <p>The
-     * entry point that is passed to the container. This parameter maps to
+     * entry point that's passed to the container. This parameter maps to
      * <code>Entrypoint</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -1490,11 +1482,11 @@ namespace Model
     inline ContainerDefinition& AddEntryPoint(const Aws::String& value) { m_entryPointHasBeenSet = true; m_entryPoint.push_back(value); return *this; }
 
     /**
-     *  <p>Early versions of the Amazon ECS container agent do not properly
+     *  <p>Early versions of the Amazon ECS container agent don't properly
      * handle <code>entryPoint</code> parameters. If you have problems using
      * <code>entryPoint</code>, update your container agent or enter your commands and
      * arguments as <code>command</code> array items instead.</p>  <p>The
-     * entry point that is passed to the container. This parameter maps to
+     * entry point that's passed to the container. This parameter maps to
      * <code>Entrypoint</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -1507,11 +1499,11 @@ namespace Model
     inline ContainerDefinition& AddEntryPoint(Aws::String&& value) { m_entryPointHasBeenSet = true; m_entryPoint.push_back(std::move(value)); return *this; }
 
     /**
-     *  <p>Early versions of the Amazon ECS container agent do not properly
+     *  <p>Early versions of the Amazon ECS container agent don't properly
      * handle <code>entryPoint</code> parameters. If you have problems using
      * <code>entryPoint</code>, update your container agent or enter your commands and
      * arguments as <code>command</code> array items instead.</p>  <p>The
-     * entry point that is passed to the container. This parameter maps to
+     * entry point that's passed to the container. This parameter maps to
      * <code>Entrypoint</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -1525,7 +1517,7 @@ namespace Model
 
 
     /**
-     * <p>The command that is passed to the container. This parameter maps to
+     * <p>The command that's passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -1534,13 +1526,13 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>. For more information, see <a
      * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.
-     * If there are multiple arguments, each argument should be a separated string in
-     * the array.</p>
+     * If there are multiple arguments, each argument is a separated string in the
+     * array.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCommand() const{ return m_command; }
 
     /**
-     * <p>The command that is passed to the container. This parameter maps to
+     * <p>The command that's passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -1549,13 +1541,13 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>. For more information, see <a
      * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.
-     * If there are multiple arguments, each argument should be a separated string in
-     * the array.</p>
+     * If there are multiple arguments, each argument is a separated string in the
+     * array.</p>
      */
     inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }
 
     /**
-     * <p>The command that is passed to the container. This parameter maps to
+     * <p>The command that's passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -1564,13 +1556,13 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>. For more information, see <a
      * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.
-     * If there are multiple arguments, each argument should be a separated string in
-     * the array.</p>
+     * If there are multiple arguments, each argument is a separated string in the
+     * array.</p>
      */
     inline void SetCommand(const Aws::Vector<Aws::String>& value) { m_commandHasBeenSet = true; m_command = value; }
 
     /**
-     * <p>The command that is passed to the container. This parameter maps to
+     * <p>The command that's passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -1579,13 +1571,13 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>. For more information, see <a
      * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.
-     * If there are multiple arguments, each argument should be a separated string in
-     * the array.</p>
+     * If there are multiple arguments, each argument is a separated string in the
+     * array.</p>
      */
     inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = std::move(value); }
 
     /**
-     * <p>The command that is passed to the container. This parameter maps to
+     * <p>The command that's passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -1594,13 +1586,13 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>. For more information, see <a
      * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.
-     * If there are multiple arguments, each argument should be a separated string in
-     * the array.</p>
+     * If there are multiple arguments, each argument is a separated string in the
+     * array.</p>
      */
     inline ContainerDefinition& WithCommand(const Aws::Vector<Aws::String>& value) { SetCommand(value); return *this;}
 
     /**
-     * <p>The command that is passed to the container. This parameter maps to
+     * <p>The command that's passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -1609,13 +1601,13 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>. For more information, see <a
      * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.
-     * If there are multiple arguments, each argument should be a separated string in
-     * the array.</p>
+     * If there are multiple arguments, each argument is a separated string in the
+     * array.</p>
      */
     inline ContainerDefinition& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(std::move(value)); return *this;}
 
     /**
-     * <p>The command that is passed to the container. This parameter maps to
+     * <p>The command that's passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -1624,13 +1616,13 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>. For more information, see <a
      * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.
-     * If there are multiple arguments, each argument should be a separated string in
-     * the array.</p>
+     * If there are multiple arguments, each argument is a separated string in the
+     * array.</p>
      */
     inline ContainerDefinition& AddCommand(const Aws::String& value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
 
     /**
-     * <p>The command that is passed to the container. This parameter maps to
+     * <p>The command that's passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -1639,13 +1631,13 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>. For more information, see <a
      * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.
-     * If there are multiple arguments, each argument should be a separated string in
-     * the array.</p>
+     * If there are multiple arguments, each argument is a separated string in the
+     * array.</p>
      */
     inline ContainerDefinition& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The command that is passed to the container. This parameter maps to
+     * <p>The command that's passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -1654,8 +1646,8 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>. For more information, see <a
      * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.
-     * If there are multiple arguments, each argument should be a separated string in
-     * the array.</p>
+     * If there are multiple arguments, each argument is a separated string in the
+     * array.</p>
      */
     inline ContainerDefinition& AddCommand(const char* value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
 
@@ -1668,8 +1660,9 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>We do not recommend using plaintext environment
-     * variables for sensitive information, such as credential data.</p> 
+     * run</a>.</p>  <p>We don't recommend that you use plaintext
+     * environment variables for sensitive information, such as credential data.</p>
+     * 
      */
     inline const Aws::Vector<KeyValuePair>& GetEnvironment() const{ return m_environment; }
 
@@ -1681,8 +1674,9 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>We do not recommend using plaintext environment
-     * variables for sensitive information, such as credential data.</p> 
+     * run</a>.</p>  <p>We don't recommend that you use plaintext
+     * environment variables for sensitive information, such as credential data.</p>
+     * 
      */
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
 
@@ -1694,8 +1688,9 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>We do not recommend using plaintext environment
-     * variables for sensitive information, such as credential data.</p> 
+     * run</a>.</p>  <p>We don't recommend that you use plaintext
+     * environment variables for sensitive information, such as credential data.</p>
+     * 
      */
     inline void SetEnvironment(const Aws::Vector<KeyValuePair>& value) { m_environmentHasBeenSet = true; m_environment = value; }
 
@@ -1707,8 +1702,9 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>We do not recommend using plaintext environment
-     * variables for sensitive information, such as credential data.</p> 
+     * run</a>.</p>  <p>We don't recommend that you use plaintext
+     * environment variables for sensitive information, such as credential data.</p>
+     * 
      */
     inline void SetEnvironment(Aws::Vector<KeyValuePair>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
 
@@ -1720,8 +1716,9 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>We do not recommend using plaintext environment
-     * variables for sensitive information, such as credential data.</p> 
+     * run</a>.</p>  <p>We don't recommend that you use plaintext
+     * environment variables for sensitive information, such as credential data.</p>
+     * 
      */
     inline ContainerDefinition& WithEnvironment(const Aws::Vector<KeyValuePair>& value) { SetEnvironment(value); return *this;}
 
@@ -1733,8 +1730,9 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>We do not recommend using plaintext environment
-     * variables for sensitive information, such as credential data.</p> 
+     * run</a>.</p>  <p>We don't recommend that you use plaintext
+     * environment variables for sensitive information, such as credential data.</p>
+     * 
      */
     inline ContainerDefinition& WithEnvironment(Aws::Vector<KeyValuePair>&& value) { SetEnvironment(std::move(value)); return *this;}
 
@@ -1746,8 +1744,9 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>We do not recommend using plaintext environment
-     * variables for sensitive information, such as credential data.</p> 
+     * run</a>.</p>  <p>We don't recommend that you use plaintext
+     * environment variables for sensitive information, such as credential data.</p>
+     * 
      */
     inline ContainerDefinition& AddEnvironment(const KeyValuePair& value) { m_environmentHasBeenSet = true; m_environment.push_back(value); return *this; }
 
@@ -1759,8 +1758,9 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>We do not recommend using plaintext environment
-     * variables for sensitive information, such as credential data.</p> 
+     * run</a>.</p>  <p>We don't recommend that you use plaintext
+     * environment variables for sensitive information, such as credential data.</p>
+     * 
      */
     inline ContainerDefinition& AddEnvironment(KeyValuePair&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
 
@@ -1770,17 +1770,17 @@ namespace Model
      * This parameter maps to the <code>--env-file</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p> <p>You can specify up to ten environment files. The file must have
-     * a <code>.env</code> file extension. Each line in an environment file should
-     * contain an environment variable in <code>VARIABLE=VALUE</code> format. Lines
-     * beginning with <code>#</code> are treated as comments and are ignored. For more
-     * information on the environment variable file syntax, see <a
+     * a <code>.env</code> file extension. Each line in an environment file contains an
+     * environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning with
+     * <code>#</code> are treated as comments and are ignored. For more information
+     * about the environment variable file syntax, see <a
      * href="https://docs.docker.com/compose/env-file/">Declare default environment
      * variables in file</a>.</p> <p>If there are environment variables specified using
      * the <code>environment</code> parameter in a container definition, they take
      * precedence over the variables contained within an environment file. If multiple
-     * environment files are specified that contain the same variable, they are
-     * processed from the top down. It is recommended to use unique variable names. For
-     * more information, see <a
+     * environment files are specified that contain the same variable, they're
+     * processed from the top down. We recommend that you use unique variable names.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
      * Environment Variables</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -1792,17 +1792,17 @@ namespace Model
      * This parameter maps to the <code>--env-file</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p> <p>You can specify up to ten environment files. The file must have
-     * a <code>.env</code> file extension. Each line in an environment file should
-     * contain an environment variable in <code>VARIABLE=VALUE</code> format. Lines
-     * beginning with <code>#</code> are treated as comments and are ignored. For more
-     * information on the environment variable file syntax, see <a
+     * a <code>.env</code> file extension. Each line in an environment file contains an
+     * environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning with
+     * <code>#</code> are treated as comments and are ignored. For more information
+     * about the environment variable file syntax, see <a
      * href="https://docs.docker.com/compose/env-file/">Declare default environment
      * variables in file</a>.</p> <p>If there are environment variables specified using
      * the <code>environment</code> parameter in a container definition, they take
      * precedence over the variables contained within an environment file. If multiple
-     * environment files are specified that contain the same variable, they are
-     * processed from the top down. It is recommended to use unique variable names. For
-     * more information, see <a
+     * environment files are specified that contain the same variable, they're
+     * processed from the top down. We recommend that you use unique variable names.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
      * Environment Variables</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -1814,17 +1814,17 @@ namespace Model
      * This parameter maps to the <code>--env-file</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p> <p>You can specify up to ten environment files. The file must have
-     * a <code>.env</code> file extension. Each line in an environment file should
-     * contain an environment variable in <code>VARIABLE=VALUE</code> format. Lines
-     * beginning with <code>#</code> are treated as comments and are ignored. For more
-     * information on the environment variable file syntax, see <a
+     * a <code>.env</code> file extension. Each line in an environment file contains an
+     * environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning with
+     * <code>#</code> are treated as comments and are ignored. For more information
+     * about the environment variable file syntax, see <a
      * href="https://docs.docker.com/compose/env-file/">Declare default environment
      * variables in file</a>.</p> <p>If there are environment variables specified using
      * the <code>environment</code> parameter in a container definition, they take
      * precedence over the variables contained within an environment file. If multiple
-     * environment files are specified that contain the same variable, they are
-     * processed from the top down. It is recommended to use unique variable names. For
-     * more information, see <a
+     * environment files are specified that contain the same variable, they're
+     * processed from the top down. We recommend that you use unique variable names.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
      * Environment Variables</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -1836,17 +1836,17 @@ namespace Model
      * This parameter maps to the <code>--env-file</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p> <p>You can specify up to ten environment files. The file must have
-     * a <code>.env</code> file extension. Each line in an environment file should
-     * contain an environment variable in <code>VARIABLE=VALUE</code> format. Lines
-     * beginning with <code>#</code> are treated as comments and are ignored. For more
-     * information on the environment variable file syntax, see <a
+     * a <code>.env</code> file extension. Each line in an environment file contains an
+     * environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning with
+     * <code>#</code> are treated as comments and are ignored. For more information
+     * about the environment variable file syntax, see <a
      * href="https://docs.docker.com/compose/env-file/">Declare default environment
      * variables in file</a>.</p> <p>If there are environment variables specified using
      * the <code>environment</code> parameter in a container definition, they take
      * precedence over the variables contained within an environment file. If multiple
-     * environment files are specified that contain the same variable, they are
-     * processed from the top down. It is recommended to use unique variable names. For
-     * more information, see <a
+     * environment files are specified that contain the same variable, they're
+     * processed from the top down. We recommend that you use unique variable names.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
      * Environment Variables</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -1858,17 +1858,17 @@ namespace Model
      * This parameter maps to the <code>--env-file</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p> <p>You can specify up to ten environment files. The file must have
-     * a <code>.env</code> file extension. Each line in an environment file should
-     * contain an environment variable in <code>VARIABLE=VALUE</code> format. Lines
-     * beginning with <code>#</code> are treated as comments and are ignored. For more
-     * information on the environment variable file syntax, see <a
+     * a <code>.env</code> file extension. Each line in an environment file contains an
+     * environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning with
+     * <code>#</code> are treated as comments and are ignored. For more information
+     * about the environment variable file syntax, see <a
      * href="https://docs.docker.com/compose/env-file/">Declare default environment
      * variables in file</a>.</p> <p>If there are environment variables specified using
      * the <code>environment</code> parameter in a container definition, they take
      * precedence over the variables contained within an environment file. If multiple
-     * environment files are specified that contain the same variable, they are
-     * processed from the top down. It is recommended to use unique variable names. For
-     * more information, see <a
+     * environment files are specified that contain the same variable, they're
+     * processed from the top down. We recommend that you use unique variable names.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
      * Environment Variables</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -1880,17 +1880,17 @@ namespace Model
      * This parameter maps to the <code>--env-file</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p> <p>You can specify up to ten environment files. The file must have
-     * a <code>.env</code> file extension. Each line in an environment file should
-     * contain an environment variable in <code>VARIABLE=VALUE</code> format. Lines
-     * beginning with <code>#</code> are treated as comments and are ignored. For more
-     * information on the environment variable file syntax, see <a
+     * a <code>.env</code> file extension. Each line in an environment file contains an
+     * environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning with
+     * <code>#</code> are treated as comments and are ignored. For more information
+     * about the environment variable file syntax, see <a
      * href="https://docs.docker.com/compose/env-file/">Declare default environment
      * variables in file</a>.</p> <p>If there are environment variables specified using
      * the <code>environment</code> parameter in a container definition, they take
      * precedence over the variables contained within an environment file. If multiple
-     * environment files are specified that contain the same variable, they are
-     * processed from the top down. It is recommended to use unique variable names. For
-     * more information, see <a
+     * environment files are specified that contain the same variable, they're
+     * processed from the top down. We recommend that you use unique variable names.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
      * Environment Variables</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -1902,17 +1902,17 @@ namespace Model
      * This parameter maps to the <code>--env-file</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p> <p>You can specify up to ten environment files. The file must have
-     * a <code>.env</code> file extension. Each line in an environment file should
-     * contain an environment variable in <code>VARIABLE=VALUE</code> format. Lines
-     * beginning with <code>#</code> are treated as comments and are ignored. For more
-     * information on the environment variable file syntax, see <a
+     * a <code>.env</code> file extension. Each line in an environment file contains an
+     * environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning with
+     * <code>#</code> are treated as comments and are ignored. For more information
+     * about the environment variable file syntax, see <a
      * href="https://docs.docker.com/compose/env-file/">Declare default environment
      * variables in file</a>.</p> <p>If there are environment variables specified using
      * the <code>environment</code> parameter in a container definition, they take
      * precedence over the variables contained within an environment file. If multiple
-     * environment files are specified that contain the same variable, they are
-     * processed from the top down. It is recommended to use unique variable names. For
-     * more information, see <a
+     * environment files are specified that contain the same variable, they're
+     * processed from the top down. We recommend that you use unique variable names.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
      * Environment Variables</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -1924,17 +1924,17 @@ namespace Model
      * This parameter maps to the <code>--env-file</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p> <p>You can specify up to ten environment files. The file must have
-     * a <code>.env</code> file extension. Each line in an environment file should
-     * contain an environment variable in <code>VARIABLE=VALUE</code> format. Lines
-     * beginning with <code>#</code> are treated as comments and are ignored. For more
-     * information on the environment variable file syntax, see <a
+     * a <code>.env</code> file extension. Each line in an environment file contains an
+     * environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning with
+     * <code>#</code> are treated as comments and are ignored. For more information
+     * about the environment variable file syntax, see <a
      * href="https://docs.docker.com/compose/env-file/">Declare default environment
      * variables in file</a>.</p> <p>If there are environment variables specified using
      * the <code>environment</code> parameter in a container definition, they take
      * precedence over the variables contained within an environment file. If multiple
-     * environment files are specified that contain the same variable, they are
-     * processed from the top down. It is recommended to use unique variable names. For
-     * more information, see <a
+     * environment files are specified that contain the same variable, they're
+     * processed from the top down. We recommend that you use unique variable names.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
      * Environment Variables</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -1951,8 +1951,8 @@ namespace Model
      * <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p> <p>Windows containers can mount whole directories on the same drive
-     * as <code>$env:ProgramData</code>. Windows containers cannot mount directories on
-     * a different drive, and mount point cannot be across drives.</p>
+     * as <code>$env:ProgramData</code>. Windows containers can't mount directories on
+     * a different drive, and mount point can't be across drives.</p>
      */
     inline const Aws::Vector<MountPoint>& GetMountPoints() const{ return m_mountPoints; }
 
@@ -1965,8 +1965,8 @@ namespace Model
      * <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p> <p>Windows containers can mount whole directories on the same drive
-     * as <code>$env:ProgramData</code>. Windows containers cannot mount directories on
-     * a different drive, and mount point cannot be across drives.</p>
+     * as <code>$env:ProgramData</code>. Windows containers can't mount directories on
+     * a different drive, and mount point can't be across drives.</p>
      */
     inline bool MountPointsHasBeenSet() const { return m_mountPointsHasBeenSet; }
 
@@ -1979,8 +1979,8 @@ namespace Model
      * <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p> <p>Windows containers can mount whole directories on the same drive
-     * as <code>$env:ProgramData</code>. Windows containers cannot mount directories on
-     * a different drive, and mount point cannot be across drives.</p>
+     * as <code>$env:ProgramData</code>. Windows containers can't mount directories on
+     * a different drive, and mount point can't be across drives.</p>
      */
     inline void SetMountPoints(const Aws::Vector<MountPoint>& value) { m_mountPointsHasBeenSet = true; m_mountPoints = value; }
 
@@ -1993,8 +1993,8 @@ namespace Model
      * <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p> <p>Windows containers can mount whole directories on the same drive
-     * as <code>$env:ProgramData</code>. Windows containers cannot mount directories on
-     * a different drive, and mount point cannot be across drives.</p>
+     * as <code>$env:ProgramData</code>. Windows containers can't mount directories on
+     * a different drive, and mount point can't be across drives.</p>
      */
     inline void SetMountPoints(Aws::Vector<MountPoint>&& value) { m_mountPointsHasBeenSet = true; m_mountPoints = std::move(value); }
 
@@ -2007,8 +2007,8 @@ namespace Model
      * <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p> <p>Windows containers can mount whole directories on the same drive
-     * as <code>$env:ProgramData</code>. Windows containers cannot mount directories on
-     * a different drive, and mount point cannot be across drives.</p>
+     * as <code>$env:ProgramData</code>. Windows containers can't mount directories on
+     * a different drive, and mount point can't be across drives.</p>
      */
     inline ContainerDefinition& WithMountPoints(const Aws::Vector<MountPoint>& value) { SetMountPoints(value); return *this;}
 
@@ -2021,8 +2021,8 @@ namespace Model
      * <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p> <p>Windows containers can mount whole directories on the same drive
-     * as <code>$env:ProgramData</code>. Windows containers cannot mount directories on
-     * a different drive, and mount point cannot be across drives.</p>
+     * as <code>$env:ProgramData</code>. Windows containers can't mount directories on
+     * a different drive, and mount point can't be across drives.</p>
      */
     inline ContainerDefinition& WithMountPoints(Aws::Vector<MountPoint>&& value) { SetMountPoints(std::move(value)); return *this;}
 
@@ -2035,8 +2035,8 @@ namespace Model
      * <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p> <p>Windows containers can mount whole directories on the same drive
-     * as <code>$env:ProgramData</code>. Windows containers cannot mount directories on
-     * a different drive, and mount point cannot be across drives.</p>
+     * as <code>$env:ProgramData</code>. Windows containers can't mount directories on
+     * a different drive, and mount point can't be across drives.</p>
      */
     inline ContainerDefinition& AddMountPoints(const MountPoint& value) { m_mountPointsHasBeenSet = true; m_mountPoints.push_back(value); return *this; }
 
@@ -2049,8 +2049,8 @@ namespace Model
      * <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p> <p>Windows containers can mount whole directories on the same drive
-     * as <code>$env:ProgramData</code>. Windows containers cannot mount directories on
-     * a different drive, and mount point cannot be across drives.</p>
+     * as <code>$env:ProgramData</code>. Windows containers can't mount directories on
+     * a different drive, and mount point can't be across drives.</p>
      */
     inline ContainerDefinition& AddMountPoints(MountPoint&& value) { m_mountPointsHasBeenSet = true; m_mountPoints.push_back(std::move(value)); return *this; }
 
@@ -2270,7 +2270,7 @@ namespace Model
      * version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
      * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
      * If your container instances are launched from version <code>20190301</code> or
      * later, then they contain the required versions of the container agent and
@@ -2278,7 +2278,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>For tasks using the Fargate launch type, the task or service
-     * requires the followiwng platforms:</p> <ul> <li> <p>Linux platform version
+     * requires the following platforms:</p> <ul> <li> <p>Linux platform version
      * <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform version
      * <code>1.0.0</code> or later.</p> </li> </ul>
      */
@@ -2294,7 +2294,7 @@ namespace Model
      * version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
      * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
      * If your container instances are launched from version <code>20190301</code> or
      * later, then they contain the required versions of the container agent and
@@ -2302,7 +2302,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>For tasks using the Fargate launch type, the task or service
-     * requires the followiwng platforms:</p> <ul> <li> <p>Linux platform version
+     * requires the following platforms:</p> <ul> <li> <p>Linux platform version
      * <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform version
      * <code>1.0.0</code> or later.</p> </li> </ul>
      */
@@ -2318,7 +2318,7 @@ namespace Model
      * version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
      * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
      * If your container instances are launched from version <code>20190301</code> or
      * later, then they contain the required versions of the container agent and
@@ -2326,7 +2326,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>For tasks using the Fargate launch type, the task or service
-     * requires the followiwng platforms:</p> <ul> <li> <p>Linux platform version
+     * requires the following platforms:</p> <ul> <li> <p>Linux platform version
      * <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform version
      * <code>1.0.0</code> or later.</p> </li> </ul>
      */
@@ -2342,7 +2342,7 @@ namespace Model
      * version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
      * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
      * If your container instances are launched from version <code>20190301</code> or
      * later, then they contain the required versions of the container agent and
@@ -2350,7 +2350,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>For tasks using the Fargate launch type, the task or service
-     * requires the followiwng platforms:</p> <ul> <li> <p>Linux platform version
+     * requires the following platforms:</p> <ul> <li> <p>Linux platform version
      * <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform version
      * <code>1.0.0</code> or later.</p> </li> </ul>
      */
@@ -2366,7 +2366,7 @@ namespace Model
      * version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
      * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
      * If your container instances are launched from version <code>20190301</code> or
      * later, then they contain the required versions of the container agent and
@@ -2374,7 +2374,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>For tasks using the Fargate launch type, the task or service
-     * requires the followiwng platforms:</p> <ul> <li> <p>Linux platform version
+     * requires the following platforms:</p> <ul> <li> <p>Linux platform version
      * <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform version
      * <code>1.0.0</code> or later.</p> </li> </ul>
      */
@@ -2390,7 +2390,7 @@ namespace Model
      * version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
      * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
      * If your container instances are launched from version <code>20190301</code> or
      * later, then they contain the required versions of the container agent and
@@ -2398,7 +2398,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>For tasks using the Fargate launch type, the task or service
-     * requires the followiwng platforms:</p> <ul> <li> <p>Linux platform version
+     * requires the following platforms:</p> <ul> <li> <p>Linux platform version
      * <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform version
      * <code>1.0.0</code> or later.</p> </li> </ul>
      */
@@ -2414,7 +2414,7 @@ namespace Model
      * version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
      * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
      * If your container instances are launched from version <code>20190301</code> or
      * later, then they contain the required versions of the container agent and
@@ -2422,7 +2422,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>For tasks using the Fargate launch type, the task or service
-     * requires the followiwng platforms:</p> <ul> <li> <p>Linux platform version
+     * requires the following platforms:</p> <ul> <li> <p>Linux platform version
      * <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform version
      * <code>1.0.0</code> or later.</p> </li> </ul>
      */
@@ -2438,7 +2438,7 @@ namespace Model
      * version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
      * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
      * If your container instances are launched from version <code>20190301</code> or
      * later, then they contain the required versions of the container agent and
@@ -2446,7 +2446,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>For tasks using the Fargate launch type, the task or service
-     * requires the followiwng platforms:</p> <ul> <li> <p>Linux platform version
+     * requires the following platforms:</p> <ul> <li> <p>Linux platform version
      * <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform version
      * <code>1.0.0</code> or later.</p> </li> </ul>
      */
@@ -2458,22 +2458,23 @@ namespace Model
      * for a container. For example, you specify two containers in a task definition
      * with containerA having a dependency on containerB reaching a
      * <code>COMPLETE</code>, <code>SUCCESS</code>, or <code>HEALTHY</code> status. If
-     * a <code>startTimeout</code> value is specified for containerB and it does not
-     * reach the desired status within that time then containerA will give up and not
+     * a <code>startTimeout</code> value is specified for containerB and it doesn't
+     * reach the desired status within that time then containerA gives up and not
      * start. This results in the task transitioning to a <code>STOPPED</code>
      * state.</p>  <p>When the <code>ECS_CONTAINER_START_TIMEOUT</code> container
-     * agent configuration variable is used, it is enforced indendently from this start
-     * timeout value.</p>  <p>For tasks using the Fargate launch type, the task
-     * or service requires the followiwng platforms:</p> <ul> <li> <p>Linux platform
-     * version <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform version
-     * <code>1.0.0</code> or later.</p> </li> </ul> <p>For tasks using the EC2 launch
-     * type, your container instances require at least version <code>1.26.0</code> of
-     * the container agent to enable a container start timeout value. However, we
-     * recommend using the latest container agent version. For information about
-     * checking your agent version and updating to the latest version, see <a
+     * agent configuration variable is used, it's enforced independently from this
+     * start timeout value.</p>  <p>For tasks using the Fargate launch type, the
+     * task or service requires the following platforms:</p> <ul> <li> <p>Linux
+     * platform version <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform
+     * version <code>1.0.0</code> or later.</p> </li> </ul> <p>For tasks using the EC2
+     * launch type, your container instances require at least version
+     * <code>1.26.0</code> of the container agent to enable a container start timeout
+     * value. However, we recommend using the latest container agent version. For
+     * information about checking your agent version and updating to the latest
+     * version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
      * instance needs at least version <code>1.26.0-1</code> of the
      * <code>ecs-init</code> package. If your container instances are launched from
      * version <code>20190301</code> or later, then they contain the required versions
@@ -2489,22 +2490,23 @@ namespace Model
      * for a container. For example, you specify two containers in a task definition
      * with containerA having a dependency on containerB reaching a
      * <code>COMPLETE</code>, <code>SUCCESS</code>, or <code>HEALTHY</code> status. If
-     * a <code>startTimeout</code> value is specified for containerB and it does not
-     * reach the desired status within that time then containerA will give up and not
+     * a <code>startTimeout</code> value is specified for containerB and it doesn't
+     * reach the desired status within that time then containerA gives up and not
      * start. This results in the task transitioning to a <code>STOPPED</code>
      * state.</p>  <p>When the <code>ECS_CONTAINER_START_TIMEOUT</code> container
-     * agent configuration variable is used, it is enforced indendently from this start
-     * timeout value.</p>  <p>For tasks using the Fargate launch type, the task
-     * or service requires the followiwng platforms:</p> <ul> <li> <p>Linux platform
-     * version <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform version
-     * <code>1.0.0</code> or later.</p> </li> </ul> <p>For tasks using the EC2 launch
-     * type, your container instances require at least version <code>1.26.0</code> of
-     * the container agent to enable a container start timeout value. However, we
-     * recommend using the latest container agent version. For information about
-     * checking your agent version and updating to the latest version, see <a
+     * agent configuration variable is used, it's enforced independently from this
+     * start timeout value.</p>  <p>For tasks using the Fargate launch type, the
+     * task or service requires the following platforms:</p> <ul> <li> <p>Linux
+     * platform version <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform
+     * version <code>1.0.0</code> or later.</p> </li> </ul> <p>For tasks using the EC2
+     * launch type, your container instances require at least version
+     * <code>1.26.0</code> of the container agent to enable a container start timeout
+     * value. However, we recommend using the latest container agent version. For
+     * information about checking your agent version and updating to the latest
+     * version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
      * instance needs at least version <code>1.26.0-1</code> of the
      * <code>ecs-init</code> package. If your container instances are launched from
      * version <code>20190301</code> or later, then they contain the required versions
@@ -2520,22 +2522,23 @@ namespace Model
      * for a container. For example, you specify two containers in a task definition
      * with containerA having a dependency on containerB reaching a
      * <code>COMPLETE</code>, <code>SUCCESS</code>, or <code>HEALTHY</code> status. If
-     * a <code>startTimeout</code> value is specified for containerB and it does not
-     * reach the desired status within that time then containerA will give up and not
+     * a <code>startTimeout</code> value is specified for containerB and it doesn't
+     * reach the desired status within that time then containerA gives up and not
      * start. This results in the task transitioning to a <code>STOPPED</code>
      * state.</p>  <p>When the <code>ECS_CONTAINER_START_TIMEOUT</code> container
-     * agent configuration variable is used, it is enforced indendently from this start
-     * timeout value.</p>  <p>For tasks using the Fargate launch type, the task
-     * or service requires the followiwng platforms:</p> <ul> <li> <p>Linux platform
-     * version <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform version
-     * <code>1.0.0</code> or later.</p> </li> </ul> <p>For tasks using the EC2 launch
-     * type, your container instances require at least version <code>1.26.0</code> of
-     * the container agent to enable a container start timeout value. However, we
-     * recommend using the latest container agent version. For information about
-     * checking your agent version and updating to the latest version, see <a
+     * agent configuration variable is used, it's enforced independently from this
+     * start timeout value.</p>  <p>For tasks using the Fargate launch type, the
+     * task or service requires the following platforms:</p> <ul> <li> <p>Linux
+     * platform version <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform
+     * version <code>1.0.0</code> or later.</p> </li> </ul> <p>For tasks using the EC2
+     * launch type, your container instances require at least version
+     * <code>1.26.0</code> of the container agent to enable a container start timeout
+     * value. However, we recommend using the latest container agent version. For
+     * information about checking your agent version and updating to the latest
+     * version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
      * instance needs at least version <code>1.26.0-1</code> of the
      * <code>ecs-init</code> package. If your container instances are launched from
      * version <code>20190301</code> or later, then they contain the required versions
@@ -2551,22 +2554,23 @@ namespace Model
      * for a container. For example, you specify two containers in a task definition
      * with containerA having a dependency on containerB reaching a
      * <code>COMPLETE</code>, <code>SUCCESS</code>, or <code>HEALTHY</code> status. If
-     * a <code>startTimeout</code> value is specified for containerB and it does not
-     * reach the desired status within that time then containerA will give up and not
+     * a <code>startTimeout</code> value is specified for containerB and it doesn't
+     * reach the desired status within that time then containerA gives up and not
      * start. This results in the task transitioning to a <code>STOPPED</code>
      * state.</p>  <p>When the <code>ECS_CONTAINER_START_TIMEOUT</code> container
-     * agent configuration variable is used, it is enforced indendently from this start
-     * timeout value.</p>  <p>For tasks using the Fargate launch type, the task
-     * or service requires the followiwng platforms:</p> <ul> <li> <p>Linux platform
-     * version <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform version
-     * <code>1.0.0</code> or later.</p> </li> </ul> <p>For tasks using the EC2 launch
-     * type, your container instances require at least version <code>1.26.0</code> of
-     * the container agent to enable a container start timeout value. However, we
-     * recommend using the latest container agent version. For information about
-     * checking your agent version and updating to the latest version, see <a
+     * agent configuration variable is used, it's enforced independently from this
+     * start timeout value.</p>  <p>For tasks using the Fargate launch type, the
+     * task or service requires the following platforms:</p> <ul> <li> <p>Linux
+     * platform version <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform
+     * version <code>1.0.0</code> or later.</p> </li> </ul> <p>For tasks using the EC2
+     * launch type, your container instances require at least version
+     * <code>1.26.0</code> of the container agent to enable a container start timeout
+     * value. However, we recommend using the latest container agent version. For
+     * information about checking your agent version and updating to the latest
+     * version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
      * instance needs at least version <code>1.26.0-1</code> of the
      * <code>ecs-init</code> package. If your container instances are launched from
      * version <code>20190301</code> or later, then they contain the required versions
@@ -2581,14 +2585,14 @@ namespace Model
     /**
      * <p>Time duration (in seconds) to wait before the container is forcefully killed
      * if it doesn't exit normally on its own.</p> <p>For tasks using the Fargate
-     * launch type, the task or service requires the followiwng platforms:</p> <ul>
-     * <li> <p>Linux platform version <code>1.3.0</code> or later.</p> </li> <li>
-     * <p>Windows platform version <code>1.0.0</code> or later.</p> </li> </ul> <p>The
-     * max stop timeout value is 120 seconds and if the parameter is not specified, the
-     * default value of 30 seconds is used.</p> <p>For tasks using the EC2 launch type,
-     * if the <code>stopTimeout</code> parameter is not specified, the value set for
-     * the Amazon ECS container agent configuration variable
-     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used by default. If neither the
+     * launch type, the task or service requires the following platforms:</p> <ul> <li>
+     * <p>Linux platform version <code>1.3.0</code> or later.</p> </li> <li> <p>Windows
+     * platform version <code>1.0.0</code> or later.</p> </li> </ul> <p>The max stop
+     * timeout value is 120 seconds and if the parameter is not specified, the default
+     * value of 30 seconds is used.</p> <p>For tasks that use the EC2 launch type, if
+     * the <code>stopTimeout</code> parameter isn't specified, the value set for the
+     * Amazon ECS container agent configuration variable
+     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used. If neither the
      * <code>stopTimeout</code> parameter or the
      * <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set,
      * then the default values of 30 seconds for Linux containers and 30 seconds on
@@ -2598,7 +2602,7 @@ namespace Model
      * checking your agent version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
      * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
      * If your container instances are launched from version <code>20190301</code> or
      * later, then they contain the required versions of the container agent and
@@ -2612,14 +2616,14 @@ namespace Model
     /**
      * <p>Time duration (in seconds) to wait before the container is forcefully killed
      * if it doesn't exit normally on its own.</p> <p>For tasks using the Fargate
-     * launch type, the task or service requires the followiwng platforms:</p> <ul>
-     * <li> <p>Linux platform version <code>1.3.0</code> or later.</p> </li> <li>
-     * <p>Windows platform version <code>1.0.0</code> or later.</p> </li> </ul> <p>The
-     * max stop timeout value is 120 seconds and if the parameter is not specified, the
-     * default value of 30 seconds is used.</p> <p>For tasks using the EC2 launch type,
-     * if the <code>stopTimeout</code> parameter is not specified, the value set for
-     * the Amazon ECS container agent configuration variable
-     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used by default. If neither the
+     * launch type, the task or service requires the following platforms:</p> <ul> <li>
+     * <p>Linux platform version <code>1.3.0</code> or later.</p> </li> <li> <p>Windows
+     * platform version <code>1.0.0</code> or later.</p> </li> </ul> <p>The max stop
+     * timeout value is 120 seconds and if the parameter is not specified, the default
+     * value of 30 seconds is used.</p> <p>For tasks that use the EC2 launch type, if
+     * the <code>stopTimeout</code> parameter isn't specified, the value set for the
+     * Amazon ECS container agent configuration variable
+     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used. If neither the
      * <code>stopTimeout</code> parameter or the
      * <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set,
      * then the default values of 30 seconds for Linux containers and 30 seconds on
@@ -2629,7 +2633,7 @@ namespace Model
      * checking your agent version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
      * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
      * If your container instances are launched from version <code>20190301</code> or
      * later, then they contain the required versions of the container agent and
@@ -2643,14 +2647,14 @@ namespace Model
     /**
      * <p>Time duration (in seconds) to wait before the container is forcefully killed
      * if it doesn't exit normally on its own.</p> <p>For tasks using the Fargate
-     * launch type, the task or service requires the followiwng platforms:</p> <ul>
-     * <li> <p>Linux platform version <code>1.3.0</code> or later.</p> </li> <li>
-     * <p>Windows platform version <code>1.0.0</code> or later.</p> </li> </ul> <p>The
-     * max stop timeout value is 120 seconds and if the parameter is not specified, the
-     * default value of 30 seconds is used.</p> <p>For tasks using the EC2 launch type,
-     * if the <code>stopTimeout</code> parameter is not specified, the value set for
-     * the Amazon ECS container agent configuration variable
-     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used by default. If neither the
+     * launch type, the task or service requires the following platforms:</p> <ul> <li>
+     * <p>Linux platform version <code>1.3.0</code> or later.</p> </li> <li> <p>Windows
+     * platform version <code>1.0.0</code> or later.</p> </li> </ul> <p>The max stop
+     * timeout value is 120 seconds and if the parameter is not specified, the default
+     * value of 30 seconds is used.</p> <p>For tasks that use the EC2 launch type, if
+     * the <code>stopTimeout</code> parameter isn't specified, the value set for the
+     * Amazon ECS container agent configuration variable
+     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used. If neither the
      * <code>stopTimeout</code> parameter or the
      * <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set,
      * then the default values of 30 seconds for Linux containers and 30 seconds on
@@ -2660,7 +2664,7 @@ namespace Model
      * checking your agent version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
      * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
      * If your container instances are launched from version <code>20190301</code> or
      * later, then they contain the required versions of the container agent and
@@ -2674,14 +2678,14 @@ namespace Model
     /**
      * <p>Time duration (in seconds) to wait before the container is forcefully killed
      * if it doesn't exit normally on its own.</p> <p>For tasks using the Fargate
-     * launch type, the task or service requires the followiwng platforms:</p> <ul>
-     * <li> <p>Linux platform version <code>1.3.0</code> or later.</p> </li> <li>
-     * <p>Windows platform version <code>1.0.0</code> or later.</p> </li> </ul> <p>The
-     * max stop timeout value is 120 seconds and if the parameter is not specified, the
-     * default value of 30 seconds is used.</p> <p>For tasks using the EC2 launch type,
-     * if the <code>stopTimeout</code> parameter is not specified, the value set for
-     * the Amazon ECS container agent configuration variable
-     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used by default. If neither the
+     * launch type, the task or service requires the following platforms:</p> <ul> <li>
+     * <p>Linux platform version <code>1.3.0</code> or later.</p> </li> <li> <p>Windows
+     * platform version <code>1.0.0</code> or later.</p> </li> </ul> <p>The max stop
+     * timeout value is 120 seconds and if the parameter is not specified, the default
+     * value of 30 seconds is used.</p> <p>For tasks that use the EC2 launch type, if
+     * the <code>stopTimeout</code> parameter isn't specified, the value set for the
+     * Amazon ECS container agent configuration variable
+     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used. If neither the
      * <code>stopTimeout</code> parameter or the
      * <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set,
      * then the default values of 30 seconds for Linux containers and 30 seconds on
@@ -2691,7 +2695,7 @@ namespace Model
      * checking your agent version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
      * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
      * If your container instances are launched from version <code>20190301</code> or
      * later, then they contain the required versions of the container agent and
@@ -2712,7 +2716,7 @@ namespace Model
      * <code>--hostname</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p>  <p>The <code>hostname</code> parameter is not supported if
-     * you are using the <code>awsvpc</code> network mode.</p> 
+     * you're using the <code>awsvpc</code> network mode.</p> 
      */
     inline const Aws::String& GetHostname() const{ return m_hostname; }
 
@@ -2725,7 +2729,7 @@ namespace Model
      * <code>--hostname</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p>  <p>The <code>hostname</code> parameter is not supported if
-     * you are using the <code>awsvpc</code> network mode.</p> 
+     * you're using the <code>awsvpc</code> network mode.</p> 
      */
     inline bool HostnameHasBeenSet() const { return m_hostnameHasBeenSet; }
 
@@ -2738,7 +2742,7 @@ namespace Model
      * <code>--hostname</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p>  <p>The <code>hostname</code> parameter is not supported if
-     * you are using the <code>awsvpc</code> network mode.</p> 
+     * you're using the <code>awsvpc</code> network mode.</p> 
      */
     inline void SetHostname(const Aws::String& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
 
@@ -2751,7 +2755,7 @@ namespace Model
      * <code>--hostname</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p>  <p>The <code>hostname</code> parameter is not supported if
-     * you are using the <code>awsvpc</code> network mode.</p> 
+     * you're using the <code>awsvpc</code> network mode.</p> 
      */
     inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = std::move(value); }
 
@@ -2764,7 +2768,7 @@ namespace Model
      * <code>--hostname</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p>  <p>The <code>hostname</code> parameter is not supported if
-     * you are using the <code>awsvpc</code> network mode.</p> 
+     * you're using the <code>awsvpc</code> network mode.</p> 
      */
     inline void SetHostname(const char* value) { m_hostnameHasBeenSet = true; m_hostname.assign(value); }
 
@@ -2777,7 +2781,7 @@ namespace Model
      * <code>--hostname</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p>  <p>The <code>hostname</code> parameter is not supported if
-     * you are using the <code>awsvpc</code> network mode.</p> 
+     * you're using the <code>awsvpc</code> network mode.</p> 
      */
     inline ContainerDefinition& WithHostname(const Aws::String& value) { SetHostname(value); return *this;}
 
@@ -2790,7 +2794,7 @@ namespace Model
      * <code>--hostname</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p>  <p>The <code>hostname</code> parameter is not supported if
-     * you are using the <code>awsvpc</code> network mode.</p> 
+     * you're using the <code>awsvpc</code> network mode.</p> 
      */
     inline ContainerDefinition& WithHostname(Aws::String&& value) { SetHostname(std::move(value)); return *this;}
 
@@ -2803,7 +2807,7 @@ namespace Model
      * <code>--hostname</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p>  <p>The <code>hostname</code> parameter is not supported if
-     * you are using the <code>awsvpc</code> network mode.</p> 
+     * you're using the <code>awsvpc</code> network mode.</p> 
      */
     inline ContainerDefinition& WithHostname(const char* value) { SetHostname(value); return *this;}
 
@@ -2817,13 +2821,13 @@ namespace Model
      * <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p>  <p>When running tasks using the <code>host</code>
-     * network mode, you should not run containers using the root user (UID 0). It is
-     * considered best practice to use a non-root user.</p>  <p>You can
-     * specify the <code>user</code> using the following formats. If specifying a UID
-     * or GID, you must specify it as a positive integer.</p> <ul> <li> <p>
-     * <code>user</code> </p> </li> <li> <p> <code>user:group</code> </p> </li> <li>
-     * <p> <code>uid</code> </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li>
-     * <p> <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
+     * network mode, don't run containers using the root user (UID 0). We recommend
+     * using a non-root user for better security.</p>  <p>You can specify
+     * the <code>user</code> using the following formats. If specifying a UID or GID,
+     * you must specify it as a positive integer.</p> <ul> <li> <p> <code>user</code>
+     * </p> </li> <li> <p> <code>user:group</code> </p> </li> <li> <p> <code>uid</code>
+     * </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li> <p>
+     * <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
      * </ul>  <p>This parameter is not supported for Windows containers.</p>
      * 
      */
@@ -2838,13 +2842,13 @@ namespace Model
      * <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p>  <p>When running tasks using the <code>host</code>
-     * network mode, you should not run containers using the root user (UID 0). It is
-     * considered best practice to use a non-root user.</p>  <p>You can
-     * specify the <code>user</code> using the following formats. If specifying a UID
-     * or GID, you must specify it as a positive integer.</p> <ul> <li> <p>
-     * <code>user</code> </p> </li> <li> <p> <code>user:group</code> </p> </li> <li>
-     * <p> <code>uid</code> </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li>
-     * <p> <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
+     * network mode, don't run containers using the root user (UID 0). We recommend
+     * using a non-root user for better security.</p>  <p>You can specify
+     * the <code>user</code> using the following formats. If specifying a UID or GID,
+     * you must specify it as a positive integer.</p> <ul> <li> <p> <code>user</code>
+     * </p> </li> <li> <p> <code>user:group</code> </p> </li> <li> <p> <code>uid</code>
+     * </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li> <p>
+     * <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
      * </ul>  <p>This parameter is not supported for Windows containers.</p>
      * 
      */
@@ -2859,13 +2863,13 @@ namespace Model
      * <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p>  <p>When running tasks using the <code>host</code>
-     * network mode, you should not run containers using the root user (UID 0). It is
-     * considered best practice to use a non-root user.</p>  <p>You can
-     * specify the <code>user</code> using the following formats. If specifying a UID
-     * or GID, you must specify it as a positive integer.</p> <ul> <li> <p>
-     * <code>user</code> </p> </li> <li> <p> <code>user:group</code> </p> </li> <li>
-     * <p> <code>uid</code> </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li>
-     * <p> <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
+     * network mode, don't run containers using the root user (UID 0). We recommend
+     * using a non-root user for better security.</p>  <p>You can specify
+     * the <code>user</code> using the following formats. If specifying a UID or GID,
+     * you must specify it as a positive integer.</p> <ul> <li> <p> <code>user</code>
+     * </p> </li> <li> <p> <code>user:group</code> </p> </li> <li> <p> <code>uid</code>
+     * </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li> <p>
+     * <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
      * </ul>  <p>This parameter is not supported for Windows containers.</p>
      * 
      */
@@ -2880,13 +2884,13 @@ namespace Model
      * <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p>  <p>When running tasks using the <code>host</code>
-     * network mode, you should not run containers using the root user (UID 0). It is
-     * considered best practice to use a non-root user.</p>  <p>You can
-     * specify the <code>user</code> using the following formats. If specifying a UID
-     * or GID, you must specify it as a positive integer.</p> <ul> <li> <p>
-     * <code>user</code> </p> </li> <li> <p> <code>user:group</code> </p> </li> <li>
-     * <p> <code>uid</code> </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li>
-     * <p> <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
+     * network mode, don't run containers using the root user (UID 0). We recommend
+     * using a non-root user for better security.</p>  <p>You can specify
+     * the <code>user</code> using the following formats. If specifying a UID or GID,
+     * you must specify it as a positive integer.</p> <ul> <li> <p> <code>user</code>
+     * </p> </li> <li> <p> <code>user:group</code> </p> </li> <li> <p> <code>uid</code>
+     * </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li> <p>
+     * <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
      * </ul>  <p>This parameter is not supported for Windows containers.</p>
      * 
      */
@@ -2901,13 +2905,13 @@ namespace Model
      * <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p>  <p>When running tasks using the <code>host</code>
-     * network mode, you should not run containers using the root user (UID 0). It is
-     * considered best practice to use a non-root user.</p>  <p>You can
-     * specify the <code>user</code> using the following formats. If specifying a UID
-     * or GID, you must specify it as a positive integer.</p> <ul> <li> <p>
-     * <code>user</code> </p> </li> <li> <p> <code>user:group</code> </p> </li> <li>
-     * <p> <code>uid</code> </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li>
-     * <p> <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
+     * network mode, don't run containers using the root user (UID 0). We recommend
+     * using a non-root user for better security.</p>  <p>You can specify
+     * the <code>user</code> using the following formats. If specifying a UID or GID,
+     * you must specify it as a positive integer.</p> <ul> <li> <p> <code>user</code>
+     * </p> </li> <li> <p> <code>user:group</code> </p> </li> <li> <p> <code>uid</code>
+     * </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li> <p>
+     * <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
      * </ul>  <p>This parameter is not supported for Windows containers.</p>
      * 
      */
@@ -2922,13 +2926,13 @@ namespace Model
      * <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p>  <p>When running tasks using the <code>host</code>
-     * network mode, you should not run containers using the root user (UID 0). It is
-     * considered best practice to use a non-root user.</p>  <p>You can
-     * specify the <code>user</code> using the following formats. If specifying a UID
-     * or GID, you must specify it as a positive integer.</p> <ul> <li> <p>
-     * <code>user</code> </p> </li> <li> <p> <code>user:group</code> </p> </li> <li>
-     * <p> <code>uid</code> </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li>
-     * <p> <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
+     * network mode, don't run containers using the root user (UID 0). We recommend
+     * using a non-root user for better security.</p>  <p>You can specify
+     * the <code>user</code> using the following formats. If specifying a UID or GID,
+     * you must specify it as a positive integer.</p> <ul> <li> <p> <code>user</code>
+     * </p> </li> <li> <p> <code>user:group</code> </p> </li> <li> <p> <code>uid</code>
+     * </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li> <p>
+     * <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
      * </ul>  <p>This parameter is not supported for Windows containers.</p>
      * 
      */
@@ -2943,13 +2947,13 @@ namespace Model
      * <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p>  <p>When running tasks using the <code>host</code>
-     * network mode, you should not run containers using the root user (UID 0). It is
-     * considered best practice to use a non-root user.</p>  <p>You can
-     * specify the <code>user</code> using the following formats. If specifying a UID
-     * or GID, you must specify it as a positive integer.</p> <ul> <li> <p>
-     * <code>user</code> </p> </li> <li> <p> <code>user:group</code> </p> </li> <li>
-     * <p> <code>uid</code> </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li>
-     * <p> <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
+     * network mode, don't run containers using the root user (UID 0). We recommend
+     * using a non-root user for better security.</p>  <p>You can specify
+     * the <code>user</code> using the following formats. If specifying a UID or GID,
+     * you must specify it as a positive integer.</p> <ul> <li> <p> <code>user</code>
+     * </p> </li> <li> <p> <code>user:group</code> </p> </li> <li> <p> <code>uid</code>
+     * </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li> <p>
+     * <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
      * </ul>  <p>This parameter is not supported for Windows containers.</p>
      * 
      */
@@ -2964,13 +2968,13 @@ namespace Model
      * <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p>  <p>When running tasks using the <code>host</code>
-     * network mode, you should not run containers using the root user (UID 0). It is
-     * considered best practice to use a non-root user.</p>  <p>You can
-     * specify the <code>user</code> using the following formats. If specifying a UID
-     * or GID, you must specify it as a positive integer.</p> <ul> <li> <p>
-     * <code>user</code> </p> </li> <li> <p> <code>user:group</code> </p> </li> <li>
-     * <p> <code>uid</code> </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li>
-     * <p> <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
+     * network mode, don't run containers using the root user (UID 0). We recommend
+     * using a non-root user for better security.</p>  <p>You can specify
+     * the <code>user</code> using the following formats. If specifying a UID or GID,
+     * you must specify it as a positive integer.</p> <ul> <li> <p> <code>user</code>
+     * </p> </li> <li> <p> <code>user:group</code> </p> </li> <li> <p> <code>uid</code>
+     * </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li> <p>
+     * <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
      * </ul>  <p>This parameter is not supported for Windows containers.</p>
      * 
      */
@@ -2978,8 +2982,8 @@ namespace Model
 
 
     /**
-     * <p>The working directory in which to run commands inside the container. This
-     * parameter maps to <code>WorkingDir</code> in the <a
+     * <p>The working directory to run commands inside the container in. This parameter
+     * maps to <code>WorkingDir</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -2990,8 +2994,8 @@ namespace Model
     inline const Aws::String& GetWorkingDirectory() const{ return m_workingDirectory; }
 
     /**
-     * <p>The working directory in which to run commands inside the container. This
-     * parameter maps to <code>WorkingDir</code> in the <a
+     * <p>The working directory to run commands inside the container in. This parameter
+     * maps to <code>WorkingDir</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -3002,8 +3006,8 @@ namespace Model
     inline bool WorkingDirectoryHasBeenSet() const { return m_workingDirectoryHasBeenSet; }
 
     /**
-     * <p>The working directory in which to run commands inside the container. This
-     * parameter maps to <code>WorkingDir</code> in the <a
+     * <p>The working directory to run commands inside the container in. This parameter
+     * maps to <code>WorkingDir</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -3014,8 +3018,8 @@ namespace Model
     inline void SetWorkingDirectory(const Aws::String& value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory = value; }
 
     /**
-     * <p>The working directory in which to run commands inside the container. This
-     * parameter maps to <code>WorkingDir</code> in the <a
+     * <p>The working directory to run commands inside the container in. This parameter
+     * maps to <code>WorkingDir</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -3026,8 +3030,8 @@ namespace Model
     inline void SetWorkingDirectory(Aws::String&& value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory = std::move(value); }
 
     /**
-     * <p>The working directory in which to run commands inside the container. This
-     * parameter maps to <code>WorkingDir</code> in the <a
+     * <p>The working directory to run commands inside the container in. This parameter
+     * maps to <code>WorkingDir</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -3038,8 +3042,8 @@ namespace Model
     inline void SetWorkingDirectory(const char* value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory.assign(value); }
 
     /**
-     * <p>The working directory in which to run commands inside the container. This
-     * parameter maps to <code>WorkingDir</code> in the <a
+     * <p>The working directory to run commands inside the container in. This parameter
+     * maps to <code>WorkingDir</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -3050,8 +3054,8 @@ namespace Model
     inline ContainerDefinition& WithWorkingDirectory(const Aws::String& value) { SetWorkingDirectory(value); return *this;}
 
     /**
-     * <p>The working directory in which to run commands inside the container. This
-     * parameter maps to <code>WorkingDir</code> in the <a
+     * <p>The working directory to run commands inside the container in. This parameter
+     * maps to <code>WorkingDir</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -3062,8 +3066,8 @@ namespace Model
     inline ContainerDefinition& WithWorkingDirectory(Aws::String&& value) { SetWorkingDirectory(std::move(value)); return *this;}
 
     /**
-     * <p>The working directory in which to run commands inside the container. This
-     * parameter maps to <code>WorkingDir</code> in the <a
+     * <p>The working directory to run commands inside the container in. This parameter
+     * maps to <code>WorkingDir</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -3470,7 +3474,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--add-host</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
+     * run</a>.</p>  <p>This parameter isn't supported for Windows containers or
      * tasks that use the <code>awsvpc</code> network mode.</p> 
      */
     inline const Aws::Vector<HostEntry>& GetExtraHosts() const{ return m_extraHosts; }
@@ -3484,7 +3488,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--add-host</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
+     * run</a>.</p>  <p>This parameter isn't supported for Windows containers or
      * tasks that use the <code>awsvpc</code> network mode.</p> 
      */
     inline bool ExtraHostsHasBeenSet() const { return m_extraHostsHasBeenSet; }
@@ -3498,7 +3502,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--add-host</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
+     * run</a>.</p>  <p>This parameter isn't supported for Windows containers or
      * tasks that use the <code>awsvpc</code> network mode.</p> 
      */
     inline void SetExtraHosts(const Aws::Vector<HostEntry>& value) { m_extraHostsHasBeenSet = true; m_extraHosts = value; }
@@ -3512,7 +3516,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--add-host</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
+     * run</a>.</p>  <p>This parameter isn't supported for Windows containers or
      * tasks that use the <code>awsvpc</code> network mode.</p> 
      */
     inline void SetExtraHosts(Aws::Vector<HostEntry>&& value) { m_extraHostsHasBeenSet = true; m_extraHosts = std::move(value); }
@@ -3526,7 +3530,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--add-host</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
+     * run</a>.</p>  <p>This parameter isn't supported for Windows containers or
      * tasks that use the <code>awsvpc</code> network mode.</p> 
      */
     inline ContainerDefinition& WithExtraHosts(const Aws::Vector<HostEntry>& value) { SetExtraHosts(value); return *this;}
@@ -3540,7 +3544,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--add-host</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
+     * run</a>.</p>  <p>This parameter isn't supported for Windows containers or
      * tasks that use the <code>awsvpc</code> network mode.</p> 
      */
     inline ContainerDefinition& WithExtraHosts(Aws::Vector<HostEntry>&& value) { SetExtraHosts(std::move(value)); return *this;}
@@ -3554,7 +3558,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--add-host</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
+     * run</a>.</p>  <p>This parameter isn't supported for Windows containers or
      * tasks that use the <code>awsvpc</code> network mode.</p> 
      */
     inline ContainerDefinition& AddExtraHosts(const HostEntry& value) { m_extraHostsHasBeenSet = true; m_extraHosts.push_back(value); return *this; }
@@ -3568,7 +3572,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--add-host</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
+     * run</a>.</p>  <p>This parameter isn't supported for Windows containers or
      * tasks that use the <code>awsvpc</code> network mode.</p> 
      */
     inline ContainerDefinition& AddExtraHosts(HostEntry&& value) { m_extraHostsHasBeenSet = true; m_extraHosts.push_back(std::move(value)); return *this; }
@@ -3576,7 +3580,7 @@ namespace Model
 
     /**
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
-     * multi-level security systems. This field is not valid for containers in tasks
+     * multi-level security systems. This field isn't valid for containers in tasks
      * using the Fargate launch type.</p> <p>With Windows containers, this parameter
      * can be used to reference a credential spec file when configuring a container for
      * Active Directory authentication. For more information, see <a
@@ -3606,7 +3610,7 @@ namespace Model
 
     /**
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
-     * multi-level security systems. This field is not valid for containers in tasks
+     * multi-level security systems. This field isn't valid for containers in tasks
      * using the Fargate launch type.</p> <p>With Windows containers, this parameter
      * can be used to reference a credential spec file when configuring a container for
      * Active Directory authentication. For more information, see <a
@@ -3636,7 +3640,7 @@ namespace Model
 
     /**
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
-     * multi-level security systems. This field is not valid for containers in tasks
+     * multi-level security systems. This field isn't valid for containers in tasks
      * using the Fargate launch type.</p> <p>With Windows containers, this parameter
      * can be used to reference a credential spec file when configuring a container for
      * Active Directory authentication. For more information, see <a
@@ -3666,7 +3670,7 @@ namespace Model
 
     /**
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
-     * multi-level security systems. This field is not valid for containers in tasks
+     * multi-level security systems. This field isn't valid for containers in tasks
      * using the Fargate launch type.</p> <p>With Windows containers, this parameter
      * can be used to reference a credential spec file when configuring a container for
      * Active Directory authentication. For more information, see <a
@@ -3696,7 +3700,7 @@ namespace Model
 
     /**
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
-     * multi-level security systems. This field is not valid for containers in tasks
+     * multi-level security systems. This field isn't valid for containers in tasks
      * using the Fargate launch type.</p> <p>With Windows containers, this parameter
      * can be used to reference a credential spec file when configuring a container for
      * Active Directory authentication. For more information, see <a
@@ -3726,7 +3730,7 @@ namespace Model
 
     /**
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
-     * multi-level security systems. This field is not valid for containers in tasks
+     * multi-level security systems. This field isn't valid for containers in tasks
      * using the Fargate launch type.</p> <p>With Windows containers, this parameter
      * can be used to reference a credential spec file when configuring a container for
      * Active Directory authentication. For more information, see <a
@@ -3756,7 +3760,7 @@ namespace Model
 
     /**
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
-     * multi-level security systems. This field is not valid for containers in tasks
+     * multi-level security systems. This field isn't valid for containers in tasks
      * using the Fargate launch type.</p> <p>With Windows containers, this parameter
      * can be used to reference a credential spec file when configuring a container for
      * Active Directory authentication. For more information, see <a
@@ -3786,7 +3790,7 @@ namespace Model
 
     /**
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
-     * multi-level security systems. This field is not valid for containers in tasks
+     * multi-level security systems. This field isn't valid for containers in tasks
      * using the Fargate launch type.</p> <p>With Windows containers, this parameter
      * can be used to reference a credential spec file when configuring a container for
      * Active Directory authentication. For more information, see <a
@@ -3816,7 +3820,7 @@ namespace Model
 
     /**
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
-     * multi-level security systems. This field is not valid for containers in tasks
+     * multi-level security systems. This field isn't valid for containers in tasks
      * using the Fargate launch type.</p> <p>With Windows containers, this parameter
      * can be used to reference a credential spec file when configuring a container for
      * Active Directory authentication. For more information, see <a
@@ -3846,9 +3850,9 @@ namespace Model
 
 
     /**
-     * <p>When this parameter is <code>true</code>, this allows you to deploy
-     * containerized applications that require <code>stdin</code> or a <code>tty</code>
-     * to be allocated. This parameter maps to <code>OpenStdin</code> in the <a
+     * <p>When this parameter is <code>true</code>, you can deploy containerized
+     * applications that require <code>stdin</code> or a <code>tty</code> to be
+     * allocated. This parameter maps to <code>OpenStdin</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -3859,9 +3863,9 @@ namespace Model
     inline bool GetInteractive() const{ return m_interactive; }
 
     /**
-     * <p>When this parameter is <code>true</code>, this allows you to deploy
-     * containerized applications that require <code>stdin</code> or a <code>tty</code>
-     * to be allocated. This parameter maps to <code>OpenStdin</code> in the <a
+     * <p>When this parameter is <code>true</code>, you can deploy containerized
+     * applications that require <code>stdin</code> or a <code>tty</code> to be
+     * allocated. This parameter maps to <code>OpenStdin</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -3872,9 +3876,9 @@ namespace Model
     inline bool InteractiveHasBeenSet() const { return m_interactiveHasBeenSet; }
 
     /**
-     * <p>When this parameter is <code>true</code>, this allows you to deploy
-     * containerized applications that require <code>stdin</code> or a <code>tty</code>
-     * to be allocated. This parameter maps to <code>OpenStdin</code> in the <a
+     * <p>When this parameter is <code>true</code>, you can deploy containerized
+     * applications that require <code>stdin</code> or a <code>tty</code> to be
+     * allocated. This parameter maps to <code>OpenStdin</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -3885,9 +3889,9 @@ namespace Model
     inline void SetInteractive(bool value) { m_interactiveHasBeenSet = true; m_interactive = value; }
 
     /**
-     * <p>When this parameter is <code>true</code>, this allows you to deploy
-     * containerized applications that require <code>stdin</code> or a <code>tty</code>
-     * to be allocated. This parameter maps to <code>OpenStdin</code> in the <a
+     * <p>When this parameter is <code>true</code>, you can deploy containerized
+     * applications that require <code>stdin</code> or a <code>tty</code> to be
+     * allocated. This parameter maps to <code>OpenStdin</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -4145,8 +4149,8 @@ namespace Model
 
     /**
      * <p>A list of <code>ulimits</code> to set in the container. If a ulimit value is
-     * specified in a task definition, it will override the default values set by
-     * Docker. This parameter maps to <code>Ulimits</code> in the <a
+     * specified in a task definition, it overrides the default values set by Docker.
+     * This parameter maps to <code>Ulimits</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -4169,8 +4173,8 @@ namespace Model
 
     /**
      * <p>A list of <code>ulimits</code> to set in the container. If a ulimit value is
-     * specified in a task definition, it will override the default values set by
-     * Docker. This parameter maps to <code>Ulimits</code> in the <a
+     * specified in a task definition, it overrides the default values set by Docker.
+     * This parameter maps to <code>Ulimits</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -4193,8 +4197,8 @@ namespace Model
 
     /**
      * <p>A list of <code>ulimits</code> to set in the container. If a ulimit value is
-     * specified in a task definition, it will override the default values set by
-     * Docker. This parameter maps to <code>Ulimits</code> in the <a
+     * specified in a task definition, it overrides the default values set by Docker.
+     * This parameter maps to <code>Ulimits</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -4217,8 +4221,8 @@ namespace Model
 
     /**
      * <p>A list of <code>ulimits</code> to set in the container. If a ulimit value is
-     * specified in a task definition, it will override the default values set by
-     * Docker. This parameter maps to <code>Ulimits</code> in the <a
+     * specified in a task definition, it overrides the default values set by Docker.
+     * This parameter maps to <code>Ulimits</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -4241,8 +4245,8 @@ namespace Model
 
     /**
      * <p>A list of <code>ulimits</code> to set in the container. If a ulimit value is
-     * specified in a task definition, it will override the default values set by
-     * Docker. This parameter maps to <code>Ulimits</code> in the <a
+     * specified in a task definition, it overrides the default values set by Docker.
+     * This parameter maps to <code>Ulimits</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -4265,8 +4269,8 @@ namespace Model
 
     /**
      * <p>A list of <code>ulimits</code> to set in the container. If a ulimit value is
-     * specified in a task definition, it will override the default values set by
-     * Docker. This parameter maps to <code>Ulimits</code> in the <a
+     * specified in a task definition, it overrides the default values set by Docker.
+     * This parameter maps to <code>Ulimits</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -4289,8 +4293,8 @@ namespace Model
 
     /**
      * <p>A list of <code>ulimits</code> to set in the container. If a ulimit value is
-     * specified in a task definition, it will override the default values set by
-     * Docker. This parameter maps to <code>Ulimits</code> in the <a
+     * specified in a task definition, it overrides the default values set by Docker.
+     * This parameter maps to <code>Ulimits</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -4313,8 +4317,8 @@ namespace Model
 
     /**
      * <p>A list of <code>ulimits</code> to set in the container. If a ulimit value is
-     * specified in a task definition, it will override the default values set by
-     * Docker. This parameter maps to <code>Ulimits</code> in the <a
+     * specified in a task definition, it overrides the default values set by Docker.
+     * This parameter maps to <code>Ulimits</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -4345,11 +4349,11 @@ namespace Model
      * <code>--log-driver</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>. By default, containers use the same logging driver that the Docker
-     * daemon uses. However the container may use a different logging driver than the
+     * daemon uses. However the container can use a different logging driver than the
      * Docker daemon by specifying a log driver with this parameter in the container
      * definition. To use a different logging driver for a container, the log system
      * must be configured properly on the container instance (or on a different log
-     * server for remote logging options). For more information on the options for
+     * server for remote logging options). For more information about the options for
      * different supported log drivers, see <a
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>Amazon ECS currently
@@ -4380,11 +4384,11 @@ namespace Model
      * <code>--log-driver</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>. By default, containers use the same logging driver that the Docker
-     * daemon uses. However the container may use a different logging driver than the
+     * daemon uses. However the container can use a different logging driver than the
      * Docker daemon by specifying a log driver with this parameter in the container
      * definition. To use a different logging driver for a container, the log system
      * must be configured properly on the container instance (or on a different log
-     * server for remote logging options). For more information on the options for
+     * server for remote logging options). For more information about the options for
      * different supported log drivers, see <a
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>Amazon ECS currently
@@ -4415,11 +4419,11 @@ namespace Model
      * <code>--log-driver</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>. By default, containers use the same logging driver that the Docker
-     * daemon uses. However the container may use a different logging driver than the
+     * daemon uses. However the container can use a different logging driver than the
      * Docker daemon by specifying a log driver with this parameter in the container
      * definition. To use a different logging driver for a container, the log system
      * must be configured properly on the container instance (or on a different log
-     * server for remote logging options). For more information on the options for
+     * server for remote logging options). For more information about the options for
      * different supported log drivers, see <a
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>Amazon ECS currently
@@ -4450,11 +4454,11 @@ namespace Model
      * <code>--log-driver</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>. By default, containers use the same logging driver that the Docker
-     * daemon uses. However the container may use a different logging driver than the
+     * daemon uses. However the container can use a different logging driver than the
      * Docker daemon by specifying a log driver with this parameter in the container
      * definition. To use a different logging driver for a container, the log system
      * must be configured properly on the container instance (or on a different log
-     * server for remote logging options). For more information on the options for
+     * server for remote logging options). For more information about the options for
      * different supported log drivers, see <a
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>Amazon ECS currently
@@ -4485,11 +4489,11 @@ namespace Model
      * <code>--log-driver</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>. By default, containers use the same logging driver that the Docker
-     * daemon uses. However the container may use a different logging driver than the
+     * daemon uses. However the container can use a different logging driver than the
      * Docker daemon by specifying a log driver with this parameter in the container
      * definition. To use a different logging driver for a container, the log system
      * must be configured properly on the container instance (or on a different log
-     * server for remote logging options). For more information on the options for
+     * server for remote logging options). For more information about the options for
      * different supported log drivers, see <a
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>Amazon ECS currently
@@ -4520,11 +4524,11 @@ namespace Model
      * <code>--log-driver</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>. By default, containers use the same logging driver that the Docker
-     * daemon uses. However the container may use a different logging driver than the
+     * daemon uses. However the container can use a different logging driver than the
      * Docker daemon by specifying a log driver with this parameter in the container
      * definition. To use a different logging driver for a container, the log system
      * must be configured properly on the container instance (or on a different log
-     * server for remote logging options). For more information on the options for
+     * server for remote logging options). For more information about the options for
      * different supported log drivers, see <a
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>Amazon ECS currently
@@ -4628,14 +4632,14 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--sysctl</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>It is not recommended that you specify network-related
+     * run</a>.</p>  <p>We don't recommended that you specify network-related
      * <code>systemControls</code> parameters for multiple containers in a single task
      * that also uses either the <code>awsvpc</code> or <code>host</code> network
      * modes. For tasks that use the <code>awsvpc</code> network mode, the container
-     * that is started last determines which <code>systemControls</code> parameters
-     * take effect. For tasks that use the <code>host</code> network mode, it changes
-     * the container instance's namespaced kernel parameters as well as the
-     * containers.</p> 
+     * that's started last determines which <code>systemControls</code> parameters take
+     * effect. For tasks that use the <code>host</code> network mode, it changes the
+     * container instance's namespaced kernel parameters as well as the containers.</p>
+     * 
      */
     inline const Aws::Vector<SystemControl>& GetSystemControls() const{ return m_systemControls; }
 
@@ -4647,14 +4651,14 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--sysctl</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>It is not recommended that you specify network-related
+     * run</a>.</p>  <p>We don't recommended that you specify network-related
      * <code>systemControls</code> parameters for multiple containers in a single task
      * that also uses either the <code>awsvpc</code> or <code>host</code> network
      * modes. For tasks that use the <code>awsvpc</code> network mode, the container
-     * that is started last determines which <code>systemControls</code> parameters
-     * take effect. For tasks that use the <code>host</code> network mode, it changes
-     * the container instance's namespaced kernel parameters as well as the
-     * containers.</p> 
+     * that's started last determines which <code>systemControls</code> parameters take
+     * effect. For tasks that use the <code>host</code> network mode, it changes the
+     * container instance's namespaced kernel parameters as well as the containers.</p>
+     * 
      */
     inline bool SystemControlsHasBeenSet() const { return m_systemControlsHasBeenSet; }
 
@@ -4666,14 +4670,14 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--sysctl</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>It is not recommended that you specify network-related
+     * run</a>.</p>  <p>We don't recommended that you specify network-related
      * <code>systemControls</code> parameters for multiple containers in a single task
      * that also uses either the <code>awsvpc</code> or <code>host</code> network
      * modes. For tasks that use the <code>awsvpc</code> network mode, the container
-     * that is started last determines which <code>systemControls</code> parameters
-     * take effect. For tasks that use the <code>host</code> network mode, it changes
-     * the container instance's namespaced kernel parameters as well as the
-     * containers.</p> 
+     * that's started last determines which <code>systemControls</code> parameters take
+     * effect. For tasks that use the <code>host</code> network mode, it changes the
+     * container instance's namespaced kernel parameters as well as the containers.</p>
+     * 
      */
     inline void SetSystemControls(const Aws::Vector<SystemControl>& value) { m_systemControlsHasBeenSet = true; m_systemControls = value; }
 
@@ -4685,14 +4689,14 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--sysctl</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>It is not recommended that you specify network-related
+     * run</a>.</p>  <p>We don't recommended that you specify network-related
      * <code>systemControls</code> parameters for multiple containers in a single task
      * that also uses either the <code>awsvpc</code> or <code>host</code> network
      * modes. For tasks that use the <code>awsvpc</code> network mode, the container
-     * that is started last determines which <code>systemControls</code> parameters
-     * take effect. For tasks that use the <code>host</code> network mode, it changes
-     * the container instance's namespaced kernel parameters as well as the
-     * containers.</p> 
+     * that's started last determines which <code>systemControls</code> parameters take
+     * effect. For tasks that use the <code>host</code> network mode, it changes the
+     * container instance's namespaced kernel parameters as well as the containers.</p>
+     * 
      */
     inline void SetSystemControls(Aws::Vector<SystemControl>&& value) { m_systemControlsHasBeenSet = true; m_systemControls = std::move(value); }
 
@@ -4704,14 +4708,14 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--sysctl</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>It is not recommended that you specify network-related
+     * run</a>.</p>  <p>We don't recommended that you specify network-related
      * <code>systemControls</code> parameters for multiple containers in a single task
      * that also uses either the <code>awsvpc</code> or <code>host</code> network
      * modes. For tasks that use the <code>awsvpc</code> network mode, the container
-     * that is started last determines which <code>systemControls</code> parameters
-     * take effect. For tasks that use the <code>host</code> network mode, it changes
-     * the container instance's namespaced kernel parameters as well as the
-     * containers.</p> 
+     * that's started last determines which <code>systemControls</code> parameters take
+     * effect. For tasks that use the <code>host</code> network mode, it changes the
+     * container instance's namespaced kernel parameters as well as the containers.</p>
+     * 
      */
     inline ContainerDefinition& WithSystemControls(const Aws::Vector<SystemControl>& value) { SetSystemControls(value); return *this;}
 
@@ -4723,14 +4727,14 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--sysctl</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>It is not recommended that you specify network-related
+     * run</a>.</p>  <p>We don't recommended that you specify network-related
      * <code>systemControls</code> parameters for multiple containers in a single task
      * that also uses either the <code>awsvpc</code> or <code>host</code> network
      * modes. For tasks that use the <code>awsvpc</code> network mode, the container
-     * that is started last determines which <code>systemControls</code> parameters
-     * take effect. For tasks that use the <code>host</code> network mode, it changes
-     * the container instance's namespaced kernel parameters as well as the
-     * containers.</p> 
+     * that's started last determines which <code>systemControls</code> parameters take
+     * effect. For tasks that use the <code>host</code> network mode, it changes the
+     * container instance's namespaced kernel parameters as well as the containers.</p>
+     * 
      */
     inline ContainerDefinition& WithSystemControls(Aws::Vector<SystemControl>&& value) { SetSystemControls(std::move(value)); return *this;}
 
@@ -4742,14 +4746,14 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--sysctl</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>It is not recommended that you specify network-related
+     * run</a>.</p>  <p>We don't recommended that you specify network-related
      * <code>systemControls</code> parameters for multiple containers in a single task
      * that also uses either the <code>awsvpc</code> or <code>host</code> network
      * modes. For tasks that use the <code>awsvpc</code> network mode, the container
-     * that is started last determines which <code>systemControls</code> parameters
-     * take effect. For tasks that use the <code>host</code> network mode, it changes
-     * the container instance's namespaced kernel parameters as well as the
-     * containers.</p> 
+     * that's started last determines which <code>systemControls</code> parameters take
+     * effect. For tasks that use the <code>host</code> network mode, it changes the
+     * container instance's namespaced kernel parameters as well as the containers.</p>
+     * 
      */
     inline ContainerDefinition& AddSystemControls(const SystemControl& value) { m_systemControlsHasBeenSet = true; m_systemControls.push_back(value); return *this; }
 
@@ -4761,14 +4765,14 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--sysctl</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>It is not recommended that you specify network-related
+     * run</a>.</p>  <p>We don't recommended that you specify network-related
      * <code>systemControls</code> parameters for multiple containers in a single task
      * that also uses either the <code>awsvpc</code> or <code>host</code> network
      * modes. For tasks that use the <code>awsvpc</code> network mode, the container
-     * that is started last determines which <code>systemControls</code> parameters
-     * take effect. For tasks that use the <code>host</code> network mode, it changes
-     * the container instance's namespaced kernel parameters as well as the
-     * containers.</p> 
+     * that's started last determines which <code>systemControls</code> parameters take
+     * effect. For tasks that use the <code>host</code> network mode, it changes the
+     * container instance's namespaced kernel parameters as well as the containers.</p>
+     * 
      */
     inline ContainerDefinition& AddSystemControls(SystemControl&& value) { m_systemControlsHasBeenSet = true; m_systemControls.push_back(std::move(value)); return *this; }
 

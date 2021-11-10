@@ -41,32 +41,32 @@ namespace Model
 
 
     /**
-     * <p>The Unix timestamp for when the managed agent was last started.</p>
+     * <p>The Unix timestamp for the time when the managed agent was last started.</p>
      */
     inline const Aws::Utils::DateTime& GetLastStartedAt() const{ return m_lastStartedAt; }
 
     /**
-     * <p>The Unix timestamp for when the managed agent was last started.</p>
+     * <p>The Unix timestamp for the time when the managed agent was last started.</p>
      */
     inline bool LastStartedAtHasBeenSet() const { return m_lastStartedAtHasBeenSet; }
 
     /**
-     * <p>The Unix timestamp for when the managed agent was last started.</p>
+     * <p>The Unix timestamp for the time when the managed agent was last started.</p>
      */
     inline void SetLastStartedAt(const Aws::Utils::DateTime& value) { m_lastStartedAtHasBeenSet = true; m_lastStartedAt = value; }
 
     /**
-     * <p>The Unix timestamp for when the managed agent was last started.</p>
+     * <p>The Unix timestamp for the time when the managed agent was last started.</p>
      */
     inline void SetLastStartedAt(Aws::Utils::DateTime&& value) { m_lastStartedAtHasBeenSet = true; m_lastStartedAt = std::move(value); }
 
     /**
-     * <p>The Unix timestamp for when the managed agent was last started.</p>
+     * <p>The Unix timestamp for the time when the managed agent was last started.</p>
      */
     inline ManagedAgent& WithLastStartedAt(const Aws::Utils::DateTime& value) { SetLastStartedAt(value); return *this;}
 
     /**
-     * <p>The Unix timestamp for when the managed agent was last started.</p>
+     * <p>The Unix timestamp for the time when the managed agent was last started.</p>
      */
     inline ManagedAgent& WithLastStartedAt(Aws::Utils::DateTime&& value) { SetLastStartedAt(std::move(value)); return *this;}
 

@@ -40,56 +40,56 @@ namespace Model
 
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster where to
      * start your task. If you do not specify a cluster, the default cluster is
      * assumed.</p>
      */
     inline const Aws::String& GetCluster() const{ return m_cluster; }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster where to
      * start your task. If you do not specify a cluster, the default cluster is
      * assumed.</p>
      */
     inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster where to
      * start your task. If you do not specify a cluster, the default cluster is
      * assumed.</p>
      */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster where to
      * start your task. If you do not specify a cluster, the default cluster is
      * assumed.</p>
      */
     inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster where to
      * start your task. If you do not specify a cluster, the default cluster is
      * assumed.</p>
      */
     inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster where to
      * start your task. If you do not specify a cluster, the default cluster is
      * assumed.</p>
      */
     inline StartTaskRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster where to
      * start your task. If you do not specify a cluster, the default cluster is
      * assumed.</p>
      */
     inline StartTaskRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster where to
      * start your task. If you do not specify a cluster, the default cluster is
      * assumed.</p>
      */
@@ -97,64 +97,64 @@ namespace Model
 
 
     /**
-     * <p>The container instance IDs or full ARN entries for the container instances on
-     * which you would like to place your task. You can specify up to 10 container
+     * <p>The container instance IDs or full ARN entries for the container instances
+     * where you would like to place your task. You can specify up to 10 container
      * instances.</p>
      */
     inline const Aws::Vector<Aws::String>& GetContainerInstances() const{ return m_containerInstances; }
 
     /**
-     * <p>The container instance IDs or full ARN entries for the container instances on
-     * which you would like to place your task. You can specify up to 10 container
+     * <p>The container instance IDs or full ARN entries for the container instances
+     * where you would like to place your task. You can specify up to 10 container
      * instances.</p>
      */
     inline bool ContainerInstancesHasBeenSet() const { return m_containerInstancesHasBeenSet; }
 
     /**
-     * <p>The container instance IDs or full ARN entries for the container instances on
-     * which you would like to place your task. You can specify up to 10 container
+     * <p>The container instance IDs or full ARN entries for the container instances
+     * where you would like to place your task. You can specify up to 10 container
      * instances.</p>
      */
     inline void SetContainerInstances(const Aws::Vector<Aws::String>& value) { m_containerInstancesHasBeenSet = true; m_containerInstances = value; }
 
     /**
-     * <p>The container instance IDs or full ARN entries for the container instances on
-     * which you would like to place your task. You can specify up to 10 container
+     * <p>The container instance IDs or full ARN entries for the container instances
+     * where you would like to place your task. You can specify up to 10 container
      * instances.</p>
      */
     inline void SetContainerInstances(Aws::Vector<Aws::String>&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances = std::move(value); }
 
     /**
-     * <p>The container instance IDs or full ARN entries for the container instances on
-     * which you would like to place your task. You can specify up to 10 container
+     * <p>The container instance IDs or full ARN entries for the container instances
+     * where you would like to place your task. You can specify up to 10 container
      * instances.</p>
      */
     inline StartTaskRequest& WithContainerInstances(const Aws::Vector<Aws::String>& value) { SetContainerInstances(value); return *this;}
 
     /**
-     * <p>The container instance IDs or full ARN entries for the container instances on
-     * which you would like to place your task. You can specify up to 10 container
+     * <p>The container instance IDs or full ARN entries for the container instances
+     * where you would like to place your task. You can specify up to 10 container
      * instances.</p>
      */
     inline StartTaskRequest& WithContainerInstances(Aws::Vector<Aws::String>&& value) { SetContainerInstances(std::move(value)); return *this;}
 
     /**
-     * <p>The container instance IDs or full ARN entries for the container instances on
-     * which you would like to place your task. You can specify up to 10 container
+     * <p>The container instance IDs or full ARN entries for the container instances
+     * where you would like to place your task. You can specify up to 10 container
      * instances.</p>
      */
     inline StartTaskRequest& AddContainerInstances(const Aws::String& value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
 
     /**
-     * <p>The container instance IDs or full ARN entries for the container instances on
-     * which you would like to place your task. You can specify up to 10 container
+     * <p>The container instance IDs or full ARN entries for the container instances
+     * where you would like to place your task. You can specify up to 10 container
      * instances.</p>
      */
     inline StartTaskRequest& AddContainerInstances(Aws::String&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The container instance IDs or full ARN entries for the container instances on
-     * which you would like to place your task. You can specify up to 10 container
+     * <p>The container instance IDs or full ARN entries for the container instances
+     * where you would like to place your task. You can specify up to 10 container
      * instances.</p>
      */
     inline StartTaskRequest& AddContainerInstances(const char* value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
@@ -320,10 +320,10 @@ namespace Model
 
     /**
      * <p>A list of container overrides in JSON format that specify the name of a
-     * container in the specified task definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
-     * task definition or Docker image) with a <code>command</code> override. You can
-     * also override existing environment variables (that are specified in the task
+     * container in the specified task definition and the overrides it receives. You
+     * can override the default command for a container (that's specified in the task
+     * definition or Docker image) with a <code>command</code> override. You can also
+     * override existing environment variables (that are specified in the task
      * definition or Docker image) on a container or add new environment variables to
      * it with an <code>environment</code> override.</p>  <p>A total of 8192
      * characters are allowed for overrides. This limit includes the JSON formatting
@@ -333,10 +333,10 @@ namespace Model
 
     /**
      * <p>A list of container overrides in JSON format that specify the name of a
-     * container in the specified task definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
-     * task definition or Docker image) with a <code>command</code> override. You can
-     * also override existing environment variables (that are specified in the task
+     * container in the specified task definition and the overrides it receives. You
+     * can override the default command for a container (that's specified in the task
+     * definition or Docker image) with a <code>command</code> override. You can also
+     * override existing environment variables (that are specified in the task
      * definition or Docker image) on a container or add new environment variables to
      * it with an <code>environment</code> override.</p>  <p>A total of 8192
      * characters are allowed for overrides. This limit includes the JSON formatting
@@ -346,10 +346,10 @@ namespace Model
 
     /**
      * <p>A list of container overrides in JSON format that specify the name of a
-     * container in the specified task definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
-     * task definition or Docker image) with a <code>command</code> override. You can
-     * also override existing environment variables (that are specified in the task
+     * container in the specified task definition and the overrides it receives. You
+     * can override the default command for a container (that's specified in the task
+     * definition or Docker image) with a <code>command</code> override. You can also
+     * override existing environment variables (that are specified in the task
      * definition or Docker image) on a container or add new environment variables to
      * it with an <code>environment</code> override.</p>  <p>A total of 8192
      * characters are allowed for overrides. This limit includes the JSON formatting
@@ -359,10 +359,10 @@ namespace Model
 
     /**
      * <p>A list of container overrides in JSON format that specify the name of a
-     * container in the specified task definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
-     * task definition or Docker image) with a <code>command</code> override. You can
-     * also override existing environment variables (that are specified in the task
+     * container in the specified task definition and the overrides it receives. You
+     * can override the default command for a container (that's specified in the task
+     * definition or Docker image) with a <code>command</code> override. You can also
+     * override existing environment variables (that are specified in the task
      * definition or Docker image) on a container or add new environment variables to
      * it with an <code>environment</code> override.</p>  <p>A total of 8192
      * characters are allowed for overrides. This limit includes the JSON formatting
@@ -372,10 +372,10 @@ namespace Model
 
     /**
      * <p>A list of container overrides in JSON format that specify the name of a
-     * container in the specified task definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
-     * task definition or Docker image) with a <code>command</code> override. You can
-     * also override existing environment variables (that are specified in the task
+     * container in the specified task definition and the overrides it receives. You
+     * can override the default command for a container (that's specified in the task
+     * definition or Docker image) with a <code>command</code> override. You can also
+     * override existing environment variables (that are specified in the task
      * definition or Docker image) on a container or add new environment variables to
      * it with an <code>environment</code> override.</p>  <p>A total of 8192
      * characters are allowed for overrides. This limit includes the JSON formatting
@@ -385,10 +385,10 @@ namespace Model
 
     /**
      * <p>A list of container overrides in JSON format that specify the name of a
-     * container in the specified task definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
-     * task definition or Docker image) with a <code>command</code> override. You can
-     * also override existing environment variables (that are specified in the task
+     * container in the specified task definition and the overrides it receives. You
+     * can override the default command for a container (that's specified in the task
+     * definition or Docker image) with a <code>command</code> override. You can also
+     * override existing environment variables (that are specified in the task
      * definition or Docker image) on a container or add new environment variables to
      * it with an <code>environment</code> override.</p>  <p>A total of 8192
      * characters are allowed for overrides. This limit includes the JSON formatting
@@ -399,37 +399,37 @@ namespace Model
 
     /**
      * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the task. If no value is specified, the tags are not propagated.</p>
+     * service to the task. If no value is specified, the tags aren't propagated.</p>
      */
     inline const PropagateTags& GetPropagateTags() const{ return m_propagateTags; }
 
     /**
      * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the task. If no value is specified, the tags are not propagated.</p>
+     * service to the task. If no value is specified, the tags aren't propagated.</p>
      */
     inline bool PropagateTagsHasBeenSet() const { return m_propagateTagsHasBeenSet; }
 
     /**
      * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the task. If no value is specified, the tags are not propagated.</p>
+     * service to the task. If no value is specified, the tags aren't propagated.</p>
      */
     inline void SetPropagateTags(const PropagateTags& value) { m_propagateTagsHasBeenSet = true; m_propagateTags = value; }
 
     /**
      * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the task. If no value is specified, the tags are not propagated.</p>
+     * service to the task. If no value is specified, the tags aren't propagated.</p>
      */
     inline void SetPropagateTags(PropagateTags&& value) { m_propagateTagsHasBeenSet = true; m_propagateTags = std::move(value); }
 
     /**
      * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the task. If no value is specified, the tags are not propagated.</p>
+     * service to the task. If no value is specified, the tags aren't propagated.</p>
      */
     inline StartTaskRequest& WithPropagateTags(const PropagateTags& value) { SetPropagateTags(value); return *this;}
 
     /**
      * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the task. If no value is specified, the tags are not propagated.</p>
+     * service to the task. If no value is specified, the tags aren't propagated.</p>
      */
     inline StartTaskRequest& WithPropagateTags(PropagateTags&& value) { SetPropagateTags(std::move(value)); return *this;}
 
@@ -481,8 +481,8 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p> <p>If a task is started by an Amazon ECS service, then the
+     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * are allowed.</p> <p>If a task is started by an Amazon ECS service, the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
      */
@@ -494,8 +494,8 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p> <p>If a task is started by an Amazon ECS service, then the
+     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * are allowed.</p> <p>If a task is started by an Amazon ECS service, the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
      */
@@ -507,8 +507,8 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p> <p>If a task is started by an Amazon ECS service, then the
+     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * are allowed.</p> <p>If a task is started by an Amazon ECS service, the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
      */
@@ -520,8 +520,8 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p> <p>If a task is started by an Amazon ECS service, then the
+     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * are allowed.</p> <p>If a task is started by an Amazon ECS service, the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
      */
@@ -533,8 +533,8 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p> <p>If a task is started by an Amazon ECS service, then the
+     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * are allowed.</p> <p>If a task is started by an Amazon ECS service, the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
      */
@@ -546,8 +546,8 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p> <p>If a task is started by an Amazon ECS service, then the
+     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * are allowed.</p> <p>If a task is started by an Amazon ECS service, the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
      */
@@ -559,8 +559,8 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p> <p>If a task is started by an Amazon ECS service, then the
+     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * are allowed.</p> <p>If a task is started by an Amazon ECS service, the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
      */
@@ -572,8 +572,8 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p> <p>If a task is started by an Amazon ECS service, then the
+     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * are allowed.</p> <p>If a task is started by an Amazon ECS service, the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
      */
@@ -744,7 +744,7 @@ namespace Model
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to start. If a
-     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
      * is used.</p>
      */
     inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
@@ -752,7 +752,7 @@ namespace Model
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to start. If a
-     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
      * is used.</p>
      */
     inline bool TaskDefinitionHasBeenSet() const { return m_taskDefinitionHasBeenSet; }
@@ -760,7 +760,7 @@ namespace Model
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to start. If a
-     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
      * is used.</p>
      */
     inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
@@ -768,7 +768,7 @@ namespace Model
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to start. If a
-     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
      * is used.</p>
      */
     inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::move(value); }
@@ -776,7 +776,7 @@ namespace Model
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to start. If a
-     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
      * is used.</p>
      */
     inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
@@ -784,7 +784,7 @@ namespace Model
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to start. If a
-     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
      * is used.</p>
      */
     inline StartTaskRequest& WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
@@ -792,7 +792,7 @@ namespace Model
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to start. If a
-     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
      * is used.</p>
      */
     inline StartTaskRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(std::move(value)); return *this;}
@@ -800,7 +800,7 @@ namespace Model
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to start. If a
-     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
      * is used.</p>
      */
     inline StartTaskRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}

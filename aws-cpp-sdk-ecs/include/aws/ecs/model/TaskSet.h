@@ -223,74 +223,74 @@ namespace Model
 
 
     /**
-     * <p>The tag specified when a task set is started. If the task set is created by
-     * an CodeDeploy deployment, the <code>startedBy</code> parameter is
-     * <code>CODE_DEPLOY</code>. For a task set created for an external deployment, the
+     * <p>The tag specified when a task set is started. If an CodeDeploy deployment
+     * created the task set, the <code>startedBy</code> parameter is
+     * <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
      * startedBy field isn't used.</p>
      */
     inline const Aws::String& GetStartedBy() const{ return m_startedBy; }
 
     /**
-     * <p>The tag specified when a task set is started. If the task set is created by
-     * an CodeDeploy deployment, the <code>startedBy</code> parameter is
-     * <code>CODE_DEPLOY</code>. For a task set created for an external deployment, the
+     * <p>The tag specified when a task set is started. If an CodeDeploy deployment
+     * created the task set, the <code>startedBy</code> parameter is
+     * <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
      * startedBy field isn't used.</p>
      */
     inline bool StartedByHasBeenSet() const { return m_startedByHasBeenSet; }
 
     /**
-     * <p>The tag specified when a task set is started. If the task set is created by
-     * an CodeDeploy deployment, the <code>startedBy</code> parameter is
-     * <code>CODE_DEPLOY</code>. For a task set created for an external deployment, the
+     * <p>The tag specified when a task set is started. If an CodeDeploy deployment
+     * created the task set, the <code>startedBy</code> parameter is
+     * <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
      * startedBy field isn't used.</p>
      */
     inline void SetStartedBy(const Aws::String& value) { m_startedByHasBeenSet = true; m_startedBy = value; }
 
     /**
-     * <p>The tag specified when a task set is started. If the task set is created by
-     * an CodeDeploy deployment, the <code>startedBy</code> parameter is
-     * <code>CODE_DEPLOY</code>. For a task set created for an external deployment, the
+     * <p>The tag specified when a task set is started. If an CodeDeploy deployment
+     * created the task set, the <code>startedBy</code> parameter is
+     * <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
      * startedBy field isn't used.</p>
      */
     inline void SetStartedBy(Aws::String&& value) { m_startedByHasBeenSet = true; m_startedBy = std::move(value); }
 
     /**
-     * <p>The tag specified when a task set is started. If the task set is created by
-     * an CodeDeploy deployment, the <code>startedBy</code> parameter is
-     * <code>CODE_DEPLOY</code>. For a task set created for an external deployment, the
+     * <p>The tag specified when a task set is started. If an CodeDeploy deployment
+     * created the task set, the <code>startedBy</code> parameter is
+     * <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
      * startedBy field isn't used.</p>
      */
     inline void SetStartedBy(const char* value) { m_startedByHasBeenSet = true; m_startedBy.assign(value); }
 
     /**
-     * <p>The tag specified when a task set is started. If the task set is created by
-     * an CodeDeploy deployment, the <code>startedBy</code> parameter is
-     * <code>CODE_DEPLOY</code>. For a task set created for an external deployment, the
+     * <p>The tag specified when a task set is started. If an CodeDeploy deployment
+     * created the task set, the <code>startedBy</code> parameter is
+     * <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
      * startedBy field isn't used.</p>
      */
     inline TaskSet& WithStartedBy(const Aws::String& value) { SetStartedBy(value); return *this;}
 
     /**
-     * <p>The tag specified when a task set is started. If the task set is created by
-     * an CodeDeploy deployment, the <code>startedBy</code> parameter is
-     * <code>CODE_DEPLOY</code>. For a task set created for an external deployment, the
+     * <p>The tag specified when a task set is started. If an CodeDeploy deployment
+     * created the task set, the <code>startedBy</code> parameter is
+     * <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
      * startedBy field isn't used.</p>
      */
     inline TaskSet& WithStartedBy(Aws::String&& value) { SetStartedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The tag specified when a task set is started. If the task set is created by
-     * an CodeDeploy deployment, the <code>startedBy</code> parameter is
-     * <code>CODE_DEPLOY</code>. For a task set created for an external deployment, the
+     * <p>The tag specified when a task set is started. If an CodeDeploy deployment
+     * created the task set, the <code>startedBy</code> parameter is
+     * <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
      * startedBy field isn't used.</p>
      */
     inline TaskSet& WithStartedBy(const char* value) { SetStartedBy(value); return *this;}
 
 
     /**
-     * <p>The external ID associated with the task set.</p> <p>If a task set is created
-     * by an CodeDeploy deployment, the <code>externalId</code> parameter contains the
-     * CodeDeploy deployment ID.</p> <p>If a task set is created for an external
+     * <p>The external ID associated with the task set.</p> <p>If an CodeDeploy
+     * deployment created a task set, the <code>externalId</code> parameter contains
+     * the CodeDeploy deployment ID.</p> <p>If a task set is created for an external
      * deployment and is associated with a service discovery registry, the
      * <code>externalId</code> parameter contains the
      * <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute.</p>
@@ -298,9 +298,9 @@ namespace Model
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
 
     /**
-     * <p>The external ID associated with the task set.</p> <p>If a task set is created
-     * by an CodeDeploy deployment, the <code>externalId</code> parameter contains the
-     * CodeDeploy deployment ID.</p> <p>If a task set is created for an external
+     * <p>The external ID associated with the task set.</p> <p>If an CodeDeploy
+     * deployment created a task set, the <code>externalId</code> parameter contains
+     * the CodeDeploy deployment ID.</p> <p>If a task set is created for an external
      * deployment and is associated with a service discovery registry, the
      * <code>externalId</code> parameter contains the
      * <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute.</p>
@@ -308,9 +308,9 @@ namespace Model
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
 
     /**
-     * <p>The external ID associated with the task set.</p> <p>If a task set is created
-     * by an CodeDeploy deployment, the <code>externalId</code> parameter contains the
-     * CodeDeploy deployment ID.</p> <p>If a task set is created for an external
+     * <p>The external ID associated with the task set.</p> <p>If an CodeDeploy
+     * deployment created a task set, the <code>externalId</code> parameter contains
+     * the CodeDeploy deployment ID.</p> <p>If a task set is created for an external
      * deployment and is associated with a service discovery registry, the
      * <code>externalId</code> parameter contains the
      * <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute.</p>
@@ -318,9 +318,9 @@ namespace Model
     inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
 
     /**
-     * <p>The external ID associated with the task set.</p> <p>If a task set is created
-     * by an CodeDeploy deployment, the <code>externalId</code> parameter contains the
-     * CodeDeploy deployment ID.</p> <p>If a task set is created for an external
+     * <p>The external ID associated with the task set.</p> <p>If an CodeDeploy
+     * deployment created a task set, the <code>externalId</code> parameter contains
+     * the CodeDeploy deployment ID.</p> <p>If a task set is created for an external
      * deployment and is associated with a service discovery registry, the
      * <code>externalId</code> parameter contains the
      * <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute.</p>
@@ -328,9 +328,9 @@ namespace Model
     inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
 
     /**
-     * <p>The external ID associated with the task set.</p> <p>If a task set is created
-     * by an CodeDeploy deployment, the <code>externalId</code> parameter contains the
-     * CodeDeploy deployment ID.</p> <p>If a task set is created for an external
+     * <p>The external ID associated with the task set.</p> <p>If an CodeDeploy
+     * deployment created a task set, the <code>externalId</code> parameter contains
+     * the CodeDeploy deployment ID.</p> <p>If a task set is created for an external
      * deployment and is associated with a service discovery registry, the
      * <code>externalId</code> parameter contains the
      * <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute.</p>
@@ -338,9 +338,9 @@ namespace Model
     inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
 
     /**
-     * <p>The external ID associated with the task set.</p> <p>If a task set is created
-     * by an CodeDeploy deployment, the <code>externalId</code> parameter contains the
-     * CodeDeploy deployment ID.</p> <p>If a task set is created for an external
+     * <p>The external ID associated with the task set.</p> <p>If an CodeDeploy
+     * deployment created a task set, the <code>externalId</code> parameter contains
+     * the CodeDeploy deployment ID.</p> <p>If a task set is created for an external
      * deployment and is associated with a service discovery registry, the
      * <code>externalId</code> parameter contains the
      * <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute.</p>
@@ -348,9 +348,9 @@ namespace Model
     inline TaskSet& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
 
     /**
-     * <p>The external ID associated with the task set.</p> <p>If a task set is created
-     * by an CodeDeploy deployment, the <code>externalId</code> parameter contains the
-     * CodeDeploy deployment ID.</p> <p>If a task set is created for an external
+     * <p>The external ID associated with the task set.</p> <p>If an CodeDeploy
+     * deployment created a task set, the <code>externalId</code> parameter contains
+     * the CodeDeploy deployment ID.</p> <p>If a task set is created for an external
      * deployment and is associated with a service discovery registry, the
      * <code>externalId</code> parameter contains the
      * <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute.</p>
@@ -358,9 +358,9 @@ namespace Model
     inline TaskSet& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
 
     /**
-     * <p>The external ID associated with the task set.</p> <p>If a task set is created
-     * by an CodeDeploy deployment, the <code>externalId</code> parameter contains the
-     * CodeDeploy deployment ID.</p> <p>If a task set is created for an external
+     * <p>The external ID associated with the task set.</p> <p>If an CodeDeploy
+     * deployment created a task set, the <code>externalId</code> parameter contains
+     * the CodeDeploy deployment ID.</p> <p>If a task set is created for an external
      * deployment and is associated with a service discovery registry, the
      * <code>externalId</code> parameter contains the
      * <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute.</p>
@@ -369,123 +369,123 @@ namespace Model
 
 
     /**
-     * <p>The status of the task set. The following describes each state:</p> <dl>
+     * <p>The status of the task set. The following describes each state.</p> <dl>
      * <dt>PRIMARY</dt> <dd> <p>The task set is serving production traffic.</p> </dd>
-     * <dt>ACTIVE</dt> <dd> <p>The task set is not serving production traffic.</p>
-     * </dd> <dt>DRAINING</dt> <dd> <p>The tasks in the task set are being stopped and
-     * their corresponding targets are being deregistered from their target group.</p>
-     * </dd> </dl>
+     * <dt>ACTIVE</dt> <dd> <p>The task set isn't serving production traffic.</p> </dd>
+     * <dt>DRAINING</dt> <dd> <p>The tasks in the task set are being stopped, and their
+     * corresponding targets are being deregistered from their target group.</p> </dd>
+     * </dl>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the task set. The following describes each state:</p> <dl>
+     * <p>The status of the task set. The following describes each state.</p> <dl>
      * <dt>PRIMARY</dt> <dd> <p>The task set is serving production traffic.</p> </dd>
-     * <dt>ACTIVE</dt> <dd> <p>The task set is not serving production traffic.</p>
-     * </dd> <dt>DRAINING</dt> <dd> <p>The tasks in the task set are being stopped and
-     * their corresponding targets are being deregistered from their target group.</p>
-     * </dd> </dl>
+     * <dt>ACTIVE</dt> <dd> <p>The task set isn't serving production traffic.</p> </dd>
+     * <dt>DRAINING</dt> <dd> <p>The tasks in the task set are being stopped, and their
+     * corresponding targets are being deregistered from their target group.</p> </dd>
+     * </dl>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the task set. The following describes each state:</p> <dl>
+     * <p>The status of the task set. The following describes each state.</p> <dl>
      * <dt>PRIMARY</dt> <dd> <p>The task set is serving production traffic.</p> </dd>
-     * <dt>ACTIVE</dt> <dd> <p>The task set is not serving production traffic.</p>
-     * </dd> <dt>DRAINING</dt> <dd> <p>The tasks in the task set are being stopped and
-     * their corresponding targets are being deregistered from their target group.</p>
-     * </dd> </dl>
+     * <dt>ACTIVE</dt> <dd> <p>The task set isn't serving production traffic.</p> </dd>
+     * <dt>DRAINING</dt> <dd> <p>The tasks in the task set are being stopped, and their
+     * corresponding targets are being deregistered from their target group.</p> </dd>
+     * </dl>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the task set. The following describes each state:</p> <dl>
+     * <p>The status of the task set. The following describes each state.</p> <dl>
      * <dt>PRIMARY</dt> <dd> <p>The task set is serving production traffic.</p> </dd>
-     * <dt>ACTIVE</dt> <dd> <p>The task set is not serving production traffic.</p>
-     * </dd> <dt>DRAINING</dt> <dd> <p>The tasks in the task set are being stopped and
-     * their corresponding targets are being deregistered from their target group.</p>
-     * </dd> </dl>
+     * <dt>ACTIVE</dt> <dd> <p>The task set isn't serving production traffic.</p> </dd>
+     * <dt>DRAINING</dt> <dd> <p>The tasks in the task set are being stopped, and their
+     * corresponding targets are being deregistered from their target group.</p> </dd>
+     * </dl>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the task set. The following describes each state:</p> <dl>
+     * <p>The status of the task set. The following describes each state.</p> <dl>
      * <dt>PRIMARY</dt> <dd> <p>The task set is serving production traffic.</p> </dd>
-     * <dt>ACTIVE</dt> <dd> <p>The task set is not serving production traffic.</p>
-     * </dd> <dt>DRAINING</dt> <dd> <p>The tasks in the task set are being stopped and
-     * their corresponding targets are being deregistered from their target group.</p>
-     * </dd> </dl>
+     * <dt>ACTIVE</dt> <dd> <p>The task set isn't serving production traffic.</p> </dd>
+     * <dt>DRAINING</dt> <dd> <p>The tasks in the task set are being stopped, and their
+     * corresponding targets are being deregistered from their target group.</p> </dd>
+     * </dl>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The status of the task set. The following describes each state:</p> <dl>
+     * <p>The status of the task set. The following describes each state.</p> <dl>
      * <dt>PRIMARY</dt> <dd> <p>The task set is serving production traffic.</p> </dd>
-     * <dt>ACTIVE</dt> <dd> <p>The task set is not serving production traffic.</p>
-     * </dd> <dt>DRAINING</dt> <dd> <p>The tasks in the task set are being stopped and
-     * their corresponding targets are being deregistered from their target group.</p>
-     * </dd> </dl>
+     * <dt>ACTIVE</dt> <dd> <p>The task set isn't serving production traffic.</p> </dd>
+     * <dt>DRAINING</dt> <dd> <p>The tasks in the task set are being stopped, and their
+     * corresponding targets are being deregistered from their target group.</p> </dd>
+     * </dl>
      */
     inline TaskSet& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the task set. The following describes each state:</p> <dl>
+     * <p>The status of the task set. The following describes each state.</p> <dl>
      * <dt>PRIMARY</dt> <dd> <p>The task set is serving production traffic.</p> </dd>
-     * <dt>ACTIVE</dt> <dd> <p>The task set is not serving production traffic.</p>
-     * </dd> <dt>DRAINING</dt> <dd> <p>The tasks in the task set are being stopped and
-     * their corresponding targets are being deregistered from their target group.</p>
-     * </dd> </dl>
+     * <dt>ACTIVE</dt> <dd> <p>The task set isn't serving production traffic.</p> </dd>
+     * <dt>DRAINING</dt> <dd> <p>The tasks in the task set are being stopped, and their
+     * corresponding targets are being deregistered from their target group.</p> </dd>
+     * </dl>
      */
     inline TaskSet& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the task set. The following describes each state:</p> <dl>
+     * <p>The status of the task set. The following describes each state.</p> <dl>
      * <dt>PRIMARY</dt> <dd> <p>The task set is serving production traffic.</p> </dd>
-     * <dt>ACTIVE</dt> <dd> <p>The task set is not serving production traffic.</p>
-     * </dd> <dt>DRAINING</dt> <dd> <p>The tasks in the task set are being stopped and
-     * their corresponding targets are being deregistered from their target group.</p>
-     * </dd> </dl>
+     * <dt>ACTIVE</dt> <dd> <p>The task set isn't serving production traffic.</p> </dd>
+     * <dt>DRAINING</dt> <dd> <p>The tasks in the task set are being stopped, and their
+     * corresponding targets are being deregistered from their target group.</p> </dd>
+     * </dl>
      */
     inline TaskSet& WithStatus(const char* value) { SetStatus(value); return *this;}
 
 
     /**
-     * <p>The task definition the task set is using.</p>
+     * <p>The task definition that the task set is using.</p>
      */
     inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
 
     /**
-     * <p>The task definition the task set is using.</p>
+     * <p>The task definition that the task set is using.</p>
      */
     inline bool TaskDefinitionHasBeenSet() const { return m_taskDefinitionHasBeenSet; }
 
     /**
-     * <p>The task definition the task set is using.</p>
+     * <p>The task definition that the task set is using.</p>
      */
     inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
     /**
-     * <p>The task definition the task set is using.</p>
+     * <p>The task definition that the task set is using.</p>
      */
     inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::move(value); }
 
     /**
-     * <p>The task definition the task set is using.</p>
+     * <p>The task definition that the task set is using.</p>
      */
     inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
 
     /**
-     * <p>The task definition the task set is using.</p>
+     * <p>The task definition that the task set is using.</p>
      */
     inline TaskSet& WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
 
     /**
-     * <p>The task definition the task set is using.</p>
+     * <p>The task definition that the task set is using.</p>
      */
     inline TaskSet& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(std::move(value)); return *this;}
 
     /**
-     * <p>The task definition the task set is using.</p>
+     * <p>The task definition that the task set is using.</p>
      */
     inline TaskSet& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 
@@ -527,7 +527,7 @@ namespace Model
      * <p>The number of tasks in the task set that are in the <code>PENDING</code>
      * status during a deployment. A task in the <code>PENDING</code> state is
      * preparing to enter the <code>RUNNING</code> state. A task set enters the
-     * <code>PENDING</code> status when it launches for the first time or when it is
+     * <code>PENDING</code> status when it launches for the first time or when it's
      * restarted after being in the <code>STOPPED</code> state.</p>
      */
     inline int GetPendingCount() const{ return m_pendingCount; }
@@ -536,7 +536,7 @@ namespace Model
      * <p>The number of tasks in the task set that are in the <code>PENDING</code>
      * status during a deployment. A task in the <code>PENDING</code> state is
      * preparing to enter the <code>RUNNING</code> state. A task set enters the
-     * <code>PENDING</code> status when it launches for the first time or when it is
+     * <code>PENDING</code> status when it launches for the first time or when it's
      * restarted after being in the <code>STOPPED</code> state.</p>
      */
     inline bool PendingCountHasBeenSet() const { return m_pendingCountHasBeenSet; }
@@ -545,7 +545,7 @@ namespace Model
      * <p>The number of tasks in the task set that are in the <code>PENDING</code>
      * status during a deployment. A task in the <code>PENDING</code> state is
      * preparing to enter the <code>RUNNING</code> state. A task set enters the
-     * <code>PENDING</code> status when it launches for the first time or when it is
+     * <code>PENDING</code> status when it launches for the first time or when it's
      * restarted after being in the <code>STOPPED</code> state.</p>
      */
     inline void SetPendingCount(int value) { m_pendingCountHasBeenSet = true; m_pendingCount = value; }
@@ -554,7 +554,7 @@ namespace Model
      * <p>The number of tasks in the task set that are in the <code>PENDING</code>
      * status during a deployment. A task in the <code>PENDING</code> state is
      * preparing to enter the <code>RUNNING</code> state. A task set enters the
-     * <code>PENDING</code> status when it launches for the first time or when it is
+     * <code>PENDING</code> status when it launches for the first time or when it's
      * restarted after being in the <code>STOPPED</code> state.</p>
      */
     inline TaskSet& WithPendingCount(int value) { SetPendingCount(value); return *this;}
@@ -590,63 +590,63 @@ namespace Model
 
 
     /**
-     * <p>The Unix timestamp for when the task set was created.</p>
+     * <p>The Unix timestamp for the time when the task set was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The Unix timestamp for when the task set was created.</p>
+     * <p>The Unix timestamp for the time when the task set was created.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The Unix timestamp for when the task set was created.</p>
+     * <p>The Unix timestamp for the time when the task set was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The Unix timestamp for when the task set was created.</p>
+     * <p>The Unix timestamp for the time when the task set was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The Unix timestamp for when the task set was created.</p>
+     * <p>The Unix timestamp for the time when the task set was created.</p>
      */
     inline TaskSet& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The Unix timestamp for when the task set was created.</p>
+     * <p>The Unix timestamp for the time when the task set was created.</p>
      */
     inline TaskSet& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Unix timestamp for when the task set was last updated.</p>
+     * <p>The Unix timestamp for the time when the task set was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>The Unix timestamp for when the task set was last updated.</p>
+     * <p>The Unix timestamp for the time when the task set was last updated.</p>
      */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
-     * <p>The Unix timestamp for when the task set was last updated.</p>
+     * <p>The Unix timestamp for the time when the task set was last updated.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>The Unix timestamp for when the task set was last updated.</p>
+     * <p>The Unix timestamp for the time when the task set was last updated.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
-     * <p>The Unix timestamp for when the task set was last updated.</p>
+     * <p>The Unix timestamp for the time when the task set was last updated.</p>
      */
     inline TaskSet& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>The Unix timestamp for when the task set was last updated.</p>
+     * <p>The Unix timestamp for the time when the task set was last updated.</p>
      */
     inline TaskSet& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
@@ -707,49 +707,49 @@ namespace Model
 
 
     /**
-     * <p>The capacity provider strategy associated with the task set.</p>
+     * <p>The capacity provider strategy that are associated with the task set.</p>
      */
     inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const{ return m_capacityProviderStrategy; }
 
     /**
-     * <p>The capacity provider strategy associated with the task set.</p>
+     * <p>The capacity provider strategy that are associated with the task set.</p>
      */
     inline bool CapacityProviderStrategyHasBeenSet() const { return m_capacityProviderStrategyHasBeenSet; }
 
     /**
-     * <p>The capacity provider strategy associated with the task set.</p>
+     * <p>The capacity provider strategy that are associated with the task set.</p>
      */
     inline void SetCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = value; }
 
     /**
-     * <p>The capacity provider strategy associated with the task set.</p>
+     * <p>The capacity provider strategy that are associated with the task set.</p>
      */
     inline void SetCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = std::move(value); }
 
     /**
-     * <p>The capacity provider strategy associated with the task set.</p>
+     * <p>The capacity provider strategy that are associated with the task set.</p>
      */
     inline TaskSet& WithCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { SetCapacityProviderStrategy(value); return *this;}
 
     /**
-     * <p>The capacity provider strategy associated with the task set.</p>
+     * <p>The capacity provider strategy that are associated with the task set.</p>
      */
     inline TaskSet& WithCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { SetCapacityProviderStrategy(std::move(value)); return *this;}
 
     /**
-     * <p>The capacity provider strategy associated with the task set.</p>
+     * <p>The capacity provider strategy that are associated with the task set.</p>
      */
     inline TaskSet& AddCapacityProviderStrategy(const CapacityProviderStrategyItem& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(value); return *this; }
 
     /**
-     * <p>The capacity provider strategy associated with the task set.</p>
+     * <p>The capacity provider strategy that are associated with the task set.</p>
      */
     inline TaskSet& AddCapacityProviderStrategy(CapacityProviderStrategyItem&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The Fargate platform version on which the tasks in the task set are running.
-     * A platform version is only specified for tasks run on Fargate. For more
+     * <p>The Fargate platform version where the tasks in the task set are running. A
+     * platform version is only specified for tasks run on Fargate. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      * platform versions</a> in the <i>Amazon Elastic Container Service Developer
@@ -758,8 +758,8 @@ namespace Model
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
     /**
-     * <p>The Fargate platform version on which the tasks in the task set are running.
-     * A platform version is only specified for tasks run on Fargate. For more
+     * <p>The Fargate platform version where the tasks in the task set are running. A
+     * platform version is only specified for tasks run on Fargate. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      * platform versions</a> in the <i>Amazon Elastic Container Service Developer
@@ -768,8 +768,8 @@ namespace Model
     inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
 
     /**
-     * <p>The Fargate platform version on which the tasks in the task set are running.
-     * A platform version is only specified for tasks run on Fargate. For more
+     * <p>The Fargate platform version where the tasks in the task set are running. A
+     * platform version is only specified for tasks run on Fargate. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      * platform versions</a> in the <i>Amazon Elastic Container Service Developer
@@ -778,8 +778,8 @@ namespace Model
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
     /**
-     * <p>The Fargate platform version on which the tasks in the task set are running.
-     * A platform version is only specified for tasks run on Fargate. For more
+     * <p>The Fargate platform version where the tasks in the task set are running. A
+     * platform version is only specified for tasks run on Fargate. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      * platform versions</a> in the <i>Amazon Elastic Container Service Developer
@@ -788,8 +788,8 @@ namespace Model
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
     /**
-     * <p>The Fargate platform version on which the tasks in the task set are running.
-     * A platform version is only specified for tasks run on Fargate. For more
+     * <p>The Fargate platform version where the tasks in the task set are running. A
+     * platform version is only specified for tasks run on Fargate. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      * platform versions</a> in the <i>Amazon Elastic Container Service Developer
@@ -798,8 +798,8 @@ namespace Model
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
     /**
-     * <p>The Fargate platform version on which the tasks in the task set are running.
-     * A platform version is only specified for tasks run on Fargate. For more
+     * <p>The Fargate platform version where the tasks in the task set are running. A
+     * platform version is only specified for tasks run on Fargate. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      * platform versions</a> in the <i>Amazon Elastic Container Service Developer
@@ -808,8 +808,8 @@ namespace Model
     inline TaskSet& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
     /**
-     * <p>The Fargate platform version on which the tasks in the task set are running.
-     * A platform version is only specified for tasks run on Fargate. For more
+     * <p>The Fargate platform version where the tasks in the task set are running. A
+     * platform version is only specified for tasks run on Fargate. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      * platform versions</a> in the <i>Amazon Elastic Container Service Developer
@@ -818,8 +818,8 @@ namespace Model
     inline TaskSet& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The Fargate platform version on which the tasks in the task set are running.
-     * A platform version is only specified for tasks run on Fargate. For more
+     * <p>The Fargate platform version where the tasks in the task set are running. A
+     * platform version is only specified for tasks run on Fargate. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      * platform versions</a> in the <i>Amazon Elastic Container Service Developer
@@ -830,57 +830,57 @@ namespace Model
 
     /**
      * <p>The operating system that your tasks in the set are running on. A platform
-     * family is specified only for tasks using the Fargate launch type. </p> <p> All
-     * tasks in the set must have the same value.</p>
+     * family is specified only for tasks that use the Fargate launch type. </p> <p>
+     * All tasks in the set must have the same value.</p>
      */
     inline const Aws::String& GetPlatformFamily() const{ return m_platformFamily; }
 
     /**
      * <p>The operating system that your tasks in the set are running on. A platform
-     * family is specified only for tasks using the Fargate launch type. </p> <p> All
-     * tasks in the set must have the same value.</p>
+     * family is specified only for tasks that use the Fargate launch type. </p> <p>
+     * All tasks in the set must have the same value.</p>
      */
     inline bool PlatformFamilyHasBeenSet() const { return m_platformFamilyHasBeenSet; }
 
     /**
      * <p>The operating system that your tasks in the set are running on. A platform
-     * family is specified only for tasks using the Fargate launch type. </p> <p> All
-     * tasks in the set must have the same value.</p>
+     * family is specified only for tasks that use the Fargate launch type. </p> <p>
+     * All tasks in the set must have the same value.</p>
      */
     inline void SetPlatformFamily(const Aws::String& value) { m_platformFamilyHasBeenSet = true; m_platformFamily = value; }
 
     /**
      * <p>The operating system that your tasks in the set are running on. A platform
-     * family is specified only for tasks using the Fargate launch type. </p> <p> All
-     * tasks in the set must have the same value.</p>
+     * family is specified only for tasks that use the Fargate launch type. </p> <p>
+     * All tasks in the set must have the same value.</p>
      */
     inline void SetPlatformFamily(Aws::String&& value) { m_platformFamilyHasBeenSet = true; m_platformFamily = std::move(value); }
 
     /**
      * <p>The operating system that your tasks in the set are running on. A platform
-     * family is specified only for tasks using the Fargate launch type. </p> <p> All
-     * tasks in the set must have the same value.</p>
+     * family is specified only for tasks that use the Fargate launch type. </p> <p>
+     * All tasks in the set must have the same value.</p>
      */
     inline void SetPlatformFamily(const char* value) { m_platformFamilyHasBeenSet = true; m_platformFamily.assign(value); }
 
     /**
      * <p>The operating system that your tasks in the set are running on. A platform
-     * family is specified only for tasks using the Fargate launch type. </p> <p> All
-     * tasks in the set must have the same value.</p>
+     * family is specified only for tasks that use the Fargate launch type. </p> <p>
+     * All tasks in the set must have the same value.</p>
      */
     inline TaskSet& WithPlatformFamily(const Aws::String& value) { SetPlatformFamily(value); return *this;}
 
     /**
      * <p>The operating system that your tasks in the set are running on. A platform
-     * family is specified only for tasks using the Fargate launch type. </p> <p> All
-     * tasks in the set must have the same value.</p>
+     * family is specified only for tasks that use the Fargate launch type. </p> <p>
+     * All tasks in the set must have the same value.</p>
      */
     inline TaskSet& WithPlatformFamily(Aws::String&& value) { SetPlatformFamily(std::move(value)); return *this;}
 
     /**
      * <p>The operating system that your tasks in the set are running on. A platform
-     * family is specified only for tasks using the Fargate launch type. </p> <p> All
-     * tasks in the set must have the same value.</p>
+     * family is specified only for tasks that use the Fargate launch type. </p> <p>
+     * All tasks in the set must have the same value.</p>
      */
     inline TaskSet& WithPlatformFamily(const char* value) { SetPlatformFamily(value); return *this;}
 
@@ -917,48 +917,48 @@ namespace Model
 
 
     /**
-     * <p>Details on a load balancer that is used with a task set.</p>
+     * <p>Details on a load balancer that are used with a task set.</p>
      */
     inline const Aws::Vector<LoadBalancer>& GetLoadBalancers() const{ return m_loadBalancers; }
 
     /**
-     * <p>Details on a load balancer that is used with a task set.</p>
+     * <p>Details on a load balancer that are used with a task set.</p>
      */
     inline bool LoadBalancersHasBeenSet() const { return m_loadBalancersHasBeenSet; }
 
     /**
-     * <p>Details on a load balancer that is used with a task set.</p>
+     * <p>Details on a load balancer that are used with a task set.</p>
      */
     inline void SetLoadBalancers(const Aws::Vector<LoadBalancer>& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = value; }
 
     /**
-     * <p>Details on a load balancer that is used with a task set.</p>
+     * <p>Details on a load balancer that are used with a task set.</p>
      */
     inline void SetLoadBalancers(Aws::Vector<LoadBalancer>&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = std::move(value); }
 
     /**
-     * <p>Details on a load balancer that is used with a task set.</p>
+     * <p>Details on a load balancer that are used with a task set.</p>
      */
     inline TaskSet& WithLoadBalancers(const Aws::Vector<LoadBalancer>& value) { SetLoadBalancers(value); return *this;}
 
     /**
-     * <p>Details on a load balancer that is used with a task set.</p>
+     * <p>Details on a load balancer that are used with a task set.</p>
      */
     inline TaskSet& WithLoadBalancers(Aws::Vector<LoadBalancer>&& value) { SetLoadBalancers(std::move(value)); return *this;}
 
     /**
-     * <p>Details on a load balancer that is used with a task set.</p>
+     * <p>Details on a load balancer that are used with a task set.</p>
      */
     inline TaskSet& AddLoadBalancers(const LoadBalancer& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(value); return *this; }
 
     /**
-     * <p>Details on a load balancer that is used with a task set.</p>
+     * <p>Details on a load balancer that are used with a task set.</p>
      */
     inline TaskSet& AddLoadBalancers(LoadBalancer&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The details of the service discovery registries to assign to this task set.
+     * <p>The details for the service discovery registries to assign to this task set.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * discovery</a>.</p>
@@ -966,7 +966,7 @@ namespace Model
     inline const Aws::Vector<ServiceRegistry>& GetServiceRegistries() const{ return m_serviceRegistries; }
 
     /**
-     * <p>The details of the service discovery registries to assign to this task set.
+     * <p>The details for the service discovery registries to assign to this task set.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * discovery</a>.</p>
@@ -974,7 +974,7 @@ namespace Model
     inline bool ServiceRegistriesHasBeenSet() const { return m_serviceRegistriesHasBeenSet; }
 
     /**
-     * <p>The details of the service discovery registries to assign to this task set.
+     * <p>The details for the service discovery registries to assign to this task set.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * discovery</a>.</p>
@@ -982,7 +982,7 @@ namespace Model
     inline void SetServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = value; }
 
     /**
-     * <p>The details of the service discovery registries to assign to this task set.
+     * <p>The details for the service discovery registries to assign to this task set.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * discovery</a>.</p>
@@ -990,7 +990,7 @@ namespace Model
     inline void SetServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = std::move(value); }
 
     /**
-     * <p>The details of the service discovery registries to assign to this task set.
+     * <p>The details for the service discovery registries to assign to this task set.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * discovery</a>.</p>
@@ -998,7 +998,7 @@ namespace Model
     inline TaskSet& WithServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { SetServiceRegistries(value); return *this;}
 
     /**
-     * <p>The details of the service discovery registries to assign to this task set.
+     * <p>The details for the service discovery registries to assign to this task set.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * discovery</a>.</p>
@@ -1006,7 +1006,7 @@ namespace Model
     inline TaskSet& WithServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { SetServiceRegistries(std::move(value)); return *this;}
 
     /**
-     * <p>The details of the service discovery registries to assign to this task set.
+     * <p>The details for the service discovery registries to assign to this task set.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * discovery</a>.</p>
@@ -1014,7 +1014,7 @@ namespace Model
     inline TaskSet& AddServiceRegistries(const ServiceRegistry& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(value); return *this; }
 
     /**
-     * <p>The details of the service discovery registries to assign to this task set.
+     * <p>The details for the service discovery registries to assign to this task set.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * discovery</a>.</p>
@@ -1023,162 +1023,168 @@ namespace Model
 
 
     /**
-     * <p>A floating-point percentage of the desired number of tasks to place and keep
+     * <p>A floating-point percentage of your desired number of tasks to place and keep
      * running in the task set.</p>
      */
     inline const Scale& GetScale() const{ return m_scale; }
 
     /**
-     * <p>A floating-point percentage of the desired number of tasks to place and keep
+     * <p>A floating-point percentage of your desired number of tasks to place and keep
      * running in the task set.</p>
      */
     inline bool ScaleHasBeenSet() const { return m_scaleHasBeenSet; }
 
     /**
-     * <p>A floating-point percentage of the desired number of tasks to place and keep
+     * <p>A floating-point percentage of your desired number of tasks to place and keep
      * running in the task set.</p>
      */
     inline void SetScale(const Scale& value) { m_scaleHasBeenSet = true; m_scale = value; }
 
     /**
-     * <p>A floating-point percentage of the desired number of tasks to place and keep
+     * <p>A floating-point percentage of your desired number of tasks to place and keep
      * running in the task set.</p>
      */
     inline void SetScale(Scale&& value) { m_scaleHasBeenSet = true; m_scale = std::move(value); }
 
     /**
-     * <p>A floating-point percentage of the desired number of tasks to place and keep
+     * <p>A floating-point percentage of your desired number of tasks to place and keep
      * running in the task set.</p>
      */
     inline TaskSet& WithScale(const Scale& value) { SetScale(value); return *this;}
 
     /**
-     * <p>A floating-point percentage of the desired number of tasks to place and keep
+     * <p>A floating-point percentage of your desired number of tasks to place and keep
      * running in the task set.</p>
      */
     inline TaskSet& WithScale(Scale&& value) { SetScale(std::move(value)); return *this;}
 
 
     /**
-     * <p>The stability status, which indicates whether the task set has reached a
-     * steady state. If the following conditions are met, the task set will be in
+     * <p>The stability status. This indicates whether the task set has reached a
+     * steady state. If the following conditions are met, the task set sre in
      * <code>STEADY_STATE</code>:</p> <ul> <li> <p>The task <code>runningCount</code>
      * is equal to the <code>computedDesiredCount</code>.</p> </li> <li> <p>The
      * <code>pendingCount</code> is <code>0</code>.</p> </li> <li> <p>There are no
-     * tasks running on container instances in the <code>DRAINING</code> status.</p>
-     * </li> <li> <p>All tasks are reporting a healthy status from the load balancers,
-     * service discovery, and container health checks.</p> </li> </ul> <p>If any of
-     * those conditions are not met, the stability status returns
+     * tasks that are running on container instances in the <code>DRAINING</code>
+     * status.</p> </li> <li> <p>All tasks are reporting a healthy status from the load
+     * balancers, service discovery, and container health checks.</p> </li> </ul> <p>If
+     * any of those conditions aren't met, the stability status returns
      * <code>STABILIZING</code>.</p>
      */
     inline const StabilityStatus& GetStabilityStatus() const{ return m_stabilityStatus; }
 
     /**
-     * <p>The stability status, which indicates whether the task set has reached a
-     * steady state. If the following conditions are met, the task set will be in
+     * <p>The stability status. This indicates whether the task set has reached a
+     * steady state. If the following conditions are met, the task set sre in
      * <code>STEADY_STATE</code>:</p> <ul> <li> <p>The task <code>runningCount</code>
      * is equal to the <code>computedDesiredCount</code>.</p> </li> <li> <p>The
      * <code>pendingCount</code> is <code>0</code>.</p> </li> <li> <p>There are no
-     * tasks running on container instances in the <code>DRAINING</code> status.</p>
-     * </li> <li> <p>All tasks are reporting a healthy status from the load balancers,
-     * service discovery, and container health checks.</p> </li> </ul> <p>If any of
-     * those conditions are not met, the stability status returns
+     * tasks that are running on container instances in the <code>DRAINING</code>
+     * status.</p> </li> <li> <p>All tasks are reporting a healthy status from the load
+     * balancers, service discovery, and container health checks.</p> </li> </ul> <p>If
+     * any of those conditions aren't met, the stability status returns
      * <code>STABILIZING</code>.</p>
      */
     inline bool StabilityStatusHasBeenSet() const { return m_stabilityStatusHasBeenSet; }
 
     /**
-     * <p>The stability status, which indicates whether the task set has reached a
-     * steady state. If the following conditions are met, the task set will be in
+     * <p>The stability status. This indicates whether the task set has reached a
+     * steady state. If the following conditions are met, the task set sre in
      * <code>STEADY_STATE</code>:</p> <ul> <li> <p>The task <code>runningCount</code>
      * is equal to the <code>computedDesiredCount</code>.</p> </li> <li> <p>The
      * <code>pendingCount</code> is <code>0</code>.</p> </li> <li> <p>There are no
-     * tasks running on container instances in the <code>DRAINING</code> status.</p>
-     * </li> <li> <p>All tasks are reporting a healthy status from the load balancers,
-     * service discovery, and container health checks.</p> </li> </ul> <p>If any of
-     * those conditions are not met, the stability status returns
+     * tasks that are running on container instances in the <code>DRAINING</code>
+     * status.</p> </li> <li> <p>All tasks are reporting a healthy status from the load
+     * balancers, service discovery, and container health checks.</p> </li> </ul> <p>If
+     * any of those conditions aren't met, the stability status returns
      * <code>STABILIZING</code>.</p>
      */
     inline void SetStabilityStatus(const StabilityStatus& value) { m_stabilityStatusHasBeenSet = true; m_stabilityStatus = value; }
 
     /**
-     * <p>The stability status, which indicates whether the task set has reached a
-     * steady state. If the following conditions are met, the task set will be in
+     * <p>The stability status. This indicates whether the task set has reached a
+     * steady state. If the following conditions are met, the task set sre in
      * <code>STEADY_STATE</code>:</p> <ul> <li> <p>The task <code>runningCount</code>
      * is equal to the <code>computedDesiredCount</code>.</p> </li> <li> <p>The
      * <code>pendingCount</code> is <code>0</code>.</p> </li> <li> <p>There are no
-     * tasks running on container instances in the <code>DRAINING</code> status.</p>
-     * </li> <li> <p>All tasks are reporting a healthy status from the load balancers,
-     * service discovery, and container health checks.</p> </li> </ul> <p>If any of
-     * those conditions are not met, the stability status returns
+     * tasks that are running on container instances in the <code>DRAINING</code>
+     * status.</p> </li> <li> <p>All tasks are reporting a healthy status from the load
+     * balancers, service discovery, and container health checks.</p> </li> </ul> <p>If
+     * any of those conditions aren't met, the stability status returns
      * <code>STABILIZING</code>.</p>
      */
     inline void SetStabilityStatus(StabilityStatus&& value) { m_stabilityStatusHasBeenSet = true; m_stabilityStatus = std::move(value); }
 
     /**
-     * <p>The stability status, which indicates whether the task set has reached a
-     * steady state. If the following conditions are met, the task set will be in
+     * <p>The stability status. This indicates whether the task set has reached a
+     * steady state. If the following conditions are met, the task set sre in
      * <code>STEADY_STATE</code>:</p> <ul> <li> <p>The task <code>runningCount</code>
      * is equal to the <code>computedDesiredCount</code>.</p> </li> <li> <p>The
      * <code>pendingCount</code> is <code>0</code>.</p> </li> <li> <p>There are no
-     * tasks running on container instances in the <code>DRAINING</code> status.</p>
-     * </li> <li> <p>All tasks are reporting a healthy status from the load balancers,
-     * service discovery, and container health checks.</p> </li> </ul> <p>If any of
-     * those conditions are not met, the stability status returns
+     * tasks that are running on container instances in the <code>DRAINING</code>
+     * status.</p> </li> <li> <p>All tasks are reporting a healthy status from the load
+     * balancers, service discovery, and container health checks.</p> </li> </ul> <p>If
+     * any of those conditions aren't met, the stability status returns
      * <code>STABILIZING</code>.</p>
      */
     inline TaskSet& WithStabilityStatus(const StabilityStatus& value) { SetStabilityStatus(value); return *this;}
 
     /**
-     * <p>The stability status, which indicates whether the task set has reached a
-     * steady state. If the following conditions are met, the task set will be in
+     * <p>The stability status. This indicates whether the task set has reached a
+     * steady state. If the following conditions are met, the task set sre in
      * <code>STEADY_STATE</code>:</p> <ul> <li> <p>The task <code>runningCount</code>
      * is equal to the <code>computedDesiredCount</code>.</p> </li> <li> <p>The
      * <code>pendingCount</code> is <code>0</code>.</p> </li> <li> <p>There are no
-     * tasks running on container instances in the <code>DRAINING</code> status.</p>
-     * </li> <li> <p>All tasks are reporting a healthy status from the load balancers,
-     * service discovery, and container health checks.</p> </li> </ul> <p>If any of
-     * those conditions are not met, the stability status returns
+     * tasks that are running on container instances in the <code>DRAINING</code>
+     * status.</p> </li> <li> <p>All tasks are reporting a healthy status from the load
+     * balancers, service discovery, and container health checks.</p> </li> </ul> <p>If
+     * any of those conditions aren't met, the stability status returns
      * <code>STABILIZING</code>.</p>
      */
     inline TaskSet& WithStabilityStatus(StabilityStatus&& value) { SetStabilityStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Unix timestamp for when the task set stability status was retrieved.</p>
+     * <p>The Unix timestamp for the time when the task set stability status was
+     * retrieved.</p>
      */
     inline const Aws::Utils::DateTime& GetStabilityStatusAt() const{ return m_stabilityStatusAt; }
 
     /**
-     * <p>The Unix timestamp for when the task set stability status was retrieved.</p>
+     * <p>The Unix timestamp for the time when the task set stability status was
+     * retrieved.</p>
      */
     inline bool StabilityStatusAtHasBeenSet() const { return m_stabilityStatusAtHasBeenSet; }
 
     /**
-     * <p>The Unix timestamp for when the task set stability status was retrieved.</p>
+     * <p>The Unix timestamp for the time when the task set stability status was
+     * retrieved.</p>
      */
     inline void SetStabilityStatusAt(const Aws::Utils::DateTime& value) { m_stabilityStatusAtHasBeenSet = true; m_stabilityStatusAt = value; }
 
     /**
-     * <p>The Unix timestamp for when the task set stability status was retrieved.</p>
+     * <p>The Unix timestamp for the time when the task set stability status was
+     * retrieved.</p>
      */
     inline void SetStabilityStatusAt(Aws::Utils::DateTime&& value) { m_stabilityStatusAtHasBeenSet = true; m_stabilityStatusAt = std::move(value); }
 
     /**
-     * <p>The Unix timestamp for when the task set stability status was retrieved.</p>
+     * <p>The Unix timestamp for the time when the task set stability status was
+     * retrieved.</p>
      */
     inline TaskSet& WithStabilityStatusAt(const Aws::Utils::DateTime& value) { SetStabilityStatusAt(value); return *this;}
 
     /**
-     * <p>The Unix timestamp for when the task set stability status was retrieved.</p>
+     * <p>The Unix timestamp for the time when the task set stability status was
+     * retrieved.</p>
      */
     inline TaskSet& WithStabilityStatusAt(Aws::Utils::DateTime&& value) { SetStabilityStatusAt(std::move(value)); return *this;}
 
 
     /**
      * <p>The metadata that you apply to the task set to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -1197,8 +1203,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the task set to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -1217,8 +1223,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the task set to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -1237,8 +1243,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the task set to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -1257,8 +1263,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the task set to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -1277,8 +1283,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the task set to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -1297,8 +1303,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the task set to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -1317,8 +1323,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the task set to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>

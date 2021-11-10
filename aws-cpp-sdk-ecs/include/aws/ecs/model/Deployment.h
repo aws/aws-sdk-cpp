@@ -87,7 +87,7 @@ namespace Model
 
 
     /**
-     * <p>The status of the deployment. The following describes each state:</p> <dl>
+     * <p>The status of the deployment. The following describes each state.</p> <dl>
      * <dt>PRIMARY</dt> <dd> <p>The most recent deployment of a service.</p> </dd>
      * <dt>ACTIVE</dt> <dd> <p>A service deployment that still has running tasks, but
      * are in the process of being replaced with a new <code>PRIMARY</code>
@@ -97,7 +97,7 @@ namespace Model
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the deployment. The following describes each state:</p> <dl>
+     * <p>The status of the deployment. The following describes each state.</p> <dl>
      * <dt>PRIMARY</dt> <dd> <p>The most recent deployment of a service.</p> </dd>
      * <dt>ACTIVE</dt> <dd> <p>A service deployment that still has running tasks, but
      * are in the process of being replaced with a new <code>PRIMARY</code>
@@ -107,7 +107,7 @@ namespace Model
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the deployment. The following describes each state:</p> <dl>
+     * <p>The status of the deployment. The following describes each state.</p> <dl>
      * <dt>PRIMARY</dt> <dd> <p>The most recent deployment of a service.</p> </dd>
      * <dt>ACTIVE</dt> <dd> <p>A service deployment that still has running tasks, but
      * are in the process of being replaced with a new <code>PRIMARY</code>
@@ -117,7 +117,7 @@ namespace Model
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the deployment. The following describes each state:</p> <dl>
+     * <p>The status of the deployment. The following describes each state.</p> <dl>
      * <dt>PRIMARY</dt> <dd> <p>The most recent deployment of a service.</p> </dd>
      * <dt>ACTIVE</dt> <dd> <p>A service deployment that still has running tasks, but
      * are in the process of being replaced with a new <code>PRIMARY</code>
@@ -127,7 +127,7 @@ namespace Model
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the deployment. The following describes each state:</p> <dl>
+     * <p>The status of the deployment. The following describes each state.</p> <dl>
      * <dt>PRIMARY</dt> <dd> <p>The most recent deployment of a service.</p> </dd>
      * <dt>ACTIVE</dt> <dd> <p>A service deployment that still has running tasks, but
      * are in the process of being replaced with a new <code>PRIMARY</code>
@@ -137,7 +137,7 @@ namespace Model
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The status of the deployment. The following describes each state:</p> <dl>
+     * <p>The status of the deployment. The following describes each state.</p> <dl>
      * <dt>PRIMARY</dt> <dd> <p>The most recent deployment of a service.</p> </dd>
      * <dt>ACTIVE</dt> <dd> <p>A service deployment that still has running tasks, but
      * are in the process of being replaced with a new <code>PRIMARY</code>
@@ -147,7 +147,7 @@ namespace Model
     inline Deployment& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the deployment. The following describes each state:</p> <dl>
+     * <p>The status of the deployment. The following describes each state.</p> <dl>
      * <dt>PRIMARY</dt> <dd> <p>The most recent deployment of a service.</p> </dd>
      * <dt>ACTIVE</dt> <dd> <p>A service deployment that still has running tasks, but
      * are in the process of being replaced with a new <code>PRIMARY</code>
@@ -157,7 +157,7 @@ namespace Model
     inline Deployment& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the deployment. The following describes each state:</p> <dl>
+     * <p>The status of the deployment. The following describes each state.</p> <dl>
      * <dt>PRIMARY</dt> <dd> <p>The most recent deployment of a service.</p> </dd>
      * <dt>ACTIVE</dt> <dd> <p>A service deployment that still has running tasks, but
      * are in the process of being replaced with a new <code>PRIMARY</code>
@@ -333,63 +333,69 @@ namespace Model
 
 
     /**
-     * <p>The Unix timestamp for when the service deployment was created.</p>
+     * <p>The Unix timestamp for the time when the service deployment was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The Unix timestamp for when the service deployment was created.</p>
+     * <p>The Unix timestamp for the time when the service deployment was created.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The Unix timestamp for when the service deployment was created.</p>
+     * <p>The Unix timestamp for the time when the service deployment was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The Unix timestamp for when the service deployment was created.</p>
+     * <p>The Unix timestamp for the time when the service deployment was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The Unix timestamp for when the service deployment was created.</p>
+     * <p>The Unix timestamp for the time when the service deployment was created.</p>
      */
     inline Deployment& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The Unix timestamp for when the service deployment was created.</p>
+     * <p>The Unix timestamp for the time when the service deployment was created.</p>
      */
     inline Deployment& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Unix timestamp for when the service deployment was last updated.</p>
+     * <p>The Unix timestamp for the time when the service deployment was last
+     * updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>The Unix timestamp for when the service deployment was last updated.</p>
+     * <p>The Unix timestamp for the time when the service deployment was last
+     * updated.</p>
      */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
-     * <p>The Unix timestamp for when the service deployment was last updated.</p>
+     * <p>The Unix timestamp for the time when the service deployment was last
+     * updated.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>The Unix timestamp for when the service deployment was last updated.</p>
+     * <p>The Unix timestamp for the time when the service deployment was last
+     * updated.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
-     * <p>The Unix timestamp for when the service deployment was last updated.</p>
+     * <p>The Unix timestamp for the time when the service deployment was last
+     * updated.</p>
      */
     inline Deployment& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>The Unix timestamp for when the service deployment was last updated.</p>
+     * <p>The Unix timestamp for the time when the service deployment was last
+     * updated.</p>
      */
     inline Deployment& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
@@ -491,10 +497,10 @@ namespace Model
 
 
     /**
-     * <p>The platform version on which your tasks in the service are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * <p>The platform version that your tasks in the service run on. A platform
+     * version is only specified for tasks using the Fargate launch type. If one isn't
+     * specified, the <code>LATEST</code> platform version is used. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -502,10 +508,10 @@ namespace Model
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
     /**
-     * <p>The platform version on which your tasks in the service are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * <p>The platform version that your tasks in the service run on. A platform
+     * version is only specified for tasks using the Fargate launch type. If one isn't
+     * specified, the <code>LATEST</code> platform version is used. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -513,10 +519,10 @@ namespace Model
     inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
 
     /**
-     * <p>The platform version on which your tasks in the service are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * <p>The platform version that your tasks in the service run on. A platform
+     * version is only specified for tasks using the Fargate launch type. If one isn't
+     * specified, the <code>LATEST</code> platform version is used. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -524,10 +530,10 @@ namespace Model
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
     /**
-     * <p>The platform version on which your tasks in the service are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * <p>The platform version that your tasks in the service run on. A platform
+     * version is only specified for tasks using the Fargate launch type. If one isn't
+     * specified, the <code>LATEST</code> platform version is used. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -535,10 +541,10 @@ namespace Model
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
     /**
-     * <p>The platform version on which your tasks in the service are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * <p>The platform version that your tasks in the service run on. A platform
+     * version is only specified for tasks using the Fargate launch type. If one isn't
+     * specified, the <code>LATEST</code> platform version is used. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -546,10 +552,10 @@ namespace Model
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
     /**
-     * <p>The platform version on which your tasks in the service are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * <p>The platform version that your tasks in the service run on. A platform
+     * version is only specified for tasks using the Fargate launch type. If one isn't
+     * specified, the <code>LATEST</code> platform version is used. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -557,10 +563,10 @@ namespace Model
     inline Deployment& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
     /**
-     * <p>The platform version on which your tasks in the service are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * <p>The platform version that your tasks in the service run on. A platform
+     * version is only specified for tasks using the Fargate launch type. If one isn't
+     * specified, the <code>LATEST</code> platform version is used. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -568,10 +574,10 @@ namespace Model
     inline Deployment& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The platform version on which your tasks in the service are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * <p>The platform version that your tasks in the service run on. A platform
+     * version is only specified for tasks using the Fargate launch type. If one isn't
+     * specified, the <code>LATEST</code> platform version is used. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -697,84 +703,84 @@ namespace Model
 
     /**
      *  <p>The <code>rolloutState</code> of a service is only returned for
-     * services that use the rolling update (<code>ECS</code>) deployment type that are
-     * not behind a Classic Load Balancer.</p>  <p>The rollout state of the
+     * services that use the rolling update (<code>ECS</code>) deployment type that
+     * aren't behind a Classic Load Balancer.</p>  <p>The rollout state of the
      * deployment. When a service deployment is started, it begins in an
      * <code>IN_PROGRESS</code> state. When the service reaches a steady state, the
-     * deployment will transition to a <code>COMPLETED</code> state. If the service
-     * fails to reach a steady state and circuit breaker is enabled, the deployment
-     * will transition to a <code>FAILED</code> state. A deployment in
-     * <code>FAILED</code> state will launch no new tasks. For more information, see
+     * deployment transitions to a <code>COMPLETED</code> state. If the service fails
+     * to reach a steady state and circuit breaker is enabled, the deployment
+     * transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code>
+     * state doesn't launch any new tasks. For more information, see
      * <a>DeploymentCircuitBreaker</a>.</p>
      */
     inline const DeploymentRolloutState& GetRolloutState() const{ return m_rolloutState; }
 
     /**
      *  <p>The <code>rolloutState</code> of a service is only returned for
-     * services that use the rolling update (<code>ECS</code>) deployment type that are
-     * not behind a Classic Load Balancer.</p>  <p>The rollout state of the
+     * services that use the rolling update (<code>ECS</code>) deployment type that
+     * aren't behind a Classic Load Balancer.</p>  <p>The rollout state of the
      * deployment. When a service deployment is started, it begins in an
      * <code>IN_PROGRESS</code> state. When the service reaches a steady state, the
-     * deployment will transition to a <code>COMPLETED</code> state. If the service
-     * fails to reach a steady state and circuit breaker is enabled, the deployment
-     * will transition to a <code>FAILED</code> state. A deployment in
-     * <code>FAILED</code> state will launch no new tasks. For more information, see
+     * deployment transitions to a <code>COMPLETED</code> state. If the service fails
+     * to reach a steady state and circuit breaker is enabled, the deployment
+     * transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code>
+     * state doesn't launch any new tasks. For more information, see
      * <a>DeploymentCircuitBreaker</a>.</p>
      */
     inline bool RolloutStateHasBeenSet() const { return m_rolloutStateHasBeenSet; }
 
     /**
      *  <p>The <code>rolloutState</code> of a service is only returned for
-     * services that use the rolling update (<code>ECS</code>) deployment type that are
-     * not behind a Classic Load Balancer.</p>  <p>The rollout state of the
+     * services that use the rolling update (<code>ECS</code>) deployment type that
+     * aren't behind a Classic Load Balancer.</p>  <p>The rollout state of the
      * deployment. When a service deployment is started, it begins in an
      * <code>IN_PROGRESS</code> state. When the service reaches a steady state, the
-     * deployment will transition to a <code>COMPLETED</code> state. If the service
-     * fails to reach a steady state and circuit breaker is enabled, the deployment
-     * will transition to a <code>FAILED</code> state. A deployment in
-     * <code>FAILED</code> state will launch no new tasks. For more information, see
+     * deployment transitions to a <code>COMPLETED</code> state. If the service fails
+     * to reach a steady state and circuit breaker is enabled, the deployment
+     * transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code>
+     * state doesn't launch any new tasks. For more information, see
      * <a>DeploymentCircuitBreaker</a>.</p>
      */
     inline void SetRolloutState(const DeploymentRolloutState& value) { m_rolloutStateHasBeenSet = true; m_rolloutState = value; }
 
     /**
      *  <p>The <code>rolloutState</code> of a service is only returned for
-     * services that use the rolling update (<code>ECS</code>) deployment type that are
-     * not behind a Classic Load Balancer.</p>  <p>The rollout state of the
+     * services that use the rolling update (<code>ECS</code>) deployment type that
+     * aren't behind a Classic Load Balancer.</p>  <p>The rollout state of the
      * deployment. When a service deployment is started, it begins in an
      * <code>IN_PROGRESS</code> state. When the service reaches a steady state, the
-     * deployment will transition to a <code>COMPLETED</code> state. If the service
-     * fails to reach a steady state and circuit breaker is enabled, the deployment
-     * will transition to a <code>FAILED</code> state. A deployment in
-     * <code>FAILED</code> state will launch no new tasks. For more information, see
+     * deployment transitions to a <code>COMPLETED</code> state. If the service fails
+     * to reach a steady state and circuit breaker is enabled, the deployment
+     * transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code>
+     * state doesn't launch any new tasks. For more information, see
      * <a>DeploymentCircuitBreaker</a>.</p>
      */
     inline void SetRolloutState(DeploymentRolloutState&& value) { m_rolloutStateHasBeenSet = true; m_rolloutState = std::move(value); }
 
     /**
      *  <p>The <code>rolloutState</code> of a service is only returned for
-     * services that use the rolling update (<code>ECS</code>) deployment type that are
-     * not behind a Classic Load Balancer.</p>  <p>The rollout state of the
+     * services that use the rolling update (<code>ECS</code>) deployment type that
+     * aren't behind a Classic Load Balancer.</p>  <p>The rollout state of the
      * deployment. When a service deployment is started, it begins in an
      * <code>IN_PROGRESS</code> state. When the service reaches a steady state, the
-     * deployment will transition to a <code>COMPLETED</code> state. If the service
-     * fails to reach a steady state and circuit breaker is enabled, the deployment
-     * will transition to a <code>FAILED</code> state. A deployment in
-     * <code>FAILED</code> state will launch no new tasks. For more information, see
+     * deployment transitions to a <code>COMPLETED</code> state. If the service fails
+     * to reach a steady state and circuit breaker is enabled, the deployment
+     * transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code>
+     * state doesn't launch any new tasks. For more information, see
      * <a>DeploymentCircuitBreaker</a>.</p>
      */
     inline Deployment& WithRolloutState(const DeploymentRolloutState& value) { SetRolloutState(value); return *this;}
 
     /**
      *  <p>The <code>rolloutState</code> of a service is only returned for
-     * services that use the rolling update (<code>ECS</code>) deployment type that are
-     * not behind a Classic Load Balancer.</p>  <p>The rollout state of the
+     * services that use the rolling update (<code>ECS</code>) deployment type that
+     * aren't behind a Classic Load Balancer.</p>  <p>The rollout state of the
      * deployment. When a service deployment is started, it begins in an
      * <code>IN_PROGRESS</code> state. When the service reaches a steady state, the
-     * deployment will transition to a <code>COMPLETED</code> state. If the service
-     * fails to reach a steady state and circuit breaker is enabled, the deployment
-     * will transition to a <code>FAILED</code> state. A deployment in
-     * <code>FAILED</code> state will launch no new tasks. For more information, see
+     * deployment transitions to a <code>COMPLETED</code> state. If the service fails
+     * to reach a steady state and circuit breaker is enabled, the deployment
+     * transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code>
+     * state doesn't launch any new tasks. For more information, see
      * <a>DeploymentCircuitBreaker</a>.</p>
      */
     inline Deployment& WithRolloutState(DeploymentRolloutState&& value) { SetRolloutState(std::move(value)); return *this;}

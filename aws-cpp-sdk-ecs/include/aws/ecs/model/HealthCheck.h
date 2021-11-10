@@ -35,7 +35,7 @@ namespace Model
    * <code>HEALTHY</code>-The container health check has passed successfully.</p>
    * </li> <li> <p> <code>UNHEALTHY</code>-The container health check has failed.</p>
    * </li> <li> <p> <code>UNKNOWN</code>-The container health check is being
-   * evaluated or there is no container health check defined.</p> </li> </ul> <p>The
+   * evaluated or there's no container health check defined.</p> </li> </ul> <p>The
    * following describes the possible <code>healthStatus</code> values for a task.
    * The container health check status of nonessential containers do not have an
    * effect on the health status of a task.</p> <ul> <li> <p>
@@ -53,11 +53,11 @@ namespace Model
    * container agent. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
    * the Amazon ECS Container Agent</a>.</p> </li> <li> <p>Container health checks
-   * are supported for Fargate tasks if you are using platform version 1.1.0 or
+   * are supported for Fargate tasks if you're using platform version 1.1.0 or
    * greater. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
-   * Platform Versions</a>.</p> </li> <li> <p>Container health checks are not
-   * supported for tasks that are part of a service that is configured to use a
+   * Platform Versions</a>.</p> </li> <li> <p>Container health checks aren't
+   * supported for tasks that are part of a service that's configured to use a
    * Classic Load Balancer.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/HealthCheck">AWS API
    * Reference</a></p>
@@ -77,13 +77,12 @@ namespace Model
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
      * with the container's default shell. </p> <p> When you use the Amazon Web
      * Services Management Console JSON panel, the Command Line Interface, or the APIs,
-     * you should enclose the list of commands in brackets, as shown below.</p> <p>
-     * <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code> </p> <p>You
-     * do not need to include the brackets when you use the Amazon Web Services
-     * Management Consoleas shown below.</p> <p> <code> "CMD-SHELL", "curl -f
-     * http://localhost/ || exit 1" </code> </p> <p>An exit code of 0 indicates
-     * success, and non-zero exit code indicates failure. For more information, see
-     * <code>HealthCheck</code> in the <a
+     * enclose the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
+     * http://localhost/ || exit 1" ]</code> </p> <p>You don't need to include the
+     * brackets when you use the Amazon Web Services Management Console.</p> <p> <code>
+     * "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> </p> <p>An exit code
+     * of 0 indicates success, and non-zero exit code indicates failure. For more
+     * information, see <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
@@ -96,13 +95,12 @@ namespace Model
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
      * with the container's default shell. </p> <p> When you use the Amazon Web
      * Services Management Console JSON panel, the Command Line Interface, or the APIs,
-     * you should enclose the list of commands in brackets, as shown below.</p> <p>
-     * <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code> </p> <p>You
-     * do not need to include the brackets when you use the Amazon Web Services
-     * Management Consoleas shown below.</p> <p> <code> "CMD-SHELL", "curl -f
-     * http://localhost/ || exit 1" </code> </p> <p>An exit code of 0 indicates
-     * success, and non-zero exit code indicates failure. For more information, see
-     * <code>HealthCheck</code> in the <a
+     * enclose the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
+     * http://localhost/ || exit 1" ]</code> </p> <p>You don't need to include the
+     * brackets when you use the Amazon Web Services Management Console.</p> <p> <code>
+     * "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> </p> <p>An exit code
+     * of 0 indicates success, and non-zero exit code indicates failure. For more
+     * information, see <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
@@ -115,13 +113,12 @@ namespace Model
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
      * with the container's default shell. </p> <p> When you use the Amazon Web
      * Services Management Console JSON panel, the Command Line Interface, or the APIs,
-     * you should enclose the list of commands in brackets, as shown below.</p> <p>
-     * <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code> </p> <p>You
-     * do not need to include the brackets when you use the Amazon Web Services
-     * Management Consoleas shown below.</p> <p> <code> "CMD-SHELL", "curl -f
-     * http://localhost/ || exit 1" </code> </p> <p>An exit code of 0 indicates
-     * success, and non-zero exit code indicates failure. For more information, see
-     * <code>HealthCheck</code> in the <a
+     * enclose the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
+     * http://localhost/ || exit 1" ]</code> </p> <p>You don't need to include the
+     * brackets when you use the Amazon Web Services Management Console.</p> <p> <code>
+     * "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> </p> <p>An exit code
+     * of 0 indicates success, and non-zero exit code indicates failure. For more
+     * information, see <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
@@ -134,13 +131,12 @@ namespace Model
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
      * with the container's default shell. </p> <p> When you use the Amazon Web
      * Services Management Console JSON panel, the Command Line Interface, or the APIs,
-     * you should enclose the list of commands in brackets, as shown below.</p> <p>
-     * <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code> </p> <p>You
-     * do not need to include the brackets when you use the Amazon Web Services
-     * Management Consoleas shown below.</p> <p> <code> "CMD-SHELL", "curl -f
-     * http://localhost/ || exit 1" </code> </p> <p>An exit code of 0 indicates
-     * success, and non-zero exit code indicates failure. For more information, see
-     * <code>HealthCheck</code> in the <a
+     * enclose the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
+     * http://localhost/ || exit 1" ]</code> </p> <p>You don't need to include the
+     * brackets when you use the Amazon Web Services Management Console.</p> <p> <code>
+     * "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> </p> <p>An exit code
+     * of 0 indicates success, and non-zero exit code indicates failure. For more
+     * information, see <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
@@ -153,13 +149,12 @@ namespace Model
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
      * with the container's default shell. </p> <p> When you use the Amazon Web
      * Services Management Console JSON panel, the Command Line Interface, or the APIs,
-     * you should enclose the list of commands in brackets, as shown below.</p> <p>
-     * <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code> </p> <p>You
-     * do not need to include the brackets when you use the Amazon Web Services
-     * Management Consoleas shown below.</p> <p> <code> "CMD-SHELL", "curl -f
-     * http://localhost/ || exit 1" </code> </p> <p>An exit code of 0 indicates
-     * success, and non-zero exit code indicates failure. For more information, see
-     * <code>HealthCheck</code> in the <a
+     * enclose the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
+     * http://localhost/ || exit 1" ]</code> </p> <p>You don't need to include the
+     * brackets when you use the Amazon Web Services Management Console.</p> <p> <code>
+     * "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> </p> <p>An exit code
+     * of 0 indicates success, and non-zero exit code indicates failure. For more
+     * information, see <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
@@ -172,13 +167,12 @@ namespace Model
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
      * with the container's default shell. </p> <p> When you use the Amazon Web
      * Services Management Console JSON panel, the Command Line Interface, or the APIs,
-     * you should enclose the list of commands in brackets, as shown below.</p> <p>
-     * <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code> </p> <p>You
-     * do not need to include the brackets when you use the Amazon Web Services
-     * Management Consoleas shown below.</p> <p> <code> "CMD-SHELL", "curl -f
-     * http://localhost/ || exit 1" </code> </p> <p>An exit code of 0 indicates
-     * success, and non-zero exit code indicates failure. For more information, see
-     * <code>HealthCheck</code> in the <a
+     * enclose the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
+     * http://localhost/ || exit 1" ]</code> </p> <p>You don't need to include the
+     * brackets when you use the Amazon Web Services Management Console.</p> <p> <code>
+     * "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> </p> <p>An exit code
+     * of 0 indicates success, and non-zero exit code indicates failure. For more
+     * information, see <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
@@ -191,13 +185,12 @@ namespace Model
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
      * with the container's default shell. </p> <p> When you use the Amazon Web
      * Services Management Console JSON panel, the Command Line Interface, or the APIs,
-     * you should enclose the list of commands in brackets, as shown below.</p> <p>
-     * <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code> </p> <p>You
-     * do not need to include the brackets when you use the Amazon Web Services
-     * Management Consoleas shown below.</p> <p> <code> "CMD-SHELL", "curl -f
-     * http://localhost/ || exit 1" </code> </p> <p>An exit code of 0 indicates
-     * success, and non-zero exit code indicates failure. For more information, see
-     * <code>HealthCheck</code> in the <a
+     * enclose the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
+     * http://localhost/ || exit 1" ]</code> </p> <p>You don't need to include the
+     * brackets when you use the Amazon Web Services Management Console.</p> <p> <code>
+     * "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> </p> <p>An exit code
+     * of 0 indicates success, and non-zero exit code indicates failure. For more
+     * information, see <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
@@ -210,13 +203,12 @@ namespace Model
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
      * with the container's default shell. </p> <p> When you use the Amazon Web
      * Services Management Console JSON panel, the Command Line Interface, or the APIs,
-     * you should enclose the list of commands in brackets, as shown below.</p> <p>
-     * <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code> </p> <p>You
-     * do not need to include the brackets when you use the Amazon Web Services
-     * Management Consoleas shown below.</p> <p> <code> "CMD-SHELL", "curl -f
-     * http://localhost/ || exit 1" </code> </p> <p>An exit code of 0 indicates
-     * success, and non-zero exit code indicates failure. For more information, see
-     * <code>HealthCheck</code> in the <a
+     * enclose the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
+     * http://localhost/ || exit 1" ]</code> </p> <p>You don't need to include the
+     * brackets when you use the Amazon Web Services Management Console.</p> <p> <code>
+     * "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> </p> <p>An exit code
+     * of 0 indicates success, and non-zero exit code indicates failure. For more
+     * information, see <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
@@ -229,13 +221,12 @@ namespace Model
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
      * with the container's default shell. </p> <p> When you use the Amazon Web
      * Services Management Console JSON panel, the Command Line Interface, or the APIs,
-     * you should enclose the list of commands in brackets, as shown below.</p> <p>
-     * <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code> </p> <p>You
-     * do not need to include the brackets when you use the Amazon Web Services
-     * Management Consoleas shown below.</p> <p> <code> "CMD-SHELL", "curl -f
-     * http://localhost/ || exit 1" </code> </p> <p>An exit code of 0 indicates
-     * success, and non-zero exit code indicates failure. For more information, see
-     * <code>HealthCheck</code> in the <a
+     * enclose the list of commands in brackets.</p> <p> <code>[ "CMD-SHELL", "curl -f
+     * http://localhost/ || exit 1" ]</code> </p> <p>You don't need to include the
+     * brackets when you use the Amazon Web Services Management Console.</p> <p> <code>
+     * "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code> </p> <p>An exit code
+     * of 0 indicates success, and non-zero exit code indicates failure. For more
+     * information, see <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
@@ -327,40 +318,40 @@ namespace Model
 
 
     /**
-     * <p>The optional grace period within which to provide containers time to
-     * bootstrap before failed health checks count towards the maximum number of
-     * retries. You may specify between 0 and 300 seconds. The <code>startPeriod</code>
-     * is disabled by default.</p>  <p>If a health check succeeds within the
+     * <p>The optional grace period to provide containers time to bootstrap before
+     * failed health checks count towards the maximum number of retries. You can
+     * specify between 0 and 300 seconds. By default, the <code>startPeriod</code> is
+     * disabled.</p>  <p>If a health check succeeds within the
      * <code>startPeriod</code>, then the container is considered healthy and any
      * subsequent failures count toward the maximum number of retries.</p> 
      */
     inline int GetStartPeriod() const{ return m_startPeriod; }
 
     /**
-     * <p>The optional grace period within which to provide containers time to
-     * bootstrap before failed health checks count towards the maximum number of
-     * retries. You may specify between 0 and 300 seconds. The <code>startPeriod</code>
-     * is disabled by default.</p>  <p>If a health check succeeds within the
+     * <p>The optional grace period to provide containers time to bootstrap before
+     * failed health checks count towards the maximum number of retries. You can
+     * specify between 0 and 300 seconds. By default, the <code>startPeriod</code> is
+     * disabled.</p>  <p>If a health check succeeds within the
      * <code>startPeriod</code>, then the container is considered healthy and any
      * subsequent failures count toward the maximum number of retries.</p> 
      */
     inline bool StartPeriodHasBeenSet() const { return m_startPeriodHasBeenSet; }
 
     /**
-     * <p>The optional grace period within which to provide containers time to
-     * bootstrap before failed health checks count towards the maximum number of
-     * retries. You may specify between 0 and 300 seconds. The <code>startPeriod</code>
-     * is disabled by default.</p>  <p>If a health check succeeds within the
+     * <p>The optional grace period to provide containers time to bootstrap before
+     * failed health checks count towards the maximum number of retries. You can
+     * specify between 0 and 300 seconds. By default, the <code>startPeriod</code> is
+     * disabled.</p>  <p>If a health check succeeds within the
      * <code>startPeriod</code>, then the container is considered healthy and any
      * subsequent failures count toward the maximum number of retries.</p> 
      */
     inline void SetStartPeriod(int value) { m_startPeriodHasBeenSet = true; m_startPeriod = value; }
 
     /**
-     * <p>The optional grace period within which to provide containers time to
-     * bootstrap before failed health checks count towards the maximum number of
-     * retries. You may specify between 0 and 300 seconds. The <code>startPeriod</code>
-     * is disabled by default.</p>  <p>If a health check succeeds within the
+     * <p>The optional grace period to provide containers time to bootstrap before
+     * failed health checks count towards the maximum number of retries. You can
+     * specify between 0 and 300 seconds. By default, the <code>startPeriod</code> is
+     * disabled.</p>  <p>If a health check succeeds within the
      * <code>startPeriod</code>, then the container is considered healthy and any
      * subsequent failures count toward the maximum number of retries.</p> 
      */

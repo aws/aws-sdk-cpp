@@ -89,26 +89,26 @@ namespace Model
 
 
     /**
-     * <p>Whether or not to enable encryption on the CloudWatch logs. If not specified,
-     * encryption will be disabled.</p>
+     * <p>Determines whether to enable encryption on the CloudWatch logs. If not
+     * specified, encryption will be disabled.</p>
      */
     inline bool GetCloudWatchEncryptionEnabled() const{ return m_cloudWatchEncryptionEnabled; }
 
     /**
-     * <p>Whether or not to enable encryption on the CloudWatch logs. If not specified,
-     * encryption will be disabled.</p>
+     * <p>Determines whether to enable encryption on the CloudWatch logs. If not
+     * specified, encryption will be disabled.</p>
      */
     inline bool CloudWatchEncryptionEnabledHasBeenSet() const { return m_cloudWatchEncryptionEnabledHasBeenSet; }
 
     /**
-     * <p>Whether or not to enable encryption on the CloudWatch logs. If not specified,
-     * encryption will be disabled.</p>
+     * <p>Determines whether to enable encryption on the CloudWatch logs. If not
+     * specified, encryption will be disabled.</p>
      */
     inline void SetCloudWatchEncryptionEnabled(bool value) { m_cloudWatchEncryptionEnabledHasBeenSet = true; m_cloudWatchEncryptionEnabled = value; }
 
     /**
-     * <p>Whether or not to enable encryption on the CloudWatch logs. If not specified,
-     * encryption will be disabled.</p>
+     * <p>Determines whether to enable encryption on the CloudWatch logs. If not
+     * specified, encryption will be disabled.</p>
      */
     inline ExecuteCommandLogConfiguration& WithCloudWatchEncryptionEnabled(bool value) { SetCloudWatchEncryptionEnabled(value); return *this;}
 
@@ -163,26 +163,26 @@ namespace Model
 
 
     /**
-     * <p>Whether or not to use encryption on the S3 logs. If not specified, encryption
-     * is not used.</p>
+     * <p>Determines whether to use encryption on the S3 logs. If not specified,
+     * encryption is not used.</p>
      */
     inline bool GetS3EncryptionEnabled() const{ return m_s3EncryptionEnabled; }
 
     /**
-     * <p>Whether or not to use encryption on the S3 logs. If not specified, encryption
-     * is not used.</p>
+     * <p>Determines whether to use encryption on the S3 logs. If not specified,
+     * encryption is not used.</p>
      */
     inline bool S3EncryptionEnabledHasBeenSet() const { return m_s3EncryptionEnabledHasBeenSet; }
 
     /**
-     * <p>Whether or not to use encryption on the S3 logs. If not specified, encryption
-     * is not used.</p>
+     * <p>Determines whether to use encryption on the S3 logs. If not specified,
+     * encryption is not used.</p>
      */
     inline void SetS3EncryptionEnabled(bool value) { m_s3EncryptionEnabledHasBeenSet = true; m_s3EncryptionEnabled = value; }
 
     /**
-     * <p>Whether or not to use encryption on the S3 logs. If not specified, encryption
-     * is not used.</p>
+     * <p>Determines whether to use encryption on the S3 logs. If not specified,
+     * encryption is not used.</p>
      */
     inline ExecuteCommandLogConfiguration& WithS3EncryptionEnabled(bool value) { SetS3EncryptionEnabled(value); return *this;}
 

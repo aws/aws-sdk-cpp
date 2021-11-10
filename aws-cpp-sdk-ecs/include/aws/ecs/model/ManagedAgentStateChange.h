@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the container associated with the managed agent.</p>
+     * <p>The name of the container that's associated with the managed agent.</p>
      */
     inline const Aws::String& GetContainerName() const{ return m_containerName; }
 
     /**
-     * <p>The name of the container associated with the managed agent.</p>
+     * <p>The name of the container that's associated with the managed agent.</p>
      */
     inline bool ContainerNameHasBeenSet() const { return m_containerNameHasBeenSet; }
 
     /**
-     * <p>The name of the container associated with the managed agent.</p>
+     * <p>The name of the container that's associated with the managed agent.</p>
      */
     inline void SetContainerName(const Aws::String& value) { m_containerNameHasBeenSet = true; m_containerName = value; }
 
     /**
-     * <p>The name of the container associated with the managed agent.</p>
+     * <p>The name of the container that's associated with the managed agent.</p>
      */
     inline void SetContainerName(Aws::String&& value) { m_containerNameHasBeenSet = true; m_containerName = std::move(value); }
 
     /**
-     * <p>The name of the container associated with the managed agent.</p>
+     * <p>The name of the container that's associated with the managed agent.</p>
      */
     inline void SetContainerName(const char* value) { m_containerNameHasBeenSet = true; m_containerName.assign(value); }
 
     /**
-     * <p>The name of the container associated with the managed agent.</p>
+     * <p>The name of the container that's associated with the managed agent.</p>
      */
     inline ManagedAgentStateChange& WithContainerName(const Aws::String& value) { SetContainerName(value); return *this;}
 
     /**
-     * <p>The name of the container associated with the managed agent.</p>
+     * <p>The name of the container that's associated with the managed agent.</p>
      */
     inline ManagedAgentStateChange& WithContainerName(Aws::String&& value) { SetContainerName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the container associated with the managed agent.</p>
+     * <p>The name of the container that's associated with the managed agent.</p>
      */
     inline ManagedAgentStateChange& WithContainerName(const char* value) { SetContainerName(value); return *this;}
 

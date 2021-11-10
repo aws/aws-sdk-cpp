@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>The overrides associated with a task.</p><p><h3>See Also:</h3>   <a
+   * <p>The overrides that are associated with a task.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TaskOverride">AWS
    * API Reference</a></p>
    */
@@ -42,42 +42,42 @@ namespace Model
 
 
     /**
-     * <p>One or more container overrides sent to a task.</p>
+     * <p>One or more container overrides that are sent to a task.</p>
      */
     inline const Aws::Vector<ContainerOverride>& GetContainerOverrides() const{ return m_containerOverrides; }
 
     /**
-     * <p>One or more container overrides sent to a task.</p>
+     * <p>One or more container overrides that are sent to a task.</p>
      */
     inline bool ContainerOverridesHasBeenSet() const { return m_containerOverridesHasBeenSet; }
 
     /**
-     * <p>One or more container overrides sent to a task.</p>
+     * <p>One or more container overrides that are sent to a task.</p>
      */
     inline void SetContainerOverrides(const Aws::Vector<ContainerOverride>& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = value; }
 
     /**
-     * <p>One or more container overrides sent to a task.</p>
+     * <p>One or more container overrides that are sent to a task.</p>
      */
     inline void SetContainerOverrides(Aws::Vector<ContainerOverride>&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = std::move(value); }
 
     /**
-     * <p>One or more container overrides sent to a task.</p>
+     * <p>One or more container overrides that are sent to a task.</p>
      */
     inline TaskOverride& WithContainerOverrides(const Aws::Vector<ContainerOverride>& value) { SetContainerOverrides(value); return *this;}
 
     /**
-     * <p>One or more container overrides sent to a task.</p>
+     * <p>One or more container overrides that are sent to a task.</p>
      */
     inline TaskOverride& WithContainerOverrides(Aws::Vector<ContainerOverride>&& value) { SetContainerOverrides(std::move(value)); return *this;}
 
     /**
-     * <p>One or more container overrides sent to a task.</p>
+     * <p>One or more container overrides that are sent to a task.</p>
      */
     inline TaskOverride& AddContainerOverrides(const ContainerOverride& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides.push_back(value); return *this; }
 
     /**
-     * <p>One or more container overrides sent to a task.</p>
+     * <p>One or more container overrides that are sent to a task.</p>
      */
     inline TaskOverride& AddContainerOverrides(ContainerOverride&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides.push_back(std::move(value)); return *this; }
 
@@ -361,7 +361,7 @@ namespace Model
 
     /**
      * <p>The ephemeral storage setting override for the task.</p>  <p>This
-     * parameter is only supported for tasks hosted on Fargate using the following
+     * parameter is only supported for tasks hosted on Fargate that use the following
      * platform versions:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
      * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
      * later.</p> </li> </ul> 
@@ -370,7 +370,7 @@ namespace Model
 
     /**
      * <p>The ephemeral storage setting override for the task.</p>  <p>This
-     * parameter is only supported for tasks hosted on Fargate using the following
+     * parameter is only supported for tasks hosted on Fargate that use the following
      * platform versions:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
      * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
      * later.</p> </li> </ul> 
@@ -379,7 +379,7 @@ namespace Model
 
     /**
      * <p>The ephemeral storage setting override for the task.</p>  <p>This
-     * parameter is only supported for tasks hosted on Fargate using the following
+     * parameter is only supported for tasks hosted on Fargate that use the following
      * platform versions:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
      * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
      * later.</p> </li> </ul> 
@@ -388,7 +388,7 @@ namespace Model
 
     /**
      * <p>The ephemeral storage setting override for the task.</p>  <p>This
-     * parameter is only supported for tasks hosted on Fargate using the following
+     * parameter is only supported for tasks hosted on Fargate that use the following
      * platform versions:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
      * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
      * later.</p> </li> </ul> 
@@ -397,7 +397,7 @@ namespace Model
 
     /**
      * <p>The ephemeral storage setting override for the task.</p>  <p>This
-     * parameter is only supported for tasks hosted on Fargate using the following
+     * parameter is only supported for tasks hosted on Fargate that use the following
      * platform versions:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
      * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
      * later.</p> </li> </ul> 
@@ -406,7 +406,7 @@ namespace Model
 
     /**
      * <p>The ephemeral storage setting override for the task.</p>  <p>This
-     * parameter is only supported for tasks hosted on Fargate using the following
+     * parameter is only supported for tasks hosted on Fargate that use the following
      * platform versions:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
      * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
      * later.</p> </li> </ul> 

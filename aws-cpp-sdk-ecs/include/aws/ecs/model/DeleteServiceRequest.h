@@ -133,30 +133,30 @@ namespace Model
 
 
     /**
-     * <p>If <code>true</code>, allows you to delete a service even if it has not been
-     * scaled down to zero tasks. It is only necessary to use this if the service is
-     * using the <code>REPLICA</code> scheduling strategy.</p>
+     * <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled
+     * down to zero tasks. It's only necessary to use this if the service uses the
+     * <code>REPLICA</code> scheduling strategy.</p>
      */
     inline bool GetForce() const{ return m_force; }
 
     /**
-     * <p>If <code>true</code>, allows you to delete a service even if it has not been
-     * scaled down to zero tasks. It is only necessary to use this if the service is
-     * using the <code>REPLICA</code> scheduling strategy.</p>
+     * <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled
+     * down to zero tasks. It's only necessary to use this if the service uses the
+     * <code>REPLICA</code> scheduling strategy.</p>
      */
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
 
     /**
-     * <p>If <code>true</code>, allows you to delete a service even if it has not been
-     * scaled down to zero tasks. It is only necessary to use this if the service is
-     * using the <code>REPLICA</code> scheduling strategy.</p>
+     * <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled
+     * down to zero tasks. It's only necessary to use this if the service uses the
+     * <code>REPLICA</code> scheduling strategy.</p>
      */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
 
     /**
-     * <p>If <code>true</code>, allows you to delete a service even if it has not been
-     * scaled down to zero tasks. It is only necessary to use this if the service is
-     * using the <code>REPLICA</code> scheduling strategy.</p>
+     * <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled
+     * down to zero tasks. It's only necessary to use this if the service uses the
+     * <code>REPLICA</code> scheduling strategy.</p>
      */
     inline DeleteServiceRequest& WithForce(bool value) { SetForce(value); return *this;}
 

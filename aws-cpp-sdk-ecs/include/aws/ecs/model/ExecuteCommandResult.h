@@ -142,23 +142,23 @@ namespace Model
 
 
     /**
-     * <p>Whether or not the execute command session is running in interactive mode.
-     * Amazon ECS only supports initiating interactive sessions, so you must specify
-     * <code>true</code> for this value.</p>
+     * <p>Determines whether the execute command session is running in interactive
+     * mode. Amazon ECS only supports initiating interactive sessions, so you must
+     * specify <code>true</code> for this value.</p>
      */
     inline bool GetInteractive() const{ return m_interactive; }
 
     /**
-     * <p>Whether or not the execute command session is running in interactive mode.
-     * Amazon ECS only supports initiating interactive sessions, so you must specify
-     * <code>true</code> for this value.</p>
+     * <p>Determines whether the execute command session is running in interactive
+     * mode. Amazon ECS only supports initiating interactive sessions, so you must
+     * specify <code>true</code> for this value.</p>
      */
     inline void SetInteractive(bool value) { m_interactive = value; }
 
     /**
-     * <p>Whether or not the execute command session is running in interactive mode.
-     * Amazon ECS only supports initiating interactive sessions, so you must specify
-     * <code>true</code> for this value.</p>
+     * <p>Determines whether the execute command session is running in interactive
+     * mode. Amazon ECS only supports initiating interactive sessions, so you must
+     * specify <code>true</code> for this value.</p>
      */
     inline ExecuteCommandResult& WithInteractive(bool value) { SetInteractive(value); return *this;}
 

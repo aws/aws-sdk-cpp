@@ -7,6 +7,7 @@
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/backup/model/Conditions.h>
 #include <aws/backup/model/Condition.h>
 #include <utility>
 
@@ -257,6 +258,53 @@ namespace Model
      */
     inline BackupSelection& AddListOfTags(Condition&& value) { m_listOfTagsHasBeenSet = true; m_listOfTags.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::Vector<Aws::String>& GetNotResources() const{ return m_notResources; }
+
+    
+    inline bool NotResourcesHasBeenSet() const { return m_notResourcesHasBeenSet; }
+
+    
+    inline void SetNotResources(const Aws::Vector<Aws::String>& value) { m_notResourcesHasBeenSet = true; m_notResources = value; }
+
+    
+    inline void SetNotResources(Aws::Vector<Aws::String>&& value) { m_notResourcesHasBeenSet = true; m_notResources = std::move(value); }
+
+    
+    inline BackupSelection& WithNotResources(const Aws::Vector<Aws::String>& value) { SetNotResources(value); return *this;}
+
+    
+    inline BackupSelection& WithNotResources(Aws::Vector<Aws::String>&& value) { SetNotResources(std::move(value)); return *this;}
+
+    
+    inline BackupSelection& AddNotResources(const Aws::String& value) { m_notResourcesHasBeenSet = true; m_notResources.push_back(value); return *this; }
+
+    
+    inline BackupSelection& AddNotResources(Aws::String&& value) { m_notResourcesHasBeenSet = true; m_notResources.push_back(std::move(value)); return *this; }
+
+    
+    inline BackupSelection& AddNotResources(const char* value) { m_notResourcesHasBeenSet = true; m_notResources.push_back(value); return *this; }
+
+
+    
+    inline const Conditions& GetConditions() const{ return m_conditions; }
+
+    
+    inline bool ConditionsHasBeenSet() const { return m_conditionsHasBeenSet; }
+
+    
+    inline void SetConditions(const Conditions& value) { m_conditionsHasBeenSet = true; m_conditions = value; }
+
+    
+    inline void SetConditions(Conditions&& value) { m_conditionsHasBeenSet = true; m_conditions = std::move(value); }
+
+    
+    inline BackupSelection& WithConditions(const Conditions& value) { SetConditions(value); return *this;}
+
+    
+    inline BackupSelection& WithConditions(Conditions&& value) { SetConditions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_selectionName;
@@ -270,6 +318,12 @@ namespace Model
 
     Aws::Vector<Condition> m_listOfTags;
     bool m_listOfTagsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_notResources;
+    bool m_notResourcesHasBeenSet;
+
+    Conditions m_conditions;
+    bool m_conditionsHasBeenSet;
   };
 
 } // namespace Model

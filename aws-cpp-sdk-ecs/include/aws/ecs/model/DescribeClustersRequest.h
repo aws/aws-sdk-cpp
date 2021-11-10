@@ -92,9 +92,9 @@ namespace Model
 
 
     /**
-     * <p>Whether to include additional information about the clusters in the response.
-     * If this field is omitted, this information isn't included.</p> <p>If
-     * <code>ATTACHMENTS</code> is specified, the attachments for the container
+     * <p>Determines whether to include additional information about the clusters in
+     * the response. If this field is omitted, this information isn't included.</p>
+     * <p>If <code>ATTACHMENTS</code> is specified, the attachments for the container
      * instances or tasks within the cluster are included.</p> <p>If
      * <code>SETTINGS</code> is specified, the settings for the cluster are
      * included.</p> <p>If <code>CONFIGURATIONS</code> is specified, the configuration
@@ -106,9 +106,9 @@ namespace Model
     inline const Aws::Vector<ClusterField>& GetInclude() const{ return m_include; }
 
     /**
-     * <p>Whether to include additional information about the clusters in the response.
-     * If this field is omitted, this information isn't included.</p> <p>If
-     * <code>ATTACHMENTS</code> is specified, the attachments for the container
+     * <p>Determines whether to include additional information about the clusters in
+     * the response. If this field is omitted, this information isn't included.</p>
+     * <p>If <code>ATTACHMENTS</code> is specified, the attachments for the container
      * instances or tasks within the cluster are included.</p> <p>If
      * <code>SETTINGS</code> is specified, the settings for the cluster are
      * included.</p> <p>If <code>CONFIGURATIONS</code> is specified, the configuration
@@ -120,9 +120,9 @@ namespace Model
     inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
 
     /**
-     * <p>Whether to include additional information about the clusters in the response.
-     * If this field is omitted, this information isn't included.</p> <p>If
-     * <code>ATTACHMENTS</code> is specified, the attachments for the container
+     * <p>Determines whether to include additional information about the clusters in
+     * the response. If this field is omitted, this information isn't included.</p>
+     * <p>If <code>ATTACHMENTS</code> is specified, the attachments for the container
      * instances or tasks within the cluster are included.</p> <p>If
      * <code>SETTINGS</code> is specified, the settings for the cluster are
      * included.</p> <p>If <code>CONFIGURATIONS</code> is specified, the configuration
@@ -134,9 +134,9 @@ namespace Model
     inline void SetInclude(const Aws::Vector<ClusterField>& value) { m_includeHasBeenSet = true; m_include = value; }
 
     /**
-     * <p>Whether to include additional information about the clusters in the response.
-     * If this field is omitted, this information isn't included.</p> <p>If
-     * <code>ATTACHMENTS</code> is specified, the attachments for the container
+     * <p>Determines whether to include additional information about the clusters in
+     * the response. If this field is omitted, this information isn't included.</p>
+     * <p>If <code>ATTACHMENTS</code> is specified, the attachments for the container
      * instances or tasks within the cluster are included.</p> <p>If
      * <code>SETTINGS</code> is specified, the settings for the cluster are
      * included.</p> <p>If <code>CONFIGURATIONS</code> is specified, the configuration
@@ -148,9 +148,9 @@ namespace Model
     inline void SetInclude(Aws::Vector<ClusterField>&& value) { m_includeHasBeenSet = true; m_include = std::move(value); }
 
     /**
-     * <p>Whether to include additional information about the clusters in the response.
-     * If this field is omitted, this information isn't included.</p> <p>If
-     * <code>ATTACHMENTS</code> is specified, the attachments for the container
+     * <p>Determines whether to include additional information about the clusters in
+     * the response. If this field is omitted, this information isn't included.</p>
+     * <p>If <code>ATTACHMENTS</code> is specified, the attachments for the container
      * instances or tasks within the cluster are included.</p> <p>If
      * <code>SETTINGS</code> is specified, the settings for the cluster are
      * included.</p> <p>If <code>CONFIGURATIONS</code> is specified, the configuration
@@ -162,9 +162,9 @@ namespace Model
     inline DescribeClustersRequest& WithInclude(const Aws::Vector<ClusterField>& value) { SetInclude(value); return *this;}
 
     /**
-     * <p>Whether to include additional information about the clusters in the response.
-     * If this field is omitted, this information isn't included.</p> <p>If
-     * <code>ATTACHMENTS</code> is specified, the attachments for the container
+     * <p>Determines whether to include additional information about the clusters in
+     * the response. If this field is omitted, this information isn't included.</p>
+     * <p>If <code>ATTACHMENTS</code> is specified, the attachments for the container
      * instances or tasks within the cluster are included.</p> <p>If
      * <code>SETTINGS</code> is specified, the settings for the cluster are
      * included.</p> <p>If <code>CONFIGURATIONS</code> is specified, the configuration
@@ -176,9 +176,9 @@ namespace Model
     inline DescribeClustersRequest& WithInclude(Aws::Vector<ClusterField>&& value) { SetInclude(std::move(value)); return *this;}
 
     /**
-     * <p>Whether to include additional information about the clusters in the response.
-     * If this field is omitted, this information isn't included.</p> <p>If
-     * <code>ATTACHMENTS</code> is specified, the attachments for the container
+     * <p>Determines whether to include additional information about the clusters in
+     * the response. If this field is omitted, this information isn't included.</p>
+     * <p>If <code>ATTACHMENTS</code> is specified, the attachments for the container
      * instances or tasks within the cluster are included.</p> <p>If
      * <code>SETTINGS</code> is specified, the settings for the cluster are
      * included.</p> <p>If <code>CONFIGURATIONS</code> is specified, the configuration
@@ -190,9 +190,9 @@ namespace Model
     inline DescribeClustersRequest& AddInclude(const ClusterField& value) { m_includeHasBeenSet = true; m_include.push_back(value); return *this; }
 
     /**
-     * <p>Whether to include additional information about the clusters in the response.
-     * If this field is omitted, this information isn't included.</p> <p>If
-     * <code>ATTACHMENTS</code> is specified, the attachments for the container
+     * <p>Determines whether to include additional information about the clusters in
+     * the response. If this field is omitted, this information isn't included.</p>
+     * <p>If <code>ATTACHMENTS</code> is specified, the attachments for the container
      * instances or tasks within the cluster are included.</p> <p>If
      * <code>SETTINGS</code> is specified, the settings for the cluster are
      * included.</p> <p>If <code>CONFIGURATIONS</code> is specified, the configuration

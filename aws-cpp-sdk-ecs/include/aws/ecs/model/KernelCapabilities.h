@@ -26,11 +26,11 @@ namespace Model
 
   /**
    * <p>The Linux capabilities for the container that are added to or dropped from
-   * the default configuration provided by Docker. For more information on the
+   * the default configuration provided by Docker. For more information about the
    * default capabilities and the non-default available capabilities, see <a
    * href="https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities">Runtime
    * privilege and Linux capabilities</a> in the <i>Docker run reference</i>. For
-   * more detailed information on these Linux capabilities, see the <a
+   * more detailed information about these Linux capabilities, see the <a
    * href="http://man7.org/linux/man-pages/man7/capabilities.7.html">capabilities(7)</a>
    * Linux manual page.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/KernelCapabilities">AWS

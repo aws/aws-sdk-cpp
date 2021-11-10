@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>The container instance for which the container agent was updated.</p>
+     * <p>The container instance that the container agent was updated for.</p>
      */
     inline const ContainerInstance& GetContainerInstance() const{ return m_containerInstance; }
 
     /**
-     * <p>The container instance for which the container agent was updated.</p>
+     * <p>The container instance that the container agent was updated for.</p>
      */
     inline void SetContainerInstance(const ContainerInstance& value) { m_containerInstance = value; }
 
     /**
-     * <p>The container instance for which the container agent was updated.</p>
+     * <p>The container instance that the container agent was updated for.</p>
      */
     inline void SetContainerInstance(ContainerInstance&& value) { m_containerInstance = std::move(value); }
 
     /**
-     * <p>The container instance for which the container agent was updated.</p>
+     * <p>The container instance that the container agent was updated for.</p>
      */
     inline UpdateContainerAgentResult& WithContainerInstance(const ContainerInstance& value) { SetContainerInstance(value); return *this;}
 
     /**
-     * <p>The container instance for which the container agent was updated.</p>
+     * <p>The container instance that the container agent was updated for.</p>
      */
     inline UpdateContainerAgentResult& WithContainerInstance(ContainerInstance&& value) { SetContainerInstance(std::move(value)); return *this;}
 

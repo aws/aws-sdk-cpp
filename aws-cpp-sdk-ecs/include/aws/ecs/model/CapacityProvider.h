@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p>The details of a capacity provider.</p><p><h3>See Also:</h3>   <a
+   * <p>The details for a capacity provider.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CapacityProvider">AWS
    * API Reference</a></p>
    */
@@ -127,42 +127,42 @@ namespace Model
     /**
      * <p>The current status of the capacity provider. Only capacity providers in an
      * <code>ACTIVE</code> state can be used in a cluster. When a capacity provider is
-     * successfully deleted, it will have an <code>INACTIVE</code> status.</p>
+     * successfully deleted, it has an <code>INACTIVE</code> status.</p>
      */
     inline const CapacityProviderStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The current status of the capacity provider. Only capacity providers in an
      * <code>ACTIVE</code> state can be used in a cluster. When a capacity provider is
-     * successfully deleted, it will have an <code>INACTIVE</code> status.</p>
+     * successfully deleted, it has an <code>INACTIVE</code> status.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The current status of the capacity provider. Only capacity providers in an
      * <code>ACTIVE</code> state can be used in a cluster. When a capacity provider is
-     * successfully deleted, it will have an <code>INACTIVE</code> status.</p>
+     * successfully deleted, it has an <code>INACTIVE</code> status.</p>
      */
     inline void SetStatus(const CapacityProviderStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The current status of the capacity provider. Only capacity providers in an
      * <code>ACTIVE</code> state can be used in a cluster. When a capacity provider is
-     * successfully deleted, it will have an <code>INACTIVE</code> status.</p>
+     * successfully deleted, it has an <code>INACTIVE</code> status.</p>
      */
     inline void SetStatus(CapacityProviderStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The current status of the capacity provider. Only capacity providers in an
      * <code>ACTIVE</code> state can be used in a cluster. When a capacity provider is
-     * successfully deleted, it will have an <code>INACTIVE</code> status.</p>
+     * successfully deleted, it has an <code>INACTIVE</code> status.</p>
      */
     inline CapacityProvider& WithStatus(const CapacityProviderStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The current status of the capacity provider. Only capacity providers in an
      * <code>ACTIVE</code> state can be used in a cluster. When a capacity provider is
-     * successfully deleted, it will have an <code>INACTIVE</code> status.</p>
+     * successfully deleted, it has an <code>INACTIVE</code> status.</p>
      */
     inline CapacityProvider& WithStatus(CapacityProviderStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -200,73 +200,67 @@ namespace Model
 
     /**
      * <p>The update status of the capacity provider. The following are the possible
-     * states that will be returned.</p> <dl> <dt>DELETE_IN_PROGRESS</dt> <dd> <p>The
+     * states that is returned.</p> <dl> <dt>DELETE_IN_PROGRESS</dt> <dd> <p>The
      * capacity provider is in the process of being deleted.</p> </dd>
-     * <dt>DELETE_COMPLETE</dt> <dd> <p>The capacity provider has been successfully
-     * deleted and will have an <code>INACTIVE</code> status.</p> </dd>
-     * <dt>DELETE_FAILED</dt> <dd> <p>The capacity provider was unable to be deleted.
-     * The update status reason will provide further details about why the delete
-     * failed.</p> </dd> </dl>
+     * <dt>DELETE_COMPLETE</dt> <dd> <p>The capacity provider was successfully deleted
+     * and has an <code>INACTIVE</code> status.</p> </dd> <dt>DELETE_FAILED</dt> <dd>
+     * <p>The capacity provider can't be deleted. The update status reason provides
+     * further details about why the delete failed.</p> </dd> </dl>
      */
     inline const CapacityProviderUpdateStatus& GetUpdateStatus() const{ return m_updateStatus; }
 
     /**
      * <p>The update status of the capacity provider. The following are the possible
-     * states that will be returned.</p> <dl> <dt>DELETE_IN_PROGRESS</dt> <dd> <p>The
+     * states that is returned.</p> <dl> <dt>DELETE_IN_PROGRESS</dt> <dd> <p>The
      * capacity provider is in the process of being deleted.</p> </dd>
-     * <dt>DELETE_COMPLETE</dt> <dd> <p>The capacity provider has been successfully
-     * deleted and will have an <code>INACTIVE</code> status.</p> </dd>
-     * <dt>DELETE_FAILED</dt> <dd> <p>The capacity provider was unable to be deleted.
-     * The update status reason will provide further details about why the delete
-     * failed.</p> </dd> </dl>
+     * <dt>DELETE_COMPLETE</dt> <dd> <p>The capacity provider was successfully deleted
+     * and has an <code>INACTIVE</code> status.</p> </dd> <dt>DELETE_FAILED</dt> <dd>
+     * <p>The capacity provider can't be deleted. The update status reason provides
+     * further details about why the delete failed.</p> </dd> </dl>
      */
     inline bool UpdateStatusHasBeenSet() const { return m_updateStatusHasBeenSet; }
 
     /**
      * <p>The update status of the capacity provider. The following are the possible
-     * states that will be returned.</p> <dl> <dt>DELETE_IN_PROGRESS</dt> <dd> <p>The
+     * states that is returned.</p> <dl> <dt>DELETE_IN_PROGRESS</dt> <dd> <p>The
      * capacity provider is in the process of being deleted.</p> </dd>
-     * <dt>DELETE_COMPLETE</dt> <dd> <p>The capacity provider has been successfully
-     * deleted and will have an <code>INACTIVE</code> status.</p> </dd>
-     * <dt>DELETE_FAILED</dt> <dd> <p>The capacity provider was unable to be deleted.
-     * The update status reason will provide further details about why the delete
-     * failed.</p> </dd> </dl>
+     * <dt>DELETE_COMPLETE</dt> <dd> <p>The capacity provider was successfully deleted
+     * and has an <code>INACTIVE</code> status.</p> </dd> <dt>DELETE_FAILED</dt> <dd>
+     * <p>The capacity provider can't be deleted. The update status reason provides
+     * further details about why the delete failed.</p> </dd> </dl>
      */
     inline void SetUpdateStatus(const CapacityProviderUpdateStatus& value) { m_updateStatusHasBeenSet = true; m_updateStatus = value; }
 
     /**
      * <p>The update status of the capacity provider. The following are the possible
-     * states that will be returned.</p> <dl> <dt>DELETE_IN_PROGRESS</dt> <dd> <p>The
+     * states that is returned.</p> <dl> <dt>DELETE_IN_PROGRESS</dt> <dd> <p>The
      * capacity provider is in the process of being deleted.</p> </dd>
-     * <dt>DELETE_COMPLETE</dt> <dd> <p>The capacity provider has been successfully
-     * deleted and will have an <code>INACTIVE</code> status.</p> </dd>
-     * <dt>DELETE_FAILED</dt> <dd> <p>The capacity provider was unable to be deleted.
-     * The update status reason will provide further details about why the delete
-     * failed.</p> </dd> </dl>
+     * <dt>DELETE_COMPLETE</dt> <dd> <p>The capacity provider was successfully deleted
+     * and has an <code>INACTIVE</code> status.</p> </dd> <dt>DELETE_FAILED</dt> <dd>
+     * <p>The capacity provider can't be deleted. The update status reason provides
+     * further details about why the delete failed.</p> </dd> </dl>
      */
     inline void SetUpdateStatus(CapacityProviderUpdateStatus&& value) { m_updateStatusHasBeenSet = true; m_updateStatus = std::move(value); }
 
     /**
      * <p>The update status of the capacity provider. The following are the possible
-     * states that will be returned.</p> <dl> <dt>DELETE_IN_PROGRESS</dt> <dd> <p>The
+     * states that is returned.</p> <dl> <dt>DELETE_IN_PROGRESS</dt> <dd> <p>The
      * capacity provider is in the process of being deleted.</p> </dd>
-     * <dt>DELETE_COMPLETE</dt> <dd> <p>The capacity provider has been successfully
-     * deleted and will have an <code>INACTIVE</code> status.</p> </dd>
-     * <dt>DELETE_FAILED</dt> <dd> <p>The capacity provider was unable to be deleted.
-     * The update status reason will provide further details about why the delete
-     * failed.</p> </dd> </dl>
+     * <dt>DELETE_COMPLETE</dt> <dd> <p>The capacity provider was successfully deleted
+     * and has an <code>INACTIVE</code> status.</p> </dd> <dt>DELETE_FAILED</dt> <dd>
+     * <p>The capacity provider can't be deleted. The update status reason provides
+     * further details about why the delete failed.</p> </dd> </dl>
      */
     inline CapacityProvider& WithUpdateStatus(const CapacityProviderUpdateStatus& value) { SetUpdateStatus(value); return *this;}
 
     /**
      * <p>The update status of the capacity provider. The following are the possible
-     * states that will be returned.</p> <dl> <dt>DELETE_IN_PROGRESS</dt> <dd> <p>The
+     * states that is returned.</p> <dl> <dt>DELETE_IN_PROGRESS</dt> <dd> <p>The
      * capacity provider is in the process of being deleted.</p> </dd>
-     * <dt>DELETE_COMPLETE</dt> <dd> <p>The capacity provider has been successfully
-     * deleted and will have an <code>INACTIVE</code> status.</p> </dd>
-     * <dt>DELETE_FAILED</dt> <dd> <p>The capacity provider was unable to be deleted.
-     * The update status reason will provide further details about why the delete
-     * failed.</p> </dd> </dl>
+     * <dt>DELETE_COMPLETE</dt> <dd> <p>The capacity provider was successfully deleted
+     * and has an <code>INACTIVE</code> status.</p> </dd> <dt>DELETE_FAILED</dt> <dd>
+     * <p>The capacity provider can't be deleted. The update status reason provides
+     * further details about why the delete failed.</p> </dd> </dl>
      */
     inline CapacityProvider& WithUpdateStatus(CapacityProviderUpdateStatus&& value) { SetUpdateStatus(std::move(value)); return *this;}
 
@@ -322,8 +316,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the capacity provider to help you categorize
-     * and organize it. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * and organize it. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -342,8 +336,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the capacity provider to help you categorize
-     * and organize it. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * and organize it. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -362,8 +356,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the capacity provider to help you categorize
-     * and organize it. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * and organize it. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -382,8 +376,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the capacity provider to help you categorize
-     * and organize it. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * and organize it. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -402,8 +396,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the capacity provider to help you categorize
-     * and organize it. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * and organize it. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -422,8 +416,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the capacity provider to help you categorize
-     * and organize it. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * and organize it. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -442,8 +436,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the capacity provider to help you categorize
-     * and organize it. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * and organize it. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -462,8 +456,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the capacity provider to help you categorize
-     * and organize it. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * and organize it. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>

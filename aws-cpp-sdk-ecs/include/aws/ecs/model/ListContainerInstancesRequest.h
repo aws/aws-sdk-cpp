@@ -168,8 +168,8 @@ namespace Model
     /**
      * <p>The <code>nextToken</code> value returned from a
      * <code>ListContainerInstances</code> request indicating that more results are
-     * available to fulfill the request and further calls will be needed. If
-     * <code>maxResults</code> was provided, it is possible the number of results to be
+     * available to fulfill the request and further calls are needed. If
+     * <code>maxResults</code> was provided, it's possible the number of results to be
      * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
      * and not for other programmatic purposes.</p> 
@@ -179,8 +179,8 @@ namespace Model
     /**
      * <p>The <code>nextToken</code> value returned from a
      * <code>ListContainerInstances</code> request indicating that more results are
-     * available to fulfill the request and further calls will be needed. If
-     * <code>maxResults</code> was provided, it is possible the number of results to be
+     * available to fulfill the request and further calls are needed. If
+     * <code>maxResults</code> was provided, it's possible the number of results to be
      * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
      * and not for other programmatic purposes.</p> 
@@ -190,8 +190,8 @@ namespace Model
     /**
      * <p>The <code>nextToken</code> value returned from a
      * <code>ListContainerInstances</code> request indicating that more results are
-     * available to fulfill the request and further calls will be needed. If
-     * <code>maxResults</code> was provided, it is possible the number of results to be
+     * available to fulfill the request and further calls are needed. If
+     * <code>maxResults</code> was provided, it's possible the number of results to be
      * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
      * and not for other programmatic purposes.</p> 
@@ -201,8 +201,8 @@ namespace Model
     /**
      * <p>The <code>nextToken</code> value returned from a
      * <code>ListContainerInstances</code> request indicating that more results are
-     * available to fulfill the request and further calls will be needed. If
-     * <code>maxResults</code> was provided, it is possible the number of results to be
+     * available to fulfill the request and further calls are needed. If
+     * <code>maxResults</code> was provided, it's possible the number of results to be
      * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
      * and not for other programmatic purposes.</p> 
@@ -212,8 +212,8 @@ namespace Model
     /**
      * <p>The <code>nextToken</code> value returned from a
      * <code>ListContainerInstances</code> request indicating that more results are
-     * available to fulfill the request and further calls will be needed. If
-     * <code>maxResults</code> was provided, it is possible the number of results to be
+     * available to fulfill the request and further calls are needed. If
+     * <code>maxResults</code> was provided, it's possible the number of results to be
      * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
      * and not for other programmatic purposes.</p> 
@@ -223,8 +223,8 @@ namespace Model
     /**
      * <p>The <code>nextToken</code> value returned from a
      * <code>ListContainerInstances</code> request indicating that more results are
-     * available to fulfill the request and further calls will be needed. If
-     * <code>maxResults</code> was provided, it is possible the number of results to be
+     * available to fulfill the request and further calls are needed. If
+     * <code>maxResults</code> was provided, it's possible the number of results to be
      * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
      * and not for other programmatic purposes.</p> 
@@ -234,8 +234,8 @@ namespace Model
     /**
      * <p>The <code>nextToken</code> value returned from a
      * <code>ListContainerInstances</code> request indicating that more results are
-     * available to fulfill the request and further calls will be needed. If
-     * <code>maxResults</code> was provided, it is possible the number of results to be
+     * available to fulfill the request and further calls are needed. If
+     * <code>maxResults</code> was provided, it's possible the number of results to be
      * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
      * and not for other programmatic purposes.</p> 
@@ -245,8 +245,8 @@ namespace Model
     /**
      * <p>The <code>nextToken</code> value returned from a
      * <code>ListContainerInstances</code> request indicating that more results are
-     * available to fulfill the request and further calls will be needed. If
-     * <code>maxResults</code> was provided, it is possible the number of results to be
+     * available to fulfill the request and further calls are needed. If
+     * <code>maxResults</code> was provided, it's possible the number of results to be
      * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
      * and not for other programmatic purposes.</p> 
@@ -255,54 +255,58 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of container instance results returned by
-     * <code>ListContainerInstances</code> in paginated output. When this parameter is
-     * used, <code>ListContainerInstances</code> only returns <code>maxResults</code>
-     * results in a single page along with a <code>nextToken</code> response element.
-     * The remaining results of the initial request can be seen by sending another
-     * <code>ListContainerInstances</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If this
-     * parameter is not used, then <code>ListContainerInstances</code> returns up to
-     * 100 results and a <code>nextToken</code> value if applicable.</p>
+     * <p>The maximum number of container instance results that
+     * <code>ListContainerInstances</code> returned in paginated output. When this
+     * parameter is used, <code>ListContainerInstances</code> only returns
+     * <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. The remaining results of the initial
+     * request can be seen by sending another <code>ListContainerInstances</code>
+     * request with the returned <code>nextToken</code> value. This value can be
+     * between 1 and 100. If this parameter isn't used, then
+     * <code>ListContainerInstances</code> returns up to 100 results and a
+     * <code>nextToken</code> value if applicable.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of container instance results returned by
-     * <code>ListContainerInstances</code> in paginated output. When this parameter is
-     * used, <code>ListContainerInstances</code> only returns <code>maxResults</code>
-     * results in a single page along with a <code>nextToken</code> response element.
-     * The remaining results of the initial request can be seen by sending another
-     * <code>ListContainerInstances</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If this
-     * parameter is not used, then <code>ListContainerInstances</code> returns up to
-     * 100 results and a <code>nextToken</code> value if applicable.</p>
+     * <p>The maximum number of container instance results that
+     * <code>ListContainerInstances</code> returned in paginated output. When this
+     * parameter is used, <code>ListContainerInstances</code> only returns
+     * <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. The remaining results of the initial
+     * request can be seen by sending another <code>ListContainerInstances</code>
+     * request with the returned <code>nextToken</code> value. This value can be
+     * between 1 and 100. If this parameter isn't used, then
+     * <code>ListContainerInstances</code> returns up to 100 results and a
+     * <code>nextToken</code> value if applicable.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of container instance results returned by
-     * <code>ListContainerInstances</code> in paginated output. When this parameter is
-     * used, <code>ListContainerInstances</code> only returns <code>maxResults</code>
-     * results in a single page along with a <code>nextToken</code> response element.
-     * The remaining results of the initial request can be seen by sending another
-     * <code>ListContainerInstances</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If this
-     * parameter is not used, then <code>ListContainerInstances</code> returns up to
-     * 100 results and a <code>nextToken</code> value if applicable.</p>
+     * <p>The maximum number of container instance results that
+     * <code>ListContainerInstances</code> returned in paginated output. When this
+     * parameter is used, <code>ListContainerInstances</code> only returns
+     * <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. The remaining results of the initial
+     * request can be seen by sending another <code>ListContainerInstances</code>
+     * request with the returned <code>nextToken</code> value. This value can be
+     * between 1 and 100. If this parameter isn't used, then
+     * <code>ListContainerInstances</code> returns up to 100 results and a
+     * <code>nextToken</code> value if applicable.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of container instance results returned by
-     * <code>ListContainerInstances</code> in paginated output. When this parameter is
-     * used, <code>ListContainerInstances</code> only returns <code>maxResults</code>
-     * results in a single page along with a <code>nextToken</code> response element.
-     * The remaining results of the initial request can be seen by sending another
-     * <code>ListContainerInstances</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If this
-     * parameter is not used, then <code>ListContainerInstances</code> returns up to
-     * 100 results and a <code>nextToken</code> value if applicable.</p>
+     * <p>The maximum number of container instance results that
+     * <code>ListContainerInstances</code> returned in paginated output. When this
+     * parameter is used, <code>ListContainerInstances</code> only returns
+     * <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. The remaining results of the initial
+     * request can be seen by sending another <code>ListContainerInstances</code>
+     * request with the returned <code>nextToken</code> value. This value can be
+     * between 1 and 100. If this parameter isn't used, then
+     * <code>ListContainerInstances</code> returns up to 100 results and a
+     * <code>nextToken</code> value if applicable.</p>
      */
     inline ListContainerInstancesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -311,7 +315,7 @@ namespace Model
      * <p>Filters the container instances by status. For example, if you specify the
      * <code>DRAINING</code> status, the results include only container instances that
      * have been set to <code>DRAINING</code> using
-     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the
+     * <a>UpdateContainerInstancesState</a>. If you don't specify this parameter, the
      * default is to include container instances set to all states other than
      * <code>INACTIVE</code>.</p>
      */
@@ -321,7 +325,7 @@ namespace Model
      * <p>Filters the container instances by status. For example, if you specify the
      * <code>DRAINING</code> status, the results include only container instances that
      * have been set to <code>DRAINING</code> using
-     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the
+     * <a>UpdateContainerInstancesState</a>. If you don't specify this parameter, the
      * default is to include container instances set to all states other than
      * <code>INACTIVE</code>.</p>
      */
@@ -331,7 +335,7 @@ namespace Model
      * <p>Filters the container instances by status. For example, if you specify the
      * <code>DRAINING</code> status, the results include only container instances that
      * have been set to <code>DRAINING</code> using
-     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the
+     * <a>UpdateContainerInstancesState</a>. If you don't specify this parameter, the
      * default is to include container instances set to all states other than
      * <code>INACTIVE</code>.</p>
      */
@@ -341,7 +345,7 @@ namespace Model
      * <p>Filters the container instances by status. For example, if you specify the
      * <code>DRAINING</code> status, the results include only container instances that
      * have been set to <code>DRAINING</code> using
-     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the
+     * <a>UpdateContainerInstancesState</a>. If you don't specify this parameter, the
      * default is to include container instances set to all states other than
      * <code>INACTIVE</code>.</p>
      */
@@ -351,7 +355,7 @@ namespace Model
      * <p>Filters the container instances by status. For example, if you specify the
      * <code>DRAINING</code> status, the results include only container instances that
      * have been set to <code>DRAINING</code> using
-     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the
+     * <a>UpdateContainerInstancesState</a>. If you don't specify this parameter, the
      * default is to include container instances set to all states other than
      * <code>INACTIVE</code>.</p>
      */
@@ -361,7 +365,7 @@ namespace Model
      * <p>Filters the container instances by status. For example, if you specify the
      * <code>DRAINING</code> status, the results include only container instances that
      * have been set to <code>DRAINING</code> using
-     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the
+     * <a>UpdateContainerInstancesState</a>. If you don't specify this parameter, the
      * default is to include container instances set to all states other than
      * <code>INACTIVE</code>.</p>
      */

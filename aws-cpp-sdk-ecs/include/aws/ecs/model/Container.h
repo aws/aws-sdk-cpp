@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p>A Docker container that is part of a task.</p><p><h3>See Also:</h3>   <a
+   * <p>A Docker container that's part of a task.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Container">AWS API
    * Reference</a></p>
    */
@@ -498,42 +498,42 @@ namespace Model
 
 
     /**
-     * <p>The health status of the container. If health checks are not configured for
+     * <p>The health status of the container. If health checks aren't configured for
      * this container in its task definition, then it reports the health status as
      * <code>UNKNOWN</code>.</p>
      */
     inline const HealthStatus& GetHealthStatus() const{ return m_healthStatus; }
 
     /**
-     * <p>The health status of the container. If health checks are not configured for
+     * <p>The health status of the container. If health checks aren't configured for
      * this container in its task definition, then it reports the health status as
      * <code>UNKNOWN</code>.</p>
      */
     inline bool HealthStatusHasBeenSet() const { return m_healthStatusHasBeenSet; }
 
     /**
-     * <p>The health status of the container. If health checks are not configured for
+     * <p>The health status of the container. If health checks aren't configured for
      * this container in its task definition, then it reports the health status as
      * <code>UNKNOWN</code>.</p>
      */
     inline void SetHealthStatus(const HealthStatus& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
 
     /**
-     * <p>The health status of the container. If health checks are not configured for
+     * <p>The health status of the container. If health checks aren't configured for
      * this container in its task definition, then it reports the health status as
      * <code>UNKNOWN</code>.</p>
      */
     inline void SetHealthStatus(HealthStatus&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = std::move(value); }
 
     /**
-     * <p>The health status of the container. If health checks are not configured for
+     * <p>The health status of the container. If health checks aren't configured for
      * this container in its task definition, then it reports the health status as
      * <code>UNKNOWN</code>.</p>
      */
     inline Container& WithHealthStatus(const HealthStatus& value) { SetHealthStatus(value); return *this;}
 
     /**
-     * <p>The health status of the container. If health checks are not configured for
+     * <p>The health status of the container. If health checks aren't configured for
      * this container in its task definition, then it reports the health status as
      * <code>UNKNOWN</code>.</p>
      */
@@ -590,58 +590,58 @@ namespace Model
 
 
     /**
-     * <p>The number of CPU units set for the container. The value will be
-     * <code>0</code> if no value was specified in the container definition when the
-     * task definition was registered.</p>
+     * <p>The number of CPU units set for the container. The value is <code>0</code> if
+     * no value was specified in the container definition when the task definition was
+     * registered.</p>
      */
     inline const Aws::String& GetCpu() const{ return m_cpu; }
 
     /**
-     * <p>The number of CPU units set for the container. The value will be
-     * <code>0</code> if no value was specified in the container definition when the
-     * task definition was registered.</p>
+     * <p>The number of CPU units set for the container. The value is <code>0</code> if
+     * no value was specified in the container definition when the task definition was
+     * registered.</p>
      */
     inline bool CpuHasBeenSet() const { return m_cpuHasBeenSet; }
 
     /**
-     * <p>The number of CPU units set for the container. The value will be
-     * <code>0</code> if no value was specified in the container definition when the
-     * task definition was registered.</p>
+     * <p>The number of CPU units set for the container. The value is <code>0</code> if
+     * no value was specified in the container definition when the task definition was
+     * registered.</p>
      */
     inline void SetCpu(const Aws::String& value) { m_cpuHasBeenSet = true; m_cpu = value; }
 
     /**
-     * <p>The number of CPU units set for the container. The value will be
-     * <code>0</code> if no value was specified in the container definition when the
-     * task definition was registered.</p>
+     * <p>The number of CPU units set for the container. The value is <code>0</code> if
+     * no value was specified in the container definition when the task definition was
+     * registered.</p>
      */
     inline void SetCpu(Aws::String&& value) { m_cpuHasBeenSet = true; m_cpu = std::move(value); }
 
     /**
-     * <p>The number of CPU units set for the container. The value will be
-     * <code>0</code> if no value was specified in the container definition when the
-     * task definition was registered.</p>
+     * <p>The number of CPU units set for the container. The value is <code>0</code> if
+     * no value was specified in the container definition when the task definition was
+     * registered.</p>
      */
     inline void SetCpu(const char* value) { m_cpuHasBeenSet = true; m_cpu.assign(value); }
 
     /**
-     * <p>The number of CPU units set for the container. The value will be
-     * <code>0</code> if no value was specified in the container definition when the
-     * task definition was registered.</p>
+     * <p>The number of CPU units set for the container. The value is <code>0</code> if
+     * no value was specified in the container definition when the task definition was
+     * registered.</p>
      */
     inline Container& WithCpu(const Aws::String& value) { SetCpu(value); return *this;}
 
     /**
-     * <p>The number of CPU units set for the container. The value will be
-     * <code>0</code> if no value was specified in the container definition when the
-     * task definition was registered.</p>
+     * <p>The number of CPU units set for the container. The value is <code>0</code> if
+     * no value was specified in the container definition when the task definition was
+     * registered.</p>
      */
     inline Container& WithCpu(Aws::String&& value) { SetCpu(std::move(value)); return *this;}
 
     /**
-     * <p>The number of CPU units set for the container. The value will be
-     * <code>0</code> if no value was specified in the container definition when the
-     * task definition was registered.</p>
+     * <p>The number of CPU units set for the container. The value is <code>0</code> if
+     * no value was specified in the container definition when the task definition was
+     * registered.</p>
      */
     inline Container& WithCpu(const char* value) { SetCpu(value); return *this;}
 

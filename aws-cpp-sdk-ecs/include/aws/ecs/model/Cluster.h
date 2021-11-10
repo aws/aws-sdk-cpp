@@ -31,11 +31,11 @@ namespace Model
 {
 
   /**
-   * <p>A regional grouping of one or more container instances on which you can run
-   * task requests. Each account receives a default cluster the first time you use
-   * the Amazon ECS service, but you may also create other clusters. Clusters may
-   * contain more than one instance type simultaneously.</p><p><h3>See Also:</h3>  
-   * <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Cluster">AWS API
+   * <p>A regional grouping of one or more container instances where you can run task
+   * requests. Each account receives a default cluster the first time you use the
+   * Amazon ECS service, but you may also create other clusters. Clusters may contain
+   * more than one instance type simultaneously.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Cluster">AWS API
    * Reference</a></p>
    */
   class AWS_ECS_API Cluster
@@ -193,146 +193,146 @@ namespace Model
 
 
     /**
-     * <p>The status of the cluster. The following are the possible states that will be
+     * <p>The status of the cluster. The following are the possible states that are
      * returned.</p> <dl> <dt>ACTIVE</dt> <dd> <p>The cluster is ready to accept tasks
      * and if applicable you can register container instances with the cluster.</p>
-     * </dd> <dt>PROVISIONING</dt> <dd> <p>The cluster has capacity providers
+     * </dd> <dt>PROVISIONING</dt> <dd> <p>The cluster has capacity providers that are
      * associated with it and the resources needed for the capacity provider are being
      * created.</p> </dd> <dt>DEPROVISIONING</dt> <dd> <p>The cluster has capacity
-     * providers associated with it and the resources needed for the capacity provider
-     * are being deleted.</p> </dd> <dt>FAILED</dt> <dd> <p>The cluster has capacity
-     * providers associated with it and the resources needed for the capacity provider
-     * have failed to create.</p> </dd> <dt>INACTIVE</dt> <dd> <p>The cluster has been
-     * deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable
-     * in your account for a period of time. However, this behavior is subject to
-     * change in the future, so you should not rely on <code>INACTIVE</code> clusters
-     * persisting.</p> </dd> </dl>
+     * providers that are associated with it and the resources needed for the capacity
+     * provider are being deleted.</p> </dd> <dt>FAILED</dt> <dd> <p>The cluster has
+     * capacity providers that are associated with it and the resources needed for the
+     * capacity provider have failed to create.</p> </dd> <dt>INACTIVE</dt> <dd> <p>The
+     * cluster has been deleted. Clusters with an <code>INACTIVE</code> status may
+     * remain discoverable in your account for a period of time. However, this behavior
+     * is subject to change in the future. We don't recommend that you rely on
+     * <code>INACTIVE</code> clusters persisting.</p> </dd> </dl>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the cluster. The following are the possible states that will be
+     * <p>The status of the cluster. The following are the possible states that are
      * returned.</p> <dl> <dt>ACTIVE</dt> <dd> <p>The cluster is ready to accept tasks
      * and if applicable you can register container instances with the cluster.</p>
-     * </dd> <dt>PROVISIONING</dt> <dd> <p>The cluster has capacity providers
+     * </dd> <dt>PROVISIONING</dt> <dd> <p>The cluster has capacity providers that are
      * associated with it and the resources needed for the capacity provider are being
      * created.</p> </dd> <dt>DEPROVISIONING</dt> <dd> <p>The cluster has capacity
-     * providers associated with it and the resources needed for the capacity provider
-     * are being deleted.</p> </dd> <dt>FAILED</dt> <dd> <p>The cluster has capacity
-     * providers associated with it and the resources needed for the capacity provider
-     * have failed to create.</p> </dd> <dt>INACTIVE</dt> <dd> <p>The cluster has been
-     * deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable
-     * in your account for a period of time. However, this behavior is subject to
-     * change in the future, so you should not rely on <code>INACTIVE</code> clusters
-     * persisting.</p> </dd> </dl>
+     * providers that are associated with it and the resources needed for the capacity
+     * provider are being deleted.</p> </dd> <dt>FAILED</dt> <dd> <p>The cluster has
+     * capacity providers that are associated with it and the resources needed for the
+     * capacity provider have failed to create.</p> </dd> <dt>INACTIVE</dt> <dd> <p>The
+     * cluster has been deleted. Clusters with an <code>INACTIVE</code> status may
+     * remain discoverable in your account for a period of time. However, this behavior
+     * is subject to change in the future. We don't recommend that you rely on
+     * <code>INACTIVE</code> clusters persisting.</p> </dd> </dl>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the cluster. The following are the possible states that will be
+     * <p>The status of the cluster. The following are the possible states that are
      * returned.</p> <dl> <dt>ACTIVE</dt> <dd> <p>The cluster is ready to accept tasks
      * and if applicable you can register container instances with the cluster.</p>
-     * </dd> <dt>PROVISIONING</dt> <dd> <p>The cluster has capacity providers
+     * </dd> <dt>PROVISIONING</dt> <dd> <p>The cluster has capacity providers that are
      * associated with it and the resources needed for the capacity provider are being
      * created.</p> </dd> <dt>DEPROVISIONING</dt> <dd> <p>The cluster has capacity
-     * providers associated with it and the resources needed for the capacity provider
-     * are being deleted.</p> </dd> <dt>FAILED</dt> <dd> <p>The cluster has capacity
-     * providers associated with it and the resources needed for the capacity provider
-     * have failed to create.</p> </dd> <dt>INACTIVE</dt> <dd> <p>The cluster has been
-     * deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable
-     * in your account for a period of time. However, this behavior is subject to
-     * change in the future, so you should not rely on <code>INACTIVE</code> clusters
-     * persisting.</p> </dd> </dl>
+     * providers that are associated with it and the resources needed for the capacity
+     * provider are being deleted.</p> </dd> <dt>FAILED</dt> <dd> <p>The cluster has
+     * capacity providers that are associated with it and the resources needed for the
+     * capacity provider have failed to create.</p> </dd> <dt>INACTIVE</dt> <dd> <p>The
+     * cluster has been deleted. Clusters with an <code>INACTIVE</code> status may
+     * remain discoverable in your account for a period of time. However, this behavior
+     * is subject to change in the future. We don't recommend that you rely on
+     * <code>INACTIVE</code> clusters persisting.</p> </dd> </dl>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the cluster. The following are the possible states that will be
+     * <p>The status of the cluster. The following are the possible states that are
      * returned.</p> <dl> <dt>ACTIVE</dt> <dd> <p>The cluster is ready to accept tasks
      * and if applicable you can register container instances with the cluster.</p>
-     * </dd> <dt>PROVISIONING</dt> <dd> <p>The cluster has capacity providers
+     * </dd> <dt>PROVISIONING</dt> <dd> <p>The cluster has capacity providers that are
      * associated with it and the resources needed for the capacity provider are being
      * created.</p> </dd> <dt>DEPROVISIONING</dt> <dd> <p>The cluster has capacity
-     * providers associated with it and the resources needed for the capacity provider
-     * are being deleted.</p> </dd> <dt>FAILED</dt> <dd> <p>The cluster has capacity
-     * providers associated with it and the resources needed for the capacity provider
-     * have failed to create.</p> </dd> <dt>INACTIVE</dt> <dd> <p>The cluster has been
-     * deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable
-     * in your account for a period of time. However, this behavior is subject to
-     * change in the future, so you should not rely on <code>INACTIVE</code> clusters
-     * persisting.</p> </dd> </dl>
+     * providers that are associated with it and the resources needed for the capacity
+     * provider are being deleted.</p> </dd> <dt>FAILED</dt> <dd> <p>The cluster has
+     * capacity providers that are associated with it and the resources needed for the
+     * capacity provider have failed to create.</p> </dd> <dt>INACTIVE</dt> <dd> <p>The
+     * cluster has been deleted. Clusters with an <code>INACTIVE</code> status may
+     * remain discoverable in your account for a period of time. However, this behavior
+     * is subject to change in the future. We don't recommend that you rely on
+     * <code>INACTIVE</code> clusters persisting.</p> </dd> </dl>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the cluster. The following are the possible states that will be
+     * <p>The status of the cluster. The following are the possible states that are
      * returned.</p> <dl> <dt>ACTIVE</dt> <dd> <p>The cluster is ready to accept tasks
      * and if applicable you can register container instances with the cluster.</p>
-     * </dd> <dt>PROVISIONING</dt> <dd> <p>The cluster has capacity providers
+     * </dd> <dt>PROVISIONING</dt> <dd> <p>The cluster has capacity providers that are
      * associated with it and the resources needed for the capacity provider are being
      * created.</p> </dd> <dt>DEPROVISIONING</dt> <dd> <p>The cluster has capacity
-     * providers associated with it and the resources needed for the capacity provider
-     * are being deleted.</p> </dd> <dt>FAILED</dt> <dd> <p>The cluster has capacity
-     * providers associated with it and the resources needed for the capacity provider
-     * have failed to create.</p> </dd> <dt>INACTIVE</dt> <dd> <p>The cluster has been
-     * deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable
-     * in your account for a period of time. However, this behavior is subject to
-     * change in the future, so you should not rely on <code>INACTIVE</code> clusters
-     * persisting.</p> </dd> </dl>
+     * providers that are associated with it and the resources needed for the capacity
+     * provider are being deleted.</p> </dd> <dt>FAILED</dt> <dd> <p>The cluster has
+     * capacity providers that are associated with it and the resources needed for the
+     * capacity provider have failed to create.</p> </dd> <dt>INACTIVE</dt> <dd> <p>The
+     * cluster has been deleted. Clusters with an <code>INACTIVE</code> status may
+     * remain discoverable in your account for a period of time. However, this behavior
+     * is subject to change in the future. We don't recommend that you rely on
+     * <code>INACTIVE</code> clusters persisting.</p> </dd> </dl>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The status of the cluster. The following are the possible states that will be
+     * <p>The status of the cluster. The following are the possible states that are
      * returned.</p> <dl> <dt>ACTIVE</dt> <dd> <p>The cluster is ready to accept tasks
      * and if applicable you can register container instances with the cluster.</p>
-     * </dd> <dt>PROVISIONING</dt> <dd> <p>The cluster has capacity providers
+     * </dd> <dt>PROVISIONING</dt> <dd> <p>The cluster has capacity providers that are
      * associated with it and the resources needed for the capacity provider are being
      * created.</p> </dd> <dt>DEPROVISIONING</dt> <dd> <p>The cluster has capacity
-     * providers associated with it and the resources needed for the capacity provider
-     * are being deleted.</p> </dd> <dt>FAILED</dt> <dd> <p>The cluster has capacity
-     * providers associated with it and the resources needed for the capacity provider
-     * have failed to create.</p> </dd> <dt>INACTIVE</dt> <dd> <p>The cluster has been
-     * deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable
-     * in your account for a period of time. However, this behavior is subject to
-     * change in the future, so you should not rely on <code>INACTIVE</code> clusters
-     * persisting.</p> </dd> </dl>
+     * providers that are associated with it and the resources needed for the capacity
+     * provider are being deleted.</p> </dd> <dt>FAILED</dt> <dd> <p>The cluster has
+     * capacity providers that are associated with it and the resources needed for the
+     * capacity provider have failed to create.</p> </dd> <dt>INACTIVE</dt> <dd> <p>The
+     * cluster has been deleted. Clusters with an <code>INACTIVE</code> status may
+     * remain discoverable in your account for a period of time. However, this behavior
+     * is subject to change in the future. We don't recommend that you rely on
+     * <code>INACTIVE</code> clusters persisting.</p> </dd> </dl>
      */
     inline Cluster& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the cluster. The following are the possible states that will be
+     * <p>The status of the cluster. The following are the possible states that are
      * returned.</p> <dl> <dt>ACTIVE</dt> <dd> <p>The cluster is ready to accept tasks
      * and if applicable you can register container instances with the cluster.</p>
-     * </dd> <dt>PROVISIONING</dt> <dd> <p>The cluster has capacity providers
+     * </dd> <dt>PROVISIONING</dt> <dd> <p>The cluster has capacity providers that are
      * associated with it and the resources needed for the capacity provider are being
      * created.</p> </dd> <dt>DEPROVISIONING</dt> <dd> <p>The cluster has capacity
-     * providers associated with it and the resources needed for the capacity provider
-     * are being deleted.</p> </dd> <dt>FAILED</dt> <dd> <p>The cluster has capacity
-     * providers associated with it and the resources needed for the capacity provider
-     * have failed to create.</p> </dd> <dt>INACTIVE</dt> <dd> <p>The cluster has been
-     * deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable
-     * in your account for a period of time. However, this behavior is subject to
-     * change in the future, so you should not rely on <code>INACTIVE</code> clusters
-     * persisting.</p> </dd> </dl>
+     * providers that are associated with it and the resources needed for the capacity
+     * provider are being deleted.</p> </dd> <dt>FAILED</dt> <dd> <p>The cluster has
+     * capacity providers that are associated with it and the resources needed for the
+     * capacity provider have failed to create.</p> </dd> <dt>INACTIVE</dt> <dd> <p>The
+     * cluster has been deleted. Clusters with an <code>INACTIVE</code> status may
+     * remain discoverable in your account for a period of time. However, this behavior
+     * is subject to change in the future. We don't recommend that you rely on
+     * <code>INACTIVE</code> clusters persisting.</p> </dd> </dl>
      */
     inline Cluster& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the cluster. The following are the possible states that will be
+     * <p>The status of the cluster. The following are the possible states that are
      * returned.</p> <dl> <dt>ACTIVE</dt> <dd> <p>The cluster is ready to accept tasks
      * and if applicable you can register container instances with the cluster.</p>
-     * </dd> <dt>PROVISIONING</dt> <dd> <p>The cluster has capacity providers
+     * </dd> <dt>PROVISIONING</dt> <dd> <p>The cluster has capacity providers that are
      * associated with it and the resources needed for the capacity provider are being
      * created.</p> </dd> <dt>DEPROVISIONING</dt> <dd> <p>The cluster has capacity
-     * providers associated with it and the resources needed for the capacity provider
-     * are being deleted.</p> </dd> <dt>FAILED</dt> <dd> <p>The cluster has capacity
-     * providers associated with it and the resources needed for the capacity provider
-     * have failed to create.</p> </dd> <dt>INACTIVE</dt> <dd> <p>The cluster has been
-     * deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable
-     * in your account for a period of time. However, this behavior is subject to
-     * change in the future, so you should not rely on <code>INACTIVE</code> clusters
-     * persisting.</p> </dd> </dl>
+     * providers that are associated with it and the resources needed for the capacity
+     * provider are being deleted.</p> </dd> <dt>FAILED</dt> <dd> <p>The cluster has
+     * capacity providers that are associated with it and the resources needed for the
+     * capacity provider have failed to create.</p> </dd> <dt>INACTIVE</dt> <dd> <p>The
+     * cluster has been deleted. Clusters with an <code>INACTIVE</code> status may
+     * remain discoverable in your account for a period of time. However, this behavior
+     * is subject to change in the future. We don't recommend that you rely on
+     * <code>INACTIVE</code> clusters persisting.</p> </dd> </dl>
      */
     inline Cluster& WithStatus(const char* value) { SetStatus(value); return *this;}
 
@@ -446,8 +446,8 @@ namespace Model
 
 
     /**
-     * <p>Additional information about your clusters that are separated by launch type,
-     * including:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
+     * <p>Additional information about your clusters that are separated by launch type.
+     * They include the following:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
      * <p>RunningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
      * <li> <p>pendingFargateTasksCount</p> </li> <li> <p>activeEC2ServiceCount</p>
      * </li> <li> <p>activeFargateServiceCount</p> </li> <li>
@@ -457,8 +457,8 @@ namespace Model
     inline const Aws::Vector<KeyValuePair>& GetStatistics() const{ return m_statistics; }
 
     /**
-     * <p>Additional information about your clusters that are separated by launch type,
-     * including:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
+     * <p>Additional information about your clusters that are separated by launch type.
+     * They include the following:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
      * <p>RunningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
      * <li> <p>pendingFargateTasksCount</p> </li> <li> <p>activeEC2ServiceCount</p>
      * </li> <li> <p>activeFargateServiceCount</p> </li> <li>
@@ -468,8 +468,8 @@ namespace Model
     inline bool StatisticsHasBeenSet() const { return m_statisticsHasBeenSet; }
 
     /**
-     * <p>Additional information about your clusters that are separated by launch type,
-     * including:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
+     * <p>Additional information about your clusters that are separated by launch type.
+     * They include the following:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
      * <p>RunningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
      * <li> <p>pendingFargateTasksCount</p> </li> <li> <p>activeEC2ServiceCount</p>
      * </li> <li> <p>activeFargateServiceCount</p> </li> <li>
@@ -479,8 +479,8 @@ namespace Model
     inline void SetStatistics(const Aws::Vector<KeyValuePair>& value) { m_statisticsHasBeenSet = true; m_statistics = value; }
 
     /**
-     * <p>Additional information about your clusters that are separated by launch type,
-     * including:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
+     * <p>Additional information about your clusters that are separated by launch type.
+     * They include the following:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
      * <p>RunningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
      * <li> <p>pendingFargateTasksCount</p> </li> <li> <p>activeEC2ServiceCount</p>
      * </li> <li> <p>activeFargateServiceCount</p> </li> <li>
@@ -490,8 +490,8 @@ namespace Model
     inline void SetStatistics(Aws::Vector<KeyValuePair>&& value) { m_statisticsHasBeenSet = true; m_statistics = std::move(value); }
 
     /**
-     * <p>Additional information about your clusters that are separated by launch type,
-     * including:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
+     * <p>Additional information about your clusters that are separated by launch type.
+     * They include the following:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
      * <p>RunningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
      * <li> <p>pendingFargateTasksCount</p> </li> <li> <p>activeEC2ServiceCount</p>
      * </li> <li> <p>activeFargateServiceCount</p> </li> <li>
@@ -501,8 +501,8 @@ namespace Model
     inline Cluster& WithStatistics(const Aws::Vector<KeyValuePair>& value) { SetStatistics(value); return *this;}
 
     /**
-     * <p>Additional information about your clusters that are separated by launch type,
-     * including:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
+     * <p>Additional information about your clusters that are separated by launch type.
+     * They include the following:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
      * <p>RunningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
      * <li> <p>pendingFargateTasksCount</p> </li> <li> <p>activeEC2ServiceCount</p>
      * </li> <li> <p>activeFargateServiceCount</p> </li> <li>
@@ -512,8 +512,8 @@ namespace Model
     inline Cluster& WithStatistics(Aws::Vector<KeyValuePair>&& value) { SetStatistics(std::move(value)); return *this;}
 
     /**
-     * <p>Additional information about your clusters that are separated by launch type,
-     * including:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
+     * <p>Additional information about your clusters that are separated by launch type.
+     * They include the following:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
      * <p>RunningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
      * <li> <p>pendingFargateTasksCount</p> </li> <li> <p>activeEC2ServiceCount</p>
      * </li> <li> <p>activeFargateServiceCount</p> </li> <li>
@@ -523,8 +523,8 @@ namespace Model
     inline Cluster& AddStatistics(const KeyValuePair& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(value); return *this; }
 
     /**
-     * <p>Additional information about your clusters that are separated by launch type,
-     * including:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
+     * <p>Additional information about your clusters that are separated by launch type.
+     * They include the following:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
      * <p>RunningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
      * <li> <p>pendingFargateTasksCount</p> </li> <li> <p>activeEC2ServiceCount</p>
      * </li> <li> <p>activeFargateServiceCount</p> </li> <li>
@@ -536,8 +536,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the cluster to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -556,8 +556,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the cluster to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -576,8 +576,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the cluster to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -596,8 +596,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the cluster to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -616,8 +616,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the cluster to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -636,8 +636,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the cluster to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -656,8 +656,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the cluster to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -676,8 +676,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the cluster to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -849,56 +849,56 @@ namespace Model
 
     /**
      * <p>The resources attached to a cluster. When using a capacity provider with a
-     * cluster, the Auto Scaling plan that is created will be returned as a cluster
+     * cluster, the Auto Scaling plan that's created is returned as a cluster
      * attachment.</p>
      */
     inline const Aws::Vector<Attachment>& GetAttachments() const{ return m_attachments; }
 
     /**
      * <p>The resources attached to a cluster. When using a capacity provider with a
-     * cluster, the Auto Scaling plan that is created will be returned as a cluster
+     * cluster, the Auto Scaling plan that's created is returned as a cluster
      * attachment.</p>
      */
     inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
 
     /**
      * <p>The resources attached to a cluster. When using a capacity provider with a
-     * cluster, the Auto Scaling plan that is created will be returned as a cluster
+     * cluster, the Auto Scaling plan that's created is returned as a cluster
      * attachment.</p>
      */
     inline void SetAttachments(const Aws::Vector<Attachment>& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
 
     /**
      * <p>The resources attached to a cluster. When using a capacity provider with a
-     * cluster, the Auto Scaling plan that is created will be returned as a cluster
+     * cluster, the Auto Scaling plan that's created is returned as a cluster
      * attachment.</p>
      */
     inline void SetAttachments(Aws::Vector<Attachment>&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::move(value); }
 
     /**
      * <p>The resources attached to a cluster. When using a capacity provider with a
-     * cluster, the Auto Scaling plan that is created will be returned as a cluster
+     * cluster, the Auto Scaling plan that's created is returned as a cluster
      * attachment.</p>
      */
     inline Cluster& WithAttachments(const Aws::Vector<Attachment>& value) { SetAttachments(value); return *this;}
 
     /**
      * <p>The resources attached to a cluster. When using a capacity provider with a
-     * cluster, the Auto Scaling plan that is created will be returned as a cluster
+     * cluster, the Auto Scaling plan that's created is returned as a cluster
      * attachment.</p>
      */
     inline Cluster& WithAttachments(Aws::Vector<Attachment>&& value) { SetAttachments(std::move(value)); return *this;}
 
     /**
      * <p>The resources attached to a cluster. When using a capacity provider with a
-     * cluster, the Auto Scaling plan that is created will be returned as a cluster
+     * cluster, the Auto Scaling plan that's created is returned as a cluster
      * attachment.</p>
      */
     inline Cluster& AddAttachments(const Attachment& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(value); return *this; }
 
     /**
      * <p>The resources attached to a cluster. When using a capacity provider with a
-     * cluster, the Auto Scaling plan that is created will be returned as a cluster
+     * cluster, the Auto Scaling plan that's created is returned as a cluster
      * attachment.</p>
      */
     inline Cluster& AddAttachments(Attachment&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
@@ -906,89 +906,89 @@ namespace Model
 
     /**
      * <p>The status of the capacity providers associated with the cluster. The
-     * following are the states that will be returned:</p> <dl>
-     * <dt>UPDATE_IN_PROGRESS</dt> <dd> <p>The available capacity providers for the
-     * cluster are updating. This occurs when the Auto Scaling plan is provisioning or
-     * deprovisioning.</p> </dd> <dt>UPDATE_COMPLETE</dt> <dd> <p>The capacity
-     * providers have successfully updated.</p> </dd> <dt>UPDATE_FAILED</dt> <dd>
-     * <p>The capacity provider updates failed.</p> </dd> </dl>
+     * following are the states that are returned.</p> <dl> <dt>UPDATE_IN_PROGRESS</dt>
+     * <dd> <p>The available capacity providers for the cluster are updating. This
+     * occurs when the Auto Scaling plan is provisioning or deprovisioning.</p> </dd>
+     * <dt>UPDATE_COMPLETE</dt> <dd> <p>The capacity providers have successfully
+     * updated.</p> </dd> <dt>UPDATE_FAILED</dt> <dd> <p>The capacity provider updates
+     * failed.</p> </dd> </dl>
      */
     inline const Aws::String& GetAttachmentsStatus() const{ return m_attachmentsStatus; }
 
     /**
      * <p>The status of the capacity providers associated with the cluster. The
-     * following are the states that will be returned:</p> <dl>
-     * <dt>UPDATE_IN_PROGRESS</dt> <dd> <p>The available capacity providers for the
-     * cluster are updating. This occurs when the Auto Scaling plan is provisioning or
-     * deprovisioning.</p> </dd> <dt>UPDATE_COMPLETE</dt> <dd> <p>The capacity
-     * providers have successfully updated.</p> </dd> <dt>UPDATE_FAILED</dt> <dd>
-     * <p>The capacity provider updates failed.</p> </dd> </dl>
+     * following are the states that are returned.</p> <dl> <dt>UPDATE_IN_PROGRESS</dt>
+     * <dd> <p>The available capacity providers for the cluster are updating. This
+     * occurs when the Auto Scaling plan is provisioning or deprovisioning.</p> </dd>
+     * <dt>UPDATE_COMPLETE</dt> <dd> <p>The capacity providers have successfully
+     * updated.</p> </dd> <dt>UPDATE_FAILED</dt> <dd> <p>The capacity provider updates
+     * failed.</p> </dd> </dl>
      */
     inline bool AttachmentsStatusHasBeenSet() const { return m_attachmentsStatusHasBeenSet; }
 
     /**
      * <p>The status of the capacity providers associated with the cluster. The
-     * following are the states that will be returned:</p> <dl>
-     * <dt>UPDATE_IN_PROGRESS</dt> <dd> <p>The available capacity providers for the
-     * cluster are updating. This occurs when the Auto Scaling plan is provisioning or
-     * deprovisioning.</p> </dd> <dt>UPDATE_COMPLETE</dt> <dd> <p>The capacity
-     * providers have successfully updated.</p> </dd> <dt>UPDATE_FAILED</dt> <dd>
-     * <p>The capacity provider updates failed.</p> </dd> </dl>
+     * following are the states that are returned.</p> <dl> <dt>UPDATE_IN_PROGRESS</dt>
+     * <dd> <p>The available capacity providers for the cluster are updating. This
+     * occurs when the Auto Scaling plan is provisioning or deprovisioning.</p> </dd>
+     * <dt>UPDATE_COMPLETE</dt> <dd> <p>The capacity providers have successfully
+     * updated.</p> </dd> <dt>UPDATE_FAILED</dt> <dd> <p>The capacity provider updates
+     * failed.</p> </dd> </dl>
      */
     inline void SetAttachmentsStatus(const Aws::String& value) { m_attachmentsStatusHasBeenSet = true; m_attachmentsStatus = value; }
 
     /**
      * <p>The status of the capacity providers associated with the cluster. The
-     * following are the states that will be returned:</p> <dl>
-     * <dt>UPDATE_IN_PROGRESS</dt> <dd> <p>The available capacity providers for the
-     * cluster are updating. This occurs when the Auto Scaling plan is provisioning or
-     * deprovisioning.</p> </dd> <dt>UPDATE_COMPLETE</dt> <dd> <p>The capacity
-     * providers have successfully updated.</p> </dd> <dt>UPDATE_FAILED</dt> <dd>
-     * <p>The capacity provider updates failed.</p> </dd> </dl>
+     * following are the states that are returned.</p> <dl> <dt>UPDATE_IN_PROGRESS</dt>
+     * <dd> <p>The available capacity providers for the cluster are updating. This
+     * occurs when the Auto Scaling plan is provisioning or deprovisioning.</p> </dd>
+     * <dt>UPDATE_COMPLETE</dt> <dd> <p>The capacity providers have successfully
+     * updated.</p> </dd> <dt>UPDATE_FAILED</dt> <dd> <p>The capacity provider updates
+     * failed.</p> </dd> </dl>
      */
     inline void SetAttachmentsStatus(Aws::String&& value) { m_attachmentsStatusHasBeenSet = true; m_attachmentsStatus = std::move(value); }
 
     /**
      * <p>The status of the capacity providers associated with the cluster. The
-     * following are the states that will be returned:</p> <dl>
-     * <dt>UPDATE_IN_PROGRESS</dt> <dd> <p>The available capacity providers for the
-     * cluster are updating. This occurs when the Auto Scaling plan is provisioning or
-     * deprovisioning.</p> </dd> <dt>UPDATE_COMPLETE</dt> <dd> <p>The capacity
-     * providers have successfully updated.</p> </dd> <dt>UPDATE_FAILED</dt> <dd>
-     * <p>The capacity provider updates failed.</p> </dd> </dl>
+     * following are the states that are returned.</p> <dl> <dt>UPDATE_IN_PROGRESS</dt>
+     * <dd> <p>The available capacity providers for the cluster are updating. This
+     * occurs when the Auto Scaling plan is provisioning or deprovisioning.</p> </dd>
+     * <dt>UPDATE_COMPLETE</dt> <dd> <p>The capacity providers have successfully
+     * updated.</p> </dd> <dt>UPDATE_FAILED</dt> <dd> <p>The capacity provider updates
+     * failed.</p> </dd> </dl>
      */
     inline void SetAttachmentsStatus(const char* value) { m_attachmentsStatusHasBeenSet = true; m_attachmentsStatus.assign(value); }
 
     /**
      * <p>The status of the capacity providers associated with the cluster. The
-     * following are the states that will be returned:</p> <dl>
-     * <dt>UPDATE_IN_PROGRESS</dt> <dd> <p>The available capacity providers for the
-     * cluster are updating. This occurs when the Auto Scaling plan is provisioning or
-     * deprovisioning.</p> </dd> <dt>UPDATE_COMPLETE</dt> <dd> <p>The capacity
-     * providers have successfully updated.</p> </dd> <dt>UPDATE_FAILED</dt> <dd>
-     * <p>The capacity provider updates failed.</p> </dd> </dl>
+     * following are the states that are returned.</p> <dl> <dt>UPDATE_IN_PROGRESS</dt>
+     * <dd> <p>The available capacity providers for the cluster are updating. This
+     * occurs when the Auto Scaling plan is provisioning or deprovisioning.</p> </dd>
+     * <dt>UPDATE_COMPLETE</dt> <dd> <p>The capacity providers have successfully
+     * updated.</p> </dd> <dt>UPDATE_FAILED</dt> <dd> <p>The capacity provider updates
+     * failed.</p> </dd> </dl>
      */
     inline Cluster& WithAttachmentsStatus(const Aws::String& value) { SetAttachmentsStatus(value); return *this;}
 
     /**
      * <p>The status of the capacity providers associated with the cluster. The
-     * following are the states that will be returned:</p> <dl>
-     * <dt>UPDATE_IN_PROGRESS</dt> <dd> <p>The available capacity providers for the
-     * cluster are updating. This occurs when the Auto Scaling plan is provisioning or
-     * deprovisioning.</p> </dd> <dt>UPDATE_COMPLETE</dt> <dd> <p>The capacity
-     * providers have successfully updated.</p> </dd> <dt>UPDATE_FAILED</dt> <dd>
-     * <p>The capacity provider updates failed.</p> </dd> </dl>
+     * following are the states that are returned.</p> <dl> <dt>UPDATE_IN_PROGRESS</dt>
+     * <dd> <p>The available capacity providers for the cluster are updating. This
+     * occurs when the Auto Scaling plan is provisioning or deprovisioning.</p> </dd>
+     * <dt>UPDATE_COMPLETE</dt> <dd> <p>The capacity providers have successfully
+     * updated.</p> </dd> <dt>UPDATE_FAILED</dt> <dd> <p>The capacity provider updates
+     * failed.</p> </dd> </dl>
      */
     inline Cluster& WithAttachmentsStatus(Aws::String&& value) { SetAttachmentsStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the capacity providers associated with the cluster. The
-     * following are the states that will be returned:</p> <dl>
-     * <dt>UPDATE_IN_PROGRESS</dt> <dd> <p>The available capacity providers for the
-     * cluster are updating. This occurs when the Auto Scaling plan is provisioning or
-     * deprovisioning.</p> </dd> <dt>UPDATE_COMPLETE</dt> <dd> <p>The capacity
-     * providers have successfully updated.</p> </dd> <dt>UPDATE_FAILED</dt> <dd>
-     * <p>The capacity provider updates failed.</p> </dd> </dl>
+     * following are the states that are returned.</p> <dl> <dt>UPDATE_IN_PROGRESS</dt>
+     * <dd> <p>The available capacity providers for the cluster are updating. This
+     * occurs when the Auto Scaling plan is provisioning or deprovisioning.</p> </dd>
+     * <dt>UPDATE_COMPLETE</dt> <dd> <p>The capacity providers have successfully
+     * updated.</p> </dd> <dt>UPDATE_FAILED</dt> <dd> <p>The capacity provider updates
+     * failed.</p> </dd> </dl>
      */
     inline Cluster& WithAttachmentsStatus(const char* value) { SetAttachmentsStatus(value); return *this;}
 

@@ -141,83 +141,75 @@ namespace Model
 
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
-     * run your task. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your
+     * task on. If you do not specify a cluster, the default cluster is assumed.</p>
      */
     inline const Aws::String& GetCluster() const{ return m_cluster; }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
-     * run your task. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your
+     * task on. If you do not specify a cluster, the default cluster is assumed.</p>
      */
     inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
-     * run your task. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your
+     * task on. If you do not specify a cluster, the default cluster is assumed.</p>
      */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
-     * run your task. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your
+     * task on. If you do not specify a cluster, the default cluster is assumed.</p>
      */
     inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
-     * run your task. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your
+     * task on. If you do not specify a cluster, the default cluster is assumed.</p>
      */
     inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
-     * run your task. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your
+     * task on. If you do not specify a cluster, the default cluster is assumed.</p>
      */
     inline RunTaskRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
-     * run your task. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your
+     * task on. If you do not specify a cluster, the default cluster is assumed.</p>
      */
     inline RunTaskRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
-     * run your task. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your
+     * task on. If you do not specify a cluster, the default cluster is assumed.</p>
      */
     inline RunTaskRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
 
 
     /**
      * <p>The number of instantiations of the specified task to place on your cluster.
-     * You can specify up to 10 tasks per call.</p>
+     * You can specify up to 10 tasks for each call.</p>
      */
     inline int GetCount() const{ return m_count; }
 
     /**
      * <p>The number of instantiations of the specified task to place on your cluster.
-     * You can specify up to 10 tasks per call.</p>
+     * You can specify up to 10 tasks for each call.</p>
      */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
 
     /**
      * <p>The number of instantiations of the specified task to place on your cluster.
-     * You can specify up to 10 tasks per call.</p>
+     * You can specify up to 10 tasks for each call.</p>
      */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
 
     /**
      * <p>The number of instantiations of the specified task to place on your cluster.
-     * You can specify up to 10 tasks per call.</p>
+     * You can specify up to 10 tasks for each call.</p>
      */
     inline RunTaskRequest& WithCount(int value) { SetCount(value); return *this;}
 
@@ -260,30 +252,30 @@ namespace Model
 
 
     /**
-     * <p>Whether or not to enable the execute command functionality for the containers
-     * in this task. If <code>true</code>, this enables execute command functionality
-     * on all containers in the task.</p>
+     * <p>Determines whether to enable the execute command functionality for the
+     * containers in this task. If <code>true</code>, this enables execute command
+     * functionality on all containers in the task.</p>
      */
     inline bool GetEnableExecuteCommand() const{ return m_enableExecuteCommand; }
 
     /**
-     * <p>Whether or not to enable the execute command functionality for the containers
-     * in this task. If <code>true</code>, this enables execute command functionality
-     * on all containers in the task.</p>
+     * <p>Determines whether to enable the execute command functionality for the
+     * containers in this task. If <code>true</code>, this enables execute command
+     * functionality on all containers in the task.</p>
      */
     inline bool EnableExecuteCommandHasBeenSet() const { return m_enableExecuteCommandHasBeenSet; }
 
     /**
-     * <p>Whether or not to enable the execute command functionality for the containers
-     * in this task. If <code>true</code>, this enables execute command functionality
-     * on all containers in the task.</p>
+     * <p>Determines whether to enable the execute command functionality for the
+     * containers in this task. If <code>true</code>, this enables execute command
+     * functionality on all containers in the task.</p>
      */
     inline void SetEnableExecuteCommand(bool value) { m_enableExecuteCommandHasBeenSet = true; m_enableExecuteCommand = value; }
 
     /**
-     * <p>Whether or not to enable the execute command functionality for the containers
-     * in this task. If <code>true</code>, this enables execute command functionality
-     * on all containers in the task.</p>
+     * <p>Determines whether to enable the execute command functionality for the
+     * containers in this task. If <code>true</code>, this enables execute command
+     * functionality on all containers in the task.</p>
      */
     inline RunTaskRequest& WithEnableExecuteCommand(bool value) { SetEnableExecuteCommand(value); return *this;}
 
@@ -346,8 +338,8 @@ namespace Model
 
 
     /**
-     * <p>The infrastructure on which to run your standalone task. For more
-     * information, see <a
+     * <p>The infrastructure to run your standalone task on. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on
@@ -358,7 +350,7 @@ namespace Model
      * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
      *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
      * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
-     * type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * type runs your tasks on your on-premises server or virtual machine (VM) capacity
      * registered to your cluster.</p> <p>A task can use either a launch type or a
      * capacity provider strategy. If a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p> <p>When you
@@ -368,8 +360,8 @@ namespace Model
     inline const LaunchType& GetLaunchType() const{ return m_launchType; }
 
     /**
-     * <p>The infrastructure on which to run your standalone task. For more
-     * information, see <a
+     * <p>The infrastructure to run your standalone task on. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on
@@ -380,7 +372,7 @@ namespace Model
      * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
      *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
      * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
-     * type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * type runs your tasks on your on-premises server or virtual machine (VM) capacity
      * registered to your cluster.</p> <p>A task can use either a launch type or a
      * capacity provider strategy. If a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p> <p>When you
@@ -390,8 +382,8 @@ namespace Model
     inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
 
     /**
-     * <p>The infrastructure on which to run your standalone task. For more
-     * information, see <a
+     * <p>The infrastructure to run your standalone task on. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on
@@ -402,7 +394,7 @@ namespace Model
      * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
      *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
      * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
-     * type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * type runs your tasks on your on-premises server or virtual machine (VM) capacity
      * registered to your cluster.</p> <p>A task can use either a launch type or a
      * capacity provider strategy. If a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p> <p>When you
@@ -412,8 +404,8 @@ namespace Model
     inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
 
     /**
-     * <p>The infrastructure on which to run your standalone task. For more
-     * information, see <a
+     * <p>The infrastructure to run your standalone task on. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on
@@ -424,7 +416,7 @@ namespace Model
      * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
      *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
      * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
-     * type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * type runs your tasks on your on-premises server or virtual machine (VM) capacity
      * registered to your cluster.</p> <p>A task can use either a launch type or a
      * capacity provider strategy. If a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p> <p>When you
@@ -434,8 +426,8 @@ namespace Model
     inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
 
     /**
-     * <p>The infrastructure on which to run your standalone task. For more
-     * information, see <a
+     * <p>The infrastructure to run your standalone task on. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on
@@ -446,7 +438,7 @@ namespace Model
      * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
      *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
      * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
-     * type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * type runs your tasks on your on-premises server or virtual machine (VM) capacity
      * registered to your cluster.</p> <p>A task can use either a launch type or a
      * capacity provider strategy. If a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p> <p>When you
@@ -456,8 +448,8 @@ namespace Model
     inline RunTaskRequest& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
 
     /**
-     * <p>The infrastructure on which to run your standalone task. For more
-     * information, see <a
+     * <p>The infrastructure to run your standalone task on. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on
@@ -468,7 +460,7 @@ namespace Model
      * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
      *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
      * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
-     * type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * type runs your tasks on your on-premises server or virtual machine (VM) capacity
      * registered to your cluster.</p> <p>A task can use either a launch type or a
      * capacity provider strategy. If a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p> <p>When you
@@ -481,7 +473,7 @@ namespace Model
     /**
      * <p>The network configuration for the task. This parameter is required for task
      * definitions that use the <code>awsvpc</code> network mode to receive their own
-     * elastic network interface, and it is not supported for other network modes. For
+     * elastic network interface, and it isn't supported for other network modes. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * networking</a> in the <i>Amazon Elastic Container Service Developer
@@ -492,7 +484,7 @@ namespace Model
     /**
      * <p>The network configuration for the task. This parameter is required for task
      * definitions that use the <code>awsvpc</code> network mode to receive their own
-     * elastic network interface, and it is not supported for other network modes. For
+     * elastic network interface, and it isn't supported for other network modes. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * networking</a> in the <i>Amazon Elastic Container Service Developer
@@ -503,7 +495,7 @@ namespace Model
     /**
      * <p>The network configuration for the task. This parameter is required for task
      * definitions that use the <code>awsvpc</code> network mode to receive their own
-     * elastic network interface, and it is not supported for other network modes. For
+     * elastic network interface, and it isn't supported for other network modes. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * networking</a> in the <i>Amazon Elastic Container Service Developer
@@ -514,7 +506,7 @@ namespace Model
     /**
      * <p>The network configuration for the task. This parameter is required for task
      * definitions that use the <code>awsvpc</code> network mode to receive their own
-     * elastic network interface, and it is not supported for other network modes. For
+     * elastic network interface, and it isn't supported for other network modes. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * networking</a> in the <i>Amazon Elastic Container Service Developer
@@ -525,7 +517,7 @@ namespace Model
     /**
      * <p>The network configuration for the task. This parameter is required for task
      * definitions that use the <code>awsvpc</code> network mode to receive their own
-     * elastic network interface, and it is not supported for other network modes. For
+     * elastic network interface, and it isn't supported for other network modes. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * networking</a> in the <i>Amazon Elastic Container Service Developer
@@ -536,7 +528,7 @@ namespace Model
     /**
      * <p>The network configuration for the task. This parameter is required for task
      * definitions that use the <code>awsvpc</code> network mode to receive their own
-     * elastic network interface, and it is not supported for other network modes. For
+     * elastic network interface, and it isn't supported for other network modes. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * networking</a> in the <i>Amazon Elastic Container Service Developer
@@ -548,7 +540,7 @@ namespace Model
     /**
      * <p>A list of container overrides in JSON format that specify the name of a
      * container in the specified task definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
+     * You can override the default command for a container (that's specified in the
      * task definition or Docker image) with a <code>command</code> override. You can
      * also override existing environment variables (that are specified in the task
      * definition or Docker image) on a container or add new environment variables to
@@ -561,7 +553,7 @@ namespace Model
     /**
      * <p>A list of container overrides in JSON format that specify the name of a
      * container in the specified task definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
+     * You can override the default command for a container (that's specified in the
      * task definition or Docker image) with a <code>command</code> override. You can
      * also override existing environment variables (that are specified in the task
      * definition or Docker image) on a container or add new environment variables to
@@ -574,7 +566,7 @@ namespace Model
     /**
      * <p>A list of container overrides in JSON format that specify the name of a
      * container in the specified task definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
+     * You can override the default command for a container (that's specified in the
      * task definition or Docker image) with a <code>command</code> override. You can
      * also override existing environment variables (that are specified in the task
      * definition or Docker image) on a container or add new environment variables to
@@ -587,7 +579,7 @@ namespace Model
     /**
      * <p>A list of container overrides in JSON format that specify the name of a
      * container in the specified task definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
+     * You can override the default command for a container (that's specified in the
      * task definition or Docker image) with a <code>command</code> override. You can
      * also override existing environment variables (that are specified in the task
      * definition or Docker image) on a container or add new environment variables to
@@ -600,7 +592,7 @@ namespace Model
     /**
      * <p>A list of container overrides in JSON format that specify the name of a
      * container in the specified task definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
+     * You can override the default command for a container (that's specified in the
      * task definition or Docker image) with a <code>command</code> override. You can
      * also override existing environment variables (that are specified in the task
      * definition or Docker image) on a container or add new environment variables to
@@ -613,7 +605,7 @@ namespace Model
     /**
      * <p>A list of container overrides in JSON format that specify the name of a
      * container in the specified task definition and the overrides it should receive.
-     * You can override the default command for a container (that is specified in the
+     * You can override the default command for a container (that's specified in the
      * task definition or Docker image) with a <code>command</code> override. You can
      * also override existing environment variables (that are specified in the task
      * definition or Docker image) on a container or add new environment variables to
@@ -626,115 +618,114 @@ namespace Model
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
-     * up to 10 constraints per task (including constraints in the task definition and
-     * those specified at runtime).</p>
+     * up to 10 constraints for each task (including constraints in the task definition
+     * and those specified at runtime).</p>
      */
     inline const Aws::Vector<PlacementConstraint>& GetPlacementConstraints() const{ return m_placementConstraints; }
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
-     * up to 10 constraints per task (including constraints in the task definition and
-     * those specified at runtime).</p>
+     * up to 10 constraints for each task (including constraints in the task definition
+     * and those specified at runtime).</p>
      */
     inline bool PlacementConstraintsHasBeenSet() const { return m_placementConstraintsHasBeenSet; }
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
-     * up to 10 constraints per task (including constraints in the task definition and
-     * those specified at runtime).</p>
+     * up to 10 constraints for each task (including constraints in the task definition
+     * and those specified at runtime).</p>
      */
     inline void SetPlacementConstraints(const Aws::Vector<PlacementConstraint>& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = value; }
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
-     * up to 10 constraints per task (including constraints in the task definition and
-     * those specified at runtime).</p>
+     * up to 10 constraints for each task (including constraints in the task definition
+     * and those specified at runtime).</p>
      */
     inline void SetPlacementConstraints(Aws::Vector<PlacementConstraint>&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = std::move(value); }
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
-     * up to 10 constraints per task (including constraints in the task definition and
-     * those specified at runtime).</p>
+     * up to 10 constraints for each task (including constraints in the task definition
+     * and those specified at runtime).</p>
      */
     inline RunTaskRequest& WithPlacementConstraints(const Aws::Vector<PlacementConstraint>& value) { SetPlacementConstraints(value); return *this;}
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
-     * up to 10 constraints per task (including constraints in the task definition and
-     * those specified at runtime).</p>
+     * up to 10 constraints for each task (including constraints in the task definition
+     * and those specified at runtime).</p>
      */
     inline RunTaskRequest& WithPlacementConstraints(Aws::Vector<PlacementConstraint>&& value) { SetPlacementConstraints(std::move(value)); return *this;}
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
-     * up to 10 constraints per task (including constraints in the task definition and
-     * those specified at runtime).</p>
+     * up to 10 constraints for each task (including constraints in the task definition
+     * and those specified at runtime).</p>
      */
     inline RunTaskRequest& AddPlacementConstraints(const PlacementConstraint& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(value); return *this; }
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
-     * up to 10 constraints per task (including constraints in the task definition and
-     * those specified at runtime).</p>
+     * up to 10 constraints for each task (including constraints in the task definition
+     * and those specified at runtime).</p>
      */
     inline RunTaskRequest& AddPlacementConstraints(PlacementConstraint&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>The placement strategy objects to use for the task. You can specify a maximum
-     * of 5 strategy rules per task.</p>
+     * of 5 strategy rules for each task.</p>
      */
     inline const Aws::Vector<PlacementStrategy>& GetPlacementStrategy() const{ return m_placementStrategy; }
 
     /**
      * <p>The placement strategy objects to use for the task. You can specify a maximum
-     * of 5 strategy rules per task.</p>
+     * of 5 strategy rules for each task.</p>
      */
     inline bool PlacementStrategyHasBeenSet() const { return m_placementStrategyHasBeenSet; }
 
     /**
      * <p>The placement strategy objects to use for the task. You can specify a maximum
-     * of 5 strategy rules per task.</p>
+     * of 5 strategy rules for each task.</p>
      */
     inline void SetPlacementStrategy(const Aws::Vector<PlacementStrategy>& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = value; }
 
     /**
      * <p>The placement strategy objects to use for the task. You can specify a maximum
-     * of 5 strategy rules per task.</p>
+     * of 5 strategy rules for each task.</p>
      */
     inline void SetPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = std::move(value); }
 
     /**
      * <p>The placement strategy objects to use for the task. You can specify a maximum
-     * of 5 strategy rules per task.</p>
+     * of 5 strategy rules for each task.</p>
      */
     inline RunTaskRequest& WithPlacementStrategy(const Aws::Vector<PlacementStrategy>& value) { SetPlacementStrategy(value); return *this;}
 
     /**
      * <p>The placement strategy objects to use for the task. You can specify a maximum
-     * of 5 strategy rules per task.</p>
+     * of 5 strategy rules for each task.</p>
      */
     inline RunTaskRequest& WithPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { SetPlacementStrategy(std::move(value)); return *this;}
 
     /**
      * <p>The placement strategy objects to use for the task. You can specify a maximum
-     * of 5 strategy rules per task.</p>
+     * of 5 strategy rules for each task.</p>
      */
     inline RunTaskRequest& AddPlacementStrategy(const PlacementStrategy& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(value); return *this; }
 
     /**
      * <p>The placement strategy objects to use for the task. You can specify a maximum
-     * of 5 strategy rules per task.</p>
+     * of 5 strategy rules for each task.</p>
      */
     inline RunTaskRequest& AddPlacementStrategy(PlacementStrategy&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The platform version the task should use. A platform version is only
-     * specified for tasks hosted on Fargate. If one is not specified, the
-     * <code>LATEST</code> platform version is used by default. For more information,
-     * see <a
+     * <p>The platform version the task uses. A platform version is only specified for
+     * tasks hosted on Fargate. If one isn't specified, the <code>LATEST</code>
+     * platform version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      * platform versions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -742,10 +733,9 @@ namespace Model
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
     /**
-     * <p>The platform version the task should use. A platform version is only
-     * specified for tasks hosted on Fargate. If one is not specified, the
-     * <code>LATEST</code> platform version is used by default. For more information,
-     * see <a
+     * <p>The platform version the task uses. A platform version is only specified for
+     * tasks hosted on Fargate. If one isn't specified, the <code>LATEST</code>
+     * platform version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      * platform versions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -753,10 +743,9 @@ namespace Model
     inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
 
     /**
-     * <p>The platform version the task should use. A platform version is only
-     * specified for tasks hosted on Fargate. If one is not specified, the
-     * <code>LATEST</code> platform version is used by default. For more information,
-     * see <a
+     * <p>The platform version the task uses. A platform version is only specified for
+     * tasks hosted on Fargate. If one isn't specified, the <code>LATEST</code>
+     * platform version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      * platform versions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -764,10 +753,9 @@ namespace Model
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
     /**
-     * <p>The platform version the task should use. A platform version is only
-     * specified for tasks hosted on Fargate. If one is not specified, the
-     * <code>LATEST</code> platform version is used by default. For more information,
-     * see <a
+     * <p>The platform version the task uses. A platform version is only specified for
+     * tasks hosted on Fargate. If one isn't specified, the <code>LATEST</code>
+     * platform version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      * platform versions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -775,10 +763,9 @@ namespace Model
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
     /**
-     * <p>The platform version the task should use. A platform version is only
-     * specified for tasks hosted on Fargate. If one is not specified, the
-     * <code>LATEST</code> platform version is used by default. For more information,
-     * see <a
+     * <p>The platform version the task uses. A platform version is only specified for
+     * tasks hosted on Fargate. If one isn't specified, the <code>LATEST</code>
+     * platform version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      * platform versions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -786,10 +773,9 @@ namespace Model
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
     /**
-     * <p>The platform version the task should use. A platform version is only
-     * specified for tasks hosted on Fargate. If one is not specified, the
-     * <code>LATEST</code> platform version is used by default. For more information,
-     * see <a
+     * <p>The platform version the task uses. A platform version is only specified for
+     * tasks hosted on Fargate. If one isn't specified, the <code>LATEST</code>
+     * platform version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      * platform versions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -797,10 +783,9 @@ namespace Model
     inline RunTaskRequest& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
     /**
-     * <p>The platform version the task should use. A platform version is only
-     * specified for tasks hosted on Fargate. If one is not specified, the
-     * <code>LATEST</code> platform version is used by default. For more information,
-     * see <a
+     * <p>The platform version the task uses. A platform version is only specified for
+     * tasks hosted on Fargate. If one isn't specified, the <code>LATEST</code>
+     * platform version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      * platform versions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -808,10 +793,9 @@ namespace Model
     inline RunTaskRequest& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The platform version the task should use. A platform version is only
-     * specified for tasks hosted on Fargate. If one is not specified, the
-     * <code>LATEST</code> platform version is used by default. For more information,
-     * see <a
+     * <p>The platform version the task uses. A platform version is only specified for
+     * tasks hosted on Fargate. If one isn't specified, the <code>LATEST</code>
+     * platform version is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
      * platform versions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -821,7 +805,7 @@ namespace Model
 
     /**
      * <p>Specifies whether to propagate the tags from the task definition to the task.
-     * If no value is specified, the tags are not propagated. Tags can only be
+     * If no value is specified, the tags aren't propagated. Tags can only be
      * propagated to the task during task creation. To add tags to a task after task
      * creation, use the <a>TagResource</a> API action.</p>  <p>An error will be
      * received if you specify the <code>SERVICE</code> option when running a task.</p>
@@ -831,7 +815,7 @@ namespace Model
 
     /**
      * <p>Specifies whether to propagate the tags from the task definition to the task.
-     * If no value is specified, the tags are not propagated. Tags can only be
+     * If no value is specified, the tags aren't propagated. Tags can only be
      * propagated to the task during task creation. To add tags to a task after task
      * creation, use the <a>TagResource</a> API action.</p>  <p>An error will be
      * received if you specify the <code>SERVICE</code> option when running a task.</p>
@@ -841,7 +825,7 @@ namespace Model
 
     /**
      * <p>Specifies whether to propagate the tags from the task definition to the task.
-     * If no value is specified, the tags are not propagated. Tags can only be
+     * If no value is specified, the tags aren't propagated. Tags can only be
      * propagated to the task during task creation. To add tags to a task after task
      * creation, use the <a>TagResource</a> API action.</p>  <p>An error will be
      * received if you specify the <code>SERVICE</code> option when running a task.</p>
@@ -851,7 +835,7 @@ namespace Model
 
     /**
      * <p>Specifies whether to propagate the tags from the task definition to the task.
-     * If no value is specified, the tags are not propagated. Tags can only be
+     * If no value is specified, the tags aren't propagated. Tags can only be
      * propagated to the task during task creation. To add tags to a task after task
      * creation, use the <a>TagResource</a> API action.</p>  <p>An error will be
      * received if you specify the <code>SERVICE</code> option when running a task.</p>
@@ -861,7 +845,7 @@ namespace Model
 
     /**
      * <p>Specifies whether to propagate the tags from the task definition to the task.
-     * If no value is specified, the tags are not propagated. Tags can only be
+     * If no value is specified, the tags aren't propagated. Tags can only be
      * propagated to the task during task creation. To add tags to a task after task
      * creation, use the <a>TagResource</a> API action.</p>  <p>An error will be
      * received if you specify the <code>SERVICE</code> option when running a task.</p>
@@ -871,7 +855,7 @@ namespace Model
 
     /**
      * <p>Specifies whether to propagate the tags from the task definition to the task.
-     * If no value is specified, the tags are not propagated. Tags can only be
+     * If no value is specified, the tags aren't propagated. Tags can only be
      * propagated to the task during task creation. To add tags to a task after task
      * creation, use the <a>TagResource</a> API action.</p>  <p>An error will be
      * received if you specify the <code>SERVICE</code> option when running a task.</p>
@@ -935,8 +919,8 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p> <p>If a task is started by an Amazon ECS service, then the
+     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * are allowed.</p> <p>If a task is started by an Amazon ECS service, then the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
      */
@@ -948,8 +932,8 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p> <p>If a task is started by an Amazon ECS service, then the
+     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * are allowed.</p> <p>If a task is started by an Amazon ECS service, then the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
      */
@@ -961,8 +945,8 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p> <p>If a task is started by an Amazon ECS service, then the
+     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * are allowed.</p> <p>If a task is started by an Amazon ECS service, then the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
      */
@@ -974,8 +958,8 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p> <p>If a task is started by an Amazon ECS service, then the
+     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * are allowed.</p> <p>If a task is started by an Amazon ECS service, then the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
      */
@@ -987,8 +971,8 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p> <p>If a task is started by an Amazon ECS service, then the
+     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * are allowed.</p> <p>If a task is started by an Amazon ECS service, then the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
      */
@@ -1000,8 +984,8 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p> <p>If a task is started by an Amazon ECS service, then the
+     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * are allowed.</p> <p>If a task is started by an Amazon ECS service, then the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
      */
@@ -1013,8 +997,8 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p> <p>If a task is started by an Amazon ECS service, then the
+     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * are allowed.</p> <p>If a task is started by an Amazon ECS service, then the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
      */
@@ -1026,8 +1010,8 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed.</p> <p>If a task is started by an Amazon ECS service, then the
+     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * are allowed.</p> <p>If a task is started by an Amazon ECS service, then the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
      */
@@ -1198,8 +1182,8 @@ namespace Model
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
-     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-     * is used.</p> <p>The full ARN value must match the value that you specified ias
+     * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
+     * is used.</p> <p>The full ARN value must match the value that you specified as
      * the <code>Resource</code> of the IAM principal's permissions policy. For
      * example, if the <code>Resource</code> is
      * arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
@@ -1211,8 +1195,8 @@ namespace Model
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
-     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-     * is used.</p> <p>The full ARN value must match the value that you specified ias
+     * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
+     * is used.</p> <p>The full ARN value must match the value that you specified as
      * the <code>Resource</code> of the IAM principal's permissions policy. For
      * example, if the <code>Resource</code> is
      * arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
@@ -1224,8 +1208,8 @@ namespace Model
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
-     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-     * is used.</p> <p>The full ARN value must match the value that you specified ias
+     * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
+     * is used.</p> <p>The full ARN value must match the value that you specified as
      * the <code>Resource</code> of the IAM principal's permissions policy. For
      * example, if the <code>Resource</code> is
      * arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
@@ -1237,8 +1221,8 @@ namespace Model
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
-     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-     * is used.</p> <p>The full ARN value must match the value that you specified ias
+     * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
+     * is used.</p> <p>The full ARN value must match the value that you specified as
      * the <code>Resource</code> of the IAM principal's permissions policy. For
      * example, if the <code>Resource</code> is
      * arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
@@ -1250,8 +1234,8 @@ namespace Model
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
-     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-     * is used.</p> <p>The full ARN value must match the value that you specified ias
+     * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
+     * is used.</p> <p>The full ARN value must match the value that you specified as
      * the <code>Resource</code> of the IAM principal's permissions policy. For
      * example, if the <code>Resource</code> is
      * arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
@@ -1263,8 +1247,8 @@ namespace Model
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
-     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-     * is used.</p> <p>The full ARN value must match the value that you specified ias
+     * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
+     * is used.</p> <p>The full ARN value must match the value that you specified as
      * the <code>Resource</code> of the IAM principal's permissions policy. For
      * example, if the <code>Resource</code> is
      * arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
@@ -1276,8 +1260,8 @@ namespace Model
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
-     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-     * is used.</p> <p>The full ARN value must match the value that you specified ias
+     * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
+     * is used.</p> <p>The full ARN value must match the value that you specified as
      * the <code>Resource</code> of the IAM principal's permissions policy. For
      * example, if the <code>Resource</code> is
      * arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
@@ -1289,8 +1273,8 @@ namespace Model
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
-     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-     * is used.</p> <p>The full ARN value must match the value that you specified ias
+     * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
+     * is used.</p> <p>The full ARN value must match the value that you specified as
      * the <code>Resource</code> of the IAM principal's permissions policy. For
      * example, if the <code>Resource</code> is
      * arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the

@@ -400,8 +400,8 @@ namespace Model
 
 
     /**
-     * <p>The launch type that new tasks in the task set will use. For more
-     * information, see <a
+     * <p>The launch type that new tasks in the task set uses. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
@@ -410,8 +410,8 @@ namespace Model
     inline const LaunchType& GetLaunchType() const{ return m_launchType; }
 
     /**
-     * <p>The launch type that new tasks in the task set will use. For more
-     * information, see <a
+     * <p>The launch type that new tasks in the task set uses. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
@@ -420,8 +420,8 @@ namespace Model
     inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
 
     /**
-     * <p>The launch type that new tasks in the task set will use. For more
-     * information, see <a
+     * <p>The launch type that new tasks in the task set uses. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
@@ -430,8 +430,8 @@ namespace Model
     inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
 
     /**
-     * <p>The launch type that new tasks in the task set will use. For more
-     * information, see <a
+     * <p>The launch type that new tasks in the task set uses. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
@@ -440,8 +440,8 @@ namespace Model
     inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
 
     /**
-     * <p>The launch type that new tasks in the task set will use. For more
-     * information, see <a
+     * <p>The launch type that new tasks in the task set uses. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
@@ -450,8 +450,8 @@ namespace Model
     inline CreateTaskSetRequest& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
 
     /**
-     * <p>The launch type that new tasks in the task set will use. For more
-     * information, see <a
+     * <p>The launch type that new tasks in the task set uses. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
@@ -646,58 +646,58 @@ namespace Model
 
 
     /**
-     * <p>The platform version that the tasks in the task set should use. A platform
-     * version is specified only for tasks using the Fargate launch type. If one isn't
-     * specified, the <code>LATEST</code> platform version is used by default.</p>
+     * <p>The platform version that the tasks in the task set uses. A platform version
+     * is specified only for tasks using the Fargate launch type. If one isn't
+     * specified, the <code>LATEST</code> platform version is used.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
     /**
-     * <p>The platform version that the tasks in the task set should use. A platform
-     * version is specified only for tasks using the Fargate launch type. If one isn't
-     * specified, the <code>LATEST</code> platform version is used by default.</p>
+     * <p>The platform version that the tasks in the task set uses. A platform version
+     * is specified only for tasks using the Fargate launch type. If one isn't
+     * specified, the <code>LATEST</code> platform version is used.</p>
      */
     inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
 
     /**
-     * <p>The platform version that the tasks in the task set should use. A platform
-     * version is specified only for tasks using the Fargate launch type. If one isn't
-     * specified, the <code>LATEST</code> platform version is used by default.</p>
+     * <p>The platform version that the tasks in the task set uses. A platform version
+     * is specified only for tasks using the Fargate launch type. If one isn't
+     * specified, the <code>LATEST</code> platform version is used.</p>
      */
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
     /**
-     * <p>The platform version that the tasks in the task set should use. A platform
-     * version is specified only for tasks using the Fargate launch type. If one isn't
-     * specified, the <code>LATEST</code> platform version is used by default.</p>
+     * <p>The platform version that the tasks in the task set uses. A platform version
+     * is specified only for tasks using the Fargate launch type. If one isn't
+     * specified, the <code>LATEST</code> platform version is used.</p>
      */
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
     /**
-     * <p>The platform version that the tasks in the task set should use. A platform
-     * version is specified only for tasks using the Fargate launch type. If one isn't
-     * specified, the <code>LATEST</code> platform version is used by default.</p>
+     * <p>The platform version that the tasks in the task set uses. A platform version
+     * is specified only for tasks using the Fargate launch type. If one isn't
+     * specified, the <code>LATEST</code> platform version is used.</p>
      */
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
     /**
-     * <p>The platform version that the tasks in the task set should use. A platform
-     * version is specified only for tasks using the Fargate launch type. If one isn't
-     * specified, the <code>LATEST</code> platform version is used by default.</p>
+     * <p>The platform version that the tasks in the task set uses. A platform version
+     * is specified only for tasks using the Fargate launch type. If one isn't
+     * specified, the <code>LATEST</code> platform version is used.</p>
      */
     inline CreateTaskSetRequest& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
     /**
-     * <p>The platform version that the tasks in the task set should use. A platform
-     * version is specified only for tasks using the Fargate launch type. If one isn't
-     * specified, the <code>LATEST</code> platform version is used by default.</p>
+     * <p>The platform version that the tasks in the task set uses. A platform version
+     * is specified only for tasks using the Fargate launch type. If one isn't
+     * specified, the <code>LATEST</code> platform version is used.</p>
      */
     inline CreateTaskSetRequest& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The platform version that the tasks in the task set should use. A platform
-     * version is specified only for tasks using the Fargate launch type. If one isn't
-     * specified, the <code>LATEST</code> platform version is used by default.</p>
+     * <p>The platform version that the tasks in the task set uses. A platform version
+     * is specified only for tasks using the Fargate launch type. If one isn't
+     * specified, the <code>LATEST</code> platform version is used.</p>
      */
     inline CreateTaskSetRequest& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
 
@@ -740,219 +740,227 @@ namespace Model
 
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>The identifier that you provide to ensure the idempotency of the request.
+     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
+     * allowed.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>The identifier that you provide to ensure the idempotency of the request.
+     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
+     * allowed.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>The identifier that you provide to ensure the idempotency of the request.
+     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
+     * allowed.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>The identifier that you provide to ensure the idempotency of the request.
+     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
+     * allowed.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>The identifier that you provide to ensure the idempotency of the request.
+     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
+     * allowed.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>The identifier that you provide to ensure the idempotency of the request.
+     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
+     * allowed.</p>
      */
     inline CreateTaskSetRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>The identifier that you provide to ensure the idempotency of the request.
+     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
+     * allowed.</p>
      */
     inline CreateTaskSetRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>The identifier that you provide to ensure the idempotency of the request.
+     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
+     * allowed.</p>
      */
     inline CreateTaskSetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
 
     /**
      * <p>The metadata that you apply to the task set to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define. When a service is deleted, the tags are deleted as well.</p> <p>The
-     * following basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of
-     * tags per resource - 50</p> </li> <li> <p>For each resource, each tag key must be
-     * unique, and each tag key can have only one value.</p> </li> <li> <p>Maximum key
-     * length - 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length
-     * - 256 Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is
-     * used across multiple services and resources, remember that other services may
-     * have restrictions on allowed characters. Generally allowed characters are:
-     * letters, numbers, and spaces representable in UTF-8, and the following
-     * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
-     * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
-     * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for Amazon Web Services use. You cannot
-     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
-     * count against your tags per resource limit.</p> </li> </ul>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both. When a service is deleted, the tags are deleted.</p> <p>The following
+     * basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of tags per
+     * resource - 50</p> </li> <li> <p>For each resource, each tag key must be unique,
+     * and each tag key can have only one value.</p> </li> <li> <p>Maximum key length -
+     * 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length - 256
+     * Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is used
+     * across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters,
+     * numbers, and spaces representable in UTF-8, and the following characters: + - =
+     * . _ : / @.</p> </li> <li> <p>Tag keys and values are case-sensitive.</p> </li>
+     * <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or
+     * lowercase combination of such as a prefix for either keys or values as it is
+     * reserved for Amazon Web Services use. You cannot edit or delete tag keys or
+     * values with this prefix. Tags with this prefix do not count against your tags
+     * per resource limit.</p> </li> </ul>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The metadata that you apply to the task set to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define. When a service is deleted, the tags are deleted as well.</p> <p>The
-     * following basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of
-     * tags per resource - 50</p> </li> <li> <p>For each resource, each tag key must be
-     * unique, and each tag key can have only one value.</p> </li> <li> <p>Maximum key
-     * length - 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length
-     * - 256 Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is
-     * used across multiple services and resources, remember that other services may
-     * have restrictions on allowed characters. Generally allowed characters are:
-     * letters, numbers, and spaces representable in UTF-8, and the following
-     * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
-     * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
-     * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for Amazon Web Services use. You cannot
-     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
-     * count against your tags per resource limit.</p> </li> </ul>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both. When a service is deleted, the tags are deleted.</p> <p>The following
+     * basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of tags per
+     * resource - 50</p> </li> <li> <p>For each resource, each tag key must be unique,
+     * and each tag key can have only one value.</p> </li> <li> <p>Maximum key length -
+     * 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length - 256
+     * Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is used
+     * across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters,
+     * numbers, and spaces representable in UTF-8, and the following characters: + - =
+     * . _ : / @.</p> </li> <li> <p>Tag keys and values are case-sensitive.</p> </li>
+     * <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or
+     * lowercase combination of such as a prefix for either keys or values as it is
+     * reserved for Amazon Web Services use. You cannot edit or delete tag keys or
+     * values with this prefix. Tags with this prefix do not count against your tags
+     * per resource limit.</p> </li> </ul>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The metadata that you apply to the task set to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define. When a service is deleted, the tags are deleted as well.</p> <p>The
-     * following basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of
-     * tags per resource - 50</p> </li> <li> <p>For each resource, each tag key must be
-     * unique, and each tag key can have only one value.</p> </li> <li> <p>Maximum key
-     * length - 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length
-     * - 256 Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is
-     * used across multiple services and resources, remember that other services may
-     * have restrictions on allowed characters. Generally allowed characters are:
-     * letters, numbers, and spaces representable in UTF-8, and the following
-     * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
-     * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
-     * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for Amazon Web Services use. You cannot
-     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
-     * count against your tags per resource limit.</p> </li> </ul>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both. When a service is deleted, the tags are deleted.</p> <p>The following
+     * basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of tags per
+     * resource - 50</p> </li> <li> <p>For each resource, each tag key must be unique,
+     * and each tag key can have only one value.</p> </li> <li> <p>Maximum key length -
+     * 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length - 256
+     * Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is used
+     * across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters,
+     * numbers, and spaces representable in UTF-8, and the following characters: + - =
+     * . _ : / @.</p> </li> <li> <p>Tag keys and values are case-sensitive.</p> </li>
+     * <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or
+     * lowercase combination of such as a prefix for either keys or values as it is
+     * reserved for Amazon Web Services use. You cannot edit or delete tag keys or
+     * values with this prefix. Tags with this prefix do not count against your tags
+     * per resource limit.</p> </li> </ul>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The metadata that you apply to the task set to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define. When a service is deleted, the tags are deleted as well.</p> <p>The
-     * following basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of
-     * tags per resource - 50</p> </li> <li> <p>For each resource, each tag key must be
-     * unique, and each tag key can have only one value.</p> </li> <li> <p>Maximum key
-     * length - 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length
-     * - 256 Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is
-     * used across multiple services and resources, remember that other services may
-     * have restrictions on allowed characters. Generally allowed characters are:
-     * letters, numbers, and spaces representable in UTF-8, and the following
-     * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
-     * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
-     * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for Amazon Web Services use. You cannot
-     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
-     * count against your tags per resource limit.</p> </li> </ul>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both. When a service is deleted, the tags are deleted.</p> <p>The following
+     * basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of tags per
+     * resource - 50</p> </li> <li> <p>For each resource, each tag key must be unique,
+     * and each tag key can have only one value.</p> </li> <li> <p>Maximum key length -
+     * 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length - 256
+     * Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is used
+     * across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters,
+     * numbers, and spaces representable in UTF-8, and the following characters: + - =
+     * . _ : / @.</p> </li> <li> <p>Tag keys and values are case-sensitive.</p> </li>
+     * <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or
+     * lowercase combination of such as a prefix for either keys or values as it is
+     * reserved for Amazon Web Services use. You cannot edit or delete tag keys or
+     * values with this prefix. Tags with this prefix do not count against your tags
+     * per resource limit.</p> </li> </ul>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The metadata that you apply to the task set to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define. When a service is deleted, the tags are deleted as well.</p> <p>The
-     * following basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of
-     * tags per resource - 50</p> </li> <li> <p>For each resource, each tag key must be
-     * unique, and each tag key can have only one value.</p> </li> <li> <p>Maximum key
-     * length - 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length
-     * - 256 Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is
-     * used across multiple services and resources, remember that other services may
-     * have restrictions on allowed characters. Generally allowed characters are:
-     * letters, numbers, and spaces representable in UTF-8, and the following
-     * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
-     * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
-     * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for Amazon Web Services use. You cannot
-     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
-     * count against your tags per resource limit.</p> </li> </ul>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both. When a service is deleted, the tags are deleted.</p> <p>The following
+     * basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of tags per
+     * resource - 50</p> </li> <li> <p>For each resource, each tag key must be unique,
+     * and each tag key can have only one value.</p> </li> <li> <p>Maximum key length -
+     * 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length - 256
+     * Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is used
+     * across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters,
+     * numbers, and spaces representable in UTF-8, and the following characters: + - =
+     * . _ : / @.</p> </li> <li> <p>Tag keys and values are case-sensitive.</p> </li>
+     * <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or
+     * lowercase combination of such as a prefix for either keys or values as it is
+     * reserved for Amazon Web Services use. You cannot edit or delete tag keys or
+     * values with this prefix. Tags with this prefix do not count against your tags
+     * per resource limit.</p> </li> </ul>
      */
     inline CreateTaskSetRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The metadata that you apply to the task set to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define. When a service is deleted, the tags are deleted as well.</p> <p>The
-     * following basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of
-     * tags per resource - 50</p> </li> <li> <p>For each resource, each tag key must be
-     * unique, and each tag key can have only one value.</p> </li> <li> <p>Maximum key
-     * length - 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length
-     * - 256 Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is
-     * used across multiple services and resources, remember that other services may
-     * have restrictions on allowed characters. Generally allowed characters are:
-     * letters, numbers, and spaces representable in UTF-8, and the following
-     * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
-     * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
-     * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for Amazon Web Services use. You cannot
-     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
-     * count against your tags per resource limit.</p> </li> </ul>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both. When a service is deleted, the tags are deleted.</p> <p>The following
+     * basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of tags per
+     * resource - 50</p> </li> <li> <p>For each resource, each tag key must be unique,
+     * and each tag key can have only one value.</p> </li> <li> <p>Maximum key length -
+     * 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length - 256
+     * Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is used
+     * across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters,
+     * numbers, and spaces representable in UTF-8, and the following characters: + - =
+     * . _ : / @.</p> </li> <li> <p>Tag keys and values are case-sensitive.</p> </li>
+     * <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or
+     * lowercase combination of such as a prefix for either keys or values as it is
+     * reserved for Amazon Web Services use. You cannot edit or delete tag keys or
+     * values with this prefix. Tags with this prefix do not count against your tags
+     * per resource limit.</p> </li> </ul>
      */
     inline CreateTaskSetRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The metadata that you apply to the task set to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define. When a service is deleted, the tags are deleted as well.</p> <p>The
-     * following basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of
-     * tags per resource - 50</p> </li> <li> <p>For each resource, each tag key must be
-     * unique, and each tag key can have only one value.</p> </li> <li> <p>Maximum key
-     * length - 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length
-     * - 256 Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is
-     * used across multiple services and resources, remember that other services may
-     * have restrictions on allowed characters. Generally allowed characters are:
-     * letters, numbers, and spaces representable in UTF-8, and the following
-     * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
-     * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
-     * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for Amazon Web Services use. You cannot
-     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
-     * count against your tags per resource limit.</p> </li> </ul>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both. When a service is deleted, the tags are deleted.</p> <p>The following
+     * basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of tags per
+     * resource - 50</p> </li> <li> <p>For each resource, each tag key must be unique,
+     * and each tag key can have only one value.</p> </li> <li> <p>Maximum key length -
+     * 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length - 256
+     * Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is used
+     * across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters,
+     * numbers, and spaces representable in UTF-8, and the following characters: + - =
+     * . _ : / @.</p> </li> <li> <p>Tag keys and values are case-sensitive.</p> </li>
+     * <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or
+     * lowercase combination of such as a prefix for either keys or values as it is
+     * reserved for Amazon Web Services use. You cannot edit or delete tag keys or
+     * values with this prefix. Tags with this prefix do not count against your tags
+     * per resource limit.</p> </li> </ul>
      */
     inline CreateTaskSetRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>The metadata that you apply to the task set to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define. When a service is deleted, the tags are deleted as well.</p> <p>The
-     * following basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of
-     * tags per resource - 50</p> </li> <li> <p>For each resource, each tag key must be
-     * unique, and each tag key can have only one value.</p> </li> <li> <p>Maximum key
-     * length - 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length
-     * - 256 Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is
-     * used across multiple services and resources, remember that other services may
-     * have restrictions on allowed characters. Generally allowed characters are:
-     * letters, numbers, and spaces representable in UTF-8, and the following
-     * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
-     * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
-     * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for Amazon Web Services use. You cannot
-     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
-     * count against your tags per resource limit.</p> </li> </ul>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both. When a service is deleted, the tags are deleted.</p> <p>The following
+     * basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of tags per
+     * resource - 50</p> </li> <li> <p>For each resource, each tag key must be unique,
+     * and each tag key can have only one value.</p> </li> <li> <p>Maximum key length -
+     * 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length - 256
+     * Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is used
+     * across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters,
+     * numbers, and spaces representable in UTF-8, and the following characters: + - =
+     * . _ : / @.</p> </li> <li> <p>Tag keys and values are case-sensitive.</p> </li>
+     * <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or
+     * lowercase combination of such as a prefix for either keys or values as it is
+     * reserved for Amazon Web Services use. You cannot edit or delete tag keys or
+     * values with this prefix. Tags with this prefix do not count against your tags
+     * per resource limit.</p> </li> </ul>
      */
     inline CreateTaskSetRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

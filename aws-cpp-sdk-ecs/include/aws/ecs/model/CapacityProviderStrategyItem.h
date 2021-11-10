@@ -101,7 +101,7 @@ namespace Model
      * used. When multiple capacity providers are specified within a capacity provider
      * strategy, at least one of the capacity providers must have a weight value
      * greater than zero and any capacity providers with a weight of <code>0</code>
-     * will not be used to place tasks. If you specify multiple capacity providers in a
+     * can't be used to place tasks. If you specify multiple capacity providers in a
      * strategy that all have a weight of <code>0</code>, any <code>RunTask</code> or
      * <code>CreateService</code> actions using the capacity provider strategy will
      * fail.</p> <p>An example scenario for using weights is defining a strategy that
@@ -109,7 +109,7 @@ namespace Model
      * when the <code>base</code> is satisfied, the tasks will be split evenly across
      * the two capacity providers. Using that same logic, if you specify a weight of
      * <code>1</code> for <i>capacityProviderA</i> and a weight of <code>4</code> for
-     * <i>capacityProviderB</i>, then for every one task that is run using
+     * <i>capacityProviderB</i>, then for every one task that's run using
      * <i>capacityProviderA</i>, four tasks would use <i>capacityProviderB</i>.</p>
      */
     inline int GetWeight() const{ return m_weight; }
@@ -123,7 +123,7 @@ namespace Model
      * used. When multiple capacity providers are specified within a capacity provider
      * strategy, at least one of the capacity providers must have a weight value
      * greater than zero and any capacity providers with a weight of <code>0</code>
-     * will not be used to place tasks. If you specify multiple capacity providers in a
+     * can't be used to place tasks. If you specify multiple capacity providers in a
      * strategy that all have a weight of <code>0</code>, any <code>RunTask</code> or
      * <code>CreateService</code> actions using the capacity provider strategy will
      * fail.</p> <p>An example scenario for using weights is defining a strategy that
@@ -131,7 +131,7 @@ namespace Model
      * when the <code>base</code> is satisfied, the tasks will be split evenly across
      * the two capacity providers. Using that same logic, if you specify a weight of
      * <code>1</code> for <i>capacityProviderA</i> and a weight of <code>4</code> for
-     * <i>capacityProviderB</i>, then for every one task that is run using
+     * <i>capacityProviderB</i>, then for every one task that's run using
      * <i>capacityProviderA</i>, four tasks would use <i>capacityProviderB</i>.</p>
      */
     inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
@@ -145,7 +145,7 @@ namespace Model
      * used. When multiple capacity providers are specified within a capacity provider
      * strategy, at least one of the capacity providers must have a weight value
      * greater than zero and any capacity providers with a weight of <code>0</code>
-     * will not be used to place tasks. If you specify multiple capacity providers in a
+     * can't be used to place tasks. If you specify multiple capacity providers in a
      * strategy that all have a weight of <code>0</code>, any <code>RunTask</code> or
      * <code>CreateService</code> actions using the capacity provider strategy will
      * fail.</p> <p>An example scenario for using weights is defining a strategy that
@@ -153,7 +153,7 @@ namespace Model
      * when the <code>base</code> is satisfied, the tasks will be split evenly across
      * the two capacity providers. Using that same logic, if you specify a weight of
      * <code>1</code> for <i>capacityProviderA</i> and a weight of <code>4</code> for
-     * <i>capacityProviderB</i>, then for every one task that is run using
+     * <i>capacityProviderB</i>, then for every one task that's run using
      * <i>capacityProviderA</i>, four tasks would use <i>capacityProviderB</i>.</p>
      */
     inline void SetWeight(int value) { m_weightHasBeenSet = true; m_weight = value; }
@@ -167,7 +167,7 @@ namespace Model
      * used. When multiple capacity providers are specified within a capacity provider
      * strategy, at least one of the capacity providers must have a weight value
      * greater than zero and any capacity providers with a weight of <code>0</code>
-     * will not be used to place tasks. If you specify multiple capacity providers in a
+     * can't be used to place tasks. If you specify multiple capacity providers in a
      * strategy that all have a weight of <code>0</code>, any <code>RunTask</code> or
      * <code>CreateService</code> actions using the capacity provider strategy will
      * fail.</p> <p>An example scenario for using weights is defining a strategy that
@@ -175,7 +175,7 @@ namespace Model
      * when the <code>base</code> is satisfied, the tasks will be split evenly across
      * the two capacity providers. Using that same logic, if you specify a weight of
      * <code>1</code> for <i>capacityProviderA</i> and a weight of <code>4</code> for
-     * <i>capacityProviderB</i>, then for every one task that is run using
+     * <i>capacityProviderB</i>, then for every one task that's run using
      * <i>capacityProviderA</i>, four tasks would use <i>capacityProviderB</i>.</p>
      */
     inline CapacityProviderStrategyItem& WithWeight(int value) { SetWeight(value); return *this;}

@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The details of the execute command session.</p><p><h3>See Also:</h3>   <a
+   * <p>The details for the execute command session.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Session">AWS API
    * Reference</a></p>
    */
@@ -128,50 +128,50 @@ namespace Model
 
 
     /**
-     * <p>An encrypted token value containing session and caller information. Used to
-     * authenticate the connection to the container.</p>
+     * <p>An encrypted token value containing session and caller information. It's used
+     * to authenticate the connection to the container.</p>
      */
     inline const Aws::String& GetTokenValue() const{ return m_tokenValue; }
 
     /**
-     * <p>An encrypted token value containing session and caller information. Used to
-     * authenticate the connection to the container.</p>
+     * <p>An encrypted token value containing session and caller information. It's used
+     * to authenticate the connection to the container.</p>
      */
     inline bool TokenValueHasBeenSet() const { return m_tokenValueHasBeenSet; }
 
     /**
-     * <p>An encrypted token value containing session and caller information. Used to
-     * authenticate the connection to the container.</p>
+     * <p>An encrypted token value containing session and caller information. It's used
+     * to authenticate the connection to the container.</p>
      */
     inline void SetTokenValue(const Aws::String& value) { m_tokenValueHasBeenSet = true; m_tokenValue = value; }
 
     /**
-     * <p>An encrypted token value containing session and caller information. Used to
-     * authenticate the connection to the container.</p>
+     * <p>An encrypted token value containing session and caller information. It's used
+     * to authenticate the connection to the container.</p>
      */
     inline void SetTokenValue(Aws::String&& value) { m_tokenValueHasBeenSet = true; m_tokenValue = std::move(value); }
 
     /**
-     * <p>An encrypted token value containing session and caller information. Used to
-     * authenticate the connection to the container.</p>
+     * <p>An encrypted token value containing session and caller information. It's used
+     * to authenticate the connection to the container.</p>
      */
     inline void SetTokenValue(const char* value) { m_tokenValueHasBeenSet = true; m_tokenValue.assign(value); }
 
     /**
-     * <p>An encrypted token value containing session and caller information. Used to
-     * authenticate the connection to the container.</p>
+     * <p>An encrypted token value containing session and caller information. It's used
+     * to authenticate the connection to the container.</p>
      */
     inline Session& WithTokenValue(const Aws::String& value) { SetTokenValue(value); return *this;}
 
     /**
-     * <p>An encrypted token value containing session and caller information. Used to
-     * authenticate the connection to the container.</p>
+     * <p>An encrypted token value containing session and caller information. It's used
+     * to authenticate the connection to the container.</p>
      */
     inline Session& WithTokenValue(Aws::String&& value) { SetTokenValue(std::move(value)); return *this;}
 
     /**
-     * <p>An encrypted token value containing session and caller information. Used to
-     * authenticate the connection to the container.</p>
+     * <p>An encrypted token value containing session and caller information. It's used
+     * to authenticate the connection to the container.</p>
      */
     inline Session& WithTokenValue(const char* value) { SetTokenValue(value); return *this;}
 

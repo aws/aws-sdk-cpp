@@ -48,74 +48,66 @@ namespace Model
 
 
     /**
-     * <p>You must specify a <code>family</code> for a task definition, which allows
-     * you to track multiple versions of the same task definition. The
-     * <code>family</code> is used as a name for your task definition. Up to 255
-     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
-     * allowed.</p>
+     * <p>You must specify a <code>family</code> for a task definition. You can use it
+     * track multiple versions of the same task definition. The <code>family</code> is
+     * used as a name for your task definition. Up to 255 letters (uppercase and
+     * lowercase), numbers, underscores, and hyphens are allowed.</p>
      */
     inline const Aws::String& GetFamily() const{ return m_family; }
 
     /**
-     * <p>You must specify a <code>family</code> for a task definition, which allows
-     * you to track multiple versions of the same task definition. The
-     * <code>family</code> is used as a name for your task definition. Up to 255
-     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
-     * allowed.</p>
+     * <p>You must specify a <code>family</code> for a task definition. You can use it
+     * track multiple versions of the same task definition. The <code>family</code> is
+     * used as a name for your task definition. Up to 255 letters (uppercase and
+     * lowercase), numbers, underscores, and hyphens are allowed.</p>
      */
     inline bool FamilyHasBeenSet() const { return m_familyHasBeenSet; }
 
     /**
-     * <p>You must specify a <code>family</code> for a task definition, which allows
-     * you to track multiple versions of the same task definition. The
-     * <code>family</code> is used as a name for your task definition. Up to 255
-     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
-     * allowed.</p>
+     * <p>You must specify a <code>family</code> for a task definition. You can use it
+     * track multiple versions of the same task definition. The <code>family</code> is
+     * used as a name for your task definition. Up to 255 letters (uppercase and
+     * lowercase), numbers, underscores, and hyphens are allowed.</p>
      */
     inline void SetFamily(const Aws::String& value) { m_familyHasBeenSet = true; m_family = value; }
 
     /**
-     * <p>You must specify a <code>family</code> for a task definition, which allows
-     * you to track multiple versions of the same task definition. The
-     * <code>family</code> is used as a name for your task definition. Up to 255
-     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
-     * allowed.</p>
+     * <p>You must specify a <code>family</code> for a task definition. You can use it
+     * track multiple versions of the same task definition. The <code>family</code> is
+     * used as a name for your task definition. Up to 255 letters (uppercase and
+     * lowercase), numbers, underscores, and hyphens are allowed.</p>
      */
     inline void SetFamily(Aws::String&& value) { m_familyHasBeenSet = true; m_family = std::move(value); }
 
     /**
-     * <p>You must specify a <code>family</code> for a task definition, which allows
-     * you to track multiple versions of the same task definition. The
-     * <code>family</code> is used as a name for your task definition. Up to 255
-     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
-     * allowed.</p>
+     * <p>You must specify a <code>family</code> for a task definition. You can use it
+     * track multiple versions of the same task definition. The <code>family</code> is
+     * used as a name for your task definition. Up to 255 letters (uppercase and
+     * lowercase), numbers, underscores, and hyphens are allowed.</p>
      */
     inline void SetFamily(const char* value) { m_familyHasBeenSet = true; m_family.assign(value); }
 
     /**
-     * <p>You must specify a <code>family</code> for a task definition, which allows
-     * you to track multiple versions of the same task definition. The
-     * <code>family</code> is used as a name for your task definition. Up to 255
-     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
-     * allowed.</p>
+     * <p>You must specify a <code>family</code> for a task definition. You can use it
+     * track multiple versions of the same task definition. The <code>family</code> is
+     * used as a name for your task definition. Up to 255 letters (uppercase and
+     * lowercase), numbers, underscores, and hyphens are allowed.</p>
      */
     inline RegisterTaskDefinitionRequest& WithFamily(const Aws::String& value) { SetFamily(value); return *this;}
 
     /**
-     * <p>You must specify a <code>family</code> for a task definition, which allows
-     * you to track multiple versions of the same task definition. The
-     * <code>family</code> is used as a name for your task definition. Up to 255
-     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
-     * allowed.</p>
+     * <p>You must specify a <code>family</code> for a task definition. You can use it
+     * track multiple versions of the same task definition. The <code>family</code> is
+     * used as a name for your task definition. Up to 255 letters (uppercase and
+     * lowercase), numbers, underscores, and hyphens are allowed.</p>
      */
     inline RegisterTaskDefinitionRequest& WithFamily(Aws::String&& value) { SetFamily(std::move(value)); return *this;}
 
     /**
-     * <p>You must specify a <code>family</code> for a task definition, which allows
-     * you to track multiple versions of the same task definition. The
-     * <code>family</code> is used as a name for your task definition. Up to 255
-     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
-     * allowed.</p>
+     * <p>You must specify a <code>family</code> for a task definition. You can use it
+     * track multiple versions of the same task definition. The <code>family</code> is
+     * used as a name for your task definition. Up to 255 letters (uppercase and
+     * lowercase), numbers, underscores, and hyphens are allowed.</p>
      */
     inline RegisterTaskDefinitionRequest& WithFamily(const char* value) { SetFamily(value); return *this;}
 
@@ -545,394 +537,403 @@ namespace Model
 
 
     /**
-     * <p>A list of volume definitions in JSON format that containers in your task may
-     * use.</p>
+     * <p>A list of volume definitions in JSON format that containers in your task
+     * might use.</p>
      */
     inline const Aws::Vector<Volume>& GetVolumes() const{ return m_volumes; }
 
     /**
-     * <p>A list of volume definitions in JSON format that containers in your task may
-     * use.</p>
+     * <p>A list of volume definitions in JSON format that containers in your task
+     * might use.</p>
      */
     inline bool VolumesHasBeenSet() const { return m_volumesHasBeenSet; }
 
     /**
-     * <p>A list of volume definitions in JSON format that containers in your task may
-     * use.</p>
+     * <p>A list of volume definitions in JSON format that containers in your task
+     * might use.</p>
      */
     inline void SetVolumes(const Aws::Vector<Volume>& value) { m_volumesHasBeenSet = true; m_volumes = value; }
 
     /**
-     * <p>A list of volume definitions in JSON format that containers in your task may
-     * use.</p>
+     * <p>A list of volume definitions in JSON format that containers in your task
+     * might use.</p>
      */
     inline void SetVolumes(Aws::Vector<Volume>&& value) { m_volumesHasBeenSet = true; m_volumes = std::move(value); }
 
     /**
-     * <p>A list of volume definitions in JSON format that containers in your task may
-     * use.</p>
+     * <p>A list of volume definitions in JSON format that containers in your task
+     * might use.</p>
      */
     inline RegisterTaskDefinitionRequest& WithVolumes(const Aws::Vector<Volume>& value) { SetVolumes(value); return *this;}
 
     /**
-     * <p>A list of volume definitions in JSON format that containers in your task may
-     * use.</p>
+     * <p>A list of volume definitions in JSON format that containers in your task
+     * might use.</p>
      */
     inline RegisterTaskDefinitionRequest& WithVolumes(Aws::Vector<Volume>&& value) { SetVolumes(std::move(value)); return *this;}
 
     /**
-     * <p>A list of volume definitions in JSON format that containers in your task may
-     * use.</p>
+     * <p>A list of volume definitions in JSON format that containers in your task
+     * might use.</p>
      */
     inline RegisterTaskDefinitionRequest& AddVolumes(const Volume& value) { m_volumesHasBeenSet = true; m_volumes.push_back(value); return *this; }
 
     /**
-     * <p>A list of volume definitions in JSON format that containers in your task may
-     * use.</p>
+     * <p>A list of volume definitions in JSON format that containers in your task
+     * might use.</p>
      */
     inline RegisterTaskDefinitionRequest& AddVolumes(Volume&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
-     * a maximum of 10 constraints per task (this limit includes constraints in the
-     * task definition and those specified at runtime).</p>
+     * a maximum of 10 constraints for each task. This limit includes constraints in
+     * the task definition and those specified at runtime.</p>
      */
     inline const Aws::Vector<TaskDefinitionPlacementConstraint>& GetPlacementConstraints() const{ return m_placementConstraints; }
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
-     * a maximum of 10 constraints per task (this limit includes constraints in the
-     * task definition and those specified at runtime).</p>
+     * a maximum of 10 constraints for each task. This limit includes constraints in
+     * the task definition and those specified at runtime.</p>
      */
     inline bool PlacementConstraintsHasBeenSet() const { return m_placementConstraintsHasBeenSet; }
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
-     * a maximum of 10 constraints per task (this limit includes constraints in the
-     * task definition and those specified at runtime).</p>
+     * a maximum of 10 constraints for each task. This limit includes constraints in
+     * the task definition and those specified at runtime.</p>
      */
     inline void SetPlacementConstraints(const Aws::Vector<TaskDefinitionPlacementConstraint>& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = value; }
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
-     * a maximum of 10 constraints per task (this limit includes constraints in the
-     * task definition and those specified at runtime).</p>
+     * a maximum of 10 constraints for each task. This limit includes constraints in
+     * the task definition and those specified at runtime.</p>
      */
     inline void SetPlacementConstraints(Aws::Vector<TaskDefinitionPlacementConstraint>&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = std::move(value); }
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
-     * a maximum of 10 constraints per task (this limit includes constraints in the
-     * task definition and those specified at runtime).</p>
+     * a maximum of 10 constraints for each task. This limit includes constraints in
+     * the task definition and those specified at runtime.</p>
      */
     inline RegisterTaskDefinitionRequest& WithPlacementConstraints(const Aws::Vector<TaskDefinitionPlacementConstraint>& value) { SetPlacementConstraints(value); return *this;}
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
-     * a maximum of 10 constraints per task (this limit includes constraints in the
-     * task definition and those specified at runtime).</p>
+     * a maximum of 10 constraints for each task. This limit includes constraints in
+     * the task definition and those specified at runtime.</p>
      */
     inline RegisterTaskDefinitionRequest& WithPlacementConstraints(Aws::Vector<TaskDefinitionPlacementConstraint>&& value) { SetPlacementConstraints(std::move(value)); return *this;}
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
-     * a maximum of 10 constraints per task (this limit includes constraints in the
-     * task definition and those specified at runtime).</p>
+     * a maximum of 10 constraints for each task. This limit includes constraints in
+     * the task definition and those specified at runtime.</p>
      */
     inline RegisterTaskDefinitionRequest& AddPlacementConstraints(const TaskDefinitionPlacementConstraint& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(value); return *this; }
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
-     * a maximum of 10 constraints per task (this limit includes constraints in the
-     * task definition and those specified at runtime).</p>
+     * a maximum of 10 constraints for each task. This limit includes constraints in
+     * the task definition and those specified at runtime.</p>
      */
     inline RegisterTaskDefinitionRequest& AddPlacementConstraints(TaskDefinitionPlacementConstraint&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The task launch type that Amazon ECS should validate the task definition
-     * against. A client exception is returned if the task definition doesn't validate
-     * against the compatibilities specified. If no value is specified, the parameter
-     * is omitted from the response.</p>
+     * <p>The task launch type that Amazon ECS validates the task definition against. A
+     * client exception is returned if the task definition doesn't validate against the
+     * compatibilities specified. If no value is specified, the parameter is omitted
+     * from the response.</p>
      */
     inline const Aws::Vector<Compatibility>& GetRequiresCompatibilities() const{ return m_requiresCompatibilities; }
 
     /**
-     * <p>The task launch type that Amazon ECS should validate the task definition
-     * against. A client exception is returned if the task definition doesn't validate
-     * against the compatibilities specified. If no value is specified, the parameter
-     * is omitted from the response.</p>
+     * <p>The task launch type that Amazon ECS validates the task definition against. A
+     * client exception is returned if the task definition doesn't validate against the
+     * compatibilities specified. If no value is specified, the parameter is omitted
+     * from the response.</p>
      */
     inline bool RequiresCompatibilitiesHasBeenSet() const { return m_requiresCompatibilitiesHasBeenSet; }
 
     /**
-     * <p>The task launch type that Amazon ECS should validate the task definition
-     * against. A client exception is returned if the task definition doesn't validate
-     * against the compatibilities specified. If no value is specified, the parameter
-     * is omitted from the response.</p>
+     * <p>The task launch type that Amazon ECS validates the task definition against. A
+     * client exception is returned if the task definition doesn't validate against the
+     * compatibilities specified. If no value is specified, the parameter is omitted
+     * from the response.</p>
      */
     inline void SetRequiresCompatibilities(const Aws::Vector<Compatibility>& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities = value; }
 
     /**
-     * <p>The task launch type that Amazon ECS should validate the task definition
-     * against. A client exception is returned if the task definition doesn't validate
-     * against the compatibilities specified. If no value is specified, the parameter
-     * is omitted from the response.</p>
+     * <p>The task launch type that Amazon ECS validates the task definition against. A
+     * client exception is returned if the task definition doesn't validate against the
+     * compatibilities specified. If no value is specified, the parameter is omitted
+     * from the response.</p>
      */
     inline void SetRequiresCompatibilities(Aws::Vector<Compatibility>&& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities = std::move(value); }
 
     /**
-     * <p>The task launch type that Amazon ECS should validate the task definition
-     * against. A client exception is returned if the task definition doesn't validate
-     * against the compatibilities specified. If no value is specified, the parameter
-     * is omitted from the response.</p>
+     * <p>The task launch type that Amazon ECS validates the task definition against. A
+     * client exception is returned if the task definition doesn't validate against the
+     * compatibilities specified. If no value is specified, the parameter is omitted
+     * from the response.</p>
      */
     inline RegisterTaskDefinitionRequest& WithRequiresCompatibilities(const Aws::Vector<Compatibility>& value) { SetRequiresCompatibilities(value); return *this;}
 
     /**
-     * <p>The task launch type that Amazon ECS should validate the task definition
-     * against. A client exception is returned if the task definition doesn't validate
-     * against the compatibilities specified. If no value is specified, the parameter
-     * is omitted from the response.</p>
+     * <p>The task launch type that Amazon ECS validates the task definition against. A
+     * client exception is returned if the task definition doesn't validate against the
+     * compatibilities specified. If no value is specified, the parameter is omitted
+     * from the response.</p>
      */
     inline RegisterTaskDefinitionRequest& WithRequiresCompatibilities(Aws::Vector<Compatibility>&& value) { SetRequiresCompatibilities(std::move(value)); return *this;}
 
     /**
-     * <p>The task launch type that Amazon ECS should validate the task definition
-     * against. A client exception is returned if the task definition doesn't validate
-     * against the compatibilities specified. If no value is specified, the parameter
-     * is omitted from the response.</p>
+     * <p>The task launch type that Amazon ECS validates the task definition against. A
+     * client exception is returned if the task definition doesn't validate against the
+     * compatibilities specified. If no value is specified, the parameter is omitted
+     * from the response.</p>
      */
     inline RegisterTaskDefinitionRequest& AddRequiresCompatibilities(const Compatibility& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities.push_back(value); return *this; }
 
     /**
-     * <p>The task launch type that Amazon ECS should validate the task definition
-     * against. A client exception is returned if the task definition doesn't validate
-     * against the compatibilities specified. If no value is specified, the parameter
-     * is omitted from the response.</p>
+     * <p>The task launch type that Amazon ECS validates the task definition against. A
+     * client exception is returned if the task definition doesn't validate against the
+     * compatibilities specified. If no value is specified, the parameter is omitted
+     * from the response.</p>
      */
     inline RegisterTaskDefinitionRequest& AddRequiresCompatibilities(Compatibility&& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>The number of CPU units used by the task. It can be expressed as an integer
-     * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
-     * values are converted to an integer indicating the CPU units when the task
+     * using CPU units (for example, <code>1024</code>) or as a string using vCPUs (for
+     * example, <code>1 vCPU</code> or <code>1 vcpu</code>) in a task definition.
+     * String values are converted to an integer indicating the CPU units when the task
      * definition is registered.</p>  <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p>  <p>If you are using the EC2 launch
+     * resources for Windows containers.</p>  <p>If you're using the EC2 launch
      * type, this field is optional. Supported values are between <code>128</code> CPU
      * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
-     * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
+     * (<code>10</code> vCPUs).</p> <p>If you're using the Fargate launch type, this
      * field is required and you must use one of the following values, which determines
-     * your range of supported values for the <code>memory</code> parameter:</p> <ul>
-     * <li> <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB),
-     * 1024 (1 GB), 2048 (2 GB)</p> </li> <li> <p>512 (.5 vCPU) - Available
-     * <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
-     * GB)</p> </li> <li> <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048
-     * (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
-     * GB)</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
-     * Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p> </li>
-     * <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8
-     * GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li> </ul>
+     * your range of supported values for the <code>memory</code> parameter:</p> <p>The
+     * CPU units cannot be less than 1 vCPU when you use Windows containers on
+     * Fargate.</p> <ul> <li> <p>256 (.25 vCPU) - Available <code>memory</code> values:
+     * 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li> <li> <p>512 (.5 vCPU) -
+     * Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB),
+     * 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) - Available <code>memory</code>
+     * values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7
+     * GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code>
+     * values: Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p>
+     * </li> <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192
+     * (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li> </ul>
      */
     inline const Aws::String& GetCpu() const{ return m_cpu; }
 
     /**
      * <p>The number of CPU units used by the task. It can be expressed as an integer
-     * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
-     * values are converted to an integer indicating the CPU units when the task
+     * using CPU units (for example, <code>1024</code>) or as a string using vCPUs (for
+     * example, <code>1 vCPU</code> or <code>1 vcpu</code>) in a task definition.
+     * String values are converted to an integer indicating the CPU units when the task
      * definition is registered.</p>  <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p>  <p>If you are using the EC2 launch
+     * resources for Windows containers.</p>  <p>If you're using the EC2 launch
      * type, this field is optional. Supported values are between <code>128</code> CPU
      * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
-     * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
+     * (<code>10</code> vCPUs).</p> <p>If you're using the Fargate launch type, this
      * field is required and you must use one of the following values, which determines
-     * your range of supported values for the <code>memory</code> parameter:</p> <ul>
-     * <li> <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB),
-     * 1024 (1 GB), 2048 (2 GB)</p> </li> <li> <p>512 (.5 vCPU) - Available
-     * <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
-     * GB)</p> </li> <li> <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048
-     * (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
-     * GB)</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
-     * Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p> </li>
-     * <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8
-     * GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li> </ul>
+     * your range of supported values for the <code>memory</code> parameter:</p> <p>The
+     * CPU units cannot be less than 1 vCPU when you use Windows containers on
+     * Fargate.</p> <ul> <li> <p>256 (.25 vCPU) - Available <code>memory</code> values:
+     * 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li> <li> <p>512 (.5 vCPU) -
+     * Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB),
+     * 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) - Available <code>memory</code>
+     * values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7
+     * GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code>
+     * values: Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p>
+     * </li> <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192
+     * (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li> </ul>
      */
     inline bool CpuHasBeenSet() const { return m_cpuHasBeenSet; }
 
     /**
      * <p>The number of CPU units used by the task. It can be expressed as an integer
-     * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
-     * values are converted to an integer indicating the CPU units when the task
+     * using CPU units (for example, <code>1024</code>) or as a string using vCPUs (for
+     * example, <code>1 vCPU</code> or <code>1 vcpu</code>) in a task definition.
+     * String values are converted to an integer indicating the CPU units when the task
      * definition is registered.</p>  <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p>  <p>If you are using the EC2 launch
+     * resources for Windows containers.</p>  <p>If you're using the EC2 launch
      * type, this field is optional. Supported values are between <code>128</code> CPU
      * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
-     * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
+     * (<code>10</code> vCPUs).</p> <p>If you're using the Fargate launch type, this
      * field is required and you must use one of the following values, which determines
-     * your range of supported values for the <code>memory</code> parameter:</p> <ul>
-     * <li> <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB),
-     * 1024 (1 GB), 2048 (2 GB)</p> </li> <li> <p>512 (.5 vCPU) - Available
-     * <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
-     * GB)</p> </li> <li> <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048
-     * (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
-     * GB)</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
-     * Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p> </li>
-     * <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8
-     * GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li> </ul>
+     * your range of supported values for the <code>memory</code> parameter:</p> <p>The
+     * CPU units cannot be less than 1 vCPU when you use Windows containers on
+     * Fargate.</p> <ul> <li> <p>256 (.25 vCPU) - Available <code>memory</code> values:
+     * 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li> <li> <p>512 (.5 vCPU) -
+     * Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB),
+     * 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) - Available <code>memory</code>
+     * values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7
+     * GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code>
+     * values: Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p>
+     * </li> <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192
+     * (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li> </ul>
      */
     inline void SetCpu(const Aws::String& value) { m_cpuHasBeenSet = true; m_cpu = value; }
 
     /**
      * <p>The number of CPU units used by the task. It can be expressed as an integer
-     * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
-     * values are converted to an integer indicating the CPU units when the task
+     * using CPU units (for example, <code>1024</code>) or as a string using vCPUs (for
+     * example, <code>1 vCPU</code> or <code>1 vcpu</code>) in a task definition.
+     * String values are converted to an integer indicating the CPU units when the task
      * definition is registered.</p>  <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p>  <p>If you are using the EC2 launch
+     * resources for Windows containers.</p>  <p>If you're using the EC2 launch
      * type, this field is optional. Supported values are between <code>128</code> CPU
      * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
-     * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
+     * (<code>10</code> vCPUs).</p> <p>If you're using the Fargate launch type, this
      * field is required and you must use one of the following values, which determines
-     * your range of supported values for the <code>memory</code> parameter:</p> <ul>
-     * <li> <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB),
-     * 1024 (1 GB), 2048 (2 GB)</p> </li> <li> <p>512 (.5 vCPU) - Available
-     * <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
-     * GB)</p> </li> <li> <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048
-     * (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
-     * GB)</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
-     * Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p> </li>
-     * <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8
-     * GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li> </ul>
+     * your range of supported values for the <code>memory</code> parameter:</p> <p>The
+     * CPU units cannot be less than 1 vCPU when you use Windows containers on
+     * Fargate.</p> <ul> <li> <p>256 (.25 vCPU) - Available <code>memory</code> values:
+     * 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li> <li> <p>512 (.5 vCPU) -
+     * Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB),
+     * 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) - Available <code>memory</code>
+     * values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7
+     * GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code>
+     * values: Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p>
+     * </li> <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192
+     * (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li> </ul>
      */
     inline void SetCpu(Aws::String&& value) { m_cpuHasBeenSet = true; m_cpu = std::move(value); }
 
     /**
      * <p>The number of CPU units used by the task. It can be expressed as an integer
-     * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
-     * values are converted to an integer indicating the CPU units when the task
+     * using CPU units (for example, <code>1024</code>) or as a string using vCPUs (for
+     * example, <code>1 vCPU</code> or <code>1 vcpu</code>) in a task definition.
+     * String values are converted to an integer indicating the CPU units when the task
      * definition is registered.</p>  <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p>  <p>If you are using the EC2 launch
+     * resources for Windows containers.</p>  <p>If you're using the EC2 launch
      * type, this field is optional. Supported values are between <code>128</code> CPU
      * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
-     * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
+     * (<code>10</code> vCPUs).</p> <p>If you're using the Fargate launch type, this
      * field is required and you must use one of the following values, which determines
-     * your range of supported values for the <code>memory</code> parameter:</p> <ul>
-     * <li> <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB),
-     * 1024 (1 GB), 2048 (2 GB)</p> </li> <li> <p>512 (.5 vCPU) - Available
-     * <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
-     * GB)</p> </li> <li> <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048
-     * (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
-     * GB)</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
-     * Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p> </li>
-     * <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8
-     * GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li> </ul>
+     * your range of supported values for the <code>memory</code> parameter:</p> <p>The
+     * CPU units cannot be less than 1 vCPU when you use Windows containers on
+     * Fargate.</p> <ul> <li> <p>256 (.25 vCPU) - Available <code>memory</code> values:
+     * 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li> <li> <p>512 (.5 vCPU) -
+     * Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB),
+     * 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) - Available <code>memory</code>
+     * values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7
+     * GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code>
+     * values: Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p>
+     * </li> <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192
+     * (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li> </ul>
      */
     inline void SetCpu(const char* value) { m_cpuHasBeenSet = true; m_cpu.assign(value); }
 
     /**
      * <p>The number of CPU units used by the task. It can be expressed as an integer
-     * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
-     * values are converted to an integer indicating the CPU units when the task
+     * using CPU units (for example, <code>1024</code>) or as a string using vCPUs (for
+     * example, <code>1 vCPU</code> or <code>1 vcpu</code>) in a task definition.
+     * String values are converted to an integer indicating the CPU units when the task
      * definition is registered.</p>  <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p>  <p>If you are using the EC2 launch
+     * resources for Windows containers.</p>  <p>If you're using the EC2 launch
      * type, this field is optional. Supported values are between <code>128</code> CPU
      * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
-     * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
+     * (<code>10</code> vCPUs).</p> <p>If you're using the Fargate launch type, this
      * field is required and you must use one of the following values, which determines
-     * your range of supported values for the <code>memory</code> parameter:</p> <ul>
-     * <li> <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB),
-     * 1024 (1 GB), 2048 (2 GB)</p> </li> <li> <p>512 (.5 vCPU) - Available
-     * <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
-     * GB)</p> </li> <li> <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048
-     * (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
-     * GB)</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
-     * Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p> </li>
-     * <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8
-     * GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li> </ul>
+     * your range of supported values for the <code>memory</code> parameter:</p> <p>The
+     * CPU units cannot be less than 1 vCPU when you use Windows containers on
+     * Fargate.</p> <ul> <li> <p>256 (.25 vCPU) - Available <code>memory</code> values:
+     * 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li> <li> <p>512 (.5 vCPU) -
+     * Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB),
+     * 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) - Available <code>memory</code>
+     * values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7
+     * GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code>
+     * values: Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p>
+     * </li> <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192
+     * (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li> </ul>
      */
     inline RegisterTaskDefinitionRequest& WithCpu(const Aws::String& value) { SetCpu(value); return *this;}
 
     /**
      * <p>The number of CPU units used by the task. It can be expressed as an integer
-     * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
-     * values are converted to an integer indicating the CPU units when the task
+     * using CPU units (for example, <code>1024</code>) or as a string using vCPUs (for
+     * example, <code>1 vCPU</code> or <code>1 vcpu</code>) in a task definition.
+     * String values are converted to an integer indicating the CPU units when the task
      * definition is registered.</p>  <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p>  <p>If you are using the EC2 launch
+     * resources for Windows containers.</p>  <p>If you're using the EC2 launch
      * type, this field is optional. Supported values are between <code>128</code> CPU
      * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
-     * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
+     * (<code>10</code> vCPUs).</p> <p>If you're using the Fargate launch type, this
      * field is required and you must use one of the following values, which determines
-     * your range of supported values for the <code>memory</code> parameter:</p> <ul>
-     * <li> <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB),
-     * 1024 (1 GB), 2048 (2 GB)</p> </li> <li> <p>512 (.5 vCPU) - Available
-     * <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
-     * GB)</p> </li> <li> <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048
-     * (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
-     * GB)</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
-     * Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p> </li>
-     * <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8
-     * GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li> </ul>
+     * your range of supported values for the <code>memory</code> parameter:</p> <p>The
+     * CPU units cannot be less than 1 vCPU when you use Windows containers on
+     * Fargate.</p> <ul> <li> <p>256 (.25 vCPU) - Available <code>memory</code> values:
+     * 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li> <li> <p>512 (.5 vCPU) -
+     * Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB),
+     * 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) - Available <code>memory</code>
+     * values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7
+     * GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code>
+     * values: Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p>
+     * </li> <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192
+     * (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li> </ul>
      */
     inline RegisterTaskDefinitionRequest& WithCpu(Aws::String&& value) { SetCpu(std::move(value)); return *this;}
 
     /**
      * <p>The number of CPU units used by the task. It can be expressed as an integer
-     * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
-     * values are converted to an integer indicating the CPU units when the task
+     * using CPU units (for example, <code>1024</code>) or as a string using vCPUs (for
+     * example, <code>1 vCPU</code> or <code>1 vcpu</code>) in a task definition.
+     * String values are converted to an integer indicating the CPU units when the task
      * definition is registered.</p>  <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p>  <p>If you are using the EC2 launch
+     * resources for Windows containers.</p>  <p>If you're using the EC2 launch
      * type, this field is optional. Supported values are between <code>128</code> CPU
      * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
-     * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
+     * (<code>10</code> vCPUs).</p> <p>If you're using the Fargate launch type, this
      * field is required and you must use one of the following values, which determines
-     * your range of supported values for the <code>memory</code> parameter:</p> <ul>
-     * <li> <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB),
-     * 1024 (1 GB), 2048 (2 GB)</p> </li> <li> <p>512 (.5 vCPU) - Available
-     * <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
-     * GB)</p> </li> <li> <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048
-     * (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
-     * GB)</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
-     * Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p> </li>
-     * <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8
-     * GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li> </ul>
+     * your range of supported values for the <code>memory</code> parameter:</p> <p>The
+     * CPU units cannot be less than 1 vCPU when you use Windows containers on
+     * Fargate.</p> <ul> <li> <p>256 (.25 vCPU) - Available <code>memory</code> values:
+     * 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li> <li> <p>512 (.5 vCPU) -
+     * Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB),
+     * 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) - Available <code>memory</code>
+     * values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7
+     * GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code>
+     * values: Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p>
+     * </li> <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192
+     * (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li> </ul>
      */
     inline RegisterTaskDefinitionRequest& WithCpu(const char* value) { SetCpu(value); return *this;}
 
 
     /**
      * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
-     * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
+     * integer using MiB (for example ,<code>1024</code>) or as a string using GB (for
+     * example, <code>1GB</code> or <code>1 GB</code>) in a task definition. String
      * values are converted to an integer indicating the MiB when the task definition
      * is registered.</p>  <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
      * Windows containers.</p>  <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
-     * you must use one of the following values, which determines your range of
-     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
-     * GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25
-     * vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) -
-     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB),
-     * 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) -
-     * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096
-     * (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
+     * you must use one of the following values. This determines your range of
+     * supported values for the <code>cpu</code> parameter.</p> <p>The CPU units cannot
+     * be less than 1 vCPU when you use Windows containers on Fargate.</p> <ul> <li>
+     * <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values:
+     * 256 (.25 vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
+     * GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2
+     * GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
+     * GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between
+     * 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
      * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and
      * 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
      * 4096 (4 vCPU)</p> </li> </ul>
@@ -941,21 +942,22 @@ namespace Model
 
     /**
      * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
-     * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
+     * integer using MiB (for example ,<code>1024</code>) or as a string using GB (for
+     * example, <code>1GB</code> or <code>1 GB</code>) in a task definition. String
      * values are converted to an integer indicating the MiB when the task definition
      * is registered.</p>  <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
      * Windows containers.</p>  <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
-     * you must use one of the following values, which determines your range of
-     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
-     * GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25
-     * vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) -
-     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB),
-     * 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) -
-     * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096
-     * (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
+     * you must use one of the following values. This determines your range of
+     * supported values for the <code>cpu</code> parameter.</p> <p>The CPU units cannot
+     * be less than 1 vCPU when you use Windows containers on Fargate.</p> <ul> <li>
+     * <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values:
+     * 256 (.25 vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
+     * GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2
+     * GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
+     * GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between
+     * 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
      * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and
      * 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
      * 4096 (4 vCPU)</p> </li> </ul>
@@ -964,21 +966,22 @@ namespace Model
 
     /**
      * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
-     * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
+     * integer using MiB (for example ,<code>1024</code>) or as a string using GB (for
+     * example, <code>1GB</code> or <code>1 GB</code>) in a task definition. String
      * values are converted to an integer indicating the MiB when the task definition
      * is registered.</p>  <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
      * Windows containers.</p>  <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
-     * you must use one of the following values, which determines your range of
-     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
-     * GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25
-     * vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) -
-     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB),
-     * 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) -
-     * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096
-     * (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
+     * you must use one of the following values. This determines your range of
+     * supported values for the <code>cpu</code> parameter.</p> <p>The CPU units cannot
+     * be less than 1 vCPU when you use Windows containers on Fargate.</p> <ul> <li>
+     * <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values:
+     * 256 (.25 vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
+     * GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2
+     * GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
+     * GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between
+     * 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
      * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and
      * 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
      * 4096 (4 vCPU)</p> </li> </ul>
@@ -987,21 +990,22 @@ namespace Model
 
     /**
      * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
-     * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
+     * integer using MiB (for example ,<code>1024</code>) or as a string using GB (for
+     * example, <code>1GB</code> or <code>1 GB</code>) in a task definition. String
      * values are converted to an integer indicating the MiB when the task definition
      * is registered.</p>  <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
      * Windows containers.</p>  <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
-     * you must use one of the following values, which determines your range of
-     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
-     * GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25
-     * vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) -
-     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB),
-     * 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) -
-     * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096
-     * (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
+     * you must use one of the following values. This determines your range of
+     * supported values for the <code>cpu</code> parameter.</p> <p>The CPU units cannot
+     * be less than 1 vCPU when you use Windows containers on Fargate.</p> <ul> <li>
+     * <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values:
+     * 256 (.25 vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
+     * GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2
+     * GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
+     * GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between
+     * 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
      * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and
      * 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
      * 4096 (4 vCPU)</p> </li> </ul>
@@ -1010,21 +1014,22 @@ namespace Model
 
     /**
      * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
-     * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
+     * integer using MiB (for example ,<code>1024</code>) or as a string using GB (for
+     * example, <code>1GB</code> or <code>1 GB</code>) in a task definition. String
      * values are converted to an integer indicating the MiB when the task definition
      * is registered.</p>  <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
      * Windows containers.</p>  <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
-     * you must use one of the following values, which determines your range of
-     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
-     * GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25
-     * vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) -
-     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB),
-     * 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) -
-     * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096
-     * (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
+     * you must use one of the following values. This determines your range of
+     * supported values for the <code>cpu</code> parameter.</p> <p>The CPU units cannot
+     * be less than 1 vCPU when you use Windows containers on Fargate.</p> <ul> <li>
+     * <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values:
+     * 256 (.25 vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
+     * GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2
+     * GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
+     * GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between
+     * 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
      * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and
      * 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
      * 4096 (4 vCPU)</p> </li> </ul>
@@ -1033,21 +1038,22 @@ namespace Model
 
     /**
      * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
-     * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
+     * integer using MiB (for example ,<code>1024</code>) or as a string using GB (for
+     * example, <code>1GB</code> or <code>1 GB</code>) in a task definition. String
      * values are converted to an integer indicating the MiB when the task definition
      * is registered.</p>  <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
      * Windows containers.</p>  <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
-     * you must use one of the following values, which determines your range of
-     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
-     * GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25
-     * vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) -
-     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB),
-     * 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) -
-     * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096
-     * (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
+     * you must use one of the following values. This determines your range of
+     * supported values for the <code>cpu</code> parameter.</p> <p>The CPU units cannot
+     * be less than 1 vCPU when you use Windows containers on Fargate.</p> <ul> <li>
+     * <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values:
+     * 256 (.25 vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
+     * GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2
+     * GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
+     * GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between
+     * 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
      * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and
      * 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
      * 4096 (4 vCPU)</p> </li> </ul>
@@ -1056,21 +1062,22 @@ namespace Model
 
     /**
      * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
-     * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
+     * integer using MiB (for example ,<code>1024</code>) or as a string using GB (for
+     * example, <code>1GB</code> or <code>1 GB</code>) in a task definition. String
      * values are converted to an integer indicating the MiB when the task definition
      * is registered.</p>  <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
      * Windows containers.</p>  <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
-     * you must use one of the following values, which determines your range of
-     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
-     * GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25
-     * vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) -
-     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB),
-     * 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) -
-     * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096
-     * (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
+     * you must use one of the following values. This determines your range of
+     * supported values for the <code>cpu</code> parameter.</p> <p>The CPU units cannot
+     * be less than 1 vCPU when you use Windows containers on Fargate.</p> <ul> <li>
+     * <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values:
+     * 256 (.25 vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
+     * GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2
+     * GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
+     * GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between
+     * 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
      * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and
      * 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
      * 4096 (4 vCPU)</p> </li> </ul>
@@ -1079,21 +1086,22 @@ namespace Model
 
     /**
      * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
-     * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
+     * integer using MiB (for example ,<code>1024</code>) or as a string using GB (for
+     * example, <code>1GB</code> or <code>1 GB</code>) in a task definition. String
      * values are converted to an integer indicating the MiB when the task definition
      * is registered.</p>  <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
      * Windows containers.</p>  <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
-     * you must use one of the following values, which determines your range of
-     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
-     * GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25
-     * vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) -
-     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB),
-     * 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) -
-     * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096
-     * (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
+     * you must use one of the following values. This determines your range of
+     * supported values for the <code>cpu</code> parameter.</p> <p>The CPU units cannot
+     * be less than 1 vCPU when you use Windows containers on Fargate.</p> <ul> <li>
+     * <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values:
+     * 256 (.25 vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
+     * GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2
+     * GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
+     * GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between
+     * 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
      * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and
      * 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
      * 4096 (4 vCPU)</p> </li> </ul>
@@ -1103,8 +1111,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the task definition to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * organize them. Each tag consists of a key and an optional value. You define both
+     * of them.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -1123,8 +1131,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the task definition to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * organize them. Each tag consists of a key and an optional value. You define both
+     * of them.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -1143,8 +1151,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the task definition to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * organize them. Each tag consists of a key and an optional value. You define both
+     * of them.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -1163,8 +1171,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the task definition to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * organize them. Each tag consists of a key and an optional value. You define both
+     * of them.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -1183,8 +1191,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the task definition to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * organize them. Each tag consists of a key and an optional value. You define both
+     * of them.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -1203,8 +1211,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the task definition to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * organize them. Each tag consists of a key and an optional value. You define both
+     * of them.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -1223,8 +1231,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the task definition to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * organize them. Each tag consists of a key and an optional value. You define both
+     * of them.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>
@@ -1243,8 +1251,8 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the task definition to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
+     * organize them. Each tag consists of a key and an optional value. You define both
+     * of them.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li>
      * <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource,
      * each tag key must be unique, and each tag key can have only one value.</p> </li>
      * <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li>

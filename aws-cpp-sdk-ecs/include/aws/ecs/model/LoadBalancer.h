@@ -44,23 +44,22 @@ namespace Model
      * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
      * group or groups associated with a service or task set.</p> <p>A target group ARN
      * is only specified when using an Application Load Balancer or Network Load
-     * Balancer. If you are using a Classic Load Balancer the target group ARN should
-     * be omitted.</p> <p>For services using the <code>ECS</code> deployment
-     * controller, you can specify one or multiple target groups. For more information,
-     * see <a
+     * Balancer. If you're using a Classic Load Balancer, omit the target group
+     * ARN.</p> <p>For services using the <code>ECS</code> deployment controller, you
+     * can specify one or multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Registering
      * Multiple Target Groups with a Service</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>For services using the
-     * <code>CODE_DEPLOY</code> deployment controller, you are required to define two
+     * <code>CODE_DEPLOY</code> deployment controller, you're required to define two
      * target groups for the load balancer. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/Green
      * Deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>  <p>If your service's task definition uses
-     * the <code>awsvpc</code> network mode (which is required for the Fargate launch
-     * type), you must choose <code>ip</code> as the target type, not
-     * <code>instance</code>, when creating your target groups because tasks that use
-     * the <code>awsvpc</code> network mode are associated with an elastic network
-     * interface, not an Amazon EC2 instance.</p> 
+     * the <code>awsvpc</code> network mode, you must choose <code>ip</code> as the
+     * target type, not <code>instance</code>. Do this when creating your target groups
+     * because tasks that use the <code>awsvpc</code> network mode are associated with
+     * an elastic network interface, not an Amazon EC2 instance. This network mode is
+     * required for the Fargate launch type.</p> 
      */
     inline const Aws::String& GetTargetGroupArn() const{ return m_targetGroupArn; }
 
@@ -68,23 +67,22 @@ namespace Model
      * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
      * group or groups associated with a service or task set.</p> <p>A target group ARN
      * is only specified when using an Application Load Balancer or Network Load
-     * Balancer. If you are using a Classic Load Balancer the target group ARN should
-     * be omitted.</p> <p>For services using the <code>ECS</code> deployment
-     * controller, you can specify one or multiple target groups. For more information,
-     * see <a
+     * Balancer. If you're using a Classic Load Balancer, omit the target group
+     * ARN.</p> <p>For services using the <code>ECS</code> deployment controller, you
+     * can specify one or multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Registering
      * Multiple Target Groups with a Service</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>For services using the
-     * <code>CODE_DEPLOY</code> deployment controller, you are required to define two
+     * <code>CODE_DEPLOY</code> deployment controller, you're required to define two
      * target groups for the load balancer. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/Green
      * Deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>  <p>If your service's task definition uses
-     * the <code>awsvpc</code> network mode (which is required for the Fargate launch
-     * type), you must choose <code>ip</code> as the target type, not
-     * <code>instance</code>, when creating your target groups because tasks that use
-     * the <code>awsvpc</code> network mode are associated with an elastic network
-     * interface, not an Amazon EC2 instance.</p> 
+     * the <code>awsvpc</code> network mode, you must choose <code>ip</code> as the
+     * target type, not <code>instance</code>. Do this when creating your target groups
+     * because tasks that use the <code>awsvpc</code> network mode are associated with
+     * an elastic network interface, not an Amazon EC2 instance. This network mode is
+     * required for the Fargate launch type.</p> 
      */
     inline bool TargetGroupArnHasBeenSet() const { return m_targetGroupArnHasBeenSet; }
 
@@ -92,23 +90,22 @@ namespace Model
      * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
      * group or groups associated with a service or task set.</p> <p>A target group ARN
      * is only specified when using an Application Load Balancer or Network Load
-     * Balancer. If you are using a Classic Load Balancer the target group ARN should
-     * be omitted.</p> <p>For services using the <code>ECS</code> deployment
-     * controller, you can specify one or multiple target groups. For more information,
-     * see <a
+     * Balancer. If you're using a Classic Load Balancer, omit the target group
+     * ARN.</p> <p>For services using the <code>ECS</code> deployment controller, you
+     * can specify one or multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Registering
      * Multiple Target Groups with a Service</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>For services using the
-     * <code>CODE_DEPLOY</code> deployment controller, you are required to define two
+     * <code>CODE_DEPLOY</code> deployment controller, you're required to define two
      * target groups for the load balancer. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/Green
      * Deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>  <p>If your service's task definition uses
-     * the <code>awsvpc</code> network mode (which is required for the Fargate launch
-     * type), you must choose <code>ip</code> as the target type, not
-     * <code>instance</code>, when creating your target groups because tasks that use
-     * the <code>awsvpc</code> network mode are associated with an elastic network
-     * interface, not an Amazon EC2 instance.</p> 
+     * the <code>awsvpc</code> network mode, you must choose <code>ip</code> as the
+     * target type, not <code>instance</code>. Do this when creating your target groups
+     * because tasks that use the <code>awsvpc</code> network mode are associated with
+     * an elastic network interface, not an Amazon EC2 instance. This network mode is
+     * required for the Fargate launch type.</p> 
      */
     inline void SetTargetGroupArn(const Aws::String& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = value; }
 
@@ -116,23 +113,22 @@ namespace Model
      * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
      * group or groups associated with a service or task set.</p> <p>A target group ARN
      * is only specified when using an Application Load Balancer or Network Load
-     * Balancer. If you are using a Classic Load Balancer the target group ARN should
-     * be omitted.</p> <p>For services using the <code>ECS</code> deployment
-     * controller, you can specify one or multiple target groups. For more information,
-     * see <a
+     * Balancer. If you're using a Classic Load Balancer, omit the target group
+     * ARN.</p> <p>For services using the <code>ECS</code> deployment controller, you
+     * can specify one or multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Registering
      * Multiple Target Groups with a Service</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>For services using the
-     * <code>CODE_DEPLOY</code> deployment controller, you are required to define two
+     * <code>CODE_DEPLOY</code> deployment controller, you're required to define two
      * target groups for the load balancer. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/Green
      * Deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>  <p>If your service's task definition uses
-     * the <code>awsvpc</code> network mode (which is required for the Fargate launch
-     * type), you must choose <code>ip</code> as the target type, not
-     * <code>instance</code>, when creating your target groups because tasks that use
-     * the <code>awsvpc</code> network mode are associated with an elastic network
-     * interface, not an Amazon EC2 instance.</p> 
+     * the <code>awsvpc</code> network mode, you must choose <code>ip</code> as the
+     * target type, not <code>instance</code>. Do this when creating your target groups
+     * because tasks that use the <code>awsvpc</code> network mode are associated with
+     * an elastic network interface, not an Amazon EC2 instance. This network mode is
+     * required for the Fargate launch type.</p> 
      */
     inline void SetTargetGroupArn(Aws::String&& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = std::move(value); }
 
@@ -140,23 +136,22 @@ namespace Model
      * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
      * group or groups associated with a service or task set.</p> <p>A target group ARN
      * is only specified when using an Application Load Balancer or Network Load
-     * Balancer. If you are using a Classic Load Balancer the target group ARN should
-     * be omitted.</p> <p>For services using the <code>ECS</code> deployment
-     * controller, you can specify one or multiple target groups. For more information,
-     * see <a
+     * Balancer. If you're using a Classic Load Balancer, omit the target group
+     * ARN.</p> <p>For services using the <code>ECS</code> deployment controller, you
+     * can specify one or multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Registering
      * Multiple Target Groups with a Service</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>For services using the
-     * <code>CODE_DEPLOY</code> deployment controller, you are required to define two
+     * <code>CODE_DEPLOY</code> deployment controller, you're required to define two
      * target groups for the load balancer. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/Green
      * Deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>  <p>If your service's task definition uses
-     * the <code>awsvpc</code> network mode (which is required for the Fargate launch
-     * type), you must choose <code>ip</code> as the target type, not
-     * <code>instance</code>, when creating your target groups because tasks that use
-     * the <code>awsvpc</code> network mode are associated with an elastic network
-     * interface, not an Amazon EC2 instance.</p> 
+     * the <code>awsvpc</code> network mode, you must choose <code>ip</code> as the
+     * target type, not <code>instance</code>. Do this when creating your target groups
+     * because tasks that use the <code>awsvpc</code> network mode are associated with
+     * an elastic network interface, not an Amazon EC2 instance. This network mode is
+     * required for the Fargate launch type.</p> 
      */
     inline void SetTargetGroupArn(const char* value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn.assign(value); }
 
@@ -164,23 +159,22 @@ namespace Model
      * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
      * group or groups associated with a service or task set.</p> <p>A target group ARN
      * is only specified when using an Application Load Balancer or Network Load
-     * Balancer. If you are using a Classic Load Balancer the target group ARN should
-     * be omitted.</p> <p>For services using the <code>ECS</code> deployment
-     * controller, you can specify one or multiple target groups. For more information,
-     * see <a
+     * Balancer. If you're using a Classic Load Balancer, omit the target group
+     * ARN.</p> <p>For services using the <code>ECS</code> deployment controller, you
+     * can specify one or multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Registering
      * Multiple Target Groups with a Service</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>For services using the
-     * <code>CODE_DEPLOY</code> deployment controller, you are required to define two
+     * <code>CODE_DEPLOY</code> deployment controller, you're required to define two
      * target groups for the load balancer. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/Green
      * Deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>  <p>If your service's task definition uses
-     * the <code>awsvpc</code> network mode (which is required for the Fargate launch
-     * type), you must choose <code>ip</code> as the target type, not
-     * <code>instance</code>, when creating your target groups because tasks that use
-     * the <code>awsvpc</code> network mode are associated with an elastic network
-     * interface, not an Amazon EC2 instance.</p> 
+     * the <code>awsvpc</code> network mode, you must choose <code>ip</code> as the
+     * target type, not <code>instance</code>. Do this when creating your target groups
+     * because tasks that use the <code>awsvpc</code> network mode are associated with
+     * an elastic network interface, not an Amazon EC2 instance. This network mode is
+     * required for the Fargate launch type.</p> 
      */
     inline LoadBalancer& WithTargetGroupArn(const Aws::String& value) { SetTargetGroupArn(value); return *this;}
 
@@ -188,23 +182,22 @@ namespace Model
      * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
      * group or groups associated with a service or task set.</p> <p>A target group ARN
      * is only specified when using an Application Load Balancer or Network Load
-     * Balancer. If you are using a Classic Load Balancer the target group ARN should
-     * be omitted.</p> <p>For services using the <code>ECS</code> deployment
-     * controller, you can specify one or multiple target groups. For more information,
-     * see <a
+     * Balancer. If you're using a Classic Load Balancer, omit the target group
+     * ARN.</p> <p>For services using the <code>ECS</code> deployment controller, you
+     * can specify one or multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Registering
      * Multiple Target Groups with a Service</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>For services using the
-     * <code>CODE_DEPLOY</code> deployment controller, you are required to define two
+     * <code>CODE_DEPLOY</code> deployment controller, you're required to define two
      * target groups for the load balancer. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/Green
      * Deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>  <p>If your service's task definition uses
-     * the <code>awsvpc</code> network mode (which is required for the Fargate launch
-     * type), you must choose <code>ip</code> as the target type, not
-     * <code>instance</code>, when creating your target groups because tasks that use
-     * the <code>awsvpc</code> network mode are associated with an elastic network
-     * interface, not an Amazon EC2 instance.</p> 
+     * the <code>awsvpc</code> network mode, you must choose <code>ip</code> as the
+     * target type, not <code>instance</code>. Do this when creating your target groups
+     * because tasks that use the <code>awsvpc</code> network mode are associated with
+     * an elastic network interface, not an Amazon EC2 instance. This network mode is
+     * required for the Fargate launch type.</p> 
      */
     inline LoadBalancer& WithTargetGroupArn(Aws::String&& value) { SetTargetGroupArn(std::move(value)); return *this;}
 
@@ -212,23 +205,22 @@ namespace Model
      * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
      * group or groups associated with a service or task set.</p> <p>A target group ARN
      * is only specified when using an Application Load Balancer or Network Load
-     * Balancer. If you are using a Classic Load Balancer the target group ARN should
-     * be omitted.</p> <p>For services using the <code>ECS</code> deployment
-     * controller, you can specify one or multiple target groups. For more information,
-     * see <a
+     * Balancer. If you're using a Classic Load Balancer, omit the target group
+     * ARN.</p> <p>For services using the <code>ECS</code> deployment controller, you
+     * can specify one or multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Registering
      * Multiple Target Groups with a Service</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>For services using the
-     * <code>CODE_DEPLOY</code> deployment controller, you are required to define two
+     * <code>CODE_DEPLOY</code> deployment controller, you're required to define two
      * target groups for the load balancer. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/Green
      * Deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>  <p>If your service's task definition uses
-     * the <code>awsvpc</code> network mode (which is required for the Fargate launch
-     * type), you must choose <code>ip</code> as the target type, not
-     * <code>instance</code>, when creating your target groups because tasks that use
-     * the <code>awsvpc</code> network mode are associated with an elastic network
-     * interface, not an Amazon EC2 instance.</p> 
+     * the <code>awsvpc</code> network mode, you must choose <code>ip</code> as the
+     * target type, not <code>instance</code>. Do this when creating your target groups
+     * because tasks that use the <code>awsvpc</code> network mode are associated with
+     * an elastic network interface, not an Amazon EC2 instance. This network mode is
+     * required for the Fargate launch type.</p> 
      */
     inline LoadBalancer& WithTargetGroupArn(const char* value) { SetTargetGroupArn(value); return *this;}
 
@@ -351,7 +343,7 @@ namespace Model
      * <p>The port on the container to associate with the load balancer. This port must
      * correspond to a <code>containerPort</code> in the task definition the tasks in
      * the service are using. For tasks that use the EC2 launch type, the container
-     * instance they are launched on must allow ingress traffic on the
+     * instance they're launched on must allow ingress traffic on the
      * <code>hostPort</code> of the port mapping.</p>
      */
     inline int GetContainerPort() const{ return m_containerPort; }
@@ -360,7 +352,7 @@ namespace Model
      * <p>The port on the container to associate with the load balancer. This port must
      * correspond to a <code>containerPort</code> in the task definition the tasks in
      * the service are using. For tasks that use the EC2 launch type, the container
-     * instance they are launched on must allow ingress traffic on the
+     * instance they're launched on must allow ingress traffic on the
      * <code>hostPort</code> of the port mapping.</p>
      */
     inline bool ContainerPortHasBeenSet() const { return m_containerPortHasBeenSet; }
@@ -369,7 +361,7 @@ namespace Model
      * <p>The port on the container to associate with the load balancer. This port must
      * correspond to a <code>containerPort</code> in the task definition the tasks in
      * the service are using. For tasks that use the EC2 launch type, the container
-     * instance they are launched on must allow ingress traffic on the
+     * instance they're launched on must allow ingress traffic on the
      * <code>hostPort</code> of the port mapping.</p>
      */
     inline void SetContainerPort(int value) { m_containerPortHasBeenSet = true; m_containerPort = value; }
@@ -378,7 +370,7 @@ namespace Model
      * <p>The port on the container to associate with the load balancer. This port must
      * correspond to a <code>containerPort</code> in the task definition the tasks in
      * the service are using. For tasks that use the EC2 launch type, the container
-     * instance they are launched on must allow ingress traffic on the
+     * instance they're launched on must allow ingress traffic on the
      * <code>hostPort</code> of the port mapping.</p>
      */
     inline LoadBalancer& WithContainerPort(int value) { SetContainerPort(value); return *this;}

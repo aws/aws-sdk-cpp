@@ -38,66 +38,66 @@ namespace Model
 
 
     /**
-     * <p>The name of the capacity provider. Up to 255 characters are allowed,
-     * including letters (upper and lowercase), numbers, underscores, and hyphens. The
-     * name cannot be prefixed with "<code>aws</code>", "<code>ecs</code>", or
-     * "<code>fargate</code>".</p>
+     * <p>The name of the capacity provider. Up to 255 characters are allowed. They
+     * include letters (both upper and lowercase letters), numbers, underscores (_),
+     * and hyphens (-). The name can't be prefixed with "<code>aws</code>",
+     * "<code>ecs</code>", or "<code>fargate</code>".</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the capacity provider. Up to 255 characters are allowed,
-     * including letters (upper and lowercase), numbers, underscores, and hyphens. The
-     * name cannot be prefixed with "<code>aws</code>", "<code>ecs</code>", or
-     * "<code>fargate</code>".</p>
+     * <p>The name of the capacity provider. Up to 255 characters are allowed. They
+     * include letters (both upper and lowercase letters), numbers, underscores (_),
+     * and hyphens (-). The name can't be prefixed with "<code>aws</code>",
+     * "<code>ecs</code>", or "<code>fargate</code>".</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the capacity provider. Up to 255 characters are allowed,
-     * including letters (upper and lowercase), numbers, underscores, and hyphens. The
-     * name cannot be prefixed with "<code>aws</code>", "<code>ecs</code>", or
-     * "<code>fargate</code>".</p>
+     * <p>The name of the capacity provider. Up to 255 characters are allowed. They
+     * include letters (both upper and lowercase letters), numbers, underscores (_),
+     * and hyphens (-). The name can't be prefixed with "<code>aws</code>",
+     * "<code>ecs</code>", or "<code>fargate</code>".</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the capacity provider. Up to 255 characters are allowed,
-     * including letters (upper and lowercase), numbers, underscores, and hyphens. The
-     * name cannot be prefixed with "<code>aws</code>", "<code>ecs</code>", or
-     * "<code>fargate</code>".</p>
+     * <p>The name of the capacity provider. Up to 255 characters are allowed. They
+     * include letters (both upper and lowercase letters), numbers, underscores (_),
+     * and hyphens (-). The name can't be prefixed with "<code>aws</code>",
+     * "<code>ecs</code>", or "<code>fargate</code>".</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the capacity provider. Up to 255 characters are allowed,
-     * including letters (upper and lowercase), numbers, underscores, and hyphens. The
-     * name cannot be prefixed with "<code>aws</code>", "<code>ecs</code>", or
-     * "<code>fargate</code>".</p>
+     * <p>The name of the capacity provider. Up to 255 characters are allowed. They
+     * include letters (both upper and lowercase letters), numbers, underscores (_),
+     * and hyphens (-). The name can't be prefixed with "<code>aws</code>",
+     * "<code>ecs</code>", or "<code>fargate</code>".</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the capacity provider. Up to 255 characters are allowed,
-     * including letters (upper and lowercase), numbers, underscores, and hyphens. The
-     * name cannot be prefixed with "<code>aws</code>", "<code>ecs</code>", or
-     * "<code>fargate</code>".</p>
+     * <p>The name of the capacity provider. Up to 255 characters are allowed. They
+     * include letters (both upper and lowercase letters), numbers, underscores (_),
+     * and hyphens (-). The name can't be prefixed with "<code>aws</code>",
+     * "<code>ecs</code>", or "<code>fargate</code>".</p>
      */
     inline CreateCapacityProviderRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the capacity provider. Up to 255 characters are allowed,
-     * including letters (upper and lowercase), numbers, underscores, and hyphens. The
-     * name cannot be prefixed with "<code>aws</code>", "<code>ecs</code>", or
-     * "<code>fargate</code>".</p>
+     * <p>The name of the capacity provider. Up to 255 characters are allowed. They
+     * include letters (both upper and lowercase letters), numbers, underscores (_),
+     * and hyphens (-). The name can't be prefixed with "<code>aws</code>",
+     * "<code>ecs</code>", or "<code>fargate</code>".</p>
      */
     inline CreateCapacityProviderRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the capacity provider. Up to 255 characters are allowed,
-     * including letters (upper and lowercase), numbers, underscores, and hyphens. The
-     * name cannot be prefixed with "<code>aws</code>", "<code>ecs</code>", or
-     * "<code>fargate</code>".</p>
+     * <p>The name of the capacity provider. Up to 255 characters are allowed. They
+     * include letters (both upper and lowercase letters), numbers, underscores (_),
+     * and hyphens (-). The name can't be prefixed with "<code>aws</code>",
+     * "<code>ecs</code>", or "<code>fargate</code>".</p>
      */
     inline CreateCapacityProviderRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -134,12 +134,12 @@ namespace Model
 
 
     /**
-     * <p>The metadata that you apply to the capacity provider to help you categorize
-     * and organize them. Each tag consists of a key and an optional value, both of
-     * which you define.</p> <p>The following basic restrictions apply to tags:</p>
-     * <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each
-     * resource, each tag key must be unique, and each tag key can have only one
-     * value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
+     * <p>The metadata that you apply to the capacity provider to categorize and
+     * organize them more conveniently. Each tag consists of a key and an optional
+     * value. You define both of them.</p> <p>The following basic restrictions apply to
+     * tags:</p> <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li>
+     * <p>For each resource, each tag key must be unique, and each tag key can have
+     * only one value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
      * UTF-8</p> </li> <li> <p>Maximum value length - 256 Unicode characters in
      * UTF-8</p> </li> <li> <p>If your tagging schema is used across multiple services
      * and resources, remember that other services may have restrictions on allowed
@@ -155,12 +155,12 @@ namespace Model
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The metadata that you apply to the capacity provider to help you categorize
-     * and organize them. Each tag consists of a key and an optional value, both of
-     * which you define.</p> <p>The following basic restrictions apply to tags:</p>
-     * <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each
-     * resource, each tag key must be unique, and each tag key can have only one
-     * value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
+     * <p>The metadata that you apply to the capacity provider to categorize and
+     * organize them more conveniently. Each tag consists of a key and an optional
+     * value. You define both of them.</p> <p>The following basic restrictions apply to
+     * tags:</p> <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li>
+     * <p>For each resource, each tag key must be unique, and each tag key can have
+     * only one value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
      * UTF-8</p> </li> <li> <p>Maximum value length - 256 Unicode characters in
      * UTF-8</p> </li> <li> <p>If your tagging schema is used across multiple services
      * and resources, remember that other services may have restrictions on allowed
@@ -176,12 +176,12 @@ namespace Model
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The metadata that you apply to the capacity provider to help you categorize
-     * and organize them. Each tag consists of a key and an optional value, both of
-     * which you define.</p> <p>The following basic restrictions apply to tags:</p>
-     * <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each
-     * resource, each tag key must be unique, and each tag key can have only one
-     * value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
+     * <p>The metadata that you apply to the capacity provider to categorize and
+     * organize them more conveniently. Each tag consists of a key and an optional
+     * value. You define both of them.</p> <p>The following basic restrictions apply to
+     * tags:</p> <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li>
+     * <p>For each resource, each tag key must be unique, and each tag key can have
+     * only one value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
      * UTF-8</p> </li> <li> <p>Maximum value length - 256 Unicode characters in
      * UTF-8</p> </li> <li> <p>If your tagging schema is used across multiple services
      * and resources, remember that other services may have restrictions on allowed
@@ -197,12 +197,12 @@ namespace Model
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The metadata that you apply to the capacity provider to help you categorize
-     * and organize them. Each tag consists of a key and an optional value, both of
-     * which you define.</p> <p>The following basic restrictions apply to tags:</p>
-     * <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each
-     * resource, each tag key must be unique, and each tag key can have only one
-     * value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
+     * <p>The metadata that you apply to the capacity provider to categorize and
+     * organize them more conveniently. Each tag consists of a key and an optional
+     * value. You define both of them.</p> <p>The following basic restrictions apply to
+     * tags:</p> <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li>
+     * <p>For each resource, each tag key must be unique, and each tag key can have
+     * only one value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
      * UTF-8</p> </li> <li> <p>Maximum value length - 256 Unicode characters in
      * UTF-8</p> </li> <li> <p>If your tagging schema is used across multiple services
      * and resources, remember that other services may have restrictions on allowed
@@ -218,12 +218,12 @@ namespace Model
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The metadata that you apply to the capacity provider to help you categorize
-     * and organize them. Each tag consists of a key and an optional value, both of
-     * which you define.</p> <p>The following basic restrictions apply to tags:</p>
-     * <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each
-     * resource, each tag key must be unique, and each tag key can have only one
-     * value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
+     * <p>The metadata that you apply to the capacity provider to categorize and
+     * organize them more conveniently. Each tag consists of a key and an optional
+     * value. You define both of them.</p> <p>The following basic restrictions apply to
+     * tags:</p> <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li>
+     * <p>For each resource, each tag key must be unique, and each tag key can have
+     * only one value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
      * UTF-8</p> </li> <li> <p>Maximum value length - 256 Unicode characters in
      * UTF-8</p> </li> <li> <p>If your tagging schema is used across multiple services
      * and resources, remember that other services may have restrictions on allowed
@@ -239,12 +239,12 @@ namespace Model
     inline CreateCapacityProviderRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The metadata that you apply to the capacity provider to help you categorize
-     * and organize them. Each tag consists of a key and an optional value, both of
-     * which you define.</p> <p>The following basic restrictions apply to tags:</p>
-     * <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each
-     * resource, each tag key must be unique, and each tag key can have only one
-     * value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
+     * <p>The metadata that you apply to the capacity provider to categorize and
+     * organize them more conveniently. Each tag consists of a key and an optional
+     * value. You define both of them.</p> <p>The following basic restrictions apply to
+     * tags:</p> <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li>
+     * <p>For each resource, each tag key must be unique, and each tag key can have
+     * only one value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
      * UTF-8</p> </li> <li> <p>Maximum value length - 256 Unicode characters in
      * UTF-8</p> </li> <li> <p>If your tagging schema is used across multiple services
      * and resources, remember that other services may have restrictions on allowed
@@ -260,12 +260,12 @@ namespace Model
     inline CreateCapacityProviderRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The metadata that you apply to the capacity provider to help you categorize
-     * and organize them. Each tag consists of a key and an optional value, both of
-     * which you define.</p> <p>The following basic restrictions apply to tags:</p>
-     * <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each
-     * resource, each tag key must be unique, and each tag key can have only one
-     * value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
+     * <p>The metadata that you apply to the capacity provider to categorize and
+     * organize them more conveniently. Each tag consists of a key and an optional
+     * value. You define both of them.</p> <p>The following basic restrictions apply to
+     * tags:</p> <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li>
+     * <p>For each resource, each tag key must be unique, and each tag key can have
+     * only one value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
      * UTF-8</p> </li> <li> <p>Maximum value length - 256 Unicode characters in
      * UTF-8</p> </li> <li> <p>If your tagging schema is used across multiple services
      * and resources, remember that other services may have restrictions on allowed
@@ -281,12 +281,12 @@ namespace Model
     inline CreateCapacityProviderRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The metadata that you apply to the capacity provider to help you categorize
-     * and organize them. Each tag consists of a key and an optional value, both of
-     * which you define.</p> <p>The following basic restrictions apply to tags:</p>
-     * <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each
-     * resource, each tag key must be unique, and each tag key can have only one
-     * value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
+     * <p>The metadata that you apply to the capacity provider to categorize and
+     * organize them more conveniently. Each tag consists of a key and an optional
+     * value. You define both of them.</p> <p>The following basic restrictions apply to
+     * tags:</p> <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li>
+     * <p>For each resource, each tag key must be unique, and each tag key can have
+     * only one value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in
      * UTF-8</p> </li> <li> <p>Maximum value length - 256 Unicode characters in
      * UTF-8</p> </li> <li> <p>If your tagging schema is used across multiple services
      * and resources, remember that other services may have restrictions on allowed

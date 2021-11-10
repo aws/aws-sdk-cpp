@@ -91,7 +91,7 @@ namespace Model
      * <p>The secret to expose to the container. The supported values are either the
      * full ARN of the Secrets Manager secret or the full ARN of the parameter in the
      * SSM Parameter Store.</p>  <p>If the SSM Parameter Store parameter exists
-     * in the same Region as the task you are launching, then you can use either the
+     * in the same Region as the task you're launching, then you can use either the
      * full ARN or name of the parameter. If the parameter exists in a different
      * Region, then the full ARN must be specified.</p> 
      */
@@ -101,7 +101,7 @@ namespace Model
      * <p>The secret to expose to the container. The supported values are either the
      * full ARN of the Secrets Manager secret or the full ARN of the parameter in the
      * SSM Parameter Store.</p>  <p>If the SSM Parameter Store parameter exists
-     * in the same Region as the task you are launching, then you can use either the
+     * in the same Region as the task you're launching, then you can use either the
      * full ARN or name of the parameter. If the parameter exists in a different
      * Region, then the full ARN must be specified.</p> 
      */
@@ -111,7 +111,7 @@ namespace Model
      * <p>The secret to expose to the container. The supported values are either the
      * full ARN of the Secrets Manager secret or the full ARN of the parameter in the
      * SSM Parameter Store.</p>  <p>If the SSM Parameter Store parameter exists
-     * in the same Region as the task you are launching, then you can use either the
+     * in the same Region as the task you're launching, then you can use either the
      * full ARN or name of the parameter. If the parameter exists in a different
      * Region, then the full ARN must be specified.</p> 
      */
@@ -121,7 +121,7 @@ namespace Model
      * <p>The secret to expose to the container. The supported values are either the
      * full ARN of the Secrets Manager secret or the full ARN of the parameter in the
      * SSM Parameter Store.</p>  <p>If the SSM Parameter Store parameter exists
-     * in the same Region as the task you are launching, then you can use either the
+     * in the same Region as the task you're launching, then you can use either the
      * full ARN or name of the parameter. If the parameter exists in a different
      * Region, then the full ARN must be specified.</p> 
      */
@@ -131,7 +131,7 @@ namespace Model
      * <p>The secret to expose to the container. The supported values are either the
      * full ARN of the Secrets Manager secret or the full ARN of the parameter in the
      * SSM Parameter Store.</p>  <p>If the SSM Parameter Store parameter exists
-     * in the same Region as the task you are launching, then you can use either the
+     * in the same Region as the task you're launching, then you can use either the
      * full ARN or name of the parameter. If the parameter exists in a different
      * Region, then the full ARN must be specified.</p> 
      */
@@ -141,7 +141,7 @@ namespace Model
      * <p>The secret to expose to the container. The supported values are either the
      * full ARN of the Secrets Manager secret or the full ARN of the parameter in the
      * SSM Parameter Store.</p>  <p>If the SSM Parameter Store parameter exists
-     * in the same Region as the task you are launching, then you can use either the
+     * in the same Region as the task you're launching, then you can use either the
      * full ARN or name of the parameter. If the parameter exists in a different
      * Region, then the full ARN must be specified.</p> 
      */
@@ -151,7 +151,7 @@ namespace Model
      * <p>The secret to expose to the container. The supported values are either the
      * full ARN of the Secrets Manager secret or the full ARN of the parameter in the
      * SSM Parameter Store.</p>  <p>If the SSM Parameter Store parameter exists
-     * in the same Region as the task you are launching, then you can use either the
+     * in the same Region as the task you're launching, then you can use either the
      * full ARN or name of the parameter. If the parameter exists in a different
      * Region, then the full ARN must be specified.</p> 
      */
@@ -161,7 +161,7 @@ namespace Model
      * <p>The secret to expose to the container. The supported values are either the
      * full ARN of the Secrets Manager secret or the full ARN of the parameter in the
      * SSM Parameter Store.</p>  <p>If the SSM Parameter Store parameter exists
-     * in the same Region as the task you are launching, then you can use either the
+     * in the same Region as the task you're launching, then you can use either the
      * full ARN or name of the parameter. If the parameter exists in a different
      * Region, then the full ARN must be specified.</p> 
      */

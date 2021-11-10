@@ -77,37 +77,37 @@ namespace Model
 
 
     /**
-     * <p>An object representing the parameters to update for the Auto Scaling group
+     * <p>An object that represent the parameters to update for the Auto Scaling group
      * capacity provider.</p>
      */
     inline const AutoScalingGroupProviderUpdate& GetAutoScalingGroupProvider() const{ return m_autoScalingGroupProvider; }
 
     /**
-     * <p>An object representing the parameters to update for the Auto Scaling group
+     * <p>An object that represent the parameters to update for the Auto Scaling group
      * capacity provider.</p>
      */
     inline bool AutoScalingGroupProviderHasBeenSet() const { return m_autoScalingGroupProviderHasBeenSet; }
 
     /**
-     * <p>An object representing the parameters to update for the Auto Scaling group
+     * <p>An object that represent the parameters to update for the Auto Scaling group
      * capacity provider.</p>
      */
     inline void SetAutoScalingGroupProvider(const AutoScalingGroupProviderUpdate& value) { m_autoScalingGroupProviderHasBeenSet = true; m_autoScalingGroupProvider = value; }
 
     /**
-     * <p>An object representing the parameters to update for the Auto Scaling group
+     * <p>An object that represent the parameters to update for the Auto Scaling group
      * capacity provider.</p>
      */
     inline void SetAutoScalingGroupProvider(AutoScalingGroupProviderUpdate&& value) { m_autoScalingGroupProviderHasBeenSet = true; m_autoScalingGroupProvider = std::move(value); }
 
     /**
-     * <p>An object representing the parameters to update for the Auto Scaling group
+     * <p>An object that represent the parameters to update for the Auto Scaling group
      * capacity provider.</p>
      */
     inline UpdateCapacityProviderRequest& WithAutoScalingGroupProvider(const AutoScalingGroupProviderUpdate& value) { SetAutoScalingGroupProvider(value); return *this;}
 
     /**
-     * <p>An object representing the parameters to update for the Auto Scaling group
+     * <p>An object that represent the parameters to update for the Auto Scaling group
      * capacity provider.</p>
      */
     inline UpdateCapacityProviderRequest& WithAutoScalingGroupProvider(AutoScalingGroupProviderUpdate&& value) { SetAutoScalingGroupProvider(std::move(value)); return *this;}
