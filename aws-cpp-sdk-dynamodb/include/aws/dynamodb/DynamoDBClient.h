@@ -316,14 +316,14 @@ namespace Model
    * or cluster scaling.</p> <p>With DynamoDB, you can create database tables that
    * can store and retrieve any amount of data, and serve any level of request
    * traffic. You can scale up or scale down your tables' throughput capacity without
-   * downtime or performance degradation, and use the AWS Management Console to
-   * monitor resource utilization and performance metrics.</p> <p>DynamoDB
+   * downtime or performance degradation, and use the Amazon Web Services Management
+   * Console to monitor resource utilization and performance metrics.</p> <p>DynamoDB
    * automatically spreads the data and traffic for your tables over a sufficient
    * number of servers to handle your throughput and storage requirements, while
    * maintaining consistent and fast performance. All of your data is stored on solid
    * state disks (SSDs) and automatically replicated across multiple Availability
-   * Zones in an AWS region, providing built-in high availability and data
-   * durability. </p>
+   * Zones in an Amazon Web Services Region, providing built-in high availability and
+   * data durability.</p>
    */
   class AWS_DYNAMODB_API DynamoDBClient : public Aws::Client::AWSJsonClient
   {
@@ -353,16 +353,20 @@ namespace Model
 
 
         /**
-         * <p> This operation allows you to perform batch reads and writes on data stored
-         * in DynamoDB, using PartiQL. </p><p><h3>See Also:</h3>   <a
+         * <p>This operation allows you to perform batch reads or writes on data stored in
+         * DynamoDB, using PartiQL.</p>  <p>The entire batch must consist of either
+         * read statements or write statements, you cannot mix both in one batch.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchExecuteStatement">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchExecuteStatementOutcome BatchExecuteStatement(const Model::BatchExecuteStatementRequest& request) const;
 
         /**
-         * <p> This operation allows you to perform batch reads and writes on data stored
-         * in DynamoDB, using PartiQL. </p><p><h3>See Also:</h3>   <a
+         * <p>This operation allows you to perform batch reads or writes on data stored in
+         * DynamoDB, using PartiQL.</p>  <p>The entire batch must consist of either
+         * read statements or write statements, you cannot mix both in one batch.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchExecuteStatement">AWS
          * API Reference</a></p>
          *
@@ -371,8 +375,10 @@ namespace Model
         virtual Model::BatchExecuteStatementOutcomeCallable BatchExecuteStatementCallable(const Model::BatchExecuteStatementRequest& request) const;
 
         /**
-         * <p> This operation allows you to perform batch reads and writes on data stored
-         * in DynamoDB, using PartiQL. </p><p><h3>See Also:</h3>   <a
+         * <p>This operation allows you to perform batch reads or writes on data stored in
+         * DynamoDB, using PartiQL.</p>  <p>The entire batch must consist of either
+         * read statements or write statements, you cannot mix both in one batch.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchExecuteStatement">AWS
          * API Reference</a></p>
          *
@@ -908,20 +914,20 @@ namespace Model
 
         /**
          * <p>The <code>CreateTable</code> operation adds a new table to your account. In
-         * an AWS account, table names must be unique within each Region. That is, you can
-         * have two tables with same name if you create the tables in different
-         * Regions.</p> <p> <code>CreateTable</code> is an asynchronous operation. Upon
-         * receiving a <code>CreateTable</code> request, DynamoDB immediately returns a
-         * response with a <code>TableStatus</code> of <code>CREATING</code>. After the
-         * table is created, DynamoDB sets the <code>TableStatus</code> to
-         * <code>ACTIVE</code>. You can perform read and write operations only on an
-         * <code>ACTIVE</code> table. </p> <p>You can optionally define secondary indexes
-         * on the new table, as part of the <code>CreateTable</code> operation. If you want
-         * to create multiple tables with secondary indexes on them, you must create the
-         * tables sequentially. Only one table with secondary indexes can be in the
-         * <code>CREATING</code> state at any given time.</p> <p>You can use the
-         * <code>DescribeTable</code> action to check the table status.</p><p><h3>See
-         * Also:</h3>   <a
+         * an Amazon Web Services account, table names must be unique within each Region.
+         * That is, you can have two tables with same name if you create the tables in
+         * different Regions.</p> <p> <code>CreateTable</code> is an asynchronous
+         * operation. Upon receiving a <code>CreateTable</code> request, DynamoDB
+         * immediately returns a response with a <code>TableStatus</code> of
+         * <code>CREATING</code>. After the table is created, DynamoDB sets the
+         * <code>TableStatus</code> to <code>ACTIVE</code>. You can perform read and write
+         * operations only on an <code>ACTIVE</code> table. </p> <p>You can optionally
+         * define secondary indexes on the new table, as part of the
+         * <code>CreateTable</code> operation. If you want to create multiple tables with
+         * secondary indexes on them, you must create the tables sequentially. Only one
+         * table with secondary indexes can be in the <code>CREATING</code> state at any
+         * given time.</p> <p>You can use the <code>DescribeTable</code> action to check
+         * the table status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateTable">AWS
          * API Reference</a></p>
          */
@@ -929,20 +935,20 @@ namespace Model
 
         /**
          * <p>The <code>CreateTable</code> operation adds a new table to your account. In
-         * an AWS account, table names must be unique within each Region. That is, you can
-         * have two tables with same name if you create the tables in different
-         * Regions.</p> <p> <code>CreateTable</code> is an asynchronous operation. Upon
-         * receiving a <code>CreateTable</code> request, DynamoDB immediately returns a
-         * response with a <code>TableStatus</code> of <code>CREATING</code>. After the
-         * table is created, DynamoDB sets the <code>TableStatus</code> to
-         * <code>ACTIVE</code>. You can perform read and write operations only on an
-         * <code>ACTIVE</code> table. </p> <p>You can optionally define secondary indexes
-         * on the new table, as part of the <code>CreateTable</code> operation. If you want
-         * to create multiple tables with secondary indexes on them, you must create the
-         * tables sequentially. Only one table with secondary indexes can be in the
-         * <code>CREATING</code> state at any given time.</p> <p>You can use the
-         * <code>DescribeTable</code> action to check the table status.</p><p><h3>See
-         * Also:</h3>   <a
+         * an Amazon Web Services account, table names must be unique within each Region.
+         * That is, you can have two tables with same name if you create the tables in
+         * different Regions.</p> <p> <code>CreateTable</code> is an asynchronous
+         * operation. Upon receiving a <code>CreateTable</code> request, DynamoDB
+         * immediately returns a response with a <code>TableStatus</code> of
+         * <code>CREATING</code>. After the table is created, DynamoDB sets the
+         * <code>TableStatus</code> to <code>ACTIVE</code>. You can perform read and write
+         * operations only on an <code>ACTIVE</code> table. </p> <p>You can optionally
+         * define secondary indexes on the new table, as part of the
+         * <code>CreateTable</code> operation. If you want to create multiple tables with
+         * secondary indexes on them, you must create the tables sequentially. Only one
+         * table with secondary indexes can be in the <code>CREATING</code> state at any
+         * given time.</p> <p>You can use the <code>DescribeTable</code> action to check
+         * the table status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateTable">AWS
          * API Reference</a></p>
          *
@@ -952,20 +958,20 @@ namespace Model
 
         /**
          * <p>The <code>CreateTable</code> operation adds a new table to your account. In
-         * an AWS account, table names must be unique within each Region. That is, you can
-         * have two tables with same name if you create the tables in different
-         * Regions.</p> <p> <code>CreateTable</code> is an asynchronous operation. Upon
-         * receiving a <code>CreateTable</code> request, DynamoDB immediately returns a
-         * response with a <code>TableStatus</code> of <code>CREATING</code>. After the
-         * table is created, DynamoDB sets the <code>TableStatus</code> to
-         * <code>ACTIVE</code>. You can perform read and write operations only on an
-         * <code>ACTIVE</code> table. </p> <p>You can optionally define secondary indexes
-         * on the new table, as part of the <code>CreateTable</code> operation. If you want
-         * to create multiple tables with secondary indexes on them, you must create the
-         * tables sequentially. Only one table with secondary indexes can be in the
-         * <code>CREATING</code> state at any given time.</p> <p>You can use the
-         * <code>DescribeTable</code> action to check the table status.</p><p><h3>See
-         * Also:</h3>   <a
+         * an Amazon Web Services account, table names must be unique within each Region.
+         * That is, you can have two tables with same name if you create the tables in
+         * different Regions.</p> <p> <code>CreateTable</code> is an asynchronous
+         * operation. Upon receiving a <code>CreateTable</code> request, DynamoDB
+         * immediately returns a response with a <code>TableStatus</code> of
+         * <code>CREATING</code>. After the table is created, DynamoDB sets the
+         * <code>TableStatus</code> to <code>ACTIVE</code>. You can perform read and write
+         * operations only on an <code>ACTIVE</code> table. </p> <p>You can optionally
+         * define secondary indexes on the new table, as part of the
+         * <code>CreateTable</code> operation. If you want to create multiple tables with
+         * secondary indexes on them, you must create the tables sequentially. Only one
+         * table with secondary indexes can be in the <code>CREATING</code> state at any
+         * given time.</p> <p>You can use the <code>DescribeTable</code> action to check
+         * the table status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateTable">AWS
          * API Reference</a></p>
          *
@@ -1402,94 +1408,96 @@ namespace Model
         virtual void DescribeKinesisStreamingDestinationAsync(const Model::DescribeKinesisStreamingDestinationRequest& request, const DescribeKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the current provisioned-capacity quotas for your AWS account in a
-         * Region, both for the Region as a whole and for any one DynamoDB table that you
-         * create there.</p> <p>When you establish an AWS account, the account has initial
-         * quotas on the maximum read capacity units and write capacity units that you can
-         * provision across all of your DynamoDB tables in a given Region. Also, there are
-         * per-table quotas that apply when you create a table there. For more information,
-         * see <a
+         * <p>Returns the current provisioned-capacity quotas for your Amazon Web Services
+         * account in a Region, both for the Region as a whole and for any one DynamoDB
+         * table that you create there.</p> <p>When you establish an Amazon Web Services
+         * account, the account has initial quotas on the maximum read capacity units and
+         * write capacity units that you can provision across all of your DynamoDB tables
+         * in a given Region. Also, there are per-table quotas that apply when you create a
+         * table there. For more information, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
          * Account, and Table Quotas</a> page in the <i>Amazon DynamoDB Developer
          * Guide</i>.</p> <p>Although you can increase these quotas by filing a case at <a
-         * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>,
-         * obtaining the increase is not instantaneous. The <code>DescribeLimits</code>
-         * action lets you write code to compare the capacity you are currently using to
-         * those quotas imposed by your account so that you have enough time to apply for
-         * an increase before you hit a quota.</p> <p>For example, you could use one of the
-         * AWS SDKs to do the following:</p> <ol> <li> <p>Call <code>DescribeLimits</code>
-         * for a particular Region to obtain your current account quotas on provisioned
-         * capacity there.</p> </li> <li> <p>Create a variable to hold the aggregate read
-         * capacity units provisioned for all your tables in that Region, and one to hold
-         * the aggregate write capacity units. Zero them both.</p> </li> <li> <p>Call
-         * <code>ListTables</code> to obtain a list of all your DynamoDB tables.</p> </li>
-         * <li> <p>For each table name listed by <code>ListTables</code>, do the
-         * following:</p> <ul> <li> <p>Call <code>DescribeTable</code> with the table
-         * name.</p> </li> <li> <p>Use the data returned by <code>DescribeTable</code> to
-         * add the read capacity units and write capacity units provisioned for the table
-         * itself to your variables.</p> </li> <li> <p>If the table has one or more global
-         * secondary indexes (GSIs), loop over these GSIs and add their provisioned
-         * capacity values to your variables as well.</p> </li> </ul> </li> <li> <p>Report
-         * the account quotas for that Region returned by <code>DescribeLimits</code>,
-         * along with the total current provisioned capacity levels you have
-         * calculated.</p> </li> </ol> <p>This will let you see whether you are getting
-         * close to your account-level quotas.</p> <p>The per-table quotas apply only when
-         * you are creating a new table. They restrict the sum of the provisioned capacity
-         * of the new table itself and all its global secondary indexes.</p> <p>For
-         * existing tables and their GSIs, DynamoDB doesn't let you increase provisioned
-         * capacity extremely rapidly, but the only quota that applies is that the
-         * aggregate provisioned capacity over all your tables and GSIs cannot exceed
-         * either of the per-account quotas.</p>  <p> <code>DescribeLimits</code>
-         * should only be called periodically. You can expect throttling errors if you call
-         * it more than once in a minute.</p>  <p>The <code>DescribeLimits</code>
-         * Request element has no content.</p><p><h3>See Also:</h3>   <a
+         * href="https://console.aws.amazon.com/support/home#/">Amazon Web Services Support
+         * Center</a>, obtaining the increase is not instantaneous. The
+         * <code>DescribeLimits</code> action lets you write code to compare the capacity
+         * you are currently using to those quotas imposed by your account so that you have
+         * enough time to apply for an increase before you hit a quota.</p> <p>For example,
+         * you could use one of the Amazon Web Services SDKs to do the following:</p> <ol>
+         * <li> <p>Call <code>DescribeLimits</code> for a particular Region to obtain your
+         * current account quotas on provisioned capacity there.</p> </li> <li> <p>Create a
+         * variable to hold the aggregate read capacity units provisioned for all your
+         * tables in that Region, and one to hold the aggregate write capacity units. Zero
+         * them both.</p> </li> <li> <p>Call <code>ListTables</code> to obtain a list of
+         * all your DynamoDB tables.</p> </li> <li> <p>For each table name listed by
+         * <code>ListTables</code>, do the following:</p> <ul> <li> <p>Call
+         * <code>DescribeTable</code> with the table name.</p> </li> <li> <p>Use the data
+         * returned by <code>DescribeTable</code> to add the read capacity units and write
+         * capacity units provisioned for the table itself to your variables.</p> </li>
+         * <li> <p>If the table has one or more global secondary indexes (GSIs), loop over
+         * these GSIs and add their provisioned capacity values to your variables as
+         * well.</p> </li> </ul> </li> <li> <p>Report the account quotas for that Region
+         * returned by <code>DescribeLimits</code>, along with the total current
+         * provisioned capacity levels you have calculated.</p> </li> </ol> <p>This will
+         * let you see whether you are getting close to your account-level quotas.</p>
+         * <p>The per-table quotas apply only when you are creating a new table. They
+         * restrict the sum of the provisioned capacity of the new table itself and all its
+         * global secondary indexes.</p> <p>For existing tables and their GSIs, DynamoDB
+         * doesn't let you increase provisioned capacity extremely rapidly, but the only
+         * quota that applies is that the aggregate provisioned capacity over all your
+         * tables and GSIs cannot exceed either of the per-account quotas.</p>  <p>
+         * <code>DescribeLimits</code> should only be called periodically. You can expect
+         * throttling errors if you call it more than once in a minute.</p>  <p>The
+         * <code>DescribeLimits</code> Request element has no content.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeLimits">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeLimitsOutcome DescribeLimits(const Model::DescribeLimitsRequest& request) const;
 
         /**
-         * <p>Returns the current provisioned-capacity quotas for your AWS account in a
-         * Region, both for the Region as a whole and for any one DynamoDB table that you
-         * create there.</p> <p>When you establish an AWS account, the account has initial
-         * quotas on the maximum read capacity units and write capacity units that you can
-         * provision across all of your DynamoDB tables in a given Region. Also, there are
-         * per-table quotas that apply when you create a table there. For more information,
-         * see <a
+         * <p>Returns the current provisioned-capacity quotas for your Amazon Web Services
+         * account in a Region, both for the Region as a whole and for any one DynamoDB
+         * table that you create there.</p> <p>When you establish an Amazon Web Services
+         * account, the account has initial quotas on the maximum read capacity units and
+         * write capacity units that you can provision across all of your DynamoDB tables
+         * in a given Region. Also, there are per-table quotas that apply when you create a
+         * table there. For more information, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
          * Account, and Table Quotas</a> page in the <i>Amazon DynamoDB Developer
          * Guide</i>.</p> <p>Although you can increase these quotas by filing a case at <a
-         * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>,
-         * obtaining the increase is not instantaneous. The <code>DescribeLimits</code>
-         * action lets you write code to compare the capacity you are currently using to
-         * those quotas imposed by your account so that you have enough time to apply for
-         * an increase before you hit a quota.</p> <p>For example, you could use one of the
-         * AWS SDKs to do the following:</p> <ol> <li> <p>Call <code>DescribeLimits</code>
-         * for a particular Region to obtain your current account quotas on provisioned
-         * capacity there.</p> </li> <li> <p>Create a variable to hold the aggregate read
-         * capacity units provisioned for all your tables in that Region, and one to hold
-         * the aggregate write capacity units. Zero them both.</p> </li> <li> <p>Call
-         * <code>ListTables</code> to obtain a list of all your DynamoDB tables.</p> </li>
-         * <li> <p>For each table name listed by <code>ListTables</code>, do the
-         * following:</p> <ul> <li> <p>Call <code>DescribeTable</code> with the table
-         * name.</p> </li> <li> <p>Use the data returned by <code>DescribeTable</code> to
-         * add the read capacity units and write capacity units provisioned for the table
-         * itself to your variables.</p> </li> <li> <p>If the table has one or more global
-         * secondary indexes (GSIs), loop over these GSIs and add their provisioned
-         * capacity values to your variables as well.</p> </li> </ul> </li> <li> <p>Report
-         * the account quotas for that Region returned by <code>DescribeLimits</code>,
-         * along with the total current provisioned capacity levels you have
-         * calculated.</p> </li> </ol> <p>This will let you see whether you are getting
-         * close to your account-level quotas.</p> <p>The per-table quotas apply only when
-         * you are creating a new table. They restrict the sum of the provisioned capacity
-         * of the new table itself and all its global secondary indexes.</p> <p>For
-         * existing tables and their GSIs, DynamoDB doesn't let you increase provisioned
-         * capacity extremely rapidly, but the only quota that applies is that the
-         * aggregate provisioned capacity over all your tables and GSIs cannot exceed
-         * either of the per-account quotas.</p>  <p> <code>DescribeLimits</code>
-         * should only be called periodically. You can expect throttling errors if you call
-         * it more than once in a minute.</p>  <p>The <code>DescribeLimits</code>
-         * Request element has no content.</p><p><h3>See Also:</h3>   <a
+         * href="https://console.aws.amazon.com/support/home#/">Amazon Web Services Support
+         * Center</a>, obtaining the increase is not instantaneous. The
+         * <code>DescribeLimits</code> action lets you write code to compare the capacity
+         * you are currently using to those quotas imposed by your account so that you have
+         * enough time to apply for an increase before you hit a quota.</p> <p>For example,
+         * you could use one of the Amazon Web Services SDKs to do the following:</p> <ol>
+         * <li> <p>Call <code>DescribeLimits</code> for a particular Region to obtain your
+         * current account quotas on provisioned capacity there.</p> </li> <li> <p>Create a
+         * variable to hold the aggregate read capacity units provisioned for all your
+         * tables in that Region, and one to hold the aggregate write capacity units. Zero
+         * them both.</p> </li> <li> <p>Call <code>ListTables</code> to obtain a list of
+         * all your DynamoDB tables.</p> </li> <li> <p>For each table name listed by
+         * <code>ListTables</code>, do the following:</p> <ul> <li> <p>Call
+         * <code>DescribeTable</code> with the table name.</p> </li> <li> <p>Use the data
+         * returned by <code>DescribeTable</code> to add the read capacity units and write
+         * capacity units provisioned for the table itself to your variables.</p> </li>
+         * <li> <p>If the table has one or more global secondary indexes (GSIs), loop over
+         * these GSIs and add their provisioned capacity values to your variables as
+         * well.</p> </li> </ul> </li> <li> <p>Report the account quotas for that Region
+         * returned by <code>DescribeLimits</code>, along with the total current
+         * provisioned capacity levels you have calculated.</p> </li> </ol> <p>This will
+         * let you see whether you are getting close to your account-level quotas.</p>
+         * <p>The per-table quotas apply only when you are creating a new table. They
+         * restrict the sum of the provisioned capacity of the new table itself and all its
+         * global secondary indexes.</p> <p>For existing tables and their GSIs, DynamoDB
+         * doesn't let you increase provisioned capacity extremely rapidly, but the only
+         * quota that applies is that the aggregate provisioned capacity over all your
+         * tables and GSIs cannot exceed either of the per-account quotas.</p>  <p>
+         * <code>DescribeLimits</code> should only be called periodically. You can expect
+         * throttling errors if you call it more than once in a minute.</p>  <p>The
+         * <code>DescribeLimits</code> Request element has no content.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeLimits">AWS
          * API Reference</a></p>
          *
@@ -1498,47 +1506,48 @@ namespace Model
         virtual Model::DescribeLimitsOutcomeCallable DescribeLimitsCallable(const Model::DescribeLimitsRequest& request) const;
 
         /**
-         * <p>Returns the current provisioned-capacity quotas for your AWS account in a
-         * Region, both for the Region as a whole and for any one DynamoDB table that you
-         * create there.</p> <p>When you establish an AWS account, the account has initial
-         * quotas on the maximum read capacity units and write capacity units that you can
-         * provision across all of your DynamoDB tables in a given Region. Also, there are
-         * per-table quotas that apply when you create a table there. For more information,
-         * see <a
+         * <p>Returns the current provisioned-capacity quotas for your Amazon Web Services
+         * account in a Region, both for the Region as a whole and for any one DynamoDB
+         * table that you create there.</p> <p>When you establish an Amazon Web Services
+         * account, the account has initial quotas on the maximum read capacity units and
+         * write capacity units that you can provision across all of your DynamoDB tables
+         * in a given Region. Also, there are per-table quotas that apply when you create a
+         * table there. For more information, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
          * Account, and Table Quotas</a> page in the <i>Amazon DynamoDB Developer
          * Guide</i>.</p> <p>Although you can increase these quotas by filing a case at <a
-         * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>,
-         * obtaining the increase is not instantaneous. The <code>DescribeLimits</code>
-         * action lets you write code to compare the capacity you are currently using to
-         * those quotas imposed by your account so that you have enough time to apply for
-         * an increase before you hit a quota.</p> <p>For example, you could use one of the
-         * AWS SDKs to do the following:</p> <ol> <li> <p>Call <code>DescribeLimits</code>
-         * for a particular Region to obtain your current account quotas on provisioned
-         * capacity there.</p> </li> <li> <p>Create a variable to hold the aggregate read
-         * capacity units provisioned for all your tables in that Region, and one to hold
-         * the aggregate write capacity units. Zero them both.</p> </li> <li> <p>Call
-         * <code>ListTables</code> to obtain a list of all your DynamoDB tables.</p> </li>
-         * <li> <p>For each table name listed by <code>ListTables</code>, do the
-         * following:</p> <ul> <li> <p>Call <code>DescribeTable</code> with the table
-         * name.</p> </li> <li> <p>Use the data returned by <code>DescribeTable</code> to
-         * add the read capacity units and write capacity units provisioned for the table
-         * itself to your variables.</p> </li> <li> <p>If the table has one or more global
-         * secondary indexes (GSIs), loop over these GSIs and add their provisioned
-         * capacity values to your variables as well.</p> </li> </ul> </li> <li> <p>Report
-         * the account quotas for that Region returned by <code>DescribeLimits</code>,
-         * along with the total current provisioned capacity levels you have
-         * calculated.</p> </li> </ol> <p>This will let you see whether you are getting
-         * close to your account-level quotas.</p> <p>The per-table quotas apply only when
-         * you are creating a new table. They restrict the sum of the provisioned capacity
-         * of the new table itself and all its global secondary indexes.</p> <p>For
-         * existing tables and their GSIs, DynamoDB doesn't let you increase provisioned
-         * capacity extremely rapidly, but the only quota that applies is that the
-         * aggregate provisioned capacity over all your tables and GSIs cannot exceed
-         * either of the per-account quotas.</p>  <p> <code>DescribeLimits</code>
-         * should only be called periodically. You can expect throttling errors if you call
-         * it more than once in a minute.</p>  <p>The <code>DescribeLimits</code>
-         * Request element has no content.</p><p><h3>See Also:</h3>   <a
+         * href="https://console.aws.amazon.com/support/home#/">Amazon Web Services Support
+         * Center</a>, obtaining the increase is not instantaneous. The
+         * <code>DescribeLimits</code> action lets you write code to compare the capacity
+         * you are currently using to those quotas imposed by your account so that you have
+         * enough time to apply for an increase before you hit a quota.</p> <p>For example,
+         * you could use one of the Amazon Web Services SDKs to do the following:</p> <ol>
+         * <li> <p>Call <code>DescribeLimits</code> for a particular Region to obtain your
+         * current account quotas on provisioned capacity there.</p> </li> <li> <p>Create a
+         * variable to hold the aggregate read capacity units provisioned for all your
+         * tables in that Region, and one to hold the aggregate write capacity units. Zero
+         * them both.</p> </li> <li> <p>Call <code>ListTables</code> to obtain a list of
+         * all your DynamoDB tables.</p> </li> <li> <p>For each table name listed by
+         * <code>ListTables</code>, do the following:</p> <ul> <li> <p>Call
+         * <code>DescribeTable</code> with the table name.</p> </li> <li> <p>Use the data
+         * returned by <code>DescribeTable</code> to add the read capacity units and write
+         * capacity units provisioned for the table itself to your variables.</p> </li>
+         * <li> <p>If the table has one or more global secondary indexes (GSIs), loop over
+         * these GSIs and add their provisioned capacity values to your variables as
+         * well.</p> </li> </ul> </li> <li> <p>Report the account quotas for that Region
+         * returned by <code>DescribeLimits</code>, along with the total current
+         * provisioned capacity levels you have calculated.</p> </li> </ol> <p>This will
+         * let you see whether you are getting close to your account-level quotas.</p>
+         * <p>The per-table quotas apply only when you are creating a new table. They
+         * restrict the sum of the provisioned capacity of the new table itself and all its
+         * global secondary indexes.</p> <p>For existing tables and their GSIs, DynamoDB
+         * doesn't let you increase provisioned capacity extremely rapidly, but the only
+         * quota that applies is that the aggregate provisioned capacity over all your
+         * tables and GSIs cannot exceed either of the per-account quotas.</p>  <p>
+         * <code>DescribeLimits</code> should only be called periodically. You can expect
+         * throttling errors if you call it more than once in a minute.</p>  <p>The
+         * <code>DescribeLimits</code> Request element has no content.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeLimits">AWS
          * API Reference</a></p>
          *
@@ -1720,16 +1729,16 @@ namespace Model
         virtual void EnableKinesisStreamingDestinationAsync(const Model::EnableKinesisStreamingDestinationRequest& request, const EnableKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> This operation allows you to perform reads and singleton writes on data
-         * stored in DynamoDB, using PartiQL. </p><p><h3>See Also:</h3>   <a
+         * <p>This operation allows you to perform reads and singleton writes on data
+         * stored in DynamoDB, using PartiQL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteStatement">AWS
          * API Reference</a></p>
          */
         virtual Model::ExecuteStatementOutcome ExecuteStatement(const Model::ExecuteStatementRequest& request) const;
 
         /**
-         * <p> This operation allows you to perform reads and singleton writes on data
-         * stored in DynamoDB, using PartiQL. </p><p><h3>See Also:</h3>   <a
+         * <p>This operation allows you to perform reads and singleton writes on data
+         * stored in DynamoDB, using PartiQL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteStatement">AWS
          * API Reference</a></p>
          *
@@ -1738,8 +1747,8 @@ namespace Model
         virtual Model::ExecuteStatementOutcomeCallable ExecuteStatementCallable(const Model::ExecuteStatementRequest& request) const;
 
         /**
-         * <p> This operation allows you to perform reads and singleton writes on data
-         * stored in DynamoDB, using PartiQL. </p><p><h3>See Also:</h3>   <a
+         * <p>This operation allows you to perform reads and singleton writes on data
+         * stored in DynamoDB, using PartiQL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteStatement">AWS
          * API Reference</a></p>
          *
@@ -1748,16 +1757,28 @@ namespace Model
         virtual void ExecuteStatementAsync(const Model::ExecuteStatementRequest& request, const ExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> This operation allows you to perform transactional reads or writes on data
-         * stored in DynamoDB, using PartiQL. </p><p><h3>See Also:</h3>   <a
+         * <p>This operation allows you to perform transactional reads or writes on data
+         * stored in DynamoDB, using PartiQL.</p>  <p>The entire transaction must
+         * consist of either read statements or write statements, you cannot mix both in
+         * one transaction. The EXISTS function is an exception and can be used to check
+         * the condition of specific attributes of the item in a similar manner to
+         * <code>ConditionCheck</code> in the <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/transaction-apis.html#transaction-apis-txwriteitems">TransactWriteItems</a>
+         * API.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteTransaction">AWS
          * API Reference</a></p>
          */
         virtual Model::ExecuteTransactionOutcome ExecuteTransaction(const Model::ExecuteTransactionRequest& request) const;
 
         /**
-         * <p> This operation allows you to perform transactional reads or writes on data
-         * stored in DynamoDB, using PartiQL. </p><p><h3>See Also:</h3>   <a
+         * <p>This operation allows you to perform transactional reads or writes on data
+         * stored in DynamoDB, using PartiQL.</p>  <p>The entire transaction must
+         * consist of either read statements or write statements, you cannot mix both in
+         * one transaction. The EXISTS function is an exception and can be used to check
+         * the condition of specific attributes of the item in a similar manner to
+         * <code>ConditionCheck</code> in the <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/transaction-apis.html#transaction-apis-txwriteitems">TransactWriteItems</a>
+         * API.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteTransaction">AWS
          * API Reference</a></p>
          *
@@ -1766,8 +1787,14 @@ namespace Model
         virtual Model::ExecuteTransactionOutcomeCallable ExecuteTransactionCallable(const Model::ExecuteTransactionRequest& request) const;
 
         /**
-         * <p> This operation allows you to perform transactional reads or writes on data
-         * stored in DynamoDB, using PartiQL. </p><p><h3>See Also:</h3>   <a
+         * <p>This operation allows you to perform transactional reads or writes on data
+         * stored in DynamoDB, using PartiQL.</p>  <p>The entire transaction must
+         * consist of either read statements or write statements, you cannot mix both in
+         * one transaction. The EXISTS function is an exception and can be used to check
+         * the condition of specific attributes of the item in a similar manner to
+         * <code>ConditionCheck</code> in the <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/transaction-apis.html#transaction-apis-txwriteitems">TransactWriteItems</a>
+         * API.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteTransaction">AWS
          * API Reference</a></p>
          *
@@ -1853,28 +1880,28 @@ namespace Model
         virtual void GetItemAsync(const Model::GetItemRequest& request, const GetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List backups associated with an AWS account. To list backups for a given
-         * table, specify <code>TableName</code>. <code>ListBackups</code> returns a
-         * paginated list of results with at most 1 MB worth of items in a page. You can
-         * also specify a maximum number of entries to be returned in a page. </p> <p>In
-         * the request, start time is inclusive, but end time is exclusive. Note that these
-         * boundaries are for the time at which the original backup was requested.</p>
-         * <p>You can call <code>ListBackups</code> a maximum of five times per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * <p>List backups associated with an Amazon Web Services account. To list backups
+         * for a given table, specify <code>TableName</code>. <code>ListBackups</code>
+         * returns a paginated list of results with at most 1 MB worth of items in a page.
+         * You can also specify a maximum number of entries to be returned in a page.</p>
+         * <p>In the request, start time is inclusive, but end time is exclusive. Note that
+         * these boundaries are for the time at which the original backup was
+         * requested.</p> <p>You can call <code>ListBackups</code> a maximum of five times
+         * per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups">AWS
          * API Reference</a></p>
          */
         virtual Model::ListBackupsOutcome ListBackups(const Model::ListBackupsRequest& request) const;
 
         /**
-         * <p>List backups associated with an AWS account. To list backups for a given
-         * table, specify <code>TableName</code>. <code>ListBackups</code> returns a
-         * paginated list of results with at most 1 MB worth of items in a page. You can
-         * also specify a maximum number of entries to be returned in a page. </p> <p>In
-         * the request, start time is inclusive, but end time is exclusive. Note that these
-         * boundaries are for the time at which the original backup was requested.</p>
-         * <p>You can call <code>ListBackups</code> a maximum of five times per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * <p>List backups associated with an Amazon Web Services account. To list backups
+         * for a given table, specify <code>TableName</code>. <code>ListBackups</code>
+         * returns a paginated list of results with at most 1 MB worth of items in a page.
+         * You can also specify a maximum number of entries to be returned in a page.</p>
+         * <p>In the request, start time is inclusive, but end time is exclusive. Note that
+         * these boundaries are for the time at which the original backup was
+         * requested.</p> <p>You can call <code>ListBackups</code> a maximum of five times
+         * per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups">AWS
          * API Reference</a></p>
          *
@@ -1883,14 +1910,14 @@ namespace Model
         virtual Model::ListBackupsOutcomeCallable ListBackupsCallable(const Model::ListBackupsRequest& request) const;
 
         /**
-         * <p>List backups associated with an AWS account. To list backups for a given
-         * table, specify <code>TableName</code>. <code>ListBackups</code> returns a
-         * paginated list of results with at most 1 MB worth of items in a page. You can
-         * also specify a maximum number of entries to be returned in a page. </p> <p>In
-         * the request, start time is inclusive, but end time is exclusive. Note that these
-         * boundaries are for the time at which the original backup was requested.</p>
-         * <p>You can call <code>ListBackups</code> a maximum of five times per
-         * second.</p><p><h3>See Also:</h3>   <a
+         * <p>List backups associated with an Amazon Web Services account. To list backups
+         * for a given table, specify <code>TableName</code>. <code>ListBackups</code>
+         * returns a paginated list of results with at most 1 MB worth of items in a page.
+         * You can also specify a maximum number of entries to be returned in a page.</p>
+         * <p>In the request, start time is inclusive, but end time is exclusive. Note that
+         * these boundaries are for the time at which the original backup was
+         * requested.</p> <p>You can call <code>ListBackups</code> a maximum of five times
+         * per second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups">AWS
          * API Reference</a></p>
          *
@@ -2068,38 +2095,38 @@ namespace Model
          * You can return the item's attribute values in the same operation, using the
          * <code>ReturnValues</code> parameter.</p>  <p>This topic provides
          * general information about the <code>PutItem</code> API.</p> <p>For information
-         * on how to call the <code>PutItem</code> API using the AWS SDK in specific
-         * languages, see the following:</p> <ul> <li> <p> <a
+         * on how to call the <code>PutItem</code> API using the Amazon Web Services SDK in
+         * specific languages, see the following:</p> <ul> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/aws-cli/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS Command Line Interface</a> </p> </li> <li> <p> <a
+         * PutItem in the Command Line Interface</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/DotNetSDKV3/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS SDK for .NET</a> </p> </li> <li> <p> <a
+         * PutItem in the SDK for .NET</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/SdkForCpp/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS SDK for C++</a> </p> </li> <li> <p> <a
+         * PutItem in the SDK for C++</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/SdkForGoV1/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS SDK for Go</a> </p> </li> <li> <p> <a
+         * PutItem in the SDK for Go</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/SdkForJava/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS SDK for Java</a> </p> </li> <li> <p> <a
+         * PutItem in the SDK for Java</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/AWSJavaScriptSDK/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS SDK for JavaScript</a> </p> </li> <li> <p> <a
+         * PutItem in the SDK for JavaScript</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/SdkForPHPV3/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS SDK for PHP V3</a> </p> </li> <li> <p> <a
+         * PutItem in the SDK for PHP V3</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/boto3/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS SDK for Python</a> </p> </li> <li> <p> <a
+         * PutItem in the SDK for Python (Boto)</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/SdkForRubyV2/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS SDK for Ruby V2</a> </p> </li> </ul>  <p>When you
-         * add an item, the primary key attributes are the only required attributes.
-         * Attribute values cannot be null.</p> <p>Empty String and Binary attribute values
-         * are allowed. Attribute values of type String and Binary must have a length
-         * greater than zero if the attribute is used as a key attribute for a table or
-         * index. Set type attributes cannot be empty. </p> <p>Invalid Requests with empty
-         * values will be rejected with a <code>ValidationException</code> exception.</p>
-         *  <p>To prevent a new item from replacing an existing item, use a
-         * conditional expression that contains the <code>attribute_not_exists</code>
-         * function with the name of the attribute being used as the partition key for the
-         * table. Since every record must contain that attribute, the
-         * <code>attribute_not_exists</code> function will only succeed if no matching item
-         * exists.</p>  <p>For more information about <code>PutItem</code>, see <a
+         * PutItem in the SDK for Ruby V2</a> </p> </li> </ul>  <p>When you add
+         * an item, the primary key attributes are the only required attributes. Attribute
+         * values cannot be null.</p> <p>Empty String and Binary attribute values are
+         * allowed. Attribute values of type String and Binary must have a length greater
+         * than zero if the attribute is used as a key attribute for a table or index. Set
+         * type attributes cannot be empty. </p> <p>Invalid Requests with empty values will
+         * be rejected with a <code>ValidationException</code> exception.</p>  <p>To
+         * prevent a new item from replacing an existing item, use a conditional expression
+         * that contains the <code>attribute_not_exists</code> function with the name of
+         * the attribute being used as the partition key for the table. Since every record
+         * must contain that attribute, the <code>attribute_not_exists</code> function will
+         * only succeed if no matching item exists.</p>  <p>For more information
+         * about <code>PutItem</code>, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
          * with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2117,38 +2144,38 @@ namespace Model
          * You can return the item's attribute values in the same operation, using the
          * <code>ReturnValues</code> parameter.</p>  <p>This topic provides
          * general information about the <code>PutItem</code> API.</p> <p>For information
-         * on how to call the <code>PutItem</code> API using the AWS SDK in specific
-         * languages, see the following:</p> <ul> <li> <p> <a
+         * on how to call the <code>PutItem</code> API using the Amazon Web Services SDK in
+         * specific languages, see the following:</p> <ul> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/aws-cli/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS Command Line Interface</a> </p> </li> <li> <p> <a
+         * PutItem in the Command Line Interface</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/DotNetSDKV3/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS SDK for .NET</a> </p> </li> <li> <p> <a
+         * PutItem in the SDK for .NET</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/SdkForCpp/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS SDK for C++</a> </p> </li> <li> <p> <a
+         * PutItem in the SDK for C++</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/SdkForGoV1/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS SDK for Go</a> </p> </li> <li> <p> <a
+         * PutItem in the SDK for Go</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/SdkForJava/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS SDK for Java</a> </p> </li> <li> <p> <a
+         * PutItem in the SDK for Java</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/AWSJavaScriptSDK/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS SDK for JavaScript</a> </p> </li> <li> <p> <a
+         * PutItem in the SDK for JavaScript</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/SdkForPHPV3/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS SDK for PHP V3</a> </p> </li> <li> <p> <a
+         * PutItem in the SDK for PHP V3</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/boto3/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS SDK for Python</a> </p> </li> <li> <p> <a
+         * PutItem in the SDK for Python (Boto)</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/SdkForRubyV2/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS SDK for Ruby V2</a> </p> </li> </ul>  <p>When you
-         * add an item, the primary key attributes are the only required attributes.
-         * Attribute values cannot be null.</p> <p>Empty String and Binary attribute values
-         * are allowed. Attribute values of type String and Binary must have a length
-         * greater than zero if the attribute is used as a key attribute for a table or
-         * index. Set type attributes cannot be empty. </p> <p>Invalid Requests with empty
-         * values will be rejected with a <code>ValidationException</code> exception.</p>
-         *  <p>To prevent a new item from replacing an existing item, use a
-         * conditional expression that contains the <code>attribute_not_exists</code>
-         * function with the name of the attribute being used as the partition key for the
-         * table. Since every record must contain that attribute, the
-         * <code>attribute_not_exists</code> function will only succeed if no matching item
-         * exists.</p>  <p>For more information about <code>PutItem</code>, see <a
+         * PutItem in the SDK for Ruby V2</a> </p> </li> </ul>  <p>When you add
+         * an item, the primary key attributes are the only required attributes. Attribute
+         * values cannot be null.</p> <p>Empty String and Binary attribute values are
+         * allowed. Attribute values of type String and Binary must have a length greater
+         * than zero if the attribute is used as a key attribute for a table or index. Set
+         * type attributes cannot be empty. </p> <p>Invalid Requests with empty values will
+         * be rejected with a <code>ValidationException</code> exception.</p>  <p>To
+         * prevent a new item from replacing an existing item, use a conditional expression
+         * that contains the <code>attribute_not_exists</code> function with the name of
+         * the attribute being used as the partition key for the table. Since every record
+         * must contain that attribute, the <code>attribute_not_exists</code> function will
+         * only succeed if no matching item exists.</p>  <p>For more information
+         * about <code>PutItem</code>, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
          * with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2168,38 +2195,38 @@ namespace Model
          * You can return the item's attribute values in the same operation, using the
          * <code>ReturnValues</code> parameter.</p>  <p>This topic provides
          * general information about the <code>PutItem</code> API.</p> <p>For information
-         * on how to call the <code>PutItem</code> API using the AWS SDK in specific
-         * languages, see the following:</p> <ul> <li> <p> <a
+         * on how to call the <code>PutItem</code> API using the Amazon Web Services SDK in
+         * specific languages, see the following:</p> <ul> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/aws-cli/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS Command Line Interface</a> </p> </li> <li> <p> <a
+         * PutItem in the Command Line Interface</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/DotNetSDKV3/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS SDK for .NET</a> </p> </li> <li> <p> <a
+         * PutItem in the SDK for .NET</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/SdkForCpp/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS SDK for C++</a> </p> </li> <li> <p> <a
+         * PutItem in the SDK for C++</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/SdkForGoV1/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS SDK for Go</a> </p> </li> <li> <p> <a
+         * PutItem in the SDK for Go</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/SdkForJava/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS SDK for Java</a> </p> </li> <li> <p> <a
+         * PutItem in the SDK for Java</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/AWSJavaScriptSDK/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS SDK for JavaScript</a> </p> </li> <li> <p> <a
+         * PutItem in the SDK for JavaScript</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/SdkForPHPV3/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS SDK for PHP V3</a> </p> </li> <li> <p> <a
+         * PutItem in the SDK for PHP V3</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/boto3/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS SDK for Python</a> </p> </li> <li> <p> <a
+         * PutItem in the SDK for Python (Boto)</a> </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/goto/SdkForRubyV2/dynamodb-2012-08-10/PutItem">
-         * PutItem in the AWS SDK for Ruby V2</a> </p> </li> </ul>  <p>When you
-         * add an item, the primary key attributes are the only required attributes.
-         * Attribute values cannot be null.</p> <p>Empty String and Binary attribute values
-         * are allowed. Attribute values of type String and Binary must have a length
-         * greater than zero if the attribute is used as a key attribute for a table or
-         * index. Set type attributes cannot be empty. </p> <p>Invalid Requests with empty
-         * values will be rejected with a <code>ValidationException</code> exception.</p>
-         *  <p>To prevent a new item from replacing an existing item, use a
-         * conditional expression that contains the <code>attribute_not_exists</code>
-         * function with the name of the attribute being used as the partition key for the
-         * table. Since every record must contain that attribute, the
-         * <code>attribute_not_exists</code> function will only succeed if no matching item
-         * exists.</p>  <p>For more information about <code>PutItem</code>, see <a
+         * PutItem in the SDK for Ruby V2</a> </p> </li> </ul>  <p>When you add
+         * an item, the primary key attributes are the only required attributes. Attribute
+         * values cannot be null.</p> <p>Empty String and Binary attribute values are
+         * allowed. Attribute values of type String and Binary must have a length greater
+         * than zero if the attribute is used as a key attribute for a table or index. Set
+         * type attributes cannot be empty. </p> <p>Invalid Requests with empty values will
+         * be rejected with a <code>ValidationException</code> exception.</p>  <p>To
+         * prevent a new item from replacing an existing item, use a conditional expression
+         * that contains the <code>attribute_not_exists</code> function with the name of
+         * the attribute being used as the partition key for the table. Since every record
+         * must contain that attribute, the <code>attribute_not_exists</code> function will
+         * only succeed if no matching item exists.</p>  <p>For more information
+         * about <code>PutItem</code>, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
          * with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2211,9 +2238,10 @@ namespace Model
         virtual void PutItemAsync(const Model::PutItemRequest& request, const PutItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The <code>Query</code> operation finds items based on primary key values. You
-         * can query any table or secondary index that has a composite primary key (a
-         * partition key and a sort key). </p> <p>Use the
+         * <p>You must provide the name of the partition key attribute and a single value
+         * for that attribute. <code>Query</code> returns all items with that partition key
+         * value. Optionally, you can provide a sort key attribute and use a comparison
+         * operator to refine the search results.</p> <p>Use the
          * <code>KeyConditionExpression</code> parameter to provide a specific value for
          * the partition key. The <code>Query</code> operation will return all of the items
          * from the table or index with that partition key value. You can optionally narrow
@@ -2261,9 +2289,10 @@ namespace Model
         virtual Model::QueryOutcome Query(const Model::QueryRequest& request) const;
 
         /**
-         * <p>The <code>Query</code> operation finds items based on primary key values. You
-         * can query any table or secondary index that has a composite primary key (a
-         * partition key and a sort key). </p> <p>Use the
+         * <p>You must provide the name of the partition key attribute and a single value
+         * for that attribute. <code>Query</code> returns all items with that partition key
+         * value. Optionally, you can provide a sort key attribute and use a comparison
+         * operator to refine the search results.</p> <p>Use the
          * <code>KeyConditionExpression</code> parameter to provide a specific value for
          * the partition key. The <code>Query</code> operation will return all of the items
          * from the table or index with that partition key value. You can optionally narrow
@@ -2313,9 +2342,10 @@ namespace Model
         virtual Model::QueryOutcomeCallable QueryCallable(const Model::QueryRequest& request) const;
 
         /**
-         * <p>The <code>Query</code> operation finds items based on primary key values. You
-         * can query any table or secondary index that has a composite primary key (a
-         * partition key and a sort key). </p> <p>Use the
+         * <p>You must provide the name of the partition key attribute and a single value
+         * for that attribute. <code>Query</code> returns all items with that partition key
+         * value. Optionally, you can provide a sort key attribute and use a comparison
+         * operator to refine the search results.</p> <p>Use the
          * <code>KeyConditionExpression</code> parameter to provide a specific value for
          * the partition key. The <code>Query</code> operation will return all of the items
          * from the table or index with that partition key value. You can optionally narrow
@@ -2642,15 +2672,15 @@ namespace Model
          * to 25 <code>TransactGetItem</code> objects, each of which contains a
          * <code>Get</code> structure that specifies an item to retrieve from a table in
          * the account and Region. A call to <code>TransactGetItems</code> cannot retrieve
-         * items from tables in more than one AWS account or Region. The aggregate size of
-         * the items in the transaction cannot exceed 4 MB.</p> <p>DynamoDB rejects the
-         * entire <code>TransactGetItems</code> request if any of the following is
-         * true:</p> <ul> <li> <p>A conflicting operation is in the process of updating an
-         * item to be read.</p> </li> <li> <p>There is insufficient provisioned capacity
-         * for the transaction to be completed.</p> </li> <li> <p>There is a user error,
-         * such as an invalid data format.</p> </li> <li> <p>The aggregate size of the
-         * items in the transaction cannot exceed 4 MB.</p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * items from tables in more than one Amazon Web Services account or Region. The
+         * aggregate size of the items in the transaction cannot exceed 4 MB.</p>
+         * <p>DynamoDB rejects the entire <code>TransactGetItems</code> request if any of
+         * the following is true:</p> <ul> <li> <p>A conflicting operation is in the
+         * process of updating an item to be read.</p> </li> <li> <p>There is insufficient
+         * provisioned capacity for the transaction to be completed.</p> </li> <li>
+         * <p>There is a user error, such as an invalid data format.</p> </li> <li> <p>The
+         * aggregate size of the items in the transaction cannot exceed 4 MB.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TransactGetItems">AWS
          * API Reference</a></p>
          */
@@ -2663,15 +2693,15 @@ namespace Model
          * to 25 <code>TransactGetItem</code> objects, each of which contains a
          * <code>Get</code> structure that specifies an item to retrieve from a table in
          * the account and Region. A call to <code>TransactGetItems</code> cannot retrieve
-         * items from tables in more than one AWS account or Region. The aggregate size of
-         * the items in the transaction cannot exceed 4 MB.</p> <p>DynamoDB rejects the
-         * entire <code>TransactGetItems</code> request if any of the following is
-         * true:</p> <ul> <li> <p>A conflicting operation is in the process of updating an
-         * item to be read.</p> </li> <li> <p>There is insufficient provisioned capacity
-         * for the transaction to be completed.</p> </li> <li> <p>There is a user error,
-         * such as an invalid data format.</p> </li> <li> <p>The aggregate size of the
-         * items in the transaction cannot exceed 4 MB.</p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * items from tables in more than one Amazon Web Services account or Region. The
+         * aggregate size of the items in the transaction cannot exceed 4 MB.</p>
+         * <p>DynamoDB rejects the entire <code>TransactGetItems</code> request if any of
+         * the following is true:</p> <ul> <li> <p>A conflicting operation is in the
+         * process of updating an item to be read.</p> </li> <li> <p>There is insufficient
+         * provisioned capacity for the transaction to be completed.</p> </li> <li>
+         * <p>There is a user error, such as an invalid data format.</p> </li> <li> <p>The
+         * aggregate size of the items in the transaction cannot exceed 4 MB.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TransactGetItems">AWS
          * API Reference</a></p>
          *
@@ -2686,15 +2716,15 @@ namespace Model
          * to 25 <code>TransactGetItem</code> objects, each of which contains a
          * <code>Get</code> structure that specifies an item to retrieve from a table in
          * the account and Region. A call to <code>TransactGetItems</code> cannot retrieve
-         * items from tables in more than one AWS account or Region. The aggregate size of
-         * the items in the transaction cannot exceed 4 MB.</p> <p>DynamoDB rejects the
-         * entire <code>TransactGetItems</code> request if any of the following is
-         * true:</p> <ul> <li> <p>A conflicting operation is in the process of updating an
-         * item to be read.</p> </li> <li> <p>There is insufficient provisioned capacity
-         * for the transaction to be completed.</p> </li> <li> <p>There is a user error,
-         * such as an invalid data format.</p> </li> <li> <p>The aggregate size of the
-         * items in the transaction cannot exceed 4 MB.</p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * items from tables in more than one Amazon Web Services account or Region. The
+         * aggregate size of the items in the transaction cannot exceed 4 MB.</p>
+         * <p>DynamoDB rejects the entire <code>TransactGetItems</code> request if any of
+         * the following is true:</p> <ul> <li> <p>A conflicting operation is in the
+         * process of updating an item to be read.</p> </li> <li> <p>There is insufficient
+         * provisioned capacity for the transaction to be completed.</p> </li> <li>
+         * <p>There is a user error, such as an invalid data format.</p> </li> <li> <p>The
+         * aggregate size of the items in the transaction cannot exceed 4 MB.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TransactGetItems">AWS
          * API Reference</a></p>
          *
@@ -2705,38 +2735,38 @@ namespace Model
         /**
          * <p> <code>TransactWriteItems</code> is a synchronous write operation that groups
          * up to 25 action requests. These actions can target items in different tables,
-         * but not in different AWS accounts or Regions, and no two actions can target the
-         * same item. For example, you cannot both <code>ConditionCheck</code> and
-         * <code>Update</code> the same item. The aggregate size of the items in the
-         * transaction cannot exceed 4 MB.</p> <p>The actions are completed atomically so
-         * that either all of them succeed, or all of them fail. They are defined by the
-         * following objects:</p> <ul> <li> <p> <code>Put</code>  &#x97;   Initiates a
-         * <code>PutItem</code> operation to write a new item. This structure specifies the
-         * primary key of the item to be written, the name of the table to write it in, an
-         * optional condition expression that must be satisfied for the write to succeed, a
-         * list of the item's attributes, and a field indicating whether to retrieve the
-         * item's attributes if the condition is not met.</p> </li> <li> <p>
-         * <code>Update</code>  &#x97;   Initiates an <code>UpdateItem</code> operation to
-         * update an existing item. This structure specifies the primary key of the item to
-         * be updated, the name of the table where it resides, an optional condition
+         * but not in different Amazon Web Services accounts or Regions, and no two actions
+         * can target the same item. For example, you cannot both
+         * <code>ConditionCheck</code> and <code>Update</code> the same item. The aggregate
+         * size of the items in the transaction cannot exceed 4 MB.</p> <p>The actions are
+         * completed atomically so that either all of them succeed, or all of them fail.
+         * They are defined by the following objects:</p> <ul> <li> <p> <code>Put</code>  —
+         *   Initiates a <code>PutItem</code> operation to write a new item. This structure
+         * specifies the primary key of the item to be written, the name of the table to
+         * write it in, an optional condition expression that must be satisfied for the
+         * write to succeed, a list of the item's attributes, and a field indicating
+         * whether to retrieve the item's attributes if the condition is not met.</p> </li>
+         * <li> <p> <code>Update</code>  —   Initiates an <code>UpdateItem</code> operation
+         * to update an existing item. This structure specifies the primary key of the item
+         * to be updated, the name of the table where it resides, an optional condition
          * expression that must be satisfied for the update to succeed, an expression that
          * defines one or more attributes to be updated, and a field indicating whether to
          * retrieve the item's attributes if the condition is not met.</p> </li> <li> <p>
-         * <code>Delete</code>  &#x97;   Initiates a <code>DeleteItem</code> operation to
-         * delete an existing item. This structure specifies the primary key of the item to
-         * be deleted, the name of the table where it resides, an optional condition
+         * <code>Delete</code>  —   Initiates a <code>DeleteItem</code> operation to delete
+         * an existing item. This structure specifies the primary key of the item to be
+         * deleted, the name of the table where it resides, an optional condition
          * expression that must be satisfied for the deletion to succeed, and a field
          * indicating whether to retrieve the item's attributes if the condition is not
-         * met.</p> </li> <li> <p> <code>ConditionCheck</code>  &#x97;   Applies a
-         * condition to an item that is not being modified by the transaction. This
-         * structure specifies the primary key of the item to be checked, the name of the
-         * table where it resides, a condition expression that must be satisfied for the
-         * transaction to succeed, and a field indicating whether to retrieve the item's
-         * attributes if the condition is not met.</p> </li> </ul> <p>DynamoDB rejects the
-         * entire <code>TransactWriteItems</code> request if any of the following is
-         * true:</p> <ul> <li> <p>A condition in one of the condition expressions is not
-         * met.</p> </li> <li> <p>An ongoing operation is in the process of updating the
-         * same item.</p> </li> <li> <p>There is insufficient provisioned capacity for the
+         * met.</p> </li> <li> <p> <code>ConditionCheck</code>  —   Applies a condition to
+         * an item that is not being modified by the transaction. This structure specifies
+         * the primary key of the item to be checked, the name of the table where it
+         * resides, a condition expression that must be satisfied for the transaction to
+         * succeed, and a field indicating whether to retrieve the item's attributes if the
+         * condition is not met.</p> </li> </ul> <p>DynamoDB rejects the entire
+         * <code>TransactWriteItems</code> request if any of the following is true:</p>
+         * <ul> <li> <p>A condition in one of the condition expressions is not met.</p>
+         * </li> <li> <p>An ongoing operation is in the process of updating the same
+         * item.</p> </li> <li> <p>There is insufficient provisioned capacity for the
          * transaction to be completed.</p> </li> <li> <p>An item size becomes too large
          * (bigger than 400 KB), a local secondary index (LSI) becomes too large, or a
          * similar validation error occurs because of changes made by the transaction.</p>
@@ -2751,38 +2781,38 @@ namespace Model
         /**
          * <p> <code>TransactWriteItems</code> is a synchronous write operation that groups
          * up to 25 action requests. These actions can target items in different tables,
-         * but not in different AWS accounts or Regions, and no two actions can target the
-         * same item. For example, you cannot both <code>ConditionCheck</code> and
-         * <code>Update</code> the same item. The aggregate size of the items in the
-         * transaction cannot exceed 4 MB.</p> <p>The actions are completed atomically so
-         * that either all of them succeed, or all of them fail. They are defined by the
-         * following objects:</p> <ul> <li> <p> <code>Put</code>  &#x97;   Initiates a
-         * <code>PutItem</code> operation to write a new item. This structure specifies the
-         * primary key of the item to be written, the name of the table to write it in, an
-         * optional condition expression that must be satisfied for the write to succeed, a
-         * list of the item's attributes, and a field indicating whether to retrieve the
-         * item's attributes if the condition is not met.</p> </li> <li> <p>
-         * <code>Update</code>  &#x97;   Initiates an <code>UpdateItem</code> operation to
-         * update an existing item. This structure specifies the primary key of the item to
-         * be updated, the name of the table where it resides, an optional condition
+         * but not in different Amazon Web Services accounts or Regions, and no two actions
+         * can target the same item. For example, you cannot both
+         * <code>ConditionCheck</code> and <code>Update</code> the same item. The aggregate
+         * size of the items in the transaction cannot exceed 4 MB.</p> <p>The actions are
+         * completed atomically so that either all of them succeed, or all of them fail.
+         * They are defined by the following objects:</p> <ul> <li> <p> <code>Put</code>  —
+         *   Initiates a <code>PutItem</code> operation to write a new item. This structure
+         * specifies the primary key of the item to be written, the name of the table to
+         * write it in, an optional condition expression that must be satisfied for the
+         * write to succeed, a list of the item's attributes, and a field indicating
+         * whether to retrieve the item's attributes if the condition is not met.</p> </li>
+         * <li> <p> <code>Update</code>  —   Initiates an <code>UpdateItem</code> operation
+         * to update an existing item. This structure specifies the primary key of the item
+         * to be updated, the name of the table where it resides, an optional condition
          * expression that must be satisfied for the update to succeed, an expression that
          * defines one or more attributes to be updated, and a field indicating whether to
          * retrieve the item's attributes if the condition is not met.</p> </li> <li> <p>
-         * <code>Delete</code>  &#x97;   Initiates a <code>DeleteItem</code> operation to
-         * delete an existing item. This structure specifies the primary key of the item to
-         * be deleted, the name of the table where it resides, an optional condition
+         * <code>Delete</code>  —   Initiates a <code>DeleteItem</code> operation to delete
+         * an existing item. This structure specifies the primary key of the item to be
+         * deleted, the name of the table where it resides, an optional condition
          * expression that must be satisfied for the deletion to succeed, and a field
          * indicating whether to retrieve the item's attributes if the condition is not
-         * met.</p> </li> <li> <p> <code>ConditionCheck</code>  &#x97;   Applies a
-         * condition to an item that is not being modified by the transaction. This
-         * structure specifies the primary key of the item to be checked, the name of the
-         * table where it resides, a condition expression that must be satisfied for the
-         * transaction to succeed, and a field indicating whether to retrieve the item's
-         * attributes if the condition is not met.</p> </li> </ul> <p>DynamoDB rejects the
-         * entire <code>TransactWriteItems</code> request if any of the following is
-         * true:</p> <ul> <li> <p>A condition in one of the condition expressions is not
-         * met.</p> </li> <li> <p>An ongoing operation is in the process of updating the
-         * same item.</p> </li> <li> <p>There is insufficient provisioned capacity for the
+         * met.</p> </li> <li> <p> <code>ConditionCheck</code>  —   Applies a condition to
+         * an item that is not being modified by the transaction. This structure specifies
+         * the primary key of the item to be checked, the name of the table where it
+         * resides, a condition expression that must be satisfied for the transaction to
+         * succeed, and a field indicating whether to retrieve the item's attributes if the
+         * condition is not met.</p> </li> </ul> <p>DynamoDB rejects the entire
+         * <code>TransactWriteItems</code> request if any of the following is true:</p>
+         * <ul> <li> <p>A condition in one of the condition expressions is not met.</p>
+         * </li> <li> <p>An ongoing operation is in the process of updating the same
+         * item.</p> </li> <li> <p>There is insufficient provisioned capacity for the
          * transaction to be completed.</p> </li> <li> <p>An item size becomes too large
          * (bigger than 400 KB), a local secondary index (LSI) becomes too large, or a
          * similar validation error occurs because of changes made by the transaction.</p>
@@ -2799,38 +2829,38 @@ namespace Model
         /**
          * <p> <code>TransactWriteItems</code> is a synchronous write operation that groups
          * up to 25 action requests. These actions can target items in different tables,
-         * but not in different AWS accounts or Regions, and no two actions can target the
-         * same item. For example, you cannot both <code>ConditionCheck</code> and
-         * <code>Update</code> the same item. The aggregate size of the items in the
-         * transaction cannot exceed 4 MB.</p> <p>The actions are completed atomically so
-         * that either all of them succeed, or all of them fail. They are defined by the
-         * following objects:</p> <ul> <li> <p> <code>Put</code>  &#x97;   Initiates a
-         * <code>PutItem</code> operation to write a new item. This structure specifies the
-         * primary key of the item to be written, the name of the table to write it in, an
-         * optional condition expression that must be satisfied for the write to succeed, a
-         * list of the item's attributes, and a field indicating whether to retrieve the
-         * item's attributes if the condition is not met.</p> </li> <li> <p>
-         * <code>Update</code>  &#x97;   Initiates an <code>UpdateItem</code> operation to
-         * update an existing item. This structure specifies the primary key of the item to
-         * be updated, the name of the table where it resides, an optional condition
+         * but not in different Amazon Web Services accounts or Regions, and no two actions
+         * can target the same item. For example, you cannot both
+         * <code>ConditionCheck</code> and <code>Update</code> the same item. The aggregate
+         * size of the items in the transaction cannot exceed 4 MB.</p> <p>The actions are
+         * completed atomically so that either all of them succeed, or all of them fail.
+         * They are defined by the following objects:</p> <ul> <li> <p> <code>Put</code>  —
+         *   Initiates a <code>PutItem</code> operation to write a new item. This structure
+         * specifies the primary key of the item to be written, the name of the table to
+         * write it in, an optional condition expression that must be satisfied for the
+         * write to succeed, a list of the item's attributes, and a field indicating
+         * whether to retrieve the item's attributes if the condition is not met.</p> </li>
+         * <li> <p> <code>Update</code>  —   Initiates an <code>UpdateItem</code> operation
+         * to update an existing item. This structure specifies the primary key of the item
+         * to be updated, the name of the table where it resides, an optional condition
          * expression that must be satisfied for the update to succeed, an expression that
          * defines one or more attributes to be updated, and a field indicating whether to
          * retrieve the item's attributes if the condition is not met.</p> </li> <li> <p>
-         * <code>Delete</code>  &#x97;   Initiates a <code>DeleteItem</code> operation to
-         * delete an existing item. This structure specifies the primary key of the item to
-         * be deleted, the name of the table where it resides, an optional condition
+         * <code>Delete</code>  —   Initiates a <code>DeleteItem</code> operation to delete
+         * an existing item. This structure specifies the primary key of the item to be
+         * deleted, the name of the table where it resides, an optional condition
          * expression that must be satisfied for the deletion to succeed, and a field
          * indicating whether to retrieve the item's attributes if the condition is not
-         * met.</p> </li> <li> <p> <code>ConditionCheck</code>  &#x97;   Applies a
-         * condition to an item that is not being modified by the transaction. This
-         * structure specifies the primary key of the item to be checked, the name of the
-         * table where it resides, a condition expression that must be satisfied for the
-         * transaction to succeed, and a field indicating whether to retrieve the item's
-         * attributes if the condition is not met.</p> </li> </ul> <p>DynamoDB rejects the
-         * entire <code>TransactWriteItems</code> request if any of the following is
-         * true:</p> <ul> <li> <p>A condition in one of the condition expressions is not
-         * met.</p> </li> <li> <p>An ongoing operation is in the process of updating the
-         * same item.</p> </li> <li> <p>There is insufficient provisioned capacity for the
+         * met.</p> </li> <li> <p> <code>ConditionCheck</code>  —   Applies a condition to
+         * an item that is not being modified by the transaction. This structure specifies
+         * the primary key of the item to be checked, the name of the table where it
+         * resides, a condition expression that must be satisfied for the transaction to
+         * succeed, and a field indicating whether to retrieve the item's attributes if the
+         * condition is not met.</p> </li> </ul> <p>DynamoDB rejects the entire
+         * <code>TransactWriteItems</code> request if any of the following is true:</p>
+         * <ul> <li> <p>A condition in one of the condition expressions is not met.</p>
+         * </li> <li> <p>An ongoing operation is in the process of updating the same
+         * item.</p> </li> <li> <p>There is insufficient provisioned capacity for the
          * transaction to be completed.</p> </li> <li> <p>An item size becomes too large
          * (bigger than 400 KB), a local secondary index (LSI) becomes too large, or a
          * similar validation error occurs because of changes made by the transaction.</p>
@@ -2943,16 +2973,26 @@ namespace Model
         virtual void UpdateContinuousBackupsAsync(const Model::UpdateContinuousBackupsRequest& request, const UpdateContinuousBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the status for contributor insights for a specific table or
-         * index.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the status for contributor insights for a specific table or index.
+         * CloudWatch Contributor Insights for DynamoDB graphs display the partition key
+         * and (if applicable) sort key of frequently accessed items and frequently
+         * throttled items in plaintext. If you require the use of AWS Key Management
+         * Service (KMS) to encrypt this table’s partition key and sort key data with an
+         * AWS managed key or customer managed key, you should not enable CloudWatch
+         * Contributor Insights for DynamoDB for this table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContributorInsights">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateContributorInsightsOutcome UpdateContributorInsights(const Model::UpdateContributorInsightsRequest& request) const;
 
         /**
-         * <p>Updates the status for contributor insights for a specific table or
-         * index.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the status for contributor insights for a specific table or index.
+         * CloudWatch Contributor Insights for DynamoDB graphs display the partition key
+         * and (if applicable) sort key of frequently accessed items and frequently
+         * throttled items in plaintext. If you require the use of AWS Key Management
+         * Service (KMS) to encrypt this table’s partition key and sort key data with an
+         * AWS managed key or customer managed key, you should not enable CloudWatch
+         * Contributor Insights for DynamoDB for this table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContributorInsights">AWS
          * API Reference</a></p>
          *
@@ -2961,8 +3001,13 @@ namespace Model
         virtual Model::UpdateContributorInsightsOutcomeCallable UpdateContributorInsightsCallable(const Model::UpdateContributorInsightsRequest& request) const;
 
         /**
-         * <p>Updates the status for contributor insights for a specific table or
-         * index.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the status for contributor insights for a specific table or index.
+         * CloudWatch Contributor Insights for DynamoDB graphs display the partition key
+         * and (if applicable) sort key of frequently accessed items and frequently
+         * throttled items in plaintext. If you require the use of AWS Key Management
+         * Service (KMS) to encrypt this table’s partition key and sort key data with an
+         * AWS managed key or customer managed key, you should not enable CloudWatch
+         * Contributor Insights for DynamoDB for this table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContributorInsights">AWS
          * API Reference</a></p>
          *

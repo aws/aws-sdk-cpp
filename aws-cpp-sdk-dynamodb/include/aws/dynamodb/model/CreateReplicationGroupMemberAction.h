@@ -82,74 +82,66 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS customer master key (CMK) that should be used for AWS KMS
-     * encryption in the new replica. To specify a CMK, use its key ID, Amazon Resource
-     * Name (ARN), alias name, or alias ARN. Note that you should only provide this
-     * parameter if the key is different from the default DynamoDB KMS master key
-     * alias/aws/dynamodb.</p>
+     * <p>The KMS key that should be used for KMS encryption in the new replica. To
+     * specify a key, use its key ID, Amazon Resource Name (ARN), alias name, or alias
+     * ARN. Note that you should only provide this parameter if the key is different
+     * from the default DynamoDB KMS key <code>alias/aws/dynamodb</code>.</p>
      */
     inline const Aws::String& GetKMSMasterKeyId() const{ return m_kMSMasterKeyId; }
 
     /**
-     * <p>The AWS KMS customer master key (CMK) that should be used for AWS KMS
-     * encryption in the new replica. To specify a CMK, use its key ID, Amazon Resource
-     * Name (ARN), alias name, or alias ARN. Note that you should only provide this
-     * parameter if the key is different from the default DynamoDB KMS master key
-     * alias/aws/dynamodb.</p>
+     * <p>The KMS key that should be used for KMS encryption in the new replica. To
+     * specify a key, use its key ID, Amazon Resource Name (ARN), alias name, or alias
+     * ARN. Note that you should only provide this parameter if the key is different
+     * from the default DynamoDB KMS key <code>alias/aws/dynamodb</code>.</p>
      */
     inline bool KMSMasterKeyIdHasBeenSet() const { return m_kMSMasterKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS customer master key (CMK) that should be used for AWS KMS
-     * encryption in the new replica. To specify a CMK, use its key ID, Amazon Resource
-     * Name (ARN), alias name, or alias ARN. Note that you should only provide this
-     * parameter if the key is different from the default DynamoDB KMS master key
-     * alias/aws/dynamodb.</p>
+     * <p>The KMS key that should be used for KMS encryption in the new replica. To
+     * specify a key, use its key ID, Amazon Resource Name (ARN), alias name, or alias
+     * ARN. Note that you should only provide this parameter if the key is different
+     * from the default DynamoDB KMS key <code>alias/aws/dynamodb</code>.</p>
      */
     inline void SetKMSMasterKeyId(const Aws::String& value) { m_kMSMasterKeyIdHasBeenSet = true; m_kMSMasterKeyId = value; }
 
     /**
-     * <p>The AWS KMS customer master key (CMK) that should be used for AWS KMS
-     * encryption in the new replica. To specify a CMK, use its key ID, Amazon Resource
-     * Name (ARN), alias name, or alias ARN. Note that you should only provide this
-     * parameter if the key is different from the default DynamoDB KMS master key
-     * alias/aws/dynamodb.</p>
+     * <p>The KMS key that should be used for KMS encryption in the new replica. To
+     * specify a key, use its key ID, Amazon Resource Name (ARN), alias name, or alias
+     * ARN. Note that you should only provide this parameter if the key is different
+     * from the default DynamoDB KMS key <code>alias/aws/dynamodb</code>.</p>
      */
     inline void SetKMSMasterKeyId(Aws::String&& value) { m_kMSMasterKeyIdHasBeenSet = true; m_kMSMasterKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS customer master key (CMK) that should be used for AWS KMS
-     * encryption in the new replica. To specify a CMK, use its key ID, Amazon Resource
-     * Name (ARN), alias name, or alias ARN. Note that you should only provide this
-     * parameter if the key is different from the default DynamoDB KMS master key
-     * alias/aws/dynamodb.</p>
+     * <p>The KMS key that should be used for KMS encryption in the new replica. To
+     * specify a key, use its key ID, Amazon Resource Name (ARN), alias name, or alias
+     * ARN. Note that you should only provide this parameter if the key is different
+     * from the default DynamoDB KMS key <code>alias/aws/dynamodb</code>.</p>
      */
     inline void SetKMSMasterKeyId(const char* value) { m_kMSMasterKeyIdHasBeenSet = true; m_kMSMasterKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS customer master key (CMK) that should be used for AWS KMS
-     * encryption in the new replica. To specify a CMK, use its key ID, Amazon Resource
-     * Name (ARN), alias name, or alias ARN. Note that you should only provide this
-     * parameter if the key is different from the default DynamoDB KMS master key
-     * alias/aws/dynamodb.</p>
+     * <p>The KMS key that should be used for KMS encryption in the new replica. To
+     * specify a key, use its key ID, Amazon Resource Name (ARN), alias name, or alias
+     * ARN. Note that you should only provide this parameter if the key is different
+     * from the default DynamoDB KMS key <code>alias/aws/dynamodb</code>.</p>
      */
     inline CreateReplicationGroupMemberAction& WithKMSMasterKeyId(const Aws::String& value) { SetKMSMasterKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS customer master key (CMK) that should be used for AWS KMS
-     * encryption in the new replica. To specify a CMK, use its key ID, Amazon Resource
-     * Name (ARN), alias name, or alias ARN. Note that you should only provide this
-     * parameter if the key is different from the default DynamoDB KMS master key
-     * alias/aws/dynamodb.</p>
+     * <p>The KMS key that should be used for KMS encryption in the new replica. To
+     * specify a key, use its key ID, Amazon Resource Name (ARN), alias name, or alias
+     * ARN. Note that you should only provide this parameter if the key is different
+     * from the default DynamoDB KMS key <code>alias/aws/dynamodb</code>.</p>
      */
     inline CreateReplicationGroupMemberAction& WithKMSMasterKeyId(Aws::String&& value) { SetKMSMasterKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS customer master key (CMK) that should be used for AWS KMS
-     * encryption in the new replica. To specify a CMK, use its key ID, Amazon Resource
-     * Name (ARN), alias name, or alias ARN. Note that you should only provide this
-     * parameter if the key is different from the default DynamoDB KMS master key
-     * alias/aws/dynamodb.</p>
+     * <p>The KMS key that should be used for KMS encryption in the new replica. To
+     * specify a key, use its key ID, Amazon Resource Name (ARN), alias name, or alias
+     * ARN. Note that you should only provide this parameter if the key is different
+     * from the default DynamoDB KMS key <code>alias/aws/dynamodb</code>.</p>
      */
     inline CreateReplicationGroupMemberAction& WithKMSMasterKeyId(const char* value) { SetKMSMasterKeyId(value); return *this;}
 

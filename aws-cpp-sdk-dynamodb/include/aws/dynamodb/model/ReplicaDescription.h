@@ -89,15 +89,15 @@ namespace Model
      * replica is being updated.</p> </li> <li> <p> <code>DELETING</code> - The replica
      * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The replica is ready
      * for use.</p> </li> <li> <p> <code>REGION_DISABLED</code> - The replica is
-     * inaccessible because the AWS Region has been disabled.</p>  <p>If the AWS
-     * Region remains inaccessible for more than 20 hours, DynamoDB will remove this
-     * replica from the replication group. The replica will not be deleted and
-     * replication will stop from and to this region.</p>  </li> <li> <p>
-     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The AWS KMS key used to
-     * encrypt the table is inaccessible.</p>  <p>If the AWS KMS key remains
-     * inaccessible for more than 20 hours, DynamoDB will remove this replica from the
-     * replication group. The replica will not be deleted and replication will stop
-     * from and to this region.</p>  </li> </ul>
+     * inaccessible because the Amazon Web Services Region has been disabled.</p>
+     *  <p>If the Amazon Web Services Region remains inaccessible for more than
+     * 20 hours, DynamoDB will remove this replica from the replication group. The
+     * replica will not be deleted and replication will stop from and to this
+     * region.</p>  </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS
+     * </code> - The KMS key used to encrypt the table is inaccessible.</p> 
+     * <p>If the KMS key remains inaccessible for more than 20 hours, DynamoDB will
+     * remove this replica from the replication group. The replica will not be deleted
+     * and replication will stop from and to this region.</p>  </li> </ul>
      */
     inline const ReplicaStatus& GetReplicaStatus() const{ return m_replicaStatus; }
 
@@ -107,15 +107,15 @@ namespace Model
      * replica is being updated.</p> </li> <li> <p> <code>DELETING</code> - The replica
      * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The replica is ready
      * for use.</p> </li> <li> <p> <code>REGION_DISABLED</code> - The replica is
-     * inaccessible because the AWS Region has been disabled.</p>  <p>If the AWS
-     * Region remains inaccessible for more than 20 hours, DynamoDB will remove this
-     * replica from the replication group. The replica will not be deleted and
-     * replication will stop from and to this region.</p>  </li> <li> <p>
-     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The AWS KMS key used to
-     * encrypt the table is inaccessible.</p>  <p>If the AWS KMS key remains
-     * inaccessible for more than 20 hours, DynamoDB will remove this replica from the
-     * replication group. The replica will not be deleted and replication will stop
-     * from and to this region.</p>  </li> </ul>
+     * inaccessible because the Amazon Web Services Region has been disabled.</p>
+     *  <p>If the Amazon Web Services Region remains inaccessible for more than
+     * 20 hours, DynamoDB will remove this replica from the replication group. The
+     * replica will not be deleted and replication will stop from and to this
+     * region.</p>  </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS
+     * </code> - The KMS key used to encrypt the table is inaccessible.</p> 
+     * <p>If the KMS key remains inaccessible for more than 20 hours, DynamoDB will
+     * remove this replica from the replication group. The replica will not be deleted
+     * and replication will stop from and to this region.</p>  </li> </ul>
      */
     inline bool ReplicaStatusHasBeenSet() const { return m_replicaStatusHasBeenSet; }
 
@@ -125,15 +125,15 @@ namespace Model
      * replica is being updated.</p> </li> <li> <p> <code>DELETING</code> - The replica
      * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The replica is ready
      * for use.</p> </li> <li> <p> <code>REGION_DISABLED</code> - The replica is
-     * inaccessible because the AWS Region has been disabled.</p>  <p>If the AWS
-     * Region remains inaccessible for more than 20 hours, DynamoDB will remove this
-     * replica from the replication group. The replica will not be deleted and
-     * replication will stop from and to this region.</p>  </li> <li> <p>
-     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The AWS KMS key used to
-     * encrypt the table is inaccessible.</p>  <p>If the AWS KMS key remains
-     * inaccessible for more than 20 hours, DynamoDB will remove this replica from the
-     * replication group. The replica will not be deleted and replication will stop
-     * from and to this region.</p>  </li> </ul>
+     * inaccessible because the Amazon Web Services Region has been disabled.</p>
+     *  <p>If the Amazon Web Services Region remains inaccessible for more than
+     * 20 hours, DynamoDB will remove this replica from the replication group. The
+     * replica will not be deleted and replication will stop from and to this
+     * region.</p>  </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS
+     * </code> - The KMS key used to encrypt the table is inaccessible.</p> 
+     * <p>If the KMS key remains inaccessible for more than 20 hours, DynamoDB will
+     * remove this replica from the replication group. The replica will not be deleted
+     * and replication will stop from and to this region.</p>  </li> </ul>
      */
     inline void SetReplicaStatus(const ReplicaStatus& value) { m_replicaStatusHasBeenSet = true; m_replicaStatus = value; }
 
@@ -143,15 +143,15 @@ namespace Model
      * replica is being updated.</p> </li> <li> <p> <code>DELETING</code> - The replica
      * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The replica is ready
      * for use.</p> </li> <li> <p> <code>REGION_DISABLED</code> - The replica is
-     * inaccessible because the AWS Region has been disabled.</p>  <p>If the AWS
-     * Region remains inaccessible for more than 20 hours, DynamoDB will remove this
-     * replica from the replication group. The replica will not be deleted and
-     * replication will stop from and to this region.</p>  </li> <li> <p>
-     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The AWS KMS key used to
-     * encrypt the table is inaccessible.</p>  <p>If the AWS KMS key remains
-     * inaccessible for more than 20 hours, DynamoDB will remove this replica from the
-     * replication group. The replica will not be deleted and replication will stop
-     * from and to this region.</p>  </li> </ul>
+     * inaccessible because the Amazon Web Services Region has been disabled.</p>
+     *  <p>If the Amazon Web Services Region remains inaccessible for more than
+     * 20 hours, DynamoDB will remove this replica from the replication group. The
+     * replica will not be deleted and replication will stop from and to this
+     * region.</p>  </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS
+     * </code> - The KMS key used to encrypt the table is inaccessible.</p> 
+     * <p>If the KMS key remains inaccessible for more than 20 hours, DynamoDB will
+     * remove this replica from the replication group. The replica will not be deleted
+     * and replication will stop from and to this region.</p>  </li> </ul>
      */
     inline void SetReplicaStatus(ReplicaStatus&& value) { m_replicaStatusHasBeenSet = true; m_replicaStatus = std::move(value); }
 
@@ -161,15 +161,15 @@ namespace Model
      * replica is being updated.</p> </li> <li> <p> <code>DELETING</code> - The replica
      * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The replica is ready
      * for use.</p> </li> <li> <p> <code>REGION_DISABLED</code> - The replica is
-     * inaccessible because the AWS Region has been disabled.</p>  <p>If the AWS
-     * Region remains inaccessible for more than 20 hours, DynamoDB will remove this
-     * replica from the replication group. The replica will not be deleted and
-     * replication will stop from and to this region.</p>  </li> <li> <p>
-     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The AWS KMS key used to
-     * encrypt the table is inaccessible.</p>  <p>If the AWS KMS key remains
-     * inaccessible for more than 20 hours, DynamoDB will remove this replica from the
-     * replication group. The replica will not be deleted and replication will stop
-     * from and to this region.</p>  </li> </ul>
+     * inaccessible because the Amazon Web Services Region has been disabled.</p>
+     *  <p>If the Amazon Web Services Region remains inaccessible for more than
+     * 20 hours, DynamoDB will remove this replica from the replication group. The
+     * replica will not be deleted and replication will stop from and to this
+     * region.</p>  </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS
+     * </code> - The KMS key used to encrypt the table is inaccessible.</p> 
+     * <p>If the KMS key remains inaccessible for more than 20 hours, DynamoDB will
+     * remove this replica from the replication group. The replica will not be deleted
+     * and replication will stop from and to this region.</p>  </li> </ul>
      */
     inline ReplicaDescription& WithReplicaStatus(const ReplicaStatus& value) { SetReplicaStatus(value); return *this;}
 
@@ -179,15 +179,15 @@ namespace Model
      * replica is being updated.</p> </li> <li> <p> <code>DELETING</code> - The replica
      * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The replica is ready
      * for use.</p> </li> <li> <p> <code>REGION_DISABLED</code> - The replica is
-     * inaccessible because the AWS Region has been disabled.</p>  <p>If the AWS
-     * Region remains inaccessible for more than 20 hours, DynamoDB will remove this
-     * replica from the replication group. The replica will not be deleted and
-     * replication will stop from and to this region.</p>  </li> <li> <p>
-     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The AWS KMS key used to
-     * encrypt the table is inaccessible.</p>  <p>If the AWS KMS key remains
-     * inaccessible for more than 20 hours, DynamoDB will remove this replica from the
-     * replication group. The replica will not be deleted and replication will stop
-     * from and to this region.</p>  </li> </ul>
+     * inaccessible because the Amazon Web Services Region has been disabled.</p>
+     *  <p>If the Amazon Web Services Region remains inaccessible for more than
+     * 20 hours, DynamoDB will remove this replica from the replication group. The
+     * replica will not be deleted and replication will stop from and to this
+     * region.</p>  </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS
+     * </code> - The KMS key used to encrypt the table is inaccessible.</p> 
+     * <p>If the KMS key remains inaccessible for more than 20 hours, DynamoDB will
+     * remove this replica from the replication group. The replica will not be deleted
+     * and replication will stop from and to this region.</p>  </li> </ul>
      */
     inline ReplicaDescription& WithReplicaStatus(ReplicaStatus&& value) { SetReplicaStatus(std::move(value)); return *this;}
 
@@ -283,50 +283,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS customer master key (CMK) of the replica that will be used for
-     * AWS KMS encryption.</p>
+     * <p>The KMS key of the replica that will be used for KMS encryption.</p>
      */
     inline const Aws::String& GetKMSMasterKeyId() const{ return m_kMSMasterKeyId; }
 
     /**
-     * <p>The AWS KMS customer master key (CMK) of the replica that will be used for
-     * AWS KMS encryption.</p>
+     * <p>The KMS key of the replica that will be used for KMS encryption.</p>
      */
     inline bool KMSMasterKeyIdHasBeenSet() const { return m_kMSMasterKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS customer master key (CMK) of the replica that will be used for
-     * AWS KMS encryption.</p>
+     * <p>The KMS key of the replica that will be used for KMS encryption.</p>
      */
     inline void SetKMSMasterKeyId(const Aws::String& value) { m_kMSMasterKeyIdHasBeenSet = true; m_kMSMasterKeyId = value; }
 
     /**
-     * <p>The AWS KMS customer master key (CMK) of the replica that will be used for
-     * AWS KMS encryption.</p>
+     * <p>The KMS key of the replica that will be used for KMS encryption.</p>
      */
     inline void SetKMSMasterKeyId(Aws::String&& value) { m_kMSMasterKeyIdHasBeenSet = true; m_kMSMasterKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS customer master key (CMK) of the replica that will be used for
-     * AWS KMS encryption.</p>
+     * <p>The KMS key of the replica that will be used for KMS encryption.</p>
      */
     inline void SetKMSMasterKeyId(const char* value) { m_kMSMasterKeyIdHasBeenSet = true; m_kMSMasterKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS customer master key (CMK) of the replica that will be used for
-     * AWS KMS encryption.</p>
+     * <p>The KMS key of the replica that will be used for KMS encryption.</p>
      */
     inline ReplicaDescription& WithKMSMasterKeyId(const Aws::String& value) { SetKMSMasterKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS customer master key (CMK) of the replica that will be used for
-     * AWS KMS encryption.</p>
+     * <p>The KMS key of the replica that will be used for KMS encryption.</p>
      */
     inline ReplicaDescription& WithKMSMasterKeyId(Aws::String&& value) { SetKMSMasterKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS customer master key (CMK) of the replica that will be used for
-     * AWS KMS encryption.</p>
+     * <p>The KMS key of the replica that will be used for KMS encryption.</p>
      */
     inline ReplicaDescription& WithKMSMasterKeyId(const char* value) { SetKMSMasterKeyId(value); return *this;}
 

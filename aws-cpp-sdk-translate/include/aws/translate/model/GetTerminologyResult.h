@@ -94,11 +94,54 @@ namespace Model
      */
     inline GetTerminologyResult& WithTerminologyDataLocation(TerminologyDataLocation&& value) { SetTerminologyDataLocation(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon S3 location of a file that provides any errors or warnings that
+     * were produced by your input file. This file was created when Amazon Translate
+     * attempted to create a terminology resource. The location is returned as a
+     * presigned URL to that has a 30 minute expiration.</p>
+     */
+    inline const TerminologyDataLocation& GetAuxiliaryDataLocation() const{ return m_auxiliaryDataLocation; }
+
+    /**
+     * <p>The Amazon S3 location of a file that provides any errors or warnings that
+     * were produced by your input file. This file was created when Amazon Translate
+     * attempted to create a terminology resource. The location is returned as a
+     * presigned URL to that has a 30 minute expiration.</p>
+     */
+    inline void SetAuxiliaryDataLocation(const TerminologyDataLocation& value) { m_auxiliaryDataLocation = value; }
+
+    /**
+     * <p>The Amazon S3 location of a file that provides any errors or warnings that
+     * were produced by your input file. This file was created when Amazon Translate
+     * attempted to create a terminology resource. The location is returned as a
+     * presigned URL to that has a 30 minute expiration.</p>
+     */
+    inline void SetAuxiliaryDataLocation(TerminologyDataLocation&& value) { m_auxiliaryDataLocation = std::move(value); }
+
+    /**
+     * <p>The Amazon S3 location of a file that provides any errors or warnings that
+     * were produced by your input file. This file was created when Amazon Translate
+     * attempted to create a terminology resource. The location is returned as a
+     * presigned URL to that has a 30 minute expiration.</p>
+     */
+    inline GetTerminologyResult& WithAuxiliaryDataLocation(const TerminologyDataLocation& value) { SetAuxiliaryDataLocation(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 location of a file that provides any errors or warnings that
+     * were produced by your input file. This file was created when Amazon Translate
+     * attempted to create a terminology resource. The location is returned as a
+     * presigned URL to that has a 30 minute expiration.</p>
+     */
+    inline GetTerminologyResult& WithAuxiliaryDataLocation(TerminologyDataLocation&& value) { SetAuxiliaryDataLocation(std::move(value)); return *this;}
+
   private:
 
     TerminologyProperties m_terminologyProperties;
 
     TerminologyDataLocation m_terminologyDataLocation;
+
+    TerminologyDataLocation m_auxiliaryDataLocation;
   };
 
 } // namespace Model

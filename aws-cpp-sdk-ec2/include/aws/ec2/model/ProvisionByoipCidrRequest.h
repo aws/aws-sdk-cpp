@@ -282,22 +282,22 @@ namespace Model
 
 
     /**
-     * <para>Reserved.</para>
+     * <p>Reserved.</p>
      */
     inline bool GetMultiRegion() const{ return m_multiRegion; }
 
     /**
-     * <para>Reserved.</para>
+     * <p>Reserved.</p>
      */
     inline bool MultiRegionHasBeenSet() const { return m_multiRegionHasBeenSet; }
 
     /**
-     * <para>Reserved.</para>
+     * <p>Reserved.</p>
      */
     inline void SetMultiRegion(bool value) { m_multiRegionHasBeenSet = true; m_multiRegion = value; }
 
     /**
-     * <para>Reserved.</para>
+     * <p>Reserved.</p>
      */
     inline ProvisionByoipCidrRequest& WithMultiRegion(bool value) { SetMultiRegion(value); return *this;}
 

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/translate/model/TerminologyDataFormat.h>
+#include <aws/translate/model/Directionality.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -17,49 +17,42 @@ namespace Aws
   {
     namespace Model
     {
-      namespace TerminologyDataFormatMapper
+      namespace DirectionalityMapper
       {
 
-        static const int CSV_HASH = HashingUtils::HashString("CSV");
-        static const int TMX_HASH = HashingUtils::HashString("TMX");
-        static const int TSV_HASH = HashingUtils::HashString("TSV");
+        static const int UNI_HASH = HashingUtils::HashString("UNI");
+        static const int MULTI_HASH = HashingUtils::HashString("MULTI");
 
 
-        TerminologyDataFormat GetTerminologyDataFormatForName(const Aws::String& name)
+        Directionality GetDirectionalityForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == CSV_HASH)
+          if (hashCode == UNI_HASH)
           {
-            return TerminologyDataFormat::CSV;
+            return Directionality::UNI;
           }
-          else if (hashCode == TMX_HASH)
+          else if (hashCode == MULTI_HASH)
           {
-            return TerminologyDataFormat::TMX;
-          }
-          else if (hashCode == TSV_HASH)
-          {
-            return TerminologyDataFormat::TSV;
+            return Directionality::MULTI;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<TerminologyDataFormat>(hashCode);
+            return static_cast<Directionality>(hashCode);
           }
 
-          return TerminologyDataFormat::NOT_SET;
+          return Directionality::NOT_SET;
         }
 
-        Aws::String GetNameForTerminologyDataFormat(TerminologyDataFormat enumValue)
+        Aws::String GetNameForDirectionality(Directionality enumValue)
         {
           switch(enumValue)
           {
-          case TerminologyDataFormat::CSV:
-            return "CSV";
-          case TerminologyDataFormat::TMX:
-            return "TMX";
-          case TerminologyDataFormat::TSV:
-            return "TSV";
+          case Directionality::UNI:
+            return "UNI";
+          case Directionality::MULTI:
+            return "MULTI";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -71,7 +64,7 @@ namespace Aws
           }
         }
 
-      } // namespace TerminologyDataFormatMapper
+      } // namespace DirectionalityMapper
     } // namespace Model
   } // namespace Translate
 } // namespace Aws

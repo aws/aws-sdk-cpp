@@ -13,20 +13,19 @@ namespace Translate
 {
 namespace Model
 {
-  enum class TerminologyDataFormat
+  enum class Directionality
   {
     NOT_SET,
-    CSV,
-    TMX,
-    TSV
+    UNI,
+    MULTI
   };
 
-namespace TerminologyDataFormatMapper
+namespace DirectionalityMapper
 {
-AWS_TRANSLATE_API TerminologyDataFormat GetTerminologyDataFormatForName(const Aws::String& name);
+AWS_TRANSLATE_API Directionality GetDirectionalityForName(const Aws::String& name);
 
-AWS_TRANSLATE_API Aws::String GetNameForTerminologyDataFormat(TerminologyDataFormat value);
-} // namespace TerminologyDataFormatMapper
+AWS_TRANSLATE_API Aws::String GetNameForDirectionality(Directionality value);
+} // namespace DirectionalityMapper
 } // namespace Model
 } // namespace Translate
 } // namespace Aws

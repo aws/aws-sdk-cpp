@@ -36,42 +36,42 @@ namespace Model
 
 
     /**
-     * <p> The list of PartiQL statements representing the batch to run. </p>
+     * <p>The list of PartiQL statements representing the batch to run.</p>
      */
     inline const Aws::Vector<BatchStatementRequest>& GetStatements() const{ return m_statements; }
 
     /**
-     * <p> The list of PartiQL statements representing the batch to run. </p>
+     * <p>The list of PartiQL statements representing the batch to run.</p>
      */
     inline bool StatementsHasBeenSet() const { return m_statementsHasBeenSet; }
 
     /**
-     * <p> The list of PartiQL statements representing the batch to run. </p>
+     * <p>The list of PartiQL statements representing the batch to run.</p>
      */
     inline void SetStatements(const Aws::Vector<BatchStatementRequest>& value) { m_statementsHasBeenSet = true; m_statements = value; }
 
     /**
-     * <p> The list of PartiQL statements representing the batch to run. </p>
+     * <p>The list of PartiQL statements representing the batch to run.</p>
      */
     inline void SetStatements(Aws::Vector<BatchStatementRequest>&& value) { m_statementsHasBeenSet = true; m_statements = std::move(value); }
 
     /**
-     * <p> The list of PartiQL statements representing the batch to run. </p>
+     * <p>The list of PartiQL statements representing the batch to run.</p>
      */
     inline BatchExecuteStatementRequest& WithStatements(const Aws::Vector<BatchStatementRequest>& value) { SetStatements(value); return *this;}
 
     /**
-     * <p> The list of PartiQL statements representing the batch to run. </p>
+     * <p>The list of PartiQL statements representing the batch to run.</p>
      */
     inline BatchExecuteStatementRequest& WithStatements(Aws::Vector<BatchStatementRequest>&& value) { SetStatements(std::move(value)); return *this;}
 
     /**
-     * <p> The list of PartiQL statements representing the batch to run. </p>
+     * <p>The list of PartiQL statements representing the batch to run.</p>
      */
     inline BatchExecuteStatementRequest& AddStatements(const BatchStatementRequest& value) { m_statementsHasBeenSet = true; m_statements.push_back(value); return *this; }
 
     /**
-     * <p> The list of PartiQL statements representing the batch to run. </p>
+     * <p>The list of PartiQL statements representing the batch to run.</p>
      */
     inline BatchExecuteStatementRequest& AddStatements(BatchStatementRequest&& value) { m_statementsHasBeenSet = true; m_statements.push_back(std::move(value)); return *this; }
 

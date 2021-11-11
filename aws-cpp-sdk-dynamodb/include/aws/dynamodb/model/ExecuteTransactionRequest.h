@@ -38,91 +38,91 @@ namespace Model
 
 
     /**
-     * <p> The list of PartiQL statements representing the transaction to run. </p>
+     * <p>The list of PartiQL statements representing the transaction to run.</p>
      */
     inline const Aws::Vector<ParameterizedStatement>& GetTransactStatements() const{ return m_transactStatements; }
 
     /**
-     * <p> The list of PartiQL statements representing the transaction to run. </p>
+     * <p>The list of PartiQL statements representing the transaction to run.</p>
      */
     inline bool TransactStatementsHasBeenSet() const { return m_transactStatementsHasBeenSet; }
 
     /**
-     * <p> The list of PartiQL statements representing the transaction to run. </p>
+     * <p>The list of PartiQL statements representing the transaction to run.</p>
      */
     inline void SetTransactStatements(const Aws::Vector<ParameterizedStatement>& value) { m_transactStatementsHasBeenSet = true; m_transactStatements = value; }
 
     /**
-     * <p> The list of PartiQL statements representing the transaction to run. </p>
+     * <p>The list of PartiQL statements representing the transaction to run.</p>
      */
     inline void SetTransactStatements(Aws::Vector<ParameterizedStatement>&& value) { m_transactStatementsHasBeenSet = true; m_transactStatements = std::move(value); }
 
     /**
-     * <p> The list of PartiQL statements representing the transaction to run. </p>
+     * <p>The list of PartiQL statements representing the transaction to run.</p>
      */
     inline ExecuteTransactionRequest& WithTransactStatements(const Aws::Vector<ParameterizedStatement>& value) { SetTransactStatements(value); return *this;}
 
     /**
-     * <p> The list of PartiQL statements representing the transaction to run. </p>
+     * <p>The list of PartiQL statements representing the transaction to run.</p>
      */
     inline ExecuteTransactionRequest& WithTransactStatements(Aws::Vector<ParameterizedStatement>&& value) { SetTransactStatements(std::move(value)); return *this;}
 
     /**
-     * <p> The list of PartiQL statements representing the transaction to run. </p>
+     * <p>The list of PartiQL statements representing the transaction to run.</p>
      */
     inline ExecuteTransactionRequest& AddTransactStatements(const ParameterizedStatement& value) { m_transactStatementsHasBeenSet = true; m_transactStatements.push_back(value); return *this; }
 
     /**
-     * <p> The list of PartiQL statements representing the transaction to run. </p>
+     * <p>The list of PartiQL statements representing the transaction to run.</p>
      */
     inline ExecuteTransactionRequest& AddTransactStatements(ParameterizedStatement&& value) { m_transactStatementsHasBeenSet = true; m_transactStatements.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p> Set this value to get remaining results, if <code>NextToken</code> was
-     * returned in the statement response. </p>
+     * <p>Set this value to get remaining results, if <code>NextToken</code> was
+     * returned in the statement response.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * <p> Set this value to get remaining results, if <code>NextToken</code> was
-     * returned in the statement response. </p>
+     * <p>Set this value to get remaining results, if <code>NextToken</code> was
+     * returned in the statement response.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
-     * <p> Set this value to get remaining results, if <code>NextToken</code> was
-     * returned in the statement response. </p>
+     * <p>Set this value to get remaining results, if <code>NextToken</code> was
+     * returned in the statement response.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
-     * <p> Set this value to get remaining results, if <code>NextToken</code> was
-     * returned in the statement response. </p>
+     * <p>Set this value to get remaining results, if <code>NextToken</code> was
+     * returned in the statement response.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
-     * <p> Set this value to get remaining results, if <code>NextToken</code> was
-     * returned in the statement response. </p>
+     * <p>Set this value to get remaining results, if <code>NextToken</code> was
+     * returned in the statement response.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
-     * <p> Set this value to get remaining results, if <code>NextToken</code> was
-     * returned in the statement response. </p>
+     * <p>Set this value to get remaining results, if <code>NextToken</code> was
+     * returned in the statement response.</p>
      */
     inline ExecuteTransactionRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p> Set this value to get remaining results, if <code>NextToken</code> was
-     * returned in the statement response. </p>
+     * <p>Set this value to get remaining results, if <code>NextToken</code> was
+     * returned in the statement response.</p>
      */
     inline ExecuteTransactionRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * <p> Set this value to get remaining results, if <code>NextToken</code> was
-     * returned in the statement response. </p>
+     * <p>Set this value to get remaining results, if <code>NextToken</code> was
+     * returned in the statement response.</p>
      */
     inline ExecuteTransactionRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 

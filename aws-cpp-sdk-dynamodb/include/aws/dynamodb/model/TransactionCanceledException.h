@@ -62,8 +62,8 @@ namespace Model
    * <p>Transaction Conflict:</p> <ul> <li> <p>Code: <code>TransactionConflict</code>
    * </p> </li> <li> <p>Message: Transaction is ongoing for the item.</p> </li> </ul>
    * </li> <li> <p>Provisioned Throughput Exceeded:</p> <ul> <li> <p>Code:
-   * <code>ProvisionedThroughputExceeded</code> </p> </li> <li> <p>Messages: </p>
-   * <ul> <li> <p>The level of configured provisioned throughput for the table was
+   * <code>ProvisionedThroughputExceeded</code> </p> </li> <li> <p>Messages:</p> <ul>
+   * <li> <p>The level of configured provisioned throughput for the table was
    * exceeded. Consider increasing your provisioning level with the UpdateTable
    * API.</p>  <p>This Message is received when provisioned throughput is
    * exceeded is on a provisioned DynamoDB table.</p>  </li> <li> <p>The level
