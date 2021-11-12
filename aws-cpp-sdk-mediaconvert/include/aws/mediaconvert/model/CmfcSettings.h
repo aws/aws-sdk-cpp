@@ -256,7 +256,7 @@ namespace Model
      * List the audio rendition groups that you want included with this video
      * rendition. Use a comma-separated list. For example, say you want to include the
      * audio rendition groups that have the audio group IDs "audio_aac_1" and
-     * "audio_dolby". Then you would specify this value: "audio_aac_1, audio_dolby".
+     * "audio_dolby". Then you would specify this value: "audio_aac_1,audio_dolby".
      * Related setting: The rendition groups that you include in your comma-separated
      * list should all match values that you specify in the setting Audio group ID
      * (AudioGroupId) for audio renditions in the same output group as this video
@@ -276,7 +276,7 @@ namespace Model
      * List the audio rendition groups that you want included with this video
      * rendition. Use a comma-separated list. For example, say you want to include the
      * audio rendition groups that have the audio group IDs "audio_aac_1" and
-     * "audio_dolby". Then you would specify this value: "audio_aac_1, audio_dolby".
+     * "audio_dolby". Then you would specify this value: "audio_aac_1,audio_dolby".
      * Related setting: The rendition groups that you include in your comma-separated
      * list should all match values that you specify in the setting Audio group ID
      * (AudioGroupId) for audio renditions in the same output group as this video
@@ -296,7 +296,7 @@ namespace Model
      * List the audio rendition groups that you want included with this video
      * rendition. Use a comma-separated list. For example, say you want to include the
      * audio rendition groups that have the audio group IDs "audio_aac_1" and
-     * "audio_dolby". Then you would specify this value: "audio_aac_1, audio_dolby".
+     * "audio_dolby". Then you would specify this value: "audio_aac_1,audio_dolby".
      * Related setting: The rendition groups that you include in your comma-separated
      * list should all match values that you specify in the setting Audio group ID
      * (AudioGroupId) for audio renditions in the same output group as this video
@@ -316,7 +316,7 @@ namespace Model
      * List the audio rendition groups that you want included with this video
      * rendition. Use a comma-separated list. For example, say you want to include the
      * audio rendition groups that have the audio group IDs "audio_aac_1" and
-     * "audio_dolby". Then you would specify this value: "audio_aac_1, audio_dolby".
+     * "audio_dolby". Then you would specify this value: "audio_aac_1,audio_dolby".
      * Related setting: The rendition groups that you include in your comma-separated
      * list should all match values that you specify in the setting Audio group ID
      * (AudioGroupId) for audio renditions in the same output group as this video
@@ -336,7 +336,7 @@ namespace Model
      * List the audio rendition groups that you want included with this video
      * rendition. Use a comma-separated list. For example, say you want to include the
      * audio rendition groups that have the audio group IDs "audio_aac_1" and
-     * "audio_dolby". Then you would specify this value: "audio_aac_1, audio_dolby".
+     * "audio_dolby". Then you would specify this value: "audio_aac_1,audio_dolby".
      * Related setting: The rendition groups that you include in your comma-separated
      * list should all match values that you specify in the setting Audio group ID
      * (AudioGroupId) for audio renditions in the same output group as this video
@@ -356,7 +356,7 @@ namespace Model
      * List the audio rendition groups that you want included with this video
      * rendition. Use a comma-separated list. For example, say you want to include the
      * audio rendition groups that have the audio group IDs "audio_aac_1" and
-     * "audio_dolby". Then you would specify this value: "audio_aac_1, audio_dolby".
+     * "audio_dolby". Then you would specify this value: "audio_aac_1,audio_dolby".
      * Related setting: The rendition groups that you include in your comma-separated
      * list should all match values that you specify in the setting Audio group ID
      * (AudioGroupId) for audio renditions in the same output group as this video
@@ -376,7 +376,7 @@ namespace Model
      * List the audio rendition groups that you want included with this video
      * rendition. Use a comma-separated list. For example, say you want to include the
      * audio rendition groups that have the audio group IDs "audio_aac_1" and
-     * "audio_dolby". Then you would specify this value: "audio_aac_1, audio_dolby".
+     * "audio_dolby". Then you would specify this value: "audio_aac_1,audio_dolby".
      * Related setting: The rendition groups that you include in your comma-separated
      * list should all match values that you specify in the setting Audio group ID
      * (AudioGroupId) for audio renditions in the same output group as this video
@@ -396,7 +396,7 @@ namespace Model
      * List the audio rendition groups that you want included with this video
      * rendition. Use a comma-separated list. For example, say you want to include the
      * audio rendition groups that have the audio group IDs "audio_aac_1" and
-     * "audio_dolby". Then you would specify this value: "audio_aac_1, audio_dolby".
+     * "audio_dolby". Then you would specify this value: "audio_aac_1,audio_dolby".
      * Related setting: The rendition groups that you include in your comma-separated
      * list should all match values that you specify in the setting Audio group ID
      * (AudioGroupId) for audio renditions in the same output group as this video

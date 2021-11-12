@@ -38,32 +38,32 @@ namespace Model
 
 
     /**
-     * <p>The collection of the AWS resources used to create your monthly DevOps Guru
-     * cost estimate.</p>
+     * <p>The collection of the Amazon Web Services resources used to create your
+     * monthly DevOps Guru cost estimate.</p>
      */
     inline const CostEstimationResourceCollectionFilter& GetResourceCollection() const{ return m_resourceCollection; }
 
     /**
-     * <p>The collection of the AWS resources used to create your monthly DevOps Guru
-     * cost estimate.</p>
+     * <p>The collection of the Amazon Web Services resources used to create your
+     * monthly DevOps Guru cost estimate.</p>
      */
     inline void SetResourceCollection(const CostEstimationResourceCollectionFilter& value) { m_resourceCollection = value; }
 
     /**
-     * <p>The collection of the AWS resources used to create your monthly DevOps Guru
-     * cost estimate.</p>
+     * <p>The collection of the Amazon Web Services resources used to create your
+     * monthly DevOps Guru cost estimate.</p>
      */
     inline void SetResourceCollection(CostEstimationResourceCollectionFilter&& value) { m_resourceCollection = std::move(value); }
 
     /**
-     * <p>The collection of the AWS resources used to create your monthly DevOps Guru
-     * cost estimate.</p>
+     * <p>The collection of the Amazon Web Services resources used to create your
+     * monthly DevOps Guru cost estimate.</p>
      */
     inline GetCostEstimationResult& WithResourceCollection(const CostEstimationResourceCollectionFilter& value) { SetResourceCollection(value); return *this;}
 
     /**
-     * <p>The collection of the AWS resources used to create your monthly DevOps Guru
-     * cost estimate.</p>
+     * <p>The collection of the Amazon Web Services resources used to create your
+     * monthly DevOps Guru cost estimate.</p>
      */
     inline GetCostEstimationResult& WithResourceCollection(CostEstimationResourceCollectionFilter&& value) { SetResourceCollection(std::move(value)); return *this;}
 
@@ -106,43 +106,50 @@ namespace Model
 
     /**
      * <p>An array of <code>ResourceCost</code> objects that each contains details
-     * about the monthly cost estimate to analyze one of your AWS resources.</p>
+     * about the monthly cost estimate to analyze one of your Amazon Web Services
+     * resources.</p>
      */
     inline const Aws::Vector<ServiceResourceCost>& GetCosts() const{ return m_costs; }
 
     /**
      * <p>An array of <code>ResourceCost</code> objects that each contains details
-     * about the monthly cost estimate to analyze one of your AWS resources.</p>
+     * about the monthly cost estimate to analyze one of your Amazon Web Services
+     * resources.</p>
      */
     inline void SetCosts(const Aws::Vector<ServiceResourceCost>& value) { m_costs = value; }
 
     /**
      * <p>An array of <code>ResourceCost</code> objects that each contains details
-     * about the monthly cost estimate to analyze one of your AWS resources.</p>
+     * about the monthly cost estimate to analyze one of your Amazon Web Services
+     * resources.</p>
      */
     inline void SetCosts(Aws::Vector<ServiceResourceCost>&& value) { m_costs = std::move(value); }
 
     /**
      * <p>An array of <code>ResourceCost</code> objects that each contains details
-     * about the monthly cost estimate to analyze one of your AWS resources.</p>
+     * about the monthly cost estimate to analyze one of your Amazon Web Services
+     * resources.</p>
      */
     inline GetCostEstimationResult& WithCosts(const Aws::Vector<ServiceResourceCost>& value) { SetCosts(value); return *this;}
 
     /**
      * <p>An array of <code>ResourceCost</code> objects that each contains details
-     * about the monthly cost estimate to analyze one of your AWS resources.</p>
+     * about the monthly cost estimate to analyze one of your Amazon Web Services
+     * resources.</p>
      */
     inline GetCostEstimationResult& WithCosts(Aws::Vector<ServiceResourceCost>&& value) { SetCosts(std::move(value)); return *this;}
 
     /**
      * <p>An array of <code>ResourceCost</code> objects that each contains details
-     * about the monthly cost estimate to analyze one of your AWS resources.</p>
+     * about the monthly cost estimate to analyze one of your Amazon Web Services
+     * resources.</p>
      */
     inline GetCostEstimationResult& AddCosts(const ServiceResourceCost& value) { m_costs.push_back(value); return *this; }
 
     /**
      * <p>An array of <code>ResourceCost</code> objects that each contains details
-     * about the monthly cost estimate to analyze one of your AWS resources.</p>
+     * about the monthly cost estimate to analyze one of your Amazon Web Services
+     * resources.</p>
      */
     inline GetCostEstimationResult& AddCosts(ServiceResourceCost&& value) { m_costs.push_back(std::move(value)); return *this; }
 
@@ -174,23 +181,23 @@ namespace Model
 
 
     /**
-     * <p>The estimated monthly cost to analyze the AWS resources. This value is the
-     * sum of the estimated costs to analyze each resource in the <code>Costs</code>
-     * object in this response.</p>
+     * <p>The estimated monthly cost to analyze the Amazon Web Services resources. This
+     * value is the sum of the estimated costs to analyze each resource in the
+     * <code>Costs</code> object in this response.</p>
      */
     inline double GetTotalCost() const{ return m_totalCost; }
 
     /**
-     * <p>The estimated monthly cost to analyze the AWS resources. This value is the
-     * sum of the estimated costs to analyze each resource in the <code>Costs</code>
-     * object in this response.</p>
+     * <p>The estimated monthly cost to analyze the Amazon Web Services resources. This
+     * value is the sum of the estimated costs to analyze each resource in the
+     * <code>Costs</code> object in this response.</p>
      */
     inline void SetTotalCost(double value) { m_totalCost = value; }
 
     /**
-     * <p>The estimated monthly cost to analyze the AWS resources. This value is the
-     * sum of the estimated costs to analyze each resource in the <code>Costs</code>
-     * object in this response.</p>
+     * <p>The estimated monthly cost to analyze the Amazon Web Services resources. This
+     * value is the sum of the estimated costs to analyze each resource in the
+     * <code>Costs</code> object in this response.</p>
      */
     inline GetCostEstimationResult& WithTotalCost(double value) { SetTotalCost(value); return *this;}
 

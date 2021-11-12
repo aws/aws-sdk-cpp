@@ -191,48 +191,42 @@ namespace Model
     /**
      * Specify the color of the rectangle behind the captions. Leave background color
      * (BackgroundColor) blank and set Style passthrough (StylePassthrough) to enabled
-     * to use the background color data from your input captions, if present. Within
-     * your job settings, all of your DVB-Sub settings must be identical.
+     * to use the background color data from your input captions, if present.
      */
     inline const BurninSubtitleBackgroundColor& GetBackgroundColor() const{ return m_backgroundColor; }
 
     /**
      * Specify the color of the rectangle behind the captions. Leave background color
      * (BackgroundColor) blank and set Style passthrough (StylePassthrough) to enabled
-     * to use the background color data from your input captions, if present. Within
-     * your job settings, all of your DVB-Sub settings must be identical.
+     * to use the background color data from your input captions, if present.
      */
     inline bool BackgroundColorHasBeenSet() const { return m_backgroundColorHasBeenSet; }
 
     /**
      * Specify the color of the rectangle behind the captions. Leave background color
      * (BackgroundColor) blank and set Style passthrough (StylePassthrough) to enabled
-     * to use the background color data from your input captions, if present. Within
-     * your job settings, all of your DVB-Sub settings must be identical.
+     * to use the background color data from your input captions, if present.
      */
     inline void SetBackgroundColor(const BurninSubtitleBackgroundColor& value) { m_backgroundColorHasBeenSet = true; m_backgroundColor = value; }
 
     /**
      * Specify the color of the rectangle behind the captions. Leave background color
      * (BackgroundColor) blank and set Style passthrough (StylePassthrough) to enabled
-     * to use the background color data from your input captions, if present. Within
-     * your job settings, all of your DVB-Sub settings must be identical.
+     * to use the background color data from your input captions, if present.
      */
     inline void SetBackgroundColor(BurninSubtitleBackgroundColor&& value) { m_backgroundColorHasBeenSet = true; m_backgroundColor = std::move(value); }
 
     /**
      * Specify the color of the rectangle behind the captions. Leave background color
      * (BackgroundColor) blank and set Style passthrough (StylePassthrough) to enabled
-     * to use the background color data from your input captions, if present. Within
-     * your job settings, all of your DVB-Sub settings must be identical.
+     * to use the background color data from your input captions, if present.
      */
     inline BurninDestinationSettings& WithBackgroundColor(const BurninSubtitleBackgroundColor& value) { SetBackgroundColor(value); return *this;}
 
     /**
      * Specify the color of the rectangle behind the captions. Leave background color
      * (BackgroundColor) blank and set Style passthrough (StylePassthrough) to enabled
-     * to use the background color data from your input captions, if present. Within
-     * your job settings, all of your DVB-Sub settings must be identical.
+     * to use the background color data from your input captions, if present.
      */
     inline BurninDestinationSettings& WithBackgroundColor(BurninSubtitleBackgroundColor&& value) { SetBackgroundColor(std::move(value)); return *this;}
 

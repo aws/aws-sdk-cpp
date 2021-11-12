@@ -41,81 +41,95 @@ namespace Model
 
 
     /**
-     * <p>A formatted URL that displays to an agent in the Contact Control Panel
-     * (CCP)</p>
+     * <p>A valid value for the reference. For example, for a URL reference, a
+     * formatted URL that is displayed to an agent in the Contact Control Panel
+     * (CCP).</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>A formatted URL that displays to an agent in the Contact Control Panel
-     * (CCP)</p>
+     * <p>A valid value for the reference. For example, for a URL reference, a
+     * formatted URL that is displayed to an agent in the Contact Control Panel
+     * (CCP).</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>A formatted URL that displays to an agent in the Contact Control Panel
-     * (CCP)</p>
+     * <p>A valid value for the reference. For example, for a URL reference, a
+     * formatted URL that is displayed to an agent in the Contact Control Panel
+     * (CCP).</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>A formatted URL that displays to an agent in the Contact Control Panel
-     * (CCP)</p>
+     * <p>A valid value for the reference. For example, for a URL reference, a
+     * formatted URL that is displayed to an agent in the Contact Control Panel
+     * (CCP).</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>A formatted URL that displays to an agent in the Contact Control Panel
-     * (CCP)</p>
+     * <p>A valid value for the reference. For example, for a URL reference, a
+     * formatted URL that is displayed to an agent in the Contact Control Panel
+     * (CCP).</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>A formatted URL that displays to an agent in the Contact Control Panel
-     * (CCP)</p>
+     * <p>A valid value for the reference. For example, for a URL reference, a
+     * formatted URL that is displayed to an agent in the Contact Control Panel
+     * (CCP).</p>
      */
     inline Reference& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>A formatted URL that displays to an agent in the Contact Control Panel
-     * (CCP)</p>
+     * <p>A valid value for the reference. For example, for a URL reference, a
+     * formatted URL that is displayed to an agent in the Contact Control Panel
+     * (CCP).</p>
      */
     inline Reference& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>A formatted URL that displays to an agent in the Contact Control Panel
-     * (CCP)</p>
+     * <p>A valid value for the reference. For example, for a URL reference, a
+     * formatted URL that is displayed to an agent in the Contact Control Panel
+     * (CCP).</p>
      */
     inline Reference& WithValue(const char* value) { SetValue(value); return *this;}
 
 
     /**
-     * <p>A valid URL.</p>
+     * <p>The type of the reference. Only <code>URL</code> type can be added or updated
+     * on a contact.</p>
      */
     inline const ReferenceType& GetType() const{ return m_type; }
 
     /**
-     * <p>A valid URL.</p>
+     * <p>The type of the reference. Only <code>URL</code> type can be added or updated
+     * on a contact.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>A valid URL.</p>
+     * <p>The type of the reference. Only <code>URL</code> type can be added or updated
+     * on a contact.</p>
      */
     inline void SetType(const ReferenceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>A valid URL.</p>
+     * <p>The type of the reference. Only <code>URL</code> type can be added or updated
+     * on a contact.</p>
      */
     inline void SetType(ReferenceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>A valid URL.</p>
+     * <p>The type of the reference. Only <code>URL</code> type can be added or updated
+     * on a contact.</p>
      */
     inline Reference& WithType(const ReferenceType& value) { SetType(value); return *this;}
 
     /**
-     * <p>A valid URL.</p>
+     * <p>The type of the reference. Only <code>URL</code> type can be added or updated
+     * on a contact.</p>
      */
     inline Reference& WithType(ReferenceType&& value) { SetType(std::move(value)); return *this;}
 

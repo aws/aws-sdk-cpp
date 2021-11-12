@@ -25,7 +25,8 @@ namespace Model
     CENTOS,
     ORACLE_LINUX,
     DEBIAN,
-    MACOS
+    MACOS,
+    RASPBIAN
   };
 
 namespace OperatingSystemMapper

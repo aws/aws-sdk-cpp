@@ -243,6 +243,15 @@ namespace Model
     c6gn_8xlarge,
     c6gn_12xlarge,
     c6gn_16xlarge,
+    c6i_large,
+    c6i_xlarge,
+    c6i_2xlarge,
+    c6i_4xlarge,
+    c6i_8xlarge,
+    c6i_12xlarge,
+    c6i_16xlarge,
+    c6i_24xlarge,
+    c6i_32xlarge,
     cc1_4xlarge,
     cc2_8xlarge,
     g2_2xlarge,
@@ -436,7 +445,15 @@ namespace Model
     x2gd_metal,
     vt1_3xlarge,
     vt1_6xlarge,
-    vt1_24xlarge
+    vt1_24xlarge,
+    g5_xlarge,
+    g5_2xlarge,
+    g5_4xlarge,
+    g5_8xlarge,
+    g5_12xlarge,
+    g5_16xlarge,
+    g5_24xlarge,
+    g5_48xlarge
   };
 
 namespace InstanceTypeMapper

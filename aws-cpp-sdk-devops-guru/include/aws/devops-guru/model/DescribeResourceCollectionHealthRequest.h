@@ -40,56 +40,62 @@ namespace Model
 
 
     /**
-     * <p> An AWS resource collection type. This type specifies how analyzed AWS
-     * resources are defined. The one type of AWS resource collection supported is AWS
-     * CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS
-     * resources that are defined in the stacks. You can specify up to 500 AWS
-     * CloudFormation stacks. </p>
+     * <p> An Amazon Web Services resource collection type. This type specifies how
+     * analyzed Amazon Web Services resources are defined. The one type of Amazon Web
+     * Services resource collection supported is Amazon Web Services CloudFormation
+     * stacks. DevOps Guru can be configured to analyze only the Amazon Web Services
+     * resources that are defined in the stacks. You can specify up to 500 Amazon Web
+     * Services CloudFormation stacks. </p>
      */
     inline const ResourceCollectionType& GetResourceCollectionType() const{ return m_resourceCollectionType; }
 
     /**
-     * <p> An AWS resource collection type. This type specifies how analyzed AWS
-     * resources are defined. The one type of AWS resource collection supported is AWS
-     * CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS
-     * resources that are defined in the stacks. You can specify up to 500 AWS
-     * CloudFormation stacks. </p>
+     * <p> An Amazon Web Services resource collection type. This type specifies how
+     * analyzed Amazon Web Services resources are defined. The one type of Amazon Web
+     * Services resource collection supported is Amazon Web Services CloudFormation
+     * stacks. DevOps Guru can be configured to analyze only the Amazon Web Services
+     * resources that are defined in the stacks. You can specify up to 500 Amazon Web
+     * Services CloudFormation stacks. </p>
      */
     inline bool ResourceCollectionTypeHasBeenSet() const { return m_resourceCollectionTypeHasBeenSet; }
 
     /**
-     * <p> An AWS resource collection type. This type specifies how analyzed AWS
-     * resources are defined. The one type of AWS resource collection supported is AWS
-     * CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS
-     * resources that are defined in the stacks. You can specify up to 500 AWS
-     * CloudFormation stacks. </p>
+     * <p> An Amazon Web Services resource collection type. This type specifies how
+     * analyzed Amazon Web Services resources are defined. The one type of Amazon Web
+     * Services resource collection supported is Amazon Web Services CloudFormation
+     * stacks. DevOps Guru can be configured to analyze only the Amazon Web Services
+     * resources that are defined in the stacks. You can specify up to 500 Amazon Web
+     * Services CloudFormation stacks. </p>
      */
     inline void SetResourceCollectionType(const ResourceCollectionType& value) { m_resourceCollectionTypeHasBeenSet = true; m_resourceCollectionType = value; }
 
     /**
-     * <p> An AWS resource collection type. This type specifies how analyzed AWS
-     * resources are defined. The one type of AWS resource collection supported is AWS
-     * CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS
-     * resources that are defined in the stacks. You can specify up to 500 AWS
-     * CloudFormation stacks. </p>
+     * <p> An Amazon Web Services resource collection type. This type specifies how
+     * analyzed Amazon Web Services resources are defined. The one type of Amazon Web
+     * Services resource collection supported is Amazon Web Services CloudFormation
+     * stacks. DevOps Guru can be configured to analyze only the Amazon Web Services
+     * resources that are defined in the stacks. You can specify up to 500 Amazon Web
+     * Services CloudFormation stacks. </p>
      */
     inline void SetResourceCollectionType(ResourceCollectionType&& value) { m_resourceCollectionTypeHasBeenSet = true; m_resourceCollectionType = std::move(value); }
 
     /**
-     * <p> An AWS resource collection type. This type specifies how analyzed AWS
-     * resources are defined. The one type of AWS resource collection supported is AWS
-     * CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS
-     * resources that are defined in the stacks. You can specify up to 500 AWS
-     * CloudFormation stacks. </p>
+     * <p> An Amazon Web Services resource collection type. This type specifies how
+     * analyzed Amazon Web Services resources are defined. The one type of Amazon Web
+     * Services resource collection supported is Amazon Web Services CloudFormation
+     * stacks. DevOps Guru can be configured to analyze only the Amazon Web Services
+     * resources that are defined in the stacks. You can specify up to 500 Amazon Web
+     * Services CloudFormation stacks. </p>
      */
     inline DescribeResourceCollectionHealthRequest& WithResourceCollectionType(const ResourceCollectionType& value) { SetResourceCollectionType(value); return *this;}
 
     /**
-     * <p> An AWS resource collection type. This type specifies how analyzed AWS
-     * resources are defined. The one type of AWS resource collection supported is AWS
-     * CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS
-     * resources that are defined in the stacks. You can specify up to 500 AWS
-     * CloudFormation stacks. </p>
+     * <p> An Amazon Web Services resource collection type. This type specifies how
+     * analyzed Amazon Web Services resources are defined. The one type of Amazon Web
+     * Services resource collection supported is Amazon Web Services CloudFormation
+     * stacks. DevOps Guru can be configured to analyze only the Amazon Web Services
+     * resources that are defined in the stacks. You can specify up to 500 Amazon Web
+     * Services CloudFormation stacks. </p>
      */
     inline DescribeResourceCollectionHealthRequest& WithResourceCollectionType(ResourceCollectionType&& value) { SetResourceCollectionType(std::move(value)); return *this;}
 

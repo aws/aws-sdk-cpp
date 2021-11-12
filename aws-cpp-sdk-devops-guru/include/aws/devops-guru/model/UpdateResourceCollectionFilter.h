@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p> Contains information used to update a collection of AWS resources.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p> Contains information used to update a collection of Amazon Web Services
+   * resources. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateResourceCollectionFilter">AWS
    * API Reference</a></p>
    */
@@ -39,38 +39,38 @@ namespace Model
 
 
     /**
-     * <p> An collection of AWS CloudFormation stacks. You can specify up to 500 AWS
-     * CloudFormation stacks. </p>
+     * <p> An collection of Amazon Web Services CloudFormation stacks. You can specify
+     * up to 500 Amazon Web Services CloudFormation stacks. </p>
      */
     inline const UpdateCloudFormationCollectionFilter& GetCloudFormation() const{ return m_cloudFormation; }
 
     /**
-     * <p> An collection of AWS CloudFormation stacks. You can specify up to 500 AWS
-     * CloudFormation stacks. </p>
+     * <p> An collection of Amazon Web Services CloudFormation stacks. You can specify
+     * up to 500 Amazon Web Services CloudFormation stacks. </p>
      */
     inline bool CloudFormationHasBeenSet() const { return m_cloudFormationHasBeenSet; }
 
     /**
-     * <p> An collection of AWS CloudFormation stacks. You can specify up to 500 AWS
-     * CloudFormation stacks. </p>
+     * <p> An collection of Amazon Web Services CloudFormation stacks. You can specify
+     * up to 500 Amazon Web Services CloudFormation stacks. </p>
      */
     inline void SetCloudFormation(const UpdateCloudFormationCollectionFilter& value) { m_cloudFormationHasBeenSet = true; m_cloudFormation = value; }
 
     /**
-     * <p> An collection of AWS CloudFormation stacks. You can specify up to 500 AWS
-     * CloudFormation stacks. </p>
+     * <p> An collection of Amazon Web Services CloudFormation stacks. You can specify
+     * up to 500 Amazon Web Services CloudFormation stacks. </p>
      */
     inline void SetCloudFormation(UpdateCloudFormationCollectionFilter&& value) { m_cloudFormationHasBeenSet = true; m_cloudFormation = std::move(value); }
 
     /**
-     * <p> An collection of AWS CloudFormation stacks. You can specify up to 500 AWS
-     * CloudFormation stacks. </p>
+     * <p> An collection of Amazon Web Services CloudFormation stacks. You can specify
+     * up to 500 Amazon Web Services CloudFormation stacks. </p>
      */
     inline UpdateResourceCollectionFilter& WithCloudFormation(const UpdateCloudFormationCollectionFilter& value) { SetCloudFormation(value); return *this;}
 
     /**
-     * <p> An collection of AWS CloudFormation stacks. You can specify up to 500 AWS
-     * CloudFormation stacks. </p>
+     * <p> An collection of Amazon Web Services CloudFormation stacks. You can specify
+     * up to 500 Amazon Web Services CloudFormation stacks. </p>
      */
     inline UpdateResourceCollectionFilter& WithCloudFormation(UpdateCloudFormationCollectionFilter&& value) { SetCloudFormation(std::move(value)); return *this;}
 

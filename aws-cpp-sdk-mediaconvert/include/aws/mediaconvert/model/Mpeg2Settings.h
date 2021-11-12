@@ -516,30 +516,42 @@ namespace Model
 
 
     /**
-     * Frequency of closed GOPs. In streaming applications, it is recommended that this
-     * be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly
-     * as possible. Setting this value to 0 will break output segmenting.
+     * Specify the relative frequency of open to closed GOPs in this output. For
+     * example, if you want to allow four open GOPs and then require a closed GOP, set
+     * this value to 5. When you create a streaming output, we recommend that you keep
+     * the default value, 1, so that players starting mid-stream receive an IDR frame
+     * as quickly as possible. Don't set this value to 0; that would break output
+     * segmenting.
      */
     inline int GetGopClosedCadence() const{ return m_gopClosedCadence; }
 
     /**
-     * Frequency of closed GOPs. In streaming applications, it is recommended that this
-     * be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly
-     * as possible. Setting this value to 0 will break output segmenting.
+     * Specify the relative frequency of open to closed GOPs in this output. For
+     * example, if you want to allow four open GOPs and then require a closed GOP, set
+     * this value to 5. When you create a streaming output, we recommend that you keep
+     * the default value, 1, so that players starting mid-stream receive an IDR frame
+     * as quickly as possible. Don't set this value to 0; that would break output
+     * segmenting.
      */
     inline bool GopClosedCadenceHasBeenSet() const { return m_gopClosedCadenceHasBeenSet; }
 
     /**
-     * Frequency of closed GOPs. In streaming applications, it is recommended that this
-     * be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly
-     * as possible. Setting this value to 0 will break output segmenting.
+     * Specify the relative frequency of open to closed GOPs in this output. For
+     * example, if you want to allow four open GOPs and then require a closed GOP, set
+     * this value to 5. When you create a streaming output, we recommend that you keep
+     * the default value, 1, so that players starting mid-stream receive an IDR frame
+     * as quickly as possible. Don't set this value to 0; that would break output
+     * segmenting.
      */
     inline void SetGopClosedCadence(int value) { m_gopClosedCadenceHasBeenSet = true; m_gopClosedCadence = value; }
 
     /**
-     * Frequency of closed GOPs. In streaming applications, it is recommended that this
-     * be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly
-     * as possible. Setting this value to 0 will break output segmenting.
+     * Specify the relative frequency of open to closed GOPs in this output. For
+     * example, if you want to allow four open GOPs and then require a closed GOP, set
+     * this value to 5. When you create a streaming output, we recommend that you keep
+     * the default value, 1, so that players starting mid-stream receive an IDR frame
+     * as quickly as possible. Don't set this value to 0; that would break output
+     * segmenting.
      */
     inline Mpeg2Settings& WithGopClosedCadence(int value) { SetGopClosedCadence(value); return *this;}
 
@@ -826,46 +838,66 @@ namespace Model
 
 
     /**
-     * Enforces separation between repeated (cadence) I-frames and I-frames inserted by
-     * Scene Change Detection. If a scene change I-frame is within I-interval frames of
-     * a cadence I-frame, the GOP is shrunk and/or stretched to the scene change
-     * I-frame. GOP stretch requires enabling lookahead as well as setting I-interval.
-     * The normal cadence resumes for the next GOP. This setting is only used when
-     * Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size +
-     * Min-I-interval - 1
+     * Use this setting only when you also enable Scene change detection
+     * (SceneChangeDetect). This setting determines how the encoder manages the spacing
+     * between I-frames that it inserts as part of the I-frame cadence and the I-frames
+     * that it inserts for Scene change detection. When you specify a value for this
+     * setting, the encoder determines whether to skip a cadence-driven I-frame by the
+     * value you set. For example, if you set Min I interval (minIInterval) to 5 and a
+     * cadence-driven I-frame would fall within 5 frames of a scene-change I-frame,
+     * then the encoder skips the cadence-driven I-frame. In this way, one GOP is
+     * shrunk slightly and one GOP is stretched slightly. When the cadence-driven
+     * I-frames are farther from the scene-change I-frame than the value you set, then
+     * the encoder leaves all I-frames in place and the GOPs surrounding the scene
+     * change are smaller than the usual cadence GOPs.
      */
     inline int GetMinIInterval() const{ return m_minIInterval; }
 
     /**
-     * Enforces separation between repeated (cadence) I-frames and I-frames inserted by
-     * Scene Change Detection. If a scene change I-frame is within I-interval frames of
-     * a cadence I-frame, the GOP is shrunk and/or stretched to the scene change
-     * I-frame. GOP stretch requires enabling lookahead as well as setting I-interval.
-     * The normal cadence resumes for the next GOP. This setting is only used when
-     * Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size +
-     * Min-I-interval - 1
+     * Use this setting only when you also enable Scene change detection
+     * (SceneChangeDetect). This setting determines how the encoder manages the spacing
+     * between I-frames that it inserts as part of the I-frame cadence and the I-frames
+     * that it inserts for Scene change detection. When you specify a value for this
+     * setting, the encoder determines whether to skip a cadence-driven I-frame by the
+     * value you set. For example, if you set Min I interval (minIInterval) to 5 and a
+     * cadence-driven I-frame would fall within 5 frames of a scene-change I-frame,
+     * then the encoder skips the cadence-driven I-frame. In this way, one GOP is
+     * shrunk slightly and one GOP is stretched slightly. When the cadence-driven
+     * I-frames are farther from the scene-change I-frame than the value you set, then
+     * the encoder leaves all I-frames in place and the GOPs surrounding the scene
+     * change are smaller than the usual cadence GOPs.
      */
     inline bool MinIIntervalHasBeenSet() const { return m_minIIntervalHasBeenSet; }
 
     /**
-     * Enforces separation between repeated (cadence) I-frames and I-frames inserted by
-     * Scene Change Detection. If a scene change I-frame is within I-interval frames of
-     * a cadence I-frame, the GOP is shrunk and/or stretched to the scene change
-     * I-frame. GOP stretch requires enabling lookahead as well as setting I-interval.
-     * The normal cadence resumes for the next GOP. This setting is only used when
-     * Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size +
-     * Min-I-interval - 1
+     * Use this setting only when you also enable Scene change detection
+     * (SceneChangeDetect). This setting determines how the encoder manages the spacing
+     * between I-frames that it inserts as part of the I-frame cadence and the I-frames
+     * that it inserts for Scene change detection. When you specify a value for this
+     * setting, the encoder determines whether to skip a cadence-driven I-frame by the
+     * value you set. For example, if you set Min I interval (minIInterval) to 5 and a
+     * cadence-driven I-frame would fall within 5 frames of a scene-change I-frame,
+     * then the encoder skips the cadence-driven I-frame. In this way, one GOP is
+     * shrunk slightly and one GOP is stretched slightly. When the cadence-driven
+     * I-frames are farther from the scene-change I-frame than the value you set, then
+     * the encoder leaves all I-frames in place and the GOPs surrounding the scene
+     * change are smaller than the usual cadence GOPs.
      */
     inline void SetMinIInterval(int value) { m_minIIntervalHasBeenSet = true; m_minIInterval = value; }
 
     /**
-     * Enforces separation between repeated (cadence) I-frames and I-frames inserted by
-     * Scene Change Detection. If a scene change I-frame is within I-interval frames of
-     * a cadence I-frame, the GOP is shrunk and/or stretched to the scene change
-     * I-frame. GOP stretch requires enabling lookahead as well as setting I-interval.
-     * The normal cadence resumes for the next GOP. This setting is only used when
-     * Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size +
-     * Min-I-interval - 1
+     * Use this setting only when you also enable Scene change detection
+     * (SceneChangeDetect). This setting determines how the encoder manages the spacing
+     * between I-frames that it inserts as part of the I-frame cadence and the I-frames
+     * that it inserts for Scene change detection. When you specify a value for this
+     * setting, the encoder determines whether to skip a cadence-driven I-frame by the
+     * value you set. For example, if you set Min I interval (minIInterval) to 5 and a
+     * cadence-driven I-frame would fall within 5 frames of a scene-change I-frame,
+     * then the encoder skips the cadence-driven I-frame. In this way, one GOP is
+     * shrunk slightly and one GOP is stretched slightly. When the cadence-driven
+     * I-frames are farther from the scene-change I-frame than the value you set, then
+     * the encoder leaves all I-frames in place and the GOPs surrounding the scene
+     * change are smaller than the usual cadence GOPs.
      */
     inline Mpeg2Settings& WithMinIInterval(int value) { SetMinIInterval(value); return *this;}
 

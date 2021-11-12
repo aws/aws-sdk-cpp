@@ -246,32 +246,32 @@ namespace Model
 
 
     /**
-     * <p>A collection of the names of AWS services.</p>
+     * <p>A collection of the names of Amazon Web Services services.</p>
      */
     inline const ServiceCollection& GetServiceCollection() const{ return m_serviceCollection; }
 
     /**
-     * <p>A collection of the names of AWS services.</p>
+     * <p>A collection of the names of Amazon Web Services services.</p>
      */
     inline bool ServiceCollectionHasBeenSet() const { return m_serviceCollectionHasBeenSet; }
 
     /**
-     * <p>A collection of the names of AWS services.</p>
+     * <p>A collection of the names of Amazon Web Services services.</p>
      */
     inline void SetServiceCollection(const ServiceCollection& value) { m_serviceCollectionHasBeenSet = true; m_serviceCollection = value; }
 
     /**
-     * <p>A collection of the names of AWS services.</p>
+     * <p>A collection of the names of Amazon Web Services services.</p>
      */
     inline void SetServiceCollection(ServiceCollection&& value) { m_serviceCollectionHasBeenSet = true; m_serviceCollection = std::move(value); }
 
     /**
-     * <p>A collection of the names of AWS services.</p>
+     * <p>A collection of the names of Amazon Web Services services.</p>
      */
     inline ProactiveInsightSummary& WithServiceCollection(const ServiceCollection& value) { SetServiceCollection(value); return *this;}
 
     /**
-     * <p>A collection of the names of AWS services.</p>
+     * <p>A collection of the names of Amazon Web Services services.</p>
      */
     inline ProactiveInsightSummary& WithServiceCollection(ServiceCollection&& value) { SetServiceCollection(std::move(value)); return *this;}
 

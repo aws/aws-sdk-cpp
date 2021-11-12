@@ -31,10 +31,12 @@ namespace Model
    * notifications using Amazon SNS in your account. For more information, see <a
    * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
    * for cross account Amazon SNS topics</a>.</p> <p>If you use an Amazon SNS topic
-   * that is encrypted by an AWS Key Management Service customer-managed key (CMK),
-   * then you must add permissions to the CMK. For more information, see <a
+   * that is encrypted by an Amazon Web Services Key Management Service
+   * customer-managed key (CMK), then you must add permissions to the CMK. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions
-   * for AWS KMS–encrypted Amazon SNS topics</a>.</p><p><h3>See Also:</h3>   <a
+   * for Amazon Web Services KMS–encrypted Amazon SNS topics</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/SnsChannelConfig">AWS
    * API Reference</a></p>
    */

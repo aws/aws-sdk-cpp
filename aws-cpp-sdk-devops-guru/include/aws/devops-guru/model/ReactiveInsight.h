@@ -225,58 +225,58 @@ namespace Model
 
 
     /**
-     * <p> The ID of the AWS System Manager OpsItem created for this insight. You must
-     * enable the creation of OpstItems insights before they are created for each
-     * insight. </p>
+     * <p> The ID of the Amazon Web Services System Manager OpsItem created for this
+     * insight. You must enable the creation of OpstItems insights before they are
+     * created for each insight. </p>
      */
     inline const Aws::String& GetSsmOpsItemId() const{ return m_ssmOpsItemId; }
 
     /**
-     * <p> The ID of the AWS System Manager OpsItem created for this insight. You must
-     * enable the creation of OpstItems insights before they are created for each
-     * insight. </p>
+     * <p> The ID of the Amazon Web Services System Manager OpsItem created for this
+     * insight. You must enable the creation of OpstItems insights before they are
+     * created for each insight. </p>
      */
     inline bool SsmOpsItemIdHasBeenSet() const { return m_ssmOpsItemIdHasBeenSet; }
 
     /**
-     * <p> The ID of the AWS System Manager OpsItem created for this insight. You must
-     * enable the creation of OpstItems insights before they are created for each
-     * insight. </p>
+     * <p> The ID of the Amazon Web Services System Manager OpsItem created for this
+     * insight. You must enable the creation of OpstItems insights before they are
+     * created for each insight. </p>
      */
     inline void SetSsmOpsItemId(const Aws::String& value) { m_ssmOpsItemIdHasBeenSet = true; m_ssmOpsItemId = value; }
 
     /**
-     * <p> The ID of the AWS System Manager OpsItem created for this insight. You must
-     * enable the creation of OpstItems insights before they are created for each
-     * insight. </p>
+     * <p> The ID of the Amazon Web Services System Manager OpsItem created for this
+     * insight. You must enable the creation of OpstItems insights before they are
+     * created for each insight. </p>
      */
     inline void SetSsmOpsItemId(Aws::String&& value) { m_ssmOpsItemIdHasBeenSet = true; m_ssmOpsItemId = std::move(value); }
 
     /**
-     * <p> The ID of the AWS System Manager OpsItem created for this insight. You must
-     * enable the creation of OpstItems insights before they are created for each
-     * insight. </p>
+     * <p> The ID of the Amazon Web Services System Manager OpsItem created for this
+     * insight. You must enable the creation of OpstItems insights before they are
+     * created for each insight. </p>
      */
     inline void SetSsmOpsItemId(const char* value) { m_ssmOpsItemIdHasBeenSet = true; m_ssmOpsItemId.assign(value); }
 
     /**
-     * <p> The ID of the AWS System Manager OpsItem created for this insight. You must
-     * enable the creation of OpstItems insights before they are created for each
-     * insight. </p>
+     * <p> The ID of the Amazon Web Services System Manager OpsItem created for this
+     * insight. You must enable the creation of OpstItems insights before they are
+     * created for each insight. </p>
      */
     inline ReactiveInsight& WithSsmOpsItemId(const Aws::String& value) { SetSsmOpsItemId(value); return *this;}
 
     /**
-     * <p> The ID of the AWS System Manager OpsItem created for this insight. You must
-     * enable the creation of OpstItems insights before they are created for each
-     * insight. </p>
+     * <p> The ID of the Amazon Web Services System Manager OpsItem created for this
+     * insight. You must enable the creation of OpstItems insights before they are
+     * created for each insight. </p>
      */
     inline ReactiveInsight& WithSsmOpsItemId(Aws::String&& value) { SetSsmOpsItemId(std::move(value)); return *this;}
 
     /**
-     * <p> The ID of the AWS System Manager OpsItem created for this insight. You must
-     * enable the creation of OpstItems insights before they are created for each
-     * insight. </p>
+     * <p> The ID of the Amazon Web Services System Manager OpsItem created for this
+     * insight. You must enable the creation of OpstItems insights before they are
+     * created for each insight. </p>
      */
     inline ReactiveInsight& WithSsmOpsItemId(const char* value) { SetSsmOpsItemId(value); return *this;}
 

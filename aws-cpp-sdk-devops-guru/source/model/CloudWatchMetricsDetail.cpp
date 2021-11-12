@@ -26,7 +26,8 @@ CloudWatchMetricsDetail::CloudWatchMetricsDetail() :
     m_statHasBeenSet(false),
     m_unitHasBeenSet(false),
     m_period(0),
-    m_periodHasBeenSet(false)
+    m_periodHasBeenSet(false),
+    m_metricDataSummaryHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ CloudWatchMetricsDetail::CloudWatchMetricsDetail(JsonView jsonValue) :
     m_statHasBeenSet(false),
     m_unitHasBeenSet(false),
     m_period(0),
-    m_periodHasBeenSet(false)
+    m_periodHasBeenSet(false),
+    m_metricDataSummaryHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -90,6 +92,13 @@ CloudWatchMetricsDetail& CloudWatchMetricsDetail::operator =(JsonView jsonValue)
     m_periodHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MetricDataSummary"))
+  {
+    m_metricDataSummary = jsonValue.GetObject("MetricDataSummary");
+
+    m_metricDataSummaryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -134,6 +143,12 @@ JsonValue CloudWatchMetricsDetail::Jsonize() const
   if(m_periodHasBeenSet)
   {
    payload.WithInteger("Period", m_period);
+
+  }
+
+  if(m_metricDataSummaryHasBeenSet)
+  {
+   payload.WithObject("MetricDataSummary", m_metricDataSummary.Jsonize());
 
   }
 

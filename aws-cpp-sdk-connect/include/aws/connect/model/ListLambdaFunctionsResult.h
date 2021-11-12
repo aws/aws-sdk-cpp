@@ -34,42 +34,42 @@ namespace Model
 
 
     /**
-     * <p>The Lambda function ARNs associated with the specified instance.</p>
+     * <p>The Lambdafunction ARNs associated with the specified instance.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLambdaFunctions() const{ return m_lambdaFunctions; }
 
     /**
-     * <p>The Lambda function ARNs associated with the specified instance.</p>
+     * <p>The Lambdafunction ARNs associated with the specified instance.</p>
      */
     inline void SetLambdaFunctions(const Aws::Vector<Aws::String>& value) { m_lambdaFunctions = value; }
 
     /**
-     * <p>The Lambda function ARNs associated with the specified instance.</p>
+     * <p>The Lambdafunction ARNs associated with the specified instance.</p>
      */
     inline void SetLambdaFunctions(Aws::Vector<Aws::String>&& value) { m_lambdaFunctions = std::move(value); }
 
     /**
-     * <p>The Lambda function ARNs associated with the specified instance.</p>
+     * <p>The Lambdafunction ARNs associated with the specified instance.</p>
      */
     inline ListLambdaFunctionsResult& WithLambdaFunctions(const Aws::Vector<Aws::String>& value) { SetLambdaFunctions(value); return *this;}
 
     /**
-     * <p>The Lambda function ARNs associated with the specified instance.</p>
+     * <p>The Lambdafunction ARNs associated with the specified instance.</p>
      */
     inline ListLambdaFunctionsResult& WithLambdaFunctions(Aws::Vector<Aws::String>&& value) { SetLambdaFunctions(std::move(value)); return *this;}
 
     /**
-     * <p>The Lambda function ARNs associated with the specified instance.</p>
+     * <p>The Lambdafunction ARNs associated with the specified instance.</p>
      */
     inline ListLambdaFunctionsResult& AddLambdaFunctions(const Aws::String& value) { m_lambdaFunctions.push_back(value); return *this; }
 
     /**
-     * <p>The Lambda function ARNs associated with the specified instance.</p>
+     * <p>The Lambdafunction ARNs associated with the specified instance.</p>
      */
     inline ListLambdaFunctionsResult& AddLambdaFunctions(Aws::String&& value) { m_lambdaFunctions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Lambda function ARNs associated with the specified instance.</p>
+     * <p>The Lambdafunction ARNs associated with the specified instance.</p>
      */
     inline ListLambdaFunctionsResult& AddLambdaFunctions(const char* value) { m_lambdaFunctions.push_back(value); return *this; }
 

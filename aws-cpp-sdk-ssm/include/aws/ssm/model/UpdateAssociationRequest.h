@@ -577,58 +577,66 @@ namespace Model
 
 
     /**
-     * <p>Specify the target for the association. This target is required for
-     * associations that use an Automation runbook and target resources by using rate
-     * controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+     * <p>Choose the parameter that will define how your automation will branch out.
+     * This target is required for associations that use an Automation runbook and
+     * target resources by using rate controls. Automation is a capability of Amazon
+     * Web Services Systems Manager.</p>
      */
     inline const Aws::String& GetAutomationTargetParameterName() const{ return m_automationTargetParameterName; }
 
     /**
-     * <p>Specify the target for the association. This target is required for
-     * associations that use an Automation runbook and target resources by using rate
-     * controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+     * <p>Choose the parameter that will define how your automation will branch out.
+     * This target is required for associations that use an Automation runbook and
+     * target resources by using rate controls. Automation is a capability of Amazon
+     * Web Services Systems Manager.</p>
      */
     inline bool AutomationTargetParameterNameHasBeenSet() const { return m_automationTargetParameterNameHasBeenSet; }
 
     /**
-     * <p>Specify the target for the association. This target is required for
-     * associations that use an Automation runbook and target resources by using rate
-     * controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+     * <p>Choose the parameter that will define how your automation will branch out.
+     * This target is required for associations that use an Automation runbook and
+     * target resources by using rate controls. Automation is a capability of Amazon
+     * Web Services Systems Manager.</p>
      */
     inline void SetAutomationTargetParameterName(const Aws::String& value) { m_automationTargetParameterNameHasBeenSet = true; m_automationTargetParameterName = value; }
 
     /**
-     * <p>Specify the target for the association. This target is required for
-     * associations that use an Automation runbook and target resources by using rate
-     * controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+     * <p>Choose the parameter that will define how your automation will branch out.
+     * This target is required for associations that use an Automation runbook and
+     * target resources by using rate controls. Automation is a capability of Amazon
+     * Web Services Systems Manager.</p>
      */
     inline void SetAutomationTargetParameterName(Aws::String&& value) { m_automationTargetParameterNameHasBeenSet = true; m_automationTargetParameterName = std::move(value); }
 
     /**
-     * <p>Specify the target for the association. This target is required for
-     * associations that use an Automation runbook and target resources by using rate
-     * controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+     * <p>Choose the parameter that will define how your automation will branch out.
+     * This target is required for associations that use an Automation runbook and
+     * target resources by using rate controls. Automation is a capability of Amazon
+     * Web Services Systems Manager.</p>
      */
     inline void SetAutomationTargetParameterName(const char* value) { m_automationTargetParameterNameHasBeenSet = true; m_automationTargetParameterName.assign(value); }
 
     /**
-     * <p>Specify the target for the association. This target is required for
-     * associations that use an Automation runbook and target resources by using rate
-     * controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+     * <p>Choose the parameter that will define how your automation will branch out.
+     * This target is required for associations that use an Automation runbook and
+     * target resources by using rate controls. Automation is a capability of Amazon
+     * Web Services Systems Manager.</p>
      */
     inline UpdateAssociationRequest& WithAutomationTargetParameterName(const Aws::String& value) { SetAutomationTargetParameterName(value); return *this;}
 
     /**
-     * <p>Specify the target for the association. This target is required for
-     * associations that use an Automation runbook and target resources by using rate
-     * controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+     * <p>Choose the parameter that will define how your automation will branch out.
+     * This target is required for associations that use an Automation runbook and
+     * target resources by using rate controls. Automation is a capability of Amazon
+     * Web Services Systems Manager.</p>
      */
     inline UpdateAssociationRequest& WithAutomationTargetParameterName(Aws::String&& value) { SetAutomationTargetParameterName(std::move(value)); return *this;}
 
     /**
-     * <p>Specify the target for the association. This target is required for
-     * associations that use an Automation runbook and target resources by using rate
-     * controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+     * <p>Choose the parameter that will define how your automation will branch out.
+     * This target is required for associations that use an Automation runbook and
+     * target resources by using rate controls. Automation is a capability of Amazon
+     * Web Services Systems Manager.</p>
      */
     inline UpdateAssociationRequest& WithAutomationTargetParameterName(const char* value) { SetAutomationTargetParameterName(value); return *this;}
 

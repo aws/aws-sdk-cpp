@@ -87,43 +87,50 @@ namespace Model
 
     /**
      * <p>An array of <code>ServiceHealth</code> objects that describes the health of
-     * the AWS services associated with the resources in the collection.</p>
+     * the Amazon Web Services services associated with the resources in the
+     * collection.</p>
      */
     inline const Aws::Vector<ServiceHealth>& GetService() const{ return m_service; }
 
     /**
      * <p>An array of <code>ServiceHealth</code> objects that describes the health of
-     * the AWS services associated with the resources in the collection.</p>
+     * the Amazon Web Services services associated with the resources in the
+     * collection.</p>
      */
     inline void SetService(const Aws::Vector<ServiceHealth>& value) { m_service = value; }
 
     /**
      * <p>An array of <code>ServiceHealth</code> objects that describes the health of
-     * the AWS services associated with the resources in the collection.</p>
+     * the Amazon Web Services services associated with the resources in the
+     * collection.</p>
      */
     inline void SetService(Aws::Vector<ServiceHealth>&& value) { m_service = std::move(value); }
 
     /**
      * <p>An array of <code>ServiceHealth</code> objects that describes the health of
-     * the AWS services associated with the resources in the collection.</p>
+     * the Amazon Web Services services associated with the resources in the
+     * collection.</p>
      */
     inline DescribeResourceCollectionHealthResult& WithService(const Aws::Vector<ServiceHealth>& value) { SetService(value); return *this;}
 
     /**
      * <p>An array of <code>ServiceHealth</code> objects that describes the health of
-     * the AWS services associated with the resources in the collection.</p>
+     * the Amazon Web Services services associated with the resources in the
+     * collection.</p>
      */
     inline DescribeResourceCollectionHealthResult& WithService(Aws::Vector<ServiceHealth>&& value) { SetService(std::move(value)); return *this;}
 
     /**
      * <p>An array of <code>ServiceHealth</code> objects that describes the health of
-     * the AWS services associated with the resources in the collection.</p>
+     * the Amazon Web Services services associated with the resources in the
+     * collection.</p>
      */
     inline DescribeResourceCollectionHealthResult& AddService(const ServiceHealth& value) { m_service.push_back(value); return *this; }
 
     /**
      * <p>An array of <code>ServiceHealth</code> objects that describes the health of
-     * the AWS services associated with the resources in the collection.</p>
+     * the Amazon Web Services services associated with the resources in the
+     * collection.</p>
      */
     inline DescribeResourceCollectionHealthResult& AddService(ServiceHealth&& value) { m_service.push_back(std::move(value)); return *this; }
 

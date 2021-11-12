@@ -25,8 +25,9 @@ namespace Model
 {
 
   /**
-   * <p> Information about the health of AWS resources in your account that are
-   * specified by an AWS CloudFormation stack. </p><p><h3>See Also:</h3>   <a
+   * <p> Information about the health of Amazon Web Services resources in your
+   * account that are specified by an Amazon Web Services CloudFormation stack.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/CloudFormationHealth">AWS
    * API Reference</a></p>
    */
@@ -81,50 +82,50 @@ namespace Model
 
 
     /**
-     * <p> Information about the health of the AWS resources in your account that are
-     * specified by an AWS CloudFormation stack, including the number of open
-     * proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed
-     * insights. </p>
+     * <p> Information about the health of the Amazon Web Services resources in your
+     * account that are specified by an Amazon Web Services CloudFormation stack,
+     * including the number of open proactive, open reactive insights, and the Mean
+     * Time to Recover (MTTR) of closed insights. </p>
      */
     inline const InsightHealth& GetInsight() const{ return m_insight; }
 
     /**
-     * <p> Information about the health of the AWS resources in your account that are
-     * specified by an AWS CloudFormation stack, including the number of open
-     * proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed
-     * insights. </p>
+     * <p> Information about the health of the Amazon Web Services resources in your
+     * account that are specified by an Amazon Web Services CloudFormation stack,
+     * including the number of open proactive, open reactive insights, and the Mean
+     * Time to Recover (MTTR) of closed insights. </p>
      */
     inline bool InsightHasBeenSet() const { return m_insightHasBeenSet; }
 
     /**
-     * <p> Information about the health of the AWS resources in your account that are
-     * specified by an AWS CloudFormation stack, including the number of open
-     * proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed
-     * insights. </p>
+     * <p> Information about the health of the Amazon Web Services resources in your
+     * account that are specified by an Amazon Web Services CloudFormation stack,
+     * including the number of open proactive, open reactive insights, and the Mean
+     * Time to Recover (MTTR) of closed insights. </p>
      */
     inline void SetInsight(const InsightHealth& value) { m_insightHasBeenSet = true; m_insight = value; }
 
     /**
-     * <p> Information about the health of the AWS resources in your account that are
-     * specified by an AWS CloudFormation stack, including the number of open
-     * proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed
-     * insights. </p>
+     * <p> Information about the health of the Amazon Web Services resources in your
+     * account that are specified by an Amazon Web Services CloudFormation stack,
+     * including the number of open proactive, open reactive insights, and the Mean
+     * Time to Recover (MTTR) of closed insights. </p>
      */
     inline void SetInsight(InsightHealth&& value) { m_insightHasBeenSet = true; m_insight = std::move(value); }
 
     /**
-     * <p> Information about the health of the AWS resources in your account that are
-     * specified by an AWS CloudFormation stack, including the number of open
-     * proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed
-     * insights. </p>
+     * <p> Information about the health of the Amazon Web Services resources in your
+     * account that are specified by an Amazon Web Services CloudFormation stack,
+     * including the number of open proactive, open reactive insights, and the Mean
+     * Time to Recover (MTTR) of closed insights. </p>
      */
     inline CloudFormationHealth& WithInsight(const InsightHealth& value) { SetInsight(value); return *this;}
 
     /**
-     * <p> Information about the health of the AWS resources in your account that are
-     * specified by an AWS CloudFormation stack, including the number of open
-     * proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed
-     * insights. </p>
+     * <p> Information about the health of the Amazon Web Services resources in your
+     * account that are specified by an Amazon Web Services CloudFormation stack,
+     * including the number of open proactive, open reactive insights, and the Mean
+     * Time to Recover (MTTR) of closed insights. </p>
      */
     inline CloudFormationHealth& WithInsight(InsightHealth&& value) { SetInsight(std::move(value)); return *this;}
 

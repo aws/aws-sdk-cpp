@@ -48,10 +48,11 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
      * for cross account Amazon SNS topics</a>.</p> <p>If you use an Amazon SNS topic
-     * that is encrypted by an AWS Key Management Service customer-managed key (CMK),
-     * then you must add permissions to the CMK. For more information, see <a
+     * that is encrypted by an Amazon Web Services Key Management Service
+     * customer-managed key (CMK), then you must add permissions to the CMK. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions
-     * for AWS KMS–encrypted Amazon SNS topics</a>.</p>
+     * for Amazon Web Services KMS–encrypted Amazon SNS topics</a>.</p>
      */
     inline const SnsChannelConfig& GetSns() const{ return m_sns; }
 
@@ -64,10 +65,11 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
      * for cross account Amazon SNS topics</a>.</p> <p>If you use an Amazon SNS topic
-     * that is encrypted by an AWS Key Management Service customer-managed key (CMK),
-     * then you must add permissions to the CMK. For more information, see <a
+     * that is encrypted by an Amazon Web Services Key Management Service
+     * customer-managed key (CMK), then you must add permissions to the CMK. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions
-     * for AWS KMS–encrypted Amazon SNS topics</a>.</p>
+     * for Amazon Web Services KMS–encrypted Amazon SNS topics</a>.</p>
      */
     inline bool SnsHasBeenSet() const { return m_snsHasBeenSet; }
 
@@ -80,10 +82,11 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
      * for cross account Amazon SNS topics</a>.</p> <p>If you use an Amazon SNS topic
-     * that is encrypted by an AWS Key Management Service customer-managed key (CMK),
-     * then you must add permissions to the CMK. For more information, see <a
+     * that is encrypted by an Amazon Web Services Key Management Service
+     * customer-managed key (CMK), then you must add permissions to the CMK. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions
-     * for AWS KMS–encrypted Amazon SNS topics</a>.</p>
+     * for Amazon Web Services KMS–encrypted Amazon SNS topics</a>.</p>
      */
     inline void SetSns(const SnsChannelConfig& value) { m_snsHasBeenSet = true; m_sns = value; }
 
@@ -96,10 +99,11 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
      * for cross account Amazon SNS topics</a>.</p> <p>If you use an Amazon SNS topic
-     * that is encrypted by an AWS Key Management Service customer-managed key (CMK),
-     * then you must add permissions to the CMK. For more information, see <a
+     * that is encrypted by an Amazon Web Services Key Management Service
+     * customer-managed key (CMK), then you must add permissions to the CMK. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions
-     * for AWS KMS–encrypted Amazon SNS topics</a>.</p>
+     * for Amazon Web Services KMS–encrypted Amazon SNS topics</a>.</p>
      */
     inline void SetSns(SnsChannelConfig&& value) { m_snsHasBeenSet = true; m_sns = std::move(value); }
 
@@ -112,10 +116,11 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
      * for cross account Amazon SNS topics</a>.</p> <p>If you use an Amazon SNS topic
-     * that is encrypted by an AWS Key Management Service customer-managed key (CMK),
-     * then you must add permissions to the CMK. For more information, see <a
+     * that is encrypted by an Amazon Web Services Key Management Service
+     * customer-managed key (CMK), then you must add permissions to the CMK. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions
-     * for AWS KMS–encrypted Amazon SNS topics</a>.</p>
+     * for Amazon Web Services KMS–encrypted Amazon SNS topics</a>.</p>
      */
     inline NotificationChannelConfig& WithSns(const SnsChannelConfig& value) { SetSns(value); return *this;}
 
@@ -128,10 +133,11 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
      * for cross account Amazon SNS topics</a>.</p> <p>If you use an Amazon SNS topic
-     * that is encrypted by an AWS Key Management Service customer-managed key (CMK),
-     * then you must add permissions to the CMK. For more information, see <a
+     * that is encrypted by an Amazon Web Services Key Management Service
+     * customer-managed key (CMK), then you must add permissions to the CMK. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions
-     * for AWS KMS–encrypted Amazon SNS topics</a>.</p>
+     * for Amazon Web Services KMS–encrypted Amazon SNS topics</a>.</p>
      */
     inline NotificationChannelConfig& WithSns(SnsChannelConfig&& value) { SetSns(std::move(value)); return *this;}
 

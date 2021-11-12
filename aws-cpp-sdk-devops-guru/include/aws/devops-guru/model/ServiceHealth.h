@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the health of an AWS service.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents the health of an Amazon Web Services service.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ServiceHealth">AWS
    * API Reference</a></p>
    */
@@ -39,73 +40,73 @@ namespace Model
 
 
     /**
-     * <p>The name of the AWS service.</p>
+     * <p>The name of the Amazon Web Services service.</p>
      */
     inline const ServiceName& GetServiceName() const{ return m_serviceName; }
 
     /**
-     * <p>The name of the AWS service.</p>
+     * <p>The name of the Amazon Web Services service.</p>
      */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
-     * <p>The name of the AWS service.</p>
+     * <p>The name of the Amazon Web Services service.</p>
      */
     inline void SetServiceName(const ServiceName& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
-     * <p>The name of the AWS service.</p>
+     * <p>The name of the Amazon Web Services service.</p>
      */
     inline void SetServiceName(ServiceName&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
-     * <p>The name of the AWS service.</p>
+     * <p>The name of the Amazon Web Services service.</p>
      */
     inline ServiceHealth& WithServiceName(const ServiceName& value) { SetServiceName(value); return *this;}
 
     /**
-     * <p>The name of the AWS service.</p>
+     * <p>The name of the Amazon Web Services service.</p>
      */
     inline ServiceHealth& WithServiceName(ServiceName&& value) { SetServiceName(std::move(value)); return *this;}
 
 
     /**
-     * <p>Represents the health of an AWS service. This is a
+     * <p>Represents the health of an Amazon Web Services service. This is a
      * <code>ServiceInsightHealth</code> that contains the number of open proactive and
      * reactive insights for this service.</p>
      */
     inline const ServiceInsightHealth& GetInsight() const{ return m_insight; }
 
     /**
-     * <p>Represents the health of an AWS service. This is a
+     * <p>Represents the health of an Amazon Web Services service. This is a
      * <code>ServiceInsightHealth</code> that contains the number of open proactive and
      * reactive insights for this service.</p>
      */
     inline bool InsightHasBeenSet() const { return m_insightHasBeenSet; }
 
     /**
-     * <p>Represents the health of an AWS service. This is a
+     * <p>Represents the health of an Amazon Web Services service. This is a
      * <code>ServiceInsightHealth</code> that contains the number of open proactive and
      * reactive insights for this service.</p>
      */
     inline void SetInsight(const ServiceInsightHealth& value) { m_insightHasBeenSet = true; m_insight = value; }
 
     /**
-     * <p>Represents the health of an AWS service. This is a
+     * <p>Represents the health of an Amazon Web Services service. This is a
      * <code>ServiceInsightHealth</code> that contains the number of open proactive and
      * reactive insights for this service.</p>
      */
     inline void SetInsight(ServiceInsightHealth&& value) { m_insightHasBeenSet = true; m_insight = std::move(value); }
 
     /**
-     * <p>Represents the health of an AWS service. This is a
+     * <p>Represents the health of an Amazon Web Services service. This is a
      * <code>ServiceInsightHealth</code> that contains the number of open proactive and
      * reactive insights for this service.</p>
      */
     inline ServiceHealth& WithInsight(const ServiceInsightHealth& value) { SetInsight(value); return *this;}
 
     /**
-     * <p>Represents the health of an AWS service. This is a
+     * <p>Represents the health of an Amazon Web Services service. This is a
      * <code>ServiceInsightHealth</code> that contains the number of open proactive and
      * reactive insights for this service.</p>
      */

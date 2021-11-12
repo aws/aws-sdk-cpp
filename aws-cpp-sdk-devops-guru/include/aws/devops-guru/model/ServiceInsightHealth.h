@@ -23,7 +23,7 @@ namespace Model
 
   /**
    * <p>Contains the number of open proactive and reactive insights in an analyzed
-   * AWS service.</p><p><h3>See Also:</h3>   <a
+   * Amazon Web Services service.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ServiceInsightHealth">AWS
    * API Reference</a></p>
    */
@@ -37,43 +37,43 @@ namespace Model
 
 
     /**
-     * <p>The number of open proactive insights in the AWS service</p>
+     * <p>The number of open proactive insights in the Amazon Web Services service</p>
      */
     inline int GetOpenProactiveInsights() const{ return m_openProactiveInsights; }
 
     /**
-     * <p>The number of open proactive insights in the AWS service</p>
+     * <p>The number of open proactive insights in the Amazon Web Services service</p>
      */
     inline bool OpenProactiveInsightsHasBeenSet() const { return m_openProactiveInsightsHasBeenSet; }
 
     /**
-     * <p>The number of open proactive insights in the AWS service</p>
+     * <p>The number of open proactive insights in the Amazon Web Services service</p>
      */
     inline void SetOpenProactiveInsights(int value) { m_openProactiveInsightsHasBeenSet = true; m_openProactiveInsights = value; }
 
     /**
-     * <p>The number of open proactive insights in the AWS service</p>
+     * <p>The number of open proactive insights in the Amazon Web Services service</p>
      */
     inline ServiceInsightHealth& WithOpenProactiveInsights(int value) { SetOpenProactiveInsights(value); return *this;}
 
 
     /**
-     * <p>The number of open reactive insights in the AWS service</p>
+     * <p>The number of open reactive insights in the Amazon Web Services service</p>
      */
     inline int GetOpenReactiveInsights() const{ return m_openReactiveInsights; }
 
     /**
-     * <p>The number of open reactive insights in the AWS service</p>
+     * <p>The number of open reactive insights in the Amazon Web Services service</p>
      */
     inline bool OpenReactiveInsightsHasBeenSet() const { return m_openReactiveInsightsHasBeenSet; }
 
     /**
-     * <p>The number of open reactive insights in the AWS service</p>
+     * <p>The number of open reactive insights in the Amazon Web Services service</p>
      */
     inline void SetOpenReactiveInsights(int value) { m_openReactiveInsightsHasBeenSet = true; m_openReactiveInsights = value; }
 
     /**
-     * <p>The number of open reactive insights in the AWS service</p>
+     * <p>The number of open reactive insights in the Amazon Web Services service</p>
      */
     inline ServiceInsightHealth& WithOpenReactiveInsights(int value) { SetOpenReactiveInsights(value); return *this;}
 

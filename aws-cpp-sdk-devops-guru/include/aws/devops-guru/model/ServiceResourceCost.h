@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>An object that contains information about the estimated monthly cost to
-   * analyze an AWS resource. For more information, see <a
+   * analyze an Amazon Web Services resource. For more information, see <a
    * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate
    * your Amazon DevOps Guru costs</a> and <a
    * href="http://aws.amazon.com/devops-guru/pricing/">Amazon DevOps Guru
@@ -44,42 +44,42 @@ namespace Model
 
 
     /**
-     * <p>The type of the AWS resource.</p>
+     * <p>The type of the Amazon Web Services resource.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the AWS resource.</p>
+     * <p>The type of the Amazon Web Services resource.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of the AWS resource.</p>
+     * <p>The type of the Amazon Web Services resource.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the AWS resource.</p>
+     * <p>The type of the Amazon Web Services resource.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the AWS resource.</p>
+     * <p>The type of the Amazon Web Services resource.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The type of the AWS resource.</p>
+     * <p>The type of the Amazon Web Services resource.</p>
      */
     inline ServiceResourceCost& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the AWS resource.</p>
+     * <p>The type of the Amazon Web Services resource.</p>
      */
     inline ServiceResourceCost& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of the AWS resource.</p>
+     * <p>The type of the Amazon Web Services resource.</p>
      */
     inline ServiceResourceCost& WithType(const char* value) { SetType(value); return *this;}
 
@@ -87,48 +87,48 @@ namespace Model
     /**
      * <p>The state of the resource. The resource is <code>ACTIVE</code> if it produces
      * metrics, events, or logs within an hour, otherwise it is <code>INACTIVE</code>.
-     * You pay for the number of active AWS resource hours analyzed for each resource.
-     * Inactive resources are not charged. </p>
+     * You pay for the number of active Amazon Web Services resource hours analyzed for
+     * each resource. Inactive resources are not charged. </p>
      */
     inline const CostEstimationServiceResourceState& GetState() const{ return m_state; }
 
     /**
      * <p>The state of the resource. The resource is <code>ACTIVE</code> if it produces
      * metrics, events, or logs within an hour, otherwise it is <code>INACTIVE</code>.
-     * You pay for the number of active AWS resource hours analyzed for each resource.
-     * Inactive resources are not charged. </p>
+     * You pay for the number of active Amazon Web Services resource hours analyzed for
+     * each resource. Inactive resources are not charged. </p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of the resource. The resource is <code>ACTIVE</code> if it produces
      * metrics, events, or logs within an hour, otherwise it is <code>INACTIVE</code>.
-     * You pay for the number of active AWS resource hours analyzed for each resource.
-     * Inactive resources are not charged. </p>
+     * You pay for the number of active Amazon Web Services resource hours analyzed for
+     * each resource. Inactive resources are not charged. </p>
      */
     inline void SetState(const CostEstimationServiceResourceState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
      * <p>The state of the resource. The resource is <code>ACTIVE</code> if it produces
      * metrics, events, or logs within an hour, otherwise it is <code>INACTIVE</code>.
-     * You pay for the number of active AWS resource hours analyzed for each resource.
-     * Inactive resources are not charged. </p>
+     * You pay for the number of active Amazon Web Services resource hours analyzed for
+     * each resource. Inactive resources are not charged. </p>
      */
     inline void SetState(CostEstimationServiceResourceState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of the resource. The resource is <code>ACTIVE</code> if it produces
      * metrics, events, or logs within an hour, otherwise it is <code>INACTIVE</code>.
-     * You pay for the number of active AWS resource hours analyzed for each resource.
-     * Inactive resources are not charged. </p>
+     * You pay for the number of active Amazon Web Services resource hours analyzed for
+     * each resource. Inactive resources are not charged. </p>
      */
     inline ServiceResourceCost& WithState(const CostEstimationServiceResourceState& value) { SetState(value); return *this;}
 
     /**
      * <p>The state of the resource. The resource is <code>ACTIVE</code> if it produces
      * metrics, events, or logs within an hour, otherwise it is <code>INACTIVE</code>.
-     * You pay for the number of active AWS resource hours analyzed for each resource.
-     * Inactive resources are not charged. </p>
+     * You pay for the number of active Amazon Web Services resource hours analyzed for
+     * each resource. Inactive resources are not charged. </p>
      */
     inline ServiceResourceCost& WithState(CostEstimationServiceResourceState&& value) { SetState(std::move(value)); return *this;}
 

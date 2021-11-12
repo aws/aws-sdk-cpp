@@ -35,38 +35,38 @@ namespace Model
 
 
     /**
-     * <p>The collection of AWS resources used to create a monthly DevOps Guru cost
-     * estimate.</p>
+     * <p>The collection of Amazon Web Services resources used to create a monthly
+     * DevOps Guru cost estimate.</p>
      */
     inline const CostEstimationResourceCollectionFilter& GetResourceCollection() const{ return m_resourceCollection; }
 
     /**
-     * <p>The collection of AWS resources used to create a monthly DevOps Guru cost
-     * estimate.</p>
+     * <p>The collection of Amazon Web Services resources used to create a monthly
+     * DevOps Guru cost estimate.</p>
      */
     inline bool ResourceCollectionHasBeenSet() const { return m_resourceCollectionHasBeenSet; }
 
     /**
-     * <p>The collection of AWS resources used to create a monthly DevOps Guru cost
-     * estimate.</p>
+     * <p>The collection of Amazon Web Services resources used to create a monthly
+     * DevOps Guru cost estimate.</p>
      */
     inline void SetResourceCollection(const CostEstimationResourceCollectionFilter& value) { m_resourceCollectionHasBeenSet = true; m_resourceCollection = value; }
 
     /**
-     * <p>The collection of AWS resources used to create a monthly DevOps Guru cost
-     * estimate.</p>
+     * <p>The collection of Amazon Web Services resources used to create a monthly
+     * DevOps Guru cost estimate.</p>
      */
     inline void SetResourceCollection(CostEstimationResourceCollectionFilter&& value) { m_resourceCollectionHasBeenSet = true; m_resourceCollection = std::move(value); }
 
     /**
-     * <p>The collection of AWS resources used to create a monthly DevOps Guru cost
-     * estimate.</p>
+     * <p>The collection of Amazon Web Services resources used to create a monthly
+     * DevOps Guru cost estimate.</p>
      */
     inline StartCostEstimationRequest& WithResourceCollection(const CostEstimationResourceCollectionFilter& value) { SetResourceCollection(value); return *this;}
 
     /**
-     * <p>The collection of AWS resources used to create a monthly DevOps Guru cost
-     * estimate.</p>
+     * <p>The collection of Amazon Web Services resources used to create a monthly
+     * DevOps Guru cost estimate.</p>
      */
     inline StartCostEstimationRequest& WithResourceCollection(CostEstimationResourceCollectionFilter&& value) { SetResourceCollection(std::move(value)); return *this;}
 

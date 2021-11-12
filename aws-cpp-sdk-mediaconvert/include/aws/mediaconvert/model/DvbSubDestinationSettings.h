@@ -1220,8 +1220,8 @@ Within your
 
 
     /**
-     * Specify whether the Text spacing (TextSpacing) in your captions is set by the
-     * captions grid, or varies depending on letter width. Choose fixed grid
+     * Specify whether the Text spacing (TeletextSpacing) in your captions is set by
+     * the captions grid, or varies depending on letter width. Choose fixed grid
      * (FIXED_GRID) to conform to the spacing specified in the captions file more
      * accurately. Choose proportional (PROPORTIONAL) to make the text easier to read
      * for closed captions. Within your job settings, all of your DVB-Sub settings must
@@ -1230,8 +1230,8 @@ Within your
     inline const DvbSubtitleTeletextSpacing& GetTeletextSpacing() const{ return m_teletextSpacing; }
 
     /**
-     * Specify whether the Text spacing (TextSpacing) in your captions is set by the
-     * captions grid, or varies depending on letter width. Choose fixed grid
+     * Specify whether the Text spacing (TeletextSpacing) in your captions is set by
+     * the captions grid, or varies depending on letter width. Choose fixed grid
      * (FIXED_GRID) to conform to the spacing specified in the captions file more
      * accurately. Choose proportional (PROPORTIONAL) to make the text easier to read
      * for closed captions. Within your job settings, all of your DVB-Sub settings must
@@ -1240,8 +1240,8 @@ Within your
     inline bool TeletextSpacingHasBeenSet() const { return m_teletextSpacingHasBeenSet; }
 
     /**
-     * Specify whether the Text spacing (TextSpacing) in your captions is set by the
-     * captions grid, or varies depending on letter width. Choose fixed grid
+     * Specify whether the Text spacing (TeletextSpacing) in your captions is set by
+     * the captions grid, or varies depending on letter width. Choose fixed grid
      * (FIXED_GRID) to conform to the spacing specified in the captions file more
      * accurately. Choose proportional (PROPORTIONAL) to make the text easier to read
      * for closed captions. Within your job settings, all of your DVB-Sub settings must
@@ -1250,8 +1250,8 @@ Within your
     inline void SetTeletextSpacing(const DvbSubtitleTeletextSpacing& value) { m_teletextSpacingHasBeenSet = true; m_teletextSpacing = value; }
 
     /**
-     * Specify whether the Text spacing (TextSpacing) in your captions is set by the
-     * captions grid, or varies depending on letter width. Choose fixed grid
+     * Specify whether the Text spacing (TeletextSpacing) in your captions is set by
+     * the captions grid, or varies depending on letter width. Choose fixed grid
      * (FIXED_GRID) to conform to the spacing specified in the captions file more
      * accurately. Choose proportional (PROPORTIONAL) to make the text easier to read
      * for closed captions. Within your job settings, all of your DVB-Sub settings must
@@ -1260,8 +1260,8 @@ Within your
     inline void SetTeletextSpacing(DvbSubtitleTeletextSpacing&& value) { m_teletextSpacingHasBeenSet = true; m_teletextSpacing = std::move(value); }
 
     /**
-     * Specify whether the Text spacing (TextSpacing) in your captions is set by the
-     * captions grid, or varies depending on letter width. Choose fixed grid
+     * Specify whether the Text spacing (TeletextSpacing) in your captions is set by
+     * the captions grid, or varies depending on letter width. Choose fixed grid
      * (FIXED_GRID) to conform to the spacing specified in the captions file more
      * accurately. Choose proportional (PROPORTIONAL) to make the text easier to read
      * for closed captions. Within your job settings, all of your DVB-Sub settings must
@@ -1270,8 +1270,8 @@ Within your
     inline DvbSubDestinationSettings& WithTeletextSpacing(const DvbSubtitleTeletextSpacing& value) { SetTeletextSpacing(value); return *this;}
 
     /**
-     * Specify whether the Text spacing (TextSpacing) in your captions is set by the
-     * captions grid, or varies depending on letter width. Choose fixed grid
+     * Specify whether the Text spacing (TeletextSpacing) in your captions is set by
+     * the captions grid, or varies depending on letter width. Choose fixed grid
      * (FIXED_GRID) to conform to the spacing specified in the captions file more
      * accurately. Choose proportional (PROPORTIONAL) to make the text easier to read
      * for closed captions. Within your job settings, all of your DVB-Sub settings must

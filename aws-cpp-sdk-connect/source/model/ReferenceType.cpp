@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int URL_HASH = HashingUtils::HashString("URL");
+        static const int ATTACHMENT_HASH = HashingUtils::HashString("ATTACHMENT");
 
 
         ReferenceType GetReferenceTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == URL_HASH)
           {
             return ReferenceType::URL;
+          }
+          else if (hashCode == ATTACHMENT_HASH)
+          {
+            return ReferenceType::ATTACHMENT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case ReferenceType::URL:
             return "URL";
+          case ReferenceType::ATTACHMENT:
+            return "ATTACHMENT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
