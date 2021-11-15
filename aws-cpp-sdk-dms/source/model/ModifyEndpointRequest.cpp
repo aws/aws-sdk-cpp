@@ -48,7 +48,8 @@ ModifyEndpointRequest::ModifyEndpointRequest() :
     m_docDbSettingsHasBeenSet(false),
     m_redisSettingsHasBeenSet(false),
     m_exactSettings(false),
-    m_exactSettingsHasBeenSet(false)
+    m_exactSettingsHasBeenSet(false),
+    m_gcpMySQLSettingsHasBeenSet(false)
 {
 }
 
@@ -243,6 +244,12 @@ Aws::String ModifyEndpointRequest::SerializePayload() const
   if(m_exactSettingsHasBeenSet)
   {
    payload.WithBool("ExactSettings", m_exactSettings);
+
+  }
+
+  if(m_gcpMySQLSettingsHasBeenSet)
+  {
+   payload.WithObject("GcpMySQLSettings", m_gcpMySQLSettings.Jsonize());
 
   }
 

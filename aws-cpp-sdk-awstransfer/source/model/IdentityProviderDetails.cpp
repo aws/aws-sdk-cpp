@@ -21,14 +21,16 @@ namespace Model
 IdentityProviderDetails::IdentityProviderDetails() : 
     m_urlHasBeenSet(false),
     m_invocationRoleHasBeenSet(false),
-    m_directoryIdHasBeenSet(false)
+    m_directoryIdHasBeenSet(false),
+    m_functionHasBeenSet(false)
 {
 }
 
 IdentityProviderDetails::IdentityProviderDetails(JsonView jsonValue) : 
     m_urlHasBeenSet(false),
     m_invocationRoleHasBeenSet(false),
-    m_directoryIdHasBeenSet(false)
+    m_directoryIdHasBeenSet(false),
+    m_functionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ IdentityProviderDetails& IdentityProviderDetails::operator =(JsonView jsonValue)
     m_directoryIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Function"))
+  {
+    m_function = jsonValue.GetString("Function");
+
+    m_functionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue IdentityProviderDetails::Jsonize() const
   if(m_directoryIdHasBeenSet)
   {
    payload.WithString("DirectoryId", m_directoryId);
+
+  }
+
+  if(m_functionHasBeenSet)
+  {
+   payload.WithString("Function", m_function);
 
   }
 

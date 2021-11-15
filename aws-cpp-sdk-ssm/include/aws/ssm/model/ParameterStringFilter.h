@@ -43,8 +43,8 @@ namespace Model
      * <p>The name of the filter.</p> <p>The <code>ParameterStringFilter</code> object
      * is used by the <a>DescribeParameters</a> and <a>GetParametersByPath</a> API
      * operations. However, not all of the pattern values listed for <code>Key</code>
-     * can be used with both operations.</p> <p>For <code>DescribeActions</code>, all
-     * of the listed patterns are valid except <code>Label</code>.</p> <p>For
+     * can be used with both operations.</p> <p>For <code>DescribeParameters</code>,
+     * all of the listed patterns are valid except <code>Label</code>.</p> <p>For
      * <code>GetParametersByPath</code>, the following patterns listed for
      * <code>Key</code> aren't valid: <code>tag</code>, <code>DataType</code>,
      * <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p> <p>For examples
@@ -60,8 +60,8 @@ namespace Model
      * <p>The name of the filter.</p> <p>The <code>ParameterStringFilter</code> object
      * is used by the <a>DescribeParameters</a> and <a>GetParametersByPath</a> API
      * operations. However, not all of the pattern values listed for <code>Key</code>
-     * can be used with both operations.</p> <p>For <code>DescribeActions</code>, all
-     * of the listed patterns are valid except <code>Label</code>.</p> <p>For
+     * can be used with both operations.</p> <p>For <code>DescribeParameters</code>,
+     * all of the listed patterns are valid except <code>Label</code>.</p> <p>For
      * <code>GetParametersByPath</code>, the following patterns listed for
      * <code>Key</code> aren't valid: <code>tag</code>, <code>DataType</code>,
      * <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p> <p>For examples
@@ -77,8 +77,8 @@ namespace Model
      * <p>The name of the filter.</p> <p>The <code>ParameterStringFilter</code> object
      * is used by the <a>DescribeParameters</a> and <a>GetParametersByPath</a> API
      * operations. However, not all of the pattern values listed for <code>Key</code>
-     * can be used with both operations.</p> <p>For <code>DescribeActions</code>, all
-     * of the listed patterns are valid except <code>Label</code>.</p> <p>For
+     * can be used with both operations.</p> <p>For <code>DescribeParameters</code>,
+     * all of the listed patterns are valid except <code>Label</code>.</p> <p>For
      * <code>GetParametersByPath</code>, the following patterns listed for
      * <code>Key</code> aren't valid: <code>tag</code>, <code>DataType</code>,
      * <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p> <p>For examples
@@ -94,8 +94,8 @@ namespace Model
      * <p>The name of the filter.</p> <p>The <code>ParameterStringFilter</code> object
      * is used by the <a>DescribeParameters</a> and <a>GetParametersByPath</a> API
      * operations. However, not all of the pattern values listed for <code>Key</code>
-     * can be used with both operations.</p> <p>For <code>DescribeActions</code>, all
-     * of the listed patterns are valid except <code>Label</code>.</p> <p>For
+     * can be used with both operations.</p> <p>For <code>DescribeParameters</code>,
+     * all of the listed patterns are valid except <code>Label</code>.</p> <p>For
      * <code>GetParametersByPath</code>, the following patterns listed for
      * <code>Key</code> aren't valid: <code>tag</code>, <code>DataType</code>,
      * <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p> <p>For examples
@@ -111,8 +111,8 @@ namespace Model
      * <p>The name of the filter.</p> <p>The <code>ParameterStringFilter</code> object
      * is used by the <a>DescribeParameters</a> and <a>GetParametersByPath</a> API
      * operations. However, not all of the pattern values listed for <code>Key</code>
-     * can be used with both operations.</p> <p>For <code>DescribeActions</code>, all
-     * of the listed patterns are valid except <code>Label</code>.</p> <p>For
+     * can be used with both operations.</p> <p>For <code>DescribeParameters</code>,
+     * all of the listed patterns are valid except <code>Label</code>.</p> <p>For
      * <code>GetParametersByPath</code>, the following patterns listed for
      * <code>Key</code> aren't valid: <code>tag</code>, <code>DataType</code>,
      * <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p> <p>For examples
@@ -128,8 +128,8 @@ namespace Model
      * <p>The name of the filter.</p> <p>The <code>ParameterStringFilter</code> object
      * is used by the <a>DescribeParameters</a> and <a>GetParametersByPath</a> API
      * operations. However, not all of the pattern values listed for <code>Key</code>
-     * can be used with both operations.</p> <p>For <code>DescribeActions</code>, all
-     * of the listed patterns are valid except <code>Label</code>.</p> <p>For
+     * can be used with both operations.</p> <p>For <code>DescribeParameters</code>,
+     * all of the listed patterns are valid except <code>Label</code>.</p> <p>For
      * <code>GetParametersByPath</code>, the following patterns listed for
      * <code>Key</code> aren't valid: <code>tag</code>, <code>DataType</code>,
      * <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p> <p>For examples
@@ -145,8 +145,8 @@ namespace Model
      * <p>The name of the filter.</p> <p>The <code>ParameterStringFilter</code> object
      * is used by the <a>DescribeParameters</a> and <a>GetParametersByPath</a> API
      * operations. However, not all of the pattern values listed for <code>Key</code>
-     * can be used with both operations.</p> <p>For <code>DescribeActions</code>, all
-     * of the listed patterns are valid except <code>Label</code>.</p> <p>For
+     * can be used with both operations.</p> <p>For <code>DescribeParameters</code>,
+     * all of the listed patterns are valid except <code>Label</code>.</p> <p>For
      * <code>GetParametersByPath</code>, the following patterns listed for
      * <code>Key</code> aren't valid: <code>tag</code>, <code>DataType</code>,
      * <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p> <p>For examples
@@ -162,8 +162,8 @@ namespace Model
      * <p>The name of the filter.</p> <p>The <code>ParameterStringFilter</code> object
      * is used by the <a>DescribeParameters</a> and <a>GetParametersByPath</a> API
      * operations. However, not all of the pattern values listed for <code>Key</code>
-     * can be used with both operations.</p> <p>For <code>DescribeActions</code>, all
-     * of the listed patterns are valid except <code>Label</code>.</p> <p>For
+     * can be used with both operations.</p> <p>For <code>DescribeParameters</code>,
+     * all of the listed patterns are valid except <code>Label</code>.</p> <p>For
      * <code>GetParametersByPath</code>, the following patterns listed for
      * <code>Key</code> aren't valid: <code>tag</code>, <code>DataType</code>,
      * <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p> <p>For examples

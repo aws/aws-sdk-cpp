@@ -359,24 +359,28 @@ namespace Model
         /**
          * <p>Creates an Amazon EKS add-on.</p> <p>Amazon EKS add-ons help to automate the
          * provisioning and lifecycle management of common operational software for Amazon
-         * EKS clusters. Amazon EKS add-ons can only be used with Amazon EKS clusters
-         * running version 1.18 with platform version <code>eks.3</code> or later because
-         * add-ons rely on the Server-side Apply Kubernetes feature, which is only
-         * available in Kubernetes 1.18 and later.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateAddon">AWS API
-         * Reference</a></p>
+         * EKS clusters. Amazon EKS add-ons require clusters running version 1.18 or later
+         * because Amazon EKS add-ons rely on the Server-side Apply Kubernetes feature,
+         * which is only available in Kubernetes 1.18 and later. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon
+         * EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateAddon">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateAddonOutcome CreateAddon(const Model::CreateAddonRequest& request) const;
 
         /**
          * <p>Creates an Amazon EKS add-on.</p> <p>Amazon EKS add-ons help to automate the
          * provisioning and lifecycle management of common operational software for Amazon
-         * EKS clusters. Amazon EKS add-ons can only be used with Amazon EKS clusters
-         * running version 1.18 with platform version <code>eks.3</code> or later because
-         * add-ons rely on the Server-side Apply Kubernetes feature, which is only
-         * available in Kubernetes 1.18 and later.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateAddon">AWS API
-         * Reference</a></p>
+         * EKS clusters. Amazon EKS add-ons require clusters running version 1.18 or later
+         * because Amazon EKS add-ons rely on the Server-side Apply Kubernetes feature,
+         * which is only available in Kubernetes 1.18 and later. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon
+         * EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateAddon">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -385,12 +389,14 @@ namespace Model
         /**
          * <p>Creates an Amazon EKS add-on.</p> <p>Amazon EKS add-ons help to automate the
          * provisioning and lifecycle management of common operational software for Amazon
-         * EKS clusters. Amazon EKS add-ons can only be used with Amazon EKS clusters
-         * running version 1.18 with platform version <code>eks.3</code> or later because
-         * add-ons rely on the Server-side Apply Kubernetes feature, which is only
-         * available in Kubernetes 1.18 and later.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateAddon">AWS API
-         * Reference</a></p>
+         * EKS clusters. Amazon EKS add-ons require clusters running version 1.18 or later
+         * because Amazon EKS add-ons rely on the Server-side Apply Kubernetes feature,
+         * which is only available in Kubernetes 1.18 and later. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon
+         * EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateAddon">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1297,9 +1303,9 @@ namespace Model
          * applied to the Kubernetes cluster through it's native provider to provide
          * visibility.</p> <p>After the Manifest is updated and applied, then the connected
          * cluster is visible to the Amazon EKS control plane. If the Manifest is not
-         * applied within a set amount of time, then the connected cluster will no longer
-         * be visible and must be deregistered. See <a>DeregisterCluster</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * applied within three days, then the connected cluster will no longer be visible
+         * and must be deregistered. See <a>DeregisterCluster</a>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/RegisterCluster">AWS
          * API Reference</a></p>
          */
@@ -1316,9 +1322,9 @@ namespace Model
          * applied to the Kubernetes cluster through it's native provider to provide
          * visibility.</p> <p>After the Manifest is updated and applied, then the connected
          * cluster is visible to the Amazon EKS control plane. If the Manifest is not
-         * applied within a set amount of time, then the connected cluster will no longer
-         * be visible and must be deregistered. See <a>DeregisterCluster</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * applied within three days, then the connected cluster will no longer be visible
+         * and must be deregistered. See <a>DeregisterCluster</a>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/RegisterCluster">AWS
          * API Reference</a></p>
          *
@@ -1337,9 +1343,9 @@ namespace Model
          * applied to the Kubernetes cluster through it's native provider to provide
          * visibility.</p> <p>After the Manifest is updated and applied, then the connected
          * cluster is visible to the Amazon EKS control plane. If the Manifest is not
-         * applied within a set amount of time, then the connected cluster will no longer
-         * be visible and must be deregistered. See <a>DeregisterCluster</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * applied within three days, then the connected cluster will no longer be visible
+         * and must be deregistered. See <a>DeregisterCluster</a>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/RegisterCluster">AWS
          * API Reference</a></p>
          *

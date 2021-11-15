@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides information that defines an Elasticsearch endpoint.</p><p><h3>See
+   * <p>Provides information that defines an OpenSearch endpoint.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ElasticsearchSettings">AWS
    * API Reference</a></p>
@@ -88,49 +88,49 @@ namespace Model
 
 
     /**
-     * <p>The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport
+     * <p>The endpoint for the OpenSearch cluster. DMS uses HTTPS if a transport
      * protocol (http/https) is not specified.</p>
      */
     inline const Aws::String& GetEndpointUri() const{ return m_endpointUri; }
 
     /**
-     * <p>The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport
+     * <p>The endpoint for the OpenSearch cluster. DMS uses HTTPS if a transport
      * protocol (http/https) is not specified.</p>
      */
     inline bool EndpointUriHasBeenSet() const { return m_endpointUriHasBeenSet; }
 
     /**
-     * <p>The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport
+     * <p>The endpoint for the OpenSearch cluster. DMS uses HTTPS if a transport
      * protocol (http/https) is not specified.</p>
      */
     inline void SetEndpointUri(const Aws::String& value) { m_endpointUriHasBeenSet = true; m_endpointUri = value; }
 
     /**
-     * <p>The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport
+     * <p>The endpoint for the OpenSearch cluster. DMS uses HTTPS if a transport
      * protocol (http/https) is not specified.</p>
      */
     inline void SetEndpointUri(Aws::String&& value) { m_endpointUriHasBeenSet = true; m_endpointUri = std::move(value); }
 
     /**
-     * <p>The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport
+     * <p>The endpoint for the OpenSearch cluster. DMS uses HTTPS if a transport
      * protocol (http/https) is not specified.</p>
      */
     inline void SetEndpointUri(const char* value) { m_endpointUriHasBeenSet = true; m_endpointUri.assign(value); }
 
     /**
-     * <p>The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport
+     * <p>The endpoint for the OpenSearch cluster. DMS uses HTTPS if a transport
      * protocol (http/https) is not specified.</p>
      */
     inline ElasticsearchSettings& WithEndpointUri(const Aws::String& value) { SetEndpointUri(value); return *this;}
 
     /**
-     * <p>The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport
+     * <p>The endpoint for the OpenSearch cluster. DMS uses HTTPS if a transport
      * protocol (http/https) is not specified.</p>
      */
     inline ElasticsearchSettings& WithEndpointUri(Aws::String&& value) { SetEndpointUri(std::move(value)); return *this;}
 
     /**
-     * <p>The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport
+     * <p>The endpoint for the OpenSearch cluster. DMS uses HTTPS if a transport
      * protocol (http/https) is not specified.</p>
      */
     inline ElasticsearchSettings& WithEndpointUri(const char* value) { SetEndpointUri(value); return *this;}
@@ -139,8 +139,8 @@ namespace Model
     /**
      * <p>The maximum percentage of records that can fail to be written before a full
      * load operation stops.</p> <p>To avoid early failure, this counter is only
-     * effective after 1000 records are transferred. Elasticsearch also has the concept
-     * of error monitoring during the last 10 minutes of an Observation Window. If
+     * effective after 1000 records are transferred. OpenSearch also has the concept of
+     * error monitoring during the last 10 minutes of an Observation Window. If
      * transfer of all records fail in the last 10 minutes, the full load operation
      * stops. </p>
      */
@@ -149,8 +149,8 @@ namespace Model
     /**
      * <p>The maximum percentage of records that can fail to be written before a full
      * load operation stops.</p> <p>To avoid early failure, this counter is only
-     * effective after 1000 records are transferred. Elasticsearch also has the concept
-     * of error monitoring during the last 10 minutes of an Observation Window. If
+     * effective after 1000 records are transferred. OpenSearch also has the concept of
+     * error monitoring during the last 10 minutes of an Observation Window. If
      * transfer of all records fail in the last 10 minutes, the full load operation
      * stops. </p>
      */
@@ -159,8 +159,8 @@ namespace Model
     /**
      * <p>The maximum percentage of records that can fail to be written before a full
      * load operation stops.</p> <p>To avoid early failure, this counter is only
-     * effective after 1000 records are transferred. Elasticsearch also has the concept
-     * of error monitoring during the last 10 minutes of an Observation Window. If
+     * effective after 1000 records are transferred. OpenSearch also has the concept of
+     * error monitoring during the last 10 minutes of an Observation Window. If
      * transfer of all records fail in the last 10 minutes, the full load operation
      * stops. </p>
      */
@@ -169,8 +169,8 @@ namespace Model
     /**
      * <p>The maximum percentage of records that can fail to be written before a full
      * load operation stops.</p> <p>To avoid early failure, this counter is only
-     * effective after 1000 records are transferred. Elasticsearch also has the concept
-     * of error monitoring during the last 10 minutes of an Observation Window. If
+     * effective after 1000 records are transferred. OpenSearch also has the concept of
+     * error monitoring during the last 10 minutes of an Observation Window. If
      * transfer of all records fail in the last 10 minutes, the full load operation
      * stops. </p>
      */
@@ -179,25 +179,25 @@ namespace Model
 
     /**
      * <p>The maximum number of seconds for which DMS retries failed API requests to
-     * the Elasticsearch cluster.</p>
+     * the OpenSearch cluster.</p>
      */
     inline int GetErrorRetryDuration() const{ return m_errorRetryDuration; }
 
     /**
      * <p>The maximum number of seconds for which DMS retries failed API requests to
-     * the Elasticsearch cluster.</p>
+     * the OpenSearch cluster.</p>
      */
     inline bool ErrorRetryDurationHasBeenSet() const { return m_errorRetryDurationHasBeenSet; }
 
     /**
      * <p>The maximum number of seconds for which DMS retries failed API requests to
-     * the Elasticsearch cluster.</p>
+     * the OpenSearch cluster.</p>
      */
     inline void SetErrorRetryDuration(int value) { m_errorRetryDurationHasBeenSet = true; m_errorRetryDuration = value; }
 
     /**
      * <p>The maximum number of seconds for which DMS retries failed API requests to
-     * the Elasticsearch cluster.</p>
+     * the OpenSearch cluster.</p>
      */
     inline ElasticsearchSettings& WithErrorRetryDuration(int value) { SetErrorRetryDuration(value); return *this;}
 

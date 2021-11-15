@@ -649,6 +649,35 @@ namespace Model
      */
     inline Subnet& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether DNS queries made to the Amazon-provided DNS Resolver in
+     * this subnet should return synthetic IPv6 addresses for IPv4-only
+     * destinations.</p>
+     */
+    inline bool GetEnableDns64() const{ return m_enableDns64; }
+
+    /**
+     * <p>Indicates whether DNS queries made to the Amazon-provided DNS Resolver in
+     * this subnet should return synthetic IPv6 addresses for IPv4-only
+     * destinations.</p>
+     */
+    inline bool EnableDns64HasBeenSet() const { return m_enableDns64HasBeenSet; }
+
+    /**
+     * <p>Indicates whether DNS queries made to the Amazon-provided DNS Resolver in
+     * this subnet should return synthetic IPv6 addresses for IPv4-only
+     * destinations.</p>
+     */
+    inline void SetEnableDns64(bool value) { m_enableDns64HasBeenSet = true; m_enableDns64 = value; }
+
+    /**
+     * <p>Indicates whether DNS queries made to the Amazon-provided DNS Resolver in
+     * this subnet should return synthetic IPv6 addresses for IPv4-only
+     * destinations.</p>
+     */
+    inline Subnet& WithEnableDns64(bool value) { SetEnableDns64(value); return *this;}
+
   private:
 
     Aws::String m_availabilityZone;
@@ -701,6 +730,9 @@ namespace Model
 
     Aws::String m_outpostArn;
     bool m_outpostArnHasBeenSet;
+
+    bool m_enableDns64;
+    bool m_enableDns64HasBeenSet;
   };
 
 } // namespace Model

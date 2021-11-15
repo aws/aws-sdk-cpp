@@ -228,29 +228,33 @@ namespace Model
 
     /**
      * <p>Specifies how often to check the binary log for new changes/events when the
-     * database is idle.</p> <p>Example: <code>eventsPollInterval=5;</code> </p> <p>In
-     * the example, DMS checks for changes in the binary logs every five seconds.</p>
+     * database is idle. The default is five seconds.</p> <p>Example:
+     * <code>eventsPollInterval=5;</code> </p> <p>In the example, DMS checks for
+     * changes in the binary logs every five seconds.</p>
      */
     inline int GetEventsPollInterval() const{ return m_eventsPollInterval; }
 
     /**
      * <p>Specifies how often to check the binary log for new changes/events when the
-     * database is idle.</p> <p>Example: <code>eventsPollInterval=5;</code> </p> <p>In
-     * the example, DMS checks for changes in the binary logs every five seconds.</p>
+     * database is idle. The default is five seconds.</p> <p>Example:
+     * <code>eventsPollInterval=5;</code> </p> <p>In the example, DMS checks for
+     * changes in the binary logs every five seconds.</p>
      */
     inline bool EventsPollIntervalHasBeenSet() const { return m_eventsPollIntervalHasBeenSet; }
 
     /**
      * <p>Specifies how often to check the binary log for new changes/events when the
-     * database is idle.</p> <p>Example: <code>eventsPollInterval=5;</code> </p> <p>In
-     * the example, DMS checks for changes in the binary logs every five seconds.</p>
+     * database is idle. The default is five seconds.</p> <p>Example:
+     * <code>eventsPollInterval=5;</code> </p> <p>In the example, DMS checks for
+     * changes in the binary logs every five seconds.</p>
      */
     inline void SetEventsPollInterval(int value) { m_eventsPollIntervalHasBeenSet = true; m_eventsPollInterval = value; }
 
     /**
      * <p>Specifies how often to check the binary log for new changes/events when the
-     * database is idle.</p> <p>Example: <code>eventsPollInterval=5;</code> </p> <p>In
-     * the example, DMS checks for changes in the binary logs every five seconds.</p>
+     * database is idle. The default is five seconds.</p> <p>Example:
+     * <code>eventsPollInterval=5;</code> </p> <p>In the example, DMS checks for
+     * changes in the binary logs every five seconds.</p>
      */
     inline MySQLSettings& WithEventsPollInterval(int value) { SetEventsPollInterval(value); return *this;}
 
@@ -328,8 +332,8 @@ namespace Model
      * database. Specifies how many threads to use to load the data into the
      * MySQL-compatible target database. Setting a large number of threads can have an
      * adverse effect on database performance, because a separate connection is
-     * required for each thread.</p> <p>Example: <code>parallelLoadThreads=1</code>
-     * </p>
+     * required for each thread. The default is one.</p> <p>Example:
+     * <code>parallelLoadThreads=1</code> </p>
      */
     inline int GetParallelLoadThreads() const{ return m_parallelLoadThreads; }
 
@@ -338,8 +342,8 @@ namespace Model
      * database. Specifies how many threads to use to load the data into the
      * MySQL-compatible target database. Setting a large number of threads can have an
      * adverse effect on database performance, because a separate connection is
-     * required for each thread.</p> <p>Example: <code>parallelLoadThreads=1</code>
-     * </p>
+     * required for each thread. The default is one.</p> <p>Example:
+     * <code>parallelLoadThreads=1</code> </p>
      */
     inline bool ParallelLoadThreadsHasBeenSet() const { return m_parallelLoadThreadsHasBeenSet; }
 
@@ -348,8 +352,8 @@ namespace Model
      * database. Specifies how many threads to use to load the data into the
      * MySQL-compatible target database. Setting a large number of threads can have an
      * adverse effect on database performance, because a separate connection is
-     * required for each thread.</p> <p>Example: <code>parallelLoadThreads=1</code>
-     * </p>
+     * required for each thread. The default is one.</p> <p>Example:
+     * <code>parallelLoadThreads=1</code> </p>
      */
     inline void SetParallelLoadThreads(int value) { m_parallelLoadThreadsHasBeenSet = true; m_parallelLoadThreads = value; }
 
@@ -358,8 +362,8 @@ namespace Model
      * database. Specifies how many threads to use to load the data into the
      * MySQL-compatible target database. Setting a large number of threads can have an
      * adverse effect on database performance, because a separate connection is
-     * required for each thread.</p> <p>Example: <code>parallelLoadThreads=1</code>
-     * </p>
+     * required for each thread. The default is one.</p> <p>Example:
+     * <code>parallelLoadThreads=1</code> </p>
      */
     inline MySQLSettings& WithParallelLoadThreads(int value) { SetParallelLoadThreads(value); return *this;}
 

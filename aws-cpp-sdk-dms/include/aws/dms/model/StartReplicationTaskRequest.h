@@ -81,32 +81,80 @@ namespace Model
 
 
     /**
-     * <p>A type of replication task.</p>
+     * <p>The type of replication task to start.</p> <p>When the migration type is
+     * <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
+     * for the first run of the task is <code>start-replication</code>. You use
+     * <code>reload-target</code> to restart the task and
+     * <code>resume-processing</code> to resume the task.</p> <p>When the migration
+     * type is <code>cdc</code>, you use <code>start-replication</code> to start or
+     * restart the task, and <code>resume-processing</code> to resume the task.
+     * <code>reload-target</code> is not a valid value for a task with migration type
+     * of <code>cdc</code>.</p>
      */
     inline const StartReplicationTaskTypeValue& GetStartReplicationTaskType() const{ return m_startReplicationTaskType; }
 
     /**
-     * <p>A type of replication task.</p>
+     * <p>The type of replication task to start.</p> <p>When the migration type is
+     * <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
+     * for the first run of the task is <code>start-replication</code>. You use
+     * <code>reload-target</code> to restart the task and
+     * <code>resume-processing</code> to resume the task.</p> <p>When the migration
+     * type is <code>cdc</code>, you use <code>start-replication</code> to start or
+     * restart the task, and <code>resume-processing</code> to resume the task.
+     * <code>reload-target</code> is not a valid value for a task with migration type
+     * of <code>cdc</code>.</p>
      */
     inline bool StartReplicationTaskTypeHasBeenSet() const { return m_startReplicationTaskTypeHasBeenSet; }
 
     /**
-     * <p>A type of replication task.</p>
+     * <p>The type of replication task to start.</p> <p>When the migration type is
+     * <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
+     * for the first run of the task is <code>start-replication</code>. You use
+     * <code>reload-target</code> to restart the task and
+     * <code>resume-processing</code> to resume the task.</p> <p>When the migration
+     * type is <code>cdc</code>, you use <code>start-replication</code> to start or
+     * restart the task, and <code>resume-processing</code> to resume the task.
+     * <code>reload-target</code> is not a valid value for a task with migration type
+     * of <code>cdc</code>.</p>
      */
     inline void SetStartReplicationTaskType(const StartReplicationTaskTypeValue& value) { m_startReplicationTaskTypeHasBeenSet = true; m_startReplicationTaskType = value; }
 
     /**
-     * <p>A type of replication task.</p>
+     * <p>The type of replication task to start.</p> <p>When the migration type is
+     * <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
+     * for the first run of the task is <code>start-replication</code>. You use
+     * <code>reload-target</code> to restart the task and
+     * <code>resume-processing</code> to resume the task.</p> <p>When the migration
+     * type is <code>cdc</code>, you use <code>start-replication</code> to start or
+     * restart the task, and <code>resume-processing</code> to resume the task.
+     * <code>reload-target</code> is not a valid value for a task with migration type
+     * of <code>cdc</code>.</p>
      */
     inline void SetStartReplicationTaskType(StartReplicationTaskTypeValue&& value) { m_startReplicationTaskTypeHasBeenSet = true; m_startReplicationTaskType = std::move(value); }
 
     /**
-     * <p>A type of replication task.</p>
+     * <p>The type of replication task to start.</p> <p>When the migration type is
+     * <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
+     * for the first run of the task is <code>start-replication</code>. You use
+     * <code>reload-target</code> to restart the task and
+     * <code>resume-processing</code> to resume the task.</p> <p>When the migration
+     * type is <code>cdc</code>, you use <code>start-replication</code> to start or
+     * restart the task, and <code>resume-processing</code> to resume the task.
+     * <code>reload-target</code> is not a valid value for a task with migration type
+     * of <code>cdc</code>.</p>
      */
     inline StartReplicationTaskRequest& WithStartReplicationTaskType(const StartReplicationTaskTypeValue& value) { SetStartReplicationTaskType(value); return *this;}
 
     /**
-     * <p>A type of replication task.</p>
+     * <p>The type of replication task to start.</p> <p>When the migration type is
+     * <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
+     * for the first run of the task is <code>start-replication</code>. You use
+     * <code>reload-target</code> to restart the task and
+     * <code>resume-processing</code> to resume the task.</p> <p>When the migration
+     * type is <code>cdc</code>, you use <code>start-replication</code> to start or
+     * restart the task, and <code>resume-processing</code> to resume the task.
+     * <code>reload-target</code> is not a valid value for a task with migration type
+     * of <code>cdc</code>.</p>
      */
     inline StartReplicationTaskRequest& WithStartReplicationTaskType(StartReplicationTaskTypeValue&& value) { SetStartReplicationTaskType(std::move(value)); return *this;}
 

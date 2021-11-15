@@ -15,7 +15,8 @@ ModifySubnetAttributeRequest::ModifySubnetAttributeRequest() :
     m_mapPublicIpOnLaunchHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_mapCustomerOwnedIpOnLaunchHasBeenSet(false),
-    m_customerOwnedIpv4PoolHasBeenSet(false)
+    m_customerOwnedIpv4PoolHasBeenSet(false),
+    m_enableDns64HasBeenSet(false)
 {
 }
 
@@ -46,6 +47,11 @@ Aws::String ModifySubnetAttributeRequest::SerializePayload() const
   if(m_customerOwnedIpv4PoolHasBeenSet)
   {
     ss << "CustomerOwnedIpv4Pool=" << StringUtils::URLEncode(m_customerOwnedIpv4Pool.c_str()) << "&";
+  }
+
+  if(m_enableDns64HasBeenSet)
+  {
+    m_enableDns64.OutputToStream(ss, "EnableDns64");
   }
 
   ss << "Version=2016-11-15";

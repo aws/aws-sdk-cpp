@@ -55,7 +55,8 @@ Endpoint::Endpoint() :
     m_microsoftSQLServerSettingsHasBeenSet(false),
     m_iBMDb2SettingsHasBeenSet(false),
     m_docDbSettingsHasBeenSet(false),
-    m_redisSettingsHasBeenSet(false)
+    m_redisSettingsHasBeenSet(false),
+    m_gcpMySQLSettingsHasBeenSet(false)
 {
 }
 
@@ -96,7 +97,8 @@ Endpoint::Endpoint(JsonView jsonValue) :
     m_microsoftSQLServerSettingsHasBeenSet(false),
     m_iBMDb2SettingsHasBeenSet(false),
     m_docDbSettingsHasBeenSet(false),
-    m_redisSettingsHasBeenSet(false)
+    m_redisSettingsHasBeenSet(false),
+    m_gcpMySQLSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -341,6 +343,13 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
     m_redisSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("GcpMySQLSettings"))
+  {
+    m_gcpMySQLSettings = jsonValue.GetObject("GcpMySQLSettings");
+
+    m_gcpMySQLSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -547,6 +556,12 @@ JsonValue Endpoint::Jsonize() const
   if(m_redisSettingsHasBeenSet)
   {
    payload.WithObject("RedisSettings", m_redisSettings.Jsonize());
+
+  }
+
+  if(m_gcpMySQLSettingsHasBeenSet)
+  {
+   payload.WithObject("GcpMySQLSettings", m_gcpMySQLSettings.Jsonize());
 
   }
 

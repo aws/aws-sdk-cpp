@@ -65,6 +65,8 @@ S3Settings::S3Settings() :
     m_preserveTransactions(false),
     m_preserveTransactionsHasBeenSet(false),
     m_cdcPathHasBeenSet(false),
+    m_useTaskStartTimeForFullLoadTimestamp(false),
+    m_useTaskStartTimeForFullLoadTimestampHasBeenSet(false),
     m_cannedAclForObjects(CannedAclForObjectsValue::NOT_SET),
     m_cannedAclForObjectsHasBeenSet(false),
     m_addColumnName(false),
@@ -130,6 +132,8 @@ S3Settings::S3Settings(JsonView jsonValue) :
     m_preserveTransactions(false),
     m_preserveTransactionsHasBeenSet(false),
     m_cdcPathHasBeenSet(false),
+    m_useTaskStartTimeForFullLoadTimestamp(false),
+    m_useTaskStartTimeForFullLoadTimestampHasBeenSet(false),
     m_cannedAclForObjects(CannedAclForObjectsValue::NOT_SET),
     m_cannedAclForObjectsHasBeenSet(false),
     m_addColumnName(false),
@@ -345,6 +349,13 @@ S3Settings& S3Settings::operator =(JsonView jsonValue)
     m_cdcPath = jsonValue.GetString("CdcPath");
 
     m_cdcPathHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UseTaskStartTimeForFullLoadTimestamp"))
+  {
+    m_useTaskStartTimeForFullLoadTimestamp = jsonValue.GetBool("UseTaskStartTimeForFullLoadTimestamp");
+
+    m_useTaskStartTimeForFullLoadTimestampHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CannedAclForObjects"))
@@ -568,6 +579,12 @@ JsonValue S3Settings::Jsonize() const
   if(m_cdcPathHasBeenSet)
   {
    payload.WithString("CdcPath", m_cdcPath);
+
+  }
+
+  if(m_useTaskStartTimeForFullLoadTimestampHasBeenSet)
+  {
+   payload.WithBool("UseTaskStartTimeForFullLoadTimestamp", m_useTaskStartTimeForFullLoadTimestamp);
 
   }
 

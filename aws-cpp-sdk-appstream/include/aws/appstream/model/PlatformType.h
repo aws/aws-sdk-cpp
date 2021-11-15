@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     WINDOWS,
     WINDOWS_SERVER_2016,
-    WINDOWS_SERVER_2019
+    WINDOWS_SERVER_2019,
+    AMAZON_LINUX2
   };
 
 namespace PlatformTypeMapper

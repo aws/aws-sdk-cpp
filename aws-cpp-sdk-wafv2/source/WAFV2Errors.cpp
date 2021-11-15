@@ -41,6 +41,7 @@ static const int W_A_F_NONEXISTENT_ITEM_HASH = HashingUtils::HashString("WAFNone
 static const int W_A_F_DUPLICATE_ITEM_HASH = HashingUtils::HashString("WAFDuplicateItemException");
 static const int W_A_F_OPTIMISTIC_LOCK_HASH = HashingUtils::HashString("WAFOptimisticLockException");
 static const int W_A_F_TAG_OPERATION_INTERNAL_ERROR_HASH = HashingUtils::HashString("WAFTagOperationInternalErrorException");
+static const int W_A_F_LOG_DESTINATION_PERMISSION_ISSUE_HASH = HashingUtils::HashString("WAFLogDestinationPermissionIssueException");
 static const int W_A_F_SERVICE_LINKED_ROLE_ERROR_HASH = HashingUtils::HashString("WAFServiceLinkedRoleErrorException");
 
 
@@ -107,6 +108,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == W_A_F_TAG_OPERATION_INTERNAL_ERROR_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFV2Errors::W_A_F_TAG_OPERATION_INTERNAL_ERROR), false);
+  }
+  else if (hashCode == W_A_F_LOG_DESTINATION_PERMISSION_ISSUE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFV2Errors::W_A_F_LOG_DESTINATION_PERMISSION_ISSUE), false);
   }
   else if (hashCode == W_A_F_SERVICE_LINKED_ROLE_ERROR_HASH)
   {

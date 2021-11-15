@@ -293,6 +293,49 @@ namespace Model
      */
     inline ModifySubnetAttributeRequest& WithCustomerOwnedIpv4Pool(const char* value) { SetCustomerOwnedIpv4Pool(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether DNS queries made to the Amazon-provided DNS Resolver in
+     * this subnet should return synthetic IPv6 addresses for IPv4-only
+     * destinations.</p>
+     */
+    inline const AttributeBooleanValue& GetEnableDns64() const{ return m_enableDns64; }
+
+    /**
+     * <p>Indicates whether DNS queries made to the Amazon-provided DNS Resolver in
+     * this subnet should return synthetic IPv6 addresses for IPv4-only
+     * destinations.</p>
+     */
+    inline bool EnableDns64HasBeenSet() const { return m_enableDns64HasBeenSet; }
+
+    /**
+     * <p>Indicates whether DNS queries made to the Amazon-provided DNS Resolver in
+     * this subnet should return synthetic IPv6 addresses for IPv4-only
+     * destinations.</p>
+     */
+    inline void SetEnableDns64(const AttributeBooleanValue& value) { m_enableDns64HasBeenSet = true; m_enableDns64 = value; }
+
+    /**
+     * <p>Indicates whether DNS queries made to the Amazon-provided DNS Resolver in
+     * this subnet should return synthetic IPv6 addresses for IPv4-only
+     * destinations.</p>
+     */
+    inline void SetEnableDns64(AttributeBooleanValue&& value) { m_enableDns64HasBeenSet = true; m_enableDns64 = std::move(value); }
+
+    /**
+     * <p>Indicates whether DNS queries made to the Amazon-provided DNS Resolver in
+     * this subnet should return synthetic IPv6 addresses for IPv4-only
+     * destinations.</p>
+     */
+    inline ModifySubnetAttributeRequest& WithEnableDns64(const AttributeBooleanValue& value) { SetEnableDns64(value); return *this;}
+
+    /**
+     * <p>Indicates whether DNS queries made to the Amazon-provided DNS Resolver in
+     * this subnet should return synthetic IPv6 addresses for IPv4-only
+     * destinations.</p>
+     */
+    inline ModifySubnetAttributeRequest& WithEnableDns64(AttributeBooleanValue&& value) { SetEnableDns64(std::move(value)); return *this;}
+
   private:
 
     AttributeBooleanValue m_assignIpv6AddressOnCreation;
@@ -309,6 +352,9 @@ namespace Model
 
     Aws::String m_customerOwnedIpv4Pool;
     bool m_customerOwnedIpv4PoolHasBeenSet;
+
+    AttributeBooleanValue m_enableDns64;
+    bool m_enableDns64HasBeenSet;
   };
 
 } // namespace Model

@@ -2034,6 +2034,55 @@ namespace Model
 
 
     /**
+     * <p>When set to true, this parameter uses the task start time as the timestamp
+     * column value instead of the time data is written to target. For full load, when
+     * <code>useTaskStartTimeForFullLoadTimestamp</code> is set to <code>true</code>,
+     * each row of the timestamp column contains the task start time. For CDC loads,
+     * each row of the timestamp column contains the transaction commit time.</p>
+     * <p>When <code>useTaskStartTimeForFullLoadTimestamp</code> is set to
+     * <code>false</code>, the full load timestamp in the timestamp column increments
+     * with the time data arrives at the target. </p>
+     */
+    inline bool GetUseTaskStartTimeForFullLoadTimestamp() const{ return m_useTaskStartTimeForFullLoadTimestamp; }
+
+    /**
+     * <p>When set to true, this parameter uses the task start time as the timestamp
+     * column value instead of the time data is written to target. For full load, when
+     * <code>useTaskStartTimeForFullLoadTimestamp</code> is set to <code>true</code>,
+     * each row of the timestamp column contains the task start time. For CDC loads,
+     * each row of the timestamp column contains the transaction commit time.</p>
+     * <p>When <code>useTaskStartTimeForFullLoadTimestamp</code> is set to
+     * <code>false</code>, the full load timestamp in the timestamp column increments
+     * with the time data arrives at the target. </p>
+     */
+    inline bool UseTaskStartTimeForFullLoadTimestampHasBeenSet() const { return m_useTaskStartTimeForFullLoadTimestampHasBeenSet; }
+
+    /**
+     * <p>When set to true, this parameter uses the task start time as the timestamp
+     * column value instead of the time data is written to target. For full load, when
+     * <code>useTaskStartTimeForFullLoadTimestamp</code> is set to <code>true</code>,
+     * each row of the timestamp column contains the task start time. For CDC loads,
+     * each row of the timestamp column contains the transaction commit time.</p>
+     * <p>When <code>useTaskStartTimeForFullLoadTimestamp</code> is set to
+     * <code>false</code>, the full load timestamp in the timestamp column increments
+     * with the time data arrives at the target. </p>
+     */
+    inline void SetUseTaskStartTimeForFullLoadTimestamp(bool value) { m_useTaskStartTimeForFullLoadTimestampHasBeenSet = true; m_useTaskStartTimeForFullLoadTimestamp = value; }
+
+    /**
+     * <p>When set to true, this parameter uses the task start time as the timestamp
+     * column value instead of the time data is written to target. For full load, when
+     * <code>useTaskStartTimeForFullLoadTimestamp</code> is set to <code>true</code>,
+     * each row of the timestamp column contains the task start time. For CDC loads,
+     * each row of the timestamp column contains the transaction commit time.</p>
+     * <p>When <code>useTaskStartTimeForFullLoadTimestamp</code> is set to
+     * <code>false</code>, the full load timestamp in the timestamp column increments
+     * with the time data arrives at the target. </p>
+     */
+    inline S3Settings& WithUseTaskStartTimeForFullLoadTimestamp(bool value) { SetUseTaskStartTimeForFullLoadTimestamp(value); return *this;}
+
+
+    /**
      * <p>A value that enables DMS to specify a predefined (canned) access control list
      * for objects created in an Amazon S3 bucket as .csv or .parquet files. For more
      * information about Amazon S3 canned ACLs, see <a
@@ -2525,6 +2574,9 @@ namespace Model
 
     Aws::String m_cdcPath;
     bool m_cdcPathHasBeenSet;
+
+    bool m_useTaskStartTimeForFullLoadTimestamp;
+    bool m_useTaskStartTimeForFullLoadTimestampHasBeenSet;
 
     CannedAclForObjectsValue m_cannedAclForObjects;
     bool m_cannedAclForObjectsHasBeenSet;

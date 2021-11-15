@@ -43,7 +43,9 @@ Subnet::Subnet() :
     m_ipv6CidrBlockAssociationSetHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_subnetArnHasBeenSet(false),
-    m_outpostArnHasBeenSet(false)
+    m_outpostArnHasBeenSet(false),
+    m_enableDns64(false),
+    m_enableDns64HasBeenSet(false)
 {
 }
 
@@ -70,7 +72,9 @@ Subnet::Subnet(const XmlNode& xmlNode) :
     m_ipv6CidrBlockAssociationSetHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_subnetArnHasBeenSet(false),
-    m_outpostArnHasBeenSet(false)
+    m_outpostArnHasBeenSet(false),
+    m_enableDns64(false),
+    m_enableDns64HasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -195,6 +199,12 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
       m_outpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(outpostArnNode.GetText());
       m_outpostArnHasBeenSet = true;
     }
+    XmlNode enableDns64Node = resultNode.FirstChild("enableDns64");
+    if(!enableDns64Node.IsNull())
+    {
+      m_enableDns64 = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enableDns64Node.GetText()).c_str()).c_str());
+      m_enableDns64HasBeenSet = true;
+    }
   }
 
   return *this;
@@ -299,6 +309,11 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       oStream << location << index << locationValue << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
   }
 
+  if(m_enableDns64HasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnableDns64=" << std::boolalpha << m_enableDns64 << "&";
+  }
+
 }
 
 void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -382,6 +397,10 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_outpostArnHasBeenSet)
   {
       oStream << location << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
+  }
+  if(m_enableDns64HasBeenSet)
+  {
+      oStream << location << ".EnableDns64=" << std::boolalpha << m_enableDns64 << "&";
   }
 }
 

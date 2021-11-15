@@ -71,7 +71,8 @@ namespace Model
     FILTER_CONDITION,
     EXPIRE_TIMESTAMP,
     CHANGE_PROPAGATION_STATUS,
-    ASSOCIABLE_RESOURCE
+    ASSOCIABLE_RESOURCE,
+    LOG_DESTINATION
   };
 
 namespace ParameterExceptionFieldMapper

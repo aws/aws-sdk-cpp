@@ -76,6 +76,7 @@ namespace Aws
         static const int EXPIRE_TIMESTAMP_HASH = HashingUtils::HashString("EXPIRE_TIMESTAMP");
         static const int CHANGE_PROPAGATION_STATUS_HASH = HashingUtils::HashString("CHANGE_PROPAGATION_STATUS");
         static const int ASSOCIABLE_RESOURCE_HASH = HashingUtils::HashString("ASSOCIABLE_RESOURCE");
+        static const int LOG_DESTINATION_HASH = HashingUtils::HashString("LOG_DESTINATION");
 
 
         ParameterExceptionField GetParameterExceptionFieldForName(const Aws::String& name)
@@ -305,6 +306,10 @@ namespace Aws
           {
             return ParameterExceptionField::ASSOCIABLE_RESOURCE;
           }
+          else if (hashCode == LOG_DESTINATION_HASH)
+          {
+            return ParameterExceptionField::LOG_DESTINATION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -431,6 +436,8 @@ namespace Aws
             return "CHANGE_PROPAGATION_STATUS";
           case ParameterExceptionField::ASSOCIABLE_RESOURCE:
             return "ASSOCIABLE_RESOURCE";
+          case ParameterExceptionField::LOG_DESTINATION:
+            return "LOG_DESTINATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

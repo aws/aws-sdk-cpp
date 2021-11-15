@@ -321,6 +321,47 @@ namespace Model
 
 
     /**
+     * <p>The reason for connecting to the instance.</p>
+     */
+    inline const Aws::String& GetReason() const{ return m_reason; }
+
+    /**
+     * <p>The reason for connecting to the instance.</p>
+     */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
+
+    /**
+     * <p>The reason for connecting to the instance.</p>
+     */
+    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
+
+    /**
+     * <p>The reason for connecting to the instance.</p>
+     */
+    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
+
+    /**
+     * <p>The reason for connecting to the instance.</p>
+     */
+    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
+
+    /**
+     * <p>The reason for connecting to the instance.</p>
+     */
+    inline Session& WithReason(const Aws::String& value) { SetReason(value); return *this;}
+
+    /**
+     * <p>The reason for connecting to the instance.</p>
+     */
+    inline Session& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
+
+    /**
+     * <p>The reason for connecting to the instance.</p>
+     */
+    inline Session& WithReason(const char* value) { SetReason(value); return *this;}
+
+
+    /**
      * <p>Reserved for future use.</p>
      */
     inline const Aws::String& GetDetails() const{ return m_details; }
@@ -391,6 +432,47 @@ namespace Model
      */
     inline Session& WithOutputUrl(SessionManagerOutputUrl&& value) { SetOutputUrl(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The maximum duration of a session before it terminates.</p>
+     */
+    inline const Aws::String& GetMaxSessionDuration() const{ return m_maxSessionDuration; }
+
+    /**
+     * <p>The maximum duration of a session before it terminates.</p>
+     */
+    inline bool MaxSessionDurationHasBeenSet() const { return m_maxSessionDurationHasBeenSet; }
+
+    /**
+     * <p>The maximum duration of a session before it terminates.</p>
+     */
+    inline void SetMaxSessionDuration(const Aws::String& value) { m_maxSessionDurationHasBeenSet = true; m_maxSessionDuration = value; }
+
+    /**
+     * <p>The maximum duration of a session before it terminates.</p>
+     */
+    inline void SetMaxSessionDuration(Aws::String&& value) { m_maxSessionDurationHasBeenSet = true; m_maxSessionDuration = std::move(value); }
+
+    /**
+     * <p>The maximum duration of a session before it terminates.</p>
+     */
+    inline void SetMaxSessionDuration(const char* value) { m_maxSessionDurationHasBeenSet = true; m_maxSessionDuration.assign(value); }
+
+    /**
+     * <p>The maximum duration of a session before it terminates.</p>
+     */
+    inline Session& WithMaxSessionDuration(const Aws::String& value) { SetMaxSessionDuration(value); return *this;}
+
+    /**
+     * <p>The maximum duration of a session before it terminates.</p>
+     */
+    inline Session& WithMaxSessionDuration(Aws::String&& value) { SetMaxSessionDuration(std::move(value)); return *this;}
+
+    /**
+     * <p>The maximum duration of a session before it terminates.</p>
+     */
+    inline Session& WithMaxSessionDuration(const char* value) { SetMaxSessionDuration(value); return *this;}
+
   private:
 
     Aws::String m_sessionId;
@@ -414,11 +496,17 @@ namespace Model
     Aws::String m_owner;
     bool m_ownerHasBeenSet;
 
+    Aws::String m_reason;
+    bool m_reasonHasBeenSet;
+
     Aws::String m_details;
     bool m_detailsHasBeenSet;
 
     SessionManagerOutputUrl m_outputUrl;
     bool m_outputUrlHasBeenSet;
+
+    Aws::String m_maxSessionDuration;
+    bool m_maxSessionDurationHasBeenSet;
   };
 
 } // namespace Model

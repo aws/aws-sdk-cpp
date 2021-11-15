@@ -64,7 +64,7 @@ namespace Model
 
 
     /**
-     * <p>The path prefix for the S3 bucket where users��� persistent application
+     * <p>The path prefix for the S3 bucket where users’ persistent application
      * settings are stored. You can allow the same persistent application settings to
      * be used across multiple stacks by specifying the same settings group for each
      * stack. </p>
@@ -72,7 +72,7 @@ namespace Model
     inline const Aws::String& GetSettingsGroup() const{ return m_settingsGroup; }
 
     /**
-     * <p>The path prefix for the S3 bucket where users��� persistent application
+     * <p>The path prefix for the S3 bucket where users’ persistent application
      * settings are stored. You can allow the same persistent application settings to
      * be used across multiple stacks by specifying the same settings group for each
      * stack. </p>
@@ -80,7 +80,7 @@ namespace Model
     inline bool SettingsGroupHasBeenSet() const { return m_settingsGroupHasBeenSet; }
 
     /**
-     * <p>The path prefix for the S3 bucket where users��� persistent application
+     * <p>The path prefix for the S3 bucket where users’ persistent application
      * settings are stored. You can allow the same persistent application settings to
      * be used across multiple stacks by specifying the same settings group for each
      * stack. </p>
@@ -88,7 +88,7 @@ namespace Model
     inline void SetSettingsGroup(const Aws::String& value) { m_settingsGroupHasBeenSet = true; m_settingsGroup = value; }
 
     /**
-     * <p>The path prefix for the S3 bucket where users��� persistent application
+     * <p>The path prefix for the S3 bucket where users’ persistent application
      * settings are stored. You can allow the same persistent application settings to
      * be used across multiple stacks by specifying the same settings group for each
      * stack. </p>
@@ -96,7 +96,7 @@ namespace Model
     inline void SetSettingsGroup(Aws::String&& value) { m_settingsGroupHasBeenSet = true; m_settingsGroup = std::move(value); }
 
     /**
-     * <p>The path prefix for the S3 bucket where users��� persistent application
+     * <p>The path prefix for the S3 bucket where users’ persistent application
      * settings are stored. You can allow the same persistent application settings to
      * be used across multiple stacks by specifying the same settings group for each
      * stack. </p>
@@ -104,7 +104,7 @@ namespace Model
     inline void SetSettingsGroup(const char* value) { m_settingsGroupHasBeenSet = true; m_settingsGroup.assign(value); }
 
     /**
-     * <p>The path prefix for the S3 bucket where users��� persistent application
+     * <p>The path prefix for the S3 bucket where users’ persistent application
      * settings are stored. You can allow the same persistent application settings to
      * be used across multiple stacks by specifying the same settings group for each
      * stack. </p>
@@ -112,7 +112,7 @@ namespace Model
     inline ApplicationSettings& WithSettingsGroup(const Aws::String& value) { SetSettingsGroup(value); return *this;}
 
     /**
-     * <p>The path prefix for the S3 bucket where users��� persistent application
+     * <p>The path prefix for the S3 bucket where users’ persistent application
      * settings are stored. You can allow the same persistent application settings to
      * be used across multiple stacks by specifying the same settings group for each
      * stack. </p>
@@ -120,7 +120,7 @@ namespace Model
     inline ApplicationSettings& WithSettingsGroup(Aws::String&& value) { SetSettingsGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The path prefix for the S3 bucket where users��� persistent application
+     * <p>The path prefix for the S3 bucket where users’ persistent application
      * settings are stored. You can allow the same persistent application settings to
      * be used across multiple stacks by specifying the same settings group for each
      * stack. </p>

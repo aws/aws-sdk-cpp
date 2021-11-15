@@ -199,50 +199,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that is used by the EKS connector
-     * to communicate with AWS services from the connected Kubernetes cluster.</p>
+     * <p>The Amazon Resource Name (ARN) of the role to communicate with services from
+     * the connected Kubernetes cluster.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that is used by the EKS connector
-     * to communicate with AWS services from the connected Kubernetes cluster.</p>
+     * <p>The Amazon Resource Name (ARN) of the role to communicate with services from
+     * the connected Kubernetes cluster.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that is used by the EKS connector
-     * to communicate with AWS services from the connected Kubernetes cluster.</p>
+     * <p>The Amazon Resource Name (ARN) of the role to communicate with services from
+     * the connected Kubernetes cluster.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that is used by the EKS connector
-     * to communicate with AWS services from the connected Kubernetes cluster.</p>
+     * <p>The Amazon Resource Name (ARN) of the role to communicate with services from
+     * the connected Kubernetes cluster.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that is used by the EKS connector
-     * to communicate with AWS services from the connected Kubernetes cluster.</p>
+     * <p>The Amazon Resource Name (ARN) of the role to communicate with services from
+     * the connected Kubernetes cluster.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that is used by the EKS connector
-     * to communicate with AWS services from the connected Kubernetes cluster.</p>
+     * <p>The Amazon Resource Name (ARN) of the role to communicate with services from
+     * the connected Kubernetes cluster.</p>
      */
     inline ConnectorConfigResponse& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that is used by the EKS connector
-     * to communicate with AWS services from the connected Kubernetes cluster.</p>
+     * <p>The Amazon Resource Name (ARN) of the role to communicate with services from
+     * the connected Kubernetes cluster.</p>
      */
     inline ConnectorConfigResponse& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that is used by the EKS connector
-     * to communicate with AWS services from the connected Kubernetes cluster.</p>
+     * <p>The Amazon Resource Name (ARN) of the role to communicate with services from
+     * the connected Kubernetes cluster.</p>
      */
     inline ConnectorConfigResponse& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

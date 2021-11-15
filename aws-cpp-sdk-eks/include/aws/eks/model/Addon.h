@@ -28,8 +28,10 @@ namespace Model
 {
 
   /**
-   * <p>An Amazon EKS add-on.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/Addon">AWS API
+   * <p>An Amazon EKS add-on. For more information, see <a
+   * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon
+   * EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/Addon">AWS API
    * Reference</a></p>
    */
   class AWS_EKS_API Addon

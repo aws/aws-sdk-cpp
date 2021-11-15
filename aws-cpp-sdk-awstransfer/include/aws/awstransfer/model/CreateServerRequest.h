@@ -649,7 +649,11 @@ namespace Model
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your
      * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
      * Gateway endpoint URL to call for authentication using the
-     * <code>IdentityProviderDetails</code> parameter.</p>
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>LAMBDA</code> value to directly use a Lambda function as your identity
+     * provider. If you choose this value, you must specify the ARN for the lambda
+     * function in the <code>Function</code> parameter for the
+     * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline const IdentityProviderType& GetIdentityProviderType() const{ return m_identityProviderType; }
 
@@ -665,7 +669,11 @@ namespace Model
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your
      * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
      * Gateway endpoint URL to call for authentication using the
-     * <code>IdentityProviderDetails</code> parameter.</p>
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>LAMBDA</code> value to directly use a Lambda function as your identity
+     * provider. If you choose this value, you must specify the ARN for the lambda
+     * function in the <code>Function</code> parameter for the
+     * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline bool IdentityProviderTypeHasBeenSet() const { return m_identityProviderTypeHasBeenSet; }
 
@@ -681,7 +689,11 @@ namespace Model
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your
      * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
      * Gateway endpoint URL to call for authentication using the
-     * <code>IdentityProviderDetails</code> parameter.</p>
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>LAMBDA</code> value to directly use a Lambda function as your identity
+     * provider. If you choose this value, you must specify the ARN for the lambda
+     * function in the <code>Function</code> parameter for the
+     * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline void SetIdentityProviderType(const IdentityProviderType& value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = value; }
 
@@ -697,7 +709,11 @@ namespace Model
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your
      * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
      * Gateway endpoint URL to call for authentication using the
-     * <code>IdentityProviderDetails</code> parameter.</p>
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>LAMBDA</code> value to directly use a Lambda function as your identity
+     * provider. If you choose this value, you must specify the ARN for the lambda
+     * function in the <code>Function</code> parameter for the
+     * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline void SetIdentityProviderType(IdentityProviderType&& value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = std::move(value); }
 
@@ -713,7 +729,11 @@ namespace Model
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your
      * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
      * Gateway endpoint URL to call for authentication using the
-     * <code>IdentityProviderDetails</code> parameter.</p>
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>LAMBDA</code> value to directly use a Lambda function as your identity
+     * provider. If you choose this value, you must specify the ARN for the lambda
+     * function in the <code>Function</code> parameter for the
+     * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline CreateServerRequest& WithIdentityProviderType(const IdentityProviderType& value) { SetIdentityProviderType(value); return *this;}
 
@@ -729,7 +749,11 @@ namespace Model
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your
      * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
      * Gateway endpoint URL to call for authentication using the
-     * <code>IdentityProviderDetails</code> parameter.</p>
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>LAMBDA</code> value to directly use a Lambda function as your identity
+     * provider. If you choose this value, you must specify the ARN for the lambda
+     * function in the <code>Function</code> parameter for the
+     * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline CreateServerRequest& WithIdentityProviderType(IdentityProviderType&& value) { SetIdentityProviderType(std::move(value)); return *this;}
 

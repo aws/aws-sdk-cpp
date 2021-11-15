@@ -1474,9 +1474,8 @@ namespace Model
          * creates in your Amazon Web Services account. This action always returns the
          * latest results.</p> <p>For more information about DMS task assessments, see <a
          * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating
-         * a task assessment report</a> in the <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/Welcome.html">
-         * Database Migration Service User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * a task assessment report</a> in the <i>Database Migration Service User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskAssessmentResults">AWS
          * API Reference</a></p>
          */
@@ -1487,9 +1486,8 @@ namespace Model
          * creates in your Amazon Web Services account. This action always returns the
          * latest results.</p> <p>For more information about DMS task assessments, see <a
          * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating
-         * a task assessment report</a> in the <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/Welcome.html">
-         * Database Migration Service User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * a task assessment report</a> in the <i>Database Migration Service User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskAssessmentResults">AWS
          * API Reference</a></p>
          *
@@ -1502,9 +1500,8 @@ namespace Model
          * creates in your Amazon Web Services account. This action always returns the
          * latest results.</p> <p>For more information about DMS task assessments, see <a
          * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating
-         * a task assessment report</a> in the <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/Welcome.html">
-         * Database Migration Service User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * a task assessment report</a> in the <i>Database Migration Service User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskAssessmentResults">AWS
          * API Reference</a></p>
          *

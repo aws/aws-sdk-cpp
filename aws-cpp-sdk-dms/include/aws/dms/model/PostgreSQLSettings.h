@@ -451,22 +451,22 @@ namespace Model
 
 
     /**
-     * <p>Endpoint TCP port.</p>
+     * <p>Endpoint TCP port. The default is 5432.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
-     * <p>Endpoint TCP port.</p>
+     * <p>Endpoint TCP port. The default is 5432.</p>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
-     * <p>Endpoint TCP port.</p>
+     * <p>Endpoint TCP port. The default is 5432.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p>Endpoint TCP port.</p>
+     * <p>Endpoint TCP port. The default is 5432.</p>
      */
     inline PostgreSQLSettings& WithPort(int value) { SetPort(value); return *this;}
 

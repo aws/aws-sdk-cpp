@@ -27,11 +27,14 @@ namespace Model
 {
 
   /**
-   * <p>Defines an association between Amazon Kinesis Data Firehose destinations and
-   * a web ACL resource, for logging from WAF. As part of the association, you can
-   * specify parts of the standard logging fields to keep out of the logs and you can
-   * specify filters so that you log only a subset of the logging records.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Defines an association between logging destinations and a web ACL resource,
+   * for logging from WAF. As part of the association, you can specify parts of the
+   * standard logging fields to keep out of the logs and you can specify filters so
+   * that you log only a subset of the logging records. </p> <p>For information about
+   * configuring web ACL logging destinations, see <a
+   * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+   * web ACL traffic information</a> in the <i>WAF Developer Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/LoggingConfiguration">AWS
    * API Reference</a></p>
    */
@@ -94,55 +97,55 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Kinesis Data Firehose Amazon Resource Name (ARNs) that you want to
+     * <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to
      * associate with the web ACL.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLogDestinationConfigs() const{ return m_logDestinationConfigs; }
 
     /**
-     * <p>The Amazon Kinesis Data Firehose Amazon Resource Name (ARNs) that you want to
+     * <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to
      * associate with the web ACL.</p>
      */
     inline bool LogDestinationConfigsHasBeenSet() const { return m_logDestinationConfigsHasBeenSet; }
 
     /**
-     * <p>The Amazon Kinesis Data Firehose Amazon Resource Name (ARNs) that you want to
+     * <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to
      * associate with the web ACL.</p>
      */
     inline void SetLogDestinationConfigs(const Aws::Vector<Aws::String>& value) { m_logDestinationConfigsHasBeenSet = true; m_logDestinationConfigs = value; }
 
     /**
-     * <p>The Amazon Kinesis Data Firehose Amazon Resource Name (ARNs) that you want to
+     * <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to
      * associate with the web ACL.</p>
      */
     inline void SetLogDestinationConfigs(Aws::Vector<Aws::String>&& value) { m_logDestinationConfigsHasBeenSet = true; m_logDestinationConfigs = std::move(value); }
 
     /**
-     * <p>The Amazon Kinesis Data Firehose Amazon Resource Name (ARNs) that you want to
+     * <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to
      * associate with the web ACL.</p>
      */
     inline LoggingConfiguration& WithLogDestinationConfigs(const Aws::Vector<Aws::String>& value) { SetLogDestinationConfigs(value); return *this;}
 
     /**
-     * <p>The Amazon Kinesis Data Firehose Amazon Resource Name (ARNs) that you want to
+     * <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to
      * associate with the web ACL.</p>
      */
     inline LoggingConfiguration& WithLogDestinationConfigs(Aws::Vector<Aws::String>&& value) { SetLogDestinationConfigs(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Kinesis Data Firehose Amazon Resource Name (ARNs) that you want to
+     * <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to
      * associate with the web ACL.</p>
      */
     inline LoggingConfiguration& AddLogDestinationConfigs(const Aws::String& value) { m_logDestinationConfigsHasBeenSet = true; m_logDestinationConfigs.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Kinesis Data Firehose Amazon Resource Name (ARNs) that you want to
+     * <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to
      * associate with the web ACL.</p>
      */
     inline LoggingConfiguration& AddLogDestinationConfigs(Aws::String&& value) { m_logDestinationConfigsHasBeenSet = true; m_logDestinationConfigs.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Kinesis Data Firehose Amazon Resource Name (ARNs) that you want to
+     * <p>The Amazon Resource Names (ARNs) of the logging destinations that you want to
      * associate with the web ACL.</p>
      */
     inline LoggingConfiguration& AddLogDestinationConfigs(const char* value) { m_logDestinationConfigsHasBeenSet = true; m_logDestinationConfigs.push_back(value); return *this; }
@@ -151,80 +154,80 @@ namespace Model
     /**
      * <p>The parts of the request that you want to keep out of the logs. For example,
      * if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field
-     * in the firehose will be <code>xxx</code>. </p>  <p>You can specify only
-     * the following fields for redaction: <code>UriPath</code>,
-     * <code>QueryString</code>, <code>SingleHeader</code>, <code>Method</code>, and
-     * <code>JsonBody</code>.</p> 
+     * in the logs will be <code>xxx</code>. </p>  <p>You can specify only the
+     * following fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
+     * <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.</p>
+     * 
      */
     inline const Aws::Vector<FieldToMatch>& GetRedactedFields() const{ return m_redactedFields; }
 
     /**
      * <p>The parts of the request that you want to keep out of the logs. For example,
      * if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field
-     * in the firehose will be <code>xxx</code>. </p>  <p>You can specify only
-     * the following fields for redaction: <code>UriPath</code>,
-     * <code>QueryString</code>, <code>SingleHeader</code>, <code>Method</code>, and
-     * <code>JsonBody</code>.</p> 
+     * in the logs will be <code>xxx</code>. </p>  <p>You can specify only the
+     * following fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
+     * <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.</p>
+     * 
      */
     inline bool RedactedFieldsHasBeenSet() const { return m_redactedFieldsHasBeenSet; }
 
     /**
      * <p>The parts of the request that you want to keep out of the logs. For example,
      * if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field
-     * in the firehose will be <code>xxx</code>. </p>  <p>You can specify only
-     * the following fields for redaction: <code>UriPath</code>,
-     * <code>QueryString</code>, <code>SingleHeader</code>, <code>Method</code>, and
-     * <code>JsonBody</code>.</p> 
+     * in the logs will be <code>xxx</code>. </p>  <p>You can specify only the
+     * following fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
+     * <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.</p>
+     * 
      */
     inline void SetRedactedFields(const Aws::Vector<FieldToMatch>& value) { m_redactedFieldsHasBeenSet = true; m_redactedFields = value; }
 
     /**
      * <p>The parts of the request that you want to keep out of the logs. For example,
      * if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field
-     * in the firehose will be <code>xxx</code>. </p>  <p>You can specify only
-     * the following fields for redaction: <code>UriPath</code>,
-     * <code>QueryString</code>, <code>SingleHeader</code>, <code>Method</code>, and
-     * <code>JsonBody</code>.</p> 
+     * in the logs will be <code>xxx</code>. </p>  <p>You can specify only the
+     * following fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
+     * <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.</p>
+     * 
      */
     inline void SetRedactedFields(Aws::Vector<FieldToMatch>&& value) { m_redactedFieldsHasBeenSet = true; m_redactedFields = std::move(value); }
 
     /**
      * <p>The parts of the request that you want to keep out of the logs. For example,
      * if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field
-     * in the firehose will be <code>xxx</code>. </p>  <p>You can specify only
-     * the following fields for redaction: <code>UriPath</code>,
-     * <code>QueryString</code>, <code>SingleHeader</code>, <code>Method</code>, and
-     * <code>JsonBody</code>.</p> 
+     * in the logs will be <code>xxx</code>. </p>  <p>You can specify only the
+     * following fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
+     * <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.</p>
+     * 
      */
     inline LoggingConfiguration& WithRedactedFields(const Aws::Vector<FieldToMatch>& value) { SetRedactedFields(value); return *this;}
 
     /**
      * <p>The parts of the request that you want to keep out of the logs. For example,
      * if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field
-     * in the firehose will be <code>xxx</code>. </p>  <p>You can specify only
-     * the following fields for redaction: <code>UriPath</code>,
-     * <code>QueryString</code>, <code>SingleHeader</code>, <code>Method</code>, and
-     * <code>JsonBody</code>.</p> 
+     * in the logs will be <code>xxx</code>. </p>  <p>You can specify only the
+     * following fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
+     * <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.</p>
+     * 
      */
     inline LoggingConfiguration& WithRedactedFields(Aws::Vector<FieldToMatch>&& value) { SetRedactedFields(std::move(value)); return *this;}
 
     /**
      * <p>The parts of the request that you want to keep out of the logs. For example,
      * if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field
-     * in the firehose will be <code>xxx</code>. </p>  <p>You can specify only
-     * the following fields for redaction: <code>UriPath</code>,
-     * <code>QueryString</code>, <code>SingleHeader</code>, <code>Method</code>, and
-     * <code>JsonBody</code>.</p> 
+     * in the logs will be <code>xxx</code>. </p>  <p>You can specify only the
+     * following fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
+     * <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.</p>
+     * 
      */
     inline LoggingConfiguration& AddRedactedFields(const FieldToMatch& value) { m_redactedFieldsHasBeenSet = true; m_redactedFields.push_back(value); return *this; }
 
     /**
      * <p>The parts of the request that you want to keep out of the logs. For example,
      * if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field
-     * in the firehose will be <code>xxx</code>. </p>  <p>You can specify only
-     * the following fields for redaction: <code>UriPath</code>,
-     * <code>QueryString</code>, <code>SingleHeader</code>, <code>Method</code>, and
-     * <code>JsonBody</code>.</p> 
+     * in the logs will be <code>xxx</code>. </p>  <p>You can specify only the
+     * following fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
+     * <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.</p>
+     * 
      */
     inline LoggingConfiguration& AddRedactedFields(FieldToMatch&& value) { m_redactedFieldsHasBeenSet = true; m_redactedFields.push_back(std::move(value)); return *this; }
 

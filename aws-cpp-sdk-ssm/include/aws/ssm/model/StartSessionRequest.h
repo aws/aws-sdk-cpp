@@ -151,6 +151,63 @@ namespace Model
 
 
     /**
+     * <p>The reason for connecting to the instance. This value is included in the
+     * details for the Amazon CloudWatch Events event created when you start the
+     * session.</p>
+     */
+    inline const Aws::String& GetReason() const{ return m_reason; }
+
+    /**
+     * <p>The reason for connecting to the instance. This value is included in the
+     * details for the Amazon CloudWatch Events event created when you start the
+     * session.</p>
+     */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
+
+    /**
+     * <p>The reason for connecting to the instance. This value is included in the
+     * details for the Amazon CloudWatch Events event created when you start the
+     * session.</p>
+     */
+    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
+
+    /**
+     * <p>The reason for connecting to the instance. This value is included in the
+     * details for the Amazon CloudWatch Events event created when you start the
+     * session.</p>
+     */
+    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
+
+    /**
+     * <p>The reason for connecting to the instance. This value is included in the
+     * details for the Amazon CloudWatch Events event created when you start the
+     * session.</p>
+     */
+    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
+
+    /**
+     * <p>The reason for connecting to the instance. This value is included in the
+     * details for the Amazon CloudWatch Events event created when you start the
+     * session.</p>
+     */
+    inline StartSessionRequest& WithReason(const Aws::String& value) { SetReason(value); return *this;}
+
+    /**
+     * <p>The reason for connecting to the instance. This value is included in the
+     * details for the Amazon CloudWatch Events event created when you start the
+     * session.</p>
+     */
+    inline StartSessionRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
+
+    /**
+     * <p>The reason for connecting to the instance. This value is included in the
+     * details for the Amazon CloudWatch Events event created when you start the
+     * session.</p>
+     */
+    inline StartSessionRequest& WithReason(const char* value) { SetReason(value); return *this;}
+
+
+    /**
      * <p>Reserved for future use.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
@@ -217,6 +274,9 @@ namespace Model
 
     Aws::String m_documentName;
     bool m_documentNameHasBeenSet;
+
+    Aws::String m_reason;
+    bool m_reasonHasBeenSet;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
     bool m_parametersHasBeenSet;

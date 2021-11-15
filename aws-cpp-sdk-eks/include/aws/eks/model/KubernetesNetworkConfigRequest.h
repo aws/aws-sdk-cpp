@@ -44,7 +44,7 @@ namespace Model
      * 172.20.0.0/16 CIDR blocks. We recommend that you specify a block that does not
      * overlap with resources in other networks that are peered or connected to your
      * VPC. The block must meet the following requirements:</p> <ul> <li> <p>Within one
-     * of the following private IP address blocks: 10.0.0.0/8, 172.16.0.0.0/12, or
+     * of the following private IP address blocks: 10.0.0.0/8, 172.16.0.0/12, or
      * 192.168.0.0/16.</p> </li> <li> <p>Doesn't overlap with any CIDR block assigned
      * to the VPC that you selected for VPC.</p> </li> <li> <p>Between /24 and /12.</p>
      * </li> </ul>  <p>You can only specify a custom CIDR block when you
@@ -59,7 +59,7 @@ namespace Model
      * 172.20.0.0/16 CIDR blocks. We recommend that you specify a block that does not
      * overlap with resources in other networks that are peered or connected to your
      * VPC. The block must meet the following requirements:</p> <ul> <li> <p>Within one
-     * of the following private IP address blocks: 10.0.0.0/8, 172.16.0.0.0/12, or
+     * of the following private IP address blocks: 10.0.0.0/8, 172.16.0.0/12, or
      * 192.168.0.0/16.</p> </li> <li> <p>Doesn't overlap with any CIDR block assigned
      * to the VPC that you selected for VPC.</p> </li> <li> <p>Between /24 and /12.</p>
      * </li> </ul>  <p>You can only specify a custom CIDR block when you
@@ -74,7 +74,7 @@ namespace Model
      * 172.20.0.0/16 CIDR blocks. We recommend that you specify a block that does not
      * overlap with resources in other networks that are peered or connected to your
      * VPC. The block must meet the following requirements:</p> <ul> <li> <p>Within one
-     * of the following private IP address blocks: 10.0.0.0/8, 172.16.0.0.0/12, or
+     * of the following private IP address blocks: 10.0.0.0/8, 172.16.0.0/12, or
      * 192.168.0.0/16.</p> </li> <li> <p>Doesn't overlap with any CIDR block assigned
      * to the VPC that you selected for VPC.</p> </li> <li> <p>Between /24 and /12.</p>
      * </li> </ul>  <p>You can only specify a custom CIDR block when you
@@ -89,7 +89,7 @@ namespace Model
      * 172.20.0.0/16 CIDR blocks. We recommend that you specify a block that does not
      * overlap with resources in other networks that are peered or connected to your
      * VPC. The block must meet the following requirements:</p> <ul> <li> <p>Within one
-     * of the following private IP address blocks: 10.0.0.0/8, 172.16.0.0.0/12, or
+     * of the following private IP address blocks: 10.0.0.0/8, 172.16.0.0/12, or
      * 192.168.0.0/16.</p> </li> <li> <p>Doesn't overlap with any CIDR block assigned
      * to the VPC that you selected for VPC.</p> </li> <li> <p>Between /24 and /12.</p>
      * </li> </ul>  <p>You can only specify a custom CIDR block when you
@@ -104,7 +104,7 @@ namespace Model
      * 172.20.0.0/16 CIDR blocks. We recommend that you specify a block that does not
      * overlap with resources in other networks that are peered or connected to your
      * VPC. The block must meet the following requirements:</p> <ul> <li> <p>Within one
-     * of the following private IP address blocks: 10.0.0.0/8, 172.16.0.0.0/12, or
+     * of the following private IP address blocks: 10.0.0.0/8, 172.16.0.0/12, or
      * 192.168.0.0/16.</p> </li> <li> <p>Doesn't overlap with any CIDR block assigned
      * to the VPC that you selected for VPC.</p> </li> <li> <p>Between /24 and /12.</p>
      * </li> </ul>  <p>You can only specify a custom CIDR block when you
@@ -119,7 +119,7 @@ namespace Model
      * 172.20.0.0/16 CIDR blocks. We recommend that you specify a block that does not
      * overlap with resources in other networks that are peered or connected to your
      * VPC. The block must meet the following requirements:</p> <ul> <li> <p>Within one
-     * of the following private IP address blocks: 10.0.0.0/8, 172.16.0.0.0/12, or
+     * of the following private IP address blocks: 10.0.0.0/8, 172.16.0.0/12, or
      * 192.168.0.0/16.</p> </li> <li> <p>Doesn't overlap with any CIDR block assigned
      * to the VPC that you selected for VPC.</p> </li> <li> <p>Between /24 and /12.</p>
      * </li> </ul>  <p>You can only specify a custom CIDR block when you
@@ -134,7 +134,7 @@ namespace Model
      * 172.20.0.0/16 CIDR blocks. We recommend that you specify a block that does not
      * overlap with resources in other networks that are peered or connected to your
      * VPC. The block must meet the following requirements:</p> <ul> <li> <p>Within one
-     * of the following private IP address blocks: 10.0.0.0/8, 172.16.0.0.0/12, or
+     * of the following private IP address blocks: 10.0.0.0/8, 172.16.0.0/12, or
      * 192.168.0.0/16.</p> </li> <li> <p>Doesn't overlap with any CIDR block assigned
      * to the VPC that you selected for VPC.</p> </li> <li> <p>Between /24 and /12.</p>
      * </li> </ul>  <p>You can only specify a custom CIDR block when you
@@ -149,7 +149,7 @@ namespace Model
      * 172.20.0.0/16 CIDR blocks. We recommend that you specify a block that does not
      * overlap with resources in other networks that are peered or connected to your
      * VPC. The block must meet the following requirements:</p> <ul> <li> <p>Within one
-     * of the following private IP address blocks: 10.0.0.0/8, 172.16.0.0.0/12, or
+     * of the following private IP address blocks: 10.0.0.0/8, 172.16.0.0/12, or
      * 192.168.0.0/16.</p> </li> <li> <p>Doesn't overlap with any CIDR block assigned
      * to the VPC that you selected for VPC.</p> </li> <li> <p>Between /24 and /12.</p>
      * </li> </ul>  <p>You can only specify a custom CIDR block when you

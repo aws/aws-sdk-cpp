@@ -26,6 +26,7 @@
 #include <aws/dms/model/IBMDb2Settings.h>
 #include <aws/dms/model/DocDbSettings.h>
 #include <aws/dms/model/RedisSettings.h>
+#include <aws/dms/model/GcpMySQLSettings.h>
 #include <utility>
 
 namespace Aws
@@ -203,10 +204,11 @@ namespace Model
      * <p>The type of engine for the endpoint. Valid values, depending on the
      * EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>,
      * <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-     * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
-     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
-     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
+     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
      * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
@@ -215,10 +217,11 @@ namespace Model
      * <p>The type of engine for the endpoint. Valid values, depending on the
      * EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>,
      * <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-     * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
-     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
-     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
+     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
      * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
@@ -227,10 +230,11 @@ namespace Model
      * <p>The type of engine for the endpoint. Valid values, depending on the
      * EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>,
      * <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-     * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
-     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
-     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
+     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
      * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
@@ -239,10 +243,11 @@ namespace Model
      * <p>The type of engine for the endpoint. Valid values, depending on the
      * EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>,
      * <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-     * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
-     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
-     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
+     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
      * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
@@ -251,10 +256,11 @@ namespace Model
      * <p>The type of engine for the endpoint. Valid values, depending on the
      * EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>,
      * <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-     * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
-     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
-     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
+     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
      * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
@@ -263,10 +269,11 @@ namespace Model
      * <p>The type of engine for the endpoint. Valid values, depending on the
      * EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>,
      * <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-     * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
-     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
-     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
+     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
      * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline ModifyEndpointRequest& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
@@ -275,10 +282,11 @@ namespace Model
      * <p>The type of engine for the endpoint. Valid values, depending on the
      * EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>,
      * <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-     * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
-     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
-     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
+     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
      * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline ModifyEndpointRequest& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
@@ -287,10 +295,11 @@ namespace Model
      * <p>The type of engine for the endpoint. Valid values, depending on the
      * EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>,
      * <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-     * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
-     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
-     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
+     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
      * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline ModifyEndpointRequest& WithEngineName(const char* value) { SetEngineName(value); return *this;}
@@ -1063,55 +1072,55 @@ namespace Model
 
 
     /**
-     * <p>Settings in JSON format for the target Elasticsearch endpoint. For more
+     * <p>Settings in JSON format for the target OpenSearch endpoint. For more
      * information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
-     * Connection Attributes When Using Elasticsearch as a Target for DMS</a> in the
+     * Connection Attributes When Using OpenSearch as a Target for DMS</a> in the
      * <i>Database Migration Service User Guide.</i> </p>
      */
     inline const ElasticsearchSettings& GetElasticsearchSettings() const{ return m_elasticsearchSettings; }
 
     /**
-     * <p>Settings in JSON format for the target Elasticsearch endpoint. For more
+     * <p>Settings in JSON format for the target OpenSearch endpoint. For more
      * information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
-     * Connection Attributes When Using Elasticsearch as a Target for DMS</a> in the
+     * Connection Attributes When Using OpenSearch as a Target for DMS</a> in the
      * <i>Database Migration Service User Guide.</i> </p>
      */
     inline bool ElasticsearchSettingsHasBeenSet() const { return m_elasticsearchSettingsHasBeenSet; }
 
     /**
-     * <p>Settings in JSON format for the target Elasticsearch endpoint. For more
+     * <p>Settings in JSON format for the target OpenSearch endpoint. For more
      * information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
-     * Connection Attributes When Using Elasticsearch as a Target for DMS</a> in the
+     * Connection Attributes When Using OpenSearch as a Target for DMS</a> in the
      * <i>Database Migration Service User Guide.</i> </p>
      */
     inline void SetElasticsearchSettings(const ElasticsearchSettings& value) { m_elasticsearchSettingsHasBeenSet = true; m_elasticsearchSettings = value; }
 
     /**
-     * <p>Settings in JSON format for the target Elasticsearch endpoint. For more
+     * <p>Settings in JSON format for the target OpenSearch endpoint. For more
      * information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
-     * Connection Attributes When Using Elasticsearch as a Target for DMS</a> in the
+     * Connection Attributes When Using OpenSearch as a Target for DMS</a> in the
      * <i>Database Migration Service User Guide.</i> </p>
      */
     inline void SetElasticsearchSettings(ElasticsearchSettings&& value) { m_elasticsearchSettingsHasBeenSet = true; m_elasticsearchSettings = std::move(value); }
 
     /**
-     * <p>Settings in JSON format for the target Elasticsearch endpoint. For more
+     * <p>Settings in JSON format for the target OpenSearch endpoint. For more
      * information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
-     * Connection Attributes When Using Elasticsearch as a Target for DMS</a> in the
+     * Connection Attributes When Using OpenSearch as a Target for DMS</a> in the
      * <i>Database Migration Service User Guide.</i> </p>
      */
     inline ModifyEndpointRequest& WithElasticsearchSettings(const ElasticsearchSettings& value) { SetElasticsearchSettings(value); return *this;}
 
     /**
-     * <p>Settings in JSON format for the target Elasticsearch endpoint. For more
+     * <p>Settings in JSON format for the target OpenSearch endpoint. For more
      * information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
-     * Connection Attributes When Using Elasticsearch as a Target for DMS</a> in the
+     * Connection Attributes When Using OpenSearch as a Target for DMS</a> in the
      * <i>Database Migration Service User Guide.</i> </p>
      */
     inline ModifyEndpointRequest& WithElasticsearchSettings(ElasticsearchSettings&& value) { SetElasticsearchSettings(std::move(value)); return *this;}
@@ -1753,6 +1762,37 @@ namespace Model
      */
     inline ModifyEndpointRequest& WithExactSettings(bool value) { SetExactSettings(value); return *this;}
 
+
+    /**
+     * <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+     */
+    inline const GcpMySQLSettings& GetGcpMySQLSettings() const{ return m_gcpMySQLSettings; }
+
+    /**
+     * <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+     */
+    inline bool GcpMySQLSettingsHasBeenSet() const { return m_gcpMySQLSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+     */
+    inline void SetGcpMySQLSettings(const GcpMySQLSettings& value) { m_gcpMySQLSettingsHasBeenSet = true; m_gcpMySQLSettings = value; }
+
+    /**
+     * <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+     */
+    inline void SetGcpMySQLSettings(GcpMySQLSettings&& value) { m_gcpMySQLSettingsHasBeenSet = true; m_gcpMySQLSettings = std::move(value); }
+
+    /**
+     * <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+     */
+    inline ModifyEndpointRequest& WithGcpMySQLSettings(const GcpMySQLSettings& value) { SetGcpMySQLSettings(value); return *this;}
+
+    /**
+     * <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
+     */
+    inline ModifyEndpointRequest& WithGcpMySQLSettings(GcpMySQLSettings&& value) { SetGcpMySQLSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_endpointArn;
@@ -1850,6 +1890,9 @@ namespace Model
 
     bool m_exactSettings;
     bool m_exactSettingsHasBeenSet;
+
+    GcpMySQLSettings m_gcpMySQLSettings;
+    bool m_gcpMySQLSettingsHasBeenSet;
   };
 
 } // namespace Model
