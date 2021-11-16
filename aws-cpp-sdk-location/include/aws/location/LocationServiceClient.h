@@ -619,7 +619,7 @@ namespace Model
          * <code>DeparturePostiton</code> and <code>DestinationPosition</code>. Requires
          * that you first <a
          * href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
-         * a route calculator resource</a> </p> <p>By default, a request that doesn't
+         * a route calculator resource</a>.</p> <p>By default, a request that doesn't
          * specify a departure time uses the best time of day to travel with the best
          * traffic conditions when calculating the route.</p> <p>Additional options
          * include:</p> <ul> <li> <p> <a
@@ -628,8 +628,8 @@ namespace Model
          * <code>DepartureNow</code>. This calculates a route based on predictive traffic
          * data at the given time. </p>  <p>You can't specify both
          * <code>DepartureTime</code> and <code>DepartureNow</code> in a single request.
-         * Specifying both parameters returns an error message.</p>  </li> <li> <p>
-         * <a
+         * Specifying both parameters returns a validation error.</p>  </li> <li>
+         * <p> <a
          * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#travel-mode">Specifying
          * a travel mode</a> using TravelMode. This lets you specify an additional route
          * preference such as <code>CarModeOptions</code> if traveling by <code>Car</code>,
@@ -647,7 +647,7 @@ namespace Model
          * <code>DeparturePostiton</code> and <code>DestinationPosition</code>. Requires
          * that you first <a
          * href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
-         * a route calculator resource</a> </p> <p>By default, a request that doesn't
+         * a route calculator resource</a>.</p> <p>By default, a request that doesn't
          * specify a departure time uses the best time of day to travel with the best
          * traffic conditions when calculating the route.</p> <p>Additional options
          * include:</p> <ul> <li> <p> <a
@@ -656,8 +656,8 @@ namespace Model
          * <code>DepartureNow</code>. This calculates a route based on predictive traffic
          * data at the given time. </p>  <p>You can't specify both
          * <code>DepartureTime</code> and <code>DepartureNow</code> in a single request.
-         * Specifying both parameters returns an error message.</p>  </li> <li> <p>
-         * <a
+         * Specifying both parameters returns a validation error.</p>  </li> <li>
+         * <p> <a
          * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#travel-mode">Specifying
          * a travel mode</a> using TravelMode. This lets you specify an additional route
          * preference such as <code>CarModeOptions</code> if traveling by <code>Car</code>,
@@ -677,7 +677,7 @@ namespace Model
          * <code>DeparturePostiton</code> and <code>DestinationPosition</code>. Requires
          * that you first <a
          * href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
-         * a route calculator resource</a> </p> <p>By default, a request that doesn't
+         * a route calculator resource</a>.</p> <p>By default, a request that doesn't
          * specify a departure time uses the best time of day to travel with the best
          * traffic conditions when calculating the route.</p> <p>Additional options
          * include:</p> <ul> <li> <p> <a
@@ -686,8 +686,8 @@ namespace Model
          * <code>DepartureNow</code>. This calculates a route based on predictive traffic
          * data at the given time. </p>  <p>You can't specify both
          * <code>DepartureTime</code> and <code>DepartureNow</code> in a single request.
-         * Specifying both parameters returns an error message.</p>  </li> <li> <p>
-         * <a
+         * Specifying both parameters returns a validation error.</p>  </li> <li>
+         * <p> <a
          * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#travel-mode">Specifying
          * a travel mode</a> using TravelMode. This lets you specify an additional route
          * preference such as <code>CarModeOptions</code> if traveling by <code>Car</code>,
@@ -760,8 +760,10 @@ namespace Model
         virtual void CreateMapAsync(const Model::CreateMapRequest& request, const CreateMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a place index resource in your AWS account, which supports functions
-         * with geospatial data sourced from your chosen data provider.</p><p><h3>See
+         * <p>Creates a place index resource in your AWS account. Use a place index
+         * resource to geocode addresses and other text queries by using the
+         * <code>SearchPlaceIndexForText</code> operation, and reverse geocode coordinates
+         * by using the <code>SearchPlaceIndexForPosition</code> operation.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreatePlaceIndex">AWS
          * API Reference</a></p>
@@ -769,8 +771,10 @@ namespace Model
         virtual Model::CreatePlaceIndexOutcome CreatePlaceIndex(const Model::CreatePlaceIndexRequest& request) const;
 
         /**
-         * <p>Creates a place index resource in your AWS account, which supports functions
-         * with geospatial data sourced from your chosen data provider.</p><p><h3>See
+         * <p>Creates a place index resource in your AWS account. Use a place index
+         * resource to geocode addresses and other text queries by using the
+         * <code>SearchPlaceIndexForText</code> operation, and reverse geocode coordinates
+         * by using the <code>SearchPlaceIndexForPosition</code> operation.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreatePlaceIndex">AWS
          * API Reference</a></p>
@@ -780,8 +784,10 @@ namespace Model
         virtual Model::CreatePlaceIndexOutcomeCallable CreatePlaceIndexCallable(const Model::CreatePlaceIndexRequest& request) const;
 
         /**
-         * <p>Creates a place index resource in your AWS account, which supports functions
-         * with geospatial data sourced from your chosen data provider.</p><p><h3>See
+         * <p>Creates a place index resource in your AWS account. Use a place index
+         * resource to geocode addresses and other text queries by using the
+         * <code>SearchPlaceIndexForText</code> operation, and reverse geocode coordinates
+         * by using the <code>SearchPlaceIndexForPosition</code> operation.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreatePlaceIndex">AWS
          * API Reference</a></p>
@@ -1711,12 +1717,13 @@ namespace Model
 
         /**
          * <p>Geocodes free-form text, such as an address, name, city, or region to allow
-         * you to search for Places or points of interest. </p> <p>Includes the option to
-         * apply additional parameters to narrow your list of results.</p>  <p>You
-         * can search for places near a given position using <code>BiasPosition</code>, or
-         * filter results within a bounding box using <code>FilterBBox</code>. Providing
-         * both parameters simultaneously returns an error.</p> <p><h3>See
-         * Also:</h3>   <a
+         * you to search for Places or points of interest. </p> <p>Optional parameters let
+         * you narrow your search results by bounding box or country, or bias your search
+         * toward a specific position on the globe.</p>  <p>You can search for places
+         * near a given position using <code>BiasPosition</code>, or filter results within
+         * a bounding box using <code>FilterBBox</code>. Providing both parameters
+         * simultaneously returns an error.</p>  <p>Search results are returned in
+         * order of highest to lowest relevance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/SearchPlaceIndexForText">AWS
          * API Reference</a></p>
          */
@@ -1724,12 +1731,13 @@ namespace Model
 
         /**
          * <p>Geocodes free-form text, such as an address, name, city, or region to allow
-         * you to search for Places or points of interest. </p> <p>Includes the option to
-         * apply additional parameters to narrow your list of results.</p>  <p>You
-         * can search for places near a given position using <code>BiasPosition</code>, or
-         * filter results within a bounding box using <code>FilterBBox</code>. Providing
-         * both parameters simultaneously returns an error.</p> <p><h3>See
-         * Also:</h3>   <a
+         * you to search for Places or points of interest. </p> <p>Optional parameters let
+         * you narrow your search results by bounding box or country, or bias your search
+         * toward a specific position on the globe.</p>  <p>You can search for places
+         * near a given position using <code>BiasPosition</code>, or filter results within
+         * a bounding box using <code>FilterBBox</code>. Providing both parameters
+         * simultaneously returns an error.</p>  <p>Search results are returned in
+         * order of highest to lowest relevance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/SearchPlaceIndexForText">AWS
          * API Reference</a></p>
          *
@@ -1739,12 +1747,13 @@ namespace Model
 
         /**
          * <p>Geocodes free-form text, such as an address, name, city, or region to allow
-         * you to search for Places or points of interest. </p> <p>Includes the option to
-         * apply additional parameters to narrow your list of results.</p>  <p>You
-         * can search for places near a given position using <code>BiasPosition</code>, or
-         * filter results within a bounding box using <code>FilterBBox</code>. Providing
-         * both parameters simultaneously returns an error.</p> <p><h3>See
-         * Also:</h3>   <a
+         * you to search for Places or points of interest. </p> <p>Optional parameters let
+         * you narrow your search results by bounding box or country, or bias your search
+         * toward a specific position on the globe.</p>  <p>You can search for places
+         * near a given position using <code>BiasPosition</code>, or filter results within
+         * a bounding box using <code>FilterBBox</code>. Providing both parameters
+         * simultaneously returns an error.</p>  <p>Search results are returned in
+         * order of highest to lowest relevance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/SearchPlaceIndexForText">AWS
          * API Reference</a></p>
          *

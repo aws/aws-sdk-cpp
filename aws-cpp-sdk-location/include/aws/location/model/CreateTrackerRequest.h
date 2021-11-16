@@ -148,12 +148,13 @@ namespace Model
      * stored. If your update frequency is more often than 30 seconds, only one update
      * per 30 seconds is stored for each unique device ID. </p> </li> <li> <p>
      * <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft),
-     * location updates are ignored. Location updates within this distance are neither
+     * location updates are ignored. Location updates within this area are neither
      * evaluated against linked geofence collections, nor stored. This helps control
-     * costs by reducing the number of geofence evaluations and device positions to
-     * retrieve. Distance-based filtering can also reduce the jitter effect when
-     * displaying device trajectory on a map. </p> </li> </ul> <p>This field is
-     * optional. If not specified, the default value is <code>TimeBased</code>.</p>
+     * costs by reducing the number of geofence evaluations and historical device
+     * positions to paginate through. Distance-based filtering can also reduce the
+     * effects of GPS noise when displaying device trajectories on a map. </p> </li>
+     * </ul> <p>This field is optional. If not specified, the default value is
+     * <code>TimeBased</code>.</p>
      */
     inline const PositionFiltering& GetPositionFiltering() const{ return m_positionFiltering; }
 
@@ -164,12 +165,13 @@ namespace Model
      * stored. If your update frequency is more often than 30 seconds, only one update
      * per 30 seconds is stored for each unique device ID. </p> </li> <li> <p>
      * <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft),
-     * location updates are ignored. Location updates within this distance are neither
+     * location updates are ignored. Location updates within this area are neither
      * evaluated against linked geofence collections, nor stored. This helps control
-     * costs by reducing the number of geofence evaluations and device positions to
-     * retrieve. Distance-based filtering can also reduce the jitter effect when
-     * displaying device trajectory on a map. </p> </li> </ul> <p>This field is
-     * optional. If not specified, the default value is <code>TimeBased</code>.</p>
+     * costs by reducing the number of geofence evaluations and historical device
+     * positions to paginate through. Distance-based filtering can also reduce the
+     * effects of GPS noise when displaying device trajectories on a map. </p> </li>
+     * </ul> <p>This field is optional. If not specified, the default value is
+     * <code>TimeBased</code>.</p>
      */
     inline bool PositionFilteringHasBeenSet() const { return m_positionFilteringHasBeenSet; }
 
@@ -180,12 +182,13 @@ namespace Model
      * stored. If your update frequency is more often than 30 seconds, only one update
      * per 30 seconds is stored for each unique device ID. </p> </li> <li> <p>
      * <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft),
-     * location updates are ignored. Location updates within this distance are neither
+     * location updates are ignored. Location updates within this area are neither
      * evaluated against linked geofence collections, nor stored. This helps control
-     * costs by reducing the number of geofence evaluations and device positions to
-     * retrieve. Distance-based filtering can also reduce the jitter effect when
-     * displaying device trajectory on a map. </p> </li> </ul> <p>This field is
-     * optional. If not specified, the default value is <code>TimeBased</code>.</p>
+     * costs by reducing the number of geofence evaluations and historical device
+     * positions to paginate through. Distance-based filtering can also reduce the
+     * effects of GPS noise when displaying device trajectories on a map. </p> </li>
+     * </ul> <p>This field is optional. If not specified, the default value is
+     * <code>TimeBased</code>.</p>
      */
     inline void SetPositionFiltering(const PositionFiltering& value) { m_positionFilteringHasBeenSet = true; m_positionFiltering = value; }
 
@@ -196,12 +199,13 @@ namespace Model
      * stored. If your update frequency is more often than 30 seconds, only one update
      * per 30 seconds is stored for each unique device ID. </p> </li> <li> <p>
      * <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft),
-     * location updates are ignored. Location updates within this distance are neither
+     * location updates are ignored. Location updates within this area are neither
      * evaluated against linked geofence collections, nor stored. This helps control
-     * costs by reducing the number of geofence evaluations and device positions to
-     * retrieve. Distance-based filtering can also reduce the jitter effect when
-     * displaying device trajectory on a map. </p> </li> </ul> <p>This field is
-     * optional. If not specified, the default value is <code>TimeBased</code>.</p>
+     * costs by reducing the number of geofence evaluations and historical device
+     * positions to paginate through. Distance-based filtering can also reduce the
+     * effects of GPS noise when displaying device trajectories on a map. </p> </li>
+     * </ul> <p>This field is optional. If not specified, the default value is
+     * <code>TimeBased</code>.</p>
      */
     inline void SetPositionFiltering(PositionFiltering&& value) { m_positionFilteringHasBeenSet = true; m_positionFiltering = std::move(value); }
 
@@ -212,12 +216,13 @@ namespace Model
      * stored. If your update frequency is more often than 30 seconds, only one update
      * per 30 seconds is stored for each unique device ID. </p> </li> <li> <p>
      * <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft),
-     * location updates are ignored. Location updates within this distance are neither
+     * location updates are ignored. Location updates within this area are neither
      * evaluated against linked geofence collections, nor stored. This helps control
-     * costs by reducing the number of geofence evaluations and device positions to
-     * retrieve. Distance-based filtering can also reduce the jitter effect when
-     * displaying device trajectory on a map. </p> </li> </ul> <p>This field is
-     * optional. If not specified, the default value is <code>TimeBased</code>.</p>
+     * costs by reducing the number of geofence evaluations and historical device
+     * positions to paginate through. Distance-based filtering can also reduce the
+     * effects of GPS noise when displaying device trajectories on a map. </p> </li>
+     * </ul> <p>This field is optional. If not specified, the default value is
+     * <code>TimeBased</code>.</p>
      */
     inline CreateTrackerRequest& WithPositionFiltering(const PositionFiltering& value) { SetPositionFiltering(value); return *this;}
 
@@ -228,12 +233,13 @@ namespace Model
      * stored. If your update frequency is more often than 30 seconds, only one update
      * per 30 seconds is stored for each unique device ID. </p> </li> <li> <p>
      * <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft),
-     * location updates are ignored. Location updates within this distance are neither
+     * location updates are ignored. Location updates within this area are neither
      * evaluated against linked geofence collections, nor stored. This helps control
-     * costs by reducing the number of geofence evaluations and device positions to
-     * retrieve. Distance-based filtering can also reduce the jitter effect when
-     * displaying device trajectory on a map. </p> </li> </ul> <p>This field is
-     * optional. If not specified, the default value is <code>TimeBased</code>.</p>
+     * costs by reducing the number of geofence evaluations and historical device
+     * positions to paginate through. Distance-based filtering can also reduce the
+     * effects of GPS noise when displaying device trajectories on a map. </p> </li>
+     * </ul> <p>This field is optional. If not specified, the default value is
+     * <code>TimeBased</code>.</p>
      */
     inline CreateTrackerRequest& WithPositionFiltering(PositionFiltering&& value) { SetPositionFiltering(std::move(value)); return *this;}
 
@@ -408,7 +414,8 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
@@ -420,7 +427,8 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -432,7 +440,8 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -444,7 +453,8 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -456,7 +466,8 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreateTrackerRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
@@ -468,7 +479,8 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreateTrackerRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -480,7 +492,8 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreateTrackerRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -492,7 +505,8 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreateTrackerRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -504,7 +518,8 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreateTrackerRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -516,7 +531,8 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreateTrackerRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -528,7 +544,8 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreateTrackerRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -540,7 +557,8 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreateTrackerRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -552,7 +570,8 @@ namespace Model
      * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
      * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
      * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> <li> <p>Cannot
+     * use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreateTrackerRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

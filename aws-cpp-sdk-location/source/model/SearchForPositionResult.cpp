@@ -19,11 +19,15 @@ namespace Model
 {
 
 SearchForPositionResult::SearchForPositionResult() : 
+    m_distance(0.0),
+    m_distanceHasBeenSet(false),
     m_placeHasBeenSet(false)
 {
 }
 
 SearchForPositionResult::SearchForPositionResult(JsonView jsonValue) : 
+    m_distance(0.0),
+    m_distanceHasBeenSet(false),
     m_placeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -31,6 +35,13 @@ SearchForPositionResult::SearchForPositionResult(JsonView jsonValue) :
 
 SearchForPositionResult& SearchForPositionResult::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("Distance"))
+  {
+    m_distance = jsonValue.GetDouble("Distance");
+
+    m_distanceHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Place"))
   {
     m_place = jsonValue.GetObject("Place");
@@ -44,6 +55,12 @@ SearchForPositionResult& SearchForPositionResult::operator =(JsonView jsonValue)
 JsonValue SearchForPositionResult::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_distanceHasBeenSet)
+  {
+   payload.WithDouble("Distance", m_distance);
+
+  }
 
   if(m_placeHasBeenSet)
   {

@@ -75,98 +75,154 @@ namespace Model
 
 
     /**
-     * <p>The resource type in which you want to log data events. You can specify
-     * <code>AWS::S3::Object</code>, <code>AWS::Lambda::Function</code>, or
-     * <code>AWS::DynamoDB::Table</code> resources.</p> <p>The
-     * <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and
-     * <code>AWS::EC2::Snapshot</code> resource types are not valid in basic event
-     * selectors. To log data events on these resource types, use advanced event
-     * selectors.</p>
+     * <p>The resource type in which you want to log data events. You can specify the
+     * following <i>basic</i> event selector resource types:</p> <ul> <li> <p>
+     * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
+     * <code>AWS::DynamoDB::Table</code> </p> </li> </ul> <p>The following resource
+     * types are also availble through <i>advanced</i> event selectors. Basic event
+     * selector resource types are valid in advanced event selectors, but advanced
+     * event selector resource types are not valid in basic event selectors. For more
+     * information, see <a>AdvancedFieldSelector$Field</a>.</p> <ul> <li> <p>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
+     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::DynamoDB::Stream</code> </p> </li> </ul>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The resource type in which you want to log data events. You can specify
-     * <code>AWS::S3::Object</code>, <code>AWS::Lambda::Function</code>, or
-     * <code>AWS::DynamoDB::Table</code> resources.</p> <p>The
-     * <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and
-     * <code>AWS::EC2::Snapshot</code> resource types are not valid in basic event
-     * selectors. To log data events on these resource types, use advanced event
-     * selectors.</p>
+     * <p>The resource type in which you want to log data events. You can specify the
+     * following <i>basic</i> event selector resource types:</p> <ul> <li> <p>
+     * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
+     * <code>AWS::DynamoDB::Table</code> </p> </li> </ul> <p>The following resource
+     * types are also availble through <i>advanced</i> event selectors. Basic event
+     * selector resource types are valid in advanced event selectors, but advanced
+     * event selector resource types are not valid in basic event selectors. For more
+     * information, see <a>AdvancedFieldSelector$Field</a>.</p> <ul> <li> <p>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
+     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::DynamoDB::Stream</code> </p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The resource type in which you want to log data events. You can specify
-     * <code>AWS::S3::Object</code>, <code>AWS::Lambda::Function</code>, or
-     * <code>AWS::DynamoDB::Table</code> resources.</p> <p>The
-     * <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and
-     * <code>AWS::EC2::Snapshot</code> resource types are not valid in basic event
-     * selectors. To log data events on these resource types, use advanced event
-     * selectors.</p>
+     * <p>The resource type in which you want to log data events. You can specify the
+     * following <i>basic</i> event selector resource types:</p> <ul> <li> <p>
+     * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
+     * <code>AWS::DynamoDB::Table</code> </p> </li> </ul> <p>The following resource
+     * types are also availble through <i>advanced</i> event selectors. Basic event
+     * selector resource types are valid in advanced event selectors, but advanced
+     * event selector resource types are not valid in basic event selectors. For more
+     * information, see <a>AdvancedFieldSelector$Field</a>.</p> <ul> <li> <p>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
+     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::DynamoDB::Stream</code> </p> </li> </ul>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The resource type in which you want to log data events. You can specify
-     * <code>AWS::S3::Object</code>, <code>AWS::Lambda::Function</code>, or
-     * <code>AWS::DynamoDB::Table</code> resources.</p> <p>The
-     * <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and
-     * <code>AWS::EC2::Snapshot</code> resource types are not valid in basic event
-     * selectors. To log data events on these resource types, use advanced event
-     * selectors.</p>
+     * <p>The resource type in which you want to log data events. You can specify the
+     * following <i>basic</i> event selector resource types:</p> <ul> <li> <p>
+     * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
+     * <code>AWS::DynamoDB::Table</code> </p> </li> </ul> <p>The following resource
+     * types are also availble through <i>advanced</i> event selectors. Basic event
+     * selector resource types are valid in advanced event selectors, but advanced
+     * event selector resource types are not valid in basic event selectors. For more
+     * information, see <a>AdvancedFieldSelector$Field</a>.</p> <ul> <li> <p>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
+     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::DynamoDB::Stream</code> </p> </li> </ul>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The resource type in which you want to log data events. You can specify
-     * <code>AWS::S3::Object</code>, <code>AWS::Lambda::Function</code>, or
-     * <code>AWS::DynamoDB::Table</code> resources.</p> <p>The
-     * <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and
-     * <code>AWS::EC2::Snapshot</code> resource types are not valid in basic event
-     * selectors. To log data events on these resource types, use advanced event
-     * selectors.</p>
+     * <p>The resource type in which you want to log data events. You can specify the
+     * following <i>basic</i> event selector resource types:</p> <ul> <li> <p>
+     * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
+     * <code>AWS::DynamoDB::Table</code> </p> </li> </ul> <p>The following resource
+     * types are also availble through <i>advanced</i> event selectors. Basic event
+     * selector resource types are valid in advanced event selectors, but advanced
+     * event selector resource types are not valid in basic event selectors. For more
+     * information, see <a>AdvancedFieldSelector$Field</a>.</p> <ul> <li> <p>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
+     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::DynamoDB::Stream</code> </p> </li> </ul>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The resource type in which you want to log data events. You can specify
-     * <code>AWS::S3::Object</code>, <code>AWS::Lambda::Function</code>, or
-     * <code>AWS::DynamoDB::Table</code> resources.</p> <p>The
-     * <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and
-     * <code>AWS::EC2::Snapshot</code> resource types are not valid in basic event
-     * selectors. To log data events on these resource types, use advanced event
-     * selectors.</p>
+     * <p>The resource type in which you want to log data events. You can specify the
+     * following <i>basic</i> event selector resource types:</p> <ul> <li> <p>
+     * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
+     * <code>AWS::DynamoDB::Table</code> </p> </li> </ul> <p>The following resource
+     * types are also availble through <i>advanced</i> event selectors. Basic event
+     * selector resource types are valid in advanced event selectors, but advanced
+     * event selector resource types are not valid in basic event selectors. For more
+     * information, see <a>AdvancedFieldSelector$Field</a>.</p> <ul> <li> <p>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
+     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::DynamoDB::Stream</code> </p> </li> </ul>
      */
     inline DataResource& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The resource type in which you want to log data events. You can specify
-     * <code>AWS::S3::Object</code>, <code>AWS::Lambda::Function</code>, or
-     * <code>AWS::DynamoDB::Table</code> resources.</p> <p>The
-     * <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and
-     * <code>AWS::EC2::Snapshot</code> resource types are not valid in basic event
-     * selectors. To log data events on these resource types, use advanced event
-     * selectors.</p>
+     * <p>The resource type in which you want to log data events. You can specify the
+     * following <i>basic</i> event selector resource types:</p> <ul> <li> <p>
+     * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
+     * <code>AWS::DynamoDB::Table</code> </p> </li> </ul> <p>The following resource
+     * types are also availble through <i>advanced</i> event selectors. Basic event
+     * selector resource types are valid in advanced event selectors, but advanced
+     * event selector resource types are not valid in basic event selectors. For more
+     * information, see <a>AdvancedFieldSelector$Field</a>.</p> <ul> <li> <p>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
+     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::DynamoDB::Stream</code> </p> </li> </ul>
      */
     inline DataResource& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The resource type in which you want to log data events. You can specify
-     * <code>AWS::S3::Object</code>, <code>AWS::Lambda::Function</code>, or
-     * <code>AWS::DynamoDB::Table</code> resources.</p> <p>The
-     * <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and
-     * <code>AWS::EC2::Snapshot</code> resource types are not valid in basic event
-     * selectors. To log data events on these resource types, use advanced event
-     * selectors.</p>
+     * <p>The resource type in which you want to log data events. You can specify the
+     * following <i>basic</i> event selector resource types:</p> <ul> <li> <p>
+     * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
+     * <code>AWS::DynamoDB::Table</code> </p> </li> </ul> <p>The following resource
+     * types are also availble through <i>advanced</i> event selectors. Basic event
+     * selector resource types are valid in advanced event selectors, but advanced
+     * event selector resource types are not valid in basic event selectors. For more
+     * information, see <a>AdvancedFieldSelector$Field</a>.</p> <ul> <li> <p>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
+     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::DynamoDB::Stream</code> </p> </li> </ul>
      */
     inline DataResource& WithType(const char* value) { SetType(value); return *this;}
 

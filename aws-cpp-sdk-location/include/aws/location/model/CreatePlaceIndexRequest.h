@@ -36,10 +36,11 @@ namespace Model
 
 
     /**
-     * <p>Specifies the data provider of geospatial data.</p>  <p>This field is
-     * case-sensitive. Enter the valid values as shown. For example, entering
-     * <code>HERE</code> returns an error.</p>  <p>Valid values include:</p>
-     * <ul> <li> <p> <code>Esri</code> – For additional information about <a
+     * <p>Specifies the geospatial data provider for the new place index.</p> 
+     * <p>This field is case-sensitive. Enter the valid values as shown. For example,
+     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
+     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
+     * <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri
@@ -48,8 +49,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE
-     * details on goecoding coverage</a>.</p>  <p>Place index resources
-     * using HERE Technologies as a data provider can't <a
+     * details on goecoding coverage</a>.</p>  <p>If you specify HERE
+     * Technologies (<code>Here</code>) as the data provider, you may not <a
      * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
      * results</a> for locations in Japan. For more information, see the <a
      * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
@@ -61,10 +62,11 @@ namespace Model
     inline const Aws::String& GetDataSource() const{ return m_dataSource; }
 
     /**
-     * <p>Specifies the data provider of geospatial data.</p>  <p>This field is
-     * case-sensitive. Enter the valid values as shown. For example, entering
-     * <code>HERE</code> returns an error.</p>  <p>Valid values include:</p>
-     * <ul> <li> <p> <code>Esri</code> – For additional information about <a
+     * <p>Specifies the geospatial data provider for the new place index.</p> 
+     * <p>This field is case-sensitive. Enter the valid values as shown. For example,
+     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
+     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
+     * <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri
@@ -73,8 +75,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE
-     * details on goecoding coverage</a>.</p>  <p>Place index resources
-     * using HERE Technologies as a data provider can't <a
+     * details on goecoding coverage</a>.</p>  <p>If you specify HERE
+     * Technologies (<code>Here</code>) as the data provider, you may not <a
      * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
      * results</a> for locations in Japan. For more information, see the <a
      * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
@@ -86,10 +88,11 @@ namespace Model
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
 
     /**
-     * <p>Specifies the data provider of geospatial data.</p>  <p>This field is
-     * case-sensitive. Enter the valid values as shown. For example, entering
-     * <code>HERE</code> returns an error.</p>  <p>Valid values include:</p>
-     * <ul> <li> <p> <code>Esri</code> – For additional information about <a
+     * <p>Specifies the geospatial data provider for the new place index.</p> 
+     * <p>This field is case-sensitive. Enter the valid values as shown. For example,
+     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
+     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
+     * <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri
@@ -98,8 +101,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE
-     * details on goecoding coverage</a>.</p>  <p>Place index resources
-     * using HERE Technologies as a data provider can't <a
+     * details on goecoding coverage</a>.</p>  <p>If you specify HERE
+     * Technologies (<code>Here</code>) as the data provider, you may not <a
      * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
      * results</a> for locations in Japan. For more information, see the <a
      * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
@@ -111,10 +114,11 @@ namespace Model
     inline void SetDataSource(const Aws::String& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
 
     /**
-     * <p>Specifies the data provider of geospatial data.</p>  <p>This field is
-     * case-sensitive. Enter the valid values as shown. For example, entering
-     * <code>HERE</code> returns an error.</p>  <p>Valid values include:</p>
-     * <ul> <li> <p> <code>Esri</code> – For additional information about <a
+     * <p>Specifies the geospatial data provider for the new place index.</p> 
+     * <p>This field is case-sensitive. Enter the valid values as shown. For example,
+     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
+     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
+     * <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri
@@ -123,8 +127,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE
-     * details on goecoding coverage</a>.</p>  <p>Place index resources
-     * using HERE Technologies as a data provider can't <a
+     * details on goecoding coverage</a>.</p>  <p>If you specify HERE
+     * Technologies (<code>Here</code>) as the data provider, you may not <a
      * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
      * results</a> for locations in Japan. For more information, see the <a
      * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
@@ -136,10 +140,11 @@ namespace Model
     inline void SetDataSource(Aws::String&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
 
     /**
-     * <p>Specifies the data provider of geospatial data.</p>  <p>This field is
-     * case-sensitive. Enter the valid values as shown. For example, entering
-     * <code>HERE</code> returns an error.</p>  <p>Valid values include:</p>
-     * <ul> <li> <p> <code>Esri</code> – For additional information about <a
+     * <p>Specifies the geospatial data provider for the new place index.</p> 
+     * <p>This field is case-sensitive. Enter the valid values as shown. For example,
+     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
+     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
+     * <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri
@@ -148,8 +153,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE
-     * details on goecoding coverage</a>.</p>  <p>Place index resources
-     * using HERE Technologies as a data provider can't <a
+     * details on goecoding coverage</a>.</p>  <p>If you specify HERE
+     * Technologies (<code>Here</code>) as the data provider, you may not <a
      * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
      * results</a> for locations in Japan. For more information, see the <a
      * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
@@ -161,10 +166,11 @@ namespace Model
     inline void SetDataSource(const char* value) { m_dataSourceHasBeenSet = true; m_dataSource.assign(value); }
 
     /**
-     * <p>Specifies the data provider of geospatial data.</p>  <p>This field is
-     * case-sensitive. Enter the valid values as shown. For example, entering
-     * <code>HERE</code> returns an error.</p>  <p>Valid values include:</p>
-     * <ul> <li> <p> <code>Esri</code> – For additional information about <a
+     * <p>Specifies the geospatial data provider for the new place index.</p> 
+     * <p>This field is case-sensitive. Enter the valid values as shown. For example,
+     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
+     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
+     * <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri
@@ -173,8 +179,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE
-     * details on goecoding coverage</a>.</p>  <p>Place index resources
-     * using HERE Technologies as a data provider can't <a
+     * details on goecoding coverage</a>.</p>  <p>If you specify HERE
+     * Technologies (<code>Here</code>) as the data provider, you may not <a
      * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
      * results</a> for locations in Japan. For more information, see the <a
      * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
@@ -186,10 +192,11 @@ namespace Model
     inline CreatePlaceIndexRequest& WithDataSource(const Aws::String& value) { SetDataSource(value); return *this;}
 
     /**
-     * <p>Specifies the data provider of geospatial data.</p>  <p>This field is
-     * case-sensitive. Enter the valid values as shown. For example, entering
-     * <code>HERE</code> returns an error.</p>  <p>Valid values include:</p>
-     * <ul> <li> <p> <code>Esri</code> – For additional information about <a
+     * <p>Specifies the geospatial data provider for the new place index.</p> 
+     * <p>This field is case-sensitive. Enter the valid values as shown. For example,
+     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
+     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
+     * <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri
@@ -198,8 +205,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE
-     * details on goecoding coverage</a>.</p>  <p>Place index resources
-     * using HERE Technologies as a data provider can't <a
+     * details on goecoding coverage</a>.</p>  <p>If you specify HERE
+     * Technologies (<code>Here</code>) as the data provider, you may not <a
      * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
      * results</a> for locations in Japan. For more information, see the <a
      * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
@@ -211,10 +218,11 @@ namespace Model
     inline CreatePlaceIndexRequest& WithDataSource(Aws::String&& value) { SetDataSource(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the data provider of geospatial data.</p>  <p>This field is
-     * case-sensitive. Enter the valid values as shown. For example, entering
-     * <code>HERE</code> returns an error.</p>  <p>Valid values include:</p>
-     * <ul> <li> <p> <code>Esri</code> – For additional information about <a
+     * <p>Specifies the geospatial data provider for the new place index.</p> 
+     * <p>This field is case-sensitive. Enter the valid values as shown. For example,
+     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
+     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
+     * <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
      * coverage in your region of interest, see <a
      * href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri
@@ -223,8 +231,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies</a>' coverage in your region of interest, see <a
      * href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE
-     * details on goecoding coverage</a>.</p>  <p>Place index resources
-     * using HERE Technologies as a data provider can't <a
+     * details on goecoding coverage</a>.</p>  <p>If you specify HERE
+     * Technologies (<code>Here</code>) as the data provider, you may not <a
      * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
      * results</a> for locations in Japan. For more information, see the <a
      * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
@@ -432,157 +440,170 @@ namespace Model
 
     /**
      * <p>Applies one or more tags to the place index resource. A tag is a key-value
-     * pair helps manage, identify, search, and filter your resources by labelling
-     * them.</p> <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul>
-     * <li> <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
-     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
-     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
-     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     * pair that helps you manage, identify, search, and filter your resources.</p>
+     * <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul> <li>
+     * <p>Maximum 50 tags per resource.</p> </li> <li> <p>Each tag key must be unique
+     * and must have exactly one associated value.</p> </li> <li> <p>Maximum key
+     * length: 128 Unicode characters in UTF-8.</p> </li> <li> <p>Maximum value length:
+     * 256 Unicode characters in UTF-8.</p> </li> <li> <p>Can use alphanumeric
+     * characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p>
+     * </li> <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
      * <p>Applies one or more tags to the place index resource. A tag is a key-value
-     * pair helps manage, identify, search, and filter your resources by labelling
-     * them.</p> <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul>
-     * <li> <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
-     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
-     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
-     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     * pair that helps you manage, identify, search, and filter your resources.</p>
+     * <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul> <li>
+     * <p>Maximum 50 tags per resource.</p> </li> <li> <p>Each tag key must be unique
+     * and must have exactly one associated value.</p> </li> <li> <p>Maximum key
+     * length: 128 Unicode characters in UTF-8.</p> </li> <li> <p>Maximum value length:
+     * 256 Unicode characters in UTF-8.</p> </li> <li> <p>Can use alphanumeric
+     * characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p>
+     * </li> <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Applies one or more tags to the place index resource. A tag is a key-value
-     * pair helps manage, identify, search, and filter your resources by labelling
-     * them.</p> <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul>
-     * <li> <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
-     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
-     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
-     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     * pair that helps you manage, identify, search, and filter your resources.</p>
+     * <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul> <li>
+     * <p>Maximum 50 tags per resource.</p> </li> <li> <p>Each tag key must be unique
+     * and must have exactly one associated value.</p> </li> <li> <p>Maximum key
+     * length: 128 Unicode characters in UTF-8.</p> </li> <li> <p>Maximum value length:
+     * 256 Unicode characters in UTF-8.</p> </li> <li> <p>Can use alphanumeric
+     * characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p>
+     * </li> <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>Applies one or more tags to the place index resource. A tag is a key-value
-     * pair helps manage, identify, search, and filter your resources by labelling
-     * them.</p> <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul>
-     * <li> <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
-     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
-     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
-     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     * pair that helps you manage, identify, search, and filter your resources.</p>
+     * <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul> <li>
+     * <p>Maximum 50 tags per resource.</p> </li> <li> <p>Each tag key must be unique
+     * and must have exactly one associated value.</p> </li> <li> <p>Maximum key
+     * length: 128 Unicode characters in UTF-8.</p> </li> <li> <p>Maximum value length:
+     * 256 Unicode characters in UTF-8.</p> </li> <li> <p>Can use alphanumeric
+     * characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p>
+     * </li> <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>Applies one or more tags to the place index resource. A tag is a key-value
-     * pair helps manage, identify, search, and filter your resources by labelling
-     * them.</p> <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul>
-     * <li> <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
-     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
-     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
-     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     * pair that helps you manage, identify, search, and filter your resources.</p>
+     * <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul> <li>
+     * <p>Maximum 50 tags per resource.</p> </li> <li> <p>Each tag key must be unique
+     * and must have exactly one associated value.</p> </li> <li> <p>Maximum key
+     * length: 128 Unicode characters in UTF-8.</p> </li> <li> <p>Maximum value length:
+     * 256 Unicode characters in UTF-8.</p> </li> <li> <p>Can use alphanumeric
+     * characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p>
+     * </li> <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreatePlaceIndexRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
      * <p>Applies one or more tags to the place index resource. A tag is a key-value
-     * pair helps manage, identify, search, and filter your resources by labelling
-     * them.</p> <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul>
-     * <li> <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
-     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
-     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
-     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     * pair that helps you manage, identify, search, and filter your resources.</p>
+     * <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul> <li>
+     * <p>Maximum 50 tags per resource.</p> </li> <li> <p>Each tag key must be unique
+     * and must have exactly one associated value.</p> </li> <li> <p>Maximum key
+     * length: 128 Unicode characters in UTF-8.</p> </li> <li> <p>Maximum value length:
+     * 256 Unicode characters in UTF-8.</p> </li> <li> <p>Can use alphanumeric
+     * characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p>
+     * </li> <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreatePlaceIndexRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>Applies one or more tags to the place index resource. A tag is a key-value
-     * pair helps manage, identify, search, and filter your resources by labelling
-     * them.</p> <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul>
-     * <li> <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
-     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
-     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
-     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     * pair that helps you manage, identify, search, and filter your resources.</p>
+     * <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul> <li>
+     * <p>Maximum 50 tags per resource.</p> </li> <li> <p>Each tag key must be unique
+     * and must have exactly one associated value.</p> </li> <li> <p>Maximum key
+     * length: 128 Unicode characters in UTF-8.</p> </li> <li> <p>Maximum value length:
+     * 256 Unicode characters in UTF-8.</p> </li> <li> <p>Can use alphanumeric
+     * characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p>
+     * </li> <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreatePlaceIndexRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>Applies one or more tags to the place index resource. A tag is a key-value
-     * pair helps manage, identify, search, and filter your resources by labelling
-     * them.</p> <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul>
-     * <li> <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
-     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
-     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
-     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     * pair that helps you manage, identify, search, and filter your resources.</p>
+     * <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul> <li>
+     * <p>Maximum 50 tags per resource.</p> </li> <li> <p>Each tag key must be unique
+     * and must have exactly one associated value.</p> </li> <li> <p>Maximum key
+     * length: 128 Unicode characters in UTF-8.</p> </li> <li> <p>Maximum value length:
+     * 256 Unicode characters in UTF-8.</p> </li> <li> <p>Can use alphanumeric
+     * characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p>
+     * </li> <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreatePlaceIndexRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Applies one or more tags to the place index resource. A tag is a key-value
-     * pair helps manage, identify, search, and filter your resources by labelling
-     * them.</p> <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul>
-     * <li> <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
-     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
-     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
-     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     * pair that helps you manage, identify, search, and filter your resources.</p>
+     * <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul> <li>
+     * <p>Maximum 50 tags per resource.</p> </li> <li> <p>Each tag key must be unique
+     * and must have exactly one associated value.</p> </li> <li> <p>Maximum key
+     * length: 128 Unicode characters in UTF-8.</p> </li> <li> <p>Maximum value length:
+     * 256 Unicode characters in UTF-8.</p> </li> <li> <p>Can use alphanumeric
+     * characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p>
+     * </li> <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreatePlaceIndexRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Applies one or more tags to the place index resource. A tag is a key-value
-     * pair helps manage, identify, search, and filter your resources by labelling
-     * them.</p> <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul>
-     * <li> <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
-     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
-     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
-     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     * pair that helps you manage, identify, search, and filter your resources.</p>
+     * <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul> <li>
+     * <p>Maximum 50 tags per resource.</p> </li> <li> <p>Each tag key must be unique
+     * and must have exactly one associated value.</p> </li> <li> <p>Maximum key
+     * length: 128 Unicode characters in UTF-8.</p> </li> <li> <p>Maximum value length:
+     * 256 Unicode characters in UTF-8.</p> </li> <li> <p>Can use alphanumeric
+     * characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p>
+     * </li> <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreatePlaceIndexRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Applies one or more tags to the place index resource. A tag is a key-value
-     * pair helps manage, identify, search, and filter your resources by labelling
-     * them.</p> <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul>
-     * <li> <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
-     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
-     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
-     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     * pair that helps you manage, identify, search, and filter your resources.</p>
+     * <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul> <li>
+     * <p>Maximum 50 tags per resource.</p> </li> <li> <p>Each tag key must be unique
+     * and must have exactly one associated value.</p> </li> <li> <p>Maximum key
+     * length: 128 Unicode characters in UTF-8.</p> </li> <li> <p>Maximum value length:
+     * 256 Unicode characters in UTF-8.</p> </li> <li> <p>Can use alphanumeric
+     * characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p>
+     * </li> <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreatePlaceIndexRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Applies one or more tags to the place index resource. A tag is a key-value
-     * pair helps manage, identify, search, and filter your resources by labelling
-     * them.</p> <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul>
-     * <li> <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
-     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
-     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
-     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     * pair that helps you manage, identify, search, and filter your resources.</p>
+     * <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul> <li>
+     * <p>Maximum 50 tags per resource.</p> </li> <li> <p>Each tag key must be unique
+     * and must have exactly one associated value.</p> </li> <li> <p>Maximum key
+     * length: 128 Unicode characters in UTF-8.</p> </li> <li> <p>Maximum value length:
+     * 256 Unicode characters in UTF-8.</p> </li> <li> <p>Can use alphanumeric
+     * characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p>
+     * </li> <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreatePlaceIndexRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Applies one or more tags to the place index resource. A tag is a key-value
-     * pair helps manage, identify, search, and filter your resources by labelling
-     * them.</p> <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul>
-     * <li> <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
-     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
-     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
-     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
-     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     * pair that helps you manage, identify, search, and filter your resources.</p>
+     * <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul> <li>
+     * <p>Maximum 50 tags per resource.</p> </li> <li> <p>Each tag key must be unique
+     * and must have exactly one associated value.</p> </li> <li> <p>Maximum key
+     * length: 128 Unicode characters in UTF-8.</p> </li> <li> <p>Maximum value length:
+     * 256 Unicode characters in UTF-8.</p> </li> <li> <p>Can use alphanumeric
+     * characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p>
+     * </li> <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li> </ul>
      */
     inline CreatePlaceIndexRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

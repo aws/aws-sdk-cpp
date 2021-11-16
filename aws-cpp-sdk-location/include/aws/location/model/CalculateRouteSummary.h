@@ -158,32 +158,32 @@ namespace Model
 
 
     /**
-     * <p>The unit of measurement for the distance.</p>
+     * <p>The unit of measurement for route distances.</p>
      */
     inline const DistanceUnit& GetDistanceUnit() const{ return m_distanceUnit; }
 
     /**
-     * <p>The unit of measurement for the distance.</p>
+     * <p>The unit of measurement for route distances.</p>
      */
     inline bool DistanceUnitHasBeenSet() const { return m_distanceUnitHasBeenSet; }
 
     /**
-     * <p>The unit of measurement for the distance.</p>
+     * <p>The unit of measurement for route distances.</p>
      */
     inline void SetDistanceUnit(const DistanceUnit& value) { m_distanceUnitHasBeenSet = true; m_distanceUnit = value; }
 
     /**
-     * <p>The unit of measurement for the distance.</p>
+     * <p>The unit of measurement for route distances.</p>
      */
     inline void SetDistanceUnit(DistanceUnit&& value) { m_distanceUnitHasBeenSet = true; m_distanceUnit = std::move(value); }
 
     /**
-     * <p>The unit of measurement for the distance.</p>
+     * <p>The unit of measurement for route distances.</p>
      */
     inline CalculateRouteSummary& WithDistanceUnit(const DistanceUnit& value) { SetDistanceUnit(value); return *this;}
 
     /**
-     * <p>The unit of measurement for the distance.</p>
+     * <p>The unit of measurement for route distances.</p>
      */
     inline CalculateRouteSummary& WithDistanceUnit(DistanceUnit&& value) { SetDistanceUnit(std::move(value)); return *this;}
 

@@ -22,6 +22,7 @@ namespace Aws
 
         static const int TimeBased_HASH = HashingUtils::HashString("TimeBased");
         static const int DistanceBased_HASH = HashingUtils::HashString("DistanceBased");
+        static const int AccuracyBased_HASH = HashingUtils::HashString("AccuracyBased");
 
 
         PositionFiltering GetPositionFilteringForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == DistanceBased_HASH)
           {
             return PositionFiltering::DistanceBased;
+          }
+          else if (hashCode == AccuracyBased_HASH)
+          {
+            return PositionFiltering::AccuracyBased;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "TimeBased";
           case PositionFiltering::DistanceBased:
             return "DistanceBased";
+          case PositionFiltering::AccuracyBased:
+            return "AccuracyBased";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

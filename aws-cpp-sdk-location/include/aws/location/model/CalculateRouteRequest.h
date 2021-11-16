@@ -39,50 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the route calculator resource that you want to use to calculate a
-     * route. </p>
+     * <p>The name of the route calculator resource that you want to use to calculate
+     * the route. </p>
      */
     inline const Aws::String& GetCalculatorName() const{ return m_calculatorName; }
 
     /**
-     * <p>The name of the route calculator resource that you want to use to calculate a
-     * route. </p>
+     * <p>The name of the route calculator resource that you want to use to calculate
+     * the route. </p>
      */
     inline bool CalculatorNameHasBeenSet() const { return m_calculatorNameHasBeenSet; }
 
     /**
-     * <p>The name of the route calculator resource that you want to use to calculate a
-     * route. </p>
+     * <p>The name of the route calculator resource that you want to use to calculate
+     * the route. </p>
      */
     inline void SetCalculatorName(const Aws::String& value) { m_calculatorNameHasBeenSet = true; m_calculatorName = value; }
 
     /**
-     * <p>The name of the route calculator resource that you want to use to calculate a
-     * route. </p>
+     * <p>The name of the route calculator resource that you want to use to calculate
+     * the route. </p>
      */
     inline void SetCalculatorName(Aws::String&& value) { m_calculatorNameHasBeenSet = true; m_calculatorName = std::move(value); }
 
     /**
-     * <p>The name of the route calculator resource that you want to use to calculate a
-     * route. </p>
+     * <p>The name of the route calculator resource that you want to use to calculate
+     * the route. </p>
      */
     inline void SetCalculatorName(const char* value) { m_calculatorNameHasBeenSet = true; m_calculatorName.assign(value); }
 
     /**
-     * <p>The name of the route calculator resource that you want to use to calculate a
-     * route. </p>
+     * <p>The name of the route calculator resource that you want to use to calculate
+     * the route. </p>
      */
     inline CalculateRouteRequest& WithCalculatorName(const Aws::String& value) { SetCalculatorName(value); return *this;}
 
     /**
-     * <p>The name of the route calculator resource that you want to use to calculate a
-     * route. </p>
+     * <p>The name of the route calculator resource that you want to use to calculate
+     * the route. </p>
      */
     inline CalculateRouteRequest& WithCalculatorName(Aws::String&& value) { SetCalculatorName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the route calculator resource that you want to use to calculate a
-     * route. </p>
+     * <p>The name of the route calculator resource that you want to use to calculate
+     * the route. </p>
      */
     inline CalculateRouteRequest& WithCalculatorName(const char* value) { SetCalculatorName(value); return *this;}
 
@@ -267,7 +267,7 @@ namespace Model
 
 
     /**
-     * <p>Specifies the desired time of departure. Uses the given time to calculate a
+     * <p>Specifies the desired time of departure. Uses the given time to calculate the
      * route. Otherwise, the best time of day to travel with the best traffic
      * conditions is used to calculate the route.</p>  <p>Setting a departure
      * time in the past returns a <code>400 ValidationException</code> error.</p>
@@ -279,7 +279,7 @@ namespace Model
     inline const Aws::Utils::DateTime& GetDepartureTime() const{ return m_departureTime; }
 
     /**
-     * <p>Specifies the desired time of departure. Uses the given time to calculate a
+     * <p>Specifies the desired time of departure. Uses the given time to calculate the
      * route. Otherwise, the best time of day to travel with the best traffic
      * conditions is used to calculate the route.</p>  <p>Setting a departure
      * time in the past returns a <code>400 ValidationException</code> error.</p>
@@ -291,7 +291,7 @@ namespace Model
     inline bool DepartureTimeHasBeenSet() const { return m_departureTimeHasBeenSet; }
 
     /**
-     * <p>Specifies the desired time of departure. Uses the given time to calculate a
+     * <p>Specifies the desired time of departure. Uses the given time to calculate the
      * route. Otherwise, the best time of day to travel with the best traffic
      * conditions is used to calculate the route.</p>  <p>Setting a departure
      * time in the past returns a <code>400 ValidationException</code> error.</p>
@@ -303,7 +303,7 @@ namespace Model
     inline void SetDepartureTime(const Aws::Utils::DateTime& value) { m_departureTimeHasBeenSet = true; m_departureTime = value; }
 
     /**
-     * <p>Specifies the desired time of departure. Uses the given time to calculate a
+     * <p>Specifies the desired time of departure. Uses the given time to calculate the
      * route. Otherwise, the best time of day to travel with the best traffic
      * conditions is used to calculate the route.</p>  <p>Setting a departure
      * time in the past returns a <code>400 ValidationException</code> error.</p>
@@ -315,7 +315,7 @@ namespace Model
     inline void SetDepartureTime(Aws::Utils::DateTime&& value) { m_departureTimeHasBeenSet = true; m_departureTime = std::move(value); }
 
     /**
-     * <p>Specifies the desired time of departure. Uses the given time to calculate a
+     * <p>Specifies the desired time of departure. Uses the given time to calculate the
      * route. Otherwise, the best time of day to travel with the best traffic
      * conditions is used to calculate the route.</p>  <p>Setting a departure
      * time in the past returns a <code>400 ValidationException</code> error.</p>
@@ -327,7 +327,7 @@ namespace Model
     inline CalculateRouteRequest& WithDepartureTime(const Aws::Utils::DateTime& value) { SetDepartureTime(value); return *this;}
 
     /**
-     * <p>Specifies the desired time of departure. Uses the given time to calculate a
+     * <p>Specifies the desired time of departure. Uses the given time to calculate the
      * route. Otherwise, the best time of day to travel with the best traffic
      * conditions is used to calculate the route.</p>  <p>Setting a departure
      * time in the past returns a <code>400 ValidationException</code> error.</p>
