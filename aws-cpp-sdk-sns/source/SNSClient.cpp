@@ -48,6 +48,7 @@
 #include <aws/sns/model/ListTopicsRequest.h>
 #include <aws/sns/model/OptInPhoneNumberRequest.h>
 #include <aws/sns/model/PublishRequest.h>
+#include <aws/sns/model/PublishBatchRequest.h>
 #include <aws/sns/model/RemovePermissionRequest.h>
 #include <aws/sns/model/SetEndpointAttributesRequest.h>
 #include <aws/sns/model/SetPlatformApplicationAttributesRequest.h>
@@ -814,6 +815,30 @@ void SNSClient::PublishAsync(const PublishRequest& request, const PublishRespons
 void SNSClient::PublishAsyncHelper(const PublishRequest& request, const PublishResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, Publish(request), context);
+}
+
+PublishBatchOutcome SNSClient::PublishBatch(const PublishBatchRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return PublishBatchOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+PublishBatchOutcomeCallable SNSClient::PublishBatchCallable(const PublishBatchRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PublishBatchOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PublishBatch(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SNSClient::PublishBatchAsync(const PublishBatchRequest& request, const PublishBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PublishBatchAsyncHelper( request, handler, context ); } );
+}
+
+void SNSClient::PublishBatchAsyncHelper(const PublishBatchRequest& request, const PublishBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PublishBatch(request), context);
 }
 
 RemovePermissionOutcome SNSClient::RemovePermission(const RemovePermissionRequest& request) const

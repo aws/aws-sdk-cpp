@@ -45,9 +45,9 @@ namespace Model
      * serialization of the topic's delivery policy.</p> </li> <li> <p>
      * <code>DisplayName</code> – The human-readable name used in the <code>From</code>
      * field for notifications to <code>email</code> and <code>email-json</code>
-     * endpoints.</p> </li> <li> <p> <code>Owner</code> – The account ID of the topic's
-     * owner.</p> </li> <li> <p> <code>Policy</code> – The JSON serialization of the
-     * topic's access control policy.</p> </li> <li> <p>
+     * endpoints.</p> </li> <li> <p> <code>Owner</code> – The Amazon Web Services
+     * account ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The
+     * JSON serialization of the topic's access control policy.</p> </li> <li> <p>
      * <code>SubscriptionsConfirmed</code> – The number of confirmed subscriptions for
      * the topic.</p> </li> <li> <p> <code>SubscriptionsDeleted</code> – The number of
      * deleted subscriptions for the topic.</p> </li> <li> <p>
@@ -89,9 +89,9 @@ namespace Model
      * serialization of the topic's delivery policy.</p> </li> <li> <p>
      * <code>DisplayName</code> – The human-readable name used in the <code>From</code>
      * field for notifications to <code>email</code> and <code>email-json</code>
-     * endpoints.</p> </li> <li> <p> <code>Owner</code> – The account ID of the topic's
-     * owner.</p> </li> <li> <p> <code>Policy</code> – The JSON serialization of the
-     * topic's access control policy.</p> </li> <li> <p>
+     * endpoints.</p> </li> <li> <p> <code>Owner</code> – The Amazon Web Services
+     * account ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The
+     * JSON serialization of the topic's access control policy.</p> </li> <li> <p>
      * <code>SubscriptionsConfirmed</code> – The number of confirmed subscriptions for
      * the topic.</p> </li> <li> <p> <code>SubscriptionsDeleted</code> – The number of
      * deleted subscriptions for the topic.</p> </li> <li> <p>
@@ -133,9 +133,9 @@ namespace Model
      * serialization of the topic's delivery policy.</p> </li> <li> <p>
      * <code>DisplayName</code> – The human-readable name used in the <code>From</code>
      * field for notifications to <code>email</code> and <code>email-json</code>
-     * endpoints.</p> </li> <li> <p> <code>Owner</code> – The account ID of the topic's
-     * owner.</p> </li> <li> <p> <code>Policy</code> – The JSON serialization of the
-     * topic's access control policy.</p> </li> <li> <p>
+     * endpoints.</p> </li> <li> <p> <code>Owner</code> – The Amazon Web Services
+     * account ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The
+     * JSON serialization of the topic's access control policy.</p> </li> <li> <p>
      * <code>SubscriptionsConfirmed</code> – The number of confirmed subscriptions for
      * the topic.</p> </li> <li> <p> <code>SubscriptionsDeleted</code> – The number of
      * deleted subscriptions for the topic.</p> </li> <li> <p>
@@ -177,9 +177,9 @@ namespace Model
      * serialization of the topic's delivery policy.</p> </li> <li> <p>
      * <code>DisplayName</code> – The human-readable name used in the <code>From</code>
      * field for notifications to <code>email</code> and <code>email-json</code>
-     * endpoints.</p> </li> <li> <p> <code>Owner</code> – The account ID of the topic's
-     * owner.</p> </li> <li> <p> <code>Policy</code> – The JSON serialization of the
-     * topic's access control policy.</p> </li> <li> <p>
+     * endpoints.</p> </li> <li> <p> <code>Owner</code> – The Amazon Web Services
+     * account ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The
+     * JSON serialization of the topic's access control policy.</p> </li> <li> <p>
      * <code>SubscriptionsConfirmed</code> – The number of confirmed subscriptions for
      * the topic.</p> </li> <li> <p> <code>SubscriptionsDeleted</code> – The number of
      * deleted subscriptions for the topic.</p> </li> <li> <p>
@@ -221,9 +221,9 @@ namespace Model
      * serialization of the topic's delivery policy.</p> </li> <li> <p>
      * <code>DisplayName</code> – The human-readable name used in the <code>From</code>
      * field for notifications to <code>email</code> and <code>email-json</code>
-     * endpoints.</p> </li> <li> <p> <code>Owner</code> – The account ID of the topic's
-     * owner.</p> </li> <li> <p> <code>Policy</code> – The JSON serialization of the
-     * topic's access control policy.</p> </li> <li> <p>
+     * endpoints.</p> </li> <li> <p> <code>Owner</code> – The Amazon Web Services
+     * account ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The
+     * JSON serialization of the topic's access control policy.</p> </li> <li> <p>
      * <code>SubscriptionsConfirmed</code> – The number of confirmed subscriptions for
      * the topic.</p> </li> <li> <p> <code>SubscriptionsDeleted</code> – The number of
      * deleted subscriptions for the topic.</p> </li> <li> <p>
@@ -265,9 +265,9 @@ namespace Model
      * serialization of the topic's delivery policy.</p> </li> <li> <p>
      * <code>DisplayName</code> – The human-readable name used in the <code>From</code>
      * field for notifications to <code>email</code> and <code>email-json</code>
-     * endpoints.</p> </li> <li> <p> <code>Owner</code> – The account ID of the topic's
-     * owner.</p> </li> <li> <p> <code>Policy</code> – The JSON serialization of the
-     * topic's access control policy.</p> </li> <li> <p>
+     * endpoints.</p> </li> <li> <p> <code>Owner</code> – The Amazon Web Services
+     * account ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The
+     * JSON serialization of the topic's access control policy.</p> </li> <li> <p>
      * <code>SubscriptionsConfirmed</code> – The number of confirmed subscriptions for
      * the topic.</p> </li> <li> <p> <code>SubscriptionsDeleted</code> – The number of
      * deleted subscriptions for the topic.</p> </li> <li> <p>
@@ -309,9 +309,9 @@ namespace Model
      * serialization of the topic's delivery policy.</p> </li> <li> <p>
      * <code>DisplayName</code> – The human-readable name used in the <code>From</code>
      * field for notifications to <code>email</code> and <code>email-json</code>
-     * endpoints.</p> </li> <li> <p> <code>Owner</code> – The account ID of the topic's
-     * owner.</p> </li> <li> <p> <code>Policy</code> – The JSON serialization of the
-     * topic's access control policy.</p> </li> <li> <p>
+     * endpoints.</p> </li> <li> <p> <code>Owner</code> – The Amazon Web Services
+     * account ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The
+     * JSON serialization of the topic's access control policy.</p> </li> <li> <p>
      * <code>SubscriptionsConfirmed</code> – The number of confirmed subscriptions for
      * the topic.</p> </li> <li> <p> <code>SubscriptionsDeleted</code> – The number of
      * deleted subscriptions for the topic.</p> </li> <li> <p>
@@ -353,9 +353,9 @@ namespace Model
      * serialization of the topic's delivery policy.</p> </li> <li> <p>
      * <code>DisplayName</code> – The human-readable name used in the <code>From</code>
      * field for notifications to <code>email</code> and <code>email-json</code>
-     * endpoints.</p> </li> <li> <p> <code>Owner</code> – The account ID of the topic's
-     * owner.</p> </li> <li> <p> <code>Policy</code> – The JSON serialization of the
-     * topic's access control policy.</p> </li> <li> <p>
+     * endpoints.</p> </li> <li> <p> <code>Owner</code> – The Amazon Web Services
+     * account ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The
+     * JSON serialization of the topic's access control policy.</p> </li> <li> <p>
      * <code>SubscriptionsConfirmed</code> – The number of confirmed subscriptions for
      * the topic.</p> </li> <li> <p> <code>SubscriptionsDeleted</code> – The number of
      * deleted subscriptions for the topic.</p> </li> <li> <p>
@@ -397,9 +397,9 @@ namespace Model
      * serialization of the topic's delivery policy.</p> </li> <li> <p>
      * <code>DisplayName</code> – The human-readable name used in the <code>From</code>
      * field for notifications to <code>email</code> and <code>email-json</code>
-     * endpoints.</p> </li> <li> <p> <code>Owner</code> – The account ID of the topic's
-     * owner.</p> </li> <li> <p> <code>Policy</code> – The JSON serialization of the
-     * topic's access control policy.</p> </li> <li> <p>
+     * endpoints.</p> </li> <li> <p> <code>Owner</code> – The Amazon Web Services
+     * account ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The
+     * JSON serialization of the topic's access control policy.</p> </li> <li> <p>
      * <code>SubscriptionsConfirmed</code> – The number of confirmed subscriptions for
      * the topic.</p> </li> <li> <p> <code>SubscriptionsDeleted</code> – The number of
      * deleted subscriptions for the topic.</p> </li> <li> <p>
@@ -441,9 +441,9 @@ namespace Model
      * serialization of the topic's delivery policy.</p> </li> <li> <p>
      * <code>DisplayName</code> – The human-readable name used in the <code>From</code>
      * field for notifications to <code>email</code> and <code>email-json</code>
-     * endpoints.</p> </li> <li> <p> <code>Owner</code> – The account ID of the topic's
-     * owner.</p> </li> <li> <p> <code>Policy</code> – The JSON serialization of the
-     * topic's access control policy.</p> </li> <li> <p>
+     * endpoints.</p> </li> <li> <p> <code>Owner</code> – The Amazon Web Services
+     * account ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The
+     * JSON serialization of the topic's access control policy.</p> </li> <li> <p>
      * <code>SubscriptionsConfirmed</code> – The number of confirmed subscriptions for
      * the topic.</p> </li> <li> <p> <code>SubscriptionsDeleted</code> – The number of
      * deleted subscriptions for the topic.</p> </li> <li> <p>
@@ -485,9 +485,9 @@ namespace Model
      * serialization of the topic's delivery policy.</p> </li> <li> <p>
      * <code>DisplayName</code> – The human-readable name used in the <code>From</code>
      * field for notifications to <code>email</code> and <code>email-json</code>
-     * endpoints.</p> </li> <li> <p> <code>Owner</code> – The account ID of the topic's
-     * owner.</p> </li> <li> <p> <code>Policy</code> – The JSON serialization of the
-     * topic's access control policy.</p> </li> <li> <p>
+     * endpoints.</p> </li> <li> <p> <code>Owner</code> – The Amazon Web Services
+     * account ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The
+     * JSON serialization of the topic's access control policy.</p> </li> <li> <p>
      * <code>SubscriptionsConfirmed</code> – The number of confirmed subscriptions for
      * the topic.</p> </li> <li> <p> <code>SubscriptionsDeleted</code> – The number of
      * deleted subscriptions for the topic.</p> </li> <li> <p>
@@ -529,9 +529,9 @@ namespace Model
      * serialization of the topic's delivery policy.</p> </li> <li> <p>
      * <code>DisplayName</code> – The human-readable name used in the <code>From</code>
      * field for notifications to <code>email</code> and <code>email-json</code>
-     * endpoints.</p> </li> <li> <p> <code>Owner</code> – The account ID of the topic's
-     * owner.</p> </li> <li> <p> <code>Policy</code> – The JSON serialization of the
-     * topic's access control policy.</p> </li> <li> <p>
+     * endpoints.</p> </li> <li> <p> <code>Owner</code> – The Amazon Web Services
+     * account ID of the topic's owner.</p> </li> <li> <p> <code>Policy</code> – The
+     * JSON serialization of the topic's access control policy.</p> </li> <li> <p>
      * <code>SubscriptionsConfirmed</code> – The number of confirmed subscriptions for
      * the topic.</p> </li> <li> <p> <code>SubscriptionsDeleted</code> – The number of
      * deleted subscriptions for the topic.</p> </li> <li> <p>

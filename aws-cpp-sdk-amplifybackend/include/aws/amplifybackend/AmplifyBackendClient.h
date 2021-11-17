@@ -16,10 +16,12 @@
 #include <aws/amplifybackend/model/CreateBackendAPIResult.h>
 #include <aws/amplifybackend/model/CreateBackendAuthResult.h>
 #include <aws/amplifybackend/model/CreateBackendConfigResult.h>
+#include <aws/amplifybackend/model/CreateBackendStorageResult.h>
 #include <aws/amplifybackend/model/CreateTokenResult.h>
 #include <aws/amplifybackend/model/DeleteBackendResult.h>
 #include <aws/amplifybackend/model/DeleteBackendAPIResult.h>
 #include <aws/amplifybackend/model/DeleteBackendAuthResult.h>
+#include <aws/amplifybackend/model/DeleteBackendStorageResult.h>
 #include <aws/amplifybackend/model/DeleteTokenResult.h>
 #include <aws/amplifybackend/model/GenerateBackendAPIModelsResult.h>
 #include <aws/amplifybackend/model/GetBackendResult.h>
@@ -27,15 +29,19 @@
 #include <aws/amplifybackend/model/GetBackendAPIModelsResult.h>
 #include <aws/amplifybackend/model/GetBackendAuthResult.h>
 #include <aws/amplifybackend/model/GetBackendJobResult.h>
+#include <aws/amplifybackend/model/GetBackendStorageResult.h>
 #include <aws/amplifybackend/model/GetTokenResult.h>
 #include <aws/amplifybackend/model/ImportBackendAuthResult.h>
+#include <aws/amplifybackend/model/ImportBackendStorageResult.h>
 #include <aws/amplifybackend/model/ListBackendJobsResult.h>
+#include <aws/amplifybackend/model/ListS3BucketsResult.h>
 #include <aws/amplifybackend/model/RemoveAllBackendsResult.h>
 #include <aws/amplifybackend/model/RemoveBackendConfigResult.h>
 #include <aws/amplifybackend/model/UpdateBackendAPIResult.h>
 #include <aws/amplifybackend/model/UpdateBackendAuthResult.h>
 #include <aws/amplifybackend/model/UpdateBackendConfigResult.h>
 #include <aws/amplifybackend/model/UpdateBackendJobResult.h>
+#include <aws/amplifybackend/model/UpdateBackendStorageResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -80,10 +86,12 @@ namespace Model
         class CreateBackendAPIRequest;
         class CreateBackendAuthRequest;
         class CreateBackendConfigRequest;
+        class CreateBackendStorageRequest;
         class CreateTokenRequest;
         class DeleteBackendRequest;
         class DeleteBackendAPIRequest;
         class DeleteBackendAuthRequest;
+        class DeleteBackendStorageRequest;
         class DeleteTokenRequest;
         class GenerateBackendAPIModelsRequest;
         class GetBackendRequest;
@@ -91,25 +99,31 @@ namespace Model
         class GetBackendAPIModelsRequest;
         class GetBackendAuthRequest;
         class GetBackendJobRequest;
+        class GetBackendStorageRequest;
         class GetTokenRequest;
         class ImportBackendAuthRequest;
+        class ImportBackendStorageRequest;
         class ListBackendJobsRequest;
+        class ListS3BucketsRequest;
         class RemoveAllBackendsRequest;
         class RemoveBackendConfigRequest;
         class UpdateBackendAPIRequest;
         class UpdateBackendAuthRequest;
         class UpdateBackendConfigRequest;
         class UpdateBackendJobRequest;
+        class UpdateBackendStorageRequest;
 
         typedef Aws::Utils::Outcome<CloneBackendResult, AmplifyBackendError> CloneBackendOutcome;
         typedef Aws::Utils::Outcome<CreateBackendResult, AmplifyBackendError> CreateBackendOutcome;
         typedef Aws::Utils::Outcome<CreateBackendAPIResult, AmplifyBackendError> CreateBackendAPIOutcome;
         typedef Aws::Utils::Outcome<CreateBackendAuthResult, AmplifyBackendError> CreateBackendAuthOutcome;
         typedef Aws::Utils::Outcome<CreateBackendConfigResult, AmplifyBackendError> CreateBackendConfigOutcome;
+        typedef Aws::Utils::Outcome<CreateBackendStorageResult, AmplifyBackendError> CreateBackendStorageOutcome;
         typedef Aws::Utils::Outcome<CreateTokenResult, AmplifyBackendError> CreateTokenOutcome;
         typedef Aws::Utils::Outcome<DeleteBackendResult, AmplifyBackendError> DeleteBackendOutcome;
         typedef Aws::Utils::Outcome<DeleteBackendAPIResult, AmplifyBackendError> DeleteBackendAPIOutcome;
         typedef Aws::Utils::Outcome<DeleteBackendAuthResult, AmplifyBackendError> DeleteBackendAuthOutcome;
+        typedef Aws::Utils::Outcome<DeleteBackendStorageResult, AmplifyBackendError> DeleteBackendStorageOutcome;
         typedef Aws::Utils::Outcome<DeleteTokenResult, AmplifyBackendError> DeleteTokenOutcome;
         typedef Aws::Utils::Outcome<GenerateBackendAPIModelsResult, AmplifyBackendError> GenerateBackendAPIModelsOutcome;
         typedef Aws::Utils::Outcome<GetBackendResult, AmplifyBackendError> GetBackendOutcome;
@@ -117,25 +131,31 @@ namespace Model
         typedef Aws::Utils::Outcome<GetBackendAPIModelsResult, AmplifyBackendError> GetBackendAPIModelsOutcome;
         typedef Aws::Utils::Outcome<GetBackendAuthResult, AmplifyBackendError> GetBackendAuthOutcome;
         typedef Aws::Utils::Outcome<GetBackendJobResult, AmplifyBackendError> GetBackendJobOutcome;
+        typedef Aws::Utils::Outcome<GetBackendStorageResult, AmplifyBackendError> GetBackendStorageOutcome;
         typedef Aws::Utils::Outcome<GetTokenResult, AmplifyBackendError> GetTokenOutcome;
         typedef Aws::Utils::Outcome<ImportBackendAuthResult, AmplifyBackendError> ImportBackendAuthOutcome;
+        typedef Aws::Utils::Outcome<ImportBackendStorageResult, AmplifyBackendError> ImportBackendStorageOutcome;
         typedef Aws::Utils::Outcome<ListBackendJobsResult, AmplifyBackendError> ListBackendJobsOutcome;
+        typedef Aws::Utils::Outcome<ListS3BucketsResult, AmplifyBackendError> ListS3BucketsOutcome;
         typedef Aws::Utils::Outcome<RemoveAllBackendsResult, AmplifyBackendError> RemoveAllBackendsOutcome;
         typedef Aws::Utils::Outcome<RemoveBackendConfigResult, AmplifyBackendError> RemoveBackendConfigOutcome;
         typedef Aws::Utils::Outcome<UpdateBackendAPIResult, AmplifyBackendError> UpdateBackendAPIOutcome;
         typedef Aws::Utils::Outcome<UpdateBackendAuthResult, AmplifyBackendError> UpdateBackendAuthOutcome;
         typedef Aws::Utils::Outcome<UpdateBackendConfigResult, AmplifyBackendError> UpdateBackendConfigOutcome;
         typedef Aws::Utils::Outcome<UpdateBackendJobResult, AmplifyBackendError> UpdateBackendJobOutcome;
+        typedef Aws::Utils::Outcome<UpdateBackendStorageResult, AmplifyBackendError> UpdateBackendStorageOutcome;
 
         typedef std::future<CloneBackendOutcome> CloneBackendOutcomeCallable;
         typedef std::future<CreateBackendOutcome> CreateBackendOutcomeCallable;
         typedef std::future<CreateBackendAPIOutcome> CreateBackendAPIOutcomeCallable;
         typedef std::future<CreateBackendAuthOutcome> CreateBackendAuthOutcomeCallable;
         typedef std::future<CreateBackendConfigOutcome> CreateBackendConfigOutcomeCallable;
+        typedef std::future<CreateBackendStorageOutcome> CreateBackendStorageOutcomeCallable;
         typedef std::future<CreateTokenOutcome> CreateTokenOutcomeCallable;
         typedef std::future<DeleteBackendOutcome> DeleteBackendOutcomeCallable;
         typedef std::future<DeleteBackendAPIOutcome> DeleteBackendAPIOutcomeCallable;
         typedef std::future<DeleteBackendAuthOutcome> DeleteBackendAuthOutcomeCallable;
+        typedef std::future<DeleteBackendStorageOutcome> DeleteBackendStorageOutcomeCallable;
         typedef std::future<DeleteTokenOutcome> DeleteTokenOutcomeCallable;
         typedef std::future<GenerateBackendAPIModelsOutcome> GenerateBackendAPIModelsOutcomeCallable;
         typedef std::future<GetBackendOutcome> GetBackendOutcomeCallable;
@@ -143,15 +163,19 @@ namespace Model
         typedef std::future<GetBackendAPIModelsOutcome> GetBackendAPIModelsOutcomeCallable;
         typedef std::future<GetBackendAuthOutcome> GetBackendAuthOutcomeCallable;
         typedef std::future<GetBackendJobOutcome> GetBackendJobOutcomeCallable;
+        typedef std::future<GetBackendStorageOutcome> GetBackendStorageOutcomeCallable;
         typedef std::future<GetTokenOutcome> GetTokenOutcomeCallable;
         typedef std::future<ImportBackendAuthOutcome> ImportBackendAuthOutcomeCallable;
+        typedef std::future<ImportBackendStorageOutcome> ImportBackendStorageOutcomeCallable;
         typedef std::future<ListBackendJobsOutcome> ListBackendJobsOutcomeCallable;
+        typedef std::future<ListS3BucketsOutcome> ListS3BucketsOutcomeCallable;
         typedef std::future<RemoveAllBackendsOutcome> RemoveAllBackendsOutcomeCallable;
         typedef std::future<RemoveBackendConfigOutcome> RemoveBackendConfigOutcomeCallable;
         typedef std::future<UpdateBackendAPIOutcome> UpdateBackendAPIOutcomeCallable;
         typedef std::future<UpdateBackendAuthOutcome> UpdateBackendAuthOutcomeCallable;
         typedef std::future<UpdateBackendConfigOutcome> UpdateBackendConfigOutcomeCallable;
         typedef std::future<UpdateBackendJobOutcome> UpdateBackendJobOutcomeCallable;
+        typedef std::future<UpdateBackendStorageOutcome> UpdateBackendStorageOutcomeCallable;
 } // namespace Model
 
   class AmplifyBackendClient;
@@ -161,10 +185,12 @@ namespace Model
     typedef std::function<void(const AmplifyBackendClient*, const Model::CreateBackendAPIRequest&, const Model::CreateBackendAPIOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBackendAPIResponseReceivedHandler;
     typedef std::function<void(const AmplifyBackendClient*, const Model::CreateBackendAuthRequest&, const Model::CreateBackendAuthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBackendAuthResponseReceivedHandler;
     typedef std::function<void(const AmplifyBackendClient*, const Model::CreateBackendConfigRequest&, const Model::CreateBackendConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBackendConfigResponseReceivedHandler;
+    typedef std::function<void(const AmplifyBackendClient*, const Model::CreateBackendStorageRequest&, const Model::CreateBackendStorageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBackendStorageResponseReceivedHandler;
     typedef std::function<void(const AmplifyBackendClient*, const Model::CreateTokenRequest&, const Model::CreateTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTokenResponseReceivedHandler;
     typedef std::function<void(const AmplifyBackendClient*, const Model::DeleteBackendRequest&, const Model::DeleteBackendOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBackendResponseReceivedHandler;
     typedef std::function<void(const AmplifyBackendClient*, const Model::DeleteBackendAPIRequest&, const Model::DeleteBackendAPIOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBackendAPIResponseReceivedHandler;
     typedef std::function<void(const AmplifyBackendClient*, const Model::DeleteBackendAuthRequest&, const Model::DeleteBackendAuthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBackendAuthResponseReceivedHandler;
+    typedef std::function<void(const AmplifyBackendClient*, const Model::DeleteBackendStorageRequest&, const Model::DeleteBackendStorageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBackendStorageResponseReceivedHandler;
     typedef std::function<void(const AmplifyBackendClient*, const Model::DeleteTokenRequest&, const Model::DeleteTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTokenResponseReceivedHandler;
     typedef std::function<void(const AmplifyBackendClient*, const Model::GenerateBackendAPIModelsRequest&, const Model::GenerateBackendAPIModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateBackendAPIModelsResponseReceivedHandler;
     typedef std::function<void(const AmplifyBackendClient*, const Model::GetBackendRequest&, const Model::GetBackendOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBackendResponseReceivedHandler;
@@ -172,15 +198,19 @@ namespace Model
     typedef std::function<void(const AmplifyBackendClient*, const Model::GetBackendAPIModelsRequest&, const Model::GetBackendAPIModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBackendAPIModelsResponseReceivedHandler;
     typedef std::function<void(const AmplifyBackendClient*, const Model::GetBackendAuthRequest&, const Model::GetBackendAuthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBackendAuthResponseReceivedHandler;
     typedef std::function<void(const AmplifyBackendClient*, const Model::GetBackendJobRequest&, const Model::GetBackendJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBackendJobResponseReceivedHandler;
+    typedef std::function<void(const AmplifyBackendClient*, const Model::GetBackendStorageRequest&, const Model::GetBackendStorageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBackendStorageResponseReceivedHandler;
     typedef std::function<void(const AmplifyBackendClient*, const Model::GetTokenRequest&, const Model::GetTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTokenResponseReceivedHandler;
     typedef std::function<void(const AmplifyBackendClient*, const Model::ImportBackendAuthRequest&, const Model::ImportBackendAuthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportBackendAuthResponseReceivedHandler;
+    typedef std::function<void(const AmplifyBackendClient*, const Model::ImportBackendStorageRequest&, const Model::ImportBackendStorageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportBackendStorageResponseReceivedHandler;
     typedef std::function<void(const AmplifyBackendClient*, const Model::ListBackendJobsRequest&, const Model::ListBackendJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBackendJobsResponseReceivedHandler;
+    typedef std::function<void(const AmplifyBackendClient*, const Model::ListS3BucketsRequest&, const Model::ListS3BucketsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListS3BucketsResponseReceivedHandler;
     typedef std::function<void(const AmplifyBackendClient*, const Model::RemoveAllBackendsRequest&, const Model::RemoveAllBackendsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveAllBackendsResponseReceivedHandler;
     typedef std::function<void(const AmplifyBackendClient*, const Model::RemoveBackendConfigRequest&, const Model::RemoveBackendConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveBackendConfigResponseReceivedHandler;
     typedef std::function<void(const AmplifyBackendClient*, const Model::UpdateBackendAPIRequest&, const Model::UpdateBackendAPIOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBackendAPIResponseReceivedHandler;
     typedef std::function<void(const AmplifyBackendClient*, const Model::UpdateBackendAuthRequest&, const Model::UpdateBackendAuthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBackendAuthResponseReceivedHandler;
     typedef std::function<void(const AmplifyBackendClient*, const Model::UpdateBackendConfigRequest&, const Model::UpdateBackendConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBackendConfigResponseReceivedHandler;
     typedef std::function<void(const AmplifyBackendClient*, const Model::UpdateBackendJobRequest&, const Model::UpdateBackendJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBackendJobResponseReceivedHandler;
+    typedef std::function<void(const AmplifyBackendClient*, const Model::UpdateBackendStorageRequest&, const Model::UpdateBackendStorageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBackendStorageResponseReceivedHandler;
 
   /**
    * <p>AWS Amplify Admin API</p>
@@ -341,6 +371,31 @@ namespace Model
         virtual void CreateBackendConfigAsync(const Model::CreateBackendConfigRequest& request, const CreateBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a backend storage resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendStorage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateBackendStorageOutcome CreateBackendStorage(const Model::CreateBackendStorageRequest& request) const;
+
+        /**
+         * <p>Creates a backend storage resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendStorage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateBackendStorageOutcomeCallable CreateBackendStorageCallable(const Model::CreateBackendStorageRequest& request) const;
+
+        /**
+         * <p>Creates a backend storage resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendStorage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateBackendStorageAsync(const Model::CreateBackendStorageRequest& request, const CreateBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Generates a one-time challenge code to authenticate a user into your Amplify
          * Admin UI.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateToken">AWS
@@ -448,6 +503,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteBackendAuthAsync(const Model::DeleteBackendAuthRequest& request, const DeleteBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes the specified backend storage resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteBackendStorage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteBackendStorageOutcome DeleteBackendStorage(const Model::DeleteBackendStorageRequest& request) const;
+
+        /**
+         * <p>Removes the specified backend storage resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteBackendStorage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteBackendStorageOutcomeCallable DeleteBackendStorageCallable(const Model::DeleteBackendStorageRequest& request) const;
+
+        /**
+         * <p>Removes the specified backend storage resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteBackendStorage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteBackendStorageAsync(const Model::DeleteBackendStorageRequest& request, const DeleteBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the challenge token based on the given appId and
@@ -637,6 +717,31 @@ namespace Model
         virtual void GetBackendJobAsync(const Model::GetBackendJobRequest& request, const GetBackendJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets details for a backend storage resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendStorage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetBackendStorageOutcome GetBackendStorage(const Model::GetBackendStorageRequest& request) const;
+
+        /**
+         * <p>Gets details for a backend storage resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendStorage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetBackendStorageOutcomeCallable GetBackendStorageCallable(const Model::GetBackendStorageRequest& request) const;
+
+        /**
+         * <p>Gets details for a backend storage resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendStorage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetBackendStorageAsync(const Model::GetBackendStorageRequest& request, const GetBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets the challenge token based on the given appId and
          * sessionId.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetToken">AWS
@@ -693,6 +798,31 @@ namespace Model
         virtual void ImportBackendAuthAsync(const Model::ImportBackendAuthRequest& request, const ImportBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Imports an existing backend storage resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ImportBackendStorage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ImportBackendStorageOutcome ImportBackendStorage(const Model::ImportBackendStorageRequest& request) const;
+
+        /**
+         * <p>Imports an existing backend storage resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ImportBackendStorage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ImportBackendStorageOutcomeCallable ImportBackendStorageCallable(const Model::ImportBackendStorageRequest& request) const;
+
+        /**
+         * <p>Imports an existing backend storage resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ImportBackendStorage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ImportBackendStorageAsync(const Model::ImportBackendStorageRequest& request, const ImportBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the jobs for the backend of an Amplify app.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ListBackendJobs">AWS
@@ -719,6 +849,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListBackendJobsAsync(const Model::ListBackendJobsRequest& request, const ListBackendJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>The list of S3 buckets in your account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ListS3Buckets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListS3BucketsOutcome ListS3Buckets(const Model::ListS3BucketsRequest& request) const;
+
+        /**
+         * <p>The list of S3 buckets in your account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ListS3Buckets">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListS3BucketsOutcomeCallable ListS3BucketsCallable(const Model::ListS3BucketsRequest& request) const;
+
+        /**
+         * <p>The list of S3 buckets in your account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ListS3Buckets">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListS3BucketsAsync(const Model::ListS3BucketsRequest& request, const ListS3BucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes all backend environments from your Amplify project.</p><p><h3>See
@@ -882,6 +1037,31 @@ namespace Model
          */
         virtual void UpdateBackendJobAsync(const Model::UpdateBackendJobRequest& request, const UpdateBackendJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates an existing backend storage resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendStorage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateBackendStorageOutcome UpdateBackendStorage(const Model::UpdateBackendStorageRequest& request) const;
+
+        /**
+         * <p>Updates an existing backend storage resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendStorage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateBackendStorageOutcomeCallable UpdateBackendStorageCallable(const Model::UpdateBackendStorageRequest& request) const;
+
+        /**
+         * <p>Updates an existing backend storage resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendStorage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateBackendStorageAsync(const Model::UpdateBackendStorageRequest& request, const UpdateBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -891,10 +1071,12 @@ namespace Model
         void CreateBackendAPIAsyncHelper(const Model::CreateBackendAPIRequest& request, const CreateBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateBackendAuthAsyncHelper(const Model::CreateBackendAuthRequest& request, const CreateBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateBackendConfigAsyncHelper(const Model::CreateBackendConfigRequest& request, const CreateBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateBackendStorageAsyncHelper(const Model::CreateBackendStorageRequest& request, const CreateBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTokenAsyncHelper(const Model::CreateTokenRequest& request, const CreateTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBackendAsyncHelper(const Model::DeleteBackendRequest& request, const DeleteBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBackendAPIAsyncHelper(const Model::DeleteBackendAPIRequest& request, const DeleteBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBackendAuthAsyncHelper(const Model::DeleteBackendAuthRequest& request, const DeleteBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteBackendStorageAsyncHelper(const Model::DeleteBackendStorageRequest& request, const DeleteBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTokenAsyncHelper(const Model::DeleteTokenRequest& request, const DeleteTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GenerateBackendAPIModelsAsyncHelper(const Model::GenerateBackendAPIModelsRequest& request, const GenerateBackendAPIModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBackendAsyncHelper(const Model::GetBackendRequest& request, const GetBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -902,15 +1084,19 @@ namespace Model
         void GetBackendAPIModelsAsyncHelper(const Model::GetBackendAPIModelsRequest& request, const GetBackendAPIModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBackendAuthAsyncHelper(const Model::GetBackendAuthRequest& request, const GetBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBackendJobAsyncHelper(const Model::GetBackendJobRequest& request, const GetBackendJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetBackendStorageAsyncHelper(const Model::GetBackendStorageRequest& request, const GetBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTokenAsyncHelper(const Model::GetTokenRequest& request, const GetTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportBackendAuthAsyncHelper(const Model::ImportBackendAuthRequest& request, const ImportBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ImportBackendStorageAsyncHelper(const Model::ImportBackendStorageRequest& request, const ImportBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBackendJobsAsyncHelper(const Model::ListBackendJobsRequest& request, const ListBackendJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListS3BucketsAsyncHelper(const Model::ListS3BucketsRequest& request, const ListS3BucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveAllBackendsAsyncHelper(const Model::RemoveAllBackendsRequest& request, const RemoveAllBackendsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveBackendConfigAsyncHelper(const Model::RemoveBackendConfigRequest& request, const RemoveBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateBackendAPIAsyncHelper(const Model::UpdateBackendAPIRequest& request, const UpdateBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateBackendAuthAsyncHelper(const Model::UpdateBackendAuthRequest& request, const UpdateBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateBackendConfigAsyncHelper(const Model::UpdateBackendConfigRequest& request, const UpdateBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateBackendJobAsyncHelper(const Model::UpdateBackendJobRequest& request, const UpdateBackendJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateBackendStorageAsyncHelper(const Model::UpdateBackendStorageRequest& request, const UpdateBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

@@ -34,37 +34,44 @@ namespace Model
 
 
     /**
-     * <p>The cluster identifier. </p>
+     * <p>The cluster identifier. This parameter is not returned when connecting to a
+     * serverless endpoint. </p>
      */
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
 
     /**
-     * <p>The cluster identifier. </p>
+     * <p>The cluster identifier. This parameter is not returned when connecting to a
+     * serverless endpoint. </p>
      */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifier = value; }
 
     /**
-     * <p>The cluster identifier. </p>
+     * <p>The cluster identifier. This parameter is not returned when connecting to a
+     * serverless endpoint. </p>
      */
     inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifier = std::move(value); }
 
     /**
-     * <p>The cluster identifier. </p>
+     * <p>The cluster identifier. This parameter is not returned when connecting to a
+     * serverless endpoint. </p>
      */
     inline void SetClusterIdentifier(const char* value) { m_clusterIdentifier.assign(value); }
 
     /**
-     * <p>The cluster identifier. </p>
+     * <p>The cluster identifier. This parameter is not returned when connecting to a
+     * serverless endpoint. </p>
      */
     inline BatchExecuteStatementResult& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
 
     /**
-     * <p>The cluster identifier. </p>
+     * <p>The cluster identifier. This parameter is not returned when connecting to a
+     * serverless endpoint. </p>
      */
     inline BatchExecuteStatementResult& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The cluster identifier. </p>
+     * <p>The cluster identifier. This parameter is not returned when connecting to a
+     * serverless endpoint. </p>
      */
     inline BatchExecuteStatementResult& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 

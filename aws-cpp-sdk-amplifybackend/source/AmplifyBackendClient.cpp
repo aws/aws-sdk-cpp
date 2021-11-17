@@ -25,10 +25,12 @@
 #include <aws/amplifybackend/model/CreateBackendAPIRequest.h>
 #include <aws/amplifybackend/model/CreateBackendAuthRequest.h>
 #include <aws/amplifybackend/model/CreateBackendConfigRequest.h>
+#include <aws/amplifybackend/model/CreateBackendStorageRequest.h>
 #include <aws/amplifybackend/model/CreateTokenRequest.h>
 #include <aws/amplifybackend/model/DeleteBackendRequest.h>
 #include <aws/amplifybackend/model/DeleteBackendAPIRequest.h>
 #include <aws/amplifybackend/model/DeleteBackendAuthRequest.h>
+#include <aws/amplifybackend/model/DeleteBackendStorageRequest.h>
 #include <aws/amplifybackend/model/DeleteTokenRequest.h>
 #include <aws/amplifybackend/model/GenerateBackendAPIModelsRequest.h>
 #include <aws/amplifybackend/model/GetBackendRequest.h>
@@ -36,15 +38,19 @@
 #include <aws/amplifybackend/model/GetBackendAPIModelsRequest.h>
 #include <aws/amplifybackend/model/GetBackendAuthRequest.h>
 #include <aws/amplifybackend/model/GetBackendJobRequest.h>
+#include <aws/amplifybackend/model/GetBackendStorageRequest.h>
 #include <aws/amplifybackend/model/GetTokenRequest.h>
 #include <aws/amplifybackend/model/ImportBackendAuthRequest.h>
+#include <aws/amplifybackend/model/ImportBackendStorageRequest.h>
 #include <aws/amplifybackend/model/ListBackendJobsRequest.h>
+#include <aws/amplifybackend/model/ListS3BucketsRequest.h>
 #include <aws/amplifybackend/model/RemoveAllBackendsRequest.h>
 #include <aws/amplifybackend/model/RemoveBackendConfigRequest.h>
 #include <aws/amplifybackend/model/UpdateBackendAPIRequest.h>
 #include <aws/amplifybackend/model/UpdateBackendAuthRequest.h>
 #include <aws/amplifybackend/model/UpdateBackendConfigRequest.h>
 #include <aws/amplifybackend/model/UpdateBackendJobRequest.h>
+#include <aws/amplifybackend/model/UpdateBackendStorageRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -279,6 +285,38 @@ void AmplifyBackendClient::CreateBackendConfigAsyncHelper(const CreateBackendCon
   handler(this, request, CreateBackendConfig(request), context);
 }
 
+CreateBackendStorageOutcome AmplifyBackendClient::CreateBackendStorage(const CreateBackendStorageRequest& request) const
+{
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateBackendStorage", "Required field: AppId, is not set");
+    return CreateBackendStorageOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/backend/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/storage");
+  return CreateBackendStorageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateBackendStorageOutcomeCallable AmplifyBackendClient::CreateBackendStorageCallable(const CreateBackendStorageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateBackendStorageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBackendStorage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyBackendClient::CreateBackendStorageAsync(const CreateBackendStorageRequest& request, const CreateBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateBackendStorageAsyncHelper( request, handler, context ); } );
+}
+
+void AmplifyBackendClient::CreateBackendStorageAsyncHelper(const CreateBackendStorageRequest& request, const CreateBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateBackendStorage(request), context);
+}
+
 CreateTokenOutcome AmplifyBackendClient::CreateToken(const CreateTokenRequest& request) const
 {
   if (!request.AppIdHasBeenSet())
@@ -426,6 +464,45 @@ void AmplifyBackendClient::DeleteBackendAuthAsync(const DeleteBackendAuthRequest
 void AmplifyBackendClient::DeleteBackendAuthAsyncHelper(const DeleteBackendAuthRequest& request, const DeleteBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteBackendAuth(request), context);
+}
+
+DeleteBackendStorageOutcome AmplifyBackendClient::DeleteBackendStorage(const DeleteBackendStorageRequest& request) const
+{
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBackendStorage", "Required field: AppId, is not set");
+    return DeleteBackendStorageOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.BackendEnvironmentNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBackendStorage", "Required field: BackendEnvironmentName, is not set");
+    return DeleteBackendStorageOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackendEnvironmentName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/backend/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/storage/");
+  uri.AddPathSegment(request.GetBackendEnvironmentName());
+  uri.AddPathSegments("/remove");
+  return DeleteBackendStorageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteBackendStorageOutcomeCallable AmplifyBackendClient::DeleteBackendStorageCallable(const DeleteBackendStorageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBackendStorageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBackendStorage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyBackendClient::DeleteBackendStorageAsync(const DeleteBackendStorageRequest& request, const DeleteBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBackendStorageAsyncHelper( request, handler, context ); } );
+}
+
+void AmplifyBackendClient::DeleteBackendStorageAsyncHelper(const DeleteBackendStorageRequest& request, const DeleteBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteBackendStorage(request), context);
 }
 
 DeleteTokenOutcome AmplifyBackendClient::DeleteToken(const DeleteTokenRequest& request) const
@@ -699,6 +776,45 @@ void AmplifyBackendClient::GetBackendJobAsyncHelper(const GetBackendJobRequest& 
   handler(this, request, GetBackendJob(request), context);
 }
 
+GetBackendStorageOutcome AmplifyBackendClient::GetBackendStorage(const GetBackendStorageRequest& request) const
+{
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBackendStorage", "Required field: AppId, is not set");
+    return GetBackendStorageOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.BackendEnvironmentNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBackendStorage", "Required field: BackendEnvironmentName, is not set");
+    return GetBackendStorageOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackendEnvironmentName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/backend/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/storage/");
+  uri.AddPathSegment(request.GetBackendEnvironmentName());
+  uri.AddPathSegments("/details");
+  return GetBackendStorageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetBackendStorageOutcomeCallable AmplifyBackendClient::GetBackendStorageCallable(const GetBackendStorageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBackendStorageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBackendStorage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyBackendClient::GetBackendStorageAsync(const GetBackendStorageRequest& request, const GetBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetBackendStorageAsyncHelper( request, handler, context ); } );
+}
+
+void AmplifyBackendClient::GetBackendStorageAsyncHelper(const GetBackendStorageRequest& request, const GetBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetBackendStorage(request), context);
+}
+
 GetTokenOutcome AmplifyBackendClient::GetToken(const GetTokenRequest& request) const
 {
   if (!request.AppIdHasBeenSet())
@@ -776,6 +892,45 @@ void AmplifyBackendClient::ImportBackendAuthAsyncHelper(const ImportBackendAuthR
   handler(this, request, ImportBackendAuth(request), context);
 }
 
+ImportBackendStorageOutcome AmplifyBackendClient::ImportBackendStorage(const ImportBackendStorageRequest& request) const
+{
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ImportBackendStorage", "Required field: AppId, is not set");
+    return ImportBackendStorageOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.BackendEnvironmentNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ImportBackendStorage", "Required field: BackendEnvironmentName, is not set");
+    return ImportBackendStorageOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackendEnvironmentName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/backend/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/storage/");
+  uri.AddPathSegment(request.GetBackendEnvironmentName());
+  uri.AddPathSegments("/import");
+  return ImportBackendStorageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ImportBackendStorageOutcomeCallable AmplifyBackendClient::ImportBackendStorageCallable(const ImportBackendStorageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ImportBackendStorageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportBackendStorage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyBackendClient::ImportBackendStorageAsync(const ImportBackendStorageRequest& request, const ImportBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ImportBackendStorageAsyncHelper( request, handler, context ); } );
+}
+
+void AmplifyBackendClient::ImportBackendStorageAsyncHelper(const ImportBackendStorageRequest& request, const ImportBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ImportBackendStorage(request), context);
+}
+
 ListBackendJobsOutcome AmplifyBackendClient::ListBackendJobs(const ListBackendJobsRequest& request) const
 {
   if (!request.AppIdHasBeenSet())
@@ -812,6 +967,31 @@ void AmplifyBackendClient::ListBackendJobsAsync(const ListBackendJobsRequest& re
 void AmplifyBackendClient::ListBackendJobsAsyncHelper(const ListBackendJobsRequest& request, const ListBackendJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListBackendJobs(request), context);
+}
+
+ListS3BucketsOutcome AmplifyBackendClient::ListS3Buckets(const ListS3BucketsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/s3Buckets");
+  return ListS3BucketsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListS3BucketsOutcomeCallable AmplifyBackendClient::ListS3BucketsCallable(const ListS3BucketsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListS3BucketsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListS3Buckets(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyBackendClient::ListS3BucketsAsync(const ListS3BucketsRequest& request, const ListS3BucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListS3BucketsAsyncHelper( request, handler, context ); } );
+}
+
+void AmplifyBackendClient::ListS3BucketsAsyncHelper(const ListS3BucketsRequest& request, const ListS3BucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListS3Buckets(request), context);
 }
 
 RemoveAllBackendsOutcome AmplifyBackendClient::RemoveAllBackends(const RemoveAllBackendsRequest& request) const
@@ -1028,5 +1208,43 @@ void AmplifyBackendClient::UpdateBackendJobAsync(const UpdateBackendJobRequest& 
 void AmplifyBackendClient::UpdateBackendJobAsyncHelper(const UpdateBackendJobRequest& request, const UpdateBackendJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateBackendJob(request), context);
+}
+
+UpdateBackendStorageOutcome AmplifyBackendClient::UpdateBackendStorage(const UpdateBackendStorageRequest& request) const
+{
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateBackendStorage", "Required field: AppId, is not set");
+    return UpdateBackendStorageOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.BackendEnvironmentNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateBackendStorage", "Required field: BackendEnvironmentName, is not set");
+    return UpdateBackendStorageOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackendEnvironmentName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/backend/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/storage/");
+  uri.AddPathSegment(request.GetBackendEnvironmentName());
+  return UpdateBackendStorageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateBackendStorageOutcomeCallable AmplifyBackendClient::UpdateBackendStorageCallable(const UpdateBackendStorageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateBackendStorageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBackendStorage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyBackendClient::UpdateBackendStorageAsync(const UpdateBackendStorageRequest& request, const UpdateBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateBackendStorageAsyncHelper( request, handler, context ); } );
+}
+
+void AmplifyBackendClient::UpdateBackendStorageAsyncHelper(const UpdateBackendStorageRequest& request, const UpdateBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateBackendStorage(request), context);
 }
 

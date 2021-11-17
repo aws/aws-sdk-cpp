@@ -35,50 +35,58 @@ namespace Model
 
 
     /**
-     * <p>The cluster identifier. This parameter is required when authenticating using
-     * either Secrets Manager or temporary credentials. </p>
+     * <p>The cluster identifier. This parameter is required when connecting to a
+     * cluster and authenticating using either Secrets Manager or temporary
+     * credentials. </p>
      */
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
 
     /**
-     * <p>The cluster identifier. This parameter is required when authenticating using
-     * either Secrets Manager or temporary credentials. </p>
+     * <p>The cluster identifier. This parameter is required when connecting to a
+     * cluster and authenticating using either Secrets Manager or temporary
+     * credentials. </p>
      */
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
 
     /**
-     * <p>The cluster identifier. This parameter is required when authenticating using
-     * either Secrets Manager or temporary credentials. </p>
+     * <p>The cluster identifier. This parameter is required when connecting to a
+     * cluster and authenticating using either Secrets Manager or temporary
+     * credentials. </p>
      */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /**
-     * <p>The cluster identifier. This parameter is required when authenticating using
-     * either Secrets Manager or temporary credentials. </p>
+     * <p>The cluster identifier. This parameter is required when connecting to a
+     * cluster and authenticating using either Secrets Manager or temporary
+     * credentials. </p>
      */
     inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
 
     /**
-     * <p>The cluster identifier. This parameter is required when authenticating using
-     * either Secrets Manager or temporary credentials. </p>
+     * <p>The cluster identifier. This parameter is required when connecting to a
+     * cluster and authenticating using either Secrets Manager or temporary
+     * credentials. </p>
      */
     inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
 
     /**
-     * <p>The cluster identifier. This parameter is required when authenticating using
-     * either Secrets Manager or temporary credentials. </p>
+     * <p>The cluster identifier. This parameter is required when connecting to a
+     * cluster and authenticating using either Secrets Manager or temporary
+     * credentials. </p>
      */
     inline ListDatabasesRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
 
     /**
-     * <p>The cluster identifier. This parameter is required when authenticating using
-     * either Secrets Manager or temporary credentials. </p>
+     * <p>The cluster identifier. This parameter is required when connecting to a
+     * cluster and authenticating using either Secrets Manager or temporary
+     * credentials. </p>
      */
     inline ListDatabasesRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The cluster identifier. This parameter is required when authenticating using
-     * either Secrets Manager or temporary credentials. </p>
+     * <p>The cluster identifier. This parameter is required when connecting to a
+     * cluster and authenticating using either Secrets Manager or temporary
+     * credentials. </p>
      */
     inline ListDatabasesRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
@@ -133,50 +141,50 @@ namespace Model
 
 
     /**
-     * <p>The database user name. This parameter is required when authenticating using
-     * temporary credentials. </p>
+     * <p>The database user name. This parameter is required when connecting to a
+     * cluster and authenticating using temporary credentials. </p>
      */
     inline const Aws::String& GetDbUser() const{ return m_dbUser; }
 
     /**
-     * <p>The database user name. This parameter is required when authenticating using
-     * temporary credentials. </p>
+     * <p>The database user name. This parameter is required when connecting to a
+     * cluster and authenticating using temporary credentials. </p>
      */
     inline bool DbUserHasBeenSet() const { return m_dbUserHasBeenSet; }
 
     /**
-     * <p>The database user name. This parameter is required when authenticating using
-     * temporary credentials. </p>
+     * <p>The database user name. This parameter is required when connecting to a
+     * cluster and authenticating using temporary credentials. </p>
      */
     inline void SetDbUser(const Aws::String& value) { m_dbUserHasBeenSet = true; m_dbUser = value; }
 
     /**
-     * <p>The database user name. This parameter is required when authenticating using
-     * temporary credentials. </p>
+     * <p>The database user name. This parameter is required when connecting to a
+     * cluster and authenticating using temporary credentials. </p>
      */
     inline void SetDbUser(Aws::String&& value) { m_dbUserHasBeenSet = true; m_dbUser = std::move(value); }
 
     /**
-     * <p>The database user name. This parameter is required when authenticating using
-     * temporary credentials. </p>
+     * <p>The database user name. This parameter is required when connecting to a
+     * cluster and authenticating using temporary credentials. </p>
      */
     inline void SetDbUser(const char* value) { m_dbUserHasBeenSet = true; m_dbUser.assign(value); }
 
     /**
-     * <p>The database user name. This parameter is required when authenticating using
-     * temporary credentials. </p>
+     * <p>The database user name. This parameter is required when connecting to a
+     * cluster and authenticating using temporary credentials. </p>
      */
     inline ListDatabasesRequest& WithDbUser(const Aws::String& value) { SetDbUser(value); return *this;}
 
     /**
-     * <p>The database user name. This parameter is required when authenticating using
-     * temporary credentials. </p>
+     * <p>The database user name. This parameter is required when connecting to a
+     * cluster and authenticating using temporary credentials. </p>
      */
     inline ListDatabasesRequest& WithDbUser(Aws::String&& value) { SetDbUser(std::move(value)); return *this;}
 
     /**
-     * <p>The database user name. This parameter is required when authenticating using
-     * temporary credentials. </p>
+     * <p>The database user name. This parameter is required when connecting to a
+     * cluster and authenticating using temporary credentials. </p>
      */
     inline ListDatabasesRequest& WithDbUser(const char* value) { SetDbUser(value); return *this;}
 

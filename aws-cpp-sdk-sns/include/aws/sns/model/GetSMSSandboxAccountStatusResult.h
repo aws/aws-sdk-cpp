@@ -33,17 +33,20 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the calling account is in the SMS sandbox.</p>
+     * <p>Indicates whether the calling Amazon Web Services account is in the SMS
+     * sandbox.</p>
      */
     inline bool GetIsInSandbox() const{ return m_isInSandbox; }
 
     /**
-     * <p>Indicates whether the calling account is in the SMS sandbox.</p>
+     * <p>Indicates whether the calling Amazon Web Services account is in the SMS
+     * sandbox.</p>
      */
     inline void SetIsInSandbox(bool value) { m_isInSandbox = value; }
 
     /**
-     * <p>Indicates whether the calling account is in the SMS sandbox.</p>
+     * <p>Indicates whether the calling Amazon Web Services account is in the SMS
+     * sandbox.</p>
      */
     inline GetSMSSandboxAccountStatusResult& WithIsInSandbox(bool value) { SetIsInSandbox(value); return *this;}
 

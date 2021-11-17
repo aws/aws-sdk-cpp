@@ -146,12 +146,15 @@ namespace Model
          * <p>Runs one or more SQL statements, which can be data manipulation language
          * (DML) or data definition language (DDL). Depending on the authorization method,
          * use one of the following combinations of request parameters: </p> <ul> <li>
-         * <p>Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the
-         * database name, and the cluster identifier that matches the cluster in the
-         * secret. </p> </li> <li> <p>Temporary credentials - specify the cluster
-         * identifier, the database name, and the database user name. Permission to call
-         * the <code>redshift:GetClusterCredentials</code> operation is required to use
-         * this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Secrets Manager - when connecting to a cluster, specify the Amazon Resource
+         * Name (ARN) of the secret, the database name, and the cluster identifier that
+         * matches the cluster in the secret. When connecting to a serverless endpoint,
+         * specify the Amazon Resource Name (ARN) of the secret and the database name. </p>
+         * </li> <li> <p>Temporary credentials - when connecting to a cluster, specify the
+         * cluster identifier, the database name, and the database user name. Also,
+         * permission to call the <code>redshift:GetClusterCredentials</code> operation is
+         * required. When connecting to a serverless endpoint, specify the database name.
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/BatchExecuteStatement">AWS
          * API Reference</a></p>
          */
@@ -161,12 +164,15 @@ namespace Model
          * <p>Runs one or more SQL statements, which can be data manipulation language
          * (DML) or data definition language (DDL). Depending on the authorization method,
          * use one of the following combinations of request parameters: </p> <ul> <li>
-         * <p>Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the
-         * database name, and the cluster identifier that matches the cluster in the
-         * secret. </p> </li> <li> <p>Temporary credentials - specify the cluster
-         * identifier, the database name, and the database user name. Permission to call
-         * the <code>redshift:GetClusterCredentials</code> operation is required to use
-         * this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Secrets Manager - when connecting to a cluster, specify the Amazon Resource
+         * Name (ARN) of the secret, the database name, and the cluster identifier that
+         * matches the cluster in the secret. When connecting to a serverless endpoint,
+         * specify the Amazon Resource Name (ARN) of the secret and the database name. </p>
+         * </li> <li> <p>Temporary credentials - when connecting to a cluster, specify the
+         * cluster identifier, the database name, and the database user name. Also,
+         * permission to call the <code>redshift:GetClusterCredentials</code> operation is
+         * required. When connecting to a serverless endpoint, specify the database name.
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/BatchExecuteStatement">AWS
          * API Reference</a></p>
          *
@@ -178,12 +184,15 @@ namespace Model
          * <p>Runs one or more SQL statements, which can be data manipulation language
          * (DML) or data definition language (DDL). Depending on the authorization method,
          * use one of the following combinations of request parameters: </p> <ul> <li>
-         * <p>Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the
-         * database name, and the cluster identifier that matches the cluster in the
-         * secret. </p> </li> <li> <p>Temporary credentials - specify the cluster
-         * identifier, the database name, and the database user name. Permission to call
-         * the <code>redshift:GetClusterCredentials</code> operation is required to use
-         * this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Secrets Manager - when connecting to a cluster, specify the Amazon Resource
+         * Name (ARN) of the secret, the database name, and the cluster identifier that
+         * matches the cluster in the secret. When connecting to a serverless endpoint,
+         * specify the Amazon Resource Name (ARN) of the secret and the database name. </p>
+         * </li> <li> <p>Temporary credentials - when connecting to a cluster, specify the
+         * cluster identifier, the database name, and the database user name. Also,
+         * permission to call the <code>redshift:GetClusterCredentials</code> operation is
+         * required. When connecting to a serverless endpoint, specify the database name.
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/BatchExecuteStatement">AWS
          * API Reference</a></p>
          *
@@ -258,12 +267,15 @@ namespace Model
          * cluster. The information includes its columns. A token is returned to page
          * through the column list. Depending on the authorization method, use one of the
          * following combinations of request parameters: </p> <ul> <li> <p>Secrets Manager
-         * - specify the Amazon Resource Name (ARN) of the secret, the database name, and
-         * the cluster identifier that matches the cluster in the secret. </p> </li> <li>
-         * <p>Temporary credentials - specify the cluster identifier, the database name,
-         * and the database user name. Permission to call the
-         * <code>redshift:GetClusterCredentials</code> operation is required to use this
-         * method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the
+         * secret, the database name, and the cluster identifier that matches the cluster
+         * in the secret. When connecting to a serverless endpoint, specify the Amazon
+         * Resource Name (ARN) of the secret and the database name. </p> </li> <li>
+         * <p>Temporary credentials - when connecting to a cluster, specify the cluster
+         * identifier, the database name, and the database user name. Also, permission to
+         * call the <code>redshift:GetClusterCredentials</code> operation is required. When
+         * connecting to a serverless endpoint, specify the database name. </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/DescribeTable">AWS
          * API Reference</a></p>
          */
@@ -274,12 +286,15 @@ namespace Model
          * cluster. The information includes its columns. A token is returned to page
          * through the column list. Depending on the authorization method, use one of the
          * following combinations of request parameters: </p> <ul> <li> <p>Secrets Manager
-         * - specify the Amazon Resource Name (ARN) of the secret, the database name, and
-         * the cluster identifier that matches the cluster in the secret. </p> </li> <li>
-         * <p>Temporary credentials - specify the cluster identifier, the database name,
-         * and the database user name. Permission to call the
-         * <code>redshift:GetClusterCredentials</code> operation is required to use this
-         * method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the
+         * secret, the database name, and the cluster identifier that matches the cluster
+         * in the secret. When connecting to a serverless endpoint, specify the Amazon
+         * Resource Name (ARN) of the secret and the database name. </p> </li> <li>
+         * <p>Temporary credentials - when connecting to a cluster, specify the cluster
+         * identifier, the database name, and the database user name. Also, permission to
+         * call the <code>redshift:GetClusterCredentials</code> operation is required. When
+         * connecting to a serverless endpoint, specify the database name. </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/DescribeTable">AWS
          * API Reference</a></p>
          *
@@ -292,12 +307,15 @@ namespace Model
          * cluster. The information includes its columns. A token is returned to page
          * through the column list. Depending on the authorization method, use one of the
          * following combinations of request parameters: </p> <ul> <li> <p>Secrets Manager
-         * - specify the Amazon Resource Name (ARN) of the secret, the database name, and
-         * the cluster identifier that matches the cluster in the secret. </p> </li> <li>
-         * <p>Temporary credentials - specify the cluster identifier, the database name,
-         * and the database user name. Permission to call the
-         * <code>redshift:GetClusterCredentials</code> operation is required to use this
-         * method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the
+         * secret, the database name, and the cluster identifier that matches the cluster
+         * in the secret. When connecting to a serverless endpoint, specify the Amazon
+         * Resource Name (ARN) of the secret and the database name. </p> </li> <li>
+         * <p>Temporary credentials - when connecting to a cluster, specify the cluster
+         * identifier, the database name, and the database user name. Also, permission to
+         * call the <code>redshift:GetClusterCredentials</code> operation is required. When
+         * connecting to a serverless endpoint, specify the database name. </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/DescribeTable">AWS
          * API Reference</a></p>
          *
@@ -309,12 +327,16 @@ namespace Model
          * <p>Runs an SQL statement, which can be data manipulation language (DML) or data
          * definition language (DDL). This statement must be a single SQL statement.
          * Depending on the authorization method, use one of the following combinations of
-         * request parameters: </p> <ul> <li> <p>Secrets Manager - specify the Amazon
-         * Resource Name (ARN) of the secret, the database name, and the cluster identifier
-         * that matches the cluster in the secret. </p> </li> <li> <p>Temporary credentials
-         * - specify the cluster identifier, the database name, and the database user name.
-         * Permission to call the <code>redshift:GetClusterCredentials</code> operation is
-         * required to use this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * request parameters: </p> <ul> <li> <p>Secrets Manager - when connecting to a
+         * cluster, specify the Amazon Resource Name (ARN) of the secret, the database
+         * name, and the cluster identifier that matches the cluster in the secret. When
+         * connecting to a serverless endpoint, specify the Amazon Resource Name (ARN) of
+         * the secret and the database name. </p> </li> <li> <p>Temporary credentials -
+         * when connecting to a cluster, specify the cluster identifier, the database name,
+         * and the database user name. Also, permission to call the
+         * <code>redshift:GetClusterCredentials</code> operation is required. When
+         * connecting to a serverless endpoint, specify the database name. </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ExecuteStatement">AWS
          * API Reference</a></p>
          */
@@ -324,12 +346,16 @@ namespace Model
          * <p>Runs an SQL statement, which can be data manipulation language (DML) or data
          * definition language (DDL). This statement must be a single SQL statement.
          * Depending on the authorization method, use one of the following combinations of
-         * request parameters: </p> <ul> <li> <p>Secrets Manager - specify the Amazon
-         * Resource Name (ARN) of the secret, the database name, and the cluster identifier
-         * that matches the cluster in the secret. </p> </li> <li> <p>Temporary credentials
-         * - specify the cluster identifier, the database name, and the database user name.
-         * Permission to call the <code>redshift:GetClusterCredentials</code> operation is
-         * required to use this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * request parameters: </p> <ul> <li> <p>Secrets Manager - when connecting to a
+         * cluster, specify the Amazon Resource Name (ARN) of the secret, the database
+         * name, and the cluster identifier that matches the cluster in the secret. When
+         * connecting to a serverless endpoint, specify the Amazon Resource Name (ARN) of
+         * the secret and the database name. </p> </li> <li> <p>Temporary credentials -
+         * when connecting to a cluster, specify the cluster identifier, the database name,
+         * and the database user name. Also, permission to call the
+         * <code>redshift:GetClusterCredentials</code> operation is required. When
+         * connecting to a serverless endpoint, specify the database name. </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ExecuteStatement">AWS
          * API Reference</a></p>
          *
@@ -341,12 +367,16 @@ namespace Model
          * <p>Runs an SQL statement, which can be data manipulation language (DML) or data
          * definition language (DDL). This statement must be a single SQL statement.
          * Depending on the authorization method, use one of the following combinations of
-         * request parameters: </p> <ul> <li> <p>Secrets Manager - specify the Amazon
-         * Resource Name (ARN) of the secret, the database name, and the cluster identifier
-         * that matches the cluster in the secret. </p> </li> <li> <p>Temporary credentials
-         * - specify the cluster identifier, the database name, and the database user name.
-         * Permission to call the <code>redshift:GetClusterCredentials</code> operation is
-         * required to use this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * request parameters: </p> <ul> <li> <p>Secrets Manager - when connecting to a
+         * cluster, specify the Amazon Resource Name (ARN) of the secret, the database
+         * name, and the cluster identifier that matches the cluster in the secret. When
+         * connecting to a serverless endpoint, specify the Amazon Resource Name (ARN) of
+         * the secret and the database name. </p> </li> <li> <p>Temporary credentials -
+         * when connecting to a cluster, specify the cluster identifier, the database name,
+         * and the database user name. Also, permission to call the
+         * <code>redshift:GetClusterCredentials</code> operation is required. When
+         * connecting to a serverless endpoint, specify the database name. </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ExecuteStatement">AWS
          * API Reference</a></p>
          *
@@ -385,13 +415,16 @@ namespace Model
         /**
          * <p>List the databases in a cluster. A token is returned to page through the
          * database list. Depending on the authorization method, use one of the following
-         * combinations of request parameters: </p> <ul> <li> <p>Secrets Manager - specify
-         * the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
-         * identifier that matches the cluster in the secret. </p> </li> <li> <p>Temporary
-         * credentials - specify the cluster identifier, the database name, and the
-         * database user name. Permission to call the
-         * <code>redshift:GetClusterCredentials</code> operation is required to use this
-         * method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * combinations of request parameters: </p> <ul> <li> <p>Secrets Manager - when
+         * connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret,
+         * the database name, and the cluster identifier that matches the cluster in the
+         * secret. When connecting to a serverless endpoint, specify the Amazon Resource
+         * Name (ARN) of the secret and the database name. </p> </li> <li> <p>Temporary
+         * credentials - when connecting to a cluster, specify the cluster identifier, the
+         * database name, and the database user name. Also, permission to call the
+         * <code>redshift:GetClusterCredentials</code> operation is required. When
+         * connecting to a serverless endpoint, specify the database name. </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListDatabases">AWS
          * API Reference</a></p>
          */
@@ -400,13 +433,16 @@ namespace Model
         /**
          * <p>List the databases in a cluster. A token is returned to page through the
          * database list. Depending on the authorization method, use one of the following
-         * combinations of request parameters: </p> <ul> <li> <p>Secrets Manager - specify
-         * the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
-         * identifier that matches the cluster in the secret. </p> </li> <li> <p>Temporary
-         * credentials - specify the cluster identifier, the database name, and the
-         * database user name. Permission to call the
-         * <code>redshift:GetClusterCredentials</code> operation is required to use this
-         * method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * combinations of request parameters: </p> <ul> <li> <p>Secrets Manager - when
+         * connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret,
+         * the database name, and the cluster identifier that matches the cluster in the
+         * secret. When connecting to a serverless endpoint, specify the Amazon Resource
+         * Name (ARN) of the secret and the database name. </p> </li> <li> <p>Temporary
+         * credentials - when connecting to a cluster, specify the cluster identifier, the
+         * database name, and the database user name. Also, permission to call the
+         * <code>redshift:GetClusterCredentials</code> operation is required. When
+         * connecting to a serverless endpoint, specify the database name. </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListDatabases">AWS
          * API Reference</a></p>
          *
@@ -417,13 +453,16 @@ namespace Model
         /**
          * <p>List the databases in a cluster. A token is returned to page through the
          * database list. Depending on the authorization method, use one of the following
-         * combinations of request parameters: </p> <ul> <li> <p>Secrets Manager - specify
-         * the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
-         * identifier that matches the cluster in the secret. </p> </li> <li> <p>Temporary
-         * credentials - specify the cluster identifier, the database name, and the
-         * database user name. Permission to call the
-         * <code>redshift:GetClusterCredentials</code> operation is required to use this
-         * method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * combinations of request parameters: </p> <ul> <li> <p>Secrets Manager - when
+         * connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret,
+         * the database name, and the cluster identifier that matches the cluster in the
+         * secret. When connecting to a serverless endpoint, specify the Amazon Resource
+         * Name (ARN) of the secret and the database name. </p> </li> <li> <p>Temporary
+         * credentials - when connecting to a cluster, specify the cluster identifier, the
+         * database name, and the database user name. Also, permission to call the
+         * <code>redshift:GetClusterCredentials</code> operation is required. When
+         * connecting to a serverless endpoint, specify the database name. </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListDatabases">AWS
          * API Reference</a></p>
          *
@@ -434,13 +473,16 @@ namespace Model
         /**
          * <p>Lists the schemas in a database. A token is returned to page through the
          * schema list. Depending on the authorization method, use one of the following
-         * combinations of request parameters: </p> <ul> <li> <p>Secrets Manager - specify
-         * the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
-         * identifier that matches the cluster in the secret. </p> </li> <li> <p>Temporary
-         * credentials - specify the cluster identifier, the database name, and the
-         * database user name. Permission to call the
-         * <code>redshift:GetClusterCredentials</code> operation is required to use this
-         * method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * combinations of request parameters: </p> <ul> <li> <p>Secrets Manager - when
+         * connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret,
+         * the database name, and the cluster identifier that matches the cluster in the
+         * secret. When connecting to a serverless endpoint, specify the Amazon Resource
+         * Name (ARN) of the secret and the database name. </p> </li> <li> <p>Temporary
+         * credentials - when connecting to a cluster, specify the cluster identifier, the
+         * database name, and the database user name. Also, permission to call the
+         * <code>redshift:GetClusterCredentials</code> operation is required. When
+         * connecting to a serverless endpoint, specify the database name. </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListSchemas">AWS
          * API Reference</a></p>
          */
@@ -449,13 +491,16 @@ namespace Model
         /**
          * <p>Lists the schemas in a database. A token is returned to page through the
          * schema list. Depending on the authorization method, use one of the following
-         * combinations of request parameters: </p> <ul> <li> <p>Secrets Manager - specify
-         * the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
-         * identifier that matches the cluster in the secret. </p> </li> <li> <p>Temporary
-         * credentials - specify the cluster identifier, the database name, and the
-         * database user name. Permission to call the
-         * <code>redshift:GetClusterCredentials</code> operation is required to use this
-         * method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * combinations of request parameters: </p> <ul> <li> <p>Secrets Manager - when
+         * connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret,
+         * the database name, and the cluster identifier that matches the cluster in the
+         * secret. When connecting to a serverless endpoint, specify the Amazon Resource
+         * Name (ARN) of the secret and the database name. </p> </li> <li> <p>Temporary
+         * credentials - when connecting to a cluster, specify the cluster identifier, the
+         * database name, and the database user name. Also, permission to call the
+         * <code>redshift:GetClusterCredentials</code> operation is required. When
+         * connecting to a serverless endpoint, specify the database name. </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListSchemas">AWS
          * API Reference</a></p>
          *
@@ -466,13 +511,16 @@ namespace Model
         /**
          * <p>Lists the schemas in a database. A token is returned to page through the
          * schema list. Depending on the authorization method, use one of the following
-         * combinations of request parameters: </p> <ul> <li> <p>Secrets Manager - specify
-         * the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
-         * identifier that matches the cluster in the secret. </p> </li> <li> <p>Temporary
-         * credentials - specify the cluster identifier, the database name, and the
-         * database user name. Permission to call the
-         * <code>redshift:GetClusterCredentials</code> operation is required to use this
-         * method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * combinations of request parameters: </p> <ul> <li> <p>Secrets Manager - when
+         * connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret,
+         * the database name, and the cluster identifier that matches the cluster in the
+         * secret. When connecting to a serverless endpoint, specify the Amazon Resource
+         * Name (ARN) of the secret and the database name. </p> </li> <li> <p>Temporary
+         * credentials - when connecting to a cluster, specify the cluster identifier, the
+         * database name, and the database user name. Also, permission to call the
+         * <code>redshift:GetClusterCredentials</code> operation is required. When
+         * connecting to a serverless endpoint, specify the database name. </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListSchemas">AWS
          * API Reference</a></p>
          *
@@ -516,12 +564,16 @@ namespace Model
          * <code>TablePattern</code> are specified, then all tables in the database are
          * returned. A token is returned to page through the table list. Depending on the
          * authorization method, use one of the following combinations of request
-         * parameters: </p> <ul> <li> <p>Secrets Manager - specify the Amazon Resource Name
-         * (ARN) of the secret, the database name, and the cluster identifier that matches
-         * the cluster in the secret. </p> </li> <li> <p>Temporary credentials - specify
-         * the cluster identifier, the database name, and the database user name.
-         * Permission to call the <code>redshift:GetClusterCredentials</code> operation is
-         * required to use this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * parameters: </p> <ul> <li> <p>Secrets Manager - when connecting to a cluster,
+         * specify the Amazon Resource Name (ARN) of the secret, the database name, and the
+         * cluster identifier that matches the cluster in the secret. When connecting to a
+         * serverless endpoint, specify the Amazon Resource Name (ARN) of the secret and
+         * the database name. </p> </li> <li> <p>Temporary credentials - when connecting to
+         * a cluster, specify the cluster identifier, the database name, and the database
+         * user name. Also, permission to call the
+         * <code>redshift:GetClusterCredentials</code> operation is required. When
+         * connecting to a serverless endpoint, specify the database name. </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListTables">AWS
          * API Reference</a></p>
          */
@@ -532,12 +584,16 @@ namespace Model
          * <code>TablePattern</code> are specified, then all tables in the database are
          * returned. A token is returned to page through the table list. Depending on the
          * authorization method, use one of the following combinations of request
-         * parameters: </p> <ul> <li> <p>Secrets Manager - specify the Amazon Resource Name
-         * (ARN) of the secret, the database name, and the cluster identifier that matches
-         * the cluster in the secret. </p> </li> <li> <p>Temporary credentials - specify
-         * the cluster identifier, the database name, and the database user name.
-         * Permission to call the <code>redshift:GetClusterCredentials</code> operation is
-         * required to use this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * parameters: </p> <ul> <li> <p>Secrets Manager - when connecting to a cluster,
+         * specify the Amazon Resource Name (ARN) of the secret, the database name, and the
+         * cluster identifier that matches the cluster in the secret. When connecting to a
+         * serverless endpoint, specify the Amazon Resource Name (ARN) of the secret and
+         * the database name. </p> </li> <li> <p>Temporary credentials - when connecting to
+         * a cluster, specify the cluster identifier, the database name, and the database
+         * user name. Also, permission to call the
+         * <code>redshift:GetClusterCredentials</code> operation is required. When
+         * connecting to a serverless endpoint, specify the database name. </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListTables">AWS
          * API Reference</a></p>
          *
@@ -550,12 +606,16 @@ namespace Model
          * <code>TablePattern</code> are specified, then all tables in the database are
          * returned. A token is returned to page through the table list. Depending on the
          * authorization method, use one of the following combinations of request
-         * parameters: </p> <ul> <li> <p>Secrets Manager - specify the Amazon Resource Name
-         * (ARN) of the secret, the database name, and the cluster identifier that matches
-         * the cluster in the secret. </p> </li> <li> <p>Temporary credentials - specify
-         * the cluster identifier, the database name, and the database user name.
-         * Permission to call the <code>redshift:GetClusterCredentials</code> operation is
-         * required to use this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * parameters: </p> <ul> <li> <p>Secrets Manager - when connecting to a cluster,
+         * specify the Amazon Resource Name (ARN) of the secret, the database name, and the
+         * cluster identifier that matches the cluster in the secret. When connecting to a
+         * serverless endpoint, specify the Amazon Resource Name (ARN) of the secret and
+         * the database name. </p> </li> <li> <p>Temporary credentials - when connecting to
+         * a cluster, specify the cluster identifier, the database name, and the database
+         * user name. Also, permission to call the
+         * <code>redshift:GetClusterCredentials</code> operation is required. When
+         * connecting to a serverless endpoint, specify the database name. </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListTables">AWS
          * API Reference</a></p>
          *
