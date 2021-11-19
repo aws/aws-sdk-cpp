@@ -13,6 +13,7 @@
 #include <aws/cloudformation/model/PermissionModels.h>
 #include <aws/cloudformation/model/AutoDeployment.h>
 #include <aws/cloudformation/model/CallAs.h>
+#include <aws/cloudformation/model/ManagedExecution.h>
 #include <aws/cloudformation/model/Parameter.h>
 #include <aws/cloudformation/model/Capability.h>
 #include <aws/cloudformation/model/Tag.h>
@@ -2009,6 +2010,43 @@ namespace Model
      */
     inline UpdateStackSetRequest& WithCallAs(CallAs&& value) { SetCallAs(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Describes whether StackSets performs non-conflicting operations concurrently
+     * and queues conflicting operations.</p>
+     */
+    inline const ManagedExecution& GetManagedExecution() const{ return m_managedExecution; }
+
+    /**
+     * <p>Describes whether StackSets performs non-conflicting operations concurrently
+     * and queues conflicting operations.</p>
+     */
+    inline bool ManagedExecutionHasBeenSet() const { return m_managedExecutionHasBeenSet; }
+
+    /**
+     * <p>Describes whether StackSets performs non-conflicting operations concurrently
+     * and queues conflicting operations.</p>
+     */
+    inline void SetManagedExecution(const ManagedExecution& value) { m_managedExecutionHasBeenSet = true; m_managedExecution = value; }
+
+    /**
+     * <p>Describes whether StackSets performs non-conflicting operations concurrently
+     * and queues conflicting operations.</p>
+     */
+    inline void SetManagedExecution(ManagedExecution&& value) { m_managedExecutionHasBeenSet = true; m_managedExecution = std::move(value); }
+
+    /**
+     * <p>Describes whether StackSets performs non-conflicting operations concurrently
+     * and queues conflicting operations.</p>
+     */
+    inline UpdateStackSetRequest& WithManagedExecution(const ManagedExecution& value) { SetManagedExecution(value); return *this;}
+
+    /**
+     * <p>Describes whether StackSets performs non-conflicting operations concurrently
+     * and queues conflicting operations.</p>
+     */
+    inline UpdateStackSetRequest& WithManagedExecution(ManagedExecution&& value) { SetManagedExecution(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_stackSetName;
@@ -2064,6 +2102,9 @@ namespace Model
 
     CallAs m_callAs;
     bool m_callAsHasBeenSet;
+
+    ManagedExecution m_managedExecution;
+    bool m_managedExecutionHasBeenSet;
   };
 
 } // namespace Model

@@ -12,6 +12,7 @@
 #include <aws/cloudformation/model/PermissionModels.h>
 #include <aws/cloudformation/model/StackDriftStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/cloudformation/model/ManagedExecution.h>
 #include <utility>
 
 namespace Aws
@@ -480,6 +481,43 @@ namespace Model
      */
     inline StackSetSummary& WithLastDriftCheckTimestamp(Aws::Utils::DateTime&& value) { SetLastDriftCheckTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Describes whether StackSets performs non-conflicting operations concurrently
+     * and queues conflicting operations.</p>
+     */
+    inline const ManagedExecution& GetManagedExecution() const{ return m_managedExecution; }
+
+    /**
+     * <p>Describes whether StackSets performs non-conflicting operations concurrently
+     * and queues conflicting operations.</p>
+     */
+    inline bool ManagedExecutionHasBeenSet() const { return m_managedExecutionHasBeenSet; }
+
+    /**
+     * <p>Describes whether StackSets performs non-conflicting operations concurrently
+     * and queues conflicting operations.</p>
+     */
+    inline void SetManagedExecution(const ManagedExecution& value) { m_managedExecutionHasBeenSet = true; m_managedExecution = value; }
+
+    /**
+     * <p>Describes whether StackSets performs non-conflicting operations concurrently
+     * and queues conflicting operations.</p>
+     */
+    inline void SetManagedExecution(ManagedExecution&& value) { m_managedExecutionHasBeenSet = true; m_managedExecution = std::move(value); }
+
+    /**
+     * <p>Describes whether StackSets performs non-conflicting operations concurrently
+     * and queues conflicting operations.</p>
+     */
+    inline StackSetSummary& WithManagedExecution(const ManagedExecution& value) { SetManagedExecution(value); return *this;}
+
+    /**
+     * <p>Describes whether StackSets performs non-conflicting operations concurrently
+     * and queues conflicting operations.</p>
+     */
+    inline StackSetSummary& WithManagedExecution(ManagedExecution&& value) { SetManagedExecution(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_stackSetName;
@@ -505,6 +543,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastDriftCheckTimestamp;
     bool m_lastDriftCheckTimestampHasBeenSet;
+
+    ManagedExecution m_managedExecution;
+    bool m_managedExecutionHasBeenSet;
   };
 
 } // namespace Model

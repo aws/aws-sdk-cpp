@@ -117,9 +117,9 @@ namespace Model
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeDataShares</a> request exceed
-     * the value specified in <code>MaxRecords</code>, AWS returns a value in the
-     * <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
+     * the value specified in <code>MaxRecords</code>, Amazon Web Services returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the
+     * next set of response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
@@ -127,9 +127,9 @@ namespace Model
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeDataShares</a> request exceed
-     * the value specified in <code>MaxRecords</code>, AWS returns a value in the
-     * <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
+     * the value specified in <code>MaxRecords</code>, Amazon Web Services returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the
+     * next set of response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
@@ -137,9 +137,9 @@ namespace Model
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeDataShares</a> request exceed
-     * the value specified in <code>MaxRecords</code>, AWS returns a value in the
-     * <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
+     * the value specified in <code>MaxRecords</code>, Amazon Web Services returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the
+     * next set of response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
@@ -147,9 +147,9 @@ namespace Model
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeDataShares</a> request exceed
-     * the value specified in <code>MaxRecords</code>, AWS returns a value in the
-     * <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
+     * the value specified in <code>MaxRecords</code>, Amazon Web Services returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the
+     * next set of response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
@@ -157,9 +157,9 @@ namespace Model
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeDataShares</a> request exceed
-     * the value specified in <code>MaxRecords</code>, AWS returns a value in the
-     * <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
+     * the value specified in <code>MaxRecords</code>, Amazon Web Services returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the
+     * next set of response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
@@ -167,9 +167,9 @@ namespace Model
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeDataShares</a> request exceed
-     * the value specified in <code>MaxRecords</code>, AWS returns a value in the
-     * <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
+     * the value specified in <code>MaxRecords</code>, Amazon Web Services returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the
+     * next set of response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
     inline DescribeDataSharesRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
@@ -177,9 +177,9 @@ namespace Model
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeDataShares</a> request exceed
-     * the value specified in <code>MaxRecords</code>, AWS returns a value in the
-     * <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
+     * the value specified in <code>MaxRecords</code>, Amazon Web Services returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the
+     * next set of response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
     inline DescribeDataSharesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
@@ -187,9 +187,9 @@ namespace Model
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeDataShares</a> request exceed
-     * the value specified in <code>MaxRecords</code>, AWS returns a value in the
-     * <code>Marker</code> field of the response. You can retrieve the next set of
-     * response records by providing the returned marker value in the
+     * the value specified in <code>MaxRecords</code>, Amazon Web Services returns a
+     * value in the <code>Marker</code> field of the response. You can retrieve the
+     * next set of response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
     inline DescribeDataSharesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}

@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>An object containing the details of a scheduling policy returned in a
-   * <code>ListSchedulingPolicy</code> action.</p><p><h3>See Also:</h3>   <a
+   * <p>An object that contains the details of a scheduling policy that's returned in
+   * a <code>ListSchedulingPolicy</code> action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SchedulingPolicyListingDetail">AWS
    * API Reference</a></p>
    */

@@ -21,14 +21,18 @@ namespace Model
 DialogAction::DialogAction() : 
     m_type(DialogActionType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_slotToElicitHasBeenSet(false)
+    m_slotToElicitHasBeenSet(false),
+    m_slotElicitationStyle(StyleType::NOT_SET),
+    m_slotElicitationStyleHasBeenSet(false)
 {
 }
 
 DialogAction::DialogAction(JsonView jsonValue) : 
     m_type(DialogActionType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_slotToElicitHasBeenSet(false)
+    m_slotToElicitHasBeenSet(false),
+    m_slotElicitationStyle(StyleType::NOT_SET),
+    m_slotElicitationStyleHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +53,13 @@ DialogAction& DialogAction::operator =(JsonView jsonValue)
     m_slotToElicitHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("slotElicitationStyle"))
+  {
+    m_slotElicitationStyle = StyleTypeMapper::GetStyleTypeForName(jsonValue.GetString("slotElicitationStyle"));
+
+    m_slotElicitationStyleHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -65,6 +76,11 @@ JsonValue DialogAction::Jsonize() const
   {
    payload.WithString("slotToElicit", m_slotToElicit);
 
+  }
+
+  if(m_slotElicitationStyleHasBeenSet)
+  {
+   payload.WithString("slotElicitationStyle", StyleTypeMapper::GetNameForStyleType(m_slotElicitationStyle));
   }
 
   return payload;

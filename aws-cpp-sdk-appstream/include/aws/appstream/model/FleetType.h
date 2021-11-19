@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     ALWAYS_ON,
-    ON_DEMAND
+    ON_DEMAND,
+    ELASTIC
   };
 
 namespace FleetTypeMapper

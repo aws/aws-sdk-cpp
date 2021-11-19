@@ -19,7 +19,8 @@ namespace Model
     VPC_CONFIGURATION,
     VPC_CONFIGURATION_SECURITY_GROUP_IDS,
     DOMAIN_JOIN_INFO,
-    IAM_ROLE_ARN
+    IAM_ROLE_ARN,
+    USB_DEVICE_FILTER_STRINGS
   };
 
 namespace FleetAttributeMapper

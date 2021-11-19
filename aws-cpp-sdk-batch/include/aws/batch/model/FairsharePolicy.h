@@ -41,44 +41,36 @@ namespace Model
     /**
      * <p>The time period to use to calculate a fair share percentage for each fair
      * share identifier in use, in seconds. A value of zero (0) indicates that only
-     * current usage should be measured; if there are four evenly weighted fair share
-     * identifiers then each can only use up to 25% of the available CPU resources,
-     * even if some of the fair share identifiers have no currently running jobs. The
-     * decay allows for more recently run jobs to have more weight than jobs that ran
-     * earlier. The maximum supported value is 604800 (1 week).</p>
+     * current usage should be measured. The decay allows for more recently run jobs to
+     * have more weight than jobs that ran earlier. The maximum supported value is
+     * 604800 (1 week).</p>
      */
     inline int GetShareDecaySeconds() const{ return m_shareDecaySeconds; }
 
     /**
      * <p>The time period to use to calculate a fair share percentage for each fair
      * share identifier in use, in seconds. A value of zero (0) indicates that only
-     * current usage should be measured; if there are four evenly weighted fair share
-     * identifiers then each can only use up to 25% of the available CPU resources,
-     * even if some of the fair share identifiers have no currently running jobs. The
-     * decay allows for more recently run jobs to have more weight than jobs that ran
-     * earlier. The maximum supported value is 604800 (1 week).</p>
+     * current usage should be measured. The decay allows for more recently run jobs to
+     * have more weight than jobs that ran earlier. The maximum supported value is
+     * 604800 (1 week).</p>
      */
     inline bool ShareDecaySecondsHasBeenSet() const { return m_shareDecaySecondsHasBeenSet; }
 
     /**
      * <p>The time period to use to calculate a fair share percentage for each fair
      * share identifier in use, in seconds. A value of zero (0) indicates that only
-     * current usage should be measured; if there are four evenly weighted fair share
-     * identifiers then each can only use up to 25% of the available CPU resources,
-     * even if some of the fair share identifiers have no currently running jobs. The
-     * decay allows for more recently run jobs to have more weight than jobs that ran
-     * earlier. The maximum supported value is 604800 (1 week).</p>
+     * current usage should be measured. The decay allows for more recently run jobs to
+     * have more weight than jobs that ran earlier. The maximum supported value is
+     * 604800 (1 week).</p>
      */
     inline void SetShareDecaySeconds(int value) { m_shareDecaySecondsHasBeenSet = true; m_shareDecaySeconds = value; }
 
     /**
      * <p>The time period to use to calculate a fair share percentage for each fair
      * share identifier in use, in seconds. A value of zero (0) indicates that only
-     * current usage should be measured; if there are four evenly weighted fair share
-     * identifiers then each can only use up to 25% of the available CPU resources,
-     * even if some of the fair share identifiers have no currently running jobs. The
-     * decay allows for more recently run jobs to have more weight than jobs that ran
-     * earlier. The maximum supported value is 604800 (1 week).</p>
+     * current usage should be measured. The decay allows for more recently run jobs to
+     * have more weight than jobs that ran earlier. The maximum supported value is
+     * 604800 (1 week).</p>
      */
     inline FairsharePolicy& WithShareDecaySeconds(int value) { SetShareDecaySeconds(value); return *this;}
 
@@ -153,58 +145,58 @@ namespace Model
 
 
     /**
-     * <p>Array of <code>SharedIdentifier</code> objects that contain the weights for
-     * the fair share identifiers for the fair share policy. Fair share identifiers
-     * that are not included have a default weight of <code>1.0</code>.</p>
+     * <p>An array of <code>SharedIdentifier</code> objects that contain the weights
+     * for the fair share identifiers for the fair share policy. Fair share identifiers
+     * that aren't included have a default weight of <code>1.0</code>.</p>
      */
     inline const Aws::Vector<ShareAttributes>& GetShareDistribution() const{ return m_shareDistribution; }
 
     /**
-     * <p>Array of <code>SharedIdentifier</code> objects that contain the weights for
-     * the fair share identifiers for the fair share policy. Fair share identifiers
-     * that are not included have a default weight of <code>1.0</code>.</p>
+     * <p>An array of <code>SharedIdentifier</code> objects that contain the weights
+     * for the fair share identifiers for the fair share policy. Fair share identifiers
+     * that aren't included have a default weight of <code>1.0</code>.</p>
      */
     inline bool ShareDistributionHasBeenSet() const { return m_shareDistributionHasBeenSet; }
 
     /**
-     * <p>Array of <code>SharedIdentifier</code> objects that contain the weights for
-     * the fair share identifiers for the fair share policy. Fair share identifiers
-     * that are not included have a default weight of <code>1.0</code>.</p>
+     * <p>An array of <code>SharedIdentifier</code> objects that contain the weights
+     * for the fair share identifiers for the fair share policy. Fair share identifiers
+     * that aren't included have a default weight of <code>1.0</code>.</p>
      */
     inline void SetShareDistribution(const Aws::Vector<ShareAttributes>& value) { m_shareDistributionHasBeenSet = true; m_shareDistribution = value; }
 
     /**
-     * <p>Array of <code>SharedIdentifier</code> objects that contain the weights for
-     * the fair share identifiers for the fair share policy. Fair share identifiers
-     * that are not included have a default weight of <code>1.0</code>.</p>
+     * <p>An array of <code>SharedIdentifier</code> objects that contain the weights
+     * for the fair share identifiers for the fair share policy. Fair share identifiers
+     * that aren't included have a default weight of <code>1.0</code>.</p>
      */
     inline void SetShareDistribution(Aws::Vector<ShareAttributes>&& value) { m_shareDistributionHasBeenSet = true; m_shareDistribution = std::move(value); }
 
     /**
-     * <p>Array of <code>SharedIdentifier</code> objects that contain the weights for
-     * the fair share identifiers for the fair share policy. Fair share identifiers
-     * that are not included have a default weight of <code>1.0</code>.</p>
+     * <p>An array of <code>SharedIdentifier</code> objects that contain the weights
+     * for the fair share identifiers for the fair share policy. Fair share identifiers
+     * that aren't included have a default weight of <code>1.0</code>.</p>
      */
     inline FairsharePolicy& WithShareDistribution(const Aws::Vector<ShareAttributes>& value) { SetShareDistribution(value); return *this;}
 
     /**
-     * <p>Array of <code>SharedIdentifier</code> objects that contain the weights for
-     * the fair share identifiers for the fair share policy. Fair share identifiers
-     * that are not included have a default weight of <code>1.0</code>.</p>
+     * <p>An array of <code>SharedIdentifier</code> objects that contain the weights
+     * for the fair share identifiers for the fair share policy. Fair share identifiers
+     * that aren't included have a default weight of <code>1.0</code>.</p>
      */
     inline FairsharePolicy& WithShareDistribution(Aws::Vector<ShareAttributes>&& value) { SetShareDistribution(std::move(value)); return *this;}
 
     /**
-     * <p>Array of <code>SharedIdentifier</code> objects that contain the weights for
-     * the fair share identifiers for the fair share policy. Fair share identifiers
-     * that are not included have a default weight of <code>1.0</code>.</p>
+     * <p>An array of <code>SharedIdentifier</code> objects that contain the weights
+     * for the fair share identifiers for the fair share policy. Fair share identifiers
+     * that aren't included have a default weight of <code>1.0</code>.</p>
      */
     inline FairsharePolicy& AddShareDistribution(const ShareAttributes& value) { m_shareDistributionHasBeenSet = true; m_shareDistribution.push_back(value); return *this; }
 
     /**
-     * <p>Array of <code>SharedIdentifier</code> objects that contain the weights for
-     * the fair share identifiers for the fair share policy. Fair share identifiers
-     * that are not included have a default weight of <code>1.0</code>.</p>
+     * <p>An array of <code>SharedIdentifier</code> objects that contain the weights
+     * for the fair share identifiers for the fair share policy. Fair share identifiers
+     * that aren't included have a default weight of <code>1.0</code>.</p>
      */
     inline FairsharePolicy& AddShareDistribution(ShareAttributes&& value) { m_shareDistributionHasBeenSet = true; m_shareDistribution.push_back(std::move(value)); return *this; }
 

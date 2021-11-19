@@ -553,7 +553,7 @@ namespace Model
 
         /**
          * <p>Deletes the specified scheduling policy.</p> <p>You can't delete a scheduling
-         * policy that is used in any job queues.</p><p><h3>See Also:</h3>   <a
+         * policy that's used in any job queues.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteSchedulingPolicy">AWS
          * API Reference</a></p>
          */
@@ -561,7 +561,7 @@ namespace Model
 
         /**
          * <p>Deletes the specified scheduling policy.</p> <p>You can't delete a scheduling
-         * policy that is used in any job queues.</p><p><h3>See Also:</h3>   <a
+         * policy that's used in any job queues.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteSchedulingPolicy">AWS
          * API Reference</a></p>
          *
@@ -571,7 +571,7 @@ namespace Model
 
         /**
          * <p>Deletes the specified scheduling policy.</p> <p>You can't delete a scheduling
-         * policy that is used in any job queues.</p><p><h3>See Also:</h3>   <a
+         * policy that's used in any job queues.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteSchedulingPolicy">AWS
          * API Reference</a></p>
          *

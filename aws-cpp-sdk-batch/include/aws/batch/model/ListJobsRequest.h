@@ -417,12 +417,12 @@ namespace Model
      * Asterisk (*) is not supported when the ARN is used.</p> </dd>
      * <dt>BEFORE_CREATED_AT</dt> <dd> <p>The value for the filter is the time that's
      * before the job was created. This corresponds to the <code>createdAt</code>
-     * value. The value is a string representation of the number of seconds since
+     * value. The value is a string representation of the number of milliseconds since
      * 00:00:00 UTC (midnight) on January 1, 1970.</p> </dd> <dt>AFTER_CREATED_AT</dt>
      * <dd> <p>The value for the filter is the time that's after the job was created.
      * This corresponds to the <code>createdAt</code> value. The value is a string
-     * representation of the number of seconds since 00:00:00 UTC (midnight) on January
-     * 1, 1970.</p> </dd> </dl>
+     * representation of the number of milliseconds since 00:00:00 UTC (midnight) on
+     * January 1, 1970.</p> </dd> </dl>
      */
     inline const Aws::Vector<KeyValuesPair>& GetFilters() const{ return m_filters; }
 
@@ -454,12 +454,12 @@ namespace Model
      * Asterisk (*) is not supported when the ARN is used.</p> </dd>
      * <dt>BEFORE_CREATED_AT</dt> <dd> <p>The value for the filter is the time that's
      * before the job was created. This corresponds to the <code>createdAt</code>
-     * value. The value is a string representation of the number of seconds since
+     * value. The value is a string representation of the number of milliseconds since
      * 00:00:00 UTC (midnight) on January 1, 1970.</p> </dd> <dt>AFTER_CREATED_AT</dt>
      * <dd> <p>The value for the filter is the time that's after the job was created.
      * This corresponds to the <code>createdAt</code> value. The value is a string
-     * representation of the number of seconds since 00:00:00 UTC (midnight) on January
-     * 1, 1970.</p> </dd> </dl>
+     * representation of the number of milliseconds since 00:00:00 UTC (midnight) on
+     * January 1, 1970.</p> </dd> </dl>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -491,12 +491,12 @@ namespace Model
      * Asterisk (*) is not supported when the ARN is used.</p> </dd>
      * <dt>BEFORE_CREATED_AT</dt> <dd> <p>The value for the filter is the time that's
      * before the job was created. This corresponds to the <code>createdAt</code>
-     * value. The value is a string representation of the number of seconds since
+     * value. The value is a string representation of the number of milliseconds since
      * 00:00:00 UTC (midnight) on January 1, 1970.</p> </dd> <dt>AFTER_CREATED_AT</dt>
      * <dd> <p>The value for the filter is the time that's after the job was created.
      * This corresponds to the <code>createdAt</code> value. The value is a string
-     * representation of the number of seconds since 00:00:00 UTC (midnight) on January
-     * 1, 1970.</p> </dd> </dl>
+     * representation of the number of milliseconds since 00:00:00 UTC (midnight) on
+     * January 1, 1970.</p> </dd> </dl>
      */
     inline void SetFilters(const Aws::Vector<KeyValuesPair>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -528,12 +528,12 @@ namespace Model
      * Asterisk (*) is not supported when the ARN is used.</p> </dd>
      * <dt>BEFORE_CREATED_AT</dt> <dd> <p>The value for the filter is the time that's
      * before the job was created. This corresponds to the <code>createdAt</code>
-     * value. The value is a string representation of the number of seconds since
+     * value. The value is a string representation of the number of milliseconds since
      * 00:00:00 UTC (midnight) on January 1, 1970.</p> </dd> <dt>AFTER_CREATED_AT</dt>
      * <dd> <p>The value for the filter is the time that's after the job was created.
      * This corresponds to the <code>createdAt</code> value. The value is a string
-     * representation of the number of seconds since 00:00:00 UTC (midnight) on January
-     * 1, 1970.</p> </dd> </dl>
+     * representation of the number of milliseconds since 00:00:00 UTC (midnight) on
+     * January 1, 1970.</p> </dd> </dl>
      */
     inline void SetFilters(Aws::Vector<KeyValuesPair>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -565,12 +565,12 @@ namespace Model
      * Asterisk (*) is not supported when the ARN is used.</p> </dd>
      * <dt>BEFORE_CREATED_AT</dt> <dd> <p>The value for the filter is the time that's
      * before the job was created. This corresponds to the <code>createdAt</code>
-     * value. The value is a string representation of the number of seconds since
+     * value. The value is a string representation of the number of milliseconds since
      * 00:00:00 UTC (midnight) on January 1, 1970.</p> </dd> <dt>AFTER_CREATED_AT</dt>
      * <dd> <p>The value for the filter is the time that's after the job was created.
      * This corresponds to the <code>createdAt</code> value. The value is a string
-     * representation of the number of seconds since 00:00:00 UTC (midnight) on January
-     * 1, 1970.</p> </dd> </dl>
+     * representation of the number of milliseconds since 00:00:00 UTC (midnight) on
+     * January 1, 1970.</p> </dd> </dl>
      */
     inline ListJobsRequest& WithFilters(const Aws::Vector<KeyValuesPair>& value) { SetFilters(value); return *this;}
 
@@ -602,12 +602,12 @@ namespace Model
      * Asterisk (*) is not supported when the ARN is used.</p> </dd>
      * <dt>BEFORE_CREATED_AT</dt> <dd> <p>The value for the filter is the time that's
      * before the job was created. This corresponds to the <code>createdAt</code>
-     * value. The value is a string representation of the number of seconds since
+     * value. The value is a string representation of the number of milliseconds since
      * 00:00:00 UTC (midnight) on January 1, 1970.</p> </dd> <dt>AFTER_CREATED_AT</dt>
      * <dd> <p>The value for the filter is the time that's after the job was created.
      * This corresponds to the <code>createdAt</code> value. The value is a string
-     * representation of the number of seconds since 00:00:00 UTC (midnight) on January
-     * 1, 1970.</p> </dd> </dl>
+     * representation of the number of milliseconds since 00:00:00 UTC (midnight) on
+     * January 1, 1970.</p> </dd> </dl>
      */
     inline ListJobsRequest& WithFilters(Aws::Vector<KeyValuesPair>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -639,12 +639,12 @@ namespace Model
      * Asterisk (*) is not supported when the ARN is used.</p> </dd>
      * <dt>BEFORE_CREATED_AT</dt> <dd> <p>The value for the filter is the time that's
      * before the job was created. This corresponds to the <code>createdAt</code>
-     * value. The value is a string representation of the number of seconds since
+     * value. The value is a string representation of the number of milliseconds since
      * 00:00:00 UTC (midnight) on January 1, 1970.</p> </dd> <dt>AFTER_CREATED_AT</dt>
      * <dd> <p>The value for the filter is the time that's after the job was created.
      * This corresponds to the <code>createdAt</code> value. The value is a string
-     * representation of the number of seconds since 00:00:00 UTC (midnight) on January
-     * 1, 1970.</p> </dd> </dl>
+     * representation of the number of milliseconds since 00:00:00 UTC (midnight) on
+     * January 1, 1970.</p> </dd> </dl>
      */
     inline ListJobsRequest& AddFilters(const KeyValuesPair& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -676,12 +676,12 @@ namespace Model
      * Asterisk (*) is not supported when the ARN is used.</p> </dd>
      * <dt>BEFORE_CREATED_AT</dt> <dd> <p>The value for the filter is the time that's
      * before the job was created. This corresponds to the <code>createdAt</code>
-     * value. The value is a string representation of the number of seconds since
+     * value. The value is a string representation of the number of milliseconds since
      * 00:00:00 UTC (midnight) on January 1, 1970.</p> </dd> <dt>AFTER_CREATED_AT</dt>
      * <dd> <p>The value for the filter is the time that's after the job was created.
      * This corresponds to the <code>createdAt</code> value. The value is a string
-     * representation of the number of seconds since 00:00:00 UTC (midnight) on January
-     * 1, 1970.</p> </dd> </dl>
+     * representation of the number of milliseconds since 00:00:00 UTC (midnight) on
+     * January 1, 1970.</p> </dd> </dl>
      */
     inline ListJobsRequest& AddFilters(KeyValuesPair&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

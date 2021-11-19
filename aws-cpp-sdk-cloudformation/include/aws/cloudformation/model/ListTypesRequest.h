@@ -304,44 +304,62 @@ namespace Model
 
 
     /**
-     * <p>Filter criteria to use in determining which extensions to return.</p> <p>If
-     * you specify a filter, CloudFormation ignores any specified
-     * <code>Visibility</code> value when returning the list of types.</p>
+     * <p>Filter criteria to use in determining which extensions to return.</p>
+     * <p>Filters must be compatible with <code>Visibility</code> to return valid
+     * results. For example, specifying <code>AWS_TYPES</code> for
+     * <code>Category</code> and <code>PRIVATE</code> for <code>Visibility</code>
+     * returns an empty list of types, but specifying <code>PUBLIC</code> for
+     * <code>Visibility</code> returns the desired list.</p>
      */
     inline const TypeFilters& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>Filter criteria to use in determining which extensions to return.</p> <p>If
-     * you specify a filter, CloudFormation ignores any specified
-     * <code>Visibility</code> value when returning the list of types.</p>
+     * <p>Filter criteria to use in determining which extensions to return.</p>
+     * <p>Filters must be compatible with <code>Visibility</code> to return valid
+     * results. For example, specifying <code>AWS_TYPES</code> for
+     * <code>Category</code> and <code>PRIVATE</code> for <code>Visibility</code>
+     * returns an empty list of types, but specifying <code>PUBLIC</code> for
+     * <code>Visibility</code> returns the desired list.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>Filter criteria to use in determining which extensions to return.</p> <p>If
-     * you specify a filter, CloudFormation ignores any specified
-     * <code>Visibility</code> value when returning the list of types.</p>
+     * <p>Filter criteria to use in determining which extensions to return.</p>
+     * <p>Filters must be compatible with <code>Visibility</code> to return valid
+     * results. For example, specifying <code>AWS_TYPES</code> for
+     * <code>Category</code> and <code>PRIVATE</code> for <code>Visibility</code>
+     * returns an empty list of types, but specifying <code>PUBLIC</code> for
+     * <code>Visibility</code> returns the desired list.</p>
      */
     inline void SetFilters(const TypeFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>Filter criteria to use in determining which extensions to return.</p> <p>If
-     * you specify a filter, CloudFormation ignores any specified
-     * <code>Visibility</code> value when returning the list of types.</p>
+     * <p>Filter criteria to use in determining which extensions to return.</p>
+     * <p>Filters must be compatible with <code>Visibility</code> to return valid
+     * results. For example, specifying <code>AWS_TYPES</code> for
+     * <code>Category</code> and <code>PRIVATE</code> for <code>Visibility</code>
+     * returns an empty list of types, but specifying <code>PUBLIC</code> for
+     * <code>Visibility</code> returns the desired list.</p>
      */
     inline void SetFilters(TypeFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>Filter criteria to use in determining which extensions to return.</p> <p>If
-     * you specify a filter, CloudFormation ignores any specified
-     * <code>Visibility</code> value when returning the list of types.</p>
+     * <p>Filter criteria to use in determining which extensions to return.</p>
+     * <p>Filters must be compatible with <code>Visibility</code> to return valid
+     * results. For example, specifying <code>AWS_TYPES</code> for
+     * <code>Category</code> and <code>PRIVATE</code> for <code>Visibility</code>
+     * returns an empty list of types, but specifying <code>PUBLIC</code> for
+     * <code>Visibility</code> returns the desired list.</p>
      */
     inline ListTypesRequest& WithFilters(const TypeFilters& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>Filter criteria to use in determining which extensions to return.</p> <p>If
-     * you specify a filter, CloudFormation ignores any specified
-     * <code>Visibility</code> value when returning the list of types.</p>
+     * <p>Filter criteria to use in determining which extensions to return.</p>
+     * <p>Filters must be compatible with <code>Visibility</code> to return valid
+     * results. For example, specifying <code>AWS_TYPES</code> for
+     * <code>Category</code> and <code>PRIVATE</code> for <code>Visibility</code>
+     * returns an empty list of types, but specifying <code>PUBLIC</code> for
+     * <code>Visibility</code> returns the desired list.</p>
      */
     inline ListTypesRequest& WithFilters(TypeFilters&& value) { SetFilters(std::move(value)); return *this;}
 

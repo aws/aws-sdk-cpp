@@ -107,66 +107,66 @@ namespace Model
 
 
     /**
-     * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * hyphens, and underscores are allowed. This name is referenced in the
-     * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.</p>
+     * <p>The name of the volume. It can be up to 255 letters long. It can contain
+     * uppercase and lowercase letters, numbers, hyphens (-), and underscores (_). This
+     * name is referenced in the <code>sourceVolume</code> parameter of container
+     * definition <code>mountPoints</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * hyphens, and underscores are allowed. This name is referenced in the
-     * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.</p>
+     * <p>The name of the volume. It can be up to 255 letters long. It can contain
+     * uppercase and lowercase letters, numbers, hyphens (-), and underscores (_). This
+     * name is referenced in the <code>sourceVolume</code> parameter of container
+     * definition <code>mountPoints</code>.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * hyphens, and underscores are allowed. This name is referenced in the
-     * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.</p>
+     * <p>The name of the volume. It can be up to 255 letters long. It can contain
+     * uppercase and lowercase letters, numbers, hyphens (-), and underscores (_). This
+     * name is referenced in the <code>sourceVolume</code> parameter of container
+     * definition <code>mountPoints</code>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * hyphens, and underscores are allowed. This name is referenced in the
-     * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.</p>
+     * <p>The name of the volume. It can be up to 255 letters long. It can contain
+     * uppercase and lowercase letters, numbers, hyphens (-), and underscores (_). This
+     * name is referenced in the <code>sourceVolume</code> parameter of container
+     * definition <code>mountPoints</code>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * hyphens, and underscores are allowed. This name is referenced in the
-     * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.</p>
+     * <p>The name of the volume. It can be up to 255 letters long. It can contain
+     * uppercase and lowercase letters, numbers, hyphens (-), and underscores (_). This
+     * name is referenced in the <code>sourceVolume</code> parameter of container
+     * definition <code>mountPoints</code>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * hyphens, and underscores are allowed. This name is referenced in the
-     * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.</p>
+     * <p>The name of the volume. It can be up to 255 letters long. It can contain
+     * uppercase and lowercase letters, numbers, hyphens (-), and underscores (_). This
+     * name is referenced in the <code>sourceVolume</code> parameter of container
+     * definition <code>mountPoints</code>.</p>
      */
     inline Volume& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * hyphens, and underscores are allowed. This name is referenced in the
-     * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.</p>
+     * <p>The name of the volume. It can be up to 255 letters long. It can contain
+     * uppercase and lowercase letters, numbers, hyphens (-), and underscores (_). This
+     * name is referenced in the <code>sourceVolume</code> parameter of container
+     * definition <code>mountPoints</code>.</p>
      */
     inline Volume& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * hyphens, and underscores are allowed. This name is referenced in the
-     * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.</p>
+     * <p>The name of the volume. It can be up to 255 letters long. It can contain
+     * uppercase and lowercase letters, numbers, hyphens (-), and underscores (_). This
+     * name is referenced in the <code>sourceVolume</code> parameter of container
+     * definition <code>mountPoints</code>.</p>
      */
     inline Volume& WithName(const char* value) { SetName(value); return *this;}
 

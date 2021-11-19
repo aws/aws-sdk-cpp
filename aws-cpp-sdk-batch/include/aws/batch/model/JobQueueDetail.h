@@ -175,7 +175,7 @@ namespace Model
 
 
     /**
-     * <p>Amazon Resource Name (ARN) of the scheduling policy. The format is
+     * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
      * </code>. For example,
      * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
@@ -183,7 +183,7 @@ namespace Model
     inline const Aws::String& GetSchedulingPolicyArn() const{ return m_schedulingPolicyArn; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the scheduling policy. The format is
+     * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
      * </code>. For example,
      * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
@@ -191,7 +191,7 @@ namespace Model
     inline bool SchedulingPolicyArnHasBeenSet() const { return m_schedulingPolicyArnHasBeenSet; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the scheduling policy. The format is
+     * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
      * </code>. For example,
      * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
@@ -199,7 +199,7 @@ namespace Model
     inline void SetSchedulingPolicyArn(const Aws::String& value) { m_schedulingPolicyArnHasBeenSet = true; m_schedulingPolicyArn = value; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the scheduling policy. The format is
+     * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
      * </code>. For example,
      * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
@@ -207,7 +207,7 @@ namespace Model
     inline void SetSchedulingPolicyArn(Aws::String&& value) { m_schedulingPolicyArnHasBeenSet = true; m_schedulingPolicyArn = std::move(value); }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the scheduling policy. The format is
+     * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
      * </code>. For example,
      * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
@@ -215,7 +215,7 @@ namespace Model
     inline void SetSchedulingPolicyArn(const char* value) { m_schedulingPolicyArnHasBeenSet = true; m_schedulingPolicyArn.assign(value); }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the scheduling policy. The format is
+     * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
      * </code>. For example,
      * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
@@ -223,7 +223,7 @@ namespace Model
     inline JobQueueDetail& WithSchedulingPolicyArn(const Aws::String& value) { SetSchedulingPolicyArn(value); return *this;}
 
     /**
-     * <p>Amazon Resource Name (ARN) of the scheduling policy. The format is
+     * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
      * </code>. For example,
      * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
@@ -231,7 +231,7 @@ namespace Model
     inline JobQueueDetail& WithSchedulingPolicyArn(Aws::String&& value) { SetSchedulingPolicyArn(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon Resource Name (ARN) of the scheduling policy. The format is
+     * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
      * </code>. For example,
      * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>

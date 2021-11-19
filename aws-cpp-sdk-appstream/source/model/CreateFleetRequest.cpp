@@ -35,7 +35,12 @@ CreateFleetRequest::CreateFleetRequest() :
     m_idleDisconnectTimeoutInSecondsHasBeenSet(false),
     m_iamRoleArnHasBeenSet(false),
     m_streamView(StreamView::NOT_SET),
-    m_streamViewHasBeenSet(false)
+    m_streamViewHasBeenSet(false),
+    m_platform(PlatformType::NOT_SET),
+    m_platformHasBeenSet(false),
+    m_maxConcurrentSessions(0),
+    m_maxConcurrentSessionsHasBeenSet(false),
+    m_usbDeviceFilterStringsHasBeenSet(false)
 {
 }
 
@@ -146,6 +151,28 @@ Aws::String CreateFleetRequest::SerializePayload() const
   if(m_streamViewHasBeenSet)
   {
    payload.WithString("StreamView", StreamViewMapper::GetNameForStreamView(m_streamView));
+  }
+
+  if(m_platformHasBeenSet)
+  {
+   payload.WithString("Platform", PlatformTypeMapper::GetNameForPlatformType(m_platform));
+  }
+
+  if(m_maxConcurrentSessionsHasBeenSet)
+  {
+   payload.WithInteger("MaxConcurrentSessions", m_maxConcurrentSessions);
+
+  }
+
+  if(m_usbDeviceFilterStringsHasBeenSet)
+  {
+   Array<JsonValue> usbDeviceFilterStringsJsonList(m_usbDeviceFilterStrings.size());
+   for(unsigned usbDeviceFilterStringsIndex = 0; usbDeviceFilterStringsIndex < usbDeviceFilterStringsJsonList.GetLength(); ++usbDeviceFilterStringsIndex)
+   {
+     usbDeviceFilterStringsJsonList[usbDeviceFilterStringsIndex].AsString(m_usbDeviceFilterStrings[usbDeviceFilterStringsIndex]);
+   }
+   payload.WithArray("UsbDeviceFilterStrings", std::move(usbDeviceFilterStringsJsonList));
+
   }
 
   return payload.View().WriteReadable();

@@ -1623,6 +1623,63 @@ namespace Model
      */
     inline RestoreFromClusterSnapshotRequest& WithAquaConfigurationStatus(AquaConfigurationStatus&& value) { SetAquaConfigurationStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified while it was restored from a
+     * snapshot.</p>
+     */
+    inline const Aws::String& GetDefaultIamRoleArn() const{ return m_defaultIamRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified while it was restored from a
+     * snapshot.</p>
+     */
+    inline bool DefaultIamRoleArnHasBeenSet() const { return m_defaultIamRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified while it was restored from a
+     * snapshot.</p>
+     */
+    inline void SetDefaultIamRoleArn(const Aws::String& value) { m_defaultIamRoleArnHasBeenSet = true; m_defaultIamRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified while it was restored from a
+     * snapshot.</p>
+     */
+    inline void SetDefaultIamRoleArn(Aws::String&& value) { m_defaultIamRoleArnHasBeenSet = true; m_defaultIamRoleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified while it was restored from a
+     * snapshot.</p>
+     */
+    inline void SetDefaultIamRoleArn(const char* value) { m_defaultIamRoleArnHasBeenSet = true; m_defaultIamRoleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified while it was restored from a
+     * snapshot.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithDefaultIamRoleArn(const Aws::String& value) { SetDefaultIamRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified while it was restored from a
+     * snapshot.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithDefaultIamRoleArn(Aws::String&& value) { SetDefaultIamRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified while it was restored from a
+     * snapshot.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithDefaultIamRoleArn(const char* value) { SetDefaultIamRoleArn(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -1708,6 +1765,9 @@ namespace Model
 
     AquaConfigurationStatus m_aquaConfigurationStatus;
     bool m_aquaConfigurationStatusHasBeenSet;
+
+    Aws::String m_defaultIamRoleArn;
+    bool m_defaultIamRoleArnHasBeenSet;
   };
 
 } // namespace Model

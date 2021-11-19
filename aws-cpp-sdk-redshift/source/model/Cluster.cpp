@@ -79,7 +79,8 @@ Cluster::Cluster() :
     m_clusterNamespaceArnHasBeenSet(false),
     m_totalStorageCapacityInMegaBytes(0),
     m_totalStorageCapacityInMegaBytesHasBeenSet(false),
-    m_aquaConfigurationHasBeenSet(false)
+    m_aquaConfigurationHasBeenSet(false),
+    m_defaultIamRoleArnHasBeenSet(false)
 {
 }
 
@@ -142,7 +143,8 @@ Cluster::Cluster(const XmlNode& xmlNode) :
     m_clusterNamespaceArnHasBeenSet(false),
     m_totalStorageCapacityInMegaBytes(0),
     m_totalStorageCapacityInMegaBytesHasBeenSet(false),
-    m_aquaConfigurationHasBeenSet(false)
+    m_aquaConfigurationHasBeenSet(false),
+    m_defaultIamRoleArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -501,6 +503,12 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
       m_aquaConfiguration = aquaConfigurationNode;
       m_aquaConfigurationHasBeenSet = true;
     }
+    XmlNode defaultIamRoleArnNode = resultNode.FirstChild("DefaultIamRoleArn");
+    if(!defaultIamRoleArnNode.IsNull())
+    {
+      m_defaultIamRoleArn = Aws::Utils::Xml::DecodeEscapedXmlText(defaultIamRoleArnNode.GetText());
+      m_defaultIamRoleArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -822,6 +830,11 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       m_aquaConfiguration.OutputToStream(oStream, aquaConfigurationLocationAndMemberSs.str().c_str());
   }
 
+  if(m_defaultIamRoleArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DefaultIamRoleArn=" << StringUtils::URLEncode(m_defaultIamRoleArn.c_str()) << "&";
+  }
+
 }
 
 void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1089,6 +1102,10 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
       Aws::String aquaConfigurationLocationAndMember(location);
       aquaConfigurationLocationAndMember += ".AquaConfiguration";
       m_aquaConfiguration.OutputToStream(oStream, aquaConfigurationLocationAndMember.c_str());
+  }
+  if(m_defaultIamRoleArnHasBeenSet)
+  {
+      oStream << location << ".DefaultIamRoleArn=" << StringUtils::URLEncode(m_defaultIamRoleArn.c_str()) << "&";
   }
 }
 

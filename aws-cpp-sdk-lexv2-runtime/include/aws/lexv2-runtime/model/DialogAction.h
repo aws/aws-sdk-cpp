@@ -7,6 +7,7 @@
 #include <aws/lexv2-runtime/LexRuntimeV2_EXPORTS.h>
 #include <aws/lexv2-runtime/model/DialogActionType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-runtime/model/StyleType.h>
 #include <utility>
 
 namespace Aws
@@ -157,6 +158,73 @@ namespace Model
      */
     inline DialogAction& WithSlotToElicit(const char* value) { SetSlotToElicit(value); return *this;}
 
+
+    /**
+     * <p>Configures the slot to use spell-by-letter or spell-by-word style. When you
+     * use a style on a slot, users can spell out their input to make it clear to your
+     * bot.</p> <ul> <li> <p>Spell by letter - "b" "o" "b"</p> </li> <li> <p>Spell by
+     * word - "b as in boy" "o as in oscar" "b as in boy"</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using
+     * spelling to enter slot values </a>.</p>
+     */
+    inline const StyleType& GetSlotElicitationStyle() const{ return m_slotElicitationStyle; }
+
+    /**
+     * <p>Configures the slot to use spell-by-letter or spell-by-word style. When you
+     * use a style on a slot, users can spell out their input to make it clear to your
+     * bot.</p> <ul> <li> <p>Spell by letter - "b" "o" "b"</p> </li> <li> <p>Spell by
+     * word - "b as in boy" "o as in oscar" "b as in boy"</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using
+     * spelling to enter slot values </a>.</p>
+     */
+    inline bool SlotElicitationStyleHasBeenSet() const { return m_slotElicitationStyleHasBeenSet; }
+
+    /**
+     * <p>Configures the slot to use spell-by-letter or spell-by-word style. When you
+     * use a style on a slot, users can spell out their input to make it clear to your
+     * bot.</p> <ul> <li> <p>Spell by letter - "b" "o" "b"</p> </li> <li> <p>Spell by
+     * word - "b as in boy" "o as in oscar" "b as in boy"</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using
+     * spelling to enter slot values </a>.</p>
+     */
+    inline void SetSlotElicitationStyle(const StyleType& value) { m_slotElicitationStyleHasBeenSet = true; m_slotElicitationStyle = value; }
+
+    /**
+     * <p>Configures the slot to use spell-by-letter or spell-by-word style. When you
+     * use a style on a slot, users can spell out their input to make it clear to your
+     * bot.</p> <ul> <li> <p>Spell by letter - "b" "o" "b"</p> </li> <li> <p>Spell by
+     * word - "b as in boy" "o as in oscar" "b as in boy"</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using
+     * spelling to enter slot values </a>.</p>
+     */
+    inline void SetSlotElicitationStyle(StyleType&& value) { m_slotElicitationStyleHasBeenSet = true; m_slotElicitationStyle = std::move(value); }
+
+    /**
+     * <p>Configures the slot to use spell-by-letter or spell-by-word style. When you
+     * use a style on a slot, users can spell out their input to make it clear to your
+     * bot.</p> <ul> <li> <p>Spell by letter - "b" "o" "b"</p> </li> <li> <p>Spell by
+     * word - "b as in boy" "o as in oscar" "b as in boy"</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using
+     * spelling to enter slot values </a>.</p>
+     */
+    inline DialogAction& WithSlotElicitationStyle(const StyleType& value) { SetSlotElicitationStyle(value); return *this;}
+
+    /**
+     * <p>Configures the slot to use spell-by-letter or spell-by-word style. When you
+     * use a style on a slot, users can spell out their input to make it clear to your
+     * bot.</p> <ul> <li> <p>Spell by letter - "b" "o" "b"</p> </li> <li> <p>Spell by
+     * word - "b as in boy" "o as in oscar" "b as in boy"</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using
+     * spelling to enter slot values </a>.</p>
+     */
+    inline DialogAction& WithSlotElicitationStyle(StyleType&& value) { SetSlotElicitationStyle(std::move(value)); return *this;}
+
   private:
 
     DialogActionType m_type;
@@ -164,6 +232,9 @@ namespace Model
 
     Aws::String m_slotToElicit;
     bool m_slotToElicitHasBeenSet;
+
+    StyleType m_slotElicitationStyle;
+    bool m_slotElicitationStyleHasBeenSet;
   };
 
 } // namespace Model

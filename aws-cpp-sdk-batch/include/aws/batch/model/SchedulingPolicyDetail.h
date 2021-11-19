@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing a scheduling policy.</p><p><h3>See Also:</h3>   <a
+   * <p>An object that represents a scheduling policy.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SchedulingPolicyDetail">AWS
    * API Reference</a></p>
    */
@@ -81,58 +81,58 @@ namespace Model
 
 
     /**
-     * <p>Amazon Resource Name (ARN) of the scheduling policy. An example would be
+     * <p>The Amazon Resource Name (ARN) of the scheduling policy. An example is
      * <code>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i>
-     * </code> </p>
+     * </code>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the scheduling policy. An example would be
+     * <p>The Amazon Resource Name (ARN) of the scheduling policy. An example is
      * <code>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i>
-     * </code> </p>
+     * </code>.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the scheduling policy. An example would be
+     * <p>The Amazon Resource Name (ARN) of the scheduling policy. An example is
      * <code>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i>
-     * </code> </p>
+     * </code>.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the scheduling policy. An example would be
+     * <p>The Amazon Resource Name (ARN) of the scheduling policy. An example is
      * <code>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i>
-     * </code> </p>
+     * </code>.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the scheduling policy. An example would be
+     * <p>The Amazon Resource Name (ARN) of the scheduling policy. An example is
      * <code>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i>
-     * </code> </p>
+     * </code>.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the scheduling policy. An example would be
+     * <p>The Amazon Resource Name (ARN) of the scheduling policy. An example is
      * <code>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i>
-     * </code> </p>
+     * </code>.</p>
      */
     inline SchedulingPolicyDetail& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>Amazon Resource Name (ARN) of the scheduling policy. An example would be
+     * <p>The Amazon Resource Name (ARN) of the scheduling policy. An example is
      * <code>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i>
-     * </code> </p>
+     * </code>.</p>
      */
     inline SchedulingPolicyDetail& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon Resource Name (ARN) of the scheduling policy. An example would be
+     * <p>The Amazon Resource Name (ARN) of the scheduling policy. An example is
      * <code>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i>
-     * </code> </p>
+     * </code>.</p>
      */
     inline SchedulingPolicyDetail& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -169,9 +169,9 @@ namespace Model
 
 
     /**
-     * <p>The tags that you apply to the scheduling policy to help you categorize and
-     * organize your resources. Each tag consists of a key and an optional value. For
-     * more information, see <a
+     * <p>The tags that you apply to the scheduling policy to categorize and organize
+     * your resources. Each tag consists of a key and an optional value. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> in <i>Amazon Web Services General
      * Reference</i>.</p>
@@ -179,9 +179,9 @@ namespace Model
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags that you apply to the scheduling policy to help you categorize and
-     * organize your resources. Each tag consists of a key and an optional value. For
-     * more information, see <a
+     * <p>The tags that you apply to the scheduling policy to categorize and organize
+     * your resources. Each tag consists of a key and an optional value. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> in <i>Amazon Web Services General
      * Reference</i>.</p>
@@ -189,9 +189,9 @@ namespace Model
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags that you apply to the scheduling policy to help you categorize and
-     * organize your resources. Each tag consists of a key and an optional value. For
-     * more information, see <a
+     * <p>The tags that you apply to the scheduling policy to categorize and organize
+     * your resources. Each tag consists of a key and an optional value. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> in <i>Amazon Web Services General
      * Reference</i>.</p>
@@ -199,9 +199,9 @@ namespace Model
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags that you apply to the scheduling policy to help you categorize and
-     * organize your resources. Each tag consists of a key and an optional value. For
-     * more information, see <a
+     * <p>The tags that you apply to the scheduling policy to categorize and organize
+     * your resources. Each tag consists of a key and an optional value. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> in <i>Amazon Web Services General
      * Reference</i>.</p>
@@ -209,9 +209,9 @@ namespace Model
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags that you apply to the scheduling policy to help you categorize and
-     * organize your resources. Each tag consists of a key and an optional value. For
-     * more information, see <a
+     * <p>The tags that you apply to the scheduling policy to categorize and organize
+     * your resources. Each tag consists of a key and an optional value. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> in <i>Amazon Web Services General
      * Reference</i>.</p>
@@ -219,9 +219,9 @@ namespace Model
     inline SchedulingPolicyDetail& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags that you apply to the scheduling policy to help you categorize and
-     * organize your resources. Each tag consists of a key and an optional value. For
-     * more information, see <a
+     * <p>The tags that you apply to the scheduling policy to categorize and organize
+     * your resources. Each tag consists of a key and an optional value. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> in <i>Amazon Web Services General
      * Reference</i>.</p>
@@ -229,9 +229,9 @@ namespace Model
     inline SchedulingPolicyDetail& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags that you apply to the scheduling policy to help you categorize and
-     * organize your resources. Each tag consists of a key and an optional value. For
-     * more information, see <a
+     * <p>The tags that you apply to the scheduling policy to categorize and organize
+     * your resources. Each tag consists of a key and an optional value. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> in <i>Amazon Web Services General
      * Reference</i>.</p>
@@ -239,9 +239,9 @@ namespace Model
     inline SchedulingPolicyDetail& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The tags that you apply to the scheduling policy to help you categorize and
-     * organize your resources. Each tag consists of a key and an optional value. For
-     * more information, see <a
+     * <p>The tags that you apply to the scheduling policy to categorize and organize
+     * your resources. Each tag consists of a key and an optional value. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> in <i>Amazon Web Services General
      * Reference</i>.</p>
@@ -249,9 +249,9 @@ namespace Model
     inline SchedulingPolicyDetail& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags that you apply to the scheduling policy to help you categorize and
-     * organize your resources. Each tag consists of a key and an optional value. For
-     * more information, see <a
+     * <p>The tags that you apply to the scheduling policy to categorize and organize
+     * your resources. Each tag consists of a key and an optional value. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> in <i>Amazon Web Services General
      * Reference</i>.</p>
@@ -259,9 +259,9 @@ namespace Model
     inline SchedulingPolicyDetail& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags that you apply to the scheduling policy to help you categorize and
-     * organize your resources. Each tag consists of a key and an optional value. For
-     * more information, see <a
+     * <p>The tags that you apply to the scheduling policy to categorize and organize
+     * your resources. Each tag consists of a key and an optional value. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> in <i>Amazon Web Services General
      * Reference</i>.</p>
@@ -269,9 +269,9 @@ namespace Model
     inline SchedulingPolicyDetail& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The tags that you apply to the scheduling policy to help you categorize and
-     * organize your resources. Each tag consists of a key and an optional value. For
-     * more information, see <a
+     * <p>The tags that you apply to the scheduling policy to categorize and organize
+     * your resources. Each tag consists of a key and an optional value. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> in <i>Amazon Web Services General
      * Reference</i>.</p>
@@ -279,9 +279,9 @@ namespace Model
     inline SchedulingPolicyDetail& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags that you apply to the scheduling policy to help you categorize and
-     * organize your resources. Each tag consists of a key and an optional value. For
-     * more information, see <a
+     * <p>The tags that you apply to the scheduling policy to categorize and organize
+     * your resources. Each tag consists of a key and an optional value. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> in <i>Amazon Web Services General
      * Reference</i>.</p>
@@ -289,9 +289,9 @@ namespace Model
     inline SchedulingPolicyDetail& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags that you apply to the scheduling policy to help you categorize and
-     * organize your resources. Each tag consists of a key and an optional value. For
-     * more information, see <a
+     * <p>The tags that you apply to the scheduling policy to categorize and organize
+     * your resources. Each tag consists of a key and an optional value. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a> in <i>Amazon Web Services General
      * Reference</i>.</p>

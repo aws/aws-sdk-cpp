@@ -52,7 +52,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_availabilityZoneRelocation(false),
     m_availabilityZoneRelocationHasBeenSet(false),
     m_aquaConfigurationStatus(AquaConfigurationStatus::NOT_SET),
-    m_aquaConfigurationStatusHasBeenSet(false)
+    m_aquaConfigurationStatusHasBeenSet(false),
+    m_defaultIamRoleArnHasBeenSet(false)
 {
 }
 
@@ -241,6 +242,11 @@ Aws::String CreateClusterRequest::SerializePayload() const
   if(m_aquaConfigurationStatusHasBeenSet)
   {
     ss << "AquaConfigurationStatus=" << AquaConfigurationStatusMapper::GetNameForAquaConfigurationStatus(m_aquaConfigurationStatus) << "&";
+  }
+
+  if(m_defaultIamRoleArnHasBeenSet)
+  {
+    ss << "DefaultIamRoleArn=" << StringUtils::URLEncode(m_defaultIamRoleArn.c_str()) << "&";
   }
 
   ss << "Version=2012-12-01";

@@ -32,7 +32,8 @@ UpdateStackSetRequest::UpdateStackSetRequest() :
     m_accountsHasBeenSet(false),
     m_regionsHasBeenSet(false),
     m_callAs(CallAs::NOT_SET),
-    m_callAsHasBeenSet(false)
+    m_callAsHasBeenSet(false),
+    m_managedExecutionHasBeenSet(false)
 {
 }
 
@@ -156,6 +157,11 @@ Aws::String UpdateStackSetRequest::SerializePayload() const
   if(m_callAsHasBeenSet)
   {
     ss << "CallAs=" << CallAsMapper::GetNameForCallAs(m_callAs) << "&";
+  }
+
+  if(m_managedExecutionHasBeenSet)
+  {
+    m_managedExecution.OutputToStream(ss, "ManagedExecution");
   }
 
   ss << "Version=2010-05-15";

@@ -2266,6 +2266,55 @@ namespace Model
      */
     inline Cluster& WithAquaConfiguration(AquaConfiguration&& value) { SetAquaConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role set as default for the
+     * cluster.</p>
+     */
+    inline const Aws::String& GetDefaultIamRoleArn() const{ return m_defaultIamRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role set as default for the
+     * cluster.</p>
+     */
+    inline bool DefaultIamRoleArnHasBeenSet() const { return m_defaultIamRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role set as default for the
+     * cluster.</p>
+     */
+    inline void SetDefaultIamRoleArn(const Aws::String& value) { m_defaultIamRoleArnHasBeenSet = true; m_defaultIamRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role set as default for the
+     * cluster.</p>
+     */
+    inline void SetDefaultIamRoleArn(Aws::String&& value) { m_defaultIamRoleArnHasBeenSet = true; m_defaultIamRoleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role set as default for the
+     * cluster.</p>
+     */
+    inline void SetDefaultIamRoleArn(const char* value) { m_defaultIamRoleArnHasBeenSet = true; m_defaultIamRoleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role set as default for the
+     * cluster.</p>
+     */
+    inline Cluster& WithDefaultIamRoleArn(const Aws::String& value) { SetDefaultIamRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role set as default for the
+     * cluster.</p>
+     */
+    inline Cluster& WithDefaultIamRoleArn(Aws::String&& value) { SetDefaultIamRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role set as default for the
+     * cluster.</p>
+     */
+    inline Cluster& WithDefaultIamRoleArn(const char* value) { SetDefaultIamRoleArn(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -2417,6 +2466,9 @@ namespace Model
 
     AquaConfiguration m_aquaConfiguration;
     bool m_aquaConfigurationHasBeenSet;
+
+    Aws::String m_defaultIamRoleArn;
+    bool m_defaultIamRoleArnHasBeenSet;
   };
 
 } // namespace Model

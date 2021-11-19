@@ -41,50 +41,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the job queue. Up to 128 letters (uppercase and lowercase),
-     * numbers, and underscores are allowed.</p>
+     * <p>The name of the job queue. It can be up to 128 letters long. It can contain
+     * uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
      */
     inline const Aws::String& GetJobQueueName() const{ return m_jobQueueName; }
 
     /**
-     * <p>The name of the job queue. Up to 128 letters (uppercase and lowercase),
-     * numbers, and underscores are allowed.</p>
+     * <p>The name of the job queue. It can be up to 128 letters long. It can contain
+     * uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
      */
     inline bool JobQueueNameHasBeenSet() const { return m_jobQueueNameHasBeenSet; }
 
     /**
-     * <p>The name of the job queue. Up to 128 letters (uppercase and lowercase),
-     * numbers, and underscores are allowed.</p>
+     * <p>The name of the job queue. It can be up to 128 letters long. It can contain
+     * uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
      */
     inline void SetJobQueueName(const Aws::String& value) { m_jobQueueNameHasBeenSet = true; m_jobQueueName = value; }
 
     /**
-     * <p>The name of the job queue. Up to 128 letters (uppercase and lowercase),
-     * numbers, and underscores are allowed.</p>
+     * <p>The name of the job queue. It can be up to 128 letters long. It can contain
+     * uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
      */
     inline void SetJobQueueName(Aws::String&& value) { m_jobQueueNameHasBeenSet = true; m_jobQueueName = std::move(value); }
 
     /**
-     * <p>The name of the job queue. Up to 128 letters (uppercase and lowercase),
-     * numbers, and underscores are allowed.</p>
+     * <p>The name of the job queue. It can be up to 128 letters long. It can contain
+     * uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
      */
     inline void SetJobQueueName(const char* value) { m_jobQueueNameHasBeenSet = true; m_jobQueueName.assign(value); }
 
     /**
-     * <p>The name of the job queue. Up to 128 letters (uppercase and lowercase),
-     * numbers, and underscores are allowed.</p>
+     * <p>The name of the job queue. It can be up to 128 letters long. It can contain
+     * uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
      */
     inline CreateJobQueueRequest& WithJobQueueName(const Aws::String& value) { SetJobQueueName(value); return *this;}
 
     /**
-     * <p>The name of the job queue. Up to 128 letters (uppercase and lowercase),
-     * numbers, and underscores are allowed.</p>
+     * <p>The name of the job queue. It can be up to 128 letters long. It can contain
+     * uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
      */
     inline CreateJobQueueRequest& WithJobQueueName(Aws::String&& value) { SetJobQueueName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the job queue. Up to 128 letters (uppercase and lowercase),
-     * numbers, and underscores are allowed.</p>
+     * <p>The name of the job queue. It can be up to 128 letters long. It can contain
+     * uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
      */
     inline CreateJobQueueRequest& WithJobQueueName(const char* value) { SetJobQueueName(value); return *this;}
 
@@ -133,97 +133,97 @@ namespace Model
 
 
     /**
-     * <p>Amazon Resource Name (ARN) of the fair share scheduling policy. If this
-     * parameter is specified, the job queue will use a fair share scheduling policy.
-     * If this parameter is not specified, the job queue will use a first in, first out
-     * (FIFO) scheduling policy. Once a job queue is created, the fair share scheduling
-     * policy can be replaced but not removed. The format is
+     * <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this
+     * parameter is specified, the job queue uses a fair share scheduling policy. If
+     * this parameter isn't specified, the job queue uses a first in, first out (FIFO)
+     * scheduling policy. After a job queue is created, you can replace but can't
+     * remove the fair share scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
-     * </code>. For example,
+     * </code>. An example is
      * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
      */
     inline const Aws::String& GetSchedulingPolicyArn() const{ return m_schedulingPolicyArn; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the fair share scheduling policy. If this
-     * parameter is specified, the job queue will use a fair share scheduling policy.
-     * If this parameter is not specified, the job queue will use a first in, first out
-     * (FIFO) scheduling policy. Once a job queue is created, the fair share scheduling
-     * policy can be replaced but not removed. The format is
+     * <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this
+     * parameter is specified, the job queue uses a fair share scheduling policy. If
+     * this parameter isn't specified, the job queue uses a first in, first out (FIFO)
+     * scheduling policy. After a job queue is created, you can replace but can't
+     * remove the fair share scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
-     * </code>. For example,
+     * </code>. An example is
      * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
      */
     inline bool SchedulingPolicyArnHasBeenSet() const { return m_schedulingPolicyArnHasBeenSet; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the fair share scheduling policy. If this
-     * parameter is specified, the job queue will use a fair share scheduling policy.
-     * If this parameter is not specified, the job queue will use a first in, first out
-     * (FIFO) scheduling policy. Once a job queue is created, the fair share scheduling
-     * policy can be replaced but not removed. The format is
+     * <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this
+     * parameter is specified, the job queue uses a fair share scheduling policy. If
+     * this parameter isn't specified, the job queue uses a first in, first out (FIFO)
+     * scheduling policy. After a job queue is created, you can replace but can't
+     * remove the fair share scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
-     * </code>. For example,
+     * </code>. An example is
      * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
      */
     inline void SetSchedulingPolicyArn(const Aws::String& value) { m_schedulingPolicyArnHasBeenSet = true; m_schedulingPolicyArn = value; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the fair share scheduling policy. If this
-     * parameter is specified, the job queue will use a fair share scheduling policy.
-     * If this parameter is not specified, the job queue will use a first in, first out
-     * (FIFO) scheduling policy. Once a job queue is created, the fair share scheduling
-     * policy can be replaced but not removed. The format is
+     * <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this
+     * parameter is specified, the job queue uses a fair share scheduling policy. If
+     * this parameter isn't specified, the job queue uses a first in, first out (FIFO)
+     * scheduling policy. After a job queue is created, you can replace but can't
+     * remove the fair share scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
-     * </code>. For example,
+     * </code>. An example is
      * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
      */
     inline void SetSchedulingPolicyArn(Aws::String&& value) { m_schedulingPolicyArnHasBeenSet = true; m_schedulingPolicyArn = std::move(value); }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the fair share scheduling policy. If this
-     * parameter is specified, the job queue will use a fair share scheduling policy.
-     * If this parameter is not specified, the job queue will use a first in, first out
-     * (FIFO) scheduling policy. Once a job queue is created, the fair share scheduling
-     * policy can be replaced but not removed. The format is
+     * <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this
+     * parameter is specified, the job queue uses a fair share scheduling policy. If
+     * this parameter isn't specified, the job queue uses a first in, first out (FIFO)
+     * scheduling policy. After a job queue is created, you can replace but can't
+     * remove the fair share scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
-     * </code>. For example,
+     * </code>. An example is
      * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
      */
     inline void SetSchedulingPolicyArn(const char* value) { m_schedulingPolicyArnHasBeenSet = true; m_schedulingPolicyArn.assign(value); }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the fair share scheduling policy. If this
-     * parameter is specified, the job queue will use a fair share scheduling policy.
-     * If this parameter is not specified, the job queue will use a first in, first out
-     * (FIFO) scheduling policy. Once a job queue is created, the fair share scheduling
-     * policy can be replaced but not removed. The format is
+     * <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this
+     * parameter is specified, the job queue uses a fair share scheduling policy. If
+     * this parameter isn't specified, the job queue uses a first in, first out (FIFO)
+     * scheduling policy. After a job queue is created, you can replace but can't
+     * remove the fair share scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
-     * </code>. For example,
+     * </code>. An example is
      * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
      */
     inline CreateJobQueueRequest& WithSchedulingPolicyArn(const Aws::String& value) { SetSchedulingPolicyArn(value); return *this;}
 
     /**
-     * <p>Amazon Resource Name (ARN) of the fair share scheduling policy. If this
-     * parameter is specified, the job queue will use a fair share scheduling policy.
-     * If this parameter is not specified, the job queue will use a first in, first out
-     * (FIFO) scheduling policy. Once a job queue is created, the fair share scheduling
-     * policy can be replaced but not removed. The format is
+     * <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this
+     * parameter is specified, the job queue uses a fair share scheduling policy. If
+     * this parameter isn't specified, the job queue uses a first in, first out (FIFO)
+     * scheduling policy. After a job queue is created, you can replace but can't
+     * remove the fair share scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
-     * </code>. For example,
+     * </code>. An example is
      * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
      */
     inline CreateJobQueueRequest& WithSchedulingPolicyArn(Aws::String&& value) { SetSchedulingPolicyArn(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon Resource Name (ARN) of the fair share scheduling policy. If this
-     * parameter is specified, the job queue will use a fair share scheduling policy.
-     * If this parameter is not specified, the job queue will use a first in, first out
-     * (FIFO) scheduling policy. Once a job queue is created, the fair share scheduling
-     * policy can be replaced but not removed. The format is
+     * <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this
+     * parameter is specified, the job queue uses a fair share scheduling policy. If
+     * this parameter isn't specified, the job queue uses a first in, first out (FIFO)
+     * scheduling policy. After a job queue is created, you can replace but can't
+     * remove the fair share scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
-     * </code>. For example,
+     * </code>. An example is
      * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
      */
     inline CreateJobQueueRequest& WithSchedulingPolicyArn(const char* value) { SetSchedulingPolicyArn(value); return *this;}

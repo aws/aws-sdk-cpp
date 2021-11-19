@@ -318,30 +318,30 @@ namespace Model
 
 
     /**
-     * <p>The scheduling policy of the job definition. This will only affect jobs in
-     * job queues with a fair share policy. Jobs with a higher scheduling priority will
-     * be scheduled before jobs with a lower scheduling priority.</p>
+     * <p>The scheduling policy of the job definition. This only affects jobs in job
+     * queues with a fair share policy. Jobs with a higher scheduling priority are
+     * scheduled before jobs with a lower scheduling priority.</p>
      */
     inline int GetSchedulingPriority() const{ return m_schedulingPriority; }
 
     /**
-     * <p>The scheduling policy of the job definition. This will only affect jobs in
-     * job queues with a fair share policy. Jobs with a higher scheduling priority will
-     * be scheduled before jobs with a lower scheduling priority.</p>
+     * <p>The scheduling policy of the job definition. This only affects jobs in job
+     * queues with a fair share policy. Jobs with a higher scheduling priority are
+     * scheduled before jobs with a lower scheduling priority.</p>
      */
     inline bool SchedulingPriorityHasBeenSet() const { return m_schedulingPriorityHasBeenSet; }
 
     /**
-     * <p>The scheduling policy of the job definition. This will only affect jobs in
-     * job queues with a fair share policy. Jobs with a higher scheduling priority will
-     * be scheduled before jobs with a lower scheduling priority.</p>
+     * <p>The scheduling policy of the job definition. This only affects jobs in job
+     * queues with a fair share policy. Jobs with a higher scheduling priority are
+     * scheduled before jobs with a lower scheduling priority.</p>
      */
     inline void SetSchedulingPriority(int value) { m_schedulingPriorityHasBeenSet = true; m_schedulingPriority = value; }
 
     /**
-     * <p>The scheduling policy of the job definition. This will only affect jobs in
-     * job queues with a fair share policy. Jobs with a higher scheduling priority will
-     * be scheduled before jobs with a lower scheduling priority.</p>
+     * <p>The scheduling policy of the job definition. This only affects jobs in job
+     * queues with a fair share policy. Jobs with a higher scheduling priority are
+     * scheduled before jobs with a lower scheduling priority.</p>
      */
     inline JobDetail& WithSchedulingPriority(int value) { SetSchedulingPriority(value); return *this;}
 

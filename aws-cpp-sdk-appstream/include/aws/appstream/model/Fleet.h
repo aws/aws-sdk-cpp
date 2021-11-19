@@ -14,6 +14,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/appstream/model/DomainJoinInfo.h>
 #include <aws/appstream/model/StreamView.h>
+#include <aws/appstream/model/PlatformType.h>
 #include <aws/appstream/model/FleetError.h>
 #include <utility>
 
@@ -1169,6 +1170,104 @@ namespace Model
      */
     inline Fleet& WithStreamView(StreamView&& value) { SetStreamView(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The platform of the fleet.</p>
+     */
+    inline const PlatformType& GetPlatform() const{ return m_platform; }
+
+    /**
+     * <p>The platform of the fleet.</p>
+     */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
+
+    /**
+     * <p>The platform of the fleet.</p>
+     */
+    inline void SetPlatform(const PlatformType& value) { m_platformHasBeenSet = true; m_platform = value; }
+
+    /**
+     * <p>The platform of the fleet.</p>
+     */
+    inline void SetPlatform(PlatformType&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
+
+    /**
+     * <p>The platform of the fleet.</p>
+     */
+    inline Fleet& WithPlatform(const PlatformType& value) { SetPlatform(value); return *this;}
+
+    /**
+     * <p>The platform of the fleet.</p>
+     */
+    inline Fleet& WithPlatform(PlatformType&& value) { SetPlatform(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The maximum number of concurrent sessions for the fleet.</p>
+     */
+    inline int GetMaxConcurrentSessions() const{ return m_maxConcurrentSessions; }
+
+    /**
+     * <p>The maximum number of concurrent sessions for the fleet.</p>
+     */
+    inline bool MaxConcurrentSessionsHasBeenSet() const { return m_maxConcurrentSessionsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of concurrent sessions for the fleet.</p>
+     */
+    inline void SetMaxConcurrentSessions(int value) { m_maxConcurrentSessionsHasBeenSet = true; m_maxConcurrentSessions = value; }
+
+    /**
+     * <p>The maximum number of concurrent sessions for the fleet.</p>
+     */
+    inline Fleet& WithMaxConcurrentSessions(int value) { SetMaxConcurrentSessions(value); return *this;}
+
+
+    /**
+     * <p>The USB device filter strings associated with the fleet.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetUsbDeviceFilterStrings() const{ return m_usbDeviceFilterStrings; }
+
+    /**
+     * <p>The USB device filter strings associated with the fleet.</p>
+     */
+    inline bool UsbDeviceFilterStringsHasBeenSet() const { return m_usbDeviceFilterStringsHasBeenSet; }
+
+    /**
+     * <p>The USB device filter strings associated with the fleet.</p>
+     */
+    inline void SetUsbDeviceFilterStrings(const Aws::Vector<Aws::String>& value) { m_usbDeviceFilterStringsHasBeenSet = true; m_usbDeviceFilterStrings = value; }
+
+    /**
+     * <p>The USB device filter strings associated with the fleet.</p>
+     */
+    inline void SetUsbDeviceFilterStrings(Aws::Vector<Aws::String>&& value) { m_usbDeviceFilterStringsHasBeenSet = true; m_usbDeviceFilterStrings = std::move(value); }
+
+    /**
+     * <p>The USB device filter strings associated with the fleet.</p>
+     */
+    inline Fleet& WithUsbDeviceFilterStrings(const Aws::Vector<Aws::String>& value) { SetUsbDeviceFilterStrings(value); return *this;}
+
+    /**
+     * <p>The USB device filter strings associated with the fleet.</p>
+     */
+    inline Fleet& WithUsbDeviceFilterStrings(Aws::Vector<Aws::String>&& value) { SetUsbDeviceFilterStrings(std::move(value)); return *this;}
+
+    /**
+     * <p>The USB device filter strings associated with the fleet.</p>
+     */
+    inline Fleet& AddUsbDeviceFilterStrings(const Aws::String& value) { m_usbDeviceFilterStringsHasBeenSet = true; m_usbDeviceFilterStrings.push_back(value); return *this; }
+
+    /**
+     * <p>The USB device filter strings associated with the fleet.</p>
+     */
+    inline Fleet& AddUsbDeviceFilterStrings(Aws::String&& value) { m_usbDeviceFilterStringsHasBeenSet = true; m_usbDeviceFilterStrings.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The USB device filter strings associated with the fleet.</p>
+     */
+    inline Fleet& AddUsbDeviceFilterStrings(const char* value) { m_usbDeviceFilterStringsHasBeenSet = true; m_usbDeviceFilterStrings.push_back(value); return *this; }
+
   private:
 
     Aws::String m_arn;
@@ -1230,6 +1329,15 @@ namespace Model
 
     StreamView m_streamView;
     bool m_streamViewHasBeenSet;
+
+    PlatformType m_platform;
+    bool m_platformHasBeenSet;
+
+    int m_maxConcurrentSessions;
+    bool m_maxConcurrentSessionsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_usbDeviceFilterStrings;
+    bool m_usbDeviceFilterStringsHasBeenSet;
   };
 
 } // namespace Model

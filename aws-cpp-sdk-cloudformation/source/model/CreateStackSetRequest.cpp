@@ -27,7 +27,8 @@ CreateStackSetRequest::CreateStackSetRequest() :
     m_callAs(CallAs::NOT_SET),
     m_callAsHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
+    m_clientRequestTokenHasBeenSet(true),
+    m_managedExecutionHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,11 @@ Aws::String CreateStackSetRequest::SerializePayload() const
   if(m_clientRequestTokenHasBeenSet)
   {
     ss << "ClientRequestToken=" << StringUtils::URLEncode(m_clientRequestToken.c_str()) << "&";
+  }
+
+  if(m_managedExecutionHasBeenSet)
+  {
+    m_managedExecution.OutputToStream(ss, "ManagedExecution");
   }
 
   ss << "Version=2010-05-15";

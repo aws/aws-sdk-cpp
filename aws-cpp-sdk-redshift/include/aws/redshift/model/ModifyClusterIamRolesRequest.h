@@ -216,6 +216,55 @@ namespace Model
      */
     inline ModifyClusterIamRolesRequest& AddRemoveIamRoles(const char* value) { m_removeIamRolesHasBeenSet = true; m_removeIamRoles.push_back(value); return *this; }
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified.</p>
+     */
+    inline const Aws::String& GetDefaultIamRoleArn() const{ return m_defaultIamRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified.</p>
+     */
+    inline bool DefaultIamRoleArnHasBeenSet() const { return m_defaultIamRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified.</p>
+     */
+    inline void SetDefaultIamRoleArn(const Aws::String& value) { m_defaultIamRoleArnHasBeenSet = true; m_defaultIamRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified.</p>
+     */
+    inline void SetDefaultIamRoleArn(Aws::String&& value) { m_defaultIamRoleArnHasBeenSet = true; m_defaultIamRoleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified.</p>
+     */
+    inline void SetDefaultIamRoleArn(const char* value) { m_defaultIamRoleArnHasBeenSet = true; m_defaultIamRoleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified.</p>
+     */
+    inline ModifyClusterIamRolesRequest& WithDefaultIamRoleArn(const Aws::String& value) { SetDefaultIamRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified.</p>
+     */
+    inline ModifyClusterIamRolesRequest& WithDefaultIamRoleArn(Aws::String&& value) { SetDefaultIamRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for
+     * the cluster when the cluster was last modified.</p>
+     */
+    inline ModifyClusterIamRolesRequest& WithDefaultIamRoleArn(const char* value) { SetDefaultIamRoleArn(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -226,6 +275,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_removeIamRoles;
     bool m_removeIamRolesHasBeenSet;
+
+    Aws::String m_defaultIamRoleArn;
+    bool m_defaultIamRoleArnHasBeenSet;
   };
 
 } // namespace Model
