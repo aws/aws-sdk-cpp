@@ -268,7 +268,8 @@ namespace Model
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
      * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> </ul>
+     * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> -
+     * Default 100. Max 10,000.</p> </li> </ul>
      */
     inline int GetBatchSize() const{ return m_batchSize; }
 
@@ -282,7 +283,8 @@ namespace Model
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
      * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> </ul>
+     * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> -
+     * Default 100. Max 10,000.</p> </li> </ul>
      */
     inline bool BatchSizeHasBeenSet() const { return m_batchSizeHasBeenSet; }
 
@@ -296,7 +298,8 @@ namespace Model
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
      * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> </ul>
+     * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> -
+     * Default 100. Max 10,000.</p> </li> </ul>
      */
     inline void SetBatchSize(int value) { m_batchSizeHasBeenSet = true; m_batchSize = value; }
 
@@ -310,7 +313,8 @@ namespace Model
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
      * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> </ul>
+     * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> -
+     * Default 100. Max 10,000.</p> </li> </ul>
      */
     inline CreateEventSourceMappingRequest& WithBatchSize(int value) { SetBatchSize(value); return *this;}
 

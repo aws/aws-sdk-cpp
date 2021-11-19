@@ -34,42 +34,42 @@ namespace Model
 
 
     /**
-     * <p> The identifier for the assessment. </p>
+     * <p> The unique identifier for the assessment. </p>
      */
     inline const Aws::String& GetAssessmentId() const{ return m_assessmentId; }
 
     /**
-     * <p> The identifier for the assessment. </p>
+     * <p> The unique identifier for the assessment. </p>
      */
     inline bool AssessmentIdHasBeenSet() const { return m_assessmentIdHasBeenSet; }
 
     /**
-     * <p> The identifier for the assessment. </p>
+     * <p> The unique identifier for the assessment. </p>
      */
     inline void SetAssessmentId(const Aws::String& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = value; }
 
     /**
-     * <p> The identifier for the assessment. </p>
+     * <p> The unique identifier for the assessment. </p>
      */
     inline void SetAssessmentId(Aws::String&& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = std::move(value); }
 
     /**
-     * <p> The identifier for the assessment. </p>
+     * <p> The unique identifier for the assessment. </p>
      */
     inline void SetAssessmentId(const char* value) { m_assessmentIdHasBeenSet = true; m_assessmentId.assign(value); }
 
     /**
-     * <p> The identifier for the assessment. </p>
+     * <p> The unique identifier for the assessment. </p>
      */
     inline UpdateAssessmentStatusRequest& WithAssessmentId(const Aws::String& value) { SetAssessmentId(value); return *this;}
 
     /**
-     * <p> The identifier for the assessment. </p>
+     * <p> The unique identifier for the assessment. </p>
      */
     inline UpdateAssessmentStatusRequest& WithAssessmentId(Aws::String&& value) { SetAssessmentId(std::move(value)); return *this;}
 
     /**
-     * <p> The identifier for the assessment. </p>
+     * <p> The unique identifier for the assessment. </p>
      */
     inline UpdateAssessmentStatusRequest& WithAssessmentId(const char* value) { SetAssessmentId(value); return *this;}
 

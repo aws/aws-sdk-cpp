@@ -164,6 +164,19 @@ namespace Model
     inline ForecastSummary& WithPredictorArn(const char* value) { SetPredictorArn(value); return *this;}
 
 
+    
+    inline bool GetCreatedUsingAutoPredictor() const{ return m_createdUsingAutoPredictor; }
+
+    
+    inline bool CreatedUsingAutoPredictorHasBeenSet() const { return m_createdUsingAutoPredictorHasBeenSet; }
+
+    
+    inline void SetCreatedUsingAutoPredictor(bool value) { m_createdUsingAutoPredictorHasBeenSet = true; m_createdUsingAutoPredictor = value; }
+
+    
+    inline ForecastSummary& WithCreatedUsingAutoPredictor(bool value) { SetCreatedUsingAutoPredictor(value); return *this;}
+
+
     /**
      * <p>The Amazon Resource Name (ARN) of the dataset group that provided the data
      * used to train the predictor.</p>
@@ -458,6 +471,9 @@ namespace Model
 
     Aws::String m_predictorArn;
     bool m_predictorArnHasBeenSet;
+
+    bool m_createdUsingAutoPredictor;
+    bool m_createdUsingAutoPredictorHasBeenSet;
 
     Aws::String m_datasetGroupArn;
     bool m_datasetGroupArnHasBeenSet;

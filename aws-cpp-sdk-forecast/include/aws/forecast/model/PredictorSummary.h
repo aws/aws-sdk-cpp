@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/forecast/ForecastService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/forecast/model/ReferencePredictorSummary.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -170,6 +171,64 @@ namespace Model
      * used to train the predictor.</p>
      */
     inline PredictorSummary& WithDatasetGroupArn(const char* value) { SetDatasetGroupArn(value); return *this;}
+
+
+    /**
+     * <p>Whether AutoPredictor was used to create the predictor.</p>
+     */
+    inline bool GetIsAutoPredictor() const{ return m_isAutoPredictor; }
+
+    /**
+     * <p>Whether AutoPredictor was used to create the predictor.</p>
+     */
+    inline bool IsAutoPredictorHasBeenSet() const { return m_isAutoPredictorHasBeenSet; }
+
+    /**
+     * <p>Whether AutoPredictor was used to create the predictor.</p>
+     */
+    inline void SetIsAutoPredictor(bool value) { m_isAutoPredictorHasBeenSet = true; m_isAutoPredictor = value; }
+
+    /**
+     * <p>Whether AutoPredictor was used to create the predictor.</p>
+     */
+    inline PredictorSummary& WithIsAutoPredictor(bool value) { SetIsAutoPredictor(value); return *this;}
+
+
+    /**
+     * <p>A summary of the reference predictor used if the predictor was retrained or
+     * upgraded.</p>
+     */
+    inline const ReferencePredictorSummary& GetReferencePredictorSummary() const{ return m_referencePredictorSummary; }
+
+    /**
+     * <p>A summary of the reference predictor used if the predictor was retrained or
+     * upgraded.</p>
+     */
+    inline bool ReferencePredictorSummaryHasBeenSet() const { return m_referencePredictorSummaryHasBeenSet; }
+
+    /**
+     * <p>A summary of the reference predictor used if the predictor was retrained or
+     * upgraded.</p>
+     */
+    inline void SetReferencePredictorSummary(const ReferencePredictorSummary& value) { m_referencePredictorSummaryHasBeenSet = true; m_referencePredictorSummary = value; }
+
+    /**
+     * <p>A summary of the reference predictor used if the predictor was retrained or
+     * upgraded.</p>
+     */
+    inline void SetReferencePredictorSummary(ReferencePredictorSummary&& value) { m_referencePredictorSummaryHasBeenSet = true; m_referencePredictorSummary = std::move(value); }
+
+    /**
+     * <p>A summary of the reference predictor used if the predictor was retrained or
+     * upgraded.</p>
+     */
+    inline PredictorSummary& WithReferencePredictorSummary(const ReferencePredictorSummary& value) { SetReferencePredictorSummary(value); return *this;}
+
+    /**
+     * <p>A summary of the reference predictor used if the predictor was retrained or
+     * upgraded.</p>
+     */
+    inline PredictorSummary& WithReferencePredictorSummary(ReferencePredictorSummary&& value) { SetReferencePredictorSummary(std::move(value)); return *this;}
 
 
     /**
@@ -417,6 +476,12 @@ namespace Model
 
     Aws::String m_datasetGroupArn;
     bool m_datasetGroupArnHasBeenSet;
+
+    bool m_isAutoPredictor;
+    bool m_isAutoPredictorHasBeenSet;
+
+    ReferencePredictorSummary m_referencePredictorSummary;
+    bool m_referencePredictorSummaryHasBeenSet;
 
     Aws::String m_status;
     bool m_statusHasBeenSet;

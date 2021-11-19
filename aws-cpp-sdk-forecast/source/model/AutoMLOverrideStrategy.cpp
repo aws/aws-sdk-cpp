@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int LatencyOptimized_HASH = HashingUtils::HashString("LatencyOptimized");
+        static const int AccuracyOptimized_HASH = HashingUtils::HashString("AccuracyOptimized");
 
 
         AutoMLOverrideStrategy GetAutoMLOverrideStrategyForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == LatencyOptimized_HASH)
           {
             return AutoMLOverrideStrategy::LatencyOptimized;
+          }
+          else if (hashCode == AccuracyOptimized_HASH)
+          {
+            return AutoMLOverrideStrategy::AccuracyOptimized;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case AutoMLOverrideStrategy::LatencyOptimized:
             return "LatencyOptimized";
+          case AutoMLOverrideStrategy::AccuracyOptimized:
+            return "AccuracyOptimized";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

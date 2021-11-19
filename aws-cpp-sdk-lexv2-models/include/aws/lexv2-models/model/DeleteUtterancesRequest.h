@@ -154,49 +154,81 @@ namespace Model
 
     /**
      * <p>The unique identifier of the session with the user. The ID is returned in the
-     * response from the and operations.</p>
+     * response from the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeText.html">RecognizeText</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeUtterance.html">RecognizeUtterance</a>
+     * operations.</p>
      */
     inline const Aws::String& GetSessionId() const{ return m_sessionId; }
 
     /**
      * <p>The unique identifier of the session with the user. The ID is returned in the
-     * response from the and operations.</p>
+     * response from the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeText.html">RecognizeText</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeUtterance.html">RecognizeUtterance</a>
+     * operations.</p>
      */
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
 
     /**
      * <p>The unique identifier of the session with the user. The ID is returned in the
-     * response from the and operations.</p>
+     * response from the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeText.html">RecognizeText</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeUtterance.html">RecognizeUtterance</a>
+     * operations.</p>
      */
     inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
 
     /**
      * <p>The unique identifier of the session with the user. The ID is returned in the
-     * response from the and operations.</p>
+     * response from the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeText.html">RecognizeText</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeUtterance.html">RecognizeUtterance</a>
+     * operations.</p>
      */
     inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
 
     /**
      * <p>The unique identifier of the session with the user. The ID is returned in the
-     * response from the and operations.</p>
+     * response from the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeText.html">RecognizeText</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeUtterance.html">RecognizeUtterance</a>
+     * operations.</p>
      */
     inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
 
     /**
      * <p>The unique identifier of the session with the user. The ID is returned in the
-     * response from the and operations.</p>
+     * response from the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeText.html">RecognizeText</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeUtterance.html">RecognizeUtterance</a>
+     * operations.</p>
      */
     inline DeleteUtterancesRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
 
     /**
      * <p>The unique identifier of the session with the user. The ID is returned in the
-     * response from the and operations.</p>
+     * response from the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeText.html">RecognizeText</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeUtterance.html">RecognizeUtterance</a>
+     * operations.</p>
      */
     inline DeleteUtterancesRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the session with the user. The ID is returned in the
-     * response from the and operations.</p>
+     * response from the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeText.html">RecognizeText</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeUtterance.html">RecognizeUtterance</a>
+     * operations.</p>
      */
     inline DeleteUtterancesRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
 

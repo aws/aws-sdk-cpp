@@ -72,6 +72,22 @@ namespace Model
 
 
     /**
+     * <p>Whether the predictor was created with <a>CreateAutoPredictor</a>.</p>
+     */
+    inline bool GetIsAutoPredictor() const{ return m_isAutoPredictor; }
+
+    /**
+     * <p>Whether the predictor was created with <a>CreateAutoPredictor</a>.</p>
+     */
+    inline void SetIsAutoPredictor(bool value) { m_isAutoPredictor = value; }
+
+    /**
+     * <p>Whether the predictor was created with <a>CreateAutoPredictor</a>.</p>
+     */
+    inline GetAccuracyMetricsResult& WithIsAutoPredictor(bool value) { SetIsAutoPredictor(value); return *this;}
+
+
+    /**
      *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
      * available in private beta. Contact AWS Support or your account manager to learn
      * more about access privileges. </p>  <p>The AutoML strategy used to train
@@ -150,6 +166,8 @@ namespace Model
   private:
 
     Aws::Vector<EvaluationResult> m_predictorEvaluationResults;
+
+    bool m_isAutoPredictor;
 
     AutoMLOverrideStrategy m_autoMLOverrideStrategy;
 

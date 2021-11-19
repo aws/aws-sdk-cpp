@@ -24,7 +24,7 @@ namespace Model
   /**
    * 
             <p>Contains information about the EBS storage volumes attached to
-   * Kafka broker nodes.</p>
+   * Apache Kafka broker nodes.</p>
          <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/EBSStorageInfo">AWS
    * API Reference</a></p>

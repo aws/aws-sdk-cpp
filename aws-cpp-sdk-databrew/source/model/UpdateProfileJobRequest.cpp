@@ -25,6 +25,7 @@ UpdateProfileJobRequest::UpdateProfileJobRequest() :
     m_maxRetries(0),
     m_maxRetriesHasBeenSet(false),
     m_outputLocationHasBeenSet(false),
+    m_validationConfigurationsHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_timeout(0),
     m_timeoutHasBeenSet(false),
@@ -73,6 +74,17 @@ Aws::String UpdateProfileJobRequest::SerializePayload() const
   if(m_outputLocationHasBeenSet)
   {
    payload.WithObject("OutputLocation", m_outputLocation.Jsonize());
+
+  }
+
+  if(m_validationConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> validationConfigurationsJsonList(m_validationConfigurations.size());
+   for(unsigned validationConfigurationsIndex = 0; validationConfigurationsIndex < validationConfigurationsJsonList.GetLength(); ++validationConfigurationsIndex)
+   {
+     validationConfigurationsJsonList[validationConfigurationsIndex].AsObject(m_validationConfigurations[validationConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("ValidationConfigurations", std::move(validationConfigurationsJsonList));
 
   }
 

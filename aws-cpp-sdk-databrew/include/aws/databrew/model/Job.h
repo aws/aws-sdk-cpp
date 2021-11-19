@@ -17,6 +17,7 @@
 #include <aws/databrew/model/Output.h>
 #include <aws/databrew/model/DataCatalogOutput.h>
 #include <aws/databrew/model/DatabaseOutput.h>
+#include <aws/databrew/model/ValidationConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -987,6 +988,47 @@ namespace Model
      */
     inline Job& WithJobSample(JobSample&& value) { SetJobSample(std::move(value)); return *this;}
 
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline const Aws::Vector<ValidationConfiguration>& GetValidationConfigurations() const{ return m_validationConfigurations; }
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline bool ValidationConfigurationsHasBeenSet() const { return m_validationConfigurationsHasBeenSet; }
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline void SetValidationConfigurations(const Aws::Vector<ValidationConfiguration>& value) { m_validationConfigurationsHasBeenSet = true; m_validationConfigurations = value; }
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline void SetValidationConfigurations(Aws::Vector<ValidationConfiguration>&& value) { m_validationConfigurationsHasBeenSet = true; m_validationConfigurations = std::move(value); }
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline Job& WithValidationConfigurations(const Aws::Vector<ValidationConfiguration>& value) { SetValidationConfigurations(value); return *this;}
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline Job& WithValidationConfigurations(Aws::Vector<ValidationConfiguration>&& value) { SetValidationConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline Job& AddValidationConfigurations(const ValidationConfiguration& value) { m_validationConfigurationsHasBeenSet = true; m_validationConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline Job& AddValidationConfigurations(ValidationConfiguration&& value) { m_validationConfigurationsHasBeenSet = true; m_validationConfigurations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_accountId;
@@ -1057,6 +1099,9 @@ namespace Model
 
     JobSample m_jobSample;
     bool m_jobSampleHasBeenSet;
+
+    Aws::Vector<ValidationConfiguration> m_validationConfigurations;
+    bool m_validationConfigurationsHasBeenSet;
   };
 
 } // namespace Model

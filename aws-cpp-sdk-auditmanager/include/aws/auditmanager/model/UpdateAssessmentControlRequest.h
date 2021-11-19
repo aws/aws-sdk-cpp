@@ -34,124 +34,124 @@ namespace Model
 
 
     /**
-     * <p> The identifier for the assessment. </p>
+     * <p> The unique identifier for the assessment. </p>
      */
     inline const Aws::String& GetAssessmentId() const{ return m_assessmentId; }
 
     /**
-     * <p> The identifier for the assessment. </p>
+     * <p> The unique identifier for the assessment. </p>
      */
     inline bool AssessmentIdHasBeenSet() const { return m_assessmentIdHasBeenSet; }
 
     /**
-     * <p> The identifier for the assessment. </p>
+     * <p> The unique identifier for the assessment. </p>
      */
     inline void SetAssessmentId(const Aws::String& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = value; }
 
     /**
-     * <p> The identifier for the assessment. </p>
+     * <p> The unique identifier for the assessment. </p>
      */
     inline void SetAssessmentId(Aws::String&& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = std::move(value); }
 
     /**
-     * <p> The identifier for the assessment. </p>
+     * <p> The unique identifier for the assessment. </p>
      */
     inline void SetAssessmentId(const char* value) { m_assessmentIdHasBeenSet = true; m_assessmentId.assign(value); }
 
     /**
-     * <p> The identifier for the assessment. </p>
+     * <p> The unique identifier for the assessment. </p>
      */
     inline UpdateAssessmentControlRequest& WithAssessmentId(const Aws::String& value) { SetAssessmentId(value); return *this;}
 
     /**
-     * <p> The identifier for the assessment. </p>
+     * <p> The unique identifier for the assessment. </p>
      */
     inline UpdateAssessmentControlRequest& WithAssessmentId(Aws::String&& value) { SetAssessmentId(std::move(value)); return *this;}
 
     /**
-     * <p> The identifier for the assessment. </p>
+     * <p> The unique identifier for the assessment. </p>
      */
     inline UpdateAssessmentControlRequest& WithAssessmentId(const char* value) { SetAssessmentId(value); return *this;}
 
 
     /**
-     * <p> The identifier for the control set. </p>
+     * <p> The unique identifier for the control set. </p>
      */
     inline const Aws::String& GetControlSetId() const{ return m_controlSetId; }
 
     /**
-     * <p> The identifier for the control set. </p>
+     * <p> The unique identifier for the control set. </p>
      */
     inline bool ControlSetIdHasBeenSet() const { return m_controlSetIdHasBeenSet; }
 
     /**
-     * <p> The identifier for the control set. </p>
+     * <p> The unique identifier for the control set. </p>
      */
     inline void SetControlSetId(const Aws::String& value) { m_controlSetIdHasBeenSet = true; m_controlSetId = value; }
 
     /**
-     * <p> The identifier for the control set. </p>
+     * <p> The unique identifier for the control set. </p>
      */
     inline void SetControlSetId(Aws::String&& value) { m_controlSetIdHasBeenSet = true; m_controlSetId = std::move(value); }
 
     /**
-     * <p> The identifier for the control set. </p>
+     * <p> The unique identifier for the control set. </p>
      */
     inline void SetControlSetId(const char* value) { m_controlSetIdHasBeenSet = true; m_controlSetId.assign(value); }
 
     /**
-     * <p> The identifier for the control set. </p>
+     * <p> The unique identifier for the control set. </p>
      */
     inline UpdateAssessmentControlRequest& WithControlSetId(const Aws::String& value) { SetControlSetId(value); return *this;}
 
     /**
-     * <p> The identifier for the control set. </p>
+     * <p> The unique identifier for the control set. </p>
      */
     inline UpdateAssessmentControlRequest& WithControlSetId(Aws::String&& value) { SetControlSetId(std::move(value)); return *this;}
 
     /**
-     * <p> The identifier for the control set. </p>
+     * <p> The unique identifier for the control set. </p>
      */
     inline UpdateAssessmentControlRequest& WithControlSetId(const char* value) { SetControlSetId(value); return *this;}
 
 
     /**
-     * <p> The identifier for the control. </p>
+     * <p> The unique identifier for the control. </p>
      */
     inline const Aws::String& GetControlId() const{ return m_controlId; }
 
     /**
-     * <p> The identifier for the control. </p>
+     * <p> The unique identifier for the control. </p>
      */
     inline bool ControlIdHasBeenSet() const { return m_controlIdHasBeenSet; }
 
     /**
-     * <p> The identifier for the control. </p>
+     * <p> The unique identifier for the control. </p>
      */
     inline void SetControlId(const Aws::String& value) { m_controlIdHasBeenSet = true; m_controlId = value; }
 
     /**
-     * <p> The identifier for the control. </p>
+     * <p> The unique identifier for the control. </p>
      */
     inline void SetControlId(Aws::String&& value) { m_controlIdHasBeenSet = true; m_controlId = std::move(value); }
 
     /**
-     * <p> The identifier for the control. </p>
+     * <p> The unique identifier for the control. </p>
      */
     inline void SetControlId(const char* value) { m_controlIdHasBeenSet = true; m_controlId.assign(value); }
 
     /**
-     * <p> The identifier for the control. </p>
+     * <p> The unique identifier for the control. </p>
      */
     inline UpdateAssessmentControlRequest& WithControlId(const Aws::String& value) { SetControlId(value); return *this;}
 
     /**
-     * <p> The identifier for the control. </p>
+     * <p> The unique identifier for the control. </p>
      */
     inline UpdateAssessmentControlRequest& WithControlId(Aws::String&& value) { SetControlId(std::move(value)); return *this;}
 
     /**
-     * <p> The identifier for the control. </p>
+     * <p> The unique identifier for the control. </p>
      */
     inline UpdateAssessmentControlRequest& WithControlId(const char* value) { SetControlId(value); return *this;}
 

@@ -8,6 +8,7 @@
 #include <aws/databrew/model/S3Location.h>
 #include <aws/databrew/model/DataCatalogInputDefinition.h>
 #include <aws/databrew/model/DatabaseInputDefinition.h>
+#include <aws/databrew/model/Metadata.h>
 #include <utility>
 
 namespace Aws
@@ -132,6 +133,37 @@ namespace Model
      */
     inline Input& WithDatabaseInputDefinition(DatabaseInputDefinition&& value) { SetDatabaseInputDefinition(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains additional resource information needed for specific datasets.</p>
+     */
+    inline const Metadata& GetMetadata() const{ return m_metadata; }
+
+    /**
+     * <p>Contains additional resource information needed for specific datasets.</p>
+     */
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+
+    /**
+     * <p>Contains additional resource information needed for specific datasets.</p>
+     */
+    inline void SetMetadata(const Metadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
+
+    /**
+     * <p>Contains additional resource information needed for specific datasets.</p>
+     */
+    inline void SetMetadata(Metadata&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
+
+    /**
+     * <p>Contains additional resource information needed for specific datasets.</p>
+     */
+    inline Input& WithMetadata(const Metadata& value) { SetMetadata(value); return *this;}
+
+    /**
+     * <p>Contains additional resource information needed for specific datasets.</p>
+     */
+    inline Input& WithMetadata(Metadata&& value) { SetMetadata(std::move(value)); return *this;}
+
   private:
 
     S3Location m_s3InputDefinition;
@@ -142,6 +174,9 @@ namespace Model
 
     DatabaseInputDefinition m_databaseInputDefinition;
     bool m_databaseInputDefinitionHasBeenSet;
+
+    Metadata m_metadata;
+    bool m_metadataHasBeenSet;
   };
 
 } // namespace Model

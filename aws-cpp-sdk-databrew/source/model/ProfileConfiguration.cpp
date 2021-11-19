@@ -21,14 +21,16 @@ namespace Model
 ProfileConfiguration::ProfileConfiguration() : 
     m_datasetStatisticsConfigurationHasBeenSet(false),
     m_profileColumnsHasBeenSet(false),
-    m_columnStatisticsConfigurationsHasBeenSet(false)
+    m_columnStatisticsConfigurationsHasBeenSet(false),
+    m_entityDetectorConfigurationHasBeenSet(false)
 {
 }
 
 ProfileConfiguration::ProfileConfiguration(JsonView jsonValue) : 
     m_datasetStatisticsConfigurationHasBeenSet(false),
     m_profileColumnsHasBeenSet(false),
-    m_columnStatisticsConfigurationsHasBeenSet(false)
+    m_columnStatisticsConfigurationsHasBeenSet(false),
+    m_entityDetectorConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +62,13 @@ ProfileConfiguration& ProfileConfiguration::operator =(JsonView jsonValue)
       m_columnStatisticsConfigurations.push_back(columnStatisticsConfigurationsJsonList[columnStatisticsConfigurationsIndex].AsObject());
     }
     m_columnStatisticsConfigurationsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EntityDetectorConfiguration"))
+  {
+    m_entityDetectorConfiguration = jsonValue.GetObject("EntityDetectorConfiguration");
+
+    m_entityDetectorConfigurationHasBeenSet = true;
   }
 
   return *this;
@@ -94,6 +103,12 @@ JsonValue ProfileConfiguration::Jsonize() const
      columnStatisticsConfigurationsJsonList[columnStatisticsConfigurationsIndex].AsObject(m_columnStatisticsConfigurations[columnStatisticsConfigurationsIndex].Jsonize());
    }
    payload.WithArray("ColumnStatisticsConfigurations", std::move(columnStatisticsConfigurationsJsonList));
+
+  }
+
+  if(m_entityDetectorConfigurationHasBeenSet)
+  {
+   payload.WithObject("EntityDetectorConfiguration", m_entityDetectorConfiguration.Jsonize());
 
   }
 

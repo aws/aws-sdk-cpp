@@ -36,6 +36,7 @@
 #include <aws/kafka/model/UpdateBrokerTypeResult.h>
 #include <aws/kafka/model/UpdateBrokerStorageResult.h>
 #include <aws/kafka/model/UpdateConfigurationResult.h>
+#include <aws/kafka/model/UpdateConnectivityResult.h>
 #include <aws/kafka/model/UpdateClusterConfigurationResult.h>
 #include <aws/kafka/model/UpdateClusterKafkaVersionResult.h>
 #include <aws/kafka/model/UpdateMonitoringResult.h>
@@ -107,6 +108,7 @@ namespace Model
         class UpdateBrokerTypeRequest;
         class UpdateBrokerStorageRequest;
         class UpdateConfigurationRequest;
+        class UpdateConnectivityRequest;
         class UpdateClusterConfigurationRequest;
         class UpdateClusterKafkaVersionRequest;
         class UpdateMonitoringRequest;
@@ -139,6 +141,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateBrokerTypeResult, KafkaError> UpdateBrokerTypeOutcome;
         typedef Aws::Utils::Outcome<UpdateBrokerStorageResult, KafkaError> UpdateBrokerStorageOutcome;
         typedef Aws::Utils::Outcome<UpdateConfigurationResult, KafkaError> UpdateConfigurationOutcome;
+        typedef Aws::Utils::Outcome<UpdateConnectivityResult, KafkaError> UpdateConnectivityOutcome;
         typedef Aws::Utils::Outcome<UpdateClusterConfigurationResult, KafkaError> UpdateClusterConfigurationOutcome;
         typedef Aws::Utils::Outcome<UpdateClusterKafkaVersionResult, KafkaError> UpdateClusterKafkaVersionOutcome;
         typedef Aws::Utils::Outcome<UpdateMonitoringResult, KafkaError> UpdateMonitoringOutcome;
@@ -171,6 +174,7 @@ namespace Model
         typedef std::future<UpdateBrokerTypeOutcome> UpdateBrokerTypeOutcomeCallable;
         typedef std::future<UpdateBrokerStorageOutcome> UpdateBrokerStorageOutcomeCallable;
         typedef std::future<UpdateConfigurationOutcome> UpdateConfigurationOutcomeCallable;
+        typedef std::future<UpdateConnectivityOutcome> UpdateConnectivityOutcomeCallable;
         typedef std::future<UpdateClusterConfigurationOutcome> UpdateClusterConfigurationOutcomeCallable;
         typedef std::future<UpdateClusterKafkaVersionOutcome> UpdateClusterKafkaVersionOutcomeCallable;
         typedef std::future<UpdateMonitoringOutcome> UpdateMonitoringOutcomeCallable;
@@ -206,6 +210,7 @@ namespace Model
     typedef std::function<void(const KafkaClient*, const Model::UpdateBrokerTypeRequest&, const Model::UpdateBrokerTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBrokerTypeResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::UpdateBrokerStorageRequest&, const Model::UpdateBrokerStorageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBrokerStorageResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::UpdateConfigurationRequest&, const Model::UpdateConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConfigurationResponseReceivedHandler;
+    typedef std::function<void(const KafkaClient*, const Model::UpdateConnectivityRequest&, const Model::UpdateConnectivityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConnectivityResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::UpdateClusterConfigurationRequest&, const Model::UpdateClusterConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClusterConfigurationResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::UpdateClusterKafkaVersionRequest&, const Model::UpdateClusterKafkaVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClusterKafkaVersionResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::UpdateMonitoringRequest&, const Model::UpdateMonitoringOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMonitoringResponseReceivedHandler;
@@ -790,7 +795,7 @@ namespace Model
 
         /**
          * 
-            <p>Returns a list of Kafka versions.</p>
+            <p>Returns a list of Apache Kafka versions.</p>
          <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListKafkaVersions">AWS
@@ -800,7 +805,7 @@ namespace Model
 
         /**
          * 
-            <p>Returns a list of Kafka versions.</p>
+            <p>Returns a list of Apache Kafka versions.</p>
          <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListKafkaVersions">AWS
@@ -812,7 +817,7 @@ namespace Model
 
         /**
          * 
-            <p>Returns a list of Kafka versions.</p>
+            <p>Returns a list of Apache Kafka versions.</p>
          <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListKafkaVersions">AWS
@@ -1155,6 +1160,40 @@ namespace Model
 
         /**
          * 
+            <p>Updates the cluster's connectivity configuration.</p>
+        
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateConnectivity">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateConnectivityOutcome UpdateConnectivity(const Model::UpdateConnectivityRequest& request) const;
+
+        /**
+         * 
+            <p>Updates the cluster's connectivity configuration.</p>
+        
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateConnectivity">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateConnectivityOutcomeCallable UpdateConnectivityCallable(const Model::UpdateConnectivityRequest& request) const;
+
+        /**
+         * 
+            <p>Updates the cluster's connectivity configuration.</p>
+        
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateConnectivity">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateConnectivityAsync(const Model::UpdateConnectivityRequest& request, const UpdateConnectivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
             <p>Updates the cluster with the configuration that is specified in
          * the request body.</p>
          <p><h3>See Also:</h3>   <a
@@ -1329,6 +1368,7 @@ namespace Model
         void UpdateBrokerTypeAsyncHelper(const Model::UpdateBrokerTypeRequest& request, const UpdateBrokerTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateBrokerStorageAsyncHelper(const Model::UpdateBrokerStorageRequest& request, const UpdateBrokerStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateConfigurationAsyncHelper(const Model::UpdateConfigurationRequest& request, const UpdateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateConnectivityAsyncHelper(const Model::UpdateConnectivityRequest& request, const UpdateConnectivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateClusterConfigurationAsyncHelper(const Model::UpdateClusterConfigurationRequest& request, const UpdateClusterConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateClusterKafkaVersionAsyncHelper(const Model::UpdateClusterKafkaVersionRequest& request, const UpdateClusterKafkaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateMonitoringAsyncHelper(const Model::UpdateMonitoringRequest& request, const UpdateMonitoringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

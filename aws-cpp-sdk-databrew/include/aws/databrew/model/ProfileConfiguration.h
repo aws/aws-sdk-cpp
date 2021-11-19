@@ -7,6 +7,7 @@
 #include <aws/databrew/GlueDataBrew_EXPORTS.h>
 #include <aws/databrew/model/StatisticsConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/databrew/model/EntityDetectorConfiguration.h>
 #include <aws/databrew/model/ColumnSelector.h>
 #include <aws/databrew/model/ColumnStatisticsConfiguration.h>
 #include <utility>
@@ -215,6 +216,43 @@ namespace Model
      */
     inline ProfileConfiguration& AddColumnStatisticsConfigurations(ColumnStatisticsConfiguration&& value) { m_columnStatisticsConfigurationsHasBeenSet = true; m_columnStatisticsConfigurations.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Configuration of entity detection for a profile job. When undefined, entity
+     * detection is disabled.</p>
+     */
+    inline const EntityDetectorConfiguration& GetEntityDetectorConfiguration() const{ return m_entityDetectorConfiguration; }
+
+    /**
+     * <p>Configuration of entity detection for a profile job. When undefined, entity
+     * detection is disabled.</p>
+     */
+    inline bool EntityDetectorConfigurationHasBeenSet() const { return m_entityDetectorConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configuration of entity detection for a profile job. When undefined, entity
+     * detection is disabled.</p>
+     */
+    inline void SetEntityDetectorConfiguration(const EntityDetectorConfiguration& value) { m_entityDetectorConfigurationHasBeenSet = true; m_entityDetectorConfiguration = value; }
+
+    /**
+     * <p>Configuration of entity detection for a profile job. When undefined, entity
+     * detection is disabled.</p>
+     */
+    inline void SetEntityDetectorConfiguration(EntityDetectorConfiguration&& value) { m_entityDetectorConfigurationHasBeenSet = true; m_entityDetectorConfiguration = std::move(value); }
+
+    /**
+     * <p>Configuration of entity detection for a profile job. When undefined, entity
+     * detection is disabled.</p>
+     */
+    inline ProfileConfiguration& WithEntityDetectorConfiguration(const EntityDetectorConfiguration& value) { SetEntityDetectorConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration of entity detection for a profile job. When undefined, entity
+     * detection is disabled.</p>
+     */
+    inline ProfileConfiguration& WithEntityDetectorConfiguration(EntityDetectorConfiguration&& value) { SetEntityDetectorConfiguration(std::move(value)); return *this;}
+
   private:
 
     StatisticsConfiguration m_datasetStatisticsConfiguration;
@@ -225,6 +263,9 @@ namespace Model
 
     Aws::Vector<ColumnStatisticsConfiguration> m_columnStatisticsConfigurations;
     bool m_columnStatisticsConfigurationsHasBeenSet;
+
+    EntityDetectorConfiguration m_entityDetectorConfiguration;
+    bool m_entityDetectorConfigurationHasBeenSet;
   };
 
 } // namespace Model

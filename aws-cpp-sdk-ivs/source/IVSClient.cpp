@@ -34,11 +34,13 @@
 #include <aws/ivs/model/GetRecordingConfigurationRequest.h>
 #include <aws/ivs/model/GetStreamRequest.h>
 #include <aws/ivs/model/GetStreamKeyRequest.h>
+#include <aws/ivs/model/GetStreamSessionRequest.h>
 #include <aws/ivs/model/ImportPlaybackKeyPairRequest.h>
 #include <aws/ivs/model/ListChannelsRequest.h>
 #include <aws/ivs/model/ListPlaybackKeyPairsRequest.h>
 #include <aws/ivs/model/ListRecordingConfigurationsRequest.h>
 #include <aws/ivs/model/ListStreamKeysRequest.h>
+#include <aws/ivs/model/ListStreamSessionsRequest.h>
 #include <aws/ivs/model/ListStreamsRequest.h>
 #include <aws/ivs/model/ListTagsForResourceRequest.h>
 #include <aws/ivs/model/PutMetadataRequest.h>
@@ -470,6 +472,31 @@ void IVSClient::GetStreamKeyAsyncHelper(const GetStreamKeyRequest& request, cons
   handler(this, request, GetStreamKey(request), context);
 }
 
+GetStreamSessionOutcome IVSClient::GetStreamSession(const GetStreamSessionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/GetStreamSession");
+  return GetStreamSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetStreamSessionOutcomeCallable IVSClient::GetStreamSessionCallable(const GetStreamSessionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetStreamSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStreamSession(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IVSClient::GetStreamSessionAsync(const GetStreamSessionRequest& request, const GetStreamSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetStreamSessionAsyncHelper( request, handler, context ); } );
+}
+
+void IVSClient::GetStreamSessionAsyncHelper(const GetStreamSessionRequest& request, const GetStreamSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetStreamSession(request), context);
+}
+
 ImportPlaybackKeyPairOutcome IVSClient::ImportPlaybackKeyPair(const ImportPlaybackKeyPairRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -593,6 +620,31 @@ void IVSClient::ListStreamKeysAsync(const ListStreamKeysRequest& request, const 
 void IVSClient::ListStreamKeysAsyncHelper(const ListStreamKeysRequest& request, const ListStreamKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListStreamKeys(request), context);
+}
+
+ListStreamSessionsOutcome IVSClient::ListStreamSessions(const ListStreamSessionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/ListStreamSessions");
+  return ListStreamSessionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListStreamSessionsOutcomeCallable IVSClient::ListStreamSessionsCallable(const ListStreamSessionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListStreamSessionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStreamSessions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IVSClient::ListStreamSessionsAsync(const ListStreamSessionsRequest& request, const ListStreamSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListStreamSessionsAsyncHelper( request, handler, context ); } );
+}
+
+void IVSClient::ListStreamSessionsAsyncHelper(const ListStreamSessionsRequest& request, const ListStreamSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListStreamSessions(request), context);
 }
 
 ListStreamsOutcome IVSClient::ListStreams(const ListStreamsRequest& request) const

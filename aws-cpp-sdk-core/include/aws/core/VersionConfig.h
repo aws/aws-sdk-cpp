@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#define AWS_SDK_VERSION_STRING "1.9.147"
+#define AWS_SDK_VERSION_STRING "1.9.148"
 #define AWS_SDK_VERSION_MAJOR 1
 #define AWS_SDK_VERSION_MINOR 9
-#define AWS_SDK_VERSION_PATCH 147
+#define AWS_SDK_VERSION_PATCH 148

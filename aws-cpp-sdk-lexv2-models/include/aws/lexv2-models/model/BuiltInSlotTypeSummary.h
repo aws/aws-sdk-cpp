@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Provides summary information about a built-in slot type for the
-   * <a>ListBuiltInSlotTypes</a> operation.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides summary information about a built-in slot type for the <a
+   * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBuiltInSlotTypes.html">
+   * ListBuiltInSlotTypes </a> operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BuiltInSlotTypeSummary">AWS
    * API Reference</a></p>
    */

@@ -521,43 +521,43 @@ namespace Model
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * key is only returned if you've configured a customer managed key.</p>
      */
     inline const Aws::String& GetKMSKeyArn() const{ return m_kMSKeyArn; }
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * key is only returned if you've configured a customer managed key.</p>
      */
     inline void SetKMSKeyArn(const Aws::String& value) { m_kMSKeyArn = value; }
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * key is only returned if you've configured a customer managed key.</p>
      */
     inline void SetKMSKeyArn(Aws::String&& value) { m_kMSKeyArn = std::move(value); }
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * key is only returned if you've configured a customer managed key.</p>
      */
     inline void SetKMSKeyArn(const char* value) { m_kMSKeyArn.assign(value); }
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * key is only returned if you've configured a customer managed key.</p>
      */
     inline CreateFunctionResult& WithKMSKeyArn(const Aws::String& value) { SetKMSKeyArn(value); return *this;}
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * key is only returned if you've configured a customer managed key.</p>
      */
     inline CreateFunctionResult& WithKMSKeyArn(Aws::String&& value) { SetKMSKeyArn(std::move(value)); return *this;}
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * key is only returned if you've configured a customer managed key.</p>
      */
     inline CreateFunctionResult& WithKMSKeyArn(const char* value) { SetKMSKeyArn(value); return *this;}
 
@@ -589,37 +589,37 @@ namespace Model
 
 
     /**
-     * <p>For Lambda@Edge functions, the ARN of the master function.</p>
+     * <p>For Lambda@Edge functions, the ARN of the main function.</p>
      */
     inline const Aws::String& GetMasterArn() const{ return m_masterArn; }
 
     /**
-     * <p>For Lambda@Edge functions, the ARN of the master function.</p>
+     * <p>For Lambda@Edge functions, the ARN of the main function.</p>
      */
     inline void SetMasterArn(const Aws::String& value) { m_masterArn = value; }
 
     /**
-     * <p>For Lambda@Edge functions, the ARN of the master function.</p>
+     * <p>For Lambda@Edge functions, the ARN of the main function.</p>
      */
     inline void SetMasterArn(Aws::String&& value) { m_masterArn = std::move(value); }
 
     /**
-     * <p>For Lambda@Edge functions, the ARN of the master function.</p>
+     * <p>For Lambda@Edge functions, the ARN of the main function.</p>
      */
     inline void SetMasterArn(const char* value) { m_masterArn.assign(value); }
 
     /**
-     * <p>For Lambda@Edge functions, the ARN of the master function.</p>
+     * <p>For Lambda@Edge functions, the ARN of the main function.</p>
      */
     inline CreateFunctionResult& WithMasterArn(const Aws::String& value) { SetMasterArn(value); return *this;}
 
     /**
-     * <p>For Lambda@Edge functions, the ARN of the master function.</p>
+     * <p>For Lambda@Edge functions, the ARN of the main function.</p>
      */
     inline CreateFunctionResult& WithMasterArn(Aws::String&& value) { SetMasterArn(std::move(value)); return *this;}
 
     /**
-     * <p>For Lambda@Edge functions, the ARN of the master function.</p>
+     * <p>For Lambda@Edge functions, the ARN of the main function.</p>
      */
     inline CreateFunctionResult& WithMasterArn(const char* value) { SetMasterArn(value); return *this;}
 

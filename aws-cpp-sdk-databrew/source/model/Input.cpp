@@ -21,14 +21,16 @@ namespace Model
 Input::Input() : 
     m_s3InputDefinitionHasBeenSet(false),
     m_dataCatalogInputDefinitionHasBeenSet(false),
-    m_databaseInputDefinitionHasBeenSet(false)
+    m_databaseInputDefinitionHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
 }
 
 Input::Input(JsonView jsonValue) : 
     m_s3InputDefinitionHasBeenSet(false),
     m_dataCatalogInputDefinitionHasBeenSet(false),
-    m_databaseInputDefinitionHasBeenSet(false)
+    m_databaseInputDefinitionHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ Input& Input::operator =(JsonView jsonValue)
     m_databaseInputDefinitionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Metadata"))
+  {
+    m_metadata = jsonValue.GetObject("Metadata");
+
+    m_metadataHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue Input::Jsonize() const
   if(m_databaseInputDefinitionHasBeenSet)
   {
    payload.WithObject("DatabaseInputDefinition", m_databaseInputDefinition.Jsonize());
+
+  }
+
+  if(m_metadataHasBeenSet)
+  {
+   payload.WithObject("Metadata", m_metadata.Jsonize());
 
   }
 

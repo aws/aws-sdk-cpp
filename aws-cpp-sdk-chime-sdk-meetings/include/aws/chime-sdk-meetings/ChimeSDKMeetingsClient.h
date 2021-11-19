@@ -112,10 +112,7 @@ namespace Model
   /**
    * <p>The Amazon Chime SDK meetings APIs in this section allow software developers
    * to create Amazon Chime SDK meetings, set the AWS Regions for meetings, create
-   * and manage users, and send and receive meeting notifications. For more
-   * information about the meeting APIs, see <a
-   * href="http://amazonaws.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_meetings">Amazon
-   * Chime SDK meetings</a>.</p>
+   * and manage users, and send and receive meeting notifications.</p>
    */
   class AWS_CHIMESDKMEETINGS_API ChimeSDKMeetingsClient : public Aws::Client::AWSJsonClient
   {
@@ -145,14 +142,22 @@ namespace Model
 
 
         /**
-         * <p>Creates a group of meeting attendees.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates up to 100 attendees for an active Amazon Chime SDK meeting. For more
+         * information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/BatchCreateAttendee">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchCreateAttendeeOutcome BatchCreateAttendee(const Model::BatchCreateAttendeeRequest& request) const;
 
         /**
-         * <p>Creates a group of meeting attendees.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates up to 100 attendees for an active Amazon Chime SDK meeting. For more
+         * information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/BatchCreateAttendee">AWS
          * API Reference</a></p>
          *
@@ -161,7 +166,11 @@ namespace Model
         virtual Model::BatchCreateAttendeeOutcomeCallable BatchCreateAttendeeCallable(const Model::BatchCreateAttendeeRequest& request) const;
 
         /**
-         * <p>Creates a group of meeting attendees.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates up to 100 attendees for an active Amazon Chime SDK meeting. For more
+         * information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/BatchCreateAttendee">AWS
          * API Reference</a></p>
          *

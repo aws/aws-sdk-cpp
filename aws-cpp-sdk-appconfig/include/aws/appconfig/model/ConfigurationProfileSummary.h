@@ -243,6 +243,63 @@ namespace Model
      */
     inline ConfigurationProfileSummary& AddValidatorTypes(ValidatorType&& value) { m_validatorTypesHasBeenSet = true; m_validatorTypes.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The type of configurations that the configuration profile contains. A
+     * configuration can be a feature flag used for enabling or disabling new features
+     * or a free-form configuration used to introduce changes to your application.</p>
+     */
+    inline const Aws::String& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of configurations that the configuration profile contains. A
+     * configuration can be a feature flag used for enabling or disabling new features
+     * or a free-form configuration used to introduce changes to your application.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of configurations that the configuration profile contains. A
+     * configuration can be a feature flag used for enabling or disabling new features
+     * or a free-form configuration used to introduce changes to your application.</p>
+     */
+    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The type of configurations that the configuration profile contains. A
+     * configuration can be a feature flag used for enabling or disabling new features
+     * or a free-form configuration used to introduce changes to your application.</p>
+     */
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The type of configurations that the configuration profile contains. A
+     * configuration can be a feature flag used for enabling or disabling new features
+     * or a free-form configuration used to introduce changes to your application.</p>
+     */
+    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
+
+    /**
+     * <p>The type of configurations that the configuration profile contains. A
+     * configuration can be a feature flag used for enabling or disabling new features
+     * or a free-form configuration used to introduce changes to your application.</p>
+     */
+    inline ConfigurationProfileSummary& WithType(const Aws::String& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The type of configurations that the configuration profile contains. A
+     * configuration can be a feature flag used for enabling or disabling new features
+     * or a free-form configuration used to introduce changes to your application.</p>
+     */
+    inline ConfigurationProfileSummary& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of configurations that the configuration profile contains. A
+     * configuration can be a feature flag used for enabling or disabling new features
+     * or a free-form configuration used to introduce changes to your application.</p>
+     */
+    inline ConfigurationProfileSummary& WithType(const char* value) { SetType(value); return *this;}
+
   private:
 
     Aws::String m_applicationId;
@@ -259,6 +316,9 @@ namespace Model
 
     Aws::Vector<ValidatorType> m_validatorTypes;
     bool m_validatorTypesHasBeenSet;
+
+    Aws::String m_type;
+    bool m_typeHasBeenSet;
   };
 
 } // namespace Model

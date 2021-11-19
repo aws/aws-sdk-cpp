@@ -43,7 +43,6 @@ namespace RedshiftDataAPIServiceErrorMapper
 static const int BATCH_EXECUTE_STATEMENT_HASH = HashingUtils::HashString("BatchExecuteStatementException");
 static const int EXECUTE_STATEMENT_HASH = HashingUtils::HashString("ExecuteStatementException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
-static const int DATABASE_CONNECTION_HASH = HashingUtils::HashString("DatabaseConnectionException");
 static const int ACTIVE_STATEMENTS_EXCEEDED_HASH = HashingUtils::HashString("ActiveStatementsExceededException");
 
 
@@ -62,10 +61,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftDataAPIServiceErrors::INTERNAL_SERVER), false);
-  }
-  else if (hashCode == DATABASE_CONNECTION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftDataAPIServiceErrors::DATABASE_CONNECTION), false);
   }
   else if (hashCode == ACTIVE_STATEMENTS_EXCEEDED_HASH)
   {

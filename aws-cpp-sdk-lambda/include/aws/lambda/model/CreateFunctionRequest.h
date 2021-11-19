@@ -365,36 +365,36 @@ namespace Model
 
 
     /**
-     * <p>The amount of time that Lambda allows a function to run before stopping it.
-     * The default is 3 seconds. The maximum allowed value is 900 seconds. For
-     * additional information, see <a
+     * <p>The amount of time (in seconds) that Lambda allows a function to run before
+     * stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds.
+     * For additional information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda
      * execution environment</a>.</p>
      */
     inline int GetTimeout() const{ return m_timeout; }
 
     /**
-     * <p>The amount of time that Lambda allows a function to run before stopping it.
-     * The default is 3 seconds. The maximum allowed value is 900 seconds. For
-     * additional information, see <a
+     * <p>The amount of time (in seconds) that Lambda allows a function to run before
+     * stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds.
+     * For additional information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda
      * execution environment</a>.</p>
      */
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
 
     /**
-     * <p>The amount of time that Lambda allows a function to run before stopping it.
-     * The default is 3 seconds. The maximum allowed value is 900 seconds. For
-     * additional information, see <a
+     * <p>The amount of time (in seconds) that Lambda allows a function to run before
+     * stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds.
+     * For additional information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda
      * execution environment</a>.</p>
      */
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
     /**
-     * <p>The amount of time that Lambda allows a function to run before stopping it.
-     * The default is 3 seconds. The maximum allowed value is 900 seconds. For
-     * additional information, see <a
+     * <p>The amount of time (in seconds) that Lambda allows a function to run before
+     * stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds.
+     * For additional information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda
      * execution environment</a>.</p>
      */
@@ -1057,56 +1057,56 @@ namespace Model
 
     /**
      * <p>The instruction set architecture that the function supports. Enter a string
-     * array with one of the valid values. The default value is
+     * array with one of the valid values (arm64 or x86_64). The default value is
      * <code>x86_64</code>.</p>
      */
     inline const Aws::Vector<Architecture>& GetArchitectures() const{ return m_architectures; }
 
     /**
      * <p>The instruction set architecture that the function supports. Enter a string
-     * array with one of the valid values. The default value is
+     * array with one of the valid values (arm64 or x86_64). The default value is
      * <code>x86_64</code>.</p>
      */
     inline bool ArchitecturesHasBeenSet() const { return m_architecturesHasBeenSet; }
 
     /**
      * <p>The instruction set architecture that the function supports. Enter a string
-     * array with one of the valid values. The default value is
+     * array with one of the valid values (arm64 or x86_64). The default value is
      * <code>x86_64</code>.</p>
      */
     inline void SetArchitectures(const Aws::Vector<Architecture>& value) { m_architecturesHasBeenSet = true; m_architectures = value; }
 
     /**
      * <p>The instruction set architecture that the function supports. Enter a string
-     * array with one of the valid values. The default value is
+     * array with one of the valid values (arm64 or x86_64). The default value is
      * <code>x86_64</code>.</p>
      */
     inline void SetArchitectures(Aws::Vector<Architecture>&& value) { m_architecturesHasBeenSet = true; m_architectures = std::move(value); }
 
     /**
      * <p>The instruction set architecture that the function supports. Enter a string
-     * array with one of the valid values. The default value is
+     * array with one of the valid values (arm64 or x86_64). The default value is
      * <code>x86_64</code>.</p>
      */
     inline CreateFunctionRequest& WithArchitectures(const Aws::Vector<Architecture>& value) { SetArchitectures(value); return *this;}
 
     /**
      * <p>The instruction set architecture that the function supports. Enter a string
-     * array with one of the valid values. The default value is
+     * array with one of the valid values (arm64 or x86_64). The default value is
      * <code>x86_64</code>.</p>
      */
     inline CreateFunctionRequest& WithArchitectures(Aws::Vector<Architecture>&& value) { SetArchitectures(std::move(value)); return *this;}
 
     /**
      * <p>The instruction set architecture that the function supports. Enter a string
-     * array with one of the valid values. The default value is
+     * array with one of the valid values (arm64 or x86_64). The default value is
      * <code>x86_64</code>.</p>
      */
     inline CreateFunctionRequest& AddArchitectures(const Architecture& value) { m_architecturesHasBeenSet = true; m_architectures.push_back(value); return *this; }
 
     /**
      * <p>The instruction set architecture that the function supports. Enter a string
-     * array with one of the valid values. The default value is
+     * array with one of the valid values (arm64 or x86_64). The default value is
      * <code>x86_64</code>.</p>
      */
     inline CreateFunctionRequest& AddArchitectures(Architecture&& value) { m_architecturesHasBeenSet = true; m_architectures.push_back(std::move(value)); return *this; }

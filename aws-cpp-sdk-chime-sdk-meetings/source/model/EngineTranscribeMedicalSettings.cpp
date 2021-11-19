@@ -27,7 +27,9 @@ EngineTranscribeMedicalSettings::EngineTranscribeMedicalSettings() :
     m_typeHasBeenSet(false),
     m_vocabularyNameHasBeenSet(false),
     m_region(TranscribeMedicalRegion::NOT_SET),
-    m_regionHasBeenSet(false)
+    m_regionHasBeenSet(false),
+    m_contentIdentificationType(TranscribeMedicalContentIdentificationType::NOT_SET),
+    m_contentIdentificationTypeHasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ EngineTranscribeMedicalSettings::EngineTranscribeMedicalSettings(JsonView jsonVa
     m_typeHasBeenSet(false),
     m_vocabularyNameHasBeenSet(false),
     m_region(TranscribeMedicalRegion::NOT_SET),
-    m_regionHasBeenSet(false)
+    m_regionHasBeenSet(false),
+    m_contentIdentificationType(TranscribeMedicalContentIdentificationType::NOT_SET),
+    m_contentIdentificationTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -82,6 +86,13 @@ EngineTranscribeMedicalSettings& EngineTranscribeMedicalSettings::operator =(Jso
     m_regionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ContentIdentificationType"))
+  {
+    m_contentIdentificationType = TranscribeMedicalContentIdentificationTypeMapper::GetTranscribeMedicalContentIdentificationTypeForName(jsonValue.GetString("ContentIdentificationType"));
+
+    m_contentIdentificationTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -113,6 +124,11 @@ JsonValue EngineTranscribeMedicalSettings::Jsonize() const
   if(m_regionHasBeenSet)
   {
    payload.WithString("Region", TranscribeMedicalRegionMapper::GetNameForTranscribeMedicalRegion(m_region));
+  }
+
+  if(m_contentIdentificationTypeHasBeenSet)
+  {
+   payload.WithString("ContentIdentificationType", TranscribeMedicalContentIdentificationTypeMapper::GetNameForTranscribeMedicalContentIdentificationType(m_contentIdentificationType));
   }
 
   return payload;

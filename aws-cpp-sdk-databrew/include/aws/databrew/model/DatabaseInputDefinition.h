@@ -147,6 +147,55 @@ namespace Model
     
     inline DatabaseInputDefinition& WithTempDirectory(S3Location&& value) { SetTempDirectory(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Custom SQL to run against the provided Glue connection. This SQL will be used
+     * as the input for DataBrew projects and jobs.</p>
+     */
+    inline const Aws::String& GetQueryString() const{ return m_queryString; }
+
+    /**
+     * <p>Custom SQL to run against the provided Glue connection. This SQL will be used
+     * as the input for DataBrew projects and jobs.</p>
+     */
+    inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
+
+    /**
+     * <p>Custom SQL to run against the provided Glue connection. This SQL will be used
+     * as the input for DataBrew projects and jobs.</p>
+     */
+    inline void SetQueryString(const Aws::String& value) { m_queryStringHasBeenSet = true; m_queryString = value; }
+
+    /**
+     * <p>Custom SQL to run against the provided Glue connection. This SQL will be used
+     * as the input for DataBrew projects and jobs.</p>
+     */
+    inline void SetQueryString(Aws::String&& value) { m_queryStringHasBeenSet = true; m_queryString = std::move(value); }
+
+    /**
+     * <p>Custom SQL to run against the provided Glue connection. This SQL will be used
+     * as the input for DataBrew projects and jobs.</p>
+     */
+    inline void SetQueryString(const char* value) { m_queryStringHasBeenSet = true; m_queryString.assign(value); }
+
+    /**
+     * <p>Custom SQL to run against the provided Glue connection. This SQL will be used
+     * as the input for DataBrew projects and jobs.</p>
+     */
+    inline DatabaseInputDefinition& WithQueryString(const Aws::String& value) { SetQueryString(value); return *this;}
+
+    /**
+     * <p>Custom SQL to run against the provided Glue connection. This SQL will be used
+     * as the input for DataBrew projects and jobs.</p>
+     */
+    inline DatabaseInputDefinition& WithQueryString(Aws::String&& value) { SetQueryString(std::move(value)); return *this;}
+
+    /**
+     * <p>Custom SQL to run against the provided Glue connection. This SQL will be used
+     * as the input for DataBrew projects and jobs.</p>
+     */
+    inline DatabaseInputDefinition& WithQueryString(const char* value) { SetQueryString(value); return *this;}
+
   private:
 
     Aws::String m_glueConnectionName;
@@ -157,6 +206,9 @@ namespace Model
 
     S3Location m_tempDirectory;
     bool m_tempDirectoryHasBeenSet;
+
+    Aws::String m_queryString;
+    bool m_queryStringHasBeenSet;
   };
 
 } // namespace Model

@@ -16,7 +16,8 @@ namespace Model
   enum class AutoMLOverrideStrategy
   {
     NOT_SET,
-    LatencyOptimized
+    LatencyOptimized,
+    AccuracyOptimized
   };
 
 namespace AutoMLOverrideStrategyMapper

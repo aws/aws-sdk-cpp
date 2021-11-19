@@ -39,7 +39,8 @@ JobRun::JobRun() :
     m_recipeReferenceHasBeenSet(false),
     m_startedByHasBeenSet(false),
     m_startedOnHasBeenSet(false),
-    m_jobSampleHasBeenSet(false)
+    m_jobSampleHasBeenSet(false),
+    m_validationConfigurationsHasBeenSet(false)
 {
 }
 
@@ -64,7 +65,8 @@ JobRun::JobRun(JsonView jsonValue) :
     m_recipeReferenceHasBeenSet(false),
     m_startedByHasBeenSet(false),
     m_startedOnHasBeenSet(false),
-    m_jobSampleHasBeenSet(false)
+    m_jobSampleHasBeenSet(false),
+    m_validationConfigurationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -199,6 +201,16 @@ JobRun& JobRun::operator =(JsonView jsonValue)
     m_jobSampleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ValidationConfigurations"))
+  {
+    Array<JsonView> validationConfigurationsJsonList = jsonValue.GetArray("ValidationConfigurations");
+    for(unsigned validationConfigurationsIndex = 0; validationConfigurationsIndex < validationConfigurationsJsonList.GetLength(); ++validationConfigurationsIndex)
+    {
+      m_validationConfigurations.push_back(validationConfigurationsJsonList[validationConfigurationsIndex].AsObject());
+    }
+    m_validationConfigurationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -316,6 +328,17 @@ JsonValue JobRun::Jsonize() const
   if(m_jobSampleHasBeenSet)
   {
    payload.WithObject("JobSample", m_jobSample.Jsonize());
+
+  }
+
+  if(m_validationConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> validationConfigurationsJsonList(m_validationConfigurations.size());
+   for(unsigned validationConfigurationsIndex = 0; validationConfigurationsIndex < validationConfigurationsJsonList.GetLength(); ++validationConfigurationsIndex)
+   {
+     validationConfigurationsJsonList[validationConfigurationsIndex].AsObject(m_validationConfigurations[validationConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("ValidationConfigurations", std::move(validationConfigurationsJsonList));
 
   }
 

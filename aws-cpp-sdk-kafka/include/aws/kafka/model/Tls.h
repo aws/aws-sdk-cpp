@@ -107,7 +107,7 @@ namespace Model
 
     /**
      * 
-            <p>Specifies whether you want to enable or disable TLS
+            <p>Specifies whether you want to turn on or turn off TLS
      * authentication.</p>
          
      */
@@ -115,7 +115,7 @@ namespace Model
 
     /**
      * 
-            <p>Specifies whether you want to enable or disable TLS
+            <p>Specifies whether you want to turn on or turn off TLS
      * authentication.</p>
          
      */
@@ -123,7 +123,7 @@ namespace Model
 
     /**
      * 
-            <p>Specifies whether you want to enable or disable TLS
+            <p>Specifies whether you want to turn on or turn off TLS
      * authentication.</p>
          
      */
@@ -131,7 +131,7 @@ namespace Model
 
     /**
      * 
-            <p>Specifies whether you want to enable or disable TLS
+            <p>Specifies whether you want to turn on or turn off TLS
      * authentication.</p>
          
      */

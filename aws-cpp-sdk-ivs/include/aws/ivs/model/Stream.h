@@ -231,6 +231,55 @@ namespace Model
 
 
     /**
+     * <p>Unique identifier for a live or previously live stream in the specified
+     * channel.</p>
+     */
+    inline const Aws::String& GetStreamId() const{ return m_streamId; }
+
+    /**
+     * <p>Unique identifier for a live or previously live stream in the specified
+     * channel.</p>
+     */
+    inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a live or previously live stream in the specified
+     * channel.</p>
+     */
+    inline void SetStreamId(const Aws::String& value) { m_streamIdHasBeenSet = true; m_streamId = value; }
+
+    /**
+     * <p>Unique identifier for a live or previously live stream in the specified
+     * channel.</p>
+     */
+    inline void SetStreamId(Aws::String&& value) { m_streamIdHasBeenSet = true; m_streamId = std::move(value); }
+
+    /**
+     * <p>Unique identifier for a live or previously live stream in the specified
+     * channel.</p>
+     */
+    inline void SetStreamId(const char* value) { m_streamIdHasBeenSet = true; m_streamId.assign(value); }
+
+    /**
+     * <p>Unique identifier for a live or previously live stream in the specified
+     * channel.</p>
+     */
+    inline Stream& WithStreamId(const Aws::String& value) { SetStreamId(value); return *this;}
+
+    /**
+     * <p>Unique identifier for a live or previously live stream in the specified
+     * channel.</p>
+     */
+    inline Stream& WithStreamId(Aws::String&& value) { SetStreamId(std::move(value)); return *this;}
+
+    /**
+     * <p>Unique identifier for a live or previously live stream in the specified
+     * channel.</p>
+     */
+    inline Stream& WithStreamId(const char* value) { SetStreamId(value); return *this;}
+
+
+    /**
      * <p>A count of concurrent views of the stream. Typically, a new view appears in
      * <code>viewerCount</code> within 15 seconds of when video playback starts and a
      * view is removed from <code>viewerCount</code> within 1 minute of when video
@@ -282,6 +331,9 @@ namespace Model
 
     StreamState m_state;
     bool m_stateHasBeenSet;
+
+    Aws::String m_streamId;
+    bool m_streamIdHasBeenSet;
 
     long long m_viewerCount;
     bool m_viewerCountHasBeenSet;

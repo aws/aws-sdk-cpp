@@ -152,6 +152,55 @@ namespace Model
 
 
     /**
+     * <p>When <code>PerformAutoML</code> is specified, the ARN of the chosen
+     * algorithm.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAutoMLAlgorithmArns() const{ return m_autoMLAlgorithmArns; }
+
+    /**
+     * <p>When <code>PerformAutoML</code> is specified, the ARN of the chosen
+     * algorithm.</p>
+     */
+    inline void SetAutoMLAlgorithmArns(const Aws::Vector<Aws::String>& value) { m_autoMLAlgorithmArns = value; }
+
+    /**
+     * <p>When <code>PerformAutoML</code> is specified, the ARN of the chosen
+     * algorithm.</p>
+     */
+    inline void SetAutoMLAlgorithmArns(Aws::Vector<Aws::String>&& value) { m_autoMLAlgorithmArns = std::move(value); }
+
+    /**
+     * <p>When <code>PerformAutoML</code> is specified, the ARN of the chosen
+     * algorithm.</p>
+     */
+    inline DescribePredictorResult& WithAutoMLAlgorithmArns(const Aws::Vector<Aws::String>& value) { SetAutoMLAlgorithmArns(value); return *this;}
+
+    /**
+     * <p>When <code>PerformAutoML</code> is specified, the ARN of the chosen
+     * algorithm.</p>
+     */
+    inline DescribePredictorResult& WithAutoMLAlgorithmArns(Aws::Vector<Aws::String>&& value) { SetAutoMLAlgorithmArns(std::move(value)); return *this;}
+
+    /**
+     * <p>When <code>PerformAutoML</code> is specified, the ARN of the chosen
+     * algorithm.</p>
+     */
+    inline DescribePredictorResult& AddAutoMLAlgorithmArns(const Aws::String& value) { m_autoMLAlgorithmArns.push_back(value); return *this; }
+
+    /**
+     * <p>When <code>PerformAutoML</code> is specified, the ARN of the chosen
+     * algorithm.</p>
+     */
+    inline DescribePredictorResult& AddAutoMLAlgorithmArns(Aws::String&& value) { m_autoMLAlgorithmArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>When <code>PerformAutoML</code> is specified, the ARN of the chosen
+     * algorithm.</p>
+     */
+    inline DescribePredictorResult& AddAutoMLAlgorithmArns(const char* value) { m_autoMLAlgorithmArns.push_back(value); return *this; }
+
+
+    /**
      * <p>The number of time-steps of the forecast. The forecast horizon is also called
      * the prediction length.</p>
      */
@@ -613,6 +662,22 @@ namespace Model
 
 
     /**
+     * <p>Whether the predictor was created with <a>CreateAutoPredictor</a>.</p>
+     */
+    inline bool GetIsAutoPredictor() const{ return m_isAutoPredictor; }
+
+    /**
+     * <p>Whether the predictor was created with <a>CreateAutoPredictor</a>.</p>
+     */
+    inline void SetIsAutoPredictor(bool value) { m_isAutoPredictor = value; }
+
+    /**
+     * <p>Whether the predictor was created with <a>CreateAutoPredictor</a>.</p>
+     */
+    inline DescribePredictorResult& WithIsAutoPredictor(bool value) { SetIsAutoPredictor(value); return *this;}
+
+
+    /**
      * <p>An array of the ARNs of the dataset import jobs used to import training data
      * for the predictor.</p>
      */
@@ -659,55 +724,6 @@ namespace Model
      * for the predictor.</p>
      */
     inline DescribePredictorResult& AddDatasetImportJobArns(const char* value) { m_datasetImportJobArns.push_back(value); return *this; }
-
-
-    /**
-     * <p>When <code>PerformAutoML</code> is specified, the ARN of the chosen
-     * algorithm.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetAutoMLAlgorithmArns() const{ return m_autoMLAlgorithmArns; }
-
-    /**
-     * <p>When <code>PerformAutoML</code> is specified, the ARN of the chosen
-     * algorithm.</p>
-     */
-    inline void SetAutoMLAlgorithmArns(const Aws::Vector<Aws::String>& value) { m_autoMLAlgorithmArns = value; }
-
-    /**
-     * <p>When <code>PerformAutoML</code> is specified, the ARN of the chosen
-     * algorithm.</p>
-     */
-    inline void SetAutoMLAlgorithmArns(Aws::Vector<Aws::String>&& value) { m_autoMLAlgorithmArns = std::move(value); }
-
-    /**
-     * <p>When <code>PerformAutoML</code> is specified, the ARN of the chosen
-     * algorithm.</p>
-     */
-    inline DescribePredictorResult& WithAutoMLAlgorithmArns(const Aws::Vector<Aws::String>& value) { SetAutoMLAlgorithmArns(value); return *this;}
-
-    /**
-     * <p>When <code>PerformAutoML</code> is specified, the ARN of the chosen
-     * algorithm.</p>
-     */
-    inline DescribePredictorResult& WithAutoMLAlgorithmArns(Aws::Vector<Aws::String>&& value) { SetAutoMLAlgorithmArns(std::move(value)); return *this;}
-
-    /**
-     * <p>When <code>PerformAutoML</code> is specified, the ARN of the chosen
-     * algorithm.</p>
-     */
-    inline DescribePredictorResult& AddAutoMLAlgorithmArns(const Aws::String& value) { m_autoMLAlgorithmArns.push_back(value); return *this; }
-
-    /**
-     * <p>When <code>PerformAutoML</code> is specified, the ARN of the chosen
-     * algorithm.</p>
-     */
-    inline DescribePredictorResult& AddAutoMLAlgorithmArns(Aws::String&& value) { m_autoMLAlgorithmArns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>When <code>PerformAutoML</code> is specified, the ARN of the chosen
-     * algorithm.</p>
-     */
-    inline DescribePredictorResult& AddAutoMLAlgorithmArns(const char* value) { m_autoMLAlgorithmArns.push_back(value); return *this; }
 
 
     /**
@@ -946,6 +962,8 @@ namespace Model
 
     Aws::String m_algorithmArn;
 
+    Aws::Vector<Aws::String> m_autoMLAlgorithmArns;
+
     int m_forecastHorizon;
 
     Aws::Vector<Aws::String> m_forecastTypes;
@@ -972,9 +990,9 @@ namespace Model
 
     long long m_estimatedTimeRemainingInMinutes;
 
-    Aws::Vector<Aws::String> m_datasetImportJobArns;
+    bool m_isAutoPredictor;
 
-    Aws::Vector<Aws::String> m_autoMLAlgorithmArns;
+    Aws::Vector<Aws::String> m_datasetImportJobArns;
 
     Aws::String m_status;
 

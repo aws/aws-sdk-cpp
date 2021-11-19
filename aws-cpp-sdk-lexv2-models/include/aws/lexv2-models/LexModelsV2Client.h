@@ -926,7 +926,9 @@ namespace Model
 
         /**
          * <p>Deletes a specific version of a bot. To delete all version of a bot, use the
-         * <a>DeleteBot</a> operation.</p><p><h3>See Also:</h3>   <a
+         * <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteBot.html">DeleteBot</a>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteBotVersion">AWS
          * API Reference</a></p>
          */
@@ -934,7 +936,9 @@ namespace Model
 
         /**
          * <p>Deletes a specific version of a bot. To delete all version of a bot, use the
-         * <a>DeleteBot</a> operation.</p><p><h3>See Also:</h3>   <a
+         * <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteBot.html">DeleteBot</a>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteBotVersion">AWS
          * API Reference</a></p>
          *
@@ -944,7 +948,9 @@ namespace Model
 
         /**
          * <p>Deletes a specific version of a bot. To delete all version of a bot, use the
-         * <a>DeleteBot</a> operation.</p><p><h3>See Also:</h3>   <a
+         * <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteBot.html">DeleteBot</a>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteBotVersion">AWS
          * API Reference</a></p>
          *
@@ -1162,10 +1168,11 @@ namespace Model
 
         /**
          * <p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users
-         * send to your bot. Utterances are stored for 15 days for use with the operation,
-         * and then stored indefinitely for use in improving the ability of your bot to
-         * respond to user input..</p> <p>Use the <code>DeleteUtterances</code> operation
-         * to manually delete utterances for a specific session. When you use the
+         * send to your bot. Utterances are stored for 15 days for use with the <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a>
+         * operation, and then stored indefinitely for use in improving the ability of your
+         * bot to respond to user input..</p> <p>Use the <code>DeleteUtterances</code>
+         * operation to manually delete utterances for a specific session. When you use the
          * <code>DeleteUtterances</code> operation, utterances stored for improving your
          * bot's ability to respond to user input are deleted immediately. Utterances
          * stored for use with the <code>ListAggregatedUtterances</code> operation are
@@ -1177,10 +1184,11 @@ namespace Model
 
         /**
          * <p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users
-         * send to your bot. Utterances are stored for 15 days for use with the operation,
-         * and then stored indefinitely for use in improving the ability of your bot to
-         * respond to user input..</p> <p>Use the <code>DeleteUtterances</code> operation
-         * to manually delete utterances for a specific session. When you use the
+         * send to your bot. Utterances are stored for 15 days for use with the <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a>
+         * operation, and then stored indefinitely for use in improving the ability of your
+         * bot to respond to user input..</p> <p>Use the <code>DeleteUtterances</code>
+         * operation to manually delete utterances for a specific session. When you use the
          * <code>DeleteUtterances</code> operation, utterances stored for improving your
          * bot's ability to respond to user input are deleted immediately. Utterances
          * stored for use with the <code>ListAggregatedUtterances</code> operation are
@@ -1194,10 +1202,11 @@ namespace Model
 
         /**
          * <p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users
-         * send to your bot. Utterances are stored for 15 days for use with the operation,
-         * and then stored indefinitely for use in improving the ability of your bot to
-         * respond to user input..</p> <p>Use the <code>DeleteUtterances</code> operation
-         * to manually delete utterances for a specific session. When you use the
+         * send to your bot. Utterances are stored for 15 days for use with the <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a>
+         * operation, and then stored indefinitely for use in improving the ability of your
+         * bot to respond to user input..</p> <p>Use the <code>DeleteUtterances</code>
+         * operation to manually delete utterances for a specific session. When you use the
          * <code>DeleteUtterances</code> operation, utterances stored for improving your
          * bot's ability to respond to user input are deleted immediately. Utterances
          * stored for use with the <code>ListAggregatedUtterances</code> operation are
@@ -1649,7 +1658,9 @@ namespace Model
          * your bot. </p> <p>To use a built-in intent as a the base for your own intent,
          * include the built-in intent signature in the <code>parentIntentSignature</code>
          * parameter when you call the <code>CreateIntent</code> operation. For more
-         * information, see <a>CreateIntent</a>.</p><p><h3>See Also:</h3>   <a
+         * information, see <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateIntent.html">CreateIntent</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBuiltInIntents">AWS
          * API Reference</a></p>
          */
@@ -1660,7 +1671,9 @@ namespace Model
          * your bot. </p> <p>To use a built-in intent as a the base for your own intent,
          * include the built-in intent signature in the <code>parentIntentSignature</code>
          * parameter when you call the <code>CreateIntent</code> operation. For more
-         * information, see <a>CreateIntent</a>.</p><p><h3>See Also:</h3>   <a
+         * information, see <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateIntent.html">CreateIntent</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBuiltInIntents">AWS
          * API Reference</a></p>
          *
@@ -1673,7 +1686,9 @@ namespace Model
          * your bot. </p> <p>To use a built-in intent as a the base for your own intent,
          * include the built-in intent signature in the <code>parentIntentSignature</code>
          * parameter when you call the <code>CreateIntent</code> operation. For more
-         * information, see <a>CreateIntent</a>.</p><p><h3>See Also:</h3>   <a
+         * information, see <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateIntent.html">CreateIntent</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBuiltInIntents">AWS
          * API Reference</a></p>
          *
@@ -2049,8 +2064,9 @@ namespace Model
          * <p>Updates the password used to protect an export zip archive.</p> <p>The
          * password is not required. If you don't supply a password, Amazon Lex generates a
          * zip file that is not protected by a password. This is the archive that is
-         * available at the pre-signed S3 URL provided by the operation.</p><p><h3>See
-         * Also:</h3>   <a
+         * available at the pre-signed S3 URL provided by the <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateExport">AWS
          * API Reference</a></p>
          */
@@ -2060,8 +2076,9 @@ namespace Model
          * <p>Updates the password used to protect an export zip archive.</p> <p>The
          * password is not required. If you don't supply a password, Amazon Lex generates a
          * zip file that is not protected by a password. This is the archive that is
-         * available at the pre-signed S3 URL provided by the operation.</p><p><h3>See
-         * Also:</h3>   <a
+         * available at the pre-signed S3 URL provided by the <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateExport">AWS
          * API Reference</a></p>
          *
@@ -2073,8 +2090,9 @@ namespace Model
          * <p>Updates the password used to protect an export zip archive.</p> <p>The
          * password is not required. If you don't supply a password, Amazon Lex generates a
          * zip file that is not protected by a password. This is the archive that is
-         * available at the pre-signed S3 URL provided by the operation.</p><p><h3>See
-         * Also:</h3>   <a
+         * available at the pre-signed S3 URL provided by the <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateExport">AWS
          * API Reference</a></p>
          *

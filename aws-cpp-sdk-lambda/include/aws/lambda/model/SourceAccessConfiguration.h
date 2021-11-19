@@ -57,7 +57,16 @@ namespace Model
      * Manager ARN of your secret key used for SASL SCRAM-512 authentication of your
      * self-managed Apache Kafka brokers.</p> </li> <li> <p> <code>VIRTUAL_HOST</code>
      * - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses
-     * this RabbitMQ host as the event source.</p> </li> </ul>
+     * this RabbitMQ host as the event source. This property cannot be specified in an
+     * UpdateEventSourceMapping API call.</p> </li> <li> <p>
+     * <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache
+     * Kafka) The Secrets Manager ARN of your secret key containing the certificate
+     * chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional)
+     * used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
+     * <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka)
+     * The Secrets Manager ARN of your secret key containing the root CA certificate
+     * (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
+     * </ul>
      */
     inline const SourceAccessType& GetType() const{ return m_type; }
 
@@ -78,7 +87,16 @@ namespace Model
      * Manager ARN of your secret key used for SASL SCRAM-512 authentication of your
      * self-managed Apache Kafka brokers.</p> </li> <li> <p> <code>VIRTUAL_HOST</code>
      * - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses
-     * this RabbitMQ host as the event source.</p> </li> </ul>
+     * this RabbitMQ host as the event source. This property cannot be specified in an
+     * UpdateEventSourceMapping API call.</p> </li> <li> <p>
+     * <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache
+     * Kafka) The Secrets Manager ARN of your secret key containing the certificate
+     * chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional)
+     * used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
+     * <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka)
+     * The Secrets Manager ARN of your secret key containing the root CA certificate
+     * (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
+     * </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -99,7 +117,16 @@ namespace Model
      * Manager ARN of your secret key used for SASL SCRAM-512 authentication of your
      * self-managed Apache Kafka brokers.</p> </li> <li> <p> <code>VIRTUAL_HOST</code>
      * - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses
-     * this RabbitMQ host as the event source.</p> </li> </ul>
+     * this RabbitMQ host as the event source. This property cannot be specified in an
+     * UpdateEventSourceMapping API call.</p> </li> <li> <p>
+     * <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache
+     * Kafka) The Secrets Manager ARN of your secret key containing the certificate
+     * chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional)
+     * used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
+     * <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka)
+     * The Secrets Manager ARN of your secret key containing the root CA certificate
+     * (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
+     * </ul>
      */
     inline void SetType(const SourceAccessType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -120,7 +147,16 @@ namespace Model
      * Manager ARN of your secret key used for SASL SCRAM-512 authentication of your
      * self-managed Apache Kafka brokers.</p> </li> <li> <p> <code>VIRTUAL_HOST</code>
      * - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses
-     * this RabbitMQ host as the event source.</p> </li> </ul>
+     * this RabbitMQ host as the event source. This property cannot be specified in an
+     * UpdateEventSourceMapping API call.</p> </li> <li> <p>
+     * <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache
+     * Kafka) The Secrets Manager ARN of your secret key containing the certificate
+     * chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional)
+     * used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
+     * <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka)
+     * The Secrets Manager ARN of your secret key containing the root CA certificate
+     * (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
+     * </ul>
      */
     inline void SetType(SourceAccessType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -141,7 +177,16 @@ namespace Model
      * Manager ARN of your secret key used for SASL SCRAM-512 authentication of your
      * self-managed Apache Kafka brokers.</p> </li> <li> <p> <code>VIRTUAL_HOST</code>
      * - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses
-     * this RabbitMQ host as the event source.</p> </li> </ul>
+     * this RabbitMQ host as the event source. This property cannot be specified in an
+     * UpdateEventSourceMapping API call.</p> </li> <li> <p>
+     * <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache
+     * Kafka) The Secrets Manager ARN of your secret key containing the certificate
+     * chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional)
+     * used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
+     * <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka)
+     * The Secrets Manager ARN of your secret key containing the root CA certificate
+     * (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
+     * </ul>
      */
     inline SourceAccessConfiguration& WithType(const SourceAccessType& value) { SetType(value); return *this;}
 
@@ -162,7 +207,16 @@ namespace Model
      * Manager ARN of your secret key used for SASL SCRAM-512 authentication of your
      * self-managed Apache Kafka brokers.</p> </li> <li> <p> <code>VIRTUAL_HOST</code>
      * - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses
-     * this RabbitMQ host as the event source.</p> </li> </ul>
+     * this RabbitMQ host as the event source. This property cannot be specified in an
+     * UpdateEventSourceMapping API call.</p> </li> <li> <p>
+     * <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache
+     * Kafka) The Secrets Manager ARN of your secret key containing the certificate
+     * chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional)
+     * used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
+     * <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> - (Self-managed Apache Kafka)
+     * The Secrets Manager ARN of your secret key containing the root CA certificate
+     * (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
+     * </ul>
      */
     inline SourceAccessConfiguration& WithType(SourceAccessType&& value) { SetType(std::move(value)); return *this;}
 

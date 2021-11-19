@@ -26,17 +26,20 @@
 #include <aws/databrew/model/CreateProjectRequest.h>
 #include <aws/databrew/model/CreateRecipeRequest.h>
 #include <aws/databrew/model/CreateRecipeJobRequest.h>
+#include <aws/databrew/model/CreateRulesetRequest.h>
 #include <aws/databrew/model/CreateScheduleRequest.h>
 #include <aws/databrew/model/DeleteDatasetRequest.h>
 #include <aws/databrew/model/DeleteJobRequest.h>
 #include <aws/databrew/model/DeleteProjectRequest.h>
 #include <aws/databrew/model/DeleteRecipeVersionRequest.h>
+#include <aws/databrew/model/DeleteRulesetRequest.h>
 #include <aws/databrew/model/DeleteScheduleRequest.h>
 #include <aws/databrew/model/DescribeDatasetRequest.h>
 #include <aws/databrew/model/DescribeJobRequest.h>
 #include <aws/databrew/model/DescribeJobRunRequest.h>
 #include <aws/databrew/model/DescribeProjectRequest.h>
 #include <aws/databrew/model/DescribeRecipeRequest.h>
+#include <aws/databrew/model/DescribeRulesetRequest.h>
 #include <aws/databrew/model/DescribeScheduleRequest.h>
 #include <aws/databrew/model/ListDatasetsRequest.h>
 #include <aws/databrew/model/ListJobRunsRequest.h>
@@ -44,6 +47,7 @@
 #include <aws/databrew/model/ListProjectsRequest.h>
 #include <aws/databrew/model/ListRecipeVersionsRequest.h>
 #include <aws/databrew/model/ListRecipesRequest.h>
+#include <aws/databrew/model/ListRulesetsRequest.h>
 #include <aws/databrew/model/ListSchedulesRequest.h>
 #include <aws/databrew/model/ListTagsForResourceRequest.h>
 #include <aws/databrew/model/PublishRecipeRequest.h>
@@ -58,6 +62,7 @@
 #include <aws/databrew/model/UpdateProjectRequest.h>
 #include <aws/databrew/model/UpdateRecipeRequest.h>
 #include <aws/databrew/model/UpdateRecipeJobRequest.h>
+#include <aws/databrew/model/UpdateRulesetRequest.h>
 #include <aws/databrew/model/UpdateScheduleRequest.h>
 
 using namespace Aws;
@@ -290,6 +295,31 @@ void GlueDataBrewClient::CreateRecipeJobAsyncHelper(const CreateRecipeJobRequest
   handler(this, request, CreateRecipeJob(request), context);
 }
 
+CreateRulesetOutcome GlueDataBrewClient::CreateRuleset(const CreateRulesetRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/rulesets");
+  return CreateRulesetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateRulesetOutcomeCallable GlueDataBrewClient::CreateRulesetCallable(const CreateRulesetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateRulesetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRuleset(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueDataBrewClient::CreateRulesetAsync(const CreateRulesetRequest& request, const CreateRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateRulesetAsyncHelper( request, handler, context ); } );
+}
+
+void GlueDataBrewClient::CreateRulesetAsyncHelper(const CreateRulesetRequest& request, const CreateRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateRuleset(request), context);
+}
+
 CreateScheduleOutcome GlueDataBrewClient::CreateSchedule(const CreateScheduleRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -444,6 +474,37 @@ void GlueDataBrewClient::DeleteRecipeVersionAsync(const DeleteRecipeVersionReque
 void GlueDataBrewClient::DeleteRecipeVersionAsyncHelper(const DeleteRecipeVersionRequest& request, const DeleteRecipeVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteRecipeVersion(request), context);
+}
+
+DeleteRulesetOutcome GlueDataBrewClient::DeleteRuleset(const DeleteRulesetRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRuleset", "Required field: Name, is not set");
+    return DeleteRulesetOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/rulesets/");
+  uri.AddPathSegment(request.GetName());
+  return DeleteRulesetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteRulesetOutcomeCallable GlueDataBrewClient::DeleteRulesetCallable(const DeleteRulesetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRulesetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRuleset(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueDataBrewClient::DeleteRulesetAsync(const DeleteRulesetRequest& request, const DeleteRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteRulesetAsyncHelper( request, handler, context ); } );
+}
+
+void GlueDataBrewClient::DeleteRulesetAsyncHelper(const DeleteRulesetRequest& request, const DeleteRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteRuleset(request), context);
 }
 
 DeleteScheduleOutcome GlueDataBrewClient::DeleteSchedule(const DeleteScheduleRequest& request) const
@@ -639,6 +700,37 @@ void GlueDataBrewClient::DescribeRecipeAsyncHelper(const DescribeRecipeRequest& 
   handler(this, request, DescribeRecipe(request), context);
 }
 
+DescribeRulesetOutcome GlueDataBrewClient::DescribeRuleset(const DescribeRulesetRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeRuleset", "Required field: Name, is not set");
+    return DescribeRulesetOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/rulesets/");
+  uri.AddPathSegment(request.GetName());
+  return DescribeRulesetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeRulesetOutcomeCallable GlueDataBrewClient::DescribeRulesetCallable(const DescribeRulesetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeRulesetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRuleset(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueDataBrewClient::DescribeRulesetAsync(const DescribeRulesetRequest& request, const DescribeRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeRulesetAsyncHelper( request, handler, context ); } );
+}
+
+void GlueDataBrewClient::DescribeRulesetAsyncHelper(const DescribeRulesetRequest& request, const DescribeRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeRuleset(request), context);
+}
+
 DescribeScheduleOutcome GlueDataBrewClient::DescribeSchedule(const DescribeScheduleRequest& request) const
 {
   if (!request.NameHasBeenSet())
@@ -830,6 +922,31 @@ void GlueDataBrewClient::ListRecipesAsync(const ListRecipesRequest& request, con
 void GlueDataBrewClient::ListRecipesAsyncHelper(const ListRecipesRequest& request, const ListRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListRecipes(request), context);
+}
+
+ListRulesetsOutcome GlueDataBrewClient::ListRulesets(const ListRulesetsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/rulesets");
+  return ListRulesetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListRulesetsOutcomeCallable GlueDataBrewClient::ListRulesetsCallable(const ListRulesetsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListRulesetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRulesets(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueDataBrewClient::ListRulesetsAsync(const ListRulesetsRequest& request, const ListRulesetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListRulesetsAsyncHelper( request, handler, context ); } );
+}
+
+void GlueDataBrewClient::ListRulesetsAsyncHelper(const ListRulesetsRequest& request, const ListRulesetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListRulesets(request), context);
 }
 
 ListSchedulesOutcome GlueDataBrewClient::ListSchedules(const ListSchedulesRequest& request) const
@@ -1275,6 +1392,37 @@ void GlueDataBrewClient::UpdateRecipeJobAsync(const UpdateRecipeJobRequest& requ
 void GlueDataBrewClient::UpdateRecipeJobAsyncHelper(const UpdateRecipeJobRequest& request, const UpdateRecipeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateRecipeJob(request), context);
+}
+
+UpdateRulesetOutcome GlueDataBrewClient::UpdateRuleset(const UpdateRulesetRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateRuleset", "Required field: Name, is not set");
+    return UpdateRulesetOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/rulesets/");
+  uri.AddPathSegment(request.GetName());
+  return UpdateRulesetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateRulesetOutcomeCallable GlueDataBrewClient::UpdateRulesetCallable(const UpdateRulesetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRulesetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRuleset(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueDataBrewClient::UpdateRulesetAsync(const UpdateRulesetRequest& request, const UpdateRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateRulesetAsyncHelper( request, handler, context ); } );
+}
+
+void GlueDataBrewClient::UpdateRulesetAsyncHelper(const UpdateRulesetRequest& request, const UpdateRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateRuleset(request), context);
 }
 
 UpdateScheduleOutcome GlueDataBrewClient::UpdateSchedule(const UpdateScheduleRequest& request) const

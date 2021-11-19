@@ -151,6 +151,15 @@ DescribeJobResult& DescribeJobResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
+  if(jsonValue.ValueExists("ValidationConfigurations"))
+  {
+    Array<JsonView> validationConfigurationsJsonList = jsonValue.GetArray("ValidationConfigurations");
+    for(unsigned validationConfigurationsIndex = 0; validationConfigurationsIndex < validationConfigurationsJsonList.GetLength(); ++validationConfigurationsIndex)
+    {
+      m_validationConfigurations.push_back(validationConfigurationsJsonList[validationConfigurationsIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("RecipeReference"))
   {
     m_recipeReference = jsonValue.GetObject("RecipeReference");

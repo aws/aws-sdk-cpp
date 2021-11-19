@@ -40,42 +40,48 @@ namespace Model
 
     /**
      * <p>The Amazon S3 bucket where the audio log files are stored. The IAM role
-     * specified in the <code>roleArn</code> parameter of the <a>CreateBot</a>
+     * specified in the <code>roleArn</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
      * operation must have permission to write to this bucket.</p>
      */
     inline const S3BucketLogDestination& GetS3Bucket() const{ return m_s3Bucket; }
 
     /**
      * <p>The Amazon S3 bucket where the audio log files are stored. The IAM role
-     * specified in the <code>roleArn</code> parameter of the <a>CreateBot</a>
+     * specified in the <code>roleArn</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
      * operation must have permission to write to this bucket.</p>
      */
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
 
     /**
      * <p>The Amazon S3 bucket where the audio log files are stored. The IAM role
-     * specified in the <code>roleArn</code> parameter of the <a>CreateBot</a>
+     * specified in the <code>roleArn</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
      * operation must have permission to write to this bucket.</p>
      */
     inline void SetS3Bucket(const S3BucketLogDestination& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
     /**
      * <p>The Amazon S3 bucket where the audio log files are stored. The IAM role
-     * specified in the <code>roleArn</code> parameter of the <a>CreateBot</a>
+     * specified in the <code>roleArn</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
      * operation must have permission to write to this bucket.</p>
      */
     inline void SetS3Bucket(S3BucketLogDestination&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
 
     /**
      * <p>The Amazon S3 bucket where the audio log files are stored. The IAM role
-     * specified in the <code>roleArn</code> parameter of the <a>CreateBot</a>
+     * specified in the <code>roleArn</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
      * operation must have permission to write to this bucket.</p>
      */
     inline AudioLogDestination& WithS3Bucket(const S3BucketLogDestination& value) { SetS3Bucket(value); return *this;}
 
     /**
      * <p>The Amazon S3 bucket where the audio log files are stored. The IAM role
-     * specified in the <code>roleArn</code> parameter of the <a>CreateBot</a>
+     * specified in the <code>roleArn</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
      * operation must have permission to write to this bucket.</p>
      */
     inline AudioLogDestination& WithS3Bucket(S3BucketLogDestination&& value) { SetS3Bucket(std::move(value)); return *this;}

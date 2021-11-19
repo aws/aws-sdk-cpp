@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Summary information about bot aliases returned from the <a>ListBotAliases</a>
+   * <p>Summary information about bot aliases returned from the <a
+   * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBotAliases.html">ListBotAliases</a>
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BotAliasSummary">AWS
    * API Reference</a></p>
@@ -42,56 +43,64 @@ namespace Model
 
     /**
      * <p>The unique identifier assigned to the bot alias. You can use this ID to get
-     * detailed information about the alias using the <a>DescribeBotAlias</a>
+     * detailed information about the alias using the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBotAlias.html">DescribeBotAlias</a>
      * operation.</p>
      */
     inline const Aws::String& GetBotAliasId() const{ return m_botAliasId; }
 
     /**
      * <p>The unique identifier assigned to the bot alias. You can use this ID to get
-     * detailed information about the alias using the <a>DescribeBotAlias</a>
+     * detailed information about the alias using the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBotAlias.html">DescribeBotAlias</a>
      * operation.</p>
      */
     inline bool BotAliasIdHasBeenSet() const { return m_botAliasIdHasBeenSet; }
 
     /**
      * <p>The unique identifier assigned to the bot alias. You can use this ID to get
-     * detailed information about the alias using the <a>DescribeBotAlias</a>
+     * detailed information about the alias using the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBotAlias.html">DescribeBotAlias</a>
      * operation.</p>
      */
     inline void SetBotAliasId(const Aws::String& value) { m_botAliasIdHasBeenSet = true; m_botAliasId = value; }
 
     /**
      * <p>The unique identifier assigned to the bot alias. You can use this ID to get
-     * detailed information about the alias using the <a>DescribeBotAlias</a>
+     * detailed information about the alias using the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBotAlias.html">DescribeBotAlias</a>
      * operation.</p>
      */
     inline void SetBotAliasId(Aws::String&& value) { m_botAliasIdHasBeenSet = true; m_botAliasId = std::move(value); }
 
     /**
      * <p>The unique identifier assigned to the bot alias. You can use this ID to get
-     * detailed information about the alias using the <a>DescribeBotAlias</a>
+     * detailed information about the alias using the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBotAlias.html">DescribeBotAlias</a>
      * operation.</p>
      */
     inline void SetBotAliasId(const char* value) { m_botAliasIdHasBeenSet = true; m_botAliasId.assign(value); }
 
     /**
      * <p>The unique identifier assigned to the bot alias. You can use this ID to get
-     * detailed information about the alias using the <a>DescribeBotAlias</a>
+     * detailed information about the alias using the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBotAlias.html">DescribeBotAlias</a>
      * operation.</p>
      */
     inline BotAliasSummary& WithBotAliasId(const Aws::String& value) { SetBotAliasId(value); return *this;}
 
     /**
      * <p>The unique identifier assigned to the bot alias. You can use this ID to get
-     * detailed information about the alias using the <a>DescribeBotAlias</a>
+     * detailed information about the alias using the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBotAlias.html">DescribeBotAlias</a>
      * operation.</p>
      */
     inline BotAliasSummary& WithBotAliasId(Aws::String&& value) { SetBotAliasId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier assigned to the bot alias. You can use this ID to get
-     * detailed information about the alias using the <a>DescribeBotAlias</a>
+     * detailed information about the alias using the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBotAlias.html">DescribeBotAlias</a>
      * operation.</p>
      */
     inline BotAliasSummary& WithBotAliasId(const char* value) { SetBotAliasId(value); return *this;}

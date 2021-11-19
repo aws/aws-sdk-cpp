@@ -71,36 +71,51 @@ namespace Model
 
     /**
      * <p>The current status of the deletion. When the deletion is complete, the import
-     * will no longer be returned by the operation and calls to the with the import
-     * identifier will fail.</p>
+     * will no longer be returned by the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListImports.html">ListImports</a>
+     * operation and calls to the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeImport.html">DescribeImport</a>
+     * operation with the import identifier will fail.</p>
      */
     inline const ImportStatus& GetImportStatus() const{ return m_importStatus; }
 
     /**
      * <p>The current status of the deletion. When the deletion is complete, the import
-     * will no longer be returned by the operation and calls to the with the import
-     * identifier will fail.</p>
+     * will no longer be returned by the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListImports.html">ListImports</a>
+     * operation and calls to the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeImport.html">DescribeImport</a>
+     * operation with the import identifier will fail.</p>
      */
     inline void SetImportStatus(const ImportStatus& value) { m_importStatus = value; }
 
     /**
      * <p>The current status of the deletion. When the deletion is complete, the import
-     * will no longer be returned by the operation and calls to the with the import
-     * identifier will fail.</p>
+     * will no longer be returned by the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListImports.html">ListImports</a>
+     * operation and calls to the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeImport.html">DescribeImport</a>
+     * operation with the import identifier will fail.</p>
      */
     inline void SetImportStatus(ImportStatus&& value) { m_importStatus = std::move(value); }
 
     /**
      * <p>The current status of the deletion. When the deletion is complete, the import
-     * will no longer be returned by the operation and calls to the with the import
-     * identifier will fail.</p>
+     * will no longer be returned by the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListImports.html">ListImports</a>
+     * operation and calls to the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeImport.html">DescribeImport</a>
+     * operation with the import identifier will fail.</p>
      */
     inline DeleteImportResult& WithImportStatus(const ImportStatus& value) { SetImportStatus(value); return *this;}
 
     /**
      * <p>The current status of the deletion. When the deletion is complete, the import
-     * will no longer be returned by the operation and calls to the with the import
-     * identifier will fail.</p>
+     * will no longer be returned by the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListImports.html">ListImports</a>
+     * operation and calls to the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeImport.html">DescribeImport</a>
+     * operation with the import identifier will fail.</p>
      */
     inline DeleteImportResult& WithImportStatus(ImportStatus&& value) { SetImportStatus(std::move(value)); return *this;}
 

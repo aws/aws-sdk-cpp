@@ -22,6 +22,7 @@ DescribePredictorResult::DescribePredictorResult() :
     m_autoMLOverrideStrategy(AutoMLOverrideStrategy::NOT_SET),
     m_performHPO(false),
     m_estimatedTimeRemainingInMinutes(0),
+    m_isAutoPredictor(false),
     m_optimizationMetric(OptimizationMetric::NOT_SET)
 {
 }
@@ -32,6 +33,7 @@ DescribePredictorResult::DescribePredictorResult(const Aws::AmazonWebServiceResu
     m_autoMLOverrideStrategy(AutoMLOverrideStrategy::NOT_SET),
     m_performHPO(false),
     m_estimatedTimeRemainingInMinutes(0),
+    m_isAutoPredictor(false),
     m_optimizationMetric(OptimizationMetric::NOT_SET)
 {
   *this = result;
@@ -56,6 +58,15 @@ DescribePredictorResult& DescribePredictorResult::operator =(const Aws::AmazonWe
   {
     m_algorithmArn = jsonValue.GetString("AlgorithmArn");
 
+  }
+
+  if(jsonValue.ValueExists("AutoMLAlgorithmArns"))
+  {
+    Array<JsonView> autoMLAlgorithmArnsJsonList = jsonValue.GetArray("AutoMLAlgorithmArns");
+    for(unsigned autoMLAlgorithmArnsIndex = 0; autoMLAlgorithmArnsIndex < autoMLAlgorithmArnsJsonList.GetLength(); ++autoMLAlgorithmArnsIndex)
+    {
+      m_autoMLAlgorithmArns.push_back(autoMLAlgorithmArnsJsonList[autoMLAlgorithmArnsIndex].AsString());
+    }
   }
 
   if(jsonValue.ValueExists("ForecastHorizon"))
@@ -142,21 +153,18 @@ DescribePredictorResult& DescribePredictorResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("IsAutoPredictor"))
+  {
+    m_isAutoPredictor = jsonValue.GetBool("IsAutoPredictor");
+
+  }
+
   if(jsonValue.ValueExists("DatasetImportJobArns"))
   {
     Array<JsonView> datasetImportJobArnsJsonList = jsonValue.GetArray("DatasetImportJobArns");
     for(unsigned datasetImportJobArnsIndex = 0; datasetImportJobArnsIndex < datasetImportJobArnsJsonList.GetLength(); ++datasetImportJobArnsIndex)
     {
       m_datasetImportJobArns.push_back(datasetImportJobArnsJsonList[datasetImportJobArnsIndex].AsString());
-    }
-  }
-
-  if(jsonValue.ValueExists("AutoMLAlgorithmArns"))
-  {
-    Array<JsonView> autoMLAlgorithmArnsJsonList = jsonValue.GetArray("AutoMLAlgorithmArns");
-    for(unsigned autoMLAlgorithmArnsIndex = 0; autoMLAlgorithmArnsIndex < autoMLAlgorithmArnsJsonList.GetLength(); ++autoMLAlgorithmArnsIndex)
-    {
-      m_autoMLAlgorithmArns.push_back(autoMLAlgorithmArnsJsonList[autoMLAlgorithmArnsIndex].AsString());
     }
   }
 

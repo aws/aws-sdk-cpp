@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListStreamsRequest::ListStreamsRequest() : 
+    m_filterByHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
@@ -22,6 +23,12 @@ ListStreamsRequest::ListStreamsRequest() :
 Aws::String ListStreamsRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_filterByHasBeenSet)
+  {
+   payload.WithObject("filterBy", m_filterBy.Jsonize());
+
+  }
 
   if(m_maxResultsHasBeenSet)
   {

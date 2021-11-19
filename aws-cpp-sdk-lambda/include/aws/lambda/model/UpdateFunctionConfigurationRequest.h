@@ -293,36 +293,36 @@ namespace Model
 
 
     /**
-     * <p>The amount of time that Lambda allows a function to run before stopping it.
-     * The default is 3 seconds. The maximum allowed value is 900 seconds. For
-     * additional information, see <a
+     * <p>The amount of time (in seconds) that Lambda allows a function to run before
+     * stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds.
+     * For additional information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda
      * execution environment</a>.</p>
      */
     inline int GetTimeout() const{ return m_timeout; }
 
     /**
-     * <p>The amount of time that Lambda allows a function to run before stopping it.
-     * The default is 3 seconds. The maximum allowed value is 900 seconds. For
-     * additional information, see <a
+     * <p>The amount of time (in seconds) that Lambda allows a function to run before
+     * stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds.
+     * For additional information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda
      * execution environment</a>.</p>
      */
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
 
     /**
-     * <p>The amount of time that Lambda allows a function to run before stopping it.
-     * The default is 3 seconds. The maximum allowed value is 900 seconds. For
-     * additional information, see <a
+     * <p>The amount of time (in seconds) that Lambda allows a function to run before
+     * stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds.
+     * For additional information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda
      * execution environment</a>.</p>
      */
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
     /**
-     * <p>The amount of time that Lambda allows a function to run before stopping it.
-     * The default is 3 seconds. The maximum allowed value is 900 seconds. For
-     * additional information, see <a
+     * <p>The amount of time (in seconds) that Lambda allows a function to run before
+     * stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds.
+     * For additional information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda
      * execution environment</a>.</p>
      */

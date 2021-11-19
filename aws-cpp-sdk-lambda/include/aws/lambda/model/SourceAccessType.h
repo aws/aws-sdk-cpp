@@ -21,7 +21,9 @@ namespace Model
     VPC_SECURITY_GROUP,
     SASL_SCRAM_512_AUTH,
     SASL_SCRAM_256_AUTH,
-    VIRTUAL_HOST
+    VIRTUAL_HOST,
+    CLIENT_CERTIFICATE_TLS_AUTH,
+    SERVER_ROOT_CA_CERTIFICATE
   };
 
 namespace SourceAccessTypeMapper

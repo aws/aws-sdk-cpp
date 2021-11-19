@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/auditmanager/AuditManager_EXPORTS.h>
 #include <aws/auditmanager/AuditManagerRequest.h>
+#include <aws/auditmanager/model/AssessmentStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -36,6 +37,37 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+
+    /**
+     * <p> The current status of the assessment.</p>
+     */
+    inline const AssessmentStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p> The current status of the assessment.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p> The current status of the assessment.</p>
+     */
+    inline void SetStatus(const AssessmentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p> The current status of the assessment.</p>
+     */
+    inline void SetStatus(AssessmentStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p> The current status of the assessment.</p>
+     */
+    inline ListAssessmentsRequest& WithStatus(const AssessmentStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p> The current status of the assessment.</p>
+     */
+    inline ListAssessmentsRequest& WithStatus(AssessmentStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
@@ -104,6 +136,9 @@ namespace Model
     inline ListAssessmentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
+    AssessmentStatus m_status;
+    bool m_statusHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

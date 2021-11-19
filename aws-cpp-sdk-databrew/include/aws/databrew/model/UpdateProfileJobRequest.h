@@ -11,7 +11,9 @@
 #include <aws/databrew/model/EncryptionMode.h>
 #include <aws/databrew/model/LogSubscription.h>
 #include <aws/databrew/model/S3Location.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/databrew/model/JobSample.h>
+#include <aws/databrew/model/ValidationConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -322,6 +324,47 @@ namespace Model
 
 
     /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline const Aws::Vector<ValidationConfiguration>& GetValidationConfigurations() const{ return m_validationConfigurations; }
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline bool ValidationConfigurationsHasBeenSet() const { return m_validationConfigurationsHasBeenSet; }
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline void SetValidationConfigurations(const Aws::Vector<ValidationConfiguration>& value) { m_validationConfigurationsHasBeenSet = true; m_validationConfigurations = value; }
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline void SetValidationConfigurations(Aws::Vector<ValidationConfiguration>&& value) { m_validationConfigurationsHasBeenSet = true; m_validationConfigurations = std::move(value); }
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline UpdateProfileJobRequest& WithValidationConfigurations(const Aws::Vector<ValidationConfiguration>& value) { SetValidationConfigurations(value); return *this;}
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline UpdateProfileJobRequest& WithValidationConfigurations(Aws::Vector<ValidationConfiguration>&& value) { SetValidationConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline UpdateProfileJobRequest& AddValidationConfigurations(const ValidationConfiguration& value) { m_validationConfigurationsHasBeenSet = true; m_validationConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline UpdateProfileJobRequest& AddValidationConfigurations(ValidationConfiguration&& value) { m_validationConfigurationsHasBeenSet = true; m_validationConfigurations.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
      * role to be assumed when DataBrew runs the job.</p>
      */
@@ -468,6 +511,9 @@ namespace Model
 
     S3Location m_outputLocation;
     bool m_outputLocationHasBeenSet;
+
+    Aws::Vector<ValidationConfiguration> m_validationConfigurations;
+    bool m_validationConfigurationsHasBeenSet;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;

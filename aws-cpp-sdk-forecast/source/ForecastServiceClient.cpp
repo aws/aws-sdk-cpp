@@ -20,9 +20,12 @@
 #include <aws/forecast/ForecastServiceClient.h>
 #include <aws/forecast/ForecastServiceEndpoint.h>
 #include <aws/forecast/ForecastServiceErrorMarshaller.h>
+#include <aws/forecast/model/CreateAutoPredictorRequest.h>
 #include <aws/forecast/model/CreateDatasetRequest.h>
 #include <aws/forecast/model/CreateDatasetGroupRequest.h>
 #include <aws/forecast/model/CreateDatasetImportJobRequest.h>
+#include <aws/forecast/model/CreateExplainabilityRequest.h>
+#include <aws/forecast/model/CreateExplainabilityExportRequest.h>
 #include <aws/forecast/model/CreateForecastRequest.h>
 #include <aws/forecast/model/CreateForecastExportJobRequest.h>
 #include <aws/forecast/model/CreatePredictorRequest.h>
@@ -30,14 +33,19 @@
 #include <aws/forecast/model/DeleteDatasetRequest.h>
 #include <aws/forecast/model/DeleteDatasetGroupRequest.h>
 #include <aws/forecast/model/DeleteDatasetImportJobRequest.h>
+#include <aws/forecast/model/DeleteExplainabilityRequest.h>
+#include <aws/forecast/model/DeleteExplainabilityExportRequest.h>
 #include <aws/forecast/model/DeleteForecastRequest.h>
 #include <aws/forecast/model/DeleteForecastExportJobRequest.h>
 #include <aws/forecast/model/DeletePredictorRequest.h>
 #include <aws/forecast/model/DeletePredictorBacktestExportJobRequest.h>
 #include <aws/forecast/model/DeleteResourceTreeRequest.h>
+#include <aws/forecast/model/DescribeAutoPredictorRequest.h>
 #include <aws/forecast/model/DescribeDatasetRequest.h>
 #include <aws/forecast/model/DescribeDatasetGroupRequest.h>
 #include <aws/forecast/model/DescribeDatasetImportJobRequest.h>
+#include <aws/forecast/model/DescribeExplainabilityRequest.h>
+#include <aws/forecast/model/DescribeExplainabilityExportRequest.h>
 #include <aws/forecast/model/DescribeForecastRequest.h>
 #include <aws/forecast/model/DescribeForecastExportJobRequest.h>
 #include <aws/forecast/model/DescribePredictorRequest.h>
@@ -46,6 +54,8 @@
 #include <aws/forecast/model/ListDatasetGroupsRequest.h>
 #include <aws/forecast/model/ListDatasetImportJobsRequest.h>
 #include <aws/forecast/model/ListDatasetsRequest.h>
+#include <aws/forecast/model/ListExplainabilitiesRequest.h>
+#include <aws/forecast/model/ListExplainabilityExportsRequest.h>
 #include <aws/forecast/model/ListForecastExportJobsRequest.h>
 #include <aws/forecast/model/ListForecastsRequest.h>
 #include <aws/forecast/model/ListPredictorBacktestExportJobsRequest.h>
@@ -129,6 +139,30 @@ void ForecastServiceClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+CreateAutoPredictorOutcome ForecastServiceClient::CreateAutoPredictor(const CreateAutoPredictorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateAutoPredictorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateAutoPredictorOutcomeCallable ForecastServiceClient::CreateAutoPredictorCallable(const CreateAutoPredictorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateAutoPredictorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAutoPredictor(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::CreateAutoPredictorAsync(const CreateAutoPredictorRequest& request, const CreateAutoPredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAutoPredictorAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::CreateAutoPredictorAsyncHelper(const CreateAutoPredictorRequest& request, const CreateAutoPredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateAutoPredictor(request), context);
+}
+
 CreateDatasetOutcome ForecastServiceClient::CreateDataset(const CreateDatasetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -199,6 +233,54 @@ void ForecastServiceClient::CreateDatasetImportJobAsync(const CreateDatasetImpor
 void ForecastServiceClient::CreateDatasetImportJobAsyncHelper(const CreateDatasetImportJobRequest& request, const CreateDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateDatasetImportJob(request), context);
+}
+
+CreateExplainabilityOutcome ForecastServiceClient::CreateExplainability(const CreateExplainabilityRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateExplainabilityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateExplainabilityOutcomeCallable ForecastServiceClient::CreateExplainabilityCallable(const CreateExplainabilityRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateExplainabilityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateExplainability(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::CreateExplainabilityAsync(const CreateExplainabilityRequest& request, const CreateExplainabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateExplainabilityAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::CreateExplainabilityAsyncHelper(const CreateExplainabilityRequest& request, const CreateExplainabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateExplainability(request), context);
+}
+
+CreateExplainabilityExportOutcome ForecastServiceClient::CreateExplainabilityExport(const CreateExplainabilityExportRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateExplainabilityExportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateExplainabilityExportOutcomeCallable ForecastServiceClient::CreateExplainabilityExportCallable(const CreateExplainabilityExportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateExplainabilityExportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateExplainabilityExport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::CreateExplainabilityExportAsync(const CreateExplainabilityExportRequest& request, const CreateExplainabilityExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateExplainabilityExportAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::CreateExplainabilityExportAsyncHelper(const CreateExplainabilityExportRequest& request, const CreateExplainabilityExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateExplainabilityExport(request), context);
 }
 
 CreateForecastOutcome ForecastServiceClient::CreateForecast(const CreateForecastRequest& request) const
@@ -369,6 +451,54 @@ void ForecastServiceClient::DeleteDatasetImportJobAsyncHelper(const DeleteDatase
   handler(this, request, DeleteDatasetImportJob(request), context);
 }
 
+DeleteExplainabilityOutcome ForecastServiceClient::DeleteExplainability(const DeleteExplainabilityRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteExplainabilityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteExplainabilityOutcomeCallable ForecastServiceClient::DeleteExplainabilityCallable(const DeleteExplainabilityRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteExplainabilityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteExplainability(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::DeleteExplainabilityAsync(const DeleteExplainabilityRequest& request, const DeleteExplainabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteExplainabilityAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::DeleteExplainabilityAsyncHelper(const DeleteExplainabilityRequest& request, const DeleteExplainabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteExplainability(request), context);
+}
+
+DeleteExplainabilityExportOutcome ForecastServiceClient::DeleteExplainabilityExport(const DeleteExplainabilityExportRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteExplainabilityExportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteExplainabilityExportOutcomeCallable ForecastServiceClient::DeleteExplainabilityExportCallable(const DeleteExplainabilityExportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteExplainabilityExportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteExplainabilityExport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::DeleteExplainabilityExportAsync(const DeleteExplainabilityExportRequest& request, const DeleteExplainabilityExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteExplainabilityExportAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::DeleteExplainabilityExportAsyncHelper(const DeleteExplainabilityExportRequest& request, const DeleteExplainabilityExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteExplainabilityExport(request), context);
+}
+
 DeleteForecastOutcome ForecastServiceClient::DeleteForecast(const DeleteForecastRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -489,6 +619,30 @@ void ForecastServiceClient::DeleteResourceTreeAsyncHelper(const DeleteResourceTr
   handler(this, request, DeleteResourceTree(request), context);
 }
 
+DescribeAutoPredictorOutcome ForecastServiceClient::DescribeAutoPredictor(const DescribeAutoPredictorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeAutoPredictorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeAutoPredictorOutcomeCallable ForecastServiceClient::DescribeAutoPredictorCallable(const DescribeAutoPredictorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAutoPredictorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAutoPredictor(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::DescribeAutoPredictorAsync(const DescribeAutoPredictorRequest& request, const DescribeAutoPredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAutoPredictorAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::DescribeAutoPredictorAsyncHelper(const DescribeAutoPredictorRequest& request, const DescribeAutoPredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAutoPredictor(request), context);
+}
+
 DescribeDatasetOutcome ForecastServiceClient::DescribeDataset(const DescribeDatasetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -559,6 +713,54 @@ void ForecastServiceClient::DescribeDatasetImportJobAsync(const DescribeDatasetI
 void ForecastServiceClient::DescribeDatasetImportJobAsyncHelper(const DescribeDatasetImportJobRequest& request, const DescribeDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeDatasetImportJob(request), context);
+}
+
+DescribeExplainabilityOutcome ForecastServiceClient::DescribeExplainability(const DescribeExplainabilityRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeExplainabilityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeExplainabilityOutcomeCallable ForecastServiceClient::DescribeExplainabilityCallable(const DescribeExplainabilityRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeExplainabilityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeExplainability(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::DescribeExplainabilityAsync(const DescribeExplainabilityRequest& request, const DescribeExplainabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeExplainabilityAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::DescribeExplainabilityAsyncHelper(const DescribeExplainabilityRequest& request, const DescribeExplainabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeExplainability(request), context);
+}
+
+DescribeExplainabilityExportOutcome ForecastServiceClient::DescribeExplainabilityExport(const DescribeExplainabilityExportRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeExplainabilityExportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeExplainabilityExportOutcomeCallable ForecastServiceClient::DescribeExplainabilityExportCallable(const DescribeExplainabilityExportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeExplainabilityExportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeExplainabilityExport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::DescribeExplainabilityExportAsync(const DescribeExplainabilityExportRequest& request, const DescribeExplainabilityExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeExplainabilityExportAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::DescribeExplainabilityExportAsyncHelper(const DescribeExplainabilityExportRequest& request, const DescribeExplainabilityExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeExplainabilityExport(request), context);
 }
 
 DescribeForecastOutcome ForecastServiceClient::DescribeForecast(const DescribeForecastRequest& request) const
@@ -751,6 +953,54 @@ void ForecastServiceClient::ListDatasetsAsync(const ListDatasetsRequest& request
 void ForecastServiceClient::ListDatasetsAsyncHelper(const ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListDatasets(request), context);
+}
+
+ListExplainabilitiesOutcome ForecastServiceClient::ListExplainabilities(const ListExplainabilitiesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListExplainabilitiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListExplainabilitiesOutcomeCallable ForecastServiceClient::ListExplainabilitiesCallable(const ListExplainabilitiesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListExplainabilitiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExplainabilities(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::ListExplainabilitiesAsync(const ListExplainabilitiesRequest& request, const ListExplainabilitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListExplainabilitiesAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::ListExplainabilitiesAsyncHelper(const ListExplainabilitiesRequest& request, const ListExplainabilitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListExplainabilities(request), context);
+}
+
+ListExplainabilityExportsOutcome ForecastServiceClient::ListExplainabilityExports(const ListExplainabilityExportsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListExplainabilityExportsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListExplainabilityExportsOutcomeCallable ForecastServiceClient::ListExplainabilityExportsCallable(const ListExplainabilityExportsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListExplainabilityExportsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExplainabilityExports(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::ListExplainabilityExportsAsync(const ListExplainabilityExportsRequest& request, const ListExplainabilityExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListExplainabilityExportsAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::ListExplainabilityExportsAsyncHelper(const ListExplainabilityExportsRequest& request, const ListExplainabilityExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListExplainabilityExports(request), context);
 }
 
 ListForecastExportJobsOutcome ForecastServiceClient::ListForecastExportJobs(const ListForecastExportJobsRequest& request) const

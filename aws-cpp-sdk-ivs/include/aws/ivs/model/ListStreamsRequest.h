@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ivs/IVS_EXPORTS.h>
 #include <aws/ivs/IVSRequest.h>
+#include <aws/ivs/model/StreamFilters.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -30,6 +31,37 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "ListStreams"; }
 
     Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>Filters the stream list to match the specified criterion.</p>
+     */
+    inline const StreamFilters& GetFilterBy() const{ return m_filterBy; }
+
+    /**
+     * <p>Filters the stream list to match the specified criterion.</p>
+     */
+    inline bool FilterByHasBeenSet() const { return m_filterByHasBeenSet; }
+
+    /**
+     * <p>Filters the stream list to match the specified criterion.</p>
+     */
+    inline void SetFilterBy(const StreamFilters& value) { m_filterByHasBeenSet = true; m_filterBy = value; }
+
+    /**
+     * <p>Filters the stream list to match the specified criterion.</p>
+     */
+    inline void SetFilterBy(StreamFilters&& value) { m_filterByHasBeenSet = true; m_filterBy = std::move(value); }
+
+    /**
+     * <p>Filters the stream list to match the specified criterion.</p>
+     */
+    inline ListStreamsRequest& WithFilterBy(const StreamFilters& value) { SetFilterBy(value); return *this;}
+
+    /**
+     * <p>Filters the stream list to match the specified criterion.</p>
+     */
+    inline ListStreamsRequest& WithFilterBy(StreamFilters&& value) { SetFilterBy(std::move(value)); return *this;}
 
 
     /**
@@ -102,6 +134,9 @@ namespace Model
     inline ListStreamsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
+    StreamFilters m_filterBy;
+    bool m_filterByHasBeenSet;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;

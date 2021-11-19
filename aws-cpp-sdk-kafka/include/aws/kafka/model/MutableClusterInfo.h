@@ -13,6 +13,7 @@
 #include <aws/kafka/model/LoggingInfo.h>
 #include <aws/kafka/model/ClientAuthentication.h>
 #include <aws/kafka/model/EncryptionInfo.h>
+#include <aws/kafka/model/ConnectivityInfo.h>
 #include <aws/kafka/model/BrokerEBSVolumeInfo.h>
 #include <utility>
 
@@ -285,56 +286,56 @@ namespace Model
 
     /**
      * 
-            <p>The Kafka version.</p>
+            <p>The Apache Kafka version.</p>
             
      */
     inline const Aws::String& GetKafkaVersion() const{ return m_kafkaVersion; }
 
     /**
      * 
-            <p>The Kafka version.</p>
+            <p>The Apache Kafka version.</p>
             
      */
     inline bool KafkaVersionHasBeenSet() const { return m_kafkaVersionHasBeenSet; }
 
     /**
      * 
-            <p>The Kafka version.</p>
+            <p>The Apache Kafka version.</p>
             
      */
     inline void SetKafkaVersion(const Aws::String& value) { m_kafkaVersionHasBeenSet = true; m_kafkaVersion = value; }
 
     /**
      * 
-            <p>The Kafka version.</p>
+            <p>The Apache Kafka version.</p>
             
      */
     inline void SetKafkaVersion(Aws::String&& value) { m_kafkaVersionHasBeenSet = true; m_kafkaVersion = std::move(value); }
 
     /**
      * 
-            <p>The Kafka version.</p>
+            <p>The Apache Kafka version.</p>
             
      */
     inline void SetKafkaVersion(const char* value) { m_kafkaVersionHasBeenSet = true; m_kafkaVersion.assign(value); }
 
     /**
      * 
-            <p>The Kafka version.</p>
+            <p>The Apache Kafka version.</p>
             
      */
     inline MutableClusterInfo& WithKafkaVersion(const Aws::String& value) { SetKafkaVersion(value); return *this;}
 
     /**
      * 
-            <p>The Kafka version.</p>
+            <p>The Apache Kafka version.</p>
             
      */
     inline MutableClusterInfo& WithKafkaVersion(Aws::String&& value) { SetKafkaVersion(std::move(value)); return *this;}
 
     /**
      * 
-            <p>The Kafka version.</p>
+            <p>The Apache Kafka version.</p>
             
      */
     inline MutableClusterInfo& WithKafkaVersion(const char* value) { SetKafkaVersion(value); return *this;}
@@ -537,6 +538,49 @@ namespace Model
      */
     inline MutableClusterInfo& WithEncryptionInfo(EncryptionInfo&& value) { SetEncryptionInfo(std::move(value)); return *this;}
 
+
+    /**
+     * 
+            <p>Information about the broker access configuration.</p>
+         
+     */
+    inline const ConnectivityInfo& GetConnectivityInfo() const{ return m_connectivityInfo; }
+
+    /**
+     * 
+            <p>Information about the broker access configuration.</p>
+         
+     */
+    inline bool ConnectivityInfoHasBeenSet() const { return m_connectivityInfoHasBeenSet; }
+
+    /**
+     * 
+            <p>Information about the broker access configuration.</p>
+         
+     */
+    inline void SetConnectivityInfo(const ConnectivityInfo& value) { m_connectivityInfoHasBeenSet = true; m_connectivityInfo = value; }
+
+    /**
+     * 
+            <p>Information about the broker access configuration.</p>
+         
+     */
+    inline void SetConnectivityInfo(ConnectivityInfo&& value) { m_connectivityInfoHasBeenSet = true; m_connectivityInfo = std::move(value); }
+
+    /**
+     * 
+            <p>Information about the broker access configuration.</p>
+         
+     */
+    inline MutableClusterInfo& WithConnectivityInfo(const ConnectivityInfo& value) { SetConnectivityInfo(value); return *this;}
+
+    /**
+     * 
+            <p>Information about the broker access configuration.</p>
+         
+     */
+    inline MutableClusterInfo& WithConnectivityInfo(ConnectivityInfo&& value) { SetConnectivityInfo(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<BrokerEBSVolumeInfo> m_brokerEBSVolumeInfo;
@@ -568,6 +612,9 @@ namespace Model
 
     EncryptionInfo m_encryptionInfo;
     bool m_encryptionInfoHasBeenSet;
+
+    ConnectivityInfo m_connectivityInfo;
+    bool m_connectivityInfoHasBeenSet;
   };
 
 } // namespace Model

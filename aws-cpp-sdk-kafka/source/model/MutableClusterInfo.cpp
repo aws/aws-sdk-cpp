@@ -30,7 +30,8 @@ MutableClusterInfo::MutableClusterInfo() :
     m_loggingInfoHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_clientAuthenticationHasBeenSet(false),
-    m_encryptionInfoHasBeenSet(false)
+    m_encryptionInfoHasBeenSet(false),
+    m_connectivityInfoHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ MutableClusterInfo::MutableClusterInfo(JsonView jsonValue) :
     m_loggingInfoHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_clientAuthenticationHasBeenSet(false),
-    m_encryptionInfoHasBeenSet(false)
+    m_encryptionInfoHasBeenSet(false),
+    m_connectivityInfoHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -126,6 +128,13 @@ MutableClusterInfo& MutableClusterInfo::operator =(JsonView jsonValue)
     m_encryptionInfoHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("connectivityInfo"))
+  {
+    m_connectivityInfo = jsonValue.GetObject("connectivityInfo");
+
+    m_connectivityInfoHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -194,6 +203,12 @@ JsonValue MutableClusterInfo::Jsonize() const
   if(m_encryptionInfoHasBeenSet)
   {
    payload.WithObject("encryptionInfo", m_encryptionInfo.Jsonize());
+
+  }
+
+  if(m_connectivityInfoHasBeenSet)
+  {
+   payload.WithObject("connectivityInfo", m_connectivityInfo.Jsonize());
 
   }
 

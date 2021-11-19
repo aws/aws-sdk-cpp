@@ -47,6 +47,7 @@
 #include <aws/kafka/model/UpdateBrokerTypeRequest.h>
 #include <aws/kafka/model/UpdateBrokerStorageRequest.h>
 #include <aws/kafka/model/UpdateConfigurationRequest.h>
+#include <aws/kafka/model/UpdateConnectivityRequest.h>
 #include <aws/kafka/model/UpdateClusterConfigurationRequest.h>
 #include <aws/kafka/model/UpdateClusterKafkaVersionRequest.h>
 #include <aws/kafka/model/UpdateMonitoringRequest.h>
@@ -947,6 +948,38 @@ void KafkaClient::UpdateConfigurationAsync(const UpdateConfigurationRequest& req
 void KafkaClient::UpdateConfigurationAsyncHelper(const UpdateConfigurationRequest& request, const UpdateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateConfiguration(request), context);
+}
+
+UpdateConnectivityOutcome KafkaClient::UpdateConnectivity(const UpdateConnectivityRequest& request) const
+{
+  if (!request.ClusterArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateConnectivity", "Required field: ClusterArn, is not set");
+    return UpdateConnectivityOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/clusters/");
+  uri.AddPathSegment(request.GetClusterArn());
+  uri.AddPathSegments("/connectivity");
+  return UpdateConnectivityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateConnectivityOutcomeCallable KafkaClient::UpdateConnectivityCallable(const UpdateConnectivityRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateConnectivityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateConnectivity(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KafkaClient::UpdateConnectivityAsync(const UpdateConnectivityRequest& request, const UpdateConnectivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateConnectivityAsyncHelper( request, handler, context ); } );
+}
+
+void KafkaClient::UpdateConnectivityAsyncHelper(const UpdateConnectivityRequest& request, const UpdateConnectivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateConnectivity(request), context);
 }
 
 UpdateClusterConfigurationOutcome KafkaClient::UpdateClusterConfiguration(const UpdateClusterConfigurationRequest& request) const

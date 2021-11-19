@@ -11,10 +11,8 @@ using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
 DeleteAnomalyDetectorRequest::DeleteAnomalyDetectorRequest() : 
-    m_namespaceHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_statHasBeenSet(false)
+    m_singleMetricAnomalyDetectorHasBeenSet(false),
+    m_metricMathAnomalyDetectorHasBeenSet(false)
 {
 }
 
@@ -22,29 +20,14 @@ Aws::String DeleteAnomalyDetectorRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteAnomalyDetector&";
-  if(m_namespaceHasBeenSet)
+  if(m_singleMetricAnomalyDetectorHasBeenSet)
   {
-    ss << "Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
+    m_singleMetricAnomalyDetector.OutputToStream(ss, "SingleMetricAnomalyDetector");
   }
 
-  if(m_metricNameHasBeenSet)
+  if(m_metricMathAnomalyDetectorHasBeenSet)
   {
-    ss << "MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
-  }
-
-  if(m_dimensionsHasBeenSet)
-  {
-    unsigned dimensionsCount = 1;
-    for(auto& item : m_dimensions)
-    {
-      item.OutputToStream(ss, "Dimensions.member.", dimensionsCount, "");
-      dimensionsCount++;
-    }
-  }
-
-  if(m_statHasBeenSet)
-  {
-    ss << "Stat=" << StringUtils::URLEncode(m_stat.c_str()) << "&";
+    m_metricMathAnomalyDetector.OutputToStream(ss, "MetricMathAnomalyDetector");
   }
 
   ss << "Version=2010-08-01";

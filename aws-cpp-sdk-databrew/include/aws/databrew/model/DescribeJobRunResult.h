@@ -8,11 +8,12 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/databrew/model/ProfileConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/databrew/model/JobRunState.h>
 #include <aws/databrew/model/LogSubscription.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/databrew/model/RecipeReference.h>
 #include <aws/databrew/model/JobSample.h>
+#include <aws/databrew/model/ValidationConfiguration.h>
 #include <aws/databrew/model/Output.h>
 #include <aws/databrew/model/DataCatalogOutput.h>
 #include <aws/databrew/model/DatabaseOutput.h>
@@ -252,6 +253,42 @@ namespace Model
      * profile job will run with default settings.</p>
      */
     inline DescribeJobRunResult& WithProfileConfiguration(ProfileConfiguration&& value) { SetProfileConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline const Aws::Vector<ValidationConfiguration>& GetValidationConfigurations() const{ return m_validationConfigurations; }
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline void SetValidationConfigurations(const Aws::Vector<ValidationConfiguration>& value) { m_validationConfigurations = value; }
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline void SetValidationConfigurations(Aws::Vector<ValidationConfiguration>&& value) { m_validationConfigurations = std::move(value); }
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline DescribeJobRunResult& WithValidationConfigurations(const Aws::Vector<ValidationConfiguration>& value) { SetValidationConfigurations(value); return *this;}
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline DescribeJobRunResult& WithValidationConfigurations(Aws::Vector<ValidationConfiguration>&& value) { SetValidationConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline DescribeJobRunResult& AddValidationConfigurations(const ValidationConfiguration& value) { m_validationConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline DescribeJobRunResult& AddValidationConfigurations(ValidationConfiguration&& value) { m_validationConfigurations.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -640,6 +677,8 @@ namespace Model
     Aws::String m_jobName;
 
     ProfileConfiguration m_profileConfiguration;
+
+    Aws::Vector<ValidationConfiguration> m_validationConfigurations;
 
     Aws::String m_runId;
 

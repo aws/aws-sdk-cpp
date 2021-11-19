@@ -25,6 +25,7 @@ StreamSummary::StreamSummary() :
     m_startTimeHasBeenSet(false),
     m_state(StreamState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_streamIdHasBeenSet(false),
     m_viewerCount(0),
     m_viewerCountHasBeenSet(false)
 {
@@ -37,6 +38,7 @@ StreamSummary::StreamSummary(JsonView jsonValue) :
     m_startTimeHasBeenSet(false),
     m_state(StreamState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_streamIdHasBeenSet(false),
     m_viewerCount(0),
     m_viewerCountHasBeenSet(false)
 {
@@ -73,6 +75,13 @@ StreamSummary& StreamSummary::operator =(JsonView jsonValue)
     m_stateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("streamId"))
+  {
+    m_streamId = jsonValue.GetString("streamId");
+
+    m_streamIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("viewerCount"))
   {
     m_viewerCount = jsonValue.GetInt64("viewerCount");
@@ -106,6 +115,12 @@ JsonValue StreamSummary::Jsonize() const
   if(m_stateHasBeenSet)
   {
    payload.WithString("state", StreamStateMapper::GetNameForStreamState(m_state));
+  }
+
+  if(m_streamIdHasBeenSet)
+  {
+   payload.WithString("streamId", m_streamId);
+
   }
 
   if(m_viewerCountHasBeenSet)

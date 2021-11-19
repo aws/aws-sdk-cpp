@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Summary information about a bot returned by the <a>ListBots</a>
+   * <p>Summary information about a bot returned by the <a
+   * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBots.html">ListBots</a>
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BotSummary">AWS
    * API Reference</a></p>
@@ -42,49 +43,65 @@ namespace Model
 
     /**
      * <p>The unique identifier assigned to the bot. Use this ID to get detailed
-     * information about the bot with the <a>DescribeBot</a> operation.</p>
+     * information about the bot with the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBot.html">DescribeBot</a>
+     * operation.</p>
      */
     inline const Aws::String& GetBotId() const{ return m_botId; }
 
     /**
      * <p>The unique identifier assigned to the bot. Use this ID to get detailed
-     * information about the bot with the <a>DescribeBot</a> operation.</p>
+     * information about the bot with the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBot.html">DescribeBot</a>
+     * operation.</p>
      */
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
 
     /**
      * <p>The unique identifier assigned to the bot. Use this ID to get detailed
-     * information about the bot with the <a>DescribeBot</a> operation.</p>
+     * information about the bot with the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBot.html">DescribeBot</a>
+     * operation.</p>
      */
     inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
 
     /**
      * <p>The unique identifier assigned to the bot. Use this ID to get detailed
-     * information about the bot with the <a>DescribeBot</a> operation.</p>
+     * information about the bot with the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBot.html">DescribeBot</a>
+     * operation.</p>
      */
     inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
 
     /**
      * <p>The unique identifier assigned to the bot. Use this ID to get detailed
-     * information about the bot with the <a>DescribeBot</a> operation.</p>
+     * information about the bot with the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBot.html">DescribeBot</a>
+     * operation.</p>
      */
     inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
 
     /**
      * <p>The unique identifier assigned to the bot. Use this ID to get detailed
-     * information about the bot with the <a>DescribeBot</a> operation.</p>
+     * information about the bot with the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBot.html">DescribeBot</a>
+     * operation.</p>
      */
     inline BotSummary& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
 
     /**
      * <p>The unique identifier assigned to the bot. Use this ID to get detailed
-     * information about the bot with the <a>DescribeBot</a> operation.</p>
+     * information about the bot with the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBot.html">DescribeBot</a>
+     * operation.</p>
      */
     inline BotSummary& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier assigned to the bot. Use this ID to get detailed
-     * information about the bot with the <a>DescribeBot</a> operation.</p>
+     * information about the bot with the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBot.html">DescribeBot</a>
+     * operation.</p>
      */
     inline BotSummary& WithBotId(const char* value) { SetBotId(value); return *this;}
 

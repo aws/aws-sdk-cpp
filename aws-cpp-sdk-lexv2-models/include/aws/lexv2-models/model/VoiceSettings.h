@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-models/model/VoiceEngine.h>
 #include <utility>
 
 namespace Aws
@@ -78,10 +79,62 @@ namespace Model
      */
     inline VoiceSettings& WithVoiceId(const char* value) { SetVoiceId(value); return *this;}
 
+
+    /**
+     * <p>Indicates the type of Amazon Polly voice that Amazon Lex should use for voice
+     * interaction with the user. For more information, see <a
+     * href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in
+     * Amazon Polly</a>.</p>
+     */
+    inline const VoiceEngine& GetEngine() const{ return m_engine; }
+
+    /**
+     * <p>Indicates the type of Amazon Polly voice that Amazon Lex should use for voice
+     * interaction with the user. For more information, see <a
+     * href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in
+     * Amazon Polly</a>.</p>
+     */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+
+    /**
+     * <p>Indicates the type of Amazon Polly voice that Amazon Lex should use for voice
+     * interaction with the user. For more information, see <a
+     * href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in
+     * Amazon Polly</a>.</p>
+     */
+    inline void SetEngine(const VoiceEngine& value) { m_engineHasBeenSet = true; m_engine = value; }
+
+    /**
+     * <p>Indicates the type of Amazon Polly voice that Amazon Lex should use for voice
+     * interaction with the user. For more information, see <a
+     * href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in
+     * Amazon Polly</a>.</p>
+     */
+    inline void SetEngine(VoiceEngine&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
+
+    /**
+     * <p>Indicates the type of Amazon Polly voice that Amazon Lex should use for voice
+     * interaction with the user. For more information, see <a
+     * href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in
+     * Amazon Polly</a>.</p>
+     */
+    inline VoiceSettings& WithEngine(const VoiceEngine& value) { SetEngine(value); return *this;}
+
+    /**
+     * <p>Indicates the type of Amazon Polly voice that Amazon Lex should use for voice
+     * interaction with the user. For more information, see <a
+     * href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in
+     * Amazon Polly</a>.</p>
+     */
+    inline VoiceSettings& WithEngine(VoiceEngine&& value) { SetEngine(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_voiceId;
     bool m_voiceIdHasBeenSet;
+
+    VoiceEngine m_engine;
+    bool m_engineHasBeenSet;
   };
 
 } // namespace Model

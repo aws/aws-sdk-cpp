@@ -10,6 +10,7 @@
 #include <aws/chime/model/TranscribeMedicalType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/chime/model/TranscribeMedicalRegion.h>
+#include <aws/chime/model/TranscribeMedicalContentIdentificationType.h>
 #include <utility>
 
 namespace Aws
@@ -212,6 +213,43 @@ namespace Model
      */
     inline EngineTranscribeMedicalSettings& WithRegion(TranscribeMedicalRegion&& value) { SetRegion(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Set this field to <code>PHI</code> to identify personal health information in
+     * the transcription output.</p>
+     */
+    inline const TranscribeMedicalContentIdentificationType& GetContentIdentificationType() const{ return m_contentIdentificationType; }
+
+    /**
+     * <p>Set this field to <code>PHI</code> to identify personal health information in
+     * the transcription output.</p>
+     */
+    inline bool ContentIdentificationTypeHasBeenSet() const { return m_contentIdentificationTypeHasBeenSet; }
+
+    /**
+     * <p>Set this field to <code>PHI</code> to identify personal health information in
+     * the transcription output.</p>
+     */
+    inline void SetContentIdentificationType(const TranscribeMedicalContentIdentificationType& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = value; }
+
+    /**
+     * <p>Set this field to <code>PHI</code> to identify personal health information in
+     * the transcription output.</p>
+     */
+    inline void SetContentIdentificationType(TranscribeMedicalContentIdentificationType&& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = std::move(value); }
+
+    /**
+     * <p>Set this field to <code>PHI</code> to identify personal health information in
+     * the transcription output.</p>
+     */
+    inline EngineTranscribeMedicalSettings& WithContentIdentificationType(const TranscribeMedicalContentIdentificationType& value) { SetContentIdentificationType(value); return *this;}
+
+    /**
+     * <p>Set this field to <code>PHI</code> to identify personal health information in
+     * the transcription output.</p>
+     */
+    inline EngineTranscribeMedicalSettings& WithContentIdentificationType(TranscribeMedicalContentIdentificationType&& value) { SetContentIdentificationType(std::move(value)); return *this;}
+
   private:
 
     TranscribeMedicalLanguageCode m_languageCode;
@@ -228,6 +266,9 @@ namespace Model
 
     TranscribeMedicalRegion m_region;
     bool m_regionHasBeenSet;
+
+    TranscribeMedicalContentIdentificationType m_contentIdentificationType;
+    bool m_contentIdentificationTypeHasBeenSet;
   };
 
 } // namespace Model

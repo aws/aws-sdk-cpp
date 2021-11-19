@@ -11,16 +11,22 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/forecast/model/CreateAutoPredictorResult.h>
 #include <aws/forecast/model/CreateDatasetResult.h>
 #include <aws/forecast/model/CreateDatasetGroupResult.h>
 #include <aws/forecast/model/CreateDatasetImportJobResult.h>
+#include <aws/forecast/model/CreateExplainabilityResult.h>
+#include <aws/forecast/model/CreateExplainabilityExportResult.h>
 #include <aws/forecast/model/CreateForecastResult.h>
 #include <aws/forecast/model/CreateForecastExportJobResult.h>
 #include <aws/forecast/model/CreatePredictorResult.h>
 #include <aws/forecast/model/CreatePredictorBacktestExportJobResult.h>
+#include <aws/forecast/model/DescribeAutoPredictorResult.h>
 #include <aws/forecast/model/DescribeDatasetResult.h>
 #include <aws/forecast/model/DescribeDatasetGroupResult.h>
 #include <aws/forecast/model/DescribeDatasetImportJobResult.h>
+#include <aws/forecast/model/DescribeExplainabilityResult.h>
+#include <aws/forecast/model/DescribeExplainabilityExportResult.h>
 #include <aws/forecast/model/DescribeForecastResult.h>
 #include <aws/forecast/model/DescribeForecastExportJobResult.h>
 #include <aws/forecast/model/DescribePredictorResult.h>
@@ -29,6 +35,8 @@
 #include <aws/forecast/model/ListDatasetGroupsResult.h>
 #include <aws/forecast/model/ListDatasetImportJobsResult.h>
 #include <aws/forecast/model/ListDatasetsResult.h>
+#include <aws/forecast/model/ListExplainabilitiesResult.h>
+#include <aws/forecast/model/ListExplainabilityExportsResult.h>
 #include <aws/forecast/model/ListForecastExportJobsResult.h>
 #include <aws/forecast/model/ListForecastsResult.h>
 #include <aws/forecast/model/ListPredictorBacktestExportJobsResult.h>
@@ -77,9 +85,12 @@ namespace ForecastService
 
 namespace Model
 {
+        class CreateAutoPredictorRequest;
         class CreateDatasetRequest;
         class CreateDatasetGroupRequest;
         class CreateDatasetImportJobRequest;
+        class CreateExplainabilityRequest;
+        class CreateExplainabilityExportRequest;
         class CreateForecastRequest;
         class CreateForecastExportJobRequest;
         class CreatePredictorRequest;
@@ -87,14 +98,19 @@ namespace Model
         class DeleteDatasetRequest;
         class DeleteDatasetGroupRequest;
         class DeleteDatasetImportJobRequest;
+        class DeleteExplainabilityRequest;
+        class DeleteExplainabilityExportRequest;
         class DeleteForecastRequest;
         class DeleteForecastExportJobRequest;
         class DeletePredictorRequest;
         class DeletePredictorBacktestExportJobRequest;
         class DeleteResourceTreeRequest;
+        class DescribeAutoPredictorRequest;
         class DescribeDatasetRequest;
         class DescribeDatasetGroupRequest;
         class DescribeDatasetImportJobRequest;
+        class DescribeExplainabilityRequest;
+        class DescribeExplainabilityExportRequest;
         class DescribeForecastRequest;
         class DescribeForecastExportJobRequest;
         class DescribePredictorRequest;
@@ -103,6 +119,8 @@ namespace Model
         class ListDatasetGroupsRequest;
         class ListDatasetImportJobsRequest;
         class ListDatasetsRequest;
+        class ListExplainabilitiesRequest;
+        class ListExplainabilityExportsRequest;
         class ListForecastExportJobsRequest;
         class ListForecastsRequest;
         class ListPredictorBacktestExportJobsRequest;
@@ -113,9 +131,12 @@ namespace Model
         class UntagResourceRequest;
         class UpdateDatasetGroupRequest;
 
+        typedef Aws::Utils::Outcome<CreateAutoPredictorResult, ForecastServiceError> CreateAutoPredictorOutcome;
         typedef Aws::Utils::Outcome<CreateDatasetResult, ForecastServiceError> CreateDatasetOutcome;
         typedef Aws::Utils::Outcome<CreateDatasetGroupResult, ForecastServiceError> CreateDatasetGroupOutcome;
         typedef Aws::Utils::Outcome<CreateDatasetImportJobResult, ForecastServiceError> CreateDatasetImportJobOutcome;
+        typedef Aws::Utils::Outcome<CreateExplainabilityResult, ForecastServiceError> CreateExplainabilityOutcome;
+        typedef Aws::Utils::Outcome<CreateExplainabilityExportResult, ForecastServiceError> CreateExplainabilityExportOutcome;
         typedef Aws::Utils::Outcome<CreateForecastResult, ForecastServiceError> CreateForecastOutcome;
         typedef Aws::Utils::Outcome<CreateForecastExportJobResult, ForecastServiceError> CreateForecastExportJobOutcome;
         typedef Aws::Utils::Outcome<CreatePredictorResult, ForecastServiceError> CreatePredictorOutcome;
@@ -123,14 +144,19 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, ForecastServiceError> DeleteDatasetOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ForecastServiceError> DeleteDatasetGroupOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ForecastServiceError> DeleteDatasetImportJobOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ForecastServiceError> DeleteExplainabilityOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ForecastServiceError> DeleteExplainabilityExportOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ForecastServiceError> DeleteForecastOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ForecastServiceError> DeleteForecastExportJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ForecastServiceError> DeletePredictorOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ForecastServiceError> DeletePredictorBacktestExportJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ForecastServiceError> DeleteResourceTreeOutcome;
+        typedef Aws::Utils::Outcome<DescribeAutoPredictorResult, ForecastServiceError> DescribeAutoPredictorOutcome;
         typedef Aws::Utils::Outcome<DescribeDatasetResult, ForecastServiceError> DescribeDatasetOutcome;
         typedef Aws::Utils::Outcome<DescribeDatasetGroupResult, ForecastServiceError> DescribeDatasetGroupOutcome;
         typedef Aws::Utils::Outcome<DescribeDatasetImportJobResult, ForecastServiceError> DescribeDatasetImportJobOutcome;
+        typedef Aws::Utils::Outcome<DescribeExplainabilityResult, ForecastServiceError> DescribeExplainabilityOutcome;
+        typedef Aws::Utils::Outcome<DescribeExplainabilityExportResult, ForecastServiceError> DescribeExplainabilityExportOutcome;
         typedef Aws::Utils::Outcome<DescribeForecastResult, ForecastServiceError> DescribeForecastOutcome;
         typedef Aws::Utils::Outcome<DescribeForecastExportJobResult, ForecastServiceError> DescribeForecastExportJobOutcome;
         typedef Aws::Utils::Outcome<DescribePredictorResult, ForecastServiceError> DescribePredictorOutcome;
@@ -139,6 +165,8 @@ namespace Model
         typedef Aws::Utils::Outcome<ListDatasetGroupsResult, ForecastServiceError> ListDatasetGroupsOutcome;
         typedef Aws::Utils::Outcome<ListDatasetImportJobsResult, ForecastServiceError> ListDatasetImportJobsOutcome;
         typedef Aws::Utils::Outcome<ListDatasetsResult, ForecastServiceError> ListDatasetsOutcome;
+        typedef Aws::Utils::Outcome<ListExplainabilitiesResult, ForecastServiceError> ListExplainabilitiesOutcome;
+        typedef Aws::Utils::Outcome<ListExplainabilityExportsResult, ForecastServiceError> ListExplainabilityExportsOutcome;
         typedef Aws::Utils::Outcome<ListForecastExportJobsResult, ForecastServiceError> ListForecastExportJobsOutcome;
         typedef Aws::Utils::Outcome<ListForecastsResult, ForecastServiceError> ListForecastsOutcome;
         typedef Aws::Utils::Outcome<ListPredictorBacktestExportJobsResult, ForecastServiceError> ListPredictorBacktestExportJobsOutcome;
@@ -149,9 +177,12 @@ namespace Model
         typedef Aws::Utils::Outcome<UntagResourceResult, ForecastServiceError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateDatasetGroupResult, ForecastServiceError> UpdateDatasetGroupOutcome;
 
+        typedef std::future<CreateAutoPredictorOutcome> CreateAutoPredictorOutcomeCallable;
         typedef std::future<CreateDatasetOutcome> CreateDatasetOutcomeCallable;
         typedef std::future<CreateDatasetGroupOutcome> CreateDatasetGroupOutcomeCallable;
         typedef std::future<CreateDatasetImportJobOutcome> CreateDatasetImportJobOutcomeCallable;
+        typedef std::future<CreateExplainabilityOutcome> CreateExplainabilityOutcomeCallable;
+        typedef std::future<CreateExplainabilityExportOutcome> CreateExplainabilityExportOutcomeCallable;
         typedef std::future<CreateForecastOutcome> CreateForecastOutcomeCallable;
         typedef std::future<CreateForecastExportJobOutcome> CreateForecastExportJobOutcomeCallable;
         typedef std::future<CreatePredictorOutcome> CreatePredictorOutcomeCallable;
@@ -159,14 +190,19 @@ namespace Model
         typedef std::future<DeleteDatasetOutcome> DeleteDatasetOutcomeCallable;
         typedef std::future<DeleteDatasetGroupOutcome> DeleteDatasetGroupOutcomeCallable;
         typedef std::future<DeleteDatasetImportJobOutcome> DeleteDatasetImportJobOutcomeCallable;
+        typedef std::future<DeleteExplainabilityOutcome> DeleteExplainabilityOutcomeCallable;
+        typedef std::future<DeleteExplainabilityExportOutcome> DeleteExplainabilityExportOutcomeCallable;
         typedef std::future<DeleteForecastOutcome> DeleteForecastOutcomeCallable;
         typedef std::future<DeleteForecastExportJobOutcome> DeleteForecastExportJobOutcomeCallable;
         typedef std::future<DeletePredictorOutcome> DeletePredictorOutcomeCallable;
         typedef std::future<DeletePredictorBacktestExportJobOutcome> DeletePredictorBacktestExportJobOutcomeCallable;
         typedef std::future<DeleteResourceTreeOutcome> DeleteResourceTreeOutcomeCallable;
+        typedef std::future<DescribeAutoPredictorOutcome> DescribeAutoPredictorOutcomeCallable;
         typedef std::future<DescribeDatasetOutcome> DescribeDatasetOutcomeCallable;
         typedef std::future<DescribeDatasetGroupOutcome> DescribeDatasetGroupOutcomeCallable;
         typedef std::future<DescribeDatasetImportJobOutcome> DescribeDatasetImportJobOutcomeCallable;
+        typedef std::future<DescribeExplainabilityOutcome> DescribeExplainabilityOutcomeCallable;
+        typedef std::future<DescribeExplainabilityExportOutcome> DescribeExplainabilityExportOutcomeCallable;
         typedef std::future<DescribeForecastOutcome> DescribeForecastOutcomeCallable;
         typedef std::future<DescribeForecastExportJobOutcome> DescribeForecastExportJobOutcomeCallable;
         typedef std::future<DescribePredictorOutcome> DescribePredictorOutcomeCallable;
@@ -175,6 +211,8 @@ namespace Model
         typedef std::future<ListDatasetGroupsOutcome> ListDatasetGroupsOutcomeCallable;
         typedef std::future<ListDatasetImportJobsOutcome> ListDatasetImportJobsOutcomeCallable;
         typedef std::future<ListDatasetsOutcome> ListDatasetsOutcomeCallable;
+        typedef std::future<ListExplainabilitiesOutcome> ListExplainabilitiesOutcomeCallable;
+        typedef std::future<ListExplainabilityExportsOutcome> ListExplainabilityExportsOutcomeCallable;
         typedef std::future<ListForecastExportJobsOutcome> ListForecastExportJobsOutcomeCallable;
         typedef std::future<ListForecastsOutcome> ListForecastsOutcomeCallable;
         typedef std::future<ListPredictorBacktestExportJobsOutcome> ListPredictorBacktestExportJobsOutcomeCallable;
@@ -188,9 +226,12 @@ namespace Model
 
   class ForecastServiceClient;
 
+    typedef std::function<void(const ForecastServiceClient*, const Model::CreateAutoPredictorRequest&, const Model::CreateAutoPredictorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAutoPredictorResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::CreateDatasetRequest&, const Model::CreateDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::CreateDatasetGroupRequest&, const Model::CreateDatasetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetGroupResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::CreateDatasetImportJobRequest&, const Model::CreateDatasetImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetImportJobResponseReceivedHandler;
+    typedef std::function<void(const ForecastServiceClient*, const Model::CreateExplainabilityRequest&, const Model::CreateExplainabilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateExplainabilityResponseReceivedHandler;
+    typedef std::function<void(const ForecastServiceClient*, const Model::CreateExplainabilityExportRequest&, const Model::CreateExplainabilityExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateExplainabilityExportResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::CreateForecastRequest&, const Model::CreateForecastOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateForecastResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::CreateForecastExportJobRequest&, const Model::CreateForecastExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateForecastExportJobResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::CreatePredictorRequest&, const Model::CreatePredictorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePredictorResponseReceivedHandler;
@@ -198,14 +239,19 @@ namespace Model
     typedef std::function<void(const ForecastServiceClient*, const Model::DeleteDatasetRequest&, const Model::DeleteDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatasetResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::DeleteDatasetGroupRequest&, const Model::DeleteDatasetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatasetGroupResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::DeleteDatasetImportJobRequest&, const Model::DeleteDatasetImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatasetImportJobResponseReceivedHandler;
+    typedef std::function<void(const ForecastServiceClient*, const Model::DeleteExplainabilityRequest&, const Model::DeleteExplainabilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteExplainabilityResponseReceivedHandler;
+    typedef std::function<void(const ForecastServiceClient*, const Model::DeleteExplainabilityExportRequest&, const Model::DeleteExplainabilityExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteExplainabilityExportResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::DeleteForecastRequest&, const Model::DeleteForecastOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteForecastResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::DeleteForecastExportJobRequest&, const Model::DeleteForecastExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteForecastExportJobResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::DeletePredictorRequest&, const Model::DeletePredictorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePredictorResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::DeletePredictorBacktestExportJobRequest&, const Model::DeletePredictorBacktestExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePredictorBacktestExportJobResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::DeleteResourceTreeRequest&, const Model::DeleteResourceTreeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourceTreeResponseReceivedHandler;
+    typedef std::function<void(const ForecastServiceClient*, const Model::DescribeAutoPredictorRequest&, const Model::DescribeAutoPredictorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAutoPredictorResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::DescribeDatasetRequest&, const Model::DescribeDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::DescribeDatasetGroupRequest&, const Model::DescribeDatasetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetGroupResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::DescribeDatasetImportJobRequest&, const Model::DescribeDatasetImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetImportJobResponseReceivedHandler;
+    typedef std::function<void(const ForecastServiceClient*, const Model::DescribeExplainabilityRequest&, const Model::DescribeExplainabilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExplainabilityResponseReceivedHandler;
+    typedef std::function<void(const ForecastServiceClient*, const Model::DescribeExplainabilityExportRequest&, const Model::DescribeExplainabilityExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExplainabilityExportResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::DescribeForecastRequest&, const Model::DescribeForecastOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeForecastResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::DescribeForecastExportJobRequest&, const Model::DescribeForecastExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeForecastExportJobResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::DescribePredictorRequest&, const Model::DescribePredictorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePredictorResponseReceivedHandler;
@@ -214,6 +260,8 @@ namespace Model
     typedef std::function<void(const ForecastServiceClient*, const Model::ListDatasetGroupsRequest&, const Model::ListDatasetGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetGroupsResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::ListDatasetImportJobsRequest&, const Model::ListDatasetImportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetImportJobsResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::ListDatasetsRequest&, const Model::ListDatasetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetsResponseReceivedHandler;
+    typedef std::function<void(const ForecastServiceClient*, const Model::ListExplainabilitiesRequest&, const Model::ListExplainabilitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExplainabilitiesResponseReceivedHandler;
+    typedef std::function<void(const ForecastServiceClient*, const Model::ListExplainabilityExportsRequest&, const Model::ListExplainabilityExportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExplainabilityExportsResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::ListForecastExportJobsRequest&, const Model::ListForecastExportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListForecastExportJobsResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::ListForecastsRequest&, const Model::ListForecastsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListForecastsResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::ListPredictorBacktestExportJobsRequest&, const Model::ListPredictorBacktestExportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPredictorBacktestExportJobsResponseReceivedHandler;
@@ -253,6 +301,88 @@ namespace Model
 
         virtual ~ForecastServiceClient();
 
+
+        /**
+         * <p>Creates an Amazon Forecast predictor.</p> <p>Amazon Forecast creates
+         * predictors with AutoPredictor, which involves applying the optimal combination
+         * of algorithms to each time series in your datasets. You can use
+         * CreateAutoPredictor to create new predictors or upgrade/retrain existing
+         * predictors.</p> <p> <b>Creating new predictors</b> </p> <p>The following
+         * parameters are required when creating a new predictor:</p> <ul> <li> <p>
+         * <code>PredictorName</code> - A unique name for the predictor.</p> </li> <li> <p>
+         * <code>DatasetGroupArn</code> - The ARN of the dataset group used to train the
+         * predictor.</p> </li> <li> <p> <code>ForecastFrequency</code> - The granularity
+         * of your forecasts (hourly, daily, weekly, etc).</p> </li> <li> <p>
+         * <code>ForecastHorizon</code> - The number of time steps being forecasted.</p>
+         * </li> </ul> <p>When creating a new predictor, do not specify a value for
+         * <code>ReferencePredictorArn</code>.</p> <p> <b>Upgrading and retraining
+         * predictors</b> </p> <p>The following parameters are required when retraining or
+         * upgrading a predictor:</p> <ul> <li> <p> <code>PredictorName</code> - A unique
+         * name for the predictor.</p> </li> <li> <p> <code>ReferencePredictorArn</code> -
+         * The ARN of the predictor to retrain or upgrade.</p> </li> </ul> <p>When
+         * upgrading or retraining a predictor, only specify values for the
+         * <code>ReferencePredictorArn</code> and <code>PredictorName</code>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateAutoPredictor">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAutoPredictorOutcome CreateAutoPredictor(const Model::CreateAutoPredictorRequest& request) const;
+
+        /**
+         * <p>Creates an Amazon Forecast predictor.</p> <p>Amazon Forecast creates
+         * predictors with AutoPredictor, which involves applying the optimal combination
+         * of algorithms to each time series in your datasets. You can use
+         * CreateAutoPredictor to create new predictors or upgrade/retrain existing
+         * predictors.</p> <p> <b>Creating new predictors</b> </p> <p>The following
+         * parameters are required when creating a new predictor:</p> <ul> <li> <p>
+         * <code>PredictorName</code> - A unique name for the predictor.</p> </li> <li> <p>
+         * <code>DatasetGroupArn</code> - The ARN of the dataset group used to train the
+         * predictor.</p> </li> <li> <p> <code>ForecastFrequency</code> - The granularity
+         * of your forecasts (hourly, daily, weekly, etc).</p> </li> <li> <p>
+         * <code>ForecastHorizon</code> - The number of time steps being forecasted.</p>
+         * </li> </ul> <p>When creating a new predictor, do not specify a value for
+         * <code>ReferencePredictorArn</code>.</p> <p> <b>Upgrading and retraining
+         * predictors</b> </p> <p>The following parameters are required when retraining or
+         * upgrading a predictor:</p> <ul> <li> <p> <code>PredictorName</code> - A unique
+         * name for the predictor.</p> </li> <li> <p> <code>ReferencePredictorArn</code> -
+         * The ARN of the predictor to retrain or upgrade.</p> </li> </ul> <p>When
+         * upgrading or retraining a predictor, only specify values for the
+         * <code>ReferencePredictorArn</code> and <code>PredictorName</code>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateAutoPredictor">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateAutoPredictorOutcomeCallable CreateAutoPredictorCallable(const Model::CreateAutoPredictorRequest& request) const;
+
+        /**
+         * <p>Creates an Amazon Forecast predictor.</p> <p>Amazon Forecast creates
+         * predictors with AutoPredictor, which involves applying the optimal combination
+         * of algorithms to each time series in your datasets. You can use
+         * CreateAutoPredictor to create new predictors or upgrade/retrain existing
+         * predictors.</p> <p> <b>Creating new predictors</b> </p> <p>The following
+         * parameters are required when creating a new predictor:</p> <ul> <li> <p>
+         * <code>PredictorName</code> - A unique name for the predictor.</p> </li> <li> <p>
+         * <code>DatasetGroupArn</code> - The ARN of the dataset group used to train the
+         * predictor.</p> </li> <li> <p> <code>ForecastFrequency</code> - The granularity
+         * of your forecasts (hourly, daily, weekly, etc).</p> </li> <li> <p>
+         * <code>ForecastHorizon</code> - The number of time steps being forecasted.</p>
+         * </li> </ul> <p>When creating a new predictor, do not specify a value for
+         * <code>ReferencePredictorArn</code>.</p> <p> <b>Upgrading and retraining
+         * predictors</b> </p> <p>The following parameters are required when retraining or
+         * upgrading a predictor:</p> <ul> <li> <p> <code>PredictorName</code> - A unique
+         * name for the predictor.</p> </li> <li> <p> <code>ReferencePredictorArn</code> -
+         * The ARN of the predictor to retrain or upgrade.</p> </li> </ul> <p>When
+         * upgrading or retraining a predictor, only specify values for the
+         * <code>ReferencePredictorArn</code> and <code>PredictorName</code>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateAutoPredictor">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateAutoPredictorAsync(const Model::CreateAutoPredictorRequest& request, const CreateAutoPredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon Forecast dataset. The information about the dataset that
@@ -468,6 +598,212 @@ namespace Model
         virtual void CreateDatasetImportJobAsync(const Model::CreateDatasetImportJobRequest& request, const CreateDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         *  <p>Explainability is only available for Forecasts and Predictors
+         * generated from an AutoPredictor (<a>CreateAutoPredictor</a>)</p> 
+         * <p>Creates an Amazon Forecast Explainability.</p> <p>Explainability helps you
+         * better understand how the attributes in your datasets impact forecast. Amazon
+         * Forecast uses a metric called Impact scores to quantify the relative impact of
+         * each attribute and determine whether they increase or decrease forecast
+         * values.</p> <p>To enable Forecast Explainability, your predictor must include at
+         * least one of the following: related time series, item metadata, or additional
+         * datasets like Holidays and the Weather Index.</p> <p>CreateExplainability
+         * accepts either a Predictor ARN or Forecast ARN. To receive aggregated Impact
+         * scores for all time series and time points in your datasets, provide a Predictor
+         * ARN. To receive Impact scores for specific time series and time points, provide
+         * a Forecast ARN.</p> <p> <b>CreateExplainability with a Predictor ARN</b> </p>
+         *  <p>You can only have one Explainability resource per predictor. If you
+         * already enabled <code>ExplainPredictor</code> in <a>CreateAutoPredictor</a>,
+         * that predictor already has an Explainability resource.</p>  <p>The
+         * following parameters are required when providing a Predictor ARN:</p> <ul> <li>
+         * <p> <code>ExplainabilityName</code> - A unique name for the Explainability.</p>
+         * </li> <li> <p> <code>ResourceArn</code> - The Arn of the predictor.</p> </li>
+         * <li> <p> <code>TimePointGranularity</code> - Must be set to “ALL”.</p> </li>
+         * <li> <p> <code>TimeSeriesGranularity</code> - Must be set to “ALL”.</p> </li>
+         * </ul> <p>Do not specify a value for the following parameters:</p> <ul> <li> <p>
+         * <code>DataSource</code> - Only valid when TimeSeriesGranularity is
+         * “SPECIFIC”.</p> </li> <li> <p> <code>Schema</code> - Only valid when
+         * TimeSeriesGranularity is “SPECIFIC”.</p> </li> <li> <p>
+         * <code>StartDateTime</code> - Only valid when TimePointGranularity is
+         * “SPECIFIC”.</p> </li> <li> <p> <code>EndDateTime</code> - Only valid when
+         * TimePointGranularity is “SPECIFIC”.</p> </li> </ul> <p> <b>CreateExplainability
+         * with a Forecast ARN</b> </p>  <p>You can specify a maximum of 50 time
+         * series and 1500 time points.</p>  <p>The following parameters are
+         * required when providing a Predictor ARN:</p> <ul> <li> <p>
+         * <code>ExplainabilityName</code> - A unique name for the Explainability.</p>
+         * </li> <li> <p> <code>ResourceArn</code> - The Arn of the forecast.</p> </li>
+         * <li> <p> <code>TimePointGranularity</code> - Either “ALL” or “SPECIFIC”.</p>
+         * </li> <li> <p> <code>TimeSeriesGranularity</code> - Either “ALL” or
+         * “SPECIFIC”.</p> </li> </ul> <p>If you set TimeSeriesGranularity to “SPECIFIC”,
+         * you must also provide the following:</p> <ul> <li> <p> <code>DataSource</code> -
+         * The S3 location of the CSV file specifying your time series.</p> </li> <li> <p>
+         * <code>Schema</code> - The Schema defines the attributes and attribute types
+         * listed in the Data Source.</p> </li> </ul> <p>If you set TimePointGranularity to
+         * “SPECIFIC”, you must also provide the following:</p> <ul> <li> <p>
+         * <code>StartDateTime</code> - The first timestamp in the range of time
+         * points.</p> </li> <li> <p> <code>EndDateTime</code> - The last timestamp in the
+         * range of time points.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateExplainability">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateExplainabilityOutcome CreateExplainability(const Model::CreateExplainabilityRequest& request) const;
+
+        /**
+         *  <p>Explainability is only available for Forecasts and Predictors
+         * generated from an AutoPredictor (<a>CreateAutoPredictor</a>)</p> 
+         * <p>Creates an Amazon Forecast Explainability.</p> <p>Explainability helps you
+         * better understand how the attributes in your datasets impact forecast. Amazon
+         * Forecast uses a metric called Impact scores to quantify the relative impact of
+         * each attribute and determine whether they increase or decrease forecast
+         * values.</p> <p>To enable Forecast Explainability, your predictor must include at
+         * least one of the following: related time series, item metadata, or additional
+         * datasets like Holidays and the Weather Index.</p> <p>CreateExplainability
+         * accepts either a Predictor ARN or Forecast ARN. To receive aggregated Impact
+         * scores for all time series and time points in your datasets, provide a Predictor
+         * ARN. To receive Impact scores for specific time series and time points, provide
+         * a Forecast ARN.</p> <p> <b>CreateExplainability with a Predictor ARN</b> </p>
+         *  <p>You can only have one Explainability resource per predictor. If you
+         * already enabled <code>ExplainPredictor</code> in <a>CreateAutoPredictor</a>,
+         * that predictor already has an Explainability resource.</p>  <p>The
+         * following parameters are required when providing a Predictor ARN:</p> <ul> <li>
+         * <p> <code>ExplainabilityName</code> - A unique name for the Explainability.</p>
+         * </li> <li> <p> <code>ResourceArn</code> - The Arn of the predictor.</p> </li>
+         * <li> <p> <code>TimePointGranularity</code> - Must be set to “ALL”.</p> </li>
+         * <li> <p> <code>TimeSeriesGranularity</code> - Must be set to “ALL”.</p> </li>
+         * </ul> <p>Do not specify a value for the following parameters:</p> <ul> <li> <p>
+         * <code>DataSource</code> - Only valid when TimeSeriesGranularity is
+         * “SPECIFIC”.</p> </li> <li> <p> <code>Schema</code> - Only valid when
+         * TimeSeriesGranularity is “SPECIFIC”.</p> </li> <li> <p>
+         * <code>StartDateTime</code> - Only valid when TimePointGranularity is
+         * “SPECIFIC”.</p> </li> <li> <p> <code>EndDateTime</code> - Only valid when
+         * TimePointGranularity is “SPECIFIC”.</p> </li> </ul> <p> <b>CreateExplainability
+         * with a Forecast ARN</b> </p>  <p>You can specify a maximum of 50 time
+         * series and 1500 time points.</p>  <p>The following parameters are
+         * required when providing a Predictor ARN:</p> <ul> <li> <p>
+         * <code>ExplainabilityName</code> - A unique name for the Explainability.</p>
+         * </li> <li> <p> <code>ResourceArn</code> - The Arn of the forecast.</p> </li>
+         * <li> <p> <code>TimePointGranularity</code> - Either “ALL” or “SPECIFIC”.</p>
+         * </li> <li> <p> <code>TimeSeriesGranularity</code> - Either “ALL” or
+         * “SPECIFIC”.</p> </li> </ul> <p>If you set TimeSeriesGranularity to “SPECIFIC”,
+         * you must also provide the following:</p> <ul> <li> <p> <code>DataSource</code> -
+         * The S3 location of the CSV file specifying your time series.</p> </li> <li> <p>
+         * <code>Schema</code> - The Schema defines the attributes and attribute types
+         * listed in the Data Source.</p> </li> </ul> <p>If you set TimePointGranularity to
+         * “SPECIFIC”, you must also provide the following:</p> <ul> <li> <p>
+         * <code>StartDateTime</code> - The first timestamp in the range of time
+         * points.</p> </li> <li> <p> <code>EndDateTime</code> - The last timestamp in the
+         * range of time points.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateExplainability">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateExplainabilityOutcomeCallable CreateExplainabilityCallable(const Model::CreateExplainabilityRequest& request) const;
+
+        /**
+         *  <p>Explainability is only available for Forecasts and Predictors
+         * generated from an AutoPredictor (<a>CreateAutoPredictor</a>)</p> 
+         * <p>Creates an Amazon Forecast Explainability.</p> <p>Explainability helps you
+         * better understand how the attributes in your datasets impact forecast. Amazon
+         * Forecast uses a metric called Impact scores to quantify the relative impact of
+         * each attribute and determine whether they increase or decrease forecast
+         * values.</p> <p>To enable Forecast Explainability, your predictor must include at
+         * least one of the following: related time series, item metadata, or additional
+         * datasets like Holidays and the Weather Index.</p> <p>CreateExplainability
+         * accepts either a Predictor ARN or Forecast ARN. To receive aggregated Impact
+         * scores for all time series and time points in your datasets, provide a Predictor
+         * ARN. To receive Impact scores for specific time series and time points, provide
+         * a Forecast ARN.</p> <p> <b>CreateExplainability with a Predictor ARN</b> </p>
+         *  <p>You can only have one Explainability resource per predictor. If you
+         * already enabled <code>ExplainPredictor</code> in <a>CreateAutoPredictor</a>,
+         * that predictor already has an Explainability resource.</p>  <p>The
+         * following parameters are required when providing a Predictor ARN:</p> <ul> <li>
+         * <p> <code>ExplainabilityName</code> - A unique name for the Explainability.</p>
+         * </li> <li> <p> <code>ResourceArn</code> - The Arn of the predictor.</p> </li>
+         * <li> <p> <code>TimePointGranularity</code> - Must be set to “ALL”.</p> </li>
+         * <li> <p> <code>TimeSeriesGranularity</code> - Must be set to “ALL”.</p> </li>
+         * </ul> <p>Do not specify a value for the following parameters:</p> <ul> <li> <p>
+         * <code>DataSource</code> - Only valid when TimeSeriesGranularity is
+         * “SPECIFIC”.</p> </li> <li> <p> <code>Schema</code> - Only valid when
+         * TimeSeriesGranularity is “SPECIFIC”.</p> </li> <li> <p>
+         * <code>StartDateTime</code> - Only valid when TimePointGranularity is
+         * “SPECIFIC”.</p> </li> <li> <p> <code>EndDateTime</code> - Only valid when
+         * TimePointGranularity is “SPECIFIC”.</p> </li> </ul> <p> <b>CreateExplainability
+         * with a Forecast ARN</b> </p>  <p>You can specify a maximum of 50 time
+         * series and 1500 time points.</p>  <p>The following parameters are
+         * required when providing a Predictor ARN:</p> <ul> <li> <p>
+         * <code>ExplainabilityName</code> - A unique name for the Explainability.</p>
+         * </li> <li> <p> <code>ResourceArn</code> - The Arn of the forecast.</p> </li>
+         * <li> <p> <code>TimePointGranularity</code> - Either “ALL” or “SPECIFIC”.</p>
+         * </li> <li> <p> <code>TimeSeriesGranularity</code> - Either “ALL” or
+         * “SPECIFIC”.</p> </li> </ul> <p>If you set TimeSeriesGranularity to “SPECIFIC”,
+         * you must also provide the following:</p> <ul> <li> <p> <code>DataSource</code> -
+         * The S3 location of the CSV file specifying your time series.</p> </li> <li> <p>
+         * <code>Schema</code> - The Schema defines the attributes and attribute types
+         * listed in the Data Source.</p> </li> </ul> <p>If you set TimePointGranularity to
+         * “SPECIFIC”, you must also provide the following:</p> <ul> <li> <p>
+         * <code>StartDateTime</code> - The first timestamp in the range of time
+         * points.</p> </li> <li> <p> <code>EndDateTime</code> - The last timestamp in the
+         * range of time points.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateExplainability">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateExplainabilityAsync(const Model::CreateExplainabilityRequest& request, const CreateExplainabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Exports an Explainability resource created by the <a>CreateExplainability</a>
+         * operation. Exported files are exported to an Amazon Simple Storage Service
+         * (Amazon S3) bucket.</p> <p>You must specify a <a>DataDestination</a> object that
+         * includes an Amazon S3 bucket and an AWS Identity and Access Management (IAM)
+         * role that Amazon Forecast can assume to access the Amazon S3 bucket. For more
+         * information, see <a>aws-forecast-iam-roles</a>.</p>  <p>The
+         * <code>Status</code> of the export job must be <code>ACTIVE</code> before you can
+         * access the export in your Amazon S3 bucket. To get the status, use the
+         * <a>DescribeExplainabilityExport</a> operation.</p> <p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateExplainabilityExport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateExplainabilityExportOutcome CreateExplainabilityExport(const Model::CreateExplainabilityExportRequest& request) const;
+
+        /**
+         * <p>Exports an Explainability resource created by the <a>CreateExplainability</a>
+         * operation. Exported files are exported to an Amazon Simple Storage Service
+         * (Amazon S3) bucket.</p> <p>You must specify a <a>DataDestination</a> object that
+         * includes an Amazon S3 bucket and an AWS Identity and Access Management (IAM)
+         * role that Amazon Forecast can assume to access the Amazon S3 bucket. For more
+         * information, see <a>aws-forecast-iam-roles</a>.</p>  <p>The
+         * <code>Status</code> of the export job must be <code>ACTIVE</code> before you can
+         * access the export in your Amazon S3 bucket. To get the status, use the
+         * <a>DescribeExplainabilityExport</a> operation.</p> <p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateExplainabilityExport">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateExplainabilityExportOutcomeCallable CreateExplainabilityExportCallable(const Model::CreateExplainabilityExportRequest& request) const;
+
+        /**
+         * <p>Exports an Explainability resource created by the <a>CreateExplainability</a>
+         * operation. Exported files are exported to an Amazon Simple Storage Service
+         * (Amazon S3) bucket.</p> <p>You must specify a <a>DataDestination</a> object that
+         * includes an Amazon S3 bucket and an AWS Identity and Access Management (IAM)
+         * role that Amazon Forecast can assume to access the Amazon S3 bucket. For more
+         * information, see <a>aws-forecast-iam-roles</a>.</p>  <p>The
+         * <code>Status</code> of the export job must be <code>ACTIVE</code> before you can
+         * access the export in your Amazon S3 bucket. To get the status, use the
+         * <a>DescribeExplainabilityExport</a> operation.</p> <p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateExplainabilityExport">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateExplainabilityExportAsync(const Model::CreateExplainabilityExportRequest& request, const CreateExplainabilityExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a forecast for each item in the <code>TARGET_TIME_SERIES</code>
          * dataset that was used to train the predictor. This is known as inference. To
          * retrieve the forecast for a single item at low latency, use the operation. To
@@ -602,8 +938,11 @@ namespace Model
         virtual void CreateForecastExportJobAsync(const Model::CreateForecastExportJobRequest& request, const CreateForecastExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an Amazon Forecast predictor.</p> <p>In the request, provide a
-         * dataset group and either specify an algorithm or let Amazon Forecast choose an
+         *  <p> This operation creates a legacy predictor that does not include all
+         * the predictor functionalities provided by Amazon Forecast. To create a predictor
+         * that is compatible with all aspects of Forecast, use CreateAutoPredictor.</p>
+         *  <p>Creates an Amazon Forecast predictor.</p> <p>In the request, provide
+         * a dataset group and either specify an algorithm or let Amazon Forecast choose an
          * algorithm for you using AutoML. If you specify an algorithm, you also can
          * override algorithm-specific hyperparameters.</p> <p>Amazon Forecast uses the
          * algorithm to train a predictor using the latest version of the datasets in the
@@ -642,8 +981,11 @@ namespace Model
         virtual Model::CreatePredictorOutcome CreatePredictor(const Model::CreatePredictorRequest& request) const;
 
         /**
-         * <p>Creates an Amazon Forecast predictor.</p> <p>In the request, provide a
-         * dataset group and either specify an algorithm or let Amazon Forecast choose an
+         *  <p> This operation creates a legacy predictor that does not include all
+         * the predictor functionalities provided by Amazon Forecast. To create a predictor
+         * that is compatible with all aspects of Forecast, use CreateAutoPredictor.</p>
+         *  <p>Creates an Amazon Forecast predictor.</p> <p>In the request, provide
+         * a dataset group and either specify an algorithm or let Amazon Forecast choose an
          * algorithm for you using AutoML. If you specify an algorithm, you also can
          * override algorithm-specific hyperparameters.</p> <p>Amazon Forecast uses the
          * algorithm to train a predictor using the latest version of the datasets in the
@@ -684,8 +1026,11 @@ namespace Model
         virtual Model::CreatePredictorOutcomeCallable CreatePredictorCallable(const Model::CreatePredictorRequest& request) const;
 
         /**
-         * <p>Creates an Amazon Forecast predictor.</p> <p>In the request, provide a
-         * dataset group and either specify an algorithm or let Amazon Forecast choose an
+         *  <p> This operation creates a legacy predictor that does not include all
+         * the predictor functionalities provided by Amazon Forecast. To create a predictor
+         * that is compatible with all aspects of Forecast, use CreateAutoPredictor.</p>
+         *  <p>Creates an Amazon Forecast predictor.</p> <p>In the request, provide
+         * a dataset group and either specify an algorithm or let Amazon Forecast choose an
          * algorithm for you using AutoML. If you specify an algorithm, you also can
          * override algorithm-specific hyperparameters.</p> <p>Amazon Forecast uses the
          * algorithm to train a predictor using the latest version of the datasets in the
@@ -907,6 +1252,65 @@ namespace Model
         virtual void DeleteDatasetImportJobAsync(const Model::DeleteDatasetImportJobRequest& request, const DeleteDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes an Explainability resource.</p> <p>You can delete only predictor that
+         * have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the
+         * status, use the <a>DescribeExplainability</a> operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteExplainability">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteExplainabilityOutcome DeleteExplainability(const Model::DeleteExplainabilityRequest& request) const;
+
+        /**
+         * <p>Deletes an Explainability resource.</p> <p>You can delete only predictor that
+         * have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the
+         * status, use the <a>DescribeExplainability</a> operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteExplainability">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteExplainabilityOutcomeCallable DeleteExplainabilityCallable(const Model::DeleteExplainabilityRequest& request) const;
+
+        /**
+         * <p>Deletes an Explainability resource.</p> <p>You can delete only predictor that
+         * have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the
+         * status, use the <a>DescribeExplainability</a> operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteExplainability">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteExplainabilityAsync(const Model::DeleteExplainabilityRequest& request, const DeleteExplainabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an Explainability export job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteExplainabilityExport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteExplainabilityExportOutcome DeleteExplainabilityExport(const Model::DeleteExplainabilityExportRequest& request) const;
+
+        /**
+         * <p>Deletes an Explainability export job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteExplainabilityExport">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteExplainabilityExportOutcomeCallable DeleteExplainabilityExportCallable(const Model::DeleteExplainabilityExportRequest& request) const;
+
+        /**
+         * <p>Deletes an Explainability export job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteExplainabilityExport">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteExplainabilityExportAsync(const Model::DeleteExplainabilityExportRequest& request, const DeleteExplainabilityExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a forecast created using the <a>CreateForecast</a> operation. You can
          * delete only forecasts that have a status of <code>ACTIVE</code> or
          * <code>CREATE_FAILED</code>. To get the status, use the <a>DescribeForecast</a>
@@ -1104,6 +1508,34 @@ namespace Model
         virtual void DeleteResourceTreeAsync(const Model::DeleteResourceTreeRequest& request, const DeleteResourceTreeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes a predictor created using the CreateAutoPredictor
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeAutoPredictor">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAutoPredictorOutcome DescribeAutoPredictor(const Model::DescribeAutoPredictorRequest& request) const;
+
+        /**
+         * <p>Describes a predictor created using the CreateAutoPredictor
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeAutoPredictor">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAutoPredictorOutcomeCallable DescribeAutoPredictorCallable(const Model::DescribeAutoPredictorRequest& request) const;
+
+        /**
+         * <p>Describes a predictor created using the CreateAutoPredictor
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeAutoPredictor">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAutoPredictorAsync(const Model::DescribeAutoPredictorRequest& request, const DescribeAutoPredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes an Amazon Forecast dataset created using the <a>CreateDataset</a>
          * operation.</p> <p>In addition to listing the parameters specified in the
          * <code>CreateDataset</code> request, this operation includes the following
@@ -1236,6 +1668,62 @@ namespace Model
         virtual void DescribeDatasetImportJobAsync(const Model::DescribeDatasetImportJobRequest& request, const DescribeDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes an Explainability resource created using the
+         * <a>CreateExplainability</a> operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeExplainability">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeExplainabilityOutcome DescribeExplainability(const Model::DescribeExplainabilityRequest& request) const;
+
+        /**
+         * <p>Describes an Explainability resource created using the
+         * <a>CreateExplainability</a> operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeExplainability">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeExplainabilityOutcomeCallable DescribeExplainabilityCallable(const Model::DescribeExplainabilityRequest& request) const;
+
+        /**
+         * <p>Describes an Explainability resource created using the
+         * <a>CreateExplainability</a> operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeExplainability">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeExplainabilityAsync(const Model::DescribeExplainabilityRequest& request, const DescribeExplainabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes an Explainability export created using the
+         * <a>CreateExplainabilityExport</a> operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeExplainabilityExport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeExplainabilityExportOutcome DescribeExplainabilityExport(const Model::DescribeExplainabilityExportRequest& request) const;
+
+        /**
+         * <p>Describes an Explainability export created using the
+         * <a>CreateExplainabilityExport</a> operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeExplainabilityExport">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeExplainabilityExportOutcomeCallable DescribeExplainabilityExportCallable(const Model::DescribeExplainabilityExportRequest& request) const;
+
+        /**
+         * <p>Describes an Explainability export created using the
+         * <a>CreateExplainabilityExport</a> operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeExplainabilityExport">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeExplainabilityExportAsync(const Model::DescribeExplainabilityExportRequest& request, const DescribeExplainabilityExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes a forecast created using the <a>CreateForecast</a> operation.</p>
          * <p>In addition to listing the properties provided in the
          * <code>CreateForecast</code> request, this operation lists the following
@@ -1328,32 +1816,40 @@ namespace Model
         virtual void DescribeForecastExportJobAsync(const Model::DescribeForecastExportJobRequest& request, const DescribeForecastExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes a predictor created using the <a>CreatePredictor</a> operation.</p>
-         * <p>In addition to listing the properties provided in the
-         * <code>CreatePredictor</code> request, this operation lists the following
-         * properties:</p> <ul> <li> <p> <code>DatasetImportJobArns</code> - The dataset
-         * import jobs used to import training data.</p> </li> <li> <p>
-         * <code>AutoMLAlgorithmArns</code> - If AutoML is performed, the algorithms that
-         * were evaluated.</p> </li> <li> <p> <code>CreationTime</code> </p> </li> <li> <p>
-         * <code>LastModificationTime</code> </p> </li> <li> <p> <code>Status</code> </p>
-         * </li> <li> <p> <code>Message</code> - If an error occurred, information about
-         * the error.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         *  <p> This operation is only valid for legacy predictors created with
+         * CreatePredictor. If you are not using a legacy predictor, use
+         * DescribeAutoPredictor.</p> <p>To upgrade a legacy predictor to AutoPredictor,
+         * see Upgrading to AutoPredictor.</p>  <p>Describes a predictor created
+         * using the <a>CreatePredictor</a> operation.</p> <p>In addition to listing the
+         * properties provided in the <code>CreatePredictor</code> request, this operation
+         * lists the following properties:</p> <ul> <li> <p>
+         * <code>DatasetImportJobArns</code> - The dataset import jobs used to import
+         * training data.</p> </li> <li> <p> <code>AutoMLAlgorithmArns</code> - If AutoML
+         * is performed, the algorithms that were evaluated.</p> </li> <li> <p>
+         * <code>CreationTime</code> </p> </li> <li> <p> <code>LastModificationTime</code>
+         * </p> </li> <li> <p> <code>Status</code> </p> </li> <li> <p> <code>Message</code>
+         * - If an error occurred, information about the error.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribePredictor">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribePredictorOutcome DescribePredictor(const Model::DescribePredictorRequest& request) const;
 
         /**
-         * <p>Describes a predictor created using the <a>CreatePredictor</a> operation.</p>
-         * <p>In addition to listing the properties provided in the
-         * <code>CreatePredictor</code> request, this operation lists the following
-         * properties:</p> <ul> <li> <p> <code>DatasetImportJobArns</code> - The dataset
-         * import jobs used to import training data.</p> </li> <li> <p>
-         * <code>AutoMLAlgorithmArns</code> - If AutoML is performed, the algorithms that
-         * were evaluated.</p> </li> <li> <p> <code>CreationTime</code> </p> </li> <li> <p>
-         * <code>LastModificationTime</code> </p> </li> <li> <p> <code>Status</code> </p>
-         * </li> <li> <p> <code>Message</code> - If an error occurred, information about
-         * the error.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         *  <p> This operation is only valid for legacy predictors created with
+         * CreatePredictor. If you are not using a legacy predictor, use
+         * DescribeAutoPredictor.</p> <p>To upgrade a legacy predictor to AutoPredictor,
+         * see Upgrading to AutoPredictor.</p>  <p>Describes a predictor created
+         * using the <a>CreatePredictor</a> operation.</p> <p>In addition to listing the
+         * properties provided in the <code>CreatePredictor</code> request, this operation
+         * lists the following properties:</p> <ul> <li> <p>
+         * <code>DatasetImportJobArns</code> - The dataset import jobs used to import
+         * training data.</p> </li> <li> <p> <code>AutoMLAlgorithmArns</code> - If AutoML
+         * is performed, the algorithms that were evaluated.</p> </li> <li> <p>
+         * <code>CreationTime</code> </p> </li> <li> <p> <code>LastModificationTime</code>
+         * </p> </li> <li> <p> <code>Status</code> </p> </li> <li> <p> <code>Message</code>
+         * - If an error occurred, information about the error.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribePredictor">AWS
          * API Reference</a></p>
          *
@@ -1362,16 +1858,20 @@ namespace Model
         virtual Model::DescribePredictorOutcomeCallable DescribePredictorCallable(const Model::DescribePredictorRequest& request) const;
 
         /**
-         * <p>Describes a predictor created using the <a>CreatePredictor</a> operation.</p>
-         * <p>In addition to listing the properties provided in the
-         * <code>CreatePredictor</code> request, this operation lists the following
-         * properties:</p> <ul> <li> <p> <code>DatasetImportJobArns</code> - The dataset
-         * import jobs used to import training data.</p> </li> <li> <p>
-         * <code>AutoMLAlgorithmArns</code> - If AutoML is performed, the algorithms that
-         * were evaluated.</p> </li> <li> <p> <code>CreationTime</code> </p> </li> <li> <p>
-         * <code>LastModificationTime</code> </p> </li> <li> <p> <code>Status</code> </p>
-         * </li> <li> <p> <code>Message</code> - If an error occurred, information about
-         * the error.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         *  <p> This operation is only valid for legacy predictors created with
+         * CreatePredictor. If you are not using a legacy predictor, use
+         * DescribeAutoPredictor.</p> <p>To upgrade a legacy predictor to AutoPredictor,
+         * see Upgrading to AutoPredictor.</p>  <p>Describes a predictor created
+         * using the <a>CreatePredictor</a> operation.</p> <p>In addition to listing the
+         * properties provided in the <code>CreatePredictor</code> request, this operation
+         * lists the following properties:</p> <ul> <li> <p>
+         * <code>DatasetImportJobArns</code> - The dataset import jobs used to import
+         * training data.</p> </li> <li> <p> <code>AutoMLAlgorithmArns</code> - If AutoML
+         * is performed, the algorithms that were evaluated.</p> </li> <li> <p>
+         * <code>CreationTime</code> </p> </li> <li> <p> <code>LastModificationTime</code>
+         * </p> </li> <li> <p> <code>Status</code> </p> </li> <li> <p> <code>Message</code>
+         * - If an error occurred, information about the error.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribePredictor">AWS
          * API Reference</a></p>
          *
@@ -1614,6 +2114,86 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDatasetsAsync(const Model::ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of Explainability resources created using the
+         * <a>CreateExplainability</a> operation. This operation returns a summary for each
+         * Explainability. You can filter the list using an array of <a>Filter</a>
+         * objects.</p> <p>To retrieve the complete set of properties for a particular
+         * Explainability resource, use the ARN with the <a>DescribeExplainability</a>
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListExplainabilities">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListExplainabilitiesOutcome ListExplainabilities(const Model::ListExplainabilitiesRequest& request) const;
+
+        /**
+         * <p>Returns a list of Explainability resources created using the
+         * <a>CreateExplainability</a> operation. This operation returns a summary for each
+         * Explainability. You can filter the list using an array of <a>Filter</a>
+         * objects.</p> <p>To retrieve the complete set of properties for a particular
+         * Explainability resource, use the ARN with the <a>DescribeExplainability</a>
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListExplainabilities">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListExplainabilitiesOutcomeCallable ListExplainabilitiesCallable(const Model::ListExplainabilitiesRequest& request) const;
+
+        /**
+         * <p>Returns a list of Explainability resources created using the
+         * <a>CreateExplainability</a> operation. This operation returns a summary for each
+         * Explainability. You can filter the list using an array of <a>Filter</a>
+         * objects.</p> <p>To retrieve the complete set of properties for a particular
+         * Explainability resource, use the ARN with the <a>DescribeExplainability</a>
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListExplainabilities">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListExplainabilitiesAsync(const Model::ListExplainabilitiesRequest& request, const ListExplainabilitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of Explainability exports created using the
+         * <a>CreateExplainabilityExport</a> operation. This operation returns a summary
+         * for each Explainability export. You can filter the list using an array of
+         * <a>Filter</a> objects.</p> <p>To retrieve the complete set of properties for a
+         * particular Explainability export, use the ARN with the
+         * <a>DescribeExplainability</a> operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListExplainabilityExports">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListExplainabilityExportsOutcome ListExplainabilityExports(const Model::ListExplainabilityExportsRequest& request) const;
+
+        /**
+         * <p>Returns a list of Explainability exports created using the
+         * <a>CreateExplainabilityExport</a> operation. This operation returns a summary
+         * for each Explainability export. You can filter the list using an array of
+         * <a>Filter</a> objects.</p> <p>To retrieve the complete set of properties for a
+         * particular Explainability export, use the ARN with the
+         * <a>DescribeExplainability</a> operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListExplainabilityExports">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListExplainabilityExportsOutcomeCallable ListExplainabilityExportsCallable(const Model::ListExplainabilityExportsRequest& request) const;
+
+        /**
+         * <p>Returns a list of Explainability exports created using the
+         * <a>CreateExplainabilityExport</a> operation. This operation returns a summary
+         * for each Explainability export. You can filter the list using an array of
+         * <a>Filter</a> objects.</p> <p>To retrieve the complete set of properties for a
+         * particular Explainability export, use the ARN with the
+         * <a>DescribeExplainability</a> operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListExplainabilityExports">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListExplainabilityExportsAsync(const Model::ListExplainabilityExportsRequest& request, const ListExplainabilityExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of forecast export jobs created using the
@@ -1949,9 +2529,12 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void CreateAutoPredictorAsyncHelper(const Model::CreateAutoPredictorRequest& request, const CreateAutoPredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDatasetAsyncHelper(const Model::CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDatasetGroupAsyncHelper(const Model::CreateDatasetGroupRequest& request, const CreateDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDatasetImportJobAsyncHelper(const Model::CreateDatasetImportJobRequest& request, const CreateDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateExplainabilityAsyncHelper(const Model::CreateExplainabilityRequest& request, const CreateExplainabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateExplainabilityExportAsyncHelper(const Model::CreateExplainabilityExportRequest& request, const CreateExplainabilityExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateForecastAsyncHelper(const Model::CreateForecastRequest& request, const CreateForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateForecastExportJobAsyncHelper(const Model::CreateForecastExportJobRequest& request, const CreateForecastExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePredictorAsyncHelper(const Model::CreatePredictorRequest& request, const CreatePredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1959,14 +2542,19 @@ namespace Model
         void DeleteDatasetAsyncHelper(const Model::DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDatasetGroupAsyncHelper(const Model::DeleteDatasetGroupRequest& request, const DeleteDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDatasetImportJobAsyncHelper(const Model::DeleteDatasetImportJobRequest& request, const DeleteDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteExplainabilityAsyncHelper(const Model::DeleteExplainabilityRequest& request, const DeleteExplainabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteExplainabilityExportAsyncHelper(const Model::DeleteExplainabilityExportRequest& request, const DeleteExplainabilityExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteForecastAsyncHelper(const Model::DeleteForecastRequest& request, const DeleteForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteForecastExportJobAsyncHelper(const Model::DeleteForecastExportJobRequest& request, const DeleteForecastExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePredictorAsyncHelper(const Model::DeletePredictorRequest& request, const DeletePredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePredictorBacktestExportJobAsyncHelper(const Model::DeletePredictorBacktestExportJobRequest& request, const DeletePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteResourceTreeAsyncHelper(const Model::DeleteResourceTreeRequest& request, const DeleteResourceTreeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAutoPredictorAsyncHelper(const Model::DescribeAutoPredictorRequest& request, const DescribeAutoPredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDatasetAsyncHelper(const Model::DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDatasetGroupAsyncHelper(const Model::DescribeDatasetGroupRequest& request, const DescribeDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDatasetImportJobAsyncHelper(const Model::DescribeDatasetImportJobRequest& request, const DescribeDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeExplainabilityAsyncHelper(const Model::DescribeExplainabilityRequest& request, const DescribeExplainabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeExplainabilityExportAsyncHelper(const Model::DescribeExplainabilityExportRequest& request, const DescribeExplainabilityExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeForecastAsyncHelper(const Model::DescribeForecastRequest& request, const DescribeForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeForecastExportJobAsyncHelper(const Model::DescribeForecastExportJobRequest& request, const DescribeForecastExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePredictorAsyncHelper(const Model::DescribePredictorRequest& request, const DescribePredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1975,6 +2563,8 @@ namespace Model
         void ListDatasetGroupsAsyncHelper(const Model::ListDatasetGroupsRequest& request, const ListDatasetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDatasetImportJobsAsyncHelper(const Model::ListDatasetImportJobsRequest& request, const ListDatasetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDatasetsAsyncHelper(const Model::ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListExplainabilitiesAsyncHelper(const Model::ListExplainabilitiesRequest& request, const ListExplainabilitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListExplainabilityExportsAsyncHelper(const Model::ListExplainabilityExportsRequest& request, const ListExplainabilityExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListForecastExportJobsAsyncHelper(const Model::ListForecastExportJobsRequest& request, const ListForecastExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListForecastsAsyncHelper(const Model::ListForecastsRequest& request, const ListForecastsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPredictorBacktestExportJobsAsyncHelper(const Model::ListPredictorBacktestExportJobsRequest& request, const ListPredictorBacktestExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

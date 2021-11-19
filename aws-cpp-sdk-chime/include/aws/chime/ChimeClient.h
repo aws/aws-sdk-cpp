@@ -974,8 +974,9 @@ namespace Model
    * developers to perform key tasks, such as creating and managing Amazon Chime
    * accounts, users, and Voice Connectors. This guide provides detailed information
    * about the Amazon Chime API, including operations, types, inputs and outputs, and
-   * error codes. It also includes some server-side API actions to use with the
-   * Amazon Chime SDK. For more information about the Amazon Chime SDK, see <a
+   * error codes. It also includes API actions for use with the Amazon Chime SDK,
+   * which developers use to build their own communication applications. For more
+   * information about the Amazon Chime SDK, see <a
    * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html"> Using the
    * Amazon Chime SDK </a> in the <i>Amazon Chime Developer Guide</i>.</p> <p>You can
    * use an AWS SDK, the AWS Command Line Interface (AWS CLI), or the REST API to

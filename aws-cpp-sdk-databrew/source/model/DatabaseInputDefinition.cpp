@@ -21,14 +21,16 @@ namespace Model
 DatabaseInputDefinition::DatabaseInputDefinition() : 
     m_glueConnectionNameHasBeenSet(false),
     m_databaseTableNameHasBeenSet(false),
-    m_tempDirectoryHasBeenSet(false)
+    m_tempDirectoryHasBeenSet(false),
+    m_queryStringHasBeenSet(false)
 {
 }
 
 DatabaseInputDefinition::DatabaseInputDefinition(JsonView jsonValue) : 
     m_glueConnectionNameHasBeenSet(false),
     m_databaseTableNameHasBeenSet(false),
-    m_tempDirectoryHasBeenSet(false)
+    m_tempDirectoryHasBeenSet(false),
+    m_queryStringHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ DatabaseInputDefinition& DatabaseInputDefinition::operator =(JsonView jsonValue)
     m_tempDirectoryHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("QueryString"))
+  {
+    m_queryString = jsonValue.GetString("QueryString");
+
+    m_queryStringHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue DatabaseInputDefinition::Jsonize() const
   if(m_tempDirectoryHasBeenSet)
   {
    payload.WithObject("TempDirectory", m_tempDirectory.Jsonize());
+
+  }
+
+  if(m_queryStringHasBeenSet)
+  {
+   payload.WithString("QueryString", m_queryString);
 
   }
 

@@ -18,6 +18,7 @@
 #include <aws/databrew/model/Output.h>
 #include <aws/databrew/model/DataCatalogOutput.h>
 #include <aws/databrew/model/DatabaseOutput.h>
+#include <aws/databrew/model/ValidationConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -627,6 +628,42 @@ namespace Model
     inline DescribeJobResult& WithProfileConfiguration(ProfileConfiguration&& value) { SetProfileConfiguration(std::move(value)); return *this;}
 
 
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline const Aws::Vector<ValidationConfiguration>& GetValidationConfigurations() const{ return m_validationConfigurations; }
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline void SetValidationConfigurations(const Aws::Vector<ValidationConfiguration>& value) { m_validationConfigurations = value; }
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline void SetValidationConfigurations(Aws::Vector<ValidationConfiguration>&& value) { m_validationConfigurations = std::move(value); }
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline DescribeJobResult& WithValidationConfigurations(const Aws::Vector<ValidationConfiguration>& value) { SetValidationConfigurations(value); return *this;}
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline DescribeJobResult& WithValidationConfigurations(Aws::Vector<ValidationConfiguration>&& value) { SetValidationConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline DescribeJobResult& AddValidationConfigurations(const ValidationConfiguration& value) { m_validationConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline DescribeJobResult& AddValidationConfigurations(ValidationConfiguration&& value) { m_validationConfigurations.push_back(std::move(value)); return *this; }
+
+
     
     inline const RecipeReference& GetRecipeReference() const{ return m_recipeReference; }
 
@@ -867,6 +904,8 @@ namespace Model
     Aws::String m_projectName;
 
     ProfileConfiguration m_profileConfiguration;
+
+    Aws::Vector<ValidationConfiguration> m_validationConfigurations;
 
     RecipeReference m_recipeReference;
 

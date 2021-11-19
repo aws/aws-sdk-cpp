@@ -34,49 +34,65 @@ namespace Model
 
     /**
      * <p>The identifier of the bot to build. The identifier is returned in the
-     * response from the operation.</p>
+     * response from the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
+     * operation.</p>
      */
     inline const Aws::String& GetBotId() const{ return m_botId; }
 
     /**
      * <p>The identifier of the bot to build. The identifier is returned in the
-     * response from the operation.</p>
+     * response from the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
+     * operation.</p>
      */
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
 
     /**
      * <p>The identifier of the bot to build. The identifier is returned in the
-     * response from the operation.</p>
+     * response from the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
+     * operation.</p>
      */
     inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
 
     /**
      * <p>The identifier of the bot to build. The identifier is returned in the
-     * response from the operation.</p>
+     * response from the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
+     * operation.</p>
      */
     inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
 
     /**
      * <p>The identifier of the bot to build. The identifier is returned in the
-     * response from the operation.</p>
+     * response from the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
+     * operation.</p>
      */
     inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
 
     /**
      * <p>The identifier of the bot to build. The identifier is returned in the
-     * response from the operation.</p>
+     * response from the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
+     * operation.</p>
      */
     inline BuildBotLocaleRequest& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
 
     /**
      * <p>The identifier of the bot to build. The identifier is returned in the
-     * response from the operation.</p>
+     * response from the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
+     * operation.</p>
      */
     inline BuildBotLocaleRequest& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the bot to build. The identifier is returned in the
-     * response from the operation.</p>
+     * response from the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
+     * operation.</p>
      */
     inline BuildBotLocaleRequest& WithBotId(const char* value) { SetBotId(value); return *this;}
 

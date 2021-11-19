@@ -35,49 +35,65 @@ namespace Model
 
     /**
      * <p>The unique identifier of the bot to update. This identifier is returned by
-     * the <a>CreateBot</a> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
+     * operation.</p>
      */
     inline const Aws::String& GetBotId() const{ return m_botId; }
 
     /**
      * <p>The unique identifier of the bot to update. This identifier is returned by
-     * the <a>CreateBot</a> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
+     * operation.</p>
      */
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
 
     /**
      * <p>The unique identifier of the bot to update. This identifier is returned by
-     * the <a>CreateBot</a> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
+     * operation.</p>
      */
     inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
 
     /**
      * <p>The unique identifier of the bot to update. This identifier is returned by
-     * the <a>CreateBot</a> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
+     * operation.</p>
      */
     inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
 
     /**
      * <p>The unique identifier of the bot to update. This identifier is returned by
-     * the <a>CreateBot</a> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
+     * operation.</p>
      */
     inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
 
     /**
      * <p>The unique identifier of the bot to update. This identifier is returned by
-     * the <a>CreateBot</a> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
+     * operation.</p>
      */
     inline UpdateBotRequest& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
 
     /**
      * <p>The unique identifier of the bot to update. This identifier is returned by
-     * the <a>CreateBot</a> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
+     * operation.</p>
      */
     inline UpdateBotRequest& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the bot to update. This identifier is returned by
-     * the <a>CreateBot</a> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
+     * operation.</p>
      */
     inline UpdateBotRequest& WithBotId(const char* value) { SetBotId(value); return *this;}
 

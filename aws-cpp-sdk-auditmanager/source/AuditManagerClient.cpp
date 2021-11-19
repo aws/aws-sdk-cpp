@@ -50,13 +50,19 @@
 #include <aws/auditmanager/model/GetEvidenceFolderRequest.h>
 #include <aws/auditmanager/model/GetEvidenceFoldersByAssessmentRequest.h>
 #include <aws/auditmanager/model/GetEvidenceFoldersByAssessmentControlRequest.h>
+#include <aws/auditmanager/model/GetInsightsRequest.h>
+#include <aws/auditmanager/model/GetInsightsByAssessmentRequest.h>
 #include <aws/auditmanager/model/GetOrganizationAdminAccountRequest.h>
 #include <aws/auditmanager/model/GetServicesInScopeRequest.h>
 #include <aws/auditmanager/model/GetSettingsRequest.h>
+#include <aws/auditmanager/model/ListAssessmentControlInsightsByControlDomainRequest.h>
 #include <aws/auditmanager/model/ListAssessmentFrameworkShareRequestsRequest.h>
 #include <aws/auditmanager/model/ListAssessmentFrameworksRequest.h>
 #include <aws/auditmanager/model/ListAssessmentReportsRequest.h>
 #include <aws/auditmanager/model/ListAssessmentsRequest.h>
+#include <aws/auditmanager/model/ListControlDomainInsightsRequest.h>
+#include <aws/auditmanager/model/ListControlDomainInsightsByAssessmentRequest.h>
+#include <aws/auditmanager/model/ListControlInsightsByControlDomainRequest.h>
 #include <aws/auditmanager/model/ListControlsRequest.h>
 #include <aws/auditmanager/model/ListKeywordsForDataSourceRequest.h>
 #include <aws/auditmanager/model/ListNotificationsRequest.h>
@@ -1144,6 +1150,62 @@ void AuditManagerClient::GetEvidenceFoldersByAssessmentControlAsyncHelper(const 
   handler(this, request, GetEvidenceFoldersByAssessmentControl(request), context);
 }
 
+GetInsightsOutcome AuditManagerClient::GetInsights(const GetInsightsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/insights");
+  return GetInsightsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetInsightsOutcomeCallable AuditManagerClient::GetInsightsCallable(const GetInsightsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetInsightsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetInsights(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AuditManagerClient::GetInsightsAsync(const GetInsightsRequest& request, const GetInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetInsightsAsyncHelper( request, handler, context ); } );
+}
+
+void AuditManagerClient::GetInsightsAsyncHelper(const GetInsightsRequest& request, const GetInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetInsights(request), context);
+}
+
+GetInsightsByAssessmentOutcome AuditManagerClient::GetInsightsByAssessment(const GetInsightsByAssessmentRequest& request) const
+{
+  if (!request.AssessmentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetInsightsByAssessment", "Required field: AssessmentId, is not set");
+    return GetInsightsByAssessmentOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssessmentId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/insights/assessments/");
+  uri.AddPathSegment(request.GetAssessmentId());
+  return GetInsightsByAssessmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetInsightsByAssessmentOutcomeCallable AuditManagerClient::GetInsightsByAssessmentCallable(const GetInsightsByAssessmentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetInsightsByAssessmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetInsightsByAssessment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AuditManagerClient::GetInsightsByAssessmentAsync(const GetInsightsByAssessmentRequest& request, const GetInsightsByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetInsightsByAssessmentAsyncHelper( request, handler, context ); } );
+}
+
+void AuditManagerClient::GetInsightsByAssessmentAsyncHelper(const GetInsightsByAssessmentRequest& request, const GetInsightsByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetInsightsByAssessment(request), context);
+}
+
 GetOrganizationAdminAccountOutcome AuditManagerClient::GetOrganizationAdminAccount(const GetOrganizationAdminAccountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1223,6 +1285,41 @@ void AuditManagerClient::GetSettingsAsync(const GetSettingsRequest& request, con
 void AuditManagerClient::GetSettingsAsyncHelper(const GetSettingsRequest& request, const GetSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetSettings(request), context);
+}
+
+ListAssessmentControlInsightsByControlDomainOutcome AuditManagerClient::ListAssessmentControlInsightsByControlDomain(const ListAssessmentControlInsightsByControlDomainRequest& request) const
+{
+  if (!request.ControlDomainIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAssessmentControlInsightsByControlDomain", "Required field: ControlDomainId, is not set");
+    return ListAssessmentControlInsightsByControlDomainOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ControlDomainId]", false));
+  }
+  if (!request.AssessmentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAssessmentControlInsightsByControlDomain", "Required field: AssessmentId, is not set");
+    return ListAssessmentControlInsightsByControlDomainOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssessmentId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/insights/controls-by-assessment");
+  return ListAssessmentControlInsightsByControlDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAssessmentControlInsightsByControlDomainOutcomeCallable AuditManagerClient::ListAssessmentControlInsightsByControlDomainCallable(const ListAssessmentControlInsightsByControlDomainRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAssessmentControlInsightsByControlDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssessmentControlInsightsByControlDomain(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AuditManagerClient::ListAssessmentControlInsightsByControlDomainAsync(const ListAssessmentControlInsightsByControlDomainRequest& request, const ListAssessmentControlInsightsByControlDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAssessmentControlInsightsByControlDomainAsyncHelper( request, handler, context ); } );
+}
+
+void AuditManagerClient::ListAssessmentControlInsightsByControlDomainAsyncHelper(const ListAssessmentControlInsightsByControlDomainRequest& request, const ListAssessmentControlInsightsByControlDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAssessmentControlInsightsByControlDomain(request), context);
 }
 
 ListAssessmentFrameworkShareRequestsOutcome AuditManagerClient::ListAssessmentFrameworkShareRequests(const ListAssessmentFrameworkShareRequestsRequest& request) const
@@ -1333,6 +1430,91 @@ void AuditManagerClient::ListAssessmentsAsync(const ListAssessmentsRequest& requ
 void AuditManagerClient::ListAssessmentsAsyncHelper(const ListAssessmentsRequest& request, const ListAssessmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListAssessments(request), context);
+}
+
+ListControlDomainInsightsOutcome AuditManagerClient::ListControlDomainInsights(const ListControlDomainInsightsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/insights/control-domains");
+  return ListControlDomainInsightsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListControlDomainInsightsOutcomeCallable AuditManagerClient::ListControlDomainInsightsCallable(const ListControlDomainInsightsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListControlDomainInsightsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListControlDomainInsights(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AuditManagerClient::ListControlDomainInsightsAsync(const ListControlDomainInsightsRequest& request, const ListControlDomainInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListControlDomainInsightsAsyncHelper( request, handler, context ); } );
+}
+
+void AuditManagerClient::ListControlDomainInsightsAsyncHelper(const ListControlDomainInsightsRequest& request, const ListControlDomainInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListControlDomainInsights(request), context);
+}
+
+ListControlDomainInsightsByAssessmentOutcome AuditManagerClient::ListControlDomainInsightsByAssessment(const ListControlDomainInsightsByAssessmentRequest& request) const
+{
+  if (!request.AssessmentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListControlDomainInsightsByAssessment", "Required field: AssessmentId, is not set");
+    return ListControlDomainInsightsByAssessmentOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssessmentId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/insights/control-domains-by-assessment");
+  return ListControlDomainInsightsByAssessmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListControlDomainInsightsByAssessmentOutcomeCallable AuditManagerClient::ListControlDomainInsightsByAssessmentCallable(const ListControlDomainInsightsByAssessmentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListControlDomainInsightsByAssessmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListControlDomainInsightsByAssessment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AuditManagerClient::ListControlDomainInsightsByAssessmentAsync(const ListControlDomainInsightsByAssessmentRequest& request, const ListControlDomainInsightsByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListControlDomainInsightsByAssessmentAsyncHelper( request, handler, context ); } );
+}
+
+void AuditManagerClient::ListControlDomainInsightsByAssessmentAsyncHelper(const ListControlDomainInsightsByAssessmentRequest& request, const ListControlDomainInsightsByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListControlDomainInsightsByAssessment(request), context);
+}
+
+ListControlInsightsByControlDomainOutcome AuditManagerClient::ListControlInsightsByControlDomain(const ListControlInsightsByControlDomainRequest& request) const
+{
+  if (!request.ControlDomainIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListControlInsightsByControlDomain", "Required field: ControlDomainId, is not set");
+    return ListControlInsightsByControlDomainOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ControlDomainId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/insights/controls");
+  return ListControlInsightsByControlDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListControlInsightsByControlDomainOutcomeCallable AuditManagerClient::ListControlInsightsByControlDomainCallable(const ListControlInsightsByControlDomainRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListControlInsightsByControlDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListControlInsightsByControlDomain(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AuditManagerClient::ListControlInsightsByControlDomainAsync(const ListControlInsightsByControlDomainRequest& request, const ListControlInsightsByControlDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListControlInsightsByControlDomainAsyncHelper( request, handler, context ); } );
+}
+
+void AuditManagerClient::ListControlInsightsByControlDomainAsyncHelper(const ListControlInsightsByControlDomainRequest& request, const ListControlInsightsByControlDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListControlInsightsByControlDomain(request), context);
 }
 
 ListControlsOutcome AuditManagerClient::ListControls(const ListControlsRequest& request) const

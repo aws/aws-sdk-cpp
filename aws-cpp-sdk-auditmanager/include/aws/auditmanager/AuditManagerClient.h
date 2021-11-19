@@ -41,13 +41,19 @@
 #include <aws/auditmanager/model/GetEvidenceFolderResult.h>
 #include <aws/auditmanager/model/GetEvidenceFoldersByAssessmentResult.h>
 #include <aws/auditmanager/model/GetEvidenceFoldersByAssessmentControlResult.h>
+#include <aws/auditmanager/model/GetInsightsResult.h>
+#include <aws/auditmanager/model/GetInsightsByAssessmentResult.h>
 #include <aws/auditmanager/model/GetOrganizationAdminAccountResult.h>
 #include <aws/auditmanager/model/GetServicesInScopeResult.h>
 #include <aws/auditmanager/model/GetSettingsResult.h>
+#include <aws/auditmanager/model/ListAssessmentControlInsightsByControlDomainResult.h>
 #include <aws/auditmanager/model/ListAssessmentFrameworkShareRequestsResult.h>
 #include <aws/auditmanager/model/ListAssessmentFrameworksResult.h>
 #include <aws/auditmanager/model/ListAssessmentReportsResult.h>
 #include <aws/auditmanager/model/ListAssessmentsResult.h>
+#include <aws/auditmanager/model/ListControlDomainInsightsResult.h>
+#include <aws/auditmanager/model/ListControlDomainInsightsByAssessmentResult.h>
+#include <aws/auditmanager/model/ListControlInsightsByControlDomainResult.h>
 #include <aws/auditmanager/model/ListControlsResult.h>
 #include <aws/auditmanager/model/ListKeywordsForDataSourceResult.h>
 #include <aws/auditmanager/model/ListNotificationsResult.h>
@@ -135,13 +141,19 @@ namespace Model
         class GetEvidenceFolderRequest;
         class GetEvidenceFoldersByAssessmentRequest;
         class GetEvidenceFoldersByAssessmentControlRequest;
+        class GetInsightsRequest;
+        class GetInsightsByAssessmentRequest;
         class GetOrganizationAdminAccountRequest;
         class GetServicesInScopeRequest;
         class GetSettingsRequest;
+        class ListAssessmentControlInsightsByControlDomainRequest;
         class ListAssessmentFrameworkShareRequestsRequest;
         class ListAssessmentFrameworksRequest;
         class ListAssessmentReportsRequest;
         class ListAssessmentsRequest;
+        class ListControlDomainInsightsRequest;
+        class ListControlDomainInsightsByAssessmentRequest;
+        class ListControlInsightsByControlDomainRequest;
         class ListControlsRequest;
         class ListKeywordsForDataSourceRequest;
         class ListNotificationsRequest;
@@ -191,13 +203,19 @@ namespace Model
         typedef Aws::Utils::Outcome<GetEvidenceFolderResult, AuditManagerError> GetEvidenceFolderOutcome;
         typedef Aws::Utils::Outcome<GetEvidenceFoldersByAssessmentResult, AuditManagerError> GetEvidenceFoldersByAssessmentOutcome;
         typedef Aws::Utils::Outcome<GetEvidenceFoldersByAssessmentControlResult, AuditManagerError> GetEvidenceFoldersByAssessmentControlOutcome;
+        typedef Aws::Utils::Outcome<GetInsightsResult, AuditManagerError> GetInsightsOutcome;
+        typedef Aws::Utils::Outcome<GetInsightsByAssessmentResult, AuditManagerError> GetInsightsByAssessmentOutcome;
         typedef Aws::Utils::Outcome<GetOrganizationAdminAccountResult, AuditManagerError> GetOrganizationAdminAccountOutcome;
         typedef Aws::Utils::Outcome<GetServicesInScopeResult, AuditManagerError> GetServicesInScopeOutcome;
         typedef Aws::Utils::Outcome<GetSettingsResult, AuditManagerError> GetSettingsOutcome;
+        typedef Aws::Utils::Outcome<ListAssessmentControlInsightsByControlDomainResult, AuditManagerError> ListAssessmentControlInsightsByControlDomainOutcome;
         typedef Aws::Utils::Outcome<ListAssessmentFrameworkShareRequestsResult, AuditManagerError> ListAssessmentFrameworkShareRequestsOutcome;
         typedef Aws::Utils::Outcome<ListAssessmentFrameworksResult, AuditManagerError> ListAssessmentFrameworksOutcome;
         typedef Aws::Utils::Outcome<ListAssessmentReportsResult, AuditManagerError> ListAssessmentReportsOutcome;
         typedef Aws::Utils::Outcome<ListAssessmentsResult, AuditManagerError> ListAssessmentsOutcome;
+        typedef Aws::Utils::Outcome<ListControlDomainInsightsResult, AuditManagerError> ListControlDomainInsightsOutcome;
+        typedef Aws::Utils::Outcome<ListControlDomainInsightsByAssessmentResult, AuditManagerError> ListControlDomainInsightsByAssessmentOutcome;
+        typedef Aws::Utils::Outcome<ListControlInsightsByControlDomainResult, AuditManagerError> ListControlInsightsByControlDomainOutcome;
         typedef Aws::Utils::Outcome<ListControlsResult, AuditManagerError> ListControlsOutcome;
         typedef Aws::Utils::Outcome<ListKeywordsForDataSourceResult, AuditManagerError> ListKeywordsForDataSourceOutcome;
         typedef Aws::Utils::Outcome<ListNotificationsResult, AuditManagerError> ListNotificationsOutcome;
@@ -247,13 +265,19 @@ namespace Model
         typedef std::future<GetEvidenceFolderOutcome> GetEvidenceFolderOutcomeCallable;
         typedef std::future<GetEvidenceFoldersByAssessmentOutcome> GetEvidenceFoldersByAssessmentOutcomeCallable;
         typedef std::future<GetEvidenceFoldersByAssessmentControlOutcome> GetEvidenceFoldersByAssessmentControlOutcomeCallable;
+        typedef std::future<GetInsightsOutcome> GetInsightsOutcomeCallable;
+        typedef std::future<GetInsightsByAssessmentOutcome> GetInsightsByAssessmentOutcomeCallable;
         typedef std::future<GetOrganizationAdminAccountOutcome> GetOrganizationAdminAccountOutcomeCallable;
         typedef std::future<GetServicesInScopeOutcome> GetServicesInScopeOutcomeCallable;
         typedef std::future<GetSettingsOutcome> GetSettingsOutcomeCallable;
+        typedef std::future<ListAssessmentControlInsightsByControlDomainOutcome> ListAssessmentControlInsightsByControlDomainOutcomeCallable;
         typedef std::future<ListAssessmentFrameworkShareRequestsOutcome> ListAssessmentFrameworkShareRequestsOutcomeCallable;
         typedef std::future<ListAssessmentFrameworksOutcome> ListAssessmentFrameworksOutcomeCallable;
         typedef std::future<ListAssessmentReportsOutcome> ListAssessmentReportsOutcomeCallable;
         typedef std::future<ListAssessmentsOutcome> ListAssessmentsOutcomeCallable;
+        typedef std::future<ListControlDomainInsightsOutcome> ListControlDomainInsightsOutcomeCallable;
+        typedef std::future<ListControlDomainInsightsByAssessmentOutcome> ListControlDomainInsightsByAssessmentOutcomeCallable;
+        typedef std::future<ListControlInsightsByControlDomainOutcome> ListControlInsightsByControlDomainOutcomeCallable;
         typedef std::future<ListControlsOutcome> ListControlsOutcomeCallable;
         typedef std::future<ListKeywordsForDataSourceOutcome> ListKeywordsForDataSourceOutcomeCallable;
         typedef std::future<ListNotificationsOutcome> ListNotificationsOutcomeCallable;
@@ -306,13 +330,19 @@ namespace Model
     typedef std::function<void(const AuditManagerClient*, const Model::GetEvidenceFolderRequest&, const Model::GetEvidenceFolderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEvidenceFolderResponseReceivedHandler;
     typedef std::function<void(const AuditManagerClient*, const Model::GetEvidenceFoldersByAssessmentRequest&, const Model::GetEvidenceFoldersByAssessmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEvidenceFoldersByAssessmentResponseReceivedHandler;
     typedef std::function<void(const AuditManagerClient*, const Model::GetEvidenceFoldersByAssessmentControlRequest&, const Model::GetEvidenceFoldersByAssessmentControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEvidenceFoldersByAssessmentControlResponseReceivedHandler;
+    typedef std::function<void(const AuditManagerClient*, const Model::GetInsightsRequest&, const Model::GetInsightsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInsightsResponseReceivedHandler;
+    typedef std::function<void(const AuditManagerClient*, const Model::GetInsightsByAssessmentRequest&, const Model::GetInsightsByAssessmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInsightsByAssessmentResponseReceivedHandler;
     typedef std::function<void(const AuditManagerClient*, const Model::GetOrganizationAdminAccountRequest&, const Model::GetOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOrganizationAdminAccountResponseReceivedHandler;
     typedef std::function<void(const AuditManagerClient*, const Model::GetServicesInScopeRequest&, const Model::GetServicesInScopeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServicesInScopeResponseReceivedHandler;
     typedef std::function<void(const AuditManagerClient*, const Model::GetSettingsRequest&, const Model::GetSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSettingsResponseReceivedHandler;
+    typedef std::function<void(const AuditManagerClient*, const Model::ListAssessmentControlInsightsByControlDomainRequest&, const Model::ListAssessmentControlInsightsByControlDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssessmentControlInsightsByControlDomainResponseReceivedHandler;
     typedef std::function<void(const AuditManagerClient*, const Model::ListAssessmentFrameworkShareRequestsRequest&, const Model::ListAssessmentFrameworkShareRequestsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssessmentFrameworkShareRequestsResponseReceivedHandler;
     typedef std::function<void(const AuditManagerClient*, const Model::ListAssessmentFrameworksRequest&, const Model::ListAssessmentFrameworksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssessmentFrameworksResponseReceivedHandler;
     typedef std::function<void(const AuditManagerClient*, const Model::ListAssessmentReportsRequest&, const Model::ListAssessmentReportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssessmentReportsResponseReceivedHandler;
     typedef std::function<void(const AuditManagerClient*, const Model::ListAssessmentsRequest&, const Model::ListAssessmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssessmentsResponseReceivedHandler;
+    typedef std::function<void(const AuditManagerClient*, const Model::ListControlDomainInsightsRequest&, const Model::ListControlDomainInsightsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListControlDomainInsightsResponseReceivedHandler;
+    typedef std::function<void(const AuditManagerClient*, const Model::ListControlDomainInsightsByAssessmentRequest&, const Model::ListControlDomainInsightsByAssessmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListControlDomainInsightsByAssessmentResponseReceivedHandler;
+    typedef std::function<void(const AuditManagerClient*, const Model::ListControlInsightsByControlDomainRequest&, const Model::ListControlInsightsByControlDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListControlInsightsByControlDomainResponseReceivedHandler;
     typedef std::function<void(const AuditManagerClient*, const Model::ListControlsRequest&, const Model::ListControlsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListControlsResponseReceivedHandler;
     typedef std::function<void(const AuditManagerClient*, const Model::ListKeywordsForDataSourceRequest&, const Model::ListKeywordsForDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListKeywordsForDataSourceResponseReceivedHandler;
     typedef std::function<void(const AuditManagerClient*, const Model::ListNotificationsRequest&, const Model::ListNotificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNotificationsResponseReceivedHandler;
@@ -917,14 +947,14 @@ namespace Model
         virtual void GetAccountStatusAsync(const Model::GetAccountStatusRequest& request, const GetAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns an assessment from Audit Manager. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns an assessment from Audit Manager. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetAssessment">AWS
          * API Reference</a></p>
          */
         virtual Model::GetAssessmentOutcome GetAssessment(const Model::GetAssessmentRequest& request) const;
 
         /**
-         * <p> Returns an assessment from Audit Manager. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns an assessment from Audit Manager. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetAssessment">AWS
          * API Reference</a></p>
          *
@@ -933,7 +963,7 @@ namespace Model
         virtual Model::GetAssessmentOutcomeCallable GetAssessmentCallable(const Model::GetAssessmentRequest& request) const;
 
         /**
-         * <p> Returns an assessment from Audit Manager. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns an assessment from Audit Manager. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetAssessment">AWS
          * API Reference</a></p>
          *
@@ -942,14 +972,14 @@ namespace Model
         virtual void GetAssessmentAsync(const Model::GetAssessmentRequest& request, const GetAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns a framework from Audit Manager. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a framework from Audit Manager. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetAssessmentFramework">AWS
          * API Reference</a></p>
          */
         virtual Model::GetAssessmentFrameworkOutcome GetAssessmentFramework(const Model::GetAssessmentFrameworkRequest& request) const;
 
         /**
-         * <p> Returns a framework from Audit Manager. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a framework from Audit Manager. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetAssessmentFramework">AWS
          * API Reference</a></p>
          *
@@ -958,7 +988,7 @@ namespace Model
         virtual Model::GetAssessmentFrameworkOutcomeCallable GetAssessmentFrameworkCallable(const Model::GetAssessmentFrameworkRequest& request) const;
 
         /**
-         * <p> Returns a framework from Audit Manager. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a framework from Audit Manager. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetAssessmentFramework">AWS
          * API Reference</a></p>
          *
@@ -1213,6 +1243,62 @@ namespace Model
         virtual void GetEvidenceFoldersByAssessmentControlAsync(const Model::GetEvidenceFoldersByAssessmentControlRequest& request, const GetEvidenceFoldersByAssessmentControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets the latest analytics data for all your current active assessments.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetInsights">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetInsightsOutcome GetInsights(const Model::GetInsightsRequest& request) const;
+
+        /**
+         * <p>Gets the latest analytics data for all your current active assessments.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetInsights">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetInsightsOutcomeCallable GetInsightsCallable(const Model::GetInsightsRequest& request) const;
+
+        /**
+         * <p>Gets the latest analytics data for all your current active assessments.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetInsights">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetInsightsAsync(const Model::GetInsightsRequest& request, const GetInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the latest analytics data for a specific active assessment.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetInsightsByAssessment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetInsightsByAssessmentOutcome GetInsightsByAssessment(const Model::GetInsightsByAssessmentRequest& request) const;
+
+        /**
+         * <p>Gets the latest analytics data for a specific active assessment.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetInsightsByAssessment">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetInsightsByAssessmentOutcomeCallable GetInsightsByAssessmentCallable(const Model::GetInsightsByAssessmentRequest& request) const;
+
+        /**
+         * <p>Gets the latest analytics data for a specific active assessment.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetInsightsByAssessment">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetInsightsByAssessmentAsync(const Model::GetInsightsByAssessmentRequest& request, const GetInsightsByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Returns the name of the delegated Amazon Web Services administrator account
          * for the organization. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetOrganizationAdminAccount">AWS
@@ -1295,6 +1381,49 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetSettingsAsync(const Model::GetSettingsRequest& request, const GetSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the latest analytics data for controls within a specific control domain
+         * and a specific active assessment.</p>  <p>Control insights are listed only
+         * if the control belongs to the control domain and assessment that was specified.
+         * Moreover, the control must have collected evidence on the
+         * <code>lastUpdated</code> date of <code>controlInsightsByAssessment</code>. If
+         * neither of these conditions are met, no data is listed for that control. </p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessmentControlInsightsByControlDomain">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAssessmentControlInsightsByControlDomainOutcome ListAssessmentControlInsightsByControlDomain(const Model::ListAssessmentControlInsightsByControlDomainRequest& request) const;
+
+        /**
+         * <p>Lists the latest analytics data for controls within a specific control domain
+         * and a specific active assessment.</p>  <p>Control insights are listed only
+         * if the control belongs to the control domain and assessment that was specified.
+         * Moreover, the control must have collected evidence on the
+         * <code>lastUpdated</code> date of <code>controlInsightsByAssessment</code>. If
+         * neither of these conditions are met, no data is listed for that control. </p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessmentControlInsightsByControlDomain">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAssessmentControlInsightsByControlDomainOutcomeCallable ListAssessmentControlInsightsByControlDomainCallable(const Model::ListAssessmentControlInsightsByControlDomainRequest& request) const;
+
+        /**
+         * <p>Lists the latest analytics data for controls within a specific control domain
+         * and a specific active assessment.</p>  <p>Control insights are listed only
+         * if the control belongs to the control domain and assessment that was specified.
+         * Moreover, the control must have collected evidence on the
+         * <code>lastUpdated</code> date of <code>controlInsightsByAssessment</code>. If
+         * neither of these conditions are met, no data is listed for that control. </p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessmentControlInsightsByControlDomain">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAssessmentControlInsightsByControlDomainAsync(const Model::ListAssessmentControlInsightsByControlDomainRequest& request, const ListAssessmentControlInsightsByControlDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of sent or received share requests for custom frameworks in
@@ -1407,6 +1536,123 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAssessmentsAsync(const Model::ListAssessmentsRequest& request, const ListAssessmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the latest analytics data for control domains across all of your active
+         * assessments. </p>  <p>A control domain is listed only if at least one of
+         * the controls within that domain collected evidence on the
+         * <code>lastUpdated</code> date of <code>controlDomainInsights</code>. If this
+         * condition isn’t met, no data is listed for that control domain.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlDomainInsights">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListControlDomainInsightsOutcome ListControlDomainInsights(const Model::ListControlDomainInsightsRequest& request) const;
+
+        /**
+         * <p>Lists the latest analytics data for control domains across all of your active
+         * assessments. </p>  <p>A control domain is listed only if at least one of
+         * the controls within that domain collected evidence on the
+         * <code>lastUpdated</code> date of <code>controlDomainInsights</code>. If this
+         * condition isn’t met, no data is listed for that control domain.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlDomainInsights">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListControlDomainInsightsOutcomeCallable ListControlDomainInsightsCallable(const Model::ListControlDomainInsightsRequest& request) const;
+
+        /**
+         * <p>Lists the latest analytics data for control domains across all of your active
+         * assessments. </p>  <p>A control domain is listed only if at least one of
+         * the controls within that domain collected evidence on the
+         * <code>lastUpdated</code> date of <code>controlDomainInsights</code>. If this
+         * condition isn’t met, no data is listed for that control domain.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlDomainInsights">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListControlDomainInsightsAsync(const Model::ListControlDomainInsightsRequest& request, const ListControlDomainInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists analytics data for control domains within a specified active
+         * assessment.</p>  <p>A control domain is listed only if at least one of the
+         * controls within that domain collected evidence on the <code>lastUpdated</code>
+         * date of <code>controlDomainInsights</code>. If this condition isn’t met, no data
+         * is listed for that domain.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlDomainInsightsByAssessment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListControlDomainInsightsByAssessmentOutcome ListControlDomainInsightsByAssessment(const Model::ListControlDomainInsightsByAssessmentRequest& request) const;
+
+        /**
+         * <p>Lists analytics data for control domains within a specified active
+         * assessment.</p>  <p>A control domain is listed only if at least one of the
+         * controls within that domain collected evidence on the <code>lastUpdated</code>
+         * date of <code>controlDomainInsights</code>. If this condition isn’t met, no data
+         * is listed for that domain.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlDomainInsightsByAssessment">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListControlDomainInsightsByAssessmentOutcomeCallable ListControlDomainInsightsByAssessmentCallable(const Model::ListControlDomainInsightsByAssessmentRequest& request) const;
+
+        /**
+         * <p>Lists analytics data for control domains within a specified active
+         * assessment.</p>  <p>A control domain is listed only if at least one of the
+         * controls within that domain collected evidence on the <code>lastUpdated</code>
+         * date of <code>controlDomainInsights</code>. If this condition isn’t met, no data
+         * is listed for that domain.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlDomainInsightsByAssessment">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListControlDomainInsightsByAssessmentAsync(const Model::ListControlDomainInsightsByAssessmentRequest& request, const ListControlDomainInsightsByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the latest analytics data for controls within a specific control domain
+         * across all active assessments.</p>  <p>Control insights are listed only if
+         * the control belongs to the control domain that was specified and the control
+         * collected evidence on the <code>lastUpdated</code> date of
+         * <code>controlInsightsMetadata</code>. If neither of these conditions are met, no
+         * data is listed for that control. </p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlInsightsByControlDomain">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListControlInsightsByControlDomainOutcome ListControlInsightsByControlDomain(const Model::ListControlInsightsByControlDomainRequest& request) const;
+
+        /**
+         * <p>Lists the latest analytics data for controls within a specific control domain
+         * across all active assessments.</p>  <p>Control insights are listed only if
+         * the control belongs to the control domain that was specified and the control
+         * collected evidence on the <code>lastUpdated</code> date of
+         * <code>controlInsightsMetadata</code>. If neither of these conditions are met, no
+         * data is listed for that control. </p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlInsightsByControlDomain">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListControlInsightsByControlDomainOutcomeCallable ListControlInsightsByControlDomainCallable(const Model::ListControlInsightsByControlDomainRequest& request) const;
+
+        /**
+         * <p>Lists the latest analytics data for controls within a specific control domain
+         * across all active assessments.</p>  <p>Control insights are listed only if
+         * the control belongs to the control domain that was specified and the control
+         * collected evidence on the <code>lastUpdated</code> date of
+         * <code>controlInsightsMetadata</code>. If neither of these conditions are met, no
+         * data is listed for that control. </p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlInsightsByControlDomain">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListControlInsightsByControlDomainAsync(const Model::ListControlInsightsByControlDomainRequest& request, const ListControlInsightsByControlDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns a list of controls from Audit Manager. </p><p><h3>See Also:</h3>  
@@ -1970,13 +2216,19 @@ namespace Model
         void GetEvidenceFolderAsyncHelper(const Model::GetEvidenceFolderRequest& request, const GetEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEvidenceFoldersByAssessmentAsyncHelper(const Model::GetEvidenceFoldersByAssessmentRequest& request, const GetEvidenceFoldersByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEvidenceFoldersByAssessmentControlAsyncHelper(const Model::GetEvidenceFoldersByAssessmentControlRequest& request, const GetEvidenceFoldersByAssessmentControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetInsightsAsyncHelper(const Model::GetInsightsRequest& request, const GetInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetInsightsByAssessmentAsyncHelper(const Model::GetInsightsByAssessmentRequest& request, const GetInsightsByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetOrganizationAdminAccountAsyncHelper(const Model::GetOrganizationAdminAccountRequest& request, const GetOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetServicesInScopeAsyncHelper(const Model::GetServicesInScopeRequest& request, const GetServicesInScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSettingsAsyncHelper(const Model::GetSettingsRequest& request, const GetSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListAssessmentControlInsightsByControlDomainAsyncHelper(const Model::ListAssessmentControlInsightsByControlDomainRequest& request, const ListAssessmentControlInsightsByControlDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssessmentFrameworkShareRequestsAsyncHelper(const Model::ListAssessmentFrameworkShareRequestsRequest& request, const ListAssessmentFrameworkShareRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssessmentFrameworksAsyncHelper(const Model::ListAssessmentFrameworksRequest& request, const ListAssessmentFrameworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssessmentReportsAsyncHelper(const Model::ListAssessmentReportsRequest& request, const ListAssessmentReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssessmentsAsyncHelper(const Model::ListAssessmentsRequest& request, const ListAssessmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListControlDomainInsightsAsyncHelper(const Model::ListControlDomainInsightsRequest& request, const ListControlDomainInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListControlDomainInsightsByAssessmentAsyncHelper(const Model::ListControlDomainInsightsByAssessmentRequest& request, const ListControlDomainInsightsByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListControlInsightsByControlDomainAsyncHelper(const Model::ListControlInsightsByControlDomainRequest& request, const ListControlInsightsByControlDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListControlsAsyncHelper(const Model::ListControlsRequest& request, const ListControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListKeywordsForDataSourceAsyncHelper(const Model::ListKeywordsForDataSourceRequest& request, const ListKeywordsForDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListNotificationsAsyncHelper(const Model::ListNotificationsRequest& request, const ListNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
