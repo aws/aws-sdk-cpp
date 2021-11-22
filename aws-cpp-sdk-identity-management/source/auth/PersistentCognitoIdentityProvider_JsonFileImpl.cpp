@@ -41,6 +41,22 @@ PersistentCognitoIdentityProvider_JsonFileImpl::PersistentCognitoIdentityProvide
         LoadAndParseDoc();
     }
 }
+PersistentCognitoIdentityProvider_JsonFileImpl::PersistentCognitoIdentityProvider_JsonFileImpl(const Aws::String& identityPoolId, bool disableCaching) : 
+    m_identityPoolId(identityPoolId), 
+    m_disableCaching(disableCaching)
+{
+    Aws::String identitiesDir = Aws::FileSystem::GetHomeDirectory() + DIR;
+
+    if (Aws::FileSystem::CreateDirectoryIfNotExists(identitiesDir.c_str()))
+    {
+        m_identityFilePath = identitiesDir + Aws::FileSystem::PATH_DELIM + FILENAME;
+    }
+
+    if(!m_disableCaching)
+    {
+        LoadAndParseDoc();
+    }
+}
 
 PersistentCognitoIdentityProvider_JsonFileImpl::PersistentCognitoIdentityProvider_JsonFileImpl(const Aws::String& identityPoolId,
                                                                                                const Aws::String& accountId, 
@@ -56,6 +72,7 @@ PersistentCognitoIdentityProvider_JsonFileImpl::PersistentCognitoIdentityProvide
         LoadAndParseDoc();
     }
 }
+
 
 void PersistentCognitoIdentityProvider_JsonFileImpl::PersistIdentityId(const Aws::String& identityId)
 {
