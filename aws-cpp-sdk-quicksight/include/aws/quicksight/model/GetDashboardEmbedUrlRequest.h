@@ -294,10 +294,10 @@ namespace Model
      * <code>QUICKSIGHT</code> identity type. You can use this for any Amazon
      * QuickSight users in your account (readers, authors, or admins) authenticated as
      * one of the following:</p> <ul> <li> <p>Active Directory (AD) users or group
-     * members</p> </li> <li> <p>Invited nonfederated users</p> </li> <li> <p>IAMusers
-     * and IAMrole-based sessions authenticated through Federated Single Sign-On using
-     * SAML, OpenID Connect, or IAMfederation.</p> </li> </ul> <p>Omit this parameter
-     * for users in the third group – IAMusers and IAM role-based sessions.</p>
+     * members</p> </li> <li> <p>Invited nonfederated users</p> </li> <li> <p>IAM users
+     * and IAM role-based sessions authenticated through Federated Single Sign-On using
+     * SAML, OpenID Connect, or IAM federation.</p> </li> </ul> <p>Omit this parameter
+     * for users in the third group – IAM users and IAM role-based sessions.</p>
      */
     inline const Aws::String& GetUserArn() const{ return m_userArn; }
 
@@ -306,10 +306,10 @@ namespace Model
      * <code>QUICKSIGHT</code> identity type. You can use this for any Amazon
      * QuickSight users in your account (readers, authors, or admins) authenticated as
      * one of the following:</p> <ul> <li> <p>Active Directory (AD) users or group
-     * members</p> </li> <li> <p>Invited nonfederated users</p> </li> <li> <p>IAMusers
-     * and IAMrole-based sessions authenticated through Federated Single Sign-On using
-     * SAML, OpenID Connect, or IAMfederation.</p> </li> </ul> <p>Omit this parameter
-     * for users in the third group – IAMusers and IAM role-based sessions.</p>
+     * members</p> </li> <li> <p>Invited nonfederated users</p> </li> <li> <p>IAM users
+     * and IAM role-based sessions authenticated through Federated Single Sign-On using
+     * SAML, OpenID Connect, or IAM federation.</p> </li> </ul> <p>Omit this parameter
+     * for users in the third group – IAM users and IAM role-based sessions.</p>
      */
     inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }
 
@@ -318,10 +318,10 @@ namespace Model
      * <code>QUICKSIGHT</code> identity type. You can use this for any Amazon
      * QuickSight users in your account (readers, authors, or admins) authenticated as
      * one of the following:</p> <ul> <li> <p>Active Directory (AD) users or group
-     * members</p> </li> <li> <p>Invited nonfederated users</p> </li> <li> <p>IAMusers
-     * and IAMrole-based sessions authenticated through Federated Single Sign-On using
-     * SAML, OpenID Connect, or IAMfederation.</p> </li> </ul> <p>Omit this parameter
-     * for users in the third group – IAMusers and IAM role-based sessions.</p>
+     * members</p> </li> <li> <p>Invited nonfederated users</p> </li> <li> <p>IAM users
+     * and IAM role-based sessions authenticated through Federated Single Sign-On using
+     * SAML, OpenID Connect, or IAM federation.</p> </li> </ul> <p>Omit this parameter
+     * for users in the third group – IAM users and IAM role-based sessions.</p>
      */
     inline void SetUserArn(const Aws::String& value) { m_userArnHasBeenSet = true; m_userArn = value; }
 
@@ -330,10 +330,10 @@ namespace Model
      * <code>QUICKSIGHT</code> identity type. You can use this for any Amazon
      * QuickSight users in your account (readers, authors, or admins) authenticated as
      * one of the following:</p> <ul> <li> <p>Active Directory (AD) users or group
-     * members</p> </li> <li> <p>Invited nonfederated users</p> </li> <li> <p>IAMusers
-     * and IAMrole-based sessions authenticated through Federated Single Sign-On using
-     * SAML, OpenID Connect, or IAMfederation.</p> </li> </ul> <p>Omit this parameter
-     * for users in the third group – IAMusers and IAM role-based sessions.</p>
+     * members</p> </li> <li> <p>Invited nonfederated users</p> </li> <li> <p>IAM users
+     * and IAM role-based sessions authenticated through Federated Single Sign-On using
+     * SAML, OpenID Connect, or IAM federation.</p> </li> </ul> <p>Omit this parameter
+     * for users in the third group – IAM users and IAM role-based sessions.</p>
      */
     inline void SetUserArn(Aws::String&& value) { m_userArnHasBeenSet = true; m_userArn = std::move(value); }
 
@@ -342,10 +342,10 @@ namespace Model
      * <code>QUICKSIGHT</code> identity type. You can use this for any Amazon
      * QuickSight users in your account (readers, authors, or admins) authenticated as
      * one of the following:</p> <ul> <li> <p>Active Directory (AD) users or group
-     * members</p> </li> <li> <p>Invited nonfederated users</p> </li> <li> <p>IAMusers
-     * and IAMrole-based sessions authenticated through Federated Single Sign-On using
-     * SAML, OpenID Connect, or IAMfederation.</p> </li> </ul> <p>Omit this parameter
-     * for users in the third group – IAMusers and IAM role-based sessions.</p>
+     * members</p> </li> <li> <p>Invited nonfederated users</p> </li> <li> <p>IAM users
+     * and IAM role-based sessions authenticated through Federated Single Sign-On using
+     * SAML, OpenID Connect, or IAM federation.</p> </li> </ul> <p>Omit this parameter
+     * for users in the third group – IAM users and IAM role-based sessions.</p>
      */
     inline void SetUserArn(const char* value) { m_userArnHasBeenSet = true; m_userArn.assign(value); }
 
@@ -354,10 +354,10 @@ namespace Model
      * <code>QUICKSIGHT</code> identity type. You can use this for any Amazon
      * QuickSight users in your account (readers, authors, or admins) authenticated as
      * one of the following:</p> <ul> <li> <p>Active Directory (AD) users or group
-     * members</p> </li> <li> <p>Invited nonfederated users</p> </li> <li> <p>IAMusers
-     * and IAMrole-based sessions authenticated through Federated Single Sign-On using
-     * SAML, OpenID Connect, or IAMfederation.</p> </li> </ul> <p>Omit this parameter
-     * for users in the third group – IAMusers and IAM role-based sessions.</p>
+     * members</p> </li> <li> <p>Invited nonfederated users</p> </li> <li> <p>IAM users
+     * and IAM role-based sessions authenticated through Federated Single Sign-On using
+     * SAML, OpenID Connect, or IAM federation.</p> </li> </ul> <p>Omit this parameter
+     * for users in the third group – IAM users and IAM role-based sessions.</p>
      */
     inline GetDashboardEmbedUrlRequest& WithUserArn(const Aws::String& value) { SetUserArn(value); return *this;}
 
@@ -366,10 +366,10 @@ namespace Model
      * <code>QUICKSIGHT</code> identity type. You can use this for any Amazon
      * QuickSight users in your account (readers, authors, or admins) authenticated as
      * one of the following:</p> <ul> <li> <p>Active Directory (AD) users or group
-     * members</p> </li> <li> <p>Invited nonfederated users</p> </li> <li> <p>IAMusers
-     * and IAMrole-based sessions authenticated through Federated Single Sign-On using
-     * SAML, OpenID Connect, or IAMfederation.</p> </li> </ul> <p>Omit this parameter
-     * for users in the third group – IAMusers and IAM role-based sessions.</p>
+     * members</p> </li> <li> <p>Invited nonfederated users</p> </li> <li> <p>IAM users
+     * and IAM role-based sessions authenticated through Federated Single Sign-On using
+     * SAML, OpenID Connect, or IAM federation.</p> </li> </ul> <p>Omit this parameter
+     * for users in the third group – IAM users and IAM role-based sessions.</p>
      */
     inline GetDashboardEmbedUrlRequest& WithUserArn(Aws::String&& value) { SetUserArn(std::move(value)); return *this;}
 
@@ -378,10 +378,10 @@ namespace Model
      * <code>QUICKSIGHT</code> identity type. You can use this for any Amazon
      * QuickSight users in your account (readers, authors, or admins) authenticated as
      * one of the following:</p> <ul> <li> <p>Active Directory (AD) users or group
-     * members</p> </li> <li> <p>Invited nonfederated users</p> </li> <li> <p>IAMusers
-     * and IAMrole-based sessions authenticated through Federated Single Sign-On using
-     * SAML, OpenID Connect, or IAMfederation.</p> </li> </ul> <p>Omit this parameter
-     * for users in the third group – IAMusers and IAM role-based sessions.</p>
+     * members</p> </li> <li> <p>Invited nonfederated users</p> </li> <li> <p>IAM users
+     * and IAM role-based sessions authenticated through Federated Single Sign-On using
+     * SAML, OpenID Connect, or IAM federation.</p> </li> </ul> <p>Omit this parameter
+     * for users in the third group – IAM users and IAM role-based sessions.</p>
      */
     inline GetDashboardEmbedUrlRequest& WithUserArn(const char* value) { SetUserArn(value); return *this;}
 
@@ -447,7 +447,7 @@ namespace Model
      * <p>A list of one or more dashboard IDs that you want to add to a session that
      * includes anonymous users. The <code>IdentityType</code> parameter must be set to
      * <code>ANONYMOUS</code> for this to work, because other identity types
-     * authenticate as Amazon QuickSight or IAMusers. For example, if you set
+     * authenticate as Amazon QuickSight or IAM users. For example, if you set
      * "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type
      * ANONYMOUS</code>", the session can access all three dashboards. </p>
      */
@@ -457,7 +457,7 @@ namespace Model
      * <p>A list of one or more dashboard IDs that you want to add to a session that
      * includes anonymous users. The <code>IdentityType</code> parameter must be set to
      * <code>ANONYMOUS</code> for this to work, because other identity types
-     * authenticate as Amazon QuickSight or IAMusers. For example, if you set
+     * authenticate as Amazon QuickSight or IAM users. For example, if you set
      * "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type
      * ANONYMOUS</code>", the session can access all three dashboards. </p>
      */
@@ -467,7 +467,7 @@ namespace Model
      * <p>A list of one or more dashboard IDs that you want to add to a session that
      * includes anonymous users. The <code>IdentityType</code> parameter must be set to
      * <code>ANONYMOUS</code> for this to work, because other identity types
-     * authenticate as Amazon QuickSight or IAMusers. For example, if you set
+     * authenticate as Amazon QuickSight or IAM users. For example, if you set
      * "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type
      * ANONYMOUS</code>", the session can access all three dashboards. </p>
      */
@@ -477,7 +477,7 @@ namespace Model
      * <p>A list of one or more dashboard IDs that you want to add to a session that
      * includes anonymous users. The <code>IdentityType</code> parameter must be set to
      * <code>ANONYMOUS</code> for this to work, because other identity types
-     * authenticate as Amazon QuickSight or IAMusers. For example, if you set
+     * authenticate as Amazon QuickSight or IAM users. For example, if you set
      * "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type
      * ANONYMOUS</code>", the session can access all three dashboards. </p>
      */
@@ -487,7 +487,7 @@ namespace Model
      * <p>A list of one or more dashboard IDs that you want to add to a session that
      * includes anonymous users. The <code>IdentityType</code> parameter must be set to
      * <code>ANONYMOUS</code> for this to work, because other identity types
-     * authenticate as Amazon QuickSight or IAMusers. For example, if you set
+     * authenticate as Amazon QuickSight or IAM users. For example, if you set
      * "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type
      * ANONYMOUS</code>", the session can access all three dashboards. </p>
      */
@@ -497,7 +497,7 @@ namespace Model
      * <p>A list of one or more dashboard IDs that you want to add to a session that
      * includes anonymous users. The <code>IdentityType</code> parameter must be set to
      * <code>ANONYMOUS</code> for this to work, because other identity types
-     * authenticate as Amazon QuickSight or IAMusers. For example, if you set
+     * authenticate as Amazon QuickSight or IAM users. For example, if you set
      * "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type
      * ANONYMOUS</code>", the session can access all three dashboards. </p>
      */
@@ -507,7 +507,7 @@ namespace Model
      * <p>A list of one or more dashboard IDs that you want to add to a session that
      * includes anonymous users. The <code>IdentityType</code> parameter must be set to
      * <code>ANONYMOUS</code> for this to work, because other identity types
-     * authenticate as Amazon QuickSight or IAMusers. For example, if you set
+     * authenticate as Amazon QuickSight or IAM users. For example, if you set
      * "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type
      * ANONYMOUS</code>", the session can access all three dashboards. </p>
      */
@@ -517,7 +517,7 @@ namespace Model
      * <p>A list of one or more dashboard IDs that you want to add to a session that
      * includes anonymous users. The <code>IdentityType</code> parameter must be set to
      * <code>ANONYMOUS</code> for this to work, because other identity types
-     * authenticate as Amazon QuickSight or IAMusers. For example, if you set
+     * authenticate as Amazon QuickSight or IAM users. For example, if you set
      * "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type
      * ANONYMOUS</code>", the session can access all three dashboards. </p>
      */
@@ -527,7 +527,7 @@ namespace Model
      * <p>A list of one or more dashboard IDs that you want to add to a session that
      * includes anonymous users. The <code>IdentityType</code> parameter must be set to
      * <code>ANONYMOUS</code> for this to work, because other identity types
-     * authenticate as Amazon QuickSight or IAMusers. For example, if you set
+     * authenticate as Amazon QuickSight or IAM users. For example, if you set
      * "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type
      * ANONYMOUS</code>", the session can access all three dashboards. </p>
      */

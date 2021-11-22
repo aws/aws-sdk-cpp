@@ -171,14 +171,15 @@ namespace Model
      * <code>SourceEntity</code>, you specify the type of object you're using as
      * source. You can only update a dashboard from a template, so you use a
      * <code>SourceTemplate</code> entity. If you need to update a dashboard from an
-     * analysis, first convert the analysis to a template by using the
-     * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
-     * the Amazon Resource Name (ARN) of the source template. The
-     * <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and
-     * any Amazon QuickSight-supported Amazon Web Services Region. </p> <p>Use the
-     * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
-     * the replacement datasets for the placeholders listed in the original. The schema
-     * in each dataset must match its placeholder. </p>
+     * analysis, first convert the analysis to a template by using the <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+     * </code> API operation. For <code>SourceTemplate</code>, specify the Amazon
+     * Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN
+     * can contain any Amazon Web Services account and any Amazon QuickSight-supported
+     * Amazon Web Services Region. </p> <p>Use the <code>DataSetReferences</code>
+     * entity within <code>SourceTemplate</code> to list the replacement datasets for
+     * the placeholders listed in the original. The schema in each dataset must match
+     * its placeholder. </p>
      */
     inline const DashboardSourceEntity& GetSourceEntity() const{ return m_sourceEntity; }
 
@@ -187,14 +188,15 @@ namespace Model
      * <code>SourceEntity</code>, you specify the type of object you're using as
      * source. You can only update a dashboard from a template, so you use a
      * <code>SourceTemplate</code> entity. If you need to update a dashboard from an
-     * analysis, first convert the analysis to a template by using the
-     * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
-     * the Amazon Resource Name (ARN) of the source template. The
-     * <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and
-     * any Amazon QuickSight-supported Amazon Web Services Region. </p> <p>Use the
-     * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
-     * the replacement datasets for the placeholders listed in the original. The schema
-     * in each dataset must match its placeholder. </p>
+     * analysis, first convert the analysis to a template by using the <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+     * </code> API operation. For <code>SourceTemplate</code>, specify the Amazon
+     * Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN
+     * can contain any Amazon Web Services account and any Amazon QuickSight-supported
+     * Amazon Web Services Region. </p> <p>Use the <code>DataSetReferences</code>
+     * entity within <code>SourceTemplate</code> to list the replacement datasets for
+     * the placeholders listed in the original. The schema in each dataset must match
+     * its placeholder. </p>
      */
     inline bool SourceEntityHasBeenSet() const { return m_sourceEntityHasBeenSet; }
 
@@ -203,14 +205,15 @@ namespace Model
      * <code>SourceEntity</code>, you specify the type of object you're using as
      * source. You can only update a dashboard from a template, so you use a
      * <code>SourceTemplate</code> entity. If you need to update a dashboard from an
-     * analysis, first convert the analysis to a template by using the
-     * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
-     * the Amazon Resource Name (ARN) of the source template. The
-     * <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and
-     * any Amazon QuickSight-supported Amazon Web Services Region. </p> <p>Use the
-     * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
-     * the replacement datasets for the placeholders listed in the original. The schema
-     * in each dataset must match its placeholder. </p>
+     * analysis, first convert the analysis to a template by using the <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+     * </code> API operation. For <code>SourceTemplate</code>, specify the Amazon
+     * Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN
+     * can contain any Amazon Web Services account and any Amazon QuickSight-supported
+     * Amazon Web Services Region. </p> <p>Use the <code>DataSetReferences</code>
+     * entity within <code>SourceTemplate</code> to list the replacement datasets for
+     * the placeholders listed in the original. The schema in each dataset must match
+     * its placeholder. </p>
      */
     inline void SetSourceEntity(const DashboardSourceEntity& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = value; }
 
@@ -219,14 +222,15 @@ namespace Model
      * <code>SourceEntity</code>, you specify the type of object you're using as
      * source. You can only update a dashboard from a template, so you use a
      * <code>SourceTemplate</code> entity. If you need to update a dashboard from an
-     * analysis, first convert the analysis to a template by using the
-     * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
-     * the Amazon Resource Name (ARN) of the source template. The
-     * <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and
-     * any Amazon QuickSight-supported Amazon Web Services Region. </p> <p>Use the
-     * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
-     * the replacement datasets for the placeholders listed in the original. The schema
-     * in each dataset must match its placeholder. </p>
+     * analysis, first convert the analysis to a template by using the <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+     * </code> API operation. For <code>SourceTemplate</code>, specify the Amazon
+     * Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN
+     * can contain any Amazon Web Services account and any Amazon QuickSight-supported
+     * Amazon Web Services Region. </p> <p>Use the <code>DataSetReferences</code>
+     * entity within <code>SourceTemplate</code> to list the replacement datasets for
+     * the placeholders listed in the original. The schema in each dataset must match
+     * its placeholder. </p>
      */
     inline void SetSourceEntity(DashboardSourceEntity&& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = std::move(value); }
 
@@ -235,14 +239,15 @@ namespace Model
      * <code>SourceEntity</code>, you specify the type of object you're using as
      * source. You can only update a dashboard from a template, so you use a
      * <code>SourceTemplate</code> entity. If you need to update a dashboard from an
-     * analysis, first convert the analysis to a template by using the
-     * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
-     * the Amazon Resource Name (ARN) of the source template. The
-     * <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and
-     * any Amazon QuickSight-supported Amazon Web Services Region. </p> <p>Use the
-     * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
-     * the replacement datasets for the placeholders listed in the original. The schema
-     * in each dataset must match its placeholder. </p>
+     * analysis, first convert the analysis to a template by using the <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+     * </code> API operation. For <code>SourceTemplate</code>, specify the Amazon
+     * Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN
+     * can contain any Amazon Web Services account and any Amazon QuickSight-supported
+     * Amazon Web Services Region. </p> <p>Use the <code>DataSetReferences</code>
+     * entity within <code>SourceTemplate</code> to list the replacement datasets for
+     * the placeholders listed in the original. The schema in each dataset must match
+     * its placeholder. </p>
      */
     inline UpdateDashboardRequest& WithSourceEntity(const DashboardSourceEntity& value) { SetSourceEntity(value); return *this;}
 
@@ -251,14 +256,15 @@ namespace Model
      * <code>SourceEntity</code>, you specify the type of object you're using as
      * source. You can only update a dashboard from a template, so you use a
      * <code>SourceTemplate</code> entity. If you need to update a dashboard from an
-     * analysis, first convert the analysis to a template by using the
-     * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
-     * the Amazon Resource Name (ARN) of the source template. The
-     * <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and
-     * any Amazon QuickSight-supported Amazon Web Services Region. </p> <p>Use the
-     * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
-     * the replacement datasets for the placeholders listed in the original. The schema
-     * in each dataset must match its placeholder. </p>
+     * analysis, first convert the analysis to a template by using the <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+     * </code> API operation. For <code>SourceTemplate</code>, specify the Amazon
+     * Resource Name (ARN) of the source template. The <code>SourceTemplate</code> ARN
+     * can contain any Amazon Web Services account and any Amazon QuickSight-supported
+     * Amazon Web Services Region. </p> <p>Use the <code>DataSetReferences</code>
+     * entity within <code>SourceTemplate</code> to list the replacement datasets for
+     * the placeholders listed in the original. The schema in each dataset must match
+     * its placeholder. </p>
      */
     inline UpdateDashboardRequest& WithSourceEntity(DashboardSourceEntity&& value) { SetSourceEntity(std::move(value)); return *this;}
 

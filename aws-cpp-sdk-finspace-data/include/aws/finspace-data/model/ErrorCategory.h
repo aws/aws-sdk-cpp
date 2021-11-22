@@ -16,14 +16,14 @@ namespace Model
   enum class ErrorCategory
   {
     NOT_SET,
-    The_inputs_to_this_request_are_invalid,
-    Service_limits_have_been_exceeded,
-    Missing_required_permission_to_perform_this_request,
-    One_or_more_inputs_to_this_request_were_not_found,
-    The_system_temporarily_lacks_sufficient_resources_to_process_the_request,
-    An_internal_error_has_occurred,
-    Cancelled,
-    A_user_recoverable_error_has_occurred
+    VALIDATION,
+    SERVICE_QUOTA_EXCEEDED,
+    ACCESS_DENIED,
+    RESOURCE_NOT_FOUND,
+    THROTTLING,
+    INTERNAL_SERVICE_EXCEPTION,
+    CANCELLED,
+    USER_RECOVERABLE
   };
 
 namespace ErrorCategoryMapper

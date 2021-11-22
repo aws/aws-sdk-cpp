@@ -2489,6 +2489,111 @@ namespace Model
      */
     inline S3Settings& WithRfc4180(bool value) { SetRfc4180(value); return *this;}
 
+
+    /**
+     * <p>When creating an S3 target endpoint, set <code>DatePartitionTimezone</code>
+     * to convert the current UTC time into a specified time zone. The conversion
+     * occurs when a date partition folder is created and a CDC filename is generated.
+     * The time zone format is Area/Location. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the
+     * following example.</p> <p> <code>s3-settings='{"DatePartitionEnabled": true,
+     * "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH",
+     * "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName":
+     * "dms-nattarat-test"}'</code> </p>
+     */
+    inline const Aws::String& GetDatePartitionTimezone() const{ return m_datePartitionTimezone; }
+
+    /**
+     * <p>When creating an S3 target endpoint, set <code>DatePartitionTimezone</code>
+     * to convert the current UTC time into a specified time zone. The conversion
+     * occurs when a date partition folder is created and a CDC filename is generated.
+     * The time zone format is Area/Location. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the
+     * following example.</p> <p> <code>s3-settings='{"DatePartitionEnabled": true,
+     * "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH",
+     * "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName":
+     * "dms-nattarat-test"}'</code> </p>
+     */
+    inline bool DatePartitionTimezoneHasBeenSet() const { return m_datePartitionTimezoneHasBeenSet; }
+
+    /**
+     * <p>When creating an S3 target endpoint, set <code>DatePartitionTimezone</code>
+     * to convert the current UTC time into a specified time zone. The conversion
+     * occurs when a date partition folder is created and a CDC filename is generated.
+     * The time zone format is Area/Location. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the
+     * following example.</p> <p> <code>s3-settings='{"DatePartitionEnabled": true,
+     * "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH",
+     * "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName":
+     * "dms-nattarat-test"}'</code> </p>
+     */
+    inline void SetDatePartitionTimezone(const Aws::String& value) { m_datePartitionTimezoneHasBeenSet = true; m_datePartitionTimezone = value; }
+
+    /**
+     * <p>When creating an S3 target endpoint, set <code>DatePartitionTimezone</code>
+     * to convert the current UTC time into a specified time zone. The conversion
+     * occurs when a date partition folder is created and a CDC filename is generated.
+     * The time zone format is Area/Location. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the
+     * following example.</p> <p> <code>s3-settings='{"DatePartitionEnabled": true,
+     * "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH",
+     * "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName":
+     * "dms-nattarat-test"}'</code> </p>
+     */
+    inline void SetDatePartitionTimezone(Aws::String&& value) { m_datePartitionTimezoneHasBeenSet = true; m_datePartitionTimezone = std::move(value); }
+
+    /**
+     * <p>When creating an S3 target endpoint, set <code>DatePartitionTimezone</code>
+     * to convert the current UTC time into a specified time zone. The conversion
+     * occurs when a date partition folder is created and a CDC filename is generated.
+     * The time zone format is Area/Location. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the
+     * following example.</p> <p> <code>s3-settings='{"DatePartitionEnabled": true,
+     * "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH",
+     * "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName":
+     * "dms-nattarat-test"}'</code> </p>
+     */
+    inline void SetDatePartitionTimezone(const char* value) { m_datePartitionTimezoneHasBeenSet = true; m_datePartitionTimezone.assign(value); }
+
+    /**
+     * <p>When creating an S3 target endpoint, set <code>DatePartitionTimezone</code>
+     * to convert the current UTC time into a specified time zone. The conversion
+     * occurs when a date partition folder is created and a CDC filename is generated.
+     * The time zone format is Area/Location. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the
+     * following example.</p> <p> <code>s3-settings='{"DatePartitionEnabled": true,
+     * "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH",
+     * "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName":
+     * "dms-nattarat-test"}'</code> </p>
+     */
+    inline S3Settings& WithDatePartitionTimezone(const Aws::String& value) { SetDatePartitionTimezone(value); return *this;}
+
+    /**
+     * <p>When creating an S3 target endpoint, set <code>DatePartitionTimezone</code>
+     * to convert the current UTC time into a specified time zone. The conversion
+     * occurs when a date partition folder is created and a CDC filename is generated.
+     * The time zone format is Area/Location. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the
+     * following example.</p> <p> <code>s3-settings='{"DatePartitionEnabled": true,
+     * "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH",
+     * "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName":
+     * "dms-nattarat-test"}'</code> </p>
+     */
+    inline S3Settings& WithDatePartitionTimezone(Aws::String&& value) { SetDatePartitionTimezone(std::move(value)); return *this;}
+
+    /**
+     * <p>When creating an S3 target endpoint, set <code>DatePartitionTimezone</code>
+     * to convert the current UTC time into a specified time zone. The conversion
+     * occurs when a date partition folder is created and a CDC filename is generated.
+     * The time zone format is Area/Location. Use this parameter when
+     * <code>DatePartitionedEnabled</code> is set to <code>true</code>, as shown in the
+     * following example.</p> <p> <code>s3-settings='{"DatePartitionEnabled": true,
+     * "DatePartitionSequence": "YYYYMMDDHH", "DatePartitionDelimiter": "SLASH",
+     * "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName":
+     * "dms-nattarat-test"}'</code> </p>
+     */
+    inline S3Settings& WithDatePartitionTimezone(const char* value) { SetDatePartitionTimezone(value); return *this;}
+
   private:
 
     Aws::String m_serviceAccessRoleArn;
@@ -2601,6 +2706,9 @@ namespace Model
 
     bool m_rfc4180;
     bool m_rfc4180HasBeenSet;
+
+    Aws::String m_datePartitionTimezone;
+    bool m_datePartitionTimezoneHasBeenSet;
   };
 
 } // namespace Model

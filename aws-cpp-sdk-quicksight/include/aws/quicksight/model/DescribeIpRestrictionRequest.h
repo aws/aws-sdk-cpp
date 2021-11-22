@@ -33,42 +33,42 @@ namespace Model
 
 
     /**
-     * <p>Your AWS account ID.</p>
+     * <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>Your AWS account ID.</p>
+     * <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>Your AWS account ID.</p>
+     * <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>Your AWS account ID.</p>
+     * <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>Your AWS account ID.</p>
+     * <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>Your AWS account ID.</p>
+     * <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
      */
     inline DescribeIpRestrictionRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>Your AWS account ID.</p>
+     * <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
      */
     inline DescribeIpRestrictionRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>Your AWS account ID.</p>
+     * <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
      */
     inline DescribeIpRestrictionRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 

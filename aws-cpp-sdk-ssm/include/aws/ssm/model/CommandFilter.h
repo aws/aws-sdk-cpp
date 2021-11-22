@@ -41,32 +41,44 @@ namespace Model
 
 
     /**
-     * <p>The name of the filter.</p>
+     * <p>The name of the filter.</p>  <p>The <code>ExecutionStage</code> filter
+     * can't be used with the <code>ListCommandInvocations</code> operation, only with
+     * <code>ListCommands</code>.</p> 
      */
     inline const CommandFilterKey& GetKey() const{ return m_key; }
 
     /**
-     * <p>The name of the filter.</p>
+     * <p>The name of the filter.</p>  <p>The <code>ExecutionStage</code> filter
+     * can't be used with the <code>ListCommandInvocations</code> operation, only with
+     * <code>ListCommands</code>.</p> 
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p>The name of the filter.</p>
+     * <p>The name of the filter.</p>  <p>The <code>ExecutionStage</code> filter
+     * can't be used with the <code>ListCommandInvocations</code> operation, only with
+     * <code>ListCommands</code>.</p> 
      */
     inline void SetKey(const CommandFilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>The name of the filter.</p>
+     * <p>The name of the filter.</p>  <p>The <code>ExecutionStage</code> filter
+     * can't be used with the <code>ListCommandInvocations</code> operation, only with
+     * <code>ListCommands</code>.</p> 
      */
     inline void SetKey(CommandFilterKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>The name of the filter.</p>
+     * <p>The name of the filter.</p>  <p>The <code>ExecutionStage</code> filter
+     * can't be used with the <code>ListCommandInvocations</code> operation, only with
+     * <code>ListCommands</code>.</p> 
      */
     inline CommandFilter& WithKey(const CommandFilterKey& value) { SetKey(value); return *this;}
 
     /**
-     * <p>The name of the filter.</p>
+     * <p>The name of the filter.</p>  <p>The <code>ExecutionStage</code> filter
+     * can't be used with the <code>ListCommandInvocations</code> operation, only with
+     * <code>ListCommands</code>.</p> 
      */
     inline CommandFilter& WithKey(CommandFilterKey&& value) { SetKey(std::move(value)); return *this;}
 
@@ -104,11 +116,11 @@ namespace Model
      * command execution results. For example, specify
      * <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM
      * document to perform security patching operations on instances. </p> </li> <li>
-     * <p> <b>ExecutionStage</b>: Specify one of the following values:</p> <ul> <li>
-     * <p> <code>Executing</code>: Returns a list of command executions that are
-     * currently still running.</p> </li> <li> <p> <code>Complete</code>: Returns a
-     * list of command executions that have already completed. </p> </li> </ul> </li>
-     * </ul>
+     * <p> <b>ExecutionStage</b>: Specify one of the following values
+     * (<code>ListCommands</code> operations only):</p> <ul> <li> <p>
+     * <code>Executing</code>: Returns a list of command executions that are currently
+     * still running.</p> </li> <li> <p> <code>Complete</code>: Returns a list of
+     * command executions that have already completed. </p> </li> </ul> </li> </ul>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
@@ -145,11 +157,11 @@ namespace Model
      * command execution results. For example, specify
      * <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM
      * document to perform security patching operations on instances. </p> </li> <li>
-     * <p> <b>ExecutionStage</b>: Specify one of the following values:</p> <ul> <li>
-     * <p> <code>Executing</code>: Returns a list of command executions that are
-     * currently still running.</p> </li> <li> <p> <code>Complete</code>: Returns a
-     * list of command executions that have already completed. </p> </li> </ul> </li>
-     * </ul>
+     * <p> <b>ExecutionStage</b>: Specify one of the following values
+     * (<code>ListCommands</code> operations only):</p> <ul> <li> <p>
+     * <code>Executing</code>: Returns a list of command executions that are currently
+     * still running.</p> </li> <li> <p> <code>Complete</code>: Returns a list of
+     * command executions that have already completed. </p> </li> </ul> </li> </ul>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
@@ -186,11 +198,11 @@ namespace Model
      * command execution results. For example, specify
      * <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM
      * document to perform security patching operations on instances. </p> </li> <li>
-     * <p> <b>ExecutionStage</b>: Specify one of the following values:</p> <ul> <li>
-     * <p> <code>Executing</code>: Returns a list of command executions that are
-     * currently still running.</p> </li> <li> <p> <code>Complete</code>: Returns a
-     * list of command executions that have already completed. </p> </li> </ul> </li>
-     * </ul>
+     * <p> <b>ExecutionStage</b>: Specify one of the following values
+     * (<code>ListCommands</code> operations only):</p> <ul> <li> <p>
+     * <code>Executing</code>: Returns a list of command executions that are currently
+     * still running.</p> </li> <li> <p> <code>Complete</code>: Returns a list of
+     * command executions that have already completed. </p> </li> </ul> </li> </ul>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
@@ -227,11 +239,11 @@ namespace Model
      * command execution results. For example, specify
      * <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM
      * document to perform security patching operations on instances. </p> </li> <li>
-     * <p> <b>ExecutionStage</b>: Specify one of the following values:</p> <ul> <li>
-     * <p> <code>Executing</code>: Returns a list of command executions that are
-     * currently still running.</p> </li> <li> <p> <code>Complete</code>: Returns a
-     * list of command executions that have already completed. </p> </li> </ul> </li>
-     * </ul>
+     * <p> <b>ExecutionStage</b>: Specify one of the following values
+     * (<code>ListCommands</code> operations only):</p> <ul> <li> <p>
+     * <code>Executing</code>: Returns a list of command executions that are currently
+     * still running.</p> </li> <li> <p> <code>Complete</code>: Returns a list of
+     * command executions that have already completed. </p> </li> </ul> </li> </ul>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
@@ -268,11 +280,11 @@ namespace Model
      * command execution results. For example, specify
      * <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM
      * document to perform security patching operations on instances. </p> </li> <li>
-     * <p> <b>ExecutionStage</b>: Specify one of the following values:</p> <ul> <li>
-     * <p> <code>Executing</code>: Returns a list of command executions that are
-     * currently still running.</p> </li> <li> <p> <code>Complete</code>: Returns a
-     * list of command executions that have already completed. </p> </li> </ul> </li>
-     * </ul>
+     * <p> <b>ExecutionStage</b>: Specify one of the following values
+     * (<code>ListCommands</code> operations only):</p> <ul> <li> <p>
+     * <code>Executing</code>: Returns a list of command executions that are currently
+     * still running.</p> </li> <li> <p> <code>Complete</code>: Returns a list of
+     * command executions that have already completed. </p> </li> </ul> </li> </ul>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
@@ -309,11 +321,11 @@ namespace Model
      * command execution results. For example, specify
      * <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM
      * document to perform security patching operations on instances. </p> </li> <li>
-     * <p> <b>ExecutionStage</b>: Specify one of the following values:</p> <ul> <li>
-     * <p> <code>Executing</code>: Returns a list of command executions that are
-     * currently still running.</p> </li> <li> <p> <code>Complete</code>: Returns a
-     * list of command executions that have already completed. </p> </li> </ul> </li>
-     * </ul>
+     * <p> <b>ExecutionStage</b>: Specify one of the following values
+     * (<code>ListCommands</code> operations only):</p> <ul> <li> <p>
+     * <code>Executing</code>: Returns a list of command executions that are currently
+     * still running.</p> </li> <li> <p> <code>Complete</code>: Returns a list of
+     * command executions that have already completed. </p> </li> </ul> </li> </ul>
      */
     inline CommandFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
@@ -350,11 +362,11 @@ namespace Model
      * command execution results. For example, specify
      * <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM
      * document to perform security patching operations on instances. </p> </li> <li>
-     * <p> <b>ExecutionStage</b>: Specify one of the following values:</p> <ul> <li>
-     * <p> <code>Executing</code>: Returns a list of command executions that are
-     * currently still running.</p> </li> <li> <p> <code>Complete</code>: Returns a
-     * list of command executions that have already completed. </p> </li> </ul> </li>
-     * </ul>
+     * <p> <b>ExecutionStage</b>: Specify one of the following values
+     * (<code>ListCommands</code> operations only):</p> <ul> <li> <p>
+     * <code>Executing</code>: Returns a list of command executions that are currently
+     * still running.</p> </li> <li> <p> <code>Complete</code>: Returns a list of
+     * command executions that have already completed. </p> </li> </ul> </li> </ul>
      */
     inline CommandFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
@@ -391,11 +403,11 @@ namespace Model
      * command execution results. For example, specify
      * <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM
      * document to perform security patching operations on instances. </p> </li> <li>
-     * <p> <b>ExecutionStage</b>: Specify one of the following values:</p> <ul> <li>
-     * <p> <code>Executing</code>: Returns a list of command executions that are
-     * currently still running.</p> </li> <li> <p> <code>Complete</code>: Returns a
-     * list of command executions that have already completed. </p> </li> </ul> </li>
-     * </ul>
+     * <p> <b>ExecutionStage</b>: Specify one of the following values
+     * (<code>ListCommands</code> operations only):</p> <ul> <li> <p>
+     * <code>Executing</code>: Returns a list of command executions that are currently
+     * still running.</p> </li> <li> <p> <code>Complete</code>: Returns a list of
+     * command executions that have already completed. </p> </li> </ul> </li> </ul>
      */
     inline CommandFilter& WithValue(const char* value) { SetValue(value); return *this;}
 

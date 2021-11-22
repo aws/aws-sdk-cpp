@@ -24,6 +24,12 @@ namespace FinSpaceData
 {
 namespace Model
 {
+  /**
+   * Response for GetProgrammaticAccessCredentials operation<p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetProgrammaticAccessCredentialsResponse">AWS
+   * API Reference</a></p>
+   */
   class AWS_FINSPACEDATA_API GetProgrammaticAccessCredentialsResult
   {
   public:

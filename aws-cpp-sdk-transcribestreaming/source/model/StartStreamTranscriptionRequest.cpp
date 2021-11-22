@@ -42,6 +42,11 @@ StartStreamTranscriptionRequest::StartStreamTranscriptionRequest() :
     m_contentRedactionTypeHasBeenSet(false),
     m_piiEntityTypesHasBeenSet(false),
     m_languageModelNameHasBeenSet(false),
+    m_identifyLanguage(false),
+    m_identifyLanguageHasBeenSet(false),
+    m_languageOptionsHasBeenSet(false),
+    m_preferredLanguage(LanguageCode::NOT_SET),
+    m_preferredLanguageHasBeenSet(false),
     m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
 }
@@ -155,6 +160,25 @@ Aws::Http::HeaderValueCollection StartStreamTranscriptionRequest::GetRequestSpec
     ss << m_languageModelName;
     headers.emplace("x-amzn-transcribe-language-model-name",  ss.str());
     ss.str("");
+  }
+
+  if(m_identifyLanguageHasBeenSet)
+  {
+    ss << std::boolalpha << m_identifyLanguage;
+    headers.emplace("x-amzn-transcribe-identify-language", ss.str());
+    ss.str("");
+  }
+
+  if(m_languageOptionsHasBeenSet)
+  {
+    ss << m_languageOptions;
+    headers.emplace("x-amzn-transcribe-language-options",  ss.str());
+    ss.str("");
+  }
+
+  if(m_preferredLanguageHasBeenSet)
+  {
+    headers.emplace("x-amzn-transcribe-preferred-language", LanguageCodeMapper::GetNameForLanguageCode(m_preferredLanguage));
   }
 
   return headers;

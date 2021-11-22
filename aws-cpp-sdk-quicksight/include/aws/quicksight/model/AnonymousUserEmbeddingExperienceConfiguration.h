@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>The type of experience you want to embed. For anonymous users, you can embed
-   * an Amazon QuickSight dashboard.</p><p><h3>See Also:</h3>   <a
+   * Amazon QuickSight dashboards.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AnonymousUserEmbeddingExperienceConfiguration">AWS
    * API Reference</a></p>
    */
@@ -39,38 +39,38 @@ namespace Model
 
 
     /**
-     * <p>The type of embedding experience. In this case, an Amazon QuickSight
-     * dashboard.</p>
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * dashboards.</p>
      */
     inline const AnonymousUserDashboardEmbeddingConfiguration& GetDashboard() const{ return m_dashboard; }
 
     /**
-     * <p>The type of embedding experience. In this case, an Amazon QuickSight
-     * dashboard.</p>
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * dashboards.</p>
      */
     inline bool DashboardHasBeenSet() const { return m_dashboardHasBeenSet; }
 
     /**
-     * <p>The type of embedding experience. In this case, an Amazon QuickSight
-     * dashboard.</p>
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * dashboards.</p>
      */
     inline void SetDashboard(const AnonymousUserDashboardEmbeddingConfiguration& value) { m_dashboardHasBeenSet = true; m_dashboard = value; }
 
     /**
-     * <p>The type of embedding experience. In this case, an Amazon QuickSight
-     * dashboard.</p>
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * dashboards.</p>
      */
     inline void SetDashboard(AnonymousUserDashboardEmbeddingConfiguration&& value) { m_dashboardHasBeenSet = true; m_dashboard = std::move(value); }
 
     /**
-     * <p>The type of embedding experience. In this case, an Amazon QuickSight
-     * dashboard.</p>
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * dashboards.</p>
      */
     inline AnonymousUserEmbeddingExperienceConfiguration& WithDashboard(const AnonymousUserDashboardEmbeddingConfiguration& value) { SetDashboard(value); return *this;}
 
     /**
-     * <p>The type of embedding experience. In this case, an Amazon QuickSight
-     * dashboard.</p>
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * dashboards.</p>
      */
     inline AnonymousUserEmbeddingExperienceConfiguration& WithDashboard(AnonymousUserDashboardEmbeddingConfiguration&& value) { SetDashboard(std::move(value)); return *this;}
 

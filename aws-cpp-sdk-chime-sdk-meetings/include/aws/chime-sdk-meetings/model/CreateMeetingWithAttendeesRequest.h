@@ -7,6 +7,7 @@
 #include <aws/chime-sdk-meetings/ChimeSDKMeetings_EXPORTS.h>
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/chime-sdk-meetings/model/MeetingFeaturesConfiguration.h>
 #include <aws/chime-sdk-meetings/model/NotificationsConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/chime-sdk-meetings/model/CreateAttendeeRequestItem.h>
@@ -209,6 +210,43 @@ namespace Model
 
 
     /**
+     * <p>Lists the audio and video features enabled for a meeting, such as echo
+     * reduction.</p>
+     */
+    inline const MeetingFeaturesConfiguration& GetMeetingFeatures() const{ return m_meetingFeatures; }
+
+    /**
+     * <p>Lists the audio and video features enabled for a meeting, such as echo
+     * reduction.</p>
+     */
+    inline bool MeetingFeaturesHasBeenSet() const { return m_meetingFeaturesHasBeenSet; }
+
+    /**
+     * <p>Lists the audio and video features enabled for a meeting, such as echo
+     * reduction.</p>
+     */
+    inline void SetMeetingFeatures(const MeetingFeaturesConfiguration& value) { m_meetingFeaturesHasBeenSet = true; m_meetingFeatures = value; }
+
+    /**
+     * <p>Lists the audio and video features enabled for a meeting, such as echo
+     * reduction.</p>
+     */
+    inline void SetMeetingFeatures(MeetingFeaturesConfiguration&& value) { m_meetingFeaturesHasBeenSet = true; m_meetingFeatures = std::move(value); }
+
+    /**
+     * <p>Lists the audio and video features enabled for a meeting, such as echo
+     * reduction.</p>
+     */
+    inline CreateMeetingWithAttendeesRequest& WithMeetingFeatures(const MeetingFeaturesConfiguration& value) { SetMeetingFeatures(value); return *this;}
+
+    /**
+     * <p>Lists the audio and video features enabled for a meeting, such as echo
+     * reduction.</p>
+     */
+    inline CreateMeetingWithAttendeesRequest& WithMeetingFeatures(MeetingFeaturesConfiguration&& value) { SetMeetingFeatures(std::move(value)); return *this;}
+
+
+    /**
      * <p>The configuration for resource targets to receive notifications when meeting
      * and attendee events occur.</p>
      */
@@ -298,6 +336,9 @@ namespace Model
 
     Aws::String m_externalMeetingId;
     bool m_externalMeetingIdHasBeenSet;
+
+    MeetingFeaturesConfiguration m_meetingFeatures;
+    bool m_meetingFeaturesHasBeenSet;
 
     NotificationsConfiguration m_notificationsConfiguration;
     bool m_notificationsConfigurationHasBeenSet;

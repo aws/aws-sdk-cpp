@@ -13,6 +13,8 @@ using namespace Aws::Utils;
 ImportStacksToStackSetRequest::ImportStacksToStackSetRequest() : 
     m_stackSetNameHasBeenSet(false),
     m_stackIdsHasBeenSet(false),
+    m_stackIdsUrlHasBeenSet(false),
+    m_organizationalUnitIdsHasBeenSet(false),
     m_operationPreferencesHasBeenSet(false),
     m_operationId(Aws::Utils::UUID::RandomUUID()),
     m_operationIdHasBeenSet(true),
@@ -38,6 +40,22 @@ Aws::String ImportStacksToStackSetRequest::SerializePayload() const
       ss << "StackIds.member." << stackIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       stackIdsCount++;
+    }
+  }
+
+  if(m_stackIdsUrlHasBeenSet)
+  {
+    ss << "StackIdsUrl=" << StringUtils::URLEncode(m_stackIdsUrl.c_str()) << "&";
+  }
+
+  if(m_organizationalUnitIdsHasBeenSet)
+  {
+    unsigned organizationalUnitIdsCount = 1;
+    for(auto& item : m_organizationalUnitIds)
+    {
+      ss << "OrganizationalUnitIds.member." << organizationalUnitIdsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      organizationalUnitIdsCount++;
     }
   }
 

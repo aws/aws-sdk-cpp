@@ -659,49 +659,57 @@ namespace Model
 
 
     /**
-     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * <p>A set of one or more definitions of a <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
      * </code>.</p>
      */
     inline const Aws::Vector<ColumnLevelPermissionRule>& GetColumnLevelPermissionRules() const{ return m_columnLevelPermissionRules; }
 
     /**
-     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * <p>A set of one or more definitions of a <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
      * </code>.</p>
      */
     inline bool ColumnLevelPermissionRulesHasBeenSet() const { return m_columnLevelPermissionRulesHasBeenSet; }
 
     /**
-     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * <p>A set of one or more definitions of a <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
      * </code>.</p>
      */
     inline void SetColumnLevelPermissionRules(const Aws::Vector<ColumnLevelPermissionRule>& value) { m_columnLevelPermissionRulesHasBeenSet = true; m_columnLevelPermissionRules = value; }
 
     /**
-     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * <p>A set of one or more definitions of a <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
      * </code>.</p>
      */
     inline void SetColumnLevelPermissionRules(Aws::Vector<ColumnLevelPermissionRule>&& value) { m_columnLevelPermissionRulesHasBeenSet = true; m_columnLevelPermissionRules = std::move(value); }
 
     /**
-     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * <p>A set of one or more definitions of a <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
      * </code>.</p>
      */
     inline DataSet& WithColumnLevelPermissionRules(const Aws::Vector<ColumnLevelPermissionRule>& value) { SetColumnLevelPermissionRules(value); return *this;}
 
     /**
-     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * <p>A set of one or more definitions of a <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
      * </code>.</p>
      */
     inline DataSet& WithColumnLevelPermissionRules(Aws::Vector<ColumnLevelPermissionRule>&& value) { SetColumnLevelPermissionRules(std::move(value)); return *this;}
 
     /**
-     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * <p>A set of one or more definitions of a <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
      * </code>.</p>
      */
     inline DataSet& AddColumnLevelPermissionRules(const ColumnLevelPermissionRule& value) { m_columnLevelPermissionRulesHasBeenSet = true; m_columnLevelPermissionRules.push_back(value); return *this; }
 
     /**
-     * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
+     * <p>A set of one or more definitions of a <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a>
      * </code>.</p>
      */
     inline DataSet& AddColumnLevelPermissionRules(ColumnLevelPermissionRule&& value) { m_columnLevelPermissionRulesHasBeenSet = true; m_columnLevelPermissionRules.push_back(std::move(value)); return *this; }

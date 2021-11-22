@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>A name for the IAMpolicy assignment.</p>
+     * <p>A name for the IAM policy assignment.</p>
      */
     inline const Aws::String& GetAssignmentName() const{ return m_assignmentName; }
 
     /**
-     * <p>A name for the IAMpolicy assignment.</p>
+     * <p>A name for the IAM policy assignment.</p>
      */
     inline bool AssignmentNameHasBeenSet() const { return m_assignmentNameHasBeenSet; }
 
     /**
-     * <p>A name for the IAMpolicy assignment.</p>
+     * <p>A name for the IAM policy assignment.</p>
      */
     inline void SetAssignmentName(const Aws::String& value) { m_assignmentNameHasBeenSet = true; m_assignmentName = value; }
 
     /**
-     * <p>A name for the IAMpolicy assignment.</p>
+     * <p>A name for the IAM policy assignment.</p>
      */
     inline void SetAssignmentName(Aws::String&& value) { m_assignmentNameHasBeenSet = true; m_assignmentName = std::move(value); }
 
     /**
-     * <p>A name for the IAMpolicy assignment.</p>
+     * <p>A name for the IAM policy assignment.</p>
      */
     inline void SetAssignmentName(const char* value) { m_assignmentNameHasBeenSet = true; m_assignmentName.assign(value); }
 
     /**
-     * <p>A name for the IAMpolicy assignment.</p>
+     * <p>A name for the IAM policy assignment.</p>
      */
     inline ActiveIAMPolicyAssignment& WithAssignmentName(const Aws::String& value) { SetAssignmentName(value); return *this;}
 
     /**
-     * <p>A name for the IAMpolicy assignment.</p>
+     * <p>A name for the IAM policy assignment.</p>
      */
     inline ActiveIAMPolicyAssignment& WithAssignmentName(Aws::String&& value) { SetAssignmentName(std::move(value)); return *this;}
 
     /**
-     * <p>A name for the IAMpolicy assignment.</p>
+     * <p>A name for the IAM policy assignment.</p>
      */
     inline ActiveIAMPolicyAssignment& WithAssignmentName(const char* value) { SetAssignmentName(value); return *this;}
 

@@ -82,42 +82,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the initial contact.</p>
+     * <p>The identifier of the contact.</p>
      */
     inline const Aws::String& GetContactId() const{ return m_contactId; }
 
     /**
-     * <p>The identifier of the initial contact.</p>
+     * <p>The identifier of the contact.</p>
      */
     inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the initial contact.</p>
+     * <p>The identifier of the contact.</p>
      */
     inline void SetContactId(const Aws::String& value) { m_contactIdHasBeenSet = true; m_contactId = value; }
 
     /**
-     * <p>The identifier of the initial contact.</p>
+     * <p>The identifier of the contact.</p>
      */
     inline void SetContactId(Aws::String&& value) { m_contactIdHasBeenSet = true; m_contactId = std::move(value); }
 
     /**
-     * <p>The identifier of the initial contact.</p>
+     * <p>The identifier of the contact.</p>
      */
     inline void SetContactId(const char* value) { m_contactIdHasBeenSet = true; m_contactId.assign(value); }
 
     /**
-     * <p>The identifier of the initial contact.</p>
+     * <p>The identifier of the contact.</p>
      */
     inline DescribeContactRequest& WithContactId(const Aws::String& value) { SetContactId(value); return *this;}
 
     /**
-     * <p>The identifier of the initial contact.</p>
+     * <p>The identifier of the contact.</p>
      */
     inline DescribeContactRequest& WithContactId(Aws::String&& value) { SetContactId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the initial contact.</p>
+     * <p>The identifier of the contact.</p>
      */
     inline DescribeContactRequest& WithContactId(const char* value) { SetContactId(value); return *this;}
 

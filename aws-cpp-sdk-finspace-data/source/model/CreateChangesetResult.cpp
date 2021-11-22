@@ -28,9 +28,15 @@ CreateChangesetResult::CreateChangesetResult(const Aws::AmazonWebServiceResult<J
 CreateChangesetResult& CreateChangesetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("changeset"))
+  if(jsonValue.ValueExists("datasetId"))
   {
-    m_changeset = jsonValue.GetObject("changeset");
+    m_datasetId = jsonValue.GetString("datasetId");
+
+  }
+
+  if(jsonValue.ValueExists("changesetId"))
+  {
+    m_changesetId = jsonValue.GetString("changesetId");
 
   }
 

@@ -44,9 +44,9 @@ namespace Model
      * associated with a data source or dataset. (This is common.)</p> </li> <li>
      * <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an
      * analysis, dashboard, template, or theme. (This is common.)</p> </li> <li> <p>The
-     * ARN of an Amazon Web Services account root: This is an IAMARN rather than a
-     * Amazon QuickSight ARN. Use this option only to share resources (templates)
-     * across Amazon Web Services accounts. (This is less common.) </p> </li> </ul>
+     * ARN of an Amazon Web Services account root: This is an IAM ARN rather than a
+     * QuickSight ARN. Use this option only to share resources (templates) across
+     * Amazon Web Services accounts. (This is less common.) </p> </li> </ul>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
 
@@ -56,9 +56,9 @@ namespace Model
      * associated with a data source or dataset. (This is common.)</p> </li> <li>
      * <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an
      * analysis, dashboard, template, or theme. (This is common.)</p> </li> <li> <p>The
-     * ARN of an Amazon Web Services account root: This is an IAMARN rather than a
-     * Amazon QuickSight ARN. Use this option only to share resources (templates)
-     * across Amazon Web Services accounts. (This is less common.) </p> </li> </ul>
+     * ARN of an Amazon Web Services account root: This is an IAM ARN rather than a
+     * QuickSight ARN. Use this option only to share resources (templates) across
+     * Amazon Web Services accounts. (This is less common.) </p> </li> </ul>
      */
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
 
@@ -68,9 +68,9 @@ namespace Model
      * associated with a data source or dataset. (This is common.)</p> </li> <li>
      * <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an
      * analysis, dashboard, template, or theme. (This is common.)</p> </li> <li> <p>The
-     * ARN of an Amazon Web Services account root: This is an IAMARN rather than a
-     * Amazon QuickSight ARN. Use this option only to share resources (templates)
-     * across Amazon Web Services accounts. (This is less common.) </p> </li> </ul>
+     * ARN of an Amazon Web Services account root: This is an IAM ARN rather than a
+     * QuickSight ARN. Use this option only to share resources (templates) across
+     * Amazon Web Services accounts. (This is less common.) </p> </li> </ul>
      */
     inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
 
@@ -80,9 +80,9 @@ namespace Model
      * associated with a data source or dataset. (This is common.)</p> </li> <li>
      * <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an
      * analysis, dashboard, template, or theme. (This is common.)</p> </li> <li> <p>The
-     * ARN of an Amazon Web Services account root: This is an IAMARN rather than a
-     * Amazon QuickSight ARN. Use this option only to share resources (templates)
-     * across Amazon Web Services accounts. (This is less common.) </p> </li> </ul>
+     * ARN of an Amazon Web Services account root: This is an IAM ARN rather than a
+     * QuickSight ARN. Use this option only to share resources (templates) across
+     * Amazon Web Services accounts. (This is less common.) </p> </li> </ul>
      */
     inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
 
@@ -92,9 +92,9 @@ namespace Model
      * associated with a data source or dataset. (This is common.)</p> </li> <li>
      * <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an
      * analysis, dashboard, template, or theme. (This is common.)</p> </li> <li> <p>The
-     * ARN of an Amazon Web Services account root: This is an IAMARN rather than a
-     * Amazon QuickSight ARN. Use this option only to share resources (templates)
-     * across Amazon Web Services accounts. (This is less common.) </p> </li> </ul>
+     * ARN of an Amazon Web Services account root: This is an IAM ARN rather than a
+     * QuickSight ARN. Use this option only to share resources (templates) across
+     * Amazon Web Services accounts. (This is less common.) </p> </li> </ul>
      */
     inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
 
@@ -104,9 +104,9 @@ namespace Model
      * associated with a data source or dataset. (This is common.)</p> </li> <li>
      * <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an
      * analysis, dashboard, template, or theme. (This is common.)</p> </li> <li> <p>The
-     * ARN of an Amazon Web Services account root: This is an IAMARN rather than a
-     * Amazon QuickSight ARN. Use this option only to share resources (templates)
-     * across Amazon Web Services accounts. (This is less common.) </p> </li> </ul>
+     * ARN of an Amazon Web Services account root: This is an IAM ARN rather than a
+     * QuickSight ARN. Use this option only to share resources (templates) across
+     * Amazon Web Services accounts. (This is less common.) </p> </li> </ul>
      */
     inline ResourcePermission& WithPrincipal(const Aws::String& value) { SetPrincipal(value); return *this;}
 
@@ -116,9 +116,9 @@ namespace Model
      * associated with a data source or dataset. (This is common.)</p> </li> <li>
      * <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an
      * analysis, dashboard, template, or theme. (This is common.)</p> </li> <li> <p>The
-     * ARN of an Amazon Web Services account root: This is an IAMARN rather than a
-     * Amazon QuickSight ARN. Use this option only to share resources (templates)
-     * across Amazon Web Services accounts. (This is less common.) </p> </li> </ul>
+     * ARN of an Amazon Web Services account root: This is an IAM ARN rather than a
+     * QuickSight ARN. Use this option only to share resources (templates) across
+     * Amazon Web Services accounts. (This is less common.) </p> </li> </ul>
      */
     inline ResourcePermission& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
 
@@ -128,55 +128,55 @@ namespace Model
      * associated with a data source or dataset. (This is common.)</p> </li> <li>
      * <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an
      * analysis, dashboard, template, or theme. (This is common.)</p> </li> <li> <p>The
-     * ARN of an Amazon Web Services account root: This is an IAMARN rather than a
-     * Amazon QuickSight ARN. Use this option only to share resources (templates)
-     * across Amazon Web Services accounts. (This is less common.) </p> </li> </ul>
+     * ARN of an Amazon Web Services account root: This is an IAM ARN rather than a
+     * QuickSight ARN. Use this option only to share resources (templates) across
+     * Amazon Web Services accounts. (This is less common.) </p> </li> </ul>
      */
     inline ResourcePermission& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
 
 
     /**
-     * <p>The IAMaction to grant or revoke permissions on.</p>
+     * <p>The IAM action to grant or revoke permissions on.</p>
      */
     inline const Aws::Vector<Aws::String>& GetActions() const{ return m_actions; }
 
     /**
-     * <p>The IAMaction to grant or revoke permissions on.</p>
+     * <p>The IAM action to grant or revoke permissions on.</p>
      */
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
 
     /**
-     * <p>The IAMaction to grant or revoke permissions on.</p>
+     * <p>The IAM action to grant or revoke permissions on.</p>
      */
     inline void SetActions(const Aws::Vector<Aws::String>& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
     /**
-     * <p>The IAMaction to grant or revoke permissions on.</p>
+     * <p>The IAM action to grant or revoke permissions on.</p>
      */
     inline void SetActions(Aws::Vector<Aws::String>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
 
     /**
-     * <p>The IAMaction to grant or revoke permissions on.</p>
+     * <p>The IAM action to grant or revoke permissions on.</p>
      */
     inline ResourcePermission& WithActions(const Aws::Vector<Aws::String>& value) { SetActions(value); return *this;}
 
     /**
-     * <p>The IAMaction to grant or revoke permissions on.</p>
+     * <p>The IAM action to grant or revoke permissions on.</p>
      */
     inline ResourcePermission& WithActions(Aws::Vector<Aws::String>&& value) { SetActions(std::move(value)); return *this;}
 
     /**
-     * <p>The IAMaction to grant or revoke permissions on.</p>
+     * <p>The IAM action to grant or revoke permissions on.</p>
      */
     inline ResourcePermission& AddActions(const Aws::String& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 
     /**
-     * <p>The IAMaction to grant or revoke permissions on.</p>
+     * <p>The IAM action to grant or revoke permissions on.</p>
      */
     inline ResourcePermission& AddActions(Aws::String&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IAMaction to grant or revoke permissions on.</p>
+     * <p>The IAM action to grant or revoke permissions on.</p>
      */
     inline ResourcePermission& AddActions(const char* value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 

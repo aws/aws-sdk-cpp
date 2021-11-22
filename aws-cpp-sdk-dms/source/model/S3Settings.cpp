@@ -81,7 +81,8 @@ S3Settings::S3Settings() :
     m_maxFileSize(0),
     m_maxFileSizeHasBeenSet(false),
     m_rfc4180(false),
-    m_rfc4180HasBeenSet(false)
+    m_rfc4180HasBeenSet(false),
+    m_datePartitionTimezoneHasBeenSet(false)
 {
 }
 
@@ -148,7 +149,8 @@ S3Settings::S3Settings(JsonView jsonValue) :
     m_maxFileSize(0),
     m_maxFileSizeHasBeenSet(false),
     m_rfc4180(false),
-    m_rfc4180HasBeenSet(false)
+    m_rfc4180HasBeenSet(false),
+    m_datePartitionTimezoneHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -414,6 +416,13 @@ S3Settings& S3Settings::operator =(JsonView jsonValue)
     m_rfc4180HasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DatePartitionTimezone"))
+  {
+    m_datePartitionTimezone = jsonValue.GetString("DatePartitionTimezone");
+
+    m_datePartitionTimezoneHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -632,6 +641,12 @@ JsonValue S3Settings::Jsonize() const
   if(m_rfc4180HasBeenSet)
   {
    payload.WithBool("Rfc4180", m_rfc4180);
+
+  }
+
+  if(m_datePartitionTimezoneHasBeenSet)
+  {
+   payload.WithString("DatePartitionTimezone", m_datePartitionTimezone);
 
   }
 

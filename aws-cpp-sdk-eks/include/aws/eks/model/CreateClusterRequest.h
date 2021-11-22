@@ -203,86 +203,86 @@ namespace Model
 
 
     /**
-     * <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC
-     * resources have specific requirements to work properly with Kubernetes. For more
-     * information, see <a
+     * <p>The VPC configuration that's used by the cluster control plane. Amazon EKS
+     * VPC resources have specific requirements to work properly with Kubernetes. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
      * VPC Considerations</a> and <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
-     * specify at least two subnets. You can specify up to five security groups, but we
-     * recommend that you use a dedicated security group for your cluster control
-     * plane.</p>
+     * specify at least two subnets. You can specify up to five security groups.
+     * However, we recommend that you use a dedicated security group for your cluster
+     * control plane.</p>
      */
     inline const VpcConfigRequest& GetResourcesVpcConfig() const{ return m_resourcesVpcConfig; }
 
     /**
-     * <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC
-     * resources have specific requirements to work properly with Kubernetes. For more
-     * information, see <a
+     * <p>The VPC configuration that's used by the cluster control plane. Amazon EKS
+     * VPC resources have specific requirements to work properly with Kubernetes. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
      * VPC Considerations</a> and <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
-     * specify at least two subnets. You can specify up to five security groups, but we
-     * recommend that you use a dedicated security group for your cluster control
-     * plane.</p>
+     * specify at least two subnets. You can specify up to five security groups.
+     * However, we recommend that you use a dedicated security group for your cluster
+     * control plane.</p>
      */
     inline bool ResourcesVpcConfigHasBeenSet() const { return m_resourcesVpcConfigHasBeenSet; }
 
     /**
-     * <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC
-     * resources have specific requirements to work properly with Kubernetes. For more
-     * information, see <a
+     * <p>The VPC configuration that's used by the cluster control plane. Amazon EKS
+     * VPC resources have specific requirements to work properly with Kubernetes. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
      * VPC Considerations</a> and <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
-     * specify at least two subnets. You can specify up to five security groups, but we
-     * recommend that you use a dedicated security group for your cluster control
-     * plane.</p>
+     * specify at least two subnets. You can specify up to five security groups.
+     * However, we recommend that you use a dedicated security group for your cluster
+     * control plane.</p>
      */
     inline void SetResourcesVpcConfig(const VpcConfigRequest& value) { m_resourcesVpcConfigHasBeenSet = true; m_resourcesVpcConfig = value; }
 
     /**
-     * <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC
-     * resources have specific requirements to work properly with Kubernetes. For more
-     * information, see <a
+     * <p>The VPC configuration that's used by the cluster control plane. Amazon EKS
+     * VPC resources have specific requirements to work properly with Kubernetes. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
      * VPC Considerations</a> and <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
-     * specify at least two subnets. You can specify up to five security groups, but we
-     * recommend that you use a dedicated security group for your cluster control
-     * plane.</p>
+     * specify at least two subnets. You can specify up to five security groups.
+     * However, we recommend that you use a dedicated security group for your cluster
+     * control plane.</p>
      */
     inline void SetResourcesVpcConfig(VpcConfigRequest&& value) { m_resourcesVpcConfigHasBeenSet = true; m_resourcesVpcConfig = std::move(value); }
 
     /**
-     * <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC
-     * resources have specific requirements to work properly with Kubernetes. For more
-     * information, see <a
+     * <p>The VPC configuration that's used by the cluster control plane. Amazon EKS
+     * VPC resources have specific requirements to work properly with Kubernetes. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
      * VPC Considerations</a> and <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
-     * specify at least two subnets. You can specify up to five security groups, but we
-     * recommend that you use a dedicated security group for your cluster control
-     * plane.</p>
+     * specify at least two subnets. You can specify up to five security groups.
+     * However, we recommend that you use a dedicated security group for your cluster
+     * control plane.</p>
      */
     inline CreateClusterRequest& WithResourcesVpcConfig(const VpcConfigRequest& value) { SetResourcesVpcConfig(value); return *this;}
 
     /**
-     * <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC
-     * resources have specific requirements to work properly with Kubernetes. For more
-     * information, see <a
+     * <p>The VPC configuration that's used by the cluster control plane. Amazon EKS
+     * VPC resources have specific requirements to work properly with Kubernetes. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
      * VPC Considerations</a> and <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
-     * specify at least two subnets. You can specify up to five security groups, but we
-     * recommend that you use a dedicated security group for your cluster control
-     * plane.</p>
+     * specify at least two subnets. You can specify up to five security groups.
+     * However, we recommend that you use a dedicated security group for your cluster
+     * control plane.</p>
      */
     inline CreateClusterRequest& WithResourcesVpcConfig(VpcConfigRequest&& value) { SetResourcesVpcConfig(std::move(value)); return *this;}
 
@@ -448,92 +448,92 @@ namespace Model
 
     /**
      * <p>The metadata to apply to the cluster to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define.</p>
+     * organization. Each tag consists of a key and an optional value. You define
+     * both.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The metadata to apply to the cluster to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define.</p>
+     * organization. Each tag consists of a key and an optional value. You define
+     * both.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The metadata to apply to the cluster to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define.</p>
+     * organization. Each tag consists of a key and an optional value. You define
+     * both.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The metadata to apply to the cluster to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define.</p>
+     * organization. Each tag consists of a key and an optional value. You define
+     * both.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The metadata to apply to the cluster to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define.</p>
+     * organization. Each tag consists of a key and an optional value. You define
+     * both.</p>
      */
     inline CreateClusterRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The metadata to apply to the cluster to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define.</p>
+     * organization. Each tag consists of a key and an optional value. You define
+     * both.</p>
      */
     inline CreateClusterRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The metadata to apply to the cluster to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define.</p>
+     * organization. Each tag consists of a key and an optional value. You define
+     * both.</p>
      */
     inline CreateClusterRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>The metadata to apply to the cluster to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define.</p>
+     * organization. Each tag consists of a key and an optional value. You define
+     * both.</p>
      */
     inline CreateClusterRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The metadata to apply to the cluster to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define.</p>
+     * organization. Each tag consists of a key and an optional value. You define
+     * both.</p>
      */
     inline CreateClusterRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The metadata to apply to the cluster to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define.</p>
+     * organization. Each tag consists of a key and an optional value. You define
+     * both.</p>
      */
     inline CreateClusterRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The metadata to apply to the cluster to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define.</p>
+     * organization. Each tag consists of a key and an optional value. You define
+     * both.</p>
      */
     inline CreateClusterRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The metadata to apply to the cluster to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define.</p>
+     * organization. Each tag consists of a key and an optional value. You define
+     * both.</p>
      */
     inline CreateClusterRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The metadata to apply to the cluster to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define.</p>
+     * organization. Each tag consists of a key and an optional value. You define
+     * both.</p>
      */
     inline CreateClusterRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

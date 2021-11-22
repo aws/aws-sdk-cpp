@@ -38,7 +38,7 @@ namespace Model
      * store data content when working with FinSpace Notebooks that run on SageMaker
      * studio.</p> </li> <li> <p> <code>INGESTION</code> - Use the Amazon S3 location
      * as a staging location to copy your data content and then use the location with
-     * the changeset creation operation.</p> </li> </ul>
+     * the Changeset creation operation.</p> </li> </ul>
      */
     inline const LocationType& GetLocationType() const{ return m_locationType; }
 
@@ -48,7 +48,7 @@ namespace Model
      * store data content when working with FinSpace Notebooks that run on SageMaker
      * studio.</p> </li> <li> <p> <code>INGESTION</code> - Use the Amazon S3 location
      * as a staging location to copy your data content and then use the location with
-     * the changeset creation operation.</p> </li> </ul>
+     * the Changeset creation operation.</p> </li> </ul>
      */
     inline bool LocationTypeHasBeenSet() const { return m_locationTypeHasBeenSet; }
 
@@ -58,7 +58,7 @@ namespace Model
      * store data content when working with FinSpace Notebooks that run on SageMaker
      * studio.</p> </li> <li> <p> <code>INGESTION</code> - Use the Amazon S3 location
      * as a staging location to copy your data content and then use the location with
-     * the changeset creation operation.</p> </li> </ul>
+     * the Changeset creation operation.</p> </li> </ul>
      */
     inline void SetLocationType(const LocationType& value) { m_locationTypeHasBeenSet = true; m_locationType = value; }
 
@@ -68,7 +68,7 @@ namespace Model
      * store data content when working with FinSpace Notebooks that run on SageMaker
      * studio.</p> </li> <li> <p> <code>INGESTION</code> - Use the Amazon S3 location
      * as a staging location to copy your data content and then use the location with
-     * the changeset creation operation.</p> </li> </ul>
+     * the Changeset creation operation.</p> </li> </ul>
      */
     inline void SetLocationType(LocationType&& value) { m_locationTypeHasBeenSet = true; m_locationType = std::move(value); }
 
@@ -78,7 +78,7 @@ namespace Model
      * store data content when working with FinSpace Notebooks that run on SageMaker
      * studio.</p> </li> <li> <p> <code>INGESTION</code> - Use the Amazon S3 location
      * as a staging location to copy your data content and then use the location with
-     * the changeset creation operation.</p> </li> </ul>
+     * the Changeset creation operation.</p> </li> </ul>
      */
     inline GetWorkingLocationRequest& WithLocationType(const LocationType& value) { SetLocationType(value); return *this;}
 
@@ -88,7 +88,7 @@ namespace Model
      * store data content when working with FinSpace Notebooks that run on SageMaker
      * studio.</p> </li> <li> <p> <code>INGESTION</code> - Use the Amazon S3 location
      * as a staging location to copy your data content and then use the location with
-     * the changeset creation operation.</p> </li> </ul>
+     * the Changeset creation operation.</p> </li> </ul>
      */
     inline GetWorkingLocationRequest& WithLocationType(LocationType&& value) { SetLocationType(std::move(value)); return *this;}
 

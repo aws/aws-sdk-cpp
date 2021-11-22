@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Set short term API credentials.</p><p><h3>See Also:</h3>   <a
+   * <p>Short term API credentials.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/Credentials">AWS
    * API Reference</a></p>
    */

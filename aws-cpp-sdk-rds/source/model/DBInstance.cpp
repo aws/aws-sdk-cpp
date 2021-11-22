@@ -115,7 +115,8 @@ DBInstance::DBInstance() :
     m_automationMode(AutomationMode::NOT_SET),
     m_automationModeHasBeenSet(false),
     m_resumeFullAutomationModeTimeHasBeenSet(false),
-    m_customIamInstanceProfileHasBeenSet(false)
+    m_customIamInstanceProfileHasBeenSet(false),
+    m_backupTargetHasBeenSet(false)
 {
 }
 
@@ -214,7 +215,8 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_automationMode(AutomationMode::NOT_SET),
     m_automationModeHasBeenSet(false),
     m_resumeFullAutomationModeTimeHasBeenSet(false),
-    m_customIamInstanceProfileHasBeenSet(false)
+    m_customIamInstanceProfileHasBeenSet(false),
+    m_backupTargetHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -741,6 +743,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_customIamInstanceProfile = Aws::Utils::Xml::DecodeEscapedXmlText(customIamInstanceProfileNode.GetText());
       m_customIamInstanceProfileHasBeenSet = true;
     }
+    XmlNode backupTargetNode = resultNode.FirstChild("BackupTarget");
+    if(!backupTargetNode.IsNull())
+    {
+      m_backupTarget = Aws::Utils::Xml::DecodeEscapedXmlText(backupTargetNode.GetText());
+      m_backupTargetHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1193,6 +1201,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".CustomIamInstanceProfile=" << StringUtils::URLEncode(m_customIamInstanceProfile.c_str()) << "&";
   }
 
+  if(m_backupTargetHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".BackupTarget=" << StringUtils::URLEncode(m_backupTarget.c_str()) << "&";
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1568,6 +1581,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_customIamInstanceProfileHasBeenSet)
   {
       oStream << location << ".CustomIamInstanceProfile=" << StringUtils::URLEncode(m_customIamInstanceProfile.c_str()) << "&";
+  }
+  if(m_backupTargetHasBeenSet)
+  {
+      oStream << location << ".BackupTarget=" << StringUtils::URLEncode(m_backupTarget.c_str()) << "&";
   }
 }
 

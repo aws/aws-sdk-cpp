@@ -26,7 +26,9 @@ UpdateElasticsearchDomainConfigRequest::UpdateElasticsearchDomainConfigRequest()
     m_advancedSecurityOptionsHasBeenSet(false),
     m_nodeToNodeEncryptionOptionsHasBeenSet(false),
     m_encryptionAtRestOptionsHasBeenSet(false),
-    m_autoTuneOptionsHasBeenSet(false)
+    m_autoTuneOptionsHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -119,6 +121,12 @@ Aws::String UpdateElasticsearchDomainConfigRequest::SerializePayload() const
   if(m_autoTuneOptionsHasBeenSet)
   {
    payload.WithObject("AutoTuneOptions", m_autoTuneOptions.Jsonize());
+
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+   payload.WithBool("DryRun", m_dryRun);
 
   }
 

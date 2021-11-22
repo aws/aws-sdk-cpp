@@ -165,42 +165,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the IAMpolicy.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
      */
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the IAMpolicy.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
      */
     inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the IAMpolicy.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
      */
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the IAMpolicy.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
      */
     inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the IAMpolicy.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
      */
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the IAMpolicy.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
      */
     inline IAMPolicyAssignment& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the IAMpolicy.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
      */
     inline IAMPolicyAssignment& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the IAMpolicy.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
      */
     inline IAMPolicyAssignment& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 

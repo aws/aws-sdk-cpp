@@ -36,49 +36,49 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Amazon Web Services account that contains the IAMpolicy
+     * <p>The ID of the Amazon Web Services account that contains the IAM policy
      * assignment. </p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The ID of the Amazon Web Services account that contains the IAMpolicy
+     * <p>The ID of the Amazon Web Services account that contains the IAM policy
      * assignment. </p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Amazon Web Services account that contains the IAMpolicy
+     * <p>The ID of the Amazon Web Services account that contains the IAM policy
      * assignment. </p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The ID of the Amazon Web Services account that contains the IAMpolicy
+     * <p>The ID of the Amazon Web Services account that contains the IAM policy
      * assignment. </p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services account that contains the IAMpolicy
+     * <p>The ID of the Amazon Web Services account that contains the IAM policy
      * assignment. </p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services account that contains the IAMpolicy
+     * <p>The ID of the Amazon Web Services account that contains the IAM policy
      * assignment. </p>
      */
     inline UpdateIAMPolicyAssignmentRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services account that contains the IAMpolicy
+     * <p>The ID of the Amazon Web Services account that contains the IAM policy
      * assignment. </p>
      */
     inline UpdateIAMPolicyAssignmentRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services account that contains the IAMpolicy
+     * <p>The ID of the Amazon Web Services account that contains the IAM policy
      * assignment. </p>
      */
     inline UpdateIAMPolicyAssignmentRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
@@ -236,49 +236,49 @@ namespace Model
 
 
     /**
-     * <p>The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups
+     * <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
      * specified in this assignment.</p>
      */
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
 
     /**
-     * <p>The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups
+     * <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
      * specified in this assignment.</p>
      */
     inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
 
     /**
-     * <p>The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups
+     * <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
      * specified in this assignment.</p>
      */
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     /**
-     * <p>The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups
+     * <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
      * specified in this assignment.</p>
      */
     inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
 
     /**
-     * <p>The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups
+     * <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
      * specified in this assignment.</p>
      */
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
     /**
-     * <p>The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups
+     * <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
      * specified in this assignment.</p>
      */
     inline UpdateIAMPolicyAssignmentRequest& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
 
     /**
-     * <p>The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups
+     * <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
      * specified in this assignment.</p>
      */
     inline UpdateIAMPolicyAssignmentRequest& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups
+     * <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
      * specified in this assignment.</p>
      */
     inline UpdateIAMPolicyAssignmentRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}

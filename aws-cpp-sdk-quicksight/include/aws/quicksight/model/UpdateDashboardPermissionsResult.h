@@ -7,6 +7,7 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/quicksight/model/LinkSharingConfiguration.h>
 #include <aws/quicksight/model/ResourcePermission.h>
 #include <utility>
 
@@ -193,6 +194,37 @@ namespace Model
      */
     inline UpdateDashboardPermissionsResult& WithStatus(int value) { SetStatus(value); return *this;}
 
+
+    /**
+     * <p>Updates the permissions of a shared link to an Amazon QuickSight
+     * dashboard.</p>
+     */
+    inline const LinkSharingConfiguration& GetLinkSharingConfiguration() const{ return m_linkSharingConfiguration; }
+
+    /**
+     * <p>Updates the permissions of a shared link to an Amazon QuickSight
+     * dashboard.</p>
+     */
+    inline void SetLinkSharingConfiguration(const LinkSharingConfiguration& value) { m_linkSharingConfiguration = value; }
+
+    /**
+     * <p>Updates the permissions of a shared link to an Amazon QuickSight
+     * dashboard.</p>
+     */
+    inline void SetLinkSharingConfiguration(LinkSharingConfiguration&& value) { m_linkSharingConfiguration = std::move(value); }
+
+    /**
+     * <p>Updates the permissions of a shared link to an Amazon QuickSight
+     * dashboard.</p>
+     */
+    inline UpdateDashboardPermissionsResult& WithLinkSharingConfiguration(const LinkSharingConfiguration& value) { SetLinkSharingConfiguration(value); return *this;}
+
+    /**
+     * <p>Updates the permissions of a shared link to an Amazon QuickSight
+     * dashboard.</p>
+     */
+    inline UpdateDashboardPermissionsResult& WithLinkSharingConfiguration(LinkSharingConfiguration&& value) { SetLinkSharingConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_dashboardArn;
@@ -204,6 +236,8 @@ namespace Model
     Aws::String m_requestId;
 
     int m_status;
+
+    LinkSharingConfiguration m_linkSharingConfiguration;
   };
 
 } // namespace Model

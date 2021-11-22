@@ -34,27 +34,27 @@ namespace Model
 
 
     /**
-     * <p>Information describing the IAMpolicy assignment.</p>
+     * <p>Information describing the IAM policy assignment.</p>
      */
     inline const IAMPolicyAssignment& GetIAMPolicyAssignment() const{ return m_iAMPolicyAssignment; }
 
     /**
-     * <p>Information describing the IAMpolicy assignment.</p>
+     * <p>Information describing the IAM policy assignment.</p>
      */
     inline void SetIAMPolicyAssignment(const IAMPolicyAssignment& value) { m_iAMPolicyAssignment = value; }
 
     /**
-     * <p>Information describing the IAMpolicy assignment.</p>
+     * <p>Information describing the IAM policy assignment.</p>
      */
     inline void SetIAMPolicyAssignment(IAMPolicyAssignment&& value) { m_iAMPolicyAssignment = std::move(value); }
 
     /**
-     * <p>Information describing the IAMpolicy assignment.</p>
+     * <p>Information describing the IAM policy assignment.</p>
      */
     inline DescribeIAMPolicyAssignmentResult& WithIAMPolicyAssignment(const IAMPolicyAssignment& value) { SetIAMPolicyAssignment(value); return *this;}
 
     /**
-     * <p>Information describing the IAMpolicy assignment.</p>
+     * <p>Information describing the IAM policy assignment.</p>
      */
     inline DescribeIAMPolicyAssignmentResult& WithIAMPolicyAssignment(IAMPolicyAssignment&& value) { SetIAMPolicyAssignment(std::move(value)); return *this;}
 

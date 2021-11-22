@@ -166,12 +166,6 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
 {
   Aws::Http::URI uri = m_uri;
-  if (!request.LanguageCodeHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("StartStreamTranscription", "Required field: LanguageCode, is not set");
-    responseHandler(this, request, StartStreamTranscriptionOutcome(Aws::Client::AWSError<TranscribeStreamingServiceErrors>(TranscribeStreamingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LanguageCode]", false)), handlerContext);
-    return;
-  }
   if (!request.MediaSampleRateHertzHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("StartStreamTranscription", "Required field: MediaSampleRateHertz, is not set");

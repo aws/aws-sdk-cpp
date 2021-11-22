@@ -33,20 +33,17 @@ namespace Model
 
 
     /**
-     * <p>The status of the newly created folder. If succeeded, the status is
-     * <code>SC_OK (200)</code>.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline int GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the newly created folder. If succeeded, the status is
-     * <code>SC_OK (200)</code>.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline void SetStatus(int value) { m_status = value; }
 
     /**
-     * <p>The status of the newly created folder. If succeeded, the status is
-     * <code>SC_OK (200)</code>.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline CreateFolderResult& WithStatus(int value) { SetStatus(value); return *this;}
 

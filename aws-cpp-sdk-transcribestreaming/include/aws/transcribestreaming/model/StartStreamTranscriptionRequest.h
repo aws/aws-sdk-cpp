@@ -68,57 +68,61 @@ namespace Model
 
 
     /**
-     * <p>Indicates the source language used in the input audio stream.</p>
+     * <p>The language code of the input audio stream.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * <p>Indicates the source language used in the input audio stream.</p>
+     * <p>The language code of the input audio stream.</p>
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
-     * <p>Indicates the source language used in the input audio stream.</p>
+     * <p>The language code of the input audio stream.</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
-     * <p>Indicates the source language used in the input audio stream.</p>
+     * <p>The language code of the input audio stream.</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
-     * <p>Indicates the source language used in the input audio stream.</p>
+     * <p>The language code of the input audio stream.</p>
      */
     inline StartStreamTranscriptionRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * <p>Indicates the source language used in the input audio stream.</p>
+     * <p>The language code of the input audio stream.</p>
      */
     inline StartStreamTranscriptionRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 
 
     /**
-     * <p>The sample rate, in Hertz, of the input audio. We suggest that you use 8,000
-     * Hz for low quality audio and 16,000 Hz for high quality audio.</p>
+     * <p>The sample rate, in Hertz (Hz), of the input audio. We suggest that you use
+     * 8,000 Hz for low quality audio and 16,000 Hz or higher for high quality
+     * audio.</p>
      */
     inline int GetMediaSampleRateHertz() const{ return m_mediaSampleRateHertz; }
 
     /**
-     * <p>The sample rate, in Hertz, of the input audio. We suggest that you use 8,000
-     * Hz for low quality audio and 16,000 Hz for high quality audio.</p>
+     * <p>The sample rate, in Hertz (Hz), of the input audio. We suggest that you use
+     * 8,000 Hz for low quality audio and 16,000 Hz or higher for high quality
+     * audio.</p>
      */
     inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
 
     /**
-     * <p>The sample rate, in Hertz, of the input audio. We suggest that you use 8,000
-     * Hz for low quality audio and 16,000 Hz for high quality audio.</p>
+     * <p>The sample rate, in Hertz (Hz), of the input audio. We suggest that you use
+     * 8,000 Hz for low quality audio and 16,000 Hz or higher for high quality
+     * audio.</p>
      */
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
 
     /**
-     * <p>The sample rate, in Hertz, of the input audio. We suggest that you use 8,000
-     * Hz for low quality audio and 16,000 Hz for high quality audio.</p>
+     * <p>The sample rate, in Hertz (Hz), of the input audio. We suggest that you use
+     * 8,000 Hz for low quality audio and 16,000 Hz or higher for high quality
+     * audio.</p>
      */
     inline StartStreamTranscriptionRequest& WithMediaSampleRateHertz(int value) { SetMediaSampleRateHertz(value); return *this;}
 
@@ -326,7 +330,7 @@ namespace Model
      * results. <code>Mask</code> masks filtered words with a <code>***</code> in your
      * transcription results. <code>Tag</code> keeps the filtered words in your
      * transcription results and tags them. The tag appears as
-     * <code>VocabularyFilterMatch</code> equal to <code>True</code> </p>
+     * <code>VocabularyFilterMatch</code> equal to <code>True</code>.</p>
      */
     inline const VocabularyFilterMethod& GetVocabularyFilterMethod() const{ return m_vocabularyFilterMethod; }
 
@@ -336,7 +340,7 @@ namespace Model
      * results. <code>Mask</code> masks filtered words with a <code>***</code> in your
      * transcription results. <code>Tag</code> keeps the filtered words in your
      * transcription results and tags them. The tag appears as
-     * <code>VocabularyFilterMatch</code> equal to <code>True</code> </p>
+     * <code>VocabularyFilterMatch</code> equal to <code>True</code>.</p>
      */
     inline bool VocabularyFilterMethodHasBeenSet() const { return m_vocabularyFilterMethodHasBeenSet; }
 
@@ -346,7 +350,7 @@ namespace Model
      * results. <code>Mask</code> masks filtered words with a <code>***</code> in your
      * transcription results. <code>Tag</code> keeps the filtered words in your
      * transcription results and tags them. The tag appears as
-     * <code>VocabularyFilterMatch</code> equal to <code>True</code> </p>
+     * <code>VocabularyFilterMatch</code> equal to <code>True</code>.</p>
      */
     inline void SetVocabularyFilterMethod(const VocabularyFilterMethod& value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = value; }
 
@@ -356,7 +360,7 @@ namespace Model
      * results. <code>Mask</code> masks filtered words with a <code>***</code> in your
      * transcription results. <code>Tag</code> keeps the filtered words in your
      * transcription results and tags them. The tag appears as
-     * <code>VocabularyFilterMatch</code> equal to <code>True</code> </p>
+     * <code>VocabularyFilterMatch</code> equal to <code>True</code>.</p>
      */
     inline void SetVocabularyFilterMethod(VocabularyFilterMethod&& value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = std::move(value); }
 
@@ -366,7 +370,7 @@ namespace Model
      * results. <code>Mask</code> masks filtered words with a <code>***</code> in your
      * transcription results. <code>Tag</code> keeps the filtered words in your
      * transcription results and tags them. The tag appears as
-     * <code>VocabularyFilterMatch</code> equal to <code>True</code> </p>
+     * <code>VocabularyFilterMatch</code> equal to <code>True</code>.</p>
      */
     inline StartStreamTranscriptionRequest& WithVocabularyFilterMethod(const VocabularyFilterMethod& value) { SetVocabularyFilterMethod(value); return *this;}
 
@@ -376,31 +380,31 @@ namespace Model
      * results. <code>Mask</code> masks filtered words with a <code>***</code> in your
      * transcription results. <code>Tag</code> keeps the filtered words in your
      * transcription results and tags them. The tag appears as
-     * <code>VocabularyFilterMatch</code> equal to <code>True</code> </p>
+     * <code>VocabularyFilterMatch</code> equal to <code>True</code>.</p>
      */
     inline StartStreamTranscriptionRequest& WithVocabularyFilterMethod(VocabularyFilterMethod&& value) { SetVocabularyFilterMethod(std::move(value)); return *this;}
 
 
     /**
-     * <p>When <code>true</code>, enables speaker identification in your real-time
+     * <p>When <code>true</code>, enables speaker identification in your media
      * stream.</p>
      */
     inline bool GetShowSpeakerLabel() const{ return m_showSpeakerLabel; }
 
     /**
-     * <p>When <code>true</code>, enables speaker identification in your real-time
+     * <p>When <code>true</code>, enables speaker identification in your media
      * stream.</p>
      */
     inline bool ShowSpeakerLabelHasBeenSet() const { return m_showSpeakerLabelHasBeenSet; }
 
     /**
-     * <p>When <code>true</code>, enables speaker identification in your real-time
+     * <p>When <code>true</code>, enables speaker identification in your media
      * stream.</p>
      */
     inline void SetShowSpeakerLabel(bool value) { m_showSpeakerLabelHasBeenSet = true; m_showSpeakerLabel = value; }
 
     /**
-     * <p>When <code>true</code>, enables speaker identification in your real-time
+     * <p>When <code>true</code>, enables speaker identification in your media
      * stream.</p>
      */
     inline StartStreamTranscriptionRequest& WithShowSpeakerLabel(bool value) { SetShowSpeakerLabel(value); return *this;}
@@ -408,9 +412,9 @@ namespace Model
 
     /**
      * <p>When <code>true</code>, instructs Amazon Transcribe to process each audio
-     * channel separately and then merge the transcription output of each channel into
-     * a single transcription.</p> <p>Amazon Transcribe also produces a transcription
-     * of each item. An item includes the start time, end time, and any alternative
+     * channel separately, then merges the transcription output of each channel into a
+     * single transcription.</p> <p>Amazon Transcribe also produces a transcription of
+     * each item. An item includes the start time, end time, and any alternative
      * transcriptions.</p> <p>You can't set both <code>ShowSpeakerLabel</code> and
      * <code>EnableChannelIdentification</code> in the same request. If you set both,
      * your request returns a <code>BadRequestException</code>.</p>
@@ -419,9 +423,9 @@ namespace Model
 
     /**
      * <p>When <code>true</code>, instructs Amazon Transcribe to process each audio
-     * channel separately and then merge the transcription output of each channel into
-     * a single transcription.</p> <p>Amazon Transcribe also produces a transcription
-     * of each item. An item includes the start time, end time, and any alternative
+     * channel separately, then merges the transcription output of each channel into a
+     * single transcription.</p> <p>Amazon Transcribe also produces a transcription of
+     * each item. An item includes the start time, end time, and any alternative
      * transcriptions.</p> <p>You can't set both <code>ShowSpeakerLabel</code> and
      * <code>EnableChannelIdentification</code> in the same request. If you set both,
      * your request returns a <code>BadRequestException</code>.</p>
@@ -430,9 +434,9 @@ namespace Model
 
     /**
      * <p>When <code>true</code>, instructs Amazon Transcribe to process each audio
-     * channel separately and then merge the transcription output of each channel into
-     * a single transcription.</p> <p>Amazon Transcribe also produces a transcription
-     * of each item. An item includes the start time, end time, and any alternative
+     * channel separately, then merges the transcription output of each channel into a
+     * single transcription.</p> <p>Amazon Transcribe also produces a transcription of
+     * each item. An item includes the start time, end time, and any alternative
      * transcriptions.</p> <p>You can't set both <code>ShowSpeakerLabel</code> and
      * <code>EnableChannelIdentification</code> in the same request. If you set both,
      * your request returns a <code>BadRequestException</code>.</p>
@@ -441,9 +445,9 @@ namespace Model
 
     /**
      * <p>When <code>true</code>, instructs Amazon Transcribe to process each audio
-     * channel separately and then merge the transcription output of each channel into
-     * a single transcription.</p> <p>Amazon Transcribe also produces a transcription
-     * of each item. An item includes the start time, end time, and any alternative
+     * channel separately, then merges the transcription output of each channel into a
+     * single transcription.</p> <p>Amazon Transcribe also produces a transcription of
+     * each item. An item includes the start time, end time, and any alternative
      * transcriptions.</p> <p>You can't set both <code>ShowSpeakerLabel</code> and
      * <code>EnableChannelIdentification</code> in the same request. If you set both,
      * your request returns a <code>BadRequestException</code>.</p>
@@ -683,64 +687,112 @@ namespace Model
     /**
      * <p>List the PII entity types you want to identify or redact. In order to specify
      * entity types, you must have either <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PiiEntityTypes</code>
-     * is an optional parameter with a default value of <code>ALL</code>.</p>
+     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PIIEntityTypes</code>
+     * must be comma-separated; the available values are:
+     * <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
+     * <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
+     * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
+     * <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>,
+     * and <code>ALL</code>.</p> <p> <code>PiiEntityTypes</code> is an optional
+     * parameter with a default value of <code>ALL</code>.</p>
      */
     inline const Aws::String& GetPiiEntityTypes() const{ return m_piiEntityTypes; }
 
     /**
      * <p>List the PII entity types you want to identify or redact. In order to specify
      * entity types, you must have either <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PiiEntityTypes</code>
-     * is an optional parameter with a default value of <code>ALL</code>.</p>
+     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PIIEntityTypes</code>
+     * must be comma-separated; the available values are:
+     * <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
+     * <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
+     * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
+     * <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>,
+     * and <code>ALL</code>.</p> <p> <code>PiiEntityTypes</code> is an optional
+     * parameter with a default value of <code>ALL</code>.</p>
      */
     inline bool PiiEntityTypesHasBeenSet() const { return m_piiEntityTypesHasBeenSet; }
 
     /**
      * <p>List the PII entity types you want to identify or redact. In order to specify
      * entity types, you must have either <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PiiEntityTypes</code>
-     * is an optional parameter with a default value of <code>ALL</code>.</p>
+     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PIIEntityTypes</code>
+     * must be comma-separated; the available values are:
+     * <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
+     * <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
+     * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
+     * <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>,
+     * and <code>ALL</code>.</p> <p> <code>PiiEntityTypes</code> is an optional
+     * parameter with a default value of <code>ALL</code>.</p>
      */
     inline void SetPiiEntityTypes(const Aws::String& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes = value; }
 
     /**
      * <p>List the PII entity types you want to identify or redact. In order to specify
      * entity types, you must have either <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PiiEntityTypes</code>
-     * is an optional parameter with a default value of <code>ALL</code>.</p>
+     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PIIEntityTypes</code>
+     * must be comma-separated; the available values are:
+     * <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
+     * <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
+     * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
+     * <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>,
+     * and <code>ALL</code>.</p> <p> <code>PiiEntityTypes</code> is an optional
+     * parameter with a default value of <code>ALL</code>.</p>
      */
     inline void SetPiiEntityTypes(Aws::String&& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes = std::move(value); }
 
     /**
      * <p>List the PII entity types you want to identify or redact. In order to specify
      * entity types, you must have either <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PiiEntityTypes</code>
-     * is an optional parameter with a default value of <code>ALL</code>.</p>
+     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PIIEntityTypes</code>
+     * must be comma-separated; the available values are:
+     * <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
+     * <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
+     * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
+     * <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>,
+     * and <code>ALL</code>.</p> <p> <code>PiiEntityTypes</code> is an optional
+     * parameter with a default value of <code>ALL</code>.</p>
      */
     inline void SetPiiEntityTypes(const char* value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes.assign(value); }
 
     /**
      * <p>List the PII entity types you want to identify or redact. In order to specify
      * entity types, you must have either <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PiiEntityTypes</code>
-     * is an optional parameter with a default value of <code>ALL</code>.</p>
+     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PIIEntityTypes</code>
+     * must be comma-separated; the available values are:
+     * <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
+     * <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
+     * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
+     * <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>,
+     * and <code>ALL</code>.</p> <p> <code>PiiEntityTypes</code> is an optional
+     * parameter with a default value of <code>ALL</code>.</p>
      */
     inline StartStreamTranscriptionRequest& WithPiiEntityTypes(const Aws::String& value) { SetPiiEntityTypes(value); return *this;}
 
     /**
      * <p>List the PII entity types you want to identify or redact. In order to specify
      * entity types, you must have either <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PiiEntityTypes</code>
-     * is an optional parameter with a default value of <code>ALL</code>.</p>
+     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PIIEntityTypes</code>
+     * must be comma-separated; the available values are:
+     * <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
+     * <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
+     * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
+     * <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>,
+     * and <code>ALL</code>.</p> <p> <code>PiiEntityTypes</code> is an optional
+     * parameter with a default value of <code>ALL</code>.</p>
      */
     inline StartStreamTranscriptionRequest& WithPiiEntityTypes(Aws::String&& value) { SetPiiEntityTypes(std::move(value)); return *this;}
 
     /**
      * <p>List the PII entity types you want to identify or redact. In order to specify
      * entity types, you must have either <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PiiEntityTypes</code>
-     * is an optional parameter with a default value of <code>ALL</code>.</p>
+     * <code>ContentRedactionType</code> enabled.</p> <p> <code>PIIEntityTypes</code>
+     * must be comma-separated; the available values are:
+     * <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
+     * <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
+     * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
+     * <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>,
+     * and <code>ALL</code>.</p> <p> <code>PiiEntityTypes</code> is an optional
+     * parameter with a default value of <code>ALL</code>.</p>
      */
     inline StartStreamTranscriptionRequest& WithPiiEntityTypes(const char* value) { SetPiiEntityTypes(value); return *this;}
 
@@ -784,6 +836,169 @@ namespace Model
      * <p>The name of the language model you want to use.</p>
      */
     inline StartStreamTranscriptionRequest& WithLanguageModelName(const char* value) { SetLanguageModelName(value); return *this;}
+
+
+    /**
+     * <p>Optional. Set this value to <code>true</code> to enable language
+     * identification for your media stream.</p>
+     */
+    inline bool GetIdentifyLanguage() const{ return m_identifyLanguage; }
+
+    /**
+     * <p>Optional. Set this value to <code>true</code> to enable language
+     * identification for your media stream.</p>
+     */
+    inline bool IdentifyLanguageHasBeenSet() const { return m_identifyLanguageHasBeenSet; }
+
+    /**
+     * <p>Optional. Set this value to <code>true</code> to enable language
+     * identification for your media stream.</p>
+     */
+    inline void SetIdentifyLanguage(bool value) { m_identifyLanguageHasBeenSet = true; m_identifyLanguage = value; }
+
+    /**
+     * <p>Optional. Set this value to <code>true</code> to enable language
+     * identification for your media stream.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithIdentifyLanguage(bool value) { SetIdentifyLanguage(value); return *this;}
+
+
+    /**
+     * <p>An object containing a list of languages that might be present in your
+     * audio.</p> <p>You must provide two or more language codes to help Amazon
+     * Transcribe identify the correct language of your media stream with the highest
+     * possible accuracy. You can only select one variant per language; for example,
+     * you can't include both <code>en-US</code> and <code>en-UK</code> in the same
+     * request.</p> <p>You can only use this parameter if you've set
+     * <code>IdentifyLanguage</code> to <code>true</code>in your request.</p>
+     */
+    inline const Aws::String& GetLanguageOptions() const{ return m_languageOptions; }
+
+    /**
+     * <p>An object containing a list of languages that might be present in your
+     * audio.</p> <p>You must provide two or more language codes to help Amazon
+     * Transcribe identify the correct language of your media stream with the highest
+     * possible accuracy. You can only select one variant per language; for example,
+     * you can't include both <code>en-US</code> and <code>en-UK</code> in the same
+     * request.</p> <p>You can only use this parameter if you've set
+     * <code>IdentifyLanguage</code> to <code>true</code>in your request.</p>
+     */
+    inline bool LanguageOptionsHasBeenSet() const { return m_languageOptionsHasBeenSet; }
+
+    /**
+     * <p>An object containing a list of languages that might be present in your
+     * audio.</p> <p>You must provide two or more language codes to help Amazon
+     * Transcribe identify the correct language of your media stream with the highest
+     * possible accuracy. You can only select one variant per language; for example,
+     * you can't include both <code>en-US</code> and <code>en-UK</code> in the same
+     * request.</p> <p>You can only use this parameter if you've set
+     * <code>IdentifyLanguage</code> to <code>true</code>in your request.</p>
+     */
+    inline void SetLanguageOptions(const Aws::String& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = value; }
+
+    /**
+     * <p>An object containing a list of languages that might be present in your
+     * audio.</p> <p>You must provide two or more language codes to help Amazon
+     * Transcribe identify the correct language of your media stream with the highest
+     * possible accuracy. You can only select one variant per language; for example,
+     * you can't include both <code>en-US</code> and <code>en-UK</code> in the same
+     * request.</p> <p>You can only use this parameter if you've set
+     * <code>IdentifyLanguage</code> to <code>true</code>in your request.</p>
+     */
+    inline void SetLanguageOptions(Aws::String&& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = std::move(value); }
+
+    /**
+     * <p>An object containing a list of languages that might be present in your
+     * audio.</p> <p>You must provide two or more language codes to help Amazon
+     * Transcribe identify the correct language of your media stream with the highest
+     * possible accuracy. You can only select one variant per language; for example,
+     * you can't include both <code>en-US</code> and <code>en-UK</code> in the same
+     * request.</p> <p>You can only use this parameter if you've set
+     * <code>IdentifyLanguage</code> to <code>true</code>in your request.</p>
+     */
+    inline void SetLanguageOptions(const char* value) { m_languageOptionsHasBeenSet = true; m_languageOptions.assign(value); }
+
+    /**
+     * <p>An object containing a list of languages that might be present in your
+     * audio.</p> <p>You must provide two or more language codes to help Amazon
+     * Transcribe identify the correct language of your media stream with the highest
+     * possible accuracy. You can only select one variant per language; for example,
+     * you can't include both <code>en-US</code> and <code>en-UK</code> in the same
+     * request.</p> <p>You can only use this parameter if you've set
+     * <code>IdentifyLanguage</code> to <code>true</code>in your request.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithLanguageOptions(const Aws::String& value) { SetLanguageOptions(value); return *this;}
+
+    /**
+     * <p>An object containing a list of languages that might be present in your
+     * audio.</p> <p>You must provide two or more language codes to help Amazon
+     * Transcribe identify the correct language of your media stream with the highest
+     * possible accuracy. You can only select one variant per language; for example,
+     * you can't include both <code>en-US</code> and <code>en-UK</code> in the same
+     * request.</p> <p>You can only use this parameter if you've set
+     * <code>IdentifyLanguage</code> to <code>true</code>in your request.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithLanguageOptions(Aws::String&& value) { SetLanguageOptions(std::move(value)); return *this;}
+
+    /**
+     * <p>An object containing a list of languages that might be present in your
+     * audio.</p> <p>You must provide two or more language codes to help Amazon
+     * Transcribe identify the correct language of your media stream with the highest
+     * possible accuracy. You can only select one variant per language; for example,
+     * you can't include both <code>en-US</code> and <code>en-UK</code> in the same
+     * request.</p> <p>You can only use this parameter if you've set
+     * <code>IdentifyLanguage</code> to <code>true</code>in your request.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithLanguageOptions(const char* value) { SetLanguageOptions(value); return *this;}
+
+
+    /**
+     * <p>Optional. From the subset of languages codes you provided for
+     * <code>LanguageOptions</code>, you can select one preferred language for your
+     * transcription.</p> <p>You can only use this parameter if you've set
+     * <code>IdentifyLanguage</code> to <code>true</code>in your request.</p>
+     */
+    inline const LanguageCode& GetPreferredLanguage() const{ return m_preferredLanguage; }
+
+    /**
+     * <p>Optional. From the subset of languages codes you provided for
+     * <code>LanguageOptions</code>, you can select one preferred language for your
+     * transcription.</p> <p>You can only use this parameter if you've set
+     * <code>IdentifyLanguage</code> to <code>true</code>in your request.</p>
+     */
+    inline bool PreferredLanguageHasBeenSet() const { return m_preferredLanguageHasBeenSet; }
+
+    /**
+     * <p>Optional. From the subset of languages codes you provided for
+     * <code>LanguageOptions</code>, you can select one preferred language for your
+     * transcription.</p> <p>You can only use this parameter if you've set
+     * <code>IdentifyLanguage</code> to <code>true</code>in your request.</p>
+     */
+    inline void SetPreferredLanguage(const LanguageCode& value) { m_preferredLanguageHasBeenSet = true; m_preferredLanguage = value; }
+
+    /**
+     * <p>Optional. From the subset of languages codes you provided for
+     * <code>LanguageOptions</code>, you can select one preferred language for your
+     * transcription.</p> <p>You can only use this parameter if you've set
+     * <code>IdentifyLanguage</code> to <code>true</code>in your request.</p>
+     */
+    inline void SetPreferredLanguage(LanguageCode&& value) { m_preferredLanguageHasBeenSet = true; m_preferredLanguage = std::move(value); }
+
+    /**
+     * <p>Optional. From the subset of languages codes you provided for
+     * <code>LanguageOptions</code>, you can select one preferred language for your
+     * transcription.</p> <p>You can only use this parameter if you've set
+     * <code>IdentifyLanguage</code> to <code>true</code>in your request.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithPreferredLanguage(const LanguageCode& value) { SetPreferredLanguage(value); return *this;}
+
+    /**
+     * <p>Optional. From the subset of languages codes you provided for
+     * <code>LanguageOptions</code>, you can select one preferred language for your
+     * transcription.</p> <p>You can only use this parameter if you've set
+     * <code>IdentifyLanguage</code> to <code>true</code>in your request.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithPreferredLanguage(LanguageCode&& value) { SetPreferredLanguage(std::move(value)); return *this;}
 
   private:
 
@@ -836,6 +1051,15 @@ namespace Model
 
     Aws::String m_languageModelName;
     bool m_languageModelNameHasBeenSet;
+
+    bool m_identifyLanguage;
+    bool m_identifyLanguageHasBeenSet;
+
+    Aws::String m_languageOptions;
+    bool m_languageOptionsHasBeenSet;
+
+    LanguageCode m_preferredLanguage;
+    bool m_preferredLanguageHasBeenSet;
     Aws::Utils::Event::EventStreamDecoder m_decoder;
     StartStreamTranscriptionHandler m_handler;
 

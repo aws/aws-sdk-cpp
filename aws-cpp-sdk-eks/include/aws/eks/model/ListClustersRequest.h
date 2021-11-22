@@ -178,56 +178,74 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether connected clusters are included in the returned list.
-     * Default value is 'ALL'.</p>
+     * <p>Indicates whether external clusters are included in the returned list. Use
+     * '<code>all</code>' to return connected clusters, or blank to return only Amazon
+     * EKS clusters. '<code>all</code>' must be in lowercase otherwise an error
+     * occurs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInclude() const{ return m_include; }
 
     /**
-     * <p>Indicates whether connected clusters are included in the returned list.
-     * Default value is 'ALL'.</p>
+     * <p>Indicates whether external clusters are included in the returned list. Use
+     * '<code>all</code>' to return connected clusters, or blank to return only Amazon
+     * EKS clusters. '<code>all</code>' must be in lowercase otherwise an error
+     * occurs.</p>
      */
     inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
 
     /**
-     * <p>Indicates whether connected clusters are included in the returned list.
-     * Default value is 'ALL'.</p>
+     * <p>Indicates whether external clusters are included in the returned list. Use
+     * '<code>all</code>' to return connected clusters, or blank to return only Amazon
+     * EKS clusters. '<code>all</code>' must be in lowercase otherwise an error
+     * occurs.</p>
      */
     inline void SetInclude(const Aws::Vector<Aws::String>& value) { m_includeHasBeenSet = true; m_include = value; }
 
     /**
-     * <p>Indicates whether connected clusters are included in the returned list.
-     * Default value is 'ALL'.</p>
+     * <p>Indicates whether external clusters are included in the returned list. Use
+     * '<code>all</code>' to return connected clusters, or blank to return only Amazon
+     * EKS clusters. '<code>all</code>' must be in lowercase otherwise an error
+     * occurs.</p>
      */
     inline void SetInclude(Aws::Vector<Aws::String>&& value) { m_includeHasBeenSet = true; m_include = std::move(value); }
 
     /**
-     * <p>Indicates whether connected clusters are included in the returned list.
-     * Default value is 'ALL'.</p>
+     * <p>Indicates whether external clusters are included in the returned list. Use
+     * '<code>all</code>' to return connected clusters, or blank to return only Amazon
+     * EKS clusters. '<code>all</code>' must be in lowercase otherwise an error
+     * occurs.</p>
      */
     inline ListClustersRequest& WithInclude(const Aws::Vector<Aws::String>& value) { SetInclude(value); return *this;}
 
     /**
-     * <p>Indicates whether connected clusters are included in the returned list.
-     * Default value is 'ALL'.</p>
+     * <p>Indicates whether external clusters are included in the returned list. Use
+     * '<code>all</code>' to return connected clusters, or blank to return only Amazon
+     * EKS clusters. '<code>all</code>' must be in lowercase otherwise an error
+     * occurs.</p>
      */
     inline ListClustersRequest& WithInclude(Aws::Vector<Aws::String>&& value) { SetInclude(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates whether connected clusters are included in the returned list.
-     * Default value is 'ALL'.</p>
+     * <p>Indicates whether external clusters are included in the returned list. Use
+     * '<code>all</code>' to return connected clusters, or blank to return only Amazon
+     * EKS clusters. '<code>all</code>' must be in lowercase otherwise an error
+     * occurs.</p>
      */
     inline ListClustersRequest& AddInclude(const Aws::String& value) { m_includeHasBeenSet = true; m_include.push_back(value); return *this; }
 
     /**
-     * <p>Indicates whether connected clusters are included in the returned list.
-     * Default value is 'ALL'.</p>
+     * <p>Indicates whether external clusters are included in the returned list. Use
+     * '<code>all</code>' to return connected clusters, or blank to return only Amazon
+     * EKS clusters. '<code>all</code>' must be in lowercase otherwise an error
+     * occurs.</p>
      */
     inline ListClustersRequest& AddInclude(Aws::String&& value) { m_includeHasBeenSet = true; m_include.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Indicates whether connected clusters are included in the returned list.
-     * Default value is 'ALL'.</p>
+     * <p>Indicates whether external clusters are included in the returned list. Use
+     * '<code>all</code>' to return connected clusters, or blank to return only Amazon
+     * EKS clusters. '<code>all</code>' must be in lowercase otherwise an error
+     * occurs.</p>
      */
     inline ListClustersRequest& AddInclude(const char* value) { m_includeHasBeenSet = true; m_include.push_back(value); return *this; }
 

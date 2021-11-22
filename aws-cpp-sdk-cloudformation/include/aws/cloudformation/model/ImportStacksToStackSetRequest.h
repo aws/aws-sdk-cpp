@@ -91,57 +91,170 @@ namespace Model
 
     /**
      * <p>The IDs of the stacks you are importing into a stack set. You import up to 10
-     * stacks per stack set at a time.</p>
+     * stacks per stack set at a time.</p> <p>Specify either <code>StackIds</code> or
+     * <code>StackIdsUrl</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetStackIds() const{ return m_stackIds; }
 
     /**
      * <p>The IDs of the stacks you are importing into a stack set. You import up to 10
-     * stacks per stack set at a time.</p>
+     * stacks per stack set at a time.</p> <p>Specify either <code>StackIds</code> or
+     * <code>StackIdsUrl</code>.</p>
      */
     inline bool StackIdsHasBeenSet() const { return m_stackIdsHasBeenSet; }
 
     /**
      * <p>The IDs of the stacks you are importing into a stack set. You import up to 10
-     * stacks per stack set at a time.</p>
+     * stacks per stack set at a time.</p> <p>Specify either <code>StackIds</code> or
+     * <code>StackIdsUrl</code>.</p>
      */
     inline void SetStackIds(const Aws::Vector<Aws::String>& value) { m_stackIdsHasBeenSet = true; m_stackIds = value; }
 
     /**
      * <p>The IDs of the stacks you are importing into a stack set. You import up to 10
-     * stacks per stack set at a time.</p>
+     * stacks per stack set at a time.</p> <p>Specify either <code>StackIds</code> or
+     * <code>StackIdsUrl</code>.</p>
      */
     inline void SetStackIds(Aws::Vector<Aws::String>&& value) { m_stackIdsHasBeenSet = true; m_stackIds = std::move(value); }
 
     /**
      * <p>The IDs of the stacks you are importing into a stack set. You import up to 10
-     * stacks per stack set at a time.</p>
+     * stacks per stack set at a time.</p> <p>Specify either <code>StackIds</code> or
+     * <code>StackIdsUrl</code>.</p>
      */
     inline ImportStacksToStackSetRequest& WithStackIds(const Aws::Vector<Aws::String>& value) { SetStackIds(value); return *this;}
 
     /**
      * <p>The IDs of the stacks you are importing into a stack set. You import up to 10
-     * stacks per stack set at a time.</p>
+     * stacks per stack set at a time.</p> <p>Specify either <code>StackIds</code> or
+     * <code>StackIdsUrl</code>.</p>
      */
     inline ImportStacksToStackSetRequest& WithStackIds(Aws::Vector<Aws::String>&& value) { SetStackIds(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of the stacks you are importing into a stack set. You import up to 10
-     * stacks per stack set at a time.</p>
+     * stacks per stack set at a time.</p> <p>Specify either <code>StackIds</code> or
+     * <code>StackIdsUrl</code>.</p>
      */
     inline ImportStacksToStackSetRequest& AddStackIds(const Aws::String& value) { m_stackIdsHasBeenSet = true; m_stackIds.push_back(value); return *this; }
 
     /**
      * <p>The IDs of the stacks you are importing into a stack set. You import up to 10
-     * stacks per stack set at a time.</p>
+     * stacks per stack set at a time.</p> <p>Specify either <code>StackIds</code> or
+     * <code>StackIdsUrl</code>.</p>
      */
     inline ImportStacksToStackSetRequest& AddStackIds(Aws::String&& value) { m_stackIdsHasBeenSet = true; m_stackIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of the stacks you are importing into a stack set. You import up to 10
-     * stacks per stack set at a time.</p>
+     * stacks per stack set at a time.</p> <p>Specify either <code>StackIds</code> or
+     * <code>StackIdsUrl</code>.</p>
      */
     inline ImportStacksToStackSetRequest& AddStackIds(const char* value) { m_stackIdsHasBeenSet = true; m_stackIds.push_back(value); return *this; }
+
+
+    /**
+     * <p>The Amazon S3 URL which contains list of stack ids to be inputted.</p>
+     * <p>Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.</p>
+     */
+    inline const Aws::String& GetStackIdsUrl() const{ return m_stackIdsUrl; }
+
+    /**
+     * <p>The Amazon S3 URL which contains list of stack ids to be inputted.</p>
+     * <p>Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.</p>
+     */
+    inline bool StackIdsUrlHasBeenSet() const { return m_stackIdsUrlHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 URL which contains list of stack ids to be inputted.</p>
+     * <p>Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.</p>
+     */
+    inline void SetStackIdsUrl(const Aws::String& value) { m_stackIdsUrlHasBeenSet = true; m_stackIdsUrl = value; }
+
+    /**
+     * <p>The Amazon S3 URL which contains list of stack ids to be inputted.</p>
+     * <p>Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.</p>
+     */
+    inline void SetStackIdsUrl(Aws::String&& value) { m_stackIdsUrlHasBeenSet = true; m_stackIdsUrl = std::move(value); }
+
+    /**
+     * <p>The Amazon S3 URL which contains list of stack ids to be inputted.</p>
+     * <p>Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.</p>
+     */
+    inline void SetStackIdsUrl(const char* value) { m_stackIdsUrlHasBeenSet = true; m_stackIdsUrl.assign(value); }
+
+    /**
+     * <p>The Amazon S3 URL which contains list of stack ids to be inputted.</p>
+     * <p>Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.</p>
+     */
+    inline ImportStacksToStackSetRequest& WithStackIdsUrl(const Aws::String& value) { SetStackIdsUrl(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 URL which contains list of stack ids to be inputted.</p>
+     * <p>Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.</p>
+     */
+    inline ImportStacksToStackSetRequest& WithStackIdsUrl(Aws::String&& value) { SetStackIdsUrl(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon S3 URL which contains list of stack ids to be inputted.</p>
+     * <p>Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.</p>
+     */
+    inline ImportStacksToStackSetRequest& WithStackIdsUrl(const char* value) { SetStackIdsUrl(value); return *this;}
+
+
+    /**
+     * <p>The list of OU ID’s to which the stacks being imported has to be mapped as
+     * deployment target.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetOrganizationalUnitIds() const{ return m_organizationalUnitIds; }
+
+    /**
+     * <p>The list of OU ID’s to which the stacks being imported has to be mapped as
+     * deployment target.</p>
+     */
+    inline bool OrganizationalUnitIdsHasBeenSet() const { return m_organizationalUnitIdsHasBeenSet; }
+
+    /**
+     * <p>The list of OU ID’s to which the stacks being imported has to be mapped as
+     * deployment target.</p>
+     */
+    inline void SetOrganizationalUnitIds(const Aws::Vector<Aws::String>& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds = value; }
+
+    /**
+     * <p>The list of OU ID’s to which the stacks being imported has to be mapped as
+     * deployment target.</p>
+     */
+    inline void SetOrganizationalUnitIds(Aws::Vector<Aws::String>&& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds = std::move(value); }
+
+    /**
+     * <p>The list of OU ID’s to which the stacks being imported has to be mapped as
+     * deployment target.</p>
+     */
+    inline ImportStacksToStackSetRequest& WithOrganizationalUnitIds(const Aws::Vector<Aws::String>& value) { SetOrganizationalUnitIds(value); return *this;}
+
+    /**
+     * <p>The list of OU ID’s to which the stacks being imported has to be mapped as
+     * deployment target.</p>
+     */
+    inline ImportStacksToStackSetRequest& WithOrganizationalUnitIds(Aws::Vector<Aws::String>&& value) { SetOrganizationalUnitIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of OU ID’s to which the stacks being imported has to be mapped as
+     * deployment target.</p>
+     */
+    inline ImportStacksToStackSetRequest& AddOrganizationalUnitIds(const Aws::String& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(value); return *this; }
+
+    /**
+     * <p>The list of OU ID’s to which the stacks being imported has to be mapped as
+     * deployment target.</p>
+     */
+    inline ImportStacksToStackSetRequest& AddOrganizationalUnitIds(Aws::String&& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The list of OU ID’s to which the stacks being imported has to be mapped as
+     * deployment target.</p>
+     */
+    inline ImportStacksToStackSetRequest& AddOrganizationalUnitIds(const char* value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(value); return *this; }
 
 
     
@@ -259,6 +372,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_stackIds;
     bool m_stackIdsHasBeenSet;
+
+    Aws::String m_stackIdsUrl;
+    bool m_stackIdsUrlHasBeenSet;
+
+    Aws::Vector<Aws::String> m_organizationalUnitIds;
+    bool m_organizationalUnitIdsHasBeenSet;
 
     StackSetOperationPreferences m_operationPreferences;
     bool m_operationPreferencesHasBeenSet;

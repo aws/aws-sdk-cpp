@@ -167,66 +167,66 @@ namespace Model
 
 
     /**
-     * <p>Read-only. The value that corresponds to a Systems Manager parameter key.
-     * This field is returned only for <a
+     * <p>Read-only. Read-only. The value that corresponds to a SSM parameter key. This
+     * field is returned only for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
-     * <code>SSM</code> parameter types</a> in the template.</p>
+     * <code>SSM</code> </a> parameter types in the template.</p>
      */
     inline const Aws::String& GetResolvedValue() const{ return m_resolvedValue; }
 
     /**
-     * <p>Read-only. The value that corresponds to a Systems Manager parameter key.
-     * This field is returned only for <a
+     * <p>Read-only. Read-only. The value that corresponds to a SSM parameter key. This
+     * field is returned only for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
-     * <code>SSM</code> parameter types</a> in the template.</p>
+     * <code>SSM</code> </a> parameter types in the template.</p>
      */
     inline bool ResolvedValueHasBeenSet() const { return m_resolvedValueHasBeenSet; }
 
     /**
-     * <p>Read-only. The value that corresponds to a Systems Manager parameter key.
-     * This field is returned only for <a
+     * <p>Read-only. Read-only. The value that corresponds to a SSM parameter key. This
+     * field is returned only for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
-     * <code>SSM</code> parameter types</a> in the template.</p>
+     * <code>SSM</code> </a> parameter types in the template.</p>
      */
     inline void SetResolvedValue(const Aws::String& value) { m_resolvedValueHasBeenSet = true; m_resolvedValue = value; }
 
     /**
-     * <p>Read-only. The value that corresponds to a Systems Manager parameter key.
-     * This field is returned only for <a
+     * <p>Read-only. Read-only. The value that corresponds to a SSM parameter key. This
+     * field is returned only for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
-     * <code>SSM</code> parameter types</a> in the template.</p>
+     * <code>SSM</code> </a> parameter types in the template.</p>
      */
     inline void SetResolvedValue(Aws::String&& value) { m_resolvedValueHasBeenSet = true; m_resolvedValue = std::move(value); }
 
     /**
-     * <p>Read-only. The value that corresponds to a Systems Manager parameter key.
-     * This field is returned only for <a
+     * <p>Read-only. Read-only. The value that corresponds to a SSM parameter key. This
+     * field is returned only for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
-     * <code>SSM</code> parameter types</a> in the template.</p>
+     * <code>SSM</code> </a> parameter types in the template.</p>
      */
     inline void SetResolvedValue(const char* value) { m_resolvedValueHasBeenSet = true; m_resolvedValue.assign(value); }
 
     /**
-     * <p>Read-only. The value that corresponds to a Systems Manager parameter key.
-     * This field is returned only for <a
+     * <p>Read-only. Read-only. The value that corresponds to a SSM parameter key. This
+     * field is returned only for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
-     * <code>SSM</code> parameter types</a> in the template.</p>
+     * <code>SSM</code> </a> parameter types in the template.</p>
      */
     inline Parameter& WithResolvedValue(const Aws::String& value) { SetResolvedValue(value); return *this;}
 
     /**
-     * <p>Read-only. The value that corresponds to a Systems Manager parameter key.
-     * This field is returned only for <a
+     * <p>Read-only. Read-only. The value that corresponds to a SSM parameter key. This
+     * field is returned only for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
-     * <code>SSM</code> parameter types</a> in the template.</p>
+     * <code>SSM</code> </a> parameter types in the template.</p>
      */
     inline Parameter& WithResolvedValue(Aws::String&& value) { SetResolvedValue(std::move(value)); return *this;}
 
     /**
-     * <p>Read-only. The value that corresponds to a Systems Manager parameter key.
-     * This field is returned only for <a
+     * <p>Read-only. Read-only. The value that corresponds to a SSM parameter key. This
+     * field is returned only for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
-     * <code>SSM</code> parameter types</a> in the template.</p>
+     * <code>SSM</code> </a> parameter types in the template.</p>
      */
     inline Parameter& WithResolvedValue(const char* value) { SetResolvedValue(value); return *this;}
 

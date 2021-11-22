@@ -35,60 +35,60 @@ namespace Model
 
 
     /**
-     * <p>The status. If succeeded, the status is <code>SC_OK</code> </p>
+     * <p>The HTTP status of the request.</p>
      */
     inline int GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status. If succeeded, the status is <code>SC_OK</code> </p>
+     * <p>The HTTP status of the request.</p>
      */
     inline void SetStatus(int value) { m_status = value; }
 
     /**
-     * <p>The status. If succeeded, the status is <code>SC_OK</code> </p>
+     * <p>The HTTP status of the request.</p>
      */
     inline ListFoldersResult& WithStatus(int value) { SetStatus(value); return *this;}
 
 
     /**
-     * <p>A structure that contains all of the folders in your AWS account. This
-     * structure provides basic information about the folders.</p>
+     * <p>A structure that contains all of the folders in the Amazon Web Services
+     * account. This structure provides basic information about the folders.</p>
      */
     inline const Aws::Vector<FolderSummary>& GetFolderSummaryList() const{ return m_folderSummaryList; }
 
     /**
-     * <p>A structure that contains all of the folders in your AWS account. This
-     * structure provides basic information about the folders.</p>
+     * <p>A structure that contains all of the folders in the Amazon Web Services
+     * account. This structure provides basic information about the folders.</p>
      */
     inline void SetFolderSummaryList(const Aws::Vector<FolderSummary>& value) { m_folderSummaryList = value; }
 
     /**
-     * <p>A structure that contains all of the folders in your AWS account. This
-     * structure provides basic information about the folders.</p>
+     * <p>A structure that contains all of the folders in the Amazon Web Services
+     * account. This structure provides basic information about the folders.</p>
      */
     inline void SetFolderSummaryList(Aws::Vector<FolderSummary>&& value) { m_folderSummaryList = std::move(value); }
 
     /**
-     * <p>A structure that contains all of the folders in your AWS account. This
-     * structure provides basic information about the folders.</p>
+     * <p>A structure that contains all of the folders in the Amazon Web Services
+     * account. This structure provides basic information about the folders.</p>
      */
     inline ListFoldersResult& WithFolderSummaryList(const Aws::Vector<FolderSummary>& value) { SetFolderSummaryList(value); return *this;}
 
     /**
-     * <p>A structure that contains all of the folders in your AWS account. This
-     * structure provides basic information about the folders.</p>
+     * <p>A structure that contains all of the folders in the Amazon Web Services
+     * account. This structure provides basic information about the folders.</p>
      */
     inline ListFoldersResult& WithFolderSummaryList(Aws::Vector<FolderSummary>&& value) { SetFolderSummaryList(std::move(value)); return *this;}
 
     /**
-     * <p>A structure that contains all of the folders in your AWS account. This
-     * structure provides basic information about the folders.</p>
+     * <p>A structure that contains all of the folders in the Amazon Web Services
+     * account. This structure provides basic information about the folders.</p>
      */
     inline ListFoldersResult& AddFolderSummaryList(const FolderSummary& value) { m_folderSummaryList.push_back(value); return *this; }
 
     /**
-     * <p>A structure that contains all of the folders in your AWS account. This
-     * structure provides basic information about the folders.</p>
+     * <p>A structure that contains all of the folders in the Amazon Web Services
+     * account. This structure provides basic information about the folders.</p>
      */
     inline ListFoldersResult& AddFolderSummaryList(FolderSummary&& value) { m_folderSummaryList.push_back(std::move(value)); return *this; }
 
@@ -137,37 +137,37 @@ namespace Model
 
 
     /**
-     * <p>The request ID.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
-     * <p>The request ID.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
 
     /**
-     * <p>The request ID.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
 
     /**
-     * <p>The request ID.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
 
     /**
-     * <p>The request ID.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline ListFoldersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
-     * <p>The request ID.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline ListFoldersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>The request ID.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline ListFoldersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 

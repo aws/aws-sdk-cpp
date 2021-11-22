@@ -88,42 +88,42 @@ namespace Model
 
 
     /**
-     * <p>The ID for the dashboard, also added to the IAMpolicy.</p>
+     * <p>The ID for the dashboard, also added to the IAM policy.</p>
      */
     inline const Aws::String& GetDashboardId() const{ return m_dashboardId; }
 
     /**
-     * <p>The ID for the dashboard, also added to the IAMpolicy.</p>
+     * <p>The ID for the dashboard, also added to the IAM policy.</p>
      */
     inline bool DashboardIdHasBeenSet() const { return m_dashboardIdHasBeenSet; }
 
     /**
-     * <p>The ID for the dashboard, also added to the IAMpolicy.</p>
+     * <p>The ID for the dashboard, also added to the IAM policy.</p>
      */
     inline void SetDashboardId(const Aws::String& value) { m_dashboardIdHasBeenSet = true; m_dashboardId = value; }
 
     /**
-     * <p>The ID for the dashboard, also added to the IAMpolicy.</p>
+     * <p>The ID for the dashboard, also added to the IAM policy.</p>
      */
     inline void SetDashboardId(Aws::String&& value) { m_dashboardIdHasBeenSet = true; m_dashboardId = std::move(value); }
 
     /**
-     * <p>The ID for the dashboard, also added to the IAMpolicy.</p>
+     * <p>The ID for the dashboard, also added to the IAM policy.</p>
      */
     inline void SetDashboardId(const char* value) { m_dashboardIdHasBeenSet = true; m_dashboardId.assign(value); }
 
     /**
-     * <p>The ID for the dashboard, also added to the IAMpolicy.</p>
+     * <p>The ID for the dashboard, also added to the IAM policy.</p>
      */
     inline CreateDashboardRequest& WithDashboardId(const Aws::String& value) { SetDashboardId(value); return *this;}
 
     /**
-     * <p>The ID for the dashboard, also added to the IAMpolicy.</p>
+     * <p>The ID for the dashboard, also added to the IAM policy.</p>
      */
     inline CreateDashboardRequest& WithDashboardId(Aws::String&& value) { SetDashboardId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the dashboard, also added to the IAMpolicy.</p>
+     * <p>The ID for the dashboard, also added to the IAM policy.</p>
      */
     inline CreateDashboardRequest& WithDashboardId(const char* value) { SetDashboardId(value); return *this;}
 
@@ -214,7 +214,7 @@ namespace Model
 
     /**
      * <p>A structure that contains the permissions of the dashboard. You can use this
-     * structure for granting permissions by providing a list of IAMaction information
+     * structure for granting permissions by providing a list of IAM action information
      * for each principal ARN. </p> <p>To specify no permissions, omit the permissions
      * list.</p>
      */
@@ -222,7 +222,7 @@ namespace Model
 
     /**
      * <p>A structure that contains the permissions of the dashboard. You can use this
-     * structure for granting permissions by providing a list of IAMaction information
+     * structure for granting permissions by providing a list of IAM action information
      * for each principal ARN. </p> <p>To specify no permissions, omit the permissions
      * list.</p>
      */
@@ -230,7 +230,7 @@ namespace Model
 
     /**
      * <p>A structure that contains the permissions of the dashboard. You can use this
-     * structure for granting permissions by providing a list of IAMaction information
+     * structure for granting permissions by providing a list of IAM action information
      * for each principal ARN. </p> <p>To specify no permissions, omit the permissions
      * list.</p>
      */
@@ -238,7 +238,7 @@ namespace Model
 
     /**
      * <p>A structure that contains the permissions of the dashboard. You can use this
-     * structure for granting permissions by providing a list of IAMaction information
+     * structure for granting permissions by providing a list of IAM action information
      * for each principal ARN. </p> <p>To specify no permissions, omit the permissions
      * list.</p>
      */
@@ -246,7 +246,7 @@ namespace Model
 
     /**
      * <p>A structure that contains the permissions of the dashboard. You can use this
-     * structure for granting permissions by providing a list of IAMaction information
+     * structure for granting permissions by providing a list of IAM action information
      * for each principal ARN. </p> <p>To specify no permissions, omit the permissions
      * list.</p>
      */
@@ -254,7 +254,7 @@ namespace Model
 
     /**
      * <p>A structure that contains the permissions of the dashboard. You can use this
-     * structure for granting permissions by providing a list of IAMaction information
+     * structure for granting permissions by providing a list of IAM action information
      * for each principal ARN. </p> <p>To specify no permissions, omit the permissions
      * list.</p>
      */
@@ -262,7 +262,7 @@ namespace Model
 
     /**
      * <p>A structure that contains the permissions of the dashboard. You can use this
-     * structure for granting permissions by providing a list of IAMaction information
+     * structure for granting permissions by providing a list of IAM action information
      * for each principal ARN. </p> <p>To specify no permissions, omit the permissions
      * list.</p>
      */
@@ -270,7 +270,7 @@ namespace Model
 
     /**
      * <p>A structure that contains the permissions of the dashboard. You can use this
-     * structure for granting permissions by providing a list of IAMaction information
+     * structure for granting permissions by providing a list of IAM action information
      * for each principal ARN. </p> <p>To specify no permissions, omit the permissions
      * list.</p>
      */
@@ -282,14 +282,15 @@ namespace Model
      * <code>SourceEntity</code>, you specify the type of object you're using as
      * source. You can only create a dashboard from a template, so you use a
      * <code>SourceTemplate</code> entity. If you need to create a dashboard from an
-     * analysis, first convert the analysis to a template by using the
-     * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
-     * the Amazon Resource Name (ARN) of the source template. The
-     * <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and
-     * any Amazon QuickSight-supported Amazon Web Services Region. </p> <p>Use the
-     * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
-     * the replacement datasets for the placeholders listed in the original. The schema
-     * in each dataset must match its placeholder. </p>
+     * analysis, first convert the analysis to a template by using the <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+     * </code> API operation. For <code>SourceTemplate</code>, specify the Amazon
+     * Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN
+     * can contain any Amazon Web Services account and any Amazon QuickSight-supported
+     * Amazon Web Services Region. </p> <p>Use the <code>DataSetReferences</code>
+     * entity within <code>SourceTemplate</code> to list the replacement datasets for
+     * the placeholders listed in the original. The schema in each dataset must match
+     * its placeholder. </p>
      */
     inline const DashboardSourceEntity& GetSourceEntity() const{ return m_sourceEntity; }
 
@@ -298,14 +299,15 @@ namespace Model
      * <code>SourceEntity</code>, you specify the type of object you're using as
      * source. You can only create a dashboard from a template, so you use a
      * <code>SourceTemplate</code> entity. If you need to create a dashboard from an
-     * analysis, first convert the analysis to a template by using the
-     * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
-     * the Amazon Resource Name (ARN) of the source template. The
-     * <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and
-     * any Amazon QuickSight-supported Amazon Web Services Region. </p> <p>Use the
-     * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
-     * the replacement datasets for the placeholders listed in the original. The schema
-     * in each dataset must match its placeholder. </p>
+     * analysis, first convert the analysis to a template by using the <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+     * </code> API operation. For <code>SourceTemplate</code>, specify the Amazon
+     * Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN
+     * can contain any Amazon Web Services account and any Amazon QuickSight-supported
+     * Amazon Web Services Region. </p> <p>Use the <code>DataSetReferences</code>
+     * entity within <code>SourceTemplate</code> to list the replacement datasets for
+     * the placeholders listed in the original. The schema in each dataset must match
+     * its placeholder. </p>
      */
     inline bool SourceEntityHasBeenSet() const { return m_sourceEntityHasBeenSet; }
 
@@ -314,14 +316,15 @@ namespace Model
      * <code>SourceEntity</code>, you specify the type of object you're using as
      * source. You can only create a dashboard from a template, so you use a
      * <code>SourceTemplate</code> entity. If you need to create a dashboard from an
-     * analysis, first convert the analysis to a template by using the
-     * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
-     * the Amazon Resource Name (ARN) of the source template. The
-     * <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and
-     * any Amazon QuickSight-supported Amazon Web Services Region. </p> <p>Use the
-     * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
-     * the replacement datasets for the placeholders listed in the original. The schema
-     * in each dataset must match its placeholder. </p>
+     * analysis, first convert the analysis to a template by using the <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+     * </code> API operation. For <code>SourceTemplate</code>, specify the Amazon
+     * Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN
+     * can contain any Amazon Web Services account and any Amazon QuickSight-supported
+     * Amazon Web Services Region. </p> <p>Use the <code>DataSetReferences</code>
+     * entity within <code>SourceTemplate</code> to list the replacement datasets for
+     * the placeholders listed in the original. The schema in each dataset must match
+     * its placeholder. </p>
      */
     inline void SetSourceEntity(const DashboardSourceEntity& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = value; }
 
@@ -330,14 +333,15 @@ namespace Model
      * <code>SourceEntity</code>, you specify the type of object you're using as
      * source. You can only create a dashboard from a template, so you use a
      * <code>SourceTemplate</code> entity. If you need to create a dashboard from an
-     * analysis, first convert the analysis to a template by using the
-     * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
-     * the Amazon Resource Name (ARN) of the source template. The
-     * <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and
-     * any Amazon QuickSight-supported Amazon Web Services Region. </p> <p>Use the
-     * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
-     * the replacement datasets for the placeholders listed in the original. The schema
-     * in each dataset must match its placeholder. </p>
+     * analysis, first convert the analysis to a template by using the <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+     * </code> API operation. For <code>SourceTemplate</code>, specify the Amazon
+     * Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN
+     * can contain any Amazon Web Services account and any Amazon QuickSight-supported
+     * Amazon Web Services Region. </p> <p>Use the <code>DataSetReferences</code>
+     * entity within <code>SourceTemplate</code> to list the replacement datasets for
+     * the placeholders listed in the original. The schema in each dataset must match
+     * its placeholder. </p>
      */
     inline void SetSourceEntity(DashboardSourceEntity&& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = std::move(value); }
 
@@ -346,14 +350,15 @@ namespace Model
      * <code>SourceEntity</code>, you specify the type of object you're using as
      * source. You can only create a dashboard from a template, so you use a
      * <code>SourceTemplate</code> entity. If you need to create a dashboard from an
-     * analysis, first convert the analysis to a template by using the
-     * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
-     * the Amazon Resource Name (ARN) of the source template. The
-     * <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and
-     * any Amazon QuickSight-supported Amazon Web Services Region. </p> <p>Use the
-     * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
-     * the replacement datasets for the placeholders listed in the original. The schema
-     * in each dataset must match its placeholder. </p>
+     * analysis, first convert the analysis to a template by using the <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+     * </code> API operation. For <code>SourceTemplate</code>, specify the Amazon
+     * Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN
+     * can contain any Amazon Web Services account and any Amazon QuickSight-supported
+     * Amazon Web Services Region. </p> <p>Use the <code>DataSetReferences</code>
+     * entity within <code>SourceTemplate</code> to list the replacement datasets for
+     * the placeholders listed in the original. The schema in each dataset must match
+     * its placeholder. </p>
      */
     inline CreateDashboardRequest& WithSourceEntity(const DashboardSourceEntity& value) { SetSourceEntity(value); return *this;}
 
@@ -362,14 +367,15 @@ namespace Model
      * <code>SourceEntity</code>, you specify the type of object you're using as
      * source. You can only create a dashboard from a template, so you use a
      * <code>SourceTemplate</code> entity. If you need to create a dashboard from an
-     * analysis, first convert the analysis to a template by using the
-     * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
-     * the Amazon Resource Name (ARN) of the source template. The
-     * <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and
-     * any Amazon QuickSight-supported Amazon Web Services Region. </p> <p>Use the
-     * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
-     * the replacement datasets for the placeholders listed in the original. The schema
-     * in each dataset must match its placeholder. </p>
+     * analysis, first convert the analysis to a template by using the <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+     * </code> API operation. For <code>SourceTemplate</code>, specify the Amazon
+     * Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN
+     * can contain any Amazon Web Services account and any Amazon QuickSight-supported
+     * Amazon Web Services Region. </p> <p>Use the <code>DataSetReferences</code>
+     * entity within <code>SourceTemplate</code> to list the replacement datasets for
+     * the placeholders listed in the original. The schema in each dataset must match
+     * its placeholder. </p>
      */
     inline CreateDashboardRequest& WithSourceEntity(DashboardSourceEntity&& value) { SetSourceEntity(std::move(value)); return *this;}
 

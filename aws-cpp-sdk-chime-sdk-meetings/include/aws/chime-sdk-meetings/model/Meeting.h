@@ -7,6 +7,7 @@
 #include <aws/chime-sdk-meetings/ChimeSDKMeetings_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/chime-sdk-meetings/model/MediaPlacement.h>
+#include <aws/chime-sdk-meetings/model/MeetingFeaturesConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -288,6 +289,37 @@ namespace Model
      */
     inline Meeting& WithMediaPlacement(MediaPlacement&& value) { SetMediaPlacement(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The features available to a meeting, such as Amazon Voice Focus.</p>
+     */
+    inline const MeetingFeaturesConfiguration& GetMeetingFeatures() const{ return m_meetingFeatures; }
+
+    /**
+     * <p>The features available to a meeting, such as Amazon Voice Focus.</p>
+     */
+    inline bool MeetingFeaturesHasBeenSet() const { return m_meetingFeaturesHasBeenSet; }
+
+    /**
+     * <p>The features available to a meeting, such as Amazon Voice Focus.</p>
+     */
+    inline void SetMeetingFeatures(const MeetingFeaturesConfiguration& value) { m_meetingFeaturesHasBeenSet = true; m_meetingFeatures = value; }
+
+    /**
+     * <p>The features available to a meeting, such as Amazon Voice Focus.</p>
+     */
+    inline void SetMeetingFeatures(MeetingFeaturesConfiguration&& value) { m_meetingFeaturesHasBeenSet = true; m_meetingFeatures = std::move(value); }
+
+    /**
+     * <p>The features available to a meeting, such as Amazon Voice Focus.</p>
+     */
+    inline Meeting& WithMeetingFeatures(const MeetingFeaturesConfiguration& value) { SetMeetingFeatures(value); return *this;}
+
+    /**
+     * <p>The features available to a meeting, such as Amazon Voice Focus.</p>
+     */
+    inline Meeting& WithMeetingFeatures(MeetingFeaturesConfiguration&& value) { SetMeetingFeatures(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_meetingId;
@@ -304,6 +336,9 @@ namespace Model
 
     MediaPlacement m_mediaPlacement;
     bool m_mediaPlacementHasBeenSet;
+
+    MeetingFeaturesConfiguration m_meetingFeatures;
+    bool m_meetingFeaturesHasBeenSet;
   };
 
 } // namespace Model

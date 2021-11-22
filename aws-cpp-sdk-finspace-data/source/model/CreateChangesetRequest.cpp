@@ -13,16 +13,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateChangesetRequest::CreateChangesetRequest() : 
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true),
     m_datasetIdHasBeenSet(false),
     m_changeType(ChangeType::NOT_SET),
     m_changeTypeHasBeenSet(false),
-    m_sourceType(SourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
     m_sourceParamsHasBeenSet(false),
-    m_formatType(FormatType::NOT_SET),
-    m_formatTypeHasBeenSet(false),
-    m_formatParamsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_formatParamsHasBeenSet(false)
 {
 }
 
@@ -30,14 +27,15 @@ Aws::String CreateChangesetRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
+
+  }
+
   if(m_changeTypeHasBeenSet)
   {
    payload.WithString("changeType", ChangeTypeMapper::GetNameForChangeType(m_changeType));
-  }
-
-  if(m_sourceTypeHasBeenSet)
-  {
-   payload.WithString("sourceType", SourceTypeMapper::GetNameForSourceType(m_sourceType));
   }
 
   if(m_sourceParamsHasBeenSet)
@@ -51,11 +49,6 @@ Aws::String CreateChangesetRequest::SerializePayload() const
 
   }
 
-  if(m_formatTypeHasBeenSet)
-  {
-   payload.WithString("formatType", FormatTypeMapper::GetNameForFormatType(m_formatType));
-  }
-
   if(m_formatParamsHasBeenSet)
   {
    JsonValue formatParamsJsonMap;
@@ -64,17 +57,6 @@ Aws::String CreateChangesetRequest::SerializePayload() const
      formatParamsJsonMap.WithString(formatParamsItem.first, formatParamsItem.second);
    }
    payload.WithObject("formatParams", std::move(formatParamsJsonMap));
-
-  }
-
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

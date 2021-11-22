@@ -15,6 +15,7 @@
 #include <aws/connect/model/AssociateSecurityKeyResult.h>
 #include <aws/connect/model/CreateAgentStatusResult.h>
 #include <aws/connect/model/CreateContactFlowResult.h>
+#include <aws/connect/model/CreateContactFlowModuleResult.h>
 #include <aws/connect/model/CreateHoursOfOperationResult.h>
 #include <aws/connect/model/CreateInstanceResult.h>
 #include <aws/connect/model/CreateIntegrationAssociationResult.h>
@@ -25,9 +26,11 @@
 #include <aws/connect/model/CreateUseCaseResult.h>
 #include <aws/connect/model/CreateUserResult.h>
 #include <aws/connect/model/CreateUserHierarchyGroupResult.h>
+#include <aws/connect/model/DeleteContactFlowModuleResult.h>
 #include <aws/connect/model/DescribeAgentStatusResult.h>
 #include <aws/connect/model/DescribeContactResult.h>
 #include <aws/connect/model/DescribeContactFlowResult.h>
+#include <aws/connect/model/DescribeContactFlowModuleResult.h>
 #include <aws/connect/model/DescribeHoursOfOperationResult.h>
 #include <aws/connect/model/DescribeInstanceResult.h>
 #include <aws/connect/model/DescribeInstanceAttributeResult.h>
@@ -46,6 +49,7 @@
 #include <aws/connect/model/ListAgentStatusesResult.h>
 #include <aws/connect/model/ListApprovedOriginsResult.h>
 #include <aws/connect/model/ListBotsResult.h>
+#include <aws/connect/model/ListContactFlowModulesResult.h>
 #include <aws/connect/model/ListContactFlowsResult.h>
 #include <aws/connect/model/ListContactReferencesResult.h>
 #include <aws/connect/model/ListHoursOfOperationsResult.h>
@@ -81,6 +85,8 @@
 #include <aws/connect/model/SuspendContactRecordingResult.h>
 #include <aws/connect/model/UpdateContactResult.h>
 #include <aws/connect/model/UpdateContactAttributesResult.h>
+#include <aws/connect/model/UpdateContactFlowModuleContentResult.h>
+#include <aws/connect/model/UpdateContactFlowModuleMetadataResult.h>
 #include <aws/connect/model/UpdateContactScheduleResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -132,6 +138,7 @@ namespace Model
         class AssociateSecurityKeyRequest;
         class CreateAgentStatusRequest;
         class CreateContactFlowRequest;
+        class CreateContactFlowModuleRequest;
         class CreateHoursOfOperationRequest;
         class CreateInstanceRequest;
         class CreateIntegrationAssociationRequest;
@@ -142,6 +149,8 @@ namespace Model
         class CreateUseCaseRequest;
         class CreateUserRequest;
         class CreateUserHierarchyGroupRequest;
+        class DeleteContactFlowRequest;
+        class DeleteContactFlowModuleRequest;
         class DeleteHoursOfOperationRequest;
         class DeleteInstanceRequest;
         class DeleteIntegrationAssociationRequest;
@@ -153,6 +162,7 @@ namespace Model
         class DescribeAgentStatusRequest;
         class DescribeContactRequest;
         class DescribeContactFlowRequest;
+        class DescribeContactFlowModuleRequest;
         class DescribeHoursOfOperationRequest;
         class DescribeInstanceRequest;
         class DescribeInstanceAttributeRequest;
@@ -179,6 +189,7 @@ namespace Model
         class ListAgentStatusesRequest;
         class ListApprovedOriginsRequest;
         class ListBotsRequest;
+        class ListContactFlowModulesRequest;
         class ListContactFlowsRequest;
         class ListContactReferencesRequest;
         class ListHoursOfOperationsRequest;
@@ -218,6 +229,9 @@ namespace Model
         class UpdateContactRequest;
         class UpdateContactAttributesRequest;
         class UpdateContactFlowContentRequest;
+        class UpdateContactFlowMetadataRequest;
+        class UpdateContactFlowModuleContentRequest;
+        class UpdateContactFlowModuleMetadataRequest;
         class UpdateContactFlowNameRequest;
         class UpdateContactScheduleRequest;
         class UpdateHoursOfOperationRequest;
@@ -253,6 +267,7 @@ namespace Model
         typedef Aws::Utils::Outcome<AssociateSecurityKeyResult, ConnectError> AssociateSecurityKeyOutcome;
         typedef Aws::Utils::Outcome<CreateAgentStatusResult, ConnectError> CreateAgentStatusOutcome;
         typedef Aws::Utils::Outcome<CreateContactFlowResult, ConnectError> CreateContactFlowOutcome;
+        typedef Aws::Utils::Outcome<CreateContactFlowModuleResult, ConnectError> CreateContactFlowModuleOutcome;
         typedef Aws::Utils::Outcome<CreateHoursOfOperationResult, ConnectError> CreateHoursOfOperationOutcome;
         typedef Aws::Utils::Outcome<CreateInstanceResult, ConnectError> CreateInstanceOutcome;
         typedef Aws::Utils::Outcome<CreateIntegrationAssociationResult, ConnectError> CreateIntegrationAssociationOutcome;
@@ -263,6 +278,8 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateUseCaseResult, ConnectError> CreateUseCaseOutcome;
         typedef Aws::Utils::Outcome<CreateUserResult, ConnectError> CreateUserOutcome;
         typedef Aws::Utils::Outcome<CreateUserHierarchyGroupResult, ConnectError> CreateUserHierarchyGroupOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteContactFlowOutcome;
+        typedef Aws::Utils::Outcome<DeleteContactFlowModuleResult, ConnectError> DeleteContactFlowModuleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteHoursOfOperationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteInstanceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteIntegrationAssociationOutcome;
@@ -274,6 +291,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeAgentStatusResult, ConnectError> DescribeAgentStatusOutcome;
         typedef Aws::Utils::Outcome<DescribeContactResult, ConnectError> DescribeContactOutcome;
         typedef Aws::Utils::Outcome<DescribeContactFlowResult, ConnectError> DescribeContactFlowOutcome;
+        typedef Aws::Utils::Outcome<DescribeContactFlowModuleResult, ConnectError> DescribeContactFlowModuleOutcome;
         typedef Aws::Utils::Outcome<DescribeHoursOfOperationResult, ConnectError> DescribeHoursOfOperationOutcome;
         typedef Aws::Utils::Outcome<DescribeInstanceResult, ConnectError> DescribeInstanceOutcome;
         typedef Aws::Utils::Outcome<DescribeInstanceAttributeResult, ConnectError> DescribeInstanceAttributeOutcome;
@@ -300,6 +318,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListAgentStatusesResult, ConnectError> ListAgentStatusesOutcome;
         typedef Aws::Utils::Outcome<ListApprovedOriginsResult, ConnectError> ListApprovedOriginsOutcome;
         typedef Aws::Utils::Outcome<ListBotsResult, ConnectError> ListBotsOutcome;
+        typedef Aws::Utils::Outcome<ListContactFlowModulesResult, ConnectError> ListContactFlowModulesOutcome;
         typedef Aws::Utils::Outcome<ListContactFlowsResult, ConnectError> ListContactFlowsOutcome;
         typedef Aws::Utils::Outcome<ListContactReferencesResult, ConnectError> ListContactReferencesOutcome;
         typedef Aws::Utils::Outcome<ListHoursOfOperationsResult, ConnectError> ListHoursOfOperationsOutcome;
@@ -339,6 +358,9 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateContactResult, ConnectError> UpdateContactOutcome;
         typedef Aws::Utils::Outcome<UpdateContactAttributesResult, ConnectError> UpdateContactAttributesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateContactFlowContentOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateContactFlowMetadataOutcome;
+        typedef Aws::Utils::Outcome<UpdateContactFlowModuleContentResult, ConnectError> UpdateContactFlowModuleContentOutcome;
+        typedef Aws::Utils::Outcome<UpdateContactFlowModuleMetadataResult, ConnectError> UpdateContactFlowModuleMetadataOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateContactFlowNameOutcome;
         typedef Aws::Utils::Outcome<UpdateContactScheduleResult, ConnectError> UpdateContactScheduleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateHoursOfOperationOutcome;
@@ -374,6 +396,7 @@ namespace Model
         typedef std::future<AssociateSecurityKeyOutcome> AssociateSecurityKeyOutcomeCallable;
         typedef std::future<CreateAgentStatusOutcome> CreateAgentStatusOutcomeCallable;
         typedef std::future<CreateContactFlowOutcome> CreateContactFlowOutcomeCallable;
+        typedef std::future<CreateContactFlowModuleOutcome> CreateContactFlowModuleOutcomeCallable;
         typedef std::future<CreateHoursOfOperationOutcome> CreateHoursOfOperationOutcomeCallable;
         typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
         typedef std::future<CreateIntegrationAssociationOutcome> CreateIntegrationAssociationOutcomeCallable;
@@ -384,6 +407,8 @@ namespace Model
         typedef std::future<CreateUseCaseOutcome> CreateUseCaseOutcomeCallable;
         typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
         typedef std::future<CreateUserHierarchyGroupOutcome> CreateUserHierarchyGroupOutcomeCallable;
+        typedef std::future<DeleteContactFlowOutcome> DeleteContactFlowOutcomeCallable;
+        typedef std::future<DeleteContactFlowModuleOutcome> DeleteContactFlowModuleOutcomeCallable;
         typedef std::future<DeleteHoursOfOperationOutcome> DeleteHoursOfOperationOutcomeCallable;
         typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
         typedef std::future<DeleteIntegrationAssociationOutcome> DeleteIntegrationAssociationOutcomeCallable;
@@ -395,6 +420,7 @@ namespace Model
         typedef std::future<DescribeAgentStatusOutcome> DescribeAgentStatusOutcomeCallable;
         typedef std::future<DescribeContactOutcome> DescribeContactOutcomeCallable;
         typedef std::future<DescribeContactFlowOutcome> DescribeContactFlowOutcomeCallable;
+        typedef std::future<DescribeContactFlowModuleOutcome> DescribeContactFlowModuleOutcomeCallable;
         typedef std::future<DescribeHoursOfOperationOutcome> DescribeHoursOfOperationOutcomeCallable;
         typedef std::future<DescribeInstanceOutcome> DescribeInstanceOutcomeCallable;
         typedef std::future<DescribeInstanceAttributeOutcome> DescribeInstanceAttributeOutcomeCallable;
@@ -421,6 +447,7 @@ namespace Model
         typedef std::future<ListAgentStatusesOutcome> ListAgentStatusesOutcomeCallable;
         typedef std::future<ListApprovedOriginsOutcome> ListApprovedOriginsOutcomeCallable;
         typedef std::future<ListBotsOutcome> ListBotsOutcomeCallable;
+        typedef std::future<ListContactFlowModulesOutcome> ListContactFlowModulesOutcomeCallable;
         typedef std::future<ListContactFlowsOutcome> ListContactFlowsOutcomeCallable;
         typedef std::future<ListContactReferencesOutcome> ListContactReferencesOutcomeCallable;
         typedef std::future<ListHoursOfOperationsOutcome> ListHoursOfOperationsOutcomeCallable;
@@ -460,6 +487,9 @@ namespace Model
         typedef std::future<UpdateContactOutcome> UpdateContactOutcomeCallable;
         typedef std::future<UpdateContactAttributesOutcome> UpdateContactAttributesOutcomeCallable;
         typedef std::future<UpdateContactFlowContentOutcome> UpdateContactFlowContentOutcomeCallable;
+        typedef std::future<UpdateContactFlowMetadataOutcome> UpdateContactFlowMetadataOutcomeCallable;
+        typedef std::future<UpdateContactFlowModuleContentOutcome> UpdateContactFlowModuleContentOutcomeCallable;
+        typedef std::future<UpdateContactFlowModuleMetadataOutcome> UpdateContactFlowModuleMetadataOutcomeCallable;
         typedef std::future<UpdateContactFlowNameOutcome> UpdateContactFlowNameOutcomeCallable;
         typedef std::future<UpdateContactScheduleOutcome> UpdateContactScheduleOutcomeCallable;
         typedef std::future<UpdateHoursOfOperationOutcome> UpdateHoursOfOperationOutcomeCallable;
@@ -498,6 +528,7 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::AssociateSecurityKeyRequest&, const Model::AssociateSecurityKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateSecurityKeyResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateAgentStatusRequest&, const Model::CreateAgentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAgentStatusResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateContactFlowRequest&, const Model::CreateContactFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContactFlowResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::CreateContactFlowModuleRequest&, const Model::CreateContactFlowModuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContactFlowModuleResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateHoursOfOperationRequest&, const Model::CreateHoursOfOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHoursOfOperationResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateInstanceRequest&, const Model::CreateInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInstanceResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateIntegrationAssociationRequest&, const Model::CreateIntegrationAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIntegrationAssociationResponseReceivedHandler;
@@ -508,6 +539,8 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::CreateUseCaseRequest&, const Model::CreateUseCaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUseCaseResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateUserRequest&, const Model::CreateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateUserHierarchyGroupRequest&, const Model::CreateUserHierarchyGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserHierarchyGroupResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::DeleteContactFlowRequest&, const Model::DeleteContactFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContactFlowResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::DeleteContactFlowModuleRequest&, const Model::DeleteContactFlowModuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContactFlowModuleResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteHoursOfOperationRequest&, const Model::DeleteHoursOfOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHoursOfOperationResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteInstanceRequest&, const Model::DeleteInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInstanceResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteIntegrationAssociationRequest&, const Model::DeleteIntegrationAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIntegrationAssociationResponseReceivedHandler;
@@ -519,6 +552,7 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::DescribeAgentStatusRequest&, const Model::DescribeAgentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAgentStatusResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeContactRequest&, const Model::DescribeContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeContactFlowRequest&, const Model::DescribeContactFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContactFlowResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::DescribeContactFlowModuleRequest&, const Model::DescribeContactFlowModuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContactFlowModuleResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeHoursOfOperationRequest&, const Model::DescribeHoursOfOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHoursOfOperationResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeInstanceRequest&, const Model::DescribeInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeInstanceAttributeRequest&, const Model::DescribeInstanceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceAttributeResponseReceivedHandler;
@@ -545,6 +579,7 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::ListAgentStatusesRequest&, const Model::ListAgentStatusesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAgentStatusesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListApprovedOriginsRequest&, const Model::ListApprovedOriginsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApprovedOriginsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListBotsRequest&, const Model::ListBotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotsResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::ListContactFlowModulesRequest&, const Model::ListContactFlowModulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContactFlowModulesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListContactFlowsRequest&, const Model::ListContactFlowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContactFlowsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListContactReferencesRequest&, const Model::ListContactReferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContactReferencesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListHoursOfOperationsRequest&, const Model::ListHoursOfOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHoursOfOperationsResponseReceivedHandler;
@@ -584,6 +619,9 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::UpdateContactRequest&, const Model::UpdateContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateContactAttributesRequest&, const Model::UpdateContactAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactAttributesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateContactFlowContentRequest&, const Model::UpdateContactFlowContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactFlowContentResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::UpdateContactFlowMetadataRequest&, const Model::UpdateContactFlowMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactFlowMetadataResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::UpdateContactFlowModuleContentRequest&, const Model::UpdateContactFlowModuleContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactFlowModuleContentResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::UpdateContactFlowModuleMetadataRequest&, const Model::UpdateContactFlowModuleMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactFlowModuleMetadataResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateContactFlowNameRequest&, const Model::UpdateContactFlowNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactFlowNameResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateContactScheduleRequest&, const Model::UpdateContactScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactScheduleResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateHoursOfOperationRequest&, const Model::UpdateHoursOfOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateHoursOfOperationResponseReceivedHandler;
@@ -981,14 +1019,44 @@ namespace Model
         virtual void CreateContactFlowAsync(const Model::CreateContactFlowRequest& request, const CreateContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates hours of operation. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates a contact flow module for the specified Amazon Connect instance.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowModule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateContactFlowModuleOutcome CreateContactFlowModule(const Model::CreateContactFlowModuleRequest& request) const;
+
+        /**
+         * <p>Creates a contact flow module for the specified Amazon Connect instance.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowModule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateContactFlowModuleOutcomeCallable CreateContactFlowModuleCallable(const Model::CreateContactFlowModuleRequest& request) const;
+
+        /**
+         * <p>Creates a contact flow module for the specified Amazon Connect instance.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowModule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateContactFlowModuleAsync(const Model::CreateContactFlowModuleRequest& request, const CreateContactFlowModuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Creates hours of operation. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateHoursOfOperation">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateHoursOfOperationOutcome CreateHoursOfOperation(const Model::CreateHoursOfOperationRequest& request) const;
 
         /**
-         * <p>Creates hours of operation. </p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Creates hours of operation. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateHoursOfOperation">AWS
          * API Reference</a></p>
          *
@@ -997,7 +1065,8 @@ namespace Model
         virtual Model::CreateHoursOfOperationOutcomeCallable CreateHoursOfOperationCallable(const Model::CreateHoursOfOperationRequest& request) const;
 
         /**
-         * <p>Creates hours of operation. </p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Creates hours of operation. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateHoursOfOperation">AWS
          * API Reference</a></p>
          *
@@ -1291,14 +1360,69 @@ namespace Model
         virtual void CreateUserHierarchyGroupAsync(const Model::CreateUserHierarchyGroupRequest& request, const CreateUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an hours of operation.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a contact flow for the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteContactFlowOutcome DeleteContactFlow(const Model::DeleteContactFlowRequest& request) const;
+
+        /**
+         * <p>Deletes a contact flow for the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlow">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteContactFlowOutcomeCallable DeleteContactFlowCallable(const Model::DeleteContactFlowRequest& request) const;
+
+        /**
+         * <p>Deletes a contact flow for the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlow">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteContactFlowAsync(const Model::DeleteContactFlowRequest& request, const DeleteContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified contact flow module.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowModule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteContactFlowModuleOutcome DeleteContactFlowModule(const Model::DeleteContactFlowModuleRequest& request) const;
+
+        /**
+         * <p>Deletes the specified contact flow module.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowModule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteContactFlowModuleOutcomeCallable DeleteContactFlowModuleCallable(const Model::DeleteContactFlowModuleRequest& request) const;
+
+        /**
+         * <p>Deletes the specified contact flow module.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowModule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteContactFlowModuleAsync(const Model::DeleteContactFlowModuleRequest& request, const DeleteContactFlowModuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Deletes an hours of operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteHoursOfOperation">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteHoursOfOperationOutcome DeleteHoursOfOperation(const Model::DeleteHoursOfOperationRequest& request) const;
 
         /**
-         * <p>Deletes an hours of operation.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Deletes an hours of operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteHoursOfOperation">AWS
          * API Reference</a></p>
          *
@@ -1307,7 +1431,8 @@ namespace Model
         virtual Model::DeleteHoursOfOperationOutcomeCallable DeleteHoursOfOperationCallable(const Model::DeleteHoursOfOperationRequest& request) const;
 
         /**
-         * <p>Deletes an hours of operation.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Deletes an hours of operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteHoursOfOperation">AWS
          * API Reference</a></p>
          *
@@ -1569,7 +1694,7 @@ namespace Model
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Describes the specified contact. </p>  <p>Contact
-         * information is available in Amazon Connect for 24 months, and then it is
+         * information remains available in Amazon Connect for 24 months, and then it is
          * deleted.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContact">AWS
          * API Reference</a></p>
@@ -1579,7 +1704,7 @@ namespace Model
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Describes the specified contact. </p>  <p>Contact
-         * information is available in Amazon Connect for 24 months, and then it is
+         * information remains available in Amazon Connect for 24 months, and then it is
          * deleted.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContact">AWS
          * API Reference</a></p>
@@ -1591,7 +1716,7 @@ namespace Model
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Describes the specified contact. </p>  <p>Contact
-         * information is available in Amazon Connect for 24 months, and then it is
+         * information remains available in Amazon Connect for 24 months, and then it is
          * deleted.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContact">AWS
          * API Reference</a></p>
@@ -1635,14 +1760,41 @@ namespace Model
         virtual void DescribeContactFlowAsync(const Model::DescribeContactFlowRequest& request, const DescribeContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the hours of operation.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified contact flow module.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlowModule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeContactFlowModuleOutcome DescribeContactFlowModule(const Model::DescribeContactFlowModuleRequest& request) const;
+
+        /**
+         * <p>Describes the specified contact flow module.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlowModule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeContactFlowModuleOutcomeCallable DescribeContactFlowModuleCallable(const Model::DescribeContactFlowModuleRequest& request) const;
+
+        /**
+         * <p>Describes the specified contact flow module.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlowModule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeContactFlowModuleAsync(const Model::DescribeContactFlowModuleRequest& request, const DescribeContactFlowModuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Describes the hours of operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeHoursOfOperation">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeHoursOfOperationOutcome DescribeHoursOfOperation(const Model::DescribeHoursOfOperationRequest& request) const;
 
         /**
-         * <p>Describes the hours of operation.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Describes the hours of operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeHoursOfOperation">AWS
          * API Reference</a></p>
          *
@@ -1651,7 +1803,8 @@ namespace Model
         virtual Model::DescribeHoursOfOperationOutcomeCallable DescribeHoursOfOperationCallable(const Model::DescribeHoursOfOperationRequest& request) const;
 
         /**
-         * <p>Describes the hours of operation.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Describes the hours of operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeHoursOfOperation">AWS
          * API Reference</a></p>
          *
@@ -2433,6 +2586,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListBotsAsync(const Model::ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Provides information about the contact flow modules for the specified Amazon
+         * Connect instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowModules">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListContactFlowModulesOutcome ListContactFlowModules(const Model::ListContactFlowModulesRequest& request) const;
+
+        /**
+         * <p>Provides information about the contact flow modules for the specified Amazon
+         * Connect instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowModules">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListContactFlowModulesOutcomeCallable ListContactFlowModulesCallable(const Model::ListContactFlowModulesRequest& request) const;
+
+        /**
+         * <p>Provides information about the contact flow modules for the specified Amazon
+         * Connect instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowModules">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListContactFlowModulesAsync(const Model::ListContactFlowModulesRequest& request, const ListContactFlowModulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides information about the contact flows for the specified Amazon Connect
@@ -3492,16 +3673,14 @@ namespace Model
         virtual void StartOutboundVoiceContactAsync(const Model::StartOutboundVoiceContactRequest& request, const StartOutboundVoiceContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Initiates a contact flow to start a new task immediately or at a future date
-         * and time.</p><p><h3>See Also:</h3>   <a
+         * <p>Initiates a contact flow to start a new task.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartTaskContact">AWS
          * API Reference</a></p>
          */
         virtual Model::StartTaskContactOutcome StartTaskContact(const Model::StartTaskContactRequest& request) const;
 
         /**
-         * <p>Initiates a contact flow to start a new task immediately or at a future date
-         * and time.</p><p><h3>See Also:</h3>   <a
+         * <p>Initiates a contact flow to start a new task.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartTaskContact">AWS
          * API Reference</a></p>
          *
@@ -3510,8 +3689,7 @@ namespace Model
         virtual Model::StartTaskContactOutcomeCallable StartTaskContactCallable(const Model::StartTaskContactRequest& request) const;
 
         /**
-         * <p>Initiates a contact flow to start a new task immediately or at a future date
-         * and time.</p><p><h3>See Also:</h3>   <a
+         * <p>Initiates a contact flow to start a new task.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartTaskContact">AWS
          * API Reference</a></p>
          *
@@ -3762,7 +3940,7 @@ namespace Model
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Adds or updates user defined contact information associated with
+         * change.</p> <p>Adds or updates user-defined contact information associated with
          * the specified contact. At least one field to be updated must be present in the
          * request.</p>  <p>You can add or update user-defined contact
          * information for both ongoing and completed contacts.</p> <p><h3>See
@@ -3774,7 +3952,7 @@ namespace Model
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Adds or updates user defined contact information associated with
+         * change.</p> <p>Adds or updates user-defined contact information associated with
          * the specified contact. At least one field to be updated must be present in the
          * request.</p>  <p>You can add or update user-defined contact
          * information for both ongoing and completed contacts.</p> <p><h3>See
@@ -3788,7 +3966,7 @@ namespace Model
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Adds or updates user defined contact information associated with
+         * change.</p> <p>Adds or updates user-defined contact information associated with
          * the specified contact. At least one field to be updated must be present in the
          * request.</p>  <p>You can add or update user-defined contact
          * information for both ongoing and completed contacts.</p> <p><h3>See
@@ -3917,6 +4095,87 @@ namespace Model
         virtual void UpdateContactFlowContentAsync(const Model::UpdateContactFlowContentRequest& request, const UpdateContactFlowContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates metadata about specified contact flow.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowMetadata">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateContactFlowMetadataOutcome UpdateContactFlowMetadata(const Model::UpdateContactFlowMetadataRequest& request) const;
+
+        /**
+         * <p>Updates metadata about specified contact flow.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowMetadata">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateContactFlowMetadataOutcomeCallable UpdateContactFlowMetadataCallable(const Model::UpdateContactFlowMetadataRequest& request) const;
+
+        /**
+         * <p>Updates metadata about specified contact flow.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowMetadata">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateContactFlowMetadataAsync(const Model::UpdateContactFlowMetadataRequest& request, const UpdateContactFlowMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates specified contact flow module for the specified Amazon Connect
+         * instance. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleContent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateContactFlowModuleContentOutcome UpdateContactFlowModuleContent(const Model::UpdateContactFlowModuleContentRequest& request) const;
+
+        /**
+         * <p>Updates specified contact flow module for the specified Amazon Connect
+         * instance. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleContent">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateContactFlowModuleContentOutcomeCallable UpdateContactFlowModuleContentCallable(const Model::UpdateContactFlowModuleContentRequest& request) const;
+
+        /**
+         * <p>Updates specified contact flow module for the specified Amazon Connect
+         * instance. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleContent">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateContactFlowModuleContentAsync(const Model::UpdateContactFlowModuleContentRequest& request, const UpdateContactFlowModuleContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates metadata about specified contact flow module.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleMetadata">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateContactFlowModuleMetadataOutcome UpdateContactFlowModuleMetadata(const Model::UpdateContactFlowModuleMetadataRequest& request) const;
+
+        /**
+         * <p>Updates metadata about specified contact flow module.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleMetadata">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateContactFlowModuleMetadataOutcomeCallable UpdateContactFlowModuleMetadataCallable(const Model::UpdateContactFlowModuleMetadataRequest& request) const;
+
+        /**
+         * <p>Updates metadata about specified contact flow module.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleMetadata">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateContactFlowModuleMetadataAsync(const Model::UpdateContactFlowModuleMetadataRequest& request, const UpdateContactFlowModuleMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>The name of the contact flow.</p> <p>You can also create and update contact
          * flows using the <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
@@ -3979,14 +4238,16 @@ namespace Model
         virtual void UpdateContactScheduleAsync(const Model::UpdateContactScheduleRequest& request, const UpdateContactScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the hours of operation.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Updates the hours of operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateHoursOfOperation">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateHoursOfOperationOutcome UpdateHoursOfOperation(const Model::UpdateHoursOfOperationRequest& request) const;
 
         /**
-         * <p>Updates the hours of operation.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Updates the hours of operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateHoursOfOperation">AWS
          * API Reference</a></p>
          *
@@ -3995,7 +4256,8 @@ namespace Model
         virtual Model::UpdateHoursOfOperationOutcomeCallable UpdateHoursOfOperationCallable(const Model::UpdateHoursOfOperationRequest& request) const;
 
         /**
-         * <p>Updates the hours of operation.</p><p><h3>See Also:</h3>   <a
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Updates the hours of operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateHoursOfOperation">AWS
          * API Reference</a></p>
          *
@@ -4653,6 +4915,7 @@ namespace Model
         void AssociateSecurityKeyAsyncHelper(const Model::AssociateSecurityKeyRequest& request, const AssociateSecurityKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAgentStatusAsyncHelper(const Model::CreateAgentStatusRequest& request, const CreateAgentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateContactFlowAsyncHelper(const Model::CreateContactFlowRequest& request, const CreateContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateContactFlowModuleAsyncHelper(const Model::CreateContactFlowModuleRequest& request, const CreateContactFlowModuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateHoursOfOperationAsyncHelper(const Model::CreateHoursOfOperationRequest& request, const CreateHoursOfOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateInstanceAsyncHelper(const Model::CreateInstanceRequest& request, const CreateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateIntegrationAssociationAsyncHelper(const Model::CreateIntegrationAssociationRequest& request, const CreateIntegrationAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4663,6 +4926,8 @@ namespace Model
         void CreateUseCaseAsyncHelper(const Model::CreateUseCaseRequest& request, const CreateUseCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUserAsyncHelper(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUserHierarchyGroupAsyncHelper(const Model::CreateUserHierarchyGroupRequest& request, const CreateUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteContactFlowAsyncHelper(const Model::DeleteContactFlowRequest& request, const DeleteContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteContactFlowModuleAsyncHelper(const Model::DeleteContactFlowModuleRequest& request, const DeleteContactFlowModuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteHoursOfOperationAsyncHelper(const Model::DeleteHoursOfOperationRequest& request, const DeleteHoursOfOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteInstanceAsyncHelper(const Model::DeleteInstanceRequest& request, const DeleteInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteIntegrationAssociationAsyncHelper(const Model::DeleteIntegrationAssociationRequest& request, const DeleteIntegrationAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4674,6 +4939,7 @@ namespace Model
         void DescribeAgentStatusAsyncHelper(const Model::DescribeAgentStatusRequest& request, const DescribeAgentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeContactAsyncHelper(const Model::DescribeContactRequest& request, const DescribeContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeContactFlowAsyncHelper(const Model::DescribeContactFlowRequest& request, const DescribeContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeContactFlowModuleAsyncHelper(const Model::DescribeContactFlowModuleRequest& request, const DescribeContactFlowModuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeHoursOfOperationAsyncHelper(const Model::DescribeHoursOfOperationRequest& request, const DescribeHoursOfOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstanceAsyncHelper(const Model::DescribeInstanceRequest& request, const DescribeInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstanceAttributeAsyncHelper(const Model::DescribeInstanceAttributeRequest& request, const DescribeInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4700,6 +4966,7 @@ namespace Model
         void ListAgentStatusesAsyncHelper(const Model::ListAgentStatusesRequest& request, const ListAgentStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListApprovedOriginsAsyncHelper(const Model::ListApprovedOriginsRequest& request, const ListApprovedOriginsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBotsAsyncHelper(const Model::ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListContactFlowModulesAsyncHelper(const Model::ListContactFlowModulesRequest& request, const ListContactFlowModulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListContactFlowsAsyncHelper(const Model::ListContactFlowsRequest& request, const ListContactFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListContactReferencesAsyncHelper(const Model::ListContactReferencesRequest& request, const ListContactReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListHoursOfOperationsAsyncHelper(const Model::ListHoursOfOperationsRequest& request, const ListHoursOfOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4739,6 +5006,9 @@ namespace Model
         void UpdateContactAsyncHelper(const Model::UpdateContactRequest& request, const UpdateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateContactAttributesAsyncHelper(const Model::UpdateContactAttributesRequest& request, const UpdateContactAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateContactFlowContentAsyncHelper(const Model::UpdateContactFlowContentRequest& request, const UpdateContactFlowContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateContactFlowMetadataAsyncHelper(const Model::UpdateContactFlowMetadataRequest& request, const UpdateContactFlowMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateContactFlowModuleContentAsyncHelper(const Model::UpdateContactFlowModuleContentRequest& request, const UpdateContactFlowModuleContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateContactFlowModuleMetadataAsyncHelper(const Model::UpdateContactFlowModuleMetadataRequest& request, const UpdateContactFlowModuleMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateContactFlowNameAsyncHelper(const Model::UpdateContactFlowNameRequest& request, const UpdateContactFlowNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateContactScheduleAsyncHelper(const Model::UpdateContactScheduleRequest& request, const UpdateContactScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateHoursOfOperationAsyncHelper(const Model::UpdateHoursOfOperationRequest& request, const UpdateHoursOfOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

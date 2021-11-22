@@ -7,6 +7,7 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/quicksight/model/LinkSharingConfiguration.h>
 #include <aws/quicksight/model/ResourcePermission.h>
 #include <utility>
 
@@ -193,6 +194,57 @@ namespace Model
      */
     inline DescribeDashboardPermissionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
+
+    /**
+     * <p>A structure that contains the configuration of a shareable link that grants
+     * access to the dashboard. Your users can use the link to view and interact with
+     * the dashboard, if the dashboard has been shared with them. For more information
+     * about sharing dashboards, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing
+     * Dashboards</a>.</p>
+     */
+    inline const LinkSharingConfiguration& GetLinkSharingConfiguration() const{ return m_linkSharingConfiguration; }
+
+    /**
+     * <p>A structure that contains the configuration of a shareable link that grants
+     * access to the dashboard. Your users can use the link to view and interact with
+     * the dashboard, if the dashboard has been shared with them. For more information
+     * about sharing dashboards, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing
+     * Dashboards</a>.</p>
+     */
+    inline void SetLinkSharingConfiguration(const LinkSharingConfiguration& value) { m_linkSharingConfiguration = value; }
+
+    /**
+     * <p>A structure that contains the configuration of a shareable link that grants
+     * access to the dashboard. Your users can use the link to view and interact with
+     * the dashboard, if the dashboard has been shared with them. For more information
+     * about sharing dashboards, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing
+     * Dashboards</a>.</p>
+     */
+    inline void SetLinkSharingConfiguration(LinkSharingConfiguration&& value) { m_linkSharingConfiguration = std::move(value); }
+
+    /**
+     * <p>A structure that contains the configuration of a shareable link that grants
+     * access to the dashboard. Your users can use the link to view and interact with
+     * the dashboard, if the dashboard has been shared with them. For more information
+     * about sharing dashboards, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing
+     * Dashboards</a>.</p>
+     */
+    inline DescribeDashboardPermissionsResult& WithLinkSharingConfiguration(const LinkSharingConfiguration& value) { SetLinkSharingConfiguration(value); return *this;}
+
+    /**
+     * <p>A structure that contains the configuration of a shareable link that grants
+     * access to the dashboard. Your users can use the link to view and interact with
+     * the dashboard, if the dashboard has been shared with them. For more information
+     * about sharing dashboards, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing
+     * Dashboards</a>.</p>
+     */
+    inline DescribeDashboardPermissionsResult& WithLinkSharingConfiguration(LinkSharingConfiguration&& value) { SetLinkSharingConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_dashboardId;
@@ -204,6 +256,8 @@ namespace Model
     int m_status;
 
     Aws::String m_requestId;
+
+    LinkSharingConfiguration m_linkSharingConfiguration;
   };
 
 } // namespace Model

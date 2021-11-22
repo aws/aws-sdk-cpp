@@ -46,11 +46,11 @@ namespace Model
      * <code>REGISTERED</code>: Private extensions that have been registered for this
      * account and region.</p> </li> <li> <p> <code>ACTIVATED</code>: Public extensions
      * that have been activated for this account and region.</p> </li> <li> <p>
-     * <code>THIRD-PARTY</code>: Extensions available for use from publishers other
+     * <code>THIRD_PARTY</code>: Extensions available for use from publishers other
      * than Amazon. This includes:</p> <ul> <li> <p>Private extensions registered in
      * the account.</p> </li> <li> <p>Public extensions from publishers other than
      * Amazon, whether activated or not.</p> </li> </ul> </li> <li> <p>
-     * <code>AWS-TYPES</code>: Extensions available for use from Amazon.</p> </li>
+     * <code>AWS_TYPES</code>: Extensions available for use from Amazon.</p> </li>
      * </ul>
      */
     inline const Category& GetCategory() const{ return m_category; }
@@ -60,11 +60,11 @@ namespace Model
      * <code>REGISTERED</code>: Private extensions that have been registered for this
      * account and region.</p> </li> <li> <p> <code>ACTIVATED</code>: Public extensions
      * that have been activated for this account and region.</p> </li> <li> <p>
-     * <code>THIRD-PARTY</code>: Extensions available for use from publishers other
+     * <code>THIRD_PARTY</code>: Extensions available for use from publishers other
      * than Amazon. This includes:</p> <ul> <li> <p>Private extensions registered in
      * the account.</p> </li> <li> <p>Public extensions from publishers other than
      * Amazon, whether activated or not.</p> </li> </ul> </li> <li> <p>
-     * <code>AWS-TYPES</code>: Extensions available for use from Amazon.</p> </li>
+     * <code>AWS_TYPES</code>: Extensions available for use from Amazon.</p> </li>
      * </ul>
      */
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
@@ -74,11 +74,11 @@ namespace Model
      * <code>REGISTERED</code>: Private extensions that have been registered for this
      * account and region.</p> </li> <li> <p> <code>ACTIVATED</code>: Public extensions
      * that have been activated for this account and region.</p> </li> <li> <p>
-     * <code>THIRD-PARTY</code>: Extensions available for use from publishers other
+     * <code>THIRD_PARTY</code>: Extensions available for use from publishers other
      * than Amazon. This includes:</p> <ul> <li> <p>Private extensions registered in
      * the account.</p> </li> <li> <p>Public extensions from publishers other than
      * Amazon, whether activated or not.</p> </li> </ul> </li> <li> <p>
-     * <code>AWS-TYPES</code>: Extensions available for use from Amazon.</p> </li>
+     * <code>AWS_TYPES</code>: Extensions available for use from Amazon.</p> </li>
      * </ul>
      */
     inline void SetCategory(const Category& value) { m_categoryHasBeenSet = true; m_category = value; }
@@ -88,11 +88,11 @@ namespace Model
      * <code>REGISTERED</code>: Private extensions that have been registered for this
      * account and region.</p> </li> <li> <p> <code>ACTIVATED</code>: Public extensions
      * that have been activated for this account and region.</p> </li> <li> <p>
-     * <code>THIRD-PARTY</code>: Extensions available for use from publishers other
+     * <code>THIRD_PARTY</code>: Extensions available for use from publishers other
      * than Amazon. This includes:</p> <ul> <li> <p>Private extensions registered in
      * the account.</p> </li> <li> <p>Public extensions from publishers other than
      * Amazon, whether activated or not.</p> </li> </ul> </li> <li> <p>
-     * <code>AWS-TYPES</code>: Extensions available for use from Amazon.</p> </li>
+     * <code>AWS_TYPES</code>: Extensions available for use from Amazon.</p> </li>
      * </ul>
      */
     inline void SetCategory(Category&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
@@ -102,11 +102,11 @@ namespace Model
      * <code>REGISTERED</code>: Private extensions that have been registered for this
      * account and region.</p> </li> <li> <p> <code>ACTIVATED</code>: Public extensions
      * that have been activated for this account and region.</p> </li> <li> <p>
-     * <code>THIRD-PARTY</code>: Extensions available for use from publishers other
+     * <code>THIRD_PARTY</code>: Extensions available for use from publishers other
      * than Amazon. This includes:</p> <ul> <li> <p>Private extensions registered in
      * the account.</p> </li> <li> <p>Public extensions from publishers other than
      * Amazon, whether activated or not.</p> </li> </ul> </li> <li> <p>
-     * <code>AWS-TYPES</code>: Extensions available for use from Amazon.</p> </li>
+     * <code>AWS_TYPES</code>: Extensions available for use from Amazon.</p> </li>
      * </ul>
      */
     inline TypeFilters& WithCategory(const Category& value) { SetCategory(value); return *this;}
@@ -116,11 +116,11 @@ namespace Model
      * <code>REGISTERED</code>: Private extensions that have been registered for this
      * account and region.</p> </li> <li> <p> <code>ACTIVATED</code>: Public extensions
      * that have been activated for this account and region.</p> </li> <li> <p>
-     * <code>THIRD-PARTY</code>: Extensions available for use from publishers other
+     * <code>THIRD_PARTY</code>: Extensions available for use from publishers other
      * than Amazon. This includes:</p> <ul> <li> <p>Private extensions registered in
      * the account.</p> </li> <li> <p>Public extensions from publishers other than
      * Amazon, whether activated or not.</p> </li> </ul> </li> <li> <p>
-     * <code>AWS-TYPES</code>: Extensions available for use from Amazon.</p> </li>
+     * <code>AWS_TYPES</code>: Extensions available for use from Amazon.</p> </li>
      * </ul>
      */
     inline TypeFilters& WithCategory(Category&& value) { SetCategory(std::move(value)); return *this;}
@@ -128,56 +128,56 @@ namespace Model
 
     /**
      * <p>The id of the publisher of the extension. </p> <p>Extensions published by
-     * Amazon are not assigned a publisher ID. Use the <code>AWS-TYPES</code> category
+     * Amazon are not assigned a publisher ID. Use the <code>AWS_TYPE</code> category
      * to specify a list of types published by Amazon.</p>
      */
     inline const Aws::String& GetPublisherId() const{ return m_publisherId; }
 
     /**
      * <p>The id of the publisher of the extension. </p> <p>Extensions published by
-     * Amazon are not assigned a publisher ID. Use the <code>AWS-TYPES</code> category
+     * Amazon are not assigned a publisher ID. Use the <code>AWS_TYPE</code> category
      * to specify a list of types published by Amazon.</p>
      */
     inline bool PublisherIdHasBeenSet() const { return m_publisherIdHasBeenSet; }
 
     /**
      * <p>The id of the publisher of the extension. </p> <p>Extensions published by
-     * Amazon are not assigned a publisher ID. Use the <code>AWS-TYPES</code> category
+     * Amazon are not assigned a publisher ID. Use the <code>AWS_TYPE</code> category
      * to specify a list of types published by Amazon.</p>
      */
     inline void SetPublisherId(const Aws::String& value) { m_publisherIdHasBeenSet = true; m_publisherId = value; }
 
     /**
      * <p>The id of the publisher of the extension. </p> <p>Extensions published by
-     * Amazon are not assigned a publisher ID. Use the <code>AWS-TYPES</code> category
+     * Amazon are not assigned a publisher ID. Use the <code>AWS_TYPE</code> category
      * to specify a list of types published by Amazon.</p>
      */
     inline void SetPublisherId(Aws::String&& value) { m_publisherIdHasBeenSet = true; m_publisherId = std::move(value); }
 
     /**
      * <p>The id of the publisher of the extension. </p> <p>Extensions published by
-     * Amazon are not assigned a publisher ID. Use the <code>AWS-TYPES</code> category
+     * Amazon are not assigned a publisher ID. Use the <code>AWS_TYPE</code> category
      * to specify a list of types published by Amazon.</p>
      */
     inline void SetPublisherId(const char* value) { m_publisherIdHasBeenSet = true; m_publisherId.assign(value); }
 
     /**
      * <p>The id of the publisher of the extension. </p> <p>Extensions published by
-     * Amazon are not assigned a publisher ID. Use the <code>AWS-TYPES</code> category
+     * Amazon are not assigned a publisher ID. Use the <code>AWS_TYPE</code> category
      * to specify a list of types published by Amazon.</p>
      */
     inline TypeFilters& WithPublisherId(const Aws::String& value) { SetPublisherId(value); return *this;}
 
     /**
      * <p>The id of the publisher of the extension. </p> <p>Extensions published by
-     * Amazon are not assigned a publisher ID. Use the <code>AWS-TYPES</code> category
+     * Amazon are not assigned a publisher ID. Use the <code>AWS_TYPE</code> category
      * to specify a list of types published by Amazon.</p>
      */
     inline TypeFilters& WithPublisherId(Aws::String&& value) { SetPublisherId(std::move(value)); return *this;}
 
     /**
      * <p>The id of the publisher of the extension. </p> <p>Extensions published by
-     * Amazon are not assigned a publisher ID. Use the <code>AWS-TYPES</code> category
+     * Amazon are not assigned a publisher ID. Use the <code>AWS_TYPE</code> category
      * to specify a list of types published by Amazon.</p>
      */
     inline TypeFilters& WithPublisherId(const char* value) { SetPublisherId(value); return *this;}

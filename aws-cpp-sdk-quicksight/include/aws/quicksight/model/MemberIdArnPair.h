@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>An object that consists of the member Amazon Resource Name (ARN) and member
+   * <p>An object that consists of a member Amazon Resource Name (ARN) and a member
    * ID.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/MemberIdArnPair">AWS
    * API Reference</a></p>

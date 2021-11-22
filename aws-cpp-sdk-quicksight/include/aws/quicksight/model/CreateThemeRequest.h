@@ -179,7 +179,7 @@ namespace Model
      * <p>The ID of the theme that a custom theme will inherit from. All themes inherit
      * from one of the starting themes defined by Amazon QuickSight. For a list of the
      * starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within
-     * a Amazon QuickSight analysis. </p>
+     * an analysis. </p>
      */
     inline const Aws::String& GetBaseThemeId() const{ return m_baseThemeId; }
 
@@ -187,7 +187,7 @@ namespace Model
      * <p>The ID of the theme that a custom theme will inherit from. All themes inherit
      * from one of the starting themes defined by Amazon QuickSight. For a list of the
      * starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within
-     * a Amazon QuickSight analysis. </p>
+     * an analysis. </p>
      */
     inline bool BaseThemeIdHasBeenSet() const { return m_baseThemeIdHasBeenSet; }
 
@@ -195,7 +195,7 @@ namespace Model
      * <p>The ID of the theme that a custom theme will inherit from. All themes inherit
      * from one of the starting themes defined by Amazon QuickSight. For a list of the
      * starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within
-     * a Amazon QuickSight analysis. </p>
+     * an analysis. </p>
      */
     inline void SetBaseThemeId(const Aws::String& value) { m_baseThemeIdHasBeenSet = true; m_baseThemeId = value; }
 
@@ -203,7 +203,7 @@ namespace Model
      * <p>The ID of the theme that a custom theme will inherit from. All themes inherit
      * from one of the starting themes defined by Amazon QuickSight. For a list of the
      * starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within
-     * a Amazon QuickSight analysis. </p>
+     * an analysis. </p>
      */
     inline void SetBaseThemeId(Aws::String&& value) { m_baseThemeIdHasBeenSet = true; m_baseThemeId = std::move(value); }
 
@@ -211,7 +211,7 @@ namespace Model
      * <p>The ID of the theme that a custom theme will inherit from. All themes inherit
      * from one of the starting themes defined by Amazon QuickSight. For a list of the
      * starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within
-     * a Amazon QuickSight analysis. </p>
+     * an analysis. </p>
      */
     inline void SetBaseThemeId(const char* value) { m_baseThemeIdHasBeenSet = true; m_baseThemeId.assign(value); }
 
@@ -219,7 +219,7 @@ namespace Model
      * <p>The ID of the theme that a custom theme will inherit from. All themes inherit
      * from one of the starting themes defined by Amazon QuickSight. For a list of the
      * starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within
-     * a Amazon QuickSight analysis. </p>
+     * an analysis. </p>
      */
     inline CreateThemeRequest& WithBaseThemeId(const Aws::String& value) { SetBaseThemeId(value); return *this;}
 
@@ -227,7 +227,7 @@ namespace Model
      * <p>The ID of the theme that a custom theme will inherit from. All themes inherit
      * from one of the starting themes defined by Amazon QuickSight. For a list of the
      * starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within
-     * a Amazon QuickSight analysis. </p>
+     * an analysis. </p>
      */
     inline CreateThemeRequest& WithBaseThemeId(Aws::String&& value) { SetBaseThemeId(std::move(value)); return *this;}
 
@@ -235,7 +235,7 @@ namespace Model
      * <p>The ID of the theme that a custom theme will inherit from. All themes inherit
      * from one of the starting themes defined by Amazon QuickSight. For a list of the
      * starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within
-     * a Amazon QuickSight analysis. </p>
+     * an analysis. </p>
      */
     inline CreateThemeRequest& WithBaseThemeId(const char* value) { SetBaseThemeId(value); return *this;}
 

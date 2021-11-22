@@ -20,12 +20,16 @@
 #include <aws/braket/BraketClient.h>
 #include <aws/braket/BraketEndpoint.h>
 #include <aws/braket/BraketErrorMarshaller.h>
+#include <aws/braket/model/CancelJobRequest.h>
 #include <aws/braket/model/CancelQuantumTaskRequest.h>
+#include <aws/braket/model/CreateJobRequest.h>
 #include <aws/braket/model/CreateQuantumTaskRequest.h>
 #include <aws/braket/model/GetDeviceRequest.h>
+#include <aws/braket/model/GetJobRequest.h>
 #include <aws/braket/model/GetQuantumTaskRequest.h>
 #include <aws/braket/model/ListTagsForResourceRequest.h>
 #include <aws/braket/model/SearchDevicesRequest.h>
+#include <aws/braket/model/SearchJobsRequest.h>
 #include <aws/braket/model/SearchQuantumTasksRequest.h>
 #include <aws/braket/model/TagResourceRequest.h>
 #include <aws/braket/model/UntagResourceRequest.h>
@@ -103,6 +107,38 @@ void BraketClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+CancelJobOutcome BraketClient::CancelJob(const CancelJobRequest& request) const
+{
+  if (!request.JobArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CancelJob", "Required field: JobArn, is not set");
+    return CancelJobOutcome(Aws::Client::AWSError<BraketErrors>(BraketErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/job/");
+  uri.AddPathSegment(request.GetJobArn());
+  uri.AddPathSegments("/cancel");
+  return CancelJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+CancelJobOutcomeCallable BraketClient::CancelJobCallable(const CancelJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BraketClient::CancelJobAsync(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CancelJobAsyncHelper( request, handler, context ); } );
+}
+
+void BraketClient::CancelJobAsyncHelper(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CancelJob(request), context);
+}
+
 CancelQuantumTaskOutcome BraketClient::CancelQuantumTask(const CancelQuantumTaskRequest& request) const
 {
   if (!request.QuantumTaskArnHasBeenSet())
@@ -133,6 +169,31 @@ void BraketClient::CancelQuantumTaskAsync(const CancelQuantumTaskRequest& reques
 void BraketClient::CancelQuantumTaskAsyncHelper(const CancelQuantumTaskRequest& request, const CancelQuantumTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CancelQuantumTask(request), context);
+}
+
+CreateJobOutcome BraketClient::CreateJob(const CreateJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/job");
+  return CreateJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateJobOutcomeCallable BraketClient::CreateJobCallable(const CreateJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BraketClient::CreateJobAsync(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateJobAsyncHelper( request, handler, context ); } );
+}
+
+void BraketClient::CreateJobAsyncHelper(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateJob(request), context);
 }
 
 CreateQuantumTaskOutcome BraketClient::CreateQuantumTask(const CreateQuantumTaskRequest& request) const
@@ -189,6 +250,37 @@ void BraketClient::GetDeviceAsync(const GetDeviceRequest& request, const GetDevi
 void BraketClient::GetDeviceAsyncHelper(const GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetDevice(request), context);
+}
+
+GetJobOutcome BraketClient::GetJob(const GetJobRequest& request) const
+{
+  if (!request.JobArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJob", "Required field: JobArn, is not set");
+    return GetJobOutcome(Aws::Client::AWSError<BraketErrors>(BraketErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/job/");
+  uri.AddPathSegment(request.GetJobArn());
+  return GetJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetJobOutcomeCallable BraketClient::GetJobCallable(const GetJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BraketClient::GetJobAsync(const GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetJobAsyncHelper( request, handler, context ); } );
+}
+
+void BraketClient::GetJobAsyncHelper(const GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetJob(request), context);
 }
 
 GetQuantumTaskOutcome BraketClient::GetQuantumTask(const GetQuantumTaskRequest& request) const
@@ -276,6 +368,31 @@ void BraketClient::SearchDevicesAsync(const SearchDevicesRequest& request, const
 void BraketClient::SearchDevicesAsyncHelper(const SearchDevicesRequest& request, const SearchDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SearchDevices(request), context);
+}
+
+SearchJobsOutcome BraketClient::SearchJobs(const SearchJobsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/jobs");
+  return SearchJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SearchJobsOutcomeCallable BraketClient::SearchJobsCallable(const SearchJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SearchJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BraketClient::SearchJobsAsync(const SearchJobsRequest& request, const SearchJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SearchJobsAsyncHelper( request, handler, context ); } );
+}
+
+void BraketClient::SearchJobsAsyncHelper(const SearchJobsRequest& request, const SearchJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SearchJobs(request), context);
 }
 
 SearchQuantumTasksOutcome BraketClient::SearchQuantumTasks(const SearchQuantumTasksRequest& request) const

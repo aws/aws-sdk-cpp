@@ -1250,6 +1250,55 @@ namespace Model
      */
     inline DBSnapshot& WithOriginalSnapshotCreateTime(Aws::Utils::DateTime&& value) { SetOriginalSnapshotCreateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or
+     * the Amazon Web Services Region.</p>
+     */
+    inline const Aws::String& GetSnapshotTarget() const{ return m_snapshotTarget; }
+
+    /**
+     * <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or
+     * the Amazon Web Services Region.</p>
+     */
+    inline bool SnapshotTargetHasBeenSet() const { return m_snapshotTargetHasBeenSet; }
+
+    /**
+     * <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or
+     * the Amazon Web Services Region.</p>
+     */
+    inline void SetSnapshotTarget(const Aws::String& value) { m_snapshotTargetHasBeenSet = true; m_snapshotTarget = value; }
+
+    /**
+     * <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or
+     * the Amazon Web Services Region.</p>
+     */
+    inline void SetSnapshotTarget(Aws::String&& value) { m_snapshotTargetHasBeenSet = true; m_snapshotTarget = std::move(value); }
+
+    /**
+     * <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or
+     * the Amazon Web Services Region.</p>
+     */
+    inline void SetSnapshotTarget(const char* value) { m_snapshotTargetHasBeenSet = true; m_snapshotTarget.assign(value); }
+
+    /**
+     * <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or
+     * the Amazon Web Services Region.</p>
+     */
+    inline DBSnapshot& WithSnapshotTarget(const Aws::String& value) { SetSnapshotTarget(value); return *this;}
+
+    /**
+     * <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or
+     * the Amazon Web Services Region.</p>
+     */
+    inline DBSnapshot& WithSnapshotTarget(Aws::String&& value) { SetSnapshotTarget(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or
+     * the Amazon Web Services Region.</p>
+     */
+    inline DBSnapshot& WithSnapshotTarget(const char* value) { SetSnapshotTarget(value); return *this;}
+
   private:
 
     Aws::String m_dBSnapshotIdentifier;
@@ -1341,6 +1390,9 @@ namespace Model
 
     Aws::Utils::DateTime m_originalSnapshotCreateTime;
     bool m_originalSnapshotCreateTimeHasBeenSet;
+
+    Aws::String m_snapshotTarget;
+    bool m_snapshotTargetHasBeenSet;
   };
 
 } // namespace Model

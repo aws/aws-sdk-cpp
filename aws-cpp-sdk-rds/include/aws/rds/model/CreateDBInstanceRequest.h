@@ -902,192 +902,80 @@ namespace Model
     /**
      * <p>The name for the master user.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
      * applicable. The name for the master user is managed by the DB cluster. </p> <p>
-     * <b>MariaDB</b> </p> <p>Constraints:</p> <ul> <li> <p>Required for MariaDB.</p>
-     * </li> <li> <p>Must be 1 to 16 letters or numbers.</p> </li> <li> <p>Can't be a
-     * reserved word for the chosen database engine.</p> </li> </ul> <p> <b>Microsoft
-     * SQL Server</b> </p> <p>Constraints:</p> <ul> <li> <p>Required for SQL
-     * Server.</p> </li> <li> <p>Must be 1 to 128 letters or numbers.</p> </li> <li>
-     * <p>The first character must be a letter.</p> </li> <li> <p>Can't be a reserved
-     * word for the chosen database engine.</p> </li> </ul> <p> <b>MySQL</b> </p>
-     * <p>Constraints:</p> <ul> <li> <p>Required for MySQL.</p> </li> <li> <p>Must be 1
-     * to 16 letters or numbers.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
-     * engine.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints:</p> <ul> <li>
-     * <p>Required for Oracle.</p> </li> <li> <p>Must be 1 to 30 letters or
-     * numbers.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
-     * <p>Can't be a reserved word for the chosen database engine.</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <p>Constraints:</p> <ul> <li> <p>Required for
-     * PostgreSQL.</p> </li> <li> <p>Must be 1 to 63 letters or numbers.</p> </li> <li>
-     * <p>First character must be a letter.</p> </li> <li> <p>Can't be a reserved word
-     * for the chosen database engine.</p> </li> </ul>
+     * <b>Amazon RDS</b> </p> <p>Constraints:</p> <ul> <li> <p>Required.</p> </li> <li>
+     * <p>Must be 1 to 16 letters, numbers, or underscores.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Can't be a reserved word for the
+     * chosen database engine.</p> </li> </ul>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
 
     /**
      * <p>The name for the master user.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
      * applicable. The name for the master user is managed by the DB cluster. </p> <p>
-     * <b>MariaDB</b> </p> <p>Constraints:</p> <ul> <li> <p>Required for MariaDB.</p>
-     * </li> <li> <p>Must be 1 to 16 letters or numbers.</p> </li> <li> <p>Can't be a
-     * reserved word for the chosen database engine.</p> </li> </ul> <p> <b>Microsoft
-     * SQL Server</b> </p> <p>Constraints:</p> <ul> <li> <p>Required for SQL
-     * Server.</p> </li> <li> <p>Must be 1 to 128 letters or numbers.</p> </li> <li>
-     * <p>The first character must be a letter.</p> </li> <li> <p>Can't be a reserved
-     * word for the chosen database engine.</p> </li> </ul> <p> <b>MySQL</b> </p>
-     * <p>Constraints:</p> <ul> <li> <p>Required for MySQL.</p> </li> <li> <p>Must be 1
-     * to 16 letters or numbers.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
-     * engine.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints:</p> <ul> <li>
-     * <p>Required for Oracle.</p> </li> <li> <p>Must be 1 to 30 letters or
-     * numbers.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
-     * <p>Can't be a reserved word for the chosen database engine.</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <p>Constraints:</p> <ul> <li> <p>Required for
-     * PostgreSQL.</p> </li> <li> <p>Must be 1 to 63 letters or numbers.</p> </li> <li>
-     * <p>First character must be a letter.</p> </li> <li> <p>Can't be a reserved word
-     * for the chosen database engine.</p> </li> </ul>
+     * <b>Amazon RDS</b> </p> <p>Constraints:</p> <ul> <li> <p>Required.</p> </li> <li>
+     * <p>Must be 1 to 16 letters, numbers, or underscores.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Can't be a reserved word for the
+     * chosen database engine.</p> </li> </ul>
      */
     inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
 
     /**
      * <p>The name for the master user.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
      * applicable. The name for the master user is managed by the DB cluster. </p> <p>
-     * <b>MariaDB</b> </p> <p>Constraints:</p> <ul> <li> <p>Required for MariaDB.</p>
-     * </li> <li> <p>Must be 1 to 16 letters or numbers.</p> </li> <li> <p>Can't be a
-     * reserved word for the chosen database engine.</p> </li> </ul> <p> <b>Microsoft
-     * SQL Server</b> </p> <p>Constraints:</p> <ul> <li> <p>Required for SQL
-     * Server.</p> </li> <li> <p>Must be 1 to 128 letters or numbers.</p> </li> <li>
-     * <p>The first character must be a letter.</p> </li> <li> <p>Can't be a reserved
-     * word for the chosen database engine.</p> </li> </ul> <p> <b>MySQL</b> </p>
-     * <p>Constraints:</p> <ul> <li> <p>Required for MySQL.</p> </li> <li> <p>Must be 1
-     * to 16 letters or numbers.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
-     * engine.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints:</p> <ul> <li>
-     * <p>Required for Oracle.</p> </li> <li> <p>Must be 1 to 30 letters or
-     * numbers.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
-     * <p>Can't be a reserved word for the chosen database engine.</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <p>Constraints:</p> <ul> <li> <p>Required for
-     * PostgreSQL.</p> </li> <li> <p>Must be 1 to 63 letters or numbers.</p> </li> <li>
-     * <p>First character must be a letter.</p> </li> <li> <p>Can't be a reserved word
-     * for the chosen database engine.</p> </li> </ul>
+     * <b>Amazon RDS</b> </p> <p>Constraints:</p> <ul> <li> <p>Required.</p> </li> <li>
+     * <p>Must be 1 to 16 letters, numbers, or underscores.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Can't be a reserved word for the
+     * chosen database engine.</p> </li> </ul>
      */
     inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
 
     /**
      * <p>The name for the master user.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
      * applicable. The name for the master user is managed by the DB cluster. </p> <p>
-     * <b>MariaDB</b> </p> <p>Constraints:</p> <ul> <li> <p>Required for MariaDB.</p>
-     * </li> <li> <p>Must be 1 to 16 letters or numbers.</p> </li> <li> <p>Can't be a
-     * reserved word for the chosen database engine.</p> </li> </ul> <p> <b>Microsoft
-     * SQL Server</b> </p> <p>Constraints:</p> <ul> <li> <p>Required for SQL
-     * Server.</p> </li> <li> <p>Must be 1 to 128 letters or numbers.</p> </li> <li>
-     * <p>The first character must be a letter.</p> </li> <li> <p>Can't be a reserved
-     * word for the chosen database engine.</p> </li> </ul> <p> <b>MySQL</b> </p>
-     * <p>Constraints:</p> <ul> <li> <p>Required for MySQL.</p> </li> <li> <p>Must be 1
-     * to 16 letters or numbers.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
-     * engine.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints:</p> <ul> <li>
-     * <p>Required for Oracle.</p> </li> <li> <p>Must be 1 to 30 letters or
-     * numbers.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
-     * <p>Can't be a reserved word for the chosen database engine.</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <p>Constraints:</p> <ul> <li> <p>Required for
-     * PostgreSQL.</p> </li> <li> <p>Must be 1 to 63 letters or numbers.</p> </li> <li>
-     * <p>First character must be a letter.</p> </li> <li> <p>Can't be a reserved word
-     * for the chosen database engine.</p> </li> </ul>
+     * <b>Amazon RDS</b> </p> <p>Constraints:</p> <ul> <li> <p>Required.</p> </li> <li>
+     * <p>Must be 1 to 16 letters, numbers, or underscores.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Can't be a reserved word for the
+     * chosen database engine.</p> </li> </ul>
      */
     inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::move(value); }
 
     /**
      * <p>The name for the master user.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
      * applicable. The name for the master user is managed by the DB cluster. </p> <p>
-     * <b>MariaDB</b> </p> <p>Constraints:</p> <ul> <li> <p>Required for MariaDB.</p>
-     * </li> <li> <p>Must be 1 to 16 letters or numbers.</p> </li> <li> <p>Can't be a
-     * reserved word for the chosen database engine.</p> </li> </ul> <p> <b>Microsoft
-     * SQL Server</b> </p> <p>Constraints:</p> <ul> <li> <p>Required for SQL
-     * Server.</p> </li> <li> <p>Must be 1 to 128 letters or numbers.</p> </li> <li>
-     * <p>The first character must be a letter.</p> </li> <li> <p>Can't be a reserved
-     * word for the chosen database engine.</p> </li> </ul> <p> <b>MySQL</b> </p>
-     * <p>Constraints:</p> <ul> <li> <p>Required for MySQL.</p> </li> <li> <p>Must be 1
-     * to 16 letters or numbers.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
-     * engine.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints:</p> <ul> <li>
-     * <p>Required for Oracle.</p> </li> <li> <p>Must be 1 to 30 letters or
-     * numbers.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
-     * <p>Can't be a reserved word for the chosen database engine.</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <p>Constraints:</p> <ul> <li> <p>Required for
-     * PostgreSQL.</p> </li> <li> <p>Must be 1 to 63 letters or numbers.</p> </li> <li>
-     * <p>First character must be a letter.</p> </li> <li> <p>Can't be a reserved word
-     * for the chosen database engine.</p> </li> </ul>
+     * <b>Amazon RDS</b> </p> <p>Constraints:</p> <ul> <li> <p>Required.</p> </li> <li>
+     * <p>Must be 1 to 16 letters, numbers, or underscores.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Can't be a reserved word for the
+     * chosen database engine.</p> </li> </ul>
      */
     inline void SetMasterUsername(const char* value) { m_masterUsernameHasBeenSet = true; m_masterUsername.assign(value); }
 
     /**
      * <p>The name for the master user.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
      * applicable. The name for the master user is managed by the DB cluster. </p> <p>
-     * <b>MariaDB</b> </p> <p>Constraints:</p> <ul> <li> <p>Required for MariaDB.</p>
-     * </li> <li> <p>Must be 1 to 16 letters or numbers.</p> </li> <li> <p>Can't be a
-     * reserved word for the chosen database engine.</p> </li> </ul> <p> <b>Microsoft
-     * SQL Server</b> </p> <p>Constraints:</p> <ul> <li> <p>Required for SQL
-     * Server.</p> </li> <li> <p>Must be 1 to 128 letters or numbers.</p> </li> <li>
-     * <p>The first character must be a letter.</p> </li> <li> <p>Can't be a reserved
-     * word for the chosen database engine.</p> </li> </ul> <p> <b>MySQL</b> </p>
-     * <p>Constraints:</p> <ul> <li> <p>Required for MySQL.</p> </li> <li> <p>Must be 1
-     * to 16 letters or numbers.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
-     * engine.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints:</p> <ul> <li>
-     * <p>Required for Oracle.</p> </li> <li> <p>Must be 1 to 30 letters or
-     * numbers.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
-     * <p>Can't be a reserved word for the chosen database engine.</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <p>Constraints:</p> <ul> <li> <p>Required for
-     * PostgreSQL.</p> </li> <li> <p>Must be 1 to 63 letters or numbers.</p> </li> <li>
-     * <p>First character must be a letter.</p> </li> <li> <p>Can't be a reserved word
-     * for the chosen database engine.</p> </li> </ul>
+     * <b>Amazon RDS</b> </p> <p>Constraints:</p> <ul> <li> <p>Required.</p> </li> <li>
+     * <p>Must be 1 to 16 letters, numbers, or underscores.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Can't be a reserved word for the
+     * chosen database engine.</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithMasterUsername(const Aws::String& value) { SetMasterUsername(value); return *this;}
 
     /**
      * <p>The name for the master user.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
      * applicable. The name for the master user is managed by the DB cluster. </p> <p>
-     * <b>MariaDB</b> </p> <p>Constraints:</p> <ul> <li> <p>Required for MariaDB.</p>
-     * </li> <li> <p>Must be 1 to 16 letters or numbers.</p> </li> <li> <p>Can't be a
-     * reserved word for the chosen database engine.</p> </li> </ul> <p> <b>Microsoft
-     * SQL Server</b> </p> <p>Constraints:</p> <ul> <li> <p>Required for SQL
-     * Server.</p> </li> <li> <p>Must be 1 to 128 letters or numbers.</p> </li> <li>
-     * <p>The first character must be a letter.</p> </li> <li> <p>Can't be a reserved
-     * word for the chosen database engine.</p> </li> </ul> <p> <b>MySQL</b> </p>
-     * <p>Constraints:</p> <ul> <li> <p>Required for MySQL.</p> </li> <li> <p>Must be 1
-     * to 16 letters or numbers.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
-     * engine.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints:</p> <ul> <li>
-     * <p>Required for Oracle.</p> </li> <li> <p>Must be 1 to 30 letters or
-     * numbers.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
-     * <p>Can't be a reserved word for the chosen database engine.</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <p>Constraints:</p> <ul> <li> <p>Required for
-     * PostgreSQL.</p> </li> <li> <p>Must be 1 to 63 letters or numbers.</p> </li> <li>
-     * <p>First character must be a letter.</p> </li> <li> <p>Can't be a reserved word
-     * for the chosen database engine.</p> </li> </ul>
+     * <b>Amazon RDS</b> </p> <p>Constraints:</p> <ul> <li> <p>Required.</p> </li> <li>
+     * <p>Must be 1 to 16 letters, numbers, or underscores.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Can't be a reserved word for the
+     * chosen database engine.</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithMasterUsername(Aws::String&& value) { SetMasterUsername(std::move(value)); return *this;}
 
     /**
      * <p>The name for the master user.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
      * applicable. The name for the master user is managed by the DB cluster. </p> <p>
-     * <b>MariaDB</b> </p> <p>Constraints:</p> <ul> <li> <p>Required for MariaDB.</p>
-     * </li> <li> <p>Must be 1 to 16 letters or numbers.</p> </li> <li> <p>Can't be a
-     * reserved word for the chosen database engine.</p> </li> </ul> <p> <b>Microsoft
-     * SQL Server</b> </p> <p>Constraints:</p> <ul> <li> <p>Required for SQL
-     * Server.</p> </li> <li> <p>Must be 1 to 128 letters or numbers.</p> </li> <li>
-     * <p>The first character must be a letter.</p> </li> <li> <p>Can't be a reserved
-     * word for the chosen database engine.</p> </li> </ul> <p> <b>MySQL</b> </p>
-     * <p>Constraints:</p> <ul> <li> <p>Required for MySQL.</p> </li> <li> <p>Must be 1
-     * to 16 letters or numbers.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
-     * engine.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints:</p> <ul> <li>
-     * <p>Required for Oracle.</p> </li> <li> <p>Must be 1 to 30 letters or
-     * numbers.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
-     * <p>Can't be a reserved word for the chosen database engine.</p> </li> </ul> <p>
-     * <b>PostgreSQL</b> </p> <p>Constraints:</p> <ul> <li> <p>Required for
-     * PostgreSQL.</p> </li> <li> <p>Must be 1 to 63 letters or numbers.</p> </li> <li>
-     * <p>First character must be a letter.</p> </li> <li> <p>Can't be a reserved word
-     * for the chosen database engine.</p> </li> </ul>
+     * <b>Amazon RDS</b> </p> <p>Constraints:</p> <ul> <li> <p>Required.</p> </li> <li>
+     * <p>Must be 1 to 16 letters, numbers, or underscores.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Can't be a reserved word for the
+     * chosen database engine.</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}
 
@@ -4301,6 +4189,95 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithCustomIamInstanceProfile(const char* value) { SetCustomIamInstanceProfile(value); return *this;}
 
+
+    /**
+     * <p>Specifies where automated backups and manual snapshots are stored.</p>
+     * <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and
+     * <code>region</code> (Amazon Web Services Region). The default is
+     * <code>region</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline const Aws::String& GetBackupTarget() const{ return m_backupTarget; }
+
+    /**
+     * <p>Specifies where automated backups and manual snapshots are stored.</p>
+     * <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and
+     * <code>region</code> (Amazon Web Services Region). The default is
+     * <code>region</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline bool BackupTargetHasBeenSet() const { return m_backupTargetHasBeenSet; }
+
+    /**
+     * <p>Specifies where automated backups and manual snapshots are stored.</p>
+     * <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and
+     * <code>region</code> (Amazon Web Services Region). The default is
+     * <code>region</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline void SetBackupTarget(const Aws::String& value) { m_backupTargetHasBeenSet = true; m_backupTarget = value; }
+
+    /**
+     * <p>Specifies where automated backups and manual snapshots are stored.</p>
+     * <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and
+     * <code>region</code> (Amazon Web Services Region). The default is
+     * <code>region</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline void SetBackupTarget(Aws::String&& value) { m_backupTargetHasBeenSet = true; m_backupTarget = std::move(value); }
+
+    /**
+     * <p>Specifies where automated backups and manual snapshots are stored.</p>
+     * <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and
+     * <code>region</code> (Amazon Web Services Region). The default is
+     * <code>region</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline void SetBackupTarget(const char* value) { m_backupTargetHasBeenSet = true; m_backupTarget.assign(value); }
+
+    /**
+     * <p>Specifies where automated backups and manual snapshots are stored.</p>
+     * <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and
+     * <code>region</code> (Amazon Web Services Region). The default is
+     * <code>region</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline CreateDBInstanceRequest& WithBackupTarget(const Aws::String& value) { SetBackupTarget(value); return *this;}
+
+    /**
+     * <p>Specifies where automated backups and manual snapshots are stored.</p>
+     * <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and
+     * <code>region</code> (Amazon Web Services Region). The default is
+     * <code>region</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline CreateDBInstanceRequest& WithBackupTarget(Aws::String&& value) { SetBackupTarget(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies where automated backups and manual snapshots are stored.</p>
+     * <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and
+     * <code>region</code> (Amazon Web Services Region). The default is
+     * <code>region</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline CreateDBInstanceRequest& WithBackupTarget(const char* value) { SetBackupTarget(value); return *this;}
+
   private:
 
     Aws::String m_dBName;
@@ -4449,6 +4426,9 @@ namespace Model
 
     Aws::String m_customIamInstanceProfile;
     bool m_customIamInstanceProfileHasBeenSet;
+
+    Aws::String m_backupTarget;
+    bool m_backupTargetHasBeenSet;
   };
 
 } // namespace Model

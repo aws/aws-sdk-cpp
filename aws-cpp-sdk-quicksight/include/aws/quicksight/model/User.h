@@ -81,42 +81,58 @@ namespace Model
 
 
     /**
-     * <p>The user's user name.</p>
+     * <p>The user's user name. In the output, the value for <code>UserName</code> is
+     * <code>N/A</code> when the value for <code>IdentityType</code> is
+     * <code>IAM</code> and the corresponding IAM user is deleted.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
-     * <p>The user's user name.</p>
+     * <p>The user's user name. In the output, the value for <code>UserName</code> is
+     * <code>N/A</code> when the value for <code>IdentityType</code> is
+     * <code>IAM</code> and the corresponding IAM user is deleted.</p>
      */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
-     * <p>The user's user name.</p>
+     * <p>The user's user name. In the output, the value for <code>UserName</code> is
+     * <code>N/A</code> when the value for <code>IdentityType</code> is
+     * <code>IAM</code> and the corresponding IAM user is deleted.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>The user's user name.</p>
+     * <p>The user's user name. In the output, the value for <code>UserName</code> is
+     * <code>N/A</code> when the value for <code>IdentityType</code> is
+     * <code>IAM</code> and the corresponding IAM user is deleted.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
-     * <p>The user's user name.</p>
+     * <p>The user's user name. In the output, the value for <code>UserName</code> is
+     * <code>N/A</code> when the value for <code>IdentityType</code> is
+     * <code>IAM</code> and the corresponding IAM user is deleted.</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
-     * <p>The user's user name.</p>
+     * <p>The user's user name. In the output, the value for <code>UserName</code> is
+     * <code>N/A</code> when the value for <code>IdentityType</code> is
+     * <code>IAM</code> and the corresponding IAM user is deleted.</p>
      */
     inline User& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The user's user name.</p>
+     * <p>The user's user name. In the output, the value for <code>UserName</code> is
+     * <code>N/A</code> when the value for <code>IdentityType</code> is
+     * <code>IAM</code> and the corresponding IAM user is deleted.</p>
      */
     inline User& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
-     * <p>The user's user name.</p>
+     * <p>The user's user name. In the output, the value for <code>UserName</code> is
+     * <code>N/A</code> when the value for <code>IdentityType</code> is
+     * <code>IAM</code> and the corresponding IAM user is deleted.</p>
      */
     inline User& WithUserName(const char* value) { SetUserName(value); return *this;}
 
@@ -385,7 +401,7 @@ namespace Model
 
     /**
      * <p>The type of supported external login provider that provides identity to let
-     * the user federate into Amazon QuickSight with an associated IAMrole. The type
+     * the user federate into Amazon QuickSight with an associated IAM role. The type
      * can be one of the following.</p> <ul> <li> <p> <code>COGNITO</code>: Amazon
      * Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li> <li> <p>
      * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li> </ul>
@@ -394,7 +410,7 @@ namespace Model
 
     /**
      * <p>The type of supported external login provider that provides identity to let
-     * the user federate into Amazon QuickSight with an associated IAMrole. The type
+     * the user federate into Amazon QuickSight with an associated IAM role. The type
      * can be one of the following.</p> <ul> <li> <p> <code>COGNITO</code>: Amazon
      * Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li> <li> <p>
      * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li> </ul>
@@ -403,7 +419,7 @@ namespace Model
 
     /**
      * <p>The type of supported external login provider that provides identity to let
-     * the user federate into Amazon QuickSight with an associated IAMrole. The type
+     * the user federate into Amazon QuickSight with an associated IAM role. The type
      * can be one of the following.</p> <ul> <li> <p> <code>COGNITO</code>: Amazon
      * Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li> <li> <p>
      * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li> </ul>
@@ -412,7 +428,7 @@ namespace Model
 
     /**
      * <p>The type of supported external login provider that provides identity to let
-     * the user federate into Amazon QuickSight with an associated IAMrole. The type
+     * the user federate into Amazon QuickSight with an associated IAM role. The type
      * can be one of the following.</p> <ul> <li> <p> <code>COGNITO</code>: Amazon
      * Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li> <li> <p>
      * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li> </ul>
@@ -421,7 +437,7 @@ namespace Model
 
     /**
      * <p>The type of supported external login provider that provides identity to let
-     * the user federate into Amazon QuickSight with an associated IAMrole. The type
+     * the user federate into Amazon QuickSight with an associated IAM role. The type
      * can be one of the following.</p> <ul> <li> <p> <code>COGNITO</code>: Amazon
      * Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li> <li> <p>
      * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li> </ul>
@@ -430,7 +446,7 @@ namespace Model
 
     /**
      * <p>The type of supported external login provider that provides identity to let
-     * the user federate into Amazon QuickSight with an associated IAMrole. The type
+     * the user federate into Amazon QuickSight with an associated IAM role. The type
      * can be one of the following.</p> <ul> <li> <p> <code>COGNITO</code>: Amazon
      * Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li> <li> <p>
      * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li> </ul>
@@ -439,7 +455,7 @@ namespace Model
 
     /**
      * <p>The type of supported external login provider that provides identity to let
-     * the user federate into Amazon QuickSight with an associated IAMrole. The type
+     * the user federate into Amazon QuickSight with an associated IAM role. The type
      * can be one of the following.</p> <ul> <li> <p> <code>COGNITO</code>: Amazon
      * Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li> <li> <p>
      * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li> </ul>
@@ -448,7 +464,7 @@ namespace Model
 
     /**
      * <p>The type of supported external login provider that provides identity to let
-     * the user federate into Amazon QuickSight with an associated IAMrole. The type
+     * the user federate into Amazon QuickSight with an associated IAM role. The type
      * can be one of the following.</p> <ul> <li> <p> <code>COGNITO</code>: Amazon
      * Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li> <li> <p>
      * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li> </ul>

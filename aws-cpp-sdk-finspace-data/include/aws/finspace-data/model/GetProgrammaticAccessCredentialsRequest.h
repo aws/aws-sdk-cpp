@@ -21,6 +21,9 @@ namespace Model
 {
 
   /**
+   * Request for GetProgrammaticAccessCredentials operation<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetProgrammaticAccessCredentialsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_FINSPACEDATA_API GetProgrammaticAccessCredentialsRequest : public FinSpaceDataRequest
   {
@@ -60,42 +63,42 @@ namespace Model
 
 
     /**
-     * <p>The habanero environment identifier.</p>
+     * <p>The FinSpace environment identifier.</p>
      */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
 
     /**
-     * <p>The habanero environment identifier.</p>
+     * <p>The FinSpace environment identifier.</p>
      */
     inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
 
     /**
-     * <p>The habanero environment identifier.</p>
+     * <p>The FinSpace environment identifier.</p>
      */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
 
     /**
-     * <p>The habanero environment identifier.</p>
+     * <p>The FinSpace environment identifier.</p>
      */
     inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
 
     /**
-     * <p>The habanero environment identifier.</p>
+     * <p>The FinSpace environment identifier.</p>
      */
     inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
 
     /**
-     * <p>The habanero environment identifier.</p>
+     * <p>The FinSpace environment identifier.</p>
      */
     inline GetProgrammaticAccessCredentialsRequest& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
 
     /**
-     * <p>The habanero environment identifier.</p>
+     * <p>The FinSpace environment identifier.</p>
      */
     inline GetProgrammaticAccessCredentialsRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
 
     /**
-     * <p>The habanero environment identifier.</p>
+     * <p>The FinSpace environment identifier.</p>
      */
     inline GetProgrammaticAccessCredentialsRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
 

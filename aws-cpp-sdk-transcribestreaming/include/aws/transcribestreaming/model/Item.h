@@ -175,28 +175,28 @@ namespace Model
 
     /**
      * <p>Indicates whether a word in the item matches a word in the vocabulary filter
-     * you've chosen for your real-time stream. If <code>true</code> then a word in the
+     * you've chosen for your media stream. If <code>true</code> then a word in the
      * item matches your vocabulary filter.</p>
      */
     inline bool GetVocabularyFilterMatch() const{ return m_vocabularyFilterMatch; }
 
     /**
      * <p>Indicates whether a word in the item matches a word in the vocabulary filter
-     * you've chosen for your real-time stream. If <code>true</code> then a word in the
+     * you've chosen for your media stream. If <code>true</code> then a word in the
      * item matches your vocabulary filter.</p>
      */
     inline bool VocabularyFilterMatchHasBeenSet() const { return m_vocabularyFilterMatchHasBeenSet; }
 
     /**
      * <p>Indicates whether a word in the item matches a word in the vocabulary filter
-     * you've chosen for your real-time stream. If <code>true</code> then a word in the
+     * you've chosen for your media stream. If <code>true</code> then a word in the
      * item matches your vocabulary filter.</p>
      */
     inline void SetVocabularyFilterMatch(bool value) { m_vocabularyFilterMatchHasBeenSet = true; m_vocabularyFilterMatch = value; }
 
     /**
      * <p>Indicates whether a word in the item matches a word in the vocabulary filter
-     * you've chosen for your real-time stream. If <code>true</code> then a word in the
+     * you've chosen for your media stream. If <code>true</code> then a word in the
      * item matches your vocabulary filter.</p>
      */
     inline Item& WithVocabularyFilterMatch(bool value) { SetVocabularyFilterMatch(value); return *this;}
@@ -204,74 +204,74 @@ namespace Model
 
     /**
      * <p>If speaker identification is enabled, shows the speakers identified in the
-     * real-time stream.</p>
+     * media stream.</p>
      */
     inline const Aws::String& GetSpeaker() const{ return m_speaker; }
 
     /**
      * <p>If speaker identification is enabled, shows the speakers identified in the
-     * real-time stream.</p>
+     * media stream.</p>
      */
     inline bool SpeakerHasBeenSet() const { return m_speakerHasBeenSet; }
 
     /**
      * <p>If speaker identification is enabled, shows the speakers identified in the
-     * real-time stream.</p>
+     * media stream.</p>
      */
     inline void SetSpeaker(const Aws::String& value) { m_speakerHasBeenSet = true; m_speaker = value; }
 
     /**
      * <p>If speaker identification is enabled, shows the speakers identified in the
-     * real-time stream.</p>
+     * media stream.</p>
      */
     inline void SetSpeaker(Aws::String&& value) { m_speakerHasBeenSet = true; m_speaker = std::move(value); }
 
     /**
      * <p>If speaker identification is enabled, shows the speakers identified in the
-     * real-time stream.</p>
+     * media stream.</p>
      */
     inline void SetSpeaker(const char* value) { m_speakerHasBeenSet = true; m_speaker.assign(value); }
 
     /**
      * <p>If speaker identification is enabled, shows the speakers identified in the
-     * real-time stream.</p>
+     * media stream.</p>
      */
     inline Item& WithSpeaker(const Aws::String& value) { SetSpeaker(value); return *this;}
 
     /**
      * <p>If speaker identification is enabled, shows the speakers identified in the
-     * real-time stream.</p>
+     * media stream.</p>
      */
     inline Item& WithSpeaker(Aws::String&& value) { SetSpeaker(std::move(value)); return *this;}
 
     /**
      * <p>If speaker identification is enabled, shows the speakers identified in the
-     * real-time stream.</p>
+     * media stream.</p>
      */
     inline Item& WithSpeaker(const char* value) { SetSpeaker(value); return *this;}
 
 
     /**
-     * <p>A value between 0 and 1 for an item that is a confidence score that Amazon
-     * Transcribe assigns to each word or phrase that it transcribes.</p>
+     * <p>A value between zero and one for an item that is a confidence score that
+     * Amazon Transcribe assigns to each word or phrase that it transcribes.</p>
      */
     inline double GetConfidence() const{ return m_confidence; }
 
     /**
-     * <p>A value between 0 and 1 for an item that is a confidence score that Amazon
-     * Transcribe assigns to each word or phrase that it transcribes.</p>
+     * <p>A value between zero and one for an item that is a confidence score that
+     * Amazon Transcribe assigns to each word or phrase that it transcribes.</p>
      */
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
 
     /**
-     * <p>A value between 0 and 1 for an item that is a confidence score that Amazon
-     * Transcribe assigns to each word or phrase that it transcribes.</p>
+     * <p>A value between zero and one for an item that is a confidence score that
+     * Amazon Transcribe assigns to each word or phrase that it transcribes.</p>
      */
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
 
     /**
-     * <p>A value between 0 and 1 for an item that is a confidence score that Amazon
-     * Transcribe assigns to each word or phrase that it transcribes.</p>
+     * <p>A value between zero and one for an item that is a confidence score that
+     * Amazon Transcribe assigns to each word or phrase that it transcribes.</p>
      */
     inline Item& WithConfidence(double value) { SetConfidence(value); return *this;}
 

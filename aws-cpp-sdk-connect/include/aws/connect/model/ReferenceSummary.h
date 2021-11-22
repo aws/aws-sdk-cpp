@@ -41,37 +41,37 @@ namespace Model
 
 
     /**
-     * <p>Information about Url reference if the <code>referenceType</code> is
+     * <p>Information about the URL reference if the <code>referenceType</code> is
      * <code>URL</code>. Otherwise, null.</p>
      */
     inline const UrlReference& GetUrl() const{ return m_url; }
 
     /**
-     * <p>Information about Url reference if the <code>referenceType</code> is
+     * <p>Information about the URL reference if the <code>referenceType</code> is
      * <code>URL</code>. Otherwise, null.</p>
      */
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
-     * <p>Information about Url reference if the <code>referenceType</code> is
+     * <p>Information about the URL reference if the <code>referenceType</code> is
      * <code>URL</code>. Otherwise, null.</p>
      */
     inline void SetUrl(const UrlReference& value) { m_urlHasBeenSet = true; m_url = value; }
 
     /**
-     * <p>Information about Url reference if the <code>referenceType</code> is
+     * <p>Information about the URL reference if the <code>referenceType</code> is
      * <code>URL</code>. Otherwise, null.</p>
      */
     inline void SetUrl(UrlReference&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
 
     /**
-     * <p>Information about Url reference if the <code>referenceType</code> is
+     * <p>Information about the URL reference if the <code>referenceType</code> is
      * <code>URL</code>. Otherwise, null.</p>
      */
     inline ReferenceSummary& WithUrl(const UrlReference& value) { SetUrl(value); return *this;}
 
     /**
-     * <p>Information about Url reference if the <code>referenceType</code> is
+     * <p>Information about the URL reference if the <code>referenceType</code> is
      * <code>URL</code>. Otherwise, null.</p>
      */
     inline ReferenceSummary& WithUrl(UrlReference&& value) { SetUrl(std::move(value)); return *this;}

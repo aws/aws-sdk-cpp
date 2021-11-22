@@ -5,7 +5,7 @@
 
 #pragma once
 #include <aws/finspace-data/FinSpaceData_EXPORTS.h>
-#include <aws/finspace-data/model/ChangesetInfo.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -24,6 +24,11 @@ namespace FinSpaceData
 {
 namespace Model
 {
+  /**
+   * The response from a CreateChangeset operation.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateChangesetResponse">AWS
+   * API Reference</a></p>
+   */
   class AWS_FINSPACEDATA_API CreateChangesetResult
   {
   public:
@@ -33,33 +38,88 @@ namespace Model
 
 
     /**
-     * <p>Returns the changeset details.</p>
+     * <p>The unique identifier for the FinSpace Dataset where the Changeset is
+     * created.</p>
      */
-    inline const ChangesetInfo& GetChangeset() const{ return m_changeset; }
+    inline const Aws::String& GetDatasetId() const{ return m_datasetId; }
 
     /**
-     * <p>Returns the changeset details.</p>
+     * <p>The unique identifier for the FinSpace Dataset where the Changeset is
+     * created.</p>
      */
-    inline void SetChangeset(const ChangesetInfo& value) { m_changeset = value; }
+    inline void SetDatasetId(const Aws::String& value) { m_datasetId = value; }
 
     /**
-     * <p>Returns the changeset details.</p>
+     * <p>The unique identifier for the FinSpace Dataset where the Changeset is
+     * created.</p>
      */
-    inline void SetChangeset(ChangesetInfo&& value) { m_changeset = std::move(value); }
+    inline void SetDatasetId(Aws::String&& value) { m_datasetId = std::move(value); }
 
     /**
-     * <p>Returns the changeset details.</p>
+     * <p>The unique identifier for the FinSpace Dataset where the Changeset is
+     * created.</p>
      */
-    inline CreateChangesetResult& WithChangeset(const ChangesetInfo& value) { SetChangeset(value); return *this;}
+    inline void SetDatasetId(const char* value) { m_datasetId.assign(value); }
 
     /**
-     * <p>Returns the changeset details.</p>
+     * <p>The unique identifier for the FinSpace Dataset where the Changeset is
+     * created.</p>
      */
-    inline CreateChangesetResult& WithChangeset(ChangesetInfo&& value) { SetChangeset(std::move(value)); return *this;}
+    inline CreateChangesetResult& WithDatasetId(const Aws::String& value) { SetDatasetId(value); return *this;}
+
+    /**
+     * <p>The unique identifier for the FinSpace Dataset where the Changeset is
+     * created.</p>
+     */
+    inline CreateChangesetResult& WithDatasetId(Aws::String&& value) { SetDatasetId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique identifier for the FinSpace Dataset where the Changeset is
+     * created.</p>
+     */
+    inline CreateChangesetResult& WithDatasetId(const char* value) { SetDatasetId(value); return *this;}
+
+
+    /**
+     * <p>The unique identifier of the Changeset that is created.</p>
+     */
+    inline const Aws::String& GetChangesetId() const{ return m_changesetId; }
+
+    /**
+     * <p>The unique identifier of the Changeset that is created.</p>
+     */
+    inline void SetChangesetId(const Aws::String& value) { m_changesetId = value; }
+
+    /**
+     * <p>The unique identifier of the Changeset that is created.</p>
+     */
+    inline void SetChangesetId(Aws::String&& value) { m_changesetId = std::move(value); }
+
+    /**
+     * <p>The unique identifier of the Changeset that is created.</p>
+     */
+    inline void SetChangesetId(const char* value) { m_changesetId.assign(value); }
+
+    /**
+     * <p>The unique identifier of the Changeset that is created.</p>
+     */
+    inline CreateChangesetResult& WithChangesetId(const Aws::String& value) { SetChangesetId(value); return *this;}
+
+    /**
+     * <p>The unique identifier of the Changeset that is created.</p>
+     */
+    inline CreateChangesetResult& WithChangesetId(Aws::String&& value) { SetChangesetId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique identifier of the Changeset that is created.</p>
+     */
+    inline CreateChangesetResult& WithChangesetId(const char* value) { SetChangesetId(value); return *this;}
 
   private:
 
-    ChangesetInfo m_changeset;
+    Aws::String m_datasetId;
+
+    Aws::String m_changesetId;
   };
 
 } // namespace Model

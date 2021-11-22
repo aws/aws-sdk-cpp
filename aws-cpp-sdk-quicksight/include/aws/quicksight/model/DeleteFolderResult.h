@@ -33,20 +33,17 @@ namespace Model
 
 
     /**
-     * <p>The status of deleting the folder. If succeeded, the status is <code>SC_OK
-     * (200)</code>.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline int GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of deleting the folder. If succeeded, the status is <code>SC_OK
-     * (200)</code>.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline void SetStatus(int value) { m_status = value; }
 
     /**
-     * <p>The status of deleting the folder. If succeeded, the status is <code>SC_OK
-     * (200)</code>.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline DeleteFolderResult& WithStatus(int value) { SetStatus(value); return *this;}
 
@@ -88,73 +85,73 @@ namespace Model
 
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline const Aws::String& GetFolderId() const{ return m_folderId; }
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline void SetFolderId(const Aws::String& value) { m_folderId = value; }
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline void SetFolderId(Aws::String&& value) { m_folderId = std::move(value); }
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline void SetFolderId(const char* value) { m_folderId.assign(value); }
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline DeleteFolderResult& WithFolderId(const Aws::String& value) { SetFolderId(value); return *this;}
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline DeleteFolderResult& WithFolderId(Aws::String&& value) { SetFolderId(std::move(value)); return *this;}
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline DeleteFolderResult& WithFolderId(const char* value) { SetFolderId(value); return *this;}
 
 
     /**
-     * <p>The request ID.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
-     * <p>The request ID.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
 
     /**
-     * <p>The request ID.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
 
     /**
-     * <p>The request ID.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
 
     /**
-     * <p>The request ID.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline DeleteFolderResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
-     * <p>The request ID.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline DeleteFolderResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>The request ID.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline DeleteFolderResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 

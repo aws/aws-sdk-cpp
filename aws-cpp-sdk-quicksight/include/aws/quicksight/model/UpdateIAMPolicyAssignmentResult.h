@@ -108,110 +108,110 @@ namespace Model
 
 
     /**
-     * <p>The ARN for the IAMpolicy applied to the Amazon QuickSight users and groups
+     * <p>The ARN for the IAM policy applied to the Amazon QuickSight users and groups
      * specified in this assignment.</p>
      */
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
 
     /**
-     * <p>The ARN for the IAMpolicy applied to the Amazon QuickSight users and groups
+     * <p>The ARN for the IAM policy applied to the Amazon QuickSight users and groups
      * specified in this assignment.</p>
      */
     inline void SetPolicyArn(const Aws::String& value) { m_policyArn = value; }
 
     /**
-     * <p>The ARN for the IAMpolicy applied to the Amazon QuickSight users and groups
+     * <p>The ARN for the IAM policy applied to the Amazon QuickSight users and groups
      * specified in this assignment.</p>
      */
     inline void SetPolicyArn(Aws::String&& value) { m_policyArn = std::move(value); }
 
     /**
-     * <p>The ARN for the IAMpolicy applied to the Amazon QuickSight users and groups
+     * <p>The ARN for the IAM policy applied to the Amazon QuickSight users and groups
      * specified in this assignment.</p>
      */
     inline void SetPolicyArn(const char* value) { m_policyArn.assign(value); }
 
     /**
-     * <p>The ARN for the IAMpolicy applied to the Amazon QuickSight users and groups
+     * <p>The ARN for the IAM policy applied to the Amazon QuickSight users and groups
      * specified in this assignment.</p>
      */
     inline UpdateIAMPolicyAssignmentResult& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
 
     /**
-     * <p>The ARN for the IAMpolicy applied to the Amazon QuickSight users and groups
+     * <p>The ARN for the IAM policy applied to the Amazon QuickSight users and groups
      * specified in this assignment.</p>
      */
     inline UpdateIAMPolicyAssignmentResult& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN for the IAMpolicy applied to the Amazon QuickSight users and groups
+     * <p>The ARN for the IAM policy applied to the Amazon QuickSight users and groups
      * specified in this assignment.</p>
      */
     inline UpdateIAMPolicyAssignmentResult& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 
 
     /**
-     * <p>The Amazon QuickSight users, groups, or both that the IAMpolicy is assigned
+     * <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned
      * to.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetIdentities() const{ return m_identities; }
 
     /**
-     * <p>The Amazon QuickSight users, groups, or both that the IAMpolicy is assigned
+     * <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned
      * to.</p>
      */
     inline void SetIdentities(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_identities = value; }
 
     /**
-     * <p>The Amazon QuickSight users, groups, or both that the IAMpolicy is assigned
+     * <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned
      * to.</p>
      */
     inline void SetIdentities(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_identities = std::move(value); }
 
     /**
-     * <p>The Amazon QuickSight users, groups, or both that the IAMpolicy is assigned
+     * <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned
      * to.</p>
      */
     inline UpdateIAMPolicyAssignmentResult& WithIdentities(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetIdentities(value); return *this;}
 
     /**
-     * <p>The Amazon QuickSight users, groups, or both that the IAMpolicy is assigned
+     * <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned
      * to.</p>
      */
     inline UpdateIAMPolicyAssignmentResult& WithIdentities(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetIdentities(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon QuickSight users, groups, or both that the IAMpolicy is assigned
+     * <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned
      * to.</p>
      */
     inline UpdateIAMPolicyAssignmentResult& AddIdentities(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_identities.emplace(key, value); return *this; }
 
     /**
-     * <p>The Amazon QuickSight users, groups, or both that the IAMpolicy is assigned
+     * <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned
      * to.</p>
      */
     inline UpdateIAMPolicyAssignmentResult& AddIdentities(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_identities.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The Amazon QuickSight users, groups, or both that the IAMpolicy is assigned
+     * <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned
      * to.</p>
      */
     inline UpdateIAMPolicyAssignmentResult& AddIdentities(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_identities.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon QuickSight users, groups, or both that the IAMpolicy is assigned
+     * <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned
      * to.</p>
      */
     inline UpdateIAMPolicyAssignmentResult& AddIdentities(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_identities.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon QuickSight users, groups, or both that the IAMpolicy is assigned
+     * <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned
      * to.</p>
      */
     inline UpdateIAMPolicyAssignmentResult& AddIdentities(const char* key, Aws::Vector<Aws::String>&& value) { m_identities.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon QuickSight users, groups, or both that the IAMpolicy is assigned
+     * <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned
      * to.</p>
      */
     inline UpdateIAMPolicyAssignmentResult& AddIdentities(const char* key, const Aws::Vector<Aws::String>& value) { m_identities.emplace(key, value); return *this; }

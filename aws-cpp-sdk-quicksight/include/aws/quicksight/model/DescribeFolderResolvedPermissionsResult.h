@@ -35,161 +35,161 @@ namespace Model
 
 
     /**
-     * <p>The status. If succeeded, the status is <code>SC_OK</code> </p>
+     * <p>The HTTP status of the request.</p>
      */
     inline int GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status. If succeeded, the status is <code>SC_OK</code> </p>
+     * <p>The HTTP status of the request.</p>
      */
     inline void SetStatus(int value) { m_status = value; }
 
     /**
-     * <p>The status. If succeeded, the status is <code>SC_OK</code> </p>
+     * <p>The HTTP status of the request.</p>
      */
     inline DescribeFolderResolvedPermissionsResult& WithStatus(int value) { SetStatus(value); return *this;}
 
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline const Aws::String& GetFolderId() const{ return m_folderId; }
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline void SetFolderId(const Aws::String& value) { m_folderId = value; }
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline void SetFolderId(Aws::String&& value) { m_folderId = std::move(value); }
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline void SetFolderId(const char* value) { m_folderId.assign(value); }
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline DescribeFolderResolvedPermissionsResult& WithFolderId(const Aws::String& value) { SetFolderId(value); return *this;}
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline DescribeFolderResolvedPermissionsResult& WithFolderId(Aws::String&& value) { SetFolderId(std::move(value)); return *this;}
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline DescribeFolderResolvedPermissionsResult& WithFolderId(const char* value) { SetFolderId(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the folder.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the folder.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the folder.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the folder.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the folder.</p>
      */
     inline DescribeFolderResolvedPermissionsResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the folder.</p>
      */
     inline DescribeFolderResolvedPermissionsResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the folder.</p>
      */
     inline DescribeFolderResolvedPermissionsResult& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p>Information about the permissions on the dashboard.</p>
+     * <p>Information about the permissions for the folder.</p>
      */
     inline const Aws::Vector<ResourcePermission>& GetPermissions() const{ return m_permissions; }
 
     /**
-     * <p>Information about the permissions on the dashboard.</p>
+     * <p>Information about the permissions for the folder.</p>
      */
     inline void SetPermissions(const Aws::Vector<ResourcePermission>& value) { m_permissions = value; }
 
     /**
-     * <p>Information about the permissions on the dashboard.</p>
+     * <p>Information about the permissions for the folder.</p>
      */
     inline void SetPermissions(Aws::Vector<ResourcePermission>&& value) { m_permissions = std::move(value); }
 
     /**
-     * <p>Information about the permissions on the dashboard.</p>
+     * <p>Information about the permissions for the folder.</p>
      */
     inline DescribeFolderResolvedPermissionsResult& WithPermissions(const Aws::Vector<ResourcePermission>& value) { SetPermissions(value); return *this;}
 
     /**
-     * <p>Information about the permissions on the dashboard.</p>
+     * <p>Information about the permissions for the folder.</p>
      */
     inline DescribeFolderResolvedPermissionsResult& WithPermissions(Aws::Vector<ResourcePermission>&& value) { SetPermissions(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the permissions on the dashboard.</p>
+     * <p>Information about the permissions for the folder.</p>
      */
     inline DescribeFolderResolvedPermissionsResult& AddPermissions(const ResourcePermission& value) { m_permissions.push_back(value); return *this; }
 
     /**
-     * <p>Information about the permissions on the dashboard.</p>
+     * <p>Information about the permissions for the folder.</p>
      */
     inline DescribeFolderResolvedPermissionsResult& AddPermissions(ResourcePermission&& value) { m_permissions.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The request ID.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
-     * <p>The request ID.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
 
     /**
-     * <p>The request ID.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
 
     /**
-     * <p>The request ID.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
 
     /**
-     * <p>The request ID.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline DescribeFolderResolvedPermissionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
-     * <p>The request ID.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline DescribeFolderResolvedPermissionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>The request ID.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline DescribeFolderResolvedPermissionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 

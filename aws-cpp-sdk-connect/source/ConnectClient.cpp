@@ -30,6 +30,7 @@
 #include <aws/connect/model/AssociateSecurityKeyRequest.h>
 #include <aws/connect/model/CreateAgentStatusRequest.h>
 #include <aws/connect/model/CreateContactFlowRequest.h>
+#include <aws/connect/model/CreateContactFlowModuleRequest.h>
 #include <aws/connect/model/CreateHoursOfOperationRequest.h>
 #include <aws/connect/model/CreateInstanceRequest.h>
 #include <aws/connect/model/CreateIntegrationAssociationRequest.h>
@@ -40,6 +41,8 @@
 #include <aws/connect/model/CreateUseCaseRequest.h>
 #include <aws/connect/model/CreateUserRequest.h>
 #include <aws/connect/model/CreateUserHierarchyGroupRequest.h>
+#include <aws/connect/model/DeleteContactFlowRequest.h>
+#include <aws/connect/model/DeleteContactFlowModuleRequest.h>
 #include <aws/connect/model/DeleteHoursOfOperationRequest.h>
 #include <aws/connect/model/DeleteInstanceRequest.h>
 #include <aws/connect/model/DeleteIntegrationAssociationRequest.h>
@@ -51,6 +54,7 @@
 #include <aws/connect/model/DescribeAgentStatusRequest.h>
 #include <aws/connect/model/DescribeContactRequest.h>
 #include <aws/connect/model/DescribeContactFlowRequest.h>
+#include <aws/connect/model/DescribeContactFlowModuleRequest.h>
 #include <aws/connect/model/DescribeHoursOfOperationRequest.h>
 #include <aws/connect/model/DescribeInstanceRequest.h>
 #include <aws/connect/model/DescribeInstanceAttributeRequest.h>
@@ -77,6 +81,7 @@
 #include <aws/connect/model/ListAgentStatusesRequest.h>
 #include <aws/connect/model/ListApprovedOriginsRequest.h>
 #include <aws/connect/model/ListBotsRequest.h>
+#include <aws/connect/model/ListContactFlowModulesRequest.h>
 #include <aws/connect/model/ListContactFlowsRequest.h>
 #include <aws/connect/model/ListContactReferencesRequest.h>
 #include <aws/connect/model/ListHoursOfOperationsRequest.h>
@@ -116,6 +121,9 @@
 #include <aws/connect/model/UpdateContactRequest.h>
 #include <aws/connect/model/UpdateContactAttributesRequest.h>
 #include <aws/connect/model/UpdateContactFlowContentRequest.h>
+#include <aws/connect/model/UpdateContactFlowMetadataRequest.h>
+#include <aws/connect/model/UpdateContactFlowModuleContentRequest.h>
+#include <aws/connect/model/UpdateContactFlowModuleMetadataRequest.h>
 #include <aws/connect/model/UpdateContactFlowNameRequest.h>
 #include <aws/connect/model/UpdateContactScheduleRequest.h>
 #include <aws/connect/model/UpdateHoursOfOperationRequest.h>
@@ -544,6 +552,37 @@ void ConnectClient::CreateContactFlowAsyncHelper(const CreateContactFlowRequest&
   handler(this, request, CreateContactFlow(request), context);
 }
 
+CreateContactFlowModuleOutcome ConnectClient::CreateContactFlowModule(const CreateContactFlowModuleRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateContactFlowModule", "Required field: InstanceId, is not set");
+    return CreateContactFlowModuleOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/contact-flow-modules/");
+  uri.AddPathSegment(request.GetInstanceId());
+  return CreateContactFlowModuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateContactFlowModuleOutcomeCallable ConnectClient::CreateContactFlowModuleCallable(const CreateContactFlowModuleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateContactFlowModuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateContactFlowModule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::CreateContactFlowModuleAsync(const CreateContactFlowModuleRequest& request, const CreateContactFlowModuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateContactFlowModuleAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::CreateContactFlowModuleAsyncHelper(const CreateContactFlowModuleRequest& request, const CreateContactFlowModuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateContactFlowModule(request), context);
+}
+
 CreateHoursOfOperationOutcome ConnectClient::CreateHoursOfOperation(const CreateHoursOfOperationRequest& request) const
 {
   if (!request.InstanceIdHasBeenSet())
@@ -855,6 +894,80 @@ void ConnectClient::CreateUserHierarchyGroupAsync(const CreateUserHierarchyGroup
 void ConnectClient::CreateUserHierarchyGroupAsyncHelper(const CreateUserHierarchyGroupRequest& request, const CreateUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateUserHierarchyGroup(request), context);
+}
+
+DeleteContactFlowOutcome ConnectClient::DeleteContactFlow(const DeleteContactFlowRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteContactFlow", "Required field: InstanceId, is not set");
+    return DeleteContactFlowOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.ContactFlowIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteContactFlow", "Required field: ContactFlowId, is not set");
+    return DeleteContactFlowOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactFlowId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/contact-flows/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetContactFlowId());
+  return DeleteContactFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteContactFlowOutcomeCallable ConnectClient::DeleteContactFlowCallable(const DeleteContactFlowRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteContactFlowOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteContactFlow(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::DeleteContactFlowAsync(const DeleteContactFlowRequest& request, const DeleteContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteContactFlowAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::DeleteContactFlowAsyncHelper(const DeleteContactFlowRequest& request, const DeleteContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteContactFlow(request), context);
+}
+
+DeleteContactFlowModuleOutcome ConnectClient::DeleteContactFlowModule(const DeleteContactFlowModuleRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteContactFlowModule", "Required field: InstanceId, is not set");
+    return DeleteContactFlowModuleOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.ContactFlowModuleIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteContactFlowModule", "Required field: ContactFlowModuleId, is not set");
+    return DeleteContactFlowModuleOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactFlowModuleId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/contact-flow-modules/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetContactFlowModuleId());
+  return DeleteContactFlowModuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteContactFlowModuleOutcomeCallable ConnectClient::DeleteContactFlowModuleCallable(const DeleteContactFlowModuleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteContactFlowModuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteContactFlowModule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::DeleteContactFlowModuleAsync(const DeleteContactFlowModuleRequest& request, const DeleteContactFlowModuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteContactFlowModuleAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::DeleteContactFlowModuleAsyncHelper(const DeleteContactFlowModuleRequest& request, const DeleteContactFlowModuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteContactFlowModule(request), context);
 }
 
 DeleteHoursOfOperationOutcome ConnectClient::DeleteHoursOfOperation(const DeleteHoursOfOperationRequest& request) const
@@ -1265,6 +1378,43 @@ void ConnectClient::DescribeContactFlowAsync(const DescribeContactFlowRequest& r
 void ConnectClient::DescribeContactFlowAsyncHelper(const DescribeContactFlowRequest& request, const DescribeContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeContactFlow(request), context);
+}
+
+DescribeContactFlowModuleOutcome ConnectClient::DescribeContactFlowModule(const DescribeContactFlowModuleRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeContactFlowModule", "Required field: InstanceId, is not set");
+    return DescribeContactFlowModuleOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.ContactFlowModuleIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeContactFlowModule", "Required field: ContactFlowModuleId, is not set");
+    return DescribeContactFlowModuleOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactFlowModuleId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/contact-flow-modules/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetContactFlowModuleId());
+  return DescribeContactFlowModuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeContactFlowModuleOutcomeCallable ConnectClient::DescribeContactFlowModuleCallable(const DescribeContactFlowModuleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeContactFlowModuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeContactFlowModule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::DescribeContactFlowModuleAsync(const DescribeContactFlowModuleRequest& request, const DescribeContactFlowModuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeContactFlowModuleAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::DescribeContactFlowModuleAsyncHelper(const DescribeContactFlowModuleRequest& request, const DescribeContactFlowModuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeContactFlowModule(request), context);
 }
 
 DescribeHoursOfOperationOutcome ConnectClient::DescribeHoursOfOperation(const DescribeHoursOfOperationRequest& request) const
@@ -2202,6 +2352,37 @@ void ConnectClient::ListBotsAsync(const ListBotsRequest& request, const ListBots
 void ConnectClient::ListBotsAsyncHelper(const ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListBots(request), context);
+}
+
+ListContactFlowModulesOutcome ConnectClient::ListContactFlowModules(const ListContactFlowModulesRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListContactFlowModules", "Required field: InstanceId, is not set");
+    return ListContactFlowModulesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/contact-flow-modules-summary/");
+  uri.AddPathSegment(request.GetInstanceId());
+  return ListContactFlowModulesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListContactFlowModulesOutcomeCallable ConnectClient::ListContactFlowModulesCallable(const ListContactFlowModulesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListContactFlowModulesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListContactFlowModules(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::ListContactFlowModulesAsync(const ListContactFlowModulesRequest& request, const ListContactFlowModulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListContactFlowModulesAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::ListContactFlowModulesAsyncHelper(const ListContactFlowModulesRequest& request, const ListContactFlowModulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListContactFlowModules(request), context);
 }
 
 ListContactFlowsOutcome ConnectClient::ListContactFlows(const ListContactFlowsRequest& request) const
@@ -3413,6 +3594,120 @@ void ConnectClient::UpdateContactFlowContentAsync(const UpdateContactFlowContent
 void ConnectClient::UpdateContactFlowContentAsyncHelper(const UpdateContactFlowContentRequest& request, const UpdateContactFlowContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateContactFlowContent(request), context);
+}
+
+UpdateContactFlowMetadataOutcome ConnectClient::UpdateContactFlowMetadata(const UpdateContactFlowMetadataRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateContactFlowMetadata", "Required field: InstanceId, is not set");
+    return UpdateContactFlowMetadataOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.ContactFlowIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateContactFlowMetadata", "Required field: ContactFlowId, is not set");
+    return UpdateContactFlowMetadataOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactFlowId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/contact-flows/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetContactFlowId());
+  uri.AddPathSegments("/metadata");
+  return UpdateContactFlowMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateContactFlowMetadataOutcomeCallable ConnectClient::UpdateContactFlowMetadataCallable(const UpdateContactFlowMetadataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateContactFlowMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateContactFlowMetadata(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::UpdateContactFlowMetadataAsync(const UpdateContactFlowMetadataRequest& request, const UpdateContactFlowMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateContactFlowMetadataAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::UpdateContactFlowMetadataAsyncHelper(const UpdateContactFlowMetadataRequest& request, const UpdateContactFlowMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateContactFlowMetadata(request), context);
+}
+
+UpdateContactFlowModuleContentOutcome ConnectClient::UpdateContactFlowModuleContent(const UpdateContactFlowModuleContentRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateContactFlowModuleContent", "Required field: InstanceId, is not set");
+    return UpdateContactFlowModuleContentOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.ContactFlowModuleIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateContactFlowModuleContent", "Required field: ContactFlowModuleId, is not set");
+    return UpdateContactFlowModuleContentOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactFlowModuleId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/contact-flow-modules/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetContactFlowModuleId());
+  uri.AddPathSegments("/content");
+  return UpdateContactFlowModuleContentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateContactFlowModuleContentOutcomeCallable ConnectClient::UpdateContactFlowModuleContentCallable(const UpdateContactFlowModuleContentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateContactFlowModuleContentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateContactFlowModuleContent(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::UpdateContactFlowModuleContentAsync(const UpdateContactFlowModuleContentRequest& request, const UpdateContactFlowModuleContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateContactFlowModuleContentAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::UpdateContactFlowModuleContentAsyncHelper(const UpdateContactFlowModuleContentRequest& request, const UpdateContactFlowModuleContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateContactFlowModuleContent(request), context);
+}
+
+UpdateContactFlowModuleMetadataOutcome ConnectClient::UpdateContactFlowModuleMetadata(const UpdateContactFlowModuleMetadataRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateContactFlowModuleMetadata", "Required field: InstanceId, is not set");
+    return UpdateContactFlowModuleMetadataOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.ContactFlowModuleIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateContactFlowModuleMetadata", "Required field: ContactFlowModuleId, is not set");
+    return UpdateContactFlowModuleMetadataOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactFlowModuleId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/contact-flow-modules/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetContactFlowModuleId());
+  uri.AddPathSegments("/metadata");
+  return UpdateContactFlowModuleMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateContactFlowModuleMetadataOutcomeCallable ConnectClient::UpdateContactFlowModuleMetadataCallable(const UpdateContactFlowModuleMetadataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateContactFlowModuleMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateContactFlowModuleMetadata(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::UpdateContactFlowModuleMetadataAsync(const UpdateContactFlowModuleMetadataRequest& request, const UpdateContactFlowModuleMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateContactFlowModuleMetadataAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::UpdateContactFlowModuleMetadataAsyncHelper(const UpdateContactFlowModuleMetadataRequest& request, const UpdateContactFlowModuleMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateContactFlowModuleMetadata(request), context);
 }
 
 UpdateContactFlowNameOutcome ConnectClient::UpdateContactFlowName(const UpdateContactFlowNameRequest& request) const

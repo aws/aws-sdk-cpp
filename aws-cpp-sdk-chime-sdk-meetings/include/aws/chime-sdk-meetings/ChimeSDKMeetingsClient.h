@@ -112,7 +112,10 @@ namespace Model
   /**
    * <p>The Amazon Chime SDK meetings APIs in this section allow software developers
    * to create Amazon Chime SDK meetings, set the AWS Regions for meetings, create
-   * and manage users, and send and receive meeting notifications.</p>
+   * and manage users, and send and receive meeting notifications. For more
+   * information about the meeting APIs, see <a
+   * href="http://amazonaws.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_meetings">Amazon
+   * Chime SDK meetings</a>.</p>
    */
   class AWS_CHIMESDKMEETINGS_API ChimeSDKMeetingsClient : public Aws::Client::AWSJsonClient
   {

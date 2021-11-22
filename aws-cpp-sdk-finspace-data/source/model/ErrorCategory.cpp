@@ -20,50 +20,50 @@ namespace Aws
       namespace ErrorCategoryMapper
       {
 
-        static const int The_inputs_to_this_request_are_invalid_HASH = HashingUtils::HashString("The_inputs_to_this_request_are_invalid");
-        static const int Service_limits_have_been_exceeded_HASH = HashingUtils::HashString("Service_limits_have_been_exceeded");
-        static const int Missing_required_permission_to_perform_this_request_HASH = HashingUtils::HashString("Missing_required_permission_to_perform_this_request");
-        static const int One_or_more_inputs_to_this_request_were_not_found_HASH = HashingUtils::HashString("One_or_more_inputs_to_this_request_were_not_found");
-        static const int The_system_temporarily_lacks_sufficient_resources_to_process_the_request_HASH = HashingUtils::HashString("The_system_temporarily_lacks_sufficient_resources_to_process_the_request");
-        static const int An_internal_error_has_occurred_HASH = HashingUtils::HashString("An_internal_error_has_occurred");
-        static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
-        static const int A_user_recoverable_error_has_occurred_HASH = HashingUtils::HashString("A_user_recoverable_error_has_occurred");
+        static const int VALIDATION_HASH = HashingUtils::HashString("VALIDATION");
+        static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("SERVICE_QUOTA_EXCEEDED");
+        static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
+        static const int RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("RESOURCE_NOT_FOUND");
+        static const int THROTTLING_HASH = HashingUtils::HashString("THROTTLING");
+        static const int INTERNAL_SERVICE_EXCEPTION_HASH = HashingUtils::HashString("INTERNAL_SERVICE_EXCEPTION");
+        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
+        static const int USER_RECOVERABLE_HASH = HashingUtils::HashString("USER_RECOVERABLE");
 
 
         ErrorCategory GetErrorCategoryForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == The_inputs_to_this_request_are_invalid_HASH)
+          if (hashCode == VALIDATION_HASH)
           {
-            return ErrorCategory::The_inputs_to_this_request_are_invalid;
+            return ErrorCategory::VALIDATION;
           }
-          else if (hashCode == Service_limits_have_been_exceeded_HASH)
+          else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
           {
-            return ErrorCategory::Service_limits_have_been_exceeded;
+            return ErrorCategory::SERVICE_QUOTA_EXCEEDED;
           }
-          else if (hashCode == Missing_required_permission_to_perform_this_request_HASH)
+          else if (hashCode == ACCESS_DENIED_HASH)
           {
-            return ErrorCategory::Missing_required_permission_to_perform_this_request;
+            return ErrorCategory::ACCESS_DENIED;
           }
-          else if (hashCode == One_or_more_inputs_to_this_request_were_not_found_HASH)
+          else if (hashCode == RESOURCE_NOT_FOUND_HASH)
           {
-            return ErrorCategory::One_or_more_inputs_to_this_request_were_not_found;
+            return ErrorCategory::RESOURCE_NOT_FOUND;
           }
-          else if (hashCode == The_system_temporarily_lacks_sufficient_resources_to_process_the_request_HASH)
+          else if (hashCode == THROTTLING_HASH)
           {
-            return ErrorCategory::The_system_temporarily_lacks_sufficient_resources_to_process_the_request;
+            return ErrorCategory::THROTTLING;
           }
-          else if (hashCode == An_internal_error_has_occurred_HASH)
+          else if (hashCode == INTERNAL_SERVICE_EXCEPTION_HASH)
           {
-            return ErrorCategory::An_internal_error_has_occurred;
+            return ErrorCategory::INTERNAL_SERVICE_EXCEPTION;
           }
-          else if (hashCode == Cancelled_HASH)
+          else if (hashCode == CANCELLED_HASH)
           {
-            return ErrorCategory::Cancelled;
+            return ErrorCategory::CANCELLED;
           }
-          else if (hashCode == A_user_recoverable_error_has_occurred_HASH)
+          else if (hashCode == USER_RECOVERABLE_HASH)
           {
-            return ErrorCategory::A_user_recoverable_error_has_occurred;
+            return ErrorCategory::USER_RECOVERABLE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -79,22 +79,22 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case ErrorCategory::The_inputs_to_this_request_are_invalid:
-            return "The_inputs_to_this_request_are_invalid";
-          case ErrorCategory::Service_limits_have_been_exceeded:
-            return "Service_limits_have_been_exceeded";
-          case ErrorCategory::Missing_required_permission_to_perform_this_request:
-            return "Missing_required_permission_to_perform_this_request";
-          case ErrorCategory::One_or_more_inputs_to_this_request_were_not_found:
-            return "One_or_more_inputs_to_this_request_were_not_found";
-          case ErrorCategory::The_system_temporarily_lacks_sufficient_resources_to_process_the_request:
-            return "The_system_temporarily_lacks_sufficient_resources_to_process_the_request";
-          case ErrorCategory::An_internal_error_has_occurred:
-            return "An_internal_error_has_occurred";
-          case ErrorCategory::Cancelled:
-            return "Cancelled";
-          case ErrorCategory::A_user_recoverable_error_has_occurred:
-            return "A_user_recoverable_error_has_occurred";
+          case ErrorCategory::VALIDATION:
+            return "VALIDATION";
+          case ErrorCategory::SERVICE_QUOTA_EXCEEDED:
+            return "SERVICE_QUOTA_EXCEEDED";
+          case ErrorCategory::ACCESS_DENIED:
+            return "ACCESS_DENIED";
+          case ErrorCategory::RESOURCE_NOT_FOUND:
+            return "RESOURCE_NOT_FOUND";
+          case ErrorCategory::THROTTLING:
+            return "THROTTLING";
+          case ErrorCategory::INTERNAL_SERVICE_EXCEPTION:
+            return "INTERNAL_SERVICE_EXCEPTION";
+          case ErrorCategory::CANCELLED:
+            return "CANCELLED";
+          case ErrorCategory::USER_RECOVERABLE:
+            return "USER_RECOVERABLE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

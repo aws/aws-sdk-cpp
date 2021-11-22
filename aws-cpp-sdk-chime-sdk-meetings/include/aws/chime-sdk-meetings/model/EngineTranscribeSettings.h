@@ -298,38 +298,38 @@ namespace Model
 
 
     /**
-     * <p>Set this field to <code>PII</code> to identify personal health information in
-     * the transcription output.</p>
+     * <p>Set this field to <code>PII</code> to identify personally identifiable
+     * information in the transcription output.</p>
      */
     inline const TranscribeContentIdentificationType& GetContentIdentificationType() const{ return m_contentIdentificationType; }
 
     /**
-     * <p>Set this field to <code>PII</code> to identify personal health information in
-     * the transcription output.</p>
+     * <p>Set this field to <code>PII</code> to identify personally identifiable
+     * information in the transcription output.</p>
      */
     inline bool ContentIdentificationTypeHasBeenSet() const { return m_contentIdentificationTypeHasBeenSet; }
 
     /**
-     * <p>Set this field to <code>PII</code> to identify personal health information in
-     * the transcription output.</p>
+     * <p>Set this field to <code>PII</code> to identify personally identifiable
+     * information in the transcription output.</p>
      */
     inline void SetContentIdentificationType(const TranscribeContentIdentificationType& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = value; }
 
     /**
-     * <p>Set this field to <code>PII</code> to identify personal health information in
-     * the transcription output.</p>
+     * <p>Set this field to <code>PII</code> to identify personally identifiable
+     * information in the transcription output.</p>
      */
     inline void SetContentIdentificationType(TranscribeContentIdentificationType&& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = std::move(value); }
 
     /**
-     * <p>Set this field to <code>PII</code> to identify personal health information in
-     * the transcription output.</p>
+     * <p>Set this field to <code>PII</code> to identify personally identifiable
+     * information in the transcription output.</p>
      */
     inline EngineTranscribeSettings& WithContentIdentificationType(const TranscribeContentIdentificationType& value) { SetContentIdentificationType(value); return *this;}
 
     /**
-     * <p>Set this field to <code>PII</code> to identify personal health information in
-     * the transcription output.</p>
+     * <p>Set this field to <code>PII</code> to identify personally identifiable
+     * information in the transcription output.</p>
      */
     inline EngineTranscribeSettings& WithContentIdentificationType(TranscribeContentIdentificationType&& value) { SetContentIdentificationType(std::move(value)); return *this;}
 
@@ -337,7 +337,7 @@ namespace Model
     /**
      * <p>Set this field to <code>PII</code> to redact personally identifiable
      * information in the transcription output. Content redaction is performed only
-     * upon complete transcription of the audio segments.</p> <p>You can’t set both
+     * upon complete transcription of the audio segments.</p> <p>You can’t set
      * <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in
      * the same request. If you set both, your request returns a
      * <code>BadRequestException</code>.</p>
@@ -347,7 +347,7 @@ namespace Model
     /**
      * <p>Set this field to <code>PII</code> to redact personally identifiable
      * information in the transcription output. Content redaction is performed only
-     * upon complete transcription of the audio segments.</p> <p>You can’t set both
+     * upon complete transcription of the audio segments.</p> <p>You can’t set
      * <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in
      * the same request. If you set both, your request returns a
      * <code>BadRequestException</code>.</p>
@@ -357,7 +357,7 @@ namespace Model
     /**
      * <p>Set this field to <code>PII</code> to redact personally identifiable
      * information in the transcription output. Content redaction is performed only
-     * upon complete transcription of the audio segments.</p> <p>You can’t set both
+     * upon complete transcription of the audio segments.</p> <p>You can’t set
      * <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in
      * the same request. If you set both, your request returns a
      * <code>BadRequestException</code>.</p>
@@ -367,7 +367,7 @@ namespace Model
     /**
      * <p>Set this field to <code>PII</code> to redact personally identifiable
      * information in the transcription output. Content redaction is performed only
-     * upon complete transcription of the audio segments.</p> <p>You can’t set both
+     * upon complete transcription of the audio segments.</p> <p>You can’t set
      * <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in
      * the same request. If you set both, your request returns a
      * <code>BadRequestException</code>.</p>
@@ -377,7 +377,7 @@ namespace Model
     /**
      * <p>Set this field to <code>PII</code> to redact personally identifiable
      * information in the transcription output. Content redaction is performed only
-     * upon complete transcription of the audio segments.</p> <p>You can’t set both
+     * upon complete transcription of the audio segments.</p> <p>You can’t set
      * <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in
      * the same request. If you set both, your request returns a
      * <code>BadRequestException</code>.</p>
@@ -387,7 +387,7 @@ namespace Model
     /**
      * <p>Set this field to <code>PII</code> to redact personally identifiable
      * information in the transcription output. Content redaction is performed only
-     * upon complete transcription of the audio segments.</p> <p>You can’t set both
+     * upon complete transcription of the audio segments.</p> <p>You can’t set
      * <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in
      * the same request. If you set both, your request returns a
      * <code>BadRequestException</code>.</p>
@@ -398,7 +398,7 @@ namespace Model
     /**
      * <p>Lists the PII entity types you want to identify or redact. To specify entity
      * types, you must enable <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code>.</p> <p> <code>PIIEntityTypes</code> must be
+     * <code>ContentRedactionType</code>.</p> <p>PIIEntityTypes must be
      * comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
      * <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
      * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
@@ -411,7 +411,7 @@ namespace Model
     /**
      * <p>Lists the PII entity types you want to identify or redact. To specify entity
      * types, you must enable <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code>.</p> <p> <code>PIIEntityTypes</code> must be
+     * <code>ContentRedactionType</code>.</p> <p>PIIEntityTypes must be
      * comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
      * <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
      * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
@@ -424,7 +424,7 @@ namespace Model
     /**
      * <p>Lists the PII entity types you want to identify or redact. To specify entity
      * types, you must enable <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code>.</p> <p> <code>PIIEntityTypes</code> must be
+     * <code>ContentRedactionType</code>.</p> <p>PIIEntityTypes must be
      * comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
      * <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
      * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
@@ -437,7 +437,7 @@ namespace Model
     /**
      * <p>Lists the PII entity types you want to identify or redact. To specify entity
      * types, you must enable <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code>.</p> <p> <code>PIIEntityTypes</code> must be
+     * <code>ContentRedactionType</code>.</p> <p>PIIEntityTypes must be
      * comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
      * <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
      * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
@@ -450,7 +450,7 @@ namespace Model
     /**
      * <p>Lists the PII entity types you want to identify or redact. To specify entity
      * types, you must enable <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code>.</p> <p> <code>PIIEntityTypes</code> must be
+     * <code>ContentRedactionType</code>.</p> <p>PIIEntityTypes must be
      * comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
      * <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
      * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
@@ -463,7 +463,7 @@ namespace Model
     /**
      * <p>Lists the PII entity types you want to identify or redact. To specify entity
      * types, you must enable <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code>.</p> <p> <code>PIIEntityTypes</code> must be
+     * <code>ContentRedactionType</code>.</p> <p>PIIEntityTypes must be
      * comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
      * <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
      * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
@@ -476,7 +476,7 @@ namespace Model
     /**
      * <p>Lists the PII entity types you want to identify or redact. To specify entity
      * types, you must enable <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code>.</p> <p> <code>PIIEntityTypes</code> must be
+     * <code>ContentRedactionType</code>.</p> <p>PIIEntityTypes must be
      * comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
      * <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
      * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
@@ -489,7 +489,7 @@ namespace Model
     /**
      * <p>Lists the PII entity types you want to identify or redact. To specify entity
      * types, you must enable <code>ContentIdentificationType</code> or
-     * <code>ContentRedactionType</code>.</p> <p> <code>PIIEntityTypes</code> must be
+     * <code>ContentRedactionType</code>.</p> <p>PIIEntityTypes must be
      * comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
      * <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
      * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,

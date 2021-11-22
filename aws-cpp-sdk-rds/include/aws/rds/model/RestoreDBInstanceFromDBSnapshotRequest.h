@@ -1872,6 +1872,95 @@ namespace Model
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithCustomIamInstanceProfile(const char* value) { SetCustomIamInstanceProfile(value); return *this;}
 
+
+    /**
+     * <p>Specifies where automated backups and manual snapshots are stored for the
+     * restored DB instance.</p> <p>Possible values are <code>outposts</code> (Amazon
+     * Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The
+     * default is <code>region</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline const Aws::String& GetBackupTarget() const{ return m_backupTarget; }
+
+    /**
+     * <p>Specifies where automated backups and manual snapshots are stored for the
+     * restored DB instance.</p> <p>Possible values are <code>outposts</code> (Amazon
+     * Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The
+     * default is <code>region</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline bool BackupTargetHasBeenSet() const { return m_backupTargetHasBeenSet; }
+
+    /**
+     * <p>Specifies where automated backups and manual snapshots are stored for the
+     * restored DB instance.</p> <p>Possible values are <code>outposts</code> (Amazon
+     * Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The
+     * default is <code>region</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline void SetBackupTarget(const Aws::String& value) { m_backupTargetHasBeenSet = true; m_backupTarget = value; }
+
+    /**
+     * <p>Specifies where automated backups and manual snapshots are stored for the
+     * restored DB instance.</p> <p>Possible values are <code>outposts</code> (Amazon
+     * Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The
+     * default is <code>region</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline void SetBackupTarget(Aws::String&& value) { m_backupTargetHasBeenSet = true; m_backupTarget = std::move(value); }
+
+    /**
+     * <p>Specifies where automated backups and manual snapshots are stored for the
+     * restored DB instance.</p> <p>Possible values are <code>outposts</code> (Amazon
+     * Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The
+     * default is <code>region</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline void SetBackupTarget(const char* value) { m_backupTargetHasBeenSet = true; m_backupTarget.assign(value); }
+
+    /**
+     * <p>Specifies where automated backups and manual snapshots are stored for the
+     * restored DB instance.</p> <p>Possible values are <code>outposts</code> (Amazon
+     * Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The
+     * default is <code>region</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithBackupTarget(const Aws::String& value) { SetBackupTarget(value); return *this;}
+
+    /**
+     * <p>Specifies where automated backups and manual snapshots are stored for the
+     * restored DB instance.</p> <p>Possible values are <code>outposts</code> (Amazon
+     * Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The
+     * default is <code>region</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithBackupTarget(Aws::String&& value) { SetBackupTarget(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies where automated backups and manual snapshots are stored for the
+     * restored DB instance.</p> <p>Possible values are <code>outposts</code> (Amazon
+     * Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The
+     * default is <code>region</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithBackupTarget(const char* value) { SetBackupTarget(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -1963,6 +2052,9 @@ namespace Model
 
     Aws::String m_customIamInstanceProfile;
     bool m_customIamInstanceProfileHasBeenSet;
+
+    Aws::String m_backupTarget;
+    bool m_backupTargetHasBeenSet;
   };
 
 } // namespace Model

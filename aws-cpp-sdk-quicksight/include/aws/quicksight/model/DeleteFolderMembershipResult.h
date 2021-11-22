@@ -33,56 +33,53 @@ namespace Model
 
 
     /**
-     * <p>The status of deleting the asset. If succeeded, the status is <code>SC_OK
-     * (200)</code>.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline int GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of deleting the asset. If succeeded, the status is <code>SC_OK
-     * (200)</code>.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline void SetStatus(int value) { m_status = value; }
 
     /**
-     * <p>The status of deleting the asset. If succeeded, the status is <code>SC_OK
-     * (200)</code>.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline DeleteFolderMembershipResult& WithStatus(int value) { SetStatus(value); return *this;}
 
 
     /**
-     * <p>The request ID.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
-     * <p>The request ID.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
 
     /**
-     * <p>The request ID.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
 
     /**
-     * <p>The request ID.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
 
     /**
-     * <p>The request ID.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline DeleteFolderMembershipResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
-     * <p>The request ID.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline DeleteFolderMembershipResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>The request ID.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline DeleteFolderMembershipResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 

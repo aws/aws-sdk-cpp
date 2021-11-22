@@ -8,6 +8,7 @@
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/chime-sdk-meetings/model/NotificationsConfiguration.h>
+#include <aws/chime-sdk-meetings/model/MeetingFeaturesConfiguration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -298,6 +299,43 @@ namespace Model
      */
     inline CreateMeetingRequest& WithNotificationsConfiguration(NotificationsConfiguration&& value) { SetNotificationsConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Lists the audio and video features enabled for a meeting, such as echo
+     * reduction.</p>
+     */
+    inline const MeetingFeaturesConfiguration& GetMeetingFeatures() const{ return m_meetingFeatures; }
+
+    /**
+     * <p>Lists the audio and video features enabled for a meeting, such as echo
+     * reduction.</p>
+     */
+    inline bool MeetingFeaturesHasBeenSet() const { return m_meetingFeaturesHasBeenSet; }
+
+    /**
+     * <p>Lists the audio and video features enabled for a meeting, such as echo
+     * reduction.</p>
+     */
+    inline void SetMeetingFeatures(const MeetingFeaturesConfiguration& value) { m_meetingFeaturesHasBeenSet = true; m_meetingFeatures = value; }
+
+    /**
+     * <p>Lists the audio and video features enabled for a meeting, such as echo
+     * reduction.</p>
+     */
+    inline void SetMeetingFeatures(MeetingFeaturesConfiguration&& value) { m_meetingFeaturesHasBeenSet = true; m_meetingFeatures = std::move(value); }
+
+    /**
+     * <p>Lists the audio and video features enabled for a meeting, such as echo
+     * reduction.</p>
+     */
+    inline CreateMeetingRequest& WithMeetingFeatures(const MeetingFeaturesConfiguration& value) { SetMeetingFeatures(value); return *this;}
+
+    /**
+     * <p>Lists the audio and video features enabled for a meeting, such as echo
+     * reduction.</p>
+     */
+    inline CreateMeetingRequest& WithMeetingFeatures(MeetingFeaturesConfiguration&& value) { SetMeetingFeatures(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clientRequestToken;
@@ -314,6 +352,9 @@ namespace Model
 
     NotificationsConfiguration m_notificationsConfiguration;
     bool m_notificationsConfigurationHasBeenSet;
+
+    MeetingFeaturesConfiguration m_meetingFeatures;
+    bool m_meetingFeaturesHasBeenSet;
   };
 
 } // namespace Model

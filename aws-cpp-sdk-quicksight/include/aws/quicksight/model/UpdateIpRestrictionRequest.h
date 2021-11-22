@@ -34,129 +34,142 @@ namespace Model
 
 
     /**
-     * <p>Your AWS account ID.</p>
+     * <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>Your AWS account ID.</p>
+     * <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>Your AWS account ID.</p>
+     * <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>Your AWS account ID.</p>
+     * <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>Your AWS account ID.</p>
+     * <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>Your AWS account ID.</p>
+     * <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
      */
     inline UpdateIpRestrictionRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>Your AWS account ID.</p>
+     * <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
      */
     inline UpdateIpRestrictionRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>Your AWS account ID.</p>
+     * <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
      */
     inline UpdateIpRestrictionRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
 
     /**
-     * <p>Describes updated IP rules.</p>
+     * <p>A map that describes the updated IP rules with CIDR ranges and
+     * descriptions.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetIpRestrictionRuleMap() const{ return m_ipRestrictionRuleMap; }
 
     /**
-     * <p>Describes updated IP rules.</p>
+     * <p>A map that describes the updated IP rules with CIDR ranges and
+     * descriptions.</p>
      */
     inline bool IpRestrictionRuleMapHasBeenSet() const { return m_ipRestrictionRuleMapHasBeenSet; }
 
     /**
-     * <p>Describes updated IP rules.</p>
+     * <p>A map that describes the updated IP rules with CIDR ranges and
+     * descriptions.</p>
      */
     inline void SetIpRestrictionRuleMap(const Aws::Map<Aws::String, Aws::String>& value) { m_ipRestrictionRuleMapHasBeenSet = true; m_ipRestrictionRuleMap = value; }
 
     /**
-     * <p>Describes updated IP rules.</p>
+     * <p>A map that describes the updated IP rules with CIDR ranges and
+     * descriptions.</p>
      */
     inline void SetIpRestrictionRuleMap(Aws::Map<Aws::String, Aws::String>&& value) { m_ipRestrictionRuleMapHasBeenSet = true; m_ipRestrictionRuleMap = std::move(value); }
 
     /**
-     * <p>Describes updated IP rules.</p>
+     * <p>A map that describes the updated IP rules with CIDR ranges and
+     * descriptions.</p>
      */
     inline UpdateIpRestrictionRequest& WithIpRestrictionRuleMap(const Aws::Map<Aws::String, Aws::String>& value) { SetIpRestrictionRuleMap(value); return *this;}
 
     /**
-     * <p>Describes updated IP rules.</p>
+     * <p>A map that describes the updated IP rules with CIDR ranges and
+     * descriptions.</p>
      */
     inline UpdateIpRestrictionRequest& WithIpRestrictionRuleMap(Aws::Map<Aws::String, Aws::String>&& value) { SetIpRestrictionRuleMap(std::move(value)); return *this;}
 
     /**
-     * <p>Describes updated IP rules.</p>
+     * <p>A map that describes the updated IP rules with CIDR ranges and
+     * descriptions.</p>
      */
     inline UpdateIpRestrictionRequest& AddIpRestrictionRuleMap(const Aws::String& key, const Aws::String& value) { m_ipRestrictionRuleMapHasBeenSet = true; m_ipRestrictionRuleMap.emplace(key, value); return *this; }
 
     /**
-     * <p>Describes updated IP rules.</p>
+     * <p>A map that describes the updated IP rules with CIDR ranges and
+     * descriptions.</p>
      */
     inline UpdateIpRestrictionRequest& AddIpRestrictionRuleMap(Aws::String&& key, const Aws::String& value) { m_ipRestrictionRuleMapHasBeenSet = true; m_ipRestrictionRuleMap.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Describes updated IP rules.</p>
+     * <p>A map that describes the updated IP rules with CIDR ranges and
+     * descriptions.</p>
      */
     inline UpdateIpRestrictionRequest& AddIpRestrictionRuleMap(const Aws::String& key, Aws::String&& value) { m_ipRestrictionRuleMapHasBeenSet = true; m_ipRestrictionRuleMap.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Describes updated IP rules.</p>
+     * <p>A map that describes the updated IP rules with CIDR ranges and
+     * descriptions.</p>
      */
     inline UpdateIpRestrictionRequest& AddIpRestrictionRuleMap(Aws::String&& key, Aws::String&& value) { m_ipRestrictionRuleMapHasBeenSet = true; m_ipRestrictionRuleMap.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Describes updated IP rules.</p>
+     * <p>A map that describes the updated IP rules with CIDR ranges and
+     * descriptions.</p>
      */
     inline UpdateIpRestrictionRequest& AddIpRestrictionRuleMap(const char* key, Aws::String&& value) { m_ipRestrictionRuleMapHasBeenSet = true; m_ipRestrictionRuleMap.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Describes updated IP rules.</p>
+     * <p>A map that describes the updated IP rules with CIDR ranges and
+     * descriptions.</p>
      */
     inline UpdateIpRestrictionRequest& AddIpRestrictionRuleMap(Aws::String&& key, const char* value) { m_ipRestrictionRuleMapHasBeenSet = true; m_ipRestrictionRuleMap.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Describes updated IP rules.</p>
+     * <p>A map that describes the updated IP rules with CIDR ranges and
+     * descriptions.</p>
      */
     inline UpdateIpRestrictionRequest& AddIpRestrictionRuleMap(const char* key, const char* value) { m_ipRestrictionRuleMapHasBeenSet = true; m_ipRestrictionRuleMap.emplace(key, value); return *this; }
 
 
     /**
-     * <p>Whether or not IP rules are enabled.</p>
+     * <p>A value that specifies whether IP rules are turned on.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>Whether or not IP rules are enabled.</p>
+     * <p>A value that specifies whether IP rules are turned on.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * <p>Whether or not IP rules are enabled.</p>
+     * <p>A value that specifies whether IP rules are turned on.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>Whether or not IP rules are enabled.</p>
+     * <p>A value that specifies whether IP rules are turned on.</p>
      */
     inline UpdateIpRestrictionRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 

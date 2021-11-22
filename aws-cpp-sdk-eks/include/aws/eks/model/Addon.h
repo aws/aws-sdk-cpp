@@ -382,105 +382,105 @@ namespace Model
 
     /**
      * <p>The metadata that you apply to the add-on to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Add-on tags do not propagate to any other resources associated with
-     * the cluster. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Add-on tags do not propagate to any other resources associated with the cluster.
+     * </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The metadata that you apply to the add-on to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Add-on tags do not propagate to any other resources associated with
-     * the cluster. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Add-on tags do not propagate to any other resources associated with the cluster.
+     * </p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The metadata that you apply to the add-on to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Add-on tags do not propagate to any other resources associated with
-     * the cluster. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Add-on tags do not propagate to any other resources associated with the cluster.
+     * </p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The metadata that you apply to the add-on to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Add-on tags do not propagate to any other resources associated with
-     * the cluster. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Add-on tags do not propagate to any other resources associated with the cluster.
+     * </p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The metadata that you apply to the add-on to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Add-on tags do not propagate to any other resources associated with
-     * the cluster. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Add-on tags do not propagate to any other resources associated with the cluster.
+     * </p>
      */
     inline Addon& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The metadata that you apply to the add-on to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Add-on tags do not propagate to any other resources associated with
-     * the cluster. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Add-on tags do not propagate to any other resources associated with the cluster.
+     * </p>
      */
     inline Addon& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The metadata that you apply to the add-on to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Add-on tags do not propagate to any other resources associated with
-     * the cluster. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Add-on tags do not propagate to any other resources associated with the cluster.
+     * </p>
      */
     inline Addon& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>The metadata that you apply to the add-on to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Add-on tags do not propagate to any other resources associated with
-     * the cluster. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Add-on tags do not propagate to any other resources associated with the cluster.
+     * </p>
      */
     inline Addon& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The metadata that you apply to the add-on to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Add-on tags do not propagate to any other resources associated with
-     * the cluster. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Add-on tags do not propagate to any other resources associated with the cluster.
+     * </p>
      */
     inline Addon& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The metadata that you apply to the add-on to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Add-on tags do not propagate to any other resources associated with
-     * the cluster. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Add-on tags do not propagate to any other resources associated with the cluster.
+     * </p>
      */
     inline Addon& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The metadata that you apply to the add-on to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Add-on tags do not propagate to any other resources associated with
-     * the cluster. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Add-on tags do not propagate to any other resources associated with the cluster.
+     * </p>
      */
     inline Addon& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The metadata that you apply to the add-on to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Add-on tags do not propagate to any other resources associated with
-     * the cluster. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Add-on tags do not propagate to any other resources associated with the cluster.
+     * </p>
      */
     inline Addon& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The metadata that you apply to the add-on to assist with categorization and
-     * organization. Each tag consists of a key and an optional value, both of which
-     * you define. Add-on tags do not propagate to any other resources associated with
-     * the cluster. </p>
+     * organization. Each tag consists of a key and an optional value. You define both.
+     * Add-on tags do not propagate to any other resources associated with the cluster.
+     * </p>
      */
     inline Addon& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

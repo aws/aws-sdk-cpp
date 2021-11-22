@@ -3393,6 +3393,55 @@ namespace Model
      */
     inline DBInstance& WithCustomIamInstanceProfile(const char* value) { SetCustomIamInstanceProfile(value); return *this;}
 
+
+    /**
+     * <p>Specifies where automated backups and manual snapshots are stored: Amazon Web
+     * Services Outposts or the Amazon Web Services Region.</p>
+     */
+    inline const Aws::String& GetBackupTarget() const{ return m_backupTarget; }
+
+    /**
+     * <p>Specifies where automated backups and manual snapshots are stored: Amazon Web
+     * Services Outposts or the Amazon Web Services Region.</p>
+     */
+    inline bool BackupTargetHasBeenSet() const { return m_backupTargetHasBeenSet; }
+
+    /**
+     * <p>Specifies where automated backups and manual snapshots are stored: Amazon Web
+     * Services Outposts or the Amazon Web Services Region.</p>
+     */
+    inline void SetBackupTarget(const Aws::String& value) { m_backupTargetHasBeenSet = true; m_backupTarget = value; }
+
+    /**
+     * <p>Specifies where automated backups and manual snapshots are stored: Amazon Web
+     * Services Outposts or the Amazon Web Services Region.</p>
+     */
+    inline void SetBackupTarget(Aws::String&& value) { m_backupTargetHasBeenSet = true; m_backupTarget = std::move(value); }
+
+    /**
+     * <p>Specifies where automated backups and manual snapshots are stored: Amazon Web
+     * Services Outposts or the Amazon Web Services Region.</p>
+     */
+    inline void SetBackupTarget(const char* value) { m_backupTargetHasBeenSet = true; m_backupTarget.assign(value); }
+
+    /**
+     * <p>Specifies where automated backups and manual snapshots are stored: Amazon Web
+     * Services Outposts or the Amazon Web Services Region.</p>
+     */
+    inline DBInstance& WithBackupTarget(const Aws::String& value) { SetBackupTarget(value); return *this;}
+
+    /**
+     * <p>Specifies where automated backups and manual snapshots are stored: Amazon Web
+     * Services Outposts or the Amazon Web Services Region.</p>
+     */
+    inline DBInstance& WithBackupTarget(Aws::String&& value) { SetBackupTarget(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies where automated backups and manual snapshots are stored: Amazon Web
+     * Services Outposts or the Amazon Web Services Region.</p>
+     */
+    inline DBInstance& WithBackupTarget(const char* value) { SetBackupTarget(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -3613,6 +3662,9 @@ namespace Model
 
     Aws::String m_customIamInstanceProfile;
     bool m_customIamInstanceProfileHasBeenSet;
+
+    Aws::String m_backupTarget;
+    bool m_backupTargetHasBeenSet;
   };
 
 } // namespace Model

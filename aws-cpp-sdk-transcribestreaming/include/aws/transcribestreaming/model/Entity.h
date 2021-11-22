@@ -81,50 +81,42 @@ namespace Model
 
 
     /**
-     * <p>The category of of information identified in this entity; for example,
-     * PII.</p>
+     * <p>The category of information identified in this entity; for example, PII.</p>
      */
     inline const Aws::String& GetCategory() const{ return m_category; }
 
     /**
-     * <p>The category of of information identified in this entity; for example,
-     * PII.</p>
+     * <p>The category of information identified in this entity; for example, PII.</p>
      */
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
 
     /**
-     * <p>The category of of information identified in this entity; for example,
-     * PII.</p>
+     * <p>The category of information identified in this entity; for example, PII.</p>
      */
     inline void SetCategory(const Aws::String& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
-     * <p>The category of of information identified in this entity; for example,
-     * PII.</p>
+     * <p>The category of information identified in this entity; for example, PII.</p>
      */
     inline void SetCategory(Aws::String&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
 
     /**
-     * <p>The category of of information identified in this entity; for example,
-     * PII.</p>
+     * <p>The category of information identified in this entity; for example, PII.</p>
      */
     inline void SetCategory(const char* value) { m_categoryHasBeenSet = true; m_category.assign(value); }
 
     /**
-     * <p>The category of of information identified in this entity; for example,
-     * PII.</p>
+     * <p>The category of information identified in this entity; for example, PII.</p>
      */
     inline Entity& WithCategory(const Aws::String& value) { SetCategory(value); return *this;}
 
     /**
-     * <p>The category of of information identified in this entity; for example,
-     * PII.</p>
+     * <p>The category of information identified in this entity; for example, PII.</p>
      */
     inline Entity& WithCategory(Aws::String&& value) { SetCategory(std::move(value)); return *this;}
 
     /**
-     * <p>The category of of information identified in this entity; for example,
-     * PII.</p>
+     * <p>The category of information identified in this entity; for example, PII.</p>
      */
     inline Entity& WithCategory(const char* value) { SetCategory(value); return *this;}
 

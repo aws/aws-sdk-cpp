@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>Information describing the IAMpolicy assignments.</p>
+     * <p>Information describing the IAM policy assignments.</p>
      */
     inline const Aws::Vector<IAMPolicyAssignmentSummary>& GetIAMPolicyAssignments() const{ return m_iAMPolicyAssignments; }
 
     /**
-     * <p>Information describing the IAMpolicy assignments.</p>
+     * <p>Information describing the IAM policy assignments.</p>
      */
     inline void SetIAMPolicyAssignments(const Aws::Vector<IAMPolicyAssignmentSummary>& value) { m_iAMPolicyAssignments = value; }
 
     /**
-     * <p>Information describing the IAMpolicy assignments.</p>
+     * <p>Information describing the IAM policy assignments.</p>
      */
     inline void SetIAMPolicyAssignments(Aws::Vector<IAMPolicyAssignmentSummary>&& value) { m_iAMPolicyAssignments = std::move(value); }
 
     /**
-     * <p>Information describing the IAMpolicy assignments.</p>
+     * <p>Information describing the IAM policy assignments.</p>
      */
     inline ListIAMPolicyAssignmentsResult& WithIAMPolicyAssignments(const Aws::Vector<IAMPolicyAssignmentSummary>& value) { SetIAMPolicyAssignments(value); return *this;}
 
     /**
-     * <p>Information describing the IAMpolicy assignments.</p>
+     * <p>Information describing the IAM policy assignments.</p>
      */
     inline ListIAMPolicyAssignmentsResult& WithIAMPolicyAssignments(Aws::Vector<IAMPolicyAssignmentSummary>&& value) { SetIAMPolicyAssignments(std::move(value)); return *this;}
 
     /**
-     * <p>Information describing the IAMpolicy assignments.</p>
+     * <p>Information describing the IAM policy assignments.</p>
      */
     inline ListIAMPolicyAssignmentsResult& AddIAMPolicyAssignments(const IAMPolicyAssignmentSummary& value) { m_iAMPolicyAssignments.push_back(value); return *this; }
 
     /**
-     * <p>Information describing the IAMpolicy assignments.</p>
+     * <p>Information describing the IAM policy assignments.</p>
      */
     inline ListIAMPolicyAssignmentsResult& AddIAMPolicyAssignments(IAMPolicyAssignmentSummary&& value) { m_iAMPolicyAssignments.push_back(std::move(value)); return *this; }
 

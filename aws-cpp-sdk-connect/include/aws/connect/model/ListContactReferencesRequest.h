@@ -174,7 +174,7 @@ namespace Model
     /**
      * <p>The token for the next set of results. Use the value returned in the previous
      * response in the next request to retrieve the next set of results.</p>
-     *  <p>This is not expected to be set since the value returned in the
+     *  <p>This is not expected to be set, because the value returned in the
      * previous response is always null.</p> 
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -182,7 +182,7 @@ namespace Model
     /**
      * <p>The token for the next set of results. Use the value returned in the previous
      * response in the next request to retrieve the next set of results.</p>
-     *  <p>This is not expected to be set since the value returned in the
+     *  <p>This is not expected to be set, because the value returned in the
      * previous response is always null.</p> 
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -190,7 +190,7 @@ namespace Model
     /**
      * <p>The token for the next set of results. Use the value returned in the previous
      * response in the next request to retrieve the next set of results.</p>
-     *  <p>This is not expected to be set since the value returned in the
+     *  <p>This is not expected to be set, because the value returned in the
      * previous response is always null.</p> 
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
@@ -198,7 +198,7 @@ namespace Model
     /**
      * <p>The token for the next set of results. Use the value returned in the previous
      * response in the next request to retrieve the next set of results.</p>
-     *  <p>This is not expected to be set since the value returned in the
+     *  <p>This is not expected to be set, because the value returned in the
      * previous response is always null.</p> 
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
@@ -206,7 +206,7 @@ namespace Model
     /**
      * <p>The token for the next set of results. Use the value returned in the previous
      * response in the next request to retrieve the next set of results.</p>
-     *  <p>This is not expected to be set since the value returned in the
+     *  <p>This is not expected to be set, because the value returned in the
      * previous response is always null.</p> 
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
@@ -214,7 +214,7 @@ namespace Model
     /**
      * <p>The token for the next set of results. Use the value returned in the previous
      * response in the next request to retrieve the next set of results.</p>
-     *  <p>This is not expected to be set since the value returned in the
+     *  <p>This is not expected to be set, because the value returned in the
      * previous response is always null.</p> 
      */
     inline ListContactReferencesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
@@ -222,7 +222,7 @@ namespace Model
     /**
      * <p>The token for the next set of results. Use the value returned in the previous
      * response in the next request to retrieve the next set of results.</p>
-     *  <p>This is not expected to be set since the value returned in the
+     *  <p>This is not expected to be set, because the value returned in the
      * previous response is always null.</p> 
      */
     inline ListContactReferencesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
@@ -230,7 +230,7 @@ namespace Model
     /**
      * <p>The token for the next set of results. Use the value returned in the previous
      * response in the next request to retrieve the next set of results.</p>
-     *  <p>This is not expected to be set since the value returned in the
+     *  <p>This is not expected to be set, because the value returned in the
      * previous response is always null.</p> 
      */
     inline ListContactReferencesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}

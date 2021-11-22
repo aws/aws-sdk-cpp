@@ -674,6 +674,43 @@ namespace Model
      */
     inline UpdateElasticsearchDomainConfigRequest& WithAutoTuneOptions(AutoTuneOptions&& value) { SetAutoTuneOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p> This flag, when set to True, specifies whether the
+     * <code>UpdateElasticsearchDomain</code> request should return the results of
+     * validation checks without actually applying the change. This flag, when set to
+     * True, specifies the deployment mechanism through which the update shall be
+     * applied on the domain. This will not actually perform the Update. </p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p> This flag, when set to True, specifies whether the
+     * <code>UpdateElasticsearchDomain</code> request should return the results of
+     * validation checks without actually applying the change. This flag, when set to
+     * True, specifies the deployment mechanism through which the update shall be
+     * applied on the domain. This will not actually perform the Update. </p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p> This flag, when set to True, specifies whether the
+     * <code>UpdateElasticsearchDomain</code> request should return the results of
+     * validation checks without actually applying the change. This flag, when set to
+     * True, specifies the deployment mechanism through which the update shall be
+     * applied on the domain. This will not actually perform the Update. </p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p> This flag, when set to True, specifies whether the
+     * <code>UpdateElasticsearchDomain</code> request should return the results of
+     * validation checks without actually applying the change. This flag, when set to
+     * True, specifies the deployment mechanism through which the update shall be
+     * applied on the domain. This will not actually perform the Update. </p>
+     */
+    inline UpdateElasticsearchDomainConfigRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -717,6 +754,9 @@ namespace Model
 
     AutoTuneOptions m_autoTuneOptions;
     bool m_autoTuneOptionsHasBeenSet;
+
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
   };
 
 } // namespace Model

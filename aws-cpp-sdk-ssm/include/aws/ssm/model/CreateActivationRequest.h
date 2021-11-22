@@ -10,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/Tag.h>
+#include <aws/ssm/model/RegistrationMetadataItem.h>
 #include <utility>
 
 namespace Aws
@@ -498,6 +499,47 @@ namespace Model
      */
     inline CreateActivationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Reserved for internal use.</p>
+     */
+    inline const Aws::Vector<RegistrationMetadataItem>& GetRegistrationMetadata() const{ return m_registrationMetadata; }
+
+    /**
+     * <p>Reserved for internal use.</p>
+     */
+    inline bool RegistrationMetadataHasBeenSet() const { return m_registrationMetadataHasBeenSet; }
+
+    /**
+     * <p>Reserved for internal use.</p>
+     */
+    inline void SetRegistrationMetadata(const Aws::Vector<RegistrationMetadataItem>& value) { m_registrationMetadataHasBeenSet = true; m_registrationMetadata = value; }
+
+    /**
+     * <p>Reserved for internal use.</p>
+     */
+    inline void SetRegistrationMetadata(Aws::Vector<RegistrationMetadataItem>&& value) { m_registrationMetadataHasBeenSet = true; m_registrationMetadata = std::move(value); }
+
+    /**
+     * <p>Reserved for internal use.</p>
+     */
+    inline CreateActivationRequest& WithRegistrationMetadata(const Aws::Vector<RegistrationMetadataItem>& value) { SetRegistrationMetadata(value); return *this;}
+
+    /**
+     * <p>Reserved for internal use.</p>
+     */
+    inline CreateActivationRequest& WithRegistrationMetadata(Aws::Vector<RegistrationMetadataItem>&& value) { SetRegistrationMetadata(std::move(value)); return *this;}
+
+    /**
+     * <p>Reserved for internal use.</p>
+     */
+    inline CreateActivationRequest& AddRegistrationMetadata(const RegistrationMetadataItem& value) { m_registrationMetadataHasBeenSet = true; m_registrationMetadata.push_back(value); return *this; }
+
+    /**
+     * <p>Reserved for internal use.</p>
+     */
+    inline CreateActivationRequest& AddRegistrationMetadata(RegistrationMetadataItem&& value) { m_registrationMetadataHasBeenSet = true; m_registrationMetadata.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_description;
@@ -517,6 +559,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::Vector<RegistrationMetadataItem> m_registrationMetadata;
+    bool m_registrationMetadataHasBeenSet;
   };
 
 } // namespace Model

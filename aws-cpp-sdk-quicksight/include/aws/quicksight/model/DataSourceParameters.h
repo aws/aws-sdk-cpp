@@ -26,6 +26,7 @@
 #include <aws/quicksight/model/TeradataParameters.h>
 #include <aws/quicksight/model/TwitterParameters.h>
 #include <aws/quicksight/model/AmazonOpenSearchParameters.h>
+#include <aws/quicksight/model/ExasolParameters.h>
 #include <utility>
 
 namespace Aws
@@ -679,23 +680,66 @@ namespace Model
     inline DataSourceParameters& WithTwitterParameters(TwitterParameters&& value) { SetTwitterParameters(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The parameters for OpenSearch.</p>
+     */
     inline const AmazonOpenSearchParameters& GetAmazonOpenSearchParameters() const{ return m_amazonOpenSearchParameters; }
 
-    
+    /**
+     * <p>The parameters for OpenSearch.</p>
+     */
     inline bool AmazonOpenSearchParametersHasBeenSet() const { return m_amazonOpenSearchParametersHasBeenSet; }
 
-    
+    /**
+     * <p>The parameters for OpenSearch.</p>
+     */
     inline void SetAmazonOpenSearchParameters(const AmazonOpenSearchParameters& value) { m_amazonOpenSearchParametersHasBeenSet = true; m_amazonOpenSearchParameters = value; }
 
-    
+    /**
+     * <p>The parameters for OpenSearch.</p>
+     */
     inline void SetAmazonOpenSearchParameters(AmazonOpenSearchParameters&& value) { m_amazonOpenSearchParametersHasBeenSet = true; m_amazonOpenSearchParameters = std::move(value); }
 
-    
+    /**
+     * <p>The parameters for OpenSearch.</p>
+     */
     inline DataSourceParameters& WithAmazonOpenSearchParameters(const AmazonOpenSearchParameters& value) { SetAmazonOpenSearchParameters(value); return *this;}
 
-    
+    /**
+     * <p>The parameters for OpenSearch.</p>
+     */
     inline DataSourceParameters& WithAmazonOpenSearchParameters(AmazonOpenSearchParameters&& value) { SetAmazonOpenSearchParameters(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The parameters for Exasol.</p>
+     */
+    inline const ExasolParameters& GetExasolParameters() const{ return m_exasolParameters; }
+
+    /**
+     * <p>The parameters for Exasol.</p>
+     */
+    inline bool ExasolParametersHasBeenSet() const { return m_exasolParametersHasBeenSet; }
+
+    /**
+     * <p>The parameters for Exasol.</p>
+     */
+    inline void SetExasolParameters(const ExasolParameters& value) { m_exasolParametersHasBeenSet = true; m_exasolParameters = value; }
+
+    /**
+     * <p>The parameters for Exasol.</p>
+     */
+    inline void SetExasolParameters(ExasolParameters&& value) { m_exasolParametersHasBeenSet = true; m_exasolParameters = std::move(value); }
+
+    /**
+     * <p>The parameters for Exasol.</p>
+     */
+    inline DataSourceParameters& WithExasolParameters(const ExasolParameters& value) { SetExasolParameters(value); return *this;}
+
+    /**
+     * <p>The parameters for Exasol.</p>
+     */
+    inline DataSourceParameters& WithExasolParameters(ExasolParameters&& value) { SetExasolParameters(std::move(value)); return *this;}
 
   private:
 
@@ -761,6 +805,9 @@ namespace Model
 
     AmazonOpenSearchParameters m_amazonOpenSearchParameters;
     bool m_amazonOpenSearchParametersHasBeenSet;
+
+    ExasolParameters m_exasolParameters;
+    bool m_exasolParametersHasBeenSet;
   };
 
 } // namespace Model

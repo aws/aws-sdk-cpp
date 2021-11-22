@@ -41,32 +41,44 @@ namespace Model
 
 
     /**
-     * <p>Credential pair. For more information, see <a>CredentialPair</a>.</p>
+     * <p>Credential pair. For more information, see <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a>
+     * </code>.</p>
      */
     inline const CredentialPair& GetCredentialPair() const{ return m_credentialPair; }
 
     /**
-     * <p>Credential pair. For more information, see <a>CredentialPair</a>.</p>
+     * <p>Credential pair. For more information, see <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a>
+     * </code>.</p>
      */
     inline bool CredentialPairHasBeenSet() const { return m_credentialPairHasBeenSet; }
 
     /**
-     * <p>Credential pair. For more information, see <a>CredentialPair</a>.</p>
+     * <p>Credential pair. For more information, see <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a>
+     * </code>.</p>
      */
     inline void SetCredentialPair(const CredentialPair& value) { m_credentialPairHasBeenSet = true; m_credentialPair = value; }
 
     /**
-     * <p>Credential pair. For more information, see <a>CredentialPair</a>.</p>
+     * <p>Credential pair. For more information, see <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a>
+     * </code>.</p>
      */
     inline void SetCredentialPair(CredentialPair&& value) { m_credentialPairHasBeenSet = true; m_credentialPair = std::move(value); }
 
     /**
-     * <p>Credential pair. For more information, see <a>CredentialPair</a>.</p>
+     * <p>Credential pair. For more information, see <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a>
+     * </code>.</p>
      */
     inline DataSourceCredentials& WithCredentialPair(const CredentialPair& value) { SetCredentialPair(value); return *this;}
 
     /**
-     * <p>Credential pair. For more information, see <a>CredentialPair</a>.</p>
+     * <p>Credential pair. For more information, see <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a>
+     * </code>.</p>
      */
     inline DataSourceCredentials& WithCredentialPair(CredentialPair&& value) { SetCredentialPair(std::move(value)); return *this;}
 

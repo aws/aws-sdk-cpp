@@ -23,7 +23,8 @@ Meeting::Meeting() :
     m_meetingHostIdHasBeenSet(false),
     m_externalMeetingIdHasBeenSet(false),
     m_mediaRegionHasBeenSet(false),
-    m_mediaPlacementHasBeenSet(false)
+    m_mediaPlacementHasBeenSet(false),
+    m_meetingFeaturesHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ Meeting::Meeting(JsonView jsonValue) :
     m_meetingHostIdHasBeenSet(false),
     m_externalMeetingIdHasBeenSet(false),
     m_mediaRegionHasBeenSet(false),
-    m_mediaPlacementHasBeenSet(false)
+    m_mediaPlacementHasBeenSet(false),
+    m_meetingFeaturesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +76,13 @@ Meeting& Meeting::operator =(JsonView jsonValue)
     m_mediaPlacementHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MeetingFeatures"))
+  {
+    m_meetingFeatures = jsonValue.GetObject("MeetingFeatures");
+
+    m_meetingFeaturesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +117,12 @@ JsonValue Meeting::Jsonize() const
   if(m_mediaPlacementHasBeenSet)
   {
    payload.WithObject("MediaPlacement", m_mediaPlacement.Jsonize());
+
+  }
+
+  if(m_meetingFeaturesHasBeenSet)
+  {
+   payload.WithObject("MeetingFeatures", m_meetingFeatures.Jsonize());
 
   }
 

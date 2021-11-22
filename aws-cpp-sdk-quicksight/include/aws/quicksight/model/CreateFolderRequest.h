@@ -37,83 +37,91 @@ namespace Model
 
 
     /**
-     * <p>The AWS Account ID.</p>
+     * <p>The ID for the Amazon Web Services account where you want to create the
+     * folder.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The AWS Account ID.</p>
+     * <p>The ID for the Amazon Web Services account where you want to create the
+     * folder.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The AWS Account ID.</p>
+     * <p>The ID for the Amazon Web Services account where you want to create the
+     * folder.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The AWS Account ID.</p>
+     * <p>The ID for the Amazon Web Services account where you want to create the
+     * folder.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The AWS Account ID.</p>
+     * <p>The ID for the Amazon Web Services account where you want to create the
+     * folder.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The AWS Account ID.</p>
+     * <p>The ID for the Amazon Web Services account where you want to create the
+     * folder.</p>
      */
     inline CreateFolderRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The AWS Account ID.</p>
+     * <p>The ID for the Amazon Web Services account where you want to create the
+     * folder.</p>
      */
     inline CreateFolderRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Account ID.</p>
+     * <p>The ID for the Amazon Web Services account where you want to create the
+     * folder.</p>
      */
     inline CreateFolderRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline const Aws::String& GetFolderId() const{ return m_folderId; }
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline bool FolderIdHasBeenSet() const { return m_folderIdHasBeenSet; }
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline void SetFolderId(const Aws::String& value) { m_folderIdHasBeenSet = true; m_folderId = value; }
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline void SetFolderId(Aws::String&& value) { m_folderIdHasBeenSet = true; m_folderId = std::move(value); }
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline void SetFolderId(const char* value) { m_folderIdHasBeenSet = true; m_folderId.assign(value); }
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline CreateFolderRequest& WithFolderId(const Aws::String& value) { SetFolderId(value); return *this;}
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline CreateFolderRequest& WithFolderId(Aws::String&& value) { SetFolderId(std::move(value)); return *this;}
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline CreateFolderRequest& WithFolderId(const char* value) { SetFolderId(value); return *this;}
 

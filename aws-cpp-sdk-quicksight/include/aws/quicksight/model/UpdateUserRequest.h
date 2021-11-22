@@ -296,8 +296,8 @@ namespace Model
      * includes any combination of these restrictions. Currently, you need to create
      * the profile names for custom permission sets by using the Amazon QuickSight
      * console. Then, you use the <code>RegisterUser</code> API operation to assign the
-     * named set of permissions to a Amazon QuickSight user. </p> <p>Amazon QuickSight
-     * custom permissions are applied through IAMpolicies. Therefore, they override the
+     * named set of permissions to a QuickSight user. </p> <p>Amazon QuickSight custom
+     * permissions are applied through IAM policies. Therefore, they override the
      * permissions typically granted by assigning Amazon QuickSight users to one of the
      * default security cohorts in Amazon QuickSight (admin, author, reader).</p>
      * <p>This feature is available only to Amazon QuickSight Enterprise edition
@@ -315,8 +315,8 @@ namespace Model
      * includes any combination of these restrictions. Currently, you need to create
      * the profile names for custom permission sets by using the Amazon QuickSight
      * console. Then, you use the <code>RegisterUser</code> API operation to assign the
-     * named set of permissions to a Amazon QuickSight user. </p> <p>Amazon QuickSight
-     * custom permissions are applied through IAMpolicies. Therefore, they override the
+     * named set of permissions to a QuickSight user. </p> <p>Amazon QuickSight custom
+     * permissions are applied through IAM policies. Therefore, they override the
      * permissions typically granted by assigning Amazon QuickSight users to one of the
      * default security cohorts in Amazon QuickSight (admin, author, reader).</p>
      * <p>This feature is available only to Amazon QuickSight Enterprise edition
@@ -334,8 +334,8 @@ namespace Model
      * includes any combination of these restrictions. Currently, you need to create
      * the profile names for custom permission sets by using the Amazon QuickSight
      * console. Then, you use the <code>RegisterUser</code> API operation to assign the
-     * named set of permissions to a Amazon QuickSight user. </p> <p>Amazon QuickSight
-     * custom permissions are applied through IAMpolicies. Therefore, they override the
+     * named set of permissions to a QuickSight user. </p> <p>Amazon QuickSight custom
+     * permissions are applied through IAM policies. Therefore, they override the
      * permissions typically granted by assigning Amazon QuickSight users to one of the
      * default security cohorts in Amazon QuickSight (admin, author, reader).</p>
      * <p>This feature is available only to Amazon QuickSight Enterprise edition
@@ -353,8 +353,8 @@ namespace Model
      * includes any combination of these restrictions. Currently, you need to create
      * the profile names for custom permission sets by using the Amazon QuickSight
      * console. Then, you use the <code>RegisterUser</code> API operation to assign the
-     * named set of permissions to a Amazon QuickSight user. </p> <p>Amazon QuickSight
-     * custom permissions are applied through IAMpolicies. Therefore, they override the
+     * named set of permissions to a QuickSight user. </p> <p>Amazon QuickSight custom
+     * permissions are applied through IAM policies. Therefore, they override the
      * permissions typically granted by assigning Amazon QuickSight users to one of the
      * default security cohorts in Amazon QuickSight (admin, author, reader).</p>
      * <p>This feature is available only to Amazon QuickSight Enterprise edition
@@ -372,8 +372,8 @@ namespace Model
      * includes any combination of these restrictions. Currently, you need to create
      * the profile names for custom permission sets by using the Amazon QuickSight
      * console. Then, you use the <code>RegisterUser</code> API operation to assign the
-     * named set of permissions to a Amazon QuickSight user. </p> <p>Amazon QuickSight
-     * custom permissions are applied through IAMpolicies. Therefore, they override the
+     * named set of permissions to a QuickSight user. </p> <p>Amazon QuickSight custom
+     * permissions are applied through IAM policies. Therefore, they override the
      * permissions typically granted by assigning Amazon QuickSight users to one of the
      * default security cohorts in Amazon QuickSight (admin, author, reader).</p>
      * <p>This feature is available only to Amazon QuickSight Enterprise edition
@@ -391,8 +391,8 @@ namespace Model
      * includes any combination of these restrictions. Currently, you need to create
      * the profile names for custom permission sets by using the Amazon QuickSight
      * console. Then, you use the <code>RegisterUser</code> API operation to assign the
-     * named set of permissions to a Amazon QuickSight user. </p> <p>Amazon QuickSight
-     * custom permissions are applied through IAMpolicies. Therefore, they override the
+     * named set of permissions to a QuickSight user. </p> <p>Amazon QuickSight custom
+     * permissions are applied through IAM policies. Therefore, they override the
      * permissions typically granted by assigning Amazon QuickSight users to one of the
      * default security cohorts in Amazon QuickSight (admin, author, reader).</p>
      * <p>This feature is available only to Amazon QuickSight Enterprise edition
@@ -410,8 +410,8 @@ namespace Model
      * includes any combination of these restrictions. Currently, you need to create
      * the profile names for custom permission sets by using the Amazon QuickSight
      * console. Then, you use the <code>RegisterUser</code> API operation to assign the
-     * named set of permissions to a Amazon QuickSight user. </p> <p>Amazon QuickSight
-     * custom permissions are applied through IAMpolicies. Therefore, they override the
+     * named set of permissions to a QuickSight user. </p> <p>Amazon QuickSight custom
+     * permissions are applied through IAM policies. Therefore, they override the
      * permissions typically granted by assigning Amazon QuickSight users to one of the
      * default security cohorts in Amazon QuickSight (admin, author, reader).</p>
      * <p>This feature is available only to Amazon QuickSight Enterprise edition
@@ -429,8 +429,8 @@ namespace Model
      * includes any combination of these restrictions. Currently, you need to create
      * the profile names for custom permission sets by using the Amazon QuickSight
      * console. Then, you use the <code>RegisterUser</code> API operation to assign the
-     * named set of permissions to a Amazon QuickSight user. </p> <p>Amazon QuickSight
-     * custom permissions are applied through IAMpolicies. Therefore, they override the
+     * named set of permissions to a QuickSight user. </p> <p>Amazon QuickSight custom
+     * permissions are applied through IAM policies. Therefore, they override the
      * permissions typically granted by assigning Amazon QuickSight users to one of the
      * default security cohorts in Amazon QuickSight (admin, author, reader).</p>
      * <p>This feature is available only to Amazon QuickSight Enterprise edition
@@ -484,9 +484,9 @@ namespace Model
      * choosing <code>CUSTOM_OIDC</code> type, use the
      * <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC
      * provider URL.</p> </li> <li> <p> <code>NONE</code>: This clears all the
-     * previously saved external login information for a user. Use <code>
-     * <a>DescribeUser</a> </code> API to check the external login information.</p>
-     * </li> </ul>
+     * previously saved external login information for a user. Use the <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+     * </code> API operation to check the external login information.</p> </li> </ul>
      */
     inline const Aws::String& GetExternalLoginFederationProviderType() const{ return m_externalLoginFederationProviderType; }
 
@@ -502,9 +502,9 @@ namespace Model
      * choosing <code>CUSTOM_OIDC</code> type, use the
      * <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC
      * provider URL.</p> </li> <li> <p> <code>NONE</code>: This clears all the
-     * previously saved external login information for a user. Use <code>
-     * <a>DescribeUser</a> </code> API to check the external login information.</p>
-     * </li> </ul>
+     * previously saved external login information for a user. Use the <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+     * </code> API operation to check the external login information.</p> </li> </ul>
      */
     inline bool ExternalLoginFederationProviderTypeHasBeenSet() const { return m_externalLoginFederationProviderTypeHasBeenSet; }
 
@@ -520,9 +520,9 @@ namespace Model
      * choosing <code>CUSTOM_OIDC</code> type, use the
      * <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC
      * provider URL.</p> </li> <li> <p> <code>NONE</code>: This clears all the
-     * previously saved external login information for a user. Use <code>
-     * <a>DescribeUser</a> </code> API to check the external login information.</p>
-     * </li> </ul>
+     * previously saved external login information for a user. Use the <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+     * </code> API operation to check the external login information.</p> </li> </ul>
      */
     inline void SetExternalLoginFederationProviderType(const Aws::String& value) { m_externalLoginFederationProviderTypeHasBeenSet = true; m_externalLoginFederationProviderType = value; }
 
@@ -538,9 +538,9 @@ namespace Model
      * choosing <code>CUSTOM_OIDC</code> type, use the
      * <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC
      * provider URL.</p> </li> <li> <p> <code>NONE</code>: This clears all the
-     * previously saved external login information for a user. Use <code>
-     * <a>DescribeUser</a> </code> API to check the external login information.</p>
-     * </li> </ul>
+     * previously saved external login information for a user. Use the <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+     * </code> API operation to check the external login information.</p> </li> </ul>
      */
     inline void SetExternalLoginFederationProviderType(Aws::String&& value) { m_externalLoginFederationProviderTypeHasBeenSet = true; m_externalLoginFederationProviderType = std::move(value); }
 
@@ -556,9 +556,9 @@ namespace Model
      * choosing <code>CUSTOM_OIDC</code> type, use the
      * <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC
      * provider URL.</p> </li> <li> <p> <code>NONE</code>: This clears all the
-     * previously saved external login information for a user. Use <code>
-     * <a>DescribeUser</a> </code> API to check the external login information.</p>
-     * </li> </ul>
+     * previously saved external login information for a user. Use the <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+     * </code> API operation to check the external login information.</p> </li> </ul>
      */
     inline void SetExternalLoginFederationProviderType(const char* value) { m_externalLoginFederationProviderTypeHasBeenSet = true; m_externalLoginFederationProviderType.assign(value); }
 
@@ -574,9 +574,9 @@ namespace Model
      * choosing <code>CUSTOM_OIDC</code> type, use the
      * <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC
      * provider URL.</p> </li> <li> <p> <code>NONE</code>: This clears all the
-     * previously saved external login information for a user. Use <code>
-     * <a>DescribeUser</a> </code> API to check the external login information.</p>
-     * </li> </ul>
+     * previously saved external login information for a user. Use the <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+     * </code> API operation to check the external login information.</p> </li> </ul>
      */
     inline UpdateUserRequest& WithExternalLoginFederationProviderType(const Aws::String& value) { SetExternalLoginFederationProviderType(value); return *this;}
 
@@ -592,9 +592,9 @@ namespace Model
      * choosing <code>CUSTOM_OIDC</code> type, use the
      * <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC
      * provider URL.</p> </li> <li> <p> <code>NONE</code>: This clears all the
-     * previously saved external login information for a user. Use <code>
-     * <a>DescribeUser</a> </code> API to check the external login information.</p>
-     * </li> </ul>
+     * previously saved external login information for a user. Use the <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+     * </code> API operation to check the external login information.</p> </li> </ul>
      */
     inline UpdateUserRequest& WithExternalLoginFederationProviderType(Aws::String&& value) { SetExternalLoginFederationProviderType(std::move(value)); return *this;}
 
@@ -610,9 +610,9 @@ namespace Model
      * choosing <code>CUSTOM_OIDC</code> type, use the
      * <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC
      * provider URL.</p> </li> <li> <p> <code>NONE</code>: This clears all the
-     * previously saved external login information for a user. Use <code>
-     * <a>DescribeUser</a> </code> API to check the external login information.</p>
-     * </li> </ul>
+     * previously saved external login information for a user. Use the <code> <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+     * </code> API operation to check the external login information.</p> </li> </ul>
      */
     inline UpdateUserRequest& WithExternalLoginFederationProviderType(const char* value) { SetExternalLoginFederationProviderType(value); return *this;}
 

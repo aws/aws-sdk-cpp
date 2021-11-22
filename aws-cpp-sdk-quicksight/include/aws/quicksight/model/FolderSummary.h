@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>A summary of the folder. </p><p><h3>See Also:</h3>   <a
+   * <p>A summary of information about an existing Amazon QuickSight folder.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/FolderSummary">AWS
    * API Reference</a></p>
    */
@@ -40,83 +41,83 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the folder.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the folder.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the folder.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the folder.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the folder.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the folder.</p>
      */
     inline FolderSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the folder.</p>
      */
     inline FolderSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the folder.</p>
      */
     inline FolderSummary& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline const Aws::String& GetFolderId() const{ return m_folderId; }
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline bool FolderIdHasBeenSet() const { return m_folderIdHasBeenSet; }
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline void SetFolderId(const Aws::String& value) { m_folderIdHasBeenSet = true; m_folderId = value; }
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline void SetFolderId(Aws::String&& value) { m_folderIdHasBeenSet = true; m_folderId = std::move(value); }
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline void SetFolderId(const char* value) { m_folderIdHasBeenSet = true; m_folderId.assign(value); }
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline FolderSummary& WithFolderId(const Aws::String& value) { SetFolderId(value); return *this;}
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline FolderSummary& WithFolderId(Aws::String&& value) { SetFolderId(std::move(value)); return *this;}
 
     /**
-     * <p>The folder ID.</p>
+     * <p>The ID of the folder.</p>
      */
     inline FolderSummary& WithFolderId(const char* value) { SetFolderId(value); return *this;}
 

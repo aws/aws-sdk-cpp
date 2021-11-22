@@ -134,7 +134,7 @@ namespace Model
     /**
      * <p>The Amazon QuickSight customizations you're adding in the current Amazon Web
      * Services Region. You can add these to an Amazon Web Services account and a
-     * Amazon QuickSight namespace. </p> <p>For example, you can add a default theme by
+     * QuickSight namespace. </p> <p>For example, you can add a default theme by
      * setting <code>AccountCustomization</code> to the midnight theme:
      * <code>"AccountCustomization": { "DefaultTheme":
      * "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom
@@ -147,7 +147,7 @@ namespace Model
     /**
      * <p>The Amazon QuickSight customizations you're adding in the current Amazon Web
      * Services Region. You can add these to an Amazon Web Services account and a
-     * Amazon QuickSight namespace. </p> <p>For example, you can add a default theme by
+     * QuickSight namespace. </p> <p>For example, you can add a default theme by
      * setting <code>AccountCustomization</code> to the midnight theme:
      * <code>"AccountCustomization": { "DefaultTheme":
      * "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom
@@ -160,7 +160,7 @@ namespace Model
     /**
      * <p>The Amazon QuickSight customizations you're adding in the current Amazon Web
      * Services Region. You can add these to an Amazon Web Services account and a
-     * Amazon QuickSight namespace. </p> <p>For example, you can add a default theme by
+     * QuickSight namespace. </p> <p>For example, you can add a default theme by
      * setting <code>AccountCustomization</code> to the midnight theme:
      * <code>"AccountCustomization": { "DefaultTheme":
      * "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom
@@ -173,7 +173,7 @@ namespace Model
     /**
      * <p>The Amazon QuickSight customizations you're adding in the current Amazon Web
      * Services Region. You can add these to an Amazon Web Services account and a
-     * Amazon QuickSight namespace. </p> <p>For example, you can add a default theme by
+     * QuickSight namespace. </p> <p>For example, you can add a default theme by
      * setting <code>AccountCustomization</code> to the midnight theme:
      * <code>"AccountCustomization": { "DefaultTheme":
      * "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom
@@ -186,7 +186,7 @@ namespace Model
     /**
      * <p>The Amazon QuickSight customizations you're adding in the current Amazon Web
      * Services Region. You can add these to an Amazon Web Services account and a
-     * Amazon QuickSight namespace. </p> <p>For example, you can add a default theme by
+     * QuickSight namespace. </p> <p>For example, you can add a default theme by
      * setting <code>AccountCustomization</code> to the midnight theme:
      * <code>"AccountCustomization": { "DefaultTheme":
      * "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom
@@ -199,7 +199,7 @@ namespace Model
     /**
      * <p>The Amazon QuickSight customizations you're adding in the current Amazon Web
      * Services Region. You can add these to an Amazon Web Services account and a
-     * Amazon QuickSight namespace. </p> <p>For example, you can add a default theme by
+     * QuickSight namespace. </p> <p>For example, you can add a default theme by
      * setting <code>AccountCustomization</code> to the midnight theme:
      * <code>"AccountCustomization": { "DefaultTheme":
      * "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can add a custom

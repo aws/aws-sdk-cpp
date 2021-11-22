@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/es/model/ElasticsearchDomainConfig.h>
+#include <aws/es/model/DryRunResults.h>
 #include <utility>
 
 namespace Aws
@@ -63,9 +64,37 @@ namespace Model
      */
     inline UpdateElasticsearchDomainConfigResult& WithDomainConfig(ElasticsearchDomainConfig&& value) { SetDomainConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains result of DryRun. </p>
+     */
+    inline const DryRunResults& GetDryRunResults() const{ return m_dryRunResults; }
+
+    /**
+     * <p>Contains result of DryRun. </p>
+     */
+    inline void SetDryRunResults(const DryRunResults& value) { m_dryRunResults = value; }
+
+    /**
+     * <p>Contains result of DryRun. </p>
+     */
+    inline void SetDryRunResults(DryRunResults&& value) { m_dryRunResults = std::move(value); }
+
+    /**
+     * <p>Contains result of DryRun. </p>
+     */
+    inline UpdateElasticsearchDomainConfigResult& WithDryRunResults(const DryRunResults& value) { SetDryRunResults(value); return *this;}
+
+    /**
+     * <p>Contains result of DryRun. </p>
+     */
+    inline UpdateElasticsearchDomainConfigResult& WithDryRunResults(DryRunResults&& value) { SetDryRunResults(std::move(value)); return *this;}
+
   private:
 
     ElasticsearchDomainConfig m_domainConfig;
+
+    DryRunResults m_dryRunResults;
   };
 
 } // namespace Model

@@ -47,7 +47,9 @@ enum class FinSpaceDataErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVER= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
+  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INTERNAL_SERVER,
+  LIMIT_EXCEEDED
 };
 
 class AWS_FINSPACEDATA_API FinSpaceDataError : public Aws::Client::AWSError<FinSpaceDataErrors>
