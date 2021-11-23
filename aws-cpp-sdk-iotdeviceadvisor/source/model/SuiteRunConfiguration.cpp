@@ -20,13 +20,17 @@ namespace Model
 
 SuiteRunConfiguration::SuiteRunConfiguration() : 
     m_primaryDeviceHasBeenSet(false),
-    m_selectedTestListHasBeenSet(false)
+    m_selectedTestListHasBeenSet(false),
+    m_parallelRun(false),
+    m_parallelRunHasBeenSet(false)
 {
 }
 
 SuiteRunConfiguration::SuiteRunConfiguration(JsonView jsonValue) : 
     m_primaryDeviceHasBeenSet(false),
-    m_selectedTestListHasBeenSet(false)
+    m_selectedTestListHasBeenSet(false),
+    m_parallelRun(false),
+    m_parallelRunHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +54,13 @@ SuiteRunConfiguration& SuiteRunConfiguration::operator =(JsonView jsonValue)
     m_selectedTestListHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("parallelRun"))
+  {
+    m_parallelRun = jsonValue.GetBool("parallelRun");
+
+    m_parallelRunHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -71,6 +82,12 @@ JsonValue SuiteRunConfiguration::Jsonize() const
      selectedTestListJsonList[selectedTestListIndex].AsString(m_selectedTestList[selectedTestListIndex]);
    }
    payload.WithArray("selectedTestList", std::move(selectedTestListJsonList));
+
+  }
+
+  if(m_parallelRunHasBeenSet)
+  {
+   payload.WithBool("parallelRun", m_parallelRun);
 
   }
 

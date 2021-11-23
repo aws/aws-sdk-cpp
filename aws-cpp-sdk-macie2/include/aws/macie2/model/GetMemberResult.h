@@ -181,36 +181,36 @@ namespace Model
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie
-     * membership invitation was last sent to the account. This value is null if a
-     * Macie invitation hasn't been sent to the account.</p>
+     * membership invitation was last sent to the account. This value is null if an
+     * invitation hasn't been sent to the account.</p>
      */
     inline const Aws::Utils::DateTime& GetInvitedAt() const{ return m_invitedAt; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie
-     * membership invitation was last sent to the account. This value is null if a
-     * Macie invitation hasn't been sent to the account.</p>
+     * membership invitation was last sent to the account. This value is null if an
+     * invitation hasn't been sent to the account.</p>
      */
     inline void SetInvitedAt(const Aws::Utils::DateTime& value) { m_invitedAt = value; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie
-     * membership invitation was last sent to the account. This value is null if a
-     * Macie invitation hasn't been sent to the account.</p>
+     * membership invitation was last sent to the account. This value is null if an
+     * invitation hasn't been sent to the account.</p>
      */
     inline void SetInvitedAt(Aws::Utils::DateTime&& value) { m_invitedAt = std::move(value); }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie
-     * membership invitation was last sent to the account. This value is null if a
-     * Macie invitation hasn't been sent to the account.</p>
+     * membership invitation was last sent to the account. This value is null if an
+     * invitation hasn't been sent to the account.</p>
      */
     inline GetMemberResult& WithInvitedAt(const Aws::Utils::DateTime& value) { SetInvitedAt(value); return *this;}
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie
-     * membership invitation was last sent to the account. This value is null if a
-     * Macie invitation hasn't been sent to the account.</p>
+     * membership invitation was last sent to the account. This value is null if an
+     * invitation hasn't been sent to the account.</p>
      */
     inline GetMemberResult& WithInvitedAt(Aws::Utils::DateTime&& value) { SetInvitedAt(std::move(value)); return *this;}
 

@@ -40,7 +40,8 @@ Job::Job() :
     m_jobProcessDetailsHasBeenSet(false),
     m_timeoutConfigHasBeenSet(false),
     m_namespaceIdHasBeenSet(false),
-    m_jobTemplateArnHasBeenSet(false)
+    m_jobTemplateArnHasBeenSet(false),
+    m_documentParametersHasBeenSet(false)
 {
 }
 
@@ -66,7 +67,8 @@ Job::Job(JsonView jsonValue) :
     m_jobProcessDetailsHasBeenSet(false),
     m_timeoutConfigHasBeenSet(false),
     m_namespaceIdHasBeenSet(false),
-    m_jobTemplateArnHasBeenSet(false)
+    m_jobTemplateArnHasBeenSet(false),
+    m_documentParametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -209,6 +211,16 @@ Job& Job::operator =(JsonView jsonValue)
     m_jobTemplateArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("documentParameters"))
+  {
+    Aws::Map<Aws::String, JsonView> documentParametersJsonMap = jsonValue.GetObject("documentParameters").GetAllObjects();
+    for(auto& documentParametersItem : documentParametersJsonMap)
+    {
+      m_documentParameters[documentParametersItem.first] = documentParametersItem.second.AsString();
+    }
+    m_documentParametersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -327,6 +339,17 @@ JsonValue Job::Jsonize() const
   if(m_jobTemplateArnHasBeenSet)
   {
    payload.WithString("jobTemplateArn", m_jobTemplateArn);
+
+  }
+
+  if(m_documentParametersHasBeenSet)
+  {
+   JsonValue documentParametersJsonMap;
+   for(auto& documentParametersItem : m_documentParameters)
+   {
+     documentParametersJsonMap.WithString(documentParametersItem.first, documentParametersItem.second);
+   }
+   payload.WithObject("documentParameters", std::move(documentParametersJsonMap));
 
   }
 

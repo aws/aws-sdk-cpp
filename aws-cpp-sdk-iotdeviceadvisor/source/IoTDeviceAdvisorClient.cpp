@@ -22,6 +22,7 @@
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisorErrorMarshaller.h>
 #include <aws/iotdeviceadvisor/model/CreateSuiteDefinitionRequest.h>
 #include <aws/iotdeviceadvisor/model/DeleteSuiteDefinitionRequest.h>
+#include <aws/iotdeviceadvisor/model/GetEndpointRequest.h>
 #include <aws/iotdeviceadvisor/model/GetSuiteDefinitionRequest.h>
 #include <aws/iotdeviceadvisor/model/GetSuiteRunRequest.h>
 #include <aws/iotdeviceadvisor/model/GetSuiteRunReportRequest.h>
@@ -161,6 +162,31 @@ void IoTDeviceAdvisorClient::DeleteSuiteDefinitionAsync(const DeleteSuiteDefinit
 void IoTDeviceAdvisorClient::DeleteSuiteDefinitionAsyncHelper(const DeleteSuiteDefinitionRequest& request, const DeleteSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteSuiteDefinition(request), context);
+}
+
+GetEndpointOutcome IoTDeviceAdvisorClient::GetEndpoint(const GetEndpointRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/endpoint");
+  return GetEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetEndpointOutcomeCallable IoTDeviceAdvisorClient::GetEndpointCallable(const GetEndpointRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEndpoint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTDeviceAdvisorClient::GetEndpointAsync(const GetEndpointRequest& request, const GetEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetEndpointAsyncHelper( request, handler, context ); } );
+}
+
+void IoTDeviceAdvisorClient::GetEndpointAsyncHelper(const GetEndpointRequest& request, const GetEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetEndpoint(request), context);
 }
 
 GetSuiteDefinitionOutcome IoTDeviceAdvisorClient::GetSuiteDefinition(const GetSuiteDefinitionRequest& request) const

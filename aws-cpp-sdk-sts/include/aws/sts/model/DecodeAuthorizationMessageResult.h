@@ -41,37 +41,37 @@ namespace Model
 
 
     /**
-     * <p>An XML document that contains the decoded message.</p>
+     * <p>The API returns a response with the decoded message.</p>
      */
     inline const Aws::String& GetDecodedMessage() const{ return m_decodedMessage; }
 
     /**
-     * <p>An XML document that contains the decoded message.</p>
+     * <p>The API returns a response with the decoded message.</p>
      */
     inline void SetDecodedMessage(const Aws::String& value) { m_decodedMessage = value; }
 
     /**
-     * <p>An XML document that contains the decoded message.</p>
+     * <p>The API returns a response with the decoded message.</p>
      */
     inline void SetDecodedMessage(Aws::String&& value) { m_decodedMessage = std::move(value); }
 
     /**
-     * <p>An XML document that contains the decoded message.</p>
+     * <p>The API returns a response with the decoded message.</p>
      */
     inline void SetDecodedMessage(const char* value) { m_decodedMessage.assign(value); }
 
     /**
-     * <p>An XML document that contains the decoded message.</p>
+     * <p>The API returns a response with the decoded message.</p>
      */
     inline DecodeAuthorizationMessageResult& WithDecodedMessage(const Aws::String& value) { SetDecodedMessage(value); return *this;}
 
     /**
-     * <p>An XML document that contains the decoded message.</p>
+     * <p>The API returns a response with the decoded message.</p>
      */
     inline DecodeAuthorizationMessageResult& WithDecodedMessage(Aws::String&& value) { SetDecodedMessage(std::move(value)); return *this;}
 
     /**
-     * <p>An XML document that contains the decoded message.</p>
+     * <p>The API returns a response with the decoded message.</p>
      */
     inline DecodeAuthorizationMessageResult& WithDecodedMessage(const char* value) { SetDecodedMessage(value); return *this;}
 

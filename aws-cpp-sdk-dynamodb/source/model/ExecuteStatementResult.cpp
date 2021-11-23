@@ -49,6 +49,12 @@ ExecuteStatementResult& ExecuteStatementResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("ConsumedCapacity"))
+  {
+    m_consumedCapacity = jsonValue.GetObject("ConsumedCapacity");
+
+  }
+
 
 
   return *this;

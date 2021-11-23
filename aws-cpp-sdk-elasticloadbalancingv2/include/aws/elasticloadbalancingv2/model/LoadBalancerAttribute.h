@@ -53,8 +53,13 @@ namespace Model
      * exist in the same region as the load balancer and have a bucket policy that
      * grants Elastic Load Balancing permissions to write to the bucket.</p> </li> <li>
      * <p> <code>access_logs.s3.prefix</code> - The prefix for the location in the S3
-     * bucket for the access logs.</p> </li> </ul> <p>The following attributes are
-     * supported by only Application Load Balancers:</p> <ul> <li> <p>
+     * bucket for the access logs.</p> </li> <li> <p>
+     * <code>ipv6.deny-all-igw-traffic</code> - Blocks internet gateway (IGW) access to
+     * the load balancer. It is set to <code>false</code> for internet-facing load
+     * balancers and <code>true</code> for internal load balancers, preventing
+     * unintended access to your internal load balancer through an internet
+     * gateway.</p> </li> </ul> <p>The following attributes are supported by only
+     * Application Load Balancers:</p> <ul> <li> <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
      * The valid range is 1-4000 seconds. The default is 60 seconds.</p> </li> <li> <p>
      * <code>routing.http.desync_mitigation_mode</code> - Determines how the load
@@ -109,8 +114,13 @@ namespace Model
      * exist in the same region as the load balancer and have a bucket policy that
      * grants Elastic Load Balancing permissions to write to the bucket.</p> </li> <li>
      * <p> <code>access_logs.s3.prefix</code> - The prefix for the location in the S3
-     * bucket for the access logs.</p> </li> </ul> <p>The following attributes are
-     * supported by only Application Load Balancers:</p> <ul> <li> <p>
+     * bucket for the access logs.</p> </li> <li> <p>
+     * <code>ipv6.deny-all-igw-traffic</code> - Blocks internet gateway (IGW) access to
+     * the load balancer. It is set to <code>false</code> for internet-facing load
+     * balancers and <code>true</code> for internal load balancers, preventing
+     * unintended access to your internal load balancer through an internet
+     * gateway.</p> </li> </ul> <p>The following attributes are supported by only
+     * Application Load Balancers:</p> <ul> <li> <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
      * The valid range is 1-4000 seconds. The default is 60 seconds.</p> </li> <li> <p>
      * <code>routing.http.desync_mitigation_mode</code> - Determines how the load
@@ -165,8 +175,13 @@ namespace Model
      * exist in the same region as the load balancer and have a bucket policy that
      * grants Elastic Load Balancing permissions to write to the bucket.</p> </li> <li>
      * <p> <code>access_logs.s3.prefix</code> - The prefix for the location in the S3
-     * bucket for the access logs.</p> </li> </ul> <p>The following attributes are
-     * supported by only Application Load Balancers:</p> <ul> <li> <p>
+     * bucket for the access logs.</p> </li> <li> <p>
+     * <code>ipv6.deny-all-igw-traffic</code> - Blocks internet gateway (IGW) access to
+     * the load balancer. It is set to <code>false</code> for internet-facing load
+     * balancers and <code>true</code> for internal load balancers, preventing
+     * unintended access to your internal load balancer through an internet
+     * gateway.</p> </li> </ul> <p>The following attributes are supported by only
+     * Application Load Balancers:</p> <ul> <li> <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
      * The valid range is 1-4000 seconds. The default is 60 seconds.</p> </li> <li> <p>
      * <code>routing.http.desync_mitigation_mode</code> - Determines how the load
@@ -221,8 +236,13 @@ namespace Model
      * exist in the same region as the load balancer and have a bucket policy that
      * grants Elastic Load Balancing permissions to write to the bucket.</p> </li> <li>
      * <p> <code>access_logs.s3.prefix</code> - The prefix for the location in the S3
-     * bucket for the access logs.</p> </li> </ul> <p>The following attributes are
-     * supported by only Application Load Balancers:</p> <ul> <li> <p>
+     * bucket for the access logs.</p> </li> <li> <p>
+     * <code>ipv6.deny-all-igw-traffic</code> - Blocks internet gateway (IGW) access to
+     * the load balancer. It is set to <code>false</code> for internet-facing load
+     * balancers and <code>true</code> for internal load balancers, preventing
+     * unintended access to your internal load balancer through an internet
+     * gateway.</p> </li> </ul> <p>The following attributes are supported by only
+     * Application Load Balancers:</p> <ul> <li> <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
      * The valid range is 1-4000 seconds. The default is 60 seconds.</p> </li> <li> <p>
      * <code>routing.http.desync_mitigation_mode</code> - Determines how the load
@@ -277,8 +297,13 @@ namespace Model
      * exist in the same region as the load balancer and have a bucket policy that
      * grants Elastic Load Balancing permissions to write to the bucket.</p> </li> <li>
      * <p> <code>access_logs.s3.prefix</code> - The prefix for the location in the S3
-     * bucket for the access logs.</p> </li> </ul> <p>The following attributes are
-     * supported by only Application Load Balancers:</p> <ul> <li> <p>
+     * bucket for the access logs.</p> </li> <li> <p>
+     * <code>ipv6.deny-all-igw-traffic</code> - Blocks internet gateway (IGW) access to
+     * the load balancer. It is set to <code>false</code> for internet-facing load
+     * balancers and <code>true</code> for internal load balancers, preventing
+     * unintended access to your internal load balancer through an internet
+     * gateway.</p> </li> </ul> <p>The following attributes are supported by only
+     * Application Load Balancers:</p> <ul> <li> <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
      * The valid range is 1-4000 seconds. The default is 60 seconds.</p> </li> <li> <p>
      * <code>routing.http.desync_mitigation_mode</code> - Determines how the load
@@ -333,8 +358,13 @@ namespace Model
      * exist in the same region as the load balancer and have a bucket policy that
      * grants Elastic Load Balancing permissions to write to the bucket.</p> </li> <li>
      * <p> <code>access_logs.s3.prefix</code> - The prefix for the location in the S3
-     * bucket for the access logs.</p> </li> </ul> <p>The following attributes are
-     * supported by only Application Load Balancers:</p> <ul> <li> <p>
+     * bucket for the access logs.</p> </li> <li> <p>
+     * <code>ipv6.deny-all-igw-traffic</code> - Blocks internet gateway (IGW) access to
+     * the load balancer. It is set to <code>false</code> for internet-facing load
+     * balancers and <code>true</code> for internal load balancers, preventing
+     * unintended access to your internal load balancer through an internet
+     * gateway.</p> </li> </ul> <p>The following attributes are supported by only
+     * Application Load Balancers:</p> <ul> <li> <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
      * The valid range is 1-4000 seconds. The default is 60 seconds.</p> </li> <li> <p>
      * <code>routing.http.desync_mitigation_mode</code> - Determines how the load
@@ -389,8 +419,13 @@ namespace Model
      * exist in the same region as the load balancer and have a bucket policy that
      * grants Elastic Load Balancing permissions to write to the bucket.</p> </li> <li>
      * <p> <code>access_logs.s3.prefix</code> - The prefix for the location in the S3
-     * bucket for the access logs.</p> </li> </ul> <p>The following attributes are
-     * supported by only Application Load Balancers:</p> <ul> <li> <p>
+     * bucket for the access logs.</p> </li> <li> <p>
+     * <code>ipv6.deny-all-igw-traffic</code> - Blocks internet gateway (IGW) access to
+     * the load balancer. It is set to <code>false</code> for internet-facing load
+     * balancers and <code>true</code> for internal load balancers, preventing
+     * unintended access to your internal load balancer through an internet
+     * gateway.</p> </li> </ul> <p>The following attributes are supported by only
+     * Application Load Balancers:</p> <ul> <li> <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
      * The valid range is 1-4000 seconds. The default is 60 seconds.</p> </li> <li> <p>
      * <code>routing.http.desync_mitigation_mode</code> - Determines how the load
@@ -445,8 +480,13 @@ namespace Model
      * exist in the same region as the load balancer and have a bucket policy that
      * grants Elastic Load Balancing permissions to write to the bucket.</p> </li> <li>
      * <p> <code>access_logs.s3.prefix</code> - The prefix for the location in the S3
-     * bucket for the access logs.</p> </li> </ul> <p>The following attributes are
-     * supported by only Application Load Balancers:</p> <ul> <li> <p>
+     * bucket for the access logs.</p> </li> <li> <p>
+     * <code>ipv6.deny-all-igw-traffic</code> - Blocks internet gateway (IGW) access to
+     * the load balancer. It is set to <code>false</code> for internet-facing load
+     * balancers and <code>true</code> for internal load balancers, preventing
+     * unintended access to your internal load balancer through an internet
+     * gateway.</p> </li> </ul> <p>The following attributes are supported by only
+     * Application Load Balancers:</p> <ul> <li> <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
      * The valid range is 1-4000 seconds. The default is 60 seconds.</p> </li> <li> <p>
      * <code>routing.http.desync_mitigation_mode</code> - Determines how the load

@@ -220,33 +220,33 @@ namespace Model
 
 
     /**
-     * <p>The number of the partition the instance is in. Valid only if the placement
-     * group strategy is set to <code>partition</code>.</p> <p>This parameter is not
-     * supported by <a
+     * <p>The number of the partition that the instance is in. Valid only if the
+     * placement group strategy is set to <code>partition</code>.</p> <p>This parameter
+     * is not supported by <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
      */
     inline int GetPartitionNumber() const{ return m_partitionNumber; }
 
     /**
-     * <p>The number of the partition the instance is in. Valid only if the placement
-     * group strategy is set to <code>partition</code>.</p> <p>This parameter is not
-     * supported by <a
+     * <p>The number of the partition that the instance is in. Valid only if the
+     * placement group strategy is set to <code>partition</code>.</p> <p>This parameter
+     * is not supported by <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
      */
     inline bool PartitionNumberHasBeenSet() const { return m_partitionNumberHasBeenSet; }
 
     /**
-     * <p>The number of the partition the instance is in. Valid only if the placement
-     * group strategy is set to <code>partition</code>.</p> <p>This parameter is not
-     * supported by <a
+     * <p>The number of the partition that the instance is in. Valid only if the
+     * placement group strategy is set to <code>partition</code>.</p> <p>This parameter
+     * is not supported by <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
      */
     inline void SetPartitionNumber(int value) { m_partitionNumberHasBeenSet = true; m_partitionNumber = value; }
 
     /**
-     * <p>The number of the partition the instance is in. Valid only if the placement
-     * group strategy is set to <code>partition</code>.</p> <p>This parameter is not
-     * supported by <a
+     * <p>The number of the partition that the instance is in. Valid only if the
+     * placement group strategy is set to <code>partition</code>.</p> <p>This parameter
+     * is not supported by <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
      */
     inline Placement& WithPartitionNumber(int value) { SetPartitionNumber(value); return *this;}

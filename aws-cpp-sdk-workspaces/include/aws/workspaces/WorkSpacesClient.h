@@ -655,12 +655,13 @@ namespace Model
          * WorkSpace images need to be updated with the latest Amazon WorkSpaces
          * requirements, use <a
          * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">
-         * DescribeWorkspaceImages</a>.</p>  <ul> <li> <p>Only Windows 10 WorkSpace
-         * images can be programmatically updated at this time.</p> </li> <li> <p>Microsoft
-         * Windows updates and other application updates are not included in the update
-         * process.</p> </li> <li> <p>The source WorkSpace image is not deleted. You can
-         * delete the source image after you've verified your new updated image and created
-         * a new bundle. </p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * DescribeWorkspaceImages</a>.</p>  <ul> <li> <p>Only Windows 10, Windows
+         * Sever 2016, and Windows Server 2019 WorkSpace images can be programmatically
+         * updated at this time.</p> </li> <li> <p>Microsoft Windows updates and other
+         * application updates are not included in the update process.</p> </li> <li>
+         * <p>The source WorkSpace image is not deleted. You can delete the source image
+         * after you've verified your new updated image and created a new bundle. </p>
+         * </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateUpdatedWorkspaceImage">AWS
          * API Reference</a></p>
          */
@@ -673,12 +674,13 @@ namespace Model
          * WorkSpace images need to be updated with the latest Amazon WorkSpaces
          * requirements, use <a
          * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">
-         * DescribeWorkspaceImages</a>.</p>  <ul> <li> <p>Only Windows 10 WorkSpace
-         * images can be programmatically updated at this time.</p> </li> <li> <p>Microsoft
-         * Windows updates and other application updates are not included in the update
-         * process.</p> </li> <li> <p>The source WorkSpace image is not deleted. You can
-         * delete the source image after you've verified your new updated image and created
-         * a new bundle. </p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * DescribeWorkspaceImages</a>.</p>  <ul> <li> <p>Only Windows 10, Windows
+         * Sever 2016, and Windows Server 2019 WorkSpace images can be programmatically
+         * updated at this time.</p> </li> <li> <p>Microsoft Windows updates and other
+         * application updates are not included in the update process.</p> </li> <li>
+         * <p>The source WorkSpace image is not deleted. You can delete the source image
+         * after you've verified your new updated image and created a new bundle. </p>
+         * </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateUpdatedWorkspaceImage">AWS
          * API Reference</a></p>
          *
@@ -693,12 +695,13 @@ namespace Model
          * WorkSpace images need to be updated with the latest Amazon WorkSpaces
          * requirements, use <a
          * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">
-         * DescribeWorkspaceImages</a>.</p>  <ul> <li> <p>Only Windows 10 WorkSpace
-         * images can be programmatically updated at this time.</p> </li> <li> <p>Microsoft
-         * Windows updates and other application updates are not included in the update
-         * process.</p> </li> <li> <p>The source WorkSpace image is not deleted. You can
-         * delete the source image after you've verified your new updated image and created
-         * a new bundle. </p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * DescribeWorkspaceImages</a>.</p>  <ul> <li> <p>Only Windows 10, Windows
+         * Sever 2016, and Windows Server 2019 WorkSpace images can be programmatically
+         * updated at this time.</p> </li> <li> <p>Microsoft Windows updates and other
+         * application updates are not included in the update process.</p> </li> <li>
+         * <p>The source WorkSpace image is not deleted. You can delete the source image
+         * after you've verified your new updated image and created a new bundle. </p>
+         * </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateUpdatedWorkspaceImage">AWS
          * API Reference</a></p>
          *

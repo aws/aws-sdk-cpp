@@ -13,6 +13,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotdeviceadvisor/model/CreateSuiteDefinitionResult.h>
 #include <aws/iotdeviceadvisor/model/DeleteSuiteDefinitionResult.h>
+#include <aws/iotdeviceadvisor/model/GetEndpointResult.h>
 #include <aws/iotdeviceadvisor/model/GetSuiteDefinitionResult.h>
 #include <aws/iotdeviceadvisor/model/GetSuiteRunResult.h>
 #include <aws/iotdeviceadvisor/model/GetSuiteRunReportResult.h>
@@ -65,6 +66,7 @@ namespace Model
 {
         class CreateSuiteDefinitionRequest;
         class DeleteSuiteDefinitionRequest;
+        class GetEndpointRequest;
         class GetSuiteDefinitionRequest;
         class GetSuiteRunRequest;
         class GetSuiteRunReportRequest;
@@ -79,6 +81,7 @@ namespace Model
 
         typedef Aws::Utils::Outcome<CreateSuiteDefinitionResult, IoTDeviceAdvisorError> CreateSuiteDefinitionOutcome;
         typedef Aws::Utils::Outcome<DeleteSuiteDefinitionResult, IoTDeviceAdvisorError> DeleteSuiteDefinitionOutcome;
+        typedef Aws::Utils::Outcome<GetEndpointResult, IoTDeviceAdvisorError> GetEndpointOutcome;
         typedef Aws::Utils::Outcome<GetSuiteDefinitionResult, IoTDeviceAdvisorError> GetSuiteDefinitionOutcome;
         typedef Aws::Utils::Outcome<GetSuiteRunResult, IoTDeviceAdvisorError> GetSuiteRunOutcome;
         typedef Aws::Utils::Outcome<GetSuiteRunReportResult, IoTDeviceAdvisorError> GetSuiteRunReportOutcome;
@@ -93,6 +96,7 @@ namespace Model
 
         typedef std::future<CreateSuiteDefinitionOutcome> CreateSuiteDefinitionOutcomeCallable;
         typedef std::future<DeleteSuiteDefinitionOutcome> DeleteSuiteDefinitionOutcomeCallable;
+        typedef std::future<GetEndpointOutcome> GetEndpointOutcomeCallable;
         typedef std::future<GetSuiteDefinitionOutcome> GetSuiteDefinitionOutcomeCallable;
         typedef std::future<GetSuiteRunOutcome> GetSuiteRunOutcomeCallable;
         typedef std::future<GetSuiteRunReportOutcome> GetSuiteRunReportOutcomeCallable;
@@ -110,6 +114,7 @@ namespace Model
 
     typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::CreateSuiteDefinitionRequest&, const Model::CreateSuiteDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSuiteDefinitionResponseReceivedHandler;
     typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::DeleteSuiteDefinitionRequest&, const Model::DeleteSuiteDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSuiteDefinitionResponseReceivedHandler;
+    typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::GetEndpointRequest&, const Model::GetEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEndpointResponseReceivedHandler;
     typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::GetSuiteDefinitionRequest&, const Model::GetSuiteDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSuiteDefinitionResponseReceivedHandler;
     typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::GetSuiteRunRequest&, const Model::GetSuiteRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSuiteRunResponseReceivedHandler;
     typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::GetSuiteRunReportRequest&, const Model::GetSuiteRunReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSuiteRunReportResponseReceivedHandler;
@@ -123,16 +128,17 @@ namespace Model
     typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::UpdateSuiteDefinitionRequest&, const Model::UpdateSuiteDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSuiteDefinitionResponseReceivedHandler;
 
   /**
-   * <p>AWS IoT Core Device Advisor is a cloud-based, fully managed test capability
-   * for validating IoT devices during device software development. Device Advisor
-   * provides pre-built tests that you can use to validate IoT devices for reliable
-   * and secure connectivity with AWS IoT Core before deploying devices to
-   * production. By using Device Advisor, you can confirm that your devices can
-   * connect to AWS IoT Core, follow security best practices and, if applicable,
-   * receive software updates from IoT Device Management. You can also download
-   * signed qualification reports to submit to the AWS Partner Network to get your
-   * device qualified for the AWS Partner Device Catalog without the need to send
-   * your device in and wait for it to be tested.</p>
+   * <p>Amazon Web Services IoT Core Device Advisor is a cloud-based, fully managed
+   * test capability for validating IoT devices during device software development.
+   * Device Advisor provides pre-built tests that you can use to validate IoT devices
+   * for reliable and secure connectivity with Amazon Web Services IoT Core before
+   * deploying devices to production. By using Device Advisor, you can confirm that
+   * your devices can connect to Amazon Web Services IoT Core, follow security best
+   * practices and, if applicable, receive software updates from IoT Device
+   * Management. You can also download signed qualification reports to submit to the
+   * Amazon Web Services Partner Network to get your device qualified for the Amazon
+   * Web Services Partner Device Catalog without the need to send your device in and
+   * wait for it to be tested.</p>
    */
   class AWS_IOTDEVICEADVISOR_API IoTDeviceAdvisorClient : public Aws::Client::AWSJsonClient
   {
@@ -162,14 +168,20 @@ namespace Model
 
 
         /**
-         * <p>Creates a Device Advisor test suite.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a Device Advisor test suite.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateSuiteDefinition</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/CreateSuiteDefinition">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateSuiteDefinitionOutcome CreateSuiteDefinition(const Model::CreateSuiteDefinitionRequest& request) const;
 
         /**
-         * <p>Creates a Device Advisor test suite.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a Device Advisor test suite.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateSuiteDefinition</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/CreateSuiteDefinition">AWS
          * API Reference</a></p>
          *
@@ -178,7 +190,10 @@ namespace Model
         virtual Model::CreateSuiteDefinitionOutcomeCallable CreateSuiteDefinitionCallable(const Model::CreateSuiteDefinitionRequest& request) const;
 
         /**
-         * <p>Creates a Device Advisor test suite.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a Device Advisor test suite.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateSuiteDefinition</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/CreateSuiteDefinition">AWS
          * API Reference</a></p>
          *
@@ -187,14 +202,20 @@ namespace Model
         virtual void CreateSuiteDefinitionAsync(const Model::CreateSuiteDefinitionRequest& request, const CreateSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a Device Advisor test suite.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a Device Advisor test suite.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteSuiteDefinition</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/DeleteSuiteDefinition">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteSuiteDefinitionOutcome DeleteSuiteDefinition(const Model::DeleteSuiteDefinitionRequest& request) const;
 
         /**
-         * <p>Deletes a Device Advisor test suite.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a Device Advisor test suite.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteSuiteDefinition</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/DeleteSuiteDefinition">AWS
          * API Reference</a></p>
          *
@@ -203,7 +224,10 @@ namespace Model
         virtual Model::DeleteSuiteDefinitionOutcomeCallable DeleteSuiteDefinitionCallable(const Model::DeleteSuiteDefinitionRequest& request) const;
 
         /**
-         * <p>Deletes a Device Advisor test suite.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a Device Advisor test suite.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteSuiteDefinition</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/DeleteSuiteDefinition">AWS
          * API Reference</a></p>
          *
@@ -212,16 +236,39 @@ namespace Model
         virtual void DeleteSuiteDefinitionAsync(const Model::DeleteSuiteDefinitionRequest& request, const DeleteSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a Device Advisor test suite.</p><p><h3>See Also:</h3> 
-         * <a
+         * 
+         */
+        virtual Model::GetEndpointOutcome GetEndpoint(const Model::GetEndpointRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetEndpointOutcomeCallable GetEndpointCallable(const Model::GetEndpointRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetEndpointAsync(const Model::GetEndpointRequest& request, const GetEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets information about a Device Advisor test suite.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetSuiteDefinition</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/GetSuiteDefinition">AWS
          * API Reference</a></p>
          */
         virtual Model::GetSuiteDefinitionOutcome GetSuiteDefinition(const Model::GetSuiteDefinitionRequest& request) const;
 
         /**
-         * <p>Gets information about a Device Advisor test suite.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Gets information about a Device Advisor test suite.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetSuiteDefinition</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/GetSuiteDefinition">AWS
          * API Reference</a></p>
          *
@@ -230,8 +277,10 @@ namespace Model
         virtual Model::GetSuiteDefinitionOutcomeCallable GetSuiteDefinitionCallable(const Model::GetSuiteDefinitionRequest& request) const;
 
         /**
-         * <p>Gets information about a Device Advisor test suite.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Gets information about a Device Advisor test suite.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetSuiteDefinition</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/GetSuiteDefinition">AWS
          * API Reference</a></p>
          *
@@ -240,16 +289,20 @@ namespace Model
         virtual void GetSuiteDefinitionAsync(const Model::GetSuiteDefinitionRequest& request, const GetSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a Device Advisor test suite run.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about a Device Advisor test suite run.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetSuiteRun</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/GetSuiteRun">AWS
          * API Reference</a></p>
          */
         virtual Model::GetSuiteRunOutcome GetSuiteRun(const Model::GetSuiteRunRequest& request) const;
 
         /**
-         * <p>Gets information about a Device Advisor test suite run.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about a Device Advisor test suite run.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetSuiteRun</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/GetSuiteRun">AWS
          * API Reference</a></p>
          *
@@ -258,8 +311,10 @@ namespace Model
         virtual Model::GetSuiteRunOutcomeCallable GetSuiteRunCallable(const Model::GetSuiteRunRequest& request) const;
 
         /**
-         * <p>Gets information about a Device Advisor test suite run.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about a Device Advisor test suite run.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetSuiteRun</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/GetSuiteRun">AWS
          * API Reference</a></p>
          *
@@ -269,7 +324,9 @@ namespace Model
 
         /**
          * <p>Gets a report download link for a successful Device Advisor qualifying test
-         * suite run.</p><p><h3>See Also:</h3>   <a
+         * suite run.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetSuiteRunReport</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/GetSuiteRunReport">AWS
          * API Reference</a></p>
          */
@@ -277,7 +334,9 @@ namespace Model
 
         /**
          * <p>Gets a report download link for a successful Device Advisor qualifying test
-         * suite run.</p><p><h3>See Also:</h3>   <a
+         * suite run.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetSuiteRunReport</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/GetSuiteRunReport">AWS
          * API Reference</a></p>
          *
@@ -287,7 +346,9 @@ namespace Model
 
         /**
          * <p>Gets a report download link for a successful Device Advisor qualifying test
-         * suite run.</p><p><h3>See Also:</h3>   <a
+         * suite run.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetSuiteRunReport</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/GetSuiteRunReport">AWS
          * API Reference</a></p>
          *
@@ -296,16 +357,20 @@ namespace Model
         virtual void GetSuiteRunReportAsync(const Model::GetSuiteRunReportRequest& request, const GetSuiteRunReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the Device Advisor test suites you have created.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the Device Advisor test suites you have created.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSuiteDefinitions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListSuiteDefinitions">AWS
          * API Reference</a></p>
          */
         virtual Model::ListSuiteDefinitionsOutcome ListSuiteDefinitions(const Model::ListSuiteDefinitionsRequest& request) const;
 
         /**
-         * <p>Lists the Device Advisor test suites you have created.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the Device Advisor test suites you have created.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSuiteDefinitions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListSuiteDefinitions">AWS
          * API Reference</a></p>
          *
@@ -314,8 +379,10 @@ namespace Model
         virtual Model::ListSuiteDefinitionsOutcomeCallable ListSuiteDefinitionsCallable(const Model::ListSuiteDefinitionsRequest& request) const;
 
         /**
-         * <p>Lists the Device Advisor test suites you have created.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the Device Advisor test suites you have created.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSuiteDefinitions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListSuiteDefinitions">AWS
          * API Reference</a></p>
          *
@@ -325,8 +392,10 @@ namespace Model
 
         /**
          * <p>Lists the runs of the specified Device Advisor test suite. You can list all
-         * runs of the test suite, or the runs of a specific version of the test
-         * suite.</p><p><h3>See Also:</h3>   <a
+         * runs of the test suite, or the runs of a specific version of the test suite.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSuiteRuns</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListSuiteRuns">AWS
          * API Reference</a></p>
          */
@@ -334,8 +403,10 @@ namespace Model
 
         /**
          * <p>Lists the runs of the specified Device Advisor test suite. You can list all
-         * runs of the test suite, or the runs of a specific version of the test
-         * suite.</p><p><h3>See Also:</h3>   <a
+         * runs of the test suite, or the runs of a specific version of the test suite.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSuiteRuns</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListSuiteRuns">AWS
          * API Reference</a></p>
          *
@@ -345,8 +416,10 @@ namespace Model
 
         /**
          * <p>Lists the runs of the specified Device Advisor test suite. You can list all
-         * runs of the test suite, or the runs of a specific version of the test
-         * suite.</p><p><h3>See Also:</h3>   <a
+         * runs of the test suite, or the runs of a specific version of the test suite.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSuiteRuns</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListSuiteRuns">AWS
          * API Reference</a></p>
          *
@@ -355,16 +428,20 @@ namespace Model
         virtual void ListSuiteRunsAsync(const Model::ListSuiteRunsRequest& request, const ListSuiteRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the tags attached to an IoT Device Advisor resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the tags attached to an IoT Device Advisor resource.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTagsForResource</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListTagsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists the tags attached to an IoT Device Advisor resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the tags attached to an IoT Device Advisor resource.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTagsForResource</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -373,8 +450,10 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists the tags attached to an IoT Device Advisor resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the tags attached to an IoT Device Advisor resource.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTagsForResource</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -383,14 +462,20 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts a Device Advisor test suite run.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts a Device Advisor test suite run.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartSuiteRun</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/StartSuiteRun">AWS
          * API Reference</a></p>
          */
         virtual Model::StartSuiteRunOutcome StartSuiteRun(const Model::StartSuiteRunRequest& request) const;
 
         /**
-         * <p>Starts a Device Advisor test suite run.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts a Device Advisor test suite run.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartSuiteRun</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/StartSuiteRun">AWS
          * API Reference</a></p>
          *
@@ -399,7 +484,10 @@ namespace Model
         virtual Model::StartSuiteRunOutcomeCallable StartSuiteRunCallable(const Model::StartSuiteRunRequest& request) const;
 
         /**
-         * <p>Starts a Device Advisor test suite run.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts a Device Advisor test suite run.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartSuiteRun</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/StartSuiteRun">AWS
          * API Reference</a></p>
          *
@@ -408,16 +496,20 @@ namespace Model
         virtual void StartSuiteRunAsync(const Model::StartSuiteRunRequest& request, const StartSuiteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stops a Device Advisor test suite run that is currently
-         * running.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops a Device Advisor test suite run that is currently running.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StopSuiteRun</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/StopSuiteRun">AWS
          * API Reference</a></p>
          */
         virtual Model::StopSuiteRunOutcome StopSuiteRun(const Model::StopSuiteRunRequest& request) const;
 
         /**
-         * <p>Stops a Device Advisor test suite run that is currently
-         * running.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops a Device Advisor test suite run that is currently running.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StopSuiteRun</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/StopSuiteRun">AWS
          * API Reference</a></p>
          *
@@ -426,8 +518,10 @@ namespace Model
         virtual Model::StopSuiteRunOutcomeCallable StopSuiteRunCallable(const Model::StopSuiteRunRequest& request) const;
 
         /**
-         * <p>Stops a Device Advisor test suite run that is currently
-         * running.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops a Device Advisor test suite run that is currently running.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StopSuiteRun</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/StopSuiteRun">AWS
          * API Reference</a></p>
          *
@@ -436,16 +530,20 @@ namespace Model
         virtual void StopSuiteRunAsync(const Model::StopSuiteRunRequest& request, const StopSuiteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds to and modifies existing tags of an IoT Device Advisor
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds to and modifies existing tags of an IoT Device Advisor resource.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TagResource</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/TagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds to and modifies existing tags of an IoT Device Advisor
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds to and modifies existing tags of an IoT Device Advisor resource.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TagResource</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/TagResource">AWS
          * API Reference</a></p>
          *
@@ -454,8 +552,10 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds to and modifies existing tags of an IoT Device Advisor
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds to and modifies existing tags of an IoT Device Advisor resource.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TagResource</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/TagResource">AWS
          * API Reference</a></p>
          *
@@ -464,16 +564,20 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes tags from an IoT Device Advisor resource.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Removes tags from an IoT Device Advisor resource.</p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UntagResource</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes tags from an IoT Device Advisor resource.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Removes tags from an IoT Device Advisor resource.</p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UntagResource</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -482,8 +586,10 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes tags from an IoT Device Advisor resource.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Removes tags from an IoT Device Advisor resource.</p> <p>Requires permission
+         * to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UntagResource</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -492,14 +598,20 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a Device Advisor test suite.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a Device Advisor test suite.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateSuiteDefinition</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/UpdateSuiteDefinition">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateSuiteDefinitionOutcome UpdateSuiteDefinition(const Model::UpdateSuiteDefinitionRequest& request) const;
 
         /**
-         * <p>Updates a Device Advisor test suite.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a Device Advisor test suite.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateSuiteDefinition</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/UpdateSuiteDefinition">AWS
          * API Reference</a></p>
          *
@@ -508,7 +620,10 @@ namespace Model
         virtual Model::UpdateSuiteDefinitionOutcomeCallable UpdateSuiteDefinitionCallable(const Model::UpdateSuiteDefinitionRequest& request) const;
 
         /**
-         * <p>Updates a Device Advisor test suite.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a Device Advisor test suite.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateSuiteDefinition</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/UpdateSuiteDefinition">AWS
          * API Reference</a></p>
          *
@@ -522,6 +637,7 @@ namespace Model
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void CreateSuiteDefinitionAsyncHelper(const Model::CreateSuiteDefinitionRequest& request, const CreateSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSuiteDefinitionAsyncHelper(const Model::DeleteSuiteDefinitionRequest& request, const DeleteSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetEndpointAsyncHelper(const Model::GetEndpointRequest& request, const GetEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSuiteDefinitionAsyncHelper(const Model::GetSuiteDefinitionRequest& request, const GetSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSuiteRunAsyncHelper(const Model::GetSuiteRunRequest& request, const GetSuiteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSuiteRunReportAsyncHelper(const Model::GetSuiteRunReportRequest& request, const GetSuiteRunReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

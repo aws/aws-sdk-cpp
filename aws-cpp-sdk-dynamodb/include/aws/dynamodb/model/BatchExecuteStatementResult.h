@@ -7,6 +7,7 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dynamodb/model/BatchStatementResponse.h>
+#include <aws/dynamodb/model/ConsumedCapacity.h>
 #include <utility>
 
 namespace Aws
@@ -68,9 +69,54 @@ namespace Model
      */
     inline BatchExecuteStatementResult& AddResponses(BatchStatementResponse&& value) { m_responses.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The capacity units consumed by the entire operation. The values of the list
+     * are ordered according to the ordering of the statements.</p>
+     */
+    inline const Aws::Vector<ConsumedCapacity>& GetConsumedCapacity() const{ return m_consumedCapacity; }
+
+    /**
+     * <p>The capacity units consumed by the entire operation. The values of the list
+     * are ordered according to the ordering of the statements.</p>
+     */
+    inline void SetConsumedCapacity(const Aws::Vector<ConsumedCapacity>& value) { m_consumedCapacity = value; }
+
+    /**
+     * <p>The capacity units consumed by the entire operation. The values of the list
+     * are ordered according to the ordering of the statements.</p>
+     */
+    inline void SetConsumedCapacity(Aws::Vector<ConsumedCapacity>&& value) { m_consumedCapacity = std::move(value); }
+
+    /**
+     * <p>The capacity units consumed by the entire operation. The values of the list
+     * are ordered according to the ordering of the statements.</p>
+     */
+    inline BatchExecuteStatementResult& WithConsumedCapacity(const Aws::Vector<ConsumedCapacity>& value) { SetConsumedCapacity(value); return *this;}
+
+    /**
+     * <p>The capacity units consumed by the entire operation. The values of the list
+     * are ordered according to the ordering of the statements.</p>
+     */
+    inline BatchExecuteStatementResult& WithConsumedCapacity(Aws::Vector<ConsumedCapacity>&& value) { SetConsumedCapacity(std::move(value)); return *this;}
+
+    /**
+     * <p>The capacity units consumed by the entire operation. The values of the list
+     * are ordered according to the ordering of the statements.</p>
+     */
+    inline BatchExecuteStatementResult& AddConsumedCapacity(const ConsumedCapacity& value) { m_consumedCapacity.push_back(value); return *this; }
+
+    /**
+     * <p>The capacity units consumed by the entire operation. The values of the list
+     * are ordered according to the ordering of the statements.</p>
+     */
+    inline BatchExecuteStatementResult& AddConsumedCapacity(ConsumedCapacity&& value) { m_consumedCapacity.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<BatchStatementResponse> m_responses;
+
+    Aws::Vector<ConsumedCapacity> m_consumedCapacity;
   };
 
 } // namespace Model

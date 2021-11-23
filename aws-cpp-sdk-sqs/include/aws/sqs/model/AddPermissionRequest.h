@@ -155,10 +155,10 @@ namespace Model
 
 
     /**
-     * <p>The account numbers of the <a
+     * <p>The Amazon Web Services account numbers of the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a>
-     * who are to receive permission. For information about locating the account
-     * identification, see <a
+     * who are to receive permission. For information about locating the Amazon Web
+     * Services account identification, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your
      * Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer
      * Guide</i>.</p>
@@ -166,10 +166,10 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetAWSAccountIds() const{ return m_aWSAccountIds; }
 
     /**
-     * <p>The account numbers of the <a
+     * <p>The Amazon Web Services account numbers of the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a>
-     * who are to receive permission. For information about locating the account
-     * identification, see <a
+     * who are to receive permission. For information about locating the Amazon Web
+     * Services account identification, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your
      * Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer
      * Guide</i>.</p>
@@ -177,10 +177,10 @@ namespace Model
     inline bool AWSAccountIdsHasBeenSet() const { return m_aWSAccountIdsHasBeenSet; }
 
     /**
-     * <p>The account numbers of the <a
+     * <p>The Amazon Web Services account numbers of the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a>
-     * who are to receive permission. For information about locating the account
-     * identification, see <a
+     * who are to receive permission. For information about locating the Amazon Web
+     * Services account identification, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your
      * Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer
      * Guide</i>.</p>
@@ -188,10 +188,10 @@ namespace Model
     inline void SetAWSAccountIds(const Aws::Vector<Aws::String>& value) { m_aWSAccountIdsHasBeenSet = true; m_aWSAccountIds = value; }
 
     /**
-     * <p>The account numbers of the <a
+     * <p>The Amazon Web Services account numbers of the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a>
-     * who are to receive permission. For information about locating the account
-     * identification, see <a
+     * who are to receive permission. For information about locating the Amazon Web
+     * Services account identification, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your
      * Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer
      * Guide</i>.</p>
@@ -199,10 +199,10 @@ namespace Model
     inline void SetAWSAccountIds(Aws::Vector<Aws::String>&& value) { m_aWSAccountIdsHasBeenSet = true; m_aWSAccountIds = std::move(value); }
 
     /**
-     * <p>The account numbers of the <a
+     * <p>The Amazon Web Services account numbers of the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a>
-     * who are to receive permission. For information about locating the account
-     * identification, see <a
+     * who are to receive permission. For information about locating the Amazon Web
+     * Services account identification, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your
      * Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer
      * Guide</i>.</p>
@@ -210,10 +210,10 @@ namespace Model
     inline AddPermissionRequest& WithAWSAccountIds(const Aws::Vector<Aws::String>& value) { SetAWSAccountIds(value); return *this;}
 
     /**
-     * <p>The account numbers of the <a
+     * <p>The Amazon Web Services account numbers of the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a>
-     * who are to receive permission. For information about locating the account
-     * identification, see <a
+     * who are to receive permission. For information about locating the Amazon Web
+     * Services account identification, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your
      * Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer
      * Guide</i>.</p>
@@ -221,10 +221,10 @@ namespace Model
     inline AddPermissionRequest& WithAWSAccountIds(Aws::Vector<Aws::String>&& value) { SetAWSAccountIds(std::move(value)); return *this;}
 
     /**
-     * <p>The account numbers of the <a
+     * <p>The Amazon Web Services account numbers of the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a>
-     * who are to receive permission. For information about locating the account
-     * identification, see <a
+     * who are to receive permission. For information about locating the Amazon Web
+     * Services account identification, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your
      * Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer
      * Guide</i>.</p>
@@ -232,10 +232,10 @@ namespace Model
     inline AddPermissionRequest& AddAWSAccountIds(const Aws::String& value) { m_aWSAccountIdsHasBeenSet = true; m_aWSAccountIds.push_back(value); return *this; }
 
     /**
-     * <p>The account numbers of the <a
+     * <p>The Amazon Web Services account numbers of the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a>
-     * who are to receive permission. For information about locating the account
-     * identification, see <a
+     * who are to receive permission. For information about locating the Amazon Web
+     * Services account identification, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your
      * Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer
      * Guide</i>.</p>
@@ -243,10 +243,10 @@ namespace Model
     inline AddPermissionRequest& AddAWSAccountIds(Aws::String&& value) { m_aWSAccountIdsHasBeenSet = true; m_aWSAccountIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The account numbers of the <a
+     * <p>The Amazon Web Services account numbers of the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a>
-     * who are to receive permission. For information about locating the account
-     * identification, see <a
+     * who are to receive permission. For information about locating the Amazon Web
+     * Services account identification, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your
      * Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer
      * Guide</i>.</p>

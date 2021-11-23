@@ -37,7 +37,13 @@ RestoreDBClusterToPointInTimeRequest::RestoreDBClusterToPointInTimeRequest() :
     m_domainHasBeenSet(false),
     m_domainIAMRoleNameHasBeenSet(false),
     m_scalingConfigurationHasBeenSet(false),
-    m_engineModeHasBeenSet(false)
+    m_engineModeHasBeenSet(false),
+    m_dBClusterInstanceClassHasBeenSet(false),
+    m_storageTypeHasBeenSet(false),
+    m_publiclyAccessible(false),
+    m_publiclyAccessibleHasBeenSet(false),
+    m_iops(0),
+    m_iopsHasBeenSet(false)
 {
 }
 
@@ -165,6 +171,26 @@ Aws::String RestoreDBClusterToPointInTimeRequest::SerializePayload() const
   if(m_engineModeHasBeenSet)
   {
     ss << "EngineMode=" << StringUtils::URLEncode(m_engineMode.c_str()) << "&";
+  }
+
+  if(m_dBClusterInstanceClassHasBeenSet)
+  {
+    ss << "DBClusterInstanceClass=" << StringUtils::URLEncode(m_dBClusterInstanceClass.c_str()) << "&";
+  }
+
+  if(m_storageTypeHasBeenSet)
+  {
+    ss << "StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
+  }
+
+  if(m_publiclyAccessibleHasBeenSet)
+  {
+    ss << "PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
+  }
+
+  if(m_iopsHasBeenSet)
+  {
+    ss << "Iops=" << m_iops << "&";
   }
 
   ss << "Version=2014-10-31";

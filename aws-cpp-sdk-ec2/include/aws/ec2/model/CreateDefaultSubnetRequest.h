@@ -109,6 +109,35 @@ namespace Model
      */
     inline CreateDefaultSubnetRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether to create an IPv6 only subnet. If you already have a
+     * default subnet for this Availability Zone, you must delete it before you can
+     * create an IPv6 only subnet.</p>
+     */
+    inline bool GetIpv6Native() const{ return m_ipv6Native; }
+
+    /**
+     * <p>Indicates whether to create an IPv6 only subnet. If you already have a
+     * default subnet for this Availability Zone, you must delete it before you can
+     * create an IPv6 only subnet.</p>
+     */
+    inline bool Ipv6NativeHasBeenSet() const { return m_ipv6NativeHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to create an IPv6 only subnet. If you already have a
+     * default subnet for this Availability Zone, you must delete it before you can
+     * create an IPv6 only subnet.</p>
+     */
+    inline void SetIpv6Native(bool value) { m_ipv6NativeHasBeenSet = true; m_ipv6Native = value; }
+
+    /**
+     * <p>Indicates whether to create an IPv6 only subnet. If you already have a
+     * default subnet for this Availability Zone, you must delete it before you can
+     * create an IPv6 only subnet.</p>
+     */
+    inline CreateDefaultSubnetRequest& WithIpv6Native(bool value) { SetIpv6Native(value); return *this;}
+
   private:
 
     Aws::String m_availabilityZone;
@@ -116,6 +145,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
+    bool m_ipv6Native;
+    bool m_ipv6NativeHasBeenSet;
   };
 
 } // namespace Model

@@ -66,7 +66,9 @@ OrderableDBInstanceOption::OrderableDBInstanceOption() :
     m_outpostCapableHasBeenSet(false),
     m_supportedActivityStreamModesHasBeenSet(false),
     m_supportsGlobalDatabases(false),
-    m_supportsGlobalDatabasesHasBeenSet(false)
+    m_supportsGlobalDatabasesHasBeenSet(false),
+    m_supportsClusters(false),
+    m_supportsClustersHasBeenSet(false)
 {
 }
 
@@ -116,7 +118,9 @@ OrderableDBInstanceOption::OrderableDBInstanceOption(const XmlNode& xmlNode) :
     m_outpostCapableHasBeenSet(false),
     m_supportedActivityStreamModesHasBeenSet(false),
     m_supportsGlobalDatabases(false),
-    m_supportsGlobalDatabasesHasBeenSet(false)
+    m_supportsGlobalDatabasesHasBeenSet(false),
+    m_supportsClusters(false),
+    m_supportsClustersHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -319,6 +323,12 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator =(const XmlNode& 
       m_supportsGlobalDatabases = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsGlobalDatabasesNode.GetText()).c_str()).c_str());
       m_supportsGlobalDatabasesHasBeenSet = true;
     }
+    XmlNode supportsClustersNode = resultNode.FirstChild("SupportsClusters");
+    if(!supportsClustersNode.IsNull())
+    {
+      m_supportsClusters = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsClustersNode.GetText()).c_str()).c_str());
+      m_supportsClustersHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -486,6 +496,11 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << index << locationValue << ".SupportsGlobalDatabases=" << std::boolalpha << m_supportsGlobalDatabases << "&";
   }
 
+  if(m_supportsClustersHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsClusters=" << std::boolalpha << m_supportsClusters << "&";
+  }
+
 }
 
 void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -621,6 +636,10 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   if(m_supportsGlobalDatabasesHasBeenSet)
   {
       oStream << location << ".SupportsGlobalDatabases=" << std::boolalpha << m_supportsGlobalDatabases << "&";
+  }
+  if(m_supportsClustersHasBeenSet)
+  {
+      oStream << location << ".SupportsClusters=" << std::boolalpha << m_supportsClusters << "&";
   }
 }
 

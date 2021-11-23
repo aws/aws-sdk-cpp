@@ -115,6 +115,19 @@ namespace Model
      */
     inline SuiteRunConfiguration& AddSelectedTestList(const char* value) { m_selectedTestListHasBeenSet = true; m_selectedTestList.push_back(value); return *this; }
 
+
+    
+    inline bool GetParallelRun() const{ return m_parallelRun; }
+
+    
+    inline bool ParallelRunHasBeenSet() const { return m_parallelRunHasBeenSet; }
+
+    
+    inline void SetParallelRun(bool value) { m_parallelRunHasBeenSet = true; m_parallelRun = value; }
+
+    
+    inline SuiteRunConfiguration& WithParallelRun(bool value) { SetParallelRun(value); return *this;}
+
   private:
 
     DeviceUnderTest m_primaryDevice;
@@ -122,6 +135,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_selectedTestList;
     bool m_selectedTestListHasBeenSet;
+
+    bool m_parallelRun;
+    bool m_parallelRunHasBeenSet;
   };
 
 } // namespace Model

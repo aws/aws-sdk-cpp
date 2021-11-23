@@ -21,6 +21,7 @@
 #include <aws/ec2/model/HibernationOptionsRequest.h>
 #include <aws/ec2/model/InstanceMetadataOptionsRequest.h>
 #include <aws/ec2/model/EnclaveOptionsRequest.h>
+#include <aws/ec2/model/PrivateDnsNameOptionsRequest.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <aws/ec2/model/InstanceIpv6Address.h>
 #include <aws/ec2/model/InstanceNetworkInterfaceSpecification.h>
@@ -955,89 +956,97 @@ namespace Model
 
     /**
      * <p>The user data to make available to the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-     * commands on your Linux instance at launch</a> (Linux) and <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). If you are using a command line tool, base64-encoding
-     * is performed for you, and you can load the text from a file. Otherwise, you must
-     * provide base64-encoded text. User data is limited to 16 KB.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
+     * commands on your Linux instance at launch</a> and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run
+     * commands on your Windows instance at launch</a>. If you are using a command line
+     * tool, base64-encoding is performed for you, and you can load the text from a
+     * file. Otherwise, you must provide base64-encoded text. User data is limited to
+     * 16 KB.</p>
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
 
     /**
      * <p>The user data to make available to the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-     * commands on your Linux instance at launch</a> (Linux) and <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). If you are using a command line tool, base64-encoding
-     * is performed for you, and you can load the text from a file. Otherwise, you must
-     * provide base64-encoded text. User data is limited to 16 KB.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
+     * commands on your Linux instance at launch</a> and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run
+     * commands on your Windows instance at launch</a>. If you are using a command line
+     * tool, base64-encoding is performed for you, and you can load the text from a
+     * file. Otherwise, you must provide base64-encoded text. User data is limited to
+     * 16 KB.</p>
      */
     inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
 
     /**
      * <p>The user data to make available to the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-     * commands on your Linux instance at launch</a> (Linux) and <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). If you are using a command line tool, base64-encoding
-     * is performed for you, and you can load the text from a file. Otherwise, you must
-     * provide base64-encoded text. User data is limited to 16 KB.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
+     * commands on your Linux instance at launch</a> and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run
+     * commands on your Windows instance at launch</a>. If you are using a command line
+     * tool, base64-encoding is performed for you, and you can load the text from a
+     * file. Otherwise, you must provide base64-encoded text. User data is limited to
+     * 16 KB.</p>
      */
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
      * <p>The user data to make available to the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-     * commands on your Linux instance at launch</a> (Linux) and <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). If you are using a command line tool, base64-encoding
-     * is performed for you, and you can load the text from a file. Otherwise, you must
-     * provide base64-encoded text. User data is limited to 16 KB.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
+     * commands on your Linux instance at launch</a> and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run
+     * commands on your Windows instance at launch</a>. If you are using a command line
+     * tool, base64-encoding is performed for you, and you can load the text from a
+     * file. Otherwise, you must provide base64-encoded text. User data is limited to
+     * 16 KB.</p>
      */
     inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
     /**
      * <p>The user data to make available to the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-     * commands on your Linux instance at launch</a> (Linux) and <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). If you are using a command line tool, base64-encoding
-     * is performed for you, and you can load the text from a file. Otherwise, you must
-     * provide base64-encoded text. User data is limited to 16 KB.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
+     * commands on your Linux instance at launch</a> and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run
+     * commands on your Windows instance at launch</a>. If you are using a command line
+     * tool, base64-encoding is performed for you, and you can load the text from a
+     * file. Otherwise, you must provide base64-encoded text. User data is limited to
+     * 16 KB.</p>
      */
     inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
 
     /**
      * <p>The user data to make available to the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-     * commands on your Linux instance at launch</a> (Linux) and <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). If you are using a command line tool, base64-encoding
-     * is performed for you, and you can load the text from a file. Otherwise, you must
-     * provide base64-encoded text. User data is limited to 16 KB.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
+     * commands on your Linux instance at launch</a> and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run
+     * commands on your Windows instance at launch</a>. If you are using a command line
+     * tool, base64-encoding is performed for you, and you can load the text from a
+     * file. Otherwise, you must provide base64-encoded text. User data is limited to
+     * 16 KB.</p>
      */
     inline RunInstancesRequest& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
 
     /**
      * <p>The user data to make available to the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-     * commands on your Linux instance at launch</a> (Linux) and <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). If you are using a command line tool, base64-encoding
-     * is performed for you, and you can load the text from a file. Otherwise, you must
-     * provide base64-encoded text. User data is limited to 16 KB.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
+     * commands on your Linux instance at launch</a> and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run
+     * commands on your Windows instance at launch</a>. If you are using a command line
+     * tool, base64-encoding is performed for you, and you can load the text from a
+     * file. Otherwise, you must provide base64-encoded text. User data is limited to
+     * 16 KB.</p>
      */
     inline RunInstancesRequest& WithUserData(Aws::String&& value) { SetUserData(std::move(value)); return *this;}
 
     /**
      * <p>The user data to make available to the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-     * commands on your Linux instance at launch</a> (Linux) and <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). If you are using a command line tool, base64-encoding
-     * is performed for you, and you can load the text from a file. Otherwise, you must
-     * provide base64-encoded text. User data is limited to 16 KB.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
+     * commands on your Linux instance at launch</a> and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run
+     * commands on your Windows instance at launch</a>. If you are using a command line
+     * tool, base64-encoding is performed for you, and you can load the text from a
+     * file. Otherwise, you must provide base64-encoded text. User data is limited to
+     * 16 KB.</p>
      */
     inline RunInstancesRequest& WithUserData(const char* value) { SetUserData(value); return *this;}
 
@@ -1891,42 +1900,42 @@ namespace Model
 
     /**
      * <p>The CPU options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize
      * CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const CpuOptionsRequest& GetCpuOptions() const{ return m_cpuOptions; }
 
     /**
      * <p>The CPU options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize
      * CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool CpuOptionsHasBeenSet() const { return m_cpuOptionsHasBeenSet; }
 
     /**
      * <p>The CPU options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize
      * CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetCpuOptions(const CpuOptionsRequest& value) { m_cpuOptionsHasBeenSet = true; m_cpuOptions = value; }
 
     /**
      * <p>The CPU options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize
      * CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetCpuOptions(CpuOptionsRequest&& value) { m_cpuOptionsHasBeenSet = true; m_cpuOptions = std::move(value); }
 
     /**
      * <p>The CPU options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize
      * CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RunInstancesRequest& WithCpuOptions(const CpuOptionsRequest& value) { SetCpuOptions(value); return *this;}
 
     /**
      * <p>The CPU options for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize
      * CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RunInstancesRequest& WithCpuOptions(CpuOptionsRequest&& value) { SetCpuOptions(std::move(value)); return *this;}
@@ -2180,6 +2189,43 @@ namespace Model
      */
     inline RunInstancesRequest& WithEnclaveOptions(EnclaveOptionsRequest&& value) { SetEnclaveOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The options for the instance hostname. The default values are inherited from
+     * the subnet.</p>
+     */
+    inline const PrivateDnsNameOptionsRequest& GetPrivateDnsNameOptions() const{ return m_privateDnsNameOptions; }
+
+    /**
+     * <p>The options for the instance hostname. The default values are inherited from
+     * the subnet.</p>
+     */
+    inline bool PrivateDnsNameOptionsHasBeenSet() const { return m_privateDnsNameOptionsHasBeenSet; }
+
+    /**
+     * <p>The options for the instance hostname. The default values are inherited from
+     * the subnet.</p>
+     */
+    inline void SetPrivateDnsNameOptions(const PrivateDnsNameOptionsRequest& value) { m_privateDnsNameOptionsHasBeenSet = true; m_privateDnsNameOptions = value; }
+
+    /**
+     * <p>The options for the instance hostname. The default values are inherited from
+     * the subnet.</p>
+     */
+    inline void SetPrivateDnsNameOptions(PrivateDnsNameOptionsRequest&& value) { m_privateDnsNameOptionsHasBeenSet = true; m_privateDnsNameOptions = std::move(value); }
+
+    /**
+     * <p>The options for the instance hostname. The default values are inherited from
+     * the subnet.</p>
+     */
+    inline RunInstancesRequest& WithPrivateDnsNameOptions(const PrivateDnsNameOptionsRequest& value) { SetPrivateDnsNameOptions(value); return *this;}
+
+    /**
+     * <p>The options for the instance hostname. The default values are inherited from
+     * the subnet.</p>
+     */
+    inline RunInstancesRequest& WithPrivateDnsNameOptions(PrivateDnsNameOptionsRequest&& value) { SetPrivateDnsNameOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
@@ -2292,6 +2338,9 @@ namespace Model
 
     EnclaveOptionsRequest m_enclaveOptions;
     bool m_enclaveOptionsHasBeenSet;
+
+    PrivateDnsNameOptionsRequest m_privateDnsNameOptions;
+    bool m_privateDnsNameOptionsHasBeenSet;
   };
 
 } // namespace Model

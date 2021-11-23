@@ -176,7 +176,7 @@ namespace Model
      * <p> Each audit supression must have a unique client request token. If you try to
      * create a new audit suppression with the same token as one that already exists,
      * an exception occurs. If you omit this value, Amazon Web Services SDKs will
-     * automatically generate a unique client request. </p>
+     * automatically generate a unique client request.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
@@ -184,7 +184,7 @@ namespace Model
      * <p> Each audit supression must have a unique client request token. If you try to
      * create a new audit suppression with the same token as one that already exists,
      * an exception occurs. If you omit this value, Amazon Web Services SDKs will
-     * automatically generate a unique client request. </p>
+     * automatically generate a unique client request.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
@@ -192,7 +192,7 @@ namespace Model
      * <p> Each audit supression must have a unique client request token. If you try to
      * create a new audit suppression with the same token as one that already exists,
      * an exception occurs. If you omit this value, Amazon Web Services SDKs will
-     * automatically generate a unique client request. </p>
+     * automatically generate a unique client request.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
@@ -200,7 +200,7 @@ namespace Model
      * <p> Each audit supression must have a unique client request token. If you try to
      * create a new audit suppression with the same token as one that already exists,
      * an exception occurs. If you omit this value, Amazon Web Services SDKs will
-     * automatically generate a unique client request. </p>
+     * automatically generate a unique client request.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
@@ -208,7 +208,7 @@ namespace Model
      * <p> Each audit supression must have a unique client request token. If you try to
      * create a new audit suppression with the same token as one that already exists,
      * an exception occurs. If you omit this value, Amazon Web Services SDKs will
-     * automatically generate a unique client request. </p>
+     * automatically generate a unique client request.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
@@ -216,7 +216,7 @@ namespace Model
      * <p> Each audit supression must have a unique client request token. If you try to
      * create a new audit suppression with the same token as one that already exists,
      * an exception occurs. If you omit this value, Amazon Web Services SDKs will
-     * automatically generate a unique client request. </p>
+     * automatically generate a unique client request.</p>
      */
     inline CreateAuditSuppressionRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
@@ -224,7 +224,7 @@ namespace Model
      * <p> Each audit supression must have a unique client request token. If you try to
      * create a new audit suppression with the same token as one that already exists,
      * an exception occurs. If you omit this value, Amazon Web Services SDKs will
-     * automatically generate a unique client request. </p>
+     * automatically generate a unique client request.</p>
      */
     inline CreateAuditSuppressionRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
@@ -232,7 +232,7 @@ namespace Model
      * <p> Each audit supression must have a unique client request token. If you try to
      * create a new audit suppression with the same token as one that already exists,
      * an exception occurs. If you omit this value, Amazon Web Services SDKs will
-     * automatically generate a unique client request. </p>
+     * automatically generate a unique client request.</p>
      */
     inline CreateAuditSuppressionRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 

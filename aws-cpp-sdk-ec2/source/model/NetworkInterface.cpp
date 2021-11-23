@@ -49,7 +49,10 @@ NetworkInterface::NetworkInterface() :
     m_tagSetHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_denyAllIgwTraffic(false),
-    m_denyAllIgwTrafficHasBeenSet(false)
+    m_denyAllIgwTrafficHasBeenSet(false),
+    m_ipv6Native(false),
+    m_ipv6NativeHasBeenSet(false),
+    m_ipv6AddressHasBeenSet(false)
 {
 }
 
@@ -82,7 +85,10 @@ NetworkInterface::NetworkInterface(const XmlNode& xmlNode) :
     m_tagSetHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_denyAllIgwTraffic(false),
-    m_denyAllIgwTrafficHasBeenSet(false)
+    m_denyAllIgwTrafficHasBeenSet(false),
+    m_ipv6Native(false),
+    m_ipv6NativeHasBeenSet(false),
+    m_ipv6AddressHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -273,6 +279,18 @@ NetworkInterface& NetworkInterface::operator =(const XmlNode& xmlNode)
       m_denyAllIgwTraffic = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(denyAllIgwTrafficNode.GetText()).c_str()).c_str());
       m_denyAllIgwTrafficHasBeenSet = true;
     }
+    XmlNode ipv6NativeNode = resultNode.FirstChild("ipv6Native");
+    if(!ipv6NativeNode.IsNull())
+    {
+      m_ipv6Native = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipv6NativeNode.GetText()).c_str()).c_str());
+      m_ipv6NativeHasBeenSet = true;
+    }
+    XmlNode ipv6AddressNode = resultNode.FirstChild("ipv6Address");
+    if(!ipv6AddressNode.IsNull())
+    {
+      m_ipv6Address = Aws::Utils::Xml::DecodeEscapedXmlText(ipv6AddressNode.GetText());
+      m_ipv6AddressHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -440,6 +458,16 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".DenyAllIgwTraffic=" << std::boolalpha << m_denyAllIgwTraffic << "&";
   }
 
+  if(m_ipv6NativeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Ipv6Native=" << std::boolalpha << m_ipv6Native << "&";
+  }
+
+  if(m_ipv6AddressHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Ipv6Address=" << StringUtils::URLEncode(m_ipv6Address.c_str()) << "&";
+  }
+
 }
 
 void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -579,6 +607,14 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_denyAllIgwTrafficHasBeenSet)
   {
       oStream << location << ".DenyAllIgwTraffic=" << std::boolalpha << m_denyAllIgwTraffic << "&";
+  }
+  if(m_ipv6NativeHasBeenSet)
+  {
+      oStream << location << ".Ipv6Native=" << std::boolalpha << m_ipv6Native << "&";
+  }
+  if(m_ipv6AddressHasBeenSet)
+  {
+      oStream << location << ".Ipv6Address=" << StringUtils::URLEncode(m_ipv6Address.c_str()) << "&";
   }
 }
 

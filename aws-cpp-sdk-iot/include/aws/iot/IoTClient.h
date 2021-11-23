@@ -93,6 +93,7 @@
 #include <aws/iot/model/DescribeJobResult.h>
 #include <aws/iot/model/DescribeJobExecutionResult.h>
 #include <aws/iot/model/DescribeJobTemplateResult.h>
+#include <aws/iot/model/DescribeManagedJobTemplateResult.h>
 #include <aws/iot/model/DescribeMitigationActionResult.h>
 #include <aws/iot/model/DescribeProvisioningTemplateResult.h>
 #include <aws/iot/model/DescribeProvisioningTemplateVersionResult.h>
@@ -145,6 +146,7 @@
 #include <aws/iot/model/ListJobExecutionsForThingResult.h>
 #include <aws/iot/model/ListJobTemplatesResult.h>
 #include <aws/iot/model/ListJobsResult.h>
+#include <aws/iot/model/ListManagedJobTemplatesResult.h>
 #include <aws/iot/model/ListMitigationActionsResult.h>
 #include <aws/iot/model/ListOTAUpdatesResult.h>
 #include <aws/iot/model/ListOutgoingCertificatesResult.h>
@@ -350,6 +352,7 @@ namespace Model
         class DescribeJobRequest;
         class DescribeJobExecutionRequest;
         class DescribeJobTemplateRequest;
+        class DescribeManagedJobTemplateRequest;
         class DescribeMitigationActionRequest;
         class DescribeProvisioningTemplateRequest;
         class DescribeProvisioningTemplateVersionRequest;
@@ -405,6 +408,7 @@ namespace Model
         class ListJobExecutionsForThingRequest;
         class ListJobTemplatesRequest;
         class ListJobsRequest;
+        class ListManagedJobTemplatesRequest;
         class ListMitigationActionsRequest;
         class ListOTAUpdatesRequest;
         class ListOutgoingCertificatesRequest;
@@ -581,6 +585,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeJobResult, IoTError> DescribeJobOutcome;
         typedef Aws::Utils::Outcome<DescribeJobExecutionResult, IoTError> DescribeJobExecutionOutcome;
         typedef Aws::Utils::Outcome<DescribeJobTemplateResult, IoTError> DescribeJobTemplateOutcome;
+        typedef Aws::Utils::Outcome<DescribeManagedJobTemplateResult, IoTError> DescribeManagedJobTemplateOutcome;
         typedef Aws::Utils::Outcome<DescribeMitigationActionResult, IoTError> DescribeMitigationActionOutcome;
         typedef Aws::Utils::Outcome<DescribeProvisioningTemplateResult, IoTError> DescribeProvisioningTemplateOutcome;
         typedef Aws::Utils::Outcome<DescribeProvisioningTemplateVersionResult, IoTError> DescribeProvisioningTemplateVersionOutcome;
@@ -636,6 +641,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListJobExecutionsForThingResult, IoTError> ListJobExecutionsForThingOutcome;
         typedef Aws::Utils::Outcome<ListJobTemplatesResult, IoTError> ListJobTemplatesOutcome;
         typedef Aws::Utils::Outcome<ListJobsResult, IoTError> ListJobsOutcome;
+        typedef Aws::Utils::Outcome<ListManagedJobTemplatesResult, IoTError> ListManagedJobTemplatesOutcome;
         typedef Aws::Utils::Outcome<ListMitigationActionsResult, IoTError> ListMitigationActionsOutcome;
         typedef Aws::Utils::Outcome<ListOTAUpdatesResult, IoTError> ListOTAUpdatesOutcome;
         typedef Aws::Utils::Outcome<ListOutgoingCertificatesResult, IoTError> ListOutgoingCertificatesOutcome;
@@ -812,6 +818,7 @@ namespace Model
         typedef std::future<DescribeJobOutcome> DescribeJobOutcomeCallable;
         typedef std::future<DescribeJobExecutionOutcome> DescribeJobExecutionOutcomeCallable;
         typedef std::future<DescribeJobTemplateOutcome> DescribeJobTemplateOutcomeCallable;
+        typedef std::future<DescribeManagedJobTemplateOutcome> DescribeManagedJobTemplateOutcomeCallable;
         typedef std::future<DescribeMitigationActionOutcome> DescribeMitigationActionOutcomeCallable;
         typedef std::future<DescribeProvisioningTemplateOutcome> DescribeProvisioningTemplateOutcomeCallable;
         typedef std::future<DescribeProvisioningTemplateVersionOutcome> DescribeProvisioningTemplateVersionOutcomeCallable;
@@ -867,6 +874,7 @@ namespace Model
         typedef std::future<ListJobExecutionsForThingOutcome> ListJobExecutionsForThingOutcomeCallable;
         typedef std::future<ListJobTemplatesOutcome> ListJobTemplatesOutcomeCallable;
         typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
+        typedef std::future<ListManagedJobTemplatesOutcome> ListManagedJobTemplatesOutcomeCallable;
         typedef std::future<ListMitigationActionsOutcome> ListMitigationActionsOutcomeCallable;
         typedef std::future<ListOTAUpdatesOutcome> ListOTAUpdatesOutcomeCallable;
         typedef std::future<ListOutgoingCertificatesOutcome> ListOutgoingCertificatesOutcomeCallable;
@@ -1046,6 +1054,7 @@ namespace Model
     typedef std::function<void(const IoTClient*, const Model::DescribeJobRequest&, const Model::DescribeJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeJobExecutionRequest&, const Model::DescribeJobExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobExecutionResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeJobTemplateRequest&, const Model::DescribeJobTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobTemplateResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::DescribeManagedJobTemplateRequest&, const Model::DescribeManagedJobTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeManagedJobTemplateResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeMitigationActionRequest&, const Model::DescribeMitigationActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMitigationActionResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeProvisioningTemplateRequest&, const Model::DescribeProvisioningTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProvisioningTemplateResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeProvisioningTemplateVersionRequest&, const Model::DescribeProvisioningTemplateVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProvisioningTemplateVersionResponseReceivedHandler;
@@ -1101,6 +1110,7 @@ namespace Model
     typedef std::function<void(const IoTClient*, const Model::ListJobExecutionsForThingRequest&, const Model::ListJobExecutionsForThingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobExecutionsForThingResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListJobTemplatesRequest&, const Model::ListJobTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobTemplatesResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::ListManagedJobTemplatesRequest&, const Model::ListManagedJobTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListManagedJobTemplatesResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListMitigationActionsRequest&, const Model::ListMitigationActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMitigationActionsResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListOTAUpdatesRequest&, const Model::ListOTAUpdatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOTAUpdatesResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListOutgoingCertificatesRequest&, const Model::ListOutgoingCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOutgoingCertificatesResponseReceivedHandler;
@@ -1884,10 +1894,12 @@ namespace Model
         /**
          * <p>Creates an X.509 certificate using the specified certificate signing
          * request.</p> <p> <b>Note:</b> The CSR must include a public key that is either
-         * an RSA key with a length of at least 2048 bits or an ECC key from NIST P-256 or
-         * NIST P-384 curves. </p> <p> <b>Note:</b> Reusing the same certificate signing
-         * request (CSR) results in a distinct certificate.</p> <p>Requires permission to
-         * access the <a
+         * an RSA key with a length of at least 2048 bits or an ECC key from NIST P-256,
+         * NIST P-384, or NIST P-512 curves. For supported certificates, consult <a
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
+         * Certificate signing algorithms supported by IoT</a>.</p> <p> <b>Note:</b>
+         * Reusing the same certificate signing request (CSR) results in a distinct
+         * certificate.</p> <p>Requires permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCertificateFromCsr</a>
          * action.</p> <p>You can create multiple certificates in a batch by creating a
          * directory, copying multiple .csr files into that directory, and then specifying
@@ -1919,10 +1931,12 @@ namespace Model
         /**
          * <p>Creates an X.509 certificate using the specified certificate signing
          * request.</p> <p> <b>Note:</b> The CSR must include a public key that is either
-         * an RSA key with a length of at least 2048 bits or an ECC key from NIST P-256 or
-         * NIST P-384 curves. </p> <p> <b>Note:</b> Reusing the same certificate signing
-         * request (CSR) results in a distinct certificate.</p> <p>Requires permission to
-         * access the <a
+         * an RSA key with a length of at least 2048 bits or an ECC key from NIST P-256,
+         * NIST P-384, or NIST P-512 curves. For supported certificates, consult <a
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
+         * Certificate signing algorithms supported by IoT</a>.</p> <p> <b>Note:</b>
+         * Reusing the same certificate signing request (CSR) results in a distinct
+         * certificate.</p> <p>Requires permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCertificateFromCsr</a>
          * action.</p> <p>You can create multiple certificates in a batch by creating a
          * directory, copying multiple .csr files into that directory, and then specifying
@@ -1956,10 +1970,12 @@ namespace Model
         /**
          * <p>Creates an X.509 certificate using the specified certificate signing
          * request.</p> <p> <b>Note:</b> The CSR must include a public key that is either
-         * an RSA key with a length of at least 2048 bits or an ECC key from NIST P-256 or
-         * NIST P-384 curves. </p> <p> <b>Note:</b> Reusing the same certificate signing
-         * request (CSR) results in a distinct certificate.</p> <p>Requires permission to
-         * access the <a
+         * an RSA key with a length of at least 2048 bits or an ECC key from NIST P-256,
+         * NIST P-384, or NIST P-512 curves. For supported certificates, consult <a
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
+         * Certificate signing algorithms supported by IoT</a>.</p> <p> <b>Note:</b>
+         * Reusing the same certificate signing request (CSR) results in a distinct
+         * certificate.</p> <p>Requires permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCertificateFromCsr</a>
          * action.</p> <p>You can create multiple certificates in a batch by creating a
          * directory, copying multiple .csr files into that directory, and then specifying
@@ -4693,6 +4709,31 @@ namespace Model
         virtual void DescribeJobTemplateAsync(const Model::DescribeJobTemplateRequest& request, const DescribeJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>View details of a managed job template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeManagedJobTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeManagedJobTemplateOutcome DescribeManagedJobTemplate(const Model::DescribeManagedJobTemplateRequest& request) const;
+
+        /**
+         * <p>View details of a managed job template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeManagedJobTemplate">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeManagedJobTemplateOutcomeCallable DescribeManagedJobTemplateCallable(const Model::DescribeManagedJobTemplateRequest& request) const;
+
+        /**
+         * <p>View details of a managed job template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeManagedJobTemplate">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeManagedJobTemplateAsync(const Model::DescribeManagedJobTemplateRequest& request, const DescribeManagedJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets information about a mitigation action.</p> <p>Requires permission to
          * access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeMitigationAction</a>
@@ -6593,6 +6634,31 @@ namespace Model
         virtual void ListJobsAsync(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of managed job templates.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListManagedJobTemplates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListManagedJobTemplatesOutcome ListManagedJobTemplates(const Model::ListManagedJobTemplatesRequest& request) const;
+
+        /**
+         * <p>Returns a list of managed job templates.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListManagedJobTemplates">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListManagedJobTemplatesOutcomeCallable ListManagedJobTemplatesCallable(const Model::ListManagedJobTemplatesRequest& request) const;
+
+        /**
+         * <p>Returns a list of managed job templates.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListManagedJobTemplates">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListManagedJobTemplatesAsync(const Model::ListManagedJobTemplatesRequest& request, const ListManagedJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets a list of all mitigation actions that match the specified filter
          * criteria.</p> <p>Requires permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListMitigationActions</a>
@@ -7714,16 +7780,22 @@ namespace Model
         virtual void RegisterCertificateAsync(const Model::RegisterCertificateRequest& request, const RegisterCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Register a certificate that does not have a certificate authority
-         * (CA).</p><p><h3>See Also:</h3>   <a
+         * <p>Register a certificate that does not have a certificate authority (CA). For
+         * supported certificates, consult <a
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
+         * Certificate signing algorithms supported by IoT</a>. </p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCertificateWithoutCA">AWS
          * API Reference</a></p>
          */
         virtual Model::RegisterCertificateWithoutCAOutcome RegisterCertificateWithoutCA(const Model::RegisterCertificateWithoutCARequest& request) const;
 
         /**
-         * <p>Register a certificate that does not have a certificate authority
-         * (CA).</p><p><h3>See Also:</h3>   <a
+         * <p>Register a certificate that does not have a certificate authority (CA). For
+         * supported certificates, consult <a
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
+         * Certificate signing algorithms supported by IoT</a>. </p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCertificateWithoutCA">AWS
          * API Reference</a></p>
          *
@@ -7732,8 +7804,11 @@ namespace Model
         virtual Model::RegisterCertificateWithoutCAOutcomeCallable RegisterCertificateWithoutCACallable(const Model::RegisterCertificateWithoutCARequest& request) const;
 
         /**
-         * <p>Register a certificate that does not have a certificate authority
-         * (CA).</p><p><h3>See Also:</h3>   <a
+         * <p>Register a certificate that does not have a certificate authority (CA). For
+         * supported certificates, consult <a
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
+         * Certificate signing algorithms supported by IoT</a>. </p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCertificateWithoutCA">AWS
          * API Reference</a></p>
          *
@@ -7843,7 +7918,8 @@ namespace Model
          * <p>Removes the given thing from the billing group.</p> <p>Requires permission to
          * access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RemoveThingFromBillingGroup</a>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * action.</p>  <p>This call is asynchronous. It might take several seconds
+         * for the detachment to propagate.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RemoveThingFromBillingGroup">AWS
          * API Reference</a></p>
          */
@@ -7853,7 +7929,8 @@ namespace Model
          * <p>Removes the given thing from the billing group.</p> <p>Requires permission to
          * access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RemoveThingFromBillingGroup</a>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * action.</p>  <p>This call is asynchronous. It might take several seconds
+         * for the detachment to propagate.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RemoveThingFromBillingGroup">AWS
          * API Reference</a></p>
          *
@@ -7865,7 +7942,8 @@ namespace Model
          * <p>Removes the given thing from the billing group.</p> <p>Requires permission to
          * access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RemoveThingFromBillingGroup</a>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * action.</p>  <p>This call is asynchronous. It might take several seconds
+         * for the detachment to propagate.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RemoveThingFromBillingGroup">AWS
          * API Reference</a></p>
          *
@@ -9480,6 +9558,7 @@ namespace Model
         void DescribeJobAsyncHelper(const Model::DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeJobExecutionAsyncHelper(const Model::DescribeJobExecutionRequest& request, const DescribeJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeJobTemplateAsyncHelper(const Model::DescribeJobTemplateRequest& request, const DescribeJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeManagedJobTemplateAsyncHelper(const Model::DescribeManagedJobTemplateRequest& request, const DescribeManagedJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMitigationActionAsyncHelper(const Model::DescribeMitigationActionRequest& request, const DescribeMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProvisioningTemplateAsyncHelper(const Model::DescribeProvisioningTemplateRequest& request, const DescribeProvisioningTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProvisioningTemplateVersionAsyncHelper(const Model::DescribeProvisioningTemplateVersionRequest& request, const DescribeProvisioningTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -9535,6 +9614,7 @@ namespace Model
         void ListJobExecutionsForThingAsyncHelper(const Model::ListJobExecutionsForThingRequest& request, const ListJobExecutionsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListJobTemplatesAsyncHelper(const Model::ListJobTemplatesRequest& request, const ListJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListJobsAsyncHelper(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListManagedJobTemplatesAsyncHelper(const Model::ListManagedJobTemplatesRequest& request, const ListManagedJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMitigationActionsAsyncHelper(const Model::ListMitigationActionsRequest& request, const ListMitigationActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListOTAUpdatesAsyncHelper(const Model::ListOTAUpdatesRequest& request, const ListOTAUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListOutgoingCertificatesAsyncHelper(const Model::ListOutgoingCertificatesRequest& request, const ListOutgoingCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

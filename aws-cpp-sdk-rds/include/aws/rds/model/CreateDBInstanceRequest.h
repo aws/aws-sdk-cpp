@@ -682,80 +682,80 @@ namespace Model
 
 
     /**
-     * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * Amazon Web Services Regions, or for all database engines. For the full list of
-     * DB instance classes, and availability for your engine, see <a
+     * <p>The compute and memory capacity of the DB instance, for example db.m4.large.
+     * Not all DB instance classes are available in all Amazon Web Services Regions, or
+     * for all database engines. For the full list of DB instance classes, and
+     * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
     /**
-     * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * Amazon Web Services Regions, or for all database engines. For the full list of
-     * DB instance classes, and availability for your engine, see <a
+     * <p>The compute and memory capacity of the DB instance, for example db.m4.large.
+     * Not all DB instance classes are available in all Amazon Web Services Regions, or
+     * for all database engines. For the full list of DB instance classes, and
+     * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
 
     /**
-     * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * Amazon Web Services Regions, or for all database engines. For the full list of
-     * DB instance classes, and availability for your engine, see <a
+     * <p>The compute and memory capacity of the DB instance, for example db.m4.large.
+     * Not all DB instance classes are available in all Amazon Web Services Regions, or
+     * for all database engines. For the full list of DB instance classes, and
+     * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
-     * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * Amazon Web Services Regions, or for all database engines. For the full list of
-     * DB instance classes, and availability for your engine, see <a
+     * <p>The compute and memory capacity of the DB instance, for example db.m4.large.
+     * Not all DB instance classes are available in all Amazon Web Services Regions, or
+     * for all database engines. For the full list of DB instance classes, and
+     * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
     /**
-     * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * Amazon Web Services Regions, or for all database engines. For the full list of
-     * DB instance classes, and availability for your engine, see <a
+     * <p>The compute and memory capacity of the DB instance, for example db.m4.large.
+     * Not all DB instance classes are available in all Amazon Web Services Regions, or
+     * for all database engines. For the full list of DB instance classes, and
+     * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
     /**
-     * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * Amazon Web Services Regions, or for all database engines. For the full list of
-     * DB instance classes, and availability for your engine, see <a
+     * <p>The compute and memory capacity of the DB instance, for example db.m4.large.
+     * Not all DB instance classes are available in all Amazon Web Services Regions, or
+     * for all database engines. For the full list of DB instance classes, and
+     * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
     /**
-     * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * Amazon Web Services Regions, or for all database engines. For the full list of
-     * DB instance classes, and availability for your engine, see <a
+     * <p>The compute and memory capacity of the DB instance, for example db.m4.large.
+     * Not all DB instance classes are available in all Amazon Web Services Regions, or
+     * for all database engines. For the full list of DB instance classes, and
+     * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
     /**
-     * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * Amazon Web Services Regions, or for all database engines. For the full list of
-     * DB instance classes, and availability for your engine, see <a
+     * <p>The compute and memory capacity of the DB instance, for example db.m4.large.
+     * Not all DB instance classes are available in all Amazon Web Services Regions, or
+     * for all database engines. For the full list of DB instance classes, and
+     * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
@@ -1875,19 +1875,19 @@ namespace Model
      * <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom DB instance</a> in the <i>Amazon RDS User Guide.</i>.</p>
-     * <p> <b>MariaDB</b> </p> <p>See <a
+     * <p> <b>MariaDB</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
-     * <b>Microsoft SQL Server</b> </p> <p>See <a
+     * <b>Microsoft SQL Server</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
      * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
-     * <p> <b>MySQL</b> </p> <p>See <a
+     * <p> <b>MySQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
-     * <b>Oracle</b> </p> <p>See <a
+     * <b>Oracle</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
-     * <b>PostgreSQL</b> </p> <p>See <a
+     * <b>PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
      * Guide.</i> </p>
@@ -1908,19 +1908,19 @@ namespace Model
      * <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom DB instance</a> in the <i>Amazon RDS User Guide.</i>.</p>
-     * <p> <b>MariaDB</b> </p> <p>See <a
+     * <p> <b>MariaDB</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
-     * <b>Microsoft SQL Server</b> </p> <p>See <a
+     * <b>Microsoft SQL Server</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
      * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
-     * <p> <b>MySQL</b> </p> <p>See <a
+     * <p> <b>MySQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
-     * <b>Oracle</b> </p> <p>See <a
+     * <b>Oracle</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
-     * <b>PostgreSQL</b> </p> <p>See <a
+     * <b>PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
      * Guide.</i> </p>
@@ -1941,19 +1941,19 @@ namespace Model
      * <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom DB instance</a> in the <i>Amazon RDS User Guide.</i>.</p>
-     * <p> <b>MariaDB</b> </p> <p>See <a
+     * <p> <b>MariaDB</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
-     * <b>Microsoft SQL Server</b> </p> <p>See <a
+     * <b>Microsoft SQL Server</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
      * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
-     * <p> <b>MySQL</b> </p> <p>See <a
+     * <p> <b>MySQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
-     * <b>Oracle</b> </p> <p>See <a
+     * <b>Oracle</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
-     * <b>PostgreSQL</b> </p> <p>See <a
+     * <b>PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
      * Guide.</i> </p>
@@ -1974,19 +1974,19 @@ namespace Model
      * <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom DB instance</a> in the <i>Amazon RDS User Guide.</i>.</p>
-     * <p> <b>MariaDB</b> </p> <p>See <a
+     * <p> <b>MariaDB</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
-     * <b>Microsoft SQL Server</b> </p> <p>See <a
+     * <b>Microsoft SQL Server</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
      * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
-     * <p> <b>MySQL</b> </p> <p>See <a
+     * <p> <b>MySQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
-     * <b>Oracle</b> </p> <p>See <a
+     * <b>Oracle</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
-     * <b>PostgreSQL</b> </p> <p>See <a
+     * <b>PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
      * Guide.</i> </p>
@@ -2007,19 +2007,19 @@ namespace Model
      * <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom DB instance</a> in the <i>Amazon RDS User Guide.</i>.</p>
-     * <p> <b>MariaDB</b> </p> <p>See <a
+     * <p> <b>MariaDB</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
-     * <b>Microsoft SQL Server</b> </p> <p>See <a
+     * <b>Microsoft SQL Server</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
      * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
-     * <p> <b>MySQL</b> </p> <p>See <a
+     * <p> <b>MySQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
-     * <b>Oracle</b> </p> <p>See <a
+     * <b>Oracle</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
-     * <b>PostgreSQL</b> </p> <p>See <a
+     * <b>PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
      * Guide.</i> </p>
@@ -2040,19 +2040,19 @@ namespace Model
      * <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom DB instance</a> in the <i>Amazon RDS User Guide.</i>.</p>
-     * <p> <b>MariaDB</b> </p> <p>See <a
+     * <p> <b>MariaDB</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
-     * <b>Microsoft SQL Server</b> </p> <p>See <a
+     * <b>Microsoft SQL Server</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
      * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
-     * <p> <b>MySQL</b> </p> <p>See <a
+     * <p> <b>MySQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
-     * <b>Oracle</b> </p> <p>See <a
+     * <b>Oracle</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
-     * <b>PostgreSQL</b> </p> <p>See <a
+     * <b>PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
      * Guide.</i> </p>
@@ -2073,19 +2073,19 @@ namespace Model
      * <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom DB instance</a> in the <i>Amazon RDS User Guide.</i>.</p>
-     * <p> <b>MariaDB</b> </p> <p>See <a
+     * <p> <b>MariaDB</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
-     * <b>Microsoft SQL Server</b> </p> <p>See <a
+     * <b>Microsoft SQL Server</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
      * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
-     * <p> <b>MySQL</b> </p> <p>See <a
+     * <p> <b>MySQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
-     * <b>Oracle</b> </p> <p>See <a
+     * <b>Oracle</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
-     * <b>PostgreSQL</b> </p> <p>See <a
+     * <b>PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
      * Guide.</i> </p>
@@ -2106,19 +2106,19 @@ namespace Model
      * <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom DB instance</a> in the <i>Amazon RDS User Guide.</i>.</p>
-     * <p> <b>MariaDB</b> </p> <p>See <a
+     * <p> <b>MariaDB</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
-     * <b>Microsoft SQL Server</b> </p> <p>See <a
+     * <b>Microsoft SQL Server</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
      * SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
-     * <p> <b>MySQL</b> </p> <p>See <a
+     * <p> <b>MySQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
-     * <b>Oracle</b> </p> <p>See <a
+     * <b>Oracle</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
-     * <b>PostgreSQL</b> </p> <p>See <a
+     * <b>PostgreSQL</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
      * Guide.</i> </p>
@@ -2230,10 +2230,10 @@ namespace Model
 
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
-     * initially allocated for the DB instance. For information about valid Iops
-     * values, see <a
+     * initially allocated for the DB instance. For information about valid
+     * <code>Iops</code> values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-     * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
+     * RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS
      * User Guide</i>. </p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL
      * DB instances, must be a multiple between .5 and 50 of the storage amount for the
      * DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of
@@ -2243,10 +2243,10 @@ namespace Model
 
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
-     * initially allocated for the DB instance. For information about valid Iops
-     * values, see <a
+     * initially allocated for the DB instance. For information about valid
+     * <code>Iops</code> values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-     * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
+     * RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS
      * User Guide</i>. </p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL
      * DB instances, must be a multiple between .5 and 50 of the storage amount for the
      * DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of
@@ -2256,10 +2256,10 @@ namespace Model
 
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
-     * initially allocated for the DB instance. For information about valid Iops
-     * values, see <a
+     * initially allocated for the DB instance. For information about valid
+     * <code>Iops</code> values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-     * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
+     * RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS
      * User Guide</i>. </p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL
      * DB instances, must be a multiple between .5 and 50 of the storage amount for the
      * DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of
@@ -2269,10 +2269,10 @@ namespace Model
 
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
-     * initially allocated for the DB instance. For information about valid Iops
-     * values, see <a
+     * initially allocated for the DB instance. For information about valid
+     * <code>Iops</code> values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-     * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
+     * RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS
      * User Guide</i>. </p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL
      * DB instances, must be a multiple between .5 and 50 of the storage amount for the
      * DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of
@@ -2486,96 +2486,100 @@ namespace Model
 
     /**
      * <p>A value that indicates whether the DB instance is publicly accessible.</p>
-     * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
-     * private IP address from within the DB instance's VPC, and to the public IP
-     * address from outside of the DB instance's VPC. Access to the DB instance is
-     * ultimately controlled by the security group it uses, and that public access is
-     * not permitted if the security group assigned to the DB instance doesn't permit
-     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
-     * instance with a DNS name that resolves to a private IP address.</p> <p>Default:
-     * The default behavior varies depending on whether <code>DBSubnetGroupName</code>
-     * is specified.</p> <p>If <code>DBSubnetGroupName</code> isn't specified, and
+     * <p>When the DB instance is publicly accessible, its Domain Name System (DNS)
+     * endpoint resolves to the private IP address from within the DB instance's
+     * virtual private cloud (VPC). It resolves to the public IP address from outside
+     * of the DB instance's VPC. Access to the DB instance is ultimately controlled by
+     * the security group it uses. That public access is not permitted if the security
+     * group assigned to the DB instance doesn't permit it.</p> <p>When the DB instance
+     * isn't publicly accessible, it is an internal DB instance with a DNS name that
+     * resolves to a private IP address.</p> <p>Default: The default behavior varies
+     * depending on whether <code>DBSubnetGroupName</code> is specified.</p> <p>If
+     * <code>DBSubnetGroupName</code> isn't specified, and
      * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
-     * <li> <p>If the default VPC in the target region doesn’t have an Internet gateway
+     * <li> <p>If the default VPC in the target Region doesn’t have an internet gateway
      * attached to it, the DB instance is private.</p> </li> <li> <p>If the default VPC
-     * in the target region has an Internet gateway attached to it, the DB instance is
+     * in the target Region has an internet gateway attached to it, the DB instance is
      * public.</p> </li> </ul> <p>If <code>DBSubnetGroupName</code> is specified, and
      * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
-     * <li> <p>If the subnets are part of a VPC that doesn’t have an Internet gateway
+     * <li> <p>If the subnets are part of a VPC that doesn’t have an internet gateway
      * attached to it, the DB instance is private.</p> </li> <li> <p>If the subnets are
-     * part of a VPC that has an Internet gateway attached to it, the DB instance is
+     * part of a VPC that has an internet gateway attached to it, the DB instance is
      * public.</p> </li> </ul>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
     /**
      * <p>A value that indicates whether the DB instance is publicly accessible.</p>
-     * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
-     * private IP address from within the DB instance's VPC, and to the public IP
-     * address from outside of the DB instance's VPC. Access to the DB instance is
-     * ultimately controlled by the security group it uses, and that public access is
-     * not permitted if the security group assigned to the DB instance doesn't permit
-     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
-     * instance with a DNS name that resolves to a private IP address.</p> <p>Default:
-     * The default behavior varies depending on whether <code>DBSubnetGroupName</code>
-     * is specified.</p> <p>If <code>DBSubnetGroupName</code> isn't specified, and
+     * <p>When the DB instance is publicly accessible, its Domain Name System (DNS)
+     * endpoint resolves to the private IP address from within the DB instance's
+     * virtual private cloud (VPC). It resolves to the public IP address from outside
+     * of the DB instance's VPC. Access to the DB instance is ultimately controlled by
+     * the security group it uses. That public access is not permitted if the security
+     * group assigned to the DB instance doesn't permit it.</p> <p>When the DB instance
+     * isn't publicly accessible, it is an internal DB instance with a DNS name that
+     * resolves to a private IP address.</p> <p>Default: The default behavior varies
+     * depending on whether <code>DBSubnetGroupName</code> is specified.</p> <p>If
+     * <code>DBSubnetGroupName</code> isn't specified, and
      * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
-     * <li> <p>If the default VPC in the target region doesn’t have an Internet gateway
+     * <li> <p>If the default VPC in the target Region doesn’t have an internet gateway
      * attached to it, the DB instance is private.</p> </li> <li> <p>If the default VPC
-     * in the target region has an Internet gateway attached to it, the DB instance is
+     * in the target Region has an internet gateway attached to it, the DB instance is
      * public.</p> </li> </ul> <p>If <code>DBSubnetGroupName</code> is specified, and
      * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
-     * <li> <p>If the subnets are part of a VPC that doesn’t have an Internet gateway
+     * <li> <p>If the subnets are part of a VPC that doesn’t have an internet gateway
      * attached to it, the DB instance is private.</p> </li> <li> <p>If the subnets are
-     * part of a VPC that has an Internet gateway attached to it, the DB instance is
+     * part of a VPC that has an internet gateway attached to it, the DB instance is
      * public.</p> </li> </ul>
      */
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
 
     /**
      * <p>A value that indicates whether the DB instance is publicly accessible.</p>
-     * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
-     * private IP address from within the DB instance's VPC, and to the public IP
-     * address from outside of the DB instance's VPC. Access to the DB instance is
-     * ultimately controlled by the security group it uses, and that public access is
-     * not permitted if the security group assigned to the DB instance doesn't permit
-     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
-     * instance with a DNS name that resolves to a private IP address.</p> <p>Default:
-     * The default behavior varies depending on whether <code>DBSubnetGroupName</code>
-     * is specified.</p> <p>If <code>DBSubnetGroupName</code> isn't specified, and
+     * <p>When the DB instance is publicly accessible, its Domain Name System (DNS)
+     * endpoint resolves to the private IP address from within the DB instance's
+     * virtual private cloud (VPC). It resolves to the public IP address from outside
+     * of the DB instance's VPC. Access to the DB instance is ultimately controlled by
+     * the security group it uses. That public access is not permitted if the security
+     * group assigned to the DB instance doesn't permit it.</p> <p>When the DB instance
+     * isn't publicly accessible, it is an internal DB instance with a DNS name that
+     * resolves to a private IP address.</p> <p>Default: The default behavior varies
+     * depending on whether <code>DBSubnetGroupName</code> is specified.</p> <p>If
+     * <code>DBSubnetGroupName</code> isn't specified, and
      * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
-     * <li> <p>If the default VPC in the target region doesn’t have an Internet gateway
+     * <li> <p>If the default VPC in the target Region doesn’t have an internet gateway
      * attached to it, the DB instance is private.</p> </li> <li> <p>If the default VPC
-     * in the target region has an Internet gateway attached to it, the DB instance is
+     * in the target Region has an internet gateway attached to it, the DB instance is
      * public.</p> </li> </ul> <p>If <code>DBSubnetGroupName</code> is specified, and
      * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
-     * <li> <p>If the subnets are part of a VPC that doesn’t have an Internet gateway
+     * <li> <p>If the subnets are part of a VPC that doesn’t have an internet gateway
      * attached to it, the DB instance is private.</p> </li> <li> <p>If the subnets are
-     * part of a VPC that has an Internet gateway attached to it, the DB instance is
+     * part of a VPC that has an internet gateway attached to it, the DB instance is
      * public.</p> </li> </ul>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
      * <p>A value that indicates whether the DB instance is publicly accessible.</p>
-     * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
-     * private IP address from within the DB instance's VPC, and to the public IP
-     * address from outside of the DB instance's VPC. Access to the DB instance is
-     * ultimately controlled by the security group it uses, and that public access is
-     * not permitted if the security group assigned to the DB instance doesn't permit
-     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
-     * instance with a DNS name that resolves to a private IP address.</p> <p>Default:
-     * The default behavior varies depending on whether <code>DBSubnetGroupName</code>
-     * is specified.</p> <p>If <code>DBSubnetGroupName</code> isn't specified, and
+     * <p>When the DB instance is publicly accessible, its Domain Name System (DNS)
+     * endpoint resolves to the private IP address from within the DB instance's
+     * virtual private cloud (VPC). It resolves to the public IP address from outside
+     * of the DB instance's VPC. Access to the DB instance is ultimately controlled by
+     * the security group it uses. That public access is not permitted if the security
+     * group assigned to the DB instance doesn't permit it.</p> <p>When the DB instance
+     * isn't publicly accessible, it is an internal DB instance with a DNS name that
+     * resolves to a private IP address.</p> <p>Default: The default behavior varies
+     * depending on whether <code>DBSubnetGroupName</code> is specified.</p> <p>If
+     * <code>DBSubnetGroupName</code> isn't specified, and
      * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
-     * <li> <p>If the default VPC in the target region doesn’t have an Internet gateway
+     * <li> <p>If the default VPC in the target Region doesn’t have an internet gateway
      * attached to it, the DB instance is private.</p> </li> <li> <p>If the default VPC
-     * in the target region has an Internet gateway attached to it, the DB instance is
+     * in the target Region has an internet gateway attached to it, the DB instance is
      * public.</p> </li> </ul> <p>If <code>DBSubnetGroupName</code> is specified, and
      * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
-     * <li> <p>If the subnets are part of a VPC that doesn’t have an Internet gateway
+     * <li> <p>If the subnets are part of a VPC that doesn’t have an internet gateway
      * attached to it, the DB instance is private.</p> </li> <li> <p>If the subnets are
-     * part of a VPC that has an Internet gateway attached to it, the DB instance is
+     * part of a VPC that has an internet gateway attached to it, the DB instance is
      * public.</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
@@ -3462,7 +3466,7 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of Amazon Web Services
      * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping is disabled.</p> <p>This setting doesn't apply to RDS Custom or Amazon
+     * mapping isn't enabled.</p> <p>This setting doesn't apply to RDS Custom or Amazon
      * Aurora. In Aurora, mapping Amazon Web Services IAM accounts to database accounts
      * is managed by the DB cluster.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -3474,7 +3478,7 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of Amazon Web Services
      * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping is disabled.</p> <p>This setting doesn't apply to RDS Custom or Amazon
+     * mapping isn't enabled.</p> <p>This setting doesn't apply to RDS Custom or Amazon
      * Aurora. In Aurora, mapping Amazon Web Services IAM accounts to database accounts
      * is managed by the DB cluster.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -3486,7 +3490,7 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of Amazon Web Services
      * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping is disabled.</p> <p>This setting doesn't apply to RDS Custom or Amazon
+     * mapping isn't enabled.</p> <p>This setting doesn't apply to RDS Custom or Amazon
      * Aurora. In Aurora, mapping Amazon Web Services IAM accounts to database accounts
      * is managed by the DB cluster.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -3498,7 +3502,7 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of Amazon Web Services
      * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping is disabled.</p> <p>This setting doesn't apply to RDS Custom or Amazon
+     * mapping isn't enabled.</p> <p>This setting doesn't apply to RDS Custom or Amazon
      * Aurora. In Aurora, mapping Amazon Web Services IAM accounts to database accounts
      * is managed by the DB cluster.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -3921,7 +3925,7 @@ namespace Model
     /**
      * <p>A value that indicates whether the DB instance has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. For more information, see <a
+     * default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not
      * applicable. You can enable or disable deletion protection for the DB cluster.
@@ -3934,7 +3938,7 @@ namespace Model
     /**
      * <p>A value that indicates whether the DB instance has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. For more information, see <a
+     * default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not
      * applicable. You can enable or disable deletion protection for the DB cluster.
@@ -3947,7 +3951,7 @@ namespace Model
     /**
      * <p>A value that indicates whether the DB instance has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. For more information, see <a
+     * default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not
      * applicable. You can enable or disable deletion protection for the DB cluster.
@@ -3960,7 +3964,7 @@ namespace Model
     /**
      * <p>A value that indicates whether the DB instance has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. For more information, see <a
+     * default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not
      * applicable. You can enable or disable deletion protection for the DB cluster.

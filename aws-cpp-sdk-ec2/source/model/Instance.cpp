@@ -84,7 +84,9 @@ Instance::Instance() :
     m_bootModeHasBeenSet(false),
     m_platformDetailsHasBeenSet(false),
     m_usageOperationHasBeenSet(false),
-    m_usageOperationUpdateTimeHasBeenSet(false)
+    m_usageOperationUpdateTimeHasBeenSet(false),
+    m_privateDnsNameOptionsHasBeenSet(false),
+    m_ipv6AddressHasBeenSet(false)
 {
 }
 
@@ -152,7 +154,9 @@ Instance::Instance(const XmlNode& xmlNode) :
     m_bootModeHasBeenSet(false),
     m_platformDetailsHasBeenSet(false),
     m_usageOperationHasBeenSet(false),
-    m_usageOperationUpdateTimeHasBeenSet(false)
+    m_usageOperationUpdateTimeHasBeenSet(false),
+    m_privateDnsNameOptionsHasBeenSet(false),
+    m_ipv6AddressHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -523,6 +527,18 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
       m_usageOperationUpdateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(usageOperationUpdateTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_usageOperationUpdateTimeHasBeenSet = true;
     }
+    XmlNode privateDnsNameOptionsNode = resultNode.FirstChild("privateDnsNameOptions");
+    if(!privateDnsNameOptionsNode.IsNull())
+    {
+      m_privateDnsNameOptions = privateDnsNameOptionsNode;
+      m_privateDnsNameOptionsHasBeenSet = true;
+    }
+    XmlNode ipv6AddressNode = resultNode.FirstChild("ipv6Address");
+    if(!ipv6AddressNode.IsNull())
+    {
+      m_ipv6Address = Aws::Utils::Xml::DecodeEscapedXmlText(ipv6AddressNode.GetText());
+      m_ipv6AddressHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -858,6 +874,18 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".UsageOperationUpdateTime=" << StringUtils::URLEncode(m_usageOperationUpdateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_privateDnsNameOptionsHasBeenSet)
+  {
+      Aws::StringStream privateDnsNameOptionsLocationAndMemberSs;
+      privateDnsNameOptionsLocationAndMemberSs << location << index << locationValue << ".PrivateDnsNameOptions";
+      m_privateDnsNameOptions.OutputToStream(oStream, privateDnsNameOptionsLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_ipv6AddressHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Ipv6Address=" << StringUtils::URLEncode(m_ipv6Address.c_str()) << "&";
+  }
+
 }
 
 void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1137,6 +1165,16 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_usageOperationUpdateTimeHasBeenSet)
   {
       oStream << location << ".UsageOperationUpdateTime=" << StringUtils::URLEncode(m_usageOperationUpdateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_privateDnsNameOptionsHasBeenSet)
+  {
+      Aws::String privateDnsNameOptionsLocationAndMember(location);
+      privateDnsNameOptionsLocationAndMember += ".PrivateDnsNameOptions";
+      m_privateDnsNameOptions.OutputToStream(oStream, privateDnsNameOptionsLocationAndMember.c_str());
+  }
+  if(m_ipv6AddressHasBeenSet)
+  {
+      oStream << location << ".Ipv6Address=" << StringUtils::URLEncode(m_ipv6Address.c_str()) << "&";
   }
 }
 

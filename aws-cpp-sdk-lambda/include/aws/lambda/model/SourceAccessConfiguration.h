@@ -57,7 +57,8 @@ namespace Model
      * Manager ARN of your secret key used for SASL SCRAM-512 authentication of your
      * self-managed Apache Kafka brokers.</p> </li> <li> <p> <code>VIRTUAL_HOST</code>
      * - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses
-     * this RabbitMQ host as the event source.</p> </li> </ul>
+     * this RabbitMQ host as the event source. This property cannot be specified in an
+     * UpdateEventSourceMapping API call.</p> </li> </ul>
      */
     inline const SourceAccessType& GetType() const{ return m_type; }
 
@@ -78,7 +79,8 @@ namespace Model
      * Manager ARN of your secret key used for SASL SCRAM-512 authentication of your
      * self-managed Apache Kafka brokers.</p> </li> <li> <p> <code>VIRTUAL_HOST</code>
      * - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses
-     * this RabbitMQ host as the event source.</p> </li> </ul>
+     * this RabbitMQ host as the event source. This property cannot be specified in an
+     * UpdateEventSourceMapping API call.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -99,7 +101,8 @@ namespace Model
      * Manager ARN of your secret key used for SASL SCRAM-512 authentication of your
      * self-managed Apache Kafka brokers.</p> </li> <li> <p> <code>VIRTUAL_HOST</code>
      * - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses
-     * this RabbitMQ host as the event source.</p> </li> </ul>
+     * this RabbitMQ host as the event source. This property cannot be specified in an
+     * UpdateEventSourceMapping API call.</p> </li> </ul>
      */
     inline void SetType(const SourceAccessType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -120,7 +123,8 @@ namespace Model
      * Manager ARN of your secret key used for SASL SCRAM-512 authentication of your
      * self-managed Apache Kafka brokers.</p> </li> <li> <p> <code>VIRTUAL_HOST</code>
      * - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses
-     * this RabbitMQ host as the event source.</p> </li> </ul>
+     * this RabbitMQ host as the event source. This property cannot be specified in an
+     * UpdateEventSourceMapping API call.</p> </li> </ul>
      */
     inline void SetType(SourceAccessType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -141,7 +145,8 @@ namespace Model
      * Manager ARN of your secret key used for SASL SCRAM-512 authentication of your
      * self-managed Apache Kafka brokers.</p> </li> <li> <p> <code>VIRTUAL_HOST</code>
      * - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses
-     * this RabbitMQ host as the event source.</p> </li> </ul>
+     * this RabbitMQ host as the event source. This property cannot be specified in an
+     * UpdateEventSourceMapping API call.</p> </li> </ul>
      */
     inline SourceAccessConfiguration& WithType(const SourceAccessType& value) { SetType(value); return *this;}
 
@@ -162,7 +167,8 @@ namespace Model
      * Manager ARN of your secret key used for SASL SCRAM-512 authentication of your
      * self-managed Apache Kafka brokers.</p> </li> <li> <p> <code>VIRTUAL_HOST</code>
      * - (Amazon MQ) The name of the virtual host in your RabbitMQ broker. Lambda uses
-     * this RabbitMQ host as the event source.</p> </li> </ul>
+     * this RabbitMQ host as the event source. This property cannot be specified in an
+     * UpdateEventSourceMapping API call.</p> </li> </ul>
      */
     inline SourceAccessConfiguration& WithType(SourceAccessType&& value) { SetType(std::move(value)); return *this;}
 

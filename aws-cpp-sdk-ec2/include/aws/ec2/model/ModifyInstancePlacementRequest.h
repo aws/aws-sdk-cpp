@@ -280,22 +280,26 @@ namespace Model
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The number of the partition in which to place the instance. Valid only if the
+     * placement group strategy is set to <code>partition</code>.</p>
      */
     inline int GetPartitionNumber() const{ return m_partitionNumber; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The number of the partition in which to place the instance. Valid only if the
+     * placement group strategy is set to <code>partition</code>.</p>
      */
     inline bool PartitionNumberHasBeenSet() const { return m_partitionNumberHasBeenSet; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The number of the partition in which to place the instance. Valid only if the
+     * placement group strategy is set to <code>partition</code>.</p>
      */
     inline void SetPartitionNumber(int value) { m_partitionNumberHasBeenSet = true; m_partitionNumber = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The number of the partition in which to place the instance. Valid only if the
+     * placement group strategy is set to <code>partition</code>.</p>
      */
     inline ModifyInstancePlacementRequest& WithPartitionNumber(int value) { SetPartitionNumber(value); return *this;}
 

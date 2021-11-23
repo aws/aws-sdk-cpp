@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>Provides information about the delegated Amazon Macie administrator account
-   * for an Amazon Web Services organization.</p><p><h3>See Also:</h3>   <a
+   * for an organization in Organizations.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AdminAccount">AWS
    * API Reference</a></p>
    */
@@ -81,38 +81,38 @@ namespace Model
 
 
     /**
-     * <p>The current status of the account as the delegated administrator of Amazon
-     * Macie for the organization.</p>
+     * <p>The current status of the account as the delegated Amazon Macie administrator
+     * account for the organization.</p>
      */
     inline const AdminStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The current status of the account as the delegated administrator of Amazon
-     * Macie for the organization.</p>
+     * <p>The current status of the account as the delegated Amazon Macie administrator
+     * account for the organization.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The current status of the account as the delegated administrator of Amazon
-     * Macie for the organization.</p>
+     * <p>The current status of the account as the delegated Amazon Macie administrator
+     * account for the organization.</p>
      */
     inline void SetStatus(const AdminStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The current status of the account as the delegated administrator of Amazon
-     * Macie for the organization.</p>
+     * <p>The current status of the account as the delegated Amazon Macie administrator
+     * account for the organization.</p>
      */
     inline void SetStatus(AdminStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The current status of the account as the delegated administrator of Amazon
-     * Macie for the organization.</p>
+     * <p>The current status of the account as the delegated Amazon Macie administrator
+     * account for the organization.</p>
      */
     inline AdminAccount& WithStatus(const AdminStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The current status of the account as the delegated administrator of Amazon
-     * Macie for the organization.</p>
+     * <p>The current status of the account as the delegated Amazon Macie administrator
+     * account for the organization.</p>
      */
     inline AdminAccount& WithStatus(AdminStatus&& value) { SetStatus(std::move(value)); return *this;}
 

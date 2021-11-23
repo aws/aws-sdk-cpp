@@ -88,6 +88,7 @@ static const int ACCESS_TO_CLUSTER_DENIED_FAULT_HASH = HashingUtils::HashString(
 static const int UNSUPPORTED_OPTION_FAULT_HASH = HashingUtils::HashString("UnsupportedOptionFault");
 static const int SNAPSHOT_COPY_GRANT_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("SnapshotCopyGrantQuotaExceededFault");
 static const int INSUFFICIENT_S3_BUCKET_POLICY_FAULT_HASH = HashingUtils::HashString("InsufficientS3BucketPolicyFault");
+static const int RESERVED_NODE_EXCHANGE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ReservedNodeExchangeNotFond");
 static const int RESIZE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ResizeNotFound");
 static const int INVALID_NAMESPACE_FAULT_HASH = HashingUtils::HashString("InvalidNamespaceFault");
 static const int INVALID_ENDPOINT_STATE_FAULT_HASH = HashingUtils::HashString("InvalidEndpointState");
@@ -503,6 +504,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INSUFFICIENT_S3_BUCKET_POLICY_FAULT), false);
     return true;
   }
+  else if (hashCode == RESERVED_NODE_EXCHANGE_NOT_FOUND_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::RESERVED_NODE_EXCHANGE_NOT_FOUND_FAULT), false);
+    return true;
+  }
   else if (hashCode == RESIZE_NOT_FOUND_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::RESIZE_NOT_FOUND_FAULT), false);
@@ -758,17 +764,17 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_CLUSTER_SECURITY_GROUP_STATE_FAULT), false);
     return true;
   }
-  else if (hashCode == CLUSTER_SUBNET_GROUP_NOT_FOUND_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SUBNET_GROUP_NOT_FOUND_FAULT), false);
-    return true;
-  }
   return false;
 }
 
 static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
 {
-  if (hashCode == SOURCE_NOT_FOUND_FAULT_HASH)
+  if (hashCode == CLUSTER_SUBNET_GROUP_NOT_FOUND_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SUBNET_GROUP_NOT_FOUND_FAULT), false);
+    return true;
+  }
+  else if (hashCode == SOURCE_NOT_FOUND_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SOURCE_NOT_FOUND_FAULT), false);
     return true;

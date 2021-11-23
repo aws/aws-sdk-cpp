@@ -7,6 +7,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lambda/model/FilterCriteria.h>
 #include <aws/lambda/model/DestinationConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lambda/model/SourceAccessConfiguration.h>
@@ -225,7 +226,8 @@ namespace Model
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
      * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> </ul>
+     * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> -
+     * Default 100. Max 10,000.</p> </li> </ul>
      */
     inline int GetBatchSize() const{ return m_batchSize; }
 
@@ -239,7 +241,8 @@ namespace Model
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
      * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> </ul>
+     * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> -
+     * Default 100. Max 10,000.</p> </li> </ul>
      */
     inline bool BatchSizeHasBeenSet() const { return m_batchSizeHasBeenSet; }
 
@@ -253,7 +256,8 @@ namespace Model
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
      * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> </ul>
+     * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> -
+     * Default 100. Max 10,000.</p> </li> </ul>
      */
     inline void SetBatchSize(int value) { m_batchSizeHasBeenSet = true; m_batchSize = value; }
 
@@ -267,9 +271,59 @@ namespace Model
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
      * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> </ul>
+     * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> -
+     * Default 100. Max 10,000.</p> </li> </ul>
      */
     inline UpdateEventSourceMappingRequest& WithBatchSize(int value) { SetBatchSize(value); return *this;}
+
+
+    /**
+     * <p>(Streams and Amazon SQS) A object that defines the filter criteria used to
+     * determine whether Lambda should process an event. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
+     * event filtering</a>.</p>
+     */
+    inline const FilterCriteria& GetFilterCriteria() const{ return m_filterCriteria; }
+
+    /**
+     * <p>(Streams and Amazon SQS) A object that defines the filter criteria used to
+     * determine whether Lambda should process an event. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
+     * event filtering</a>.</p>
+     */
+    inline bool FilterCriteriaHasBeenSet() const { return m_filterCriteriaHasBeenSet; }
+
+    /**
+     * <p>(Streams and Amazon SQS) A object that defines the filter criteria used to
+     * determine whether Lambda should process an event. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
+     * event filtering</a>.</p>
+     */
+    inline void SetFilterCriteria(const FilterCriteria& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = value; }
+
+    /**
+     * <p>(Streams and Amazon SQS) A object that defines the filter criteria used to
+     * determine whether Lambda should process an event. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
+     * event filtering</a>.</p>
+     */
+    inline void SetFilterCriteria(FilterCriteria&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::move(value); }
+
+    /**
+     * <p>(Streams and Amazon SQS) A object that defines the filter criteria used to
+     * determine whether Lambda should process an event. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
+     * event filtering</a>.</p>
+     */
+    inline UpdateEventSourceMappingRequest& WithFilterCriteria(const FilterCriteria& value) { SetFilterCriteria(value); return *this;}
+
+    /**
+     * <p>(Streams and Amazon SQS) A object that defines the filter criteria used to
+     * determine whether Lambda should process an event. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
+     * event filtering</a>.</p>
+     */
+    inline UpdateEventSourceMappingRequest& WithFilterCriteria(FilterCriteria&& value) { SetFilterCriteria(std::move(value)); return *this;}
 
 
     /**
@@ -585,6 +639,9 @@ namespace Model
 
     int m_batchSize;
     bool m_batchSizeHasBeenSet;
+
+    FilterCriteria m_filterCriteria;
+    bool m_filterCriteriaHasBeenSet;
 
     int m_maximumBatchingWindowInSeconds;
     bool m_maximumBatchingWindowInSecondsHasBeenSet;

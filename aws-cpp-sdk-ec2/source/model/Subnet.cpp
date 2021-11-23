@@ -45,7 +45,10 @@ Subnet::Subnet() :
     m_subnetArnHasBeenSet(false),
     m_outpostArnHasBeenSet(false),
     m_enableDns64(false),
-    m_enableDns64HasBeenSet(false)
+    m_enableDns64HasBeenSet(false),
+    m_ipv6Native(false),
+    m_ipv6NativeHasBeenSet(false),
+    m_privateDnsNameOptionsOnLaunchHasBeenSet(false)
 {
 }
 
@@ -74,7 +77,10 @@ Subnet::Subnet(const XmlNode& xmlNode) :
     m_subnetArnHasBeenSet(false),
     m_outpostArnHasBeenSet(false),
     m_enableDns64(false),
-    m_enableDns64HasBeenSet(false)
+    m_enableDns64HasBeenSet(false),
+    m_ipv6Native(false),
+    m_ipv6NativeHasBeenSet(false),
+    m_privateDnsNameOptionsOnLaunchHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -205,6 +211,18 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
       m_enableDns64 = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enableDns64Node.GetText()).c_str()).c_str());
       m_enableDns64HasBeenSet = true;
     }
+    XmlNode ipv6NativeNode = resultNode.FirstChild("ipv6Native");
+    if(!ipv6NativeNode.IsNull())
+    {
+      m_ipv6Native = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipv6NativeNode.GetText()).c_str()).c_str());
+      m_ipv6NativeHasBeenSet = true;
+    }
+    XmlNode privateDnsNameOptionsOnLaunchNode = resultNode.FirstChild("privateDnsNameOptionsOnLaunch");
+    if(!privateDnsNameOptionsOnLaunchNode.IsNull())
+    {
+      m_privateDnsNameOptionsOnLaunch = privateDnsNameOptionsOnLaunchNode;
+      m_privateDnsNameOptionsOnLaunchHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -314,6 +332,18 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       oStream << location << index << locationValue << ".EnableDns64=" << std::boolalpha << m_enableDns64 << "&";
   }
 
+  if(m_ipv6NativeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Ipv6Native=" << std::boolalpha << m_ipv6Native << "&";
+  }
+
+  if(m_privateDnsNameOptionsOnLaunchHasBeenSet)
+  {
+      Aws::StringStream privateDnsNameOptionsOnLaunchLocationAndMemberSs;
+      privateDnsNameOptionsOnLaunchLocationAndMemberSs << location << index << locationValue << ".PrivateDnsNameOptionsOnLaunch";
+      m_privateDnsNameOptionsOnLaunch.OutputToStream(oStream, privateDnsNameOptionsOnLaunchLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -401,6 +431,16 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_enableDns64HasBeenSet)
   {
       oStream << location << ".EnableDns64=" << std::boolalpha << m_enableDns64 << "&";
+  }
+  if(m_ipv6NativeHasBeenSet)
+  {
+      oStream << location << ".Ipv6Native=" << std::boolalpha << m_ipv6Native << "&";
+  }
+  if(m_privateDnsNameOptionsOnLaunchHasBeenSet)
+  {
+      Aws::String privateDnsNameOptionsOnLaunchLocationAndMember(location);
+      privateDnsNameOptionsOnLaunchLocationAndMember += ".PrivateDnsNameOptionsOnLaunch";
+      m_privateDnsNameOptionsOnLaunch.OutputToStream(oStream, privateDnsNameOptionsOnLaunchLocationAndMember.c_str());
   }
 }
 

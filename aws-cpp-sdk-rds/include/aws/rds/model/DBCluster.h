@@ -37,10 +37,28 @@ namespace Model
 {
 
   /**
-   * <p>Contains the details of an Amazon Aurora DB cluster. </p> <p>This data type
-   * is used as a response element in the <code>DescribeDBClusters</code>,
-   * <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
+   * </p> <p>For an Amazon Aurora DB cluster, this data type is used as a response
+   * element in the operations <code>CreateDBCluster</code>,
+   * <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+   * <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>,
+   * <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>,
+   * <code>RestoreDBClusterFromSnapshot</code>,
+   * <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and
+   * <code>StopDBCluster</code>.</p> <p>For a Multi-AZ DB cluster, this data type is
+   * used as a response element in the operations <code>CreateDBCluster</code>,
+   * <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+   * <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>,
+   * <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and
+   * <code>RestoreDBClusterToPointInTime</code>.</p> <p>For more information on
+   * Amazon Aurora DB clusters, see <a
+   * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+   * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> <p>For
+   * more information on Multi-AZ DB clusters, see <a
+   * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+   * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
+   * RDS User Guide.</i> </p>  <p>The Multi-AZ DB clusters feature is in
+   * preview and is subject to change.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBCluster">AWS API
    * Reference</a></p>
    */
@@ -2481,6 +2499,424 @@ namespace Model
      */
     inline DBCluster& WithPendingModifiedValues(ClusterPendingModifiedValues&& value) { SetPendingModifiedValues(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The name of the compute and memory capacity class of the DB instance.</p>
+     * <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline const Aws::String& GetDBClusterInstanceClass() const{ return m_dBClusterInstanceClass; }
+
+    /**
+     * <p>The name of the compute and memory capacity class of the DB instance.</p>
+     * <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline bool DBClusterInstanceClassHasBeenSet() const { return m_dBClusterInstanceClassHasBeenSet; }
+
+    /**
+     * <p>The name of the compute and memory capacity class of the DB instance.</p>
+     * <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline void SetDBClusterInstanceClass(const Aws::String& value) { m_dBClusterInstanceClassHasBeenSet = true; m_dBClusterInstanceClass = value; }
+
+    /**
+     * <p>The name of the compute and memory capacity class of the DB instance.</p>
+     * <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline void SetDBClusterInstanceClass(Aws::String&& value) { m_dBClusterInstanceClassHasBeenSet = true; m_dBClusterInstanceClass = std::move(value); }
+
+    /**
+     * <p>The name of the compute and memory capacity class of the DB instance.</p>
+     * <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline void SetDBClusterInstanceClass(const char* value) { m_dBClusterInstanceClassHasBeenSet = true; m_dBClusterInstanceClass.assign(value); }
+
+    /**
+     * <p>The name of the compute and memory capacity class of the DB instance.</p>
+     * <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline DBCluster& WithDBClusterInstanceClass(const Aws::String& value) { SetDBClusterInstanceClass(value); return *this;}
+
+    /**
+     * <p>The name of the compute and memory capacity class of the DB instance.</p>
+     * <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline DBCluster& WithDBClusterInstanceClass(Aws::String&& value) { SetDBClusterInstanceClass(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the compute and memory capacity class of the DB instance.</p>
+     * <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline DBCluster& WithDBClusterInstanceClass(const char* value) { SetDBClusterInstanceClass(value); return *this;}
+
+
+    /**
+     * <p>The storage type associated with DB instance.</p> <p>This setting is only for
+     * non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline const Aws::String& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * <p>The storage type associated with DB instance.</p> <p>This setting is only for
+     * non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    /**
+     * <p>The storage type associated with DB instance.</p> <p>This setting is only for
+     * non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+
+    /**
+     * <p>The storage type associated with DB instance.</p> <p>This setting is only for
+     * non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
+
+    /**
+     * <p>The storage type associated with DB instance.</p> <p>This setting is only for
+     * non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
+
+    /**
+     * <p>The storage type associated with DB instance.</p> <p>This setting is only for
+     * non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline DBCluster& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
+
+    /**
+     * <p>The storage type associated with DB instance.</p> <p>This setting is only for
+     * non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline DBCluster& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
+
+    /**
+     * <p>The storage type associated with DB instance.</p> <p>This setting is only for
+     * non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline DBCluster& WithStorageType(const char* value) { SetStorageType(value); return *this;}
+
+
+    /**
+     * <p>The Provisioned IOPS (I/O operations per second) value.</p> <p>This setting
+     * is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline int GetIops() const{ return m_iops; }
+
+    /**
+     * <p>The Provisioned IOPS (I/O operations per second) value.</p> <p>This setting
+     * is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
+
+    /**
+     * <p>The Provisioned IOPS (I/O operations per second) value.</p> <p>This setting
+     * is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
+
+    /**
+     * <p>The Provisioned IOPS (I/O operations per second) value.</p> <p>This setting
+     * is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline DBCluster& WithIops(int value) { SetIops(value); return *this;}
+
+
+    /**
+     * <p>Specifies the accessibility options for the DB instance.</p> <p>When the DB
+     * instance is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB instance's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB instance's
+     * VPC. Access to the DB instance is ultimately controlled by the security group it
+     * uses. That public access is not permitted if the security group assigned to the
+     * DB instance doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.</p> <p>For more information, see
+     * <a>CreateDBInstance</a>.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
+
+    /**
+     * <p>Specifies the accessibility options for the DB instance.</p> <p>When the DB
+     * instance is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB instance's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB instance's
+     * VPC. Access to the DB instance is ultimately controlled by the security group it
+     * uses. That public access is not permitted if the security group assigned to the
+     * DB instance doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.</p> <p>For more information, see
+     * <a>CreateDBInstance</a>.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
+
+    /**
+     * <p>Specifies the accessibility options for the DB instance.</p> <p>When the DB
+     * instance is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB instance's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB instance's
+     * VPC. Access to the DB instance is ultimately controlled by the security group it
+     * uses. That public access is not permitted if the security group assigned to the
+     * DB instance doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.</p> <p>For more information, see
+     * <a>CreateDBInstance</a>.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
+
+    /**
+     * <p>Specifies the accessibility options for the DB instance.</p> <p>When the DB
+     * instance is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB instance's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB instance's
+     * VPC. Access to the DB instance is ultimately controlled by the security group it
+     * uses. That public access is not permitted if the security group assigned to the
+     * DB instance doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.</p> <p>For more information, see
+     * <a>CreateDBInstance</a>.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline DBCluster& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
+
+
+    /**
+     * <p>A value that indicates that minor version patches are applied
+     * automatically.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
+
+    /**
+     * <p>A value that indicates that minor version patches are applied
+     * automatically.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
+
+    /**
+     * <p>A value that indicates that minor version patches are applied
+     * automatically.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
+
+    /**
+     * <p>A value that indicates that minor version patches are applied
+     * automatically.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline DBCluster& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
+
+
+    /**
+     * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
+     * collected for the DB cluster.</p> <p>This setting is only for non-Aurora
+     * Multi-AZ DB clusters.</p>
+     */
+    inline int GetMonitoringInterval() const{ return m_monitoringInterval; }
+
+    /**
+     * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
+     * collected for the DB cluster.</p> <p>This setting is only for non-Aurora
+     * Multi-AZ DB clusters.</p>
+     */
+    inline bool MonitoringIntervalHasBeenSet() const { return m_monitoringIntervalHasBeenSet; }
+
+    /**
+     * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
+     * collected for the DB cluster.</p> <p>This setting is only for non-Aurora
+     * Multi-AZ DB clusters.</p>
+     */
+    inline void SetMonitoringInterval(int value) { m_monitoringIntervalHasBeenSet = true; m_monitoringInterval = value; }
+
+    /**
+     * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
+     * collected for the DB cluster.</p> <p>This setting is only for non-Aurora
+     * Multi-AZ DB clusters.</p>
+     */
+    inline DBCluster& WithMonitoringInterval(int value) { SetMonitoringInterval(value); return *this;}
+
+
+    /**
+     * <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics
+     * to Amazon CloudWatch Logs.</p> <p>This setting is only for non-Aurora Multi-AZ
+     * DB clusters.</p>
+     */
+    inline const Aws::String& GetMonitoringRoleArn() const{ return m_monitoringRoleArn; }
+
+    /**
+     * <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics
+     * to Amazon CloudWatch Logs.</p> <p>This setting is only for non-Aurora Multi-AZ
+     * DB clusters.</p>
+     */
+    inline bool MonitoringRoleArnHasBeenSet() const { return m_monitoringRoleArnHasBeenSet; }
+
+    /**
+     * <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics
+     * to Amazon CloudWatch Logs.</p> <p>This setting is only for non-Aurora Multi-AZ
+     * DB clusters.</p>
+     */
+    inline void SetMonitoringRoleArn(const Aws::String& value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn = value; }
+
+    /**
+     * <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics
+     * to Amazon CloudWatch Logs.</p> <p>This setting is only for non-Aurora Multi-AZ
+     * DB clusters.</p>
+     */
+    inline void SetMonitoringRoleArn(Aws::String&& value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn = std::move(value); }
+
+    /**
+     * <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics
+     * to Amazon CloudWatch Logs.</p> <p>This setting is only for non-Aurora Multi-AZ
+     * DB clusters.</p>
+     */
+    inline void SetMonitoringRoleArn(const char* value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn.assign(value); }
+
+    /**
+     * <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics
+     * to Amazon CloudWatch Logs.</p> <p>This setting is only for non-Aurora Multi-AZ
+     * DB clusters.</p>
+     */
+    inline DBCluster& WithMonitoringRoleArn(const Aws::String& value) { SetMonitoringRoleArn(value); return *this;}
+
+    /**
+     * <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics
+     * to Amazon CloudWatch Logs.</p> <p>This setting is only for non-Aurora Multi-AZ
+     * DB clusters.</p>
+     */
+    inline DBCluster& WithMonitoringRoleArn(Aws::String&& value) { SetMonitoringRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics
+     * to Amazon CloudWatch Logs.</p> <p>This setting is only for non-Aurora Multi-AZ
+     * DB clusters.</p>
+     */
+    inline DBCluster& WithMonitoringRoleArn(const char* value) { SetMonitoringRoleArn(value); return *this;}
+
+
+    /**
+     * <p>True if Performance Insights is enabled for the DB cluster, and otherwise
+     * false.</p> <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline bool GetPerformanceInsightsEnabled() const{ return m_performanceInsightsEnabled; }
+
+    /**
+     * <p>True if Performance Insights is enabled for the DB cluster, and otherwise
+     * false.</p> <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline bool PerformanceInsightsEnabledHasBeenSet() const { return m_performanceInsightsEnabledHasBeenSet; }
+
+    /**
+     * <p>True if Performance Insights is enabled for the DB cluster, and otherwise
+     * false.</p> <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline void SetPerformanceInsightsEnabled(bool value) { m_performanceInsightsEnabledHasBeenSet = true; m_performanceInsightsEnabled = value; }
+
+    /**
+     * <p>True if Performance Insights is enabled for the DB cluster, and otherwise
+     * false.</p> <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline DBCluster& WithPerformanceInsightsEnabled(bool value) { SetPerformanceInsightsEnabled(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline DBCluster& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline DBCluster& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline DBCluster& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
+
+
+    /**
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years).</p> <p>This setting is only for non-Aurora
+     * Multi-AZ DB clusters.</p>
+     */
+    inline int GetPerformanceInsightsRetentionPeriod() const{ return m_performanceInsightsRetentionPeriod; }
+
+    /**
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years).</p> <p>This setting is only for non-Aurora
+     * Multi-AZ DB clusters.</p>
+     */
+    inline bool PerformanceInsightsRetentionPeriodHasBeenSet() const { return m_performanceInsightsRetentionPeriodHasBeenSet; }
+
+    /**
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years).</p> <p>This setting is only for non-Aurora
+     * Multi-AZ DB clusters.</p>
+     */
+    inline void SetPerformanceInsightsRetentionPeriod(int value) { m_performanceInsightsRetentionPeriodHasBeenSet = true; m_performanceInsightsRetentionPeriod = value; }
+
+    /**
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years).</p> <p>This setting is only for non-Aurora
+     * Multi-AZ DB clusters.</p>
+     */
+    inline DBCluster& WithPerformanceInsightsRetentionPeriod(int value) { SetPerformanceInsightsRetentionPeriod(value); return *this;}
+
   private:
 
     int m_allocatedStorage;
@@ -2653,6 +3089,36 @@ namespace Model
 
     ClusterPendingModifiedValues m_pendingModifiedValues;
     bool m_pendingModifiedValuesHasBeenSet;
+
+    Aws::String m_dBClusterInstanceClass;
+    bool m_dBClusterInstanceClassHasBeenSet;
+
+    Aws::String m_storageType;
+    bool m_storageTypeHasBeenSet;
+
+    int m_iops;
+    bool m_iopsHasBeenSet;
+
+    bool m_publiclyAccessible;
+    bool m_publiclyAccessibleHasBeenSet;
+
+    bool m_autoMinorVersionUpgrade;
+    bool m_autoMinorVersionUpgradeHasBeenSet;
+
+    int m_monitoringInterval;
+    bool m_monitoringIntervalHasBeenSet;
+
+    Aws::String m_monitoringRoleArn;
+    bool m_monitoringRoleArnHasBeenSet;
+
+    bool m_performanceInsightsEnabled;
+    bool m_performanceInsightsEnabledHasBeenSet;
+
+    Aws::String m_performanceInsightsKMSKeyId;
+    bool m_performanceInsightsKMSKeyIdHasBeenSet;
+
+    int m_performanceInsightsRetentionPeriod;
+    bool m_performanceInsightsRetentionPeriodHasBeenSet;
   };
 
 } // namespace Model

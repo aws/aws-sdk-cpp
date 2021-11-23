@@ -43,42 +43,50 @@ namespace Model
 
 
     /**
-     * <p>An optional display name for a backup rule.</p>
+     * <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.'
+     * characters.</p>
      */
     inline const Aws::String& GetRuleName() const{ return m_ruleName; }
 
     /**
-     * <p>An optional display name for a backup rule.</p>
+     * <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.'
+     * characters.</p>
      */
     inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
 
     /**
-     * <p>An optional display name for a backup rule.</p>
+     * <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.'
+     * characters.</p>
      */
     inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
 
     /**
-     * <p>An optional display name for a backup rule.</p>
+     * <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.'
+     * characters.</p>
      */
     inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
 
     /**
-     * <p>An optional display name for a backup rule.</p>
+     * <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.'
+     * characters.</p>
      */
     inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
 
     /**
-     * <p>An optional display name for a backup rule.</p>
+     * <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.'
+     * characters.</p>
      */
     inline BackupRule& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
 
     /**
-     * <p>An optional display name for a backup rule.</p>
+     * <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.'
+     * characters.</p>
      */
     inline BackupRule& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
 
     /**
-     * <p>An optional display name for a backup rule.</p>
+     * <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.'
+     * characters.</p>
      */
     inline BackupRule& WithRuleName(const char* value) { SetRuleName(value); return *this;}
 
@@ -150,81 +158,97 @@ namespace Model
 
     /**
      * <p>A cron expression in UTC specifying when Backup initiates a backup job. For
-     * more information about cron expressions, see <a
+     * more information about Amazon Web Services cron expressions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
      * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>.
-     * Prior to specifying a value for this parameter, we recommend testing your cron
-     * expression using one of the many available cron generator and testing tools.</p>
+     * Two examples of Amazon Web Services cron expressions are <code> 15 * ? * *
+     * *</code> (take a backup every hour at 15 minutes past the hour) and <code>0 12 *
+     * * ? *</code> (take a backup every day at 12 noon UTC). For a table of examples,
+     * click the preceding link and scroll down the page.</p>
      */
     inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
 
     /**
      * <p>A cron expression in UTC specifying when Backup initiates a backup job. For
-     * more information about cron expressions, see <a
+     * more information about Amazon Web Services cron expressions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
      * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>.
-     * Prior to specifying a value for this parameter, we recommend testing your cron
-     * expression using one of the many available cron generator and testing tools.</p>
+     * Two examples of Amazon Web Services cron expressions are <code> 15 * ? * *
+     * *</code> (take a backup every hour at 15 minutes past the hour) and <code>0 12 *
+     * * ? *</code> (take a backup every day at 12 noon UTC). For a table of examples,
+     * click the preceding link and scroll down the page.</p>
      */
     inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
 
     /**
      * <p>A cron expression in UTC specifying when Backup initiates a backup job. For
-     * more information about cron expressions, see <a
+     * more information about Amazon Web Services cron expressions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
      * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>.
-     * Prior to specifying a value for this parameter, we recommend testing your cron
-     * expression using one of the many available cron generator and testing tools.</p>
+     * Two examples of Amazon Web Services cron expressions are <code> 15 * ? * *
+     * *</code> (take a backup every hour at 15 minutes past the hour) and <code>0 12 *
+     * * ? *</code> (take a backup every day at 12 noon UTC). For a table of examples,
+     * click the preceding link and scroll down the page.</p>
      */
     inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
 
     /**
      * <p>A cron expression in UTC specifying when Backup initiates a backup job. For
-     * more information about cron expressions, see <a
+     * more information about Amazon Web Services cron expressions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
      * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>.
-     * Prior to specifying a value for this parameter, we recommend testing your cron
-     * expression using one of the many available cron generator and testing tools.</p>
+     * Two examples of Amazon Web Services cron expressions are <code> 15 * ? * *
+     * *</code> (take a backup every hour at 15 minutes past the hour) and <code>0 12 *
+     * * ? *</code> (take a backup every day at 12 noon UTC). For a table of examples,
+     * click the preceding link and scroll down the page.</p>
      */
     inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
 
     /**
      * <p>A cron expression in UTC specifying when Backup initiates a backup job. For
-     * more information about cron expressions, see <a
+     * more information about Amazon Web Services cron expressions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
      * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>.
-     * Prior to specifying a value for this parameter, we recommend testing your cron
-     * expression using one of the many available cron generator and testing tools.</p>
+     * Two examples of Amazon Web Services cron expressions are <code> 15 * ? * *
+     * *</code> (take a backup every hour at 15 minutes past the hour) and <code>0 12 *
+     * * ? *</code> (take a backup every day at 12 noon UTC). For a table of examples,
+     * click the preceding link and scroll down the page.</p>
      */
     inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
 
     /**
      * <p>A cron expression in UTC specifying when Backup initiates a backup job. For
-     * more information about cron expressions, see <a
+     * more information about Amazon Web Services cron expressions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
      * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>.
-     * Prior to specifying a value for this parameter, we recommend testing your cron
-     * expression using one of the many available cron generator and testing tools.</p>
+     * Two examples of Amazon Web Services cron expressions are <code> 15 * ? * *
+     * *</code> (take a backup every hour at 15 minutes past the hour) and <code>0 12 *
+     * * ? *</code> (take a backup every day at 12 noon UTC). For a table of examples,
+     * click the preceding link and scroll down the page.</p>
      */
     inline BackupRule& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
 
     /**
      * <p>A cron expression in UTC specifying when Backup initiates a backup job. For
-     * more information about cron expressions, see <a
+     * more information about Amazon Web Services cron expressions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
      * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>.
-     * Prior to specifying a value for this parameter, we recommend testing your cron
-     * expression using one of the many available cron generator and testing tools.</p>
+     * Two examples of Amazon Web Services cron expressions are <code> 15 * ? * *
+     * *</code> (take a backup every hour at 15 minutes past the hour) and <code>0 12 *
+     * * ? *</code> (take a backup every day at 12 noon UTC). For a table of examples,
+     * click the preceding link and scroll down the page.</p>
      */
     inline BackupRule& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
 
     /**
      * <p>A cron expression in UTC specifying when Backup initiates a backup job. For
-     * more information about cron expressions, see <a
+     * more information about Amazon Web Services cron expressions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
      * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>.
-     * Prior to specifying a value for this parameter, we recommend testing your cron
-     * expression using one of the many available cron generator and testing tools.</p>
+     * Two examples of Amazon Web Services cron expressions are <code> 15 * ? * *
+     * *</code> (take a backup every hour at 15 minutes past the hour) and <code>0 12 *
+     * * ? *</code> (take a backup every day at 12 noon UTC). For a table of examples,
+     * click the preceding link and scroll down the page.</p>
      */
     inline BackupRule& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
 

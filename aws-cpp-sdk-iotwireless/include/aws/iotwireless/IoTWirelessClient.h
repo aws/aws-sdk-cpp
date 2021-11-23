@@ -50,6 +50,7 @@
 #include <aws/iotwireless/model/GetLogLevelsByResourceTypesResult.h>
 #include <aws/iotwireless/model/GetMulticastGroupResult.h>
 #include <aws/iotwireless/model/GetMulticastGroupSessionResult.h>
+#include <aws/iotwireless/model/GetNetworkAnalyzerConfigurationResult.h>
 #include <aws/iotwireless/model/GetPartnerAccountResult.h>
 #include <aws/iotwireless/model/GetResourceEventConfigurationResult.h>
 #include <aws/iotwireless/model/GetResourceLogLevelResult.h>
@@ -90,6 +91,7 @@
 #include <aws/iotwireless/model/UpdateFuotaTaskResult.h>
 #include <aws/iotwireless/model/UpdateLogLevelsByResourceTypesResult.h>
 #include <aws/iotwireless/model/UpdateMulticastGroupResult.h>
+#include <aws/iotwireless/model/UpdateNetworkAnalyzerConfigurationResult.h>
 #include <aws/iotwireless/model/UpdatePartnerAccountResult.h>
 #include <aws/iotwireless/model/UpdateResourceEventConfigurationResult.h>
 #include <aws/iotwireless/model/UpdateWirelessDeviceResult.h>
@@ -172,6 +174,7 @@ namespace Model
         class GetLogLevelsByResourceTypesRequest;
         class GetMulticastGroupRequest;
         class GetMulticastGroupSessionRequest;
+        class GetNetworkAnalyzerConfigurationRequest;
         class GetPartnerAccountRequest;
         class GetResourceEventConfigurationRequest;
         class GetResourceLogLevelRequest;
@@ -212,6 +215,7 @@ namespace Model
         class UpdateFuotaTaskRequest;
         class UpdateLogLevelsByResourceTypesRequest;
         class UpdateMulticastGroupRequest;
+        class UpdateNetworkAnalyzerConfigurationRequest;
         class UpdatePartnerAccountRequest;
         class UpdateResourceEventConfigurationRequest;
         class UpdateWirelessDeviceRequest;
@@ -256,6 +260,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetLogLevelsByResourceTypesResult, IoTWirelessError> GetLogLevelsByResourceTypesOutcome;
         typedef Aws::Utils::Outcome<GetMulticastGroupResult, IoTWirelessError> GetMulticastGroupOutcome;
         typedef Aws::Utils::Outcome<GetMulticastGroupSessionResult, IoTWirelessError> GetMulticastGroupSessionOutcome;
+        typedef Aws::Utils::Outcome<GetNetworkAnalyzerConfigurationResult, IoTWirelessError> GetNetworkAnalyzerConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetPartnerAccountResult, IoTWirelessError> GetPartnerAccountOutcome;
         typedef Aws::Utils::Outcome<GetResourceEventConfigurationResult, IoTWirelessError> GetResourceEventConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetResourceLogLevelResult, IoTWirelessError> GetResourceLogLevelOutcome;
@@ -296,6 +301,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateFuotaTaskResult, IoTWirelessError> UpdateFuotaTaskOutcome;
         typedef Aws::Utils::Outcome<UpdateLogLevelsByResourceTypesResult, IoTWirelessError> UpdateLogLevelsByResourceTypesOutcome;
         typedef Aws::Utils::Outcome<UpdateMulticastGroupResult, IoTWirelessError> UpdateMulticastGroupOutcome;
+        typedef Aws::Utils::Outcome<UpdateNetworkAnalyzerConfigurationResult, IoTWirelessError> UpdateNetworkAnalyzerConfigurationOutcome;
         typedef Aws::Utils::Outcome<UpdatePartnerAccountResult, IoTWirelessError> UpdatePartnerAccountOutcome;
         typedef Aws::Utils::Outcome<UpdateResourceEventConfigurationResult, IoTWirelessError> UpdateResourceEventConfigurationOutcome;
         typedef Aws::Utils::Outcome<UpdateWirelessDeviceResult, IoTWirelessError> UpdateWirelessDeviceOutcome;
@@ -340,6 +346,7 @@ namespace Model
         typedef std::future<GetLogLevelsByResourceTypesOutcome> GetLogLevelsByResourceTypesOutcomeCallable;
         typedef std::future<GetMulticastGroupOutcome> GetMulticastGroupOutcomeCallable;
         typedef std::future<GetMulticastGroupSessionOutcome> GetMulticastGroupSessionOutcomeCallable;
+        typedef std::future<GetNetworkAnalyzerConfigurationOutcome> GetNetworkAnalyzerConfigurationOutcomeCallable;
         typedef std::future<GetPartnerAccountOutcome> GetPartnerAccountOutcomeCallable;
         typedef std::future<GetResourceEventConfigurationOutcome> GetResourceEventConfigurationOutcomeCallable;
         typedef std::future<GetResourceLogLevelOutcome> GetResourceLogLevelOutcomeCallable;
@@ -380,6 +387,7 @@ namespace Model
         typedef std::future<UpdateFuotaTaskOutcome> UpdateFuotaTaskOutcomeCallable;
         typedef std::future<UpdateLogLevelsByResourceTypesOutcome> UpdateLogLevelsByResourceTypesOutcomeCallable;
         typedef std::future<UpdateMulticastGroupOutcome> UpdateMulticastGroupOutcomeCallable;
+        typedef std::future<UpdateNetworkAnalyzerConfigurationOutcome> UpdateNetworkAnalyzerConfigurationOutcomeCallable;
         typedef std::future<UpdatePartnerAccountOutcome> UpdatePartnerAccountOutcomeCallable;
         typedef std::future<UpdateResourceEventConfigurationOutcome> UpdateResourceEventConfigurationOutcomeCallable;
         typedef std::future<UpdateWirelessDeviceOutcome> UpdateWirelessDeviceOutcomeCallable;
@@ -427,6 +435,7 @@ namespace Model
     typedef std::function<void(const IoTWirelessClient*, const Model::GetLogLevelsByResourceTypesRequest&, const Model::GetLogLevelsByResourceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLogLevelsByResourceTypesResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::GetMulticastGroupRequest&, const Model::GetMulticastGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMulticastGroupResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::GetMulticastGroupSessionRequest&, const Model::GetMulticastGroupSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMulticastGroupSessionResponseReceivedHandler;
+    typedef std::function<void(const IoTWirelessClient*, const Model::GetNetworkAnalyzerConfigurationRequest&, const Model::GetNetworkAnalyzerConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetNetworkAnalyzerConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::GetPartnerAccountRequest&, const Model::GetPartnerAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPartnerAccountResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::GetResourceEventConfigurationRequest&, const Model::GetResourceEventConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceEventConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::GetResourceLogLevelRequest&, const Model::GetResourceLogLevelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceLogLevelResponseReceivedHandler;
@@ -467,6 +476,7 @@ namespace Model
     typedef std::function<void(const IoTWirelessClient*, const Model::UpdateFuotaTaskRequest&, const Model::UpdateFuotaTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFuotaTaskResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::UpdateLogLevelsByResourceTypesRequest&, const Model::UpdateLogLevelsByResourceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLogLevelsByResourceTypesResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::UpdateMulticastGroupRequest&, const Model::UpdateMulticastGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMulticastGroupResponseReceivedHandler;
+    typedef std::function<void(const IoTWirelessClient*, const Model::UpdateNetworkAnalyzerConfigurationRequest&, const Model::UpdateNetworkAnalyzerConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNetworkAnalyzerConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::UpdatePartnerAccountRequest&, const Model::UpdatePartnerAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePartnerAccountResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::UpdateResourceEventConfigurationRequest&, const Model::UpdateResourceEventConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResourceEventConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::UpdateWirelessDeviceRequest&, const Model::UpdateWirelessDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWirelessDeviceResponseReceivedHandler;
@@ -1533,6 +1543,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetMulticastGroupSessionAsync(const Model::GetMulticastGroupSessionRequest& request, const GetMulticastGroupSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Get NetworkAnalyzer configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetNetworkAnalyzerConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetNetworkAnalyzerConfigurationOutcome GetNetworkAnalyzerConfiguration(const Model::GetNetworkAnalyzerConfigurationRequest& request) const;
+
+        /**
+         * <p>Get NetworkAnalyzer configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetNetworkAnalyzerConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetNetworkAnalyzerConfigurationOutcomeCallable GetNetworkAnalyzerConfigurationCallable(const Model::GetNetworkAnalyzerConfigurationRequest& request) const;
+
+        /**
+         * <p>Get NetworkAnalyzer configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetNetworkAnalyzerConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetNetworkAnalyzerConfigurationAsync(const Model::GetNetworkAnalyzerConfigurationRequest& request, const GetNetworkAnalyzerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a partner account. If <code>PartnerAccountId</code>
@@ -2643,6 +2678,31 @@ namespace Model
         virtual void UpdateMulticastGroupAsync(const Model::UpdateMulticastGroupRequest& request, const UpdateMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Update NetworkAnalyzer configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateNetworkAnalyzerConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateNetworkAnalyzerConfigurationOutcome UpdateNetworkAnalyzerConfiguration(const Model::UpdateNetworkAnalyzerConfigurationRequest& request) const;
+
+        /**
+         * <p>Update NetworkAnalyzer configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateNetworkAnalyzerConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateNetworkAnalyzerConfigurationOutcomeCallable UpdateNetworkAnalyzerConfigurationCallable(const Model::UpdateNetworkAnalyzerConfigurationRequest& request) const;
+
+        /**
+         * <p>Update NetworkAnalyzer configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateNetworkAnalyzerConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateNetworkAnalyzerConfigurationAsync(const Model::UpdateNetworkAnalyzerConfigurationRequest& request, const UpdateNetworkAnalyzerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates properties of a partner account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdatePartnerAccount">AWS
          * API Reference</a></p>
@@ -2788,6 +2848,7 @@ namespace Model
         void GetLogLevelsByResourceTypesAsyncHelper(const Model::GetLogLevelsByResourceTypesRequest& request, const GetLogLevelsByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMulticastGroupAsyncHelper(const Model::GetMulticastGroupRequest& request, const GetMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMulticastGroupSessionAsyncHelper(const Model::GetMulticastGroupSessionRequest& request, const GetMulticastGroupSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetNetworkAnalyzerConfigurationAsyncHelper(const Model::GetNetworkAnalyzerConfigurationRequest& request, const GetNetworkAnalyzerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPartnerAccountAsyncHelper(const Model::GetPartnerAccountRequest& request, const GetPartnerAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResourceEventConfigurationAsyncHelper(const Model::GetResourceEventConfigurationRequest& request, const GetResourceEventConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResourceLogLevelAsyncHelper(const Model::GetResourceLogLevelRequest& request, const GetResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2828,6 +2889,7 @@ namespace Model
         void UpdateFuotaTaskAsyncHelper(const Model::UpdateFuotaTaskRequest& request, const UpdateFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateLogLevelsByResourceTypesAsyncHelper(const Model::UpdateLogLevelsByResourceTypesRequest& request, const UpdateLogLevelsByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateMulticastGroupAsyncHelper(const Model::UpdateMulticastGroupRequest& request, const UpdateMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateNetworkAnalyzerConfigurationAsyncHelper(const Model::UpdateNetworkAnalyzerConfigurationRequest& request, const UpdateNetworkAnalyzerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePartnerAccountAsyncHelper(const Model::UpdatePartnerAccountRequest& request, const UpdatePartnerAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateResourceEventConfigurationAsyncHelper(const Model::UpdateResourceEventConfigurationRequest& request, const UpdateResourceEventConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateWirelessDeviceAsyncHelper(const Model::UpdateWirelessDeviceRequest& request, const UpdateWirelessDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

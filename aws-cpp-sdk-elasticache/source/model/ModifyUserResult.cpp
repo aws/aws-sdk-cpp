@@ -58,6 +58,11 @@ ModifyUserResult& ModifyUserResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
     }
+    XmlNode minimumEngineVersionNode = resultNode.FirstChild("MinimumEngineVersion");
+    if(!minimumEngineVersionNode.IsNull())
+    {
+      m_minimumEngineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(minimumEngineVersionNode.GetText());
+    }
     XmlNode accessStringNode = resultNode.FirstChild("AccessString");
     if(!accessStringNode.IsNull())
     {

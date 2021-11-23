@@ -13,6 +13,7 @@
 #include <aws/iot/model/JobExecutionsRolloutConfig.h>
 #include <aws/iot/model/AbortConfig.h>
 #include <aws/iot/model/TimeoutConfig.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/iot/model/Tag.h>
 #include <utility>
 
@@ -700,6 +701,85 @@ namespace Model
      */
     inline CreateJobRequest& WithJobTemplateArn(const char* value) { SetJobTemplateArn(value); return *this;}
 
+
+    /**
+     * <p>Parameters of a managed template that you can specify to create the job
+     * document.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetDocumentParameters() const{ return m_documentParameters; }
+
+    /**
+     * <p>Parameters of a managed template that you can specify to create the job
+     * document.</p>
+     */
+    inline bool DocumentParametersHasBeenSet() const { return m_documentParametersHasBeenSet; }
+
+    /**
+     * <p>Parameters of a managed template that you can specify to create the job
+     * document.</p>
+     */
+    inline void SetDocumentParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_documentParametersHasBeenSet = true; m_documentParameters = value; }
+
+    /**
+     * <p>Parameters of a managed template that you can specify to create the job
+     * document.</p>
+     */
+    inline void SetDocumentParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_documentParametersHasBeenSet = true; m_documentParameters = std::move(value); }
+
+    /**
+     * <p>Parameters of a managed template that you can specify to create the job
+     * document.</p>
+     */
+    inline CreateJobRequest& WithDocumentParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetDocumentParameters(value); return *this;}
+
+    /**
+     * <p>Parameters of a managed template that you can specify to create the job
+     * document.</p>
+     */
+    inline CreateJobRequest& WithDocumentParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetDocumentParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>Parameters of a managed template that you can specify to create the job
+     * document.</p>
+     */
+    inline CreateJobRequest& AddDocumentParameters(const Aws::String& key, const Aws::String& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, value); return *this; }
+
+    /**
+     * <p>Parameters of a managed template that you can specify to create the job
+     * document.</p>
+     */
+    inline CreateJobRequest& AddDocumentParameters(Aws::String&& key, const Aws::String& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Parameters of a managed template that you can specify to create the job
+     * document.</p>
+     */
+    inline CreateJobRequest& AddDocumentParameters(const Aws::String& key, Aws::String&& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Parameters of a managed template that you can specify to create the job
+     * document.</p>
+     */
+    inline CreateJobRequest& AddDocumentParameters(Aws::String&& key, Aws::String&& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Parameters of a managed template that you can specify to create the job
+     * document.</p>
+     */
+    inline CreateJobRequest& AddDocumentParameters(const char* key, Aws::String&& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Parameters of a managed template that you can specify to create the job
+     * document.</p>
+     */
+    inline CreateJobRequest& AddDocumentParameters(Aws::String&& key, const char* value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Parameters of a managed template that you can specify to create the job
+     * document.</p>
+     */
+    inline CreateJobRequest& AddDocumentParameters(const char* key, const char* value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_jobId;
@@ -740,6 +820,9 @@ namespace Model
 
     Aws::String m_jobTemplateArn;
     bool m_jobTemplateArnHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_documentParameters;
+    bool m_documentParametersHasBeenSet;
   };
 
 } // namespace Model

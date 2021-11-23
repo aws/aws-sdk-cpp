@@ -905,6 +905,47 @@ namespace Model
      */
     inline OrderableDBInstanceOption& WithSupportsGlobalDatabases(bool value) { SetSupportsGlobalDatabases(value); return *this;}
 
+
+    /**
+     * <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p> <p>The
+     * Multi-AZ DB clusters feature is in preview and is subject to change.</p> <p>For
+     * more information on Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+     * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
+     * RDS User Guide.</i> </p>
+     */
+    inline bool GetSupportsClusters() const{ return m_supportsClusters; }
+
+    /**
+     * <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p> <p>The
+     * Multi-AZ DB clusters feature is in preview and is subject to change.</p> <p>For
+     * more information on Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+     * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
+     * RDS User Guide.</i> </p>
+     */
+    inline bool SupportsClustersHasBeenSet() const { return m_supportsClustersHasBeenSet; }
+
+    /**
+     * <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p> <p>The
+     * Multi-AZ DB clusters feature is in preview and is subject to change.</p> <p>For
+     * more information on Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+     * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
+     * RDS User Guide.</i> </p>
+     */
+    inline void SetSupportsClusters(bool value) { m_supportsClustersHasBeenSet = true; m_supportsClusters = value; }
+
+    /**
+     * <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p> <p>The
+     * Multi-AZ DB clusters feature is in preview and is subject to change.</p> <p>For
+     * more information on Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+     * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
+     * RDS User Guide.</i> </p>
+     */
+    inline OrderableDBInstanceOption& WithSupportsClusters(bool value) { SetSupportsClusters(value); return *this;}
+
   private:
 
     Aws::String m_engine;
@@ -990,6 +1031,9 @@ namespace Model
 
     bool m_supportsGlobalDatabases;
     bool m_supportsGlobalDatabasesHasBeenSet;
+
+    bool m_supportsClusters;
+    bool m_supportsClustersHasBeenSet;
   };
 
 } // namespace Model

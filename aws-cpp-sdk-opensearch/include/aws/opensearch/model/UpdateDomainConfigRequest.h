@@ -680,6 +680,35 @@ namespace Model
      */
     inline UpdateDomainConfigRequest& WithAutoTuneOptions(AutoTuneOptions&& value) { SetAutoTuneOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code>
+     * request should return the results of validation checks (DryRunResults) without
+     * actually applying the change.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code>
+     * request should return the results of validation checks (DryRunResults) without
+     * actually applying the change.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code>
+     * request should return the results of validation checks (DryRunResults) without
+     * actually applying the change.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code>
+     * request should return the results of validation checks (DryRunResults) without
+     * actually applying the change.</p>
+     */
+    inline UpdateDomainConfigRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -723,6 +752,9 @@ namespace Model
 
     AutoTuneOptions m_autoTuneOptions;
     bool m_autoTuneOptionsHasBeenSet;
+
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
   };
 
 } // namespace Model

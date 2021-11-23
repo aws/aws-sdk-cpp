@@ -37,6 +37,15 @@ BatchExecuteStatementResult& BatchExecuteStatementResult::operator =(const Aws::
     }
   }
 
+  if(jsonValue.ValueExists("ConsumedCapacity"))
+  {
+    Array<JsonView> consumedCapacityJsonList = jsonValue.GetArray("ConsumedCapacity");
+    for(unsigned consumedCapacityIndex = 0; consumedCapacityIndex < consumedCapacityJsonList.GetLength(); ++consumedCapacityIndex)
+    {
+      m_consumedCapacity.push_back(consumedCapacityJsonList[consumedCapacityIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

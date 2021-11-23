@@ -34,20 +34,17 @@ namespace Model
 
 
     /**
-     * <p>The total number of documents that fit the query string criteria and contain
-     * a value for the Aggregation field targeted in the request.</p>
+     * <p>The total number of things that fit the query string criteria.</p>
      */
     inline int GetTotalCount() const{ return m_totalCount; }
 
     /**
-     * <p>The total number of documents that fit the query string criteria and contain
-     * a value for the Aggregation field targeted in the request.</p>
+     * <p>The total number of things that fit the query string criteria.</p>
      */
     inline void SetTotalCount(int value) { m_totalCount = value; }
 
     /**
-     * <p>The total number of documents that fit the query string criteria and contain
-     * a value for the Aggregation field targeted in the request.</p>
+     * <p>The total number of things that fit the query string criteria.</p>
      */
     inline GetBucketsAggregationResult& WithTotalCount(int value) { SetTotalCount(value); return *this;}
 

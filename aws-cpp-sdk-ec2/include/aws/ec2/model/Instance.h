@@ -27,6 +27,7 @@
 #include <aws/ec2/model/InstanceMetadataOptionsResponse.h>
 #include <aws/ec2/model/EnclaveOptions.h>
 #include <aws/ec2/model/BootModeValues.h>
+#include <aws/ec2/model/PrivateDnsNameOptionsResponse.h>
 #include <aws/ec2/model/ProductCode.h>
 #include <aws/ec2/model/InstanceBlockDeviceMapping.h>
 #include <aws/ec2/model/ElasticGpuAssociation.h>
@@ -2120,6 +2121,78 @@ namespace Model
      */
     inline Instance& WithUsageOperationUpdateTime(Aws::Utils::DateTime&& value) { SetUsageOperationUpdateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The options for the instance hostname.</p>
+     */
+    inline const PrivateDnsNameOptionsResponse& GetPrivateDnsNameOptions() const{ return m_privateDnsNameOptions; }
+
+    /**
+     * <p>The options for the instance hostname.</p>
+     */
+    inline bool PrivateDnsNameOptionsHasBeenSet() const { return m_privateDnsNameOptionsHasBeenSet; }
+
+    /**
+     * <p>The options for the instance hostname.</p>
+     */
+    inline void SetPrivateDnsNameOptions(const PrivateDnsNameOptionsResponse& value) { m_privateDnsNameOptionsHasBeenSet = true; m_privateDnsNameOptions = value; }
+
+    /**
+     * <p>The options for the instance hostname.</p>
+     */
+    inline void SetPrivateDnsNameOptions(PrivateDnsNameOptionsResponse&& value) { m_privateDnsNameOptionsHasBeenSet = true; m_privateDnsNameOptions = std::move(value); }
+
+    /**
+     * <p>The options for the instance hostname.</p>
+     */
+    inline Instance& WithPrivateDnsNameOptions(const PrivateDnsNameOptionsResponse& value) { SetPrivateDnsNameOptions(value); return *this;}
+
+    /**
+     * <p>The options for the instance hostname.</p>
+     */
+    inline Instance& WithPrivateDnsNameOptions(PrivateDnsNameOptionsResponse&& value) { SetPrivateDnsNameOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The IPv6 address assigned to the instance.</p>
+     */
+    inline const Aws::String& GetIpv6Address() const{ return m_ipv6Address; }
+
+    /**
+     * <p>The IPv6 address assigned to the instance.</p>
+     */
+    inline bool Ipv6AddressHasBeenSet() const { return m_ipv6AddressHasBeenSet; }
+
+    /**
+     * <p>The IPv6 address assigned to the instance.</p>
+     */
+    inline void SetIpv6Address(const Aws::String& value) { m_ipv6AddressHasBeenSet = true; m_ipv6Address = value; }
+
+    /**
+     * <p>The IPv6 address assigned to the instance.</p>
+     */
+    inline void SetIpv6Address(Aws::String&& value) { m_ipv6AddressHasBeenSet = true; m_ipv6Address = std::move(value); }
+
+    /**
+     * <p>The IPv6 address assigned to the instance.</p>
+     */
+    inline void SetIpv6Address(const char* value) { m_ipv6AddressHasBeenSet = true; m_ipv6Address.assign(value); }
+
+    /**
+     * <p>The IPv6 address assigned to the instance.</p>
+     */
+    inline Instance& WithIpv6Address(const Aws::String& value) { SetIpv6Address(value); return *this;}
+
+    /**
+     * <p>The IPv6 address assigned to the instance.</p>
+     */
+    inline Instance& WithIpv6Address(Aws::String&& value) { SetIpv6Address(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv6 address assigned to the instance.</p>
+     */
+    inline Instance& WithIpv6Address(const char* value) { SetIpv6Address(value); return *this;}
+
   private:
 
     int m_amiLaunchIndex;
@@ -2277,6 +2350,12 @@ namespace Model
 
     Aws::Utils::DateTime m_usageOperationUpdateTime;
     bool m_usageOperationUpdateTimeHasBeenSet;
+
+    PrivateDnsNameOptionsResponse m_privateDnsNameOptions;
+    bool m_privateDnsNameOptionsHasBeenSet;
+
+    Aws::String m_ipv6Address;
+    bool m_ipv6AddressHasBeenSet;
   };
 
 } // namespace Model

@@ -971,6 +971,68 @@ namespace Model
      */
     inline NetworkInterface& WithDenyAllIgwTraffic(bool value) { SetDenyAllIgwTraffic(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether this is an IPv6 only network interface.</p>
+     */
+    inline bool GetIpv6Native() const{ return m_ipv6Native; }
+
+    /**
+     * <p>Indicates whether this is an IPv6 only network interface.</p>
+     */
+    inline bool Ipv6NativeHasBeenSet() const { return m_ipv6NativeHasBeenSet; }
+
+    /**
+     * <p>Indicates whether this is an IPv6 only network interface.</p>
+     */
+    inline void SetIpv6Native(bool value) { m_ipv6NativeHasBeenSet = true; m_ipv6Native = value; }
+
+    /**
+     * <p>Indicates whether this is an IPv6 only network interface.</p>
+     */
+    inline NetworkInterface& WithIpv6Native(bool value) { SetIpv6Native(value); return *this;}
+
+
+    /**
+     * <p>The IPv6 globally unique address associated with the network interface.</p>
+     */
+    inline const Aws::String& GetIpv6Address() const{ return m_ipv6Address; }
+
+    /**
+     * <p>The IPv6 globally unique address associated with the network interface.</p>
+     */
+    inline bool Ipv6AddressHasBeenSet() const { return m_ipv6AddressHasBeenSet; }
+
+    /**
+     * <p>The IPv6 globally unique address associated with the network interface.</p>
+     */
+    inline void SetIpv6Address(const Aws::String& value) { m_ipv6AddressHasBeenSet = true; m_ipv6Address = value; }
+
+    /**
+     * <p>The IPv6 globally unique address associated with the network interface.</p>
+     */
+    inline void SetIpv6Address(Aws::String&& value) { m_ipv6AddressHasBeenSet = true; m_ipv6Address = std::move(value); }
+
+    /**
+     * <p>The IPv6 globally unique address associated with the network interface.</p>
+     */
+    inline void SetIpv6Address(const char* value) { m_ipv6AddressHasBeenSet = true; m_ipv6Address.assign(value); }
+
+    /**
+     * <p>The IPv6 globally unique address associated with the network interface.</p>
+     */
+    inline NetworkInterface& WithIpv6Address(const Aws::String& value) { SetIpv6Address(value); return *this;}
+
+    /**
+     * <p>The IPv6 globally unique address associated with the network interface.</p>
+     */
+    inline NetworkInterface& WithIpv6Address(Aws::String&& value) { SetIpv6Address(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv6 globally unique address associated with the network interface.</p>
+     */
+    inline NetworkInterface& WithIpv6Address(const char* value) { SetIpv6Address(value); return *this;}
+
   private:
 
     NetworkInterfaceAssociation m_association;
@@ -1044,6 +1106,12 @@ namespace Model
 
     bool m_denyAllIgwTraffic;
     bool m_denyAllIgwTrafficHasBeenSet;
+
+    bool m_ipv6Native;
+    bool m_ipv6NativeHasBeenSet;
+
+    Aws::String m_ipv6Address;
+    bool m_ipv6AddressHasBeenSet;
   };
 
 } // namespace Model

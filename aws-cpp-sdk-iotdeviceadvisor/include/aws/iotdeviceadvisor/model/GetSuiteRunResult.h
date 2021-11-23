@@ -38,37 +38,37 @@ namespace Model
 
 
     /**
-     * <p>Suite definition Id for the test suite run.</p>
+     * <p>Suite definition ID for the test suite run.</p>
      */
     inline const Aws::String& GetSuiteDefinitionId() const{ return m_suiteDefinitionId; }
 
     /**
-     * <p>Suite definition Id for the test suite run.</p>
+     * <p>Suite definition ID for the test suite run.</p>
      */
     inline void SetSuiteDefinitionId(const Aws::String& value) { m_suiteDefinitionId = value; }
 
     /**
-     * <p>Suite definition Id for the test suite run.</p>
+     * <p>Suite definition ID for the test suite run.</p>
      */
     inline void SetSuiteDefinitionId(Aws::String&& value) { m_suiteDefinitionId = std::move(value); }
 
     /**
-     * <p>Suite definition Id for the test suite run.</p>
+     * <p>Suite definition ID for the test suite run.</p>
      */
     inline void SetSuiteDefinitionId(const char* value) { m_suiteDefinitionId.assign(value); }
 
     /**
-     * <p>Suite definition Id for the test suite run.</p>
+     * <p>Suite definition ID for the test suite run.</p>
      */
     inline GetSuiteRunResult& WithSuiteDefinitionId(const Aws::String& value) { SetSuiteDefinitionId(value); return *this;}
 
     /**
-     * <p>Suite definition Id for the test suite run.</p>
+     * <p>Suite definition ID for the test suite run.</p>
      */
     inline GetSuiteRunResult& WithSuiteDefinitionId(Aws::String&& value) { SetSuiteDefinitionId(std::move(value)); return *this;}
 
     /**
-     * <p>Suite definition Id for the test suite run.</p>
+     * <p>Suite definition ID for the test suite run.</p>
      */
     inline GetSuiteRunResult& WithSuiteDefinitionId(const char* value) { SetSuiteDefinitionId(value); return *this;}
 
@@ -110,37 +110,37 @@ namespace Model
 
 
     /**
-     * <p>Suite run Id for the test suite run.</p>
+     * <p>Suite run ID for the test suite run.</p>
      */
     inline const Aws::String& GetSuiteRunId() const{ return m_suiteRunId; }
 
     /**
-     * <p>Suite run Id for the test suite run.</p>
+     * <p>Suite run ID for the test suite run.</p>
      */
     inline void SetSuiteRunId(const Aws::String& value) { m_suiteRunId = value; }
 
     /**
-     * <p>Suite run Id for the test suite run.</p>
+     * <p>Suite run ID for the test suite run.</p>
      */
     inline void SetSuiteRunId(Aws::String&& value) { m_suiteRunId = std::move(value); }
 
     /**
-     * <p>Suite run Id for the test suite run.</p>
+     * <p>Suite run ID for the test suite run.</p>
      */
     inline void SetSuiteRunId(const char* value) { m_suiteRunId.assign(value); }
 
     /**
-     * <p>Suite run Id for the test suite run.</p>
+     * <p>Suite run ID for the test suite run.</p>
      */
     inline GetSuiteRunResult& WithSuiteRunId(const Aws::String& value) { SetSuiteRunId(value); return *this;}
 
     /**
-     * <p>Suite run Id for the test suite run.</p>
+     * <p>Suite run ID for the test suite run.</p>
      */
     inline GetSuiteRunResult& WithSuiteRunId(Aws::String&& value) { SetSuiteRunId(std::move(value)); return *this;}
 
     /**
-     * <p>Suite run Id for the test suite run.</p>
+     * <p>Suite run ID for the test suite run.</p>
      */
     inline GetSuiteRunResult& WithSuiteRunId(const char* value) { SetSuiteRunId(value); return *this;}
 

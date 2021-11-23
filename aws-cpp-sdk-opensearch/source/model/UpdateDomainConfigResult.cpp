@@ -34,6 +34,12 @@ UpdateDomainConfigResult& UpdateDomainConfigResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("DryRunResults"))
+  {
+    m_dryRunResults = jsonValue.GetObject("DryRunResults");
+
+  }
+
 
 
   return *this;

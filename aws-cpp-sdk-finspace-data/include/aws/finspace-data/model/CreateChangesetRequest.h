@@ -265,7 +265,8 @@ namespace Model
      * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
      * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
      * format.</p> </li> </ul> <p> For example, you could specify the following for
-     * <code>formatParams</code>:</p>
+     * <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV",
+     * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetFormatParams() const{ return m_formatParams; }
 
@@ -279,7 +280,8 @@ namespace Model
      * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
      * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
      * format.</p> </li> </ul> <p> For example, you could specify the following for
-     * <code>formatParams</code>:</p>
+     * <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV",
+     * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
      */
     inline bool FormatParamsHasBeenSet() const { return m_formatParamsHasBeenSet; }
 
@@ -293,7 +295,8 @@ namespace Model
      * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
      * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
      * format.</p> </li> </ul> <p> For example, you could specify the following for
-     * <code>formatParams</code>:</p>
+     * <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV",
+     * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
      */
     inline void SetFormatParams(const Aws::Map<Aws::String, Aws::String>& value) { m_formatParamsHasBeenSet = true; m_formatParams = value; }
 
@@ -307,7 +310,8 @@ namespace Model
      * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
      * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
      * format.</p> </li> </ul> <p> For example, you could specify the following for
-     * <code>formatParams</code>:</p>
+     * <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV",
+     * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
      */
     inline void SetFormatParams(Aws::Map<Aws::String, Aws::String>&& value) { m_formatParamsHasBeenSet = true; m_formatParams = std::move(value); }
 
@@ -321,7 +325,8 @@ namespace Model
      * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
      * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
      * format.</p> </li> </ul> <p> For example, you could specify the following for
-     * <code>formatParams</code>:</p>
+     * <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV",
+     * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
      */
     inline CreateChangesetRequest& WithFormatParams(const Aws::Map<Aws::String, Aws::String>& value) { SetFormatParams(value); return *this;}
 
@@ -335,7 +340,8 @@ namespace Model
      * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
      * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
      * format.</p> </li> </ul> <p> For example, you could specify the following for
-     * <code>formatParams</code>:</p>
+     * <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV",
+     * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
      */
     inline CreateChangesetRequest& WithFormatParams(Aws::Map<Aws::String, Aws::String>&& value) { SetFormatParams(std::move(value)); return *this;}
 
@@ -349,7 +355,8 @@ namespace Model
      * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
      * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
      * format.</p> </li> </ul> <p> For example, you could specify the following for
-     * <code>formatParams</code>:</p>
+     * <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV",
+     * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
      */
     inline CreateChangesetRequest& AddFormatParams(const Aws::String& key, const Aws::String& value) { m_formatParamsHasBeenSet = true; m_formatParams.emplace(key, value); return *this; }
 
@@ -363,7 +370,8 @@ namespace Model
      * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
      * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
      * format.</p> </li> </ul> <p> For example, you could specify the following for
-     * <code>formatParams</code>:</p>
+     * <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV",
+     * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
      */
     inline CreateChangesetRequest& AddFormatParams(Aws::String&& key, const Aws::String& value) { m_formatParamsHasBeenSet = true; m_formatParams.emplace(std::move(key), value); return *this; }
 
@@ -377,7 +385,8 @@ namespace Model
      * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
      * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
      * format.</p> </li> </ul> <p> For example, you could specify the following for
-     * <code>formatParams</code>:</p>
+     * <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV",
+     * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
      */
     inline CreateChangesetRequest& AddFormatParams(const Aws::String& key, Aws::String&& value) { m_formatParamsHasBeenSet = true; m_formatParams.emplace(key, std::move(value)); return *this; }
 
@@ -391,7 +400,8 @@ namespace Model
      * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
      * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
      * format.</p> </li> </ul> <p> For example, you could specify the following for
-     * <code>formatParams</code>:</p>
+     * <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV",
+     * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
      */
     inline CreateChangesetRequest& AddFormatParams(Aws::String&& key, Aws::String&& value) { m_formatParamsHasBeenSet = true; m_formatParams.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -405,7 +415,8 @@ namespace Model
      * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
      * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
      * format.</p> </li> </ul> <p> For example, you could specify the following for
-     * <code>formatParams</code>:</p>
+     * <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV",
+     * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
      */
     inline CreateChangesetRequest& AddFormatParams(const char* key, Aws::String&& value) { m_formatParamsHasBeenSet = true; m_formatParams.emplace(key, std::move(value)); return *this; }
 
@@ -419,7 +430,8 @@ namespace Model
      * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
      * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
      * format.</p> </li> </ul> <p> For example, you could specify the following for
-     * <code>formatParams</code>:</p>
+     * <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV",
+     * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
      */
     inline CreateChangesetRequest& AddFormatParams(Aws::String&& key, const char* value) { m_formatParamsHasBeenSet = true; m_formatParams.emplace(std::move(key), value); return *this; }
 
@@ -433,7 +445,8 @@ namespace Model
      * <code>CSV</code> - CSV source file format.</p> </li> <li> <p> <code>JSON</code>
      * - JSON source file format.</p> </li> <li> <p> <code>XML</code> - XML source file
      * format.</p> </li> </ul> <p> For example, you could specify the following for
-     * <code>formatParams</code>:</p>
+     * <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV",
+     * "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
      */
     inline CreateChangesetRequest& AddFormatParams(const char* key, const char* value) { m_formatParamsHasBeenSet = true; m_formatParams.emplace(key, value); return *this; }
 

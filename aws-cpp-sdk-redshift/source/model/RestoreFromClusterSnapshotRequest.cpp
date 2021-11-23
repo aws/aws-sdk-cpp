@@ -48,7 +48,9 @@ RestoreFromClusterSnapshotRequest::RestoreFromClusterSnapshotRequest() :
     m_availabilityZoneRelocationHasBeenSet(false),
     m_aquaConfigurationStatus(AquaConfigurationStatus::NOT_SET),
     m_aquaConfigurationStatusHasBeenSet(false),
-    m_defaultIamRoleArnHasBeenSet(false)
+    m_defaultIamRoleArnHasBeenSet(false),
+    m_reservedNodeIdHasBeenSet(false),
+    m_targetReservedNodeOfferingIdHasBeenSet(false)
 {
 }
 
@@ -217,6 +219,16 @@ Aws::String RestoreFromClusterSnapshotRequest::SerializePayload() const
   if(m_defaultIamRoleArnHasBeenSet)
   {
     ss << "DefaultIamRoleArn=" << StringUtils::URLEncode(m_defaultIamRoleArn.c_str()) << "&";
+  }
+
+  if(m_reservedNodeIdHasBeenSet)
+  {
+    ss << "ReservedNodeId=" << StringUtils::URLEncode(m_reservedNodeId.c_str()) << "&";
+  }
+
+  if(m_targetReservedNodeOfferingIdHasBeenSet)
+  {
+    ss << "TargetReservedNodeOfferingId=" << StringUtils::URLEncode(m_targetReservedNodeOfferingId.c_str()) << "&";
   }
 
   ss << "Version=2012-12-01";

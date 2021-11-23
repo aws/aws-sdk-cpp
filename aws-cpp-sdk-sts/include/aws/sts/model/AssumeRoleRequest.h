@@ -612,14 +612,21 @@ namespace Model
 
 
     /**
-     * <p>The duration, in seconds, of the role session. The value specified can can
-     * range from 900 seconds (15 minutes) up to the maximum session duration that is
-     * set for the role. The maximum session duration setting can have a value from 1
-     * hour to 12 hours. If you specify a value higher than this setting or the
-     * administrator setting (whichever is lower), the operation fails. For example, if
-     * you specify a session duration of 12 hours, but your administrator set the
-     * maximum session duration to 6 hours, your operation fails. To learn how to view
-     * the maximum value for your role, see <a
+     * <p>The duration, in seconds, of the role session. The value specified can range
+     * from 900 seconds (15 minutes) up to the maximum session duration set for the
+     * role. The maximum session duration setting can have a value from 1 hour to 12
+     * hours. If you specify a value higher than this setting or the administrator
+     * setting (whichever is lower), the operation fails. For example, if you specify a
+     * session duration of 12 hours, but your administrator set the maximum session
+     * duration to 6 hours, your operation fails. </p> <p>Role chaining limits your
+     * Amazon Web Services CLI or Amazon Web Services API role session to a maximum of
+     * one hour. When you use the <code>AssumeRole</code> API operation to assume a
+     * role, you can specify the duration of your role session with the
+     * <code>DurationSeconds</code> parameter. You can specify a parameter value of up
+     * to 43200 seconds (12 hours), depending on the maximum session duration setting
+     * for your role. However, if you assume a role using role chaining and provide a
+     * <code>DurationSeconds</code> parameter value greater than one hour, the
+     * operation fails. To learn how to view the maximum value for your role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
      * the Maximum Session Duration Setting for a Role</a> in the <i>IAM User
      * Guide</i>.</p> <p>By default, the value is set to <code>3600</code> seconds.
@@ -629,20 +636,27 @@ namespace Model
      * takes a <code>SessionDuration</code> parameter that specifies the maximum length
      * of the console session. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
-     * a URL that Enables Federated Users to Access the Management Console</a> in the
-     * <i>IAM User Guide</i>.</p> 
+     * a URL that Enables Federated Users to Access the Amazon Web Services Management
+     * Console</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline int GetDurationSeconds() const{ return m_durationSeconds; }
 
     /**
-     * <p>The duration, in seconds, of the role session. The value specified can can
-     * range from 900 seconds (15 minutes) up to the maximum session duration that is
-     * set for the role. The maximum session duration setting can have a value from 1
-     * hour to 12 hours. If you specify a value higher than this setting or the
-     * administrator setting (whichever is lower), the operation fails. For example, if
-     * you specify a session duration of 12 hours, but your administrator set the
-     * maximum session duration to 6 hours, your operation fails. To learn how to view
-     * the maximum value for your role, see <a
+     * <p>The duration, in seconds, of the role session. The value specified can range
+     * from 900 seconds (15 minutes) up to the maximum session duration set for the
+     * role. The maximum session duration setting can have a value from 1 hour to 12
+     * hours. If you specify a value higher than this setting or the administrator
+     * setting (whichever is lower), the operation fails. For example, if you specify a
+     * session duration of 12 hours, but your administrator set the maximum session
+     * duration to 6 hours, your operation fails. </p> <p>Role chaining limits your
+     * Amazon Web Services CLI or Amazon Web Services API role session to a maximum of
+     * one hour. When you use the <code>AssumeRole</code> API operation to assume a
+     * role, you can specify the duration of your role session with the
+     * <code>DurationSeconds</code> parameter. You can specify a parameter value of up
+     * to 43200 seconds (12 hours), depending on the maximum session duration setting
+     * for your role. However, if you assume a role using role chaining and provide a
+     * <code>DurationSeconds</code> parameter value greater than one hour, the
+     * operation fails. To learn how to view the maximum value for your role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
      * the Maximum Session Duration Setting for a Role</a> in the <i>IAM User
      * Guide</i>.</p> <p>By default, the value is set to <code>3600</code> seconds.
@@ -652,20 +666,27 @@ namespace Model
      * takes a <code>SessionDuration</code> parameter that specifies the maximum length
      * of the console session. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
-     * a URL that Enables Federated Users to Access the Management Console</a> in the
-     * <i>IAM User Guide</i>.</p> 
+     * a URL that Enables Federated Users to Access the Amazon Web Services Management
+     * Console</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }
 
     /**
-     * <p>The duration, in seconds, of the role session. The value specified can can
-     * range from 900 seconds (15 minutes) up to the maximum session duration that is
-     * set for the role. The maximum session duration setting can have a value from 1
-     * hour to 12 hours. If you specify a value higher than this setting or the
-     * administrator setting (whichever is lower), the operation fails. For example, if
-     * you specify a session duration of 12 hours, but your administrator set the
-     * maximum session duration to 6 hours, your operation fails. To learn how to view
-     * the maximum value for your role, see <a
+     * <p>The duration, in seconds, of the role session. The value specified can range
+     * from 900 seconds (15 minutes) up to the maximum session duration set for the
+     * role. The maximum session duration setting can have a value from 1 hour to 12
+     * hours. If you specify a value higher than this setting or the administrator
+     * setting (whichever is lower), the operation fails. For example, if you specify a
+     * session duration of 12 hours, but your administrator set the maximum session
+     * duration to 6 hours, your operation fails. </p> <p>Role chaining limits your
+     * Amazon Web Services CLI or Amazon Web Services API role session to a maximum of
+     * one hour. When you use the <code>AssumeRole</code> API operation to assume a
+     * role, you can specify the duration of your role session with the
+     * <code>DurationSeconds</code> parameter. You can specify a parameter value of up
+     * to 43200 seconds (12 hours), depending on the maximum session duration setting
+     * for your role. However, if you assume a role using role chaining and provide a
+     * <code>DurationSeconds</code> parameter value greater than one hour, the
+     * operation fails. To learn how to view the maximum value for your role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
      * the Maximum Session Duration Setting for a Role</a> in the <i>IAM User
      * Guide</i>.</p> <p>By default, the value is set to <code>3600</code> seconds.
@@ -675,20 +696,27 @@ namespace Model
      * takes a <code>SessionDuration</code> parameter that specifies the maximum length
      * of the console session. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
-     * a URL that Enables Federated Users to Access the Management Console</a> in the
-     * <i>IAM User Guide</i>.</p> 
+     * a URL that Enables Federated Users to Access the Amazon Web Services Management
+     * Console</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
 
     /**
-     * <p>The duration, in seconds, of the role session. The value specified can can
-     * range from 900 seconds (15 minutes) up to the maximum session duration that is
-     * set for the role. The maximum session duration setting can have a value from 1
-     * hour to 12 hours. If you specify a value higher than this setting or the
-     * administrator setting (whichever is lower), the operation fails. For example, if
-     * you specify a session duration of 12 hours, but your administrator set the
-     * maximum session duration to 6 hours, your operation fails. To learn how to view
-     * the maximum value for your role, see <a
+     * <p>The duration, in seconds, of the role session. The value specified can range
+     * from 900 seconds (15 minutes) up to the maximum session duration set for the
+     * role. The maximum session duration setting can have a value from 1 hour to 12
+     * hours. If you specify a value higher than this setting or the administrator
+     * setting (whichever is lower), the operation fails. For example, if you specify a
+     * session duration of 12 hours, but your administrator set the maximum session
+     * duration to 6 hours, your operation fails. </p> <p>Role chaining limits your
+     * Amazon Web Services CLI or Amazon Web Services API role session to a maximum of
+     * one hour. When you use the <code>AssumeRole</code> API operation to assume a
+     * role, you can specify the duration of your role session with the
+     * <code>DurationSeconds</code> parameter. You can specify a parameter value of up
+     * to 43200 seconds (12 hours), depending on the maximum session duration setting
+     * for your role. However, if you assume a role using role chaining and provide a
+     * <code>DurationSeconds</code> parameter value greater than one hour, the
+     * operation fails. To learn how to view the maximum value for your role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
      * the Maximum Session Duration Setting for a Role</a> in the <i>IAM User
      * Guide</i>.</p> <p>By default, the value is set to <code>3600</code> seconds.
@@ -698,8 +726,8 @@ namespace Model
      * takes a <code>SessionDuration</code> parameter that specifies the maximum length
      * of the console session. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
-     * a URL that Enables Federated Users to Access the Management Console</a> in the
-     * <i>IAM User Guide</i>.</p> 
+     * a URL that Enables Federated Users to Access the Amazon Web Services Management
+     * Console</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline AssumeRoleRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
 
@@ -709,10 +737,10 @@ namespace Model
      * key name and an associated value. For more information about session tags, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging
-     * STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
-     * optional. You can pass up to 50 session tags. The plaintext session tag keys
-     * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
-     * these and additional limits, see <a
+     * Amazon Web Services STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This
+     * parameter is optional. You can pass up to 50 session tags. The plaintext session
+     * tag keys can’t exceed 128 characters, and the values can’t exceed 256
+     * characters. For these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
      * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
      * Amazon Web Services conversion compresses the passed session policies and
@@ -744,10 +772,10 @@ namespace Model
      * key name and an associated value. For more information about session tags, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging
-     * STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
-     * optional. You can pass up to 50 session tags. The plaintext session tag keys
-     * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
-     * these and additional limits, see <a
+     * Amazon Web Services STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This
+     * parameter is optional. You can pass up to 50 session tags. The plaintext session
+     * tag keys can’t exceed 128 characters, and the values can’t exceed 256
+     * characters. For these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
      * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
      * Amazon Web Services conversion compresses the passed session policies and
@@ -779,10 +807,10 @@ namespace Model
      * key name and an associated value. For more information about session tags, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging
-     * STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
-     * optional. You can pass up to 50 session tags. The plaintext session tag keys
-     * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
-     * these and additional limits, see <a
+     * Amazon Web Services STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This
+     * parameter is optional. You can pass up to 50 session tags. The plaintext session
+     * tag keys can’t exceed 128 characters, and the values can’t exceed 256
+     * characters. For these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
      * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
      * Amazon Web Services conversion compresses the passed session policies and
@@ -814,10 +842,10 @@ namespace Model
      * key name and an associated value. For more information about session tags, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging
-     * STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
-     * optional. You can pass up to 50 session tags. The plaintext session tag keys
-     * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
-     * these and additional limits, see <a
+     * Amazon Web Services STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This
+     * parameter is optional. You can pass up to 50 session tags. The plaintext session
+     * tag keys can’t exceed 128 characters, and the values can’t exceed 256
+     * characters. For these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
      * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
      * Amazon Web Services conversion compresses the passed session policies and
@@ -849,10 +877,10 @@ namespace Model
      * key name and an associated value. For more information about session tags, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging
-     * STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
-     * optional. You can pass up to 50 session tags. The plaintext session tag keys
-     * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
-     * these and additional limits, see <a
+     * Amazon Web Services STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This
+     * parameter is optional. You can pass up to 50 session tags. The plaintext session
+     * tag keys can’t exceed 128 characters, and the values can’t exceed 256
+     * characters. For these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
      * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
      * Amazon Web Services conversion compresses the passed session policies and
@@ -884,10 +912,10 @@ namespace Model
      * key name and an associated value. For more information about session tags, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging
-     * STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
-     * optional. You can pass up to 50 session tags. The plaintext session tag keys
-     * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
-     * these and additional limits, see <a
+     * Amazon Web Services STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This
+     * parameter is optional. You can pass up to 50 session tags. The plaintext session
+     * tag keys can’t exceed 128 characters, and the values can’t exceed 256
+     * characters. For these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
      * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
      * Amazon Web Services conversion compresses the passed session policies and
@@ -919,10 +947,10 @@ namespace Model
      * key name and an associated value. For more information about session tags, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging
-     * STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
-     * optional. You can pass up to 50 session tags. The plaintext session tag keys
-     * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
-     * these and additional limits, see <a
+     * Amazon Web Services STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This
+     * parameter is optional. You can pass up to 50 session tags. The plaintext session
+     * tag keys can’t exceed 128 characters, and the values can’t exceed 256
+     * characters. For these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
      * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
      * Amazon Web Services conversion compresses the passed session policies and
@@ -954,10 +982,10 @@ namespace Model
      * key name and an associated value. For more information about session tags, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging
-     * STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
-     * optional. You can pass up to 50 session tags. The plaintext session tag keys
-     * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
-     * these and additional limits, see <a
+     * Amazon Web Services STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This
+     * parameter is optional. You can pass up to 50 session tags. The plaintext session
+     * tag keys can’t exceed 128 characters, and the values can’t exceed 256
+     * characters. For these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
      * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
      * Amazon Web Services conversion compresses the passed session policies and

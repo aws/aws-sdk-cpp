@@ -205,50 +205,50 @@ namespace Model
 
 
     /**
-     * <p>This parameter enables or disables the HTTP metadata endpoint on your
-     * instances. If the parameter is not specified, the existing state is
-     * maintained.</p>  <p>If you specify a value of <code>disabled</code>, you
-     * will not be able to access your instance metadata.</p> 
+     * <p>Enables or disables the HTTP metadata endpoint on your instances. If the
+     * parameter is not specified, the existing state is maintained.</p> <p>If you
+     * specify a value of <code>disabled</code>, you cannot access your instance
+     * metadata.</p>
      */
     inline const InstanceMetadataEndpointState& GetHttpEndpoint() const{ return m_httpEndpoint; }
 
     /**
-     * <p>This parameter enables or disables the HTTP metadata endpoint on your
-     * instances. If the parameter is not specified, the existing state is
-     * maintained.</p>  <p>If you specify a value of <code>disabled</code>, you
-     * will not be able to access your instance metadata.</p> 
+     * <p>Enables or disables the HTTP metadata endpoint on your instances. If the
+     * parameter is not specified, the existing state is maintained.</p> <p>If you
+     * specify a value of <code>disabled</code>, you cannot access your instance
+     * metadata.</p>
      */
     inline bool HttpEndpointHasBeenSet() const { return m_httpEndpointHasBeenSet; }
 
     /**
-     * <p>This parameter enables or disables the HTTP metadata endpoint on your
-     * instances. If the parameter is not specified, the existing state is
-     * maintained.</p>  <p>If you specify a value of <code>disabled</code>, you
-     * will not be able to access your instance metadata.</p> 
+     * <p>Enables or disables the HTTP metadata endpoint on your instances. If the
+     * parameter is not specified, the existing state is maintained.</p> <p>If you
+     * specify a value of <code>disabled</code>, you cannot access your instance
+     * metadata.</p>
      */
     inline void SetHttpEndpoint(const InstanceMetadataEndpointState& value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = value; }
 
     /**
-     * <p>This parameter enables or disables the HTTP metadata endpoint on your
-     * instances. If the parameter is not specified, the existing state is
-     * maintained.</p>  <p>If you specify a value of <code>disabled</code>, you
-     * will not be able to access your instance metadata.</p> 
+     * <p>Enables or disables the HTTP metadata endpoint on your instances. If the
+     * parameter is not specified, the existing state is maintained.</p> <p>If you
+     * specify a value of <code>disabled</code>, you cannot access your instance
+     * metadata.</p>
      */
     inline void SetHttpEndpoint(InstanceMetadataEndpointState&& value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = std::move(value); }
 
     /**
-     * <p>This parameter enables or disables the HTTP metadata endpoint on your
-     * instances. If the parameter is not specified, the existing state is
-     * maintained.</p>  <p>If you specify a value of <code>disabled</code>, you
-     * will not be able to access your instance metadata.</p> 
+     * <p>Enables or disables the HTTP metadata endpoint on your instances. If the
+     * parameter is not specified, the existing state is maintained.</p> <p>If you
+     * specify a value of <code>disabled</code>, you cannot access your instance
+     * metadata.</p>
      */
     inline ModifyInstanceMetadataOptionsRequest& WithHttpEndpoint(const InstanceMetadataEndpointState& value) { SetHttpEndpoint(value); return *this;}
 
     /**
-     * <p>This parameter enables or disables the HTTP metadata endpoint on your
-     * instances. If the parameter is not specified, the existing state is
-     * maintained.</p>  <p>If you specify a value of <code>disabled</code>, you
-     * will not be able to access your instance metadata.</p> 
+     * <p>Enables or disables the HTTP metadata endpoint on your instances. If the
+     * parameter is not specified, the existing state is maintained.</p> <p>If you
+     * specify a value of <code>disabled</code>, you cannot access your instance
+     * metadata.</p>
      */
     inline ModifyInstanceMetadataOptionsRequest& WithHttpEndpoint(InstanceMetadataEndpointState&& value) { SetHttpEndpoint(std::move(value)); return *this;}
 
@@ -287,32 +287,38 @@ namespace Model
 
 
     /**
-     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service. This
+     * setting applies only if you have enabled the HTTP metadata endpoint.</p>
      */
     inline const InstanceMetadataProtocolState& GetHttpProtocolIpv6() const{ return m_httpProtocolIpv6; }
 
     /**
-     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service. This
+     * setting applies only if you have enabled the HTTP metadata endpoint.</p>
      */
     inline bool HttpProtocolIpv6HasBeenSet() const { return m_httpProtocolIpv6HasBeenSet; }
 
     /**
-     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service. This
+     * setting applies only if you have enabled the HTTP metadata endpoint.</p>
      */
     inline void SetHttpProtocolIpv6(const InstanceMetadataProtocolState& value) { m_httpProtocolIpv6HasBeenSet = true; m_httpProtocolIpv6 = value; }
 
     /**
-     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service. This
+     * setting applies only if you have enabled the HTTP metadata endpoint.</p>
      */
     inline void SetHttpProtocolIpv6(InstanceMetadataProtocolState&& value) { m_httpProtocolIpv6HasBeenSet = true; m_httpProtocolIpv6 = std::move(value); }
 
     /**
-     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service. This
+     * setting applies only if you have enabled the HTTP metadata endpoint.</p>
      */
     inline ModifyInstanceMetadataOptionsRequest& WithHttpProtocolIpv6(const InstanceMetadataProtocolState& value) { SetHttpProtocolIpv6(value); return *this;}
 
     /**
-     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service. This
+     * setting applies only if you have enabled the HTTP metadata endpoint.</p>
      */
     inline ModifyInstanceMetadataOptionsRequest& WithHttpProtocolIpv6(InstanceMetadataProtocolState&& value) { SetHttpProtocolIpv6(std::move(value)); return *this;}
 

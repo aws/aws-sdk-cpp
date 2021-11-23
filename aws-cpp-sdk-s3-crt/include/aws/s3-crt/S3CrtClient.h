@@ -662,7 +662,11 @@ namespace Aws
          * if <code>CompleteMultipartUpload</code> fails, applications should be prepared
          * to retry the failed requests. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ErrorBestPractices.html">Amazon
-         * S3 Error Best Practices</a>.</p> <p>For more information about multipart
+         * S3 Error Best Practices</a>.</p>  <p>You cannot use
+         * <code>Content-Type: application/x-www-form-urlencoded</code> with Complete
+         * Multipart Upload requests. Also, if you do not provide a
+         * <code>Content-Type</code> header, <code>CompleteMultipartUpload</code> returns a
+         * 200 OK response.</p>  <p>For more information about multipart
          * uploads, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">Uploading
          * Objects Using Multipart Upload</a>.</p> <p>For information about permissions
@@ -722,7 +726,11 @@ namespace Aws
          * if <code>CompleteMultipartUpload</code> fails, applications should be prepared
          * to retry the failed requests. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ErrorBestPractices.html">Amazon
-         * S3 Error Best Practices</a>.</p> <p>For more information about multipart
+         * S3 Error Best Practices</a>.</p>  <p>You cannot use
+         * <code>Content-Type: application/x-www-form-urlencoded</code> with Complete
+         * Multipart Upload requests. Also, if you do not provide a
+         * <code>Content-Type</code> header, <code>CompleteMultipartUpload</code> returns a
+         * 200 OK response.</p>  <p>For more information about multipart
          * uploads, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">Uploading
          * Objects Using Multipart Upload</a>.</p> <p>For information about permissions
@@ -784,7 +792,11 @@ namespace Aws
          * if <code>CompleteMultipartUpload</code> fails, applications should be prepared
          * to retry the failed requests. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ErrorBestPractices.html">Amazon
-         * S3 Error Best Practices</a>.</p> <p>For more information about multipart
+         * S3 Error Best Practices</a>.</p>  <p>You cannot use
+         * <code>Content-Type: application/x-www-form-urlencoded</code> with Complete
+         * Multipart Upload requests. Also, if you do not provide a
+         * <code>Content-Type</code> header, <code>CompleteMultipartUpload</code> returns a
+         * 200 OK response.</p>  <p>For more information about multipart
          * uploads, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">Uploading
          * Objects Using Multipart Upload</a>.</p> <p>For information about permissions
@@ -4711,11 +4723,13 @@ namespace Aws
          * code 403 ("access denied") error.</p> </li> </ul> <p> <b>Versioning</b> </p>
          * <p>By default, the GET action returns the current version of an object. To
          * return a different version, use the <code>versionId</code> subresource.</p>
-         *  <ul> <li> <p>You need the <code>s3:GetObjectVersion</code> permission to
-         * access a specific version of an object. </p> </li> <li> <p>If the current
-         * version of the object is a delete marker, Amazon S3 behaves as if the object was
-         * deleted and includes <code>x-amz-delete-marker: true</code> in the response.</p>
-         * </li> </ul>  <p>For more information about versioning, see <a
+         *  <ul> <li> <p> If you supply a <code>versionId</code>, you need the
+         * <code>s3:GetObjectVersion</code> permission to access a specific version of an
+         * object. If you request a specific version, you do not need to have the
+         * <code>s3:GetObject</code> permission. </p> </li> <li> <p>If the current version
+         * of the object is a delete marker, Amazon S3 behaves as if the object was deleted
+         * and includes <code>x-amz-delete-marker: true</code> in the response.</p> </li>
+         * </ul>  <p>For more information about versioning, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a>.
          * </p> <p> <b>Overriding Response Header Values</b> </p> <p>There are times when
          * you want to override certain response header values in a GET response. For
@@ -4824,11 +4838,13 @@ namespace Aws
          * code 403 ("access denied") error.</p> </li> </ul> <p> <b>Versioning</b> </p>
          * <p>By default, the GET action returns the current version of an object. To
          * return a different version, use the <code>versionId</code> subresource.</p>
-         *  <ul> <li> <p>You need the <code>s3:GetObjectVersion</code> permission to
-         * access a specific version of an object. </p> </li> <li> <p>If the current
-         * version of the object is a delete marker, Amazon S3 behaves as if the object was
-         * deleted and includes <code>x-amz-delete-marker: true</code> in the response.</p>
-         * </li> </ul>  <p>For more information about versioning, see <a
+         *  <ul> <li> <p> If you supply a <code>versionId</code>, you need the
+         * <code>s3:GetObjectVersion</code> permission to access a specific version of an
+         * object. If you request a specific version, you do not need to have the
+         * <code>s3:GetObject</code> permission. </p> </li> <li> <p>If the current version
+         * of the object is a delete marker, Amazon S3 behaves as if the object was deleted
+         * and includes <code>x-amz-delete-marker: true</code> in the response.</p> </li>
+         * </ul>  <p>For more information about versioning, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a>.
          * </p> <p> <b>Overriding Response Header Values</b> </p> <p>There are times when
          * you want to override certain response header values in a GET response. For

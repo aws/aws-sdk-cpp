@@ -52,7 +52,8 @@ ResponseLaunchTemplateData::ResponseLaunchTemplateData() :
     m_hibernationOptionsHasBeenSet(false),
     m_metadataOptionsHasBeenSet(false),
     m_enclaveOptionsHasBeenSet(false),
-    m_instanceRequirementsHasBeenSet(false)
+    m_instanceRequirementsHasBeenSet(false),
+    m_privateDnsNameOptionsHasBeenSet(false)
 {
 }
 
@@ -88,7 +89,8 @@ ResponseLaunchTemplateData::ResponseLaunchTemplateData(const XmlNode& xmlNode) :
     m_hibernationOptionsHasBeenSet(false),
     m_metadataOptionsHasBeenSet(false),
     m_enclaveOptionsHasBeenSet(false),
-    m_instanceRequirementsHasBeenSet(false)
+    m_instanceRequirementsHasBeenSet(false),
+    m_privateDnsNameOptionsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -315,6 +317,12 @@ ResponseLaunchTemplateData& ResponseLaunchTemplateData::operator =(const XmlNode
       m_instanceRequirements = instanceRequirementsNode;
       m_instanceRequirementsHasBeenSet = true;
     }
+    XmlNode privateDnsNameOptionsNode = resultNode.FirstChild("privateDnsNameOptions");
+    if(!privateDnsNameOptionsNode.IsNull())
+    {
+      m_privateDnsNameOptions = privateDnsNameOptionsNode;
+      m_privateDnsNameOptionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -528,6 +536,13 @@ void ResponseLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const cha
       m_instanceRequirements.OutputToStream(oStream, instanceRequirementsLocationAndMemberSs.str().c_str());
   }
 
+  if(m_privateDnsNameOptionsHasBeenSet)
+  {
+      Aws::StringStream privateDnsNameOptionsLocationAndMemberSs;
+      privateDnsNameOptionsLocationAndMemberSs << location << index << locationValue << ".PrivateDnsNameOptions";
+      m_privateDnsNameOptions.OutputToStream(oStream, privateDnsNameOptionsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void ResponseLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -709,6 +724,12 @@ void ResponseLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const cha
       Aws::String instanceRequirementsLocationAndMember(location);
       instanceRequirementsLocationAndMember += ".InstanceRequirements";
       m_instanceRequirements.OutputToStream(oStream, instanceRequirementsLocationAndMember.c_str());
+  }
+  if(m_privateDnsNameOptionsHasBeenSet)
+  {
+      Aws::String privateDnsNameOptionsLocationAndMember(location);
+      privateDnsNameOptionsLocationAndMember += ".PrivateDnsNameOptions";
+      m_privateDnsNameOptions.OutputToStream(oStream, privateDnsNameOptionsLocationAndMember.c_str());
   }
 }
 

@@ -17,7 +17,9 @@ ExecuteStatementRequest::ExecuteStatementRequest() :
     m_parametersHasBeenSet(false),
     m_consistentRead(false),
     m_consistentReadHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_returnConsumedCapacity(ReturnConsumedCapacity::NOT_SET),
+    m_returnConsumedCapacityHasBeenSet(false)
 {
 }
 
@@ -52,6 +54,11 @@ Aws::String ExecuteStatementRequest::SerializePayload() const
   {
    payload.WithString("NextToken", m_nextToken);
 
+  }
+
+  if(m_returnConsumedCapacityHasBeenSet)
+  {
+   payload.WithString("ReturnConsumedCapacity", ReturnConsumedCapacityMapper::GetNameForReturnConsumedCapacity(m_returnConsumedCapacity));
   }
 
   return payload.View().WriteReadable();

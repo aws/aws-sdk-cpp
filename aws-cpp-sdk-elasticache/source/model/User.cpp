@@ -25,6 +25,7 @@ User::User() :
     m_userNameHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_engineHasBeenSet(false),
+    m_minimumEngineVersionHasBeenSet(false),
     m_accessStringHasBeenSet(false),
     m_userGroupIdsHasBeenSet(false),
     m_authenticationHasBeenSet(false),
@@ -38,6 +39,7 @@ User::User(const XmlNode& xmlNode) :
     m_userNameHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_engineHasBeenSet(false),
+    m_minimumEngineVersionHasBeenSet(false),
     m_accessStringHasBeenSet(false),
     m_userGroupIdsHasBeenSet(false),
     m_authenticationHasBeenSet(false),
@@ -76,6 +78,12 @@ User& User::operator =(const XmlNode& xmlNode)
     {
       m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
       m_engineHasBeenSet = true;
+    }
+    XmlNode minimumEngineVersionNode = resultNode.FirstChild("MinimumEngineVersion");
+    if(!minimumEngineVersionNode.IsNull())
+    {
+      m_minimumEngineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(minimumEngineVersionNode.GetText());
+      m_minimumEngineVersionHasBeenSet = true;
     }
     XmlNode accessStringNode = resultNode.FirstChild("AccessString");
     if(!accessStringNode.IsNull())
@@ -134,6 +142,11 @@ void User::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
       oStream << location << index << locationValue << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
 
+  if(m_minimumEngineVersionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MinimumEngineVersion=" << StringUtils::URLEncode(m_minimumEngineVersion.c_str()) << "&";
+  }
+
   if(m_accessStringHasBeenSet)
   {
       oStream << location << index << locationValue << ".AccessString=" << StringUtils::URLEncode(m_accessString.c_str()) << "&";
@@ -186,6 +199,10 @@ void User::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_engineHasBeenSet)
   {
       oStream << location << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
+  }
+  if(m_minimumEngineVersionHasBeenSet)
+  {
+      oStream << location << ".MinimumEngineVersion=" << StringUtils::URLEncode(m_minimumEngineVersion.c_str()) << "&";
   }
   if(m_accessStringHasBeenSet)
   {

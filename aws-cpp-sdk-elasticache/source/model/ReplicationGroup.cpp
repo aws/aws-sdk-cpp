@@ -52,7 +52,9 @@ ReplicationGroup::ReplicationGroup() :
     m_aRNHasBeenSet(false),
     m_userGroupIdsHasBeenSet(false),
     m_logDeliveryConfigurationsHasBeenSet(false),
-    m_replicationGroupCreateTimeHasBeenSet(false)
+    m_replicationGroupCreateTimeHasBeenSet(false),
+    m_dataTiering(DataTieringStatus::NOT_SET),
+    m_dataTieringHasBeenSet(false)
 {
 }
 
@@ -88,7 +90,9 @@ ReplicationGroup::ReplicationGroup(const XmlNode& xmlNode) :
     m_aRNHasBeenSet(false),
     m_userGroupIdsHasBeenSet(false),
     m_logDeliveryConfigurationsHasBeenSet(false),
-    m_replicationGroupCreateTimeHasBeenSet(false)
+    m_replicationGroupCreateTimeHasBeenSet(false),
+    m_dataTiering(DataTieringStatus::NOT_SET),
+    m_dataTieringHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -279,6 +283,12 @@ ReplicationGroup& ReplicationGroup::operator =(const XmlNode& xmlNode)
       m_replicationGroupCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replicationGroupCreateTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_replicationGroupCreateTimeHasBeenSet = true;
     }
+    XmlNode dataTieringNode = resultNode.FirstChild("DataTiering");
+    if(!dataTieringNode.IsNull())
+    {
+      m_dataTiering = DataTieringStatusMapper::GetDataTieringStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dataTieringNode.GetText()).c_str()).c_str());
+      m_dataTieringHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -441,6 +451,11 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".ReplicationGroupCreateTime=" << StringUtils::URLEncode(m_replicationGroupCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_dataTieringHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DataTiering=" << DataTieringStatusMapper::GetNameForDataTieringStatus(m_dataTiering) << "&";
+  }
+
 }
 
 void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -574,6 +589,10 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_replicationGroupCreateTimeHasBeenSet)
   {
       oStream << location << ".ReplicationGroupCreateTime=" << StringUtils::URLEncode(m_replicationGroupCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_dataTieringHasBeenSet)
+  {
+      oStream << location << ".DataTiering=" << DataTieringStatusMapper::GetNameForDataTieringStatus(m_dataTiering) << "&";
   }
 }
 

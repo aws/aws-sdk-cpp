@@ -25,6 +25,7 @@ UserGroup::UserGroup() :
     m_statusHasBeenSet(false),
     m_engineHasBeenSet(false),
     m_userIdsHasBeenSet(false),
+    m_minimumEngineVersionHasBeenSet(false),
     m_pendingChangesHasBeenSet(false),
     m_replicationGroupsHasBeenSet(false),
     m_aRNHasBeenSet(false),
@@ -37,6 +38,7 @@ UserGroup::UserGroup(const XmlNode& xmlNode) :
     m_statusHasBeenSet(false),
     m_engineHasBeenSet(false),
     m_userIdsHasBeenSet(false),
+    m_minimumEngineVersionHasBeenSet(false),
     m_pendingChangesHasBeenSet(false),
     m_replicationGroupsHasBeenSet(false),
     m_aRNHasBeenSet(false),
@@ -80,6 +82,12 @@ UserGroup& UserGroup::operator =(const XmlNode& xmlNode)
       }
 
       m_userIdsHasBeenSet = true;
+    }
+    XmlNode minimumEngineVersionNode = resultNode.FirstChild("MinimumEngineVersion");
+    if(!minimumEngineVersionNode.IsNull())
+    {
+      m_minimumEngineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(minimumEngineVersionNode.GetText());
+      m_minimumEngineVersionHasBeenSet = true;
     }
     XmlNode pendingChangesNode = resultNode.FirstChild("PendingChanges");
     if(!pendingChangesNode.IsNull())
@@ -136,6 +144,11 @@ void UserGroup::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       }
   }
 
+  if(m_minimumEngineVersionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MinimumEngineVersion=" << StringUtils::URLEncode(m_minimumEngineVersion.c_str()) << "&";
+  }
+
   if(m_pendingChangesHasBeenSet)
   {
       Aws::StringStream pendingChangesLocationAndMemberSs;
@@ -187,6 +200,10 @@ void UserGroup::OutputToStream(Aws::OStream& oStream, const char* location) cons
       {
         oStream << location << ".UserIds.member." << userIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
+  }
+  if(m_minimumEngineVersionHasBeenSet)
+  {
+      oStream << location << ".MinimumEngineVersion=" << StringUtils::URLEncode(m_minimumEngineVersion.c_str()) << "&";
   }
   if(m_pendingChangesHasBeenSet)
   {

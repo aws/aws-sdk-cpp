@@ -40,6 +40,7 @@ static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequest
 static const int INVALID_STATE_TRANSITION_HASH = HashingUtils::HashString("InvalidStateTransitionException");
 static const int CERTIFICATE_VALIDATION_HASH = HashingUtils::HashString("CertificateValidationException");
 static const int CONFLICTING_RESOURCE_UPDATE_HASH = HashingUtils::HashString("ConflictingResourceUpdateException");
+static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
 static const int TRANSFER_CONFLICT_HASH = HashingUtils::HashString("TransferConflictException");
 static const int SQL_PARSE_HASH = HashingUtils::HashString("SqlParseException");
@@ -113,6 +114,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CONFLICTING_RESOURCE_UPDATE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::CONFLICTING_RESOURCE_UPDATE), false);
+  }
+  else if (hashCode == INTERNAL_SERVER_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INTERNAL_SERVER), false);
   }
   else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {

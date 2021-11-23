@@ -201,6 +201,31 @@ namespace Model
     inline User& WithEngine(const char* value) { SetEngine(value); return *this;}
 
 
+    
+    inline const Aws::String& GetMinimumEngineVersion() const{ return m_minimumEngineVersion; }
+
+    
+    inline bool MinimumEngineVersionHasBeenSet() const { return m_minimumEngineVersionHasBeenSet; }
+
+    
+    inline void SetMinimumEngineVersion(const Aws::String& value) { m_minimumEngineVersionHasBeenSet = true; m_minimumEngineVersion = value; }
+
+    
+    inline void SetMinimumEngineVersion(Aws::String&& value) { m_minimumEngineVersionHasBeenSet = true; m_minimumEngineVersion = std::move(value); }
+
+    
+    inline void SetMinimumEngineVersion(const char* value) { m_minimumEngineVersionHasBeenSet = true; m_minimumEngineVersion.assign(value); }
+
+    
+    inline User& WithMinimumEngineVersion(const Aws::String& value) { SetMinimumEngineVersion(value); return *this;}
+
+    
+    inline User& WithMinimumEngineVersion(Aws::String&& value) { SetMinimumEngineVersion(std::move(value)); return *this;}
+
+    
+    inline User& WithMinimumEngineVersion(const char* value) { SetMinimumEngineVersion(value); return *this;}
+
+
     /**
      * <p>Access permissions string used for this user.</p>
      */
@@ -391,6 +416,9 @@ namespace Model
 
     Aws::String m_engine;
     bool m_engineHasBeenSet;
+
+    Aws::String m_minimumEngineVersion;
+    bool m_minimumEngineVersionHasBeenSet;
 
     Aws::String m_accessString;
     bool m_accessStringHasBeenSet;

@@ -1174,7 +1174,7 @@ namespace Model
         virtual void CreateSnapshotAsync(const Model::CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>For Redis engine version 6.x onwards: Creates a Redis user. For more
+         * <p>For Redis engine version 6.0 onwards: Creates a Redis user. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
          * Role Based Access Control (RBAC)</a>.</p><p><h3>See Also:</h3>   <a
@@ -1184,7 +1184,7 @@ namespace Model
         virtual Model::CreateUserOutcome CreateUser(const Model::CreateUserRequest& request) const;
 
         /**
-         * <p>For Redis engine version 6.x onwards: Creates a Redis user. For more
+         * <p>For Redis engine version 6.0 onwards: Creates a Redis user. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
          * Role Based Access Control (RBAC)</a>.</p><p><h3>See Also:</h3>   <a
@@ -1196,7 +1196,7 @@ namespace Model
         virtual Model::CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request) const;
 
         /**
-         * <p>For Redis engine version 6.x onwards: Creates a Redis user. For more
+         * <p>For Redis engine version 6.0 onwards: Creates a Redis user. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
          * Role Based Access Control (RBAC)</a>.</p><p><h3>See Also:</h3>   <a
@@ -1208,7 +1208,7 @@ namespace Model
         virtual void CreateUserAsync(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>For Redis engine version 6.x onwards: Creates a Redis user group. For more
+         * <p>For Redis engine version 6.0 onwards: Creates a Redis user group. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
          * Role Based Access Control (RBAC)</a> </p><p><h3>See Also:</h3>   <a
@@ -1218,7 +1218,7 @@ namespace Model
         virtual Model::CreateUserGroupOutcome CreateUserGroup(const Model::CreateUserGroupRequest& request) const;
 
         /**
-         * <p>For Redis engine version 6.x onwards: Creates a Redis user group. For more
+         * <p>For Redis engine version 6.0 onwards: Creates a Redis user group. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
          * Role Based Access Control (RBAC)</a> </p><p><h3>See Also:</h3>   <a
@@ -1230,7 +1230,7 @@ namespace Model
         virtual Model::CreateUserGroupOutcomeCallable CreateUserGroupCallable(const Model::CreateUserGroupRequest& request) const;
 
         /**
-         * <p>For Redis engine version 6.x onwards: Creates a Redis user group. For more
+         * <p>For Redis engine version 6.0 onwards: Creates a Redis user group. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
          * Role Based Access Control (RBAC)</a> </p><p><h3>See Also:</h3>   <a
@@ -1605,7 +1605,7 @@ namespace Model
         virtual void DeleteSnapshotAsync(const Model::DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>For Redis engine version 6.x onwards: Deletes a user. The user will be
+         * <p>For Redis engine version 6.0 onwards: Deletes a user. The user will be
          * removed from all user groups and in turn removed from all replication groups.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
@@ -1616,7 +1616,7 @@ namespace Model
         virtual Model::DeleteUserOutcome DeleteUser(const Model::DeleteUserRequest& request) const;
 
         /**
-         * <p>For Redis engine version 6.x onwards: Deletes a user. The user will be
+         * <p>For Redis engine version 6.0 onwards: Deletes a user. The user will be
          * removed from all user groups and in turn removed from all replication groups.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
@@ -1629,7 +1629,7 @@ namespace Model
         virtual Model::DeleteUserOutcomeCallable DeleteUserCallable(const Model::DeleteUserRequest& request) const;
 
         /**
-         * <p>For Redis engine version 6.x onwards: Deletes a user. The user will be
+         * <p>For Redis engine version 6.0 onwards: Deletes a user. The user will be
          * removed from all user groups and in turn removed from all replication groups.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
@@ -1642,7 +1642,7 @@ namespace Model
         virtual void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>For Redis engine version 6.x onwards: Deletes a user group. The user group
+         * <p>For Redis engine version 6.0 onwards: Deletes a user group. The user group
          * must first be disassociated from the replication group before it can be deleted.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
@@ -1653,7 +1653,7 @@ namespace Model
         virtual Model::DeleteUserGroupOutcome DeleteUserGroup(const Model::DeleteUserGroupRequest& request) const;
 
         /**
-         * <p>For Redis engine version 6.x onwards: Deletes a user group. The user group
+         * <p>For Redis engine version 6.0 onwards: Deletes a user group. The user group
          * must first be disassociated from the replication group before it can be deleted.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
@@ -1666,7 +1666,7 @@ namespace Model
         virtual Model::DeleteUserGroupOutcomeCallable DeleteUserGroupCallable(const Model::DeleteUserGroupRequest& request) const;
 
         /**
-         * <p>For Redis engine version 6.x onwards: Deletes a user group. The user group
+         * <p>For Redis engine version 6.0 onwards: Deletes a user group. The user group
          * must first be disassociated from the replication group before it can be deleted.
          * For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
@@ -2949,28 +2949,32 @@ namespace Model
         /**
          * <p>Represents the input of a <code>TestFailover</code> operation which test
          * automatic failover on a specified node group (called shard in the console) in a
-         * replication group (called cluster in the console).</p> <p class="title"> <b>Note
-         * the following</b> </p> <ul> <li> <p>A customer can use this operation to test
-         * automatic failover on up to 5 shards (called node groups in the ElastiCache API
-         * and Amazon CLI) in any rolling 24-hour period.</p> </li> <li> <p>If calling this
-         * operation on shards in different clusters (called replication groups in the API
-         * and CLI), the calls can be made concurrently.</p> <p> </p> </li> <li> <p>If
-         * calling this operation multiple times on different shards in the same Redis
-         * (cluster mode enabled) replication group, the first node replacement must
-         * complete before a subsequent call can be made.</p> </li> <li> <p>To determine
-         * whether the node replacement is complete you can check Events using the Amazon
-         * ElastiCache console, the Amazon CLI, or the ElastiCache API. Look for the
-         * following automatic failover related events, listed here in order of
-         * occurrance:</p> <ol> <li> <p>Replication group message: <code>Test Failover API
-         * called for node group &lt;node-group-id&gt;</code> </p> </li> <li> <p>Cache
-         * cluster message: <code>Failover from primary node &lt;primary-node-id&gt; to
-         * replica node &lt;node-id&gt; completed</code> </p> </li> <li> <p>Replication
-         * group message: <code>Failover from primary node &lt;primary-node-id&gt; to
-         * replica node &lt;node-id&gt; completed</code> </p> </li> <li> <p>Cache cluster
-         * message: <code>Recovering cache nodes &lt;node-id&gt;</code> </p> </li> <li>
-         * <p>Cache cluster message: <code>Finished recovery for cache nodes
-         * &lt;node-id&gt;</code> </p> </li> </ol> <p>For more information see:</p> <ul>
-         * <li> <p> <a
+         * replication group (called cluster in the console).</p> <p>This API is designed
+         * for testing the behavior of your application in case of ElastiCache failover. It
+         * is not designed to be an operational tool for initiating a failover to overcome
+         * a problem you may have with the cluster. Moreover, in certain conditions such as
+         * large-scale operational events, Amazon may block this API. </p> <p
+         * class="title"> <b>Note the following</b> </p> <ul> <li> <p>A customer can use
+         * this operation to test automatic failover on up to 5 shards (called node groups
+         * in the ElastiCache API and Amazon CLI) in any rolling 24-hour period.</p> </li>
+         * <li> <p>If calling this operation on shards in different clusters (called
+         * replication groups in the API and CLI), the calls can be made concurrently.</p>
+         * <p> </p> </li> <li> <p>If calling this operation multiple times on different
+         * shards in the same Redis (cluster mode enabled) replication group, the first
+         * node replacement must complete before a subsequent call can be made.</p> </li>
+         * <li> <p>To determine whether the node replacement is complete you can check
+         * Events using the Amazon ElastiCache console, the Amazon CLI, or the ElastiCache
+         * API. Look for the following automatic failover related events, listed here in
+         * order of occurrance:</p> <ol> <li> <p>Replication group message: <code>Test
+         * Failover API called for node group &lt;node-group-id&gt;</code> </p> </li> <li>
+         * <p>Cache cluster message: <code>Failover from primary node
+         * &lt;primary-node-id&gt; to replica node &lt;node-id&gt; completed</code> </p>
+         * </li> <li> <p>Replication group message: <code>Failover from primary node
+         * &lt;primary-node-id&gt; to replica node &lt;node-id&gt; completed</code> </p>
+         * </li> <li> <p>Cache cluster message: <code>Recovering cache nodes
+         * &lt;node-id&gt;</code> </p> </li> <li> <p>Cache cluster message: <code>Finished
+         * recovery for cache nodes &lt;node-id&gt;</code> </p> </li> </ol> <p>For more
+         * information see:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ECEvents.Viewing.html">Viewing
          * ElastiCache Events</a> in the <i>ElastiCache User Guide</i> </p> </li> <li> <p>
          * <a
@@ -2987,28 +2991,32 @@ namespace Model
         /**
          * <p>Represents the input of a <code>TestFailover</code> operation which test
          * automatic failover on a specified node group (called shard in the console) in a
-         * replication group (called cluster in the console).</p> <p class="title"> <b>Note
-         * the following</b> </p> <ul> <li> <p>A customer can use this operation to test
-         * automatic failover on up to 5 shards (called node groups in the ElastiCache API
-         * and Amazon CLI) in any rolling 24-hour period.</p> </li> <li> <p>If calling this
-         * operation on shards in different clusters (called replication groups in the API
-         * and CLI), the calls can be made concurrently.</p> <p> </p> </li> <li> <p>If
-         * calling this operation multiple times on different shards in the same Redis
-         * (cluster mode enabled) replication group, the first node replacement must
-         * complete before a subsequent call can be made.</p> </li> <li> <p>To determine
-         * whether the node replacement is complete you can check Events using the Amazon
-         * ElastiCache console, the Amazon CLI, or the ElastiCache API. Look for the
-         * following automatic failover related events, listed here in order of
-         * occurrance:</p> <ol> <li> <p>Replication group message: <code>Test Failover API
-         * called for node group &lt;node-group-id&gt;</code> </p> </li> <li> <p>Cache
-         * cluster message: <code>Failover from primary node &lt;primary-node-id&gt; to
-         * replica node &lt;node-id&gt; completed</code> </p> </li> <li> <p>Replication
-         * group message: <code>Failover from primary node &lt;primary-node-id&gt; to
-         * replica node &lt;node-id&gt; completed</code> </p> </li> <li> <p>Cache cluster
-         * message: <code>Recovering cache nodes &lt;node-id&gt;</code> </p> </li> <li>
-         * <p>Cache cluster message: <code>Finished recovery for cache nodes
-         * &lt;node-id&gt;</code> </p> </li> </ol> <p>For more information see:</p> <ul>
-         * <li> <p> <a
+         * replication group (called cluster in the console).</p> <p>This API is designed
+         * for testing the behavior of your application in case of ElastiCache failover. It
+         * is not designed to be an operational tool for initiating a failover to overcome
+         * a problem you may have with the cluster. Moreover, in certain conditions such as
+         * large-scale operational events, Amazon may block this API. </p> <p
+         * class="title"> <b>Note the following</b> </p> <ul> <li> <p>A customer can use
+         * this operation to test automatic failover on up to 5 shards (called node groups
+         * in the ElastiCache API and Amazon CLI) in any rolling 24-hour period.</p> </li>
+         * <li> <p>If calling this operation on shards in different clusters (called
+         * replication groups in the API and CLI), the calls can be made concurrently.</p>
+         * <p> </p> </li> <li> <p>If calling this operation multiple times on different
+         * shards in the same Redis (cluster mode enabled) replication group, the first
+         * node replacement must complete before a subsequent call can be made.</p> </li>
+         * <li> <p>To determine whether the node replacement is complete you can check
+         * Events using the Amazon ElastiCache console, the Amazon CLI, or the ElastiCache
+         * API. Look for the following automatic failover related events, listed here in
+         * order of occurrance:</p> <ol> <li> <p>Replication group message: <code>Test
+         * Failover API called for node group &lt;node-group-id&gt;</code> </p> </li> <li>
+         * <p>Cache cluster message: <code>Failover from primary node
+         * &lt;primary-node-id&gt; to replica node &lt;node-id&gt; completed</code> </p>
+         * </li> <li> <p>Replication group message: <code>Failover from primary node
+         * &lt;primary-node-id&gt; to replica node &lt;node-id&gt; completed</code> </p>
+         * </li> <li> <p>Cache cluster message: <code>Recovering cache nodes
+         * &lt;node-id&gt;</code> </p> </li> <li> <p>Cache cluster message: <code>Finished
+         * recovery for cache nodes &lt;node-id&gt;</code> </p> </li> </ol> <p>For more
+         * information see:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ECEvents.Viewing.html">Viewing
          * ElastiCache Events</a> in the <i>ElastiCache User Guide</i> </p> </li> <li> <p>
          * <a
@@ -3027,28 +3035,32 @@ namespace Model
         /**
          * <p>Represents the input of a <code>TestFailover</code> operation which test
          * automatic failover on a specified node group (called shard in the console) in a
-         * replication group (called cluster in the console).</p> <p class="title"> <b>Note
-         * the following</b> </p> <ul> <li> <p>A customer can use this operation to test
-         * automatic failover on up to 5 shards (called node groups in the ElastiCache API
-         * and Amazon CLI) in any rolling 24-hour period.</p> </li> <li> <p>If calling this
-         * operation on shards in different clusters (called replication groups in the API
-         * and CLI), the calls can be made concurrently.</p> <p> </p> </li> <li> <p>If
-         * calling this operation multiple times on different shards in the same Redis
-         * (cluster mode enabled) replication group, the first node replacement must
-         * complete before a subsequent call can be made.</p> </li> <li> <p>To determine
-         * whether the node replacement is complete you can check Events using the Amazon
-         * ElastiCache console, the Amazon CLI, or the ElastiCache API. Look for the
-         * following automatic failover related events, listed here in order of
-         * occurrance:</p> <ol> <li> <p>Replication group message: <code>Test Failover API
-         * called for node group &lt;node-group-id&gt;</code> </p> </li> <li> <p>Cache
-         * cluster message: <code>Failover from primary node &lt;primary-node-id&gt; to
-         * replica node &lt;node-id&gt; completed</code> </p> </li> <li> <p>Replication
-         * group message: <code>Failover from primary node &lt;primary-node-id&gt; to
-         * replica node &lt;node-id&gt; completed</code> </p> </li> <li> <p>Cache cluster
-         * message: <code>Recovering cache nodes &lt;node-id&gt;</code> </p> </li> <li>
-         * <p>Cache cluster message: <code>Finished recovery for cache nodes
-         * &lt;node-id&gt;</code> </p> </li> </ol> <p>For more information see:</p> <ul>
-         * <li> <p> <a
+         * replication group (called cluster in the console).</p> <p>This API is designed
+         * for testing the behavior of your application in case of ElastiCache failover. It
+         * is not designed to be an operational tool for initiating a failover to overcome
+         * a problem you may have with the cluster. Moreover, in certain conditions such as
+         * large-scale operational events, Amazon may block this API. </p> <p
+         * class="title"> <b>Note the following</b> </p> <ul> <li> <p>A customer can use
+         * this operation to test automatic failover on up to 5 shards (called node groups
+         * in the ElastiCache API and Amazon CLI) in any rolling 24-hour period.</p> </li>
+         * <li> <p>If calling this operation on shards in different clusters (called
+         * replication groups in the API and CLI), the calls can be made concurrently.</p>
+         * <p> </p> </li> <li> <p>If calling this operation multiple times on different
+         * shards in the same Redis (cluster mode enabled) replication group, the first
+         * node replacement must complete before a subsequent call can be made.</p> </li>
+         * <li> <p>To determine whether the node replacement is complete you can check
+         * Events using the Amazon ElastiCache console, the Amazon CLI, or the ElastiCache
+         * API. Look for the following automatic failover related events, listed here in
+         * order of occurrance:</p> <ol> <li> <p>Replication group message: <code>Test
+         * Failover API called for node group &lt;node-group-id&gt;</code> </p> </li> <li>
+         * <p>Cache cluster message: <code>Failover from primary node
+         * &lt;primary-node-id&gt; to replica node &lt;node-id&gt; completed</code> </p>
+         * </li> <li> <p>Replication group message: <code>Failover from primary node
+         * &lt;primary-node-id&gt; to replica node &lt;node-id&gt; completed</code> </p>
+         * </li> <li> <p>Cache cluster message: <code>Recovering cache nodes
+         * &lt;node-id&gt;</code> </p> </li> <li> <p>Cache cluster message: <code>Finished
+         * recovery for cache nodes &lt;node-id&gt;</code> </p> </li> </ol> <p>For more
+         * information see:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ECEvents.Viewing.html">Viewing
          * ElastiCache Events</a> in the <i>ElastiCache User Guide</i> </p> </li> <li> <p>
          * <a

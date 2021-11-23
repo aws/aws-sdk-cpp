@@ -43,42 +43,50 @@ namespace Model
 
 
     /**
-     * <p>An optional display name for a backup rule.</p>
+     * <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.'
+     * characters.</p>
      */
     inline const Aws::String& GetRuleName() const{ return m_ruleName; }
 
     /**
-     * <p>An optional display name for a backup rule.</p>
+     * <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.'
+     * characters.</p>
      */
     inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
 
     /**
-     * <p>An optional display name for a backup rule.</p>
+     * <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.'
+     * characters.</p>
      */
     inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
 
     /**
-     * <p>An optional display name for a backup rule.</p>
+     * <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.'
+     * characters.</p>
      */
     inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
 
     /**
-     * <p>An optional display name for a backup rule.</p>
+     * <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.'
+     * characters.</p>
      */
     inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
 
     /**
-     * <p>An optional display name for a backup rule.</p>
+     * <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.'
+     * characters.</p>
      */
     inline BackupRuleInput& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
 
     /**
-     * <p>An optional display name for a backup rule.</p>
+     * <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.'
+     * characters.</p>
      */
     inline BackupRuleInput& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
 
     /**
-     * <p>An optional display name for a backup rule.</p>
+     * <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.'
+     * characters.</p>
      */
     inline BackupRuleInput& WithRuleName(const char* value) { SetRuleName(value); return *this;}
 

@@ -14,6 +14,7 @@
 #include <aws/elasticache/model/MultiAZStatus.h>
 #include <aws/elasticache/model/Endpoint.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/elasticache/model/DataTieringStatus.h>
 #include <aws/elasticache/model/NodeGroup.h>
 #include <aws/elasticache/model/LogDeliveryConfiguration.h>
 #include <utility>
@@ -1137,6 +1138,61 @@ namespace Model
      */
     inline ReplicationGroup& WithReplicationGroupCreateTime(Aws::Utils::DateTime&& value) { SetReplicationGroupCreateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline const DataTieringStatus& GetDataTiering() const{ return m_dataTiering; }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline bool DataTieringHasBeenSet() const { return m_dataTieringHasBeenSet; }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline void SetDataTiering(const DataTieringStatus& value) { m_dataTieringHasBeenSet = true; m_dataTiering = value; }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline void SetDataTiering(DataTieringStatus&& value) { m_dataTieringHasBeenSet = true; m_dataTiering = std::move(value); }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline ReplicationGroup& WithDataTiering(const DataTieringStatus& value) { SetDataTiering(value); return *this;}
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline ReplicationGroup& WithDataTiering(DataTieringStatus&& value) { SetDataTiering(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_replicationGroupId;
@@ -1213,6 +1269,9 @@ namespace Model
 
     Aws::Utils::DateTime m_replicationGroupCreateTime;
     bool m_replicationGroupCreateTimeHasBeenSet;
+
+    DataTieringStatus m_dataTiering;
+    bool m_dataTieringHasBeenSet;
   };
 
 } // namespace Model

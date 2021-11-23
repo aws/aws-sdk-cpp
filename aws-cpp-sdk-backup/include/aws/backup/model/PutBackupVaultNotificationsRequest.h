@@ -158,105 +158,129 @@ namespace Model
 
     /**
      * <p>An array of events that indicate the status of jobs to back up resources to
-     * the backup vault.</p>  <p>The following events are supported:</p> <p>
-     * <code>BACKUP_JOB_STARTED</code>, <code>BACKUP_JOB_COMPLETED</code>,</p> <p>
-     * <code>COPY_JOB_STARTED</code>, <code>COPY_JOB_SUCCESSFUL</code>,
-     * <code>COPY_JOB_FAILED</code>,</p> <p> <code>RESTORE_JOB_STARTED</code>,
-     * <code>RESTORE_JOB_COMPLETED</code>, and
-     * <code>RECOVERY_POINT_MODIFIED</code>.</p> <p>To find failed backup jobs, use
-     * <code>BACKUP_JOB_COMPLETED</code> and filter using event metadata.</p> <p>Other
-     * events in the following list are deprecated.</p> 
+     * the backup vault.</p> <p>For common use cases and code samples, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using
+     * Amazon SNS to track Backup events</a>.</p> <p>The following events are
+     * supported:</p> <ul> <li> <p> <code>BACKUP_JOB_STARTED</code> |
+     * <code>BACKUP_JOB_COMPLETED</code> </p> </li> <li> <p>
+     * <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
+     * <code>COPY_JOB_FAILED</code> </p> </li> <li> <p>
+     * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
+     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> </ul>  <p>Ignore the list
+     * below because it includes deprecated events. Refer to the list above.</p>
+     * 
      */
     inline const Aws::Vector<BackupVaultEvent>& GetBackupVaultEvents() const{ return m_backupVaultEvents; }
 
     /**
      * <p>An array of events that indicate the status of jobs to back up resources to
-     * the backup vault.</p>  <p>The following events are supported:</p> <p>
-     * <code>BACKUP_JOB_STARTED</code>, <code>BACKUP_JOB_COMPLETED</code>,</p> <p>
-     * <code>COPY_JOB_STARTED</code>, <code>COPY_JOB_SUCCESSFUL</code>,
-     * <code>COPY_JOB_FAILED</code>,</p> <p> <code>RESTORE_JOB_STARTED</code>,
-     * <code>RESTORE_JOB_COMPLETED</code>, and
-     * <code>RECOVERY_POINT_MODIFIED</code>.</p> <p>To find failed backup jobs, use
-     * <code>BACKUP_JOB_COMPLETED</code> and filter using event metadata.</p> <p>Other
-     * events in the following list are deprecated.</p> 
+     * the backup vault.</p> <p>For common use cases and code samples, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using
+     * Amazon SNS to track Backup events</a>.</p> <p>The following events are
+     * supported:</p> <ul> <li> <p> <code>BACKUP_JOB_STARTED</code> |
+     * <code>BACKUP_JOB_COMPLETED</code> </p> </li> <li> <p>
+     * <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
+     * <code>COPY_JOB_FAILED</code> </p> </li> <li> <p>
+     * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
+     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> </ul>  <p>Ignore the list
+     * below because it includes deprecated events. Refer to the list above.</p>
+     * 
      */
     inline bool BackupVaultEventsHasBeenSet() const { return m_backupVaultEventsHasBeenSet; }
 
     /**
      * <p>An array of events that indicate the status of jobs to back up resources to
-     * the backup vault.</p>  <p>The following events are supported:</p> <p>
-     * <code>BACKUP_JOB_STARTED</code>, <code>BACKUP_JOB_COMPLETED</code>,</p> <p>
-     * <code>COPY_JOB_STARTED</code>, <code>COPY_JOB_SUCCESSFUL</code>,
-     * <code>COPY_JOB_FAILED</code>,</p> <p> <code>RESTORE_JOB_STARTED</code>,
-     * <code>RESTORE_JOB_COMPLETED</code>, and
-     * <code>RECOVERY_POINT_MODIFIED</code>.</p> <p>To find failed backup jobs, use
-     * <code>BACKUP_JOB_COMPLETED</code> and filter using event metadata.</p> <p>Other
-     * events in the following list are deprecated.</p> 
+     * the backup vault.</p> <p>For common use cases and code samples, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using
+     * Amazon SNS to track Backup events</a>.</p> <p>The following events are
+     * supported:</p> <ul> <li> <p> <code>BACKUP_JOB_STARTED</code> |
+     * <code>BACKUP_JOB_COMPLETED</code> </p> </li> <li> <p>
+     * <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
+     * <code>COPY_JOB_FAILED</code> </p> </li> <li> <p>
+     * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
+     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> </ul>  <p>Ignore the list
+     * below because it includes deprecated events. Refer to the list above.</p>
+     * 
      */
     inline void SetBackupVaultEvents(const Aws::Vector<BackupVaultEvent>& value) { m_backupVaultEventsHasBeenSet = true; m_backupVaultEvents = value; }
 
     /**
      * <p>An array of events that indicate the status of jobs to back up resources to
-     * the backup vault.</p>  <p>The following events are supported:</p> <p>
-     * <code>BACKUP_JOB_STARTED</code>, <code>BACKUP_JOB_COMPLETED</code>,</p> <p>
-     * <code>COPY_JOB_STARTED</code>, <code>COPY_JOB_SUCCESSFUL</code>,
-     * <code>COPY_JOB_FAILED</code>,</p> <p> <code>RESTORE_JOB_STARTED</code>,
-     * <code>RESTORE_JOB_COMPLETED</code>, and
-     * <code>RECOVERY_POINT_MODIFIED</code>.</p> <p>To find failed backup jobs, use
-     * <code>BACKUP_JOB_COMPLETED</code> and filter using event metadata.</p> <p>Other
-     * events in the following list are deprecated.</p> 
+     * the backup vault.</p> <p>For common use cases and code samples, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using
+     * Amazon SNS to track Backup events</a>.</p> <p>The following events are
+     * supported:</p> <ul> <li> <p> <code>BACKUP_JOB_STARTED</code> |
+     * <code>BACKUP_JOB_COMPLETED</code> </p> </li> <li> <p>
+     * <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
+     * <code>COPY_JOB_FAILED</code> </p> </li> <li> <p>
+     * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
+     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> </ul>  <p>Ignore the list
+     * below because it includes deprecated events. Refer to the list above.</p>
+     * 
      */
     inline void SetBackupVaultEvents(Aws::Vector<BackupVaultEvent>&& value) { m_backupVaultEventsHasBeenSet = true; m_backupVaultEvents = std::move(value); }
 
     /**
      * <p>An array of events that indicate the status of jobs to back up resources to
-     * the backup vault.</p>  <p>The following events are supported:</p> <p>
-     * <code>BACKUP_JOB_STARTED</code>, <code>BACKUP_JOB_COMPLETED</code>,</p> <p>
-     * <code>COPY_JOB_STARTED</code>, <code>COPY_JOB_SUCCESSFUL</code>,
-     * <code>COPY_JOB_FAILED</code>,</p> <p> <code>RESTORE_JOB_STARTED</code>,
-     * <code>RESTORE_JOB_COMPLETED</code>, and
-     * <code>RECOVERY_POINT_MODIFIED</code>.</p> <p>To find failed backup jobs, use
-     * <code>BACKUP_JOB_COMPLETED</code> and filter using event metadata.</p> <p>Other
-     * events in the following list are deprecated.</p> 
+     * the backup vault.</p> <p>For common use cases and code samples, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using
+     * Amazon SNS to track Backup events</a>.</p> <p>The following events are
+     * supported:</p> <ul> <li> <p> <code>BACKUP_JOB_STARTED</code> |
+     * <code>BACKUP_JOB_COMPLETED</code> </p> </li> <li> <p>
+     * <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
+     * <code>COPY_JOB_FAILED</code> </p> </li> <li> <p>
+     * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
+     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> </ul>  <p>Ignore the list
+     * below because it includes deprecated events. Refer to the list above.</p>
+     * 
      */
     inline PutBackupVaultNotificationsRequest& WithBackupVaultEvents(const Aws::Vector<BackupVaultEvent>& value) { SetBackupVaultEvents(value); return *this;}
 
     /**
      * <p>An array of events that indicate the status of jobs to back up resources to
-     * the backup vault.</p>  <p>The following events are supported:</p> <p>
-     * <code>BACKUP_JOB_STARTED</code>, <code>BACKUP_JOB_COMPLETED</code>,</p> <p>
-     * <code>COPY_JOB_STARTED</code>, <code>COPY_JOB_SUCCESSFUL</code>,
-     * <code>COPY_JOB_FAILED</code>,</p> <p> <code>RESTORE_JOB_STARTED</code>,
-     * <code>RESTORE_JOB_COMPLETED</code>, and
-     * <code>RECOVERY_POINT_MODIFIED</code>.</p> <p>To find failed backup jobs, use
-     * <code>BACKUP_JOB_COMPLETED</code> and filter using event metadata.</p> <p>Other
-     * events in the following list are deprecated.</p> 
+     * the backup vault.</p> <p>For common use cases and code samples, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using
+     * Amazon SNS to track Backup events</a>.</p> <p>The following events are
+     * supported:</p> <ul> <li> <p> <code>BACKUP_JOB_STARTED</code> |
+     * <code>BACKUP_JOB_COMPLETED</code> </p> </li> <li> <p>
+     * <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
+     * <code>COPY_JOB_FAILED</code> </p> </li> <li> <p>
+     * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
+     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> </ul>  <p>Ignore the list
+     * below because it includes deprecated events. Refer to the list above.</p>
+     * 
      */
     inline PutBackupVaultNotificationsRequest& WithBackupVaultEvents(Aws::Vector<BackupVaultEvent>&& value) { SetBackupVaultEvents(std::move(value)); return *this;}
 
     /**
      * <p>An array of events that indicate the status of jobs to back up resources to
-     * the backup vault.</p>  <p>The following events are supported:</p> <p>
-     * <code>BACKUP_JOB_STARTED</code>, <code>BACKUP_JOB_COMPLETED</code>,</p> <p>
-     * <code>COPY_JOB_STARTED</code>, <code>COPY_JOB_SUCCESSFUL</code>,
-     * <code>COPY_JOB_FAILED</code>,</p> <p> <code>RESTORE_JOB_STARTED</code>,
-     * <code>RESTORE_JOB_COMPLETED</code>, and
-     * <code>RECOVERY_POINT_MODIFIED</code>.</p> <p>To find failed backup jobs, use
-     * <code>BACKUP_JOB_COMPLETED</code> and filter using event metadata.</p> <p>Other
-     * events in the following list are deprecated.</p> 
+     * the backup vault.</p> <p>For common use cases and code samples, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using
+     * Amazon SNS to track Backup events</a>.</p> <p>The following events are
+     * supported:</p> <ul> <li> <p> <code>BACKUP_JOB_STARTED</code> |
+     * <code>BACKUP_JOB_COMPLETED</code> </p> </li> <li> <p>
+     * <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
+     * <code>COPY_JOB_FAILED</code> </p> </li> <li> <p>
+     * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
+     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> </ul>  <p>Ignore the list
+     * below because it includes deprecated events. Refer to the list above.</p>
+     * 
      */
     inline PutBackupVaultNotificationsRequest& AddBackupVaultEvents(const BackupVaultEvent& value) { m_backupVaultEventsHasBeenSet = true; m_backupVaultEvents.push_back(value); return *this; }
 
     /**
      * <p>An array of events that indicate the status of jobs to back up resources to
-     * the backup vault.</p>  <p>The following events are supported:</p> <p>
-     * <code>BACKUP_JOB_STARTED</code>, <code>BACKUP_JOB_COMPLETED</code>,</p> <p>
-     * <code>COPY_JOB_STARTED</code>, <code>COPY_JOB_SUCCESSFUL</code>,
-     * <code>COPY_JOB_FAILED</code>,</p> <p> <code>RESTORE_JOB_STARTED</code>,
-     * <code>RESTORE_JOB_COMPLETED</code>, and
-     * <code>RECOVERY_POINT_MODIFIED</code>.</p> <p>To find failed backup jobs, use
-     * <code>BACKUP_JOB_COMPLETED</code> and filter using event metadata.</p> <p>Other
-     * events in the following list are deprecated.</p> 
+     * the backup vault.</p> <p>For common use cases and code samples, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using
+     * Amazon SNS to track Backup events</a>.</p> <p>The following events are
+     * supported:</p> <ul> <li> <p> <code>BACKUP_JOB_STARTED</code> |
+     * <code>BACKUP_JOB_COMPLETED</code> </p> </li> <li> <p>
+     * <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
+     * <code>COPY_JOB_FAILED</code> </p> </li> <li> <p>
+     * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
+     * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> </ul>  <p>Ignore the list
+     * below because it includes deprecated events. Refer to the list above.</p>
+     * 
      */
     inline PutBackupVaultNotificationsRequest& AddBackupVaultEvents(BackupVaultEvent&& value) { m_backupVaultEventsHasBeenSet = true; m_backupVaultEvents.push_back(std::move(value)); return *this; }
 

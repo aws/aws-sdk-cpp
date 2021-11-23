@@ -59,6 +59,7 @@
 #include <aws/iotwireless/model/GetLogLevelsByResourceTypesRequest.h>
 #include <aws/iotwireless/model/GetMulticastGroupRequest.h>
 #include <aws/iotwireless/model/GetMulticastGroupSessionRequest.h>
+#include <aws/iotwireless/model/GetNetworkAnalyzerConfigurationRequest.h>
 #include <aws/iotwireless/model/GetPartnerAccountRequest.h>
 #include <aws/iotwireless/model/GetResourceEventConfigurationRequest.h>
 #include <aws/iotwireless/model/GetResourceLogLevelRequest.h>
@@ -99,6 +100,7 @@
 #include <aws/iotwireless/model/UpdateFuotaTaskRequest.h>
 #include <aws/iotwireless/model/UpdateLogLevelsByResourceTypesRequest.h>
 #include <aws/iotwireless/model/UpdateMulticastGroupRequest.h>
+#include <aws/iotwireless/model/UpdateNetworkAnalyzerConfigurationRequest.h>
 #include <aws/iotwireless/model/UpdatePartnerAccountRequest.h>
 #include <aws/iotwireless/model/UpdateResourceEventConfigurationRequest.h>
 #include <aws/iotwireless/model/UpdateWirelessDeviceRequest.h>
@@ -1365,6 +1367,37 @@ void IoTWirelessClient::GetMulticastGroupSessionAsyncHelper(const GetMulticastGr
   handler(this, request, GetMulticastGroupSession(request), context);
 }
 
+GetNetworkAnalyzerConfigurationOutcome IoTWirelessClient::GetNetworkAnalyzerConfiguration(const GetNetworkAnalyzerConfigurationRequest& request) const
+{
+  if (!request.ConfigurationNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetNetworkAnalyzerConfiguration", "Required field: ConfigurationName, is not set");
+    return GetNetworkAnalyzerConfigurationOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/network-analyzer-configurations/");
+  uri.AddPathSegment(request.GetConfigurationName());
+  return GetNetworkAnalyzerConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetNetworkAnalyzerConfigurationOutcomeCallable IoTWirelessClient::GetNetworkAnalyzerConfigurationCallable(const GetNetworkAnalyzerConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetNetworkAnalyzerConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetNetworkAnalyzerConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::GetNetworkAnalyzerConfigurationAsync(const GetNetworkAnalyzerConfigurationRequest& request, const GetNetworkAnalyzerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetNetworkAnalyzerConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::GetNetworkAnalyzerConfigurationAsyncHelper(const GetNetworkAnalyzerConfigurationRequest& request, const GetNetworkAnalyzerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetNetworkAnalyzerConfiguration(request), context);
+}
+
 GetPartnerAccountOutcome IoTWirelessClient::GetPartnerAccount(const GetPartnerAccountRequest& request) const
 {
   if (!request.PartnerAccountIdHasBeenSet())
@@ -2580,6 +2613,37 @@ void IoTWirelessClient::UpdateMulticastGroupAsync(const UpdateMulticastGroupRequ
 void IoTWirelessClient::UpdateMulticastGroupAsyncHelper(const UpdateMulticastGroupRequest& request, const UpdateMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateMulticastGroup(request), context);
+}
+
+UpdateNetworkAnalyzerConfigurationOutcome IoTWirelessClient::UpdateNetworkAnalyzerConfiguration(const UpdateNetworkAnalyzerConfigurationRequest& request) const
+{
+  if (!request.ConfigurationNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateNetworkAnalyzerConfiguration", "Required field: ConfigurationName, is not set");
+    return UpdateNetworkAnalyzerConfigurationOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/network-analyzer-configurations/");
+  uri.AddPathSegment(request.GetConfigurationName());
+  return UpdateNetworkAnalyzerConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateNetworkAnalyzerConfigurationOutcomeCallable IoTWirelessClient::UpdateNetworkAnalyzerConfigurationCallable(const UpdateNetworkAnalyzerConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateNetworkAnalyzerConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateNetworkAnalyzerConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::UpdateNetworkAnalyzerConfigurationAsync(const UpdateNetworkAnalyzerConfigurationRequest& request, const UpdateNetworkAnalyzerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateNetworkAnalyzerConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::UpdateNetworkAnalyzerConfigurationAsyncHelper(const UpdateNetworkAnalyzerConfigurationRequest& request, const UpdateNetworkAnalyzerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateNetworkAnalyzerConfiguration(request), context);
 }
 
 UpdatePartnerAccountOutcome IoTWirelessClient::UpdatePartnerAccount(const UpdatePartnerAccountRequest& request) const

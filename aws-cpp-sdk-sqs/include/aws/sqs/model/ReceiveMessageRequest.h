@@ -106,13 +106,19 @@ namespace Model
      * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> – Returns the time the
      * message was sent to the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
-     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> – Returns
-     * the value provided by the producer that calls the <code> <a>SendMessage</a>
-     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> – Returns the
-     * value provided by the producer that calls the <code> <a>SendMessage</a> </code>
-     * action. Messages with the same <code>MessageGroupId</code> are returned in
-     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> – Returns the value
-     * provided by Amazon SQS.</p> </li> </ul>
+     * milliseconds).</p> </li> <li> <p> <code>SqsManagedSseEnabled</code> – Enables
+     * server-side queue encryption using SQS owned encryption keys. Only one
+     * server-side encryption option is supported per queue (e.g. <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
+     * </li> <li> <p> <code>MessageDeduplicationId</code> – Returns the value provided
+     * by the producer that calls the <code> <a>SendMessage</a> </code> action.</p>
+     * </li> <li> <p> <code>MessageGroupId</code> – Returns the value provided by the
+     * producer that calls the <code> <a>SendMessage</a> </code> action. Messages with
+     * the same <code>MessageGroupId</code> are returned in sequence.</p> </li> <li>
+     * <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p>
+     * </li> </ul>
      */
     inline const Aws::Vector<QueueAttributeName>& GetAttributeNames() const{ return m_attributeNames; }
 
@@ -132,13 +138,19 @@ namespace Model
      * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> – Returns the time the
      * message was sent to the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
-     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> – Returns
-     * the value provided by the producer that calls the <code> <a>SendMessage</a>
-     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> – Returns the
-     * value provided by the producer that calls the <code> <a>SendMessage</a> </code>
-     * action. Messages with the same <code>MessageGroupId</code> are returned in
-     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> – Returns the value
-     * provided by Amazon SQS.</p> </li> </ul>
+     * milliseconds).</p> </li> <li> <p> <code>SqsManagedSseEnabled</code> – Enables
+     * server-side queue encryption using SQS owned encryption keys. Only one
+     * server-side encryption option is supported per queue (e.g. <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
+     * </li> <li> <p> <code>MessageDeduplicationId</code> – Returns the value provided
+     * by the producer that calls the <code> <a>SendMessage</a> </code> action.</p>
+     * </li> <li> <p> <code>MessageGroupId</code> – Returns the value provided by the
+     * producer that calls the <code> <a>SendMessage</a> </code> action. Messages with
+     * the same <code>MessageGroupId</code> are returned in sequence.</p> </li> <li>
+     * <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p>
+     * </li> </ul>
      */
     inline bool AttributeNamesHasBeenSet() const { return m_attributeNamesHasBeenSet; }
 
@@ -158,13 +170,19 @@ namespace Model
      * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> – Returns the time the
      * message was sent to the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
-     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> – Returns
-     * the value provided by the producer that calls the <code> <a>SendMessage</a>
-     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> – Returns the
-     * value provided by the producer that calls the <code> <a>SendMessage</a> </code>
-     * action. Messages with the same <code>MessageGroupId</code> are returned in
-     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> – Returns the value
-     * provided by Amazon SQS.</p> </li> </ul>
+     * milliseconds).</p> </li> <li> <p> <code>SqsManagedSseEnabled</code> – Enables
+     * server-side queue encryption using SQS owned encryption keys. Only one
+     * server-side encryption option is supported per queue (e.g. <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
+     * </li> <li> <p> <code>MessageDeduplicationId</code> – Returns the value provided
+     * by the producer that calls the <code> <a>SendMessage</a> </code> action.</p>
+     * </li> <li> <p> <code>MessageGroupId</code> – Returns the value provided by the
+     * producer that calls the <code> <a>SendMessage</a> </code> action. Messages with
+     * the same <code>MessageGroupId</code> are returned in sequence.</p> </li> <li>
+     * <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p>
+     * </li> </ul>
      */
     inline void SetAttributeNames(const Aws::Vector<QueueAttributeName>& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
 
@@ -184,13 +202,19 @@ namespace Model
      * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> – Returns the time the
      * message was sent to the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
-     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> – Returns
-     * the value provided by the producer that calls the <code> <a>SendMessage</a>
-     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> – Returns the
-     * value provided by the producer that calls the <code> <a>SendMessage</a> </code>
-     * action. Messages with the same <code>MessageGroupId</code> are returned in
-     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> – Returns the value
-     * provided by Amazon SQS.</p> </li> </ul>
+     * milliseconds).</p> </li> <li> <p> <code>SqsManagedSseEnabled</code> – Enables
+     * server-side queue encryption using SQS owned encryption keys. Only one
+     * server-side encryption option is supported per queue (e.g. <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
+     * </li> <li> <p> <code>MessageDeduplicationId</code> – Returns the value provided
+     * by the producer that calls the <code> <a>SendMessage</a> </code> action.</p>
+     * </li> <li> <p> <code>MessageGroupId</code> – Returns the value provided by the
+     * producer that calls the <code> <a>SendMessage</a> </code> action. Messages with
+     * the same <code>MessageGroupId</code> are returned in sequence.</p> </li> <li>
+     * <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p>
+     * </li> </ul>
      */
     inline void SetAttributeNames(Aws::Vector<QueueAttributeName>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = std::move(value); }
 
@@ -210,13 +234,19 @@ namespace Model
      * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> – Returns the time the
      * message was sent to the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
-     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> – Returns
-     * the value provided by the producer that calls the <code> <a>SendMessage</a>
-     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> – Returns the
-     * value provided by the producer that calls the <code> <a>SendMessage</a> </code>
-     * action. Messages with the same <code>MessageGroupId</code> are returned in
-     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> – Returns the value
-     * provided by Amazon SQS.</p> </li> </ul>
+     * milliseconds).</p> </li> <li> <p> <code>SqsManagedSseEnabled</code> – Enables
+     * server-side queue encryption using SQS owned encryption keys. Only one
+     * server-side encryption option is supported per queue (e.g. <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
+     * </li> <li> <p> <code>MessageDeduplicationId</code> – Returns the value provided
+     * by the producer that calls the <code> <a>SendMessage</a> </code> action.</p>
+     * </li> <li> <p> <code>MessageGroupId</code> – Returns the value provided by the
+     * producer that calls the <code> <a>SendMessage</a> </code> action. Messages with
+     * the same <code>MessageGroupId</code> are returned in sequence.</p> </li> <li>
+     * <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p>
+     * </li> </ul>
      */
     inline ReceiveMessageRequest& WithAttributeNames(const Aws::Vector<QueueAttributeName>& value) { SetAttributeNames(value); return *this;}
 
@@ -236,13 +266,19 @@ namespace Model
      * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> – Returns the time the
      * message was sent to the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
-     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> – Returns
-     * the value provided by the producer that calls the <code> <a>SendMessage</a>
-     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> – Returns the
-     * value provided by the producer that calls the <code> <a>SendMessage</a> </code>
-     * action. Messages with the same <code>MessageGroupId</code> are returned in
-     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> – Returns the value
-     * provided by Amazon SQS.</p> </li> </ul>
+     * milliseconds).</p> </li> <li> <p> <code>SqsManagedSseEnabled</code> – Enables
+     * server-side queue encryption using SQS owned encryption keys. Only one
+     * server-side encryption option is supported per queue (e.g. <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
+     * </li> <li> <p> <code>MessageDeduplicationId</code> – Returns the value provided
+     * by the producer that calls the <code> <a>SendMessage</a> </code> action.</p>
+     * </li> <li> <p> <code>MessageGroupId</code> – Returns the value provided by the
+     * producer that calls the <code> <a>SendMessage</a> </code> action. Messages with
+     * the same <code>MessageGroupId</code> are returned in sequence.</p> </li> <li>
+     * <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p>
+     * </li> </ul>
      */
     inline ReceiveMessageRequest& WithAttributeNames(Aws::Vector<QueueAttributeName>&& value) { SetAttributeNames(std::move(value)); return *this;}
 
@@ -262,13 +298,19 @@ namespace Model
      * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> – Returns the time the
      * message was sent to the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
-     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> – Returns
-     * the value provided by the producer that calls the <code> <a>SendMessage</a>
-     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> – Returns the
-     * value provided by the producer that calls the <code> <a>SendMessage</a> </code>
-     * action. Messages with the same <code>MessageGroupId</code> are returned in
-     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> – Returns the value
-     * provided by Amazon SQS.</p> </li> </ul>
+     * milliseconds).</p> </li> <li> <p> <code>SqsManagedSseEnabled</code> – Enables
+     * server-side queue encryption using SQS owned encryption keys. Only one
+     * server-side encryption option is supported per queue (e.g. <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
+     * </li> <li> <p> <code>MessageDeduplicationId</code> – Returns the value provided
+     * by the producer that calls the <code> <a>SendMessage</a> </code> action.</p>
+     * </li> <li> <p> <code>MessageGroupId</code> – Returns the value provided by the
+     * producer that calls the <code> <a>SendMessage</a> </code> action. Messages with
+     * the same <code>MessageGroupId</code> are returned in sequence.</p> </li> <li>
+     * <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p>
+     * </li> </ul>
      */
     inline ReceiveMessageRequest& AddAttributeNames(const QueueAttributeName& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
 
@@ -288,13 +330,19 @@ namespace Model
      * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> – Returns the time the
      * message was sent to the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
-     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> – Returns
-     * the value provided by the producer that calls the <code> <a>SendMessage</a>
-     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> – Returns the
-     * value provided by the producer that calls the <code> <a>SendMessage</a> </code>
-     * action. Messages with the same <code>MessageGroupId</code> are returned in
-     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> – Returns the value
-     * provided by Amazon SQS.</p> </li> </ul>
+     * milliseconds).</p> </li> <li> <p> <code>SqsManagedSseEnabled</code> – Enables
+     * server-side queue encryption using SQS owned encryption keys. Only one
+     * server-side encryption option is supported per queue (e.g. <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
+     * </li> <li> <p> <code>MessageDeduplicationId</code> – Returns the value provided
+     * by the producer that calls the <code> <a>SendMessage</a> </code> action.</p>
+     * </li> <li> <p> <code>MessageGroupId</code> – Returns the value provided by the
+     * producer that calls the <code> <a>SendMessage</a> </code> action. Messages with
+     * the same <code>MessageGroupId</code> are returned in sequence.</p> </li> <li>
+     * <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p>
+     * </li> </ul>
      */
     inline ReceiveMessageRequest& AddAttributeNames(QueueAttributeName&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(std::move(value)); return *this; }
 

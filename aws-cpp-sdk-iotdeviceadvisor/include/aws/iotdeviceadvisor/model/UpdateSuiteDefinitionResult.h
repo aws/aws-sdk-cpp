@@ -34,73 +34,73 @@ namespace Model
 
 
     /**
-     * <p>Suite definition Id of the updated test suite.</p>
+     * <p>Suite definition ID of the updated test suite.</p>
      */
     inline const Aws::String& GetSuiteDefinitionId() const{ return m_suiteDefinitionId; }
 
     /**
-     * <p>Suite definition Id of the updated test suite.</p>
+     * <p>Suite definition ID of the updated test suite.</p>
      */
     inline void SetSuiteDefinitionId(const Aws::String& value) { m_suiteDefinitionId = value; }
 
     /**
-     * <p>Suite definition Id of the updated test suite.</p>
+     * <p>Suite definition ID of the updated test suite.</p>
      */
     inline void SetSuiteDefinitionId(Aws::String&& value) { m_suiteDefinitionId = std::move(value); }
 
     /**
-     * <p>Suite definition Id of the updated test suite.</p>
+     * <p>Suite definition ID of the updated test suite.</p>
      */
     inline void SetSuiteDefinitionId(const char* value) { m_suiteDefinitionId.assign(value); }
 
     /**
-     * <p>Suite definition Id of the updated test suite.</p>
+     * <p>Suite definition ID of the updated test suite.</p>
      */
     inline UpdateSuiteDefinitionResult& WithSuiteDefinitionId(const Aws::String& value) { SetSuiteDefinitionId(value); return *this;}
 
     /**
-     * <p>Suite definition Id of the updated test suite.</p>
+     * <p>Suite definition ID of the updated test suite.</p>
      */
     inline UpdateSuiteDefinitionResult& WithSuiteDefinitionId(Aws::String&& value) { SetSuiteDefinitionId(std::move(value)); return *this;}
 
     /**
-     * <p>Suite definition Id of the updated test suite.</p>
+     * <p>Suite definition ID of the updated test suite.</p>
      */
     inline UpdateSuiteDefinitionResult& WithSuiteDefinitionId(const char* value) { SetSuiteDefinitionId(value); return *this;}
 
 
     /**
-     * <p>Amazon Resource name of the updated test suite.</p>
+     * <p>Amazon Resource Name (ARN) of the updated test suite.</p>
      */
     inline const Aws::String& GetSuiteDefinitionArn() const{ return m_suiteDefinitionArn; }
 
     /**
-     * <p>Amazon Resource name of the updated test suite.</p>
+     * <p>Amazon Resource Name (ARN) of the updated test suite.</p>
      */
     inline void SetSuiteDefinitionArn(const Aws::String& value) { m_suiteDefinitionArn = value; }
 
     /**
-     * <p>Amazon Resource name of the updated test suite.</p>
+     * <p>Amazon Resource Name (ARN) of the updated test suite.</p>
      */
     inline void SetSuiteDefinitionArn(Aws::String&& value) { m_suiteDefinitionArn = std::move(value); }
 
     /**
-     * <p>Amazon Resource name of the updated test suite.</p>
+     * <p>Amazon Resource Name (ARN) of the updated test suite.</p>
      */
     inline void SetSuiteDefinitionArn(const char* value) { m_suiteDefinitionArn.assign(value); }
 
     /**
-     * <p>Amazon Resource name of the updated test suite.</p>
+     * <p>Amazon Resource Name (ARN) of the updated test suite.</p>
      */
     inline UpdateSuiteDefinitionResult& WithSuiteDefinitionArn(const Aws::String& value) { SetSuiteDefinitionArn(value); return *this;}
 
     /**
-     * <p>Amazon Resource name of the updated test suite.</p>
+     * <p>Amazon Resource Name (ARN) of the updated test suite.</p>
      */
     inline UpdateSuiteDefinitionResult& WithSuiteDefinitionArn(Aws::String&& value) { SetSuiteDefinitionArn(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon Resource name of the updated test suite.</p>
+     * <p>Amazon Resource Name (ARN) of the updated test suite.</p>
      */
     inline UpdateSuiteDefinitionResult& WithSuiteDefinitionArn(const char* value) { SetSuiteDefinitionArn(value); return *this;}
 

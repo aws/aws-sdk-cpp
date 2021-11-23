@@ -159,6 +159,48 @@ namespace Model
     inline LifecycleRuleFilter& WithTag(Tag&& value) { SetTag(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Minimum object size to which the rule applies.</p>
+     */
+    inline long long GetObjectSizeGreaterThan() const{ return m_objectSizeGreaterThan; }
+
+    /**
+     * <p>Minimum object size to which the rule applies.</p>
+     */
+    inline bool ObjectSizeGreaterThanHasBeenSet() const { return m_objectSizeGreaterThanHasBeenSet; }
+
+    /**
+     * <p>Minimum object size to which the rule applies.</p>
+     */
+    inline void SetObjectSizeGreaterThan(long long value) { m_objectSizeGreaterThanHasBeenSet = true; m_objectSizeGreaterThan = value; }
+
+    /**
+     * <p>Minimum object size to which the rule applies.</p>
+     */
+    inline LifecycleRuleFilter& WithObjectSizeGreaterThan(long long value) { SetObjectSizeGreaterThan(value); return *this;}
+
+
+    /**
+     * <p>Maximum object size to which the rule applies.</p>
+     */
+    inline long long GetObjectSizeLessThan() const{ return m_objectSizeLessThan; }
+
+    /**
+     * <p>Maximum object size to which the rule applies.</p>
+     */
+    inline bool ObjectSizeLessThanHasBeenSet() const { return m_objectSizeLessThanHasBeenSet; }
+
+    /**
+     * <p>Maximum object size to which the rule applies.</p>
+     */
+    inline void SetObjectSizeLessThan(long long value) { m_objectSizeLessThanHasBeenSet = true; m_objectSizeLessThan = value; }
+
+    /**
+     * <p>Maximum object size to which the rule applies.</p>
+     */
+    inline LifecycleRuleFilter& WithObjectSizeLessThan(long long value) { SetObjectSizeLessThan(value); return *this;}
+
+
     
     inline const LifecycleRuleAndOperator& GetAnd() const{ return m_and; }
 
@@ -184,6 +226,12 @@ namespace Model
 
     Tag m_tag;
     bool m_tagHasBeenSet;
+
+    long long m_objectSizeGreaterThan;
+    bool m_objectSizeGreaterThanHasBeenSet;
+
+    long long m_objectSizeLessThan;
+    bool m_objectSizeLessThanHasBeenSet;
 
     LifecycleRuleAndOperator m_and;
     bool m_andHasBeenSet;

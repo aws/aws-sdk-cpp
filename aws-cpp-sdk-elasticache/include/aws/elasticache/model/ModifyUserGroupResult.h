@@ -191,6 +191,28 @@ namespace Model
     inline ModifyUserGroupResult& AddUserIds(const char* value) { m_userIds.push_back(value); return *this; }
 
 
+    
+    inline const Aws::String& GetMinimumEngineVersion() const{ return m_minimumEngineVersion; }
+
+    
+    inline void SetMinimumEngineVersion(const Aws::String& value) { m_minimumEngineVersion = value; }
+
+    
+    inline void SetMinimumEngineVersion(Aws::String&& value) { m_minimumEngineVersion = std::move(value); }
+
+    
+    inline void SetMinimumEngineVersion(const char* value) { m_minimumEngineVersion.assign(value); }
+
+    
+    inline ModifyUserGroupResult& WithMinimumEngineVersion(const Aws::String& value) { SetMinimumEngineVersion(value); return *this;}
+
+    
+    inline ModifyUserGroupResult& WithMinimumEngineVersion(Aws::String&& value) { SetMinimumEngineVersion(std::move(value)); return *this;}
+
+    
+    inline ModifyUserGroupResult& WithMinimumEngineVersion(const char* value) { SetMinimumEngineVersion(value); return *this;}
+
+
     /**
      * <p>A list of updates being applied to the user group.</p>
      */
@@ -318,6 +340,8 @@ namespace Model
     Aws::String m_engine;
 
     Aws::Vector<Aws::String> m_userIds;
+
+    Aws::String m_minimumEngineVersion;
 
     UserGroupPendingChanges m_pendingChanges;
 

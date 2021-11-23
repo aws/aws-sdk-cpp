@@ -7,6 +7,7 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/model/ConsumedCapacity.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/dynamodb/model/AttributeValue.h>
 #include <utility>
@@ -134,11 +135,29 @@ namespace Model
      */
     inline ExecuteStatementResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    
+    inline const ConsumedCapacity& GetConsumedCapacity() const{ return m_consumedCapacity; }
+
+    
+    inline void SetConsumedCapacity(const ConsumedCapacity& value) { m_consumedCapacity = value; }
+
+    
+    inline void SetConsumedCapacity(ConsumedCapacity&& value) { m_consumedCapacity = std::move(value); }
+
+    
+    inline ExecuteStatementResult& WithConsumedCapacity(const ConsumedCapacity& value) { SetConsumedCapacity(value); return *this;}
+
+    
+    inline ExecuteStatementResult& WithConsumedCapacity(ConsumedCapacity&& value) { SetConsumedCapacity(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Aws::Map<Aws::String, AttributeValue>> m_items;
 
     Aws::String m_nextToken;
+
+    ConsumedCapacity m_consumedCapacity;
   };
 
 } // namespace Model

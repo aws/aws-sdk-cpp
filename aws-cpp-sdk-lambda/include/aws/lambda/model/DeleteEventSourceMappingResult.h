@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/model/EventSourcePosition.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/lambda/model/FilterCriteria.h>
 #include <aws/lambda/model/DestinationConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lambda/model/SelfManagedEventSource.h>
@@ -263,6 +264,42 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the event source.</p>
      */
     inline DeleteEventSourceMappingResult& WithEventSourceArn(const char* value) { SetEventSourceArn(value); return *this;}
+
+
+    /**
+     * <p>(Streams and Amazon SQS) A object that defines the filter criteria used to
+     * determine whether Lambda should process an event. For more information, see
+     * Event filtering.</p>
+     */
+    inline const FilterCriteria& GetFilterCriteria() const{ return m_filterCriteria; }
+
+    /**
+     * <p>(Streams and Amazon SQS) A object that defines the filter criteria used to
+     * determine whether Lambda should process an event. For more information, see
+     * Event filtering.</p>
+     */
+    inline void SetFilterCriteria(const FilterCriteria& value) { m_filterCriteria = value; }
+
+    /**
+     * <p>(Streams and Amazon SQS) A object that defines the filter criteria used to
+     * determine whether Lambda should process an event. For more information, see
+     * Event filtering.</p>
+     */
+    inline void SetFilterCriteria(FilterCriteria&& value) { m_filterCriteria = std::move(value); }
+
+    /**
+     * <p>(Streams and Amazon SQS) A object that defines the filter criteria used to
+     * determine whether Lambda should process an event. For more information, see
+     * Event filtering.</p>
+     */
+    inline DeleteEventSourceMappingResult& WithFilterCriteria(const FilterCriteria& value) { SetFilterCriteria(value); return *this;}
+
+    /**
+     * <p>(Streams and Amazon SQS) A object that defines the filter criteria used to
+     * determine whether Lambda should process an event. For more information, see
+     * Event filtering.</p>
+     */
+    inline DeleteEventSourceMappingResult& WithFilterCriteria(FilterCriteria&& value) { SetFilterCriteria(std::move(value)); return *this;}
 
 
     /**
@@ -800,6 +837,8 @@ namespace Model
     int m_parallelizationFactor;
 
     Aws::String m_eventSourceArn;
+
+    FilterCriteria m_filterCriteria;
 
     Aws::String m_functionArn;
 

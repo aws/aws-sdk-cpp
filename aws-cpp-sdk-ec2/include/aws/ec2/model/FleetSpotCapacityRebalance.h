@@ -133,25 +133,37 @@ namespace Model
 
     /**
      * <p>The amount of time (in seconds) that Amazon EC2 waits before terminating the
-     * old Spot Instance after launching a new replacement Spot Instance.</p>
+     * old Spot Instance after launching a new replacement Spot Instance.</p> <p>Valid
+     * only when <code>replacementStrategy</code> is set to
+     * <code>launch-before-terminate</code>.</p> <p>Valid values: Minimum value of
+     * <code>120</code> seconds. Maximum value of <code>7200</code> seconds.</p>
      */
     inline int GetTerminationDelay() const{ return m_terminationDelay; }
 
     /**
      * <p>The amount of time (in seconds) that Amazon EC2 waits before terminating the
-     * old Spot Instance after launching a new replacement Spot Instance.</p>
+     * old Spot Instance after launching a new replacement Spot Instance.</p> <p>Valid
+     * only when <code>replacementStrategy</code> is set to
+     * <code>launch-before-terminate</code>.</p> <p>Valid values: Minimum value of
+     * <code>120</code> seconds. Maximum value of <code>7200</code> seconds.</p>
      */
     inline bool TerminationDelayHasBeenSet() const { return m_terminationDelayHasBeenSet; }
 
     /**
      * <p>The amount of time (in seconds) that Amazon EC2 waits before terminating the
-     * old Spot Instance after launching a new replacement Spot Instance.</p>
+     * old Spot Instance after launching a new replacement Spot Instance.</p> <p>Valid
+     * only when <code>replacementStrategy</code> is set to
+     * <code>launch-before-terminate</code>.</p> <p>Valid values: Minimum value of
+     * <code>120</code> seconds. Maximum value of <code>7200</code> seconds.</p>
      */
     inline void SetTerminationDelay(int value) { m_terminationDelayHasBeenSet = true; m_terminationDelay = value; }
 
     /**
      * <p>The amount of time (in seconds) that Amazon EC2 waits before terminating the
-     * old Spot Instance after launching a new replacement Spot Instance.</p>
+     * old Spot Instance after launching a new replacement Spot Instance.</p> <p>Valid
+     * only when <code>replacementStrategy</code> is set to
+     * <code>launch-before-terminate</code>.</p> <p>Valid values: Minimum value of
+     * <code>120</code> seconds. Maximum value of <code>7200</code> seconds.</p>
      */
     inline FleetSpotCapacityRebalance& WithTerminationDelay(int value) { SetTerminationDelay(value); return *this;}
 

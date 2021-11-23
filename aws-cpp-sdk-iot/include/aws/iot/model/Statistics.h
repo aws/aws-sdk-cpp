@@ -22,8 +22,10 @@ namespace Model
 {
 
   /**
-   * <p>A map of key-value pairs for all supported statistics. Currently, only count
-   * is supported.</p><p><h3>See Also:</h3>   <a
+   * <p>A map of key-value pairs for all supported statistics. For issues with
+   * missing or unexpected values for this API, consult <a
+   * href="https://docs.aws.amazon.com/iot/latest/developerguide/fleet-indexing-troubleshooting.html">
+   * Fleet indexing troubleshooting guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/Statistics">AWS API
    * Reference</a></p>
    */
@@ -37,22 +39,26 @@ namespace Model
 
 
     /**
-     * <p>The count of things that match the query.</p>
+     * <p>The count of things that match the query string criteria and contain a valid
+     * aggregation field value.</p>
      */
     inline int GetCount() const{ return m_count; }
 
     /**
-     * <p>The count of things that match the query.</p>
+     * <p>The count of things that match the query string criteria and contain a valid
+     * aggregation field value.</p>
      */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
 
     /**
-     * <p>The count of things that match the query.</p>
+     * <p>The count of things that match the query string criteria and contain a valid
+     * aggregation field value.</p>
      */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
 
     /**
-     * <p>The count of things that match the query.</p>
+     * <p>The count of things that match the query string criteria and contain a valid
+     * aggregation field value.</p>
      */
     inline Statistics& WithCount(int value) { SetCount(value); return *this;}
 

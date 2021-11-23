@@ -794,16 +794,16 @@ namespace Model
         virtual void DescribeClassificationJobAsync(const Model::DescribeClassificationJobRequest& request, const DescribeClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the Amazon Macie configuration settings for an Amazon Web Services
-         * organization.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the Amazon Macie configuration settings for an organization in
+         * Organizations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeOrganizationConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeOrganizationConfigurationOutcome DescribeOrganizationConfiguration(const Model::DescribeOrganizationConfigurationRequest& request) const;
 
         /**
-         * <p>Retrieves the Amazon Macie configuration settings for an Amazon Web Services
-         * organization.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the Amazon Macie configuration settings for an organization in
+         * Organizations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeOrganizationConfiguration">AWS
          * API Reference</a></p>
          *
@@ -812,8 +812,8 @@ namespace Model
         virtual Model::DescribeOrganizationConfigurationOutcomeCallable DescribeOrganizationConfigurationCallable(const Model::DescribeOrganizationConfigurationRequest& request) const;
 
         /**
-         * <p>Retrieves the Amazon Macie configuration settings for an Amazon Web Services
-         * organization.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the Amazon Macie configuration settings for an organization in
+         * Organizations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeOrganizationConfiguration">AWS
          * API Reference</a></p>
          *
@@ -822,7 +822,7 @@ namespace Model
         virtual void DescribeOrganizationConfigurationAsync(const Model::DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disables an Amazon Macie account and deletes Macie resources for the
+         * <p>Disables Amazon Macie and deletes all settings and resources for a Macie
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisableMacie">AWS
          * API Reference</a></p>
@@ -830,7 +830,7 @@ namespace Model
         virtual Model::DisableMacieOutcome DisableMacie(const Model::DisableMacieRequest& request) const;
 
         /**
-         * <p>Disables an Amazon Macie account and deletes Macie resources for the
+         * <p>Disables Amazon Macie and deletes all settings and resources for a Macie
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisableMacie">AWS
          * API Reference</a></p>
@@ -840,7 +840,7 @@ namespace Model
         virtual Model::DisableMacieOutcomeCallable DisableMacieCallable(const Model::DisableMacieRequest& request) const;
 
         /**
-         * <p>Disables an Amazon Macie account and deletes Macie resources for the
+         * <p>Disables Amazon Macie and deletes all settings and resources for a Macie
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisableMacie">AWS
          * API Reference</a></p>
@@ -851,7 +851,7 @@ namespace Model
 
         /**
          * <p>Disables an account as the delegated Amazon Macie administrator account for
-         * an Amazon Web Services organization.</p><p><h3>See Also:</h3>   <a
+         * an organization in Organizations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          */
@@ -859,7 +859,7 @@ namespace Model
 
         /**
          * <p>Disables an account as the delegated Amazon Macie administrator account for
-         * an Amazon Web Services organization.</p><p><h3>See Also:</h3>   <a
+         * an organization in Organizations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          *
@@ -869,7 +869,7 @@ namespace Model
 
         /**
          * <p>Disables an account as the delegated Amazon Macie administrator account for
-         * an Amazon Web Services organization.</p><p><h3>See Also:</h3>   <a
+         * an organization in Organizations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          *
@@ -997,7 +997,7 @@ namespace Model
 
         /**
          * <p>Designates an account as the delegated Amazon Macie administrator account for
-         * an Amazon Web Services organization.</p><p><h3>See Also:</h3>   <a
+         * an organization in Organizations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/EnableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          */
@@ -1005,7 +1005,7 @@ namespace Model
 
         /**
          * <p>Designates an account as the delegated Amazon Macie administrator account for
-         * an Amazon Web Services organization.</p><p><h3>See Also:</h3>   <a
+         * an organization in Organizations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/EnableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          *
@@ -1015,7 +1015,7 @@ namespace Model
 
         /**
          * <p>Designates an account as the delegated Amazon Macie administrator account for
-         * an Amazon Web Services organization.</p><p><h3>See Also:</h3>   <a
+         * an organization in Organizations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/EnableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          *
@@ -1052,16 +1052,16 @@ namespace Model
         virtual void GetAdministratorAccountAsync(const Model::GetAdministratorAccountRequest& request, const GetAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves (queries) aggregated statistical data for all the S3 buckets that
-         * Amazon Macie monitors and analyzes.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves (queries) aggregated statistical data about S3 buckets that Amazon
+         * Macie monitors and analyzes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetBucketStatistics">AWS
          * API Reference</a></p>
          */
         virtual Model::GetBucketStatisticsOutcome GetBucketStatistics(const Model::GetBucketStatisticsRequest& request) const;
 
         /**
-         * <p>Retrieves (queries) aggregated statistical data for all the S3 buckets that
-         * Amazon Macie monitors and analyzes.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves (queries) aggregated statistical data about S3 buckets that Amazon
+         * Macie monitors and analyzes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetBucketStatistics">AWS
          * API Reference</a></p>
          *
@@ -1070,8 +1070,8 @@ namespace Model
         virtual Model::GetBucketStatisticsOutcomeCallable GetBucketStatisticsCallable(const Model::GetBucketStatisticsRequest& request) const;
 
         /**
-         * <p>Retrieves (queries) aggregated statistical data for all the S3 buckets that
-         * Amazon Macie monitors and analyzes.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves (queries) aggregated statistical data about S3 buckets that Amazon
+         * Macie monitors and analyzes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetBucketStatistics">AWS
          * API Reference</a></p>
          *
@@ -1616,7 +1616,7 @@ namespace Model
 
         /**
          * <p>Retrieves information about the delegated Amazon Macie administrator account
-         * for an Amazon Web Services organization.</p><p><h3>See Also:</h3>   <a
+         * for an organization in Organizations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListOrganizationAdminAccounts">AWS
          * API Reference</a></p>
          */
@@ -1624,7 +1624,7 @@ namespace Model
 
         /**
          * <p>Retrieves information about the delegated Amazon Macie administrator account
-         * for an Amazon Web Services organization.</p><p><h3>See Also:</h3>   <a
+         * for an organization in Organizations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListOrganizationAdminAccounts">AWS
          * API Reference</a></p>
          *
@@ -1634,7 +1634,7 @@ namespace Model
 
         /**
          * <p>Retrieves information about the delegated Amazon Macie administrator account
-         * for an Amazon Web Services organization.</p><p><h3>See Also:</h3>   <a
+         * for an organization in Organizations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListOrganizationAdminAccounts">AWS
          * API Reference</a></p>
          *
@@ -1901,16 +1901,16 @@ namespace Model
         virtual void UpdateFindingsFilterAsync(const Model::UpdateFindingsFilterRequest& request, const UpdateFindingsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Suspends or re-enables an Amazon Macie account, or updates the configuration
-         * settings for a Macie account.</p><p><h3>See Also:</h3>   <a
+         * <p>Suspends or re-enables Amazon Macie, or updates the configuration settings
+         * for a Macie account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMacieSession">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateMacieSessionOutcome UpdateMacieSession(const Model::UpdateMacieSessionRequest& request) const;
 
         /**
-         * <p>Suspends or re-enables an Amazon Macie account, or updates the configuration
-         * settings for a Macie account.</p><p><h3>See Also:</h3>   <a
+         * <p>Suspends or re-enables Amazon Macie, or updates the configuration settings
+         * for a Macie account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMacieSession">AWS
          * API Reference</a></p>
          *
@@ -1919,8 +1919,8 @@ namespace Model
         virtual Model::UpdateMacieSessionOutcomeCallable UpdateMacieSessionCallable(const Model::UpdateMacieSessionRequest& request) const;
 
         /**
-         * <p>Suspends or re-enables an Amazon Macie account, or updates the configuration
-         * settings for a Macie account.</p><p><h3>See Also:</h3>   <a
+         * <p>Suspends or re-enables Amazon Macie, or updates the configuration settings
+         * for a Macie account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMacieSession">AWS
          * API Reference</a></p>
          *
@@ -1957,16 +1957,16 @@ namespace Model
         virtual void UpdateMemberSessionAsync(const Model::UpdateMemberSessionRequest& request, const UpdateMemberSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the Amazon Macie configuration settings for an Amazon Web Services
-         * organization.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the Amazon Macie configuration settings for an organization in
+         * Organizations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateOrganizationConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateOrganizationConfigurationOutcome UpdateOrganizationConfiguration(const Model::UpdateOrganizationConfigurationRequest& request) const;
 
         /**
-         * <p>Updates the Amazon Macie configuration settings for an Amazon Web Services
-         * organization.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the Amazon Macie configuration settings for an organization in
+         * Organizations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateOrganizationConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1975,8 +1975,8 @@ namespace Model
         virtual Model::UpdateOrganizationConfigurationOutcomeCallable UpdateOrganizationConfigurationCallable(const Model::UpdateOrganizationConfigurationRequest& request) const;
 
         /**
-         * <p>Updates the Amazon Macie configuration settings for an Amazon Web Services
-         * organization.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the Amazon Macie configuration settings for an organization in
+         * Organizations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateOrganizationConfiguration">AWS
          * API Reference</a></p>
          *

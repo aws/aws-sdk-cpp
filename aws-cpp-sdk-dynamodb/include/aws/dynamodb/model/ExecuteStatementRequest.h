@@ -8,6 +8,7 @@
 #include <aws/dynamodb/DynamoDBRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/dynamodb/model/ReturnConsumedCapacity.h>
 #include <aws/dynamodb/model/AttributeValue.h>
 #include <utility>
 
@@ -195,6 +196,25 @@ namespace Model
      */
     inline ExecuteStatementRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    
+    inline const ReturnConsumedCapacity& GetReturnConsumedCapacity() const{ return m_returnConsumedCapacity; }
+
+    
+    inline bool ReturnConsumedCapacityHasBeenSet() const { return m_returnConsumedCapacityHasBeenSet; }
+
+    
+    inline void SetReturnConsumedCapacity(const ReturnConsumedCapacity& value) { m_returnConsumedCapacityHasBeenSet = true; m_returnConsumedCapacity = value; }
+
+    
+    inline void SetReturnConsumedCapacity(ReturnConsumedCapacity&& value) { m_returnConsumedCapacityHasBeenSet = true; m_returnConsumedCapacity = std::move(value); }
+
+    
+    inline ExecuteStatementRequest& WithReturnConsumedCapacity(const ReturnConsumedCapacity& value) { SetReturnConsumedCapacity(value); return *this;}
+
+    
+    inline ExecuteStatementRequest& WithReturnConsumedCapacity(ReturnConsumedCapacity&& value) { SetReturnConsumedCapacity(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_statement;
@@ -208,6 +228,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
+    ReturnConsumedCapacity m_returnConsumedCapacity;
+    bool m_returnConsumedCapacityHasBeenSet;
   };
 
 } // namespace Model

@@ -1680,6 +1680,88 @@ namespace Model
      */
     inline RestoreFromClusterSnapshotRequest& WithDefaultIamRoleArn(const char* value) { SetDefaultIamRoleArn(value); return *this;}
 
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline const Aws::String& GetReservedNodeId() const{ return m_reservedNodeId; }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline bool ReservedNodeIdHasBeenSet() const { return m_reservedNodeIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline void SetReservedNodeId(const Aws::String& value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId = value; }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline void SetReservedNodeId(Aws::String&& value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId = std::move(value); }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline void SetReservedNodeId(const char* value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId.assign(value); }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithReservedNodeId(const Aws::String& value) { SetReservedNodeId(value); return *this;}
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithReservedNodeId(Aws::String&& value) { SetReservedNodeId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithReservedNodeId(const char* value) { SetReservedNodeId(value); return *this;}
+
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline const Aws::String& GetTargetReservedNodeOfferingId() const{ return m_targetReservedNodeOfferingId; }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline bool TargetReservedNodeOfferingIdHasBeenSet() const { return m_targetReservedNodeOfferingIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline void SetTargetReservedNodeOfferingId(const Aws::String& value) { m_targetReservedNodeOfferingIdHasBeenSet = true; m_targetReservedNodeOfferingId = value; }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline void SetTargetReservedNodeOfferingId(Aws::String&& value) { m_targetReservedNodeOfferingIdHasBeenSet = true; m_targetReservedNodeOfferingId = std::move(value); }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline void SetTargetReservedNodeOfferingId(const char* value) { m_targetReservedNodeOfferingIdHasBeenSet = true; m_targetReservedNodeOfferingId.assign(value); }
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithTargetReservedNodeOfferingId(const Aws::String& value) { SetTargetReservedNodeOfferingId(value); return *this;}
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithTargetReservedNodeOfferingId(Aws::String&& value) { SetTargetReservedNodeOfferingId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the target reserved node offering.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithTargetReservedNodeOfferingId(const char* value) { SetTargetReservedNodeOfferingId(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -1768,6 +1850,12 @@ namespace Model
 
     Aws::String m_defaultIamRoleArn;
     bool m_defaultIamRoleArnHasBeenSet;
+
+    Aws::String m_reservedNodeId;
+    bool m_reservedNodeIdHasBeenSet;
+
+    Aws::String m_targetReservedNodeOfferingId;
+    bool m_targetReservedNodeOfferingIdHasBeenSet;
   };
 
 } // namespace Model

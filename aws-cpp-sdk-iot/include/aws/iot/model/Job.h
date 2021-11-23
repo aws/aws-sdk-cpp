@@ -15,6 +15,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/iot/model/JobProcessDetails.h>
 #include <aws/iot/model/TimeoutConfig.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -836,6 +837,98 @@ namespace Model
      */
     inline Job& WithJobTemplateArn(const char* value) { SetJobTemplateArn(value); return *this;}
 
+
+    /**
+     * <p>A key-value map that pairs the patterns that need to be replaced in a managed
+     * template job document schema. You can use the description of each key as a
+     * guidance to specify the inputs during runtime when creating a job.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetDocumentParameters() const{ return m_documentParameters; }
+
+    /**
+     * <p>A key-value map that pairs the patterns that need to be replaced in a managed
+     * template job document schema. You can use the description of each key as a
+     * guidance to specify the inputs during runtime when creating a job.</p>
+     */
+    inline bool DocumentParametersHasBeenSet() const { return m_documentParametersHasBeenSet; }
+
+    /**
+     * <p>A key-value map that pairs the patterns that need to be replaced in a managed
+     * template job document schema. You can use the description of each key as a
+     * guidance to specify the inputs during runtime when creating a job.</p>
+     */
+    inline void SetDocumentParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_documentParametersHasBeenSet = true; m_documentParameters = value; }
+
+    /**
+     * <p>A key-value map that pairs the patterns that need to be replaced in a managed
+     * template job document schema. You can use the description of each key as a
+     * guidance to specify the inputs during runtime when creating a job.</p>
+     */
+    inline void SetDocumentParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_documentParametersHasBeenSet = true; m_documentParameters = std::move(value); }
+
+    /**
+     * <p>A key-value map that pairs the patterns that need to be replaced in a managed
+     * template job document schema. You can use the description of each key as a
+     * guidance to specify the inputs during runtime when creating a job.</p>
+     */
+    inline Job& WithDocumentParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetDocumentParameters(value); return *this;}
+
+    /**
+     * <p>A key-value map that pairs the patterns that need to be replaced in a managed
+     * template job document schema. You can use the description of each key as a
+     * guidance to specify the inputs during runtime when creating a job.</p>
+     */
+    inline Job& WithDocumentParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetDocumentParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>A key-value map that pairs the patterns that need to be replaced in a managed
+     * template job document schema. You can use the description of each key as a
+     * guidance to specify the inputs during runtime when creating a job.</p>
+     */
+    inline Job& AddDocumentParameters(const Aws::String& key, const Aws::String& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, value); return *this; }
+
+    /**
+     * <p>A key-value map that pairs the patterns that need to be replaced in a managed
+     * template job document schema. You can use the description of each key as a
+     * guidance to specify the inputs during runtime when creating a job.</p>
+     */
+    inline Job& AddDocumentParameters(Aws::String&& key, const Aws::String& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A key-value map that pairs the patterns that need to be replaced in a managed
+     * template job document schema. You can use the description of each key as a
+     * guidance to specify the inputs during runtime when creating a job.</p>
+     */
+    inline Job& AddDocumentParameters(const Aws::String& key, Aws::String&& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A key-value map that pairs the patterns that need to be replaced in a managed
+     * template job document schema. You can use the description of each key as a
+     * guidance to specify the inputs during runtime when creating a job.</p>
+     */
+    inline Job& AddDocumentParameters(Aws::String&& key, Aws::String&& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A key-value map that pairs the patterns that need to be replaced in a managed
+     * template job document schema. You can use the description of each key as a
+     * guidance to specify the inputs during runtime when creating a job.</p>
+     */
+    inline Job& AddDocumentParameters(const char* key, Aws::String&& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A key-value map that pairs the patterns that need to be replaced in a managed
+     * template job document schema. You can use the description of each key as a
+     * guidance to specify the inputs during runtime when creating a job.</p>
+     */
+    inline Job& AddDocumentParameters(Aws::String&& key, const char* value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A key-value map that pairs the patterns that need to be replaced in a managed
+     * template job document schema. You can use the description of each key as a
+     * guidance to specify the inputs during runtime when creating a job.</p>
+     */
+    inline Job& AddDocumentParameters(const char* key, const char* value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_jobArn;
@@ -894,6 +987,9 @@ namespace Model
 
     Aws::String m_jobTemplateArn;
     bool m_jobTemplateArnHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_documentParameters;
+    bool m_documentParametersHasBeenSet;
   };
 
 } // namespace Model

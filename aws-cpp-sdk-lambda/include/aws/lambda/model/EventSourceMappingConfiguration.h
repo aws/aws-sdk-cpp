@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/model/EventSourcePosition.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/lambda/model/FilterCriteria.h>
 #include <aws/lambda/model/DestinationConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lambda/model/SelfManagedEventSource.h>
@@ -312,6 +313,49 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the event source.</p>
      */
     inline EventSourceMappingConfiguration& WithEventSourceArn(const char* value) { SetEventSourceArn(value); return *this;}
+
+
+    /**
+     * <p>(Streams and Amazon SQS) A object that defines the filter criteria used to
+     * determine whether Lambda should process an event. For more information, see
+     * Event filtering.</p>
+     */
+    inline const FilterCriteria& GetFilterCriteria() const{ return m_filterCriteria; }
+
+    /**
+     * <p>(Streams and Amazon SQS) A object that defines the filter criteria used to
+     * determine whether Lambda should process an event. For more information, see
+     * Event filtering.</p>
+     */
+    inline bool FilterCriteriaHasBeenSet() const { return m_filterCriteriaHasBeenSet; }
+
+    /**
+     * <p>(Streams and Amazon SQS) A object that defines the filter criteria used to
+     * determine whether Lambda should process an event. For more information, see
+     * Event filtering.</p>
+     */
+    inline void SetFilterCriteria(const FilterCriteria& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = value; }
+
+    /**
+     * <p>(Streams and Amazon SQS) A object that defines the filter criteria used to
+     * determine whether Lambda should process an event. For more information, see
+     * Event filtering.</p>
+     */
+    inline void SetFilterCriteria(FilterCriteria&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::move(value); }
+
+    /**
+     * <p>(Streams and Amazon SQS) A object that defines the filter criteria used to
+     * determine whether Lambda should process an event. For more information, see
+     * Event filtering.</p>
+     */
+    inline EventSourceMappingConfiguration& WithFilterCriteria(const FilterCriteria& value) { SetFilterCriteria(value); return *this;}
+
+    /**
+     * <p>(Streams and Amazon SQS) A object that defines the filter criteria used to
+     * determine whether Lambda should process an event. For more information, see
+     * Event filtering.</p>
+     */
+    inline EventSourceMappingConfiguration& WithFilterCriteria(FilterCriteria&& value) { SetFilterCriteria(std::move(value)); return *this;}
 
 
     /**
@@ -947,6 +991,9 @@ namespace Model
 
     Aws::String m_eventSourceArn;
     bool m_eventSourceArnHasBeenSet;
+
+    FilterCriteria m_filterCriteria;
+    bool m_filterCriteriaHasBeenSet;
 
     Aws::String m_functionArn;
     bool m_functionArnHasBeenSet;

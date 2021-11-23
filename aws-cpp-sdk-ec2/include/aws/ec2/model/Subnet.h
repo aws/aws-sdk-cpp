@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/SubnetState.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/PrivateDnsNameOptionsOnLaunch.h>
 #include <aws/ec2/model/SubnetIpv6CidrBlockAssociation.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
@@ -678,6 +679,64 @@ namespace Model
      */
     inline Subnet& WithEnableDns64(bool value) { SetEnableDns64(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether this is an IPv6 only subnet.</p>
+     */
+    inline bool GetIpv6Native() const{ return m_ipv6Native; }
+
+    /**
+     * <p>Indicates whether this is an IPv6 only subnet.</p>
+     */
+    inline bool Ipv6NativeHasBeenSet() const { return m_ipv6NativeHasBeenSet; }
+
+    /**
+     * <p>Indicates whether this is an IPv6 only subnet.</p>
+     */
+    inline void SetIpv6Native(bool value) { m_ipv6NativeHasBeenSet = true; m_ipv6Native = value; }
+
+    /**
+     * <p>Indicates whether this is an IPv6 only subnet.</p>
+     */
+    inline Subnet& WithIpv6Native(bool value) { SetIpv6Native(value); return *this;}
+
+
+    /**
+     * <p>The type of hostnames to assign to instances in the subnet at launch. An
+     * instance hostname is based on the IPv4 address or ID of the instance.</p>
+     */
+    inline const PrivateDnsNameOptionsOnLaunch& GetPrivateDnsNameOptionsOnLaunch() const{ return m_privateDnsNameOptionsOnLaunch; }
+
+    /**
+     * <p>The type of hostnames to assign to instances in the subnet at launch. An
+     * instance hostname is based on the IPv4 address or ID of the instance.</p>
+     */
+    inline bool PrivateDnsNameOptionsOnLaunchHasBeenSet() const { return m_privateDnsNameOptionsOnLaunchHasBeenSet; }
+
+    /**
+     * <p>The type of hostnames to assign to instances in the subnet at launch. An
+     * instance hostname is based on the IPv4 address or ID of the instance.</p>
+     */
+    inline void SetPrivateDnsNameOptionsOnLaunch(const PrivateDnsNameOptionsOnLaunch& value) { m_privateDnsNameOptionsOnLaunchHasBeenSet = true; m_privateDnsNameOptionsOnLaunch = value; }
+
+    /**
+     * <p>The type of hostnames to assign to instances in the subnet at launch. An
+     * instance hostname is based on the IPv4 address or ID of the instance.</p>
+     */
+    inline void SetPrivateDnsNameOptionsOnLaunch(PrivateDnsNameOptionsOnLaunch&& value) { m_privateDnsNameOptionsOnLaunchHasBeenSet = true; m_privateDnsNameOptionsOnLaunch = std::move(value); }
+
+    /**
+     * <p>The type of hostnames to assign to instances in the subnet at launch. An
+     * instance hostname is based on the IPv4 address or ID of the instance.</p>
+     */
+    inline Subnet& WithPrivateDnsNameOptionsOnLaunch(const PrivateDnsNameOptionsOnLaunch& value) { SetPrivateDnsNameOptionsOnLaunch(value); return *this;}
+
+    /**
+     * <p>The type of hostnames to assign to instances in the subnet at launch. An
+     * instance hostname is based on the IPv4 address or ID of the instance.</p>
+     */
+    inline Subnet& WithPrivateDnsNameOptionsOnLaunch(PrivateDnsNameOptionsOnLaunch&& value) { SetPrivateDnsNameOptionsOnLaunch(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_availabilityZone;
@@ -733,6 +792,12 @@ namespace Model
 
     bool m_enableDns64;
     bool m_enableDns64HasBeenSet;
+
+    bool m_ipv6Native;
+    bool m_ipv6NativeHasBeenSet;
+
+    PrivateDnsNameOptionsOnLaunch m_privateDnsNameOptionsOnLaunch;
+    bool m_privateDnsNameOptionsOnLaunchHasBeenSet;
   };
 
 } // namespace Model

@@ -237,7 +237,8 @@ namespace Model
      * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
      * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
      * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
+     * <code>100.68.0.0/18</code>.</p> <p>This parameter is not supported for an IPv6
+     * only subnet.</p>
      */
     inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
 
@@ -245,7 +246,8 @@ namespace Model
      * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
      * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
      * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
+     * <code>100.68.0.0/18</code>.</p> <p>This parameter is not supported for an IPv6
+     * only subnet.</p>
      */
     inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
 
@@ -253,7 +255,8 @@ namespace Model
      * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
      * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
      * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
+     * <code>100.68.0.0/18</code>.</p> <p>This parameter is not supported for an IPv6
+     * only subnet.</p>
      */
     inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
 
@@ -261,7 +264,8 @@ namespace Model
      * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
      * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
      * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
+     * <code>100.68.0.0/18</code>.</p> <p>This parameter is not supported for an IPv6
+     * only subnet.</p>
      */
     inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
 
@@ -269,7 +273,8 @@ namespace Model
      * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
      * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
      * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
+     * <code>100.68.0.0/18</code>.</p> <p>This parameter is not supported for an IPv6
+     * only subnet.</p>
      */
     inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
 
@@ -277,7 +282,8 @@ namespace Model
      * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
      * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
      * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
+     * <code>100.68.0.0/18</code>.</p> <p>This parameter is not supported for an IPv6
+     * only subnet.</p>
      */
     inline CreateSubnetRequest& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
 
@@ -285,7 +291,8 @@ namespace Model
      * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
      * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
      * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
+     * <code>100.68.0.0/18</code>.</p> <p>This parameter is not supported for an IPv6
+     * only subnet.</p>
      */
     inline CreateSubnetRequest& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
 
@@ -293,56 +300,65 @@ namespace Model
      * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
      * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
      * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
+     * <code>100.68.0.0/18</code>.</p> <p>This parameter is not supported for an IPv6
+     * only subnet.</p>
      */
     inline CreateSubnetRequest& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
 
 
     /**
      * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
-     * use a /64 prefix length.</p>
+     * use a /64 prefix length.</p> <p>This parameter is required for an IPv6 only
+     * subnet.</p>
      */
     inline const Aws::String& GetIpv6CidrBlock() const{ return m_ipv6CidrBlock; }
 
     /**
      * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
-     * use a /64 prefix length.</p>
+     * use a /64 prefix length.</p> <p>This parameter is required for an IPv6 only
+     * subnet.</p>
      */
     inline bool Ipv6CidrBlockHasBeenSet() const { return m_ipv6CidrBlockHasBeenSet; }
 
     /**
      * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
-     * use a /64 prefix length.</p>
+     * use a /64 prefix length.</p> <p>This parameter is required for an IPv6 only
+     * subnet.</p>
      */
     inline void SetIpv6CidrBlock(const Aws::String& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = value; }
 
     /**
      * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
-     * use a /64 prefix length.</p>
+     * use a /64 prefix length.</p> <p>This parameter is required for an IPv6 only
+     * subnet.</p>
      */
     inline void SetIpv6CidrBlock(Aws::String&& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = std::move(value); }
 
     /**
      * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
-     * use a /64 prefix length.</p>
+     * use a /64 prefix length.</p> <p>This parameter is required for an IPv6 only
+     * subnet.</p>
      */
     inline void SetIpv6CidrBlock(const char* value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock.assign(value); }
 
     /**
      * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
-     * use a /64 prefix length.</p>
+     * use a /64 prefix length.</p> <p>This parameter is required for an IPv6 only
+     * subnet.</p>
      */
     inline CreateSubnetRequest& WithIpv6CidrBlock(const Aws::String& value) { SetIpv6CidrBlock(value); return *this;}
 
     /**
      * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
-     * use a /64 prefix length.</p>
+     * use a /64 prefix length.</p> <p>This parameter is required for an IPv6 only
+     * subnet.</p>
      */
     inline CreateSubnetRequest& WithIpv6CidrBlock(Aws::String&& value) { SetIpv6CidrBlock(std::move(value)); return *this;}
 
     /**
      * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
-     * use a /64 prefix length.</p>
+     * use a /64 prefix length.</p> <p>This parameter is required for an IPv6 only
+     * subnet.</p>
      */
     inline CreateSubnetRequest& WithIpv6CidrBlock(const char* value) { SetIpv6CidrBlock(value); return *this;}
 
@@ -469,6 +485,27 @@ namespace Model
      */
     inline CreateSubnetRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether to create an IPv6 only subnet.</p>
+     */
+    inline bool GetIpv6Native() const{ return m_ipv6Native; }
+
+    /**
+     * <p>Indicates whether to create an IPv6 only subnet.</p>
+     */
+    inline bool Ipv6NativeHasBeenSet() const { return m_ipv6NativeHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to create an IPv6 only subnet.</p>
+     */
+    inline void SetIpv6Native(bool value) { m_ipv6NativeHasBeenSet = true; m_ipv6Native = value; }
+
+    /**
+     * <p>Indicates whether to create an IPv6 only subnet.</p>
+     */
+    inline CreateSubnetRequest& WithIpv6Native(bool value) { SetIpv6Native(value); return *this;}
+
   private:
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
@@ -494,6 +531,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
+    bool m_ipv6Native;
+    bool m_ipv6NativeHasBeenSet;
   };
 
 } // namespace Model

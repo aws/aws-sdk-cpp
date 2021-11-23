@@ -34,40 +34,40 @@ namespace Model
 
     /**
      * <p>The Amazon Web Services account ID for the administrator account. If the
-     * accounts are associated by a Macie membership invitation, this object also
-     * provides details about the invitation that was sent to establish the
+     * accounts are associated by an Amazon Macie membership invitation, this object
+     * also provides details about the invitation that was sent to establish the
      * relationship between the accounts.</p>
      */
     inline const Invitation& GetAdministrator() const{ return m_administrator; }
 
     /**
      * <p>The Amazon Web Services account ID for the administrator account. If the
-     * accounts are associated by a Macie membership invitation, this object also
-     * provides details about the invitation that was sent to establish the
+     * accounts are associated by an Amazon Macie membership invitation, this object
+     * also provides details about the invitation that was sent to establish the
      * relationship between the accounts.</p>
      */
     inline void SetAdministrator(const Invitation& value) { m_administrator = value; }
 
     /**
      * <p>The Amazon Web Services account ID for the administrator account. If the
-     * accounts are associated by a Macie membership invitation, this object also
-     * provides details about the invitation that was sent to establish the
+     * accounts are associated by an Amazon Macie membership invitation, this object
+     * also provides details about the invitation that was sent to establish the
      * relationship between the accounts.</p>
      */
     inline void SetAdministrator(Invitation&& value) { m_administrator = std::move(value); }
 
     /**
      * <p>The Amazon Web Services account ID for the administrator account. If the
-     * accounts are associated by a Macie membership invitation, this object also
-     * provides details about the invitation that was sent to establish the
+     * accounts are associated by an Amazon Macie membership invitation, this object
+     * also provides details about the invitation that was sent to establish the
      * relationship between the accounts.</p>
      */
     inline GetAdministratorAccountResult& WithAdministrator(const Invitation& value) { SetAdministrator(value); return *this;}
 
     /**
      * <p>The Amazon Web Services account ID for the administrator account. If the
-     * accounts are associated by a Macie membership invitation, this object also
-     * provides details about the invitation that was sent to establish the
+     * accounts are associated by an Amazon Macie membership invitation, this object
+     * also provides details about the invitation that was sent to establish the
      * relationship between the accounts.</p>
      */
     inline GetAdministratorAccountResult& WithAdministrator(Invitation&& value) { SetAdministrator(std::move(value)); return *this;}

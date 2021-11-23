@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Information about the suite run.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about the suite run.</p> <p>Requires permission to access the <a
+   * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SuiteRunInformation</a>
+   * action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/SuiteRunInformation">AWS
    * API Reference</a></p>
    */
@@ -40,42 +42,42 @@ namespace Model
 
 
     /**
-     * <p>Suite definition Id of the suite run.</p>
+     * <p>Suite definition ID of the suite run.</p>
      */
     inline const Aws::String& GetSuiteDefinitionId() const{ return m_suiteDefinitionId; }
 
     /**
-     * <p>Suite definition Id of the suite run.</p>
+     * <p>Suite definition ID of the suite run.</p>
      */
     inline bool SuiteDefinitionIdHasBeenSet() const { return m_suiteDefinitionIdHasBeenSet; }
 
     /**
-     * <p>Suite definition Id of the suite run.</p>
+     * <p>Suite definition ID of the suite run.</p>
      */
     inline void SetSuiteDefinitionId(const Aws::String& value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId = value; }
 
     /**
-     * <p>Suite definition Id of the suite run.</p>
+     * <p>Suite definition ID of the suite run.</p>
      */
     inline void SetSuiteDefinitionId(Aws::String&& value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId = std::move(value); }
 
     /**
-     * <p>Suite definition Id of the suite run.</p>
+     * <p>Suite definition ID of the suite run.</p>
      */
     inline void SetSuiteDefinitionId(const char* value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId.assign(value); }
 
     /**
-     * <p>Suite definition Id of the suite run.</p>
+     * <p>Suite definition ID of the suite run.</p>
      */
     inline SuiteRunInformation& WithSuiteDefinitionId(const Aws::String& value) { SetSuiteDefinitionId(value); return *this;}
 
     /**
-     * <p>Suite definition Id of the suite run.</p>
+     * <p>Suite definition ID of the suite run.</p>
      */
     inline SuiteRunInformation& WithSuiteDefinitionId(Aws::String&& value) { SetSuiteDefinitionId(std::move(value)); return *this;}
 
     /**
-     * <p>Suite definition Id of the suite run.</p>
+     * <p>Suite definition ID of the suite run.</p>
      */
     inline SuiteRunInformation& WithSuiteDefinitionId(const char* value) { SetSuiteDefinitionId(value); return *this;}
 
@@ -163,42 +165,42 @@ namespace Model
 
 
     /**
-     * <p>Suite run Id of the suite run.</p>
+     * <p>Suite run ID of the suite run.</p>
      */
     inline const Aws::String& GetSuiteRunId() const{ return m_suiteRunId; }
 
     /**
-     * <p>Suite run Id of the suite run.</p>
+     * <p>Suite run ID of the suite run.</p>
      */
     inline bool SuiteRunIdHasBeenSet() const { return m_suiteRunIdHasBeenSet; }
 
     /**
-     * <p>Suite run Id of the suite run.</p>
+     * <p>Suite run ID of the suite run.</p>
      */
     inline void SetSuiteRunId(const Aws::String& value) { m_suiteRunIdHasBeenSet = true; m_suiteRunId = value; }
 
     /**
-     * <p>Suite run Id of the suite run.</p>
+     * <p>Suite run ID of the suite run.</p>
      */
     inline void SetSuiteRunId(Aws::String&& value) { m_suiteRunIdHasBeenSet = true; m_suiteRunId = std::move(value); }
 
     /**
-     * <p>Suite run Id of the suite run.</p>
+     * <p>Suite run ID of the suite run.</p>
      */
     inline void SetSuiteRunId(const char* value) { m_suiteRunIdHasBeenSet = true; m_suiteRunId.assign(value); }
 
     /**
-     * <p>Suite run Id of the suite run.</p>
+     * <p>Suite run ID of the suite run.</p>
      */
     inline SuiteRunInformation& WithSuiteRunId(const Aws::String& value) { SetSuiteRunId(value); return *this;}
 
     /**
-     * <p>Suite run Id of the suite run.</p>
+     * <p>Suite run ID of the suite run.</p>
      */
     inline SuiteRunInformation& WithSuiteRunId(Aws::String&& value) { SetSuiteRunId(std::move(value)); return *this;}
 
     /**
-     * <p>Suite run Id of the suite run.</p>
+     * <p>Suite run ID of the suite run.</p>
      */
     inline SuiteRunInformation& WithSuiteRunId(const char* value) { SetSuiteRunId(value); return *this;}
 

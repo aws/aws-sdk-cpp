@@ -21,6 +21,7 @@
 #include <aws/ec2/model/LaunchTemplateInstanceMetadataOptionsRequest.h>
 #include <aws/ec2/model/LaunchTemplateEnclaveOptionsRequest.h>
 #include <aws/ec2/model/InstanceRequirementsRequest.h>
+#include <aws/ec2/model/LaunchTemplatePrivateDnsNameOptionsRequest.h>
 #include <aws/ec2/model/LaunchTemplateBlockDeviceMappingRequest.h>
 #include <aws/ec2/model/LaunchTemplateInstanceNetworkInterfaceSpecificationRequest.h>
 #include <aws/ec2/model/LaunchTemplateTagSpecificationRequest.h>
@@ -1532,6 +1533,43 @@ namespace Model
      */
     inline RequestLaunchTemplateData& WithInstanceRequirements(InstanceRequirementsRequest&& value) { SetInstanceRequirements(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The options for the instance hostname. The default values are inherited from
+     * the subnet.</p>
+     */
+    inline const LaunchTemplatePrivateDnsNameOptionsRequest& GetPrivateDnsNameOptions() const{ return m_privateDnsNameOptions; }
+
+    /**
+     * <p>The options for the instance hostname. The default values are inherited from
+     * the subnet.</p>
+     */
+    inline bool PrivateDnsNameOptionsHasBeenSet() const { return m_privateDnsNameOptionsHasBeenSet; }
+
+    /**
+     * <p>The options for the instance hostname. The default values are inherited from
+     * the subnet.</p>
+     */
+    inline void SetPrivateDnsNameOptions(const LaunchTemplatePrivateDnsNameOptionsRequest& value) { m_privateDnsNameOptionsHasBeenSet = true; m_privateDnsNameOptions = value; }
+
+    /**
+     * <p>The options for the instance hostname. The default values are inherited from
+     * the subnet.</p>
+     */
+    inline void SetPrivateDnsNameOptions(LaunchTemplatePrivateDnsNameOptionsRequest&& value) { m_privateDnsNameOptionsHasBeenSet = true; m_privateDnsNameOptions = std::move(value); }
+
+    /**
+     * <p>The options for the instance hostname. The default values are inherited from
+     * the subnet.</p>
+     */
+    inline RequestLaunchTemplateData& WithPrivateDnsNameOptions(const LaunchTemplatePrivateDnsNameOptionsRequest& value) { SetPrivateDnsNameOptions(value); return *this;}
+
+    /**
+     * <p>The options for the instance hostname. The default values are inherited from
+     * the subnet.</p>
+     */
+    inline RequestLaunchTemplateData& WithPrivateDnsNameOptions(LaunchTemplatePrivateDnsNameOptionsRequest&& value) { SetPrivateDnsNameOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_kernelId;
@@ -1617,6 +1655,9 @@ namespace Model
 
     InstanceRequirementsRequest m_instanceRequirements;
     bool m_instanceRequirementsHasBeenSet;
+
+    LaunchTemplatePrivateDnsNameOptionsRequest m_privateDnsNameOptions;
+    bool m_privateDnsNameOptionsHasBeenSet;
   };
 
 } // namespace Model

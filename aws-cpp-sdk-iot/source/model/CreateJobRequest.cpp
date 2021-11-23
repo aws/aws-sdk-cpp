@@ -26,7 +26,8 @@ CreateJobRequest::CreateJobRequest() :
     m_timeoutConfigHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_namespaceIdHasBeenSet(false),
-    m_jobTemplateArnHasBeenSet(false)
+    m_jobTemplateArnHasBeenSet(false),
+    m_documentParametersHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,17 @@ Aws::String CreateJobRequest::SerializePayload() const
   if(m_jobTemplateArnHasBeenSet)
   {
    payload.WithString("jobTemplateArn", m_jobTemplateArn);
+
+  }
+
+  if(m_documentParametersHasBeenSet)
+  {
+   JsonValue documentParametersJsonMap;
+   for(auto& documentParametersItem : m_documentParameters)
+   {
+     documentParametersJsonMap.WithString(documentParametersItem.first, documentParametersItem.second);
+   }
+   payload.WithObject("documentParameters", std::move(documentParametersJsonMap));
 
   }
 

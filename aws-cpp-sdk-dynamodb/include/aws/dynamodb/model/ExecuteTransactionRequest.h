@@ -8,6 +8,7 @@
 #include <aws/dynamodb/DynamoDBRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/model/ReturnConsumedCapacity.h>
 #include <aws/dynamodb/model/ParameterizedStatement.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -126,6 +127,67 @@ namespace Model
      */
     inline ExecuteTransactionRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
+
+    /**
+     * <p>Determines the level of detail about either provisioned or on-demand
+     * throughput consumption that is returned in the response. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.</p>
+     */
+    inline const ReturnConsumedCapacity& GetReturnConsumedCapacity() const{ return m_returnConsumedCapacity; }
+
+    /**
+     * <p>Determines the level of detail about either provisioned or on-demand
+     * throughput consumption that is returned in the response. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.</p>
+     */
+    inline bool ReturnConsumedCapacityHasBeenSet() const { return m_returnConsumedCapacityHasBeenSet; }
+
+    /**
+     * <p>Determines the level of detail about either provisioned or on-demand
+     * throughput consumption that is returned in the response. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.</p>
+     */
+    inline void SetReturnConsumedCapacity(const ReturnConsumedCapacity& value) { m_returnConsumedCapacityHasBeenSet = true; m_returnConsumedCapacity = value; }
+
+    /**
+     * <p>Determines the level of detail about either provisioned or on-demand
+     * throughput consumption that is returned in the response. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.</p>
+     */
+    inline void SetReturnConsumedCapacity(ReturnConsumedCapacity&& value) { m_returnConsumedCapacityHasBeenSet = true; m_returnConsumedCapacity = std::move(value); }
+
+    /**
+     * <p>Determines the level of detail about either provisioned or on-demand
+     * throughput consumption that is returned in the response. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.</p>
+     */
+    inline ExecuteTransactionRequest& WithReturnConsumedCapacity(const ReturnConsumedCapacity& value) { SetReturnConsumedCapacity(value); return *this;}
+
+    /**
+     * <p>Determines the level of detail about either provisioned or on-demand
+     * throughput consumption that is returned in the response. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.</p>
+     */
+    inline ExecuteTransactionRequest& WithReturnConsumedCapacity(ReturnConsumedCapacity&& value) { SetReturnConsumedCapacity(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<ParameterizedStatement> m_transactStatements;
@@ -133,6 +195,9 @@ namespace Model
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
+
+    ReturnConsumedCapacity m_returnConsumedCapacity;
+    bool m_returnConsumedCapacityHasBeenSet;
   };
 
 } // namespace Model

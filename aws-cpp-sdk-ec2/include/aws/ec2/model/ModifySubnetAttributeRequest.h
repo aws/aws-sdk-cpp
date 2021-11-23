@@ -8,6 +8,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/ec2/model/AttributeBooleanValue.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/HostnameType.h>
 #include <utility>
 
 namespace Aws
@@ -336,6 +337,135 @@ namespace Model
      */
     inline ModifySubnetAttributeRequest& WithEnableDns64(AttributeBooleanValue&& value) { SetEnableDns64(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The type of hostnames to assign to instances in the subnet at launch. For
+     * IPv4 only subnets, an instance DNS name must be based on the instance IPv4
+     * address. For IPv6 only subnets, an instance DNS name must be based on the
+     * instance ID. For dual-stack subnets, you can specify whether DNS names use the
+     * instance IPv4 address or the instance ID.</p>
+     */
+    inline const HostnameType& GetPrivateDnsHostnameTypeOnLaunch() const{ return m_privateDnsHostnameTypeOnLaunch; }
+
+    /**
+     * <p>The type of hostnames to assign to instances in the subnet at launch. For
+     * IPv4 only subnets, an instance DNS name must be based on the instance IPv4
+     * address. For IPv6 only subnets, an instance DNS name must be based on the
+     * instance ID. For dual-stack subnets, you can specify whether DNS names use the
+     * instance IPv4 address or the instance ID.</p>
+     */
+    inline bool PrivateDnsHostnameTypeOnLaunchHasBeenSet() const { return m_privateDnsHostnameTypeOnLaunchHasBeenSet; }
+
+    /**
+     * <p>The type of hostnames to assign to instances in the subnet at launch. For
+     * IPv4 only subnets, an instance DNS name must be based on the instance IPv4
+     * address. For IPv6 only subnets, an instance DNS name must be based on the
+     * instance ID. For dual-stack subnets, you can specify whether DNS names use the
+     * instance IPv4 address or the instance ID.</p>
+     */
+    inline void SetPrivateDnsHostnameTypeOnLaunch(const HostnameType& value) { m_privateDnsHostnameTypeOnLaunchHasBeenSet = true; m_privateDnsHostnameTypeOnLaunch = value; }
+
+    /**
+     * <p>The type of hostnames to assign to instances in the subnet at launch. For
+     * IPv4 only subnets, an instance DNS name must be based on the instance IPv4
+     * address. For IPv6 only subnets, an instance DNS name must be based on the
+     * instance ID. For dual-stack subnets, you can specify whether DNS names use the
+     * instance IPv4 address or the instance ID.</p>
+     */
+    inline void SetPrivateDnsHostnameTypeOnLaunch(HostnameType&& value) { m_privateDnsHostnameTypeOnLaunchHasBeenSet = true; m_privateDnsHostnameTypeOnLaunch = std::move(value); }
+
+    /**
+     * <p>The type of hostnames to assign to instances in the subnet at launch. For
+     * IPv4 only subnets, an instance DNS name must be based on the instance IPv4
+     * address. For IPv6 only subnets, an instance DNS name must be based on the
+     * instance ID. For dual-stack subnets, you can specify whether DNS names use the
+     * instance IPv4 address or the instance ID.</p>
+     */
+    inline ModifySubnetAttributeRequest& WithPrivateDnsHostnameTypeOnLaunch(const HostnameType& value) { SetPrivateDnsHostnameTypeOnLaunch(value); return *this;}
+
+    /**
+     * <p>The type of hostnames to assign to instances in the subnet at launch. For
+     * IPv4 only subnets, an instance DNS name must be based on the instance IPv4
+     * address. For IPv6 only subnets, an instance DNS name must be based on the
+     * instance ID. For dual-stack subnets, you can specify whether DNS names use the
+     * instance IPv4 address or the instance ID.</p>
+     */
+    inline ModifySubnetAttributeRequest& WithPrivateDnsHostnameTypeOnLaunch(HostnameType&& value) { SetPrivateDnsHostnameTypeOnLaunch(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A
+     * records.</p>
+     */
+    inline const AttributeBooleanValue& GetEnableResourceNameDnsARecordOnLaunch() const{ return m_enableResourceNameDnsARecordOnLaunch; }
+
+    /**
+     * <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A
+     * records.</p>
+     */
+    inline bool EnableResourceNameDnsARecordOnLaunchHasBeenSet() const { return m_enableResourceNameDnsARecordOnLaunchHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A
+     * records.</p>
+     */
+    inline void SetEnableResourceNameDnsARecordOnLaunch(const AttributeBooleanValue& value) { m_enableResourceNameDnsARecordOnLaunchHasBeenSet = true; m_enableResourceNameDnsARecordOnLaunch = value; }
+
+    /**
+     * <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A
+     * records.</p>
+     */
+    inline void SetEnableResourceNameDnsARecordOnLaunch(AttributeBooleanValue&& value) { m_enableResourceNameDnsARecordOnLaunchHasBeenSet = true; m_enableResourceNameDnsARecordOnLaunch = std::move(value); }
+
+    /**
+     * <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A
+     * records.</p>
+     */
+    inline ModifySubnetAttributeRequest& WithEnableResourceNameDnsARecordOnLaunch(const AttributeBooleanValue& value) { SetEnableResourceNameDnsARecordOnLaunch(value); return *this;}
+
+    /**
+     * <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A
+     * records.</p>
+     */
+    inline ModifySubnetAttributeRequest& WithEnableResourceNameDnsARecordOnLaunch(AttributeBooleanValue&& value) { SetEnableResourceNameDnsARecordOnLaunch(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates whether to respond to DNS queries for instance hostnames with DNS
+     * AAAA records.</p>
+     */
+    inline const AttributeBooleanValue& GetEnableResourceNameDnsAAAARecordOnLaunch() const{ return m_enableResourceNameDnsAAAARecordOnLaunch; }
+
+    /**
+     * <p>Indicates whether to respond to DNS queries for instance hostnames with DNS
+     * AAAA records.</p>
+     */
+    inline bool EnableResourceNameDnsAAAARecordOnLaunchHasBeenSet() const { return m_enableResourceNameDnsAAAARecordOnLaunchHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to respond to DNS queries for instance hostnames with DNS
+     * AAAA records.</p>
+     */
+    inline void SetEnableResourceNameDnsAAAARecordOnLaunch(const AttributeBooleanValue& value) { m_enableResourceNameDnsAAAARecordOnLaunchHasBeenSet = true; m_enableResourceNameDnsAAAARecordOnLaunch = value; }
+
+    /**
+     * <p>Indicates whether to respond to DNS queries for instance hostnames with DNS
+     * AAAA records.</p>
+     */
+    inline void SetEnableResourceNameDnsAAAARecordOnLaunch(AttributeBooleanValue&& value) { m_enableResourceNameDnsAAAARecordOnLaunchHasBeenSet = true; m_enableResourceNameDnsAAAARecordOnLaunch = std::move(value); }
+
+    /**
+     * <p>Indicates whether to respond to DNS queries for instance hostnames with DNS
+     * AAAA records.</p>
+     */
+    inline ModifySubnetAttributeRequest& WithEnableResourceNameDnsAAAARecordOnLaunch(const AttributeBooleanValue& value) { SetEnableResourceNameDnsAAAARecordOnLaunch(value); return *this;}
+
+    /**
+     * <p>Indicates whether to respond to DNS queries for instance hostnames with DNS
+     * AAAA records.</p>
+     */
+    inline ModifySubnetAttributeRequest& WithEnableResourceNameDnsAAAARecordOnLaunch(AttributeBooleanValue&& value) { SetEnableResourceNameDnsAAAARecordOnLaunch(std::move(value)); return *this;}
+
   private:
 
     AttributeBooleanValue m_assignIpv6AddressOnCreation;
@@ -355,6 +485,15 @@ namespace Model
 
     AttributeBooleanValue m_enableDns64;
     bool m_enableDns64HasBeenSet;
+
+    HostnameType m_privateDnsHostnameTypeOnLaunch;
+    bool m_privateDnsHostnameTypeOnLaunchHasBeenSet;
+
+    AttributeBooleanValue m_enableResourceNameDnsARecordOnLaunch;
+    bool m_enableResourceNameDnsARecordOnLaunchHasBeenSet;
+
+    AttributeBooleanValue m_enableResourceNameDnsAAAARecordOnLaunch;
+    bool m_enableResourceNameDnsAAAARecordOnLaunchHasBeenSet;
   };
 
 } // namespace Model

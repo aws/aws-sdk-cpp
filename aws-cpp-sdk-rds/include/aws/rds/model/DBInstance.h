@@ -44,8 +44,14 @@ namespace Model
 
   /**
    * <p>Contains the details of an Amazon RDS DB instance. </p> <p>This data type is
-   * used as a response element in the <code>DescribeDBInstances</code> action.
-   * </p><p><h3>See Also:</h3>   <a
+   * used as a response element in the operations <code>CreateDBInstance</code>,
+   * <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>,
+   * <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>,
+   * <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+   * <code>RestoreDBInstanceFromDBSnapshot</code>,
+   * <code>RestoreDBInstanceFromS3</code>,
+   * <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and
+   * <code>StopDBInstance</code>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBInstance">AWS API
    * Reference</a></p>
    */
@@ -1164,9 +1170,9 @@ namespace Model
     /**
      * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
      * instance is replicated as a read replica. For example, when you create an Aurora
-     * read replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
-     * Aurora read replica is shown. This output does not contain information about
-     * cross region Aurora read replicas.</p>  <p>Currently, each RDS DB instance
+     * read replica of an RDS for MySQL DB instance, the Aurora MySQL DB cluster for
+     * the Aurora read replica is shown. This output doesn't contain information about
+     * cross-Region Aurora read replicas.</p>  <p>Currently, each RDS DB instance
      * can have only one Aurora read replica.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetReadReplicaDBClusterIdentifiers() const{ return m_readReplicaDBClusterIdentifiers; }
@@ -1174,9 +1180,9 @@ namespace Model
     /**
      * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
      * instance is replicated as a read replica. For example, when you create an Aurora
-     * read replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
-     * Aurora read replica is shown. This output does not contain information about
-     * cross region Aurora read replicas.</p>  <p>Currently, each RDS DB instance
+     * read replica of an RDS for MySQL DB instance, the Aurora MySQL DB cluster for
+     * the Aurora read replica is shown. This output doesn't contain information about
+     * cross-Region Aurora read replicas.</p>  <p>Currently, each RDS DB instance
      * can have only one Aurora read replica.</p> 
      */
     inline bool ReadReplicaDBClusterIdentifiersHasBeenSet() const { return m_readReplicaDBClusterIdentifiersHasBeenSet; }
@@ -1184,9 +1190,9 @@ namespace Model
     /**
      * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
      * instance is replicated as a read replica. For example, when you create an Aurora
-     * read replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
-     * Aurora read replica is shown. This output does not contain information about
-     * cross region Aurora read replicas.</p>  <p>Currently, each RDS DB instance
+     * read replica of an RDS for MySQL DB instance, the Aurora MySQL DB cluster for
+     * the Aurora read replica is shown. This output doesn't contain information about
+     * cross-Region Aurora read replicas.</p>  <p>Currently, each RDS DB instance
      * can have only one Aurora read replica.</p> 
      */
     inline void SetReadReplicaDBClusterIdentifiers(const Aws::Vector<Aws::String>& value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers = value; }
@@ -1194,9 +1200,9 @@ namespace Model
     /**
      * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
      * instance is replicated as a read replica. For example, when you create an Aurora
-     * read replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
-     * Aurora read replica is shown. This output does not contain information about
-     * cross region Aurora read replicas.</p>  <p>Currently, each RDS DB instance
+     * read replica of an RDS for MySQL DB instance, the Aurora MySQL DB cluster for
+     * the Aurora read replica is shown. This output doesn't contain information about
+     * cross-Region Aurora read replicas.</p>  <p>Currently, each RDS DB instance
      * can have only one Aurora read replica.</p> 
      */
     inline void SetReadReplicaDBClusterIdentifiers(Aws::Vector<Aws::String>&& value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers = std::move(value); }
@@ -1204,9 +1210,9 @@ namespace Model
     /**
      * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
      * instance is replicated as a read replica. For example, when you create an Aurora
-     * read replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
-     * Aurora read replica is shown. This output does not contain information about
-     * cross region Aurora read replicas.</p>  <p>Currently, each RDS DB instance
+     * read replica of an RDS for MySQL DB instance, the Aurora MySQL DB cluster for
+     * the Aurora read replica is shown. This output doesn't contain information about
+     * cross-Region Aurora read replicas.</p>  <p>Currently, each RDS DB instance
      * can have only one Aurora read replica.</p> 
      */
     inline DBInstance& WithReadReplicaDBClusterIdentifiers(const Aws::Vector<Aws::String>& value) { SetReadReplicaDBClusterIdentifiers(value); return *this;}
@@ -1214,9 +1220,9 @@ namespace Model
     /**
      * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
      * instance is replicated as a read replica. For example, when you create an Aurora
-     * read replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
-     * Aurora read replica is shown. This output does not contain information about
-     * cross region Aurora read replicas.</p>  <p>Currently, each RDS DB instance
+     * read replica of an RDS for MySQL DB instance, the Aurora MySQL DB cluster for
+     * the Aurora read replica is shown. This output doesn't contain information about
+     * cross-Region Aurora read replicas.</p>  <p>Currently, each RDS DB instance
      * can have only one Aurora read replica.</p> 
      */
     inline DBInstance& WithReadReplicaDBClusterIdentifiers(Aws::Vector<Aws::String>&& value) { SetReadReplicaDBClusterIdentifiers(std::move(value)); return *this;}
@@ -1224,9 +1230,9 @@ namespace Model
     /**
      * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
      * instance is replicated as a read replica. For example, when you create an Aurora
-     * read replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
-     * Aurora read replica is shown. This output does not contain information about
-     * cross region Aurora read replicas.</p>  <p>Currently, each RDS DB instance
+     * read replica of an RDS for MySQL DB instance, the Aurora MySQL DB cluster for
+     * the Aurora read replica is shown. This output doesn't contain information about
+     * cross-Region Aurora read replicas.</p>  <p>Currently, each RDS DB instance
      * can have only one Aurora read replica.</p> 
      */
     inline DBInstance& AddReadReplicaDBClusterIdentifiers(const Aws::String& value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers.push_back(value); return *this; }
@@ -1234,9 +1240,9 @@ namespace Model
     /**
      * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
      * instance is replicated as a read replica. For example, when you create an Aurora
-     * read replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
-     * Aurora read replica is shown. This output does not contain information about
-     * cross region Aurora read replicas.</p>  <p>Currently, each RDS DB instance
+     * read replica of an RDS for MySQL DB instance, the Aurora MySQL DB cluster for
+     * the Aurora read replica is shown. This output doesn't contain information about
+     * cross-Region Aurora read replicas.</p>  <p>Currently, each RDS DB instance
      * can have only one Aurora read replica.</p> 
      */
     inline DBInstance& AddReadReplicaDBClusterIdentifiers(Aws::String&& value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers.push_back(std::move(value)); return *this; }
@@ -1244,9 +1250,9 @@ namespace Model
     /**
      * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
      * instance is replicated as a read replica. For example, when you create an Aurora
-     * read replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
-     * Aurora read replica is shown. This output does not contain information about
-     * cross region Aurora read replicas.</p>  <p>Currently, each RDS DB instance
+     * read replica of an RDS for MySQL DB instance, the Aurora MySQL DB cluster for
+     * the Aurora read replica is shown. This output doesn't contain information about
+     * cross-Region Aurora read replicas.</p>  <p>Currently, each RDS DB instance
      * can have only one Aurora read replica.</p> 
      */
     inline DBInstance& AddReadReplicaDBClusterIdentifiers(const char* value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers.push_back(value); return *this; }
@@ -1581,53 +1587,57 @@ namespace Model
 
     /**
      * <p>Specifies the accessibility options for the DB instance.</p> <p>When the DB
-     * instance is publicly accessible, its DNS endpoint resolves to the private IP
-     * address from within the DB instance's VPC, and to the public IP address from
-     * outside of the DB instance's VPC. Access to the DB instance is ultimately
-     * controlled by the security group it uses, and that public access is not
-     * permitted if the security group assigned to the DB instance doesn't permit
-     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
-     * instance with a DNS name that resolves to a private IP address.</p> <p>For more
-     * information, see <a>CreateDBInstance</a>.</p>
+     * cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB cluster's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB cluster's
+     * VPC. Access to the DB cluster is ultimately controlled by the security group it
+     * uses. That public access isn't permitted if the security group assigned to the
+     * DB cluster doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.</p> <p>For more information, see
+     * <a>CreateDBInstance</a>.</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
     /**
      * <p>Specifies the accessibility options for the DB instance.</p> <p>When the DB
-     * instance is publicly accessible, its DNS endpoint resolves to the private IP
-     * address from within the DB instance's VPC, and to the public IP address from
-     * outside of the DB instance's VPC. Access to the DB instance is ultimately
-     * controlled by the security group it uses, and that public access is not
-     * permitted if the security group assigned to the DB instance doesn't permit
-     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
-     * instance with a DNS name that resolves to a private IP address.</p> <p>For more
-     * information, see <a>CreateDBInstance</a>.</p>
+     * cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB cluster's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB cluster's
+     * VPC. Access to the DB cluster is ultimately controlled by the security group it
+     * uses. That public access isn't permitted if the security group assigned to the
+     * DB cluster doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.</p> <p>For more information, see
+     * <a>CreateDBInstance</a>.</p>
      */
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
 
     /**
      * <p>Specifies the accessibility options for the DB instance.</p> <p>When the DB
-     * instance is publicly accessible, its DNS endpoint resolves to the private IP
-     * address from within the DB instance's VPC, and to the public IP address from
-     * outside of the DB instance's VPC. Access to the DB instance is ultimately
-     * controlled by the security group it uses, and that public access is not
-     * permitted if the security group assigned to the DB instance doesn't permit
-     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
-     * instance with a DNS name that resolves to a private IP address.</p> <p>For more
-     * information, see <a>CreateDBInstance</a>.</p>
+     * cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB cluster's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB cluster's
+     * VPC. Access to the DB cluster is ultimately controlled by the security group it
+     * uses. That public access isn't permitted if the security group assigned to the
+     * DB cluster doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.</p> <p>For more information, see
+     * <a>CreateDBInstance</a>.</p>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
      * <p>Specifies the accessibility options for the DB instance.</p> <p>When the DB
-     * instance is publicly accessible, its DNS endpoint resolves to the private IP
-     * address from within the DB instance's VPC, and to the public IP address from
-     * outside of the DB instance's VPC. Access to the DB instance is ultimately
-     * controlled by the security group it uses, and that public access is not
-     * permitted if the security group assigned to the DB instance doesn't permit
-     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
-     * instance with a DNS name that resolves to a private IP address.</p> <p>For more
-     * information, see <a>CreateDBInstance</a>.</p>
+     * cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB cluster's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB cluster's
+     * VPC. Access to the DB cluster is ultimately controlled by the security group it
+     * uses. That public access isn't permitted if the security group assigned to the
+     * DB cluster doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.</p> <p>For more information, see
+     * <a>CreateDBInstance</a>.</p>
      */
     inline DBInstance& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 

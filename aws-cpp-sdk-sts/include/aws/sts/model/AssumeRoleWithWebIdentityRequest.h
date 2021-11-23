@@ -749,8 +749,8 @@ namespace Model
      * takes a <code>SessionDuration</code> parameter that specifies the maximum length
      * of the console session. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
-     * a URL that Enables Federated Users to Access the Management Console</a> in the
-     * <i>IAM User Guide</i>.</p> 
+     * a URL that Enables Federated Users to Access the Amazon Web Services Management
+     * Console</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline int GetDurationSeconds() const{ return m_durationSeconds; }
 
@@ -771,8 +771,8 @@ namespace Model
      * takes a <code>SessionDuration</code> parameter that specifies the maximum length
      * of the console session. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
-     * a URL that Enables Federated Users to Access the Management Console</a> in the
-     * <i>IAM User Guide</i>.</p> 
+     * a URL that Enables Federated Users to Access the Amazon Web Services Management
+     * Console</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }
 
@@ -793,8 +793,8 @@ namespace Model
      * takes a <code>SessionDuration</code> parameter that specifies the maximum length
      * of the console session. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
-     * a URL that Enables Federated Users to Access the Management Console</a> in the
-     * <i>IAM User Guide</i>.</p> 
+     * a URL that Enables Federated Users to Access the Amazon Web Services Management
+     * Console</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
 
@@ -815,8 +815,8 @@ namespace Model
      * takes a <code>SessionDuration</code> parameter that specifies the maximum length
      * of the console session. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
-     * a URL that Enables Federated Users to Access the Management Console</a> in the
-     * <i>IAM User Guide</i>.</p> 
+     * a URL that Enables Federated Users to Access the Amazon Web Services Management
+     * Console</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline AssumeRoleWithWebIdentityRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
 

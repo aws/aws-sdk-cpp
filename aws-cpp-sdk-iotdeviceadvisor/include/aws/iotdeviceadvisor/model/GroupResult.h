@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>Group result Id.</p>
+     * <p>Group result ID.</p>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
 
     /**
-     * <p>Group result Id.</p>
+     * <p>Group result ID.</p>
      */
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
 
     /**
-     * <p>Group result Id.</p>
+     * <p>Group result ID.</p>
      */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
-     * <p>Group result Id.</p>
+     * <p>Group result ID.</p>
      */
     inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
 
     /**
-     * <p>Group result Id.</p>
+     * <p>Group result ID.</p>
      */
     inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
 
     /**
-     * <p>Group result Id.</p>
+     * <p>Group result ID.</p>
      */
     inline GroupResult& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
 
     /**
-     * <p>Group result Id.</p>
+     * <p>Group result ID.</p>
      */
     inline GroupResult& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>Group result Id.</p>
+     * <p>Group result ID.</p>
      */
     inline GroupResult& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 

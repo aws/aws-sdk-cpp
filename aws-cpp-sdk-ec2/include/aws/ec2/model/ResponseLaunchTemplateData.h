@@ -21,6 +21,7 @@
 #include <aws/ec2/model/LaunchTemplateInstanceMetadataOptions.h>
 #include <aws/ec2/model/LaunchTemplateEnclaveOptions.h>
 #include <aws/ec2/model/InstanceRequirements.h>
+#include <aws/ec2/model/LaunchTemplatePrivateDnsNameOptions.h>
 #include <aws/ec2/model/LaunchTemplateBlockDeviceMapping.h>
 #include <aws/ec2/model/LaunchTemplateInstanceNetworkInterfaceSpecification.h>
 #include <aws/ec2/model/LaunchTemplateTagSpecification.h>
@@ -1128,6 +1129,37 @@ namespace Model
      */
     inline ResponseLaunchTemplateData& WithInstanceRequirements(InstanceRequirements&& value) { SetInstanceRequirements(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The options for the instance hostname.</p>
+     */
+    inline const LaunchTemplatePrivateDnsNameOptions& GetPrivateDnsNameOptions() const{ return m_privateDnsNameOptions; }
+
+    /**
+     * <p>The options for the instance hostname.</p>
+     */
+    inline bool PrivateDnsNameOptionsHasBeenSet() const { return m_privateDnsNameOptionsHasBeenSet; }
+
+    /**
+     * <p>The options for the instance hostname.</p>
+     */
+    inline void SetPrivateDnsNameOptions(const LaunchTemplatePrivateDnsNameOptions& value) { m_privateDnsNameOptionsHasBeenSet = true; m_privateDnsNameOptions = value; }
+
+    /**
+     * <p>The options for the instance hostname.</p>
+     */
+    inline void SetPrivateDnsNameOptions(LaunchTemplatePrivateDnsNameOptions&& value) { m_privateDnsNameOptionsHasBeenSet = true; m_privateDnsNameOptions = std::move(value); }
+
+    /**
+     * <p>The options for the instance hostname.</p>
+     */
+    inline ResponseLaunchTemplateData& WithPrivateDnsNameOptions(const LaunchTemplatePrivateDnsNameOptions& value) { SetPrivateDnsNameOptions(value); return *this;}
+
+    /**
+     * <p>The options for the instance hostname.</p>
+     */
+    inline ResponseLaunchTemplateData& WithPrivateDnsNameOptions(LaunchTemplatePrivateDnsNameOptions&& value) { SetPrivateDnsNameOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_kernelId;
@@ -1213,6 +1245,9 @@ namespace Model
 
     InstanceRequirements m_instanceRequirements;
     bool m_instanceRequirementsHasBeenSet;
+
+    LaunchTemplatePrivateDnsNameOptions m_privateDnsNameOptions;
+    bool m_privateDnsNameOptionsHasBeenSet;
   };
 
 } // namespace Model

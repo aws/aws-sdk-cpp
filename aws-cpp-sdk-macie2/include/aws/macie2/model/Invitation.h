@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about an Amazon Macie membership invitation that was
-   * received by an account.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides information about an Amazon Macie membership
+   * invitation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Invitation">AWS
    * API Reference</a></p>
    */
@@ -90,50 +90,42 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the invitation. Amazon Macie uses this identifier
-     * to validate the inviter account with the invitee account.</p>
+     * <p>The unique identifier for the invitation.</p>
      */
     inline const Aws::String& GetInvitationId() const{ return m_invitationId; }
 
     /**
-     * <p>The unique identifier for the invitation. Amazon Macie uses this identifier
-     * to validate the inviter account with the invitee account.</p>
+     * <p>The unique identifier for the invitation.</p>
      */
     inline bool InvitationIdHasBeenSet() const { return m_invitationIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the invitation. Amazon Macie uses this identifier
-     * to validate the inviter account with the invitee account.</p>
+     * <p>The unique identifier for the invitation.</p>
      */
     inline void SetInvitationId(const Aws::String& value) { m_invitationIdHasBeenSet = true; m_invitationId = value; }
 
     /**
-     * <p>The unique identifier for the invitation. Amazon Macie uses this identifier
-     * to validate the inviter account with the invitee account.</p>
+     * <p>The unique identifier for the invitation.</p>
      */
     inline void SetInvitationId(Aws::String&& value) { m_invitationIdHasBeenSet = true; m_invitationId = std::move(value); }
 
     /**
-     * <p>The unique identifier for the invitation. Amazon Macie uses this identifier
-     * to validate the inviter account with the invitee account.</p>
+     * <p>The unique identifier for the invitation.</p>
      */
     inline void SetInvitationId(const char* value) { m_invitationIdHasBeenSet = true; m_invitationId.assign(value); }
 
     /**
-     * <p>The unique identifier for the invitation. Amazon Macie uses this identifier
-     * to validate the inviter account with the invitee account.</p>
+     * <p>The unique identifier for the invitation.</p>
      */
     inline Invitation& WithInvitationId(const Aws::String& value) { SetInvitationId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the invitation. Amazon Macie uses this identifier
-     * to validate the inviter account with the invitee account.</p>
+     * <p>The unique identifier for the invitation.</p>
      */
     inline Invitation& WithInvitationId(Aws::String&& value) { SetInvitationId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the invitation. Amazon Macie uses this identifier
-     * to validate the inviter account with the invitee account.</p>
+     * <p>The unique identifier for the invitation.</p>
      */
     inline Invitation& WithInvitationId(const char* value) { SetInvitationId(value); return *this;}
 
@@ -177,43 +169,37 @@ namespace Model
 
     /**
      * <p>The status of the relationship between the account that sent the invitation
-     * (<i>inviter account</i>) and the account that received the invitation
-     * (<i>invitee account</i>).</p>
+     * and the account that received the invitation.</p>
      */
     inline const RelationshipStatus& GetRelationshipStatus() const{ return m_relationshipStatus; }
 
     /**
      * <p>The status of the relationship between the account that sent the invitation
-     * (<i>inviter account</i>) and the account that received the invitation
-     * (<i>invitee account</i>).</p>
+     * and the account that received the invitation.</p>
      */
     inline bool RelationshipStatusHasBeenSet() const { return m_relationshipStatusHasBeenSet; }
 
     /**
      * <p>The status of the relationship between the account that sent the invitation
-     * (<i>inviter account</i>) and the account that received the invitation
-     * (<i>invitee account</i>).</p>
+     * and the account that received the invitation.</p>
      */
     inline void SetRelationshipStatus(const RelationshipStatus& value) { m_relationshipStatusHasBeenSet = true; m_relationshipStatus = value; }
 
     /**
      * <p>The status of the relationship between the account that sent the invitation
-     * (<i>inviter account</i>) and the account that received the invitation
-     * (<i>invitee account</i>).</p>
+     * and the account that received the invitation.</p>
      */
     inline void SetRelationshipStatus(RelationshipStatus&& value) { m_relationshipStatusHasBeenSet = true; m_relationshipStatus = std::move(value); }
 
     /**
      * <p>The status of the relationship between the account that sent the invitation
-     * (<i>inviter account</i>) and the account that received the invitation
-     * (<i>invitee account</i>).</p>
+     * and the account that received the invitation.</p>
      */
     inline Invitation& WithRelationshipStatus(const RelationshipStatus& value) { SetRelationshipStatus(value); return *this;}
 
     /**
      * <p>The status of the relationship between the account that sent the invitation
-     * (<i>inviter account</i>) and the account that received the invitation
-     * (<i>invitee account</i>).</p>
+     * and the account that received the invitation.</p>
      */
     inline Invitation& WithRelationshipStatus(RelationshipStatus&& value) { SetRelationshipStatus(std::move(value)); return *this;}
 

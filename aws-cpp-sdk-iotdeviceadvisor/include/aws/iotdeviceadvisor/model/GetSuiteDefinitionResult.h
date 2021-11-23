@@ -36,37 +36,37 @@ namespace Model
 
 
     /**
-     * <p>Suite definition Id of the suite definition.</p>
+     * <p>Suite definition ID of the suite definition.</p>
      */
     inline const Aws::String& GetSuiteDefinitionId() const{ return m_suiteDefinitionId; }
 
     /**
-     * <p>Suite definition Id of the suite definition.</p>
+     * <p>Suite definition ID of the suite definition.</p>
      */
     inline void SetSuiteDefinitionId(const Aws::String& value) { m_suiteDefinitionId = value; }
 
     /**
-     * <p>Suite definition Id of the suite definition.</p>
+     * <p>Suite definition ID of the suite definition.</p>
      */
     inline void SetSuiteDefinitionId(Aws::String&& value) { m_suiteDefinitionId = std::move(value); }
 
     /**
-     * <p>Suite definition Id of the suite definition.</p>
+     * <p>Suite definition ID of the suite definition.</p>
      */
     inline void SetSuiteDefinitionId(const char* value) { m_suiteDefinitionId.assign(value); }
 
     /**
-     * <p>Suite definition Id of the suite definition.</p>
+     * <p>Suite definition ID of the suite definition.</p>
      */
     inline GetSuiteDefinitionResult& WithSuiteDefinitionId(const Aws::String& value) { SetSuiteDefinitionId(value); return *this;}
 
     /**
-     * <p>Suite definition Id of the suite definition.</p>
+     * <p>Suite definition ID of the suite definition.</p>
      */
     inline GetSuiteDefinitionResult& WithSuiteDefinitionId(Aws::String&& value) { SetSuiteDefinitionId(std::move(value)); return *this;}
 
     /**
-     * <p>Suite definition Id of the suite definition.</p>
+     * <p>Suite definition ID of the suite definition.</p>
      */
     inline GetSuiteDefinitionResult& WithSuiteDefinitionId(const char* value) { SetSuiteDefinitionId(value); return *this;}
 

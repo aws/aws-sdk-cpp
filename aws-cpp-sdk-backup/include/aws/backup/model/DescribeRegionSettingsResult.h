@@ -81,9 +81,68 @@ namespace Model
      */
     inline DescribeRegionSettingsResult& AddResourceTypeOptInPreference(const char* key, bool value) { m_resourceTypeOptInPreference.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Returns whether a DynamoDB recovery point was taken using <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
+     * Backup's advanced DynamoDB backup features</a>. </p>
+     */
+    inline const Aws::Map<Aws::String, bool>& GetResourceTypeManagementPreference() const{ return m_resourceTypeManagementPreference; }
+
+    /**
+     * <p>Returns whether a DynamoDB recovery point was taken using <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
+     * Backup's advanced DynamoDB backup features</a>. </p>
+     */
+    inline void SetResourceTypeManagementPreference(const Aws::Map<Aws::String, bool>& value) { m_resourceTypeManagementPreference = value; }
+
+    /**
+     * <p>Returns whether a DynamoDB recovery point was taken using <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
+     * Backup's advanced DynamoDB backup features</a>. </p>
+     */
+    inline void SetResourceTypeManagementPreference(Aws::Map<Aws::String, bool>&& value) { m_resourceTypeManagementPreference = std::move(value); }
+
+    /**
+     * <p>Returns whether a DynamoDB recovery point was taken using <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
+     * Backup's advanced DynamoDB backup features</a>. </p>
+     */
+    inline DescribeRegionSettingsResult& WithResourceTypeManagementPreference(const Aws::Map<Aws::String, bool>& value) { SetResourceTypeManagementPreference(value); return *this;}
+
+    /**
+     * <p>Returns whether a DynamoDB recovery point was taken using <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
+     * Backup's advanced DynamoDB backup features</a>. </p>
+     */
+    inline DescribeRegionSettingsResult& WithResourceTypeManagementPreference(Aws::Map<Aws::String, bool>&& value) { SetResourceTypeManagementPreference(std::move(value)); return *this;}
+
+    /**
+     * <p>Returns whether a DynamoDB recovery point was taken using <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
+     * Backup's advanced DynamoDB backup features</a>. </p>
+     */
+    inline DescribeRegionSettingsResult& AddResourceTypeManagementPreference(const Aws::String& key, bool value) { m_resourceTypeManagementPreference.emplace(key, value); return *this; }
+
+    /**
+     * <p>Returns whether a DynamoDB recovery point was taken using <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
+     * Backup's advanced DynamoDB backup features</a>. </p>
+     */
+    inline DescribeRegionSettingsResult& AddResourceTypeManagementPreference(Aws::String&& key, bool value) { m_resourceTypeManagementPreference.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Returns whether a DynamoDB recovery point was taken using <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
+     * Backup's advanced DynamoDB backup features</a>. </p>
+     */
+    inline DescribeRegionSettingsResult& AddResourceTypeManagementPreference(const char* key, bool value) { m_resourceTypeManagementPreference.emplace(key, value); return *this; }
+
   private:
 
     Aws::Map<Aws::String, bool> m_resourceTypeOptInPreference;
+
+    Aws::Map<Aws::String, bool> m_resourceTypeManagementPreference;
   };
 
 } // namespace Model

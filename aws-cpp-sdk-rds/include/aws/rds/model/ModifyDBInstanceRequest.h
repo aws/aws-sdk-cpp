@@ -143,10 +143,10 @@ namespace Model
 
 
     /**
-     * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * Amazon Web Services Regions, or for all database engines. For the full list of
-     * DB instance classes, and availability for your engine, see <a
+     * <p>The new compute and memory capacity of the DB instance, for example
+     * db.m4.large. Not all DB instance classes are available in all Amazon Web
+     * Services Regions, or for all database engines. For the full list of DB instance
+     * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>. </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
@@ -157,10 +157,10 @@ namespace Model
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
     /**
-     * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * Amazon Web Services Regions, or for all database engines. For the full list of
-     * DB instance classes, and availability for your engine, see <a
+     * <p>The new compute and memory capacity of the DB instance, for example
+     * db.m4.large. Not all DB instance classes are available in all Amazon Web
+     * Services Regions, or for all database engines. For the full list of DB instance
+     * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>. </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
@@ -171,10 +171,10 @@ namespace Model
     inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
 
     /**
-     * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * Amazon Web Services Regions, or for all database engines. For the full list of
-     * DB instance classes, and availability for your engine, see <a
+     * <p>The new compute and memory capacity of the DB instance, for example
+     * db.m4.large. Not all DB instance classes are available in all Amazon Web
+     * Services Regions, or for all database engines. For the full list of DB instance
+     * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>. </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
@@ -185,10 +185,10 @@ namespace Model
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
-     * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * Amazon Web Services Regions, or for all database engines. For the full list of
-     * DB instance classes, and availability for your engine, see <a
+     * <p>The new compute and memory capacity of the DB instance, for example
+     * db.m4.large. Not all DB instance classes are available in all Amazon Web
+     * Services Regions, or for all database engines. For the full list of DB instance
+     * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>. </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
@@ -199,10 +199,10 @@ namespace Model
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
     /**
-     * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * Amazon Web Services Regions, or for all database engines. For the full list of
-     * DB instance classes, and availability for your engine, see <a
+     * <p>The new compute and memory capacity of the DB instance, for example
+     * db.m4.large. Not all DB instance classes are available in all Amazon Web
+     * Services Regions, or for all database engines. For the full list of DB instance
+     * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>. </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
@@ -213,10 +213,10 @@ namespace Model
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
     /**
-     * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * Amazon Web Services Regions, or for all database engines. For the full list of
-     * DB instance classes, and availability for your engine, see <a
+     * <p>The new compute and memory capacity of the DB instance, for example
+     * db.m4.large. Not all DB instance classes are available in all Amazon Web
+     * Services Regions, or for all database engines. For the full list of DB instance
+     * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>. </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
@@ -227,10 +227,10 @@ namespace Model
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
     /**
-     * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * Amazon Web Services Regions, or for all database engines. For the full list of
-     * DB instance classes, and availability for your engine, see <a
+     * <p>The new compute and memory capacity of the DB instance, for example
+     * db.m4.large. Not all DB instance classes are available in all Amazon Web
+     * Services Regions, or for all database engines. For the full list of DB instance
+     * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>. </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
@@ -241,10 +241,10 @@ namespace Model
     inline ModifyDBInstanceRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
     /**
-     * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all
-     * Amazon Web Services Regions, or for all database engines. For the full list of
-     * DB instance classes, and availability for your engine, see <a
+     * <p>The new compute and memory capacity of the DB instance, for example
+     * db.m4.large. Not all DB instance classes are available in all Amazon Web
+     * Services Regions, or for all database engines. For the full list of DB instance
+     * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>. </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
@@ -2522,73 +2522,73 @@ namespace Model
 
     /**
      * <p>A value that indicates whether the DB instance is publicly accessible. </p>
-     * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
-     * private IP address from within the DB instance's VPC, and to the public IP
-     * address from outside of the DB instance's VPC. Access to the DB instance is
-     * ultimately controlled by the security group it uses, and that public access is
-     * not permitted if the security group assigned to the DB instance doesn't permit
-     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
-     * instance with a DNS name that resolves to a private IP address.</p> <p>
-     * <code>PubliclyAccessible</code> only applies to DB instances in a VPC. The DB
-     * instance must be part of a public subnet and <code>PubliclyAccessible</code>
-     * must be enabled for it to be publicly accessible. </p> <p>Changes to the
-     * <code>PubliclyAccessible</code> parameter are applied immediately regardless of
-     * the value of the <code>ApplyImmediately</code> parameter.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p>
+     * <p>When the DB cluster is publicly accessible, its Domain Name System (DNS)
+     * endpoint resolves to the private IP address from within the DB cluster's virtual
+     * private cloud (VPC). It resolves to the public IP address from outside of the DB
+     * cluster's VPC. Access to the DB cluster is ultimately controlled by the security
+     * group it uses. That public access isn't permitted if the security group assigned
+     * to the DB cluster doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.</p> <p> <code>PubliclyAccessible</code> only applies to DB
+     * instances in a VPC. The DB instance must be part of a public subnet and
+     * <code>PubliclyAccessible</code> must be enabled for it to be publicly
+     * accessible. </p> <p>Changes to the <code>PubliclyAccessible</code> parameter are
+     * applied immediately regardless of the value of the <code>ApplyImmediately</code>
+     * parameter.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
     /**
      * <p>A value that indicates whether the DB instance is publicly accessible. </p>
-     * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
-     * private IP address from within the DB instance's VPC, and to the public IP
-     * address from outside of the DB instance's VPC. Access to the DB instance is
-     * ultimately controlled by the security group it uses, and that public access is
-     * not permitted if the security group assigned to the DB instance doesn't permit
-     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
-     * instance with a DNS name that resolves to a private IP address.</p> <p>
-     * <code>PubliclyAccessible</code> only applies to DB instances in a VPC. The DB
-     * instance must be part of a public subnet and <code>PubliclyAccessible</code>
-     * must be enabled for it to be publicly accessible. </p> <p>Changes to the
-     * <code>PubliclyAccessible</code> parameter are applied immediately regardless of
-     * the value of the <code>ApplyImmediately</code> parameter.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p>
+     * <p>When the DB cluster is publicly accessible, its Domain Name System (DNS)
+     * endpoint resolves to the private IP address from within the DB cluster's virtual
+     * private cloud (VPC). It resolves to the public IP address from outside of the DB
+     * cluster's VPC. Access to the DB cluster is ultimately controlled by the security
+     * group it uses. That public access isn't permitted if the security group assigned
+     * to the DB cluster doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.</p> <p> <code>PubliclyAccessible</code> only applies to DB
+     * instances in a VPC. The DB instance must be part of a public subnet and
+     * <code>PubliclyAccessible</code> must be enabled for it to be publicly
+     * accessible. </p> <p>Changes to the <code>PubliclyAccessible</code> parameter are
+     * applied immediately regardless of the value of the <code>ApplyImmediately</code>
+     * parameter.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
 
     /**
      * <p>A value that indicates whether the DB instance is publicly accessible. </p>
-     * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
-     * private IP address from within the DB instance's VPC, and to the public IP
-     * address from outside of the DB instance's VPC. Access to the DB instance is
-     * ultimately controlled by the security group it uses, and that public access is
-     * not permitted if the security group assigned to the DB instance doesn't permit
-     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
-     * instance with a DNS name that resolves to a private IP address.</p> <p>
-     * <code>PubliclyAccessible</code> only applies to DB instances in a VPC. The DB
-     * instance must be part of a public subnet and <code>PubliclyAccessible</code>
-     * must be enabled for it to be publicly accessible. </p> <p>Changes to the
-     * <code>PubliclyAccessible</code> parameter are applied immediately regardless of
-     * the value of the <code>ApplyImmediately</code> parameter.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p>
+     * <p>When the DB cluster is publicly accessible, its Domain Name System (DNS)
+     * endpoint resolves to the private IP address from within the DB cluster's virtual
+     * private cloud (VPC). It resolves to the public IP address from outside of the DB
+     * cluster's VPC. Access to the DB cluster is ultimately controlled by the security
+     * group it uses. That public access isn't permitted if the security group assigned
+     * to the DB cluster doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.</p> <p> <code>PubliclyAccessible</code> only applies to DB
+     * instances in a VPC. The DB instance must be part of a public subnet and
+     * <code>PubliclyAccessible</code> must be enabled for it to be publicly
+     * accessible. </p> <p>Changes to the <code>PubliclyAccessible</code> parameter are
+     * applied immediately regardless of the value of the <code>ApplyImmediately</code>
+     * parameter.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
      * <p>A value that indicates whether the DB instance is publicly accessible. </p>
-     * <p>When the DB instance is publicly accessible, its DNS endpoint resolves to the
-     * private IP address from within the DB instance's VPC, and to the public IP
-     * address from outside of the DB instance's VPC. Access to the DB instance is
-     * ultimately controlled by the security group it uses, and that public access is
-     * not permitted if the security group assigned to the DB instance doesn't permit
-     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
-     * instance with a DNS name that resolves to a private IP address.</p> <p>
-     * <code>PubliclyAccessible</code> only applies to DB instances in a VPC. The DB
-     * instance must be part of a public subnet and <code>PubliclyAccessible</code>
-     * must be enabled for it to be publicly accessible. </p> <p>Changes to the
-     * <code>PubliclyAccessible</code> parameter are applied immediately regardless of
-     * the value of the <code>ApplyImmediately</code> parameter.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p>
+     * <p>When the DB cluster is publicly accessible, its Domain Name System (DNS)
+     * endpoint resolves to the private IP address from within the DB cluster's virtual
+     * private cloud (VPC). It resolves to the public IP address from outside of the DB
+     * cluster's VPC. Access to the DB cluster is ultimately controlled by the security
+     * group it uses. That public access isn't permitted if the security group assigned
+     * to the DB cluster doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.</p> <p> <code>PubliclyAccessible</code> only applies to DB
+     * instances in a VPC. The DB instance must be part of a public subnet and
+     * <code>PubliclyAccessible</code> must be enabled for it to be publicly
+     * accessible. </p> <p>Changes to the <code>PubliclyAccessible</code> parameter are
+     * applied immediately regardless of the value of the <code>ApplyImmediately</code>
+     * parameter.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline ModifyDBInstanceRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
@@ -2795,9 +2795,10 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of Amazon Web Services
      * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping is disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping
-     * Amazon Web Services IAM accounts to database accounts is managed by the DB
-     * cluster.</p> <p>For more information about IAM database authentication, see <a
+     * mapping isn't enabled.</p> <p>This setting doesn't apply to Amazon Aurora.
+     * Mapping Amazon Web Services IAM accounts to database accounts is managed by the
+     * DB cluster.</p> <p>For more information about IAM database authentication, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p> <p>This setting doesn't apply to RDS Custom.</p>
@@ -2807,9 +2808,10 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of Amazon Web Services
      * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping is disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping
-     * Amazon Web Services IAM accounts to database accounts is managed by the DB
-     * cluster.</p> <p>For more information about IAM database authentication, see <a
+     * mapping isn't enabled.</p> <p>This setting doesn't apply to Amazon Aurora.
+     * Mapping Amazon Web Services IAM accounts to database accounts is managed by the
+     * DB cluster.</p> <p>For more information about IAM database authentication, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p> <p>This setting doesn't apply to RDS Custom.</p>
@@ -2819,9 +2821,10 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of Amazon Web Services
      * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping is disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping
-     * Amazon Web Services IAM accounts to database accounts is managed by the DB
-     * cluster.</p> <p>For more information about IAM database authentication, see <a
+     * mapping isn't enabled.</p> <p>This setting doesn't apply to Amazon Aurora.
+     * Mapping Amazon Web Services IAM accounts to database accounts is managed by the
+     * DB cluster.</p> <p>For more information about IAM database authentication, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p> <p>This setting doesn't apply to RDS Custom.</p>
@@ -2831,9 +2834,10 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of Amazon Web Services
      * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping is disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping
-     * Amazon Web Services IAM accounts to database accounts is managed by the DB
-     * cluster.</p> <p>For more information about IAM database authentication, see <a
+     * mapping isn't enabled.</p> <p>This setting doesn't apply to Amazon Aurora.
+     * Mapping Amazon Web Services IAM accounts to database accounts is managed by the
+     * DB cluster.</p> <p>For more information about IAM database authentication, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p> <p>This setting doesn't apply to RDS Custom.</p>
@@ -3148,7 +3152,7 @@ namespace Model
     /**
      * <p>A value that indicates whether the DB instance has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. For more information, see <a
+     * default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
@@ -3157,7 +3161,7 @@ namespace Model
     /**
      * <p>A value that indicates whether the DB instance has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. For more information, see <a
+     * default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
@@ -3166,7 +3170,7 @@ namespace Model
     /**
      * <p>A value that indicates whether the DB instance has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. For more information, see <a
+     * default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
@@ -3175,7 +3179,7 @@ namespace Model
     /**
      * <p>A value that indicates whether the DB instance has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. For more information, see <a
+     * default, deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */

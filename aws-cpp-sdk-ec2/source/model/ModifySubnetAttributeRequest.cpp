@@ -16,7 +16,11 @@ ModifySubnetAttributeRequest::ModifySubnetAttributeRequest() :
     m_subnetIdHasBeenSet(false),
     m_mapCustomerOwnedIpOnLaunchHasBeenSet(false),
     m_customerOwnedIpv4PoolHasBeenSet(false),
-    m_enableDns64HasBeenSet(false)
+    m_enableDns64HasBeenSet(false),
+    m_privateDnsHostnameTypeOnLaunch(HostnameType::NOT_SET),
+    m_privateDnsHostnameTypeOnLaunchHasBeenSet(false),
+    m_enableResourceNameDnsARecordOnLaunchHasBeenSet(false),
+    m_enableResourceNameDnsAAAARecordOnLaunchHasBeenSet(false)
 {
 }
 
@@ -52,6 +56,21 @@ Aws::String ModifySubnetAttributeRequest::SerializePayload() const
   if(m_enableDns64HasBeenSet)
   {
     m_enableDns64.OutputToStream(ss, "EnableDns64");
+  }
+
+  if(m_privateDnsHostnameTypeOnLaunchHasBeenSet)
+  {
+    ss << "PrivateDnsHostnameTypeOnLaunch=" << HostnameTypeMapper::GetNameForHostnameType(m_privateDnsHostnameTypeOnLaunch) << "&";
+  }
+
+  if(m_enableResourceNameDnsARecordOnLaunchHasBeenSet)
+  {
+    m_enableResourceNameDnsARecordOnLaunch.OutputToStream(ss, "EnableResourceNameDnsARecordOnLaunch");
+  }
+
+  if(m_enableResourceNameDnsAAAARecordOnLaunchHasBeenSet)
+  {
+    m_enableResourceNameDnsAAAARecordOnLaunch.OutputToStream(ss, "EnableResourceNameDnsAAAARecordOnLaunch");
   }
 
   ss << "Version=2016-11-15";
