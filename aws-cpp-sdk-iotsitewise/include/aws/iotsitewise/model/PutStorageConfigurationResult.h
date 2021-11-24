@@ -7,6 +7,7 @@
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/iotsitewise/model/StorageType.h>
 #include <aws/iotsitewise/model/MultiLayerStorage.h>
+#include <aws/iotsitewise/model/DisassociatedDataStorageState.h>
 #include <aws/iotsitewise/model/ConfigurationStatus.h>
 #include <utility>
 
@@ -116,6 +117,77 @@ namespace Model
     inline PutStorageConfigurationResult& WithMultiLayerStorage(MultiLayerStorage&& value) { SetMultiLayerStorage(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Contains the storage configuration for time series (data streams) that aren't
+     * associated with asset properties. The <code>disassociatedDataStorage</code> can
+     * be one of the following values:</p> <ul> <li> <p> <code>ENABLED</code> – IoT
+     * SiteWise accepts time series that aren't associated with asset properties.</p>
+     *  <p>After the <code>disassociatedDataStorage</code> is enabled, you
+     * can't disable it.</p>  </li> <li> <p> <code>DISABLED</code> – IoT
+     * SiteWise doesn't accept time series (data streams) that aren't associated with
+     * asset properties.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data
+     * streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline const DisassociatedDataStorageState& GetDisassociatedDataStorage() const{ return m_disassociatedDataStorage; }
+
+    /**
+     * <p>Contains the storage configuration for time series (data streams) that aren't
+     * associated with asset properties. The <code>disassociatedDataStorage</code> can
+     * be one of the following values:</p> <ul> <li> <p> <code>ENABLED</code> – IoT
+     * SiteWise accepts time series that aren't associated with asset properties.</p>
+     *  <p>After the <code>disassociatedDataStorage</code> is enabled, you
+     * can't disable it.</p>  </li> <li> <p> <code>DISABLED</code> – IoT
+     * SiteWise doesn't accept time series (data streams) that aren't associated with
+     * asset properties.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data
+     * streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetDisassociatedDataStorage(const DisassociatedDataStorageState& value) { m_disassociatedDataStorage = value; }
+
+    /**
+     * <p>Contains the storage configuration for time series (data streams) that aren't
+     * associated with asset properties. The <code>disassociatedDataStorage</code> can
+     * be one of the following values:</p> <ul> <li> <p> <code>ENABLED</code> – IoT
+     * SiteWise accepts time series that aren't associated with asset properties.</p>
+     *  <p>After the <code>disassociatedDataStorage</code> is enabled, you
+     * can't disable it.</p>  </li> <li> <p> <code>DISABLED</code> – IoT
+     * SiteWise doesn't accept time series (data streams) that aren't associated with
+     * asset properties.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data
+     * streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetDisassociatedDataStorage(DisassociatedDataStorageState&& value) { m_disassociatedDataStorage = std::move(value); }
+
+    /**
+     * <p>Contains the storage configuration for time series (data streams) that aren't
+     * associated with asset properties. The <code>disassociatedDataStorage</code> can
+     * be one of the following values:</p> <ul> <li> <p> <code>ENABLED</code> – IoT
+     * SiteWise accepts time series that aren't associated with asset properties.</p>
+     *  <p>After the <code>disassociatedDataStorage</code> is enabled, you
+     * can't disable it.</p>  </li> <li> <p> <code>DISABLED</code> – IoT
+     * SiteWise doesn't accept time series (data streams) that aren't associated with
+     * asset properties.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data
+     * streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline PutStorageConfigurationResult& WithDisassociatedDataStorage(const DisassociatedDataStorageState& value) { SetDisassociatedDataStorage(value); return *this;}
+
+    /**
+     * <p>Contains the storage configuration for time series (data streams) that aren't
+     * associated with asset properties. The <code>disassociatedDataStorage</code> can
+     * be one of the following values:</p> <ul> <li> <p> <code>ENABLED</code> – IoT
+     * SiteWise accepts time series that aren't associated with asset properties.</p>
+     *  <p>After the <code>disassociatedDataStorage</code> is enabled, you
+     * can't disable it.</p>  </li> <li> <p> <code>DISABLED</code> – IoT
+     * SiteWise doesn't accept time series (data streams) that aren't associated with
+     * asset properties.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data
+     * streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline PutStorageConfigurationResult& WithDisassociatedDataStorage(DisassociatedDataStorageState&& value) { SetDisassociatedDataStorage(std::move(value)); return *this;}
+
+
     
     inline const ConfigurationStatus& GetConfigurationStatus() const{ return m_configurationStatus; }
 
@@ -136,6 +208,8 @@ namespace Model
     StorageType m_storageType;
 
     MultiLayerStorage m_multiLayerStorage;
+
+    DisassociatedDataStorageState m_disassociatedDataStorage;
 
     ConfigurationStatus m_configurationStatus;
   };

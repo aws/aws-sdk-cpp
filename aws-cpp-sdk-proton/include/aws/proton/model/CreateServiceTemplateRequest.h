@@ -202,143 +202,143 @@ namespace Model
 
 
     /**
-     * <p>AWS Proton includes a service pipeline for your service by default. When
-     * included, this parameter indicates that an AWS Proton service pipeline
-     * <i>won't</i> be included for your service. Once specified, this parameter
-     * <i>can't</i> be changed. For more information, see <a
+     * <p>Proton includes a service pipeline for your service by default. When
+     * included, this parameter indicates that an Proton service pipeline <i>won't</i>
+     * be included for your service. Once specified, this parameter <i>can't</i> be
+     * changed. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service
-     * template bundles</a> in the <i>AWS Proton Administrator Guide</i>.</p>
+     * template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
      */
     inline const Provisioning& GetPipelineProvisioning() const{ return m_pipelineProvisioning; }
 
     /**
-     * <p>AWS Proton includes a service pipeline for your service by default. When
-     * included, this parameter indicates that an AWS Proton service pipeline
-     * <i>won't</i> be included for your service. Once specified, this parameter
-     * <i>can't</i> be changed. For more information, see <a
+     * <p>Proton includes a service pipeline for your service by default. When
+     * included, this parameter indicates that an Proton service pipeline <i>won't</i>
+     * be included for your service. Once specified, this parameter <i>can't</i> be
+     * changed. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service
-     * template bundles</a> in the <i>AWS Proton Administrator Guide</i>.</p>
+     * template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
      */
     inline bool PipelineProvisioningHasBeenSet() const { return m_pipelineProvisioningHasBeenSet; }
 
     /**
-     * <p>AWS Proton includes a service pipeline for your service by default. When
-     * included, this parameter indicates that an AWS Proton service pipeline
-     * <i>won't</i> be included for your service. Once specified, this parameter
-     * <i>can't</i> be changed. For more information, see <a
+     * <p>Proton includes a service pipeline for your service by default. When
+     * included, this parameter indicates that an Proton service pipeline <i>won't</i>
+     * be included for your service. Once specified, this parameter <i>can't</i> be
+     * changed. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service
-     * template bundles</a> in the <i>AWS Proton Administrator Guide</i>.</p>
+     * template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
      */
     inline void SetPipelineProvisioning(const Provisioning& value) { m_pipelineProvisioningHasBeenSet = true; m_pipelineProvisioning = value; }
 
     /**
-     * <p>AWS Proton includes a service pipeline for your service by default. When
-     * included, this parameter indicates that an AWS Proton service pipeline
-     * <i>won't</i> be included for your service. Once specified, this parameter
-     * <i>can't</i> be changed. For more information, see <a
+     * <p>Proton includes a service pipeline for your service by default. When
+     * included, this parameter indicates that an Proton service pipeline <i>won't</i>
+     * be included for your service. Once specified, this parameter <i>can't</i> be
+     * changed. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service
-     * template bundles</a> in the <i>AWS Proton Administrator Guide</i>.</p>
+     * template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
      */
     inline void SetPipelineProvisioning(Provisioning&& value) { m_pipelineProvisioningHasBeenSet = true; m_pipelineProvisioning = std::move(value); }
 
     /**
-     * <p>AWS Proton includes a service pipeline for your service by default. When
-     * included, this parameter indicates that an AWS Proton service pipeline
-     * <i>won't</i> be included for your service. Once specified, this parameter
-     * <i>can't</i> be changed. For more information, see <a
+     * <p>Proton includes a service pipeline for your service by default. When
+     * included, this parameter indicates that an Proton service pipeline <i>won't</i>
+     * be included for your service. Once specified, this parameter <i>can't</i> be
+     * changed. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service
-     * template bundles</a> in the <i>AWS Proton Administrator Guide</i>.</p>
+     * template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
      */
     inline CreateServiceTemplateRequest& WithPipelineProvisioning(const Provisioning& value) { SetPipelineProvisioning(value); return *this;}
 
     /**
-     * <p>AWS Proton includes a service pipeline for your service by default. When
-     * included, this parameter indicates that an AWS Proton service pipeline
-     * <i>won't</i> be included for your service. Once specified, this parameter
-     * <i>can't</i> be changed. For more information, see <a
+     * <p>Proton includes a service pipeline for your service by default. When
+     * included, this parameter indicates that an Proton service pipeline <i>won't</i>
+     * be included for your service. Once specified, this parameter <i>can't</i> be
+     * changed. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service
-     * template bundles</a> in the <i>AWS Proton Administrator Guide</i>.</p>
+     * template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
      */
     inline CreateServiceTemplateRequest& WithPipelineProvisioning(Provisioning&& value) { SetPipelineProvisioning(std::move(value)); return *this;}
 
 
     /**
-     * <p>Create tags for your service template. For more information, see <i>AWS
-     * Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
-     * Proton User Guide</a>.</p>
+     * <p>Create tags for your service template. For more information, see <i>Proton
+     * resources and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Create tags for your service template. For more information, see <i>AWS
-     * Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
-     * Proton User Guide</a>.</p>
+     * <p>Create tags for your service template. For more information, see <i>Proton
+     * resources and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Create tags for your service template. For more information, see <i>AWS
-     * Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
-     * Proton User Guide</a>.</p>
+     * <p>Create tags for your service template. For more information, see <i>Proton
+     * resources and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Create tags for your service template. For more information, see <i>AWS
-     * Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
-     * Proton User Guide</a>.</p>
+     * <p>Create tags for your service template. For more information, see <i>Proton
+     * resources and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Create tags for your service template. For more information, see <i>AWS
-     * Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
-     * Proton User Guide</a>.</p>
+     * <p>Create tags for your service template. For more information, see <i>Proton
+     * resources and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline CreateServiceTemplateRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Create tags for your service template. For more information, see <i>AWS
-     * Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
-     * Proton User Guide</a>.</p>
+     * <p>Create tags for your service template. For more information, see <i>Proton
+     * resources and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline CreateServiceTemplateRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Create tags for your service template. For more information, see <i>AWS
-     * Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
-     * Proton User Guide</a>.</p>
+     * <p>Create tags for your service template. For more information, see <i>Proton
+     * resources and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline CreateServiceTemplateRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Create tags for your service template. For more information, see <i>AWS
-     * Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
-     * Proton User Guide</a>.</p>
+     * <p>Create tags for your service template. For more information, see <i>Proton
+     * resources and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline CreateServiceTemplateRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

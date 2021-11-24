@@ -19,11 +19,13 @@ namespace Model
 {
 
 AccountSettings::AccountSettings() : 
+    m_pipelineProvisioningRepositoryHasBeenSet(false),
     m_pipelineServiceRoleArnHasBeenSet(false)
 {
 }
 
 AccountSettings::AccountSettings(JsonView jsonValue) : 
+    m_pipelineProvisioningRepositoryHasBeenSet(false),
     m_pipelineServiceRoleArnHasBeenSet(false)
 {
   *this = jsonValue;
@@ -31,6 +33,13 @@ AccountSettings::AccountSettings(JsonView jsonValue) :
 
 AccountSettings& AccountSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("pipelineProvisioningRepository"))
+  {
+    m_pipelineProvisioningRepository = jsonValue.GetObject("pipelineProvisioningRepository");
+
+    m_pipelineProvisioningRepositoryHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("pipelineServiceRoleArn"))
   {
     m_pipelineServiceRoleArn = jsonValue.GetString("pipelineServiceRoleArn");
@@ -44,6 +53,12 @@ AccountSettings& AccountSettings::operator =(JsonView jsonValue)
 JsonValue AccountSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_pipelineProvisioningRepositoryHasBeenSet)
+  {
+   payload.WithObject("pipelineProvisioningRepository", m_pipelineProvisioningRepository.Jsonize());
+
+  }
 
   if(m_pipelineServiceRoleArnHasBeenSet)
   {

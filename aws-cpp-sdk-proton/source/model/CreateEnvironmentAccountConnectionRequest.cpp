@@ -17,7 +17,8 @@ CreateEnvironmentAccountConnectionRequest::CreateEnvironmentAccountConnectionReq
     m_clientTokenHasBeenSet(true),
     m_environmentNameHasBeenSet(false),
     m_managementAccountIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,17 @@ Aws::String CreateEnvironmentAccountConnectionRequest::SerializePayload() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

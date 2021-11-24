@@ -39,6 +39,7 @@
 #include <aws/iotsitewise/model/DescribePortalResult.h>
 #include <aws/iotsitewise/model/DescribeProjectResult.h>
 #include <aws/iotsitewise/model/DescribeStorageConfigurationResult.h>
+#include <aws/iotsitewise/model/DescribeTimeSeriesResult.h>
 #include <aws/iotsitewise/model/GetAssetPropertyAggregatesResult.h>
 #include <aws/iotsitewise/model/GetAssetPropertyValueResult.h>
 #include <aws/iotsitewise/model/GetAssetPropertyValueHistoryResult.h>
@@ -54,6 +55,7 @@
 #include <aws/iotsitewise/model/ListProjectAssetsResult.h>
 #include <aws/iotsitewise/model/ListProjectsResult.h>
 #include <aws/iotsitewise/model/ListTagsForResourceResult.h>
+#include <aws/iotsitewise/model/ListTimeSeriesResult.h>
 #include <aws/iotsitewise/model/PutDefaultEncryptionConfigurationResult.h>
 #include <aws/iotsitewise/model/PutLoggingOptionsResult.h>
 #include <aws/iotsitewise/model/PutStorageConfigurationResult.h>
@@ -107,6 +109,7 @@ namespace IoTSiteWise
 namespace Model
 {
         class AssociateAssetsRequest;
+        class AssociateTimeSeriesToAssetPropertyRequest;
         class BatchAssociateProjectAssetsRequest;
         class BatchDisassociateProjectAssetsRequest;
         class BatchPutAssetPropertyValueRequest;
@@ -124,6 +127,7 @@ namespace Model
         class DeleteGatewayRequest;
         class DeletePortalRequest;
         class DeleteProjectRequest;
+        class DeleteTimeSeriesRequest;
         class DescribeAccessPolicyRequest;
         class DescribeAssetRequest;
         class DescribeAssetModelRequest;
@@ -136,7 +140,9 @@ namespace Model
         class DescribePortalRequest;
         class DescribeProjectRequest;
         class DescribeStorageConfigurationRequest;
+        class DescribeTimeSeriesRequest;
         class DisassociateAssetsRequest;
+        class DisassociateTimeSeriesFromAssetPropertyRequest;
         class GetAssetPropertyAggregatesRequest;
         class GetAssetPropertyValueRequest;
         class GetAssetPropertyValueHistoryRequest;
@@ -152,6 +158,7 @@ namespace Model
         class ListProjectAssetsRequest;
         class ListProjectsRequest;
         class ListTagsForResourceRequest;
+        class ListTimeSeriesRequest;
         class PutDefaultEncryptionConfigurationRequest;
         class PutLoggingOptionsRequest;
         class PutStorageConfigurationRequest;
@@ -168,6 +175,7 @@ namespace Model
         class UpdateProjectRequest;
 
         typedef Aws::Utils::Outcome<Aws::NoResult, IoTSiteWiseError> AssociateAssetsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, IoTSiteWiseError> AssociateTimeSeriesToAssetPropertyOutcome;
         typedef Aws::Utils::Outcome<BatchAssociateProjectAssetsResult, IoTSiteWiseError> BatchAssociateProjectAssetsOutcome;
         typedef Aws::Utils::Outcome<BatchDisassociateProjectAssetsResult, IoTSiteWiseError> BatchDisassociateProjectAssetsOutcome;
         typedef Aws::Utils::Outcome<BatchPutAssetPropertyValueResult, IoTSiteWiseError> BatchPutAssetPropertyValueOutcome;
@@ -185,6 +193,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, IoTSiteWiseError> DeleteGatewayOutcome;
         typedef Aws::Utils::Outcome<DeletePortalResult, IoTSiteWiseError> DeletePortalOutcome;
         typedef Aws::Utils::Outcome<DeleteProjectResult, IoTSiteWiseError> DeleteProjectOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, IoTSiteWiseError> DeleteTimeSeriesOutcome;
         typedef Aws::Utils::Outcome<DescribeAccessPolicyResult, IoTSiteWiseError> DescribeAccessPolicyOutcome;
         typedef Aws::Utils::Outcome<DescribeAssetResult, IoTSiteWiseError> DescribeAssetOutcome;
         typedef Aws::Utils::Outcome<DescribeAssetModelResult, IoTSiteWiseError> DescribeAssetModelOutcome;
@@ -197,7 +206,9 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribePortalResult, IoTSiteWiseError> DescribePortalOutcome;
         typedef Aws::Utils::Outcome<DescribeProjectResult, IoTSiteWiseError> DescribeProjectOutcome;
         typedef Aws::Utils::Outcome<DescribeStorageConfigurationResult, IoTSiteWiseError> DescribeStorageConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DescribeTimeSeriesResult, IoTSiteWiseError> DescribeTimeSeriesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, IoTSiteWiseError> DisassociateAssetsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, IoTSiteWiseError> DisassociateTimeSeriesFromAssetPropertyOutcome;
         typedef Aws::Utils::Outcome<GetAssetPropertyAggregatesResult, IoTSiteWiseError> GetAssetPropertyAggregatesOutcome;
         typedef Aws::Utils::Outcome<GetAssetPropertyValueResult, IoTSiteWiseError> GetAssetPropertyValueOutcome;
         typedef Aws::Utils::Outcome<GetAssetPropertyValueHistoryResult, IoTSiteWiseError> GetAssetPropertyValueHistoryOutcome;
@@ -213,6 +224,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListProjectAssetsResult, IoTSiteWiseError> ListProjectAssetsOutcome;
         typedef Aws::Utils::Outcome<ListProjectsResult, IoTSiteWiseError> ListProjectsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, IoTSiteWiseError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListTimeSeriesResult, IoTSiteWiseError> ListTimeSeriesOutcome;
         typedef Aws::Utils::Outcome<PutDefaultEncryptionConfigurationResult, IoTSiteWiseError> PutDefaultEncryptionConfigurationOutcome;
         typedef Aws::Utils::Outcome<PutLoggingOptionsResult, IoTSiteWiseError> PutLoggingOptionsOutcome;
         typedef Aws::Utils::Outcome<PutStorageConfigurationResult, IoTSiteWiseError> PutStorageConfigurationOutcome;
@@ -229,6 +241,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateProjectResult, IoTSiteWiseError> UpdateProjectOutcome;
 
         typedef std::future<AssociateAssetsOutcome> AssociateAssetsOutcomeCallable;
+        typedef std::future<AssociateTimeSeriesToAssetPropertyOutcome> AssociateTimeSeriesToAssetPropertyOutcomeCallable;
         typedef std::future<BatchAssociateProjectAssetsOutcome> BatchAssociateProjectAssetsOutcomeCallable;
         typedef std::future<BatchDisassociateProjectAssetsOutcome> BatchDisassociateProjectAssetsOutcomeCallable;
         typedef std::future<BatchPutAssetPropertyValueOutcome> BatchPutAssetPropertyValueOutcomeCallable;
@@ -246,6 +259,7 @@ namespace Model
         typedef std::future<DeleteGatewayOutcome> DeleteGatewayOutcomeCallable;
         typedef std::future<DeletePortalOutcome> DeletePortalOutcomeCallable;
         typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
+        typedef std::future<DeleteTimeSeriesOutcome> DeleteTimeSeriesOutcomeCallable;
         typedef std::future<DescribeAccessPolicyOutcome> DescribeAccessPolicyOutcomeCallable;
         typedef std::future<DescribeAssetOutcome> DescribeAssetOutcomeCallable;
         typedef std::future<DescribeAssetModelOutcome> DescribeAssetModelOutcomeCallable;
@@ -258,7 +272,9 @@ namespace Model
         typedef std::future<DescribePortalOutcome> DescribePortalOutcomeCallable;
         typedef std::future<DescribeProjectOutcome> DescribeProjectOutcomeCallable;
         typedef std::future<DescribeStorageConfigurationOutcome> DescribeStorageConfigurationOutcomeCallable;
+        typedef std::future<DescribeTimeSeriesOutcome> DescribeTimeSeriesOutcomeCallable;
         typedef std::future<DisassociateAssetsOutcome> DisassociateAssetsOutcomeCallable;
+        typedef std::future<DisassociateTimeSeriesFromAssetPropertyOutcome> DisassociateTimeSeriesFromAssetPropertyOutcomeCallable;
         typedef std::future<GetAssetPropertyAggregatesOutcome> GetAssetPropertyAggregatesOutcomeCallable;
         typedef std::future<GetAssetPropertyValueOutcome> GetAssetPropertyValueOutcomeCallable;
         typedef std::future<GetAssetPropertyValueHistoryOutcome> GetAssetPropertyValueHistoryOutcomeCallable;
@@ -274,6 +290,7 @@ namespace Model
         typedef std::future<ListProjectAssetsOutcome> ListProjectAssetsOutcomeCallable;
         typedef std::future<ListProjectsOutcome> ListProjectsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<ListTimeSeriesOutcome> ListTimeSeriesOutcomeCallable;
         typedef std::future<PutDefaultEncryptionConfigurationOutcome> PutDefaultEncryptionConfigurationOutcomeCallable;
         typedef std::future<PutLoggingOptionsOutcome> PutLoggingOptionsOutcomeCallable;
         typedef std::future<PutStorageConfigurationOutcome> PutStorageConfigurationOutcomeCallable;
@@ -293,6 +310,7 @@ namespace Model
   class IoTSiteWiseClient;
 
     typedef std::function<void(const IoTSiteWiseClient*, const Model::AssociateAssetsRequest&, const Model::AssociateAssetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateAssetsResponseReceivedHandler;
+    typedef std::function<void(const IoTSiteWiseClient*, const Model::AssociateTimeSeriesToAssetPropertyRequest&, const Model::AssociateTimeSeriesToAssetPropertyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateTimeSeriesToAssetPropertyResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::BatchAssociateProjectAssetsRequest&, const Model::BatchAssociateProjectAssetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchAssociateProjectAssetsResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::BatchDisassociateProjectAssetsRequest&, const Model::BatchDisassociateProjectAssetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDisassociateProjectAssetsResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::BatchPutAssetPropertyValueRequest&, const Model::BatchPutAssetPropertyValueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchPutAssetPropertyValueResponseReceivedHandler;
@@ -310,6 +328,7 @@ namespace Model
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DeleteGatewayRequest&, const Model::DeleteGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGatewayResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DeletePortalRequest&, const Model::DeletePortalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePortalResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DeleteProjectRequest&, const Model::DeleteProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectResponseReceivedHandler;
+    typedef std::function<void(const IoTSiteWiseClient*, const Model::DeleteTimeSeriesRequest&, const Model::DeleteTimeSeriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTimeSeriesResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeAccessPolicyRequest&, const Model::DescribeAccessPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccessPolicyResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeAssetRequest&, const Model::DescribeAssetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAssetResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeAssetModelRequest&, const Model::DescribeAssetModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAssetModelResponseReceivedHandler;
@@ -322,7 +341,9 @@ namespace Model
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribePortalRequest&, const Model::DescribePortalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePortalResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeProjectRequest&, const Model::DescribeProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProjectResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeStorageConfigurationRequest&, const Model::DescribeStorageConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStorageConfigurationResponseReceivedHandler;
+    typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeTimeSeriesRequest&, const Model::DescribeTimeSeriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTimeSeriesResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DisassociateAssetsRequest&, const Model::DisassociateAssetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateAssetsResponseReceivedHandler;
+    typedef std::function<void(const IoTSiteWiseClient*, const Model::DisassociateTimeSeriesFromAssetPropertyRequest&, const Model::DisassociateTimeSeriesFromAssetPropertyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTimeSeriesFromAssetPropertyResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::GetAssetPropertyAggregatesRequest&, const Model::GetAssetPropertyAggregatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssetPropertyAggregatesResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::GetAssetPropertyValueRequest&, const Model::GetAssetPropertyValueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssetPropertyValueResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::GetAssetPropertyValueHistoryRequest&, const Model::GetAssetPropertyValueHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssetPropertyValueHistoryResponseReceivedHandler;
@@ -338,6 +359,7 @@ namespace Model
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListProjectAssetsRequest&, const Model::ListProjectAssetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectAssetsResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListProjectsRequest&, const Model::ListProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectsResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const IoTSiteWiseClient*, const Model::ListTimeSeriesRequest&, const Model::ListTimeSeriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTimeSeriesResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::PutDefaultEncryptionConfigurationRequest&, const Model::PutDefaultEncryptionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDefaultEncryptionConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::PutLoggingOptionsRequest&, const Model::PutLoggingOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLoggingOptionsResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::PutStorageConfigurationRequest&, const Model::PutStorageConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutStorageConfigurationResponseReceivedHandler;
@@ -424,6 +446,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateAssetsAsync(const Model::AssociateAssetsRequest& request, const AssociateAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associates a time series (data stream) with an asset property.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssociateTimeSeriesToAssetProperty">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateTimeSeriesToAssetPropertyOutcome AssociateTimeSeriesToAssetProperty(const Model::AssociateTimeSeriesToAssetPropertyRequest& request) const;
+
+        /**
+         * <p>Associates a time series (data stream) with an asset property.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssociateTimeSeriesToAssetProperty">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateTimeSeriesToAssetPropertyOutcomeCallable AssociateTimeSeriesToAssetPropertyCallable(const Model::AssociateTimeSeriesToAssetPropertyRequest& request) const;
+
+        /**
+         * <p>Associates a time series (data stream) with an asset property.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssociateTimeSeriesToAssetProperty">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateTimeSeriesToAssetPropertyAsync(const Model::AssociateTimeSeriesToAssetPropertyRequest& request, const AssociateTimeSeriesToAssetPropertyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a group (batch) of assets with an IoT SiteWise Monitor
@@ -795,14 +845,18 @@ namespace Model
         virtual void CreatePortalAsync(const Model::CreatePortalRequest& request, const CreatePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a project in the specified portal.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a project in the specified portal.</p>  <p>Make sure that the
+         * project name and description don't contain confidential information.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateProject">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateProjectOutcome CreateProject(const Model::CreateProjectRequest& request) const;
 
         /**
-         * <p>Creates a project in the specified portal.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a project in the specified portal.</p>  <p>Make sure that the
+         * project name and description don't contain confidential information.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateProject">AWS
          * API Reference</a></p>
          *
@@ -811,7 +865,9 @@ namespace Model
         virtual Model::CreateProjectOutcomeCallable CreateProjectCallable(const Model::CreateProjectRequest& request) const;
 
         /**
-         * <p>Creates a project in the specified portal.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a project in the specified portal.</p>  <p>Make sure that the
+         * project name and description don't contain confidential information.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateProject">AWS
          * API Reference</a></p>
          *
@@ -1044,6 +1100,58 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a time series (data stream). If you delete a time series that's
+         * associated with an asset property, the asset property still exists, but the time
+         * series will no longer be associated with this asset property.</p> <p>To identify
+         * a time series, do one of the following:</p> <ul> <li> <p>If the time series
+         * isn't associated with an asset property, specify the <code>alias</code> of the
+         * time series.</p> </li> <li> <p>If the time series is associated with an asset
+         * property, specify one of the following: </p> <ul> <li> <p>The <code>alias</code>
+         * of the time series.</p> </li> <li> <p>The <code>assetId</code> and
+         * <code>propertyId</code> that identifies the asset property.</p> </li> </ul>
+         * </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteTimeSeries">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTimeSeriesOutcome DeleteTimeSeries(const Model::DeleteTimeSeriesRequest& request) const;
+
+        /**
+         * <p>Deletes a time series (data stream). If you delete a time series that's
+         * associated with an asset property, the asset property still exists, but the time
+         * series will no longer be associated with this asset property.</p> <p>To identify
+         * a time series, do one of the following:</p> <ul> <li> <p>If the time series
+         * isn't associated with an asset property, specify the <code>alias</code> of the
+         * time series.</p> </li> <li> <p>If the time series is associated with an asset
+         * property, specify one of the following: </p> <ul> <li> <p>The <code>alias</code>
+         * of the time series.</p> </li> <li> <p>The <code>assetId</code> and
+         * <code>propertyId</code> that identifies the asset property.</p> </li> </ul>
+         * </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteTimeSeries">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteTimeSeriesOutcomeCallable DeleteTimeSeriesCallable(const Model::DeleteTimeSeriesRequest& request) const;
+
+        /**
+         * <p>Deletes a time series (data stream). If you delete a time series that's
+         * associated with an asset property, the asset property still exists, but the time
+         * series will no longer be associated with this asset property.</p> <p>To identify
+         * a time series, do one of the following:</p> <ul> <li> <p>If the time series
+         * isn't associated with an asset property, specify the <code>alias</code> of the
+         * time series.</p> </li> <li> <p>If the time series is associated with an asset
+         * property, specify one of the following: </p> <ul> <li> <p>The <code>alias</code>
+         * of the time series.</p> </li> <li> <p>The <code>assetId</code> and
+         * <code>propertyId</code> that identifies the asset property.</p> </li> </ul>
+         * </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteTimeSeries">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteTimeSeriesAsync(const Model::DeleteTimeSeriesRequest& request, const DeleteTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an access policy, which specifies an identity's access to an IoT
@@ -1412,6 +1520,52 @@ namespace Model
         virtual void DescribeStorageConfigurationAsync(const Model::DescribeStorageConfigurationRequest& request, const DescribeStorageConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves information about a time series (data stream).</p> <p>To identify a
+         * time series, do one of the following:</p> <ul> <li> <p>If the time series isn't
+         * associated with an asset property, specify the <code>alias</code> of the time
+         * series.</p> </li> <li> <p>If the time series is associated with an asset
+         * property, specify one of the following: </p> <ul> <li> <p>The <code>alias</code>
+         * of the time series.</p> </li> <li> <p>The <code>assetId</code> and
+         * <code>propertyId</code> that identifies the asset property.</p> </li> </ul>
+         * </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeTimeSeries">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTimeSeriesOutcome DescribeTimeSeries(const Model::DescribeTimeSeriesRequest& request) const;
+
+        /**
+         * <p>Retrieves information about a time series (data stream).</p> <p>To identify a
+         * time series, do one of the following:</p> <ul> <li> <p>If the time series isn't
+         * associated with an asset property, specify the <code>alias</code> of the time
+         * series.</p> </li> <li> <p>If the time series is associated with an asset
+         * property, specify one of the following: </p> <ul> <li> <p>The <code>alias</code>
+         * of the time series.</p> </li> <li> <p>The <code>assetId</code> and
+         * <code>propertyId</code> that identifies the asset property.</p> </li> </ul>
+         * </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeTimeSeries">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeTimeSeriesOutcomeCallable DescribeTimeSeriesCallable(const Model::DescribeTimeSeriesRequest& request) const;
+
+        /**
+         * <p>Retrieves information about a time series (data stream).</p> <p>To identify a
+         * time series, do one of the following:</p> <ul> <li> <p>If the time series isn't
+         * associated with an asset property, specify the <code>alias</code> of the time
+         * series.</p> </li> <li> <p>If the time series is associated with an asset
+         * property, specify one of the following: </p> <ul> <li> <p>The <code>alias</code>
+         * of the time series.</p> </li> <li> <p>The <code>assetId</code> and
+         * <code>propertyId</code> that identifies the asset property.</p> </li> </ul>
+         * </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeTimeSeries">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeTimeSeriesAsync(const Model::DescribeTimeSeriesRequest& request, const DescribeTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Disassociates a child asset from the given parent asset through a hierarchy
          * defined in the parent asset's model.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DisassociateAssets">AWS
@@ -1438,6 +1592,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateAssetsAsync(const Model::DisassociateAssetsRequest& request, const DisassociateAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Disassociates a time series (data stream) from an asset
+         * property.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DisassociateTimeSeriesFromAssetProperty">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateTimeSeriesFromAssetPropertyOutcome DisassociateTimeSeriesFromAssetProperty(const Model::DisassociateTimeSeriesFromAssetPropertyRequest& request) const;
+
+        /**
+         * <p>Disassociates a time series (data stream) from an asset
+         * property.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DisassociateTimeSeriesFromAssetProperty">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateTimeSeriesFromAssetPropertyOutcomeCallable DisassociateTimeSeriesFromAssetPropertyCallable(const Model::DisassociateTimeSeriesFromAssetPropertyRequest& request) const;
+
+        /**
+         * <p>Disassociates a time series (data stream) from an asset
+         * property.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DisassociateTimeSeriesFromAssetProperty">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateTimeSeriesFromAssetPropertyAsync(const Model::DisassociateTimeSeriesFromAssetPropertyRequest& request, const DisassociateTimeSeriesFromAssetPropertyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets aggregated values for an asset property. For more information, see <a
@@ -1992,6 +2174,34 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves a paginated list of time series (data streams).</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListTimeSeries">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTimeSeriesOutcome ListTimeSeries(const Model::ListTimeSeriesRequest& request) const;
+
+        /**
+         * <p>Retrieves a paginated list of time series (data streams).</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListTimeSeries">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTimeSeriesOutcomeCallable ListTimeSeriesCallable(const Model::ListTimeSeriesRequest& request) const;
+
+        /**
+         * <p>Retrieves a paginated list of time series (data streams).</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListTimeSeries">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTimeSeriesAsync(const Model::ListTimeSeriesRequest& request, const ListTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Sets the default encryption configuration for the Amazon Web Services
          * account. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key
@@ -2454,6 +2664,7 @@ namespace Model
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AssociateAssetsAsyncHelper(const Model::AssociateAssetsRequest& request, const AssociateAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociateTimeSeriesToAssetPropertyAsyncHelper(const Model::AssociateTimeSeriesToAssetPropertyRequest& request, const AssociateTimeSeriesToAssetPropertyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchAssociateProjectAssetsAsyncHelper(const Model::BatchAssociateProjectAssetsRequest& request, const BatchAssociateProjectAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchDisassociateProjectAssetsAsyncHelper(const Model::BatchDisassociateProjectAssetsRequest& request, const BatchDisassociateProjectAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchPutAssetPropertyValueAsyncHelper(const Model::BatchPutAssetPropertyValueRequest& request, const BatchPutAssetPropertyValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2471,6 +2682,7 @@ namespace Model
         void DeleteGatewayAsyncHelper(const Model::DeleteGatewayRequest& request, const DeleteGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePortalAsyncHelper(const Model::DeletePortalRequest& request, const DeletePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteProjectAsyncHelper(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteTimeSeriesAsyncHelper(const Model::DeleteTimeSeriesRequest& request, const DeleteTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccessPolicyAsyncHelper(const Model::DescribeAccessPolicyRequest& request, const DescribeAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAssetAsyncHelper(const Model::DescribeAssetRequest& request, const DescribeAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAssetModelAsyncHelper(const Model::DescribeAssetModelRequest& request, const DescribeAssetModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2483,7 +2695,9 @@ namespace Model
         void DescribePortalAsyncHelper(const Model::DescribePortalRequest& request, const DescribePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProjectAsyncHelper(const Model::DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStorageConfigurationAsyncHelper(const Model::DescribeStorageConfigurationRequest& request, const DescribeStorageConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeTimeSeriesAsyncHelper(const Model::DescribeTimeSeriesRequest& request, const DescribeTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateAssetsAsyncHelper(const Model::DisassociateAssetsRequest& request, const DisassociateAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateTimeSeriesFromAssetPropertyAsyncHelper(const Model::DisassociateTimeSeriesFromAssetPropertyRequest& request, const DisassociateTimeSeriesFromAssetPropertyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAssetPropertyAggregatesAsyncHelper(const Model::GetAssetPropertyAggregatesRequest& request, const GetAssetPropertyAggregatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAssetPropertyValueAsyncHelper(const Model::GetAssetPropertyValueRequest& request, const GetAssetPropertyValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAssetPropertyValueHistoryAsyncHelper(const Model::GetAssetPropertyValueHistoryRequest& request, const GetAssetPropertyValueHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2499,6 +2713,7 @@ namespace Model
         void ListProjectAssetsAsyncHelper(const Model::ListProjectAssetsRequest& request, const ListProjectAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProjectsAsyncHelper(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTimeSeriesAsyncHelper(const Model::ListTimeSeriesRequest& request, const ListTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutDefaultEncryptionConfigurationAsyncHelper(const Model::PutDefaultEncryptionConfigurationRequest& request, const PutDefaultEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutLoggingOptionsAsyncHelper(const Model::PutLoggingOptionsRequest& request, const PutLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutStorageConfigurationAsyncHelper(const Model::PutStorageConfigurationRequest& request, const PutStorageConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

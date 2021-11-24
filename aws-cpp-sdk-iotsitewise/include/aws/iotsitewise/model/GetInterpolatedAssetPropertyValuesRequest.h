@@ -435,7 +435,7 @@ namespace Model
      * href="https://en.wikipedia.org/wiki/Linear_interpolation">linear
      * interpolation</a>.</p> <p>For example, you can use this operation to return the
      * interpolated temperature values for a wind turbine every 24 hours over a
-     * duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM, IoT
+     * duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT
      * SiteWise returns the first interpolated value on July 2, 2021, at 9 AM, the
      * second interpolated value on July 3, 2021, at 9 AM, and so on.</p> </li> <li>
      * <p> <code>LOCF_INTERPOLATION</code> – Estimates missing data using last
@@ -443,10 +443,10 @@ namespace Model
      * an interval, IoT SiteWise returns the last observed data point for the previous
      * interval and carries forward this interpolated value until a new data point is
      * found.</p> <p>For example, you can get the state of an on-off valve every 24
-     * hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at
-     * 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021, at
-     * 9 AM and July 2, 2021, at 9 AM as the first interpolated value. If no data point
-     * is found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated
+     * hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9
+     * AM, IoT SiteWise returns the last observed data point between July 1, 2021, at 9
+     * AM and July 2, 2021, at 9 AM as the first interpolated value. If a data point
+     * isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated
      * value for the rest of the days.</p> </li> </ul>
      */
     inline const Aws::String& GetType() const{ return m_type; }
@@ -458,7 +458,7 @@ namespace Model
      * href="https://en.wikipedia.org/wiki/Linear_interpolation">linear
      * interpolation</a>.</p> <p>For example, you can use this operation to return the
      * interpolated temperature values for a wind turbine every 24 hours over a
-     * duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM, IoT
+     * duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT
      * SiteWise returns the first interpolated value on July 2, 2021, at 9 AM, the
      * second interpolated value on July 3, 2021, at 9 AM, and so on.</p> </li> <li>
      * <p> <code>LOCF_INTERPOLATION</code> – Estimates missing data using last
@@ -466,10 +466,10 @@ namespace Model
      * an interval, IoT SiteWise returns the last observed data point for the previous
      * interval and carries forward this interpolated value until a new data point is
      * found.</p> <p>For example, you can get the state of an on-off valve every 24
-     * hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at
-     * 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021, at
-     * 9 AM and July 2, 2021, at 9 AM as the first interpolated value. If no data point
-     * is found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated
+     * hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9
+     * AM, IoT SiteWise returns the last observed data point between July 1, 2021, at 9
+     * AM and July 2, 2021, at 9 AM as the first interpolated value. If a data point
+     * isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated
      * value for the rest of the days.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -481,7 +481,7 @@ namespace Model
      * href="https://en.wikipedia.org/wiki/Linear_interpolation">linear
      * interpolation</a>.</p> <p>For example, you can use this operation to return the
      * interpolated temperature values for a wind turbine every 24 hours over a
-     * duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM, IoT
+     * duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT
      * SiteWise returns the first interpolated value on July 2, 2021, at 9 AM, the
      * second interpolated value on July 3, 2021, at 9 AM, and so on.</p> </li> <li>
      * <p> <code>LOCF_INTERPOLATION</code> – Estimates missing data using last
@@ -489,10 +489,10 @@ namespace Model
      * an interval, IoT SiteWise returns the last observed data point for the previous
      * interval and carries forward this interpolated value until a new data point is
      * found.</p> <p>For example, you can get the state of an on-off valve every 24
-     * hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at
-     * 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021, at
-     * 9 AM and July 2, 2021, at 9 AM as the first interpolated value. If no data point
-     * is found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated
+     * hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9
+     * AM, IoT SiteWise returns the last observed data point between July 1, 2021, at 9
+     * AM and July 2, 2021, at 9 AM as the first interpolated value. If a data point
+     * isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated
      * value for the rest of the days.</p> </li> </ul>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
@@ -504,7 +504,7 @@ namespace Model
      * href="https://en.wikipedia.org/wiki/Linear_interpolation">linear
      * interpolation</a>.</p> <p>For example, you can use this operation to return the
      * interpolated temperature values for a wind turbine every 24 hours over a
-     * duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM, IoT
+     * duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT
      * SiteWise returns the first interpolated value on July 2, 2021, at 9 AM, the
      * second interpolated value on July 3, 2021, at 9 AM, and so on.</p> </li> <li>
      * <p> <code>LOCF_INTERPOLATION</code> – Estimates missing data using last
@@ -512,10 +512,10 @@ namespace Model
      * an interval, IoT SiteWise returns the last observed data point for the previous
      * interval and carries forward this interpolated value until a new data point is
      * found.</p> <p>For example, you can get the state of an on-off valve every 24
-     * hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at
-     * 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021, at
-     * 9 AM and July 2, 2021, at 9 AM as the first interpolated value. If no data point
-     * is found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated
+     * hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9
+     * AM, IoT SiteWise returns the last observed data point between July 1, 2021, at 9
+     * AM and July 2, 2021, at 9 AM as the first interpolated value. If a data point
+     * isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated
      * value for the rest of the days.</p> </li> </ul>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
@@ -527,7 +527,7 @@ namespace Model
      * href="https://en.wikipedia.org/wiki/Linear_interpolation">linear
      * interpolation</a>.</p> <p>For example, you can use this operation to return the
      * interpolated temperature values for a wind turbine every 24 hours over a
-     * duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM, IoT
+     * duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT
      * SiteWise returns the first interpolated value on July 2, 2021, at 9 AM, the
      * second interpolated value on July 3, 2021, at 9 AM, and so on.</p> </li> <li>
      * <p> <code>LOCF_INTERPOLATION</code> – Estimates missing data using last
@@ -535,10 +535,10 @@ namespace Model
      * an interval, IoT SiteWise returns the last observed data point for the previous
      * interval and carries forward this interpolated value until a new data point is
      * found.</p> <p>For example, you can get the state of an on-off valve every 24
-     * hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at
-     * 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021, at
-     * 9 AM and July 2, 2021, at 9 AM as the first interpolated value. If no data point
-     * is found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated
+     * hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9
+     * AM, IoT SiteWise returns the last observed data point between July 1, 2021, at 9
+     * AM and July 2, 2021, at 9 AM as the first interpolated value. If a data point
+     * isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated
      * value for the rest of the days.</p> </li> </ul>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
@@ -550,7 +550,7 @@ namespace Model
      * href="https://en.wikipedia.org/wiki/Linear_interpolation">linear
      * interpolation</a>.</p> <p>For example, you can use this operation to return the
      * interpolated temperature values for a wind turbine every 24 hours over a
-     * duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM, IoT
+     * duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT
      * SiteWise returns the first interpolated value on July 2, 2021, at 9 AM, the
      * second interpolated value on July 3, 2021, at 9 AM, and so on.</p> </li> <li>
      * <p> <code>LOCF_INTERPOLATION</code> – Estimates missing data using last
@@ -558,10 +558,10 @@ namespace Model
      * an interval, IoT SiteWise returns the last observed data point for the previous
      * interval and carries forward this interpolated value until a new data point is
      * found.</p> <p>For example, you can get the state of an on-off valve every 24
-     * hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at
-     * 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021, at
-     * 9 AM and July 2, 2021, at 9 AM as the first interpolated value. If no data point
-     * is found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated
+     * hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9
+     * AM, IoT SiteWise returns the last observed data point between July 1, 2021, at 9
+     * AM and July 2, 2021, at 9 AM as the first interpolated value. If a data point
+     * isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated
      * value for the rest of the days.</p> </li> </ul>
      */
     inline GetInterpolatedAssetPropertyValuesRequest& WithType(const Aws::String& value) { SetType(value); return *this;}
@@ -573,7 +573,7 @@ namespace Model
      * href="https://en.wikipedia.org/wiki/Linear_interpolation">linear
      * interpolation</a>.</p> <p>For example, you can use this operation to return the
      * interpolated temperature values for a wind turbine every 24 hours over a
-     * duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM, IoT
+     * duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT
      * SiteWise returns the first interpolated value on July 2, 2021, at 9 AM, the
      * second interpolated value on July 3, 2021, at 9 AM, and so on.</p> </li> <li>
      * <p> <code>LOCF_INTERPOLATION</code> – Estimates missing data using last
@@ -581,10 +581,10 @@ namespace Model
      * an interval, IoT SiteWise returns the last observed data point for the previous
      * interval and carries forward this interpolated value until a new data point is
      * found.</p> <p>For example, you can get the state of an on-off valve every 24
-     * hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at
-     * 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021, at
-     * 9 AM and July 2, 2021, at 9 AM as the first interpolated value. If no data point
-     * is found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated
+     * hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9
+     * AM, IoT SiteWise returns the last observed data point between July 1, 2021, at 9
+     * AM and July 2, 2021, at 9 AM as the first interpolated value. If a data point
+     * isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated
      * value for the rest of the days.</p> </li> </ul>
      */
     inline GetInterpolatedAssetPropertyValuesRequest& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
@@ -596,7 +596,7 @@ namespace Model
      * href="https://en.wikipedia.org/wiki/Linear_interpolation">linear
      * interpolation</a>.</p> <p>For example, you can use this operation to return the
      * interpolated temperature values for a wind turbine every 24 hours over a
-     * duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM, IoT
+     * duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT
      * SiteWise returns the first interpolated value on July 2, 2021, at 9 AM, the
      * second interpolated value on July 3, 2021, at 9 AM, and so on.</p> </li> <li>
      * <p> <code>LOCF_INTERPOLATION</code> – Estimates missing data using last
@@ -604,92 +604,96 @@ namespace Model
      * an interval, IoT SiteWise returns the last observed data point for the previous
      * interval and carries forward this interpolated value until a new data point is
      * found.</p> <p>For example, you can get the state of an on-off valve every 24
-     * hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at
-     * 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021, at
-     * 9 AM and July 2, 2021, at 9 AM as the first interpolated value. If no data point
-     * is found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated
+     * hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9
+     * AM, IoT SiteWise returns the last observed data point between July 1, 2021, at 9
+     * AM and July 2, 2021, at 9 AM as the first interpolated value. If a data point
+     * isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated
      * value for the rest of the days.</p> </li> </ul>
      */
     inline GetInterpolatedAssetPropertyValuesRequest& WithType(const char* value) { SetType(value); return *this;}
 
 
     /**
-     * <p>The query interval for the window in seconds. IoT SiteWise computes each
-     * interpolated value by using data points from the timestamp of each interval
+     * <p>The query interval for the window, in seconds. IoT SiteWise computes each
+     * interpolated value by using data points from the timestamp of each interval,
      * minus the window to the timestamp of each interval plus the window. If not
-     * specified, the window is between the start time minus the interval and the end
-     * time plus the interval. </p>  <ul> <li> <p>If you specify a value for the
-     * <code>intervalWindowInSeconds</code> parameter, the <code>type</code> parameter
-     * must be <code>LINEAR_INTERPOLATION</code>.</p> </li> <li> <p>If no data point is
-     * found during the specified query window, IoT SiteWise won't return an
-     * interpolated value for the interval. This indicates that there's a gap in the
-     * ingested data points.</p> </li> </ul>  <p>For example, you can get the
-     * interpolated temperature values for a wind turbine every 24 hours over a
-     * duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM with a
-     * window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM - 2 hours)
-     * to 11 AM (9 AM + 2 hours) on July 2, 2021 to compute the first interpolated
-     * value, uses the data points from 7 AM (9 AM - 2 hours) to 11 AM (9 AM + 2 hours)
-     * on July 3, 2021 to compute the second interpolated value, and so on. </p>
+     * specified, the window ranges between the start time minus the interval and the
+     * end time plus the interval.</p>  <ul> <li> <p>If you specify a value for
+     * the <code>intervalWindowInSeconds</code> parameter, the value for the
+     * <code>type</code> parameter must be <code>LINEAR_INTERPOLATION</code>.</p> </li>
+     * <li> <p>If a data point isn't found during the specified query window, IoT
+     * SiteWise won't return an interpolated value for the interval. This indicates
+     * that there's a gap in the ingested data points.</p> </li> </ul>  <p>For
+     * example, you can get the interpolated temperature values for a wind turbine
+     * every 24 hours over a duration of 7 days. If the interpolation starts on July 1,
+     * 2021, at 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7
+     * AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 2, 2021 to compute
+     * the first interpolated value. Next, IoT SiteWise uses the data points from 7 AM
+     * (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 3, 2021 to compute the
+     * second interpolated value, and so on. </p>
      */
     inline long long GetIntervalWindowInSeconds() const{ return m_intervalWindowInSeconds; }
 
     /**
-     * <p>The query interval for the window in seconds. IoT SiteWise computes each
-     * interpolated value by using data points from the timestamp of each interval
+     * <p>The query interval for the window, in seconds. IoT SiteWise computes each
+     * interpolated value by using data points from the timestamp of each interval,
      * minus the window to the timestamp of each interval plus the window. If not
-     * specified, the window is between the start time minus the interval and the end
-     * time plus the interval. </p>  <ul> <li> <p>If you specify a value for the
-     * <code>intervalWindowInSeconds</code> parameter, the <code>type</code> parameter
-     * must be <code>LINEAR_INTERPOLATION</code>.</p> </li> <li> <p>If no data point is
-     * found during the specified query window, IoT SiteWise won't return an
-     * interpolated value for the interval. This indicates that there's a gap in the
-     * ingested data points.</p> </li> </ul>  <p>For example, you can get the
-     * interpolated temperature values for a wind turbine every 24 hours over a
-     * duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM with a
-     * window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM - 2 hours)
-     * to 11 AM (9 AM + 2 hours) on July 2, 2021 to compute the first interpolated
-     * value, uses the data points from 7 AM (9 AM - 2 hours) to 11 AM (9 AM + 2 hours)
-     * on July 3, 2021 to compute the second interpolated value, and so on. </p>
+     * specified, the window ranges between the start time minus the interval and the
+     * end time plus the interval.</p>  <ul> <li> <p>If you specify a value for
+     * the <code>intervalWindowInSeconds</code> parameter, the value for the
+     * <code>type</code> parameter must be <code>LINEAR_INTERPOLATION</code>.</p> </li>
+     * <li> <p>If a data point isn't found during the specified query window, IoT
+     * SiteWise won't return an interpolated value for the interval. This indicates
+     * that there's a gap in the ingested data points.</p> </li> </ul>  <p>For
+     * example, you can get the interpolated temperature values for a wind turbine
+     * every 24 hours over a duration of 7 days. If the interpolation starts on July 1,
+     * 2021, at 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7
+     * AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 2, 2021 to compute
+     * the first interpolated value. Next, IoT SiteWise uses the data points from 7 AM
+     * (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 3, 2021 to compute the
+     * second interpolated value, and so on. </p>
      */
     inline bool IntervalWindowInSecondsHasBeenSet() const { return m_intervalWindowInSecondsHasBeenSet; }
 
     /**
-     * <p>The query interval for the window in seconds. IoT SiteWise computes each
-     * interpolated value by using data points from the timestamp of each interval
+     * <p>The query interval for the window, in seconds. IoT SiteWise computes each
+     * interpolated value by using data points from the timestamp of each interval,
      * minus the window to the timestamp of each interval plus the window. If not
-     * specified, the window is between the start time minus the interval and the end
-     * time plus the interval. </p>  <ul> <li> <p>If you specify a value for the
-     * <code>intervalWindowInSeconds</code> parameter, the <code>type</code> parameter
-     * must be <code>LINEAR_INTERPOLATION</code>.</p> </li> <li> <p>If no data point is
-     * found during the specified query window, IoT SiteWise won't return an
-     * interpolated value for the interval. This indicates that there's a gap in the
-     * ingested data points.</p> </li> </ul>  <p>For example, you can get the
-     * interpolated temperature values for a wind turbine every 24 hours over a
-     * duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM with a
-     * window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM - 2 hours)
-     * to 11 AM (9 AM + 2 hours) on July 2, 2021 to compute the first interpolated
-     * value, uses the data points from 7 AM (9 AM - 2 hours) to 11 AM (9 AM + 2 hours)
-     * on July 3, 2021 to compute the second interpolated value, and so on. </p>
+     * specified, the window ranges between the start time minus the interval and the
+     * end time plus the interval.</p>  <ul> <li> <p>If you specify a value for
+     * the <code>intervalWindowInSeconds</code> parameter, the value for the
+     * <code>type</code> parameter must be <code>LINEAR_INTERPOLATION</code>.</p> </li>
+     * <li> <p>If a data point isn't found during the specified query window, IoT
+     * SiteWise won't return an interpolated value for the interval. This indicates
+     * that there's a gap in the ingested data points.</p> </li> </ul>  <p>For
+     * example, you can get the interpolated temperature values for a wind turbine
+     * every 24 hours over a duration of 7 days. If the interpolation starts on July 1,
+     * 2021, at 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7
+     * AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 2, 2021 to compute
+     * the first interpolated value. Next, IoT SiteWise uses the data points from 7 AM
+     * (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 3, 2021 to compute the
+     * second interpolated value, and so on. </p>
      */
     inline void SetIntervalWindowInSeconds(long long value) { m_intervalWindowInSecondsHasBeenSet = true; m_intervalWindowInSeconds = value; }
 
     /**
-     * <p>The query interval for the window in seconds. IoT SiteWise computes each
-     * interpolated value by using data points from the timestamp of each interval
+     * <p>The query interval for the window, in seconds. IoT SiteWise computes each
+     * interpolated value by using data points from the timestamp of each interval,
      * minus the window to the timestamp of each interval plus the window. If not
-     * specified, the window is between the start time minus the interval and the end
-     * time plus the interval. </p>  <ul> <li> <p>If you specify a value for the
-     * <code>intervalWindowInSeconds</code> parameter, the <code>type</code> parameter
-     * must be <code>LINEAR_INTERPOLATION</code>.</p> </li> <li> <p>If no data point is
-     * found during the specified query window, IoT SiteWise won't return an
-     * interpolated value for the interval. This indicates that there's a gap in the
-     * ingested data points.</p> </li> </ul>  <p>For example, you can get the
-     * interpolated temperature values for a wind turbine every 24 hours over a
-     * duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM with a
-     * window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM - 2 hours)
-     * to 11 AM (9 AM + 2 hours) on July 2, 2021 to compute the first interpolated
-     * value, uses the data points from 7 AM (9 AM - 2 hours) to 11 AM (9 AM + 2 hours)
-     * on July 3, 2021 to compute the second interpolated value, and so on. </p>
+     * specified, the window ranges between the start time minus the interval and the
+     * end time plus the interval.</p>  <ul> <li> <p>If you specify a value for
+     * the <code>intervalWindowInSeconds</code> parameter, the value for the
+     * <code>type</code> parameter must be <code>LINEAR_INTERPOLATION</code>.</p> </li>
+     * <li> <p>If a data point isn't found during the specified query window, IoT
+     * SiteWise won't return an interpolated value for the interval. This indicates
+     * that there's a gap in the ingested data points.</p> </li> </ul>  <p>For
+     * example, you can get the interpolated temperature values for a wind turbine
+     * every 24 hours over a duration of 7 days. If the interpolation starts on July 1,
+     * 2021, at 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7
+     * AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 2, 2021 to compute
+     * the first interpolated value. Next, IoT SiteWise uses the data points from 7 AM
+     * (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 3, 2021 to compute the
+     * second interpolated value, and so on. </p>
      */
     inline GetInterpolatedAssetPropertyValuesRequest& WithIntervalWindowInSeconds(long long value) { SetIntervalWindowInSeconds(value); return *this;}
 

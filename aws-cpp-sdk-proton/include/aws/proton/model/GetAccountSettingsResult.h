@@ -33,32 +33,27 @@ namespace Model
 
 
     /**
-     * <p>The AWS Proton pipeline service role detail data that's returned by AWS
-     * Proton.</p>
+     * <p>The Proton pipeline service role detail data that's returned by Proton.</p>
      */
     inline const AccountSettings& GetAccountSettings() const{ return m_accountSettings; }
 
     /**
-     * <p>The AWS Proton pipeline service role detail data that's returned by AWS
-     * Proton.</p>
+     * <p>The Proton pipeline service role detail data that's returned by Proton.</p>
      */
     inline void SetAccountSettings(const AccountSettings& value) { m_accountSettings = value; }
 
     /**
-     * <p>The AWS Proton pipeline service role detail data that's returned by AWS
-     * Proton.</p>
+     * <p>The Proton pipeline service role detail data that's returned by Proton.</p>
      */
     inline void SetAccountSettings(AccountSettings&& value) { m_accountSettings = std::move(value); }
 
     /**
-     * <p>The AWS Proton pipeline service role detail data that's returned by AWS
-     * Proton.</p>
+     * <p>The Proton pipeline service role detail data that's returned by Proton.</p>
      */
     inline GetAccountSettingsResult& WithAccountSettings(const AccountSettings& value) { SetAccountSettings(value); return *this;}
 
     /**
-     * <p>The AWS Proton pipeline service role detail data that's returned by AWS
-     * Proton.</p>
+     * <p>The Proton pipeline service role detail data that's returned by Proton.</p>
      */
     inline GetAccountSettingsResult& WithAccountSettings(AccountSettings&& value) { SetAccountSettings(std::move(value)); return *this;}
 

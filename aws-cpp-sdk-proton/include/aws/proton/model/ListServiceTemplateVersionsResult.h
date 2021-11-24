@@ -36,50 +36,50 @@ namespace Model
 
     /**
      * <p>A token to indicate the location of the next major or minor version in the
-     * array of major or minor versions of a service template, after the list of major
-     * or minor versions that was previously requested.</p>
+     * array of major or minor versions of a service template, after the current
+     * requested list of service major or minor versions.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>A token to indicate the location of the next major or minor version in the
-     * array of major or minor versions of a service template, after the list of major
-     * or minor versions that was previously requested.</p>
+     * array of major or minor versions of a service template, after the current
+     * requested list of service major or minor versions.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
      * <p>A token to indicate the location of the next major or minor version in the
-     * array of major or minor versions of a service template, after the list of major
-     * or minor versions that was previously requested.</p>
+     * array of major or minor versions of a service template, after the current
+     * requested list of service major or minor versions.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>A token to indicate the location of the next major or minor version in the
-     * array of major or minor versions of a service template, after the list of major
-     * or minor versions that was previously requested.</p>
+     * array of major or minor versions of a service template, after the current
+     * requested list of service major or minor versions.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
      * <p>A token to indicate the location of the next major or minor version in the
-     * array of major or minor versions of a service template, after the list of major
-     * or minor versions that was previously requested.</p>
+     * array of major or minor versions of a service template, after the current
+     * requested list of service major or minor versions.</p>
      */
     inline ListServiceTemplateVersionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>A token to indicate the location of the next major or minor version in the
-     * array of major or minor versions of a service template, after the list of major
-     * or minor versions that was previously requested.</p>
+     * array of major or minor versions of a service template, after the current
+     * requested list of service major or minor versions.</p>
      */
     inline ListServiceTemplateVersionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>A token to indicate the location of the next major or minor version in the
-     * array of major or minor versions of a service template, after the list of major
-     * or minor versions that was previously requested.</p>
+     * array of major or minor versions of a service template, after the current
+     * requested list of service major or minor versions.</p>
      */
     inline ListServiceTemplateVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

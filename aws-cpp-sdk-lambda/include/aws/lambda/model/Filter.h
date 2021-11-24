@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p> An object that specifies a filter criteria. </p><p><h3>See Also:</h3>   <a
+   * <p> A structure within a <code>FilterCriteria</code> object that defines an
+   * event filtering pattern. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Filter">AWS API
    * Reference</a></p>
    */
@@ -41,7 +42,7 @@ namespace Model
      * <p> A filter pattern. For more information on the syntax of a filter pattern,
      * see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax">
-     * Filter criteria syntax</a>. </p>
+     * Filter rule syntax</a>. </p>
      */
     inline const Aws::String& GetPattern() const{ return m_pattern; }
 
@@ -49,7 +50,7 @@ namespace Model
      * <p> A filter pattern. For more information on the syntax of a filter pattern,
      * see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax">
-     * Filter criteria syntax</a>. </p>
+     * Filter rule syntax</a>. </p>
      */
     inline bool PatternHasBeenSet() const { return m_patternHasBeenSet; }
 
@@ -57,7 +58,7 @@ namespace Model
      * <p> A filter pattern. For more information on the syntax of a filter pattern,
      * see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax">
-     * Filter criteria syntax</a>. </p>
+     * Filter rule syntax</a>. </p>
      */
     inline void SetPattern(const Aws::String& value) { m_patternHasBeenSet = true; m_pattern = value; }
 
@@ -65,7 +66,7 @@ namespace Model
      * <p> A filter pattern. For more information on the syntax of a filter pattern,
      * see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax">
-     * Filter criteria syntax</a>. </p>
+     * Filter rule syntax</a>. </p>
      */
     inline void SetPattern(Aws::String&& value) { m_patternHasBeenSet = true; m_pattern = std::move(value); }
 
@@ -73,7 +74,7 @@ namespace Model
      * <p> A filter pattern. For more information on the syntax of a filter pattern,
      * see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax">
-     * Filter criteria syntax</a>. </p>
+     * Filter rule syntax</a>. </p>
      */
     inline void SetPattern(const char* value) { m_patternHasBeenSet = true; m_pattern.assign(value); }
 
@@ -81,7 +82,7 @@ namespace Model
      * <p> A filter pattern. For more information on the syntax of a filter pattern,
      * see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax">
-     * Filter criteria syntax</a>. </p>
+     * Filter rule syntax</a>. </p>
      */
     inline Filter& WithPattern(const Aws::String& value) { SetPattern(value); return *this;}
 
@@ -89,7 +90,7 @@ namespace Model
      * <p> A filter pattern. For more information on the syntax of a filter pattern,
      * see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax">
-     * Filter criteria syntax</a>. </p>
+     * Filter rule syntax</a>. </p>
      */
     inline Filter& WithPattern(Aws::String&& value) { SetPattern(std::move(value)); return *this;}
 
@@ -97,7 +98,7 @@ namespace Model
      * <p> A filter pattern. For more information on the syntax of a filter pattern,
      * see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax">
-     * Filter criteria syntax</a>. </p>
+     * Filter rule syntax</a>. </p>
      */
     inline Filter& WithPattern(const char* value) { SetPattern(value); return *this;}
 

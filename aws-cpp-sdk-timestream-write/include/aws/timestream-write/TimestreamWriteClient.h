@@ -23,6 +23,7 @@
 #include <aws/timestream-write/model/UntagResourceResult.h>
 #include <aws/timestream-write/model/UpdateDatabaseResult.h>
 #include <aws/timestream-write/model/UpdateTableResult.h>
+#include <aws/timestream-write/model/WriteRecordsResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -94,7 +95,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UntagResourceResult, TimestreamWriteError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateDatabaseResult, TimestreamWriteError> UpdateDatabaseOutcome;
         typedef Aws::Utils::Outcome<UpdateTableResult, TimestreamWriteError> UpdateTableOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, TimestreamWriteError> WriteRecordsOutcome;
+        typedef Aws::Utils::Outcome<WriteRecordsResult, TimestreamWriteError> WriteRecordsOutcome;
 
         typedef std::future<CreateDatabaseOutcome> CreateDatabaseOutcomeCallable;
         typedef std::future<CreateTableOutcome> CreateTableOutcomeCallable;
@@ -132,19 +133,19 @@ namespace Model
     typedef std::function<void(const TimestreamWriteClient*, const Model::WriteRecordsRequest&, const Model::WriteRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > WriteRecordsResponseReceivedHandler;
 
   /**
-   * <p>Amazon Timestream is a fast, scalable, fully managed time series database
-   * service that makes it easy to store and analyze trillions of time series data
-   * points per day. With Timestream, you can easily store and analyze IoT sensor
-   * data to derive insights from your IoT applications. You can analyze industrial
-   * telemetry to streamline equipment management and maintenance. You can also store
-   * and analyze log data and metrics to improve the performance and availability of
-   * your applications. Timestream is built from the ground up to effectively ingest,
-   * process, and store time series data. It organizes data to optimize query
-   * processing. It automatically scales based on the volume of data ingested and on
-   * the query volume to ensure you receive optimal performance while inserting and
-   * querying data. As your data grows over time, Timestream’s adaptive query
-   * processing engine spans across storage tiers to provide fast analysis while
-   * reducing costs.</p>
+   * <fullname>Amazon Timestream Write</fullname> <p>Amazon Timestream is a fast,
+   * scalable, fully managed time series database service that makes it easy to store
+   * and analyze trillions of time series data points per day. With Timestream, you
+   * can easily store and analyze IoT sensor data to derive insights from your IoT
+   * applications. You can analyze industrial telemetry to streamline equipment
+   * management and maintenance. You can also store and analyze log data and metrics
+   * to improve the performance and availability of your applications. Timestream is
+   * built from the ground up to effectively ingest, process, and store time series
+   * data. It organizes data to optimize query processing. It automatically scales
+   * based on the volume of data ingested and on the query volume to ensure you
+   * receive optimal performance while inserting and querying data. As your data
+   * grows over time, Timestream’s adaptive query processing engine spans across
+   * storage tiers to provide fast analysis while reducing costs.</p>
    */
   class AWS_TIMESTREAMWRITE_API TimestreamWriteClient : public Aws::Client::AWSJsonClient
   {
@@ -177,11 +178,12 @@ namespace Model
          * <p>Creates a new Timestream database. If the KMS key is not specified, the
          * database will be encrypted with a Timestream managed KMS key located in your
          * account. Refer to <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS
-         * managed KMS keys</a> for more info. Service quotas apply. For more information,
-         * see <a
-         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
-         * Management</a> in the Timestream Developer Guide. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+         * Web Services managed KMS keys</a> for more info. <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+         * quotas apply</a>. See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.create-db.html">code
+         * sample</a> for details. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/CreateDatabase">AWS
          * API Reference</a></p>
          */
@@ -191,11 +193,12 @@ namespace Model
          * <p>Creates a new Timestream database. If the KMS key is not specified, the
          * database will be encrypted with a Timestream managed KMS key located in your
          * account. Refer to <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS
-         * managed KMS keys</a> for more info. Service quotas apply. For more information,
-         * see <a
-         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
-         * Management</a> in the Timestream Developer Guide. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+         * Web Services managed KMS keys</a> for more info. <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+         * quotas apply</a>. See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.create-db.html">code
+         * sample</a> for details. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/CreateDatabase">AWS
          * API Reference</a></p>
          *
@@ -207,11 +210,12 @@ namespace Model
          * <p>Creates a new Timestream database. If the KMS key is not specified, the
          * database will be encrypted with a Timestream managed KMS key located in your
          * account. Refer to <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS
-         * managed KMS keys</a> for more info. Service quotas apply. For more information,
-         * see <a
-         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
-         * Management</a> in the Timestream Developer Guide. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+         * Web Services managed KMS keys</a> for more info. <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+         * quotas apply</a>. See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.create-db.html">code
+         * sample</a> for details. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/CreateDatabase">AWS
          * API Reference</a></p>
          *
@@ -221,13 +225,15 @@ namespace Model
 
         /**
          * <p>The CreateTable operation adds a new table to an existing database in your
-         * account. In an AWS account, table names must be at least unique within each
-         * Region if they are in the same database. You may have identical table names in
-         * the same Region if the tables are in seperate databases. While creating the
-         * table, you must specify the table name, database name, and the retention
-         * properties. Service quotas apply. For more information, see <a
-         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
-         * Management</a> in the Timestream Developer Guide. </p><p><h3>See Also:</h3>   <a
+         * account. In an Amazon Web Services account, table names must be at least unique
+         * within each Region if they are in the same database. You may have identical
+         * table names in the same Region if the tables are in separate databases. While
+         * creating the table, you must specify the table name, database name, and the
+         * retention properties. <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+         * quotas apply</a>. See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.create-table.html">code
+         * sample</a> for details. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/CreateTable">AWS
          * API Reference</a></p>
          */
@@ -235,13 +241,15 @@ namespace Model
 
         /**
          * <p>The CreateTable operation adds a new table to an existing database in your
-         * account. In an AWS account, table names must be at least unique within each
-         * Region if they are in the same database. You may have identical table names in
-         * the same Region if the tables are in seperate databases. While creating the
-         * table, you must specify the table name, database name, and the retention
-         * properties. Service quotas apply. For more information, see <a
-         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
-         * Management</a> in the Timestream Developer Guide. </p><p><h3>See Also:</h3>   <a
+         * account. In an Amazon Web Services account, table names must be at least unique
+         * within each Region if they are in the same database. You may have identical
+         * table names in the same Region if the tables are in separate databases. While
+         * creating the table, you must specify the table name, database name, and the
+         * retention properties. <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+         * quotas apply</a>. See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.create-table.html">code
+         * sample</a> for details. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/CreateTable">AWS
          * API Reference</a></p>
          *
@@ -251,13 +259,15 @@ namespace Model
 
         /**
          * <p>The CreateTable operation adds a new table to an existing database in your
-         * account. In an AWS account, table names must be at least unique within each
-         * Region if they are in the same database. You may have identical table names in
-         * the same Region if the tables are in seperate databases. While creating the
-         * table, you must specify the table name, database name, and the retention
-         * properties. Service quotas apply. For more information, see <a
-         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
-         * Management</a> in the Timestream Developer Guide. </p><p><h3>See Also:</h3>   <a
+         * account. In an Amazon Web Services account, table names must be at least unique
+         * within each Region if they are in the same database. You may have identical
+         * table names in the same Region if the tables are in separate databases. While
+         * creating the table, you must specify the table name, database name, and the
+         * retention properties. <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+         * quotas apply</a>. See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.create-table.html">code
+         * sample</a> for details. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/CreateTable">AWS
          * API Reference</a></p>
          *
@@ -268,11 +278,13 @@ namespace Model
         /**
          * <p>Deletes a given Timestream database. <i>This is an irreversible operation.
          * After a database is deleted, the time series data from its tables cannot be
-         * recovered.</i> </p> <p>All tables in the database must be deleted first, or a
-         * ValidationException error will be thrown. </p> <p>Due to the nature of
+         * recovered.</i> </p>  <p>All tables in the database must be deleted first,
+         * or a ValidationException error will be thrown. </p> <p>Due to the nature of
          * distributed retries, the operation can return either success or a
-         * ResourceNotFoundException. Clients should consider them
-         * equivalent.</p><p><h3>See Also:</h3>   <a
+         * ResourceNotFoundException. Clients should consider them equivalent.</p> 
+         * <p>See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.delete-db.html">code
+         * sample</a> for details.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DeleteDatabase">AWS
          * API Reference</a></p>
          */
@@ -281,11 +293,13 @@ namespace Model
         /**
          * <p>Deletes a given Timestream database. <i>This is an irreversible operation.
          * After a database is deleted, the time series data from its tables cannot be
-         * recovered.</i> </p> <p>All tables in the database must be deleted first, or a
-         * ValidationException error will be thrown. </p> <p>Due to the nature of
+         * recovered.</i> </p>  <p>All tables in the database must be deleted first,
+         * or a ValidationException error will be thrown. </p> <p>Due to the nature of
          * distributed retries, the operation can return either success or a
-         * ResourceNotFoundException. Clients should consider them
-         * equivalent.</p><p><h3>See Also:</h3>   <a
+         * ResourceNotFoundException. Clients should consider them equivalent.</p> 
+         * <p>See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.delete-db.html">code
+         * sample</a> for details.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DeleteDatabase">AWS
          * API Reference</a></p>
          *
@@ -296,11 +310,13 @@ namespace Model
         /**
          * <p>Deletes a given Timestream database. <i>This is an irreversible operation.
          * After a database is deleted, the time series data from its tables cannot be
-         * recovered.</i> </p> <p>All tables in the database must be deleted first, or a
-         * ValidationException error will be thrown. </p> <p>Due to the nature of
+         * recovered.</i> </p>  <p>All tables in the database must be deleted first,
+         * or a ValidationException error will be thrown. </p> <p>Due to the nature of
          * distributed retries, the operation can return either success or a
-         * ResourceNotFoundException. Clients should consider them
-         * equivalent.</p><p><h3>See Also:</h3>   <a
+         * ResourceNotFoundException. Clients should consider them equivalent.</p> 
+         * <p>See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.delete-db.html">code
+         * sample</a> for details.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DeleteDatabase">AWS
          * API Reference</a></p>
          *
@@ -311,9 +327,11 @@ namespace Model
         /**
          * <p>Deletes a given Timestream table. This is an irreversible operation. After a
          * Timestream database table is deleted, the time series data stored in the table
-         * cannot be recovered. </p> <p>Due to the nature of distributed retries, the
-         * operation can return either success or a ResourceNotFoundException. Clients
-         * should consider them equivalent.</p><p><h3>See Also:</h3>   <a
+         * cannot be recovered. </p>  <p>Due to the nature of distributed retries,
+         * the operation can return either success or a ResourceNotFoundException. Clients
+         * should consider them equivalent.</p>  <p>See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.delete-table.html">code
+         * sample</a> for details.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DeleteTable">AWS
          * API Reference</a></p>
          */
@@ -322,9 +340,11 @@ namespace Model
         /**
          * <p>Deletes a given Timestream table. This is an irreversible operation. After a
          * Timestream database table is deleted, the time series data stored in the table
-         * cannot be recovered. </p> <p>Due to the nature of distributed retries, the
-         * operation can return either success or a ResourceNotFoundException. Clients
-         * should consider them equivalent.</p><p><h3>See Also:</h3>   <a
+         * cannot be recovered. </p>  <p>Due to the nature of distributed retries,
+         * the operation can return either success or a ResourceNotFoundException. Clients
+         * should consider them equivalent.</p>  <p>See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.delete-table.html">code
+         * sample</a> for details.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DeleteTable">AWS
          * API Reference</a></p>
          *
@@ -335,9 +355,11 @@ namespace Model
         /**
          * <p>Deletes a given Timestream table. This is an irreversible operation. After a
          * Timestream database table is deleted, the time series data stored in the table
-         * cannot be recovered. </p> <p>Due to the nature of distributed retries, the
-         * operation can return either success or a ResourceNotFoundException. Clients
-         * should consider them equivalent.</p><p><h3>See Also:</h3>   <a
+         * cannot be recovered. </p>  <p>Due to the nature of distributed retries,
+         * the operation can return either success or a ResourceNotFoundException. Clients
+         * should consider them equivalent.</p>  <p>See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.delete-table.html">code
+         * sample</a> for details.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DeleteTable">AWS
          * API Reference</a></p>
          *
@@ -348,9 +370,11 @@ namespace Model
         /**
          * <p>Returns information about the database, including the database name, time
          * that the database was created, and the total number of tables found within the
-         * database. Service quotas apply. For more information, see <a
-         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
-         * Management</a> in the Timestream Developer Guide.</p><p><h3>See Also:</h3>   <a
+         * database. <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+         * quotas apply</a>. See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.describe-db.html">code
+         * sample</a> for details.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DescribeDatabase">AWS
          * API Reference</a></p>
          */
@@ -359,9 +383,11 @@ namespace Model
         /**
          * <p>Returns information about the database, including the database name, time
          * that the database was created, and the total number of tables found within the
-         * database. Service quotas apply. For more information, see <a
-         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
-         * Management</a> in the Timestream Developer Guide.</p><p><h3>See Also:</h3>   <a
+         * database. <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+         * quotas apply</a>. See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.describe-db.html">code
+         * sample</a> for details.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DescribeDatabase">AWS
          * API Reference</a></p>
          *
@@ -372,9 +398,11 @@ namespace Model
         /**
          * <p>Returns information about the database, including the database name, time
          * that the database was created, and the total number of tables found within the
-         * database. Service quotas apply. For more information, see <a
-         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
-         * Management</a> in the Timestream Developer Guide.</p><p><h3>See Also:</h3>   <a
+         * database. <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+         * quotas apply</a>. See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.describe-db.html">code
+         * sample</a> for details.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DescribeDatabase">AWS
          * API Reference</a></p>
          *
@@ -385,15 +413,18 @@ namespace Model
         /**
          * <p>DescribeEndpoints returns a list of available endpoints to make Timestream
          * API calls against. This API is available through both Write and Query.</p>
-         * <p>Because Timestream’s SDKs are designed to transparently work with the
+         * <p>Because the Timestream SDKs are designed to transparently work with the
          * service’s architecture, including the management and mapping of the service
          * endpoints, <i>it is not recommended that you use this API unless</i>:</p> <ul>
-         * <li> <p>Your application uses a programming language that does not yet have SDK
+         * <li> <p>You are using <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/VPCEndpoints">VPC
+         * endpoints (Amazon Web Services PrivateLink) with Timestream</a> </p> </li> <li>
+         * <p>Your application uses a programming language that does not yet have SDK
          * support</p> </li> <li> <p>You require better control over the client-side
-         * implementation</p> </li> </ul> <p>For detailed information on how to use
-         * DescribeEndpoints, see <a
-         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/Using-API.endpoint-discovery.html">The
-         * Endpoint Discovery Pattern and REST APIs</a>.</p><p><h3>See Also:</h3>   <a
+         * implementation</p> </li> </ul> <p>For detailed information on how and when to
+         * use and implement DescribeEndpoints, see <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/Using.API.html#Using-API.endpoint-discovery">The
+         * Endpoint Discovery Pattern</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DescribeEndpoints">AWS
          * API Reference</a></p>
          */
@@ -402,15 +433,18 @@ namespace Model
         /**
          * <p>DescribeEndpoints returns a list of available endpoints to make Timestream
          * API calls against. This API is available through both Write and Query.</p>
-         * <p>Because Timestream’s SDKs are designed to transparently work with the
+         * <p>Because the Timestream SDKs are designed to transparently work with the
          * service’s architecture, including the management and mapping of the service
          * endpoints, <i>it is not recommended that you use this API unless</i>:</p> <ul>
-         * <li> <p>Your application uses a programming language that does not yet have SDK
+         * <li> <p>You are using <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/VPCEndpoints">VPC
+         * endpoints (Amazon Web Services PrivateLink) with Timestream</a> </p> </li> <li>
+         * <p>Your application uses a programming language that does not yet have SDK
          * support</p> </li> <li> <p>You require better control over the client-side
-         * implementation</p> </li> </ul> <p>For detailed information on how to use
-         * DescribeEndpoints, see <a
-         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/Using-API.endpoint-discovery.html">The
-         * Endpoint Discovery Pattern and REST APIs</a>.</p><p><h3>See Also:</h3>   <a
+         * implementation</p> </li> </ul> <p>For detailed information on how and when to
+         * use and implement DescribeEndpoints, see <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/Using.API.html#Using-API.endpoint-discovery">The
+         * Endpoint Discovery Pattern</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DescribeEndpoints">AWS
          * API Reference</a></p>
          *
@@ -421,15 +455,18 @@ namespace Model
         /**
          * <p>DescribeEndpoints returns a list of available endpoints to make Timestream
          * API calls against. This API is available through both Write and Query.</p>
-         * <p>Because Timestream’s SDKs are designed to transparently work with the
+         * <p>Because the Timestream SDKs are designed to transparently work with the
          * service’s architecture, including the management and mapping of the service
          * endpoints, <i>it is not recommended that you use this API unless</i>:</p> <ul>
-         * <li> <p>Your application uses a programming language that does not yet have SDK
+         * <li> <p>You are using <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/VPCEndpoints">VPC
+         * endpoints (Amazon Web Services PrivateLink) with Timestream</a> </p> </li> <li>
+         * <p>Your application uses a programming language that does not yet have SDK
          * support</p> </li> <li> <p>You require better control over the client-side
-         * implementation</p> </li> </ul> <p>For detailed information on how to use
-         * DescribeEndpoints, see <a
-         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/Using-API.endpoint-discovery.html">The
-         * Endpoint Discovery Pattern and REST APIs</a>.</p><p><h3>See Also:</h3>   <a
+         * implementation</p> </li> </ul> <p>For detailed information on how and when to
+         * use and implement DescribeEndpoints, see <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/Using.API.html#Using-API.endpoint-discovery">The
+         * Endpoint Discovery Pattern</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DescribeEndpoints">AWS
          * API Reference</a></p>
          *
@@ -439,10 +476,11 @@ namespace Model
 
         /**
          * <p>Returns information about the table, including the table name, database name,
-         * retention duration of the memory store and the magnetic store. Service quotas
-         * apply. For more information, see <a
-         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
-         * Management</a> in the Timestream Developer Guide. </p><p><h3>See Also:</h3>   <a
+         * retention duration of the memory store and the magnetic store. <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+         * quotas apply</a>. See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.describe-table.html">code
+         * sample</a> for details. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DescribeTable">AWS
          * API Reference</a></p>
          */
@@ -450,10 +488,11 @@ namespace Model
 
         /**
          * <p>Returns information about the table, including the table name, database name,
-         * retention duration of the memory store and the magnetic store. Service quotas
-         * apply. For more information, see <a
-         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
-         * Management</a> in the Timestream Developer Guide. </p><p><h3>See Also:</h3>   <a
+         * retention duration of the memory store and the magnetic store. <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+         * quotas apply</a>. See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.describe-table.html">code
+         * sample</a> for details. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DescribeTable">AWS
          * API Reference</a></p>
          *
@@ -463,10 +502,11 @@ namespace Model
 
         /**
          * <p>Returns information about the table, including the table name, database name,
-         * retention duration of the memory store and the magnetic store. Service quotas
-         * apply. For more information, see <a
-         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
-         * Management</a> in the Timestream Developer Guide. </p><p><h3>See Also:</h3>   <a
+         * retention duration of the memory store and the magnetic store. <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+         * quotas apply</a>. See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.describe-table.html">code
+         * sample</a> for details. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DescribeTable">AWS
          * API Reference</a></p>
          *
@@ -475,20 +515,22 @@ namespace Model
         virtual void DescribeTableAsync(const Model::DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of your Timestream databases. Service quotas apply. For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
-         * Management</a> in the Timestream Developer Guide. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of your Timestream databases. <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+         * quotas apply</a>. See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.list-db.html">code
+         * sample</a> for details. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/ListDatabases">AWS
          * API Reference</a></p>
          */
         virtual Model::ListDatabasesOutcome ListDatabases(const Model::ListDatabasesRequest& request) const;
 
         /**
-         * <p>Returns a list of your Timestream databases. Service quotas apply. For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
-         * Management</a> in the Timestream Developer Guide. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of your Timestream databases. <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+         * quotas apply</a>. See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.list-db.html">code
+         * sample</a> for details. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/ListDatabases">AWS
          * API Reference</a></p>
          *
@@ -497,10 +539,11 @@ namespace Model
         virtual Model::ListDatabasesOutcomeCallable ListDatabasesCallable(const Model::ListDatabasesRequest& request) const;
 
         /**
-         * <p>Returns a list of your Timestream databases. Service quotas apply. For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
-         * Management</a> in the Timestream Developer Guide. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of your Timestream databases. <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+         * quotas apply</a>. See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.list-db.html">code
+         * sample</a> for details. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/ListDatabases">AWS
          * API Reference</a></p>
          *
@@ -510,7 +553,9 @@ namespace Model
 
         /**
          * <p>A list of tables, along with the name, status and retention properties of
-         * each table. </p><p><h3>See Also:</h3>   <a
+         * each table. See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.list-table.html">code
+         * sample</a> for details. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/ListTables">AWS
          * API Reference</a></p>
          */
@@ -518,7 +563,9 @@ namespace Model
 
         /**
          * <p>A list of tables, along with the name, status and retention properties of
-         * each table. </p><p><h3>See Also:</h3>   <a
+         * each table. See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.list-table.html">code
+         * sample</a> for details. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/ListTables">AWS
          * API Reference</a></p>
          *
@@ -528,7 +575,9 @@ namespace Model
 
         /**
          * <p>A list of tables, along with the name, status and retention properties of
-         * each table. </p><p><h3>See Also:</h3>   <a
+         * each table. See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.list-table.html">code
+         * sample</a> for details. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/ListTables">AWS
          * API Reference</a></p>
          *
@@ -624,8 +673,9 @@ namespace Model
          * <p> Modifies the KMS key for an existing database. While updating the database,
          * you must specify the database name and the identifier of the new KMS key to be
          * used (<code>KmsKeyId</code>). If there are any concurrent
-         * <code>UpdateDatabase</code> requests, first writer wins. </p><p><h3>See
-         * Also:</h3>   <a
+         * <code>UpdateDatabase</code> requests, first writer wins. </p> <p>See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.update-db.html">code
+         * sample</a> for details.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/UpdateDatabase">AWS
          * API Reference</a></p>
          */
@@ -635,8 +685,9 @@ namespace Model
          * <p> Modifies the KMS key for an existing database. While updating the database,
          * you must specify the database name and the identifier of the new KMS key to be
          * used (<code>KmsKeyId</code>). If there are any concurrent
-         * <code>UpdateDatabase</code> requests, first writer wins. </p><p><h3>See
-         * Also:</h3>   <a
+         * <code>UpdateDatabase</code> requests, first writer wins. </p> <p>See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.update-db.html">code
+         * sample</a> for details.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/UpdateDatabase">AWS
          * API Reference</a></p>
          *
@@ -648,8 +699,9 @@ namespace Model
          * <p> Modifies the KMS key for an existing database. While updating the database,
          * you must specify the database name and the identifier of the new KMS key to be
          * used (<code>KmsKeyId</code>). If there are any concurrent
-         * <code>UpdateDatabase</code> requests, first writer wins. </p><p><h3>See
-         * Also:</h3>   <a
+         * <code>UpdateDatabase</code> requests, first writer wins. </p> <p>See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.update-db.html">code
+         * sample</a> for details.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/UpdateDatabase">AWS
          * API Reference</a></p>
          *
@@ -664,10 +716,9 @@ namespace Model
          * initially set to 2 hours and then changed to 24 hours, the memory store will be
          * capable of holding 24 hours of data, but will be populated with 24 hours of data
          * 22 hours after this change was made. Timestream does not retrieve data from the
-         * magnetic store to populate the memory store. </p> <p>Service quotas apply. For
-         * more information, see <a
-         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
-         * Management</a> in the Timestream Developer Guide.</p><p><h3>See Also:</h3>   <a
+         * magnetic store to populate the memory store. </p> <p>See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.update-table.html">code
+         * sample</a> for details.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/UpdateTable">AWS
          * API Reference</a></p>
          */
@@ -680,10 +731,9 @@ namespace Model
          * initially set to 2 hours and then changed to 24 hours, the memory store will be
          * capable of holding 24 hours of data, but will be populated with 24 hours of data
          * 22 hours after this change was made. Timestream does not retrieve data from the
-         * magnetic store to populate the memory store. </p> <p>Service quotas apply. For
-         * more information, see <a
-         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
-         * Management</a> in the Timestream Developer Guide.</p><p><h3>See Also:</h3>   <a
+         * magnetic store to populate the memory store. </p> <p>See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.update-table.html">code
+         * sample</a> for details.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/UpdateTable">AWS
          * API Reference</a></p>
          *
@@ -698,10 +748,9 @@ namespace Model
          * initially set to 2 hours and then changed to 24 hours, the memory store will be
          * capable of holding 24 hours of data, but will be populated with 24 hours of data
          * 22 hours after this change was made. Timestream does not retrieve data from the
-         * magnetic store to populate the memory store. </p> <p>Service quotas apply. For
-         * more information, see <a
-         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
-         * Management</a> in the Timestream Developer Guide.</p><p><h3>See Also:</h3>   <a
+         * magnetic store to populate the memory store. </p> <p>See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.update-table.html">code
+         * sample</a> for details.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/UpdateTable">AWS
          * API Reference</a></p>
          *
@@ -720,9 +769,37 @@ namespace Model
          * of data into Timestream, the query results might not reflect the results of a
          * recently completed write operation. The results may also include some stale
          * data. If you repeat the query request after a short time, the results should
-         * return the latest data. Service quotas apply. For more information, see <a
-         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
-         * Management</a> in the Timestream Developer Guide. </p><p><h3>See Also:</h3>   <a
+         * return the latest data. <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+         * quotas apply</a>. </p> <p>See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.write.html">code
+         * sample</a> for details.</p> <p> <b>Upserts</b> </p> <p>You can use the
+         * <code>Version</code> parameter in a <code>WriteRecords</code> request to update
+         * data points. Timestream tracks a version number with each record.
+         * <code>Version</code> defaults to <code>1</code> when not specified for the
+         * record in the request. Timestream will update an existing record’s measure value
+         * along with its <code>Version</code> upon receiving a write request with a higher
+         * <code>Version</code> number for that record. Upon receiving an update request
+         * where the measure value is the same as that of the existing record, Timestream
+         * still updates <code>Version</code>, if it is greater than the existing value of
+         * <code>Version</code>. You can update a data point as many times as desired, as
+         * long as the value of <code>Version</code> continuously increases. </p> <p> For
+         * example, suppose you write a new record without indicating <code>Version</code>
+         * in the request. Timestream will store this record, and set <code>Version</code>
+         * to <code>1</code>. Now, suppose you try to update this record with a
+         * <code>WriteRecords</code> request of the same record with a different measure
+         * value but, like before, do not provide <code>Version</code>. In this case,
+         * Timestream will reject this update with a <code>RejectedRecordsException</code>
+         * since the updated record’s version is not greater than the existing value of
+         * Version. However, if you were to resend the update request with
+         * <code>Version</code> set to <code>2</code>, Timestream would then succeed in
+         * updating the record’s value, and the <code>Version</code> would be set to
+         * <code>2</code>. Next, suppose you sent a <code>WriteRecords</code> request with
+         * this same record and an identical measure value, but with <code>Version</code>
+         * set to <code>3</code>. In this case, Timestream would only update
+         * <code>Version</code> to <code>3</code>. Any further updates would need to send a
+         * version number greater than <code>3</code>, or the update requests would receive
+         * a <code>RejectedRecordsException</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/WriteRecords">AWS
          * API Reference</a></p>
          */
@@ -739,9 +816,37 @@ namespace Model
          * of data into Timestream, the query results might not reflect the results of a
          * recently completed write operation. The results may also include some stale
          * data. If you repeat the query request after a short time, the results should
-         * return the latest data. Service quotas apply. For more information, see <a
-         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
-         * Management</a> in the Timestream Developer Guide. </p><p><h3>See Also:</h3>   <a
+         * return the latest data. <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+         * quotas apply</a>. </p> <p>See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.write.html">code
+         * sample</a> for details.</p> <p> <b>Upserts</b> </p> <p>You can use the
+         * <code>Version</code> parameter in a <code>WriteRecords</code> request to update
+         * data points. Timestream tracks a version number with each record.
+         * <code>Version</code> defaults to <code>1</code> when not specified for the
+         * record in the request. Timestream will update an existing record’s measure value
+         * along with its <code>Version</code> upon receiving a write request with a higher
+         * <code>Version</code> number for that record. Upon receiving an update request
+         * where the measure value is the same as that of the existing record, Timestream
+         * still updates <code>Version</code>, if it is greater than the existing value of
+         * <code>Version</code>. You can update a data point as many times as desired, as
+         * long as the value of <code>Version</code> continuously increases. </p> <p> For
+         * example, suppose you write a new record without indicating <code>Version</code>
+         * in the request. Timestream will store this record, and set <code>Version</code>
+         * to <code>1</code>. Now, suppose you try to update this record with a
+         * <code>WriteRecords</code> request of the same record with a different measure
+         * value but, like before, do not provide <code>Version</code>. In this case,
+         * Timestream will reject this update with a <code>RejectedRecordsException</code>
+         * since the updated record’s version is not greater than the existing value of
+         * Version. However, if you were to resend the update request with
+         * <code>Version</code> set to <code>2</code>, Timestream would then succeed in
+         * updating the record’s value, and the <code>Version</code> would be set to
+         * <code>2</code>. Next, suppose you sent a <code>WriteRecords</code> request with
+         * this same record and an identical measure value, but with <code>Version</code>
+         * set to <code>3</code>. In this case, Timestream would only update
+         * <code>Version</code> to <code>3</code>. Any further updates would need to send a
+         * version number greater than <code>3</code>, or the update requests would receive
+         * a <code>RejectedRecordsException</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/WriteRecords">AWS
          * API Reference</a></p>
          *
@@ -760,9 +865,37 @@ namespace Model
          * of data into Timestream, the query results might not reflect the results of a
          * recently completed write operation. The results may also include some stale
          * data. If you repeat the query request after a short time, the results should
-         * return the latest data. Service quotas apply. For more information, see <a
-         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
-         * Management</a> in the Timestream Developer Guide. </p><p><h3>See Also:</h3>   <a
+         * return the latest data. <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+         * quotas apply</a>. </p> <p>See <a
+         * href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.write.html">code
+         * sample</a> for details.</p> <p> <b>Upserts</b> </p> <p>You can use the
+         * <code>Version</code> parameter in a <code>WriteRecords</code> request to update
+         * data points. Timestream tracks a version number with each record.
+         * <code>Version</code> defaults to <code>1</code> when not specified for the
+         * record in the request. Timestream will update an existing record’s measure value
+         * along with its <code>Version</code> upon receiving a write request with a higher
+         * <code>Version</code> number for that record. Upon receiving an update request
+         * where the measure value is the same as that of the existing record, Timestream
+         * still updates <code>Version</code>, if it is greater than the existing value of
+         * <code>Version</code>. You can update a data point as many times as desired, as
+         * long as the value of <code>Version</code> continuously increases. </p> <p> For
+         * example, suppose you write a new record without indicating <code>Version</code>
+         * in the request. Timestream will store this record, and set <code>Version</code>
+         * to <code>1</code>. Now, suppose you try to update this record with a
+         * <code>WriteRecords</code> request of the same record with a different measure
+         * value but, like before, do not provide <code>Version</code>. In this case,
+         * Timestream will reject this update with a <code>RejectedRecordsException</code>
+         * since the updated record’s version is not greater than the existing value of
+         * Version. However, if you were to resend the update request with
+         * <code>Version</code> set to <code>2</code>, Timestream would then succeed in
+         * updating the record’s value, and the <code>Version</code> would be set to
+         * <code>2</code>. Next, suppose you sent a <code>WriteRecords</code> request with
+         * this same record and an identical measure value, but with <code>Version</code>
+         * set to <code>3</code>. In this case, Timestream would only update
+         * <code>Version</code> to <code>3</code>. Any further updates would need to send a
+         * version number greater than <code>3</code>, or the update requests would receive
+         * a <code>RejectedRecordsException</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/WriteRecords">AWS
          * API Reference</a></p>
          *

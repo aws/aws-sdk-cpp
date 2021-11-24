@@ -5,6 +5,10 @@
 
 #pragma once
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
+#include <aws/customer-profiles/model/JobSchedule.h>
+#include <aws/customer-profiles/model/AutoMerging.h>
+#include <aws/customer-profiles/model/ExportingConfig.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,10 +60,124 @@ namespace Model
      */
     inline MatchingResponse& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
+
+    /**
+     * <p>The day and time when do you want to start the Identity Resolution Job every
+     * week.</p>
+     */
+    inline const JobSchedule& GetJobSchedule() const{ return m_jobSchedule; }
+
+    /**
+     * <p>The day and time when do you want to start the Identity Resolution Job every
+     * week.</p>
+     */
+    inline bool JobScheduleHasBeenSet() const { return m_jobScheduleHasBeenSet; }
+
+    /**
+     * <p>The day and time when do you want to start the Identity Resolution Job every
+     * week.</p>
+     */
+    inline void SetJobSchedule(const JobSchedule& value) { m_jobScheduleHasBeenSet = true; m_jobSchedule = value; }
+
+    /**
+     * <p>The day and time when do you want to start the Identity Resolution Job every
+     * week.</p>
+     */
+    inline void SetJobSchedule(JobSchedule&& value) { m_jobScheduleHasBeenSet = true; m_jobSchedule = std::move(value); }
+
+    /**
+     * <p>The day and time when do you want to start the Identity Resolution Job every
+     * week.</p>
+     */
+    inline MatchingResponse& WithJobSchedule(const JobSchedule& value) { SetJobSchedule(value); return *this;}
+
+    /**
+     * <p>The day and time when do you want to start the Identity Resolution Job every
+     * week.</p>
+     */
+    inline MatchingResponse& WithJobSchedule(JobSchedule&& value) { SetJobSchedule(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Configuration information about the auto-merging process.</p>
+     */
+    inline const AutoMerging& GetAutoMerging() const{ return m_autoMerging; }
+
+    /**
+     * <p>Configuration information about the auto-merging process.</p>
+     */
+    inline bool AutoMergingHasBeenSet() const { return m_autoMergingHasBeenSet; }
+
+    /**
+     * <p>Configuration information about the auto-merging process.</p>
+     */
+    inline void SetAutoMerging(const AutoMerging& value) { m_autoMergingHasBeenSet = true; m_autoMerging = value; }
+
+    /**
+     * <p>Configuration information about the auto-merging process.</p>
+     */
+    inline void SetAutoMerging(AutoMerging&& value) { m_autoMergingHasBeenSet = true; m_autoMerging = std::move(value); }
+
+    /**
+     * <p>Configuration information about the auto-merging process.</p>
+     */
+    inline MatchingResponse& WithAutoMerging(const AutoMerging& value) { SetAutoMerging(value); return *this;}
+
+    /**
+     * <p>Configuration information about the auto-merging process.</p>
+     */
+    inline MatchingResponse& WithAutoMerging(AutoMerging&& value) { SetAutoMerging(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Configuration information for exporting Identity Resolution results, for
+     * example, to an S3 bucket.</p>
+     */
+    inline const ExportingConfig& GetExportingConfig() const{ return m_exportingConfig; }
+
+    /**
+     * <p>Configuration information for exporting Identity Resolution results, for
+     * example, to an S3 bucket.</p>
+     */
+    inline bool ExportingConfigHasBeenSet() const { return m_exportingConfigHasBeenSet; }
+
+    /**
+     * <p>Configuration information for exporting Identity Resolution results, for
+     * example, to an S3 bucket.</p>
+     */
+    inline void SetExportingConfig(const ExportingConfig& value) { m_exportingConfigHasBeenSet = true; m_exportingConfig = value; }
+
+    /**
+     * <p>Configuration information for exporting Identity Resolution results, for
+     * example, to an S3 bucket.</p>
+     */
+    inline void SetExportingConfig(ExportingConfig&& value) { m_exportingConfigHasBeenSet = true; m_exportingConfig = std::move(value); }
+
+    /**
+     * <p>Configuration information for exporting Identity Resolution results, for
+     * example, to an S3 bucket.</p>
+     */
+    inline MatchingResponse& WithExportingConfig(const ExportingConfig& value) { SetExportingConfig(value); return *this;}
+
+    /**
+     * <p>Configuration information for exporting Identity Resolution results, for
+     * example, to an S3 bucket.</p>
+     */
+    inline MatchingResponse& WithExportingConfig(ExportingConfig&& value) { SetExportingConfig(std::move(value)); return *this;}
+
   private:
 
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
+    JobSchedule m_jobSchedule;
+    bool m_jobScheduleHasBeenSet;
+
+    AutoMerging m_autoMerging;
+    bool m_autoMergingHasBeenSet;
+
+    ExportingConfig m_exportingConfig;
+    bool m_exportingConfigHasBeenSet;
   };
 
 } // namespace Model

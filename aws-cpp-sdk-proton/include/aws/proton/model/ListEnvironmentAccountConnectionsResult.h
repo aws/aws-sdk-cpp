@@ -36,43 +36,43 @@ namespace Model
 
     /**
      * <p>An array of environment account connections with details that's returned by
-     * AWS Proton. </p>
+     * Proton. </p>
      */
     inline const Aws::Vector<EnvironmentAccountConnectionSummary>& GetEnvironmentAccountConnections() const{ return m_environmentAccountConnections; }
 
     /**
      * <p>An array of environment account connections with details that's returned by
-     * AWS Proton. </p>
+     * Proton. </p>
      */
     inline void SetEnvironmentAccountConnections(const Aws::Vector<EnvironmentAccountConnectionSummary>& value) { m_environmentAccountConnections = value; }
 
     /**
      * <p>An array of environment account connections with details that's returned by
-     * AWS Proton. </p>
+     * Proton. </p>
      */
     inline void SetEnvironmentAccountConnections(Aws::Vector<EnvironmentAccountConnectionSummary>&& value) { m_environmentAccountConnections = std::move(value); }
 
     /**
      * <p>An array of environment account connections with details that's returned by
-     * AWS Proton. </p>
+     * Proton. </p>
      */
     inline ListEnvironmentAccountConnectionsResult& WithEnvironmentAccountConnections(const Aws::Vector<EnvironmentAccountConnectionSummary>& value) { SetEnvironmentAccountConnections(value); return *this;}
 
     /**
      * <p>An array of environment account connections with details that's returned by
-     * AWS Proton. </p>
+     * Proton. </p>
      */
     inline ListEnvironmentAccountConnectionsResult& WithEnvironmentAccountConnections(Aws::Vector<EnvironmentAccountConnectionSummary>&& value) { SetEnvironmentAccountConnections(std::move(value)); return *this;}
 
     /**
      * <p>An array of environment account connections with details that's returned by
-     * AWS Proton. </p>
+     * Proton. </p>
      */
     inline ListEnvironmentAccountConnectionsResult& AddEnvironmentAccountConnections(const EnvironmentAccountConnectionSummary& value) { m_environmentAccountConnections.push_back(value); return *this; }
 
     /**
      * <p>An array of environment account connections with details that's returned by
-     * AWS Proton. </p>
+     * Proton. </p>
      */
     inline ListEnvironmentAccountConnectionsResult& AddEnvironmentAccountConnections(EnvironmentAccountConnectionSummary&& value) { m_environmentAccountConnections.push_back(std::move(value)); return *this; }
 

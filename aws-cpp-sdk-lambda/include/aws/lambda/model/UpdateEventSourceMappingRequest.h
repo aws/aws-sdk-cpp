@@ -278,7 +278,7 @@ namespace Model
 
 
     /**
-     * <p>(Streams and Amazon SQS) A object that defines the filter criteria used to
+     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
      * determine whether Lambda should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
@@ -286,7 +286,7 @@ namespace Model
     inline const FilterCriteria& GetFilterCriteria() const{ return m_filterCriteria; }
 
     /**
-     * <p>(Streams and Amazon SQS) A object that defines the filter criteria used to
+     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
      * determine whether Lambda should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
@@ -294,7 +294,7 @@ namespace Model
     inline bool FilterCriteriaHasBeenSet() const { return m_filterCriteriaHasBeenSet; }
 
     /**
-     * <p>(Streams and Amazon SQS) A object that defines the filter criteria used to
+     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
      * determine whether Lambda should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
@@ -302,7 +302,7 @@ namespace Model
     inline void SetFilterCriteria(const FilterCriteria& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = value; }
 
     /**
-     * <p>(Streams and Amazon SQS) A object that defines the filter criteria used to
+     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
      * determine whether Lambda should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
@@ -310,7 +310,7 @@ namespace Model
     inline void SetFilterCriteria(FilterCriteria&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::move(value); }
 
     /**
-     * <p>(Streams and Amazon SQS) A object that defines the filter criteria used to
+     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
      * determine whether Lambda should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
@@ -318,7 +318,7 @@ namespace Model
     inline UpdateEventSourceMappingRequest& WithFilterCriteria(const FilterCriteria& value) { SetFilterCriteria(value); return *this;}
 
     /**
-     * <p>(Streams and Amazon SQS) A object that defines the filter criteria used to
+     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
      * determine whether Lambda should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
@@ -579,50 +579,50 @@ namespace Model
 
 
     /**
-     * <p>(Streams only) A list of current response type enums applied to the event
-     * source mapping.</p>
+     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
+     * event source mapping.</p>
      */
     inline const Aws::Vector<FunctionResponseType>& GetFunctionResponseTypes() const{ return m_functionResponseTypes; }
 
     /**
-     * <p>(Streams only) A list of current response type enums applied to the event
-     * source mapping.</p>
+     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
+     * event source mapping.</p>
      */
     inline bool FunctionResponseTypesHasBeenSet() const { return m_functionResponseTypesHasBeenSet; }
 
     /**
-     * <p>(Streams only) A list of current response type enums applied to the event
-     * source mapping.</p>
+     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
+     * event source mapping.</p>
      */
     inline void SetFunctionResponseTypes(const Aws::Vector<FunctionResponseType>& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes = value; }
 
     /**
-     * <p>(Streams only) A list of current response type enums applied to the event
-     * source mapping.</p>
+     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
+     * event source mapping.</p>
      */
     inline void SetFunctionResponseTypes(Aws::Vector<FunctionResponseType>&& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes = std::move(value); }
 
     /**
-     * <p>(Streams only) A list of current response type enums applied to the event
-     * source mapping.</p>
+     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
+     * event source mapping.</p>
      */
     inline UpdateEventSourceMappingRequest& WithFunctionResponseTypes(const Aws::Vector<FunctionResponseType>& value) { SetFunctionResponseTypes(value); return *this;}
 
     /**
-     * <p>(Streams only) A list of current response type enums applied to the event
-     * source mapping.</p>
+     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
+     * event source mapping.</p>
      */
     inline UpdateEventSourceMappingRequest& WithFunctionResponseTypes(Aws::Vector<FunctionResponseType>&& value) { SetFunctionResponseTypes(std::move(value)); return *this;}
 
     /**
-     * <p>(Streams only) A list of current response type enums applied to the event
-     * source mapping.</p>
+     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
+     * event source mapping.</p>
      */
     inline UpdateEventSourceMappingRequest& AddFunctionResponseTypes(const FunctionResponseType& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes.push_back(value); return *this; }
 
     /**
-     * <p>(Streams only) A list of current response type enums applied to the event
-     * source mapping.</p>
+     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
+     * event source mapping.</p>
      */
     inline UpdateEventSourceMappingRequest& AddFunctionResponseTypes(FunctionResponseType&& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes.push_back(std::move(value)); return *this; }
 

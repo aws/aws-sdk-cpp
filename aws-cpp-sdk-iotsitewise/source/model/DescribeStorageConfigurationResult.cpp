@@ -17,12 +17,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeStorageConfigurationResult::DescribeStorageConfigurationResult() : 
-    m_storageType(StorageType::NOT_SET)
+    m_storageType(StorageType::NOT_SET),
+    m_disassociatedDataStorage(DisassociatedDataStorageState::NOT_SET)
 {
 }
 
 DescribeStorageConfigurationResult::DescribeStorageConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_storageType(StorageType::NOT_SET)
+    m_storageType(StorageType::NOT_SET),
+    m_disassociatedDataStorage(DisassociatedDataStorageState::NOT_SET)
 {
   *this = result;
 }
@@ -39,6 +41,12 @@ DescribeStorageConfigurationResult& DescribeStorageConfigurationResult::operator
   if(jsonValue.ValueExists("multiLayerStorage"))
   {
     m_multiLayerStorage = jsonValue.GetObject("multiLayerStorage");
+
+  }
+
+  if(jsonValue.ValueExists("disassociatedDataStorage"))
+  {
+    m_disassociatedDataStorage = DisassociatedDataStorageStateMapper::GetDisassociatedDataStorageStateForName(jsonValue.GetString("disassociatedDataStorage"));
 
   }
 

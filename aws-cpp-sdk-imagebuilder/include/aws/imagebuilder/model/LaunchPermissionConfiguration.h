@@ -137,6 +137,152 @@ namespace Model
      */
     inline LaunchPermissionConfiguration& AddUserGroups(const char* value) { m_userGroupsHasBeenSet = true; m_userGroups.push_back(value); return *this; }
 
+
+    /**
+     * <p>The ARN for an Amazon Web Services Organization that you want to share your
+     * AMI with. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
+     * is Organizations?</a>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetOrganizationArns() const{ return m_organizationArns; }
+
+    /**
+     * <p>The ARN for an Amazon Web Services Organization that you want to share your
+     * AMI with. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
+     * is Organizations?</a>.</p>
+     */
+    inline bool OrganizationArnsHasBeenSet() const { return m_organizationArnsHasBeenSet; }
+
+    /**
+     * <p>The ARN for an Amazon Web Services Organization that you want to share your
+     * AMI with. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
+     * is Organizations?</a>.</p>
+     */
+    inline void SetOrganizationArns(const Aws::Vector<Aws::String>& value) { m_organizationArnsHasBeenSet = true; m_organizationArns = value; }
+
+    /**
+     * <p>The ARN for an Amazon Web Services Organization that you want to share your
+     * AMI with. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
+     * is Organizations?</a>.</p>
+     */
+    inline void SetOrganizationArns(Aws::Vector<Aws::String>&& value) { m_organizationArnsHasBeenSet = true; m_organizationArns = std::move(value); }
+
+    /**
+     * <p>The ARN for an Amazon Web Services Organization that you want to share your
+     * AMI with. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
+     * is Organizations?</a>.</p>
+     */
+    inline LaunchPermissionConfiguration& WithOrganizationArns(const Aws::Vector<Aws::String>& value) { SetOrganizationArns(value); return *this;}
+
+    /**
+     * <p>The ARN for an Amazon Web Services Organization that you want to share your
+     * AMI with. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
+     * is Organizations?</a>.</p>
+     */
+    inline LaunchPermissionConfiguration& WithOrganizationArns(Aws::Vector<Aws::String>&& value) { SetOrganizationArns(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN for an Amazon Web Services Organization that you want to share your
+     * AMI with. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
+     * is Organizations?</a>.</p>
+     */
+    inline LaunchPermissionConfiguration& AddOrganizationArns(const Aws::String& value) { m_organizationArnsHasBeenSet = true; m_organizationArns.push_back(value); return *this; }
+
+    /**
+     * <p>The ARN for an Amazon Web Services Organization that you want to share your
+     * AMI with. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
+     * is Organizations?</a>.</p>
+     */
+    inline LaunchPermissionConfiguration& AddOrganizationArns(Aws::String&& value) { m_organizationArnsHasBeenSet = true; m_organizationArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The ARN for an Amazon Web Services Organization that you want to share your
+     * AMI with. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
+     * is Organizations?</a>.</p>
+     */
+    inline LaunchPermissionConfiguration& AddOrganizationArns(const char* value) { m_organizationArnsHasBeenSet = true; m_organizationArns.push_back(value); return *this; }
+
+
+    /**
+     * <p>The ARN for an Organizations organizational unit (OU) that you want to share
+     * your AMI with. For more information about key concepts for Organizations, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html">Organizations
+     * terminology and concepts</a>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetOrganizationalUnitArns() const{ return m_organizationalUnitArns; }
+
+    /**
+     * <p>The ARN for an Organizations organizational unit (OU) that you want to share
+     * your AMI with. For more information about key concepts for Organizations, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html">Organizations
+     * terminology and concepts</a>.</p>
+     */
+    inline bool OrganizationalUnitArnsHasBeenSet() const { return m_organizationalUnitArnsHasBeenSet; }
+
+    /**
+     * <p>The ARN for an Organizations organizational unit (OU) that you want to share
+     * your AMI with. For more information about key concepts for Organizations, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html">Organizations
+     * terminology and concepts</a>.</p>
+     */
+    inline void SetOrganizationalUnitArns(const Aws::Vector<Aws::String>& value) { m_organizationalUnitArnsHasBeenSet = true; m_organizationalUnitArns = value; }
+
+    /**
+     * <p>The ARN for an Organizations organizational unit (OU) that you want to share
+     * your AMI with. For more information about key concepts for Organizations, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html">Organizations
+     * terminology and concepts</a>.</p>
+     */
+    inline void SetOrganizationalUnitArns(Aws::Vector<Aws::String>&& value) { m_organizationalUnitArnsHasBeenSet = true; m_organizationalUnitArns = std::move(value); }
+
+    /**
+     * <p>The ARN for an Organizations organizational unit (OU) that you want to share
+     * your AMI with. For more information about key concepts for Organizations, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html">Organizations
+     * terminology and concepts</a>.</p>
+     */
+    inline LaunchPermissionConfiguration& WithOrganizationalUnitArns(const Aws::Vector<Aws::String>& value) { SetOrganizationalUnitArns(value); return *this;}
+
+    /**
+     * <p>The ARN for an Organizations organizational unit (OU) that you want to share
+     * your AMI with. For more information about key concepts for Organizations, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html">Organizations
+     * terminology and concepts</a>.</p>
+     */
+    inline LaunchPermissionConfiguration& WithOrganizationalUnitArns(Aws::Vector<Aws::String>&& value) { SetOrganizationalUnitArns(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN for an Organizations organizational unit (OU) that you want to share
+     * your AMI with. For more information about key concepts for Organizations, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html">Organizations
+     * terminology and concepts</a>.</p>
+     */
+    inline LaunchPermissionConfiguration& AddOrganizationalUnitArns(const Aws::String& value) { m_organizationalUnitArnsHasBeenSet = true; m_organizationalUnitArns.push_back(value); return *this; }
+
+    /**
+     * <p>The ARN for an Organizations organizational unit (OU) that you want to share
+     * your AMI with. For more information about key concepts for Organizations, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html">Organizations
+     * terminology and concepts</a>.</p>
+     */
+    inline LaunchPermissionConfiguration& AddOrganizationalUnitArns(Aws::String&& value) { m_organizationalUnitArnsHasBeenSet = true; m_organizationalUnitArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The ARN for an Organizations organizational unit (OU) that you want to share
+     * your AMI with. For more information about key concepts for Organizations, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html">Organizations
+     * terminology and concepts</a>.</p>
+     */
+    inline LaunchPermissionConfiguration& AddOrganizationalUnitArns(const char* value) { m_organizationalUnitArnsHasBeenSet = true; m_organizationalUnitArns.push_back(value); return *this; }
+
   private:
 
     Aws::Vector<Aws::String> m_userIds;
@@ -144,6 +290,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_userGroups;
     bool m_userGroupsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_organizationArns;
+    bool m_organizationArnsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_organizationalUnitArns;
+    bool m_organizationalUnitArnsHasBeenSet;
   };
 
 } // namespace Model

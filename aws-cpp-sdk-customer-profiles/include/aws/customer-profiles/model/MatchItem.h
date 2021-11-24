@@ -124,6 +124,31 @@ namespace Model
      */
     inline MatchItem& AddProfileIds(const char* value) { m_profileIdsHasBeenSet = true; m_profileIds.push_back(value); return *this; }
 
+
+    /**
+     * <p>A number between 0 and 1 that represents the confidence level of assigning
+     * profiles to a matching group. A score of 1 likely indicates an exact match.</p>
+     */
+    inline double GetConfidenceScore() const{ return m_confidenceScore; }
+
+    /**
+     * <p>A number between 0 and 1 that represents the confidence level of assigning
+     * profiles to a matching group. A score of 1 likely indicates an exact match.</p>
+     */
+    inline bool ConfidenceScoreHasBeenSet() const { return m_confidenceScoreHasBeenSet; }
+
+    /**
+     * <p>A number between 0 and 1 that represents the confidence level of assigning
+     * profiles to a matching group. A score of 1 likely indicates an exact match.</p>
+     */
+    inline void SetConfidenceScore(double value) { m_confidenceScoreHasBeenSet = true; m_confidenceScore = value; }
+
+    /**
+     * <p>A number between 0 and 1 that represents the confidence level of assigning
+     * profiles to a matching group. A score of 1 likely indicates an exact match.</p>
+     */
+    inline MatchItem& WithConfidenceScore(double value) { SetConfidenceScore(value); return *this;}
+
   private:
 
     Aws::String m_matchId;
@@ -131,6 +156,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_profileIds;
     bool m_profileIdsHasBeenSet;
+
+    double m_confidenceScore;
+    bool m_confidenceScoreHasBeenSet;
   };
 
 } // namespace Model

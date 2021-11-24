@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>The service pipeline detail data that's returned by AWS Proton.</p>
+     * <p>The service pipeline detail data that's returned by Proton.</p>
      */
     inline const ServicePipeline& GetPipeline() const{ return m_pipeline; }
 
     /**
-     * <p>The service pipeline detail data that's returned by AWS Proton.</p>
+     * <p>The service pipeline detail data that's returned by Proton.</p>
      */
     inline void SetPipeline(const ServicePipeline& value) { m_pipeline = value; }
 
     /**
-     * <p>The service pipeline detail data that's returned by AWS Proton.</p>
+     * <p>The service pipeline detail data that's returned by Proton.</p>
      */
     inline void SetPipeline(ServicePipeline&& value) { m_pipeline = std::move(value); }
 
     /**
-     * <p>The service pipeline detail data that's returned by AWS Proton.</p>
+     * <p>The service pipeline detail data that's returned by Proton.</p>
      */
     inline CancelServicePipelineDeploymentResult& WithPipeline(const ServicePipeline& value) { SetPipeline(value); return *this;}
 
     /**
-     * <p>The service pipeline detail data that's returned by AWS Proton.</p>
+     * <p>The service pipeline detail data that's returned by Proton.</p>
      */
     inline CancelServicePipelineDeploymentResult& WithPipeline(ServicePipeline&& value) { SetPipeline(std::move(value)); return *this;}
 

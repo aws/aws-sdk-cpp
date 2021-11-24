@@ -358,42 +358,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the recommended version of the service template.</p>
+     * <p>The recommended version of the service template.</p>
      */
     inline const Aws::String& GetRecommendedVersion() const{ return m_recommendedVersion; }
 
     /**
-     * <p>The ID of the recommended version of the service template.</p>
+     * <p>The recommended version of the service template.</p>
      */
     inline bool RecommendedVersionHasBeenSet() const { return m_recommendedVersionHasBeenSet; }
 
     /**
-     * <p>The ID of the recommended version of the service template.</p>
+     * <p>The recommended version of the service template.</p>
      */
     inline void SetRecommendedVersion(const Aws::String& value) { m_recommendedVersionHasBeenSet = true; m_recommendedVersion = value; }
 
     /**
-     * <p>The ID of the recommended version of the service template.</p>
+     * <p>The recommended version of the service template.</p>
      */
     inline void SetRecommendedVersion(Aws::String&& value) { m_recommendedVersionHasBeenSet = true; m_recommendedVersion = std::move(value); }
 
     /**
-     * <p>The ID of the recommended version of the service template.</p>
+     * <p>The recommended version of the service template.</p>
      */
     inline void SetRecommendedVersion(const char* value) { m_recommendedVersionHasBeenSet = true; m_recommendedVersion.assign(value); }
 
     /**
-     * <p>The ID of the recommended version of the service template.</p>
+     * <p>The recommended version of the service template.</p>
      */
     inline ServiceTemplate& WithRecommendedVersion(const Aws::String& value) { SetRecommendedVersion(value); return *this;}
 
     /**
-     * <p>The ID of the recommended version of the service template.</p>
+     * <p>The recommended version of the service template.</p>
      */
     inline ServiceTemplate& WithRecommendedVersion(Aws::String&& value) { SetRecommendedVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the recommended version of the service template.</p>
+     * <p>The recommended version of the service template.</p>
      */
     inline ServiceTemplate& WithRecommendedVersion(const char* value) { SetRecommendedVersion(value); return *this;}
 

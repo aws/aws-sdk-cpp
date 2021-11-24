@@ -120,42 +120,42 @@ namespace Model
 
 
     /**
-     * <p>A customer provided encryption key that AWS Proton uses to encrypt data.</p>
+     * <p>A customer provided encryption key that Proton uses to encrypt data.</p>
      */
     inline const Aws::String& GetEncryptionKey() const{ return m_encryptionKey; }
 
     /**
-     * <p>A customer provided encryption key that AWS Proton uses to encrypt data.</p>
+     * <p>A customer provided encryption key that Proton uses to encrypt data.</p>
      */
     inline bool EncryptionKeyHasBeenSet() const { return m_encryptionKeyHasBeenSet; }
 
     /**
-     * <p>A customer provided encryption key that AWS Proton uses to encrypt data.</p>
+     * <p>A customer provided encryption key that Proton uses to encrypt data.</p>
      */
     inline void SetEncryptionKey(const Aws::String& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
 
     /**
-     * <p>A customer provided encryption key that AWS Proton uses to encrypt data.</p>
+     * <p>A customer provided encryption key that Proton uses to encrypt data.</p>
      */
     inline void SetEncryptionKey(Aws::String&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::move(value); }
 
     /**
-     * <p>A customer provided encryption key that AWS Proton uses to encrypt data.</p>
+     * <p>A customer provided encryption key that Proton uses to encrypt data.</p>
      */
     inline void SetEncryptionKey(const char* value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey.assign(value); }
 
     /**
-     * <p>A customer provided encryption key that AWS Proton uses to encrypt data.</p>
+     * <p>A customer provided encryption key that Proton uses to encrypt data.</p>
      */
     inline CreateEnvironmentTemplateRequest& WithEncryptionKey(const Aws::String& value) { SetEncryptionKey(value); return *this;}
 
     /**
-     * <p>A customer provided encryption key that AWS Proton uses to encrypt data.</p>
+     * <p>A customer provided encryption key that Proton uses to encrypt data.</p>
      */
     inline CreateEnvironmentTemplateRequest& WithEncryptionKey(Aws::String&& value) { SetEncryptionKey(std::move(value)); return *this;}
 
     /**
-     * <p>A customer provided encryption key that AWS Proton uses to encrypt data.</p>
+     * <p>A customer provided encryption key that Proton uses to encrypt data.</p>
      */
     inline CreateEnvironmentTemplateRequest& WithEncryptionKey(const char* value) { SetEncryptionKey(value); return *this;}
 
@@ -239,82 +239,82 @@ namespace Model
 
 
     /**
-     * <p>Create tags for your environment template. For more information, see <i>AWS
-     * Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
-     * Proton User Guide</a>.</p>
+     * <p>Create tags for your environment template. For more information, see
+     * <i>Proton resources and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Create tags for your environment template. For more information, see <i>AWS
-     * Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
-     * Proton User Guide</a>.</p>
+     * <p>Create tags for your environment template. For more information, see
+     * <i>Proton resources and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Create tags for your environment template. For more information, see <i>AWS
-     * Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
-     * Proton User Guide</a>.</p>
+     * <p>Create tags for your environment template. For more information, see
+     * <i>Proton resources and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Create tags for your environment template. For more information, see <i>AWS
-     * Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
-     * Proton User Guide</a>.</p>
+     * <p>Create tags for your environment template. For more information, see
+     * <i>Proton resources and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Create tags for your environment template. For more information, see <i>AWS
-     * Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
-     * Proton User Guide</a>.</p>
+     * <p>Create tags for your environment template. For more information, see
+     * <i>Proton resources and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline CreateEnvironmentTemplateRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Create tags for your environment template. For more information, see <i>AWS
-     * Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
-     * Proton User Guide</a>.</p>
+     * <p>Create tags for your environment template. For more information, see
+     * <i>Proton resources and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline CreateEnvironmentTemplateRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Create tags for your environment template. For more information, see <i>AWS
-     * Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
-     * Proton User Guide</a>.</p>
+     * <p>Create tags for your environment template. For more information, see
+     * <i>Proton resources and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline CreateEnvironmentTemplateRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Create tags for your environment template. For more information, see <i>AWS
-     * Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
-     * Proton User Guide</a>.</p>
+     * <p>Create tags for your environment template. For more information, see
+     * <i>Proton resources and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline CreateEnvironmentTemplateRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

@@ -287,99 +287,99 @@ namespace Model
 
 
     /**
-     * <p>The ID of the major version of the service template that was used to create
-     * the service pipeline.</p>
+     * <p>The major version of the service template that was used to create the service
+     * pipeline.</p>
      */
     inline const Aws::String& GetTemplateMajorVersion() const{ return m_templateMajorVersion; }
 
     /**
-     * <p>The ID of the major version of the service template that was used to create
-     * the service pipeline.</p>
+     * <p>The major version of the service template that was used to create the service
+     * pipeline.</p>
      */
     inline bool TemplateMajorVersionHasBeenSet() const { return m_templateMajorVersionHasBeenSet; }
 
     /**
-     * <p>The ID of the major version of the service template that was used to create
-     * the service pipeline.</p>
+     * <p>The major version of the service template that was used to create the service
+     * pipeline.</p>
      */
     inline void SetTemplateMajorVersion(const Aws::String& value) { m_templateMajorVersionHasBeenSet = true; m_templateMajorVersion = value; }
 
     /**
-     * <p>The ID of the major version of the service template that was used to create
-     * the service pipeline.</p>
+     * <p>The major version of the service template that was used to create the service
+     * pipeline.</p>
      */
     inline void SetTemplateMajorVersion(Aws::String&& value) { m_templateMajorVersionHasBeenSet = true; m_templateMajorVersion = std::move(value); }
 
     /**
-     * <p>The ID of the major version of the service template that was used to create
-     * the service pipeline.</p>
+     * <p>The major version of the service template that was used to create the service
+     * pipeline.</p>
      */
     inline void SetTemplateMajorVersion(const char* value) { m_templateMajorVersionHasBeenSet = true; m_templateMajorVersion.assign(value); }
 
     /**
-     * <p>The ID of the major version of the service template that was used to create
-     * the service pipeline.</p>
+     * <p>The major version of the service template that was used to create the service
+     * pipeline.</p>
      */
     inline ServicePipeline& WithTemplateMajorVersion(const Aws::String& value) { SetTemplateMajorVersion(value); return *this;}
 
     /**
-     * <p>The ID of the major version of the service template that was used to create
-     * the service pipeline.</p>
+     * <p>The major version of the service template that was used to create the service
+     * pipeline.</p>
      */
     inline ServicePipeline& WithTemplateMajorVersion(Aws::String&& value) { SetTemplateMajorVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the major version of the service template that was used to create
-     * the service pipeline.</p>
+     * <p>The major version of the service template that was used to create the service
+     * pipeline.</p>
      */
     inline ServicePipeline& WithTemplateMajorVersion(const char* value) { SetTemplateMajorVersion(value); return *this;}
 
 
     /**
-     * <p>The ID of the minor version of the service template that was used to create
-     * the service pipeline.</p>
+     * <p>The minor version of the service template that was used to create the service
+     * pipeline.</p>
      */
     inline const Aws::String& GetTemplateMinorVersion() const{ return m_templateMinorVersion; }
 
     /**
-     * <p>The ID of the minor version of the service template that was used to create
-     * the service pipeline.</p>
+     * <p>The minor version of the service template that was used to create the service
+     * pipeline.</p>
      */
     inline bool TemplateMinorVersionHasBeenSet() const { return m_templateMinorVersionHasBeenSet; }
 
     /**
-     * <p>The ID of the minor version of the service template that was used to create
-     * the service pipeline.</p>
+     * <p>The minor version of the service template that was used to create the service
+     * pipeline.</p>
      */
     inline void SetTemplateMinorVersion(const Aws::String& value) { m_templateMinorVersionHasBeenSet = true; m_templateMinorVersion = value; }
 
     /**
-     * <p>The ID of the minor version of the service template that was used to create
-     * the service pipeline.</p>
+     * <p>The minor version of the service template that was used to create the service
+     * pipeline.</p>
      */
     inline void SetTemplateMinorVersion(Aws::String&& value) { m_templateMinorVersionHasBeenSet = true; m_templateMinorVersion = std::move(value); }
 
     /**
-     * <p>The ID of the minor version of the service template that was used to create
-     * the service pipeline.</p>
+     * <p>The minor version of the service template that was used to create the service
+     * pipeline.</p>
      */
     inline void SetTemplateMinorVersion(const char* value) { m_templateMinorVersionHasBeenSet = true; m_templateMinorVersion.assign(value); }
 
     /**
-     * <p>The ID of the minor version of the service template that was used to create
-     * the service pipeline.</p>
+     * <p>The minor version of the service template that was used to create the service
+     * pipeline.</p>
      */
     inline ServicePipeline& WithTemplateMinorVersion(const Aws::String& value) { SetTemplateMinorVersion(value); return *this;}
 
     /**
-     * <p>The ID of the minor version of the service template that was used to create
-     * the service pipeline.</p>
+     * <p>The minor version of the service template that was used to create the service
+     * pipeline.</p>
      */
     inline ServicePipeline& WithTemplateMinorVersion(Aws::String&& value) { SetTemplateMinorVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the minor version of the service template that was used to create
-     * the service pipeline.</p>
+     * <p>The minor version of the service template that was used to create the service
+     * pipeline.</p>
      */
     inline ServicePipeline& WithTemplateMinorVersion(const char* value) { SetTemplateMinorVersion(value); return *this;}
 

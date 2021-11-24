@@ -191,25 +191,39 @@ namespace Model
     inline CreateUserGroupResult& AddUserIds(const char* value) { m_userIds.push_back(value); return *this; }
 
 
-    
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
     inline const Aws::String& GetMinimumEngineVersion() const{ return m_minimumEngineVersion; }
 
-    
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
     inline void SetMinimumEngineVersion(const Aws::String& value) { m_minimumEngineVersion = value; }
 
-    
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
     inline void SetMinimumEngineVersion(Aws::String&& value) { m_minimumEngineVersion = std::move(value); }
 
-    
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
     inline void SetMinimumEngineVersion(const char* value) { m_minimumEngineVersion.assign(value); }
 
-    
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
     inline CreateUserGroupResult& WithMinimumEngineVersion(const Aws::String& value) { SetMinimumEngineVersion(value); return *this;}
 
-    
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
     inline CreateUserGroupResult& WithMinimumEngineVersion(Aws::String&& value) { SetMinimumEngineVersion(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
     inline CreateUserGroupResult& WithMinimumEngineVersion(const char* value) { SetMinimumEngineVersion(value); return *this;}
 
 

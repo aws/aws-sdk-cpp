@@ -39,58 +39,58 @@ namespace Model
 
 
     /**
-     * <p>When included, if two identicial requests are made with the same client
-     * token, AWS Proton returns the environment template version that the first
-     * request created.</p>
+     * <p>When included, if two identical requests are made with the same client token,
+     * Proton returns the environment template version that the first request
+     * created.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>When included, if two identicial requests are made with the same client
-     * token, AWS Proton returns the environment template version that the first
-     * request created.</p>
+     * <p>When included, if two identical requests are made with the same client token,
+     * Proton returns the environment template version that the first request
+     * created.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>When included, if two identicial requests are made with the same client
-     * token, AWS Proton returns the environment template version that the first
-     * request created.</p>
+     * <p>When included, if two identical requests are made with the same client token,
+     * Proton returns the environment template version that the first request
+     * created.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>When included, if two identicial requests are made with the same client
-     * token, AWS Proton returns the environment template version that the first
-     * request created.</p>
+     * <p>When included, if two identical requests are made with the same client token,
+     * Proton returns the environment template version that the first request
+     * created.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>When included, if two identicial requests are made with the same client
-     * token, AWS Proton returns the environment template version that the first
-     * request created.</p>
+     * <p>When included, if two identical requests are made with the same client token,
+     * Proton returns the environment template version that the first request
+     * created.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>When included, if two identicial requests are made with the same client
-     * token, AWS Proton returns the environment template version that the first
-     * request created.</p>
+     * <p>When included, if two identical requests are made with the same client token,
+     * Proton returns the environment template version that the first request
+     * created.</p>
      */
     inline CreateEnvironmentTemplateVersionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>When included, if two identicial requests are made with the same client
-     * token, AWS Proton returns the environment template version that the first
-     * request created.</p>
+     * <p>When included, if two identical requests are made with the same client token,
+     * Proton returns the environment template version that the first request
+     * created.</p>
      */
     inline CreateEnvironmentTemplateVersionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>When included, if two identicial requests are made with the same client
-     * token, AWS Proton returns the environment template version that the first
-     * request created.</p>
+     * <p>When included, if two identical requests are made with the same client token,
+     * Proton returns the environment template version that the first request
+     * created.</p>
      */
     inline CreateEnvironmentTemplateVersionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -138,57 +138,57 @@ namespace Model
 
     /**
      * <p>To create a new minor version of the environment template, include a
-     * <code>majorVersion</code>.</p> <p>To create a new major and minor version of the
-     * environment template, <i>exclude</i> <code>majorVersion</code>.</p>
+     * <code>major Version</code>.</p> <p>To create a new major and minor version of
+     * the environment template, <i>exclude</i> <code>major Version</code>.</p>
      */
     inline const Aws::String& GetMajorVersion() const{ return m_majorVersion; }
 
     /**
      * <p>To create a new minor version of the environment template, include a
-     * <code>majorVersion</code>.</p> <p>To create a new major and minor version of the
-     * environment template, <i>exclude</i> <code>majorVersion</code>.</p>
+     * <code>major Version</code>.</p> <p>To create a new major and minor version of
+     * the environment template, <i>exclude</i> <code>major Version</code>.</p>
      */
     inline bool MajorVersionHasBeenSet() const { return m_majorVersionHasBeenSet; }
 
     /**
      * <p>To create a new minor version of the environment template, include a
-     * <code>majorVersion</code>.</p> <p>To create a new major and minor version of the
-     * environment template, <i>exclude</i> <code>majorVersion</code>.</p>
+     * <code>major Version</code>.</p> <p>To create a new major and minor version of
+     * the environment template, <i>exclude</i> <code>major Version</code>.</p>
      */
     inline void SetMajorVersion(const Aws::String& value) { m_majorVersionHasBeenSet = true; m_majorVersion = value; }
 
     /**
      * <p>To create a new minor version of the environment template, include a
-     * <code>majorVersion</code>.</p> <p>To create a new major and minor version of the
-     * environment template, <i>exclude</i> <code>majorVersion</code>.</p>
+     * <code>major Version</code>.</p> <p>To create a new major and minor version of
+     * the environment template, <i>exclude</i> <code>major Version</code>.</p>
      */
     inline void SetMajorVersion(Aws::String&& value) { m_majorVersionHasBeenSet = true; m_majorVersion = std::move(value); }
 
     /**
      * <p>To create a new minor version of the environment template, include a
-     * <code>majorVersion</code>.</p> <p>To create a new major and minor version of the
-     * environment template, <i>exclude</i> <code>majorVersion</code>.</p>
+     * <code>major Version</code>.</p> <p>To create a new major and minor version of
+     * the environment template, <i>exclude</i> <code>major Version</code>.</p>
      */
     inline void SetMajorVersion(const char* value) { m_majorVersionHasBeenSet = true; m_majorVersion.assign(value); }
 
     /**
      * <p>To create a new minor version of the environment template, include a
-     * <code>majorVersion</code>.</p> <p>To create a new major and minor version of the
-     * environment template, <i>exclude</i> <code>majorVersion</code>.</p>
+     * <code>major Version</code>.</p> <p>To create a new major and minor version of
+     * the environment template, <i>exclude</i> <code>major Version</code>.</p>
      */
     inline CreateEnvironmentTemplateVersionRequest& WithMajorVersion(const Aws::String& value) { SetMajorVersion(value); return *this;}
 
     /**
      * <p>To create a new minor version of the environment template, include a
-     * <code>majorVersion</code>.</p> <p>To create a new major and minor version of the
-     * environment template, <i>exclude</i> <code>majorVersion</code>.</p>
+     * <code>major Version</code>.</p> <p>To create a new major and minor version of
+     * the environment template, <i>exclude</i> <code>major Version</code>.</p>
      */
     inline CreateEnvironmentTemplateVersionRequest& WithMajorVersion(Aws::String&& value) { SetMajorVersion(std::move(value)); return *this;}
 
     /**
      * <p>To create a new minor version of the environment template, include a
-     * <code>majorVersion</code>.</p> <p>To create a new major and minor version of the
-     * environment template, <i>exclude</i> <code>majorVersion</code>.</p>
+     * <code>major Version</code>.</p> <p>To create a new major and minor version of
+     * the environment template, <i>exclude</i> <code>major Version</code>.</p>
      */
     inline CreateEnvironmentTemplateVersionRequest& WithMajorVersion(const char* value) { SetMajorVersion(value); return *this;}
 

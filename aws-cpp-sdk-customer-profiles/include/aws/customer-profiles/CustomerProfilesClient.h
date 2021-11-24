@@ -20,13 +20,16 @@
 #include <aws/customer-profiles/model/DeleteProfileKeyResult.h>
 #include <aws/customer-profiles/model/DeleteProfileObjectResult.h>
 #include <aws/customer-profiles/model/DeleteProfileObjectTypeResult.h>
+#include <aws/customer-profiles/model/GetAutoMergingPreviewResult.h>
 #include <aws/customer-profiles/model/GetDomainResult.h>
+#include <aws/customer-profiles/model/GetIdentityResolutionJobResult.h>
 #include <aws/customer-profiles/model/GetIntegrationResult.h>
 #include <aws/customer-profiles/model/GetMatchesResult.h>
 #include <aws/customer-profiles/model/GetProfileObjectTypeResult.h>
 #include <aws/customer-profiles/model/GetProfileObjectTypeTemplateResult.h>
 #include <aws/customer-profiles/model/ListAccountIntegrationsResult.h>
 #include <aws/customer-profiles/model/ListDomainsResult.h>
+#include <aws/customer-profiles/model/ListIdentityResolutionJobsResult.h>
 #include <aws/customer-profiles/model/ListIntegrationsResult.h>
 #include <aws/customer-profiles/model/ListProfileObjectTypeTemplatesResult.h>
 #include <aws/customer-profiles/model/ListProfileObjectTypesResult.h>
@@ -89,13 +92,16 @@ namespace Model
         class DeleteProfileKeyRequest;
         class DeleteProfileObjectRequest;
         class DeleteProfileObjectTypeRequest;
+        class GetAutoMergingPreviewRequest;
         class GetDomainRequest;
+        class GetIdentityResolutionJobRequest;
         class GetIntegrationRequest;
         class GetMatchesRequest;
         class GetProfileObjectTypeRequest;
         class GetProfileObjectTypeTemplateRequest;
         class ListAccountIntegrationsRequest;
         class ListDomainsRequest;
+        class ListIdentityResolutionJobsRequest;
         class ListIntegrationsRequest;
         class ListProfileObjectTypeTemplatesRequest;
         class ListProfileObjectTypesRequest;
@@ -120,13 +126,16 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteProfileKeyResult, CustomerProfilesError> DeleteProfileKeyOutcome;
         typedef Aws::Utils::Outcome<DeleteProfileObjectResult, CustomerProfilesError> DeleteProfileObjectOutcome;
         typedef Aws::Utils::Outcome<DeleteProfileObjectTypeResult, CustomerProfilesError> DeleteProfileObjectTypeOutcome;
+        typedef Aws::Utils::Outcome<GetAutoMergingPreviewResult, CustomerProfilesError> GetAutoMergingPreviewOutcome;
         typedef Aws::Utils::Outcome<GetDomainResult, CustomerProfilesError> GetDomainOutcome;
+        typedef Aws::Utils::Outcome<GetIdentityResolutionJobResult, CustomerProfilesError> GetIdentityResolutionJobOutcome;
         typedef Aws::Utils::Outcome<GetIntegrationResult, CustomerProfilesError> GetIntegrationOutcome;
         typedef Aws::Utils::Outcome<GetMatchesResult, CustomerProfilesError> GetMatchesOutcome;
         typedef Aws::Utils::Outcome<GetProfileObjectTypeResult, CustomerProfilesError> GetProfileObjectTypeOutcome;
         typedef Aws::Utils::Outcome<GetProfileObjectTypeTemplateResult, CustomerProfilesError> GetProfileObjectTypeTemplateOutcome;
         typedef Aws::Utils::Outcome<ListAccountIntegrationsResult, CustomerProfilesError> ListAccountIntegrationsOutcome;
         typedef Aws::Utils::Outcome<ListDomainsResult, CustomerProfilesError> ListDomainsOutcome;
+        typedef Aws::Utils::Outcome<ListIdentityResolutionJobsResult, CustomerProfilesError> ListIdentityResolutionJobsOutcome;
         typedef Aws::Utils::Outcome<ListIntegrationsResult, CustomerProfilesError> ListIntegrationsOutcome;
         typedef Aws::Utils::Outcome<ListProfileObjectTypeTemplatesResult, CustomerProfilesError> ListProfileObjectTypeTemplatesOutcome;
         typedef Aws::Utils::Outcome<ListProfileObjectTypesResult, CustomerProfilesError> ListProfileObjectTypesOutcome;
@@ -151,13 +160,16 @@ namespace Model
         typedef std::future<DeleteProfileKeyOutcome> DeleteProfileKeyOutcomeCallable;
         typedef std::future<DeleteProfileObjectOutcome> DeleteProfileObjectOutcomeCallable;
         typedef std::future<DeleteProfileObjectTypeOutcome> DeleteProfileObjectTypeOutcomeCallable;
+        typedef std::future<GetAutoMergingPreviewOutcome> GetAutoMergingPreviewOutcomeCallable;
         typedef std::future<GetDomainOutcome> GetDomainOutcomeCallable;
+        typedef std::future<GetIdentityResolutionJobOutcome> GetIdentityResolutionJobOutcomeCallable;
         typedef std::future<GetIntegrationOutcome> GetIntegrationOutcomeCallable;
         typedef std::future<GetMatchesOutcome> GetMatchesOutcomeCallable;
         typedef std::future<GetProfileObjectTypeOutcome> GetProfileObjectTypeOutcomeCallable;
         typedef std::future<GetProfileObjectTypeTemplateOutcome> GetProfileObjectTypeTemplateOutcomeCallable;
         typedef std::future<ListAccountIntegrationsOutcome> ListAccountIntegrationsOutcomeCallable;
         typedef std::future<ListDomainsOutcome> ListDomainsOutcomeCallable;
+        typedef std::future<ListIdentityResolutionJobsOutcome> ListIdentityResolutionJobsOutcomeCallable;
         typedef std::future<ListIntegrationsOutcome> ListIntegrationsOutcomeCallable;
         typedef std::future<ListProfileObjectTypeTemplatesOutcome> ListProfileObjectTypeTemplatesOutcomeCallable;
         typedef std::future<ListProfileObjectTypesOutcome> ListProfileObjectTypesOutcomeCallable;
@@ -185,13 +197,16 @@ namespace Model
     typedef std::function<void(const CustomerProfilesClient*, const Model::DeleteProfileKeyRequest&, const Model::DeleteProfileKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProfileKeyResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::DeleteProfileObjectRequest&, const Model::DeleteProfileObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProfileObjectResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::DeleteProfileObjectTypeRequest&, const Model::DeleteProfileObjectTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProfileObjectTypeResponseReceivedHandler;
+    typedef std::function<void(const CustomerProfilesClient*, const Model::GetAutoMergingPreviewRequest&, const Model::GetAutoMergingPreviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAutoMergingPreviewResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetDomainRequest&, const Model::GetDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainResponseReceivedHandler;
+    typedef std::function<void(const CustomerProfilesClient*, const Model::GetIdentityResolutionJobRequest&, const Model::GetIdentityResolutionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdentityResolutionJobResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetIntegrationRequest&, const Model::GetIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIntegrationResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetMatchesRequest&, const Model::GetMatchesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMatchesResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetProfileObjectTypeRequest&, const Model::GetProfileObjectTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProfileObjectTypeResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetProfileObjectTypeTemplateRequest&, const Model::GetProfileObjectTypeTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProfileObjectTypeTemplateResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::ListAccountIntegrationsRequest&, const Model::ListAccountIntegrationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccountIntegrationsResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::ListDomainsRequest&, const Model::ListDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainsResponseReceivedHandler;
+    typedef std::function<void(const CustomerProfilesClient*, const Model::ListIdentityResolutionJobsRequest&, const Model::ListIdentityResolutionJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIdentityResolutionJobsResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::ListIntegrationsRequest&, const Model::ListIntegrationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIntegrationsResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::ListProfileObjectTypeTemplatesRequest&, const Model::ListProfileObjectTypeTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProfileObjectTypeTemplatesResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::ListProfileObjectTypesRequest&, const Model::ListProfileObjectTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProfileObjectTypesResponseReceivedHandler;
@@ -292,8 +307,11 @@ namespace Model
          * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a>
          * to enable <a
          * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity
-         * resolution</a>: set <code>Matching</code> to true. </p><p><h3>See Also:</h3>  
-         * <a
+         * resolution</a>: set <code>Matching</code> to true. </p> <p>To prevent
+         * cross-service impersonation when you call this API, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service
+         * confused deputy prevention</a> for sample policies that you should apply.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateDomain">AWS
          * API Reference</a></p>
          */
@@ -309,8 +327,11 @@ namespace Model
          * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a>
          * to enable <a
          * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity
-         * resolution</a>: set <code>Matching</code> to true. </p><p><h3>See Also:</h3>  
-         * <a
+         * resolution</a>: set <code>Matching</code> to true. </p> <p>To prevent
+         * cross-service impersonation when you call this API, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service
+         * confused deputy prevention</a> for sample policies that you should apply.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateDomain">AWS
          * API Reference</a></p>
          *
@@ -328,8 +349,11 @@ namespace Model
          * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a>
          * to enable <a
          * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity
-         * resolution</a>: set <code>Matching</code> to true. </p><p><h3>See Also:</h3>  
-         * <a
+         * resolution</a>: set <code>Matching</code> to true. </p> <p>To prevent
+         * cross-service impersonation when you call this API, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service
+         * confused deputy prevention</a> for sample policies that you should apply.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateDomain">AWS
          * API Reference</a></p>
          *
@@ -543,6 +567,67 @@ namespace Model
         virtual void DeleteProfileObjectTypeAsync(const Model::DeleteProfileObjectTypeRequest& request, const DeleteProfileObjectTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Tests the auto-merging settings of your Identity Resolution Job without
+         * merging your data. It randomly selects a sample of matching groups from the
+         * existing matching results, and applies the automerging settings that you
+         * provided. You can then view the number of profiles in the sample, the number of
+         * matches, and the number of profiles identified to be merged. This enables you to
+         * evaluate the accuracy of the attributes in your matching list. </p> <p>You can't
+         * view which profiles are matched and would be merged.</p>  <p>We
+         * strongly recommend you use this API to do a dry run of the automerging process
+         * before running the Identity Resolution Job. Include <b>at least</b> two matching
+         * attributes. If your matching list includes too few attributes (such as only
+         * <code>FirstName</code> or only <code>LastName</code>), there may be a large
+         * number of matches. This increases the chances of erroneous merges.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetAutoMergingPreview">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAutoMergingPreviewOutcome GetAutoMergingPreview(const Model::GetAutoMergingPreviewRequest& request) const;
+
+        /**
+         * <p>Tests the auto-merging settings of your Identity Resolution Job without
+         * merging your data. It randomly selects a sample of matching groups from the
+         * existing matching results, and applies the automerging settings that you
+         * provided. You can then view the number of profiles in the sample, the number of
+         * matches, and the number of profiles identified to be merged. This enables you to
+         * evaluate the accuracy of the attributes in your matching list. </p> <p>You can't
+         * view which profiles are matched and would be merged.</p>  <p>We
+         * strongly recommend you use this API to do a dry run of the automerging process
+         * before running the Identity Resolution Job. Include <b>at least</b> two matching
+         * attributes. If your matching list includes too few attributes (such as only
+         * <code>FirstName</code> or only <code>LastName</code>), there may be a large
+         * number of matches. This increases the chances of erroneous merges.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetAutoMergingPreview">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAutoMergingPreviewOutcomeCallable GetAutoMergingPreviewCallable(const Model::GetAutoMergingPreviewRequest& request) const;
+
+        /**
+         * <p>Tests the auto-merging settings of your Identity Resolution Job without
+         * merging your data. It randomly selects a sample of matching groups from the
+         * existing matching results, and applies the automerging settings that you
+         * provided. You can then view the number of profiles in the sample, the number of
+         * matches, and the number of profiles identified to be merged. This enables you to
+         * evaluate the accuracy of the attributes in your matching list. </p> <p>You can't
+         * view which profiles are matched and would be merged.</p>  <p>We
+         * strongly recommend you use this API to do a dry run of the automerging process
+         * before running the Identity Resolution Job. Include <b>at least</b> two matching
+         * attributes. If your matching list includes too few attributes (such as only
+         * <code>FirstName</code> or only <code>LastName</code>), there may be a large
+         * number of matches. This increases the chances of erroneous merges.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetAutoMergingPreview">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAutoMergingPreviewAsync(const Model::GetAutoMergingPreviewRequest& request, const GetAutoMergingPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns information about a specific domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetDomain">AWS
          * API Reference</a></p>
@@ -566,6 +651,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDomainAsync(const Model::GetDomainRequest& request, const GetDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about an Identity Resolution Job in a specific domain.
+         * </p> <p>Identity Resolution Jobs are set up using the Amazon Connect admin
+         * console. For more information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/use-identity-resolution.html">Use
+         * Identity Resolution to consolidate similar profiles</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetIdentityResolutionJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetIdentityResolutionJobOutcome GetIdentityResolutionJob(const Model::GetIdentityResolutionJobRequest& request) const;
+
+        /**
+         * <p>Returns information about an Identity Resolution Job in a specific domain.
+         * </p> <p>Identity Resolution Jobs are set up using the Amazon Connect admin
+         * console. For more information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/use-identity-resolution.html">Use
+         * Identity Resolution to consolidate similar profiles</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetIdentityResolutionJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetIdentityResolutionJobOutcomeCallable GetIdentityResolutionJobCallable(const Model::GetIdentityResolutionJobRequest& request) const;
+
+        /**
+         * <p>Returns information about an Identity Resolution Job in a specific domain.
+         * </p> <p>Identity Resolution Jobs are set up using the Amazon Connect admin
+         * console. For more information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/use-identity-resolution.html">Use
+         * Identity Resolution to consolidate similar profiles</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetIdentityResolutionJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetIdentityResolutionJobAsync(const Model::GetIdentityResolutionJobRequest& request, const GetIdentityResolutionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an integration for a domain.</p><p><h3>See Also:</h3>   <a
@@ -600,13 +725,21 @@ namespace Model
          * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a>
          * to enable identity resolution: set <code>Matching</code> to true.</p>
          * <p>GetMatches returns potentially matching profiles, based on the results of the
-         * latest run of a machine learning process. </p>  <p>Amazon Connect
-         * starts a batch process every Saturday at 12AM UTC to identify matching profiles.
-         * The results are returned up to seven days after the Saturday run.</p>
-         *  <p>Amazon Connect uses the following profile attributes to identify
-         * matches:</p> <ul> <li> <p>PhoneNumber</p> </li> <li> <p>HomePhoneNumber</p>
-         * </li> <li> <p>BusinessPhoneNumber</p> </li> <li> <p>MobilePhoneNumber</p> </li>
-         * <li> <p>EmailAddress</p> </li> <li> <p>PersonalEmailAddress</p> </li> <li>
+         * latest run of a machine learning process. </p>  <p>The process of
+         * matching duplicate profiles. If <code>Matching</code> = <code>true</code>,
+         * Amazon Connect Customer Profiles starts a weekly batch process called Identity
+         * Resolution Job. If you do not specify a date and time for Identity Resolution
+         * Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate
+         * profiles in your domains. </p> <p>After the Identity Resolution Job completes,
+         * use the <a
+         * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+         * API to return and review the results. Or, if you have configured
+         * <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can
+         * download the results from S3.</p>  <p>Amazon Connect uses the
+         * following profile attributes to identify matches:</p> <ul> <li>
+         * <p>PhoneNumber</p> </li> <li> <p>HomePhoneNumber</p> </li> <li>
+         * <p>BusinessPhoneNumber</p> </li> <li> <p>MobilePhoneNumber</p> </li> <li>
+         * <p>EmailAddress</p> </li> <li> <p>PersonalEmailAddress</p> </li> <li>
          * <p>BusinessEmailAddress</p> </li> <li> <p>FullName</p> </li> <li>
          * <p>BusinessName</p> </li> </ul> <p>For example, two or more profiles—with
          * spelling mistakes such as <b>John Doe</b> and <b>Jhn Doe</b>, or different
@@ -628,13 +761,21 @@ namespace Model
          * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a>
          * to enable identity resolution: set <code>Matching</code> to true.</p>
          * <p>GetMatches returns potentially matching profiles, based on the results of the
-         * latest run of a machine learning process. </p>  <p>Amazon Connect
-         * starts a batch process every Saturday at 12AM UTC to identify matching profiles.
-         * The results are returned up to seven days after the Saturday run.</p>
-         *  <p>Amazon Connect uses the following profile attributes to identify
-         * matches:</p> <ul> <li> <p>PhoneNumber</p> </li> <li> <p>HomePhoneNumber</p>
-         * </li> <li> <p>BusinessPhoneNumber</p> </li> <li> <p>MobilePhoneNumber</p> </li>
-         * <li> <p>EmailAddress</p> </li> <li> <p>PersonalEmailAddress</p> </li> <li>
+         * latest run of a machine learning process. </p>  <p>The process of
+         * matching duplicate profiles. If <code>Matching</code> = <code>true</code>,
+         * Amazon Connect Customer Profiles starts a weekly batch process called Identity
+         * Resolution Job. If you do not specify a date and time for Identity Resolution
+         * Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate
+         * profiles in your domains. </p> <p>After the Identity Resolution Job completes,
+         * use the <a
+         * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+         * API to return and review the results. Or, if you have configured
+         * <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can
+         * download the results from S3.</p>  <p>Amazon Connect uses the
+         * following profile attributes to identify matches:</p> <ul> <li>
+         * <p>PhoneNumber</p> </li> <li> <p>HomePhoneNumber</p> </li> <li>
+         * <p>BusinessPhoneNumber</p> </li> <li> <p>MobilePhoneNumber</p> </li> <li>
+         * <p>EmailAddress</p> </li> <li> <p>PersonalEmailAddress</p> </li> <li>
          * <p>BusinessEmailAddress</p> </li> <li> <p>FullName</p> </li> <li>
          * <p>BusinessName</p> </li> </ul> <p>For example, two or more profiles—with
          * spelling mistakes such as <b>John Doe</b> and <b>Jhn Doe</b>, or different
@@ -658,13 +799,21 @@ namespace Model
          * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a>
          * to enable identity resolution: set <code>Matching</code> to true.</p>
          * <p>GetMatches returns potentially matching profiles, based on the results of the
-         * latest run of a machine learning process. </p>  <p>Amazon Connect
-         * starts a batch process every Saturday at 12AM UTC to identify matching profiles.
-         * The results are returned up to seven days after the Saturday run.</p>
-         *  <p>Amazon Connect uses the following profile attributes to identify
-         * matches:</p> <ul> <li> <p>PhoneNumber</p> </li> <li> <p>HomePhoneNumber</p>
-         * </li> <li> <p>BusinessPhoneNumber</p> </li> <li> <p>MobilePhoneNumber</p> </li>
-         * <li> <p>EmailAddress</p> </li> <li> <p>PersonalEmailAddress</p> </li> <li>
+         * latest run of a machine learning process. </p>  <p>The process of
+         * matching duplicate profiles. If <code>Matching</code> = <code>true</code>,
+         * Amazon Connect Customer Profiles starts a weekly batch process called Identity
+         * Resolution Job. If you do not specify a date and time for Identity Resolution
+         * Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate
+         * profiles in your domains. </p> <p>After the Identity Resolution Job completes,
+         * use the <a
+         * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+         * API to return and review the results. Or, if you have configured
+         * <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can
+         * download the results from S3.</p>  <p>Amazon Connect uses the
+         * following profile attributes to identify matches:</p> <ul> <li>
+         * <p>PhoneNumber</p> </li> <li> <p>HomePhoneNumber</p> </li> <li>
+         * <p>BusinessPhoneNumber</p> </li> <li> <p>MobilePhoneNumber</p> </li> <li>
+         * <p>EmailAddress</p> </li> <li> <p>PersonalEmailAddress</p> </li> <li>
          * <p>BusinessEmailAddress</p> </li> <li> <p>FullName</p> </li> <li>
          * <p>BusinessName</p> </li> </ul> <p>For example, two or more profiles—with
          * spelling mistakes such as <b>John Doe</b> and <b>Jhn Doe</b>, or different
@@ -800,6 +949,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDomainsAsync(const Model::ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all of the Identity Resolution Jobs in your domain. The response sorts
+         * the list by <code>JobStartTime</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListIdentityResolutionJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListIdentityResolutionJobsOutcome ListIdentityResolutionJobs(const Model::ListIdentityResolutionJobsRequest& request) const;
+
+        /**
+         * <p>Lists all of the Identity Resolution Jobs in your domain. The response sorts
+         * the list by <code>JobStartTime</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListIdentityResolutionJobs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListIdentityResolutionJobsOutcomeCallable ListIdentityResolutionJobsCallable(const Model::ListIdentityResolutionJobsRequest& request) const;
+
+        /**
+         * <p>Lists all of the Identity Resolution Jobs in your domain. The response sorts
+         * the list by <code>JobStartTime</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListIdentityResolutionJobs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListIdentityResolutionJobsAsync(const Model::ListIdentityResolutionJobsRequest& request, const ListIdentityResolutionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all of the integrations in your domain.</p><p><h3>See Also:</h3>   <a
@@ -1255,8 +1432,11 @@ namespace Model
          * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
          * to enable <a
          * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity
-         * resolution</a>: set <code>Matching</code> to true. </p><p><h3>See Also:</h3>  
-         * <a
+         * resolution</a>: set <code>Matching</code> to true. </p> <p>To prevent
+         * cross-service impersonation when you call this API, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service
+         * confused deputy prevention</a> for sample policies that you should apply.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateDomain">AWS
          * API Reference</a></p>
          */
@@ -1269,8 +1449,11 @@ namespace Model
          * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
          * to enable <a
          * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity
-         * resolution</a>: set <code>Matching</code> to true. </p><p><h3>See Also:</h3>  
-         * <a
+         * resolution</a>: set <code>Matching</code> to true. </p> <p>To prevent
+         * cross-service impersonation when you call this API, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service
+         * confused deputy prevention</a> for sample policies that you should apply.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateDomain">AWS
          * API Reference</a></p>
          *
@@ -1285,8 +1468,11 @@ namespace Model
          * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
          * to enable <a
          * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity
-         * resolution</a>: set <code>Matching</code> to true. </p><p><h3>See Also:</h3>  
-         * <a
+         * resolution</a>: set <code>Matching</code> to true. </p> <p>To prevent
+         * cross-service impersonation when you call this API, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service
+         * confused deputy prevention</a> for sample policies that you should apply.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateDomain">AWS
          * API Reference</a></p>
          *
@@ -1344,13 +1530,16 @@ namespace Model
         void DeleteProfileKeyAsyncHelper(const Model::DeleteProfileKeyRequest& request, const DeleteProfileKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteProfileObjectAsyncHelper(const Model::DeleteProfileObjectRequest& request, const DeleteProfileObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteProfileObjectTypeAsyncHelper(const Model::DeleteProfileObjectTypeRequest& request, const DeleteProfileObjectTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAutoMergingPreviewAsyncHelper(const Model::GetAutoMergingPreviewRequest& request, const GetAutoMergingPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDomainAsyncHelper(const Model::GetDomainRequest& request, const GetDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetIdentityResolutionJobAsyncHelper(const Model::GetIdentityResolutionJobRequest& request, const GetIdentityResolutionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIntegrationAsyncHelper(const Model::GetIntegrationRequest& request, const GetIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMatchesAsyncHelper(const Model::GetMatchesRequest& request, const GetMatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetProfileObjectTypeAsyncHelper(const Model::GetProfileObjectTypeRequest& request, const GetProfileObjectTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetProfileObjectTypeTemplateAsyncHelper(const Model::GetProfileObjectTypeTemplateRequest& request, const GetProfileObjectTypeTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAccountIntegrationsAsyncHelper(const Model::ListAccountIntegrationsRequest& request, const ListAccountIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDomainsAsyncHelper(const Model::ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListIdentityResolutionJobsAsyncHelper(const Model::ListIdentityResolutionJobsRequest& request, const ListIdentityResolutionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListIntegrationsAsyncHelper(const Model::ListIntegrationsRequest& request, const ListIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProfileObjectTypeTemplatesAsyncHelper(const Model::ListProfileObjectTypeTemplatesRequest& request, const ListProfileObjectTypeTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProfileObjectTypesAsyncHelper(const Model::ListProfileObjectTypesRequest& request, const ListProfileObjectTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -20,13 +20,17 @@ namespace Model
 
 MatchItem::MatchItem() : 
     m_matchIdHasBeenSet(false),
-    m_profileIdsHasBeenSet(false)
+    m_profileIdsHasBeenSet(false),
+    m_confidenceScore(0.0),
+    m_confidenceScoreHasBeenSet(false)
 {
 }
 
 MatchItem::MatchItem(JsonView jsonValue) : 
     m_matchIdHasBeenSet(false),
-    m_profileIdsHasBeenSet(false)
+    m_profileIdsHasBeenSet(false),
+    m_confidenceScore(0.0),
+    m_confidenceScoreHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +54,13 @@ MatchItem& MatchItem::operator =(JsonView jsonValue)
     m_profileIdsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ConfidenceScore"))
+  {
+    m_confidenceScore = jsonValue.GetDouble("ConfidenceScore");
+
+    m_confidenceScoreHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -71,6 +82,12 @@ JsonValue MatchItem::Jsonize() const
      profileIdsJsonList[profileIdsIndex].AsString(m_profileIds[profileIdsIndex]);
    }
    payload.WithArray("ProfileIds", std::move(profileIdsJsonList));
+
+  }
+
+  if(m_confidenceScoreHasBeenSet)
+  {
+   payload.WithDouble("ConfidenceScore", m_confidenceScore);
 
   }
 

@@ -19,6 +19,7 @@ UpdateEnvironmentRequest::UpdateEnvironmentRequest() :
     m_environmentAccountConnectionIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_protonServiceRoleArnHasBeenSet(false),
+    m_provisioningRepositoryHasBeenSet(false),
     m_specHasBeenSet(false),
     m_templateMajorVersionHasBeenSet(false),
     m_templateMinorVersionHasBeenSet(false)
@@ -55,6 +56,12 @@ Aws::String UpdateEnvironmentRequest::SerializePayload() const
   if(m_protonServiceRoleArnHasBeenSet)
   {
    payload.WithString("protonServiceRoleArn", m_protonServiceRoleArn);
+
+  }
+
+  if(m_provisioningRepositoryHasBeenSet)
+  {
+   payload.WithObject("provisioningRepository", m_provisioningRepository.Jsonize());
 
   }
 

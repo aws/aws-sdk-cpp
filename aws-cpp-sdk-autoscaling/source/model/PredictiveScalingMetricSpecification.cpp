@@ -25,7 +25,10 @@ PredictiveScalingMetricSpecification::PredictiveScalingMetricSpecification() :
     m_targetValueHasBeenSet(false),
     m_predefinedMetricPairSpecificationHasBeenSet(false),
     m_predefinedScalingMetricSpecificationHasBeenSet(false),
-    m_predefinedLoadMetricSpecificationHasBeenSet(false)
+    m_predefinedLoadMetricSpecificationHasBeenSet(false),
+    m_customizedScalingMetricSpecificationHasBeenSet(false),
+    m_customizedLoadMetricSpecificationHasBeenSet(false),
+    m_customizedCapacityMetricSpecificationHasBeenSet(false)
 {
 }
 
@@ -34,7 +37,10 @@ PredictiveScalingMetricSpecification::PredictiveScalingMetricSpecification(const
     m_targetValueHasBeenSet(false),
     m_predefinedMetricPairSpecificationHasBeenSet(false),
     m_predefinedScalingMetricSpecificationHasBeenSet(false),
-    m_predefinedLoadMetricSpecificationHasBeenSet(false)
+    m_predefinedLoadMetricSpecificationHasBeenSet(false),
+    m_customizedScalingMetricSpecificationHasBeenSet(false),
+    m_customizedLoadMetricSpecificationHasBeenSet(false),
+    m_customizedCapacityMetricSpecificationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -69,6 +75,24 @@ PredictiveScalingMetricSpecification& PredictiveScalingMetricSpecification::oper
       m_predefinedLoadMetricSpecification = predefinedLoadMetricSpecificationNode;
       m_predefinedLoadMetricSpecificationHasBeenSet = true;
     }
+    XmlNode customizedScalingMetricSpecificationNode = resultNode.FirstChild("CustomizedScalingMetricSpecification");
+    if(!customizedScalingMetricSpecificationNode.IsNull())
+    {
+      m_customizedScalingMetricSpecification = customizedScalingMetricSpecificationNode;
+      m_customizedScalingMetricSpecificationHasBeenSet = true;
+    }
+    XmlNode customizedLoadMetricSpecificationNode = resultNode.FirstChild("CustomizedLoadMetricSpecification");
+    if(!customizedLoadMetricSpecificationNode.IsNull())
+    {
+      m_customizedLoadMetricSpecification = customizedLoadMetricSpecificationNode;
+      m_customizedLoadMetricSpecificationHasBeenSet = true;
+    }
+    XmlNode customizedCapacityMetricSpecificationNode = resultNode.FirstChild("CustomizedCapacityMetricSpecification");
+    if(!customizedCapacityMetricSpecificationNode.IsNull())
+    {
+      m_customizedCapacityMetricSpecification = customizedCapacityMetricSpecificationNode;
+      m_customizedCapacityMetricSpecificationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -102,6 +126,27 @@ void PredictiveScalingMetricSpecification::OutputToStream(Aws::OStream& oStream,
       m_predefinedLoadMetricSpecification.OutputToStream(oStream, predefinedLoadMetricSpecificationLocationAndMemberSs.str().c_str());
   }
 
+  if(m_customizedScalingMetricSpecificationHasBeenSet)
+  {
+      Aws::StringStream customizedScalingMetricSpecificationLocationAndMemberSs;
+      customizedScalingMetricSpecificationLocationAndMemberSs << location << index << locationValue << ".CustomizedScalingMetricSpecification";
+      m_customizedScalingMetricSpecification.OutputToStream(oStream, customizedScalingMetricSpecificationLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_customizedLoadMetricSpecificationHasBeenSet)
+  {
+      Aws::StringStream customizedLoadMetricSpecificationLocationAndMemberSs;
+      customizedLoadMetricSpecificationLocationAndMemberSs << location << index << locationValue << ".CustomizedLoadMetricSpecification";
+      m_customizedLoadMetricSpecification.OutputToStream(oStream, customizedLoadMetricSpecificationLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_customizedCapacityMetricSpecificationHasBeenSet)
+  {
+      Aws::StringStream customizedCapacityMetricSpecificationLocationAndMemberSs;
+      customizedCapacityMetricSpecificationLocationAndMemberSs << location << index << locationValue << ".CustomizedCapacityMetricSpecification";
+      m_customizedCapacityMetricSpecification.OutputToStream(oStream, customizedCapacityMetricSpecificationLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void PredictiveScalingMetricSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -127,6 +172,24 @@ void PredictiveScalingMetricSpecification::OutputToStream(Aws::OStream& oStream,
       Aws::String predefinedLoadMetricSpecificationLocationAndMember(location);
       predefinedLoadMetricSpecificationLocationAndMember += ".PredefinedLoadMetricSpecification";
       m_predefinedLoadMetricSpecification.OutputToStream(oStream, predefinedLoadMetricSpecificationLocationAndMember.c_str());
+  }
+  if(m_customizedScalingMetricSpecificationHasBeenSet)
+  {
+      Aws::String customizedScalingMetricSpecificationLocationAndMember(location);
+      customizedScalingMetricSpecificationLocationAndMember += ".CustomizedScalingMetricSpecification";
+      m_customizedScalingMetricSpecification.OutputToStream(oStream, customizedScalingMetricSpecificationLocationAndMember.c_str());
+  }
+  if(m_customizedLoadMetricSpecificationHasBeenSet)
+  {
+      Aws::String customizedLoadMetricSpecificationLocationAndMember(location);
+      customizedLoadMetricSpecificationLocationAndMember += ".CustomizedLoadMetricSpecification";
+      m_customizedLoadMetricSpecification.OutputToStream(oStream, customizedLoadMetricSpecificationLocationAndMember.c_str());
+  }
+  if(m_customizedCapacityMetricSpecificationHasBeenSet)
+  {
+      Aws::String customizedCapacityMetricSpecificationLocationAndMember(location);
+      customizedCapacityMetricSpecificationLocationAndMember += ".CustomizedCapacityMetricSpecification";
+      m_customizedCapacityMetricSpecification.OutputToStream(oStream, customizedCapacityMetricSpecificationLocationAndMember.c_str());
   }
 }
 

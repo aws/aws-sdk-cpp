@@ -10,6 +10,7 @@
 #include <aws/translate/model/InputDataConfig.h>
 #include <aws/translate/model/OutputDataConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/translate/model/TranslationSettings.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -573,6 +574,43 @@ namespace Model
      */
     inline StartTextTranslationJobRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
+    /**
+     * <p>Settings to configure your translation output, including the option to mask
+     * profane words and phrases.</p>
+     */
+    inline const TranslationSettings& GetSettings() const{ return m_settings; }
+
+    /**
+     * <p>Settings to configure your translation output, including the option to mask
+     * profane words and phrases.</p>
+     */
+    inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
+
+    /**
+     * <p>Settings to configure your translation output, including the option to mask
+     * profane words and phrases.</p>
+     */
+    inline void SetSettings(const TranslationSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
+
+    /**
+     * <p>Settings to configure your translation output, including the option to mask
+     * profane words and phrases.</p>
+     */
+    inline void SetSettings(TranslationSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
+
+    /**
+     * <p>Settings to configure your translation output, including the option to mask
+     * profane words and phrases.</p>
+     */
+    inline StartTextTranslationJobRequest& WithSettings(const TranslationSettings& value) { SetSettings(value); return *this;}
+
+    /**
+     * <p>Settings to configure your translation output, including the option to mask
+     * profane words and phrases.</p>
+     */
+    inline StartTextTranslationJobRequest& WithSettings(TranslationSettings&& value) { SetSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_jobName;
@@ -601,6 +639,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
+    TranslationSettings m_settings;
+    bool m_settingsHasBeenSet;
   };
 
 } // namespace Model

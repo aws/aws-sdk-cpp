@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/proton/model/DeploymentStatus.h>
 #include <aws/proton/model/Provisioning.h>
+#include <aws/proton/model/RepositoryBranch.h>
 #include <utility>
 
 namespace Aws
@@ -27,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>The environment detail data. An AWS Proton environment is a set resources
-   * shared across an AWS Proton service.</p><p><h3>See Also:</h3>   <a
+   * <p>The environment detail data. An Proton environment is a set resources shared
+   * across an Proton service.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/Environment">AWS
    * API Reference</a></p>
    */
@@ -428,50 +429,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
-     * Proton to make calls to other services on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
+     * to make calls to other services on your behalf.</p>
      */
     inline const Aws::String& GetProtonServiceRoleArn() const{ return m_protonServiceRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
-     * Proton to make calls to other services on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
+     * to make calls to other services on your behalf.</p>
      */
     inline bool ProtonServiceRoleArnHasBeenSet() const { return m_protonServiceRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
-     * Proton to make calls to other services on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
+     * to make calls to other services on your behalf.</p>
      */
     inline void SetProtonServiceRoleArn(const Aws::String& value) { m_protonServiceRoleArnHasBeenSet = true; m_protonServiceRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
-     * Proton to make calls to other services on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
+     * to make calls to other services on your behalf.</p>
      */
     inline void SetProtonServiceRoleArn(Aws::String&& value) { m_protonServiceRoleArnHasBeenSet = true; m_protonServiceRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
-     * Proton to make calls to other services on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
+     * to make calls to other services on your behalf.</p>
      */
     inline void SetProtonServiceRoleArn(const char* value) { m_protonServiceRoleArnHasBeenSet = true; m_protonServiceRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
-     * Proton to make calls to other services on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
+     * to make calls to other services on your behalf.</p>
      */
     inline Environment& WithProtonServiceRoleArn(const Aws::String& value) { SetProtonServiceRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
-     * Proton to make calls to other services on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
+     * to make calls to other services on your behalf.</p>
      */
     inline Environment& WithProtonServiceRoleArn(Aws::String&& value) { SetProtonServiceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
-     * Proton to make calls to other services on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
+     * to make calls to other services on your behalf.</p>
      */
     inline Environment& WithProtonServiceRoleArn(const char* value) { SetProtonServiceRoleArn(value); return *this;}
 
@@ -511,6 +512,61 @@ namespace Model
      * provisioned and managed infrastructure.</p>
      */
     inline Environment& WithProvisioning(Provisioning&& value) { SetProvisioning(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The repository that you provide with pull request provisioning.</p>
+     *  <p>Provisioning by pull request is currently in feature preview and
+     * is only usable with Terraform based Proton Templates. To learn more about <a
+     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
+     * terms</a>, see section 2 on Beta and Previews.</p> 
+     */
+    inline const RepositoryBranch& GetProvisioningRepository() const{ return m_provisioningRepository; }
+
+    /**
+     * <p>The repository that you provide with pull request provisioning.</p>
+     *  <p>Provisioning by pull request is currently in feature preview and
+     * is only usable with Terraform based Proton Templates. To learn more about <a
+     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
+     * terms</a>, see section 2 on Beta and Previews.</p> 
+     */
+    inline bool ProvisioningRepositoryHasBeenSet() const { return m_provisioningRepositoryHasBeenSet; }
+
+    /**
+     * <p>The repository that you provide with pull request provisioning.</p>
+     *  <p>Provisioning by pull request is currently in feature preview and
+     * is only usable with Terraform based Proton Templates. To learn more about <a
+     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
+     * terms</a>, see section 2 on Beta and Previews.</p> 
+     */
+    inline void SetProvisioningRepository(const RepositoryBranch& value) { m_provisioningRepositoryHasBeenSet = true; m_provisioningRepository = value; }
+
+    /**
+     * <p>The repository that you provide with pull request provisioning.</p>
+     *  <p>Provisioning by pull request is currently in feature preview and
+     * is only usable with Terraform based Proton Templates. To learn more about <a
+     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
+     * terms</a>, see section 2 on Beta and Previews.</p> 
+     */
+    inline void SetProvisioningRepository(RepositoryBranch&& value) { m_provisioningRepositoryHasBeenSet = true; m_provisioningRepository = std::move(value); }
+
+    /**
+     * <p>The repository that you provide with pull request provisioning.</p>
+     *  <p>Provisioning by pull request is currently in feature preview and
+     * is only usable with Terraform based Proton Templates. To learn more about <a
+     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
+     * terms</a>, see section 2 on Beta and Previews.</p> 
+     */
+    inline Environment& WithProvisioningRepository(const RepositoryBranch& value) { SetProvisioningRepository(value); return *this;}
+
+    /**
+     * <p>The repository that you provide with pull request provisioning.</p>
+     *  <p>Provisioning by pull request is currently in feature preview and
+     * is only usable with Terraform based Proton Templates. To learn more about <a
+     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
+     * terms</a>, see section 2 on Beta and Previews.</p> 
+     */
+    inline Environment& WithProvisioningRepository(RepositoryBranch&& value) { SetProvisioningRepository(std::move(value)); return *this;}
 
 
     /**
@@ -713,6 +769,9 @@ namespace Model
 
     Provisioning m_provisioning;
     bool m_provisioningHasBeenSet;
+
+    RepositoryBranch m_provisioningRepository;
+    bool m_provisioningRepositoryHasBeenSet;
 
     Aws::String m_spec;
     bool m_specHasBeenSet;

@@ -180,8 +180,9 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. The format includes the file name. It can also include namespaces and
-     * other qualifiers, depending on the runtime. For more information, see <a
+     * function. Handler is required if the deployment package is a .zip file archive.
+     * The format includes the file name. It can also include namespaces and other
+     * qualifiers, depending on the runtime. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -189,8 +190,9 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. The format includes the file name. It can also include namespaces and
-     * other qualifiers, depending on the runtime. For more information, see <a
+     * function. Handler is required if the deployment package is a .zip file archive.
+     * The format includes the file name. It can also include namespaces and other
+     * qualifiers, depending on the runtime. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -198,8 +200,9 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. The format includes the file name. It can also include namespaces and
-     * other qualifiers, depending on the runtime. For more information, see <a
+     * function. Handler is required if the deployment package is a .zip file archive.
+     * The format includes the file name. It can also include namespaces and other
+     * qualifiers, depending on the runtime. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -207,8 +210,9 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. The format includes the file name. It can also include namespaces and
-     * other qualifiers, depending on the runtime. For more information, see <a
+     * function. Handler is required if the deployment package is a .zip file archive.
+     * The format includes the file name. It can also include namespaces and other
+     * qualifiers, depending on the runtime. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -216,8 +220,9 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. The format includes the file name. It can also include namespaces and
-     * other qualifiers, depending on the runtime. For more information, see <a
+     * function. Handler is required if the deployment package is a .zip file archive.
+     * The format includes the file name. It can also include namespaces and other
+     * qualifiers, depending on the runtime. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -225,8 +230,9 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. The format includes the file name. It can also include namespaces and
-     * other qualifiers, depending on the runtime. For more information, see <a
+     * function. Handler is required if the deployment package is a .zip file archive.
+     * The format includes the file name. It can also include namespaces and other
+     * qualifiers, depending on the runtime. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -234,8 +240,9 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. The format includes the file name. It can also include namespaces and
-     * other qualifiers, depending on the runtime. For more information, see <a
+     * function. Handler is required if the deployment package is a .zip file archive.
+     * The format includes the file name. It can also include namespaces and other
+     * qualifiers, depending on the runtime. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -243,8 +250,9 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. The format includes the file name. It can also include namespaces and
-     * other qualifiers, depending on the runtime. For more information, see <a
+     * function. Handler is required if the deployment package is a .zip file archive.
+     * The format includes the file name. It can also include namespaces and other
+     * qualifiers, depending on the runtime. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -466,37 +474,43 @@ namespace Model
 
     /**
      * <p>The identifier of the function's <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
+     * Runtime is required if the deployment package is a .zip file archive. </p>
      */
     inline const Runtime& GetRuntime() const{ return m_runtime; }
 
     /**
      * <p>The identifier of the function's <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
+     * Runtime is required if the deployment package is a .zip file archive. </p>
      */
     inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }
 
     /**
      * <p>The identifier of the function's <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
+     * Runtime is required if the deployment package is a .zip file archive. </p>
      */
     inline void SetRuntime(const Runtime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
 
     /**
      * <p>The identifier of the function's <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
+     * Runtime is required if the deployment package is a .zip file archive. </p>
      */
     inline void SetRuntime(Runtime&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
 
     /**
      * <p>The identifier of the function's <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
+     * Runtime is required if the deployment package is a .zip file archive. </p>
      */
     inline UpdateFunctionConfigurationRequest& WithRuntime(const Runtime& value) { SetRuntime(value); return *this;}
 
     /**
      * <p>The identifier of the function's <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
+     * Runtime is required if the deployment package is a .zip file archive. </p>
      */
     inline UpdateFunctionConfigurationRequest& WithRuntime(Runtime&& value) { SetRuntime(std::move(value)); return *this;}
 

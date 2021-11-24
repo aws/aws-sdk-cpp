@@ -184,132 +184,132 @@ namespace Model
 
 
     /**
-     * <p>The ID of the latest major version that's associated with the version of an
-     * environment template.</p>
+     * <p>The latest major version that's associated with the version of an environment
+     * template.</p>
      */
     inline const Aws::String& GetMajorVersion() const{ return m_majorVersion; }
 
     /**
-     * <p>The ID of the latest major version that's associated with the version of an
-     * environment template.</p>
+     * <p>The latest major version that's associated with the version of an environment
+     * template.</p>
      */
     inline bool MajorVersionHasBeenSet() const { return m_majorVersionHasBeenSet; }
 
     /**
-     * <p>The ID of the latest major version that's associated with the version of an
-     * environment template.</p>
+     * <p>The latest major version that's associated with the version of an environment
+     * template.</p>
      */
     inline void SetMajorVersion(const Aws::String& value) { m_majorVersionHasBeenSet = true; m_majorVersion = value; }
 
     /**
-     * <p>The ID of the latest major version that's associated with the version of an
-     * environment template.</p>
+     * <p>The latest major version that's associated with the version of an environment
+     * template.</p>
      */
     inline void SetMajorVersion(Aws::String&& value) { m_majorVersionHasBeenSet = true; m_majorVersion = std::move(value); }
 
     /**
-     * <p>The ID of the latest major version that's associated with the version of an
-     * environment template.</p>
+     * <p>The latest major version that's associated with the version of an environment
+     * template.</p>
      */
     inline void SetMajorVersion(const char* value) { m_majorVersionHasBeenSet = true; m_majorVersion.assign(value); }
 
     /**
-     * <p>The ID of the latest major version that's associated with the version of an
-     * environment template.</p>
+     * <p>The latest major version that's associated with the version of an environment
+     * template.</p>
      */
     inline EnvironmentTemplateVersion& WithMajorVersion(const Aws::String& value) { SetMajorVersion(value); return *this;}
 
     /**
-     * <p>The ID of the latest major version that's associated with the version of an
-     * environment template.</p>
+     * <p>The latest major version that's associated with the version of an environment
+     * template.</p>
      */
     inline EnvironmentTemplateVersion& WithMajorVersion(Aws::String&& value) { SetMajorVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the latest major version that's associated with the version of an
-     * environment template.</p>
+     * <p>The latest major version that's associated with the version of an environment
+     * template.</p>
      */
     inline EnvironmentTemplateVersion& WithMajorVersion(const char* value) { SetMajorVersion(value); return *this;}
 
 
     /**
-     * <p>The ID of the minor version of an environment template.</p>
+     * <p>The minor version of an environment template.</p>
      */
     inline const Aws::String& GetMinorVersion() const{ return m_minorVersion; }
 
     /**
-     * <p>The ID of the minor version of an environment template.</p>
+     * <p>The minor version of an environment template.</p>
      */
     inline bool MinorVersionHasBeenSet() const { return m_minorVersionHasBeenSet; }
 
     /**
-     * <p>The ID of the minor version of an environment template.</p>
+     * <p>The minor version of an environment template.</p>
      */
     inline void SetMinorVersion(const Aws::String& value) { m_minorVersionHasBeenSet = true; m_minorVersion = value; }
 
     /**
-     * <p>The ID of the minor version of an environment template.</p>
+     * <p>The minor version of an environment template.</p>
      */
     inline void SetMinorVersion(Aws::String&& value) { m_minorVersionHasBeenSet = true; m_minorVersion = std::move(value); }
 
     /**
-     * <p>The ID of the minor version of an environment template.</p>
+     * <p>The minor version of an environment template.</p>
      */
     inline void SetMinorVersion(const char* value) { m_minorVersionHasBeenSet = true; m_minorVersion.assign(value); }
 
     /**
-     * <p>The ID of the minor version of an environment template.</p>
+     * <p>The minor version of an environment template.</p>
      */
     inline EnvironmentTemplateVersion& WithMinorVersion(const Aws::String& value) { SetMinorVersion(value); return *this;}
 
     /**
-     * <p>The ID of the minor version of an environment template.</p>
+     * <p>The minor version of an environment template.</p>
      */
     inline EnvironmentTemplateVersion& WithMinorVersion(Aws::String&& value) { SetMinorVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the minor version of an environment template.</p>
+     * <p>The minor version of an environment template.</p>
      */
     inline EnvironmentTemplateVersion& WithMinorVersion(const char* value) { SetMinorVersion(value); return *this;}
 
 
     /**
-     * <p>The ID of the recommended minor version of the environment template.</p>
+     * <p>The recommended minor version of the environment template.</p>
      */
     inline const Aws::String& GetRecommendedMinorVersion() const{ return m_recommendedMinorVersion; }
 
     /**
-     * <p>The ID of the recommended minor version of the environment template.</p>
+     * <p>The recommended minor version of the environment template.</p>
      */
     inline bool RecommendedMinorVersionHasBeenSet() const { return m_recommendedMinorVersionHasBeenSet; }
 
     /**
-     * <p>The ID of the recommended minor version of the environment template.</p>
+     * <p>The recommended minor version of the environment template.</p>
      */
     inline void SetRecommendedMinorVersion(const Aws::String& value) { m_recommendedMinorVersionHasBeenSet = true; m_recommendedMinorVersion = value; }
 
     /**
-     * <p>The ID of the recommended minor version of the environment template.</p>
+     * <p>The recommended minor version of the environment template.</p>
      */
     inline void SetRecommendedMinorVersion(Aws::String&& value) { m_recommendedMinorVersionHasBeenSet = true; m_recommendedMinorVersion = std::move(value); }
 
     /**
-     * <p>The ID of the recommended minor version of the environment template.</p>
+     * <p>The recommended minor version of the environment template.</p>
      */
     inline void SetRecommendedMinorVersion(const char* value) { m_recommendedMinorVersionHasBeenSet = true; m_recommendedMinorVersion.assign(value); }
 
     /**
-     * <p>The ID of the recommended minor version of the environment template.</p>
+     * <p>The recommended minor version of the environment template.</p>
      */
     inline EnvironmentTemplateVersion& WithRecommendedMinorVersion(const Aws::String& value) { SetRecommendedMinorVersion(value); return *this;}
 
     /**
-     * <p>The ID of the recommended minor version of the environment template.</p>
+     * <p>The recommended minor version of the environment template.</p>
      */
     inline EnvironmentTemplateVersion& WithRecommendedMinorVersion(Aws::String&& value) { SetRecommendedMinorVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the recommended minor version of the environment template.</p>
+     * <p>The recommended minor version of the environment template.</p>
      */
     inline EnvironmentTemplateVersion& WithRecommendedMinorVersion(const char* value) { SetRecommendedMinorVersion(value); return *this;}
 

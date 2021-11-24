@@ -38,98 +38,98 @@ namespace Model
 
     /**
      * <p>The name of the code repository branch that holds the code that's deployed in
-     * AWS Proton. <i>Don't</i> include this parameter if your service template
+     * Proton. <i>Don't</i> include this parameter if your service template
      * <i>doesn't</i> include a service pipeline.</p>
      */
     inline const Aws::String& GetBranchName() const{ return m_branchName; }
 
     /**
      * <p>The name of the code repository branch that holds the code that's deployed in
-     * AWS Proton. <i>Don't</i> include this parameter if your service template
+     * Proton. <i>Don't</i> include this parameter if your service template
      * <i>doesn't</i> include a service pipeline.</p>
      */
     inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
 
     /**
      * <p>The name of the code repository branch that holds the code that's deployed in
-     * AWS Proton. <i>Don't</i> include this parameter if your service template
+     * Proton. <i>Don't</i> include this parameter if your service template
      * <i>doesn't</i> include a service pipeline.</p>
      */
     inline void SetBranchName(const Aws::String& value) { m_branchNameHasBeenSet = true; m_branchName = value; }
 
     /**
      * <p>The name of the code repository branch that holds the code that's deployed in
-     * AWS Proton. <i>Don't</i> include this parameter if your service template
+     * Proton. <i>Don't</i> include this parameter if your service template
      * <i>doesn't</i> include a service pipeline.</p>
      */
     inline void SetBranchName(Aws::String&& value) { m_branchNameHasBeenSet = true; m_branchName = std::move(value); }
 
     /**
      * <p>The name of the code repository branch that holds the code that's deployed in
-     * AWS Proton. <i>Don't</i> include this parameter if your service template
+     * Proton. <i>Don't</i> include this parameter if your service template
      * <i>doesn't</i> include a service pipeline.</p>
      */
     inline void SetBranchName(const char* value) { m_branchNameHasBeenSet = true; m_branchName.assign(value); }
 
     /**
      * <p>The name of the code repository branch that holds the code that's deployed in
-     * AWS Proton. <i>Don't</i> include this parameter if your service template
+     * Proton. <i>Don't</i> include this parameter if your service template
      * <i>doesn't</i> include a service pipeline.</p>
      */
     inline CreateServiceRequest& WithBranchName(const Aws::String& value) { SetBranchName(value); return *this;}
 
     /**
      * <p>The name of the code repository branch that holds the code that's deployed in
-     * AWS Proton. <i>Don't</i> include this parameter if your service template
+     * Proton. <i>Don't</i> include this parameter if your service template
      * <i>doesn't</i> include a service pipeline.</p>
      */
     inline CreateServiceRequest& WithBranchName(Aws::String&& value) { SetBranchName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the code repository branch that holds the code that's deployed in
-     * AWS Proton. <i>Don't</i> include this parameter if your service template
+     * Proton. <i>Don't</i> include this parameter if your service template
      * <i>doesn't</i> include a service pipeline.</p>
      */
     inline CreateServiceRequest& WithBranchName(const char* value) { SetBranchName(value); return *this;}
 
 
     /**
-     * <p>A description of the AWS Proton service.</p>
+     * <p>A description of the Proton service.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A description of the AWS Proton service.</p>
+     * <p>A description of the Proton service.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A description of the AWS Proton service.</p>
+     * <p>A description of the Proton service.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A description of the AWS Proton service.</p>
+     * <p>A description of the Proton service.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A description of the AWS Proton service.</p>
+     * <p>A description of the Proton service.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A description of the AWS Proton service.</p>
+     * <p>A description of the Proton service.</p>
      */
     inline CreateServiceRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A description of the AWS Proton service.</p>
+     * <p>A description of the Proton service.</p>
      */
     inline CreateServiceRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description of the AWS Proton service.</p>
+     * <p>A description of the Proton service.</p>
      */
     inline CreateServiceRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -179,10 +179,10 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up repository connection</a> in the <i>AWS Proton Administrator Guide</i> and <a
+     * up repository connection</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with AWS Proton</a> in the <i>AWS Proton User Guide</i>. <i>Don't</i> include
-     * this parameter if your service template <i>doesn't</i> include a service
+     * up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this
+     * parameter if your service template <i>doesn't</i> include a service
      * pipeline.</p>
      */
     inline const Aws::String& GetRepositoryConnectionArn() const{ return m_repositoryConnectionArn; }
@@ -191,10 +191,10 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up repository connection</a> in the <i>AWS Proton Administrator Guide</i> and <a
+     * up repository connection</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with AWS Proton</a> in the <i>AWS Proton User Guide</i>. <i>Don't</i> include
-     * this parameter if your service template <i>doesn't</i> include a service
+     * up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this
+     * parameter if your service template <i>doesn't</i> include a service
      * pipeline.</p>
      */
     inline bool RepositoryConnectionArnHasBeenSet() const { return m_repositoryConnectionArnHasBeenSet; }
@@ -203,10 +203,10 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up repository connection</a> in the <i>AWS Proton Administrator Guide</i> and <a
+     * up repository connection</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with AWS Proton</a> in the <i>AWS Proton User Guide</i>. <i>Don't</i> include
-     * this parameter if your service template <i>doesn't</i> include a service
+     * up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this
+     * parameter if your service template <i>doesn't</i> include a service
      * pipeline.</p>
      */
     inline void SetRepositoryConnectionArn(const Aws::String& value) { m_repositoryConnectionArnHasBeenSet = true; m_repositoryConnectionArn = value; }
@@ -215,10 +215,10 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up repository connection</a> in the <i>AWS Proton Administrator Guide</i> and <a
+     * up repository connection</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with AWS Proton</a> in the <i>AWS Proton User Guide</i>. <i>Don't</i> include
-     * this parameter if your service template <i>doesn't</i> include a service
+     * up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this
+     * parameter if your service template <i>doesn't</i> include a service
      * pipeline.</p>
      */
     inline void SetRepositoryConnectionArn(Aws::String&& value) { m_repositoryConnectionArnHasBeenSet = true; m_repositoryConnectionArn = std::move(value); }
@@ -227,10 +227,10 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up repository connection</a> in the <i>AWS Proton Administrator Guide</i> and <a
+     * up repository connection</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with AWS Proton</a> in the <i>AWS Proton User Guide</i>. <i>Don't</i> include
-     * this parameter if your service template <i>doesn't</i> include a service
+     * up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this
+     * parameter if your service template <i>doesn't</i> include a service
      * pipeline.</p>
      */
     inline void SetRepositoryConnectionArn(const char* value) { m_repositoryConnectionArnHasBeenSet = true; m_repositoryConnectionArn.assign(value); }
@@ -239,10 +239,10 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up repository connection</a> in the <i>AWS Proton Administrator Guide</i> and <a
+     * up repository connection</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with AWS Proton</a> in the <i>AWS Proton User Guide</i>. <i>Don't</i> include
-     * this parameter if your service template <i>doesn't</i> include a service
+     * up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this
+     * parameter if your service template <i>doesn't</i> include a service
      * pipeline.</p>
      */
     inline CreateServiceRequest& WithRepositoryConnectionArn(const Aws::String& value) { SetRepositoryConnectionArn(value); return *this;}
@@ -251,10 +251,10 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up repository connection</a> in the <i>AWS Proton Administrator Guide</i> and <a
+     * up repository connection</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with AWS Proton</a> in the <i>AWS Proton User Guide</i>. <i>Don't</i> include
-     * this parameter if your service template <i>doesn't</i> include a service
+     * up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this
+     * parameter if your service template <i>doesn't</i> include a service
      * pipeline.</p>
      */
     inline CreateServiceRequest& WithRepositoryConnectionArn(Aws::String&& value) { SetRepositoryConnectionArn(std::move(value)); return *this;}
@@ -263,10 +263,10 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up repository connection</a> in the <i>AWS Proton Administrator Guide</i> and <a
+     * up repository connection</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with AWS Proton</a> in the <i>AWS Proton User Guide</i>. <i>Don't</i> include
-     * this parameter if your service template <i>doesn't</i> include a service
+     * up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this
+     * parameter if your service template <i>doesn't</i> include a service
      * pipeline.</p>
      */
     inline CreateServiceRequest& WithRepositoryConnectionArn(const char* value) { SetRepositoryConnectionArn(value); return *this;}
@@ -327,9 +327,9 @@ namespace Model
      * inputs in the spec if your service template <i>doesn’t</i> include a service
      * pipeline. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
-     * a service</a> in the <i>AWS Proton Administrator Guide</i> and <a
+     * a service</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
-     * a service</a> in the <i>AWS Proton User Guide</i>.</p>
+     * a service</a> in the <i>Proton User Guide</i>.</p>
      */
     inline const Aws::String& GetSpec() const{ return m_spec; }
 
@@ -339,9 +339,9 @@ namespace Model
      * inputs in the spec if your service template <i>doesn’t</i> include a service
      * pipeline. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
-     * a service</a> in the <i>AWS Proton Administrator Guide</i> and <a
+     * a service</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
-     * a service</a> in the <i>AWS Proton User Guide</i>.</p>
+     * a service</a> in the <i>Proton User Guide</i>.</p>
      */
     inline bool SpecHasBeenSet() const { return m_specHasBeenSet; }
 
@@ -351,9 +351,9 @@ namespace Model
      * inputs in the spec if your service template <i>doesn’t</i> include a service
      * pipeline. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
-     * a service</a> in the <i>AWS Proton Administrator Guide</i> and <a
+     * a service</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
-     * a service</a> in the <i>AWS Proton User Guide</i>.</p>
+     * a service</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetSpec(const Aws::String& value) { m_specHasBeenSet = true; m_spec = value; }
 
@@ -363,9 +363,9 @@ namespace Model
      * inputs in the spec if your service template <i>doesn’t</i> include a service
      * pipeline. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
-     * a service</a> in the <i>AWS Proton Administrator Guide</i> and <a
+     * a service</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
-     * a service</a> in the <i>AWS Proton User Guide</i>.</p>
+     * a service</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetSpec(Aws::String&& value) { m_specHasBeenSet = true; m_spec = std::move(value); }
 
@@ -375,9 +375,9 @@ namespace Model
      * inputs in the spec if your service template <i>doesn’t</i> include a service
      * pipeline. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
-     * a service</a> in the <i>AWS Proton Administrator Guide</i> and <a
+     * a service</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
-     * a service</a> in the <i>AWS Proton User Guide</i>.</p>
+     * a service</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetSpec(const char* value) { m_specHasBeenSet = true; m_spec.assign(value); }
 
@@ -387,9 +387,9 @@ namespace Model
      * inputs in the spec if your service template <i>doesn’t</i> include a service
      * pipeline. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
-     * a service</a> in the <i>AWS Proton Administrator Guide</i> and <a
+     * a service</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
-     * a service</a> in the <i>AWS Proton User Guide</i>.</p>
+     * a service</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateServiceRequest& WithSpec(const Aws::String& value) { SetSpec(value); return *this;}
 
@@ -399,9 +399,9 @@ namespace Model
      * inputs in the spec if your service template <i>doesn’t</i> include a service
      * pipeline. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
-     * a service</a> in the <i>AWS Proton Administrator Guide</i> and <a
+     * a service</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
-     * a service</a> in the <i>AWS Proton User Guide</i>.</p>
+     * a service</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateServiceRequest& WithSpec(Aws::String&& value) { SetSpec(std::move(value)); return *this;}
 
@@ -411,188 +411,188 @@ namespace Model
      * inputs in the spec if your service template <i>doesn’t</i> include a service
      * pipeline. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
-     * a service</a> in the <i>AWS Proton Administrator Guide</i> and <a
+     * a service</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
-     * a service</a> in the <i>AWS Proton User Guide</i>.</p>
+     * a service</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateServiceRequest& WithSpec(const char* value) { SetSpec(value); return *this;}
 
 
     /**
-     * <p>Create tags for your service. For more information, see <i>AWS Proton
-     * resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
-     * Proton User Guide</a>.</p>
+     * <p>Create tags for your service. For more information, see <i>Proton resources
+     * and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Create tags for your service. For more information, see <i>AWS Proton
-     * resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
-     * Proton User Guide</a>.</p>
+     * <p>Create tags for your service. For more information, see <i>Proton resources
+     * and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Create tags for your service. For more information, see <i>AWS Proton
-     * resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
-     * Proton User Guide</a>.</p>
+     * <p>Create tags for your service. For more information, see <i>Proton resources
+     * and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Create tags for your service. For more information, see <i>AWS Proton
-     * resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
-     * Proton User Guide</a>.</p>
+     * <p>Create tags for your service. For more information, see <i>Proton resources
+     * and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Create tags for your service. For more information, see <i>AWS Proton
-     * resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
-     * Proton User Guide</a>.</p>
+     * <p>Create tags for your service. For more information, see <i>Proton resources
+     * and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline CreateServiceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Create tags for your service. For more information, see <i>AWS Proton
-     * resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
-     * Proton User Guide</a>.</p>
+     * <p>Create tags for your service. For more information, see <i>Proton resources
+     * and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline CreateServiceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Create tags for your service. For more information, see <i>AWS Proton
-     * resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
-     * Proton User Guide</a>.</p>
+     * <p>Create tags for your service. For more information, see <i>Proton resources
+     * and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline CreateServiceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Create tags for your service. For more information, see <i>AWS Proton
-     * resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administrator Guide</a> or <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
-     * Proton User Guide</a>.</p>
+     * <p>Create tags for your service. For more information, see <i>Proton resources
+     * and tagging</i> in the <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+     * Administrator Guide</a> or <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * User Guide</a>.</p>
      */
     inline CreateServiceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The ID of the major version of the service template that was used to create
-     * the service.</p>
+     * <p>The major version of the service template that was used to create the
+     * service.</p>
      */
     inline const Aws::String& GetTemplateMajorVersion() const{ return m_templateMajorVersion; }
 
     /**
-     * <p>The ID of the major version of the service template that was used to create
-     * the service.</p>
+     * <p>The major version of the service template that was used to create the
+     * service.</p>
      */
     inline bool TemplateMajorVersionHasBeenSet() const { return m_templateMajorVersionHasBeenSet; }
 
     /**
-     * <p>The ID of the major version of the service template that was used to create
-     * the service.</p>
+     * <p>The major version of the service template that was used to create the
+     * service.</p>
      */
     inline void SetTemplateMajorVersion(const Aws::String& value) { m_templateMajorVersionHasBeenSet = true; m_templateMajorVersion = value; }
 
     /**
-     * <p>The ID of the major version of the service template that was used to create
-     * the service.</p>
+     * <p>The major version of the service template that was used to create the
+     * service.</p>
      */
     inline void SetTemplateMajorVersion(Aws::String&& value) { m_templateMajorVersionHasBeenSet = true; m_templateMajorVersion = std::move(value); }
 
     /**
-     * <p>The ID of the major version of the service template that was used to create
-     * the service.</p>
+     * <p>The major version of the service template that was used to create the
+     * service.</p>
      */
     inline void SetTemplateMajorVersion(const char* value) { m_templateMajorVersionHasBeenSet = true; m_templateMajorVersion.assign(value); }
 
     /**
-     * <p>The ID of the major version of the service template that was used to create
-     * the service.</p>
+     * <p>The major version of the service template that was used to create the
+     * service.</p>
      */
     inline CreateServiceRequest& WithTemplateMajorVersion(const Aws::String& value) { SetTemplateMajorVersion(value); return *this;}
 
     /**
-     * <p>The ID of the major version of the service template that was used to create
-     * the service.</p>
+     * <p>The major version of the service template that was used to create the
+     * service.</p>
      */
     inline CreateServiceRequest& WithTemplateMajorVersion(Aws::String&& value) { SetTemplateMajorVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the major version of the service template that was used to create
-     * the service.</p>
+     * <p>The major version of the service template that was used to create the
+     * service.</p>
      */
     inline CreateServiceRequest& WithTemplateMajorVersion(const char* value) { SetTemplateMajorVersion(value); return *this;}
 
 
     /**
-     * <p>The ID of the minor version of the service template that was used to create
-     * the service.</p>
+     * <p>The minor version of the service template that was used to create the
+     * service.</p>
      */
     inline const Aws::String& GetTemplateMinorVersion() const{ return m_templateMinorVersion; }
 
     /**
-     * <p>The ID of the minor version of the service template that was used to create
-     * the service.</p>
+     * <p>The minor version of the service template that was used to create the
+     * service.</p>
      */
     inline bool TemplateMinorVersionHasBeenSet() const { return m_templateMinorVersionHasBeenSet; }
 
     /**
-     * <p>The ID of the minor version of the service template that was used to create
-     * the service.</p>
+     * <p>The minor version of the service template that was used to create the
+     * service.</p>
      */
     inline void SetTemplateMinorVersion(const Aws::String& value) { m_templateMinorVersionHasBeenSet = true; m_templateMinorVersion = value; }
 
     /**
-     * <p>The ID of the minor version of the service template that was used to create
-     * the service.</p>
+     * <p>The minor version of the service template that was used to create the
+     * service.</p>
      */
     inline void SetTemplateMinorVersion(Aws::String&& value) { m_templateMinorVersionHasBeenSet = true; m_templateMinorVersion = std::move(value); }
 
     /**
-     * <p>The ID of the minor version of the service template that was used to create
-     * the service.</p>
+     * <p>The minor version of the service template that was used to create the
+     * service.</p>
      */
     inline void SetTemplateMinorVersion(const char* value) { m_templateMinorVersionHasBeenSet = true; m_templateMinorVersion.assign(value); }
 
     /**
-     * <p>The ID of the minor version of the service template that was used to create
-     * the service.</p>
+     * <p>The minor version of the service template that was used to create the
+     * service.</p>
      */
     inline CreateServiceRequest& WithTemplateMinorVersion(const Aws::String& value) { SetTemplateMinorVersion(value); return *this;}
 
     /**
-     * <p>The ID of the minor version of the service template that was used to create
-     * the service.</p>
+     * <p>The minor version of the service template that was used to create the
+     * service.</p>
      */
     inline CreateServiceRequest& WithTemplateMinorVersion(Aws::String&& value) { SetTemplateMinorVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the minor version of the service template that was used to create
-     * the service.</p>
+     * <p>The minor version of the service template that was used to create the
+     * service.</p>
      */
     inline CreateServiceRequest& WithTemplateMinorVersion(const char* value) { SetTemplateMinorVersion(value); return *this;}
 

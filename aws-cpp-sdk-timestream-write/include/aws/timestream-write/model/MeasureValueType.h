@@ -19,7 +19,9 @@ namespace Model
     DOUBLE,
     BIGINT,
     VARCHAR,
-    BOOLEAN
+    BOOLEAN,
+    TIMESTAMP,
+    MULTI
   };
 
 namespace MeasureValueTypeMapper

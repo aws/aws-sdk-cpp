@@ -77,50 +77,50 @@ namespace Model
 
 
     /**
-     * <p>To update a major version of an environment template, include
-     * <code>majorVersion</code>.</p>
+     * <p>To update a major version of an environment template, include <code>major
+     * Version</code>.</p>
      */
     inline const Aws::String& GetMajorVersion() const{ return m_majorVersion; }
 
     /**
-     * <p>To update a major version of an environment template, include
-     * <code>majorVersion</code>.</p>
+     * <p>To update a major version of an environment template, include <code>major
+     * Version</code>.</p>
      */
     inline bool MajorVersionHasBeenSet() const { return m_majorVersionHasBeenSet; }
 
     /**
-     * <p>To update a major version of an environment template, include
-     * <code>majorVersion</code>.</p>
+     * <p>To update a major version of an environment template, include <code>major
+     * Version</code>.</p>
      */
     inline void SetMajorVersion(const Aws::String& value) { m_majorVersionHasBeenSet = true; m_majorVersion = value; }
 
     /**
-     * <p>To update a major version of an environment template, include
-     * <code>majorVersion</code>.</p>
+     * <p>To update a major version of an environment template, include <code>major
+     * Version</code>.</p>
      */
     inline void SetMajorVersion(Aws::String&& value) { m_majorVersionHasBeenSet = true; m_majorVersion = std::move(value); }
 
     /**
-     * <p>To update a major version of an environment template, include
-     * <code>majorVersion</code>.</p>
+     * <p>To update a major version of an environment template, include <code>major
+     * Version</code>.</p>
      */
     inline void SetMajorVersion(const char* value) { m_majorVersionHasBeenSet = true; m_majorVersion.assign(value); }
 
     /**
-     * <p>To update a major version of an environment template, include
-     * <code>majorVersion</code>.</p>
+     * <p>To update a major version of an environment template, include <code>major
+     * Version</code>.</p>
      */
     inline UpdateEnvironmentTemplateVersionRequest& WithMajorVersion(const Aws::String& value) { SetMajorVersion(value); return *this;}
 
     /**
-     * <p>To update a major version of an environment template, include
-     * <code>majorVersion</code>.</p>
+     * <p>To update a major version of an environment template, include <code>major
+     * Version</code>.</p>
      */
     inline UpdateEnvironmentTemplateVersionRequest& WithMajorVersion(Aws::String&& value) { SetMajorVersion(std::move(value)); return *this;}
 
     /**
-     * <p>To update a major version of an environment template, include
-     * <code>majorVersion</code>.</p>
+     * <p>To update a major version of an environment template, include <code>major
+     * Version</code>.</p>
      */
     inline UpdateEnvironmentTemplateVersionRequest& WithMajorVersion(const char* value) { SetMajorVersion(value); return *this;}
 

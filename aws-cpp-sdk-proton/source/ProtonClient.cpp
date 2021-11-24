@@ -28,34 +28,51 @@
 #include <aws/proton/model/CreateEnvironmentAccountConnectionRequest.h>
 #include <aws/proton/model/CreateEnvironmentTemplateRequest.h>
 #include <aws/proton/model/CreateEnvironmentTemplateVersionRequest.h>
+#include <aws/proton/model/CreateRepositoryRequest.h>
 #include <aws/proton/model/CreateServiceRequest.h>
 #include <aws/proton/model/CreateServiceTemplateRequest.h>
 #include <aws/proton/model/CreateServiceTemplateVersionRequest.h>
+#include <aws/proton/model/CreateTemplateSyncConfigRequest.h>
 #include <aws/proton/model/DeleteEnvironmentRequest.h>
 #include <aws/proton/model/DeleteEnvironmentAccountConnectionRequest.h>
 #include <aws/proton/model/DeleteEnvironmentTemplateRequest.h>
 #include <aws/proton/model/DeleteEnvironmentTemplateVersionRequest.h>
+#include <aws/proton/model/DeleteRepositoryRequest.h>
 #include <aws/proton/model/DeleteServiceRequest.h>
 #include <aws/proton/model/DeleteServiceTemplateRequest.h>
 #include <aws/proton/model/DeleteServiceTemplateVersionRequest.h>
+#include <aws/proton/model/DeleteTemplateSyncConfigRequest.h>
 #include <aws/proton/model/GetAccountSettingsRequest.h>
 #include <aws/proton/model/GetEnvironmentRequest.h>
 #include <aws/proton/model/GetEnvironmentAccountConnectionRequest.h>
 #include <aws/proton/model/GetEnvironmentTemplateRequest.h>
 #include <aws/proton/model/GetEnvironmentTemplateVersionRequest.h>
+#include <aws/proton/model/GetRepositoryRequest.h>
+#include <aws/proton/model/GetRepositorySyncStatusRequest.h>
 #include <aws/proton/model/GetServiceRequest.h>
 #include <aws/proton/model/GetServiceInstanceRequest.h>
 #include <aws/proton/model/GetServiceTemplateRequest.h>
 #include <aws/proton/model/GetServiceTemplateVersionRequest.h>
+#include <aws/proton/model/GetTemplateSyncConfigRequest.h>
+#include <aws/proton/model/GetTemplateSyncStatusRequest.h>
 #include <aws/proton/model/ListEnvironmentAccountConnectionsRequest.h>
+#include <aws/proton/model/ListEnvironmentOutputsRequest.h>
+#include <aws/proton/model/ListEnvironmentProvisionedResourcesRequest.h>
 #include <aws/proton/model/ListEnvironmentTemplateVersionsRequest.h>
 #include <aws/proton/model/ListEnvironmentTemplatesRequest.h>
 #include <aws/proton/model/ListEnvironmentsRequest.h>
+#include <aws/proton/model/ListRepositoriesRequest.h>
+#include <aws/proton/model/ListRepositorySyncDefinitionsRequest.h>
+#include <aws/proton/model/ListServiceInstanceOutputsRequest.h>
+#include <aws/proton/model/ListServiceInstanceProvisionedResourcesRequest.h>
 #include <aws/proton/model/ListServiceInstancesRequest.h>
+#include <aws/proton/model/ListServicePipelineOutputsRequest.h>
+#include <aws/proton/model/ListServicePipelineProvisionedResourcesRequest.h>
 #include <aws/proton/model/ListServiceTemplateVersionsRequest.h>
 #include <aws/proton/model/ListServiceTemplatesRequest.h>
 #include <aws/proton/model/ListServicesRequest.h>
 #include <aws/proton/model/ListTagsForResourceRequest.h>
+#include <aws/proton/model/NotifyResourceDeploymentStatusChangeRequest.h>
 #include <aws/proton/model/RejectEnvironmentAccountConnectionRequest.h>
 #include <aws/proton/model/TagResourceRequest.h>
 #include <aws/proton/model/UntagResourceRequest.h>
@@ -69,6 +86,7 @@
 #include <aws/proton/model/UpdateServicePipelineRequest.h>
 #include <aws/proton/model/UpdateServiceTemplateRequest.h>
 #include <aws/proton/model/UpdateServiceTemplateVersionRequest.h>
+#include <aws/proton/model/UpdateTemplateSyncConfigRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -335,6 +353,30 @@ void ProtonClient::CreateEnvironmentTemplateVersionAsyncHelper(const CreateEnvir
   handler(this, request, CreateEnvironmentTemplateVersion(request), context);
 }
 
+CreateRepositoryOutcome ProtonClient::CreateRepository(const CreateRepositoryRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateRepositoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateRepositoryOutcomeCallable ProtonClient::CreateRepositoryCallable(const CreateRepositoryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateRepositoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRepository(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ProtonClient::CreateRepositoryAsync(const CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateRepositoryAsyncHelper( request, handler, context ); } );
+}
+
+void ProtonClient::CreateRepositoryAsyncHelper(const CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateRepository(request), context);
+}
+
 CreateServiceOutcome ProtonClient::CreateService(const CreateServiceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -405,6 +447,30 @@ void ProtonClient::CreateServiceTemplateVersionAsync(const CreateServiceTemplate
 void ProtonClient::CreateServiceTemplateVersionAsyncHelper(const CreateServiceTemplateVersionRequest& request, const CreateServiceTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateServiceTemplateVersion(request), context);
+}
+
+CreateTemplateSyncConfigOutcome ProtonClient::CreateTemplateSyncConfig(const CreateTemplateSyncConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateTemplateSyncConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateTemplateSyncConfigOutcomeCallable ProtonClient::CreateTemplateSyncConfigCallable(const CreateTemplateSyncConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateTemplateSyncConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTemplateSyncConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ProtonClient::CreateTemplateSyncConfigAsync(const CreateTemplateSyncConfigRequest& request, const CreateTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateTemplateSyncConfigAsyncHelper( request, handler, context ); } );
+}
+
+void ProtonClient::CreateTemplateSyncConfigAsyncHelper(const CreateTemplateSyncConfigRequest& request, const CreateTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateTemplateSyncConfig(request), context);
 }
 
 DeleteEnvironmentOutcome ProtonClient::DeleteEnvironment(const DeleteEnvironmentRequest& request) const
@@ -503,6 +569,30 @@ void ProtonClient::DeleteEnvironmentTemplateVersionAsyncHelper(const DeleteEnvir
   handler(this, request, DeleteEnvironmentTemplateVersion(request), context);
 }
 
+DeleteRepositoryOutcome ProtonClient::DeleteRepository(const DeleteRepositoryRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteRepositoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteRepositoryOutcomeCallable ProtonClient::DeleteRepositoryCallable(const DeleteRepositoryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRepositoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRepository(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ProtonClient::DeleteRepositoryAsync(const DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteRepositoryAsyncHelper( request, handler, context ); } );
+}
+
+void ProtonClient::DeleteRepositoryAsyncHelper(const DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteRepository(request), context);
+}
+
 DeleteServiceOutcome ProtonClient::DeleteService(const DeleteServiceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -573,6 +663,30 @@ void ProtonClient::DeleteServiceTemplateVersionAsync(const DeleteServiceTemplate
 void ProtonClient::DeleteServiceTemplateVersionAsyncHelper(const DeleteServiceTemplateVersionRequest& request, const DeleteServiceTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteServiceTemplateVersion(request), context);
+}
+
+DeleteTemplateSyncConfigOutcome ProtonClient::DeleteTemplateSyncConfig(const DeleteTemplateSyncConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteTemplateSyncConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteTemplateSyncConfigOutcomeCallable ProtonClient::DeleteTemplateSyncConfigCallable(const DeleteTemplateSyncConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteTemplateSyncConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTemplateSyncConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ProtonClient::DeleteTemplateSyncConfigAsync(const DeleteTemplateSyncConfigRequest& request, const DeleteTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteTemplateSyncConfigAsyncHelper( request, handler, context ); } );
+}
+
+void ProtonClient::DeleteTemplateSyncConfigAsyncHelper(const DeleteTemplateSyncConfigRequest& request, const DeleteTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteTemplateSyncConfig(request), context);
 }
 
 GetAccountSettingsOutcome ProtonClient::GetAccountSettings(const GetAccountSettingsRequest& request) const
@@ -695,6 +809,54 @@ void ProtonClient::GetEnvironmentTemplateVersionAsyncHelper(const GetEnvironment
   handler(this, request, GetEnvironmentTemplateVersion(request), context);
 }
 
+GetRepositoryOutcome ProtonClient::GetRepository(const GetRepositoryRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetRepositoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetRepositoryOutcomeCallable ProtonClient::GetRepositoryCallable(const GetRepositoryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRepositoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRepository(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ProtonClient::GetRepositoryAsync(const GetRepositoryRequest& request, const GetRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRepositoryAsyncHelper( request, handler, context ); } );
+}
+
+void ProtonClient::GetRepositoryAsyncHelper(const GetRepositoryRequest& request, const GetRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRepository(request), context);
+}
+
+GetRepositorySyncStatusOutcome ProtonClient::GetRepositorySyncStatus(const GetRepositorySyncStatusRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetRepositorySyncStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetRepositorySyncStatusOutcomeCallable ProtonClient::GetRepositorySyncStatusCallable(const GetRepositorySyncStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRepositorySyncStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRepositorySyncStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ProtonClient::GetRepositorySyncStatusAsync(const GetRepositorySyncStatusRequest& request, const GetRepositorySyncStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRepositorySyncStatusAsyncHelper( request, handler, context ); } );
+}
+
+void ProtonClient::GetRepositorySyncStatusAsyncHelper(const GetRepositorySyncStatusRequest& request, const GetRepositorySyncStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRepositorySyncStatus(request), context);
+}
+
 GetServiceOutcome ProtonClient::GetService(const GetServiceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -791,6 +953,54 @@ void ProtonClient::GetServiceTemplateVersionAsyncHelper(const GetServiceTemplate
   handler(this, request, GetServiceTemplateVersion(request), context);
 }
 
+GetTemplateSyncConfigOutcome ProtonClient::GetTemplateSyncConfig(const GetTemplateSyncConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetTemplateSyncConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetTemplateSyncConfigOutcomeCallable ProtonClient::GetTemplateSyncConfigCallable(const GetTemplateSyncConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetTemplateSyncConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTemplateSyncConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ProtonClient::GetTemplateSyncConfigAsync(const GetTemplateSyncConfigRequest& request, const GetTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetTemplateSyncConfigAsyncHelper( request, handler, context ); } );
+}
+
+void ProtonClient::GetTemplateSyncConfigAsyncHelper(const GetTemplateSyncConfigRequest& request, const GetTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetTemplateSyncConfig(request), context);
+}
+
+GetTemplateSyncStatusOutcome ProtonClient::GetTemplateSyncStatus(const GetTemplateSyncStatusRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetTemplateSyncStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetTemplateSyncStatusOutcomeCallable ProtonClient::GetTemplateSyncStatusCallable(const GetTemplateSyncStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetTemplateSyncStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTemplateSyncStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ProtonClient::GetTemplateSyncStatusAsync(const GetTemplateSyncStatusRequest& request, const GetTemplateSyncStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetTemplateSyncStatusAsyncHelper( request, handler, context ); } );
+}
+
+void ProtonClient::GetTemplateSyncStatusAsyncHelper(const GetTemplateSyncStatusRequest& request, const GetTemplateSyncStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetTemplateSyncStatus(request), context);
+}
+
 ListEnvironmentAccountConnectionsOutcome ProtonClient::ListEnvironmentAccountConnections(const ListEnvironmentAccountConnectionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -813,6 +1023,54 @@ void ProtonClient::ListEnvironmentAccountConnectionsAsync(const ListEnvironmentA
 void ProtonClient::ListEnvironmentAccountConnectionsAsyncHelper(const ListEnvironmentAccountConnectionsRequest& request, const ListEnvironmentAccountConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListEnvironmentAccountConnections(request), context);
+}
+
+ListEnvironmentOutputsOutcome ProtonClient::ListEnvironmentOutputs(const ListEnvironmentOutputsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListEnvironmentOutputsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListEnvironmentOutputsOutcomeCallable ProtonClient::ListEnvironmentOutputsCallable(const ListEnvironmentOutputsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListEnvironmentOutputsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEnvironmentOutputs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ProtonClient::ListEnvironmentOutputsAsync(const ListEnvironmentOutputsRequest& request, const ListEnvironmentOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListEnvironmentOutputsAsyncHelper( request, handler, context ); } );
+}
+
+void ProtonClient::ListEnvironmentOutputsAsyncHelper(const ListEnvironmentOutputsRequest& request, const ListEnvironmentOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListEnvironmentOutputs(request), context);
+}
+
+ListEnvironmentProvisionedResourcesOutcome ProtonClient::ListEnvironmentProvisionedResources(const ListEnvironmentProvisionedResourcesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListEnvironmentProvisionedResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListEnvironmentProvisionedResourcesOutcomeCallable ProtonClient::ListEnvironmentProvisionedResourcesCallable(const ListEnvironmentProvisionedResourcesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListEnvironmentProvisionedResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEnvironmentProvisionedResources(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ProtonClient::ListEnvironmentProvisionedResourcesAsync(const ListEnvironmentProvisionedResourcesRequest& request, const ListEnvironmentProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListEnvironmentProvisionedResourcesAsyncHelper( request, handler, context ); } );
+}
+
+void ProtonClient::ListEnvironmentProvisionedResourcesAsyncHelper(const ListEnvironmentProvisionedResourcesRequest& request, const ListEnvironmentProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListEnvironmentProvisionedResources(request), context);
 }
 
 ListEnvironmentTemplateVersionsOutcome ProtonClient::ListEnvironmentTemplateVersions(const ListEnvironmentTemplateVersionsRequest& request) const
@@ -887,6 +1145,102 @@ void ProtonClient::ListEnvironmentsAsyncHelper(const ListEnvironmentsRequest& re
   handler(this, request, ListEnvironments(request), context);
 }
 
+ListRepositoriesOutcome ProtonClient::ListRepositories(const ListRepositoriesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListRepositoriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListRepositoriesOutcomeCallable ProtonClient::ListRepositoriesCallable(const ListRepositoriesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListRepositoriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRepositories(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ProtonClient::ListRepositoriesAsync(const ListRepositoriesRequest& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListRepositoriesAsyncHelper( request, handler, context ); } );
+}
+
+void ProtonClient::ListRepositoriesAsyncHelper(const ListRepositoriesRequest& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListRepositories(request), context);
+}
+
+ListRepositorySyncDefinitionsOutcome ProtonClient::ListRepositorySyncDefinitions(const ListRepositorySyncDefinitionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListRepositorySyncDefinitionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListRepositorySyncDefinitionsOutcomeCallable ProtonClient::ListRepositorySyncDefinitionsCallable(const ListRepositorySyncDefinitionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListRepositorySyncDefinitionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRepositorySyncDefinitions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ProtonClient::ListRepositorySyncDefinitionsAsync(const ListRepositorySyncDefinitionsRequest& request, const ListRepositorySyncDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListRepositorySyncDefinitionsAsyncHelper( request, handler, context ); } );
+}
+
+void ProtonClient::ListRepositorySyncDefinitionsAsyncHelper(const ListRepositorySyncDefinitionsRequest& request, const ListRepositorySyncDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListRepositorySyncDefinitions(request), context);
+}
+
+ListServiceInstanceOutputsOutcome ProtonClient::ListServiceInstanceOutputs(const ListServiceInstanceOutputsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListServiceInstanceOutputsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListServiceInstanceOutputsOutcomeCallable ProtonClient::ListServiceInstanceOutputsCallable(const ListServiceInstanceOutputsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListServiceInstanceOutputsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListServiceInstanceOutputs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ProtonClient::ListServiceInstanceOutputsAsync(const ListServiceInstanceOutputsRequest& request, const ListServiceInstanceOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListServiceInstanceOutputsAsyncHelper( request, handler, context ); } );
+}
+
+void ProtonClient::ListServiceInstanceOutputsAsyncHelper(const ListServiceInstanceOutputsRequest& request, const ListServiceInstanceOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListServiceInstanceOutputs(request), context);
+}
+
+ListServiceInstanceProvisionedResourcesOutcome ProtonClient::ListServiceInstanceProvisionedResources(const ListServiceInstanceProvisionedResourcesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListServiceInstanceProvisionedResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListServiceInstanceProvisionedResourcesOutcomeCallable ProtonClient::ListServiceInstanceProvisionedResourcesCallable(const ListServiceInstanceProvisionedResourcesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListServiceInstanceProvisionedResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListServiceInstanceProvisionedResources(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ProtonClient::ListServiceInstanceProvisionedResourcesAsync(const ListServiceInstanceProvisionedResourcesRequest& request, const ListServiceInstanceProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListServiceInstanceProvisionedResourcesAsyncHelper( request, handler, context ); } );
+}
+
+void ProtonClient::ListServiceInstanceProvisionedResourcesAsyncHelper(const ListServiceInstanceProvisionedResourcesRequest& request, const ListServiceInstanceProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListServiceInstanceProvisionedResources(request), context);
+}
+
 ListServiceInstancesOutcome ProtonClient::ListServiceInstances(const ListServiceInstancesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -909,6 +1263,54 @@ void ProtonClient::ListServiceInstancesAsync(const ListServiceInstancesRequest& 
 void ProtonClient::ListServiceInstancesAsyncHelper(const ListServiceInstancesRequest& request, const ListServiceInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListServiceInstances(request), context);
+}
+
+ListServicePipelineOutputsOutcome ProtonClient::ListServicePipelineOutputs(const ListServicePipelineOutputsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListServicePipelineOutputsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListServicePipelineOutputsOutcomeCallable ProtonClient::ListServicePipelineOutputsCallable(const ListServicePipelineOutputsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListServicePipelineOutputsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListServicePipelineOutputs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ProtonClient::ListServicePipelineOutputsAsync(const ListServicePipelineOutputsRequest& request, const ListServicePipelineOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListServicePipelineOutputsAsyncHelper( request, handler, context ); } );
+}
+
+void ProtonClient::ListServicePipelineOutputsAsyncHelper(const ListServicePipelineOutputsRequest& request, const ListServicePipelineOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListServicePipelineOutputs(request), context);
+}
+
+ListServicePipelineProvisionedResourcesOutcome ProtonClient::ListServicePipelineProvisionedResources(const ListServicePipelineProvisionedResourcesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListServicePipelineProvisionedResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListServicePipelineProvisionedResourcesOutcomeCallable ProtonClient::ListServicePipelineProvisionedResourcesCallable(const ListServicePipelineProvisionedResourcesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListServicePipelineProvisionedResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListServicePipelineProvisionedResources(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ProtonClient::ListServicePipelineProvisionedResourcesAsync(const ListServicePipelineProvisionedResourcesRequest& request, const ListServicePipelineProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListServicePipelineProvisionedResourcesAsyncHelper( request, handler, context ); } );
+}
+
+void ProtonClient::ListServicePipelineProvisionedResourcesAsyncHelper(const ListServicePipelineProvisionedResourcesRequest& request, const ListServicePipelineProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListServicePipelineProvisionedResources(request), context);
 }
 
 ListServiceTemplateVersionsOutcome ProtonClient::ListServiceTemplateVersions(const ListServiceTemplateVersionsRequest& request) const
@@ -1005,6 +1407,30 @@ void ProtonClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& re
 void ProtonClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+NotifyResourceDeploymentStatusChangeOutcome ProtonClient::NotifyResourceDeploymentStatusChange(const NotifyResourceDeploymentStatusChangeRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return NotifyResourceDeploymentStatusChangeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+NotifyResourceDeploymentStatusChangeOutcomeCallable ProtonClient::NotifyResourceDeploymentStatusChangeCallable(const NotifyResourceDeploymentStatusChangeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< NotifyResourceDeploymentStatusChangeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->NotifyResourceDeploymentStatusChange(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ProtonClient::NotifyResourceDeploymentStatusChangeAsync(const NotifyResourceDeploymentStatusChangeRequest& request, const NotifyResourceDeploymentStatusChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->NotifyResourceDeploymentStatusChangeAsyncHelper( request, handler, context ); } );
+}
+
+void ProtonClient::NotifyResourceDeploymentStatusChangeAsyncHelper(const NotifyResourceDeploymentStatusChangeRequest& request, const NotifyResourceDeploymentStatusChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, NotifyResourceDeploymentStatusChange(request), context);
 }
 
 RejectEnvironmentAccountConnectionOutcome ProtonClient::RejectEnvironmentAccountConnection(const RejectEnvironmentAccountConnectionRequest& request) const
@@ -1317,5 +1743,29 @@ void ProtonClient::UpdateServiceTemplateVersionAsync(const UpdateServiceTemplate
 void ProtonClient::UpdateServiceTemplateVersionAsyncHelper(const UpdateServiceTemplateVersionRequest& request, const UpdateServiceTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateServiceTemplateVersion(request), context);
+}
+
+UpdateTemplateSyncConfigOutcome ProtonClient::UpdateTemplateSyncConfig(const UpdateTemplateSyncConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateTemplateSyncConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateTemplateSyncConfigOutcomeCallable ProtonClient::UpdateTemplateSyncConfigCallable(const UpdateTemplateSyncConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateTemplateSyncConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTemplateSyncConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ProtonClient::UpdateTemplateSyncConfigAsync(const UpdateTemplateSyncConfigRequest& request, const UpdateTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateTemplateSyncConfigAsyncHelper( request, handler, context ); } );
+}
+
+void ProtonClient::UpdateTemplateSyncConfigAsyncHelper(const UpdateTemplateSyncConfigRequest& request, const UpdateTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateTemplateSyncConfig(request), context);
 }
 

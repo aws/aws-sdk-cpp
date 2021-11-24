@@ -15,7 +15,9 @@ using namespace Aws::Utils;
 PutStorageConfigurationRequest::PutStorageConfigurationRequest() : 
     m_storageType(StorageType::NOT_SET),
     m_storageTypeHasBeenSet(false),
-    m_multiLayerStorageHasBeenSet(false)
+    m_multiLayerStorageHasBeenSet(false),
+    m_disassociatedDataStorage(DisassociatedDataStorageState::NOT_SET),
+    m_disassociatedDataStorageHasBeenSet(false)
 {
 }
 
@@ -32,6 +34,11 @@ Aws::String PutStorageConfigurationRequest::SerializePayload() const
   {
    payload.WithObject("multiLayerStorage", m_multiLayerStorage.Jsonize());
 
+  }
+
+  if(m_disassociatedDataStorageHasBeenSet)
+  {
+   payload.WithString("disassociatedDataStorage", DisassociatedDataStorageStateMapper::GetNameForDisassociatedDataStorageState(m_disassociatedDataStorage));
   }
 
   return payload.View().WriteReadable();

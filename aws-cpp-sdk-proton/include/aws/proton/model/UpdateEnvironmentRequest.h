@@ -8,6 +8,7 @@
 #include <aws/proton/ProtonRequest.h>
 #include <aws/proton/model/DeploymentUpdateType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/proton/model/RepositoryBranchInput.h>
 #include <utility>
 
 namespace Aws
@@ -310,52 +311,107 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
-     * Proton to make API calls to other services your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
+     * to make API calls to other services your behalf.</p>
      */
     inline const Aws::String& GetProtonServiceRoleArn() const{ return m_protonServiceRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
-     * Proton to make API calls to other services your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
+     * to make API calls to other services your behalf.</p>
      */
     inline bool ProtonServiceRoleArnHasBeenSet() const { return m_protonServiceRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
-     * Proton to make API calls to other services your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
+     * to make API calls to other services your behalf.</p>
      */
     inline void SetProtonServiceRoleArn(const Aws::String& value) { m_protonServiceRoleArnHasBeenSet = true; m_protonServiceRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
-     * Proton to make API calls to other services your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
+     * to make API calls to other services your behalf.</p>
      */
     inline void SetProtonServiceRoleArn(Aws::String&& value) { m_protonServiceRoleArnHasBeenSet = true; m_protonServiceRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
-     * Proton to make API calls to other services your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
+     * to make API calls to other services your behalf.</p>
      */
     inline void SetProtonServiceRoleArn(const char* value) { m_protonServiceRoleArnHasBeenSet = true; m_protonServiceRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
-     * Proton to make API calls to other services your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
+     * to make API calls to other services your behalf.</p>
      */
     inline UpdateEnvironmentRequest& WithProtonServiceRoleArn(const Aws::String& value) { SetProtonServiceRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
-     * Proton to make API calls to other services your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
+     * to make API calls to other services your behalf.</p>
      */
     inline UpdateEnvironmentRequest& WithProtonServiceRoleArn(Aws::String&& value) { SetProtonServiceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
-     * Proton to make API calls to other services your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
+     * to make API calls to other services your behalf.</p>
      */
     inline UpdateEnvironmentRequest& WithProtonServiceRoleArn(const char* value) { SetProtonServiceRoleArn(value); return *this;}
+
+
+    /**
+     * <p>The repository that you provide with pull request provisioning.</p>
+     *  <p>Provisioning by pull request is currently in feature preview and
+     * is only usable with Terraform based Proton Templates. To learn more about <a
+     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
+     * terms</a>, see section 2 on Beta and Previews.</p> 
+     */
+    inline const RepositoryBranchInput& GetProvisioningRepository() const{ return m_provisioningRepository; }
+
+    /**
+     * <p>The repository that you provide with pull request provisioning.</p>
+     *  <p>Provisioning by pull request is currently in feature preview and
+     * is only usable with Terraform based Proton Templates. To learn more about <a
+     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
+     * terms</a>, see section 2 on Beta and Previews.</p> 
+     */
+    inline bool ProvisioningRepositoryHasBeenSet() const { return m_provisioningRepositoryHasBeenSet; }
+
+    /**
+     * <p>The repository that you provide with pull request provisioning.</p>
+     *  <p>Provisioning by pull request is currently in feature preview and
+     * is only usable with Terraform based Proton Templates. To learn more about <a
+     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
+     * terms</a>, see section 2 on Beta and Previews.</p> 
+     */
+    inline void SetProvisioningRepository(const RepositoryBranchInput& value) { m_provisioningRepositoryHasBeenSet = true; m_provisioningRepository = value; }
+
+    /**
+     * <p>The repository that you provide with pull request provisioning.</p>
+     *  <p>Provisioning by pull request is currently in feature preview and
+     * is only usable with Terraform based Proton Templates. To learn more about <a
+     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
+     * terms</a>, see section 2 on Beta and Previews.</p> 
+     */
+    inline void SetProvisioningRepository(RepositoryBranchInput&& value) { m_provisioningRepositoryHasBeenSet = true; m_provisioningRepository = std::move(value); }
+
+    /**
+     * <p>The repository that you provide with pull request provisioning.</p>
+     *  <p>Provisioning by pull request is currently in feature preview and
+     * is only usable with Terraform based Proton Templates. To learn more about <a
+     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
+     * terms</a>, see section 2 on Beta and Previews.</p> 
+     */
+    inline UpdateEnvironmentRequest& WithProvisioningRepository(const RepositoryBranchInput& value) { SetProvisioningRepository(value); return *this;}
+
+    /**
+     * <p>The repository that you provide with pull request provisioning.</p>
+     *  <p>Provisioning by pull request is currently in feature preview and
+     * is only usable with Terraform based Proton Templates. To learn more about <a
+     * href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview
+     * terms</a>, see section 2 on Beta and Previews.</p> 
+     */
+    inline UpdateEnvironmentRequest& WithProvisioningRepository(RepositoryBranchInput&& value) { SetProvisioningRepository(std::move(value)); return *this;}
 
 
     /**
@@ -400,83 +456,83 @@ namespace Model
 
 
     /**
-     * <p>The ID of the major version of the environment to update.</p>
+     * <p>The major version of the environment to update.</p>
      */
     inline const Aws::String& GetTemplateMajorVersion() const{ return m_templateMajorVersion; }
 
     /**
-     * <p>The ID of the major version of the environment to update.</p>
+     * <p>The major version of the environment to update.</p>
      */
     inline bool TemplateMajorVersionHasBeenSet() const { return m_templateMajorVersionHasBeenSet; }
 
     /**
-     * <p>The ID of the major version of the environment to update.</p>
+     * <p>The major version of the environment to update.</p>
      */
     inline void SetTemplateMajorVersion(const Aws::String& value) { m_templateMajorVersionHasBeenSet = true; m_templateMajorVersion = value; }
 
     /**
-     * <p>The ID of the major version of the environment to update.</p>
+     * <p>The major version of the environment to update.</p>
      */
     inline void SetTemplateMajorVersion(Aws::String&& value) { m_templateMajorVersionHasBeenSet = true; m_templateMajorVersion = std::move(value); }
 
     /**
-     * <p>The ID of the major version of the environment to update.</p>
+     * <p>The major version of the environment to update.</p>
      */
     inline void SetTemplateMajorVersion(const char* value) { m_templateMajorVersionHasBeenSet = true; m_templateMajorVersion.assign(value); }
 
     /**
-     * <p>The ID of the major version of the environment to update.</p>
+     * <p>The major version of the environment to update.</p>
      */
     inline UpdateEnvironmentRequest& WithTemplateMajorVersion(const Aws::String& value) { SetTemplateMajorVersion(value); return *this;}
 
     /**
-     * <p>The ID of the major version of the environment to update.</p>
+     * <p>The major version of the environment to update.</p>
      */
     inline UpdateEnvironmentRequest& WithTemplateMajorVersion(Aws::String&& value) { SetTemplateMajorVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the major version of the environment to update.</p>
+     * <p>The major version of the environment to update.</p>
      */
     inline UpdateEnvironmentRequest& WithTemplateMajorVersion(const char* value) { SetTemplateMajorVersion(value); return *this;}
 
 
     /**
-     * <p>The ID of the minor version of the environment to update.</p>
+     * <p>The minor version of the environment to update.</p>
      */
     inline const Aws::String& GetTemplateMinorVersion() const{ return m_templateMinorVersion; }
 
     /**
-     * <p>The ID of the minor version of the environment to update.</p>
+     * <p>The minor version of the environment to update.</p>
      */
     inline bool TemplateMinorVersionHasBeenSet() const { return m_templateMinorVersionHasBeenSet; }
 
     /**
-     * <p>The ID of the minor version of the environment to update.</p>
+     * <p>The minor version of the environment to update.</p>
      */
     inline void SetTemplateMinorVersion(const Aws::String& value) { m_templateMinorVersionHasBeenSet = true; m_templateMinorVersion = value; }
 
     /**
-     * <p>The ID of the minor version of the environment to update.</p>
+     * <p>The minor version of the environment to update.</p>
      */
     inline void SetTemplateMinorVersion(Aws::String&& value) { m_templateMinorVersionHasBeenSet = true; m_templateMinorVersion = std::move(value); }
 
     /**
-     * <p>The ID of the minor version of the environment to update.</p>
+     * <p>The minor version of the environment to update.</p>
      */
     inline void SetTemplateMinorVersion(const char* value) { m_templateMinorVersionHasBeenSet = true; m_templateMinorVersion.assign(value); }
 
     /**
-     * <p>The ID of the minor version of the environment to update.</p>
+     * <p>The minor version of the environment to update.</p>
      */
     inline UpdateEnvironmentRequest& WithTemplateMinorVersion(const Aws::String& value) { SetTemplateMinorVersion(value); return *this;}
 
     /**
-     * <p>The ID of the minor version of the environment to update.</p>
+     * <p>The minor version of the environment to update.</p>
      */
     inline UpdateEnvironmentRequest& WithTemplateMinorVersion(Aws::String&& value) { SetTemplateMinorVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the minor version of the environment to update.</p>
+     * <p>The minor version of the environment to update.</p>
      */
     inline UpdateEnvironmentRequest& WithTemplateMinorVersion(const char* value) { SetTemplateMinorVersion(value); return *this;}
 
@@ -496,6 +552,9 @@ namespace Model
 
     Aws::String m_protonServiceRoleArn;
     bool m_protonServiceRoleArnHasBeenSet;
+
+    RepositoryBranchInput m_provisioningRepository;
+    bool m_provisioningRepositoryHasBeenSet;
 
     Aws::String m_spec;
     bool m_specHasBeenSet;

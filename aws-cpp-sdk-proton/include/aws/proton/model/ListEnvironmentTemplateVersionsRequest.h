@@ -36,65 +36,65 @@ namespace Model
 
     /**
      * <p>To view a list of minor of versions under a major version of an environment
-     * template, include <code>majorVersion</code>.</p> <p>To view a list of major
-     * versions of an environment template, <i>exclude</i>
-     * <code>majorVersion</code>.</p>
+     * template, include <code>major Version</code>.</p> <p>To view a list of major
+     * versions of an environment template, <i>exclude</i> <code>major
+     * Version</code>.</p>
      */
     inline const Aws::String& GetMajorVersion() const{ return m_majorVersion; }
 
     /**
      * <p>To view a list of minor of versions under a major version of an environment
-     * template, include <code>majorVersion</code>.</p> <p>To view a list of major
-     * versions of an environment template, <i>exclude</i>
-     * <code>majorVersion</code>.</p>
+     * template, include <code>major Version</code>.</p> <p>To view a list of major
+     * versions of an environment template, <i>exclude</i> <code>major
+     * Version</code>.</p>
      */
     inline bool MajorVersionHasBeenSet() const { return m_majorVersionHasBeenSet; }
 
     /**
      * <p>To view a list of minor of versions under a major version of an environment
-     * template, include <code>majorVersion</code>.</p> <p>To view a list of major
-     * versions of an environment template, <i>exclude</i>
-     * <code>majorVersion</code>.</p>
+     * template, include <code>major Version</code>.</p> <p>To view a list of major
+     * versions of an environment template, <i>exclude</i> <code>major
+     * Version</code>.</p>
      */
     inline void SetMajorVersion(const Aws::String& value) { m_majorVersionHasBeenSet = true; m_majorVersion = value; }
 
     /**
      * <p>To view a list of minor of versions under a major version of an environment
-     * template, include <code>majorVersion</code>.</p> <p>To view a list of major
-     * versions of an environment template, <i>exclude</i>
-     * <code>majorVersion</code>.</p>
+     * template, include <code>major Version</code>.</p> <p>To view a list of major
+     * versions of an environment template, <i>exclude</i> <code>major
+     * Version</code>.</p>
      */
     inline void SetMajorVersion(Aws::String&& value) { m_majorVersionHasBeenSet = true; m_majorVersion = std::move(value); }
 
     /**
      * <p>To view a list of minor of versions under a major version of an environment
-     * template, include <code>majorVersion</code>.</p> <p>To view a list of major
-     * versions of an environment template, <i>exclude</i>
-     * <code>majorVersion</code>.</p>
+     * template, include <code>major Version</code>.</p> <p>To view a list of major
+     * versions of an environment template, <i>exclude</i> <code>major
+     * Version</code>.</p>
      */
     inline void SetMajorVersion(const char* value) { m_majorVersionHasBeenSet = true; m_majorVersion.assign(value); }
 
     /**
      * <p>To view a list of minor of versions under a major version of an environment
-     * template, include <code>majorVersion</code>.</p> <p>To view a list of major
-     * versions of an environment template, <i>exclude</i>
-     * <code>majorVersion</code>.</p>
+     * template, include <code>major Version</code>.</p> <p>To view a list of major
+     * versions of an environment template, <i>exclude</i> <code>major
+     * Version</code>.</p>
      */
     inline ListEnvironmentTemplateVersionsRequest& WithMajorVersion(const Aws::String& value) { SetMajorVersion(value); return *this;}
 
     /**
      * <p>To view a list of minor of versions under a major version of an environment
-     * template, include <code>majorVersion</code>.</p> <p>To view a list of major
-     * versions of an environment template, <i>exclude</i>
-     * <code>majorVersion</code>.</p>
+     * template, include <code>major Version</code>.</p> <p>To view a list of major
+     * versions of an environment template, <i>exclude</i> <code>major
+     * Version</code>.</p>
      */
     inline ListEnvironmentTemplateVersionsRequest& WithMajorVersion(Aws::String&& value) { SetMajorVersion(std::move(value)); return *this;}
 
     /**
      * <p>To view a list of minor of versions under a major version of an environment
-     * template, include <code>majorVersion</code>.</p> <p>To view a list of major
-     * versions of an environment template, <i>exclude</i>
-     * <code>majorVersion</code>.</p>
+     * template, include <code>major Version</code>.</p> <p>To view a list of major
+     * versions of an environment template, <i>exclude</i> <code>major
+     * Version</code>.</p>
      */
     inline ListEnvironmentTemplateVersionsRequest& WithMajorVersion(const char* value) { SetMajorVersion(value); return *this;}
 

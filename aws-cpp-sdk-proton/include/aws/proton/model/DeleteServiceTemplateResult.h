@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>The service template detail data that's returned by AWS Proton.</p>
+     * <p>The service template detail data that's returned by Proton.</p>
      */
     inline const ServiceTemplate& GetServiceTemplate() const{ return m_serviceTemplate; }
 
     /**
-     * <p>The service template detail data that's returned by AWS Proton.</p>
+     * <p>The service template detail data that's returned by Proton.</p>
      */
     inline void SetServiceTemplate(const ServiceTemplate& value) { m_serviceTemplate = value; }
 
     /**
-     * <p>The service template detail data that's returned by AWS Proton.</p>
+     * <p>The service template detail data that's returned by Proton.</p>
      */
     inline void SetServiceTemplate(ServiceTemplate&& value) { m_serviceTemplate = std::move(value); }
 
     /**
-     * <p>The service template detail data that's returned by AWS Proton.</p>
+     * <p>The service template detail data that's returned by Proton.</p>
      */
     inline DeleteServiceTemplateResult& WithServiceTemplate(const ServiceTemplate& value) { SetServiceTemplate(value); return *this;}
 
     /**
-     * <p>The service template detail data that's returned by AWS Proton.</p>
+     * <p>The service template detail data that's returned by Proton.</p>
      */
     inline DeleteServiceTemplateResult& WithServiceTemplate(ServiceTemplate&& value) { SetServiceTemplate(std::move(value)); return *this;}
 

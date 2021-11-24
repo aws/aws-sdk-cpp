@@ -29,13 +29,16 @@
 #include <aws/customer-profiles/model/DeleteProfileKeyRequest.h>
 #include <aws/customer-profiles/model/DeleteProfileObjectRequest.h>
 #include <aws/customer-profiles/model/DeleteProfileObjectTypeRequest.h>
+#include <aws/customer-profiles/model/GetAutoMergingPreviewRequest.h>
 #include <aws/customer-profiles/model/GetDomainRequest.h>
+#include <aws/customer-profiles/model/GetIdentityResolutionJobRequest.h>
 #include <aws/customer-profiles/model/GetIntegrationRequest.h>
 #include <aws/customer-profiles/model/GetMatchesRequest.h>
 #include <aws/customer-profiles/model/GetProfileObjectTypeRequest.h>
 #include <aws/customer-profiles/model/GetProfileObjectTypeTemplateRequest.h>
 #include <aws/customer-profiles/model/ListAccountIntegrationsRequest.h>
 #include <aws/customer-profiles/model/ListDomainsRequest.h>
+#include <aws/customer-profiles/model/ListIdentityResolutionJobsRequest.h>
 #include <aws/customer-profiles/model/ListIntegrationsRequest.h>
 #include <aws/customer-profiles/model/ListProfileObjectTypeTemplatesRequest.h>
 #include <aws/customer-profiles/model/ListProfileObjectTypesRequest.h>
@@ -416,6 +419,38 @@ void CustomerProfilesClient::DeleteProfileObjectTypeAsyncHelper(const DeleteProf
   handler(this, request, DeleteProfileObjectType(request), context);
 }
 
+GetAutoMergingPreviewOutcome CustomerProfilesClient::GetAutoMergingPreview(const GetAutoMergingPreviewRequest& request) const
+{
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAutoMergingPreview", "Required field: DomainName, is not set");
+    return GetAutoMergingPreviewOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/identity-resolution-jobs/auto-merging-preview");
+  return GetAutoMergingPreviewOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetAutoMergingPreviewOutcomeCallable CustomerProfilesClient::GetAutoMergingPreviewCallable(const GetAutoMergingPreviewRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAutoMergingPreviewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAutoMergingPreview(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CustomerProfilesClient::GetAutoMergingPreviewAsync(const GetAutoMergingPreviewRequest& request, const GetAutoMergingPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAutoMergingPreviewAsyncHelper( request, handler, context ); } );
+}
+
+void CustomerProfilesClient::GetAutoMergingPreviewAsyncHelper(const GetAutoMergingPreviewRequest& request, const GetAutoMergingPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAutoMergingPreview(request), context);
+}
+
 GetDomainOutcome CustomerProfilesClient::GetDomain(const GetDomainRequest& request) const
 {
   if (!request.DomainNameHasBeenSet())
@@ -445,6 +480,44 @@ void CustomerProfilesClient::GetDomainAsync(const GetDomainRequest& request, con
 void CustomerProfilesClient::GetDomainAsyncHelper(const GetDomainRequest& request, const GetDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetDomain(request), context);
+}
+
+GetIdentityResolutionJobOutcome CustomerProfilesClient::GetIdentityResolutionJob(const GetIdentityResolutionJobRequest& request) const
+{
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetIdentityResolutionJob", "Required field: DomainName, is not set");
+    return GetIdentityResolutionJobOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetIdentityResolutionJob", "Required field: JobId, is not set");
+    return GetIdentityResolutionJobOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/identity-resolution-jobs/");
+  uri.AddPathSegment(request.GetJobId());
+  return GetIdentityResolutionJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetIdentityResolutionJobOutcomeCallable CustomerProfilesClient::GetIdentityResolutionJobCallable(const GetIdentityResolutionJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetIdentityResolutionJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetIdentityResolutionJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CustomerProfilesClient::GetIdentityResolutionJobAsync(const GetIdentityResolutionJobRequest& request, const GetIdentityResolutionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetIdentityResolutionJobAsyncHelper( request, handler, context ); } );
+}
+
+void CustomerProfilesClient::GetIdentityResolutionJobAsyncHelper(const GetIdentityResolutionJobRequest& request, const GetIdentityResolutionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetIdentityResolutionJob(request), context);
 }
 
 GetIntegrationOutcome CustomerProfilesClient::GetIntegration(const GetIntegrationRequest& request) const
@@ -628,6 +701,38 @@ void CustomerProfilesClient::ListDomainsAsync(const ListDomainsRequest& request,
 void CustomerProfilesClient::ListDomainsAsyncHelper(const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListDomains(request), context);
+}
+
+ListIdentityResolutionJobsOutcome CustomerProfilesClient::ListIdentityResolutionJobs(const ListIdentityResolutionJobsRequest& request) const
+{
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListIdentityResolutionJobs", "Required field: DomainName, is not set");
+    return ListIdentityResolutionJobsOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/identity-resolution-jobs");
+  return ListIdentityResolutionJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListIdentityResolutionJobsOutcomeCallable CustomerProfilesClient::ListIdentityResolutionJobsCallable(const ListIdentityResolutionJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListIdentityResolutionJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListIdentityResolutionJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CustomerProfilesClient::ListIdentityResolutionJobsAsync(const ListIdentityResolutionJobsRequest& request, const ListIdentityResolutionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListIdentityResolutionJobsAsyncHelper( request, handler, context ); } );
+}
+
+void CustomerProfilesClient::ListIdentityResolutionJobsAsyncHelper(const ListIdentityResolutionJobsRequest& request, const ListIdentityResolutionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListIdentityResolutionJobs(request), context);
 }
 
 ListIntegrationsOutcome CustomerProfilesClient::ListIntegrations(const ListIntegrationsRequest& request) const

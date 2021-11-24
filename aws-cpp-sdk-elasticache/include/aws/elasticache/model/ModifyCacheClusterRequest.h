@@ -1347,28 +1347,28 @@ namespace Model
 
     /**
      * <p> If you are running Redis engine version 6.0 or later, set this parameter to
-     * yes if you want to opt-in to the next minor version upgrade campaign. This
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
      * parameter is disabled for previous versions.  </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
      * <p> If you are running Redis engine version 6.0 or later, set this parameter to
-     * yes if you want to opt-in to the next minor version upgrade campaign. This
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
      * parameter is disabled for previous versions.  </p>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
      * <p> If you are running Redis engine version 6.0 or later, set this parameter to
-     * yes if you want to opt-in to the next minor version upgrade campaign. This
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
      * parameter is disabled for previous versions.  </p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
      * <p> If you are running Redis engine version 6.0 or later, set this parameter to
-     * yes if you want to opt-in to the next minor version upgrade campaign. This
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
      * parameter is disabled for previous versions.  </p>
      */
     inline ModifyCacheClusterRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}

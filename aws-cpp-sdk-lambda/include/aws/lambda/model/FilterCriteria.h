@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p> An object that contains the filters on the event source. </p><p><h3>See
+   * <p> An object that contains the filters for an event source. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/FilterCriteria">AWS
    * API Reference</a></p>

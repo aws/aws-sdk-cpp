@@ -24,6 +24,8 @@ namespace Aws
         static const int BIGINT_HASH = HashingUtils::HashString("BIGINT");
         static const int VARCHAR_HASH = HashingUtils::HashString("VARCHAR");
         static const int BOOLEAN_HASH = HashingUtils::HashString("BOOLEAN");
+        static const int TIMESTAMP_HASH = HashingUtils::HashString("TIMESTAMP");
+        static const int MULTI_HASH = HashingUtils::HashString("MULTI");
 
 
         MeasureValueType GetMeasureValueTypeForName(const Aws::String& name)
@@ -44,6 +46,14 @@ namespace Aws
           else if (hashCode == BOOLEAN_HASH)
           {
             return MeasureValueType::BOOLEAN;
+          }
+          else if (hashCode == TIMESTAMP_HASH)
+          {
+            return MeasureValueType::TIMESTAMP;
+          }
+          else if (hashCode == MULTI_HASH)
+          {
+            return MeasureValueType::MULTI;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +77,10 @@ namespace Aws
             return "VARCHAR";
           case MeasureValueType::BOOLEAN:
             return "BOOLEAN";
+          case MeasureValueType::TIMESTAMP:
+            return "TIMESTAMP";
+          case MeasureValueType::MULTI:
+            return "MULTI";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

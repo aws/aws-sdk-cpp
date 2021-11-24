@@ -21,6 +21,7 @@
 #include <aws/iotsitewise/IoTSiteWiseEndpoint.h>
 #include <aws/iotsitewise/IoTSiteWiseErrorMarshaller.h>
 #include <aws/iotsitewise/model/AssociateAssetsRequest.h>
+#include <aws/iotsitewise/model/AssociateTimeSeriesToAssetPropertyRequest.h>
 #include <aws/iotsitewise/model/BatchAssociateProjectAssetsRequest.h>
 #include <aws/iotsitewise/model/BatchDisassociateProjectAssetsRequest.h>
 #include <aws/iotsitewise/model/BatchPutAssetPropertyValueRequest.h>
@@ -38,6 +39,7 @@
 #include <aws/iotsitewise/model/DeleteGatewayRequest.h>
 #include <aws/iotsitewise/model/DeletePortalRequest.h>
 #include <aws/iotsitewise/model/DeleteProjectRequest.h>
+#include <aws/iotsitewise/model/DeleteTimeSeriesRequest.h>
 #include <aws/iotsitewise/model/DescribeAccessPolicyRequest.h>
 #include <aws/iotsitewise/model/DescribeAssetRequest.h>
 #include <aws/iotsitewise/model/DescribeAssetModelRequest.h>
@@ -50,7 +52,9 @@
 #include <aws/iotsitewise/model/DescribePortalRequest.h>
 #include <aws/iotsitewise/model/DescribeProjectRequest.h>
 #include <aws/iotsitewise/model/DescribeStorageConfigurationRequest.h>
+#include <aws/iotsitewise/model/DescribeTimeSeriesRequest.h>
 #include <aws/iotsitewise/model/DisassociateAssetsRequest.h>
+#include <aws/iotsitewise/model/DisassociateTimeSeriesFromAssetPropertyRequest.h>
 #include <aws/iotsitewise/model/GetAssetPropertyAggregatesRequest.h>
 #include <aws/iotsitewise/model/GetAssetPropertyValueRequest.h>
 #include <aws/iotsitewise/model/GetAssetPropertyValueHistoryRequest.h>
@@ -66,6 +70,7 @@
 #include <aws/iotsitewise/model/ListProjectAssetsRequest.h>
 #include <aws/iotsitewise/model/ListProjectsRequest.h>
 #include <aws/iotsitewise/model/ListTagsForResourceRequest.h>
+#include <aws/iotsitewise/model/ListTimeSeriesRequest.h>
 #include <aws/iotsitewise/model/PutDefaultEncryptionConfigurationRequest.h>
 #include <aws/iotsitewise/model/PutLoggingOptionsRequest.h>
 #include <aws/iotsitewise/model/PutStorageConfigurationRequest.h>
@@ -202,6 +207,55 @@ void IoTSiteWiseClient::AssociateAssetsAsync(const AssociateAssetsRequest& reque
 void IoTSiteWiseClient::AssociateAssetsAsyncHelper(const AssociateAssetsRequest& request, const AssociateAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AssociateAssets(request), context);
+}
+
+AssociateTimeSeriesToAssetPropertyOutcome IoTSiteWiseClient::AssociateTimeSeriesToAssetProperty(const AssociateTimeSeriesToAssetPropertyRequest& request) const
+{
+  if (!request.AliasHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateTimeSeriesToAssetProperty", "Required field: Alias, is not set");
+    return AssociateTimeSeriesToAssetPropertyOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Alias]", false));
+  }
+  if (!request.AssetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateTimeSeriesToAssetProperty", "Required field: AssetId, is not set");
+    return AssociateTimeSeriesToAssetPropertyOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssetId]", false));
+  }
+  if (!request.PropertyIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateTimeSeriesToAssetProperty", "Required field: PropertyId, is not set");
+    return AssociateTimeSeriesToAssetPropertyOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PropertyId]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("api." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("AssociateTimeSeriesToAssetProperty", "Invalid DNS host: " << uri.GetAuthority());
+      return AssociateTimeSeriesToAssetPropertyOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/timeseries/associate/");
+  return AssociateTimeSeriesToAssetPropertyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateTimeSeriesToAssetPropertyOutcomeCallable IoTSiteWiseClient::AssociateTimeSeriesToAssetPropertyCallable(const AssociateTimeSeriesToAssetPropertyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateTimeSeriesToAssetPropertyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateTimeSeriesToAssetProperty(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTSiteWiseClient::AssociateTimeSeriesToAssetPropertyAsync(const AssociateTimeSeriesToAssetPropertyRequest& request, const AssociateTimeSeriesToAssetPropertyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateTimeSeriesToAssetPropertyAsyncHelper( request, handler, context ); } );
+}
+
+void IoTSiteWiseClient::AssociateTimeSeriesToAssetPropertyAsyncHelper(const AssociateTimeSeriesToAssetPropertyRequest& request, const AssociateTimeSeriesToAssetPropertyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateTimeSeriesToAssetProperty(request), context);
 }
 
 BatchAssociateProjectAssetsOutcome IoTSiteWiseClient::BatchAssociateProjectAssets(const BatchAssociateProjectAssetsRequest& request) const
@@ -838,6 +892,40 @@ void IoTSiteWiseClient::DeleteProjectAsyncHelper(const DeleteProjectRequest& req
   handler(this, request, DeleteProject(request), context);
 }
 
+DeleteTimeSeriesOutcome IoTSiteWiseClient::DeleteTimeSeries(const DeleteTimeSeriesRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("api." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DeleteTimeSeries", "Invalid DNS host: " << uri.GetAuthority());
+      return DeleteTimeSeriesOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/timeseries/delete/");
+  return DeleteTimeSeriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteTimeSeriesOutcomeCallable IoTSiteWiseClient::DeleteTimeSeriesCallable(const DeleteTimeSeriesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteTimeSeriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTimeSeries(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTSiteWiseClient::DeleteTimeSeriesAsync(const DeleteTimeSeriesRequest& request, const DeleteTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteTimeSeriesAsyncHelper( request, handler, context ); } );
+}
+
+void IoTSiteWiseClient::DeleteTimeSeriesAsyncHelper(const DeleteTimeSeriesRequest& request, const DeleteTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteTimeSeries(request), context);
+}
+
 DescribeAccessPolicyOutcome IoTSiteWiseClient::DescribeAccessPolicy(const DescribeAccessPolicyRequest& request) const
 {
   if (!request.AccessPolicyIdHasBeenSet())
@@ -1314,6 +1402,40 @@ void IoTSiteWiseClient::DescribeStorageConfigurationAsyncHelper(const DescribeSt
   handler(this, request, DescribeStorageConfiguration(request), context);
 }
 
+DescribeTimeSeriesOutcome IoTSiteWiseClient::DescribeTimeSeries(const DescribeTimeSeriesRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("api." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DescribeTimeSeries", "Invalid DNS host: " << uri.GetAuthority());
+      return DescribeTimeSeriesOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/timeseries/describe/");
+  return DescribeTimeSeriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeTimeSeriesOutcomeCallable IoTSiteWiseClient::DescribeTimeSeriesCallable(const DescribeTimeSeriesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeTimeSeriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTimeSeries(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTSiteWiseClient::DescribeTimeSeriesAsync(const DescribeTimeSeriesRequest& request, const DescribeTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeTimeSeriesAsyncHelper( request, handler, context ); } );
+}
+
+void IoTSiteWiseClient::DescribeTimeSeriesAsyncHelper(const DescribeTimeSeriesRequest& request, const DescribeTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeTimeSeries(request), context);
+}
+
 DisassociateAssetsOutcome IoTSiteWiseClient::DisassociateAssets(const DisassociateAssetsRequest& request) const
 {
   if (!request.AssetIdHasBeenSet())
@@ -1353,6 +1475,55 @@ void IoTSiteWiseClient::DisassociateAssetsAsync(const DisassociateAssetsRequest&
 void IoTSiteWiseClient::DisassociateAssetsAsyncHelper(const DisassociateAssetsRequest& request, const DisassociateAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DisassociateAssets(request), context);
+}
+
+DisassociateTimeSeriesFromAssetPropertyOutcome IoTSiteWiseClient::DisassociateTimeSeriesFromAssetProperty(const DisassociateTimeSeriesFromAssetPropertyRequest& request) const
+{
+  if (!request.AliasHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateTimeSeriesFromAssetProperty", "Required field: Alias, is not set");
+    return DisassociateTimeSeriesFromAssetPropertyOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Alias]", false));
+  }
+  if (!request.AssetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateTimeSeriesFromAssetProperty", "Required field: AssetId, is not set");
+    return DisassociateTimeSeriesFromAssetPropertyOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssetId]", false));
+  }
+  if (!request.PropertyIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateTimeSeriesFromAssetProperty", "Required field: PropertyId, is not set");
+    return DisassociateTimeSeriesFromAssetPropertyOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PropertyId]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("api." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DisassociateTimeSeriesFromAssetProperty", "Invalid DNS host: " << uri.GetAuthority());
+      return DisassociateTimeSeriesFromAssetPropertyOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/timeseries/disassociate/");
+  return DisassociateTimeSeriesFromAssetPropertyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateTimeSeriesFromAssetPropertyOutcomeCallable IoTSiteWiseClient::DisassociateTimeSeriesFromAssetPropertyCallable(const DisassociateTimeSeriesFromAssetPropertyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateTimeSeriesFromAssetPropertyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateTimeSeriesFromAssetProperty(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTSiteWiseClient::DisassociateTimeSeriesFromAssetPropertyAsync(const DisassociateTimeSeriesFromAssetPropertyRequest& request, const DisassociateTimeSeriesFromAssetPropertyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateTimeSeriesFromAssetPropertyAsyncHelper( request, handler, context ); } );
+}
+
+void IoTSiteWiseClient::DisassociateTimeSeriesFromAssetPropertyAsyncHelper(const DisassociateTimeSeriesFromAssetPropertyRequest& request, const DisassociateTimeSeriesFromAssetPropertyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateTimeSeriesFromAssetProperty(request), context);
 }
 
 GetAssetPropertyAggregatesOutcome IoTSiteWiseClient::GetAssetPropertyAggregates(const GetAssetPropertyAggregatesRequest& request) const
@@ -1949,6 +2120,40 @@ void IoTSiteWiseClient::ListTagsForResourceAsync(const ListTagsForResourceReques
 void IoTSiteWiseClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+ListTimeSeriesOutcome IoTSiteWiseClient::ListTimeSeries(const ListTimeSeriesRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("api." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("ListTimeSeries", "Invalid DNS host: " << uri.GetAuthority());
+      return ListTimeSeriesOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/timeseries/");
+  return ListTimeSeriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListTimeSeriesOutcomeCallable IoTSiteWiseClient::ListTimeSeriesCallable(const ListTimeSeriesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTimeSeriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTimeSeries(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTSiteWiseClient::ListTimeSeriesAsync(const ListTimeSeriesRequest& request, const ListTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTimeSeriesAsyncHelper( request, handler, context ); } );
+}
+
+void IoTSiteWiseClient::ListTimeSeriesAsyncHelper(const ListTimeSeriesRequest& request, const ListTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTimeSeries(request), context);
 }
 
 PutDefaultEncryptionConfigurationOutcome IoTSiteWiseClient::PutDefaultEncryptionConfiguration(const PutDefaultEncryptionConfigurationRequest& request) const

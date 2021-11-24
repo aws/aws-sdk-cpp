@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateAccountSettingsRequest::UpdateAccountSettingsRequest() : 
+    m_pipelineProvisioningRepositoryHasBeenSet(false),
     m_pipelineServiceRoleArnHasBeenSet(false)
 {
 }
@@ -20,6 +21,12 @@ UpdateAccountSettingsRequest::UpdateAccountSettingsRequest() :
 Aws::String UpdateAccountSettingsRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_pipelineProvisioningRepositoryHasBeenSet)
+  {
+   payload.WithObject("pipelineProvisioningRepository", m_pipelineProvisioningRepository.Jsonize());
+
+  }
 
   if(m_pipelineServiceRoleArnHasBeenSet)
   {

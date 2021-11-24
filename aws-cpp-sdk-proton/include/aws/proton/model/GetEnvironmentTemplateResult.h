@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>The environment template detail data that's returned by AWS Proton.</p>
+     * <p>The environment template detail data that's returned by Proton.</p>
      */
     inline const EnvironmentTemplate& GetEnvironmentTemplate() const{ return m_environmentTemplate; }
 
     /**
-     * <p>The environment template detail data that's returned by AWS Proton.</p>
+     * <p>The environment template detail data that's returned by Proton.</p>
      */
     inline void SetEnvironmentTemplate(const EnvironmentTemplate& value) { m_environmentTemplate = value; }
 
     /**
-     * <p>The environment template detail data that's returned by AWS Proton.</p>
+     * <p>The environment template detail data that's returned by Proton.</p>
      */
     inline void SetEnvironmentTemplate(EnvironmentTemplate&& value) { m_environmentTemplate = std::move(value); }
 
     /**
-     * <p>The environment template detail data that's returned by AWS Proton.</p>
+     * <p>The environment template detail data that's returned by Proton.</p>
      */
     inline GetEnvironmentTemplateResult& WithEnvironmentTemplate(const EnvironmentTemplate& value) { SetEnvironmentTemplate(value); return *this;}
 
     /**
-     * <p>The environment template detail data that's returned by AWS Proton.</p>
+     * <p>The environment template detail data that's returned by Proton.</p>
      */
     inline GetEnvironmentTemplateResult& WithEnvironmentTemplate(EnvironmentTemplate&& value) { SetEnvironmentTemplate(std::move(value)); return *this;}
 

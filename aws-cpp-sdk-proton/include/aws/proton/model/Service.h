@@ -83,49 +83,49 @@ namespace Model
 
     /**
      * <p>The name of the code repository branch that holds the code that's deployed in
-     * AWS Proton.</p>
+     * Proton.</p>
      */
     inline const Aws::String& GetBranchName() const{ return m_branchName; }
 
     /**
      * <p>The name of the code repository branch that holds the code that's deployed in
-     * AWS Proton.</p>
+     * Proton.</p>
      */
     inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
 
     /**
      * <p>The name of the code repository branch that holds the code that's deployed in
-     * AWS Proton.</p>
+     * Proton.</p>
      */
     inline void SetBranchName(const Aws::String& value) { m_branchNameHasBeenSet = true; m_branchName = value; }
 
     /**
      * <p>The name of the code repository branch that holds the code that's deployed in
-     * AWS Proton.</p>
+     * Proton.</p>
      */
     inline void SetBranchName(Aws::String&& value) { m_branchNameHasBeenSet = true; m_branchName = std::move(value); }
 
     /**
      * <p>The name of the code repository branch that holds the code that's deployed in
-     * AWS Proton.</p>
+     * Proton.</p>
      */
     inline void SetBranchName(const char* value) { m_branchNameHasBeenSet = true; m_branchName.assign(value); }
 
     /**
      * <p>The name of the code repository branch that holds the code that's deployed in
-     * AWS Proton.</p>
+     * Proton.</p>
      */
     inline Service& WithBranchName(const Aws::String& value) { SetBranchName(value); return *this;}
 
     /**
      * <p>The name of the code repository branch that holds the code that's deployed in
-     * AWS Proton.</p>
+     * Proton.</p>
      */
     inline Service& WithBranchName(Aws::String&& value) { SetBranchName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the code repository branch that holds the code that's deployed in
-     * AWS Proton.</p>
+     * Proton.</p>
      */
     inline Service& WithBranchName(const char* value) { SetBranchName(value); return *this;}
 
@@ -309,10 +309,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up a repository connection</a> in the <i>AWS Proton Administrator Guide</i> and
-     * <a
+     * up a repository connection</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with AWS Proton</a> in the <i>AWS Proton User Guide</i>.</p>
+     * up with Proton</a> in the <i>Proton User Guide</i>.</p>
      */
     inline const Aws::String& GetRepositoryConnectionArn() const{ return m_repositoryConnectionArn; }
 
@@ -320,10 +319,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up a repository connection</a> in the <i>AWS Proton Administrator Guide</i> and
-     * <a
+     * up a repository connection</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with AWS Proton</a> in the <i>AWS Proton User Guide</i>.</p>
+     * up with Proton</a> in the <i>Proton User Guide</i>.</p>
      */
     inline bool RepositoryConnectionArnHasBeenSet() const { return m_repositoryConnectionArnHasBeenSet; }
 
@@ -331,10 +329,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up a repository connection</a> in the <i>AWS Proton Administrator Guide</i> and
-     * <a
+     * up a repository connection</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with AWS Proton</a> in the <i>AWS Proton User Guide</i>.</p>
+     * up with Proton</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetRepositoryConnectionArn(const Aws::String& value) { m_repositoryConnectionArnHasBeenSet = true; m_repositoryConnectionArn = value; }
 
@@ -342,10 +339,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up a repository connection</a> in the <i>AWS Proton Administrator Guide</i> and
-     * <a
+     * up a repository connection</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with AWS Proton</a> in the <i>AWS Proton User Guide</i>.</p>
+     * up with Proton</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetRepositoryConnectionArn(Aws::String&& value) { m_repositoryConnectionArnHasBeenSet = true; m_repositoryConnectionArn = std::move(value); }
 
@@ -353,10 +349,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up a repository connection</a> in the <i>AWS Proton Administrator Guide</i> and
-     * <a
+     * up a repository connection</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with AWS Proton</a> in the <i>AWS Proton User Guide</i>.</p>
+     * up with Proton</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetRepositoryConnectionArn(const char* value) { m_repositoryConnectionArnHasBeenSet = true; m_repositoryConnectionArn.assign(value); }
 
@@ -364,10 +359,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up a repository connection</a> in the <i>AWS Proton Administrator Guide</i> and
-     * <a
+     * up a repository connection</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with AWS Proton</a> in the <i>AWS Proton User Guide</i>.</p>
+     * up with Proton</a> in the <i>Proton User Guide</i>.</p>
      */
     inline Service& WithRepositoryConnectionArn(const Aws::String& value) { SetRepositoryConnectionArn(value); return *this;}
 
@@ -375,10 +369,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up a repository connection</a> in the <i>AWS Proton Administrator Guide</i> and
-     * <a
+     * up a repository connection</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with AWS Proton</a> in the <i>AWS Proton User Guide</i>.</p>
+     * up with Proton</a> in the <i>Proton User Guide</i>.</p>
      */
     inline Service& WithRepositoryConnectionArn(Aws::String&& value) { SetRepositoryConnectionArn(std::move(value)); return *this;}
 
@@ -386,51 +379,50 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up a repository connection</a> in the <i>AWS Proton Administrator Guide</i> and
-     * <a
+     * up a repository connection</a> in the <i>Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with AWS Proton</a> in the <i>AWS Proton User Guide</i>.</p>
+     * up with Proton</a> in the <i>Proton User Guide</i>.</p>
      */
     inline Service& WithRepositoryConnectionArn(const char* value) { SetRepositoryConnectionArn(value); return *this;}
 
 
     /**
-     * <p>The ID of the code repository.</p>
+     * <p>The ID of the source code repository.</p>
      */
     inline const Aws::String& GetRepositoryId() const{ return m_repositoryId; }
 
     /**
-     * <p>The ID of the code repository.</p>
+     * <p>The ID of the source code repository.</p>
      */
     inline bool RepositoryIdHasBeenSet() const { return m_repositoryIdHasBeenSet; }
 
     /**
-     * <p>The ID of the code repository.</p>
+     * <p>The ID of the source code repository.</p>
      */
     inline void SetRepositoryId(const Aws::String& value) { m_repositoryIdHasBeenSet = true; m_repositoryId = value; }
 
     /**
-     * <p>The ID of the code repository.</p>
+     * <p>The ID of the source code repository.</p>
      */
     inline void SetRepositoryId(Aws::String&& value) { m_repositoryIdHasBeenSet = true; m_repositoryId = std::move(value); }
 
     /**
-     * <p>The ID of the code repository.</p>
+     * <p>The ID of the source code repository.</p>
      */
     inline void SetRepositoryId(const char* value) { m_repositoryIdHasBeenSet = true; m_repositoryId.assign(value); }
 
     /**
-     * <p>The ID of the code repository.</p>
+     * <p>The ID of the source code repository.</p>
      */
     inline Service& WithRepositoryId(const Aws::String& value) { SetRepositoryId(value); return *this;}
 
     /**
-     * <p>The ID of the code repository.</p>
+     * <p>The ID of the source code repository.</p>
      */
     inline Service& WithRepositoryId(Aws::String&& value) { SetRepositoryId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the code repository.</p>
+     * <p>The ID of the source code repository.</p>
      */
     inline Service& WithRepositoryId(const char* value) { SetRepositoryId(value); return *this;}
 

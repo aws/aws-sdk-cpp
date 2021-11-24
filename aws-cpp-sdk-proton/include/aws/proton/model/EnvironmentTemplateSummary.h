@@ -311,42 +311,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the recommended version of the environment template.</p>
+     * <p>The recommended version of the environment template.</p>
      */
     inline const Aws::String& GetRecommendedVersion() const{ return m_recommendedVersion; }
 
     /**
-     * <p>The ID of the recommended version of the environment template.</p>
+     * <p>The recommended version of the environment template.</p>
      */
     inline bool RecommendedVersionHasBeenSet() const { return m_recommendedVersionHasBeenSet; }
 
     /**
-     * <p>The ID of the recommended version of the environment template.</p>
+     * <p>The recommended version of the environment template.</p>
      */
     inline void SetRecommendedVersion(const Aws::String& value) { m_recommendedVersionHasBeenSet = true; m_recommendedVersion = value; }
 
     /**
-     * <p>The ID of the recommended version of the environment template.</p>
+     * <p>The recommended version of the environment template.</p>
      */
     inline void SetRecommendedVersion(Aws::String&& value) { m_recommendedVersionHasBeenSet = true; m_recommendedVersion = std::move(value); }
 
     /**
-     * <p>The ID of the recommended version of the environment template.</p>
+     * <p>The recommended version of the environment template.</p>
      */
     inline void SetRecommendedVersion(const char* value) { m_recommendedVersionHasBeenSet = true; m_recommendedVersion.assign(value); }
 
     /**
-     * <p>The ID of the recommended version of the environment template.</p>
+     * <p>The recommended version of the environment template.</p>
      */
     inline EnvironmentTemplateSummary& WithRecommendedVersion(const Aws::String& value) { SetRecommendedVersion(value); return *this;}
 
     /**
-     * <p>The ID of the recommended version of the environment template.</p>
+     * <p>The recommended version of the environment template.</p>
      */
     inline EnvironmentTemplateSummary& WithRecommendedVersion(Aws::String&& value) { SetRecommendedVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the recommended version of the environment template.</p>
+     * <p>The recommended version of the environment template.</p>
      */
     inline EnvironmentTemplateSummary& WithRecommendedVersion(const char* value) { SetRecommendedVersion(value); return *this;}
 

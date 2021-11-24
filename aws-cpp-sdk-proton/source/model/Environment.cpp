@@ -33,6 +33,7 @@ Environment::Environment() :
     m_protonServiceRoleArnHasBeenSet(false),
     m_provisioning(Provisioning::NOT_SET),
     m_provisioningHasBeenSet(false),
+    m_provisioningRepositoryHasBeenSet(false),
     m_specHasBeenSet(false),
     m_templateMajorVersionHasBeenSet(false),
     m_templateMinorVersionHasBeenSet(false),
@@ -55,6 +56,7 @@ Environment::Environment(JsonView jsonValue) :
     m_protonServiceRoleArnHasBeenSet(false),
     m_provisioning(Provisioning::NOT_SET),
     m_provisioningHasBeenSet(false),
+    m_provisioningRepositoryHasBeenSet(false),
     m_specHasBeenSet(false),
     m_templateMajorVersionHasBeenSet(false),
     m_templateMinorVersionHasBeenSet(false),
@@ -147,6 +149,13 @@ Environment& Environment::operator =(JsonView jsonValue)
     m_provisioning = ProvisioningMapper::GetProvisioningForName(jsonValue.GetString("provisioning"));
 
     m_provisioningHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("provisioningRepository"))
+  {
+    m_provisioningRepository = jsonValue.GetObject("provisioningRepository");
+
+    m_provisioningRepositoryHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("spec"))
@@ -249,6 +258,12 @@ JsonValue Environment::Jsonize() const
   if(m_provisioningHasBeenSet)
   {
    payload.WithString("provisioning", ProvisioningMapper::GetNameForProvisioning(m_provisioning));
+  }
+
+  if(m_provisioningRepositoryHasBeenSet)
+  {
+   payload.WithObject("provisioningRepository", m_provisioningRepository.Jsonize());
+
   }
 
   if(m_specHasBeenSet)

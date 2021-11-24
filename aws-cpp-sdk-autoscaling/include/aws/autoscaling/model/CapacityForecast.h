@@ -44,42 +44,42 @@ namespace Model
 
 
     /**
-     * <p>The time stamps for the data points, in UTC format.</p>
+     * <p>The timestamps for the data points, in UTC format.</p>
      */
     inline const Aws::Vector<Aws::Utils::DateTime>& GetTimestamps() const{ return m_timestamps; }
 
     /**
-     * <p>The time stamps for the data points, in UTC format.</p>
+     * <p>The timestamps for the data points, in UTC format.</p>
      */
     inline bool TimestampsHasBeenSet() const { return m_timestampsHasBeenSet; }
 
     /**
-     * <p>The time stamps for the data points, in UTC format.</p>
+     * <p>The timestamps for the data points, in UTC format.</p>
      */
     inline void SetTimestamps(const Aws::Vector<Aws::Utils::DateTime>& value) { m_timestampsHasBeenSet = true; m_timestamps = value; }
 
     /**
-     * <p>The time stamps for the data points, in UTC format.</p>
+     * <p>The timestamps for the data points, in UTC format.</p>
      */
     inline void SetTimestamps(Aws::Vector<Aws::Utils::DateTime>&& value) { m_timestampsHasBeenSet = true; m_timestamps = std::move(value); }
 
     /**
-     * <p>The time stamps for the data points, in UTC format.</p>
+     * <p>The timestamps for the data points, in UTC format.</p>
      */
     inline CapacityForecast& WithTimestamps(const Aws::Vector<Aws::Utils::DateTime>& value) { SetTimestamps(value); return *this;}
 
     /**
-     * <p>The time stamps for the data points, in UTC format.</p>
+     * <p>The timestamps for the data points, in UTC format.</p>
      */
     inline CapacityForecast& WithTimestamps(Aws::Vector<Aws::Utils::DateTime>&& value) { SetTimestamps(std::move(value)); return *this;}
 
     /**
-     * <p>The time stamps for the data points, in UTC format.</p>
+     * <p>The timestamps for the data points, in UTC format.</p>
      */
     inline CapacityForecast& AddTimestamps(const Aws::Utils::DateTime& value) { m_timestampsHasBeenSet = true; m_timestamps.push_back(value); return *this; }
 
     /**
-     * <p>The time stamps for the data points, in UTC format.</p>
+     * <p>The timestamps for the data points, in UTC format.</p>
      */
     inline CapacityForecast& AddTimestamps(Aws::Utils::DateTime&& value) { m_timestampsHasBeenSet = true; m_timestamps.push_back(std::move(value)); return *this; }
 
