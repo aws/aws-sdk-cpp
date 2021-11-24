@@ -17,7 +17,6 @@ namespace Aws
     {
         static const int INITIAL_RETRY_TOKENS = 500;
         static const int RETRY_COST = 5;
-        static const int NO_RETRY_INCREMENT = 1;
         static const int TIMEOUT_RETRY_COST = 10;
 
         StandardRetryStrategy::StandardRetryStrategy(long maxAttempts) :

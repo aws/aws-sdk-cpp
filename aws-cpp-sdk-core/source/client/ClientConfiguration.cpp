@@ -6,6 +6,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/client/DefaultRetryStrategy.h>
+#include <aws/core/client/AdaptiveRetryStrategy.h>
 #include <aws/core/platform/Environment.h>
 #include <aws/core/platform/OSVersionInfo.h>
 #include <aws/core/utils/memory/AWSMemory.h>
@@ -91,11 +92,24 @@ ClientConfiguration::ClientConfiguration() :
     {
         if (maxAttempts < 0)
         {
+            // negative value set above force usage of default max attempts
             retryStrategy = Aws::MakeShared<StandardRetryStrategy>(CLIENT_CONFIG_TAG);
         }
         else
         {
             retryStrategy = Aws::MakeShared<StandardRetryStrategy>(CLIENT_CONFIG_TAG, maxAttempts);
+        }
+    }
+    else if (retryMode == "adaptive")
+    {
+        if (maxAttempts < 0)
+        {
+            // negative value set above force usage of default max attempts
+            retryStrategy = Aws::MakeShared<AdaptiveRetryStrategy>(CLIENT_CONFIG_TAG);
+        }
+        else
+        {
+            retryStrategy = Aws::MakeShared<AdaptiveRetryStrategy>(CLIENT_CONFIG_TAG, maxAttempts);
         }
     }
     else
