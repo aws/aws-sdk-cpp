@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/outposts/Outposts_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/outposts/model/LineItemStatus.h>
 #include <utility>
 
 namespace Aws
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>The status of the line item.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const LineItemStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The status of the line item.</p>
@@ -153,32 +154,22 @@ namespace Model
     /**
      * <p>The status of the line item.</p>
      */
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(const LineItemStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The status of the line item.</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+    inline void SetStatus(LineItemStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the line item.</p>
      */
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
+    inline LineItem& WithStatus(const LineItemStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the line item.</p>
      */
-    inline LineItem& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the line item.</p>
-     */
-    inline LineItem& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>The status of the line item.</p>
-     */
-    inline LineItem& WithStatus(const char* value) { SetStatus(value); return *this;}
+    inline LineItem& WithStatus(LineItemStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
 
@@ -191,7 +182,7 @@ namespace Model
     int m_quantity;
     bool m_quantityHasBeenSet;
 
-    Aws::String m_status;
+    LineItemStatus m_status;
     bool m_statusHasBeenSet;
   };
 

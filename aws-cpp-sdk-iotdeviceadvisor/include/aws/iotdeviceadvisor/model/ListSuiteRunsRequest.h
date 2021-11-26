@@ -88,50 +88,50 @@ namespace Model
 
 
     /**
-     * <p>Must be passed along with suiteDefinitionId. Lists the test suite runs of the
-     * specified test suite based on suite definition version.</p>
+     * <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test
+     * suite runs of the specified test suite based on suite definition version.</p>
      */
     inline const Aws::String& GetSuiteDefinitionVersion() const{ return m_suiteDefinitionVersion; }
 
     /**
-     * <p>Must be passed along with suiteDefinitionId. Lists the test suite runs of the
-     * specified test suite based on suite definition version.</p>
+     * <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test
+     * suite runs of the specified test suite based on suite definition version.</p>
      */
     inline bool SuiteDefinitionVersionHasBeenSet() const { return m_suiteDefinitionVersionHasBeenSet; }
 
     /**
-     * <p>Must be passed along with suiteDefinitionId. Lists the test suite runs of the
-     * specified test suite based on suite definition version.</p>
+     * <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test
+     * suite runs of the specified test suite based on suite definition version.</p>
      */
     inline void SetSuiteDefinitionVersion(const Aws::String& value) { m_suiteDefinitionVersionHasBeenSet = true; m_suiteDefinitionVersion = value; }
 
     /**
-     * <p>Must be passed along with suiteDefinitionId. Lists the test suite runs of the
-     * specified test suite based on suite definition version.</p>
+     * <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test
+     * suite runs of the specified test suite based on suite definition version.</p>
      */
     inline void SetSuiteDefinitionVersion(Aws::String&& value) { m_suiteDefinitionVersionHasBeenSet = true; m_suiteDefinitionVersion = std::move(value); }
 
     /**
-     * <p>Must be passed along with suiteDefinitionId. Lists the test suite runs of the
-     * specified test suite based on suite definition version.</p>
+     * <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test
+     * suite runs of the specified test suite based on suite definition version.</p>
      */
     inline void SetSuiteDefinitionVersion(const char* value) { m_suiteDefinitionVersionHasBeenSet = true; m_suiteDefinitionVersion.assign(value); }
 
     /**
-     * <p>Must be passed along with suiteDefinitionId. Lists the test suite runs of the
-     * specified test suite based on suite definition version.</p>
+     * <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test
+     * suite runs of the specified test suite based on suite definition version.</p>
      */
     inline ListSuiteRunsRequest& WithSuiteDefinitionVersion(const Aws::String& value) { SetSuiteDefinitionVersion(value); return *this;}
 
     /**
-     * <p>Must be passed along with suiteDefinitionId. Lists the test suite runs of the
-     * specified test suite based on suite definition version.</p>
+     * <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test
+     * suite runs of the specified test suite based on suite definition version.</p>
      */
     inline ListSuiteRunsRequest& WithSuiteDefinitionVersion(Aws::String&& value) { SetSuiteDefinitionVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Must be passed along with suiteDefinitionId. Lists the test suite runs of the
-     * specified test suite based on suite definition version.</p>
+     * <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test
+     * suite runs of the specified test suite based on suite definition version.</p>
      */
     inline ListSuiteRunsRequest& WithSuiteDefinitionVersion(const char* value) { SetSuiteDefinitionVersion(value); return *this;}
 

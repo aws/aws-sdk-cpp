@@ -191,7 +191,7 @@ namespace Model
      * <p>The unit to use for the returned data points. For a complete list of the
      * units that CloudWatch supports, see the <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a>
-     * data type in the <i>Amazon CloudWatch API Reference</i>. </p>
+     * data type in the <i>Amazon CloudWatch API Reference</i>.</p>
      */
     inline const Aws::String& GetUnit() const{ return m_unit; }
 
@@ -199,7 +199,7 @@ namespace Model
      * <p>The unit to use for the returned data points. For a complete list of the
      * units that CloudWatch supports, see the <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a>
-     * data type in the <i>Amazon CloudWatch API Reference</i>. </p>
+     * data type in the <i>Amazon CloudWatch API Reference</i>.</p>
      */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
 
@@ -207,7 +207,7 @@ namespace Model
      * <p>The unit to use for the returned data points. For a complete list of the
      * units that CloudWatch supports, see the <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a>
-     * data type in the <i>Amazon CloudWatch API Reference</i>. </p>
+     * data type in the <i>Amazon CloudWatch API Reference</i>.</p>
      */
     inline void SetUnit(const Aws::String& value) { m_unitHasBeenSet = true; m_unit = value; }
 
@@ -215,7 +215,7 @@ namespace Model
      * <p>The unit to use for the returned data points. For a complete list of the
      * units that CloudWatch supports, see the <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a>
-     * data type in the <i>Amazon CloudWatch API Reference</i>. </p>
+     * data type in the <i>Amazon CloudWatch API Reference</i>.</p>
      */
     inline void SetUnit(Aws::String&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
 
@@ -223,7 +223,7 @@ namespace Model
      * <p>The unit to use for the returned data points. For a complete list of the
      * units that CloudWatch supports, see the <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a>
-     * data type in the <i>Amazon CloudWatch API Reference</i>. </p>
+     * data type in the <i>Amazon CloudWatch API Reference</i>.</p>
      */
     inline void SetUnit(const char* value) { m_unitHasBeenSet = true; m_unit.assign(value); }
 
@@ -231,7 +231,7 @@ namespace Model
      * <p>The unit to use for the returned data points. For a complete list of the
      * units that CloudWatch supports, see the <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a>
-     * data type in the <i>Amazon CloudWatch API Reference</i>. </p>
+     * data type in the <i>Amazon CloudWatch API Reference</i>.</p>
      */
     inline MetricStat& WithUnit(const Aws::String& value) { SetUnit(value); return *this;}
 
@@ -239,7 +239,7 @@ namespace Model
      * <p>The unit to use for the returned data points. For a complete list of the
      * units that CloudWatch supports, see the <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a>
-     * data type in the <i>Amazon CloudWatch API Reference</i>. </p>
+     * data type in the <i>Amazon CloudWatch API Reference</i>.</p>
      */
     inline MetricStat& WithUnit(Aws::String&& value) { SetUnit(std::move(value)); return *this;}
 
@@ -247,7 +247,7 @@ namespace Model
      * <p>The unit to use for the returned data points. For a complete list of the
      * units that CloudWatch supports, see the <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a>
-     * data type in the <i>Amazon CloudWatch API Reference</i>. </p>
+     * data type in the <i>Amazon CloudWatch API Reference</i>.</p>
      */
     inline MetricStat& WithUnit(const char* value) { SetUnit(value); return *this;}
 

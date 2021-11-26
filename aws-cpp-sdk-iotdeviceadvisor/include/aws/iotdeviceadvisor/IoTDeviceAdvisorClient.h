@@ -236,19 +236,28 @@ namespace Model
         virtual void DeleteSuiteDefinitionAsync(const Model::DeleteSuiteDefinitionRequest& request, const DeleteSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Gets information about an Device Advisor endpoint.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/GetEndpoint">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetEndpointOutcome GetEndpoint(const Model::GetEndpointRequest& request) const;
 
         /**
-         * 
+         * <p>Gets information about an Device Advisor endpoint.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/GetEndpoint">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetEndpointOutcomeCallable GetEndpointCallable(const Model::GetEndpointRequest& request) const;
 
         /**
-         * 
+         * <p>Gets information about an Device Advisor endpoint.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/GetEndpoint">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -391,8 +400,8 @@ namespace Model
         virtual void ListSuiteDefinitionsAsync(const Model::ListSuiteDefinitionsRequest& request, const ListSuiteDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the runs of the specified Device Advisor test suite. You can list all
-         * runs of the test suite, or the runs of a specific version of the test suite.</p>
+         * <p>Lists runs of the specified Device Advisor test suite. You can list all runs
+         * of the test suite, or the runs of a specific version of the test suite.</p>
          * <p>Requires permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSuiteRuns</a>
          * action.</p><p><h3>See Also:</h3>   <a
@@ -402,8 +411,8 @@ namespace Model
         virtual Model::ListSuiteRunsOutcome ListSuiteRuns(const Model::ListSuiteRunsRequest& request) const;
 
         /**
-         * <p>Lists the runs of the specified Device Advisor test suite. You can list all
-         * runs of the test suite, or the runs of a specific version of the test suite.</p>
+         * <p>Lists runs of the specified Device Advisor test suite. You can list all runs
+         * of the test suite, or the runs of a specific version of the test suite.</p>
          * <p>Requires permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSuiteRuns</a>
          * action.</p><p><h3>See Also:</h3>   <a
@@ -415,8 +424,8 @@ namespace Model
         virtual Model::ListSuiteRunsOutcomeCallable ListSuiteRunsCallable(const Model::ListSuiteRunsRequest& request) const;
 
         /**
-         * <p>Lists the runs of the specified Device Advisor test suite. You can list all
-         * runs of the test suite, or the runs of a specific version of the test suite.</p>
+         * <p>Lists runs of the specified Device Advisor test suite. You can list all runs
+         * of the test suite, or the runs of a specific version of the test suite.</p>
          * <p>Requires permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSuiteRuns</a>
          * action.</p><p><h3>See Also:</h3>   <a

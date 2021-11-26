@@ -8,6 +8,7 @@
 #include <aws/mgn/MgnErrors.h>
 #include <aws/mgn/model/ConflictException.h>
 #include <aws/mgn/model/ThrottlingException.h>
+#include <aws/mgn/model/ServiceQuotaExceededException.h>
 #include <aws/mgn/model/ResourceNotFoundException.h>
 #include <aws/mgn/model/InternalServerException.h>
 #include <aws/mgn/model/UninitializedAccountException.h>
@@ -33,6 +34,12 @@ template<> AWS_MGN_API ThrottlingException MgnError::GetModeledError()
 {
   assert(this->GetErrorType() == MgnErrors::THROTTLING);
   return ThrottlingException(this->GetJsonPayload().View());
+}
+
+template<> AWS_MGN_API ServiceQuotaExceededException MgnError::GetModeledError()
+{
+  assert(this->GetErrorType() == MgnErrors::SERVICE_QUOTA_EXCEEDED);
+  return ServiceQuotaExceededException(this->GetJsonPayload().View());
 }
 
 template<> AWS_MGN_API ResourceNotFoundException MgnError::GetModeledError()
@@ -69,6 +76,7 @@ namespace MgnErrorMapper
 {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
+static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int UNINITIALIZED_ACCOUNT_HASH = HashingUtils::HashString("UninitializedAccountException");
 
@@ -80,6 +88,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == CONFLICT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MgnErrors::CONFLICT), false);
+  }
+  else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MgnErrors::SERVICE_QUOTA_EXCEEDED), false);
   }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {

@@ -25,6 +25,7 @@ DataReplicationInfo::DataReplicationInfo() :
     m_dataReplicationStateHasBeenSet(false),
     m_etaDateTimeHasBeenSet(false),
     m_lagDurationHasBeenSet(false),
+    m_lastSnapshotDateTimeHasBeenSet(false),
     m_replicatedDisksHasBeenSet(false)
 {
 }
@@ -36,6 +37,7 @@ DataReplicationInfo::DataReplicationInfo(JsonView jsonValue) :
     m_dataReplicationStateHasBeenSet(false),
     m_etaDateTimeHasBeenSet(false),
     m_lagDurationHasBeenSet(false),
+    m_lastSnapshotDateTimeHasBeenSet(false),
     m_replicatedDisksHasBeenSet(false)
 {
   *this = jsonValue;
@@ -76,6 +78,13 @@ DataReplicationInfo& DataReplicationInfo::operator =(JsonView jsonValue)
     m_lagDuration = jsonValue.GetString("lagDuration");
 
     m_lagDurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lastSnapshotDateTime"))
+  {
+    m_lastSnapshotDateTime = jsonValue.GetString("lastSnapshotDateTime");
+
+    m_lastSnapshotDateTimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("replicatedDisks"))
@@ -121,6 +130,12 @@ JsonValue DataReplicationInfo::Jsonize() const
   if(m_lagDurationHasBeenSet)
   {
    payload.WithString("lagDuration", m_lagDuration);
+
+  }
+
+  if(m_lastSnapshotDateTimeHasBeenSet)
+  {
+   payload.WithString("lastSnapshotDateTime", m_lastSnapshotDateTime);
 
   }
 

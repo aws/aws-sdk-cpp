@@ -43,42 +43,42 @@ namespace Model
 
 
     /**
-     * <p> The ID of the Outpost. </p>
+     * <p> The ID of the Outpost in the order. </p>
      */
     inline const Aws::String& GetOutpostId() const{ return m_outpostId; }
 
     /**
-     * <p> The ID of the Outpost. </p>
+     * <p> The ID of the Outpost in the order. </p>
      */
     inline bool OutpostIdHasBeenSet() const { return m_outpostIdHasBeenSet; }
 
     /**
-     * <p> The ID of the Outpost. </p>
+     * <p> The ID of the Outpost in the order. </p>
      */
     inline void SetOutpostId(const Aws::String& value) { m_outpostIdHasBeenSet = true; m_outpostId = value; }
 
     /**
-     * <p> The ID of the Outpost. </p>
+     * <p> The ID of the Outpost in the order. </p>
      */
     inline void SetOutpostId(Aws::String&& value) { m_outpostIdHasBeenSet = true; m_outpostId = std::move(value); }
 
     /**
-     * <p> The ID of the Outpost. </p>
+     * <p> The ID of the Outpost in the order. </p>
      */
     inline void SetOutpostId(const char* value) { m_outpostIdHasBeenSet = true; m_outpostId.assign(value); }
 
     /**
-     * <p> The ID of the Outpost. </p>
+     * <p> The ID of the Outpost in the order. </p>
      */
     inline Order& WithOutpostId(const Aws::String& value) { SetOutpostId(value); return *this;}
 
     /**
-     * <p> The ID of the Outpost. </p>
+     * <p> The ID of the Outpost in the order. </p>
      */
     inline Order& WithOutpostId(Aws::String&& value) { SetOutpostId(std::move(value)); return *this;}
 
     /**
-     * <p> The ID of the Outpost. </p>
+     * <p> The ID of the Outpost in the order. </p>
      */
     inline Order& WithOutpostId(const char* value) { SetOutpostId(value); return *this;}
 
@@ -125,32 +125,80 @@ namespace Model
 
 
     /**
-     * <p>The status of the order</p>
+     * <p>The status of the order.</p> <ul> <li> <p> <code>PREPARING</code> - Order is
+     * received and being prepared.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Order
+     * is either being built, shipped, or installed. To get more details, see the
+     * <code>LineItem</code> status.</p> </li> <li> <p> <code>COMPLETED</code> - Order
+     * is complete.</p> </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p>
+     * </li> <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
+     * </ul>  <p>The following status are deprecated: <code>RECEIVED</code>,
+     * <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and
+     * <code>FULFILLED</code>. </p> 
      */
     inline const OrderStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the order</p>
+     * <p>The status of the order.</p> <ul> <li> <p> <code>PREPARING</code> - Order is
+     * received and being prepared.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Order
+     * is either being built, shipped, or installed. To get more details, see the
+     * <code>LineItem</code> status.</p> </li> <li> <p> <code>COMPLETED</code> - Order
+     * is complete.</p> </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p>
+     * </li> <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
+     * </ul>  <p>The following status are deprecated: <code>RECEIVED</code>,
+     * <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and
+     * <code>FULFILLED</code>. </p> 
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the order</p>
+     * <p>The status of the order.</p> <ul> <li> <p> <code>PREPARING</code> - Order is
+     * received and being prepared.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Order
+     * is either being built, shipped, or installed. To get more details, see the
+     * <code>LineItem</code> status.</p> </li> <li> <p> <code>COMPLETED</code> - Order
+     * is complete.</p> </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p>
+     * </li> <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
+     * </ul>  <p>The following status are deprecated: <code>RECEIVED</code>,
+     * <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and
+     * <code>FULFILLED</code>. </p> 
      */
     inline void SetStatus(const OrderStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the order</p>
+     * <p>The status of the order.</p> <ul> <li> <p> <code>PREPARING</code> - Order is
+     * received and being prepared.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Order
+     * is either being built, shipped, or installed. To get more details, see the
+     * <code>LineItem</code> status.</p> </li> <li> <p> <code>COMPLETED</code> - Order
+     * is complete.</p> </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p>
+     * </li> <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
+     * </ul>  <p>The following status are deprecated: <code>RECEIVED</code>,
+     * <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and
+     * <code>FULFILLED</code>. </p> 
      */
     inline void SetStatus(OrderStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the order</p>
+     * <p>The status of the order.</p> <ul> <li> <p> <code>PREPARING</code> - Order is
+     * received and being prepared.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Order
+     * is either being built, shipped, or installed. To get more details, see the
+     * <code>LineItem</code> status.</p> </li> <li> <p> <code>COMPLETED</code> - Order
+     * is complete.</p> </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p>
+     * </li> <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
+     * </ul>  <p>The following status are deprecated: <code>RECEIVED</code>,
+     * <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and
+     * <code>FULFILLED</code>. </p> 
      */
     inline Order& WithStatus(const OrderStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the order</p>
+     * <p>The status of the order.</p> <ul> <li> <p> <code>PREPARING</code> - Order is
+     * received and being prepared.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Order
+     * is either being built, shipped, or installed. To get more details, see the
+     * <code>LineItem</code> status.</p> </li> <li> <p> <code>COMPLETED</code> - Order
+     * is complete.</p> </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p>
+     * </li> <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
+     * </ul>  <p>The following status are deprecated: <code>RECEIVED</code>,
+     * <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and
+     * <code>FULFILLED</code>. </p> 
      */
     inline Order& WithStatus(OrderStatus&& value) { SetStatus(std::move(value)); return *this;}
 

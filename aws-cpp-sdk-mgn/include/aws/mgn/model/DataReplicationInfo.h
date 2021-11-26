@@ -218,6 +218,47 @@ namespace Model
 
 
     /**
+     * <p>Request to query data replication last snapshot time.</p>
+     */
+    inline const Aws::String& GetLastSnapshotDateTime() const{ return m_lastSnapshotDateTime; }
+
+    /**
+     * <p>Request to query data replication last snapshot time.</p>
+     */
+    inline bool LastSnapshotDateTimeHasBeenSet() const { return m_lastSnapshotDateTimeHasBeenSet; }
+
+    /**
+     * <p>Request to query data replication last snapshot time.</p>
+     */
+    inline void SetLastSnapshotDateTime(const Aws::String& value) { m_lastSnapshotDateTimeHasBeenSet = true; m_lastSnapshotDateTime = value; }
+
+    /**
+     * <p>Request to query data replication last snapshot time.</p>
+     */
+    inline void SetLastSnapshotDateTime(Aws::String&& value) { m_lastSnapshotDateTimeHasBeenSet = true; m_lastSnapshotDateTime = std::move(value); }
+
+    /**
+     * <p>Request to query data replication last snapshot time.</p>
+     */
+    inline void SetLastSnapshotDateTime(const char* value) { m_lastSnapshotDateTimeHasBeenSet = true; m_lastSnapshotDateTime.assign(value); }
+
+    /**
+     * <p>Request to query data replication last snapshot time.</p>
+     */
+    inline DataReplicationInfo& WithLastSnapshotDateTime(const Aws::String& value) { SetLastSnapshotDateTime(value); return *this;}
+
+    /**
+     * <p>Request to query data replication last snapshot time.</p>
+     */
+    inline DataReplicationInfo& WithLastSnapshotDateTime(Aws::String&& value) { SetLastSnapshotDateTime(std::move(value)); return *this;}
+
+    /**
+     * <p>Request to query data replication last snapshot time.</p>
+     */
+    inline DataReplicationInfo& WithLastSnapshotDateTime(const char* value) { SetLastSnapshotDateTime(value); return *this;}
+
+
+    /**
      * <p>Request to query disks replicated.</p>
      */
     inline const Aws::Vector<DataReplicationInfoReplicatedDisk>& GetReplicatedDisks() const{ return m_replicatedDisks; }
@@ -273,6 +314,9 @@ namespace Model
 
     Aws::String m_lagDuration;
     bool m_lagDurationHasBeenSet;
+
+    Aws::String m_lastSnapshotDateTime;
+    bool m_lastSnapshotDateTimeHasBeenSet;
 
     Aws::Vector<DataReplicationInfoReplicatedDisk> m_replicatedDisks;
     bool m_replicatedDisksHasBeenSet;

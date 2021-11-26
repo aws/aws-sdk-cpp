@@ -116,16 +116,24 @@ namespace Model
     inline SuiteRunConfiguration& AddSelectedTestList(const char* value) { m_selectedTestListHasBeenSet = true; m_selectedTestList.push_back(value); return *this; }
 
 
-    
+    /**
+     * <p>TRUE if multiple test suites run in parallel.</p>
+     */
     inline bool GetParallelRun() const{ return m_parallelRun; }
 
-    
+    /**
+     * <p>TRUE if multiple test suites run in parallel.</p>
+     */
     inline bool ParallelRunHasBeenSet() const { return m_parallelRunHasBeenSet; }
 
-    
+    /**
+     * <p>TRUE if multiple test suites run in parallel.</p>
+     */
     inline void SetParallelRun(bool value) { m_parallelRunHasBeenSet = true; m_parallelRun = value; }
 
-    
+    /**
+     * <p>TRUE if multiple test suites run in parallel.</p>
+     */
     inline SuiteRunConfiguration& WithParallelRun(bool value) { SetParallelRun(value); return *this;}
 
   private:

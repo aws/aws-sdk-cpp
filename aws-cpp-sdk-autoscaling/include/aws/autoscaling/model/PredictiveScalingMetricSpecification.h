@@ -55,10 +55,9 @@ namespace Model
    * increase the capacity of your Auto Scaling group in each hour of the forecast
    * period so that the average number of requests received by each instance is as
    * close to 1000 requests per minute as possible at all times.</p> </li> </ul>
-   * <p>For information about using customized metrics with predictive scaling, see
-   * <a
+   * <p>For information about using custom metrics with predictive scaling, see <a
    * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/predictive-scaling-customized-metric-specification.html">Advanced
-   * predictive scaling policy configurations using customized metrics</a> in the
+   * predictive scaling policy configurations using custom metrics</a> in the
    * <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PredictiveScalingMetricSpecification">AWS
    * API Reference</a></p>

@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mgn/model/LifeCycleState.h>
+#include <aws/mgn/model/ReplicationType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -60,6 +62,88 @@ namespace Model
 
 
     /**
+     * <p>Request to filter Source Servers list by life cycle states.</p>
+     */
+    inline const Aws::Vector<LifeCycleState>& GetLifeCycleStates() const{ return m_lifeCycleStates; }
+
+    /**
+     * <p>Request to filter Source Servers list by life cycle states.</p>
+     */
+    inline bool LifeCycleStatesHasBeenSet() const { return m_lifeCycleStatesHasBeenSet; }
+
+    /**
+     * <p>Request to filter Source Servers list by life cycle states.</p>
+     */
+    inline void SetLifeCycleStates(const Aws::Vector<LifeCycleState>& value) { m_lifeCycleStatesHasBeenSet = true; m_lifeCycleStates = value; }
+
+    /**
+     * <p>Request to filter Source Servers list by life cycle states.</p>
+     */
+    inline void SetLifeCycleStates(Aws::Vector<LifeCycleState>&& value) { m_lifeCycleStatesHasBeenSet = true; m_lifeCycleStates = std::move(value); }
+
+    /**
+     * <p>Request to filter Source Servers list by life cycle states.</p>
+     */
+    inline DescribeSourceServersRequestFilters& WithLifeCycleStates(const Aws::Vector<LifeCycleState>& value) { SetLifeCycleStates(value); return *this;}
+
+    /**
+     * <p>Request to filter Source Servers list by life cycle states.</p>
+     */
+    inline DescribeSourceServersRequestFilters& WithLifeCycleStates(Aws::Vector<LifeCycleState>&& value) { SetLifeCycleStates(std::move(value)); return *this;}
+
+    /**
+     * <p>Request to filter Source Servers list by life cycle states.</p>
+     */
+    inline DescribeSourceServersRequestFilters& AddLifeCycleStates(const LifeCycleState& value) { m_lifeCycleStatesHasBeenSet = true; m_lifeCycleStates.push_back(value); return *this; }
+
+    /**
+     * <p>Request to filter Source Servers list by life cycle states.</p>
+     */
+    inline DescribeSourceServersRequestFilters& AddLifeCycleStates(LifeCycleState&& value) { m_lifeCycleStatesHasBeenSet = true; m_lifeCycleStates.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Request to filter Source Servers list by replication type.</p>
+     */
+    inline const Aws::Vector<ReplicationType>& GetReplicationTypes() const{ return m_replicationTypes; }
+
+    /**
+     * <p>Request to filter Source Servers list by replication type.</p>
+     */
+    inline bool ReplicationTypesHasBeenSet() const { return m_replicationTypesHasBeenSet; }
+
+    /**
+     * <p>Request to filter Source Servers list by replication type.</p>
+     */
+    inline void SetReplicationTypes(const Aws::Vector<ReplicationType>& value) { m_replicationTypesHasBeenSet = true; m_replicationTypes = value; }
+
+    /**
+     * <p>Request to filter Source Servers list by replication type.</p>
+     */
+    inline void SetReplicationTypes(Aws::Vector<ReplicationType>&& value) { m_replicationTypesHasBeenSet = true; m_replicationTypes = std::move(value); }
+
+    /**
+     * <p>Request to filter Source Servers list by replication type.</p>
+     */
+    inline DescribeSourceServersRequestFilters& WithReplicationTypes(const Aws::Vector<ReplicationType>& value) { SetReplicationTypes(value); return *this;}
+
+    /**
+     * <p>Request to filter Source Servers list by replication type.</p>
+     */
+    inline DescribeSourceServersRequestFilters& WithReplicationTypes(Aws::Vector<ReplicationType>&& value) { SetReplicationTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>Request to filter Source Servers list by replication type.</p>
+     */
+    inline DescribeSourceServersRequestFilters& AddReplicationTypes(const ReplicationType& value) { m_replicationTypesHasBeenSet = true; m_replicationTypes.push_back(value); return *this; }
+
+    /**
+     * <p>Request to filter Source Servers list by replication type.</p>
+     */
+    inline DescribeSourceServersRequestFilters& AddReplicationTypes(ReplicationType&& value) { m_replicationTypesHasBeenSet = true; m_replicationTypes.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Request to filter Source Servers list by Source Server ID.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSourceServerIDs() const{ return m_sourceServerIDs; }
@@ -108,6 +192,12 @@ namespace Model
 
     bool m_isArchived;
     bool m_isArchivedHasBeenSet;
+
+    Aws::Vector<LifeCycleState> m_lifeCycleStates;
+    bool m_lifeCycleStatesHasBeenSet;
+
+    Aws::Vector<ReplicationType> m_replicationTypes;
+    bool m_replicationTypesHasBeenSet;
 
     Aws::Vector<Aws::String> m_sourceServerIDs;
     bool m_sourceServerIDsHasBeenSet;

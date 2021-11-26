@@ -251,7 +251,7 @@ namespace Model
     /**
      * <p>An embedded object that specifies a mixed instances policy.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
@@ -260,7 +260,7 @@ namespace Model
     /**
      * <p>An embedded object that specifies a mixed instances policy.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
@@ -269,7 +269,7 @@ namespace Model
     /**
      * <p>An embedded object that specifies a mixed instances policy.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
@@ -278,7 +278,7 @@ namespace Model
     /**
      * <p>An embedded object that specifies a mixed instances policy.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
@@ -287,7 +287,7 @@ namespace Model
     /**
      * <p>An embedded object that specifies a mixed instances policy.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
@@ -296,7 +296,7 @@ namespace Model
     /**
      * <p>An embedded object that specifies a mixed instances policy.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
@@ -892,9 +892,9 @@ namespace Model
 
     /**
      * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
-     * checking the health status of an EC2 instance that has come into service. During
-     * this time, any health check failures for the instance are ignored. The default
-     * value is <code>0</code>. For more information, see <a
+     * checking the health status of an EC2 instance that has come into service and
+     * marking it unhealthy due to a failed health check. The default value is
+     * <code>0</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
      * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      * <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
@@ -903,9 +903,9 @@ namespace Model
 
     /**
      * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
-     * checking the health status of an EC2 instance that has come into service. During
-     * this time, any health check failures for the instance are ignored. The default
-     * value is <code>0</code>. For more information, see <a
+     * checking the health status of an EC2 instance that has come into service and
+     * marking it unhealthy due to a failed health check. The default value is
+     * <code>0</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
      * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      * <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
@@ -914,9 +914,9 @@ namespace Model
 
     /**
      * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
-     * checking the health status of an EC2 instance that has come into service. During
-     * this time, any health check failures for the instance are ignored. The default
-     * value is <code>0</code>. For more information, see <a
+     * checking the health status of an EC2 instance that has come into service and
+     * marking it unhealthy due to a failed health check. The default value is
+     * <code>0</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
      * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      * <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
@@ -925,9 +925,9 @@ namespace Model
 
     /**
      * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
-     * checking the health status of an EC2 instance that has come into service. During
-     * this time, any health check failures for the instance are ignored. The default
-     * value is <code>0</code>. For more information, see <a
+     * checking the health status of an EC2 instance that has come into service and
+     * marking it unhealthy due to a failed health check. The default value is
+     * <code>0</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
      * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      * <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
@@ -1192,8 +1192,9 @@ namespace Model
      * <p>Indicates whether newly launched instances are protected from termination by
      * Amazon EC2 Auto Scaling when scaling in. For more information about preventing
      * instances from terminating on scale in, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-     * scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+     * instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline bool GetNewInstancesProtectedFromScaleIn() const{ return m_newInstancesProtectedFromScaleIn; }
 
@@ -1201,8 +1202,9 @@ namespace Model
      * <p>Indicates whether newly launched instances are protected from termination by
      * Amazon EC2 Auto Scaling when scaling in. For more information about preventing
      * instances from terminating on scale in, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-     * scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+     * instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline bool NewInstancesProtectedFromScaleInHasBeenSet() const { return m_newInstancesProtectedFromScaleInHasBeenSet; }
 
@@ -1210,8 +1212,9 @@ namespace Model
      * <p>Indicates whether newly launched instances are protected from termination by
      * Amazon EC2 Auto Scaling when scaling in. For more information about preventing
      * instances from terminating on scale in, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-     * scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+     * instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline void SetNewInstancesProtectedFromScaleIn(bool value) { m_newInstancesProtectedFromScaleInHasBeenSet = true; m_newInstancesProtectedFromScaleIn = value; }
 
@@ -1219,8 +1222,9 @@ namespace Model
      * <p>Indicates whether newly launched instances are protected from termination by
      * Amazon EC2 Auto Scaling when scaling in. For more information about preventing
      * instances from terminating on scale in, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-     * scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+     * instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithNewInstancesProtectedFromScaleIn(bool value) { SetNewInstancesProtectedFromScaleIn(value); return *this;}
 
@@ -1231,7 +1235,7 @@ namespace Model
      * Scaling attempts to launch a Spot Instance whenever Amazon EC2 notifies that a
      * Spot Instance is at an elevated risk of interruption. After launching a new
      * instance, it then terminates an old instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon
      * EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
@@ -1243,7 +1247,7 @@ namespace Model
      * Scaling attempts to launch a Spot Instance whenever Amazon EC2 notifies that a
      * Spot Instance is at an elevated risk of interruption. After launching a new
      * instance, it then terminates an old instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon
      * EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
@@ -1255,7 +1259,7 @@ namespace Model
      * Scaling attempts to launch a Spot Instance whenever Amazon EC2 notifies that a
      * Spot Instance is at an elevated risk of interruption. After launching a new
      * instance, it then terminates an old instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon
      * EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
@@ -1267,7 +1271,7 @@ namespace Model
      * Scaling attempts to launch a Spot Instance whenever Amazon EC2 notifies that a
      * Spot Instance is at an elevated risk of interruption. After launching a new
      * instance, it then terminates an old instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon
      * EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */

@@ -21,6 +21,8 @@ namespace Model
 DescribeSourceServersRequestFilters::DescribeSourceServersRequestFilters() : 
     m_isArchived(false),
     m_isArchivedHasBeenSet(false),
+    m_lifeCycleStatesHasBeenSet(false),
+    m_replicationTypesHasBeenSet(false),
     m_sourceServerIDsHasBeenSet(false)
 {
 }
@@ -28,6 +30,8 @@ DescribeSourceServersRequestFilters::DescribeSourceServersRequestFilters() :
 DescribeSourceServersRequestFilters::DescribeSourceServersRequestFilters(JsonView jsonValue) : 
     m_isArchived(false),
     m_isArchivedHasBeenSet(false),
+    m_lifeCycleStatesHasBeenSet(false),
+    m_replicationTypesHasBeenSet(false),
     m_sourceServerIDsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -40,6 +44,26 @@ DescribeSourceServersRequestFilters& DescribeSourceServersRequestFilters::operat
     m_isArchived = jsonValue.GetBool("isArchived");
 
     m_isArchivedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lifeCycleStates"))
+  {
+    Array<JsonView> lifeCycleStatesJsonList = jsonValue.GetArray("lifeCycleStates");
+    for(unsigned lifeCycleStatesIndex = 0; lifeCycleStatesIndex < lifeCycleStatesJsonList.GetLength(); ++lifeCycleStatesIndex)
+    {
+      m_lifeCycleStates.push_back(LifeCycleStateMapper::GetLifeCycleStateForName(lifeCycleStatesJsonList[lifeCycleStatesIndex].AsString()));
+    }
+    m_lifeCycleStatesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("replicationTypes"))
+  {
+    Array<JsonView> replicationTypesJsonList = jsonValue.GetArray("replicationTypes");
+    for(unsigned replicationTypesIndex = 0; replicationTypesIndex < replicationTypesJsonList.GetLength(); ++replicationTypesIndex)
+    {
+      m_replicationTypes.push_back(ReplicationTypeMapper::GetReplicationTypeForName(replicationTypesJsonList[replicationTypesIndex].AsString()));
+    }
+    m_replicationTypesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sourceServerIDs"))
@@ -62,6 +86,28 @@ JsonValue DescribeSourceServersRequestFilters::Jsonize() const
   if(m_isArchivedHasBeenSet)
   {
    payload.WithBool("isArchived", m_isArchived);
+
+  }
+
+  if(m_lifeCycleStatesHasBeenSet)
+  {
+   Array<JsonValue> lifeCycleStatesJsonList(m_lifeCycleStates.size());
+   for(unsigned lifeCycleStatesIndex = 0; lifeCycleStatesIndex < lifeCycleStatesJsonList.GetLength(); ++lifeCycleStatesIndex)
+   {
+     lifeCycleStatesJsonList[lifeCycleStatesIndex].AsString(LifeCycleStateMapper::GetNameForLifeCycleState(m_lifeCycleStates[lifeCycleStatesIndex]));
+   }
+   payload.WithArray("lifeCycleStates", std::move(lifeCycleStatesJsonList));
+
+  }
+
+  if(m_replicationTypesHasBeenSet)
+  {
+   Array<JsonValue> replicationTypesJsonList(m_replicationTypes.size());
+   for(unsigned replicationTypesIndex = 0; replicationTypesIndex < replicationTypesJsonList.GetLength(); ++replicationTypesIndex)
+   {
+     replicationTypesJsonList[replicationTypesIndex].AsString(ReplicationTypeMapper::GetNameForReplicationType(m_replicationTypes[replicationTypesIndex]));
+   }
+   payload.WithArray("replicationTypes", std::move(replicationTypesJsonList));
 
   }
 

@@ -23,6 +23,7 @@ LineItem::LineItem() :
     m_lineItemIdHasBeenSet(false),
     m_quantity(0),
     m_quantityHasBeenSet(false),
+    m_status(LineItemStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
 }
@@ -32,6 +33,7 @@ LineItem::LineItem(JsonView jsonValue) :
     m_lineItemIdHasBeenSet(false),
     m_quantity(0),
     m_quantityHasBeenSet(false),
+    m_status(LineItemStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
   *this = jsonValue;
@@ -62,7 +64,7 @@ LineItem& LineItem::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Status"))
   {
-    m_status = jsonValue.GetString("Status");
+    m_status = LineItemStatusMapper::GetLineItemStatusForName(jsonValue.GetString("Status"));
 
     m_statusHasBeenSet = true;
   }
@@ -94,8 +96,7 @@ JsonValue LineItem::Jsonize() const
 
   if(m_statusHasBeenSet)
   {
-   payload.WithString("Status", m_status);
-
+   payload.WithString("Status", LineItemStatusMapper::GetNameForLineItemStatus(m_status));
   }
 
   return payload;

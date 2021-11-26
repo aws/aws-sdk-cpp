@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int OUTPOST_HASH = HashingUtils::HashString("OUTPOST");
+        static const int ORDER_HASH = HashingUtils::HashString("ORDER");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == OUTPOST_HASH)
           {
             return ResourceType::OUTPOST;
+          }
+          else if (hashCode == ORDER_HASH)
+          {
+            return ResourceType::ORDER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case ResourceType::OUTPOST:
             return "OUTPOST";
+          case ResourceType::ORDER:
+            return "ORDER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

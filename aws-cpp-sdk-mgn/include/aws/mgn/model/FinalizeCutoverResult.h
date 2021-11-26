@@ -9,6 +9,7 @@
 #include <aws/mgn/model/DataReplicationInfo.h>
 #include <aws/mgn/model/LaunchedInstance.h>
 #include <aws/mgn/model/LifeCycle.h>
+#include <aws/mgn/model/ReplicationType.h>
 #include <aws/mgn/model/SourceProperties.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -168,6 +169,32 @@ namespace Model
 
 
     /**
+     * <p>Source server replication type.</p>
+     */
+    inline const ReplicationType& GetReplicationType() const{ return m_replicationType; }
+
+    /**
+     * <p>Source server replication type.</p>
+     */
+    inline void SetReplicationType(const ReplicationType& value) { m_replicationType = value; }
+
+    /**
+     * <p>Source server replication type.</p>
+     */
+    inline void SetReplicationType(ReplicationType&& value) { m_replicationType = std::move(value); }
+
+    /**
+     * <p>Source server replication type.</p>
+     */
+    inline FinalizeCutoverResult& WithReplicationType(const ReplicationType& value) { SetReplicationType(value); return *this;}
+
+    /**
+     * <p>Source server replication type.</p>
+     */
+    inline FinalizeCutoverResult& WithReplicationType(ReplicationType&& value) { SetReplicationType(std::move(value)); return *this;}
+
+
+    /**
      * <p>Source server properties.</p>
      */
     inline const SourceProperties& GetSourceProperties() const{ return m_sourceProperties; }
@@ -289,6 +316,42 @@ namespace Model
      */
     inline FinalizeCutoverResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Source server vCenter client id.</p>
+     */
+    inline const Aws::String& GetVcenterClientID() const{ return m_vcenterClientID; }
+
+    /**
+     * <p>Source server vCenter client id.</p>
+     */
+    inline void SetVcenterClientID(const Aws::String& value) { m_vcenterClientID = value; }
+
+    /**
+     * <p>Source server vCenter client id.</p>
+     */
+    inline void SetVcenterClientID(Aws::String&& value) { m_vcenterClientID = std::move(value); }
+
+    /**
+     * <p>Source server vCenter client id.</p>
+     */
+    inline void SetVcenterClientID(const char* value) { m_vcenterClientID.assign(value); }
+
+    /**
+     * <p>Source server vCenter client id.</p>
+     */
+    inline FinalizeCutoverResult& WithVcenterClientID(const Aws::String& value) { SetVcenterClientID(value); return *this;}
+
+    /**
+     * <p>Source server vCenter client id.</p>
+     */
+    inline FinalizeCutoverResult& WithVcenterClientID(Aws::String&& value) { SetVcenterClientID(std::move(value)); return *this;}
+
+    /**
+     * <p>Source server vCenter client id.</p>
+     */
+    inline FinalizeCutoverResult& WithVcenterClientID(const char* value) { SetVcenterClientID(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -301,11 +364,15 @@ namespace Model
 
     LifeCycle m_lifeCycle;
 
+    ReplicationType m_replicationType;
+
     SourceProperties m_sourceProperties;
 
     Aws::String m_sourceServerID;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    Aws::String m_vcenterClientID;
   };
 
 } // namespace Model

@@ -133,7 +133,8 @@ namespace Model
      * string as the tag value, we delete the tag only if its value is an empty
      * string.</p> <p>If you omit this parameter, we delete all user-defined tags for
      * the specified resources. We do not delete Amazon Web Services-generated tags
-     * (tags that have the <code>aws:</code> prefix).</p>
+     * (tags that have the <code>aws:</code> prefix).</p> <p>Constraints: Up to 1000
+     * tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -144,7 +145,8 @@ namespace Model
      * string as the tag value, we delete the tag only if its value is an empty
      * string.</p> <p>If you omit this parameter, we delete all user-defined tags for
      * the specified resources. We do not delete Amazon Web Services-generated tags
-     * (tags that have the <code>aws:</code> prefix).</p>
+     * (tags that have the <code>aws:</code> prefix).</p> <p>Constraints: Up to 1000
+     * tags.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -155,7 +157,8 @@ namespace Model
      * string as the tag value, we delete the tag only if its value is an empty
      * string.</p> <p>If you omit this parameter, we delete all user-defined tags for
      * the specified resources. We do not delete Amazon Web Services-generated tags
-     * (tags that have the <code>aws:</code> prefix).</p>
+     * (tags that have the <code>aws:</code> prefix).</p> <p>Constraints: Up to 1000
+     * tags.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -166,7 +169,8 @@ namespace Model
      * string as the tag value, we delete the tag only if its value is an empty
      * string.</p> <p>If you omit this parameter, we delete all user-defined tags for
      * the specified resources. We do not delete Amazon Web Services-generated tags
-     * (tags that have the <code>aws:</code> prefix).</p>
+     * (tags that have the <code>aws:</code> prefix).</p> <p>Constraints: Up to 1000
+     * tags.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -177,7 +181,8 @@ namespace Model
      * string as the tag value, we delete the tag only if its value is an empty
      * string.</p> <p>If you omit this parameter, we delete all user-defined tags for
      * the specified resources. We do not delete Amazon Web Services-generated tags
-     * (tags that have the <code>aws:</code> prefix).</p>
+     * (tags that have the <code>aws:</code> prefix).</p> <p>Constraints: Up to 1000
+     * tags.</p>
      */
     inline DeleteTagsRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -188,7 +193,8 @@ namespace Model
      * string as the tag value, we delete the tag only if its value is an empty
      * string.</p> <p>If you omit this parameter, we delete all user-defined tags for
      * the specified resources. We do not delete Amazon Web Services-generated tags
-     * (tags that have the <code>aws:</code> prefix).</p>
+     * (tags that have the <code>aws:</code> prefix).</p> <p>Constraints: Up to 1000
+     * tags.</p>
      */
     inline DeleteTagsRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -199,7 +205,8 @@ namespace Model
      * string as the tag value, we delete the tag only if its value is an empty
      * string.</p> <p>If you omit this parameter, we delete all user-defined tags for
      * the specified resources. We do not delete Amazon Web Services-generated tags
-     * (tags that have the <code>aws:</code> prefix).</p>
+     * (tags that have the <code>aws:</code> prefix).</p> <p>Constraints: Up to 1000
+     * tags.</p>
      */
     inline DeleteTagsRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -210,7 +217,8 @@ namespace Model
      * string as the tag value, we delete the tag only if its value is an empty
      * string.</p> <p>If you omit this parameter, we delete all user-defined tags for
      * the specified resources. We do not delete Amazon Web Services-generated tags
-     * (tags that have the <code>aws:</code> prefix).</p>
+     * (tags that have the <code>aws:</code> prefix).</p> <p>Constraints: Up to 1000
+     * tags.</p>
      */
     inline DeleteTagsRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

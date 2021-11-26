@@ -25,7 +25,9 @@ namespace Model
     PAUSED,
     RESCAN,
     STALLED,
-    DISCONNECTED
+    DISCONNECTED,
+    PENDING_SNAPSHOT_SHIPPING,
+    SHIPPING_SNAPSHOT
   };
 
 namespace DataReplicationStateMapper

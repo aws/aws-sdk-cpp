@@ -123,42 +123,42 @@ namespace Model
 
 
     /**
-     * <p>Specifies the devices under test for the test suite.</p>
+     * <p>Specifies the devices that are under test for the test suite.</p>
      */
     inline const Aws::Vector<DeviceUnderTest>& GetDefaultDevices() const{ return m_defaultDevices; }
 
     /**
-     * <p>Specifies the devices under test for the test suite.</p>
+     * <p>Specifies the devices that are under test for the test suite.</p>
      */
     inline bool DefaultDevicesHasBeenSet() const { return m_defaultDevicesHasBeenSet; }
 
     /**
-     * <p>Specifies the devices under test for the test suite.</p>
+     * <p>Specifies the devices that are under test for the test suite.</p>
      */
     inline void SetDefaultDevices(const Aws::Vector<DeviceUnderTest>& value) { m_defaultDevicesHasBeenSet = true; m_defaultDevices = value; }
 
     /**
-     * <p>Specifies the devices under test for the test suite.</p>
+     * <p>Specifies the devices that are under test for the test suite.</p>
      */
     inline void SetDefaultDevices(Aws::Vector<DeviceUnderTest>&& value) { m_defaultDevicesHasBeenSet = true; m_defaultDevices = std::move(value); }
 
     /**
-     * <p>Specifies the devices under test for the test suite.</p>
+     * <p>Specifies the devices that are under test for the test suite.</p>
      */
     inline SuiteDefinitionInformation& WithDefaultDevices(const Aws::Vector<DeviceUnderTest>& value) { SetDefaultDevices(value); return *this;}
 
     /**
-     * <p>Specifies the devices under test for the test suite.</p>
+     * <p>Specifies the devices that are under test for the test suite.</p>
      */
     inline SuiteDefinitionInformation& WithDefaultDevices(Aws::Vector<DeviceUnderTest>&& value) { SetDefaultDevices(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the devices under test for the test suite.</p>
+     * <p>Specifies the devices that are under test for the test suite.</p>
      */
     inline SuiteDefinitionInformation& AddDefaultDevices(const DeviceUnderTest& value) { m_defaultDevicesHasBeenSet = true; m_defaultDevices.push_back(value); return *this; }
 
     /**
-     * <p>Specifies the devices under test for the test suite.</p>
+     * <p>Specifies the devices that are under test for the test suite.</p>
      */
     inline SuiteDefinitionInformation& AddDefaultDevices(DeviceUnderTest&& value) { m_defaultDevicesHasBeenSet = true; m_defaultDevices.push_back(std::move(value)); return *this; }
 

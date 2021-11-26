@@ -22,6 +22,7 @@ IdentificationHints::IdentificationHints() :
     m_awsInstanceIDHasBeenSet(false),
     m_fqdnHasBeenSet(false),
     m_hostnameHasBeenSet(false),
+    m_vmPathHasBeenSet(false),
     m_vmWareUuidHasBeenSet(false)
 {
 }
@@ -30,6 +31,7 @@ IdentificationHints::IdentificationHints(JsonView jsonValue) :
     m_awsInstanceIDHasBeenSet(false),
     m_fqdnHasBeenSet(false),
     m_hostnameHasBeenSet(false),
+    m_vmPathHasBeenSet(false),
     m_vmWareUuidHasBeenSet(false)
 {
   *this = jsonValue;
@@ -56,6 +58,13 @@ IdentificationHints& IdentificationHints::operator =(JsonView jsonValue)
     m_hostname = jsonValue.GetString("hostname");
 
     m_hostnameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("vmPath"))
+  {
+    m_vmPath = jsonValue.GetString("vmPath");
+
+    m_vmPathHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("vmWareUuid"))
@@ -87,6 +96,12 @@ JsonValue IdentificationHints::Jsonize() const
   if(m_hostnameHasBeenSet)
   {
    payload.WithString("hostname", m_hostname);
+
+  }
+
+  if(m_vmPathHasBeenSet)
+  {
+   payload.WithString("vmPath", m_vmPath);
 
   }
 

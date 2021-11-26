@@ -101,6 +101,7 @@
 #include <aws/pinpoint/model/PutEventsResult.h>
 #include <aws/pinpoint/model/RemoveAttributesResult.h>
 #include <aws/pinpoint/model/SendMessagesResult.h>
+#include <aws/pinpoint/model/SendOTPMessageResult.h>
 #include <aws/pinpoint/model/SendUsersMessagesResult.h>
 #include <aws/pinpoint/model/UpdateAdmChannelResult.h>
 #include <aws/pinpoint/model/UpdateApnsChannelResult.h>
@@ -126,6 +127,7 @@
 #include <aws/pinpoint/model/UpdateTemplateActiveVersionResult.h>
 #include <aws/pinpoint/model/UpdateVoiceChannelResult.h>
 #include <aws/pinpoint/model/UpdateVoiceTemplateResult.h>
+#include <aws/pinpoint/model/VerifyOTPMessageResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -256,6 +258,7 @@ namespace Model
         class PutEventsRequest;
         class RemoveAttributesRequest;
         class SendMessagesRequest;
+        class SendOTPMessageRequest;
         class SendUsersMessagesRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
@@ -283,6 +286,7 @@ namespace Model
         class UpdateTemplateActiveVersionRequest;
         class UpdateVoiceChannelRequest;
         class UpdateVoiceTemplateRequest;
+        class VerifyOTPMessageRequest;
 
         typedef Aws::Utils::Outcome<CreateAppResult, PinpointError> CreateAppOutcome;
         typedef Aws::Utils::Outcome<CreateCampaignResult, PinpointError> CreateCampaignOutcome;
@@ -374,6 +378,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PutEventsResult, PinpointError> PutEventsOutcome;
         typedef Aws::Utils::Outcome<RemoveAttributesResult, PinpointError> RemoveAttributesOutcome;
         typedef Aws::Utils::Outcome<SendMessagesResult, PinpointError> SendMessagesOutcome;
+        typedef Aws::Utils::Outcome<SendOTPMessageResult, PinpointError> SendOTPMessageOutcome;
         typedef Aws::Utils::Outcome<SendUsersMessagesResult, PinpointError> SendUsersMessagesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, PinpointError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, PinpointError> UntagResourceOutcome;
@@ -401,6 +406,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateTemplateActiveVersionResult, PinpointError> UpdateTemplateActiveVersionOutcome;
         typedef Aws::Utils::Outcome<UpdateVoiceChannelResult, PinpointError> UpdateVoiceChannelOutcome;
         typedef Aws::Utils::Outcome<UpdateVoiceTemplateResult, PinpointError> UpdateVoiceTemplateOutcome;
+        typedef Aws::Utils::Outcome<VerifyOTPMessageResult, PinpointError> VerifyOTPMessageOutcome;
 
         typedef std::future<CreateAppOutcome> CreateAppOutcomeCallable;
         typedef std::future<CreateCampaignOutcome> CreateCampaignOutcomeCallable;
@@ -492,6 +498,7 @@ namespace Model
         typedef std::future<PutEventsOutcome> PutEventsOutcomeCallable;
         typedef std::future<RemoveAttributesOutcome> RemoveAttributesOutcomeCallable;
         typedef std::future<SendMessagesOutcome> SendMessagesOutcomeCallable;
+        typedef std::future<SendOTPMessageOutcome> SendOTPMessageOutcomeCallable;
         typedef std::future<SendUsersMessagesOutcome> SendUsersMessagesOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -519,6 +526,7 @@ namespace Model
         typedef std::future<UpdateTemplateActiveVersionOutcome> UpdateTemplateActiveVersionOutcomeCallable;
         typedef std::future<UpdateVoiceChannelOutcome> UpdateVoiceChannelOutcomeCallable;
         typedef std::future<UpdateVoiceTemplateOutcome> UpdateVoiceTemplateOutcomeCallable;
+        typedef std::future<VerifyOTPMessageOutcome> VerifyOTPMessageOutcomeCallable;
 } // namespace Model
 
   class PinpointClient;
@@ -613,6 +621,7 @@ namespace Model
     typedef std::function<void(const PinpointClient*, const Model::PutEventsRequest&, const Model::PutEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEventsResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::RemoveAttributesRequest&, const Model::RemoveAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveAttributesResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::SendMessagesRequest&, const Model::SendMessagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendMessagesResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::SendOTPMessageRequest&, const Model::SendOTPMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendOTPMessageResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::SendUsersMessagesRequest&, const Model::SendUsersMessagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendUsersMessagesResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
@@ -640,6 +649,7 @@ namespace Model
     typedef std::function<void(const PinpointClient*, const Model::UpdateTemplateActiveVersionRequest&, const Model::UpdateTemplateActiveVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTemplateActiveVersionResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::UpdateVoiceChannelRequest&, const Model::UpdateVoiceChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVoiceChannelResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::UpdateVoiceTemplateRequest&, const Model::UpdateVoiceTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVoiceTemplateResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::VerifyOTPMessageRequest&, const Model::VerifyOTPMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifyOTPMessageResponseReceivedHandler;
 
   /**
    * <p>Doc Engage API - Amazon Pinpoint API</p>
@@ -3177,6 +3187,31 @@ namespace Model
         virtual void SendMessagesAsync(const Model::SendMessagesRequest& request, const SendMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Send an OTP message</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendOTPMessage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SendOTPMessageOutcome SendOTPMessage(const Model::SendOTPMessageRequest& request) const;
+
+        /**
+         * <p>Send an OTP message</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendOTPMessage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SendOTPMessageOutcomeCallable SendOTPMessageCallable(const Model::SendOTPMessageRequest& request) const;
+
+        /**
+         * <p>Send an OTP message</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendOTPMessage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SendOTPMessageAsync(const Model::SendOTPMessageRequest& request, const SendOTPMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates and sends a message to a list of users.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendUsersMessages">AWS
          * API Reference</a></p>
@@ -3956,6 +3991,31 @@ namespace Model
          */
         virtual void UpdateVoiceTemplateAsync(const Model::UpdateVoiceTemplateRequest& request, const UpdateVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Verify an OTP</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/VerifyOTPMessage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::VerifyOTPMessageOutcome VerifyOTPMessage(const Model::VerifyOTPMessageRequest& request) const;
+
+        /**
+         * <p>Verify an OTP</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/VerifyOTPMessage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::VerifyOTPMessageOutcomeCallable VerifyOTPMessageCallable(const Model::VerifyOTPMessageRequest& request) const;
+
+        /**
+         * <p>Verify an OTP</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/VerifyOTPMessage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void VerifyOTPMessageAsync(const Model::VerifyOTPMessageRequest& request, const VerifyOTPMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -4050,6 +4110,7 @@ namespace Model
         void PutEventsAsyncHelper(const Model::PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveAttributesAsyncHelper(const Model::RemoveAttributesRequest& request, const RemoveAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendMessagesAsyncHelper(const Model::SendMessagesRequest& request, const SendMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SendOTPMessageAsyncHelper(const Model::SendOTPMessageRequest& request, const SendOTPMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendUsersMessagesAsyncHelper(const Model::SendUsersMessagesRequest& request, const SendUsersMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4077,6 +4138,7 @@ namespace Model
         void UpdateTemplateActiveVersionAsyncHelper(const Model::UpdateTemplateActiveVersionRequest& request, const UpdateTemplateActiveVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateVoiceChannelAsyncHelper(const Model::UpdateVoiceChannelRequest& request, const UpdateVoiceChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateVoiceTemplateAsyncHelper(const Model::UpdateVoiceTemplateRequest& request, const UpdateVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void VerifyOTPMessageAsyncHelper(const Model::VerifyOTPMessageRequest& request, const VerifyOTPMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

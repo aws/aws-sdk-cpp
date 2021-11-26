@@ -38,53 +38,85 @@ namespace Model
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
-    
+    /**
+     * <p>The thing ARN of the device. This is an optional parameter.</p>
+     */
     inline const Aws::String& GetThingArn() const{ return m_thingArn; }
 
-    
+    /**
+     * <p>The thing ARN of the device. This is an optional parameter.</p>
+     */
     inline bool ThingArnHasBeenSet() const { return m_thingArnHasBeenSet; }
 
-    
+    /**
+     * <p>The thing ARN of the device. This is an optional parameter.</p>
+     */
     inline void SetThingArn(const Aws::String& value) { m_thingArnHasBeenSet = true; m_thingArn = value; }
 
-    
+    /**
+     * <p>The thing ARN of the device. This is an optional parameter.</p>
+     */
     inline void SetThingArn(Aws::String&& value) { m_thingArnHasBeenSet = true; m_thingArn = std::move(value); }
 
-    
+    /**
+     * <p>The thing ARN of the device. This is an optional parameter.</p>
+     */
     inline void SetThingArn(const char* value) { m_thingArnHasBeenSet = true; m_thingArn.assign(value); }
 
-    
+    /**
+     * <p>The thing ARN of the device. This is an optional parameter.</p>
+     */
     inline GetEndpointRequest& WithThingArn(const Aws::String& value) { SetThingArn(value); return *this;}
 
-    
+    /**
+     * <p>The thing ARN of the device. This is an optional parameter.</p>
+     */
     inline GetEndpointRequest& WithThingArn(Aws::String&& value) { SetThingArn(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The thing ARN of the device. This is an optional parameter.</p>
+     */
     inline GetEndpointRequest& WithThingArn(const char* value) { SetThingArn(value); return *this;}
 
 
-    
+    /**
+     * <p>The certificate ARN of the device. This is an optional parameter.</p>
+     */
     inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
 
-    
+    /**
+     * <p>The certificate ARN of the device. This is an optional parameter.</p>
+     */
     inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
 
-    
+    /**
+     * <p>The certificate ARN of the device. This is an optional parameter.</p>
+     */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
-    
+    /**
+     * <p>The certificate ARN of the device. This is an optional parameter.</p>
+     */
     inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
 
-    
+    /**
+     * <p>The certificate ARN of the device. This is an optional parameter.</p>
+     */
     inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
 
-    
+    /**
+     * <p>The certificate ARN of the device. This is an optional parameter.</p>
+     */
     inline GetEndpointRequest& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
 
-    
+    /**
+     * <p>The certificate ARN of the device. This is an optional parameter.</p>
+     */
     inline GetEndpointRequest& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The certificate ARN of the device. This is an optional parameter.</p>
+     */
     inline GetEndpointRequest& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
   private:

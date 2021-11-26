@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Information of a test device. Required to provide either a thing ARN or a
-   * certificate ARN.</p><p><h3>See Also:</h3>   <a
+   * <p>Information of a test device. A thing ARN or a certificate ARN is
+   * required.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/DeviceUnderTest">AWS
    * API Reference</a></p>
    */

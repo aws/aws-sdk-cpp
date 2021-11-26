@@ -556,25 +556,29 @@ namespace Model
 
     /**
      * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
-     * checking the health status of an EC2 instance that has come into service.</p>
+     * checking the health status of an EC2 instance that has come into service and
+     * marking it unhealthy due to a failed health check.</p>
      */
     inline int GetHealthCheckGracePeriod() const{ return m_healthCheckGracePeriod; }
 
     /**
      * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
-     * checking the health status of an EC2 instance that has come into service.</p>
+     * checking the health status of an EC2 instance that has come into service and
+     * marking it unhealthy due to a failed health check.</p>
      */
     inline bool HealthCheckGracePeriodHasBeenSet() const { return m_healthCheckGracePeriodHasBeenSet; }
 
     /**
      * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
-     * checking the health status of an EC2 instance that has come into service.</p>
+     * checking the health status of an EC2 instance that has come into service and
+     * marking it unhealthy due to a failed health check.</p>
      */
     inline void SetHealthCheckGracePeriod(int value) { m_healthCheckGracePeriodHasBeenSet = true; m_healthCheckGracePeriod = value; }
 
     /**
      * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
-     * checking the health status of an EC2 instance that has come into service.</p>
+     * checking the health status of an EC2 instance that has come into service and
+     * marking it unhealthy due to a failed health check.</p>
      */
     inline AutoScalingGroup& WithHealthCheckGracePeriod(int value) { SetHealthCheckGracePeriod(value); return *this;}
 

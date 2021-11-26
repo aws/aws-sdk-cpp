@@ -678,28 +678,44 @@ namespace Model
     inline Route& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
 
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
     inline const Aws::String& GetCoreNetworkArn() const{ return m_coreNetworkArn; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
     inline bool CoreNetworkArnHasBeenSet() const { return m_coreNetworkArnHasBeenSet; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
     inline void SetCoreNetworkArn(const Aws::String& value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
     inline void SetCoreNetworkArn(Aws::String&& value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn = std::move(value); }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
     inline void SetCoreNetworkArn(const char* value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn.assign(value); }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
     inline Route& WithCoreNetworkArn(const Aws::String& value) { SetCoreNetworkArn(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
     inline Route& WithCoreNetworkArn(Aws::String&& value) { SetCoreNetworkArn(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the core network.</p>
+     */
     inline Route& WithCoreNetworkArn(const char* value) { SetCoreNetworkArn(value); return *this;}
 
   private:

@@ -26,6 +26,10 @@ namespace Aws
         static const int INSTALLING_HASH = HashingUtils::HashString("INSTALLING");
         static const int FULFILLED_HASH = HashingUtils::HashString("FULFILLED");
         static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
+        static const int PREPARING_HASH = HashingUtils::HashString("PREPARING");
+        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
+        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
+        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
 
 
         OrderStatus GetOrderStatusForName(const Aws::String& name)
@@ -55,6 +59,22 @@ namespace Aws
           {
             return OrderStatus::CANCELLED;
           }
+          else if (hashCode == PREPARING_HASH)
+          {
+            return OrderStatus::PREPARING;
+          }
+          else if (hashCode == IN_PROGRESS_HASH)
+          {
+            return OrderStatus::IN_PROGRESS;
+          }
+          else if (hashCode == COMPLETED_HASH)
+          {
+            return OrderStatus::COMPLETED;
+          }
+          else if (hashCode == ERROR__HASH)
+          {
+            return OrderStatus::ERROR_;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +101,14 @@ namespace Aws
             return "FULFILLED";
           case OrderStatus::CANCELLED:
             return "CANCELLED";
+          case OrderStatus::PREPARING:
+            return "PREPARING";
+          case OrderStatus::IN_PROGRESS:
+            return "IN_PROGRESS";
+          case OrderStatus::COMPLETED:
+            return "COMPLETED";
+          case OrderStatus::ERROR_:
+            return "ERROR";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

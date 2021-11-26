@@ -28,6 +28,7 @@ namespace Aws
         static const int CUTTING_OVER_HASH = HashingUtils::HashString("CUTTING_OVER");
         static const int CUTOVER_HASH = HashingUtils::HashString("CUTOVER");
         static const int DISCONNECTED_HASH = HashingUtils::HashString("DISCONNECTED");
+        static const int DISCOVERED_HASH = HashingUtils::HashString("DISCOVERED");
 
 
         LifeCycleState GetLifeCycleStateForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return LifeCycleState::DISCONNECTED;
           }
+          else if (hashCode == DISCOVERED_HASH)
+          {
+            return LifeCycleState::DISCOVERED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -95,6 +100,8 @@ namespace Aws
             return "CUTOVER";
           case LifeCycleState::DISCONNECTED:
             return "DISCONNECTED";
+          case LifeCycleState::DISCOVERED:
+            return "DISCOVERED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

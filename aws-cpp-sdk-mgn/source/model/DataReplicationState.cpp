@@ -30,6 +30,8 @@ namespace Aws
         static const int RESCAN_HASH = HashingUtils::HashString("RESCAN");
         static const int STALLED_HASH = HashingUtils::HashString("STALLED");
         static const int DISCONNECTED_HASH = HashingUtils::HashString("DISCONNECTED");
+        static const int PENDING_SNAPSHOT_SHIPPING_HASH = HashingUtils::HashString("PENDING_SNAPSHOT_SHIPPING");
+        static const int SHIPPING_SNAPSHOT_HASH = HashingUtils::HashString("SHIPPING_SNAPSHOT");
 
 
         DataReplicationState GetDataReplicationStateForName(const Aws::String& name)
@@ -75,6 +77,14 @@ namespace Aws
           {
             return DataReplicationState::DISCONNECTED;
           }
+          else if (hashCode == PENDING_SNAPSHOT_SHIPPING_HASH)
+          {
+            return DataReplicationState::PENDING_SNAPSHOT_SHIPPING;
+          }
+          else if (hashCode == SHIPPING_SNAPSHOT_HASH)
+          {
+            return DataReplicationState::SHIPPING_SNAPSHOT;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -109,6 +119,10 @@ namespace Aws
             return "STALLED";
           case DataReplicationState::DISCONNECTED:
             return "DISCONNECTED";
+          case DataReplicationState::PENDING_SNAPSHOT_SHIPPING:
+            return "PENDING_SNAPSHOT_SHIPPING";
+          case DataReplicationState::SHIPPING_SNAPSHOT:
+            return "SHIPPING_SNAPSHOT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

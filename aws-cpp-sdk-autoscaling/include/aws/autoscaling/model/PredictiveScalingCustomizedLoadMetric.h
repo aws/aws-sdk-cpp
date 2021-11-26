@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes a customized load metric for a predictive scaling
-   * policy.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a custom load metric for a predictive scaling policy.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PredictiveScalingCustomizedLoadMetric">AWS
    * API Reference</a></p>
    */

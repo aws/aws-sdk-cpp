@@ -17,12 +17,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 MarkAsArchivedResult::MarkAsArchivedResult() : 
-    m_isArchived(false)
+    m_isArchived(false),
+    m_replicationType(ReplicationType::NOT_SET)
 {
 }
 
 MarkAsArchivedResult::MarkAsArchivedResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isArchived(false)
+    m_isArchived(false),
+    m_replicationType(ReplicationType::NOT_SET)
 {
   *this = result;
 }
@@ -60,6 +62,12 @@ MarkAsArchivedResult& MarkAsArchivedResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("replicationType"))
+  {
+    m_replicationType = ReplicationTypeMapper::GetReplicationTypeForName(jsonValue.GetString("replicationType"));
+
+  }
+
   if(jsonValue.ValueExists("sourceProperties"))
   {
     m_sourceProperties = jsonValue.GetObject("sourceProperties");
@@ -79,6 +87,12 @@ MarkAsArchivedResult& MarkAsArchivedResult::operator =(const Aws::AmazonWebServi
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+  }
+
+  if(jsonValue.ValueExists("vcenterClientID"))
+  {
+    m_vcenterClientID = jsonValue.GetString("vcenterClientID");
+
   }
 
 

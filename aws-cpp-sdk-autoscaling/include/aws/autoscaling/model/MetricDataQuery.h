@@ -31,7 +31,7 @@ namespace Model
    * series of data points, each of which is associated with a timestamp.</p> <p>For
    * more information and examples, see <a
    * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/predictive-scaling-customized-metric-specification.html">Advanced
-   * predictive scaling policy configurations using customized metrics</a> in the
+   * predictive scaling policy configurations using custom metrics</a> in the
    * <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/MetricDataQuery">AWS
    * API Reference</a></p>
@@ -132,11 +132,8 @@ namespace Model
      * <p>The math expression to perform on the returned data, if this object is
      * performing a math expression. This expression can use the <code>Id</code> of the
      * other metrics to refer to those metrics, and can also use the <code>Id</code> of
-     * other expressions to use the result of those expressions. </p> <p>For example,
-     * to use search expressions, use the SEARCH() function in your metric math
-     * expression to combine multiple metrics from Auto Scaling groups that use a
-     * specific name prefix.</p> <p>Conditional: Within each
-     * <code>MetricDataQuery</code> object, you must specify either
+     * other expressions to use the result of those expressions. </p> <p>Conditional:
+     * Within each <code>MetricDataQuery</code> object, you must specify either
      * <code>Expression</code> or <code>MetricStat</code>, but not both.</p>
      */
     inline const Aws::String& GetExpression() const{ return m_expression; }
@@ -145,11 +142,8 @@ namespace Model
      * <p>The math expression to perform on the returned data, if this object is
      * performing a math expression. This expression can use the <code>Id</code> of the
      * other metrics to refer to those metrics, and can also use the <code>Id</code> of
-     * other expressions to use the result of those expressions. </p> <p>For example,
-     * to use search expressions, use the SEARCH() function in your metric math
-     * expression to combine multiple metrics from Auto Scaling groups that use a
-     * specific name prefix.</p> <p>Conditional: Within each
-     * <code>MetricDataQuery</code> object, you must specify either
+     * other expressions to use the result of those expressions. </p> <p>Conditional:
+     * Within each <code>MetricDataQuery</code> object, you must specify either
      * <code>Expression</code> or <code>MetricStat</code>, but not both.</p>
      */
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
@@ -158,11 +152,8 @@ namespace Model
      * <p>The math expression to perform on the returned data, if this object is
      * performing a math expression. This expression can use the <code>Id</code> of the
      * other metrics to refer to those metrics, and can also use the <code>Id</code> of
-     * other expressions to use the result of those expressions. </p> <p>For example,
-     * to use search expressions, use the SEARCH() function in your metric math
-     * expression to combine multiple metrics from Auto Scaling groups that use a
-     * specific name prefix.</p> <p>Conditional: Within each
-     * <code>MetricDataQuery</code> object, you must specify either
+     * other expressions to use the result of those expressions. </p> <p>Conditional:
+     * Within each <code>MetricDataQuery</code> object, you must specify either
      * <code>Expression</code> or <code>MetricStat</code>, but not both.</p>
      */
     inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
@@ -171,11 +162,8 @@ namespace Model
      * <p>The math expression to perform on the returned data, if this object is
      * performing a math expression. This expression can use the <code>Id</code> of the
      * other metrics to refer to those metrics, and can also use the <code>Id</code> of
-     * other expressions to use the result of those expressions. </p> <p>For example,
-     * to use search expressions, use the SEARCH() function in your metric math
-     * expression to combine multiple metrics from Auto Scaling groups that use a
-     * specific name prefix.</p> <p>Conditional: Within each
-     * <code>MetricDataQuery</code> object, you must specify either
+     * other expressions to use the result of those expressions. </p> <p>Conditional:
+     * Within each <code>MetricDataQuery</code> object, you must specify either
      * <code>Expression</code> or <code>MetricStat</code>, but not both.</p>
      */
     inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
@@ -184,11 +172,8 @@ namespace Model
      * <p>The math expression to perform on the returned data, if this object is
      * performing a math expression. This expression can use the <code>Id</code> of the
      * other metrics to refer to those metrics, and can also use the <code>Id</code> of
-     * other expressions to use the result of those expressions. </p> <p>For example,
-     * to use search expressions, use the SEARCH() function in your metric math
-     * expression to combine multiple metrics from Auto Scaling groups that use a
-     * specific name prefix.</p> <p>Conditional: Within each
-     * <code>MetricDataQuery</code> object, you must specify either
+     * other expressions to use the result of those expressions. </p> <p>Conditional:
+     * Within each <code>MetricDataQuery</code> object, you must specify either
      * <code>Expression</code> or <code>MetricStat</code>, but not both.</p>
      */
     inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
@@ -197,11 +182,8 @@ namespace Model
      * <p>The math expression to perform on the returned data, if this object is
      * performing a math expression. This expression can use the <code>Id</code> of the
      * other metrics to refer to those metrics, and can also use the <code>Id</code> of
-     * other expressions to use the result of those expressions. </p> <p>For example,
-     * to use search expressions, use the SEARCH() function in your metric math
-     * expression to combine multiple metrics from Auto Scaling groups that use a
-     * specific name prefix.</p> <p>Conditional: Within each
-     * <code>MetricDataQuery</code> object, you must specify either
+     * other expressions to use the result of those expressions. </p> <p>Conditional:
+     * Within each <code>MetricDataQuery</code> object, you must specify either
      * <code>Expression</code> or <code>MetricStat</code>, but not both.</p>
      */
     inline MetricDataQuery& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
@@ -210,11 +192,8 @@ namespace Model
      * <p>The math expression to perform on the returned data, if this object is
      * performing a math expression. This expression can use the <code>Id</code> of the
      * other metrics to refer to those metrics, and can also use the <code>Id</code> of
-     * other expressions to use the result of those expressions. </p> <p>For example,
-     * to use search expressions, use the SEARCH() function in your metric math
-     * expression to combine multiple metrics from Auto Scaling groups that use a
-     * specific name prefix.</p> <p>Conditional: Within each
-     * <code>MetricDataQuery</code> object, you must specify either
+     * other expressions to use the result of those expressions. </p> <p>Conditional:
+     * Within each <code>MetricDataQuery</code> object, you must specify either
      * <code>Expression</code> or <code>MetricStat</code>, but not both.</p>
      */
     inline MetricDataQuery& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
@@ -223,11 +202,8 @@ namespace Model
      * <p>The math expression to perform on the returned data, if this object is
      * performing a math expression. This expression can use the <code>Id</code> of the
      * other metrics to refer to those metrics, and can also use the <code>Id</code> of
-     * other expressions to use the result of those expressions. </p> <p>For example,
-     * to use search expressions, use the SEARCH() function in your metric math
-     * expression to combine multiple metrics from Auto Scaling groups that use a
-     * specific name prefix.</p> <p>Conditional: Within each
-     * <code>MetricDataQuery</code> object, you must specify either
+     * other expressions to use the result of those expressions. </p> <p>Conditional:
+     * Within each <code>MetricDataQuery</code> object, you must specify either
      * <code>Expression</code> or <code>MetricStat</code>, but not both.</p>
      */
     inline MetricDataQuery& WithExpression(const char* value) { SetExpression(value); return *this;}
@@ -335,49 +311,49 @@ namespace Model
 
     /**
      * <p>Indicates whether to return the timestamps and raw data values of this
-     * metric. </p> <p>If you use any math expressions, specify <code>True</code> for
+     * metric. </p> <p>If you use any math expressions, specify <code>true</code> for
      * this value for only the final math expression that the metric specification is
-     * based on. You must specify <code>False</code> for <code>ReturnData</code> for
+     * based on. You must specify <code>false</code> for <code>ReturnData</code> for
      * all the other metrics and expressions used in the metric specification.</p>
      * <p>If you are only retrieving metrics and not performing any math expressions,
      * do not specify anything for <code>ReturnData</code>. This sets it to its default
-     * (<code>True</code>).</p>
+     * (<code>true</code>).</p>
      */
     inline bool GetReturnData() const{ return m_returnData; }
 
     /**
      * <p>Indicates whether to return the timestamps and raw data values of this
-     * metric. </p> <p>If you use any math expressions, specify <code>True</code> for
+     * metric. </p> <p>If you use any math expressions, specify <code>true</code> for
      * this value for only the final math expression that the metric specification is
-     * based on. You must specify <code>False</code> for <code>ReturnData</code> for
+     * based on. You must specify <code>false</code> for <code>ReturnData</code> for
      * all the other metrics and expressions used in the metric specification.</p>
      * <p>If you are only retrieving metrics and not performing any math expressions,
      * do not specify anything for <code>ReturnData</code>. This sets it to its default
-     * (<code>True</code>).</p>
+     * (<code>true</code>).</p>
      */
     inline bool ReturnDataHasBeenSet() const { return m_returnDataHasBeenSet; }
 
     /**
      * <p>Indicates whether to return the timestamps and raw data values of this
-     * metric. </p> <p>If you use any math expressions, specify <code>True</code> for
+     * metric. </p> <p>If you use any math expressions, specify <code>true</code> for
      * this value for only the final math expression that the metric specification is
-     * based on. You must specify <code>False</code> for <code>ReturnData</code> for
+     * based on. You must specify <code>false</code> for <code>ReturnData</code> for
      * all the other metrics and expressions used in the metric specification.</p>
      * <p>If you are only retrieving metrics and not performing any math expressions,
      * do not specify anything for <code>ReturnData</code>. This sets it to its default
-     * (<code>True</code>).</p>
+     * (<code>true</code>).</p>
      */
     inline void SetReturnData(bool value) { m_returnDataHasBeenSet = true; m_returnData = value; }
 
     /**
      * <p>Indicates whether to return the timestamps and raw data values of this
-     * metric. </p> <p>If you use any math expressions, specify <code>True</code> for
+     * metric. </p> <p>If you use any math expressions, specify <code>true</code> for
      * this value for only the final math expression that the metric specification is
-     * based on. You must specify <code>False</code> for <code>ReturnData</code> for
+     * based on. You must specify <code>false</code> for <code>ReturnData</code> for
      * all the other metrics and expressions used in the metric specification.</p>
      * <p>If you are only retrieving metrics and not performing any math expressions,
      * do not specify anything for <code>ReturnData</code>. This sets it to its default
-     * (<code>True</code>).</p>
+     * (<code>true</code>).</p>
      */
     inline MetricDataQuery& WithReturnData(bool value) { SetReturnData(value); return *this;}
 

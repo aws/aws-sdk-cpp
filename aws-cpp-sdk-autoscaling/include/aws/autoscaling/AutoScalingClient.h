@@ -463,7 +463,9 @@ namespace Model
          * </ul> <p>To describe the target groups for an Auto Scaling group, call the
          * <a>DescribeLoadBalancerTargetGroups</a> API. To detach the target group from the
          * Auto Scaling group, call the <a>DetachLoadBalancerTargetGroups</a> API.</p>
-         * <p>For more information, see <a
+         * <p>This operation is additive and does not detach existing target groups or
+         * Classic Load Balancers from the Auto Scaling group.</p> <p>For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
          * Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
          * User Guide</i>. </p><p><h3>See Also:</h3>   <a
@@ -482,7 +484,9 @@ namespace Model
          * </ul> <p>To describe the target groups for an Auto Scaling group, call the
          * <a>DescribeLoadBalancerTargetGroups</a> API. To detach the target group from the
          * Auto Scaling group, call the <a>DetachLoadBalancerTargetGroups</a> API.</p>
-         * <p>For more information, see <a
+         * <p>This operation is additive and does not detach existing target groups or
+         * Classic Load Balancers from the Auto Scaling group.</p> <p>For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
          * Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
          * User Guide</i>. </p><p><h3>See Also:</h3>   <a
@@ -503,7 +507,9 @@ namespace Model
          * </ul> <p>To describe the target groups for an Auto Scaling group, call the
          * <a>DescribeLoadBalancerTargetGroups</a> API. To detach the target group from the
          * Auto Scaling group, call the <a>DetachLoadBalancerTargetGroups</a> API.</p>
-         * <p>For more information, see <a
+         * <p>This operation is additive and does not detach existing target groups or
+         * Classic Load Balancers from the Auto Scaling group.</p> <p>For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
          * Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
          * User Guide</i>. </p><p><h3>See Also:</h3>   <a
@@ -522,7 +528,9 @@ namespace Model
          * instances with these Classic Load Balancers.</p> <p>To describe the load
          * balancers for an Auto Scaling group, call the <a>DescribeLoadBalancers</a> API.
          * To detach the load balancer from the Auto Scaling group, call the
-         * <a>DetachLoadBalancers</a> API.</p> <p>For more information, see <a
+         * <a>DetachLoadBalancers</a> API.</p> <p>This operation is additive and does not
+         * detach existing Classic Load Balancers or target groups from the Auto Scaling
+         * group.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
          * Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
          * User Guide</i>. </p><p><h3>See Also:</h3>   <a
@@ -539,7 +547,9 @@ namespace Model
          * instances with these Classic Load Balancers.</p> <p>To describe the load
          * balancers for an Auto Scaling group, call the <a>DescribeLoadBalancers</a> API.
          * To detach the load balancer from the Auto Scaling group, call the
-         * <a>DetachLoadBalancers</a> API.</p> <p>For more information, see <a
+         * <a>DetachLoadBalancers</a> API.</p> <p>This operation is additive and does not
+         * detach existing Classic Load Balancers or target groups from the Auto Scaling
+         * group.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
          * Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
          * User Guide</i>. </p><p><h3>See Also:</h3>   <a
@@ -558,7 +568,9 @@ namespace Model
          * instances with these Classic Load Balancers.</p> <p>To describe the load
          * balancers for an Auto Scaling group, call the <a>DescribeLoadBalancers</a> API.
          * To detach the load balancer from the Auto Scaling group, call the
-         * <a>DetachLoadBalancers</a> API.</p> <p>For more information, see <a
+         * <a>DetachLoadBalancers</a> API.</p> <p>This operation is additive and does not
+         * detach existing Classic Load Balancers or target groups from the Auto Scaling
+         * group.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
          * Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
          * User Guide</i>. </p><p><h3>See Also:</h3>   <a
@@ -672,7 +684,7 @@ namespace Model
          * <p>Completes the lifecycle action for the specified token or instance with the
          * specified result.</p> <p>This step is a part of the procedure for adding a
          * lifecycle hook to an Auto Scaling group:</p> <ol> <li> <p>(Optional) Create a
-         * Lambda function and a rule that allows CloudWatch Events to invoke your Lambda
+         * Lambda function and a rule that allows Amazon EventBridge to invoke your Lambda
          * function when Amazon EC2 Auto Scaling launches or terminates instances.</p>
          * </li> <li> <p>(Optional) Create a notification target and an IAM role. The
          * target can be either an Amazon SQS queue or an Amazon SNS topic. The role allows
@@ -680,9 +692,9 @@ namespace Model
          * </li> <li> <p>Create the lifecycle hook. Specify whether the hook is used when
          * the instances launch or terminate.</p> </li> <li> <p>If you need more time,
          * record the lifecycle action heartbeat to keep the instance in a pending
-         * state.</p> </li> <li> <p> <b>If you finish before the timeout period ends,
-         * complete the lifecycle action.</b> </p> </li> </ol> <p>For more information, see
-         * <a
+         * state.</p> </li> <li> <p> <b>If you finish before the timeout period ends, send
+         * a callback by using the <a>CompleteLifecycleAction</a> API call.</b> </p> </li>
+         * </ol> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
          * EC2 Auto Scaling lifecycle hooks</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -695,7 +707,7 @@ namespace Model
          * <p>Completes the lifecycle action for the specified token or instance with the
          * specified result.</p> <p>This step is a part of the procedure for adding a
          * lifecycle hook to an Auto Scaling group:</p> <ol> <li> <p>(Optional) Create a
-         * Lambda function and a rule that allows CloudWatch Events to invoke your Lambda
+         * Lambda function and a rule that allows Amazon EventBridge to invoke your Lambda
          * function when Amazon EC2 Auto Scaling launches or terminates instances.</p>
          * </li> <li> <p>(Optional) Create a notification target and an IAM role. The
          * target can be either an Amazon SQS queue or an Amazon SNS topic. The role allows
@@ -703,9 +715,9 @@ namespace Model
          * </li> <li> <p>Create the lifecycle hook. Specify whether the hook is used when
          * the instances launch or terminate.</p> </li> <li> <p>If you need more time,
          * record the lifecycle action heartbeat to keep the instance in a pending
-         * state.</p> </li> <li> <p> <b>If you finish before the timeout period ends,
-         * complete the lifecycle action.</b> </p> </li> </ol> <p>For more information, see
-         * <a
+         * state.</p> </li> <li> <p> <b>If you finish before the timeout period ends, send
+         * a callback by using the <a>CompleteLifecycleAction</a> API call.</b> </p> </li>
+         * </ol> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
          * EC2 Auto Scaling lifecycle hooks</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -720,7 +732,7 @@ namespace Model
          * <p>Completes the lifecycle action for the specified token or instance with the
          * specified result.</p> <p>This step is a part of the procedure for adding a
          * lifecycle hook to an Auto Scaling group:</p> <ol> <li> <p>(Optional) Create a
-         * Lambda function and a rule that allows CloudWatch Events to invoke your Lambda
+         * Lambda function and a rule that allows Amazon EventBridge to invoke your Lambda
          * function when Amazon EC2 Auto Scaling launches or terminates instances.</p>
          * </li> <li> <p>(Optional) Create a notification target and an IAM role. The
          * target can be either an Amazon SQS queue or an Amazon SNS topic. The role allows
@@ -728,9 +740,9 @@ namespace Model
          * </li> <li> <p>Create the lifecycle hook. Specify whether the hook is used when
          * the instances launch or terminate.</p> </li> <li> <p>If you need more time,
          * record the lifecycle action heartbeat to keep the instance in a pending
-         * state.</p> </li> <li> <p> <b>If you finish before the timeout period ends,
-         * complete the lifecycle action.</b> </p> </li> </ol> <p>For more information, see
-         * <a
+         * state.</p> </li> <li> <p> <b>If you finish before the timeout period ends, send
+         * a callback by using the <a>CompleteLifecycleAction</a> API call.</b> </p> </li>
+         * </ol> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
          * EC2 Auto Scaling lifecycle hooks</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2478,12 +2490,12 @@ namespace Model
 
         /**
          * <p>Creates or updates a lifecycle hook for the specified Auto Scaling group.</p>
-         * <p>A lifecycle hook tells Amazon EC2 Auto Scaling to perform an action on an
-         * instance when the instance launches (before it is put into service) or as the
-         * instance terminates (before it is fully terminated).</p> <p>This step is a part
-         * of the procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol>
-         * <li> <p>(Optional) Create a Lambda function and a rule that allows CloudWatch
-         * Events to invoke your Lambda function when Amazon EC2 Auto Scaling launches or
+         * <p>A lifecycle hook enables an Auto Scaling group to be aware of events in the
+         * Auto Scaling instance lifecycle, and then perform a custom action when the
+         * corresponding lifecycle event occurs.</p> <p>This step is a part of the
+         * procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li>
+         * <p>(Optional) Create a Lambda function and a rule that allows Amazon EventBridge
+         * to invoke your Lambda function when Amazon EC2 Auto Scaling launches or
          * terminates instances.</p> </li> <li> <p>(Optional) Create a notification target
          * and an IAM role. The target can be either an Amazon SQS queue or an Amazon SNS
          * topic. The role allows Amazon EC2 Auto Scaling to publish lifecycle
@@ -2492,7 +2504,7 @@ namespace Model
          * </p> </li> <li> <p>If you need more time, record the lifecycle action heartbeat
          * to keep the instance in a pending state using the
          * <a>RecordLifecycleActionHeartbeat</a> API call.</p> </li> <li> <p>If you finish
-         * before the timeout period ends, complete the lifecycle action using the
+         * before the timeout period ends, send a callback by using the
          * <a>CompleteLifecycleAction</a> API call.</p> </li> </ol> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
@@ -2510,12 +2522,12 @@ namespace Model
 
         /**
          * <p>Creates or updates a lifecycle hook for the specified Auto Scaling group.</p>
-         * <p>A lifecycle hook tells Amazon EC2 Auto Scaling to perform an action on an
-         * instance when the instance launches (before it is put into service) or as the
-         * instance terminates (before it is fully terminated).</p> <p>This step is a part
-         * of the procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol>
-         * <li> <p>(Optional) Create a Lambda function and a rule that allows CloudWatch
-         * Events to invoke your Lambda function when Amazon EC2 Auto Scaling launches or
+         * <p>A lifecycle hook enables an Auto Scaling group to be aware of events in the
+         * Auto Scaling instance lifecycle, and then perform a custom action when the
+         * corresponding lifecycle event occurs.</p> <p>This step is a part of the
+         * procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li>
+         * <p>(Optional) Create a Lambda function and a rule that allows Amazon EventBridge
+         * to invoke your Lambda function when Amazon EC2 Auto Scaling launches or
          * terminates instances.</p> </li> <li> <p>(Optional) Create a notification target
          * and an IAM role. The target can be either an Amazon SQS queue or an Amazon SNS
          * topic. The role allows Amazon EC2 Auto Scaling to publish lifecycle
@@ -2524,7 +2536,7 @@ namespace Model
          * </p> </li> <li> <p>If you need more time, record the lifecycle action heartbeat
          * to keep the instance in a pending state using the
          * <a>RecordLifecycleActionHeartbeat</a> API call.</p> </li> <li> <p>If you finish
-         * before the timeout period ends, complete the lifecycle action using the
+         * before the timeout period ends, send a callback by using the
          * <a>CompleteLifecycleAction</a> API call.</p> </li> </ol> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
@@ -2544,12 +2556,12 @@ namespace Model
 
         /**
          * <p>Creates or updates a lifecycle hook for the specified Auto Scaling group.</p>
-         * <p>A lifecycle hook tells Amazon EC2 Auto Scaling to perform an action on an
-         * instance when the instance launches (before it is put into service) or as the
-         * instance terminates (before it is fully terminated).</p> <p>This step is a part
-         * of the procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol>
-         * <li> <p>(Optional) Create a Lambda function and a rule that allows CloudWatch
-         * Events to invoke your Lambda function when Amazon EC2 Auto Scaling launches or
+         * <p>A lifecycle hook enables an Auto Scaling group to be aware of events in the
+         * Auto Scaling instance lifecycle, and then perform a custom action when the
+         * corresponding lifecycle event occurs.</p> <p>This step is a part of the
+         * procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li>
+         * <p>(Optional) Create a Lambda function and a rule that allows Amazon EventBridge
+         * to invoke your Lambda function when Amazon EC2 Auto Scaling launches or
          * terminates instances.</p> </li> <li> <p>(Optional) Create a notification target
          * and an IAM role. The target can be either an Amazon SQS queue or an Amazon SNS
          * topic. The role allows Amazon EC2 Auto Scaling to publish lifecycle
@@ -2558,7 +2570,7 @@ namespace Model
          * </p> </li> <li> <p>If you need more time, record the lifecycle action heartbeat
          * to keep the instance in a pending state using the
          * <a>RecordLifecycleActionHeartbeat</a> API call.</p> </li> <li> <p>If you finish
-         * before the timeout period ends, complete the lifecycle action using the
+         * before the timeout period ends, send a callback by using the
          * <a>CompleteLifecycleAction</a> API call.</p> </li> </ol> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
@@ -2807,7 +2819,7 @@ namespace Model
          * token or instance. This extends the timeout by the length of time defined using
          * the <a>PutLifecycleHook</a> API call.</p> <p>This step is a part of the
          * procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li>
-         * <p>(Optional) Create a Lambda function and a rule that allows CloudWatch Events
+         * <p>(Optional) Create a Lambda function and a rule that allows Amazon EventBridge
          * to invoke your Lambda function when Amazon EC2 Auto Scaling launches or
          * terminates instances.</p> </li> <li> <p>(Optional) Create a notification target
          * and an IAM role. The target can be either an Amazon SQS queue or an Amazon SNS
@@ -2816,8 +2828,9 @@ namespace Model
          * Specify whether the hook is used when the instances launch or terminate.</p>
          * </li> <li> <p> <b>If you need more time, record the lifecycle action heartbeat
          * to keep the instance in a pending state.</b> </p> </li> <li> <p>If you finish
-         * before the timeout period ends, complete the lifecycle action.</p> </li> </ol>
-         * <p>For more information, see <a
+         * before the timeout period ends, send a callback by using the
+         * <a>CompleteLifecycleAction</a> API call.</p> </li> </ol> <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
          * EC2 Auto Scaling lifecycle hooks</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2831,7 +2844,7 @@ namespace Model
          * token or instance. This extends the timeout by the length of time defined using
          * the <a>PutLifecycleHook</a> API call.</p> <p>This step is a part of the
          * procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li>
-         * <p>(Optional) Create a Lambda function and a rule that allows CloudWatch Events
+         * <p>(Optional) Create a Lambda function and a rule that allows Amazon EventBridge
          * to invoke your Lambda function when Amazon EC2 Auto Scaling launches or
          * terminates instances.</p> </li> <li> <p>(Optional) Create a notification target
          * and an IAM role. The target can be either an Amazon SQS queue or an Amazon SNS
@@ -2840,8 +2853,9 @@ namespace Model
          * Specify whether the hook is used when the instances launch or terminate.</p>
          * </li> <li> <p> <b>If you need more time, record the lifecycle action heartbeat
          * to keep the instance in a pending state.</b> </p> </li> <li> <p>If you finish
-         * before the timeout period ends, complete the lifecycle action.</p> </li> </ol>
-         * <p>For more information, see <a
+         * before the timeout period ends, send a callback by using the
+         * <a>CompleteLifecycleAction</a> API call.</p> </li> </ol> <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
          * EC2 Auto Scaling lifecycle hooks</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2857,7 +2871,7 @@ namespace Model
          * token or instance. This extends the timeout by the length of time defined using
          * the <a>PutLifecycleHook</a> API call.</p> <p>This step is a part of the
          * procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li>
-         * <p>(Optional) Create a Lambda function and a rule that allows CloudWatch Events
+         * <p>(Optional) Create a Lambda function and a rule that allows Amazon EventBridge
          * to invoke your Lambda function when Amazon EC2 Auto Scaling launches or
          * terminates instances.</p> </li> <li> <p>(Optional) Create a notification target
          * and an IAM role. The target can be either an Amazon SQS queue or an Amazon SNS
@@ -2866,8 +2880,9 @@ namespace Model
          * Specify whether the hook is used when the instances launch or terminate.</p>
          * </li> <li> <p> <b>If you need more time, record the lifecycle action heartbeat
          * to keep the instance in a pending state.</b> </p> </li> <li> <p>If you finish
-         * before the timeout period ends, complete the lifecycle action.</p> </li> </ol>
-         * <p>For more information, see <a
+         * before the timeout period ends, send a callback by using the
+         * <a>CompleteLifecycleAction</a> API call.</p> </li> </ol> <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
          * EC2 Auto Scaling lifecycle hooks</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -3006,10 +3021,10 @@ namespace Model
          * operation cannot be called on instances in a warm pool.</p> <p>For more
          * information about preventing instances that are part of an Auto Scaling group
          * from terminating on scale in, see <a
-         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-         * scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-         * <p>If you exceed your maximum limit of instance IDs, which is 50 per Auto
-         * Scaling group, the call fails.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+         * instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User
+         * Guide</i>.</p> <p>If you exceed your maximum limit of instance IDs, which is 50
+         * per Auto Scaling group, the call fails.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceProtection">AWS
          * API Reference</a></p>
          */
@@ -3020,10 +3035,10 @@ namespace Model
          * operation cannot be called on instances in a warm pool.</p> <p>For more
          * information about preventing instances that are part of an Auto Scaling group
          * from terminating on scale in, see <a
-         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-         * scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-         * <p>If you exceed your maximum limit of instance IDs, which is 50 per Auto
-         * Scaling group, the call fails.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+         * instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User
+         * Guide</i>.</p> <p>If you exceed your maximum limit of instance IDs, which is 50
+         * per Auto Scaling group, the call fails.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceProtection">AWS
          * API Reference</a></p>
          *
@@ -3036,10 +3051,10 @@ namespace Model
          * operation cannot be called on instances in a warm pool.</p> <p>For more
          * information about preventing instances that are part of an Auto Scaling group
          * from terminating on scale in, see <a
-         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-         * scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-         * <p>If you exceed your maximum limit of instance IDs, which is 50 per Auto
-         * Scaling group, the call fails.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
+         * instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User
+         * Guide</i>.</p> <p>If you exceed your maximum limit of instance IDs, which is 50
+         * per Auto Scaling group, the call fails.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceProtection">AWS
          * API Reference</a></p>
          *

@@ -21,7 +21,11 @@ namespace Model
     PROCESSING,
     INSTALLING,
     FULFILLED,
-    CANCELLED
+    CANCELLED,
+    PREPARING,
+    IN_PROGRESS,
+    COMPLETED,
+    ERROR_
   };
 
 namespace OrderStatusMapper

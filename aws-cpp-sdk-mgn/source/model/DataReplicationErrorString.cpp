@@ -34,6 +34,8 @@ namespace Aws
         static const int FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT_HASH = HashingUtils::HashString("FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT");
         static const int FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER_HASH = HashingUtils::HashString("FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER");
         static const int FAILED_TO_START_DATA_TRANSFER_HASH = HashingUtils::HashString("FAILED_TO_START_DATA_TRANSFER");
+        static const int UNSUPPORTED_VM_CONFIGURATION_HASH = HashingUtils::HashString("UNSUPPORTED_VM_CONFIGURATION");
+        static const int LAST_SNAPSHOT_JOB_FAILED_HASH = HashingUtils::HashString("LAST_SNAPSHOT_JOB_FAILED");
 
 
         DataReplicationErrorString GetDataReplicationErrorStringForName(const Aws::String& name)
@@ -95,6 +97,14 @@ namespace Aws
           {
             return DataReplicationErrorString::FAILED_TO_START_DATA_TRANSFER;
           }
+          else if (hashCode == UNSUPPORTED_VM_CONFIGURATION_HASH)
+          {
+            return DataReplicationErrorString::UNSUPPORTED_VM_CONFIGURATION;
+          }
+          else if (hashCode == LAST_SNAPSHOT_JOB_FAILED_HASH)
+          {
+            return DataReplicationErrorString::LAST_SNAPSHOT_JOB_FAILED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -137,6 +147,10 @@ namespace Aws
             return "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER";
           case DataReplicationErrorString::FAILED_TO_START_DATA_TRANSFER:
             return "FAILED_TO_START_DATA_TRANSFER";
+          case DataReplicationErrorString::UNSUPPORTED_VM_CONFIGURATION:
+            return "UNSUPPORTED_VM_CONFIGURATION";
+          case DataReplicationErrorString::LAST_SNAPSHOT_JOB_FAILED:
+            return "LAST_SNAPSHOT_JOB_FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

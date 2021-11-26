@@ -161,6 +161,47 @@ namespace Model
 
 
     /**
+     * <p>vCenter VM path identification hint.</p>
+     */
+    inline const Aws::String& GetVmPath() const{ return m_vmPath; }
+
+    /**
+     * <p>vCenter VM path identification hint.</p>
+     */
+    inline bool VmPathHasBeenSet() const { return m_vmPathHasBeenSet; }
+
+    /**
+     * <p>vCenter VM path identification hint.</p>
+     */
+    inline void SetVmPath(const Aws::String& value) { m_vmPathHasBeenSet = true; m_vmPath = value; }
+
+    /**
+     * <p>vCenter VM path identification hint.</p>
+     */
+    inline void SetVmPath(Aws::String&& value) { m_vmPathHasBeenSet = true; m_vmPath = std::move(value); }
+
+    /**
+     * <p>vCenter VM path identification hint.</p>
+     */
+    inline void SetVmPath(const char* value) { m_vmPathHasBeenSet = true; m_vmPath.assign(value); }
+
+    /**
+     * <p>vCenter VM path identification hint.</p>
+     */
+    inline IdentificationHints& WithVmPath(const Aws::String& value) { SetVmPath(value); return *this;}
+
+    /**
+     * <p>vCenter VM path identification hint.</p>
+     */
+    inline IdentificationHints& WithVmPath(Aws::String&& value) { SetVmPath(std::move(value)); return *this;}
+
+    /**
+     * <p>vCenter VM path identification hint.</p>
+     */
+    inline IdentificationHints& WithVmPath(const char* value) { SetVmPath(value); return *this;}
+
+
+    /**
      * <p>vmWare UUID identification hint.</p>
      */
     inline const Aws::String& GetVmWareUuid() const{ return m_vmWareUuid; }
@@ -210,6 +251,9 @@ namespace Model
 
     Aws::String m_hostname;
     bool m_hostnameHasBeenSet;
+
+    Aws::String m_vmPath;
+    bool m_vmPathHasBeenSet;
 
     Aws::String m_vmWareUuid;
     bool m_vmWareUuidHasBeenSet;

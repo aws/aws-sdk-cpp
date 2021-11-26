@@ -234,27 +234,27 @@ namespace Model
 
 
     /**
-     * <p>Date (in Unix epoch time) when the test suite run was started.</p>
+     * <p>Date (in Unix epoch time) when the test suite run started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>Date (in Unix epoch time) when the test suite run was started.</p>
+     * <p>Date (in Unix epoch time) when the test suite run started.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTime = value; }
 
     /**
-     * <p>Date (in Unix epoch time) when the test suite run was started.</p>
+     * <p>Date (in Unix epoch time) when the test suite run started.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = std::move(value); }
 
     /**
-     * <p>Date (in Unix epoch time) when the test suite run was started.</p>
+     * <p>Date (in Unix epoch time) when the test suite run started.</p>
      */
     inline GetSuiteRunResult& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>Date (in Unix epoch time) when the test suite run was started.</p>
+     * <p>Date (in Unix epoch time) when the test suite run started.</p>
      */
     inline GetSuiteRunResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 

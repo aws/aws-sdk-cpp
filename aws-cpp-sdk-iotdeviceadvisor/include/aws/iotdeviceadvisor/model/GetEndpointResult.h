@@ -32,25 +32,39 @@ namespace Model
     GetEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The response of an Device Advisor endpoint.</p>
+     */
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
 
-    
+    /**
+     * <p>The response of an Device Advisor endpoint.</p>
+     */
     inline void SetEndpoint(const Aws::String& value) { m_endpoint = value; }
 
-    
+    /**
+     * <p>The response of an Device Advisor endpoint.</p>
+     */
     inline void SetEndpoint(Aws::String&& value) { m_endpoint = std::move(value); }
 
-    
+    /**
+     * <p>The response of an Device Advisor endpoint.</p>
+     */
     inline void SetEndpoint(const char* value) { m_endpoint.assign(value); }
 
-    
+    /**
+     * <p>The response of an Device Advisor endpoint.</p>
+     */
     inline GetEndpointResult& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
 
-    
+    /**
+     * <p>The response of an Device Advisor endpoint.</p>
+     */
     inline GetEndpointResult& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The response of an Device Advisor endpoint.</p>
+     */
     inline GetEndpointResult& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
 
   private:

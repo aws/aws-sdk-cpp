@@ -17,12 +17,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 RetryDataReplicationResult::RetryDataReplicationResult() : 
-    m_isArchived(false)
+    m_isArchived(false),
+    m_replicationType(ReplicationType::NOT_SET)
 {
 }
 
 RetryDataReplicationResult::RetryDataReplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isArchived(false)
+    m_isArchived(false),
+    m_replicationType(ReplicationType::NOT_SET)
 {
   *this = result;
 }
@@ -60,6 +62,12 @@ RetryDataReplicationResult& RetryDataReplicationResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("replicationType"))
+  {
+    m_replicationType = ReplicationTypeMapper::GetReplicationTypeForName(jsonValue.GetString("replicationType"));
+
+  }
+
   if(jsonValue.ValueExists("sourceProperties"))
   {
     m_sourceProperties = jsonValue.GetObject("sourceProperties");
@@ -79,6 +87,12 @@ RetryDataReplicationResult& RetryDataReplicationResult::operator =(const Aws::Am
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+  }
+
+  if(jsonValue.ValueExists("vcenterClientID"))
+  {
+    m_vcenterClientID = jsonValue.GetString("vcenterClientID");
+
   }
 
 

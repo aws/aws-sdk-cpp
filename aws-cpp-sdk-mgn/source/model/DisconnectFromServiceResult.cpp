@@ -17,12 +17,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DisconnectFromServiceResult::DisconnectFromServiceResult() : 
-    m_isArchived(false)
+    m_isArchived(false),
+    m_replicationType(ReplicationType::NOT_SET)
 {
 }
 
 DisconnectFromServiceResult::DisconnectFromServiceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isArchived(false)
+    m_isArchived(false),
+    m_replicationType(ReplicationType::NOT_SET)
 {
   *this = result;
 }
@@ -60,6 +62,12 @@ DisconnectFromServiceResult& DisconnectFromServiceResult::operator =(const Aws::
 
   }
 
+  if(jsonValue.ValueExists("replicationType"))
+  {
+    m_replicationType = ReplicationTypeMapper::GetReplicationTypeForName(jsonValue.GetString("replicationType"));
+
+  }
+
   if(jsonValue.ValueExists("sourceProperties"))
   {
     m_sourceProperties = jsonValue.GetObject("sourceProperties");
@@ -79,6 +87,12 @@ DisconnectFromServiceResult& DisconnectFromServiceResult::operator =(const Aws::
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+  }
+
+  if(jsonValue.ValueExists("vcenterClientID"))
+  {
+    m_vcenterClientID = jsonValue.GetString("vcenterClientID");
+
   }
 
 

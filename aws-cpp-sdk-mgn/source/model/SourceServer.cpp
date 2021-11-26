@@ -25,9 +25,12 @@ SourceServer::SourceServer() :
     m_isArchivedHasBeenSet(false),
     m_launchedInstanceHasBeenSet(false),
     m_lifeCycleHasBeenSet(false),
+    m_replicationType(ReplicationType::NOT_SET),
+    m_replicationTypeHasBeenSet(false),
     m_sourcePropertiesHasBeenSet(false),
     m_sourceServerIDHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_vcenterClientIDHasBeenSet(false)
 {
 }
 
@@ -38,9 +41,12 @@ SourceServer::SourceServer(JsonView jsonValue) :
     m_isArchivedHasBeenSet(false),
     m_launchedInstanceHasBeenSet(false),
     m_lifeCycleHasBeenSet(false),
+    m_replicationType(ReplicationType::NOT_SET),
+    m_replicationTypeHasBeenSet(false),
     m_sourcePropertiesHasBeenSet(false),
     m_sourceServerIDHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_vcenterClientIDHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -82,6 +88,13 @@ SourceServer& SourceServer::operator =(JsonView jsonValue)
     m_lifeCycleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("replicationType"))
+  {
+    m_replicationType = ReplicationTypeMapper::GetReplicationTypeForName(jsonValue.GetString("replicationType"));
+
+    m_replicationTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("sourceProperties"))
   {
     m_sourceProperties = jsonValue.GetObject("sourceProperties");
@@ -104,6 +117,13 @@ SourceServer& SourceServer::operator =(JsonView jsonValue)
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("vcenterClientID"))
+  {
+    m_vcenterClientID = jsonValue.GetString("vcenterClientID");
+
+    m_vcenterClientIDHasBeenSet = true;
   }
 
   return *this;
@@ -143,6 +163,11 @@ JsonValue SourceServer::Jsonize() const
 
   }
 
+  if(m_replicationTypeHasBeenSet)
+  {
+   payload.WithString("replicationType", ReplicationTypeMapper::GetNameForReplicationType(m_replicationType));
+  }
+
   if(m_sourcePropertiesHasBeenSet)
   {
    payload.WithObject("sourceProperties", m_sourceProperties.Jsonize());
@@ -163,6 +188,12 @@ JsonValue SourceServer::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_vcenterClientIDHasBeenSet)
+  {
+   payload.WithString("vcenterClientID", m_vcenterClientID);
 
   }
 

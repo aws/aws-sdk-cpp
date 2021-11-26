@@ -616,9 +616,9 @@ namespace Model
 
 
     /**
-     * <p>A target tracking scaling policy. Provides support for predefined or
-     * customized metrics.</p> <p>The following predefined metrics are available:</p>
-     * <ul> <li> <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
+     * <p>A target tracking scaling policy. Provides support for predefined or custom
+     * metrics.</p> <p>The following predefined metrics are available:</p> <ul> <li>
+     * <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkIn</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkOut</code> </p> </li> <li> <p>
      * <code>ALBRequestCountPerTarget</code> </p> </li> </ul> <p>If you specify
@@ -632,9 +632,9 @@ namespace Model
     inline const TargetTrackingConfiguration& GetTargetTrackingConfiguration() const{ return m_targetTrackingConfiguration; }
 
     /**
-     * <p>A target tracking scaling policy. Provides support for predefined or
-     * customized metrics.</p> <p>The following predefined metrics are available:</p>
-     * <ul> <li> <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
+     * <p>A target tracking scaling policy. Provides support for predefined or custom
+     * metrics.</p> <p>The following predefined metrics are available:</p> <ul> <li>
+     * <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkIn</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkOut</code> </p> </li> <li> <p>
      * <code>ALBRequestCountPerTarget</code> </p> </li> </ul> <p>If you specify
@@ -648,9 +648,9 @@ namespace Model
     inline bool TargetTrackingConfigurationHasBeenSet() const { return m_targetTrackingConfigurationHasBeenSet; }
 
     /**
-     * <p>A target tracking scaling policy. Provides support for predefined or
-     * customized metrics.</p> <p>The following predefined metrics are available:</p>
-     * <ul> <li> <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
+     * <p>A target tracking scaling policy. Provides support for predefined or custom
+     * metrics.</p> <p>The following predefined metrics are available:</p> <ul> <li>
+     * <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkIn</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkOut</code> </p> </li> <li> <p>
      * <code>ALBRequestCountPerTarget</code> </p> </li> </ul> <p>If you specify
@@ -664,9 +664,9 @@ namespace Model
     inline void SetTargetTrackingConfiguration(const TargetTrackingConfiguration& value) { m_targetTrackingConfigurationHasBeenSet = true; m_targetTrackingConfiguration = value; }
 
     /**
-     * <p>A target tracking scaling policy. Provides support for predefined or
-     * customized metrics.</p> <p>The following predefined metrics are available:</p>
-     * <ul> <li> <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
+     * <p>A target tracking scaling policy. Provides support for predefined or custom
+     * metrics.</p> <p>The following predefined metrics are available:</p> <ul> <li>
+     * <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkIn</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkOut</code> </p> </li> <li> <p>
      * <code>ALBRequestCountPerTarget</code> </p> </li> </ul> <p>If you specify
@@ -680,9 +680,9 @@ namespace Model
     inline void SetTargetTrackingConfiguration(TargetTrackingConfiguration&& value) { m_targetTrackingConfigurationHasBeenSet = true; m_targetTrackingConfiguration = std::move(value); }
 
     /**
-     * <p>A target tracking scaling policy. Provides support for predefined or
-     * customized metrics.</p> <p>The following predefined metrics are available:</p>
-     * <ul> <li> <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
+     * <p>A target tracking scaling policy. Provides support for predefined or custom
+     * metrics.</p> <p>The following predefined metrics are available:</p> <ul> <li>
+     * <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkIn</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkOut</code> </p> </li> <li> <p>
      * <code>ALBRequestCountPerTarget</code> </p> </li> </ul> <p>If you specify
@@ -696,9 +696,9 @@ namespace Model
     inline PutScalingPolicyRequest& WithTargetTrackingConfiguration(const TargetTrackingConfiguration& value) { SetTargetTrackingConfiguration(value); return *this;}
 
     /**
-     * <p>A target tracking scaling policy. Provides support for predefined or
-     * customized metrics.</p> <p>The following predefined metrics are available:</p>
-     * <ul> <li> <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
+     * <p>A target tracking scaling policy. Provides support for predefined or custom
+     * metrics.</p> <p>The following predefined metrics are available:</p> <ul> <li>
+     * <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkIn</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkOut</code> </p> </li> <li> <p>
      * <code>ALBRequestCountPerTarget</code> </p> </li> </ul> <p>If you specify
@@ -750,10 +750,9 @@ namespace Model
 
 
     /**
-     * <p>A predictive scaling policy. Provides support for only predefined
-     * metrics.</p> <p>Predictive scaling works with CPU utilization, network in/out,
-     * and the Application Load Balancer request count.</p> <p>For more information,
-     * see <a
+     * <p>A predictive scaling policy. Provides support for predefined and custom
+     * metrics.</p> <p>Predefined metrics include CPU utilization, network in/out, and
+     * the Application Load Balancer request count.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a>
      * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>Required if the
      * policy type is <code>PredictiveScaling</code>.</p>
@@ -761,10 +760,9 @@ namespace Model
     inline const PredictiveScalingConfiguration& GetPredictiveScalingConfiguration() const{ return m_predictiveScalingConfiguration; }
 
     /**
-     * <p>A predictive scaling policy. Provides support for only predefined
-     * metrics.</p> <p>Predictive scaling works with CPU utilization, network in/out,
-     * and the Application Load Balancer request count.</p> <p>For more information,
-     * see <a
+     * <p>A predictive scaling policy. Provides support for predefined and custom
+     * metrics.</p> <p>Predefined metrics include CPU utilization, network in/out, and
+     * the Application Load Balancer request count.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a>
      * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>Required if the
      * policy type is <code>PredictiveScaling</code>.</p>
@@ -772,10 +770,9 @@ namespace Model
     inline bool PredictiveScalingConfigurationHasBeenSet() const { return m_predictiveScalingConfigurationHasBeenSet; }
 
     /**
-     * <p>A predictive scaling policy. Provides support for only predefined
-     * metrics.</p> <p>Predictive scaling works with CPU utilization, network in/out,
-     * and the Application Load Balancer request count.</p> <p>For more information,
-     * see <a
+     * <p>A predictive scaling policy. Provides support for predefined and custom
+     * metrics.</p> <p>Predefined metrics include CPU utilization, network in/out, and
+     * the Application Load Balancer request count.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a>
      * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>Required if the
      * policy type is <code>PredictiveScaling</code>.</p>
@@ -783,10 +780,9 @@ namespace Model
     inline void SetPredictiveScalingConfiguration(const PredictiveScalingConfiguration& value) { m_predictiveScalingConfigurationHasBeenSet = true; m_predictiveScalingConfiguration = value; }
 
     /**
-     * <p>A predictive scaling policy. Provides support for only predefined
-     * metrics.</p> <p>Predictive scaling works with CPU utilization, network in/out,
-     * and the Application Load Balancer request count.</p> <p>For more information,
-     * see <a
+     * <p>A predictive scaling policy. Provides support for predefined and custom
+     * metrics.</p> <p>Predefined metrics include CPU utilization, network in/out, and
+     * the Application Load Balancer request count.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a>
      * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>Required if the
      * policy type is <code>PredictiveScaling</code>.</p>
@@ -794,10 +790,9 @@ namespace Model
     inline void SetPredictiveScalingConfiguration(PredictiveScalingConfiguration&& value) { m_predictiveScalingConfigurationHasBeenSet = true; m_predictiveScalingConfiguration = std::move(value); }
 
     /**
-     * <p>A predictive scaling policy. Provides support for only predefined
-     * metrics.</p> <p>Predictive scaling works with CPU utilization, network in/out,
-     * and the Application Load Balancer request count.</p> <p>For more information,
-     * see <a
+     * <p>A predictive scaling policy. Provides support for predefined and custom
+     * metrics.</p> <p>Predefined metrics include CPU utilization, network in/out, and
+     * the Application Load Balancer request count.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a>
      * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>Required if the
      * policy type is <code>PredictiveScaling</code>.</p>
@@ -805,10 +800,9 @@ namespace Model
     inline PutScalingPolicyRequest& WithPredictiveScalingConfiguration(const PredictiveScalingConfiguration& value) { SetPredictiveScalingConfiguration(value); return *this;}
 
     /**
-     * <p>A predictive scaling policy. Provides support for only predefined
-     * metrics.</p> <p>Predictive scaling works with CPU utilization, network in/out,
-     * and the Application Load Balancer request count.</p> <p>For more information,
-     * see <a
+     * <p>A predictive scaling policy. Provides support for predefined and custom
+     * metrics.</p> <p>Predefined metrics include CPU utilization, network in/out, and
+     * the Application Load Balancer request count.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a>
      * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>Required if the
      * policy type is <code>PredictiveScaling</code>.</p>

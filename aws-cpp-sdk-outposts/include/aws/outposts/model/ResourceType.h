@@ -16,7 +16,8 @@ namespace Model
   enum class ResourceType
   {
     NOT_SET,
-    OUTPOST
+    OUTPOST,
+    ORDER
   };
 
 namespace ResourceTypeMapper

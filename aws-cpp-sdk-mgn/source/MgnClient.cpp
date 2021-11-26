@@ -25,10 +25,12 @@
 #include <aws/mgn/model/DeleteJobRequest.h>
 #include <aws/mgn/model/DeleteReplicationConfigurationTemplateRequest.h>
 #include <aws/mgn/model/DeleteSourceServerRequest.h>
+#include <aws/mgn/model/DeleteVcenterClientRequest.h>
 #include <aws/mgn/model/DescribeJobLogItemsRequest.h>
 #include <aws/mgn/model/DescribeJobsRequest.h>
 #include <aws/mgn/model/DescribeReplicationConfigurationTemplatesRequest.h>
 #include <aws/mgn/model/DescribeSourceServersRequest.h>
+#include <aws/mgn/model/DescribeVcenterClientsRequest.h>
 #include <aws/mgn/model/DisconnectFromServiceRequest.h>
 #include <aws/mgn/model/FinalizeCutoverRequest.h>
 #include <aws/mgn/model/GetLaunchConfigurationRequest.h>
@@ -38,6 +40,7 @@
 #include <aws/mgn/model/MarkAsArchivedRequest.h>
 #include <aws/mgn/model/RetryDataReplicationRequest.h>
 #include <aws/mgn/model/StartCutoverRequest.h>
+#include <aws/mgn/model/StartReplicationRequest.h>
 #include <aws/mgn/model/StartTestRequest.h>
 #include <aws/mgn/model/TagResourceRequest.h>
 #include <aws/mgn/model/TerminateTargetInstancesRequest.h>
@@ -45,6 +48,7 @@
 #include <aws/mgn/model/UpdateLaunchConfigurationRequest.h>
 #include <aws/mgn/model/UpdateReplicationConfigurationRequest.h>
 #include <aws/mgn/model/UpdateReplicationConfigurationTemplateRequest.h>
+#include <aws/mgn/model/UpdateSourceServerReplicationTypeRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -244,6 +248,31 @@ void MgnClient::DeleteSourceServerAsyncHelper(const DeleteSourceServerRequest& r
   handler(this, request, DeleteSourceServer(request), context);
 }
 
+DeleteVcenterClientOutcome MgnClient::DeleteVcenterClient(const DeleteVcenterClientRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/DeleteVcenterClient");
+  return DeleteVcenterClientOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteVcenterClientOutcomeCallable MgnClient::DeleteVcenterClientCallable(const DeleteVcenterClientRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteVcenterClientOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVcenterClient(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::DeleteVcenterClientAsync(const DeleteVcenterClientRequest& request, const DeleteVcenterClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteVcenterClientAsyncHelper( request, handler, context ); } );
+}
+
+void MgnClient::DeleteVcenterClientAsyncHelper(const DeleteVcenterClientRequest& request, const DeleteVcenterClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteVcenterClient(request), context);
+}
+
 DescribeJobLogItemsOutcome MgnClient::DescribeJobLogItems(const DescribeJobLogItemsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -342,6 +371,31 @@ void MgnClient::DescribeSourceServersAsync(const DescribeSourceServersRequest& r
 void MgnClient::DescribeSourceServersAsyncHelper(const DescribeSourceServersRequest& request, const DescribeSourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeSourceServers(request), context);
+}
+
+DescribeVcenterClientsOutcome MgnClient::DescribeVcenterClients(const DescribeVcenterClientsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/DescribeVcenterClients");
+  return DescribeVcenterClientsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeVcenterClientsOutcomeCallable MgnClient::DescribeVcenterClientsCallable(const DescribeVcenterClientsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeVcenterClientsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeVcenterClients(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::DescribeVcenterClientsAsync(const DescribeVcenterClientsRequest& request, const DescribeVcenterClientsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeVcenterClientsAsyncHelper( request, handler, context ); } );
+}
+
+void MgnClient::DescribeVcenterClientsAsyncHelper(const DescribeVcenterClientsRequest& request, const DescribeVcenterClientsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeVcenterClients(request), context);
 }
 
 DisconnectFromServiceOutcome MgnClient::DisconnectFromService(const DisconnectFromServiceRequest& request) const
@@ -575,6 +629,31 @@ void MgnClient::StartCutoverAsyncHelper(const StartCutoverRequest& request, cons
   handler(this, request, StartCutover(request), context);
 }
 
+StartReplicationOutcome MgnClient::StartReplication(const StartReplicationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/StartReplication");
+  return StartReplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartReplicationOutcomeCallable MgnClient::StartReplicationCallable(const StartReplicationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartReplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartReplication(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::StartReplicationAsync(const StartReplicationRequest& request, const StartReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartReplicationAsyncHelper( request, handler, context ); } );
+}
+
+void MgnClient::StartReplicationAsyncHelper(const StartReplicationRequest& request, const StartReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartReplication(request), context);
+}
+
 StartTestOutcome MgnClient::StartTest(const StartTestRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -765,5 +844,30 @@ void MgnClient::UpdateReplicationConfigurationTemplateAsync(const UpdateReplicat
 void MgnClient::UpdateReplicationConfigurationTemplateAsyncHelper(const UpdateReplicationConfigurationTemplateRequest& request, const UpdateReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateReplicationConfigurationTemplate(request), context);
+}
+
+UpdateSourceServerReplicationTypeOutcome MgnClient::UpdateSourceServerReplicationType(const UpdateSourceServerReplicationTypeRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/UpdateSourceServerReplicationType");
+  return UpdateSourceServerReplicationTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateSourceServerReplicationTypeOutcomeCallable MgnClient::UpdateSourceServerReplicationTypeCallable(const UpdateSourceServerReplicationTypeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateSourceServerReplicationTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSourceServerReplicationType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::UpdateSourceServerReplicationTypeAsync(const UpdateSourceServerReplicationTypeRequest& request, const UpdateSourceServerReplicationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateSourceServerReplicationTypeAsyncHelper( request, handler, context ); } );
+}
+
+void MgnClient::UpdateSourceServerReplicationTypeAsyncHelper(const UpdateSourceServerReplicationTypeRequest& request, const UpdateSourceServerReplicationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateSourceServerReplicationType(request), context);
 }
 

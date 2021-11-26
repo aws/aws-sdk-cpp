@@ -23,7 +23,8 @@ namespace Model
     READY_FOR_CUTOVER,
     CUTTING_OVER,
     CUTOVER,
-    DISCONNECTED
+    DISCONNECTED,
+    DISCOVERED
   };
 
 namespace LifeCycleStateMapper
