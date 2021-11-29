@@ -16,11 +16,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateDatasetGroupResult::CreateDatasetGroupResult()
+CreateDatasetGroupResult::CreateDatasetGroupResult() : 
+    m_domain(Domain::NOT_SET)
 {
 }
 
-CreateDatasetGroupResult::CreateDatasetGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+CreateDatasetGroupResult::CreateDatasetGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_domain(Domain::NOT_SET)
 {
   *this = result;
 }
@@ -31,6 +33,12 @@ CreateDatasetGroupResult& CreateDatasetGroupResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("datasetGroupArn"))
   {
     m_datasetGroupArn = jsonValue.GetString("datasetGroupArn");
+
+  }
+
+  if(jsonValue.ValueExists("domain"))
+  {
+    m_domain = DomainMapper::GetDomainForName(jsonValue.GetString("domain"));
 
   }
 

@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/personalize/model/CreateBatchInferenceJobResult.h>
+#include <aws/personalize/model/CreateBatchSegmentJobResult.h>
 #include <aws/personalize/model/CreateCampaignResult.h>
 #include <aws/personalize/model/CreateDatasetResult.h>
 #include <aws/personalize/model/CreateDatasetExportJobResult.h>
@@ -19,11 +20,13 @@
 #include <aws/personalize/model/CreateDatasetImportJobResult.h>
 #include <aws/personalize/model/CreateEventTrackerResult.h>
 #include <aws/personalize/model/CreateFilterResult.h>
+#include <aws/personalize/model/CreateRecommenderResult.h>
 #include <aws/personalize/model/CreateSchemaResult.h>
 #include <aws/personalize/model/CreateSolutionResult.h>
 #include <aws/personalize/model/CreateSolutionVersionResult.h>
 #include <aws/personalize/model/DescribeAlgorithmResult.h>
 #include <aws/personalize/model/DescribeBatchInferenceJobResult.h>
+#include <aws/personalize/model/DescribeBatchSegmentJobResult.h>
 #include <aws/personalize/model/DescribeCampaignResult.h>
 #include <aws/personalize/model/DescribeDatasetResult.h>
 #include <aws/personalize/model/DescribeDatasetExportJobResult.h>
@@ -33,11 +36,13 @@
 #include <aws/personalize/model/DescribeFeatureTransformationResult.h>
 #include <aws/personalize/model/DescribeFilterResult.h>
 #include <aws/personalize/model/DescribeRecipeResult.h>
+#include <aws/personalize/model/DescribeRecommenderResult.h>
 #include <aws/personalize/model/DescribeSchemaResult.h>
 #include <aws/personalize/model/DescribeSolutionResult.h>
 #include <aws/personalize/model/DescribeSolutionVersionResult.h>
 #include <aws/personalize/model/GetSolutionMetricsResult.h>
 #include <aws/personalize/model/ListBatchInferenceJobsResult.h>
+#include <aws/personalize/model/ListBatchSegmentJobsResult.h>
 #include <aws/personalize/model/ListCampaignsResult.h>
 #include <aws/personalize/model/ListDatasetExportJobsResult.h>
 #include <aws/personalize/model/ListDatasetGroupsResult.h>
@@ -46,10 +51,12 @@
 #include <aws/personalize/model/ListEventTrackersResult.h>
 #include <aws/personalize/model/ListFiltersResult.h>
 #include <aws/personalize/model/ListRecipesResult.h>
+#include <aws/personalize/model/ListRecommendersResult.h>
 #include <aws/personalize/model/ListSchemasResult.h>
 #include <aws/personalize/model/ListSolutionVersionsResult.h>
 #include <aws/personalize/model/ListSolutionsResult.h>
 #include <aws/personalize/model/UpdateCampaignResult.h>
+#include <aws/personalize/model/UpdateRecommenderResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -91,6 +98,7 @@ namespace Personalize
 namespace Model
 {
         class CreateBatchInferenceJobRequest;
+        class CreateBatchSegmentJobRequest;
         class CreateCampaignRequest;
         class CreateDatasetRequest;
         class CreateDatasetExportJobRequest;
@@ -98,6 +106,7 @@ namespace Model
         class CreateDatasetImportJobRequest;
         class CreateEventTrackerRequest;
         class CreateFilterRequest;
+        class CreateRecommenderRequest;
         class CreateSchemaRequest;
         class CreateSolutionRequest;
         class CreateSolutionVersionRequest;
@@ -106,10 +115,12 @@ namespace Model
         class DeleteDatasetGroupRequest;
         class DeleteEventTrackerRequest;
         class DeleteFilterRequest;
+        class DeleteRecommenderRequest;
         class DeleteSchemaRequest;
         class DeleteSolutionRequest;
         class DescribeAlgorithmRequest;
         class DescribeBatchInferenceJobRequest;
+        class DescribeBatchSegmentJobRequest;
         class DescribeCampaignRequest;
         class DescribeDatasetRequest;
         class DescribeDatasetExportJobRequest;
@@ -119,11 +130,13 @@ namespace Model
         class DescribeFeatureTransformationRequest;
         class DescribeFilterRequest;
         class DescribeRecipeRequest;
+        class DescribeRecommenderRequest;
         class DescribeSchemaRequest;
         class DescribeSolutionRequest;
         class DescribeSolutionVersionRequest;
         class GetSolutionMetricsRequest;
         class ListBatchInferenceJobsRequest;
+        class ListBatchSegmentJobsRequest;
         class ListCampaignsRequest;
         class ListDatasetExportJobsRequest;
         class ListDatasetGroupsRequest;
@@ -132,13 +145,16 @@ namespace Model
         class ListEventTrackersRequest;
         class ListFiltersRequest;
         class ListRecipesRequest;
+        class ListRecommendersRequest;
         class ListSchemasRequest;
         class ListSolutionVersionsRequest;
         class ListSolutionsRequest;
         class StopSolutionVersionCreationRequest;
         class UpdateCampaignRequest;
+        class UpdateRecommenderRequest;
 
         typedef Aws::Utils::Outcome<CreateBatchInferenceJobResult, PersonalizeError> CreateBatchInferenceJobOutcome;
+        typedef Aws::Utils::Outcome<CreateBatchSegmentJobResult, PersonalizeError> CreateBatchSegmentJobOutcome;
         typedef Aws::Utils::Outcome<CreateCampaignResult, PersonalizeError> CreateCampaignOutcome;
         typedef Aws::Utils::Outcome<CreateDatasetResult, PersonalizeError> CreateDatasetOutcome;
         typedef Aws::Utils::Outcome<CreateDatasetExportJobResult, PersonalizeError> CreateDatasetExportJobOutcome;
@@ -146,6 +162,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateDatasetImportJobResult, PersonalizeError> CreateDatasetImportJobOutcome;
         typedef Aws::Utils::Outcome<CreateEventTrackerResult, PersonalizeError> CreateEventTrackerOutcome;
         typedef Aws::Utils::Outcome<CreateFilterResult, PersonalizeError> CreateFilterOutcome;
+        typedef Aws::Utils::Outcome<CreateRecommenderResult, PersonalizeError> CreateRecommenderOutcome;
         typedef Aws::Utils::Outcome<CreateSchemaResult, PersonalizeError> CreateSchemaOutcome;
         typedef Aws::Utils::Outcome<CreateSolutionResult, PersonalizeError> CreateSolutionOutcome;
         typedef Aws::Utils::Outcome<CreateSolutionVersionResult, PersonalizeError> CreateSolutionVersionOutcome;
@@ -154,10 +171,12 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeError> DeleteDatasetGroupOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeError> DeleteEventTrackerOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeError> DeleteFilterOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeError> DeleteRecommenderOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeError> DeleteSchemaOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeError> DeleteSolutionOutcome;
         typedef Aws::Utils::Outcome<DescribeAlgorithmResult, PersonalizeError> DescribeAlgorithmOutcome;
         typedef Aws::Utils::Outcome<DescribeBatchInferenceJobResult, PersonalizeError> DescribeBatchInferenceJobOutcome;
+        typedef Aws::Utils::Outcome<DescribeBatchSegmentJobResult, PersonalizeError> DescribeBatchSegmentJobOutcome;
         typedef Aws::Utils::Outcome<DescribeCampaignResult, PersonalizeError> DescribeCampaignOutcome;
         typedef Aws::Utils::Outcome<DescribeDatasetResult, PersonalizeError> DescribeDatasetOutcome;
         typedef Aws::Utils::Outcome<DescribeDatasetExportJobResult, PersonalizeError> DescribeDatasetExportJobOutcome;
@@ -167,11 +186,13 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeFeatureTransformationResult, PersonalizeError> DescribeFeatureTransformationOutcome;
         typedef Aws::Utils::Outcome<DescribeFilterResult, PersonalizeError> DescribeFilterOutcome;
         typedef Aws::Utils::Outcome<DescribeRecipeResult, PersonalizeError> DescribeRecipeOutcome;
+        typedef Aws::Utils::Outcome<DescribeRecommenderResult, PersonalizeError> DescribeRecommenderOutcome;
         typedef Aws::Utils::Outcome<DescribeSchemaResult, PersonalizeError> DescribeSchemaOutcome;
         typedef Aws::Utils::Outcome<DescribeSolutionResult, PersonalizeError> DescribeSolutionOutcome;
         typedef Aws::Utils::Outcome<DescribeSolutionVersionResult, PersonalizeError> DescribeSolutionVersionOutcome;
         typedef Aws::Utils::Outcome<GetSolutionMetricsResult, PersonalizeError> GetSolutionMetricsOutcome;
         typedef Aws::Utils::Outcome<ListBatchInferenceJobsResult, PersonalizeError> ListBatchInferenceJobsOutcome;
+        typedef Aws::Utils::Outcome<ListBatchSegmentJobsResult, PersonalizeError> ListBatchSegmentJobsOutcome;
         typedef Aws::Utils::Outcome<ListCampaignsResult, PersonalizeError> ListCampaignsOutcome;
         typedef Aws::Utils::Outcome<ListDatasetExportJobsResult, PersonalizeError> ListDatasetExportJobsOutcome;
         typedef Aws::Utils::Outcome<ListDatasetGroupsResult, PersonalizeError> ListDatasetGroupsOutcome;
@@ -180,13 +201,16 @@ namespace Model
         typedef Aws::Utils::Outcome<ListEventTrackersResult, PersonalizeError> ListEventTrackersOutcome;
         typedef Aws::Utils::Outcome<ListFiltersResult, PersonalizeError> ListFiltersOutcome;
         typedef Aws::Utils::Outcome<ListRecipesResult, PersonalizeError> ListRecipesOutcome;
+        typedef Aws::Utils::Outcome<ListRecommendersResult, PersonalizeError> ListRecommendersOutcome;
         typedef Aws::Utils::Outcome<ListSchemasResult, PersonalizeError> ListSchemasOutcome;
         typedef Aws::Utils::Outcome<ListSolutionVersionsResult, PersonalizeError> ListSolutionVersionsOutcome;
         typedef Aws::Utils::Outcome<ListSolutionsResult, PersonalizeError> ListSolutionsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeError> StopSolutionVersionCreationOutcome;
         typedef Aws::Utils::Outcome<UpdateCampaignResult, PersonalizeError> UpdateCampaignOutcome;
+        typedef Aws::Utils::Outcome<UpdateRecommenderResult, PersonalizeError> UpdateRecommenderOutcome;
 
         typedef std::future<CreateBatchInferenceJobOutcome> CreateBatchInferenceJobOutcomeCallable;
+        typedef std::future<CreateBatchSegmentJobOutcome> CreateBatchSegmentJobOutcomeCallable;
         typedef std::future<CreateCampaignOutcome> CreateCampaignOutcomeCallable;
         typedef std::future<CreateDatasetOutcome> CreateDatasetOutcomeCallable;
         typedef std::future<CreateDatasetExportJobOutcome> CreateDatasetExportJobOutcomeCallable;
@@ -194,6 +218,7 @@ namespace Model
         typedef std::future<CreateDatasetImportJobOutcome> CreateDatasetImportJobOutcomeCallable;
         typedef std::future<CreateEventTrackerOutcome> CreateEventTrackerOutcomeCallable;
         typedef std::future<CreateFilterOutcome> CreateFilterOutcomeCallable;
+        typedef std::future<CreateRecommenderOutcome> CreateRecommenderOutcomeCallable;
         typedef std::future<CreateSchemaOutcome> CreateSchemaOutcomeCallable;
         typedef std::future<CreateSolutionOutcome> CreateSolutionOutcomeCallable;
         typedef std::future<CreateSolutionVersionOutcome> CreateSolutionVersionOutcomeCallable;
@@ -202,10 +227,12 @@ namespace Model
         typedef std::future<DeleteDatasetGroupOutcome> DeleteDatasetGroupOutcomeCallable;
         typedef std::future<DeleteEventTrackerOutcome> DeleteEventTrackerOutcomeCallable;
         typedef std::future<DeleteFilterOutcome> DeleteFilterOutcomeCallable;
+        typedef std::future<DeleteRecommenderOutcome> DeleteRecommenderOutcomeCallable;
         typedef std::future<DeleteSchemaOutcome> DeleteSchemaOutcomeCallable;
         typedef std::future<DeleteSolutionOutcome> DeleteSolutionOutcomeCallable;
         typedef std::future<DescribeAlgorithmOutcome> DescribeAlgorithmOutcomeCallable;
         typedef std::future<DescribeBatchInferenceJobOutcome> DescribeBatchInferenceJobOutcomeCallable;
+        typedef std::future<DescribeBatchSegmentJobOutcome> DescribeBatchSegmentJobOutcomeCallable;
         typedef std::future<DescribeCampaignOutcome> DescribeCampaignOutcomeCallable;
         typedef std::future<DescribeDatasetOutcome> DescribeDatasetOutcomeCallable;
         typedef std::future<DescribeDatasetExportJobOutcome> DescribeDatasetExportJobOutcomeCallable;
@@ -215,11 +242,13 @@ namespace Model
         typedef std::future<DescribeFeatureTransformationOutcome> DescribeFeatureTransformationOutcomeCallable;
         typedef std::future<DescribeFilterOutcome> DescribeFilterOutcomeCallable;
         typedef std::future<DescribeRecipeOutcome> DescribeRecipeOutcomeCallable;
+        typedef std::future<DescribeRecommenderOutcome> DescribeRecommenderOutcomeCallable;
         typedef std::future<DescribeSchemaOutcome> DescribeSchemaOutcomeCallable;
         typedef std::future<DescribeSolutionOutcome> DescribeSolutionOutcomeCallable;
         typedef std::future<DescribeSolutionVersionOutcome> DescribeSolutionVersionOutcomeCallable;
         typedef std::future<GetSolutionMetricsOutcome> GetSolutionMetricsOutcomeCallable;
         typedef std::future<ListBatchInferenceJobsOutcome> ListBatchInferenceJobsOutcomeCallable;
+        typedef std::future<ListBatchSegmentJobsOutcome> ListBatchSegmentJobsOutcomeCallable;
         typedef std::future<ListCampaignsOutcome> ListCampaignsOutcomeCallable;
         typedef std::future<ListDatasetExportJobsOutcome> ListDatasetExportJobsOutcomeCallable;
         typedef std::future<ListDatasetGroupsOutcome> ListDatasetGroupsOutcomeCallable;
@@ -228,16 +257,19 @@ namespace Model
         typedef std::future<ListEventTrackersOutcome> ListEventTrackersOutcomeCallable;
         typedef std::future<ListFiltersOutcome> ListFiltersOutcomeCallable;
         typedef std::future<ListRecipesOutcome> ListRecipesOutcomeCallable;
+        typedef std::future<ListRecommendersOutcome> ListRecommendersOutcomeCallable;
         typedef std::future<ListSchemasOutcome> ListSchemasOutcomeCallable;
         typedef std::future<ListSolutionVersionsOutcome> ListSolutionVersionsOutcomeCallable;
         typedef std::future<ListSolutionsOutcome> ListSolutionsOutcomeCallable;
         typedef std::future<StopSolutionVersionCreationOutcome> StopSolutionVersionCreationOutcomeCallable;
         typedef std::future<UpdateCampaignOutcome> UpdateCampaignOutcomeCallable;
+        typedef std::future<UpdateRecommenderOutcome> UpdateRecommenderOutcomeCallable;
 } // namespace Model
 
   class PersonalizeClient;
 
     typedef std::function<void(const PersonalizeClient*, const Model::CreateBatchInferenceJobRequest&, const Model::CreateBatchInferenceJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBatchInferenceJobResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::CreateBatchSegmentJobRequest&, const Model::CreateBatchSegmentJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBatchSegmentJobResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateCampaignRequest&, const Model::CreateCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCampaignResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateDatasetRequest&, const Model::CreateDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateDatasetExportJobRequest&, const Model::CreateDatasetExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetExportJobResponseReceivedHandler;
@@ -245,6 +277,7 @@ namespace Model
     typedef std::function<void(const PersonalizeClient*, const Model::CreateDatasetImportJobRequest&, const Model::CreateDatasetImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetImportJobResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateEventTrackerRequest&, const Model::CreateEventTrackerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEventTrackerResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateFilterRequest&, const Model::CreateFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFilterResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::CreateRecommenderRequest&, const Model::CreateRecommenderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRecommenderResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateSchemaRequest&, const Model::CreateSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSchemaResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateSolutionRequest&, const Model::CreateSolutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSolutionResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateSolutionVersionRequest&, const Model::CreateSolutionVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSolutionVersionResponseReceivedHandler;
@@ -253,10 +286,12 @@ namespace Model
     typedef std::function<void(const PersonalizeClient*, const Model::DeleteDatasetGroupRequest&, const Model::DeleteDatasetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatasetGroupResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DeleteEventTrackerRequest&, const Model::DeleteEventTrackerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventTrackerResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DeleteFilterRequest&, const Model::DeleteFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFilterResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::DeleteRecommenderRequest&, const Model::DeleteRecommenderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRecommenderResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DeleteSchemaRequest&, const Model::DeleteSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSchemaResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DeleteSolutionRequest&, const Model::DeleteSolutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSolutionResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeAlgorithmRequest&, const Model::DescribeAlgorithmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAlgorithmResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeBatchInferenceJobRequest&, const Model::DescribeBatchInferenceJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBatchInferenceJobResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::DescribeBatchSegmentJobRequest&, const Model::DescribeBatchSegmentJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBatchSegmentJobResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeCampaignRequest&, const Model::DescribeCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCampaignResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeDatasetRequest&, const Model::DescribeDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeDatasetExportJobRequest&, const Model::DescribeDatasetExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetExportJobResponseReceivedHandler;
@@ -266,11 +301,13 @@ namespace Model
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeFeatureTransformationRequest&, const Model::DescribeFeatureTransformationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFeatureTransformationResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeFilterRequest&, const Model::DescribeFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFilterResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeRecipeRequest&, const Model::DescribeRecipeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRecipeResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::DescribeRecommenderRequest&, const Model::DescribeRecommenderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRecommenderResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeSchemaRequest&, const Model::DescribeSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSchemaResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeSolutionRequest&, const Model::DescribeSolutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSolutionResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeSolutionVersionRequest&, const Model::DescribeSolutionVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSolutionVersionResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::GetSolutionMetricsRequest&, const Model::GetSolutionMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSolutionMetricsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListBatchInferenceJobsRequest&, const Model::ListBatchInferenceJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBatchInferenceJobsResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::ListBatchSegmentJobsRequest&, const Model::ListBatchSegmentJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBatchSegmentJobsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListCampaignsRequest&, const Model::ListCampaignsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCampaignsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListDatasetExportJobsRequest&, const Model::ListDatasetExportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetExportJobsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListDatasetGroupsRequest&, const Model::ListDatasetGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetGroupsResponseReceivedHandler;
@@ -279,11 +316,13 @@ namespace Model
     typedef std::function<void(const PersonalizeClient*, const Model::ListEventTrackersRequest&, const Model::ListEventTrackersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventTrackersResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListFiltersRequest&, const Model::ListFiltersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFiltersResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListRecipesRequest&, const Model::ListRecipesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecipesResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::ListRecommendersRequest&, const Model::ListRecommendersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecommendersResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListSchemasRequest&, const Model::ListSchemasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSchemasResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListSolutionVersionsRequest&, const Model::ListSolutionVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSolutionVersionsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListSolutionsRequest&, const Model::ListSolutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSolutionsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::StopSolutionVersionCreationRequest&, const Model::StopSolutionVersionCreationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopSolutionVersionCreationResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::UpdateCampaignRequest&, const Model::UpdateCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCampaignResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::UpdateRecommenderRequest&, const Model::UpdateRecommenderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRecommenderResponseReceivedHandler;
 
   /**
    * <p>Amazon Personalize is a machine learning service that makes it easy to add
@@ -348,7 +387,38 @@ namespace Model
         virtual void CreateBatchInferenceJobAsync(const Model::CreateBatchInferenceJobRequest& request, const CreateBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a campaign by deploying a solution version. When a client calls the
+         * <p>Creates a batch segment job. The operation can handle up to 50 million
+         * records and the input file must be in JSON format. For more information, see
+         * <a>recommendations-batch</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateBatchSegmentJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateBatchSegmentJobOutcome CreateBatchSegmentJob(const Model::CreateBatchSegmentJobRequest& request) const;
+
+        /**
+         * <p>Creates a batch segment job. The operation can handle up to 50 million
+         * records and the input file must be in JSON format. For more information, see
+         * <a>recommendations-batch</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateBatchSegmentJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateBatchSegmentJobOutcomeCallable CreateBatchSegmentJobCallable(const Model::CreateBatchSegmentJobRequest& request) const;
+
+        /**
+         * <p>Creates a batch segment job. The operation can handle up to 50 million
+         * records and the input file must be in JSON format. For more information, see
+         * <a>recommendations-batch</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateBatchSegmentJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateBatchSegmentJobAsync(const Model::CreateBatchSegmentJobRequest& request, const CreateBatchSegmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a campaign that deploys a solution version. When a client calls the
          * <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
          * and <a
@@ -383,7 +453,7 @@ namespace Model
         virtual Model::CreateCampaignOutcome CreateCampaign(const Model::CreateCampaignRequest& request) const;
 
         /**
-         * <p>Creates a campaign by deploying a solution version. When a client calls the
+         * <p>Creates a campaign that deploys a solution version. When a client calls the
          * <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
          * and <a
@@ -420,7 +490,7 @@ namespace Model
         virtual Model::CreateCampaignOutcomeCallable CreateCampaignCallable(const Model::CreateCampaignRequest& request) const;
 
         /**
-         * <p>Creates a campaign by deploying a solution version. When a client calls the
+         * <p>Creates a campaign that deploys a solution version. When a client calls the
          * <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
          * and <a
@@ -585,58 +655,64 @@ namespace Model
         virtual void CreateDatasetExportJobAsync(const Model::CreateDatasetExportJobRequest& request, const CreateDatasetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an empty dataset group. A dataset group contains related datasets
-         * that supply data for training a model. A dataset group can contain at most three
-         * datasets, one for each type of dataset:</p> <ul> <li> <p>Interactions</p> </li>
-         * <li> <p>Items</p> </li> <li> <p>Users</p> </li> </ul> <p>To train a model
-         * (create a solution), a dataset group that contains an <code>Interactions</code>
-         * dataset is required. Call <a>CreateDataset</a> to add a dataset to the
-         * group.</p> <p>A dataset group can be in one of the following states:</p> <ul>
-         * <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE
-         * FAILED</p> </li> <li> <p>DELETE PENDING</p> </li> </ul> <p>To get the status of
-         * the dataset group, call <a>DescribeDatasetGroup</a>. If the status shows as
-         * CREATE FAILED, the response includes a <code>failureReason</code> key, which
-         * describes why the creation failed.</p>  <p>You must wait until the
-         * <code>status</code> of the dataset group is <code>ACTIVE</code> before adding a
-         * dataset to the group.</p>  <p>You can specify an Key Management Service
-         * (KMS) key to encrypt the datasets in the group. If you specify a KMS key, you
-         * must also include an Identity and Access Management (IAM) role that has
-         * permission to access the key.</p> <p class="title"> <b>APIs that require a
-         * dataset group ARN in the request</b> </p> <ul> <li> <p> <a>CreateDataset</a>
-         * </p> </li> <li> <p> <a>CreateEventTracker</a> </p> </li> <li> <p>
-         * <a>CreateSolution</a> </p> </li> </ul> <p class="title"> <b>Related APIs</b>
-         * </p> <ul> <li> <p> <a>ListDatasetGroups</a> </p> </li> <li> <p>
-         * <a>DescribeDatasetGroup</a> </p> </li> <li> <p> <a>DeleteDatasetGroup</a> </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Creates an empty dataset group. A dataset group is a container for Amazon
+         * Personalize resources. A dataset group can contain at most three datasets, one
+         * for each type of dataset:</p> <ul> <li> <p>Interactions</p> </li> <li>
+         * <p>Items</p> </li> <li> <p>Users</p> </li> </ul> <p> A dataset group can be a
+         * Domain dataset group, where you specify a domain and use pre-configured
+         * resources like recommenders, or a Custom dataset group, where you use custom
+         * resources, such as a solution with a solution version, that you deploy with a
+         * campaign. If you start with a Domain dataset group, you can still add custom
+         * resources such as solutions and solution versions trained with recipes for
+         * custom use cases and deployed with campaigns. </p> <p>A dataset group can be in
+         * one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE
+         * IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING</p>
+         * </li> </ul> <p>To get the status of the dataset group, call
+         * <a>DescribeDatasetGroup</a>. If the status shows as CREATE FAILED, the response
+         * includes a <code>failureReason</code> key, which describes why the creation
+         * failed.</p>  <p>You must wait until the <code>status</code> of the dataset
+         * group is <code>ACTIVE</code> before adding a dataset to the group.</p> 
+         * <p>You can specify an Key Management Service (KMS) key to encrypt the datasets
+         * in the group. If you specify a KMS key, you must also include an Identity and
+         * Access Management (IAM) role that has permission to access the key.</p> <p
+         * class="title"> <b>APIs that require a dataset group ARN in the request</b> </p>
+         * <ul> <li> <p> <a>CreateDataset</a> </p> </li> <li> <p> <a>CreateEventTracker</a>
+         * </p> </li> <li> <p> <a>CreateSolution</a> </p> </li> </ul> <p class="title">
+         * <b>Related APIs</b> </p> <ul> <li> <p> <a>ListDatasetGroups</a> </p> </li> <li>
+         * <p> <a>DescribeDatasetGroup</a> </p> </li> <li> <p> <a>DeleteDatasetGroup</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDatasetGroupOutcome CreateDatasetGroup(const Model::CreateDatasetGroupRequest& request) const;
 
         /**
-         * <p>Creates an empty dataset group. A dataset group contains related datasets
-         * that supply data for training a model. A dataset group can contain at most three
-         * datasets, one for each type of dataset:</p> <ul> <li> <p>Interactions</p> </li>
-         * <li> <p>Items</p> </li> <li> <p>Users</p> </li> </ul> <p>To train a model
-         * (create a solution), a dataset group that contains an <code>Interactions</code>
-         * dataset is required. Call <a>CreateDataset</a> to add a dataset to the
-         * group.</p> <p>A dataset group can be in one of the following states:</p> <ul>
-         * <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE
-         * FAILED</p> </li> <li> <p>DELETE PENDING</p> </li> </ul> <p>To get the status of
-         * the dataset group, call <a>DescribeDatasetGroup</a>. If the status shows as
-         * CREATE FAILED, the response includes a <code>failureReason</code> key, which
-         * describes why the creation failed.</p>  <p>You must wait until the
-         * <code>status</code> of the dataset group is <code>ACTIVE</code> before adding a
-         * dataset to the group.</p>  <p>You can specify an Key Management Service
-         * (KMS) key to encrypt the datasets in the group. If you specify a KMS key, you
-         * must also include an Identity and Access Management (IAM) role that has
-         * permission to access the key.</p> <p class="title"> <b>APIs that require a
-         * dataset group ARN in the request</b> </p> <ul> <li> <p> <a>CreateDataset</a>
-         * </p> </li> <li> <p> <a>CreateEventTracker</a> </p> </li> <li> <p>
-         * <a>CreateSolution</a> </p> </li> </ul> <p class="title"> <b>Related APIs</b>
-         * </p> <ul> <li> <p> <a>ListDatasetGroups</a> </p> </li> <li> <p>
-         * <a>DescribeDatasetGroup</a> </p> </li> <li> <p> <a>DeleteDatasetGroup</a> </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Creates an empty dataset group. A dataset group is a container for Amazon
+         * Personalize resources. A dataset group can contain at most three datasets, one
+         * for each type of dataset:</p> <ul> <li> <p>Interactions</p> </li> <li>
+         * <p>Items</p> </li> <li> <p>Users</p> </li> </ul> <p> A dataset group can be a
+         * Domain dataset group, where you specify a domain and use pre-configured
+         * resources like recommenders, or a Custom dataset group, where you use custom
+         * resources, such as a solution with a solution version, that you deploy with a
+         * campaign. If you start with a Domain dataset group, you can still add custom
+         * resources such as solutions and solution versions trained with recipes for
+         * custom use cases and deployed with campaigns. </p> <p>A dataset group can be in
+         * one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE
+         * IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING</p>
+         * </li> </ul> <p>To get the status of the dataset group, call
+         * <a>DescribeDatasetGroup</a>. If the status shows as CREATE FAILED, the response
+         * includes a <code>failureReason</code> key, which describes why the creation
+         * failed.</p>  <p>You must wait until the <code>status</code> of the dataset
+         * group is <code>ACTIVE</code> before adding a dataset to the group.</p> 
+         * <p>You can specify an Key Management Service (KMS) key to encrypt the datasets
+         * in the group. If you specify a KMS key, you must also include an Identity and
+         * Access Management (IAM) role that has permission to access the key.</p> <p
+         * class="title"> <b>APIs that require a dataset group ARN in the request</b> </p>
+         * <ul> <li> <p> <a>CreateDataset</a> </p> </li> <li> <p> <a>CreateEventTracker</a>
+         * </p> </li> <li> <p> <a>CreateSolution</a> </p> </li> </ul> <p class="title">
+         * <b>Related APIs</b> </p> <ul> <li> <p> <a>ListDatasetGroups</a> </p> </li> <li>
+         * <p> <a>DescribeDatasetGroup</a> </p> </li> <li> <p> <a>DeleteDatasetGroup</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetGroup">AWS
          * API Reference</a></p>
          *
@@ -645,29 +721,32 @@ namespace Model
         virtual Model::CreateDatasetGroupOutcomeCallable CreateDatasetGroupCallable(const Model::CreateDatasetGroupRequest& request) const;
 
         /**
-         * <p>Creates an empty dataset group. A dataset group contains related datasets
-         * that supply data for training a model. A dataset group can contain at most three
-         * datasets, one for each type of dataset:</p> <ul> <li> <p>Interactions</p> </li>
-         * <li> <p>Items</p> </li> <li> <p>Users</p> </li> </ul> <p>To train a model
-         * (create a solution), a dataset group that contains an <code>Interactions</code>
-         * dataset is required. Call <a>CreateDataset</a> to add a dataset to the
-         * group.</p> <p>A dataset group can be in one of the following states:</p> <ul>
-         * <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE
-         * FAILED</p> </li> <li> <p>DELETE PENDING</p> </li> </ul> <p>To get the status of
-         * the dataset group, call <a>DescribeDatasetGroup</a>. If the status shows as
-         * CREATE FAILED, the response includes a <code>failureReason</code> key, which
-         * describes why the creation failed.</p>  <p>You must wait until the
-         * <code>status</code> of the dataset group is <code>ACTIVE</code> before adding a
-         * dataset to the group.</p>  <p>You can specify an Key Management Service
-         * (KMS) key to encrypt the datasets in the group. If you specify a KMS key, you
-         * must also include an Identity and Access Management (IAM) role that has
-         * permission to access the key.</p> <p class="title"> <b>APIs that require a
-         * dataset group ARN in the request</b> </p> <ul> <li> <p> <a>CreateDataset</a>
-         * </p> </li> <li> <p> <a>CreateEventTracker</a> </p> </li> <li> <p>
-         * <a>CreateSolution</a> </p> </li> </ul> <p class="title"> <b>Related APIs</b>
-         * </p> <ul> <li> <p> <a>ListDatasetGroups</a> </p> </li> <li> <p>
-         * <a>DescribeDatasetGroup</a> </p> </li> <li> <p> <a>DeleteDatasetGroup</a> </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Creates an empty dataset group. A dataset group is a container for Amazon
+         * Personalize resources. A dataset group can contain at most three datasets, one
+         * for each type of dataset:</p> <ul> <li> <p>Interactions</p> </li> <li>
+         * <p>Items</p> </li> <li> <p>Users</p> </li> </ul> <p> A dataset group can be a
+         * Domain dataset group, where you specify a domain and use pre-configured
+         * resources like recommenders, or a Custom dataset group, where you use custom
+         * resources, such as a solution with a solution version, that you deploy with a
+         * campaign. If you start with a Domain dataset group, you can still add custom
+         * resources such as solutions and solution versions trained with recipes for
+         * custom use cases and deployed with campaigns. </p> <p>A dataset group can be in
+         * one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE
+         * IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING</p>
+         * </li> </ul> <p>To get the status of the dataset group, call
+         * <a>DescribeDatasetGroup</a>. If the status shows as CREATE FAILED, the response
+         * includes a <code>failureReason</code> key, which describes why the creation
+         * failed.</p>  <p>You must wait until the <code>status</code> of the dataset
+         * group is <code>ACTIVE</code> before adding a dataset to the group.</p> 
+         * <p>You can specify an Key Management Service (KMS) key to encrypt the datasets
+         * in the group. If you specify a KMS key, you must also include an Identity and
+         * Access Management (IAM) role that has permission to access the key.</p> <p
+         * class="title"> <b>APIs that require a dataset group ARN in the request</b> </p>
+         * <ul> <li> <p> <a>CreateDataset</a> </p> </li> <li> <p> <a>CreateEventTracker</a>
+         * </p> </li> <li> <p> <a>CreateSolution</a> </p> </li> </ul> <p class="title">
+         * <b>Related APIs</b> </p> <ul> <li> <p> <a>ListDatasetGroups</a> </p> </li> <li>
+         * <p> <a>DescribeDatasetGroup</a> </p> </li> <li> <p> <a>DeleteDatasetGroup</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetGroup">AWS
          * API Reference</a></p>
          *
@@ -868,13 +947,79 @@ namespace Model
         virtual void CreateFilterAsync(const Model::CreateFilterRequest& request, const CreateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a recommender with the recipe (a Domain dataset group use case) you
+         * specify. You create recommenders for a Domain dataset group and specify the
+         * recommender's Amazon Resource Name (ARN) when you make a <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
+         * request. </p> <p> <b>Status</b> </p> <p>A recommender can be in one of the
+         * following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt;
+         * ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE
+         * IN_PROGRESS</p> </li> </ul> <p>To get the recommender status, call
+         * <a>DescribeRecommender</a>.</p>  <p>Wait until the <code>status</code> of
+         * the recommender is <code>ACTIVE</code> before asking the recommender for
+         * recommendations.</p>  <p class="title"> <b>Related APIs</b> </p> <ul>
+         * <li> <p> <a>ListRecommenders</a> </p> </li> <li> <p> <a>DescribeRecommender</a>
+         * </p> </li> <li> <p> <a>UpdateRecommender</a> </p> </li> <li> <p>
+         * <a>DeleteRecommender</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateRecommender">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateRecommenderOutcome CreateRecommender(const Model::CreateRecommenderRequest& request) const;
+
+        /**
+         * <p>Creates a recommender with the recipe (a Domain dataset group use case) you
+         * specify. You create recommenders for a Domain dataset group and specify the
+         * recommender's Amazon Resource Name (ARN) when you make a <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
+         * request. </p> <p> <b>Status</b> </p> <p>A recommender can be in one of the
+         * following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt;
+         * ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE
+         * IN_PROGRESS</p> </li> </ul> <p>To get the recommender status, call
+         * <a>DescribeRecommender</a>.</p>  <p>Wait until the <code>status</code> of
+         * the recommender is <code>ACTIVE</code> before asking the recommender for
+         * recommendations.</p>  <p class="title"> <b>Related APIs</b> </p> <ul>
+         * <li> <p> <a>ListRecommenders</a> </p> </li> <li> <p> <a>DescribeRecommender</a>
+         * </p> </li> <li> <p> <a>UpdateRecommender</a> </p> </li> <li> <p>
+         * <a>DeleteRecommender</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateRecommender">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateRecommenderOutcomeCallable CreateRecommenderCallable(const Model::CreateRecommenderRequest& request) const;
+
+        /**
+         * <p>Creates a recommender with the recipe (a Domain dataset group use case) you
+         * specify. You create recommenders for a Domain dataset group and specify the
+         * recommender's Amazon Resource Name (ARN) when you make a <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
+         * request. </p> <p> <b>Status</b> </p> <p>A recommender can be in one of the
+         * following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt;
+         * ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE
+         * IN_PROGRESS</p> </li> </ul> <p>To get the recommender status, call
+         * <a>DescribeRecommender</a>.</p>  <p>Wait until the <code>status</code> of
+         * the recommender is <code>ACTIVE</code> before asking the recommender for
+         * recommendations.</p>  <p class="title"> <b>Related APIs</b> </p> <ul>
+         * <li> <p> <a>ListRecommenders</a> </p> </li> <li> <p> <a>DescribeRecommender</a>
+         * </p> </li> <li> <p> <a>UpdateRecommender</a> </p> </li> <li> <p>
+         * <a>DeleteRecommender</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateRecommender">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateRecommenderAsync(const Model::CreateRecommenderRequest& request, const CreateRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates an Amazon Personalize schema from the specified schema string. The
          * schema you create must be in Avro JSON format.</p> <p>Amazon Personalize
          * recognizes three schema variants. Each schema is associated with a dataset type
-         * and has a set of required field and keywords. You specify a schema when you call
-         * <a>CreateDataset</a>.</p> <p class="title"> <b>Related APIs</b> </p> <ul> <li>
-         * <p> <a>ListSchemas</a> </p> </li> <li> <p> <a>DescribeSchema</a> </p> </li> <li>
-         * <p> <a>DeleteSchema</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * and has a set of required field and keywords. If you are creating a schema for a
+         * dataset in a Domain dataset group, you provide the domain of the Domain dataset
+         * group. You specify a schema when you call <a>CreateDataset</a>.</p> <p
+         * class="title"> <b>Related APIs</b> </p> <ul> <li> <p> <a>ListSchemas</a> </p>
+         * </li> <li> <p> <a>DescribeSchema</a> </p> </li> <li> <p> <a>DeleteSchema</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateSchema">AWS
          * API Reference</a></p>
          */
@@ -884,10 +1029,12 @@ namespace Model
          * <p>Creates an Amazon Personalize schema from the specified schema string. The
          * schema you create must be in Avro JSON format.</p> <p>Amazon Personalize
          * recognizes three schema variants. Each schema is associated with a dataset type
-         * and has a set of required field and keywords. You specify a schema when you call
-         * <a>CreateDataset</a>.</p> <p class="title"> <b>Related APIs</b> </p> <ul> <li>
-         * <p> <a>ListSchemas</a> </p> </li> <li> <p> <a>DescribeSchema</a> </p> </li> <li>
-         * <p> <a>DeleteSchema</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * and has a set of required field and keywords. If you are creating a schema for a
+         * dataset in a Domain dataset group, you provide the domain of the Domain dataset
+         * group. You specify a schema when you call <a>CreateDataset</a>.</p> <p
+         * class="title"> <b>Related APIs</b> </p> <ul> <li> <p> <a>ListSchemas</a> </p>
+         * </li> <li> <p> <a>DescribeSchema</a> </p> </li> <li> <p> <a>DeleteSchema</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateSchema">AWS
          * API Reference</a></p>
          *
@@ -899,10 +1046,12 @@ namespace Model
          * <p>Creates an Amazon Personalize schema from the specified schema string. The
          * schema you create must be in Avro JSON format.</p> <p>Amazon Personalize
          * recognizes three schema variants. Each schema is associated with a dataset type
-         * and has a set of required field and keywords. You specify a schema when you call
-         * <a>CreateDataset</a>.</p> <p class="title"> <b>Related APIs</b> </p> <ul> <li>
-         * <p> <a>ListSchemas</a> </p> </li> <li> <p> <a>DescribeSchema</a> </p> </li> <li>
-         * <p> <a>DeleteSchema</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * and has a set of required field and keywords. If you are creating a schema for a
+         * dataset in a Domain dataset group, you provide the domain of the Domain dataset
+         * group. You specify a schema when you call <a>CreateDataset</a>.</p> <p
+         * class="title"> <b>Related APIs</b> </p> <ul> <li> <p> <a>ListSchemas</a> </p>
+         * </li> <li> <p> <a>DescribeSchema</a> </p> </li> <li> <p> <a>DeleteSchema</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateSchema">AWS
          * API Reference</a></p>
          *
@@ -1017,44 +1166,46 @@ namespace Model
         virtual void CreateSolutionAsync(const Model::CreateSolutionRequest& request, const CreateSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Trains or retrains an active solution. A solution is created using the
-         * <a>CreateSolution</a> operation and must be in the ACTIVE state before calling
-         * <code>CreateSolutionVersion</code>. A new version of the solution is created
-         * every time you call this operation.</p> <p> <b>Status</b> </p> <p>A solution
-         * version can be in one of the following states:</p> <ul> <li> <p>CREATE
-         * PENDING</p> </li> <li> <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li>
-         * <li> <p>CREATE FAILED</p> </li> <li> <p>CREATE STOPPING</p> </li> <li> <p>CREATE
-         * STOPPED</p> </li> </ul> <p>To get the status of the version, call
-         * <a>DescribeSolutionVersion</a>. Wait until the status shows as ACTIVE before
-         * calling <code>CreateCampaign</code>.</p> <p>If the status shows as CREATE
-         * FAILED, the response includes a <code>failureReason</code> key, which describes
-         * why the job failed.</p> <p class="title"> <b>Related APIs</b> </p> <ul> <li> <p>
-         * <a>ListSolutionVersions</a> </p> </li> <li> <p> <a>DescribeSolutionVersion</a>
-         * </p> </li> </ul> <ul> <li> <p> <a>ListSolutions</a> </p> </li> <li> <p>
-         * <a>CreateSolution</a> </p> </li> <li> <p> <a>DescribeSolution</a> </p> </li>
-         * <li> <p> <a>DeleteSolution</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Trains or retrains an active solution in a Custom dataset group. A solution
+         * is created using the <a>CreateSolution</a> operation and must be in the ACTIVE
+         * state before calling <code>CreateSolutionVersion</code>. A new version of the
+         * solution is created every time you call this operation.</p> <p> <b>Status</b>
+         * </p> <p>A solution version can be in one of the following states:</p> <ul> <li>
+         * <p>CREATE PENDING</p> </li> <li> <p>CREATE IN_PROGRESS</p> </li> <li>
+         * <p>ACTIVE</p> </li> <li> <p>CREATE FAILED</p> </li> <li> <p>CREATE STOPPING</p>
+         * </li> <li> <p>CREATE STOPPED</p> </li> </ul> <p>To get the status of the
+         * version, call <a>DescribeSolutionVersion</a>. Wait until the status shows as
+         * ACTIVE before calling <code>CreateCampaign</code>.</p> <p>If the status shows as
+         * CREATE FAILED, the response includes a <code>failureReason</code> key, which
+         * describes why the job failed.</p> <p class="title"> <b>Related APIs</b> </p>
+         * <ul> <li> <p> <a>ListSolutionVersions</a> </p> </li> <li> <p>
+         * <a>DescribeSolutionVersion</a> </p> </li> </ul> <ul> <li> <p>
+         * <a>ListSolutions</a> </p> </li> <li> <p> <a>CreateSolution</a> </p> </li> <li>
+         * <p> <a>DescribeSolution</a> </p> </li> <li> <p> <a>DeleteSolution</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateSolutionVersion">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateSolutionVersionOutcome CreateSolutionVersion(const Model::CreateSolutionVersionRequest& request) const;
 
         /**
-         * <p>Trains or retrains an active solution. A solution is created using the
-         * <a>CreateSolution</a> operation and must be in the ACTIVE state before calling
-         * <code>CreateSolutionVersion</code>. A new version of the solution is created
-         * every time you call this operation.</p> <p> <b>Status</b> </p> <p>A solution
-         * version can be in one of the following states:</p> <ul> <li> <p>CREATE
-         * PENDING</p> </li> <li> <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li>
-         * <li> <p>CREATE FAILED</p> </li> <li> <p>CREATE STOPPING</p> </li> <li> <p>CREATE
-         * STOPPED</p> </li> </ul> <p>To get the status of the version, call
-         * <a>DescribeSolutionVersion</a>. Wait until the status shows as ACTIVE before
-         * calling <code>CreateCampaign</code>.</p> <p>If the status shows as CREATE
-         * FAILED, the response includes a <code>failureReason</code> key, which describes
-         * why the job failed.</p> <p class="title"> <b>Related APIs</b> </p> <ul> <li> <p>
-         * <a>ListSolutionVersions</a> </p> </li> <li> <p> <a>DescribeSolutionVersion</a>
-         * </p> </li> </ul> <ul> <li> <p> <a>ListSolutions</a> </p> </li> <li> <p>
-         * <a>CreateSolution</a> </p> </li> <li> <p> <a>DescribeSolution</a> </p> </li>
-         * <li> <p> <a>DeleteSolution</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Trains or retrains an active solution in a Custom dataset group. A solution
+         * is created using the <a>CreateSolution</a> operation and must be in the ACTIVE
+         * state before calling <code>CreateSolutionVersion</code>. A new version of the
+         * solution is created every time you call this operation.</p> <p> <b>Status</b>
+         * </p> <p>A solution version can be in one of the following states:</p> <ul> <li>
+         * <p>CREATE PENDING</p> </li> <li> <p>CREATE IN_PROGRESS</p> </li> <li>
+         * <p>ACTIVE</p> </li> <li> <p>CREATE FAILED</p> </li> <li> <p>CREATE STOPPING</p>
+         * </li> <li> <p>CREATE STOPPED</p> </li> </ul> <p>To get the status of the
+         * version, call <a>DescribeSolutionVersion</a>. Wait until the status shows as
+         * ACTIVE before calling <code>CreateCampaign</code>.</p> <p>If the status shows as
+         * CREATE FAILED, the response includes a <code>failureReason</code> key, which
+         * describes why the job failed.</p> <p class="title"> <b>Related APIs</b> </p>
+         * <ul> <li> <p> <a>ListSolutionVersions</a> </p> </li> <li> <p>
+         * <a>DescribeSolutionVersion</a> </p> </li> </ul> <ul> <li> <p>
+         * <a>ListSolutions</a> </p> </li> <li> <p> <a>CreateSolution</a> </p> </li> <li>
+         * <p> <a>DescribeSolution</a> </p> </li> <li> <p> <a>DeleteSolution</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateSolutionVersion">AWS
          * API Reference</a></p>
          *
@@ -1063,22 +1214,23 @@ namespace Model
         virtual Model::CreateSolutionVersionOutcomeCallable CreateSolutionVersionCallable(const Model::CreateSolutionVersionRequest& request) const;
 
         /**
-         * <p>Trains or retrains an active solution. A solution is created using the
-         * <a>CreateSolution</a> operation and must be in the ACTIVE state before calling
-         * <code>CreateSolutionVersion</code>. A new version of the solution is created
-         * every time you call this operation.</p> <p> <b>Status</b> </p> <p>A solution
-         * version can be in one of the following states:</p> <ul> <li> <p>CREATE
-         * PENDING</p> </li> <li> <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li>
-         * <li> <p>CREATE FAILED</p> </li> <li> <p>CREATE STOPPING</p> </li> <li> <p>CREATE
-         * STOPPED</p> </li> </ul> <p>To get the status of the version, call
-         * <a>DescribeSolutionVersion</a>. Wait until the status shows as ACTIVE before
-         * calling <code>CreateCampaign</code>.</p> <p>If the status shows as CREATE
-         * FAILED, the response includes a <code>failureReason</code> key, which describes
-         * why the job failed.</p> <p class="title"> <b>Related APIs</b> </p> <ul> <li> <p>
-         * <a>ListSolutionVersions</a> </p> </li> <li> <p> <a>DescribeSolutionVersion</a>
-         * </p> </li> </ul> <ul> <li> <p> <a>ListSolutions</a> </p> </li> <li> <p>
-         * <a>CreateSolution</a> </p> </li> <li> <p> <a>DescribeSolution</a> </p> </li>
-         * <li> <p> <a>DeleteSolution</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Trains or retrains an active solution in a Custom dataset group. A solution
+         * is created using the <a>CreateSolution</a> operation and must be in the ACTIVE
+         * state before calling <code>CreateSolutionVersion</code>. A new version of the
+         * solution is created every time you call this operation.</p> <p> <b>Status</b>
+         * </p> <p>A solution version can be in one of the following states:</p> <ul> <li>
+         * <p>CREATE PENDING</p> </li> <li> <p>CREATE IN_PROGRESS</p> </li> <li>
+         * <p>ACTIVE</p> </li> <li> <p>CREATE FAILED</p> </li> <li> <p>CREATE STOPPING</p>
+         * </li> <li> <p>CREATE STOPPED</p> </li> </ul> <p>To get the status of the
+         * version, call <a>DescribeSolutionVersion</a>. Wait until the status shows as
+         * ACTIVE before calling <code>CreateCampaign</code>.</p> <p>If the status shows as
+         * CREATE FAILED, the response includes a <code>failureReason</code> key, which
+         * describes why the job failed.</p> <p class="title"> <b>Related APIs</b> </p>
+         * <ul> <li> <p> <a>ListSolutionVersions</a> </p> </li> <li> <p>
+         * <a>DescribeSolutionVersion</a> </p> </li> </ul> <ul> <li> <p>
+         * <a>ListSolutions</a> </p> </li> <li> <p> <a>CreateSolution</a> </p> </li> <li>
+         * <p> <a>DescribeSolution</a> </p> </li> <li> <p> <a>DeleteSolution</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateSolutionVersion">AWS
          * API Reference</a></p>
          *
@@ -1251,6 +1403,40 @@ namespace Model
         virtual void DeleteFilterAsync(const Model::DeleteFilterRequest& request, const DeleteFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deactivates and removes a recommender. A deleted recommender can no longer be
+         * specified in a <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteRecommender">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRecommenderOutcome DeleteRecommender(const Model::DeleteRecommenderRequest& request) const;
+
+        /**
+         * <p>Deactivates and removes a recommender. A deleted recommender can no longer be
+         * specified in a <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteRecommender">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteRecommenderOutcomeCallable DeleteRecommenderCallable(const Model::DeleteRecommenderRequest& request) const;
+
+        /**
+         * <p>Deactivates and removes a recommender. A deleted recommender can no longer be
+         * specified in a <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteRecommender">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteRecommenderAsync(const Model::DeleteRecommenderRequest& request, const DeleteRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a schema. Before deleting a schema, you must delete all datasets
          * referencing the schema. For more information on schemas, see
          * <a>CreateSchema</a>.</p><p><h3>See Also:</h3>   <a
@@ -1379,6 +1565,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeBatchInferenceJobAsync(const Model::DescribeBatchInferenceJobRequest& request, const DescribeBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the properties of a batch segment job including name, Amazon Resource
+         * Name (ARN), status, input and output configurations, and the ARN of the solution
+         * version used to generate segments.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeBatchSegmentJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeBatchSegmentJobOutcome DescribeBatchSegmentJob(const Model::DescribeBatchSegmentJobRequest& request) const;
+
+        /**
+         * <p>Gets the properties of a batch segment job including name, Amazon Resource
+         * Name (ARN), status, input and output configurations, and the ARN of the solution
+         * version used to generate segments.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeBatchSegmentJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeBatchSegmentJobOutcomeCallable DescribeBatchSegmentJobCallable(const Model::DescribeBatchSegmentJobRequest& request) const;
+
+        /**
+         * <p>Gets the properties of a batch segment job including name, Amazon Resource
+         * Name (ARN), status, input and output configurations, and the ARN of the solution
+         * version used to generate segments.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeBatchSegmentJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeBatchSegmentJobAsync(const Model::DescribeBatchSegmentJobRequest& request, const DescribeBatchSegmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the given campaign, including its status.</p> <p>A campaign can be
@@ -1669,6 +1886,55 @@ namespace Model
         virtual void DescribeRecipeAsync(const Model::DescribeRecipeRequest& request, const DescribeRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes the given recommender, including its status.</p> <p>A recommender
+         * can be in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt;
+         * CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE
+         * PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul> <p>When the <code>status</code>
+         * is <code>CREATE FAILED</code>, the response includes the
+         * <code>failureReason</code> key, which describes why.</p> <p>For more information
+         * on recommenders, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateRecommender.html">CreateRecommender</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeRecommender">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRecommenderOutcome DescribeRecommender(const Model::DescribeRecommenderRequest& request) const;
+
+        /**
+         * <p>Describes the given recommender, including its status.</p> <p>A recommender
+         * can be in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt;
+         * CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE
+         * PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul> <p>When the <code>status</code>
+         * is <code>CREATE FAILED</code>, the response includes the
+         * <code>failureReason</code> key, which describes why.</p> <p>For more information
+         * on recommenders, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateRecommender.html">CreateRecommender</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeRecommender">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeRecommenderOutcomeCallable DescribeRecommenderCallable(const Model::DescribeRecommenderRequest& request) const;
+
+        /**
+         * <p>Describes the given recommender, including its status.</p> <p>A recommender
+         * can be in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt;
+         * CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE
+         * PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul> <p>When the <code>status</code>
+         * is <code>CREATE FAILED</code>, the response includes the
+         * <code>failureReason</code> key, which describes why.</p> <p>For more information
+         * on recommenders, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateRecommender.html">CreateRecommender</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeRecommender">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeRecommenderAsync(const Model::DescribeRecommenderRequest& request, const DescribeRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes a schema. For more information on schemas, see
          * <a>CreateSchema</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeSchema">AWS
@@ -1807,6 +2073,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListBatchInferenceJobsAsync(const Model::ListBatchInferenceJobsRequest& request, const ListBatchInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets a list of the batch segment jobs that have been performed off of a
+         * solution version that you specify.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListBatchSegmentJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListBatchSegmentJobsOutcome ListBatchSegmentJobs(const Model::ListBatchSegmentJobsRequest& request) const;
+
+        /**
+         * <p>Gets a list of the batch segment jobs that have been performed off of a
+         * solution version that you specify.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListBatchSegmentJobs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListBatchSegmentJobsOutcomeCallable ListBatchSegmentJobsCallable(const Model::ListBatchSegmentJobsRequest& request) const;
+
+        /**
+         * <p>Gets a list of the batch segment jobs that have been performed off of a
+         * solution version that you specify.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListBatchSegmentJobs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListBatchSegmentJobsAsync(const Model::ListBatchSegmentJobsRequest& request, const ListBatchSegmentJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of campaigns that use the given solution. When a solution is
@@ -2087,6 +2381,46 @@ namespace Model
         virtual void ListRecipesAsync(const Model::ListRecipesRequest& request, const ListRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of recommenders in a given Domain dataset group. When a Domain
+         * dataset group is not specified, all the recommenders associated with the account
+         * are listed. The response provides the properties for each recommender, including
+         * the Amazon Resource Name (ARN). For more information on recommenders, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateRecommender.html">CreateRecommender</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListRecommenders">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRecommendersOutcome ListRecommenders(const Model::ListRecommendersRequest& request) const;
+
+        /**
+         * <p>Returns a list of recommenders in a given Domain dataset group. When a Domain
+         * dataset group is not specified, all the recommenders associated with the account
+         * are listed. The response provides the properties for each recommender, including
+         * the Amazon Resource Name (ARN). For more information on recommenders, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateRecommender.html">CreateRecommender</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListRecommenders">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListRecommendersOutcomeCallable ListRecommendersCallable(const Model::ListRecommendersRequest& request) const;
+
+        /**
+         * <p>Returns a list of recommenders in a given Domain dataset group. When a Domain
+         * dataset group is not specified, all the recommenders associated with the account
+         * are listed. The response provides the properties for each recommender, including
+         * the Amazon Resource Name (ARN). For more information on recommenders, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateRecommender.html">CreateRecommender</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListRecommenders">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListRecommendersAsync(const Model::ListRecommendersRequest& request, const ListRecommendersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the list of schemas associated with the account. The response
          * provides the properties for each schema, including the Amazon Resource Name
          * (ARN). For more information on schemas, see <a>CreateSchema</a>.</p><p><h3>See
@@ -2286,11 +2620,40 @@ namespace Model
          */
         virtual void UpdateCampaignAsync(const Model::UpdateCampaignRequest& request, const UpdateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates the recommender to modify the recommender
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateRecommender">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateRecommenderOutcome UpdateRecommender(const Model::UpdateRecommenderRequest& request) const;
+
+        /**
+         * <p>Updates the recommender to modify the recommender
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateRecommender">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateRecommenderOutcomeCallable UpdateRecommenderCallable(const Model::UpdateRecommenderRequest& request) const;
+
+        /**
+         * <p>Updates the recommender to modify the recommender
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateRecommender">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateRecommenderAsync(const Model::UpdateRecommenderRequest& request, const UpdateRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void CreateBatchInferenceJobAsyncHelper(const Model::CreateBatchInferenceJobRequest& request, const CreateBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateBatchSegmentJobAsyncHelper(const Model::CreateBatchSegmentJobRequest& request, const CreateBatchSegmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCampaignAsyncHelper(const Model::CreateCampaignRequest& request, const CreateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDatasetAsyncHelper(const Model::CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDatasetExportJobAsyncHelper(const Model::CreateDatasetExportJobRequest& request, const CreateDatasetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2298,6 +2661,7 @@ namespace Model
         void CreateDatasetImportJobAsyncHelper(const Model::CreateDatasetImportJobRequest& request, const CreateDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEventTrackerAsyncHelper(const Model::CreateEventTrackerRequest& request, const CreateEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateFilterAsyncHelper(const Model::CreateFilterRequest& request, const CreateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateRecommenderAsyncHelper(const Model::CreateRecommenderRequest& request, const CreateRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSchemaAsyncHelper(const Model::CreateSchemaRequest& request, const CreateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSolutionAsyncHelper(const Model::CreateSolutionRequest& request, const CreateSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSolutionVersionAsyncHelper(const Model::CreateSolutionVersionRequest& request, const CreateSolutionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2306,10 +2670,12 @@ namespace Model
         void DeleteDatasetGroupAsyncHelper(const Model::DeleteDatasetGroupRequest& request, const DeleteDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEventTrackerAsyncHelper(const Model::DeleteEventTrackerRequest& request, const DeleteEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFilterAsyncHelper(const Model::DeleteFilterRequest& request, const DeleteFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteRecommenderAsyncHelper(const Model::DeleteRecommenderRequest& request, const DeleteRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSchemaAsyncHelper(const Model::DeleteSchemaRequest& request, const DeleteSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSolutionAsyncHelper(const Model::DeleteSolutionRequest& request, const DeleteSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAlgorithmAsyncHelper(const Model::DescribeAlgorithmRequest& request, const DescribeAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBatchInferenceJobAsyncHelper(const Model::DescribeBatchInferenceJobRequest& request, const DescribeBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeBatchSegmentJobAsyncHelper(const Model::DescribeBatchSegmentJobRequest& request, const DescribeBatchSegmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCampaignAsyncHelper(const Model::DescribeCampaignRequest& request, const DescribeCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDatasetAsyncHelper(const Model::DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDatasetExportJobAsyncHelper(const Model::DescribeDatasetExportJobRequest& request, const DescribeDatasetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2319,11 +2685,13 @@ namespace Model
         void DescribeFeatureTransformationAsyncHelper(const Model::DescribeFeatureTransformationRequest& request, const DescribeFeatureTransformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFilterAsyncHelper(const Model::DescribeFilterRequest& request, const DescribeFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRecipeAsyncHelper(const Model::DescribeRecipeRequest& request, const DescribeRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeRecommenderAsyncHelper(const Model::DescribeRecommenderRequest& request, const DescribeRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSchemaAsyncHelper(const Model::DescribeSchemaRequest& request, const DescribeSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSolutionAsyncHelper(const Model::DescribeSolutionRequest& request, const DescribeSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSolutionVersionAsyncHelper(const Model::DescribeSolutionVersionRequest& request, const DescribeSolutionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSolutionMetricsAsyncHelper(const Model::GetSolutionMetricsRequest& request, const GetSolutionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBatchInferenceJobsAsyncHelper(const Model::ListBatchInferenceJobsRequest& request, const ListBatchInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListBatchSegmentJobsAsyncHelper(const Model::ListBatchSegmentJobsRequest& request, const ListBatchSegmentJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCampaignsAsyncHelper(const Model::ListCampaignsRequest& request, const ListCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDatasetExportJobsAsyncHelper(const Model::ListDatasetExportJobsRequest& request, const ListDatasetExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDatasetGroupsAsyncHelper(const Model::ListDatasetGroupsRequest& request, const ListDatasetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2332,11 +2700,13 @@ namespace Model
         void ListEventTrackersAsyncHelper(const Model::ListEventTrackersRequest& request, const ListEventTrackersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFiltersAsyncHelper(const Model::ListFiltersRequest& request, const ListFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRecipesAsyncHelper(const Model::ListRecipesRequest& request, const ListRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListRecommendersAsyncHelper(const Model::ListRecommendersRequest& request, const ListRecommendersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSchemasAsyncHelper(const Model::ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSolutionVersionsAsyncHelper(const Model::ListSolutionVersionsRequest& request, const ListSolutionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSolutionsAsyncHelper(const Model::ListSolutionsRequest& request, const ListSolutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopSolutionVersionCreationAsyncHelper(const Model::StopSolutionVersionCreationRequest& request, const StopSolutionVersionCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateCampaignAsyncHelper(const Model::UpdateCampaignRequest& request, const UpdateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateRecommenderAsyncHelper(const Model::UpdateRecommenderRequest& request, const UpdateRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

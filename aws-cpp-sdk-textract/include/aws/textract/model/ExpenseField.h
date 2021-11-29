@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>Breakdown of detected information, seperated into the catagories Type,
-   * LableDetection, and ValueDetection</p><p><h3>See Also:</h3>   <a
+   * LabelDetection, and ValueDetection</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ExpenseField">AWS
    * API Reference</a></p>
    */

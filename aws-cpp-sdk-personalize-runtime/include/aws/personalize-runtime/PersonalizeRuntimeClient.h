@@ -132,26 +132,38 @@ namespace Model
         virtual void GetPersonalizedRankingAsync(const Model::GetPersonalizedRankingRequest& request, const GetPersonalizedRankingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of recommended items. The required input depends on the recipe
-         * type used to create the solution backing the campaign, as follows:</p> <ul> <li>
-         * <p>RELATED_ITEMS - <code>itemId</code> required, <code>userId</code> not
-         * used</p> </li> <li> <p>USER_PERSONALIZATION - <code>itemId</code> optional,
-         * <code>userId</code> required</p> </li> </ul>  <p>Campaigns that are backed
-         * by a solution created using a recipe of type PERSONALIZED_RANKING use the
-         * API.</p> <p><h3>See Also:</h3>   <a
+         * <p>Returns a list of recommended items. For campaigns, the campaign's Amazon
+         * Resource Name (ARN) is required and the required user and item input depends on
+         * the recipe type used to create the solution backing the campaign as follows:</p>
+         * <ul> <li> <p>USER_PERSONALIZATION - <code>userId</code> required,
+         * <code>itemId</code> not used</p> </li> <li> <p>RELATED_ITEMS -
+         * <code>itemId</code> required, <code>userId</code> not used</p> </li> </ul>
+         *  <p>Campaigns that are backed by a solution created using a recipe of type
+         * PERSONALIZED_RANKING use the API.</p>  <p> For recommenders, the
+         * recommender's ARN is required and the required item and user input depends on
+         * the use case (domain-based recipe) backing the recommender. For information on
+         * use case requirements see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing
+         * recommender use cases</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-runtime-2018-05-22/GetRecommendations">AWS
          * API Reference</a></p>
          */
         virtual Model::GetRecommendationsOutcome GetRecommendations(const Model::GetRecommendationsRequest& request) const;
 
         /**
-         * <p>Returns a list of recommended items. The required input depends on the recipe
-         * type used to create the solution backing the campaign, as follows:</p> <ul> <li>
-         * <p>RELATED_ITEMS - <code>itemId</code> required, <code>userId</code> not
-         * used</p> </li> <li> <p>USER_PERSONALIZATION - <code>itemId</code> optional,
-         * <code>userId</code> required</p> </li> </ul>  <p>Campaigns that are backed
-         * by a solution created using a recipe of type PERSONALIZED_RANKING use the
-         * API.</p> <p><h3>See Also:</h3>   <a
+         * <p>Returns a list of recommended items. For campaigns, the campaign's Amazon
+         * Resource Name (ARN) is required and the required user and item input depends on
+         * the recipe type used to create the solution backing the campaign as follows:</p>
+         * <ul> <li> <p>USER_PERSONALIZATION - <code>userId</code> required,
+         * <code>itemId</code> not used</p> </li> <li> <p>RELATED_ITEMS -
+         * <code>itemId</code> required, <code>userId</code> not used</p> </li> </ul>
+         *  <p>Campaigns that are backed by a solution created using a recipe of type
+         * PERSONALIZED_RANKING use the API.</p>  <p> For recommenders, the
+         * recommender's ARN is required and the required item and user input depends on
+         * the use case (domain-based recipe) backing the recommender. For information on
+         * use case requirements see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing
+         * recommender use cases</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-runtime-2018-05-22/GetRecommendations">AWS
          * API Reference</a></p>
          *
@@ -160,13 +172,19 @@ namespace Model
         virtual Model::GetRecommendationsOutcomeCallable GetRecommendationsCallable(const Model::GetRecommendationsRequest& request) const;
 
         /**
-         * <p>Returns a list of recommended items. The required input depends on the recipe
-         * type used to create the solution backing the campaign, as follows:</p> <ul> <li>
-         * <p>RELATED_ITEMS - <code>itemId</code> required, <code>userId</code> not
-         * used</p> </li> <li> <p>USER_PERSONALIZATION - <code>itemId</code> optional,
-         * <code>userId</code> required</p> </li> </ul>  <p>Campaigns that are backed
-         * by a solution created using a recipe of type PERSONALIZED_RANKING use the
-         * API.</p> <p><h3>See Also:</h3>   <a
+         * <p>Returns a list of recommended items. For campaigns, the campaign's Amazon
+         * Resource Name (ARN) is required and the required user and item input depends on
+         * the recipe type used to create the solution backing the campaign as follows:</p>
+         * <ul> <li> <p>USER_PERSONALIZATION - <code>userId</code> required,
+         * <code>itemId</code> not used</p> </li> <li> <p>RELATED_ITEMS -
+         * <code>itemId</code> required, <code>userId</code> not used</p> </li> </ul>
+         *  <p>Campaigns that are backed by a solution created using a recipe of type
+         * PERSONALIZED_RANKING use the API.</p>  <p> For recommenders, the
+         * recommender's ARN is required and the required item and user input depends on
+         * the use case (domain-based recipe) backing the recommender. For information on
+         * use case requirements see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing
+         * recommender use cases</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-runtime-2018-05-22/GetRecommendations">AWS
          * API Reference</a></p>
          *

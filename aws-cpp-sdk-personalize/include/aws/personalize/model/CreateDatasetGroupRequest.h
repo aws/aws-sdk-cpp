@@ -7,6 +7,7 @@
 #include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/personalize/PersonalizeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/personalize/model/Domain.h>
 #include <utility>
 
 namespace Aws
@@ -180,6 +181,61 @@ namespace Model
      */
     inline CreateDatasetGroupRequest& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 
+
+    /**
+     * <p>The domain of the dataset group. Specify a domain to create a Domain dataset
+     * group. The domain you specify determines the default schemas for datasets and
+     * the use cases available for recommenders. If you don't specify a domain, you
+     * create a Custom dataset group with solution versions that you deploy with a
+     * campaign. </p>
+     */
+    inline const Domain& GetDomain() const{ return m_domain; }
+
+    /**
+     * <p>The domain of the dataset group. Specify a domain to create a Domain dataset
+     * group. The domain you specify determines the default schemas for datasets and
+     * the use cases available for recommenders. If you don't specify a domain, you
+     * create a Custom dataset group with solution versions that you deploy with a
+     * campaign. </p>
+     */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>The domain of the dataset group. Specify a domain to create a Domain dataset
+     * group. The domain you specify determines the default schemas for datasets and
+     * the use cases available for recommenders. If you don't specify a domain, you
+     * create a Custom dataset group with solution versions that you deploy with a
+     * campaign. </p>
+     */
+    inline void SetDomain(const Domain& value) { m_domainHasBeenSet = true; m_domain = value; }
+
+    /**
+     * <p>The domain of the dataset group. Specify a domain to create a Domain dataset
+     * group. The domain you specify determines the default schemas for datasets and
+     * the use cases available for recommenders. If you don't specify a domain, you
+     * create a Custom dataset group with solution versions that you deploy with a
+     * campaign. </p>
+     */
+    inline void SetDomain(Domain&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
+
+    /**
+     * <p>The domain of the dataset group. Specify a domain to create a Domain dataset
+     * group. The domain you specify determines the default schemas for datasets and
+     * the use cases available for recommenders. If you don't specify a domain, you
+     * create a Custom dataset group with solution versions that you deploy with a
+     * campaign. </p>
+     */
+    inline CreateDatasetGroupRequest& WithDomain(const Domain& value) { SetDomain(value); return *this;}
+
+    /**
+     * <p>The domain of the dataset group. Specify a domain to create a Domain dataset
+     * group. The domain you specify determines the default schemas for datasets and
+     * the use cases available for recommenders. If you don't specify a domain, you
+     * create a Custom dataset group with solution versions that you deploy with a
+     * campaign. </p>
+     */
+    inline CreateDatasetGroupRequest& WithDomain(Domain&& value) { SetDomain(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -190,6 +246,9 @@ namespace Model
 
     Aws::String m_kmsKeyArn;
     bool m_kmsKeyArnHasBeenSet;
+
+    Domain m_domain;
+    bool m_domainHasBeenSet;
   };
 
 } // namespace Model

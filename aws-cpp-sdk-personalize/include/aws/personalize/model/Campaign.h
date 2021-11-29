@@ -27,9 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a deployed solution version, otherwise known as a campaign. For
-   * more information on campaigns, see <a>CreateCampaign</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>An object that describes the deployment of a solution version. For more
+   * information on campaigns, see <a>CreateCampaign</a>.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/Campaign">AWS
    * API Reference</a></p>
    */

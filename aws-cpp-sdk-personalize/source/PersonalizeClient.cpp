@@ -21,6 +21,7 @@
 #include <aws/personalize/PersonalizeEndpoint.h>
 #include <aws/personalize/PersonalizeErrorMarshaller.h>
 #include <aws/personalize/model/CreateBatchInferenceJobRequest.h>
+#include <aws/personalize/model/CreateBatchSegmentJobRequest.h>
 #include <aws/personalize/model/CreateCampaignRequest.h>
 #include <aws/personalize/model/CreateDatasetRequest.h>
 #include <aws/personalize/model/CreateDatasetExportJobRequest.h>
@@ -28,6 +29,7 @@
 #include <aws/personalize/model/CreateDatasetImportJobRequest.h>
 #include <aws/personalize/model/CreateEventTrackerRequest.h>
 #include <aws/personalize/model/CreateFilterRequest.h>
+#include <aws/personalize/model/CreateRecommenderRequest.h>
 #include <aws/personalize/model/CreateSchemaRequest.h>
 #include <aws/personalize/model/CreateSolutionRequest.h>
 #include <aws/personalize/model/CreateSolutionVersionRequest.h>
@@ -36,10 +38,12 @@
 #include <aws/personalize/model/DeleteDatasetGroupRequest.h>
 #include <aws/personalize/model/DeleteEventTrackerRequest.h>
 #include <aws/personalize/model/DeleteFilterRequest.h>
+#include <aws/personalize/model/DeleteRecommenderRequest.h>
 #include <aws/personalize/model/DeleteSchemaRequest.h>
 #include <aws/personalize/model/DeleteSolutionRequest.h>
 #include <aws/personalize/model/DescribeAlgorithmRequest.h>
 #include <aws/personalize/model/DescribeBatchInferenceJobRequest.h>
+#include <aws/personalize/model/DescribeBatchSegmentJobRequest.h>
 #include <aws/personalize/model/DescribeCampaignRequest.h>
 #include <aws/personalize/model/DescribeDatasetRequest.h>
 #include <aws/personalize/model/DescribeDatasetExportJobRequest.h>
@@ -49,11 +53,13 @@
 #include <aws/personalize/model/DescribeFeatureTransformationRequest.h>
 #include <aws/personalize/model/DescribeFilterRequest.h>
 #include <aws/personalize/model/DescribeRecipeRequest.h>
+#include <aws/personalize/model/DescribeRecommenderRequest.h>
 #include <aws/personalize/model/DescribeSchemaRequest.h>
 #include <aws/personalize/model/DescribeSolutionRequest.h>
 #include <aws/personalize/model/DescribeSolutionVersionRequest.h>
 #include <aws/personalize/model/GetSolutionMetricsRequest.h>
 #include <aws/personalize/model/ListBatchInferenceJobsRequest.h>
+#include <aws/personalize/model/ListBatchSegmentJobsRequest.h>
 #include <aws/personalize/model/ListCampaignsRequest.h>
 #include <aws/personalize/model/ListDatasetExportJobsRequest.h>
 #include <aws/personalize/model/ListDatasetGroupsRequest.h>
@@ -62,11 +68,13 @@
 #include <aws/personalize/model/ListEventTrackersRequest.h>
 #include <aws/personalize/model/ListFiltersRequest.h>
 #include <aws/personalize/model/ListRecipesRequest.h>
+#include <aws/personalize/model/ListRecommendersRequest.h>
 #include <aws/personalize/model/ListSchemasRequest.h>
 #include <aws/personalize/model/ListSolutionVersionsRequest.h>
 #include <aws/personalize/model/ListSolutionsRequest.h>
 #include <aws/personalize/model/StopSolutionVersionCreationRequest.h>
 #include <aws/personalize/model/UpdateCampaignRequest.h>
+#include <aws/personalize/model/UpdateRecommenderRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -163,6 +171,30 @@ void PersonalizeClient::CreateBatchInferenceJobAsync(const CreateBatchInferenceJ
 void PersonalizeClient::CreateBatchInferenceJobAsyncHelper(const CreateBatchInferenceJobRequest& request, const CreateBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateBatchInferenceJob(request), context);
+}
+
+CreateBatchSegmentJobOutcome PersonalizeClient::CreateBatchSegmentJob(const CreateBatchSegmentJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateBatchSegmentJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateBatchSegmentJobOutcomeCallable PersonalizeClient::CreateBatchSegmentJobCallable(const CreateBatchSegmentJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateBatchSegmentJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBatchSegmentJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeClient::CreateBatchSegmentJobAsync(const CreateBatchSegmentJobRequest& request, const CreateBatchSegmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateBatchSegmentJobAsyncHelper( request, handler, context ); } );
+}
+
+void PersonalizeClient::CreateBatchSegmentJobAsyncHelper(const CreateBatchSegmentJobRequest& request, const CreateBatchSegmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateBatchSegmentJob(request), context);
 }
 
 CreateCampaignOutcome PersonalizeClient::CreateCampaign(const CreateCampaignRequest& request) const
@@ -331,6 +363,30 @@ void PersonalizeClient::CreateFilterAsync(const CreateFilterRequest& request, co
 void PersonalizeClient::CreateFilterAsyncHelper(const CreateFilterRequest& request, const CreateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateFilter(request), context);
+}
+
+CreateRecommenderOutcome PersonalizeClient::CreateRecommender(const CreateRecommenderRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateRecommenderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateRecommenderOutcomeCallable PersonalizeClient::CreateRecommenderCallable(const CreateRecommenderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateRecommenderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRecommender(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeClient::CreateRecommenderAsync(const CreateRecommenderRequest& request, const CreateRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateRecommenderAsyncHelper( request, handler, context ); } );
+}
+
+void PersonalizeClient::CreateRecommenderAsyncHelper(const CreateRecommenderRequest& request, const CreateRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateRecommender(request), context);
 }
 
 CreateSchemaOutcome PersonalizeClient::CreateSchema(const CreateSchemaRequest& request) const
@@ -525,6 +581,30 @@ void PersonalizeClient::DeleteFilterAsyncHelper(const DeleteFilterRequest& reque
   handler(this, request, DeleteFilter(request), context);
 }
 
+DeleteRecommenderOutcome PersonalizeClient::DeleteRecommender(const DeleteRecommenderRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteRecommenderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteRecommenderOutcomeCallable PersonalizeClient::DeleteRecommenderCallable(const DeleteRecommenderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRecommenderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRecommender(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeClient::DeleteRecommenderAsync(const DeleteRecommenderRequest& request, const DeleteRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteRecommenderAsyncHelper( request, handler, context ); } );
+}
+
+void PersonalizeClient::DeleteRecommenderAsyncHelper(const DeleteRecommenderRequest& request, const DeleteRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteRecommender(request), context);
+}
+
 DeleteSchemaOutcome PersonalizeClient::DeleteSchema(const DeleteSchemaRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -619,6 +699,30 @@ void PersonalizeClient::DescribeBatchInferenceJobAsync(const DescribeBatchInfere
 void PersonalizeClient::DescribeBatchInferenceJobAsyncHelper(const DescribeBatchInferenceJobRequest& request, const DescribeBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeBatchInferenceJob(request), context);
+}
+
+DescribeBatchSegmentJobOutcome PersonalizeClient::DescribeBatchSegmentJob(const DescribeBatchSegmentJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeBatchSegmentJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeBatchSegmentJobOutcomeCallable PersonalizeClient::DescribeBatchSegmentJobCallable(const DescribeBatchSegmentJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeBatchSegmentJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBatchSegmentJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeClient::DescribeBatchSegmentJobAsync(const DescribeBatchSegmentJobRequest& request, const DescribeBatchSegmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeBatchSegmentJobAsyncHelper( request, handler, context ); } );
+}
+
+void PersonalizeClient::DescribeBatchSegmentJobAsyncHelper(const DescribeBatchSegmentJobRequest& request, const DescribeBatchSegmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeBatchSegmentJob(request), context);
 }
 
 DescribeCampaignOutcome PersonalizeClient::DescribeCampaign(const DescribeCampaignRequest& request) const
@@ -837,6 +941,30 @@ void PersonalizeClient::DescribeRecipeAsyncHelper(const DescribeRecipeRequest& r
   handler(this, request, DescribeRecipe(request), context);
 }
 
+DescribeRecommenderOutcome PersonalizeClient::DescribeRecommender(const DescribeRecommenderRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeRecommenderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeRecommenderOutcomeCallable PersonalizeClient::DescribeRecommenderCallable(const DescribeRecommenderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeRecommenderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRecommender(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeClient::DescribeRecommenderAsync(const DescribeRecommenderRequest& request, const DescribeRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeRecommenderAsyncHelper( request, handler, context ); } );
+}
+
+void PersonalizeClient::DescribeRecommenderAsyncHelper(const DescribeRecommenderRequest& request, const DescribeRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeRecommender(request), context);
+}
+
 DescribeSchemaOutcome PersonalizeClient::DescribeSchema(const DescribeSchemaRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -955,6 +1083,30 @@ void PersonalizeClient::ListBatchInferenceJobsAsync(const ListBatchInferenceJobs
 void PersonalizeClient::ListBatchInferenceJobsAsyncHelper(const ListBatchInferenceJobsRequest& request, const ListBatchInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListBatchInferenceJobs(request), context);
+}
+
+ListBatchSegmentJobsOutcome PersonalizeClient::ListBatchSegmentJobs(const ListBatchSegmentJobsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListBatchSegmentJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListBatchSegmentJobsOutcomeCallable PersonalizeClient::ListBatchSegmentJobsCallable(const ListBatchSegmentJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListBatchSegmentJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBatchSegmentJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeClient::ListBatchSegmentJobsAsync(const ListBatchSegmentJobsRequest& request, const ListBatchSegmentJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListBatchSegmentJobsAsyncHelper( request, handler, context ); } );
+}
+
+void PersonalizeClient::ListBatchSegmentJobsAsyncHelper(const ListBatchSegmentJobsRequest& request, const ListBatchSegmentJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListBatchSegmentJobs(request), context);
 }
 
 ListCampaignsOutcome PersonalizeClient::ListCampaigns(const ListCampaignsRequest& request) const
@@ -1149,6 +1301,30 @@ void PersonalizeClient::ListRecipesAsyncHelper(const ListRecipesRequest& request
   handler(this, request, ListRecipes(request), context);
 }
 
+ListRecommendersOutcome PersonalizeClient::ListRecommenders(const ListRecommendersRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListRecommendersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListRecommendersOutcomeCallable PersonalizeClient::ListRecommendersCallable(const ListRecommendersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListRecommendersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRecommenders(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeClient::ListRecommendersAsync(const ListRecommendersRequest& request, const ListRecommendersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListRecommendersAsyncHelper( request, handler, context ); } );
+}
+
+void PersonalizeClient::ListRecommendersAsyncHelper(const ListRecommendersRequest& request, const ListRecommendersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListRecommenders(request), context);
+}
+
 ListSchemasOutcome PersonalizeClient::ListSchemas(const ListSchemasRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1267,5 +1443,29 @@ void PersonalizeClient::UpdateCampaignAsync(const UpdateCampaignRequest& request
 void PersonalizeClient::UpdateCampaignAsyncHelper(const UpdateCampaignRequest& request, const UpdateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateCampaign(request), context);
+}
+
+UpdateRecommenderOutcome PersonalizeClient::UpdateRecommender(const UpdateRecommenderRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateRecommenderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateRecommenderOutcomeCallable PersonalizeClient::UpdateRecommenderCallable(const UpdateRecommenderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRecommenderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRecommender(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeClient::UpdateRecommenderAsync(const UpdateRecommenderRequest& request, const UpdateRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateRecommenderAsyncHelper( request, handler, context ); } );
+}
+
+void PersonalizeClient::UpdateRecommenderAsyncHelper(const UpdateRecommenderRequest& request, const UpdateRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateRecommender(request), context);
 }
 

@@ -7,6 +7,7 @@
 #include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/personalize/model/Domain.h>
 #include <utility>
 
 namespace Aws
@@ -223,6 +224,43 @@ namespace Model
      */
     inline RecipeSummary& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The domain of the recipe (if the recipe is a Domain dataset group use
+     * case).</p>
+     */
+    inline const Domain& GetDomain() const{ return m_domain; }
+
+    /**
+     * <p>The domain of the recipe (if the recipe is a Domain dataset group use
+     * case).</p>
+     */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>The domain of the recipe (if the recipe is a Domain dataset group use
+     * case).</p>
+     */
+    inline void SetDomain(const Domain& value) { m_domainHasBeenSet = true; m_domain = value; }
+
+    /**
+     * <p>The domain of the recipe (if the recipe is a Domain dataset group use
+     * case).</p>
+     */
+    inline void SetDomain(Domain&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
+
+    /**
+     * <p>The domain of the recipe (if the recipe is a Domain dataset group use
+     * case).</p>
+     */
+    inline RecipeSummary& WithDomain(const Domain& value) { SetDomain(value); return *this;}
+
+    /**
+     * <p>The domain of the recipe (if the recipe is a Domain dataset group use
+     * case).</p>
+     */
+    inline RecipeSummary& WithDomain(Domain&& value) { SetDomain(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -239,6 +277,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
     bool m_lastUpdatedDateTimeHasBeenSet;
+
+    Domain m_domain;
+    bool m_domainHasBeenSet;
   };
 
 } // namespace Model

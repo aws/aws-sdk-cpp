@@ -15,7 +15,9 @@ using namespace Aws::Utils;
 CreateDatasetGroupRequest::CreateDatasetGroupRequest() : 
     m_nameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
+    m_kmsKeyArnHasBeenSet(false),
+    m_domain(Domain::NOT_SET),
+    m_domainHasBeenSet(false)
 {
 }
 
@@ -39,6 +41,11 @@ Aws::String CreateDatasetGroupRequest::SerializePayload() const
   {
    payload.WithString("kmsKeyArn", m_kmsKeyArn);
 
+  }
+
+  if(m_domainHasBeenSet)
+  {
+   payload.WithString("domain", DomainMapper::GetNameForDomain(m_domain));
   }
 
   return payload.View().WriteReadable();

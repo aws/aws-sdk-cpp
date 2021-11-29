@@ -17,7 +17,9 @@ ListRecipesRequest::ListRecipesRequest() :
     m_recipeProviderHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_domain(Domain::NOT_SET),
+    m_domainHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,11 @@ Aws::String ListRecipesRequest::SerializePayload() const
   {
    payload.WithInteger("maxResults", m_maxResults);
 
+  }
+
+  if(m_domainHasBeenSet)
+  {
+   payload.WithString("domain", DomainMapper::GetNameForDomain(m_domain));
   }
 
   return payload.View().WriteReadable();

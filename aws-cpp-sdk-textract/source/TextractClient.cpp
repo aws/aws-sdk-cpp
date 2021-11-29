@@ -22,6 +22,7 @@
 #include <aws/textract/TextractErrorMarshaller.h>
 #include <aws/textract/model/AnalyzeDocumentRequest.h>
 #include <aws/textract/model/AnalyzeExpenseRequest.h>
+#include <aws/textract/model/AnalyzeIDRequest.h>
 #include <aws/textract/model/DetectDocumentTextRequest.h>
 #include <aws/textract/model/GetDocumentAnalysisRequest.h>
 #include <aws/textract/model/GetDocumentTextDetectionRequest.h>
@@ -149,6 +150,30 @@ void TextractClient::AnalyzeExpenseAsync(const AnalyzeExpenseRequest& request, c
 void TextractClient::AnalyzeExpenseAsyncHelper(const AnalyzeExpenseRequest& request, const AnalyzeExpenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AnalyzeExpense(request), context);
+}
+
+AnalyzeIDOutcome TextractClient::AnalyzeID(const AnalyzeIDRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return AnalyzeIDOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AnalyzeIDOutcomeCallable TextractClient::AnalyzeIDCallable(const AnalyzeIDRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AnalyzeIDOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AnalyzeID(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TextractClient::AnalyzeIDAsync(const AnalyzeIDRequest& request, const AnalyzeIDResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AnalyzeIDAsyncHelper( request, handler, context ); } );
+}
+
+void TextractClient::AnalyzeIDAsyncHelper(const AnalyzeIDRequest& request, const AnalyzeIDResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AnalyzeID(request), context);
 }
 
 DetectDocumentTextOutcome TextractClient::DetectDocumentText(const DetectDocumentTextRequest& request) const

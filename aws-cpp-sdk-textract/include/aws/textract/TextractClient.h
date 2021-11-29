@@ -13,6 +13,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/textract/model/AnalyzeDocumentResult.h>
 #include <aws/textract/model/AnalyzeExpenseResult.h>
+#include <aws/textract/model/AnalyzeIDResult.h>
 #include <aws/textract/model/DetectDocumentTextResult.h>
 #include <aws/textract/model/GetDocumentAnalysisResult.h>
 #include <aws/textract/model/GetDocumentTextDetectionResult.h>
@@ -61,6 +62,7 @@ namespace Model
 {
         class AnalyzeDocumentRequest;
         class AnalyzeExpenseRequest;
+        class AnalyzeIDRequest;
         class DetectDocumentTextRequest;
         class GetDocumentAnalysisRequest;
         class GetDocumentTextDetectionRequest;
@@ -71,6 +73,7 @@ namespace Model
 
         typedef Aws::Utils::Outcome<AnalyzeDocumentResult, TextractError> AnalyzeDocumentOutcome;
         typedef Aws::Utils::Outcome<AnalyzeExpenseResult, TextractError> AnalyzeExpenseOutcome;
+        typedef Aws::Utils::Outcome<AnalyzeIDResult, TextractError> AnalyzeIDOutcome;
         typedef Aws::Utils::Outcome<DetectDocumentTextResult, TextractError> DetectDocumentTextOutcome;
         typedef Aws::Utils::Outcome<GetDocumentAnalysisResult, TextractError> GetDocumentAnalysisOutcome;
         typedef Aws::Utils::Outcome<GetDocumentTextDetectionResult, TextractError> GetDocumentTextDetectionOutcome;
@@ -81,6 +84,7 @@ namespace Model
 
         typedef std::future<AnalyzeDocumentOutcome> AnalyzeDocumentOutcomeCallable;
         typedef std::future<AnalyzeExpenseOutcome> AnalyzeExpenseOutcomeCallable;
+        typedef std::future<AnalyzeIDOutcome> AnalyzeIDOutcomeCallable;
         typedef std::future<DetectDocumentTextOutcome> DetectDocumentTextOutcomeCallable;
         typedef std::future<GetDocumentAnalysisOutcome> GetDocumentAnalysisOutcomeCallable;
         typedef std::future<GetDocumentTextDetectionOutcome> GetDocumentTextDetectionOutcomeCallable;
@@ -94,6 +98,7 @@ namespace Model
 
     typedef std::function<void(const TextractClient*, const Model::AnalyzeDocumentRequest&, const Model::AnalyzeDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AnalyzeDocumentResponseReceivedHandler;
     typedef std::function<void(const TextractClient*, const Model::AnalyzeExpenseRequest&, const Model::AnalyzeExpenseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AnalyzeExpenseResponseReceivedHandler;
+    typedef std::function<void(const TextractClient*, const Model::AnalyzeIDRequest&, const Model::AnalyzeIDOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AnalyzeIDResponseReceivedHandler;
     typedef std::function<void(const TextractClient*, const Model::DetectDocumentTextRequest&, const Model::DetectDocumentTextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectDocumentTextResponseReceivedHandler;
     typedef std::function<void(const TextractClient*, const Model::GetDocumentAnalysisRequest&, const Model::GetDocumentAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDocumentAnalysisResponseReceivedHandler;
     typedef std::function<void(const TextractClient*, const Model::GetDocumentTextDetectionRequest&, const Model::GetDocumentTextDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDocumentTextDetectionResponseReceivedHandler;
@@ -226,28 +231,28 @@ namespace Model
         virtual void AnalyzeDocumentAsync(const Model::AnalyzeDocumentRequest& request, const AnalyzeDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Analyzes an input document for financially related relationships between
-         * text.</p> <p>Information is returned as <code>ExpenseDocuments</code> and
-         * seperated as follows.</p> <ul> <li> <p> <code>LineItemGroups</code>- A data set
-         * containing <code>LineItems</code> which store information about the lines of
-         * text, such as an item purchased and its price on a receipt.</p> </li> <li> <p>
-         * <code>SummaryFields</code>- Contains all other information a receipt, such as
-         * header information or the vendors name.</p> </li> </ul><p><h3>See Also:</h3>  
-         * <a
+         * <p> <code>AnalyzeExpense</code> synchronously analyzes an input document for
+         * financially related relationships between text.</p> <p>Information is returned
+         * as <code>ExpenseDocuments</code> and seperated as follows.</p> <ul> <li> <p>
+         * <code>LineItemGroups</code>- A data set containing <code>LineItems</code> which
+         * store information about the lines of text, such as an item purchased and its
+         * price on a receipt.</p> </li> <li> <p> <code>SummaryFields</code>- Contains all
+         * other information a receipt, such as header information or the vendors name.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeExpense">AWS
          * API Reference</a></p>
          */
         virtual Model::AnalyzeExpenseOutcome AnalyzeExpense(const Model::AnalyzeExpenseRequest& request) const;
 
         /**
-         * <p>Analyzes an input document for financially related relationships between
-         * text.</p> <p>Information is returned as <code>ExpenseDocuments</code> and
-         * seperated as follows.</p> <ul> <li> <p> <code>LineItemGroups</code>- A data set
-         * containing <code>LineItems</code> which store information about the lines of
-         * text, such as an item purchased and its price on a receipt.</p> </li> <li> <p>
-         * <code>SummaryFields</code>- Contains all other information a receipt, such as
-         * header information or the vendors name.</p> </li> </ul><p><h3>See Also:</h3>  
-         * <a
+         * <p> <code>AnalyzeExpense</code> synchronously analyzes an input document for
+         * financially related relationships between text.</p> <p>Information is returned
+         * as <code>ExpenseDocuments</code> and seperated as follows.</p> <ul> <li> <p>
+         * <code>LineItemGroups</code>- A data set containing <code>LineItems</code> which
+         * store information about the lines of text, such as an item purchased and its
+         * price on a receipt.</p> </li> <li> <p> <code>SummaryFields</code>- Contains all
+         * other information a receipt, such as header information or the vendors name.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeExpense">AWS
          * API Reference</a></p>
          *
@@ -256,20 +261,54 @@ namespace Model
         virtual Model::AnalyzeExpenseOutcomeCallable AnalyzeExpenseCallable(const Model::AnalyzeExpenseRequest& request) const;
 
         /**
-         * <p>Analyzes an input document for financially related relationships between
-         * text.</p> <p>Information is returned as <code>ExpenseDocuments</code> and
-         * seperated as follows.</p> <ul> <li> <p> <code>LineItemGroups</code>- A data set
-         * containing <code>LineItems</code> which store information about the lines of
-         * text, such as an item purchased and its price on a receipt.</p> </li> <li> <p>
-         * <code>SummaryFields</code>- Contains all other information a receipt, such as
-         * header information or the vendors name.</p> </li> </ul><p><h3>See Also:</h3>  
-         * <a
+         * <p> <code>AnalyzeExpense</code> synchronously analyzes an input document for
+         * financially related relationships between text.</p> <p>Information is returned
+         * as <code>ExpenseDocuments</code> and seperated as follows.</p> <ul> <li> <p>
+         * <code>LineItemGroups</code>- A data set containing <code>LineItems</code> which
+         * store information about the lines of text, such as an item purchased and its
+         * price on a receipt.</p> </li> <li> <p> <code>SummaryFields</code>- Contains all
+         * other information a receipt, such as header information or the vendors name.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeExpense">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AnalyzeExpenseAsync(const Model::AnalyzeExpenseRequest& request, const AnalyzeExpenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Analyzes identity documents for relevant information. This information is
+         * extracted and returned as <code>IdentityDocumentFields</code>, which records
+         * both the normalized field and value of the extracted text.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeID">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AnalyzeIDOutcome AnalyzeID(const Model::AnalyzeIDRequest& request) const;
+
+        /**
+         * <p>Analyzes identity documents for relevant information. This information is
+         * extracted and returned as <code>IdentityDocumentFields</code>, which records
+         * both the normalized field and value of the extracted text.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeID">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AnalyzeIDOutcomeCallable AnalyzeIDCallable(const Model::AnalyzeIDRequest& request) const;
+
+        /**
+         * <p>Analyzes identity documents for relevant information. This information is
+         * extracted and returned as <code>IdentityDocumentFields</code>, which records
+         * both the normalized field and value of the extracted text.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeID">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AnalyzeIDAsync(const Model::AnalyzeIDRequest& request, const AnalyzeIDResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detects text in the input document. Amazon Textract can detect lines of text
@@ -887,6 +926,7 @@ namespace Model
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AnalyzeDocumentAsyncHelper(const Model::AnalyzeDocumentRequest& request, const AnalyzeDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AnalyzeExpenseAsyncHelper(const Model::AnalyzeExpenseRequest& request, const AnalyzeExpenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AnalyzeIDAsyncHelper(const Model::AnalyzeIDRequest& request, const AnalyzeIDResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetectDocumentTextAsyncHelper(const Model::DetectDocumentTextRequest& request, const DetectDocumentTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDocumentAnalysisAsyncHelper(const Model::GetDocumentAnalysisRequest& request, const GetDocumentAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDocumentTextDetectionAsyncHelper(const Model::GetDocumentTextDetectionRequest& request, const GetDocumentTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
