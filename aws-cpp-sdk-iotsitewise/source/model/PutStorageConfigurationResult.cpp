@@ -50,6 +50,12 @@ PutStorageConfigurationResult& PutStorageConfigurationResult::operator =(const A
 
   }
 
+  if(jsonValue.ValueExists("retentionPeriod"))
+  {
+    m_retentionPeriod = jsonValue.GetObject("retentionPeriod");
+
+  }
+
   if(jsonValue.ValueExists("configurationStatus"))
   {
     m_configurationStatus = jsonValue.GetObject("configurationStatus");

@@ -173,8 +173,8 @@ namespace Model
     /**
      * <p>The type of notification.</p> <ul> <li> <p> <code>Command</code>: Receive
      * notification when the status of a command changes.</p> </li> <li> <p>
-     * <code>Invocation</code>: For commands sent to multiple instances, receive
-     * notification on a per-instance basis when the status of a command changes. </p>
+     * <code>Invocation</code>: For commands sent to multiple managed nodes, receive
+     * notification on a per-node basis when the status of a command changes. </p>
      * </li> </ul>
      */
     inline const NotificationType& GetNotificationType() const{ return m_notificationType; }
@@ -182,8 +182,8 @@ namespace Model
     /**
      * <p>The type of notification.</p> <ul> <li> <p> <code>Command</code>: Receive
      * notification when the status of a command changes.</p> </li> <li> <p>
-     * <code>Invocation</code>: For commands sent to multiple instances, receive
-     * notification on a per-instance basis when the status of a command changes. </p>
+     * <code>Invocation</code>: For commands sent to multiple managed nodes, receive
+     * notification on a per-node basis when the status of a command changes. </p>
      * </li> </ul>
      */
     inline bool NotificationTypeHasBeenSet() const { return m_notificationTypeHasBeenSet; }
@@ -191,8 +191,8 @@ namespace Model
     /**
      * <p>The type of notification.</p> <ul> <li> <p> <code>Command</code>: Receive
      * notification when the status of a command changes.</p> </li> <li> <p>
-     * <code>Invocation</code>: For commands sent to multiple instances, receive
-     * notification on a per-instance basis when the status of a command changes. </p>
+     * <code>Invocation</code>: For commands sent to multiple managed nodes, receive
+     * notification on a per-node basis when the status of a command changes. </p>
      * </li> </ul>
      */
     inline void SetNotificationType(const NotificationType& value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
@@ -200,8 +200,8 @@ namespace Model
     /**
      * <p>The type of notification.</p> <ul> <li> <p> <code>Command</code>: Receive
      * notification when the status of a command changes.</p> </li> <li> <p>
-     * <code>Invocation</code>: For commands sent to multiple instances, receive
-     * notification on a per-instance basis when the status of a command changes. </p>
+     * <code>Invocation</code>: For commands sent to multiple managed nodes, receive
+     * notification on a per-node basis when the status of a command changes. </p>
      * </li> </ul>
      */
     inline void SetNotificationType(NotificationType&& value) { m_notificationTypeHasBeenSet = true; m_notificationType = std::move(value); }
@@ -209,8 +209,8 @@ namespace Model
     /**
      * <p>The type of notification.</p> <ul> <li> <p> <code>Command</code>: Receive
      * notification when the status of a command changes.</p> </li> <li> <p>
-     * <code>Invocation</code>: For commands sent to multiple instances, receive
-     * notification on a per-instance basis when the status of a command changes. </p>
+     * <code>Invocation</code>: For commands sent to multiple managed nodes, receive
+     * notification on a per-node basis when the status of a command changes. </p>
      * </li> </ul>
      */
     inline NotificationConfig& WithNotificationType(const NotificationType& value) { SetNotificationType(value); return *this;}
@@ -218,8 +218,8 @@ namespace Model
     /**
      * <p>The type of notification.</p> <ul> <li> <p> <code>Command</code>: Receive
      * notification when the status of a command changes.</p> </li> <li> <p>
-     * <code>Invocation</code>: For commands sent to multiple instances, receive
-     * notification on a per-instance basis when the status of a command changes. </p>
+     * <code>Invocation</code>: For commands sent to multiple managed nodes, receive
+     * notification on a per-node basis when the status of a command changes. </p>
      * </li> </ul>
      */
     inline NotificationConfig& WithNotificationType(NotificationType&& value) { SetNotificationType(std::move(value)); return *this;}

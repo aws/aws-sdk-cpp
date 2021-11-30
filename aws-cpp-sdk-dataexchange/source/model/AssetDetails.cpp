@@ -20,13 +20,15 @@ namespace Model
 
 AssetDetails::AssetDetails() : 
     m_s3SnapshotAssetHasBeenSet(false),
-    m_redshiftDataShareAssetHasBeenSet(false)
+    m_redshiftDataShareAssetHasBeenSet(false),
+    m_apiGatewayApiAssetHasBeenSet(false)
 {
 }
 
 AssetDetails::AssetDetails(JsonView jsonValue) : 
     m_s3SnapshotAssetHasBeenSet(false),
-    m_redshiftDataShareAssetHasBeenSet(false)
+    m_redshiftDataShareAssetHasBeenSet(false),
+    m_apiGatewayApiAssetHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ AssetDetails& AssetDetails::operator =(JsonView jsonValue)
     m_redshiftDataShareAssetHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ApiGatewayApiAsset"))
+  {
+    m_apiGatewayApiAsset = jsonValue.GetObject("ApiGatewayApiAsset");
+
+    m_apiGatewayApiAssetHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue AssetDetails::Jsonize() const
   if(m_redshiftDataShareAssetHasBeenSet)
   {
    payload.WithObject("RedshiftDataShareAsset", m_redshiftDataShareAsset.Jsonize());
+
+  }
+
+  if(m_apiGatewayApiAssetHasBeenSet)
+  {
+   payload.WithObject("ApiGatewayApiAsset", m_apiGatewayApiAsset.Jsonize());
 
   }
 

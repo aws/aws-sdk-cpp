@@ -738,13 +738,17 @@ namespace Model
    * applying operating system (OS) patches, automating the creation of Amazon
    * Machine Images (AMIs), and configuring operating systems (OSs) and applications
    * at scale. Systems Manager lets you remotely and securely manage the
-   * configuration of your managed instances. A <i>managed instance</i> is any Amazon
-   * Elastic Compute Cloud instance (EC2 instance), or any on-premises server or
-   * virtual machine (VM) in your hybrid environment that has been configured for
-   * Systems Manager.</p> <p>This reference is intended to be used with the <a
+   * configuration of your managed nodes. A <i>managed node</i> is any Amazon Elastic
+   * Compute Cloud (Amazon EC2) instance, edge device, or on-premises server or
+   * virtual machine (VM) that has been configured for Systems Manager. </p> 
+   * <p>With support for IoT Greengrass Version 2 devices, the phrase <i>managed
+   * instance</i> has been changed to <i>managed node</i> in most of the Systems
+   * Manager documentation. The Systems Manager console, API calls, error messages,
+   * and SSM documents still use the term instance.</p>  <p>This reference is
+   * intended to be used with the <a
    * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/">Amazon Web
    * Services Systems Manager User Guide</a>.</p> <p>To get started, verify
-   * prerequisites and configure managed instances. For more information, see <a
+   * prerequisites and configure managed nodes. For more information, see <a
    * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting
    * up Amazon Web Services Systems Manager</a> in the <i>Amazon Web Services Systems
    * Manager User Guide</i>.</p> <p class="title"> <b>Related resources</b> </p> <ul>
@@ -794,14 +798,14 @@ namespace Model
 
         /**
          * <p>Adds or overwrites one or more tags for the specified resource. Tags are
-         * metadata that you can assign to your documents, managed instances, maintenance
+         * metadata that you can assign to your documents, managed nodes, maintenance
          * windows, Parameter Store parameters, and patch baselines. Tags enable you to
          * categorize your resources in different ways, for example, by purpose, owner, or
          * environment. Each tag consists of a key and an optional value, both of which you
          * define. For example, you could define a set of tags for your account's managed
-         * instances that helps you track each instance's owner and stack level. For
-         * example:</p> <ul> <li> <p> <code>Key=Owner,Value=DbAdmin</code> </p> </li> <li>
-         * <p> <code>Key=Owner,Value=SysAdmin</code> </p> </li> <li> <p>
+         * nodes that helps you track each node's owner and stack level. For example:</p>
+         * <ul> <li> <p> <code>Key=Owner,Value=DbAdmin</code> </p> </li> <li> <p>
+         * <code>Key=Owner,Value=SysAdmin</code> </p> </li> <li> <p>
          * <code>Key=Owner,Value=Dev</code> </p> </li> <li> <p>
          * <code>Key=Stack,Value=Production</code> </p> </li> <li> <p>
          * <code>Key=Stack,Value=Pre-Production</code> </p> </li> <li> <p>
@@ -823,14 +827,14 @@ namespace Model
 
         /**
          * <p>Adds or overwrites one or more tags for the specified resource. Tags are
-         * metadata that you can assign to your documents, managed instances, maintenance
+         * metadata that you can assign to your documents, managed nodes, maintenance
          * windows, Parameter Store parameters, and patch baselines. Tags enable you to
          * categorize your resources in different ways, for example, by purpose, owner, or
          * environment. Each tag consists of a key and an optional value, both of which you
          * define. For example, you could define a set of tags for your account's managed
-         * instances that helps you track each instance's owner and stack level. For
-         * example:</p> <ul> <li> <p> <code>Key=Owner,Value=DbAdmin</code> </p> </li> <li>
-         * <p> <code>Key=Owner,Value=SysAdmin</code> </p> </li> <li> <p>
+         * nodes that helps you track each node's owner and stack level. For example:</p>
+         * <ul> <li> <p> <code>Key=Owner,Value=DbAdmin</code> </p> </li> <li> <p>
+         * <code>Key=Owner,Value=SysAdmin</code> </p> </li> <li> <p>
          * <code>Key=Owner,Value=Dev</code> </p> </li> <li> <p>
          * <code>Key=Stack,Value=Production</code> </p> </li> <li> <p>
          * <code>Key=Stack,Value=Pre-Production</code> </p> </li> <li> <p>
@@ -854,14 +858,14 @@ namespace Model
 
         /**
          * <p>Adds or overwrites one or more tags for the specified resource. Tags are
-         * metadata that you can assign to your documents, managed instances, maintenance
+         * metadata that you can assign to your documents, managed nodes, maintenance
          * windows, Parameter Store parameters, and patch baselines. Tags enable you to
          * categorize your resources in different ways, for example, by purpose, owner, or
          * environment. Each tag consists of a key and an optional value, both of which you
          * define. For example, you could define a set of tags for your account's managed
-         * instances that helps you track each instance's owner and stack level. For
-         * example:</p> <ul> <li> <p> <code>Key=Owner,Value=DbAdmin</code> </p> </li> <li>
-         * <p> <code>Key=Owner,Value=SysAdmin</code> </p> </li> <li> <p>
+         * nodes that helps you track each node's owner and stack level. For example:</p>
+         * <ul> <li> <p> <code>Key=Owner,Value=DbAdmin</code> </p> </li> <li> <p>
+         * <code>Key=Owner,Value=SysAdmin</code> </p> </li> <li> <p>
          * <code>Key=Owner,Value=Dev</code> </p> </li> <li> <p>
          * <code>Key=Stack,Value=Production</code> </p> </li> <li> <p>
          * <code>Key=Stack,Value=Pre-Production</code> </p> </li> <li> <p>
@@ -981,19 +985,18 @@ namespace Model
 
         /**
          * <p>Generates an activation code and activation ID you can use to register your
-         * on-premises server or virtual machine (VM) with Amazon Web Services Systems
-         * Manager. Registering these machines with Systems Manager makes it possible to
-         * manage them using Systems Manager capabilities. You use the activation code and
-         * ID when installing SSM Agent on machines in your hybrid environment. For more
-         * information about requirements for managing on-premises instances and VMs using
-         * Systems Manager, see <a
+         * on-premises servers, edge devices, or virtual machine (VM) with Amazon Web
+         * Services Systems Manager. Registering these machines with Systems Manager makes
+         * it possible to manage them using Systems Manager capabilities. You use the
+         * activation code and ID when installing SSM Agent on machines in your hybrid
+         * environment. For more information about requirements for managing on-premises
+         * machines using Systems Manager, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
          * up Amazon Web Services Systems Manager for hybrid environments</a> in the
-         * <i>Amazon Web Services Systems Manager User Guide</i>. </p> 
-         * <p>On-premises servers or VMs that are registered with Systems Manager and
-         * Amazon Elastic Compute Cloud (Amazon EC2) instances that you manage with Systems
-         * Manager are all called <i>managed instances</i>.</p> <p><h3>See
-         * Also:</h3>   <a
+         * <i>Amazon Web Services Systems Manager User Guide</i>. </p>  <p>Amazon
+         * Elastic Compute Cloud (Amazon EC2) instances, edge devices, and on-premises
+         * servers and VMs that are configured for Systems Manager are all called
+         * <i>managed nodes</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">AWS
          * API Reference</a></p>
          */
@@ -1001,19 +1004,18 @@ namespace Model
 
         /**
          * <p>Generates an activation code and activation ID you can use to register your
-         * on-premises server or virtual machine (VM) with Amazon Web Services Systems
-         * Manager. Registering these machines with Systems Manager makes it possible to
-         * manage them using Systems Manager capabilities. You use the activation code and
-         * ID when installing SSM Agent on machines in your hybrid environment. For more
-         * information about requirements for managing on-premises instances and VMs using
-         * Systems Manager, see <a
+         * on-premises servers, edge devices, or virtual machine (VM) with Amazon Web
+         * Services Systems Manager. Registering these machines with Systems Manager makes
+         * it possible to manage them using Systems Manager capabilities. You use the
+         * activation code and ID when installing SSM Agent on machines in your hybrid
+         * environment. For more information about requirements for managing on-premises
+         * machines using Systems Manager, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
          * up Amazon Web Services Systems Manager for hybrid environments</a> in the
-         * <i>Amazon Web Services Systems Manager User Guide</i>. </p> 
-         * <p>On-premises servers or VMs that are registered with Systems Manager and
-         * Amazon Elastic Compute Cloud (Amazon EC2) instances that you manage with Systems
-         * Manager are all called <i>managed instances</i>.</p> <p><h3>See
-         * Also:</h3>   <a
+         * <i>Amazon Web Services Systems Manager User Guide</i>. </p>  <p>Amazon
+         * Elastic Compute Cloud (Amazon EC2) instances, edge devices, and on-premises
+         * servers and VMs that are configured for Systems Manager are all called
+         * <i>managed nodes</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">AWS
          * API Reference</a></p>
          *
@@ -1023,19 +1025,18 @@ namespace Model
 
         /**
          * <p>Generates an activation code and activation ID you can use to register your
-         * on-premises server or virtual machine (VM) with Amazon Web Services Systems
-         * Manager. Registering these machines with Systems Manager makes it possible to
-         * manage them using Systems Manager capabilities. You use the activation code and
-         * ID when installing SSM Agent on machines in your hybrid environment. For more
-         * information about requirements for managing on-premises instances and VMs using
-         * Systems Manager, see <a
+         * on-premises servers, edge devices, or virtual machine (VM) with Amazon Web
+         * Services Systems Manager. Registering these machines with Systems Manager makes
+         * it possible to manage them using Systems Manager capabilities. You use the
+         * activation code and ID when installing SSM Agent on machines in your hybrid
+         * environment. For more information about requirements for managing on-premises
+         * machines using Systems Manager, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
          * up Amazon Web Services Systems Manager for hybrid environments</a> in the
-         * <i>Amazon Web Services Systems Manager User Guide</i>. </p> 
-         * <p>On-premises servers or VMs that are registered with Systems Manager and
-         * Amazon Elastic Compute Cloud (Amazon EC2) instances that you manage with Systems
-         * Manager are all called <i>managed instances</i>.</p> <p><h3>See
-         * Also:</h3>   <a
+         * <i>Amazon Web Services Systems Manager User Guide</i>. </p>  <p>Amazon
+         * Elastic Compute Cloud (Amazon EC2) instances, edge devices, and on-premises
+         * servers and VMs that are configured for Systems Manager are all called
+         * <i>managed nodes</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">AWS
          * API Reference</a></p>
          *
@@ -1045,18 +1046,18 @@ namespace Model
 
         /**
          * <p>A State Manager association defines the state that you want to maintain on
-         * your instances. For example, an association can specify that anti-virus software
-         * must be installed and running on your instances, or that certain ports must be
-         * closed. For static targets, the association specifies a schedule for when the
-         * configuration is reapplied. For dynamic targets, such as an Amazon Web Services
-         * resource group or an Amazon Web Services autoscaling group, State Manager, a
-         * capability of Amazon Web Services Systems Manager applies the configuration when
-         * new instances are added to the group. The association also specifies actions to
-         * take when applying the configuration. For example, an association for anti-virus
-         * software might run once a day. If the software isn't installed, then State
-         * Manager installs it. If the software is installed, but the service isn't
-         * running, then the association might instruct State Manager to start the service.
-         * </p><p><h3>See Also:</h3>   <a
+         * your managed nodes. For example, an association can specify that anti-virus
+         * software must be installed and running on your managed nodes, or that certain
+         * ports must be closed. For static targets, the association specifies a schedule
+         * for when the configuration is reapplied. For dynamic targets, such as an Amazon
+         * Web Services resource group or an Amazon Web Services autoscaling group, State
+         * Manager, a capability of Amazon Web Services Systems Manager applies the
+         * configuration when new managed nodes are added to the group. The association
+         * also specifies actions to take when applying the configuration. For example, an
+         * association for anti-virus software might run once a day. If the software isn't
+         * installed, then State Manager installs it. If the software is installed, but the
+         * service isn't running, then the association might instruct State Manager to
+         * start the service. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">AWS
          * API Reference</a></p>
          */
@@ -1064,18 +1065,18 @@ namespace Model
 
         /**
          * <p>A State Manager association defines the state that you want to maintain on
-         * your instances. For example, an association can specify that anti-virus software
-         * must be installed and running on your instances, or that certain ports must be
-         * closed. For static targets, the association specifies a schedule for when the
-         * configuration is reapplied. For dynamic targets, such as an Amazon Web Services
-         * resource group or an Amazon Web Services autoscaling group, State Manager, a
-         * capability of Amazon Web Services Systems Manager applies the configuration when
-         * new instances are added to the group. The association also specifies actions to
-         * take when applying the configuration. For example, an association for anti-virus
-         * software might run once a day. If the software isn't installed, then State
-         * Manager installs it. If the software is installed, but the service isn't
-         * running, then the association might instruct State Manager to start the service.
-         * </p><p><h3>See Also:</h3>   <a
+         * your managed nodes. For example, an association can specify that anti-virus
+         * software must be installed and running on your managed nodes, or that certain
+         * ports must be closed. For static targets, the association specifies a schedule
+         * for when the configuration is reapplied. For dynamic targets, such as an Amazon
+         * Web Services resource group or an Amazon Web Services autoscaling group, State
+         * Manager, a capability of Amazon Web Services Systems Manager applies the
+         * configuration when new managed nodes are added to the group. The association
+         * also specifies actions to take when applying the configuration. For example, an
+         * association for anti-virus software might run once a day. If the software isn't
+         * installed, then State Manager installs it. If the software is installed, but the
+         * service isn't running, then the association might instruct State Manager to
+         * start the service. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">AWS
          * API Reference</a></p>
          *
@@ -1085,18 +1086,18 @@ namespace Model
 
         /**
          * <p>A State Manager association defines the state that you want to maintain on
-         * your instances. For example, an association can specify that anti-virus software
-         * must be installed and running on your instances, or that certain ports must be
-         * closed. For static targets, the association specifies a schedule for when the
-         * configuration is reapplied. For dynamic targets, such as an Amazon Web Services
-         * resource group or an Amazon Web Services autoscaling group, State Manager, a
-         * capability of Amazon Web Services Systems Manager applies the configuration when
-         * new instances are added to the group. The association also specifies actions to
-         * take when applying the configuration. For example, an association for anti-virus
-         * software might run once a day. If the software isn't installed, then State
-         * Manager installs it. If the software is installed, but the service isn't
-         * running, then the association might instruct State Manager to start the service.
-         * </p><p><h3>See Also:</h3>   <a
+         * your managed nodes. For example, an association can specify that anti-virus
+         * software must be installed and running on your managed nodes, or that certain
+         * ports must be closed. For static targets, the association specifies a schedule
+         * for when the configuration is reapplied. For dynamic targets, such as an Amazon
+         * Web Services resource group or an Amazon Web Services autoscaling group, State
+         * Manager, a capability of Amazon Web Services Systems Manager applies the
+         * configuration when new managed nodes are added to the group. The association
+         * also specifies actions to take when applying the configuration. For example, an
+         * association for anti-virus software might run once a day. If the software isn't
+         * installed, then State Manager installs it. If the software is installed, but the
+         * service isn't running, then the association might instruct State Manager to
+         * start the service. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">AWS
          * API Reference</a></p>
          *
@@ -1106,11 +1107,11 @@ namespace Model
 
         /**
          * <p>Associates the specified Amazon Web Services Systems Manager document (SSM
-         * document) with the specified instances or targets.</p> <p>When you associate a
-         * document with one or more instances using instance IDs or tags, Amazon Web
-         * Services Systems Manager Agent (SSM Agent) running on the instance processes the
-         * document and configures the instance as specified.</p> <p>If you associate a
-         * document with an instance that already has an associated document, the system
+         * document) with the specified managed nodes or targets.</p> <p>When you associate
+         * a document with one or more managed nodes using IDs or tags, Amazon Web Services
+         * Systems Manager Agent (SSM Agent) running on the managed node processes the
+         * document and configures the node as specified.</p> <p>If you associate a
+         * document with a managed node that already has an associated document, the system
          * returns the AssociationAlreadyExists exception.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">AWS
          * API Reference</a></p>
@@ -1119,11 +1120,11 @@ namespace Model
 
         /**
          * <p>Associates the specified Amazon Web Services Systems Manager document (SSM
-         * document) with the specified instances or targets.</p> <p>When you associate a
-         * document with one or more instances using instance IDs or tags, Amazon Web
-         * Services Systems Manager Agent (SSM Agent) running on the instance processes the
-         * document and configures the instance as specified.</p> <p>If you associate a
-         * document with an instance that already has an associated document, the system
+         * document) with the specified managed nodes or targets.</p> <p>When you associate
+         * a document with one or more managed nodes using IDs or tags, Amazon Web Services
+         * Systems Manager Agent (SSM Agent) running on the managed node processes the
+         * document and configures the node as specified.</p> <p>If you associate a
+         * document with a managed node that already has an associated document, the system
          * returns the AssociationAlreadyExists exception.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">AWS
          * API Reference</a></p>
@@ -1134,11 +1135,11 @@ namespace Model
 
         /**
          * <p>Associates the specified Amazon Web Services Systems Manager document (SSM
-         * document) with the specified instances or targets.</p> <p>When you associate a
-         * document with one or more instances using instance IDs or tags, Amazon Web
-         * Services Systems Manager Agent (SSM Agent) running on the instance processes the
-         * document and configures the instance as specified.</p> <p>If you associate a
-         * document with an instance that already has an associated document, the system
+         * document) with the specified managed nodes or targets.</p> <p>When you associate
+         * a document with one or more managed nodes using IDs or tags, Amazon Web Services
+         * Systems Manager Agent (SSM Agent) running on the managed node processes the
+         * document and configures the node as specified.</p> <p>If you associate a
+         * document with a managed node that already has an associated document, the system
          * returns the AssociationAlreadyExists exception.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">AWS
          * API Reference</a></p>
@@ -1149,7 +1150,7 @@ namespace Model
 
         /**
          * <p>Creates a Amazon Web Services Systems Manager (SSM document). An SSM document
-         * defines the actions that Systems Manager performs on your managed instances. For
+         * defines the actions that Systems Manager performs on your managed nodes. For
          * more information about SSM documents, including information about supported
          * schemas, features, and syntax, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">Amazon
@@ -1162,7 +1163,7 @@ namespace Model
 
         /**
          * <p>Creates a Amazon Web Services Systems Manager (SSM document). An SSM document
-         * defines the actions that Systems Manager performs on your managed instances. For
+         * defines the actions that Systems Manager performs on your managed nodes. For
          * more information about SSM documents, including information about supported
          * schemas, features, and syntax, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">Amazon
@@ -1177,7 +1178,7 @@ namespace Model
 
         /**
          * <p>Creates a Amazon Web Services Systems Manager (SSM document). An SSM document
-         * defines the actions that Systems Manager performs on your managed instances. For
+         * defines the actions that Systems Manager performs on your managed nodes. For
          * more information about SSM documents, including information about supported
          * schemas, features, and syntax, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">Amazon
@@ -1456,8 +1457,8 @@ namespace Model
         /**
          * <p>Deletes an activation. You aren't required to delete an activation. If you
          * delete an activation, you can no longer use it to register additional managed
-         * instances. Deleting an activation doesn't de-register managed instances. You
-         * must manually de-register managed instances.</p><p><h3>See Also:</h3>   <a
+         * nodes. Deleting an activation doesn't de-register managed nodes. You must
+         * manually de-register managed nodes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteActivation">AWS
          * API Reference</a></p>
          */
@@ -1466,8 +1467,8 @@ namespace Model
         /**
          * <p>Deletes an activation. You aren't required to delete an activation. If you
          * delete an activation, you can no longer use it to register additional managed
-         * instances. Deleting an activation doesn't de-register managed instances. You
-         * must manually de-register managed instances.</p><p><h3>See Also:</h3>   <a
+         * nodes. Deleting an activation doesn't de-register managed nodes. You must
+         * manually de-register managed nodes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteActivation">AWS
          * API Reference</a></p>
          *
@@ -1478,8 +1479,8 @@ namespace Model
         /**
          * <p>Deletes an activation. You aren't required to delete an activation. If you
          * delete an activation, you can no longer use it to register additional managed
-         * instances. Deleting an activation doesn't de-register managed instances. You
-         * must manually de-register managed instances.</p><p><h3>See Also:</h3>   <a
+         * nodes. Deleting an activation doesn't de-register managed nodes. You must
+         * manually de-register managed nodes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteActivation">AWS
          * API Reference</a></p>
          *
@@ -1489,13 +1490,13 @@ namespace Model
 
         /**
          * <p>Disassociates the specified Amazon Web Services Systems Manager document (SSM
-         * document) from the specified instance. If you created the association by using
-         * the <code>Targets</code> parameter, then you must delete the association by
-         * using the association ID.</p> <p>When you disassociate a document from an
-         * instance, it doesn't change the configuration of the instance. To change the
-         * configuration state of an instance after you disassociate a document, you must
-         * create a new document with the desired configuration and associate it with the
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * document) from the specified managed node. If you created the association by
+         * using the <code>Targets</code> parameter, then you must delete the association
+         * by using the association ID.</p> <p>When you disassociate a document from a
+         * managed node, it doesn't change the configuration of the node. To change the
+         * configuration state of a managed node after you disassociate a document, you
+         * must create a new document with the desired configuration and associate it with
+         * the node.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation">AWS
          * API Reference</a></p>
          */
@@ -1503,13 +1504,13 @@ namespace Model
 
         /**
          * <p>Disassociates the specified Amazon Web Services Systems Manager document (SSM
-         * document) from the specified instance. If you created the association by using
-         * the <code>Targets</code> parameter, then you must delete the association by
-         * using the association ID.</p> <p>When you disassociate a document from an
-         * instance, it doesn't change the configuration of the instance. To change the
-         * configuration state of an instance after you disassociate a document, you must
-         * create a new document with the desired configuration and associate it with the
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * document) from the specified managed node. If you created the association by
+         * using the <code>Targets</code> parameter, then you must delete the association
+         * by using the association ID.</p> <p>When you disassociate a document from a
+         * managed node, it doesn't change the configuration of the node. To change the
+         * configuration state of a managed node after you disassociate a document, you
+         * must create a new document with the desired configuration and associate it with
+         * the node.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation">AWS
          * API Reference</a></p>
          *
@@ -1519,13 +1520,13 @@ namespace Model
 
         /**
          * <p>Disassociates the specified Amazon Web Services Systems Manager document (SSM
-         * document) from the specified instance. If you created the association by using
-         * the <code>Targets</code> parameter, then you must delete the association by
-         * using the association ID.</p> <p>When you disassociate a document from an
-         * instance, it doesn't change the configuration of the instance. To change the
-         * configuration state of an instance after you disassociate a document, you must
-         * create a new document with the desired configuration and associate it with the
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * document) from the specified managed node. If you created the association by
+         * using the <code>Targets</code> parameter, then you must delete the association
+         * by using the association ID.</p> <p>When you disassociate a document from a
+         * managed node, it doesn't change the configuration of the node. To change the
+         * configuration state of a managed node after you disassociate a document, you
+         * must create a new document with the desired configuration and associate it with
+         * the node.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation">AWS
          * API Reference</a></p>
          *
@@ -1535,9 +1536,10 @@ namespace Model
 
         /**
          * <p>Deletes the Amazon Web Services Systems Manager document (SSM document) and
-         * all instance associations to the document.</p> <p>Before you delete the
+         * all managed node associations to the document.</p> <p>Before you delete the
          * document, we recommend that you use <a>DeleteAssociation</a> to disassociate all
-         * instances that are associated with the document.</p><p><h3>See Also:</h3>   <a
+         * managed nodes that are associated with the document.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument">AWS
          * API Reference</a></p>
          */
@@ -1545,9 +1547,10 @@ namespace Model
 
         /**
          * <p>Deletes the Amazon Web Services Systems Manager document (SSM document) and
-         * all instance associations to the document.</p> <p>Before you delete the
+         * all managed node associations to the document.</p> <p>Before you delete the
          * document, we recommend that you use <a>DeleteAssociation</a> to disassociate all
-         * instances that are associated with the document.</p><p><h3>See Also:</h3>   <a
+         * managed nodes that are associated with the document.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument">AWS
          * API Reference</a></p>
          *
@@ -1557,9 +1560,10 @@ namespace Model
 
         /**
          * <p>Deletes the Amazon Web Services Systems Manager document (SSM document) and
-         * all instance associations to the document.</p> <p>Before you delete the
+         * all managed node associations to the document.</p> <p>Before you delete the
          * document, we recommend that you use <a>DeleteAssociation</a> to disassociate all
-         * instances that are associated with the document.</p><p><h3>See Also:</h3>   <a
+         * managed nodes that are associated with the document.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument">AWS
          * API Reference</a></p>
          *
@@ -1734,8 +1738,8 @@ namespace Model
 
         /**
          * <p>Deletes a resource data sync configuration. After the configuration is
-         * deleted, changes to data on managed instances are no longer synced to or from
-         * the target. Deleting a sync configuration doesn't delete data.</p><p><h3>See
+         * deleted, changes to data on managed nodes are no longer synced to or from the
+         * target. Deleting a sync configuration doesn't delete data.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourceDataSync">AWS
          * API Reference</a></p>
@@ -1744,8 +1748,8 @@ namespace Model
 
         /**
          * <p>Deletes a resource data sync configuration. After the configuration is
-         * deleted, changes to data on managed instances are no longer synced to or from
-         * the target. Deleting a sync configuration doesn't delete data.</p><p><h3>See
+         * deleted, changes to data on managed nodes are no longer synced to or from the
+         * target. Deleting a sync configuration doesn't delete data.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourceDataSync">AWS
          * API Reference</a></p>
@@ -1756,8 +1760,8 @@ namespace Model
 
         /**
          * <p>Deletes a resource data sync configuration. After the configuration is
-         * deleted, changes to data on managed instances are no longer synced to or from
-         * the target. Deleting a sync configuration doesn't delete data.</p><p><h3>See
+         * deleted, changes to data on managed nodes are no longer synced to or from the
+         * target. Deleting a sync configuration doesn't delete data.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourceDataSync">AWS
          * API Reference</a></p>
@@ -1768,7 +1772,7 @@ namespace Model
 
         /**
          * <p>Removes the server or virtual machine from the list of registered servers.
-         * You can reregister the instance again at any time. If you don't plan to use Run
+         * You can reregister the node again at any time. If you don't plan to use Run
          * Command on the server, we suggest uninstalling SSM Agent first.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance">AWS
@@ -1778,7 +1782,7 @@ namespace Model
 
         /**
          * <p>Removes the server or virtual machine from the list of registered servers.
-         * You can reregister the instance again at any time. If you don't plan to use Run
+         * You can reregister the node again at any time. If you don't plan to use Run
          * Command on the server, we suggest uninstalling SSM Agent first.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance">AWS
@@ -1790,7 +1794,7 @@ namespace Model
 
         /**
          * <p>Removes the server or virtual machine from the list of registered servers.
-         * You can reregister the instance again at any time. If you don't plan to use Run
+         * You can reregister the node again at any time. If you don't plan to use Run
          * Command on the server, we suggest uninstalling SSM Agent first.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance">AWS
@@ -1878,8 +1882,8 @@ namespace Model
         /**
          * <p>Describes details about the activation, such as the date and time the
          * activation was created, its expiration date, the Identity and Access Management
-         * (IAM) role assigned to the instances in the activation, and the number of
-         * instances registered by using this activation.</p><p><h3>See Also:</h3>   <a
+         * (IAM) role assigned to the managed nodes in the activation, and the number of
+         * nodes registered by using this activation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations">AWS
          * API Reference</a></p>
          */
@@ -1888,8 +1892,8 @@ namespace Model
         /**
          * <p>Describes details about the activation, such as the date and time the
          * activation was created, its expiration date, the Identity and Access Management
-         * (IAM) role assigned to the instances in the activation, and the number of
-         * instances registered by using this activation.</p><p><h3>See Also:</h3>   <a
+         * (IAM) role assigned to the managed nodes in the activation, and the number of
+         * nodes registered by using this activation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations">AWS
          * API Reference</a></p>
          *
@@ -1900,8 +1904,8 @@ namespace Model
         /**
          * <p>Describes details about the activation, such as the date and time the
          * activation was created, its expiration date, the Identity and Access Management
-         * (IAM) role assigned to the instances in the activation, and the number of
-         * instances registered by using this activation.</p><p><h3>See Also:</h3>   <a
+         * (IAM) role assigned to the managed nodes in the activation, and the number of
+         * nodes registered by using this activation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations">AWS
          * API Reference</a></p>
          *
@@ -1910,7 +1914,7 @@ namespace Model
         virtual void DescribeActivationsAsync(const Model::DescribeActivationsRequest& request, const DescribeActivationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the association for the specified target or instance. If you
+         * <p>Describes the association for the specified target or managed node. If you
          * created the association by using the <code>Targets</code> parameter, then you
          * must retrieve the association by using the association ID.</p><p><h3>See
          * Also:</h3>   <a
@@ -1920,7 +1924,7 @@ namespace Model
         virtual Model::DescribeAssociationOutcome DescribeAssociation(const Model::DescribeAssociationRequest& request) const;
 
         /**
-         * <p>Describes the association for the specified target or instance. If you
+         * <p>Describes the association for the specified target or managed node. If you
          * created the association by using the <code>Targets</code> parameter, then you
          * must retrieve the association by using the association ID.</p><p><h3>See
          * Also:</h3>   <a
@@ -1932,7 +1936,7 @@ namespace Model
         virtual Model::DescribeAssociationOutcomeCallable DescribeAssociationCallable(const Model::DescribeAssociationRequest& request) const;
 
         /**
-         * <p>Describes the association for the specified target or instance. If you
+         * <p>Describes the association for the specified target or managed node. If you
          * created the association by using the <code>Targets</code> parameter, then you
          * must retrieve the association by using the association ID.</p><p><h3>See
          * Also:</h3>   <a
@@ -2146,14 +2150,14 @@ namespace Model
         virtual void DescribeDocumentPermissionAsync(const Model::DescribeDocumentPermissionRequest& request, const DescribeDocumentPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>All associations for the instance(s).</p><p><h3>See Also:</h3>   <a
+         * <p>All associations for the managed node(s).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectiveInstanceAssociations">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeEffectiveInstanceAssociationsOutcome DescribeEffectiveInstanceAssociations(const Model::DescribeEffectiveInstanceAssociationsRequest& request) const;
 
         /**
-         * <p>All associations for the instance(s).</p><p><h3>See Also:</h3>   <a
+         * <p>All associations for the managed node(s).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectiveInstanceAssociations">AWS
          * API Reference</a></p>
          *
@@ -2162,7 +2166,7 @@ namespace Model
         virtual Model::DescribeEffectiveInstanceAssociationsOutcomeCallable DescribeEffectiveInstanceAssociationsCallable(const Model::DescribeEffectiveInstanceAssociationsRequest& request) const;
 
         /**
-         * <p>All associations for the instance(s).</p><p><h3>See Also:</h3>   <a
+         * <p>All associations for the managed node(s).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectiveInstanceAssociations">AWS
          * API Reference</a></p>
          *
@@ -2202,16 +2206,16 @@ namespace Model
         virtual void DescribeEffectivePatchesForPatchBaselineAsync(const Model::DescribeEffectivePatchesForPatchBaselineRequest& request, const DescribeEffectivePatchesForPatchBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The status of the associations for the instance(s).</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>The status of the associations for the managed node(s).</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceAssociationsStatus">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeInstanceAssociationsStatusOutcome DescribeInstanceAssociationsStatus(const Model::DescribeInstanceAssociationsStatusRequest& request) const;
 
         /**
-         * <p>The status of the associations for the instance(s).</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>The status of the associations for the managed node(s).</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceAssociationsStatus">AWS
          * API Reference</a></p>
          *
@@ -2220,8 +2224,8 @@ namespace Model
         virtual Model::DescribeInstanceAssociationsStatusOutcomeCallable DescribeInstanceAssociationsStatusCallable(const Model::DescribeInstanceAssociationsStatusRequest& request) const;
 
         /**
-         * <p>The status of the associations for the instance(s).</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>The status of the associations for the managed node(s).</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceAssociationsStatus">AWS
          * API Reference</a></p>
          *
@@ -2230,14 +2234,14 @@ namespace Model
         virtual void DescribeInstanceAssociationsStatusAsync(const Model::DescribeInstanceAssociationsStatusRequest& request, const DescribeInstanceAssociationsStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more of your instances, including information about the
-         * operating system platform, the version of SSM Agent installed on the instance,
-         * instance status, and so on.</p> <p>If you specify one or more instance IDs, it
-         * returns information for those instances. If you don't specify instance IDs, it
-         * returns information for all your instances. If you specify an instance ID that
-         * isn't valid or an instance that you don't own, you receive an error.</p> 
+         * <p>Describes one or more of your managed nodes, including information about the
+         * operating system platform, the version of SSM Agent installed on the managed
+         * node, node status, and so on.</p> <p>If you specify one or more managed node
+         * IDs, it returns information for those managed nodes. If you don't specify node
+         * IDs, it returns information for all your managed nodes. If you specify a node ID
+         * that isn't valid or a node that you don't own, you receive an error.</p> 
          * <p>The <code>IamRole</code> field for this API operation is the Identity and
-         * Access Management (IAM) role assigned to on-premises instances. This call
+         * Access Management (IAM) role assigned to on-premises managed nodes. This call
          * doesn't return the IAM role for EC2 instances.</p> <p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">AWS
@@ -2246,14 +2250,14 @@ namespace Model
         virtual Model::DescribeInstanceInformationOutcome DescribeInstanceInformation(const Model::DescribeInstanceInformationRequest& request) const;
 
         /**
-         * <p>Describes one or more of your instances, including information about the
-         * operating system platform, the version of SSM Agent installed on the instance,
-         * instance status, and so on.</p> <p>If you specify one or more instance IDs, it
-         * returns information for those instances. If you don't specify instance IDs, it
-         * returns information for all your instances. If you specify an instance ID that
-         * isn't valid or an instance that you don't own, you receive an error.</p> 
+         * <p>Describes one or more of your managed nodes, including information about the
+         * operating system platform, the version of SSM Agent installed on the managed
+         * node, node status, and so on.</p> <p>If you specify one or more managed node
+         * IDs, it returns information for those managed nodes. If you don't specify node
+         * IDs, it returns information for all your managed nodes. If you specify a node ID
+         * that isn't valid or a node that you don't own, you receive an error.</p> 
          * <p>The <code>IamRole</code> field for this API operation is the Identity and
-         * Access Management (IAM) role assigned to on-premises instances. This call
+         * Access Management (IAM) role assigned to on-premises managed nodes. This call
          * doesn't return the IAM role for EC2 instances.</p> <p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">AWS
@@ -2264,14 +2268,14 @@ namespace Model
         virtual Model::DescribeInstanceInformationOutcomeCallable DescribeInstanceInformationCallable(const Model::DescribeInstanceInformationRequest& request) const;
 
         /**
-         * <p>Describes one or more of your instances, including information about the
-         * operating system platform, the version of SSM Agent installed on the instance,
-         * instance status, and so on.</p> <p>If you specify one or more instance IDs, it
-         * returns information for those instances. If you don't specify instance IDs, it
-         * returns information for all your instances. If you specify an instance ID that
-         * isn't valid or an instance that you don't own, you receive an error.</p> 
+         * <p>Describes one or more of your managed nodes, including information about the
+         * operating system platform, the version of SSM Agent installed on the managed
+         * node, node status, and so on.</p> <p>If you specify one or more managed node
+         * IDs, it returns information for those managed nodes. If you don't specify node
+         * IDs, it returns information for all your managed nodes. If you specify a node ID
+         * that isn't valid or a node that you don't own, you receive an error.</p> 
          * <p>The <code>IamRole</code> field for this API operation is the Identity and
-         * Access Management (IAM) role assigned to on-premises instances. This call
+         * Access Management (IAM) role assigned to on-premises managed nodes. This call
          * doesn't return the IAM role for EC2 instances.</p> <p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">AWS
@@ -2282,16 +2286,16 @@ namespace Model
         virtual void DescribeInstanceInformationAsync(const Model::DescribeInstanceInformationRequest& request, const DescribeInstanceInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the high-level patch state of one or more instances.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the high-level patch state of one or more managed
+         * nodes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStates">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeInstancePatchStatesOutcome DescribeInstancePatchStates(const Model::DescribeInstancePatchStatesRequest& request) const;
 
         /**
-         * <p>Retrieves the high-level patch state of one or more instances.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the high-level patch state of one or more managed
+         * nodes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStates">AWS
          * API Reference</a></p>
          *
@@ -2300,8 +2304,8 @@ namespace Model
         virtual Model::DescribeInstancePatchStatesOutcomeCallable DescribeInstancePatchStatesCallable(const Model::DescribeInstancePatchStatesRequest& request) const;
 
         /**
-         * <p>Retrieves the high-level patch state of one or more instances.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the high-level patch state of one or more managed
+         * nodes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStates">AWS
          * API Reference</a></p>
          *
@@ -2310,16 +2314,16 @@ namespace Model
         virtual void DescribeInstancePatchStatesAsync(const Model::DescribeInstancePatchStatesRequest& request, const DescribeInstancePatchStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the high-level patch state for the instances in the specified patch
-         * group.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the high-level patch state for the managed nodes in the specified
+         * patch group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStatesForPatchGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeInstancePatchStatesForPatchGroupOutcome DescribeInstancePatchStatesForPatchGroup(const Model::DescribeInstancePatchStatesForPatchGroupRequest& request) const;
 
         /**
-         * <p>Retrieves the high-level patch state for the instances in the specified patch
-         * group.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the high-level patch state for the managed nodes in the specified
+         * patch group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStatesForPatchGroup">AWS
          * API Reference</a></p>
          *
@@ -2328,8 +2332,8 @@ namespace Model
         virtual Model::DescribeInstancePatchStatesForPatchGroupOutcomeCallable DescribeInstancePatchStatesForPatchGroupCallable(const Model::DescribeInstancePatchStatesForPatchGroupRequest& request) const;
 
         /**
-         * <p>Retrieves the high-level patch state for the instances in the specified patch
-         * group.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the high-level patch state for the managed nodes in the specified
+         * patch group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStatesForPatchGroup">AWS
          * API Reference</a></p>
          *
@@ -2338,18 +2342,18 @@ namespace Model
         virtual void DescribeInstancePatchStatesForPatchGroupAsync(const Model::DescribeInstancePatchStatesForPatchGroupRequest& request, const DescribeInstancePatchStatesForPatchGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about the patches on the specified instance and their
-         * state relative to the patch baseline being used for the instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves information about the patches on the specified managed node and
+         * their state relative to the patch baseline being used for the
+         * node.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatches">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeInstancePatchesOutcome DescribeInstancePatches(const Model::DescribeInstancePatchesRequest& request) const;
 
         /**
-         * <p>Retrieves information about the patches on the specified instance and their
-         * state relative to the patch baseline being used for the instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves information about the patches on the specified managed node and
+         * their state relative to the patch baseline being used for the
+         * node.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatches">AWS
          * API Reference</a></p>
          *
@@ -2358,9 +2362,9 @@ namespace Model
         virtual Model::DescribeInstancePatchesOutcomeCallable DescribeInstancePatchesCallable(const Model::DescribeInstancePatchesRequest& request) const;
 
         /**
-         * <p>Retrieves information about the patches on the specified instance and their
-         * state relative to the patch baseline being used for the instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves information about the patches on the specified managed node and
+         * their state relative to the patch baseline being used for the
+         * node.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatches">AWS
          * API Reference</a></p>
          *
@@ -2614,16 +2618,16 @@ namespace Model
         virtual void DescribeMaintenanceWindowsAsync(const Model::DescribeMaintenanceWindowsRequest& request, const DescribeMaintenanceWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about the maintenance window targets or tasks that an
-         * instance is associated with.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about the maintenance window targets or tasks that a
+         * managed node is associated with.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowsForTarget">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeMaintenanceWindowsForTargetOutcome DescribeMaintenanceWindowsForTarget(const Model::DescribeMaintenanceWindowsForTargetRequest& request) const;
 
         /**
-         * <p>Retrieves information about the maintenance window targets or tasks that an
-         * instance is associated with.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about the maintenance window targets or tasks that a
+         * managed node is associated with.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowsForTarget">AWS
          * API Reference</a></p>
          *
@@ -2632,8 +2636,8 @@ namespace Model
         virtual Model::DescribeMaintenanceWindowsForTargetOutcomeCallable DescribeMaintenanceWindowsForTargetCallable(const Model::DescribeMaintenanceWindowsForTargetRequest& request) const;
 
         /**
-         * <p>Retrieves information about the maintenance window targets or tasks that an
-         * instance is associated with.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about the maintenance window targets or tasks that a
+         * managed node is associated with.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowsForTarget">AWS
          * API Reference</a></p>
          *
@@ -3093,8 +3097,8 @@ namespace Model
          * <p>Returns detailed information about command execution for an invocation or
          * plugin.</p> <p> <code>GetCommandInvocation</code> only gives the execution
          * status of a plugin in a document. To get the command execution status on a
-         * specific instance, use <a>ListCommandInvocations</a>. To get the command
-         * execution status across instances, use <a>ListCommands</a>.</p><p><h3>See
+         * specific managed node, use <a>ListCommandInvocations</a>. To get the command
+         * execution status across managed nodes, use <a>ListCommands</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation">AWS
          * API Reference</a></p>
@@ -3105,8 +3109,8 @@ namespace Model
          * <p>Returns detailed information about command execution for an invocation or
          * plugin.</p> <p> <code>GetCommandInvocation</code> only gives the execution
          * status of a plugin in a document. To get the command execution status on a
-         * specific instance, use <a>ListCommandInvocations</a>. To get the command
-         * execution status across instances, use <a>ListCommands</a>.</p><p><h3>See
+         * specific managed node, use <a>ListCommandInvocations</a>. To get the command
+         * execution status across managed nodes, use <a>ListCommands</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation">AWS
          * API Reference</a></p>
@@ -3119,8 +3123,8 @@ namespace Model
          * <p>Returns detailed information about command execution for an invocation or
          * plugin.</p> <p> <code>GetCommandInvocation</code> only gives the execution
          * status of a plugin in a document. To get the command execution status on a
-         * specific instance, use <a>ListCommandInvocations</a>. To get the command
-         * execution status across instances, use <a>ListCommands</a>.</p><p><h3>See
+         * specific managed node, use <a>ListCommandInvocations</a>. To get the command
+         * execution status across managed nodes, use <a>ListCommands</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation">AWS
          * API Reference</a></p>
@@ -3130,8 +3134,8 @@ namespace Model
         virtual void GetCommandInvocationAsync(const Model::GetCommandInvocationRequest& request, const GetCommandInvocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the Session Manager connection status for an instance to determine
-         * whether it is running and ready to receive Session Manager
+         * <p>Retrieves the Session Manager connection status for a managed node to
+         * determine whether it is running and ready to receive Session Manager
          * connections.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetConnectionStatus">AWS
          * API Reference</a></p>
@@ -3139,8 +3143,8 @@ namespace Model
         virtual Model::GetConnectionStatusOutcome GetConnectionStatus(const Model::GetConnectionStatusRequest& request) const;
 
         /**
-         * <p>Retrieves the Session Manager connection status for an instance to determine
-         * whether it is running and ready to receive Session Manager
+         * <p>Retrieves the Session Manager connection status for a managed node to
+         * determine whether it is running and ready to receive Session Manager
          * connections.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetConnectionStatus">AWS
          * API Reference</a></p>
@@ -3150,8 +3154,8 @@ namespace Model
         virtual Model::GetConnectionStatusOutcomeCallable GetConnectionStatusCallable(const Model::GetConnectionStatusRequest& request) const;
 
         /**
-         * <p>Retrieves the Session Manager connection status for an instance to determine
-         * whether it is running and ready to receive Session Manager
+         * <p>Retrieves the Session Manager connection status for a managed node to
+         * determine whether it is running and ready to receive Session Manager
          * connections.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetConnectionStatus">AWS
          * API Reference</a></p>
@@ -3198,14 +3202,14 @@ namespace Model
         virtual void GetDefaultPatchBaselineAsync(const Model::GetDefaultPatchBaselineRequest& request, const GetDefaultPatchBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the current snapshot for the patch baseline the instance uses. This
-         * API is primarily used by the <code>AWS-RunPatchBaseline</code> Systems Manager
-         * document (SSM document).</p>  <p>If you run the command locally, such as
-         * with the Command Line Interface (CLI), the system attempts to use your local
-         * Amazon Web Services credentials and the operation fails. To avoid this, you can
-         * run the command in the Amazon Web Services Systems Manager console. Use Run
-         * Command, a capability of Amazon Web Services Systems Manager, with an SSM
-         * document that enables you to target an instance with a script or command. For
+         * <p>Retrieves the current snapshot for the patch baseline the managed node uses.
+         * This API is primarily used by the <code>AWS-RunPatchBaseline</code> Systems
+         * Manager document (SSM document).</p>  <p>If you run the command locally,
+         * such as with the Command Line Interface (CLI), the system attempts to use your
+         * local Amazon Web Services credentials and the operation fails. To avoid this,
+         * you can run the command in the Amazon Web Services Systems Manager console. Use
+         * Run Command, a capability of Amazon Web Services Systems Manager, with an SSM
+         * document that enables you to target a managed node with a script or command. For
          * example, run the command using the <code>AWS-RunShellScript</code> document or
          * the <code>AWS-RunPowerShellScript</code> document.</p> <p><h3>See
          * Also:</h3>   <a
@@ -3215,14 +3219,14 @@ namespace Model
         virtual Model::GetDeployablePatchSnapshotForInstanceOutcome GetDeployablePatchSnapshotForInstance(const Model::GetDeployablePatchSnapshotForInstanceRequest& request) const;
 
         /**
-         * <p>Retrieves the current snapshot for the patch baseline the instance uses. This
-         * API is primarily used by the <code>AWS-RunPatchBaseline</code> Systems Manager
-         * document (SSM document).</p>  <p>If you run the command locally, such as
-         * with the Command Line Interface (CLI), the system attempts to use your local
-         * Amazon Web Services credentials and the operation fails. To avoid this, you can
-         * run the command in the Amazon Web Services Systems Manager console. Use Run
-         * Command, a capability of Amazon Web Services Systems Manager, with an SSM
-         * document that enables you to target an instance with a script or command. For
+         * <p>Retrieves the current snapshot for the patch baseline the managed node uses.
+         * This API is primarily used by the <code>AWS-RunPatchBaseline</code> Systems
+         * Manager document (SSM document).</p>  <p>If you run the command locally,
+         * such as with the Command Line Interface (CLI), the system attempts to use your
+         * local Amazon Web Services credentials and the operation fails. To avoid this,
+         * you can run the command in the Amazon Web Services Systems Manager console. Use
+         * Run Command, a capability of Amazon Web Services Systems Manager, with an SSM
+         * document that enables you to target a managed node with a script or command. For
          * example, run the command using the <code>AWS-RunShellScript</code> document or
          * the <code>AWS-RunPowerShellScript</code> document.</p> <p><h3>See
          * Also:</h3>   <a
@@ -3234,14 +3238,14 @@ namespace Model
         virtual Model::GetDeployablePatchSnapshotForInstanceOutcomeCallable GetDeployablePatchSnapshotForInstanceCallable(const Model::GetDeployablePatchSnapshotForInstanceRequest& request) const;
 
         /**
-         * <p>Retrieves the current snapshot for the patch baseline the instance uses. This
-         * API is primarily used by the <code>AWS-RunPatchBaseline</code> Systems Manager
-         * document (SSM document).</p>  <p>If you run the command locally, such as
-         * with the Command Line Interface (CLI), the system attempts to use your local
-         * Amazon Web Services credentials and the operation fails. To avoid this, you can
-         * run the command in the Amazon Web Services Systems Manager console. Use Run
-         * Command, a capability of Amazon Web Services Systems Manager, with an SSM
-         * document that enables you to target an instance with a script or command. For
+         * <p>Retrieves the current snapshot for the patch baseline the managed node uses.
+         * This API is primarily used by the <code>AWS-RunPatchBaseline</code> Systems
+         * Manager document (SSM document).</p>  <p>If you run the command locally,
+         * such as with the Command Line Interface (CLI), the system attempts to use your
+         * local Amazon Web Services credentials and the operation fails. To avoid this,
+         * you can run the command in the Amazon Web Services Systems Manager console. Use
+         * Run Command, a capability of Amazon Web Services Systems Manager, with an SSM
+         * document that enables you to target a managed node with a script or command. For
          * example, run the command using the <code>AWS-RunShellScript</code> document or
          * the <code>AWS-RunPowerShellScript</code> document.</p> <p><h3>See
          * Also:</h3>   <a
@@ -3281,7 +3285,7 @@ namespace Model
         virtual void GetDocumentAsync(const Model::GetDocumentRequest& request, const GetDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Query inventory information. This includes instance status, such as
+         * <p>Query inventory information. This includes managed node status, such as
          * <code>Stopped</code> or <code>Terminated</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventory">AWS
          * API Reference</a></p>
@@ -3289,7 +3293,7 @@ namespace Model
         virtual Model::GetInventoryOutcome GetInventory(const Model::GetInventoryRequest& request) const;
 
         /**
-         * <p>Query inventory information. This includes instance status, such as
+         * <p>Query inventory information. This includes managed node status, such as
          * <code>Stopped</code> or <code>Terminated</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventory">AWS
          * API Reference</a></p>
@@ -3299,7 +3303,7 @@ namespace Model
         virtual Model::GetInventoryOutcomeCallable GetInventoryCallable(const Model::GetInventoryRequest& request) const;
 
         /**
-         * <p>Query inventory information. This includes instance status, such as
+         * <p>Query inventory information. This includes managed node status, such as
          * <code>Stopped</code> or <code>Terminated</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventory">AWS
          * API Reference</a></p>
@@ -4004,7 +4008,7 @@ namespace Model
         /**
          * <p>Returns all State Manager associations in the current Amazon Web Services
          * account and Amazon Web Services Region. You can limit the results to a specific
-         * State Manager association document or instance by specifying a filter. State
+         * State Manager association document or managed node by specifying a filter. State
          * Manager is a capability of Amazon Web Services Systems Manager.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">AWS
@@ -4015,7 +4019,7 @@ namespace Model
         /**
          * <p>Returns all State Manager associations in the current Amazon Web Services
          * account and Amazon Web Services Region. You can limit the results to a specific
-         * State Manager association document or instance by specifying a filter. State
+         * State Manager association document or managed node by specifying a filter. State
          * Manager is a capability of Amazon Web Services Systems Manager.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">AWS
@@ -4028,7 +4032,7 @@ namespace Model
         /**
          * <p>Returns all State Manager associations in the current Amazon Web Services
          * account and Amazon Web Services Region. You can limit the results to a specific
-         * State Manager association document or instance by specifying a filter. State
+         * State Manager association document or managed node by specifying a filter. State
          * Manager is a capability of Amazon Web Services Systems Manager.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">AWS
@@ -4039,11 +4043,11 @@ namespace Model
         virtual void ListAssociationsAsync(const Model::ListAssociationsRequest& request, const ListAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>An invocation is copy of a command sent to a specific instance. A command can
-         * apply to one or more instances. A command invocation applies to one instance.
-         * For example, if a user runs <code>SendCommand</code> against three instances,
-         * then a command invocation is created for each requested instance ID.
-         * <code>ListCommandInvocations</code> provide status about command
+         * <p>An invocation is copy of a command sent to a specific managed node. A command
+         * can apply to one or more managed nodes. A command invocation applies to one
+         * managed node. For example, if a user runs <code>SendCommand</code> against three
+         * managed nodes, then a command invocation is created for each requested managed
+         * node ID. <code>ListCommandInvocations</code> provide status about command
          * execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">AWS
          * API Reference</a></p>
@@ -4051,11 +4055,11 @@ namespace Model
         virtual Model::ListCommandInvocationsOutcome ListCommandInvocations(const Model::ListCommandInvocationsRequest& request) const;
 
         /**
-         * <p>An invocation is copy of a command sent to a specific instance. A command can
-         * apply to one or more instances. A command invocation applies to one instance.
-         * For example, if a user runs <code>SendCommand</code> against three instances,
-         * then a command invocation is created for each requested instance ID.
-         * <code>ListCommandInvocations</code> provide status about command
+         * <p>An invocation is copy of a command sent to a specific managed node. A command
+         * can apply to one or more managed nodes. A command invocation applies to one
+         * managed node. For example, if a user runs <code>SendCommand</code> against three
+         * managed nodes, then a command invocation is created for each requested managed
+         * node ID. <code>ListCommandInvocations</code> provide status about command
          * execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">AWS
          * API Reference</a></p>
@@ -4065,11 +4069,11 @@ namespace Model
         virtual Model::ListCommandInvocationsOutcomeCallable ListCommandInvocationsCallable(const Model::ListCommandInvocationsRequest& request) const;
 
         /**
-         * <p>An invocation is copy of a command sent to a specific instance. A command can
-         * apply to one or more instances. A command invocation applies to one instance.
-         * For example, if a user runs <code>SendCommand</code> against three instances,
-         * then a command invocation is created for each requested instance ID.
-         * <code>ListCommandInvocations</code> provide status about command
+         * <p>An invocation is copy of a command sent to a specific managed node. A command
+         * can apply to one or more managed nodes. A command invocation applies to one
+         * managed node. For example, if a user runs <code>SendCommand</code> against three
+         * managed nodes, then a command invocation is created for each requested managed
+         * node ID. <code>ListCommandInvocations</code> provide status about command
          * execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">AWS
          * API Reference</a></p>
@@ -4546,7 +4550,7 @@ namespace Model
          * compliance item was applied.</p> </li> <li> <p>ExecutionType: Specify patch,
          * association, or Custom:<code>string</code>.</p> </li> <li> <p>ExecutionTime. The
          * time the patch, association, or custom compliance item was applied to the
-         * instance.</p> </li> <li> <p>Id: The patch, association, or custom compliance
+         * managed node.</p> </li> <li> <p>Id: The patch, association, or custom compliance
          * ID.</p> </li> <li> <p>Title: A title.</p> </li> <li> <p>Status: The status of
          * the compliance item. For example, <code>approved</code> for patches, or
          * <code>Failed</code> for associations.</p> </li> <li> <p>Severity: A patch
@@ -4577,7 +4581,7 @@ namespace Model
          * compliance item was applied.</p> </li> <li> <p>ExecutionType: Specify patch,
          * association, or Custom:<code>string</code>.</p> </li> <li> <p>ExecutionTime. The
          * time the patch, association, or custom compliance item was applied to the
-         * instance.</p> </li> <li> <p>Id: The patch, association, or custom compliance
+         * managed node.</p> </li> <li> <p>Id: The patch, association, or custom compliance
          * ID.</p> </li> <li> <p>Title: A title.</p> </li> <li> <p>Status: The status of
          * the compliance item. For example, <code>approved</code> for patches, or
          * <code>Failed</code> for associations.</p> </li> <li> <p>Severity: A patch
@@ -4610,7 +4614,7 @@ namespace Model
          * compliance item was applied.</p> </li> <li> <p>ExecutionType: Specify patch,
          * association, or Custom:<code>string</code>.</p> </li> <li> <p>ExecutionTime. The
          * time the patch, association, or custom compliance item was applied to the
-         * instance.</p> </li> <li> <p>Id: The patch, association, or custom compliance
+         * managed node.</p> </li> <li> <p>Id: The patch, association, or custom compliance
          * ID.</p> </li> <li> <p>Title: A title.</p> </li> <li> <p>Status: The status of
          * the compliance item. For example, <code>approved</code> for patches, or
          * <code>Failed</code> for associations.</p> </li> <li> <p>Severity: A patch
@@ -4634,18 +4638,18 @@ namespace Model
         virtual void PutComplianceItemsAsync(const Model::PutComplianceItemsRequest& request, const PutComplianceItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Bulk update custom inventory items on one more instance. The request adds an
-         * inventory item, if it doesn't already exist, or updates an inventory item, if it
-         * does exist.</p><p><h3>See Also:</h3>   <a
+         * <p>Bulk update custom inventory items on one or more managed nodes. The request
+         * adds an inventory item, if it doesn't already exist, or updates an inventory
+         * item, if it does exist.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutInventory">AWS
          * API Reference</a></p>
          */
         virtual Model::PutInventoryOutcome PutInventory(const Model::PutInventoryRequest& request) const;
 
         /**
-         * <p>Bulk update custom inventory items on one more instance. The request adds an
-         * inventory item, if it doesn't already exist, or updates an inventory item, if it
-         * does exist.</p><p><h3>See Also:</h3>   <a
+         * <p>Bulk update custom inventory items on one or more managed nodes. The request
+         * adds an inventory item, if it doesn't already exist, or updates an inventory
+         * item, if it does exist.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutInventory">AWS
          * API Reference</a></p>
          *
@@ -4654,9 +4658,9 @@ namespace Model
         virtual Model::PutInventoryOutcomeCallable PutInventoryCallable(const Model::PutInventoryRequest& request) const;
 
         /**
-         * <p>Bulk update custom inventory items on one more instance. The request adds an
-         * inventory item, if it doesn't already exist, or updates an inventory item, if it
-         * does exist.</p><p><h3>See Also:</h3>   <a
+         * <p>Bulk update custom inventory items on one or more managed nodes. The request
+         * adds an inventory item, if it doesn't already exist, or updates an inventory
+         * item, if it does exist.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutInventory">AWS
          * API Reference</a></p>
          *
@@ -4897,7 +4901,7 @@ namespace Model
         virtual void ResetServiceSettingAsync(const Model::ResetServiceSettingRequest& request, const ResetServiceSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Reconnects a session to an instance after it has been disconnected.
+         * <p>Reconnects a session to a managed node after it has been disconnected.
          * Connections can be resumed for disconnected sessions, but not terminated
          * sessions.</p>  <p>This command is primarily for use by client machines to
          * automatically reconnect during intermittent network issues. It isn't intended
@@ -4908,7 +4912,7 @@ namespace Model
         virtual Model::ResumeSessionOutcome ResumeSession(const Model::ResumeSessionRequest& request) const;
 
         /**
-         * <p>Reconnects a session to an instance after it has been disconnected.
+         * <p>Reconnects a session to a managed node after it has been disconnected.
          * Connections can be resumed for disconnected sessions, but not terminated
          * sessions.</p>  <p>This command is primarily for use by client machines to
          * automatically reconnect during intermittent network issues. It isn't intended
@@ -4921,7 +4925,7 @@ namespace Model
         virtual Model::ResumeSessionOutcomeCallable ResumeSessionCallable(const Model::ResumeSessionRequest& request) const;
 
         /**
-         * <p>Reconnects a session to an instance after it has been disconnected.
+         * <p>Reconnects a session to a managed node after it has been disconnected.
          * Connections can be resumed for disconnected sessions, but not terminated
          * sessions.</p>  <p>This command is primarily for use by client machines to
          * automatically reconnect during intermittent network issues. It isn't intended
@@ -4962,14 +4966,14 @@ namespace Model
         virtual void SendAutomationSignalAsync(const Model::SendAutomationSignalRequest& request, const SendAutomationSignalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Runs commands on one or more managed instances.</p><p><h3>See Also:</h3>   <a
+         * <p>Runs commands on one or more managed nodes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">AWS API
          * Reference</a></p>
          */
         virtual Model::SendCommandOutcome SendCommand(const Model::SendCommandRequest& request) const;
 
         /**
-         * <p>Runs commands on one or more managed instances.</p><p><h3>See Also:</h3>   <a
+         * <p>Runs commands on one or more managed nodes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">AWS API
          * Reference</a></p>
          *
@@ -4978,7 +4982,7 @@ namespace Model
         virtual Model::SendCommandOutcomeCallable SendCommandCallable(const Model::SendCommandRequest& request) const;
 
         /**
-         * <p>Runs commands on one or more managed instances.</p><p><h3>See Also:</h3>   <a
+         * <p>Runs commands on one or more managed nodes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">AWS API
          * Reference</a></p>
          *
@@ -5071,12 +5075,12 @@ namespace Model
         virtual void StartChangeRequestExecutionAsync(const Model::StartChangeRequestExecutionRequest& request, const StartChangeRequestExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Initiates a connection to a target (for example, an instance) for a Session
-         * Manager session. Returns a URL and token that can be used to open a WebSocket
-         * connection for sending input and receiving outputs.</p>  <p>Amazon Web
-         * Services CLI usage: <code>start-session</code> is an interactive command that
-         * requires the Session Manager plugin to be installed on the client machine making
-         * the call. For information, see <a
+         * <p>Initiates a connection to a target (for example, a managed node) for a
+         * Session Manager session. Returns a URL and token that can be used to open a
+         * WebSocket connection for sending input and receiving outputs.</p> 
+         * <p>Amazon Web Services CLI usage: <code>start-session</code> is an interactive
+         * command that requires the Session Manager plugin to be installed on the client
+         * machine making the call. For information, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">Install
          * the Session Manager plugin for the Amazon Web Services CLI</a> in the <i>Amazon
          * Web Services Systems Manager User Guide</i>.</p> <p>Amazon Web Services Tools
@@ -5089,12 +5093,12 @@ namespace Model
         virtual Model::StartSessionOutcome StartSession(const Model::StartSessionRequest& request) const;
 
         /**
-         * <p>Initiates a connection to a target (for example, an instance) for a Session
-         * Manager session. Returns a URL and token that can be used to open a WebSocket
-         * connection for sending input and receiving outputs.</p>  <p>Amazon Web
-         * Services CLI usage: <code>start-session</code> is an interactive command that
-         * requires the Session Manager plugin to be installed on the client machine making
-         * the call. For information, see <a
+         * <p>Initiates a connection to a target (for example, a managed node) for a
+         * Session Manager session. Returns a URL and token that can be used to open a
+         * WebSocket connection for sending input and receiving outputs.</p> 
+         * <p>Amazon Web Services CLI usage: <code>start-session</code> is an interactive
+         * command that requires the Session Manager plugin to be installed on the client
+         * machine making the call. For information, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">Install
          * the Session Manager plugin for the Amazon Web Services CLI</a> in the <i>Amazon
          * Web Services Systems Manager User Guide</i>.</p> <p>Amazon Web Services Tools
@@ -5109,12 +5113,12 @@ namespace Model
         virtual Model::StartSessionOutcomeCallable StartSessionCallable(const Model::StartSessionRequest& request) const;
 
         /**
-         * <p>Initiates a connection to a target (for example, an instance) for a Session
-         * Manager session. Returns a URL and token that can be used to open a WebSocket
-         * connection for sending input and receiving outputs.</p>  <p>Amazon Web
-         * Services CLI usage: <code>start-session</code> is an interactive command that
-         * requires the Session Manager plugin to be installed on the client machine making
-         * the call. For information, see <a
+         * <p>Initiates a connection to a target (for example, a managed node) for a
+         * Session Manager session. Returns a URL and token that can be used to open a
+         * WebSocket connection for sending input and receiving outputs.</p> 
+         * <p>Amazon Web Services CLI usage: <code>start-session</code> is an interactive
+         * command that requires the Session Manager plugin to be installed on the client
+         * machine making the call. For information, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">Install
          * the Session Manager plugin for the Amazon Web Services CLI</a> in the <i>Amazon
          * Web Services Systems Manager User Guide</i>.</p> <p>Amazon Web Services Tools
@@ -5155,7 +5159,7 @@ namespace Model
 
         /**
          * <p>Permanently ends a session and closes the data connection between the Session
-         * Manager client and SSM Agent on the instance. A terminated session isn't be
+         * Manager client and SSM Agent on the managed node. A terminated session isn't be
          * resumed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/TerminateSession">AWS
          * API Reference</a></p>
@@ -5164,7 +5168,7 @@ namespace Model
 
         /**
          * <p>Permanently ends a session and closes the data connection between the Session
-         * Manager client and SSM Agent on the instance. A terminated session isn't be
+         * Manager client and SSM Agent on the managed node. A terminated session isn't be
          * resumed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/TerminateSession">AWS
          * API Reference</a></p>
@@ -5175,7 +5179,7 @@ namespace Model
 
         /**
          * <p>Permanently ends a session and closes the data connection between the Session
-         * Manager client and SSM Agent on the instance. A terminated session isn't be
+         * Manager client and SSM Agent on the managed node. A terminated session isn't be
          * resumed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/TerminateSession">AWS
          * API Reference</a></p>
@@ -5266,7 +5270,7 @@ namespace Model
 
         /**
          * <p>Updates the status of the Amazon Web Services Systems Manager document (SSM
-         * document) associated with the specified instance.</p> <p>
+         * document) associated with the specified managed node.</p> <p>
          * <code>UpdateAssociationStatus</code> is primarily used by the Amazon Web
          * Services Systems Manager Agent (SSM Agent) to report status updates about your
          * associations and is only used for associations created with the
@@ -5278,7 +5282,7 @@ namespace Model
 
         /**
          * <p>Updates the status of the Amazon Web Services Systems Manager document (SSM
-         * document) associated with the specified instance.</p> <p>
+         * document) associated with the specified managed node.</p> <p>
          * <code>UpdateAssociationStatus</code> is primarily used by the Amazon Web
          * Services Systems Manager Agent (SSM Agent) to report status updates about your
          * associations and is only used for associations created with the
@@ -5292,7 +5296,7 @@ namespace Model
 
         /**
          * <p>Updates the status of the Amazon Web Services Systems Manager document (SSM
-         * document) associated with the specified instance.</p> <p>
+         * document) associated with the specified managed node.</p> <p>
          * <code>UpdateAssociationStatus</code> is primarily used by the Amazon Web
          * Services Systems Manager Agent (SSM Agent) to report status updates about your
          * associations and is only used for associations created with the
@@ -5588,9 +5592,9 @@ namespace Model
 
         /**
          * <p>Changes the Identity and Access Management (IAM) role that is assigned to the
-         * on-premises instance or virtual machines (VM). IAM roles are first assigned to
-         * these hybrid instances during the activation process. For more information, see
-         * <a>CreateActivation</a>.</p><p><h3>See Also:</h3>   <a
+         * on-premises server, edge device, or virtual machines (VM). IAM roles are first
+         * assigned to these hybrid nodes during the activation process. For more
+         * information, see <a>CreateActivation</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole">AWS
          * API Reference</a></p>
          */
@@ -5598,9 +5602,9 @@ namespace Model
 
         /**
          * <p>Changes the Identity and Access Management (IAM) role that is assigned to the
-         * on-premises instance or virtual machines (VM). IAM roles are first assigned to
-         * these hybrid instances during the activation process. For more information, see
-         * <a>CreateActivation</a>.</p><p><h3>See Also:</h3>   <a
+         * on-premises server, edge device, or virtual machines (VM). IAM roles are first
+         * assigned to these hybrid nodes during the activation process. For more
+         * information, see <a>CreateActivation</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole">AWS
          * API Reference</a></p>
          *
@@ -5610,9 +5614,9 @@ namespace Model
 
         /**
          * <p>Changes the Identity and Access Management (IAM) role that is assigned to the
-         * on-premises instance or virtual machines (VM). IAM roles are first assigned to
-         * these hybrid instances during the activation process. For more information, see
-         * <a>CreateActivation</a>.</p><p><h3>See Also:</h3>   <a
+         * on-premises server, edge device, or virtual machines (VM). IAM roles are first
+         * assigned to these hybrid nodes during the activation process. For more
+         * information, see <a>CreateActivation</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole">AWS
          * API Reference</a></p>
          *

@@ -21,21 +21,29 @@
 #include <aws/wellarchitected/WellArchitectedEndpoint.h>
 #include <aws/wellarchitected/WellArchitectedErrorMarshaller.h>
 #include <aws/wellarchitected/model/AssociateLensesRequest.h>
+#include <aws/wellarchitected/model/CreateLensShareRequest.h>
+#include <aws/wellarchitected/model/CreateLensVersionRequest.h>
 #include <aws/wellarchitected/model/CreateMilestoneRequest.h>
 #include <aws/wellarchitected/model/CreateWorkloadRequest.h>
 #include <aws/wellarchitected/model/CreateWorkloadShareRequest.h>
+#include <aws/wellarchitected/model/DeleteLensRequest.h>
+#include <aws/wellarchitected/model/DeleteLensShareRequest.h>
 #include <aws/wellarchitected/model/DeleteWorkloadRequest.h>
 #include <aws/wellarchitected/model/DeleteWorkloadShareRequest.h>
 #include <aws/wellarchitected/model/DisassociateLensesRequest.h>
+#include <aws/wellarchitected/model/ExportLensRequest.h>
 #include <aws/wellarchitected/model/GetAnswerRequest.h>
+#include <aws/wellarchitected/model/GetLensRequest.h>
 #include <aws/wellarchitected/model/GetLensReviewRequest.h>
 #include <aws/wellarchitected/model/GetLensReviewReportRequest.h>
 #include <aws/wellarchitected/model/GetLensVersionDifferenceRequest.h>
 #include <aws/wellarchitected/model/GetMilestoneRequest.h>
 #include <aws/wellarchitected/model/GetWorkloadRequest.h>
+#include <aws/wellarchitected/model/ImportLensRequest.h>
 #include <aws/wellarchitected/model/ListAnswersRequest.h>
 #include <aws/wellarchitected/model/ListLensReviewImprovementsRequest.h>
 #include <aws/wellarchitected/model/ListLensReviewsRequest.h>
+#include <aws/wellarchitected/model/ListLensSharesRequest.h>
 #include <aws/wellarchitected/model/ListLensesRequest.h>
 #include <aws/wellarchitected/model/ListMilestonesRequest.h>
 #include <aws/wellarchitected/model/ListNotificationsRequest.h>
@@ -157,6 +165,70 @@ void WellArchitectedClient::AssociateLensesAsyncHelper(const AssociateLensesRequ
   handler(this, request, AssociateLenses(request), context);
 }
 
+CreateLensShareOutcome WellArchitectedClient::CreateLensShare(const CreateLensShareRequest& request) const
+{
+  if (!request.LensAliasHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateLensShare", "Required field: LensAlias, is not set");
+    return CreateLensShareOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LensAlias]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/lenses/");
+  uri.AddPathSegment(request.GetLensAlias());
+  uri.AddPathSegments("/shares");
+  return CreateLensShareOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateLensShareOutcomeCallable WellArchitectedClient::CreateLensShareCallable(const CreateLensShareRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateLensShareOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLensShare(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WellArchitectedClient::CreateLensShareAsync(const CreateLensShareRequest& request, const CreateLensShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateLensShareAsyncHelper( request, handler, context ); } );
+}
+
+void WellArchitectedClient::CreateLensShareAsyncHelper(const CreateLensShareRequest& request, const CreateLensShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateLensShare(request), context);
+}
+
+CreateLensVersionOutcome WellArchitectedClient::CreateLensVersion(const CreateLensVersionRequest& request) const
+{
+  if (!request.LensAliasHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateLensVersion", "Required field: LensAlias, is not set");
+    return CreateLensVersionOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LensAlias]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/lenses/");
+  uri.AddPathSegment(request.GetLensAlias());
+  uri.AddPathSegments("/versions");
+  return CreateLensVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateLensVersionOutcomeCallable WellArchitectedClient::CreateLensVersionCallable(const CreateLensVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateLensVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLensVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WellArchitectedClient::CreateLensVersionAsync(const CreateLensVersionRequest& request, const CreateLensVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateLensVersionAsyncHelper( request, handler, context ); } );
+}
+
+void WellArchitectedClient::CreateLensVersionAsyncHelper(const CreateLensVersionRequest& request, const CreateLensVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateLensVersion(request), context);
+}
+
 CreateMilestoneOutcome WellArchitectedClient::CreateMilestone(const CreateMilestoneRequest& request) const
 {
   if (!request.WorkloadIdHasBeenSet())
@@ -244,6 +316,90 @@ void WellArchitectedClient::CreateWorkloadShareAsync(const CreateWorkloadShareRe
 void WellArchitectedClient::CreateWorkloadShareAsyncHelper(const CreateWorkloadShareRequest& request, const CreateWorkloadShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateWorkloadShare(request), context);
+}
+
+DeleteLensOutcome WellArchitectedClient::DeleteLens(const DeleteLensRequest& request) const
+{
+  if (!request.LensAliasHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteLens", "Required field: LensAlias, is not set");
+    return DeleteLensOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LensAlias]", false));
+  }
+  if (!request.ClientRequestTokenHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteLens", "Required field: ClientRequestToken, is not set");
+    return DeleteLensOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClientRequestToken]", false));
+  }
+  if (!request.LensStatusHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteLens", "Required field: LensStatus, is not set");
+    return DeleteLensOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LensStatus]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/lenses/");
+  uri.AddPathSegment(request.GetLensAlias());
+  return DeleteLensOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteLensOutcomeCallable WellArchitectedClient::DeleteLensCallable(const DeleteLensRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteLensOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLens(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WellArchitectedClient::DeleteLensAsync(const DeleteLensRequest& request, const DeleteLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteLensAsyncHelper( request, handler, context ); } );
+}
+
+void WellArchitectedClient::DeleteLensAsyncHelper(const DeleteLensRequest& request, const DeleteLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteLens(request), context);
+}
+
+DeleteLensShareOutcome WellArchitectedClient::DeleteLensShare(const DeleteLensShareRequest& request) const
+{
+  if (!request.ShareIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteLensShare", "Required field: ShareId, is not set");
+    return DeleteLensShareOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ShareId]", false));
+  }
+  if (!request.LensAliasHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteLensShare", "Required field: LensAlias, is not set");
+    return DeleteLensShareOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LensAlias]", false));
+  }
+  if (!request.ClientRequestTokenHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteLensShare", "Required field: ClientRequestToken, is not set");
+    return DeleteLensShareOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClientRequestToken]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/lenses/");
+  uri.AddPathSegment(request.GetLensAlias());
+  uri.AddPathSegments("/shares/");
+  uri.AddPathSegment(request.GetShareId());
+  return DeleteLensShareOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteLensShareOutcomeCallable WellArchitectedClient::DeleteLensShareCallable(const DeleteLensShareRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteLensShareOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLensShare(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WellArchitectedClient::DeleteLensShareAsync(const DeleteLensShareRequest& request, const DeleteLensShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteLensShareAsyncHelper( request, handler, context ); } );
+}
+
+void WellArchitectedClient::DeleteLensShareAsyncHelper(const DeleteLensShareRequest& request, const DeleteLensShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteLensShare(request), context);
 }
 
 DeleteWorkloadOutcome WellArchitectedClient::DeleteWorkload(const DeleteWorkloadRequest& request) const
@@ -357,6 +513,38 @@ void WellArchitectedClient::DisassociateLensesAsyncHelper(const DisassociateLens
   handler(this, request, DisassociateLenses(request), context);
 }
 
+ExportLensOutcome WellArchitectedClient::ExportLens(const ExportLensRequest& request) const
+{
+  if (!request.LensAliasHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ExportLens", "Required field: LensAlias, is not set");
+    return ExportLensOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LensAlias]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/lenses/");
+  uri.AddPathSegment(request.GetLensAlias());
+  uri.AddPathSegments("/export");
+  return ExportLensOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ExportLensOutcomeCallable WellArchitectedClient::ExportLensCallable(const ExportLensRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ExportLensOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExportLens(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WellArchitectedClient::ExportLensAsync(const ExportLensRequest& request, const ExportLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ExportLensAsyncHelper( request, handler, context ); } );
+}
+
+void WellArchitectedClient::ExportLensAsyncHelper(const ExportLensRequest& request, const ExportLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ExportLens(request), context);
+}
+
 GetAnswerOutcome WellArchitectedClient::GetAnswer(const GetAnswerRequest& request) const
 {
   if (!request.WorkloadIdHasBeenSet())
@@ -400,6 +588,37 @@ void WellArchitectedClient::GetAnswerAsync(const GetAnswerRequest& request, cons
 void WellArchitectedClient::GetAnswerAsyncHelper(const GetAnswerRequest& request, const GetAnswerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetAnswer(request), context);
+}
+
+GetLensOutcome WellArchitectedClient::GetLens(const GetLensRequest& request) const
+{
+  if (!request.LensAliasHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetLens", "Required field: LensAlias, is not set");
+    return GetLensOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LensAlias]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/lenses/");
+  uri.AddPathSegment(request.GetLensAlias());
+  return GetLensOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetLensOutcomeCallable WellArchitectedClient::GetLensCallable(const GetLensRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetLensOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLens(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WellArchitectedClient::GetLensAsync(const GetLensRequest& request, const GetLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetLensAsyncHelper( request, handler, context ); } );
+}
+
+void WellArchitectedClient::GetLensAsyncHelper(const GetLensRequest& request, const GetLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetLens(request), context);
 }
 
 GetLensReviewOutcome WellArchitectedClient::GetLensReview(const GetLensReviewRequest& request) const
@@ -485,11 +704,6 @@ GetLensVersionDifferenceOutcome WellArchitectedClient::GetLensVersionDifference(
   {
     AWS_LOGSTREAM_ERROR("GetLensVersionDifference", "Required field: LensAlias, is not set");
     return GetLensVersionDifferenceOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LensAlias]", false));
-  }
-  if (!request.BaseLensVersionHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetLensVersionDifference", "Required field: BaseLensVersion, is not set");
-    return GetLensVersionDifferenceOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BaseLensVersion]", false));
   }
   Aws::Http::URI uri = m_uri;
   uri.AddPathSegments("/lenses/");
@@ -583,6 +797,31 @@ void WellArchitectedClient::GetWorkloadAsync(const GetWorkloadRequest& request, 
 void WellArchitectedClient::GetWorkloadAsyncHelper(const GetWorkloadRequest& request, const GetWorkloadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetWorkload(request), context);
+}
+
+ImportLensOutcome WellArchitectedClient::ImportLens(const ImportLensRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/importLens");
+  return ImportLensOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+ImportLensOutcomeCallable WellArchitectedClient::ImportLensCallable(const ImportLensRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ImportLensOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportLens(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WellArchitectedClient::ImportLensAsync(const ImportLensRequest& request, const ImportLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ImportLensAsyncHelper( request, handler, context ); } );
+}
+
+void WellArchitectedClient::ImportLensAsyncHelper(const ImportLensRequest& request, const ImportLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ImportLens(request), context);
 }
 
 ListAnswersOutcome WellArchitectedClient::ListAnswers(const ListAnswersRequest& request) const
@@ -693,6 +932,38 @@ void WellArchitectedClient::ListLensReviewsAsync(const ListLensReviewsRequest& r
 void WellArchitectedClient::ListLensReviewsAsyncHelper(const ListLensReviewsRequest& request, const ListLensReviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListLensReviews(request), context);
+}
+
+ListLensSharesOutcome WellArchitectedClient::ListLensShares(const ListLensSharesRequest& request) const
+{
+  if (!request.LensAliasHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListLensShares", "Required field: LensAlias, is not set");
+    return ListLensSharesOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LensAlias]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/lenses/");
+  uri.AddPathSegment(request.GetLensAlias());
+  uri.AddPathSegments("/shares");
+  return ListLensSharesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListLensSharesOutcomeCallable WellArchitectedClient::ListLensSharesCallable(const ListLensSharesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListLensSharesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLensShares(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WellArchitectedClient::ListLensSharesAsync(const ListLensSharesRequest& request, const ListLensSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListLensSharesAsyncHelper( request, handler, context ); } );
+}
+
+void WellArchitectedClient::ListLensSharesAsyncHelper(const ListLensSharesRequest& request, const ListLensSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListLensShares(request), context);
 }
 
 ListLensesOutcome WellArchitectedClient::ListLenses(const ListLensesRequest& request) const

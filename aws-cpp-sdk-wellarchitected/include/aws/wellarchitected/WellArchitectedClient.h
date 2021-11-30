@@ -11,18 +11,24 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wellarchitected/model/CreateLensShareResult.h>
+#include <aws/wellarchitected/model/CreateLensVersionResult.h>
 #include <aws/wellarchitected/model/CreateMilestoneResult.h>
 #include <aws/wellarchitected/model/CreateWorkloadResult.h>
 #include <aws/wellarchitected/model/CreateWorkloadShareResult.h>
+#include <aws/wellarchitected/model/ExportLensResult.h>
 #include <aws/wellarchitected/model/GetAnswerResult.h>
+#include <aws/wellarchitected/model/GetLensResult.h>
 #include <aws/wellarchitected/model/GetLensReviewResult.h>
 #include <aws/wellarchitected/model/GetLensReviewReportResult.h>
 #include <aws/wellarchitected/model/GetLensVersionDifferenceResult.h>
 #include <aws/wellarchitected/model/GetMilestoneResult.h>
 #include <aws/wellarchitected/model/GetWorkloadResult.h>
+#include <aws/wellarchitected/model/ImportLensResult.h>
 #include <aws/wellarchitected/model/ListAnswersResult.h>
 #include <aws/wellarchitected/model/ListLensReviewImprovementsResult.h>
 #include <aws/wellarchitected/model/ListLensReviewsResult.h>
+#include <aws/wellarchitected/model/ListLensSharesResult.h>
 #include <aws/wellarchitected/model/ListLensesResult.h>
 #include <aws/wellarchitected/model/ListMilestonesResult.h>
 #include <aws/wellarchitected/model/ListNotificationsResult.h>
@@ -78,21 +84,29 @@ namespace WellArchitected
 namespace Model
 {
         class AssociateLensesRequest;
+        class CreateLensShareRequest;
+        class CreateLensVersionRequest;
         class CreateMilestoneRequest;
         class CreateWorkloadRequest;
         class CreateWorkloadShareRequest;
+        class DeleteLensRequest;
+        class DeleteLensShareRequest;
         class DeleteWorkloadRequest;
         class DeleteWorkloadShareRequest;
         class DisassociateLensesRequest;
+        class ExportLensRequest;
         class GetAnswerRequest;
+        class GetLensRequest;
         class GetLensReviewRequest;
         class GetLensReviewReportRequest;
         class GetLensVersionDifferenceRequest;
         class GetMilestoneRequest;
         class GetWorkloadRequest;
+        class ImportLensRequest;
         class ListAnswersRequest;
         class ListLensReviewImprovementsRequest;
         class ListLensReviewsRequest;
+        class ListLensSharesRequest;
         class ListLensesRequest;
         class ListMilestonesRequest;
         class ListNotificationsRequest;
@@ -110,21 +124,29 @@ namespace Model
         class UpgradeLensReviewRequest;
 
         typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> AssociateLensesOutcome;
+        typedef Aws::Utils::Outcome<CreateLensShareResult, WellArchitectedError> CreateLensShareOutcome;
+        typedef Aws::Utils::Outcome<CreateLensVersionResult, WellArchitectedError> CreateLensVersionOutcome;
         typedef Aws::Utils::Outcome<CreateMilestoneResult, WellArchitectedError> CreateMilestoneOutcome;
         typedef Aws::Utils::Outcome<CreateWorkloadResult, WellArchitectedError> CreateWorkloadOutcome;
         typedef Aws::Utils::Outcome<CreateWorkloadShareResult, WellArchitectedError> CreateWorkloadShareOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> DeleteLensOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> DeleteLensShareOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> DeleteWorkloadOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> DeleteWorkloadShareOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> DisassociateLensesOutcome;
+        typedef Aws::Utils::Outcome<ExportLensResult, WellArchitectedError> ExportLensOutcome;
         typedef Aws::Utils::Outcome<GetAnswerResult, WellArchitectedError> GetAnswerOutcome;
+        typedef Aws::Utils::Outcome<GetLensResult, WellArchitectedError> GetLensOutcome;
         typedef Aws::Utils::Outcome<GetLensReviewResult, WellArchitectedError> GetLensReviewOutcome;
         typedef Aws::Utils::Outcome<GetLensReviewReportResult, WellArchitectedError> GetLensReviewReportOutcome;
         typedef Aws::Utils::Outcome<GetLensVersionDifferenceResult, WellArchitectedError> GetLensVersionDifferenceOutcome;
         typedef Aws::Utils::Outcome<GetMilestoneResult, WellArchitectedError> GetMilestoneOutcome;
         typedef Aws::Utils::Outcome<GetWorkloadResult, WellArchitectedError> GetWorkloadOutcome;
+        typedef Aws::Utils::Outcome<ImportLensResult, WellArchitectedError> ImportLensOutcome;
         typedef Aws::Utils::Outcome<ListAnswersResult, WellArchitectedError> ListAnswersOutcome;
         typedef Aws::Utils::Outcome<ListLensReviewImprovementsResult, WellArchitectedError> ListLensReviewImprovementsOutcome;
         typedef Aws::Utils::Outcome<ListLensReviewsResult, WellArchitectedError> ListLensReviewsOutcome;
+        typedef Aws::Utils::Outcome<ListLensSharesResult, WellArchitectedError> ListLensSharesOutcome;
         typedef Aws::Utils::Outcome<ListLensesResult, WellArchitectedError> ListLensesOutcome;
         typedef Aws::Utils::Outcome<ListMilestonesResult, WellArchitectedError> ListMilestonesOutcome;
         typedef Aws::Utils::Outcome<ListNotificationsResult, WellArchitectedError> ListNotificationsOutcome;
@@ -142,21 +164,29 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> UpgradeLensReviewOutcome;
 
         typedef std::future<AssociateLensesOutcome> AssociateLensesOutcomeCallable;
+        typedef std::future<CreateLensShareOutcome> CreateLensShareOutcomeCallable;
+        typedef std::future<CreateLensVersionOutcome> CreateLensVersionOutcomeCallable;
         typedef std::future<CreateMilestoneOutcome> CreateMilestoneOutcomeCallable;
         typedef std::future<CreateWorkloadOutcome> CreateWorkloadOutcomeCallable;
         typedef std::future<CreateWorkloadShareOutcome> CreateWorkloadShareOutcomeCallable;
+        typedef std::future<DeleteLensOutcome> DeleteLensOutcomeCallable;
+        typedef std::future<DeleteLensShareOutcome> DeleteLensShareOutcomeCallable;
         typedef std::future<DeleteWorkloadOutcome> DeleteWorkloadOutcomeCallable;
         typedef std::future<DeleteWorkloadShareOutcome> DeleteWorkloadShareOutcomeCallable;
         typedef std::future<DisassociateLensesOutcome> DisassociateLensesOutcomeCallable;
+        typedef std::future<ExportLensOutcome> ExportLensOutcomeCallable;
         typedef std::future<GetAnswerOutcome> GetAnswerOutcomeCallable;
+        typedef std::future<GetLensOutcome> GetLensOutcomeCallable;
         typedef std::future<GetLensReviewOutcome> GetLensReviewOutcomeCallable;
         typedef std::future<GetLensReviewReportOutcome> GetLensReviewReportOutcomeCallable;
         typedef std::future<GetLensVersionDifferenceOutcome> GetLensVersionDifferenceOutcomeCallable;
         typedef std::future<GetMilestoneOutcome> GetMilestoneOutcomeCallable;
         typedef std::future<GetWorkloadOutcome> GetWorkloadOutcomeCallable;
+        typedef std::future<ImportLensOutcome> ImportLensOutcomeCallable;
         typedef std::future<ListAnswersOutcome> ListAnswersOutcomeCallable;
         typedef std::future<ListLensReviewImprovementsOutcome> ListLensReviewImprovementsOutcomeCallable;
         typedef std::future<ListLensReviewsOutcome> ListLensReviewsOutcomeCallable;
+        typedef std::future<ListLensSharesOutcome> ListLensSharesOutcomeCallable;
         typedef std::future<ListLensesOutcome> ListLensesOutcomeCallable;
         typedef std::future<ListMilestonesOutcome> ListMilestonesOutcomeCallable;
         typedef std::future<ListNotificationsOutcome> ListNotificationsOutcomeCallable;
@@ -177,21 +207,29 @@ namespace Model
   class WellArchitectedClient;
 
     typedef std::function<void(const WellArchitectedClient*, const Model::AssociateLensesRequest&, const Model::AssociateLensesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateLensesResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::CreateLensShareRequest&, const Model::CreateLensShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLensShareResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::CreateLensVersionRequest&, const Model::CreateLensVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLensVersionResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::CreateMilestoneRequest&, const Model::CreateMilestoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMilestoneResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::CreateWorkloadRequest&, const Model::CreateWorkloadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkloadResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::CreateWorkloadShareRequest&, const Model::CreateWorkloadShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkloadShareResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::DeleteLensRequest&, const Model::DeleteLensOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLensResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::DeleteLensShareRequest&, const Model::DeleteLensShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLensShareResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::DeleteWorkloadRequest&, const Model::DeleteWorkloadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkloadResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::DeleteWorkloadShareRequest&, const Model::DeleteWorkloadShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkloadShareResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::DisassociateLensesRequest&, const Model::DisassociateLensesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateLensesResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::ExportLensRequest&, const Model::ExportLensOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportLensResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::GetAnswerRequest&, const Model::GetAnswerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAnswerResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::GetLensRequest&, const Model::GetLensOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLensResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::GetLensReviewRequest&, const Model::GetLensReviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLensReviewResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::GetLensReviewReportRequest&, const Model::GetLensReviewReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLensReviewReportResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::GetLensVersionDifferenceRequest&, const Model::GetLensVersionDifferenceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLensVersionDifferenceResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::GetMilestoneRequest&, const Model::GetMilestoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMilestoneResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::GetWorkloadRequest&, const Model::GetWorkloadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkloadResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::ImportLensRequest&, const Model::ImportLensOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportLensResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::ListAnswersRequest&, const Model::ListAnswersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAnswersResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::ListLensReviewImprovementsRequest&, const Model::ListLensReviewImprovementsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLensReviewImprovementsResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::ListLensReviewsRequest&, const Model::ListLensReviewsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLensReviewsResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::ListLensSharesRequest&, const Model::ListLensSharesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLensSharesResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::ListLensesRequest&, const Model::ListLensesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLensesResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::ListMilestonesRequest&, const Model::ListMilestonesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMilestonesResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::ListNotificationsRequest&, const Model::ListNotificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNotificationsResponseReceivedHandler;
@@ -209,14 +247,14 @@ namespace Model
     typedef std::function<void(const WellArchitectedClient*, const Model::UpgradeLensReviewRequest&, const Model::UpgradeLensReviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpgradeLensReviewResponseReceivedHandler;
 
   /**
-   * <fullname>AWS Well-Architected Tool</fullname> <p>This is the <i>AWS
-   * Well-Architected Tool API Reference</i>. The AWS Well-Architected Tool API
-   * provides programmatic access to the <a
-   * href="http://aws.amazon.com/well-architected-tool">AWS Well-Architected Tool</a>
-   * in the <a href="https://console.aws.amazon.com/wellarchitected">AWS Management
-   * Console</a>. For information about the AWS Well-Architected Tool, see the <a
-   * href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html">AWS
-   * Well-Architected Tool User Guide</a>.</p>
+   * <fullname>Well-Architected Tool</fullname> <p>This is the <i>Well-Architected
+   * Tool API Reference</i>. The WA Tool API provides programmatic access to the <a
+   * href="http://aws.amazon.com/well-architected-tool">Well-Architected Tool</a> in
+   * the <a href="https://console.aws.amazon.com/wellarchitected">Amazon Web Services
+   * Management Console</a>. For information about the Well-Architected Tool, see the
+   * <a
+   * href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html">Well-Architected
+   * Tool User Guide</a>.</p>
    */
   class AWS_WELLARCHITECTED_API WellArchitectedClient : public Aws::Client::AWSJsonClient
   {
@@ -246,14 +284,26 @@ namespace Model
 
 
         /**
-         * <p>Associate a lens to a workload.</p><p><h3>See Also:</h3>   <a
+         * <p>Associate a lens to a workload.</p> <p>Up to 10 lenses can be associated with
+         * a workload in a single API operation. A maximum of 20 lenses can be associated
+         * with a workload.</p>  <p> <b>Disclaimer</b> </p> <p>By accessing and/or
+         * applying custom lenses created by another Amazon Web Services user or account,
+         * you acknowledge that custom lenses created by other users and shared with you
+         * are Third Party Content as defined in the Amazon Web Services Customer
+         * Agreement. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/AssociateLenses">AWS
          * API Reference</a></p>
          */
         virtual Model::AssociateLensesOutcome AssociateLenses(const Model::AssociateLensesRequest& request) const;
 
         /**
-         * <p>Associate a lens to a workload.</p><p><h3>See Also:</h3>   <a
+         * <p>Associate a lens to a workload.</p> <p>Up to 10 lenses can be associated with
+         * a workload in a single API operation. A maximum of 20 lenses can be associated
+         * with a workload.</p>  <p> <b>Disclaimer</b> </p> <p>By accessing and/or
+         * applying custom lenses created by another Amazon Web Services user or account,
+         * you acknowledge that custom lenses created by other users and shared with you
+         * are Third Party Content as defined in the Amazon Web Services Customer
+         * Agreement. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/AssociateLenses">AWS
          * API Reference</a></p>
          *
@@ -262,13 +312,108 @@ namespace Model
         virtual Model::AssociateLensesOutcomeCallable AssociateLensesCallable(const Model::AssociateLensesRequest& request) const;
 
         /**
-         * <p>Associate a lens to a workload.</p><p><h3>See Also:</h3>   <a
+         * <p>Associate a lens to a workload.</p> <p>Up to 10 lenses can be associated with
+         * a workload in a single API operation. A maximum of 20 lenses can be associated
+         * with a workload.</p>  <p> <b>Disclaimer</b> </p> <p>By accessing and/or
+         * applying custom lenses created by another Amazon Web Services user or account,
+         * you acknowledge that custom lenses created by other users and shared with you
+         * are Third Party Content as defined in the Amazon Web Services Customer
+         * Agreement. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/AssociateLenses">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateLensesAsync(const Model::AssociateLensesRequest& request, const AssociateLensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Create a lens share.</p> <p>The owner of a lens can share it with other
+         * Amazon Web Services accounts and IAM users in the same Amazon Web Services
+         * Region. Shared access to a lens is not removed until the lens invitation is
+         * deleted.</p>  <p> <b>Disclaimer</b> </p> <p>By sharing your custom lenses
+         * with other Amazon Web Services accounts, you acknowledge that Amazon Web
+         * Services will make your custom lenses available to those other accounts. Those
+         * other accounts may continue to access and use your shared custom lenses even if
+         * you delete the custom lenses from your own Amazon Web Services account or
+         * terminate your Amazon Web Services account.</p> <p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateLensShare">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLensShareOutcome CreateLensShare(const Model::CreateLensShareRequest& request) const;
+
+        /**
+         * <p>Create a lens share.</p> <p>The owner of a lens can share it with other
+         * Amazon Web Services accounts and IAM users in the same Amazon Web Services
+         * Region. Shared access to a lens is not removed until the lens invitation is
+         * deleted.</p>  <p> <b>Disclaimer</b> </p> <p>By sharing your custom lenses
+         * with other Amazon Web Services accounts, you acknowledge that Amazon Web
+         * Services will make your custom lenses available to those other accounts. Those
+         * other accounts may continue to access and use your shared custom lenses even if
+         * you delete the custom lenses from your own Amazon Web Services account or
+         * terminate your Amazon Web Services account.</p> <p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateLensShare">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateLensShareOutcomeCallable CreateLensShareCallable(const Model::CreateLensShareRequest& request) const;
+
+        /**
+         * <p>Create a lens share.</p> <p>The owner of a lens can share it with other
+         * Amazon Web Services accounts and IAM users in the same Amazon Web Services
+         * Region. Shared access to a lens is not removed until the lens invitation is
+         * deleted.</p>  <p> <b>Disclaimer</b> </p> <p>By sharing your custom lenses
+         * with other Amazon Web Services accounts, you acknowledge that Amazon Web
+         * Services will make your custom lenses available to those other accounts. Those
+         * other accounts may continue to access and use your shared custom lenses even if
+         * you delete the custom lenses from your own Amazon Web Services account or
+         * terminate your Amazon Web Services account.</p> <p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateLensShare">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateLensShareAsync(const Model::CreateLensShareRequest& request, const CreateLensShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Create a new lens version.</p> <p>A lens can have up to 100 versions.</p>
+         * <p>After a lens has been imported, create a new lens version to publish it. The
+         * owner of a lens can share the lens with other Amazon Web Services accounts and
+         * IAM users in the same Amazon Web Services Region. Only the owner of a lens can
+         * delete it. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateLensVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLensVersionOutcome CreateLensVersion(const Model::CreateLensVersionRequest& request) const;
+
+        /**
+         * <p>Create a new lens version.</p> <p>A lens can have up to 100 versions.</p>
+         * <p>After a lens has been imported, create a new lens version to publish it. The
+         * owner of a lens can share the lens with other Amazon Web Services accounts and
+         * IAM users in the same Amazon Web Services Region. Only the owner of a lens can
+         * delete it. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateLensVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateLensVersionOutcomeCallable CreateLensVersionCallable(const Model::CreateLensVersionRequest& request) const;
+
+        /**
+         * <p>Create a new lens version.</p> <p>A lens can have up to 100 versions.</p>
+         * <p>After a lens has been imported, create a new lens version to publish it. The
+         * owner of a lens can share the lens with other Amazon Web Services accounts and
+         * IAM users in the same Amazon Web Services Region. Only the owner of a lens can
+         * delete it. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateLensVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateLensVersionAsync(const Model::CreateLensVersionRequest& request, const CreateLensVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create a milestone for an existing workload.</p><p><h3>See Also:</h3>   <a
@@ -297,10 +442,11 @@ namespace Model
 
         /**
          * <p>Create a new workload.</p> <p>The owner of a workload can share the workload
-         * with other AWS accounts and IAM users in the same AWS Region. Only the owner of
-         * a workload can delete it.</p> <p>For more information, see <a
+         * with other Amazon Web Services accounts and IAM users in the same Amazon Web
+         * Services Region. Only the owner of a workload can delete it.</p> <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html">Defining
-         * a Workload</a> in the <i>AWS Well-Architected Tool User Guide</i>.</p><p><h3>See
+         * a Workload</a> in the <i>Well-Architected Tool User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateWorkload">AWS
          * API Reference</a></p>
@@ -309,10 +455,11 @@ namespace Model
 
         /**
          * <p>Create a new workload.</p> <p>The owner of a workload can share the workload
-         * with other AWS accounts and IAM users in the same AWS Region. Only the owner of
-         * a workload can delete it.</p> <p>For more information, see <a
+         * with other Amazon Web Services accounts and IAM users in the same Amazon Web
+         * Services Region. Only the owner of a workload can delete it.</p> <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html">Defining
-         * a Workload</a> in the <i>AWS Well-Architected Tool User Guide</i>.</p><p><h3>See
+         * a Workload</a> in the <i>Well-Architected Tool User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateWorkload">AWS
          * API Reference</a></p>
@@ -323,10 +470,11 @@ namespace Model
 
         /**
          * <p>Create a new workload.</p> <p>The owner of a workload can share the workload
-         * with other AWS accounts and IAM users in the same AWS Region. Only the owner of
-         * a workload can delete it.</p> <p>For more information, see <a
+         * with other Amazon Web Services accounts and IAM users in the same Amazon Web
+         * Services Region. Only the owner of a workload can delete it.</p> <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html">Defining
-         * a Workload</a> in the <i>AWS Well-Architected Tool User Guide</i>.</p><p><h3>See
+         * a Workload</a> in the <i>Well-Architected Tool User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateWorkload">AWS
          * API Reference</a></p>
@@ -337,11 +485,11 @@ namespace Model
 
         /**
          * <p>Create a workload share.</p> <p>The owner of a workload can share it with
-         * other AWS accounts and IAM users in the same AWS Region. Shared access to a
-         * workload is not removed until the workload invitation is deleted.</p> <p>For
-         * more information, see <a
+         * other Amazon Web Services accounts and IAM users in the same Amazon Web Services
+         * Region. Shared access to a workload is not removed until the workload invitation
+         * is deleted.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-sharing.html">Sharing
-         * a Workload</a> in the <i>AWS Well-Architected Tool User Guide</i>.</p><p><h3>See
+         * a Workload</a> in the <i>Well-Architected Tool User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateWorkloadShare">AWS
          * API Reference</a></p>
@@ -350,11 +498,11 @@ namespace Model
 
         /**
          * <p>Create a workload share.</p> <p>The owner of a workload can share it with
-         * other AWS accounts and IAM users in the same AWS Region. Shared access to a
-         * workload is not removed until the workload invitation is deleted.</p> <p>For
-         * more information, see <a
+         * other Amazon Web Services accounts and IAM users in the same Amazon Web Services
+         * Region. Shared access to a workload is not removed until the workload invitation
+         * is deleted.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-sharing.html">Sharing
-         * a Workload</a> in the <i>AWS Well-Architected Tool User Guide</i>.</p><p><h3>See
+         * a Workload</a> in the <i>Well-Architected Tool User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateWorkloadShare">AWS
          * API Reference</a></p>
@@ -365,11 +513,11 @@ namespace Model
 
         /**
          * <p>Create a workload share.</p> <p>The owner of a workload can share it with
-         * other AWS accounts and IAM users in the same AWS Region. Shared access to a
-         * workload is not removed until the workload invitation is deleted.</p> <p>For
-         * more information, see <a
+         * other Amazon Web Services accounts and IAM users in the same Amazon Web Services
+         * Region. Shared access to a workload is not removed until the workload invitation
+         * is deleted.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-sharing.html">Sharing
-         * a Workload</a> in the <i>AWS Well-Architected Tool User Guide</i>.</p><p><h3>See
+         * a Workload</a> in the <i>Well-Architected Tool User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateWorkloadShare">AWS
          * API Reference</a></p>
@@ -377,6 +525,107 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateWorkloadShareAsync(const Model::CreateWorkloadShareRequest& request, const CreateWorkloadShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Delete an existing lens.</p> <p>Only the owner of a lens can delete it. After
+         * the lens is deleted, Amazon Web Services accounts and IAM users that you shared
+         * the lens with can continue to use it, but they will no longer be able to apply
+         * it to new workloads. </p>  <p> <b>Disclaimer</b> </p> <p>By sharing your
+         * custom lenses with other Amazon Web Services accounts, you acknowledge that
+         * Amazon Web Services will make your custom lenses available to those other
+         * accounts. Those other accounts may continue to access and use your shared custom
+         * lenses even if you delete the custom lenses from your own Amazon Web Services
+         * account or terminate your Amazon Web Services account.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteLens">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLensOutcome DeleteLens(const Model::DeleteLensRequest& request) const;
+
+        /**
+         * <p>Delete an existing lens.</p> <p>Only the owner of a lens can delete it. After
+         * the lens is deleted, Amazon Web Services accounts and IAM users that you shared
+         * the lens with can continue to use it, but they will no longer be able to apply
+         * it to new workloads. </p>  <p> <b>Disclaimer</b> </p> <p>By sharing your
+         * custom lenses with other Amazon Web Services accounts, you acknowledge that
+         * Amazon Web Services will make your custom lenses available to those other
+         * accounts. Those other accounts may continue to access and use your shared custom
+         * lenses even if you delete the custom lenses from your own Amazon Web Services
+         * account or terminate your Amazon Web Services account.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteLens">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteLensOutcomeCallable DeleteLensCallable(const Model::DeleteLensRequest& request) const;
+
+        /**
+         * <p>Delete an existing lens.</p> <p>Only the owner of a lens can delete it. After
+         * the lens is deleted, Amazon Web Services accounts and IAM users that you shared
+         * the lens with can continue to use it, but they will no longer be able to apply
+         * it to new workloads. </p>  <p> <b>Disclaimer</b> </p> <p>By sharing your
+         * custom lenses with other Amazon Web Services accounts, you acknowledge that
+         * Amazon Web Services will make your custom lenses available to those other
+         * accounts. Those other accounts may continue to access and use your shared custom
+         * lenses even if you delete the custom lenses from your own Amazon Web Services
+         * account or terminate your Amazon Web Services account.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteLens">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteLensAsync(const Model::DeleteLensRequest& request, const DeleteLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Delete a lens share.</p> <p>After the lens share is deleted, Amazon Web
+         * Services accounts and IAM users that you shared the lens with can continue to
+         * use it, but they will no longer be able to apply it to new workloads.</p> 
+         * <p> <b>Disclaimer</b> </p> <p>By sharing your custom lenses with other Amazon
+         * Web Services accounts, you acknowledge that Amazon Web Services will make your
+         * custom lenses available to those other accounts. Those other accounts may
+         * continue to access and use your shared custom lenses even if you delete the
+         * custom lenses from your own Amazon Web Services account or terminate your Amazon
+         * Web Services account.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteLensShare">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLensShareOutcome DeleteLensShare(const Model::DeleteLensShareRequest& request) const;
+
+        /**
+         * <p>Delete a lens share.</p> <p>After the lens share is deleted, Amazon Web
+         * Services accounts and IAM users that you shared the lens with can continue to
+         * use it, but they will no longer be able to apply it to new workloads.</p> 
+         * <p> <b>Disclaimer</b> </p> <p>By sharing your custom lenses with other Amazon
+         * Web Services accounts, you acknowledge that Amazon Web Services will make your
+         * custom lenses available to those other accounts. Those other accounts may
+         * continue to access and use your shared custom lenses even if you delete the
+         * custom lenses from your own Amazon Web Services account or terminate your Amazon
+         * Web Services account.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteLensShare">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteLensShareOutcomeCallable DeleteLensShareCallable(const Model::DeleteLensShareRequest& request) const;
+
+        /**
+         * <p>Delete a lens share.</p> <p>After the lens share is deleted, Amazon Web
+         * Services accounts and IAM users that you shared the lens with can continue to
+         * use it, but they will no longer be able to apply it to new workloads.</p> 
+         * <p> <b>Disclaimer</b> </p> <p>By sharing your custom lenses with other Amazon
+         * Web Services accounts, you acknowledge that Amazon Web Services will make your
+         * custom lenses available to those other accounts. Those other accounts may
+         * continue to access and use your shared custom lenses even if you delete the
+         * custom lenses from your own Amazon Web Services account or terminate your Amazon
+         * Web Services account.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteLensShare">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteLensShareAsync(const Model::DeleteLensShareRequest& request, const DeleteLensShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete an existing workload.</p><p><h3>See Also:</h3>   <a
@@ -429,18 +678,22 @@ namespace Model
         virtual void DeleteWorkloadShareAsync(const Model::DeleteWorkloadShareRequest& request, const DeleteWorkloadShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disassociate a lens from a workload.</p>  <p>The AWS Well-Architected
-         * Framework lens (<code>wellarchitected</code>) cannot be removed from a
-         * workload.</p> <p><h3>See Also:</h3>   <a
+         * <p>Disassociate a lens from a workload.</p> <p>Up to 10 lenses can be
+         * disassociated from a workload in a single API operation.</p>  <p>The
+         * Amazon Web Services Well-Architected Framework lens
+         * (<code>wellarchitected</code>) cannot be removed from a workload.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DisassociateLenses">AWS
          * API Reference</a></p>
          */
         virtual Model::DisassociateLensesOutcome DisassociateLenses(const Model::DisassociateLensesRequest& request) const;
 
         /**
-         * <p>Disassociate a lens from a workload.</p>  <p>The AWS Well-Architected
-         * Framework lens (<code>wellarchitected</code>) cannot be removed from a
-         * workload.</p> <p><h3>See Also:</h3>   <a
+         * <p>Disassociate a lens from a workload.</p> <p>Up to 10 lenses can be
+         * disassociated from a workload in a single API operation.</p>  <p>The
+         * Amazon Web Services Well-Architected Framework lens
+         * (<code>wellarchitected</code>) cannot be removed from a workload.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DisassociateLenses">AWS
          * API Reference</a></p>
          *
@@ -449,15 +702,72 @@ namespace Model
         virtual Model::DisassociateLensesOutcomeCallable DisassociateLensesCallable(const Model::DisassociateLensesRequest& request) const;
 
         /**
-         * <p>Disassociate a lens from a workload.</p>  <p>The AWS Well-Architected
-         * Framework lens (<code>wellarchitected</code>) cannot be removed from a
-         * workload.</p> <p><h3>See Also:</h3>   <a
+         * <p>Disassociate a lens from a workload.</p> <p>Up to 10 lenses can be
+         * disassociated from a workload in a single API operation.</p>  <p>The
+         * Amazon Web Services Well-Architected Framework lens
+         * (<code>wellarchitected</code>) cannot be removed from a workload.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DisassociateLenses">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateLensesAsync(const Model::DisassociateLensesRequest& request, const DisassociateLensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Export an existing lens.</p> <p>Lenses are defined in JSON. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html">JSON
+         * format specification</a> in the <i>Well-Architected Tool User Guide</i>. Only
+         * the owner of a lens can export it. </p>  <p> <b>Disclaimer</b> </p> <p>Do
+         * not include or gather personal identifiable information (PII) of end users or
+         * other identifiable individuals in or via your custom lenses. If your custom lens
+         * or those shared with you and used in your account do include or collect PII you
+         * are responsible for: ensuring that the included PII is processed in accordance
+         * with applicable law, providing adequate privacy notices, and obtaining necessary
+         * consents for processing such data.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ExportLens">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExportLensOutcome ExportLens(const Model::ExportLensRequest& request) const;
+
+        /**
+         * <p>Export an existing lens.</p> <p>Lenses are defined in JSON. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html">JSON
+         * format specification</a> in the <i>Well-Architected Tool User Guide</i>. Only
+         * the owner of a lens can export it. </p>  <p> <b>Disclaimer</b> </p> <p>Do
+         * not include or gather personal identifiable information (PII) of end users or
+         * other identifiable individuals in or via your custom lenses. If your custom lens
+         * or those shared with you and used in your account do include or collect PII you
+         * are responsible for: ensuring that the included PII is processed in accordance
+         * with applicable law, providing adequate privacy notices, and obtaining necessary
+         * consents for processing such data.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ExportLens">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ExportLensOutcomeCallable ExportLensCallable(const Model::ExportLensRequest& request) const;
+
+        /**
+         * <p>Export an existing lens.</p> <p>Lenses are defined in JSON. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html">JSON
+         * format specification</a> in the <i>Well-Architected Tool User Guide</i>. Only
+         * the owner of a lens can export it. </p>  <p> <b>Disclaimer</b> </p> <p>Do
+         * not include or gather personal identifiable information (PII) of end users or
+         * other identifiable individuals in or via your custom lenses. If your custom lens
+         * or those shared with you and used in your account do include or collect PII you
+         * are responsible for: ensuring that the included PII is processed in accordance
+         * with applicable law, providing adequate privacy notices, and obtaining necessary
+         * consents for processing such data.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ExportLens">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ExportLensAsync(const Model::ExportLensRequest& request, const ExportLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the answer to a specific question in a workload review.</p><p><h3>See
@@ -486,6 +796,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetAnswerAsync(const Model::GetAnswerRequest& request, const GetAnswerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Get an existing lens.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetLens">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLensOutcome GetLens(const Model::GetLensRequest& request) const;
+
+        /**
+         * <p>Get an existing lens.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetLens">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetLensOutcomeCallable GetLensCallable(const Model::GetLensRequest& request) const;
+
+        /**
+         * <p>Get an existing lens.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetLens">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetLensAsync(const Model::GetLensRequest& request, const GetLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get lens review.</p><p><h3>See Also:</h3>   <a
@@ -613,6 +948,70 @@ namespace Model
         virtual void GetWorkloadAsync(const Model::GetWorkloadRequest& request, const GetWorkloadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Import a new lens.</p> <p>The lens cannot be applied to workloads or shared
+         * with other Amazon Web Services accounts until it's published with
+         * <a>CreateLensVersion</a> </p> <p>Lenses are defined in JSON. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html">JSON
+         * format specification</a> in the <i>Well-Architected Tool User Guide</i>.</p>
+         * <p>A custom lens cannot exceed 500 KB in size.</p>  <p> <b>Disclaimer</b>
+         * </p> <p>Do not include or gather personal identifiable information (PII) of end
+         * users or other identifiable individuals in or via your custom lenses. If your
+         * custom lens or those shared with you and used in your account do include or
+         * collect PII you are responsible for: ensuring that the included PII is processed
+         * in accordance with applicable law, providing adequate privacy notices, and
+         * obtaining necessary consents for processing such data.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ImportLens">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ImportLensOutcome ImportLens(const Model::ImportLensRequest& request) const;
+
+        /**
+         * <p>Import a new lens.</p> <p>The lens cannot be applied to workloads or shared
+         * with other Amazon Web Services accounts until it's published with
+         * <a>CreateLensVersion</a> </p> <p>Lenses are defined in JSON. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html">JSON
+         * format specification</a> in the <i>Well-Architected Tool User Guide</i>.</p>
+         * <p>A custom lens cannot exceed 500 KB in size.</p>  <p> <b>Disclaimer</b>
+         * </p> <p>Do not include or gather personal identifiable information (PII) of end
+         * users or other identifiable individuals in or via your custom lenses. If your
+         * custom lens or those shared with you and used in your account do include or
+         * collect PII you are responsible for: ensuring that the included PII is processed
+         * in accordance with applicable law, providing adequate privacy notices, and
+         * obtaining necessary consents for processing such data.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ImportLens">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ImportLensOutcomeCallable ImportLensCallable(const Model::ImportLensRequest& request) const;
+
+        /**
+         * <p>Import a new lens.</p> <p>The lens cannot be applied to workloads or shared
+         * with other Amazon Web Services accounts until it's published with
+         * <a>CreateLensVersion</a> </p> <p>Lenses are defined in JSON. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html">JSON
+         * format specification</a> in the <i>Well-Architected Tool User Guide</i>.</p>
+         * <p>A custom lens cannot exceed 500 KB in size.</p>  <p> <b>Disclaimer</b>
+         * </p> <p>Do not include or gather personal identifiable information (PII) of end
+         * users or other identifiable individuals in or via your custom lenses. If your
+         * custom lens or those shared with you and used in your account do include or
+         * collect PII you are responsible for: ensuring that the included PII is processed
+         * in accordance with applicable law, providing adequate privacy notices, and
+         * obtaining necessary consents for processing such data.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ImportLens">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ImportLensAsync(const Model::ImportLensRequest& request, const ImportLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>List of answers.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListAnswers">AWS
          * API Reference</a></p>
@@ -686,6 +1085,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListLensReviewsAsync(const Model::ListLensReviewsRequest& request, const ListLensReviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>List the lens shares associated with the lens.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListLensShares">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListLensSharesOutcome ListLensShares(const Model::ListLensSharesRequest& request) const;
+
+        /**
+         * <p>List the lens shares associated with the lens.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListLensShares">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListLensSharesOutcomeCallable ListLensSharesCallable(const Model::ListLensSharesRequest& request) const;
+
+        /**
+         * <p>List the lens shares associated with the lens.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListLensShares">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListLensSharesAsync(const Model::ListLensSharesRequest& request, const ListLensSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the available lenses.</p><p><h3>See Also:</h3>   <a
@@ -1085,21 +1509,29 @@ namespace Model
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AssociateLensesAsyncHelper(const Model::AssociateLensesRequest& request, const AssociateLensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateLensShareAsyncHelper(const Model::CreateLensShareRequest& request, const CreateLensShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateLensVersionAsyncHelper(const Model::CreateLensVersionRequest& request, const CreateLensVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateMilestoneAsyncHelper(const Model::CreateMilestoneRequest& request, const CreateMilestoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateWorkloadAsyncHelper(const Model::CreateWorkloadRequest& request, const CreateWorkloadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateWorkloadShareAsyncHelper(const Model::CreateWorkloadShareRequest& request, const CreateWorkloadShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteLensAsyncHelper(const Model::DeleteLensRequest& request, const DeleteLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteLensShareAsyncHelper(const Model::DeleteLensShareRequest& request, const DeleteLensShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteWorkloadAsyncHelper(const Model::DeleteWorkloadRequest& request, const DeleteWorkloadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteWorkloadShareAsyncHelper(const Model::DeleteWorkloadShareRequest& request, const DeleteWorkloadShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateLensesAsyncHelper(const Model::DisassociateLensesRequest& request, const DisassociateLensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ExportLensAsyncHelper(const Model::ExportLensRequest& request, const ExportLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAnswerAsyncHelper(const Model::GetAnswerRequest& request, const GetAnswerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetLensAsyncHelper(const Model::GetLensRequest& request, const GetLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLensReviewAsyncHelper(const Model::GetLensReviewRequest& request, const GetLensReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLensReviewReportAsyncHelper(const Model::GetLensReviewReportRequest& request, const GetLensReviewReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLensVersionDifferenceAsyncHelper(const Model::GetLensVersionDifferenceRequest& request, const GetLensVersionDifferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMilestoneAsyncHelper(const Model::GetMilestoneRequest& request, const GetMilestoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetWorkloadAsyncHelper(const Model::GetWorkloadRequest& request, const GetWorkloadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ImportLensAsyncHelper(const Model::ImportLensRequest& request, const ImportLensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAnswersAsyncHelper(const Model::ListAnswersRequest& request, const ListAnswersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLensReviewImprovementsAsyncHelper(const Model::ListLensReviewImprovementsRequest& request, const ListLensReviewImprovementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLensReviewsAsyncHelper(const Model::ListLensReviewsRequest& request, const ListLensReviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListLensSharesAsyncHelper(const Model::ListLensSharesRequest& request, const ListLensSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLensesAsyncHelper(const Model::ListLensesRequest& request, const ListLensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMilestonesAsyncHelper(const Model::ListMilestonesRequest& request, const ListMilestonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListNotificationsAsyncHelper(const Model::ListNotificationsRequest& request, const ListNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

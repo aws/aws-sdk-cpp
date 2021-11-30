@@ -60,7 +60,13 @@ namespace Model
     RecommendationOptionsMemory,
     RecommendationOptionsStorage,
     RecommendationOptionsNetwork,
-    LastRefreshTimestamp
+    LastRefreshTimestamp,
+    CurrentPerformanceRisk,
+    RecommendationOptionsSavingsOpportunityPercentage,
+    RecommendationOptionsEstimatedMonthlySavingsCurrency,
+    RecommendationOptionsEstimatedMonthlySavingsValue,
+    EffectiveRecommendationPreferencesCpuVendorArchitectures,
+    EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics
   };
 
 namespace ExportableAutoScalingGroupFieldMapper

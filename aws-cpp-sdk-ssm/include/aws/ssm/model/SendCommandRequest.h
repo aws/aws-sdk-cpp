@@ -41,14 +41,14 @@ namespace Model
 
 
     /**
-     * <p>The IDs of the instances where the command should run. Specifying instance
-     * IDs is most useful when you are targeting a limited number of instances, though
-     * you can specify up to 50 IDs.</p> <p>To target a larger number of instances, or
-     * if you prefer not to list individual instance IDs, we recommend using the
-     * <code>Targets</code> option instead. Using <code>Targets</code>, which accepts
-     * tag key-value pairs to identify the instances to send commands to, you can a
-     * send command to tens, hundreds, or thousands of instances at once.</p> <p>For
-     * more information about how to use targets, see <a
+     * <p>The IDs of the managed nodes where the command should run. Specifying managed
+     * node IDs is most useful when you are targeting a limited number of managed
+     * nodes, though you can specify up to 50 IDs.</p> <p>To target a larger number of
+     * managed nodes, or if you prefer not to list individual node IDs, we recommend
+     * using the <code>Targets</code> option instead. Using <code>Targets</code>, which
+     * accepts tag key-value pairs to identify the managed nodes to send commands to,
+     * you can a send command to tens, hundreds, or thousands of nodes at once.</p>
+     * <p>For more information about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
      * targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>
@@ -56,14 +56,14 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
 
     /**
-     * <p>The IDs of the instances where the command should run. Specifying instance
-     * IDs is most useful when you are targeting a limited number of instances, though
-     * you can specify up to 50 IDs.</p> <p>To target a larger number of instances, or
-     * if you prefer not to list individual instance IDs, we recommend using the
-     * <code>Targets</code> option instead. Using <code>Targets</code>, which accepts
-     * tag key-value pairs to identify the instances to send commands to, you can a
-     * send command to tens, hundreds, or thousands of instances at once.</p> <p>For
-     * more information about how to use targets, see <a
+     * <p>The IDs of the managed nodes where the command should run. Specifying managed
+     * node IDs is most useful when you are targeting a limited number of managed
+     * nodes, though you can specify up to 50 IDs.</p> <p>To target a larger number of
+     * managed nodes, or if you prefer not to list individual node IDs, we recommend
+     * using the <code>Targets</code> option instead. Using <code>Targets</code>, which
+     * accepts tag key-value pairs to identify the managed nodes to send commands to,
+     * you can a send command to tens, hundreds, or thousands of nodes at once.</p>
+     * <p>For more information about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
      * targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>
@@ -71,14 +71,14 @@ namespace Model
     inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
 
     /**
-     * <p>The IDs of the instances where the command should run. Specifying instance
-     * IDs is most useful when you are targeting a limited number of instances, though
-     * you can specify up to 50 IDs.</p> <p>To target a larger number of instances, or
-     * if you prefer not to list individual instance IDs, we recommend using the
-     * <code>Targets</code> option instead. Using <code>Targets</code>, which accepts
-     * tag key-value pairs to identify the instances to send commands to, you can a
-     * send command to tens, hundreds, or thousands of instances at once.</p> <p>For
-     * more information about how to use targets, see <a
+     * <p>The IDs of the managed nodes where the command should run. Specifying managed
+     * node IDs is most useful when you are targeting a limited number of managed
+     * nodes, though you can specify up to 50 IDs.</p> <p>To target a larger number of
+     * managed nodes, or if you prefer not to list individual node IDs, we recommend
+     * using the <code>Targets</code> option instead. Using <code>Targets</code>, which
+     * accepts tag key-value pairs to identify the managed nodes to send commands to,
+     * you can a send command to tens, hundreds, or thousands of nodes at once.</p>
+     * <p>For more information about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
      * targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>
@@ -86,14 +86,14 @@ namespace Model
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
-     * <p>The IDs of the instances where the command should run. Specifying instance
-     * IDs is most useful when you are targeting a limited number of instances, though
-     * you can specify up to 50 IDs.</p> <p>To target a larger number of instances, or
-     * if you prefer not to list individual instance IDs, we recommend using the
-     * <code>Targets</code> option instead. Using <code>Targets</code>, which accepts
-     * tag key-value pairs to identify the instances to send commands to, you can a
-     * send command to tens, hundreds, or thousands of instances at once.</p> <p>For
-     * more information about how to use targets, see <a
+     * <p>The IDs of the managed nodes where the command should run. Specifying managed
+     * node IDs is most useful when you are targeting a limited number of managed
+     * nodes, though you can specify up to 50 IDs.</p> <p>To target a larger number of
+     * managed nodes, or if you prefer not to list individual node IDs, we recommend
+     * using the <code>Targets</code> option instead. Using <code>Targets</code>, which
+     * accepts tag key-value pairs to identify the managed nodes to send commands to,
+     * you can a send command to tens, hundreds, or thousands of nodes at once.</p>
+     * <p>For more information about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
      * targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>
@@ -101,14 +101,14 @@ namespace Model
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
 
     /**
-     * <p>The IDs of the instances where the command should run. Specifying instance
-     * IDs is most useful when you are targeting a limited number of instances, though
-     * you can specify up to 50 IDs.</p> <p>To target a larger number of instances, or
-     * if you prefer not to list individual instance IDs, we recommend using the
-     * <code>Targets</code> option instead. Using <code>Targets</code>, which accepts
-     * tag key-value pairs to identify the instances to send commands to, you can a
-     * send command to tens, hundreds, or thousands of instances at once.</p> <p>For
-     * more information about how to use targets, see <a
+     * <p>The IDs of the managed nodes where the command should run. Specifying managed
+     * node IDs is most useful when you are targeting a limited number of managed
+     * nodes, though you can specify up to 50 IDs.</p> <p>To target a larger number of
+     * managed nodes, or if you prefer not to list individual node IDs, we recommend
+     * using the <code>Targets</code> option instead. Using <code>Targets</code>, which
+     * accepts tag key-value pairs to identify the managed nodes to send commands to,
+     * you can a send command to tens, hundreds, or thousands of nodes at once.</p>
+     * <p>For more information about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
      * targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>
@@ -116,14 +116,14 @@ namespace Model
     inline SendCommandRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
 
     /**
-     * <p>The IDs of the instances where the command should run. Specifying instance
-     * IDs is most useful when you are targeting a limited number of instances, though
-     * you can specify up to 50 IDs.</p> <p>To target a larger number of instances, or
-     * if you prefer not to list individual instance IDs, we recommend using the
-     * <code>Targets</code> option instead. Using <code>Targets</code>, which accepts
-     * tag key-value pairs to identify the instances to send commands to, you can a
-     * send command to tens, hundreds, or thousands of instances at once.</p> <p>For
-     * more information about how to use targets, see <a
+     * <p>The IDs of the managed nodes where the command should run. Specifying managed
+     * node IDs is most useful when you are targeting a limited number of managed
+     * nodes, though you can specify up to 50 IDs.</p> <p>To target a larger number of
+     * managed nodes, or if you prefer not to list individual node IDs, we recommend
+     * using the <code>Targets</code> option instead. Using <code>Targets</code>, which
+     * accepts tag key-value pairs to identify the managed nodes to send commands to,
+     * you can a send command to tens, hundreds, or thousands of nodes at once.</p>
+     * <p>For more information about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
      * targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>
@@ -131,14 +131,14 @@ namespace Model
     inline SendCommandRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of the instances where the command should run. Specifying instance
-     * IDs is most useful when you are targeting a limited number of instances, though
-     * you can specify up to 50 IDs.</p> <p>To target a larger number of instances, or
-     * if you prefer not to list individual instance IDs, we recommend using the
-     * <code>Targets</code> option instead. Using <code>Targets</code>, which accepts
-     * tag key-value pairs to identify the instances to send commands to, you can a
-     * send command to tens, hundreds, or thousands of instances at once.</p> <p>For
-     * more information about how to use targets, see <a
+     * <p>The IDs of the managed nodes where the command should run. Specifying managed
+     * node IDs is most useful when you are targeting a limited number of managed
+     * nodes, though you can specify up to 50 IDs.</p> <p>To target a larger number of
+     * managed nodes, or if you prefer not to list individual node IDs, we recommend
+     * using the <code>Targets</code> option instead. Using <code>Targets</code>, which
+     * accepts tag key-value pairs to identify the managed nodes to send commands to,
+     * you can a send command to tens, hundreds, or thousands of nodes at once.</p>
+     * <p>For more information about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
      * targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>
@@ -146,14 +146,14 @@ namespace Model
     inline SendCommandRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the instances where the command should run. Specifying instance
-     * IDs is most useful when you are targeting a limited number of instances, though
-     * you can specify up to 50 IDs.</p> <p>To target a larger number of instances, or
-     * if you prefer not to list individual instance IDs, we recommend using the
-     * <code>Targets</code> option instead. Using <code>Targets</code>, which accepts
-     * tag key-value pairs to identify the instances to send commands to, you can a
-     * send command to tens, hundreds, or thousands of instances at once.</p> <p>For
-     * more information about how to use targets, see <a
+     * <p>The IDs of the managed nodes where the command should run. Specifying managed
+     * node IDs is most useful when you are targeting a limited number of managed
+     * nodes, though you can specify up to 50 IDs.</p> <p>To target a larger number of
+     * managed nodes, or if you prefer not to list individual node IDs, we recommend
+     * using the <code>Targets</code> option instead. Using <code>Targets</code>, which
+     * accepts tag key-value pairs to identify the managed nodes to send commands to,
+     * you can a send command to tens, hundreds, or thousands of nodes at once.</p>
+     * <p>For more information about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
      * targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>
@@ -161,14 +161,14 @@ namespace Model
     inline SendCommandRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of the instances where the command should run. Specifying instance
-     * IDs is most useful when you are targeting a limited number of instances, though
-     * you can specify up to 50 IDs.</p> <p>To target a larger number of instances, or
-     * if you prefer not to list individual instance IDs, we recommend using the
-     * <code>Targets</code> option instead. Using <code>Targets</code>, which accepts
-     * tag key-value pairs to identify the instances to send commands to, you can a
-     * send command to tens, hundreds, or thousands of instances at once.</p> <p>For
-     * more information about how to use targets, see <a
+     * <p>The IDs of the managed nodes where the command should run. Specifying managed
+     * node IDs is most useful when you are targeting a limited number of managed
+     * nodes, though you can specify up to 50 IDs.</p> <p>To target a larger number of
+     * managed nodes, or if you prefer not to list individual node IDs, we recommend
+     * using the <code>Targets</code> option instead. Using <code>Targets</code>, which
+     * accepts tag key-value pairs to identify the managed nodes to send commands to,
+     * you can a send command to tens, hundreds, or thousands of nodes at once.</p>
+     * <p>For more information about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
      * targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>
@@ -177,14 +177,14 @@ namespace Model
 
 
     /**
-     * <p>An array of search criteria that targets instances using a
+     * <p>An array of search criteria that targets managed nodes using a
      * <code>Key,Value</code> combination that you specify. Specifying targets is most
-     * useful when you want to send a command to a large number of instances at once.
-     * Using <code>Targets</code>, which accepts tag key-value pairs to identify
-     * instances, you can send a command to tens, hundreds, or thousands of instances
-     * at once.</p> <p>To send a command to a smaller number of instances, you can use
-     * the <code>InstanceIds</code> option instead.</p> <p>For more information about
-     * how to use targets, see <a
+     * useful when you want to send a command to a large number of managed nodes at
+     * once. Using <code>Targets</code>, which accepts tag key-value pairs to identify
+     * managed nodes, you can send a command to tens, hundreds, or thousands of nodes
+     * at once.</p> <p>To send a command to a smaller number of managed nodes, you can
+     * use the <code>InstanceIds</code> option instead.</p> <p>For more information
+     * about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
@@ -192,14 +192,14 @@ namespace Model
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>An array of search criteria that targets instances using a
+     * <p>An array of search criteria that targets managed nodes using a
      * <code>Key,Value</code> combination that you specify. Specifying targets is most
-     * useful when you want to send a command to a large number of instances at once.
-     * Using <code>Targets</code>, which accepts tag key-value pairs to identify
-     * instances, you can send a command to tens, hundreds, or thousands of instances
-     * at once.</p> <p>To send a command to a smaller number of instances, you can use
-     * the <code>InstanceIds</code> option instead.</p> <p>For more information about
-     * how to use targets, see <a
+     * useful when you want to send a command to a large number of managed nodes at
+     * once. Using <code>Targets</code>, which accepts tag key-value pairs to identify
+     * managed nodes, you can send a command to tens, hundreds, or thousands of nodes
+     * at once.</p> <p>To send a command to a smaller number of managed nodes, you can
+     * use the <code>InstanceIds</code> option instead.</p> <p>For more information
+     * about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
@@ -207,14 +207,14 @@ namespace Model
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
-     * <p>An array of search criteria that targets instances using a
+     * <p>An array of search criteria that targets managed nodes using a
      * <code>Key,Value</code> combination that you specify. Specifying targets is most
-     * useful when you want to send a command to a large number of instances at once.
-     * Using <code>Targets</code>, which accepts tag key-value pairs to identify
-     * instances, you can send a command to tens, hundreds, or thousands of instances
-     * at once.</p> <p>To send a command to a smaller number of instances, you can use
-     * the <code>InstanceIds</code> option instead.</p> <p>For more information about
-     * how to use targets, see <a
+     * useful when you want to send a command to a large number of managed nodes at
+     * once. Using <code>Targets</code>, which accepts tag key-value pairs to identify
+     * managed nodes, you can send a command to tens, hundreds, or thousands of nodes
+     * at once.</p> <p>To send a command to a smaller number of managed nodes, you can
+     * use the <code>InstanceIds</code> option instead.</p> <p>For more information
+     * about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
@@ -222,14 +222,14 @@ namespace Model
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <p>An array of search criteria that targets instances using a
+     * <p>An array of search criteria that targets managed nodes using a
      * <code>Key,Value</code> combination that you specify. Specifying targets is most
-     * useful when you want to send a command to a large number of instances at once.
-     * Using <code>Targets</code>, which accepts tag key-value pairs to identify
-     * instances, you can send a command to tens, hundreds, or thousands of instances
-     * at once.</p> <p>To send a command to a smaller number of instances, you can use
-     * the <code>InstanceIds</code> option instead.</p> <p>For more information about
-     * how to use targets, see <a
+     * useful when you want to send a command to a large number of managed nodes at
+     * once. Using <code>Targets</code>, which accepts tag key-value pairs to identify
+     * managed nodes, you can send a command to tens, hundreds, or thousands of nodes
+     * at once.</p> <p>To send a command to a smaller number of managed nodes, you can
+     * use the <code>InstanceIds</code> option instead.</p> <p>For more information
+     * about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
@@ -237,14 +237,14 @@ namespace Model
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
-     * <p>An array of search criteria that targets instances using a
+     * <p>An array of search criteria that targets managed nodes using a
      * <code>Key,Value</code> combination that you specify. Specifying targets is most
-     * useful when you want to send a command to a large number of instances at once.
-     * Using <code>Targets</code>, which accepts tag key-value pairs to identify
-     * instances, you can send a command to tens, hundreds, or thousands of instances
-     * at once.</p> <p>To send a command to a smaller number of instances, you can use
-     * the <code>InstanceIds</code> option instead.</p> <p>For more information about
-     * how to use targets, see <a
+     * useful when you want to send a command to a large number of managed nodes at
+     * once. Using <code>Targets</code>, which accepts tag key-value pairs to identify
+     * managed nodes, you can send a command to tens, hundreds, or thousands of nodes
+     * at once.</p> <p>To send a command to a smaller number of managed nodes, you can
+     * use the <code>InstanceIds</code> option instead.</p> <p>For more information
+     * about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
@@ -252,14 +252,14 @@ namespace Model
     inline SendCommandRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>An array of search criteria that targets instances using a
+     * <p>An array of search criteria that targets managed nodes using a
      * <code>Key,Value</code> combination that you specify. Specifying targets is most
-     * useful when you want to send a command to a large number of instances at once.
-     * Using <code>Targets</code>, which accepts tag key-value pairs to identify
-     * instances, you can send a command to tens, hundreds, or thousands of instances
-     * at once.</p> <p>To send a command to a smaller number of instances, you can use
-     * the <code>InstanceIds</code> option instead.</p> <p>For more information about
-     * how to use targets, see <a
+     * useful when you want to send a command to a large number of managed nodes at
+     * once. Using <code>Targets</code>, which accepts tag key-value pairs to identify
+     * managed nodes, you can send a command to tens, hundreds, or thousands of nodes
+     * at once.</p> <p>To send a command to a smaller number of managed nodes, you can
+     * use the <code>InstanceIds</code> option instead.</p> <p>For more information
+     * about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
@@ -267,14 +267,14 @@ namespace Model
     inline SendCommandRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <p>An array of search criteria that targets instances using a
+     * <p>An array of search criteria that targets managed nodes using a
      * <code>Key,Value</code> combination that you specify. Specifying targets is most
-     * useful when you want to send a command to a large number of instances at once.
-     * Using <code>Targets</code>, which accepts tag key-value pairs to identify
-     * instances, you can send a command to tens, hundreds, or thousands of instances
-     * at once.</p> <p>To send a command to a smaller number of instances, you can use
-     * the <code>InstanceIds</code> option instead.</p> <p>For more information about
-     * how to use targets, see <a
+     * useful when you want to send a command to a large number of managed nodes at
+     * once. Using <code>Targets</code>, which accepts tag key-value pairs to identify
+     * managed nodes, you can send a command to tens, hundreds, or thousands of nodes
+     * at once.</p> <p>To send a command to a smaller number of managed nodes, you can
+     * use the <code>InstanceIds</code> option instead.</p> <p>For more information
+     * about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
@@ -282,14 +282,14 @@ namespace Model
     inline SendCommandRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
     /**
-     * <p>An array of search criteria that targets instances using a
+     * <p>An array of search criteria that targets managed nodes using a
      * <code>Key,Value</code> combination that you specify. Specifying targets is most
-     * useful when you want to send a command to a large number of instances at once.
-     * Using <code>Targets</code>, which accepts tag key-value pairs to identify
-     * instances, you can send a command to tens, hundreds, or thousands of instances
-     * at once.</p> <p>To send a command to a smaller number of instances, you can use
-     * the <code>InstanceIds</code> option instead.</p> <p>For more information about
-     * how to use targets, see <a
+     * useful when you want to send a command to a large number of managed nodes at
+     * once. Using <code>Targets</code>, which accepts tag key-value pairs to identify
+     * managed nodes, you can send a command to tens, hundreds, or thousands of nodes
+     * at once.</p> <p>To send a command to a smaller number of managed nodes, you can
+     * use the <code>InstanceIds</code> option instead.</p> <p>For more information
+     * about how to use targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
@@ -862,7 +862,7 @@ namespace Model
 
 
     /**
-     * <p>(Optional) The maximum number of instances that are allowed to run the
+     * <p>(Optional) The maximum number of managed nodes that are allowed to run the
      * command at the same time. You can specify a number such as 10 or a percentage
      * such as 10%. The default value is <code>50</code>. For more information about
      * how to use <code>MaxConcurrency</code>, see <a
@@ -873,7 +873,7 @@ namespace Model
     inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
 
     /**
-     * <p>(Optional) The maximum number of instances that are allowed to run the
+     * <p>(Optional) The maximum number of managed nodes that are allowed to run the
      * command at the same time. You can specify a number such as 10 or a percentage
      * such as 10%. The default value is <code>50</code>. For more information about
      * how to use <code>MaxConcurrency</code>, see <a
@@ -884,7 +884,7 @@ namespace Model
     inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
 
     /**
-     * <p>(Optional) The maximum number of instances that are allowed to run the
+     * <p>(Optional) The maximum number of managed nodes that are allowed to run the
      * command at the same time. You can specify a number such as 10 or a percentage
      * such as 10%. The default value is <code>50</code>. For more information about
      * how to use <code>MaxConcurrency</code>, see <a
@@ -895,7 +895,7 @@ namespace Model
     inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
 
     /**
-     * <p>(Optional) The maximum number of instances that are allowed to run the
+     * <p>(Optional) The maximum number of managed nodes that are allowed to run the
      * command at the same time. You can specify a number such as 10 or a percentage
      * such as 10%. The default value is <code>50</code>. For more information about
      * how to use <code>MaxConcurrency</code>, see <a
@@ -906,7 +906,7 @@ namespace Model
     inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::move(value); }
 
     /**
-     * <p>(Optional) The maximum number of instances that are allowed to run the
+     * <p>(Optional) The maximum number of managed nodes that are allowed to run the
      * command at the same time. You can specify a number such as 10 or a percentage
      * such as 10%. The default value is <code>50</code>. For more information about
      * how to use <code>MaxConcurrency</code>, see <a
@@ -917,7 +917,7 @@ namespace Model
     inline void SetMaxConcurrency(const char* value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency.assign(value); }
 
     /**
-     * <p>(Optional) The maximum number of instances that are allowed to run the
+     * <p>(Optional) The maximum number of managed nodes that are allowed to run the
      * command at the same time. You can specify a number such as 10 or a percentage
      * such as 10%. The default value is <code>50</code>. For more information about
      * how to use <code>MaxConcurrency</code>, see <a
@@ -928,7 +928,7 @@ namespace Model
     inline SendCommandRequest& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
 
     /**
-     * <p>(Optional) The maximum number of instances that are allowed to run the
+     * <p>(Optional) The maximum number of managed nodes that are allowed to run the
      * command at the same time. You can specify a number such as 10 or a percentage
      * such as 10%. The default value is <code>50</code>. For more information about
      * how to use <code>MaxConcurrency</code>, see <a
@@ -939,7 +939,7 @@ namespace Model
     inline SendCommandRequest& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) The maximum number of instances that are allowed to run the
+     * <p>(Optional) The maximum number of managed nodes that are allowed to run the
      * command at the same time. You can specify a number such as 10 or a percentage
      * such as 10%. The default value is <code>50</code>. For more information about
      * how to use <code>MaxConcurrency</code>, see <a

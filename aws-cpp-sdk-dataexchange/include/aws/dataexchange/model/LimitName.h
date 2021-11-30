@@ -34,7 +34,10 @@ namespace Model
     Amazon_Redshift_datashare_assets_per_import_job_from_Redshift,
     Concurrent_in_progress_jobs_to_import_assets_from_Amazon_Redshift_datashares,
     Revisions_per_Amazon_Redshift_datashare_data_set,
-    Amazon_Redshift_datashare_assets_per_revision
+    Amazon_Redshift_datashare_assets_per_revision,
+    Concurrent_in_progress_jobs_to_import_assets_from_an_API_Gateway_API,
+    Amazon_API_Gateway_API_assets_per_revision,
+    Revisions_per_Amazon_API_Gateway_API_data_set
   };
 
 namespace LimitNameMapper

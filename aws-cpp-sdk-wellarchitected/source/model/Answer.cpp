@@ -25,6 +25,7 @@ Answer::Answer() :
     m_questionDescriptionHasBeenSet(false),
     m_improvementPlanUrlHasBeenSet(false),
     m_helpfulResourceUrlHasBeenSet(false),
+    m_helpfulResourceDisplayTextHasBeenSet(false),
     m_choicesHasBeenSet(false),
     m_selectedChoicesHasBeenSet(false),
     m_choiceAnswersHasBeenSet(false),
@@ -45,6 +46,7 @@ Answer::Answer(JsonView jsonValue) :
     m_questionDescriptionHasBeenSet(false),
     m_improvementPlanUrlHasBeenSet(false),
     m_helpfulResourceUrlHasBeenSet(false),
+    m_helpfulResourceDisplayTextHasBeenSet(false),
     m_choicesHasBeenSet(false),
     m_selectedChoicesHasBeenSet(false),
     m_choiceAnswersHasBeenSet(false),
@@ -101,6 +103,13 @@ Answer& Answer::operator =(JsonView jsonValue)
     m_helpfulResourceUrl = jsonValue.GetString("HelpfulResourceUrl");
 
     m_helpfulResourceUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("HelpfulResourceDisplayText"))
+  {
+    m_helpfulResourceDisplayText = jsonValue.GetString("HelpfulResourceDisplayText");
+
+    m_helpfulResourceDisplayTextHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Choices"))
@@ -201,6 +210,12 @@ JsonValue Answer::Jsonize() const
   if(m_helpfulResourceUrlHasBeenSet)
   {
    payload.WithString("HelpfulResourceUrl", m_helpfulResourceUrl);
+
+  }
+
+  if(m_helpfulResourceDisplayTextHasBeenSet)
+  {
+   payload.WithString("HelpfulResourceDisplayText", m_helpfulResourceDisplayText);
 
   }
 

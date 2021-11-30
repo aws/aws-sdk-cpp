@@ -76,66 +76,66 @@ namespace Model
 
 
     /**
-     * <p>(Required) The ID of the managed instance targeted by the command. A managed
-     * instance can be an Amazon Elastic Compute Cloud (Amazon EC2) instance or an
-     * instance in your hybrid environment that is configured for Amazon Web Services
-     * Systems Manager.</p>
+     * <p>(Required) The ID of the managed node targeted by the command. A <i>managed
+     * node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge
+     * device, and on-premises server or VM in your hybrid environment that is
+     * configured for Amazon Web Services Systems Manager.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>(Required) The ID of the managed instance targeted by the command. A managed
-     * instance can be an Amazon Elastic Compute Cloud (Amazon EC2) instance or an
-     * instance in your hybrid environment that is configured for Amazon Web Services
-     * Systems Manager.</p>
+     * <p>(Required) The ID of the managed node targeted by the command. A <i>managed
+     * node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge
+     * device, and on-premises server or VM in your hybrid environment that is
+     * configured for Amazon Web Services Systems Manager.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>(Required) The ID of the managed instance targeted by the command. A managed
-     * instance can be an Amazon Elastic Compute Cloud (Amazon EC2) instance or an
-     * instance in your hybrid environment that is configured for Amazon Web Services
-     * Systems Manager.</p>
+     * <p>(Required) The ID of the managed node targeted by the command. A <i>managed
+     * node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge
+     * device, and on-premises server or VM in your hybrid environment that is
+     * configured for Amazon Web Services Systems Manager.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>(Required) The ID of the managed instance targeted by the command. A managed
-     * instance can be an Amazon Elastic Compute Cloud (Amazon EC2) instance or an
-     * instance in your hybrid environment that is configured for Amazon Web Services
-     * Systems Manager.</p>
+     * <p>(Required) The ID of the managed node targeted by the command. A <i>managed
+     * node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge
+     * device, and on-premises server or VM in your hybrid environment that is
+     * configured for Amazon Web Services Systems Manager.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>(Required) The ID of the managed instance targeted by the command. A managed
-     * instance can be an Amazon Elastic Compute Cloud (Amazon EC2) instance or an
-     * instance in your hybrid environment that is configured for Amazon Web Services
-     * Systems Manager.</p>
+     * <p>(Required) The ID of the managed node targeted by the command. A <i>managed
+     * node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge
+     * device, and on-premises server or VM in your hybrid environment that is
+     * configured for Amazon Web Services Systems Manager.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>(Required) The ID of the managed instance targeted by the command. A managed
-     * instance can be an Amazon Elastic Compute Cloud (Amazon EC2) instance or an
-     * instance in your hybrid environment that is configured for Amazon Web Services
-     * Systems Manager.</p>
+     * <p>(Required) The ID of the managed node targeted by the command. A <i>managed
+     * node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge
+     * device, and on-premises server or VM in your hybrid environment that is
+     * configured for Amazon Web Services Systems Manager.</p>
      */
     inline GetCommandInvocationRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>(Required) The ID of the managed instance targeted by the command. A managed
-     * instance can be an Amazon Elastic Compute Cloud (Amazon EC2) instance or an
-     * instance in your hybrid environment that is configured for Amazon Web Services
-     * Systems Manager.</p>
+     * <p>(Required) The ID of the managed node targeted by the command. A <i>managed
+     * node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge
+     * device, and on-premises server or VM in your hybrid environment that is
+     * configured for Amazon Web Services Systems Manager.</p>
      */
     inline GetCommandInvocationRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>(Required) The ID of the managed instance targeted by the command. A managed
-     * instance can be an Amazon Elastic Compute Cloud (Amazon EC2) instance or an
-     * instance in your hybrid environment that is configured for Amazon Web Services
-     * Systems Manager.</p>
+     * <p>(Required) The ID of the managed node targeted by the command. A <i>managed
+     * node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge
+     * device, and on-premises server or VM in your hybrid environment that is
+     * configured for Amazon Web Services Systems Manager.</p>
      */
     inline GetCommandInvocationRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 

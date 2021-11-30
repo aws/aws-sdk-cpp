@@ -10,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/SnapshotState.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/StorageTier.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
@@ -751,6 +752,98 @@ namespace Model
     inline Snapshot& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>The storage tier in which the snapshot is stored. <code>standard</code>
+     * indicates that the snapshot is stored in the standard snapshot storage tier and
+     * that it is ready for use. <code>archive</code> indicates that the snapshot is
+     * currently archived and that it must be restored before it can be used.</p>
+     */
+    inline const StorageTier& GetStorageTier() const{ return m_storageTier; }
+
+    /**
+     * <p>The storage tier in which the snapshot is stored. <code>standard</code>
+     * indicates that the snapshot is stored in the standard snapshot storage tier and
+     * that it is ready for use. <code>archive</code> indicates that the snapshot is
+     * currently archived and that it must be restored before it can be used.</p>
+     */
+    inline bool StorageTierHasBeenSet() const { return m_storageTierHasBeenSet; }
+
+    /**
+     * <p>The storage tier in which the snapshot is stored. <code>standard</code>
+     * indicates that the snapshot is stored in the standard snapshot storage tier and
+     * that it is ready for use. <code>archive</code> indicates that the snapshot is
+     * currently archived and that it must be restored before it can be used.</p>
+     */
+    inline void SetStorageTier(const StorageTier& value) { m_storageTierHasBeenSet = true; m_storageTier = value; }
+
+    /**
+     * <p>The storage tier in which the snapshot is stored. <code>standard</code>
+     * indicates that the snapshot is stored in the standard snapshot storage tier and
+     * that it is ready for use. <code>archive</code> indicates that the snapshot is
+     * currently archived and that it must be restored before it can be used.</p>
+     */
+    inline void SetStorageTier(StorageTier&& value) { m_storageTierHasBeenSet = true; m_storageTier = std::move(value); }
+
+    /**
+     * <p>The storage tier in which the snapshot is stored. <code>standard</code>
+     * indicates that the snapshot is stored in the standard snapshot storage tier and
+     * that it is ready for use. <code>archive</code> indicates that the snapshot is
+     * currently archived and that it must be restored before it can be used.</p>
+     */
+    inline Snapshot& WithStorageTier(const StorageTier& value) { SetStorageTier(value); return *this;}
+
+    /**
+     * <p>The storage tier in which the snapshot is stored. <code>standard</code>
+     * indicates that the snapshot is stored in the standard snapshot storage tier and
+     * that it is ready for use. <code>archive</code> indicates that the snapshot is
+     * currently archived and that it must be restored before it can be used.</p>
+     */
+    inline Snapshot& WithStorageTier(StorageTier&& value) { SetStorageTier(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Only for archived snapshots that are temporarily restored. Indicates the date
+     * and time when a temporarily restored snapshot will be automatically
+     * re-archived.</p>
+     */
+    inline const Aws::Utils::DateTime& GetRestoreExpiryTime() const{ return m_restoreExpiryTime; }
+
+    /**
+     * <p>Only for archived snapshots that are temporarily restored. Indicates the date
+     * and time when a temporarily restored snapshot will be automatically
+     * re-archived.</p>
+     */
+    inline bool RestoreExpiryTimeHasBeenSet() const { return m_restoreExpiryTimeHasBeenSet; }
+
+    /**
+     * <p>Only for archived snapshots that are temporarily restored. Indicates the date
+     * and time when a temporarily restored snapshot will be automatically
+     * re-archived.</p>
+     */
+    inline void SetRestoreExpiryTime(const Aws::Utils::DateTime& value) { m_restoreExpiryTimeHasBeenSet = true; m_restoreExpiryTime = value; }
+
+    /**
+     * <p>Only for archived snapshots that are temporarily restored. Indicates the date
+     * and time when a temporarily restored snapshot will be automatically
+     * re-archived.</p>
+     */
+    inline void SetRestoreExpiryTime(Aws::Utils::DateTime&& value) { m_restoreExpiryTimeHasBeenSet = true; m_restoreExpiryTime = std::move(value); }
+
+    /**
+     * <p>Only for archived snapshots that are temporarily restored. Indicates the date
+     * and time when a temporarily restored snapshot will be automatically
+     * re-archived.</p>
+     */
+    inline Snapshot& WithRestoreExpiryTime(const Aws::Utils::DateTime& value) { SetRestoreExpiryTime(value); return *this;}
+
+    /**
+     * <p>Only for archived snapshots that are temporarily restored. Indicates the date
+     * and time when a temporarily restored snapshot will be automatically
+     * re-archived.</p>
+     */
+    inline Snapshot& WithRestoreExpiryTime(Aws::Utils::DateTime&& value) { SetRestoreExpiryTime(std::move(value)); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -815,6 +908,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    StorageTier m_storageTier;
+    bool m_storageTierHasBeenSet;
+
+    Aws::Utils::DateTime m_restoreExpiryTime;
+    bool m_restoreExpiryTimeHasBeenSet;
 
     ResponseMetadata m_responseMetadata;
     bool m_responseMetadataHasBeenSet;

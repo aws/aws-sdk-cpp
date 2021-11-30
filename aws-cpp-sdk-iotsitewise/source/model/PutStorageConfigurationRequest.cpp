@@ -17,7 +17,8 @@ PutStorageConfigurationRequest::PutStorageConfigurationRequest() :
     m_storageTypeHasBeenSet(false),
     m_multiLayerStorageHasBeenSet(false),
     m_disassociatedDataStorage(DisassociatedDataStorageState::NOT_SET),
-    m_disassociatedDataStorageHasBeenSet(false)
+    m_disassociatedDataStorageHasBeenSet(false),
+    m_retentionPeriodHasBeenSet(false)
 {
 }
 
@@ -39,6 +40,12 @@ Aws::String PutStorageConfigurationRequest::SerializePayload() const
   if(m_disassociatedDataStorageHasBeenSet)
   {
    payload.WithString("disassociatedDataStorage", DisassociatedDataStorageStateMapper::GetNameForDisassociatedDataStorageState(m_disassociatedDataStorage));
+  }
+
+  if(m_retentionPeriodHasBeenSet)
+  {
+   payload.WithObject("retentionPeriod", m_retentionPeriod.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

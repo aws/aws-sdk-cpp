@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/s3-crt/S3Crt_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/s3-crt/model/EventBridgeConfiguration.h>
 #include <aws/s3-crt/model/TopicConfiguration.h>
 #include <aws/s3-crt/model/QueueConfiguration.h>
 #include <aws/s3-crt/model/LambdaFunctionConfiguration.h>
@@ -188,6 +189,37 @@ namespace Model
      */
     inline NotificationConfiguration& AddLambdaFunctionConfigurations(LambdaFunctionConfiguration&& value) { m_lambdaFunctionConfigurationsHasBeenSet = true; m_lambdaFunctionConfigurations.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Enables delivery of events to Amazon EventBridge.</p>
+     */
+    inline const EventBridgeConfiguration& GetEventBridgeConfiguration() const{ return m_eventBridgeConfiguration; }
+
+    /**
+     * <p>Enables delivery of events to Amazon EventBridge.</p>
+     */
+    inline bool EventBridgeConfigurationHasBeenSet() const { return m_eventBridgeConfigurationHasBeenSet; }
+
+    /**
+     * <p>Enables delivery of events to Amazon EventBridge.</p>
+     */
+    inline void SetEventBridgeConfiguration(const EventBridgeConfiguration& value) { m_eventBridgeConfigurationHasBeenSet = true; m_eventBridgeConfiguration = value; }
+
+    /**
+     * <p>Enables delivery of events to Amazon EventBridge.</p>
+     */
+    inline void SetEventBridgeConfiguration(EventBridgeConfiguration&& value) { m_eventBridgeConfigurationHasBeenSet = true; m_eventBridgeConfiguration = std::move(value); }
+
+    /**
+     * <p>Enables delivery of events to Amazon EventBridge.</p>
+     */
+    inline NotificationConfiguration& WithEventBridgeConfiguration(const EventBridgeConfiguration& value) { SetEventBridgeConfiguration(value); return *this;}
+
+    /**
+     * <p>Enables delivery of events to Amazon EventBridge.</p>
+     */
+    inline NotificationConfiguration& WithEventBridgeConfiguration(EventBridgeConfiguration&& value) { SetEventBridgeConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<TopicConfiguration> m_topicConfigurations;
@@ -198,6 +230,9 @@ namespace Model
 
     Aws::Vector<LambdaFunctionConfiguration> m_lambdaFunctionConfigurations;
     bool m_lambdaFunctionConfigurationsHasBeenSet;
+
+    EventBridgeConfiguration m_eventBridgeConfiguration;
+    bool m_eventBridgeConfigurationHasBeenSet;
   };
 
 } // namespace Model

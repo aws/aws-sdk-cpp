@@ -39,7 +39,11 @@ namespace Model
     RecommendationOptionsConfigurationVolumeSize,
     RecommendationOptionsMonthlyPrice,
     RecommendationOptionsPerformanceRisk,
-    LastRefreshTimestamp
+    LastRefreshTimestamp,
+    CurrentPerformanceRisk,
+    RecommendationOptionsSavingsOpportunityPercentage,
+    RecommendationOptionsEstimatedMonthlySavingsCurrency,
+    RecommendationOptionsEstimatedMonthlySavingsValue
   };
 
 namespace ExportableVolumeFieldMapper

@@ -85,14 +85,14 @@ namespace Model
 
 
     /**
-     * <p>The targets (either instances or maintenance window targets).</p> 
+     * <p>The targets (either managed nodes or maintenance window targets).</p> 
      * <p>One or more targets must be specified for maintenance window Run Command-type
      * tasks. Depending on the task, targets are optional for other maintenance window
      * task types (Automation, Lambda, and Step Functions). For more information about
      * running tasks that don't specify targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
      * maintenance window tasks without targets</a> in the <i>Amazon Web Services
-     * Systems Manager User Guide</i>.</p>  <p>Specify instances using the
+     * Systems Manager User Guide</i>.</p>  <p>Specify managed nodes using the
      * following format: </p> <p>
      * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
      * </p> <p>Specify maintenance window targets using the following format:</p> <p>
@@ -102,14 +102,14 @@ namespace Model
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>The targets (either instances or maintenance window targets).</p> 
+     * <p>The targets (either managed nodes or maintenance window targets).</p> 
      * <p>One or more targets must be specified for maintenance window Run Command-type
      * tasks. Depending on the task, targets are optional for other maintenance window
      * task types (Automation, Lambda, and Step Functions). For more information about
      * running tasks that don't specify targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
      * maintenance window tasks without targets</a> in the <i>Amazon Web Services
-     * Systems Manager User Guide</i>.</p>  <p>Specify instances using the
+     * Systems Manager User Guide</i>.</p>  <p>Specify managed nodes using the
      * following format: </p> <p>
      * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
      * </p> <p>Specify maintenance window targets using the following format:</p> <p>
@@ -119,14 +119,14 @@ namespace Model
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
-     * <p>The targets (either instances or maintenance window targets).</p> 
+     * <p>The targets (either managed nodes or maintenance window targets).</p> 
      * <p>One or more targets must be specified for maintenance window Run Command-type
      * tasks. Depending on the task, targets are optional for other maintenance window
      * task types (Automation, Lambda, and Step Functions). For more information about
      * running tasks that don't specify targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
      * maintenance window tasks without targets</a> in the <i>Amazon Web Services
-     * Systems Manager User Guide</i>.</p>  <p>Specify instances using the
+     * Systems Manager User Guide</i>.</p>  <p>Specify managed nodes using the
      * following format: </p> <p>
      * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
      * </p> <p>Specify maintenance window targets using the following format:</p> <p>
@@ -136,14 +136,14 @@ namespace Model
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <p>The targets (either instances or maintenance window targets).</p> 
+     * <p>The targets (either managed nodes or maintenance window targets).</p> 
      * <p>One or more targets must be specified for maintenance window Run Command-type
      * tasks. Depending on the task, targets are optional for other maintenance window
      * task types (Automation, Lambda, and Step Functions). For more information about
      * running tasks that don't specify targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
      * maintenance window tasks without targets</a> in the <i>Amazon Web Services
-     * Systems Manager User Guide</i>.</p>  <p>Specify instances using the
+     * Systems Manager User Guide</i>.</p>  <p>Specify managed nodes using the
      * following format: </p> <p>
      * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
      * </p> <p>Specify maintenance window targets using the following format:</p> <p>
@@ -153,14 +153,14 @@ namespace Model
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
-     * <p>The targets (either instances or maintenance window targets).</p> 
+     * <p>The targets (either managed nodes or maintenance window targets).</p> 
      * <p>One or more targets must be specified for maintenance window Run Command-type
      * tasks. Depending on the task, targets are optional for other maintenance window
      * task types (Automation, Lambda, and Step Functions). For more information about
      * running tasks that don't specify targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
      * maintenance window tasks without targets</a> in the <i>Amazon Web Services
-     * Systems Manager User Guide</i>.</p>  <p>Specify instances using the
+     * Systems Manager User Guide</i>.</p>  <p>Specify managed nodes using the
      * following format: </p> <p>
      * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
      * </p> <p>Specify maintenance window targets using the following format:</p> <p>
@@ -170,14 +170,14 @@ namespace Model
     inline RegisterTaskWithMaintenanceWindowRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>The targets (either instances or maintenance window targets).</p> 
+     * <p>The targets (either managed nodes or maintenance window targets).</p> 
      * <p>One or more targets must be specified for maintenance window Run Command-type
      * tasks. Depending on the task, targets are optional for other maintenance window
      * task types (Automation, Lambda, and Step Functions). For more information about
      * running tasks that don't specify targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
      * maintenance window tasks without targets</a> in the <i>Amazon Web Services
-     * Systems Manager User Guide</i>.</p>  <p>Specify instances using the
+     * Systems Manager User Guide</i>.</p>  <p>Specify managed nodes using the
      * following format: </p> <p>
      * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
      * </p> <p>Specify maintenance window targets using the following format:</p> <p>
@@ -187,14 +187,14 @@ namespace Model
     inline RegisterTaskWithMaintenanceWindowRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <p>The targets (either instances or maintenance window targets).</p> 
+     * <p>The targets (either managed nodes or maintenance window targets).</p> 
      * <p>One or more targets must be specified for maintenance window Run Command-type
      * tasks. Depending on the task, targets are optional for other maintenance window
      * task types (Automation, Lambda, and Step Functions). For more information about
      * running tasks that don't specify targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
      * maintenance window tasks without targets</a> in the <i>Amazon Web Services
-     * Systems Manager User Guide</i>.</p>  <p>Specify instances using the
+     * Systems Manager User Guide</i>.</p>  <p>Specify managed nodes using the
      * following format: </p> <p>
      * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
      * </p> <p>Specify maintenance window targets using the following format:</p> <p>
@@ -204,14 +204,14 @@ namespace Model
     inline RegisterTaskWithMaintenanceWindowRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
     /**
-     * <p>The targets (either instances or maintenance window targets).</p> 
+     * <p>The targets (either managed nodes or maintenance window targets).</p> 
      * <p>One or more targets must be specified for maintenance window Run Command-type
      * tasks. Depending on the task, targets are optional for other maintenance window
      * task types (Automation, Lambda, and Step Functions). For more information about
      * running tasks that don't specify targets, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
      * maintenance window tasks without targets</a> in the <i>Amazon Web Services
-     * Systems Manager User Guide</i>.</p>  <p>Specify instances using the
+     * Systems Manager User Guide</i>.</p>  <p>Specify managed nodes using the
      * following format: </p> <p>
      * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
      * </p> <p>Specify maintenance window targets using the following format:</p> <p>
@@ -765,7 +765,7 @@ namespace Model
 
     /**
      * <p>A structure containing information about an Amazon Simple Storage Service
-     * (Amazon S3) bucket to write instance-level logs to. </p>  <p>
+     * (Amazon S3) bucket to write managed node-level logs to. </p>  <p>
      * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple
      * Storage Service (Amazon S3) bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
@@ -778,7 +778,7 @@ namespace Model
 
     /**
      * <p>A structure containing information about an Amazon Simple Storage Service
-     * (Amazon S3) bucket to write instance-level logs to. </p>  <p>
+     * (Amazon S3) bucket to write managed node-level logs to. </p>  <p>
      * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple
      * Storage Service (Amazon S3) bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
@@ -791,7 +791,7 @@ namespace Model
 
     /**
      * <p>A structure containing information about an Amazon Simple Storage Service
-     * (Amazon S3) bucket to write instance-level logs to. </p>  <p>
+     * (Amazon S3) bucket to write managed node-level logs to. </p>  <p>
      * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple
      * Storage Service (Amazon S3) bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
@@ -804,7 +804,7 @@ namespace Model
 
     /**
      * <p>A structure containing information about an Amazon Simple Storage Service
-     * (Amazon S3) bucket to write instance-level logs to. </p>  <p>
+     * (Amazon S3) bucket to write managed node-level logs to. </p>  <p>
      * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple
      * Storage Service (Amazon S3) bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
@@ -817,7 +817,7 @@ namespace Model
 
     /**
      * <p>A structure containing information about an Amazon Simple Storage Service
-     * (Amazon S3) bucket to write instance-level logs to. </p>  <p>
+     * (Amazon S3) bucket to write managed node-level logs to. </p>  <p>
      * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple
      * Storage Service (Amazon S3) bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
@@ -830,7 +830,7 @@ namespace Model
 
     /**
      * <p>A structure containing information about an Amazon Simple Storage Service
-     * (Amazon S3) bucket to write instance-level logs to. </p>  <p>
+     * (Amazon S3) bucket to write managed node-level logs to. </p>  <p>
      * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple
      * Storage Service (Amazon S3) bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in

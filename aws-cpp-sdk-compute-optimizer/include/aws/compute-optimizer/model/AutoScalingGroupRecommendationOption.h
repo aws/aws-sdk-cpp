@@ -7,6 +7,7 @@
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/compute-optimizer/model/AutoScalingGroupConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/compute-optimizer/model/SavingsOpportunity.h>
 #include <aws/compute-optimizer/model/UtilizationMetric.h>
 #include <utility>
 
@@ -261,6 +262,49 @@ namespace Model
      */
     inline AutoScalingGroupRecommendationOption& WithRank(int value) { SetRank(value); return *this;}
 
+
+    /**
+     * <p>An object that describes the savings opportunity for the Auto Scaling group
+     * recommendation option. Savings opportunity includes the estimated monthly
+     * savings amount and percentage.</p>
+     */
+    inline const SavingsOpportunity& GetSavingsOpportunity() const{ return m_savingsOpportunity; }
+
+    /**
+     * <p>An object that describes the savings opportunity for the Auto Scaling group
+     * recommendation option. Savings opportunity includes the estimated monthly
+     * savings amount and percentage.</p>
+     */
+    inline bool SavingsOpportunityHasBeenSet() const { return m_savingsOpportunityHasBeenSet; }
+
+    /**
+     * <p>An object that describes the savings opportunity for the Auto Scaling group
+     * recommendation option. Savings opportunity includes the estimated monthly
+     * savings amount and percentage.</p>
+     */
+    inline void SetSavingsOpportunity(const SavingsOpportunity& value) { m_savingsOpportunityHasBeenSet = true; m_savingsOpportunity = value; }
+
+    /**
+     * <p>An object that describes the savings opportunity for the Auto Scaling group
+     * recommendation option. Savings opportunity includes the estimated monthly
+     * savings amount and percentage.</p>
+     */
+    inline void SetSavingsOpportunity(SavingsOpportunity&& value) { m_savingsOpportunityHasBeenSet = true; m_savingsOpportunity = std::move(value); }
+
+    /**
+     * <p>An object that describes the savings opportunity for the Auto Scaling group
+     * recommendation option. Savings opportunity includes the estimated monthly
+     * savings amount and percentage.</p>
+     */
+    inline AutoScalingGroupRecommendationOption& WithSavingsOpportunity(const SavingsOpportunity& value) { SetSavingsOpportunity(value); return *this;}
+
+    /**
+     * <p>An object that describes the savings opportunity for the Auto Scaling group
+     * recommendation option. Savings opportunity includes the estimated monthly
+     * savings amount and percentage.</p>
+     */
+    inline AutoScalingGroupRecommendationOption& WithSavingsOpportunity(SavingsOpportunity&& value) { SetSavingsOpportunity(std::move(value)); return *this;}
+
   private:
 
     AutoScalingGroupConfiguration m_configuration;
@@ -274,6 +318,9 @@ namespace Model
 
     int m_rank;
     bool m_rankHasBeenSet;
+
+    SavingsOpportunity m_savingsOpportunity;
+    bool m_savingsOpportunityHasBeenSet;
   };
 
 } // namespace Model

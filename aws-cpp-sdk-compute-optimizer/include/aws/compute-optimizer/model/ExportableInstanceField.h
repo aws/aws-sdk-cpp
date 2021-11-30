@@ -58,7 +58,13 @@ namespace Model
     RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice,
     RecommendationsSourcesRecommendationSourceArn,
     RecommendationsSourcesRecommendationSourceType,
-    LastRefreshTimestamp
+    LastRefreshTimestamp,
+    CurrentPerformanceRisk,
+    RecommendationOptionsSavingsOpportunityPercentage,
+    RecommendationOptionsEstimatedMonthlySavingsCurrency,
+    RecommendationOptionsEstimatedMonthlySavingsValue,
+    EffectiveRecommendationPreferencesCpuVendorArchitectures,
+    EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics
   };
 
 namespace ExportableInstanceFieldMapper

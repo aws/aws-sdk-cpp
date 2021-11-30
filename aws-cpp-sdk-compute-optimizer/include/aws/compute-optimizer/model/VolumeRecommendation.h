@@ -10,6 +10,7 @@
 #include <aws/compute-optimizer/model/EBSFinding.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/compute-optimizer/model/CurrentPerformanceRisk.h>
 #include <aws/compute-optimizer/model/EBSUtilizationMetric.h>
 #include <aws/compute-optimizer/model/VolumeRecommendationOption.h>
 #include <utility>
@@ -352,34 +353,77 @@ namespace Model
 
 
     /**
-     * <p>The timestamp of when the volume recommendation was last refreshed.</p>
+     * <p>The timestamp of when the volume recommendation was last generated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastRefreshTimestamp() const{ return m_lastRefreshTimestamp; }
 
     /**
-     * <p>The timestamp of when the volume recommendation was last refreshed.</p>
+     * <p>The timestamp of when the volume recommendation was last generated.</p>
      */
     inline bool LastRefreshTimestampHasBeenSet() const { return m_lastRefreshTimestampHasBeenSet; }
 
     /**
-     * <p>The timestamp of when the volume recommendation was last refreshed.</p>
+     * <p>The timestamp of when the volume recommendation was last generated.</p>
      */
     inline void SetLastRefreshTimestamp(const Aws::Utils::DateTime& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = value; }
 
     /**
-     * <p>The timestamp of when the volume recommendation was last refreshed.</p>
+     * <p>The timestamp of when the volume recommendation was last generated.</p>
      */
     inline void SetLastRefreshTimestamp(Aws::Utils::DateTime&& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = std::move(value); }
 
     /**
-     * <p>The timestamp of when the volume recommendation was last refreshed.</p>
+     * <p>The timestamp of when the volume recommendation was last generated.</p>
      */
     inline VolumeRecommendation& WithLastRefreshTimestamp(const Aws::Utils::DateTime& value) { SetLastRefreshTimestamp(value); return *this;}
 
     /**
-     * <p>The timestamp of when the volume recommendation was last refreshed.</p>
+     * <p>The timestamp of when the volume recommendation was last generated.</p>
      */
     inline VolumeRecommendation& WithLastRefreshTimestamp(Aws::Utils::DateTime&& value) { SetLastRefreshTimestamp(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The risk of the current EBS volume not meeting the performance needs of its
+     * workloads. The higher the risk, the more likely the current EBS volume doesn't
+     * have sufficient capacity.</p>
+     */
+    inline const CurrentPerformanceRisk& GetCurrentPerformanceRisk() const{ return m_currentPerformanceRisk; }
+
+    /**
+     * <p>The risk of the current EBS volume not meeting the performance needs of its
+     * workloads. The higher the risk, the more likely the current EBS volume doesn't
+     * have sufficient capacity.</p>
+     */
+    inline bool CurrentPerformanceRiskHasBeenSet() const { return m_currentPerformanceRiskHasBeenSet; }
+
+    /**
+     * <p>The risk of the current EBS volume not meeting the performance needs of its
+     * workloads. The higher the risk, the more likely the current EBS volume doesn't
+     * have sufficient capacity.</p>
+     */
+    inline void SetCurrentPerformanceRisk(const CurrentPerformanceRisk& value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = value; }
+
+    /**
+     * <p>The risk of the current EBS volume not meeting the performance needs of its
+     * workloads. The higher the risk, the more likely the current EBS volume doesn't
+     * have sufficient capacity.</p>
+     */
+    inline void SetCurrentPerformanceRisk(CurrentPerformanceRisk&& value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = std::move(value); }
+
+    /**
+     * <p>The risk of the current EBS volume not meeting the performance needs of its
+     * workloads. The higher the risk, the more likely the current EBS volume doesn't
+     * have sufficient capacity.</p>
+     */
+    inline VolumeRecommendation& WithCurrentPerformanceRisk(const CurrentPerformanceRisk& value) { SetCurrentPerformanceRisk(value); return *this;}
+
+    /**
+     * <p>The risk of the current EBS volume not meeting the performance needs of its
+     * workloads. The higher the risk, the more likely the current EBS volume doesn't
+     * have sufficient capacity.</p>
+     */
+    inline VolumeRecommendation& WithCurrentPerformanceRisk(CurrentPerformanceRisk&& value) { SetCurrentPerformanceRisk(std::move(value)); return *this;}
 
   private:
 
@@ -406,6 +450,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastRefreshTimestamp;
     bool m_lastRefreshTimestampHasBeenSet;
+
+    CurrentPerformanceRisk m_currentPerformanceRisk;
+    bool m_currentPerformanceRiskHasBeenSet;
   };
 
 } // namespace Model

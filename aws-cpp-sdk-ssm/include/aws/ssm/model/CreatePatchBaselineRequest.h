@@ -319,29 +319,29 @@ namespace Model
 
     /**
      * <p>Indicates whether the list of approved patches includes non-security updates
-     * that should be applied to the instances. The default value is
-     * <code>false</code>. Applies to Linux instances only.</p>
+     * that should be applied to the managed nodes. The default value is
+     * <code>false</code>. Applies to Linux managed nodes only.</p>
      */
     inline bool GetApprovedPatchesEnableNonSecurity() const{ return m_approvedPatchesEnableNonSecurity; }
 
     /**
      * <p>Indicates whether the list of approved patches includes non-security updates
-     * that should be applied to the instances. The default value is
-     * <code>false</code>. Applies to Linux instances only.</p>
+     * that should be applied to the managed nodes. The default value is
+     * <code>false</code>. Applies to Linux managed nodes only.</p>
      */
     inline bool ApprovedPatchesEnableNonSecurityHasBeenSet() const { return m_approvedPatchesEnableNonSecurityHasBeenSet; }
 
     /**
      * <p>Indicates whether the list of approved patches includes non-security updates
-     * that should be applied to the instances. The default value is
-     * <code>false</code>. Applies to Linux instances only.</p>
+     * that should be applied to the managed nodes. The default value is
+     * <code>false</code>. Applies to Linux managed nodes only.</p>
      */
     inline void SetApprovedPatchesEnableNonSecurity(bool value) { m_approvedPatchesEnableNonSecurityHasBeenSet = true; m_approvedPatchesEnableNonSecurity = value; }
 
     /**
      * <p>Indicates whether the list of approved patches includes non-security updates
-     * that should be applied to the instances. The default value is
-     * <code>false</code>. Applies to Linux instances only.</p>
+     * that should be applied to the managed nodes. The default value is
+     * <code>false</code>. Applies to Linux managed nodes only.</p>
      */
     inline CreatePatchBaselineRequest& WithApprovedPatchesEnableNonSecurity(bool value) { SetApprovedPatchesEnableNonSecurity(value); return *this;}
 
@@ -576,57 +576,57 @@ namespace Model
 
 
     /**
-     * <p>Information about the patches to use to update the instances, including
-     * target operating systems and source repositories. Applies to Linux instances
+     * <p>Information about the patches to use to update the managed nodes, including
+     * target operating systems and source repositories. Applies to Linux managed nodes
      * only.</p>
      */
     inline const Aws::Vector<PatchSource>& GetSources() const{ return m_sources; }
 
     /**
-     * <p>Information about the patches to use to update the instances, including
-     * target operating systems and source repositories. Applies to Linux instances
+     * <p>Information about the patches to use to update the managed nodes, including
+     * target operating systems and source repositories. Applies to Linux managed nodes
      * only.</p>
      */
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
 
     /**
-     * <p>Information about the patches to use to update the instances, including
-     * target operating systems and source repositories. Applies to Linux instances
+     * <p>Information about the patches to use to update the managed nodes, including
+     * target operating systems and source repositories. Applies to Linux managed nodes
      * only.</p>
      */
     inline void SetSources(const Aws::Vector<PatchSource>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
 
     /**
-     * <p>Information about the patches to use to update the instances, including
-     * target operating systems and source repositories. Applies to Linux instances
+     * <p>Information about the patches to use to update the managed nodes, including
+     * target operating systems and source repositories. Applies to Linux managed nodes
      * only.</p>
      */
     inline void SetSources(Aws::Vector<PatchSource>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
 
     /**
-     * <p>Information about the patches to use to update the instances, including
-     * target operating systems and source repositories. Applies to Linux instances
+     * <p>Information about the patches to use to update the managed nodes, including
+     * target operating systems and source repositories. Applies to Linux managed nodes
      * only.</p>
      */
     inline CreatePatchBaselineRequest& WithSources(const Aws::Vector<PatchSource>& value) { SetSources(value); return *this;}
 
     /**
-     * <p>Information about the patches to use to update the instances, including
-     * target operating systems and source repositories. Applies to Linux instances
+     * <p>Information about the patches to use to update the managed nodes, including
+     * target operating systems and source repositories. Applies to Linux managed nodes
      * only.</p>
      */
     inline CreatePatchBaselineRequest& WithSources(Aws::Vector<PatchSource>&& value) { SetSources(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the patches to use to update the instances, including
-     * target operating systems and source repositories. Applies to Linux instances
+     * <p>Information about the patches to use to update the managed nodes, including
+     * target operating systems and source repositories. Applies to Linux managed nodes
      * only.</p>
      */
     inline CreatePatchBaselineRequest& AddSources(const PatchSource& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
 
     /**
-     * <p>Information about the patches to use to update the instances, including
-     * target operating systems and source repositories. Applies to Linux instances
+     * <p>Information about the patches to use to update the managed nodes, including
+     * target operating systems and source repositories. Applies to Linux managed nodes
      * only.</p>
      */
     inline CreatePatchBaselineRequest& AddSources(PatchSource&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }

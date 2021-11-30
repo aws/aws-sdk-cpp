@@ -18,7 +18,12 @@ namespace Model
     NOT_SET,
     IN_PROGRESS,
     COMPLETE,
-    FAILED
+    FAILED,
+    UNSUPPORTED_IMAGE,
+    ACTIVE,
+    PENDING,
+    SCAN_ELIGIBILITY_EXPIRED,
+    FINDINGS_UNAVAILABLE
   };
 
 namespace ScanStatusMapper

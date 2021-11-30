@@ -82,63 +82,63 @@ namespace Model
 
 
     /**
-     * <p>Inventory filter values. Example: inventory filter where instance IDs are
+     * <p>Inventory filter values. Example: inventory filter where managed node IDs are
      * specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values=
      * i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
 
     /**
-     * <p>Inventory filter values. Example: inventory filter where instance IDs are
+     * <p>Inventory filter values. Example: inventory filter where managed node IDs are
      * specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values=
      * i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
      */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
-     * <p>Inventory filter values. Example: inventory filter where instance IDs are
+     * <p>Inventory filter values. Example: inventory filter where managed node IDs are
      * specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values=
      * i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
      */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
-     * <p>Inventory filter values. Example: inventory filter where instance IDs are
+     * <p>Inventory filter values. Example: inventory filter where managed node IDs are
      * specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values=
      * i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
      */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
-     * <p>Inventory filter values. Example: inventory filter where instance IDs are
+     * <p>Inventory filter values. Example: inventory filter where managed node IDs are
      * specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values=
      * i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
      */
     inline InventoryFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
 
     /**
-     * <p>Inventory filter values. Example: inventory filter where instance IDs are
+     * <p>Inventory filter values. Example: inventory filter where managed node IDs are
      * specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values=
      * i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
      */
     inline InventoryFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
-     * <p>Inventory filter values. Example: inventory filter where instance IDs are
+     * <p>Inventory filter values. Example: inventory filter where managed node IDs are
      * specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values=
      * i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
      */
     inline InventoryFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     /**
-     * <p>Inventory filter values. Example: inventory filter where instance IDs are
+     * <p>Inventory filter values. Example: inventory filter where managed node IDs are
      * specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values=
      * i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
      */
     inline InventoryFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Inventory filter values. Example: inventory filter where instance IDs are
+     * <p>Inventory filter values. Example: inventory filter where managed node IDs are
      * specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values=
      * i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
      */

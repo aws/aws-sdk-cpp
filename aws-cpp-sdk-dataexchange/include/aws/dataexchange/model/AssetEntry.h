@@ -27,11 +27,13 @@ namespace Model
 {
 
   /**
-   * <p>An asset in AWS Data Exchange is a piece of data. The asset can be a
-   * structured data file, an image file, or some other data file that can be stored
-   * as an S3 object, or an Amazon Redshift datashare (Preview). When you create an
-   * import job for your files, you create an asset in AWS Data Exchange for each of
-   * those files.</p><p><h3>See Also:</h3>   <a
+   * <p>An asset in AWS Data Exchange is a piece of data (S3 object) or a means of
+   * fulfilling data (Amazon Redshift datashare or Amazon API Gateway API). The asset
+   * can be a structured data file, an image file, or some other data file that can
+   * be stored as an S3 object, an Amazon API Gateway API, or an Amazon Redshift
+   * datashare (Preview). When you create an import job for your files, API Gateway
+   * APIs, or Amazon Redshift datashares, you create an asset in AWS Data
+   * Exchange.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/AssetEntry">AWS
    * API Reference</a></p>
    */
@@ -263,56 +265,72 @@ namespace Model
     /**
      * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
      * used as the asset name. When exporting to Amazon S3, the asset name is used as
-     * default target S3 object key.</p>
+     * default target S3 object key. When importing from Amazon API Gateway API, the
+     * API name is used as the asset name. When importing from Amazon Redshift, the
+     * datashare name is used as the asset name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
      * used as the asset name. When exporting to Amazon S3, the asset name is used as
-     * default target S3 object key.</p>
+     * default target S3 object key. When importing from Amazon API Gateway API, the
+     * API name is used as the asset name. When importing from Amazon Redshift, the
+     * datashare name is used as the asset name.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
      * used as the asset name. When exporting to Amazon S3, the asset name is used as
-     * default target S3 object key.</p>
+     * default target S3 object key. When importing from Amazon API Gateway API, the
+     * API name is used as the asset name. When importing from Amazon Redshift, the
+     * datashare name is used as the asset name.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
      * used as the asset name. When exporting to Amazon S3, the asset name is used as
-     * default target S3 object key.</p>
+     * default target S3 object key. When importing from Amazon API Gateway API, the
+     * API name is used as the asset name. When importing from Amazon Redshift, the
+     * datashare name is used as the asset name.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
      * used as the asset name. When exporting to Amazon S3, the asset name is used as
-     * default target S3 object key.</p>
+     * default target S3 object key. When importing from Amazon API Gateway API, the
+     * API name is used as the asset name. When importing from Amazon Redshift, the
+     * datashare name is used as the asset name.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
      * used as the asset name. When exporting to Amazon S3, the asset name is used as
-     * default target S3 object key.</p>
+     * default target S3 object key. When importing from Amazon API Gateway API, the
+     * API name is used as the asset name. When importing from Amazon Redshift, the
+     * datashare name is used as the asset name.</p>
      */
     inline AssetEntry& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
      * used as the asset name. When exporting to Amazon S3, the asset name is used as
-     * default target S3 object key.</p>
+     * default target S3 object key. When importing from Amazon API Gateway API, the
+     * API name is used as the asset name. When importing from Amazon Redshift, the
+     * datashare name is used as the asset name.</p>
      */
     inline AssetEntry& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
      * used as the asset name. When exporting to Amazon S3, the asset name is used as
-     * default target S3 object key.</p>
+     * default target S3 object key. When importing from Amazon API Gateway API, the
+     * API name is used as the asset name. When importing from Amazon Redshift, the
+     * datashare name is used as the asset name.</p>
      */
     inline AssetEntry& WithName(const char* value) { SetName(value); return *this;}
 

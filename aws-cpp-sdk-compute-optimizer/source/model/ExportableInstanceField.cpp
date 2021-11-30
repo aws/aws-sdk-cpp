@@ -63,6 +63,12 @@ namespace Aws
         static const int RecommendationsSourcesRecommendationSourceArn_HASH = HashingUtils::HashString("RecommendationsSourcesRecommendationSourceArn");
         static const int RecommendationsSourcesRecommendationSourceType_HASH = HashingUtils::HashString("RecommendationsSourcesRecommendationSourceType");
         static const int LastRefreshTimestamp_HASH = HashingUtils::HashString("LastRefreshTimestamp");
+        static const int CurrentPerformanceRisk_HASH = HashingUtils::HashString("CurrentPerformanceRisk");
+        static const int RecommendationOptionsSavingsOpportunityPercentage_HASH = HashingUtils::HashString("RecommendationOptionsSavingsOpportunityPercentage");
+        static const int RecommendationOptionsEstimatedMonthlySavingsCurrency_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsCurrency");
+        static const int RecommendationOptionsEstimatedMonthlySavingsValue_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsValue");
+        static const int EffectiveRecommendationPreferencesCpuVendorArchitectures_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesCpuVendorArchitectures");
+        static const int EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics");
 
 
         ExportableInstanceField GetExportableInstanceFieldForName(const Aws::String& name)
@@ -240,6 +246,30 @@ namespace Aws
           {
             return ExportableInstanceField::LastRefreshTimestamp;
           }
+          else if (hashCode == CurrentPerformanceRisk_HASH)
+          {
+            return ExportableInstanceField::CurrentPerformanceRisk;
+          }
+          else if (hashCode == RecommendationOptionsSavingsOpportunityPercentage_HASH)
+          {
+            return ExportableInstanceField::RecommendationOptionsSavingsOpportunityPercentage;
+          }
+          else if (hashCode == RecommendationOptionsEstimatedMonthlySavingsCurrency_HASH)
+          {
+            return ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrency;
+          }
+          else if (hashCode == RecommendationOptionsEstimatedMonthlySavingsValue_HASH)
+          {
+            return ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValue;
+          }
+          else if (hashCode == EffectiveRecommendationPreferencesCpuVendorArchitectures_HASH)
+          {
+            return ExportableInstanceField::EffectiveRecommendationPreferencesCpuVendorArchitectures;
+          }
+          else if (hashCode == EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics_HASH)
+          {
+            return ExportableInstanceField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -340,6 +370,18 @@ namespace Aws
             return "RecommendationsSourcesRecommendationSourceType";
           case ExportableInstanceField::LastRefreshTimestamp:
             return "LastRefreshTimestamp";
+          case ExportableInstanceField::CurrentPerformanceRisk:
+            return "CurrentPerformanceRisk";
+          case ExportableInstanceField::RecommendationOptionsSavingsOpportunityPercentage:
+            return "RecommendationOptionsSavingsOpportunityPercentage";
+          case ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrency:
+            return "RecommendationOptionsEstimatedMonthlySavingsCurrency";
+          case ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValue:
+            return "RecommendationOptionsEstimatedMonthlySavingsValue";
+          case ExportableInstanceField::EffectiveRecommendationPreferencesCpuVendorArchitectures:
+            return "EffectiveRecommendationPreferencesCpuVendorArchitectures";
+          case ExportableInstanceField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics:
+            return "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

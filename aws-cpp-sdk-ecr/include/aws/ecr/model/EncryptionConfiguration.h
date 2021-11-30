@@ -59,14 +59,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
      * data using server-side encryption with an KMS key stored in Key Management
      * Service (SSE-KMS)</a> in the <i>Amazon Simple Storage Service Console Developer
-     * Guide.</i>.</p> <p>If you use the <code>AES256</code> encryption type, Amazon
-     * ECR uses server-side encryption with Amazon S3-managed encryption keys which
+     * Guide</i>.</p> <p>If you use the <code>AES256</code> encryption type, Amazon ECR
+     * uses server-side encryption with Amazon S3-managed encryption keys which
      * encrypts the images in the repository using an AES-256 encryption algorithm. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Protecting
      * data using server-side encryption with Amazon S3-managed encryption keys
      * (SSE-S3)</a> in the <i>Amazon Simple Storage Service Console Developer
-     * Guide.</i>.</p>
+     * Guide</i>.</p>
      */
     inline const EncryptionType& GetEncryptionType() const{ return m_encryptionType; }
 
@@ -80,14 +80,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
      * data using server-side encryption with an KMS key stored in Key Management
      * Service (SSE-KMS)</a> in the <i>Amazon Simple Storage Service Console Developer
-     * Guide.</i>.</p> <p>If you use the <code>AES256</code> encryption type, Amazon
-     * ECR uses server-side encryption with Amazon S3-managed encryption keys which
+     * Guide</i>.</p> <p>If you use the <code>AES256</code> encryption type, Amazon ECR
+     * uses server-side encryption with Amazon S3-managed encryption keys which
      * encrypts the images in the repository using an AES-256 encryption algorithm. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Protecting
      * data using server-side encryption with Amazon S3-managed encryption keys
      * (SSE-S3)</a> in the <i>Amazon Simple Storage Service Console Developer
-     * Guide.</i>.</p>
+     * Guide</i>.</p>
      */
     inline bool EncryptionTypeHasBeenSet() const { return m_encryptionTypeHasBeenSet; }
 
@@ -101,14 +101,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
      * data using server-side encryption with an KMS key stored in Key Management
      * Service (SSE-KMS)</a> in the <i>Amazon Simple Storage Service Console Developer
-     * Guide.</i>.</p> <p>If you use the <code>AES256</code> encryption type, Amazon
-     * ECR uses server-side encryption with Amazon S3-managed encryption keys which
+     * Guide</i>.</p> <p>If you use the <code>AES256</code> encryption type, Amazon ECR
+     * uses server-side encryption with Amazon S3-managed encryption keys which
      * encrypts the images in the repository using an AES-256 encryption algorithm. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Protecting
      * data using server-side encryption with Amazon S3-managed encryption keys
      * (SSE-S3)</a> in the <i>Amazon Simple Storage Service Console Developer
-     * Guide.</i>.</p>
+     * Guide</i>.</p>
      */
     inline void SetEncryptionType(const EncryptionType& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
 
@@ -122,14 +122,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
      * data using server-side encryption with an KMS key stored in Key Management
      * Service (SSE-KMS)</a> in the <i>Amazon Simple Storage Service Console Developer
-     * Guide.</i>.</p> <p>If you use the <code>AES256</code> encryption type, Amazon
-     * ECR uses server-side encryption with Amazon S3-managed encryption keys which
+     * Guide</i>.</p> <p>If you use the <code>AES256</code> encryption type, Amazon ECR
+     * uses server-side encryption with Amazon S3-managed encryption keys which
      * encrypts the images in the repository using an AES-256 encryption algorithm. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Protecting
      * data using server-side encryption with Amazon S3-managed encryption keys
      * (SSE-S3)</a> in the <i>Amazon Simple Storage Service Console Developer
-     * Guide.</i>.</p>
+     * Guide</i>.</p>
      */
     inline void SetEncryptionType(EncryptionType&& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = std::move(value); }
 
@@ -143,14 +143,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
      * data using server-side encryption with an KMS key stored in Key Management
      * Service (SSE-KMS)</a> in the <i>Amazon Simple Storage Service Console Developer
-     * Guide.</i>.</p> <p>If you use the <code>AES256</code> encryption type, Amazon
-     * ECR uses server-side encryption with Amazon S3-managed encryption keys which
+     * Guide</i>.</p> <p>If you use the <code>AES256</code> encryption type, Amazon ECR
+     * uses server-side encryption with Amazon S3-managed encryption keys which
      * encrypts the images in the repository using an AES-256 encryption algorithm. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Protecting
      * data using server-side encryption with Amazon S3-managed encryption keys
      * (SSE-S3)</a> in the <i>Amazon Simple Storage Service Console Developer
-     * Guide.</i>.</p>
+     * Guide</i>.</p>
      */
     inline EncryptionConfiguration& WithEncryptionType(const EncryptionType& value) { SetEncryptionType(value); return *this;}
 
@@ -164,14 +164,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
      * data using server-side encryption with an KMS key stored in Key Management
      * Service (SSE-KMS)</a> in the <i>Amazon Simple Storage Service Console Developer
-     * Guide.</i>.</p> <p>If you use the <code>AES256</code> encryption type, Amazon
-     * ECR uses server-side encryption with Amazon S3-managed encryption keys which
+     * Guide</i>.</p> <p>If you use the <code>AES256</code> encryption type, Amazon ECR
+     * uses server-side encryption with Amazon S3-managed encryption keys which
      * encrypts the images in the repository using an AES-256 encryption algorithm. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Protecting
      * data using server-side encryption with Amazon S3-managed encryption keys
      * (SSE-S3)</a> in the <i>Amazon Simple Storage Service Console Developer
-     * Guide.</i>.</p>
+     * Guide</i>.</p>
      */
     inline EncryptionConfiguration& WithEncryptionType(EncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
 

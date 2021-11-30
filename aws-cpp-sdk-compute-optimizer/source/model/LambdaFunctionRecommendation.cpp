@@ -33,7 +33,9 @@ LambdaFunctionRecommendation::LambdaFunctionRecommendation() :
     m_finding(LambdaFunctionRecommendationFinding::NOT_SET),
     m_findingHasBeenSet(false),
     m_findingReasonCodesHasBeenSet(false),
-    m_memorySizeRecommendationOptionsHasBeenSet(false)
+    m_memorySizeRecommendationOptionsHasBeenSet(false),
+    m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
+    m_currentPerformanceRiskHasBeenSet(false)
 {
 }
 
@@ -52,7 +54,9 @@ LambdaFunctionRecommendation::LambdaFunctionRecommendation(JsonView jsonValue) :
     m_finding(LambdaFunctionRecommendationFinding::NOT_SET),
     m_findingHasBeenSet(false),
     m_findingReasonCodesHasBeenSet(false),
-    m_memorySizeRecommendationOptionsHasBeenSet(false)
+    m_memorySizeRecommendationOptionsHasBeenSet(false),
+    m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
+    m_currentPerformanceRiskHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -145,6 +149,13 @@ LambdaFunctionRecommendation& LambdaFunctionRecommendation::operator =(JsonView 
     m_memorySizeRecommendationOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("currentPerformanceRisk"))
+  {
+    m_currentPerformanceRisk = CurrentPerformanceRiskMapper::GetCurrentPerformanceRiskForName(jsonValue.GetString("currentPerformanceRisk"));
+
+    m_currentPerformanceRiskHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -229,6 +240,11 @@ JsonValue LambdaFunctionRecommendation::Jsonize() const
    }
    payload.WithArray("memorySizeRecommendationOptions", std::move(memorySizeRecommendationOptionsJsonList));
 
+  }
+
+  if(m_currentPerformanceRiskHasBeenSet)
+  {
+   payload.WithString("currentPerformanceRisk", CurrentPerformanceRiskMapper::GetNameForCurrentPerformanceRisk(m_currentPerformanceRisk));
   }
 
   return payload;

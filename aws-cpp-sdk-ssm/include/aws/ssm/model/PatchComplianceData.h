@@ -26,8 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Information about the state of a patch on a particular instance as it relates
-   * to the patch baseline used to patch the instance.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about the state of a patch on a particular managed node as it
+   * relates to the patch baseline used to patch the node.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchComplianceData">AWS
    * API Reference</a></p>
    */
@@ -221,7 +222,7 @@ namespace Model
 
 
     /**
-     * <p>The state of the patch on the instance, such as INSTALLED or FAILED.</p>
+     * <p>The state of the patch on the managed node, such as INSTALLED or FAILED.</p>
      * <p>For descriptions of each patch state, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
      * patch compliance</a> in the <i>Amazon Web Services Systems Manager User
@@ -230,7 +231,7 @@ namespace Model
     inline const PatchComplianceDataState& GetState() const{ return m_state; }
 
     /**
-     * <p>The state of the patch on the instance, such as INSTALLED or FAILED.</p>
+     * <p>The state of the patch on the managed node, such as INSTALLED or FAILED.</p>
      * <p>For descriptions of each patch state, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
      * patch compliance</a> in the <i>Amazon Web Services Systems Manager User
@@ -239,7 +240,7 @@ namespace Model
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The state of the patch on the instance, such as INSTALLED or FAILED.</p>
+     * <p>The state of the patch on the managed node, such as INSTALLED or FAILED.</p>
      * <p>For descriptions of each patch state, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
      * patch compliance</a> in the <i>Amazon Web Services Systems Manager User
@@ -248,7 +249,7 @@ namespace Model
     inline void SetState(const PatchComplianceDataState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of the patch on the instance, such as INSTALLED or FAILED.</p>
+     * <p>The state of the patch on the managed node, such as INSTALLED or FAILED.</p>
      * <p>For descriptions of each patch state, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
      * patch compliance</a> in the <i>Amazon Web Services Systems Manager User
@@ -257,7 +258,7 @@ namespace Model
     inline void SetState(PatchComplianceDataState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The state of the patch on the instance, such as INSTALLED or FAILED.</p>
+     * <p>The state of the patch on the managed node, such as INSTALLED or FAILED.</p>
      * <p>For descriptions of each patch state, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
      * patch compliance</a> in the <i>Amazon Web Services Systems Manager User
@@ -266,7 +267,7 @@ namespace Model
     inline PatchComplianceData& WithState(const PatchComplianceDataState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state of the patch on the instance, such as INSTALLED or FAILED.</p>
+     * <p>The state of the patch on the managed node, such as INSTALLED or FAILED.</p>
      * <p>For descriptions of each patch state, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
      * patch compliance</a> in the <i>Amazon Web Services Systems Manager User
@@ -276,37 +277,37 @@ namespace Model
 
 
     /**
-     * <p>The date/time the patch was installed on the instance. Not all operating
+     * <p>The date/time the patch was installed on the managed node. Not all operating
      * systems provide this level of information.</p>
      */
     inline const Aws::Utils::DateTime& GetInstalledTime() const{ return m_installedTime; }
 
     /**
-     * <p>The date/time the patch was installed on the instance. Not all operating
+     * <p>The date/time the patch was installed on the managed node. Not all operating
      * systems provide this level of information.</p>
      */
     inline bool InstalledTimeHasBeenSet() const { return m_installedTimeHasBeenSet; }
 
     /**
-     * <p>The date/time the patch was installed on the instance. Not all operating
+     * <p>The date/time the patch was installed on the managed node. Not all operating
      * systems provide this level of information.</p>
      */
     inline void SetInstalledTime(const Aws::Utils::DateTime& value) { m_installedTimeHasBeenSet = true; m_installedTime = value; }
 
     /**
-     * <p>The date/time the patch was installed on the instance. Not all operating
+     * <p>The date/time the patch was installed on the managed node. Not all operating
      * systems provide this level of information.</p>
      */
     inline void SetInstalledTime(Aws::Utils::DateTime&& value) { m_installedTimeHasBeenSet = true; m_installedTime = std::move(value); }
 
     /**
-     * <p>The date/time the patch was installed on the instance. Not all operating
+     * <p>The date/time the patch was installed on the managed node. Not all operating
      * systems provide this level of information.</p>
      */
     inline PatchComplianceData& WithInstalledTime(const Aws::Utils::DateTime& value) { SetInstalledTime(value); return *this;}
 
     /**
-     * <p>The date/time the patch was installed on the instance. Not all operating
+     * <p>The date/time the patch was installed on the managed node. Not all operating
      * systems provide this level of information.</p>
      */
     inline PatchComplianceData& WithInstalledTime(Aws::Utils::DateTime&& value) { SetInstalledTime(std::move(value)); return *this;}

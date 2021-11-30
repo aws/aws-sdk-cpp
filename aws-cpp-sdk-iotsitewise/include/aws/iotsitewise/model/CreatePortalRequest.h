@@ -458,9 +458,9 @@ namespace Model
      * Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option
      * is only available in Amazon Web Services Regions other than the China
      * Regions.</p> </li> <li> <p> <code>IAM</code> – The portal uses Identity and
-     * Access Management to authenticate users and manage user permissions. This option
-     * is only available in the China Regions.</p> </li> </ul> <p>You can't change this
-     * value after you create a portal.</p> <p>Default: <code>SSO</code> </p>
+     * Access Management to authenticate users and manage user permissions.</p> </li>
+     * </ul> <p>You can't change this value after you create a portal.</p> <p>Default:
+     * <code>SSO</code> </p>
      */
     inline const AuthMode& GetPortalAuthMode() const{ return m_portalAuthMode; }
 
@@ -474,9 +474,9 @@ namespace Model
      * Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option
      * is only available in Amazon Web Services Regions other than the China
      * Regions.</p> </li> <li> <p> <code>IAM</code> – The portal uses Identity and
-     * Access Management to authenticate users and manage user permissions. This option
-     * is only available in the China Regions.</p> </li> </ul> <p>You can't change this
-     * value after you create a portal.</p> <p>Default: <code>SSO</code> </p>
+     * Access Management to authenticate users and manage user permissions.</p> </li>
+     * </ul> <p>You can't change this value after you create a portal.</p> <p>Default:
+     * <code>SSO</code> </p>
      */
     inline bool PortalAuthModeHasBeenSet() const { return m_portalAuthModeHasBeenSet; }
 
@@ -490,9 +490,9 @@ namespace Model
      * Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option
      * is only available in Amazon Web Services Regions other than the China
      * Regions.</p> </li> <li> <p> <code>IAM</code> – The portal uses Identity and
-     * Access Management to authenticate users and manage user permissions. This option
-     * is only available in the China Regions.</p> </li> </ul> <p>You can't change this
-     * value after you create a portal.</p> <p>Default: <code>SSO</code> </p>
+     * Access Management to authenticate users and manage user permissions.</p> </li>
+     * </ul> <p>You can't change this value after you create a portal.</p> <p>Default:
+     * <code>SSO</code> </p>
      */
     inline void SetPortalAuthMode(const AuthMode& value) { m_portalAuthModeHasBeenSet = true; m_portalAuthMode = value; }
 
@@ -506,9 +506,9 @@ namespace Model
      * Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option
      * is only available in Amazon Web Services Regions other than the China
      * Regions.</p> </li> <li> <p> <code>IAM</code> – The portal uses Identity and
-     * Access Management to authenticate users and manage user permissions. This option
-     * is only available in the China Regions.</p> </li> </ul> <p>You can't change this
-     * value after you create a portal.</p> <p>Default: <code>SSO</code> </p>
+     * Access Management to authenticate users and manage user permissions.</p> </li>
+     * </ul> <p>You can't change this value after you create a portal.</p> <p>Default:
+     * <code>SSO</code> </p>
      */
     inline void SetPortalAuthMode(AuthMode&& value) { m_portalAuthModeHasBeenSet = true; m_portalAuthMode = std::move(value); }
 
@@ -522,9 +522,9 @@ namespace Model
      * Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option
      * is only available in Amazon Web Services Regions other than the China
      * Regions.</p> </li> <li> <p> <code>IAM</code> – The portal uses Identity and
-     * Access Management to authenticate users and manage user permissions. This option
-     * is only available in the China Regions.</p> </li> </ul> <p>You can't change this
-     * value after you create a portal.</p> <p>Default: <code>SSO</code> </p>
+     * Access Management to authenticate users and manage user permissions.</p> </li>
+     * </ul> <p>You can't change this value after you create a portal.</p> <p>Default:
+     * <code>SSO</code> </p>
      */
     inline CreatePortalRequest& WithPortalAuthMode(const AuthMode& value) { SetPortalAuthMode(value); return *this;}
 
@@ -538,9 +538,9 @@ namespace Model
      * Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option
      * is only available in Amazon Web Services Regions other than the China
      * Regions.</p> </li> <li> <p> <code>IAM</code> – The portal uses Identity and
-     * Access Management to authenticate users and manage user permissions. This option
-     * is only available in the China Regions.</p> </li> </ul> <p>You can't change this
-     * value after you create a portal.</p> <p>Default: <code>SSO</code> </p>
+     * Access Management to authenticate users and manage user permissions.</p> </li>
+     * </ul> <p>You can't change this value after you create a portal.</p> <p>Default:
+     * <code>SSO</code> </p>
      */
     inline CreatePortalRequest& WithPortalAuthMode(AuthMode&& value) { SetPortalAuthMode(std::move(value)); return *this;}
 

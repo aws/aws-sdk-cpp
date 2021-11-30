@@ -39,6 +39,9 @@ namespace Aws
         static const int Concurrent_in_progress_jobs_to_import_assets_from_Amazon_Redshift_datashares_HASH = HashingUtils::HashString("Concurrent in progress jobs to import assets from Amazon Redshift datashares");
         static const int Revisions_per_Amazon_Redshift_datashare_data_set_HASH = HashingUtils::HashString("Revisions per Amazon Redshift datashare data set");
         static const int Amazon_Redshift_datashare_assets_per_revision_HASH = HashingUtils::HashString("Amazon Redshift datashare assets per revision");
+        static const int Concurrent_in_progress_jobs_to_import_assets_from_an_API_Gateway_API_HASH = HashingUtils::HashString("Concurrent in progress jobs to import assets from an API Gateway API");
+        static const int Amazon_API_Gateway_API_assets_per_revision_HASH = HashingUtils::HashString("Amazon API Gateway API assets per revision");
+        static const int Revisions_per_Amazon_API_Gateway_API_data_set_HASH = HashingUtils::HashString("Revisions per Amazon API Gateway API data set");
 
 
         LimitName GetLimitNameForName(const Aws::String& name)
@@ -120,6 +123,18 @@ namespace Aws
           {
             return LimitName::Amazon_Redshift_datashare_assets_per_revision;
           }
+          else if (hashCode == Concurrent_in_progress_jobs_to_import_assets_from_an_API_Gateway_API_HASH)
+          {
+            return LimitName::Concurrent_in_progress_jobs_to_import_assets_from_an_API_Gateway_API;
+          }
+          else if (hashCode == Amazon_API_Gateway_API_assets_per_revision_HASH)
+          {
+            return LimitName::Amazon_API_Gateway_API_assets_per_revision;
+          }
+          else if (hashCode == Revisions_per_Amazon_API_Gateway_API_data_set_HASH)
+          {
+            return LimitName::Revisions_per_Amazon_API_Gateway_API_data_set;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -172,6 +187,12 @@ namespace Aws
             return "Revisions per Amazon Redshift datashare data set";
           case LimitName::Amazon_Redshift_datashare_assets_per_revision:
             return "Amazon Redshift datashare assets per revision";
+          case LimitName::Concurrent_in_progress_jobs_to_import_assets_from_an_API_Gateway_API:
+            return "Concurrent in progress jobs to import assets from an API Gateway API";
+          case LimitName::Amazon_API_Gateway_API_assets_per_revision:
+            return "Amazon API Gateway API assets per revision";
+          case LimitName::Revisions_per_Amazon_API_Gateway_API_data_set:
+            return "Revisions per Amazon API Gateway API data set";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

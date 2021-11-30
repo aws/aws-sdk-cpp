@@ -42,6 +42,10 @@ namespace Aws
         static const int RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound_HASH = HashingUtils::HashString("RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound");
         static const int RecommendationOptionsProjectedUtilizationMetricsDurationExpected_HASH = HashingUtils::HashString("RecommendationOptionsProjectedUtilizationMetricsDurationExpected");
         static const int LastRefreshTimestamp_HASH = HashingUtils::HashString("LastRefreshTimestamp");
+        static const int CurrentPerformanceRisk_HASH = HashingUtils::HashString("CurrentPerformanceRisk");
+        static const int RecommendationOptionsSavingsOpportunityPercentage_HASH = HashingUtils::HashString("RecommendationOptionsSavingsOpportunityPercentage");
+        static const int RecommendationOptionsEstimatedMonthlySavingsCurrency_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsCurrency");
+        static const int RecommendationOptionsEstimatedMonthlySavingsValue_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsValue");
 
 
         ExportableLambdaFunctionField GetExportableLambdaFunctionFieldForName(const Aws::String& name)
@@ -135,6 +139,22 @@ namespace Aws
           {
             return ExportableLambdaFunctionField::LastRefreshTimestamp;
           }
+          else if (hashCode == CurrentPerformanceRisk_HASH)
+          {
+            return ExportableLambdaFunctionField::CurrentPerformanceRisk;
+          }
+          else if (hashCode == RecommendationOptionsSavingsOpportunityPercentage_HASH)
+          {
+            return ExportableLambdaFunctionField::RecommendationOptionsSavingsOpportunityPercentage;
+          }
+          else if (hashCode == RecommendationOptionsEstimatedMonthlySavingsCurrency_HASH)
+          {
+            return ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsCurrency;
+          }
+          else if (hashCode == RecommendationOptionsEstimatedMonthlySavingsValue_HASH)
+          {
+            return ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsValue;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -193,6 +213,14 @@ namespace Aws
             return "RecommendationOptionsProjectedUtilizationMetricsDurationExpected";
           case ExportableLambdaFunctionField::LastRefreshTimestamp:
             return "LastRefreshTimestamp";
+          case ExportableLambdaFunctionField::CurrentPerformanceRisk:
+            return "CurrentPerformanceRisk";
+          case ExportableLambdaFunctionField::RecommendationOptionsSavingsOpportunityPercentage:
+            return "RecommendationOptionsSavingsOpportunityPercentage";
+          case ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsCurrency:
+            return "RecommendationOptionsEstimatedMonthlySavingsCurrency";
+          case ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsValue:
+            return "RecommendationOptionsEstimatedMonthlySavingsValue";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

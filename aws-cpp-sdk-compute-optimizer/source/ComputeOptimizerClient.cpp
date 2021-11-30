@@ -20,6 +20,7 @@
 #include <aws/compute-optimizer/ComputeOptimizerClient.h>
 #include <aws/compute-optimizer/ComputeOptimizerEndpoint.h>
 #include <aws/compute-optimizer/ComputeOptimizerErrorMarshaller.h>
+#include <aws/compute-optimizer/model/DeleteRecommendationPreferencesRequest.h>
 #include <aws/compute-optimizer/model/DescribeRecommendationExportJobsRequest.h>
 #include <aws/compute-optimizer/model/ExportAutoScalingGroupRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/ExportEBSVolumeRecommendationsRequest.h>
@@ -29,10 +30,13 @@
 #include <aws/compute-optimizer/model/GetEBSVolumeRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/GetEC2InstanceRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/GetEC2RecommendationProjectedMetricsRequest.h>
+#include <aws/compute-optimizer/model/GetEffectiveRecommendationPreferencesRequest.h>
 #include <aws/compute-optimizer/model/GetEnrollmentStatusRequest.h>
 #include <aws/compute-optimizer/model/GetEnrollmentStatusesForOrganizationRequest.h>
 #include <aws/compute-optimizer/model/GetLambdaFunctionRecommendationsRequest.h>
+#include <aws/compute-optimizer/model/GetRecommendationPreferencesRequest.h>
 #include <aws/compute-optimizer/model/GetRecommendationSummariesRequest.h>
+#include <aws/compute-optimizer/model/PutRecommendationPreferencesRequest.h>
 #include <aws/compute-optimizer/model/UpdateEnrollmentStatusRequest.h>
 
 using namespace Aws;
@@ -106,6 +110,30 @@ void ComputeOptimizerClient::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+DeleteRecommendationPreferencesOutcome ComputeOptimizerClient::DeleteRecommendationPreferences(const DeleteRecommendationPreferencesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteRecommendationPreferencesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteRecommendationPreferencesOutcomeCallable ComputeOptimizerClient::DeleteRecommendationPreferencesCallable(const DeleteRecommendationPreferencesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRecommendationPreferencesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRecommendationPreferences(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComputeOptimizerClient::DeleteRecommendationPreferencesAsync(const DeleteRecommendationPreferencesRequest& request, const DeleteRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteRecommendationPreferencesAsyncHelper( request, handler, context ); } );
+}
+
+void ComputeOptimizerClient::DeleteRecommendationPreferencesAsyncHelper(const DeleteRecommendationPreferencesRequest& request, const DeleteRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteRecommendationPreferences(request), context);
 }
 
 DescribeRecommendationExportJobsOutcome ComputeOptimizerClient::DescribeRecommendationExportJobs(const DescribeRecommendationExportJobsRequest& request) const
@@ -324,6 +352,30 @@ void ComputeOptimizerClient::GetEC2RecommendationProjectedMetricsAsyncHelper(con
   handler(this, request, GetEC2RecommendationProjectedMetrics(request), context);
 }
 
+GetEffectiveRecommendationPreferencesOutcome ComputeOptimizerClient::GetEffectiveRecommendationPreferences(const GetEffectiveRecommendationPreferencesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetEffectiveRecommendationPreferencesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetEffectiveRecommendationPreferencesOutcomeCallable ComputeOptimizerClient::GetEffectiveRecommendationPreferencesCallable(const GetEffectiveRecommendationPreferencesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetEffectiveRecommendationPreferencesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEffectiveRecommendationPreferences(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComputeOptimizerClient::GetEffectiveRecommendationPreferencesAsync(const GetEffectiveRecommendationPreferencesRequest& request, const GetEffectiveRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetEffectiveRecommendationPreferencesAsyncHelper( request, handler, context ); } );
+}
+
+void ComputeOptimizerClient::GetEffectiveRecommendationPreferencesAsyncHelper(const GetEffectiveRecommendationPreferencesRequest& request, const GetEffectiveRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetEffectiveRecommendationPreferences(request), context);
+}
+
 GetEnrollmentStatusOutcome ComputeOptimizerClient::GetEnrollmentStatus(const GetEnrollmentStatusRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -396,6 +448,30 @@ void ComputeOptimizerClient::GetLambdaFunctionRecommendationsAsyncHelper(const G
   handler(this, request, GetLambdaFunctionRecommendations(request), context);
 }
 
+GetRecommendationPreferencesOutcome ComputeOptimizerClient::GetRecommendationPreferences(const GetRecommendationPreferencesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetRecommendationPreferencesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetRecommendationPreferencesOutcomeCallable ComputeOptimizerClient::GetRecommendationPreferencesCallable(const GetRecommendationPreferencesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRecommendationPreferencesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRecommendationPreferences(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComputeOptimizerClient::GetRecommendationPreferencesAsync(const GetRecommendationPreferencesRequest& request, const GetRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRecommendationPreferencesAsyncHelper( request, handler, context ); } );
+}
+
+void ComputeOptimizerClient::GetRecommendationPreferencesAsyncHelper(const GetRecommendationPreferencesRequest& request, const GetRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRecommendationPreferences(request), context);
+}
+
 GetRecommendationSummariesOutcome ComputeOptimizerClient::GetRecommendationSummaries(const GetRecommendationSummariesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -418,6 +494,30 @@ void ComputeOptimizerClient::GetRecommendationSummariesAsync(const GetRecommenda
 void ComputeOptimizerClient::GetRecommendationSummariesAsyncHelper(const GetRecommendationSummariesRequest& request, const GetRecommendationSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetRecommendationSummaries(request), context);
+}
+
+PutRecommendationPreferencesOutcome ComputeOptimizerClient::PutRecommendationPreferences(const PutRecommendationPreferencesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return PutRecommendationPreferencesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutRecommendationPreferencesOutcomeCallable ComputeOptimizerClient::PutRecommendationPreferencesCallable(const PutRecommendationPreferencesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutRecommendationPreferencesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutRecommendationPreferences(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComputeOptimizerClient::PutRecommendationPreferencesAsync(const PutRecommendationPreferencesRequest& request, const PutRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutRecommendationPreferencesAsyncHelper( request, handler, context ); } );
+}
+
+void ComputeOptimizerClient::PutRecommendationPreferencesAsyncHelper(const PutRecommendationPreferencesRequest& request, const PutRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutRecommendationPreferences(request), context);
 }
 
 UpdateEnrollmentStatusOutcome ComputeOptimizerClient::UpdateEnrollmentStatus(const UpdateEnrollmentStatusRequest& request) const

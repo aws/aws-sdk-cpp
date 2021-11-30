@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about a Session Manager connection to an instance.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Information about a Session Manager connection to a managed
+   * node.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Session">AWS API
    * Reference</a></p>
    */
@@ -83,42 +83,42 @@ namespace Model
 
 
     /**
-     * <p>The instance that the Session Manager session connected to.</p>
+     * <p>The managed node that the Session Manager session connected to.</p>
      */
     inline const Aws::String& GetTarget() const{ return m_target; }
 
     /**
-     * <p>The instance that the Session Manager session connected to.</p>
+     * <p>The managed node that the Session Manager session connected to.</p>
      */
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
 
     /**
-     * <p>The instance that the Session Manager session connected to.</p>
+     * <p>The managed node that the Session Manager session connected to.</p>
      */
     inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
 
     /**
-     * <p>The instance that the Session Manager session connected to.</p>
+     * <p>The managed node that the Session Manager session connected to.</p>
      */
     inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
 
     /**
-     * <p>The instance that the Session Manager session connected to.</p>
+     * <p>The managed node that the Session Manager session connected to.</p>
      */
     inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
 
     /**
-     * <p>The instance that the Session Manager session connected to.</p>
+     * <p>The managed node that the Session Manager session connected to.</p>
      */
     inline Session& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
 
     /**
-     * <p>The instance that the Session Manager session connected to.</p>
+     * <p>The managed node that the Session Manager session connected to.</p>
      */
     inline Session& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
 
     /**
-     * <p>The instance that the Session Manager session connected to.</p>
+     * <p>The managed node that the Session Manager session connected to.</p>
      */
     inline Session& WithTarget(const char* value) { SetTarget(value); return *this;}
 

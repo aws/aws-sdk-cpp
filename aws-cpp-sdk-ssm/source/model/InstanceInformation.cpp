@@ -41,7 +41,10 @@ InstanceInformation::InstanceInformation() :
     m_associationStatusHasBeenSet(false),
     m_lastAssociationExecutionDateHasBeenSet(false),
     m_lastSuccessfulAssociationExecutionDateHasBeenSet(false),
-    m_associationOverviewHasBeenSet(false)
+    m_associationOverviewHasBeenSet(false),
+    m_sourceIdHasBeenSet(false),
+    m_sourceType(SourceType::NOT_SET),
+    m_sourceTypeHasBeenSet(false)
 {
 }
 
@@ -68,7 +71,10 @@ InstanceInformation::InstanceInformation(JsonView jsonValue) :
     m_associationStatusHasBeenSet(false),
     m_lastAssociationExecutionDateHasBeenSet(false),
     m_lastSuccessfulAssociationExecutionDateHasBeenSet(false),
-    m_associationOverviewHasBeenSet(false)
+    m_associationOverviewHasBeenSet(false),
+    m_sourceIdHasBeenSet(false),
+    m_sourceType(SourceType::NOT_SET),
+    m_sourceTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -208,6 +214,20 @@ InstanceInformation& InstanceInformation::operator =(JsonView jsonValue)
     m_associationOverviewHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SourceId"))
+  {
+    m_sourceId = jsonValue.GetString("SourceId");
+
+    m_sourceIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SourceType"))
+  {
+    m_sourceType = SourceTypeMapper::GetSourceTypeForName(jsonValue.GetString("SourceType"));
+
+    m_sourceTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -320,6 +340,17 @@ JsonValue InstanceInformation::Jsonize() const
   {
    payload.WithObject("AssociationOverview", m_associationOverview.Jsonize());
 
+  }
+
+  if(m_sourceIdHasBeenSet)
+  {
+   payload.WithString("SourceId", m_sourceId);
+
+  }
+
+  if(m_sourceTypeHasBeenSet)
+  {
+   payload.WithString("SourceType", SourceTypeMapper::GetNameForSourceType(m_sourceType));
   }
 
   return payload;

@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The instance ID.</p>
+     * <p>The managed node ID.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The instance ID.</p>
+     * <p>The managed node ID.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceId = value; }
 
     /**
-     * <p>The instance ID.</p>
+     * <p>The managed node ID.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceId = std::move(value); }
 
     /**
-     * <p>The instance ID.</p>
+     * <p>The managed node ID.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceId.assign(value); }
 
     /**
-     * <p>The instance ID.</p>
+     * <p>The managed node ID.</p>
      */
     inline GetDeployablePatchSnapshotForInstanceResult& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The instance ID.</p>
+     * <p>The managed node ID.</p>
      */
     inline GetDeployablePatchSnapshotForInstanceResult& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The instance ID.</p>
+     * <p>The managed node ID.</p>
      */
     inline GetDeployablePatchSnapshotForInstanceResult& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
@@ -149,43 +149,43 @@ namespace Model
 
     /**
      * <p>Returns the specific operating system (for example Windows Server 2012 or
-     * Amazon Linux 2015.09) on the instance for the specified patch snapshot.</p>
+     * Amazon Linux 2015.09) on the managed node for the specified patch snapshot.</p>
      */
     inline const Aws::String& GetProduct() const{ return m_product; }
 
     /**
      * <p>Returns the specific operating system (for example Windows Server 2012 or
-     * Amazon Linux 2015.09) on the instance for the specified patch snapshot.</p>
+     * Amazon Linux 2015.09) on the managed node for the specified patch snapshot.</p>
      */
     inline void SetProduct(const Aws::String& value) { m_product = value; }
 
     /**
      * <p>Returns the specific operating system (for example Windows Server 2012 or
-     * Amazon Linux 2015.09) on the instance for the specified patch snapshot.</p>
+     * Amazon Linux 2015.09) on the managed node for the specified patch snapshot.</p>
      */
     inline void SetProduct(Aws::String&& value) { m_product = std::move(value); }
 
     /**
      * <p>Returns the specific operating system (for example Windows Server 2012 or
-     * Amazon Linux 2015.09) on the instance for the specified patch snapshot.</p>
+     * Amazon Linux 2015.09) on the managed node for the specified patch snapshot.</p>
      */
     inline void SetProduct(const char* value) { m_product.assign(value); }
 
     /**
      * <p>Returns the specific operating system (for example Windows Server 2012 or
-     * Amazon Linux 2015.09) on the instance for the specified patch snapshot.</p>
+     * Amazon Linux 2015.09) on the managed node for the specified patch snapshot.</p>
      */
     inline GetDeployablePatchSnapshotForInstanceResult& WithProduct(const Aws::String& value) { SetProduct(value); return *this;}
 
     /**
      * <p>Returns the specific operating system (for example Windows Server 2012 or
-     * Amazon Linux 2015.09) on the instance for the specified patch snapshot.</p>
+     * Amazon Linux 2015.09) on the managed node for the specified patch snapshot.</p>
      */
     inline GetDeployablePatchSnapshotForInstanceResult& WithProduct(Aws::String&& value) { SetProduct(std::move(value)); return *this;}
 
     /**
      * <p>Returns the specific operating system (for example Windows Server 2012 or
-     * Amazon Linux 2015.09) on the instance for the specified patch snapshot.</p>
+     * Amazon Linux 2015.09) on the managed node for the specified patch snapshot.</p>
      */
     inline GetDeployablePatchSnapshotForInstanceResult& WithProduct(const char* value) { SetProduct(value); return *this;}
 

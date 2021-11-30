@@ -44,6 +44,10 @@ namespace Aws
         static const int RecommendationOptionsMonthlyPrice_HASH = HashingUtils::HashString("RecommendationOptionsMonthlyPrice");
         static const int RecommendationOptionsPerformanceRisk_HASH = HashingUtils::HashString("RecommendationOptionsPerformanceRisk");
         static const int LastRefreshTimestamp_HASH = HashingUtils::HashString("LastRefreshTimestamp");
+        static const int CurrentPerformanceRisk_HASH = HashingUtils::HashString("CurrentPerformanceRisk");
+        static const int RecommendationOptionsSavingsOpportunityPercentage_HASH = HashingUtils::HashString("RecommendationOptionsSavingsOpportunityPercentage");
+        static const int RecommendationOptionsEstimatedMonthlySavingsCurrency_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsCurrency");
+        static const int RecommendationOptionsEstimatedMonthlySavingsValue_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsValue");
 
 
         ExportableVolumeField GetExportableVolumeFieldForName(const Aws::String& name)
@@ -145,6 +149,22 @@ namespace Aws
           {
             return ExportableVolumeField::LastRefreshTimestamp;
           }
+          else if (hashCode == CurrentPerformanceRisk_HASH)
+          {
+            return ExportableVolumeField::CurrentPerformanceRisk;
+          }
+          else if (hashCode == RecommendationOptionsSavingsOpportunityPercentage_HASH)
+          {
+            return ExportableVolumeField::RecommendationOptionsSavingsOpportunityPercentage;
+          }
+          else if (hashCode == RecommendationOptionsEstimatedMonthlySavingsCurrency_HASH)
+          {
+            return ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsCurrency;
+          }
+          else if (hashCode == RecommendationOptionsEstimatedMonthlySavingsValue_HASH)
+          {
+            return ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsValue;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -207,6 +227,14 @@ namespace Aws
             return "RecommendationOptionsPerformanceRisk";
           case ExportableVolumeField::LastRefreshTimestamp:
             return "LastRefreshTimestamp";
+          case ExportableVolumeField::CurrentPerformanceRisk:
+            return "CurrentPerformanceRisk";
+          case ExportableVolumeField::RecommendationOptionsSavingsOpportunityPercentage:
+            return "RecommendationOptionsSavingsOpportunityPercentage";
+          case ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsCurrency:
+            return "RecommendationOptionsEstimatedMonthlySavingsCurrency";
+          case ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsValue:
+            return "RecommendationOptionsEstimatedMonthlySavingsValue";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

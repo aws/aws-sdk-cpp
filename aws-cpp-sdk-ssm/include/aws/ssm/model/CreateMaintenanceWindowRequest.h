@@ -451,9 +451,9 @@ namespace Model
 
 
     /**
-     * <p>Enables a maintenance window task to run on managed instances, even if you
-     * haven't registered those instances as targets. If enabled, then you must specify
-     * the unregistered instances (by instance ID) when you register a task with the
+     * <p>Enables a maintenance window task to run on managed nodes, even if you
+     * haven't registered those nodes as targets. If enabled, then you must specify the
+     * unregistered managed nodes (by node ID) when you register a task with the
      * maintenance window.</p> <p>If you don't enable this option, then you must
      * specify previously-registered targets when you register a task with the
      * maintenance window.</p>
@@ -461,9 +461,9 @@ namespace Model
     inline bool GetAllowUnassociatedTargets() const{ return m_allowUnassociatedTargets; }
 
     /**
-     * <p>Enables a maintenance window task to run on managed instances, even if you
-     * haven't registered those instances as targets. If enabled, then you must specify
-     * the unregistered instances (by instance ID) when you register a task with the
+     * <p>Enables a maintenance window task to run on managed nodes, even if you
+     * haven't registered those nodes as targets. If enabled, then you must specify the
+     * unregistered managed nodes (by node ID) when you register a task with the
      * maintenance window.</p> <p>If you don't enable this option, then you must
      * specify previously-registered targets when you register a task with the
      * maintenance window.</p>
@@ -471,9 +471,9 @@ namespace Model
     inline bool AllowUnassociatedTargetsHasBeenSet() const { return m_allowUnassociatedTargetsHasBeenSet; }
 
     /**
-     * <p>Enables a maintenance window task to run on managed instances, even if you
-     * haven't registered those instances as targets. If enabled, then you must specify
-     * the unregistered instances (by instance ID) when you register a task with the
+     * <p>Enables a maintenance window task to run on managed nodes, even if you
+     * haven't registered those nodes as targets. If enabled, then you must specify the
+     * unregistered managed nodes (by node ID) when you register a task with the
      * maintenance window.</p> <p>If you don't enable this option, then you must
      * specify previously-registered targets when you register a task with the
      * maintenance window.</p>
@@ -481,9 +481,9 @@ namespace Model
     inline void SetAllowUnassociatedTargets(bool value) { m_allowUnassociatedTargetsHasBeenSet = true; m_allowUnassociatedTargets = value; }
 
     /**
-     * <p>Enables a maintenance window task to run on managed instances, even if you
-     * haven't registered those instances as targets. If enabled, then you must specify
-     * the unregistered instances (by instance ID) when you register a task with the
+     * <p>Enables a maintenance window task to run on managed nodes, even if you
+     * haven't registered those nodes as targets. If enabled, then you must specify the
+     * unregistered managed nodes (by node ID) when you register a task with the
      * maintenance window.</p> <p>If you don't enable this option, then you must
      * specify previously-registered targets when you register a task with the
      * maintenance window.</p>

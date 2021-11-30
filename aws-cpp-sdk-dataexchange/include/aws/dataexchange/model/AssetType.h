@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     S3_SNAPSHOT,
-    REDSHIFT_DATA_SHARE
+    REDSHIFT_DATA_SHARE,
+    API_GATEWAY_API
   };
 
 namespace AssetTypeMapper

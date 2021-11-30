@@ -40,8 +40,8 @@ namespace Model
     /**
      * <p>Specifies the type of resource you are tagging.</p>  <p>The
      * <code>ManagedInstance</code> type for this API operation is for on-premises
-     * managed instances. You must specify the name of the managed instance in the
-     * following format: <code>mi-<i>ID_number</i> </code>. For example,
+     * managed nodes. You must specify the name of the managed node in the following
+     * format: <code>mi-<i>ID_number</i> </code>. For example,
      * <code>mi-1a2b3c4d5e6f</code>.</p> 
      */
     inline const ResourceTypeForTagging& GetResourceType() const{ return m_resourceType; }
@@ -49,8 +49,8 @@ namespace Model
     /**
      * <p>Specifies the type of resource you are tagging.</p>  <p>The
      * <code>ManagedInstance</code> type for this API operation is for on-premises
-     * managed instances. You must specify the name of the managed instance in the
-     * following format: <code>mi-<i>ID_number</i> </code>. For example,
+     * managed nodes. You must specify the name of the managed node in the following
+     * format: <code>mi-<i>ID_number</i> </code>. For example,
      * <code>mi-1a2b3c4d5e6f</code>.</p> 
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
@@ -58,8 +58,8 @@ namespace Model
     /**
      * <p>Specifies the type of resource you are tagging.</p>  <p>The
      * <code>ManagedInstance</code> type for this API operation is for on-premises
-     * managed instances. You must specify the name of the managed instance in the
-     * following format: <code>mi-<i>ID_number</i> </code>. For example,
+     * managed nodes. You must specify the name of the managed node in the following
+     * format: <code>mi-<i>ID_number</i> </code>. For example,
      * <code>mi-1a2b3c4d5e6f</code>.</p> 
      */
     inline void SetResourceType(const ResourceTypeForTagging& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
@@ -67,8 +67,8 @@ namespace Model
     /**
      * <p>Specifies the type of resource you are tagging.</p>  <p>The
      * <code>ManagedInstance</code> type for this API operation is for on-premises
-     * managed instances. You must specify the name of the managed instance in the
-     * following format: <code>mi-<i>ID_number</i> </code>. For example,
+     * managed nodes. You must specify the name of the managed node in the following
+     * format: <code>mi-<i>ID_number</i> </code>. For example,
      * <code>mi-1a2b3c4d5e6f</code>.</p> 
      */
     inline void SetResourceType(ResourceTypeForTagging&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
@@ -76,8 +76,8 @@ namespace Model
     /**
      * <p>Specifies the type of resource you are tagging.</p>  <p>The
      * <code>ManagedInstance</code> type for this API operation is for on-premises
-     * managed instances. You must specify the name of the managed instance in the
-     * following format: <code>mi-<i>ID_number</i> </code>. For example,
+     * managed nodes. You must specify the name of the managed node in the following
+     * format: <code>mi-<i>ID_number</i> </code>. For example,
      * <code>mi-1a2b3c4d5e6f</code>.</p> 
      */
     inline AddTagsToResourceRequest& WithResourceType(const ResourceTypeForTagging& value) { SetResourceType(value); return *this;}
@@ -85,8 +85,8 @@ namespace Model
     /**
      * <p>Specifies the type of resource you are tagging.</p>  <p>The
      * <code>ManagedInstance</code> type for this API operation is for on-premises
-     * managed instances. You must specify the name of the managed instance in the
-     * following format: <code>mi-<i>ID_number</i> </code>. For example,
+     * managed nodes. You must specify the name of the managed node in the following
+     * format: <code>mi-<i>ID_number</i> </code>. For example,
      * <code>mi-1a2b3c4d5e6f</code>.</p> 
      */
     inline AddTagsToResourceRequest& WithResourceType(ResourceTypeForTagging&& value) { SetResourceType(std::move(value)); return *this;}
@@ -107,9 +107,9 @@ namespace Model
      * <code>Document</code> and <code>Parameter</code> values, use the name of the
      * resource.</p> <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p>
      *  <p>The <code>ManagedInstance</code> type for this API operation is only
-     * for on-premises managed instances. You must specify the name of the managed
-     * instance in the following format: <code>mi-<i>ID_number</i> </code>. For
-     * example, <code>mi-1a2b3c4d5e6f</code>.</p> 
+     * for on-premises managed nodes. You must specify the name of the managed node in
+     * the following format: <code>mi-<i>ID_number</i> </code>. For example,
+     * <code>mi-1a2b3c4d5e6f</code>.</p> 
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
@@ -128,9 +128,9 @@ namespace Model
      * <code>Document</code> and <code>Parameter</code> values, use the name of the
      * resource.</p> <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p>
      *  <p>The <code>ManagedInstance</code> type for this API operation is only
-     * for on-premises managed instances. You must specify the name of the managed
-     * instance in the following format: <code>mi-<i>ID_number</i> </code>. For
-     * example, <code>mi-1a2b3c4d5e6f</code>.</p> 
+     * for on-premises managed nodes. You must specify the name of the managed node in
+     * the following format: <code>mi-<i>ID_number</i> </code>. For example,
+     * <code>mi-1a2b3c4d5e6f</code>.</p> 
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
@@ -149,9 +149,9 @@ namespace Model
      * <code>Document</code> and <code>Parameter</code> values, use the name of the
      * resource.</p> <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p>
      *  <p>The <code>ManagedInstance</code> type for this API operation is only
-     * for on-premises managed instances. You must specify the name of the managed
-     * instance in the following format: <code>mi-<i>ID_number</i> </code>. For
-     * example, <code>mi-1a2b3c4d5e6f</code>.</p> 
+     * for on-premises managed nodes. You must specify the name of the managed node in
+     * the following format: <code>mi-<i>ID_number</i> </code>. For example,
+     * <code>mi-1a2b3c4d5e6f</code>.</p> 
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
@@ -170,9 +170,9 @@ namespace Model
      * <code>Document</code> and <code>Parameter</code> values, use the name of the
      * resource.</p> <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p>
      *  <p>The <code>ManagedInstance</code> type for this API operation is only
-     * for on-premises managed instances. You must specify the name of the managed
-     * instance in the following format: <code>mi-<i>ID_number</i> </code>. For
-     * example, <code>mi-1a2b3c4d5e6f</code>.</p> 
+     * for on-premises managed nodes. You must specify the name of the managed node in
+     * the following format: <code>mi-<i>ID_number</i> </code>. For example,
+     * <code>mi-1a2b3c4d5e6f</code>.</p> 
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
@@ -191,9 +191,9 @@ namespace Model
      * <code>Document</code> and <code>Parameter</code> values, use the name of the
      * resource.</p> <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p>
      *  <p>The <code>ManagedInstance</code> type for this API operation is only
-     * for on-premises managed instances. You must specify the name of the managed
-     * instance in the following format: <code>mi-<i>ID_number</i> </code>. For
-     * example, <code>mi-1a2b3c4d5e6f</code>.</p> 
+     * for on-premises managed nodes. You must specify the name of the managed node in
+     * the following format: <code>mi-<i>ID_number</i> </code>. For example,
+     * <code>mi-1a2b3c4d5e6f</code>.</p> 
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
@@ -212,9 +212,9 @@ namespace Model
      * <code>Document</code> and <code>Parameter</code> values, use the name of the
      * resource.</p> <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p>
      *  <p>The <code>ManagedInstance</code> type for this API operation is only
-     * for on-premises managed instances. You must specify the name of the managed
-     * instance in the following format: <code>mi-<i>ID_number</i> </code>. For
-     * example, <code>mi-1a2b3c4d5e6f</code>.</p> 
+     * for on-premises managed nodes. You must specify the name of the managed node in
+     * the following format: <code>mi-<i>ID_number</i> </code>. For example,
+     * <code>mi-1a2b3c4d5e6f</code>.</p> 
      */
     inline AddTagsToResourceRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
@@ -233,9 +233,9 @@ namespace Model
      * <code>Document</code> and <code>Parameter</code> values, use the name of the
      * resource.</p> <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p>
      *  <p>The <code>ManagedInstance</code> type for this API operation is only
-     * for on-premises managed instances. You must specify the name of the managed
-     * instance in the following format: <code>mi-<i>ID_number</i> </code>. For
-     * example, <code>mi-1a2b3c4d5e6f</code>.</p> 
+     * for on-premises managed nodes. You must specify the name of the managed node in
+     * the following format: <code>mi-<i>ID_number</i> </code>. For example,
+     * <code>mi-1a2b3c4d5e6f</code>.</p> 
      */
     inline AddTagsToResourceRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
@@ -254,9 +254,9 @@ namespace Model
      * <code>Document</code> and <code>Parameter</code> values, use the name of the
      * resource.</p> <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p>
      *  <p>The <code>ManagedInstance</code> type for this API operation is only
-     * for on-premises managed instances. You must specify the name of the managed
-     * instance in the following format: <code>mi-<i>ID_number</i> </code>. For
-     * example, <code>mi-1a2b3c4d5e6f</code>.</p> 
+     * for on-premises managed nodes. You must specify the name of the managed node in
+     * the following format: <code>mi-<i>ID_number</i> </code>. For example,
+     * <code>mi-1a2b3c4d5e6f</code>.</p> 
      */
     inline AddTagsToResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 

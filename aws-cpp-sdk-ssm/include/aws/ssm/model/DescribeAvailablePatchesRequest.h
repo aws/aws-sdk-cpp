@@ -38,10 +38,10 @@ namespace Model
 
     /**
      * <p>Each element in the array is a structure containing a key-value pair.</p> <p>
-     * <b>Windows Server</b> </p> <p>Supported keys for Windows Server instance patches
-     * include the following:</p> <ul> <li> <p> <b> <code>PATCH_SET</code> </b> </p>
-     * <p>Sample values: <code>OS</code> | <code>APPLICATION</code> </p> </li> <li> <p>
-     * <b> <code>PRODUCT</code> </b> </p> <p>Sample values:
+     * <b>Windows Server</b> </p> <p>Supported keys for Windows Server managed node
+     * patches include the following:</p> <ul> <li> <p> <b> <code>PATCH_SET</code> </b>
+     * </p> <p>Sample values: <code>OS</code> | <code>APPLICATION</code> </p> </li>
+     * <li> <p> <b> <code>PRODUCT</code> </b> </p> <p>Sample values:
      * <code>WindowsServer2012</code> | <code>Office 2010</code> |
      * <code>MicrosoftDefenderAntivirus</code> </p> </li> <li> <p> <b>
      * <code>PRODUCT_FAMILY</code> </b> </p> <p>Sample values: <code>Windows</code> |
@@ -58,7 +58,7 @@ namespace Model
      * Key=CVE_ID,Values=CVE-2018-3615</code> </p> <p>However, the following command
      * succeeds:</p> <p> <code>aws ssm describe-available-patches --filters
      * Key=PRODUCT,Values=AmazonLinux2018.03 Key=CVE_ID,Values=CVE-2018-3615</code>
-     * </p>  <p>Supported keys for Linux instance patches include the
+     * </p>  <p>Supported keys for Linux managed node patches include the
      * following:</p> <ul> <li> <p> <b> <code>PRODUCT</code> </b> </p> <p>Sample
      * values: <code>AmazonLinux2018.03</code> | <code>AmazonLinux2.0</code> </p> </li>
      * <li> <p> <b> <code>NAME</code> </b> </p> <p>Sample values:
@@ -83,10 +83,10 @@ namespace Model
 
     /**
      * <p>Each element in the array is a structure containing a key-value pair.</p> <p>
-     * <b>Windows Server</b> </p> <p>Supported keys for Windows Server instance patches
-     * include the following:</p> <ul> <li> <p> <b> <code>PATCH_SET</code> </b> </p>
-     * <p>Sample values: <code>OS</code> | <code>APPLICATION</code> </p> </li> <li> <p>
-     * <b> <code>PRODUCT</code> </b> </p> <p>Sample values:
+     * <b>Windows Server</b> </p> <p>Supported keys for Windows Server managed node
+     * patches include the following:</p> <ul> <li> <p> <b> <code>PATCH_SET</code> </b>
+     * </p> <p>Sample values: <code>OS</code> | <code>APPLICATION</code> </p> </li>
+     * <li> <p> <b> <code>PRODUCT</code> </b> </p> <p>Sample values:
      * <code>WindowsServer2012</code> | <code>Office 2010</code> |
      * <code>MicrosoftDefenderAntivirus</code> </p> </li> <li> <p> <b>
      * <code>PRODUCT_FAMILY</code> </b> </p> <p>Sample values: <code>Windows</code> |
@@ -103,7 +103,7 @@ namespace Model
      * Key=CVE_ID,Values=CVE-2018-3615</code> </p> <p>However, the following command
      * succeeds:</p> <p> <code>aws ssm describe-available-patches --filters
      * Key=PRODUCT,Values=AmazonLinux2018.03 Key=CVE_ID,Values=CVE-2018-3615</code>
-     * </p>  <p>Supported keys for Linux instance patches include the
+     * </p>  <p>Supported keys for Linux managed node patches include the
      * following:</p> <ul> <li> <p> <b> <code>PRODUCT</code> </b> </p> <p>Sample
      * values: <code>AmazonLinux2018.03</code> | <code>AmazonLinux2.0</code> </p> </li>
      * <li> <p> <b> <code>NAME</code> </b> </p> <p>Sample values:
@@ -128,10 +128,10 @@ namespace Model
 
     /**
      * <p>Each element in the array is a structure containing a key-value pair.</p> <p>
-     * <b>Windows Server</b> </p> <p>Supported keys for Windows Server instance patches
-     * include the following:</p> <ul> <li> <p> <b> <code>PATCH_SET</code> </b> </p>
-     * <p>Sample values: <code>OS</code> | <code>APPLICATION</code> </p> </li> <li> <p>
-     * <b> <code>PRODUCT</code> </b> </p> <p>Sample values:
+     * <b>Windows Server</b> </p> <p>Supported keys for Windows Server managed node
+     * patches include the following:</p> <ul> <li> <p> <b> <code>PATCH_SET</code> </b>
+     * </p> <p>Sample values: <code>OS</code> | <code>APPLICATION</code> </p> </li>
+     * <li> <p> <b> <code>PRODUCT</code> </b> </p> <p>Sample values:
      * <code>WindowsServer2012</code> | <code>Office 2010</code> |
      * <code>MicrosoftDefenderAntivirus</code> </p> </li> <li> <p> <b>
      * <code>PRODUCT_FAMILY</code> </b> </p> <p>Sample values: <code>Windows</code> |
@@ -148,7 +148,7 @@ namespace Model
      * Key=CVE_ID,Values=CVE-2018-3615</code> </p> <p>However, the following command
      * succeeds:</p> <p> <code>aws ssm describe-available-patches --filters
      * Key=PRODUCT,Values=AmazonLinux2018.03 Key=CVE_ID,Values=CVE-2018-3615</code>
-     * </p>  <p>Supported keys for Linux instance patches include the
+     * </p>  <p>Supported keys for Linux managed node patches include the
      * following:</p> <ul> <li> <p> <b> <code>PRODUCT</code> </b> </p> <p>Sample
      * values: <code>AmazonLinux2018.03</code> | <code>AmazonLinux2.0</code> </p> </li>
      * <li> <p> <b> <code>NAME</code> </b> </p> <p>Sample values:
@@ -173,10 +173,10 @@ namespace Model
 
     /**
      * <p>Each element in the array is a structure containing a key-value pair.</p> <p>
-     * <b>Windows Server</b> </p> <p>Supported keys for Windows Server instance patches
-     * include the following:</p> <ul> <li> <p> <b> <code>PATCH_SET</code> </b> </p>
-     * <p>Sample values: <code>OS</code> | <code>APPLICATION</code> </p> </li> <li> <p>
-     * <b> <code>PRODUCT</code> </b> </p> <p>Sample values:
+     * <b>Windows Server</b> </p> <p>Supported keys for Windows Server managed node
+     * patches include the following:</p> <ul> <li> <p> <b> <code>PATCH_SET</code> </b>
+     * </p> <p>Sample values: <code>OS</code> | <code>APPLICATION</code> </p> </li>
+     * <li> <p> <b> <code>PRODUCT</code> </b> </p> <p>Sample values:
      * <code>WindowsServer2012</code> | <code>Office 2010</code> |
      * <code>MicrosoftDefenderAntivirus</code> </p> </li> <li> <p> <b>
      * <code>PRODUCT_FAMILY</code> </b> </p> <p>Sample values: <code>Windows</code> |
@@ -193,7 +193,7 @@ namespace Model
      * Key=CVE_ID,Values=CVE-2018-3615</code> </p> <p>However, the following command
      * succeeds:</p> <p> <code>aws ssm describe-available-patches --filters
      * Key=PRODUCT,Values=AmazonLinux2018.03 Key=CVE_ID,Values=CVE-2018-3615</code>
-     * </p>  <p>Supported keys for Linux instance patches include the
+     * </p>  <p>Supported keys for Linux managed node patches include the
      * following:</p> <ul> <li> <p> <b> <code>PRODUCT</code> </b> </p> <p>Sample
      * values: <code>AmazonLinux2018.03</code> | <code>AmazonLinux2.0</code> </p> </li>
      * <li> <p> <b> <code>NAME</code> </b> </p> <p>Sample values:
@@ -218,10 +218,10 @@ namespace Model
 
     /**
      * <p>Each element in the array is a structure containing a key-value pair.</p> <p>
-     * <b>Windows Server</b> </p> <p>Supported keys for Windows Server instance patches
-     * include the following:</p> <ul> <li> <p> <b> <code>PATCH_SET</code> </b> </p>
-     * <p>Sample values: <code>OS</code> | <code>APPLICATION</code> </p> </li> <li> <p>
-     * <b> <code>PRODUCT</code> </b> </p> <p>Sample values:
+     * <b>Windows Server</b> </p> <p>Supported keys for Windows Server managed node
+     * patches include the following:</p> <ul> <li> <p> <b> <code>PATCH_SET</code> </b>
+     * </p> <p>Sample values: <code>OS</code> | <code>APPLICATION</code> </p> </li>
+     * <li> <p> <b> <code>PRODUCT</code> </b> </p> <p>Sample values:
      * <code>WindowsServer2012</code> | <code>Office 2010</code> |
      * <code>MicrosoftDefenderAntivirus</code> </p> </li> <li> <p> <b>
      * <code>PRODUCT_FAMILY</code> </b> </p> <p>Sample values: <code>Windows</code> |
@@ -238,7 +238,7 @@ namespace Model
      * Key=CVE_ID,Values=CVE-2018-3615</code> </p> <p>However, the following command
      * succeeds:</p> <p> <code>aws ssm describe-available-patches --filters
      * Key=PRODUCT,Values=AmazonLinux2018.03 Key=CVE_ID,Values=CVE-2018-3615</code>
-     * </p>  <p>Supported keys for Linux instance patches include the
+     * </p>  <p>Supported keys for Linux managed node patches include the
      * following:</p> <ul> <li> <p> <b> <code>PRODUCT</code> </b> </p> <p>Sample
      * values: <code>AmazonLinux2018.03</code> | <code>AmazonLinux2.0</code> </p> </li>
      * <li> <p> <b> <code>NAME</code> </b> </p> <p>Sample values:
@@ -263,10 +263,10 @@ namespace Model
 
     /**
      * <p>Each element in the array is a structure containing a key-value pair.</p> <p>
-     * <b>Windows Server</b> </p> <p>Supported keys for Windows Server instance patches
-     * include the following:</p> <ul> <li> <p> <b> <code>PATCH_SET</code> </b> </p>
-     * <p>Sample values: <code>OS</code> | <code>APPLICATION</code> </p> </li> <li> <p>
-     * <b> <code>PRODUCT</code> </b> </p> <p>Sample values:
+     * <b>Windows Server</b> </p> <p>Supported keys for Windows Server managed node
+     * patches include the following:</p> <ul> <li> <p> <b> <code>PATCH_SET</code> </b>
+     * </p> <p>Sample values: <code>OS</code> | <code>APPLICATION</code> </p> </li>
+     * <li> <p> <b> <code>PRODUCT</code> </b> </p> <p>Sample values:
      * <code>WindowsServer2012</code> | <code>Office 2010</code> |
      * <code>MicrosoftDefenderAntivirus</code> </p> </li> <li> <p> <b>
      * <code>PRODUCT_FAMILY</code> </b> </p> <p>Sample values: <code>Windows</code> |
@@ -283,7 +283,7 @@ namespace Model
      * Key=CVE_ID,Values=CVE-2018-3615</code> </p> <p>However, the following command
      * succeeds:</p> <p> <code>aws ssm describe-available-patches --filters
      * Key=PRODUCT,Values=AmazonLinux2018.03 Key=CVE_ID,Values=CVE-2018-3615</code>
-     * </p>  <p>Supported keys for Linux instance patches include the
+     * </p>  <p>Supported keys for Linux managed node patches include the
      * following:</p> <ul> <li> <p> <b> <code>PRODUCT</code> </b> </p> <p>Sample
      * values: <code>AmazonLinux2018.03</code> | <code>AmazonLinux2.0</code> </p> </li>
      * <li> <p> <b> <code>NAME</code> </b> </p> <p>Sample values:
@@ -308,10 +308,10 @@ namespace Model
 
     /**
      * <p>Each element in the array is a structure containing a key-value pair.</p> <p>
-     * <b>Windows Server</b> </p> <p>Supported keys for Windows Server instance patches
-     * include the following:</p> <ul> <li> <p> <b> <code>PATCH_SET</code> </b> </p>
-     * <p>Sample values: <code>OS</code> | <code>APPLICATION</code> </p> </li> <li> <p>
-     * <b> <code>PRODUCT</code> </b> </p> <p>Sample values:
+     * <b>Windows Server</b> </p> <p>Supported keys for Windows Server managed node
+     * patches include the following:</p> <ul> <li> <p> <b> <code>PATCH_SET</code> </b>
+     * </p> <p>Sample values: <code>OS</code> | <code>APPLICATION</code> </p> </li>
+     * <li> <p> <b> <code>PRODUCT</code> </b> </p> <p>Sample values:
      * <code>WindowsServer2012</code> | <code>Office 2010</code> |
      * <code>MicrosoftDefenderAntivirus</code> </p> </li> <li> <p> <b>
      * <code>PRODUCT_FAMILY</code> </b> </p> <p>Sample values: <code>Windows</code> |
@@ -328,7 +328,7 @@ namespace Model
      * Key=CVE_ID,Values=CVE-2018-3615</code> </p> <p>However, the following command
      * succeeds:</p> <p> <code>aws ssm describe-available-patches --filters
      * Key=PRODUCT,Values=AmazonLinux2018.03 Key=CVE_ID,Values=CVE-2018-3615</code>
-     * </p>  <p>Supported keys for Linux instance patches include the
+     * </p>  <p>Supported keys for Linux managed node patches include the
      * following:</p> <ul> <li> <p> <b> <code>PRODUCT</code> </b> </p> <p>Sample
      * values: <code>AmazonLinux2018.03</code> | <code>AmazonLinux2.0</code> </p> </li>
      * <li> <p> <b> <code>NAME</code> </b> </p> <p>Sample values:
@@ -353,10 +353,10 @@ namespace Model
 
     /**
      * <p>Each element in the array is a structure containing a key-value pair.</p> <p>
-     * <b>Windows Server</b> </p> <p>Supported keys for Windows Server instance patches
-     * include the following:</p> <ul> <li> <p> <b> <code>PATCH_SET</code> </b> </p>
-     * <p>Sample values: <code>OS</code> | <code>APPLICATION</code> </p> </li> <li> <p>
-     * <b> <code>PRODUCT</code> </b> </p> <p>Sample values:
+     * <b>Windows Server</b> </p> <p>Supported keys for Windows Server managed node
+     * patches include the following:</p> <ul> <li> <p> <b> <code>PATCH_SET</code> </b>
+     * </p> <p>Sample values: <code>OS</code> | <code>APPLICATION</code> </p> </li>
+     * <li> <p> <b> <code>PRODUCT</code> </b> </p> <p>Sample values:
      * <code>WindowsServer2012</code> | <code>Office 2010</code> |
      * <code>MicrosoftDefenderAntivirus</code> </p> </li> <li> <p> <b>
      * <code>PRODUCT_FAMILY</code> </b> </p> <p>Sample values: <code>Windows</code> |
@@ -373,7 +373,7 @@ namespace Model
      * Key=CVE_ID,Values=CVE-2018-3615</code> </p> <p>However, the following command
      * succeeds:</p> <p> <code>aws ssm describe-available-patches --filters
      * Key=PRODUCT,Values=AmazonLinux2018.03 Key=CVE_ID,Values=CVE-2018-3615</code>
-     * </p>  <p>Supported keys for Linux instance patches include the
+     * </p>  <p>Supported keys for Linux managed node patches include the
      * following:</p> <ul> <li> <p> <b> <code>PRODUCT</code> </b> </p> <p>Sample
      * values: <code>AmazonLinux2018.03</code> | <code>AmazonLinux2.0</code> </p> </li>
      * <li> <p> <b> <code>NAME</code> </b> </p> <p>Sample values:

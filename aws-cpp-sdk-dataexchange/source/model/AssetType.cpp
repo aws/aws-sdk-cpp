@@ -22,6 +22,7 @@ namespace Aws
 
         static const int S3_SNAPSHOT_HASH = HashingUtils::HashString("S3_SNAPSHOT");
         static const int REDSHIFT_DATA_SHARE_HASH = HashingUtils::HashString("REDSHIFT_DATA_SHARE");
+        static const int API_GATEWAY_API_HASH = HashingUtils::HashString("API_GATEWAY_API");
 
 
         AssetType GetAssetTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == REDSHIFT_DATA_SHARE_HASH)
           {
             return AssetType::REDSHIFT_DATA_SHARE;
+          }
+          else if (hashCode == API_GATEWAY_API_HASH)
+          {
+            return AssetType::API_GATEWAY_API;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "S3_SNAPSHOT";
           case AssetType::REDSHIFT_DATA_SHARE:
             return "REDSHIFT_DATA_SHARE";
+          case AssetType::API_GATEWAY_API:
+            return "API_GATEWAY_API";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

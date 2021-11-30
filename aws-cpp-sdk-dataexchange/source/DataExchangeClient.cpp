@@ -40,6 +40,7 @@
 #include <aws/dataexchange/model/ListJobsRequest.h>
 #include <aws/dataexchange/model/ListRevisionAssetsRequest.h>
 #include <aws/dataexchange/model/ListTagsForResourceRequest.h>
+#include <aws/dataexchange/model/SendApiAssetRequest.h>
 #include <aws/dataexchange/model/StartJobRequest.h>
 #include <aws/dataexchange/model/TagResourceRequest.h>
 #include <aws/dataexchange/model/UntagResourceRequest.h>
@@ -99,25 +100,34 @@ void DataExchangeClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("DataExchange");
   m_configScheme = SchemeMapper::ToString(config.scheme);
+  m_scheme = m_configScheme;
   if (config.endpointOverride.empty())
   {
-      m_uri = m_configScheme + "://" + DataExchangeEndpoint::ForRegion(config.region, config.useDualStack);
+      m_baseUri = DataExchangeEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
       OverrideEndpoint(config.endpointOverride);
   }
+  m_enableHostPrefixInjection = config.enableHostPrefixInjection;
 }
 
 void DataExchangeClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
+  if (endpoint.compare(0, 7, "http://") == 0)
   {
-      m_uri = endpoint;
+      m_scheme = "http";
+      m_baseUri = endpoint.substr(7);
+  }
+  else if (endpoint.compare(0, 8, "https://") == 0)
+  {
+      m_scheme = "https";
+      m_baseUri = endpoint.substr(8);
   }
   else
   {
-      m_uri = m_configScheme + "://" + endpoint;
+      m_scheme = m_configScheme;
+      m_baseUri = endpoint;
   }
 }
 
@@ -128,7 +138,7 @@ CancelJobOutcome DataExchangeClient::CancelJob(const CancelJobRequest& request) 
     AWS_LOGSTREAM_ERROR("CancelJob", "Required field: JobId, is not set");
     return CancelJobOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   uri.AddPathSegments("/v1/jobs/");
   uri.AddPathSegment(request.GetJobId());
   return CancelJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
@@ -154,7 +164,7 @@ void DataExchangeClient::CancelJobAsyncHelper(const CancelJobRequest& request, c
 
 CreateDataSetOutcome DataExchangeClient::CreateDataSet(const CreateDataSetRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   uri.AddPathSegments("/v1/data-sets");
   return CreateDataSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
@@ -179,7 +189,7 @@ void DataExchangeClient::CreateDataSetAsyncHelper(const CreateDataSetRequest& re
 
 CreateEventActionOutcome DataExchangeClient::CreateEventAction(const CreateEventActionRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   uri.AddPathSegments("/v1/event-actions");
   return CreateEventActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
@@ -204,7 +214,7 @@ void DataExchangeClient::CreateEventActionAsyncHelper(const CreateEventActionReq
 
 CreateJobOutcome DataExchangeClient::CreateJob(const CreateJobRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   uri.AddPathSegments("/v1/jobs");
   return CreateJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
@@ -234,7 +244,7 @@ CreateRevisionOutcome DataExchangeClient::CreateRevision(const CreateRevisionReq
     AWS_LOGSTREAM_ERROR("CreateRevision", "Required field: DataSetId, is not set");
     return CreateRevisionOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   uri.AddPathSegments("/v1/data-sets/");
   uri.AddPathSegment(request.GetDataSetId());
   uri.AddPathSegments("/revisions");
@@ -276,7 +286,7 @@ DeleteAssetOutcome DataExchangeClient::DeleteAsset(const DeleteAssetRequest& req
     AWS_LOGSTREAM_ERROR("DeleteAsset", "Required field: RevisionId, is not set");
     return DeleteAssetOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RevisionId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   uri.AddPathSegments("/v1/data-sets/");
   uri.AddPathSegment(request.GetDataSetId());
   uri.AddPathSegments("/revisions/");
@@ -311,7 +321,7 @@ DeleteDataSetOutcome DataExchangeClient::DeleteDataSet(const DeleteDataSetReques
     AWS_LOGSTREAM_ERROR("DeleteDataSet", "Required field: DataSetId, is not set");
     return DeleteDataSetOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   uri.AddPathSegments("/v1/data-sets/");
   uri.AddPathSegment(request.GetDataSetId());
   return DeleteDataSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
@@ -342,7 +352,7 @@ DeleteEventActionOutcome DataExchangeClient::DeleteEventAction(const DeleteEvent
     AWS_LOGSTREAM_ERROR("DeleteEventAction", "Required field: EventActionId, is not set");
     return DeleteEventActionOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EventActionId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   uri.AddPathSegments("/v1/event-actions/");
   uri.AddPathSegment(request.GetEventActionId());
   return DeleteEventActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
@@ -378,7 +388,7 @@ DeleteRevisionOutcome DataExchangeClient::DeleteRevision(const DeleteRevisionReq
     AWS_LOGSTREAM_ERROR("DeleteRevision", "Required field: RevisionId, is not set");
     return DeleteRevisionOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RevisionId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   uri.AddPathSegments("/v1/data-sets/");
   uri.AddPathSegment(request.GetDataSetId());
   uri.AddPathSegments("/revisions/");
@@ -421,7 +431,7 @@ GetAssetOutcome DataExchangeClient::GetAsset(const GetAssetRequest& request) con
     AWS_LOGSTREAM_ERROR("GetAsset", "Required field: RevisionId, is not set");
     return GetAssetOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RevisionId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   uri.AddPathSegments("/v1/data-sets/");
   uri.AddPathSegment(request.GetDataSetId());
   uri.AddPathSegments("/revisions/");
@@ -456,7 +466,7 @@ GetDataSetOutcome DataExchangeClient::GetDataSet(const GetDataSetRequest& reques
     AWS_LOGSTREAM_ERROR("GetDataSet", "Required field: DataSetId, is not set");
     return GetDataSetOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   uri.AddPathSegments("/v1/data-sets/");
   uri.AddPathSegment(request.GetDataSetId());
   return GetDataSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
@@ -487,7 +497,7 @@ GetEventActionOutcome DataExchangeClient::GetEventAction(const GetEventActionReq
     AWS_LOGSTREAM_ERROR("GetEventAction", "Required field: EventActionId, is not set");
     return GetEventActionOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EventActionId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   uri.AddPathSegments("/v1/event-actions/");
   uri.AddPathSegment(request.GetEventActionId());
   return GetEventActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
@@ -518,7 +528,7 @@ GetJobOutcome DataExchangeClient::GetJob(const GetJobRequest& request) const
     AWS_LOGSTREAM_ERROR("GetJob", "Required field: JobId, is not set");
     return GetJobOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   uri.AddPathSegments("/v1/jobs/");
   uri.AddPathSegment(request.GetJobId());
   return GetJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
@@ -554,7 +564,7 @@ GetRevisionOutcome DataExchangeClient::GetRevision(const GetRevisionRequest& req
     AWS_LOGSTREAM_ERROR("GetRevision", "Required field: RevisionId, is not set");
     return GetRevisionOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RevisionId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   uri.AddPathSegments("/v1/data-sets/");
   uri.AddPathSegment(request.GetDataSetId());
   uri.AddPathSegments("/revisions/");
@@ -587,7 +597,7 @@ ListDataSetRevisionsOutcome DataExchangeClient::ListDataSetRevisions(const ListD
     AWS_LOGSTREAM_ERROR("ListDataSetRevisions", "Required field: DataSetId, is not set");
     return ListDataSetRevisionsOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   uri.AddPathSegments("/v1/data-sets/");
   uri.AddPathSegment(request.GetDataSetId());
   uri.AddPathSegments("/revisions");
@@ -614,7 +624,7 @@ void DataExchangeClient::ListDataSetRevisionsAsyncHelper(const ListDataSetRevisi
 
 ListDataSetsOutcome DataExchangeClient::ListDataSets(const ListDataSetsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   uri.AddPathSegments("/v1/data-sets");
   return ListDataSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
@@ -639,7 +649,7 @@ void DataExchangeClient::ListDataSetsAsyncHelper(const ListDataSetsRequest& requ
 
 ListEventActionsOutcome DataExchangeClient::ListEventActions(const ListEventActionsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   uri.AddPathSegments("/v1/event-actions");
   return ListEventActionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
@@ -664,7 +674,7 @@ void DataExchangeClient::ListEventActionsAsyncHelper(const ListEventActionsReque
 
 ListJobsOutcome DataExchangeClient::ListJobs(const ListJobsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   uri.AddPathSegments("/v1/jobs");
   return ListJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
@@ -699,7 +709,7 @@ ListRevisionAssetsOutcome DataExchangeClient::ListRevisionAssets(const ListRevis
     AWS_LOGSTREAM_ERROR("ListRevisionAssets", "Required field: RevisionId, is not set");
     return ListRevisionAssetsOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RevisionId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   uri.AddPathSegments("/v1/data-sets/");
   uri.AddPathSegment(request.GetDataSetId());
   uri.AddPathSegments("/revisions/");
@@ -733,7 +743,7 @@ ListTagsForResourceOutcome DataExchangeClient::ListTagsForResource(const ListTag
     AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
     return ListTagsForResourceOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   uri.AddPathSegments("/tags/");
   uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
@@ -757,6 +767,55 @@ void DataExchangeClient::ListTagsForResourceAsyncHelper(const ListTagsForResourc
   handler(this, request, ListTagsForResource(request), context);
 }
 
+SendApiAssetOutcome DataExchangeClient::SendApiAsset(const SendApiAssetRequest& request) const
+{
+  if (!request.AssetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SendApiAsset", "Required field: AssetId, is not set");
+    return SendApiAssetOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssetId]", false));
+  }
+  if (!request.DataSetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SendApiAsset", "Required field: DataSetId, is not set");
+    return SendApiAssetOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
+  }
+  if (!request.RevisionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SendApiAsset", "Required field: RevisionId, is not set");
+    return SendApiAssetOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RevisionId]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("api-fulfill." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("SendApiAsset", "Invalid DNS host: " << uri.GetAuthority());
+      return SendApiAssetOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/v1");
+  return SendApiAssetOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+SendApiAssetOutcomeCallable DataExchangeClient::SendApiAssetCallable(const SendApiAssetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SendApiAssetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendApiAsset(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataExchangeClient::SendApiAssetAsync(const SendApiAssetRequest& request, const SendApiAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SendApiAssetAsyncHelper( request, handler, context ); } );
+}
+
+void DataExchangeClient::SendApiAssetAsyncHelper(const SendApiAssetRequest& request, const SendApiAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SendApiAsset(request), context);
+}
+
 StartJobOutcome DataExchangeClient::StartJob(const StartJobRequest& request) const
 {
   if (!request.JobIdHasBeenSet())
@@ -764,7 +823,7 @@ StartJobOutcome DataExchangeClient::StartJob(const StartJobRequest& request) con
     AWS_LOGSTREAM_ERROR("StartJob", "Required field: JobId, is not set");
     return StartJobOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   uri.AddPathSegments("/v1/jobs/");
   uri.AddPathSegment(request.GetJobId());
   return StartJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
@@ -795,7 +854,7 @@ TagResourceOutcome DataExchangeClient::TagResource(const TagResourceRequest& req
     AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
     return TagResourceOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   uri.AddPathSegments("/tags/");
   uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -831,7 +890,7 @@ UntagResourceOutcome DataExchangeClient::UntagResource(const UntagResourceReques
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
     return UntagResourceOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   uri.AddPathSegments("/tags/");
   uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
@@ -872,7 +931,7 @@ UpdateAssetOutcome DataExchangeClient::UpdateAsset(const UpdateAssetRequest& req
     AWS_LOGSTREAM_ERROR("UpdateAsset", "Required field: RevisionId, is not set");
     return UpdateAssetOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RevisionId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   uri.AddPathSegments("/v1/data-sets/");
   uri.AddPathSegment(request.GetDataSetId());
   uri.AddPathSegments("/revisions/");
@@ -907,7 +966,7 @@ UpdateDataSetOutcome DataExchangeClient::UpdateDataSet(const UpdateDataSetReques
     AWS_LOGSTREAM_ERROR("UpdateDataSet", "Required field: DataSetId, is not set");
     return UpdateDataSetOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   uri.AddPathSegments("/v1/data-sets/");
   uri.AddPathSegment(request.GetDataSetId());
   return UpdateDataSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
@@ -938,7 +997,7 @@ UpdateEventActionOutcome DataExchangeClient::UpdateEventAction(const UpdateEvent
     AWS_LOGSTREAM_ERROR("UpdateEventAction", "Required field: EventActionId, is not set");
     return UpdateEventActionOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EventActionId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   uri.AddPathSegments("/v1/event-actions/");
   uri.AddPathSegment(request.GetEventActionId());
   return UpdateEventActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
@@ -974,7 +1033,7 @@ UpdateRevisionOutcome DataExchangeClient::UpdateRevision(const UpdateRevisionReq
     AWS_LOGSTREAM_ERROR("UpdateRevision", "Required field: RevisionId, is not set");
     return UpdateRevisionOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RevisionId]", false));
   }
-  Aws::Http::URI uri = m_uri;
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   uri.AddPathSegments("/v1/data-sets/");
   uri.AddPathSegment(request.GetDataSetId());
   uri.AddPathSegments("/revisions/");

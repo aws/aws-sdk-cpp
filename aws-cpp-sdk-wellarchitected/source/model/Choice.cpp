@@ -21,14 +21,18 @@ namespace Model
 Choice::Choice() : 
     m_choiceIdHasBeenSet(false),
     m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_helpfulResourceHasBeenSet(false),
+    m_improvementPlanHasBeenSet(false)
 {
 }
 
 Choice::Choice(JsonView jsonValue) : 
     m_choiceIdHasBeenSet(false),
     m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_helpfulResourceHasBeenSet(false),
+    m_improvementPlanHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +60,20 @@ Choice& Choice::operator =(JsonView jsonValue)
     m_descriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("HelpfulResource"))
+  {
+    m_helpfulResource = jsonValue.GetObject("HelpfulResource");
+
+    m_helpfulResourceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ImprovementPlan"))
+  {
+    m_improvementPlan = jsonValue.GetObject("ImprovementPlan");
+
+    m_improvementPlanHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +96,18 @@ JsonValue Choice::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
+
+  }
+
+  if(m_helpfulResourceHasBeenSet)
+  {
+   payload.WithObject("HelpfulResource", m_helpfulResource.Jsonize());
+
+  }
+
+  if(m_improvementPlanHasBeenSet)
+  {
+   payload.WithObject("ImprovementPlan", m_improvementPlan.Jsonize());
 
   }
 

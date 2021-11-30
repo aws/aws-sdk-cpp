@@ -28,11 +28,12 @@ namespace Model
   /**
    * <p>Defines a filter used in <a>DescribeInstancePatchStatesForPatchGroup</a> to
    * scope down the information returned by the API.</p> <p> <b>Example</b>: To
-   * filter for all instances in a patch group having more than three patches with a
-   * <code>FailedCount</code> status, use the following for the filter:</p> <ul> <li>
-   * <p>Value for <code>Key</code>: <code>FailedCount</code> </p> </li> <li> <p>Value
-   * for <code>Type</code>: <code>GreaterThan</code> </p> </li> <li> <p>Value for
-   * <code>Values</code>: <code>3</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * filter for all managed nodes in a patch group having more than three patches
+   * with a <code>FailedCount</code> status, use the following for the filter:</p>
+   * <ul> <li> <p>Value for <code>Key</code>: <code>FailedCount</code> </p> </li>
+   * <li> <p>Value for <code>Type</code>: <code>GreaterThan</code> </p> </li> <li>
+   * <p>Value for <code>Values</code>: <code>3</code> </p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstancePatchStateFilter">AWS
    * API Reference</a></p>
    */

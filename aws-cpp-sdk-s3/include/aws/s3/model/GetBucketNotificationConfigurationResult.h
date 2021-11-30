@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/s3/model/EventBridgeConfiguration.h>
 #include <aws/s3/model/TopicConfiguration.h>
 #include <aws/s3/model/QueueConfiguration.h>
 #include <aws/s3/model/LambdaFunctionConfiguration.h>
@@ -170,6 +171,32 @@ namespace Model
      */
     inline GetBucketNotificationConfigurationResult& AddLambdaFunctionConfigurations(LambdaFunctionConfiguration&& value) { m_lambdaFunctionConfigurations.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Enables delivery of events to Amazon EventBridge.</p>
+     */
+    inline const EventBridgeConfiguration& GetEventBridgeConfiguration() const{ return m_eventBridgeConfiguration; }
+
+    /**
+     * <p>Enables delivery of events to Amazon EventBridge.</p>
+     */
+    inline void SetEventBridgeConfiguration(const EventBridgeConfiguration& value) { m_eventBridgeConfiguration = value; }
+
+    /**
+     * <p>Enables delivery of events to Amazon EventBridge.</p>
+     */
+    inline void SetEventBridgeConfiguration(EventBridgeConfiguration&& value) { m_eventBridgeConfiguration = std::move(value); }
+
+    /**
+     * <p>Enables delivery of events to Amazon EventBridge.</p>
+     */
+    inline GetBucketNotificationConfigurationResult& WithEventBridgeConfiguration(const EventBridgeConfiguration& value) { SetEventBridgeConfiguration(value); return *this;}
+
+    /**
+     * <p>Enables delivery of events to Amazon EventBridge.</p>
+     */
+    inline GetBucketNotificationConfigurationResult& WithEventBridgeConfiguration(EventBridgeConfiguration&& value) { SetEventBridgeConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<TopicConfiguration> m_topicConfigurations;
@@ -177,6 +204,8 @@ namespace Model
     Aws::Vector<QueueConfiguration> m_queueConfigurations;
 
     Aws::Vector<LambdaFunctionConfiguration> m_lambdaFunctionConfigurations;
+
+    EventBridgeConfiguration m_eventBridgeConfiguration;
   };
 
 } // namespace Model

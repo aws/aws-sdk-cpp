@@ -26,6 +26,7 @@
 #include <aws/dataexchange/model/ListJobsResult.h>
 #include <aws/dataexchange/model/ListRevisionAssetsResult.h>
 #include <aws/dataexchange/model/ListTagsForResourceResult.h>
+#include <aws/dataexchange/model/SendApiAssetResult.h>
 #include <aws/dataexchange/model/StartJobResult.h>
 #include <aws/dataexchange/model/UpdateAssetResult.h>
 #include <aws/dataexchange/model/UpdateDataSetResult.h>
@@ -91,6 +92,7 @@ namespace Model
         class ListJobsRequest;
         class ListRevisionAssetsRequest;
         class ListTagsForResourceRequest;
+        class SendApiAssetRequest;
         class StartJobRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
@@ -119,6 +121,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListJobsResult, DataExchangeError> ListJobsOutcome;
         typedef Aws::Utils::Outcome<ListRevisionAssetsResult, DataExchangeError> ListRevisionAssetsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, DataExchangeError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<SendApiAssetResult, DataExchangeError> SendApiAssetOutcome;
         typedef Aws::Utils::Outcome<StartJobResult, DataExchangeError> StartJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, DataExchangeError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, DataExchangeError> UntagResourceOutcome;
@@ -147,6 +150,7 @@ namespace Model
         typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
         typedef std::future<ListRevisionAssetsOutcome> ListRevisionAssetsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<SendApiAssetOutcome> SendApiAssetOutcomeCallable;
         typedef std::future<StartJobOutcome> StartJobOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -178,6 +182,7 @@ namespace Model
     typedef std::function<void(const DataExchangeClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::ListRevisionAssetsRequest&, const Model::ListRevisionAssetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRevisionAssetsResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const DataExchangeClient*, const Model::SendApiAssetRequest&, Model::SendApiAssetOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendApiAssetResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::StartJobRequest&, const Model::StartJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartJobResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
@@ -769,6 +774,34 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>This operation invokes an API Gateway API asset. The request is proxied to
+         * the provider’s API Gateway API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/SendApiAsset">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SendApiAssetOutcome SendApiAsset(const Model::SendApiAssetRequest& request) const;
+
+        /**
+         * <p>This operation invokes an API Gateway API asset. The request is proxied to
+         * the provider’s API Gateway API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/SendApiAsset">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SendApiAssetOutcomeCallable SendApiAssetCallable(const Model::SendApiAssetRequest& request) const;
+
+        /**
+         * <p>This operation invokes an API Gateway API asset. The request is proxied to
+         * the provider’s API Gateway API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/SendApiAsset">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SendApiAssetAsync(const Model::SendApiAssetRequest& request, const SendApiAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>This operation starts a job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/StartJob">AWS
          * API Reference</a></p>
@@ -970,6 +1003,7 @@ namespace Model
         void ListJobsAsyncHelper(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRevisionAssetsAsyncHelper(const Model::ListRevisionAssetsRequest& request, const ListRevisionAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SendApiAssetAsyncHelper(const Model::SendApiAssetRequest& request, const SendApiAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartJobAsyncHelper(const Model::StartJobRequest& request, const StartJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -978,7 +1012,9 @@ namespace Model
         void UpdateEventActionAsyncHelper(const Model::UpdateEventActionRequest& request, const UpdateEventActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRevisionAsyncHelper(const Model::UpdateRevisionRequest& request, const UpdateRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
-      Aws::String m_uri;
+      Aws::String m_baseUri;
+      Aws::String m_scheme;
+      bool m_enableHostPrefixInjection;
       Aws::String m_configScheme;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };

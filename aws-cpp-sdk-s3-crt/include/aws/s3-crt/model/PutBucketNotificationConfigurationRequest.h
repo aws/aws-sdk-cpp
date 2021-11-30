@@ -159,6 +159,31 @@ namespace Model
     inline PutBucketNotificationConfigurationRequest& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
 
 
+    /**
+     * <p>Skips validation of Amazon SQS, Amazon SNS, and Lambda destinations. True or
+     * false value.</p>
+     */
+    inline bool GetSkipDestinationValidation() const{ return m_skipDestinationValidation; }
+
+    /**
+     * <p>Skips validation of Amazon SQS, Amazon SNS, and Lambda destinations. True or
+     * false value.</p>
+     */
+    inline bool SkipDestinationValidationHasBeenSet() const { return m_skipDestinationValidationHasBeenSet; }
+
+    /**
+     * <p>Skips validation of Amazon SQS, Amazon SNS, and Lambda destinations. True or
+     * false value.</p>
+     */
+    inline void SetSkipDestinationValidation(bool value) { m_skipDestinationValidationHasBeenSet = true; m_skipDestinationValidation = value; }
+
+    /**
+     * <p>Skips validation of Amazon SQS, Amazon SNS, and Lambda destinations. True or
+     * false value.</p>
+     */
+    inline PutBucketNotificationConfigurationRequest& WithSkipDestinationValidation(bool value) { SetSkipDestinationValidation(value); return *this;}
+
+
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
 
@@ -208,6 +233,9 @@ namespace Model
 
     Aws::String m_expectedBucketOwner;
     bool m_expectedBucketOwnerHasBeenSet;
+
+    bool m_skipDestinationValidation;
+    bool m_skipDestinationValidationHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
     bool m_customizedAccessLogTagHasBeenSet;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/compute-optimizer/model/VolumeConfiguration.h>
+#include <aws/compute-optimizer/model/SavingsOpportunity.h>
 #include <utility>
 
 namespace Aws
@@ -142,6 +143,49 @@ namespace Model
      */
     inline VolumeRecommendationOption& WithRank(int value) { SetRank(value); return *this;}
 
+
+    /**
+     * <p>An object that describes the savings opportunity for the EBS volume
+     * recommendation option. Savings opportunity includes the estimated monthly
+     * savings amount and percentage.</p>
+     */
+    inline const SavingsOpportunity& GetSavingsOpportunity() const{ return m_savingsOpportunity; }
+
+    /**
+     * <p>An object that describes the savings opportunity for the EBS volume
+     * recommendation option. Savings opportunity includes the estimated monthly
+     * savings amount and percentage.</p>
+     */
+    inline bool SavingsOpportunityHasBeenSet() const { return m_savingsOpportunityHasBeenSet; }
+
+    /**
+     * <p>An object that describes the savings opportunity for the EBS volume
+     * recommendation option. Savings opportunity includes the estimated monthly
+     * savings amount and percentage.</p>
+     */
+    inline void SetSavingsOpportunity(const SavingsOpportunity& value) { m_savingsOpportunityHasBeenSet = true; m_savingsOpportunity = value; }
+
+    /**
+     * <p>An object that describes the savings opportunity for the EBS volume
+     * recommendation option. Savings opportunity includes the estimated monthly
+     * savings amount and percentage.</p>
+     */
+    inline void SetSavingsOpportunity(SavingsOpportunity&& value) { m_savingsOpportunityHasBeenSet = true; m_savingsOpportunity = std::move(value); }
+
+    /**
+     * <p>An object that describes the savings opportunity for the EBS volume
+     * recommendation option. Savings opportunity includes the estimated monthly
+     * savings amount and percentage.</p>
+     */
+    inline VolumeRecommendationOption& WithSavingsOpportunity(const SavingsOpportunity& value) { SetSavingsOpportunity(value); return *this;}
+
+    /**
+     * <p>An object that describes the savings opportunity for the EBS volume
+     * recommendation option. Savings opportunity includes the estimated monthly
+     * savings amount and percentage.</p>
+     */
+    inline VolumeRecommendationOption& WithSavingsOpportunity(SavingsOpportunity&& value) { SetSavingsOpportunity(std::move(value)); return *this;}
+
   private:
 
     VolumeConfiguration m_configuration;
@@ -152,6 +196,9 @@ namespace Model
 
     int m_rank;
     bool m_rankHasBeenSet;
+
+    SavingsOpportunity m_savingsOpportunity;
+    bool m_savingsOpportunityHasBeenSet;
   };
 
 } // namespace Model

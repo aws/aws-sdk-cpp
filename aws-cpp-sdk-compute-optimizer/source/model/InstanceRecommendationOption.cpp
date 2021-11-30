@@ -25,7 +25,8 @@ InstanceRecommendationOption::InstanceRecommendationOption() :
     m_performanceRisk(0.0),
     m_performanceRiskHasBeenSet(false),
     m_rank(0),
-    m_rankHasBeenSet(false)
+    m_rankHasBeenSet(false),
+    m_savingsOpportunityHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ InstanceRecommendationOption::InstanceRecommendationOption(JsonView jsonValue) :
     m_performanceRisk(0.0),
     m_performanceRiskHasBeenSet(false),
     m_rank(0),
-    m_rankHasBeenSet(false)
+    m_rankHasBeenSet(false),
+    m_savingsOpportunityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -84,6 +86,13 @@ InstanceRecommendationOption& InstanceRecommendationOption::operator =(JsonView 
     m_rankHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("savingsOpportunity"))
+  {
+    m_savingsOpportunity = jsonValue.GetObject("savingsOpportunity");
+
+    m_savingsOpportunityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -128,6 +137,12 @@ JsonValue InstanceRecommendationOption::Jsonize() const
   if(m_rankHasBeenSet)
   {
    payload.WithInteger("rank", m_rank);
+
+  }
+
+  if(m_savingsOpportunityHasBeenSet)
+  {
+   payload.WithObject("savingsOpportunity", m_savingsOpportunity.Jsonize());
 
   }
 

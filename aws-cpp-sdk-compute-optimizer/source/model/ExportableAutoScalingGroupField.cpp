@@ -65,6 +65,12 @@ namespace Aws
         static const int RecommendationOptionsStorage_HASH = HashingUtils::HashString("RecommendationOptionsStorage");
         static const int RecommendationOptionsNetwork_HASH = HashingUtils::HashString("RecommendationOptionsNetwork");
         static const int LastRefreshTimestamp_HASH = HashingUtils::HashString("LastRefreshTimestamp");
+        static const int CurrentPerformanceRisk_HASH = HashingUtils::HashString("CurrentPerformanceRisk");
+        static const int RecommendationOptionsSavingsOpportunityPercentage_HASH = HashingUtils::HashString("RecommendationOptionsSavingsOpportunityPercentage");
+        static const int RecommendationOptionsEstimatedMonthlySavingsCurrency_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsCurrency");
+        static const int RecommendationOptionsEstimatedMonthlySavingsValue_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsValue");
+        static const int EffectiveRecommendationPreferencesCpuVendorArchitectures_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesCpuVendorArchitectures");
+        static const int EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics");
 
 
         ExportableAutoScalingGroupField GetExportableAutoScalingGroupFieldForName(const Aws::String& name)
@@ -250,6 +256,30 @@ namespace Aws
           {
             return ExportableAutoScalingGroupField::LastRefreshTimestamp;
           }
+          else if (hashCode == CurrentPerformanceRisk_HASH)
+          {
+            return ExportableAutoScalingGroupField::CurrentPerformanceRisk;
+          }
+          else if (hashCode == RecommendationOptionsSavingsOpportunityPercentage_HASH)
+          {
+            return ExportableAutoScalingGroupField::RecommendationOptionsSavingsOpportunityPercentage;
+          }
+          else if (hashCode == RecommendationOptionsEstimatedMonthlySavingsCurrency_HASH)
+          {
+            return ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrency;
+          }
+          else if (hashCode == RecommendationOptionsEstimatedMonthlySavingsValue_HASH)
+          {
+            return ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsValue;
+          }
+          else if (hashCode == EffectiveRecommendationPreferencesCpuVendorArchitectures_HASH)
+          {
+            return ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesCpuVendorArchitectures;
+          }
+          else if (hashCode == EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics_HASH)
+          {
+            return ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -354,6 +384,18 @@ namespace Aws
             return "RecommendationOptionsNetwork";
           case ExportableAutoScalingGroupField::LastRefreshTimestamp:
             return "LastRefreshTimestamp";
+          case ExportableAutoScalingGroupField::CurrentPerformanceRisk:
+            return "CurrentPerformanceRisk";
+          case ExportableAutoScalingGroupField::RecommendationOptionsSavingsOpportunityPercentage:
+            return "RecommendationOptionsSavingsOpportunityPercentage";
+          case ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrency:
+            return "RecommendationOptionsEstimatedMonthlySavingsCurrency";
+          case ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsValue:
+            return "RecommendationOptionsEstimatedMonthlySavingsValue";
+          case ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesCpuVendorArchitectures:
+            return "EffectiveRecommendationPreferencesCpuVendorArchitectures";
+          case ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics:
+            return "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

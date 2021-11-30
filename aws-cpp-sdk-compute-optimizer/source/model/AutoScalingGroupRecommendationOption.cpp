@@ -24,7 +24,8 @@ AutoScalingGroupRecommendationOption::AutoScalingGroupRecommendationOption() :
     m_performanceRisk(0.0),
     m_performanceRiskHasBeenSet(false),
     m_rank(0),
-    m_rankHasBeenSet(false)
+    m_rankHasBeenSet(false),
+    m_savingsOpportunityHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ AutoScalingGroupRecommendationOption::AutoScalingGroupRecommendationOption(JsonV
     m_performanceRisk(0.0),
     m_performanceRiskHasBeenSet(false),
     m_rank(0),
-    m_rankHasBeenSet(false)
+    m_rankHasBeenSet(false),
+    m_savingsOpportunityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -72,6 +74,13 @@ AutoScalingGroupRecommendationOption& AutoScalingGroupRecommendationOption::oper
     m_rankHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("savingsOpportunity"))
+  {
+    m_savingsOpportunity = jsonValue.GetObject("savingsOpportunity");
+
+    m_savingsOpportunityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -105,6 +114,12 @@ JsonValue AutoScalingGroupRecommendationOption::Jsonize() const
   if(m_rankHasBeenSet)
   {
    payload.WithInteger("rank", m_rank);
+
+  }
+
+  if(m_savingsOpportunityHasBeenSet)
+  {
+   payload.WithObject("savingsOpportunity", m_savingsOpportunity.Jsonize());
 
   }
 

@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about the patches to use to update the instances, including
-   * target operating systems and source repository. Applies to Linux instances
+   * <p>Information about the patches to use to update the managed nodes, including
+   * target operating systems and source repository. Applies to Linux managed nodes
    * only.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchSource">AWS API
    * Reference</a></p>

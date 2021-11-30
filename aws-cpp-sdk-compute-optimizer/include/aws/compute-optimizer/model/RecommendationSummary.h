@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/compute-optimizer/model/RecommendationSourceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/compute-optimizer/model/SavingsOpportunity.h>
+#include <aws/compute-optimizer/model/CurrentPerformanceRiskRatings.h>
 #include <aws/compute-optimizer/model/Summary.h>
 #include <utility>
 
@@ -82,32 +84,32 @@ namespace Model
 
 
     /**
-     * <p>The resource type of the recommendation.</p>
+     * <p>The resource type that the recommendation summary applies to.</p>
      */
     inline const RecommendationSourceType& GetRecommendationResourceType() const{ return m_recommendationResourceType; }
 
     /**
-     * <p>The resource type of the recommendation.</p>
+     * <p>The resource type that the recommendation summary applies to.</p>
      */
     inline bool RecommendationResourceTypeHasBeenSet() const { return m_recommendationResourceTypeHasBeenSet; }
 
     /**
-     * <p>The resource type of the recommendation.</p>
+     * <p>The resource type that the recommendation summary applies to.</p>
      */
     inline void SetRecommendationResourceType(const RecommendationSourceType& value) { m_recommendationResourceTypeHasBeenSet = true; m_recommendationResourceType = value; }
 
     /**
-     * <p>The resource type of the recommendation.</p>
+     * <p>The resource type that the recommendation summary applies to.</p>
      */
     inline void SetRecommendationResourceType(RecommendationSourceType&& value) { m_recommendationResourceTypeHasBeenSet = true; m_recommendationResourceType = std::move(value); }
 
     /**
-     * <p>The resource type of the recommendation.</p>
+     * <p>The resource type that the recommendation summary applies to.</p>
      */
     inline RecommendationSummary& WithRecommendationResourceType(const RecommendationSourceType& value) { SetRecommendationResourceType(value); return *this;}
 
     /**
-     * <p>The resource type of the recommendation.</p>
+     * <p>The resource type that the recommendation summary applies to.</p>
      */
     inline RecommendationSummary& WithRecommendationResourceType(RecommendationSourceType&& value) { SetRecommendationResourceType(std::move(value)); return *this;}
 
@@ -152,6 +154,86 @@ namespace Model
      */
     inline RecommendationSummary& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
+
+    /**
+     * <p>An object that describes the savings opportunity for a given resource type.
+     * Savings opportunity includes the estimated monthly savings amount and
+     * percentage.</p>
+     */
+    inline const SavingsOpportunity& GetSavingsOpportunity() const{ return m_savingsOpportunity; }
+
+    /**
+     * <p>An object that describes the savings opportunity for a given resource type.
+     * Savings opportunity includes the estimated monthly savings amount and
+     * percentage.</p>
+     */
+    inline bool SavingsOpportunityHasBeenSet() const { return m_savingsOpportunityHasBeenSet; }
+
+    /**
+     * <p>An object that describes the savings opportunity for a given resource type.
+     * Savings opportunity includes the estimated monthly savings amount and
+     * percentage.</p>
+     */
+    inline void SetSavingsOpportunity(const SavingsOpportunity& value) { m_savingsOpportunityHasBeenSet = true; m_savingsOpportunity = value; }
+
+    /**
+     * <p>An object that describes the savings opportunity for a given resource type.
+     * Savings opportunity includes the estimated monthly savings amount and
+     * percentage.</p>
+     */
+    inline void SetSavingsOpportunity(SavingsOpportunity&& value) { m_savingsOpportunityHasBeenSet = true; m_savingsOpportunity = std::move(value); }
+
+    /**
+     * <p>An object that describes the savings opportunity for a given resource type.
+     * Savings opportunity includes the estimated monthly savings amount and
+     * percentage.</p>
+     */
+    inline RecommendationSummary& WithSavingsOpportunity(const SavingsOpportunity& value) { SetSavingsOpportunity(value); return *this;}
+
+    /**
+     * <p>An object that describes the savings opportunity for a given resource type.
+     * Savings opportunity includes the estimated monthly savings amount and
+     * percentage.</p>
+     */
+    inline RecommendationSummary& WithSavingsOpportunity(SavingsOpportunity&& value) { SetSavingsOpportunity(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An object that describes the performance risk ratings for a given resource
+     * type.</p>
+     */
+    inline const CurrentPerformanceRiskRatings& GetCurrentPerformanceRiskRatings() const{ return m_currentPerformanceRiskRatings; }
+
+    /**
+     * <p>An object that describes the performance risk ratings for a given resource
+     * type.</p>
+     */
+    inline bool CurrentPerformanceRiskRatingsHasBeenSet() const { return m_currentPerformanceRiskRatingsHasBeenSet; }
+
+    /**
+     * <p>An object that describes the performance risk ratings for a given resource
+     * type.</p>
+     */
+    inline void SetCurrentPerformanceRiskRatings(const CurrentPerformanceRiskRatings& value) { m_currentPerformanceRiskRatingsHasBeenSet = true; m_currentPerformanceRiskRatings = value; }
+
+    /**
+     * <p>An object that describes the performance risk ratings for a given resource
+     * type.</p>
+     */
+    inline void SetCurrentPerformanceRiskRatings(CurrentPerformanceRiskRatings&& value) { m_currentPerformanceRiskRatingsHasBeenSet = true; m_currentPerformanceRiskRatings = std::move(value); }
+
+    /**
+     * <p>An object that describes the performance risk ratings for a given resource
+     * type.</p>
+     */
+    inline RecommendationSummary& WithCurrentPerformanceRiskRatings(const CurrentPerformanceRiskRatings& value) { SetCurrentPerformanceRiskRatings(value); return *this;}
+
+    /**
+     * <p>An object that describes the performance risk ratings for a given resource
+     * type.</p>
+     */
+    inline RecommendationSummary& WithCurrentPerformanceRiskRatings(CurrentPerformanceRiskRatings&& value) { SetCurrentPerformanceRiskRatings(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Summary> m_summaries;
@@ -162,6 +244,12 @@ namespace Model
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
+    SavingsOpportunity m_savingsOpportunity;
+    bool m_savingsOpportunityHasBeenSet;
+
+    CurrentPerformanceRiskRatings m_currentPerformanceRiskRatings;
+    bool m_currentPerformanceRiskRatingsHasBeenSet;
   };
 
 } // namespace Model

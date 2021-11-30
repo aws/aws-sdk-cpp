@@ -7,6 +7,7 @@
 #include <aws/dataexchange/DataExchange_EXPORTS.h>
 #include <aws/dataexchange/model/S3SnapshotAsset.h>
 #include <aws/dataexchange/model/RedshiftDataShareAsset.h>
+#include <aws/dataexchange/model/ApiGatewayApiAsset.h>
 #include <utility>
 
 namespace Aws
@@ -99,6 +100,37 @@ namespace Model
      */
     inline AssetDetails& WithRedshiftDataShareAsset(RedshiftDataShareAsset&& value) { SetRedshiftDataShareAsset(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about the API Gateway API asset.</p>
+     */
+    inline const ApiGatewayApiAsset& GetApiGatewayApiAsset() const{ return m_apiGatewayApiAsset; }
+
+    /**
+     * <p>Information about the API Gateway API asset.</p>
+     */
+    inline bool ApiGatewayApiAssetHasBeenSet() const { return m_apiGatewayApiAssetHasBeenSet; }
+
+    /**
+     * <p>Information about the API Gateway API asset.</p>
+     */
+    inline void SetApiGatewayApiAsset(const ApiGatewayApiAsset& value) { m_apiGatewayApiAssetHasBeenSet = true; m_apiGatewayApiAsset = value; }
+
+    /**
+     * <p>Information about the API Gateway API asset.</p>
+     */
+    inline void SetApiGatewayApiAsset(ApiGatewayApiAsset&& value) { m_apiGatewayApiAssetHasBeenSet = true; m_apiGatewayApiAsset = std::move(value); }
+
+    /**
+     * <p>Information about the API Gateway API asset.</p>
+     */
+    inline AssetDetails& WithApiGatewayApiAsset(const ApiGatewayApiAsset& value) { SetApiGatewayApiAsset(value); return *this;}
+
+    /**
+     * <p>Information about the API Gateway API asset.</p>
+     */
+    inline AssetDetails& WithApiGatewayApiAsset(ApiGatewayApiAsset&& value) { SetApiGatewayApiAsset(std::move(value)); return *this;}
+
   private:
 
     S3SnapshotAsset m_s3SnapshotAsset;
@@ -106,6 +138,9 @@ namespace Model
 
     RedshiftDataShareAsset m_redshiftDataShareAsset;
     bool m_redshiftDataShareAssetHasBeenSet;
+
+    ApiGatewayApiAsset m_apiGatewayApiAsset;
+    bool m_apiGatewayApiAssetHasBeenSet;
   };
 
 } // namespace Model

@@ -25,9 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a command filter.</p>  <p>An instance ID can't be specified
-   * when a command status is <code>Pending</code> because the command hasn't run on
-   * the instance yet.</p> <p><h3>See Also:</h3>   <a
+   * <p>Describes a command filter.</p>  <p>A managed node ID can't be
+   * specified when a command status is <code>Pending</code> because the command
+   * hasn't run on the node yet.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CommandFilter">AWS
    * API Reference</a></p>
    */
@@ -115,8 +115,8 @@ namespace Model
      * Services Systems Manager document (SSM document) for which you want to see
      * command execution results. For example, specify
      * <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM
-     * document to perform security patching operations on instances. </p> </li> <li>
-     * <p> <b>ExecutionStage</b>: Specify one of the following values
+     * document to perform security patching operations on managed nodes. </p> </li>
+     * <li> <p> <b>ExecutionStage</b>: Specify one of the following values
      * (<code>ListCommands</code> operations only):</p> <ul> <li> <p>
      * <code>Executing</code>: Returns a list of command executions that are currently
      * still running.</p> </li> <li> <p> <code>Complete</code>: Returns a list of
@@ -156,8 +156,8 @@ namespace Model
      * Services Systems Manager document (SSM document) for which you want to see
      * command execution results. For example, specify
      * <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM
-     * document to perform security patching operations on instances. </p> </li> <li>
-     * <p> <b>ExecutionStage</b>: Specify one of the following values
+     * document to perform security patching operations on managed nodes. </p> </li>
+     * <li> <p> <b>ExecutionStage</b>: Specify one of the following values
      * (<code>ListCommands</code> operations only):</p> <ul> <li> <p>
      * <code>Executing</code>: Returns a list of command executions that are currently
      * still running.</p> </li> <li> <p> <code>Complete</code>: Returns a list of
@@ -197,8 +197,8 @@ namespace Model
      * Services Systems Manager document (SSM document) for which you want to see
      * command execution results. For example, specify
      * <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM
-     * document to perform security patching operations on instances. </p> </li> <li>
-     * <p> <b>ExecutionStage</b>: Specify one of the following values
+     * document to perform security patching operations on managed nodes. </p> </li>
+     * <li> <p> <b>ExecutionStage</b>: Specify one of the following values
      * (<code>ListCommands</code> operations only):</p> <ul> <li> <p>
      * <code>Executing</code>: Returns a list of command executions that are currently
      * still running.</p> </li> <li> <p> <code>Complete</code>: Returns a list of
@@ -238,8 +238,8 @@ namespace Model
      * Services Systems Manager document (SSM document) for which you want to see
      * command execution results. For example, specify
      * <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM
-     * document to perform security patching operations on instances. </p> </li> <li>
-     * <p> <b>ExecutionStage</b>: Specify one of the following values
+     * document to perform security patching operations on managed nodes. </p> </li>
+     * <li> <p> <b>ExecutionStage</b>: Specify one of the following values
      * (<code>ListCommands</code> operations only):</p> <ul> <li> <p>
      * <code>Executing</code>: Returns a list of command executions that are currently
      * still running.</p> </li> <li> <p> <code>Complete</code>: Returns a list of
@@ -279,8 +279,8 @@ namespace Model
      * Services Systems Manager document (SSM document) for which you want to see
      * command execution results. For example, specify
      * <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM
-     * document to perform security patching operations on instances. </p> </li> <li>
-     * <p> <b>ExecutionStage</b>: Specify one of the following values
+     * document to perform security patching operations on managed nodes. </p> </li>
+     * <li> <p> <b>ExecutionStage</b>: Specify one of the following values
      * (<code>ListCommands</code> operations only):</p> <ul> <li> <p>
      * <code>Executing</code>: Returns a list of command executions that are currently
      * still running.</p> </li> <li> <p> <code>Complete</code>: Returns a list of
@@ -320,8 +320,8 @@ namespace Model
      * Services Systems Manager document (SSM document) for which you want to see
      * command execution results. For example, specify
      * <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM
-     * document to perform security patching operations on instances. </p> </li> <li>
-     * <p> <b>ExecutionStage</b>: Specify one of the following values
+     * document to perform security patching operations on managed nodes. </p> </li>
+     * <li> <p> <b>ExecutionStage</b>: Specify one of the following values
      * (<code>ListCommands</code> operations only):</p> <ul> <li> <p>
      * <code>Executing</code>: Returns a list of command executions that are currently
      * still running.</p> </li> <li> <p> <code>Complete</code>: Returns a list of
@@ -361,8 +361,8 @@ namespace Model
      * Services Systems Manager document (SSM document) for which you want to see
      * command execution results. For example, specify
      * <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM
-     * document to perform security patching operations on instances. </p> </li> <li>
-     * <p> <b>ExecutionStage</b>: Specify one of the following values
+     * document to perform security patching operations on managed nodes. </p> </li>
+     * <li> <p> <b>ExecutionStage</b>: Specify one of the following values
      * (<code>ListCommands</code> operations only):</p> <ul> <li> <p>
      * <code>Executing</code>: Returns a list of command executions that are currently
      * still running.</p> </li> <li> <p> <code>Complete</code>: Returns a list of
@@ -402,8 +402,8 @@ namespace Model
      * Services Systems Manager document (SSM document) for which you want to see
      * command execution results. For example, specify
      * <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM
-     * document to perform security patching operations on instances. </p> </li> <li>
-     * <p> <b>ExecutionStage</b>: Specify one of the following values
+     * document to perform security patching operations on managed nodes. </p> </li>
+     * <li> <p> <b>ExecutionStage</b>: Specify one of the following values
      * (<code>ListCommands</code> operations only):</p> <ul> <li> <p>
      * <code>Executing</code>: Returns a list of command executions that are currently
      * still running.</p> </li> <li> <p> <code>Complete</code>: Returns a list of

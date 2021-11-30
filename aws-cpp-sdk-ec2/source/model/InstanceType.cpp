@@ -428,6 +428,16 @@ namespace Aws
         static const int m6gd_8xlarge_HASH = HashingUtils::HashString("m6gd.8xlarge");
         static const int m6gd_12xlarge_HASH = HashingUtils::HashString("m6gd.12xlarge");
         static const int m6gd_16xlarge_HASH = HashingUtils::HashString("m6gd.16xlarge");
+        static const int m6a_large_HASH = HashingUtils::HashString("m6a.large");
+        static const int m6a_xlarge_HASH = HashingUtils::HashString("m6a.xlarge");
+        static const int m6a_2xlarge_HASH = HashingUtils::HashString("m6a.2xlarge");
+        static const int m6a_4xlarge_HASH = HashingUtils::HashString("m6a.4xlarge");
+        static const int m6a_8xlarge_HASH = HashingUtils::HashString("m6a.8xlarge");
+        static const int m6a_12xlarge_HASH = HashingUtils::HashString("m6a.12xlarge");
+        static const int m6a_16xlarge_HASH = HashingUtils::HashString("m6a.16xlarge");
+        static const int m6a_24xlarge_HASH = HashingUtils::HashString("m6a.24xlarge");
+        static const int m6a_32xlarge_HASH = HashingUtils::HashString("m6a.32xlarge");
+        static const int m6a_48xlarge_HASH = HashingUtils::HashString("m6a.48xlarge");
         static const int m6i_large_HASH = HashingUtils::HashString("m6i.large");
         static const int m6i_xlarge_HASH = HashingUtils::HashString("m6i.xlarge");
         static const int m6i_2xlarge_HASH = HashingUtils::HashString("m6i.2xlarge");
@@ -450,6 +460,12 @@ namespace Aws
         static const int vt1_3xlarge_HASH = HashingUtils::HashString("vt1.3xlarge");
         static const int vt1_6xlarge_HASH = HashingUtils::HashString("vt1.6xlarge");
         static const int vt1_24xlarge_HASH = HashingUtils::HashString("vt1.24xlarge");
+        static const int g5g_xlarge_HASH = HashingUtils::HashString("g5g.xlarge");
+        static const int g5g_2xlarge_HASH = HashingUtils::HashString("g5g.2xlarge");
+        static const int g5g_4xlarge_HASH = HashingUtils::HashString("g5g.4xlarge");
+        static const int g5g_8xlarge_HASH = HashingUtils::HashString("g5g.8xlarge");
+        static const int g5g_16xlarge_HASH = HashingUtils::HashString("g5g.16xlarge");
+        static const int g5g_metal_HASH = HashingUtils::HashString("g5g.metal");
         static const int g5_xlarge_HASH = HashingUtils::HashString("g5.xlarge");
         static const int g5_2xlarge_HASH = HashingUtils::HashString("g5.2xlarge");
         static const int g5_4xlarge_HASH = HashingUtils::HashString("g5.4xlarge");
@@ -2518,6 +2534,56 @@ namespace Aws
             enumValue = InstanceType::m6gd_16xlarge;
             return true;
           }
+          else if (hashCode == m6a_large_HASH)
+          {
+            enumValue = InstanceType::m6a_large;
+            return true;
+          }
+          else if (hashCode == m6a_xlarge_HASH)
+          {
+            enumValue = InstanceType::m6a_xlarge;
+            return true;
+          }
+          else if (hashCode == m6a_2xlarge_HASH)
+          {
+            enumValue = InstanceType::m6a_2xlarge;
+            return true;
+          }
+          else if (hashCode == m6a_4xlarge_HASH)
+          {
+            enumValue = InstanceType::m6a_4xlarge;
+            return true;
+          }
+          else if (hashCode == m6a_8xlarge_HASH)
+          {
+            enumValue = InstanceType::m6a_8xlarge;
+            return true;
+          }
+          else if (hashCode == m6a_12xlarge_HASH)
+          {
+            enumValue = InstanceType::m6a_12xlarge;
+            return true;
+          }
+          else if (hashCode == m6a_16xlarge_HASH)
+          {
+            enumValue = InstanceType::m6a_16xlarge;
+            return true;
+          }
+          else if (hashCode == m6a_24xlarge_HASH)
+          {
+            enumValue = InstanceType::m6a_24xlarge;
+            return true;
+          }
+          else if (hashCode == m6a_32xlarge_HASH)
+          {
+            enumValue = InstanceType::m6a_32xlarge;
+            return true;
+          }
+          else if (hashCode == m6a_48xlarge_HASH)
+          {
+            enumValue = InstanceType::m6a_48xlarge;
+            return true;
+          }
           else if (hashCode == m6i_large_HASH)
           {
             enumValue = InstanceType::m6i_large;
@@ -2626,6 +2692,36 @@ namespace Aws
           else if (hashCode == vt1_24xlarge_HASH)
           {
             enumValue = InstanceType::vt1_24xlarge;
+            return true;
+          }
+          else if (hashCode == g5g_xlarge_HASH)
+          {
+            enumValue = InstanceType::g5g_xlarge;
+            return true;
+          }
+          else if (hashCode == g5g_2xlarge_HASH)
+          {
+            enumValue = InstanceType::g5g_2xlarge;
+            return true;
+          }
+          else if (hashCode == g5g_4xlarge_HASH)
+          {
+            enumValue = InstanceType::g5g_4xlarge;
+            return true;
+          }
+          else if (hashCode == g5g_8xlarge_HASH)
+          {
+            enumValue = InstanceType::g5g_8xlarge;
+            return true;
+          }
+          else if (hashCode == g5g_16xlarge_HASH)
+          {
+            enumValue = InstanceType::g5g_16xlarge;
+            return true;
+          }
+          else if (hashCode == g5g_metal_HASH)
+          {
+            enumValue = InstanceType::g5g_metal;
             return true;
           }
           else if (hashCode == g5_xlarge_HASH)
@@ -3923,6 +4019,36 @@ namespace Aws
           case InstanceType::m6gd_16xlarge:
             value = "m6gd.16xlarge";
             return true;
+          case InstanceType::m6a_large:
+            value = "m6a.large";
+            return true;
+          case InstanceType::m6a_xlarge:
+            value = "m6a.xlarge";
+            return true;
+          case InstanceType::m6a_2xlarge:
+            value = "m6a.2xlarge";
+            return true;
+          case InstanceType::m6a_4xlarge:
+            value = "m6a.4xlarge";
+            return true;
+          case InstanceType::m6a_8xlarge:
+            value = "m6a.8xlarge";
+            return true;
+          case InstanceType::m6a_12xlarge:
+            value = "m6a.12xlarge";
+            return true;
+          case InstanceType::m6a_16xlarge:
+            value = "m6a.16xlarge";
+            return true;
+          case InstanceType::m6a_24xlarge:
+            value = "m6a.24xlarge";
+            return true;
+          case InstanceType::m6a_32xlarge:
+            value = "m6a.32xlarge";
+            return true;
+          case InstanceType::m6a_48xlarge:
+            value = "m6a.48xlarge";
+            return true;
           case InstanceType::m6i_large:
             value = "m6i.large";
             return true;
@@ -3988,6 +4114,24 @@ namespace Aws
             return true;
           case InstanceType::vt1_24xlarge:
             value = "vt1.24xlarge";
+            return true;
+          case InstanceType::g5g_xlarge:
+            value = "g5g.xlarge";
+            return true;
+          case InstanceType::g5g_2xlarge:
+            value = "g5g.2xlarge";
+            return true;
+          case InstanceType::g5g_4xlarge:
+            value = "g5g.4xlarge";
+            return true;
+          case InstanceType::g5g_8xlarge:
+            value = "g5g.8xlarge";
+            return true;
+          case InstanceType::g5g_16xlarge:
+            value = "g5g.16xlarge";
+            return true;
+          case InstanceType::g5g_metal:
+            value = "g5g.metal";
             return true;
           case InstanceType::g5_xlarge:
             value = "g5.xlarge";

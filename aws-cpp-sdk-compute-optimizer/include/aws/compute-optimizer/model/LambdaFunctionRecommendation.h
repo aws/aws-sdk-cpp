@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/compute-optimizer/model/LambdaFunctionRecommendationFinding.h>
+#include <aws/compute-optimizer/model/CurrentPerformanceRisk.h>
 #include <aws/compute-optimizer/model/LambdaFunctionUtilizationMetric.h>
 #include <aws/compute-optimizer/model/LambdaFunctionRecommendationFindingReasonCode.h>
 #include <aws/compute-optimizer/model/LambdaFunctionMemoryRecommendationOption.h>
@@ -287,32 +288,32 @@ namespace Model
 
 
     /**
-     * <p>The timestamp of when the function recommendation was last refreshed.</p>
+     * <p>The timestamp of when the function recommendation was last generated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastRefreshTimestamp() const{ return m_lastRefreshTimestamp; }
 
     /**
-     * <p>The timestamp of when the function recommendation was last refreshed.</p>
+     * <p>The timestamp of when the function recommendation was last generated.</p>
      */
     inline bool LastRefreshTimestampHasBeenSet() const { return m_lastRefreshTimestampHasBeenSet; }
 
     /**
-     * <p>The timestamp of when the function recommendation was last refreshed.</p>
+     * <p>The timestamp of when the function recommendation was last generated.</p>
      */
     inline void SetLastRefreshTimestamp(const Aws::Utils::DateTime& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = value; }
 
     /**
-     * <p>The timestamp of when the function recommendation was last refreshed.</p>
+     * <p>The timestamp of when the function recommendation was last generated.</p>
      */
     inline void SetLastRefreshTimestamp(Aws::Utils::DateTime&& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = std::move(value); }
 
     /**
-     * <p>The timestamp of when the function recommendation was last refreshed.</p>
+     * <p>The timestamp of when the function recommendation was last generated.</p>
      */
     inline LambdaFunctionRecommendation& WithLastRefreshTimestamp(const Aws::Utils::DateTime& value) { SetLastRefreshTimestamp(value); return *this;}
 
     /**
-     * <p>The timestamp of when the function recommendation was last refreshed.</p>
+     * <p>The timestamp of when the function recommendation was last generated.</p>
      */
     inline LambdaFunctionRecommendation& WithLastRefreshTimestamp(Aws::Utils::DateTime&& value) { SetLastRefreshTimestamp(std::move(value)); return *this;}
 
@@ -735,6 +736,49 @@ namespace Model
      */
     inline LambdaFunctionRecommendation& AddMemorySizeRecommendationOptions(LambdaFunctionMemoryRecommendationOption&& value) { m_memorySizeRecommendationOptionsHasBeenSet = true; m_memorySizeRecommendationOptions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The risk of the current Lambda function not meeting the performance needs of
+     * its workloads. The higher the risk, the more likely the current Lambda function
+     * configuration is underperforming in its workload.</p>
+     */
+    inline const CurrentPerformanceRisk& GetCurrentPerformanceRisk() const{ return m_currentPerformanceRisk; }
+
+    /**
+     * <p>The risk of the current Lambda function not meeting the performance needs of
+     * its workloads. The higher the risk, the more likely the current Lambda function
+     * configuration is underperforming in its workload.</p>
+     */
+    inline bool CurrentPerformanceRiskHasBeenSet() const { return m_currentPerformanceRiskHasBeenSet; }
+
+    /**
+     * <p>The risk of the current Lambda function not meeting the performance needs of
+     * its workloads. The higher the risk, the more likely the current Lambda function
+     * configuration is underperforming in its workload.</p>
+     */
+    inline void SetCurrentPerformanceRisk(const CurrentPerformanceRisk& value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = value; }
+
+    /**
+     * <p>The risk of the current Lambda function not meeting the performance needs of
+     * its workloads. The higher the risk, the more likely the current Lambda function
+     * configuration is underperforming in its workload.</p>
+     */
+    inline void SetCurrentPerformanceRisk(CurrentPerformanceRisk&& value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = std::move(value); }
+
+    /**
+     * <p>The risk of the current Lambda function not meeting the performance needs of
+     * its workloads. The higher the risk, the more likely the current Lambda function
+     * configuration is underperforming in its workload.</p>
+     */
+    inline LambdaFunctionRecommendation& WithCurrentPerformanceRisk(const CurrentPerformanceRisk& value) { SetCurrentPerformanceRisk(value); return *this;}
+
+    /**
+     * <p>The risk of the current Lambda function not meeting the performance needs of
+     * its workloads. The higher the risk, the more likely the current Lambda function
+     * configuration is underperforming in its workload.</p>
+     */
+    inline LambdaFunctionRecommendation& WithCurrentPerformanceRisk(CurrentPerformanceRisk&& value) { SetCurrentPerformanceRisk(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_functionArn;
@@ -769,6 +813,9 @@ namespace Model
 
     Aws::Vector<LambdaFunctionMemoryRecommendationOption> m_memorySizeRecommendationOptions;
     bool m_memorySizeRecommendationOptionsHasBeenSet;
+
+    CurrentPerformanceRisk m_currentPerformanceRisk;
+    bool m_currentPerformanceRiskHasBeenSet;
   };
 
 } // namespace Model

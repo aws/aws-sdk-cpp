@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes preferences for recommendations.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the recommendation preferences to return in the response of a
+   * <a>GetAutoScalingGroupRecommendations</a>, <a>GetEC2InstanceRecommendations</a>,
+   * and <a>GetEC2RecommendationProjectedMetrics</a> request.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/RecommendationPreferences">AWS
    * API Reference</a></p>
    */

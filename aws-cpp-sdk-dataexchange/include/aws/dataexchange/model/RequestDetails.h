@@ -11,6 +11,7 @@
 #include <aws/dataexchange/model/ImportAssetFromSignedUrlRequestDetails.h>
 #include <aws/dataexchange/model/ImportAssetsFromS3RequestDetails.h>
 #include <aws/dataexchange/model/ImportAssetsFromRedshiftDataSharesRequestDetails.h>
+#include <aws/dataexchange/model/ImportAssetFromApiGatewayApiRequestDetails.h>
 #include <utility>
 
 namespace Aws
@@ -227,6 +228,37 @@ namespace Model
      */
     inline RequestDetails& WithImportAssetsFromRedshiftDataShares(ImportAssetsFromRedshiftDataSharesRequestDetails&& value) { SetImportAssetsFromRedshiftDataShares(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about the import asset from API Gateway API request.</p>
+     */
+    inline const ImportAssetFromApiGatewayApiRequestDetails& GetImportAssetFromApiGatewayApi() const{ return m_importAssetFromApiGatewayApi; }
+
+    /**
+     * <p>Information about the import asset from API Gateway API request.</p>
+     */
+    inline bool ImportAssetFromApiGatewayApiHasBeenSet() const { return m_importAssetFromApiGatewayApiHasBeenSet; }
+
+    /**
+     * <p>Information about the import asset from API Gateway API request.</p>
+     */
+    inline void SetImportAssetFromApiGatewayApi(const ImportAssetFromApiGatewayApiRequestDetails& value) { m_importAssetFromApiGatewayApiHasBeenSet = true; m_importAssetFromApiGatewayApi = value; }
+
+    /**
+     * <p>Information about the import asset from API Gateway API request.</p>
+     */
+    inline void SetImportAssetFromApiGatewayApi(ImportAssetFromApiGatewayApiRequestDetails&& value) { m_importAssetFromApiGatewayApiHasBeenSet = true; m_importAssetFromApiGatewayApi = std::move(value); }
+
+    /**
+     * <p>Information about the import asset from API Gateway API request.</p>
+     */
+    inline RequestDetails& WithImportAssetFromApiGatewayApi(const ImportAssetFromApiGatewayApiRequestDetails& value) { SetImportAssetFromApiGatewayApi(value); return *this;}
+
+    /**
+     * <p>Information about the import asset from API Gateway API request.</p>
+     */
+    inline RequestDetails& WithImportAssetFromApiGatewayApi(ImportAssetFromApiGatewayApiRequestDetails&& value) { SetImportAssetFromApiGatewayApi(std::move(value)); return *this;}
+
   private:
 
     ExportAssetToSignedUrlRequestDetails m_exportAssetToSignedUrl;
@@ -246,6 +278,9 @@ namespace Model
 
     ImportAssetsFromRedshiftDataSharesRequestDetails m_importAssetsFromRedshiftDataShares;
     bool m_importAssetsFromRedshiftDataSharesHasBeenSet;
+
+    ImportAssetFromApiGatewayApiRequestDetails m_importAssetFromApiGatewayApi;
+    bool m_importAssetFromApiGatewayApiHasBeenSet;
   };
 
 } // namespace Model

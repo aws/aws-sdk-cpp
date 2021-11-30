@@ -11,6 +11,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/compute-optimizer/model/DeleteRecommendationPreferencesResult.h>
 #include <aws/compute-optimizer/model/DescribeRecommendationExportJobsResult.h>
 #include <aws/compute-optimizer/model/ExportAutoScalingGroupRecommendationsResult.h>
 #include <aws/compute-optimizer/model/ExportEBSVolumeRecommendationsResult.h>
@@ -20,10 +21,13 @@
 #include <aws/compute-optimizer/model/GetEBSVolumeRecommendationsResult.h>
 #include <aws/compute-optimizer/model/GetEC2InstanceRecommendationsResult.h>
 #include <aws/compute-optimizer/model/GetEC2RecommendationProjectedMetricsResult.h>
+#include <aws/compute-optimizer/model/GetEffectiveRecommendationPreferencesResult.h>
 #include <aws/compute-optimizer/model/GetEnrollmentStatusResult.h>
 #include <aws/compute-optimizer/model/GetEnrollmentStatusesForOrganizationResult.h>
 #include <aws/compute-optimizer/model/GetLambdaFunctionRecommendationsResult.h>
+#include <aws/compute-optimizer/model/GetRecommendationPreferencesResult.h>
 #include <aws/compute-optimizer/model/GetRecommendationSummariesResult.h>
+#include <aws/compute-optimizer/model/PutRecommendationPreferencesResult.h>
 #include <aws/compute-optimizer/model/UpdateEnrollmentStatusResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -64,6 +68,7 @@ namespace ComputeOptimizer
 
 namespace Model
 {
+        class DeleteRecommendationPreferencesRequest;
         class DescribeRecommendationExportJobsRequest;
         class ExportAutoScalingGroupRecommendationsRequest;
         class ExportEBSVolumeRecommendationsRequest;
@@ -73,12 +78,16 @@ namespace Model
         class GetEBSVolumeRecommendationsRequest;
         class GetEC2InstanceRecommendationsRequest;
         class GetEC2RecommendationProjectedMetricsRequest;
+        class GetEffectiveRecommendationPreferencesRequest;
         class GetEnrollmentStatusRequest;
         class GetEnrollmentStatusesForOrganizationRequest;
         class GetLambdaFunctionRecommendationsRequest;
+        class GetRecommendationPreferencesRequest;
         class GetRecommendationSummariesRequest;
+        class PutRecommendationPreferencesRequest;
         class UpdateEnrollmentStatusRequest;
 
+        typedef Aws::Utils::Outcome<DeleteRecommendationPreferencesResult, ComputeOptimizerError> DeleteRecommendationPreferencesOutcome;
         typedef Aws::Utils::Outcome<DescribeRecommendationExportJobsResult, ComputeOptimizerError> DescribeRecommendationExportJobsOutcome;
         typedef Aws::Utils::Outcome<ExportAutoScalingGroupRecommendationsResult, ComputeOptimizerError> ExportAutoScalingGroupRecommendationsOutcome;
         typedef Aws::Utils::Outcome<ExportEBSVolumeRecommendationsResult, ComputeOptimizerError> ExportEBSVolumeRecommendationsOutcome;
@@ -88,12 +97,16 @@ namespace Model
         typedef Aws::Utils::Outcome<GetEBSVolumeRecommendationsResult, ComputeOptimizerError> GetEBSVolumeRecommendationsOutcome;
         typedef Aws::Utils::Outcome<GetEC2InstanceRecommendationsResult, ComputeOptimizerError> GetEC2InstanceRecommendationsOutcome;
         typedef Aws::Utils::Outcome<GetEC2RecommendationProjectedMetricsResult, ComputeOptimizerError> GetEC2RecommendationProjectedMetricsOutcome;
+        typedef Aws::Utils::Outcome<GetEffectiveRecommendationPreferencesResult, ComputeOptimizerError> GetEffectiveRecommendationPreferencesOutcome;
         typedef Aws::Utils::Outcome<GetEnrollmentStatusResult, ComputeOptimizerError> GetEnrollmentStatusOutcome;
         typedef Aws::Utils::Outcome<GetEnrollmentStatusesForOrganizationResult, ComputeOptimizerError> GetEnrollmentStatusesForOrganizationOutcome;
         typedef Aws::Utils::Outcome<GetLambdaFunctionRecommendationsResult, ComputeOptimizerError> GetLambdaFunctionRecommendationsOutcome;
+        typedef Aws::Utils::Outcome<GetRecommendationPreferencesResult, ComputeOptimizerError> GetRecommendationPreferencesOutcome;
         typedef Aws::Utils::Outcome<GetRecommendationSummariesResult, ComputeOptimizerError> GetRecommendationSummariesOutcome;
+        typedef Aws::Utils::Outcome<PutRecommendationPreferencesResult, ComputeOptimizerError> PutRecommendationPreferencesOutcome;
         typedef Aws::Utils::Outcome<UpdateEnrollmentStatusResult, ComputeOptimizerError> UpdateEnrollmentStatusOutcome;
 
+        typedef std::future<DeleteRecommendationPreferencesOutcome> DeleteRecommendationPreferencesOutcomeCallable;
         typedef std::future<DescribeRecommendationExportJobsOutcome> DescribeRecommendationExportJobsOutcomeCallable;
         typedef std::future<ExportAutoScalingGroupRecommendationsOutcome> ExportAutoScalingGroupRecommendationsOutcomeCallable;
         typedef std::future<ExportEBSVolumeRecommendationsOutcome> ExportEBSVolumeRecommendationsOutcomeCallable;
@@ -103,15 +116,19 @@ namespace Model
         typedef std::future<GetEBSVolumeRecommendationsOutcome> GetEBSVolumeRecommendationsOutcomeCallable;
         typedef std::future<GetEC2InstanceRecommendationsOutcome> GetEC2InstanceRecommendationsOutcomeCallable;
         typedef std::future<GetEC2RecommendationProjectedMetricsOutcome> GetEC2RecommendationProjectedMetricsOutcomeCallable;
+        typedef std::future<GetEffectiveRecommendationPreferencesOutcome> GetEffectiveRecommendationPreferencesOutcomeCallable;
         typedef std::future<GetEnrollmentStatusOutcome> GetEnrollmentStatusOutcomeCallable;
         typedef std::future<GetEnrollmentStatusesForOrganizationOutcome> GetEnrollmentStatusesForOrganizationOutcomeCallable;
         typedef std::future<GetLambdaFunctionRecommendationsOutcome> GetLambdaFunctionRecommendationsOutcomeCallable;
+        typedef std::future<GetRecommendationPreferencesOutcome> GetRecommendationPreferencesOutcomeCallable;
         typedef std::future<GetRecommendationSummariesOutcome> GetRecommendationSummariesOutcomeCallable;
+        typedef std::future<PutRecommendationPreferencesOutcome> PutRecommendationPreferencesOutcomeCallable;
         typedef std::future<UpdateEnrollmentStatusOutcome> UpdateEnrollmentStatusOutcomeCallable;
 } // namespace Model
 
   class ComputeOptimizerClient;
 
+    typedef std::function<void(const ComputeOptimizerClient*, const Model::DeleteRecommendationPreferencesRequest&, const Model::DeleteRecommendationPreferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRecommendationPreferencesResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::DescribeRecommendationExportJobsRequest&, const Model::DescribeRecommendationExportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRecommendationExportJobsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::ExportAutoScalingGroupRecommendationsRequest&, const Model::ExportAutoScalingGroupRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportAutoScalingGroupRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::ExportEBSVolumeRecommendationsRequest&, const Model::ExportEBSVolumeRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportEBSVolumeRecommendationsResponseReceivedHandler;
@@ -121,10 +138,13 @@ namespace Model
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetEBSVolumeRecommendationsRequest&, const Model::GetEBSVolumeRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEBSVolumeRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetEC2InstanceRecommendationsRequest&, const Model::GetEC2InstanceRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEC2InstanceRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetEC2RecommendationProjectedMetricsRequest&, const Model::GetEC2RecommendationProjectedMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEC2RecommendationProjectedMetricsResponseReceivedHandler;
+    typedef std::function<void(const ComputeOptimizerClient*, const Model::GetEffectiveRecommendationPreferencesRequest&, const Model::GetEffectiveRecommendationPreferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEffectiveRecommendationPreferencesResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetEnrollmentStatusRequest&, const Model::GetEnrollmentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnrollmentStatusResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetEnrollmentStatusesForOrganizationRequest&, const Model::GetEnrollmentStatusesForOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnrollmentStatusesForOrganizationResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetLambdaFunctionRecommendationsRequest&, const Model::GetLambdaFunctionRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLambdaFunctionRecommendationsResponseReceivedHandler;
+    typedef std::function<void(const ComputeOptimizerClient*, const Model::GetRecommendationPreferencesRequest&, const Model::GetRecommendationPreferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRecommendationPreferencesResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetRecommendationSummariesRequest&, const Model::GetRecommendationSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRecommendationSummariesResponseReceivedHandler;
+    typedef std::function<void(const ComputeOptimizerClient*, const Model::PutRecommendationPreferencesRequest&, const Model::PutRecommendationPreferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRecommendationPreferencesResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::UpdateEnrollmentStatusRequest&, const Model::UpdateEnrollmentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEnrollmentStatusResponseReceivedHandler;
 
   /**
@@ -169,6 +189,43 @@ namespace Model
 
         virtual ~ComputeOptimizerClient();
 
+
+        /**
+         * <p>Deletes a recommendation preference, such as enhanced infrastructure
+         * metrics.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+         * enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/DeleteRecommendationPreferences">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRecommendationPreferencesOutcome DeleteRecommendationPreferences(const Model::DeleteRecommendationPreferencesRequest& request) const;
+
+        /**
+         * <p>Deletes a recommendation preference, such as enhanced infrastructure
+         * metrics.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+         * enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/DeleteRecommendationPreferences">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteRecommendationPreferencesOutcomeCallable DeleteRecommendationPreferencesCallable(const Model::DeleteRecommendationPreferencesRequest& request) const;
+
+        /**
+         * <p>Deletes a recommendation preference, such as enhanced infrastructure
+         * metrics.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+         * enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/DeleteRecommendationPreferences">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteRecommendationPreferencesAsync(const Model::DeleteRecommendationPreferencesRequest& request, const DeleteRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes recommendation export jobs created in the last seven days.</p>
@@ -576,6 +633,49 @@ namespace Model
         virtual void GetEC2RecommendationProjectedMetricsAsync(const Model::GetEC2RecommendationProjectedMetricsRequest& request, const GetEC2RecommendationProjectedMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the recommendation preferences that are in effect for a given
+         * resource, such as enhanced infrastructure metrics. Considers all applicable
+         * preferences that you might have set at the resource, account, and organization
+         * level.</p> <p>When you create a recommendation preference, you can set its
+         * status to <code>Active</code> or <code>Inactive</code>. Use this action to view
+         * the recommendation preferences that are in effect, or
+         * <code>Active</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEffectiveRecommendationPreferences">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetEffectiveRecommendationPreferencesOutcome GetEffectiveRecommendationPreferences(const Model::GetEffectiveRecommendationPreferencesRequest& request) const;
+
+        /**
+         * <p>Returns the recommendation preferences that are in effect for a given
+         * resource, such as enhanced infrastructure metrics. Considers all applicable
+         * preferences that you might have set at the resource, account, and organization
+         * level.</p> <p>When you create a recommendation preference, you can set its
+         * status to <code>Active</code> or <code>Inactive</code>. Use this action to view
+         * the recommendation preferences that are in effect, or
+         * <code>Active</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEffectiveRecommendationPreferences">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetEffectiveRecommendationPreferencesOutcomeCallable GetEffectiveRecommendationPreferencesCallable(const Model::GetEffectiveRecommendationPreferencesRequest& request) const;
+
+        /**
+         * <p>Returns the recommendation preferences that are in effect for a given
+         * resource, such as enhanced infrastructure metrics. Considers all applicable
+         * preferences that you might have set at the resource, account, and organization
+         * level.</p> <p>When you create a recommendation preference, you can set its
+         * status to <code>Active</code> or <code>Inactive</code>. Use this action to view
+         * the recommendation preferences that are in effect, or
+         * <code>Active</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEffectiveRecommendationPreferences">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetEffectiveRecommendationPreferencesAsync(const Model::GetEffectiveRecommendationPreferencesRequest& request, const GetEffectiveRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the enrollment (opt in) status of an account to the Compute Optimizer
          * service.</p> <p>If the account is the management account of an organization,
          * this action also confirms the enrollment status of member accounts of the
@@ -690,6 +790,52 @@ namespace Model
         virtual void GetLambdaFunctionRecommendationsAsync(const Model::GetLambdaFunctionRecommendationsRequest& request, const GetLambdaFunctionRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns existing recommendation preferences, such as enhanced infrastructure
+         * metrics.</p> <p>Use the <code>scope</code> parameter to specify which
+         * preferences to return. You can specify to return preferences for an
+         * organization, a specific account ID, or a specific EC2 instance or Auto Scaling
+         * group Amazon Resource Name (ARN).</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+         * enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRecommendationPreferences">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetRecommendationPreferencesOutcome GetRecommendationPreferences(const Model::GetRecommendationPreferencesRequest& request) const;
+
+        /**
+         * <p>Returns existing recommendation preferences, such as enhanced infrastructure
+         * metrics.</p> <p>Use the <code>scope</code> parameter to specify which
+         * preferences to return. You can specify to return preferences for an
+         * organization, a specific account ID, or a specific EC2 instance or Auto Scaling
+         * group Amazon Resource Name (ARN).</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+         * enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRecommendationPreferences">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetRecommendationPreferencesOutcomeCallable GetRecommendationPreferencesCallable(const Model::GetRecommendationPreferencesRequest& request) const;
+
+        /**
+         * <p>Returns existing recommendation preferences, such as enhanced infrastructure
+         * metrics.</p> <p>Use the <code>scope</code> parameter to specify which
+         * preferences to return. You can specify to return preferences for an
+         * organization, a specific account ID, or a specific EC2 instance or Auto Scaling
+         * group Amazon Resource Name (ARN).</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+         * enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRecommendationPreferences">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetRecommendationPreferencesAsync(const Model::GetRecommendationPreferencesRequest& request, const GetRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the optimization findings for an account.</p> <p>It returns the
          * number of:</p> <ul> <li> <p>Amazon EC2 instances in an account that are
          * <code>Underprovisioned</code>, <code>Overprovisioned</code>, or
@@ -737,6 +883,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetRecommendationSummariesAsync(const Model::GetRecommendationSummariesRequest& request, const GetRecommendationSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new recommendation preference or updates an existing recommendation
+         * preference, such as enhanced infrastructure metrics.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+         * enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/PutRecommendationPreferences">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutRecommendationPreferencesOutcome PutRecommendationPreferences(const Model::PutRecommendationPreferencesRequest& request) const;
+
+        /**
+         * <p>Creates a new recommendation preference or updates an existing recommendation
+         * preference, such as enhanced infrastructure metrics.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+         * enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/PutRecommendationPreferences">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutRecommendationPreferencesOutcomeCallable PutRecommendationPreferencesCallable(const Model::PutRecommendationPreferencesRequest& request) const;
+
+        /**
+         * <p>Creates a new recommendation preference or updates an existing recommendation
+         * preference, such as enhanced infrastructure metrics.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+         * enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/PutRecommendationPreferences">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutRecommendationPreferencesAsync(const Model::PutRecommendationPreferencesRequest& request, const PutRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the enrollment (opt in and opt out) status of an account to the
@@ -806,6 +992,7 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void DeleteRecommendationPreferencesAsyncHelper(const Model::DeleteRecommendationPreferencesRequest& request, const DeleteRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRecommendationExportJobsAsyncHelper(const Model::DescribeRecommendationExportJobsRequest& request, const DescribeRecommendationExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExportAutoScalingGroupRecommendationsAsyncHelper(const Model::ExportAutoScalingGroupRecommendationsRequest& request, const ExportAutoScalingGroupRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExportEBSVolumeRecommendationsAsyncHelper(const Model::ExportEBSVolumeRecommendationsRequest& request, const ExportEBSVolumeRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -815,10 +1002,13 @@ namespace Model
         void GetEBSVolumeRecommendationsAsyncHelper(const Model::GetEBSVolumeRecommendationsRequest& request, const GetEBSVolumeRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEC2InstanceRecommendationsAsyncHelper(const Model::GetEC2InstanceRecommendationsRequest& request, const GetEC2InstanceRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEC2RecommendationProjectedMetricsAsyncHelper(const Model::GetEC2RecommendationProjectedMetricsRequest& request, const GetEC2RecommendationProjectedMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetEffectiveRecommendationPreferencesAsyncHelper(const Model::GetEffectiveRecommendationPreferencesRequest& request, const GetEffectiveRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEnrollmentStatusAsyncHelper(const Model::GetEnrollmentStatusRequest& request, const GetEnrollmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEnrollmentStatusesForOrganizationAsyncHelper(const Model::GetEnrollmentStatusesForOrganizationRequest& request, const GetEnrollmentStatusesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLambdaFunctionRecommendationsAsyncHelper(const Model::GetLambdaFunctionRecommendationsRequest& request, const GetLambdaFunctionRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetRecommendationPreferencesAsyncHelper(const Model::GetRecommendationPreferencesRequest& request, const GetRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRecommendationSummariesAsyncHelper(const Model::GetRecommendationSummariesRequest& request, const GetRecommendationSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutRecommendationPreferencesAsyncHelper(const Model::PutRecommendationPreferencesRequest& request, const PutRecommendationPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateEnrollmentStatusAsyncHelper(const Model::UpdateEnrollmentStatusRequest& request, const UpdateEnrollmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

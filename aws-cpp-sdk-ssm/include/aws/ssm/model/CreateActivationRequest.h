@@ -96,74 +96,74 @@ namespace Model
 
 
     /**
-     * <p>The name of the registered, managed instance as it will appear in the Amazon
-     * Web Services Systems Manager console or when you use the Amazon Web Services
-     * command line tools to list Systems Manager resources.</p>  <p>Don't
-     * enter personally identifiable information in this field.</p> 
+     * <p>The name of the registered, managed node as it will appear in the Amazon Web
+     * Services Systems Manager console or when you use the Amazon Web Services command
+     * line tools to list Systems Manager resources.</p>  <p>Don't enter
+     * personally identifiable information in this field.</p> 
      */
     inline const Aws::String& GetDefaultInstanceName() const{ return m_defaultInstanceName; }
 
     /**
-     * <p>The name of the registered, managed instance as it will appear in the Amazon
-     * Web Services Systems Manager console or when you use the Amazon Web Services
-     * command line tools to list Systems Manager resources.</p>  <p>Don't
-     * enter personally identifiable information in this field.</p> 
+     * <p>The name of the registered, managed node as it will appear in the Amazon Web
+     * Services Systems Manager console or when you use the Amazon Web Services command
+     * line tools to list Systems Manager resources.</p>  <p>Don't enter
+     * personally identifiable information in this field.</p> 
      */
     inline bool DefaultInstanceNameHasBeenSet() const { return m_defaultInstanceNameHasBeenSet; }
 
     /**
-     * <p>The name of the registered, managed instance as it will appear in the Amazon
-     * Web Services Systems Manager console or when you use the Amazon Web Services
-     * command line tools to list Systems Manager resources.</p>  <p>Don't
-     * enter personally identifiable information in this field.</p> 
+     * <p>The name of the registered, managed node as it will appear in the Amazon Web
+     * Services Systems Manager console or when you use the Amazon Web Services command
+     * line tools to list Systems Manager resources.</p>  <p>Don't enter
+     * personally identifiable information in this field.</p> 
      */
     inline void SetDefaultInstanceName(const Aws::String& value) { m_defaultInstanceNameHasBeenSet = true; m_defaultInstanceName = value; }
 
     /**
-     * <p>The name of the registered, managed instance as it will appear in the Amazon
-     * Web Services Systems Manager console or when you use the Amazon Web Services
-     * command line tools to list Systems Manager resources.</p>  <p>Don't
-     * enter personally identifiable information in this field.</p> 
+     * <p>The name of the registered, managed node as it will appear in the Amazon Web
+     * Services Systems Manager console or when you use the Amazon Web Services command
+     * line tools to list Systems Manager resources.</p>  <p>Don't enter
+     * personally identifiable information in this field.</p> 
      */
     inline void SetDefaultInstanceName(Aws::String&& value) { m_defaultInstanceNameHasBeenSet = true; m_defaultInstanceName = std::move(value); }
 
     /**
-     * <p>The name of the registered, managed instance as it will appear in the Amazon
-     * Web Services Systems Manager console or when you use the Amazon Web Services
-     * command line tools to list Systems Manager resources.</p>  <p>Don't
-     * enter personally identifiable information in this field.</p> 
+     * <p>The name of the registered, managed node as it will appear in the Amazon Web
+     * Services Systems Manager console or when you use the Amazon Web Services command
+     * line tools to list Systems Manager resources.</p>  <p>Don't enter
+     * personally identifiable information in this field.</p> 
      */
     inline void SetDefaultInstanceName(const char* value) { m_defaultInstanceNameHasBeenSet = true; m_defaultInstanceName.assign(value); }
 
     /**
-     * <p>The name of the registered, managed instance as it will appear in the Amazon
-     * Web Services Systems Manager console or when you use the Amazon Web Services
-     * command line tools to list Systems Manager resources.</p>  <p>Don't
-     * enter personally identifiable information in this field.</p> 
+     * <p>The name of the registered, managed node as it will appear in the Amazon Web
+     * Services Systems Manager console or when you use the Amazon Web Services command
+     * line tools to list Systems Manager resources.</p>  <p>Don't enter
+     * personally identifiable information in this field.</p> 
      */
     inline CreateActivationRequest& WithDefaultInstanceName(const Aws::String& value) { SetDefaultInstanceName(value); return *this;}
 
     /**
-     * <p>The name of the registered, managed instance as it will appear in the Amazon
-     * Web Services Systems Manager console or when you use the Amazon Web Services
-     * command line tools to list Systems Manager resources.</p>  <p>Don't
-     * enter personally identifiable information in this field.</p> 
+     * <p>The name of the registered, managed node as it will appear in the Amazon Web
+     * Services Systems Manager console or when you use the Amazon Web Services command
+     * line tools to list Systems Manager resources.</p>  <p>Don't enter
+     * personally identifiable information in this field.</p> 
      */
     inline CreateActivationRequest& WithDefaultInstanceName(Aws::String&& value) { SetDefaultInstanceName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the registered, managed instance as it will appear in the Amazon
-     * Web Services Systems Manager console or when you use the Amazon Web Services
-     * command line tools to list Systems Manager resources.</p>  <p>Don't
-     * enter personally identifiable information in this field.</p> 
+     * <p>The name of the registered, managed node as it will appear in the Amazon Web
+     * Services Systems Manager console or when you use the Amazon Web Services command
+     * line tools to list Systems Manager resources.</p>  <p>Don't enter
+     * personally identifiable information in this field.</p> 
      */
     inline CreateActivationRequest& WithDefaultInstanceName(const char* value) { SetDefaultInstanceName(value); return *this;}
 
 
     /**
      * <p>The name of the Identity and Access Management (IAM) role that you want to
-     * assign to the managed instance. This IAM role must provide AssumeRole
-     * permissions for the Amazon Web Services Systems Manager service principal
+     * assign to the managed node. This IAM role must provide AssumeRole permissions
+     * for the Amazon Web Services Systems Manager service principal
      * <code>ssm.amazonaws.com</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
      * an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services
@@ -173,8 +173,8 @@ namespace Model
 
     /**
      * <p>The name of the Identity and Access Management (IAM) role that you want to
-     * assign to the managed instance. This IAM role must provide AssumeRole
-     * permissions for the Amazon Web Services Systems Manager service principal
+     * assign to the managed node. This IAM role must provide AssumeRole permissions
+     * for the Amazon Web Services Systems Manager service principal
      * <code>ssm.amazonaws.com</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
      * an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services
@@ -184,8 +184,8 @@ namespace Model
 
     /**
      * <p>The name of the Identity and Access Management (IAM) role that you want to
-     * assign to the managed instance. This IAM role must provide AssumeRole
-     * permissions for the Amazon Web Services Systems Manager service principal
+     * assign to the managed node. This IAM role must provide AssumeRole permissions
+     * for the Amazon Web Services Systems Manager service principal
      * <code>ssm.amazonaws.com</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
      * an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services
@@ -195,8 +195,8 @@ namespace Model
 
     /**
      * <p>The name of the Identity and Access Management (IAM) role that you want to
-     * assign to the managed instance. This IAM role must provide AssumeRole
-     * permissions for the Amazon Web Services Systems Manager service principal
+     * assign to the managed node. This IAM role must provide AssumeRole permissions
+     * for the Amazon Web Services Systems Manager service principal
      * <code>ssm.amazonaws.com</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
      * an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services
@@ -206,8 +206,8 @@ namespace Model
 
     /**
      * <p>The name of the Identity and Access Management (IAM) role that you want to
-     * assign to the managed instance. This IAM role must provide AssumeRole
-     * permissions for the Amazon Web Services Systems Manager service principal
+     * assign to the managed node. This IAM role must provide AssumeRole permissions
+     * for the Amazon Web Services Systems Manager service principal
      * <code>ssm.amazonaws.com</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
      * an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services
@@ -217,8 +217,8 @@ namespace Model
 
     /**
      * <p>The name of the Identity and Access Management (IAM) role that you want to
-     * assign to the managed instance. This IAM role must provide AssumeRole
-     * permissions for the Amazon Web Services Systems Manager service principal
+     * assign to the managed node. This IAM role must provide AssumeRole permissions
+     * for the Amazon Web Services Systems Manager service principal
      * <code>ssm.amazonaws.com</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
      * an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services
@@ -228,8 +228,8 @@ namespace Model
 
     /**
      * <p>The name of the Identity and Access Management (IAM) role that you want to
-     * assign to the managed instance. This IAM role must provide AssumeRole
-     * permissions for the Amazon Web Services Systems Manager service principal
+     * assign to the managed node. This IAM role must provide AssumeRole permissions
+     * for the Amazon Web Services Systems Manager service principal
      * <code>ssm.amazonaws.com</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
      * an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services
@@ -239,8 +239,8 @@ namespace Model
 
     /**
      * <p>The name of the Identity and Access Management (IAM) role that you want to
-     * assign to the managed instance. This IAM role must provide AssumeRole
-     * permissions for the Amazon Web Services Systems Manager service principal
+     * assign to the managed node. This IAM role must provide AssumeRole permissions
+     * for the Amazon Web Services Systems Manager service principal
      * <code>ssm.amazonaws.com</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
      * an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services
@@ -250,26 +250,26 @@ namespace Model
 
 
     /**
-     * <p>Specify the maximum number of managed instances you want to register. The
-     * default value is <code>1</code>.</p>
+     * <p>Specify the maximum number of managed nodes you want to register. The default
+     * value is <code>1</code>.</p>
      */
     inline int GetRegistrationLimit() const{ return m_registrationLimit; }
 
     /**
-     * <p>Specify the maximum number of managed instances you want to register. The
-     * default value is <code>1</code>.</p>
+     * <p>Specify the maximum number of managed nodes you want to register. The default
+     * value is <code>1</code>.</p>
      */
     inline bool RegistrationLimitHasBeenSet() const { return m_registrationLimitHasBeenSet; }
 
     /**
-     * <p>Specify the maximum number of managed instances you want to register. The
-     * default value is <code>1</code>.</p>
+     * <p>Specify the maximum number of managed nodes you want to register. The default
+     * value is <code>1</code>.</p>
      */
     inline void SetRegistrationLimit(int value) { m_registrationLimitHasBeenSet = true; m_registrationLimit = value; }
 
     /**
-     * <p>Specify the maximum number of managed instances you want to register. The
-     * default value is <code>1</code>.</p>
+     * <p>Specify the maximum number of managed nodes you want to register. The default
+     * value is <code>1</code>.</p>
      */
     inline CreateActivationRequest& WithRegistrationLimit(int value) { SetRegistrationLimit(value); return *this;}
 
@@ -335,12 +335,12 @@ namespace Model
      * an activation ID and code. When you specify the activation ID and code, tags
      * assigned to the activation are automatically applied to the on-premises servers
      * or VMs.</p>  <p>You can't add tags to or delete tags from an
-     * existing activation. You can tag your on-premises servers and VMs after they
-     * connect to Systems Manager for the first time and are assigned a managed
-     * instance ID. This means they are listed in the Amazon Web Services Systems
+     * existing activation. You can tag your on-premises servers, edge devices, and VMs
+     * after they connect to Systems Manager for the first time and are assigned a
+     * managed node ID. This means they are listed in the Amazon Web Services Systems
      * Manager console with an ID that is prefixed with "mi-". For information about
-     * how to add tags to your managed instances, see <a>AddTagsToResource</a>. For
-     * information about how to remove tags from your managed instances, see
+     * how to add tags to your managed nodes, see <a>AddTagsToResource</a>. For
+     * information about how to remove tags from your managed nodes, see
      * <a>RemoveTagsFromResource</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -357,12 +357,12 @@ namespace Model
      * an activation ID and code. When you specify the activation ID and code, tags
      * assigned to the activation are automatically applied to the on-premises servers
      * or VMs.</p>  <p>You can't add tags to or delete tags from an
-     * existing activation. You can tag your on-premises servers and VMs after they
-     * connect to Systems Manager for the first time and are assigned a managed
-     * instance ID. This means they are listed in the Amazon Web Services Systems
+     * existing activation. You can tag your on-premises servers, edge devices, and VMs
+     * after they connect to Systems Manager for the first time and are assigned a
+     * managed node ID. This means they are listed in the Amazon Web Services Systems
      * Manager console with an ID that is prefixed with "mi-". For information about
-     * how to add tags to your managed instances, see <a>AddTagsToResource</a>. For
-     * information about how to remove tags from your managed instances, see
+     * how to add tags to your managed nodes, see <a>AddTagsToResource</a>. For
+     * information about how to remove tags from your managed nodes, see
      * <a>RemoveTagsFromResource</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -379,12 +379,12 @@ namespace Model
      * an activation ID and code. When you specify the activation ID and code, tags
      * assigned to the activation are automatically applied to the on-premises servers
      * or VMs.</p>  <p>You can't add tags to or delete tags from an
-     * existing activation. You can tag your on-premises servers and VMs after they
-     * connect to Systems Manager for the first time and are assigned a managed
-     * instance ID. This means they are listed in the Amazon Web Services Systems
+     * existing activation. You can tag your on-premises servers, edge devices, and VMs
+     * after they connect to Systems Manager for the first time and are assigned a
+     * managed node ID. This means they are listed in the Amazon Web Services Systems
      * Manager console with an ID that is prefixed with "mi-". For information about
-     * how to add tags to your managed instances, see <a>AddTagsToResource</a>. For
-     * information about how to remove tags from your managed instances, see
+     * how to add tags to your managed nodes, see <a>AddTagsToResource</a>. For
+     * information about how to remove tags from your managed nodes, see
      * <a>RemoveTagsFromResource</a>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
@@ -401,12 +401,12 @@ namespace Model
      * an activation ID and code. When you specify the activation ID and code, tags
      * assigned to the activation are automatically applied to the on-premises servers
      * or VMs.</p>  <p>You can't add tags to or delete tags from an
-     * existing activation. You can tag your on-premises servers and VMs after they
-     * connect to Systems Manager for the first time and are assigned a managed
-     * instance ID. This means they are listed in the Amazon Web Services Systems
+     * existing activation. You can tag your on-premises servers, edge devices, and VMs
+     * after they connect to Systems Manager for the first time and are assigned a
+     * managed node ID. This means they are listed in the Amazon Web Services Systems
      * Manager console with an ID that is prefixed with "mi-". For information about
-     * how to add tags to your managed instances, see <a>AddTagsToResource</a>. For
-     * information about how to remove tags from your managed instances, see
+     * how to add tags to your managed nodes, see <a>AddTagsToResource</a>. For
+     * information about how to remove tags from your managed nodes, see
      * <a>RemoveTagsFromResource</a>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
@@ -423,12 +423,12 @@ namespace Model
      * an activation ID and code. When you specify the activation ID and code, tags
      * assigned to the activation are automatically applied to the on-premises servers
      * or VMs.</p>  <p>You can't add tags to or delete tags from an
-     * existing activation. You can tag your on-premises servers and VMs after they
-     * connect to Systems Manager for the first time and are assigned a managed
-     * instance ID. This means they are listed in the Amazon Web Services Systems
+     * existing activation. You can tag your on-premises servers, edge devices, and VMs
+     * after they connect to Systems Manager for the first time and are assigned a
+     * managed node ID. This means they are listed in the Amazon Web Services Systems
      * Manager console with an ID that is prefixed with "mi-". For information about
-     * how to add tags to your managed instances, see <a>AddTagsToResource</a>. For
-     * information about how to remove tags from your managed instances, see
+     * how to add tags to your managed nodes, see <a>AddTagsToResource</a>. For
+     * information about how to remove tags from your managed nodes, see
      * <a>RemoveTagsFromResource</a>.</p>
      */
     inline CreateActivationRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
@@ -445,12 +445,12 @@ namespace Model
      * an activation ID and code. When you specify the activation ID and code, tags
      * assigned to the activation are automatically applied to the on-premises servers
      * or VMs.</p>  <p>You can't add tags to or delete tags from an
-     * existing activation. You can tag your on-premises servers and VMs after they
-     * connect to Systems Manager for the first time and are assigned a managed
-     * instance ID. This means they are listed in the Amazon Web Services Systems
+     * existing activation. You can tag your on-premises servers, edge devices, and VMs
+     * after they connect to Systems Manager for the first time and are assigned a
+     * managed node ID. This means they are listed in the Amazon Web Services Systems
      * Manager console with an ID that is prefixed with "mi-". For information about
-     * how to add tags to your managed instances, see <a>AddTagsToResource</a>. For
-     * information about how to remove tags from your managed instances, see
+     * how to add tags to your managed nodes, see <a>AddTagsToResource</a>. For
+     * information about how to remove tags from your managed nodes, see
      * <a>RemoveTagsFromResource</a>.</p>
      */
     inline CreateActivationRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
@@ -467,12 +467,12 @@ namespace Model
      * an activation ID and code. When you specify the activation ID and code, tags
      * assigned to the activation are automatically applied to the on-premises servers
      * or VMs.</p>  <p>You can't add tags to or delete tags from an
-     * existing activation. You can tag your on-premises servers and VMs after they
-     * connect to Systems Manager for the first time and are assigned a managed
-     * instance ID. This means they are listed in the Amazon Web Services Systems
+     * existing activation. You can tag your on-premises servers, edge devices, and VMs
+     * after they connect to Systems Manager for the first time and are assigned a
+     * managed node ID. This means they are listed in the Amazon Web Services Systems
      * Manager console with an ID that is prefixed with "mi-". For information about
-     * how to add tags to your managed instances, see <a>AddTagsToResource</a>. For
-     * information about how to remove tags from your managed instances, see
+     * how to add tags to your managed nodes, see <a>AddTagsToResource</a>. For
+     * information about how to remove tags from your managed nodes, see
      * <a>RemoveTagsFromResource</a>.</p>
      */
     inline CreateActivationRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
@@ -489,12 +489,12 @@ namespace Model
      * an activation ID and code. When you specify the activation ID and code, tags
      * assigned to the activation are automatically applied to the on-premises servers
      * or VMs.</p>  <p>You can't add tags to or delete tags from an
-     * existing activation. You can tag your on-premises servers and VMs after they
-     * connect to Systems Manager for the first time and are assigned a managed
-     * instance ID. This means they are listed in the Amazon Web Services Systems
+     * existing activation. You can tag your on-premises servers, edge devices, and VMs
+     * after they connect to Systems Manager for the first time and are assigned a
+     * managed node ID. This means they are listed in the Amazon Web Services Systems
      * Manager console with an ID that is prefixed with "mi-". For information about
-     * how to add tags to your managed instances, see <a>AddTagsToResource</a>. For
-     * information about how to remove tags from your managed instances, see
+     * how to add tags to your managed nodes, see <a>AddTagsToResource</a>. For
+     * information about how to remove tags from your managed nodes, see
      * <a>RemoveTagsFromResource</a>.</p>
      */
     inline CreateActivationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }

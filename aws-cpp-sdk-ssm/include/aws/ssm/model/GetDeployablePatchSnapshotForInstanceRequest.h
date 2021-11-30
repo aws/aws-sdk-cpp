@@ -36,49 +36,49 @@ namespace Model
 
 
     /**
-     * <p>The ID of the instance for which the appropriate patch snapshot should be
+     * <p>The ID of the managed node for which the appropriate patch snapshot should be
      * retrieved.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The ID of the instance for which the appropriate patch snapshot should be
+     * <p>The ID of the managed node for which the appropriate patch snapshot should be
      * retrieved.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>The ID of the instance for which the appropriate patch snapshot should be
+     * <p>The ID of the managed node for which the appropriate patch snapshot should be
      * retrieved.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The ID of the instance for which the appropriate patch snapshot should be
+     * <p>The ID of the managed node for which the appropriate patch snapshot should be
      * retrieved.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The ID of the instance for which the appropriate patch snapshot should be
+     * <p>The ID of the managed node for which the appropriate patch snapshot should be
      * retrieved.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The ID of the instance for which the appropriate patch snapshot should be
+     * <p>The ID of the managed node for which the appropriate patch snapshot should be
      * retrieved.</p>
      */
     inline GetDeployablePatchSnapshotForInstanceRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The ID of the instance for which the appropriate patch snapshot should be
+     * <p>The ID of the managed node for which the appropriate patch snapshot should be
      * retrieved.</p>
      */
     inline GetDeployablePatchSnapshotForInstanceRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the instance for which the appropriate patch snapshot should be
+     * <p>The ID of the managed node for which the appropriate patch snapshot should be
      * retrieved.</p>
      */
     inline GetDeployablePatchSnapshotForInstanceRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}

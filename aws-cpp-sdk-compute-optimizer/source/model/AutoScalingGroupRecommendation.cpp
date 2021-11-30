@@ -29,7 +29,10 @@ AutoScalingGroupRecommendation::AutoScalingGroupRecommendation() :
     m_lookBackPeriodInDaysHasBeenSet(false),
     m_currentConfigurationHasBeenSet(false),
     m_recommendationOptionsHasBeenSet(false),
-    m_lastRefreshTimestampHasBeenSet(false)
+    m_lastRefreshTimestampHasBeenSet(false),
+    m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
+    m_currentPerformanceRiskHasBeenSet(false),
+    m_effectiveRecommendationPreferencesHasBeenSet(false)
 {
 }
 
@@ -44,7 +47,10 @@ AutoScalingGroupRecommendation::AutoScalingGroupRecommendation(JsonView jsonValu
     m_lookBackPeriodInDaysHasBeenSet(false),
     m_currentConfigurationHasBeenSet(false),
     m_recommendationOptionsHasBeenSet(false),
-    m_lastRefreshTimestampHasBeenSet(false)
+    m_lastRefreshTimestampHasBeenSet(false),
+    m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
+    m_currentPerformanceRiskHasBeenSet(false),
+    m_effectiveRecommendationPreferencesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -120,6 +126,20 @@ AutoScalingGroupRecommendation& AutoScalingGroupRecommendation::operator =(JsonV
     m_lastRefreshTimestampHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("currentPerformanceRisk"))
+  {
+    m_currentPerformanceRisk = CurrentPerformanceRiskMapper::GetCurrentPerformanceRiskForName(jsonValue.GetString("currentPerformanceRisk"));
+
+    m_currentPerformanceRiskHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("effectiveRecommendationPreferences"))
+  {
+    m_effectiveRecommendationPreferences = jsonValue.GetObject("effectiveRecommendationPreferences");
+
+    m_effectiveRecommendationPreferencesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -187,6 +207,17 @@ JsonValue AutoScalingGroupRecommendation::Jsonize() const
   if(m_lastRefreshTimestampHasBeenSet)
   {
    payload.WithDouble("lastRefreshTimestamp", m_lastRefreshTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_currentPerformanceRiskHasBeenSet)
+  {
+   payload.WithString("currentPerformanceRisk", CurrentPerformanceRiskMapper::GetNameForCurrentPerformanceRisk(m_currentPerformanceRisk));
+  }
+
+  if(m_effectiveRecommendationPreferencesHasBeenSet)
+  {
+   payload.WithObject("effectiveRecommendationPreferences", m_effectiveRecommendationPreferences.Jsonize());
+
   }
 
   return payload;

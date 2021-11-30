@@ -70,50 +70,50 @@ namespace Model
 
     /**
      * <p>An encrypted token value containing session and caller information. Used to
-     * authenticate the connection to the instance.</p>
+     * authenticate the connection to the managed node.</p>
      */
     inline const Aws::String& GetTokenValue() const{ return m_tokenValue; }
 
     /**
      * <p>An encrypted token value containing session and caller information. Used to
-     * authenticate the connection to the instance.</p>
+     * authenticate the connection to the managed node.</p>
      */
     inline void SetTokenValue(const Aws::String& value) { m_tokenValue = value; }
 
     /**
      * <p>An encrypted token value containing session and caller information. Used to
-     * authenticate the connection to the instance.</p>
+     * authenticate the connection to the managed node.</p>
      */
     inline void SetTokenValue(Aws::String&& value) { m_tokenValue = std::move(value); }
 
     /**
      * <p>An encrypted token value containing session and caller information. Used to
-     * authenticate the connection to the instance.</p>
+     * authenticate the connection to the managed node.</p>
      */
     inline void SetTokenValue(const char* value) { m_tokenValue.assign(value); }
 
     /**
      * <p>An encrypted token value containing session and caller information. Used to
-     * authenticate the connection to the instance.</p>
+     * authenticate the connection to the managed node.</p>
      */
     inline ResumeSessionResult& WithTokenValue(const Aws::String& value) { SetTokenValue(value); return *this;}
 
     /**
      * <p>An encrypted token value containing session and caller information. Used to
-     * authenticate the connection to the instance.</p>
+     * authenticate the connection to the managed node.</p>
      */
     inline ResumeSessionResult& WithTokenValue(Aws::String&& value) { SetTokenValue(std::move(value)); return *this;}
 
     /**
      * <p>An encrypted token value containing session and caller information. Used to
-     * authenticate the connection to the instance.</p>
+     * authenticate the connection to the managed node.</p>
      */
     inline ResumeSessionResult& WithTokenValue(const char* value) { SetTokenValue(value); return *this;}
 
 
     /**
-     * <p>A URL back to SSM Agent on the instance that the Session Manager client uses
-     * to send commands and receive output from the instance. Format:
+     * <p>A URL back to SSM Agent on the managed node that the Session Manager client
+     * uses to send commands and receive output from the managed node. Format:
      * <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
      * <p> <b>region</b> represents the Region identifier for an Amazon Web Services
      * Region supported by Amazon Web Services Systems Manager, such as
@@ -127,8 +127,8 @@ namespace Model
     inline const Aws::String& GetStreamUrl() const{ return m_streamUrl; }
 
     /**
-     * <p>A URL back to SSM Agent on the instance that the Session Manager client uses
-     * to send commands and receive output from the instance. Format:
+     * <p>A URL back to SSM Agent on the managed node that the Session Manager client
+     * uses to send commands and receive output from the managed node. Format:
      * <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
      * <p> <b>region</b> represents the Region identifier for an Amazon Web Services
      * Region supported by Amazon Web Services Systems Manager, such as
@@ -142,8 +142,8 @@ namespace Model
     inline void SetStreamUrl(const Aws::String& value) { m_streamUrl = value; }
 
     /**
-     * <p>A URL back to SSM Agent on the instance that the Session Manager client uses
-     * to send commands and receive output from the instance. Format:
+     * <p>A URL back to SSM Agent on the managed node that the Session Manager client
+     * uses to send commands and receive output from the managed node. Format:
      * <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
      * <p> <b>region</b> represents the Region identifier for an Amazon Web Services
      * Region supported by Amazon Web Services Systems Manager, such as
@@ -157,8 +157,8 @@ namespace Model
     inline void SetStreamUrl(Aws::String&& value) { m_streamUrl = std::move(value); }
 
     /**
-     * <p>A URL back to SSM Agent on the instance that the Session Manager client uses
-     * to send commands and receive output from the instance. Format:
+     * <p>A URL back to SSM Agent on the managed node that the Session Manager client
+     * uses to send commands and receive output from the managed node. Format:
      * <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
      * <p> <b>region</b> represents the Region identifier for an Amazon Web Services
      * Region supported by Amazon Web Services Systems Manager, such as
@@ -172,8 +172,8 @@ namespace Model
     inline void SetStreamUrl(const char* value) { m_streamUrl.assign(value); }
 
     /**
-     * <p>A URL back to SSM Agent on the instance that the Session Manager client uses
-     * to send commands and receive output from the instance. Format:
+     * <p>A URL back to SSM Agent on the managed node that the Session Manager client
+     * uses to send commands and receive output from the managed node. Format:
      * <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
      * <p> <b>region</b> represents the Region identifier for an Amazon Web Services
      * Region supported by Amazon Web Services Systems Manager, such as
@@ -187,8 +187,8 @@ namespace Model
     inline ResumeSessionResult& WithStreamUrl(const Aws::String& value) { SetStreamUrl(value); return *this;}
 
     /**
-     * <p>A URL back to SSM Agent on the instance that the Session Manager client uses
-     * to send commands and receive output from the instance. Format:
+     * <p>A URL back to SSM Agent on the managed node that the Session Manager client
+     * uses to send commands and receive output from the managed node. Format:
      * <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
      * <p> <b>region</b> represents the Region identifier for an Amazon Web Services
      * Region supported by Amazon Web Services Systems Manager, such as
@@ -202,8 +202,8 @@ namespace Model
     inline ResumeSessionResult& WithStreamUrl(Aws::String&& value) { SetStreamUrl(std::move(value)); return *this;}
 
     /**
-     * <p>A URL back to SSM Agent on the instance that the Session Manager client uses
-     * to send commands and receive output from the instance. Format:
+     * <p>A URL back to SSM Agent on the managed node that the Session Manager client
+     * uses to send commands and receive output from the managed node. Format:
      * <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
      * <p> <b>region</b> represents the Region identifier for an Amazon Web Services
      * Region supported by Amazon Web Services Systems Manager, such as

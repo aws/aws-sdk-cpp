@@ -37,7 +37,11 @@ namespace Model
     RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound,
     RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound,
     RecommendationOptionsProjectedUtilizationMetricsDurationExpected,
-    LastRefreshTimestamp
+    LastRefreshTimestamp,
+    CurrentPerformanceRisk,
+    RecommendationOptionsSavingsOpportunityPercentage,
+    RecommendationOptionsEstimatedMonthlySavingsCurrency,
+    RecommendationOptionsEstimatedMonthlySavingsValue
   };
 
 namespace ExportableLambdaFunctionFieldMapper

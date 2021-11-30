@@ -10,6 +10,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/compute-optimizer/model/AutoScalingGroupConfiguration.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/compute-optimizer/model/CurrentPerformanceRisk.h>
+#include <aws/compute-optimizer/model/EffectiveRecommendationPreferences.h>
 #include <aws/compute-optimizer/model/UtilizationMetric.h>
 #include <aws/compute-optimizer/model/AutoScalingGroupRecommendationOption.h>
 #include <utility>
@@ -407,39 +409,125 @@ namespace Model
 
     /**
      * <p>The timestamp of when the Auto Scaling group recommendation was last
-     * refreshed.</p>
+     * generated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastRefreshTimestamp() const{ return m_lastRefreshTimestamp; }
 
     /**
      * <p>The timestamp of when the Auto Scaling group recommendation was last
-     * refreshed.</p>
+     * generated.</p>
      */
     inline bool LastRefreshTimestampHasBeenSet() const { return m_lastRefreshTimestampHasBeenSet; }
 
     /**
      * <p>The timestamp of when the Auto Scaling group recommendation was last
-     * refreshed.</p>
+     * generated.</p>
      */
     inline void SetLastRefreshTimestamp(const Aws::Utils::DateTime& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = value; }
 
     /**
      * <p>The timestamp of when the Auto Scaling group recommendation was last
-     * refreshed.</p>
+     * generated.</p>
      */
     inline void SetLastRefreshTimestamp(Aws::Utils::DateTime&& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = std::move(value); }
 
     /**
      * <p>The timestamp of when the Auto Scaling group recommendation was last
-     * refreshed.</p>
+     * generated.</p>
      */
     inline AutoScalingGroupRecommendation& WithLastRefreshTimestamp(const Aws::Utils::DateTime& value) { SetLastRefreshTimestamp(value); return *this;}
 
     /**
      * <p>The timestamp of when the Auto Scaling group recommendation was last
-     * refreshed.</p>
+     * generated.</p>
      */
     inline AutoScalingGroupRecommendation& WithLastRefreshTimestamp(Aws::Utils::DateTime&& value) { SetLastRefreshTimestamp(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The risk of the current Auto Scaling group not meeting the performance needs
+     * of its workloads. The higher the risk, the more likely the current Auto Scaling
+     * group configuration has insufficient capacity and cannot meet workload
+     * requirements.</p>
+     */
+    inline const CurrentPerformanceRisk& GetCurrentPerformanceRisk() const{ return m_currentPerformanceRisk; }
+
+    /**
+     * <p>The risk of the current Auto Scaling group not meeting the performance needs
+     * of its workloads. The higher the risk, the more likely the current Auto Scaling
+     * group configuration has insufficient capacity and cannot meet workload
+     * requirements.</p>
+     */
+    inline bool CurrentPerformanceRiskHasBeenSet() const { return m_currentPerformanceRiskHasBeenSet; }
+
+    /**
+     * <p>The risk of the current Auto Scaling group not meeting the performance needs
+     * of its workloads. The higher the risk, the more likely the current Auto Scaling
+     * group configuration has insufficient capacity and cannot meet workload
+     * requirements.</p>
+     */
+    inline void SetCurrentPerformanceRisk(const CurrentPerformanceRisk& value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = value; }
+
+    /**
+     * <p>The risk of the current Auto Scaling group not meeting the performance needs
+     * of its workloads. The higher the risk, the more likely the current Auto Scaling
+     * group configuration has insufficient capacity and cannot meet workload
+     * requirements.</p>
+     */
+    inline void SetCurrentPerformanceRisk(CurrentPerformanceRisk&& value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = std::move(value); }
+
+    /**
+     * <p>The risk of the current Auto Scaling group not meeting the performance needs
+     * of its workloads. The higher the risk, the more likely the current Auto Scaling
+     * group configuration has insufficient capacity and cannot meet workload
+     * requirements.</p>
+     */
+    inline AutoScalingGroupRecommendation& WithCurrentPerformanceRisk(const CurrentPerformanceRisk& value) { SetCurrentPerformanceRisk(value); return *this;}
+
+    /**
+     * <p>The risk of the current Auto Scaling group not meeting the performance needs
+     * of its workloads. The higher the risk, the more likely the current Auto Scaling
+     * group configuration has insufficient capacity and cannot meet workload
+     * requirements.</p>
+     */
+    inline AutoScalingGroupRecommendation& WithCurrentPerformanceRisk(CurrentPerformanceRisk&& value) { SetCurrentPerformanceRisk(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An object that describes the effective recommendation preferences for the
+     * Auto Scaling group.</p>
+     */
+    inline const EffectiveRecommendationPreferences& GetEffectiveRecommendationPreferences() const{ return m_effectiveRecommendationPreferences; }
+
+    /**
+     * <p>An object that describes the effective recommendation preferences for the
+     * Auto Scaling group.</p>
+     */
+    inline bool EffectiveRecommendationPreferencesHasBeenSet() const { return m_effectiveRecommendationPreferencesHasBeenSet; }
+
+    /**
+     * <p>An object that describes the effective recommendation preferences for the
+     * Auto Scaling group.</p>
+     */
+    inline void SetEffectiveRecommendationPreferences(const EffectiveRecommendationPreferences& value) { m_effectiveRecommendationPreferencesHasBeenSet = true; m_effectiveRecommendationPreferences = value; }
+
+    /**
+     * <p>An object that describes the effective recommendation preferences for the
+     * Auto Scaling group.</p>
+     */
+    inline void SetEffectiveRecommendationPreferences(EffectiveRecommendationPreferences&& value) { m_effectiveRecommendationPreferencesHasBeenSet = true; m_effectiveRecommendationPreferences = std::move(value); }
+
+    /**
+     * <p>An object that describes the effective recommendation preferences for the
+     * Auto Scaling group.</p>
+     */
+    inline AutoScalingGroupRecommendation& WithEffectiveRecommendationPreferences(const EffectiveRecommendationPreferences& value) { SetEffectiveRecommendationPreferences(value); return *this;}
+
+    /**
+     * <p>An object that describes the effective recommendation preferences for the
+     * Auto Scaling group.</p>
+     */
+    inline AutoScalingGroupRecommendation& WithEffectiveRecommendationPreferences(EffectiveRecommendationPreferences&& value) { SetEffectiveRecommendationPreferences(std::move(value)); return *this;}
 
   private:
 
@@ -469,6 +557,12 @@ namespace Model
 
     Aws::Utils::DateTime m_lastRefreshTimestamp;
     bool m_lastRefreshTimestampHasBeenSet;
+
+    CurrentPerformanceRisk m_currentPerformanceRisk;
+    bool m_currentPerformanceRiskHasBeenSet;
+
+    EffectiveRecommendationPreferences m_effectiveRecommendationPreferences;
+    bool m_effectiveRecommendationPreferencesHasBeenSet;
   };
 
 } // namespace Model

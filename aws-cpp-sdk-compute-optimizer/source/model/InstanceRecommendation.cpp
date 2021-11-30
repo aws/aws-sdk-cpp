@@ -31,7 +31,10 @@ InstanceRecommendation::InstanceRecommendation() :
     m_lookBackPeriodInDaysHasBeenSet(false),
     m_recommendationOptionsHasBeenSet(false),
     m_recommendationSourcesHasBeenSet(false),
-    m_lastRefreshTimestampHasBeenSet(false)
+    m_lastRefreshTimestampHasBeenSet(false),
+    m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
+    m_currentPerformanceRiskHasBeenSet(false),
+    m_effectiveRecommendationPreferencesHasBeenSet(false)
 {
 }
 
@@ -48,7 +51,10 @@ InstanceRecommendation::InstanceRecommendation(JsonView jsonValue) :
     m_lookBackPeriodInDaysHasBeenSet(false),
     m_recommendationOptionsHasBeenSet(false),
     m_recommendationSourcesHasBeenSet(false),
-    m_lastRefreshTimestampHasBeenSet(false)
+    m_lastRefreshTimestampHasBeenSet(false),
+    m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
+    m_currentPerformanceRiskHasBeenSet(false),
+    m_effectiveRecommendationPreferencesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -144,6 +150,20 @@ InstanceRecommendation& InstanceRecommendation::operator =(JsonView jsonValue)
     m_lastRefreshTimestampHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("currentPerformanceRisk"))
+  {
+    m_currentPerformanceRisk = CurrentPerformanceRiskMapper::GetCurrentPerformanceRiskForName(jsonValue.GetString("currentPerformanceRisk"));
+
+    m_currentPerformanceRiskHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("effectiveRecommendationPreferences"))
+  {
+    m_effectiveRecommendationPreferences = jsonValue.GetObject("effectiveRecommendationPreferences");
+
+    m_effectiveRecommendationPreferencesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -233,6 +253,17 @@ JsonValue InstanceRecommendation::Jsonize() const
   if(m_lastRefreshTimestampHasBeenSet)
   {
    payload.WithDouble("lastRefreshTimestamp", m_lastRefreshTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_currentPerformanceRiskHasBeenSet)
+  {
+   payload.WithString("currentPerformanceRisk", CurrentPerformanceRiskMapper::GetNameForCurrentPerformanceRisk(m_currentPerformanceRisk));
+  }
+
+  if(m_effectiveRecommendationPreferencesHasBeenSet)
+  {
+   payload.WithObject("effectiveRecommendationPreferences", m_effectiveRecommendationPreferences.Jsonize());
+
   }
 
   return payload;

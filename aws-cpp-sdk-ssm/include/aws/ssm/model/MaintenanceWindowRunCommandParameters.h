@@ -300,37 +300,37 @@ namespace Model
 
     /**
      * <p>Configurations for sending notifications about command status changes on a
-     * per-instance basis.</p>
+     * per-managed node basis.</p>
      */
     inline const NotificationConfig& GetNotificationConfig() const{ return m_notificationConfig; }
 
     /**
      * <p>Configurations for sending notifications about command status changes on a
-     * per-instance basis.</p>
+     * per-managed node basis.</p>
      */
     inline bool NotificationConfigHasBeenSet() const { return m_notificationConfigHasBeenSet; }
 
     /**
      * <p>Configurations for sending notifications about command status changes on a
-     * per-instance basis.</p>
+     * per-managed node basis.</p>
      */
     inline void SetNotificationConfig(const NotificationConfig& value) { m_notificationConfigHasBeenSet = true; m_notificationConfig = value; }
 
     /**
      * <p>Configurations for sending notifications about command status changes on a
-     * per-instance basis.</p>
+     * per-managed node basis.</p>
      */
     inline void SetNotificationConfig(NotificationConfig&& value) { m_notificationConfigHasBeenSet = true; m_notificationConfig = std::move(value); }
 
     /**
      * <p>Configurations for sending notifications about command status changes on a
-     * per-instance basis.</p>
+     * per-managed node basis.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithNotificationConfig(const NotificationConfig& value) { SetNotificationConfig(value); return *this;}
 
     /**
      * <p>Configurations for sending notifications about command status changes on a
-     * per-instance basis.</p>
+     * per-managed node basis.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithNotificationConfig(NotificationConfig&& value) { SetNotificationConfig(std::move(value)); return *this;}
 

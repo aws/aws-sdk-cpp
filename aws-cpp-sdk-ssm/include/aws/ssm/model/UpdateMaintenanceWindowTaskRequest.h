@@ -124,10 +124,11 @@ namespace Model
 
 
     /**
-     * <p>The targets (either instances or tags) to modify. Instances are specified
-     * using the format <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>.
-     * Tags are specified using the format <code> Key=tag_name,Values=tag_value</code>.
-     * </p>  <p>One or more targets must be specified for maintenance window Run
+     * <p>The targets (either managed nodes or tags) to modify. Managed nodes are
+     * specified using the format
+     * <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are
+     * specified using the format <code> Key=tag_name,Values=tag_value</code>. </p>
+     *  <p>One or more targets must be specified for maintenance window Run
      * Command-type tasks. Depending on the task, targets are optional for other
      * maintenance window task types (Automation, Lambda, and Step Functions). For more
      * information about running tasks that don't specify targets, see <a
@@ -138,10 +139,11 @@ namespace Model
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>The targets (either instances or tags) to modify. Instances are specified
-     * using the format <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>.
-     * Tags are specified using the format <code> Key=tag_name,Values=tag_value</code>.
-     * </p>  <p>One or more targets must be specified for maintenance window Run
+     * <p>The targets (either managed nodes or tags) to modify. Managed nodes are
+     * specified using the format
+     * <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are
+     * specified using the format <code> Key=tag_name,Values=tag_value</code>. </p>
+     *  <p>One or more targets must be specified for maintenance window Run
      * Command-type tasks. Depending on the task, targets are optional for other
      * maintenance window task types (Automation, Lambda, and Step Functions). For more
      * information about running tasks that don't specify targets, see <a
@@ -152,10 +154,11 @@ namespace Model
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
-     * <p>The targets (either instances or tags) to modify. Instances are specified
-     * using the format <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>.
-     * Tags are specified using the format <code> Key=tag_name,Values=tag_value</code>.
-     * </p>  <p>One or more targets must be specified for maintenance window Run
+     * <p>The targets (either managed nodes or tags) to modify. Managed nodes are
+     * specified using the format
+     * <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are
+     * specified using the format <code> Key=tag_name,Values=tag_value</code>. </p>
+     *  <p>One or more targets must be specified for maintenance window Run
      * Command-type tasks. Depending on the task, targets are optional for other
      * maintenance window task types (Automation, Lambda, and Step Functions). For more
      * information about running tasks that don't specify targets, see <a
@@ -166,10 +169,11 @@ namespace Model
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <p>The targets (either instances or tags) to modify. Instances are specified
-     * using the format <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>.
-     * Tags are specified using the format <code> Key=tag_name,Values=tag_value</code>.
-     * </p>  <p>One or more targets must be specified for maintenance window Run
+     * <p>The targets (either managed nodes or tags) to modify. Managed nodes are
+     * specified using the format
+     * <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are
+     * specified using the format <code> Key=tag_name,Values=tag_value</code>. </p>
+     *  <p>One or more targets must be specified for maintenance window Run
      * Command-type tasks. Depending on the task, targets are optional for other
      * maintenance window task types (Automation, Lambda, and Step Functions). For more
      * information about running tasks that don't specify targets, see <a
@@ -180,10 +184,11 @@ namespace Model
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
-     * <p>The targets (either instances or tags) to modify. Instances are specified
-     * using the format <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>.
-     * Tags are specified using the format <code> Key=tag_name,Values=tag_value</code>.
-     * </p>  <p>One or more targets must be specified for maintenance window Run
+     * <p>The targets (either managed nodes or tags) to modify. Managed nodes are
+     * specified using the format
+     * <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are
+     * specified using the format <code> Key=tag_name,Values=tag_value</code>. </p>
+     *  <p>One or more targets must be specified for maintenance window Run
      * Command-type tasks. Depending on the task, targets are optional for other
      * maintenance window task types (Automation, Lambda, and Step Functions). For more
      * information about running tasks that don't specify targets, see <a
@@ -194,10 +199,11 @@ namespace Model
     inline UpdateMaintenanceWindowTaskRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>The targets (either instances or tags) to modify. Instances are specified
-     * using the format <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>.
-     * Tags are specified using the format <code> Key=tag_name,Values=tag_value</code>.
-     * </p>  <p>One or more targets must be specified for maintenance window Run
+     * <p>The targets (either managed nodes or tags) to modify. Managed nodes are
+     * specified using the format
+     * <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are
+     * specified using the format <code> Key=tag_name,Values=tag_value</code>. </p>
+     *  <p>One or more targets must be specified for maintenance window Run
      * Command-type tasks. Depending on the task, targets are optional for other
      * maintenance window task types (Automation, Lambda, and Step Functions). For more
      * information about running tasks that don't specify targets, see <a
@@ -208,10 +214,11 @@ namespace Model
     inline UpdateMaintenanceWindowTaskRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <p>The targets (either instances or tags) to modify. Instances are specified
-     * using the format <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>.
-     * Tags are specified using the format <code> Key=tag_name,Values=tag_value</code>.
-     * </p>  <p>One or more targets must be specified for maintenance window Run
+     * <p>The targets (either managed nodes or tags) to modify. Managed nodes are
+     * specified using the format
+     * <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are
+     * specified using the format <code> Key=tag_name,Values=tag_value</code>. </p>
+     *  <p>One or more targets must be specified for maintenance window Run
      * Command-type tasks. Depending on the task, targets are optional for other
      * maintenance window task types (Automation, Lambda, and Step Functions). For more
      * information about running tasks that don't specify targets, see <a
@@ -222,10 +229,11 @@ namespace Model
     inline UpdateMaintenanceWindowTaskRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
     /**
-     * <p>The targets (either instances or tags) to modify. Instances are specified
-     * using the format <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>.
-     * Tags are specified using the format <code> Key=tag_name,Values=tag_value</code>.
-     * </p>  <p>One or more targets must be specified for maintenance window Run
+     * <p>The targets (either managed nodes or tags) to modify. Managed nodes are
+     * specified using the format
+     * <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are
+     * specified using the format <code> Key=tag_name,Values=tag_value</code>. </p>
+     *  <p>One or more targets must be specified for maintenance window Run
      * Command-type tasks. Depending on the task, targets are optional for other
      * maintenance window task types (Automation, Lambda, and Step Functions). For more
      * information about running tasks that don't specify targets, see <a

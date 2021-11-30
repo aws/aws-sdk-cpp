@@ -200,30 +200,34 @@ namespace Model
 
 
     /**
-     * <p>For instances identified by the approval rule filters, enables a patch
+     * <p>For managed nodes identified by the approval rule filters, enables a patch
      * baseline to apply non-security updates available in the specified repository.
-     * The default value is <code>false</code>. Applies to Linux instances only.</p>
+     * The default value is <code>false</code>. Applies to Linux managed nodes
+     * only.</p>
      */
     inline bool GetEnableNonSecurity() const{ return m_enableNonSecurity; }
 
     /**
-     * <p>For instances identified by the approval rule filters, enables a patch
+     * <p>For managed nodes identified by the approval rule filters, enables a patch
      * baseline to apply non-security updates available in the specified repository.
-     * The default value is <code>false</code>. Applies to Linux instances only.</p>
+     * The default value is <code>false</code>. Applies to Linux managed nodes
+     * only.</p>
      */
     inline bool EnableNonSecurityHasBeenSet() const { return m_enableNonSecurityHasBeenSet; }
 
     /**
-     * <p>For instances identified by the approval rule filters, enables a patch
+     * <p>For managed nodes identified by the approval rule filters, enables a patch
      * baseline to apply non-security updates available in the specified repository.
-     * The default value is <code>false</code>. Applies to Linux instances only.</p>
+     * The default value is <code>false</code>. Applies to Linux managed nodes
+     * only.</p>
      */
     inline void SetEnableNonSecurity(bool value) { m_enableNonSecurityHasBeenSet = true; m_enableNonSecurity = value; }
 
     /**
-     * <p>For instances identified by the approval rule filters, enables a patch
+     * <p>For managed nodes identified by the approval rule filters, enables a patch
      * baseline to apply non-security updates available in the specified repository.
-     * The default value is <code>false</code>. Applies to Linux instances only.</p>
+     * The default value is <code>false</code>. Applies to Linux managed nodes
+     * only.</p>
      */
     inline PatchRule& WithEnableNonSecurity(bool value) { SetEnableNonSecurity(value); return *this;}
 

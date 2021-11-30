@@ -48,6 +48,12 @@ ListLensReviewImprovementsResult& ListLensReviewImprovementsResult::operator =(c
 
   }
 
+  if(jsonValue.ValueExists("LensArn"))
+  {
+    m_lensArn = jsonValue.GetString("LensArn");
+
+  }
+
   if(jsonValue.ValueExists("ImprovementSummaries"))
   {
     Array<JsonView> improvementSummariesJsonList = jsonValue.GetArray("ImprovementSummaries");

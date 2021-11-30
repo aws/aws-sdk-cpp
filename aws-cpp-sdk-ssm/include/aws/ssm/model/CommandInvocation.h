@@ -30,12 +30,12 @@ namespace Model
 {
 
   /**
-   * <p>An invocation is copy of a command sent to a specific instance. A command can
-   * apply to one or more instances. A command invocation applies to one instance.
-   * For example, if a user runs SendCommand against three instances, then a command
-   * invocation is created for each requested instance ID. A command invocation
-   * returns status and detail information about a command you ran. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>An invocation is a copy of a command sent to a specific managed node. A
+   * command can apply to one or more managed nodes. A command invocation applies to
+   * one managed node. For example, if a user runs <code>SendCommand</code> against
+   * three managed nodes, then a command invocation is created for each requested
+   * managed node ID. A command invocation returns status and detail information
+   * about a command you ran. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CommandInvocation">AWS
    * API Reference</a></p>
    */
@@ -90,83 +90,83 @@ namespace Model
 
 
     /**
-     * <p>The instance ID in which this invocation was requested.</p>
+     * <p>The managed node ID in which this invocation was requested.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The instance ID in which this invocation was requested.</p>
+     * <p>The managed node ID in which this invocation was requested.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>The instance ID in which this invocation was requested.</p>
+     * <p>The managed node ID in which this invocation was requested.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The instance ID in which this invocation was requested.</p>
+     * <p>The managed node ID in which this invocation was requested.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The instance ID in which this invocation was requested.</p>
+     * <p>The managed node ID in which this invocation was requested.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The instance ID in which this invocation was requested.</p>
+     * <p>The managed node ID in which this invocation was requested.</p>
      */
     inline CommandInvocation& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The instance ID in which this invocation was requested.</p>
+     * <p>The managed node ID in which this invocation was requested.</p>
      */
     inline CommandInvocation& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The instance ID in which this invocation was requested.</p>
+     * <p>The managed node ID in which this invocation was requested.</p>
      */
     inline CommandInvocation& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
 
     /**
-     * <p>The fully qualified host name of the managed instance.</p>
+     * <p>The fully qualified host name of the managed node.</p>
      */
     inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
 
     /**
-     * <p>The fully qualified host name of the managed instance.</p>
+     * <p>The fully qualified host name of the managed node.</p>
      */
     inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
 
     /**
-     * <p>The fully qualified host name of the managed instance.</p>
+     * <p>The fully qualified host name of the managed node.</p>
      */
     inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
 
     /**
-     * <p>The fully qualified host name of the managed instance.</p>
+     * <p>The fully qualified host name of the managed node.</p>
      */
     inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::move(value); }
 
     /**
-     * <p>The fully qualified host name of the managed instance.</p>
+     * <p>The fully qualified host name of the managed node.</p>
      */
     inline void SetInstanceName(const char* value) { m_instanceNameHasBeenSet = true; m_instanceName.assign(value); }
 
     /**
-     * <p>The fully qualified host name of the managed instance.</p>
+     * <p>The fully qualified host name of the managed node.</p>
      */
     inline CommandInvocation& WithInstanceName(const Aws::String& value) { SetInstanceName(value); return *this;}
 
     /**
-     * <p>The fully qualified host name of the managed instance.</p>
+     * <p>The fully qualified host name of the managed node.</p>
      */
     inline CommandInvocation& WithInstanceName(Aws::String&& value) { SetInstanceName(std::move(value)); return *this;}
 
     /**
-     * <p>The fully qualified host name of the managed instance.</p>
+     * <p>The fully qualified host name of the managed node.</p>
      */
     inline CommandInvocation& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
 
@@ -303,32 +303,32 @@ namespace Model
 
 
     /**
-     * <p>The time and date the request was sent to this instance.</p>
+     * <p>The time and date the request was sent to this managed node.</p>
      */
     inline const Aws::Utils::DateTime& GetRequestedDateTime() const{ return m_requestedDateTime; }
 
     /**
-     * <p>The time and date the request was sent to this instance.</p>
+     * <p>The time and date the request was sent to this managed node.</p>
      */
     inline bool RequestedDateTimeHasBeenSet() const { return m_requestedDateTimeHasBeenSet; }
 
     /**
-     * <p>The time and date the request was sent to this instance.</p>
+     * <p>The time and date the request was sent to this managed node.</p>
      */
     inline void SetRequestedDateTime(const Aws::Utils::DateTime& value) { m_requestedDateTimeHasBeenSet = true; m_requestedDateTime = value; }
 
     /**
-     * <p>The time and date the request was sent to this instance.</p>
+     * <p>The time and date the request was sent to this managed node.</p>
      */
     inline void SetRequestedDateTime(Aws::Utils::DateTime&& value) { m_requestedDateTimeHasBeenSet = true; m_requestedDateTime = std::move(value); }
 
     /**
-     * <p>The time and date the request was sent to this instance.</p>
+     * <p>The time and date the request was sent to this managed node.</p>
      */
     inline CommandInvocation& WithRequestedDateTime(const Aws::Utils::DateTime& value) { SetRequestedDateTime(value); return *this;}
 
     /**
-     * <p>The time and date the request was sent to this instance.</p>
+     * <p>The time and date the request was sent to this managed node.</p>
      */
     inline CommandInvocation& WithRequestedDateTime(Aws::Utils::DateTime&& value) { SetRequestedDateTime(std::move(value)); return *this;}
 
@@ -365,34 +365,34 @@ namespace Model
 
 
     /**
-     * <p>A detailed status of the command execution for each invocation (each instance
-     * targeted by the command). StatusDetails includes more information than Status
-     * because it includes states resulting from error and concurrency control
+     * <p>A detailed status of the command execution for each invocation (each managed
+     * node targeted by the command). StatusDetails includes more information than
+     * Status because it includes states resulting from error and concurrency control
      * parameters. StatusDetails can show different results than Status. For more
      * information about these statuses, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
      * command statuses</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>. StatusDetails can be one of the following values:</p> <ul> <li>
-     * <p>Pending: The command hasn't been sent to the instance.</p> </li> <li> <p>In
-     * Progress: The command has been sent to the instance but hasn't reached a
-     * terminal state.</p> </li> <li> <p>Success: The execution of the command or
+     * <p>Pending: The command hasn't been sent to the managed node.</p> </li> <li>
+     * <p>In Progress: The command has been sent to the managed node but hasn't reached
+     * a terminal state.</p> </li> <li> <p>Success: The execution of the command or
      * plugin was successfully completed. This is a terminal state.</p> </li> <li>
-     * <p>Delivery Timed Out: The command wasn't delivered to the instance before the
-     * delivery timeout expired. Delivery timeouts don't count against the parent
+     * <p>Delivery Timed Out: The command wasn't delivered to the managed node before
+     * the delivery timeout expired. Delivery timeouts don't count against the parent
      * command's <code>MaxErrors</code> limit, but they do contribute to whether the
      * parent command status is Success or Incomplete. This is a terminal state.</p>
-     * </li> <li> <p>Execution Timed Out: Command execution started on the instance,
-     * but the execution wasn't complete before the execution timeout expired.
+     * </li> <li> <p>Execution Timed Out: Command execution started on the managed
+     * node, but the execution wasn't complete before the execution timeout expired.
      * Execution timeouts count against the <code>MaxErrors</code> limit of the parent
      * command. This is a terminal state.</p> </li> <li> <p>Failed: The command wasn't
-     * successful on the instance. For a plugin, this indicates that the result code
-     * wasn't zero. For a command invocation, this indicates that the result code for
-     * one or more plugins wasn't zero. Invocation failures count against the
+     * successful on the managed node. For a plugin, this indicates that the result
+     * code wasn't zero. For a command invocation, this indicates that the result code
+     * for one or more plugins wasn't zero. Invocation failures count against the
      * <code>MaxErrors</code> limit of the parent command. This is a terminal
      * state.</p> </li> <li> <p>Canceled: The command was terminated before it was
      * completed. This is a terminal state.</p> </li> <li> <p>Undeliverable: The
-     * command can't be delivered to the instance. The instance might not exist or
-     * might not be responding. Undeliverable invocations don't count against the
+     * command can't be delivered to the managed node. The managed node might not exist
+     * or might not be responding. Undeliverable invocations don't count against the
      * parent command's MaxErrors limit and don't contribute to whether the parent
      * command status is Success or Incomplete. This is a terminal state.</p> </li>
      * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
@@ -402,34 +402,34 @@ namespace Model
     inline const Aws::String& GetStatusDetails() const{ return m_statusDetails; }
 
     /**
-     * <p>A detailed status of the command execution for each invocation (each instance
-     * targeted by the command). StatusDetails includes more information than Status
-     * because it includes states resulting from error and concurrency control
+     * <p>A detailed status of the command execution for each invocation (each managed
+     * node targeted by the command). StatusDetails includes more information than
+     * Status because it includes states resulting from error and concurrency control
      * parameters. StatusDetails can show different results than Status. For more
      * information about these statuses, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
      * command statuses</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>. StatusDetails can be one of the following values:</p> <ul> <li>
-     * <p>Pending: The command hasn't been sent to the instance.</p> </li> <li> <p>In
-     * Progress: The command has been sent to the instance but hasn't reached a
-     * terminal state.</p> </li> <li> <p>Success: The execution of the command or
+     * <p>Pending: The command hasn't been sent to the managed node.</p> </li> <li>
+     * <p>In Progress: The command has been sent to the managed node but hasn't reached
+     * a terminal state.</p> </li> <li> <p>Success: The execution of the command or
      * plugin was successfully completed. This is a terminal state.</p> </li> <li>
-     * <p>Delivery Timed Out: The command wasn't delivered to the instance before the
-     * delivery timeout expired. Delivery timeouts don't count against the parent
+     * <p>Delivery Timed Out: The command wasn't delivered to the managed node before
+     * the delivery timeout expired. Delivery timeouts don't count against the parent
      * command's <code>MaxErrors</code> limit, but they do contribute to whether the
      * parent command status is Success or Incomplete. This is a terminal state.</p>
-     * </li> <li> <p>Execution Timed Out: Command execution started on the instance,
-     * but the execution wasn't complete before the execution timeout expired.
+     * </li> <li> <p>Execution Timed Out: Command execution started on the managed
+     * node, but the execution wasn't complete before the execution timeout expired.
      * Execution timeouts count against the <code>MaxErrors</code> limit of the parent
      * command. This is a terminal state.</p> </li> <li> <p>Failed: The command wasn't
-     * successful on the instance. For a plugin, this indicates that the result code
-     * wasn't zero. For a command invocation, this indicates that the result code for
-     * one or more plugins wasn't zero. Invocation failures count against the
+     * successful on the managed node. For a plugin, this indicates that the result
+     * code wasn't zero. For a command invocation, this indicates that the result code
+     * for one or more plugins wasn't zero. Invocation failures count against the
      * <code>MaxErrors</code> limit of the parent command. This is a terminal
      * state.</p> </li> <li> <p>Canceled: The command was terminated before it was
      * completed. This is a terminal state.</p> </li> <li> <p>Undeliverable: The
-     * command can't be delivered to the instance. The instance might not exist or
-     * might not be responding. Undeliverable invocations don't count against the
+     * command can't be delivered to the managed node. The managed node might not exist
+     * or might not be responding. Undeliverable invocations don't count against the
      * parent command's MaxErrors limit and don't contribute to whether the parent
      * command status is Success or Incomplete. This is a terminal state.</p> </li>
      * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
@@ -439,34 +439,34 @@ namespace Model
     inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
 
     /**
-     * <p>A detailed status of the command execution for each invocation (each instance
-     * targeted by the command). StatusDetails includes more information than Status
-     * because it includes states resulting from error and concurrency control
+     * <p>A detailed status of the command execution for each invocation (each managed
+     * node targeted by the command). StatusDetails includes more information than
+     * Status because it includes states resulting from error and concurrency control
      * parameters. StatusDetails can show different results than Status. For more
      * information about these statuses, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
      * command statuses</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>. StatusDetails can be one of the following values:</p> <ul> <li>
-     * <p>Pending: The command hasn't been sent to the instance.</p> </li> <li> <p>In
-     * Progress: The command has been sent to the instance but hasn't reached a
-     * terminal state.</p> </li> <li> <p>Success: The execution of the command or
+     * <p>Pending: The command hasn't been sent to the managed node.</p> </li> <li>
+     * <p>In Progress: The command has been sent to the managed node but hasn't reached
+     * a terminal state.</p> </li> <li> <p>Success: The execution of the command or
      * plugin was successfully completed. This is a terminal state.</p> </li> <li>
-     * <p>Delivery Timed Out: The command wasn't delivered to the instance before the
-     * delivery timeout expired. Delivery timeouts don't count against the parent
+     * <p>Delivery Timed Out: The command wasn't delivered to the managed node before
+     * the delivery timeout expired. Delivery timeouts don't count against the parent
      * command's <code>MaxErrors</code> limit, but they do contribute to whether the
      * parent command status is Success or Incomplete. This is a terminal state.</p>
-     * </li> <li> <p>Execution Timed Out: Command execution started on the instance,
-     * but the execution wasn't complete before the execution timeout expired.
+     * </li> <li> <p>Execution Timed Out: Command execution started on the managed
+     * node, but the execution wasn't complete before the execution timeout expired.
      * Execution timeouts count against the <code>MaxErrors</code> limit of the parent
      * command. This is a terminal state.</p> </li> <li> <p>Failed: The command wasn't
-     * successful on the instance. For a plugin, this indicates that the result code
-     * wasn't zero. For a command invocation, this indicates that the result code for
-     * one or more plugins wasn't zero. Invocation failures count against the
+     * successful on the managed node. For a plugin, this indicates that the result
+     * code wasn't zero. For a command invocation, this indicates that the result code
+     * for one or more plugins wasn't zero. Invocation failures count against the
      * <code>MaxErrors</code> limit of the parent command. This is a terminal
      * state.</p> </li> <li> <p>Canceled: The command was terminated before it was
      * completed. This is a terminal state.</p> </li> <li> <p>Undeliverable: The
-     * command can't be delivered to the instance. The instance might not exist or
-     * might not be responding. Undeliverable invocations don't count against the
+     * command can't be delivered to the managed node. The managed node might not exist
+     * or might not be responding. Undeliverable invocations don't count against the
      * parent command's MaxErrors limit and don't contribute to whether the parent
      * command status is Success or Incomplete. This is a terminal state.</p> </li>
      * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
@@ -476,34 +476,34 @@ namespace Model
     inline void SetStatusDetails(const Aws::String& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = value; }
 
     /**
-     * <p>A detailed status of the command execution for each invocation (each instance
-     * targeted by the command). StatusDetails includes more information than Status
-     * because it includes states resulting from error and concurrency control
+     * <p>A detailed status of the command execution for each invocation (each managed
+     * node targeted by the command). StatusDetails includes more information than
+     * Status because it includes states resulting from error and concurrency control
      * parameters. StatusDetails can show different results than Status. For more
      * information about these statuses, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
      * command statuses</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>. StatusDetails can be one of the following values:</p> <ul> <li>
-     * <p>Pending: The command hasn't been sent to the instance.</p> </li> <li> <p>In
-     * Progress: The command has been sent to the instance but hasn't reached a
-     * terminal state.</p> </li> <li> <p>Success: The execution of the command or
+     * <p>Pending: The command hasn't been sent to the managed node.</p> </li> <li>
+     * <p>In Progress: The command has been sent to the managed node but hasn't reached
+     * a terminal state.</p> </li> <li> <p>Success: The execution of the command or
      * plugin was successfully completed. This is a terminal state.</p> </li> <li>
-     * <p>Delivery Timed Out: The command wasn't delivered to the instance before the
-     * delivery timeout expired. Delivery timeouts don't count against the parent
+     * <p>Delivery Timed Out: The command wasn't delivered to the managed node before
+     * the delivery timeout expired. Delivery timeouts don't count against the parent
      * command's <code>MaxErrors</code> limit, but they do contribute to whether the
      * parent command status is Success or Incomplete. This is a terminal state.</p>
-     * </li> <li> <p>Execution Timed Out: Command execution started on the instance,
-     * but the execution wasn't complete before the execution timeout expired.
+     * </li> <li> <p>Execution Timed Out: Command execution started on the managed
+     * node, but the execution wasn't complete before the execution timeout expired.
      * Execution timeouts count against the <code>MaxErrors</code> limit of the parent
      * command. This is a terminal state.</p> </li> <li> <p>Failed: The command wasn't
-     * successful on the instance. For a plugin, this indicates that the result code
-     * wasn't zero. For a command invocation, this indicates that the result code for
-     * one or more plugins wasn't zero. Invocation failures count against the
+     * successful on the managed node. For a plugin, this indicates that the result
+     * code wasn't zero. For a command invocation, this indicates that the result code
+     * for one or more plugins wasn't zero. Invocation failures count against the
      * <code>MaxErrors</code> limit of the parent command. This is a terminal
      * state.</p> </li> <li> <p>Canceled: The command was terminated before it was
      * completed. This is a terminal state.</p> </li> <li> <p>Undeliverable: The
-     * command can't be delivered to the instance. The instance might not exist or
-     * might not be responding. Undeliverable invocations don't count against the
+     * command can't be delivered to the managed node. The managed node might not exist
+     * or might not be responding. Undeliverable invocations don't count against the
      * parent command's MaxErrors limit and don't contribute to whether the parent
      * command status is Success or Incomplete. This is a terminal state.</p> </li>
      * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
@@ -513,34 +513,34 @@ namespace Model
     inline void SetStatusDetails(Aws::String&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::move(value); }
 
     /**
-     * <p>A detailed status of the command execution for each invocation (each instance
-     * targeted by the command). StatusDetails includes more information than Status
-     * because it includes states resulting from error and concurrency control
+     * <p>A detailed status of the command execution for each invocation (each managed
+     * node targeted by the command). StatusDetails includes more information than
+     * Status because it includes states resulting from error and concurrency control
      * parameters. StatusDetails can show different results than Status. For more
      * information about these statuses, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
      * command statuses</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>. StatusDetails can be one of the following values:</p> <ul> <li>
-     * <p>Pending: The command hasn't been sent to the instance.</p> </li> <li> <p>In
-     * Progress: The command has been sent to the instance but hasn't reached a
-     * terminal state.</p> </li> <li> <p>Success: The execution of the command or
+     * <p>Pending: The command hasn't been sent to the managed node.</p> </li> <li>
+     * <p>In Progress: The command has been sent to the managed node but hasn't reached
+     * a terminal state.</p> </li> <li> <p>Success: The execution of the command or
      * plugin was successfully completed. This is a terminal state.</p> </li> <li>
-     * <p>Delivery Timed Out: The command wasn't delivered to the instance before the
-     * delivery timeout expired. Delivery timeouts don't count against the parent
+     * <p>Delivery Timed Out: The command wasn't delivered to the managed node before
+     * the delivery timeout expired. Delivery timeouts don't count against the parent
      * command's <code>MaxErrors</code> limit, but they do contribute to whether the
      * parent command status is Success or Incomplete. This is a terminal state.</p>
-     * </li> <li> <p>Execution Timed Out: Command execution started on the instance,
-     * but the execution wasn't complete before the execution timeout expired.
+     * </li> <li> <p>Execution Timed Out: Command execution started on the managed
+     * node, but the execution wasn't complete before the execution timeout expired.
      * Execution timeouts count against the <code>MaxErrors</code> limit of the parent
      * command. This is a terminal state.</p> </li> <li> <p>Failed: The command wasn't
-     * successful on the instance. For a plugin, this indicates that the result code
-     * wasn't zero. For a command invocation, this indicates that the result code for
-     * one or more plugins wasn't zero. Invocation failures count against the
+     * successful on the managed node. For a plugin, this indicates that the result
+     * code wasn't zero. For a command invocation, this indicates that the result code
+     * for one or more plugins wasn't zero. Invocation failures count against the
      * <code>MaxErrors</code> limit of the parent command. This is a terminal
      * state.</p> </li> <li> <p>Canceled: The command was terminated before it was
      * completed. This is a terminal state.</p> </li> <li> <p>Undeliverable: The
-     * command can't be delivered to the instance. The instance might not exist or
-     * might not be responding. Undeliverable invocations don't count against the
+     * command can't be delivered to the managed node. The managed node might not exist
+     * or might not be responding. Undeliverable invocations don't count against the
      * parent command's MaxErrors limit and don't contribute to whether the parent
      * command status is Success or Incomplete. This is a terminal state.</p> </li>
      * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
@@ -550,34 +550,34 @@ namespace Model
     inline void SetStatusDetails(const char* value) { m_statusDetailsHasBeenSet = true; m_statusDetails.assign(value); }
 
     /**
-     * <p>A detailed status of the command execution for each invocation (each instance
-     * targeted by the command). StatusDetails includes more information than Status
-     * because it includes states resulting from error and concurrency control
+     * <p>A detailed status of the command execution for each invocation (each managed
+     * node targeted by the command). StatusDetails includes more information than
+     * Status because it includes states resulting from error and concurrency control
      * parameters. StatusDetails can show different results than Status. For more
      * information about these statuses, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
      * command statuses</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>. StatusDetails can be one of the following values:</p> <ul> <li>
-     * <p>Pending: The command hasn't been sent to the instance.</p> </li> <li> <p>In
-     * Progress: The command has been sent to the instance but hasn't reached a
-     * terminal state.</p> </li> <li> <p>Success: The execution of the command or
+     * <p>Pending: The command hasn't been sent to the managed node.</p> </li> <li>
+     * <p>In Progress: The command has been sent to the managed node but hasn't reached
+     * a terminal state.</p> </li> <li> <p>Success: The execution of the command or
      * plugin was successfully completed. This is a terminal state.</p> </li> <li>
-     * <p>Delivery Timed Out: The command wasn't delivered to the instance before the
-     * delivery timeout expired. Delivery timeouts don't count against the parent
+     * <p>Delivery Timed Out: The command wasn't delivered to the managed node before
+     * the delivery timeout expired. Delivery timeouts don't count against the parent
      * command's <code>MaxErrors</code> limit, but they do contribute to whether the
      * parent command status is Success or Incomplete. This is a terminal state.</p>
-     * </li> <li> <p>Execution Timed Out: Command execution started on the instance,
-     * but the execution wasn't complete before the execution timeout expired.
+     * </li> <li> <p>Execution Timed Out: Command execution started on the managed
+     * node, but the execution wasn't complete before the execution timeout expired.
      * Execution timeouts count against the <code>MaxErrors</code> limit of the parent
      * command. This is a terminal state.</p> </li> <li> <p>Failed: The command wasn't
-     * successful on the instance. For a plugin, this indicates that the result code
-     * wasn't zero. For a command invocation, this indicates that the result code for
-     * one or more plugins wasn't zero. Invocation failures count against the
+     * successful on the managed node. For a plugin, this indicates that the result
+     * code wasn't zero. For a command invocation, this indicates that the result code
+     * for one or more plugins wasn't zero. Invocation failures count against the
      * <code>MaxErrors</code> limit of the parent command. This is a terminal
      * state.</p> </li> <li> <p>Canceled: The command was terminated before it was
      * completed. This is a terminal state.</p> </li> <li> <p>Undeliverable: The
-     * command can't be delivered to the instance. The instance might not exist or
-     * might not be responding. Undeliverable invocations don't count against the
+     * command can't be delivered to the managed node. The managed node might not exist
+     * or might not be responding. Undeliverable invocations don't count against the
      * parent command's MaxErrors limit and don't contribute to whether the parent
      * command status is Success or Incomplete. This is a terminal state.</p> </li>
      * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
@@ -587,34 +587,34 @@ namespace Model
     inline CommandInvocation& WithStatusDetails(const Aws::String& value) { SetStatusDetails(value); return *this;}
 
     /**
-     * <p>A detailed status of the command execution for each invocation (each instance
-     * targeted by the command). StatusDetails includes more information than Status
-     * because it includes states resulting from error and concurrency control
+     * <p>A detailed status of the command execution for each invocation (each managed
+     * node targeted by the command). StatusDetails includes more information than
+     * Status because it includes states resulting from error and concurrency control
      * parameters. StatusDetails can show different results than Status. For more
      * information about these statuses, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
      * command statuses</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>. StatusDetails can be one of the following values:</p> <ul> <li>
-     * <p>Pending: The command hasn't been sent to the instance.</p> </li> <li> <p>In
-     * Progress: The command has been sent to the instance but hasn't reached a
-     * terminal state.</p> </li> <li> <p>Success: The execution of the command or
+     * <p>Pending: The command hasn't been sent to the managed node.</p> </li> <li>
+     * <p>In Progress: The command has been sent to the managed node but hasn't reached
+     * a terminal state.</p> </li> <li> <p>Success: The execution of the command or
      * plugin was successfully completed. This is a terminal state.</p> </li> <li>
-     * <p>Delivery Timed Out: The command wasn't delivered to the instance before the
-     * delivery timeout expired. Delivery timeouts don't count against the parent
+     * <p>Delivery Timed Out: The command wasn't delivered to the managed node before
+     * the delivery timeout expired. Delivery timeouts don't count against the parent
      * command's <code>MaxErrors</code> limit, but they do contribute to whether the
      * parent command status is Success or Incomplete. This is a terminal state.</p>
-     * </li> <li> <p>Execution Timed Out: Command execution started on the instance,
-     * but the execution wasn't complete before the execution timeout expired.
+     * </li> <li> <p>Execution Timed Out: Command execution started on the managed
+     * node, but the execution wasn't complete before the execution timeout expired.
      * Execution timeouts count against the <code>MaxErrors</code> limit of the parent
      * command. This is a terminal state.</p> </li> <li> <p>Failed: The command wasn't
-     * successful on the instance. For a plugin, this indicates that the result code
-     * wasn't zero. For a command invocation, this indicates that the result code for
-     * one or more plugins wasn't zero. Invocation failures count against the
+     * successful on the managed node. For a plugin, this indicates that the result
+     * code wasn't zero. For a command invocation, this indicates that the result code
+     * for one or more plugins wasn't zero. Invocation failures count against the
      * <code>MaxErrors</code> limit of the parent command. This is a terminal
      * state.</p> </li> <li> <p>Canceled: The command was terminated before it was
      * completed. This is a terminal state.</p> </li> <li> <p>Undeliverable: The
-     * command can't be delivered to the instance. The instance might not exist or
-     * might not be responding. Undeliverable invocations don't count against the
+     * command can't be delivered to the managed node. The managed node might not exist
+     * or might not be responding. Undeliverable invocations don't count against the
      * parent command's MaxErrors limit and don't contribute to whether the parent
      * command status is Success or Incomplete. This is a terminal state.</p> </li>
      * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
@@ -624,34 +624,34 @@ namespace Model
     inline CommandInvocation& WithStatusDetails(Aws::String&& value) { SetStatusDetails(std::move(value)); return *this;}
 
     /**
-     * <p>A detailed status of the command execution for each invocation (each instance
-     * targeted by the command). StatusDetails includes more information than Status
-     * because it includes states resulting from error and concurrency control
+     * <p>A detailed status of the command execution for each invocation (each managed
+     * node targeted by the command). StatusDetails includes more information than
+     * Status because it includes states resulting from error and concurrency control
      * parameters. StatusDetails can show different results than Status. For more
      * information about these statuses, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
      * command statuses</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>. StatusDetails can be one of the following values:</p> <ul> <li>
-     * <p>Pending: The command hasn't been sent to the instance.</p> </li> <li> <p>In
-     * Progress: The command has been sent to the instance but hasn't reached a
-     * terminal state.</p> </li> <li> <p>Success: The execution of the command or
+     * <p>Pending: The command hasn't been sent to the managed node.</p> </li> <li>
+     * <p>In Progress: The command has been sent to the managed node but hasn't reached
+     * a terminal state.</p> </li> <li> <p>Success: The execution of the command or
      * plugin was successfully completed. This is a terminal state.</p> </li> <li>
-     * <p>Delivery Timed Out: The command wasn't delivered to the instance before the
-     * delivery timeout expired. Delivery timeouts don't count against the parent
+     * <p>Delivery Timed Out: The command wasn't delivered to the managed node before
+     * the delivery timeout expired. Delivery timeouts don't count against the parent
      * command's <code>MaxErrors</code> limit, but they do contribute to whether the
      * parent command status is Success or Incomplete. This is a terminal state.</p>
-     * </li> <li> <p>Execution Timed Out: Command execution started on the instance,
-     * but the execution wasn't complete before the execution timeout expired.
+     * </li> <li> <p>Execution Timed Out: Command execution started on the managed
+     * node, but the execution wasn't complete before the execution timeout expired.
      * Execution timeouts count against the <code>MaxErrors</code> limit of the parent
      * command. This is a terminal state.</p> </li> <li> <p>Failed: The command wasn't
-     * successful on the instance. For a plugin, this indicates that the result code
-     * wasn't zero. For a command invocation, this indicates that the result code for
-     * one or more plugins wasn't zero. Invocation failures count against the
+     * successful on the managed node. For a plugin, this indicates that the result
+     * code wasn't zero. For a command invocation, this indicates that the result code
+     * for one or more plugins wasn't zero. Invocation failures count against the
      * <code>MaxErrors</code> limit of the parent command. This is a terminal
      * state.</p> </li> <li> <p>Canceled: The command was terminated before it was
      * completed. This is a terminal state.</p> </li> <li> <p>Undeliverable: The
-     * command can't be delivered to the instance. The instance might not exist or
-     * might not be responding. Undeliverable invocations don't count against the
+     * command can't be delivered to the managed node. The managed node might not exist
+     * or might not be responding. Undeliverable invocations don't count against the
      * parent command's MaxErrors limit and don't contribute to whether the parent
      * command status is Success or Incomplete. This is a terminal state.</p> </li>
      * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
@@ -876,7 +876,7 @@ namespace Model
     /**
      * <p>The Identity and Access Management (IAM) service role that Run Command, a
      * capability of Amazon Web Services Systems Manager, uses to act on your behalf
-     * when sending notifications about command status changes on a per instance
+     * when sending notifications about command status changes on a per managed node
      * basis.</p>
      */
     inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
@@ -884,7 +884,7 @@ namespace Model
     /**
      * <p>The Identity and Access Management (IAM) service role that Run Command, a
      * capability of Amazon Web Services Systems Manager, uses to act on your behalf
-     * when sending notifications about command status changes on a per instance
+     * when sending notifications about command status changes on a per managed node
      * basis.</p>
      */
     inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
@@ -892,7 +892,7 @@ namespace Model
     /**
      * <p>The Identity and Access Management (IAM) service role that Run Command, a
      * capability of Amazon Web Services Systems Manager, uses to act on your behalf
-     * when sending notifications about command status changes on a per instance
+     * when sending notifications about command status changes on a per managed node
      * basis.</p>
      */
     inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
@@ -900,7 +900,7 @@ namespace Model
     /**
      * <p>The Identity and Access Management (IAM) service role that Run Command, a
      * capability of Amazon Web Services Systems Manager, uses to act on your behalf
-     * when sending notifications about command status changes on a per instance
+     * when sending notifications about command status changes on a per managed node
      * basis.</p>
      */
     inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
@@ -908,7 +908,7 @@ namespace Model
     /**
      * <p>The Identity and Access Management (IAM) service role that Run Command, a
      * capability of Amazon Web Services Systems Manager, uses to act on your behalf
-     * when sending notifications about command status changes on a per instance
+     * when sending notifications about command status changes on a per managed node
      * basis.</p>
      */
     inline void SetServiceRole(const char* value) { m_serviceRoleHasBeenSet = true; m_serviceRole.assign(value); }
@@ -916,7 +916,7 @@ namespace Model
     /**
      * <p>The Identity and Access Management (IAM) service role that Run Command, a
      * capability of Amazon Web Services Systems Manager, uses to act on your behalf
-     * when sending notifications about command status changes on a per instance
+     * when sending notifications about command status changes on a per managed node
      * basis.</p>
      */
     inline CommandInvocation& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
@@ -924,7 +924,7 @@ namespace Model
     /**
      * <p>The Identity and Access Management (IAM) service role that Run Command, a
      * capability of Amazon Web Services Systems Manager, uses to act on your behalf
-     * when sending notifications about command status changes on a per instance
+     * when sending notifications about command status changes on a per managed node
      * basis.</p>
      */
     inline CommandInvocation& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
@@ -932,7 +932,7 @@ namespace Model
     /**
      * <p>The Identity and Access Management (IAM) service role that Run Command, a
      * capability of Amazon Web Services Systems Manager, uses to act on your behalf
-     * when sending notifications about command status changes on a per instance
+     * when sending notifications about command status changes on a per managed node
      * basis.</p>
      */
     inline CommandInvocation& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
@@ -940,37 +940,37 @@ namespace Model
 
     /**
      * <p>Configurations for sending notifications about command status changes on a
-     * per instance basis.</p>
+     * per managed node basis.</p>
      */
     inline const NotificationConfig& GetNotificationConfig() const{ return m_notificationConfig; }
 
     /**
      * <p>Configurations for sending notifications about command status changes on a
-     * per instance basis.</p>
+     * per managed node basis.</p>
      */
     inline bool NotificationConfigHasBeenSet() const { return m_notificationConfigHasBeenSet; }
 
     /**
      * <p>Configurations for sending notifications about command status changes on a
-     * per instance basis.</p>
+     * per managed node basis.</p>
      */
     inline void SetNotificationConfig(const NotificationConfig& value) { m_notificationConfigHasBeenSet = true; m_notificationConfig = value; }
 
     /**
      * <p>Configurations for sending notifications about command status changes on a
-     * per instance basis.</p>
+     * per managed node basis.</p>
      */
     inline void SetNotificationConfig(NotificationConfig&& value) { m_notificationConfigHasBeenSet = true; m_notificationConfig = std::move(value); }
 
     /**
      * <p>Configurations for sending notifications about command status changes on a
-     * per instance basis.</p>
+     * per managed node basis.</p>
      */
     inline CommandInvocation& WithNotificationConfig(const NotificationConfig& value) { SetNotificationConfig(value); return *this;}
 
     /**
      * <p>Configurations for sending notifications about command status changes on a
-     * per instance basis.</p>
+     * per managed node basis.</p>
      */
     inline CommandInvocation& WithNotificationConfig(NotificationConfig&& value) { SetNotificationConfig(std::move(value)); return *this;}
 
