@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The request was rejected because the lifecycle status of the source backup is
-   * not <code>AVAILABLE</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>The request was rejected because the lifecycle status of the source backup
+   * isn't <code>AVAILABLE</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/SourceBackupUnavailable">AWS
    * API Reference</a></p>
    */

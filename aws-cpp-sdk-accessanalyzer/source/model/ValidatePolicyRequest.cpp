@@ -23,7 +23,9 @@ ValidatePolicyRequest::ValidatePolicyRequest() :
     m_nextTokenHasBeenSet(false),
     m_policyDocumentHasBeenSet(false),
     m_policyType(PolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false)
+    m_policyTypeHasBeenSet(false),
+    m_validatePolicyResourceType(ValidatePolicyResourceType::NOT_SET),
+    m_validatePolicyResourceTypeHasBeenSet(false)
 {
 }
 
@@ -45,6 +47,11 @@ Aws::String ValidatePolicyRequest::SerializePayload() const
   if(m_policyTypeHasBeenSet)
   {
    payload.WithString("policyType", PolicyTypeMapper::GetNameForPolicyType(m_policyType));
+  }
+
+  if(m_validatePolicyResourceTypeHasBeenSet)
+  {
+   payload.WithString("validatePolicyResourceType", ValidatePolicyResourceTypeMapper::GetNameForValidatePolicyResourceType(m_validatePolicyResourceType));
   }
 
   return payload.View().WriteReadable();

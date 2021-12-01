@@ -21,7 +21,8 @@ namespace Model
     DELETING,
     FAILED,
     MISCONFIGURED,
-    PENDING
+    PENDING,
+    AVAILABLE
   };
 
 namespace VolumeLifecycleMapper

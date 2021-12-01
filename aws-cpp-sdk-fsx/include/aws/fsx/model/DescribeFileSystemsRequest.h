@@ -121,56 +121,56 @@ namespace Model
     /**
      * <p>Opaque pagination token returned from a previous
      * <code>DescribeFileSystems</code> operation (String). If a token present, the
-     * action continues the list from where the returning call left off.</p>
+     * operation continues the list from where the returning call left off.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>Opaque pagination token returned from a previous
      * <code>DescribeFileSystems</code> operation (String). If a token present, the
-     * action continues the list from where the returning call left off.</p>
+     * operation continues the list from where the returning call left off.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Opaque pagination token returned from a previous
      * <code>DescribeFileSystems</code> operation (String). If a token present, the
-     * action continues the list from where the returning call left off.</p>
+     * operation continues the list from where the returning call left off.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>Opaque pagination token returned from a previous
      * <code>DescribeFileSystems</code> operation (String). If a token present, the
-     * action continues the list from where the returning call left off.</p>
+     * operation continues the list from where the returning call left off.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Opaque pagination token returned from a previous
      * <code>DescribeFileSystems</code> operation (String). If a token present, the
-     * action continues the list from where the returning call left off.</p>
+     * operation continues the list from where the returning call left off.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p>Opaque pagination token returned from a previous
      * <code>DescribeFileSystems</code> operation (String). If a token present, the
-     * action continues the list from where the returning call left off.</p>
+     * operation continues the list from where the returning call left off.</p>
      */
     inline DescribeFileSystemsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>Opaque pagination token returned from a previous
      * <code>DescribeFileSystems</code> operation (String). If a token present, the
-     * action continues the list from where the returning call left off.</p>
+     * operation continues the list from where the returning call left off.</p>
      */
     inline DescribeFileSystemsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Opaque pagination token returned from a previous
      * <code>DescribeFileSystems</code> operation (String). If a token present, the
-     * action continues the list from where the returning call left off.</p>
+     * operation continues the list from where the returning call left off.</p>
      */
     inline DescribeFileSystemsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

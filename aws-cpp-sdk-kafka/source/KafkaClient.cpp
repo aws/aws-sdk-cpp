@@ -22,10 +22,12 @@
 #include <aws/kafka/KafkaErrorMarshaller.h>
 #include <aws/kafka/model/BatchAssociateScramSecretRequest.h>
 #include <aws/kafka/model/CreateClusterRequest.h>
+#include <aws/kafka/model/CreateClusterV2Request.h>
 #include <aws/kafka/model/CreateConfigurationRequest.h>
 #include <aws/kafka/model/DeleteClusterRequest.h>
 #include <aws/kafka/model/DeleteConfigurationRequest.h>
 #include <aws/kafka/model/DescribeClusterRequest.h>
+#include <aws/kafka/model/DescribeClusterV2Request.h>
 #include <aws/kafka/model/DescribeClusterOperationRequest.h>
 #include <aws/kafka/model/DescribeConfigurationRequest.h>
 #include <aws/kafka/model/DescribeConfigurationRevisionRequest.h>
@@ -34,6 +36,7 @@
 #include <aws/kafka/model/GetCompatibleKafkaVersionsRequest.h>
 #include <aws/kafka/model/ListClusterOperationsRequest.h>
 #include <aws/kafka/model/ListClustersRequest.h>
+#include <aws/kafka/model/ListClustersV2Request.h>
 #include <aws/kafka/model/ListConfigurationRevisionsRequest.h>
 #include <aws/kafka/model/ListConfigurationsRequest.h>
 #include <aws/kafka/model/ListKafkaVersionsRequest.h>
@@ -183,6 +186,31 @@ void KafkaClient::CreateClusterAsyncHelper(const CreateClusterRequest& request, 
   handler(this, request, CreateCluster(request), context);
 }
 
+CreateClusterV2Outcome KafkaClient::CreateClusterV2(const CreateClusterV2Request& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/api/v2/clusters");
+  return CreateClusterV2Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateClusterV2OutcomeCallable KafkaClient::CreateClusterV2Callable(const CreateClusterV2Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateClusterV2Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateClusterV2(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KafkaClient::CreateClusterV2Async(const CreateClusterV2Request& request, const CreateClusterV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateClusterV2AsyncHelper( request, handler, context ); } );
+}
+
+void KafkaClient::CreateClusterV2AsyncHelper(const CreateClusterV2Request& request, const CreateClusterV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateClusterV2(request), context);
+}
+
 CreateConfigurationOutcome KafkaClient::CreateConfiguration(const CreateConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -299,6 +327,37 @@ void KafkaClient::DescribeClusterAsync(const DescribeClusterRequest& request, co
 void KafkaClient::DescribeClusterAsyncHelper(const DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeCluster(request), context);
+}
+
+DescribeClusterV2Outcome KafkaClient::DescribeClusterV2(const DescribeClusterV2Request& request) const
+{
+  if (!request.ClusterArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeClusterV2", "Required field: ClusterArn, is not set");
+    return DescribeClusterV2Outcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/api/v2/clusters/");
+  uri.AddPathSegment(request.GetClusterArn());
+  return DescribeClusterV2Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeClusterV2OutcomeCallable KafkaClient::DescribeClusterV2Callable(const DescribeClusterV2Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeClusterV2Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeClusterV2(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KafkaClient::DescribeClusterV2Async(const DescribeClusterV2Request& request, const DescribeClusterV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeClusterV2AsyncHelper( request, handler, context ); } );
+}
+
+void KafkaClient::DescribeClusterV2AsyncHelper(const DescribeClusterV2Request& request, const DescribeClusterV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeClusterV2(request), context);
 }
 
 DescribeClusterOperationOutcome KafkaClient::DescribeClusterOperation(const DescribeClusterOperationRequest& request) const
@@ -545,6 +604,31 @@ void KafkaClient::ListClustersAsync(const ListClustersRequest& request, const Li
 void KafkaClient::ListClustersAsyncHelper(const ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListClusters(request), context);
+}
+
+ListClustersV2Outcome KafkaClient::ListClustersV2(const ListClustersV2Request& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/api/v2/clusters");
+  return ListClustersV2Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListClustersV2OutcomeCallable KafkaClient::ListClustersV2Callable(const ListClustersV2Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListClustersV2Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListClustersV2(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KafkaClient::ListClustersV2Async(const ListClustersV2Request& request, const ListClustersV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListClustersV2AsyncHelper( request, handler, context ); } );
+}
+
+void KafkaClient::ListClustersV2AsyncHelper(const ListClustersV2Request& request, const ListClustersV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListClustersV2(request), context);
 }
 
 ListConfigurationRevisionsOutcome KafkaClient::ListConfigurationRevisions(const ListConfigurationRevisionsRequest& request) const

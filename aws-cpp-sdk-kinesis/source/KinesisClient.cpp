@@ -49,6 +49,7 @@
 #include <aws/kinesis/model/StopStreamEncryptionRequest.h>
 #include <aws/kinesis/model/SubscribeToShardRequest.h>
 #include <aws/kinesis/model/UpdateShardCountRequest.h>
+#include <aws/kinesis/model/UpdateStreamModeRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -796,5 +797,29 @@ void KinesisClient::UpdateShardCountAsync(const UpdateShardCountRequest& request
 void KinesisClient::UpdateShardCountAsyncHelper(const UpdateShardCountRequest& request, const UpdateShardCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateShardCount(request), context);
+}
+
+UpdateStreamModeOutcome KinesisClient::UpdateStreamMode(const UpdateStreamModeRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateStreamModeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateStreamModeOutcomeCallable KinesisClient::UpdateStreamModeCallable(const UpdateStreamModeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateStreamModeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateStreamMode(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisClient::UpdateStreamModeAsync(const UpdateStreamModeRequest& request, const UpdateStreamModeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateStreamModeAsyncHelper( request, handler, context ); } );
+}
+
+void KinesisClient::UpdateStreamModeAsyncHelper(const UpdateStreamModeRequest& request, const UpdateStreamModeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateStreamMode(request), context);
 }
 

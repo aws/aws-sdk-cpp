@@ -51,7 +51,7 @@ namespace Model
      * You can create Amazon Resource Names (ARNs) for topics by using the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a>
      * Amazon SNS API action.</p> <p>You can subscribe email addresses to an Amazon SNS
-     * topic through the AWS Management Console, or by using the <a
+     * topic through the Amazon Web Services Management Console, or by using the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
      * Amazon Simple Notification Service (Amazon SNS) API action.</p>
      */
@@ -62,7 +62,7 @@ namespace Model
      * You can create Amazon Resource Names (ARNs) for topics by using the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a>
      * Amazon SNS API action.</p> <p>You can subscribe email addresses to an Amazon SNS
-     * topic through the AWS Management Console, or by using the <a
+     * topic through the Amazon Web Services Management Console, or by using the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
      * Amazon Simple Notification Service (Amazon SNS) API action.</p>
      */
@@ -73,7 +73,7 @@ namespace Model
      * You can create Amazon Resource Names (ARNs) for topics by using the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a>
      * Amazon SNS API action.</p> <p>You can subscribe email addresses to an Amazon SNS
-     * topic through the AWS Management Console, or by using the <a
+     * topic through the Amazon Web Services Management Console, or by using the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
      * Amazon Simple Notification Service (Amazon SNS) API action.</p>
      */
@@ -84,7 +84,7 @@ namespace Model
      * You can create Amazon Resource Names (ARNs) for topics by using the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a>
      * Amazon SNS API action.</p> <p>You can subscribe email addresses to an Amazon SNS
-     * topic through the AWS Management Console, or by using the <a
+     * topic through the Amazon Web Services Management Console, or by using the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
      * Amazon Simple Notification Service (Amazon SNS) API action.</p>
      */
@@ -95,7 +95,7 @@ namespace Model
      * You can create Amazon Resource Names (ARNs) for topics by using the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a>
      * Amazon SNS API action.</p> <p>You can subscribe email addresses to an Amazon SNS
-     * topic through the AWS Management Console, or by using the <a
+     * topic through the Amazon Web Services Management Console, or by using the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
      * Amazon Simple Notification Service (Amazon SNS) API action.</p>
      */
@@ -106,7 +106,7 @@ namespace Model
      * You can create Amazon Resource Names (ARNs) for topics by using the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a>
      * Amazon SNS API action.</p> <p>You can subscribe email addresses to an Amazon SNS
-     * topic through the AWS Management Console, or by using the <a
+     * topic through the Amazon Web Services Management Console, or by using the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
      * Amazon Simple Notification Service (Amazon SNS) API action.</p>
      */
@@ -117,7 +117,7 @@ namespace Model
      * You can create Amazon Resource Names (ARNs) for topics by using the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a>
      * Amazon SNS API action.</p> <p>You can subscribe email addresses to an Amazon SNS
-     * topic through the AWS Management Console, or by using the <a
+     * topic through the Amazon Web Services Management Console, or by using the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
      * Amazon Simple Notification Service (Amazon SNS) API action.</p>
      */
@@ -128,7 +128,7 @@ namespace Model
      * You can create Amazon Resource Names (ARNs) for topics by using the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a>
      * Amazon SNS API action.</p> <p>You can subscribe email addresses to an Amazon SNS
-     * topic through the AWS Management Console, or by using the <a
+     * topic through the Amazon Web Services Management Console, or by using the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
      * Amazon Simple Notification Service (Amazon SNS) API action.</p>
      */

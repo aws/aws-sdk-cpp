@@ -183,14 +183,15 @@ namespace Model
     typedef std::function<void(const SnowballClient*, const Model::UpdateLongTermPricingRequest&, const Model::UpdateLongTermPricingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLongTermPricingResponseReceivedHandler;
 
   /**
-   * <p>AWS Snow Family is a petabyte-scale data transport solution that uses secure
-   * devices to transfer large amounts of data between your on-premises data centers
-   * and Amazon Simple Storage Service (Amazon S3). The Snow commands described here
-   * provide access to the same functionality that is available in the AWS Snow
-   * Family Management Console, which enables you to create and manage jobs for a
-   * Snow device. To transfer data locally with a Snow device, you'll need to use the
-   * Snowball Edge client or the Amazon S3 API Interface for Snowball or AWS OpsHub
-   * for Snow Family. For more information, see the <a
+   * <p>The Amazon Web Services Snow Family provides a petabyte-scale data transport
+   * solution that uses secure devices to transfer large amounts of data between your
+   * on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snow
+   * Family commands described here provide access to the same functionality that is
+   * available in the Amazon Web Services Snow Family Management Console, which
+   * enables you to create and manage jobs for a Snow Family device. To transfer data
+   * locally with a Snow Family device, you'll need to use the Snowball Edge client
+   * or the Amazon S3 API Interface for Snowball or OpsHub for Snow Family. For more
+   * information, see the <a
    * href="https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User
    * Guide</a>.</p>
    */
@@ -359,16 +360,17 @@ namespace Model
 
         /**
          * <p>Creates a job to import or export data between Amazon S3 and your on-premises
-         * data center. Your AWS account must have the right trust policies and permissions
-         * in place to create a job for a Snow device. If you're creating a job for a node
-         * in a cluster, you only need to provide the <code>clusterId</code> value; the
-         * other job attributes are inherited from the cluster. </p>  <p>Only the
-         * Snowball; Edge device type is supported when ordering clustered jobs.</p> <p>The
-         * device capacity is optional.</p> <p>Availability of device types differ by AWS
-         * Region. For more information about Region availability, see <a
-         * href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">AWS
-         * Regional Services</a>.</p>  <p/> <p class="title"> <b>AWS Snow Family
-         * device types and their capacities.</b> </p> <ul> <li> <p>Snow Family device
+         * data center. Your Amazon Web Services account must have the right trust policies
+         * and permissions in place to create a job for a Snow device. If you're creating a
+         * job for a node in a cluster, you only need to provide the <code>clusterId</code>
+         * value; the other job attributes are inherited from the cluster. </p> 
+         * <p>Only the Snowball; Edge device type is supported when ordering clustered
+         * jobs.</p> <p>The device capacity is optional.</p> <p>Availability of device
+         * types differ by Amazon Web Services Region. For more information about Region
+         * availability, see <a
+         * href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">Amazon
+         * Web Services Regional Services</a>.</p>  <p/> <p class="title"> <b>Snow
+         * Family Devices and their capacities.</b> </p> <ul> <li> <p>Snow Family device
          * type: <b>SNC1_SSD</b> </p> <ul> <li> <p>Capacity: T14</p> </li> <li>
          * <p>Description: Snowcone </p> </li> </ul> <p/> </li> <li> <p>Snow Family device
          * type: <b>SNC1_HDD</b> </p> <ul> <li> <p>Capacity: T8</p> </li> <li>
@@ -384,11 +386,11 @@ namespace Model
          * with EC2 Compute</p> </li> </ul> <p/> </li> <li> <p>Device type: <b>STANDARD</b>
          * </p> <ul> <li> <p>Capacity: T50</p> </li> <li> <p>Description: Original Snowball
          * device</p>  <p>This device is only available in the Ningxia, Beijing, and
-         * Singapore AWS Regions. </p>  </li> </ul> <p/> </li> <li> <p>Device type:
-         * <b>STANDARD</b> </p> <ul> <li> <p>Capacity: T80</p> </li> <li> <p>Description:
-         * Original Snowball device</p>  <p>This device is only available in the
-         * Ningxia, Beijing, and Singapore AWS Regions. </p>  </li> </ul> <p/> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * Singapore Amazon Web Services Region </p>  </li> </ul> <p/> </li> <li>
+         * <p>Device type: <b>STANDARD</b> </p> <ul> <li> <p>Capacity: T80</p> </li> <li>
+         * <p>Description: Original Snowball device</p>  <p>This device is only
+         * available in the Ningxia, Beijing, and Singapore Amazon Web Services Region.
+         * </p>  </li> </ul> <p/> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">AWS
          * API Reference</a></p>
          */
@@ -396,16 +398,17 @@ namespace Model
 
         /**
          * <p>Creates a job to import or export data between Amazon S3 and your on-premises
-         * data center. Your AWS account must have the right trust policies and permissions
-         * in place to create a job for a Snow device. If you're creating a job for a node
-         * in a cluster, you only need to provide the <code>clusterId</code> value; the
-         * other job attributes are inherited from the cluster. </p>  <p>Only the
-         * Snowball; Edge device type is supported when ordering clustered jobs.</p> <p>The
-         * device capacity is optional.</p> <p>Availability of device types differ by AWS
-         * Region. For more information about Region availability, see <a
-         * href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">AWS
-         * Regional Services</a>.</p>  <p/> <p class="title"> <b>AWS Snow Family
-         * device types and their capacities.</b> </p> <ul> <li> <p>Snow Family device
+         * data center. Your Amazon Web Services account must have the right trust policies
+         * and permissions in place to create a job for a Snow device. If you're creating a
+         * job for a node in a cluster, you only need to provide the <code>clusterId</code>
+         * value; the other job attributes are inherited from the cluster. </p> 
+         * <p>Only the Snowball; Edge device type is supported when ordering clustered
+         * jobs.</p> <p>The device capacity is optional.</p> <p>Availability of device
+         * types differ by Amazon Web Services Region. For more information about Region
+         * availability, see <a
+         * href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">Amazon
+         * Web Services Regional Services</a>.</p>  <p/> <p class="title"> <b>Snow
+         * Family Devices and their capacities.</b> </p> <ul> <li> <p>Snow Family device
          * type: <b>SNC1_SSD</b> </p> <ul> <li> <p>Capacity: T14</p> </li> <li>
          * <p>Description: Snowcone </p> </li> </ul> <p/> </li> <li> <p>Snow Family device
          * type: <b>SNC1_HDD</b> </p> <ul> <li> <p>Capacity: T8</p> </li> <li>
@@ -421,11 +424,11 @@ namespace Model
          * with EC2 Compute</p> </li> </ul> <p/> </li> <li> <p>Device type: <b>STANDARD</b>
          * </p> <ul> <li> <p>Capacity: T50</p> </li> <li> <p>Description: Original Snowball
          * device</p>  <p>This device is only available in the Ningxia, Beijing, and
-         * Singapore AWS Regions. </p>  </li> </ul> <p/> </li> <li> <p>Device type:
-         * <b>STANDARD</b> </p> <ul> <li> <p>Capacity: T80</p> </li> <li> <p>Description:
-         * Original Snowball device</p>  <p>This device is only available in the
-         * Ningxia, Beijing, and Singapore AWS Regions. </p>  </li> </ul> <p/> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * Singapore Amazon Web Services Region </p>  </li> </ul> <p/> </li> <li>
+         * <p>Device type: <b>STANDARD</b> </p> <ul> <li> <p>Capacity: T80</p> </li> <li>
+         * <p>Description: Original Snowball device</p>  <p>This device is only
+         * available in the Ningxia, Beijing, and Singapore Amazon Web Services Region.
+         * </p>  </li> </ul> <p/> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">AWS
          * API Reference</a></p>
          *
@@ -435,16 +438,17 @@ namespace Model
 
         /**
          * <p>Creates a job to import or export data between Amazon S3 and your on-premises
-         * data center. Your AWS account must have the right trust policies and permissions
-         * in place to create a job for a Snow device. If you're creating a job for a node
-         * in a cluster, you only need to provide the <code>clusterId</code> value; the
-         * other job attributes are inherited from the cluster. </p>  <p>Only the
-         * Snowball; Edge device type is supported when ordering clustered jobs.</p> <p>The
-         * device capacity is optional.</p> <p>Availability of device types differ by AWS
-         * Region. For more information about Region availability, see <a
-         * href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">AWS
-         * Regional Services</a>.</p>  <p/> <p class="title"> <b>AWS Snow Family
-         * device types and their capacities.</b> </p> <ul> <li> <p>Snow Family device
+         * data center. Your Amazon Web Services account must have the right trust policies
+         * and permissions in place to create a job for a Snow device. If you're creating a
+         * job for a node in a cluster, you only need to provide the <code>clusterId</code>
+         * value; the other job attributes are inherited from the cluster. </p> 
+         * <p>Only the Snowball; Edge device type is supported when ordering clustered
+         * jobs.</p> <p>The device capacity is optional.</p> <p>Availability of device
+         * types differ by Amazon Web Services Region. For more information about Region
+         * availability, see <a
+         * href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">Amazon
+         * Web Services Regional Services</a>.</p>  <p/> <p class="title"> <b>Snow
+         * Family Devices and their capacities.</b> </p> <ul> <li> <p>Snow Family device
          * type: <b>SNC1_SSD</b> </p> <ul> <li> <p>Capacity: T14</p> </li> <li>
          * <p>Description: Snowcone </p> </li> </ul> <p/> </li> <li> <p>Snow Family device
          * type: <b>SNC1_HDD</b> </p> <ul> <li> <p>Capacity: T8</p> </li> <li>
@@ -460,11 +464,11 @@ namespace Model
          * with EC2 Compute</p> </li> </ul> <p/> </li> <li> <p>Device type: <b>STANDARD</b>
          * </p> <ul> <li> <p>Capacity: T50</p> </li> <li> <p>Description: Original Snowball
          * device</p>  <p>This device is only available in the Ningxia, Beijing, and
-         * Singapore AWS Regions. </p>  </li> </ul> <p/> </li> <li> <p>Device type:
-         * <b>STANDARD</b> </p> <ul> <li> <p>Capacity: T80</p> </li> <li> <p>Description:
-         * Original Snowball device</p>  <p>This device is only available in the
-         * Ningxia, Beijing, and Singapore AWS Regions. </p>  </li> </ul> <p/> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * Singapore Amazon Web Services Region </p>  </li> </ul> <p/> </li> <li>
+         * <p>Device type: <b>STANDARD</b> </p> <ul> <li> <p>Capacity: T80</p> </li> <li>
+         * <p>Description: Original Snowball device</p>  <p>This device is only
+         * available in the Ningxia, Beijing, and Singapore Amazon Web Services Region.
+         * </p>  </li> </ul> <p/> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">AWS
          * API Reference</a></p>
          *
@@ -475,8 +479,8 @@ namespace Model
         /**
          * <p>Creates a job with the long-term usage option for a device. The long-term
          * usage is a 1-year or 3-year long-term pricing type for the device. You are
-         * billed upfront, and AWS provides discounts for long-term pricing. </p><p><h3>See
-         * Also:</h3>   <a
+         * billed upfront, and Amazon Web Services provides discounts for long-term
+         * pricing. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateLongTermPricing">AWS
          * API Reference</a></p>
          */
@@ -485,8 +489,8 @@ namespace Model
         /**
          * <p>Creates a job with the long-term usage option for a device. The long-term
          * usage is a 1-year or 3-year long-term pricing type for the device. You are
-         * billed upfront, and AWS provides discounts for long-term pricing. </p><p><h3>See
-         * Also:</h3>   <a
+         * billed upfront, and Amazon Web Services provides discounts for long-term
+         * pricing. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateLongTermPricing">AWS
          * API Reference</a></p>
          *
@@ -497,8 +501,8 @@ namespace Model
         /**
          * <p>Creates a job with the long-term usage option for a device. The long-term
          * usage is a 1-year or 3-year long-term pricing type for the device. You are
-         * billed upfront, and AWS provides discounts for long-term pricing. </p><p><h3>See
-         * Also:</h3>   <a
+         * billed upfront, and Amazon Web Services provides discounts for long-term
+         * pricing. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateLongTermPricing">AWS
          * API Reference</a></p>
          *
@@ -508,7 +512,7 @@ namespace Model
 
         /**
          * <p>Creates a shipping label that will be used to return the Snow device to
-         * AWS.</p><p><h3>See Also:</h3>   <a
+         * Amazon Web Services.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateReturnShippingLabel">AWS
          * API Reference</a></p>
          */
@@ -516,7 +520,7 @@ namespace Model
 
         /**
          * <p>Creates a shipping label that will be used to return the Snow device to
-         * AWS.</p><p><h3>See Also:</h3>   <a
+         * Amazon Web Services.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateReturnShippingLabel">AWS
          * API Reference</a></p>
          *
@@ -526,7 +530,7 @@ namespace Model
 
         /**
          * <p>Creates a shipping label that will be used to return the Snow device to
-         * AWS.</p><p><h3>See Also:</h3>   <a
+         * Amazon Web Services.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateReturnShippingLabel">AWS
          * API Reference</a></p>
          *
@@ -654,7 +658,7 @@ namespace Model
 
         /**
          * <p>Information on the shipping label of a Snow device that is being returned to
-         * AWS.</p><p><h3>See Also:</h3>   <a
+         * Amazon Web Services.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeReturnShippingLabel">AWS
          * API Reference</a></p>
          */
@@ -662,7 +666,7 @@ namespace Model
 
         /**
          * <p>Information on the shipping label of a Snow device that is being returned to
-         * AWS.</p><p><h3>See Also:</h3>   <a
+         * Amazon Web Services.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeReturnShippingLabel">AWS
          * API Reference</a></p>
          *
@@ -672,7 +676,7 @@ namespace Model
 
         /**
          * <p>Information on the shipping label of a Snow device that is being returned to
-         * AWS.</p><p><h3>See Also:</h3>   <a
+         * Amazon Web Services.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeReturnShippingLabel">AWS
          * API Reference</a></p>
          *
@@ -806,8 +810,8 @@ namespace Model
          * <p>Returns information about the Snow Family service limit for your account, and
          * also the number of Snow devices your account has in use.</p> <p>The default
          * service limit for the number of Snow devices that you can have at one time is 1.
-         * If you want to increase your service limit, contact AWS Support.</p><p><h3>See
-         * Also:</h3>   <a
+         * If you want to increase your service limit, contact Amazon Web Services
+         * Support.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetSnowballUsage">AWS
          * API Reference</a></p>
          */
@@ -817,8 +821,8 @@ namespace Model
          * <p>Returns information about the Snow Family service limit for your account, and
          * also the number of Snow devices your account has in use.</p> <p>The default
          * service limit for the number of Snow devices that you can have at one time is 1.
-         * If you want to increase your service limit, contact AWS Support.</p><p><h3>See
-         * Also:</h3>   <a
+         * If you want to increase your service limit, contact Amazon Web Services
+         * Support.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetSnowballUsage">AWS
          * API Reference</a></p>
          *
@@ -830,8 +834,8 @@ namespace Model
          * <p>Returns information about the Snow Family service limit for your account, and
          * also the number of Snow devices your account has in use.</p> <p>The default
          * service limit for the number of Snow devices that you can have at one time is 1.
-         * If you want to increase your service limit, contact AWS Support.</p><p><h3>See
-         * Also:</h3>   <a
+         * If you want to increase your service limit, contact Amazon Web Services
+         * Support.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetSnowballUsage">AWS
          * API Reference</a></p>
          *
@@ -937,10 +941,11 @@ namespace Model
 
         /**
          * <p>This action returns a list of the different Amazon EC2 Amazon Machine Images
-         * (AMIs) that are owned by your AWS account that would be supported for use on a
-         * Snow device. Currently, supported AMIs are based on the CentOS 7 (x86_64) - with
-         * Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM)
-         * images, available on the AWS Marketplace.</p><p><h3>See Also:</h3>   <a
+         * (AMIs) that are owned by your Amazon Web Services accountthat would be supported
+         * for use on a Snow device. Currently, supported AMIs are based on the CentOS 7
+         * (x86_64) - with Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS
+         * - Xenial (HVM) images, available on the Amazon Web Services
+         * Marketplace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListCompatibleImages">AWS
          * API Reference</a></p>
          */
@@ -948,10 +953,11 @@ namespace Model
 
         /**
          * <p>This action returns a list of the different Amazon EC2 Amazon Machine Images
-         * (AMIs) that are owned by your AWS account that would be supported for use on a
-         * Snow device. Currently, supported AMIs are based on the CentOS 7 (x86_64) - with
-         * Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM)
-         * images, available on the AWS Marketplace.</p><p><h3>See Also:</h3>   <a
+         * (AMIs) that are owned by your Amazon Web Services accountthat would be supported
+         * for use on a Snow device. Currently, supported AMIs are based on the CentOS 7
+         * (x86_64) - with Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS
+         * - Xenial (HVM) images, available on the Amazon Web Services
+         * Marketplace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListCompatibleImages">AWS
          * API Reference</a></p>
          *
@@ -961,10 +967,11 @@ namespace Model
 
         /**
          * <p>This action returns a list of the different Amazon EC2 Amazon Machine Images
-         * (AMIs) that are owned by your AWS account that would be supported for use on a
-         * Snow device. Currently, supported AMIs are based on the CentOS 7 (x86_64) - with
-         * Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM)
-         * images, available on the AWS Marketplace.</p><p><h3>See Also:</h3>   <a
+         * (AMIs) that are owned by your Amazon Web Services accountthat would be supported
+         * for use on a Snow device. Currently, supported AMIs are based on the CentOS 7
+         * (x86_64) - with Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS
+         * - Xenial (HVM) images, available on the Amazon Web Services
+         * Marketplace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListCompatibleImages">AWS
          * API Reference</a></p>
          *

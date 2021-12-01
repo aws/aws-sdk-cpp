@@ -42,7 +42,8 @@ FileSystem::FileSystem() :
     m_lustreConfigurationHasBeenSet(false),
     m_administrativeActionsHasBeenSet(false),
     m_ontapConfigurationHasBeenSet(false),
-    m_fileSystemTypeVersionHasBeenSet(false)
+    m_fileSystemTypeVersionHasBeenSet(false),
+    m_openZFSConfigurationHasBeenSet(false)
 {
 }
 
@@ -70,7 +71,8 @@ FileSystem::FileSystem(JsonView jsonValue) :
     m_lustreConfigurationHasBeenSet(false),
     m_administrativeActionsHasBeenSet(false),
     m_ontapConfigurationHasBeenSet(false),
-    m_fileSystemTypeVersionHasBeenSet(false)
+    m_fileSystemTypeVersionHasBeenSet(false),
+    m_openZFSConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -229,6 +231,13 @@ FileSystem& FileSystem::operator =(JsonView jsonValue)
     m_fileSystemTypeVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OpenZFSConfiguration"))
+  {
+    m_openZFSConfiguration = jsonValue.GetObject("OpenZFSConfiguration");
+
+    m_openZFSConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -369,6 +378,12 @@ JsonValue FileSystem::Jsonize() const
   if(m_fileSystemTypeVersionHasBeenSet)
   {
    payload.WithString("FileSystemTypeVersion", m_fileSystemTypeVersion);
+
+  }
+
+  if(m_openZFSConfigurationHasBeenSet)
+  {
+   payload.WithObject("OpenZFSConfiguration", m_openZFSConfiguration.Jsonize());
 
   }
 

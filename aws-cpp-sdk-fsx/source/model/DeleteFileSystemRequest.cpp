@@ -17,7 +17,8 @@ DeleteFileSystemRequest::DeleteFileSystemRequest() :
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_windowsConfigurationHasBeenSet(false),
-    m_lustreConfigurationHasBeenSet(false)
+    m_lustreConfigurationHasBeenSet(false),
+    m_openZFSConfigurationHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,12 @@ Aws::String DeleteFileSystemRequest::SerializePayload() const
   if(m_lustreConfigurationHasBeenSet)
   {
    payload.WithObject("LustreConfiguration", m_lustreConfiguration.Jsonize());
+
+  }
+
+  if(m_openZFSConfigurationHasBeenSet)
+  {
+   payload.WithObject("OpenZFSConfiguration", m_openZFSConfiguration.Jsonize());
 
   }
 

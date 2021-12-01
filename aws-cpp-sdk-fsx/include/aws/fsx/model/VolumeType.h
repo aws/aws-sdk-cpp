@@ -16,7 +16,8 @@ namespace Model
   enum class VolumeType
   {
     NOT_SET,
-    ONTAP
+    ONTAP,
+    OPENZFS
   };
 
 namespace VolumeTypeMapper

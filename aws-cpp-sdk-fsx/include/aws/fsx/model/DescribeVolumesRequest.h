@@ -37,88 +37,96 @@ namespace Model
 
 
     /**
-     * <p>IDs of the volumes whose descriptions you want to retrieve.</p>
+     * <p>The IDs of the volumes whose descriptions you want to retrieve.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVolumeIds() const{ return m_volumeIds; }
 
     /**
-     * <p>IDs of the volumes whose descriptions you want to retrieve.</p>
+     * <p>The IDs of the volumes whose descriptions you want to retrieve.</p>
      */
     inline bool VolumeIdsHasBeenSet() const { return m_volumeIdsHasBeenSet; }
 
     /**
-     * <p>IDs of the volumes whose descriptions you want to retrieve.</p>
+     * <p>The IDs of the volumes whose descriptions you want to retrieve.</p>
      */
     inline void SetVolumeIds(const Aws::Vector<Aws::String>& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = value; }
 
     /**
-     * <p>IDs of the volumes whose descriptions you want to retrieve.</p>
+     * <p>The IDs of the volumes whose descriptions you want to retrieve.</p>
      */
     inline void SetVolumeIds(Aws::Vector<Aws::String>&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = std::move(value); }
 
     /**
-     * <p>IDs of the volumes whose descriptions you want to retrieve.</p>
+     * <p>The IDs of the volumes whose descriptions you want to retrieve.</p>
      */
     inline DescribeVolumesRequest& WithVolumeIds(const Aws::Vector<Aws::String>& value) { SetVolumeIds(value); return *this;}
 
     /**
-     * <p>IDs of the volumes whose descriptions you want to retrieve.</p>
+     * <p>The IDs of the volumes whose descriptions you want to retrieve.</p>
      */
     inline DescribeVolumesRequest& WithVolumeIds(Aws::Vector<Aws::String>&& value) { SetVolumeIds(std::move(value)); return *this;}
 
     /**
-     * <p>IDs of the volumes whose descriptions you want to retrieve.</p>
+     * <p>The IDs of the volumes whose descriptions you want to retrieve.</p>
      */
     inline DescribeVolumesRequest& AddVolumeIds(const Aws::String& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(value); return *this; }
 
     /**
-     * <p>IDs of the volumes whose descriptions you want to retrieve.</p>
+     * <p>The IDs of the volumes whose descriptions you want to retrieve.</p>
      */
     inline DescribeVolumesRequest& AddVolumeIds(Aws::String&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>IDs of the volumes whose descriptions you want to retrieve.</p>
+     * <p>The IDs of the volumes whose descriptions you want to retrieve.</p>
      */
     inline DescribeVolumesRequest& AddVolumeIds(const char* value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(value); return *this; }
 
 
     /**
-     * <p>Enter a filter name:value pair to view a select set of volumes.</p>
+     * <p>Enter a filter <code>Name</code> and <code>Values</code> pair to view a
+     * select set of volumes.</p>
      */
     inline const Aws::Vector<VolumeFilter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>Enter a filter name:value pair to view a select set of volumes.</p>
+     * <p>Enter a filter <code>Name</code> and <code>Values</code> pair to view a
+     * select set of volumes.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>Enter a filter name:value pair to view a select set of volumes.</p>
+     * <p>Enter a filter <code>Name</code> and <code>Values</code> pair to view a
+     * select set of volumes.</p>
      */
     inline void SetFilters(const Aws::Vector<VolumeFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>Enter a filter name:value pair to view a select set of volumes.</p>
+     * <p>Enter a filter <code>Name</code> and <code>Values</code> pair to view a
+     * select set of volumes.</p>
      */
     inline void SetFilters(Aws::Vector<VolumeFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>Enter a filter name:value pair to view a select set of volumes.</p>
+     * <p>Enter a filter <code>Name</code> and <code>Values</code> pair to view a
+     * select set of volumes.</p>
      */
     inline DescribeVolumesRequest& WithFilters(const Aws::Vector<VolumeFilter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>Enter a filter name:value pair to view a select set of volumes.</p>
+     * <p>Enter a filter <code>Name</code> and <code>Values</code> pair to view a
+     * select set of volumes.</p>
      */
     inline DescribeVolumesRequest& WithFilters(Aws::Vector<VolumeFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>Enter a filter name:value pair to view a select set of volumes.</p>
+     * <p>Enter a filter <code>Name</code> and <code>Values</code> pair to view a
+     * select set of volumes.</p>
      */
     inline DescribeVolumesRequest& AddFilters(const VolumeFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>Enter a filter name:value pair to view a select set of volumes.</p>
+     * <p>Enter a filter <code>Name</code> and <code>Values</code> pair to view a
+     * select set of volumes.</p>
      */
     inline DescribeVolumesRequest& AddFilters(VolumeFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>The configuration of an Amazon FSx for NetApp ONTAP volume</p><p><h3>See
+   * <p>The configuration of an Amazon FSx for NetApp ONTAP volume.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/OntapVolumeConfiguration">AWS
    * API Reference</a></p>
@@ -104,74 +104,90 @@ namespace Model
 
 
     /**
-     * <p>Specifies the directory that NAS clients use to mount the volume, along with
-     * the SVM DNS name or IP address. You can create a <code>JunctionPath</code>
+     * <p>Specifies the directory that network-attached storage (NAS) clients use to
+     * mount the volume, along with the storage virtual machine (SVM) Domain Name
+     * System (DNS) name or IP address. You can create a <code>JunctionPath</code>
      * directly below a parent volume junction or on a directory within a volume. A
-     * <code>JunctionPath</code> for a volume named vol3 might be /vol1/vol2/vol3, or
-     * /vol1/dir2/vol3, or even /dir1/dir2/vol3..</p>
+     * <code>JunctionPath</code> for a volume named <code>vol3</code> might be
+     * <code>/vol1/vol2/vol3</code>, or <code>/vol1/dir2/vol3</code>, or even
+     * <code>/dir1/dir2/vol3</code>.</p>
      */
     inline const Aws::String& GetJunctionPath() const{ return m_junctionPath; }
 
     /**
-     * <p>Specifies the directory that NAS clients use to mount the volume, along with
-     * the SVM DNS name or IP address. You can create a <code>JunctionPath</code>
+     * <p>Specifies the directory that network-attached storage (NAS) clients use to
+     * mount the volume, along with the storage virtual machine (SVM) Domain Name
+     * System (DNS) name or IP address. You can create a <code>JunctionPath</code>
      * directly below a parent volume junction or on a directory within a volume. A
-     * <code>JunctionPath</code> for a volume named vol3 might be /vol1/vol2/vol3, or
-     * /vol1/dir2/vol3, or even /dir1/dir2/vol3..</p>
+     * <code>JunctionPath</code> for a volume named <code>vol3</code> might be
+     * <code>/vol1/vol2/vol3</code>, or <code>/vol1/dir2/vol3</code>, or even
+     * <code>/dir1/dir2/vol3</code>.</p>
      */
     inline bool JunctionPathHasBeenSet() const { return m_junctionPathHasBeenSet; }
 
     /**
-     * <p>Specifies the directory that NAS clients use to mount the volume, along with
-     * the SVM DNS name or IP address. You can create a <code>JunctionPath</code>
+     * <p>Specifies the directory that network-attached storage (NAS) clients use to
+     * mount the volume, along with the storage virtual machine (SVM) Domain Name
+     * System (DNS) name or IP address. You can create a <code>JunctionPath</code>
      * directly below a parent volume junction or on a directory within a volume. A
-     * <code>JunctionPath</code> for a volume named vol3 might be /vol1/vol2/vol3, or
-     * /vol1/dir2/vol3, or even /dir1/dir2/vol3..</p>
+     * <code>JunctionPath</code> for a volume named <code>vol3</code> might be
+     * <code>/vol1/vol2/vol3</code>, or <code>/vol1/dir2/vol3</code>, or even
+     * <code>/dir1/dir2/vol3</code>.</p>
      */
     inline void SetJunctionPath(const Aws::String& value) { m_junctionPathHasBeenSet = true; m_junctionPath = value; }
 
     /**
-     * <p>Specifies the directory that NAS clients use to mount the volume, along with
-     * the SVM DNS name or IP address. You can create a <code>JunctionPath</code>
+     * <p>Specifies the directory that network-attached storage (NAS) clients use to
+     * mount the volume, along with the storage virtual machine (SVM) Domain Name
+     * System (DNS) name or IP address. You can create a <code>JunctionPath</code>
      * directly below a parent volume junction or on a directory within a volume. A
-     * <code>JunctionPath</code> for a volume named vol3 might be /vol1/vol2/vol3, or
-     * /vol1/dir2/vol3, or even /dir1/dir2/vol3..</p>
+     * <code>JunctionPath</code> for a volume named <code>vol3</code> might be
+     * <code>/vol1/vol2/vol3</code>, or <code>/vol1/dir2/vol3</code>, or even
+     * <code>/dir1/dir2/vol3</code>.</p>
      */
     inline void SetJunctionPath(Aws::String&& value) { m_junctionPathHasBeenSet = true; m_junctionPath = std::move(value); }
 
     /**
-     * <p>Specifies the directory that NAS clients use to mount the volume, along with
-     * the SVM DNS name or IP address. You can create a <code>JunctionPath</code>
+     * <p>Specifies the directory that network-attached storage (NAS) clients use to
+     * mount the volume, along with the storage virtual machine (SVM) Domain Name
+     * System (DNS) name or IP address. You can create a <code>JunctionPath</code>
      * directly below a parent volume junction or on a directory within a volume. A
-     * <code>JunctionPath</code> for a volume named vol3 might be /vol1/vol2/vol3, or
-     * /vol1/dir2/vol3, or even /dir1/dir2/vol3..</p>
+     * <code>JunctionPath</code> for a volume named <code>vol3</code> might be
+     * <code>/vol1/vol2/vol3</code>, or <code>/vol1/dir2/vol3</code>, or even
+     * <code>/dir1/dir2/vol3</code>.</p>
      */
     inline void SetJunctionPath(const char* value) { m_junctionPathHasBeenSet = true; m_junctionPath.assign(value); }
 
     /**
-     * <p>Specifies the directory that NAS clients use to mount the volume, along with
-     * the SVM DNS name or IP address. You can create a <code>JunctionPath</code>
+     * <p>Specifies the directory that network-attached storage (NAS) clients use to
+     * mount the volume, along with the storage virtual machine (SVM) Domain Name
+     * System (DNS) name or IP address. You can create a <code>JunctionPath</code>
      * directly below a parent volume junction or on a directory within a volume. A
-     * <code>JunctionPath</code> for a volume named vol3 might be /vol1/vol2/vol3, or
-     * /vol1/dir2/vol3, or even /dir1/dir2/vol3..</p>
+     * <code>JunctionPath</code> for a volume named <code>vol3</code> might be
+     * <code>/vol1/vol2/vol3</code>, or <code>/vol1/dir2/vol3</code>, or even
+     * <code>/dir1/dir2/vol3</code>.</p>
      */
     inline OntapVolumeConfiguration& WithJunctionPath(const Aws::String& value) { SetJunctionPath(value); return *this;}
 
     /**
-     * <p>Specifies the directory that NAS clients use to mount the volume, along with
-     * the SVM DNS name or IP address. You can create a <code>JunctionPath</code>
+     * <p>Specifies the directory that network-attached storage (NAS) clients use to
+     * mount the volume, along with the storage virtual machine (SVM) Domain Name
+     * System (DNS) name or IP address. You can create a <code>JunctionPath</code>
      * directly below a parent volume junction or on a directory within a volume. A
-     * <code>JunctionPath</code> for a volume named vol3 might be /vol1/vol2/vol3, or
-     * /vol1/dir2/vol3, or even /dir1/dir2/vol3..</p>
+     * <code>JunctionPath</code> for a volume named <code>vol3</code> might be
+     * <code>/vol1/vol2/vol3</code>, or <code>/vol1/dir2/vol3</code>, or even
+     * <code>/dir1/dir2/vol3</code>.</p>
      */
     inline OntapVolumeConfiguration& WithJunctionPath(Aws::String&& value) { SetJunctionPath(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the directory that NAS clients use to mount the volume, along with
-     * the SVM DNS name or IP address. You can create a <code>JunctionPath</code>
+     * <p>Specifies the directory that network-attached storage (NAS) clients use to
+     * mount the volume, along with the storage virtual machine (SVM) Domain Name
+     * System (DNS) name or IP address. You can create a <code>JunctionPath</code>
      * directly below a parent volume junction or on a directory within a volume. A
-     * <code>JunctionPath</code> for a volume named vol3 might be /vol1/vol2/vol3, or
-     * /vol1/dir2/vol3, or even /dir1/dir2/vol3..</p>
+     * <code>JunctionPath</code> for a volume named <code>vol3</code> might be
+     * <code>/vol1/vol2/vol3</code>, or <code>/vol1/dir2/vol3</code>, or even
+     * <code>/dir1/dir2/vol3</code>.</p>
      */
     inline OntapVolumeConfiguration& WithJunctionPath(const char* value) { SetJunctionPath(value); return *this;}
 
@@ -297,42 +313,46 @@ namespace Model
 
 
     /**
-     * <p>A boolean flag indicating whether this volume is the root volume for its
+     * <p>A Boolean flag indicating whether this volume is the root volume for its
      * storage virtual machine (SVM). Only one volume on an SVM can be the root volume.
-     * This value defaults to false. If this value is true, then this is the SVM root
-     * volume.</p> <p>This flag is useful when you're deleting an SVM, because you must
-     * first delete all non-root volumes. This flag, when set to false, helps you
-     * identify which volumes to delete before you can delete the SVM.</p>
+     * This value defaults to <code>false</code>. If this value is <code>true</code>,
+     * then this is the SVM root volume.</p> <p>This flag is useful when you're
+     * deleting an SVM, because you must first delete all non-root volumes. This flag,
+     * when set to <code>false</code>, helps you identify which volumes to delete
+     * before you can delete the SVM.</p>
      */
     inline bool GetStorageVirtualMachineRoot() const{ return m_storageVirtualMachineRoot; }
 
     /**
-     * <p>A boolean flag indicating whether this volume is the root volume for its
+     * <p>A Boolean flag indicating whether this volume is the root volume for its
      * storage virtual machine (SVM). Only one volume on an SVM can be the root volume.
-     * This value defaults to false. If this value is true, then this is the SVM root
-     * volume.</p> <p>This flag is useful when you're deleting an SVM, because you must
-     * first delete all non-root volumes. This flag, when set to false, helps you
-     * identify which volumes to delete before you can delete the SVM.</p>
+     * This value defaults to <code>false</code>. If this value is <code>true</code>,
+     * then this is the SVM root volume.</p> <p>This flag is useful when you're
+     * deleting an SVM, because you must first delete all non-root volumes. This flag,
+     * when set to <code>false</code>, helps you identify which volumes to delete
+     * before you can delete the SVM.</p>
      */
     inline bool StorageVirtualMachineRootHasBeenSet() const { return m_storageVirtualMachineRootHasBeenSet; }
 
     /**
-     * <p>A boolean flag indicating whether this volume is the root volume for its
+     * <p>A Boolean flag indicating whether this volume is the root volume for its
      * storage virtual machine (SVM). Only one volume on an SVM can be the root volume.
-     * This value defaults to false. If this value is true, then this is the SVM root
-     * volume.</p> <p>This flag is useful when you're deleting an SVM, because you must
-     * first delete all non-root volumes. This flag, when set to false, helps you
-     * identify which volumes to delete before you can delete the SVM.</p>
+     * This value defaults to <code>false</code>. If this value is <code>true</code>,
+     * then this is the SVM root volume.</p> <p>This flag is useful when you're
+     * deleting an SVM, because you must first delete all non-root volumes. This flag,
+     * when set to <code>false</code>, helps you identify which volumes to delete
+     * before you can delete the SVM.</p>
      */
     inline void SetStorageVirtualMachineRoot(bool value) { m_storageVirtualMachineRootHasBeenSet = true; m_storageVirtualMachineRoot = value; }
 
     /**
-     * <p>A boolean flag indicating whether this volume is the root volume for its
+     * <p>A Boolean flag indicating whether this volume is the root volume for its
      * storage virtual machine (SVM). Only one volume on an SVM can be the root volume.
-     * This value defaults to false. If this value is true, then this is the SVM root
-     * volume.</p> <p>This flag is useful when you're deleting an SVM, because you must
-     * first delete all non-root volumes. This flag, when set to false, helps you
-     * identify which volumes to delete before you can delete the SVM.</p>
+     * This value defaults to <code>false</code>. If this value is <code>true</code>,
+     * then this is the SVM root volume.</p> <p>This flag is useful when you're
+     * deleting an SVM, because you must first delete all non-root volumes. This flag,
+     * when set to <code>false</code>, helps you identify which volumes to delete
+     * before you can delete the SVM.</p>
      */
     inline OntapVolumeConfiguration& WithStorageVirtualMachineRoot(bool value) { SetStorageVirtualMachineRoot(value); return *this;}
 
@@ -369,115 +389,115 @@ namespace Model
 
 
     /**
-     * <p>The volume's UUID (universally unique identifier).</p>
+     * <p>The volume's universally unique identifier (UUID).</p>
      */
     inline const Aws::String& GetUUID() const{ return m_uUID; }
 
     /**
-     * <p>The volume's UUID (universally unique identifier).</p>
+     * <p>The volume's universally unique identifier (UUID).</p>
      */
     inline bool UUIDHasBeenSet() const { return m_uUIDHasBeenSet; }
 
     /**
-     * <p>The volume's UUID (universally unique identifier).</p>
+     * <p>The volume's universally unique identifier (UUID).</p>
      */
     inline void SetUUID(const Aws::String& value) { m_uUIDHasBeenSet = true; m_uUID = value; }
 
     /**
-     * <p>The volume's UUID (universally unique identifier).</p>
+     * <p>The volume's universally unique identifier (UUID).</p>
      */
     inline void SetUUID(Aws::String&& value) { m_uUIDHasBeenSet = true; m_uUID = std::move(value); }
 
     /**
-     * <p>The volume's UUID (universally unique identifier).</p>
+     * <p>The volume's universally unique identifier (UUID).</p>
      */
     inline void SetUUID(const char* value) { m_uUIDHasBeenSet = true; m_uUID.assign(value); }
 
     /**
-     * <p>The volume's UUID (universally unique identifier).</p>
+     * <p>The volume's universally unique identifier (UUID).</p>
      */
     inline OntapVolumeConfiguration& WithUUID(const Aws::String& value) { SetUUID(value); return *this;}
 
     /**
-     * <p>The volume's UUID (universally unique identifier).</p>
+     * <p>The volume's universally unique identifier (UUID).</p>
      */
     inline OntapVolumeConfiguration& WithUUID(Aws::String&& value) { SetUUID(std::move(value)); return *this;}
 
     /**
-     * <p>The volume's UUID (universally unique identifier).</p>
+     * <p>The volume's universally unique identifier (UUID).</p>
      */
     inline OntapVolumeConfiguration& WithUUID(const char* value) { SetUUID(value); return *this;}
 
 
     /**
      * <p>Specifies the type of volume. Valid values are the following:</p> <ul> <li>
-     * <p> <code>RW</code> specifies a read-write volume. <code>RW</code> is the
-     * default.</p> </li> <li> <p> <code>DP</code> specifies a data protection volume.
-     * You can protect data by replicating it to data protection mirror copies and use
-     * data protection mirror copies to recover data when a disaster occurs.</p> </li>
-     * <li> <p> <code>LS</code> specifies a load-sharing mirror volume. A load-sharing
-     * mirror reduces the network traffic to a FlexVol volume by providing additional
-     * read-only access to clients.</p> </li> </ul>
+     * <p> <code>RW</code> specifies a read/write volume. <code>RW</code> is the
+     * default.</p> </li> <li> <p> <code>DP</code> specifies a data-protection volume.
+     * You can protect data by replicating it to data-protection mirror copies. If a
+     * disaster occurs, you can use these data-protection mirror copies to recover
+     * data.</p> </li> <li> <p> <code>LS</code> specifies a load-sharing mirror volume.
+     * A load-sharing mirror reduces the network traffic to a FlexVol volume by
+     * providing additional read-only access to clients.</p> </li> </ul>
      */
     inline const OntapVolumeType& GetOntapVolumeType() const{ return m_ontapVolumeType; }
 
     /**
      * <p>Specifies the type of volume. Valid values are the following:</p> <ul> <li>
-     * <p> <code>RW</code> specifies a read-write volume. <code>RW</code> is the
-     * default.</p> </li> <li> <p> <code>DP</code> specifies a data protection volume.
-     * You can protect data by replicating it to data protection mirror copies and use
-     * data protection mirror copies to recover data when a disaster occurs.</p> </li>
-     * <li> <p> <code>LS</code> specifies a load-sharing mirror volume. A load-sharing
-     * mirror reduces the network traffic to a FlexVol volume by providing additional
-     * read-only access to clients.</p> </li> </ul>
+     * <p> <code>RW</code> specifies a read/write volume. <code>RW</code> is the
+     * default.</p> </li> <li> <p> <code>DP</code> specifies a data-protection volume.
+     * You can protect data by replicating it to data-protection mirror copies. If a
+     * disaster occurs, you can use these data-protection mirror copies to recover
+     * data.</p> </li> <li> <p> <code>LS</code> specifies a load-sharing mirror volume.
+     * A load-sharing mirror reduces the network traffic to a FlexVol volume by
+     * providing additional read-only access to clients.</p> </li> </ul>
      */
     inline bool OntapVolumeTypeHasBeenSet() const { return m_ontapVolumeTypeHasBeenSet; }
 
     /**
      * <p>Specifies the type of volume. Valid values are the following:</p> <ul> <li>
-     * <p> <code>RW</code> specifies a read-write volume. <code>RW</code> is the
-     * default.</p> </li> <li> <p> <code>DP</code> specifies a data protection volume.
-     * You can protect data by replicating it to data protection mirror copies and use
-     * data protection mirror copies to recover data when a disaster occurs.</p> </li>
-     * <li> <p> <code>LS</code> specifies a load-sharing mirror volume. A load-sharing
-     * mirror reduces the network traffic to a FlexVol volume by providing additional
-     * read-only access to clients.</p> </li> </ul>
+     * <p> <code>RW</code> specifies a read/write volume. <code>RW</code> is the
+     * default.</p> </li> <li> <p> <code>DP</code> specifies a data-protection volume.
+     * You can protect data by replicating it to data-protection mirror copies. If a
+     * disaster occurs, you can use these data-protection mirror copies to recover
+     * data.</p> </li> <li> <p> <code>LS</code> specifies a load-sharing mirror volume.
+     * A load-sharing mirror reduces the network traffic to a FlexVol volume by
+     * providing additional read-only access to clients.</p> </li> </ul>
      */
     inline void SetOntapVolumeType(const OntapVolumeType& value) { m_ontapVolumeTypeHasBeenSet = true; m_ontapVolumeType = value; }
 
     /**
      * <p>Specifies the type of volume. Valid values are the following:</p> <ul> <li>
-     * <p> <code>RW</code> specifies a read-write volume. <code>RW</code> is the
-     * default.</p> </li> <li> <p> <code>DP</code> specifies a data protection volume.
-     * You can protect data by replicating it to data protection mirror copies and use
-     * data protection mirror copies to recover data when a disaster occurs.</p> </li>
-     * <li> <p> <code>LS</code> specifies a load-sharing mirror volume. A load-sharing
-     * mirror reduces the network traffic to a FlexVol volume by providing additional
-     * read-only access to clients.</p> </li> </ul>
+     * <p> <code>RW</code> specifies a read/write volume. <code>RW</code> is the
+     * default.</p> </li> <li> <p> <code>DP</code> specifies a data-protection volume.
+     * You can protect data by replicating it to data-protection mirror copies. If a
+     * disaster occurs, you can use these data-protection mirror copies to recover
+     * data.</p> </li> <li> <p> <code>LS</code> specifies a load-sharing mirror volume.
+     * A load-sharing mirror reduces the network traffic to a FlexVol volume by
+     * providing additional read-only access to clients.</p> </li> </ul>
      */
     inline void SetOntapVolumeType(OntapVolumeType&& value) { m_ontapVolumeTypeHasBeenSet = true; m_ontapVolumeType = std::move(value); }
 
     /**
      * <p>Specifies the type of volume. Valid values are the following:</p> <ul> <li>
-     * <p> <code>RW</code> specifies a read-write volume. <code>RW</code> is the
-     * default.</p> </li> <li> <p> <code>DP</code> specifies a data protection volume.
-     * You can protect data by replicating it to data protection mirror copies and use
-     * data protection mirror copies to recover data when a disaster occurs.</p> </li>
-     * <li> <p> <code>LS</code> specifies a load-sharing mirror volume. A load-sharing
-     * mirror reduces the network traffic to a FlexVol volume by providing additional
-     * read-only access to clients.</p> </li> </ul>
+     * <p> <code>RW</code> specifies a read/write volume. <code>RW</code> is the
+     * default.</p> </li> <li> <p> <code>DP</code> specifies a data-protection volume.
+     * You can protect data by replicating it to data-protection mirror copies. If a
+     * disaster occurs, you can use these data-protection mirror copies to recover
+     * data.</p> </li> <li> <p> <code>LS</code> specifies a load-sharing mirror volume.
+     * A load-sharing mirror reduces the network traffic to a FlexVol volume by
+     * providing additional read-only access to clients.</p> </li> </ul>
      */
     inline OntapVolumeConfiguration& WithOntapVolumeType(const OntapVolumeType& value) { SetOntapVolumeType(value); return *this;}
 
     /**
      * <p>Specifies the type of volume. Valid values are the following:</p> <ul> <li>
-     * <p> <code>RW</code> specifies a read-write volume. <code>RW</code> is the
-     * default.</p> </li> <li> <p> <code>DP</code> specifies a data protection volume.
-     * You can protect data by replicating it to data protection mirror copies and use
-     * data protection mirror copies to recover data when a disaster occurs.</p> </li>
-     * <li> <p> <code>LS</code> specifies a load-sharing mirror volume. A load-sharing
-     * mirror reduces the network traffic to a FlexVol volume by providing additional
-     * read-only access to clients.</p> </li> </ul>
+     * <p> <code>RW</code> specifies a read/write volume. <code>RW</code> is the
+     * default.</p> </li> <li> <p> <code>DP</code> specifies a data-protection volume.
+     * You can protect data by replicating it to data-protection mirror copies. If a
+     * disaster occurs, you can use these data-protection mirror copies to recover
+     * data.</p> </li> <li> <p> <code>LS</code> specifies a load-sharing mirror volume.
+     * A load-sharing mirror reduces the network traffic to a FlexVol volume by
+     * providing additional read-only access to clients.</p> </li> </ul>
      */
     inline OntapVolumeConfiguration& WithOntapVolumeType(OntapVolumeType&& value) { SetOntapVolumeType(std::move(value)); return *this;}
 

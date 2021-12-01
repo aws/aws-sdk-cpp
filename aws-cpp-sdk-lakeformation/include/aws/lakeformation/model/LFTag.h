@@ -26,8 +26,9 @@ namespace Model
 
   /**
    * <p>A structure that allows an admin to grant user permissions on certain
-   * conditions. For example, granting a role access to all columns not tagged 'PII'
-   * of tables tagged 'Prod'.</p><p><h3>See Also:</h3>   <a
+   * conditions. For example, granting a role access to all columns that do not have
+   * the LF-tag 'PII' in tables that have the LF-tag 'Prod'.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/LFTag">AWS
    * API Reference</a></p>
    */
@@ -41,42 +42,42 @@ namespace Model
 
 
     /**
-     * <p>The key-name for the tag.</p>
+     * <p>The key-name for the LF-tag.</p>
      */
     inline const Aws::String& GetTagKey() const{ return m_tagKey; }
 
     /**
-     * <p>The key-name for the tag.</p>
+     * <p>The key-name for the LF-tag.</p>
      */
     inline bool TagKeyHasBeenSet() const { return m_tagKeyHasBeenSet; }
 
     /**
-     * <p>The key-name for the tag.</p>
+     * <p>The key-name for the LF-tag.</p>
      */
     inline void SetTagKey(const Aws::String& value) { m_tagKeyHasBeenSet = true; m_tagKey = value; }
 
     /**
-     * <p>The key-name for the tag.</p>
+     * <p>The key-name for the LF-tag.</p>
      */
     inline void SetTagKey(Aws::String&& value) { m_tagKeyHasBeenSet = true; m_tagKey = std::move(value); }
 
     /**
-     * <p>The key-name for the tag.</p>
+     * <p>The key-name for the LF-tag.</p>
      */
     inline void SetTagKey(const char* value) { m_tagKeyHasBeenSet = true; m_tagKey.assign(value); }
 
     /**
-     * <p>The key-name for the tag.</p>
+     * <p>The key-name for the LF-tag.</p>
      */
     inline LFTag& WithTagKey(const Aws::String& value) { SetTagKey(value); return *this;}
 
     /**
-     * <p>The key-name for the tag.</p>
+     * <p>The key-name for the LF-tag.</p>
      */
     inline LFTag& WithTagKey(Aws::String&& value) { SetTagKey(std::move(value)); return *this;}
 
     /**
-     * <p>The key-name for the tag.</p>
+     * <p>The key-name for the LF-tag.</p>
      */
     inline LFTag& WithTagKey(const char* value) { SetTagKey(value); return *this;}
 

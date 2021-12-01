@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/model/AutoImportPolicyType.h>
 #include <aws/fsx/model/DataCompressionType.h>
+#include <aws/fsx/model/LustreLogCreateConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -149,10 +150,14 @@ namespace Model
      * currently exist in the FSx file system. </p> </li> <li> <p>
      * <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports
      * file and directory listings of any new objects added to the S3 bucket and any
-     * existing objects that are changed in the S3 bucket after you choose this option.
-     * </p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
-     * import updates from your S3 bucket</a>.</p>
+     * existing objects that are changed in the S3 bucket after you choose this
+     * option.</p> </li> <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on.
+     * Amazon FSx automatically imports file and directory listings of any new objects
+     * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
+     * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>The
+     * <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems
+     * with the <code>Persistent_2</code> deployment type. Instead, use to update a
+     * data repository association on your <code>Persistent_2</code> file system.</p>
      */
     inline const AutoImportPolicyType& GetAutoImportPolicy() const{ return m_autoImportPolicy; }
 
@@ -170,10 +175,14 @@ namespace Model
      * currently exist in the FSx file system. </p> </li> <li> <p>
      * <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports
      * file and directory listings of any new objects added to the S3 bucket and any
-     * existing objects that are changed in the S3 bucket after you choose this option.
-     * </p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
-     * import updates from your S3 bucket</a>.</p>
+     * existing objects that are changed in the S3 bucket after you choose this
+     * option.</p> </li> <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on.
+     * Amazon FSx automatically imports file and directory listings of any new objects
+     * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
+     * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>The
+     * <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems
+     * with the <code>Persistent_2</code> deployment type. Instead, use to update a
+     * data repository association on your <code>Persistent_2</code> file system.</p>
      */
     inline bool AutoImportPolicyHasBeenSet() const { return m_autoImportPolicyHasBeenSet; }
 
@@ -191,10 +200,14 @@ namespace Model
      * currently exist in the FSx file system. </p> </li> <li> <p>
      * <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports
      * file and directory listings of any new objects added to the S3 bucket and any
-     * existing objects that are changed in the S3 bucket after you choose this option.
-     * </p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
-     * import updates from your S3 bucket</a>.</p>
+     * existing objects that are changed in the S3 bucket after you choose this
+     * option.</p> </li> <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on.
+     * Amazon FSx automatically imports file and directory listings of any new objects
+     * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
+     * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>The
+     * <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems
+     * with the <code>Persistent_2</code> deployment type. Instead, use to update a
+     * data repository association on your <code>Persistent_2</code> file system.</p>
      */
     inline void SetAutoImportPolicy(const AutoImportPolicyType& value) { m_autoImportPolicyHasBeenSet = true; m_autoImportPolicy = value; }
 
@@ -212,10 +225,14 @@ namespace Model
      * currently exist in the FSx file system. </p> </li> <li> <p>
      * <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports
      * file and directory listings of any new objects added to the S3 bucket and any
-     * existing objects that are changed in the S3 bucket after you choose this option.
-     * </p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
-     * import updates from your S3 bucket</a>.</p>
+     * existing objects that are changed in the S3 bucket after you choose this
+     * option.</p> </li> <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on.
+     * Amazon FSx automatically imports file and directory listings of any new objects
+     * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
+     * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>The
+     * <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems
+     * with the <code>Persistent_2</code> deployment type. Instead, use to update a
+     * data repository association on your <code>Persistent_2</code> file system.</p>
      */
     inline void SetAutoImportPolicy(AutoImportPolicyType&& value) { m_autoImportPolicyHasBeenSet = true; m_autoImportPolicy = std::move(value); }
 
@@ -233,10 +250,14 @@ namespace Model
      * currently exist in the FSx file system. </p> </li> <li> <p>
      * <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports
      * file and directory listings of any new objects added to the S3 bucket and any
-     * existing objects that are changed in the S3 bucket after you choose this option.
-     * </p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
-     * import updates from your S3 bucket</a>.</p>
+     * existing objects that are changed in the S3 bucket after you choose this
+     * option.</p> </li> <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on.
+     * Amazon FSx automatically imports file and directory listings of any new objects
+     * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
+     * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>The
+     * <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems
+     * with the <code>Persistent_2</code> deployment type. Instead, use to update a
+     * data repository association on your <code>Persistent_2</code> file system.</p>
      */
     inline UpdateFileSystemLustreConfiguration& WithAutoImportPolicy(const AutoImportPolicyType& value) { SetAutoImportPolicy(value); return *this;}
 
@@ -254,10 +275,14 @@ namespace Model
      * currently exist in the FSx file system. </p> </li> <li> <p>
      * <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports
      * file and directory listings of any new objects added to the S3 bucket and any
-     * existing objects that are changed in the S3 bucket after you choose this option.
-     * </p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
-     * import updates from your S3 bucket</a>.</p>
+     * existing objects that are changed in the S3 bucket after you choose this
+     * option.</p> </li> <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on.
+     * Amazon FSx automatically imports file and directory listings of any new objects
+     * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
+     * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>The
+     * <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems
+     * with the <code>Persistent_2</code> deployment type. Instead, use to update a
+     * data repository association on your <code>Persistent_2</code> file system.</p>
      */
     inline UpdateFileSystemLustreConfiguration& WithAutoImportPolicy(AutoImportPolicyType&& value) { SetAutoImportPolicy(std::move(value)); return *this;}
 
@@ -340,6 +365,55 @@ namespace Model
      */
     inline UpdateFileSystemLustreConfiguration& WithDataCompressionType(DataCompressionType&& value) { SetDataCompressionType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Lustre logging configuration used when updating an Amazon FSx for Lustre
+     * file system. When logging is enabled, Lustre logs error and warning events for
+     * data repositories associated with your file system to Amazon CloudWatch
+     * Logs.</p>
+     */
+    inline const LustreLogCreateConfiguration& GetLogConfiguration() const{ return m_logConfiguration; }
+
+    /**
+     * <p>The Lustre logging configuration used when updating an Amazon FSx for Lustre
+     * file system. When logging is enabled, Lustre logs error and warning events for
+     * data repositories associated with your file system to Amazon CloudWatch
+     * Logs.</p>
+     */
+    inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
+
+    /**
+     * <p>The Lustre logging configuration used when updating an Amazon FSx for Lustre
+     * file system. When logging is enabled, Lustre logs error and warning events for
+     * data repositories associated with your file system to Amazon CloudWatch
+     * Logs.</p>
+     */
+    inline void SetLogConfiguration(const LustreLogCreateConfiguration& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = value; }
+
+    /**
+     * <p>The Lustre logging configuration used when updating an Amazon FSx for Lustre
+     * file system. When logging is enabled, Lustre logs error and warning events for
+     * data repositories associated with your file system to Amazon CloudWatch
+     * Logs.</p>
+     */
+    inline void SetLogConfiguration(LustreLogCreateConfiguration&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::move(value); }
+
+    /**
+     * <p>The Lustre logging configuration used when updating an Amazon FSx for Lustre
+     * file system. When logging is enabled, Lustre logs error and warning events for
+     * data repositories associated with your file system to Amazon CloudWatch
+     * Logs.</p>
+     */
+    inline UpdateFileSystemLustreConfiguration& WithLogConfiguration(const LustreLogCreateConfiguration& value) { SetLogConfiguration(value); return *this;}
+
+    /**
+     * <p>The Lustre logging configuration used when updating an Amazon FSx for Lustre
+     * file system. When logging is enabled, Lustre logs error and warning events for
+     * data repositories associated with your file system to Amazon CloudWatch
+     * Logs.</p>
+     */
+    inline UpdateFileSystemLustreConfiguration& WithLogConfiguration(LustreLogCreateConfiguration&& value) { SetLogConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_weeklyMaintenanceStartTime;
@@ -356,6 +430,9 @@ namespace Model
 
     DataCompressionType m_dataCompressionType;
     bool m_dataCompressionTypeHasBeenSet;
+
+    LustreLogCreateConfiguration m_logConfiguration;
+    bool m_logConfigurationHasBeenSet;
   };
 
 } // namespace Model

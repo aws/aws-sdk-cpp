@@ -16,7 +16,8 @@ DeleteVolumeRequest::DeleteVolumeRequest() :
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_volumeIdHasBeenSet(false),
-    m_ontapConfigurationHasBeenSet(false)
+    m_ontapConfigurationHasBeenSet(false),
+    m_openZFSConfigurationHasBeenSet(false)
 {
 }
 
@@ -39,6 +40,12 @@ Aws::String DeleteVolumeRequest::SerializePayload() const
   if(m_ontapConfigurationHasBeenSet)
   {
    payload.WithObject("OntapConfiguration", m_ontapConfiguration.Jsonize());
+
+  }
+
+  if(m_openZFSConfigurationHasBeenSet)
+  {
+   payload.WithObject("OpenZFSConfiguration", m_openZFSConfiguration.Jsonize());
 
   }
 

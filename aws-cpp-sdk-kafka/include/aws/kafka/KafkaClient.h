@@ -13,10 +13,12 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kafka/model/BatchAssociateScramSecretResult.h>
 #include <aws/kafka/model/CreateClusterResult.h>
+#include <aws/kafka/model/CreateClusterV2Result.h>
 #include <aws/kafka/model/CreateConfigurationResult.h>
 #include <aws/kafka/model/DeleteClusterResult.h>
 #include <aws/kafka/model/DeleteConfigurationResult.h>
 #include <aws/kafka/model/DescribeClusterResult.h>
+#include <aws/kafka/model/DescribeClusterV2Result.h>
 #include <aws/kafka/model/DescribeClusterOperationResult.h>
 #include <aws/kafka/model/DescribeConfigurationResult.h>
 #include <aws/kafka/model/DescribeConfigurationRevisionResult.h>
@@ -25,6 +27,7 @@
 #include <aws/kafka/model/GetCompatibleKafkaVersionsResult.h>
 #include <aws/kafka/model/ListClusterOperationsResult.h>
 #include <aws/kafka/model/ListClustersResult.h>
+#include <aws/kafka/model/ListClustersV2Result.h>
 #include <aws/kafka/model/ListConfigurationRevisionsResult.h>
 #include <aws/kafka/model/ListConfigurationsResult.h>
 #include <aws/kafka/model/ListKafkaVersionsResult.h>
@@ -83,10 +86,12 @@ namespace Model
 {
         class BatchAssociateScramSecretRequest;
         class CreateClusterRequest;
+        class CreateClusterV2Request;
         class CreateConfigurationRequest;
         class DeleteClusterRequest;
         class DeleteConfigurationRequest;
         class DescribeClusterRequest;
+        class DescribeClusterV2Request;
         class DescribeClusterOperationRequest;
         class DescribeConfigurationRequest;
         class DescribeConfigurationRevisionRequest;
@@ -95,6 +100,7 @@ namespace Model
         class GetCompatibleKafkaVersionsRequest;
         class ListClusterOperationsRequest;
         class ListClustersRequest;
+        class ListClustersV2Request;
         class ListConfigurationRevisionsRequest;
         class ListConfigurationsRequest;
         class ListKafkaVersionsRequest;
@@ -116,10 +122,12 @@ namespace Model
 
         typedef Aws::Utils::Outcome<BatchAssociateScramSecretResult, KafkaError> BatchAssociateScramSecretOutcome;
         typedef Aws::Utils::Outcome<CreateClusterResult, KafkaError> CreateClusterOutcome;
+        typedef Aws::Utils::Outcome<CreateClusterV2Result, KafkaError> CreateClusterV2Outcome;
         typedef Aws::Utils::Outcome<CreateConfigurationResult, KafkaError> CreateConfigurationOutcome;
         typedef Aws::Utils::Outcome<DeleteClusterResult, KafkaError> DeleteClusterOutcome;
         typedef Aws::Utils::Outcome<DeleteConfigurationResult, KafkaError> DeleteConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribeClusterResult, KafkaError> DescribeClusterOutcome;
+        typedef Aws::Utils::Outcome<DescribeClusterV2Result, KafkaError> DescribeClusterV2Outcome;
         typedef Aws::Utils::Outcome<DescribeClusterOperationResult, KafkaError> DescribeClusterOperationOutcome;
         typedef Aws::Utils::Outcome<DescribeConfigurationResult, KafkaError> DescribeConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribeConfigurationRevisionResult, KafkaError> DescribeConfigurationRevisionOutcome;
@@ -128,6 +136,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetCompatibleKafkaVersionsResult, KafkaError> GetCompatibleKafkaVersionsOutcome;
         typedef Aws::Utils::Outcome<ListClusterOperationsResult, KafkaError> ListClusterOperationsOutcome;
         typedef Aws::Utils::Outcome<ListClustersResult, KafkaError> ListClustersOutcome;
+        typedef Aws::Utils::Outcome<ListClustersV2Result, KafkaError> ListClustersV2Outcome;
         typedef Aws::Utils::Outcome<ListConfigurationRevisionsResult, KafkaError> ListConfigurationRevisionsOutcome;
         typedef Aws::Utils::Outcome<ListConfigurationsResult, KafkaError> ListConfigurationsOutcome;
         typedef Aws::Utils::Outcome<ListKafkaVersionsResult, KafkaError> ListKafkaVersionsOutcome;
@@ -149,10 +158,12 @@ namespace Model
 
         typedef std::future<BatchAssociateScramSecretOutcome> BatchAssociateScramSecretOutcomeCallable;
         typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
+        typedef std::future<CreateClusterV2Outcome> CreateClusterV2OutcomeCallable;
         typedef std::future<CreateConfigurationOutcome> CreateConfigurationOutcomeCallable;
         typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
         typedef std::future<DeleteConfigurationOutcome> DeleteConfigurationOutcomeCallable;
         typedef std::future<DescribeClusterOutcome> DescribeClusterOutcomeCallable;
+        typedef std::future<DescribeClusterV2Outcome> DescribeClusterV2OutcomeCallable;
         typedef std::future<DescribeClusterOperationOutcome> DescribeClusterOperationOutcomeCallable;
         typedef std::future<DescribeConfigurationOutcome> DescribeConfigurationOutcomeCallable;
         typedef std::future<DescribeConfigurationRevisionOutcome> DescribeConfigurationRevisionOutcomeCallable;
@@ -161,6 +172,7 @@ namespace Model
         typedef std::future<GetCompatibleKafkaVersionsOutcome> GetCompatibleKafkaVersionsOutcomeCallable;
         typedef std::future<ListClusterOperationsOutcome> ListClusterOperationsOutcomeCallable;
         typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
+        typedef std::future<ListClustersV2Outcome> ListClustersV2OutcomeCallable;
         typedef std::future<ListConfigurationRevisionsOutcome> ListConfigurationRevisionsOutcomeCallable;
         typedef std::future<ListConfigurationsOutcome> ListConfigurationsOutcomeCallable;
         typedef std::future<ListKafkaVersionsOutcome> ListKafkaVersionsOutcomeCallable;
@@ -185,10 +197,12 @@ namespace Model
 
     typedef std::function<void(const KafkaClient*, const Model::BatchAssociateScramSecretRequest&, const Model::BatchAssociateScramSecretOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchAssociateScramSecretResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::CreateClusterRequest&, const Model::CreateClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClusterResponseReceivedHandler;
+    typedef std::function<void(const KafkaClient*, const Model::CreateClusterV2Request&, const Model::CreateClusterV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClusterV2ResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::CreateConfigurationRequest&, const Model::CreateConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConfigurationResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::DeleteClusterRequest&, const Model::DeleteClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClusterResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::DeleteConfigurationRequest&, const Model::DeleteConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigurationResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::DescribeClusterRequest&, const Model::DescribeClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterResponseReceivedHandler;
+    typedef std::function<void(const KafkaClient*, const Model::DescribeClusterV2Request&, const Model::DescribeClusterV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterV2ResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::DescribeClusterOperationRequest&, const Model::DescribeClusterOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterOperationResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::DescribeConfigurationRequest&, const Model::DescribeConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConfigurationResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::DescribeConfigurationRevisionRequest&, const Model::DescribeConfigurationRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConfigurationRevisionResponseReceivedHandler;
@@ -197,6 +211,7 @@ namespace Model
     typedef std::function<void(const KafkaClient*, const Model::GetCompatibleKafkaVersionsRequest&, const Model::GetCompatibleKafkaVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCompatibleKafkaVersionsResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::ListClusterOperationsRequest&, const Model::ListClusterOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClusterOperationsResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::ListClustersRequest&, const Model::ListClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClustersResponseReceivedHandler;
+    typedef std::function<void(const KafkaClient*, const Model::ListClustersV2Request&, const Model::ListClustersV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClustersV2ResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::ListConfigurationRevisionsRequest&, const Model::ListConfigurationRevisionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConfigurationRevisionsResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::ListConfigurationsRequest&, const Model::ListConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConfigurationsResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::ListKafkaVersionsRequest&, const Model::ListKafkaVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListKafkaVersionsResponseReceivedHandler;
@@ -316,6 +331,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateClusterAsync(const Model::CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+            <p>Creates a new MSK cluster.</p>
+         <p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateClusterV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateClusterV2Outcome CreateClusterV2(const Model::CreateClusterV2Request& request) const;
+
+        /**
+         * 
+            <p>Creates a new MSK cluster.</p>
+         <p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateClusterV2">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateClusterV2OutcomeCallable CreateClusterV2Callable(const Model::CreateClusterV2Request& request) const;
+
+        /**
+         * 
+            <p>Creates a new MSK cluster.</p>
+         <p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateClusterV2">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateClusterV2Async(const Model::CreateClusterV2Request& request, const CreateClusterV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * 
@@ -452,6 +501,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeClusterAsync(const Model::DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+            <p>Returns a description of the MSK cluster whose Amazon Resource
+         * Name (ARN) is specified in the request.</p>
+         <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeClusterV2Outcome DescribeClusterV2(const Model::DescribeClusterV2Request& request) const;
+
+        /**
+         * 
+            <p>Returns a description of the MSK cluster whose Amazon Resource
+         * Name (ARN) is specified in the request.</p>
+         <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterV2">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeClusterV2OutcomeCallable DescribeClusterV2Callable(const Model::DescribeClusterV2Request& request) const;
+
+        /**
+         * 
+            <p>Returns a description of the MSK cluster whose Amazon Resource
+         * Name (ARN) is specified in the request.</p>
+         <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterV2">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeClusterV2Async(const Model::DescribeClusterV2Request& request, const DescribeClusterV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * 
@@ -724,6 +807,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListClustersAsync(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+            <p>Returns a list of all the MSK clusters in the current
+         * Region.</p>
+         <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClustersV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListClustersV2Outcome ListClustersV2(const Model::ListClustersV2Request& request) const;
+
+        /**
+         * 
+            <p>Returns a list of all the MSK clusters in the current
+         * Region.</p>
+         <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClustersV2">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListClustersV2OutcomeCallable ListClustersV2Callable(const Model::ListClustersV2Request& request) const;
+
+        /**
+         * 
+            <p>Returns a list of all the MSK clusters in the current
+         * Region.</p>
+         <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClustersV2">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListClustersV2Async(const Model::ListClustersV2Request& request, const ListClustersV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * 
@@ -1343,10 +1460,12 @@ namespace Model
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void BatchAssociateScramSecretAsyncHelper(const Model::BatchAssociateScramSecretRequest& request, const BatchAssociateScramSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateClusterAsyncHelper(const Model::CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateClusterV2AsyncHelper(const Model::CreateClusterV2Request& request, const CreateClusterV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateConfigurationAsyncHelper(const Model::CreateConfigurationRequest& request, const CreateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteClusterAsyncHelper(const Model::DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConfigurationAsyncHelper(const Model::DeleteConfigurationRequest& request, const DeleteConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClusterAsyncHelper(const Model::DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeClusterV2AsyncHelper(const Model::DescribeClusterV2Request& request, const DescribeClusterV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClusterOperationAsyncHelper(const Model::DescribeClusterOperationRequest& request, const DescribeClusterOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeConfigurationAsyncHelper(const Model::DescribeConfigurationRequest& request, const DescribeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeConfigurationRevisionAsyncHelper(const Model::DescribeConfigurationRevisionRequest& request, const DescribeConfigurationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1355,6 +1474,7 @@ namespace Model
         void GetCompatibleKafkaVersionsAsyncHelper(const Model::GetCompatibleKafkaVersionsRequest& request, const GetCompatibleKafkaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListClusterOperationsAsyncHelper(const Model::ListClusterOperationsRequest& request, const ListClusterOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListClustersAsyncHelper(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListClustersV2AsyncHelper(const Model::ListClustersV2Request& request, const ListClustersV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListConfigurationRevisionsAsyncHelper(const Model::ListConfigurationRevisionsRequest& request, const ListConfigurationRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListConfigurationsAsyncHelper(const Model::ListConfigurationsRequest& request, const ListConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListKafkaVersionsAsyncHelper(const Model::ListKafkaVersionsRequest& request, const ListKafkaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

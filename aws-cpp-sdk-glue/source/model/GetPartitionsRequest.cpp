@@ -22,7 +22,9 @@ GetPartitionsRequest::GetPartitionsRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_excludeColumnSchema(false),
-    m_excludeColumnSchemaHasBeenSet(false)
+    m_excludeColumnSchemaHasBeenSet(false),
+    m_transactionIdHasBeenSet(false),
+    m_queryAsOfTimeHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,17 @@ Aws::String GetPartitionsRequest::SerializePayload() const
   {
    payload.WithBool("ExcludeColumnSchema", m_excludeColumnSchema);
 
+  }
+
+  if(m_transactionIdHasBeenSet)
+  {
+   payload.WithString("TransactionId", m_transactionId);
+
+  }
+
+  if(m_queryAsOfTimeHasBeenSet)
+  {
+   payload.WithDouble("QueryAsOfTime", m_queryAsOfTime.SecondsWithMSPrecision());
   }
 
   return payload.View().WriteReadable();

@@ -34,7 +34,8 @@ LustreFileSystemConfiguration::LustreFileSystemConfiguration() :
     m_driveCacheType(DriveCacheType::NOT_SET),
     m_driveCacheTypeHasBeenSet(false),
     m_dataCompressionType(DataCompressionType::NOT_SET),
-    m_dataCompressionTypeHasBeenSet(false)
+    m_dataCompressionTypeHasBeenSet(false),
+    m_logConfigurationHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ LustreFileSystemConfiguration::LustreFileSystemConfiguration(JsonView jsonValue)
     m_driveCacheType(DriveCacheType::NOT_SET),
     m_driveCacheTypeHasBeenSet(false),
     m_dataCompressionType(DataCompressionType::NOT_SET),
-    m_dataCompressionTypeHasBeenSet(false)
+    m_dataCompressionTypeHasBeenSet(false),
+    m_logConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -131,6 +133,13 @@ LustreFileSystemConfiguration& LustreFileSystemConfiguration::operator =(JsonVie
     m_dataCompressionTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LogConfiguration"))
+  {
+    m_logConfiguration = jsonValue.GetObject("LogConfiguration");
+
+    m_logConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -193,6 +202,12 @@ JsonValue LustreFileSystemConfiguration::Jsonize() const
   if(m_dataCompressionTypeHasBeenSet)
   {
    payload.WithString("DataCompressionType", DataCompressionTypeMapper::GetNameForDataCompressionType(m_dataCompressionType));
+  }
+
+  if(m_logConfigurationHasBeenSet)
+  {
+   payload.WithObject("LogConfiguration", m_logConfiguration.Jsonize());
+
   }
 
   return payload;

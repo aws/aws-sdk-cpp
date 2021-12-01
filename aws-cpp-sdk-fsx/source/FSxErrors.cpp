@@ -90,8 +90,11 @@ namespace FSxErrorMapper
 {
 
 static const int INCOMPATIBLE_PARAMETER_HASH = HashingUtils::HashString("IncompatibleParameterError");
+static const int SNAPSHOT_NOT_FOUND_HASH = HashingUtils::HashString("SnapshotNotFound");
+static const int DATA_REPOSITORY_ASSOCIATION_NOT_FOUND_HASH = HashingUtils::HashString("DataRepositoryAssociationNotFound");
 static const int ACTIVE_DIRECTORY_HASH = HashingUtils::HashString("ActiveDirectoryError");
 static const int FILE_SYSTEM_NOT_FOUND_HASH = HashingUtils::HashString("FileSystemNotFound");
+static const int INVALID_DATA_REPOSITORY_TYPE_HASH = HashingUtils::HashString("InvalidDataRepositoryType");
 static const int INVALID_NETWORK_SETTINGS_HASH = HashingUtils::HashString("InvalidNetworkSettings");
 static const int INVALID_SOURCE_KMS_KEY_HASH = HashingUtils::HashString("InvalidSourceKmsKey");
 static const int INVALID_IMPORT_PATH_HASH = HashingUtils::HashString("InvalidImportPath");
@@ -127,6 +130,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INCOMPATIBLE_PARAMETER), false);
   }
+  else if (hashCode == SNAPSHOT_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::SNAPSHOT_NOT_FOUND), false);
+  }
+  else if (hashCode == DATA_REPOSITORY_ASSOCIATION_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::DATA_REPOSITORY_ASSOCIATION_NOT_FOUND), false);
+  }
   else if (hashCode == ACTIVE_DIRECTORY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::ACTIVE_DIRECTORY), false);
@@ -134,6 +145,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == FILE_SYSTEM_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::FILE_SYSTEM_NOT_FOUND), false);
+  }
+  else if (hashCode == INVALID_DATA_REPOSITORY_TYPE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_DATA_REPOSITORY_TYPE), false);
   }
   else if (hashCode == INVALID_NETWORK_SETTINGS_HASH)
   {

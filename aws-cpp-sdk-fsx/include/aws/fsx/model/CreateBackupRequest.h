@@ -142,113 +142,113 @@ namespace Model
     /**
      * <p>(Optional) The tags to apply to the backup at backup creation. The key value
      * of the <code>Name</code> tag appears in the console as the backup name. If you
-     * have set <code>CopyTagsToBackups</code> to true, and you specify one or more
-     * tags using the <code>CreateBackup</code> action, no existing file system tags
-     * are copied from the file system to the backup.</p>
+     * have set <code>CopyTagsToBackups</code> to <code>true</code>, and you specify
+     * one or more tags using the <code>CreateBackup</code> operation, no existing file
+     * system tags are copied from the file system to the backup.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>(Optional) The tags to apply to the backup at backup creation. The key value
      * of the <code>Name</code> tag appears in the console as the backup name. If you
-     * have set <code>CopyTagsToBackups</code> to true, and you specify one or more
-     * tags using the <code>CreateBackup</code> action, no existing file system tags
-     * are copied from the file system to the backup.</p>
+     * have set <code>CopyTagsToBackups</code> to <code>true</code>, and you specify
+     * one or more tags using the <code>CreateBackup</code> operation, no existing file
+     * system tags are copied from the file system to the backup.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>(Optional) The tags to apply to the backup at backup creation. The key value
      * of the <code>Name</code> tag appears in the console as the backup name. If you
-     * have set <code>CopyTagsToBackups</code> to true, and you specify one or more
-     * tags using the <code>CreateBackup</code> action, no existing file system tags
-     * are copied from the file system to the backup.</p>
+     * have set <code>CopyTagsToBackups</code> to <code>true</code>, and you specify
+     * one or more tags using the <code>CreateBackup</code> operation, no existing file
+     * system tags are copied from the file system to the backup.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>(Optional) The tags to apply to the backup at backup creation. The key value
      * of the <code>Name</code> tag appears in the console as the backup name. If you
-     * have set <code>CopyTagsToBackups</code> to true, and you specify one or more
-     * tags using the <code>CreateBackup</code> action, no existing file system tags
-     * are copied from the file system to the backup.</p>
+     * have set <code>CopyTagsToBackups</code> to <code>true</code>, and you specify
+     * one or more tags using the <code>CreateBackup</code> operation, no existing file
+     * system tags are copied from the file system to the backup.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>(Optional) The tags to apply to the backup at backup creation. The key value
      * of the <code>Name</code> tag appears in the console as the backup name. If you
-     * have set <code>CopyTagsToBackups</code> to true, and you specify one or more
-     * tags using the <code>CreateBackup</code> action, no existing file system tags
-     * are copied from the file system to the backup.</p>
+     * have set <code>CopyTagsToBackups</code> to <code>true</code>, and you specify
+     * one or more tags using the <code>CreateBackup</code> operation, no existing file
+     * system tags are copied from the file system to the backup.</p>
      */
     inline CreateBackupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>(Optional) The tags to apply to the backup at backup creation. The key value
      * of the <code>Name</code> tag appears in the console as the backup name. If you
-     * have set <code>CopyTagsToBackups</code> to true, and you specify one or more
-     * tags using the <code>CreateBackup</code> action, no existing file system tags
-     * are copied from the file system to the backup.</p>
+     * have set <code>CopyTagsToBackups</code> to <code>true</code>, and you specify
+     * one or more tags using the <code>CreateBackup</code> operation, no existing file
+     * system tags are copied from the file system to the backup.</p>
      */
     inline CreateBackupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) The tags to apply to the backup at backup creation. The key value
      * of the <code>Name</code> tag appears in the console as the backup name. If you
-     * have set <code>CopyTagsToBackups</code> to true, and you specify one or more
-     * tags using the <code>CreateBackup</code> action, no existing file system tags
-     * are copied from the file system to the backup.</p>
+     * have set <code>CopyTagsToBackups</code> to <code>true</code>, and you specify
+     * one or more tags using the <code>CreateBackup</code> operation, no existing file
+     * system tags are copied from the file system to the backup.</p>
      */
     inline CreateBackupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>(Optional) The tags to apply to the backup at backup creation. The key value
      * of the <code>Name</code> tag appears in the console as the backup name. If you
-     * have set <code>CopyTagsToBackups</code> to true, and you specify one or more
-     * tags using the <code>CreateBackup</code> action, no existing file system tags
-     * are copied from the file system to the backup.</p>
+     * have set <code>CopyTagsToBackups</code> to <code>true</code>, and you specify
+     * one or more tags using the <code>CreateBackup</code> operation, no existing file
+     * system tags are copied from the file system to the backup.</p>
      */
     inline CreateBackupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The ID of he FSx for NetApp ONTAP volume to back up.</p>
+     * <p>(Optional) The ID of the FSx for ONTAP volume to back up.</p>
      */
     inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
 
     /**
-     * <p>The ID of he FSx for NetApp ONTAP volume to back up.</p>
+     * <p>(Optional) The ID of the FSx for ONTAP volume to back up.</p>
      */
     inline bool VolumeIdHasBeenSet() const { return m_volumeIdHasBeenSet; }
 
     /**
-     * <p>The ID of he FSx for NetApp ONTAP volume to back up.</p>
+     * <p>(Optional) The ID of the FSx for ONTAP volume to back up.</p>
      */
     inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
 
     /**
-     * <p>The ID of he FSx for NetApp ONTAP volume to back up.</p>
+     * <p>(Optional) The ID of the FSx for ONTAP volume to back up.</p>
      */
     inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
 
     /**
-     * <p>The ID of he FSx for NetApp ONTAP volume to back up.</p>
+     * <p>(Optional) The ID of the FSx for ONTAP volume to back up.</p>
      */
     inline void SetVolumeId(const char* value) { m_volumeIdHasBeenSet = true; m_volumeId.assign(value); }
 
     /**
-     * <p>The ID of he FSx for NetApp ONTAP volume to back up.</p>
+     * <p>(Optional) The ID of the FSx for ONTAP volume to back up.</p>
      */
     inline CreateBackupRequest& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
 
     /**
-     * <p>The ID of he FSx for NetApp ONTAP volume to back up.</p>
+     * <p>(Optional) The ID of the FSx for ONTAP volume to back up.</p>
      */
     inline CreateBackupRequest& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of he FSx for NetApp ONTAP volume to back up.</p>
+     * <p>(Optional) The ID of the FSx for ONTAP volume to back up.</p>
      */
     inline CreateBackupRequest& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 

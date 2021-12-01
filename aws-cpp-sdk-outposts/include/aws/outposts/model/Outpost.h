@@ -7,6 +7,7 @@
 #include <aws/outposts/Outposts_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/outposts/model/SupportedHardwareType.h>
 #include <utility>
 
 namespace Aws
@@ -369,6 +370,37 @@ namespace Model
     
     inline Outpost& WithSiteArn(const char* value) { SetSiteArn(value); return *this;}
 
+
+    /**
+     * <p> The hardware type. </p>
+     */
+    inline const SupportedHardwareType& GetSupportedHardwareType() const{ return m_supportedHardwareType; }
+
+    /**
+     * <p> The hardware type. </p>
+     */
+    inline bool SupportedHardwareTypeHasBeenSet() const { return m_supportedHardwareTypeHasBeenSet; }
+
+    /**
+     * <p> The hardware type. </p>
+     */
+    inline void SetSupportedHardwareType(const SupportedHardwareType& value) { m_supportedHardwareTypeHasBeenSet = true; m_supportedHardwareType = value; }
+
+    /**
+     * <p> The hardware type. </p>
+     */
+    inline void SetSupportedHardwareType(SupportedHardwareType&& value) { m_supportedHardwareTypeHasBeenSet = true; m_supportedHardwareType = std::move(value); }
+
+    /**
+     * <p> The hardware type. </p>
+     */
+    inline Outpost& WithSupportedHardwareType(const SupportedHardwareType& value) { SetSupportedHardwareType(value); return *this;}
+
+    /**
+     * <p> The hardware type. </p>
+     */
+    inline Outpost& WithSupportedHardwareType(SupportedHardwareType&& value) { SetSupportedHardwareType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_outpostId;
@@ -403,6 +435,9 @@ namespace Model
 
     Aws::String m_siteArn;
     bool m_siteArnHasBeenSet;
+
+    SupportedHardwareType m_supportedHardwareType;
+    bool m_supportedHardwareTypeHasBeenSet;
   };
 
 } // namespace Model

@@ -24,7 +24,8 @@ CreateFileSystemFromBackupRequest::CreateFileSystemFromBackupRequest() :
     m_storageType(StorageType::NOT_SET),
     m_storageTypeHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
-    m_fileSystemTypeVersionHasBeenSet(false)
+    m_fileSystemTypeVersionHasBeenSet(false),
+    m_openZFSConfigurationHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,12 @@ Aws::String CreateFileSystemFromBackupRequest::SerializePayload() const
   if(m_fileSystemTypeVersionHasBeenSet)
   {
    payload.WithString("FileSystemTypeVersion", m_fileSystemTypeVersion);
+
+  }
+
+  if(m_openZFSConfigurationHasBeenSet)
+  {
+   payload.WithObject("OpenZFSConfiguration", m_openZFSConfiguration.Jsonize());
 
   }
 

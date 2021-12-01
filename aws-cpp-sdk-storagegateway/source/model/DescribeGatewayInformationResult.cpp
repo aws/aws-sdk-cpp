@@ -161,6 +161,12 @@ DescribeGatewayInformationResult& DescribeGatewayInformationResult::operator =(c
     }
   }
 
+  if(jsonValue.ValueExists("HostEnvironmentId"))
+  {
+    m_hostEnvironmentId = jsonValue.GetString("HostEnvironmentId");
+
+  }
+
 
 
   return *this;

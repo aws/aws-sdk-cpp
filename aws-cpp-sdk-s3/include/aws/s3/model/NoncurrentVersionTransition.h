@@ -25,13 +25,14 @@ namespace Model
   /**
    * <p>Container for the transition rule that describes when noncurrent objects
    * transition to the <code>STANDARD_IA</code>, <code>ONEZONE_IA</code>,
-   * <code>INTELLIGENT_TIERING</code>, <code>GLACIER</code>, or
-   * <code>DEEP_ARCHIVE</code> storage class. If your bucket is versioning-enabled
+   * <code>INTELLIGENT_TIERING</code>, <code>GLACIER_IR</code>, <code>GLACIER</code>,
+   * or <code>DEEP_ARCHIVE</code> storage class. If your bucket is versioning-enabled
    * (or versioning is suspended), you can set this action to request that Amazon S3
    * transition noncurrent object versions to the <code>STANDARD_IA</code>,
-   * <code>ONEZONE_IA</code>, <code>INTELLIGENT_TIERING</code>, <code>GLACIER</code>,
-   * or <code>DEEP_ARCHIVE</code> storage class at a specific period in the object's
-   * lifetime.</p><p><h3>See Also:</h3>   <a
+   * <code>ONEZONE_IA</code>, <code>INTELLIGENT_TIERING</code>,
+   * <code>GLACIER_IR</code>, <code>GLACIER</code>, or <code>DEEP_ARCHIVE</code>
+   * storage class at a specific period in the object's lifetime.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/NoncurrentVersionTransition">AWS
    * API Reference</a></p>
    */

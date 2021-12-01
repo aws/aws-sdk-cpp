@@ -220,6 +220,47 @@ namespace Model
      */
     inline CreateTableRequest& AddPartitionIndexes(PartitionIndex&& value) { m_partitionIndexesHasBeenSet = true; m_partitionIndexes.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The ID of the transaction.</p>
+     */
+    inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
+
+    /**
+     * <p>The ID of the transaction.</p>
+     */
+    inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the transaction.</p>
+     */
+    inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
+
+    /**
+     * <p>The ID of the transaction.</p>
+     */
+    inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
+
+    /**
+     * <p>The ID of the transaction.</p>
+     */
+    inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
+
+    /**
+     * <p>The ID of the transaction.</p>
+     */
+    inline CreateTableRequest& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
+
+    /**
+     * <p>The ID of the transaction.</p>
+     */
+    inline CreateTableRequest& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the transaction.</p>
+     */
+    inline CreateTableRequest& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
+
   private:
 
     Aws::String m_catalogId;
@@ -233,6 +274,9 @@ namespace Model
 
     Aws::Vector<PartitionIndex> m_partitionIndexes;
     bool m_partitionIndexesHasBeenSet;
+
+    Aws::String m_transactionId;
+    bool m_transactionIdHasBeenSet;
   };
 
 } // namespace Model

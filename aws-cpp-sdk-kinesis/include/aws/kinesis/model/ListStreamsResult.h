@@ -40,50 +40,50 @@ namespace Model
 
 
     /**
-     * <p>The names of the streams that are associated with the AWS account making the
-     * <code>ListStreams</code> request.</p>
+     * <p>The names of the streams that are associated with the Amazon Web Services
+     * account making the <code>ListStreams</code> request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetStreamNames() const{ return m_streamNames; }
 
     /**
-     * <p>The names of the streams that are associated with the AWS account making the
-     * <code>ListStreams</code> request.</p>
+     * <p>The names of the streams that are associated with the Amazon Web Services
+     * account making the <code>ListStreams</code> request.</p>
      */
     inline void SetStreamNames(const Aws::Vector<Aws::String>& value) { m_streamNames = value; }
 
     /**
-     * <p>The names of the streams that are associated with the AWS account making the
-     * <code>ListStreams</code> request.</p>
+     * <p>The names of the streams that are associated with the Amazon Web Services
+     * account making the <code>ListStreams</code> request.</p>
      */
     inline void SetStreamNames(Aws::Vector<Aws::String>&& value) { m_streamNames = std::move(value); }
 
     /**
-     * <p>The names of the streams that are associated with the AWS account making the
-     * <code>ListStreams</code> request.</p>
+     * <p>The names of the streams that are associated with the Amazon Web Services
+     * account making the <code>ListStreams</code> request.</p>
      */
     inline ListStreamsResult& WithStreamNames(const Aws::Vector<Aws::String>& value) { SetStreamNames(value); return *this;}
 
     /**
-     * <p>The names of the streams that are associated with the AWS account making the
-     * <code>ListStreams</code> request.</p>
+     * <p>The names of the streams that are associated with the Amazon Web Services
+     * account making the <code>ListStreams</code> request.</p>
      */
     inline ListStreamsResult& WithStreamNames(Aws::Vector<Aws::String>&& value) { SetStreamNames(std::move(value)); return *this;}
 
     /**
-     * <p>The names of the streams that are associated with the AWS account making the
-     * <code>ListStreams</code> request.</p>
+     * <p>The names of the streams that are associated with the Amazon Web Services
+     * account making the <code>ListStreams</code> request.</p>
      */
     inline ListStreamsResult& AddStreamNames(const Aws::String& value) { m_streamNames.push_back(value); return *this; }
 
     /**
-     * <p>The names of the streams that are associated with the AWS account making the
-     * <code>ListStreams</code> request.</p>
+     * <p>The names of the streams that are associated with the Amazon Web Services
+     * account making the <code>ListStreams</code> request.</p>
      */
     inline ListStreamsResult& AddStreamNames(Aws::String&& value) { m_streamNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The names of the streams that are associated with the AWS account making the
-     * <code>ListStreams</code> request.</p>
+     * <p>The names of the streams that are associated with the Amazon Web Services
+     * account making the <code>ListStreams</code> request.</p>
      */
     inline ListStreamsResult& AddStreamNames(const char* value) { m_streamNames.push_back(value); return *this; }
 

@@ -9,6 +9,7 @@
 #include <aws/accessanalyzer/model/Locale.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/accessanalyzer/model/PolicyType.h>
+#include <aws/accessanalyzer/model/ValidatePolicyResourceType.h>
 #include <utility>
 
 namespace Aws
@@ -252,6 +253,85 @@ namespace Model
      */
     inline ValidatePolicyRequest& WithPolicyType(PolicyType&& value) { SetPolicyType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The type of resource to attach to your resource policy. Specify a value for
+     * the policy validation resource type only if the policy type is
+     * <code>RESOURCE_POLICY</code>. For example, to validate a resource policy to
+     * attach to an Amazon S3 bucket, you can choose <code>AWS::S3::Bucket</code> for
+     * the policy validation resource type.</p> <p>For resource types not supported as
+     * valid values, IAM Access Analyzer runs policy checks that apply to all resource
+     * policies. For example, to validate a resource policy to attach to a KMS key, do
+     * not specify a value for the policy validation resource type and IAM Access
+     * Analyzer will run policy checks that apply to all resource policies.</p>
+     */
+    inline const ValidatePolicyResourceType& GetValidatePolicyResourceType() const{ return m_validatePolicyResourceType; }
+
+    /**
+     * <p>The type of resource to attach to your resource policy. Specify a value for
+     * the policy validation resource type only if the policy type is
+     * <code>RESOURCE_POLICY</code>. For example, to validate a resource policy to
+     * attach to an Amazon S3 bucket, you can choose <code>AWS::S3::Bucket</code> for
+     * the policy validation resource type.</p> <p>For resource types not supported as
+     * valid values, IAM Access Analyzer runs policy checks that apply to all resource
+     * policies. For example, to validate a resource policy to attach to a KMS key, do
+     * not specify a value for the policy validation resource type and IAM Access
+     * Analyzer will run policy checks that apply to all resource policies.</p>
+     */
+    inline bool ValidatePolicyResourceTypeHasBeenSet() const { return m_validatePolicyResourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of resource to attach to your resource policy. Specify a value for
+     * the policy validation resource type only if the policy type is
+     * <code>RESOURCE_POLICY</code>. For example, to validate a resource policy to
+     * attach to an Amazon S3 bucket, you can choose <code>AWS::S3::Bucket</code> for
+     * the policy validation resource type.</p> <p>For resource types not supported as
+     * valid values, IAM Access Analyzer runs policy checks that apply to all resource
+     * policies. For example, to validate a resource policy to attach to a KMS key, do
+     * not specify a value for the policy validation resource type and IAM Access
+     * Analyzer will run policy checks that apply to all resource policies.</p>
+     */
+    inline void SetValidatePolicyResourceType(const ValidatePolicyResourceType& value) { m_validatePolicyResourceTypeHasBeenSet = true; m_validatePolicyResourceType = value; }
+
+    /**
+     * <p>The type of resource to attach to your resource policy. Specify a value for
+     * the policy validation resource type only if the policy type is
+     * <code>RESOURCE_POLICY</code>. For example, to validate a resource policy to
+     * attach to an Amazon S3 bucket, you can choose <code>AWS::S3::Bucket</code> for
+     * the policy validation resource type.</p> <p>For resource types not supported as
+     * valid values, IAM Access Analyzer runs policy checks that apply to all resource
+     * policies. For example, to validate a resource policy to attach to a KMS key, do
+     * not specify a value for the policy validation resource type and IAM Access
+     * Analyzer will run policy checks that apply to all resource policies.</p>
+     */
+    inline void SetValidatePolicyResourceType(ValidatePolicyResourceType&& value) { m_validatePolicyResourceTypeHasBeenSet = true; m_validatePolicyResourceType = std::move(value); }
+
+    /**
+     * <p>The type of resource to attach to your resource policy. Specify a value for
+     * the policy validation resource type only if the policy type is
+     * <code>RESOURCE_POLICY</code>. For example, to validate a resource policy to
+     * attach to an Amazon S3 bucket, you can choose <code>AWS::S3::Bucket</code> for
+     * the policy validation resource type.</p> <p>For resource types not supported as
+     * valid values, IAM Access Analyzer runs policy checks that apply to all resource
+     * policies. For example, to validate a resource policy to attach to a KMS key, do
+     * not specify a value for the policy validation resource type and IAM Access
+     * Analyzer will run policy checks that apply to all resource policies.</p>
+     */
+    inline ValidatePolicyRequest& WithValidatePolicyResourceType(const ValidatePolicyResourceType& value) { SetValidatePolicyResourceType(value); return *this;}
+
+    /**
+     * <p>The type of resource to attach to your resource policy. Specify a value for
+     * the policy validation resource type only if the policy type is
+     * <code>RESOURCE_POLICY</code>. For example, to validate a resource policy to
+     * attach to an Amazon S3 bucket, you can choose <code>AWS::S3::Bucket</code> for
+     * the policy validation resource type.</p> <p>For resource types not supported as
+     * valid values, IAM Access Analyzer runs policy checks that apply to all resource
+     * policies. For example, to validate a resource policy to attach to a KMS key, do
+     * not specify a value for the policy validation resource type and IAM Access
+     * Analyzer will run policy checks that apply to all resource policies.</p>
+     */
+    inline ValidatePolicyRequest& WithValidatePolicyResourceType(ValidatePolicyResourceType&& value) { SetValidatePolicyResourceType(std::move(value)); return *this;}
+
   private:
 
     Locale m_locale;
@@ -268,6 +348,9 @@ namespace Model
 
     PolicyType m_policyType;
     bool m_policyTypeHasBeenSet;
+
+    ValidatePolicyResourceType m_validatePolicyResourceType;
+    bool m_validatePolicyResourceTypeHasBeenSet;
   };
 
 } // namespace Model

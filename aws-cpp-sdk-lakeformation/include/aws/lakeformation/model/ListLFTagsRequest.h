@@ -32,125 +32,123 @@ namespace Model
 
     Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline ListLFTagsRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline ListLFTagsRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline ListLFTagsRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
 
     /**
-     * <p>If resource share type is <code>ALL</code>, returns both in-account tags and
-     * shared tags that the requester has permission to view. If resource share type is
-     * <code>FOREIGN</code>, returns all share tags that the requester can view. If no
-     * resource share type is passed, lists tags in the given catalog ID that the
-     * requester has permission to view.</p>
+     * <p>If resource share type is <code>ALL</code>, returns both in-account LF-tags
+     * and shared LF-tags that the requester has permission to view. If resource share
+     * type is <code>FOREIGN</code>, returns all share LF-tags that the requester can
+     * view. If no resource share type is passed, lists LF-tags in the given catalog ID
+     * that the requester has permission to view.</p>
      */
     inline const ResourceShareType& GetResourceShareType() const{ return m_resourceShareType; }
 
     /**
-     * <p>If resource share type is <code>ALL</code>, returns both in-account tags and
-     * shared tags that the requester has permission to view. If resource share type is
-     * <code>FOREIGN</code>, returns all share tags that the requester can view. If no
-     * resource share type is passed, lists tags in the given catalog ID that the
-     * requester has permission to view.</p>
+     * <p>If resource share type is <code>ALL</code>, returns both in-account LF-tags
+     * and shared LF-tags that the requester has permission to view. If resource share
+     * type is <code>FOREIGN</code>, returns all share LF-tags that the requester can
+     * view. If no resource share type is passed, lists LF-tags in the given catalog ID
+     * that the requester has permission to view.</p>
      */
     inline bool ResourceShareTypeHasBeenSet() const { return m_resourceShareTypeHasBeenSet; }
 
     /**
-     * <p>If resource share type is <code>ALL</code>, returns both in-account tags and
-     * shared tags that the requester has permission to view. If resource share type is
-     * <code>FOREIGN</code>, returns all share tags that the requester can view. If no
-     * resource share type is passed, lists tags in the given catalog ID that the
-     * requester has permission to view.</p>
+     * <p>If resource share type is <code>ALL</code>, returns both in-account LF-tags
+     * and shared LF-tags that the requester has permission to view. If resource share
+     * type is <code>FOREIGN</code>, returns all share LF-tags that the requester can
+     * view. If no resource share type is passed, lists LF-tags in the given catalog ID
+     * that the requester has permission to view.</p>
      */
     inline void SetResourceShareType(const ResourceShareType& value) { m_resourceShareTypeHasBeenSet = true; m_resourceShareType = value; }
 
     /**
-     * <p>If resource share type is <code>ALL</code>, returns both in-account tags and
-     * shared tags that the requester has permission to view. If resource share type is
-     * <code>FOREIGN</code>, returns all share tags that the requester can view. If no
-     * resource share type is passed, lists tags in the given catalog ID that the
-     * requester has permission to view.</p>
+     * <p>If resource share type is <code>ALL</code>, returns both in-account LF-tags
+     * and shared LF-tags that the requester has permission to view. If resource share
+     * type is <code>FOREIGN</code>, returns all share LF-tags that the requester can
+     * view. If no resource share type is passed, lists LF-tags in the given catalog ID
+     * that the requester has permission to view.</p>
      */
     inline void SetResourceShareType(ResourceShareType&& value) { m_resourceShareTypeHasBeenSet = true; m_resourceShareType = std::move(value); }
 
     /**
-     * <p>If resource share type is <code>ALL</code>, returns both in-account tags and
-     * shared tags that the requester has permission to view. If resource share type is
-     * <code>FOREIGN</code>, returns all share tags that the requester can view. If no
-     * resource share type is passed, lists tags in the given catalog ID that the
-     * requester has permission to view.</p>
+     * <p>If resource share type is <code>ALL</code>, returns both in-account LF-tags
+     * and shared LF-tags that the requester has permission to view. If resource share
+     * type is <code>FOREIGN</code>, returns all share LF-tags that the requester can
+     * view. If no resource share type is passed, lists LF-tags in the given catalog ID
+     * that the requester has permission to view.</p>
      */
     inline ListLFTagsRequest& WithResourceShareType(const ResourceShareType& value) { SetResourceShareType(value); return *this;}
 
     /**
-     * <p>If resource share type is <code>ALL</code>, returns both in-account tags and
-     * shared tags that the requester has permission to view. If resource share type is
-     * <code>FOREIGN</code>, returns all share tags that the requester can view. If no
-     * resource share type is passed, lists tags in the given catalog ID that the
-     * requester has permission to view.</p>
+     * <p>If resource share type is <code>ALL</code>, returns both in-account LF-tags
+     * and shared LF-tags that the requester has permission to view. If resource share
+     * type is <code>FOREIGN</code>, returns all share LF-tags that the requester can
+     * view. If no resource share type is passed, lists LF-tags in the given catalog ID
+     * that the requester has permission to view.</p>
      */
     inline ListLFTagsRequest& WithResourceShareType(ResourceShareType&& value) { SetResourceShareType(std::move(value)); return *this;}
 

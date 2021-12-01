@@ -30,7 +30,9 @@ Volume::Volume() :
     m_volumeIdHasBeenSet(false),
     m_volumeType(VolumeType::NOT_SET),
     m_volumeTypeHasBeenSet(false),
-    m_lifecycleTransitionReasonHasBeenSet(false)
+    m_lifecycleTransitionReasonHasBeenSet(false),
+    m_administrativeActionsHasBeenSet(false),
+    m_openZFSConfigurationHasBeenSet(false)
 {
 }
 
@@ -46,7 +48,9 @@ Volume::Volume(JsonView jsonValue) :
     m_volumeIdHasBeenSet(false),
     m_volumeType(VolumeType::NOT_SET),
     m_volumeTypeHasBeenSet(false),
-    m_lifecycleTransitionReasonHasBeenSet(false)
+    m_lifecycleTransitionReasonHasBeenSet(false),
+    m_administrativeActionsHasBeenSet(false),
+    m_openZFSConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -126,6 +130,23 @@ Volume& Volume::operator =(JsonView jsonValue)
     m_lifecycleTransitionReasonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AdministrativeActions"))
+  {
+    Array<JsonView> administrativeActionsJsonList = jsonValue.GetArray("AdministrativeActions");
+    for(unsigned administrativeActionsIndex = 0; administrativeActionsIndex < administrativeActionsJsonList.GetLength(); ++administrativeActionsIndex)
+    {
+      m_administrativeActions.push_back(administrativeActionsJsonList[administrativeActionsIndex].AsObject());
+    }
+    m_administrativeActionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OpenZFSConfiguration"))
+  {
+    m_openZFSConfiguration = jsonValue.GetObject("OpenZFSConfiguration");
+
+    m_openZFSConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -192,6 +213,23 @@ JsonValue Volume::Jsonize() const
   if(m_lifecycleTransitionReasonHasBeenSet)
   {
    payload.WithObject("LifecycleTransitionReason", m_lifecycleTransitionReason.Jsonize());
+
+  }
+
+  if(m_administrativeActionsHasBeenSet)
+  {
+   Array<JsonValue> administrativeActionsJsonList(m_administrativeActions.size());
+   for(unsigned administrativeActionsIndex = 0; administrativeActionsIndex < administrativeActionsJsonList.GetLength(); ++administrativeActionsIndex)
+   {
+     administrativeActionsJsonList[administrativeActionsIndex].AsObject(m_administrativeActions[administrativeActionsIndex].Jsonize());
+   }
+   payload.WithArray("AdministrativeActions", std::move(administrativeActionsJsonList));
+
+  }
+
+  if(m_openZFSConfigurationHasBeenSet)
+  {
+   payload.WithObject("OpenZFSConfiguration", m_openZFSConfiguration.Jsonize());
 
   }
 

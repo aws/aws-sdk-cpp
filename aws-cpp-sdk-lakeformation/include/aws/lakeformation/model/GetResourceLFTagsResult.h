@@ -35,109 +35,109 @@ namespace Model
 
 
     /**
-     * <p>A list of tags applied to a database resource.</p>
+     * <p>A list of LF-tags applied to a database resource.</p>
      */
     inline const Aws::Vector<LFTagPair>& GetLFTagOnDatabase() const{ return m_lFTagOnDatabase; }
 
     /**
-     * <p>A list of tags applied to a database resource.</p>
+     * <p>A list of LF-tags applied to a database resource.</p>
      */
     inline void SetLFTagOnDatabase(const Aws::Vector<LFTagPair>& value) { m_lFTagOnDatabase = value; }
 
     /**
-     * <p>A list of tags applied to a database resource.</p>
+     * <p>A list of LF-tags applied to a database resource.</p>
      */
     inline void SetLFTagOnDatabase(Aws::Vector<LFTagPair>&& value) { m_lFTagOnDatabase = std::move(value); }
 
     /**
-     * <p>A list of tags applied to a database resource.</p>
+     * <p>A list of LF-tags applied to a database resource.</p>
      */
     inline GetResourceLFTagsResult& WithLFTagOnDatabase(const Aws::Vector<LFTagPair>& value) { SetLFTagOnDatabase(value); return *this;}
 
     /**
-     * <p>A list of tags applied to a database resource.</p>
+     * <p>A list of LF-tags applied to a database resource.</p>
      */
     inline GetResourceLFTagsResult& WithLFTagOnDatabase(Aws::Vector<LFTagPair>&& value) { SetLFTagOnDatabase(std::move(value)); return *this;}
 
     /**
-     * <p>A list of tags applied to a database resource.</p>
+     * <p>A list of LF-tags applied to a database resource.</p>
      */
     inline GetResourceLFTagsResult& AddLFTagOnDatabase(const LFTagPair& value) { m_lFTagOnDatabase.push_back(value); return *this; }
 
     /**
-     * <p>A list of tags applied to a database resource.</p>
+     * <p>A list of LF-tags applied to a database resource.</p>
      */
     inline GetResourceLFTagsResult& AddLFTagOnDatabase(LFTagPair&& value) { m_lFTagOnDatabase.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A list of tags applied to a table resource.</p>
+     * <p>A list of LF-tags applied to a table resource.</p>
      */
     inline const Aws::Vector<LFTagPair>& GetLFTagsOnTable() const{ return m_lFTagsOnTable; }
 
     /**
-     * <p>A list of tags applied to a table resource.</p>
+     * <p>A list of LF-tags applied to a table resource.</p>
      */
     inline void SetLFTagsOnTable(const Aws::Vector<LFTagPair>& value) { m_lFTagsOnTable = value; }
 
     /**
-     * <p>A list of tags applied to a table resource.</p>
+     * <p>A list of LF-tags applied to a table resource.</p>
      */
     inline void SetLFTagsOnTable(Aws::Vector<LFTagPair>&& value) { m_lFTagsOnTable = std::move(value); }
 
     /**
-     * <p>A list of tags applied to a table resource.</p>
+     * <p>A list of LF-tags applied to a table resource.</p>
      */
     inline GetResourceLFTagsResult& WithLFTagsOnTable(const Aws::Vector<LFTagPair>& value) { SetLFTagsOnTable(value); return *this;}
 
     /**
-     * <p>A list of tags applied to a table resource.</p>
+     * <p>A list of LF-tags applied to a table resource.</p>
      */
     inline GetResourceLFTagsResult& WithLFTagsOnTable(Aws::Vector<LFTagPair>&& value) { SetLFTagsOnTable(std::move(value)); return *this;}
 
     /**
-     * <p>A list of tags applied to a table resource.</p>
+     * <p>A list of LF-tags applied to a table resource.</p>
      */
     inline GetResourceLFTagsResult& AddLFTagsOnTable(const LFTagPair& value) { m_lFTagsOnTable.push_back(value); return *this; }
 
     /**
-     * <p>A list of tags applied to a table resource.</p>
+     * <p>A list of LF-tags applied to a table resource.</p>
      */
     inline GetResourceLFTagsResult& AddLFTagsOnTable(LFTagPair&& value) { m_lFTagsOnTable.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A list of tags applied to a column resource.</p>
+     * <p>A list of LF-tags applied to a column resource.</p>
      */
     inline const Aws::Vector<ColumnLFTag>& GetLFTagsOnColumns() const{ return m_lFTagsOnColumns; }
 
     /**
-     * <p>A list of tags applied to a column resource.</p>
+     * <p>A list of LF-tags applied to a column resource.</p>
      */
     inline void SetLFTagsOnColumns(const Aws::Vector<ColumnLFTag>& value) { m_lFTagsOnColumns = value; }
 
     /**
-     * <p>A list of tags applied to a column resource.</p>
+     * <p>A list of LF-tags applied to a column resource.</p>
      */
     inline void SetLFTagsOnColumns(Aws::Vector<ColumnLFTag>&& value) { m_lFTagsOnColumns = std::move(value); }
 
     /**
-     * <p>A list of tags applied to a column resource.</p>
+     * <p>A list of LF-tags applied to a column resource.</p>
      */
     inline GetResourceLFTagsResult& WithLFTagsOnColumns(const Aws::Vector<ColumnLFTag>& value) { SetLFTagsOnColumns(value); return *this;}
 
     /**
-     * <p>A list of tags applied to a column resource.</p>
+     * <p>A list of LF-tags applied to a column resource.</p>
      */
     inline GetResourceLFTagsResult& WithLFTagsOnColumns(Aws::Vector<ColumnLFTag>&& value) { SetLFTagsOnColumns(std::move(value)); return *this;}
 
     /**
-     * <p>A list of tags applied to a column resource.</p>
+     * <p>A list of LF-tags applied to a column resource.</p>
      */
     inline GetResourceLFTagsResult& AddLFTagsOnColumns(const ColumnLFTag& value) { m_lFTagsOnColumns.push_back(value); return *this; }
 
     /**
-     * <p>A list of tags applied to a column resource.</p>
+     * <p>A list of LF-tags applied to a column resource.</p>
      */
     inline GetResourceLFTagsResult& AddLFTagsOnColumns(ColumnLFTag&& value) { m_lFTagsOnColumns.push_back(std::move(value)); return *this; }
 

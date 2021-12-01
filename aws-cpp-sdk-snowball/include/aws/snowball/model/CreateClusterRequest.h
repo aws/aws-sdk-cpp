@@ -105,86 +105,80 @@ namespace Model
 
     /**
      * <p>The resources associated with the cluster job. These resources include Amazon
-     * S3 buckets and optional AWS Lambda functions written in the Python language.
-     * </p>
+     * S3 buckets and optional Lambda functions written in the Python language. </p>
      */
     inline const JobResource& GetResources() const{ return m_resources; }
 
     /**
      * <p>The resources associated with the cluster job. These resources include Amazon
-     * S3 buckets and optional AWS Lambda functions written in the Python language.
-     * </p>
+     * S3 buckets and optional Lambda functions written in the Python language. </p>
      */
     inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
 
     /**
      * <p>The resources associated with the cluster job. These resources include Amazon
-     * S3 buckets and optional AWS Lambda functions written in the Python language.
-     * </p>
+     * S3 buckets and optional Lambda functions written in the Python language. </p>
      */
     inline void SetResources(const JobResource& value) { m_resourcesHasBeenSet = true; m_resources = value; }
 
     /**
      * <p>The resources associated with the cluster job. These resources include Amazon
-     * S3 buckets and optional AWS Lambda functions written in the Python language.
-     * </p>
+     * S3 buckets and optional Lambda functions written in the Python language. </p>
      */
     inline void SetResources(JobResource&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
 
     /**
      * <p>The resources associated with the cluster job. These resources include Amazon
-     * S3 buckets and optional AWS Lambda functions written in the Python language.
-     * </p>
+     * S3 buckets and optional Lambda functions written in the Python language. </p>
      */
     inline CreateClusterRequest& WithResources(const JobResource& value) { SetResources(value); return *this;}
 
     /**
      * <p>The resources associated with the cluster job. These resources include Amazon
-     * S3 buckets and optional AWS Lambda functions written in the Python language.
-     * </p>
+     * S3 buckets and optional Lambda functions written in the Python language. </p>
      */
     inline CreateClusterRequest& WithResources(JobResource&& value) { SetResources(std::move(value)); return *this;}
 
 
     /**
      * <p>Specifies the service or services on the Snow Family device that your
-     * transferred data will be exported from or imported into. AWS Snow Family
-     * supports Amazon S3 and NFS (Network File System).</p>
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
      */
     inline const OnDeviceServiceConfiguration& GetOnDeviceServiceConfiguration() const{ return m_onDeviceServiceConfiguration; }
 
     /**
      * <p>Specifies the service or services on the Snow Family device that your
-     * transferred data will be exported from or imported into. AWS Snow Family
-     * supports Amazon S3 and NFS (Network File System).</p>
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
      */
     inline bool OnDeviceServiceConfigurationHasBeenSet() const { return m_onDeviceServiceConfigurationHasBeenSet; }
 
     /**
      * <p>Specifies the service or services on the Snow Family device that your
-     * transferred data will be exported from or imported into. AWS Snow Family
-     * supports Amazon S3 and NFS (Network File System).</p>
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
      */
     inline void SetOnDeviceServiceConfiguration(const OnDeviceServiceConfiguration& value) { m_onDeviceServiceConfigurationHasBeenSet = true; m_onDeviceServiceConfiguration = value; }
 
     /**
      * <p>Specifies the service or services on the Snow Family device that your
-     * transferred data will be exported from or imported into. AWS Snow Family
-     * supports Amazon S3 and NFS (Network File System).</p>
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
      */
     inline void SetOnDeviceServiceConfiguration(OnDeviceServiceConfiguration&& value) { m_onDeviceServiceConfigurationHasBeenSet = true; m_onDeviceServiceConfiguration = std::move(value); }
 
     /**
      * <p>Specifies the service or services on the Snow Family device that your
-     * transferred data will be exported from or imported into. AWS Snow Family
-     * supports Amazon S3 and NFS (Network File System).</p>
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
      */
     inline CreateClusterRequest& WithOnDeviceServiceConfiguration(const OnDeviceServiceConfiguration& value) { SetOnDeviceServiceConfiguration(value); return *this;}
 
     /**
      * <p>Specifies the service or services on the Snow Family device that your
-     * transferred data will be exported from or imported into. AWS Snow Family
-     * supports Amazon S3 and NFS (Network File System).</p>
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
      */
     inline CreateClusterRequest& WithOnDeviceServiceConfiguration(OnDeviceServiceConfiguration&& value) { SetOnDeviceServiceConfiguration(std::move(value)); return *this;}
 
@@ -283,7 +277,7 @@ namespace Model
      * <p>The <code>KmsKeyARN</code> value that you want to associate with this
      * cluster. <code>KmsKeyARN</code> values are created by using the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-     * API action in AWS Key Management Service (AWS KMS). </p>
+     * API action in Key Management Service (KMS). </p>
      */
     inline const Aws::String& GetKmsKeyARN() const{ return m_kmsKeyARN; }
 
@@ -291,7 +285,7 @@ namespace Model
      * <p>The <code>KmsKeyARN</code> value that you want to associate with this
      * cluster. <code>KmsKeyARN</code> values are created by using the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-     * API action in AWS Key Management Service (AWS KMS). </p>
+     * API action in Key Management Service (KMS). </p>
      */
     inline bool KmsKeyARNHasBeenSet() const { return m_kmsKeyARNHasBeenSet; }
 
@@ -299,7 +293,7 @@ namespace Model
      * <p>The <code>KmsKeyARN</code> value that you want to associate with this
      * cluster. <code>KmsKeyARN</code> values are created by using the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-     * API action in AWS Key Management Service (AWS KMS). </p>
+     * API action in Key Management Service (KMS). </p>
      */
     inline void SetKmsKeyARN(const Aws::String& value) { m_kmsKeyARNHasBeenSet = true; m_kmsKeyARN = value; }
 
@@ -307,7 +301,7 @@ namespace Model
      * <p>The <code>KmsKeyARN</code> value that you want to associate with this
      * cluster. <code>KmsKeyARN</code> values are created by using the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-     * API action in AWS Key Management Service (AWS KMS). </p>
+     * API action in Key Management Service (KMS). </p>
      */
     inline void SetKmsKeyARN(Aws::String&& value) { m_kmsKeyARNHasBeenSet = true; m_kmsKeyARN = std::move(value); }
 
@@ -315,7 +309,7 @@ namespace Model
      * <p>The <code>KmsKeyARN</code> value that you want to associate with this
      * cluster. <code>KmsKeyARN</code> values are created by using the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-     * API action in AWS Key Management Service (AWS KMS). </p>
+     * API action in Key Management Service (KMS). </p>
      */
     inline void SetKmsKeyARN(const char* value) { m_kmsKeyARNHasBeenSet = true; m_kmsKeyARN.assign(value); }
 
@@ -323,7 +317,7 @@ namespace Model
      * <p>The <code>KmsKeyARN</code> value that you want to associate with this
      * cluster. <code>KmsKeyARN</code> values are created by using the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-     * API action in AWS Key Management Service (AWS KMS). </p>
+     * API action in Key Management Service (KMS). </p>
      */
     inline CreateClusterRequest& WithKmsKeyARN(const Aws::String& value) { SetKmsKeyARN(value); return *this;}
 
@@ -331,7 +325,7 @@ namespace Model
      * <p>The <code>KmsKeyARN</code> value that you want to associate with this
      * cluster. <code>KmsKeyARN</code> values are created by using the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-     * API action in AWS Key Management Service (AWS KMS). </p>
+     * API action in Key Management Service (KMS). </p>
      */
     inline CreateClusterRequest& WithKmsKeyARN(Aws::String&& value) { SetKmsKeyARN(std::move(value)); return *this;}
 
@@ -339,7 +333,7 @@ namespace Model
      * <p>The <code>KmsKeyARN</code> value that you want to associate with this
      * cluster. <code>KmsKeyARN</code> values are created by using the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-     * API action in AWS Key Management Service (AWS KMS). </p>
+     * API action in Key Management Service (KMS). </p>
      */
     inline CreateClusterRequest& WithKmsKeyARN(const char* value) { SetKmsKeyARN(value); return *this;}
 
@@ -348,7 +342,7 @@ namespace Model
      * <p>The <code>RoleARN</code> that you want to associate with this cluster.
      * <code>RoleArn</code> values are created by using the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * API action in AWS Identity and Access Management (IAM).</p>
+     * API action in Identity and Access Management (IAM).</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
@@ -356,7 +350,7 @@ namespace Model
      * <p>The <code>RoleARN</code> that you want to associate with this cluster.
      * <code>RoleArn</code> values are created by using the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * API action in AWS Identity and Access Management (IAM).</p>
+     * API action in Identity and Access Management (IAM).</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
@@ -364,7 +358,7 @@ namespace Model
      * <p>The <code>RoleARN</code> that you want to associate with this cluster.
      * <code>RoleArn</code> values are created by using the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * API action in AWS Identity and Access Management (IAM).</p>
+     * API action in Identity and Access Management (IAM).</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
@@ -372,7 +366,7 @@ namespace Model
      * <p>The <code>RoleARN</code> that you want to associate with this cluster.
      * <code>RoleArn</code> values are created by using the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * API action in AWS Identity and Access Management (IAM).</p>
+     * API action in Identity and Access Management (IAM).</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
@@ -380,7 +374,7 @@ namespace Model
      * <p>The <code>RoleARN</code> that you want to associate with this cluster.
      * <code>RoleArn</code> values are created by using the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * API action in AWS Identity and Access Management (IAM).</p>
+     * API action in Identity and Access Management (IAM).</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
@@ -388,7 +382,7 @@ namespace Model
      * <p>The <code>RoleARN</code> that you want to associate with this cluster.
      * <code>RoleArn</code> values are created by using the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * API action in AWS Identity and Access Management (IAM).</p>
+     * API action in Identity and Access Management (IAM).</p>
      */
     inline CreateClusterRequest& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
@@ -396,7 +390,7 @@ namespace Model
      * <p>The <code>RoleARN</code> that you want to associate with this cluster.
      * <code>RoleArn</code> values are created by using the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * API action in AWS Identity and Access Management (IAM).</p>
+     * API action in Identity and Access Management (IAM).</p>
      */
     inline CreateClusterRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
@@ -404,14 +398,14 @@ namespace Model
      * <p>The <code>RoleARN</code> that you want to associate with this cluster.
      * <code>RoleArn</code> values are created by using the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * API action in AWS Identity and Access Management (IAM).</p>
+     * API action in Identity and Access Management (IAM).</p>
      */
     inline CreateClusterRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
 
     /**
-     * <p>The type of AWS Snow Family device to use for this cluster. </p> 
-     * <p>For cluster jobs, AWS Snow Family currently supports only the
+     * <p>The type of Snow Family Devices to use for this cluster. </p>  <p>For
+     * cluster jobs, Amazon Web Services Snow Family currently supports only the
      * <code>EDGE</code> device type.</p>  <p>For more information, see
      * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
      * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
@@ -421,8 +415,8 @@ namespace Model
     inline const SnowballType& GetSnowballType() const{ return m_snowballType; }
 
     /**
-     * <p>The type of AWS Snow Family device to use for this cluster. </p> 
-     * <p>For cluster jobs, AWS Snow Family currently supports only the
+     * <p>The type of Snow Family Devices to use for this cluster. </p>  <p>For
+     * cluster jobs, Amazon Web Services Snow Family currently supports only the
      * <code>EDGE</code> device type.</p>  <p>For more information, see
      * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
      * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
@@ -432,8 +426,8 @@ namespace Model
     inline bool SnowballTypeHasBeenSet() const { return m_snowballTypeHasBeenSet; }
 
     /**
-     * <p>The type of AWS Snow Family device to use for this cluster. </p> 
-     * <p>For cluster jobs, AWS Snow Family currently supports only the
+     * <p>The type of Snow Family Devices to use for this cluster. </p>  <p>For
+     * cluster jobs, Amazon Web Services Snow Family currently supports only the
      * <code>EDGE</code> device type.</p>  <p>For more information, see
      * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
      * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
@@ -443,8 +437,8 @@ namespace Model
     inline void SetSnowballType(const SnowballType& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
 
     /**
-     * <p>The type of AWS Snow Family device to use for this cluster. </p> 
-     * <p>For cluster jobs, AWS Snow Family currently supports only the
+     * <p>The type of Snow Family Devices to use for this cluster. </p>  <p>For
+     * cluster jobs, Amazon Web Services Snow Family currently supports only the
      * <code>EDGE</code> device type.</p>  <p>For more information, see
      * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
      * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
@@ -454,8 +448,8 @@ namespace Model
     inline void SetSnowballType(SnowballType&& value) { m_snowballTypeHasBeenSet = true; m_snowballType = std::move(value); }
 
     /**
-     * <p>The type of AWS Snow Family device to use for this cluster. </p> 
-     * <p>For cluster jobs, AWS Snow Family currently supports only the
+     * <p>The type of Snow Family Devices to use for this cluster. </p>  <p>For
+     * cluster jobs, Amazon Web Services Snow Family currently supports only the
      * <code>EDGE</code> device type.</p>  <p>For more information, see
      * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
      * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
@@ -465,8 +459,8 @@ namespace Model
     inline CreateClusterRequest& WithSnowballType(const SnowballType& value) { SetSnowballType(value); return *this;}
 
     /**
-     * <p>The type of AWS Snow Family device to use for this cluster. </p> 
-     * <p>For cluster jobs, AWS Snow Family currently supports only the
+     * <p>The type of Snow Family Devices to use for this cluster. </p>  <p>For
+     * cluster jobs, Amazon Web Services Snow Family currently supports only the
      * <code>EDGE</code> device type.</p>  <p>For more information, see
      * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
      * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
@@ -702,32 +696,32 @@ namespace Model
 
 
     /**
-     * <p>The tax documents required in your AWS Region.</p>
+     * <p>The tax documents required in your Amazon Web Services Region.</p>
      */
     inline const TaxDocuments& GetTaxDocuments() const{ return m_taxDocuments; }
 
     /**
-     * <p>The tax documents required in your AWS Region.</p>
+     * <p>The tax documents required in your Amazon Web Services Region.</p>
      */
     inline bool TaxDocumentsHasBeenSet() const { return m_taxDocumentsHasBeenSet; }
 
     /**
-     * <p>The tax documents required in your AWS Region.</p>
+     * <p>The tax documents required in your Amazon Web Services Region.</p>
      */
     inline void SetTaxDocuments(const TaxDocuments& value) { m_taxDocumentsHasBeenSet = true; m_taxDocuments = value; }
 
     /**
-     * <p>The tax documents required in your AWS Region.</p>
+     * <p>The tax documents required in your Amazon Web Services Region.</p>
      */
     inline void SetTaxDocuments(TaxDocuments&& value) { m_taxDocumentsHasBeenSet = true; m_taxDocuments = std::move(value); }
 
     /**
-     * <p>The tax documents required in your AWS Region.</p>
+     * <p>The tax documents required in your Amazon Web Services Region.</p>
      */
     inline CreateClusterRequest& WithTaxDocuments(const TaxDocuments& value) { SetTaxDocuments(value); return *this;}
 
     /**
-     * <p>The tax documents required in your AWS Region.</p>
+     * <p>The tax documents required in your Amazon Web Services Region.</p>
      */
     inline CreateClusterRequest& WithTaxDocuments(TaxDocuments&& value) { SetTaxDocuments(std::move(value)); return *this;}
 

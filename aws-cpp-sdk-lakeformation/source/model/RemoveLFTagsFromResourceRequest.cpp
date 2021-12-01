@@ -49,14 +49,6 @@ Aws::String RemoveLFTagsFromResourceRequest::SerializePayload() const
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection RemoveLFTagsFromResourceRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSLakeFormation.RemoveLFTagsFromResource"));
-  return headers;
-
-}
-
 
 
 

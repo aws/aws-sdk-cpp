@@ -466,6 +466,76 @@ namespace Model
      */
     inline ModifySubnetAttributeRequest& WithEnableResourceNameDnsAAAARecordOnLaunch(AttributeBooleanValue&& value) { SetEnableResourceNameDnsAAAARecordOnLaunch(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Indicates the device position for local network interfaces in this subnet.
+     * For example, <code>1</code> indicates local network interfaces in this subnet
+     * are the secondary network interface (eth1). A local network interface cannot be
+     * the primary network interface (eth0). </p>
+     */
+    inline int GetEnableLniAtDeviceIndex() const{ return m_enableLniAtDeviceIndex; }
+
+    /**
+     * <p> Indicates the device position for local network interfaces in this subnet.
+     * For example, <code>1</code> indicates local network interfaces in this subnet
+     * are the secondary network interface (eth1). A local network interface cannot be
+     * the primary network interface (eth0). </p>
+     */
+    inline bool EnableLniAtDeviceIndexHasBeenSet() const { return m_enableLniAtDeviceIndexHasBeenSet; }
+
+    /**
+     * <p> Indicates the device position for local network interfaces in this subnet.
+     * For example, <code>1</code> indicates local network interfaces in this subnet
+     * are the secondary network interface (eth1). A local network interface cannot be
+     * the primary network interface (eth0). </p>
+     */
+    inline void SetEnableLniAtDeviceIndex(int value) { m_enableLniAtDeviceIndexHasBeenSet = true; m_enableLniAtDeviceIndex = value; }
+
+    /**
+     * <p> Indicates the device position for local network interfaces in this subnet.
+     * For example, <code>1</code> indicates local network interfaces in this subnet
+     * are the secondary network interface (eth1). A local network interface cannot be
+     * the primary network interface (eth0). </p>
+     */
+    inline ModifySubnetAttributeRequest& WithEnableLniAtDeviceIndex(int value) { SetEnableLniAtDeviceIndex(value); return *this;}
+
+
+    /**
+     * <p> Specify <code>true</code> to indicate that local network interfaces at the
+     * current position should be disabled. </p>
+     */
+    inline const AttributeBooleanValue& GetDisableLniAtDeviceIndex() const{ return m_disableLniAtDeviceIndex; }
+
+    /**
+     * <p> Specify <code>true</code> to indicate that local network interfaces at the
+     * current position should be disabled. </p>
+     */
+    inline bool DisableLniAtDeviceIndexHasBeenSet() const { return m_disableLniAtDeviceIndexHasBeenSet; }
+
+    /**
+     * <p> Specify <code>true</code> to indicate that local network interfaces at the
+     * current position should be disabled. </p>
+     */
+    inline void SetDisableLniAtDeviceIndex(const AttributeBooleanValue& value) { m_disableLniAtDeviceIndexHasBeenSet = true; m_disableLniAtDeviceIndex = value; }
+
+    /**
+     * <p> Specify <code>true</code> to indicate that local network interfaces at the
+     * current position should be disabled. </p>
+     */
+    inline void SetDisableLniAtDeviceIndex(AttributeBooleanValue&& value) { m_disableLniAtDeviceIndexHasBeenSet = true; m_disableLniAtDeviceIndex = std::move(value); }
+
+    /**
+     * <p> Specify <code>true</code> to indicate that local network interfaces at the
+     * current position should be disabled. </p>
+     */
+    inline ModifySubnetAttributeRequest& WithDisableLniAtDeviceIndex(const AttributeBooleanValue& value) { SetDisableLniAtDeviceIndex(value); return *this;}
+
+    /**
+     * <p> Specify <code>true</code> to indicate that local network interfaces at the
+     * current position should be disabled. </p>
+     */
+    inline ModifySubnetAttributeRequest& WithDisableLniAtDeviceIndex(AttributeBooleanValue&& value) { SetDisableLniAtDeviceIndex(std::move(value)); return *this;}
+
   private:
 
     AttributeBooleanValue m_assignIpv6AddressOnCreation;
@@ -494,6 +564,12 @@ namespace Model
 
     AttributeBooleanValue m_enableResourceNameDnsAAAARecordOnLaunch;
     bool m_enableResourceNameDnsAAAARecordOnLaunchHasBeenSet;
+
+    int m_enableLniAtDeviceIndex;
+    bool m_enableLniAtDeviceIndexHasBeenSet;
+
+    AttributeBooleanValue m_disableLniAtDeviceIndex;
+    bool m_disableLniAtDeviceIndexHasBeenSet;
   };
 
 } // namespace Model

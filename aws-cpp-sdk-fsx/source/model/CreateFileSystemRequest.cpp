@@ -28,7 +28,8 @@ CreateFileSystemRequest::CreateFileSystemRequest() :
     m_windowsConfigurationHasBeenSet(false),
     m_lustreConfigurationHasBeenSet(false),
     m_ontapConfigurationHasBeenSet(false),
-    m_fileSystemTypeVersionHasBeenSet(false)
+    m_fileSystemTypeVersionHasBeenSet(false),
+    m_openZFSConfigurationHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,12 @@ Aws::String CreateFileSystemRequest::SerializePayload() const
   if(m_fileSystemTypeVersionHasBeenSet)
   {
    payload.WithString("FileSystemTypeVersion", m_fileSystemTypeVersion);
+
+  }
+
+  if(m_openZFSConfigurationHasBeenSet)
+  {
+   payload.WithObject("OpenZFSConfiguration", m_openZFSConfiguration.Jsonize());
 
   }
 

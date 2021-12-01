@@ -42,6 +42,12 @@ DescribeReturnShippingLabelResult& DescribeReturnShippingLabelResult::operator =
 
   }
 
+  if(jsonValue.ValueExists("ReturnShippingLabelURI"))
+  {
+    m_returnShippingLabelURI = jsonValue.GetString("ReturnShippingLabelURI");
+
+  }
+
 
 
   return *this;

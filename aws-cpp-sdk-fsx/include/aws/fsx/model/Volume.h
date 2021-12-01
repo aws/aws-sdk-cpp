@@ -12,7 +12,9 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/fsx/model/VolumeType.h>
 #include <aws/fsx/model/LifecycleTransitionReason.h>
+#include <aws/fsx/model/OpenZFSVolumeConfiguration.h>
 #include <aws/fsx/model/Tag.h>
+#include <aws/fsx/model/AdministrativeAction.h>
 #include <utility>
 
 namespace Aws
@@ -31,8 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes an Amazon FSx for NetApp ONTAP volume.</p><p><h3>See Also:</h3>  
-   * <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/Volume">AWS API
+   * <p>Describes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS
+   * volume.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/Volume">AWS API
    * Reference</a></p>
    */
   class AWS_FSX_API Volume
@@ -89,74 +92,80 @@ namespace Model
 
 
     /**
-     * <p>The lifecycle status of the volume.</p> <ul> <li> <p> <code>CREATED</code> -
-     * The volume is fully available for use.</p> </li> <li> <p> <code>CREATING</code>
-     * - Amazon FSx is creating the new volume.</p> </li> <li> <p>
-     * <code>DELETING</code> - Amazon FSx is deleting an existing volume.</p> </li>
-     * <li> <p> <code>FAILED</code> - Amazon FSx was unable to create the volume.</p>
-     * </li> <li> <p> <code>MISCONFIGURED</code> - The volume is in a failed but
-     * recoverable state.</p> </li> <li> <p> <code>PENDING</code> - Amazon FSx has not
-     * started creating the volume.</p> </li> </ul>
+     * <p>The lifecycle status of the volume.</p> <ul> <li> <p> <code>AVAILABLE</code>
+     * - The volume is fully available for use.</p> </li> <li> <p> <code>CREATED</code>
+     * - The volume has been created.</p> </li> <li> <p> <code>CREATING</code> - Amazon
+     * FSx is creating the new volume.</p> </li> <li> <p> <code>DELETING</code> -
+     * Amazon FSx is deleting an existing volume.</p> </li> <li> <p>
+     * <code>FAILED</code> - Amazon FSx was unable to create the volume.</p> </li> <li>
+     * <p> <code>MISCONFIGURED</code> - The volume is in a failed but recoverable
+     * state.</p> </li> <li> <p> <code>PENDING</code> - Amazon FSx hasn't started
+     * creating the volume.</p> </li> </ul>
      */
     inline const VolumeLifecycle& GetLifecycle() const{ return m_lifecycle; }
 
     /**
-     * <p>The lifecycle status of the volume.</p> <ul> <li> <p> <code>CREATED</code> -
-     * The volume is fully available for use.</p> </li> <li> <p> <code>CREATING</code>
-     * - Amazon FSx is creating the new volume.</p> </li> <li> <p>
-     * <code>DELETING</code> - Amazon FSx is deleting an existing volume.</p> </li>
-     * <li> <p> <code>FAILED</code> - Amazon FSx was unable to create the volume.</p>
-     * </li> <li> <p> <code>MISCONFIGURED</code> - The volume is in a failed but
-     * recoverable state.</p> </li> <li> <p> <code>PENDING</code> - Amazon FSx has not
-     * started creating the volume.</p> </li> </ul>
+     * <p>The lifecycle status of the volume.</p> <ul> <li> <p> <code>AVAILABLE</code>
+     * - The volume is fully available for use.</p> </li> <li> <p> <code>CREATED</code>
+     * - The volume has been created.</p> </li> <li> <p> <code>CREATING</code> - Amazon
+     * FSx is creating the new volume.</p> </li> <li> <p> <code>DELETING</code> -
+     * Amazon FSx is deleting an existing volume.</p> </li> <li> <p>
+     * <code>FAILED</code> - Amazon FSx was unable to create the volume.</p> </li> <li>
+     * <p> <code>MISCONFIGURED</code> - The volume is in a failed but recoverable
+     * state.</p> </li> <li> <p> <code>PENDING</code> - Amazon FSx hasn't started
+     * creating the volume.</p> </li> </ul>
      */
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
 
     /**
-     * <p>The lifecycle status of the volume.</p> <ul> <li> <p> <code>CREATED</code> -
-     * The volume is fully available for use.</p> </li> <li> <p> <code>CREATING</code>
-     * - Amazon FSx is creating the new volume.</p> </li> <li> <p>
-     * <code>DELETING</code> - Amazon FSx is deleting an existing volume.</p> </li>
-     * <li> <p> <code>FAILED</code> - Amazon FSx was unable to create the volume.</p>
-     * </li> <li> <p> <code>MISCONFIGURED</code> - The volume is in a failed but
-     * recoverable state.</p> </li> <li> <p> <code>PENDING</code> - Amazon FSx has not
-     * started creating the volume.</p> </li> </ul>
+     * <p>The lifecycle status of the volume.</p> <ul> <li> <p> <code>AVAILABLE</code>
+     * - The volume is fully available for use.</p> </li> <li> <p> <code>CREATED</code>
+     * - The volume has been created.</p> </li> <li> <p> <code>CREATING</code> - Amazon
+     * FSx is creating the new volume.</p> </li> <li> <p> <code>DELETING</code> -
+     * Amazon FSx is deleting an existing volume.</p> </li> <li> <p>
+     * <code>FAILED</code> - Amazon FSx was unable to create the volume.</p> </li> <li>
+     * <p> <code>MISCONFIGURED</code> - The volume is in a failed but recoverable
+     * state.</p> </li> <li> <p> <code>PENDING</code> - Amazon FSx hasn't started
+     * creating the volume.</p> </li> </ul>
      */
     inline void SetLifecycle(const VolumeLifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
 
     /**
-     * <p>The lifecycle status of the volume.</p> <ul> <li> <p> <code>CREATED</code> -
-     * The volume is fully available for use.</p> </li> <li> <p> <code>CREATING</code>
-     * - Amazon FSx is creating the new volume.</p> </li> <li> <p>
-     * <code>DELETING</code> - Amazon FSx is deleting an existing volume.</p> </li>
-     * <li> <p> <code>FAILED</code> - Amazon FSx was unable to create the volume.</p>
-     * </li> <li> <p> <code>MISCONFIGURED</code> - The volume is in a failed but
-     * recoverable state.</p> </li> <li> <p> <code>PENDING</code> - Amazon FSx has not
-     * started creating the volume.</p> </li> </ul>
+     * <p>The lifecycle status of the volume.</p> <ul> <li> <p> <code>AVAILABLE</code>
+     * - The volume is fully available for use.</p> </li> <li> <p> <code>CREATED</code>
+     * - The volume has been created.</p> </li> <li> <p> <code>CREATING</code> - Amazon
+     * FSx is creating the new volume.</p> </li> <li> <p> <code>DELETING</code> -
+     * Amazon FSx is deleting an existing volume.</p> </li> <li> <p>
+     * <code>FAILED</code> - Amazon FSx was unable to create the volume.</p> </li> <li>
+     * <p> <code>MISCONFIGURED</code> - The volume is in a failed but recoverable
+     * state.</p> </li> <li> <p> <code>PENDING</code> - Amazon FSx hasn't started
+     * creating the volume.</p> </li> </ul>
      */
     inline void SetLifecycle(VolumeLifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
 
     /**
-     * <p>The lifecycle status of the volume.</p> <ul> <li> <p> <code>CREATED</code> -
-     * The volume is fully available for use.</p> </li> <li> <p> <code>CREATING</code>
-     * - Amazon FSx is creating the new volume.</p> </li> <li> <p>
-     * <code>DELETING</code> - Amazon FSx is deleting an existing volume.</p> </li>
-     * <li> <p> <code>FAILED</code> - Amazon FSx was unable to create the volume.</p>
-     * </li> <li> <p> <code>MISCONFIGURED</code> - The volume is in a failed but
-     * recoverable state.</p> </li> <li> <p> <code>PENDING</code> - Amazon FSx has not
-     * started creating the volume.</p> </li> </ul>
+     * <p>The lifecycle status of the volume.</p> <ul> <li> <p> <code>AVAILABLE</code>
+     * - The volume is fully available for use.</p> </li> <li> <p> <code>CREATED</code>
+     * - The volume has been created.</p> </li> <li> <p> <code>CREATING</code> - Amazon
+     * FSx is creating the new volume.</p> </li> <li> <p> <code>DELETING</code> -
+     * Amazon FSx is deleting an existing volume.</p> </li> <li> <p>
+     * <code>FAILED</code> - Amazon FSx was unable to create the volume.</p> </li> <li>
+     * <p> <code>MISCONFIGURED</code> - The volume is in a failed but recoverable
+     * state.</p> </li> <li> <p> <code>PENDING</code> - Amazon FSx hasn't started
+     * creating the volume.</p> </li> </ul>
      */
     inline Volume& WithLifecycle(const VolumeLifecycle& value) { SetLifecycle(value); return *this;}
 
     /**
-     * <p>The lifecycle status of the volume.</p> <ul> <li> <p> <code>CREATED</code> -
-     * The volume is fully available for use.</p> </li> <li> <p> <code>CREATING</code>
-     * - Amazon FSx is creating the new volume.</p> </li> <li> <p>
-     * <code>DELETING</code> - Amazon FSx is deleting an existing volume.</p> </li>
-     * <li> <p> <code>FAILED</code> - Amazon FSx was unable to create the volume.</p>
-     * </li> <li> <p> <code>MISCONFIGURED</code> - The volume is in a failed but
-     * recoverable state.</p> </li> <li> <p> <code>PENDING</code> - Amazon FSx has not
-     * started creating the volume.</p> </li> </ul>
+     * <p>The lifecycle status of the volume.</p> <ul> <li> <p> <code>AVAILABLE</code>
+     * - The volume is fully available for use.</p> </li> <li> <p> <code>CREATED</code>
+     * - The volume has been created.</p> </li> <li> <p> <code>CREATING</code> - Amazon
+     * FSx is creating the new volume.</p> </li> <li> <p> <code>DELETING</code> -
+     * Amazon FSx is deleting an existing volume.</p> </li> <li> <p>
+     * <code>FAILED</code> - Amazon FSx was unable to create the volume.</p> </li> <li>
+     * <p> <code>MISCONFIGURED</code> - The volume is in a failed but recoverable
+     * state.</p> </li> <li> <p> <code>PENDING</code> - Amazon FSx hasn't started
+     * creating the volume.</p> </li> </ul>
      */
     inline Volume& WithLifecycle(VolumeLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
 
@@ -313,65 +322,153 @@ namespace Model
 
 
     /**
-     * <p>The type of volume; <code>ONTAP</code> is the only valid volume type.</p>
+     * <p>The type of the volume.</p>
      */
     inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
 
     /**
-     * <p>The type of volume; <code>ONTAP</code> is the only valid volume type.</p>
+     * <p>The type of the volume.</p>
      */
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
 
     /**
-     * <p>The type of volume; <code>ONTAP</code> is the only valid volume type.</p>
+     * <p>The type of the volume.</p>
      */
     inline void SetVolumeType(const VolumeType& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /**
-     * <p>The type of volume; <code>ONTAP</code> is the only valid volume type.</p>
+     * <p>The type of the volume.</p>
      */
     inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
     /**
-     * <p>The type of volume; <code>ONTAP</code> is the only valid volume type.</p>
+     * <p>The type of the volume.</p>
      */
     inline Volume& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
 
     /**
-     * <p>The type of volume; <code>ONTAP</code> is the only valid volume type.</p>
+     * <p>The type of the volume.</p>
      */
     inline Volume& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Describes why the volume lifecycle state changed.</p>
+     * <p>The reason why the volume lifecycle status changed.</p>
      */
     inline const LifecycleTransitionReason& GetLifecycleTransitionReason() const{ return m_lifecycleTransitionReason; }
 
     /**
-     * <p>Describes why the volume lifecycle state changed.</p>
+     * <p>The reason why the volume lifecycle status changed.</p>
      */
     inline bool LifecycleTransitionReasonHasBeenSet() const { return m_lifecycleTransitionReasonHasBeenSet; }
 
     /**
-     * <p>Describes why the volume lifecycle state changed.</p>
+     * <p>The reason why the volume lifecycle status changed.</p>
      */
     inline void SetLifecycleTransitionReason(const LifecycleTransitionReason& value) { m_lifecycleTransitionReasonHasBeenSet = true; m_lifecycleTransitionReason = value; }
 
     /**
-     * <p>Describes why the volume lifecycle state changed.</p>
+     * <p>The reason why the volume lifecycle status changed.</p>
      */
     inline void SetLifecycleTransitionReason(LifecycleTransitionReason&& value) { m_lifecycleTransitionReasonHasBeenSet = true; m_lifecycleTransitionReason = std::move(value); }
 
     /**
-     * <p>Describes why the volume lifecycle state changed.</p>
+     * <p>The reason why the volume lifecycle status changed.</p>
      */
     inline Volume& WithLifecycleTransitionReason(const LifecycleTransitionReason& value) { SetLifecycleTransitionReason(value); return *this;}
 
     /**
-     * <p>Describes why the volume lifecycle state changed.</p>
+     * <p>The reason why the volume lifecycle status changed.</p>
      */
     inline Volume& WithLifecycleTransitionReason(LifecycleTransitionReason&& value) { SetLifecycleTransitionReason(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A list of administrative actions for the file system that are in process or
+     * waiting to be processed. Administrative actions describe changes to the Amazon
+     * FSx system that you initiated.</p>
+     */
+    inline const Aws::Vector<AdministrativeAction>& GetAdministrativeActions() const{ return m_administrativeActions; }
+
+    /**
+     * <p>A list of administrative actions for the file system that are in process or
+     * waiting to be processed. Administrative actions describe changes to the Amazon
+     * FSx system that you initiated.</p>
+     */
+    inline bool AdministrativeActionsHasBeenSet() const { return m_administrativeActionsHasBeenSet; }
+
+    /**
+     * <p>A list of administrative actions for the file system that are in process or
+     * waiting to be processed. Administrative actions describe changes to the Amazon
+     * FSx system that you initiated.</p>
+     */
+    inline void SetAdministrativeActions(const Aws::Vector<AdministrativeAction>& value) { m_administrativeActionsHasBeenSet = true; m_administrativeActions = value; }
+
+    /**
+     * <p>A list of administrative actions for the file system that are in process or
+     * waiting to be processed. Administrative actions describe changes to the Amazon
+     * FSx system that you initiated.</p>
+     */
+    inline void SetAdministrativeActions(Aws::Vector<AdministrativeAction>&& value) { m_administrativeActionsHasBeenSet = true; m_administrativeActions = std::move(value); }
+
+    /**
+     * <p>A list of administrative actions for the file system that are in process or
+     * waiting to be processed. Administrative actions describe changes to the Amazon
+     * FSx system that you initiated.</p>
+     */
+    inline Volume& WithAdministrativeActions(const Aws::Vector<AdministrativeAction>& value) { SetAdministrativeActions(value); return *this;}
+
+    /**
+     * <p>A list of administrative actions for the file system that are in process or
+     * waiting to be processed. Administrative actions describe changes to the Amazon
+     * FSx system that you initiated.</p>
+     */
+    inline Volume& WithAdministrativeActions(Aws::Vector<AdministrativeAction>&& value) { SetAdministrativeActions(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of administrative actions for the file system that are in process or
+     * waiting to be processed. Administrative actions describe changes to the Amazon
+     * FSx system that you initiated.</p>
+     */
+    inline Volume& AddAdministrativeActions(const AdministrativeAction& value) { m_administrativeActionsHasBeenSet = true; m_administrativeActions.push_back(value); return *this; }
+
+    /**
+     * <p>A list of administrative actions for the file system that are in process or
+     * waiting to be processed. Administrative actions describe changes to the Amazon
+     * FSx system that you initiated.</p>
+     */
+    inline Volume& AddAdministrativeActions(AdministrativeAction&& value) { m_administrativeActionsHasBeenSet = true; m_administrativeActions.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The configuration of an Amazon FSx for OpenZFS volume.</p>
+     */
+    inline const OpenZFSVolumeConfiguration& GetOpenZFSConfiguration() const{ return m_openZFSConfiguration; }
+
+    /**
+     * <p>The configuration of an Amazon FSx for OpenZFS volume.</p>
+     */
+    inline bool OpenZFSConfigurationHasBeenSet() const { return m_openZFSConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration of an Amazon FSx for OpenZFS volume.</p>
+     */
+    inline void SetOpenZFSConfiguration(const OpenZFSVolumeConfiguration& value) { m_openZFSConfigurationHasBeenSet = true; m_openZFSConfiguration = value; }
+
+    /**
+     * <p>The configuration of an Amazon FSx for OpenZFS volume.</p>
+     */
+    inline void SetOpenZFSConfiguration(OpenZFSVolumeConfiguration&& value) { m_openZFSConfigurationHasBeenSet = true; m_openZFSConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration of an Amazon FSx for OpenZFS volume.</p>
+     */
+    inline Volume& WithOpenZFSConfiguration(const OpenZFSVolumeConfiguration& value) { SetOpenZFSConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration of an Amazon FSx for OpenZFS volume.</p>
+     */
+    inline Volume& WithOpenZFSConfiguration(OpenZFSVolumeConfiguration&& value) { SetOpenZFSConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -404,6 +501,12 @@ namespace Model
 
     LifecycleTransitionReason m_lifecycleTransitionReason;
     bool m_lifecycleTransitionReasonHasBeenSet;
+
+    Aws::Vector<AdministrativeAction> m_administrativeActions;
+    bool m_administrativeActionsHasBeenSet;
+
+    OpenZFSVolumeConfiguration m_openZFSConfiguration;
+    bool m_openZFSConfigurationHasBeenSet;
   };
 
 } // namespace Model

@@ -23,6 +23,7 @@ namespace Aws
         static const int NONE_HASH = HashingUtils::HashString("NONE");
         static const int NEW__HASH = HashingUtils::HashString("NEW");
         static const int NEW_CHANGED_HASH = HashingUtils::HashString("NEW_CHANGED");
+        static const int NEW_CHANGED_DELETED_HASH = HashingUtils::HashString("NEW_CHANGED_DELETED");
 
 
         AutoImportPolicyType GetAutoImportPolicyTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == NEW_CHANGED_HASH)
           {
             return AutoImportPolicyType::NEW_CHANGED;
+          }
+          else if (hashCode == NEW_CHANGED_DELETED_HASH)
+          {
+            return AutoImportPolicyType::NEW_CHANGED_DELETED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "NEW";
           case AutoImportPolicyType::NEW_CHANGED:
             return "NEW_CHANGED";
+          case AutoImportPolicyType::NEW_CHANGED_DELETED:
+            return "NEW_CHANGED_DELETED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

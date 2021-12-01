@@ -33,32 +33,32 @@ namespace Model
 
 
     /**
-     * <p>Returned after a successful <code>UpdateVolume</code> API operation,
-     * describing the volume just updated.</p>
+     * <p>A description of the volume just updated. Returned after a successful
+     * <code>UpdateVolume</code> API operation.</p>
      */
     inline const Volume& GetVolume() const{ return m_volume; }
 
     /**
-     * <p>Returned after a successful <code>UpdateVolume</code> API operation,
-     * describing the volume just updated.</p>
+     * <p>A description of the volume just updated. Returned after a successful
+     * <code>UpdateVolume</code> API operation.</p>
      */
     inline void SetVolume(const Volume& value) { m_volume = value; }
 
     /**
-     * <p>Returned after a successful <code>UpdateVolume</code> API operation,
-     * describing the volume just updated.</p>
+     * <p>A description of the volume just updated. Returned after a successful
+     * <code>UpdateVolume</code> API operation.</p>
      */
     inline void SetVolume(Volume&& value) { m_volume = std::move(value); }
 
     /**
-     * <p>Returned after a successful <code>UpdateVolume</code> API operation,
-     * describing the volume just updated.</p>
+     * <p>A description of the volume just updated. Returned after a successful
+     * <code>UpdateVolume</code> API operation.</p>
      */
     inline UpdateVolumeResult& WithVolume(const Volume& value) { SetVolume(value); return *this;}
 
     /**
-     * <p>Returned after a successful <code>UpdateVolume</code> API operation,
-     * describing the volume just updated.</p>
+     * <p>A description of the volume just updated. Returned after a successful
+     * <code>UpdateVolume</code> API operation.</p>
      */
     inline UpdateVolumeResult& WithVolume(Volume&& value) { SetVolume(std::move(value)); return *this;}
 

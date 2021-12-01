@@ -24,27 +24,37 @@
 #include <aws/fsx/model/CancelDataRepositoryTaskRequest.h>
 #include <aws/fsx/model/CopyBackupRequest.h>
 #include <aws/fsx/model/CreateBackupRequest.h>
+#include <aws/fsx/model/CreateDataRepositoryAssociationRequest.h>
 #include <aws/fsx/model/CreateDataRepositoryTaskRequest.h>
 #include <aws/fsx/model/CreateFileSystemRequest.h>
 #include <aws/fsx/model/CreateFileSystemFromBackupRequest.h>
+#include <aws/fsx/model/CreateSnapshotRequest.h>
 #include <aws/fsx/model/CreateStorageVirtualMachineRequest.h>
 #include <aws/fsx/model/CreateVolumeRequest.h>
 #include <aws/fsx/model/CreateVolumeFromBackupRequest.h>
 #include <aws/fsx/model/DeleteBackupRequest.h>
+#include <aws/fsx/model/DeleteDataRepositoryAssociationRequest.h>
 #include <aws/fsx/model/DeleteFileSystemRequest.h>
+#include <aws/fsx/model/DeleteSnapshotRequest.h>
 #include <aws/fsx/model/DeleteStorageVirtualMachineRequest.h>
 #include <aws/fsx/model/DeleteVolumeRequest.h>
 #include <aws/fsx/model/DescribeBackupsRequest.h>
+#include <aws/fsx/model/DescribeDataRepositoryAssociationsRequest.h>
 #include <aws/fsx/model/DescribeDataRepositoryTasksRequest.h>
 #include <aws/fsx/model/DescribeFileSystemAliasesRequest.h>
 #include <aws/fsx/model/DescribeFileSystemsRequest.h>
+#include <aws/fsx/model/DescribeSnapshotsRequest.h>
 #include <aws/fsx/model/DescribeStorageVirtualMachinesRequest.h>
 #include <aws/fsx/model/DescribeVolumesRequest.h>
 #include <aws/fsx/model/DisassociateFileSystemAliasesRequest.h>
 #include <aws/fsx/model/ListTagsForResourceRequest.h>
+#include <aws/fsx/model/ReleaseFileSystemNfsV3LocksRequest.h>
+#include <aws/fsx/model/RestoreVolumeFromSnapshotRequest.h>
 #include <aws/fsx/model/TagResourceRequest.h>
 #include <aws/fsx/model/UntagResourceRequest.h>
+#include <aws/fsx/model/UpdateDataRepositoryAssociationRequest.h>
 #include <aws/fsx/model/UpdateFileSystemRequest.h>
+#include <aws/fsx/model/UpdateSnapshotRequest.h>
 #include <aws/fsx/model/UpdateStorageVirtualMachineRequest.h>
 #include <aws/fsx/model/UpdateVolumeRequest.h>
 
@@ -217,6 +227,30 @@ void FSxClient::CreateBackupAsyncHelper(const CreateBackupRequest& request, cons
   handler(this, request, CreateBackup(request), context);
 }
 
+CreateDataRepositoryAssociationOutcome FSxClient::CreateDataRepositoryAssociation(const CreateDataRepositoryAssociationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateDataRepositoryAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateDataRepositoryAssociationOutcomeCallable FSxClient::CreateDataRepositoryAssociationCallable(const CreateDataRepositoryAssociationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateDataRepositoryAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDataRepositoryAssociation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FSxClient::CreateDataRepositoryAssociationAsync(const CreateDataRepositoryAssociationRequest& request, const CreateDataRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDataRepositoryAssociationAsyncHelper( request, handler, context ); } );
+}
+
+void FSxClient::CreateDataRepositoryAssociationAsyncHelper(const CreateDataRepositoryAssociationRequest& request, const CreateDataRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateDataRepositoryAssociation(request), context);
+}
+
 CreateDataRepositoryTaskOutcome FSxClient::CreateDataRepositoryTask(const CreateDataRepositoryTaskRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -287,6 +321,30 @@ void FSxClient::CreateFileSystemFromBackupAsync(const CreateFileSystemFromBackup
 void FSxClient::CreateFileSystemFromBackupAsyncHelper(const CreateFileSystemFromBackupRequest& request, const CreateFileSystemFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateFileSystemFromBackup(request), context);
+}
+
+CreateSnapshotOutcome FSxClient::CreateSnapshot(const CreateSnapshotRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateSnapshotOutcomeCallable FSxClient::CreateSnapshotCallable(const CreateSnapshotRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateSnapshotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSnapshot(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FSxClient::CreateSnapshotAsync(const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateSnapshotAsyncHelper( request, handler, context ); } );
+}
+
+void FSxClient::CreateSnapshotAsyncHelper(const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateSnapshot(request), context);
 }
 
 CreateStorageVirtualMachineOutcome FSxClient::CreateStorageVirtualMachine(const CreateStorageVirtualMachineRequest& request) const
@@ -385,6 +443,30 @@ void FSxClient::DeleteBackupAsyncHelper(const DeleteBackupRequest& request, cons
   handler(this, request, DeleteBackup(request), context);
 }
 
+DeleteDataRepositoryAssociationOutcome FSxClient::DeleteDataRepositoryAssociation(const DeleteDataRepositoryAssociationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteDataRepositoryAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteDataRepositoryAssociationOutcomeCallable FSxClient::DeleteDataRepositoryAssociationCallable(const DeleteDataRepositoryAssociationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDataRepositoryAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDataRepositoryAssociation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FSxClient::DeleteDataRepositoryAssociationAsync(const DeleteDataRepositoryAssociationRequest& request, const DeleteDataRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteDataRepositoryAssociationAsyncHelper( request, handler, context ); } );
+}
+
+void FSxClient::DeleteDataRepositoryAssociationAsyncHelper(const DeleteDataRepositoryAssociationRequest& request, const DeleteDataRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteDataRepositoryAssociation(request), context);
+}
+
 DeleteFileSystemOutcome FSxClient::DeleteFileSystem(const DeleteFileSystemRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -407,6 +489,30 @@ void FSxClient::DeleteFileSystemAsync(const DeleteFileSystemRequest& request, co
 void FSxClient::DeleteFileSystemAsyncHelper(const DeleteFileSystemRequest& request, const DeleteFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteFileSystem(request), context);
+}
+
+DeleteSnapshotOutcome FSxClient::DeleteSnapshot(const DeleteSnapshotRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteSnapshotOutcomeCallable FSxClient::DeleteSnapshotCallable(const DeleteSnapshotRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteSnapshotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSnapshot(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FSxClient::DeleteSnapshotAsync(const DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteSnapshotAsyncHelper( request, handler, context ); } );
+}
+
+void FSxClient::DeleteSnapshotAsyncHelper(const DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteSnapshot(request), context);
 }
 
 DeleteStorageVirtualMachineOutcome FSxClient::DeleteStorageVirtualMachine(const DeleteStorageVirtualMachineRequest& request) const
@@ -481,6 +587,30 @@ void FSxClient::DescribeBackupsAsyncHelper(const DescribeBackupsRequest& request
   handler(this, request, DescribeBackups(request), context);
 }
 
+DescribeDataRepositoryAssociationsOutcome FSxClient::DescribeDataRepositoryAssociations(const DescribeDataRepositoryAssociationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeDataRepositoryAssociationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeDataRepositoryAssociationsOutcomeCallable FSxClient::DescribeDataRepositoryAssociationsCallable(const DescribeDataRepositoryAssociationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDataRepositoryAssociationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDataRepositoryAssociations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FSxClient::DescribeDataRepositoryAssociationsAsync(const DescribeDataRepositoryAssociationsRequest& request, const DescribeDataRepositoryAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDataRepositoryAssociationsAsyncHelper( request, handler, context ); } );
+}
+
+void FSxClient::DescribeDataRepositoryAssociationsAsyncHelper(const DescribeDataRepositoryAssociationsRequest& request, const DescribeDataRepositoryAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDataRepositoryAssociations(request), context);
+}
+
 DescribeDataRepositoryTasksOutcome FSxClient::DescribeDataRepositoryTasks(const DescribeDataRepositoryTasksRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -551,6 +681,30 @@ void FSxClient::DescribeFileSystemsAsync(const DescribeFileSystemsRequest& reque
 void FSxClient::DescribeFileSystemsAsyncHelper(const DescribeFileSystemsRequest& request, const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeFileSystems(request), context);
+}
+
+DescribeSnapshotsOutcome FSxClient::DescribeSnapshots(const DescribeSnapshotsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeSnapshotsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeSnapshotsOutcomeCallable FSxClient::DescribeSnapshotsCallable(const DescribeSnapshotsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeSnapshotsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSnapshots(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FSxClient::DescribeSnapshotsAsync(const DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeSnapshotsAsyncHelper( request, handler, context ); } );
+}
+
+void FSxClient::DescribeSnapshotsAsyncHelper(const DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeSnapshots(request), context);
 }
 
 DescribeStorageVirtualMachinesOutcome FSxClient::DescribeStorageVirtualMachines(const DescribeStorageVirtualMachinesRequest& request) const
@@ -649,6 +803,54 @@ void FSxClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest&
   handler(this, request, ListTagsForResource(request), context);
 }
 
+ReleaseFileSystemNfsV3LocksOutcome FSxClient::ReleaseFileSystemNfsV3Locks(const ReleaseFileSystemNfsV3LocksRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ReleaseFileSystemNfsV3LocksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ReleaseFileSystemNfsV3LocksOutcomeCallable FSxClient::ReleaseFileSystemNfsV3LocksCallable(const ReleaseFileSystemNfsV3LocksRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ReleaseFileSystemNfsV3LocksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ReleaseFileSystemNfsV3Locks(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FSxClient::ReleaseFileSystemNfsV3LocksAsync(const ReleaseFileSystemNfsV3LocksRequest& request, const ReleaseFileSystemNfsV3LocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ReleaseFileSystemNfsV3LocksAsyncHelper( request, handler, context ); } );
+}
+
+void FSxClient::ReleaseFileSystemNfsV3LocksAsyncHelper(const ReleaseFileSystemNfsV3LocksRequest& request, const ReleaseFileSystemNfsV3LocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ReleaseFileSystemNfsV3Locks(request), context);
+}
+
+RestoreVolumeFromSnapshotOutcome FSxClient::RestoreVolumeFromSnapshot(const RestoreVolumeFromSnapshotRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return RestoreVolumeFromSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RestoreVolumeFromSnapshotOutcomeCallable FSxClient::RestoreVolumeFromSnapshotCallable(const RestoreVolumeFromSnapshotRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RestoreVolumeFromSnapshotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RestoreVolumeFromSnapshot(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FSxClient::RestoreVolumeFromSnapshotAsync(const RestoreVolumeFromSnapshotRequest& request, const RestoreVolumeFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RestoreVolumeFromSnapshotAsyncHelper( request, handler, context ); } );
+}
+
+void FSxClient::RestoreVolumeFromSnapshotAsyncHelper(const RestoreVolumeFromSnapshotRequest& request, const RestoreVolumeFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RestoreVolumeFromSnapshot(request), context);
+}
+
 TagResourceOutcome FSxClient::TagResource(const TagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -697,6 +899,30 @@ void FSxClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, co
   handler(this, request, UntagResource(request), context);
 }
 
+UpdateDataRepositoryAssociationOutcome FSxClient::UpdateDataRepositoryAssociation(const UpdateDataRepositoryAssociationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateDataRepositoryAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateDataRepositoryAssociationOutcomeCallable FSxClient::UpdateDataRepositoryAssociationCallable(const UpdateDataRepositoryAssociationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDataRepositoryAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDataRepositoryAssociation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FSxClient::UpdateDataRepositoryAssociationAsync(const UpdateDataRepositoryAssociationRequest& request, const UpdateDataRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateDataRepositoryAssociationAsyncHelper( request, handler, context ); } );
+}
+
+void FSxClient::UpdateDataRepositoryAssociationAsyncHelper(const UpdateDataRepositoryAssociationRequest& request, const UpdateDataRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateDataRepositoryAssociation(request), context);
+}
+
 UpdateFileSystemOutcome FSxClient::UpdateFileSystem(const UpdateFileSystemRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -719,6 +945,30 @@ void FSxClient::UpdateFileSystemAsync(const UpdateFileSystemRequest& request, co
 void FSxClient::UpdateFileSystemAsyncHelper(const UpdateFileSystemRequest& request, const UpdateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateFileSystem(request), context);
+}
+
+UpdateSnapshotOutcome FSxClient::UpdateSnapshot(const UpdateSnapshotRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateSnapshotOutcomeCallable FSxClient::UpdateSnapshotCallable(const UpdateSnapshotRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateSnapshotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSnapshot(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FSxClient::UpdateSnapshotAsync(const UpdateSnapshotRequest& request, const UpdateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateSnapshotAsyncHelper( request, handler, context ); } );
+}
+
+void FSxClient::UpdateSnapshotAsyncHelper(const UpdateSnapshotRequest& request, const UpdateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateSnapshot(request), context);
 }
 
 UpdateStorageVirtualMachineOutcome FSxClient::UpdateStorageVirtualMachine(const UpdateStorageVirtualMachineRequest& request) const

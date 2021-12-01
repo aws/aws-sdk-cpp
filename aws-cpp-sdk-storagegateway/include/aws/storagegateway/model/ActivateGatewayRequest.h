@@ -392,7 +392,7 @@ namespace Model
      * critical to all later functions of the gateway and cannot be changed after
      * activation. The default value is <code>CACHED</code>.</p> <p>Valid Values:
      * <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-     * <code>FILE_S3</code> | <code>FILE_FSX_SMB|</code> </p>
+     * <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
      */
     inline const Aws::String& GetGatewayType() const{ return m_gatewayType; }
 
@@ -401,7 +401,7 @@ namespace Model
      * critical to all later functions of the gateway and cannot be changed after
      * activation. The default value is <code>CACHED</code>.</p> <p>Valid Values:
      * <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-     * <code>FILE_S3</code> | <code>FILE_FSX_SMB|</code> </p>
+     * <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
      */
     inline bool GatewayTypeHasBeenSet() const { return m_gatewayTypeHasBeenSet; }
 
@@ -410,7 +410,7 @@ namespace Model
      * critical to all later functions of the gateway and cannot be changed after
      * activation. The default value is <code>CACHED</code>.</p> <p>Valid Values:
      * <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-     * <code>FILE_S3</code> | <code>FILE_FSX_SMB|</code> </p>
+     * <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
      */
     inline void SetGatewayType(const Aws::String& value) { m_gatewayTypeHasBeenSet = true; m_gatewayType = value; }
 
@@ -419,7 +419,7 @@ namespace Model
      * critical to all later functions of the gateway and cannot be changed after
      * activation. The default value is <code>CACHED</code>.</p> <p>Valid Values:
      * <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-     * <code>FILE_S3</code> | <code>FILE_FSX_SMB|</code> </p>
+     * <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
      */
     inline void SetGatewayType(Aws::String&& value) { m_gatewayTypeHasBeenSet = true; m_gatewayType = std::move(value); }
 
@@ -428,7 +428,7 @@ namespace Model
      * critical to all later functions of the gateway and cannot be changed after
      * activation. The default value is <code>CACHED</code>.</p> <p>Valid Values:
      * <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-     * <code>FILE_S3</code> | <code>FILE_FSX_SMB|</code> </p>
+     * <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
      */
     inline void SetGatewayType(const char* value) { m_gatewayTypeHasBeenSet = true; m_gatewayType.assign(value); }
 
@@ -437,7 +437,7 @@ namespace Model
      * critical to all later functions of the gateway and cannot be changed after
      * activation. The default value is <code>CACHED</code>.</p> <p>Valid Values:
      * <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-     * <code>FILE_S3</code> | <code>FILE_FSX_SMB|</code> </p>
+     * <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
      */
     inline ActivateGatewayRequest& WithGatewayType(const Aws::String& value) { SetGatewayType(value); return *this;}
 
@@ -446,7 +446,7 @@ namespace Model
      * critical to all later functions of the gateway and cannot be changed after
      * activation. The default value is <code>CACHED</code>.</p> <p>Valid Values:
      * <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-     * <code>FILE_S3</code> | <code>FILE_FSX_SMB|</code> </p>
+     * <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
      */
     inline ActivateGatewayRequest& WithGatewayType(Aws::String&& value) { SetGatewayType(std::move(value)); return *this;}
 
@@ -455,7 +455,7 @@ namespace Model
      * critical to all later functions of the gateway and cannot be changed after
      * activation. The default value is <code>CACHED</code>.</p> <p>Valid Values:
      * <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-     * <code>FILE_S3</code> | <code>FILE_FSX_SMB|</code> </p>
+     * <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
      */
     inline ActivateGatewayRequest& WithGatewayType(const char* value) { SetGatewayType(value); return *this;}
 

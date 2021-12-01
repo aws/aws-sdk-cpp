@@ -98,32 +98,32 @@ namespace Model
 
 
     /**
-     * <p>The type of AWS Snow Family device to use for the long-term pricing job.</p>
+     * <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
      */
     inline const SnowballType& GetSnowballType() const{ return m_snowballType; }
 
     /**
-     * <p>The type of AWS Snow Family device to use for the long-term pricing job.</p>
+     * <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
      */
     inline bool SnowballTypeHasBeenSet() const { return m_snowballTypeHasBeenSet; }
 
     /**
-     * <p>The type of AWS Snow Family device to use for the long-term pricing job.</p>
+     * <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
      */
     inline void SetSnowballType(const SnowballType& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
 
     /**
-     * <p>The type of AWS Snow Family device to use for the long-term pricing job.</p>
+     * <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
      */
     inline void SetSnowballType(SnowballType&& value) { m_snowballTypeHasBeenSet = true; m_snowballType = std::move(value); }
 
     /**
-     * <p>The type of AWS Snow Family device to use for the long-term pricing job.</p>
+     * <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
      */
     inline CreateLongTermPricingRequest& WithSnowballType(const SnowballType& value) { SetSnowballType(value); return *this;}
 
     /**
-     * <p>The type of AWS Snow Family device to use for the long-term pricing job.</p>
+     * <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
      */
     inline CreateLongTermPricingRequest& WithSnowballType(SnowballType&& value) { SetSnowballType(std::move(value)); return *this;}
 

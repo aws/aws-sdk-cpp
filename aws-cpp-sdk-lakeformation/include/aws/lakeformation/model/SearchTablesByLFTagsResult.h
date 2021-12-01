@@ -78,37 +78,37 @@ namespace Model
 
 
     /**
-     * <p>A list of tables that meet the tag conditions.</p>
+     * <p>A list of tables that meet the LF-tag conditions.</p>
      */
     inline const Aws::Vector<TaggedTable>& GetTableList() const{ return m_tableList; }
 
     /**
-     * <p>A list of tables that meet the tag conditions.</p>
+     * <p>A list of tables that meet the LF-tag conditions.</p>
      */
     inline void SetTableList(const Aws::Vector<TaggedTable>& value) { m_tableList = value; }
 
     /**
-     * <p>A list of tables that meet the tag conditions.</p>
+     * <p>A list of tables that meet the LF-tag conditions.</p>
      */
     inline void SetTableList(Aws::Vector<TaggedTable>&& value) { m_tableList = std::move(value); }
 
     /**
-     * <p>A list of tables that meet the tag conditions.</p>
+     * <p>A list of tables that meet the LF-tag conditions.</p>
      */
     inline SearchTablesByLFTagsResult& WithTableList(const Aws::Vector<TaggedTable>& value) { SetTableList(value); return *this;}
 
     /**
-     * <p>A list of tables that meet the tag conditions.</p>
+     * <p>A list of tables that meet the LF-tag conditions.</p>
      */
     inline SearchTablesByLFTagsResult& WithTableList(Aws::Vector<TaggedTable>&& value) { SetTableList(std::move(value)); return *this;}
 
     /**
-     * <p>A list of tables that meet the tag conditions.</p>
+     * <p>A list of tables that meet the LF-tag conditions.</p>
      */
     inline SearchTablesByLFTagsResult& AddTableList(const TaggedTable& value) { m_tableList.push_back(value); return *this; }
 
     /**
-     * <p>A list of tables that meet the tag conditions.</p>
+     * <p>A list of tables that meet the LF-tag conditions.</p>
      */
     inline SearchTablesByLFTagsResult& AddTableList(TaggedTable&& value) { m_tableList.push_back(std::move(value)); return *this; }
 

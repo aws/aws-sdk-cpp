@@ -142,25 +142,25 @@ namespace Model
 
     /**
      * <p>A value that indicates whether the statement has a result set. The result set
-     * can be empty.</p>
+     * can be empty. The value is true for an empty result set.</p>
      */
     inline bool GetHasResultSet() const{ return m_hasResultSet; }
 
     /**
      * <p>A value that indicates whether the statement has a result set. The result set
-     * can be empty.</p>
+     * can be empty. The value is true for an empty result set.</p>
      */
     inline bool HasResultSetHasBeenSet() const { return m_hasResultSetHasBeenSet; }
 
     /**
      * <p>A value that indicates whether the statement has a result set. The result set
-     * can be empty.</p>
+     * can be empty. The value is true for an empty result set.</p>
      */
     inline void SetHasResultSet(bool value) { m_hasResultSetHasBeenSet = true; m_hasResultSet = value; }
 
     /**
      * <p>A value that indicates whether the statement has a result set. The result set
-     * can be empty.</p>
+     * can be empty. The value is true for an empty result set.</p>
      */
     inline SubStatementData& WithHasResultSet(bool value) { SetHasResultSet(value); return *this;}
 

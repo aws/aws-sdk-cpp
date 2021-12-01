@@ -19,12 +19,14 @@ namespace Model
 {
 
 OnDeviceServiceConfiguration::OnDeviceServiceConfiguration() : 
-    m_nFSOnDeviceServiceHasBeenSet(false)
+    m_nFSOnDeviceServiceHasBeenSet(false),
+    m_tGWOnDeviceServiceHasBeenSet(false)
 {
 }
 
 OnDeviceServiceConfiguration::OnDeviceServiceConfiguration(JsonView jsonValue) : 
-    m_nFSOnDeviceServiceHasBeenSet(false)
+    m_nFSOnDeviceServiceHasBeenSet(false),
+    m_tGWOnDeviceServiceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ OnDeviceServiceConfiguration& OnDeviceServiceConfiguration::operator =(JsonView 
     m_nFSOnDeviceServiceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TGWOnDeviceService"))
+  {
+    m_tGWOnDeviceService = jsonValue.GetObject("TGWOnDeviceService");
+
+    m_tGWOnDeviceServiceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue OnDeviceServiceConfiguration::Jsonize() const
   if(m_nFSOnDeviceServiceHasBeenSet)
   {
    payload.WithObject("NFSOnDeviceService", m_nFSOnDeviceService.Jsonize());
+
+  }
+
+  if(m_tGWOnDeviceServiceHasBeenSet)
+  {
+   payload.WithObject("TGWOnDeviceService", m_tGWOnDeviceService.Jsonize());
 
   }
 

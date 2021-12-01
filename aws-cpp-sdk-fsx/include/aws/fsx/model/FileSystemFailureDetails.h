@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A structure providing details of any failures that occur when creating the
-   * file system has failed.</p><p><h3>See Also:</h3>   <a
+   * <p>A structure providing details of any failures that occurred when creating a
+   * file system.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/FileSystemFailureDetails">AWS
    * API Reference</a></p>
    */

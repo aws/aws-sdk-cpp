@@ -34,9 +34,10 @@ namespace Model
    * access preview assumes a secret without a policy. To propose deletion of an
    * existing policy, you can specify an empty string. If the proposed configuration
    * is for a new secret and you do not specify the KMS key ID, the access preview
-   * uses the default CMK of the Amazon Web Services account. If you specify an empty
-   * string for the KMS key ID, the access preview uses the default CMK of the Amazon
-   * Web Services account. For more information about secret policy limits, see <a
+   * uses the Amazon Web Services managed key <code>aws/secretsmanager</code>. If you
+   * specify an empty string for the KMS key ID, the access preview uses the Amazon
+   * Web Services managed key of the Amazon Web Services account. For more
+   * information about secret policy limits, see <a
    * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_limits.html">Quotas
    * for Secrets Manager.</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/SecretsManagerSecretConfiguration">AWS
@@ -52,42 +53,42 @@ namespace Model
 
 
     /**
-     * <p>The proposed ARN, key ID, or alias of the KMS customer master key (CMK).</p>
+     * <p>The proposed ARN, key ID, or alias of the KMS key.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The proposed ARN, key ID, or alias of the KMS customer master key (CMK).</p>
+     * <p>The proposed ARN, key ID, or alias of the KMS key.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The proposed ARN, key ID, or alias of the KMS customer master key (CMK).</p>
+     * <p>The proposed ARN, key ID, or alias of the KMS key.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The proposed ARN, key ID, or alias of the KMS customer master key (CMK).</p>
+     * <p>The proposed ARN, key ID, or alias of the KMS key.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The proposed ARN, key ID, or alias of the KMS customer master key (CMK).</p>
+     * <p>The proposed ARN, key ID, or alias of the KMS key.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The proposed ARN, key ID, or alias of the KMS customer master key (CMK).</p>
+     * <p>The proposed ARN, key ID, or alias of the KMS key.</p>
      */
     inline SecretsManagerSecretConfiguration& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The proposed ARN, key ID, or alias of the KMS customer master key (CMK).</p>
+     * <p>The proposed ARN, key ID, or alias of the KMS key.</p>
      */
     inline SecretsManagerSecretConfiguration& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The proposed ARN, key ID, or alias of the KMS customer master key (CMK).</p>
+     * <p>The proposed ARN, key ID, or alias of the KMS key.</p>
      */
     inline SecretsManagerSecretConfiguration& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

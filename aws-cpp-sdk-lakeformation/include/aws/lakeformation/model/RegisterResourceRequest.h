@@ -31,8 +31,6 @@ namespace Model
 
     Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
@@ -76,7 +74,7 @@ namespace Model
 
 
     /**
-     * <p>Designates an AWS Identity and Access Management (IAM) service-linked role by
+     * <p>Designates an Identity and Access Management (IAM) service-linked role by
      * registering this role with the Data Catalog. A service-linked role is a unique
      * type of IAM role that is linked directly to Lake Formation.</p> <p>For more
      * information, see <a
@@ -86,7 +84,7 @@ namespace Model
     inline bool GetUseServiceLinkedRole() const{ return m_useServiceLinkedRole; }
 
     /**
-     * <p>Designates an AWS Identity and Access Management (IAM) service-linked role by
+     * <p>Designates an Identity and Access Management (IAM) service-linked role by
      * registering this role with the Data Catalog. A service-linked role is a unique
      * type of IAM role that is linked directly to Lake Formation.</p> <p>For more
      * information, see <a
@@ -96,7 +94,7 @@ namespace Model
     inline bool UseServiceLinkedRoleHasBeenSet() const { return m_useServiceLinkedRoleHasBeenSet; }
 
     /**
-     * <p>Designates an AWS Identity and Access Management (IAM) service-linked role by
+     * <p>Designates an Identity and Access Management (IAM) service-linked role by
      * registering this role with the Data Catalog. A service-linked role is a unique
      * type of IAM role that is linked directly to Lake Formation.</p> <p>For more
      * information, see <a
@@ -106,7 +104,7 @@ namespace Model
     inline void SetUseServiceLinkedRole(bool value) { m_useServiceLinkedRoleHasBeenSet = true; m_useServiceLinkedRole = value; }
 
     /**
-     * <p>Designates an AWS Identity and Access Management (IAM) service-linked role by
+     * <p>Designates an Identity and Access Management (IAM) service-linked role by
      * registering this role with the Data Catalog. A service-linked role is a unique
      * type of IAM role that is linked directly to Lake Formation.</p> <p>For more
      * information, see <a

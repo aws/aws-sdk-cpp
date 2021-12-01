@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>A list of tags that the requested has permission to view.</p>
+     * <p>A list of LF-tags that the requested has permission to view.</p>
      */
     inline const Aws::Vector<LFTagPair>& GetLFTags() const{ return m_lFTags; }
 
     /**
-     * <p>A list of tags that the requested has permission to view.</p>
+     * <p>A list of LF-tags that the requested has permission to view.</p>
      */
     inline void SetLFTags(const Aws::Vector<LFTagPair>& value) { m_lFTags = value; }
 
     /**
-     * <p>A list of tags that the requested has permission to view.</p>
+     * <p>A list of LF-tags that the requested has permission to view.</p>
      */
     inline void SetLFTags(Aws::Vector<LFTagPair>&& value) { m_lFTags = std::move(value); }
 
     /**
-     * <p>A list of tags that the requested has permission to view.</p>
+     * <p>A list of LF-tags that the requested has permission to view.</p>
      */
     inline ListLFTagsResult& WithLFTags(const Aws::Vector<LFTagPair>& value) { SetLFTags(value); return *this;}
 
     /**
-     * <p>A list of tags that the requested has permission to view.</p>
+     * <p>A list of LF-tags that the requested has permission to view.</p>
      */
     inline ListLFTagsResult& WithLFTags(Aws::Vector<LFTagPair>&& value) { SetLFTags(std::move(value)); return *this;}
 
     /**
-     * <p>A list of tags that the requested has permission to view.</p>
+     * <p>A list of LF-tags that the requested has permission to view.</p>
      */
     inline ListLFTagsResult& AddLFTags(const LFTagPair& value) { m_lFTags.push_back(value); return *this; }
 
     /**
-     * <p>A list of tags that the requested has permission to view.</p>
+     * <p>A list of LF-tags that the requested has permission to view.</p>
      */
     inline ListLFTagsResult& AddLFTags(LFTagPair&& value) { m_lFTags.push_back(std::move(value)); return *this; }
 

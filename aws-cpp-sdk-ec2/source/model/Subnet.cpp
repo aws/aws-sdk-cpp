@@ -28,6 +28,8 @@ Subnet::Subnet() :
     m_cidrBlockHasBeenSet(false),
     m_defaultForAz(false),
     m_defaultForAzHasBeenSet(false),
+    m_enableLniAtDeviceIndex(0),
+    m_enableLniAtDeviceIndexHasBeenSet(false),
     m_mapPublicIpOnLaunch(false),
     m_mapPublicIpOnLaunchHasBeenSet(false),
     m_mapCustomerOwnedIpOnLaunch(false),
@@ -60,6 +62,8 @@ Subnet::Subnet(const XmlNode& xmlNode) :
     m_cidrBlockHasBeenSet(false),
     m_defaultForAz(false),
     m_defaultForAzHasBeenSet(false),
+    m_enableLniAtDeviceIndex(0),
+    m_enableLniAtDeviceIndexHasBeenSet(false),
     m_mapPublicIpOnLaunch(false),
     m_mapPublicIpOnLaunchHasBeenSet(false),
     m_mapCustomerOwnedIpOnLaunch(false),
@@ -120,6 +124,12 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
     {
       m_defaultForAz = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultForAzNode.GetText()).c_str()).c_str());
       m_defaultForAzHasBeenSet = true;
+    }
+    XmlNode enableLniAtDeviceIndexNode = resultNode.FirstChild("enableLniAtDeviceIndex");
+    if(!enableLniAtDeviceIndexNode.IsNull())
+    {
+      m_enableLniAtDeviceIndex = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enableLniAtDeviceIndexNode.GetText()).c_str()).c_str());
+      m_enableLniAtDeviceIndexHasBeenSet = true;
     }
     XmlNode mapPublicIpOnLaunchNode = resultNode.FirstChild("mapPublicIpOnLaunch");
     if(!mapPublicIpOnLaunchNode.IsNull())
@@ -255,6 +265,11 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       oStream << location << index << locationValue << ".DefaultForAz=" << std::boolalpha << m_defaultForAz << "&";
   }
 
+  if(m_enableLniAtDeviceIndexHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnableLniAtDeviceIndex=" << m_enableLniAtDeviceIndex << "&";
+  }
+
   if(m_mapPublicIpOnLaunchHasBeenSet)
   {
       oStream << location << index << locationValue << ".MapPublicIpOnLaunch=" << std::boolalpha << m_mapPublicIpOnLaunch << "&";
@@ -367,6 +382,10 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_defaultForAzHasBeenSet)
   {
       oStream << location << ".DefaultForAz=" << std::boolalpha << m_defaultForAz << "&";
+  }
+  if(m_enableLniAtDeviceIndexHasBeenSet)
+  {
+      oStream << location << ".EnableLniAtDeviceIndex=" << m_enableLniAtDeviceIndex << "&";
   }
   if(m_mapPublicIpOnLaunchHasBeenSet)
   {

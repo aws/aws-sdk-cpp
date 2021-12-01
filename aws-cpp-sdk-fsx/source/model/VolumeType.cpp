@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int ONTAP_HASH = HashingUtils::HashString("ONTAP");
+        static const int OPENZFS_HASH = HashingUtils::HashString("OPENZFS");
 
 
         VolumeType GetVolumeTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == ONTAP_HASH)
           {
             return VolumeType::ONTAP;
+          }
+          else if (hashCode == OPENZFS_HASH)
+          {
+            return VolumeType::OPENZFS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case VolumeType::ONTAP:
             return "ONTAP";
+          case VolumeType::OPENZFS:
+            return "OPENZFS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

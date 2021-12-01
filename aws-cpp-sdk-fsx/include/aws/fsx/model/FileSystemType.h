@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     WINDOWS,
     LUSTRE,
-    ONTAP
+    ONTAP,
+    OPENZFS
   };
 
 namespace FileSystemTypeMapper

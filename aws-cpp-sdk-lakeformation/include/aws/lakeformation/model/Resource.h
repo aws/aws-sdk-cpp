@@ -10,6 +10,7 @@
 #include <aws/lakeformation/model/TableResource.h>
 #include <aws/lakeformation/model/TableWithColumnsResource.h>
 #include <aws/lakeformation/model/DataLocationResource.h>
+#include <aws/lakeformation/model/DataCellsFilterResource.h>
 #include <aws/lakeformation/model/LFTagKeyResource.h>
 #include <aws/lakeformation/model/LFTagPolicyResource.h>
 #include <utility>
@@ -46,48 +47,48 @@ namespace Model
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline const CatalogResource& GetCatalog() const{ return m_catalog; }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline void SetCatalog(const CatalogResource& value) { m_catalogHasBeenSet = true; m_catalog = value; }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline void SetCatalog(CatalogResource&& value) { m_catalogHasBeenSet = true; m_catalog = std::move(value); }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline Resource& WithCatalog(const CatalogResource& value) { SetCatalog(value); return *this;}
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline Resource& WithCatalog(CatalogResource&& value) { SetCatalog(std::move(value)); return *this;}
 
@@ -253,63 +254,94 @@ namespace Model
 
 
     /**
-     * <p>The tag key and values attached to a resource.</p>
+     * <p>A data cell filter.</p>
+     */
+    inline const DataCellsFilterResource& GetDataCellsFilter() const{ return m_dataCellsFilter; }
+
+    /**
+     * <p>A data cell filter.</p>
+     */
+    inline bool DataCellsFilterHasBeenSet() const { return m_dataCellsFilterHasBeenSet; }
+
+    /**
+     * <p>A data cell filter.</p>
+     */
+    inline void SetDataCellsFilter(const DataCellsFilterResource& value) { m_dataCellsFilterHasBeenSet = true; m_dataCellsFilter = value; }
+
+    /**
+     * <p>A data cell filter.</p>
+     */
+    inline void SetDataCellsFilter(DataCellsFilterResource&& value) { m_dataCellsFilterHasBeenSet = true; m_dataCellsFilter = std::move(value); }
+
+    /**
+     * <p>A data cell filter.</p>
+     */
+    inline Resource& WithDataCellsFilter(const DataCellsFilterResource& value) { SetDataCellsFilter(value); return *this;}
+
+    /**
+     * <p>A data cell filter.</p>
+     */
+    inline Resource& WithDataCellsFilter(DataCellsFilterResource&& value) { SetDataCellsFilter(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The LF-tag key and values attached to a resource.</p>
      */
     inline const LFTagKeyResource& GetLFTag() const{ return m_lFTag; }
 
     /**
-     * <p>The tag key and values attached to a resource.</p>
+     * <p>The LF-tag key and values attached to a resource.</p>
      */
     inline bool LFTagHasBeenSet() const { return m_lFTagHasBeenSet; }
 
     /**
-     * <p>The tag key and values attached to a resource.</p>
+     * <p>The LF-tag key and values attached to a resource.</p>
      */
     inline void SetLFTag(const LFTagKeyResource& value) { m_lFTagHasBeenSet = true; m_lFTag = value; }
 
     /**
-     * <p>The tag key and values attached to a resource.</p>
+     * <p>The LF-tag key and values attached to a resource.</p>
      */
     inline void SetLFTag(LFTagKeyResource&& value) { m_lFTagHasBeenSet = true; m_lFTag = std::move(value); }
 
     /**
-     * <p>The tag key and values attached to a resource.</p>
+     * <p>The LF-tag key and values attached to a resource.</p>
      */
     inline Resource& WithLFTag(const LFTagKeyResource& value) { SetLFTag(value); return *this;}
 
     /**
-     * <p>The tag key and values attached to a resource.</p>
+     * <p>The LF-tag key and values attached to a resource.</p>
      */
     inline Resource& WithLFTag(LFTagKeyResource&& value) { SetLFTag(std::move(value)); return *this;}
 
 
     /**
-     * <p>A list of tag conditions that define a resource's tag policy.</p>
+     * <p>A list of LF-tag conditions that define a resource's LF-tag policy.</p>
      */
     inline const LFTagPolicyResource& GetLFTagPolicy() const{ return m_lFTagPolicy; }
 
     /**
-     * <p>A list of tag conditions that define a resource's tag policy.</p>
+     * <p>A list of LF-tag conditions that define a resource's LF-tag policy.</p>
      */
     inline bool LFTagPolicyHasBeenSet() const { return m_lFTagPolicyHasBeenSet; }
 
     /**
-     * <p>A list of tag conditions that define a resource's tag policy.</p>
+     * <p>A list of LF-tag conditions that define a resource's LF-tag policy.</p>
      */
     inline void SetLFTagPolicy(const LFTagPolicyResource& value) { m_lFTagPolicyHasBeenSet = true; m_lFTagPolicy = value; }
 
     /**
-     * <p>A list of tag conditions that define a resource's tag policy.</p>
+     * <p>A list of LF-tag conditions that define a resource's LF-tag policy.</p>
      */
     inline void SetLFTagPolicy(LFTagPolicyResource&& value) { m_lFTagPolicyHasBeenSet = true; m_lFTagPolicy = std::move(value); }
 
     /**
-     * <p>A list of tag conditions that define a resource's tag policy.</p>
+     * <p>A list of LF-tag conditions that define a resource's LF-tag policy.</p>
      */
     inline Resource& WithLFTagPolicy(const LFTagPolicyResource& value) { SetLFTagPolicy(value); return *this;}
 
     /**
-     * <p>A list of tag conditions that define a resource's tag policy.</p>
+     * <p>A list of LF-tag conditions that define a resource's LF-tag policy.</p>
      */
     inline Resource& WithLFTagPolicy(LFTagPolicyResource&& value) { SetLFTagPolicy(std::move(value)); return *this;}
 
@@ -329,6 +361,9 @@ namespace Model
 
     DataLocationResource m_dataLocation;
     bool m_dataLocationHasBeenSet;
+
+    DataCellsFilterResource m_dataCellsFilter;
+    bool m_dataCellsFilterHasBeenSet;
 
     LFTagKeyResource m_lFTag;
     bool m_lFTagHasBeenSet;

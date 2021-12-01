@@ -26,7 +26,8 @@ UpdateFileSystemLustreConfiguration::UpdateFileSystemLustreConfiguration() :
     m_autoImportPolicy(AutoImportPolicyType::NOT_SET),
     m_autoImportPolicyHasBeenSet(false),
     m_dataCompressionType(DataCompressionType::NOT_SET),
-    m_dataCompressionTypeHasBeenSet(false)
+    m_dataCompressionTypeHasBeenSet(false),
+    m_logConfigurationHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ UpdateFileSystemLustreConfiguration::UpdateFileSystemLustreConfiguration(JsonVie
     m_autoImportPolicy(AutoImportPolicyType::NOT_SET),
     m_autoImportPolicyHasBeenSet(false),
     m_dataCompressionType(DataCompressionType::NOT_SET),
-    m_dataCompressionTypeHasBeenSet(false)
+    m_dataCompressionTypeHasBeenSet(false),
+    m_logConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -80,6 +82,13 @@ UpdateFileSystemLustreConfiguration& UpdateFileSystemLustreConfiguration::operat
     m_dataCompressionTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LogConfiguration"))
+  {
+    m_logConfiguration = jsonValue.GetObject("LogConfiguration");
+
+    m_logConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -113,6 +122,12 @@ JsonValue UpdateFileSystemLustreConfiguration::Jsonize() const
   if(m_dataCompressionTypeHasBeenSet)
   {
    payload.WithString("DataCompressionType", DataCompressionTypeMapper::GetNameForDataCompressionType(m_dataCompressionType));
+  }
+
+  if(m_logConfigurationHasBeenSet)
+  {
+   payload.WithObject("LogConfiguration", m_logConfiguration.Jsonize());
+
   }
 
   return payload;

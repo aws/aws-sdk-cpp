@@ -27,7 +27,7 @@ namespace FSx
 namespace Model
 {
   /**
-   * <p>Response object for <code>DescribeBackups</code> operation.</p><p><h3>See
+   * <p>Response object for the <code>DescribeBackups</code> operation.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeBackupsResponse">AWS
    * API Reference</a></p>
@@ -77,51 +77,51 @@ namespace Model
 
 
     /**
-     * <p>This is present if there are more backups than returned in the response
-     * (String). You can use the <code>NextToken</code> value in the later request to
-     * fetch the backups. </p>
+     * <p>A <code>NextToken</code> value is present if there are more backups than
+     * returned in the response. You can use the <code>NextToken</code> value in the
+     * subsequent request to fetch the backups. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>This is present if there are more backups than returned in the response
-     * (String). You can use the <code>NextToken</code> value in the later request to
-     * fetch the backups. </p>
+     * <p>A <code>NextToken</code> value is present if there are more backups than
+     * returned in the response. You can use the <code>NextToken</code> value in the
+     * subsequent request to fetch the backups. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>This is present if there are more backups than returned in the response
-     * (String). You can use the <code>NextToken</code> value in the later request to
-     * fetch the backups. </p>
+     * <p>A <code>NextToken</code> value is present if there are more backups than
+     * returned in the response. You can use the <code>NextToken</code> value in the
+     * subsequent request to fetch the backups. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>This is present if there are more backups than returned in the response
-     * (String). You can use the <code>NextToken</code> value in the later request to
-     * fetch the backups. </p>
+     * <p>A <code>NextToken</code> value is present if there are more backups than
+     * returned in the response. You can use the <code>NextToken</code> value in the
+     * subsequent request to fetch the backups. </p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>This is present if there are more backups than returned in the response
-     * (String). You can use the <code>NextToken</code> value in the later request to
-     * fetch the backups. </p>
+     * <p>A <code>NextToken</code> value is present if there are more backups than
+     * returned in the response. You can use the <code>NextToken</code> value in the
+     * subsequent request to fetch the backups. </p>
      */
     inline DescribeBackupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>This is present if there are more backups than returned in the response
-     * (String). You can use the <code>NextToken</code> value in the later request to
-     * fetch the backups. </p>
+     * <p>A <code>NextToken</code> value is present if there are more backups than
+     * returned in the response. You can use the <code>NextToken</code> value in the
+     * subsequent request to fetch the backups. </p>
      */
     inline DescribeBackupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>This is present if there are more backups than returned in the response
-     * (String). You can use the <code>NextToken</code> value in the later request to
-     * fetch the backups. </p>
+     * <p>A <code>NextToken</code> value is present if there are more backups than
+     * returned in the response. You can use the <code>NextToken</code> value in the
+     * subsequent request to fetch the backups. </p>
      */
     inline DescribeBackupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

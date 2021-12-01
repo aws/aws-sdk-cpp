@@ -178,6 +178,47 @@ namespace Model
      */
     inline BatchDeleteTableRequest& AddTablesToDelete(const char* value) { m_tablesToDeleteHasBeenSet = true; m_tablesToDelete.push_back(value); return *this; }
 
+
+    /**
+     * <p>The transaction ID at which to delete the table contents.</p>
+     */
+    inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
+
+    /**
+     * <p>The transaction ID at which to delete the table contents.</p>
+     */
+    inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
+
+    /**
+     * <p>The transaction ID at which to delete the table contents.</p>
+     */
+    inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
+
+    /**
+     * <p>The transaction ID at which to delete the table contents.</p>
+     */
+    inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
+
+    /**
+     * <p>The transaction ID at which to delete the table contents.</p>
+     */
+    inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
+
+    /**
+     * <p>The transaction ID at which to delete the table contents.</p>
+     */
+    inline BatchDeleteTableRequest& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
+
+    /**
+     * <p>The transaction ID at which to delete the table contents.</p>
+     */
+    inline BatchDeleteTableRequest& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
+
+    /**
+     * <p>The transaction ID at which to delete the table contents.</p>
+     */
+    inline BatchDeleteTableRequest& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
+
   private:
 
     Aws::String m_catalogId;
@@ -188,6 +229,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_tablesToDelete;
     bool m_tablesToDeleteHasBeenSet;
+
+    Aws::String m_transactionId;
+    bool m_transactionIdHasBeenSet;
   };
 
 } // namespace Model

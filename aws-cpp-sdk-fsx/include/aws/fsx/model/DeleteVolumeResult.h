@@ -35,94 +35,104 @@ namespace Model
 
 
     /**
-     * <p>The ID of the volume being deleted.</p>
+     * <p>The ID of the volume that's being deleted.</p>
      */
     inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
 
     /**
-     * <p>The ID of the volume being deleted.</p>
+     * <p>The ID of the volume that's being deleted.</p>
      */
     inline void SetVolumeId(const Aws::String& value) { m_volumeId = value; }
 
     /**
-     * <p>The ID of the volume being deleted.</p>
+     * <p>The ID of the volume that's being deleted.</p>
      */
     inline void SetVolumeId(Aws::String&& value) { m_volumeId = std::move(value); }
 
     /**
-     * <p>The ID of the volume being deleted.</p>
+     * <p>The ID of the volume that's being deleted.</p>
      */
     inline void SetVolumeId(const char* value) { m_volumeId.assign(value); }
 
     /**
-     * <p>The ID of the volume being deleted.</p>
+     * <p>The ID of the volume that's being deleted.</p>
      */
     inline DeleteVolumeResult& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
 
     /**
-     * <p>The ID of the volume being deleted.</p>
+     * <p>The ID of the volume that's being deleted.</p>
      */
     inline DeleteVolumeResult& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the volume being deleted.</p>
+     * <p>The ID of the volume that's being deleted.</p>
      */
     inline DeleteVolumeResult& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
 
     /**
-     * <p>Describes the lifecycle state of the volume being deleted.</p>
+     * <p>The lifecycle state of the volume being deleted. If the
+     * <code>DeleteVolume</code> operation is successful, this value is
+     * <code>DELETING</code>.</p>
      */
     inline const VolumeLifecycle& GetLifecycle() const{ return m_lifecycle; }
 
     /**
-     * <p>Describes the lifecycle state of the volume being deleted.</p>
+     * <p>The lifecycle state of the volume being deleted. If the
+     * <code>DeleteVolume</code> operation is successful, this value is
+     * <code>DELETING</code>.</p>
      */
     inline void SetLifecycle(const VolumeLifecycle& value) { m_lifecycle = value; }
 
     /**
-     * <p>Describes the lifecycle state of the volume being deleted.</p>
+     * <p>The lifecycle state of the volume being deleted. If the
+     * <code>DeleteVolume</code> operation is successful, this value is
+     * <code>DELETING</code>.</p>
      */
     inline void SetLifecycle(VolumeLifecycle&& value) { m_lifecycle = std::move(value); }
 
     /**
-     * <p>Describes the lifecycle state of the volume being deleted.</p>
+     * <p>The lifecycle state of the volume being deleted. If the
+     * <code>DeleteVolume</code> operation is successful, this value is
+     * <code>DELETING</code>.</p>
      */
     inline DeleteVolumeResult& WithLifecycle(const VolumeLifecycle& value) { SetLifecycle(value); return *this;}
 
     /**
-     * <p>Describes the lifecycle state of the volume being deleted.</p>
+     * <p>The lifecycle state of the volume being deleted. If the
+     * <code>DeleteVolume</code> operation is successful, this value is
+     * <code>DELETING</code>.</p>
      */
     inline DeleteVolumeResult& WithLifecycle(VolumeLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
 
 
     /**
-     * <p>Returned after a <code>DeleteVolume request, showing the status of the delete
-     * request.</code> </p>
+     * <p>Returned after a <code>DeleteVolume</code> request, showing the status of the
+     * delete request.</p>
      */
     inline const DeleteVolumeOntapResponse& GetOntapResponse() const{ return m_ontapResponse; }
 
     /**
-     * <p>Returned after a <code>DeleteVolume request, showing the status of the delete
-     * request.</code> </p>
+     * <p>Returned after a <code>DeleteVolume</code> request, showing the status of the
+     * delete request.</p>
      */
     inline void SetOntapResponse(const DeleteVolumeOntapResponse& value) { m_ontapResponse = value; }
 
     /**
-     * <p>Returned after a <code>DeleteVolume request, showing the status of the delete
-     * request.</code> </p>
+     * <p>Returned after a <code>DeleteVolume</code> request, showing the status of the
+     * delete request.</p>
      */
     inline void SetOntapResponse(DeleteVolumeOntapResponse&& value) { m_ontapResponse = std::move(value); }
 
     /**
-     * <p>Returned after a <code>DeleteVolume request, showing the status of the delete
-     * request.</code> </p>
+     * <p>Returned after a <code>DeleteVolume</code> request, showing the status of the
+     * delete request.</p>
      */
     inline DeleteVolumeResult& WithOntapResponse(const DeleteVolumeOntapResponse& value) { SetOntapResponse(value); return *this;}
 
     /**
-     * <p>Returned after a <code>DeleteVolume request, showing the status of the delete
-     * request.</code> </p>
+     * <p>Returned after a <code>DeleteVolume</code> request, showing the status of the
+     * delete request.</p>
      */
     inline DeleteVolumeResult& WithOntapResponse(DeleteVolumeOntapResponse&& value) { SetOntapResponse(std::move(value)); return *this;}
 

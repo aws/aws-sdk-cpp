@@ -37,14 +37,6 @@ Aws::String GetLFTagRequest::SerializePayload() const
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetLFTagRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSLakeFormation.GetLFTag"));
-  return headers;
-
-}
-
 
 
 

@@ -32,122 +32,126 @@ namespace Model
 
     Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline GetResourceLFTagsRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline GetResourceLFTagsRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline GetResourceLFTagsRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
 
     /**
-     * <p>The resource for which you want to return tags.</p>
+     * <p>The database, table, or column resource for which you want to return
+     * LF-tags.</p>
      */
     inline const Resource& GetResource() const{ return m_resource; }
 
     /**
-     * <p>The resource for which you want to return tags.</p>
+     * <p>The database, table, or column resource for which you want to return
+     * LF-tags.</p>
      */
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
 
     /**
-     * <p>The resource for which you want to return tags.</p>
+     * <p>The database, table, or column resource for which you want to return
+     * LF-tags.</p>
      */
     inline void SetResource(const Resource& value) { m_resourceHasBeenSet = true; m_resource = value; }
 
     /**
-     * <p>The resource for which you want to return tags.</p>
+     * <p>The database, table, or column resource for which you want to return
+     * LF-tags.</p>
      */
     inline void SetResource(Resource&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
 
     /**
-     * <p>The resource for which you want to return tags.</p>
+     * <p>The database, table, or column resource for which you want to return
+     * LF-tags.</p>
      */
     inline GetResourceLFTagsRequest& WithResource(const Resource& value) { SetResource(value); return *this;}
 
     /**
-     * <p>The resource for which you want to return tags.</p>
+     * <p>The database, table, or column resource for which you want to return
+     * LF-tags.</p>
      */
     inline GetResourceLFTagsRequest& WithResource(Resource&& value) { SetResource(std::move(value)); return *this;}
 
 
     /**
-     * <p>Indicates whether to show the assigned tags.</p>
+     * <p>Indicates whether to show the assigned LF-tags.</p>
      */
     inline bool GetShowAssignedLFTags() const{ return m_showAssignedLFTags; }
 
     /**
-     * <p>Indicates whether to show the assigned tags.</p>
+     * <p>Indicates whether to show the assigned LF-tags.</p>
      */
     inline bool ShowAssignedLFTagsHasBeenSet() const { return m_showAssignedLFTagsHasBeenSet; }
 
     /**
-     * <p>Indicates whether to show the assigned tags.</p>
+     * <p>Indicates whether to show the assigned LF-tags.</p>
      */
     inline void SetShowAssignedLFTags(bool value) { m_showAssignedLFTagsHasBeenSet = true; m_showAssignedLFTags = value; }
 
     /**
-     * <p>Indicates whether to show the assigned tags.</p>
+     * <p>Indicates whether to show the assigned LF-tags.</p>
      */
     inline GetResourceLFTagsRequest& WithShowAssignedLFTags(bool value) { SetShowAssignedLFTags(value); return *this;}
 

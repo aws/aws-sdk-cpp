@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/storagegateway/model/HostEnvironment.h>
 #include <utility>
 
 namespace Aws
@@ -363,6 +364,100 @@ namespace Model
      */
     inline GatewayInfo& WithEc2InstanceRegion(const char* value) { SetEc2InstanceRegion(value); return *this;}
 
+
+    /**
+     * <p>The type of hardware or software platform on which the gateway is
+     * running.</p>
+     */
+    inline const HostEnvironment& GetHostEnvironment() const{ return m_hostEnvironment; }
+
+    /**
+     * <p>The type of hardware or software platform on which the gateway is
+     * running.</p>
+     */
+    inline bool HostEnvironmentHasBeenSet() const { return m_hostEnvironmentHasBeenSet; }
+
+    /**
+     * <p>The type of hardware or software platform on which the gateway is
+     * running.</p>
+     */
+    inline void SetHostEnvironment(const HostEnvironment& value) { m_hostEnvironmentHasBeenSet = true; m_hostEnvironment = value; }
+
+    /**
+     * <p>The type of hardware or software platform on which the gateway is
+     * running.</p>
+     */
+    inline void SetHostEnvironment(HostEnvironment&& value) { m_hostEnvironmentHasBeenSet = true; m_hostEnvironment = std::move(value); }
+
+    /**
+     * <p>The type of hardware or software platform on which the gateway is
+     * running.</p>
+     */
+    inline GatewayInfo& WithHostEnvironment(const HostEnvironment& value) { SetHostEnvironment(value); return *this;}
+
+    /**
+     * <p>The type of hardware or software platform on which the gateway is
+     * running.</p>
+     */
+    inline GatewayInfo& WithHostEnvironment(HostEnvironment&& value) { SetHostEnvironment(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A unique identifier for the specific instance of the host platform running
+     * the gateway. This value is only available for certain host environments, and its
+     * format depends on the host environment type.</p>
+     */
+    inline const Aws::String& GetHostEnvironmentId() const{ return m_hostEnvironmentId; }
+
+    /**
+     * <p>A unique identifier for the specific instance of the host platform running
+     * the gateway. This value is only available for certain host environments, and its
+     * format depends on the host environment type.</p>
+     */
+    inline bool HostEnvironmentIdHasBeenSet() const { return m_hostEnvironmentIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for the specific instance of the host platform running
+     * the gateway. This value is only available for certain host environments, and its
+     * format depends on the host environment type.</p>
+     */
+    inline void SetHostEnvironmentId(const Aws::String& value) { m_hostEnvironmentIdHasBeenSet = true; m_hostEnvironmentId = value; }
+
+    /**
+     * <p>A unique identifier for the specific instance of the host platform running
+     * the gateway. This value is only available for certain host environments, and its
+     * format depends on the host environment type.</p>
+     */
+    inline void SetHostEnvironmentId(Aws::String&& value) { m_hostEnvironmentIdHasBeenSet = true; m_hostEnvironmentId = std::move(value); }
+
+    /**
+     * <p>A unique identifier for the specific instance of the host platform running
+     * the gateway. This value is only available for certain host environments, and its
+     * format depends on the host environment type.</p>
+     */
+    inline void SetHostEnvironmentId(const char* value) { m_hostEnvironmentIdHasBeenSet = true; m_hostEnvironmentId.assign(value); }
+
+    /**
+     * <p>A unique identifier for the specific instance of the host platform running
+     * the gateway. This value is only available for certain host environments, and its
+     * format depends on the host environment type.</p>
+     */
+    inline GatewayInfo& WithHostEnvironmentId(const Aws::String& value) { SetHostEnvironmentId(value); return *this;}
+
+    /**
+     * <p>A unique identifier for the specific instance of the host platform running
+     * the gateway. This value is only available for certain host environments, and its
+     * format depends on the host environment type.</p>
+     */
+    inline GatewayInfo& WithHostEnvironmentId(Aws::String&& value) { SetHostEnvironmentId(std::move(value)); return *this;}
+
+    /**
+     * <p>A unique identifier for the specific instance of the host platform running
+     * the gateway. This value is only available for certain host environments, and its
+     * format depends on the host environment type.</p>
+     */
+    inline GatewayInfo& WithHostEnvironmentId(const char* value) { SetHostEnvironmentId(value); return *this;}
+
   private:
 
     Aws::String m_gatewayId;
@@ -385,6 +480,12 @@ namespace Model
 
     Aws::String m_ec2InstanceRegion;
     bool m_ec2InstanceRegionHasBeenSet;
+
+    HostEnvironment m_hostEnvironment;
+    bool m_hostEnvironmentHasBeenSet;
+
+    Aws::String m_hostEnvironmentId;
+    bool m_hostEnvironmentIdHasBeenSet;
   };
 
 } // namespace Model

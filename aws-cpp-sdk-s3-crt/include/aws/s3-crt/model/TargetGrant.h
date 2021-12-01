@@ -24,7 +24,12 @@ namespace Model
 {
 
   /**
-   * <p>Container for granting information.</p><p><h3>See Also:</h3>   <a
+   * <p>Container for granting information.</p> <p>Buckets that use the bucket owner
+   * enforced setting for Object Ownership don't support target grants. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions
+   * server access log delivery</a> in the <i>Amazon S3 User Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/TargetGrant">AWS API
    * Reference</a></p>
    */

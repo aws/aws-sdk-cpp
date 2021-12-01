@@ -10,6 +10,7 @@
 #include <aws/fsx/model/VolumeType.h>
 #include <aws/fsx/model/CreateOntapVolumeConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/fsx/model/CreateOpenZFSVolumeConfiguration.h>
 #include <aws/fsx/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -65,116 +66,110 @@ namespace Model
 
 
     /**
-     * <p>Specifies the type of volume to create; <code>ONTAP</code> is the only valid
-     * volume type.</p>
+     * <p>Specifies the type of volume to create; <code>ONTAP</code> and
+     * <code>OPENZFS</code> are the only valid volume types.</p>
      */
     inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
 
     /**
-     * <p>Specifies the type of volume to create; <code>ONTAP</code> is the only valid
-     * volume type.</p>
+     * <p>Specifies the type of volume to create; <code>ONTAP</code> and
+     * <code>OPENZFS</code> are the only valid volume types.</p>
      */
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
 
     /**
-     * <p>Specifies the type of volume to create; <code>ONTAP</code> is the only valid
-     * volume type.</p>
+     * <p>Specifies the type of volume to create; <code>ONTAP</code> and
+     * <code>OPENZFS</code> are the only valid volume types.</p>
      */
     inline void SetVolumeType(const VolumeType& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /**
-     * <p>Specifies the type of volume to create; <code>ONTAP</code> is the only valid
-     * volume type.</p>
+     * <p>Specifies the type of volume to create; <code>ONTAP</code> and
+     * <code>OPENZFS</code> are the only valid volume types.</p>
      */
     inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
     /**
-     * <p>Specifies the type of volume to create; <code>ONTAP</code> is the only valid
-     * volume type.</p>
+     * <p>Specifies the type of volume to create; <code>ONTAP</code> and
+     * <code>OPENZFS</code> are the only valid volume types.</p>
      */
     inline CreateVolumeRequest& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
 
     /**
-     * <p>Specifies the type of volume to create; <code>ONTAP</code> is the only valid
-     * volume type.</p>
+     * <p>Specifies the type of volume to create; <code>ONTAP</code> and
+     * <code>OPENZFS</code> are the only valid volume types.</p>
      */
     inline CreateVolumeRequest& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies the name of the volume you're creating.</p>
+     * <p>Specifies the name of the volume that you're creating.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Specifies the name of the volume you're creating.</p>
+     * <p>Specifies the name of the volume that you're creating.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Specifies the name of the volume you're creating.</p>
+     * <p>Specifies the name of the volume that you're creating.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Specifies the name of the volume you're creating.</p>
+     * <p>Specifies the name of the volume that you're creating.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Specifies the name of the volume you're creating.</p>
+     * <p>Specifies the name of the volume that you're creating.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Specifies the name of the volume you're creating.</p>
+     * <p>Specifies the name of the volume that you're creating.</p>
      */
     inline CreateVolumeRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Specifies the name of the volume you're creating.</p>
+     * <p>Specifies the name of the volume that you're creating.</p>
      */
     inline CreateVolumeRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the name of the volume you're creating.</p>
+     * <p>Specifies the name of the volume that you're creating.</p>
      */
     inline CreateVolumeRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Specifies the <code>ONTAP</code> configuration to use in creating the
-     * volume.</p>
+     * <p>Specifies the configuration to use when creating the ONTAP volume.</p>
      */
     inline const CreateOntapVolumeConfiguration& GetOntapConfiguration() const{ return m_ontapConfiguration; }
 
     /**
-     * <p>Specifies the <code>ONTAP</code> configuration to use in creating the
-     * volume.</p>
+     * <p>Specifies the configuration to use when creating the ONTAP volume.</p>
      */
     inline bool OntapConfigurationHasBeenSet() const { return m_ontapConfigurationHasBeenSet; }
 
     /**
-     * <p>Specifies the <code>ONTAP</code> configuration to use in creating the
-     * volume.</p>
+     * <p>Specifies the configuration to use when creating the ONTAP volume.</p>
      */
     inline void SetOntapConfiguration(const CreateOntapVolumeConfiguration& value) { m_ontapConfigurationHasBeenSet = true; m_ontapConfiguration = value; }
 
     /**
-     * <p>Specifies the <code>ONTAP</code> configuration to use in creating the
-     * volume.</p>
+     * <p>Specifies the configuration to use when creating the ONTAP volume.</p>
      */
     inline void SetOntapConfiguration(CreateOntapVolumeConfiguration&& value) { m_ontapConfigurationHasBeenSet = true; m_ontapConfiguration = std::move(value); }
 
     /**
-     * <p>Specifies the <code>ONTAP</code> configuration to use in creating the
-     * volume.</p>
+     * <p>Specifies the configuration to use when creating the ONTAP volume.</p>
      */
     inline CreateVolumeRequest& WithOntapConfiguration(const CreateOntapVolumeConfiguration& value) { SetOntapConfiguration(value); return *this;}
 
     /**
-     * <p>Specifies the <code>ONTAP</code> configuration to use in creating the
-     * volume.</p>
+     * <p>Specifies the configuration to use when creating the ONTAP volume.</p>
      */
     inline CreateVolumeRequest& WithOntapConfiguration(CreateOntapVolumeConfiguration&& value) { SetOntapConfiguration(std::move(value)); return *this;}
 
@@ -203,6 +198,37 @@ namespace Model
     
     inline CreateVolumeRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specifies the configuration to use when creating the OpenZFS volume.</p>
+     */
+    inline const CreateOpenZFSVolumeConfiguration& GetOpenZFSConfiguration() const{ return m_openZFSConfiguration; }
+
+    /**
+     * <p>Specifies the configuration to use when creating the OpenZFS volume.</p>
+     */
+    inline bool OpenZFSConfigurationHasBeenSet() const { return m_openZFSConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies the configuration to use when creating the OpenZFS volume.</p>
+     */
+    inline void SetOpenZFSConfiguration(const CreateOpenZFSVolumeConfiguration& value) { m_openZFSConfigurationHasBeenSet = true; m_openZFSConfiguration = value; }
+
+    /**
+     * <p>Specifies the configuration to use when creating the OpenZFS volume.</p>
+     */
+    inline void SetOpenZFSConfiguration(CreateOpenZFSVolumeConfiguration&& value) { m_openZFSConfigurationHasBeenSet = true; m_openZFSConfiguration = std::move(value); }
+
+    /**
+     * <p>Specifies the configuration to use when creating the OpenZFS volume.</p>
+     */
+    inline CreateVolumeRequest& WithOpenZFSConfiguration(const CreateOpenZFSVolumeConfiguration& value) { SetOpenZFSConfiguration(value); return *this;}
+
+    /**
+     * <p>Specifies the configuration to use when creating the OpenZFS volume.</p>
+     */
+    inline CreateVolumeRequest& WithOpenZFSConfiguration(CreateOpenZFSVolumeConfiguration&& value) { SetOpenZFSConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clientRequestToken;
@@ -219,6 +245,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    CreateOpenZFSVolumeConfiguration m_openZFSConfiguration;
+    bool m_openZFSConfigurationHasBeenSet;
   };
 
 } // namespace Model

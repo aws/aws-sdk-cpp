@@ -16,7 +16,8 @@ namespace Model
   enum class DataRepositoryTaskType
   {
     NOT_SET,
-    EXPORT_TO_REPOSITORY
+    EXPORT_TO_REPOSITORY,
+    IMPORT_METADATA_FROM_REPOSITORY
   };
 
 namespace DataRepositoryTaskTypeMapper

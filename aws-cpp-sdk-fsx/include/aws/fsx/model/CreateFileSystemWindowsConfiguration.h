@@ -288,26 +288,30 @@ namespace Model
 
 
     /**
-     * <p>The throughput of an Amazon FSx file system, measured in megabytes per
-     * second, in 2 to the <i>n</i>th increments, between 2^3 (8) and 2^11 (2048).</p>
+     * <p>Sets the throughput capacity of an Amazon FSx file system, measured in
+     * megabytes per second (MB/s), in 2 to the <i>n</i>th increments, between 2^3 (8)
+     * and 2^11 (2048).</p>
      */
     inline int GetThroughputCapacity() const{ return m_throughputCapacity; }
 
     /**
-     * <p>The throughput of an Amazon FSx file system, measured in megabytes per
-     * second, in 2 to the <i>n</i>th increments, between 2^3 (8) and 2^11 (2048).</p>
+     * <p>Sets the throughput capacity of an Amazon FSx file system, measured in
+     * megabytes per second (MB/s), in 2 to the <i>n</i>th increments, between 2^3 (8)
+     * and 2^11 (2048).</p>
      */
     inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
 
     /**
-     * <p>The throughput of an Amazon FSx file system, measured in megabytes per
-     * second, in 2 to the <i>n</i>th increments, between 2^3 (8) and 2^11 (2048).</p>
+     * <p>Sets the throughput capacity of an Amazon FSx file system, measured in
+     * megabytes per second (MB/s), in 2 to the <i>n</i>th increments, between 2^3 (8)
+     * and 2^11 (2048).</p>
      */
     inline void SetThroughputCapacity(int value) { m_throughputCapacityHasBeenSet = true; m_throughputCapacity = value; }
 
     /**
-     * <p>The throughput of an Amazon FSx file system, measured in megabytes per
-     * second, in 2 to the <i>n</i>th increments, between 2^3 (8) and 2^11 (2048).</p>
+     * <p>Sets the throughput capacity of an Amazon FSx file system, measured in
+     * megabytes per second (MB/s), in 2 to the <i>n</i>th increments, between 2^3 (8)
+     * and 2^11 (2048).</p>
      */
     inline CreateFileSystemWindowsConfiguration& WithThroughputCapacity(int value) { SetThroughputCapacity(value); return *this;}
 

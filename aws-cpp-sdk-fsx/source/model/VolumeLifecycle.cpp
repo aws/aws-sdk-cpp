@@ -26,6 +26,7 @@ namespace Aws
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int MISCONFIGURED_HASH = HashingUtils::HashString("MISCONFIGURED");
         static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
 
 
         VolumeLifecycle GetVolumeLifecycleForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return VolumeLifecycle::PENDING;
           }
+          else if (hashCode == AVAILABLE_HASH)
+          {
+            return VolumeLifecycle::AVAILABLE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +86,8 @@ namespace Aws
             return "MISCONFIGURED";
           case VolumeLifecycle::PENDING:
             return "PENDING";
+          case VolumeLifecycle::AVAILABLE:
+            return "AVAILABLE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

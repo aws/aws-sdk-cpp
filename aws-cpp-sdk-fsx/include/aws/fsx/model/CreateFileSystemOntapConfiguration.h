@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>The ONTAP configuration properties of the FSx for NetApp ONTAP file system
-   * that you are creating.</p><p><h3>See Also:</h3>   <a
+   * <p>The ONTAP configuration properties of the FSx for ONTAP file system that you
+   * are creating.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemOntapConfiguration">AWS
    * API Reference</a></p>
    */
@@ -80,38 +80,44 @@ namespace Model
 
 
     /**
-     * <p>Specifies the ONTAP file system deployment type to use in creating the file
-     * system.</p>
+     * <p>Specifies the FSx for ONTAP file system deployment type to use in creating
+     * the file system. <code>MULTI_AZ_1</code> is the supported ONTAP deployment
+     * type.</p>
      */
     inline const OntapDeploymentType& GetDeploymentType() const{ return m_deploymentType; }
 
     /**
-     * <p>Specifies the ONTAP file system deployment type to use in creating the file
-     * system.</p>
+     * <p>Specifies the FSx for ONTAP file system deployment type to use in creating
+     * the file system. <code>MULTI_AZ_1</code> is the supported ONTAP deployment
+     * type.</p>
      */
     inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
 
     /**
-     * <p>Specifies the ONTAP file system deployment type to use in creating the file
-     * system.</p>
+     * <p>Specifies the FSx for ONTAP file system deployment type to use in creating
+     * the file system. <code>MULTI_AZ_1</code> is the supported ONTAP deployment
+     * type.</p>
      */
     inline void SetDeploymentType(const OntapDeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
 
     /**
-     * <p>Specifies the ONTAP file system deployment type to use in creating the file
-     * system.</p>
+     * <p>Specifies the FSx for ONTAP file system deployment type to use in creating
+     * the file system. <code>MULTI_AZ_1</code> is the supported ONTAP deployment
+     * type.</p>
      */
     inline void SetDeploymentType(OntapDeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
 
     /**
-     * <p>Specifies the ONTAP file system deployment type to use in creating the file
-     * system.</p>
+     * <p>Specifies the FSx for ONTAP file system deployment type to use in creating
+     * the file system. <code>MULTI_AZ_1</code> is the supported ONTAP deployment
+     * type.</p>
      */
     inline CreateFileSystemOntapConfiguration& WithDeploymentType(const OntapDeploymentType& value) { SetDeploymentType(value); return *this;}
 
     /**
-     * <p>Specifies the ONTAP file system deployment type to use in creating the file
-     * system.</p>
+     * <p>Specifies the FSx for ONTAP file system deployment type to use in creating
+     * the file system. <code>MULTI_AZ_1</code> is the supported ONTAP deployment
+     * type.</p>
      */
     inline CreateFileSystemOntapConfiguration& WithDeploymentType(OntapDeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
 
@@ -174,199 +180,245 @@ namespace Model
 
 
     /**
-     * <p>The ONTAP administrative password for the <code>fsxadmin</code> user that you
-     * can use to administer your file system using the ONTAP CLI and REST API.</p>
+     * <p>The ONTAP administrative password for the <code>fsxadmin</code> user with
+     * which you administer your file system using the NetApp ONTAP CLI and REST
+     * API.</p>
      */
     inline const Aws::String& GetFsxAdminPassword() const{ return m_fsxAdminPassword; }
 
     /**
-     * <p>The ONTAP administrative password for the <code>fsxadmin</code> user that you
-     * can use to administer your file system using the ONTAP CLI and REST API.</p>
+     * <p>The ONTAP administrative password for the <code>fsxadmin</code> user with
+     * which you administer your file system using the NetApp ONTAP CLI and REST
+     * API.</p>
      */
     inline bool FsxAdminPasswordHasBeenSet() const { return m_fsxAdminPasswordHasBeenSet; }
 
     /**
-     * <p>The ONTAP administrative password for the <code>fsxadmin</code> user that you
-     * can use to administer your file system using the ONTAP CLI and REST API.</p>
+     * <p>The ONTAP administrative password for the <code>fsxadmin</code> user with
+     * which you administer your file system using the NetApp ONTAP CLI and REST
+     * API.</p>
      */
     inline void SetFsxAdminPassword(const Aws::String& value) { m_fsxAdminPasswordHasBeenSet = true; m_fsxAdminPassword = value; }
 
     /**
-     * <p>The ONTAP administrative password for the <code>fsxadmin</code> user that you
-     * can use to administer your file system using the ONTAP CLI and REST API.</p>
+     * <p>The ONTAP administrative password for the <code>fsxadmin</code> user with
+     * which you administer your file system using the NetApp ONTAP CLI and REST
+     * API.</p>
      */
     inline void SetFsxAdminPassword(Aws::String&& value) { m_fsxAdminPasswordHasBeenSet = true; m_fsxAdminPassword = std::move(value); }
 
     /**
-     * <p>The ONTAP administrative password for the <code>fsxadmin</code> user that you
-     * can use to administer your file system using the ONTAP CLI and REST API.</p>
+     * <p>The ONTAP administrative password for the <code>fsxadmin</code> user with
+     * which you administer your file system using the NetApp ONTAP CLI and REST
+     * API.</p>
      */
     inline void SetFsxAdminPassword(const char* value) { m_fsxAdminPasswordHasBeenSet = true; m_fsxAdminPassword.assign(value); }
 
     /**
-     * <p>The ONTAP administrative password for the <code>fsxadmin</code> user that you
-     * can use to administer your file system using the ONTAP CLI and REST API.</p>
+     * <p>The ONTAP administrative password for the <code>fsxadmin</code> user with
+     * which you administer your file system using the NetApp ONTAP CLI and REST
+     * API.</p>
      */
     inline CreateFileSystemOntapConfiguration& WithFsxAdminPassword(const Aws::String& value) { SetFsxAdminPassword(value); return *this;}
 
     /**
-     * <p>The ONTAP administrative password for the <code>fsxadmin</code> user that you
-     * can use to administer your file system using the ONTAP CLI and REST API.</p>
+     * <p>The ONTAP administrative password for the <code>fsxadmin</code> user with
+     * which you administer your file system using the NetApp ONTAP CLI and REST
+     * API.</p>
      */
     inline CreateFileSystemOntapConfiguration& WithFsxAdminPassword(Aws::String&& value) { SetFsxAdminPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The ONTAP administrative password for the <code>fsxadmin</code> user that you
-     * can use to administer your file system using the ONTAP CLI and REST API.</p>
+     * <p>The ONTAP administrative password for the <code>fsxadmin</code> user with
+     * which you administer your file system using the NetApp ONTAP CLI and REST
+     * API.</p>
      */
     inline CreateFileSystemOntapConfiguration& WithFsxAdminPassword(const char* value) { SetFsxAdminPassword(value); return *this;}
 
 
     /**
-     * <p>The SSD IOPS configuration for the Amazon FSx for NetApp ONTAP file
-     * system.</p>
+     * <p>The SSD IOPS configuration for the FSx for ONTAP file system.</p>
      */
     inline const DiskIopsConfiguration& GetDiskIopsConfiguration() const{ return m_diskIopsConfiguration; }
 
     /**
-     * <p>The SSD IOPS configuration for the Amazon FSx for NetApp ONTAP file
-     * system.</p>
+     * <p>The SSD IOPS configuration for the FSx for ONTAP file system.</p>
      */
     inline bool DiskIopsConfigurationHasBeenSet() const { return m_diskIopsConfigurationHasBeenSet; }
 
     /**
-     * <p>The SSD IOPS configuration for the Amazon FSx for NetApp ONTAP file
-     * system.</p>
+     * <p>The SSD IOPS configuration for the FSx for ONTAP file system.</p>
      */
     inline void SetDiskIopsConfiguration(const DiskIopsConfiguration& value) { m_diskIopsConfigurationHasBeenSet = true; m_diskIopsConfiguration = value; }
 
     /**
-     * <p>The SSD IOPS configuration for the Amazon FSx for NetApp ONTAP file
-     * system.</p>
+     * <p>The SSD IOPS configuration for the FSx for ONTAP file system.</p>
      */
     inline void SetDiskIopsConfiguration(DiskIopsConfiguration&& value) { m_diskIopsConfigurationHasBeenSet = true; m_diskIopsConfiguration = std::move(value); }
 
     /**
-     * <p>The SSD IOPS configuration for the Amazon FSx for NetApp ONTAP file
-     * system.</p>
+     * <p>The SSD IOPS configuration for the FSx for ONTAP file system.</p>
      */
     inline CreateFileSystemOntapConfiguration& WithDiskIopsConfiguration(const DiskIopsConfiguration& value) { SetDiskIopsConfiguration(value); return *this;}
 
     /**
-     * <p>The SSD IOPS configuration for the Amazon FSx for NetApp ONTAP file
-     * system.</p>
+     * <p>The SSD IOPS configuration for the FSx for ONTAP file system.</p>
      */
     inline CreateFileSystemOntapConfiguration& WithDiskIopsConfiguration(DiskIopsConfiguration&& value) { SetDiskIopsConfiguration(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
+     * This specifies the subnet in which you want the preferred file server to be
+     * located.</p>
+     */
     inline const Aws::String& GetPreferredSubnetId() const{ return m_preferredSubnetId; }
 
-    
+    /**
+     * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
+     * This specifies the subnet in which you want the preferred file server to be
+     * located.</p>
+     */
     inline bool PreferredSubnetIdHasBeenSet() const { return m_preferredSubnetIdHasBeenSet; }
 
-    
+    /**
+     * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
+     * This specifies the subnet in which you want the preferred file server to be
+     * located.</p>
+     */
     inline void SetPreferredSubnetId(const Aws::String& value) { m_preferredSubnetIdHasBeenSet = true; m_preferredSubnetId = value; }
 
-    
+    /**
+     * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
+     * This specifies the subnet in which you want the preferred file server to be
+     * located.</p>
+     */
     inline void SetPreferredSubnetId(Aws::String&& value) { m_preferredSubnetIdHasBeenSet = true; m_preferredSubnetId = std::move(value); }
 
-    
+    /**
+     * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
+     * This specifies the subnet in which you want the preferred file server to be
+     * located.</p>
+     */
     inline void SetPreferredSubnetId(const char* value) { m_preferredSubnetIdHasBeenSet = true; m_preferredSubnetId.assign(value); }
 
-    
+    /**
+     * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
+     * This specifies the subnet in which you want the preferred file server to be
+     * located.</p>
+     */
     inline CreateFileSystemOntapConfiguration& WithPreferredSubnetId(const Aws::String& value) { SetPreferredSubnetId(value); return *this;}
 
-    
+    /**
+     * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
+     * This specifies the subnet in which you want the preferred file server to be
+     * located.</p>
+     */
     inline CreateFileSystemOntapConfiguration& WithPreferredSubnetId(Aws::String&& value) { SetPreferredSubnetId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>.
+     * This specifies the subnet in which you want the preferred file server to be
+     * located.</p>
+     */
     inline CreateFileSystemOntapConfiguration& WithPreferredSubnetId(const char* value) { SetPreferredSubnetId(value); return *this;}
 
 
     /**
-     * <p>Specifies the VPC route tables in which your file system's endpoints will be
-     * created. You should specify all VPC route tables associated with the subnets in
-     * which your clients are located. By default, Amazon FSx selects your VPC's
-     * default route table.</p>
+     * <p>Specifies the virtual private cloud (VPC) route tables in which your file
+     * system's endpoints will be created. You should specify all VPC route tables
+     * associated with the subnets in which your clients are located. By default,
+     * Amazon FSx selects your VPC's default route table.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRouteTableIds() const{ return m_routeTableIds; }
 
     /**
-     * <p>Specifies the VPC route tables in which your file system's endpoints will be
-     * created. You should specify all VPC route tables associated with the subnets in
-     * which your clients are located. By default, Amazon FSx selects your VPC's
-     * default route table.</p>
+     * <p>Specifies the virtual private cloud (VPC) route tables in which your file
+     * system's endpoints will be created. You should specify all VPC route tables
+     * associated with the subnets in which your clients are located. By default,
+     * Amazon FSx selects your VPC's default route table.</p>
      */
     inline bool RouteTableIdsHasBeenSet() const { return m_routeTableIdsHasBeenSet; }
 
     /**
-     * <p>Specifies the VPC route tables in which your file system's endpoints will be
-     * created. You should specify all VPC route tables associated with the subnets in
-     * which your clients are located. By default, Amazon FSx selects your VPC's
-     * default route table.</p>
+     * <p>Specifies the virtual private cloud (VPC) route tables in which your file
+     * system's endpoints will be created. You should specify all VPC route tables
+     * associated with the subnets in which your clients are located. By default,
+     * Amazon FSx selects your VPC's default route table.</p>
      */
     inline void SetRouteTableIds(const Aws::Vector<Aws::String>& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds = value; }
 
     /**
-     * <p>Specifies the VPC route tables in which your file system's endpoints will be
-     * created. You should specify all VPC route tables associated with the subnets in
-     * which your clients are located. By default, Amazon FSx selects your VPC's
-     * default route table.</p>
+     * <p>Specifies the virtual private cloud (VPC) route tables in which your file
+     * system's endpoints will be created. You should specify all VPC route tables
+     * associated with the subnets in which your clients are located. By default,
+     * Amazon FSx selects your VPC's default route table.</p>
      */
     inline void SetRouteTableIds(Aws::Vector<Aws::String>&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds = std::move(value); }
 
     /**
-     * <p>Specifies the VPC route tables in which your file system's endpoints will be
-     * created. You should specify all VPC route tables associated with the subnets in
-     * which your clients are located. By default, Amazon FSx selects your VPC's
-     * default route table.</p>
+     * <p>Specifies the virtual private cloud (VPC) route tables in which your file
+     * system's endpoints will be created. You should specify all VPC route tables
+     * associated with the subnets in which your clients are located. By default,
+     * Amazon FSx selects your VPC's default route table.</p>
      */
     inline CreateFileSystemOntapConfiguration& WithRouteTableIds(const Aws::Vector<Aws::String>& value) { SetRouteTableIds(value); return *this;}
 
     /**
-     * <p>Specifies the VPC route tables in which your file system's endpoints will be
-     * created. You should specify all VPC route tables associated with the subnets in
-     * which your clients are located. By default, Amazon FSx selects your VPC's
-     * default route table.</p>
+     * <p>Specifies the virtual private cloud (VPC) route tables in which your file
+     * system's endpoints will be created. You should specify all VPC route tables
+     * associated with the subnets in which your clients are located. By default,
+     * Amazon FSx selects your VPC's default route table.</p>
      */
     inline CreateFileSystemOntapConfiguration& WithRouteTableIds(Aws::Vector<Aws::String>&& value) { SetRouteTableIds(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the VPC route tables in which your file system's endpoints will be
-     * created. You should specify all VPC route tables associated with the subnets in
-     * which your clients are located. By default, Amazon FSx selects your VPC's
-     * default route table.</p>
+     * <p>Specifies the virtual private cloud (VPC) route tables in which your file
+     * system's endpoints will be created. You should specify all VPC route tables
+     * associated with the subnets in which your clients are located. By default,
+     * Amazon FSx selects your VPC's default route table.</p>
      */
     inline CreateFileSystemOntapConfiguration& AddRouteTableIds(const Aws::String& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
 
     /**
-     * <p>Specifies the VPC route tables in which your file system's endpoints will be
-     * created. You should specify all VPC route tables associated with the subnets in
-     * which your clients are located. By default, Amazon FSx selects your VPC's
-     * default route table.</p>
+     * <p>Specifies the virtual private cloud (VPC) route tables in which your file
+     * system's endpoints will be created. You should specify all VPC route tables
+     * associated with the subnets in which your clients are located. By default,
+     * Amazon FSx selects your VPC's default route table.</p>
      */
     inline CreateFileSystemOntapConfiguration& AddRouteTableIds(Aws::String&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Specifies the VPC route tables in which your file system's endpoints will be
-     * created. You should specify all VPC route tables associated with the subnets in
-     * which your clients are located. By default, Amazon FSx selects your VPC's
-     * default route table.</p>
+     * <p>Specifies the virtual private cloud (VPC) route tables in which your file
+     * system's endpoints will be created. You should specify all VPC route tables
+     * associated with the subnets in which your clients are located. By default,
+     * Amazon FSx selects your VPC's default route table.</p>
      */
     inline CreateFileSystemOntapConfiguration& AddRouteTableIds(const char* value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
 
 
-    
+    /**
+     * <p>Sets the throughput capacity for the file system that you're creating. Valid
+     * values are 512, 1024, and 2048 MBps.</p>
+     */
     inline int GetThroughputCapacity() const{ return m_throughputCapacity; }
 
-    
+    /**
+     * <p>Sets the throughput capacity for the file system that you're creating. Valid
+     * values are 512, 1024, and 2048 MBps.</p>
+     */
     inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
 
-    
+    /**
+     * <p>Sets the throughput capacity for the file system that you're creating. Valid
+     * values are 512, 1024, and 2048 MBps.</p>
+     */
     inline void SetThroughputCapacity(int value) { m_throughputCapacityHasBeenSet = true; m_throughputCapacity = value; }
 
-    
+    /**
+     * <p>Sets the throughput capacity for the file system that you're creating. Valid
+     * values are 512, 1024, and 2048 MBps.</p>
+     */
     inline CreateFileSystemOntapConfiguration& WithThroughputCapacity(int value) { SetThroughputCapacity(value); return *this;}
 
 

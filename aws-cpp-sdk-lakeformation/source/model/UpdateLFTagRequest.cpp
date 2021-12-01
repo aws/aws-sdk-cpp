@@ -61,14 +61,6 @@ Aws::String UpdateLFTagRequest::SerializePayload() const
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateLFTagRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSLakeFormation.UpdateLFTag"));
-  return headers;
-
-}
-
 
 
 

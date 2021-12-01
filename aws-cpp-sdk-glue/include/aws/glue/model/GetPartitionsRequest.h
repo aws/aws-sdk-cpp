@@ -8,6 +8,7 @@
 #include <aws/glue/GlueRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/model/Segment.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -604,6 +605,90 @@ namespace Model
      */
     inline GetPartitionsRequest& WithExcludeColumnSchema(bool value) { SetExcludeColumnSchema(value); return *this;}
 
+
+    /**
+     * <p>The transaction ID at which to read the partition contents.</p>
+     */
+    inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
+
+    /**
+     * <p>The transaction ID at which to read the partition contents.</p>
+     */
+    inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
+
+    /**
+     * <p>The transaction ID at which to read the partition contents.</p>
+     */
+    inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
+
+    /**
+     * <p>The transaction ID at which to read the partition contents.</p>
+     */
+    inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
+
+    /**
+     * <p>The transaction ID at which to read the partition contents.</p>
+     */
+    inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
+
+    /**
+     * <p>The transaction ID at which to read the partition contents.</p>
+     */
+    inline GetPartitionsRequest& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
+
+    /**
+     * <p>The transaction ID at which to read the partition contents.</p>
+     */
+    inline GetPartitionsRequest& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
+
+    /**
+     * <p>The transaction ID at which to read the partition contents.</p>
+     */
+    inline GetPartitionsRequest& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
+
+
+    /**
+     * <p>The time as of when to read the partition contents. If not set, the most
+     * recent transaction commit time will be used. Cannot be specified along with
+     * <code>TransactionId</code>.</p>
+     */
+    inline const Aws::Utils::DateTime& GetQueryAsOfTime() const{ return m_queryAsOfTime; }
+
+    /**
+     * <p>The time as of when to read the partition contents. If not set, the most
+     * recent transaction commit time will be used. Cannot be specified along with
+     * <code>TransactionId</code>.</p>
+     */
+    inline bool QueryAsOfTimeHasBeenSet() const { return m_queryAsOfTimeHasBeenSet; }
+
+    /**
+     * <p>The time as of when to read the partition contents. If not set, the most
+     * recent transaction commit time will be used. Cannot be specified along with
+     * <code>TransactionId</code>.</p>
+     */
+    inline void SetQueryAsOfTime(const Aws::Utils::DateTime& value) { m_queryAsOfTimeHasBeenSet = true; m_queryAsOfTime = value; }
+
+    /**
+     * <p>The time as of when to read the partition contents. If not set, the most
+     * recent transaction commit time will be used. Cannot be specified along with
+     * <code>TransactionId</code>.</p>
+     */
+    inline void SetQueryAsOfTime(Aws::Utils::DateTime&& value) { m_queryAsOfTimeHasBeenSet = true; m_queryAsOfTime = std::move(value); }
+
+    /**
+     * <p>The time as of when to read the partition contents. If not set, the most
+     * recent transaction commit time will be used. Cannot be specified along with
+     * <code>TransactionId</code>.</p>
+     */
+    inline GetPartitionsRequest& WithQueryAsOfTime(const Aws::Utils::DateTime& value) { SetQueryAsOfTime(value); return *this;}
+
+    /**
+     * <p>The time as of when to read the partition contents. If not set, the most
+     * recent transaction commit time will be used. Cannot be specified along with
+     * <code>TransactionId</code>.</p>
+     */
+    inline GetPartitionsRequest& WithQueryAsOfTime(Aws::Utils::DateTime&& value) { SetQueryAsOfTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_catalogId;
@@ -629,6 +714,12 @@ namespace Model
 
     bool m_excludeColumnSchema;
     bool m_excludeColumnSchemaHasBeenSet;
+
+    Aws::String m_transactionId;
+    bool m_transactionIdHasBeenSet;
+
+    Aws::Utils::DateTime m_queryAsOfTime;
+    bool m_queryAsOfTimeHasBeenSet;
   };
 
 } // namespace Model

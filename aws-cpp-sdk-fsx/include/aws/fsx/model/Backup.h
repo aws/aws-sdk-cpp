@@ -34,9 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>A backup of an Amazon FSx for Windows File Server or Amazon FSx for Lustre
-   * file system, or of an Amazon FSx for NetApp ONTAP volume.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A backup of an Amazon FSx for Windows File Server, Amazon FSx for Lustre file
+   * system, Amazon FSx for NetApp ONTAP volume, or Amazon FSx for OpenZFS file
+   * system.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/Backup">AWS API
    * Reference</a></p>
    */
@@ -93,146 +93,146 @@ namespace Model
     /**
      * <p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code>
      * - The backup is fully available.</p> </li> <li> <p> <code>PENDING</code> - For
-     * user-initiated backups on Lustre file systems only; Amazon FSx has not started
+     * user-initiated backups on Lustre file systems only; Amazon FSx hasn't started
      * creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is
      * creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
      * user-initiated backups on Lustre file systems only; Amazon FSx is transferring
-     * the backup to S3.</p> </li> <li> <p> <code>COPYING</code> - Amazon FSx is
+     * the backup to Amazon S3.</p> </li> <li> <p> <code>COPYING</code> - Amazon FSx is
      * copying the backup.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
-     * the backup and it is no longer available.</p> </li> <li> <p> <code>FAILED</code>
-     * - Amazon FSx could not complete the backup.</p> </li> </ul>
+     * the backup and it's no longer available.</p> </li> <li> <p> <code>FAILED</code>
+     * - Amazon FSx couldn't finish the backup.</p> </li> </ul>
      */
     inline const BackupLifecycle& GetLifecycle() const{ return m_lifecycle; }
 
     /**
      * <p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code>
      * - The backup is fully available.</p> </li> <li> <p> <code>PENDING</code> - For
-     * user-initiated backups on Lustre file systems only; Amazon FSx has not started
+     * user-initiated backups on Lustre file systems only; Amazon FSx hasn't started
      * creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is
      * creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
      * user-initiated backups on Lustre file systems only; Amazon FSx is transferring
-     * the backup to S3.</p> </li> <li> <p> <code>COPYING</code> - Amazon FSx is
+     * the backup to Amazon S3.</p> </li> <li> <p> <code>COPYING</code> - Amazon FSx is
      * copying the backup.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
-     * the backup and it is no longer available.</p> </li> <li> <p> <code>FAILED</code>
-     * - Amazon FSx could not complete the backup.</p> </li> </ul>
+     * the backup and it's no longer available.</p> </li> <li> <p> <code>FAILED</code>
+     * - Amazon FSx couldn't finish the backup.</p> </li> </ul>
      */
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
 
     /**
      * <p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code>
      * - The backup is fully available.</p> </li> <li> <p> <code>PENDING</code> - For
-     * user-initiated backups on Lustre file systems only; Amazon FSx has not started
+     * user-initiated backups on Lustre file systems only; Amazon FSx hasn't started
      * creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is
      * creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
      * user-initiated backups on Lustre file systems only; Amazon FSx is transferring
-     * the backup to S3.</p> </li> <li> <p> <code>COPYING</code> - Amazon FSx is
+     * the backup to Amazon S3.</p> </li> <li> <p> <code>COPYING</code> - Amazon FSx is
      * copying the backup.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
-     * the backup and it is no longer available.</p> </li> <li> <p> <code>FAILED</code>
-     * - Amazon FSx could not complete the backup.</p> </li> </ul>
+     * the backup and it's no longer available.</p> </li> <li> <p> <code>FAILED</code>
+     * - Amazon FSx couldn't finish the backup.</p> </li> </ul>
      */
     inline void SetLifecycle(const BackupLifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
 
     /**
      * <p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code>
      * - The backup is fully available.</p> </li> <li> <p> <code>PENDING</code> - For
-     * user-initiated backups on Lustre file systems only; Amazon FSx has not started
+     * user-initiated backups on Lustre file systems only; Amazon FSx hasn't started
      * creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is
      * creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
      * user-initiated backups on Lustre file systems only; Amazon FSx is transferring
-     * the backup to S3.</p> </li> <li> <p> <code>COPYING</code> - Amazon FSx is
+     * the backup to Amazon S3.</p> </li> <li> <p> <code>COPYING</code> - Amazon FSx is
      * copying the backup.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
-     * the backup and it is no longer available.</p> </li> <li> <p> <code>FAILED</code>
-     * - Amazon FSx could not complete the backup.</p> </li> </ul>
+     * the backup and it's no longer available.</p> </li> <li> <p> <code>FAILED</code>
+     * - Amazon FSx couldn't finish the backup.</p> </li> </ul>
      */
     inline void SetLifecycle(BackupLifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
 
     /**
      * <p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code>
      * - The backup is fully available.</p> </li> <li> <p> <code>PENDING</code> - For
-     * user-initiated backups on Lustre file systems only; Amazon FSx has not started
+     * user-initiated backups on Lustre file systems only; Amazon FSx hasn't started
      * creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is
      * creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
      * user-initiated backups on Lustre file systems only; Amazon FSx is transferring
-     * the backup to S3.</p> </li> <li> <p> <code>COPYING</code> - Amazon FSx is
+     * the backup to Amazon S3.</p> </li> <li> <p> <code>COPYING</code> - Amazon FSx is
      * copying the backup.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
-     * the backup and it is no longer available.</p> </li> <li> <p> <code>FAILED</code>
-     * - Amazon FSx could not complete the backup.</p> </li> </ul>
+     * the backup and it's no longer available.</p> </li> <li> <p> <code>FAILED</code>
+     * - Amazon FSx couldn't finish the backup.</p> </li> </ul>
      */
     inline Backup& WithLifecycle(const BackupLifecycle& value) { SetLifecycle(value); return *this;}
 
     /**
      * <p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code>
      * - The backup is fully available.</p> </li> <li> <p> <code>PENDING</code> - For
-     * user-initiated backups on Lustre file systems only; Amazon FSx has not started
+     * user-initiated backups on Lustre file systems only; Amazon FSx hasn't started
      * creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is
      * creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
      * user-initiated backups on Lustre file systems only; Amazon FSx is transferring
-     * the backup to S3.</p> </li> <li> <p> <code>COPYING</code> - Amazon FSx is
+     * the backup to Amazon S3.</p> </li> <li> <p> <code>COPYING</code> - Amazon FSx is
      * copying the backup.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
-     * the backup and it is no longer available.</p> </li> <li> <p> <code>FAILED</code>
-     * - Amazon FSx could not complete the backup.</p> </li> </ul>
+     * the backup and it's no longer available.</p> </li> <li> <p> <code>FAILED</code>
+     * - Amazon FSx couldn't finish the backup.</p> </li> </ul>
      */
     inline Backup& WithLifecycle(BackupLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
 
 
     /**
-     * <p>Details explaining any failures that occur when creating a backup.</p>
+     * <p>Details explaining any failures that occurred when creating a backup.</p>
      */
     inline const BackupFailureDetails& GetFailureDetails() const{ return m_failureDetails; }
 
     /**
-     * <p>Details explaining any failures that occur when creating a backup.</p>
+     * <p>Details explaining any failures that occurred when creating a backup.</p>
      */
     inline bool FailureDetailsHasBeenSet() const { return m_failureDetailsHasBeenSet; }
 
     /**
-     * <p>Details explaining any failures that occur when creating a backup.</p>
+     * <p>Details explaining any failures that occurred when creating a backup.</p>
      */
     inline void SetFailureDetails(const BackupFailureDetails& value) { m_failureDetailsHasBeenSet = true; m_failureDetails = value; }
 
     /**
-     * <p>Details explaining any failures that occur when creating a backup.</p>
+     * <p>Details explaining any failures that occurred when creating a backup.</p>
      */
     inline void SetFailureDetails(BackupFailureDetails&& value) { m_failureDetailsHasBeenSet = true; m_failureDetails = std::move(value); }
 
     /**
-     * <p>Details explaining any failures that occur when creating a backup.</p>
+     * <p>Details explaining any failures that occurred when creating a backup.</p>
      */
     inline Backup& WithFailureDetails(const BackupFailureDetails& value) { SetFailureDetails(value); return *this;}
 
     /**
-     * <p>Details explaining any failures that occur when creating a backup.</p>
+     * <p>Details explaining any failures that occurred when creating a backup.</p>
      */
     inline Backup& WithFailureDetails(BackupFailureDetails&& value) { SetFailureDetails(std::move(value)); return *this;}
 
 
     /**
-     * <p>The type of the file system backup.</p>
+     * <p>The type of the file-system backup.</p>
      */
     inline const BackupType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the file system backup.</p>
+     * <p>The type of the file-system backup.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of the file system backup.</p>
+     * <p>The type of the file-system backup.</p>
      */
     inline void SetType(const BackupType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the file system backup.</p>
+     * <p>The type of the file-system backup.</p>
      */
     inline void SetType(BackupType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the file system backup.</p>
+     * <p>The type of the file-system backup.</p>
      */
     inline Backup& WithType(const BackupType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the file system backup.</p>
+     * <p>The type of the file-system backup.</p>
      */
     inline Backup& WithType(BackupType&& value) { SetType(std::move(value)); return *this;}
 
@@ -372,115 +372,115 @@ namespace Model
 
 
     /**
-     * <p>Tags associated with a particular file system.</p>
+     * <p>The tags associated with a particular file system.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Tags associated with a particular file system.</p>
+     * <p>The tags associated with a particular file system.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Tags associated with a particular file system.</p>
+     * <p>The tags associated with a particular file system.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Tags associated with a particular file system.</p>
+     * <p>The tags associated with a particular file system.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Tags associated with a particular file system.</p>
+     * <p>The tags associated with a particular file system.</p>
      */
     inline Backup& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Tags associated with a particular file system.</p>
+     * <p>The tags associated with a particular file system.</p>
      */
     inline Backup& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Tags associated with a particular file system.</p>
+     * <p>The tags associated with a particular file system.</p>
      */
     inline Backup& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Tags associated with a particular file system.</p>
+     * <p>The tags associated with a particular file system.</p>
      */
     inline Backup& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Metadata of the file system associated with the backup. This metadata is
+     * <p>The metadata of the file system associated with the backup. This metadata is
      * persisted even if the file system is deleted.</p>
      */
     inline const FileSystem& GetFileSystem() const{ return m_fileSystem; }
 
     /**
-     * <p>Metadata of the file system associated with the backup. This metadata is
+     * <p>The metadata of the file system associated with the backup. This metadata is
      * persisted even if the file system is deleted.</p>
      */
     inline bool FileSystemHasBeenSet() const { return m_fileSystemHasBeenSet; }
 
     /**
-     * <p>Metadata of the file system associated with the backup. This metadata is
+     * <p>The metadata of the file system associated with the backup. This metadata is
      * persisted even if the file system is deleted.</p>
      */
     inline void SetFileSystem(const FileSystem& value) { m_fileSystemHasBeenSet = true; m_fileSystem = value; }
 
     /**
-     * <p>Metadata of the file system associated with the backup. This metadata is
+     * <p>The metadata of the file system associated with the backup. This metadata is
      * persisted even if the file system is deleted.</p>
      */
     inline void SetFileSystem(FileSystem&& value) { m_fileSystemHasBeenSet = true; m_fileSystem = std::move(value); }
 
     /**
-     * <p>Metadata of the file system associated with the backup. This metadata is
+     * <p>The metadata of the file system associated with the backup. This metadata is
      * persisted even if the file system is deleted.</p>
      */
     inline Backup& WithFileSystem(const FileSystem& value) { SetFileSystem(value); return *this;}
 
     /**
-     * <p>Metadata of the file system associated with the backup. This metadata is
+     * <p>The metadata of the file system associated with the backup. This metadata is
      * persisted even if the file system is deleted.</p>
      */
     inline Backup& WithFileSystem(FileSystem&& value) { SetFileSystem(std::move(value)); return *this;}
 
 
     /**
-     * <p>The configuration of the self-managed Microsoft Active Directory (AD) to
+     * <p>The configuration of the self-managed Microsoft Active Directory directory to
      * which the Windows File Server instance is joined.</p>
      */
     inline const ActiveDirectoryBackupAttributes& GetDirectoryInformation() const{ return m_directoryInformation; }
 
     /**
-     * <p>The configuration of the self-managed Microsoft Active Directory (AD) to
+     * <p>The configuration of the self-managed Microsoft Active Directory directory to
      * which the Windows File Server instance is joined.</p>
      */
     inline bool DirectoryInformationHasBeenSet() const { return m_directoryInformationHasBeenSet; }
 
     /**
-     * <p>The configuration of the self-managed Microsoft Active Directory (AD) to
+     * <p>The configuration of the self-managed Microsoft Active Directory directory to
      * which the Windows File Server instance is joined.</p>
      */
     inline void SetDirectoryInformation(const ActiveDirectoryBackupAttributes& value) { m_directoryInformationHasBeenSet = true; m_directoryInformation = value; }
 
     /**
-     * <p>The configuration of the self-managed Microsoft Active Directory (AD) to
+     * <p>The configuration of the self-managed Microsoft Active Directory directory to
      * which the Windows File Server instance is joined.</p>
      */
     inline void SetDirectoryInformation(ActiveDirectoryBackupAttributes&& value) { m_directoryInformationHasBeenSet = true; m_directoryInformation = std::move(value); }
 
     /**
-     * <p>The configuration of the self-managed Microsoft Active Directory (AD) to
+     * <p>The configuration of the self-managed Microsoft Active Directory directory to
      * which the Windows File Server instance is joined.</p>
      */
     inline Backup& WithDirectoryInformation(const ActiveDirectoryBackupAttributes& value) { SetDirectoryInformation(value); return *this;}
 
     /**
-     * <p>The configuration of the self-managed Microsoft Active Directory (AD) to
+     * <p>The configuration of the self-managed Microsoft Active Directory directory to
      * which the Windows File Server instance is joined.</p>
      */
     inline Backup& WithDirectoryInformation(ActiveDirectoryBackupAttributes&& value) { SetDirectoryInformation(std::move(value)); return *this;}
@@ -586,32 +586,32 @@ namespace Model
 
 
     /**
-     * <p>Specifies the resource type that is backed up.</p>
+     * <p>Specifies the resource type that's backed up.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>Specifies the resource type that is backed up.</p>
+     * <p>Specifies the resource type that's backed up.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>Specifies the resource type that is backed up.</p>
+     * <p>Specifies the resource type that's backed up.</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>Specifies the resource type that is backed up.</p>
+     * <p>Specifies the resource type that's backed up.</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>Specifies the resource type that is backed up.</p>
+     * <p>Specifies the resource type that's backed up.</p>
      */
     inline Backup& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>Specifies the resource type that is backed up.</p>
+     * <p>Specifies the resource type that's backed up.</p>
      */
     inline Backup& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 

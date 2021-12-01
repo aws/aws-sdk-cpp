@@ -87,42 +87,48 @@ namespace Model
     /**
      * <p>The state of a device when it is being shipped. </p> <p>Set to
      * <code>RECEIVED</code> when the device arrives at your location.</p> <p>Set to
-     * <code>RETURNED</code> when you have returned the device to AWS.</p>
+     * <code>RETURNED</code> when you have returned the device to Amazon Web
+     * Services.</p>
      */
     inline const ShipmentState& GetShipmentState() const{ return m_shipmentState; }
 
     /**
      * <p>The state of a device when it is being shipped. </p> <p>Set to
      * <code>RECEIVED</code> when the device arrives at your location.</p> <p>Set to
-     * <code>RETURNED</code> when you have returned the device to AWS.</p>
+     * <code>RETURNED</code> when you have returned the device to Amazon Web
+     * Services.</p>
      */
     inline bool ShipmentStateHasBeenSet() const { return m_shipmentStateHasBeenSet; }
 
     /**
      * <p>The state of a device when it is being shipped. </p> <p>Set to
      * <code>RECEIVED</code> when the device arrives at your location.</p> <p>Set to
-     * <code>RETURNED</code> when you have returned the device to AWS.</p>
+     * <code>RETURNED</code> when you have returned the device to Amazon Web
+     * Services.</p>
      */
     inline void SetShipmentState(const ShipmentState& value) { m_shipmentStateHasBeenSet = true; m_shipmentState = value; }
 
     /**
      * <p>The state of a device when it is being shipped. </p> <p>Set to
      * <code>RECEIVED</code> when the device arrives at your location.</p> <p>Set to
-     * <code>RETURNED</code> when you have returned the device to AWS.</p>
+     * <code>RETURNED</code> when you have returned the device to Amazon Web
+     * Services.</p>
      */
     inline void SetShipmentState(ShipmentState&& value) { m_shipmentStateHasBeenSet = true; m_shipmentState = std::move(value); }
 
     /**
      * <p>The state of a device when it is being shipped. </p> <p>Set to
      * <code>RECEIVED</code> when the device arrives at your location.</p> <p>Set to
-     * <code>RETURNED</code> when you have returned the device to AWS.</p>
+     * <code>RETURNED</code> when you have returned the device to Amazon Web
+     * Services.</p>
      */
     inline UpdateJobShipmentStateRequest& WithShipmentState(const ShipmentState& value) { SetShipmentState(value); return *this;}
 
     /**
      * <p>The state of a device when it is being shipped. </p> <p>Set to
      * <code>RECEIVED</code> when the device arrives at your location.</p> <p>Set to
-     * <code>RETURNED</code> when you have returned the device to AWS.</p>
+     * <code>RETURNED</code> when you have returned the device to Amazon Web
+     * Services.</p>
      */
     inline UpdateJobShipmentStateRequest& WithShipmentState(ShipmentState&& value) { SetShipmentState(std::move(value)); return *this;}
 

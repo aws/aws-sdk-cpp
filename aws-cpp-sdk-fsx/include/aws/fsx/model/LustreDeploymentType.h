@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     SCRATCH_1,
     SCRATCH_2,
-    PERSISTENT_1
+    PERSISTENT_1,
+    PERSISTENT_2
   };
 
 namespace LustreDeploymentTypeMapper

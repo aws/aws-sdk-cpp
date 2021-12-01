@@ -15,7 +15,9 @@ using namespace Aws::Utils;
 GetTableRequest::GetTableRequest() : 
     m_catalogIdHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_transactionIdHasBeenSet(false),
+    m_queryAsOfTimeHasBeenSet(false)
 {
 }
 
@@ -39,6 +41,17 @@ Aws::String GetTableRequest::SerializePayload() const
   {
    payload.WithString("Name", m_name);
 
+  }
+
+  if(m_transactionIdHasBeenSet)
+  {
+   payload.WithString("TransactionId", m_transactionId);
+
+  }
+
+  if(m_queryAsOfTimeHasBeenSet)
+  {
+   payload.WithDouble("QueryAsOfTime", m_queryAsOfTime.SecondsWithMSPrecision());
   }
 
   return payload.View().WriteReadable();

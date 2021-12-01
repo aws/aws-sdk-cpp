@@ -17,7 +17,8 @@ UpdateTableRequest::UpdateTableRequest() :
     m_databaseNameHasBeenSet(false),
     m_tableInputHasBeenSet(false),
     m_skipArchive(false),
-    m_skipArchiveHasBeenSet(false)
+    m_skipArchiveHasBeenSet(false),
+    m_transactionIdHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,12 @@ Aws::String UpdateTableRequest::SerializePayload() const
   if(m_skipArchiveHasBeenSet)
   {
    payload.WithBool("SkipArchive", m_skipArchive);
+
+  }
+
+  if(m_transactionIdHasBeenSet)
+  {
+   payload.WithString("TransactionId", m_transactionId);
 
   }
 

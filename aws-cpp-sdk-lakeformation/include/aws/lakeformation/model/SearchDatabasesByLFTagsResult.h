@@ -78,37 +78,37 @@ namespace Model
 
 
     /**
-     * <p>A list of databases that meet the tag conditions.</p>
+     * <p>A list of databases that meet the LF-tag conditions.</p>
      */
     inline const Aws::Vector<TaggedDatabase>& GetDatabaseList() const{ return m_databaseList; }
 
     /**
-     * <p>A list of databases that meet the tag conditions.</p>
+     * <p>A list of databases that meet the LF-tag conditions.</p>
      */
     inline void SetDatabaseList(const Aws::Vector<TaggedDatabase>& value) { m_databaseList = value; }
 
     /**
-     * <p>A list of databases that meet the tag conditions.</p>
+     * <p>A list of databases that meet the LF-tag conditions.</p>
      */
     inline void SetDatabaseList(Aws::Vector<TaggedDatabase>&& value) { m_databaseList = std::move(value); }
 
     /**
-     * <p>A list of databases that meet the tag conditions.</p>
+     * <p>A list of databases that meet the LF-tag conditions.</p>
      */
     inline SearchDatabasesByLFTagsResult& WithDatabaseList(const Aws::Vector<TaggedDatabase>& value) { SetDatabaseList(value); return *this;}
 
     /**
-     * <p>A list of databases that meet the tag conditions.</p>
+     * <p>A list of databases that meet the LF-tag conditions.</p>
      */
     inline SearchDatabasesByLFTagsResult& WithDatabaseList(Aws::Vector<TaggedDatabase>&& value) { SetDatabaseList(std::move(value)); return *this;}
 
     /**
-     * <p>A list of databases that meet the tag conditions.</p>
+     * <p>A list of databases that meet the LF-tag conditions.</p>
      */
     inline SearchDatabasesByLFTagsResult& AddDatabaseList(const TaggedDatabase& value) { m_databaseList.push_back(value); return *this; }
 
     /**
-     * <p>A list of databases that meet the tag conditions.</p>
+     * <p>A list of databases that meet the LF-tag conditions.</p>
      */
     inline SearchDatabasesByLFTagsResult& AddDatabaseList(TaggedDatabase&& value) { m_databaseList.push_back(std::move(value)); return *this; }
 

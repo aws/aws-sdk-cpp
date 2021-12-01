@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The starting position in the data stream from which to start
+   * streaming.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StartingPosition">AWS
    * API Reference</a></p>
    */

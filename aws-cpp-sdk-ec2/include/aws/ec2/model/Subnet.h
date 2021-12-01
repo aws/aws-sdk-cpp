@@ -214,6 +214,35 @@ namespace Model
 
 
     /**
+     * <p> Indicates the device position for local network interfaces in this subnet.
+     * For example, <code>1</code> indicates local network interfaces in this subnet
+     * are the secondary network interface (eth1). </p>
+     */
+    inline int GetEnableLniAtDeviceIndex() const{ return m_enableLniAtDeviceIndex; }
+
+    /**
+     * <p> Indicates the device position for local network interfaces in this subnet.
+     * For example, <code>1</code> indicates local network interfaces in this subnet
+     * are the secondary network interface (eth1). </p>
+     */
+    inline bool EnableLniAtDeviceIndexHasBeenSet() const { return m_enableLniAtDeviceIndexHasBeenSet; }
+
+    /**
+     * <p> Indicates the device position for local network interfaces in this subnet.
+     * For example, <code>1</code> indicates local network interfaces in this subnet
+     * are the secondary network interface (eth1). </p>
+     */
+    inline void SetEnableLniAtDeviceIndex(int value) { m_enableLniAtDeviceIndexHasBeenSet = true; m_enableLniAtDeviceIndex = value; }
+
+    /**
+     * <p> Indicates the device position for local network interfaces in this subnet.
+     * For example, <code>1</code> indicates local network interfaces in this subnet
+     * are the secondary network interface (eth1). </p>
+     */
+    inline Subnet& WithEnableLniAtDeviceIndex(int value) { SetEnableLniAtDeviceIndex(value); return *this;}
+
+
+    /**
      * <p>Indicates whether instances launched in this subnet receive a public IPv4
      * address.</p>
      */
@@ -753,6 +782,9 @@ namespace Model
 
     bool m_defaultForAz;
     bool m_defaultForAzHasBeenSet;
+
+    int m_enableLniAtDeviceIndex;
+    bool m_enableLniAtDeviceIndexHasBeenSet;
 
     bool m_mapPublicIpOnLaunch;
     bool m_mapPublicIpOnLaunchHasBeenSet;

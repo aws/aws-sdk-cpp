@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>An object that represents metadata and configuration settings for NFS service
-   * on an AWS Snow Family device.</p><p><h3>See Also:</h3>   <a
+   * <p>An object that represents the metadata and configuration settings for the NFS
+   * (Network File System) service on an Amazon Web Services Snow Family
+   * device.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/NFSOnDeviceServiceConfiguration">AWS
    * API Reference</a></p>
    */
@@ -39,22 +40,22 @@ namespace Model
 
 
     /**
-     * <p>The maximum NFS storage for one Snowball Family device.</p>
+     * <p>The maximum NFS storage for one Snow Family device.</p>
      */
     inline int GetStorageLimit() const{ return m_storageLimit; }
 
     /**
-     * <p>The maximum NFS storage for one Snowball Family device.</p>
+     * <p>The maximum NFS storage for one Snow Family device.</p>
      */
     inline bool StorageLimitHasBeenSet() const { return m_storageLimitHasBeenSet; }
 
     /**
-     * <p>The maximum NFS storage for one Snowball Family device.</p>
+     * <p>The maximum NFS storage for one Snow Family device.</p>
      */
     inline void SetStorageLimit(int value) { m_storageLimitHasBeenSet = true; m_storageLimit = value; }
 
     /**
-     * <p>The maximum NFS storage for one Snowball Family device.</p>
+     * <p>The maximum NFS storage for one Snow Family device.</p>
      */
     inline NFSOnDeviceServiceConfiguration& WithStorageLimit(int value) { SetStorageLimit(value); return *this;}
 

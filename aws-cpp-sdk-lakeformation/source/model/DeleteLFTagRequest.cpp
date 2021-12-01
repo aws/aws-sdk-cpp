@@ -37,14 +37,6 @@ Aws::String DeleteLFTagRequest::SerializePayload() const
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteLFTagRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSLakeFormation.DeleteLFTag"));
-  return headers;
-
-}
-
 
 
 

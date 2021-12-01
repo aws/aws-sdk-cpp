@@ -91,64 +91,64 @@ namespace Model
     /**
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * job. To create a role ARN, use the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS
-     * Identity and Access Management (IAM) API action.</p>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity
+     * and Access Management (IAM) API action.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * job. To create a role ARN, use the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS
-     * Identity and Access Management (IAM) API action.</p>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity
+     * and Access Management (IAM) API action.</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * job. To create a role ARN, use the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS
-     * Identity and Access Management (IAM) API action.</p>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity
+     * and Access Management (IAM) API action.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * job. To create a role ARN, use the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS
-     * Identity and Access Management (IAM) API action.</p>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity
+     * and Access Management (IAM) API action.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * job. To create a role ARN, use the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS
-     * Identity and Access Management (IAM) API action.</p>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity
+     * and Access Management (IAM) API action.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * job. To create a role ARN, use the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS
-     * Identity and Access Management (IAM) API action.</p>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity
+     * and Access Management (IAM) API action.</p>
      */
     inline UpdateJobRequest& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * job. To create a role ARN, use the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS
-     * Identity and Access Management (IAM) API action.</p>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity
+     * and Access Management (IAM) API action.</p>
      */
     inline UpdateJobRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * job. To create a role ARN, use the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS
-     * Identity and Access Management (IAM) API action.</p>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity
+     * and Access Management (IAM) API action.</p>
      */
     inline UpdateJobRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
@@ -223,43 +223,49 @@ namespace Model
 
     /**
      * <p>Specifies the service or services on the Snow Family device that your
-     * transferred data will be exported from or imported into. AWS Snow Family
-     * supports Amazon S3 and NFS (Network File System).</p>
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web
+     * Services Storage Gateway service Tape Gateway type.</p>
      */
     inline const OnDeviceServiceConfiguration& GetOnDeviceServiceConfiguration() const{ return m_onDeviceServiceConfiguration; }
 
     /**
      * <p>Specifies the service or services on the Snow Family device that your
-     * transferred data will be exported from or imported into. AWS Snow Family
-     * supports Amazon S3 and NFS (Network File System).</p>
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web
+     * Services Storage Gateway service Tape Gateway type.</p>
      */
     inline bool OnDeviceServiceConfigurationHasBeenSet() const { return m_onDeviceServiceConfigurationHasBeenSet; }
 
     /**
      * <p>Specifies the service or services on the Snow Family device that your
-     * transferred data will be exported from or imported into. AWS Snow Family
-     * supports Amazon S3 and NFS (Network File System).</p>
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web
+     * Services Storage Gateway service Tape Gateway type.</p>
      */
     inline void SetOnDeviceServiceConfiguration(const OnDeviceServiceConfiguration& value) { m_onDeviceServiceConfigurationHasBeenSet = true; m_onDeviceServiceConfiguration = value; }
 
     /**
      * <p>Specifies the service or services on the Snow Family device that your
-     * transferred data will be exported from or imported into. AWS Snow Family
-     * supports Amazon S3 and NFS (Network File System).</p>
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web
+     * Services Storage Gateway service Tape Gateway type.</p>
      */
     inline void SetOnDeviceServiceConfiguration(OnDeviceServiceConfiguration&& value) { m_onDeviceServiceConfigurationHasBeenSet = true; m_onDeviceServiceConfiguration = std::move(value); }
 
     /**
      * <p>Specifies the service or services on the Snow Family device that your
-     * transferred data will be exported from or imported into. AWS Snow Family
-     * supports Amazon S3 and NFS (Network File System).</p>
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web
+     * Services Storage Gateway service Tape Gateway type.</p>
      */
     inline UpdateJobRequest& WithOnDeviceServiceConfiguration(const OnDeviceServiceConfiguration& value) { SetOnDeviceServiceConfiguration(value); return *this;}
 
     /**
      * <p>Specifies the service or services on the Snow Family device that your
-     * transferred data will be exported from or imported into. AWS Snow Family
-     * supports Amazon S3 and NFS (Network File System).</p>
+     * transferred data will be exported from or imported into. Amazon Web Services
+     * Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web
+     * Services Storage Gateway service Tape Gateway type.</p>
      */
     inline UpdateJobRequest& WithOnDeviceServiceConfiguration(OnDeviceServiceConfiguration&& value) { SetOnDeviceServiceConfiguration(std::move(value)); return *this;}
 

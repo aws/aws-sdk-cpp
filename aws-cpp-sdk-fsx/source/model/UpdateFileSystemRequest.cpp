@@ -20,7 +20,8 @@ UpdateFileSystemRequest::UpdateFileSystemRequest() :
     m_storageCapacityHasBeenSet(false),
     m_windowsConfigurationHasBeenSet(false),
     m_lustreConfigurationHasBeenSet(false),
-    m_ontapConfigurationHasBeenSet(false)
+    m_ontapConfigurationHasBeenSet(false),
+    m_openZFSConfigurationHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,12 @@ Aws::String UpdateFileSystemRequest::SerializePayload() const
   if(m_ontapConfigurationHasBeenSet)
   {
    payload.WithObject("OntapConfiguration", m_ontapConfiguration.Jsonize());
+
+  }
+
+  if(m_openZFSConfigurationHasBeenSet)
+  {
+   payload.WithObject("OpenZFSConfiguration", m_openZFSConfiguration.Jsonize());
 
   }
 

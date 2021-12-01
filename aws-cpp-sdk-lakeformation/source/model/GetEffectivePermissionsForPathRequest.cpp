@@ -52,14 +52,6 @@ Aws::String GetEffectivePermissionsForPathRequest::SerializePayload() const
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetEffectivePermissionsForPathRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSLakeFormation.GetEffectivePermissionsForPath"));
-  return headers;
-
-}
-
 
 
 

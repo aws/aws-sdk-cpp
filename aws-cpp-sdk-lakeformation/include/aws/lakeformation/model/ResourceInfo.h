@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>A structure containing information about an AWS Lake Formation
+   * <p>A structure containing information about an Lake Formation
    * resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ResourceInfo">AWS
    * API Reference</a></p>

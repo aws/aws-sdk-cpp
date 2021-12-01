@@ -460,6 +460,18 @@ namespace Aws
         static const int vt1_3xlarge_HASH = HashingUtils::HashString("vt1.3xlarge");
         static const int vt1_6xlarge_HASH = HashingUtils::HashString("vt1.6xlarge");
         static const int vt1_24xlarge_HASH = HashingUtils::HashString("vt1.24xlarge");
+        static const int im4gn_16xlarge_HASH = HashingUtils::HashString("im4gn.16xlarge");
+        static const int im4gn_2xlarge_HASH = HashingUtils::HashString("im4gn.2xlarge");
+        static const int im4gn_4xlarge_HASH = HashingUtils::HashString("im4gn.4xlarge");
+        static const int im4gn_8xlarge_HASH = HashingUtils::HashString("im4gn.8xlarge");
+        static const int im4gn_large_HASH = HashingUtils::HashString("im4gn.large");
+        static const int im4gn_xlarge_HASH = HashingUtils::HashString("im4gn.xlarge");
+        static const int is4gen_2xlarge_HASH = HashingUtils::HashString("is4gen.2xlarge");
+        static const int is4gen_4xlarge_HASH = HashingUtils::HashString("is4gen.4xlarge");
+        static const int is4gen_8xlarge_HASH = HashingUtils::HashString("is4gen.8xlarge");
+        static const int is4gen_large_HASH = HashingUtils::HashString("is4gen.large");
+        static const int is4gen_medium_HASH = HashingUtils::HashString("is4gen.medium");
+        static const int is4gen_xlarge_HASH = HashingUtils::HashString("is4gen.xlarge");
         static const int g5g_xlarge_HASH = HashingUtils::HashString("g5g.xlarge");
         static const int g5g_2xlarge_HASH = HashingUtils::HashString("g5g.2xlarge");
         static const int g5g_4xlarge_HASH = HashingUtils::HashString("g5g.4xlarge");
@@ -2694,6 +2706,66 @@ namespace Aws
             enumValue = InstanceType::vt1_24xlarge;
             return true;
           }
+          else if (hashCode == im4gn_16xlarge_HASH)
+          {
+            enumValue = InstanceType::im4gn_16xlarge;
+            return true;
+          }
+          else if (hashCode == im4gn_2xlarge_HASH)
+          {
+            enumValue = InstanceType::im4gn_2xlarge;
+            return true;
+          }
+          else if (hashCode == im4gn_4xlarge_HASH)
+          {
+            enumValue = InstanceType::im4gn_4xlarge;
+            return true;
+          }
+          else if (hashCode == im4gn_8xlarge_HASH)
+          {
+            enumValue = InstanceType::im4gn_8xlarge;
+            return true;
+          }
+          else if (hashCode == im4gn_large_HASH)
+          {
+            enumValue = InstanceType::im4gn_large;
+            return true;
+          }
+          else if (hashCode == im4gn_xlarge_HASH)
+          {
+            enumValue = InstanceType::im4gn_xlarge;
+            return true;
+          }
+          else if (hashCode == is4gen_2xlarge_HASH)
+          {
+            enumValue = InstanceType::is4gen_2xlarge;
+            return true;
+          }
+          else if (hashCode == is4gen_4xlarge_HASH)
+          {
+            enumValue = InstanceType::is4gen_4xlarge;
+            return true;
+          }
+          else if (hashCode == is4gen_8xlarge_HASH)
+          {
+            enumValue = InstanceType::is4gen_8xlarge;
+            return true;
+          }
+          else if (hashCode == is4gen_large_HASH)
+          {
+            enumValue = InstanceType::is4gen_large;
+            return true;
+          }
+          else if (hashCode == is4gen_medium_HASH)
+          {
+            enumValue = InstanceType::is4gen_medium;
+            return true;
+          }
+          else if (hashCode == is4gen_xlarge_HASH)
+          {
+            enumValue = InstanceType::is4gen_xlarge;
+            return true;
+          }
           else if (hashCode == g5g_xlarge_HASH)
           {
             enumValue = InstanceType::g5g_xlarge;
@@ -4114,6 +4186,42 @@ namespace Aws
             return true;
           case InstanceType::vt1_24xlarge:
             value = "vt1.24xlarge";
+            return true;
+          case InstanceType::im4gn_16xlarge:
+            value = "im4gn.16xlarge";
+            return true;
+          case InstanceType::im4gn_2xlarge:
+            value = "im4gn.2xlarge";
+            return true;
+          case InstanceType::im4gn_4xlarge:
+            value = "im4gn.4xlarge";
+            return true;
+          case InstanceType::im4gn_8xlarge:
+            value = "im4gn.8xlarge";
+            return true;
+          case InstanceType::im4gn_large:
+            value = "im4gn.large";
+            return true;
+          case InstanceType::im4gn_xlarge:
+            value = "im4gn.xlarge";
+            return true;
+          case InstanceType::is4gen_2xlarge:
+            value = "is4gen.2xlarge";
+            return true;
+          case InstanceType::is4gen_4xlarge:
+            value = "is4gen.4xlarge";
+            return true;
+          case InstanceType::is4gen_8xlarge:
+            value = "is4gen.8xlarge";
+            return true;
+          case InstanceType::is4gen_large:
+            value = "is4gen.large";
+            return true;
+          case InstanceType::is4gen_medium:
+            value = "is4gen.medium";
+            return true;
+          case InstanceType::is4gen_xlarge:
+            value = "is4gen.xlarge";
             return true;
           case InstanceType::g5g_xlarge:
             value = "g5g.xlarge";

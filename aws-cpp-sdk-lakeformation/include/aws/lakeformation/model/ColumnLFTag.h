@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>A structure containing the name of a column resource and the tags attached to
-   * it.</p><p><h3>See Also:</h3>   <a
+   * <p>A structure containing the name of a column resource and the LF-tags attached
+   * to it.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ColumnLFTag">AWS
    * API Reference</a></p>
    */
@@ -82,42 +82,42 @@ namespace Model
 
 
     /**
-     * <p>The tags attached to a column resource.</p>
+     * <p>The LF-tags attached to a column resource.</p>
      */
     inline const Aws::Vector<LFTagPair>& GetLFTags() const{ return m_lFTags; }
 
     /**
-     * <p>The tags attached to a column resource.</p>
+     * <p>The LF-tags attached to a column resource.</p>
      */
     inline bool LFTagsHasBeenSet() const { return m_lFTagsHasBeenSet; }
 
     /**
-     * <p>The tags attached to a column resource.</p>
+     * <p>The LF-tags attached to a column resource.</p>
      */
     inline void SetLFTags(const Aws::Vector<LFTagPair>& value) { m_lFTagsHasBeenSet = true; m_lFTags = value; }
 
     /**
-     * <p>The tags attached to a column resource.</p>
+     * <p>The LF-tags attached to a column resource.</p>
      */
     inline void SetLFTags(Aws::Vector<LFTagPair>&& value) { m_lFTagsHasBeenSet = true; m_lFTags = std::move(value); }
 
     /**
-     * <p>The tags attached to a column resource.</p>
+     * <p>The LF-tags attached to a column resource.</p>
      */
     inline ColumnLFTag& WithLFTags(const Aws::Vector<LFTagPair>& value) { SetLFTags(value); return *this;}
 
     /**
-     * <p>The tags attached to a column resource.</p>
+     * <p>The LF-tags attached to a column resource.</p>
      */
     inline ColumnLFTag& WithLFTags(Aws::Vector<LFTagPair>&& value) { SetLFTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags attached to a column resource.</p>
+     * <p>The LF-tags attached to a column resource.</p>
      */
     inline ColumnLFTag& AddLFTags(const LFTagPair& value) { m_lFTagsHasBeenSet = true; m_lFTags.push_back(value); return *this; }
 
     /**
-     * <p>The tags attached to a column resource.</p>
+     * <p>The LF-tags attached to a column resource.</p>
      */
     inline ColumnLFTag& AddLFTags(LFTagPair&& value) { m_lFTagsHasBeenSet = true; m_lFTags.push_back(std::move(value)); return *this; }
 

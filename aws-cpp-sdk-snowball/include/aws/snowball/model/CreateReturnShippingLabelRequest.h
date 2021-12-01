@@ -86,43 +86,49 @@ namespace Model
 
     /**
      * <p>The shipping speed for a particular job. This speed doesn't dictate how soon
-     * the device is returned to AWS. This speed represents how quickly it moves to its
-     * destination while in transit. Regional shipping speeds are as follows:</p>
+     * the device is returned to Amazon Web Services. This speed represents how quickly
+     * it moves to its destination while in transit. Regional shipping speeds are as
+     * follows:</p>
      */
     inline const ShippingOption& GetShippingOption() const{ return m_shippingOption; }
 
     /**
      * <p>The shipping speed for a particular job. This speed doesn't dictate how soon
-     * the device is returned to AWS. This speed represents how quickly it moves to its
-     * destination while in transit. Regional shipping speeds are as follows:</p>
+     * the device is returned to Amazon Web Services. This speed represents how quickly
+     * it moves to its destination while in transit. Regional shipping speeds are as
+     * follows:</p>
      */
     inline bool ShippingOptionHasBeenSet() const { return m_shippingOptionHasBeenSet; }
 
     /**
      * <p>The shipping speed for a particular job. This speed doesn't dictate how soon
-     * the device is returned to AWS. This speed represents how quickly it moves to its
-     * destination while in transit. Regional shipping speeds are as follows:</p>
+     * the device is returned to Amazon Web Services. This speed represents how quickly
+     * it moves to its destination while in transit. Regional shipping speeds are as
+     * follows:</p>
      */
     inline void SetShippingOption(const ShippingOption& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = value; }
 
     /**
      * <p>The shipping speed for a particular job. This speed doesn't dictate how soon
-     * the device is returned to AWS. This speed represents how quickly it moves to its
-     * destination while in transit. Regional shipping speeds are as follows:</p>
+     * the device is returned to Amazon Web Services. This speed represents how quickly
+     * it moves to its destination while in transit. Regional shipping speeds are as
+     * follows:</p>
      */
     inline void SetShippingOption(ShippingOption&& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = std::move(value); }
 
     /**
      * <p>The shipping speed for a particular job. This speed doesn't dictate how soon
-     * the device is returned to AWS. This speed represents how quickly it moves to its
-     * destination while in transit. Regional shipping speeds are as follows:</p>
+     * the device is returned to Amazon Web Services. This speed represents how quickly
+     * it moves to its destination while in transit. Regional shipping speeds are as
+     * follows:</p>
      */
     inline CreateReturnShippingLabelRequest& WithShippingOption(const ShippingOption& value) { SetShippingOption(value); return *this;}
 
     /**
      * <p>The shipping speed for a particular job. This speed doesn't dictate how soon
-     * the device is returned to AWS. This speed represents how quickly it moves to its
-     * destination while in transit. Regional shipping speeds are as follows:</p>
+     * the device is returned to Amazon Web Services. This speed represents how quickly
+     * it moves to its destination while in transit. Regional shipping speeds are as
+     * follows:</p>
      */
     inline CreateReturnShippingLabelRequest& WithShippingOption(ShippingOption&& value) { SetShippingOption(std::move(value)); return *this;}
 

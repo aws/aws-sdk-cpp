@@ -24,6 +24,7 @@ Resource::Resource() :
     m_tableHasBeenSet(false),
     m_tableWithColumnsHasBeenSet(false),
     m_dataLocationHasBeenSet(false),
+    m_dataCellsFilterHasBeenSet(false),
     m_lFTagHasBeenSet(false),
     m_lFTagPolicyHasBeenSet(false)
 {
@@ -35,6 +36,7 @@ Resource::Resource(JsonView jsonValue) :
     m_tableHasBeenSet(false),
     m_tableWithColumnsHasBeenSet(false),
     m_dataLocationHasBeenSet(false),
+    m_dataCellsFilterHasBeenSet(false),
     m_lFTagHasBeenSet(false),
     m_lFTagPolicyHasBeenSet(false)
 {
@@ -76,6 +78,13 @@ Resource& Resource::operator =(JsonView jsonValue)
     m_dataLocation = jsonValue.GetObject("DataLocation");
 
     m_dataLocationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DataCellsFilter"))
+  {
+    m_dataCellsFilter = jsonValue.GetObject("DataCellsFilter");
+
+    m_dataCellsFilterHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("LFTag"))
@@ -126,6 +135,12 @@ JsonValue Resource::Jsonize() const
   if(m_dataLocationHasBeenSet)
   {
    payload.WithObject("DataLocation", m_dataLocation.Jsonize());
+
+  }
+
+  if(m_dataCellsFilterHasBeenSet)
+  {
+   payload.WithObject("DataCellsFilter", m_dataCellsFilter.Jsonize());
 
   }
 

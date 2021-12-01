@@ -28,6 +28,8 @@ CreateBucketRequest::CreateBucketRequest() :
     m_grantWriteACPHasBeenSet(false),
     m_objectLockEnabledForBucket(false),
     m_objectLockEnabledForBucketHasBeenSet(false),
+    m_objectOwnership(ObjectOwnership::NOT_SET),
+    m_objectOwnershipHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -119,6 +121,11 @@ Aws::Http::HeaderValueCollection CreateBucketRequest::GetRequestSpecificHeaders(
     ss << std::boolalpha << m_objectLockEnabledForBucket;
     headers.emplace("x-amz-bucket-object-lock-enabled", ss.str());
     ss.str("");
+  }
+
+  if(m_objectOwnershipHasBeenSet)
+  {
+    headers.emplace("x-amz-object-ownership", ObjectOwnershipMapper::GetNameForObjectOwnership(m_objectOwnership));
   }
 
   return headers;

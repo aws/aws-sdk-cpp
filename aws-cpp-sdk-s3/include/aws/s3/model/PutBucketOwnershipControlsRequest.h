@@ -208,38 +208,44 @@ namespace Model
 
 
     /**
-     * <p>The <code>OwnershipControls</code> (BucketOwnerPreferred or ObjectWriter)
-     * that you want to apply to this Amazon S3 bucket.</p>
+     * <p>The <code>OwnershipControls</code> (BucketOwnerEnforced,
+     * BucketOwnerPreferred, or ObjectWriter) that you want to apply to this Amazon S3
+     * bucket.</p>
      */
     inline const OwnershipControls& GetOwnershipControls() const{ return m_ownershipControls; }
 
     /**
-     * <p>The <code>OwnershipControls</code> (BucketOwnerPreferred or ObjectWriter)
-     * that you want to apply to this Amazon S3 bucket.</p>
+     * <p>The <code>OwnershipControls</code> (BucketOwnerEnforced,
+     * BucketOwnerPreferred, or ObjectWriter) that you want to apply to this Amazon S3
+     * bucket.</p>
      */
     inline bool OwnershipControlsHasBeenSet() const { return m_ownershipControlsHasBeenSet; }
 
     /**
-     * <p>The <code>OwnershipControls</code> (BucketOwnerPreferred or ObjectWriter)
-     * that you want to apply to this Amazon S3 bucket.</p>
+     * <p>The <code>OwnershipControls</code> (BucketOwnerEnforced,
+     * BucketOwnerPreferred, or ObjectWriter) that you want to apply to this Amazon S3
+     * bucket.</p>
      */
     inline void SetOwnershipControls(const OwnershipControls& value) { m_ownershipControlsHasBeenSet = true; m_ownershipControls = value; }
 
     /**
-     * <p>The <code>OwnershipControls</code> (BucketOwnerPreferred or ObjectWriter)
-     * that you want to apply to this Amazon S3 bucket.</p>
+     * <p>The <code>OwnershipControls</code> (BucketOwnerEnforced,
+     * BucketOwnerPreferred, or ObjectWriter) that you want to apply to this Amazon S3
+     * bucket.</p>
      */
     inline void SetOwnershipControls(OwnershipControls&& value) { m_ownershipControlsHasBeenSet = true; m_ownershipControls = std::move(value); }
 
     /**
-     * <p>The <code>OwnershipControls</code> (BucketOwnerPreferred or ObjectWriter)
-     * that you want to apply to this Amazon S3 bucket.</p>
+     * <p>The <code>OwnershipControls</code> (BucketOwnerEnforced,
+     * BucketOwnerPreferred, or ObjectWriter) that you want to apply to this Amazon S3
+     * bucket.</p>
      */
     inline PutBucketOwnershipControlsRequest& WithOwnershipControls(const OwnershipControls& value) { SetOwnershipControls(value); return *this;}
 
     /**
-     * <p>The <code>OwnershipControls</code> (BucketOwnerPreferred or ObjectWriter)
-     * that you want to apply to this Amazon S3 bucket.</p>
+     * <p>The <code>OwnershipControls</code> (BucketOwnerEnforced,
+     * BucketOwnerPreferred, or ObjectWriter) that you want to apply to this Amazon S3
+     * bucket.</p>
      */
     inline PutBucketOwnershipControlsRequest& WithOwnershipControls(OwnershipControls&& value) { SetOwnershipControls(std::move(value)); return *this;}
 

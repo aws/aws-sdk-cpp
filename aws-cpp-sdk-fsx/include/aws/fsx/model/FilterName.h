@@ -19,7 +19,8 @@ namespace Model
     file_system_id,
     backup_type,
     file_system_type,
-    volume_id
+    volume_id,
+    data_repository_type
   };
 
 namespace FilterNameMapper
