@@ -9,6 +9,7 @@
 #include <aws/sagemaker/model/ProductionVariantInstanceType.h>
 #include <aws/sagemaker/model/ProductionVariantAcceleratorType.h>
 #include <aws/sagemaker/model/ProductionVariantCoreDumpConfig.h>
+#include <aws/sagemaker/model/ProductionVariantServerlessConfig.h>
 #include <utility>
 
 namespace Aws
@@ -313,6 +314,61 @@ namespace Model
      */
     inline ProductionVariant& WithCoreDumpConfig(ProductionVariantCoreDumpConfig&& value) { SetCoreDumpConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The serverless configuration for an endpoint. Specifies a serverless endpoint
+     * configuration instead of an instance-based endpoint configuration.</p> 
+     * <p>Serverless Inference is in preview release for Amazon SageMaker and is
+     * subject to change. We do not recommend using this feature in production
+     * environments.</p> 
+     */
+    inline const ProductionVariantServerlessConfig& GetServerlessConfig() const{ return m_serverlessConfig; }
+
+    /**
+     * <p>The serverless configuration for an endpoint. Specifies a serverless endpoint
+     * configuration instead of an instance-based endpoint configuration.</p> 
+     * <p>Serverless Inference is in preview release for Amazon SageMaker and is
+     * subject to change. We do not recommend using this feature in production
+     * environments.</p> 
+     */
+    inline bool ServerlessConfigHasBeenSet() const { return m_serverlessConfigHasBeenSet; }
+
+    /**
+     * <p>The serverless configuration for an endpoint. Specifies a serverless endpoint
+     * configuration instead of an instance-based endpoint configuration.</p> 
+     * <p>Serverless Inference is in preview release for Amazon SageMaker and is
+     * subject to change. We do not recommend using this feature in production
+     * environments.</p> 
+     */
+    inline void SetServerlessConfig(const ProductionVariantServerlessConfig& value) { m_serverlessConfigHasBeenSet = true; m_serverlessConfig = value; }
+
+    /**
+     * <p>The serverless configuration for an endpoint. Specifies a serverless endpoint
+     * configuration instead of an instance-based endpoint configuration.</p> 
+     * <p>Serverless Inference is in preview release for Amazon SageMaker and is
+     * subject to change. We do not recommend using this feature in production
+     * environments.</p> 
+     */
+    inline void SetServerlessConfig(ProductionVariantServerlessConfig&& value) { m_serverlessConfigHasBeenSet = true; m_serverlessConfig = std::move(value); }
+
+    /**
+     * <p>The serverless configuration for an endpoint. Specifies a serverless endpoint
+     * configuration instead of an instance-based endpoint configuration.</p> 
+     * <p>Serverless Inference is in preview release for Amazon SageMaker and is
+     * subject to change. We do not recommend using this feature in production
+     * environments.</p> 
+     */
+    inline ProductionVariant& WithServerlessConfig(const ProductionVariantServerlessConfig& value) { SetServerlessConfig(value); return *this;}
+
+    /**
+     * <p>The serverless configuration for an endpoint. Specifies a serverless endpoint
+     * configuration instead of an instance-based endpoint configuration.</p> 
+     * <p>Serverless Inference is in preview release for Amazon SageMaker and is
+     * subject to change. We do not recommend using this feature in production
+     * environments.</p> 
+     */
+    inline ProductionVariant& WithServerlessConfig(ProductionVariantServerlessConfig&& value) { SetServerlessConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_variantName;
@@ -335,6 +391,9 @@ namespace Model
 
     ProductionVariantCoreDumpConfig m_coreDumpConfig;
     bool m_coreDumpConfigHasBeenSet;
+
+    ProductionVariantServerlessConfig m_serverlessConfig;
+    bool m_serverlessConfigHasBeenSet;
   };
 
 } // namespace Model

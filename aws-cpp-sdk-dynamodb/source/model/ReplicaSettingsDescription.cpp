@@ -29,7 +29,8 @@ ReplicaSettingsDescription::ReplicaSettingsDescription() :
     m_replicaProvisionedWriteCapacityUnits(0),
     m_replicaProvisionedWriteCapacityUnitsHasBeenSet(false),
     m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet(false),
-    m_replicaGlobalSecondaryIndexSettingsHasBeenSet(false)
+    m_replicaGlobalSecondaryIndexSettingsHasBeenSet(false),
+    m_replicaTableClassSummaryHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ ReplicaSettingsDescription::ReplicaSettingsDescription(JsonView jsonValue) :
     m_replicaProvisionedWriteCapacityUnits(0),
     m_replicaProvisionedWriteCapacityUnitsHasBeenSet(false),
     m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet(false),
-    m_replicaGlobalSecondaryIndexSettingsHasBeenSet(false)
+    m_replicaGlobalSecondaryIndexSettingsHasBeenSet(false),
+    m_replicaTableClassSummaryHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -110,6 +112,13 @@ ReplicaSettingsDescription& ReplicaSettingsDescription::operator =(JsonView json
     m_replicaGlobalSecondaryIndexSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ReplicaTableClassSummary"))
+  {
+    m_replicaTableClassSummary = jsonValue.GetObject("ReplicaTableClassSummary");
+
+    m_replicaTableClassSummaryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -166,6 +175,12 @@ JsonValue ReplicaSettingsDescription::Jsonize() const
      replicaGlobalSecondaryIndexSettingsJsonList[replicaGlobalSecondaryIndexSettingsIndex].AsObject(m_replicaGlobalSecondaryIndexSettings[replicaGlobalSecondaryIndexSettingsIndex].Jsonize());
    }
    payload.WithArray("ReplicaGlobalSecondaryIndexSettings", std::move(replicaGlobalSecondaryIndexSettingsJsonList));
+
+  }
+
+  if(m_replicaTableClassSummaryHasBeenSet)
+  {
+   payload.WithObject("ReplicaTableClassSummary", m_replicaTableClassSummary.Jsonize());
 
   }
 

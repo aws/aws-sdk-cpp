@@ -110,6 +110,12 @@ DescribeDataSourceResult& DescribeDataSourceResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("CustomDocumentEnrichmentConfiguration"))
+  {
+    m_customDocumentEnrichmentConfiguration = jsonValue.GetObject("CustomDocumentEnrichmentConfiguration");
+
+  }
+
 
 
   return *this;

@@ -23,7 +23,8 @@ AllocatePrivateVirtualInterfaceResult::AllocatePrivateVirtualInterfaceResult() :
     m_addressFamily(AddressFamily::NOT_SET),
     m_virtualInterfaceState(VirtualInterfaceState::NOT_SET),
     m_mtu(0),
-    m_jumboFrameCapable(false)
+    m_jumboFrameCapable(false),
+    m_siteLinkEnabled(false)
 {
 }
 
@@ -34,7 +35,8 @@ AllocatePrivateVirtualInterfaceResult::AllocatePrivateVirtualInterfaceResult(con
     m_addressFamily(AddressFamily::NOT_SET),
     m_virtualInterfaceState(VirtualInterfaceState::NOT_SET),
     m_mtu(0),
-    m_jumboFrameCapable(false)
+    m_jumboFrameCapable(false),
+    m_siteLinkEnabled(false)
 {
   *this = result;
 }
@@ -199,6 +201,12 @@ AllocatePrivateVirtualInterfaceResult& AllocatePrivateVirtualInterfaceResult::op
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("siteLinkEnabled"))
+  {
+    m_siteLinkEnabled = jsonValue.GetBool("siteLinkEnabled");
+
   }
 
 

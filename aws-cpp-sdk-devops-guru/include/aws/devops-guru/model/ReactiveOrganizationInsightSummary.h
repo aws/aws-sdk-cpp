@@ -85,42 +85,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Amazon Web Services account.</p>
+     * <p>The ID of the Amazon Web Services account. </p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The ID of the Amazon Web Services account.</p>
+     * <p>The ID of the Amazon Web Services account. </p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Amazon Web Services account.</p>
+     * <p>The ID of the Amazon Web Services account. </p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The ID of the Amazon Web Services account.</p>
+     * <p>The ID of the Amazon Web Services account. </p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services account.</p>
+     * <p>The ID of the Amazon Web Services account. </p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services account.</p>
+     * <p>The ID of the Amazon Web Services account. </p>
      */
     inline ReactiveOrganizationInsightSummary& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services account.</p>
+     * <p>The ID of the Amazon Web Services account. </p>
      */
     inline ReactiveOrganizationInsightSummary& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services account.</p>
+     * <p>The ID of the Amazon Web Services account. </p>
      */
     inline ReactiveOrganizationInsightSummary& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -208,32 +208,50 @@ namespace Model
 
 
     /**
-     * <p> An array of severity values used to search for insights. </p>
+     * <p> An array of severity values used to search for insights. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline const InsightSeverity& GetSeverity() const{ return m_severity; }
 
     /**
-     * <p> An array of severity values used to search for insights. </p>
+     * <p> An array of severity values used to search for insights. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
 
     /**
-     * <p> An array of severity values used to search for insights. </p>
+     * <p> An array of severity values used to search for insights. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline void SetSeverity(const InsightSeverity& value) { m_severityHasBeenSet = true; m_severity = value; }
 
     /**
-     * <p> An array of severity values used to search for insights. </p>
+     * <p> An array of severity values used to search for insights. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline void SetSeverity(InsightSeverity&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
 
     /**
-     * <p> An array of severity values used to search for insights. </p>
+     * <p> An array of severity values used to search for insights. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline ReactiveOrganizationInsightSummary& WithSeverity(const InsightSeverity& value) { SetSeverity(value); return *this;}
 
     /**
-     * <p> An array of severity values used to search for insights. </p>
+     * <p> An array of severity values used to search for insights. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline ReactiveOrganizationInsightSummary& WithSeverity(InsightSeverity&& value) { SetSeverity(std::move(value)); return *this;}
 

@@ -713,6 +713,47 @@ namespace Model
 
 
     /**
+     * <p>The inference specification name in the model package version.</p>
+     */
+    inline const Aws::String& GetInferenceSpecificationName() const{ return m_inferenceSpecificationName; }
+
+    /**
+     * <p>The inference specification name in the model package version.</p>
+     */
+    inline bool InferenceSpecificationNameHasBeenSet() const { return m_inferenceSpecificationNameHasBeenSet; }
+
+    /**
+     * <p>The inference specification name in the model package version.</p>
+     */
+    inline void SetInferenceSpecificationName(const Aws::String& value) { m_inferenceSpecificationNameHasBeenSet = true; m_inferenceSpecificationName = value; }
+
+    /**
+     * <p>The inference specification name in the model package version.</p>
+     */
+    inline void SetInferenceSpecificationName(Aws::String&& value) { m_inferenceSpecificationNameHasBeenSet = true; m_inferenceSpecificationName = std::move(value); }
+
+    /**
+     * <p>The inference specification name in the model package version.</p>
+     */
+    inline void SetInferenceSpecificationName(const char* value) { m_inferenceSpecificationNameHasBeenSet = true; m_inferenceSpecificationName.assign(value); }
+
+    /**
+     * <p>The inference specification name in the model package version.</p>
+     */
+    inline ContainerDefinition& WithInferenceSpecificationName(const Aws::String& value) { SetInferenceSpecificationName(value); return *this;}
+
+    /**
+     * <p>The inference specification name in the model package version.</p>
+     */
+    inline ContainerDefinition& WithInferenceSpecificationName(Aws::String&& value) { SetInferenceSpecificationName(std::move(value)); return *this;}
+
+    /**
+     * <p>The inference specification name in the model package version.</p>
+     */
+    inline ContainerDefinition& WithInferenceSpecificationName(const char* value) { SetInferenceSpecificationName(value); return *this;}
+
+
+    /**
      * <p>Specifies additional configuration for multi-model endpoints.</p>
      */
     inline const MultiModelConfig& GetMultiModelConfig() const{ return m_multiModelConfig; }
@@ -764,6 +805,9 @@ namespace Model
 
     Aws::String m_modelPackageName;
     bool m_modelPackageNameHasBeenSet;
+
+    Aws::String m_inferenceSpecificationName;
+    bool m_inferenceSpecificationNameHasBeenSet;
 
     MultiModelConfig m_multiModelConfig;
     bool m_multiModelConfigHasBeenSet;

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     Overwrite,
-    FailOnConflict
+    FailOnConflict,
+    Append
   };
 
 namespace MergeStrategyMapper

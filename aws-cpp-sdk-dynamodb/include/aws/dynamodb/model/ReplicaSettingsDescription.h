@@ -10,6 +10,7 @@
 #include <aws/dynamodb/model/BillingModeSummary.h>
 #include <aws/dynamodb/model/AutoScalingSettingsDescription.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/dynamodb/model/TableClassSummary.h>
 #include <aws/dynamodb/model/ReplicaGlobalSecondaryIndexSettingsDescription.h>
 #include <utility>
 
@@ -349,6 +350,25 @@ namespace Model
      */
     inline ReplicaSettingsDescription& AddReplicaGlobalSecondaryIndexSettings(ReplicaGlobalSecondaryIndexSettingsDescription&& value) { m_replicaGlobalSecondaryIndexSettingsHasBeenSet = true; m_replicaGlobalSecondaryIndexSettings.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const TableClassSummary& GetReplicaTableClassSummary() const{ return m_replicaTableClassSummary; }
+
+    
+    inline bool ReplicaTableClassSummaryHasBeenSet() const { return m_replicaTableClassSummaryHasBeenSet; }
+
+    
+    inline void SetReplicaTableClassSummary(const TableClassSummary& value) { m_replicaTableClassSummaryHasBeenSet = true; m_replicaTableClassSummary = value; }
+
+    
+    inline void SetReplicaTableClassSummary(TableClassSummary&& value) { m_replicaTableClassSummaryHasBeenSet = true; m_replicaTableClassSummary = std::move(value); }
+
+    
+    inline ReplicaSettingsDescription& WithReplicaTableClassSummary(const TableClassSummary& value) { SetReplicaTableClassSummary(value); return *this;}
+
+    
+    inline ReplicaSettingsDescription& WithReplicaTableClassSummary(TableClassSummary&& value) { SetReplicaTableClassSummary(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_regionName;
@@ -374,6 +394,9 @@ namespace Model
 
     Aws::Vector<ReplicaGlobalSecondaryIndexSettingsDescription> m_replicaGlobalSecondaryIndexSettings;
     bool m_replicaGlobalSecondaryIndexSettingsHasBeenSet;
+
+    TableClassSummary m_replicaTableClassSummary;
+    bool m_replicaTableClassSummaryHasBeenSet;
   };
 
 } // namespace Model

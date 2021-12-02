@@ -23,7 +23,8 @@ namespace Model
     Failed,
     Deleting,
     NotBuilt,
-    Importing
+    Importing,
+    Processing
   };
 
 namespace BotLocaleStatusMapper

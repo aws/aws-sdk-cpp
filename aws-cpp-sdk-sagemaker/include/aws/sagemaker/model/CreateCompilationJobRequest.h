@@ -211,6 +211,71 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a
+     * <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the
+     * request syntax. The presence of both objects in the
+     * <code>CreateCompilationJob</code> request will return an exception.</p>
+     */
+    inline const Aws::String& GetModelPackageVersionArn() const{ return m_modelPackageVersionArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a
+     * <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the
+     * request syntax. The presence of both objects in the
+     * <code>CreateCompilationJob</code> request will return an exception.</p>
+     */
+    inline bool ModelPackageVersionArnHasBeenSet() const { return m_modelPackageVersionArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a
+     * <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the
+     * request syntax. The presence of both objects in the
+     * <code>CreateCompilationJob</code> request will return an exception.</p>
+     */
+    inline void SetModelPackageVersionArn(const Aws::String& value) { m_modelPackageVersionArnHasBeenSet = true; m_modelPackageVersionArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a
+     * <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the
+     * request syntax. The presence of both objects in the
+     * <code>CreateCompilationJob</code> request will return an exception.</p>
+     */
+    inline void SetModelPackageVersionArn(Aws::String&& value) { m_modelPackageVersionArnHasBeenSet = true; m_modelPackageVersionArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a
+     * <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the
+     * request syntax. The presence of both objects in the
+     * <code>CreateCompilationJob</code> request will return an exception.</p>
+     */
+    inline void SetModelPackageVersionArn(const char* value) { m_modelPackageVersionArnHasBeenSet = true; m_modelPackageVersionArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a
+     * <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the
+     * request syntax. The presence of both objects in the
+     * <code>CreateCompilationJob</code> request will return an exception.</p>
+     */
+    inline CreateCompilationJobRequest& WithModelPackageVersionArn(const Aws::String& value) { SetModelPackageVersionArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a
+     * <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the
+     * request syntax. The presence of both objects in the
+     * <code>CreateCompilationJob</code> request will return an exception.</p>
+     */
+    inline CreateCompilationJobRequest& WithModelPackageVersionArn(Aws::String&& value) { SetModelPackageVersionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a
+     * <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the
+     * request syntax. The presence of both objects in the
+     * <code>CreateCompilationJob</code> request will return an exception.</p>
+     */
+    inline CreateCompilationJobRequest& WithModelPackageVersionArn(const char* value) { SetModelPackageVersionArn(value); return *this;}
+
+
+    /**
      * <p>Provides information about the location of input model artifacts, the name
      * and shape of the expected data inputs, and the framework in which the model was
      * trained.</p>
@@ -467,6 +532,9 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
+    Aws::String m_modelPackageVersionArn;
+    bool m_modelPackageVersionArnHasBeenSet;
 
     InputConfig m_inputConfig;
     bool m_inputConfigHasBeenSet;

@@ -40,6 +40,9 @@ namespace Aws
         static const int instance_HASH = HashingUtils::HashString("instance");
         static const int instance_event_window_HASH = HashingUtils::HashString("instance-event-window");
         static const int internet_gateway_HASH = HashingUtils::HashString("internet-gateway");
+        static const int ipam_HASH = HashingUtils::HashString("ipam");
+        static const int ipam_pool_HASH = HashingUtils::HashString("ipam-pool");
+        static const int ipam_scope_HASH = HashingUtils::HashString("ipam-scope");
         static const int ipv4pool_ec2_HASH = HashingUtils::HashString("ipv4pool-ec2");
         static const int ipv6pool_ec2_HASH = HashingUtils::HashString("ipv6pool-ec2");
         static const int key_pair_HASH = HashingUtils::HashString("key-pair");
@@ -55,6 +58,8 @@ namespace Aws
         static const int network_interface_HASH = HashingUtils::HashString("network-interface");
         static const int network_insights_analysis_HASH = HashingUtils::HashString("network-insights-analysis");
         static const int network_insights_path_HASH = HashingUtils::HashString("network-insights-path");
+        static const int network_insights_access_scope_HASH = HashingUtils::HashString("network-insights-access-scope");
+        static const int network_insights_access_scope_analysis_HASH = HashingUtils::HashString("network-insights-access-scope-analysis");
         static const int placement_group_HASH = HashingUtils::HashString("placement-group");
         static const int prefix_list_HASH = HashingUtils::HashString("prefix-list");
         static const int replace_root_volume_task_HASH = HashingUtils::HashString("replace-root-volume-task");
@@ -167,6 +172,18 @@ namespace Aws
           {
             return ResourceType::internet_gateway;
           }
+          else if (hashCode == ipam_HASH)
+          {
+            return ResourceType::ipam;
+          }
+          else if (hashCode == ipam_pool_HASH)
+          {
+            return ResourceType::ipam_pool;
+          }
+          else if (hashCode == ipam_scope_HASH)
+          {
+            return ResourceType::ipam_scope;
+          }
           else if (hashCode == ipv4pool_ec2_HASH)
           {
             return ResourceType::ipv4pool_ec2;
@@ -226,6 +243,14 @@ namespace Aws
           else if (hashCode == network_insights_path_HASH)
           {
             return ResourceType::network_insights_path;
+          }
+          else if (hashCode == network_insights_access_scope_HASH)
+          {
+            return ResourceType::network_insights_access_scope;
+          }
+          else if (hashCode == network_insights_access_scope_analysis_HASH)
+          {
+            return ResourceType::network_insights_access_scope_analysis;
           }
           else if (hashCode == placement_group_HASH)
           {
@@ -389,6 +414,12 @@ namespace Aws
             return "instance-event-window";
           case ResourceType::internet_gateway:
             return "internet-gateway";
+          case ResourceType::ipam:
+            return "ipam";
+          case ResourceType::ipam_pool:
+            return "ipam-pool";
+          case ResourceType::ipam_scope:
+            return "ipam-scope";
           case ResourceType::ipv4pool_ec2:
             return "ipv4pool-ec2";
           case ResourceType::ipv6pool_ec2:
@@ -419,6 +450,10 @@ namespace Aws
             return "network-insights-analysis";
           case ResourceType::network_insights_path:
             return "network-insights-path";
+          case ResourceType::network_insights_access_scope:
+            return "network-insights-access-scope";
+          case ResourceType::network_insights_access_scope_analysis:
+            return "network-insights-access-scope-analysis";
           case ResourceType::placement_group:
             return "placement-group";
           case ResourceType::prefix_list:

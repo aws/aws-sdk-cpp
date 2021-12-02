@@ -10,6 +10,7 @@
 #include <aws/sagemaker/model/ModelApprovalStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/AdditionalInferenceSpecificationDefinition.h>
 #include <utility>
 
 namespace Aws
@@ -270,6 +271,87 @@ namespace Model
      */
     inline UpdateModelPackageRequest& AddCustomerMetadataPropertiesToRemove(const char* value) { m_customerMetadataPropertiesToRemoveHasBeenSet = true; m_customerMetadataPropertiesToRemove.push_back(value); return *this; }
 
+
+    /**
+     * <p>An array of additional Inference Specification objects to be added to the
+     * existing array additional Inference Specification. Total number of additional
+     * Inference Specifications can not exceed 15. Each additional Inference
+     * Specification specifies artifacts based on this model package that can be used
+     * on inference endpoints. Generally used with SageMaker Neo to store the compiled
+     * artifacts.</p>
+     */
+    inline const Aws::Vector<AdditionalInferenceSpecificationDefinition>& GetAdditionalInferenceSpecificationsToAdd() const{ return m_additionalInferenceSpecificationsToAdd; }
+
+    /**
+     * <p>An array of additional Inference Specification objects to be added to the
+     * existing array additional Inference Specification. Total number of additional
+     * Inference Specifications can not exceed 15. Each additional Inference
+     * Specification specifies artifacts based on this model package that can be used
+     * on inference endpoints. Generally used with SageMaker Neo to store the compiled
+     * artifacts.</p>
+     */
+    inline bool AdditionalInferenceSpecificationsToAddHasBeenSet() const { return m_additionalInferenceSpecificationsToAddHasBeenSet; }
+
+    /**
+     * <p>An array of additional Inference Specification objects to be added to the
+     * existing array additional Inference Specification. Total number of additional
+     * Inference Specifications can not exceed 15. Each additional Inference
+     * Specification specifies artifacts based on this model package that can be used
+     * on inference endpoints. Generally used with SageMaker Neo to store the compiled
+     * artifacts.</p>
+     */
+    inline void SetAdditionalInferenceSpecificationsToAdd(const Aws::Vector<AdditionalInferenceSpecificationDefinition>& value) { m_additionalInferenceSpecificationsToAddHasBeenSet = true; m_additionalInferenceSpecificationsToAdd = value; }
+
+    /**
+     * <p>An array of additional Inference Specification objects to be added to the
+     * existing array additional Inference Specification. Total number of additional
+     * Inference Specifications can not exceed 15. Each additional Inference
+     * Specification specifies artifacts based on this model package that can be used
+     * on inference endpoints. Generally used with SageMaker Neo to store the compiled
+     * artifacts.</p>
+     */
+    inline void SetAdditionalInferenceSpecificationsToAdd(Aws::Vector<AdditionalInferenceSpecificationDefinition>&& value) { m_additionalInferenceSpecificationsToAddHasBeenSet = true; m_additionalInferenceSpecificationsToAdd = std::move(value); }
+
+    /**
+     * <p>An array of additional Inference Specification objects to be added to the
+     * existing array additional Inference Specification. Total number of additional
+     * Inference Specifications can not exceed 15. Each additional Inference
+     * Specification specifies artifacts based on this model package that can be used
+     * on inference endpoints. Generally used with SageMaker Neo to store the compiled
+     * artifacts.</p>
+     */
+    inline UpdateModelPackageRequest& WithAdditionalInferenceSpecificationsToAdd(const Aws::Vector<AdditionalInferenceSpecificationDefinition>& value) { SetAdditionalInferenceSpecificationsToAdd(value); return *this;}
+
+    /**
+     * <p>An array of additional Inference Specification objects to be added to the
+     * existing array additional Inference Specification. Total number of additional
+     * Inference Specifications can not exceed 15. Each additional Inference
+     * Specification specifies artifacts based on this model package that can be used
+     * on inference endpoints. Generally used with SageMaker Neo to store the compiled
+     * artifacts.</p>
+     */
+    inline UpdateModelPackageRequest& WithAdditionalInferenceSpecificationsToAdd(Aws::Vector<AdditionalInferenceSpecificationDefinition>&& value) { SetAdditionalInferenceSpecificationsToAdd(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of additional Inference Specification objects to be added to the
+     * existing array additional Inference Specification. Total number of additional
+     * Inference Specifications can not exceed 15. Each additional Inference
+     * Specification specifies artifacts based on this model package that can be used
+     * on inference endpoints. Generally used with SageMaker Neo to store the compiled
+     * artifacts.</p>
+     */
+    inline UpdateModelPackageRequest& AddAdditionalInferenceSpecificationsToAdd(const AdditionalInferenceSpecificationDefinition& value) { m_additionalInferenceSpecificationsToAddHasBeenSet = true; m_additionalInferenceSpecificationsToAdd.push_back(value); return *this; }
+
+    /**
+     * <p>An array of additional Inference Specification objects to be added to the
+     * existing array additional Inference Specification. Total number of additional
+     * Inference Specifications can not exceed 15. Each additional Inference
+     * Specification specifies artifacts based on this model package that can be used
+     * on inference endpoints. Generally used with SageMaker Neo to store the compiled
+     * artifacts.</p>
+     */
+    inline UpdateModelPackageRequest& AddAdditionalInferenceSpecificationsToAdd(AdditionalInferenceSpecificationDefinition&& value) { m_additionalInferenceSpecificationsToAddHasBeenSet = true; m_additionalInferenceSpecificationsToAdd.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_modelPackageArn;
@@ -286,6 +368,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_customerMetadataPropertiesToRemove;
     bool m_customerMetadataPropertiesToRemoveHasBeenSet;
+
+    Aws::Vector<AdditionalInferenceSpecificationDefinition> m_additionalInferenceSpecificationsToAdd;
+    bool m_additionalInferenceSpecificationsToAddHasBeenSet;
   };
 
 } // namespace Model

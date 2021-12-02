@@ -88,32 +88,50 @@ namespace Model
 
 
     /**
-     * <p> The severity of a proactive anomaly. </p>
+     * <p>The severity of the anomaly. The severity of anomalies that generate an
+     * insight determine that insight's severity. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline const AnomalySeverity& GetSeverity() const{ return m_severity; }
 
     /**
-     * <p> The severity of a proactive anomaly. </p>
+     * <p>The severity of the anomaly. The severity of anomalies that generate an
+     * insight determine that insight's severity. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
 
     /**
-     * <p> The severity of a proactive anomaly. </p>
+     * <p>The severity of the anomaly. The severity of anomalies that generate an
+     * insight determine that insight's severity. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline void SetSeverity(const AnomalySeverity& value) { m_severityHasBeenSet = true; m_severity = value; }
 
     /**
-     * <p> The severity of a proactive anomaly. </p>
+     * <p>The severity of the anomaly. The severity of anomalies that generate an
+     * insight determine that insight's severity. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline void SetSeverity(AnomalySeverity&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
 
     /**
-     * <p> The severity of a proactive anomaly. </p>
+     * <p>The severity of the anomaly. The severity of anomalies that generate an
+     * insight determine that insight's severity. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline ProactiveAnomaly& WithSeverity(const AnomalySeverity& value) { SetSeverity(value); return *this;}
 
     /**
-     * <p> The severity of a proactive anomaly. </p>
+     * <p>The severity of the anomaly. The severity of anomalies that generate an
+     * insight determine that insight's severity. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline ProactiveAnomaly& WithSeverity(AnomalySeverity&& value) { SetSeverity(std::move(value)); return *this;}
 
@@ -200,38 +218,38 @@ namespace Model
 
 
     /**
-     * <p> A <code>AnomalyReportedTimeRange</code> object that specifies the time range
-     * between when the anomaly is opened and the time when it is closed. </p>
+     * <p> An <code>AnomalyReportedTimeRange</code> object that specifies the time
+     * range between when the anomaly is opened and the time when it is closed. </p>
      */
     inline const AnomalyReportedTimeRange& GetAnomalyReportedTimeRange() const{ return m_anomalyReportedTimeRange; }
 
     /**
-     * <p> A <code>AnomalyReportedTimeRange</code> object that specifies the time range
-     * between when the anomaly is opened and the time when it is closed. </p>
+     * <p> An <code>AnomalyReportedTimeRange</code> object that specifies the time
+     * range between when the anomaly is opened and the time when it is closed. </p>
      */
     inline bool AnomalyReportedTimeRangeHasBeenSet() const { return m_anomalyReportedTimeRangeHasBeenSet; }
 
     /**
-     * <p> A <code>AnomalyReportedTimeRange</code> object that specifies the time range
-     * between when the anomaly is opened and the time when it is closed. </p>
+     * <p> An <code>AnomalyReportedTimeRange</code> object that specifies the time
+     * range between when the anomaly is opened and the time when it is closed. </p>
      */
     inline void SetAnomalyReportedTimeRange(const AnomalyReportedTimeRange& value) { m_anomalyReportedTimeRangeHasBeenSet = true; m_anomalyReportedTimeRange = value; }
 
     /**
-     * <p> A <code>AnomalyReportedTimeRange</code> object that specifies the time range
-     * between when the anomaly is opened and the time when it is closed. </p>
+     * <p> An <code>AnomalyReportedTimeRange</code> object that specifies the time
+     * range between when the anomaly is opened and the time when it is closed. </p>
      */
     inline void SetAnomalyReportedTimeRange(AnomalyReportedTimeRange&& value) { m_anomalyReportedTimeRangeHasBeenSet = true; m_anomalyReportedTimeRange = std::move(value); }
 
     /**
-     * <p> A <code>AnomalyReportedTimeRange</code> object that specifies the time range
-     * between when the anomaly is opened and the time when it is closed. </p>
+     * <p> An <code>AnomalyReportedTimeRange</code> object that specifies the time
+     * range between when the anomaly is opened and the time when it is closed. </p>
      */
     inline ProactiveAnomaly& WithAnomalyReportedTimeRange(const AnomalyReportedTimeRange& value) { SetAnomalyReportedTimeRange(value); return *this;}
 
     /**
-     * <p> A <code>AnomalyReportedTimeRange</code> object that specifies the time range
-     * between when the anomaly is opened and the time when it is closed. </p>
+     * <p> An <code>AnomalyReportedTimeRange</code> object that specifies the time
+     * range between when the anomaly is opened and the time when it is closed. </p>
      */
     inline ProactiveAnomaly& WithAnomalyReportedTimeRange(AnomalyReportedTimeRange&& value) { SetAnomalyReportedTimeRange(std::move(value)); return *this;}
 

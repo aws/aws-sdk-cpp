@@ -88,7 +88,7 @@ namespace Model
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
      * </code> </p> </li> <li> <p>For an Global Accelerator accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
-     * </code> </p> </li> <li> <p>For Amazon Route 53:
+     * </code> </p> </li> <li> <p>For Amazon Route 53:
      * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
      * <p>For an Elastic IP address:
      * <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i>
@@ -107,7 +107,7 @@ namespace Model
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
      * </code> </p> </li> <li> <p>For an Global Accelerator accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
-     * </code> </p> </li> <li> <p>For Amazon Route 53:
+     * </code> </p> </li> <li> <p>For Amazon Route 53:
      * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
      * <p>For an Elastic IP address:
      * <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i>
@@ -126,7 +126,7 @@ namespace Model
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
      * </code> </p> </li> <li> <p>For an Global Accelerator accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
-     * </code> </p> </li> <li> <p>For Amazon Route 53:
+     * </code> </p> </li> <li> <p>For Amazon Route 53:
      * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
      * <p>For an Elastic IP address:
      * <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i>
@@ -145,7 +145,7 @@ namespace Model
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
      * </code> </p> </li> <li> <p>For an Global Accelerator accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
-     * </code> </p> </li> <li> <p>For Amazon Route 53:
+     * </code> </p> </li> <li> <p>For Amazon Route 53:
      * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
      * <p>For an Elastic IP address:
      * <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i>
@@ -164,7 +164,7 @@ namespace Model
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
      * </code> </p> </li> <li> <p>For an Global Accelerator accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
-     * </code> </p> </li> <li> <p>For Amazon Route 53:
+     * </code> </p> </li> <li> <p>For Amazon Route 53:
      * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
      * <p>For an Elastic IP address:
      * <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i>
@@ -183,7 +183,7 @@ namespace Model
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
      * </code> </p> </li> <li> <p>For an Global Accelerator accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
-     * </code> </p> </li> <li> <p>For Amazon Route 53:
+     * </code> </p> </li> <li> <p>For Amazon Route 53:
      * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
      * <p>For an Elastic IP address:
      * <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i>
@@ -202,7 +202,7 @@ namespace Model
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
      * </code> </p> </li> <li> <p>For an Global Accelerator accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
-     * </code> </p> </li> <li> <p>For Amazon Route 53:
+     * </code> </p> </li> <li> <p>For Amazon Route 53:
      * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
      * <p>For an Elastic IP address:
      * <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i>
@@ -221,7 +221,7 @@ namespace Model
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
      * </code> </p> </li> <li> <p>For an Global Accelerator accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
-     * </code> </p> </li> <li> <p>For Amazon Route 53:
+     * </code> </p> </li> <li> <p>For Amazon Route 53:
      * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
      * <p>For an Elastic IP address:
      * <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i>

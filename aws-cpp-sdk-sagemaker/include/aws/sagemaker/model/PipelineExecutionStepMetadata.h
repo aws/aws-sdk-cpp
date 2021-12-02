@@ -14,6 +14,8 @@
 #include <aws/sagemaker/model/ConditionStepMetadata.h>
 #include <aws/sagemaker/model/CallbackStepMetadata.h>
 #include <aws/sagemaker/model/LambdaStepMetadata.h>
+#include <aws/sagemaker/model/QualityCheckStepMetadata.h>
+#include <aws/sagemaker/model/ClarifyCheckStepMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -377,6 +379,194 @@ namespace Model
      */
     inline PipelineExecutionStepMetadata& WithLambda(LambdaStepMetadata&& value) { SetLambda(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configurations and outcomes of the check step execution. This includes:
+     * </p> <ul> <li> <p>The type of the check conducted,</p> </li> <li> <p>The Amazon
+     * S3 URIs of baseline constraints and statistics files to be used for the drift
+     * check.</p> </li> <li> <p>The Amazon S3 URIs of newly calculated baseline
+     * constraints and statistics.</p> </li> <li> <p>The model package group name
+     * provided.</p> </li> <li> <p>The Amazon S3 URI of the violation report if
+     * violations detected.</p> </li> <li> <p>The Amazon Resource Name (ARN) of check
+     * processing job initiated by the step execution.</p> </li> <li> <p>The boolean
+     * flags indicating if the drift check is skipped.</p> </li> <li> <p>If step
+     * property <code>BaselineUsedForDriftCheck</code> is set the same as
+     * <code>CalculatedBaseline</code>.</p> </li> </ul>
+     */
+    inline const QualityCheckStepMetadata& GetQualityCheck() const{ return m_qualityCheck; }
+
+    /**
+     * <p>The configurations and outcomes of the check step execution. This includes:
+     * </p> <ul> <li> <p>The type of the check conducted,</p> </li> <li> <p>The Amazon
+     * S3 URIs of baseline constraints and statistics files to be used for the drift
+     * check.</p> </li> <li> <p>The Amazon S3 URIs of newly calculated baseline
+     * constraints and statistics.</p> </li> <li> <p>The model package group name
+     * provided.</p> </li> <li> <p>The Amazon S3 URI of the violation report if
+     * violations detected.</p> </li> <li> <p>The Amazon Resource Name (ARN) of check
+     * processing job initiated by the step execution.</p> </li> <li> <p>The boolean
+     * flags indicating if the drift check is skipped.</p> </li> <li> <p>If step
+     * property <code>BaselineUsedForDriftCheck</code> is set the same as
+     * <code>CalculatedBaseline</code>.</p> </li> </ul>
+     */
+    inline bool QualityCheckHasBeenSet() const { return m_qualityCheckHasBeenSet; }
+
+    /**
+     * <p>The configurations and outcomes of the check step execution. This includes:
+     * </p> <ul> <li> <p>The type of the check conducted,</p> </li> <li> <p>The Amazon
+     * S3 URIs of baseline constraints and statistics files to be used for the drift
+     * check.</p> </li> <li> <p>The Amazon S3 URIs of newly calculated baseline
+     * constraints and statistics.</p> </li> <li> <p>The model package group name
+     * provided.</p> </li> <li> <p>The Amazon S3 URI of the violation report if
+     * violations detected.</p> </li> <li> <p>The Amazon Resource Name (ARN) of check
+     * processing job initiated by the step execution.</p> </li> <li> <p>The boolean
+     * flags indicating if the drift check is skipped.</p> </li> <li> <p>If step
+     * property <code>BaselineUsedForDriftCheck</code> is set the same as
+     * <code>CalculatedBaseline</code>.</p> </li> </ul>
+     */
+    inline void SetQualityCheck(const QualityCheckStepMetadata& value) { m_qualityCheckHasBeenSet = true; m_qualityCheck = value; }
+
+    /**
+     * <p>The configurations and outcomes of the check step execution. This includes:
+     * </p> <ul> <li> <p>The type of the check conducted,</p> </li> <li> <p>The Amazon
+     * S3 URIs of baseline constraints and statistics files to be used for the drift
+     * check.</p> </li> <li> <p>The Amazon S3 URIs of newly calculated baseline
+     * constraints and statistics.</p> </li> <li> <p>The model package group name
+     * provided.</p> </li> <li> <p>The Amazon S3 URI of the violation report if
+     * violations detected.</p> </li> <li> <p>The Amazon Resource Name (ARN) of check
+     * processing job initiated by the step execution.</p> </li> <li> <p>The boolean
+     * flags indicating if the drift check is skipped.</p> </li> <li> <p>If step
+     * property <code>BaselineUsedForDriftCheck</code> is set the same as
+     * <code>CalculatedBaseline</code>.</p> </li> </ul>
+     */
+    inline void SetQualityCheck(QualityCheckStepMetadata&& value) { m_qualityCheckHasBeenSet = true; m_qualityCheck = std::move(value); }
+
+    /**
+     * <p>The configurations and outcomes of the check step execution. This includes:
+     * </p> <ul> <li> <p>The type of the check conducted,</p> </li> <li> <p>The Amazon
+     * S3 URIs of baseline constraints and statistics files to be used for the drift
+     * check.</p> </li> <li> <p>The Amazon S3 URIs of newly calculated baseline
+     * constraints and statistics.</p> </li> <li> <p>The model package group name
+     * provided.</p> </li> <li> <p>The Amazon S3 URI of the violation report if
+     * violations detected.</p> </li> <li> <p>The Amazon Resource Name (ARN) of check
+     * processing job initiated by the step execution.</p> </li> <li> <p>The boolean
+     * flags indicating if the drift check is skipped.</p> </li> <li> <p>If step
+     * property <code>BaselineUsedForDriftCheck</code> is set the same as
+     * <code>CalculatedBaseline</code>.</p> </li> </ul>
+     */
+    inline PipelineExecutionStepMetadata& WithQualityCheck(const QualityCheckStepMetadata& value) { SetQualityCheck(value); return *this;}
+
+    /**
+     * <p>The configurations and outcomes of the check step execution. This includes:
+     * </p> <ul> <li> <p>The type of the check conducted,</p> </li> <li> <p>The Amazon
+     * S3 URIs of baseline constraints and statistics files to be used for the drift
+     * check.</p> </li> <li> <p>The Amazon S3 URIs of newly calculated baseline
+     * constraints and statistics.</p> </li> <li> <p>The model package group name
+     * provided.</p> </li> <li> <p>The Amazon S3 URI of the violation report if
+     * violations detected.</p> </li> <li> <p>The Amazon Resource Name (ARN) of check
+     * processing job initiated by the step execution.</p> </li> <li> <p>The boolean
+     * flags indicating if the drift check is skipped.</p> </li> <li> <p>If step
+     * property <code>BaselineUsedForDriftCheck</code> is set the same as
+     * <code>CalculatedBaseline</code>.</p> </li> </ul>
+     */
+    inline PipelineExecutionStepMetadata& WithQualityCheck(QualityCheckStepMetadata&& value) { SetQualityCheck(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Container for the metadata for a Clarify check step. The configurations and
+     * outcomes of the check step execution. This includes: </p> <ul> <li> <p>The type
+     * of the check conducted,</p> </li> <li> <p>The Amazon S3 URIs of baseline
+     * constraints and statistics files to be used for the drift check.</p> </li> <li>
+     * <p>The Amazon S3 URIs of newly calculated baseline constraints and
+     * statistics.</p> </li> <li> <p>The model package group name provided.</p> </li>
+     * <li> <p>The Amazon S3 URI of the violation report if violations detected.</p>
+     * </li> <li> <p>The Amazon Resource Name (ARN) of check processing job initiated
+     * by the step execution.</p> </li> <li> <p>The boolean flags indicating if the
+     * drift check is skipped.</p> </li> <li> <p>If step property
+     * <code>BaselineUsedForDriftCheck</code> is set the same as
+     * <code>CalculatedBaseline</code>.</p> </li> </ul>
+     */
+    inline const ClarifyCheckStepMetadata& GetClarifyCheck() const{ return m_clarifyCheck; }
+
+    /**
+     * <p>Container for the metadata for a Clarify check step. The configurations and
+     * outcomes of the check step execution. This includes: </p> <ul> <li> <p>The type
+     * of the check conducted,</p> </li> <li> <p>The Amazon S3 URIs of baseline
+     * constraints and statistics files to be used for the drift check.</p> </li> <li>
+     * <p>The Amazon S3 URIs of newly calculated baseline constraints and
+     * statistics.</p> </li> <li> <p>The model package group name provided.</p> </li>
+     * <li> <p>The Amazon S3 URI of the violation report if violations detected.</p>
+     * </li> <li> <p>The Amazon Resource Name (ARN) of check processing job initiated
+     * by the step execution.</p> </li> <li> <p>The boolean flags indicating if the
+     * drift check is skipped.</p> </li> <li> <p>If step property
+     * <code>BaselineUsedForDriftCheck</code> is set the same as
+     * <code>CalculatedBaseline</code>.</p> </li> </ul>
+     */
+    inline bool ClarifyCheckHasBeenSet() const { return m_clarifyCheckHasBeenSet; }
+
+    /**
+     * <p>Container for the metadata for a Clarify check step. The configurations and
+     * outcomes of the check step execution. This includes: </p> <ul> <li> <p>The type
+     * of the check conducted,</p> </li> <li> <p>The Amazon S3 URIs of baseline
+     * constraints and statistics files to be used for the drift check.</p> </li> <li>
+     * <p>The Amazon S3 URIs of newly calculated baseline constraints and
+     * statistics.</p> </li> <li> <p>The model package group name provided.</p> </li>
+     * <li> <p>The Amazon S3 URI of the violation report if violations detected.</p>
+     * </li> <li> <p>The Amazon Resource Name (ARN) of check processing job initiated
+     * by the step execution.</p> </li> <li> <p>The boolean flags indicating if the
+     * drift check is skipped.</p> </li> <li> <p>If step property
+     * <code>BaselineUsedForDriftCheck</code> is set the same as
+     * <code>CalculatedBaseline</code>.</p> </li> </ul>
+     */
+    inline void SetClarifyCheck(const ClarifyCheckStepMetadata& value) { m_clarifyCheckHasBeenSet = true; m_clarifyCheck = value; }
+
+    /**
+     * <p>Container for the metadata for a Clarify check step. The configurations and
+     * outcomes of the check step execution. This includes: </p> <ul> <li> <p>The type
+     * of the check conducted,</p> </li> <li> <p>The Amazon S3 URIs of baseline
+     * constraints and statistics files to be used for the drift check.</p> </li> <li>
+     * <p>The Amazon S3 URIs of newly calculated baseline constraints and
+     * statistics.</p> </li> <li> <p>The model package group name provided.</p> </li>
+     * <li> <p>The Amazon S3 URI of the violation report if violations detected.</p>
+     * </li> <li> <p>The Amazon Resource Name (ARN) of check processing job initiated
+     * by the step execution.</p> </li> <li> <p>The boolean flags indicating if the
+     * drift check is skipped.</p> </li> <li> <p>If step property
+     * <code>BaselineUsedForDriftCheck</code> is set the same as
+     * <code>CalculatedBaseline</code>.</p> </li> </ul>
+     */
+    inline void SetClarifyCheck(ClarifyCheckStepMetadata&& value) { m_clarifyCheckHasBeenSet = true; m_clarifyCheck = std::move(value); }
+
+    /**
+     * <p>Container for the metadata for a Clarify check step. The configurations and
+     * outcomes of the check step execution. This includes: </p> <ul> <li> <p>The type
+     * of the check conducted,</p> </li> <li> <p>The Amazon S3 URIs of baseline
+     * constraints and statistics files to be used for the drift check.</p> </li> <li>
+     * <p>The Amazon S3 URIs of newly calculated baseline constraints and
+     * statistics.</p> </li> <li> <p>The model package group name provided.</p> </li>
+     * <li> <p>The Amazon S3 URI of the violation report if violations detected.</p>
+     * </li> <li> <p>The Amazon Resource Name (ARN) of check processing job initiated
+     * by the step execution.</p> </li> <li> <p>The boolean flags indicating if the
+     * drift check is skipped.</p> </li> <li> <p>If step property
+     * <code>BaselineUsedForDriftCheck</code> is set the same as
+     * <code>CalculatedBaseline</code>.</p> </li> </ul>
+     */
+    inline PipelineExecutionStepMetadata& WithClarifyCheck(const ClarifyCheckStepMetadata& value) { SetClarifyCheck(value); return *this;}
+
+    /**
+     * <p>Container for the metadata for a Clarify check step. The configurations and
+     * outcomes of the check step execution. This includes: </p> <ul> <li> <p>The type
+     * of the check conducted,</p> </li> <li> <p>The Amazon S3 URIs of baseline
+     * constraints and statistics files to be used for the drift check.</p> </li> <li>
+     * <p>The Amazon S3 URIs of newly calculated baseline constraints and
+     * statistics.</p> </li> <li> <p>The model package group name provided.</p> </li>
+     * <li> <p>The Amazon S3 URI of the violation report if violations detected.</p>
+     * </li> <li> <p>The Amazon Resource Name (ARN) of check processing job initiated
+     * by the step execution.</p> </li> <li> <p>The boolean flags indicating if the
+     * drift check is skipped.</p> </li> <li> <p>If step property
+     * <code>BaselineUsedForDriftCheck</code> is set the same as
+     * <code>CalculatedBaseline</code>.</p> </li> </ul>
+     */
+    inline PipelineExecutionStepMetadata& WithClarifyCheck(ClarifyCheckStepMetadata&& value) { SetClarifyCheck(std::move(value)); return *this;}
+
   private:
 
     TrainingJobStepMetadata m_trainingJob;
@@ -405,6 +595,12 @@ namespace Model
 
     LambdaStepMetadata m_lambda;
     bool m_lambdaHasBeenSet;
+
+    QualityCheckStepMetadata m_qualityCheck;
+    bool m_qualityCheckHasBeenSet;
+
+    ClarifyCheckStepMetadata m_clarifyCheck;
+    bool m_clarifyCheckHasBeenSet;
   };
 
 } // namespace Model

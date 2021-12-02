@@ -11,24 +11,35 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra/model/AssociateEntitiesToExperienceResult.h>
+#include <aws/kendra/model/AssociatePersonasToEntitiesResult.h>
 #include <aws/kendra/model/BatchDeleteDocumentResult.h>
 #include <aws/kendra/model/BatchGetDocumentStatusResult.h>
 #include <aws/kendra/model/BatchPutDocumentResult.h>
 #include <aws/kendra/model/CreateDataSourceResult.h>
+#include <aws/kendra/model/CreateExperienceResult.h>
 #include <aws/kendra/model/CreateFaqResult.h>
 #include <aws/kendra/model/CreateIndexResult.h>
 #include <aws/kendra/model/CreateQuerySuggestionsBlockListResult.h>
 #include <aws/kendra/model/CreateThesaurusResult.h>
+#include <aws/kendra/model/DeleteExperienceResult.h>
 #include <aws/kendra/model/DescribeDataSourceResult.h>
+#include <aws/kendra/model/DescribeExperienceResult.h>
 #include <aws/kendra/model/DescribeFaqResult.h>
 #include <aws/kendra/model/DescribeIndexResult.h>
 #include <aws/kendra/model/DescribePrincipalMappingResult.h>
 #include <aws/kendra/model/DescribeQuerySuggestionsBlockListResult.h>
 #include <aws/kendra/model/DescribeQuerySuggestionsConfigResult.h>
 #include <aws/kendra/model/DescribeThesaurusResult.h>
+#include <aws/kendra/model/DisassociateEntitiesFromExperienceResult.h>
+#include <aws/kendra/model/DisassociatePersonasFromEntitiesResult.h>
 #include <aws/kendra/model/GetQuerySuggestionsResult.h>
+#include <aws/kendra/model/GetSnapshotsResult.h>
 #include <aws/kendra/model/ListDataSourceSyncJobsResult.h>
 #include <aws/kendra/model/ListDataSourcesResult.h>
+#include <aws/kendra/model/ListEntityPersonasResult.h>
+#include <aws/kendra/model/ListExperienceEntitiesResult.h>
+#include <aws/kendra/model/ListExperiencesResult.h>
 #include <aws/kendra/model/ListFaqsResult.h>
 #include <aws/kendra/model/ListGroupsOlderThanOrderingIdResult.h>
 #include <aws/kendra/model/ListIndicesResult.h>
@@ -79,31 +90,42 @@ namespace kendra
 
 namespace Model
 {
+        class AssociateEntitiesToExperienceRequest;
+        class AssociatePersonasToEntitiesRequest;
         class BatchDeleteDocumentRequest;
         class BatchGetDocumentStatusRequest;
         class BatchPutDocumentRequest;
         class ClearQuerySuggestionsRequest;
         class CreateDataSourceRequest;
+        class CreateExperienceRequest;
         class CreateFaqRequest;
         class CreateIndexRequest;
         class CreateQuerySuggestionsBlockListRequest;
         class CreateThesaurusRequest;
         class DeleteDataSourceRequest;
+        class DeleteExperienceRequest;
         class DeleteFaqRequest;
         class DeleteIndexRequest;
         class DeletePrincipalMappingRequest;
         class DeleteQuerySuggestionsBlockListRequest;
         class DeleteThesaurusRequest;
         class DescribeDataSourceRequest;
+        class DescribeExperienceRequest;
         class DescribeFaqRequest;
         class DescribeIndexRequest;
         class DescribePrincipalMappingRequest;
         class DescribeQuerySuggestionsBlockListRequest;
         class DescribeQuerySuggestionsConfigRequest;
         class DescribeThesaurusRequest;
+        class DisassociateEntitiesFromExperienceRequest;
+        class DisassociatePersonasFromEntitiesRequest;
         class GetQuerySuggestionsRequest;
+        class GetSnapshotsRequest;
         class ListDataSourceSyncJobsRequest;
         class ListDataSourcesRequest;
+        class ListEntityPersonasRequest;
+        class ListExperienceEntitiesRequest;
+        class ListExperiencesRequest;
         class ListFaqsRequest;
         class ListGroupsOlderThanOrderingIdRequest;
         class ListIndicesRequest;
@@ -118,36 +140,48 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateDataSourceRequest;
+        class UpdateExperienceRequest;
         class UpdateIndexRequest;
         class UpdateQuerySuggestionsBlockListRequest;
         class UpdateQuerySuggestionsConfigRequest;
         class UpdateThesaurusRequest;
 
+        typedef Aws::Utils::Outcome<AssociateEntitiesToExperienceResult, KendraError> AssociateEntitiesToExperienceOutcome;
+        typedef Aws::Utils::Outcome<AssociatePersonasToEntitiesResult, KendraError> AssociatePersonasToEntitiesOutcome;
         typedef Aws::Utils::Outcome<BatchDeleteDocumentResult, KendraError> BatchDeleteDocumentOutcome;
         typedef Aws::Utils::Outcome<BatchGetDocumentStatusResult, KendraError> BatchGetDocumentStatusOutcome;
         typedef Aws::Utils::Outcome<BatchPutDocumentResult, KendraError> BatchPutDocumentOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> ClearQuerySuggestionsOutcome;
         typedef Aws::Utils::Outcome<CreateDataSourceResult, KendraError> CreateDataSourceOutcome;
+        typedef Aws::Utils::Outcome<CreateExperienceResult, KendraError> CreateExperienceOutcome;
         typedef Aws::Utils::Outcome<CreateFaqResult, KendraError> CreateFaqOutcome;
         typedef Aws::Utils::Outcome<CreateIndexResult, KendraError> CreateIndexOutcome;
         typedef Aws::Utils::Outcome<CreateQuerySuggestionsBlockListResult, KendraError> CreateQuerySuggestionsBlockListOutcome;
         typedef Aws::Utils::Outcome<CreateThesaurusResult, KendraError> CreateThesaurusOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> DeleteDataSourceOutcome;
+        typedef Aws::Utils::Outcome<DeleteExperienceResult, KendraError> DeleteExperienceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> DeleteFaqOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> DeleteIndexOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> DeletePrincipalMappingOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> DeleteQuerySuggestionsBlockListOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> DeleteThesaurusOutcome;
         typedef Aws::Utils::Outcome<DescribeDataSourceResult, KendraError> DescribeDataSourceOutcome;
+        typedef Aws::Utils::Outcome<DescribeExperienceResult, KendraError> DescribeExperienceOutcome;
         typedef Aws::Utils::Outcome<DescribeFaqResult, KendraError> DescribeFaqOutcome;
         typedef Aws::Utils::Outcome<DescribeIndexResult, KendraError> DescribeIndexOutcome;
         typedef Aws::Utils::Outcome<DescribePrincipalMappingResult, KendraError> DescribePrincipalMappingOutcome;
         typedef Aws::Utils::Outcome<DescribeQuerySuggestionsBlockListResult, KendraError> DescribeQuerySuggestionsBlockListOutcome;
         typedef Aws::Utils::Outcome<DescribeQuerySuggestionsConfigResult, KendraError> DescribeQuerySuggestionsConfigOutcome;
         typedef Aws::Utils::Outcome<DescribeThesaurusResult, KendraError> DescribeThesaurusOutcome;
+        typedef Aws::Utils::Outcome<DisassociateEntitiesFromExperienceResult, KendraError> DisassociateEntitiesFromExperienceOutcome;
+        typedef Aws::Utils::Outcome<DisassociatePersonasFromEntitiesResult, KendraError> DisassociatePersonasFromEntitiesOutcome;
         typedef Aws::Utils::Outcome<GetQuerySuggestionsResult, KendraError> GetQuerySuggestionsOutcome;
+        typedef Aws::Utils::Outcome<GetSnapshotsResult, KendraError> GetSnapshotsOutcome;
         typedef Aws::Utils::Outcome<ListDataSourceSyncJobsResult, KendraError> ListDataSourceSyncJobsOutcome;
         typedef Aws::Utils::Outcome<ListDataSourcesResult, KendraError> ListDataSourcesOutcome;
+        typedef Aws::Utils::Outcome<ListEntityPersonasResult, KendraError> ListEntityPersonasOutcome;
+        typedef Aws::Utils::Outcome<ListExperienceEntitiesResult, KendraError> ListExperienceEntitiesOutcome;
+        typedef Aws::Utils::Outcome<ListExperiencesResult, KendraError> ListExperiencesOutcome;
         typedef Aws::Utils::Outcome<ListFaqsResult, KendraError> ListFaqsOutcome;
         typedef Aws::Utils::Outcome<ListGroupsOlderThanOrderingIdResult, KendraError> ListGroupsOlderThanOrderingIdOutcome;
         typedef Aws::Utils::Outcome<ListIndicesResult, KendraError> ListIndicesOutcome;
@@ -162,36 +196,48 @@ namespace Model
         typedef Aws::Utils::Outcome<TagResourceResult, KendraError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, KendraError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> UpdateDataSourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> UpdateExperienceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> UpdateIndexOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> UpdateQuerySuggestionsBlockListOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> UpdateQuerySuggestionsConfigOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> UpdateThesaurusOutcome;
 
+        typedef std::future<AssociateEntitiesToExperienceOutcome> AssociateEntitiesToExperienceOutcomeCallable;
+        typedef std::future<AssociatePersonasToEntitiesOutcome> AssociatePersonasToEntitiesOutcomeCallable;
         typedef std::future<BatchDeleteDocumentOutcome> BatchDeleteDocumentOutcomeCallable;
         typedef std::future<BatchGetDocumentStatusOutcome> BatchGetDocumentStatusOutcomeCallable;
         typedef std::future<BatchPutDocumentOutcome> BatchPutDocumentOutcomeCallable;
         typedef std::future<ClearQuerySuggestionsOutcome> ClearQuerySuggestionsOutcomeCallable;
         typedef std::future<CreateDataSourceOutcome> CreateDataSourceOutcomeCallable;
+        typedef std::future<CreateExperienceOutcome> CreateExperienceOutcomeCallable;
         typedef std::future<CreateFaqOutcome> CreateFaqOutcomeCallable;
         typedef std::future<CreateIndexOutcome> CreateIndexOutcomeCallable;
         typedef std::future<CreateQuerySuggestionsBlockListOutcome> CreateQuerySuggestionsBlockListOutcomeCallable;
         typedef std::future<CreateThesaurusOutcome> CreateThesaurusOutcomeCallable;
         typedef std::future<DeleteDataSourceOutcome> DeleteDataSourceOutcomeCallable;
+        typedef std::future<DeleteExperienceOutcome> DeleteExperienceOutcomeCallable;
         typedef std::future<DeleteFaqOutcome> DeleteFaqOutcomeCallable;
         typedef std::future<DeleteIndexOutcome> DeleteIndexOutcomeCallable;
         typedef std::future<DeletePrincipalMappingOutcome> DeletePrincipalMappingOutcomeCallable;
         typedef std::future<DeleteQuerySuggestionsBlockListOutcome> DeleteQuerySuggestionsBlockListOutcomeCallable;
         typedef std::future<DeleteThesaurusOutcome> DeleteThesaurusOutcomeCallable;
         typedef std::future<DescribeDataSourceOutcome> DescribeDataSourceOutcomeCallable;
+        typedef std::future<DescribeExperienceOutcome> DescribeExperienceOutcomeCallable;
         typedef std::future<DescribeFaqOutcome> DescribeFaqOutcomeCallable;
         typedef std::future<DescribeIndexOutcome> DescribeIndexOutcomeCallable;
         typedef std::future<DescribePrincipalMappingOutcome> DescribePrincipalMappingOutcomeCallable;
         typedef std::future<DescribeQuerySuggestionsBlockListOutcome> DescribeQuerySuggestionsBlockListOutcomeCallable;
         typedef std::future<DescribeQuerySuggestionsConfigOutcome> DescribeQuerySuggestionsConfigOutcomeCallable;
         typedef std::future<DescribeThesaurusOutcome> DescribeThesaurusOutcomeCallable;
+        typedef std::future<DisassociateEntitiesFromExperienceOutcome> DisassociateEntitiesFromExperienceOutcomeCallable;
+        typedef std::future<DisassociatePersonasFromEntitiesOutcome> DisassociatePersonasFromEntitiesOutcomeCallable;
         typedef std::future<GetQuerySuggestionsOutcome> GetQuerySuggestionsOutcomeCallable;
+        typedef std::future<GetSnapshotsOutcome> GetSnapshotsOutcomeCallable;
         typedef std::future<ListDataSourceSyncJobsOutcome> ListDataSourceSyncJobsOutcomeCallable;
         typedef std::future<ListDataSourcesOutcome> ListDataSourcesOutcomeCallable;
+        typedef std::future<ListEntityPersonasOutcome> ListEntityPersonasOutcomeCallable;
+        typedef std::future<ListExperienceEntitiesOutcome> ListExperienceEntitiesOutcomeCallable;
+        typedef std::future<ListExperiencesOutcome> ListExperiencesOutcomeCallable;
         typedef std::future<ListFaqsOutcome> ListFaqsOutcomeCallable;
         typedef std::future<ListGroupsOlderThanOrderingIdOutcome> ListGroupsOlderThanOrderingIdOutcomeCallable;
         typedef std::future<ListIndicesOutcome> ListIndicesOutcomeCallable;
@@ -206,6 +252,7 @@ namespace Model
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateDataSourceOutcome> UpdateDataSourceOutcomeCallable;
+        typedef std::future<UpdateExperienceOutcome> UpdateExperienceOutcomeCallable;
         typedef std::future<UpdateIndexOutcome> UpdateIndexOutcomeCallable;
         typedef std::future<UpdateQuerySuggestionsBlockListOutcome> UpdateQuerySuggestionsBlockListOutcomeCallable;
         typedef std::future<UpdateQuerySuggestionsConfigOutcome> UpdateQuerySuggestionsConfigOutcomeCallable;
@@ -214,31 +261,42 @@ namespace Model
 
   class KendraClient;
 
+    typedef std::function<void(const KendraClient*, const Model::AssociateEntitiesToExperienceRequest&, const Model::AssociateEntitiesToExperienceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateEntitiesToExperienceResponseReceivedHandler;
+    typedef std::function<void(const KendraClient*, const Model::AssociatePersonasToEntitiesRequest&, const Model::AssociatePersonasToEntitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociatePersonasToEntitiesResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::BatchDeleteDocumentRequest&, const Model::BatchDeleteDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteDocumentResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::BatchGetDocumentStatusRequest&, const Model::BatchGetDocumentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetDocumentStatusResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::BatchPutDocumentRequest&, const Model::BatchPutDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchPutDocumentResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::ClearQuerySuggestionsRequest&, const Model::ClearQuerySuggestionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ClearQuerySuggestionsResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::CreateDataSourceRequest&, const Model::CreateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataSourceResponseReceivedHandler;
+    typedef std::function<void(const KendraClient*, const Model::CreateExperienceRequest&, const Model::CreateExperienceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateExperienceResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::CreateFaqRequest&, const Model::CreateFaqOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFaqResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::CreateIndexRequest&, const Model::CreateIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIndexResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::CreateQuerySuggestionsBlockListRequest&, const Model::CreateQuerySuggestionsBlockListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQuerySuggestionsBlockListResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::CreateThesaurusRequest&, const Model::CreateThesaurusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateThesaurusResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DeleteDataSourceRequest&, const Model::DeleteDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataSourceResponseReceivedHandler;
+    typedef std::function<void(const KendraClient*, const Model::DeleteExperienceRequest&, const Model::DeleteExperienceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteExperienceResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DeleteFaqRequest&, const Model::DeleteFaqOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFaqResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DeleteIndexRequest&, const Model::DeleteIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIndexResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DeletePrincipalMappingRequest&, const Model::DeletePrincipalMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePrincipalMappingResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DeleteQuerySuggestionsBlockListRequest&, const Model::DeleteQuerySuggestionsBlockListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteQuerySuggestionsBlockListResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DeleteThesaurusRequest&, const Model::DeleteThesaurusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteThesaurusResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DescribeDataSourceRequest&, const Model::DescribeDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataSourceResponseReceivedHandler;
+    typedef std::function<void(const KendraClient*, const Model::DescribeExperienceRequest&, const Model::DescribeExperienceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExperienceResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DescribeFaqRequest&, const Model::DescribeFaqOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFaqResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DescribeIndexRequest&, const Model::DescribeIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIndexResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DescribePrincipalMappingRequest&, const Model::DescribePrincipalMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePrincipalMappingResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DescribeQuerySuggestionsBlockListRequest&, const Model::DescribeQuerySuggestionsBlockListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeQuerySuggestionsBlockListResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DescribeQuerySuggestionsConfigRequest&, const Model::DescribeQuerySuggestionsConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeQuerySuggestionsConfigResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DescribeThesaurusRequest&, const Model::DescribeThesaurusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeThesaurusResponseReceivedHandler;
+    typedef std::function<void(const KendraClient*, const Model::DisassociateEntitiesFromExperienceRequest&, const Model::DisassociateEntitiesFromExperienceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateEntitiesFromExperienceResponseReceivedHandler;
+    typedef std::function<void(const KendraClient*, const Model::DisassociatePersonasFromEntitiesRequest&, const Model::DisassociatePersonasFromEntitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociatePersonasFromEntitiesResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::GetQuerySuggestionsRequest&, const Model::GetQuerySuggestionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQuerySuggestionsResponseReceivedHandler;
+    typedef std::function<void(const KendraClient*, const Model::GetSnapshotsRequest&, const Model::GetSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSnapshotsResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::ListDataSourceSyncJobsRequest&, const Model::ListDataSourceSyncJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSourceSyncJobsResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::ListDataSourcesRequest&, const Model::ListDataSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSourcesResponseReceivedHandler;
+    typedef std::function<void(const KendraClient*, const Model::ListEntityPersonasRequest&, const Model::ListEntityPersonasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEntityPersonasResponseReceivedHandler;
+    typedef std::function<void(const KendraClient*, const Model::ListExperienceEntitiesRequest&, const Model::ListExperienceEntitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExperienceEntitiesResponseReceivedHandler;
+    typedef std::function<void(const KendraClient*, const Model::ListExperiencesRequest&, const Model::ListExperiencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExperiencesResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::ListFaqsRequest&, const Model::ListFaqsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFaqsResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::ListGroupsOlderThanOrderingIdRequest&, const Model::ListGroupsOlderThanOrderingIdOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGroupsOlderThanOrderingIdResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::ListIndicesRequest&, const Model::ListIndicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIndicesResponseReceivedHandler;
@@ -253,6 +311,7 @@ namespace Model
     typedef std::function<void(const KendraClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::UpdateDataSourceRequest&, const Model::UpdateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataSourceResponseReceivedHandler;
+    typedef std::function<void(const KendraClient*, const Model::UpdateExperienceRequest&, const Model::UpdateExperienceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateExperienceResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::UpdateIndexRequest&, const Model::UpdateIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIndexResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::UpdateQuerySuggestionsBlockListRequest&, const Model::UpdateQuerySuggestionsBlockListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQuerySuggestionsBlockListResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::UpdateQuerySuggestionsConfigRequest&, const Model::UpdateQuerySuggestionsConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQuerySuggestionsConfigResponseReceivedHandler;
@@ -287,6 +346,86 @@ namespace Model
 
         virtual ~KendraClient();
 
+
+        /**
+         * <p>Grants users or groups in your Amazon Web Services SSO identity source access
+         * to your Amazon Kendra experience. You can create an Amazon Kendra experience
+         * such as a search application. For more information on creating a search
+         * application experience, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AssociateEntitiesToExperience">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateEntitiesToExperienceOutcome AssociateEntitiesToExperience(const Model::AssociateEntitiesToExperienceRequest& request) const;
+
+        /**
+         * <p>Grants users or groups in your Amazon Web Services SSO identity source access
+         * to your Amazon Kendra experience. You can create an Amazon Kendra experience
+         * such as a search application. For more information on creating a search
+         * application experience, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AssociateEntitiesToExperience">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateEntitiesToExperienceOutcomeCallable AssociateEntitiesToExperienceCallable(const Model::AssociateEntitiesToExperienceRequest& request) const;
+
+        /**
+         * <p>Grants users or groups in your Amazon Web Services SSO identity source access
+         * to your Amazon Kendra experience. You can create an Amazon Kendra experience
+         * such as a search application. For more information on creating a search
+         * application experience, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AssociateEntitiesToExperience">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateEntitiesToExperienceAsync(const Model::AssociateEntitiesToExperienceRequest& request, const AssociateEntitiesToExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Defines the specific permissions of users or groups in your Amazon Web
+         * Services SSO identity source with access to your Amazon Kendra experience. You
+         * can create an Amazon Kendra experience such as a search application. For more
+         * information on creating a search application experience, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AssociatePersonasToEntities">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociatePersonasToEntitiesOutcome AssociatePersonasToEntities(const Model::AssociatePersonasToEntitiesRequest& request) const;
+
+        /**
+         * <p>Defines the specific permissions of users or groups in your Amazon Web
+         * Services SSO identity source with access to your Amazon Kendra experience. You
+         * can create an Amazon Kendra experience such as a search application. For more
+         * information on creating a search application experience, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AssociatePersonasToEntities">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociatePersonasToEntitiesOutcomeCallable AssociatePersonasToEntitiesCallable(const Model::AssociatePersonasToEntitiesRequest& request) const;
+
+        /**
+         * <p>Defines the specific permissions of users or groups in your Amazon Web
+         * Services SSO identity source with access to your Amazon Kendra experience. You
+         * can create an Amazon Kendra experience such as a search application. For more
+         * information on creating a search application experience, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AssociatePersonasToEntities">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociatePersonasToEntitiesAsync(const Model::AssociatePersonasToEntitiesRequest& request, const AssociatePersonasToEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes one or more documents from an index. The documents must have been
@@ -438,7 +577,9 @@ namespace Model
          * Amazon Kendra learns new suggestions based on new queries added to the query log
          * from the time you cleared suggestions. If you do not see any new suggestions,
          * then please allow Amazon Kendra to collect enough queries to learn new
-         * suggestions.</p><p><h3>See Also:</h3>   <a
+         * suggestions.</p> <p> <code>ClearQuerySuggestions</code> is currently not
+         * supported in the Amazon Web Services GovCloud (US-West) region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ClearQuerySuggestions">AWS
          * API Reference</a></p>
          */
@@ -450,7 +591,9 @@ namespace Model
          * Amazon Kendra learns new suggestions based on new queries added to the query log
          * from the time you cleared suggestions. If you do not see any new suggestions,
          * then please allow Amazon Kendra to collect enough queries to learn new
-         * suggestions.</p><p><h3>See Also:</h3>   <a
+         * suggestions.</p> <p> <code>ClearQuerySuggestions</code> is currently not
+         * supported in the Amazon Web Services GovCloud (US-West) region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ClearQuerySuggestions">AWS
          * API Reference</a></p>
          *
@@ -464,7 +607,9 @@ namespace Model
          * Amazon Kendra learns new suggestions based on new queries added to the query log
          * from the time you cleared suggestions. If you do not see any new suggestions,
          * then please allow Amazon Kendra to collect enough queries to learn new
-         * suggestions.</p><p><h3>See Also:</h3>   <a
+         * suggestions.</p> <p> <code>ClearQuerySuggestions</code> is currently not
+         * supported in the Amazon Web Services GovCloud (US-West) region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ClearQuerySuggestions">AWS
          * API Reference</a></p>
          *
@@ -478,7 +623,10 @@ namespace Model
          * source. You also specify configuration information for the data source
          * connector.</p> <p> <code>CreateDataSource</code> is a synchronous operation. The
          * operation returns 200 if the data source was successfully created. Otherwise, an
-         * exception is raised.</p><p><h3>See Also:</h3>   <a
+         * exception is raised.</p> <p>Amazon S3 and <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-custom.html">custom</a>
+         * data sources are the only supported data sources in the Amazon Web Services
+         * GovCloud (US-West) region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateDataSource">AWS
          * API Reference</a></p>
          */
@@ -490,7 +638,10 @@ namespace Model
          * source. You also specify configuration information for the data source
          * connector.</p> <p> <code>CreateDataSource</code> is a synchronous operation. The
          * operation returns 200 if the data source was successfully created. Otherwise, an
-         * exception is raised.</p><p><h3>See Also:</h3>   <a
+         * exception is raised.</p> <p>Amazon S3 and <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-custom.html">custom</a>
+         * data sources are the only supported data sources in the Amazon Web Services
+         * GovCloud (US-West) region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateDataSource">AWS
          * API Reference</a></p>
          *
@@ -504,13 +655,50 @@ namespace Model
          * source. You also specify configuration information for the data source
          * connector.</p> <p> <code>CreateDataSource</code> is a synchronous operation. The
          * operation returns 200 if the data source was successfully created. Otherwise, an
-         * exception is raised.</p><p><h3>See Also:</h3>   <a
+         * exception is raised.</p> <p>Amazon S3 and <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-custom.html">custom</a>
+         * data sources are the only supported data sources in the Amazon Web Services
+         * GovCloud (US-West) region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateDataSource">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateDataSourceAsync(const Model::CreateDataSourceRequest& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates an Amazon Kendra experience such as a search application. For more
+         * information on creating a search application experience, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateExperience">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateExperienceOutcome CreateExperience(const Model::CreateExperienceRequest& request) const;
+
+        /**
+         * <p>Creates an Amazon Kendra experience such as a search application. For more
+         * information on creating a search application experience, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateExperience">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateExperienceOutcomeCallable CreateExperienceCallable(const Model::CreateExperienceRequest& request) const;
+
+        /**
+         * <p>Creates an Amazon Kendra experience such as a search application. For more
+         * information on creating a search application experience, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateExperience">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateExperienceAsync(const Model::CreateExperienceRequest& request, const CreateExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an new set of frequently asked question (FAQ) questions and
@@ -591,7 +779,9 @@ namespace Model
          * enter each block word or phrase on a separate line.</p> <p>For information on
          * the current quota limits for block lists, see <a
          * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for
-         * Amazon Kendra</a>.</p><p><h3>See Also:</h3>   <a
+         * Amazon Kendra</a>.</p> <p> <code>CreateQuerySuggestionsBlockList</code> is
+         * currently not supported in the Amazon Web Services GovCloud (US-West)
+         * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateQuerySuggestionsBlockList">AWS
          * API Reference</a></p>
          */
@@ -605,7 +795,9 @@ namespace Model
          * enter each block word or phrase on a separate line.</p> <p>For information on
          * the current quota limits for block lists, see <a
          * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for
-         * Amazon Kendra</a>.</p><p><h3>See Also:</h3>   <a
+         * Amazon Kendra</a>.</p> <p> <code>CreateQuerySuggestionsBlockList</code> is
+         * currently not supported in the Amazon Web Services GovCloud (US-West)
+         * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateQuerySuggestionsBlockList">AWS
          * API Reference</a></p>
          *
@@ -621,7 +813,9 @@ namespace Model
          * enter each block word or phrase on a separate line.</p> <p>For information on
          * the current quota limits for block lists, see <a
          * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for
-         * Amazon Kendra</a>.</p><p><h3>See Also:</h3>   <a
+         * Amazon Kendra</a>.</p> <p> <code>CreateQuerySuggestionsBlockList</code> is
+         * currently not supported in the Amazon Web Services GovCloud (US-West)
+         * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateQuerySuggestionsBlockList">AWS
          * API Reference</a></p>
          *
@@ -701,6 +895,40 @@ namespace Model
         virtual void DeleteDataSourceAsync(const Model::DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes your Amazon Kendra experience such as a search application. For more
+         * information on creating a search application experience, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteExperience">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteExperienceOutcome DeleteExperience(const Model::DeleteExperienceRequest& request) const;
+
+        /**
+         * <p>Deletes your Amazon Kendra experience such as a search application. For more
+         * information on creating a search application experience, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteExperience">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteExperienceOutcomeCallable DeleteExperienceCallable(const Model::DeleteExperienceRequest& request) const;
+
+        /**
+         * <p>Deletes your Amazon Kendra experience such as a search application. For more
+         * information on creating a search application experience, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteExperience">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteExperienceAsync(const Model::DeleteExperienceRequest& request, const DeleteExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Removes an FAQ from an index.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteFaq">AWS
          * API Reference</a></p>
@@ -770,7 +998,9 @@ namespace Model
          * you provide an updated list of users or sub groups that belong to the
          * "Engineering" group when calling <code>PutPrincipalMapping</code>. You can
          * update your internal list of users or sub groups and input this list when
-         * calling <code>PutPrincipalMapping</code>.</p><p><h3>See Also:</h3>   <a
+         * calling <code>PutPrincipalMapping</code>.</p> <p>
+         * <code>DeletePrincipalMapping</code> is currently not supported in the Amazon Web
+         * Services GovCloud (US-West) region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeletePrincipalMapping">AWS
          * API Reference</a></p>
          */
@@ -787,7 +1017,9 @@ namespace Model
          * you provide an updated list of users or sub groups that belong to the
          * "Engineering" group when calling <code>PutPrincipalMapping</code>. You can
          * update your internal list of users or sub groups and input this list when
-         * calling <code>PutPrincipalMapping</code>.</p><p><h3>See Also:</h3>   <a
+         * calling <code>PutPrincipalMapping</code>.</p> <p>
+         * <code>DeletePrincipalMapping</code> is currently not supported in the Amazon Web
+         * Services GovCloud (US-West) region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeletePrincipalMapping">AWS
          * API Reference</a></p>
          *
@@ -806,7 +1038,9 @@ namespace Model
          * you provide an updated list of users or sub groups that belong to the
          * "Engineering" group when calling <code>PutPrincipalMapping</code>. You can
          * update your internal list of users or sub groups and input this list when
-         * calling <code>PutPrincipalMapping</code>.</p><p><h3>See Also:</h3>   <a
+         * calling <code>PutPrincipalMapping</code>.</p> <p>
+         * <code>DeletePrincipalMapping</code> is currently not supported in the Amazon Web
+         * Services GovCloud (US-West) region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeletePrincipalMapping">AWS
          * API Reference</a></p>
          *
@@ -818,7 +1052,9 @@ namespace Model
          * <p>Deletes a block list used for query suggestions for an index.</p> <p>A
          * deleted block list might not take effect right away. Amazon Kendra needs to
          * refresh the entire suggestions list to add back the queries that were previously
-         * blocked.</p><p><h3>See Also:</h3>   <a
+         * blocked.</p> <p> <code>DeleteQuerySuggestionsBlockList</code> is currently not
+         * supported in the Amazon Web Services GovCloud (US-West) region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteQuerySuggestionsBlockList">AWS
          * API Reference</a></p>
          */
@@ -828,7 +1064,9 @@ namespace Model
          * <p>Deletes a block list used for query suggestions for an index.</p> <p>A
          * deleted block list might not take effect right away. Amazon Kendra needs to
          * refresh the entire suggestions list to add back the queries that were previously
-         * blocked.</p><p><h3>See Also:</h3>   <a
+         * blocked.</p> <p> <code>DeleteQuerySuggestionsBlockList</code> is currently not
+         * supported in the Amazon Web Services GovCloud (US-West) region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteQuerySuggestionsBlockList">AWS
          * API Reference</a></p>
          *
@@ -840,7 +1078,9 @@ namespace Model
          * <p>Deletes a block list used for query suggestions for an index.</p> <p>A
          * deleted block list might not take effect right away. Amazon Kendra needs to
          * refresh the entire suggestions list to add back the queries that were previously
-         * blocked.</p><p><h3>See Also:</h3>   <a
+         * blocked.</p> <p> <code>DeleteQuerySuggestionsBlockList</code> is currently not
+         * supported in the Amazon Web Services GovCloud (US-West) region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteQuerySuggestionsBlockList">AWS
          * API Reference</a></p>
          *
@@ -902,6 +1142,43 @@ namespace Model
         virtual void DescribeDataSourceAsync(const Model::DescribeDataSourceRequest& request, const DescribeDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets information about your Amazon Kendra experience such as a search
+         * application. For more information on creating a search application experience,
+         * see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeExperience">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeExperienceOutcome DescribeExperience(const Model::DescribeExperienceRequest& request) const;
+
+        /**
+         * <p>Gets information about your Amazon Kendra experience such as a search
+         * application. For more information on creating a search application experience,
+         * see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeExperience">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeExperienceOutcomeCallable DescribeExperienceCallable(const Model::DescribeExperienceRequest& request) const;
+
+        /**
+         * <p>Gets information about your Amazon Kendra experience such as a search
+         * application. For more information on creating a search application experience,
+         * see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeExperience">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeExperienceAsync(const Model::DescribeExperienceRequest& request, const DescribeExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets information about an FAQ list.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeFaq">AWS
          * API Reference</a></p>
@@ -957,7 +1234,9 @@ namespace Model
          * actions currently processing or yet to be processed, when actions were last
          * updated, when actions were received by Amazon Kendra, the latest action that
          * should process and apply after other actions, and useful error messages if an
-         * action could not be processed.</p><p><h3>See Also:</h3>   <a
+         * action could not be processed.</p> <p> <code>DescribePrincipalMapping</code> is
+         * currently not supported in the Amazon Web Services GovCloud (US-West)
+         * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribePrincipalMapping">AWS
          * API Reference</a></p>
          */
@@ -969,7 +1248,9 @@ namespace Model
          * actions currently processing or yet to be processed, when actions were last
          * updated, when actions were received by Amazon Kendra, the latest action that
          * should process and apply after other actions, and useful error messages if an
-         * action could not be processed.</p><p><h3>See Also:</h3>   <a
+         * action could not be processed.</p> <p> <code>DescribePrincipalMapping</code> is
+         * currently not supported in the Amazon Web Services GovCloud (US-West)
+         * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribePrincipalMapping">AWS
          * API Reference</a></p>
          *
@@ -983,7 +1264,9 @@ namespace Model
          * actions currently processing or yet to be processed, when actions were last
          * updated, when actions were received by Amazon Kendra, the latest action that
          * should process and apply after other actions, and useful error messages if an
-         * action could not be processed.</p><p><h3>See Also:</h3>   <a
+         * action could not be processed.</p> <p> <code>DescribePrincipalMapping</code> is
+         * currently not supported in the Amazon Web Services GovCloud (US-West)
+         * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribePrincipalMapping">AWS
          * API Reference</a></p>
          *
@@ -993,8 +1276,9 @@ namespace Model
 
         /**
          * <p>Describes a block list used for query suggestions for an index.</p> <p>This
-         * is used to check the current settings that are applied to a block
-         * list.</p><p><h3>See Also:</h3>   <a
+         * is used to check the current settings that are applied to a block list.</p> <p>
+         * <code>DescribeQuerySuggestionsBlockList</code> is currently not supported in the
+         * Amazon Web Services GovCloud (US-West) region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsBlockList">AWS
          * API Reference</a></p>
          */
@@ -1002,8 +1286,9 @@ namespace Model
 
         /**
          * <p>Describes a block list used for query suggestions for an index.</p> <p>This
-         * is used to check the current settings that are applied to a block
-         * list.</p><p><h3>See Also:</h3>   <a
+         * is used to check the current settings that are applied to a block list.</p> <p>
+         * <code>DescribeQuerySuggestionsBlockList</code> is currently not supported in the
+         * Amazon Web Services GovCloud (US-West) region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsBlockList">AWS
          * API Reference</a></p>
          *
@@ -1013,8 +1298,9 @@ namespace Model
 
         /**
          * <p>Describes a block list used for query suggestions for an index.</p> <p>This
-         * is used to check the current settings that are applied to a block
-         * list.</p><p><h3>See Also:</h3>   <a
+         * is used to check the current settings that are applied to a block list.</p> <p>
+         * <code>DescribeQuerySuggestionsBlockList</code> is currently not supported in the
+         * Amazon Web Services GovCloud (US-West) region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsBlockList">AWS
          * API Reference</a></p>
          *
@@ -1024,8 +1310,9 @@ namespace Model
 
         /**
          * <p>Describes the settings of query suggestions for an index.</p> <p>This is used
-         * to check the current settings applied to query suggestions.</p><p><h3>See
-         * Also:</h3>   <a
+         * to check the current settings applied to query suggestions.</p> <p>
+         * <code>DescribeQuerySuggestionsConfig</code> is currently not supported in the
+         * Amazon Web Services GovCloud (US-West) region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsConfig">AWS
          * API Reference</a></p>
          */
@@ -1033,8 +1320,9 @@ namespace Model
 
         /**
          * <p>Describes the settings of query suggestions for an index.</p> <p>This is used
-         * to check the current settings applied to query suggestions.</p><p><h3>See
-         * Also:</h3>   <a
+         * to check the current settings applied to query suggestions.</p> <p>
+         * <code>DescribeQuerySuggestionsConfig</code> is currently not supported in the
+         * Amazon Web Services GovCloud (US-West) region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsConfig">AWS
          * API Reference</a></p>
          *
@@ -1044,8 +1332,9 @@ namespace Model
 
         /**
          * <p>Describes the settings of query suggestions for an index.</p> <p>This is used
-         * to check the current settings applied to query suggestions.</p><p><h3>See
-         * Also:</h3>   <a
+         * to check the current settings applied to query suggestions.</p> <p>
+         * <code>DescribeQuerySuggestionsConfig</code> is currently not supported in the
+         * Amazon Web Services GovCloud (US-West) region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsConfig">AWS
          * API Reference</a></p>
          *
@@ -1079,16 +1368,98 @@ namespace Model
         virtual void DescribeThesaurusAsync(const Model::DescribeThesaurusRequest& request, const DescribeThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Fetches the queries that are suggested to your users.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Prevents users or groups in your Amazon Web Services SSO identity source from
+         * accessing your Amazon Kendra experience. You can create an Amazon Kendra
+         * experience such as a search application. For more information on creating a
+         * search application experience, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DisassociateEntitiesFromExperience">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateEntitiesFromExperienceOutcome DisassociateEntitiesFromExperience(const Model::DisassociateEntitiesFromExperienceRequest& request) const;
+
+        /**
+         * <p>Prevents users or groups in your Amazon Web Services SSO identity source from
+         * accessing your Amazon Kendra experience. You can create an Amazon Kendra
+         * experience such as a search application. For more information on creating a
+         * search application experience, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DisassociateEntitiesFromExperience">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateEntitiesFromExperienceOutcomeCallable DisassociateEntitiesFromExperienceCallable(const Model::DisassociateEntitiesFromExperienceRequest& request) const;
+
+        /**
+         * <p>Prevents users or groups in your Amazon Web Services SSO identity source from
+         * accessing your Amazon Kendra experience. You can create an Amazon Kendra
+         * experience such as a search application. For more information on creating a
+         * search application experience, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DisassociateEntitiesFromExperience">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateEntitiesFromExperienceAsync(const Model::DisassociateEntitiesFromExperienceRequest& request, const DisassociateEntitiesFromExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes the specific permissions of users or groups in your Amazon Web
+         * Services SSO identity source with access to your Amazon Kendra experience. You
+         * can create an Amazon Kendra experience such as a search application. For more
+         * information on creating a search application experience, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DisassociatePersonasFromEntities">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociatePersonasFromEntitiesOutcome DisassociatePersonasFromEntities(const Model::DisassociatePersonasFromEntitiesRequest& request) const;
+
+        /**
+         * <p>Removes the specific permissions of users or groups in your Amazon Web
+         * Services SSO identity source with access to your Amazon Kendra experience. You
+         * can create an Amazon Kendra experience such as a search application. For more
+         * information on creating a search application experience, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DisassociatePersonasFromEntities">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociatePersonasFromEntitiesOutcomeCallable DisassociatePersonasFromEntitiesCallable(const Model::DisassociatePersonasFromEntitiesRequest& request) const;
+
+        /**
+         * <p>Removes the specific permissions of users or groups in your Amazon Web
+         * Services SSO identity source with access to your Amazon Kendra experience. You
+         * can create an Amazon Kendra experience such as a search application. For more
+         * information on creating a search application experience, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DisassociatePersonasFromEntities">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociatePersonasFromEntitiesAsync(const Model::DisassociatePersonasFromEntitiesRequest& request, const DisassociatePersonasFromEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Fetches the queries that are suggested to your users.</p> <p>
+         * <code>GetQuerySuggestions</code> is currently not supported in the Amazon Web
+         * Services GovCloud (US-West) region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GetQuerySuggestions">AWS
          * API Reference</a></p>
          */
         virtual Model::GetQuerySuggestionsOutcome GetQuerySuggestions(const Model::GetQuerySuggestionsRequest& request) const;
 
         /**
-         * <p>Fetches the queries that are suggested to your users.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Fetches the queries that are suggested to your users.</p> <p>
+         * <code>GetQuerySuggestions</code> is currently not supported in the Amazon Web
+         * Services GovCloud (US-West) region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GetQuerySuggestions">AWS
          * API Reference</a></p>
          *
@@ -1097,14 +1468,46 @@ namespace Model
         virtual Model::GetQuerySuggestionsOutcomeCallable GetQuerySuggestionsCallable(const Model::GetQuerySuggestionsRequest& request) const;
 
         /**
-         * <p>Fetches the queries that are suggested to your users.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Fetches the queries that are suggested to your users.</p> <p>
+         * <code>GetQuerySuggestions</code> is currently not supported in the Amazon Web
+         * Services GovCloud (US-West) region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GetQuerySuggestions">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetQuerySuggestionsAsync(const Model::GetQuerySuggestionsRequest& request, const GetQuerySuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves search metrics data. The data provides a snapshot of how your users
+         * interact with your search application and how effective the application
+         * is.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GetSnapshots">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSnapshotsOutcome GetSnapshots(const Model::GetSnapshotsRequest& request) const;
+
+        /**
+         * <p>Retrieves search metrics data. The data provides a snapshot of how your users
+         * interact with your search application and how effective the application
+         * is.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GetSnapshots">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSnapshotsOutcomeCallable GetSnapshotsCallable(const Model::GetSnapshotsRequest& request) const;
+
+        /**
+         * <p>Retrieves search metrics data. The data provides a snapshot of how your users
+         * interact with your search application and how effective the application
+         * is.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GetSnapshots">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSnapshotsAsync(const Model::GetSnapshotsRequest& request, const GetSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets statistics about synchronizing Amazon Kendra with a data
@@ -1160,6 +1563,111 @@ namespace Model
         virtual void ListDataSourcesAsync(const Model::ListDataSourcesRequest& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists specific permissions of users and groups with access to your Amazon
+         * Kendra experience.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListEntityPersonas">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListEntityPersonasOutcome ListEntityPersonas(const Model::ListEntityPersonasRequest& request) const;
+
+        /**
+         * <p>Lists specific permissions of users and groups with access to your Amazon
+         * Kendra experience.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListEntityPersonas">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListEntityPersonasOutcomeCallable ListEntityPersonasCallable(const Model::ListEntityPersonasRequest& request) const;
+
+        /**
+         * <p>Lists specific permissions of users and groups with access to your Amazon
+         * Kendra experience.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListEntityPersonas">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListEntityPersonasAsync(const Model::ListEntityPersonasRequest& request, const ListEntityPersonasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists users or groups in your Amazon Web Services SSO identity source that
+         * are granted access to your Amazon Kendra experience. You can create an Amazon
+         * Kendra experience such as a search application. For more information on creating
+         * a search application experience, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListExperienceEntities">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListExperienceEntitiesOutcome ListExperienceEntities(const Model::ListExperienceEntitiesRequest& request) const;
+
+        /**
+         * <p>Lists users or groups in your Amazon Web Services SSO identity source that
+         * are granted access to your Amazon Kendra experience. You can create an Amazon
+         * Kendra experience such as a search application. For more information on creating
+         * a search application experience, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListExperienceEntities">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListExperienceEntitiesOutcomeCallable ListExperienceEntitiesCallable(const Model::ListExperienceEntitiesRequest& request) const;
+
+        /**
+         * <p>Lists users or groups in your Amazon Web Services SSO identity source that
+         * are granted access to your Amazon Kendra experience. You can create an Amazon
+         * Kendra experience such as a search application. For more information on creating
+         * a search application experience, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListExperienceEntities">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListExperienceEntitiesAsync(const Model::ListExperienceEntitiesRequest& request, const ListExperienceEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists one or more Amazon Kendra experiences. You can create an Amazon Kendra
+         * experience such as a search application. For more information on creating a
+         * search application experience, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListExperiences">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListExperiencesOutcome ListExperiences(const Model::ListExperiencesRequest& request) const;
+
+        /**
+         * <p>Lists one or more Amazon Kendra experiences. You can create an Amazon Kendra
+         * experience such as a search application. For more information on creating a
+         * search application experience, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListExperiences">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListExperiencesOutcomeCallable ListExperiencesCallable(const Model::ListExperiencesRequest& request) const;
+
+        /**
+         * <p>Lists one or more Amazon Kendra experiences. You can create an Amazon Kendra
+         * experience such as a search application. For more information on creating a
+         * search application experience, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListExperiences">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListExperiencesAsync(const Model::ListExperiencesRequest& request, const ListExperiencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets a list of FAQ lists associated with an index.</p><p><h3>See Also:</h3>  
          * <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListFaqs">AWS
          * API Reference</a></p>
@@ -1186,7 +1694,9 @@ namespace Model
 
         /**
          * <p>Provides a list of groups that are mapped to users before a given ordering or
-         * timestamp identifier.</p><p><h3>See Also:</h3>   <a
+         * timestamp identifier.</p> <p> <code>ListGroupsOlderThanOrderingId</code> is
+         * currently not supported in the Amazon Web Services GovCloud (US-West)
+         * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListGroupsOlderThanOrderingId">AWS
          * API Reference</a></p>
          */
@@ -1194,7 +1704,9 @@ namespace Model
 
         /**
          * <p>Provides a list of groups that are mapped to users before a given ordering or
-         * timestamp identifier.</p><p><h3>See Also:</h3>   <a
+         * timestamp identifier.</p> <p> <code>ListGroupsOlderThanOrderingId</code> is
+         * currently not supported in the Amazon Web Services GovCloud (US-West)
+         * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListGroupsOlderThanOrderingId">AWS
          * API Reference</a></p>
          *
@@ -1204,7 +1716,9 @@ namespace Model
 
         /**
          * <p>Provides a list of groups that are mapped to users before a given ordering or
-         * timestamp identifier.</p><p><h3>See Also:</h3>   <a
+         * timestamp identifier.</p> <p> <code>ListGroupsOlderThanOrderingId</code> is
+         * currently not supported in the Amazon Web Services GovCloud (US-West)
+         * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListGroupsOlderThanOrderingId">AWS
          * API Reference</a></p>
          *
@@ -1244,7 +1758,9 @@ namespace Model
          * <p>Lists the block lists used for query suggestions for an index.</p> <p>For
          * information on the current quota limits for block lists, see <a
          * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for
-         * Amazon Kendra</a>.</p><p><h3>See Also:</h3>   <a
+         * Amazon Kendra</a>.</p> <p> <code>ListQuerySuggestionsBlockLists</code> is
+         * currently not supported in the Amazon Web Services GovCloud (US-West)
+         * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListQuerySuggestionsBlockLists">AWS
          * API Reference</a></p>
          */
@@ -1254,7 +1770,9 @@ namespace Model
          * <p>Lists the block lists used for query suggestions for an index.</p> <p>For
          * information on the current quota limits for block lists, see <a
          * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for
-         * Amazon Kendra</a>.</p><p><h3>See Also:</h3>   <a
+         * Amazon Kendra</a>.</p> <p> <code>ListQuerySuggestionsBlockLists</code> is
+         * currently not supported in the Amazon Web Services GovCloud (US-West)
+         * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListQuerySuggestionsBlockLists">AWS
          * API Reference</a></p>
          *
@@ -1266,7 +1784,9 @@ namespace Model
          * <p>Lists the block lists used for query suggestions for an index.</p> <p>For
          * information on the current quota limits for block lists, see <a
          * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for
-         * Amazon Kendra</a>.</p><p><h3>See Also:</h3>   <a
+         * Amazon Kendra</a>.</p> <p> <code>ListQuerySuggestionsBlockLists</code> is
+         * currently not supported in the Amazon Web Services GovCloud (US-West)
+         * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListQuerySuggestionsBlockLists">AWS
          * API Reference</a></p>
          *
@@ -1343,8 +1863,9 @@ namespace Model
          * users, see <a
          * href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering
          * on user context</a>.</p> <p>If more than five <code>PUT</code> actions for a
-         * group are currently processing, a validation exception is thrown.</p><p><h3>See
-         * Also:</h3>   <a
+         * group are currently processing, a validation exception is thrown.</p> <p>
+         * <code>PutPrincipalMapping</code> is currently not supported in the Amazon Web
+         * Services GovCloud (US-West) region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/PutPrincipalMapping">AWS
          * API Reference</a></p>
          */
@@ -1363,8 +1884,9 @@ namespace Model
          * users, see <a
          * href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering
          * on user context</a>.</p> <p>If more than five <code>PUT</code> actions for a
-         * group are currently processing, a validation exception is thrown.</p><p><h3>See
-         * Also:</h3>   <a
+         * group are currently processing, a validation exception is thrown.</p> <p>
+         * <code>PutPrincipalMapping</code> is currently not supported in the Amazon Web
+         * Services GovCloud (US-West) region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/PutPrincipalMapping">AWS
          * API Reference</a></p>
          *
@@ -1385,8 +1907,9 @@ namespace Model
          * users, see <a
          * href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering
          * on user context</a>.</p> <p>If more than five <code>PUT</code> actions for a
-         * group are currently processing, a validation exception is thrown.</p><p><h3>See
-         * Also:</h3>   <a
+         * group are currently processing, a validation exception is thrown.</p> <p>
+         * <code>PutPrincipalMapping</code> is currently not supported in the Amazon Web
+         * Services GovCloud (US-West) region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/PutPrincipalMapping">AWS
          * API Reference</a></p>
          *
@@ -1510,7 +2033,8 @@ namespace Model
 
         /**
          * <p>Enables you to provide feedback to Amazon Kendra to improve the performance
-         * of your index. </p><p><h3>See Also:</h3>   <a
+         * of your index.</p> <p> <code>SubmitFeedback</code> is currently not supported in
+         * the Amazon Web Services GovCloud (US-West) region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SubmitFeedback">AWS
          * API Reference</a></p>
          */
@@ -1518,7 +2042,8 @@ namespace Model
 
         /**
          * <p>Enables you to provide feedback to Amazon Kendra to improve the performance
-         * of your index. </p><p><h3>See Also:</h3>   <a
+         * of your index.</p> <p> <code>SubmitFeedback</code> is currently not supported in
+         * the Amazon Web Services GovCloud (US-West) region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SubmitFeedback">AWS
          * API Reference</a></p>
          *
@@ -1528,7 +2053,8 @@ namespace Model
 
         /**
          * <p>Enables you to provide feedback to Amazon Kendra to improve the performance
-         * of your index. </p><p><h3>See Also:</h3>   <a
+         * of your index.</p> <p> <code>SubmitFeedback</code> is currently not supported in
+         * the Amazon Web Services GovCloud (US-West) region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SubmitFeedback">AWS
          * API Reference</a></p>
          *
@@ -1621,6 +2147,40 @@ namespace Model
         virtual void UpdateDataSourceAsync(const Model::UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates your Amazon Kendra experience such as a search application. For more
+         * information on creating a search application experience, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateExperience">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateExperienceOutcome UpdateExperience(const Model::UpdateExperienceRequest& request) const;
+
+        /**
+         * <p>Updates your Amazon Kendra experience such as a search application. For more
+         * information on creating a search application experience, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateExperience">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateExperienceOutcomeCallable UpdateExperienceCallable(const Model::UpdateExperienceRequest& request) const;
+
+        /**
+         * <p>Updates your Amazon Kendra experience such as a search application. For more
+         * information on creating a search application experience, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+         * a search experience with no code</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateExperience">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateExperienceAsync(const Model::UpdateExperienceRequest& request, const UpdateExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates an existing Amazon Kendra index.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateIndex">AWS
          * API Reference</a></p>
@@ -1652,8 +2212,9 @@ namespace Model
          * changes not related to the block list apply immediately.</p> <p>If a block list
          * is updating, then you need to wait for the first update to finish before
          * submitting another update.</p> <p>Amazon Kendra supports partial updates, so you
-         * only need to provide the fields you want to update.</p><p><h3>See Also:</h3>  
-         * <a
+         * only need to provide the fields you want to update.</p> <p>
+         * <code>UpdateQuerySuggestionsBlockList</code> is currently not supported in the
+         * Amazon Web Services GovCloud (US-West) region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsBlockList">AWS
          * API Reference</a></p>
          */
@@ -1666,8 +2227,9 @@ namespace Model
          * changes not related to the block list apply immediately.</p> <p>If a block list
          * is updating, then you need to wait for the first update to finish before
          * submitting another update.</p> <p>Amazon Kendra supports partial updates, so you
-         * only need to provide the fields you want to update.</p><p><h3>See Also:</h3>  
-         * <a
+         * only need to provide the fields you want to update.</p> <p>
+         * <code>UpdateQuerySuggestionsBlockList</code> is currently not supported in the
+         * Amazon Web Services GovCloud (US-West) region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsBlockList">AWS
          * API Reference</a></p>
          *
@@ -1682,8 +2244,9 @@ namespace Model
          * changes not related to the block list apply immediately.</p> <p>If a block list
          * is updating, then you need to wait for the first update to finish before
          * submitting another update.</p> <p>Amazon Kendra supports partial updates, so you
-         * only need to provide the fields you want to update.</p><p><h3>See Also:</h3>  
-         * <a
+         * only need to provide the fields you want to update.</p> <p>
+         * <code>UpdateQuerySuggestionsBlockList</code> is currently not supported in the
+         * Amazon Web Services GovCloud (US-West) region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsBlockList">AWS
          * API Reference</a></p>
          *
@@ -1699,7 +2262,9 @@ namespace Model
          * query suggestions settings might not take effect right away. The time for your
          * updated settings to take effect depends on the updates made and the number of
          * search queries in your index.</p> <p>You can still enable/disable query
-         * suggestions at any time.</p><p><h3>See Also:</h3>   <a
+         * suggestions at any time.</p> <p> <code>UpdateQuerySuggestionsConfig</code> is
+         * currently not supported in the Amazon Web Services GovCloud (US-West)
+         * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsConfig">AWS
          * API Reference</a></p>
          */
@@ -1713,7 +2278,9 @@ namespace Model
          * query suggestions settings might not take effect right away. The time for your
          * updated settings to take effect depends on the updates made and the number of
          * search queries in your index.</p> <p>You can still enable/disable query
-         * suggestions at any time.</p><p><h3>See Also:</h3>   <a
+         * suggestions at any time.</p> <p> <code>UpdateQuerySuggestionsConfig</code> is
+         * currently not supported in the Amazon Web Services GovCloud (US-West)
+         * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsConfig">AWS
          * API Reference</a></p>
          *
@@ -1729,7 +2296,9 @@ namespace Model
          * query suggestions settings might not take effect right away. The time for your
          * updated settings to take effect depends on the updates made and the number of
          * search queries in your index.</p> <p>You can still enable/disable query
-         * suggestions at any time.</p><p><h3>See Also:</h3>   <a
+         * suggestions at any time.</p> <p> <code>UpdateQuerySuggestionsConfig</code> is
+         * currently not supported in the Amazon Web Services GovCloud (US-West)
+         * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsConfig">AWS
          * API Reference</a></p>
          *
@@ -1769,31 +2338,42 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void AssociateEntitiesToExperienceAsyncHelper(const Model::AssociateEntitiesToExperienceRequest& request, const AssociateEntitiesToExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociatePersonasToEntitiesAsyncHelper(const Model::AssociatePersonasToEntitiesRequest& request, const AssociatePersonasToEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchDeleteDocumentAsyncHelper(const Model::BatchDeleteDocumentRequest& request, const BatchDeleteDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetDocumentStatusAsyncHelper(const Model::BatchGetDocumentStatusRequest& request, const BatchGetDocumentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchPutDocumentAsyncHelper(const Model::BatchPutDocumentRequest& request, const BatchPutDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ClearQuerySuggestionsAsyncHelper(const Model::ClearQuerySuggestionsRequest& request, const ClearQuerySuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDataSourceAsyncHelper(const Model::CreateDataSourceRequest& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateExperienceAsyncHelper(const Model::CreateExperienceRequest& request, const CreateExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateFaqAsyncHelper(const Model::CreateFaqRequest& request, const CreateFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateIndexAsyncHelper(const Model::CreateIndexRequest& request, const CreateIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateQuerySuggestionsBlockListAsyncHelper(const Model::CreateQuerySuggestionsBlockListRequest& request, const CreateQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateThesaurusAsyncHelper(const Model::CreateThesaurusRequest& request, const CreateThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDataSourceAsyncHelper(const Model::DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteExperienceAsyncHelper(const Model::DeleteExperienceRequest& request, const DeleteExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFaqAsyncHelper(const Model::DeleteFaqRequest& request, const DeleteFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteIndexAsyncHelper(const Model::DeleteIndexRequest& request, const DeleteIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePrincipalMappingAsyncHelper(const Model::DeletePrincipalMappingRequest& request, const DeletePrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteQuerySuggestionsBlockListAsyncHelper(const Model::DeleteQuerySuggestionsBlockListRequest& request, const DeleteQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteThesaurusAsyncHelper(const Model::DeleteThesaurusRequest& request, const DeleteThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDataSourceAsyncHelper(const Model::DescribeDataSourceRequest& request, const DescribeDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeExperienceAsyncHelper(const Model::DescribeExperienceRequest& request, const DescribeExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFaqAsyncHelper(const Model::DescribeFaqRequest& request, const DescribeFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeIndexAsyncHelper(const Model::DescribeIndexRequest& request, const DescribeIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePrincipalMappingAsyncHelper(const Model::DescribePrincipalMappingRequest& request, const DescribePrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeQuerySuggestionsBlockListAsyncHelper(const Model::DescribeQuerySuggestionsBlockListRequest& request, const DescribeQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeQuerySuggestionsConfigAsyncHelper(const Model::DescribeQuerySuggestionsConfigRequest& request, const DescribeQuerySuggestionsConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeThesaurusAsyncHelper(const Model::DescribeThesaurusRequest& request, const DescribeThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateEntitiesFromExperienceAsyncHelper(const Model::DisassociateEntitiesFromExperienceRequest& request, const DisassociateEntitiesFromExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociatePersonasFromEntitiesAsyncHelper(const Model::DisassociatePersonasFromEntitiesRequest& request, const DisassociatePersonasFromEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetQuerySuggestionsAsyncHelper(const Model::GetQuerySuggestionsRequest& request, const GetQuerySuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetSnapshotsAsyncHelper(const Model::GetSnapshotsRequest& request, const GetSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDataSourceSyncJobsAsyncHelper(const Model::ListDataSourceSyncJobsRequest& request, const ListDataSourceSyncJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDataSourcesAsyncHelper(const Model::ListDataSourcesRequest& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListEntityPersonasAsyncHelper(const Model::ListEntityPersonasRequest& request, const ListEntityPersonasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListExperienceEntitiesAsyncHelper(const Model::ListExperienceEntitiesRequest& request, const ListExperienceEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListExperiencesAsyncHelper(const Model::ListExperiencesRequest& request, const ListExperiencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFaqsAsyncHelper(const Model::ListFaqsRequest& request, const ListFaqsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListGroupsOlderThanOrderingIdAsyncHelper(const Model::ListGroupsOlderThanOrderingIdRequest& request, const ListGroupsOlderThanOrderingIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListIndicesAsyncHelper(const Model::ListIndicesRequest& request, const ListIndicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1808,6 +2388,7 @@ namespace Model
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDataSourceAsyncHelper(const Model::UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateExperienceAsyncHelper(const Model::UpdateExperienceRequest& request, const UpdateExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateIndexAsyncHelper(const Model::UpdateIndexRequest& request, const UpdateIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateQuerySuggestionsBlockListAsyncHelper(const Model::UpdateQuerySuggestionsBlockListRequest& request, const UpdateQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateQuerySuggestionsConfigAsyncHelper(const Model::UpdateQuerySuggestionsConfigRequest& request, const UpdateQuerySuggestionsConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

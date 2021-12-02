@@ -32,7 +32,9 @@ NewTransitVirtualInterface::NewTransitVirtualInterface() :
     m_addressFamily(AddressFamily::NOT_SET),
     m_addressFamilyHasBeenSet(false),
     m_directConnectGatewayIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_enableSiteLink(false),
+    m_enableSiteLinkHasBeenSet(false)
 {
 }
 
@@ -50,7 +52,9 @@ NewTransitVirtualInterface::NewTransitVirtualInterface(JsonView jsonValue) :
     m_addressFamily(AddressFamily::NOT_SET),
     m_addressFamilyHasBeenSet(false),
     m_directConnectGatewayIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_enableSiteLink(false),
+    m_enableSiteLinkHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -130,6 +134,13 @@ NewTransitVirtualInterface& NewTransitVirtualInterface::operator =(JsonView json
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("enableSiteLink"))
+  {
+    m_enableSiteLink = jsonValue.GetBool("enableSiteLink");
+
+    m_enableSiteLinkHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -198,6 +209,12 @@ JsonValue NewTransitVirtualInterface::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_enableSiteLinkHasBeenSet)
+  {
+   payload.WithBool("enableSiteLink", m_enableSiteLink);
 
   }
 

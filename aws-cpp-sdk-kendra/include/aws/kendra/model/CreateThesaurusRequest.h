@@ -162,58 +162,50 @@ namespace Model
 
 
     /**
-     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
-     * permissions to access thesaurus file specified in <code>SourceS3Path</code>.
-     * </p>
+     * <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file
+     * specified in <code>SourceS3Path</code>. </p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
-     * permissions to access thesaurus file specified in <code>SourceS3Path</code>.
-     * </p>
+     * <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file
+     * specified in <code>SourceS3Path</code>. </p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
-     * permissions to access thesaurus file specified in <code>SourceS3Path</code>.
-     * </p>
+     * <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file
+     * specified in <code>SourceS3Path</code>. </p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
-     * permissions to access thesaurus file specified in <code>SourceS3Path</code>.
-     * </p>
+     * <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file
+     * specified in <code>SourceS3Path</code>. </p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
-     * permissions to access thesaurus file specified in <code>SourceS3Path</code>.
-     * </p>
+     * <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file
+     * specified in <code>SourceS3Path</code>. </p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
-     * permissions to access thesaurus file specified in <code>SourceS3Path</code>.
-     * </p>
+     * <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file
+     * specified in <code>SourceS3Path</code>. </p>
      */
     inline CreateThesaurusRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
-     * permissions to access thesaurus file specified in <code>SourceS3Path</code>.
-     * </p>
+     * <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file
+     * specified in <code>SourceS3Path</code>. </p>
      */
     inline CreateThesaurusRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
-     * permissions to access thesaurus file specified in <code>SourceS3Path</code>.
-     * </p>
+     * <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file
+     * specified in <code>SourceS3Path</code>. </p>
      */
     inline CreateThesaurusRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

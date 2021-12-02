@@ -19,12 +19,16 @@ namespace Model
 {
 
 Bias::Bias() : 
-    m_reportHasBeenSet(false)
+    m_reportHasBeenSet(false),
+    m_preTrainingReportHasBeenSet(false),
+    m_postTrainingReportHasBeenSet(false)
 {
 }
 
 Bias::Bias(JsonView jsonValue) : 
-    m_reportHasBeenSet(false)
+    m_reportHasBeenSet(false),
+    m_preTrainingReportHasBeenSet(false),
+    m_postTrainingReportHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +42,20 @@ Bias& Bias::operator =(JsonView jsonValue)
     m_reportHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PreTrainingReport"))
+  {
+    m_preTrainingReport = jsonValue.GetObject("PreTrainingReport");
+
+    m_preTrainingReportHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PostTrainingReport"))
+  {
+    m_postTrainingReport = jsonValue.GetObject("PostTrainingReport");
+
+    m_postTrainingReportHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +66,18 @@ JsonValue Bias::Jsonize() const
   if(m_reportHasBeenSet)
   {
    payload.WithObject("Report", m_report.Jsonize());
+
+  }
+
+  if(m_preTrainingReportHasBeenSet)
+  {
+   payload.WithObject("PreTrainingReport", m_preTrainingReport.Jsonize());
+
+  }
+
+  if(m_postTrainingReportHasBeenSet)
+  {
+   payload.WithObject("PostTrainingReport", m_postTrainingReport.Jsonize());
 
   }
 

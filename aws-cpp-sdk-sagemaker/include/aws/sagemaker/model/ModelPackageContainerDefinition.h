@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/sagemaker/model/ModelInput.h>
 #include <utility>
 
 namespace Aws
@@ -439,6 +440,176 @@ namespace Model
      */
     inline ModelPackageContainerDefinition& AddEnvironment(const char* key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>A structure with Model Input details.</p>
+     */
+    inline const ModelInput& GetModelInput() const{ return m_modelInput; }
+
+    /**
+     * <p>A structure with Model Input details.</p>
+     */
+    inline bool ModelInputHasBeenSet() const { return m_modelInputHasBeenSet; }
+
+    /**
+     * <p>A structure with Model Input details.</p>
+     */
+    inline void SetModelInput(const ModelInput& value) { m_modelInputHasBeenSet = true; m_modelInput = value; }
+
+    /**
+     * <p>A structure with Model Input details.</p>
+     */
+    inline void SetModelInput(ModelInput&& value) { m_modelInputHasBeenSet = true; m_modelInput = std::move(value); }
+
+    /**
+     * <p>A structure with Model Input details.</p>
+     */
+    inline ModelPackageContainerDefinition& WithModelInput(const ModelInput& value) { SetModelInput(value); return *this;}
+
+    /**
+     * <p>A structure with Model Input details.</p>
+     */
+    inline ModelPackageContainerDefinition& WithModelInput(ModelInput&& value) { SetModelInput(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The machine learning framework of the model package container image.</p>
+     */
+    inline const Aws::String& GetFramework() const{ return m_framework; }
+
+    /**
+     * <p>The machine learning framework of the model package container image.</p>
+     */
+    inline bool FrameworkHasBeenSet() const { return m_frameworkHasBeenSet; }
+
+    /**
+     * <p>The machine learning framework of the model package container image.</p>
+     */
+    inline void SetFramework(const Aws::String& value) { m_frameworkHasBeenSet = true; m_framework = value; }
+
+    /**
+     * <p>The machine learning framework of the model package container image.</p>
+     */
+    inline void SetFramework(Aws::String&& value) { m_frameworkHasBeenSet = true; m_framework = std::move(value); }
+
+    /**
+     * <p>The machine learning framework of the model package container image.</p>
+     */
+    inline void SetFramework(const char* value) { m_frameworkHasBeenSet = true; m_framework.assign(value); }
+
+    /**
+     * <p>The machine learning framework of the model package container image.</p>
+     */
+    inline ModelPackageContainerDefinition& WithFramework(const Aws::String& value) { SetFramework(value); return *this;}
+
+    /**
+     * <p>The machine learning framework of the model package container image.</p>
+     */
+    inline ModelPackageContainerDefinition& WithFramework(Aws::String&& value) { SetFramework(std::move(value)); return *this;}
+
+    /**
+     * <p>The machine learning framework of the model package container image.</p>
+     */
+    inline ModelPackageContainerDefinition& WithFramework(const char* value) { SetFramework(value); return *this;}
+
+
+    /**
+     * <p>The framework version of the Model Package Container Image.</p>
+     */
+    inline const Aws::String& GetFrameworkVersion() const{ return m_frameworkVersion; }
+
+    /**
+     * <p>The framework version of the Model Package Container Image.</p>
+     */
+    inline bool FrameworkVersionHasBeenSet() const { return m_frameworkVersionHasBeenSet; }
+
+    /**
+     * <p>The framework version of the Model Package Container Image.</p>
+     */
+    inline void SetFrameworkVersion(const Aws::String& value) { m_frameworkVersionHasBeenSet = true; m_frameworkVersion = value; }
+
+    /**
+     * <p>The framework version of the Model Package Container Image.</p>
+     */
+    inline void SetFrameworkVersion(Aws::String&& value) { m_frameworkVersionHasBeenSet = true; m_frameworkVersion = std::move(value); }
+
+    /**
+     * <p>The framework version of the Model Package Container Image.</p>
+     */
+    inline void SetFrameworkVersion(const char* value) { m_frameworkVersionHasBeenSet = true; m_frameworkVersion.assign(value); }
+
+    /**
+     * <p>The framework version of the Model Package Container Image.</p>
+     */
+    inline ModelPackageContainerDefinition& WithFrameworkVersion(const Aws::String& value) { SetFrameworkVersion(value); return *this;}
+
+    /**
+     * <p>The framework version of the Model Package Container Image.</p>
+     */
+    inline ModelPackageContainerDefinition& WithFrameworkVersion(Aws::String&& value) { SetFrameworkVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The framework version of the Model Package Container Image.</p>
+     */
+    inline ModelPackageContainerDefinition& WithFrameworkVersion(const char* value) { SetFrameworkVersion(value); return *this;}
+
+
+    /**
+     * <p>The name of a pre-trained machine learning benchmarked by Amazon SageMaker
+     * Inference Recommender model that matches your model. You can find a list of
+     * benchmarked models by calling <code>ListModelMetadata</code>.</p>
+     */
+    inline const Aws::String& GetNearestModelName() const{ return m_nearestModelName; }
+
+    /**
+     * <p>The name of a pre-trained machine learning benchmarked by Amazon SageMaker
+     * Inference Recommender model that matches your model. You can find a list of
+     * benchmarked models by calling <code>ListModelMetadata</code>.</p>
+     */
+    inline bool NearestModelNameHasBeenSet() const { return m_nearestModelNameHasBeenSet; }
+
+    /**
+     * <p>The name of a pre-trained machine learning benchmarked by Amazon SageMaker
+     * Inference Recommender model that matches your model. You can find a list of
+     * benchmarked models by calling <code>ListModelMetadata</code>.</p>
+     */
+    inline void SetNearestModelName(const Aws::String& value) { m_nearestModelNameHasBeenSet = true; m_nearestModelName = value; }
+
+    /**
+     * <p>The name of a pre-trained machine learning benchmarked by Amazon SageMaker
+     * Inference Recommender model that matches your model. You can find a list of
+     * benchmarked models by calling <code>ListModelMetadata</code>.</p>
+     */
+    inline void SetNearestModelName(Aws::String&& value) { m_nearestModelNameHasBeenSet = true; m_nearestModelName = std::move(value); }
+
+    /**
+     * <p>The name of a pre-trained machine learning benchmarked by Amazon SageMaker
+     * Inference Recommender model that matches your model. You can find a list of
+     * benchmarked models by calling <code>ListModelMetadata</code>.</p>
+     */
+    inline void SetNearestModelName(const char* value) { m_nearestModelNameHasBeenSet = true; m_nearestModelName.assign(value); }
+
+    /**
+     * <p>The name of a pre-trained machine learning benchmarked by Amazon SageMaker
+     * Inference Recommender model that matches your model. You can find a list of
+     * benchmarked models by calling <code>ListModelMetadata</code>.</p>
+     */
+    inline ModelPackageContainerDefinition& WithNearestModelName(const Aws::String& value) { SetNearestModelName(value); return *this;}
+
+    /**
+     * <p>The name of a pre-trained machine learning benchmarked by Amazon SageMaker
+     * Inference Recommender model that matches your model. You can find a list of
+     * benchmarked models by calling <code>ListModelMetadata</code>.</p>
+     */
+    inline ModelPackageContainerDefinition& WithNearestModelName(Aws::String&& value) { SetNearestModelName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of a pre-trained machine learning benchmarked by Amazon SageMaker
+     * Inference Recommender model that matches your model. You can find a list of
+     * benchmarked models by calling <code>ListModelMetadata</code>.</p>
+     */
+    inline ModelPackageContainerDefinition& WithNearestModelName(const char* value) { SetNearestModelName(value); return *this;}
+
   private:
 
     Aws::String m_containerHostname;
@@ -458,6 +629,18 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_environment;
     bool m_environmentHasBeenSet;
+
+    ModelInput m_modelInput;
+    bool m_modelInputHasBeenSet;
+
+    Aws::String m_framework;
+    bool m_frameworkHasBeenSet;
+
+    Aws::String m_frameworkVersion;
+    bool m_frameworkVersionHasBeenSet;
+
+    Aws::String m_nearestModelName;
+    bool m_nearestModelNameHasBeenSet;
   };
 
 } // namespace Model

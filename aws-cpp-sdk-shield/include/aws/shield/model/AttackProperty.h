@@ -45,9 +45,9 @@ namespace Model
     /**
      * <p>The type of Shield event that was observed. <code>NETWORK</code> indicates
      * layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7
-     * events.</p> <p>For infrastructure layer events (L3 and L4 events) after January
-     * 25, 2021, you can view metrics for top contributors in Amazon CloudWatch
-     * metrics. For more information, see <a
+     * events.</p> <p>For infrastructure layer events (L3 and L4 events), you can view
+     * metrics for top contributors in Amazon CloudWatch metrics. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
      * metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
      */
@@ -56,9 +56,9 @@ namespace Model
     /**
      * <p>The type of Shield event that was observed. <code>NETWORK</code> indicates
      * layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7
-     * events.</p> <p>For infrastructure layer events (L3 and L4 events) after January
-     * 25, 2021, you can view metrics for top contributors in Amazon CloudWatch
-     * metrics. For more information, see <a
+     * events.</p> <p>For infrastructure layer events (L3 and L4 events), you can view
+     * metrics for top contributors in Amazon CloudWatch metrics. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
      * metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
      */
@@ -67,9 +67,9 @@ namespace Model
     /**
      * <p>The type of Shield event that was observed. <code>NETWORK</code> indicates
      * layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7
-     * events.</p> <p>For infrastructure layer events (L3 and L4 events) after January
-     * 25, 2021, you can view metrics for top contributors in Amazon CloudWatch
-     * metrics. For more information, see <a
+     * events.</p> <p>For infrastructure layer events (L3 and L4 events), you can view
+     * metrics for top contributors in Amazon CloudWatch metrics. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
      * metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
      */
@@ -78,9 +78,9 @@ namespace Model
     /**
      * <p>The type of Shield event that was observed. <code>NETWORK</code> indicates
      * layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7
-     * events.</p> <p>For infrastructure layer events (L3 and L4 events) after January
-     * 25, 2021, you can view metrics for top contributors in Amazon CloudWatch
-     * metrics. For more information, see <a
+     * events.</p> <p>For infrastructure layer events (L3 and L4 events), you can view
+     * metrics for top contributors in Amazon CloudWatch metrics. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
      * metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
      */
@@ -89,9 +89,9 @@ namespace Model
     /**
      * <p>The type of Shield event that was observed. <code>NETWORK</code> indicates
      * layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7
-     * events.</p> <p>For infrastructure layer events (L3 and L4 events) after January
-     * 25, 2021, you can view metrics for top contributors in Amazon CloudWatch
-     * metrics. For more information, see <a
+     * events.</p> <p>For infrastructure layer events (L3 and L4 events), you can view
+     * metrics for top contributors in Amazon CloudWatch metrics. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
      * metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
      */
@@ -100,9 +100,9 @@ namespace Model
     /**
      * <p>The type of Shield event that was observed. <code>NETWORK</code> indicates
      * layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7
-     * events.</p> <p>For infrastructure layer events (L3 and L4 events) after January
-     * 25, 2021, you can view metrics for top contributors in Amazon CloudWatch
-     * metrics. For more information, see <a
+     * events.</p> <p>For infrastructure layer events (L3 and L4 events), you can view
+     * metrics for top contributors in Amazon CloudWatch metrics. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
      * metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
      */
@@ -159,42 +159,58 @@ namespace Model
 
 
     /**
-     * <p>Contributor objects for the top five contributors to a Shield event. </p>
+     * <p>Contributor objects for the top five contributors to a Shield event. A
+     * contributor is a source of traffic that Shield Advanced identifies as
+     * responsible for some or all of an event.</p>
      */
     inline const Aws::Vector<Contributor>& GetTopContributors() const{ return m_topContributors; }
 
     /**
-     * <p>Contributor objects for the top five contributors to a Shield event. </p>
+     * <p>Contributor objects for the top five contributors to a Shield event. A
+     * contributor is a source of traffic that Shield Advanced identifies as
+     * responsible for some or all of an event.</p>
      */
     inline bool TopContributorsHasBeenSet() const { return m_topContributorsHasBeenSet; }
 
     /**
-     * <p>Contributor objects for the top five contributors to a Shield event. </p>
+     * <p>Contributor objects for the top five contributors to a Shield event. A
+     * contributor is a source of traffic that Shield Advanced identifies as
+     * responsible for some or all of an event.</p>
      */
     inline void SetTopContributors(const Aws::Vector<Contributor>& value) { m_topContributorsHasBeenSet = true; m_topContributors = value; }
 
     /**
-     * <p>Contributor objects for the top five contributors to a Shield event. </p>
+     * <p>Contributor objects for the top five contributors to a Shield event. A
+     * contributor is a source of traffic that Shield Advanced identifies as
+     * responsible for some or all of an event.</p>
      */
     inline void SetTopContributors(Aws::Vector<Contributor>&& value) { m_topContributorsHasBeenSet = true; m_topContributors = std::move(value); }
 
     /**
-     * <p>Contributor objects for the top five contributors to a Shield event. </p>
+     * <p>Contributor objects for the top five contributors to a Shield event. A
+     * contributor is a source of traffic that Shield Advanced identifies as
+     * responsible for some or all of an event.</p>
      */
     inline AttackProperty& WithTopContributors(const Aws::Vector<Contributor>& value) { SetTopContributors(value); return *this;}
 
     /**
-     * <p>Contributor objects for the top five contributors to a Shield event. </p>
+     * <p>Contributor objects for the top five contributors to a Shield event. A
+     * contributor is a source of traffic that Shield Advanced identifies as
+     * responsible for some or all of an event.</p>
      */
     inline AttackProperty& WithTopContributors(Aws::Vector<Contributor>&& value) { SetTopContributors(std::move(value)); return *this;}
 
     /**
-     * <p>Contributor objects for the top five contributors to a Shield event. </p>
+     * <p>Contributor objects for the top five contributors to a Shield event. A
+     * contributor is a source of traffic that Shield Advanced identifies as
+     * responsible for some or all of an event.</p>
      */
     inline AttackProperty& AddTopContributors(const Contributor& value) { m_topContributorsHasBeenSet = true; m_topContributors.push_back(value); return *this; }
 
     /**
-     * <p>Contributor objects for the top five contributors to a Shield event. </p>
+     * <p>Contributor objects for the top five contributors to a Shield event. A
+     * contributor is a source of traffic that Shield Advanced identifies as
+     * responsible for some or all of an event.</p>
      */
     inline AttackProperty& AddTopContributors(Contributor&& value) { m_topContributorsHasBeenSet = true; m_topContributors.push_back(std::move(value)); return *this; }
 

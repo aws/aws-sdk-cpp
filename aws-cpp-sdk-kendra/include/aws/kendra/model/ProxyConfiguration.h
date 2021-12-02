@@ -126,81 +126,81 @@ namespace Model
 
     /**
      * <p>Your secret ARN, which you can create in <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS
-     * Secrets Manager</a> </p> <p>The credentials are optional. You use a secret if
-     * web proxy credentials are required to connect to a website host. Amazon Kendra
-     * currently support basic authentication to connect to a web proxy server. The
-     * secret stores your credentials.</p>
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+     * Manager</a> </p> <p>The credentials are optional. You use a secret if web proxy
+     * credentials are required to connect to a website host. Amazon Kendra currently
+     * support basic authentication to connect to a web proxy server. The secret stores
+     * your credentials.</p>
      */
     inline const Aws::String& GetCredentials() const{ return m_credentials; }
 
     /**
      * <p>Your secret ARN, which you can create in <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS
-     * Secrets Manager</a> </p> <p>The credentials are optional. You use a secret if
-     * web proxy credentials are required to connect to a website host. Amazon Kendra
-     * currently support basic authentication to connect to a web proxy server. The
-     * secret stores your credentials.</p>
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+     * Manager</a> </p> <p>The credentials are optional. You use a secret if web proxy
+     * credentials are required to connect to a website host. Amazon Kendra currently
+     * support basic authentication to connect to a web proxy server. The secret stores
+     * your credentials.</p>
      */
     inline bool CredentialsHasBeenSet() const { return m_credentialsHasBeenSet; }
 
     /**
      * <p>Your secret ARN, which you can create in <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS
-     * Secrets Manager</a> </p> <p>The credentials are optional. You use a secret if
-     * web proxy credentials are required to connect to a website host. Amazon Kendra
-     * currently support basic authentication to connect to a web proxy server. The
-     * secret stores your credentials.</p>
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+     * Manager</a> </p> <p>The credentials are optional. You use a secret if web proxy
+     * credentials are required to connect to a website host. Amazon Kendra currently
+     * support basic authentication to connect to a web proxy server. The secret stores
+     * your credentials.</p>
      */
     inline void SetCredentials(const Aws::String& value) { m_credentialsHasBeenSet = true; m_credentials = value; }
 
     /**
      * <p>Your secret ARN, which you can create in <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS
-     * Secrets Manager</a> </p> <p>The credentials are optional. You use a secret if
-     * web proxy credentials are required to connect to a website host. Amazon Kendra
-     * currently support basic authentication to connect to a web proxy server. The
-     * secret stores your credentials.</p>
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+     * Manager</a> </p> <p>The credentials are optional. You use a secret if web proxy
+     * credentials are required to connect to a website host. Amazon Kendra currently
+     * support basic authentication to connect to a web proxy server. The secret stores
+     * your credentials.</p>
      */
     inline void SetCredentials(Aws::String&& value) { m_credentialsHasBeenSet = true; m_credentials = std::move(value); }
 
     /**
      * <p>Your secret ARN, which you can create in <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS
-     * Secrets Manager</a> </p> <p>The credentials are optional. You use a secret if
-     * web proxy credentials are required to connect to a website host. Amazon Kendra
-     * currently support basic authentication to connect to a web proxy server. The
-     * secret stores your credentials.</p>
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+     * Manager</a> </p> <p>The credentials are optional. You use a secret if web proxy
+     * credentials are required to connect to a website host. Amazon Kendra currently
+     * support basic authentication to connect to a web proxy server. The secret stores
+     * your credentials.</p>
      */
     inline void SetCredentials(const char* value) { m_credentialsHasBeenSet = true; m_credentials.assign(value); }
 
     /**
      * <p>Your secret ARN, which you can create in <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS
-     * Secrets Manager</a> </p> <p>The credentials are optional. You use a secret if
-     * web proxy credentials are required to connect to a website host. Amazon Kendra
-     * currently support basic authentication to connect to a web proxy server. The
-     * secret stores your credentials.</p>
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+     * Manager</a> </p> <p>The credentials are optional. You use a secret if web proxy
+     * credentials are required to connect to a website host. Amazon Kendra currently
+     * support basic authentication to connect to a web proxy server. The secret stores
+     * your credentials.</p>
      */
     inline ProxyConfiguration& WithCredentials(const Aws::String& value) { SetCredentials(value); return *this;}
 
     /**
      * <p>Your secret ARN, which you can create in <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS
-     * Secrets Manager</a> </p> <p>The credentials are optional. You use a secret if
-     * web proxy credentials are required to connect to a website host. Amazon Kendra
-     * currently support basic authentication to connect to a web proxy server. The
-     * secret stores your credentials.</p>
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+     * Manager</a> </p> <p>The credentials are optional. You use a secret if web proxy
+     * credentials are required to connect to a website host. Amazon Kendra currently
+     * support basic authentication to connect to a web proxy server. The secret stores
+     * your credentials.</p>
      */
     inline ProxyConfiguration& WithCredentials(Aws::String&& value) { SetCredentials(std::move(value)); return *this;}
 
     /**
      * <p>Your secret ARN, which you can create in <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS
-     * Secrets Manager</a> </p> <p>The credentials are optional. You use a secret if
-     * web proxy credentials are required to connect to a website host. Amazon Kendra
-     * currently support basic authentication to connect to a web proxy server. The
-     * secret stores your credentials.</p>
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+     * Manager</a> </p> <p>The credentials are optional. You use a secret if web proxy
+     * credentials are required to connect to a website host. Amazon Kendra currently
+     * support basic authentication to connect to a web proxy server. The secret stores
+     * your credentials.</p>
      */
     inline ProxyConfiguration& WithCredentials(const char* value) { SetCredentials(value); return *this;}
 

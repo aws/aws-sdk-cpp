@@ -36,10 +36,12 @@
 #include <aws/shield/model/DescribeProtectionRequest.h>
 #include <aws/shield/model/DescribeProtectionGroupRequest.h>
 #include <aws/shield/model/DescribeSubscriptionRequest.h>
+#include <aws/shield/model/DisableApplicationLayerAutomaticResponseRequest.h>
 #include <aws/shield/model/DisableProactiveEngagementRequest.h>
 #include <aws/shield/model/DisassociateDRTLogBucketRequest.h>
 #include <aws/shield/model/DisassociateDRTRoleRequest.h>
 #include <aws/shield/model/DisassociateHealthCheckRequest.h>
+#include <aws/shield/model/EnableApplicationLayerAutomaticResponseRequest.h>
 #include <aws/shield/model/EnableProactiveEngagementRequest.h>
 #include <aws/shield/model/GetSubscriptionStateRequest.h>
 #include <aws/shield/model/ListAttacksRequest.h>
@@ -49,6 +51,7 @@
 #include <aws/shield/model/ListTagsForResourceRequest.h>
 #include <aws/shield/model/TagResourceRequest.h>
 #include <aws/shield/model/UntagResourceRequest.h>
+#include <aws/shield/model/UpdateApplicationLayerAutomaticResponseRequest.h>
 #include <aws/shield/model/UpdateEmergencyContactSettingsRequest.h>
 #include <aws/shield/model/UpdateProtectionGroupRequest.h>
 #include <aws/shield/model/UpdateSubscriptionRequest.h>
@@ -510,6 +513,30 @@ void ShieldClient::DescribeSubscriptionAsyncHelper(const DescribeSubscriptionReq
   handler(this, request, DescribeSubscription(request), context);
 }
 
+DisableApplicationLayerAutomaticResponseOutcome ShieldClient::DisableApplicationLayerAutomaticResponse(const DisableApplicationLayerAutomaticResponseRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DisableApplicationLayerAutomaticResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisableApplicationLayerAutomaticResponseOutcomeCallable ShieldClient::DisableApplicationLayerAutomaticResponseCallable(const DisableApplicationLayerAutomaticResponseRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisableApplicationLayerAutomaticResponseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableApplicationLayerAutomaticResponse(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ShieldClient::DisableApplicationLayerAutomaticResponseAsync(const DisableApplicationLayerAutomaticResponseRequest& request, const DisableApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisableApplicationLayerAutomaticResponseAsyncHelper( request, handler, context ); } );
+}
+
+void ShieldClient::DisableApplicationLayerAutomaticResponseAsyncHelper(const DisableApplicationLayerAutomaticResponseRequest& request, const DisableApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisableApplicationLayerAutomaticResponse(request), context);
+}
+
 DisableProactiveEngagementOutcome ShieldClient::DisableProactiveEngagement(const DisableProactiveEngagementRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -604,6 +631,30 @@ void ShieldClient::DisassociateHealthCheckAsync(const DisassociateHealthCheckReq
 void ShieldClient::DisassociateHealthCheckAsyncHelper(const DisassociateHealthCheckRequest& request, const DisassociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DisassociateHealthCheck(request), context);
+}
+
+EnableApplicationLayerAutomaticResponseOutcome ShieldClient::EnableApplicationLayerAutomaticResponse(const EnableApplicationLayerAutomaticResponseRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return EnableApplicationLayerAutomaticResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+EnableApplicationLayerAutomaticResponseOutcomeCallable ShieldClient::EnableApplicationLayerAutomaticResponseCallable(const EnableApplicationLayerAutomaticResponseRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< EnableApplicationLayerAutomaticResponseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableApplicationLayerAutomaticResponse(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ShieldClient::EnableApplicationLayerAutomaticResponseAsync(const EnableApplicationLayerAutomaticResponseRequest& request, const EnableApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->EnableApplicationLayerAutomaticResponseAsyncHelper( request, handler, context ); } );
+}
+
+void ShieldClient::EnableApplicationLayerAutomaticResponseAsyncHelper(const EnableApplicationLayerAutomaticResponseRequest& request, const EnableApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, EnableApplicationLayerAutomaticResponse(request), context);
 }
 
 EnableProactiveEngagementOutcome ShieldClient::EnableProactiveEngagement(const EnableProactiveEngagementRequest& request) const
@@ -820,6 +871,30 @@ void ShieldClient::UntagResourceAsync(const UntagResourceRequest& request, const
 void ShieldClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateApplicationLayerAutomaticResponseOutcome ShieldClient::UpdateApplicationLayerAutomaticResponse(const UpdateApplicationLayerAutomaticResponseRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateApplicationLayerAutomaticResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateApplicationLayerAutomaticResponseOutcomeCallable ShieldClient::UpdateApplicationLayerAutomaticResponseCallable(const UpdateApplicationLayerAutomaticResponseRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateApplicationLayerAutomaticResponseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApplicationLayerAutomaticResponse(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ShieldClient::UpdateApplicationLayerAutomaticResponseAsync(const UpdateApplicationLayerAutomaticResponseRequest& request, const UpdateApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateApplicationLayerAutomaticResponseAsyncHelper( request, handler, context ); } );
+}
+
+void ShieldClient::UpdateApplicationLayerAutomaticResponseAsyncHelper(const UpdateApplicationLayerAutomaticResponseRequest& request, const UpdateApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateApplicationLayerAutomaticResponse(request), context);
 }
 
 UpdateEmergencyContactSettingsOutcome ShieldClient::UpdateEmergencyContactSettings(const UpdateEmergencyContactSettingsRequest& request) const

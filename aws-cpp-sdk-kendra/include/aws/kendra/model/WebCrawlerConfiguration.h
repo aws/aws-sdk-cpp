@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides the configuration information required for Amazon Kendra web
-   * crawler.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides the configuration information required for Amazon Kendra Web
+   * Crawler.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/WebCrawlerConfiguration">AWS
    * API Reference</a></p>
    */
@@ -51,9 +51,9 @@ namespace Model
      * website, it could be that the website is blocked from crawling.</p> <p> <i>When
      * selecting websites to index, you must adhere to the <a
      * href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all
-     * other Amazon terms. Remember that you must only use the Amazon Kendra web
-     * crawler to index your own webpages, or webpages that you have authorization to
-     * index.</i> </p>
+     * other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to
+     * index your own webpages, or webpages that you have authorization to index.</i>
+     * </p>
      */
     inline const Urls& GetUrls() const{ return m_urls; }
 
@@ -66,9 +66,9 @@ namespace Model
      * website, it could be that the website is blocked from crawling.</p> <p> <i>When
      * selecting websites to index, you must adhere to the <a
      * href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all
-     * other Amazon terms. Remember that you must only use the Amazon Kendra web
-     * crawler to index your own webpages, or webpages that you have authorization to
-     * index.</i> </p>
+     * other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to
+     * index your own webpages, or webpages that you have authorization to index.</i>
+     * </p>
      */
     inline bool UrlsHasBeenSet() const { return m_urlsHasBeenSet; }
 
@@ -81,9 +81,9 @@ namespace Model
      * website, it could be that the website is blocked from crawling.</p> <p> <i>When
      * selecting websites to index, you must adhere to the <a
      * href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all
-     * other Amazon terms. Remember that you must only use the Amazon Kendra web
-     * crawler to index your own webpages, or webpages that you have authorization to
-     * index.</i> </p>
+     * other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to
+     * index your own webpages, or webpages that you have authorization to index.</i>
+     * </p>
      */
     inline void SetUrls(const Urls& value) { m_urlsHasBeenSet = true; m_urls = value; }
 
@@ -96,9 +96,9 @@ namespace Model
      * website, it could be that the website is blocked from crawling.</p> <p> <i>When
      * selecting websites to index, you must adhere to the <a
      * href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all
-     * other Amazon terms. Remember that you must only use the Amazon Kendra web
-     * crawler to index your own webpages, or webpages that you have authorization to
-     * index.</i> </p>
+     * other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to
+     * index your own webpages, or webpages that you have authorization to index.</i>
+     * </p>
      */
     inline void SetUrls(Urls&& value) { m_urlsHasBeenSet = true; m_urls = std::move(value); }
 
@@ -111,9 +111,9 @@ namespace Model
      * website, it could be that the website is blocked from crawling.</p> <p> <i>When
      * selecting websites to index, you must adhere to the <a
      * href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all
-     * other Amazon terms. Remember that you must only use the Amazon Kendra web
-     * crawler to index your own webpages, or webpages that you have authorization to
-     * index.</i> </p>
+     * other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to
+     * index your own webpages, or webpages that you have authorization to index.</i>
+     * </p>
      */
     inline WebCrawlerConfiguration& WithUrls(const Urls& value) { SetUrls(value); return *this;}
 
@@ -126,9 +126,9 @@ namespace Model
      * website, it could be that the website is blocked from crawling.</p> <p> <i>When
      * selecting websites to index, you must adhere to the <a
      * href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all
-     * other Amazon terms. Remember that you must only use the Amazon Kendra web
-     * crawler to index your own webpages, or webpages that you have authorization to
-     * index.</i> </p>
+     * other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to
+     * index your own webpages, or webpages that you have authorization to index.</i>
+     * </p>
      */
     inline WebCrawlerConfiguration& WithUrls(Urls&& value) { SetUrls(std::move(value)); return *this;}
 
@@ -401,8 +401,8 @@ namespace Model
      * proxy credentials are optional and you can use them to connect to a web proxy
      * server that requires basic authentication. To store web proxy credentials, you
      * use a secret in <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS
-     * Secrets Manager</a>.</p>
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+     * Manager</a>.</p>
      */
     inline const ProxyConfiguration& GetProxyConfiguration() const{ return m_proxyConfiguration; }
 
@@ -414,8 +414,8 @@ namespace Model
      * proxy credentials are optional and you can use them to connect to a web proxy
      * server that requires basic authentication. To store web proxy credentials, you
      * use a secret in <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS
-     * Secrets Manager</a>.</p>
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+     * Manager</a>.</p>
      */
     inline bool ProxyConfigurationHasBeenSet() const { return m_proxyConfigurationHasBeenSet; }
 
@@ -427,8 +427,8 @@ namespace Model
      * proxy credentials are optional and you can use them to connect to a web proxy
      * server that requires basic authentication. To store web proxy credentials, you
      * use a secret in <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS
-     * Secrets Manager</a>.</p>
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+     * Manager</a>.</p>
      */
     inline void SetProxyConfiguration(const ProxyConfiguration& value) { m_proxyConfigurationHasBeenSet = true; m_proxyConfiguration = value; }
 
@@ -440,8 +440,8 @@ namespace Model
      * proxy credentials are optional and you can use them to connect to a web proxy
      * server that requires basic authentication. To store web proxy credentials, you
      * use a secret in <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS
-     * Secrets Manager</a>.</p>
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+     * Manager</a>.</p>
      */
     inline void SetProxyConfiguration(ProxyConfiguration&& value) { m_proxyConfigurationHasBeenSet = true; m_proxyConfiguration = std::move(value); }
 
@@ -453,8 +453,8 @@ namespace Model
      * proxy credentials are optional and you can use them to connect to a web proxy
      * server that requires basic authentication. To store web proxy credentials, you
      * use a secret in <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS
-     * Secrets Manager</a>.</p>
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+     * Manager</a>.</p>
      */
     inline WebCrawlerConfiguration& WithProxyConfiguration(const ProxyConfiguration& value) { SetProxyConfiguration(value); return *this;}
 
@@ -466,8 +466,8 @@ namespace Model
      * proxy credentials are optional and you can use them to connect to a web proxy
      * server that requires basic authentication. To store web proxy credentials, you
      * use a secret in <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS
-     * Secrets Manager</a>.</p>
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+     * Manager</a>.</p>
      */
     inline WebCrawlerConfiguration& WithProxyConfiguration(ProxyConfiguration&& value) { SetProxyConfiguration(std::move(value)); return *this;}
 
@@ -479,8 +479,8 @@ namespace Model
      * number. For example, the host name of https://a.example.com/page1.html is
      * "a.example.com" and the port is 443, the standard port for HTTPS. You use a
      * secret in <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS
-     * Secrets Manager</a> to store your authentication credentials.</p>
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+     * Manager</a> to store your authentication credentials.</p>
      */
     inline const AuthenticationConfiguration& GetAuthenticationConfiguration() const{ return m_authenticationConfiguration; }
 
@@ -491,8 +491,8 @@ namespace Model
      * number. For example, the host name of https://a.example.com/page1.html is
      * "a.example.com" and the port is 443, the standard port for HTTPS. You use a
      * secret in <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS
-     * Secrets Manager</a> to store your authentication credentials.</p>
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+     * Manager</a> to store your authentication credentials.</p>
      */
     inline bool AuthenticationConfigurationHasBeenSet() const { return m_authenticationConfigurationHasBeenSet; }
 
@@ -503,8 +503,8 @@ namespace Model
      * number. For example, the host name of https://a.example.com/page1.html is
      * "a.example.com" and the port is 443, the standard port for HTTPS. You use a
      * secret in <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS
-     * Secrets Manager</a> to store your authentication credentials.</p>
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+     * Manager</a> to store your authentication credentials.</p>
      */
     inline void SetAuthenticationConfiguration(const AuthenticationConfiguration& value) { m_authenticationConfigurationHasBeenSet = true; m_authenticationConfiguration = value; }
 
@@ -515,8 +515,8 @@ namespace Model
      * number. For example, the host name of https://a.example.com/page1.html is
      * "a.example.com" and the port is 443, the standard port for HTTPS. You use a
      * secret in <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS
-     * Secrets Manager</a> to store your authentication credentials.</p>
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+     * Manager</a> to store your authentication credentials.</p>
      */
     inline void SetAuthenticationConfiguration(AuthenticationConfiguration&& value) { m_authenticationConfigurationHasBeenSet = true; m_authenticationConfiguration = std::move(value); }
 
@@ -527,8 +527,8 @@ namespace Model
      * number. For example, the host name of https://a.example.com/page1.html is
      * "a.example.com" and the port is 443, the standard port for HTTPS. You use a
      * secret in <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS
-     * Secrets Manager</a> to store your authentication credentials.</p>
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+     * Manager</a> to store your authentication credentials.</p>
      */
     inline WebCrawlerConfiguration& WithAuthenticationConfiguration(const AuthenticationConfiguration& value) { SetAuthenticationConfiguration(value); return *this;}
 
@@ -539,8 +539,8 @@ namespace Model
      * number. For example, the host name of https://a.example.com/page1.html is
      * "a.example.com" and the port is 443, the standard port for HTTPS. You use a
      * secret in <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS
-     * Secrets Manager</a> to store your authentication credentials.</p>
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+     * Manager</a> to store your authentication credentials.</p>
      */
     inline WebCrawlerConfiguration& WithAuthenticationConfiguration(AuthenticationConfiguration&& value) { SetAuthenticationConfiguration(std::move(value)); return *this;}
 

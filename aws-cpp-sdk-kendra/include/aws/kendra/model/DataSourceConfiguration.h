@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Configuration information for a Amazon Kendra data source.</p><p><h3>See
+   * <p>Configuration information for an Amazon Kendra data source.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DataSourceConfiguration">AWS
    * API Reference</a></p>

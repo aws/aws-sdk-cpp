@@ -335,7 +335,7 @@ void DevOpsGuruClient::DescribeOrganizationOverviewAsyncHelper(const DescribeOrg
 DescribeOrganizationResourceCollectionHealthOutcome DevOpsGuruClient::DescribeOrganizationResourceCollectionHealth(const DescribeOrganizationResourceCollectionHealthRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/organization/health/resource-collection/");
+  uri.AddPathSegments("/organization/health/resource-collection");
   return DescribeOrganizationResourceCollectionHealthOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

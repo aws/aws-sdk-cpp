@@ -103,7 +103,7 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the
+     * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key/value pairs required to connect to your Confluence server. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>username -
      * The user name or email address of a user with administrative privileges for the
@@ -113,7 +113,7 @@ namespace Model
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the
+     * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key/value pairs required to connect to your Confluence server. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>username -
      * The user name or email address of a user with administrative privileges for the
@@ -123,7 +123,7 @@ namespace Model
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the
+     * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key/value pairs required to connect to your Confluence server. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>username -
      * The user name or email address of a user with administrative privileges for the
@@ -133,7 +133,7 @@ namespace Model
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the
+     * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key/value pairs required to connect to your Confluence server. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>username -
      * The user name or email address of a user with administrative privileges for the
@@ -143,7 +143,7 @@ namespace Model
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the
+     * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key/value pairs required to connect to your Confluence server. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>username -
      * The user name or email address of a user with administrative privileges for the
@@ -153,7 +153,7 @@ namespace Model
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the
+     * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key/value pairs required to connect to your Confluence server. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>username -
      * The user name or email address of a user with administrative privileges for the
@@ -163,7 +163,7 @@ namespace Model
     inline ConfluenceConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the
+     * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key/value pairs required to connect to your Confluence server. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>username -
      * The user name or email address of a user with administrative privileges for the
@@ -173,7 +173,7 @@ namespace Model
     inline ConfluenceConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the
+     * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key/value pairs required to connect to your Confluence server. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>username -
      * The user name or email address of a user with administrative privileges for the

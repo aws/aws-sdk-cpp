@@ -24,7 +24,8 @@ CreateDataSourceRequest::CreateDataSourceRequest() :
     m_tagsHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_languageCodeHasBeenSet(false)
+    m_languageCodeHasBeenSet(false),
+    m_customDocumentEnrichmentConfigurationHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,12 @@ Aws::String CreateDataSourceRequest::SerializePayload() const
   if(m_languageCodeHasBeenSet)
   {
    payload.WithString("LanguageCode", m_languageCode);
+
+  }
+
+  if(m_customDocumentEnrichmentConfigurationHasBeenSet)
+  {
+   payload.WithObject("CustomDocumentEnrichmentConfiguration", m_customDocumentEnrichmentConfiguration.Jsonize());
 
   }
 

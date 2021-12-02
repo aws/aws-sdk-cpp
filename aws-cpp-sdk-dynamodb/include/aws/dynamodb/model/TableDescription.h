@@ -15,6 +15,7 @@
 #include <aws/dynamodb/model/RestoreSummary.h>
 #include <aws/dynamodb/model/SSEDescription.h>
 #include <aws/dynamodb/model/ArchivalSummary.h>
+#include <aws/dynamodb/model/TableClassSummary.h>
 #include <aws/dynamodb/model/AttributeDefinition.h>
 #include <aws/dynamodb/model/KeySchemaElement.h>
 #include <aws/dynamodb/model/LocalSecondaryIndexDescription.h>
@@ -1715,6 +1716,37 @@ namespace Model
      */
     inline TableDescription& WithArchivalSummary(ArchivalSummary&& value) { SetArchivalSummary(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains details of the table class.</p>
+     */
+    inline const TableClassSummary& GetTableClassSummary() const{ return m_tableClassSummary; }
+
+    /**
+     * <p>Contains details of the table class.</p>
+     */
+    inline bool TableClassSummaryHasBeenSet() const { return m_tableClassSummaryHasBeenSet; }
+
+    /**
+     * <p>Contains details of the table class.</p>
+     */
+    inline void SetTableClassSummary(const TableClassSummary& value) { m_tableClassSummaryHasBeenSet = true; m_tableClassSummary = value; }
+
+    /**
+     * <p>Contains details of the table class.</p>
+     */
+    inline void SetTableClassSummary(TableClassSummary&& value) { m_tableClassSummaryHasBeenSet = true; m_tableClassSummary = std::move(value); }
+
+    /**
+     * <p>Contains details of the table class.</p>
+     */
+    inline TableDescription& WithTableClassSummary(const TableClassSummary& value) { SetTableClassSummary(value); return *this;}
+
+    /**
+     * <p>Contains details of the table class.</p>
+     */
+    inline TableDescription& WithTableClassSummary(TableClassSummary&& value) { SetTableClassSummary(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<AttributeDefinition> m_attributeDefinitions;
@@ -1779,6 +1811,9 @@ namespace Model
 
     ArchivalSummary m_archivalSummary;
     bool m_archivalSummaryHasBeenSet;
+
+    TableClassSummary m_tableClassSummary;
+    bool m_tableClassSummaryHasBeenSet;
   };
 
 } // namespace Model

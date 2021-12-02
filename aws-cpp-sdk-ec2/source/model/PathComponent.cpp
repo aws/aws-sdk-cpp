@@ -24,6 +24,7 @@ PathComponent::PathComponent() :
     m_sequenceNumber(0),
     m_sequenceNumberHasBeenSet(false),
     m_aclRuleHasBeenSet(false),
+    m_attachedToHasBeenSet(false),
     m_componentHasBeenSet(false),
     m_destinationVpcHasBeenSet(false),
     m_outboundHeaderHasBeenSet(false),
@@ -40,6 +41,7 @@ PathComponent::PathComponent(const XmlNode& xmlNode) :
     m_sequenceNumber(0),
     m_sequenceNumberHasBeenSet(false),
     m_aclRuleHasBeenSet(false),
+    m_attachedToHasBeenSet(false),
     m_componentHasBeenSet(false),
     m_destinationVpcHasBeenSet(false),
     m_outboundHeaderHasBeenSet(false),
@@ -70,6 +72,12 @@ PathComponent& PathComponent::operator =(const XmlNode& xmlNode)
     {
       m_aclRule = aclRuleNode;
       m_aclRuleHasBeenSet = true;
+    }
+    XmlNode attachedToNode = resultNode.FirstChild("attachedTo");
+    if(!attachedToNode.IsNull())
+    {
+      m_attachedTo = attachedToNode;
+      m_attachedToHasBeenSet = true;
     }
     XmlNode componentNode = resultNode.FirstChild("component");
     if(!componentNode.IsNull())
@@ -142,6 +150,13 @@ void PathComponent::OutputToStream(Aws::OStream& oStream, const char* location, 
       Aws::StringStream aclRuleLocationAndMemberSs;
       aclRuleLocationAndMemberSs << location << index << locationValue << ".AclRule";
       m_aclRule.OutputToStream(oStream, aclRuleLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_attachedToHasBeenSet)
+  {
+      Aws::StringStream attachedToLocationAndMemberSs;
+      attachedToLocationAndMemberSs << location << index << locationValue << ".AttachedTo";
+      m_attachedTo.OutputToStream(oStream, attachedToLocationAndMemberSs.str().c_str());
   }
 
   if(m_componentHasBeenSet)
@@ -220,6 +235,12 @@ void PathComponent::OutputToStream(Aws::OStream& oStream, const char* location) 
       Aws::String aclRuleLocationAndMember(location);
       aclRuleLocationAndMember += ".AclRule";
       m_aclRule.OutputToStream(oStream, aclRuleLocationAndMember.c_str());
+  }
+  if(m_attachedToHasBeenSet)
+  {
+      Aws::String attachedToLocationAndMember(location);
+      attachedToLocationAndMember += ".AttachedTo";
+      m_attachedTo.OutputToStream(oStream, attachedToLocationAndMember.c_str());
   }
   if(m_componentHasBeenSet)
   {

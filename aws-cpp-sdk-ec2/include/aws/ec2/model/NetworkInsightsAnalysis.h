@@ -328,6 +328,47 @@ namespace Model
 
 
     /**
+     * <p>The warning message.</p>
+     */
+    inline const Aws::String& GetWarningMessage() const{ return m_warningMessage; }
+
+    /**
+     * <p>The warning message.</p>
+     */
+    inline bool WarningMessageHasBeenSet() const { return m_warningMessageHasBeenSet; }
+
+    /**
+     * <p>The warning message.</p>
+     */
+    inline void SetWarningMessage(const Aws::String& value) { m_warningMessageHasBeenSet = true; m_warningMessage = value; }
+
+    /**
+     * <p>The warning message.</p>
+     */
+    inline void SetWarningMessage(Aws::String&& value) { m_warningMessageHasBeenSet = true; m_warningMessage = std::move(value); }
+
+    /**
+     * <p>The warning message.</p>
+     */
+    inline void SetWarningMessage(const char* value) { m_warningMessageHasBeenSet = true; m_warningMessage.assign(value); }
+
+    /**
+     * <p>The warning message.</p>
+     */
+    inline NetworkInsightsAnalysis& WithWarningMessage(const Aws::String& value) { SetWarningMessage(value); return *this;}
+
+    /**
+     * <p>The warning message.</p>
+     */
+    inline NetworkInsightsAnalysis& WithWarningMessage(Aws::String&& value) { SetWarningMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>The warning message.</p>
+     */
+    inline NetworkInsightsAnalysis& WithWarningMessage(const char* value) { SetWarningMessage(value); return *this;}
+
+
+    /**
      * <p>Indicates whether the destination is reachable from the source.</p>
      */
     inline bool GetNetworkPathFound() const{ return m_networkPathFound; }
@@ -590,6 +631,9 @@ namespace Model
 
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
+
+    Aws::String m_warningMessage;
+    bool m_warningMessageHasBeenSet;
 
     bool m_networkPathFound;
     bool m_networkPathFoundHasBeenSet;

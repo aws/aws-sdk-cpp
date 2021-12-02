@@ -33,7 +33,9 @@ PendingProductionVariantSummary::PendingProductionVariantSummary() :
     m_instanceTypeHasBeenSet(false),
     m_acceleratorType(ProductionVariantAcceleratorType::NOT_SET),
     m_acceleratorTypeHasBeenSet(false),
-    m_variantStatusHasBeenSet(false)
+    m_variantStatusHasBeenSet(false),
+    m_currentServerlessConfigHasBeenSet(false),
+    m_desiredServerlessConfigHasBeenSet(false)
 {
 }
 
@@ -52,7 +54,9 @@ PendingProductionVariantSummary::PendingProductionVariantSummary(JsonView jsonVa
     m_instanceTypeHasBeenSet(false),
     m_acceleratorType(ProductionVariantAcceleratorType::NOT_SET),
     m_acceleratorTypeHasBeenSet(false),
-    m_variantStatusHasBeenSet(false)
+    m_variantStatusHasBeenSet(false),
+    m_currentServerlessConfigHasBeenSet(false),
+    m_desiredServerlessConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -128,6 +132,20 @@ PendingProductionVariantSummary& PendingProductionVariantSummary::operator =(Jso
     m_variantStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CurrentServerlessConfig"))
+  {
+    m_currentServerlessConfig = jsonValue.GetObject("CurrentServerlessConfig");
+
+    m_currentServerlessConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DesiredServerlessConfig"))
+  {
+    m_desiredServerlessConfig = jsonValue.GetObject("DesiredServerlessConfig");
+
+    m_desiredServerlessConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -194,6 +212,18 @@ JsonValue PendingProductionVariantSummary::Jsonize() const
      variantStatusJsonList[variantStatusIndex].AsObject(m_variantStatus[variantStatusIndex].Jsonize());
    }
    payload.WithArray("VariantStatus", std::move(variantStatusJsonList));
+
+  }
+
+  if(m_currentServerlessConfigHasBeenSet)
+  {
+   payload.WithObject("CurrentServerlessConfig", m_currentServerlessConfig.Jsonize());
+
+  }
+
+  if(m_desiredServerlessConfigHasBeenSet)
+  {
+   payload.WithObject("DesiredServerlessConfig", m_desiredServerlessConfig.Jsonize());
 
   }
 

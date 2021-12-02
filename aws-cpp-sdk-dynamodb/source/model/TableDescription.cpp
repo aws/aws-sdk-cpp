@@ -42,7 +42,8 @@ TableDescription::TableDescription() :
     m_replicasHasBeenSet(false),
     m_restoreSummaryHasBeenSet(false),
     m_sSEDescriptionHasBeenSet(false),
-    m_archivalSummaryHasBeenSet(false)
+    m_archivalSummaryHasBeenSet(false),
+    m_tableClassSummaryHasBeenSet(false)
 {
 }
 
@@ -70,7 +71,8 @@ TableDescription::TableDescription(JsonView jsonValue) :
     m_replicasHasBeenSet(false),
     m_restoreSummaryHasBeenSet(false),
     m_sSEDescriptionHasBeenSet(false),
-    m_archivalSummaryHasBeenSet(false)
+    m_archivalSummaryHasBeenSet(false),
+    m_tableClassSummaryHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -239,6 +241,13 @@ TableDescription& TableDescription::operator =(JsonView jsonValue)
     m_archivalSummaryHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TableClassSummary"))
+  {
+    m_tableClassSummary = jsonValue.GetObject("TableClassSummary");
+
+    m_tableClassSummaryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -392,6 +401,12 @@ JsonValue TableDescription::Jsonize() const
   if(m_archivalSummaryHasBeenSet)
   {
    payload.WithObject("ArchivalSummary", m_archivalSummary.Jsonize());
+
+  }
+
+  if(m_tableClassSummaryHasBeenSet)
+  {
+   payload.WithObject("TableClassSummary", m_tableClassSummary.Jsonize());
 
   }
 

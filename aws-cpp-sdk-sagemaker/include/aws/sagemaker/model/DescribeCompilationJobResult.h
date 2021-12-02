@@ -315,6 +315,49 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the versioned model package that was
+     * provided to SageMaker Neo when you initiated a compilation job.</p>
+     */
+    inline const Aws::String& GetModelPackageVersionArn() const{ return m_modelPackageVersionArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the versioned model package that was
+     * provided to SageMaker Neo when you initiated a compilation job.</p>
+     */
+    inline void SetModelPackageVersionArn(const Aws::String& value) { m_modelPackageVersionArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the versioned model package that was
+     * provided to SageMaker Neo when you initiated a compilation job.</p>
+     */
+    inline void SetModelPackageVersionArn(Aws::String&& value) { m_modelPackageVersionArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the versioned model package that was
+     * provided to SageMaker Neo when you initiated a compilation job.</p>
+     */
+    inline void SetModelPackageVersionArn(const char* value) { m_modelPackageVersionArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the versioned model package that was
+     * provided to SageMaker Neo when you initiated a compilation job.</p>
+     */
+    inline DescribeCompilationJobResult& WithModelPackageVersionArn(const Aws::String& value) { SetModelPackageVersionArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the versioned model package that was
+     * provided to SageMaker Neo when you initiated a compilation job.</p>
+     */
+    inline DescribeCompilationJobResult& WithModelPackageVersionArn(Aws::String&& value) { SetModelPackageVersionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the versioned model package that was
+     * provided to SageMaker Neo when you initiated a compilation job.</p>
+     */
+    inline DescribeCompilationJobResult& WithModelPackageVersionArn(const char* value) { SetModelPackageVersionArn(value); return *this;}
+
+
+    /**
      * <p>The time that the model compilation job was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
@@ -634,6 +677,8 @@ namespace Model
     StoppingCondition m_stoppingCondition;
 
     Aws::String m_inferenceImage;
+
+    Aws::String m_modelPackageVersionArn;
 
     Aws::Utils::DateTime m_creationTime;
 

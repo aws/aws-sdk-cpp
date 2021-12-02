@@ -8,6 +8,7 @@
 #include <aws/kendra/KendraRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kendra/model/DataSourceConfiguration.h>
+#include <aws/kendra/model/CustomDocumentEnrichmentConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -174,22 +175,34 @@ namespace Model
     inline UpdateDataSourceRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 
 
-    
+    /**
+     * <p>Configuration information for an Amazon Kendra data source.</p>
+     */
     inline const DataSourceConfiguration& GetConfiguration() const{ return m_configuration; }
 
-    
+    /**
+     * <p>Configuration information for an Amazon Kendra data source.</p>
+     */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
-    
+    /**
+     * <p>Configuration information for an Amazon Kendra data source.</p>
+     */
     inline void SetConfiguration(const DataSourceConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
-    
+    /**
+     * <p>Configuration information for an Amazon Kendra data source.</p>
+     */
     inline void SetConfiguration(DataSourceConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
-    
+    /**
+     * <p>Configuration information for an Amazon Kendra data source.</p>
+     */
     inline UpdateDataSourceRequest& WithConfiguration(const DataSourceConfiguration& value) { SetConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>Configuration information for an Amazon Kendra data source.</p>
+     */
     inline UpdateDataSourceRequest& WithConfiguration(DataSourceConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
 
@@ -396,6 +409,67 @@ namespace Model
      */
     inline UpdateDataSourceRequest& WithLanguageCode(const char* value) { SetLanguageCode(value); return *this;}
 
+
+    /**
+     * <p>Configuration information for altering document metadata and content during
+     * the document ingestion process when you update a data source.</p> <p>For more
+     * information on how to create, modify and delete document metadata, or make other
+     * content alterations when you ingest documents into Amazon Kendra, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+     * document metadata during the ingestion process</a>.</p>
+     */
+    inline const CustomDocumentEnrichmentConfiguration& GetCustomDocumentEnrichmentConfiguration() const{ return m_customDocumentEnrichmentConfiguration; }
+
+    /**
+     * <p>Configuration information for altering document metadata and content during
+     * the document ingestion process when you update a data source.</p> <p>For more
+     * information on how to create, modify and delete document metadata, or make other
+     * content alterations when you ingest documents into Amazon Kendra, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+     * document metadata during the ingestion process</a>.</p>
+     */
+    inline bool CustomDocumentEnrichmentConfigurationHasBeenSet() const { return m_customDocumentEnrichmentConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configuration information for altering document metadata and content during
+     * the document ingestion process when you update a data source.</p> <p>For more
+     * information on how to create, modify and delete document metadata, or make other
+     * content alterations when you ingest documents into Amazon Kendra, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+     * document metadata during the ingestion process</a>.</p>
+     */
+    inline void SetCustomDocumentEnrichmentConfiguration(const CustomDocumentEnrichmentConfiguration& value) { m_customDocumentEnrichmentConfigurationHasBeenSet = true; m_customDocumentEnrichmentConfiguration = value; }
+
+    /**
+     * <p>Configuration information for altering document metadata and content during
+     * the document ingestion process when you update a data source.</p> <p>For more
+     * information on how to create, modify and delete document metadata, or make other
+     * content alterations when you ingest documents into Amazon Kendra, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+     * document metadata during the ingestion process</a>.</p>
+     */
+    inline void SetCustomDocumentEnrichmentConfiguration(CustomDocumentEnrichmentConfiguration&& value) { m_customDocumentEnrichmentConfigurationHasBeenSet = true; m_customDocumentEnrichmentConfiguration = std::move(value); }
+
+    /**
+     * <p>Configuration information for altering document metadata and content during
+     * the document ingestion process when you update a data source.</p> <p>For more
+     * information on how to create, modify and delete document metadata, or make other
+     * content alterations when you ingest documents into Amazon Kendra, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+     * document metadata during the ingestion process</a>.</p>
+     */
+    inline UpdateDataSourceRequest& WithCustomDocumentEnrichmentConfiguration(const CustomDocumentEnrichmentConfiguration& value) { SetCustomDocumentEnrichmentConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration information for altering document metadata and content during
+     * the document ingestion process when you update a data source.</p> <p>For more
+     * information on how to create, modify and delete document metadata, or make other
+     * content alterations when you ingest documents into Amazon Kendra, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+     * document metadata during the ingestion process</a>.</p>
+     */
+    inline UpdateDataSourceRequest& WithCustomDocumentEnrichmentConfiguration(CustomDocumentEnrichmentConfiguration&& value) { SetCustomDocumentEnrichmentConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -421,6 +495,9 @@ namespace Model
 
     Aws::String m_languageCode;
     bool m_languageCodeHasBeenSet;
+
+    CustomDocumentEnrichmentConfiguration m_customDocumentEnrichmentConfiguration;
+    bool m_customDocumentEnrichmentConfigurationHasBeenSet;
   };
 
 } // namespace Model

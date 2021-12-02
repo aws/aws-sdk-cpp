@@ -27,7 +27,9 @@ PipelineExecutionStepMetadata::PipelineExecutionStepMetadata() :
     m_registerModelHasBeenSet(false),
     m_conditionHasBeenSet(false),
     m_callbackHasBeenSet(false),
-    m_lambdaHasBeenSet(false)
+    m_lambdaHasBeenSet(false),
+    m_qualityCheckHasBeenSet(false),
+    m_clarifyCheckHasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ PipelineExecutionStepMetadata::PipelineExecutionStepMetadata(JsonView jsonValue)
     m_registerModelHasBeenSet(false),
     m_conditionHasBeenSet(false),
     m_callbackHasBeenSet(false),
-    m_lambdaHasBeenSet(false)
+    m_lambdaHasBeenSet(false),
+    m_qualityCheckHasBeenSet(false),
+    m_clarifyCheckHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -110,6 +114,20 @@ PipelineExecutionStepMetadata& PipelineExecutionStepMetadata::operator =(JsonVie
     m_lambdaHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("QualityCheck"))
+  {
+    m_qualityCheck = jsonValue.GetObject("QualityCheck");
+
+    m_qualityCheckHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ClarifyCheck"))
+  {
+    m_clarifyCheck = jsonValue.GetObject("ClarifyCheck");
+
+    m_clarifyCheckHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -168,6 +186,18 @@ JsonValue PipelineExecutionStepMetadata::Jsonize() const
   if(m_lambdaHasBeenSet)
   {
    payload.WithObject("Lambda", m_lambda.Jsonize());
+
+  }
+
+  if(m_qualityCheckHasBeenSet)
+  {
+   payload.WithObject("QualityCheck", m_qualityCheck.Jsonize());
+
+  }
+
+  if(m_clarifyCheckHasBeenSet)
+  {
+   payload.WithObject("ClarifyCheck", m_clarifyCheck.Jsonize());
 
   }
 

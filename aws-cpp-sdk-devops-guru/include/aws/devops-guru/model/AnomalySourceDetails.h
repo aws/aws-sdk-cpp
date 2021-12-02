@@ -7,6 +7,7 @@
 #include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/devops-guru/model/CloudWatchMetricsDetail.h>
+#include <aws/devops-guru/model/PerformanceInsightsMetricsDetail.h>
 #include <utility>
 
 namespace Aws
@@ -26,8 +27,7 @@ namespace Model
 
   /**
    * <p> Details about the source of the anomalous operational data that triggered
-   * the anomaly. The one supported source is Amazon CloudWatch metrics.
-   * </p><p><h3>See Also:</h3>   <a
+   * the anomaly.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/AnomalySourceDetails">AWS
    * API Reference</a></p>
    */
@@ -41,57 +41,117 @@ namespace Model
 
 
     /**
-     * <p> An array of <code>CloudWatchMetricsDetail</code> object that contains
-     * information about the analyzed metrics that displayed anomalous behavior. </p>
+     * <p>An array of <code>CloudWatchMetricsDetail</code> objects that contain
+     * information about analyzed CloudWatch metrics that show anomalous behavior. </p>
      */
     inline const Aws::Vector<CloudWatchMetricsDetail>& GetCloudWatchMetrics() const{ return m_cloudWatchMetrics; }
 
     /**
-     * <p> An array of <code>CloudWatchMetricsDetail</code> object that contains
-     * information about the analyzed metrics that displayed anomalous behavior. </p>
+     * <p>An array of <code>CloudWatchMetricsDetail</code> objects that contain
+     * information about analyzed CloudWatch metrics that show anomalous behavior. </p>
      */
     inline bool CloudWatchMetricsHasBeenSet() const { return m_cloudWatchMetricsHasBeenSet; }
 
     /**
-     * <p> An array of <code>CloudWatchMetricsDetail</code> object that contains
-     * information about the analyzed metrics that displayed anomalous behavior. </p>
+     * <p>An array of <code>CloudWatchMetricsDetail</code> objects that contain
+     * information about analyzed CloudWatch metrics that show anomalous behavior. </p>
      */
     inline void SetCloudWatchMetrics(const Aws::Vector<CloudWatchMetricsDetail>& value) { m_cloudWatchMetricsHasBeenSet = true; m_cloudWatchMetrics = value; }
 
     /**
-     * <p> An array of <code>CloudWatchMetricsDetail</code> object that contains
-     * information about the analyzed metrics that displayed anomalous behavior. </p>
+     * <p>An array of <code>CloudWatchMetricsDetail</code> objects that contain
+     * information about analyzed CloudWatch metrics that show anomalous behavior. </p>
      */
     inline void SetCloudWatchMetrics(Aws::Vector<CloudWatchMetricsDetail>&& value) { m_cloudWatchMetricsHasBeenSet = true; m_cloudWatchMetrics = std::move(value); }
 
     /**
-     * <p> An array of <code>CloudWatchMetricsDetail</code> object that contains
-     * information about the analyzed metrics that displayed anomalous behavior. </p>
+     * <p>An array of <code>CloudWatchMetricsDetail</code> objects that contain
+     * information about analyzed CloudWatch metrics that show anomalous behavior. </p>
      */
     inline AnomalySourceDetails& WithCloudWatchMetrics(const Aws::Vector<CloudWatchMetricsDetail>& value) { SetCloudWatchMetrics(value); return *this;}
 
     /**
-     * <p> An array of <code>CloudWatchMetricsDetail</code> object that contains
-     * information about the analyzed metrics that displayed anomalous behavior. </p>
+     * <p>An array of <code>CloudWatchMetricsDetail</code> objects that contain
+     * information about analyzed CloudWatch metrics that show anomalous behavior. </p>
      */
     inline AnomalySourceDetails& WithCloudWatchMetrics(Aws::Vector<CloudWatchMetricsDetail>&& value) { SetCloudWatchMetrics(std::move(value)); return *this;}
 
     /**
-     * <p> An array of <code>CloudWatchMetricsDetail</code> object that contains
-     * information about the analyzed metrics that displayed anomalous behavior. </p>
+     * <p>An array of <code>CloudWatchMetricsDetail</code> objects that contain
+     * information about analyzed CloudWatch metrics that show anomalous behavior. </p>
      */
     inline AnomalySourceDetails& AddCloudWatchMetrics(const CloudWatchMetricsDetail& value) { m_cloudWatchMetricsHasBeenSet = true; m_cloudWatchMetrics.push_back(value); return *this; }
 
     /**
-     * <p> An array of <code>CloudWatchMetricsDetail</code> object that contains
-     * information about the analyzed metrics that displayed anomalous behavior. </p>
+     * <p>An array of <code>CloudWatchMetricsDetail</code> objects that contain
+     * information about analyzed CloudWatch metrics that show anomalous behavior. </p>
      */
     inline AnomalySourceDetails& AddCloudWatchMetrics(CloudWatchMetricsDetail&& value) { m_cloudWatchMetricsHasBeenSet = true; m_cloudWatchMetrics.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>An array of <code>PerformanceInsightsMetricsDetail</code> objects that
+     * contain information about analyzed Performance Insights metrics that show
+     * anomalous behavior.</p>
+     */
+    inline const Aws::Vector<PerformanceInsightsMetricsDetail>& GetPerformanceInsightsMetrics() const{ return m_performanceInsightsMetrics; }
+
+    /**
+     * <p>An array of <code>PerformanceInsightsMetricsDetail</code> objects that
+     * contain information about analyzed Performance Insights metrics that show
+     * anomalous behavior.</p>
+     */
+    inline bool PerformanceInsightsMetricsHasBeenSet() const { return m_performanceInsightsMetricsHasBeenSet; }
+
+    /**
+     * <p>An array of <code>PerformanceInsightsMetricsDetail</code> objects that
+     * contain information about analyzed Performance Insights metrics that show
+     * anomalous behavior.</p>
+     */
+    inline void SetPerformanceInsightsMetrics(const Aws::Vector<PerformanceInsightsMetricsDetail>& value) { m_performanceInsightsMetricsHasBeenSet = true; m_performanceInsightsMetrics = value; }
+
+    /**
+     * <p>An array of <code>PerformanceInsightsMetricsDetail</code> objects that
+     * contain information about analyzed Performance Insights metrics that show
+     * anomalous behavior.</p>
+     */
+    inline void SetPerformanceInsightsMetrics(Aws::Vector<PerformanceInsightsMetricsDetail>&& value) { m_performanceInsightsMetricsHasBeenSet = true; m_performanceInsightsMetrics = std::move(value); }
+
+    /**
+     * <p>An array of <code>PerformanceInsightsMetricsDetail</code> objects that
+     * contain information about analyzed Performance Insights metrics that show
+     * anomalous behavior.</p>
+     */
+    inline AnomalySourceDetails& WithPerformanceInsightsMetrics(const Aws::Vector<PerformanceInsightsMetricsDetail>& value) { SetPerformanceInsightsMetrics(value); return *this;}
+
+    /**
+     * <p>An array of <code>PerformanceInsightsMetricsDetail</code> objects that
+     * contain information about analyzed Performance Insights metrics that show
+     * anomalous behavior.</p>
+     */
+    inline AnomalySourceDetails& WithPerformanceInsightsMetrics(Aws::Vector<PerformanceInsightsMetricsDetail>&& value) { SetPerformanceInsightsMetrics(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of <code>PerformanceInsightsMetricsDetail</code> objects that
+     * contain information about analyzed Performance Insights metrics that show
+     * anomalous behavior.</p>
+     */
+    inline AnomalySourceDetails& AddPerformanceInsightsMetrics(const PerformanceInsightsMetricsDetail& value) { m_performanceInsightsMetricsHasBeenSet = true; m_performanceInsightsMetrics.push_back(value); return *this; }
+
+    /**
+     * <p>An array of <code>PerformanceInsightsMetricsDetail</code> objects that
+     * contain information about analyzed Performance Insights metrics that show
+     * anomalous behavior.</p>
+     */
+    inline AnomalySourceDetails& AddPerformanceInsightsMetrics(PerformanceInsightsMetricsDetail&& value) { m_performanceInsightsMetricsHasBeenSet = true; m_performanceInsightsMetrics.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::Vector<CloudWatchMetricsDetail> m_cloudWatchMetrics;
     bool m_cloudWatchMetricsHasBeenSet;
+
+    Aws::Vector<PerformanceInsightsMetricsDetail> m_performanceInsightsMetrics;
+    bool m_performanceInsightsMetricsHasBeenSet;
   };
 
 } // namespace Model

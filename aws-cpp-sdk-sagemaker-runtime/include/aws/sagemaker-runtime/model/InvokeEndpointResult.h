@@ -141,8 +141,8 @@ namespace Model
      * your code does not set this value in the response, an empty value is returned.
      * For example, if a custom attribute represents the trace ID, your model can
      * prepend the custom attribute with <code>Trace ID:</code> in your post-processing
-     * function.</p> <p>This feature is currently supported in the AWS SDKs but not in
-     * the Amazon SageMaker Python SDK.</p>
+     * function.</p> <p>This feature is currently supported in the Amazon Web Services
+     * SDKs but not in the Amazon SageMaker Python SDK.</p>
      */
     inline const Aws::String& GetCustomAttributes() const{ return m_customAttributes; }
 
@@ -161,8 +161,8 @@ namespace Model
      * your code does not set this value in the response, an empty value is returned.
      * For example, if a custom attribute represents the trace ID, your model can
      * prepend the custom attribute with <code>Trace ID:</code> in your post-processing
-     * function.</p> <p>This feature is currently supported in the AWS SDKs but not in
-     * the Amazon SageMaker Python SDK.</p>
+     * function.</p> <p>This feature is currently supported in the Amazon Web Services
+     * SDKs but not in the Amazon SageMaker Python SDK.</p>
      */
     inline void SetCustomAttributes(const Aws::String& value) { m_customAttributes = value; }
 
@@ -181,8 +181,8 @@ namespace Model
      * your code does not set this value in the response, an empty value is returned.
      * For example, if a custom attribute represents the trace ID, your model can
      * prepend the custom attribute with <code>Trace ID:</code> in your post-processing
-     * function.</p> <p>This feature is currently supported in the AWS SDKs but not in
-     * the Amazon SageMaker Python SDK.</p>
+     * function.</p> <p>This feature is currently supported in the Amazon Web Services
+     * SDKs but not in the Amazon SageMaker Python SDK.</p>
      */
     inline void SetCustomAttributes(Aws::String&& value) { m_customAttributes = std::move(value); }
 
@@ -201,8 +201,8 @@ namespace Model
      * your code does not set this value in the response, an empty value is returned.
      * For example, if a custom attribute represents the trace ID, your model can
      * prepend the custom attribute with <code>Trace ID:</code> in your post-processing
-     * function.</p> <p>This feature is currently supported in the AWS SDKs but not in
-     * the Amazon SageMaker Python SDK.</p>
+     * function.</p> <p>This feature is currently supported in the Amazon Web Services
+     * SDKs but not in the Amazon SageMaker Python SDK.</p>
      */
     inline void SetCustomAttributes(const char* value) { m_customAttributes.assign(value); }
 
@@ -221,8 +221,8 @@ namespace Model
      * your code does not set this value in the response, an empty value is returned.
      * For example, if a custom attribute represents the trace ID, your model can
      * prepend the custom attribute with <code>Trace ID:</code> in your post-processing
-     * function.</p> <p>This feature is currently supported in the AWS SDKs but not in
-     * the Amazon SageMaker Python SDK.</p>
+     * function.</p> <p>This feature is currently supported in the Amazon Web Services
+     * SDKs but not in the Amazon SageMaker Python SDK.</p>
      */
     inline InvokeEndpointResult& WithCustomAttributes(const Aws::String& value) { SetCustomAttributes(value); return *this;}
 
@@ -241,8 +241,8 @@ namespace Model
      * your code does not set this value in the response, an empty value is returned.
      * For example, if a custom attribute represents the trace ID, your model can
      * prepend the custom attribute with <code>Trace ID:</code> in your post-processing
-     * function.</p> <p>This feature is currently supported in the AWS SDKs but not in
-     * the Amazon SageMaker Python SDK.</p>
+     * function.</p> <p>This feature is currently supported in the Amazon Web Services
+     * SDKs but not in the Amazon SageMaker Python SDK.</p>
      */
     inline InvokeEndpointResult& WithCustomAttributes(Aws::String&& value) { SetCustomAttributes(std::move(value)); return *this;}
 
@@ -261,8 +261,8 @@ namespace Model
      * your code does not set this value in the response, an empty value is returned.
      * For example, if a custom attribute represents the trace ID, your model can
      * prepend the custom attribute with <code>Trace ID:</code> in your post-processing
-     * function.</p> <p>This feature is currently supported in the AWS SDKs but not in
-     * the Amazon SageMaker Python SDK.</p>
+     * function.</p> <p>This feature is currently supported in the Amazon Web Services
+     * SDKs but not in the Amazon SageMaker Python SDK.</p>
      */
     inline InvokeEndpointResult& WithCustomAttributes(const char* value) { SetCustomAttributes(value); return *this;}
 

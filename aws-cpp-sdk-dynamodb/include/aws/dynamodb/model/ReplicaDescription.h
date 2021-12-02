@@ -10,6 +10,7 @@
 #include <aws/dynamodb/model/ProvisionedThroughputOverride.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/dynamodb/model/TableClassSummary.h>
 #include <aws/dynamodb/model/ReplicaGlobalSecondaryIndexDescription.h>
 #include <utility>
 
@@ -443,6 +444,25 @@ namespace Model
      */
     inline ReplicaDescription& WithReplicaInaccessibleDateTime(Aws::Utils::DateTime&& value) { SetReplicaInaccessibleDateTime(std::move(value)); return *this;}
 
+
+    
+    inline const TableClassSummary& GetReplicaTableClassSummary() const{ return m_replicaTableClassSummary; }
+
+    
+    inline bool ReplicaTableClassSummaryHasBeenSet() const { return m_replicaTableClassSummaryHasBeenSet; }
+
+    
+    inline void SetReplicaTableClassSummary(const TableClassSummary& value) { m_replicaTableClassSummaryHasBeenSet = true; m_replicaTableClassSummary = value; }
+
+    
+    inline void SetReplicaTableClassSummary(TableClassSummary&& value) { m_replicaTableClassSummaryHasBeenSet = true; m_replicaTableClassSummary = std::move(value); }
+
+    
+    inline ReplicaDescription& WithReplicaTableClassSummary(const TableClassSummary& value) { SetReplicaTableClassSummary(value); return *this;}
+
+    
+    inline ReplicaDescription& WithReplicaTableClassSummary(TableClassSummary&& value) { SetReplicaTableClassSummary(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_regionName;
@@ -468,6 +488,9 @@ namespace Model
 
     Aws::Utils::DateTime m_replicaInaccessibleDateTime;
     bool m_replicaInaccessibleDateTimeHasBeenSet;
+
+    TableClassSummary m_replicaTableClassSummary;
+    bool m_replicaTableClassSummaryHasBeenSet;
   };
 
 } // namespace Model

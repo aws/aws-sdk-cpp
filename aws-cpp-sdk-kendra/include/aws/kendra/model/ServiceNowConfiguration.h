@@ -260,9 +260,9 @@ namespace Model
     /**
      * <p>Determines the type of authentication used to connect to the ServiceNow
      * instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated
-     * using the user name and password provided in the AWS Secrets Manager secret in
-     * the <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon
-     * Kendra is authenticated using the OAuth token and secret provided in the Secrets
+     * using the user name and password provided in the Secrets Manager secret in the
+     * <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra
+     * is authenticated using the OAuth token and secret provided in the Secrets
      * Manager secret, and the user name and password are used to determine which
      * information Amazon Kendra has access to.</p> <p>When you use <code>OAUTH2</code>
      * authentication, you must generate a token and a client secret using the
@@ -275,9 +275,9 @@ namespace Model
     /**
      * <p>Determines the type of authentication used to connect to the ServiceNow
      * instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated
-     * using the user name and password provided in the AWS Secrets Manager secret in
-     * the <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon
-     * Kendra is authenticated using the OAuth token and secret provided in the Secrets
+     * using the user name and password provided in the Secrets Manager secret in the
+     * <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra
+     * is authenticated using the OAuth token and secret provided in the Secrets
      * Manager secret, and the user name and password are used to determine which
      * information Amazon Kendra has access to.</p> <p>When you use <code>OAUTH2</code>
      * authentication, you must generate a token and a client secret using the
@@ -290,9 +290,9 @@ namespace Model
     /**
      * <p>Determines the type of authentication used to connect to the ServiceNow
      * instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated
-     * using the user name and password provided in the AWS Secrets Manager secret in
-     * the <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon
-     * Kendra is authenticated using the OAuth token and secret provided in the Secrets
+     * using the user name and password provided in the Secrets Manager secret in the
+     * <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra
+     * is authenticated using the OAuth token and secret provided in the Secrets
      * Manager secret, and the user name and password are used to determine which
      * information Amazon Kendra has access to.</p> <p>When you use <code>OAUTH2</code>
      * authentication, you must generate a token and a client secret using the
@@ -305,9 +305,9 @@ namespace Model
     /**
      * <p>Determines the type of authentication used to connect to the ServiceNow
      * instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated
-     * using the user name and password provided in the AWS Secrets Manager secret in
-     * the <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon
-     * Kendra is authenticated using the OAuth token and secret provided in the Secrets
+     * using the user name and password provided in the Secrets Manager secret in the
+     * <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra
+     * is authenticated using the OAuth token and secret provided in the Secrets
      * Manager secret, and the user name and password are used to determine which
      * information Amazon Kendra has access to.</p> <p>When you use <code>OAUTH2</code>
      * authentication, you must generate a token and a client secret using the
@@ -320,9 +320,9 @@ namespace Model
     /**
      * <p>Determines the type of authentication used to connect to the ServiceNow
      * instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated
-     * using the user name and password provided in the AWS Secrets Manager secret in
-     * the <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon
-     * Kendra is authenticated using the OAuth token and secret provided in the Secrets
+     * using the user name and password provided in the Secrets Manager secret in the
+     * <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra
+     * is authenticated using the OAuth token and secret provided in the Secrets
      * Manager secret, and the user name and password are used to determine which
      * information Amazon Kendra has access to.</p> <p>When you use <code>OAUTH2</code>
      * authentication, you must generate a token and a client secret using the
@@ -335,9 +335,9 @@ namespace Model
     /**
      * <p>Determines the type of authentication used to connect to the ServiceNow
      * instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated
-     * using the user name and password provided in the AWS Secrets Manager secret in
-     * the <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon
-     * Kendra is authenticated using the OAuth token and secret provided in the Secrets
+     * using the user name and password provided in the Secrets Manager secret in the
+     * <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra
+     * is authenticated using the OAuth token and secret provided in the Secrets
      * Manager secret, and the user name and password are used to determine which
      * information Amazon Kendra has access to.</p> <p>When you use <code>OAUTH2</code>
      * authentication, you must generate a token and a client secret using the

@@ -22,6 +22,7 @@ namespace Aws
 
         static const int Overwrite_HASH = HashingUtils::HashString("Overwrite");
         static const int FailOnConflict_HASH = HashingUtils::HashString("FailOnConflict");
+        static const int Append_HASH = HashingUtils::HashString("Append");
 
 
         MergeStrategy GetMergeStrategyForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == FailOnConflict_HASH)
           {
             return MergeStrategy::FailOnConflict;
+          }
+          else if (hashCode == Append_HASH)
+          {
+            return MergeStrategy::Append;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "Overwrite";
           case MergeStrategy::FailOnConflict:
             return "FailOnConflict";
+          case MergeStrategy::Append:
+            return "Append";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

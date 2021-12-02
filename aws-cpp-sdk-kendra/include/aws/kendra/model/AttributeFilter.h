@@ -30,7 +30,7 @@ namespace Model
    * <p>When you use the <code>AndAllFilters</code> or <code>OrAllFilters</code>,
    * filters you can use 2 layers under the first attribute filter. For example, you
    * can use:</p> <p> <code>&lt;AndAllFilters&gt;</code> </p> <ol> <li> <p> <code>
-   * &lt;OrAllFilters&gt;</code> </p> </li> <li> <p> <code> &lt;EqualTo&gt;</code>
+   * &lt;OrAllFilters&gt;</code> </p> </li> <li> <p> <code> &lt;EqualsTo&gt;</code>
    * </p> </li> </ol> <p>If you use more than 2 layers, you receive a
    * <code>ValidationException</code> exception with the message
    * "<code>AttributeFilter</code> cannot have a depth of more than 2."</p> <p>If you

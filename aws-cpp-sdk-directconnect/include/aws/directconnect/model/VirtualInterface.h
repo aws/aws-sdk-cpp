@@ -1153,6 +1153,27 @@ namespace Model
      */
     inline VirtualInterface& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Indicates whether SiteLink is enabled.</p>
+     */
+    inline bool GetSiteLinkEnabled() const{ return m_siteLinkEnabled; }
+
+    /**
+     * <p>Indicates whether SiteLink is enabled.</p>
+     */
+    inline bool SiteLinkEnabledHasBeenSet() const { return m_siteLinkEnabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether SiteLink is enabled.</p>
+     */
+    inline void SetSiteLinkEnabled(bool value) { m_siteLinkEnabledHasBeenSet = true; m_siteLinkEnabled = value; }
+
+    /**
+     * <p>Indicates whether SiteLink is enabled.</p>
+     */
+    inline VirtualInterface& WithSiteLinkEnabled(bool value) { SetSiteLinkEnabled(value); return *this;}
+
   private:
 
     Aws::String m_ownerAccount;
@@ -1229,6 +1250,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    bool m_siteLinkEnabled;
+    bool m_siteLinkEnabledHasBeenSet;
   };
 
 } // namespace Model

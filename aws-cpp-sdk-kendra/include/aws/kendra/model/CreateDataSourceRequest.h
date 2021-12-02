@@ -10,6 +10,7 @@
 #include <aws/kendra/model/DataSourceType.h>
 #include <aws/kendra/model/DataSourceConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kendra/model/CustomDocumentEnrichmentConfiguration.h>
 #include <aws/kendra/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -620,6 +621,67 @@ namespace Model
      */
     inline CreateDataSourceRequest& WithLanguageCode(const char* value) { SetLanguageCode(value); return *this;}
 
+
+    /**
+     * <p>Configuration information for altering document metadata and content during
+     * the document ingestion process when you create a data source.</p> <p>For more
+     * information on how to create, modify and delete document metadata, or make other
+     * content alterations when you ingest documents into Amazon Kendra, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+     * document metadata during the ingestion process</a>.</p>
+     */
+    inline const CustomDocumentEnrichmentConfiguration& GetCustomDocumentEnrichmentConfiguration() const{ return m_customDocumentEnrichmentConfiguration; }
+
+    /**
+     * <p>Configuration information for altering document metadata and content during
+     * the document ingestion process when you create a data source.</p> <p>For more
+     * information on how to create, modify and delete document metadata, or make other
+     * content alterations when you ingest documents into Amazon Kendra, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+     * document metadata during the ingestion process</a>.</p>
+     */
+    inline bool CustomDocumentEnrichmentConfigurationHasBeenSet() const { return m_customDocumentEnrichmentConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configuration information for altering document metadata and content during
+     * the document ingestion process when you create a data source.</p> <p>For more
+     * information on how to create, modify and delete document metadata, or make other
+     * content alterations when you ingest documents into Amazon Kendra, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+     * document metadata during the ingestion process</a>.</p>
+     */
+    inline void SetCustomDocumentEnrichmentConfiguration(const CustomDocumentEnrichmentConfiguration& value) { m_customDocumentEnrichmentConfigurationHasBeenSet = true; m_customDocumentEnrichmentConfiguration = value; }
+
+    /**
+     * <p>Configuration information for altering document metadata and content during
+     * the document ingestion process when you create a data source.</p> <p>For more
+     * information on how to create, modify and delete document metadata, or make other
+     * content alterations when you ingest documents into Amazon Kendra, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+     * document metadata during the ingestion process</a>.</p>
+     */
+    inline void SetCustomDocumentEnrichmentConfiguration(CustomDocumentEnrichmentConfiguration&& value) { m_customDocumentEnrichmentConfigurationHasBeenSet = true; m_customDocumentEnrichmentConfiguration = std::move(value); }
+
+    /**
+     * <p>Configuration information for altering document metadata and content during
+     * the document ingestion process when you create a data source.</p> <p>For more
+     * information on how to create, modify and delete document metadata, or make other
+     * content alterations when you ingest documents into Amazon Kendra, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+     * document metadata during the ingestion process</a>.</p>
+     */
+    inline CreateDataSourceRequest& WithCustomDocumentEnrichmentConfiguration(const CustomDocumentEnrichmentConfiguration& value) { SetCustomDocumentEnrichmentConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration information for altering document metadata and content during
+     * the document ingestion process when you create a data source.</p> <p>For more
+     * information on how to create, modify and delete document metadata, or make other
+     * content alterations when you ingest documents into Amazon Kendra, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+     * document metadata during the ingestion process</a>.</p>
+     */
+    inline CreateDataSourceRequest& WithCustomDocumentEnrichmentConfiguration(CustomDocumentEnrichmentConfiguration&& value) { SetCustomDocumentEnrichmentConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -651,6 +713,9 @@ namespace Model
 
     Aws::String m_languageCode;
     bool m_languageCodeHasBeenSet;
+
+    CustomDocumentEnrichmentConfiguration m_customDocumentEnrichmentConfiguration;
+    bool m_customDocumentEnrichmentConfigurationHasBeenSet;
   };
 
 } // namespace Model

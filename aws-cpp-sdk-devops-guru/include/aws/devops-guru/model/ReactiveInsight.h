@@ -125,32 +125,44 @@ namespace Model
 
 
     /**
-     * <p> The severity of a reactive insight. </p>
+     * <p>The severity of the insight. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline const InsightSeverity& GetSeverity() const{ return m_severity; }
 
     /**
-     * <p> The severity of a reactive insight. </p>
+     * <p>The severity of the insight. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
 
     /**
-     * <p> The severity of a reactive insight. </p>
+     * <p>The severity of the insight. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline void SetSeverity(const InsightSeverity& value) { m_severityHasBeenSet = true; m_severity = value; }
 
     /**
-     * <p> The severity of a reactive insight. </p>
+     * <p>The severity of the insight. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline void SetSeverity(InsightSeverity&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
 
     /**
-     * <p> The severity of a reactive insight. </p>
+     * <p>The severity of the insight. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline ReactiveInsight& WithSeverity(const InsightSeverity& value) { SetSeverity(value); return *this;}
 
     /**
-     * <p> The severity of a reactive insight. </p>
+     * <p>The severity of the insight. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline ReactiveInsight& WithSeverity(InsightSeverity&& value) { SetSeverity(std::move(value)); return *this;}
 

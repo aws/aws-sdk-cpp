@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/ProvisionedThroughputOverride.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/dynamodb/model/TableClass.h>
 #include <aws/dynamodb/model/ReplicaGlobalSecondaryIndex.h>
 #include <utility>
 
@@ -223,6 +224,43 @@ namespace Model
      */
     inline CreateReplicationGroupMemberAction& AddGlobalSecondaryIndexes(ReplicaGlobalSecondaryIndex&& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Replica-specific table class. If not specified, uses the source table's table
+     * class.</p>
+     */
+    inline const TableClass& GetTableClassOverride() const{ return m_tableClassOverride; }
+
+    /**
+     * <p>Replica-specific table class. If not specified, uses the source table's table
+     * class.</p>
+     */
+    inline bool TableClassOverrideHasBeenSet() const { return m_tableClassOverrideHasBeenSet; }
+
+    /**
+     * <p>Replica-specific table class. If not specified, uses the source table's table
+     * class.</p>
+     */
+    inline void SetTableClassOverride(const TableClass& value) { m_tableClassOverrideHasBeenSet = true; m_tableClassOverride = value; }
+
+    /**
+     * <p>Replica-specific table class. If not specified, uses the source table's table
+     * class.</p>
+     */
+    inline void SetTableClassOverride(TableClass&& value) { m_tableClassOverrideHasBeenSet = true; m_tableClassOverride = std::move(value); }
+
+    /**
+     * <p>Replica-specific table class. If not specified, uses the source table's table
+     * class.</p>
+     */
+    inline CreateReplicationGroupMemberAction& WithTableClassOverride(const TableClass& value) { SetTableClassOverride(value); return *this;}
+
+    /**
+     * <p>Replica-specific table class. If not specified, uses the source table's table
+     * class.</p>
+     */
+    inline CreateReplicationGroupMemberAction& WithTableClassOverride(TableClass&& value) { SetTableClassOverride(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_regionName;
@@ -236,6 +274,9 @@ namespace Model
 
     Aws::Vector<ReplicaGlobalSecondaryIndex> m_globalSecondaryIndexes;
     bool m_globalSecondaryIndexesHasBeenSet;
+
+    TableClass m_tableClassOverride;
+    bool m_tableClassOverrideHasBeenSet;
   };
 
 } // namespace Model

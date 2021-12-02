@@ -27,10 +27,12 @@
 #include <aws/shield/model/DescribeProtectionResult.h>
 #include <aws/shield/model/DescribeProtectionGroupResult.h>
 #include <aws/shield/model/DescribeSubscriptionResult.h>
+#include <aws/shield/model/DisableApplicationLayerAutomaticResponseResult.h>
 #include <aws/shield/model/DisableProactiveEngagementResult.h>
 #include <aws/shield/model/DisassociateDRTLogBucketResult.h>
 #include <aws/shield/model/DisassociateDRTRoleResult.h>
 #include <aws/shield/model/DisassociateHealthCheckResult.h>
+#include <aws/shield/model/EnableApplicationLayerAutomaticResponseResult.h>
 #include <aws/shield/model/EnableProactiveEngagementResult.h>
 #include <aws/shield/model/GetSubscriptionStateResult.h>
 #include <aws/shield/model/ListAttacksResult.h>
@@ -40,6 +42,7 @@
 #include <aws/shield/model/ListTagsForResourceResult.h>
 #include <aws/shield/model/TagResourceResult.h>
 #include <aws/shield/model/UntagResourceResult.h>
+#include <aws/shield/model/UpdateApplicationLayerAutomaticResponseResult.h>
 #include <aws/shield/model/UpdateEmergencyContactSettingsResult.h>
 #include <aws/shield/model/UpdateProtectionGroupResult.h>
 #include <aws/shield/model/UpdateSubscriptionResult.h>
@@ -98,10 +101,12 @@ namespace Model
         class DescribeProtectionRequest;
         class DescribeProtectionGroupRequest;
         class DescribeSubscriptionRequest;
+        class DisableApplicationLayerAutomaticResponseRequest;
         class DisableProactiveEngagementRequest;
         class DisassociateDRTLogBucketRequest;
         class DisassociateDRTRoleRequest;
         class DisassociateHealthCheckRequest;
+        class EnableApplicationLayerAutomaticResponseRequest;
         class EnableProactiveEngagementRequest;
         class GetSubscriptionStateRequest;
         class ListAttacksRequest;
@@ -111,6 +116,7 @@ namespace Model
         class ListTagsForResourceRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
+        class UpdateApplicationLayerAutomaticResponseRequest;
         class UpdateEmergencyContactSettingsRequest;
         class UpdateProtectionGroupRequest;
         class UpdateSubscriptionRequest;
@@ -131,10 +137,12 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeProtectionResult, ShieldError> DescribeProtectionOutcome;
         typedef Aws::Utils::Outcome<DescribeProtectionGroupResult, ShieldError> DescribeProtectionGroupOutcome;
         typedef Aws::Utils::Outcome<DescribeSubscriptionResult, ShieldError> DescribeSubscriptionOutcome;
+        typedef Aws::Utils::Outcome<DisableApplicationLayerAutomaticResponseResult, ShieldError> DisableApplicationLayerAutomaticResponseOutcome;
         typedef Aws::Utils::Outcome<DisableProactiveEngagementResult, ShieldError> DisableProactiveEngagementOutcome;
         typedef Aws::Utils::Outcome<DisassociateDRTLogBucketResult, ShieldError> DisassociateDRTLogBucketOutcome;
         typedef Aws::Utils::Outcome<DisassociateDRTRoleResult, ShieldError> DisassociateDRTRoleOutcome;
         typedef Aws::Utils::Outcome<DisassociateHealthCheckResult, ShieldError> DisassociateHealthCheckOutcome;
+        typedef Aws::Utils::Outcome<EnableApplicationLayerAutomaticResponseResult, ShieldError> EnableApplicationLayerAutomaticResponseOutcome;
         typedef Aws::Utils::Outcome<EnableProactiveEngagementResult, ShieldError> EnableProactiveEngagementOutcome;
         typedef Aws::Utils::Outcome<GetSubscriptionStateResult, ShieldError> GetSubscriptionStateOutcome;
         typedef Aws::Utils::Outcome<ListAttacksResult, ShieldError> ListAttacksOutcome;
@@ -144,6 +152,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, ShieldError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, ShieldError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, ShieldError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateApplicationLayerAutomaticResponseResult, ShieldError> UpdateApplicationLayerAutomaticResponseOutcome;
         typedef Aws::Utils::Outcome<UpdateEmergencyContactSettingsResult, ShieldError> UpdateEmergencyContactSettingsOutcome;
         typedef Aws::Utils::Outcome<UpdateProtectionGroupResult, ShieldError> UpdateProtectionGroupOutcome;
         typedef Aws::Utils::Outcome<UpdateSubscriptionResult, ShieldError> UpdateSubscriptionOutcome;
@@ -164,10 +173,12 @@ namespace Model
         typedef std::future<DescribeProtectionOutcome> DescribeProtectionOutcomeCallable;
         typedef std::future<DescribeProtectionGroupOutcome> DescribeProtectionGroupOutcomeCallable;
         typedef std::future<DescribeSubscriptionOutcome> DescribeSubscriptionOutcomeCallable;
+        typedef std::future<DisableApplicationLayerAutomaticResponseOutcome> DisableApplicationLayerAutomaticResponseOutcomeCallable;
         typedef std::future<DisableProactiveEngagementOutcome> DisableProactiveEngagementOutcomeCallable;
         typedef std::future<DisassociateDRTLogBucketOutcome> DisassociateDRTLogBucketOutcomeCallable;
         typedef std::future<DisassociateDRTRoleOutcome> DisassociateDRTRoleOutcomeCallable;
         typedef std::future<DisassociateHealthCheckOutcome> DisassociateHealthCheckOutcomeCallable;
+        typedef std::future<EnableApplicationLayerAutomaticResponseOutcome> EnableApplicationLayerAutomaticResponseOutcomeCallable;
         typedef std::future<EnableProactiveEngagementOutcome> EnableProactiveEngagementOutcomeCallable;
         typedef std::future<GetSubscriptionStateOutcome> GetSubscriptionStateOutcomeCallable;
         typedef std::future<ListAttacksOutcome> ListAttacksOutcomeCallable;
@@ -177,6 +188,7 @@ namespace Model
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+        typedef std::future<UpdateApplicationLayerAutomaticResponseOutcome> UpdateApplicationLayerAutomaticResponseOutcomeCallable;
         typedef std::future<UpdateEmergencyContactSettingsOutcome> UpdateEmergencyContactSettingsOutcomeCallable;
         typedef std::future<UpdateProtectionGroupOutcome> UpdateProtectionGroupOutcomeCallable;
         typedef std::future<UpdateSubscriptionOutcome> UpdateSubscriptionOutcomeCallable;
@@ -200,10 +212,12 @@ namespace Model
     typedef std::function<void(const ShieldClient*, const Model::DescribeProtectionRequest&, const Model::DescribeProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProtectionResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::DescribeProtectionGroupRequest&, const Model::DescribeProtectionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProtectionGroupResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::DescribeSubscriptionRequest&, const Model::DescribeSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSubscriptionResponseReceivedHandler;
+    typedef std::function<void(const ShieldClient*, const Model::DisableApplicationLayerAutomaticResponseRequest&, const Model::DisableApplicationLayerAutomaticResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableApplicationLayerAutomaticResponseResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::DisableProactiveEngagementRequest&, const Model::DisableProactiveEngagementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableProactiveEngagementResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::DisassociateDRTLogBucketRequest&, const Model::DisassociateDRTLogBucketOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateDRTLogBucketResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::DisassociateDRTRoleRequest&, const Model::DisassociateDRTRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateDRTRoleResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::DisassociateHealthCheckRequest&, const Model::DisassociateHealthCheckOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateHealthCheckResponseReceivedHandler;
+    typedef std::function<void(const ShieldClient*, const Model::EnableApplicationLayerAutomaticResponseRequest&, const Model::EnableApplicationLayerAutomaticResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableApplicationLayerAutomaticResponseResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::EnableProactiveEngagementRequest&, const Model::EnableProactiveEngagementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableProactiveEngagementResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::GetSubscriptionStateRequest&, const Model::GetSubscriptionStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSubscriptionStateResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::ListAttacksRequest&, const Model::ListAttacksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAttacksResponseReceivedHandler;
@@ -213,6 +227,7 @@ namespace Model
     typedef std::function<void(const ShieldClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const ShieldClient*, const Model::UpdateApplicationLayerAutomaticResponseRequest&, const Model::UpdateApplicationLayerAutomaticResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationLayerAutomaticResponseResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::UpdateEmergencyContactSettingsRequest&, const Model::UpdateEmergencyContactSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEmergencyContactSettingsResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::UpdateProtectionGroupRequest&, const Model::UpdateProtectionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProtectionGroupResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::UpdateSubscriptionRequest&, const Model::UpdateSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSubscriptionResponseReceivedHandler;
@@ -260,9 +275,9 @@ namespace Model
          * Amazon S3 buckets with your subscription.</p> <p>To use the services of the SRT
          * and make an <code>AssociateDRTLogBucket</code> request, you must be subscribed
          * to the <a
-         * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
-         * plan</a> or the <a
-         * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
+         * href="https://docs.aws.amazon.com/premiumsupport/business-support/">Business
+         * Support plan</a> or the <a
+         * href="https://docs.aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
          * Support plan</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateDRTLogBucket">AWS
          * API Reference</a></p>
@@ -276,9 +291,9 @@ namespace Model
          * Amazon S3 buckets with your subscription.</p> <p>To use the services of the SRT
          * and make an <code>AssociateDRTLogBucket</code> request, you must be subscribed
          * to the <a
-         * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
-         * plan</a> or the <a
-         * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
+         * href="https://docs.aws.amazon.com/premiumsupport/business-support/">Business
+         * Support plan</a> or the <a
+         * href="https://docs.aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
          * Support plan</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateDRTLogBucket">AWS
          * API Reference</a></p>
@@ -294,9 +309,9 @@ namespace Model
          * Amazon S3 buckets with your subscription.</p> <p>To use the services of the SRT
          * and make an <code>AssociateDRTLogBucket</code> request, you must be subscribed
          * to the <a
-         * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
-         * plan</a> or the <a
-         * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
+         * href="https://docs.aws.amazon.com/premiumsupport/business-support/">Business
+         * Support plan</a> or the <a
+         * href="https://docs.aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
          * Support plan</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateDRTLogBucket">AWS
          * API Reference</a></p>
@@ -314,27 +329,28 @@ namespace Model
          * <code>AssociateDRTRole</code> request for an account that already has an
          * associated role, the new <code>RoleArn</code> will replace the existing
          * <code>RoleArn</code>. </p> <p>Prior to making the <code>AssociateDRTRole</code>
-         * request, you must attach the <a
-         * href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a>
-         * managed policy to the role you will specify in the request. For more information
-         * see <a href="
-         * https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Attaching
-         * and Detaching IAM Policies</a>. The role must also trust the service principal
-         * <code> drt.shield.amazonaws.com</code>. For more information, see <a
+         * request, you must attach the <code>AWSShieldDRTAccessPolicy</code> managed
+         * policy to the role that you'll specify in the request. You can access this
+         * policy in the IAM console at <a
+         * href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a>.
+         * For more information see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Adding
+         * and removing IAM identity permissions</a>. The role must also trust the service
+         * principal <code>drt.shield.amazonaws.com</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM
-         * JSON Policy Elements: Principal</a>.</p> <p>The SRT will have access only to
+         * JSON policy elements: Principal</a>.</p> <p>The SRT will have access only to
          * your WAF and Shield resources. By submitting this request, you authorize the SRT
          * to inspect your WAF and Shield configuration and create and update WAF rules and
          * web ACLs on your behalf. The SRT takes these actions only if explicitly
          * authorized by you.</p> <p>You must have the <code>iam:PassRole</code> permission
          * to make an <code>AssociateDRTRole</code> request. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
-         * a User Permissions to Pass a Role to an Amazon Web Services Service</a>. </p>
+         * a user permissions to pass a role to an Amazon Web Services service</a>. </p>
          * <p>To use the services of the SRT and make an <code>AssociateDRTRole</code>
          * request, you must be subscribed to the <a
-         * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
-         * plan</a> or the <a
-         * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
+         * href="https://docs.aws.amazon.com/premiumsupport/business-support/">Business
+         * Support plan</a> or the <a
+         * href="https://docs.aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
          * Support plan</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateDRTRole">AWS
          * API Reference</a></p>
@@ -350,27 +366,28 @@ namespace Model
          * <code>AssociateDRTRole</code> request for an account that already has an
          * associated role, the new <code>RoleArn</code> will replace the existing
          * <code>RoleArn</code>. </p> <p>Prior to making the <code>AssociateDRTRole</code>
-         * request, you must attach the <a
-         * href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a>
-         * managed policy to the role you will specify in the request. For more information
-         * see <a href="
-         * https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Attaching
-         * and Detaching IAM Policies</a>. The role must also trust the service principal
-         * <code> drt.shield.amazonaws.com</code>. For more information, see <a
+         * request, you must attach the <code>AWSShieldDRTAccessPolicy</code> managed
+         * policy to the role that you'll specify in the request. You can access this
+         * policy in the IAM console at <a
+         * href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a>.
+         * For more information see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Adding
+         * and removing IAM identity permissions</a>. The role must also trust the service
+         * principal <code>drt.shield.amazonaws.com</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM
-         * JSON Policy Elements: Principal</a>.</p> <p>The SRT will have access only to
+         * JSON policy elements: Principal</a>.</p> <p>The SRT will have access only to
          * your WAF and Shield resources. By submitting this request, you authorize the SRT
          * to inspect your WAF and Shield configuration and create and update WAF rules and
          * web ACLs on your behalf. The SRT takes these actions only if explicitly
          * authorized by you.</p> <p>You must have the <code>iam:PassRole</code> permission
          * to make an <code>AssociateDRTRole</code> request. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
-         * a User Permissions to Pass a Role to an Amazon Web Services Service</a>. </p>
+         * a user permissions to pass a role to an Amazon Web Services service</a>. </p>
          * <p>To use the services of the SRT and make an <code>AssociateDRTRole</code>
          * request, you must be subscribed to the <a
-         * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
-         * plan</a> or the <a
-         * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
+         * href="https://docs.aws.amazon.com/premiumsupport/business-support/">Business
+         * Support plan</a> or the <a
+         * href="https://docs.aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
          * Support plan</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateDRTRole">AWS
          * API Reference</a></p>
@@ -388,27 +405,28 @@ namespace Model
          * <code>AssociateDRTRole</code> request for an account that already has an
          * associated role, the new <code>RoleArn</code> will replace the existing
          * <code>RoleArn</code>. </p> <p>Prior to making the <code>AssociateDRTRole</code>
-         * request, you must attach the <a
-         * href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a>
-         * managed policy to the role you will specify in the request. For more information
-         * see <a href="
-         * https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Attaching
-         * and Detaching IAM Policies</a>. The role must also trust the service principal
-         * <code> drt.shield.amazonaws.com</code>. For more information, see <a
+         * request, you must attach the <code>AWSShieldDRTAccessPolicy</code> managed
+         * policy to the role that you'll specify in the request. You can access this
+         * policy in the IAM console at <a
+         * href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a>.
+         * For more information see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Adding
+         * and removing IAM identity permissions</a>. The role must also trust the service
+         * principal <code>drt.shield.amazonaws.com</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM
-         * JSON Policy Elements: Principal</a>.</p> <p>The SRT will have access only to
+         * JSON policy elements: Principal</a>.</p> <p>The SRT will have access only to
          * your WAF and Shield resources. By submitting this request, you authorize the SRT
          * to inspect your WAF and Shield configuration and create and update WAF rules and
          * web ACLs on your behalf. The SRT takes these actions only if explicitly
          * authorized by you.</p> <p>You must have the <code>iam:PassRole</code> permission
          * to make an <code>AssociateDRTRole</code> request. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
-         * a User Permissions to Pass a Role to an Amazon Web Services Service</a>. </p>
+         * a user permissions to pass a role to an Amazon Web Services service</a>. </p>
          * <p>To use the services of the SRT and make an <code>AssociateDRTRole</code>
          * request, you must be subscribed to the <a
-         * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
-         * plan</a> or the <a
-         * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
+         * href="https://docs.aws.amazon.com/premiumsupport/business-support/">Business
+         * Support plan</a> or the <a
+         * href="https://docs.aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
          * Support plan</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateDRTRole">AWS
          * API Reference</a></p>
@@ -421,8 +439,8 @@ namespace Model
          * <p>Adds health-based detection to the Shield Advanced protection for a resource.
          * Shield Advanced health-based detection uses the health of your Amazon Web
          * Services resource to improve responsiveness and accuracy in attack detection and
-         * mitigation. </p> <p>You define the health check in Route 53 and then associate
-         * it with your Shield Advanced protection. For more information, see <a
+         * response. </p> <p>You define the health check in Route 53 and then associate it
+         * with your Shield Advanced protection. For more information, see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield
          * Advanced Health-Based Detection</a> in the <i>WAF Developer Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
@@ -435,8 +453,8 @@ namespace Model
          * <p>Adds health-based detection to the Shield Advanced protection for a resource.
          * Shield Advanced health-based detection uses the health of your Amazon Web
          * Services resource to improve responsiveness and accuracy in attack detection and
-         * mitigation. </p> <p>You define the health check in Route 53 and then associate
-         * it with your Shield Advanced protection. For more information, see <a
+         * response. </p> <p>You define the health check in Route 53 and then associate it
+         * with your Shield Advanced protection. For more information, see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield
          * Advanced Health-Based Detection</a> in the <i>WAF Developer Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
@@ -451,8 +469,8 @@ namespace Model
          * <p>Adds health-based detection to the Shield Advanced protection for a resource.
          * Shield Advanced health-based detection uses the health of your Amazon Web
          * Services resource to improve responsiveness and accuracy in attack detection and
-         * mitigation. </p> <p>You define the health check in Route 53 and then associate
-         * it with your Shield Advanced protection. For more information, see <a
+         * response. </p> <p>You define the health check in Route 53 and then associate it
+         * with your Shield Advanced protection. For more information, see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield
          * Advanced Health-Based Detection</a> in the <i>WAF Developer Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
@@ -524,16 +542,17 @@ namespace Model
         /**
          * <p>Enables Shield Advanced for a specific Amazon Web Services resource. The
          * resource can be an Amazon CloudFront distribution, Elastic Load Balancing load
-         * balancer, Global Accelerator accelerator, Elastic IP Address, or an Amazon Route
-         * 53 hosted zone.</p> <p>You can add protection to only a single resource with
-         * each CreateProtection request. If you want to add protection to multiple
-         * resources at once, use the <a href="https://console.aws.amazon.com/waf/">WAF
-         * console</a>. For more information see <a
+         * balancer, Global Accelerator accelerator, Elastic IP Address, or an Amazon
+         * Route 53 hosted zone.</p> <p>You can add protection to only a single resource
+         * with each <code>CreateProtection</code> request. You can add protection to
+         * multiple resources at once through the Shield Advanced console at <a
+         * href="https://console.aws.amazon.com/wafv2/shieldv2#/">https://console.aws.amazon.com/wafv2/shieldv2#/</a>.
+         * For more information see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting
          * Started with Shield Advanced</a> and <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/configure-new-protection.html">Add
-         * Shield Advanced Protection to more Amazon Web Services
-         * Resources</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/configure-new-protection.html">Adding
+         * Shield Advanced protection to Amazon Web Services resources</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtection">AWS
          * API Reference</a></p>
          */
@@ -542,16 +561,17 @@ namespace Model
         /**
          * <p>Enables Shield Advanced for a specific Amazon Web Services resource. The
          * resource can be an Amazon CloudFront distribution, Elastic Load Balancing load
-         * balancer, Global Accelerator accelerator, Elastic IP Address, or an Amazon Route
-         * 53 hosted zone.</p> <p>You can add protection to only a single resource with
-         * each CreateProtection request. If you want to add protection to multiple
-         * resources at once, use the <a href="https://console.aws.amazon.com/waf/">WAF
-         * console</a>. For more information see <a
+         * balancer, Global Accelerator accelerator, Elastic IP Address, or an Amazon
+         * Route 53 hosted zone.</p> <p>You can add protection to only a single resource
+         * with each <code>CreateProtection</code> request. You can add protection to
+         * multiple resources at once through the Shield Advanced console at <a
+         * href="https://console.aws.amazon.com/wafv2/shieldv2#/">https://console.aws.amazon.com/wafv2/shieldv2#/</a>.
+         * For more information see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting
          * Started with Shield Advanced</a> and <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/configure-new-protection.html">Add
-         * Shield Advanced Protection to more Amazon Web Services
-         * Resources</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/configure-new-protection.html">Adding
+         * Shield Advanced protection to Amazon Web Services resources</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtection">AWS
          * API Reference</a></p>
          *
@@ -562,16 +582,17 @@ namespace Model
         /**
          * <p>Enables Shield Advanced for a specific Amazon Web Services resource. The
          * resource can be an Amazon CloudFront distribution, Elastic Load Balancing load
-         * balancer, Global Accelerator accelerator, Elastic IP Address, or an Amazon Route
-         * 53 hosted zone.</p> <p>You can add protection to only a single resource with
-         * each CreateProtection request. If you want to add protection to multiple
-         * resources at once, use the <a href="https://console.aws.amazon.com/waf/">WAF
-         * console</a>. For more information see <a
+         * balancer, Global Accelerator accelerator, Elastic IP Address, or an Amazon
+         * Route 53 hosted zone.</p> <p>You can add protection to only a single resource
+         * with each <code>CreateProtection</code> request. You can add protection to
+         * multiple resources at once through the Shield Advanced console at <a
+         * href="https://console.aws.amazon.com/wafv2/shieldv2#/">https://console.aws.amazon.com/wafv2/shieldv2#/</a>.
+         * For more information see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting
          * Started with Shield Advanced</a> and <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/configure-new-protection.html">Add
-         * Shield Advanced Protection to more Amazon Web Services
-         * Resources</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/configure-new-protection.html">Adding
+         * Shield Advanced protection to Amazon Web Services resources</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtection">AWS
          * API Reference</a></p>
          *
@@ -924,6 +945,40 @@ namespace Model
         virtual void DescribeSubscriptionAsync(const Model::DescribeSubscriptionRequest& request, const DescribeSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Disable the Shield Advanced automatic application layer DDoS mitigation
+         * feature for the resource. This stops Shield Advanced from creating, verifying,
+         * and applying WAF rules for attacks that it detects for the resource.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisableApplicationLayerAutomaticResponse">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableApplicationLayerAutomaticResponseOutcome DisableApplicationLayerAutomaticResponse(const Model::DisableApplicationLayerAutomaticResponseRequest& request) const;
+
+        /**
+         * <p>Disable the Shield Advanced automatic application layer DDoS mitigation
+         * feature for the resource. This stops Shield Advanced from creating, verifying,
+         * and applying WAF rules for attacks that it detects for the resource.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisableApplicationLayerAutomaticResponse">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisableApplicationLayerAutomaticResponseOutcomeCallable DisableApplicationLayerAutomaticResponseCallable(const Model::DisableApplicationLayerAutomaticResponseRequest& request) const;
+
+        /**
+         * <p>Disable the Shield Advanced automatic application layer DDoS mitigation
+         * feature for the resource. This stops Shield Advanced from creating, verifying,
+         * and applying WAF rules for attacks that it detects for the resource.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisableApplicationLayerAutomaticResponse">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisableApplicationLayerAutomaticResponseAsync(const Model::DisableApplicationLayerAutomaticResponseRequest& request, const DisableApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Removes authorization from the Shield Response Team (SRT) to notify contacts
          * about escalations to the SRT and to initiate proactive customer
          * support.</p><p><h3>See Also:</h3>   <a
@@ -956,15 +1011,8 @@ namespace Model
 
         /**
          * <p>Removes the Shield Response Team's (SRT) access to the specified Amazon S3
-         * bucket containing the logs that you shared previously.</p> <p>To make a
-         * <code>DisassociateDRTLogBucket</code> request, you must be subscribed to the <a
-         * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
-         * plan</a> or the <a
-         * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
-         * Support plan</a>. However, if you are not subscribed to one of these support
-         * plans, but had been previously and had granted the SRT access to your account,
-         * you can submit a <code>DisassociateDRTLogBucket</code> request to remove this
-         * access.</p><p><h3>See Also:</h3>   <a
+         * bucket containing the logs that you shared previously.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateDRTLogBucket">AWS
          * API Reference</a></p>
          */
@@ -972,15 +1020,8 @@ namespace Model
 
         /**
          * <p>Removes the Shield Response Team's (SRT) access to the specified Amazon S3
-         * bucket containing the logs that you shared previously.</p> <p>To make a
-         * <code>DisassociateDRTLogBucket</code> request, you must be subscribed to the <a
-         * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
-         * plan</a> or the <a
-         * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
-         * Support plan</a>. However, if you are not subscribed to one of these support
-         * plans, but had been previously and had granted the SRT access to your account,
-         * you can submit a <code>DisassociateDRTLogBucket</code> request to remove this
-         * access.</p><p><h3>See Also:</h3>   <a
+         * bucket containing the logs that you shared previously.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateDRTLogBucket">AWS
          * API Reference</a></p>
          *
@@ -990,15 +1031,8 @@ namespace Model
 
         /**
          * <p>Removes the Shield Response Team's (SRT) access to the specified Amazon S3
-         * bucket containing the logs that you shared previously.</p> <p>To make a
-         * <code>DisassociateDRTLogBucket</code> request, you must be subscribed to the <a
-         * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
-         * plan</a> or the <a
-         * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
-         * Support plan</a>. However, if you are not subscribed to one of these support
-         * plans, but had been previously and had granted the SRT access to your account,
-         * you can submit a <code>DisassociateDRTLogBucket</code> request to remove this
-         * access.</p><p><h3>See Also:</h3>   <a
+         * bucket containing the logs that you shared previously.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateDRTLogBucket">AWS
          * API Reference</a></p>
          *
@@ -1008,15 +1042,7 @@ namespace Model
 
         /**
          * <p>Removes the Shield Response Team's (SRT) access to your Amazon Web Services
-         * account.</p> <p>To make a <code>DisassociateDRTRole</code> request, you must be
-         * subscribed to the <a
-         * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
-         * plan</a> or the <a
-         * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
-         * Support plan</a>. However, if you are not subscribed to one of these support
-         * plans, but had been previously and had granted the SRT access to your account,
-         * you can submit a <code>DisassociateDRTRole</code> request to remove this
-         * access.</p><p><h3>See Also:</h3>   <a
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateDRTRole">AWS
          * API Reference</a></p>
          */
@@ -1024,15 +1050,7 @@ namespace Model
 
         /**
          * <p>Removes the Shield Response Team's (SRT) access to your Amazon Web Services
-         * account.</p> <p>To make a <code>DisassociateDRTRole</code> request, you must be
-         * subscribed to the <a
-         * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
-         * plan</a> or the <a
-         * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
-         * Support plan</a>. However, if you are not subscribed to one of these support
-         * plans, but had been previously and had granted the SRT access to your account,
-         * you can submit a <code>DisassociateDRTRole</code> request to remove this
-         * access.</p><p><h3>See Also:</h3>   <a
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateDRTRole">AWS
          * API Reference</a></p>
          *
@@ -1042,15 +1060,7 @@ namespace Model
 
         /**
          * <p>Removes the Shield Response Team's (SRT) access to your Amazon Web Services
-         * account.</p> <p>To make a <code>DisassociateDRTRole</code> request, you must be
-         * subscribed to the <a
-         * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
-         * plan</a> or the <a
-         * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
-         * Support plan</a>. However, if you are not subscribed to one of these support
-         * plans, but had been previously and had granted the SRT access to your account,
-         * you can submit a <code>DisassociateDRTRole</code> request to remove this
-         * access.</p><p><h3>See Also:</h3>   <a
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateDRTRole">AWS
          * API Reference</a></p>
          *
@@ -1062,9 +1072,9 @@ namespace Model
          * <p>Removes health-based detection from the Shield Advanced protection for a
          * resource. Shield Advanced health-based detection uses the health of your Amazon
          * Web Services resource to improve responsiveness and accuracy in attack detection
-         * and mitigation. </p> <p>You define the health check in Route 53 and then
-         * associate or disassociate it with your Shield Advanced protection. For more
-         * information, see <a
+         * and response. </p> <p>You define the health check in Route 53 and then associate
+         * or disassociate it with your Shield Advanced protection. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield
          * Advanced Health-Based Detection</a> in the <i>WAF Developer Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
@@ -1077,9 +1087,9 @@ namespace Model
          * <p>Removes health-based detection from the Shield Advanced protection for a
          * resource. Shield Advanced health-based detection uses the health of your Amazon
          * Web Services resource to improve responsiveness and accuracy in attack detection
-         * and mitigation. </p> <p>You define the health check in Route 53 and then
-         * associate or disassociate it with your Shield Advanced protection. For more
-         * information, see <a
+         * and response. </p> <p>You define the health check in Route 53 and then associate
+         * or disassociate it with your Shield Advanced protection. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield
          * Advanced Health-Based Detection</a> in the <i>WAF Developer Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
@@ -1094,9 +1104,9 @@ namespace Model
          * <p>Removes health-based detection from the Shield Advanced protection for a
          * resource. Shield Advanced health-based detection uses the health of your Amazon
          * Web Services resource to improve responsiveness and accuracy in attack detection
-         * and mitigation. </p> <p>You define the health check in Route 53 and then
-         * associate or disassociate it with your Shield Advanced protection. For more
-         * information, see <a
+         * and response. </p> <p>You define the health check in Route 53 and then associate
+         * or disassociate it with your Shield Advanced protection. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield
          * Advanced Health-Based Detection</a> in the <i>WAF Developer Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
@@ -1106,6 +1116,97 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateHealthCheckAsync(const Model::DisassociateHealthCheckRequest& request, const DisassociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Enable the Shield Advanced automatic application layer DDoS mitigation for
+         * the resource. </p>  <p>This feature is available for Amazon CloudFront
+         * distributions only.</p>  <p>This causes Shield Advanced to create,
+         * verify, and apply WAF rules for DDoS attacks that it detects for the resource.
+         * Shield Advanced applies the rules in a Shield rule group inside the web ACL that
+         * you've associated with the resource. For information about how automatic
+         * mitigation works and the requirements for using it, see <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-advanced-automatic-app-layer-response.html">Shield
+         * Advanced automatic application layer DDoS mitigation</a>.</p> <p>Don't use this
+         * action to make changes to automatic mitigation settings when it's already
+         * enabled for a resource. Instead, use
+         * <a>UpdateApplicationLayerAutomaticResponse</a>.</p> <p>To use this feature, you
+         * must associate a web ACL with the protected resource. The web ACL must be
+         * created using the latest version of WAF (v2). You can associate the web ACL
+         * through the Shield Advanced console at <a
+         * href="https://console.aws.amazon.com/wafv2/shieldv2#/">https://console.aws.amazon.com/wafv2/shieldv2#/</a>.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting
+         * Started with Shield Advanced</a>.</p> <p>You can also do this through the WAF
+         * console or the WAF API, but you must manage Shield Advanced automatic mitigation
+         * through Shield Advanced. For information about WAF, see <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">WAF Developer
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/EnableApplicationLayerAutomaticResponse">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableApplicationLayerAutomaticResponseOutcome EnableApplicationLayerAutomaticResponse(const Model::EnableApplicationLayerAutomaticResponseRequest& request) const;
+
+        /**
+         * <p>Enable the Shield Advanced automatic application layer DDoS mitigation for
+         * the resource. </p>  <p>This feature is available for Amazon CloudFront
+         * distributions only.</p>  <p>This causes Shield Advanced to create,
+         * verify, and apply WAF rules for DDoS attacks that it detects for the resource.
+         * Shield Advanced applies the rules in a Shield rule group inside the web ACL that
+         * you've associated with the resource. For information about how automatic
+         * mitigation works and the requirements for using it, see <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-advanced-automatic-app-layer-response.html">Shield
+         * Advanced automatic application layer DDoS mitigation</a>.</p> <p>Don't use this
+         * action to make changes to automatic mitigation settings when it's already
+         * enabled for a resource. Instead, use
+         * <a>UpdateApplicationLayerAutomaticResponse</a>.</p> <p>To use this feature, you
+         * must associate a web ACL with the protected resource. The web ACL must be
+         * created using the latest version of WAF (v2). You can associate the web ACL
+         * through the Shield Advanced console at <a
+         * href="https://console.aws.amazon.com/wafv2/shieldv2#/">https://console.aws.amazon.com/wafv2/shieldv2#/</a>.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting
+         * Started with Shield Advanced</a>.</p> <p>You can also do this through the WAF
+         * console or the WAF API, but you must manage Shield Advanced automatic mitigation
+         * through Shield Advanced. For information about WAF, see <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">WAF Developer
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/EnableApplicationLayerAutomaticResponse">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::EnableApplicationLayerAutomaticResponseOutcomeCallable EnableApplicationLayerAutomaticResponseCallable(const Model::EnableApplicationLayerAutomaticResponseRequest& request) const;
+
+        /**
+         * <p>Enable the Shield Advanced automatic application layer DDoS mitigation for
+         * the resource. </p>  <p>This feature is available for Amazon CloudFront
+         * distributions only.</p>  <p>This causes Shield Advanced to create,
+         * verify, and apply WAF rules for DDoS attacks that it detects for the resource.
+         * Shield Advanced applies the rules in a Shield rule group inside the web ACL that
+         * you've associated with the resource. For information about how automatic
+         * mitigation works and the requirements for using it, see <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-advanced-automatic-app-layer-response.html">Shield
+         * Advanced automatic application layer DDoS mitigation</a>.</p> <p>Don't use this
+         * action to make changes to automatic mitigation settings when it's already
+         * enabled for a resource. Instead, use
+         * <a>UpdateApplicationLayerAutomaticResponse</a>.</p> <p>To use this feature, you
+         * must associate a web ACL with the protected resource. The web ACL must be
+         * created using the latest version of WAF (v2). You can associate the web ACL
+         * through the Shield Advanced console at <a
+         * href="https://console.aws.amazon.com/wafv2/shieldv2#/">https://console.aws.amazon.com/wafv2/shieldv2#/</a>.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting
+         * Started with Shield Advanced</a>.</p> <p>You can also do this through the WAF
+         * console or the WAF API, but you must manage Shield Advanced automatic mitigation
+         * through Shield Advanced. For information about WAF, see <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">WAF Developer
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/EnableApplicationLayerAutomaticResponse">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void EnableApplicationLayerAutomaticResponseAsync(const Model::EnableApplicationLayerAutomaticResponseRequest& request, const EnableApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Authorizes the Shield Response Team (SRT) to use email and phone to notify
@@ -1357,6 +1458,37 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates an existing Shield Advanced automatic application layer DDoS
+         * mitigation configuration for the specified resource.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateApplicationLayerAutomaticResponse">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateApplicationLayerAutomaticResponseOutcome UpdateApplicationLayerAutomaticResponse(const Model::UpdateApplicationLayerAutomaticResponseRequest& request) const;
+
+        /**
+         * <p>Updates an existing Shield Advanced automatic application layer DDoS
+         * mitigation configuration for the specified resource.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateApplicationLayerAutomaticResponse">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateApplicationLayerAutomaticResponseOutcomeCallable UpdateApplicationLayerAutomaticResponseCallable(const Model::UpdateApplicationLayerAutomaticResponseRequest& request) const;
+
+        /**
+         * <p>Updates an existing Shield Advanced automatic application layer DDoS
+         * mitigation configuration for the specified resource.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateApplicationLayerAutomaticResponse">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateApplicationLayerAutomaticResponseAsync(const Model::UpdateApplicationLayerAutomaticResponseRequest& request, const UpdateApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the details of the list of email addresses and phone numbers that the
          * Shield Response Team (SRT) can use to contact you if you have proactive
          * engagement enabled, for escalations to the SRT and to initiate proactive
@@ -1475,10 +1607,12 @@ namespace Model
         void DescribeProtectionAsyncHelper(const Model::DescribeProtectionRequest& request, const DescribeProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProtectionGroupAsyncHelper(const Model::DescribeProtectionGroupRequest& request, const DescribeProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSubscriptionAsyncHelper(const Model::DescribeSubscriptionRequest& request, const DescribeSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisableApplicationLayerAutomaticResponseAsyncHelper(const Model::DisableApplicationLayerAutomaticResponseRequest& request, const DisableApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableProactiveEngagementAsyncHelper(const Model::DisableProactiveEngagementRequest& request, const DisableProactiveEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateDRTLogBucketAsyncHelper(const Model::DisassociateDRTLogBucketRequest& request, const DisassociateDRTLogBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateDRTRoleAsyncHelper(const Model::DisassociateDRTRoleRequest& request, const DisassociateDRTRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateHealthCheckAsyncHelper(const Model::DisassociateHealthCheckRequest& request, const DisassociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void EnableApplicationLayerAutomaticResponseAsyncHelper(const Model::EnableApplicationLayerAutomaticResponseRequest& request, const EnableApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableProactiveEngagementAsyncHelper(const Model::EnableProactiveEngagementRequest& request, const EnableProactiveEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSubscriptionStateAsyncHelper(const Model::GetSubscriptionStateRequest& request, const GetSubscriptionStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAttacksAsyncHelper(const Model::ListAttacksRequest& request, const ListAttacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1488,6 +1622,7 @@ namespace Model
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateApplicationLayerAutomaticResponseAsyncHelper(const Model::UpdateApplicationLayerAutomaticResponseRequest& request, const UpdateApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateEmergencyContactSettingsAsyncHelper(const Model::UpdateEmergencyContactSettingsRequest& request, const UpdateEmergencyContactSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateProtectionGroupAsyncHelper(const Model::UpdateProtectionGroupRequest& request, const UpdateProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSubscriptionAsyncHelper(const Model::UpdateSubscriptionRequest& request, const UpdateSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

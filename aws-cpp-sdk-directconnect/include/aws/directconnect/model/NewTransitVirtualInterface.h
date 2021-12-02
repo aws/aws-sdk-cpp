@@ -411,6 +411,27 @@ namespace Model
      */
     inline NewTransitVirtualInterface& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Indicates whether to enable or disable SiteLink.</p>
+     */
+    inline bool GetEnableSiteLink() const{ return m_enableSiteLink; }
+
+    /**
+     * <p>Indicates whether to enable or disable SiteLink.</p>
+     */
+    inline bool EnableSiteLinkHasBeenSet() const { return m_enableSiteLinkHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to enable or disable SiteLink.</p>
+     */
+    inline void SetEnableSiteLink(bool value) { m_enableSiteLinkHasBeenSet = true; m_enableSiteLink = value; }
+
+    /**
+     * <p>Indicates whether to enable or disable SiteLink.</p>
+     */
+    inline NewTransitVirtualInterface& WithEnableSiteLink(bool value) { SetEnableSiteLink(value); return *this;}
+
   private:
 
     Aws::String m_virtualInterfaceName;
@@ -442,6 +463,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    bool m_enableSiteLink;
+    bool m_enableSiteLinkHasBeenSet;
   };
 
 } // namespace Model

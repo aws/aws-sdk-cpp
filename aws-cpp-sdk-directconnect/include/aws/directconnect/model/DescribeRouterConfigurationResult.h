@@ -132,37 +132,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the virtual interface assigned by the customer network.</p>
+     * <p>Provides the details about a virtual interface's router.</p>
      */
     inline const Aws::String& GetVirtualInterfaceName() const{ return m_virtualInterfaceName; }
 
     /**
-     * <p>The name of the virtual interface assigned by the customer network.</p>
+     * <p>Provides the details about a virtual interface's router.</p>
      */
     inline void SetVirtualInterfaceName(const Aws::String& value) { m_virtualInterfaceName = value; }
 
     /**
-     * <p>The name of the virtual interface assigned by the customer network.</p>
+     * <p>Provides the details about a virtual interface's router.</p>
      */
     inline void SetVirtualInterfaceName(Aws::String&& value) { m_virtualInterfaceName = std::move(value); }
 
     /**
-     * <p>The name of the virtual interface assigned by the customer network.</p>
+     * <p>Provides the details about a virtual interface's router.</p>
      */
     inline void SetVirtualInterfaceName(const char* value) { m_virtualInterfaceName.assign(value); }
 
     /**
-     * <p>The name of the virtual interface assigned by the customer network.</p>
+     * <p>Provides the details about a virtual interface's router.</p>
      */
     inline DescribeRouterConfigurationResult& WithVirtualInterfaceName(const Aws::String& value) { SetVirtualInterfaceName(value); return *this;}
 
     /**
-     * <p>The name of the virtual interface assigned by the customer network.</p>
+     * <p>Provides the details about a virtual interface's router.</p>
      */
     inline DescribeRouterConfigurationResult& WithVirtualInterfaceName(Aws::String&& value) { SetVirtualInterfaceName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the virtual interface assigned by the customer network.</p>
+     * <p>Provides the details about a virtual interface's router.</p>
      */
     inline DescribeRouterConfigurationResult& WithVirtualInterfaceName(const char* value) { SetVirtualInterfaceName(value); return *this;}
 

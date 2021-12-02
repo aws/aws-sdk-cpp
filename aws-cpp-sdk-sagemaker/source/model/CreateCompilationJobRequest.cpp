@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 CreateCompilationJobRequest::CreateCompilationJobRequest() : 
     m_compilationJobNameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
+    m_modelPackageVersionArnHasBeenSet(false),
     m_inputConfigHasBeenSet(false),
     m_outputConfigHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
@@ -36,6 +37,12 @@ Aws::String CreateCompilationJobRequest::SerializePayload() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("RoleArn", m_roleArn);
+
+  }
+
+  if(m_modelPackageVersionArnHasBeenSet)
+  {
+   payload.WithString("ModelPackageVersionArn", m_modelPackageVersionArn);
 
   }
 

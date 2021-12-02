@@ -996,6 +996,22 @@ namespace Model
      */
     inline UpdateVirtualInterfaceAttributesResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Indicates whether SiteLink is enabled.</p>
+     */
+    inline bool GetSiteLinkEnabled() const{ return m_siteLinkEnabled; }
+
+    /**
+     * <p>Indicates whether SiteLink is enabled.</p>
+     */
+    inline void SetSiteLinkEnabled(bool value) { m_siteLinkEnabled = value; }
+
+    /**
+     * <p>Indicates whether SiteLink is enabled.</p>
+     */
+    inline UpdateVirtualInterfaceAttributesResult& WithSiteLinkEnabled(bool value) { SetSiteLinkEnabled(value); return *this;}
+
   private:
 
     Aws::String m_ownerAccount;
@@ -1047,6 +1063,8 @@ namespace Model
     Aws::String m_awsLogicalDeviceId;
 
     Aws::Vector<Tag> m_tags;
+
+    bool m_siteLinkEnabled;
   };
 
 } // namespace Model

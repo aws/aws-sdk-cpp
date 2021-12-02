@@ -18,7 +18,8 @@ UpdateModelPackageRequest::UpdateModelPackageRequest() :
     m_modelApprovalStatusHasBeenSet(false),
     m_approvalDescriptionHasBeenSet(false),
     m_customerMetadataPropertiesHasBeenSet(false),
-    m_customerMetadataPropertiesToRemoveHasBeenSet(false)
+    m_customerMetadataPropertiesToRemoveHasBeenSet(false),
+    m_additionalInferenceSpecificationsToAddHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,17 @@ Aws::String UpdateModelPackageRequest::SerializePayload() const
      customerMetadataPropertiesToRemoveJsonList[customerMetadataPropertiesToRemoveIndex].AsString(m_customerMetadataPropertiesToRemove[customerMetadataPropertiesToRemoveIndex]);
    }
    payload.WithArray("CustomerMetadataPropertiesToRemove", std::move(customerMetadataPropertiesToRemoveJsonList));
+
+  }
+
+  if(m_additionalInferenceSpecificationsToAddHasBeenSet)
+  {
+   Array<JsonValue> additionalInferenceSpecificationsToAddJsonList(m_additionalInferenceSpecificationsToAdd.size());
+   for(unsigned additionalInferenceSpecificationsToAddIndex = 0; additionalInferenceSpecificationsToAddIndex < additionalInferenceSpecificationsToAddJsonList.GetLength(); ++additionalInferenceSpecificationsToAddIndex)
+   {
+     additionalInferenceSpecificationsToAddJsonList[additionalInferenceSpecificationsToAddIndex].AsObject(m_additionalInferenceSpecificationsToAdd[additionalInferenceSpecificationsToAddIndex].Jsonize());
+   }
+   payload.WithArray("AdditionalInferenceSpecificationsToAdd", std::move(additionalInferenceSpecificationsToAddJsonList));
 
   }
 

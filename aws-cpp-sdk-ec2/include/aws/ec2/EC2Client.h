@@ -21,6 +21,7 @@
 #include <aws/ec2/model/AdvertiseByoipCidrResponse.h>
 #include <aws/ec2/model/AllocateAddressResponse.h>
 #include <aws/ec2/model/AllocateHostsResponse.h>
+#include <aws/ec2/model/AllocateIpamPoolCidrResponse.h>
 #include <aws/ec2/model/ApplySecurityGroupsToClientVpnTargetNetworkResponse.h>
 #include <aws/ec2/model/AssignIpv6AddressesResponse.h>
 #include <aws/ec2/model/AssignPrivateIpAddressesResponse.h>
@@ -71,6 +72,9 @@
 #include <aws/ec2/model/CreateInstanceEventWindowResponse.h>
 #include <aws/ec2/model/CreateInstanceExportTaskResponse.h>
 #include <aws/ec2/model/CreateInternetGatewayResponse.h>
+#include <aws/ec2/model/CreateIpamResponse.h>
+#include <aws/ec2/model/CreateIpamPoolResponse.h>
+#include <aws/ec2/model/CreateIpamScopeResponse.h>
 #include <aws/ec2/model/CreateKeyPairResponse.h>
 #include <aws/ec2/model/CreateLaunchTemplateResponse.h>
 #include <aws/ec2/model/CreateLaunchTemplateVersionResponse.h>
@@ -79,10 +83,12 @@
 #include <aws/ec2/model/CreateManagedPrefixListResponse.h>
 #include <aws/ec2/model/CreateNatGatewayResponse.h>
 #include <aws/ec2/model/CreateNetworkAclResponse.h>
+#include <aws/ec2/model/CreateNetworkInsightsAccessScopeResponse.h>
 #include <aws/ec2/model/CreateNetworkInsightsPathResponse.h>
 #include <aws/ec2/model/CreateNetworkInterfaceResponse.h>
 #include <aws/ec2/model/CreateNetworkInterfacePermissionResponse.h>
 #include <aws/ec2/model/CreatePlacementGroupResponse.h>
+#include <aws/ec2/model/CreatePublicIpv4PoolResponse.h>
 #include <aws/ec2/model/CreateReplaceRootVolumeTaskResponse.h>
 #include <aws/ec2/model/CreateReservedInstancesListingResponse.h>
 #include <aws/ec2/model/CreateRestoreImageTaskResponse.h>
@@ -124,15 +130,21 @@
 #include <aws/ec2/model/DeleteFlowLogsResponse.h>
 #include <aws/ec2/model/DeleteFpgaImageResponse.h>
 #include <aws/ec2/model/DeleteInstanceEventWindowResponse.h>
+#include <aws/ec2/model/DeleteIpamResponse.h>
+#include <aws/ec2/model/DeleteIpamPoolResponse.h>
+#include <aws/ec2/model/DeleteIpamScopeResponse.h>
 #include <aws/ec2/model/DeleteLaunchTemplateResponse.h>
 #include <aws/ec2/model/DeleteLaunchTemplateVersionsResponse.h>
 #include <aws/ec2/model/DeleteLocalGatewayRouteResponse.h>
 #include <aws/ec2/model/DeleteLocalGatewayRouteTableVpcAssociationResponse.h>
 #include <aws/ec2/model/DeleteManagedPrefixListResponse.h>
 #include <aws/ec2/model/DeleteNatGatewayResponse.h>
+#include <aws/ec2/model/DeleteNetworkInsightsAccessScopeResponse.h>
+#include <aws/ec2/model/DeleteNetworkInsightsAccessScopeAnalysisResponse.h>
 #include <aws/ec2/model/DeleteNetworkInsightsAnalysisResponse.h>
 #include <aws/ec2/model/DeleteNetworkInsightsPathResponse.h>
 #include <aws/ec2/model/DeleteNetworkInterfacePermissionResponse.h>
+#include <aws/ec2/model/DeletePublicIpv4PoolResponse.h>
 #include <aws/ec2/model/DeleteQueuedReservedInstancesResponse.h>
 #include <aws/ec2/model/DeleteSubnetCidrReservationResponse.h>
 #include <aws/ec2/model/DeleteTrafficMirrorFilterResponse.h>
@@ -153,6 +165,8 @@
 #include <aws/ec2/model/DeleteVpcEndpointsResponse.h>
 #include <aws/ec2/model/DeleteVpcPeeringConnectionResponse.h>
 #include <aws/ec2/model/DeprovisionByoipCidrResponse.h>
+#include <aws/ec2/model/DeprovisionIpamPoolCidrResponse.h>
+#include <aws/ec2/model/DeprovisionPublicIpv4PoolCidrResponse.h>
 #include <aws/ec2/model/DeregisterInstanceEventNotificationAttributesResponse.h>
 #include <aws/ec2/model/DeregisterTransitGatewayMulticastGroupMembersResponse.h>
 #include <aws/ec2/model/DeregisterTransitGatewayMulticastGroupSourcesResponse.h>
@@ -206,6 +220,9 @@
 #include <aws/ec2/model/DescribeInstanceTypesResponse.h>
 #include <aws/ec2/model/DescribeInstancesResponse.h>
 #include <aws/ec2/model/DescribeInternetGatewaysResponse.h>
+#include <aws/ec2/model/DescribeIpamPoolsResponse.h>
+#include <aws/ec2/model/DescribeIpamScopesResponse.h>
+#include <aws/ec2/model/DescribeIpamsResponse.h>
 #include <aws/ec2/model/DescribeIpv6PoolsResponse.h>
 #include <aws/ec2/model/DescribeKeyPairsResponse.h>
 #include <aws/ec2/model/DescribeLaunchTemplateVersionsResponse.h>
@@ -220,6 +237,8 @@
 #include <aws/ec2/model/DescribeMovingAddressesResponse.h>
 #include <aws/ec2/model/DescribeNatGatewaysResponse.h>
 #include <aws/ec2/model/DescribeNetworkAclsResponse.h>
+#include <aws/ec2/model/DescribeNetworkInsightsAccessScopeAnalysesResponse.h>
+#include <aws/ec2/model/DescribeNetworkInsightsAccessScopesResponse.h>
 #include <aws/ec2/model/DescribeNetworkInsightsAnalysesResponse.h>
 #include <aws/ec2/model/DescribeNetworkInsightsPathsResponse.h>
 #include <aws/ec2/model/DescribeNetworkInterfaceAttributeResponse.h>
@@ -288,6 +307,7 @@
 #include <aws/ec2/model/DisableEbsEncryptionByDefaultResponse.h>
 #include <aws/ec2/model/DisableFastSnapshotRestoresResponse.h>
 #include <aws/ec2/model/DisableImageDeprecationResponse.h>
+#include <aws/ec2/model/DisableIpamOrganizationAdminAccountResponse.h>
 #include <aws/ec2/model/DisableSerialConsoleAccessResponse.h>
 #include <aws/ec2/model/DisableTransitGatewayRouteTablePropagationResponse.h>
 #include <aws/ec2/model/DisableVpcClassicLinkResponse.h>
@@ -304,6 +324,7 @@
 #include <aws/ec2/model/EnableEbsEncryptionByDefaultResponse.h>
 #include <aws/ec2/model/EnableFastSnapshotRestoresResponse.h>
 #include <aws/ec2/model/EnableImageDeprecationResponse.h>
+#include <aws/ec2/model/EnableIpamOrganizationAdminAccountResponse.h>
 #include <aws/ec2/model/EnableSerialConsoleAccessResponse.h>
 #include <aws/ec2/model/EnableTransitGatewayRouteTablePropagationResponse.h>
 #include <aws/ec2/model/EnableVpcClassicLinkResponse.h>
@@ -325,9 +346,15 @@
 #include <aws/ec2/model/GetGroupsForCapacityReservationResponse.h>
 #include <aws/ec2/model/GetHostReservationPurchasePreviewResponse.h>
 #include <aws/ec2/model/GetInstanceTypesFromInstanceRequirementsResponse.h>
+#include <aws/ec2/model/GetIpamAddressHistoryResponse.h>
+#include <aws/ec2/model/GetIpamPoolAllocationsResponse.h>
+#include <aws/ec2/model/GetIpamPoolCidrsResponse.h>
+#include <aws/ec2/model/GetIpamResourceCidrsResponse.h>
 #include <aws/ec2/model/GetLaunchTemplateDataResponse.h>
 #include <aws/ec2/model/GetManagedPrefixListAssociationsResponse.h>
 #include <aws/ec2/model/GetManagedPrefixListEntriesResponse.h>
+#include <aws/ec2/model/GetNetworkInsightsAccessScopeAnalysisFindingsResponse.h>
+#include <aws/ec2/model/GetNetworkInsightsAccessScopeContentResponse.h>
 #include <aws/ec2/model/GetPasswordDataResponse.h>
 #include <aws/ec2/model/GetReservedInstancesExchangeQuoteResponse.h>
 #include <aws/ec2/model/GetSerialConsoleAccessStatusResponse.h>
@@ -363,6 +390,10 @@
 #include <aws/ec2/model/ModifyInstanceEventWindowResponse.h>
 #include <aws/ec2/model/ModifyInstanceMetadataOptionsResponse.h>
 #include <aws/ec2/model/ModifyInstancePlacementResponse.h>
+#include <aws/ec2/model/ModifyIpamResponse.h>
+#include <aws/ec2/model/ModifyIpamPoolResponse.h>
+#include <aws/ec2/model/ModifyIpamResourceCidrResponse.h>
+#include <aws/ec2/model/ModifyIpamScopeResponse.h>
 #include <aws/ec2/model/ModifyLaunchTemplateResponse.h>
 #include <aws/ec2/model/ModifyManagedPrefixListResponse.h>
 #include <aws/ec2/model/ModifyPrivateDnsNameOptionsResponse.h>
@@ -389,7 +420,10 @@
 #include <aws/ec2/model/ModifyVpnTunnelOptionsResponse.h>
 #include <aws/ec2/model/MonitorInstancesResponse.h>
 #include <aws/ec2/model/MoveAddressToVpcResponse.h>
+#include <aws/ec2/model/MoveByoipCidrToIpamResponse.h>
 #include <aws/ec2/model/ProvisionByoipCidrResponse.h>
+#include <aws/ec2/model/ProvisionIpamPoolCidrResponse.h>
+#include <aws/ec2/model/ProvisionPublicIpv4PoolCidrResponse.h>
 #include <aws/ec2/model/PurchaseHostReservationResponse.h>
 #include <aws/ec2/model/PurchaseReservedInstancesOfferingResponse.h>
 #include <aws/ec2/model/PurchaseScheduledInstancesResponse.h>
@@ -403,6 +437,7 @@
 #include <aws/ec2/model/RejectVpcEndpointConnectionsResponse.h>
 #include <aws/ec2/model/RejectVpcPeeringConnectionResponse.h>
 #include <aws/ec2/model/ReleaseHostsResponse.h>
+#include <aws/ec2/model/ReleaseIpamPoolAllocationResponse.h>
 #include <aws/ec2/model/ReplaceIamInstanceProfileAssociationResponse.h>
 #include <aws/ec2/model/ReplaceNetworkAclAssociationResponse.h>
 #include <aws/ec2/model/ReplaceRouteTableAssociationResponse.h>
@@ -425,6 +460,7 @@
 #include <aws/ec2/model/SearchTransitGatewayMulticastGroupsResponse.h>
 #include <aws/ec2/model/SearchTransitGatewayRoutesResponse.h>
 #include <aws/ec2/model/StartInstancesResponse.h>
+#include <aws/ec2/model/StartNetworkInsightsAccessScopeAnalysisResponse.h>
 #include <aws/ec2/model/StartNetworkInsightsAnalysisResponse.h>
 #include <aws/ec2/model/StartVpcEndpointServicePrivateDnsVerificationResponse.h>
 #include <aws/ec2/model/StopInstancesResponse.h>
@@ -490,6 +526,7 @@ namespace Model
         class AdvertiseByoipCidrRequest;
         class AllocateAddressRequest;
         class AllocateHostsRequest;
+        class AllocateIpamPoolCidrRequest;
         class ApplySecurityGroupsToClientVpnTargetNetworkRequest;
         class AssignIpv6AddressesRequest;
         class AssignPrivateIpAddressesRequest;
@@ -544,6 +581,9 @@ namespace Model
         class CreateInstanceEventWindowRequest;
         class CreateInstanceExportTaskRequest;
         class CreateInternetGatewayRequest;
+        class CreateIpamRequest;
+        class CreateIpamPoolRequest;
+        class CreateIpamScopeRequest;
         class CreateKeyPairRequest;
         class CreateLaunchTemplateRequest;
         class CreateLaunchTemplateVersionRequest;
@@ -553,10 +593,12 @@ namespace Model
         class CreateNatGatewayRequest;
         class CreateNetworkAclRequest;
         class CreateNetworkAclEntryRequest;
+        class CreateNetworkInsightsAccessScopeRequest;
         class CreateNetworkInsightsPathRequest;
         class CreateNetworkInterfaceRequest;
         class CreateNetworkInterfacePermissionRequest;
         class CreatePlacementGroupRequest;
+        class CreatePublicIpv4PoolRequest;
         class CreateReplaceRootVolumeTaskRequest;
         class CreateReservedInstancesListingRequest;
         class CreateRestoreImageTaskRequest;
@@ -603,6 +645,9 @@ namespace Model
         class DeleteFpgaImageRequest;
         class DeleteInstanceEventWindowRequest;
         class DeleteInternetGatewayRequest;
+        class DeleteIpamRequest;
+        class DeleteIpamPoolRequest;
+        class DeleteIpamScopeRequest;
         class DeleteKeyPairRequest;
         class DeleteLaunchTemplateRequest;
         class DeleteLaunchTemplateVersionsRequest;
@@ -612,11 +657,14 @@ namespace Model
         class DeleteNatGatewayRequest;
         class DeleteNetworkAclRequest;
         class DeleteNetworkAclEntryRequest;
+        class DeleteNetworkInsightsAccessScopeRequest;
+        class DeleteNetworkInsightsAccessScopeAnalysisRequest;
         class DeleteNetworkInsightsAnalysisRequest;
         class DeleteNetworkInsightsPathRequest;
         class DeleteNetworkInterfaceRequest;
         class DeleteNetworkInterfacePermissionRequest;
         class DeletePlacementGroupRequest;
+        class DeletePublicIpv4PoolRequest;
         class DeleteQueuedReservedInstancesRequest;
         class DeleteRouteRequest;
         class DeleteRouteTableRequest;
@@ -649,6 +697,8 @@ namespace Model
         class DeleteVpnConnectionRouteRequest;
         class DeleteVpnGatewayRequest;
         class DeprovisionByoipCidrRequest;
+        class DeprovisionIpamPoolCidrRequest;
+        class DeprovisionPublicIpv4PoolCidrRequest;
         class DeregisterImageRequest;
         class DeregisterInstanceEventNotificationAttributesRequest;
         class DeregisterTransitGatewayMulticastGroupMembersRequest;
@@ -703,6 +753,9 @@ namespace Model
         class DescribeInstanceTypesRequest;
         class DescribeInstancesRequest;
         class DescribeInternetGatewaysRequest;
+        class DescribeIpamPoolsRequest;
+        class DescribeIpamScopesRequest;
+        class DescribeIpamsRequest;
         class DescribeIpv6PoolsRequest;
         class DescribeKeyPairsRequest;
         class DescribeLaunchTemplateVersionsRequest;
@@ -717,6 +770,8 @@ namespace Model
         class DescribeMovingAddressesRequest;
         class DescribeNatGatewaysRequest;
         class DescribeNetworkAclsRequest;
+        class DescribeNetworkInsightsAccessScopeAnalysesRequest;
+        class DescribeNetworkInsightsAccessScopesRequest;
         class DescribeNetworkInsightsAnalysesRequest;
         class DescribeNetworkInsightsPathsRequest;
         class DescribeNetworkInterfaceAttributeRequest;
@@ -788,6 +843,7 @@ namespace Model
         class DisableEbsEncryptionByDefaultRequest;
         class DisableFastSnapshotRestoresRequest;
         class DisableImageDeprecationRequest;
+        class DisableIpamOrganizationAdminAccountRequest;
         class DisableSerialConsoleAccessRequest;
         class DisableTransitGatewayRouteTablePropagationRequest;
         class DisableVgwRoutePropagationRequest;
@@ -807,6 +863,7 @@ namespace Model
         class EnableEbsEncryptionByDefaultRequest;
         class EnableFastSnapshotRestoresRequest;
         class EnableImageDeprecationRequest;
+        class EnableIpamOrganizationAdminAccountRequest;
         class EnableSerialConsoleAccessRequest;
         class EnableTransitGatewayRouteTablePropagationRequest;
         class EnableVgwRoutePropagationRequest;
@@ -830,9 +887,15 @@ namespace Model
         class GetGroupsForCapacityReservationRequest;
         class GetHostReservationPurchasePreviewRequest;
         class GetInstanceTypesFromInstanceRequirementsRequest;
+        class GetIpamAddressHistoryRequest;
+        class GetIpamPoolAllocationsRequest;
+        class GetIpamPoolCidrsRequest;
+        class GetIpamResourceCidrsRequest;
         class GetLaunchTemplateDataRequest;
         class GetManagedPrefixListAssociationsRequest;
         class GetManagedPrefixListEntriesRequest;
+        class GetNetworkInsightsAccessScopeAnalysisFindingsRequest;
+        class GetNetworkInsightsAccessScopeContentRequest;
         class GetPasswordDataRequest;
         class GetReservedInstancesExchangeQuoteRequest;
         class GetSerialConsoleAccessStatusRequest;
@@ -872,6 +935,10 @@ namespace Model
         class ModifyInstanceEventWindowRequest;
         class ModifyInstanceMetadataOptionsRequest;
         class ModifyInstancePlacementRequest;
+        class ModifyIpamRequest;
+        class ModifyIpamPoolRequest;
+        class ModifyIpamResourceCidrRequest;
+        class ModifyIpamScopeRequest;
         class ModifyLaunchTemplateRequest;
         class ModifyManagedPrefixListRequest;
         class ModifyNetworkInterfaceAttributeRequest;
@@ -903,7 +970,10 @@ namespace Model
         class ModifyVpnTunnelOptionsRequest;
         class MonitorInstancesRequest;
         class MoveAddressToVpcRequest;
+        class MoveByoipCidrToIpamRequest;
         class ProvisionByoipCidrRequest;
+        class ProvisionIpamPoolCidrRequest;
+        class ProvisionPublicIpv4PoolCidrRequest;
         class PurchaseHostReservationRequest;
         class PurchaseReservedInstancesOfferingRequest;
         class PurchaseScheduledInstancesRequest;
@@ -919,6 +989,7 @@ namespace Model
         class RejectVpcPeeringConnectionRequest;
         class ReleaseAddressRequest;
         class ReleaseHostsRequest;
+        class ReleaseIpamPoolAllocationRequest;
         class ReplaceIamInstanceProfileAssociationRequest;
         class ReplaceNetworkAclAssociationRequest;
         class ReplaceNetworkAclEntryRequest;
@@ -949,6 +1020,7 @@ namespace Model
         class SearchTransitGatewayRoutesRequest;
         class SendDiagnosticInterruptRequest;
         class StartInstancesRequest;
+        class StartNetworkInsightsAccessScopeAnalysisRequest;
         class StartNetworkInsightsAnalysisRequest;
         class StartVpcEndpointServicePrivateDnsVerificationRequest;
         class StopInstancesRequest;
@@ -970,6 +1042,7 @@ namespace Model
         typedef Aws::Utils::Outcome<AdvertiseByoipCidrResponse, EC2Error> AdvertiseByoipCidrOutcome;
         typedef Aws::Utils::Outcome<AllocateAddressResponse, EC2Error> AllocateAddressOutcome;
         typedef Aws::Utils::Outcome<AllocateHostsResponse, EC2Error> AllocateHostsOutcome;
+        typedef Aws::Utils::Outcome<AllocateIpamPoolCidrResponse, EC2Error> AllocateIpamPoolCidrOutcome;
         typedef Aws::Utils::Outcome<ApplySecurityGroupsToClientVpnTargetNetworkResponse, EC2Error> ApplySecurityGroupsToClientVpnTargetNetworkOutcome;
         typedef Aws::Utils::Outcome<AssignIpv6AddressesResponse, EC2Error> AssignIpv6AddressesOutcome;
         typedef Aws::Utils::Outcome<AssignPrivateIpAddressesResponse, EC2Error> AssignPrivateIpAddressesOutcome;
@@ -1024,6 +1097,9 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateInstanceEventWindowResponse, EC2Error> CreateInstanceEventWindowOutcome;
         typedef Aws::Utils::Outcome<CreateInstanceExportTaskResponse, EC2Error> CreateInstanceExportTaskOutcome;
         typedef Aws::Utils::Outcome<CreateInternetGatewayResponse, EC2Error> CreateInternetGatewayOutcome;
+        typedef Aws::Utils::Outcome<CreateIpamResponse, EC2Error> CreateIpamOutcome;
+        typedef Aws::Utils::Outcome<CreateIpamPoolResponse, EC2Error> CreateIpamPoolOutcome;
+        typedef Aws::Utils::Outcome<CreateIpamScopeResponse, EC2Error> CreateIpamScopeOutcome;
         typedef Aws::Utils::Outcome<CreateKeyPairResponse, EC2Error> CreateKeyPairOutcome;
         typedef Aws::Utils::Outcome<CreateLaunchTemplateResponse, EC2Error> CreateLaunchTemplateOutcome;
         typedef Aws::Utils::Outcome<CreateLaunchTemplateVersionResponse, EC2Error> CreateLaunchTemplateVersionOutcome;
@@ -1033,10 +1109,12 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateNatGatewayResponse, EC2Error> CreateNatGatewayOutcome;
         typedef Aws::Utils::Outcome<CreateNetworkAclResponse, EC2Error> CreateNetworkAclOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> CreateNetworkAclEntryOutcome;
+        typedef Aws::Utils::Outcome<CreateNetworkInsightsAccessScopeResponse, EC2Error> CreateNetworkInsightsAccessScopeOutcome;
         typedef Aws::Utils::Outcome<CreateNetworkInsightsPathResponse, EC2Error> CreateNetworkInsightsPathOutcome;
         typedef Aws::Utils::Outcome<CreateNetworkInterfaceResponse, EC2Error> CreateNetworkInterfaceOutcome;
         typedef Aws::Utils::Outcome<CreateNetworkInterfacePermissionResponse, EC2Error> CreateNetworkInterfacePermissionOutcome;
         typedef Aws::Utils::Outcome<CreatePlacementGroupResponse, EC2Error> CreatePlacementGroupOutcome;
+        typedef Aws::Utils::Outcome<CreatePublicIpv4PoolResponse, EC2Error> CreatePublicIpv4PoolOutcome;
         typedef Aws::Utils::Outcome<CreateReplaceRootVolumeTaskResponse, EC2Error> CreateReplaceRootVolumeTaskOutcome;
         typedef Aws::Utils::Outcome<CreateReservedInstancesListingResponse, EC2Error> CreateReservedInstancesListingOutcome;
         typedef Aws::Utils::Outcome<CreateRestoreImageTaskResponse, EC2Error> CreateRestoreImageTaskOutcome;
@@ -1083,6 +1161,9 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteFpgaImageResponse, EC2Error> DeleteFpgaImageOutcome;
         typedef Aws::Utils::Outcome<DeleteInstanceEventWindowResponse, EC2Error> DeleteInstanceEventWindowOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteInternetGatewayOutcome;
+        typedef Aws::Utils::Outcome<DeleteIpamResponse, EC2Error> DeleteIpamOutcome;
+        typedef Aws::Utils::Outcome<DeleteIpamPoolResponse, EC2Error> DeleteIpamPoolOutcome;
+        typedef Aws::Utils::Outcome<DeleteIpamScopeResponse, EC2Error> DeleteIpamScopeOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteKeyPairOutcome;
         typedef Aws::Utils::Outcome<DeleteLaunchTemplateResponse, EC2Error> DeleteLaunchTemplateOutcome;
         typedef Aws::Utils::Outcome<DeleteLaunchTemplateVersionsResponse, EC2Error> DeleteLaunchTemplateVersionsOutcome;
@@ -1092,11 +1173,14 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteNatGatewayResponse, EC2Error> DeleteNatGatewayOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteNetworkAclOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteNetworkAclEntryOutcome;
+        typedef Aws::Utils::Outcome<DeleteNetworkInsightsAccessScopeResponse, EC2Error> DeleteNetworkInsightsAccessScopeOutcome;
+        typedef Aws::Utils::Outcome<DeleteNetworkInsightsAccessScopeAnalysisResponse, EC2Error> DeleteNetworkInsightsAccessScopeAnalysisOutcome;
         typedef Aws::Utils::Outcome<DeleteNetworkInsightsAnalysisResponse, EC2Error> DeleteNetworkInsightsAnalysisOutcome;
         typedef Aws::Utils::Outcome<DeleteNetworkInsightsPathResponse, EC2Error> DeleteNetworkInsightsPathOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteNetworkInterfaceOutcome;
         typedef Aws::Utils::Outcome<DeleteNetworkInterfacePermissionResponse, EC2Error> DeleteNetworkInterfacePermissionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeletePlacementGroupOutcome;
+        typedef Aws::Utils::Outcome<DeletePublicIpv4PoolResponse, EC2Error> DeletePublicIpv4PoolOutcome;
         typedef Aws::Utils::Outcome<DeleteQueuedReservedInstancesResponse, EC2Error> DeleteQueuedReservedInstancesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteRouteOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteRouteTableOutcome;
@@ -1129,6 +1213,8 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteVpnConnectionRouteOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteVpnGatewayOutcome;
         typedef Aws::Utils::Outcome<DeprovisionByoipCidrResponse, EC2Error> DeprovisionByoipCidrOutcome;
+        typedef Aws::Utils::Outcome<DeprovisionIpamPoolCidrResponse, EC2Error> DeprovisionIpamPoolCidrOutcome;
+        typedef Aws::Utils::Outcome<DeprovisionPublicIpv4PoolCidrResponse, EC2Error> DeprovisionPublicIpv4PoolCidrOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeregisterImageOutcome;
         typedef Aws::Utils::Outcome<DeregisterInstanceEventNotificationAttributesResponse, EC2Error> DeregisterInstanceEventNotificationAttributesOutcome;
         typedef Aws::Utils::Outcome<DeregisterTransitGatewayMulticastGroupMembersResponse, EC2Error> DeregisterTransitGatewayMulticastGroupMembersOutcome;
@@ -1183,6 +1269,9 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeInstanceTypesResponse, EC2Error> DescribeInstanceTypesOutcome;
         typedef Aws::Utils::Outcome<DescribeInstancesResponse, EC2Error> DescribeInstancesOutcome;
         typedef Aws::Utils::Outcome<DescribeInternetGatewaysResponse, EC2Error> DescribeInternetGatewaysOutcome;
+        typedef Aws::Utils::Outcome<DescribeIpamPoolsResponse, EC2Error> DescribeIpamPoolsOutcome;
+        typedef Aws::Utils::Outcome<DescribeIpamScopesResponse, EC2Error> DescribeIpamScopesOutcome;
+        typedef Aws::Utils::Outcome<DescribeIpamsResponse, EC2Error> DescribeIpamsOutcome;
         typedef Aws::Utils::Outcome<DescribeIpv6PoolsResponse, EC2Error> DescribeIpv6PoolsOutcome;
         typedef Aws::Utils::Outcome<DescribeKeyPairsResponse, EC2Error> DescribeKeyPairsOutcome;
         typedef Aws::Utils::Outcome<DescribeLaunchTemplateVersionsResponse, EC2Error> DescribeLaunchTemplateVersionsOutcome;
@@ -1197,6 +1286,8 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeMovingAddressesResponse, EC2Error> DescribeMovingAddressesOutcome;
         typedef Aws::Utils::Outcome<DescribeNatGatewaysResponse, EC2Error> DescribeNatGatewaysOutcome;
         typedef Aws::Utils::Outcome<DescribeNetworkAclsResponse, EC2Error> DescribeNetworkAclsOutcome;
+        typedef Aws::Utils::Outcome<DescribeNetworkInsightsAccessScopeAnalysesResponse, EC2Error> DescribeNetworkInsightsAccessScopeAnalysesOutcome;
+        typedef Aws::Utils::Outcome<DescribeNetworkInsightsAccessScopesResponse, EC2Error> DescribeNetworkInsightsAccessScopesOutcome;
         typedef Aws::Utils::Outcome<DescribeNetworkInsightsAnalysesResponse, EC2Error> DescribeNetworkInsightsAnalysesOutcome;
         typedef Aws::Utils::Outcome<DescribeNetworkInsightsPathsResponse, EC2Error> DescribeNetworkInsightsPathsOutcome;
         typedef Aws::Utils::Outcome<DescribeNetworkInterfaceAttributeResponse, EC2Error> DescribeNetworkInterfaceAttributeOutcome;
@@ -1268,6 +1359,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DisableEbsEncryptionByDefaultResponse, EC2Error> DisableEbsEncryptionByDefaultOutcome;
         typedef Aws::Utils::Outcome<DisableFastSnapshotRestoresResponse, EC2Error> DisableFastSnapshotRestoresOutcome;
         typedef Aws::Utils::Outcome<DisableImageDeprecationResponse, EC2Error> DisableImageDeprecationOutcome;
+        typedef Aws::Utils::Outcome<DisableIpamOrganizationAdminAccountResponse, EC2Error> DisableIpamOrganizationAdminAccountOutcome;
         typedef Aws::Utils::Outcome<DisableSerialConsoleAccessResponse, EC2Error> DisableSerialConsoleAccessOutcome;
         typedef Aws::Utils::Outcome<DisableTransitGatewayRouteTablePropagationResponse, EC2Error> DisableTransitGatewayRouteTablePropagationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DisableVgwRoutePropagationOutcome;
@@ -1287,6 +1379,7 @@ namespace Model
         typedef Aws::Utils::Outcome<EnableEbsEncryptionByDefaultResponse, EC2Error> EnableEbsEncryptionByDefaultOutcome;
         typedef Aws::Utils::Outcome<EnableFastSnapshotRestoresResponse, EC2Error> EnableFastSnapshotRestoresOutcome;
         typedef Aws::Utils::Outcome<EnableImageDeprecationResponse, EC2Error> EnableImageDeprecationOutcome;
+        typedef Aws::Utils::Outcome<EnableIpamOrganizationAdminAccountResponse, EC2Error> EnableIpamOrganizationAdminAccountOutcome;
         typedef Aws::Utils::Outcome<EnableSerialConsoleAccessResponse, EC2Error> EnableSerialConsoleAccessOutcome;
         typedef Aws::Utils::Outcome<EnableTransitGatewayRouteTablePropagationResponse, EC2Error> EnableTransitGatewayRouteTablePropagationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> EnableVgwRoutePropagationOutcome;
@@ -1310,9 +1403,15 @@ namespace Model
         typedef Aws::Utils::Outcome<GetGroupsForCapacityReservationResponse, EC2Error> GetGroupsForCapacityReservationOutcome;
         typedef Aws::Utils::Outcome<GetHostReservationPurchasePreviewResponse, EC2Error> GetHostReservationPurchasePreviewOutcome;
         typedef Aws::Utils::Outcome<GetInstanceTypesFromInstanceRequirementsResponse, EC2Error> GetInstanceTypesFromInstanceRequirementsOutcome;
+        typedef Aws::Utils::Outcome<GetIpamAddressHistoryResponse, EC2Error> GetIpamAddressHistoryOutcome;
+        typedef Aws::Utils::Outcome<GetIpamPoolAllocationsResponse, EC2Error> GetIpamPoolAllocationsOutcome;
+        typedef Aws::Utils::Outcome<GetIpamPoolCidrsResponse, EC2Error> GetIpamPoolCidrsOutcome;
+        typedef Aws::Utils::Outcome<GetIpamResourceCidrsResponse, EC2Error> GetIpamResourceCidrsOutcome;
         typedef Aws::Utils::Outcome<GetLaunchTemplateDataResponse, EC2Error> GetLaunchTemplateDataOutcome;
         typedef Aws::Utils::Outcome<GetManagedPrefixListAssociationsResponse, EC2Error> GetManagedPrefixListAssociationsOutcome;
         typedef Aws::Utils::Outcome<GetManagedPrefixListEntriesResponse, EC2Error> GetManagedPrefixListEntriesOutcome;
+        typedef Aws::Utils::Outcome<GetNetworkInsightsAccessScopeAnalysisFindingsResponse, EC2Error> GetNetworkInsightsAccessScopeAnalysisFindingsOutcome;
+        typedef Aws::Utils::Outcome<GetNetworkInsightsAccessScopeContentResponse, EC2Error> GetNetworkInsightsAccessScopeContentOutcome;
         typedef Aws::Utils::Outcome<GetPasswordDataResponse, EC2Error> GetPasswordDataOutcome;
         typedef Aws::Utils::Outcome<GetReservedInstancesExchangeQuoteResponse, EC2Error> GetReservedInstancesExchangeQuoteOutcome;
         typedef Aws::Utils::Outcome<GetSerialConsoleAccessStatusResponse, EC2Error> GetSerialConsoleAccessStatusOutcome;
@@ -1352,6 +1451,10 @@ namespace Model
         typedef Aws::Utils::Outcome<ModifyInstanceEventWindowResponse, EC2Error> ModifyInstanceEventWindowOutcome;
         typedef Aws::Utils::Outcome<ModifyInstanceMetadataOptionsResponse, EC2Error> ModifyInstanceMetadataOptionsOutcome;
         typedef Aws::Utils::Outcome<ModifyInstancePlacementResponse, EC2Error> ModifyInstancePlacementOutcome;
+        typedef Aws::Utils::Outcome<ModifyIpamResponse, EC2Error> ModifyIpamOutcome;
+        typedef Aws::Utils::Outcome<ModifyIpamPoolResponse, EC2Error> ModifyIpamPoolOutcome;
+        typedef Aws::Utils::Outcome<ModifyIpamResourceCidrResponse, EC2Error> ModifyIpamResourceCidrOutcome;
+        typedef Aws::Utils::Outcome<ModifyIpamScopeResponse, EC2Error> ModifyIpamScopeOutcome;
         typedef Aws::Utils::Outcome<ModifyLaunchTemplateResponse, EC2Error> ModifyLaunchTemplateOutcome;
         typedef Aws::Utils::Outcome<ModifyManagedPrefixListResponse, EC2Error> ModifyManagedPrefixListOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> ModifyNetworkInterfaceAttributeOutcome;
@@ -1383,7 +1486,10 @@ namespace Model
         typedef Aws::Utils::Outcome<ModifyVpnTunnelOptionsResponse, EC2Error> ModifyVpnTunnelOptionsOutcome;
         typedef Aws::Utils::Outcome<MonitorInstancesResponse, EC2Error> MonitorInstancesOutcome;
         typedef Aws::Utils::Outcome<MoveAddressToVpcResponse, EC2Error> MoveAddressToVpcOutcome;
+        typedef Aws::Utils::Outcome<MoveByoipCidrToIpamResponse, EC2Error> MoveByoipCidrToIpamOutcome;
         typedef Aws::Utils::Outcome<ProvisionByoipCidrResponse, EC2Error> ProvisionByoipCidrOutcome;
+        typedef Aws::Utils::Outcome<ProvisionIpamPoolCidrResponse, EC2Error> ProvisionIpamPoolCidrOutcome;
+        typedef Aws::Utils::Outcome<ProvisionPublicIpv4PoolCidrResponse, EC2Error> ProvisionPublicIpv4PoolCidrOutcome;
         typedef Aws::Utils::Outcome<PurchaseHostReservationResponse, EC2Error> PurchaseHostReservationOutcome;
         typedef Aws::Utils::Outcome<PurchaseReservedInstancesOfferingResponse, EC2Error> PurchaseReservedInstancesOfferingOutcome;
         typedef Aws::Utils::Outcome<PurchaseScheduledInstancesResponse, EC2Error> PurchaseScheduledInstancesOutcome;
@@ -1399,6 +1505,7 @@ namespace Model
         typedef Aws::Utils::Outcome<RejectVpcPeeringConnectionResponse, EC2Error> RejectVpcPeeringConnectionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> ReleaseAddressOutcome;
         typedef Aws::Utils::Outcome<ReleaseHostsResponse, EC2Error> ReleaseHostsOutcome;
+        typedef Aws::Utils::Outcome<ReleaseIpamPoolAllocationResponse, EC2Error> ReleaseIpamPoolAllocationOutcome;
         typedef Aws::Utils::Outcome<ReplaceIamInstanceProfileAssociationResponse, EC2Error> ReplaceIamInstanceProfileAssociationOutcome;
         typedef Aws::Utils::Outcome<ReplaceNetworkAclAssociationResponse, EC2Error> ReplaceNetworkAclAssociationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> ReplaceNetworkAclEntryOutcome;
@@ -1429,6 +1536,7 @@ namespace Model
         typedef Aws::Utils::Outcome<SearchTransitGatewayRoutesResponse, EC2Error> SearchTransitGatewayRoutesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> SendDiagnosticInterruptOutcome;
         typedef Aws::Utils::Outcome<StartInstancesResponse, EC2Error> StartInstancesOutcome;
+        typedef Aws::Utils::Outcome<StartNetworkInsightsAccessScopeAnalysisResponse, EC2Error> StartNetworkInsightsAccessScopeAnalysisOutcome;
         typedef Aws::Utils::Outcome<StartNetworkInsightsAnalysisResponse, EC2Error> StartNetworkInsightsAnalysisOutcome;
         typedef Aws::Utils::Outcome<StartVpcEndpointServicePrivateDnsVerificationResponse, EC2Error> StartVpcEndpointServicePrivateDnsVerificationOutcome;
         typedef Aws::Utils::Outcome<StopInstancesResponse, EC2Error> StopInstancesOutcome;
@@ -1450,6 +1558,7 @@ namespace Model
         typedef std::future<AdvertiseByoipCidrOutcome> AdvertiseByoipCidrOutcomeCallable;
         typedef std::future<AllocateAddressOutcome> AllocateAddressOutcomeCallable;
         typedef std::future<AllocateHostsOutcome> AllocateHostsOutcomeCallable;
+        typedef std::future<AllocateIpamPoolCidrOutcome> AllocateIpamPoolCidrOutcomeCallable;
         typedef std::future<ApplySecurityGroupsToClientVpnTargetNetworkOutcome> ApplySecurityGroupsToClientVpnTargetNetworkOutcomeCallable;
         typedef std::future<AssignIpv6AddressesOutcome> AssignIpv6AddressesOutcomeCallable;
         typedef std::future<AssignPrivateIpAddressesOutcome> AssignPrivateIpAddressesOutcomeCallable;
@@ -1504,6 +1613,9 @@ namespace Model
         typedef std::future<CreateInstanceEventWindowOutcome> CreateInstanceEventWindowOutcomeCallable;
         typedef std::future<CreateInstanceExportTaskOutcome> CreateInstanceExportTaskOutcomeCallable;
         typedef std::future<CreateInternetGatewayOutcome> CreateInternetGatewayOutcomeCallable;
+        typedef std::future<CreateIpamOutcome> CreateIpamOutcomeCallable;
+        typedef std::future<CreateIpamPoolOutcome> CreateIpamPoolOutcomeCallable;
+        typedef std::future<CreateIpamScopeOutcome> CreateIpamScopeOutcomeCallable;
         typedef std::future<CreateKeyPairOutcome> CreateKeyPairOutcomeCallable;
         typedef std::future<CreateLaunchTemplateOutcome> CreateLaunchTemplateOutcomeCallable;
         typedef std::future<CreateLaunchTemplateVersionOutcome> CreateLaunchTemplateVersionOutcomeCallable;
@@ -1513,10 +1625,12 @@ namespace Model
         typedef std::future<CreateNatGatewayOutcome> CreateNatGatewayOutcomeCallable;
         typedef std::future<CreateNetworkAclOutcome> CreateNetworkAclOutcomeCallable;
         typedef std::future<CreateNetworkAclEntryOutcome> CreateNetworkAclEntryOutcomeCallable;
+        typedef std::future<CreateNetworkInsightsAccessScopeOutcome> CreateNetworkInsightsAccessScopeOutcomeCallable;
         typedef std::future<CreateNetworkInsightsPathOutcome> CreateNetworkInsightsPathOutcomeCallable;
         typedef std::future<CreateNetworkInterfaceOutcome> CreateNetworkInterfaceOutcomeCallable;
         typedef std::future<CreateNetworkInterfacePermissionOutcome> CreateNetworkInterfacePermissionOutcomeCallable;
         typedef std::future<CreatePlacementGroupOutcome> CreatePlacementGroupOutcomeCallable;
+        typedef std::future<CreatePublicIpv4PoolOutcome> CreatePublicIpv4PoolOutcomeCallable;
         typedef std::future<CreateReplaceRootVolumeTaskOutcome> CreateReplaceRootVolumeTaskOutcomeCallable;
         typedef std::future<CreateReservedInstancesListingOutcome> CreateReservedInstancesListingOutcomeCallable;
         typedef std::future<CreateRestoreImageTaskOutcome> CreateRestoreImageTaskOutcomeCallable;
@@ -1563,6 +1677,9 @@ namespace Model
         typedef std::future<DeleteFpgaImageOutcome> DeleteFpgaImageOutcomeCallable;
         typedef std::future<DeleteInstanceEventWindowOutcome> DeleteInstanceEventWindowOutcomeCallable;
         typedef std::future<DeleteInternetGatewayOutcome> DeleteInternetGatewayOutcomeCallable;
+        typedef std::future<DeleteIpamOutcome> DeleteIpamOutcomeCallable;
+        typedef std::future<DeleteIpamPoolOutcome> DeleteIpamPoolOutcomeCallable;
+        typedef std::future<DeleteIpamScopeOutcome> DeleteIpamScopeOutcomeCallable;
         typedef std::future<DeleteKeyPairOutcome> DeleteKeyPairOutcomeCallable;
         typedef std::future<DeleteLaunchTemplateOutcome> DeleteLaunchTemplateOutcomeCallable;
         typedef std::future<DeleteLaunchTemplateVersionsOutcome> DeleteLaunchTemplateVersionsOutcomeCallable;
@@ -1572,11 +1689,14 @@ namespace Model
         typedef std::future<DeleteNatGatewayOutcome> DeleteNatGatewayOutcomeCallable;
         typedef std::future<DeleteNetworkAclOutcome> DeleteNetworkAclOutcomeCallable;
         typedef std::future<DeleteNetworkAclEntryOutcome> DeleteNetworkAclEntryOutcomeCallable;
+        typedef std::future<DeleteNetworkInsightsAccessScopeOutcome> DeleteNetworkInsightsAccessScopeOutcomeCallable;
+        typedef std::future<DeleteNetworkInsightsAccessScopeAnalysisOutcome> DeleteNetworkInsightsAccessScopeAnalysisOutcomeCallable;
         typedef std::future<DeleteNetworkInsightsAnalysisOutcome> DeleteNetworkInsightsAnalysisOutcomeCallable;
         typedef std::future<DeleteNetworkInsightsPathOutcome> DeleteNetworkInsightsPathOutcomeCallable;
         typedef std::future<DeleteNetworkInterfaceOutcome> DeleteNetworkInterfaceOutcomeCallable;
         typedef std::future<DeleteNetworkInterfacePermissionOutcome> DeleteNetworkInterfacePermissionOutcomeCallable;
         typedef std::future<DeletePlacementGroupOutcome> DeletePlacementGroupOutcomeCallable;
+        typedef std::future<DeletePublicIpv4PoolOutcome> DeletePublicIpv4PoolOutcomeCallable;
         typedef std::future<DeleteQueuedReservedInstancesOutcome> DeleteQueuedReservedInstancesOutcomeCallable;
         typedef std::future<DeleteRouteOutcome> DeleteRouteOutcomeCallable;
         typedef std::future<DeleteRouteTableOutcome> DeleteRouteTableOutcomeCallable;
@@ -1609,6 +1729,8 @@ namespace Model
         typedef std::future<DeleteVpnConnectionRouteOutcome> DeleteVpnConnectionRouteOutcomeCallable;
         typedef std::future<DeleteVpnGatewayOutcome> DeleteVpnGatewayOutcomeCallable;
         typedef std::future<DeprovisionByoipCidrOutcome> DeprovisionByoipCidrOutcomeCallable;
+        typedef std::future<DeprovisionIpamPoolCidrOutcome> DeprovisionIpamPoolCidrOutcomeCallable;
+        typedef std::future<DeprovisionPublicIpv4PoolCidrOutcome> DeprovisionPublicIpv4PoolCidrOutcomeCallable;
         typedef std::future<DeregisterImageOutcome> DeregisterImageOutcomeCallable;
         typedef std::future<DeregisterInstanceEventNotificationAttributesOutcome> DeregisterInstanceEventNotificationAttributesOutcomeCallable;
         typedef std::future<DeregisterTransitGatewayMulticastGroupMembersOutcome> DeregisterTransitGatewayMulticastGroupMembersOutcomeCallable;
@@ -1663,6 +1785,9 @@ namespace Model
         typedef std::future<DescribeInstanceTypesOutcome> DescribeInstanceTypesOutcomeCallable;
         typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
         typedef std::future<DescribeInternetGatewaysOutcome> DescribeInternetGatewaysOutcomeCallable;
+        typedef std::future<DescribeIpamPoolsOutcome> DescribeIpamPoolsOutcomeCallable;
+        typedef std::future<DescribeIpamScopesOutcome> DescribeIpamScopesOutcomeCallable;
+        typedef std::future<DescribeIpamsOutcome> DescribeIpamsOutcomeCallable;
         typedef std::future<DescribeIpv6PoolsOutcome> DescribeIpv6PoolsOutcomeCallable;
         typedef std::future<DescribeKeyPairsOutcome> DescribeKeyPairsOutcomeCallable;
         typedef std::future<DescribeLaunchTemplateVersionsOutcome> DescribeLaunchTemplateVersionsOutcomeCallable;
@@ -1677,6 +1802,8 @@ namespace Model
         typedef std::future<DescribeMovingAddressesOutcome> DescribeMovingAddressesOutcomeCallable;
         typedef std::future<DescribeNatGatewaysOutcome> DescribeNatGatewaysOutcomeCallable;
         typedef std::future<DescribeNetworkAclsOutcome> DescribeNetworkAclsOutcomeCallable;
+        typedef std::future<DescribeNetworkInsightsAccessScopeAnalysesOutcome> DescribeNetworkInsightsAccessScopeAnalysesOutcomeCallable;
+        typedef std::future<DescribeNetworkInsightsAccessScopesOutcome> DescribeNetworkInsightsAccessScopesOutcomeCallable;
         typedef std::future<DescribeNetworkInsightsAnalysesOutcome> DescribeNetworkInsightsAnalysesOutcomeCallable;
         typedef std::future<DescribeNetworkInsightsPathsOutcome> DescribeNetworkInsightsPathsOutcomeCallable;
         typedef std::future<DescribeNetworkInterfaceAttributeOutcome> DescribeNetworkInterfaceAttributeOutcomeCallable;
@@ -1748,6 +1875,7 @@ namespace Model
         typedef std::future<DisableEbsEncryptionByDefaultOutcome> DisableEbsEncryptionByDefaultOutcomeCallable;
         typedef std::future<DisableFastSnapshotRestoresOutcome> DisableFastSnapshotRestoresOutcomeCallable;
         typedef std::future<DisableImageDeprecationOutcome> DisableImageDeprecationOutcomeCallable;
+        typedef std::future<DisableIpamOrganizationAdminAccountOutcome> DisableIpamOrganizationAdminAccountOutcomeCallable;
         typedef std::future<DisableSerialConsoleAccessOutcome> DisableSerialConsoleAccessOutcomeCallable;
         typedef std::future<DisableTransitGatewayRouteTablePropagationOutcome> DisableTransitGatewayRouteTablePropagationOutcomeCallable;
         typedef std::future<DisableVgwRoutePropagationOutcome> DisableVgwRoutePropagationOutcomeCallable;
@@ -1767,6 +1895,7 @@ namespace Model
         typedef std::future<EnableEbsEncryptionByDefaultOutcome> EnableEbsEncryptionByDefaultOutcomeCallable;
         typedef std::future<EnableFastSnapshotRestoresOutcome> EnableFastSnapshotRestoresOutcomeCallable;
         typedef std::future<EnableImageDeprecationOutcome> EnableImageDeprecationOutcomeCallable;
+        typedef std::future<EnableIpamOrganizationAdminAccountOutcome> EnableIpamOrganizationAdminAccountOutcomeCallable;
         typedef std::future<EnableSerialConsoleAccessOutcome> EnableSerialConsoleAccessOutcomeCallable;
         typedef std::future<EnableTransitGatewayRouteTablePropagationOutcome> EnableTransitGatewayRouteTablePropagationOutcomeCallable;
         typedef std::future<EnableVgwRoutePropagationOutcome> EnableVgwRoutePropagationOutcomeCallable;
@@ -1790,9 +1919,15 @@ namespace Model
         typedef std::future<GetGroupsForCapacityReservationOutcome> GetGroupsForCapacityReservationOutcomeCallable;
         typedef std::future<GetHostReservationPurchasePreviewOutcome> GetHostReservationPurchasePreviewOutcomeCallable;
         typedef std::future<GetInstanceTypesFromInstanceRequirementsOutcome> GetInstanceTypesFromInstanceRequirementsOutcomeCallable;
+        typedef std::future<GetIpamAddressHistoryOutcome> GetIpamAddressHistoryOutcomeCallable;
+        typedef std::future<GetIpamPoolAllocationsOutcome> GetIpamPoolAllocationsOutcomeCallable;
+        typedef std::future<GetIpamPoolCidrsOutcome> GetIpamPoolCidrsOutcomeCallable;
+        typedef std::future<GetIpamResourceCidrsOutcome> GetIpamResourceCidrsOutcomeCallable;
         typedef std::future<GetLaunchTemplateDataOutcome> GetLaunchTemplateDataOutcomeCallable;
         typedef std::future<GetManagedPrefixListAssociationsOutcome> GetManagedPrefixListAssociationsOutcomeCallable;
         typedef std::future<GetManagedPrefixListEntriesOutcome> GetManagedPrefixListEntriesOutcomeCallable;
+        typedef std::future<GetNetworkInsightsAccessScopeAnalysisFindingsOutcome> GetNetworkInsightsAccessScopeAnalysisFindingsOutcomeCallable;
+        typedef std::future<GetNetworkInsightsAccessScopeContentOutcome> GetNetworkInsightsAccessScopeContentOutcomeCallable;
         typedef std::future<GetPasswordDataOutcome> GetPasswordDataOutcomeCallable;
         typedef std::future<GetReservedInstancesExchangeQuoteOutcome> GetReservedInstancesExchangeQuoteOutcomeCallable;
         typedef std::future<GetSerialConsoleAccessStatusOutcome> GetSerialConsoleAccessStatusOutcomeCallable;
@@ -1832,6 +1967,10 @@ namespace Model
         typedef std::future<ModifyInstanceEventWindowOutcome> ModifyInstanceEventWindowOutcomeCallable;
         typedef std::future<ModifyInstanceMetadataOptionsOutcome> ModifyInstanceMetadataOptionsOutcomeCallable;
         typedef std::future<ModifyInstancePlacementOutcome> ModifyInstancePlacementOutcomeCallable;
+        typedef std::future<ModifyIpamOutcome> ModifyIpamOutcomeCallable;
+        typedef std::future<ModifyIpamPoolOutcome> ModifyIpamPoolOutcomeCallable;
+        typedef std::future<ModifyIpamResourceCidrOutcome> ModifyIpamResourceCidrOutcomeCallable;
+        typedef std::future<ModifyIpamScopeOutcome> ModifyIpamScopeOutcomeCallable;
         typedef std::future<ModifyLaunchTemplateOutcome> ModifyLaunchTemplateOutcomeCallable;
         typedef std::future<ModifyManagedPrefixListOutcome> ModifyManagedPrefixListOutcomeCallable;
         typedef std::future<ModifyNetworkInterfaceAttributeOutcome> ModifyNetworkInterfaceAttributeOutcomeCallable;
@@ -1863,7 +2002,10 @@ namespace Model
         typedef std::future<ModifyVpnTunnelOptionsOutcome> ModifyVpnTunnelOptionsOutcomeCallable;
         typedef std::future<MonitorInstancesOutcome> MonitorInstancesOutcomeCallable;
         typedef std::future<MoveAddressToVpcOutcome> MoveAddressToVpcOutcomeCallable;
+        typedef std::future<MoveByoipCidrToIpamOutcome> MoveByoipCidrToIpamOutcomeCallable;
         typedef std::future<ProvisionByoipCidrOutcome> ProvisionByoipCidrOutcomeCallable;
+        typedef std::future<ProvisionIpamPoolCidrOutcome> ProvisionIpamPoolCidrOutcomeCallable;
+        typedef std::future<ProvisionPublicIpv4PoolCidrOutcome> ProvisionPublicIpv4PoolCidrOutcomeCallable;
         typedef std::future<PurchaseHostReservationOutcome> PurchaseHostReservationOutcomeCallable;
         typedef std::future<PurchaseReservedInstancesOfferingOutcome> PurchaseReservedInstancesOfferingOutcomeCallable;
         typedef std::future<PurchaseScheduledInstancesOutcome> PurchaseScheduledInstancesOutcomeCallable;
@@ -1879,6 +2021,7 @@ namespace Model
         typedef std::future<RejectVpcPeeringConnectionOutcome> RejectVpcPeeringConnectionOutcomeCallable;
         typedef std::future<ReleaseAddressOutcome> ReleaseAddressOutcomeCallable;
         typedef std::future<ReleaseHostsOutcome> ReleaseHostsOutcomeCallable;
+        typedef std::future<ReleaseIpamPoolAllocationOutcome> ReleaseIpamPoolAllocationOutcomeCallable;
         typedef std::future<ReplaceIamInstanceProfileAssociationOutcome> ReplaceIamInstanceProfileAssociationOutcomeCallable;
         typedef std::future<ReplaceNetworkAclAssociationOutcome> ReplaceNetworkAclAssociationOutcomeCallable;
         typedef std::future<ReplaceNetworkAclEntryOutcome> ReplaceNetworkAclEntryOutcomeCallable;
@@ -1909,6 +2052,7 @@ namespace Model
         typedef std::future<SearchTransitGatewayRoutesOutcome> SearchTransitGatewayRoutesOutcomeCallable;
         typedef std::future<SendDiagnosticInterruptOutcome> SendDiagnosticInterruptOutcomeCallable;
         typedef std::future<StartInstancesOutcome> StartInstancesOutcomeCallable;
+        typedef std::future<StartNetworkInsightsAccessScopeAnalysisOutcome> StartNetworkInsightsAccessScopeAnalysisOutcomeCallable;
         typedef std::future<StartNetworkInsightsAnalysisOutcome> StartNetworkInsightsAnalysisOutcomeCallable;
         typedef std::future<StartVpcEndpointServicePrivateDnsVerificationOutcome> StartVpcEndpointServicePrivateDnsVerificationOutcomeCallable;
         typedef std::future<StopInstancesOutcome> StopInstancesOutcomeCallable;
@@ -1933,6 +2077,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::AdvertiseByoipCidrRequest&, const Model::AdvertiseByoipCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdvertiseByoipCidrResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AllocateAddressRequest&, const Model::AllocateAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AllocateAddressResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AllocateHostsRequest&, const Model::AllocateHostsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AllocateHostsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::AllocateIpamPoolCidrRequest&, const Model::AllocateIpamPoolCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AllocateIpamPoolCidrResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ApplySecurityGroupsToClientVpnTargetNetworkRequest&, const Model::ApplySecurityGroupsToClientVpnTargetNetworkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ApplySecurityGroupsToClientVpnTargetNetworkResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssignIpv6AddressesRequest&, const Model::AssignIpv6AddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssignIpv6AddressesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssignPrivateIpAddressesRequest&, const Model::AssignPrivateIpAddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssignPrivateIpAddressesResponseReceivedHandler;
@@ -1987,6 +2132,9 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::CreateInstanceEventWindowRequest&, const Model::CreateInstanceEventWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInstanceEventWindowResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateInstanceExportTaskRequest&, const Model::CreateInstanceExportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInstanceExportTaskResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateInternetGatewayRequest&, const Model::CreateInternetGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInternetGatewayResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateIpamRequest&, const Model::CreateIpamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIpamResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateIpamPoolRequest&, const Model::CreateIpamPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIpamPoolResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateIpamScopeRequest&, const Model::CreateIpamScopeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIpamScopeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateKeyPairRequest&, const Model::CreateKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateKeyPairResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateLaunchTemplateRequest&, const Model::CreateLaunchTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLaunchTemplateResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateLaunchTemplateVersionRequest&, const Model::CreateLaunchTemplateVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLaunchTemplateVersionResponseReceivedHandler;
@@ -1996,10 +2144,12 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::CreateNatGatewayRequest&, const Model::CreateNatGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNatGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateNetworkAclRequest&, const Model::CreateNetworkAclOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNetworkAclResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateNetworkAclEntryRequest&, const Model::CreateNetworkAclEntryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNetworkAclEntryResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateNetworkInsightsAccessScopeRequest&, const Model::CreateNetworkInsightsAccessScopeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNetworkInsightsAccessScopeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateNetworkInsightsPathRequest&, const Model::CreateNetworkInsightsPathOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNetworkInsightsPathResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateNetworkInterfaceRequest&, const Model::CreateNetworkInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNetworkInterfaceResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateNetworkInterfacePermissionRequest&, const Model::CreateNetworkInterfacePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNetworkInterfacePermissionResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreatePlacementGroupRequest&, const Model::CreatePlacementGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePlacementGroupResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreatePublicIpv4PoolRequest&, const Model::CreatePublicIpv4PoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePublicIpv4PoolResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateReplaceRootVolumeTaskRequest&, const Model::CreateReplaceRootVolumeTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReplaceRootVolumeTaskResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateReservedInstancesListingRequest&, const Model::CreateReservedInstancesListingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReservedInstancesListingResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateRestoreImageTaskRequest&, const Model::CreateRestoreImageTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRestoreImageTaskResponseReceivedHandler;
@@ -2046,6 +2196,9 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DeleteFpgaImageRequest&, const Model::DeleteFpgaImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFpgaImageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteInstanceEventWindowRequest&, const Model::DeleteInstanceEventWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInstanceEventWindowResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteInternetGatewayRequest&, const Model::DeleteInternetGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInternetGatewayResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeleteIpamRequest&, const Model::DeleteIpamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIpamResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeleteIpamPoolRequest&, const Model::DeleteIpamPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIpamPoolResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeleteIpamScopeRequest&, const Model::DeleteIpamScopeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIpamScopeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteKeyPairRequest&, const Model::DeleteKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteKeyPairResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteLaunchTemplateRequest&, const Model::DeleteLaunchTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLaunchTemplateResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteLaunchTemplateVersionsRequest&, const Model::DeleteLaunchTemplateVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLaunchTemplateVersionsResponseReceivedHandler;
@@ -2055,11 +2208,14 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DeleteNatGatewayRequest&, const Model::DeleteNatGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNatGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteNetworkAclRequest&, const Model::DeleteNetworkAclOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNetworkAclResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteNetworkAclEntryRequest&, const Model::DeleteNetworkAclEntryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNetworkAclEntryResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeleteNetworkInsightsAccessScopeRequest&, const Model::DeleteNetworkInsightsAccessScopeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNetworkInsightsAccessScopeResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeleteNetworkInsightsAccessScopeAnalysisRequest&, const Model::DeleteNetworkInsightsAccessScopeAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNetworkInsightsAccessScopeAnalysisResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteNetworkInsightsAnalysisRequest&, const Model::DeleteNetworkInsightsAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNetworkInsightsAnalysisResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteNetworkInsightsPathRequest&, const Model::DeleteNetworkInsightsPathOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNetworkInsightsPathResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteNetworkInterfaceRequest&, const Model::DeleteNetworkInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNetworkInterfaceResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteNetworkInterfacePermissionRequest&, const Model::DeleteNetworkInterfacePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNetworkInterfacePermissionResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeletePlacementGroupRequest&, const Model::DeletePlacementGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePlacementGroupResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeletePublicIpv4PoolRequest&, const Model::DeletePublicIpv4PoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePublicIpv4PoolResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteQueuedReservedInstancesRequest&, const Model::DeleteQueuedReservedInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteQueuedReservedInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteRouteRequest&, const Model::DeleteRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRouteResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteRouteTableRequest&, const Model::DeleteRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRouteTableResponseReceivedHandler;
@@ -2092,6 +2248,8 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DeleteVpnConnectionRouteRequest&, const Model::DeleteVpnConnectionRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVpnConnectionRouteResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteVpnGatewayRequest&, const Model::DeleteVpnGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVpnGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeprovisionByoipCidrRequest&, const Model::DeprovisionByoipCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeprovisionByoipCidrResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeprovisionIpamPoolCidrRequest&, const Model::DeprovisionIpamPoolCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeprovisionIpamPoolCidrResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeprovisionPublicIpv4PoolCidrRequest&, const Model::DeprovisionPublicIpv4PoolCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeprovisionPublicIpv4PoolCidrResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeregisterImageRequest&, const Model::DeregisterImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterImageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeregisterInstanceEventNotificationAttributesRequest&, const Model::DeregisterInstanceEventNotificationAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterInstanceEventNotificationAttributesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeregisterTransitGatewayMulticastGroupMembersRequest&, const Model::DeregisterTransitGatewayMulticastGroupMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterTransitGatewayMulticastGroupMembersResponseReceivedHandler;
@@ -2146,6 +2304,9 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceTypesRequest&, const Model::DescribeInstanceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceTypesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstancesRequest&, const Model::DescribeInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInternetGatewaysRequest&, const Model::DescribeInternetGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInternetGatewaysResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeIpamPoolsRequest&, const Model::DescribeIpamPoolsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIpamPoolsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeIpamScopesRequest&, const Model::DescribeIpamScopesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIpamScopesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeIpamsRequest&, const Model::DescribeIpamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIpamsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeIpv6PoolsRequest&, const Model::DescribeIpv6PoolsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIpv6PoolsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeKeyPairsRequest&, const Model::DescribeKeyPairsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeKeyPairsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeLaunchTemplateVersionsRequest&, const Model::DescribeLaunchTemplateVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLaunchTemplateVersionsResponseReceivedHandler;
@@ -2160,6 +2321,8 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DescribeMovingAddressesRequest&, const Model::DescribeMovingAddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMovingAddressesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeNatGatewaysRequest&, const Model::DescribeNatGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNatGatewaysResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeNetworkAclsRequest&, const Model::DescribeNetworkAclsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNetworkAclsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeNetworkInsightsAccessScopeAnalysesRequest&, const Model::DescribeNetworkInsightsAccessScopeAnalysesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNetworkInsightsAccessScopeAnalysesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeNetworkInsightsAccessScopesRequest&, const Model::DescribeNetworkInsightsAccessScopesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNetworkInsightsAccessScopesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeNetworkInsightsAnalysesRequest&, const Model::DescribeNetworkInsightsAnalysesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNetworkInsightsAnalysesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeNetworkInsightsPathsRequest&, const Model::DescribeNetworkInsightsPathsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNetworkInsightsPathsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeNetworkInterfaceAttributeRequest&, const Model::DescribeNetworkInterfaceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNetworkInterfaceAttributeResponseReceivedHandler;
@@ -2231,6 +2394,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DisableEbsEncryptionByDefaultRequest&, const Model::DisableEbsEncryptionByDefaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableEbsEncryptionByDefaultResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableFastSnapshotRestoresRequest&, const Model::DisableFastSnapshotRestoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableFastSnapshotRestoresResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableImageDeprecationRequest&, const Model::DisableImageDeprecationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableImageDeprecationResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DisableIpamOrganizationAdminAccountRequest&, const Model::DisableIpamOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableIpamOrganizationAdminAccountResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableSerialConsoleAccessRequest&, const Model::DisableSerialConsoleAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableSerialConsoleAccessResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableTransitGatewayRouteTablePropagationRequest&, const Model::DisableTransitGatewayRouteTablePropagationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableTransitGatewayRouteTablePropagationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableVgwRoutePropagationRequest&, const Model::DisableVgwRoutePropagationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableVgwRoutePropagationResponseReceivedHandler;
@@ -2250,6 +2414,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::EnableEbsEncryptionByDefaultRequest&, const Model::EnableEbsEncryptionByDefaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableEbsEncryptionByDefaultResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableFastSnapshotRestoresRequest&, const Model::EnableFastSnapshotRestoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableFastSnapshotRestoresResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableImageDeprecationRequest&, const Model::EnableImageDeprecationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableImageDeprecationResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::EnableIpamOrganizationAdminAccountRequest&, const Model::EnableIpamOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableIpamOrganizationAdminAccountResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableSerialConsoleAccessRequest&, const Model::EnableSerialConsoleAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableSerialConsoleAccessResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableTransitGatewayRouteTablePropagationRequest&, const Model::EnableTransitGatewayRouteTablePropagationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableTransitGatewayRouteTablePropagationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableVgwRoutePropagationRequest&, const Model::EnableVgwRoutePropagationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableVgwRoutePropagationResponseReceivedHandler;
@@ -2273,9 +2438,15 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::GetGroupsForCapacityReservationRequest&, const Model::GetGroupsForCapacityReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupsForCapacityReservationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetHostReservationPurchasePreviewRequest&, const Model::GetHostReservationPurchasePreviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHostReservationPurchasePreviewResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetInstanceTypesFromInstanceRequirementsRequest&, const Model::GetInstanceTypesFromInstanceRequirementsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInstanceTypesFromInstanceRequirementsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetIpamAddressHistoryRequest&, const Model::GetIpamAddressHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIpamAddressHistoryResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetIpamPoolAllocationsRequest&, const Model::GetIpamPoolAllocationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIpamPoolAllocationsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetIpamPoolCidrsRequest&, const Model::GetIpamPoolCidrsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIpamPoolCidrsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetIpamResourceCidrsRequest&, const Model::GetIpamResourceCidrsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIpamResourceCidrsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetLaunchTemplateDataRequest&, const Model::GetLaunchTemplateDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLaunchTemplateDataResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetManagedPrefixListAssociationsRequest&, const Model::GetManagedPrefixListAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetManagedPrefixListAssociationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetManagedPrefixListEntriesRequest&, const Model::GetManagedPrefixListEntriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetManagedPrefixListEntriesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetNetworkInsightsAccessScopeAnalysisFindingsRequest&, const Model::GetNetworkInsightsAccessScopeAnalysisFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetNetworkInsightsAccessScopeAnalysisFindingsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetNetworkInsightsAccessScopeContentRequest&, const Model::GetNetworkInsightsAccessScopeContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetNetworkInsightsAccessScopeContentResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetPasswordDataRequest&, const Model::GetPasswordDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPasswordDataResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetReservedInstancesExchangeQuoteRequest&, const Model::GetReservedInstancesExchangeQuoteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservedInstancesExchangeQuoteResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetSerialConsoleAccessStatusRequest&, const Model::GetSerialConsoleAccessStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSerialConsoleAccessStatusResponseReceivedHandler;
@@ -2315,6 +2486,10 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ModifyInstanceEventWindowRequest&, const Model::ModifyInstanceEventWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceEventWindowResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstanceMetadataOptionsRequest&, const Model::ModifyInstanceMetadataOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceMetadataOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstancePlacementRequest&, const Model::ModifyInstancePlacementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstancePlacementResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ModifyIpamRequest&, const Model::ModifyIpamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyIpamResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ModifyIpamPoolRequest&, const Model::ModifyIpamPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyIpamPoolResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ModifyIpamResourceCidrRequest&, const Model::ModifyIpamResourceCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyIpamResourceCidrResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ModifyIpamScopeRequest&, const Model::ModifyIpamScopeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyIpamScopeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyLaunchTemplateRequest&, const Model::ModifyLaunchTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyLaunchTemplateResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyManagedPrefixListRequest&, const Model::ModifyManagedPrefixListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyManagedPrefixListResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyNetworkInterfaceAttributeRequest&, const Model::ModifyNetworkInterfaceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyNetworkInterfaceAttributeResponseReceivedHandler;
@@ -2346,7 +2521,10 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ModifyVpnTunnelOptionsRequest&, const Model::ModifyVpnTunnelOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpnTunnelOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::MonitorInstancesRequest&, const Model::MonitorInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MonitorInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::MoveAddressToVpcRequest&, const Model::MoveAddressToVpcOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MoveAddressToVpcResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::MoveByoipCidrToIpamRequest&, const Model::MoveByoipCidrToIpamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MoveByoipCidrToIpamResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ProvisionByoipCidrRequest&, const Model::ProvisionByoipCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ProvisionByoipCidrResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ProvisionIpamPoolCidrRequest&, const Model::ProvisionIpamPoolCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ProvisionIpamPoolCidrResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ProvisionPublicIpv4PoolCidrRequest&, const Model::ProvisionPublicIpv4PoolCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ProvisionPublicIpv4PoolCidrResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::PurchaseHostReservationRequest&, const Model::PurchaseHostReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseHostReservationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::PurchaseReservedInstancesOfferingRequest&, const Model::PurchaseReservedInstancesOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseReservedInstancesOfferingResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::PurchaseScheduledInstancesRequest&, const Model::PurchaseScheduledInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseScheduledInstancesResponseReceivedHandler;
@@ -2362,6 +2540,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::RejectVpcPeeringConnectionRequest&, const Model::RejectVpcPeeringConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectVpcPeeringConnectionResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ReleaseAddressRequest&, const Model::ReleaseAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReleaseAddressResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ReleaseHostsRequest&, const Model::ReleaseHostsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReleaseHostsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ReleaseIpamPoolAllocationRequest&, const Model::ReleaseIpamPoolAllocationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReleaseIpamPoolAllocationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ReplaceIamInstanceProfileAssociationRequest&, const Model::ReplaceIamInstanceProfileAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReplaceIamInstanceProfileAssociationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ReplaceNetworkAclAssociationRequest&, const Model::ReplaceNetworkAclAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReplaceNetworkAclAssociationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ReplaceNetworkAclEntryRequest&, const Model::ReplaceNetworkAclEntryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReplaceNetworkAclEntryResponseReceivedHandler;
@@ -2392,6 +2571,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::SearchTransitGatewayRoutesRequest&, const Model::SearchTransitGatewayRoutesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchTransitGatewayRoutesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::SendDiagnosticInterruptRequest&, const Model::SendDiagnosticInterruptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendDiagnosticInterruptResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::StartInstancesRequest&, const Model::StartInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartInstancesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::StartNetworkInsightsAccessScopeAnalysisRequest&, const Model::StartNetworkInsightsAccessScopeAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartNetworkInsightsAccessScopeAnalysisResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::StartNetworkInsightsAnalysisRequest&, const Model::StartNetworkInsightsAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartNetworkInsightsAnalysisResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::StartVpcEndpointServicePrivateDnsVerificationRequest&, const Model::StartVpcEndpointServicePrivateDnsVerificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartVpcEndpointServicePrivateDnsVerificationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::StopInstancesRequest&, const Model::StopInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopInstancesResponseReceivedHandler;
@@ -2834,6 +3014,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AllocateHostsAsync(const Model::AllocateHostsRequest& request, const AllocateHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Allocate a CIDR from an IPAM pool. In IPAM, an allocation is a CIDR
+         * assignment from an IPAM pool to another resource or IPAM pool. For more
+         * information, see <a href="/vpc/latest/ipam/allocate-cidrs-ipam.html">Allocate
+         * CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateIpamPoolCidr">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AllocateIpamPoolCidrOutcome AllocateIpamPoolCidr(const Model::AllocateIpamPoolCidrRequest& request) const;
+
+        /**
+         * <p>Allocate a CIDR from an IPAM pool. In IPAM, an allocation is a CIDR
+         * assignment from an IPAM pool to another resource or IPAM pool. For more
+         * information, see <a href="/vpc/latest/ipam/allocate-cidrs-ipam.html">Allocate
+         * CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateIpamPoolCidr">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AllocateIpamPoolCidrOutcomeCallable AllocateIpamPoolCidrCallable(const Model::AllocateIpamPoolCidrRequest& request) const;
+
+        /**
+         * <p>Allocate a CIDR from an IPAM pool. In IPAM, an allocation is a CIDR
+         * assignment from an IPAM pool to another resource or IPAM pool. For more
+         * information, see <a href="/vpc/latest/ipam/allocate-cidrs-ipam.html">Allocate
+         * CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateIpamPoolCidr">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AllocateIpamPoolCidrAsync(const Model::AllocateIpamPoolCidrRequest& request, const AllocateIpamPoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Applies a security group to the association between the target network and
@@ -5575,6 +5792,141 @@ namespace Model
         virtual void CreateInternetGatewayAsync(const Model::CreateInternetGatewayRequest& request, const CreateInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Create an IPAM. Amazon VCP IP Address Manager (IPAM) is a VPC feature that
+         * you can use to automate your IP address management workflows including
+         * assigning, tracking, troubleshooting, and auditing IP addresses across Amazon
+         * Web Services Regions and accounts throughout your Amazon Web Services
+         * Organization.</p> <p>For more information, see <a
+         * href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC
+         * IPAM User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpam">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::CreateIpamOutcome CreateIpam(const Model::CreateIpamRequest& request) const;
+
+        /**
+         * <p>Create an IPAM. Amazon VCP IP Address Manager (IPAM) is a VPC feature that
+         * you can use to automate your IP address management workflows including
+         * assigning, tracking, troubleshooting, and auditing IP addresses across Amazon
+         * Web Services Regions and accounts throughout your Amazon Web Services
+         * Organization.</p> <p>For more information, see <a
+         * href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC
+         * IPAM User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpam">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateIpamOutcomeCallable CreateIpamCallable(const Model::CreateIpamRequest& request) const;
+
+        /**
+         * <p>Create an IPAM. Amazon VCP IP Address Manager (IPAM) is a VPC feature that
+         * you can use to automate your IP address management workflows including
+         * assigning, tracking, troubleshooting, and auditing IP addresses across Amazon
+         * Web Services Regions and accounts throughout your Amazon Web Services
+         * Organization.</p> <p>For more information, see <a
+         * href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC
+         * IPAM User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpam">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateIpamAsync(const Model::CreateIpamRequest& request, const CreateIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Create an IP address pool for Amazon VPC IP Address Manager (IPAM). In IPAM,
+         * a pool is a collection of contiguous IP addresses CIDRs. Pools enable you to
+         * organize your IP addresses according to your routing and security needs. For
+         * example, if you have separate routing and security needs for development and
+         * production applications, you can create a pool for each.</p> <p>For more
+         * information, see <a href="/vpc/latest/ipam/create-top-ipam.html">Create a
+         * top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamPool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateIpamPoolOutcome CreateIpamPool(const Model::CreateIpamPoolRequest& request) const;
+
+        /**
+         * <p>Create an IP address pool for Amazon VPC IP Address Manager (IPAM). In IPAM,
+         * a pool is a collection of contiguous IP addresses CIDRs. Pools enable you to
+         * organize your IP addresses according to your routing and security needs. For
+         * example, if you have separate routing and security needs for development and
+         * production applications, you can create a pool for each.</p> <p>For more
+         * information, see <a href="/vpc/latest/ipam/create-top-ipam.html">Create a
+         * top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamPool">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateIpamPoolOutcomeCallable CreateIpamPoolCallable(const Model::CreateIpamPoolRequest& request) const;
+
+        /**
+         * <p>Create an IP address pool for Amazon VPC IP Address Manager (IPAM). In IPAM,
+         * a pool is a collection of contiguous IP addresses CIDRs. Pools enable you to
+         * organize your IP addresses according to your routing and security needs. For
+         * example, if you have separate routing and security needs for development and
+         * production applications, you can create a pool for each.</p> <p>For more
+         * information, see <a href="/vpc/latest/ipam/create-top-ipam.html">Create a
+         * top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamPool">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateIpamPoolAsync(const Model::CreateIpamPoolRequest& request, const CreateIpamPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Create an IPAM scope. In IPAM, a scope is the highest-level container within
+         * IPAM. An IPAM contains two default scopes. Each scope represents the IP space
+         * for a single network. The private scope is intended for all private IP address
+         * space. The public scope is intended for all public IP address space. Scopes
+         * enable you to reuse IP addresses across multiple unconnected networks without
+         * causing IP address overlap or conflict.</p> <p>For more information, see <a
+         * href="/vpc/latest/ipam/add-scope-ipam.html">Add a scope</a> in the <i>Amazon VPC
+         * IPAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamScope">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateIpamScopeOutcome CreateIpamScope(const Model::CreateIpamScopeRequest& request) const;
+
+        /**
+         * <p>Create an IPAM scope. In IPAM, a scope is the highest-level container within
+         * IPAM. An IPAM contains two default scopes. Each scope represents the IP space
+         * for a single network. The private scope is intended for all private IP address
+         * space. The public scope is intended for all public IP address space. Scopes
+         * enable you to reuse IP addresses across multiple unconnected networks without
+         * causing IP address overlap or conflict.</p> <p>For more information, see <a
+         * href="/vpc/latest/ipam/add-scope-ipam.html">Add a scope</a> in the <i>Amazon VPC
+         * IPAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamScope">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateIpamScopeOutcomeCallable CreateIpamScopeCallable(const Model::CreateIpamScopeRequest& request) const;
+
+        /**
+         * <p>Create an IPAM scope. In IPAM, a scope is the highest-level container within
+         * IPAM. An IPAM contains two default scopes. Each scope represents the IP space
+         * for a single network. The private scope is intended for all private IP address
+         * space. The public scope is intended for all public IP address space. Scopes
+         * enable you to reuse IP addresses across multiple unconnected networks without
+         * causing IP address overlap or conflict.</p> <p>For more information, see <a
+         * href="/vpc/latest/ipam/add-scope-ipam.html">Add a scope</a> in the <i>Amazon VPC
+         * IPAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamScope">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateIpamScopeAsync(const Model::CreateIpamScopeRequest& request, const CreateIpamScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates an ED25519 or 2048-bit RSA key pair with the specified name. Amazon
          * EC2 stores the public key and displays the private key for you to save to a
          * file. The private key is returned as an unencrypted PEM encoded PKCS#1 private
@@ -5980,6 +6332,46 @@ namespace Model
         virtual void CreateNetworkAclEntryAsync(const Model::CreateNetworkAclEntryRequest& request, const CreateNetworkAclEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a Network Access Scope.</p> <p>Amazon Web Services Network Access
+         * Analyzer enables cloud networking and cloud operations teams to verify that
+         * their networks on Amazon Web Services conform to their network security and
+         * governance objectives. For more information, see the <a
+         * href="https://docs.aws.amazon.com/vpc/latest/network-access-analyzer/">Amazon
+         * Web Services Network Access Analyzer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInsightsAccessScope">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateNetworkInsightsAccessScopeOutcome CreateNetworkInsightsAccessScope(const Model::CreateNetworkInsightsAccessScopeRequest& request) const;
+
+        /**
+         * <p>Creates a Network Access Scope.</p> <p>Amazon Web Services Network Access
+         * Analyzer enables cloud networking and cloud operations teams to verify that
+         * their networks on Amazon Web Services conform to their network security and
+         * governance objectives. For more information, see the <a
+         * href="https://docs.aws.amazon.com/vpc/latest/network-access-analyzer/">Amazon
+         * Web Services Network Access Analyzer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInsightsAccessScope">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateNetworkInsightsAccessScopeOutcomeCallable CreateNetworkInsightsAccessScopeCallable(const Model::CreateNetworkInsightsAccessScopeRequest& request) const;
+
+        /**
+         * <p>Creates a Network Access Scope.</p> <p>Amazon Web Services Network Access
+         * Analyzer enables cloud networking and cloud operations teams to verify that
+         * their networks on Amazon Web Services conform to their network security and
+         * governance objectives. For more information, see the <a
+         * href="https://docs.aws.amazon.com/vpc/latest/network-access-analyzer/">Amazon
+         * Web Services Network Access Analyzer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInsightsAccessScope">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateNetworkInsightsAccessScopeAsync(const Model::CreateNetworkInsightsAccessScopeRequest& request, const CreateNetworkInsightsAccessScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a path to analyze for reachability.</p> <p>Reachability Analyzer
          * enables you to analyze and debug network reachability between two resources in
          * your virtual private cloud (VPC). For more information, see <a
@@ -6141,6 +6533,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreatePlacementGroupAsync(const Model::CreatePlacementGroupRequest& request, const CreatePlacementGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a public IPv4 address pool. A public IPv4 pool is an EC2 IP address
+         * pool required for the public IPv4 CIDRs that you own and bring to Amazon Web
+         * Services to manage with IPAM. IPv6 addresses you bring to Amazon Web Services,
+         * however, use IPAM pools only. To monitor the status of pool creation, use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribePublicIpv4Pools.html">DescribePublicIpv4Pools</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePublicIpv4Pool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePublicIpv4PoolOutcome CreatePublicIpv4Pool(const Model::CreatePublicIpv4PoolRequest& request) const;
+
+        /**
+         * <p>Creates a public IPv4 address pool. A public IPv4 pool is an EC2 IP address
+         * pool required for the public IPv4 CIDRs that you own and bring to Amazon Web
+         * Services to manage with IPAM. IPv6 addresses you bring to Amazon Web Services,
+         * however, use IPAM pools only. To monitor the status of pool creation, use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribePublicIpv4Pools.html">DescribePublicIpv4Pools</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePublicIpv4Pool">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreatePublicIpv4PoolOutcomeCallable CreatePublicIpv4PoolCallable(const Model::CreatePublicIpv4PoolRequest& request) const;
+
+        /**
+         * <p>Creates a public IPv4 address pool. A public IPv4 pool is an EC2 IP address
+         * pool required for the public IPv4 CIDRs that you own and bring to Amazon Web
+         * Services to manage with IPAM. IPv6 addresses you bring to Amazon Web Services,
+         * however, use IPAM pools only. To monitor the status of pool creation, use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribePublicIpv4Pools.html">DescribePublicIpv4Pools</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePublicIpv4Pool">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreatePublicIpv4PoolAsync(const Model::CreatePublicIpv4PoolRequest& request, const CreatePublicIpv4PoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a root volume replacement task for an Amazon EC2 instance. The root
@@ -8421,6 +8853,138 @@ namespace Model
         virtual void DeleteInternetGatewayAsync(const Model::DeleteInternetGatewayRequest& request, const DeleteInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Delete an IPAM. Deleting an IPAM removes all monitored data associated with
+         * the IPAM including the historical data for CIDRs.</p>  <p>You cannot
+         * delete an IPAM if there are CIDRs provisioned to pools or if there are
+         * allocations in the pools within the IPAM. To deprovision pool CIDRs, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeprovisionIpamPoolCidr.html">DeprovisionIpamPoolCidr</a>.
+         * To release allocations, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseIpamPoolAllocation.html">ReleaseIpamPoolAllocation</a>.
+         * </p>  <p>For more information, see <a
+         * href="/vpc/latest/ipam/delete-ipam.html">Delete an IPAM</a> in the <i>Amazon VPC
+         * IPAM User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpam">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::DeleteIpamOutcome DeleteIpam(const Model::DeleteIpamRequest& request) const;
+
+        /**
+         * <p>Delete an IPAM. Deleting an IPAM removes all monitored data associated with
+         * the IPAM including the historical data for CIDRs.</p>  <p>You cannot
+         * delete an IPAM if there are CIDRs provisioned to pools or if there are
+         * allocations in the pools within the IPAM. To deprovision pool CIDRs, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeprovisionIpamPoolCidr.html">DeprovisionIpamPoolCidr</a>.
+         * To release allocations, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseIpamPoolAllocation.html">ReleaseIpamPoolAllocation</a>.
+         * </p>  <p>For more information, see <a
+         * href="/vpc/latest/ipam/delete-ipam.html">Delete an IPAM</a> in the <i>Amazon VPC
+         * IPAM User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpam">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteIpamOutcomeCallable DeleteIpamCallable(const Model::DeleteIpamRequest& request) const;
+
+        /**
+         * <p>Delete an IPAM. Deleting an IPAM removes all monitored data associated with
+         * the IPAM including the historical data for CIDRs.</p>  <p>You cannot
+         * delete an IPAM if there are CIDRs provisioned to pools or if there are
+         * allocations in the pools within the IPAM. To deprovision pool CIDRs, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeprovisionIpamPoolCidr.html">DeprovisionIpamPoolCidr</a>.
+         * To release allocations, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseIpamPoolAllocation.html">ReleaseIpamPoolAllocation</a>.
+         * </p>  <p>For more information, see <a
+         * href="/vpc/latest/ipam/delete-ipam.html">Delete an IPAM</a> in the <i>Amazon VPC
+         * IPAM User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpam">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteIpamAsync(const Model::DeleteIpamRequest& request, const DeleteIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Delete an IPAM pool.</p>  <p>You cannot delete an IPAM pool if there
+         * are allocations in it or CIDRs provisioned to it. To release allocations, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseIpamPoolAllocation.html">ReleaseIpamPoolAllocation</a>.
+         * To deprovision pool CIDRs, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeprovisionIpamPoolCidr.html">DeprovisionIpamPoolCidr</a>.</p>
+         *  <p>For more information, see <a
+         * href="/vpc/latest/ipam/delete-pool-ipam.html">Delete a pool</a> in the <i>Amazon
+         * VPC IPAM User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamPool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteIpamPoolOutcome DeleteIpamPool(const Model::DeleteIpamPoolRequest& request) const;
+
+        /**
+         * <p>Delete an IPAM pool.</p>  <p>You cannot delete an IPAM pool if there
+         * are allocations in it or CIDRs provisioned to it. To release allocations, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseIpamPoolAllocation.html">ReleaseIpamPoolAllocation</a>.
+         * To deprovision pool CIDRs, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeprovisionIpamPoolCidr.html">DeprovisionIpamPoolCidr</a>.</p>
+         *  <p>For more information, see <a
+         * href="/vpc/latest/ipam/delete-pool-ipam.html">Delete a pool</a> in the <i>Amazon
+         * VPC IPAM User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamPool">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteIpamPoolOutcomeCallable DeleteIpamPoolCallable(const Model::DeleteIpamPoolRequest& request) const;
+
+        /**
+         * <p>Delete an IPAM pool.</p>  <p>You cannot delete an IPAM pool if there
+         * are allocations in it or CIDRs provisioned to it. To release allocations, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseIpamPoolAllocation.html">ReleaseIpamPoolAllocation</a>.
+         * To deprovision pool CIDRs, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeprovisionIpamPoolCidr.html">DeprovisionIpamPoolCidr</a>.</p>
+         *  <p>For more information, see <a
+         * href="/vpc/latest/ipam/delete-pool-ipam.html">Delete a pool</a> in the <i>Amazon
+         * VPC IPAM User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamPool">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteIpamPoolAsync(const Model::DeleteIpamPoolRequest& request, const DeleteIpamPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Delete the scope for an IPAM. You cannot delete the default scopes.</p>
+         * <p>For more information, see <a
+         * href="/vpc/latest/ipam/delete-scope-ipam.html">Delete a scope</a> in the
+         * <i>Amazon VPC IPAM User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamScope">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteIpamScopeOutcome DeleteIpamScope(const Model::DeleteIpamScopeRequest& request) const;
+
+        /**
+         * <p>Delete the scope for an IPAM. You cannot delete the default scopes.</p>
+         * <p>For more information, see <a
+         * href="/vpc/latest/ipam/delete-scope-ipam.html">Delete a scope</a> in the
+         * <i>Amazon VPC IPAM User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamScope">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteIpamScopeOutcomeCallable DeleteIpamScopeCallable(const Model::DeleteIpamScopeRequest& request) const;
+
+        /**
+         * <p>Delete the scope for an IPAM. You cannot delete the default scopes.</p>
+         * <p>For more information, see <a
+         * href="/vpc/latest/ipam/delete-scope-ipam.html">Delete a scope</a> in the
+         * <i>Amazon VPC IPAM User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamScope">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteIpamScopeAsync(const Model::DeleteIpamScopeRequest& request, const DeleteIpamScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified key pair, by removing the public key from Amazon
          * EC2.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteKeyPair">AWS
@@ -8691,6 +9255,59 @@ namespace Model
         virtual void DeleteNetworkAclEntryAsync(const Model::DeleteNetworkAclEntryRequest& request, const DeleteNetworkAclEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes the specified Network Access Scope.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAccessScope">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteNetworkInsightsAccessScopeOutcome DeleteNetworkInsightsAccessScope(const Model::DeleteNetworkInsightsAccessScopeRequest& request) const;
+
+        /**
+         * <p>Deletes the specified Network Access Scope.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAccessScope">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteNetworkInsightsAccessScopeOutcomeCallable DeleteNetworkInsightsAccessScopeCallable(const Model::DeleteNetworkInsightsAccessScopeRequest& request) const;
+
+        /**
+         * <p>Deletes the specified Network Access Scope.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAccessScope">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteNetworkInsightsAccessScopeAsync(const Model::DeleteNetworkInsightsAccessScopeRequest& request, const DeleteNetworkInsightsAccessScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified Network Access Scope analysis.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAccessScopeAnalysis">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteNetworkInsightsAccessScopeAnalysisOutcome DeleteNetworkInsightsAccessScopeAnalysis(const Model::DeleteNetworkInsightsAccessScopeAnalysisRequest& request) const;
+
+        /**
+         * <p>Deletes the specified Network Access Scope analysis.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAccessScopeAnalysis">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteNetworkInsightsAccessScopeAnalysisOutcomeCallable DeleteNetworkInsightsAccessScopeAnalysisCallable(const Model::DeleteNetworkInsightsAccessScopeAnalysisRequest& request) const;
+
+        /**
+         * <p>Deletes the specified Network Access Scope analysis.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAccessScopeAnalysis">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteNetworkInsightsAccessScopeAnalysisAsync(const Model::DeleteNetworkInsightsAccessScopeAnalysisRequest& request, const DeleteNetworkInsightsAccessScopeAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified network insights analysis.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAnalysis">AWS
@@ -8841,6 +9458,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeletePlacementGroupAsync(const Model::DeletePlacementGroupRequest& request, const DeletePlacementGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Delete a public IPv4 pool. A public IPv4 pool is an EC2 IP address pool
+         * required for the public IPv4 CIDRs that you own and bring to Amazon Web Services
+         * to manage with IPAM. IPv6 addresses you bring to Amazon Web Services, however,
+         * use IPAM pools only.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePublicIpv4Pool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePublicIpv4PoolOutcome DeletePublicIpv4Pool(const Model::DeletePublicIpv4PoolRequest& request) const;
+
+        /**
+         * <p>Delete a public IPv4 pool. A public IPv4 pool is an EC2 IP address pool
+         * required for the public IPv4 CIDRs that you own and bring to Amazon Web Services
+         * to manage with IPAM. IPv6 addresses you bring to Amazon Web Services, however,
+         * use IPAM pools only.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePublicIpv4Pool">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeletePublicIpv4PoolOutcomeCallable DeletePublicIpv4PoolCallable(const Model::DeletePublicIpv4PoolRequest& request) const;
+
+        /**
+         * <p>Delete a public IPv4 pool. A public IPv4 pool is an EC2 IP address pool
+         * required for the public IPv4 CIDRs that you own and bring to Amazon Web Services
+         * to manage with IPAM. IPv6 addresses you bring to Amazon Web Services, however,
+         * use IPAM pools only.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePublicIpv4Pool">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeletePublicIpv4PoolAsync(const Model::DeletePublicIpv4PoolRequest& request, const DeletePublicIpv4PoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the queued purchases for the specified Reserved
@@ -9899,6 +10550,68 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeprovisionByoipCidrAsync(const Model::DeprovisionByoipCidrRequest& request, const DeprovisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deprovision a CIDR provisioned from an IPAM pool. If you deprovision a CIDR
+         * from a pool that has a source pool, the CIDR is recycled back into the source
+         * pool. For more information, see <a
+         * href="/vpc/latest/ipam/depro-pool-cidr-ipam.html">Deprovision pool CIDRs</a> in
+         * the <i>Amazon VPC IPAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionIpamPoolCidr">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeprovisionIpamPoolCidrOutcome DeprovisionIpamPoolCidr(const Model::DeprovisionIpamPoolCidrRequest& request) const;
+
+        /**
+         * <p>Deprovision a CIDR provisioned from an IPAM pool. If you deprovision a CIDR
+         * from a pool that has a source pool, the CIDR is recycled back into the source
+         * pool. For more information, see <a
+         * href="/vpc/latest/ipam/depro-pool-cidr-ipam.html">Deprovision pool CIDRs</a> in
+         * the <i>Amazon VPC IPAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionIpamPoolCidr">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeprovisionIpamPoolCidrOutcomeCallable DeprovisionIpamPoolCidrCallable(const Model::DeprovisionIpamPoolCidrRequest& request) const;
+
+        /**
+         * <p>Deprovision a CIDR provisioned from an IPAM pool. If you deprovision a CIDR
+         * from a pool that has a source pool, the CIDR is recycled back into the source
+         * pool. For more information, see <a
+         * href="/vpc/latest/ipam/depro-pool-cidr-ipam.html">Deprovision pool CIDRs</a> in
+         * the <i>Amazon VPC IPAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionIpamPoolCidr">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeprovisionIpamPoolCidrAsync(const Model::DeprovisionIpamPoolCidrRequest& request, const DeprovisionIpamPoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deprovision a CIDR from a public IPv4 pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionPublicIpv4PoolCidr">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeprovisionPublicIpv4PoolCidrOutcome DeprovisionPublicIpv4PoolCidr(const Model::DeprovisionPublicIpv4PoolCidrRequest& request) const;
+
+        /**
+         * <p>Deprovision a CIDR from a public IPv4 pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionPublicIpv4PoolCidr">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeprovisionPublicIpv4PoolCidrOutcomeCallable DeprovisionPublicIpv4PoolCidrCallable(const Model::DeprovisionPublicIpv4PoolCidrRequest& request) const;
+
+        /**
+         * <p>Deprovision a CIDR from a public IPv4 pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionPublicIpv4PoolCidr">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeprovisionPublicIpv4PoolCidrAsync(const Model::DeprovisionPublicIpv4PoolCidrRequest& request, const DeprovisionPublicIpv4PoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deregisters the specified AMI. After you deregister an AMI, it can't be used
@@ -12064,6 +12777,87 @@ namespace Model
         virtual void DescribeInternetGatewaysAsync(const Model::DescribeInternetGatewaysRequest& request, const DescribeInternetGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Get information about your IPAM pools.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPools">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeIpamPoolsOutcome DescribeIpamPools(const Model::DescribeIpamPoolsRequest& request) const;
+
+        /**
+         * <p>Get information about your IPAM pools.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPools">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeIpamPoolsOutcomeCallable DescribeIpamPoolsCallable(const Model::DescribeIpamPoolsRequest& request) const;
+
+        /**
+         * <p>Get information about your IPAM pools.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPools">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeIpamPoolsAsync(const Model::DescribeIpamPoolsRequest& request, const DescribeIpamPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Get information about your IPAM scopes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamScopes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeIpamScopesOutcome DescribeIpamScopes(const Model::DescribeIpamScopesRequest& request) const;
+
+        /**
+         * <p>Get information about your IPAM scopes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamScopes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeIpamScopesOutcomeCallable DescribeIpamScopesCallable(const Model::DescribeIpamScopesRequest& request) const;
+
+        /**
+         * <p>Get information about your IPAM scopes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamScopes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeIpamScopesAsync(const Model::DescribeIpamScopesRequest& request, const DescribeIpamScopesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Get information about your IPAM pools.</p> <p>For more information, see <a
+         * href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+         * VPC IPAM User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpams">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeIpamsOutcome DescribeIpams(const Model::DescribeIpamsRequest& request) const;
+
+        /**
+         * <p>Get information about your IPAM pools.</p> <p>For more information, see <a
+         * href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+         * VPC IPAM User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpams">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeIpamsOutcomeCallable DescribeIpamsCallable(const Model::DescribeIpamsRequest& request) const;
+
+        /**
+         * <p>Get information about your IPAM pools.</p> <p>For more information, see <a
+         * href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon
+         * VPC IPAM User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpams">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeIpamsAsync(const Model::DescribeIpamsRequest& request, const DescribeIpamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes your IPv6 address pools.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpv6Pools">AWS
          * API Reference</a></p>
@@ -12481,6 +13275,59 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeNetworkAclsAsync(const Model::DescribeNetworkAclsRequest& request, const DescribeNetworkAclsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the specified Network Access Scope analyses.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAccessScopeAnalyses">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeNetworkInsightsAccessScopeAnalysesOutcome DescribeNetworkInsightsAccessScopeAnalyses(const Model::DescribeNetworkInsightsAccessScopeAnalysesRequest& request) const;
+
+        /**
+         * <p>Describes the specified Network Access Scope analyses.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAccessScopeAnalyses">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeNetworkInsightsAccessScopeAnalysesOutcomeCallable DescribeNetworkInsightsAccessScopeAnalysesCallable(const Model::DescribeNetworkInsightsAccessScopeAnalysesRequest& request) const;
+
+        /**
+         * <p>Describes the specified Network Access Scope analyses.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAccessScopeAnalyses">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeNetworkInsightsAccessScopeAnalysesAsync(const Model::DescribeNetworkInsightsAccessScopeAnalysesRequest& request, const DescribeNetworkInsightsAccessScopeAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the specified Network Access Scopes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAccessScopes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeNetworkInsightsAccessScopesOutcome DescribeNetworkInsightsAccessScopes(const Model::DescribeNetworkInsightsAccessScopesRequest& request) const;
+
+        /**
+         * <p>Describes the specified Network Access Scopes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAccessScopes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeNetworkInsightsAccessScopesOutcomeCallable DescribeNetworkInsightsAccessScopesCallable(const Model::DescribeNetworkInsightsAccessScopesRequest& request) const;
+
+        /**
+         * <p>Describes the specified Network Access Scopes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAccessScopes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeNetworkInsightsAccessScopesAsync(const Model::DescribeNetworkInsightsAccessScopesRequest& request, const DescribeNetworkInsightsAccessScopesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your network insights analyses.</p><p><h3>See
@@ -15284,6 +16131,40 @@ namespace Model
         virtual void DisableImageDeprecationAsync(const Model::DisableImageDeprecationRequest& request, const DisableImageDeprecationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Disable the IPAM account. For more information, see <a
+         * href="/vpc/latest/ipam/enable-integ-ipam.html">Enable integration with
+         * Organizations</a> in the <i>Amazon VPC IPAM User Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableIpamOrganizationAdminAccount">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableIpamOrganizationAdminAccountOutcome DisableIpamOrganizationAdminAccount(const Model::DisableIpamOrganizationAdminAccountRequest& request) const;
+
+        /**
+         * <p>Disable the IPAM account. For more information, see <a
+         * href="/vpc/latest/ipam/enable-integ-ipam.html">Enable integration with
+         * Organizations</a> in the <i>Amazon VPC IPAM User Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableIpamOrganizationAdminAccount">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisableIpamOrganizationAdminAccountOutcomeCallable DisableIpamOrganizationAdminAccountCallable(const Model::DisableIpamOrganizationAdminAccountRequest& request) const;
+
+        /**
+         * <p>Disable the IPAM account. For more information, see <a
+         * href="/vpc/latest/ipam/enable-integ-ipam.html">Enable integration with
+         * Organizations</a> in the <i>Amazon VPC IPAM User Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableIpamOrganizationAdminAccount">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisableIpamOrganizationAdminAccountAsync(const Model::DisableIpamOrganizationAdminAccountRequest& request, const DisableIpamOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Disables access to the EC2 serial console of all instances for your account.
          * By default, access to the EC2 serial console is disabled for your account. For
          * more information, see <a
@@ -16000,6 +16881,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void EnableImageDeprecationAsync(const Model::EnableImageDeprecationRequest& request, const EnableImageDeprecationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Enable an Organizations member account as the IPAM admin account. You cannot
+         * select the Organizations management account as the IPAM admin account. For more
+         * information, see <a href="/vpc/latest/ipam/enable-integ-ipam.html">Enable
+         * integration with Organizations</a> in the <i>Amazon VPC IPAM User Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableIpamOrganizationAdminAccount">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableIpamOrganizationAdminAccountOutcome EnableIpamOrganizationAdminAccount(const Model::EnableIpamOrganizationAdminAccountRequest& request) const;
+
+        /**
+         * <p>Enable an Organizations member account as the IPAM admin account. You cannot
+         * select the Organizations management account as the IPAM admin account. For more
+         * information, see <a href="/vpc/latest/ipam/enable-integ-ipam.html">Enable
+         * integration with Organizations</a> in the <i>Amazon VPC IPAM User Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableIpamOrganizationAdminAccount">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::EnableIpamOrganizationAdminAccountOutcomeCallable EnableIpamOrganizationAdminAccountCallable(const Model::EnableIpamOrganizationAdminAccountRequest& request) const;
+
+        /**
+         * <p>Enable an Organizations member account as the IPAM admin account. You cannot
+         * select the Organizations management account as the IPAM admin account. For more
+         * information, see <a href="/vpc/latest/ipam/enable-integ-ipam.html">Enable
+         * integration with Organizations</a> in the <i>Amazon VPC IPAM User Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableIpamOrganizationAdminAccount">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void EnableIpamOrganizationAdminAccountAsync(const Model::EnableIpamOrganizationAdminAccountRequest& request, const EnableIpamOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables access to the EC2 serial console of all instances for your account.
@@ -16907,6 +17825,118 @@ namespace Model
         virtual void GetInstanceTypesFromInstanceRequirementsAsync(const Model::GetInstanceTypesFromInstanceRequirementsRequest& request, const GetInstanceTypesFromInstanceRequirementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieve historical information about a CIDR within an IPAM scope. For more
+         * information, see <a href="/vpc/latest/ipam/view-history-cidr-ipam.html">View the
+         * history of IP addresses</a> in the <i>Amazon VPC IPAM User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamAddressHistory">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetIpamAddressHistoryOutcome GetIpamAddressHistory(const Model::GetIpamAddressHistoryRequest& request) const;
+
+        /**
+         * <p>Retrieve historical information about a CIDR within an IPAM scope. For more
+         * information, see <a href="/vpc/latest/ipam/view-history-cidr-ipam.html">View the
+         * history of IP addresses</a> in the <i>Amazon VPC IPAM User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamAddressHistory">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetIpamAddressHistoryOutcomeCallable GetIpamAddressHistoryCallable(const Model::GetIpamAddressHistoryRequest& request) const;
+
+        /**
+         * <p>Retrieve historical information about a CIDR within an IPAM scope. For more
+         * information, see <a href="/vpc/latest/ipam/view-history-cidr-ipam.html">View the
+         * history of IP addresses</a> in the <i>Amazon VPC IPAM User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamAddressHistory">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetIpamAddressHistoryAsync(const Model::GetIpamAddressHistoryRequest& request, const GetIpamAddressHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Get a list of all the CIDR allocations in an IPAM pool.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPoolAllocations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetIpamPoolAllocationsOutcome GetIpamPoolAllocations(const Model::GetIpamPoolAllocationsRequest& request) const;
+
+        /**
+         * <p>Get a list of all the CIDR allocations in an IPAM pool.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPoolAllocations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetIpamPoolAllocationsOutcomeCallable GetIpamPoolAllocationsCallable(const Model::GetIpamPoolAllocationsRequest& request) const;
+
+        /**
+         * <p>Get a list of all the CIDR allocations in an IPAM pool.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPoolAllocations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetIpamPoolAllocationsAsync(const Model::GetIpamPoolAllocationsRequest& request, const GetIpamPoolAllocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Get the CIDRs provisioned to an IPAM pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPoolCidrs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetIpamPoolCidrsOutcome GetIpamPoolCidrs(const Model::GetIpamPoolCidrsRequest& request) const;
+
+        /**
+         * <p>Get the CIDRs provisioned to an IPAM pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPoolCidrs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetIpamPoolCidrsOutcomeCallable GetIpamPoolCidrsCallable(const Model::GetIpamPoolCidrsRequest& request) const;
+
+        /**
+         * <p>Get the CIDRs provisioned to an IPAM pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPoolCidrs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetIpamPoolCidrsAsync(const Model::GetIpamPoolCidrsRequest& request, const GetIpamPoolCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Get information about the resources in a scope.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamResourceCidrs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetIpamResourceCidrsOutcome GetIpamResourceCidrs(const Model::GetIpamResourceCidrsRequest& request) const;
+
+        /**
+         * <p>Get information about the resources in a scope.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamResourceCidrs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetIpamResourceCidrsOutcomeCallable GetIpamResourceCidrsCallable(const Model::GetIpamResourceCidrsRequest& request) const;
+
+        /**
+         * <p>Get information about the resources in a scope.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamResourceCidrs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetIpamResourceCidrsAsync(const Model::GetIpamResourceCidrsRequest& request, const GetIpamResourceCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves the configuration data of the specified instance. You can use this
          * data to create a launch template. </p> <p>This action calls on other describe
          * actions to get instance information. Depending on your instance configuration,
@@ -17007,6 +18037,62 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetManagedPrefixListEntriesAsync(const Model::GetManagedPrefixListEntriesRequest& request, const GetManagedPrefixListEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the findings for the specified Network Access Scope
+         * analysis.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetNetworkInsightsAccessScopeAnalysisFindings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetNetworkInsightsAccessScopeAnalysisFindingsOutcome GetNetworkInsightsAccessScopeAnalysisFindings(const Model::GetNetworkInsightsAccessScopeAnalysisFindingsRequest& request) const;
+
+        /**
+         * <p>Gets the findings for the specified Network Access Scope
+         * analysis.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetNetworkInsightsAccessScopeAnalysisFindings">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetNetworkInsightsAccessScopeAnalysisFindingsOutcomeCallable GetNetworkInsightsAccessScopeAnalysisFindingsCallable(const Model::GetNetworkInsightsAccessScopeAnalysisFindingsRequest& request) const;
+
+        /**
+         * <p>Gets the findings for the specified Network Access Scope
+         * analysis.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetNetworkInsightsAccessScopeAnalysisFindings">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetNetworkInsightsAccessScopeAnalysisFindingsAsync(const Model::GetNetworkInsightsAccessScopeAnalysisFindingsRequest& request, const GetNetworkInsightsAccessScopeAnalysisFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the content for the specified Network Access Scope.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetNetworkInsightsAccessScopeContent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetNetworkInsightsAccessScopeContentOutcome GetNetworkInsightsAccessScopeContent(const Model::GetNetworkInsightsAccessScopeContentRequest& request) const;
+
+        /**
+         * <p>Gets the content for the specified Network Access Scope.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetNetworkInsightsAccessScopeContent">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetNetworkInsightsAccessScopeContentOutcomeCallable GetNetworkInsightsAccessScopeContentCallable(const Model::GetNetworkInsightsAccessScopeContentRequest& request) const;
+
+        /**
+         * <p>Gets the content for the specified Network Access Scope.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetNetworkInsightsAccessScopeContent">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetNetworkInsightsAccessScopeContentAsync(const Model::GetNetworkInsightsAccessScopeContentRequest& request, const GetNetworkInsightsAccessScopeContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the encrypted administrator password for a running Windows
@@ -18812,6 +19898,139 @@ namespace Model
         virtual void ModifyInstancePlacementAsync(const Model::ModifyInstancePlacementRequest& request, const ModifyInstancePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modify the configurations of an IPAM. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpam">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::ModifyIpamOutcome ModifyIpam(const Model::ModifyIpamRequest& request) const;
+
+        /**
+         * <p>Modify the configurations of an IPAM. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpam">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyIpamOutcomeCallable ModifyIpamCallable(const Model::ModifyIpamRequest& request) const;
+
+        /**
+         * <p>Modify the configurations of an IPAM. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpam">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyIpamAsync(const Model::ModifyIpamRequest& request, const ModifyIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Modify the configurations of an IPAM pool.</p> <p>For more information, see
+         * <a href="/vpc/latest/ipam/mod-pool-ipam.html">Modify a pool</a> in the <i>Amazon
+         * VPC IPAM User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamPool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyIpamPoolOutcome ModifyIpamPool(const Model::ModifyIpamPoolRequest& request) const;
+
+        /**
+         * <p>Modify the configurations of an IPAM pool.</p> <p>For more information, see
+         * <a href="/vpc/latest/ipam/mod-pool-ipam.html">Modify a pool</a> in the <i>Amazon
+         * VPC IPAM User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamPool">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyIpamPoolOutcomeCallable ModifyIpamPoolCallable(const Model::ModifyIpamPoolRequest& request) const;
+
+        /**
+         * <p>Modify the configurations of an IPAM pool.</p> <p>For more information, see
+         * <a href="/vpc/latest/ipam/mod-pool-ipam.html">Modify a pool</a> in the <i>Amazon
+         * VPC IPAM User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamPool">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyIpamPoolAsync(const Model::ModifyIpamPoolRequest& request, const ModifyIpamPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Modify a resource CIDR. You can use this action to transfer resource CIDRs
+         * between scopes and ignore resource CIDRs that you do not want to manage. If set
+         * to false, the resource will not be tracked for overlap, it cannot be
+         * auto-imported into a pool, and it will be removed from any pool it has an
+         * allocation in.</p> <p>For more information, see <a
+         * href="/vpc/latest/ipam/move-resource-ipam.html">Move resource CIDRs between
+         * scopes</a> and <a
+         * href="/vpc/latest/ipam/change-monitoring-state-ipam.html">Change the monitoring
+         * state of resource CIDRs</a> in the <i>Amazon VPC IPAM User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamResourceCidr">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyIpamResourceCidrOutcome ModifyIpamResourceCidr(const Model::ModifyIpamResourceCidrRequest& request) const;
+
+        /**
+         * <p>Modify a resource CIDR. You can use this action to transfer resource CIDRs
+         * between scopes and ignore resource CIDRs that you do not want to manage. If set
+         * to false, the resource will not be tracked for overlap, it cannot be
+         * auto-imported into a pool, and it will be removed from any pool it has an
+         * allocation in.</p> <p>For more information, see <a
+         * href="/vpc/latest/ipam/move-resource-ipam.html">Move resource CIDRs between
+         * scopes</a> and <a
+         * href="/vpc/latest/ipam/change-monitoring-state-ipam.html">Change the monitoring
+         * state of resource CIDRs</a> in the <i>Amazon VPC IPAM User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamResourceCidr">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyIpamResourceCidrOutcomeCallable ModifyIpamResourceCidrCallable(const Model::ModifyIpamResourceCidrRequest& request) const;
+
+        /**
+         * <p>Modify a resource CIDR. You can use this action to transfer resource CIDRs
+         * between scopes and ignore resource CIDRs that you do not want to manage. If set
+         * to false, the resource will not be tracked for overlap, it cannot be
+         * auto-imported into a pool, and it will be removed from any pool it has an
+         * allocation in.</p> <p>For more information, see <a
+         * href="/vpc/latest/ipam/move-resource-ipam.html">Move resource CIDRs between
+         * scopes</a> and <a
+         * href="/vpc/latest/ipam/change-monitoring-state-ipam.html">Change the monitoring
+         * state of resource CIDRs</a> in the <i>Amazon VPC IPAM User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamResourceCidr">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyIpamResourceCidrAsync(const Model::ModifyIpamResourceCidrRequest& request, const ModifyIpamResourceCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Modify an IPAM scope.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamScope">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyIpamScopeOutcome ModifyIpamScope(const Model::ModifyIpamScopeRequest& request) const;
+
+        /**
+         * <p>Modify an IPAM scope.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamScope">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyIpamScopeOutcomeCallable ModifyIpamScopeCallable(const Model::ModifyIpamScopeRequest& request) const;
+
+        /**
+         * <p>Modify an IPAM scope.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamScope">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyIpamScopeAsync(const Model::ModifyIpamScopeRequest& request, const ModifyIpamScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Modifies a launch template. You can specify which version of the launch
          * template to set as the default version. When launching an instance, the default
          * version applies when a launch template version is not specified.</p><p><h3>See
@@ -20223,6 +21442,34 @@ namespace Model
         virtual void MoveAddressToVpcAsync(const Model::MoveAddressToVpcRequest& request, const MoveAddressToVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Move an BYOIP IPv4 CIDR to IPAM from a public IPv4 pool.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveByoipCidrToIpam">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::MoveByoipCidrToIpamOutcome MoveByoipCidrToIpam(const Model::MoveByoipCidrToIpamRequest& request) const;
+
+        /**
+         * <p>Move an BYOIP IPv4 CIDR to IPAM from a public IPv4 pool.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveByoipCidrToIpam">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::MoveByoipCidrToIpamOutcomeCallable MoveByoipCidrToIpamCallable(const Model::MoveByoipCidrToIpamRequest& request) const;
+
+        /**
+         * <p>Move an BYOIP IPv4 CIDR to IPAM from a public IPv4 pool.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveByoipCidrToIpam">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void MoveByoipCidrToIpamAsync(const Model::MoveByoipCidrToIpamRequest& request, const MoveByoipCidrToIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Provisions an IPv4 or IPv6 address range for use with your Amazon Web
          * Services resources through bring your own IP addresses (BYOIP) and creates a
          * corresponding address pool. After the address range is provisioned, it is ready
@@ -20294,6 +21541,74 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ProvisionByoipCidrAsync(const Model::ProvisionByoipCidrRequest& request, const ProvisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Provision a CIDR to an IPAM pool. You can use thsi action to provision new
+         * CIDRs to a top-level pool or to transfer a CIDR from a top-level pool to a pool
+         * within it.</p> <p>For more information, see <a
+         * href="/vpc/latest/ipam/prov-cidr-ipam.html">Provision CIDRs to pools</a> in the
+         * <i>Amazon VPC IPAM User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionIpamPoolCidr">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ProvisionIpamPoolCidrOutcome ProvisionIpamPoolCidr(const Model::ProvisionIpamPoolCidrRequest& request) const;
+
+        /**
+         * <p>Provision a CIDR to an IPAM pool. You can use thsi action to provision new
+         * CIDRs to a top-level pool or to transfer a CIDR from a top-level pool to a pool
+         * within it.</p> <p>For more information, see <a
+         * href="/vpc/latest/ipam/prov-cidr-ipam.html">Provision CIDRs to pools</a> in the
+         * <i>Amazon VPC IPAM User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionIpamPoolCidr">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ProvisionIpamPoolCidrOutcomeCallable ProvisionIpamPoolCidrCallable(const Model::ProvisionIpamPoolCidrRequest& request) const;
+
+        /**
+         * <p>Provision a CIDR to an IPAM pool. You can use thsi action to provision new
+         * CIDRs to a top-level pool or to transfer a CIDR from a top-level pool to a pool
+         * within it.</p> <p>For more information, see <a
+         * href="/vpc/latest/ipam/prov-cidr-ipam.html">Provision CIDRs to pools</a> in the
+         * <i>Amazon VPC IPAM User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionIpamPoolCidr">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ProvisionIpamPoolCidrAsync(const Model::ProvisionIpamPoolCidrRequest& request, const ProvisionIpamPoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Provision a CIDR to a public IPv4 pool.</p> <p>For more information about
+         * IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in
+         * the <i>Amazon VPC IPAM User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionPublicIpv4PoolCidr">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ProvisionPublicIpv4PoolCidrOutcome ProvisionPublicIpv4PoolCidr(const Model::ProvisionPublicIpv4PoolCidrRequest& request) const;
+
+        /**
+         * <p>Provision a CIDR to a public IPv4 pool.</p> <p>For more information about
+         * IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in
+         * the <i>Amazon VPC IPAM User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionPublicIpv4PoolCidr">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ProvisionPublicIpv4PoolCidrOutcomeCallable ProvisionPublicIpv4PoolCidrCallable(const Model::ProvisionPublicIpv4PoolCidrRequest& request) const;
+
+        /**
+         * <p>Provision a CIDR to a public IPv4 pool.</p> <p>For more information about
+         * IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in
+         * the <i>Amazon VPC IPAM User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionPublicIpv4PoolCidr">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ProvisionPublicIpv4PoolCidrAsync(const Model::ProvisionPublicIpv4PoolCidrRequest& request, const ProvisionPublicIpv4PoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Purchase a reservation with configurations that match those of your Dedicated
@@ -21038,6 +22353,49 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ReleaseHostsAsync(const Model::ReleaseHostsRequest& request, const ReleaseHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Release an allocation within an IPAM pool. You can only use this action to
+         * release manual allocations. To remove an allocation for a resource without
+         * deleting the resource, set its monitored state to false using <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamResourceCidr.html">ModifyIpamResourceCidr</a>.
+         * For more information, see <a
+         * href="/vpc/latest/ipam/release-pool-alloc-ipam.html">Release an allocation</a>
+         * in the <i>Amazon VPC IPAM User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseIpamPoolAllocation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ReleaseIpamPoolAllocationOutcome ReleaseIpamPoolAllocation(const Model::ReleaseIpamPoolAllocationRequest& request) const;
+
+        /**
+         * <p>Release an allocation within an IPAM pool. You can only use this action to
+         * release manual allocations. To remove an allocation for a resource without
+         * deleting the resource, set its monitored state to false using <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamResourceCidr.html">ModifyIpamResourceCidr</a>.
+         * For more information, see <a
+         * href="/vpc/latest/ipam/release-pool-alloc-ipam.html">Release an allocation</a>
+         * in the <i>Amazon VPC IPAM User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseIpamPoolAllocation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ReleaseIpamPoolAllocationOutcomeCallable ReleaseIpamPoolAllocationCallable(const Model::ReleaseIpamPoolAllocationRequest& request) const;
+
+        /**
+         * <p>Release an allocation within an IPAM pool. You can only use this action to
+         * release manual allocations. To remove an allocation for a resource without
+         * deleting the resource, set its monitored state to false using <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamResourceCidr.html">ModifyIpamResourceCidr</a>.
+         * For more information, see <a
+         * href="/vpc/latest/ipam/release-pool-alloc-ipam.html">Release an allocation</a>
+         * in the <i>Amazon VPC IPAM User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseIpamPoolAllocation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ReleaseIpamPoolAllocationAsync(const Model::ReleaseIpamPoolAllocationRequest& request, const ReleaseIpamPoolAllocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Replaces an IAM instance profile for the specified running instance. You can
@@ -22438,6 +23796,34 @@ namespace Model
         virtual void StartInstancesAsync(const Model::StartInstancesRequest& request, const StartInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Starts analyzing the specified Network Access Scope.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartNetworkInsightsAccessScopeAnalysis">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartNetworkInsightsAccessScopeAnalysisOutcome StartNetworkInsightsAccessScopeAnalysis(const Model::StartNetworkInsightsAccessScopeAnalysisRequest& request) const;
+
+        /**
+         * <p>Starts analyzing the specified Network Access Scope.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartNetworkInsightsAccessScopeAnalysis">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartNetworkInsightsAccessScopeAnalysisOutcomeCallable StartNetworkInsightsAccessScopeAnalysisCallable(const Model::StartNetworkInsightsAccessScopeAnalysisRequest& request) const;
+
+        /**
+         * <p>Starts analyzing the specified Network Access Scope.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartNetworkInsightsAccessScopeAnalysis">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartNetworkInsightsAccessScopeAnalysisAsync(const Model::StartNetworkInsightsAccessScopeAnalysisRequest& request, const StartNetworkInsightsAccessScopeAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Starts analyzing the specified path. If the path is reachable, the operation
          * returns the shortest feasible path.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartNetworkInsightsAnalysis">AWS
@@ -23031,6 +24417,7 @@ namespace Model
         void AdvertiseByoipCidrAsyncHelper(const Model::AdvertiseByoipCidrRequest& request, const AdvertiseByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AllocateAddressAsyncHelper(const Model::AllocateAddressRequest& request, const AllocateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AllocateHostsAsyncHelper(const Model::AllocateHostsRequest& request, const AllocateHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AllocateIpamPoolCidrAsyncHelper(const Model::AllocateIpamPoolCidrRequest& request, const AllocateIpamPoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ApplySecurityGroupsToClientVpnTargetNetworkAsyncHelper(const Model::ApplySecurityGroupsToClientVpnTargetNetworkRequest& request, const ApplySecurityGroupsToClientVpnTargetNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssignIpv6AddressesAsyncHelper(const Model::AssignIpv6AddressesRequest& request, const AssignIpv6AddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssignPrivateIpAddressesAsyncHelper(const Model::AssignPrivateIpAddressesRequest& request, const AssignPrivateIpAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -23085,6 +24472,9 @@ namespace Model
         void CreateInstanceEventWindowAsyncHelper(const Model::CreateInstanceEventWindowRequest& request, const CreateInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateInstanceExportTaskAsyncHelper(const Model::CreateInstanceExportTaskRequest& request, const CreateInstanceExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateInternetGatewayAsyncHelper(const Model::CreateInternetGatewayRequest& request, const CreateInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateIpamAsyncHelper(const Model::CreateIpamRequest& request, const CreateIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateIpamPoolAsyncHelper(const Model::CreateIpamPoolRequest& request, const CreateIpamPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateIpamScopeAsyncHelper(const Model::CreateIpamScopeRequest& request, const CreateIpamScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateKeyPairAsyncHelper(const Model::CreateKeyPairRequest& request, const CreateKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLaunchTemplateAsyncHelper(const Model::CreateLaunchTemplateRequest& request, const CreateLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLaunchTemplateVersionAsyncHelper(const Model::CreateLaunchTemplateVersionRequest& request, const CreateLaunchTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -23094,10 +24484,12 @@ namespace Model
         void CreateNatGatewayAsyncHelper(const Model::CreateNatGatewayRequest& request, const CreateNatGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateNetworkAclAsyncHelper(const Model::CreateNetworkAclRequest& request, const CreateNetworkAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateNetworkAclEntryAsyncHelper(const Model::CreateNetworkAclEntryRequest& request, const CreateNetworkAclEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateNetworkInsightsAccessScopeAsyncHelper(const Model::CreateNetworkInsightsAccessScopeRequest& request, const CreateNetworkInsightsAccessScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateNetworkInsightsPathAsyncHelper(const Model::CreateNetworkInsightsPathRequest& request, const CreateNetworkInsightsPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateNetworkInterfaceAsyncHelper(const Model::CreateNetworkInterfaceRequest& request, const CreateNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateNetworkInterfacePermissionAsyncHelper(const Model::CreateNetworkInterfacePermissionRequest& request, const CreateNetworkInterfacePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePlacementGroupAsyncHelper(const Model::CreatePlacementGroupRequest& request, const CreatePlacementGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreatePublicIpv4PoolAsyncHelper(const Model::CreatePublicIpv4PoolRequest& request, const CreatePublicIpv4PoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateReplaceRootVolumeTaskAsyncHelper(const Model::CreateReplaceRootVolumeTaskRequest& request, const CreateReplaceRootVolumeTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateReservedInstancesListingAsyncHelper(const Model::CreateReservedInstancesListingRequest& request, const CreateReservedInstancesListingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRestoreImageTaskAsyncHelper(const Model::CreateRestoreImageTaskRequest& request, const CreateRestoreImageTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -23144,6 +24536,9 @@ namespace Model
         void DeleteFpgaImageAsyncHelper(const Model::DeleteFpgaImageRequest& request, const DeleteFpgaImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteInstanceEventWindowAsyncHelper(const Model::DeleteInstanceEventWindowRequest& request, const DeleteInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteInternetGatewayAsyncHelper(const Model::DeleteInternetGatewayRequest& request, const DeleteInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteIpamAsyncHelper(const Model::DeleteIpamRequest& request, const DeleteIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteIpamPoolAsyncHelper(const Model::DeleteIpamPoolRequest& request, const DeleteIpamPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteIpamScopeAsyncHelper(const Model::DeleteIpamScopeRequest& request, const DeleteIpamScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteKeyPairAsyncHelper(const Model::DeleteKeyPairRequest& request, const DeleteKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteLaunchTemplateAsyncHelper(const Model::DeleteLaunchTemplateRequest& request, const DeleteLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteLaunchTemplateVersionsAsyncHelper(const Model::DeleteLaunchTemplateVersionsRequest& request, const DeleteLaunchTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -23153,11 +24548,14 @@ namespace Model
         void DeleteNatGatewayAsyncHelper(const Model::DeleteNatGatewayRequest& request, const DeleteNatGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteNetworkAclAsyncHelper(const Model::DeleteNetworkAclRequest& request, const DeleteNetworkAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteNetworkAclEntryAsyncHelper(const Model::DeleteNetworkAclEntryRequest& request, const DeleteNetworkAclEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteNetworkInsightsAccessScopeAsyncHelper(const Model::DeleteNetworkInsightsAccessScopeRequest& request, const DeleteNetworkInsightsAccessScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteNetworkInsightsAccessScopeAnalysisAsyncHelper(const Model::DeleteNetworkInsightsAccessScopeAnalysisRequest& request, const DeleteNetworkInsightsAccessScopeAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteNetworkInsightsAnalysisAsyncHelper(const Model::DeleteNetworkInsightsAnalysisRequest& request, const DeleteNetworkInsightsAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteNetworkInsightsPathAsyncHelper(const Model::DeleteNetworkInsightsPathRequest& request, const DeleteNetworkInsightsPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteNetworkInterfaceAsyncHelper(const Model::DeleteNetworkInterfaceRequest& request, const DeleteNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteNetworkInterfacePermissionAsyncHelper(const Model::DeleteNetworkInterfacePermissionRequest& request, const DeleteNetworkInterfacePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePlacementGroupAsyncHelper(const Model::DeletePlacementGroupRequest& request, const DeletePlacementGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeletePublicIpv4PoolAsyncHelper(const Model::DeletePublicIpv4PoolRequest& request, const DeletePublicIpv4PoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteQueuedReservedInstancesAsyncHelper(const Model::DeleteQueuedReservedInstancesRequest& request, const DeleteQueuedReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRouteAsyncHelper(const Model::DeleteRouteRequest& request, const DeleteRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRouteTableAsyncHelper(const Model::DeleteRouteTableRequest& request, const DeleteRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -23190,6 +24588,8 @@ namespace Model
         void DeleteVpnConnectionRouteAsyncHelper(const Model::DeleteVpnConnectionRouteRequest& request, const DeleteVpnConnectionRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVpnGatewayAsyncHelper(const Model::DeleteVpnGatewayRequest& request, const DeleteVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeprovisionByoipCidrAsyncHelper(const Model::DeprovisionByoipCidrRequest& request, const DeprovisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeprovisionIpamPoolCidrAsyncHelper(const Model::DeprovisionIpamPoolCidrRequest& request, const DeprovisionIpamPoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeprovisionPublicIpv4PoolCidrAsyncHelper(const Model::DeprovisionPublicIpv4PoolCidrRequest& request, const DeprovisionPublicIpv4PoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeregisterImageAsyncHelper(const Model::DeregisterImageRequest& request, const DeregisterImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeregisterInstanceEventNotificationAttributesAsyncHelper(const Model::DeregisterInstanceEventNotificationAttributesRequest& request, const DeregisterInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeregisterTransitGatewayMulticastGroupMembersAsyncHelper(const Model::DeregisterTransitGatewayMulticastGroupMembersRequest& request, const DeregisterTransitGatewayMulticastGroupMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -23244,6 +24644,9 @@ namespace Model
         void DescribeInstanceTypesAsyncHelper(const Model::DescribeInstanceTypesRequest& request, const DescribeInstanceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstancesAsyncHelper(const Model::DescribeInstancesRequest& request, const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInternetGatewaysAsyncHelper(const Model::DescribeInternetGatewaysRequest& request, const DescribeInternetGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeIpamPoolsAsyncHelper(const Model::DescribeIpamPoolsRequest& request, const DescribeIpamPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeIpamScopesAsyncHelper(const Model::DescribeIpamScopesRequest& request, const DescribeIpamScopesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeIpamsAsyncHelper(const Model::DescribeIpamsRequest& request, const DescribeIpamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeIpv6PoolsAsyncHelper(const Model::DescribeIpv6PoolsRequest& request, const DescribeIpv6PoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeKeyPairsAsyncHelper(const Model::DescribeKeyPairsRequest& request, const DescribeKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLaunchTemplateVersionsAsyncHelper(const Model::DescribeLaunchTemplateVersionsRequest& request, const DescribeLaunchTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -23258,6 +24661,8 @@ namespace Model
         void DescribeMovingAddressesAsyncHelper(const Model::DescribeMovingAddressesRequest& request, const DescribeMovingAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeNatGatewaysAsyncHelper(const Model::DescribeNatGatewaysRequest& request, const DescribeNatGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeNetworkAclsAsyncHelper(const Model::DescribeNetworkAclsRequest& request, const DescribeNetworkAclsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeNetworkInsightsAccessScopeAnalysesAsyncHelper(const Model::DescribeNetworkInsightsAccessScopeAnalysesRequest& request, const DescribeNetworkInsightsAccessScopeAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeNetworkInsightsAccessScopesAsyncHelper(const Model::DescribeNetworkInsightsAccessScopesRequest& request, const DescribeNetworkInsightsAccessScopesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeNetworkInsightsAnalysesAsyncHelper(const Model::DescribeNetworkInsightsAnalysesRequest& request, const DescribeNetworkInsightsAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeNetworkInsightsPathsAsyncHelper(const Model::DescribeNetworkInsightsPathsRequest& request, const DescribeNetworkInsightsPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeNetworkInterfaceAttributeAsyncHelper(const Model::DescribeNetworkInterfaceAttributeRequest& request, const DescribeNetworkInterfaceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -23329,6 +24734,7 @@ namespace Model
         void DisableEbsEncryptionByDefaultAsyncHelper(const Model::DisableEbsEncryptionByDefaultRequest& request, const DisableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableFastSnapshotRestoresAsyncHelper(const Model::DisableFastSnapshotRestoresRequest& request, const DisableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableImageDeprecationAsyncHelper(const Model::DisableImageDeprecationRequest& request, const DisableImageDeprecationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisableIpamOrganizationAdminAccountAsyncHelper(const Model::DisableIpamOrganizationAdminAccountRequest& request, const DisableIpamOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableSerialConsoleAccessAsyncHelper(const Model::DisableSerialConsoleAccessRequest& request, const DisableSerialConsoleAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableTransitGatewayRouteTablePropagationAsyncHelper(const Model::DisableTransitGatewayRouteTablePropagationRequest& request, const DisableTransitGatewayRouteTablePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableVgwRoutePropagationAsyncHelper(const Model::DisableVgwRoutePropagationRequest& request, const DisableVgwRoutePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -23348,6 +24754,7 @@ namespace Model
         void EnableEbsEncryptionByDefaultAsyncHelper(const Model::EnableEbsEncryptionByDefaultRequest& request, const EnableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableFastSnapshotRestoresAsyncHelper(const Model::EnableFastSnapshotRestoresRequest& request, const EnableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableImageDeprecationAsyncHelper(const Model::EnableImageDeprecationRequest& request, const EnableImageDeprecationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void EnableIpamOrganizationAdminAccountAsyncHelper(const Model::EnableIpamOrganizationAdminAccountRequest& request, const EnableIpamOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableSerialConsoleAccessAsyncHelper(const Model::EnableSerialConsoleAccessRequest& request, const EnableSerialConsoleAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableTransitGatewayRouteTablePropagationAsyncHelper(const Model::EnableTransitGatewayRouteTablePropagationRequest& request, const EnableTransitGatewayRouteTablePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableVgwRoutePropagationAsyncHelper(const Model::EnableVgwRoutePropagationRequest& request, const EnableVgwRoutePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -23371,9 +24778,15 @@ namespace Model
         void GetGroupsForCapacityReservationAsyncHelper(const Model::GetGroupsForCapacityReservationRequest& request, const GetGroupsForCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetHostReservationPurchasePreviewAsyncHelper(const Model::GetHostReservationPurchasePreviewRequest& request, const GetHostReservationPurchasePreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetInstanceTypesFromInstanceRequirementsAsyncHelper(const Model::GetInstanceTypesFromInstanceRequirementsRequest& request, const GetInstanceTypesFromInstanceRequirementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetIpamAddressHistoryAsyncHelper(const Model::GetIpamAddressHistoryRequest& request, const GetIpamAddressHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetIpamPoolAllocationsAsyncHelper(const Model::GetIpamPoolAllocationsRequest& request, const GetIpamPoolAllocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetIpamPoolCidrsAsyncHelper(const Model::GetIpamPoolCidrsRequest& request, const GetIpamPoolCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetIpamResourceCidrsAsyncHelper(const Model::GetIpamResourceCidrsRequest& request, const GetIpamResourceCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLaunchTemplateDataAsyncHelper(const Model::GetLaunchTemplateDataRequest& request, const GetLaunchTemplateDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetManagedPrefixListAssociationsAsyncHelper(const Model::GetManagedPrefixListAssociationsRequest& request, const GetManagedPrefixListAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetManagedPrefixListEntriesAsyncHelper(const Model::GetManagedPrefixListEntriesRequest& request, const GetManagedPrefixListEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetNetworkInsightsAccessScopeAnalysisFindingsAsyncHelper(const Model::GetNetworkInsightsAccessScopeAnalysisFindingsRequest& request, const GetNetworkInsightsAccessScopeAnalysisFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetNetworkInsightsAccessScopeContentAsyncHelper(const Model::GetNetworkInsightsAccessScopeContentRequest& request, const GetNetworkInsightsAccessScopeContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPasswordDataAsyncHelper(const Model::GetPasswordDataRequest& request, const GetPasswordDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetReservedInstancesExchangeQuoteAsyncHelper(const Model::GetReservedInstancesExchangeQuoteRequest& request, const GetReservedInstancesExchangeQuoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSerialConsoleAccessStatusAsyncHelper(const Model::GetSerialConsoleAccessStatusRequest& request, const GetSerialConsoleAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -23413,6 +24826,10 @@ namespace Model
         void ModifyInstanceEventWindowAsyncHelper(const Model::ModifyInstanceEventWindowRequest& request, const ModifyInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyInstanceMetadataOptionsAsyncHelper(const Model::ModifyInstanceMetadataOptionsRequest& request, const ModifyInstanceMetadataOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyInstancePlacementAsyncHelper(const Model::ModifyInstancePlacementRequest& request, const ModifyInstancePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyIpamAsyncHelper(const Model::ModifyIpamRequest& request, const ModifyIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyIpamPoolAsyncHelper(const Model::ModifyIpamPoolRequest& request, const ModifyIpamPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyIpamResourceCidrAsyncHelper(const Model::ModifyIpamResourceCidrRequest& request, const ModifyIpamResourceCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyIpamScopeAsyncHelper(const Model::ModifyIpamScopeRequest& request, const ModifyIpamScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyLaunchTemplateAsyncHelper(const Model::ModifyLaunchTemplateRequest& request, const ModifyLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyManagedPrefixListAsyncHelper(const Model::ModifyManagedPrefixListRequest& request, const ModifyManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyNetworkInterfaceAttributeAsyncHelper(const Model::ModifyNetworkInterfaceAttributeRequest& request, const ModifyNetworkInterfaceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -23444,7 +24861,10 @@ namespace Model
         void ModifyVpnTunnelOptionsAsyncHelper(const Model::ModifyVpnTunnelOptionsRequest& request, const ModifyVpnTunnelOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void MonitorInstancesAsyncHelper(const Model::MonitorInstancesRequest& request, const MonitorInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void MoveAddressToVpcAsyncHelper(const Model::MoveAddressToVpcRequest& request, const MoveAddressToVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void MoveByoipCidrToIpamAsyncHelper(const Model::MoveByoipCidrToIpamRequest& request, const MoveByoipCidrToIpamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ProvisionByoipCidrAsyncHelper(const Model::ProvisionByoipCidrRequest& request, const ProvisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ProvisionIpamPoolCidrAsyncHelper(const Model::ProvisionIpamPoolCidrRequest& request, const ProvisionIpamPoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ProvisionPublicIpv4PoolCidrAsyncHelper(const Model::ProvisionPublicIpv4PoolCidrRequest& request, const ProvisionPublicIpv4PoolCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PurchaseHostReservationAsyncHelper(const Model::PurchaseHostReservationRequest& request, const PurchaseHostReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PurchaseReservedInstancesOfferingAsyncHelper(const Model::PurchaseReservedInstancesOfferingRequest& request, const PurchaseReservedInstancesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PurchaseScheduledInstancesAsyncHelper(const Model::PurchaseScheduledInstancesRequest& request, const PurchaseScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -23460,6 +24880,7 @@ namespace Model
         void RejectVpcPeeringConnectionAsyncHelper(const Model::RejectVpcPeeringConnectionRequest& request, const RejectVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ReleaseAddressAsyncHelper(const Model::ReleaseAddressRequest& request, const ReleaseAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ReleaseHostsAsyncHelper(const Model::ReleaseHostsRequest& request, const ReleaseHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ReleaseIpamPoolAllocationAsyncHelper(const Model::ReleaseIpamPoolAllocationRequest& request, const ReleaseIpamPoolAllocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ReplaceIamInstanceProfileAssociationAsyncHelper(const Model::ReplaceIamInstanceProfileAssociationRequest& request, const ReplaceIamInstanceProfileAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ReplaceNetworkAclAssociationAsyncHelper(const Model::ReplaceNetworkAclAssociationRequest& request, const ReplaceNetworkAclAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ReplaceNetworkAclEntryAsyncHelper(const Model::ReplaceNetworkAclEntryRequest& request, const ReplaceNetworkAclEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -23490,6 +24911,7 @@ namespace Model
         void SearchTransitGatewayRoutesAsyncHelper(const Model::SearchTransitGatewayRoutesRequest& request, const SearchTransitGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendDiagnosticInterruptAsyncHelper(const Model::SendDiagnosticInterruptRequest& request, const SendDiagnosticInterruptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartInstancesAsyncHelper(const Model::StartInstancesRequest& request, const StartInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartNetworkInsightsAccessScopeAnalysisAsyncHelper(const Model::StartNetworkInsightsAccessScopeAnalysisRequest& request, const StartNetworkInsightsAccessScopeAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartNetworkInsightsAnalysisAsyncHelper(const Model::StartNetworkInsightsAnalysisRequest& request, const StartNetworkInsightsAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartVpcEndpointServicePrivateDnsVerificationAsyncHelper(const Model::StartVpcEndpointServicePrivateDnsVerificationRequest& request, const StartVpcEndpointServicePrivateDnsVerificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopInstancesAsyncHelper(const Model::StopInstancesRequest& request, const StopInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

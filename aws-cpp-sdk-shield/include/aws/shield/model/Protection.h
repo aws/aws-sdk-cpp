@@ -7,6 +7,7 @@
 #include <aws/shield/Shield_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/shield/model/ApplicationLayerAutomaticResponseConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -179,55 +180,55 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier (ID) for the Route 53 health check that's associated
+     * <p>The unique identifier (ID) for the Route 53 health check that's associated
      * with the protection. </p>
      */
     inline const Aws::Vector<Aws::String>& GetHealthCheckIds() const{ return m_healthCheckIds; }
 
     /**
-     * <p>The unique identifier (ID) for the Route 53 health check that's associated
+     * <p>The unique identifier (ID) for the Route 53 health check that's associated
      * with the protection. </p>
      */
     inline bool HealthCheckIdsHasBeenSet() const { return m_healthCheckIdsHasBeenSet; }
 
     /**
-     * <p>The unique identifier (ID) for the Route 53 health check that's associated
+     * <p>The unique identifier (ID) for the Route 53 health check that's associated
      * with the protection. </p>
      */
     inline void SetHealthCheckIds(const Aws::Vector<Aws::String>& value) { m_healthCheckIdsHasBeenSet = true; m_healthCheckIds = value; }
 
     /**
-     * <p>The unique identifier (ID) for the Route 53 health check that's associated
+     * <p>The unique identifier (ID) for the Route 53 health check that's associated
      * with the protection. </p>
      */
     inline void SetHealthCheckIds(Aws::Vector<Aws::String>&& value) { m_healthCheckIdsHasBeenSet = true; m_healthCheckIds = std::move(value); }
 
     /**
-     * <p>The unique identifier (ID) for the Route 53 health check that's associated
+     * <p>The unique identifier (ID) for the Route 53 health check that's associated
      * with the protection. </p>
      */
     inline Protection& WithHealthCheckIds(const Aws::Vector<Aws::String>& value) { SetHealthCheckIds(value); return *this;}
 
     /**
-     * <p>The unique identifier (ID) for the Route 53 health check that's associated
+     * <p>The unique identifier (ID) for the Route 53 health check that's associated
      * with the protection. </p>
      */
     inline Protection& WithHealthCheckIds(Aws::Vector<Aws::String>&& value) { SetHealthCheckIds(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier (ID) for the Route 53 health check that's associated
+     * <p>The unique identifier (ID) for the Route 53 health check that's associated
      * with the protection. </p>
      */
     inline Protection& AddHealthCheckIds(const Aws::String& value) { m_healthCheckIdsHasBeenSet = true; m_healthCheckIds.push_back(value); return *this; }
 
     /**
-     * <p>The unique identifier (ID) for the Route 53 health check that's associated
+     * <p>The unique identifier (ID) for the Route 53 health check that's associated
      * with the protection. </p>
      */
     inline Protection& AddHealthCheckIds(Aws::String&& value) { m_healthCheckIdsHasBeenSet = true; m_healthCheckIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The unique identifier (ID) for the Route 53 health check that's associated
+     * <p>The unique identifier (ID) for the Route 53 health check that's associated
      * with the protection. </p>
      */
     inline Protection& AddHealthCheckIds(const char* value) { m_healthCheckIdsHasBeenSet = true; m_healthCheckIds.push_back(value); return *this; }
@@ -273,6 +274,55 @@ namespace Model
      */
     inline Protection& WithProtectionArn(const char* value) { SetProtectionArn(value); return *this;}
 
+
+    /**
+     * <p>The automatic application layer DDoS mitigation settings for the protection.
+     * This configuration determines whether Shield Advanced automatically manages
+     * rules in the web ACL in order to respond to application layer events that Shield
+     * Advanced determines to be DDoS attacks. </p>
+     */
+    inline const ApplicationLayerAutomaticResponseConfiguration& GetApplicationLayerAutomaticResponseConfiguration() const{ return m_applicationLayerAutomaticResponseConfiguration; }
+
+    /**
+     * <p>The automatic application layer DDoS mitigation settings for the protection.
+     * This configuration determines whether Shield Advanced automatically manages
+     * rules in the web ACL in order to respond to application layer events that Shield
+     * Advanced determines to be DDoS attacks. </p>
+     */
+    inline bool ApplicationLayerAutomaticResponseConfigurationHasBeenSet() const { return m_applicationLayerAutomaticResponseConfigurationHasBeenSet; }
+
+    /**
+     * <p>The automatic application layer DDoS mitigation settings for the protection.
+     * This configuration determines whether Shield Advanced automatically manages
+     * rules in the web ACL in order to respond to application layer events that Shield
+     * Advanced determines to be DDoS attacks. </p>
+     */
+    inline void SetApplicationLayerAutomaticResponseConfiguration(const ApplicationLayerAutomaticResponseConfiguration& value) { m_applicationLayerAutomaticResponseConfigurationHasBeenSet = true; m_applicationLayerAutomaticResponseConfiguration = value; }
+
+    /**
+     * <p>The automatic application layer DDoS mitigation settings for the protection.
+     * This configuration determines whether Shield Advanced automatically manages
+     * rules in the web ACL in order to respond to application layer events that Shield
+     * Advanced determines to be DDoS attacks. </p>
+     */
+    inline void SetApplicationLayerAutomaticResponseConfiguration(ApplicationLayerAutomaticResponseConfiguration&& value) { m_applicationLayerAutomaticResponseConfigurationHasBeenSet = true; m_applicationLayerAutomaticResponseConfiguration = std::move(value); }
+
+    /**
+     * <p>The automatic application layer DDoS mitigation settings for the protection.
+     * This configuration determines whether Shield Advanced automatically manages
+     * rules in the web ACL in order to respond to application layer events that Shield
+     * Advanced determines to be DDoS attacks. </p>
+     */
+    inline Protection& WithApplicationLayerAutomaticResponseConfiguration(const ApplicationLayerAutomaticResponseConfiguration& value) { SetApplicationLayerAutomaticResponseConfiguration(value); return *this;}
+
+    /**
+     * <p>The automatic application layer DDoS mitigation settings for the protection.
+     * This configuration determines whether Shield Advanced automatically manages
+     * rules in the web ACL in order to respond to application layer events that Shield
+     * Advanced determines to be DDoS attacks. </p>
+     */
+    inline Protection& WithApplicationLayerAutomaticResponseConfiguration(ApplicationLayerAutomaticResponseConfiguration&& value) { SetApplicationLayerAutomaticResponseConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -289,6 +339,9 @@ namespace Model
 
     Aws::String m_protectionArn;
     bool m_protectionArnHasBeenSet;
+
+    ApplicationLayerAutomaticResponseConfiguration m_applicationLayerAutomaticResponseConfiguration;
+    bool m_applicationLayerAutomaticResponseConfigurationHasBeenSet;
   };
 
 } // namespace Model

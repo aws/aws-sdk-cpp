@@ -12,6 +12,7 @@
 #include <aws/dynamodb/model/ProvisionedThroughput.h>
 #include <aws/dynamodb/model/StreamSpecification.h>
 #include <aws/dynamodb/model/SSESpecification.h>
+#include <aws/dynamodb/model/TableClass.h>
 #include <aws/dynamodb/model/AttributeDefinition.h>
 #include <aws/dynamodb/model/GlobalSecondaryIndexUpdate.h>
 #include <aws/dynamodb/model/ReplicationGroupUpdate.h>
@@ -543,6 +544,43 @@ namespace Model
      */
     inline UpdateTableRequest& AddReplicaUpdates(ReplicationGroupUpdate&& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The table class of the table to be updated. Valid values are
+     * <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+     */
+    inline const TableClass& GetTableClass() const{ return m_tableClass; }
+
+    /**
+     * <p>The table class of the table to be updated. Valid values are
+     * <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+     */
+    inline bool TableClassHasBeenSet() const { return m_tableClassHasBeenSet; }
+
+    /**
+     * <p>The table class of the table to be updated. Valid values are
+     * <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+     */
+    inline void SetTableClass(const TableClass& value) { m_tableClassHasBeenSet = true; m_tableClass = value; }
+
+    /**
+     * <p>The table class of the table to be updated. Valid values are
+     * <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+     */
+    inline void SetTableClass(TableClass&& value) { m_tableClassHasBeenSet = true; m_tableClass = std::move(value); }
+
+    /**
+     * <p>The table class of the table to be updated. Valid values are
+     * <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+     */
+    inline UpdateTableRequest& WithTableClass(const TableClass& value) { SetTableClass(value); return *this;}
+
+    /**
+     * <p>The table class of the table to be updated. Valid values are
+     * <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+     */
+    inline UpdateTableRequest& WithTableClass(TableClass&& value) { SetTableClass(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<AttributeDefinition> m_attributeDefinitions;
@@ -568,6 +606,9 @@ namespace Model
 
     Aws::Vector<ReplicationGroupUpdate> m_replicaUpdates;
     bool m_replicaUpdatesHasBeenSet;
+
+    TableClass m_tableClass;
+    bool m_tableClassHasBeenSet;
   };
 
 } // namespace Model

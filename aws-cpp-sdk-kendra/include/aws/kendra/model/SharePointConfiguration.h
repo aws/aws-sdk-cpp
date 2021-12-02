@@ -136,7 +136,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
      * a Microsoft SharePoint Data Source</a>. For more information about Secrets
-     * Manager, see <a
+     * Manager see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
      * What Is Secrets Manager</a> in the <i>Secrets Manager </i> user guide.</p>
      */
@@ -149,7 +149,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
      * a Microsoft SharePoint Data Source</a>. For more information about Secrets
-     * Manager, see <a
+     * Manager see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
      * What Is Secrets Manager</a> in the <i>Secrets Manager </i> user guide.</p>
      */
@@ -162,7 +162,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
      * a Microsoft SharePoint Data Source</a>. For more information about Secrets
-     * Manager, see <a
+     * Manager see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
      * What Is Secrets Manager</a> in the <i>Secrets Manager </i> user guide.</p>
      */
@@ -175,7 +175,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
      * a Microsoft SharePoint Data Source</a>. For more information about Secrets
-     * Manager, see <a
+     * Manager see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
      * What Is Secrets Manager</a> in the <i>Secrets Manager </i> user guide.</p>
      */
@@ -188,7 +188,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
      * a Microsoft SharePoint Data Source</a>. For more information about Secrets
-     * Manager, see <a
+     * Manager see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
      * What Is Secrets Manager</a> in the <i>Secrets Manager </i> user guide.</p>
      */
@@ -201,7 +201,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
      * a Microsoft SharePoint Data Source</a>. For more information about Secrets
-     * Manager, see <a
+     * Manager see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
      * What Is Secrets Manager</a> in the <i>Secrets Manager </i> user guide.</p>
      */
@@ -214,7 +214,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
      * a Microsoft SharePoint Data Source</a>. For more information about Secrets
-     * Manager, see <a
+     * Manager see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
      * What Is Secrets Manager</a> in the <i>Secrets Manager </i> user guide.</p>
      */
@@ -227,7 +227,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
      * a Microsoft SharePoint Data Source</a>. For more information about Secrets
-     * Manager, see <a
+     * Manager see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
      * What Is Secrets Manager</a> in the <i>Secrets Manager </i> user guide.</p>
      */

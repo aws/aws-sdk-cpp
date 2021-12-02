@@ -44,11 +44,11 @@ namespace Model
     /**
      * <p>The identifier of the directory corresponding to your Amazon WorkDocs site
      * repository.</p> <p>You can find the organization ID in the <a
-     * href="https://console.aws.amazon.com/directoryservicev2/">AWS Directory
-     * Service</a> by going to <b>Active Directory</b>, then <b>Directories</b>. Your
-     * Amazon WorkDocs site directory has an ID, which is the organization ID. You can
-     * also set up a new Amazon WorkDocs directory in the AWS Directory Service console
-     * and enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs
+     * href="https://console.aws.amazon.com/directoryservicev2/">Directory Service</a>
+     * by going to <b>Active Directory</b>, then <b>Directories</b>. Your Amazon
+     * WorkDocs site directory has an ID, which is the organization ID. You can also
+     * set up a new Amazon WorkDocs directory in the Directory Service console and
+     * enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs
      * console.</p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
@@ -56,11 +56,11 @@ namespace Model
     /**
      * <p>The identifier of the directory corresponding to your Amazon WorkDocs site
      * repository.</p> <p>You can find the organization ID in the <a
-     * href="https://console.aws.amazon.com/directoryservicev2/">AWS Directory
-     * Service</a> by going to <b>Active Directory</b>, then <b>Directories</b>. Your
-     * Amazon WorkDocs site directory has an ID, which is the organization ID. You can
-     * also set up a new Amazon WorkDocs directory in the AWS Directory Service console
-     * and enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs
+     * href="https://console.aws.amazon.com/directoryservicev2/">Directory Service</a>
+     * by going to <b>Active Directory</b>, then <b>Directories</b>. Your Amazon
+     * WorkDocs site directory has an ID, which is the organization ID. You can also
+     * set up a new Amazon WorkDocs directory in the Directory Service console and
+     * enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs
      * console.</p>
      */
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
@@ -68,11 +68,11 @@ namespace Model
     /**
      * <p>The identifier of the directory corresponding to your Amazon WorkDocs site
      * repository.</p> <p>You can find the organization ID in the <a
-     * href="https://console.aws.amazon.com/directoryservicev2/">AWS Directory
-     * Service</a> by going to <b>Active Directory</b>, then <b>Directories</b>. Your
-     * Amazon WorkDocs site directory has an ID, which is the organization ID. You can
-     * also set up a new Amazon WorkDocs directory in the AWS Directory Service console
-     * and enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs
+     * href="https://console.aws.amazon.com/directoryservicev2/">Directory Service</a>
+     * by going to <b>Active Directory</b>, then <b>Directories</b>. Your Amazon
+     * WorkDocs site directory has an ID, which is the organization ID. You can also
+     * set up a new Amazon WorkDocs directory in the Directory Service console and
+     * enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs
      * console.</p>
      */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
@@ -80,11 +80,11 @@ namespace Model
     /**
      * <p>The identifier of the directory corresponding to your Amazon WorkDocs site
      * repository.</p> <p>You can find the organization ID in the <a
-     * href="https://console.aws.amazon.com/directoryservicev2/">AWS Directory
-     * Service</a> by going to <b>Active Directory</b>, then <b>Directories</b>. Your
-     * Amazon WorkDocs site directory has an ID, which is the organization ID. You can
-     * also set up a new Amazon WorkDocs directory in the AWS Directory Service console
-     * and enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs
+     * href="https://console.aws.amazon.com/directoryservicev2/">Directory Service</a>
+     * by going to <b>Active Directory</b>, then <b>Directories</b>. Your Amazon
+     * WorkDocs site directory has an ID, which is the organization ID. You can also
+     * set up a new Amazon WorkDocs directory in the Directory Service console and
+     * enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs
      * console.</p>
      */
     inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
@@ -92,11 +92,11 @@ namespace Model
     /**
      * <p>The identifier of the directory corresponding to your Amazon WorkDocs site
      * repository.</p> <p>You can find the organization ID in the <a
-     * href="https://console.aws.amazon.com/directoryservicev2/">AWS Directory
-     * Service</a> by going to <b>Active Directory</b>, then <b>Directories</b>. Your
-     * Amazon WorkDocs site directory has an ID, which is the organization ID. You can
-     * also set up a new Amazon WorkDocs directory in the AWS Directory Service console
-     * and enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs
+     * href="https://console.aws.amazon.com/directoryservicev2/">Directory Service</a>
+     * by going to <b>Active Directory</b>, then <b>Directories</b>. Your Amazon
+     * WorkDocs site directory has an ID, which is the organization ID. You can also
+     * set up a new Amazon WorkDocs directory in the Directory Service console and
+     * enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs
      * console.</p>
      */
     inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
@@ -104,11 +104,11 @@ namespace Model
     /**
      * <p>The identifier of the directory corresponding to your Amazon WorkDocs site
      * repository.</p> <p>You can find the organization ID in the <a
-     * href="https://console.aws.amazon.com/directoryservicev2/">AWS Directory
-     * Service</a> by going to <b>Active Directory</b>, then <b>Directories</b>. Your
-     * Amazon WorkDocs site directory has an ID, which is the organization ID. You can
-     * also set up a new Amazon WorkDocs directory in the AWS Directory Service console
-     * and enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs
+     * href="https://console.aws.amazon.com/directoryservicev2/">Directory Service</a>
+     * by going to <b>Active Directory</b>, then <b>Directories</b>. Your Amazon
+     * WorkDocs site directory has an ID, which is the organization ID. You can also
+     * set up a new Amazon WorkDocs directory in the Directory Service console and
+     * enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs
      * console.</p>
      */
     inline WorkDocsConfiguration& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
@@ -116,11 +116,11 @@ namespace Model
     /**
      * <p>The identifier of the directory corresponding to your Amazon WorkDocs site
      * repository.</p> <p>You can find the organization ID in the <a
-     * href="https://console.aws.amazon.com/directoryservicev2/">AWS Directory
-     * Service</a> by going to <b>Active Directory</b>, then <b>Directories</b>. Your
-     * Amazon WorkDocs site directory has an ID, which is the organization ID. You can
-     * also set up a new Amazon WorkDocs directory in the AWS Directory Service console
-     * and enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs
+     * href="https://console.aws.amazon.com/directoryservicev2/">Directory Service</a>
+     * by going to <b>Active Directory</b>, then <b>Directories</b>. Your Amazon
+     * WorkDocs site directory has an ID, which is the organization ID. You can also
+     * set up a new Amazon WorkDocs directory in the Directory Service console and
+     * enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs
      * console.</p>
      */
     inline WorkDocsConfiguration& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
@@ -128,11 +128,11 @@ namespace Model
     /**
      * <p>The identifier of the directory corresponding to your Amazon WorkDocs site
      * repository.</p> <p>You can find the organization ID in the <a
-     * href="https://console.aws.amazon.com/directoryservicev2/">AWS Directory
-     * Service</a> by going to <b>Active Directory</b>, then <b>Directories</b>. Your
-     * Amazon WorkDocs site directory has an ID, which is the organization ID. You can
-     * also set up a new Amazon WorkDocs directory in the AWS Directory Service console
-     * and enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs
+     * href="https://console.aws.amazon.com/directoryservicev2/">Directory Service</a>
+     * by going to <b>Active Directory</b>, then <b>Directories</b>. Your Amazon
+     * WorkDocs site directory has an ID, which is the organization ID. You can also
+     * set up a new Amazon WorkDocs directory in the Directory Service console and
+     * enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs
      * console.</p>
      */
     inline WorkDocsConfiguration& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}

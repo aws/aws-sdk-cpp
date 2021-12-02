@@ -23,7 +23,8 @@ Protection::Protection() :
     m_nameHasBeenSet(false),
     m_resourceArnHasBeenSet(false),
     m_healthCheckIdsHasBeenSet(false),
-    m_protectionArnHasBeenSet(false)
+    m_protectionArnHasBeenSet(false),
+    m_applicationLayerAutomaticResponseConfigurationHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ Protection::Protection(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_resourceArnHasBeenSet(false),
     m_healthCheckIdsHasBeenSet(false),
-    m_protectionArnHasBeenSet(false)
+    m_protectionArnHasBeenSet(false),
+    m_applicationLayerAutomaticResponseConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,6 +79,13 @@ Protection& Protection::operator =(JsonView jsonValue)
     m_protectionArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ApplicationLayerAutomaticResponseConfiguration"))
+  {
+    m_applicationLayerAutomaticResponseConfiguration = jsonValue.GetObject("ApplicationLayerAutomaticResponseConfiguration");
+
+    m_applicationLayerAutomaticResponseConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -116,6 +125,12 @@ JsonValue Protection::Jsonize() const
   if(m_protectionArnHasBeenSet)
   {
    payload.WithString("ProtectionArn", m_protectionArn);
+
+  }
+
+  if(m_applicationLayerAutomaticResponseConfigurationHasBeenSet)
+  {
+   payload.WithObject("ApplicationLayerAutomaticResponseConfiguration", m_applicationLayerAutomaticResponseConfiguration.Jsonize());
 
   }
 

@@ -209,32 +209,50 @@ namespace Model
 
 
     /**
-     * <p> An array of severity values used to search for insights. </p>
+     * <p> An array of severity values used to search for insights. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline const InsightSeverity& GetSeverity() const{ return m_severity; }
 
     /**
-     * <p> An array of severity values used to search for insights. </p>
+     * <p> An array of severity values used to search for insights. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
 
     /**
-     * <p> An array of severity values used to search for insights. </p>
+     * <p> An array of severity values used to search for insights. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline void SetSeverity(const InsightSeverity& value) { m_severityHasBeenSet = true; m_severity = value; }
 
     /**
-     * <p> An array of severity values used to search for insights. </p>
+     * <p> An array of severity values used to search for insights. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline void SetSeverity(InsightSeverity&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
 
     /**
-     * <p> An array of severity values used to search for insights. </p>
+     * <p> An array of severity values used to search for insights. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline ProactiveOrganizationInsightSummary& WithSeverity(const InsightSeverity& value) { SetSeverity(value); return *this;}
 
     /**
-     * <p> An array of severity values used to search for insights. </p>
+     * <p> An array of severity values used to search for insights. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline ProactiveOrganizationInsightSummary& WithSeverity(InsightSeverity&& value) { SetSeverity(std::move(value)); return *this;}
 

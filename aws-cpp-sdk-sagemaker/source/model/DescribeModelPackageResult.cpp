@@ -159,6 +159,39 @@ DescribeModelPackageResult& DescribeModelPackageResult::operator =(const Aws::Am
     }
   }
 
+  if(jsonValue.ValueExists("DriftCheckBaselines"))
+  {
+    m_driftCheckBaselines = jsonValue.GetObject("DriftCheckBaselines");
+
+  }
+
+  if(jsonValue.ValueExists("Domain"))
+  {
+    m_domain = jsonValue.GetString("Domain");
+
+  }
+
+  if(jsonValue.ValueExists("Task"))
+  {
+    m_task = jsonValue.GetString("Task");
+
+  }
+
+  if(jsonValue.ValueExists("SamplePayloadUrl"))
+  {
+    m_samplePayloadUrl = jsonValue.GetString("SamplePayloadUrl");
+
+  }
+
+  if(jsonValue.ValueExists("AdditionalInferenceSpecifications"))
+  {
+    Array<JsonView> additionalInferenceSpecificationsJsonList = jsonValue.GetArray("AdditionalInferenceSpecifications");
+    for(unsigned additionalInferenceSpecificationsIndex = 0; additionalInferenceSpecificationsIndex < additionalInferenceSpecificationsJsonList.GetLength(); ++additionalInferenceSpecificationsIndex)
+    {
+      m_additionalInferenceSpecifications.push_back(additionalInferenceSpecificationsJsonList[additionalInferenceSpecificationsIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

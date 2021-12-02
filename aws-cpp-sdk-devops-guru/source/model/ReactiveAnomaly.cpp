@@ -28,7 +28,13 @@ ReactiveAnomaly::ReactiveAnomaly() :
     m_anomalyReportedTimeRangeHasBeenSet(false),
     m_sourceDetailsHasBeenSet(false),
     m_associatedInsightIdHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false)
+    m_resourceCollectionHasBeenSet(false),
+    m_type(AnomalyType::NOT_SET),
+    m_typeHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_causalAnomalyIdHasBeenSet(false),
+    m_anomalyResourcesHasBeenSet(false)
 {
 }
 
@@ -42,7 +48,13 @@ ReactiveAnomaly::ReactiveAnomaly(JsonView jsonValue) :
     m_anomalyReportedTimeRangeHasBeenSet(false),
     m_sourceDetailsHasBeenSet(false),
     m_associatedInsightIdHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false)
+    m_resourceCollectionHasBeenSet(false),
+    m_type(AnomalyType::NOT_SET),
+    m_typeHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_causalAnomalyIdHasBeenSet(false),
+    m_anomalyResourcesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -105,6 +117,44 @@ ReactiveAnomaly& ReactiveAnomaly::operator =(JsonView jsonValue)
     m_resourceCollectionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Type"))
+  {
+    m_type = AnomalyTypeMapper::GetAnomalyTypeForName(jsonValue.GetString("Type"));
+
+    m_typeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Name"))
+  {
+    m_name = jsonValue.GetString("Name");
+
+    m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+
+    m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CausalAnomalyId"))
+  {
+    m_causalAnomalyId = jsonValue.GetString("CausalAnomalyId");
+
+    m_causalAnomalyIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AnomalyResources"))
+  {
+    Array<JsonView> anomalyResourcesJsonList = jsonValue.GetArray("AnomalyResources");
+    for(unsigned anomalyResourcesIndex = 0; anomalyResourcesIndex < anomalyResourcesJsonList.GetLength(); ++anomalyResourcesIndex)
+    {
+      m_anomalyResources.push_back(anomalyResourcesJsonList[anomalyResourcesIndex].AsObject());
+    }
+    m_anomalyResourcesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -155,6 +205,40 @@ JsonValue ReactiveAnomaly::Jsonize() const
   if(m_resourceCollectionHasBeenSet)
   {
    payload.WithObject("ResourceCollection", m_resourceCollection.Jsonize());
+
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("Type", AnomalyTypeMapper::GetNameForAnomalyType(m_type));
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
+
+  }
+
+  if(m_causalAnomalyIdHasBeenSet)
+  {
+   payload.WithString("CausalAnomalyId", m_causalAnomalyId);
+
+  }
+
+  if(m_anomalyResourcesHasBeenSet)
+  {
+   Array<JsonValue> anomalyResourcesJsonList(m_anomalyResources.size());
+   for(unsigned anomalyResourcesIndex = 0; anomalyResourcesIndex < anomalyResourcesJsonList.GetLength(); ++anomalyResourcesIndex)
+   {
+     anomalyResourcesJsonList[anomalyResourcesIndex].AsObject(m_anomalyResources[anomalyResourcesIndex].Jsonize());
+   }
+   payload.WithArray("AnomalyResources", std::move(anomalyResourcesJsonList));
 
   }
 

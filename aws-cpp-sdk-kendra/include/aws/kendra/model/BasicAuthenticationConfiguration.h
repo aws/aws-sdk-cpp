@@ -126,72 +126,72 @@ namespace Model
 
     /**
      * <p>Your secret ARN, which you can create in <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS
-     * Secrets Manager</a> </p> <p>You use a secret if basic authentication credentials
-     * are required to connect to a website. The secret stores your credentials of user
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+     * Manager</a> </p> <p>You use a secret if basic authentication credentials are
+     * required to connect to a website. The secret stores your credentials of user
      * name and password.</p>
      */
     inline const Aws::String& GetCredentials() const{ return m_credentials; }
 
     /**
      * <p>Your secret ARN, which you can create in <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS
-     * Secrets Manager</a> </p> <p>You use a secret if basic authentication credentials
-     * are required to connect to a website. The secret stores your credentials of user
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+     * Manager</a> </p> <p>You use a secret if basic authentication credentials are
+     * required to connect to a website. The secret stores your credentials of user
      * name and password.</p>
      */
     inline bool CredentialsHasBeenSet() const { return m_credentialsHasBeenSet; }
 
     /**
      * <p>Your secret ARN, which you can create in <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS
-     * Secrets Manager</a> </p> <p>You use a secret if basic authentication credentials
-     * are required to connect to a website. The secret stores your credentials of user
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+     * Manager</a> </p> <p>You use a secret if basic authentication credentials are
+     * required to connect to a website. The secret stores your credentials of user
      * name and password.</p>
      */
     inline void SetCredentials(const Aws::String& value) { m_credentialsHasBeenSet = true; m_credentials = value; }
 
     /**
      * <p>Your secret ARN, which you can create in <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS
-     * Secrets Manager</a> </p> <p>You use a secret if basic authentication credentials
-     * are required to connect to a website. The secret stores your credentials of user
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+     * Manager</a> </p> <p>You use a secret if basic authentication credentials are
+     * required to connect to a website. The secret stores your credentials of user
      * name and password.</p>
      */
     inline void SetCredentials(Aws::String&& value) { m_credentialsHasBeenSet = true; m_credentials = std::move(value); }
 
     /**
      * <p>Your secret ARN, which you can create in <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS
-     * Secrets Manager</a> </p> <p>You use a secret if basic authentication credentials
-     * are required to connect to a website. The secret stores your credentials of user
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+     * Manager</a> </p> <p>You use a secret if basic authentication credentials are
+     * required to connect to a website. The secret stores your credentials of user
      * name and password.</p>
      */
     inline void SetCredentials(const char* value) { m_credentialsHasBeenSet = true; m_credentials.assign(value); }
 
     /**
      * <p>Your secret ARN, which you can create in <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS
-     * Secrets Manager</a> </p> <p>You use a secret if basic authentication credentials
-     * are required to connect to a website. The secret stores your credentials of user
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+     * Manager</a> </p> <p>You use a secret if basic authentication credentials are
+     * required to connect to a website. The secret stores your credentials of user
      * name and password.</p>
      */
     inline BasicAuthenticationConfiguration& WithCredentials(const Aws::String& value) { SetCredentials(value); return *this;}
 
     /**
      * <p>Your secret ARN, which you can create in <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS
-     * Secrets Manager</a> </p> <p>You use a secret if basic authentication credentials
-     * are required to connect to a website. The secret stores your credentials of user
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+     * Manager</a> </p> <p>You use a secret if basic authentication credentials are
+     * required to connect to a website. The secret stores your credentials of user
      * name and password.</p>
      */
     inline BasicAuthenticationConfiguration& WithCredentials(Aws::String&& value) { SetCredentials(std::move(value)); return *this;}
 
     /**
      * <p>Your secret ARN, which you can create in <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS
-     * Secrets Manager</a> </p> <p>You use a secret if basic authentication credentials
-     * are required to connect to a website. The secret stores your credentials of user
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+     * Manager</a> </p> <p>You use a secret if basic authentication credentials are
+     * required to connect to a website. The secret stores your credentials of user
      * name and password.</p>
      */
     inline BasicAuthenticationConfiguration& WithCredentials(const char* value) { SetCredentials(value); return *this;}

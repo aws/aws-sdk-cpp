@@ -107,9 +107,9 @@ namespace Model
          * supported by the API. Amazon SageMaker might add additional headers. You should
          * not rely on the behavior of headers outside those enumerated in the request
          * syntax. </p> <p>Calls to <code>InvokeEndpoint</code> are authenticated by using
-         * AWS Signature Version 4. For information, see <a
+         * Amazon Web Services Signature Version 4. For information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
-         * Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API
+         * Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API
          * Reference</i>.</p> <p>A customer's model containers must respond to requests
          * within 60 seconds. The model itself can have a maximum processing time of 60
          * seconds before responding to invocations. If your model is going to take 50-60
@@ -133,9 +133,9 @@ namespace Model
          * supported by the API. Amazon SageMaker might add additional headers. You should
          * not rely on the behavior of headers outside those enumerated in the request
          * syntax. </p> <p>Calls to <code>InvokeEndpoint</code> are authenticated by using
-         * AWS Signature Version 4. For information, see <a
+         * Amazon Web Services Signature Version 4. For information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
-         * Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API
+         * Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API
          * Reference</i>.</p> <p>A customer's model containers must respond to requests
          * within 60 seconds. The model itself can have a maximum processing time of 60
          * seconds before responding to invocations. If your model is going to take 50-60
@@ -161,9 +161,9 @@ namespace Model
          * supported by the API. Amazon SageMaker might add additional headers. You should
          * not rely on the behavior of headers outside those enumerated in the request
          * syntax. </p> <p>Calls to <code>InvokeEndpoint</code> are authenticated by using
-         * AWS Signature Version 4. For information, see <a
+         * Amazon Web Services Signature Version 4. For information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
-         * Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API
+         * Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API
          * Reference</i>.</p> <p>A customer's model containers must respond to requests
          * within 60 seconds. The model itself can have a maximum processing time of 60
          * seconds before responding to invocations. If your model is going to take 50-60
@@ -191,9 +191,10 @@ namespace Model
          * those supported by the API. Amazon SageMaker might add additional headers. You
          * should not rely on the behavior of headers outside those enumerated in the
          * request syntax.</p> <p>Calls to <code>InvokeEndpointAsync</code> are
-         * authenticated by using AWS Signature Version 4. For information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
-         * Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API
+         * authenticated by using Amazon Web Services Signature Version 4. For information,
+         * see <a
+         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+         * Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API
          * Reference</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpointAsync">AWS
          * API Reference</a></p>
@@ -212,9 +213,10 @@ namespace Model
          * those supported by the API. Amazon SageMaker might add additional headers. You
          * should not rely on the behavior of headers outside those enumerated in the
          * request syntax.</p> <p>Calls to <code>InvokeEndpointAsync</code> are
-         * authenticated by using AWS Signature Version 4. For information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
-         * Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API
+         * authenticated by using Amazon Web Services Signature Version 4. For information,
+         * see <a
+         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+         * Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API
          * Reference</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpointAsync">AWS
          * API Reference</a></p>
@@ -235,9 +237,10 @@ namespace Model
          * those supported by the API. Amazon SageMaker might add additional headers. You
          * should not rely on the behavior of headers outside those enumerated in the
          * request syntax.</p> <p>Calls to <code>InvokeEndpointAsync</code> are
-         * authenticated by using AWS Signature Version 4. For information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
-         * Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API
+         * authenticated by using Amazon Web Services Signature Version 4. For information,
+         * see <a
+         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+         * Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API
          * Reference</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpointAsync">AWS
          * API Reference</a></p>

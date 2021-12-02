@@ -96,6 +96,37 @@ namespace Model
 
 
     /**
+     * <p>The resource to which the path component is attached.</p>
+     */
+    inline const AnalysisComponent& GetAttachedTo() const{ return m_attachedTo; }
+
+    /**
+     * <p>The resource to which the path component is attached.</p>
+     */
+    inline bool AttachedToHasBeenSet() const { return m_attachedToHasBeenSet; }
+
+    /**
+     * <p>The resource to which the path component is attached.</p>
+     */
+    inline void SetAttachedTo(const AnalysisComponent& value) { m_attachedToHasBeenSet = true; m_attachedTo = value; }
+
+    /**
+     * <p>The resource to which the path component is attached.</p>
+     */
+    inline void SetAttachedTo(AnalysisComponent&& value) { m_attachedToHasBeenSet = true; m_attachedTo = std::move(value); }
+
+    /**
+     * <p>The resource to which the path component is attached.</p>
+     */
+    inline PathComponent& WithAttachedTo(const AnalysisComponent& value) { SetAttachedTo(value); return *this;}
+
+    /**
+     * <p>The resource to which the path component is attached.</p>
+     */
+    inline PathComponent& WithAttachedTo(AnalysisComponent&& value) { SetAttachedTo(std::move(value)); return *this;}
+
+
+    /**
      * <p>The component.</p>
      */
     inline const AnalysisComponent& GetComponent() const{ return m_component; }
@@ -380,6 +411,9 @@ namespace Model
 
     AnalysisAclRule m_aclRule;
     bool m_aclRuleHasBeenSet;
+
+    AnalysisComponent m_attachedTo;
+    bool m_attachedToHasBeenSet;
 
     AnalysisComponent m_component;
     bool m_componentHasBeenSet;

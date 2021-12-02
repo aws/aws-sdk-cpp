@@ -99,6 +99,68 @@ namespace Model
      */
     inline UpdateVirtualInterfaceAttributesRequest& WithMtu(int value) { SetMtu(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether to enable or disable SiteLink.</p>
+     */
+    inline bool GetEnableSiteLink() const{ return m_enableSiteLink; }
+
+    /**
+     * <p>Indicates whether to enable or disable SiteLink.</p>
+     */
+    inline bool EnableSiteLinkHasBeenSet() const { return m_enableSiteLinkHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to enable or disable SiteLink.</p>
+     */
+    inline void SetEnableSiteLink(bool value) { m_enableSiteLinkHasBeenSet = true; m_enableSiteLink = value; }
+
+    /**
+     * <p>Indicates whether to enable or disable SiteLink.</p>
+     */
+    inline UpdateVirtualInterfaceAttributesRequest& WithEnableSiteLink(bool value) { SetEnableSiteLink(value); return *this;}
+
+
+    /**
+     * <p>The name of the virtual private interface.</p>
+     */
+    inline const Aws::String& GetVirtualInterfaceName() const{ return m_virtualInterfaceName; }
+
+    /**
+     * <p>The name of the virtual private interface.</p>
+     */
+    inline bool VirtualInterfaceNameHasBeenSet() const { return m_virtualInterfaceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the virtual private interface.</p>
+     */
+    inline void SetVirtualInterfaceName(const Aws::String& value) { m_virtualInterfaceNameHasBeenSet = true; m_virtualInterfaceName = value; }
+
+    /**
+     * <p>The name of the virtual private interface.</p>
+     */
+    inline void SetVirtualInterfaceName(Aws::String&& value) { m_virtualInterfaceNameHasBeenSet = true; m_virtualInterfaceName = std::move(value); }
+
+    /**
+     * <p>The name of the virtual private interface.</p>
+     */
+    inline void SetVirtualInterfaceName(const char* value) { m_virtualInterfaceNameHasBeenSet = true; m_virtualInterfaceName.assign(value); }
+
+    /**
+     * <p>The name of the virtual private interface.</p>
+     */
+    inline UpdateVirtualInterfaceAttributesRequest& WithVirtualInterfaceName(const Aws::String& value) { SetVirtualInterfaceName(value); return *this;}
+
+    /**
+     * <p>The name of the virtual private interface.</p>
+     */
+    inline UpdateVirtualInterfaceAttributesRequest& WithVirtualInterfaceName(Aws::String&& value) { SetVirtualInterfaceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the virtual private interface.</p>
+     */
+    inline UpdateVirtualInterfaceAttributesRequest& WithVirtualInterfaceName(const char* value) { SetVirtualInterfaceName(value); return *this;}
+
   private:
 
     Aws::String m_virtualInterfaceId;
@@ -106,6 +168,12 @@ namespace Model
 
     int m_mtu;
     bool m_mtuHasBeenSet;
+
+    bool m_enableSiteLink;
+    bool m_enableSiteLinkHasBeenSet;
+
+    Aws::String m_virtualInterfaceName;
+    bool m_virtualInterfaceNameHasBeenSet;
   };
 
 } // namespace Model

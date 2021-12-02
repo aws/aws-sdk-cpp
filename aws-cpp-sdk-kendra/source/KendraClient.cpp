@@ -20,31 +20,42 @@
 #include <aws/kendra/KendraClient.h>
 #include <aws/kendra/KendraEndpoint.h>
 #include <aws/kendra/KendraErrorMarshaller.h>
+#include <aws/kendra/model/AssociateEntitiesToExperienceRequest.h>
+#include <aws/kendra/model/AssociatePersonasToEntitiesRequest.h>
 #include <aws/kendra/model/BatchDeleteDocumentRequest.h>
 #include <aws/kendra/model/BatchGetDocumentStatusRequest.h>
 #include <aws/kendra/model/BatchPutDocumentRequest.h>
 #include <aws/kendra/model/ClearQuerySuggestionsRequest.h>
 #include <aws/kendra/model/CreateDataSourceRequest.h>
+#include <aws/kendra/model/CreateExperienceRequest.h>
 #include <aws/kendra/model/CreateFaqRequest.h>
 #include <aws/kendra/model/CreateIndexRequest.h>
 #include <aws/kendra/model/CreateQuerySuggestionsBlockListRequest.h>
 #include <aws/kendra/model/CreateThesaurusRequest.h>
 #include <aws/kendra/model/DeleteDataSourceRequest.h>
+#include <aws/kendra/model/DeleteExperienceRequest.h>
 #include <aws/kendra/model/DeleteFaqRequest.h>
 #include <aws/kendra/model/DeleteIndexRequest.h>
 #include <aws/kendra/model/DeletePrincipalMappingRequest.h>
 #include <aws/kendra/model/DeleteQuerySuggestionsBlockListRequest.h>
 #include <aws/kendra/model/DeleteThesaurusRequest.h>
 #include <aws/kendra/model/DescribeDataSourceRequest.h>
+#include <aws/kendra/model/DescribeExperienceRequest.h>
 #include <aws/kendra/model/DescribeFaqRequest.h>
 #include <aws/kendra/model/DescribeIndexRequest.h>
 #include <aws/kendra/model/DescribePrincipalMappingRequest.h>
 #include <aws/kendra/model/DescribeQuerySuggestionsBlockListRequest.h>
 #include <aws/kendra/model/DescribeQuerySuggestionsConfigRequest.h>
 #include <aws/kendra/model/DescribeThesaurusRequest.h>
+#include <aws/kendra/model/DisassociateEntitiesFromExperienceRequest.h>
+#include <aws/kendra/model/DisassociatePersonasFromEntitiesRequest.h>
 #include <aws/kendra/model/GetQuerySuggestionsRequest.h>
+#include <aws/kendra/model/GetSnapshotsRequest.h>
 #include <aws/kendra/model/ListDataSourceSyncJobsRequest.h>
 #include <aws/kendra/model/ListDataSourcesRequest.h>
+#include <aws/kendra/model/ListEntityPersonasRequest.h>
+#include <aws/kendra/model/ListExperienceEntitiesRequest.h>
+#include <aws/kendra/model/ListExperiencesRequest.h>
 #include <aws/kendra/model/ListFaqsRequest.h>
 #include <aws/kendra/model/ListGroupsOlderThanOrderingIdRequest.h>
 #include <aws/kendra/model/ListIndicesRequest.h>
@@ -59,6 +70,7 @@
 #include <aws/kendra/model/TagResourceRequest.h>
 #include <aws/kendra/model/UntagResourceRequest.h>
 #include <aws/kendra/model/UpdateDataSourceRequest.h>
+#include <aws/kendra/model/UpdateExperienceRequest.h>
 #include <aws/kendra/model/UpdateIndexRequest.h>
 #include <aws/kendra/model/UpdateQuerySuggestionsBlockListRequest.h>
 #include <aws/kendra/model/UpdateQuerySuggestionsConfigRequest.h>
@@ -135,6 +147,54 @@ void KendraClient::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+AssociateEntitiesToExperienceOutcome KendraClient::AssociateEntitiesToExperience(const AssociateEntitiesToExperienceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return AssociateEntitiesToExperienceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateEntitiesToExperienceOutcomeCallable KendraClient::AssociateEntitiesToExperienceCallable(const AssociateEntitiesToExperienceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateEntitiesToExperienceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateEntitiesToExperience(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KendraClient::AssociateEntitiesToExperienceAsync(const AssociateEntitiesToExperienceRequest& request, const AssociateEntitiesToExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateEntitiesToExperienceAsyncHelper( request, handler, context ); } );
+}
+
+void KendraClient::AssociateEntitiesToExperienceAsyncHelper(const AssociateEntitiesToExperienceRequest& request, const AssociateEntitiesToExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateEntitiesToExperience(request), context);
+}
+
+AssociatePersonasToEntitiesOutcome KendraClient::AssociatePersonasToEntities(const AssociatePersonasToEntitiesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return AssociatePersonasToEntitiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociatePersonasToEntitiesOutcomeCallable KendraClient::AssociatePersonasToEntitiesCallable(const AssociatePersonasToEntitiesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociatePersonasToEntitiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociatePersonasToEntities(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KendraClient::AssociatePersonasToEntitiesAsync(const AssociatePersonasToEntitiesRequest& request, const AssociatePersonasToEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociatePersonasToEntitiesAsyncHelper( request, handler, context ); } );
+}
+
+void KendraClient::AssociatePersonasToEntitiesAsyncHelper(const AssociatePersonasToEntitiesRequest& request, const AssociatePersonasToEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociatePersonasToEntities(request), context);
 }
 
 BatchDeleteDocumentOutcome KendraClient::BatchDeleteDocument(const BatchDeleteDocumentRequest& request) const
@@ -257,6 +317,30 @@ void KendraClient::CreateDataSourceAsyncHelper(const CreateDataSourceRequest& re
   handler(this, request, CreateDataSource(request), context);
 }
 
+CreateExperienceOutcome KendraClient::CreateExperience(const CreateExperienceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateExperienceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateExperienceOutcomeCallable KendraClient::CreateExperienceCallable(const CreateExperienceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateExperienceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateExperience(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KendraClient::CreateExperienceAsync(const CreateExperienceRequest& request, const CreateExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateExperienceAsyncHelper( request, handler, context ); } );
+}
+
+void KendraClient::CreateExperienceAsyncHelper(const CreateExperienceRequest& request, const CreateExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateExperience(request), context);
+}
+
 CreateFaqOutcome KendraClient::CreateFaq(const CreateFaqRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -375,6 +459,30 @@ void KendraClient::DeleteDataSourceAsync(const DeleteDataSourceRequest& request,
 void KendraClient::DeleteDataSourceAsyncHelper(const DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteDataSource(request), context);
+}
+
+DeleteExperienceOutcome KendraClient::DeleteExperience(const DeleteExperienceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteExperienceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteExperienceOutcomeCallable KendraClient::DeleteExperienceCallable(const DeleteExperienceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteExperienceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteExperience(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KendraClient::DeleteExperienceAsync(const DeleteExperienceRequest& request, const DeleteExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteExperienceAsyncHelper( request, handler, context ); } );
+}
+
+void KendraClient::DeleteExperienceAsyncHelper(const DeleteExperienceRequest& request, const DeleteExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteExperience(request), context);
 }
 
 DeleteFaqOutcome KendraClient::DeleteFaq(const DeleteFaqRequest& request) const
@@ -521,6 +629,30 @@ void KendraClient::DescribeDataSourceAsyncHelper(const DescribeDataSourceRequest
   handler(this, request, DescribeDataSource(request), context);
 }
 
+DescribeExperienceOutcome KendraClient::DescribeExperience(const DescribeExperienceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeExperienceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeExperienceOutcomeCallable KendraClient::DescribeExperienceCallable(const DescribeExperienceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeExperienceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeExperience(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KendraClient::DescribeExperienceAsync(const DescribeExperienceRequest& request, const DescribeExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeExperienceAsyncHelper( request, handler, context ); } );
+}
+
+void KendraClient::DescribeExperienceAsyncHelper(const DescribeExperienceRequest& request, const DescribeExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeExperience(request), context);
+}
+
 DescribeFaqOutcome KendraClient::DescribeFaq(const DescribeFaqRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -665,6 +797,54 @@ void KendraClient::DescribeThesaurusAsyncHelper(const DescribeThesaurusRequest& 
   handler(this, request, DescribeThesaurus(request), context);
 }
 
+DisassociateEntitiesFromExperienceOutcome KendraClient::DisassociateEntitiesFromExperience(const DisassociateEntitiesFromExperienceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DisassociateEntitiesFromExperienceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateEntitiesFromExperienceOutcomeCallable KendraClient::DisassociateEntitiesFromExperienceCallable(const DisassociateEntitiesFromExperienceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateEntitiesFromExperienceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateEntitiesFromExperience(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KendraClient::DisassociateEntitiesFromExperienceAsync(const DisassociateEntitiesFromExperienceRequest& request, const DisassociateEntitiesFromExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateEntitiesFromExperienceAsyncHelper( request, handler, context ); } );
+}
+
+void KendraClient::DisassociateEntitiesFromExperienceAsyncHelper(const DisassociateEntitiesFromExperienceRequest& request, const DisassociateEntitiesFromExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateEntitiesFromExperience(request), context);
+}
+
+DisassociatePersonasFromEntitiesOutcome KendraClient::DisassociatePersonasFromEntities(const DisassociatePersonasFromEntitiesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DisassociatePersonasFromEntitiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociatePersonasFromEntitiesOutcomeCallable KendraClient::DisassociatePersonasFromEntitiesCallable(const DisassociatePersonasFromEntitiesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociatePersonasFromEntitiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociatePersonasFromEntities(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KendraClient::DisassociatePersonasFromEntitiesAsync(const DisassociatePersonasFromEntitiesRequest& request, const DisassociatePersonasFromEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociatePersonasFromEntitiesAsyncHelper( request, handler, context ); } );
+}
+
+void KendraClient::DisassociatePersonasFromEntitiesAsyncHelper(const DisassociatePersonasFromEntitiesRequest& request, const DisassociatePersonasFromEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociatePersonasFromEntities(request), context);
+}
+
 GetQuerySuggestionsOutcome KendraClient::GetQuerySuggestions(const GetQuerySuggestionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -687,6 +867,30 @@ void KendraClient::GetQuerySuggestionsAsync(const GetQuerySuggestionsRequest& re
 void KendraClient::GetQuerySuggestionsAsyncHelper(const GetQuerySuggestionsRequest& request, const GetQuerySuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetQuerySuggestions(request), context);
+}
+
+GetSnapshotsOutcome KendraClient::GetSnapshots(const GetSnapshotsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetSnapshotsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetSnapshotsOutcomeCallable KendraClient::GetSnapshotsCallable(const GetSnapshotsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetSnapshotsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSnapshots(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KendraClient::GetSnapshotsAsync(const GetSnapshotsRequest& request, const GetSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetSnapshotsAsyncHelper( request, handler, context ); } );
+}
+
+void KendraClient::GetSnapshotsAsyncHelper(const GetSnapshotsRequest& request, const GetSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetSnapshots(request), context);
 }
 
 ListDataSourceSyncJobsOutcome KendraClient::ListDataSourceSyncJobs(const ListDataSourceSyncJobsRequest& request) const
@@ -735,6 +939,78 @@ void KendraClient::ListDataSourcesAsync(const ListDataSourcesRequest& request, c
 void KendraClient::ListDataSourcesAsyncHelper(const ListDataSourcesRequest& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListDataSources(request), context);
+}
+
+ListEntityPersonasOutcome KendraClient::ListEntityPersonas(const ListEntityPersonasRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListEntityPersonasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListEntityPersonasOutcomeCallable KendraClient::ListEntityPersonasCallable(const ListEntityPersonasRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListEntityPersonasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEntityPersonas(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KendraClient::ListEntityPersonasAsync(const ListEntityPersonasRequest& request, const ListEntityPersonasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListEntityPersonasAsyncHelper( request, handler, context ); } );
+}
+
+void KendraClient::ListEntityPersonasAsyncHelper(const ListEntityPersonasRequest& request, const ListEntityPersonasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListEntityPersonas(request), context);
+}
+
+ListExperienceEntitiesOutcome KendraClient::ListExperienceEntities(const ListExperienceEntitiesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListExperienceEntitiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListExperienceEntitiesOutcomeCallable KendraClient::ListExperienceEntitiesCallable(const ListExperienceEntitiesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListExperienceEntitiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExperienceEntities(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KendraClient::ListExperienceEntitiesAsync(const ListExperienceEntitiesRequest& request, const ListExperienceEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListExperienceEntitiesAsyncHelper( request, handler, context ); } );
+}
+
+void KendraClient::ListExperienceEntitiesAsyncHelper(const ListExperienceEntitiesRequest& request, const ListExperienceEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListExperienceEntities(request), context);
+}
+
+ListExperiencesOutcome KendraClient::ListExperiences(const ListExperiencesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListExperiencesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListExperiencesOutcomeCallable KendraClient::ListExperiencesCallable(const ListExperiencesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListExperiencesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExperiences(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KendraClient::ListExperiencesAsync(const ListExperiencesRequest& request, const ListExperiencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListExperiencesAsyncHelper( request, handler, context ); } );
+}
+
+void KendraClient::ListExperiencesAsyncHelper(const ListExperiencesRequest& request, const ListExperiencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListExperiences(request), context);
 }
 
 ListFaqsOutcome KendraClient::ListFaqs(const ListFaqsRequest& request) const
@@ -1071,6 +1347,30 @@ void KendraClient::UpdateDataSourceAsync(const UpdateDataSourceRequest& request,
 void KendraClient::UpdateDataSourceAsyncHelper(const UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateDataSource(request), context);
+}
+
+UpdateExperienceOutcome KendraClient::UpdateExperience(const UpdateExperienceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateExperienceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateExperienceOutcomeCallable KendraClient::UpdateExperienceCallable(const UpdateExperienceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateExperienceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateExperience(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KendraClient::UpdateExperienceAsync(const UpdateExperienceRequest& request, const UpdateExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateExperienceAsyncHelper( request, handler, context ); } );
+}
+
+void KendraClient::UpdateExperienceAsyncHelper(const UpdateExperienceRequest& request, const UpdateExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateExperience(request), context);
 }
 
 UpdateIndexOutcome KendraClient::UpdateIndex(const UpdateIndexRequest& request) const

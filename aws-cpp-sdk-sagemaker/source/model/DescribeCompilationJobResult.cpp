@@ -72,6 +72,12 @@ DescribeCompilationJobResult& DescribeCompilationJobResult::operator =(const Aws
 
   }
 
+  if(jsonValue.ValueExists("ModelPackageVersionArn"))
+  {
+    m_modelPackageVersionArn = jsonValue.GetString("ModelPackageVersionArn");
+
+  }
+
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");

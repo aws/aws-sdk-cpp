@@ -35,6 +35,7 @@
 #include <aws/sagemaker/model/CreateHyperParameterTuningJobResult.h>
 #include <aws/sagemaker/model/CreateImageResult.h>
 #include <aws/sagemaker/model/CreateImageVersionResult.h>
+#include <aws/sagemaker/model/CreateInferenceRecommendationsJobResult.h>
 #include <aws/sagemaker/model/CreateLabelingJobResult.h>
 #include <aws/sagemaker/model/CreateModelResult.h>
 #include <aws/sagemaker/model/CreateModelBiasJobDefinitionResult.h>
@@ -96,7 +97,9 @@
 #include <aws/sagemaker/model/DescribeHyperParameterTuningJobResult.h>
 #include <aws/sagemaker/model/DescribeImageResult.h>
 #include <aws/sagemaker/model/DescribeImageVersionResult.h>
+#include <aws/sagemaker/model/DescribeInferenceRecommendationsJobResult.h>
 #include <aws/sagemaker/model/DescribeLabelingJobResult.h>
+#include <aws/sagemaker/model/DescribeLineageGroupResult.h>
 #include <aws/sagemaker/model/DescribeModelResult.h>
 #include <aws/sagemaker/model/DescribeModelBiasJobDefinitionResult.h>
 #include <aws/sagemaker/model/DescribeModelExplainabilityJobDefinitionResult.h>
@@ -124,6 +127,7 @@
 #include <aws/sagemaker/model/DisassociateTrialComponentResult.h>
 #include <aws/sagemaker/model/EnableSagemakerServicecatalogPortfolioResult.h>
 #include <aws/sagemaker/model/GetDeviceFleetReportResult.h>
+#include <aws/sagemaker/model/GetLineageGroupPolicyResult.h>
 #include <aws/sagemaker/model/GetModelPackageGroupPolicyResult.h>
 #include <aws/sagemaker/model/GetSagemakerServicecatalogPortfolioStatusResult.h>
 #include <aws/sagemaker/model/GetSearchSuggestionsResult.h>
@@ -152,10 +156,13 @@
 #include <aws/sagemaker/model/ListHyperParameterTuningJobsResult.h>
 #include <aws/sagemaker/model/ListImageVersionsResult.h>
 #include <aws/sagemaker/model/ListImagesResult.h>
+#include <aws/sagemaker/model/ListInferenceRecommendationsJobsResult.h>
 #include <aws/sagemaker/model/ListLabelingJobsResult.h>
 #include <aws/sagemaker/model/ListLabelingJobsForWorkteamResult.h>
+#include <aws/sagemaker/model/ListLineageGroupsResult.h>
 #include <aws/sagemaker/model/ListModelBiasJobDefinitionsResult.h>
 #include <aws/sagemaker/model/ListModelExplainabilityJobDefinitionsResult.h>
+#include <aws/sagemaker/model/ListModelMetadataResult.h>
 #include <aws/sagemaker/model/ListModelPackageGroupsResult.h>
 #include <aws/sagemaker/model/ListModelPackagesResult.h>
 #include <aws/sagemaker/model/ListModelQualityJobDefinitionsResult.h>
@@ -182,6 +189,7 @@
 #include <aws/sagemaker/model/ListWorkforcesResult.h>
 #include <aws/sagemaker/model/ListWorkteamsResult.h>
 #include <aws/sagemaker/model/PutModelPackageGroupPolicyResult.h>
+#include <aws/sagemaker/model/QueryLineageResult.h>
 #include <aws/sagemaker/model/RenderUiTemplateResult.h>
 #include <aws/sagemaker/model/RetryPipelineExecutionResult.h>
 #include <aws/sagemaker/model/SearchResult.h>
@@ -278,6 +286,7 @@ namespace Model
         class CreateHyperParameterTuningJobRequest;
         class CreateImageRequest;
         class CreateImageVersionRequest;
+        class CreateInferenceRecommendationsJobRequest;
         class CreateLabelingJobRequest;
         class CreateModelRequest;
         class CreateModelBiasJobDefinitionRequest;
@@ -363,7 +372,9 @@ namespace Model
         class DescribeHyperParameterTuningJobRequest;
         class DescribeImageRequest;
         class DescribeImageVersionRequest;
+        class DescribeInferenceRecommendationsJobRequest;
         class DescribeLabelingJobRequest;
+        class DescribeLineageGroupRequest;
         class DescribeModelRequest;
         class DescribeModelBiasJobDefinitionRequest;
         class DescribeModelExplainabilityJobDefinitionRequest;
@@ -391,6 +402,7 @@ namespace Model
         class DisassociateTrialComponentRequest;
         class EnableSagemakerServicecatalogPortfolioRequest;
         class GetDeviceFleetReportRequest;
+        class GetLineageGroupPolicyRequest;
         class GetModelPackageGroupPolicyRequest;
         class GetSagemakerServicecatalogPortfolioStatusRequest;
         class GetSearchSuggestionsRequest;
@@ -419,10 +431,13 @@ namespace Model
         class ListHyperParameterTuningJobsRequest;
         class ListImageVersionsRequest;
         class ListImagesRequest;
+        class ListInferenceRecommendationsJobsRequest;
         class ListLabelingJobsRequest;
         class ListLabelingJobsForWorkteamRequest;
+        class ListLineageGroupsRequest;
         class ListModelBiasJobDefinitionsRequest;
         class ListModelExplainabilityJobDefinitionsRequest;
+        class ListModelMetadataRequest;
         class ListModelPackageGroupsRequest;
         class ListModelPackagesRequest;
         class ListModelQualityJobDefinitionsRequest;
@@ -449,6 +464,7 @@ namespace Model
         class ListWorkforcesRequest;
         class ListWorkteamsRequest;
         class PutModelPackageGroupPolicyRequest;
+        class QueryLineageRequest;
         class RegisterDevicesRequest;
         class RenderUiTemplateRequest;
         class RetryPipelineExecutionRequest;
@@ -462,6 +478,7 @@ namespace Model
         class StopCompilationJobRequest;
         class StopEdgePackagingJobRequest;
         class StopHyperParameterTuningJobRequest;
+        class StopInferenceRecommendationsJobRequest;
         class StopLabelingJobRequest;
         class StopMonitoringScheduleRequest;
         class StopNotebookInstanceRequest;
@@ -521,6 +538,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateHyperParameterTuningJobResult, SageMakerError> CreateHyperParameterTuningJobOutcome;
         typedef Aws::Utils::Outcome<CreateImageResult, SageMakerError> CreateImageOutcome;
         typedef Aws::Utils::Outcome<CreateImageVersionResult, SageMakerError> CreateImageVersionOutcome;
+        typedef Aws::Utils::Outcome<CreateInferenceRecommendationsJobResult, SageMakerError> CreateInferenceRecommendationsJobOutcome;
         typedef Aws::Utils::Outcome<CreateLabelingJobResult, SageMakerError> CreateLabelingJobOutcome;
         typedef Aws::Utils::Outcome<CreateModelResult, SageMakerError> CreateModelOutcome;
         typedef Aws::Utils::Outcome<CreateModelBiasJobDefinitionResult, SageMakerError> CreateModelBiasJobDefinitionOutcome;
@@ -606,7 +624,9 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeHyperParameterTuningJobResult, SageMakerError> DescribeHyperParameterTuningJobOutcome;
         typedef Aws::Utils::Outcome<DescribeImageResult, SageMakerError> DescribeImageOutcome;
         typedef Aws::Utils::Outcome<DescribeImageVersionResult, SageMakerError> DescribeImageVersionOutcome;
+        typedef Aws::Utils::Outcome<DescribeInferenceRecommendationsJobResult, SageMakerError> DescribeInferenceRecommendationsJobOutcome;
         typedef Aws::Utils::Outcome<DescribeLabelingJobResult, SageMakerError> DescribeLabelingJobOutcome;
+        typedef Aws::Utils::Outcome<DescribeLineageGroupResult, SageMakerError> DescribeLineageGroupOutcome;
         typedef Aws::Utils::Outcome<DescribeModelResult, SageMakerError> DescribeModelOutcome;
         typedef Aws::Utils::Outcome<DescribeModelBiasJobDefinitionResult, SageMakerError> DescribeModelBiasJobDefinitionOutcome;
         typedef Aws::Utils::Outcome<DescribeModelExplainabilityJobDefinitionResult, SageMakerError> DescribeModelExplainabilityJobDefinitionOutcome;
@@ -634,6 +654,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DisassociateTrialComponentResult, SageMakerError> DisassociateTrialComponentOutcome;
         typedef Aws::Utils::Outcome<EnableSagemakerServicecatalogPortfolioResult, SageMakerError> EnableSagemakerServicecatalogPortfolioOutcome;
         typedef Aws::Utils::Outcome<GetDeviceFleetReportResult, SageMakerError> GetDeviceFleetReportOutcome;
+        typedef Aws::Utils::Outcome<GetLineageGroupPolicyResult, SageMakerError> GetLineageGroupPolicyOutcome;
         typedef Aws::Utils::Outcome<GetModelPackageGroupPolicyResult, SageMakerError> GetModelPackageGroupPolicyOutcome;
         typedef Aws::Utils::Outcome<GetSagemakerServicecatalogPortfolioStatusResult, SageMakerError> GetSagemakerServicecatalogPortfolioStatusOutcome;
         typedef Aws::Utils::Outcome<GetSearchSuggestionsResult, SageMakerError> GetSearchSuggestionsOutcome;
@@ -662,10 +683,13 @@ namespace Model
         typedef Aws::Utils::Outcome<ListHyperParameterTuningJobsResult, SageMakerError> ListHyperParameterTuningJobsOutcome;
         typedef Aws::Utils::Outcome<ListImageVersionsResult, SageMakerError> ListImageVersionsOutcome;
         typedef Aws::Utils::Outcome<ListImagesResult, SageMakerError> ListImagesOutcome;
+        typedef Aws::Utils::Outcome<ListInferenceRecommendationsJobsResult, SageMakerError> ListInferenceRecommendationsJobsOutcome;
         typedef Aws::Utils::Outcome<ListLabelingJobsResult, SageMakerError> ListLabelingJobsOutcome;
         typedef Aws::Utils::Outcome<ListLabelingJobsForWorkteamResult, SageMakerError> ListLabelingJobsForWorkteamOutcome;
+        typedef Aws::Utils::Outcome<ListLineageGroupsResult, SageMakerError> ListLineageGroupsOutcome;
         typedef Aws::Utils::Outcome<ListModelBiasJobDefinitionsResult, SageMakerError> ListModelBiasJobDefinitionsOutcome;
         typedef Aws::Utils::Outcome<ListModelExplainabilityJobDefinitionsResult, SageMakerError> ListModelExplainabilityJobDefinitionsOutcome;
+        typedef Aws::Utils::Outcome<ListModelMetadataResult, SageMakerError> ListModelMetadataOutcome;
         typedef Aws::Utils::Outcome<ListModelPackageGroupsResult, SageMakerError> ListModelPackageGroupsOutcome;
         typedef Aws::Utils::Outcome<ListModelPackagesResult, SageMakerError> ListModelPackagesOutcome;
         typedef Aws::Utils::Outcome<ListModelQualityJobDefinitionsResult, SageMakerError> ListModelQualityJobDefinitionsOutcome;
@@ -692,6 +716,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListWorkforcesResult, SageMakerError> ListWorkforcesOutcome;
         typedef Aws::Utils::Outcome<ListWorkteamsResult, SageMakerError> ListWorkteamsOutcome;
         typedef Aws::Utils::Outcome<PutModelPackageGroupPolicyResult, SageMakerError> PutModelPackageGroupPolicyOutcome;
+        typedef Aws::Utils::Outcome<QueryLineageResult, SageMakerError> QueryLineageOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> RegisterDevicesOutcome;
         typedef Aws::Utils::Outcome<RenderUiTemplateResult, SageMakerError> RenderUiTemplateOutcome;
         typedef Aws::Utils::Outcome<RetryPipelineExecutionResult, SageMakerError> RetryPipelineExecutionOutcome;
@@ -705,6 +730,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopCompilationJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopEdgePackagingJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopHyperParameterTuningJobOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopInferenceRecommendationsJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopLabelingJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopMonitoringScheduleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopNotebookInstanceOutcome;
@@ -764,6 +790,7 @@ namespace Model
         typedef std::future<CreateHyperParameterTuningJobOutcome> CreateHyperParameterTuningJobOutcomeCallable;
         typedef std::future<CreateImageOutcome> CreateImageOutcomeCallable;
         typedef std::future<CreateImageVersionOutcome> CreateImageVersionOutcomeCallable;
+        typedef std::future<CreateInferenceRecommendationsJobOutcome> CreateInferenceRecommendationsJobOutcomeCallable;
         typedef std::future<CreateLabelingJobOutcome> CreateLabelingJobOutcomeCallable;
         typedef std::future<CreateModelOutcome> CreateModelOutcomeCallable;
         typedef std::future<CreateModelBiasJobDefinitionOutcome> CreateModelBiasJobDefinitionOutcomeCallable;
@@ -849,7 +876,9 @@ namespace Model
         typedef std::future<DescribeHyperParameterTuningJobOutcome> DescribeHyperParameterTuningJobOutcomeCallable;
         typedef std::future<DescribeImageOutcome> DescribeImageOutcomeCallable;
         typedef std::future<DescribeImageVersionOutcome> DescribeImageVersionOutcomeCallable;
+        typedef std::future<DescribeInferenceRecommendationsJobOutcome> DescribeInferenceRecommendationsJobOutcomeCallable;
         typedef std::future<DescribeLabelingJobOutcome> DescribeLabelingJobOutcomeCallable;
+        typedef std::future<DescribeLineageGroupOutcome> DescribeLineageGroupOutcomeCallable;
         typedef std::future<DescribeModelOutcome> DescribeModelOutcomeCallable;
         typedef std::future<DescribeModelBiasJobDefinitionOutcome> DescribeModelBiasJobDefinitionOutcomeCallable;
         typedef std::future<DescribeModelExplainabilityJobDefinitionOutcome> DescribeModelExplainabilityJobDefinitionOutcomeCallable;
@@ -877,6 +906,7 @@ namespace Model
         typedef std::future<DisassociateTrialComponentOutcome> DisassociateTrialComponentOutcomeCallable;
         typedef std::future<EnableSagemakerServicecatalogPortfolioOutcome> EnableSagemakerServicecatalogPortfolioOutcomeCallable;
         typedef std::future<GetDeviceFleetReportOutcome> GetDeviceFleetReportOutcomeCallable;
+        typedef std::future<GetLineageGroupPolicyOutcome> GetLineageGroupPolicyOutcomeCallable;
         typedef std::future<GetModelPackageGroupPolicyOutcome> GetModelPackageGroupPolicyOutcomeCallable;
         typedef std::future<GetSagemakerServicecatalogPortfolioStatusOutcome> GetSagemakerServicecatalogPortfolioStatusOutcomeCallable;
         typedef std::future<GetSearchSuggestionsOutcome> GetSearchSuggestionsOutcomeCallable;
@@ -905,10 +935,13 @@ namespace Model
         typedef std::future<ListHyperParameterTuningJobsOutcome> ListHyperParameterTuningJobsOutcomeCallable;
         typedef std::future<ListImageVersionsOutcome> ListImageVersionsOutcomeCallable;
         typedef std::future<ListImagesOutcome> ListImagesOutcomeCallable;
+        typedef std::future<ListInferenceRecommendationsJobsOutcome> ListInferenceRecommendationsJobsOutcomeCallable;
         typedef std::future<ListLabelingJobsOutcome> ListLabelingJobsOutcomeCallable;
         typedef std::future<ListLabelingJobsForWorkteamOutcome> ListLabelingJobsForWorkteamOutcomeCallable;
+        typedef std::future<ListLineageGroupsOutcome> ListLineageGroupsOutcomeCallable;
         typedef std::future<ListModelBiasJobDefinitionsOutcome> ListModelBiasJobDefinitionsOutcomeCallable;
         typedef std::future<ListModelExplainabilityJobDefinitionsOutcome> ListModelExplainabilityJobDefinitionsOutcomeCallable;
+        typedef std::future<ListModelMetadataOutcome> ListModelMetadataOutcomeCallable;
         typedef std::future<ListModelPackageGroupsOutcome> ListModelPackageGroupsOutcomeCallable;
         typedef std::future<ListModelPackagesOutcome> ListModelPackagesOutcomeCallable;
         typedef std::future<ListModelQualityJobDefinitionsOutcome> ListModelQualityJobDefinitionsOutcomeCallable;
@@ -935,6 +968,7 @@ namespace Model
         typedef std::future<ListWorkforcesOutcome> ListWorkforcesOutcomeCallable;
         typedef std::future<ListWorkteamsOutcome> ListWorkteamsOutcomeCallable;
         typedef std::future<PutModelPackageGroupPolicyOutcome> PutModelPackageGroupPolicyOutcomeCallable;
+        typedef std::future<QueryLineageOutcome> QueryLineageOutcomeCallable;
         typedef std::future<RegisterDevicesOutcome> RegisterDevicesOutcomeCallable;
         typedef std::future<RenderUiTemplateOutcome> RenderUiTemplateOutcomeCallable;
         typedef std::future<RetryPipelineExecutionOutcome> RetryPipelineExecutionOutcomeCallable;
@@ -948,6 +982,7 @@ namespace Model
         typedef std::future<StopCompilationJobOutcome> StopCompilationJobOutcomeCallable;
         typedef std::future<StopEdgePackagingJobOutcome> StopEdgePackagingJobOutcomeCallable;
         typedef std::future<StopHyperParameterTuningJobOutcome> StopHyperParameterTuningJobOutcomeCallable;
+        typedef std::future<StopInferenceRecommendationsJobOutcome> StopInferenceRecommendationsJobOutcomeCallable;
         typedef std::future<StopLabelingJobOutcome> StopLabelingJobOutcomeCallable;
         typedef std::future<StopMonitoringScheduleOutcome> StopMonitoringScheduleOutcomeCallable;
         typedef std::future<StopNotebookInstanceOutcome> StopNotebookInstanceOutcomeCallable;
@@ -1010,6 +1045,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::CreateHyperParameterTuningJobRequest&, const Model::CreateHyperParameterTuningJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHyperParameterTuningJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateImageRequest&, const Model::CreateImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateImageVersionRequest&, const Model::CreateImageVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImageVersionResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateInferenceRecommendationsJobRequest&, const Model::CreateInferenceRecommendationsJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInferenceRecommendationsJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateLabelingJobRequest&, const Model::CreateLabelingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLabelingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateModelRequest&, const Model::CreateModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateModelBiasJobDefinitionRequest&, const Model::CreateModelBiasJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelBiasJobDefinitionResponseReceivedHandler;
@@ -1095,7 +1131,9 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::DescribeHyperParameterTuningJobRequest&, const Model::DescribeHyperParameterTuningJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHyperParameterTuningJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeImageRequest&, const Model::DescribeImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeImageVersionRequest&, const Model::DescribeImageVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImageVersionResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeInferenceRecommendationsJobRequest&, const Model::DescribeInferenceRecommendationsJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInferenceRecommendationsJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeLabelingJobRequest&, const Model::DescribeLabelingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLabelingJobResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeLineageGroupRequest&, const Model::DescribeLineageGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLineageGroupResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeModelRequest&, const Model::DescribeModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeModelBiasJobDefinitionRequest&, const Model::DescribeModelBiasJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelBiasJobDefinitionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeModelExplainabilityJobDefinitionRequest&, const Model::DescribeModelExplainabilityJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelExplainabilityJobDefinitionResponseReceivedHandler;
@@ -1123,6 +1161,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::DisassociateTrialComponentRequest&, const Model::DisassociateTrialComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTrialComponentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::EnableSagemakerServicecatalogPortfolioRequest&, const Model::EnableSagemakerServicecatalogPortfolioOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableSagemakerServicecatalogPortfolioResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::GetDeviceFleetReportRequest&, const Model::GetDeviceFleetReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeviceFleetReportResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::GetLineageGroupPolicyRequest&, const Model::GetLineageGroupPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLineageGroupPolicyResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::GetModelPackageGroupPolicyRequest&, const Model::GetModelPackageGroupPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetModelPackageGroupPolicyResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::GetSagemakerServicecatalogPortfolioStatusRequest&, const Model::GetSagemakerServicecatalogPortfolioStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSagemakerServicecatalogPortfolioStatusResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::GetSearchSuggestionsRequest&, const Model::GetSearchSuggestionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSearchSuggestionsResponseReceivedHandler;
@@ -1151,10 +1190,13 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::ListHyperParameterTuningJobsRequest&, const Model::ListHyperParameterTuningJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHyperParameterTuningJobsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListImageVersionsRequest&, const Model::ListImageVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImageVersionsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListImagesRequest&, const Model::ListImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImagesResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListInferenceRecommendationsJobsRequest&, const Model::ListInferenceRecommendationsJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInferenceRecommendationsJobsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListLabelingJobsRequest&, const Model::ListLabelingJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLabelingJobsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListLabelingJobsForWorkteamRequest&, const Model::ListLabelingJobsForWorkteamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLabelingJobsForWorkteamResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListLineageGroupsRequest&, const Model::ListLineageGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLineageGroupsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListModelBiasJobDefinitionsRequest&, const Model::ListModelBiasJobDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelBiasJobDefinitionsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListModelExplainabilityJobDefinitionsRequest&, const Model::ListModelExplainabilityJobDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelExplainabilityJobDefinitionsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListModelMetadataRequest&, const Model::ListModelMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelMetadataResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListModelPackageGroupsRequest&, const Model::ListModelPackageGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelPackageGroupsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListModelPackagesRequest&, const Model::ListModelPackagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelPackagesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListModelQualityJobDefinitionsRequest&, const Model::ListModelQualityJobDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelQualityJobDefinitionsResponseReceivedHandler;
@@ -1181,6 +1223,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::ListWorkforcesRequest&, const Model::ListWorkforcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkforcesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListWorkteamsRequest&, const Model::ListWorkteamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkteamsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::PutModelPackageGroupPolicyRequest&, const Model::PutModelPackageGroupPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutModelPackageGroupPolicyResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::QueryLineageRequest&, const Model::QueryLineageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > QueryLineageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::RegisterDevicesRequest&, const Model::RegisterDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterDevicesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::RenderUiTemplateRequest&, const Model::RenderUiTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RenderUiTemplateResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::RetryPipelineExecutionRequest&, const Model::RetryPipelineExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RetryPipelineExecutionResponseReceivedHandler;
@@ -1194,6 +1237,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::StopCompilationJobRequest&, const Model::StopCompilationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopCompilationJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopEdgePackagingJobRequest&, const Model::StopEdgePackagingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopEdgePackagingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopHyperParameterTuningJobRequest&, const Model::StopHyperParameterTuningJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopHyperParameterTuningJobResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::StopInferenceRecommendationsJobRequest&, const Model::StopInferenceRecommendationsJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopInferenceRecommendationsJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopLabelingJobRequest&, const Model::StopLabelingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopLabelingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopMonitoringScheduleRequest&, const Model::StopMonitoringScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopMonitoringScheduleResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopNotebookInstanceRequest&, const Model::StopNotebookInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopNotebookInstanceResponseReceivedHandler;
@@ -2655,6 +2699,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateImageVersionAsync(const Model::CreateImageVersionRequest& request, const CreateImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Starts a recommendation job. You can create either an instance recommendation
+         * or load test job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceRecommendationsJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateInferenceRecommendationsJobOutcome CreateInferenceRecommendationsJob(const Model::CreateInferenceRecommendationsJobRequest& request) const;
+
+        /**
+         * <p>Starts a recommendation job. You can create either an instance recommendation
+         * or load test job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceRecommendationsJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateInferenceRecommendationsJobOutcomeCallable CreateInferenceRecommendationsJobCallable(const Model::CreateInferenceRecommendationsJobRequest& request) const;
+
+        /**
+         * <p>Starts a recommendation job. You can create either an instance recommendation
+         * or load test job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceRecommendationsJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateInferenceRecommendationsJobAsync(const Model::CreateInferenceRecommendationsJobRequest& request, const CreateInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a job that uses workers to label the data objects in your input
@@ -5841,6 +5913,34 @@ namespace Model
         virtual void DescribeImageVersionAsync(const Model::DescribeImageVersionRequest& request, const DescribeImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Provides the results of the Inference Recommender job. One or more
+         * recommendation jobs are returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeInferenceRecommendationsJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeInferenceRecommendationsJobOutcome DescribeInferenceRecommendationsJob(const Model::DescribeInferenceRecommendationsJobRequest& request) const;
+
+        /**
+         * <p>Provides the results of the Inference Recommender job. One or more
+         * recommendation jobs are returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeInferenceRecommendationsJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeInferenceRecommendationsJobOutcomeCallable DescribeInferenceRecommendationsJobCallable(const Model::DescribeInferenceRecommendationsJobRequest& request) const;
+
+        /**
+         * <p>Provides the results of the Inference Recommender job. One or more
+         * recommendation jobs are returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeInferenceRecommendationsJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeInferenceRecommendationsJobAsync(const Model::DescribeInferenceRecommendationsJobRequest& request, const DescribeInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets information about a labeling job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeLabelingJob">AWS
          * API Reference</a></p>
@@ -5864,6 +5964,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeLabelingJobAsync(const Model::DescribeLabelingJobRequest& request, const DescribeLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Provides a list of properties for the requested lineage group. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/xaccount-lineage-tracking.html">
+         * Cross-Account Lineage Tracking </a> in the <i>Amazon SageMaker Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeLineageGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeLineageGroupOutcome DescribeLineageGroup(const Model::DescribeLineageGroupRequest& request) const;
+
+        /**
+         * <p>Provides a list of properties for the requested lineage group. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/xaccount-lineage-tracking.html">
+         * Cross-Account Lineage Tracking </a> in the <i>Amazon SageMaker Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeLineageGroup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeLineageGroupOutcomeCallable DescribeLineageGroupCallable(const Model::DescribeLineageGroupRequest& request) const;
+
+        /**
+         * <p>Provides a list of properties for the requested lineage group. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/xaccount-lineage-tracking.html">
+         * Cross-Account Lineage Tracking </a> in the <i>Amazon SageMaker Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeLineageGroup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeLineageGroupAsync(const Model::DescribeLineageGroupRequest& request, const DescribeLineageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a model that you created using the <code>CreateModel</code>
@@ -6656,6 +6793,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDeviceFleetReportAsync(const Model::GetDeviceFleetReportRequest& request, const GetDeviceFleetReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>The resource policy for the lineage group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetLineageGroupPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLineageGroupPolicyOutcome GetLineageGroupPolicy(const Model::GetLineageGroupPolicyRequest& request) const;
+
+        /**
+         * <p>The resource policy for the lineage group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetLineageGroupPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetLineageGroupPolicyOutcomeCallable GetLineageGroupPolicyCallable(const Model::GetLineageGroupPolicyRequest& request) const;
+
+        /**
+         * <p>The resource policy for the lineage group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetLineageGroupPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetLineageGroupPolicyAsync(const Model::GetLineageGroupPolicyRequest& request, const GetLineageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a resource policy that manages access for a model group. For information
@@ -7451,6 +7613,34 @@ namespace Model
         virtual void ListImagesAsync(const Model::ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists recommendation jobs that satisfy various filters.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListInferenceRecommendationsJobsOutcome ListInferenceRecommendationsJobs(const Model::ListInferenceRecommendationsJobsRequest& request) const;
+
+        /**
+         * <p>Lists recommendation jobs that satisfy various filters.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListInferenceRecommendationsJobsOutcomeCallable ListInferenceRecommendationsJobsCallable(const Model::ListInferenceRecommendationsJobsRequest& request) const;
+
+        /**
+         * <p>Lists recommendation jobs that satisfy various filters.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListInferenceRecommendationsJobsAsync(const Model::ListInferenceRecommendationsJobsRequest& request, const ListInferenceRecommendationsJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets a list of labeling jobs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListLabelingJobs">AWS
          * API Reference</a></p>
@@ -7502,6 +7692,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListLabelingJobsForWorkteamAsync(const Model::ListLabelingJobsForWorkteamRequest& request, const ListLabelingJobsForWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>A list of lineage groups shared with your Amazon Web Services account. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/xaccount-lineage-tracking.html">
+         * Cross-Account Lineage Tracking </a> in the <i>Amazon SageMaker Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListLineageGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListLineageGroupsOutcome ListLineageGroups(const Model::ListLineageGroupsRequest& request) const;
+
+        /**
+         * <p>A list of lineage groups shared with your Amazon Web Services account. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/xaccount-lineage-tracking.html">
+         * Cross-Account Lineage Tracking </a> in the <i>Amazon SageMaker Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListLineageGroups">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListLineageGroupsOutcomeCallable ListLineageGroupsCallable(const Model::ListLineageGroupsRequest& request) const;
+
+        /**
+         * <p>A list of lineage groups shared with your Amazon Web Services account. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/xaccount-lineage-tracking.html">
+         * Cross-Account Lineage Tracking </a> in the <i>Amazon SageMaker Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListLineageGroups">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListLineageGroupsAsync(const Model::ListLineageGroupsRequest& request, const ListLineageGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists model bias jobs definitions that satisfy various filters.</p><p><h3>See
@@ -7558,6 +7785,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListModelExplainabilityJobDefinitionsAsync(const Model::ListModelExplainabilityJobDefinitionsRequest& request, const ListModelExplainabilityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the domain, framework, task, and model name of standard machine
+         * learning models found in common model zoos.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelMetadata">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListModelMetadataOutcome ListModelMetadata(const Model::ListModelMetadataRequest& request) const;
+
+        /**
+         * <p>Lists the domain, framework, task, and model name of standard machine
+         * learning models found in common model zoos.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelMetadata">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListModelMetadataOutcomeCallable ListModelMetadataCallable(const Model::ListModelMetadataRequest& request) const;
+
+        /**
+         * <p>Lists the domain, framework, task, and model name of standard machine
+         * learning models found in common model zoos.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelMetadata">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListModelMetadataAsync(const Model::ListModelMetadataRequest& request, const ListModelMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of the model groups in your Amazon Web Services
@@ -8351,6 +8606,43 @@ namespace Model
         virtual void PutModelPackageGroupPolicyAsync(const Model::PutModelPackageGroupPolicyRequest& request, const PutModelPackageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Use this action to inspect your lineage and discover relationships between
+         * entities. For more information, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/querying-lineage-entities.html">
+         * Querying Lineage Entities</a> in the <i>Amazon SageMaker Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/QueryLineage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::QueryLineageOutcome QueryLineage(const Model::QueryLineageRequest& request) const;
+
+        /**
+         * <p>Use this action to inspect your lineage and discover relationships between
+         * entities. For more information, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/querying-lineage-entities.html">
+         * Querying Lineage Entities</a> in the <i>Amazon SageMaker Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/QueryLineage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::QueryLineageOutcomeCallable QueryLineageCallable(const Model::QueryLineageRequest& request) const;
+
+        /**
+         * <p>Use this action to inspect your lineage and discover relationships between
+         * entities. For more information, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/querying-lineage-entities.html">
+         * Querying Lineage Entities</a> in the <i>Amazon SageMaker Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/QueryLineage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void QueryLineageAsync(const Model::QueryLineageRequest& request, const QueryLineageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Register devices.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RegisterDevices">AWS
          * API Reference</a></p>
@@ -8764,6 +9056,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StopHyperParameterTuningJobAsync(const Model::StopHyperParameterTuningJobRequest& request, const StopHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Stops an Inference Recommender job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopInferenceRecommendationsJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopInferenceRecommendationsJobOutcome StopInferenceRecommendationsJob(const Model::StopInferenceRecommendationsJobRequest& request) const;
+
+        /**
+         * <p>Stops an Inference Recommender job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopInferenceRecommendationsJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopInferenceRecommendationsJobOutcomeCallable StopInferenceRecommendationsJobCallable(const Model::StopInferenceRecommendationsJobRequest& request) const;
+
+        /**
+         * <p>Stops an Inference Recommender job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopInferenceRecommendationsJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopInferenceRecommendationsJobAsync(const Model::StopInferenceRecommendationsJobRequest& request, const StopInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a running labeling job. A job that is stopped cannot be restarted. Any
@@ -9865,6 +10182,7 @@ namespace Model
         void CreateHyperParameterTuningJobAsyncHelper(const Model::CreateHyperParameterTuningJobRequest& request, const CreateHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateImageAsyncHelper(const Model::CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateImageVersionAsyncHelper(const Model::CreateImageVersionRequest& request, const CreateImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateInferenceRecommendationsJobAsyncHelper(const Model::CreateInferenceRecommendationsJobRequest& request, const CreateInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLabelingJobAsyncHelper(const Model::CreateLabelingJobRequest& request, const CreateLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateModelAsyncHelper(const Model::CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateModelBiasJobDefinitionAsyncHelper(const Model::CreateModelBiasJobDefinitionRequest& request, const CreateModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -9950,7 +10268,9 @@ namespace Model
         void DescribeHyperParameterTuningJobAsyncHelper(const Model::DescribeHyperParameterTuningJobRequest& request, const DescribeHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeImageAsyncHelper(const Model::DescribeImageRequest& request, const DescribeImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeImageVersionAsyncHelper(const Model::DescribeImageVersionRequest& request, const DescribeImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeInferenceRecommendationsJobAsyncHelper(const Model::DescribeInferenceRecommendationsJobRequest& request, const DescribeInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLabelingJobAsyncHelper(const Model::DescribeLabelingJobRequest& request, const DescribeLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeLineageGroupAsyncHelper(const Model::DescribeLineageGroupRequest& request, const DescribeLineageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeModelAsyncHelper(const Model::DescribeModelRequest& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeModelBiasJobDefinitionAsyncHelper(const Model::DescribeModelBiasJobDefinitionRequest& request, const DescribeModelBiasJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeModelExplainabilityJobDefinitionAsyncHelper(const Model::DescribeModelExplainabilityJobDefinitionRequest& request, const DescribeModelExplainabilityJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -9978,6 +10298,7 @@ namespace Model
         void DisassociateTrialComponentAsyncHelper(const Model::DisassociateTrialComponentRequest& request, const DisassociateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableSagemakerServicecatalogPortfolioAsyncHelper(const Model::EnableSagemakerServicecatalogPortfolioRequest& request, const EnableSagemakerServicecatalogPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDeviceFleetReportAsyncHelper(const Model::GetDeviceFleetReportRequest& request, const GetDeviceFleetReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetLineageGroupPolicyAsyncHelper(const Model::GetLineageGroupPolicyRequest& request, const GetLineageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetModelPackageGroupPolicyAsyncHelper(const Model::GetModelPackageGroupPolicyRequest& request, const GetModelPackageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSagemakerServicecatalogPortfolioStatusAsyncHelper(const Model::GetSagemakerServicecatalogPortfolioStatusRequest& request, const GetSagemakerServicecatalogPortfolioStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSearchSuggestionsAsyncHelper(const Model::GetSearchSuggestionsRequest& request, const GetSearchSuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -10006,10 +10327,13 @@ namespace Model
         void ListHyperParameterTuningJobsAsyncHelper(const Model::ListHyperParameterTuningJobsRequest& request, const ListHyperParameterTuningJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListImageVersionsAsyncHelper(const Model::ListImageVersionsRequest& request, const ListImageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListImagesAsyncHelper(const Model::ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListInferenceRecommendationsJobsAsyncHelper(const Model::ListInferenceRecommendationsJobsRequest& request, const ListInferenceRecommendationsJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLabelingJobsAsyncHelper(const Model::ListLabelingJobsRequest& request, const ListLabelingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLabelingJobsForWorkteamAsyncHelper(const Model::ListLabelingJobsForWorkteamRequest& request, const ListLabelingJobsForWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListLineageGroupsAsyncHelper(const Model::ListLineageGroupsRequest& request, const ListLineageGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListModelBiasJobDefinitionsAsyncHelper(const Model::ListModelBiasJobDefinitionsRequest& request, const ListModelBiasJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListModelExplainabilityJobDefinitionsAsyncHelper(const Model::ListModelExplainabilityJobDefinitionsRequest& request, const ListModelExplainabilityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListModelMetadataAsyncHelper(const Model::ListModelMetadataRequest& request, const ListModelMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListModelPackageGroupsAsyncHelper(const Model::ListModelPackageGroupsRequest& request, const ListModelPackageGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListModelPackagesAsyncHelper(const Model::ListModelPackagesRequest& request, const ListModelPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListModelQualityJobDefinitionsAsyncHelper(const Model::ListModelQualityJobDefinitionsRequest& request, const ListModelQualityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -10036,6 +10360,7 @@ namespace Model
         void ListWorkforcesAsyncHelper(const Model::ListWorkforcesRequest& request, const ListWorkforcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListWorkteamsAsyncHelper(const Model::ListWorkteamsRequest& request, const ListWorkteamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutModelPackageGroupPolicyAsyncHelper(const Model::PutModelPackageGroupPolicyRequest& request, const PutModelPackageGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void QueryLineageAsyncHelper(const Model::QueryLineageRequest& request, const QueryLineageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterDevicesAsyncHelper(const Model::RegisterDevicesRequest& request, const RegisterDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RenderUiTemplateAsyncHelper(const Model::RenderUiTemplateRequest& request, const RenderUiTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RetryPipelineExecutionAsyncHelper(const Model::RetryPipelineExecutionRequest& request, const RetryPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -10049,6 +10374,7 @@ namespace Model
         void StopCompilationJobAsyncHelper(const Model::StopCompilationJobRequest& request, const StopCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopEdgePackagingJobAsyncHelper(const Model::StopEdgePackagingJobRequest& request, const StopEdgePackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopHyperParameterTuningJobAsyncHelper(const Model::StopHyperParameterTuningJobRequest& request, const StopHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopInferenceRecommendationsJobAsyncHelper(const Model::StopInferenceRecommendationsJobRequest& request, const StopInferenceRecommendationsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopLabelingJobAsyncHelper(const Model::StopLabelingJobRequest& request, const StopLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopMonitoringScheduleAsyncHelper(const Model::StopMonitoringScheduleRequest& request, const StopMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopNotebookInstanceAsyncHelper(const Model::StopNotebookInstanceRequest& request, const StopNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
