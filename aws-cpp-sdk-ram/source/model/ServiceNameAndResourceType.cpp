@@ -20,13 +20,17 @@ namespace Model
 
 ServiceNameAndResourceType::ServiceNameAndResourceType() : 
     m_resourceTypeHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
+    m_serviceNameHasBeenSet(false),
+    m_resourceRegionScope(ResourceRegionScope::NOT_SET),
+    m_resourceRegionScopeHasBeenSet(false)
 {
 }
 
 ServiceNameAndResourceType::ServiceNameAndResourceType(JsonView jsonValue) : 
     m_resourceTypeHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
+    m_serviceNameHasBeenSet(false),
+    m_resourceRegionScope(ResourceRegionScope::NOT_SET),
+    m_resourceRegionScopeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +51,13 @@ ServiceNameAndResourceType& ServiceNameAndResourceType::operator =(JsonView json
     m_serviceNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("resourceRegionScope"))
+  {
+    m_resourceRegionScope = ResourceRegionScopeMapper::GetResourceRegionScopeForName(jsonValue.GetString("resourceRegionScope"));
+
+    m_resourceRegionScopeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -64,6 +75,11 @@ JsonValue ServiceNameAndResourceType::Jsonize() const
   {
    payload.WithString("serviceName", m_serviceName);
 
+  }
+
+  if(m_resourceRegionScopeHasBeenSet)
+  {
+   payload.WithString("resourceRegionScope", ResourceRegionScopeMapper::GetNameForResourceRegionScope(m_resourceRegionScope));
   }
 
   return payload;

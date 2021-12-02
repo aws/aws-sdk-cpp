@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/networkmanager/NetworkManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/networkmanager/model/CoreNetworkSegmentEdgeIdentifier.h>
 #include <utility>
 
 namespace Aws
@@ -77,10 +78,44 @@ namespace Model
      */
     inline RouteTableIdentifier& WithTransitGatewayRouteTableArn(const char* value) { SetTransitGatewayRouteTableArn(value); return *this;}
 
+
+    /**
+     * <p>The segment edge in a core network.</p>
+     */
+    inline const CoreNetworkSegmentEdgeIdentifier& GetCoreNetworkSegmentEdge() const{ return m_coreNetworkSegmentEdge; }
+
+    /**
+     * <p>The segment edge in a core network.</p>
+     */
+    inline bool CoreNetworkSegmentEdgeHasBeenSet() const { return m_coreNetworkSegmentEdgeHasBeenSet; }
+
+    /**
+     * <p>The segment edge in a core network.</p>
+     */
+    inline void SetCoreNetworkSegmentEdge(const CoreNetworkSegmentEdgeIdentifier& value) { m_coreNetworkSegmentEdgeHasBeenSet = true; m_coreNetworkSegmentEdge = value; }
+
+    /**
+     * <p>The segment edge in a core network.</p>
+     */
+    inline void SetCoreNetworkSegmentEdge(CoreNetworkSegmentEdgeIdentifier&& value) { m_coreNetworkSegmentEdgeHasBeenSet = true; m_coreNetworkSegmentEdge = std::move(value); }
+
+    /**
+     * <p>The segment edge in a core network.</p>
+     */
+    inline RouteTableIdentifier& WithCoreNetworkSegmentEdge(const CoreNetworkSegmentEdgeIdentifier& value) { SetCoreNetworkSegmentEdge(value); return *this;}
+
+    /**
+     * <p>The segment edge in a core network.</p>
+     */
+    inline RouteTableIdentifier& WithCoreNetworkSegmentEdge(CoreNetworkSegmentEdgeIdentifier&& value) { SetCoreNetworkSegmentEdge(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_transitGatewayRouteTableArn;
     bool m_transitGatewayRouteTableArnHasBeenSet;
+
+    CoreNetworkSegmentEdgeIdentifier m_coreNetworkSegmentEdge;
+    bool m_coreNetworkSegmentEdgeHasBeenSet;
   };
 
 } // namespace Model

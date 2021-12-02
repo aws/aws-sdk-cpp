@@ -19,12 +19,14 @@ namespace Model
 {
 
 RouteTableIdentifier::RouteTableIdentifier() : 
-    m_transitGatewayRouteTableArnHasBeenSet(false)
+    m_transitGatewayRouteTableArnHasBeenSet(false),
+    m_coreNetworkSegmentEdgeHasBeenSet(false)
 {
 }
 
 RouteTableIdentifier::RouteTableIdentifier(JsonView jsonValue) : 
-    m_transitGatewayRouteTableArnHasBeenSet(false)
+    m_transitGatewayRouteTableArnHasBeenSet(false),
+    m_coreNetworkSegmentEdgeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ RouteTableIdentifier& RouteTableIdentifier::operator =(JsonView jsonValue)
     m_transitGatewayRouteTableArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CoreNetworkSegmentEdge"))
+  {
+    m_coreNetworkSegmentEdge = jsonValue.GetObject("CoreNetworkSegmentEdge");
+
+    m_coreNetworkSegmentEdgeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue RouteTableIdentifier::Jsonize() const
   if(m_transitGatewayRouteTableArnHasBeenSet)
   {
    payload.WithString("TransitGatewayRouteTableArn", m_transitGatewayRouteTableArn);
+
+  }
+
+  if(m_coreNetworkSegmentEdgeHasBeenSet)
+  {
+   payload.WithObject("CoreNetworkSegmentEdge", m_coreNetworkSegmentEdge.Jsonize());
 
   }
 

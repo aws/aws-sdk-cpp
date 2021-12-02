@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int TRANSIT_GATEWAY_ROUTE_TABLE_HASH = HashingUtils::HashString("TRANSIT_GATEWAY_ROUTE_TABLE");
+        static const int CORE_NETWORK_SEGMENT_HASH = HashingUtils::HashString("CORE_NETWORK_SEGMENT");
 
 
         RouteTableType GetRouteTableTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == TRANSIT_GATEWAY_ROUTE_TABLE_HASH)
           {
             return RouteTableType::TRANSIT_GATEWAY_ROUTE_TABLE;
+          }
+          else if (hashCode == CORE_NETWORK_SEGMENT_HASH)
+          {
+            return RouteTableType::CORE_NETWORK_SEGMENT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case RouteTableType::TRANSIT_GATEWAY_ROUTE_TABLE:
             return "TRANSIT_GATEWAY_ROUTE_TABLE";
+          case RouteTableType::CORE_NETWORK_SEGMENT:
+            return "CORE_NETWORK_SEGMENT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

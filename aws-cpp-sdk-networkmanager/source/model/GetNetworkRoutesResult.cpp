@@ -36,6 +36,12 @@ GetNetworkRoutesResult& GetNetworkRoutesResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("CoreNetworkSegmentEdge"))
+  {
+    m_coreNetworkSegmentEdge = jsonValue.GetObject("CoreNetworkSegmentEdge");
+
+  }
+
   if(jsonValue.ValueExists("RouteTableType"))
   {
     m_routeTableType = RouteTableTypeMapper::GetRouteTableTypeForName(jsonValue.GetString("RouteTableType"));

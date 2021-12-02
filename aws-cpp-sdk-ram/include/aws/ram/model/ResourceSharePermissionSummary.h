@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about a permission that is associated with a resource
-   * share.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about an RAM permission that is associated with a resource share
+   * and any of its resources of a specified type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ResourceSharePermissionSummary">AWS
    * API Reference</a></p>
    */
@@ -40,190 +40,206 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the permission.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the permission you want information about.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the permission.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the permission you want information about.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the permission.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the permission you want information about.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the permission.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the permission you want information about.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the permission.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the permission you want information about.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the permission.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the permission you want information about.</p>
      */
     inline ResourceSharePermissionSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the permission.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the permission you want information about.</p>
      */
     inline ResourceSharePermissionSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the permission.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of the permission you want information about.</p>
      */
     inline ResourceSharePermissionSummary& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p>The identifier for the version of the permission.</p>
+     * <p>The version of the permission represented in this structure.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The identifier for the version of the permission.</p>
+     * <p>The version of the permission represented in this structure.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>The identifier for the version of the permission.</p>
+     * <p>The version of the permission represented in this structure.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The identifier for the version of the permission.</p>
+     * <p>The version of the permission represented in this structure.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>The identifier for the version of the permission.</p>
+     * <p>The version of the permission represented in this structure.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>The identifier for the version of the permission.</p>
+     * <p>The version of the permission represented in this structure.</p>
      */
     inline ResourceSharePermissionSummary& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The identifier for the version of the permission.</p>
+     * <p>The version of the permission represented in this structure.</p>
      */
     inline ResourceSharePermissionSummary& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the version of the permission.</p>
+     * <p>The version of the permission represented in this structure.</p>
      */
     inline ResourceSharePermissionSummary& WithVersion(const char* value) { SetVersion(value); return *this;}
 
 
     /**
-     * <p>Specifies whether the version of the permission is set to the default version
-     * for this permission.</p>
+     * <p>Specifies whether the version of the permission represented in this structure
+     * is the default version for this permission.</p>
      */
     inline bool GetDefaultVersion() const{ return m_defaultVersion; }
 
     /**
-     * <p>Specifies whether the version of the permission is set to the default version
-     * for this permission.</p>
+     * <p>Specifies whether the version of the permission represented in this structure
+     * is the default version for this permission.</p>
      */
     inline bool DefaultVersionHasBeenSet() const { return m_defaultVersionHasBeenSet; }
 
     /**
-     * <p>Specifies whether the version of the permission is set to the default version
-     * for this permission.</p>
+     * <p>Specifies whether the version of the permission represented in this structure
+     * is the default version for this permission.</p>
      */
     inline void SetDefaultVersion(bool value) { m_defaultVersionHasBeenSet = true; m_defaultVersion = value; }
 
     /**
-     * <p>Specifies whether the version of the permission is set to the default version
-     * for this permission.</p>
+     * <p>Specifies whether the version of the permission represented in this structure
+     * is the default version for this permission.</p>
      */
     inline ResourceSharePermissionSummary& WithDefaultVersion(bool value) { SetDefaultVersion(value); return *this;}
 
 
     /**
-     * <p>The name of the permission.</p>
+     * <p>The name of this permission.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the permission.</p>
+     * <p>The name of this permission.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the permission.</p>
+     * <p>The name of this permission.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the permission.</p>
+     * <p>The name of this permission.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the permission.</p>
+     * <p>The name of this permission.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the permission.</p>
+     * <p>The name of this permission.</p>
      */
     inline ResourceSharePermissionSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the permission.</p>
+     * <p>The name of this permission.</p>
      */
     inline ResourceSharePermissionSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the permission.</p>
+     * <p>The name of this permission.</p>
      */
     inline ResourceSharePermissionSummary& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The type of resource to which the permission applies.</p>
+     * <p>The type of resource to which this permission applies.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of resource to which the permission applies.</p>
+     * <p>The type of resource to which this permission applies.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of resource to which the permission applies.</p>
+     * <p>The type of resource to which this permission applies.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of resource to which the permission applies.</p>
+     * <p>The type of resource to which this permission applies.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of resource to which the permission applies.</p>
+     * <p>The type of resource to which this permission applies.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>The type of resource to which the permission applies.</p>
+     * <p>The type of resource to which this permission applies.</p>
      */
     inline ResourceSharePermissionSummary& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of resource to which the permission applies.</p>
+     * <p>The type of resource to which this permission applies.</p>
      */
     inline ResourceSharePermissionSummary& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of resource to which the permission applies.</p>
+     * <p>The type of resource to which this permission applies.</p>
      */
     inline ResourceSharePermissionSummary& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
@@ -332,26 +348,26 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the version of the permission is set to the default version
-     * for this resource type.</p>
+     * <p>Specifies whether the version of the permission represented in this structure
+     * is the default version for all resources of this resource type.</p>
      */
     inline bool GetIsResourceTypeDefault() const{ return m_isResourceTypeDefault; }
 
     /**
-     * <p>Specifies whether the version of the permission is set to the default version
-     * for this resource type.</p>
+     * <p>Specifies whether the version of the permission represented in this structure
+     * is the default version for all resources of this resource type.</p>
      */
     inline bool IsResourceTypeDefaultHasBeenSet() const { return m_isResourceTypeDefaultHasBeenSet; }
 
     /**
-     * <p>Specifies whether the version of the permission is set to the default version
-     * for this resource type.</p>
+     * <p>Specifies whether the version of the permission represented in this structure
+     * is the default version for all resources of this resource type.</p>
      */
     inline void SetIsResourceTypeDefault(bool value) { m_isResourceTypeDefaultHasBeenSet = true; m_isResourceTypeDefault = value; }
 
     /**
-     * <p>Specifies whether the version of the permission is set to the default version
-     * for this resource type.</p>
+     * <p>Specifies whether the version of the permission represented in this structure
+     * is the default version for all resources of this resource type.</p>
      */
     inline ResourceSharePermissionSummary& WithIsResourceTypeDefault(bool value) { SetIsResourceTypeDefault(value); return *this;}
 

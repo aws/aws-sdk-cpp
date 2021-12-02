@@ -19,14 +19,20 @@ namespace Model
 {
 
 NetworkRouteDestination::NetworkRouteDestination() : 
+    m_coreNetworkAttachmentIdHasBeenSet(false),
     m_transitGatewayAttachmentIdHasBeenSet(false),
+    m_segmentNameHasBeenSet(false),
+    m_edgeLocationHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false)
 {
 }
 
 NetworkRouteDestination::NetworkRouteDestination(JsonView jsonValue) : 
+    m_coreNetworkAttachmentIdHasBeenSet(false),
     m_transitGatewayAttachmentIdHasBeenSet(false),
+    m_segmentNameHasBeenSet(false),
+    m_edgeLocationHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false)
 {
@@ -35,11 +41,32 @@ NetworkRouteDestination::NetworkRouteDestination(JsonView jsonValue) :
 
 NetworkRouteDestination& NetworkRouteDestination::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("CoreNetworkAttachmentId"))
+  {
+    m_coreNetworkAttachmentId = jsonValue.GetString("CoreNetworkAttachmentId");
+
+    m_coreNetworkAttachmentIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("TransitGatewayAttachmentId"))
   {
     m_transitGatewayAttachmentId = jsonValue.GetString("TransitGatewayAttachmentId");
 
     m_transitGatewayAttachmentIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SegmentName"))
+  {
+    m_segmentName = jsonValue.GetString("SegmentName");
+
+    m_segmentNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EdgeLocation"))
+  {
+    m_edgeLocation = jsonValue.GetString("EdgeLocation");
+
+    m_edgeLocationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ResourceType"))
@@ -63,9 +90,27 @@ JsonValue NetworkRouteDestination::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_coreNetworkAttachmentIdHasBeenSet)
+  {
+   payload.WithString("CoreNetworkAttachmentId", m_coreNetworkAttachmentId);
+
+  }
+
   if(m_transitGatewayAttachmentIdHasBeenSet)
   {
    payload.WithString("TransitGatewayAttachmentId", m_transitGatewayAttachmentId);
+
+  }
+
+  if(m_segmentNameHasBeenSet)
+  {
+   payload.WithString("SegmentName", m_segmentName);
+
+  }
+
+  if(m_edgeLocationHasBeenSet)
+  {
+   payload.WithString("EdgeLocation", m_edgeLocation);
 
   }
 

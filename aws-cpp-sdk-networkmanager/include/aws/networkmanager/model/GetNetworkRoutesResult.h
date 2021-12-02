@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/networkmanager/NetworkManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/networkmanager/model/CoreNetworkSegmentEdgeIdentifier.h>
 #include <aws/networkmanager/model/RouteTableType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -70,6 +71,32 @@ namespace Model
      * <p>The ARN of the route table.</p>
      */
     inline GetNetworkRoutesResult& WithRouteTableArn(const char* value) { SetRouteTableArn(value); return *this;}
+
+
+    /**
+     * <p>Describes a core network segment edge.</p>
+     */
+    inline const CoreNetworkSegmentEdgeIdentifier& GetCoreNetworkSegmentEdge() const{ return m_coreNetworkSegmentEdge; }
+
+    /**
+     * <p>Describes a core network segment edge.</p>
+     */
+    inline void SetCoreNetworkSegmentEdge(const CoreNetworkSegmentEdgeIdentifier& value) { m_coreNetworkSegmentEdge = value; }
+
+    /**
+     * <p>Describes a core network segment edge.</p>
+     */
+    inline void SetCoreNetworkSegmentEdge(CoreNetworkSegmentEdgeIdentifier&& value) { m_coreNetworkSegmentEdge = std::move(value); }
+
+    /**
+     * <p>Describes a core network segment edge.</p>
+     */
+    inline GetNetworkRoutesResult& WithCoreNetworkSegmentEdge(const CoreNetworkSegmentEdgeIdentifier& value) { SetCoreNetworkSegmentEdge(value); return *this;}
+
+    /**
+     * <p>Describes a core network segment edge.</p>
+     */
+    inline GetNetworkRoutesResult& WithCoreNetworkSegmentEdge(CoreNetworkSegmentEdgeIdentifier&& value) { SetCoreNetworkSegmentEdge(std::move(value)); return *this;}
 
 
     /**
@@ -162,6 +189,8 @@ namespace Model
   private:
 
     Aws::String m_routeTableArn;
+
+    CoreNetworkSegmentEdgeIdentifier m_coreNetworkSegmentEdge;
 
     RouteTableType m_routeTableType;
 

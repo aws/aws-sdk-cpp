@@ -181,13 +181,15 @@ namespace Model
    * <p>This is the <i>Resource Access Manager API Reference</i>. This documentation
    * provides descriptions and syntax for each of the actions and data types in RAM.
    * RAM is a service that helps you securely share your Amazon Web Services
-   * resources across Amazon Web Services accounts and within your organization or
-   * organizational units (OUs) in Organizations. For supported resource types, you
-   * can also share resources with IAM roles and IAM users. If you have multiple
-   * Amazon Web Services accounts, you can use RAM to share those resources with
-   * other accounts.</p> <p>To learn more about RAM, see the following resources:</p>
-   * <ul> <li> <p> <a href="http://aws.amazon.com/ram">Resource Access Manager
-   * product page</a> </p> </li> <li> <p> <a
+   * resources across Amazon Web Services accounts. If you have multiple Amazon Web
+   * Services accounts, you can use RAM to share those resources with other accounts.
+   * If you use Organizations to manage your accounts, then you share your resources
+   * with your organization or organizational units (OUs). For supported resource
+   * types, you can also share resources with individual Identity and Access
+   * Management (IAM) roles an users. </p> <p>To learn more about RAM, see the
+   * following resources:</p> <ul> <li> <p> <a
+   * href="http://aws.amazon.com/ram">Resource Access Manager product page</a> </p>
+   * </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/ram/latest/userguide/">Resource Access Manager
    * User Guide</a> </p> </li> </ul>
    */
@@ -220,7 +222,9 @@ namespace Model
 
         /**
          * <p>Accepts an invitation to a resource share from another Amazon Web Services
-         * account.</p><p><h3>See Also:</h3>   <a
+         * account. After you accept the invitation, the resources included in the resource
+         * share are available to interact with in the relevant Amazon Web Services
+         * Management Consoles and tools.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/AcceptResourceShareInvitation">AWS
          * API Reference</a></p>
          */
@@ -228,7 +232,9 @@ namespace Model
 
         /**
          * <p>Accepts an invitation to a resource share from another Amazon Web Services
-         * account.</p><p><h3>See Also:</h3>   <a
+         * account. After you accept the invitation, the resources included in the resource
+         * share are available to interact with in the relevant Amazon Web Services
+         * Management Consoles and tools.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/AcceptResourceShareInvitation">AWS
          * API Reference</a></p>
          *
@@ -238,7 +244,9 @@ namespace Model
 
         /**
          * <p>Accepts an invitation to a resource share from another Amazon Web Services
-         * account.</p><p><h3>See Also:</h3>   <a
+         * account. After you accept the invitation, the resources included in the resource
+         * share are available to interact with in the relevant Amazon Web Services
+         * Management Consoles and tools.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/AcceptResourceShareInvitation">AWS
          * API Reference</a></p>
          *
@@ -247,16 +255,22 @@ namespace Model
         virtual void AcceptResourceShareInvitationAsync(const Model::AcceptResourceShareInvitationRequest& request, const AcceptResourceShareInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Associates the specified resource share with the specified principals and
-         * resources.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds the specified list of principals and list of resources to a resource
+         * share. Principals that already have access to this resource share immediately
+         * receive access to the added resources. Newly added principals immediately
+         * receive access to the resources shared in this resource share. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/AssociateResourceShare">AWS
          * API Reference</a></p>
          */
         virtual Model::AssociateResourceShareOutcome AssociateResourceShare(const Model::AssociateResourceShareRequest& request) const;
 
         /**
-         * <p>Associates the specified resource share with the specified principals and
-         * resources.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds the specified list of principals and list of resources to a resource
+         * share. Principals that already have access to this resource share immediately
+         * receive access to the added resources. Newly added principals immediately
+         * receive access to the resources shared in this resource share. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/AssociateResourceShare">AWS
          * API Reference</a></p>
          *
@@ -265,8 +279,11 @@ namespace Model
         virtual Model::AssociateResourceShareOutcomeCallable AssociateResourceShareCallable(const Model::AssociateResourceShareRequest& request) const;
 
         /**
-         * <p>Associates the specified resource share with the specified principals and
-         * resources.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds the specified list of principals and list of resources to a resource
+         * share. Principals that already have access to this resource share immediately
+         * receive access to the added resources. Newly added principals immediately
+         * receive access to the resources shared in this resource share. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/AssociateResourceShare">AWS
          * API Reference</a></p>
          *
@@ -275,14 +292,22 @@ namespace Model
         virtual void AssociateResourceShareAsync(const Model::AssociateResourceShareRequest& request, const AssociateResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Associates a permission with a resource share.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds or replaces the RAM permission for a resource type included in a
+         * resource share. You can have exactly one permission associated with each
+         * resource type in the resource share. You can add a new RAM permission only if
+         * there are currently no resources of that resource type currently in the resource
+         * share.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/AssociateResourceSharePermission">AWS
          * API Reference</a></p>
          */
         virtual Model::AssociateResourceSharePermissionOutcome AssociateResourceSharePermission(const Model::AssociateResourceSharePermissionRequest& request) const;
 
         /**
-         * <p>Associates a permission with a resource share.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds or replaces the RAM permission for a resource type included in a
+         * resource share. You can have exactly one permission associated with each
+         * resource type in the resource share. You can add a new RAM permission only if
+         * there are currently no resources of that resource type currently in the resource
+         * share.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/AssociateResourceSharePermission">AWS
          * API Reference</a></p>
          *
@@ -291,7 +316,11 @@ namespace Model
         virtual Model::AssociateResourceSharePermissionOutcomeCallable AssociateResourceSharePermissionCallable(const Model::AssociateResourceSharePermissionRequest& request) const;
 
         /**
-         * <p>Associates a permission with a resource share.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds or replaces the RAM permission for a resource type included in a
+         * resource share. You can have exactly one permission associated with each
+         * resource type in the resource share. You can add a new RAM permission only if
+         * there are currently no resources of that resource type currently in the resource
+         * share.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/AssociateResourceSharePermission">AWS
          * API Reference</a></p>
          *
@@ -300,26 +329,28 @@ namespace Model
         virtual void AssociateResourceSharePermissionAsync(const Model::AssociateResourceSharePermissionRequest& request, const AssociateResourceSharePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a resource share. You must provide a list of the Amazon Resource
-         * Names (ARNs) for the resources you want to share. You must also specify who you
-         * want to share the resources with, and the permissions that you grant them.</p>
-         *  <p>Sharing a resource makes it available for use by principals outside of
-         * the Amazon Web Services account that created the resource. Sharing doesn't
-         * change any permissions or quotas that apply to the resource in the account that
-         * created it.</p> <p><h3>See Also:</h3>   <a
+         * <p>Creates a resource share. You can provide a list of the <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+         * Resource Names (ARNs)</a> for the resources that you want to share, a list of
+         * principals you want to share the resources with, and the permissions to grant
+         * those principals.</p>  <p>Sharing a resource makes it available for use by
+         * principals outside of the Amazon Web Services account that created the resource.
+         * Sharing doesn't change any permissions or quotas that apply to the resource in
+         * the account that created it.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/CreateResourceShare">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateResourceShareOutcome CreateResourceShare(const Model::CreateResourceShareRequest& request) const;
 
         /**
-         * <p>Creates a resource share. You must provide a list of the Amazon Resource
-         * Names (ARNs) for the resources you want to share. You must also specify who you
-         * want to share the resources with, and the permissions that you grant them.</p>
-         *  <p>Sharing a resource makes it available for use by principals outside of
-         * the Amazon Web Services account that created the resource. Sharing doesn't
-         * change any permissions or quotas that apply to the resource in the account that
-         * created it.</p> <p><h3>See Also:</h3>   <a
+         * <p>Creates a resource share. You can provide a list of the <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+         * Resource Names (ARNs)</a> for the resources that you want to share, a list of
+         * principals you want to share the resources with, and the permissions to grant
+         * those principals.</p>  <p>Sharing a resource makes it available for use by
+         * principals outside of the Amazon Web Services account that created the resource.
+         * Sharing doesn't change any permissions or quotas that apply to the resource in
+         * the account that created it.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/CreateResourceShare">AWS
          * API Reference</a></p>
          *
@@ -328,13 +359,14 @@ namespace Model
         virtual Model::CreateResourceShareOutcomeCallable CreateResourceShareCallable(const Model::CreateResourceShareRequest& request) const;
 
         /**
-         * <p>Creates a resource share. You must provide a list of the Amazon Resource
-         * Names (ARNs) for the resources you want to share. You must also specify who you
-         * want to share the resources with, and the permissions that you grant them.</p>
-         *  <p>Sharing a resource makes it available for use by principals outside of
-         * the Amazon Web Services account that created the resource. Sharing doesn't
-         * change any permissions or quotas that apply to the resource in the account that
-         * created it.</p> <p><h3>See Also:</h3>   <a
+         * <p>Creates a resource share. You can provide a list of the <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+         * Resource Names (ARNs)</a> for the resources that you want to share, a list of
+         * principals you want to share the resources with, and the permissions to grant
+         * those principals.</p>  <p>Sharing a resource makes it available for use by
+         * principals outside of the Amazon Web Services account that created the resource.
+         * Sharing doesn't change any permissions or quotas that apply to the resource in
+         * the account that created it.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/CreateResourceShare">AWS
          * API Reference</a></p>
          *
@@ -343,14 +375,20 @@ namespace Model
         virtual void CreateResourceShareAsync(const Model::CreateResourceShareRequest& request, const CreateResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified resource share.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified resource share. This doesn't delete any of the
+         * resources that were associated with the resource share; it only stops the
+         * sharing of those resources outside of the Amazon Web Services account that
+         * created them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DeleteResourceShare">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteResourceShareOutcome DeleteResourceShare(const Model::DeleteResourceShareRequest& request) const;
 
         /**
-         * <p>Deletes the specified resource share.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified resource share. This doesn't delete any of the
+         * resources that were associated with the resource share; it only stops the
+         * sharing of those resources outside of the Amazon Web Services account that
+         * created them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DeleteResourceShare">AWS
          * API Reference</a></p>
          *
@@ -359,7 +397,10 @@ namespace Model
         virtual Model::DeleteResourceShareOutcomeCallable DeleteResourceShareCallable(const Model::DeleteResourceShareRequest& request) const;
 
         /**
-         * <p>Deletes the specified resource share.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified resource share. This doesn't delete any of the
+         * resources that were associated with the resource share; it only stops the
+         * sharing of those resources outside of the Amazon Web Services account that
+         * created them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DeleteResourceShare">AWS
          * API Reference</a></p>
          *
@@ -396,16 +437,20 @@ namespace Model
         virtual void DisassociateResourceShareAsync(const Model::DisassociateResourceShareRequest& request, const DisassociateResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disassociates an RAM permission from a resource share.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Disassociates an RAM permission from a resource share. Permission changes
+         * take effect immediately. You can remove a RAM permission from a resource share
+         * only if there are currently no resources of the relevant resource type currently
+         * attached to the resource share.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DisassociateResourceSharePermission">AWS
          * API Reference</a></p>
          */
         virtual Model::DisassociateResourceSharePermissionOutcome DisassociateResourceSharePermission(const Model::DisassociateResourceSharePermissionRequest& request) const;
 
         /**
-         * <p>Disassociates an RAM permission from a resource share.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Disassociates an RAM permission from a resource share. Permission changes
+         * take effect immediately. You can remove a RAM permission from a resource share
+         * only if there are currently no resources of the relevant resource type currently
+         * attached to the resource share.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DisassociateResourceSharePermission">AWS
          * API Reference</a></p>
          *
@@ -414,8 +459,10 @@ namespace Model
         virtual Model::DisassociateResourceSharePermissionOutcomeCallable DisassociateResourceSharePermissionCallable(const Model::DisassociateResourceSharePermissionRequest& request) const;
 
         /**
-         * <p>Disassociates an RAM permission from a resource share.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Disassociates an RAM permission from a resource share. Permission changes
+         * take effect immediately. You can remove a RAM permission from a resource share
+         * only if there are currently no resources of the relevant resource type currently
+         * attached to the resource share.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DisassociateResourceSharePermission">AWS
          * API Reference</a></p>
          *
@@ -424,18 +471,30 @@ namespace Model
         virtual void DisassociateResourceSharePermissionAsync(const Model::DisassociateResourceSharePermissionRequest& request, const DisassociateResourceSharePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Enables resource sharing within your organization in Organizations.</p>
-         * <p>The caller must be the master account for the organization.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Enables resource sharing within your organization in Organizations. Calling
+         * this operation enables RAM to retrieve information about the organization and
+         * its structure. This lets you share resources with all of the accounts in an
+         * organization by specifying the organization's ID, or all of the accounts in an
+         * organizational unit (OU) by specifying the OU's ID. Until you enable sharing
+         * within the organization, you can specify only individual Amazon Web Services
+         * accounts, or for supported resource types, IAM users and roles.</p> <p>You must
+         * call this operation from an IAM user or role in the organization's management
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/EnableSharingWithAwsOrganization">AWS
          * API Reference</a></p>
          */
         virtual Model::EnableSharingWithAwsOrganizationOutcome EnableSharingWithAwsOrganization(const Model::EnableSharingWithAwsOrganizationRequest& request) const;
 
         /**
-         * <p>Enables resource sharing within your organization in Organizations.</p>
-         * <p>The caller must be the master account for the organization.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Enables resource sharing within your organization in Organizations. Calling
+         * this operation enables RAM to retrieve information about the organization and
+         * its structure. This lets you share resources with all of the accounts in an
+         * organization by specifying the organization's ID, or all of the accounts in an
+         * organizational unit (OU) by specifying the OU's ID. Until you enable sharing
+         * within the organization, you can specify only individual Amazon Web Services
+         * accounts, or for supported resource types, IAM users and roles.</p> <p>You must
+         * call this operation from an IAM user or role in the organization's management
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/EnableSharingWithAwsOrganization">AWS
          * API Reference</a></p>
          *
@@ -444,9 +503,15 @@ namespace Model
         virtual Model::EnableSharingWithAwsOrganizationOutcomeCallable EnableSharingWithAwsOrganizationCallable(const Model::EnableSharingWithAwsOrganizationRequest& request) const;
 
         /**
-         * <p>Enables resource sharing within your organization in Organizations.</p>
-         * <p>The caller must be the master account for the organization.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Enables resource sharing within your organization in Organizations. Calling
+         * this operation enables RAM to retrieve information about the organization and
+         * its structure. This lets you share resources with all of the accounts in an
+         * organization by specifying the organization's ID, or all of the accounts in an
+         * organizational unit (OU) by specifying the OU's ID. Until you enable sharing
+         * within the organization, you can specify only individual Amazon Web Services
+         * accounts, or for supported resource types, IAM users and roles.</p> <p>You must
+         * call this operation from an IAM user or role in the organization's management
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/EnableSharingWithAwsOrganization">AWS
          * API Reference</a></p>
          *
@@ -483,16 +548,16 @@ namespace Model
         virtual void GetPermissionAsync(const Model::GetPermissionRequest& request, const GetPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the policies for the specified resources that you own and have
-         * shared.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the resource policies for the specified resources that you own and
+         * have shared.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourcePolicies">AWS
          * API Reference</a></p>
          */
         virtual Model::GetResourcePoliciesOutcome GetResourcePolicies(const Model::GetResourcePoliciesRequest& request) const;
 
         /**
-         * <p>Gets the policies for the specified resources that you own and have
-         * shared.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the resource policies for the specified resources that you own and
+         * have shared.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourcePolicies">AWS
          * API Reference</a></p>
          *
@@ -501,8 +566,8 @@ namespace Model
         virtual Model::GetResourcePoliciesOutcomeCallable GetResourcePoliciesCallable(const Model::GetResourcePoliciesRequest& request) const;
 
         /**
-         * <p>Gets the policies for the specified resources that you own and have
-         * shared.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the resource policies for the specified resources that you own and
+         * have shared.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourcePolicies">AWS
          * API Reference</a></p>
          *
@@ -511,16 +576,16 @@ namespace Model
         virtual void GetResourcePoliciesAsync(const Model::GetResourcePoliciesRequest& request, const GetResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the resources or principals for the resource shares that you
-         * own.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the resource and principal associations for resource shares that
+         * you own.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShareAssociations">AWS
          * API Reference</a></p>
          */
         virtual Model::GetResourceShareAssociationsOutcome GetResourceShareAssociations(const Model::GetResourceShareAssociationsRequest& request) const;
 
         /**
-         * <p>Gets the resources or principals for the resource shares that you
-         * own.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the resource and principal associations for resource shares that
+         * you own.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShareAssociations">AWS
          * API Reference</a></p>
          *
@@ -529,8 +594,8 @@ namespace Model
         virtual Model::GetResourceShareAssociationsOutcomeCallable GetResourceShareAssociationsCallable(const Model::GetResourceShareAssociationsRequest& request) const;
 
         /**
-         * <p>Gets the resources or principals for the resource shares that you
-         * own.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the resource and principal associations for resource shares that
+         * you own.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShareAssociations">AWS
          * API Reference</a></p>
          *
@@ -539,7 +604,7 @@ namespace Model
         virtual void GetResourceShareAssociationsAsync(const Model::GetResourceShareAssociationsRequest& request, const GetResourceShareAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the invitations that you have received for resource
+         * <p>Retrieves details about invitations that you have received for resource
          * shares.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShareInvitations">AWS
          * API Reference</a></p>
@@ -547,7 +612,7 @@ namespace Model
         virtual Model::GetResourceShareInvitationsOutcome GetResourceShareInvitations(const Model::GetResourceShareInvitationsRequest& request) const;
 
         /**
-         * <p>Gets the invitations that you have received for resource
+         * <p>Retrieves details about invitations that you have received for resource
          * shares.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShareInvitations">AWS
          * API Reference</a></p>
@@ -557,7 +622,7 @@ namespace Model
         virtual Model::GetResourceShareInvitationsOutcomeCallable GetResourceShareInvitationsCallable(const Model::GetResourceShareInvitationsRequest& request) const;
 
         /**
-         * <p>Gets the invitations that you have received for resource
+         * <p>Retrieves details about invitations that you have received for resource
          * shares.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShareInvitations">AWS
          * API Reference</a></p>
@@ -567,7 +632,7 @@ namespace Model
         virtual void GetResourceShareInvitationsAsync(const Model::GetResourceShareInvitationsRequest& request, const GetResourceShareInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the resource shares that you own or the resource shares that are shared
+         * <p>Retrieves details about the resource shares that you own or that are shared
          * with you.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShares">AWS
          * API Reference</a></p>
@@ -575,7 +640,7 @@ namespace Model
         virtual Model::GetResourceSharesOutcome GetResourceShares(const Model::GetResourceSharesRequest& request) const;
 
         /**
-         * <p>Gets the resource shares that you own or the resource shares that are shared
+         * <p>Retrieves details about the resource shares that you own or that are shared
          * with you.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShares">AWS
          * API Reference</a></p>
@@ -585,7 +650,7 @@ namespace Model
         virtual Model::GetResourceSharesOutcomeCallable GetResourceSharesCallable(const Model::GetResourceSharesRequest& request) const;
 
         /**
-         * <p>Gets the resource shares that you own or the resource shares that are shared
+         * <p>Retrieves details about the resource shares that you own or that are shared
          * with you.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShares">AWS
          * API Reference</a></p>
@@ -595,16 +660,20 @@ namespace Model
         virtual void GetResourceSharesAsync(const Model::GetResourceSharesRequest& request, const GetResourceSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the resources in a resource share that is shared with you but that the
-         * invitation is still pending for.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the resources in a resource share that is shared with you but for which
+         * the invitation is still <code>PENDING</code>. That means that you haven't
+         * accepted or rejected the invitation and the invitation hasn't
+         * expired.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPendingInvitationResources">AWS
          * API Reference</a></p>
          */
         virtual Model::ListPendingInvitationResourcesOutcome ListPendingInvitationResources(const Model::ListPendingInvitationResourcesRequest& request) const;
 
         /**
-         * <p>Lists the resources in a resource share that is shared with you but that the
-         * invitation is still pending for.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the resources in a resource share that is shared with you but for which
+         * the invitation is still <code>PENDING</code>. That means that you haven't
+         * accepted or rejected the invitation and the invitation hasn't
+         * expired.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPendingInvitationResources">AWS
          * API Reference</a></p>
          *
@@ -613,8 +682,10 @@ namespace Model
         virtual Model::ListPendingInvitationResourcesOutcomeCallable ListPendingInvitationResourcesCallable(const Model::ListPendingInvitationResourcesRequest& request) const;
 
         /**
-         * <p>Lists the resources in a resource share that is shared with you but that the
-         * invitation is still pending for.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the resources in a resource share that is shared with you but for which
+         * the invitation is still <code>PENDING</code>. That means that you haven't
+         * accepted or rejected the invitation and the invitation hasn't
+         * expired.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPendingInvitationResources">AWS
          * API Reference</a></p>
          *
@@ -623,14 +694,16 @@ namespace Model
         virtual void ListPendingInvitationResourcesAsync(const Model::ListPendingInvitationResourcesRequest& request, const ListPendingInvitationResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the RAM permissions.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of available RAM permissions that you can use for the
+         * supported resource types. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissions">AWS
          * API Reference</a></p>
          */
         virtual Model::ListPermissionsOutcome ListPermissions(const Model::ListPermissionsRequest& request) const;
 
         /**
-         * <p>Lists the RAM permissions.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of available RAM permissions that you can use for the
+         * supported resource types. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissions">AWS
          * API Reference</a></p>
          *
@@ -639,7 +712,8 @@ namespace Model
         virtual Model::ListPermissionsOutcomeCallable ListPermissionsCallable(const Model::ListPermissionsRequest& request) const;
 
         /**
-         * <p>Lists the RAM permissions.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of available RAM permissions that you can use for the
+         * supported resource types. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissions">AWS
          * API Reference</a></p>
          *
@@ -648,7 +722,7 @@ namespace Model
         virtual void ListPermissionsAsync(const Model::ListPermissionsRequest& request, const ListPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the principals that you have shared resources with or that have shared
+         * <p>Lists the principals that you are sharing resources with or that are sharing
          * resources with you.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPrincipals">AWS
          * API Reference</a></p>
@@ -656,7 +730,7 @@ namespace Model
         virtual Model::ListPrincipalsOutcome ListPrincipals(const Model::ListPrincipalsRequest& request) const;
 
         /**
-         * <p>Lists the principals that you have shared resources with or that have shared
+         * <p>Lists the principals that you are sharing resources with or that are sharing
          * resources with you.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPrincipals">AWS
          * API Reference</a></p>
@@ -666,7 +740,7 @@ namespace Model
         virtual Model::ListPrincipalsOutcomeCallable ListPrincipalsCallable(const Model::ListPrincipalsRequest& request) const;
 
         /**
-         * <p>Lists the principals that you have shared resources with or that have shared
+         * <p>Lists the principals that you are sharing resources with or that are sharing
          * resources with you.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPrincipals">AWS
          * API Reference</a></p>
@@ -704,7 +778,7 @@ namespace Model
         virtual void ListResourceSharePermissionsAsync(const Model::ListResourceSharePermissionsRequest& request, const ListResourceSharePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the shareable resource types supported by RAM.</p><p><h3>See Also:</h3>
+         * <p>Lists the resource types that can be shared by RAM.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResourceTypes">AWS
          * API Reference</a></p>
@@ -712,7 +786,7 @@ namespace Model
         virtual Model::ListResourceTypesOutcome ListResourceTypes(const Model::ListResourceTypesRequest& request) const;
 
         /**
-         * <p>Lists the shareable resource types supported by RAM.</p><p><h3>See Also:</h3>
+         * <p>Lists the resource types that can be shared by RAM.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResourceTypes">AWS
          * API Reference</a></p>
@@ -722,7 +796,7 @@ namespace Model
         virtual Model::ListResourceTypesOutcomeCallable ListResourceTypesCallable(const Model::ListResourceTypesRequest& request) const;
 
         /**
-         * <p>Lists the shareable resource types supported by RAM.</p><p><h3>See Also:</h3>
+         * <p>Lists the resource types that can be shared by RAM.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResourceTypes">AWS
          * API Reference</a></p>
@@ -760,24 +834,26 @@ namespace Model
         virtual void ListResourcesAsync(const Model::ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Resource shares that were created by attaching a policy to a resource are
-         * visible only to the resource share owner, and the resource share cannot be
-         * modified in RAM.</p> <p>Use this API action to promote the resource share. When
-         * you promote the resource share, it becomes:</p> <ul> <li> <p>Visible to all
-         * principals that it is shared with.</p> </li> <li> <p>Modifiable in RAM.</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>When you attach a resource-based permission policy to a resource, it
+         * automatically creates a resource share. However, resource shares created this
+         * way are visible only to the resource share owner, and the resource share can't
+         * be modified in RAM.</p> <p>You can use this operation to promote the resource
+         * share to a full RAM resource share. When you promote a resource share, you can
+         * then manage the resource share in RAM and it becomes visible to all of the
+         * principals you shared it with.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/PromoteResourceShareCreatedFromPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::PromoteResourceShareCreatedFromPolicyOutcome PromoteResourceShareCreatedFromPolicy(const Model::PromoteResourceShareCreatedFromPolicyRequest& request) const;
 
         /**
-         * <p>Resource shares that were created by attaching a policy to a resource are
-         * visible only to the resource share owner, and the resource share cannot be
-         * modified in RAM.</p> <p>Use this API action to promote the resource share. When
-         * you promote the resource share, it becomes:</p> <ul> <li> <p>Visible to all
-         * principals that it is shared with.</p> </li> <li> <p>Modifiable in RAM.</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>When you attach a resource-based permission policy to a resource, it
+         * automatically creates a resource share. However, resource shares created this
+         * way are visible only to the resource share owner, and the resource share can't
+         * be modified in RAM.</p> <p>You can use this operation to promote the resource
+         * share to a full RAM resource share. When you promote a resource share, you can
+         * then manage the resource share in RAM and it becomes visible to all of the
+         * principals you shared it with.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/PromoteResourceShareCreatedFromPolicy">AWS
          * API Reference</a></p>
          *
@@ -786,12 +862,13 @@ namespace Model
         virtual Model::PromoteResourceShareCreatedFromPolicyOutcomeCallable PromoteResourceShareCreatedFromPolicyCallable(const Model::PromoteResourceShareCreatedFromPolicyRequest& request) const;
 
         /**
-         * <p>Resource shares that were created by attaching a policy to a resource are
-         * visible only to the resource share owner, and the resource share cannot be
-         * modified in RAM.</p> <p>Use this API action to promote the resource share. When
-         * you promote the resource share, it becomes:</p> <ul> <li> <p>Visible to all
-         * principals that it is shared with.</p> </li> <li> <p>Modifiable in RAM.</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>When you attach a resource-based permission policy to a resource, it
+         * automatically creates a resource share. However, resource shares created this
+         * way are visible only to the resource share owner, and the resource share can't
+         * be modified in RAM.</p> <p>You can use this operation to promote the resource
+         * share to a full RAM resource share. When you promote a resource share, you can
+         * then manage the resource share in RAM and it becomes visible to all of the
+         * principals you shared it with.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/PromoteResourceShareCreatedFromPolicy">AWS
          * API Reference</a></p>
          *
@@ -828,16 +905,18 @@ namespace Model
         virtual void RejectResourceShareInvitationAsync(const Model::RejectResourceShareInvitationRequest& request, const RejectResourceShareInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds the specified tags to the specified resource share that you
-         * own.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds the specified tag keys and values to the specified resource share. The
+         * tags are attached only to the resource share, not to the resources that are in
+         * the resource share.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/TagResource">AWS API
          * Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds the specified tags to the specified resource share that you
-         * own.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds the specified tag keys and values to the specified resource share. The
+         * tags are attached only to the resource share, not to the resources that are in
+         * the resource share.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/TagResource">AWS API
          * Reference</a></p>
          *
@@ -846,8 +925,9 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds the specified tags to the specified resource share that you
-         * own.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds the specified tag keys and values to the specified resource share. The
+         * tags are attached only to the resource share, not to the resources that are in
+         * the resource share.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/TagResource">AWS API
          * Reference</a></p>
          *
@@ -856,16 +936,16 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the specified tags from the specified resource share that you
-         * own.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the specified tag key and value pairs from the specified resource
+         * share.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes the specified tags from the specified resource share that you
-         * own.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the specified tag key and value pairs from the specified resource
+         * share.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -874,8 +954,8 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes the specified tags from the specified resource share that you
-         * own.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the specified tag key and value pairs from the specified resource
+         * share.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -884,16 +964,16 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the specified resource share that you own.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Modifies some of the properties of the specified resource
+         * share.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/UpdateResourceShare">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateResourceShareOutcome UpdateResourceShare(const Model::UpdateResourceShareRequest& request) const;
 
         /**
-         * <p>Updates the specified resource share that you own.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Modifies some of the properties of the specified resource
+         * share.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/UpdateResourceShare">AWS
          * API Reference</a></p>
          *
@@ -902,8 +982,8 @@ namespace Model
         virtual Model::UpdateResourceShareOutcomeCallable UpdateResourceShareCallable(const Model::UpdateResourceShareRequest& request) const;
 
         /**
-         * <p>Updates the specified resource share that you own.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Modifies some of the properties of the specified resource
+         * share.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/UpdateResourceShare">AWS
          * API Reference</a></p>
          *

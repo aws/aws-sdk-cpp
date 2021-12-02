@@ -20,6 +20,7 @@ namespace Model
 
 NetworkResource::NetworkResource() : 
     m_registeredGatewayArnHasBeenSet(false),
+    m_coreNetworkIdHasBeenSet(false),
     m_awsRegionHasBeenSet(false),
     m_accountIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
@@ -34,6 +35,7 @@ NetworkResource::NetworkResource() :
 
 NetworkResource::NetworkResource(JsonView jsonValue) : 
     m_registeredGatewayArnHasBeenSet(false),
+    m_coreNetworkIdHasBeenSet(false),
     m_awsRegionHasBeenSet(false),
     m_accountIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
@@ -54,6 +56,13 @@ NetworkResource& NetworkResource::operator =(JsonView jsonValue)
     m_registeredGatewayArn = jsonValue.GetString("RegisteredGatewayArn");
 
     m_registeredGatewayArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CoreNetworkId"))
+  {
+    m_coreNetworkId = jsonValue.GetString("CoreNetworkId");
+
+    m_coreNetworkIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AwsRegion"))
@@ -135,6 +144,12 @@ JsonValue NetworkResource::Jsonize() const
   if(m_registeredGatewayArnHasBeenSet)
   {
    payload.WithString("RegisteredGatewayArn", m_registeredGatewayArn);
+
+  }
+
+  if(m_coreNetworkIdHasBeenSet)
+  {
+   payload.WithString("CoreNetworkId", m_coreNetworkId);
 
   }
 

@@ -16,7 +16,8 @@ namespace Model
   enum class RouteTableType
   {
     NOT_SET,
-    TRANSIT_GATEWAY_ROUTE_TABLE
+    TRANSIT_GATEWAY_ROUTE_TABLE,
+    CORE_NETWORK_SEGMENT
   };
 
 namespace RouteTableTypeMapper

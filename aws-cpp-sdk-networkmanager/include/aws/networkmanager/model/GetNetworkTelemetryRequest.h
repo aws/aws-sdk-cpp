@@ -80,6 +80,47 @@ namespace Model
 
 
     /**
+     * <p>The ID of a core network.</p>
+     */
+    inline const Aws::String& GetCoreNetworkId() const{ return m_coreNetworkId; }
+
+    /**
+     * <p>The ID of a core network.</p>
+     */
+    inline bool CoreNetworkIdHasBeenSet() const { return m_coreNetworkIdHasBeenSet; }
+
+    /**
+     * <p>The ID of a core network.</p>
+     */
+    inline void SetCoreNetworkId(const Aws::String& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = value; }
+
+    /**
+     * <p>The ID of a core network.</p>
+     */
+    inline void SetCoreNetworkId(Aws::String&& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = std::move(value); }
+
+    /**
+     * <p>The ID of a core network.</p>
+     */
+    inline void SetCoreNetworkId(const char* value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId.assign(value); }
+
+    /**
+     * <p>The ID of a core network.</p>
+     */
+    inline GetNetworkTelemetryRequest& WithCoreNetworkId(const Aws::String& value) { SetCoreNetworkId(value); return *this;}
+
+    /**
+     * <p>The ID of a core network.</p>
+     */
+    inline GetNetworkTelemetryRequest& WithCoreNetworkId(Aws::String&& value) { SetCoreNetworkId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of a core network.</p>
+     */
+    inline GetNetworkTelemetryRequest& WithCoreNetworkId(const char* value) { SetCoreNetworkId(value); return *this;}
+
+
+    /**
      * <p>The ARN of the gateway.</p>
      */
     inline const Aws::String& GetRegisteredGatewayArn() const{ return m_registeredGatewayArn; }
@@ -445,6 +486,9 @@ namespace Model
 
     Aws::String m_globalNetworkId;
     bool m_globalNetworkIdHasBeenSet;
+
+    Aws::String m_coreNetworkId;
+    bool m_coreNetworkIdHasBeenSet;
 
     Aws::String m_registeredGatewayArn;
     bool m_registeredGatewayArnHasBeenSet;

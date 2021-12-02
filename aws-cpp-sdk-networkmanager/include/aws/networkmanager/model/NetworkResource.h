@@ -83,6 +83,47 @@ namespace Model
 
 
     /**
+     * <p>a core network ID.</p>
+     */
+    inline const Aws::String& GetCoreNetworkId() const{ return m_coreNetworkId; }
+
+    /**
+     * <p>a core network ID.</p>
+     */
+    inline bool CoreNetworkIdHasBeenSet() const { return m_coreNetworkIdHasBeenSet; }
+
+    /**
+     * <p>a core network ID.</p>
+     */
+    inline void SetCoreNetworkId(const Aws::String& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = value; }
+
+    /**
+     * <p>a core network ID.</p>
+     */
+    inline void SetCoreNetworkId(Aws::String&& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = std::move(value); }
+
+    /**
+     * <p>a core network ID.</p>
+     */
+    inline void SetCoreNetworkId(const char* value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId.assign(value); }
+
+    /**
+     * <p>a core network ID.</p>
+     */
+    inline NetworkResource& WithCoreNetworkId(const Aws::String& value) { SetCoreNetworkId(value); return *this;}
+
+    /**
+     * <p>a core network ID.</p>
+     */
+    inline NetworkResource& WithCoreNetworkId(Aws::String&& value) { SetCoreNetworkId(std::move(value)); return *this;}
+
+    /**
+     * <p>a core network ID.</p>
+     */
+    inline NetworkResource& WithCoreNetworkId(const char* value) { SetCoreNetworkId(value); return *this;}
+
+
+    /**
      * <p>The Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
@@ -573,6 +614,9 @@ namespace Model
 
     Aws::String m_registeredGatewayArn;
     bool m_registeredGatewayArnHasBeenSet;
+
+    Aws::String m_coreNetworkId;
+    bool m_coreNetworkIdHasBeenSet;
 
     Aws::String m_awsRegion;
     bool m_awsRegionHasBeenSet;
