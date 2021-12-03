@@ -22,6 +22,8 @@ namespace Aws
 
         static const int Male_HASH = HashingUtils::HashString("Male");
         static const int Female_HASH = HashingUtils::HashString("Female");
+        static const int Nonbinary_HASH = HashingUtils::HashString("Nonbinary");
+        static const int Unlisted_HASH = HashingUtils::HashString("Unlisted");
 
 
         KnownGenderType GetKnownGenderTypeForName(const Aws::String& name)
@@ -34,6 +36,14 @@ namespace Aws
           else if (hashCode == Female_HASH)
           {
             return KnownGenderType::Female;
+          }
+          else if (hashCode == Nonbinary_HASH)
+          {
+            return KnownGenderType::Nonbinary;
+          }
+          else if (hashCode == Unlisted_HASH)
+          {
+            return KnownGenderType::Unlisted;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +63,10 @@ namespace Aws
             return "Male";
           case KnownGenderType::Female:
             return "Female";
+          case KnownGenderType::Nonbinary:
+            return "Nonbinary";
+          case KnownGenderType::Unlisted:
+            return "Unlisted";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

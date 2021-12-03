@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     Male,
-    Female
+    Female,
+    Nonbinary,
+    Unlisted
   };
 
 namespace KnownGenderTypeMapper

@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>The known gender identity for the celebrity that matches the provided
-   * ID.</p><p><h3>See Also:</h3>   <a
+   * <p>The known gender identity for the celebrity that matches the provided ID. The
+   * known gender identity can be Male, Female, Nonbinary, or Unlisted.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/KnownGender">AWS
    * API Reference</a></p>
    */

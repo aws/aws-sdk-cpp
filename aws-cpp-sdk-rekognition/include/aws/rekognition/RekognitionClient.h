@@ -396,7 +396,7 @@ namespace Model
          * a PNG or JPEG file. </p> <p>In response, the operation returns an array of face
          * matches ordered by similarity score in descending order. For each face match,
          * the response provides a bounding box of the face, facial landmarks, pose details
-         * (pitch, role, and yaw), quality (brightness and sharpness), and confidence value
+         * (pitch, roll, and yaw), quality (brightness and sharpness), and confidence value
          * (indicating the level of confidence that the bounding box contains a face). The
          * response also provides a similarity score, which indicates how closely the faces
          * match. </p>  <p>By default, only faces with a similarity score of greater
@@ -446,7 +446,7 @@ namespace Model
          * a PNG or JPEG file. </p> <p>In response, the operation returns an array of face
          * matches ordered by similarity score in descending order. For each face match,
          * the response provides a bounding box of the face, facial landmarks, pose details
-         * (pitch, role, and yaw), quality (brightness and sharpness), and confidence value
+         * (pitch, roll, and yaw), quality (brightness and sharpness), and confidence value
          * (indicating the level of confidence that the bounding box contains a face). The
          * response also provides a similarity score, which indicates how closely the faces
          * match. </p>  <p>By default, only faces with a similarity score of greater
@@ -498,7 +498,7 @@ namespace Model
          * a PNG or JPEG file. </p> <p>In response, the operation returns an array of face
          * matches ordered by similarity score in descending order. For each face match,
          * the response provides a bounding box of the face, facial landmarks, pose details
-         * (pitch, role, and yaw), quality (brightness and sharpness), and confidence value
+         * (pitch, roll, and yaw), quality (brightness and sharpness), and confidence value
          * (indicating the level of confidence that the bounding box contains a face). The
          * response also provides a similarity score, which indicates how closely the faces
          * match. </p>  <p>By default, only faces with a similarity score of greater
@@ -1807,22 +1807,21 @@ namespace Model
          * <code>DetectText</code> operation returns text in an array of
          * <a>TextDetection</a> elements, <code>TextDetections</code>. Each
          * <code>TextDetection</code> element provides information about a single word or
-         * line of text that was detected in the image. </p> <p>A word is one or more ISO
-         * basic latin script characters that are not separated by spaces.
-         * <code>DetectText</code> can detect up to 100 words in an image.</p> <p>A line is
-         * a string of equally spaced words. A line isn't necessarily a complete sentence.
-         * For example, a driver's license number is detected as a line. A line ends when
-         * there is no aligned text after it. Also, a line ends when there is a large gap
-         * between words, relative to the length of the words. This means, depending on the
-         * gap between words, Amazon Rekognition may detect multiple lines in text aligned
-         * in the same direction. Periods don't represent the end of a line. If a sentence
-         * spans multiple lines, the <code>DetectText</code> operation returns multiple
-         * lines.</p> <p>To determine whether a <code>TextDetection</code> element is a
-         * line of text or a word, use the <code>TextDetection</code> object
-         * <code>Type</code> field. </p> <p>To be detected, text must be within +/- 90
-         * degrees orientation of the horizontal axis.</p> <p>For more information, see
-         * DetectText in the Amazon Rekognition Developer Guide.</p><p><h3>See Also:</h3>  
-         * <a
+         * line of text that was detected in the image. </p> <p>A word is one or more
+         * script characters that are not separated by spaces. <code>DetectText</code> can
+         * detect up to 100 words in an image.</p> <p>A line is a string of equally spaced
+         * words. A line isn't necessarily a complete sentence. For example, a driver's
+         * license number is detected as a line. A line ends when there is no aligned text
+         * after it. Also, a line ends when there is a large gap between words, relative to
+         * the length of the words. This means, depending on the gap between words, Amazon
+         * Rekognition may detect multiple lines in text aligned in the same direction.
+         * Periods don't represent the end of a line. If a sentence spans multiple lines,
+         * the <code>DetectText</code> operation returns multiple lines.</p> <p>To
+         * determine whether a <code>TextDetection</code> element is a line of text or a
+         * word, use the <code>TextDetection</code> object <code>Type</code> field. </p>
+         * <p>To be detected, text must be within +/- 90 degrees orientation of the
+         * horizontal axis.</p> <p>For more information, see DetectText in the Amazon
+         * Rekognition Developer Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectText">AWS
          * API Reference</a></p>
          */
@@ -1838,22 +1837,21 @@ namespace Model
          * <code>DetectText</code> operation returns text in an array of
          * <a>TextDetection</a> elements, <code>TextDetections</code>. Each
          * <code>TextDetection</code> element provides information about a single word or
-         * line of text that was detected in the image. </p> <p>A word is one or more ISO
-         * basic latin script characters that are not separated by spaces.
-         * <code>DetectText</code> can detect up to 100 words in an image.</p> <p>A line is
-         * a string of equally spaced words. A line isn't necessarily a complete sentence.
-         * For example, a driver's license number is detected as a line. A line ends when
-         * there is no aligned text after it. Also, a line ends when there is a large gap
-         * between words, relative to the length of the words. This means, depending on the
-         * gap between words, Amazon Rekognition may detect multiple lines in text aligned
-         * in the same direction. Periods don't represent the end of a line. If a sentence
-         * spans multiple lines, the <code>DetectText</code> operation returns multiple
-         * lines.</p> <p>To determine whether a <code>TextDetection</code> element is a
-         * line of text or a word, use the <code>TextDetection</code> object
-         * <code>Type</code> field. </p> <p>To be detected, text must be within +/- 90
-         * degrees orientation of the horizontal axis.</p> <p>For more information, see
-         * DetectText in the Amazon Rekognition Developer Guide.</p><p><h3>See Also:</h3>  
-         * <a
+         * line of text that was detected in the image. </p> <p>A word is one or more
+         * script characters that are not separated by spaces. <code>DetectText</code> can
+         * detect up to 100 words in an image.</p> <p>A line is a string of equally spaced
+         * words. A line isn't necessarily a complete sentence. For example, a driver's
+         * license number is detected as a line. A line ends when there is no aligned text
+         * after it. Also, a line ends when there is a large gap between words, relative to
+         * the length of the words. This means, depending on the gap between words, Amazon
+         * Rekognition may detect multiple lines in text aligned in the same direction.
+         * Periods don't represent the end of a line. If a sentence spans multiple lines,
+         * the <code>DetectText</code> operation returns multiple lines.</p> <p>To
+         * determine whether a <code>TextDetection</code> element is a line of text or a
+         * word, use the <code>TextDetection</code> object <code>Type</code> field. </p>
+         * <p>To be detected, text must be within +/- 90 degrees orientation of the
+         * horizontal axis.</p> <p>For more information, see DetectText in the Amazon
+         * Rekognition Developer Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectText">AWS
          * API Reference</a></p>
          *
@@ -1871,22 +1869,21 @@ namespace Model
          * <code>DetectText</code> operation returns text in an array of
          * <a>TextDetection</a> elements, <code>TextDetections</code>. Each
          * <code>TextDetection</code> element provides information about a single word or
-         * line of text that was detected in the image. </p> <p>A word is one or more ISO
-         * basic latin script characters that are not separated by spaces.
-         * <code>DetectText</code> can detect up to 100 words in an image.</p> <p>A line is
-         * a string of equally spaced words. A line isn't necessarily a complete sentence.
-         * For example, a driver's license number is detected as a line. A line ends when
-         * there is no aligned text after it. Also, a line ends when there is a large gap
-         * between words, relative to the length of the words. This means, depending on the
-         * gap between words, Amazon Rekognition may detect multiple lines in text aligned
-         * in the same direction. Periods don't represent the end of a line. If a sentence
-         * spans multiple lines, the <code>DetectText</code> operation returns multiple
-         * lines.</p> <p>To determine whether a <code>TextDetection</code> element is a
-         * line of text or a word, use the <code>TextDetection</code> object
-         * <code>Type</code> field. </p> <p>To be detected, text must be within +/- 90
-         * degrees orientation of the horizontal axis.</p> <p>For more information, see
-         * DetectText in the Amazon Rekognition Developer Guide.</p><p><h3>See Also:</h3>  
-         * <a
+         * line of text that was detected in the image. </p> <p>A word is one or more
+         * script characters that are not separated by spaces. <code>DetectText</code> can
+         * detect up to 100 words in an image.</p> <p>A line is a string of equally spaced
+         * words. A line isn't necessarily a complete sentence. For example, a driver's
+         * license number is detected as a line. A line ends when there is no aligned text
+         * after it. Also, a line ends when there is a large gap between words, relative to
+         * the length of the words. This means, depending on the gap between words, Amazon
+         * Rekognition may detect multiple lines in text aligned in the same direction.
+         * Periods don't represent the end of a line. If a sentence spans multiple lines,
+         * the <code>DetectText</code> operation returns multiple lines.</p> <p>To
+         * determine whether a <code>TextDetection</code> element is a line of text or a
+         * word, use the <code>TextDetection</code> object <code>Type</code> field. </p>
+         * <p>To be detected, text must be within +/- 90 degrees orientation of the
+         * horizontal axis.</p> <p>For more information, see DetectText in the Amazon
+         * Rekognition Developer Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectText">AWS
          * API Reference</a></p>
          *
