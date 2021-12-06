@@ -62,6 +62,7 @@
 #include <aws/location/model/ListTrackersRequest.h>
 #include <aws/location/model/PutGeofenceRequest.h>
 #include <aws/location/model/SearchPlaceIndexForPositionRequest.h>
+#include <aws/location/model/SearchPlaceIndexForSuggestionsRequest.h>
 #include <aws/location/model/SearchPlaceIndexForTextRequest.h>
 #include <aws/location/model/TagResourceRequest.h>
 #include <aws/location/model/UntagResourceRequest.h>
@@ -1860,6 +1861,47 @@ void LocationServiceClient::SearchPlaceIndexForPositionAsync(const SearchPlaceIn
 void LocationServiceClient::SearchPlaceIndexForPositionAsyncHelper(const SearchPlaceIndexForPositionRequest& request, const SearchPlaceIndexForPositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SearchPlaceIndexForPosition(request), context);
+}
+
+SearchPlaceIndexForSuggestionsOutcome LocationServiceClient::SearchPlaceIndexForSuggestions(const SearchPlaceIndexForSuggestionsRequest& request) const
+{
+  if (!request.IndexNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SearchPlaceIndexForSuggestions", "Required field: IndexName, is not set");
+    return SearchPlaceIndexForSuggestionsOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IndexName]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("places." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("SearchPlaceIndexForSuggestions", "Invalid DNS host: " << uri.GetAuthority());
+      return SearchPlaceIndexForSuggestionsOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/places/v0/indexes/");
+  uri.AddPathSegment(request.GetIndexName());
+  uri.AddPathSegments("/search/suggestions");
+  return SearchPlaceIndexForSuggestionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SearchPlaceIndexForSuggestionsOutcomeCallable LocationServiceClient::SearchPlaceIndexForSuggestionsCallable(const SearchPlaceIndexForSuggestionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SearchPlaceIndexForSuggestionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchPlaceIndexForSuggestions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LocationServiceClient::SearchPlaceIndexForSuggestionsAsync(const SearchPlaceIndexForSuggestionsRequest& request, const SearchPlaceIndexForSuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SearchPlaceIndexForSuggestionsAsyncHelper( request, handler, context ); } );
+}
+
+void LocationServiceClient::SearchPlaceIndexForSuggestionsAsyncHelper(const SearchPlaceIndexForSuggestionsRequest& request, const SearchPlaceIndexForSuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SearchPlaceIndexForSuggestions(request), context);
 }
 
 SearchPlaceIndexForTextOutcome LocationServiceClient::SearchPlaceIndexForText(const SearchPlaceIndexForTextRequest& request) const

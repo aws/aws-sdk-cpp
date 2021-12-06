@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
+#include <aws/location/model/PositionalAccuracy.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -38,6 +40,37 @@ namespace Model
     DevicePositionUpdate(Aws::Utils::Json::JsonView jsonValue);
     DevicePositionUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The accuracy of the device position.</p>
+     */
+    inline const PositionalAccuracy& GetAccuracy() const{ return m_accuracy; }
+
+    /**
+     * <p>The accuracy of the device position.</p>
+     */
+    inline bool AccuracyHasBeenSet() const { return m_accuracyHasBeenSet; }
+
+    /**
+     * <p>The accuracy of the device position.</p>
+     */
+    inline void SetAccuracy(const PositionalAccuracy& value) { m_accuracyHasBeenSet = true; m_accuracy = value; }
+
+    /**
+     * <p>The accuracy of the device position.</p>
+     */
+    inline void SetAccuracy(PositionalAccuracy&& value) { m_accuracyHasBeenSet = true; m_accuracy = std::move(value); }
+
+    /**
+     * <p>The accuracy of the device position.</p>
+     */
+    inline DevicePositionUpdate& WithAccuracy(const PositionalAccuracy& value) { SetAccuracy(value); return *this;}
+
+    /**
+     * <p>The accuracy of the device position.</p>
+     */
+    inline DevicePositionUpdate& WithAccuracy(PositionalAccuracy&& value) { SetAccuracy(std::move(value)); return *this;}
 
 
     /**
@@ -132,6 +165,98 @@ namespace Model
 
 
     /**
+     * <p>Associates one of more properties with the position update. A property is a
+     * key-value pair stored with the position update and added to any geofence event
+     * the update may trigger.</p> <p>Format: <code>"key" : "value"</code> </p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetPositionProperties() const{ return m_positionProperties; }
+
+    /**
+     * <p>Associates one of more properties with the position update. A property is a
+     * key-value pair stored with the position update and added to any geofence event
+     * the update may trigger.</p> <p>Format: <code>"key" : "value"</code> </p>
+     */
+    inline bool PositionPropertiesHasBeenSet() const { return m_positionPropertiesHasBeenSet; }
+
+    /**
+     * <p>Associates one of more properties with the position update. A property is a
+     * key-value pair stored with the position update and added to any geofence event
+     * the update may trigger.</p> <p>Format: <code>"key" : "value"</code> </p>
+     */
+    inline void SetPositionProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_positionPropertiesHasBeenSet = true; m_positionProperties = value; }
+
+    /**
+     * <p>Associates one of more properties with the position update. A property is a
+     * key-value pair stored with the position update and added to any geofence event
+     * the update may trigger.</p> <p>Format: <code>"key" : "value"</code> </p>
+     */
+    inline void SetPositionProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_positionPropertiesHasBeenSet = true; m_positionProperties = std::move(value); }
+
+    /**
+     * <p>Associates one of more properties with the position update. A property is a
+     * key-value pair stored with the position update and added to any geofence event
+     * the update may trigger.</p> <p>Format: <code>"key" : "value"</code> </p>
+     */
+    inline DevicePositionUpdate& WithPositionProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetPositionProperties(value); return *this;}
+
+    /**
+     * <p>Associates one of more properties with the position update. A property is a
+     * key-value pair stored with the position update and added to any geofence event
+     * the update may trigger.</p> <p>Format: <code>"key" : "value"</code> </p>
+     */
+    inline DevicePositionUpdate& WithPositionProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetPositionProperties(std::move(value)); return *this;}
+
+    /**
+     * <p>Associates one of more properties with the position update. A property is a
+     * key-value pair stored with the position update and added to any geofence event
+     * the update may trigger.</p> <p>Format: <code>"key" : "value"</code> </p>
+     */
+    inline DevicePositionUpdate& AddPositionProperties(const Aws::String& key, const Aws::String& value) { m_positionPropertiesHasBeenSet = true; m_positionProperties.emplace(key, value); return *this; }
+
+    /**
+     * <p>Associates one of more properties with the position update. A property is a
+     * key-value pair stored with the position update and added to any geofence event
+     * the update may trigger.</p> <p>Format: <code>"key" : "value"</code> </p>
+     */
+    inline DevicePositionUpdate& AddPositionProperties(Aws::String&& key, const Aws::String& value) { m_positionPropertiesHasBeenSet = true; m_positionProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Associates one of more properties with the position update. A property is a
+     * key-value pair stored with the position update and added to any geofence event
+     * the update may trigger.</p> <p>Format: <code>"key" : "value"</code> </p>
+     */
+    inline DevicePositionUpdate& AddPositionProperties(const Aws::String& key, Aws::String&& value) { m_positionPropertiesHasBeenSet = true; m_positionProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Associates one of more properties with the position update. A property is a
+     * key-value pair stored with the position update and added to any geofence event
+     * the update may trigger.</p> <p>Format: <code>"key" : "value"</code> </p>
+     */
+    inline DevicePositionUpdate& AddPositionProperties(Aws::String&& key, Aws::String&& value) { m_positionPropertiesHasBeenSet = true; m_positionProperties.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Associates one of more properties with the position update. A property is a
+     * key-value pair stored with the position update and added to any geofence event
+     * the update may trigger.</p> <p>Format: <code>"key" : "value"</code> </p>
+     */
+    inline DevicePositionUpdate& AddPositionProperties(const char* key, Aws::String&& value) { m_positionPropertiesHasBeenSet = true; m_positionProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Associates one of more properties with the position update. A property is a
+     * key-value pair stored with the position update and added to any geofence event
+     * the update may trigger.</p> <p>Format: <code>"key" : "value"</code> </p>
+     */
+    inline DevicePositionUpdate& AddPositionProperties(Aws::String&& key, const char* value) { m_positionPropertiesHasBeenSet = true; m_positionProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Associates one of more properties with the position update. A property is a
+     * key-value pair stored with the position update and added to any geofence event
+     * the update may trigger.</p> <p>Format: <code>"key" : "value"</code> </p>
+     */
+    inline DevicePositionUpdate& AddPositionProperties(const char* key, const char* value) { m_positionPropertiesHasBeenSet = true; m_positionProperties.emplace(key, value); return *this; }
+
+
+    /**
      * <p>The timestamp at which the device's position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
@@ -175,11 +300,17 @@ namespace Model
 
   private:
 
+    PositionalAccuracy m_accuracy;
+    bool m_accuracyHasBeenSet;
+
     Aws::String m_deviceId;
     bool m_deviceIdHasBeenSet;
 
     Aws::Vector<double> m_position;
     bool m_positionHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_positionProperties;
+    bool m_positionPropertiesHasBeenSet;
 
     Aws::Utils::DateTime m_sampleTime;
     bool m_sampleTimeHasBeenSet;

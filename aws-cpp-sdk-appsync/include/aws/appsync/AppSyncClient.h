@@ -11,9 +11,11 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/appsync/model/AssociateApiResult.h>
 #include <aws/appsync/model/CreateApiCacheResult.h>
 #include <aws/appsync/model/CreateApiKeyResult.h>
 #include <aws/appsync/model/CreateDataSourceResult.h>
+#include <aws/appsync/model/CreateDomainNameResult.h>
 #include <aws/appsync/model/CreateFunctionResult.h>
 #include <aws/appsync/model/CreateGraphqlApiResult.h>
 #include <aws/appsync/model/CreateResolverResult.h>
@@ -21,13 +23,17 @@
 #include <aws/appsync/model/DeleteApiCacheResult.h>
 #include <aws/appsync/model/DeleteApiKeyResult.h>
 #include <aws/appsync/model/DeleteDataSourceResult.h>
+#include <aws/appsync/model/DeleteDomainNameResult.h>
 #include <aws/appsync/model/DeleteFunctionResult.h>
 #include <aws/appsync/model/DeleteGraphqlApiResult.h>
 #include <aws/appsync/model/DeleteResolverResult.h>
 #include <aws/appsync/model/DeleteTypeResult.h>
+#include <aws/appsync/model/DisassociateApiResult.h>
 #include <aws/appsync/model/FlushApiCacheResult.h>
+#include <aws/appsync/model/GetApiAssociationResult.h>
 #include <aws/appsync/model/GetApiCacheResult.h>
 #include <aws/appsync/model/GetDataSourceResult.h>
+#include <aws/appsync/model/GetDomainNameResult.h>
 #include <aws/appsync/model/GetFunctionResult.h>
 #include <aws/appsync/model/GetGraphqlApiResult.h>
 #include <aws/appsync/model/GetIntrospectionSchemaResult.h>
@@ -36,6 +42,7 @@
 #include <aws/appsync/model/GetTypeResult.h>
 #include <aws/appsync/model/ListApiKeysResult.h>
 #include <aws/appsync/model/ListDataSourcesResult.h>
+#include <aws/appsync/model/ListDomainNamesResult.h>
 #include <aws/appsync/model/ListFunctionsResult.h>
 #include <aws/appsync/model/ListGraphqlApisResult.h>
 #include <aws/appsync/model/ListResolversResult.h>
@@ -48,6 +55,7 @@
 #include <aws/appsync/model/UpdateApiCacheResult.h>
 #include <aws/appsync/model/UpdateApiKeyResult.h>
 #include <aws/appsync/model/UpdateDataSourceResult.h>
+#include <aws/appsync/model/UpdateDomainNameResult.h>
 #include <aws/appsync/model/UpdateFunctionResult.h>
 #include <aws/appsync/model/UpdateGraphqlApiResult.h>
 #include <aws/appsync/model/UpdateResolverResult.h>
@@ -91,9 +99,11 @@ namespace AppSync
 
 namespace Model
 {
+        class AssociateApiRequest;
         class CreateApiCacheRequest;
         class CreateApiKeyRequest;
         class CreateDataSourceRequest;
+        class CreateDomainNameRequest;
         class CreateFunctionRequest;
         class CreateGraphqlApiRequest;
         class CreateResolverRequest;
@@ -101,13 +111,17 @@ namespace Model
         class DeleteApiCacheRequest;
         class DeleteApiKeyRequest;
         class DeleteDataSourceRequest;
+        class DeleteDomainNameRequest;
         class DeleteFunctionRequest;
         class DeleteGraphqlApiRequest;
         class DeleteResolverRequest;
         class DeleteTypeRequest;
+        class DisassociateApiRequest;
         class FlushApiCacheRequest;
+        class GetApiAssociationRequest;
         class GetApiCacheRequest;
         class GetDataSourceRequest;
+        class GetDomainNameRequest;
         class GetFunctionRequest;
         class GetGraphqlApiRequest;
         class GetIntrospectionSchemaRequest;
@@ -116,6 +130,7 @@ namespace Model
         class GetTypeRequest;
         class ListApiKeysRequest;
         class ListDataSourcesRequest;
+        class ListDomainNamesRequest;
         class ListFunctionsRequest;
         class ListGraphqlApisRequest;
         class ListResolversRequest;
@@ -128,14 +143,17 @@ namespace Model
         class UpdateApiCacheRequest;
         class UpdateApiKeyRequest;
         class UpdateDataSourceRequest;
+        class UpdateDomainNameRequest;
         class UpdateFunctionRequest;
         class UpdateGraphqlApiRequest;
         class UpdateResolverRequest;
         class UpdateTypeRequest;
 
+        typedef Aws::Utils::Outcome<AssociateApiResult, AppSyncError> AssociateApiOutcome;
         typedef Aws::Utils::Outcome<CreateApiCacheResult, AppSyncError> CreateApiCacheOutcome;
         typedef Aws::Utils::Outcome<CreateApiKeyResult, AppSyncError> CreateApiKeyOutcome;
         typedef Aws::Utils::Outcome<CreateDataSourceResult, AppSyncError> CreateDataSourceOutcome;
+        typedef Aws::Utils::Outcome<CreateDomainNameResult, AppSyncError> CreateDomainNameOutcome;
         typedef Aws::Utils::Outcome<CreateFunctionResult, AppSyncError> CreateFunctionOutcome;
         typedef Aws::Utils::Outcome<CreateGraphqlApiResult, AppSyncError> CreateGraphqlApiOutcome;
         typedef Aws::Utils::Outcome<CreateResolverResult, AppSyncError> CreateResolverOutcome;
@@ -143,13 +161,17 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteApiCacheResult, AppSyncError> DeleteApiCacheOutcome;
         typedef Aws::Utils::Outcome<DeleteApiKeyResult, AppSyncError> DeleteApiKeyOutcome;
         typedef Aws::Utils::Outcome<DeleteDataSourceResult, AppSyncError> DeleteDataSourceOutcome;
+        typedef Aws::Utils::Outcome<DeleteDomainNameResult, AppSyncError> DeleteDomainNameOutcome;
         typedef Aws::Utils::Outcome<DeleteFunctionResult, AppSyncError> DeleteFunctionOutcome;
         typedef Aws::Utils::Outcome<DeleteGraphqlApiResult, AppSyncError> DeleteGraphqlApiOutcome;
         typedef Aws::Utils::Outcome<DeleteResolverResult, AppSyncError> DeleteResolverOutcome;
         typedef Aws::Utils::Outcome<DeleteTypeResult, AppSyncError> DeleteTypeOutcome;
+        typedef Aws::Utils::Outcome<DisassociateApiResult, AppSyncError> DisassociateApiOutcome;
         typedef Aws::Utils::Outcome<FlushApiCacheResult, AppSyncError> FlushApiCacheOutcome;
+        typedef Aws::Utils::Outcome<GetApiAssociationResult, AppSyncError> GetApiAssociationOutcome;
         typedef Aws::Utils::Outcome<GetApiCacheResult, AppSyncError> GetApiCacheOutcome;
         typedef Aws::Utils::Outcome<GetDataSourceResult, AppSyncError> GetDataSourceOutcome;
+        typedef Aws::Utils::Outcome<GetDomainNameResult, AppSyncError> GetDomainNameOutcome;
         typedef Aws::Utils::Outcome<GetFunctionResult, AppSyncError> GetFunctionOutcome;
         typedef Aws::Utils::Outcome<GetGraphqlApiResult, AppSyncError> GetGraphqlApiOutcome;
         typedef Aws::Utils::Outcome<GetIntrospectionSchemaResult, AppSyncError> GetIntrospectionSchemaOutcome;
@@ -158,6 +180,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetTypeResult, AppSyncError> GetTypeOutcome;
         typedef Aws::Utils::Outcome<ListApiKeysResult, AppSyncError> ListApiKeysOutcome;
         typedef Aws::Utils::Outcome<ListDataSourcesResult, AppSyncError> ListDataSourcesOutcome;
+        typedef Aws::Utils::Outcome<ListDomainNamesResult, AppSyncError> ListDomainNamesOutcome;
         typedef Aws::Utils::Outcome<ListFunctionsResult, AppSyncError> ListFunctionsOutcome;
         typedef Aws::Utils::Outcome<ListGraphqlApisResult, AppSyncError> ListGraphqlApisOutcome;
         typedef Aws::Utils::Outcome<ListResolversResult, AppSyncError> ListResolversOutcome;
@@ -170,14 +193,17 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateApiCacheResult, AppSyncError> UpdateApiCacheOutcome;
         typedef Aws::Utils::Outcome<UpdateApiKeyResult, AppSyncError> UpdateApiKeyOutcome;
         typedef Aws::Utils::Outcome<UpdateDataSourceResult, AppSyncError> UpdateDataSourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateDomainNameResult, AppSyncError> UpdateDomainNameOutcome;
         typedef Aws::Utils::Outcome<UpdateFunctionResult, AppSyncError> UpdateFunctionOutcome;
         typedef Aws::Utils::Outcome<UpdateGraphqlApiResult, AppSyncError> UpdateGraphqlApiOutcome;
         typedef Aws::Utils::Outcome<UpdateResolverResult, AppSyncError> UpdateResolverOutcome;
         typedef Aws::Utils::Outcome<UpdateTypeResult, AppSyncError> UpdateTypeOutcome;
 
+        typedef std::future<AssociateApiOutcome> AssociateApiOutcomeCallable;
         typedef std::future<CreateApiCacheOutcome> CreateApiCacheOutcomeCallable;
         typedef std::future<CreateApiKeyOutcome> CreateApiKeyOutcomeCallable;
         typedef std::future<CreateDataSourceOutcome> CreateDataSourceOutcomeCallable;
+        typedef std::future<CreateDomainNameOutcome> CreateDomainNameOutcomeCallable;
         typedef std::future<CreateFunctionOutcome> CreateFunctionOutcomeCallable;
         typedef std::future<CreateGraphqlApiOutcome> CreateGraphqlApiOutcomeCallable;
         typedef std::future<CreateResolverOutcome> CreateResolverOutcomeCallable;
@@ -185,13 +211,17 @@ namespace Model
         typedef std::future<DeleteApiCacheOutcome> DeleteApiCacheOutcomeCallable;
         typedef std::future<DeleteApiKeyOutcome> DeleteApiKeyOutcomeCallable;
         typedef std::future<DeleteDataSourceOutcome> DeleteDataSourceOutcomeCallable;
+        typedef std::future<DeleteDomainNameOutcome> DeleteDomainNameOutcomeCallable;
         typedef std::future<DeleteFunctionOutcome> DeleteFunctionOutcomeCallable;
         typedef std::future<DeleteGraphqlApiOutcome> DeleteGraphqlApiOutcomeCallable;
         typedef std::future<DeleteResolverOutcome> DeleteResolverOutcomeCallable;
         typedef std::future<DeleteTypeOutcome> DeleteTypeOutcomeCallable;
+        typedef std::future<DisassociateApiOutcome> DisassociateApiOutcomeCallable;
         typedef std::future<FlushApiCacheOutcome> FlushApiCacheOutcomeCallable;
+        typedef std::future<GetApiAssociationOutcome> GetApiAssociationOutcomeCallable;
         typedef std::future<GetApiCacheOutcome> GetApiCacheOutcomeCallable;
         typedef std::future<GetDataSourceOutcome> GetDataSourceOutcomeCallable;
+        typedef std::future<GetDomainNameOutcome> GetDomainNameOutcomeCallable;
         typedef std::future<GetFunctionOutcome> GetFunctionOutcomeCallable;
         typedef std::future<GetGraphqlApiOutcome> GetGraphqlApiOutcomeCallable;
         typedef std::future<GetIntrospectionSchemaOutcome> GetIntrospectionSchemaOutcomeCallable;
@@ -200,6 +230,7 @@ namespace Model
         typedef std::future<GetTypeOutcome> GetTypeOutcomeCallable;
         typedef std::future<ListApiKeysOutcome> ListApiKeysOutcomeCallable;
         typedef std::future<ListDataSourcesOutcome> ListDataSourcesOutcomeCallable;
+        typedef std::future<ListDomainNamesOutcome> ListDomainNamesOutcomeCallable;
         typedef std::future<ListFunctionsOutcome> ListFunctionsOutcomeCallable;
         typedef std::future<ListGraphqlApisOutcome> ListGraphqlApisOutcomeCallable;
         typedef std::future<ListResolversOutcome> ListResolversOutcomeCallable;
@@ -212,6 +243,7 @@ namespace Model
         typedef std::future<UpdateApiCacheOutcome> UpdateApiCacheOutcomeCallable;
         typedef std::future<UpdateApiKeyOutcome> UpdateApiKeyOutcomeCallable;
         typedef std::future<UpdateDataSourceOutcome> UpdateDataSourceOutcomeCallable;
+        typedef std::future<UpdateDomainNameOutcome> UpdateDomainNameOutcomeCallable;
         typedef std::future<UpdateFunctionOutcome> UpdateFunctionOutcomeCallable;
         typedef std::future<UpdateGraphqlApiOutcome> UpdateGraphqlApiOutcomeCallable;
         typedef std::future<UpdateResolverOutcome> UpdateResolverOutcomeCallable;
@@ -220,9 +252,11 @@ namespace Model
 
   class AppSyncClient;
 
+    typedef std::function<void(const AppSyncClient*, const Model::AssociateApiRequest&, const Model::AssociateApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateApiResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::CreateApiCacheRequest&, const Model::CreateApiCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApiCacheResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::CreateApiKeyRequest&, const Model::CreateApiKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApiKeyResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::CreateDataSourceRequest&, const Model::CreateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataSourceResponseReceivedHandler;
+    typedef std::function<void(const AppSyncClient*, const Model::CreateDomainNameRequest&, const Model::CreateDomainNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainNameResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::CreateFunctionRequest&, const Model::CreateFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFunctionResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::CreateGraphqlApiRequest&, const Model::CreateGraphqlApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGraphqlApiResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::CreateResolverRequest&, const Model::CreateResolverOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateResolverResponseReceivedHandler;
@@ -230,13 +264,17 @@ namespace Model
     typedef std::function<void(const AppSyncClient*, const Model::DeleteApiCacheRequest&, const Model::DeleteApiCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApiCacheResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::DeleteApiKeyRequest&, const Model::DeleteApiKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApiKeyResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::DeleteDataSourceRequest&, const Model::DeleteDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataSourceResponseReceivedHandler;
+    typedef std::function<void(const AppSyncClient*, const Model::DeleteDomainNameRequest&, const Model::DeleteDomainNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainNameResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::DeleteFunctionRequest&, const Model::DeleteFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFunctionResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::DeleteGraphqlApiRequest&, const Model::DeleteGraphqlApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGraphqlApiResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::DeleteResolverRequest&, const Model::DeleteResolverOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResolverResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::DeleteTypeRequest&, const Model::DeleteTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTypeResponseReceivedHandler;
+    typedef std::function<void(const AppSyncClient*, const Model::DisassociateApiRequest&, const Model::DisassociateApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateApiResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::FlushApiCacheRequest&, const Model::FlushApiCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FlushApiCacheResponseReceivedHandler;
+    typedef std::function<void(const AppSyncClient*, const Model::GetApiAssociationRequest&, const Model::GetApiAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApiAssociationResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::GetApiCacheRequest&, const Model::GetApiCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApiCacheResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::GetDataSourceRequest&, const Model::GetDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataSourceResponseReceivedHandler;
+    typedef std::function<void(const AppSyncClient*, const Model::GetDomainNameRequest&, const Model::GetDomainNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainNameResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::GetFunctionRequest&, const Model::GetFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFunctionResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::GetGraphqlApiRequest&, const Model::GetGraphqlApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGraphqlApiResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::GetIntrospectionSchemaRequest&, Model::GetIntrospectionSchemaOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIntrospectionSchemaResponseReceivedHandler;
@@ -245,6 +283,7 @@ namespace Model
     typedef std::function<void(const AppSyncClient*, const Model::GetTypeRequest&, const Model::GetTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTypeResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::ListApiKeysRequest&, const Model::ListApiKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApiKeysResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::ListDataSourcesRequest&, const Model::ListDataSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSourcesResponseReceivedHandler;
+    typedef std::function<void(const AppSyncClient*, const Model::ListDomainNamesRequest&, const Model::ListDomainNamesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainNamesResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::ListFunctionsRequest&, const Model::ListFunctionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFunctionsResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::ListGraphqlApisRequest&, const Model::ListGraphqlApisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGraphqlApisResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::ListResolversRequest&, const Model::ListResolversOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResolversResponseReceivedHandler;
@@ -257,6 +296,7 @@ namespace Model
     typedef std::function<void(const AppSyncClient*, const Model::UpdateApiCacheRequest&, const Model::UpdateApiCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApiCacheResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::UpdateApiKeyRequest&, const Model::UpdateApiKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApiKeyResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::UpdateDataSourceRequest&, const Model::UpdateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataSourceResponseReceivedHandler;
+    typedef std::function<void(const AppSyncClient*, const Model::UpdateDomainNameRequest&, const Model::UpdateDomainNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainNameResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::UpdateFunctionRequest&, const Model::UpdateFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFunctionResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::UpdateGraphqlApiRequest&, const Model::UpdateGraphqlApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGraphqlApiResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::UpdateResolverRequest&, const Model::UpdateResolverOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResolverResponseReceivedHandler;
@@ -294,6 +334,31 @@ namespace Model
 
 
         /**
+         * <p>Maps an endpoint to your custom domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/AssociateApi">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateApiOutcome AssociateApi(const Model::AssociateApiRequest& request) const;
+
+        /**
+         * <p>Maps an endpoint to your custom domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/AssociateApi">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateApiOutcomeCallable AssociateApiCallable(const Model::AssociateApiRequest& request) const;
+
+        /**
+         * <p>Maps an endpoint to your custom domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/AssociateApi">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateApiAsync(const Model::AssociateApiRequest& request, const AssociateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a cache for the GraphQL API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateApiCache">AWS
          * API Reference</a></p>
@@ -319,16 +384,16 @@ namespace Model
         virtual void CreateApiCacheAsync(const Model::CreateApiCacheRequest& request, const CreateApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a unique key that you can distribute to clients who are executing
-         * your API.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a unique key that you can distribute to clients who invoke your
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateApiKey">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateApiKeyOutcome CreateApiKey(const Model::CreateApiKeyRequest& request) const;
 
         /**
-         * <p>Creates a unique key that you can distribute to clients who are executing
-         * your API.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a unique key that you can distribute to clients who invoke your
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateApiKey">AWS
          * API Reference</a></p>
          *
@@ -337,8 +402,8 @@ namespace Model
         virtual Model::CreateApiKeyOutcomeCallable CreateApiKeyCallable(const Model::CreateApiKeyRequest& request) const;
 
         /**
-         * <p>Creates a unique key that you can distribute to clients who are executing
-         * your API.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a unique key that you can distribute to clients who invoke your
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateApiKey">AWS
          * API Reference</a></p>
          *
@@ -372,8 +437,36 @@ namespace Model
         virtual void CreateDataSourceAsync(const Model::CreateDataSourceRequest& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a custom <code>DomainName</code> object.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateDomainName">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDomainNameOutcome CreateDomainName(const Model::CreateDomainNameRequest& request) const;
+
+        /**
+         * <p>Creates a custom <code>DomainName</code> object.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateDomainName">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateDomainNameOutcomeCallable CreateDomainNameCallable(const Model::CreateDomainNameRequest& request) const;
+
+        /**
+         * <p>Creates a custom <code>DomainName</code> object.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateDomainName">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateDomainNameAsync(const Model::CreateDomainNameRequest& request, const CreateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a <code>Function</code> object.</p> <p>A function is a reusable
-         * entity. Multiple functions can be used to compose the resolver
+         * entity. You can use multiple functions to compose the resolver
          * logic.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateFunction">AWS
          * API Reference</a></p>
@@ -382,7 +475,7 @@ namespace Model
 
         /**
          * <p>Creates a <code>Function</code> object.</p> <p>A function is a reusable
-         * entity. Multiple functions can be used to compose the resolver
+         * entity. You can use multiple functions to compose the resolver
          * logic.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateFunction">AWS
          * API Reference</a></p>
@@ -393,7 +486,7 @@ namespace Model
 
         /**
          * <p>Creates a <code>Function</code> object.</p> <p>A function is a reusable
-         * entity. Multiple functions can be used to compose the resolver
+         * entity. You can use multiple functions to compose the resolver
          * logic.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateFunction">AWS
          * API Reference</a></p>
@@ -429,7 +522,7 @@ namespace Model
 
         /**
          * <p>Creates a <code>Resolver</code> object.</p> <p>A resolver converts incoming
-         * requests into a format that a data source can understand and converts the data
+         * requests into a format that a data source can understand, and converts the data
          * source's responses into GraphQL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateResolver">AWS
          * API Reference</a></p>
@@ -438,7 +531,7 @@ namespace Model
 
         /**
          * <p>Creates a <code>Resolver</code> object.</p> <p>A resolver converts incoming
-         * requests into a format that a data source can understand and converts the data
+         * requests into a format that a data source can understand, and converts the data
          * source's responses into GraphQL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateResolver">AWS
          * API Reference</a></p>
@@ -449,7 +542,7 @@ namespace Model
 
         /**
          * <p>Creates a <code>Resolver</code> object.</p> <p>A resolver converts incoming
-         * requests into a format that a data source can understand and converts the data
+         * requests into a format that a data source can understand, and converts the data
          * source's responses into GraphQL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateResolver">AWS
          * API Reference</a></p>
@@ -559,6 +652,34 @@ namespace Model
         virtual void DeleteDataSourceAsync(const Model::DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes a custom <code>DomainName</code> object.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteDomainName">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDomainNameOutcome DeleteDomainName(const Model::DeleteDomainNameRequest& request) const;
+
+        /**
+         * <p>Deletes a custom <code>DomainName</code> object.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteDomainName">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteDomainNameOutcomeCallable DeleteDomainNameCallable(const Model::DeleteDomainNameRequest& request) const;
+
+        /**
+         * <p>Deletes a custom <code>DomainName</code> object.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteDomainName">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteDomainNameAsync(const Model::DeleteDomainNameRequest& request, const DeleteDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a <code>Function</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteFunction">AWS
          * API Reference</a></p>
@@ -659,6 +780,34 @@ namespace Model
         virtual void DeleteTypeAsync(const Model::DeleteTypeRequest& request, const DeleteTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Removes an <code>ApiAssociation</code> object from a custom
+         * domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DisassociateApi">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateApiOutcome DisassociateApi(const Model::DisassociateApiRequest& request) const;
+
+        /**
+         * <p>Removes an <code>ApiAssociation</code> object from a custom
+         * domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DisassociateApi">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateApiOutcomeCallable DisassociateApiCallable(const Model::DisassociateApiRequest& request) const;
+
+        /**
+         * <p>Removes an <code>ApiAssociation</code> object from a custom
+         * domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DisassociateApi">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateApiAsync(const Model::DisassociateApiRequest& request, const DisassociateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Flushes an <code>ApiCache</code> object.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/FlushApiCache">AWS
          * API Reference</a></p>
@@ -682,6 +831,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void FlushApiCacheAsync(const Model::FlushApiCacheRequest& request, const FlushApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves an <code>ApiAssociation</code> object.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetApiAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetApiAssociationOutcome GetApiAssociation(const Model::GetApiAssociationRequest& request) const;
+
+        /**
+         * <p>Retrieves an <code>ApiAssociation</code> object.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetApiAssociation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetApiAssociationOutcomeCallable GetApiAssociationCallable(const Model::GetApiAssociationRequest& request) const;
+
+        /**
+         * <p>Retrieves an <code>ApiAssociation</code> object.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetApiAssociation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetApiAssociationAsync(const Model::GetApiAssociationRequest& request, const GetApiAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves an <code>ApiCache</code> object.</p><p><h3>See Also:</h3>   <a
@@ -732,6 +909,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDataSourceAsync(const Model::GetDataSourceRequest& request, const GetDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves a custom <code>DomainName</code> object.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetDomainName">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDomainNameOutcome GetDomainName(const Model::GetDomainNameRequest& request) const;
+
+        /**
+         * <p>Retrieves a custom <code>DomainName</code> object.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetDomainName">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDomainNameOutcomeCallable GetDomainNameCallable(const Model::GetDomainNameRequest& request) const;
+
+        /**
+         * <p>Retrieves a custom <code>DomainName</code> object.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetDomainName">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDomainNameAsync(const Model::GetDomainNameRequest& request, const GetDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get a <code>Function</code>.</p><p><h3>See Also:</h3>   <a
@@ -950,6 +1155,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDataSourcesAsync(const Model::ListDataSourcesRequest& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists multiple custom domain names.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListDomainNames">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDomainNamesOutcome ListDomainNames(const Model::ListDomainNamesRequest& request) const;
+
+        /**
+         * <p>Lists multiple custom domain names.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListDomainNames">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListDomainNamesOutcomeCallable ListDomainNamesCallable(const Model::ListDomainNamesRequest& request) const;
+
+        /**
+         * <p>Lists multiple custom domain names.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListDomainNames">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListDomainNamesAsync(const Model::ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List multiple functions.</p><p><h3>See Also:</h3>   <a
@@ -1208,7 +1438,7 @@ namespace Model
         virtual void UpdateApiCacheAsync(const Model::UpdateApiCacheRequest& request, const UpdateApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an API key. The key can be updated while it is not
+         * <p>Updates an API key. You can update the key as long as it's not
          * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiKey">AWS
          * API Reference</a></p>
@@ -1216,7 +1446,7 @@ namespace Model
         virtual Model::UpdateApiKeyOutcome UpdateApiKey(const Model::UpdateApiKeyRequest& request) const;
 
         /**
-         * <p>Updates an API key. The key can be updated while it is not
+         * <p>Updates an API key. You can update the key as long as it's not
          * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiKey">AWS
          * API Reference</a></p>
@@ -1226,7 +1456,7 @@ namespace Model
         virtual Model::UpdateApiKeyOutcomeCallable UpdateApiKeyCallable(const Model::UpdateApiKeyRequest& request) const;
 
         /**
-         * <p>Updates an API key. The key can be updated while it is not
+         * <p>Updates an API key. You can update the key as long as it's not
          * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiKey">AWS
          * API Reference</a></p>
@@ -1259,6 +1489,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateDataSourceAsync(const Model::UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates a custom <code>DomainName</code> object.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateDomainName">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDomainNameOutcome UpdateDomainName(const Model::UpdateDomainNameRequest& request) const;
+
+        /**
+         * <p>Updates a custom <code>DomainName</code> object.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateDomainName">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateDomainNameOutcomeCallable UpdateDomainNameCallable(const Model::UpdateDomainNameRequest& request) const;
+
+        /**
+         * <p>Updates a custom <code>DomainName</code> object.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateDomainName">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateDomainNameAsync(const Model::UpdateDomainNameRequest& request, const UpdateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a <code>Function</code> object.</p><p><h3>See Also:</h3>   <a
@@ -1364,9 +1622,11 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void AssociateApiAsyncHelper(const Model::AssociateApiRequest& request, const AssociateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateApiCacheAsyncHelper(const Model::CreateApiCacheRequest& request, const CreateApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateApiKeyAsyncHelper(const Model::CreateApiKeyRequest& request, const CreateApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDataSourceAsyncHelper(const Model::CreateDataSourceRequest& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateDomainNameAsyncHelper(const Model::CreateDomainNameRequest& request, const CreateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateFunctionAsyncHelper(const Model::CreateFunctionRequest& request, const CreateFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateGraphqlApiAsyncHelper(const Model::CreateGraphqlApiRequest& request, const CreateGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateResolverAsyncHelper(const Model::CreateResolverRequest& request, const CreateResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1374,13 +1634,17 @@ namespace Model
         void DeleteApiCacheAsyncHelper(const Model::DeleteApiCacheRequest& request, const DeleteApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteApiKeyAsyncHelper(const Model::DeleteApiKeyRequest& request, const DeleteApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDataSourceAsyncHelper(const Model::DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteDomainNameAsyncHelper(const Model::DeleteDomainNameRequest& request, const DeleteDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFunctionAsyncHelper(const Model::DeleteFunctionRequest& request, const DeleteFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteGraphqlApiAsyncHelper(const Model::DeleteGraphqlApiRequest& request, const DeleteGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteResolverAsyncHelper(const Model::DeleteResolverRequest& request, const DeleteResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTypeAsyncHelper(const Model::DeleteTypeRequest& request, const DeleteTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateApiAsyncHelper(const Model::DisassociateApiRequest& request, const DisassociateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void FlushApiCacheAsyncHelper(const Model::FlushApiCacheRequest& request, const FlushApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetApiAssociationAsyncHelper(const Model::GetApiAssociationRequest& request, const GetApiAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApiCacheAsyncHelper(const Model::GetApiCacheRequest& request, const GetApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDataSourceAsyncHelper(const Model::GetDataSourceRequest& request, const GetDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDomainNameAsyncHelper(const Model::GetDomainNameRequest& request, const GetDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFunctionAsyncHelper(const Model::GetFunctionRequest& request, const GetFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetGraphqlApiAsyncHelper(const Model::GetGraphqlApiRequest& request, const GetGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIntrospectionSchemaAsyncHelper(const Model::GetIntrospectionSchemaRequest& request, const GetIntrospectionSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1389,6 +1653,7 @@ namespace Model
         void GetTypeAsyncHelper(const Model::GetTypeRequest& request, const GetTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListApiKeysAsyncHelper(const Model::ListApiKeysRequest& request, const ListApiKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDataSourcesAsyncHelper(const Model::ListDataSourcesRequest& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListDomainNamesAsyncHelper(const Model::ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFunctionsAsyncHelper(const Model::ListFunctionsRequest& request, const ListFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListGraphqlApisAsyncHelper(const Model::ListGraphqlApisRequest& request, const ListGraphqlApisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListResolversAsyncHelper(const Model::ListResolversRequest& request, const ListResolversResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1401,6 +1666,7 @@ namespace Model
         void UpdateApiCacheAsyncHelper(const Model::UpdateApiCacheRequest& request, const UpdateApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateApiKeyAsyncHelper(const Model::UpdateApiKeyRequest& request, const UpdateApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDataSourceAsyncHelper(const Model::UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateDomainNameAsyncHelper(const Model::UpdateDomainNameRequest& request, const UpdateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFunctionAsyncHelper(const Model::UpdateFunctionRequest& request, const UpdateFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGraphqlApiAsyncHelper(const Model::UpdateGraphqlApiRequest& request, const UpdateGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateResolverAsyncHelper(const Model::UpdateResolverRequest& request, const UpdateResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

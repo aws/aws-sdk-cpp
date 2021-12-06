@@ -46,12 +46,12 @@ namespace Model
      * <dt>DELETING</dt> <dd> <p>DNSSEC signing is in the process of being removed for
      * the hosted zone.</p> </dd> <dt>ACTION_NEEDED</dt> <dd> <p>There is a problem
      * with signing in the hosted zone that requires you to take action to resolve. For
-     * example, the customer managed customer master key (CMK) might have been deleted,
-     * or the permissions for the customer managed CMK might have been changed.</p>
-     * </dd> <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request.
-     * Before you can continue to work with DNSSEC signing, including with key-signing
-     * keys (KSKs), you must correct the problem by enabling or disabling DNSSEC
-     * signing for the hosted zone.</p> </dd> </dl>
+     * example, the customer managed key might have been deleted, or the permissions
+     * for the customer managed key might have been changed.</p> </dd>
+     * <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request. Before
+     * you can continue to work with DNSSEC signing, including with key-signing keys
+     * (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for
+     * the hosted zone.</p> </dd> </dl>
      */
     inline const Aws::String& GetServeSignature() const{ return m_serveSignature; }
 
@@ -63,12 +63,12 @@ namespace Model
      * <dt>DELETING</dt> <dd> <p>DNSSEC signing is in the process of being removed for
      * the hosted zone.</p> </dd> <dt>ACTION_NEEDED</dt> <dd> <p>There is a problem
      * with signing in the hosted zone that requires you to take action to resolve. For
-     * example, the customer managed customer master key (CMK) might have been deleted,
-     * or the permissions for the customer managed CMK might have been changed.</p>
-     * </dd> <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request.
-     * Before you can continue to work with DNSSEC signing, including with key-signing
-     * keys (KSKs), you must correct the problem by enabling or disabling DNSSEC
-     * signing for the hosted zone.</p> </dd> </dl>
+     * example, the customer managed key might have been deleted, or the permissions
+     * for the customer managed key might have been changed.</p> </dd>
+     * <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request. Before
+     * you can continue to work with DNSSEC signing, including with key-signing keys
+     * (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for
+     * the hosted zone.</p> </dd> </dl>
      */
     inline bool ServeSignatureHasBeenSet() const { return m_serveSignatureHasBeenSet; }
 
@@ -80,12 +80,12 @@ namespace Model
      * <dt>DELETING</dt> <dd> <p>DNSSEC signing is in the process of being removed for
      * the hosted zone.</p> </dd> <dt>ACTION_NEEDED</dt> <dd> <p>There is a problem
      * with signing in the hosted zone that requires you to take action to resolve. For
-     * example, the customer managed customer master key (CMK) might have been deleted,
-     * or the permissions for the customer managed CMK might have been changed.</p>
-     * </dd> <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request.
-     * Before you can continue to work with DNSSEC signing, including with key-signing
-     * keys (KSKs), you must correct the problem by enabling or disabling DNSSEC
-     * signing for the hosted zone.</p> </dd> </dl>
+     * example, the customer managed key might have been deleted, or the permissions
+     * for the customer managed key might have been changed.</p> </dd>
+     * <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request. Before
+     * you can continue to work with DNSSEC signing, including with key-signing keys
+     * (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for
+     * the hosted zone.</p> </dd> </dl>
      */
     inline void SetServeSignature(const Aws::String& value) { m_serveSignatureHasBeenSet = true; m_serveSignature = value; }
 
@@ -97,12 +97,12 @@ namespace Model
      * <dt>DELETING</dt> <dd> <p>DNSSEC signing is in the process of being removed for
      * the hosted zone.</p> </dd> <dt>ACTION_NEEDED</dt> <dd> <p>There is a problem
      * with signing in the hosted zone that requires you to take action to resolve. For
-     * example, the customer managed customer master key (CMK) might have been deleted,
-     * or the permissions for the customer managed CMK might have been changed.</p>
-     * </dd> <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request.
-     * Before you can continue to work with DNSSEC signing, including with key-signing
-     * keys (KSKs), you must correct the problem by enabling or disabling DNSSEC
-     * signing for the hosted zone.</p> </dd> </dl>
+     * example, the customer managed key might have been deleted, or the permissions
+     * for the customer managed key might have been changed.</p> </dd>
+     * <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request. Before
+     * you can continue to work with DNSSEC signing, including with key-signing keys
+     * (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for
+     * the hosted zone.</p> </dd> </dl>
      */
     inline void SetServeSignature(Aws::String&& value) { m_serveSignatureHasBeenSet = true; m_serveSignature = std::move(value); }
 
@@ -114,12 +114,12 @@ namespace Model
      * <dt>DELETING</dt> <dd> <p>DNSSEC signing is in the process of being removed for
      * the hosted zone.</p> </dd> <dt>ACTION_NEEDED</dt> <dd> <p>There is a problem
      * with signing in the hosted zone that requires you to take action to resolve. For
-     * example, the customer managed customer master key (CMK) might have been deleted,
-     * or the permissions for the customer managed CMK might have been changed.</p>
-     * </dd> <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request.
-     * Before you can continue to work with DNSSEC signing, including with key-signing
-     * keys (KSKs), you must correct the problem by enabling or disabling DNSSEC
-     * signing for the hosted zone.</p> </dd> </dl>
+     * example, the customer managed key might have been deleted, or the permissions
+     * for the customer managed key might have been changed.</p> </dd>
+     * <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request. Before
+     * you can continue to work with DNSSEC signing, including with key-signing keys
+     * (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for
+     * the hosted zone.</p> </dd> </dl>
      */
     inline void SetServeSignature(const char* value) { m_serveSignatureHasBeenSet = true; m_serveSignature.assign(value); }
 
@@ -131,12 +131,12 @@ namespace Model
      * <dt>DELETING</dt> <dd> <p>DNSSEC signing is in the process of being removed for
      * the hosted zone.</p> </dd> <dt>ACTION_NEEDED</dt> <dd> <p>There is a problem
      * with signing in the hosted zone that requires you to take action to resolve. For
-     * example, the customer managed customer master key (CMK) might have been deleted,
-     * or the permissions for the customer managed CMK might have been changed.</p>
-     * </dd> <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request.
-     * Before you can continue to work with DNSSEC signing, including with key-signing
-     * keys (KSKs), you must correct the problem by enabling or disabling DNSSEC
-     * signing for the hosted zone.</p> </dd> </dl>
+     * example, the customer managed key might have been deleted, or the permissions
+     * for the customer managed key might have been changed.</p> </dd>
+     * <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request. Before
+     * you can continue to work with DNSSEC signing, including with key-signing keys
+     * (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for
+     * the hosted zone.</p> </dd> </dl>
      */
     inline DNSSECStatus& WithServeSignature(const Aws::String& value) { SetServeSignature(value); return *this;}
 
@@ -148,12 +148,12 @@ namespace Model
      * <dt>DELETING</dt> <dd> <p>DNSSEC signing is in the process of being removed for
      * the hosted zone.</p> </dd> <dt>ACTION_NEEDED</dt> <dd> <p>There is a problem
      * with signing in the hosted zone that requires you to take action to resolve. For
-     * example, the customer managed customer master key (CMK) might have been deleted,
-     * or the permissions for the customer managed CMK might have been changed.</p>
-     * </dd> <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request.
-     * Before you can continue to work with DNSSEC signing, including with key-signing
-     * keys (KSKs), you must correct the problem by enabling or disabling DNSSEC
-     * signing for the hosted zone.</p> </dd> </dl>
+     * example, the customer managed key might have been deleted, or the permissions
+     * for the customer managed key might have been changed.</p> </dd>
+     * <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request. Before
+     * you can continue to work with DNSSEC signing, including with key-signing keys
+     * (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for
+     * the hosted zone.</p> </dd> </dl>
      */
     inline DNSSECStatus& WithServeSignature(Aws::String&& value) { SetServeSignature(std::move(value)); return *this;}
 
@@ -165,12 +165,12 @@ namespace Model
      * <dt>DELETING</dt> <dd> <p>DNSSEC signing is in the process of being removed for
      * the hosted zone.</p> </dd> <dt>ACTION_NEEDED</dt> <dd> <p>There is a problem
      * with signing in the hosted zone that requires you to take action to resolve. For
-     * example, the customer managed customer master key (CMK) might have been deleted,
-     * or the permissions for the customer managed CMK might have been changed.</p>
-     * </dd> <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request.
-     * Before you can continue to work with DNSSEC signing, including with key-signing
-     * keys (KSKs), you must correct the problem by enabling or disabling DNSSEC
-     * signing for the hosted zone.</p> </dd> </dl>
+     * example, the customer managed key might have been deleted, or the permissions
+     * for the customer managed key might have been changed.</p> </dd>
+     * <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request. Before
+     * you can continue to work with DNSSEC signing, including with key-signing keys
+     * (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for
+     * the hosted zone.</p> </dd> </dl>
      */
     inline DNSSECStatus& WithServeSignature(const char* value) { SetServeSignature(value); return *this;}
 

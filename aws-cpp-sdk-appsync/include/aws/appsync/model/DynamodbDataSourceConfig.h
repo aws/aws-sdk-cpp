@@ -143,32 +143,32 @@ namespace Model
 
 
     /**
-     * <p>The <code>DeltaSyncConfig</code> for a versioned datasource.</p>
+     * <p>The <code>DeltaSyncConfig</code> for a versioned data source.</p>
      */
     inline const DeltaSyncConfig& GetDeltaSyncConfig() const{ return m_deltaSyncConfig; }
 
     /**
-     * <p>The <code>DeltaSyncConfig</code> for a versioned datasource.</p>
+     * <p>The <code>DeltaSyncConfig</code> for a versioned data source.</p>
      */
     inline bool DeltaSyncConfigHasBeenSet() const { return m_deltaSyncConfigHasBeenSet; }
 
     /**
-     * <p>The <code>DeltaSyncConfig</code> for a versioned datasource.</p>
+     * <p>The <code>DeltaSyncConfig</code> for a versioned data source.</p>
      */
     inline void SetDeltaSyncConfig(const DeltaSyncConfig& value) { m_deltaSyncConfigHasBeenSet = true; m_deltaSyncConfig = value; }
 
     /**
-     * <p>The <code>DeltaSyncConfig</code> for a versioned datasource.</p>
+     * <p>The <code>DeltaSyncConfig</code> for a versioned data source.</p>
      */
     inline void SetDeltaSyncConfig(DeltaSyncConfig&& value) { m_deltaSyncConfigHasBeenSet = true; m_deltaSyncConfig = std::move(value); }
 
     /**
-     * <p>The <code>DeltaSyncConfig</code> for a versioned datasource.</p>
+     * <p>The <code>DeltaSyncConfig</code> for a versioned data source.</p>
      */
     inline DynamodbDataSourceConfig& WithDeltaSyncConfig(const DeltaSyncConfig& value) { SetDeltaSyncConfig(value); return *this;}
 
     /**
-     * <p>The <code>DeltaSyncConfig</code> for a versioned datasource.</p>
+     * <p>The <code>DeltaSyncConfig</code> for a versioned data source.</p>
      */
     inline DynamodbDataSourceConfig& WithDeltaSyncConfig(DeltaSyncConfig&& value) { SetDeltaSyncConfig(std::move(value)); return *this;}
 

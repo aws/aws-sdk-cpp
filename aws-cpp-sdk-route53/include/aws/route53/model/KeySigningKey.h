@@ -100,10 +100,10 @@ namespace Model
 
 
     /**
-     * <p>The Amazon resource name (ARN) used to identify the customer managed customer
-     * master key (CMK) in Key Management Service (KMS). The <code>KmsArn</code> must
-     * be unique for each key-signing key (KSK) in a single hosted zone.</p> <p>You
-     * must configure the CMK as follows:</p> <dl> <dt>Status</dt> <dd> <p>Enabled</p>
+     * <p>The Amazon resource name (ARN) used to identify the customer managed key in
+     * Key Management Service (KMS). The <code>KmsArn</code> must be unique for each
+     * key-signing key (KSK) in a single hosted zone.</p> <p>You must configure the
+     * customer managed key as follows:</p> <dl> <dt>Status</dt> <dd> <p>Enabled</p>
      * </dd> <dt>Key spec</dt> <dd> <p>ECC_NIST_P256</p> </dd> <dt>Key usage</dt> <dd>
      * <p>Sign and verify</p> </dd> <dt>Key policy</dt> <dd> <p>The key policy must
      * give permission for the following actions:</p> <ul> <li> <p>DescribeKey</p>
@@ -111,17 +111,17 @@ namespace Model
      * policy must also include the Amazon Route 53 service in the principal for your
      * account. Specify the following:</p> <ul> <li> <p> <code>"Service":
      * "dnssec-route53.amazonaws.com"</code> </p> </li> </ul> </dd> </dl> <p>For more
-     * information about working with the customer managed CMK in KMS, see <a
+     * information about working with the customer managed key in KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
      * Management Service concepts</a>.</p>
      */
     inline const Aws::String& GetKmsArn() const{ return m_kmsArn; }
 
     /**
-     * <p>The Amazon resource name (ARN) used to identify the customer managed customer
-     * master key (CMK) in Key Management Service (KMS). The <code>KmsArn</code> must
-     * be unique for each key-signing key (KSK) in a single hosted zone.</p> <p>You
-     * must configure the CMK as follows:</p> <dl> <dt>Status</dt> <dd> <p>Enabled</p>
+     * <p>The Amazon resource name (ARN) used to identify the customer managed key in
+     * Key Management Service (KMS). The <code>KmsArn</code> must be unique for each
+     * key-signing key (KSK) in a single hosted zone.</p> <p>You must configure the
+     * customer managed key as follows:</p> <dl> <dt>Status</dt> <dd> <p>Enabled</p>
      * </dd> <dt>Key spec</dt> <dd> <p>ECC_NIST_P256</p> </dd> <dt>Key usage</dt> <dd>
      * <p>Sign and verify</p> </dd> <dt>Key policy</dt> <dd> <p>The key policy must
      * give permission for the following actions:</p> <ul> <li> <p>DescribeKey</p>
@@ -129,17 +129,17 @@ namespace Model
      * policy must also include the Amazon Route 53 service in the principal for your
      * account. Specify the following:</p> <ul> <li> <p> <code>"Service":
      * "dnssec-route53.amazonaws.com"</code> </p> </li> </ul> </dd> </dl> <p>For more
-     * information about working with the customer managed CMK in KMS, see <a
+     * information about working with the customer managed key in KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
      * Management Service concepts</a>.</p>
      */
     inline bool KmsArnHasBeenSet() const { return m_kmsArnHasBeenSet; }
 
     /**
-     * <p>The Amazon resource name (ARN) used to identify the customer managed customer
-     * master key (CMK) in Key Management Service (KMS). The <code>KmsArn</code> must
-     * be unique for each key-signing key (KSK) in a single hosted zone.</p> <p>You
-     * must configure the CMK as follows:</p> <dl> <dt>Status</dt> <dd> <p>Enabled</p>
+     * <p>The Amazon resource name (ARN) used to identify the customer managed key in
+     * Key Management Service (KMS). The <code>KmsArn</code> must be unique for each
+     * key-signing key (KSK) in a single hosted zone.</p> <p>You must configure the
+     * customer managed key as follows:</p> <dl> <dt>Status</dt> <dd> <p>Enabled</p>
      * </dd> <dt>Key spec</dt> <dd> <p>ECC_NIST_P256</p> </dd> <dt>Key usage</dt> <dd>
      * <p>Sign and verify</p> </dd> <dt>Key policy</dt> <dd> <p>The key policy must
      * give permission for the following actions:</p> <ul> <li> <p>DescribeKey</p>
@@ -147,17 +147,17 @@ namespace Model
      * policy must also include the Amazon Route 53 service in the principal for your
      * account. Specify the following:</p> <ul> <li> <p> <code>"Service":
      * "dnssec-route53.amazonaws.com"</code> </p> </li> </ul> </dd> </dl> <p>For more
-     * information about working with the customer managed CMK in KMS, see <a
+     * information about working with the customer managed key in KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
      * Management Service concepts</a>.</p>
      */
     inline void SetKmsArn(const Aws::String& value) { m_kmsArnHasBeenSet = true; m_kmsArn = value; }
 
     /**
-     * <p>The Amazon resource name (ARN) used to identify the customer managed customer
-     * master key (CMK) in Key Management Service (KMS). The <code>KmsArn</code> must
-     * be unique for each key-signing key (KSK) in a single hosted zone.</p> <p>You
-     * must configure the CMK as follows:</p> <dl> <dt>Status</dt> <dd> <p>Enabled</p>
+     * <p>The Amazon resource name (ARN) used to identify the customer managed key in
+     * Key Management Service (KMS). The <code>KmsArn</code> must be unique for each
+     * key-signing key (KSK) in a single hosted zone.</p> <p>You must configure the
+     * customer managed key as follows:</p> <dl> <dt>Status</dt> <dd> <p>Enabled</p>
      * </dd> <dt>Key spec</dt> <dd> <p>ECC_NIST_P256</p> </dd> <dt>Key usage</dt> <dd>
      * <p>Sign and verify</p> </dd> <dt>Key policy</dt> <dd> <p>The key policy must
      * give permission for the following actions:</p> <ul> <li> <p>DescribeKey</p>
@@ -165,17 +165,17 @@ namespace Model
      * policy must also include the Amazon Route 53 service in the principal for your
      * account. Specify the following:</p> <ul> <li> <p> <code>"Service":
      * "dnssec-route53.amazonaws.com"</code> </p> </li> </ul> </dd> </dl> <p>For more
-     * information about working with the customer managed CMK in KMS, see <a
+     * information about working with the customer managed key in KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
      * Management Service concepts</a>.</p>
      */
     inline void SetKmsArn(Aws::String&& value) { m_kmsArnHasBeenSet = true; m_kmsArn = std::move(value); }
 
     /**
-     * <p>The Amazon resource name (ARN) used to identify the customer managed customer
-     * master key (CMK) in Key Management Service (KMS). The <code>KmsArn</code> must
-     * be unique for each key-signing key (KSK) in a single hosted zone.</p> <p>You
-     * must configure the CMK as follows:</p> <dl> <dt>Status</dt> <dd> <p>Enabled</p>
+     * <p>The Amazon resource name (ARN) used to identify the customer managed key in
+     * Key Management Service (KMS). The <code>KmsArn</code> must be unique for each
+     * key-signing key (KSK) in a single hosted zone.</p> <p>You must configure the
+     * customer managed key as follows:</p> <dl> <dt>Status</dt> <dd> <p>Enabled</p>
      * </dd> <dt>Key spec</dt> <dd> <p>ECC_NIST_P256</p> </dd> <dt>Key usage</dt> <dd>
      * <p>Sign and verify</p> </dd> <dt>Key policy</dt> <dd> <p>The key policy must
      * give permission for the following actions:</p> <ul> <li> <p>DescribeKey</p>
@@ -183,17 +183,17 @@ namespace Model
      * policy must also include the Amazon Route 53 service in the principal for your
      * account. Specify the following:</p> <ul> <li> <p> <code>"Service":
      * "dnssec-route53.amazonaws.com"</code> </p> </li> </ul> </dd> </dl> <p>For more
-     * information about working with the customer managed CMK in KMS, see <a
+     * information about working with the customer managed key in KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
      * Management Service concepts</a>.</p>
      */
     inline void SetKmsArn(const char* value) { m_kmsArnHasBeenSet = true; m_kmsArn.assign(value); }
 
     /**
-     * <p>The Amazon resource name (ARN) used to identify the customer managed customer
-     * master key (CMK) in Key Management Service (KMS). The <code>KmsArn</code> must
-     * be unique for each key-signing key (KSK) in a single hosted zone.</p> <p>You
-     * must configure the CMK as follows:</p> <dl> <dt>Status</dt> <dd> <p>Enabled</p>
+     * <p>The Amazon resource name (ARN) used to identify the customer managed key in
+     * Key Management Service (KMS). The <code>KmsArn</code> must be unique for each
+     * key-signing key (KSK) in a single hosted zone.</p> <p>You must configure the
+     * customer managed key as follows:</p> <dl> <dt>Status</dt> <dd> <p>Enabled</p>
      * </dd> <dt>Key spec</dt> <dd> <p>ECC_NIST_P256</p> </dd> <dt>Key usage</dt> <dd>
      * <p>Sign and verify</p> </dd> <dt>Key policy</dt> <dd> <p>The key policy must
      * give permission for the following actions:</p> <ul> <li> <p>DescribeKey</p>
@@ -201,17 +201,17 @@ namespace Model
      * policy must also include the Amazon Route 53 service in the principal for your
      * account. Specify the following:</p> <ul> <li> <p> <code>"Service":
      * "dnssec-route53.amazonaws.com"</code> </p> </li> </ul> </dd> </dl> <p>For more
-     * information about working with the customer managed CMK in KMS, see <a
+     * information about working with the customer managed key in KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
      * Management Service concepts</a>.</p>
      */
     inline KeySigningKey& WithKmsArn(const Aws::String& value) { SetKmsArn(value); return *this;}
 
     /**
-     * <p>The Amazon resource name (ARN) used to identify the customer managed customer
-     * master key (CMK) in Key Management Service (KMS). The <code>KmsArn</code> must
-     * be unique for each key-signing key (KSK) in a single hosted zone.</p> <p>You
-     * must configure the CMK as follows:</p> <dl> <dt>Status</dt> <dd> <p>Enabled</p>
+     * <p>The Amazon resource name (ARN) used to identify the customer managed key in
+     * Key Management Service (KMS). The <code>KmsArn</code> must be unique for each
+     * key-signing key (KSK) in a single hosted zone.</p> <p>You must configure the
+     * customer managed key as follows:</p> <dl> <dt>Status</dt> <dd> <p>Enabled</p>
      * </dd> <dt>Key spec</dt> <dd> <p>ECC_NIST_P256</p> </dd> <dt>Key usage</dt> <dd>
      * <p>Sign and verify</p> </dd> <dt>Key policy</dt> <dd> <p>The key policy must
      * give permission for the following actions:</p> <ul> <li> <p>DescribeKey</p>
@@ -219,17 +219,17 @@ namespace Model
      * policy must also include the Amazon Route 53 service in the principal for your
      * account. Specify the following:</p> <ul> <li> <p> <code>"Service":
      * "dnssec-route53.amazonaws.com"</code> </p> </li> </ul> </dd> </dl> <p>For more
-     * information about working with the customer managed CMK in KMS, see <a
+     * information about working with the customer managed key in KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
      * Management Service concepts</a>.</p>
      */
     inline KeySigningKey& WithKmsArn(Aws::String&& value) { SetKmsArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon resource name (ARN) used to identify the customer managed customer
-     * master key (CMK) in Key Management Service (KMS). The <code>KmsArn</code> must
-     * be unique for each key-signing key (KSK) in a single hosted zone.</p> <p>You
-     * must configure the CMK as follows:</p> <dl> <dt>Status</dt> <dd> <p>Enabled</p>
+     * <p>The Amazon resource name (ARN) used to identify the customer managed key in
+     * Key Management Service (KMS). The <code>KmsArn</code> must be unique for each
+     * key-signing key (KSK) in a single hosted zone.</p> <p>You must configure the
+     * customer managed key as follows:</p> <dl> <dt>Status</dt> <dd> <p>Enabled</p>
      * </dd> <dt>Key spec</dt> <dd> <p>ECC_NIST_P256</p> </dd> <dt>Key usage</dt> <dd>
      * <p>Sign and verify</p> </dd> <dt>Key policy</dt> <dd> <p>The key policy must
      * give permission for the following actions:</p> <ul> <li> <p>DescribeKey</p>
@@ -237,7 +237,7 @@ namespace Model
      * policy must also include the Amazon Route 53 service in the principal for your
      * account. Specify the following:</p> <ul> <li> <p> <code>"Service":
      * "dnssec-route53.amazonaws.com"</code> </p> </li> </ul> </dd> </dl> <p>For more
-     * information about working with the customer managed CMK in KMS, see <a
+     * information about working with the customer managed key in KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
      * Management Service concepts</a>.</p>
      */
@@ -697,12 +697,12 @@ namespace Model
      * KSK is not being used for signing.</p> </dd> <dt>DELETING</dt> <dd> <p>The KSK
      * is in the process of being deleted.</p> </dd> <dt>ACTION_NEEDED</dt> <dd>
      * <p>There is a problem with the KSK that requires you to take action to resolve.
-     * For example, the customer managed customer master key (CMK) might have been
-     * deleted, or the permissions for the customer managed CMK might have been
-     * changed.</p> </dd> <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a
-     * request. Before you can continue to work with DNSSEC signing, including actions
-     * that involve this KSK, you must correct the problem. For example, you may need
-     * to activate or deactivate the KSK.</p> </dd> </dl>
+     * For example, the customer managed key might have been deleted, or the
+     * permissions for the customer managed key might have been changed.</p> </dd>
+     * <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request. Before
+     * you can continue to work with DNSSEC signing, including actions that involve
+     * this KSK, you must correct the problem. For example, you may need to activate or
+     * deactivate the KSK.</p> </dd> </dl>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
@@ -713,12 +713,12 @@ namespace Model
      * KSK is not being used for signing.</p> </dd> <dt>DELETING</dt> <dd> <p>The KSK
      * is in the process of being deleted.</p> </dd> <dt>ACTION_NEEDED</dt> <dd>
      * <p>There is a problem with the KSK that requires you to take action to resolve.
-     * For example, the customer managed customer master key (CMK) might have been
-     * deleted, or the permissions for the customer managed CMK might have been
-     * changed.</p> </dd> <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a
-     * request. Before you can continue to work with DNSSEC signing, including actions
-     * that involve this KSK, you must correct the problem. For example, you may need
-     * to activate or deactivate the KSK.</p> </dd> </dl>
+     * For example, the customer managed key might have been deleted, or the
+     * permissions for the customer managed key might have been changed.</p> </dd>
+     * <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request. Before
+     * you can continue to work with DNSSEC signing, including actions that involve
+     * this KSK, you must correct the problem. For example, you may need to activate or
+     * deactivate the KSK.</p> </dd> </dl>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -729,12 +729,12 @@ namespace Model
      * KSK is not being used for signing.</p> </dd> <dt>DELETING</dt> <dd> <p>The KSK
      * is in the process of being deleted.</p> </dd> <dt>ACTION_NEEDED</dt> <dd>
      * <p>There is a problem with the KSK that requires you to take action to resolve.
-     * For example, the customer managed customer master key (CMK) might have been
-     * deleted, or the permissions for the customer managed CMK might have been
-     * changed.</p> </dd> <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a
-     * request. Before you can continue to work with DNSSEC signing, including actions
-     * that involve this KSK, you must correct the problem. For example, you may need
-     * to activate or deactivate the KSK.</p> </dd> </dl>
+     * For example, the customer managed key might have been deleted, or the
+     * permissions for the customer managed key might have been changed.</p> </dd>
+     * <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request. Before
+     * you can continue to work with DNSSEC signing, including actions that involve
+     * this KSK, you must correct the problem. For example, you may need to activate or
+     * deactivate the KSK.</p> </dd> </dl>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -745,12 +745,12 @@ namespace Model
      * KSK is not being used for signing.</p> </dd> <dt>DELETING</dt> <dd> <p>The KSK
      * is in the process of being deleted.</p> </dd> <dt>ACTION_NEEDED</dt> <dd>
      * <p>There is a problem with the KSK that requires you to take action to resolve.
-     * For example, the customer managed customer master key (CMK) might have been
-     * deleted, or the permissions for the customer managed CMK might have been
-     * changed.</p> </dd> <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a
-     * request. Before you can continue to work with DNSSEC signing, including actions
-     * that involve this KSK, you must correct the problem. For example, you may need
-     * to activate or deactivate the KSK.</p> </dd> </dl>
+     * For example, the customer managed key might have been deleted, or the
+     * permissions for the customer managed key might have been changed.</p> </dd>
+     * <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request. Before
+     * you can continue to work with DNSSEC signing, including actions that involve
+     * this KSK, you must correct the problem. For example, you may need to activate or
+     * deactivate the KSK.</p> </dd> </dl>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -761,12 +761,12 @@ namespace Model
      * KSK is not being used for signing.</p> </dd> <dt>DELETING</dt> <dd> <p>The KSK
      * is in the process of being deleted.</p> </dd> <dt>ACTION_NEEDED</dt> <dd>
      * <p>There is a problem with the KSK that requires you to take action to resolve.
-     * For example, the customer managed customer master key (CMK) might have been
-     * deleted, or the permissions for the customer managed CMK might have been
-     * changed.</p> </dd> <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a
-     * request. Before you can continue to work with DNSSEC signing, including actions
-     * that involve this KSK, you must correct the problem. For example, you may need
-     * to activate or deactivate the KSK.</p> </dd> </dl>
+     * For example, the customer managed key might have been deleted, or the
+     * permissions for the customer managed key might have been changed.</p> </dd>
+     * <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request. Before
+     * you can continue to work with DNSSEC signing, including actions that involve
+     * this KSK, you must correct the problem. For example, you may need to activate or
+     * deactivate the KSK.</p> </dd> </dl>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
@@ -777,12 +777,12 @@ namespace Model
      * KSK is not being used for signing.</p> </dd> <dt>DELETING</dt> <dd> <p>The KSK
      * is in the process of being deleted.</p> </dd> <dt>ACTION_NEEDED</dt> <dd>
      * <p>There is a problem with the KSK that requires you to take action to resolve.
-     * For example, the customer managed customer master key (CMK) might have been
-     * deleted, or the permissions for the customer managed CMK might have been
-     * changed.</p> </dd> <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a
-     * request. Before you can continue to work with DNSSEC signing, including actions
-     * that involve this KSK, you must correct the problem. For example, you may need
-     * to activate or deactivate the KSK.</p> </dd> </dl>
+     * For example, the customer managed key might have been deleted, or the
+     * permissions for the customer managed key might have been changed.</p> </dd>
+     * <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request. Before
+     * you can continue to work with DNSSEC signing, including actions that involve
+     * this KSK, you must correct the problem. For example, you may need to activate or
+     * deactivate the KSK.</p> </dd> </dl>
      */
     inline KeySigningKey& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
@@ -793,12 +793,12 @@ namespace Model
      * KSK is not being used for signing.</p> </dd> <dt>DELETING</dt> <dd> <p>The KSK
      * is in the process of being deleted.</p> </dd> <dt>ACTION_NEEDED</dt> <dd>
      * <p>There is a problem with the KSK that requires you to take action to resolve.
-     * For example, the customer managed customer master key (CMK) might have been
-     * deleted, or the permissions for the customer managed CMK might have been
-     * changed.</p> </dd> <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a
-     * request. Before you can continue to work with DNSSEC signing, including actions
-     * that involve this KSK, you must correct the problem. For example, you may need
-     * to activate or deactivate the KSK.</p> </dd> </dl>
+     * For example, the customer managed key might have been deleted, or the
+     * permissions for the customer managed key might have been changed.</p> </dd>
+     * <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request. Before
+     * you can continue to work with DNSSEC signing, including actions that involve
+     * this KSK, you must correct the problem. For example, you may need to activate or
+     * deactivate the KSK.</p> </dd> </dl>
      */
     inline KeySigningKey& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -809,12 +809,12 @@ namespace Model
      * KSK is not being used for signing.</p> </dd> <dt>DELETING</dt> <dd> <p>The KSK
      * is in the process of being deleted.</p> </dd> <dt>ACTION_NEEDED</dt> <dd>
      * <p>There is a problem with the KSK that requires you to take action to resolve.
-     * For example, the customer managed customer master key (CMK) might have been
-     * deleted, or the permissions for the customer managed CMK might have been
-     * changed.</p> </dd> <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a
-     * request. Before you can continue to work with DNSSEC signing, including actions
-     * that involve this KSK, you must correct the problem. For example, you may need
-     * to activate or deactivate the KSK.</p> </dd> </dl>
+     * For example, the customer managed key might have been deleted, or the
+     * permissions for the customer managed key might have been changed.</p> </dd>
+     * <dt>INTERNAL_FAILURE</dt> <dd> <p>There was an error during a request. Before
+     * you can continue to work with DNSSEC signing, including actions that involve
+     * this KSK, you must correct the problem. For example, you may need to activate or
+     * deactivate the KSK.</p> </dd> </dl>
      */
     inline KeySigningKey& WithStatus(const char* value) { SetStatus(value); return *this;}
 

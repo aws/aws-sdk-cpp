@@ -194,42 +194,42 @@ namespace Model
 
 
     /**
-     * <p>The new service role ARN for the data source.</p>
+     * <p>The new service role Amazon Resource Name (ARN) for the data source.</p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
     /**
-     * <p>The new service role ARN for the data source.</p>
+     * <p>The new service role Amazon Resource Name (ARN) for the data source.</p>
      */
     inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
 
     /**
-     * <p>The new service role ARN for the data source.</p>
+     * <p>The new service role Amazon Resource Name (ARN) for the data source.</p>
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
-     * <p>The new service role ARN for the data source.</p>
+     * <p>The new service role Amazon Resource Name (ARN) for the data source.</p>
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
-     * <p>The new service role ARN for the data source.</p>
+     * <p>The new service role Amazon Resource Name (ARN) for the data source.</p>
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
 
     /**
-     * <p>The new service role ARN for the data source.</p>
+     * <p>The new service role Amazon Resource Name (ARN) for the data source.</p>
      */
     inline UpdateDataSourceRequest& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
     /**
-     * <p>The new service role ARN for the data source.</p>
+     * <p>The new service role Amazon Resource Name (ARN) for the data source.</p>
      */
     inline UpdateDataSourceRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The new service role ARN for the data source.</p>
+     * <p>The new service role Amazon Resource Name (ARN) for the data source.</p>
      */
     inline UpdateDataSourceRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
@@ -266,32 +266,32 @@ namespace Model
 
 
     /**
-     * <p>The new Amazon Web Services Lambda configuration.</p>
+     * <p>The new Lambda configuration.</p>
      */
     inline const LambdaDataSourceConfig& GetLambdaConfig() const{ return m_lambdaConfig; }
 
     /**
-     * <p>The new Amazon Web Services Lambda configuration.</p>
+     * <p>The new Lambda configuration.</p>
      */
     inline bool LambdaConfigHasBeenSet() const { return m_lambdaConfigHasBeenSet; }
 
     /**
-     * <p>The new Amazon Web Services Lambda configuration.</p>
+     * <p>The new Lambda configuration.</p>
      */
     inline void SetLambdaConfig(const LambdaDataSourceConfig& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = value; }
 
     /**
-     * <p>The new Amazon Web Services Lambda configuration.</p>
+     * <p>The new Lambda configuration.</p>
      */
     inline void SetLambdaConfig(LambdaDataSourceConfig&& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = std::move(value); }
 
     /**
-     * <p>The new Amazon Web Services Lambda configuration.</p>
+     * <p>The new Lambda configuration.</p>
      */
     inline UpdateDataSourceRequest& WithLambdaConfig(const LambdaDataSourceConfig& value) { SetLambdaConfig(value); return *this;}
 
     /**
-     * <p>The new Amazon Web Services Lambda configuration.</p>
+     * <p>The new Lambda configuration.</p>
      */
     inline UpdateDataSourceRequest& WithLambdaConfig(LambdaDataSourceConfig&& value) { SetLambdaConfig(std::move(value)); return *this;}
 

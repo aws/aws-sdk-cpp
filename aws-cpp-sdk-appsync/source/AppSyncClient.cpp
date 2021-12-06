@@ -20,9 +20,11 @@
 #include <aws/appsync/AppSyncClient.h>
 #include <aws/appsync/AppSyncEndpoint.h>
 #include <aws/appsync/AppSyncErrorMarshaller.h>
+#include <aws/appsync/model/AssociateApiRequest.h>
 #include <aws/appsync/model/CreateApiCacheRequest.h>
 #include <aws/appsync/model/CreateApiKeyRequest.h>
 #include <aws/appsync/model/CreateDataSourceRequest.h>
+#include <aws/appsync/model/CreateDomainNameRequest.h>
 #include <aws/appsync/model/CreateFunctionRequest.h>
 #include <aws/appsync/model/CreateGraphqlApiRequest.h>
 #include <aws/appsync/model/CreateResolverRequest.h>
@@ -30,13 +32,17 @@
 #include <aws/appsync/model/DeleteApiCacheRequest.h>
 #include <aws/appsync/model/DeleteApiKeyRequest.h>
 #include <aws/appsync/model/DeleteDataSourceRequest.h>
+#include <aws/appsync/model/DeleteDomainNameRequest.h>
 #include <aws/appsync/model/DeleteFunctionRequest.h>
 #include <aws/appsync/model/DeleteGraphqlApiRequest.h>
 #include <aws/appsync/model/DeleteResolverRequest.h>
 #include <aws/appsync/model/DeleteTypeRequest.h>
+#include <aws/appsync/model/DisassociateApiRequest.h>
 #include <aws/appsync/model/FlushApiCacheRequest.h>
+#include <aws/appsync/model/GetApiAssociationRequest.h>
 #include <aws/appsync/model/GetApiCacheRequest.h>
 #include <aws/appsync/model/GetDataSourceRequest.h>
+#include <aws/appsync/model/GetDomainNameRequest.h>
 #include <aws/appsync/model/GetFunctionRequest.h>
 #include <aws/appsync/model/GetGraphqlApiRequest.h>
 #include <aws/appsync/model/GetIntrospectionSchemaRequest.h>
@@ -45,6 +51,7 @@
 #include <aws/appsync/model/GetTypeRequest.h>
 #include <aws/appsync/model/ListApiKeysRequest.h>
 #include <aws/appsync/model/ListDataSourcesRequest.h>
+#include <aws/appsync/model/ListDomainNamesRequest.h>
 #include <aws/appsync/model/ListFunctionsRequest.h>
 #include <aws/appsync/model/ListGraphqlApisRequest.h>
 #include <aws/appsync/model/ListResolversRequest.h>
@@ -57,6 +64,7 @@
 #include <aws/appsync/model/UpdateApiCacheRequest.h>
 #include <aws/appsync/model/UpdateApiKeyRequest.h>
 #include <aws/appsync/model/UpdateDataSourceRequest.h>
+#include <aws/appsync/model/UpdateDomainNameRequest.h>
 #include <aws/appsync/model/UpdateFunctionRequest.h>
 #include <aws/appsync/model/UpdateGraphqlApiRequest.h>
 #include <aws/appsync/model/UpdateResolverRequest.h>
@@ -133,6 +141,38 @@ void AppSyncClient::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+AssociateApiOutcome AppSyncClient::AssociateApi(const AssociateApiRequest& request) const
+{
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateApi", "Required field: DomainName, is not set");
+    return AssociateApiOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/domainnames/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/apiassociation");
+  return AssociateApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateApiOutcomeCallable AppSyncClient::AssociateApiCallable(const AssociateApiRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateApiOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateApi(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppSyncClient::AssociateApiAsync(const AssociateApiRequest& request, const AssociateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateApiAsyncHelper( request, handler, context ); } );
+}
+
+void AppSyncClient::AssociateApiAsyncHelper(const AssociateApiRequest& request, const AssociateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateApi(request), context);
 }
 
 CreateApiCacheOutcome AppSyncClient::CreateApiCache(const CreateApiCacheRequest& request) const
@@ -229,6 +269,31 @@ void AppSyncClient::CreateDataSourceAsync(const CreateDataSourceRequest& request
 void AppSyncClient::CreateDataSourceAsyncHelper(const CreateDataSourceRequest& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateDataSource(request), context);
+}
+
+CreateDomainNameOutcome AppSyncClient::CreateDomainName(const CreateDomainNameRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/domainnames");
+  return CreateDomainNameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateDomainNameOutcomeCallable AppSyncClient::CreateDomainNameCallable(const CreateDomainNameRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateDomainNameOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDomainName(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppSyncClient::CreateDomainNameAsync(const CreateDomainNameRequest& request, const CreateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDomainNameAsyncHelper( request, handler, context ); } );
+}
+
+void AppSyncClient::CreateDomainNameAsyncHelper(const CreateDomainNameRequest& request, const CreateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateDomainName(request), context);
 }
 
 CreateFunctionOutcome AppSyncClient::CreateFunction(const CreateFunctionRequest& request) const
@@ -467,6 +532,37 @@ void AppSyncClient::DeleteDataSourceAsyncHelper(const DeleteDataSourceRequest& r
   handler(this, request, DeleteDataSource(request), context);
 }
 
+DeleteDomainNameOutcome AppSyncClient::DeleteDomainName(const DeleteDomainNameRequest& request) const
+{
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteDomainName", "Required field: DomainName, is not set");
+    return DeleteDomainNameOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/domainnames/");
+  uri.AddPathSegment(request.GetDomainName());
+  return DeleteDomainNameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteDomainNameOutcomeCallable AppSyncClient::DeleteDomainNameCallable(const DeleteDomainNameRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDomainNameOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDomainName(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppSyncClient::DeleteDomainNameAsync(const DeleteDomainNameRequest& request, const DeleteDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteDomainNameAsyncHelper( request, handler, context ); } );
+}
+
+void AppSyncClient::DeleteDomainNameAsyncHelper(const DeleteDomainNameRequest& request, const DeleteDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteDomainName(request), context);
+}
+
 DeleteFunctionOutcome AppSyncClient::DeleteFunction(const DeleteFunctionRequest& request) const
 {
   if (!request.ApiIdHasBeenSet())
@@ -619,6 +715,38 @@ void AppSyncClient::DeleteTypeAsyncHelper(const DeleteTypeRequest& request, cons
   handler(this, request, DeleteType(request), context);
 }
 
+DisassociateApiOutcome AppSyncClient::DisassociateApi(const DisassociateApiRequest& request) const
+{
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateApi", "Required field: DomainName, is not set");
+    return DisassociateApiOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/domainnames/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/apiassociation");
+  return DisassociateApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateApiOutcomeCallable AppSyncClient::DisassociateApiCallable(const DisassociateApiRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateApiOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateApi(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppSyncClient::DisassociateApiAsync(const DisassociateApiRequest& request, const DisassociateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateApiAsyncHelper( request, handler, context ); } );
+}
+
+void AppSyncClient::DisassociateApiAsyncHelper(const DisassociateApiRequest& request, const DisassociateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateApi(request), context);
+}
+
 FlushApiCacheOutcome AppSyncClient::FlushApiCache(const FlushApiCacheRequest& request) const
 {
   if (!request.ApiIdHasBeenSet())
@@ -649,6 +777,38 @@ void AppSyncClient::FlushApiCacheAsync(const FlushApiCacheRequest& request, cons
 void AppSyncClient::FlushApiCacheAsyncHelper(const FlushApiCacheRequest& request, const FlushApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, FlushApiCache(request), context);
+}
+
+GetApiAssociationOutcome AppSyncClient::GetApiAssociation(const GetApiAssociationRequest& request) const
+{
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetApiAssociation", "Required field: DomainName, is not set");
+    return GetApiAssociationOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/domainnames/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/apiassociation");
+  return GetApiAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetApiAssociationOutcomeCallable AppSyncClient::GetApiAssociationCallable(const GetApiAssociationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetApiAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetApiAssociation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppSyncClient::GetApiAssociationAsync(const GetApiAssociationRequest& request, const GetApiAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetApiAssociationAsyncHelper( request, handler, context ); } );
+}
+
+void AppSyncClient::GetApiAssociationAsyncHelper(const GetApiAssociationRequest& request, const GetApiAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetApiAssociation(request), context);
 }
 
 GetApiCacheOutcome AppSyncClient::GetApiCache(const GetApiCacheRequest& request) const
@@ -719,6 +879,37 @@ void AppSyncClient::GetDataSourceAsync(const GetDataSourceRequest& request, cons
 void AppSyncClient::GetDataSourceAsyncHelper(const GetDataSourceRequest& request, const GetDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetDataSource(request), context);
+}
+
+GetDomainNameOutcome AppSyncClient::GetDomainName(const GetDomainNameRequest& request) const
+{
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDomainName", "Required field: DomainName, is not set");
+    return GetDomainNameOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/domainnames/");
+  uri.AddPathSegment(request.GetDomainName());
+  return GetDomainNameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetDomainNameOutcomeCallable AppSyncClient::GetDomainNameCallable(const GetDomainNameRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDomainNameOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDomainName(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppSyncClient::GetDomainNameAsync(const GetDomainNameRequest& request, const GetDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetDomainNameAsyncHelper( request, handler, context ); } );
+}
+
+void AppSyncClient::GetDomainNameAsyncHelper(const GetDomainNameRequest& request, const GetDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetDomainName(request), context);
 }
 
 GetFunctionOutcome AppSyncClient::GetFunction(const GetFunctionRequest& request) const
@@ -1009,6 +1200,31 @@ void AppSyncClient::ListDataSourcesAsync(const ListDataSourcesRequest& request, 
 void AppSyncClient::ListDataSourcesAsyncHelper(const ListDataSourcesRequest& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListDataSources(request), context);
+}
+
+ListDomainNamesOutcome AppSyncClient::ListDomainNames(const ListDomainNamesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/domainnames");
+  return ListDomainNamesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListDomainNamesOutcomeCallable AppSyncClient::ListDomainNamesCallable(const ListDomainNamesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDomainNamesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDomainNames(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppSyncClient::ListDomainNamesAsync(const ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListDomainNamesAsyncHelper( request, handler, context ); } );
+}
+
+void AppSyncClient::ListDomainNamesAsyncHelper(const ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListDomainNames(request), context);
 }
 
 ListFunctionsOutcome AppSyncClient::ListFunctions(const ListFunctionsRequest& request) const
@@ -1419,6 +1635,37 @@ void AppSyncClient::UpdateDataSourceAsync(const UpdateDataSourceRequest& request
 void AppSyncClient::UpdateDataSourceAsyncHelper(const UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateDataSource(request), context);
+}
+
+UpdateDomainNameOutcome AppSyncClient::UpdateDomainName(const UpdateDomainNameRequest& request) const
+{
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateDomainName", "Required field: DomainName, is not set");
+    return UpdateDomainNameOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/domainnames/");
+  uri.AddPathSegment(request.GetDomainName());
+  return UpdateDomainNameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateDomainNameOutcomeCallable AppSyncClient::UpdateDomainNameCallable(const UpdateDomainNameRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDomainNameOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDomainName(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppSyncClient::UpdateDomainNameAsync(const UpdateDomainNameRequest& request, const UpdateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateDomainNameAsyncHelper( request, handler, context ); } );
+}
+
+void AppSyncClient::UpdateDomainNameAsyncHelper(const UpdateDomainNameRequest& request, const UpdateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateDomainName(request), context);
 }
 
 UpdateFunctionOutcome AppSyncClient::UpdateFunction(const UpdateFunctionRequest& request) const

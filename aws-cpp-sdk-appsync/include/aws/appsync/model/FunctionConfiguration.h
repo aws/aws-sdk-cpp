@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>A function is a reusable entity. Multiple functions can be used to compose
+   * <p>A function is a reusable entity. You can use multiple functions to compose
    * the resolver logic.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/FunctionConfiguration">AWS
    * API Reference</a></p>
@@ -81,42 +81,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the <code>Function</code> object.</p>
+     * <p>The Amazon Resource Name (ARN) of the <code>Function</code> object.</p>
      */
     inline const Aws::String& GetFunctionArn() const{ return m_functionArn; }
 
     /**
-     * <p>The ARN of the <code>Function</code> object.</p>
+     * <p>The Amazon Resource Name (ARN) of the <code>Function</code> object.</p>
      */
     inline bool FunctionArnHasBeenSet() const { return m_functionArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the <code>Function</code> object.</p>
+     * <p>The Amazon Resource Name (ARN) of the <code>Function</code> object.</p>
      */
     inline void SetFunctionArn(const Aws::String& value) { m_functionArnHasBeenSet = true; m_functionArn = value; }
 
     /**
-     * <p>The ARN of the <code>Function</code> object.</p>
+     * <p>The Amazon Resource Name (ARN) of the <code>Function</code> object.</p>
      */
     inline void SetFunctionArn(Aws::String&& value) { m_functionArnHasBeenSet = true; m_functionArn = std::move(value); }
 
     /**
-     * <p>The ARN of the <code>Function</code> object.</p>
+     * <p>The Amazon Resource Name (ARN) of the <code>Function</code> object.</p>
      */
     inline void SetFunctionArn(const char* value) { m_functionArnHasBeenSet = true; m_functionArn.assign(value); }
 
     /**
-     * <p>The ARN of the <code>Function</code> object.</p>
+     * <p>The Amazon Resource Name (ARN) of the <code>Function</code> object.</p>
      */
     inline FunctionConfiguration& WithFunctionArn(const Aws::String& value) { SetFunctionArn(value); return *this;}
 
     /**
-     * <p>The ARN of the <code>Function</code> object.</p>
+     * <p>The Amazon Resource Name (ARN) of the <code>Function</code> object.</p>
      */
     inline FunctionConfiguration& WithFunctionArn(Aws::String&& value) { SetFunctionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the <code>Function</code> object.</p>
+     * <p>The Amazon Resource Name (ARN) of the <code>Function</code> object.</p>
      */
     inline FunctionConfiguration& WithFunctionArn(const char* value) { SetFunctionArn(value); return *this;}
 
@@ -335,49 +335,49 @@ namespace Model
 
 
     /**
-     * <p>The version of the request mapping template. Currently only the 2018-05-29
+     * <p>The version of the request mapping template. Currently, only the 2018-05-29
      * version of the template is supported.</p>
      */
     inline const Aws::String& GetFunctionVersion() const{ return m_functionVersion; }
 
     /**
-     * <p>The version of the request mapping template. Currently only the 2018-05-29
+     * <p>The version of the request mapping template. Currently, only the 2018-05-29
      * version of the template is supported.</p>
      */
     inline bool FunctionVersionHasBeenSet() const { return m_functionVersionHasBeenSet; }
 
     /**
-     * <p>The version of the request mapping template. Currently only the 2018-05-29
+     * <p>The version of the request mapping template. Currently, only the 2018-05-29
      * version of the template is supported.</p>
      */
     inline void SetFunctionVersion(const Aws::String& value) { m_functionVersionHasBeenSet = true; m_functionVersion = value; }
 
     /**
-     * <p>The version of the request mapping template. Currently only the 2018-05-29
+     * <p>The version of the request mapping template. Currently, only the 2018-05-29
      * version of the template is supported.</p>
      */
     inline void SetFunctionVersion(Aws::String&& value) { m_functionVersionHasBeenSet = true; m_functionVersion = std::move(value); }
 
     /**
-     * <p>The version of the request mapping template. Currently only the 2018-05-29
+     * <p>The version of the request mapping template. Currently, only the 2018-05-29
      * version of the template is supported.</p>
      */
     inline void SetFunctionVersion(const char* value) { m_functionVersionHasBeenSet = true; m_functionVersion.assign(value); }
 
     /**
-     * <p>The version of the request mapping template. Currently only the 2018-05-29
+     * <p>The version of the request mapping template. Currently, only the 2018-05-29
      * version of the template is supported.</p>
      */
     inline FunctionConfiguration& WithFunctionVersion(const Aws::String& value) { SetFunctionVersion(value); return *this;}
 
     /**
-     * <p>The version of the request mapping template. Currently only the 2018-05-29
+     * <p>The version of the request mapping template. Currently, only the 2018-05-29
      * version of the template is supported.</p>
      */
     inline FunctionConfiguration& WithFunctionVersion(Aws::String&& value) { SetFunctionVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of the request mapping template. Currently only the 2018-05-29
+     * <p>The version of the request mapping template. Currently, only the 2018-05-29
      * version of the template is supported.</p>
      */
     inline FunctionConfiguration& WithFunctionVersion(const char* value) { SetFunctionVersion(value); return *this;}

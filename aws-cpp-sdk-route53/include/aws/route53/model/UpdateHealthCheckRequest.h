@@ -1619,9 +1619,9 @@ namespace Model
      * check:</p> <ul> <li> <p> <code>Healthy</code>: Route 53 considers the health
      * check to be healthy.</p> </li> <li> <p> <code>Unhealthy</code>: Route 53
      * considers the health check to be unhealthy.</p> </li> <li> <p>
-     * <code>LastKnownStatus</code>: Route 53 uses the status of the health check from
-     * the last time CloudWatch had sufficient data to determine the alarm state. For
-     * new health checks that have no last known status, the default status for the
+     * <code>LastKnownStatus</code>: By default, Route 53 uses the status of the health
+     * check from the last time CloudWatch had sufficient data to determine the alarm
+     * state. For new health checks that have no last known status, the status for the
      * health check is healthy.</p> </li> </ul>
      */
     inline const InsufficientDataHealthStatus& GetInsufficientDataHealthStatus() const{ return m_insufficientDataHealthStatus; }
@@ -1632,9 +1632,9 @@ namespace Model
      * check:</p> <ul> <li> <p> <code>Healthy</code>: Route 53 considers the health
      * check to be healthy.</p> </li> <li> <p> <code>Unhealthy</code>: Route 53
      * considers the health check to be unhealthy.</p> </li> <li> <p>
-     * <code>LastKnownStatus</code>: Route 53 uses the status of the health check from
-     * the last time CloudWatch had sufficient data to determine the alarm state. For
-     * new health checks that have no last known status, the default status for the
+     * <code>LastKnownStatus</code>: By default, Route 53 uses the status of the health
+     * check from the last time CloudWatch had sufficient data to determine the alarm
+     * state. For new health checks that have no last known status, the status for the
      * health check is healthy.</p> </li> </ul>
      */
     inline bool InsufficientDataHealthStatusHasBeenSet() const { return m_insufficientDataHealthStatusHasBeenSet; }
@@ -1645,9 +1645,9 @@ namespace Model
      * check:</p> <ul> <li> <p> <code>Healthy</code>: Route 53 considers the health
      * check to be healthy.</p> </li> <li> <p> <code>Unhealthy</code>: Route 53
      * considers the health check to be unhealthy.</p> </li> <li> <p>
-     * <code>LastKnownStatus</code>: Route 53 uses the status of the health check from
-     * the last time CloudWatch had sufficient data to determine the alarm state. For
-     * new health checks that have no last known status, the default status for the
+     * <code>LastKnownStatus</code>: By default, Route 53 uses the status of the health
+     * check from the last time CloudWatch had sufficient data to determine the alarm
+     * state. For new health checks that have no last known status, the status for the
      * health check is healthy.</p> </li> </ul>
      */
     inline void SetInsufficientDataHealthStatus(const InsufficientDataHealthStatus& value) { m_insufficientDataHealthStatusHasBeenSet = true; m_insufficientDataHealthStatus = value; }
@@ -1658,9 +1658,9 @@ namespace Model
      * check:</p> <ul> <li> <p> <code>Healthy</code>: Route 53 considers the health
      * check to be healthy.</p> </li> <li> <p> <code>Unhealthy</code>: Route 53
      * considers the health check to be unhealthy.</p> </li> <li> <p>
-     * <code>LastKnownStatus</code>: Route 53 uses the status of the health check from
-     * the last time CloudWatch had sufficient data to determine the alarm state. For
-     * new health checks that have no last known status, the default status for the
+     * <code>LastKnownStatus</code>: By default, Route 53 uses the status of the health
+     * check from the last time CloudWatch had sufficient data to determine the alarm
+     * state. For new health checks that have no last known status, the status for the
      * health check is healthy.</p> </li> </ul>
      */
     inline void SetInsufficientDataHealthStatus(InsufficientDataHealthStatus&& value) { m_insufficientDataHealthStatusHasBeenSet = true; m_insufficientDataHealthStatus = std::move(value); }
@@ -1671,9 +1671,9 @@ namespace Model
      * check:</p> <ul> <li> <p> <code>Healthy</code>: Route 53 considers the health
      * check to be healthy.</p> </li> <li> <p> <code>Unhealthy</code>: Route 53
      * considers the health check to be unhealthy.</p> </li> <li> <p>
-     * <code>LastKnownStatus</code>: Route 53 uses the status of the health check from
-     * the last time CloudWatch had sufficient data to determine the alarm state. For
-     * new health checks that have no last known status, the default status for the
+     * <code>LastKnownStatus</code>: By default, Route 53 uses the status of the health
+     * check from the last time CloudWatch had sufficient data to determine the alarm
+     * state. For new health checks that have no last known status, the status for the
      * health check is healthy.</p> </li> </ul>
      */
     inline UpdateHealthCheckRequest& WithInsufficientDataHealthStatus(const InsufficientDataHealthStatus& value) { SetInsufficientDataHealthStatus(value); return *this;}
@@ -1684,9 +1684,9 @@ namespace Model
      * check:</p> <ul> <li> <p> <code>Healthy</code>: Route 53 considers the health
      * check to be healthy.</p> </li> <li> <p> <code>Unhealthy</code>: Route 53
      * considers the health check to be unhealthy.</p> </li> <li> <p>
-     * <code>LastKnownStatus</code>: Route 53 uses the status of the health check from
-     * the last time CloudWatch had sufficient data to determine the alarm state. For
-     * new health checks that have no last known status, the default status for the
+     * <code>LastKnownStatus</code>: By default, Route 53 uses the status of the health
+     * check from the last time CloudWatch had sufficient data to determine the alarm
+     * state. For new health checks that have no last known status, the status for the
      * health check is healthy.</p> </li> </ul>
      */
     inline UpdateHealthCheckRequest& WithInsufficientDataHealthStatus(InsufficientDataHealthStatus&& value) { SetInsufficientDataHealthStatus(std::move(value)); return *this;}

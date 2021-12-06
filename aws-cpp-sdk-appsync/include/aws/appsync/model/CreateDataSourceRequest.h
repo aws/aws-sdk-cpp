@@ -194,50 +194,58 @@ namespace Model
 
 
     /**
-     * <p>The Identity and Access Management service role ARN for the data source. The
-     * system assumes this role when accessing the data source.</p>
+     * <p>The Identity and Access Management (IAM) service role Amazon Resource Name
+     * (ARN) for the data source. The system assumes this role when accessing the data
+     * source.</p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
     /**
-     * <p>The Identity and Access Management service role ARN for the data source. The
-     * system assumes this role when accessing the data source.</p>
+     * <p>The Identity and Access Management (IAM) service role Amazon Resource Name
+     * (ARN) for the data source. The system assumes this role when accessing the data
+     * source.</p>
      */
     inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
 
     /**
-     * <p>The Identity and Access Management service role ARN for the data source. The
-     * system assumes this role when accessing the data source.</p>
+     * <p>The Identity and Access Management (IAM) service role Amazon Resource Name
+     * (ARN) for the data source. The system assumes this role when accessing the data
+     * source.</p>
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
-     * <p>The Identity and Access Management service role ARN for the data source. The
-     * system assumes this role when accessing the data source.</p>
+     * <p>The Identity and Access Management (IAM) service role Amazon Resource Name
+     * (ARN) for the data source. The system assumes this role when accessing the data
+     * source.</p>
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
-     * <p>The Identity and Access Management service role ARN for the data source. The
-     * system assumes this role when accessing the data source.</p>
+     * <p>The Identity and Access Management (IAM) service role Amazon Resource Name
+     * (ARN) for the data source. The system assumes this role when accessing the data
+     * source.</p>
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
 
     /**
-     * <p>The Identity and Access Management service role ARN for the data source. The
-     * system assumes this role when accessing the data source.</p>
+     * <p>The Identity and Access Management (IAM) service role Amazon Resource Name
+     * (ARN) for the data source. The system assumes this role when accessing the data
+     * source.</p>
      */
     inline CreateDataSourceRequest& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
     /**
-     * <p>The Identity and Access Management service role ARN for the data source. The
-     * system assumes this role when accessing the data source.</p>
+     * <p>The Identity and Access Management (IAM) service role Amazon Resource Name
+     * (ARN) for the data source. The system assumes this role when accessing the data
+     * source.</p>
      */
     inline CreateDataSourceRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Identity and Access Management service role ARN for the data source. The
-     * system assumes this role when accessing the data source.</p>
+     * <p>The Identity and Access Management (IAM) service role Amazon Resource Name
+     * (ARN) for the data source. The system assumes this role when accessing the data
+     * source.</p>
      */
     inline CreateDataSourceRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
@@ -274,32 +282,32 @@ namespace Model
 
 
     /**
-     * <p>Amazon Web Services Lambda settings.</p>
+     * <p>Lambda settings.</p>
      */
     inline const LambdaDataSourceConfig& GetLambdaConfig() const{ return m_lambdaConfig; }
 
     /**
-     * <p>Amazon Web Services Lambda settings.</p>
+     * <p>Lambda settings.</p>
      */
     inline bool LambdaConfigHasBeenSet() const { return m_lambdaConfigHasBeenSet; }
 
     /**
-     * <p>Amazon Web Services Lambda settings.</p>
+     * <p>Lambda settings.</p>
      */
     inline void SetLambdaConfig(const LambdaDataSourceConfig& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = value; }
 
     /**
-     * <p>Amazon Web Services Lambda settings.</p>
+     * <p>Lambda settings.</p>
      */
     inline void SetLambdaConfig(LambdaDataSourceConfig&& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = std::move(value); }
 
     /**
-     * <p>Amazon Web Services Lambda settings.</p>
+     * <p>Lambda settings.</p>
      */
     inline CreateDataSourceRequest& WithLambdaConfig(const LambdaDataSourceConfig& value) { SetLambdaConfig(value); return *this;}
 
     /**
-     * <p>Amazon Web Services Lambda settings.</p>
+     * <p>Lambda settings.</p>
      */
     inline CreateDataSourceRequest& WithLambdaConfig(LambdaDataSourceConfig&& value) { SetLambdaConfig(std::move(value)); return *this;}
 

@@ -191,37 +191,37 @@ namespace Model
 
     /**
      * <p>The new Amazon Cognito user pool configuration for the
-     * <code>GraphqlApi</code> object.</p>
+     * <code>~GraphqlApi</code> object.</p>
      */
     inline const UserPoolConfig& GetUserPoolConfig() const{ return m_userPoolConfig; }
 
     /**
      * <p>The new Amazon Cognito user pool configuration for the
-     * <code>GraphqlApi</code> object.</p>
+     * <code>~GraphqlApi</code> object.</p>
      */
     inline bool UserPoolConfigHasBeenSet() const { return m_userPoolConfigHasBeenSet; }
 
     /**
      * <p>The new Amazon Cognito user pool configuration for the
-     * <code>GraphqlApi</code> object.</p>
+     * <code>~GraphqlApi</code> object.</p>
      */
     inline void SetUserPoolConfig(const UserPoolConfig& value) { m_userPoolConfigHasBeenSet = true; m_userPoolConfig = value; }
 
     /**
      * <p>The new Amazon Cognito user pool configuration for the
-     * <code>GraphqlApi</code> object.</p>
+     * <code>~GraphqlApi</code> object.</p>
      */
     inline void SetUserPoolConfig(UserPoolConfig&& value) { m_userPoolConfigHasBeenSet = true; m_userPoolConfig = std::move(value); }
 
     /**
      * <p>The new Amazon Cognito user pool configuration for the
-     * <code>GraphqlApi</code> object.</p>
+     * <code>~GraphqlApi</code> object.</p>
      */
     inline UpdateGraphqlApiRequest& WithUserPoolConfig(const UserPoolConfig& value) { SetUserPoolConfig(value); return *this;}
 
     /**
      * <p>The new Amazon Cognito user pool configuration for the
-     * <code>GraphqlApi</code> object.</p>
+     * <code>~GraphqlApi</code> object.</p>
      */
     inline UpdateGraphqlApiRequest& WithUserPoolConfig(UserPoolConfig&& value) { SetUserPoolConfig(std::move(value)); return *this;}
 
@@ -307,57 +307,57 @@ namespace Model
 
 
     /**
-     * <p>A flag indicating whether to enable X-Ray tracing for the
+     * <p>A flag indicating whether to use X-Ray tracing for the
      * <code>GraphqlApi</code>.</p>
      */
     inline bool GetXrayEnabled() const{ return m_xrayEnabled; }
 
     /**
-     * <p>A flag indicating whether to enable X-Ray tracing for the
+     * <p>A flag indicating whether to use X-Ray tracing for the
      * <code>GraphqlApi</code>.</p>
      */
     inline bool XrayEnabledHasBeenSet() const { return m_xrayEnabledHasBeenSet; }
 
     /**
-     * <p>A flag indicating whether to enable X-Ray tracing for the
+     * <p>A flag indicating whether to use X-Ray tracing for the
      * <code>GraphqlApi</code>.</p>
      */
     inline void SetXrayEnabled(bool value) { m_xrayEnabledHasBeenSet = true; m_xrayEnabled = value; }
 
     /**
-     * <p>A flag indicating whether to enable X-Ray tracing for the
+     * <p>A flag indicating whether to use X-Ray tracing for the
      * <code>GraphqlApi</code>.</p>
      */
     inline UpdateGraphqlApiRequest& WithXrayEnabled(bool value) { SetXrayEnabled(value); return *this;}
 
 
     /**
-     * <p>Configuration for Amazon Web Services Lambda function authorization.</p>
+     * <p>Configuration for Lambda function authorization.</p>
      */
     inline const LambdaAuthorizerConfig& GetLambdaAuthorizerConfig() const{ return m_lambdaAuthorizerConfig; }
 
     /**
-     * <p>Configuration for Amazon Web Services Lambda function authorization.</p>
+     * <p>Configuration for Lambda function authorization.</p>
      */
     inline bool LambdaAuthorizerConfigHasBeenSet() const { return m_lambdaAuthorizerConfigHasBeenSet; }
 
     /**
-     * <p>Configuration for Amazon Web Services Lambda function authorization.</p>
+     * <p>Configuration for Lambda function authorization.</p>
      */
     inline void SetLambdaAuthorizerConfig(const LambdaAuthorizerConfig& value) { m_lambdaAuthorizerConfigHasBeenSet = true; m_lambdaAuthorizerConfig = value; }
 
     /**
-     * <p>Configuration for Amazon Web Services Lambda function authorization.</p>
+     * <p>Configuration for Lambda function authorization.</p>
      */
     inline void SetLambdaAuthorizerConfig(LambdaAuthorizerConfig&& value) { m_lambdaAuthorizerConfigHasBeenSet = true; m_lambdaAuthorizerConfig = std::move(value); }
 
     /**
-     * <p>Configuration for Amazon Web Services Lambda function authorization.</p>
+     * <p>Configuration for Lambda function authorization.</p>
      */
     inline UpdateGraphqlApiRequest& WithLambdaAuthorizerConfig(const LambdaAuthorizerConfig& value) { SetLambdaAuthorizerConfig(value); return *this;}
 
     /**
-     * <p>Configuration for Amazon Web Services Lambda function authorization.</p>
+     * <p>Configuration for Lambda function authorization.</p>
      */
     inline UpdateGraphqlApiRequest& WithLambdaAuthorizerConfig(LambdaAuthorizerConfig&& value) { SetLambdaAuthorizerConfig(std::move(value)); return *this;}
 

@@ -27,6 +27,7 @@ namespace Model
     eu_central_1,
     ap_southeast_1,
     ap_southeast_2,
+    ap_southeast_3,
     ap_northeast_1,
     ap_northeast_2,
     ap_northeast_3,

@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>A <code>LambdaAuthorizerConfig</code> holds configuration on how to authorize
-   * AppSync API access when using the <code>AWS_LAMBDA</code> authorizer mode. Be
-   * aware that an AppSync API may have only one Lambda authorizer configured at a
+   * <p>A <code>LambdaAuthorizerConfig</code> specifies how to authorize AppSync API
+   * access when using the <code>AWS_LAMBDA</code> authorizer mode. Be aware that an
+   * AppSync API can have only one Lambda authorizer configured at a
    * time.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/LambdaAuthorizerConfig">AWS
    * API Reference</a></p>
@@ -74,12 +74,13 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the Lambda function to be called for authorization. This may be a
-     * standard Lambda ARN, a version ARN (<code>.../v3</code>) or alias ARN. </p> <p>
-     * <i>Note</i>: This Lambda function must have the following resource-based policy
-     * assigned to it. When configuring Lambda authorizers in the Console, this is done
-     * for you. To do so with the Amazon Web Services CLI, run the following:</p> <p>
-     * <code>aws lambda add-permission --function-name
+     * <p>The Amazon Resource Name (ARN) of the Lambda function to be called for
+     * authorization. This can be a standard Lambda ARN, a version ARN
+     * (<code>.../v3</code>), or an alias ARN. </p> <p> <b>Note</b>: This Lambda
+     * function must have the following resource-based policy assigned to it. When
+     * configuring Lambda authorizers in the console, this is done for you. To use the
+     * Command Line Interface (CLI), run the following:</p> <p> <code>aws lambda
+     * add-permission --function-name
      * "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id
      * "appsync" --principal appsync.amazonaws.com --action
      * lambda:InvokeFunction</code> </p>
@@ -87,12 +88,13 @@ namespace Model
     inline const Aws::String& GetAuthorizerUri() const{ return m_authorizerUri; }
 
     /**
-     * <p>The ARN of the Lambda function to be called for authorization. This may be a
-     * standard Lambda ARN, a version ARN (<code>.../v3</code>) or alias ARN. </p> <p>
-     * <i>Note</i>: This Lambda function must have the following resource-based policy
-     * assigned to it. When configuring Lambda authorizers in the Console, this is done
-     * for you. To do so with the Amazon Web Services CLI, run the following:</p> <p>
-     * <code>aws lambda add-permission --function-name
+     * <p>The Amazon Resource Name (ARN) of the Lambda function to be called for
+     * authorization. This can be a standard Lambda ARN, a version ARN
+     * (<code>.../v3</code>), or an alias ARN. </p> <p> <b>Note</b>: This Lambda
+     * function must have the following resource-based policy assigned to it. When
+     * configuring Lambda authorizers in the console, this is done for you. To use the
+     * Command Line Interface (CLI), run the following:</p> <p> <code>aws lambda
+     * add-permission --function-name
      * "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id
      * "appsync" --principal appsync.amazonaws.com --action
      * lambda:InvokeFunction</code> </p>
@@ -100,12 +102,13 @@ namespace Model
     inline bool AuthorizerUriHasBeenSet() const { return m_authorizerUriHasBeenSet; }
 
     /**
-     * <p>The ARN of the Lambda function to be called for authorization. This may be a
-     * standard Lambda ARN, a version ARN (<code>.../v3</code>) or alias ARN. </p> <p>
-     * <i>Note</i>: This Lambda function must have the following resource-based policy
-     * assigned to it. When configuring Lambda authorizers in the Console, this is done
-     * for you. To do so with the Amazon Web Services CLI, run the following:</p> <p>
-     * <code>aws lambda add-permission --function-name
+     * <p>The Amazon Resource Name (ARN) of the Lambda function to be called for
+     * authorization. This can be a standard Lambda ARN, a version ARN
+     * (<code>.../v3</code>), or an alias ARN. </p> <p> <b>Note</b>: This Lambda
+     * function must have the following resource-based policy assigned to it. When
+     * configuring Lambda authorizers in the console, this is done for you. To use the
+     * Command Line Interface (CLI), run the following:</p> <p> <code>aws lambda
+     * add-permission --function-name
      * "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id
      * "appsync" --principal appsync.amazonaws.com --action
      * lambda:InvokeFunction</code> </p>
@@ -113,12 +116,13 @@ namespace Model
     inline void SetAuthorizerUri(const Aws::String& value) { m_authorizerUriHasBeenSet = true; m_authorizerUri = value; }
 
     /**
-     * <p>The ARN of the Lambda function to be called for authorization. This may be a
-     * standard Lambda ARN, a version ARN (<code>.../v3</code>) or alias ARN. </p> <p>
-     * <i>Note</i>: This Lambda function must have the following resource-based policy
-     * assigned to it. When configuring Lambda authorizers in the Console, this is done
-     * for you. To do so with the Amazon Web Services CLI, run the following:</p> <p>
-     * <code>aws lambda add-permission --function-name
+     * <p>The Amazon Resource Name (ARN) of the Lambda function to be called for
+     * authorization. This can be a standard Lambda ARN, a version ARN
+     * (<code>.../v3</code>), or an alias ARN. </p> <p> <b>Note</b>: This Lambda
+     * function must have the following resource-based policy assigned to it. When
+     * configuring Lambda authorizers in the console, this is done for you. To use the
+     * Command Line Interface (CLI), run the following:</p> <p> <code>aws lambda
+     * add-permission --function-name
      * "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id
      * "appsync" --principal appsync.amazonaws.com --action
      * lambda:InvokeFunction</code> </p>
@@ -126,12 +130,13 @@ namespace Model
     inline void SetAuthorizerUri(Aws::String&& value) { m_authorizerUriHasBeenSet = true; m_authorizerUri = std::move(value); }
 
     /**
-     * <p>The ARN of the Lambda function to be called for authorization. This may be a
-     * standard Lambda ARN, a version ARN (<code>.../v3</code>) or alias ARN. </p> <p>
-     * <i>Note</i>: This Lambda function must have the following resource-based policy
-     * assigned to it. When configuring Lambda authorizers in the Console, this is done
-     * for you. To do so with the Amazon Web Services CLI, run the following:</p> <p>
-     * <code>aws lambda add-permission --function-name
+     * <p>The Amazon Resource Name (ARN) of the Lambda function to be called for
+     * authorization. This can be a standard Lambda ARN, a version ARN
+     * (<code>.../v3</code>), or an alias ARN. </p> <p> <b>Note</b>: This Lambda
+     * function must have the following resource-based policy assigned to it. When
+     * configuring Lambda authorizers in the console, this is done for you. To use the
+     * Command Line Interface (CLI), run the following:</p> <p> <code>aws lambda
+     * add-permission --function-name
      * "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id
      * "appsync" --principal appsync.amazonaws.com --action
      * lambda:InvokeFunction</code> </p>
@@ -139,12 +144,13 @@ namespace Model
     inline void SetAuthorizerUri(const char* value) { m_authorizerUriHasBeenSet = true; m_authorizerUri.assign(value); }
 
     /**
-     * <p>The ARN of the Lambda function to be called for authorization. This may be a
-     * standard Lambda ARN, a version ARN (<code>.../v3</code>) or alias ARN. </p> <p>
-     * <i>Note</i>: This Lambda function must have the following resource-based policy
-     * assigned to it. When configuring Lambda authorizers in the Console, this is done
-     * for you. To do so with the Amazon Web Services CLI, run the following:</p> <p>
-     * <code>aws lambda add-permission --function-name
+     * <p>The Amazon Resource Name (ARN) of the Lambda function to be called for
+     * authorization. This can be a standard Lambda ARN, a version ARN
+     * (<code>.../v3</code>), or an alias ARN. </p> <p> <b>Note</b>: This Lambda
+     * function must have the following resource-based policy assigned to it. When
+     * configuring Lambda authorizers in the console, this is done for you. To use the
+     * Command Line Interface (CLI), run the following:</p> <p> <code>aws lambda
+     * add-permission --function-name
      * "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id
      * "appsync" --principal appsync.amazonaws.com --action
      * lambda:InvokeFunction</code> </p>
@@ -152,12 +158,13 @@ namespace Model
     inline LambdaAuthorizerConfig& WithAuthorizerUri(const Aws::String& value) { SetAuthorizerUri(value); return *this;}
 
     /**
-     * <p>The ARN of the Lambda function to be called for authorization. This may be a
-     * standard Lambda ARN, a version ARN (<code>.../v3</code>) or alias ARN. </p> <p>
-     * <i>Note</i>: This Lambda function must have the following resource-based policy
-     * assigned to it. When configuring Lambda authorizers in the Console, this is done
-     * for you. To do so with the Amazon Web Services CLI, run the following:</p> <p>
-     * <code>aws lambda add-permission --function-name
+     * <p>The Amazon Resource Name (ARN) of the Lambda function to be called for
+     * authorization. This can be a standard Lambda ARN, a version ARN
+     * (<code>.../v3</code>), or an alias ARN. </p> <p> <b>Note</b>: This Lambda
+     * function must have the following resource-based policy assigned to it. When
+     * configuring Lambda authorizers in the console, this is done for you. To use the
+     * Command Line Interface (CLI), run the following:</p> <p> <code>aws lambda
+     * add-permission --function-name
      * "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id
      * "appsync" --principal appsync.amazonaws.com --action
      * lambda:InvokeFunction</code> </p>
@@ -165,12 +172,13 @@ namespace Model
     inline LambdaAuthorizerConfig& WithAuthorizerUri(Aws::String&& value) { SetAuthorizerUri(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the Lambda function to be called for authorization. This may be a
-     * standard Lambda ARN, a version ARN (<code>.../v3</code>) or alias ARN. </p> <p>
-     * <i>Note</i>: This Lambda function must have the following resource-based policy
-     * assigned to it. When configuring Lambda authorizers in the Console, this is done
-     * for you. To do so with the Amazon Web Services CLI, run the following:</p> <p>
-     * <code>aws lambda add-permission --function-name
+     * <p>The Amazon Resource Name (ARN) of the Lambda function to be called for
+     * authorization. This can be a standard Lambda ARN, a version ARN
+     * (<code>.../v3</code>), or an alias ARN. </p> <p> <b>Note</b>: This Lambda
+     * function must have the following resource-based policy assigned to it. When
+     * configuring Lambda authorizers in the console, this is done for you. To use the
+     * Command Line Interface (CLI), run the following:</p> <p> <code>aws lambda
+     * add-permission --function-name
      * "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id
      * "appsync" --principal appsync.amazonaws.com --action
      * lambda:InvokeFunction</code> </p>

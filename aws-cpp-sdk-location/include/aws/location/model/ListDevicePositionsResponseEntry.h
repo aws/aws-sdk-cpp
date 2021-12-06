@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
+#include <aws/location/model/PositionalAccuracy.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -37,6 +39,37 @@ namespace Model
     ListDevicePositionsResponseEntry(Aws::Utils::Json::JsonView jsonValue);
     ListDevicePositionsResponseEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The accuracy of the device position.</p>
+     */
+    inline const PositionalAccuracy& GetAccuracy() const{ return m_accuracy; }
+
+    /**
+     * <p>The accuracy of the device position.</p>
+     */
+    inline bool AccuracyHasBeenSet() const { return m_accuracyHasBeenSet; }
+
+    /**
+     * <p>The accuracy of the device position.</p>
+     */
+    inline void SetAccuracy(const PositionalAccuracy& value) { m_accuracyHasBeenSet = true; m_accuracy = value; }
+
+    /**
+     * <p>The accuracy of the device position.</p>
+     */
+    inline void SetAccuracy(PositionalAccuracy&& value) { m_accuracyHasBeenSet = true; m_accuracy = std::move(value); }
+
+    /**
+     * <p>The accuracy of the device position.</p>
+     */
+    inline ListDevicePositionsResponseEntry& WithAccuracy(const PositionalAccuracy& value) { SetAccuracy(value); return *this;}
+
+    /**
+     * <p>The accuracy of the device position.</p>
+     */
+    inline ListDevicePositionsResponseEntry& WithAccuracy(PositionalAccuracy&& value) { SetAccuracy(std::move(value)); return *this;}
 
 
     /**
@@ -117,6 +150,72 @@ namespace Model
 
 
     /**
+     * <p>The properties associated with the position.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetPositionProperties() const{ return m_positionProperties; }
+
+    /**
+     * <p>The properties associated with the position.</p>
+     */
+    inline bool PositionPropertiesHasBeenSet() const { return m_positionPropertiesHasBeenSet; }
+
+    /**
+     * <p>The properties associated with the position.</p>
+     */
+    inline void SetPositionProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_positionPropertiesHasBeenSet = true; m_positionProperties = value; }
+
+    /**
+     * <p>The properties associated with the position.</p>
+     */
+    inline void SetPositionProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_positionPropertiesHasBeenSet = true; m_positionProperties = std::move(value); }
+
+    /**
+     * <p>The properties associated with the position.</p>
+     */
+    inline ListDevicePositionsResponseEntry& WithPositionProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetPositionProperties(value); return *this;}
+
+    /**
+     * <p>The properties associated with the position.</p>
+     */
+    inline ListDevicePositionsResponseEntry& WithPositionProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetPositionProperties(std::move(value)); return *this;}
+
+    /**
+     * <p>The properties associated with the position.</p>
+     */
+    inline ListDevicePositionsResponseEntry& AddPositionProperties(const Aws::String& key, const Aws::String& value) { m_positionPropertiesHasBeenSet = true; m_positionProperties.emplace(key, value); return *this; }
+
+    /**
+     * <p>The properties associated with the position.</p>
+     */
+    inline ListDevicePositionsResponseEntry& AddPositionProperties(Aws::String&& key, const Aws::String& value) { m_positionPropertiesHasBeenSet = true; m_positionProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The properties associated with the position.</p>
+     */
+    inline ListDevicePositionsResponseEntry& AddPositionProperties(const Aws::String& key, Aws::String&& value) { m_positionPropertiesHasBeenSet = true; m_positionProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The properties associated with the position.</p>
+     */
+    inline ListDevicePositionsResponseEntry& AddPositionProperties(Aws::String&& key, Aws::String&& value) { m_positionPropertiesHasBeenSet = true; m_positionProperties.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The properties associated with the position.</p>
+     */
+    inline ListDevicePositionsResponseEntry& AddPositionProperties(const char* key, Aws::String&& value) { m_positionPropertiesHasBeenSet = true; m_positionProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The properties associated with the position.</p>
+     */
+    inline ListDevicePositionsResponseEntry& AddPositionProperties(Aws::String&& key, const char* value) { m_positionPropertiesHasBeenSet = true; m_positionProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The properties associated with the position.</p>
+     */
+    inline ListDevicePositionsResponseEntry& AddPositionProperties(const char* key, const char* value) { m_positionPropertiesHasBeenSet = true; m_positionProperties.emplace(key, value); return *this; }
+
+
+    /**
      * <p>The timestamp at which the device position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
@@ -160,11 +259,17 @@ namespace Model
 
   private:
 
+    PositionalAccuracy m_accuracy;
+    bool m_accuracyHasBeenSet;
+
     Aws::String m_deviceId;
     bool m_deviceIdHasBeenSet;
 
     Aws::Vector<double> m_position;
     bool m_positionHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_positionProperties;
+    bool m_positionPropertiesHasBeenSet;
 
     Aws::Utils::DateTime m_sampleTime;
     bool m_sampleTimeHasBeenSet;

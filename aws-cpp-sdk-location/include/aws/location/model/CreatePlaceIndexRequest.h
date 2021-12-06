@@ -318,7 +318,7 @@ namespace Model
 
     /**
      * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * <p>Contain only alphanumeric characters (A��Z, a–z, 0–9), hyphens (-), periods
      * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
      * resource name.</p> </li> <li> <p>No spaces allowed. For example,
      * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
@@ -327,7 +327,7 @@ namespace Model
 
     /**
      * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * <p>Contain only alphanumeric characters (A��Z, a–z, 0–9), hyphens (-), periods
      * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
      * resource name.</p> </li> <li> <p>No spaces allowed. For example,
      * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
@@ -336,7 +336,7 @@ namespace Model
 
     /**
      * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * <p>Contain only alphanumeric characters (A��Z, a–z, 0–9), hyphens (-), periods
      * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
      * resource name.</p> </li> <li> <p>No spaces allowed. For example,
      * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
@@ -345,7 +345,7 @@ namespace Model
 
     /**
      * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * <p>Contain only alphanumeric characters (A��Z, a–z, 0–9), hyphens (-), periods
      * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
      * resource name.</p> </li> <li> <p>No spaces allowed. For example,
      * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
@@ -354,7 +354,7 @@ namespace Model
 
     /**
      * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * <p>Contain only alphanumeric characters (A��Z, a–z, 0–9), hyphens (-), periods
      * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
      * resource name.</p> </li> <li> <p>No spaces allowed. For example,
      * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
@@ -363,7 +363,7 @@ namespace Model
 
     /**
      * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * <p>Contain only alphanumeric characters (A��Z, a–z, 0–9), hyphens (-), periods
      * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
      * resource name.</p> </li> <li> <p>No spaces allowed. For example,
      * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
@@ -372,7 +372,7 @@ namespace Model
 
     /**
      * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * <p>Contain only alphanumeric characters (A��Z, a–z, 0–9), hyphens (-), periods
      * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
      * resource name.</p> </li> <li> <p>No spaces allowed. For example,
      * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
@@ -381,7 +381,7 @@ namespace Model
 
     /**
      * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * <p>Contain only alphanumeric characters (A��Z, a–z, 0–9), hyphens (-), periods
      * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
      * resource name.</p> </li> <li> <p>No spaces allowed. For example,
      * <code>ExamplePlaceIndex</code>.</p> </li> </ul>

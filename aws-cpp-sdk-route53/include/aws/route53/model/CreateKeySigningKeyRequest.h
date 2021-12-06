@@ -115,12 +115,12 @@ namespace Model
 
 
     /**
-     * <p>The Amazon resource name (ARN) for a customer managed customer master key
-     * (CMK) in Key Management Service (KMS). The <code>KeyManagementServiceArn</code>
-     * must be unique for each key-signing key (KSK) in a single hosted zone. To see an
-     * example of <code>KeyManagementServiceArn</code> that grants the correct
-     * permissions for DNSSEC, scroll down to <b>Example</b>. </p> <p>You must
-     * configure the customer managed CMK as follows:</p> <dl> <dt>Status</dt> <dd>
+     * <p>The Amazon resource name (ARN) for a customer managed key in Key Management
+     * Service (KMS). The <code>KeyManagementServiceArn</code> must be unique for each
+     * key-signing key (KSK) in a single hosted zone. To see an example of
+     * <code>KeyManagementServiceArn</code> that grants the correct permissions for
+     * DNSSEC, scroll down to <b>Example</b>. </p> <p>You must configure the customer
+     * managed customer managed key as follows:</p> <dl> <dt>Status</dt> <dd>
      * <p>Enabled</p> </dd> <dt>Key spec</dt> <dd> <p>ECC_NIST_P256</p> </dd> <dt>Key
      * usage</dt> <dd> <p>Sign and verify</p> </dd> <dt>Key policy</dt> <dd> <p>The key
      * policy must give permission for the following actions:</p> <ul> <li>
@@ -128,7 +128,7 @@ namespace Model
      * </ul> <p>The key policy must also include the Amazon Route 53 service in the
      * principal for your account. Specify the following:</p> <ul> <li> <p>
      * <code>"Service": "dnssec-route53.amazonaws.com"</code> </p> </li> </ul> </dd>
-     * </dl> <p>For more information about working with a customer managed CMK in KMS,
+     * </dl> <p>For more information about working with a customer managed key in KMS,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
      * Management Service concepts</a>.</p>
@@ -136,12 +136,12 @@ namespace Model
     inline const Aws::String& GetKeyManagementServiceArn() const{ return m_keyManagementServiceArn; }
 
     /**
-     * <p>The Amazon resource name (ARN) for a customer managed customer master key
-     * (CMK) in Key Management Service (KMS). The <code>KeyManagementServiceArn</code>
-     * must be unique for each key-signing key (KSK) in a single hosted zone. To see an
-     * example of <code>KeyManagementServiceArn</code> that grants the correct
-     * permissions for DNSSEC, scroll down to <b>Example</b>. </p> <p>You must
-     * configure the customer managed CMK as follows:</p> <dl> <dt>Status</dt> <dd>
+     * <p>The Amazon resource name (ARN) for a customer managed key in Key Management
+     * Service (KMS). The <code>KeyManagementServiceArn</code> must be unique for each
+     * key-signing key (KSK) in a single hosted zone. To see an example of
+     * <code>KeyManagementServiceArn</code> that grants the correct permissions for
+     * DNSSEC, scroll down to <b>Example</b>. </p> <p>You must configure the customer
+     * managed customer managed key as follows:</p> <dl> <dt>Status</dt> <dd>
      * <p>Enabled</p> </dd> <dt>Key spec</dt> <dd> <p>ECC_NIST_P256</p> </dd> <dt>Key
      * usage</dt> <dd> <p>Sign and verify</p> </dd> <dt>Key policy</dt> <dd> <p>The key
      * policy must give permission for the following actions:</p> <ul> <li>
@@ -149,7 +149,7 @@ namespace Model
      * </ul> <p>The key policy must also include the Amazon Route 53 service in the
      * principal for your account. Specify the following:</p> <ul> <li> <p>
      * <code>"Service": "dnssec-route53.amazonaws.com"</code> </p> </li> </ul> </dd>
-     * </dl> <p>For more information about working with a customer managed CMK in KMS,
+     * </dl> <p>For more information about working with a customer managed key in KMS,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
      * Management Service concepts</a>.</p>
@@ -157,12 +157,12 @@ namespace Model
     inline bool KeyManagementServiceArnHasBeenSet() const { return m_keyManagementServiceArnHasBeenSet; }
 
     /**
-     * <p>The Amazon resource name (ARN) for a customer managed customer master key
-     * (CMK) in Key Management Service (KMS). The <code>KeyManagementServiceArn</code>
-     * must be unique for each key-signing key (KSK) in a single hosted zone. To see an
-     * example of <code>KeyManagementServiceArn</code> that grants the correct
-     * permissions for DNSSEC, scroll down to <b>Example</b>. </p> <p>You must
-     * configure the customer managed CMK as follows:</p> <dl> <dt>Status</dt> <dd>
+     * <p>The Amazon resource name (ARN) for a customer managed key in Key Management
+     * Service (KMS). The <code>KeyManagementServiceArn</code> must be unique for each
+     * key-signing key (KSK) in a single hosted zone. To see an example of
+     * <code>KeyManagementServiceArn</code> that grants the correct permissions for
+     * DNSSEC, scroll down to <b>Example</b>. </p> <p>You must configure the customer
+     * managed customer managed key as follows:</p> <dl> <dt>Status</dt> <dd>
      * <p>Enabled</p> </dd> <dt>Key spec</dt> <dd> <p>ECC_NIST_P256</p> </dd> <dt>Key
      * usage</dt> <dd> <p>Sign and verify</p> </dd> <dt>Key policy</dt> <dd> <p>The key
      * policy must give permission for the following actions:</p> <ul> <li>
@@ -170,7 +170,7 @@ namespace Model
      * </ul> <p>The key policy must also include the Amazon Route 53 service in the
      * principal for your account. Specify the following:</p> <ul> <li> <p>
      * <code>"Service": "dnssec-route53.amazonaws.com"</code> </p> </li> </ul> </dd>
-     * </dl> <p>For more information about working with a customer managed CMK in KMS,
+     * </dl> <p>For more information about working with a customer managed key in KMS,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
      * Management Service concepts</a>.</p>
@@ -178,12 +178,12 @@ namespace Model
     inline void SetKeyManagementServiceArn(const Aws::String& value) { m_keyManagementServiceArnHasBeenSet = true; m_keyManagementServiceArn = value; }
 
     /**
-     * <p>The Amazon resource name (ARN) for a customer managed customer master key
-     * (CMK) in Key Management Service (KMS). The <code>KeyManagementServiceArn</code>
-     * must be unique for each key-signing key (KSK) in a single hosted zone. To see an
-     * example of <code>KeyManagementServiceArn</code> that grants the correct
-     * permissions for DNSSEC, scroll down to <b>Example</b>. </p> <p>You must
-     * configure the customer managed CMK as follows:</p> <dl> <dt>Status</dt> <dd>
+     * <p>The Amazon resource name (ARN) for a customer managed key in Key Management
+     * Service (KMS). The <code>KeyManagementServiceArn</code> must be unique for each
+     * key-signing key (KSK) in a single hosted zone. To see an example of
+     * <code>KeyManagementServiceArn</code> that grants the correct permissions for
+     * DNSSEC, scroll down to <b>Example</b>. </p> <p>You must configure the customer
+     * managed customer managed key as follows:</p> <dl> <dt>Status</dt> <dd>
      * <p>Enabled</p> </dd> <dt>Key spec</dt> <dd> <p>ECC_NIST_P256</p> </dd> <dt>Key
      * usage</dt> <dd> <p>Sign and verify</p> </dd> <dt>Key policy</dt> <dd> <p>The key
      * policy must give permission for the following actions:</p> <ul> <li>
@@ -191,7 +191,7 @@ namespace Model
      * </ul> <p>The key policy must also include the Amazon Route 53 service in the
      * principal for your account. Specify the following:</p> <ul> <li> <p>
      * <code>"Service": "dnssec-route53.amazonaws.com"</code> </p> </li> </ul> </dd>
-     * </dl> <p>For more information about working with a customer managed CMK in KMS,
+     * </dl> <p>For more information about working with a customer managed key in KMS,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
      * Management Service concepts</a>.</p>
@@ -199,12 +199,12 @@ namespace Model
     inline void SetKeyManagementServiceArn(Aws::String&& value) { m_keyManagementServiceArnHasBeenSet = true; m_keyManagementServiceArn = std::move(value); }
 
     /**
-     * <p>The Amazon resource name (ARN) for a customer managed customer master key
-     * (CMK) in Key Management Service (KMS). The <code>KeyManagementServiceArn</code>
-     * must be unique for each key-signing key (KSK) in a single hosted zone. To see an
-     * example of <code>KeyManagementServiceArn</code> that grants the correct
-     * permissions for DNSSEC, scroll down to <b>Example</b>. </p> <p>You must
-     * configure the customer managed CMK as follows:</p> <dl> <dt>Status</dt> <dd>
+     * <p>The Amazon resource name (ARN) for a customer managed key in Key Management
+     * Service (KMS). The <code>KeyManagementServiceArn</code> must be unique for each
+     * key-signing key (KSK) in a single hosted zone. To see an example of
+     * <code>KeyManagementServiceArn</code> that grants the correct permissions for
+     * DNSSEC, scroll down to <b>Example</b>. </p> <p>You must configure the customer
+     * managed customer managed key as follows:</p> <dl> <dt>Status</dt> <dd>
      * <p>Enabled</p> </dd> <dt>Key spec</dt> <dd> <p>ECC_NIST_P256</p> </dd> <dt>Key
      * usage</dt> <dd> <p>Sign and verify</p> </dd> <dt>Key policy</dt> <dd> <p>The key
      * policy must give permission for the following actions:</p> <ul> <li>
@@ -212,7 +212,7 @@ namespace Model
      * </ul> <p>The key policy must also include the Amazon Route 53 service in the
      * principal for your account. Specify the following:</p> <ul> <li> <p>
      * <code>"Service": "dnssec-route53.amazonaws.com"</code> </p> </li> </ul> </dd>
-     * </dl> <p>For more information about working with a customer managed CMK in KMS,
+     * </dl> <p>For more information about working with a customer managed key in KMS,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
      * Management Service concepts</a>.</p>
@@ -220,12 +220,12 @@ namespace Model
     inline void SetKeyManagementServiceArn(const char* value) { m_keyManagementServiceArnHasBeenSet = true; m_keyManagementServiceArn.assign(value); }
 
     /**
-     * <p>The Amazon resource name (ARN) for a customer managed customer master key
-     * (CMK) in Key Management Service (KMS). The <code>KeyManagementServiceArn</code>
-     * must be unique for each key-signing key (KSK) in a single hosted zone. To see an
-     * example of <code>KeyManagementServiceArn</code> that grants the correct
-     * permissions for DNSSEC, scroll down to <b>Example</b>. </p> <p>You must
-     * configure the customer managed CMK as follows:</p> <dl> <dt>Status</dt> <dd>
+     * <p>The Amazon resource name (ARN) for a customer managed key in Key Management
+     * Service (KMS). The <code>KeyManagementServiceArn</code> must be unique for each
+     * key-signing key (KSK) in a single hosted zone. To see an example of
+     * <code>KeyManagementServiceArn</code> that grants the correct permissions for
+     * DNSSEC, scroll down to <b>Example</b>. </p> <p>You must configure the customer
+     * managed customer managed key as follows:</p> <dl> <dt>Status</dt> <dd>
      * <p>Enabled</p> </dd> <dt>Key spec</dt> <dd> <p>ECC_NIST_P256</p> </dd> <dt>Key
      * usage</dt> <dd> <p>Sign and verify</p> </dd> <dt>Key policy</dt> <dd> <p>The key
      * policy must give permission for the following actions:</p> <ul> <li>
@@ -233,7 +233,7 @@ namespace Model
      * </ul> <p>The key policy must also include the Amazon Route 53 service in the
      * principal for your account. Specify the following:</p> <ul> <li> <p>
      * <code>"Service": "dnssec-route53.amazonaws.com"</code> </p> </li> </ul> </dd>
-     * </dl> <p>For more information about working with a customer managed CMK in KMS,
+     * </dl> <p>For more information about working with a customer managed key in KMS,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
      * Management Service concepts</a>.</p>
@@ -241,12 +241,12 @@ namespace Model
     inline CreateKeySigningKeyRequest& WithKeyManagementServiceArn(const Aws::String& value) { SetKeyManagementServiceArn(value); return *this;}
 
     /**
-     * <p>The Amazon resource name (ARN) for a customer managed customer master key
-     * (CMK) in Key Management Service (KMS). The <code>KeyManagementServiceArn</code>
-     * must be unique for each key-signing key (KSK) in a single hosted zone. To see an
-     * example of <code>KeyManagementServiceArn</code> that grants the correct
-     * permissions for DNSSEC, scroll down to <b>Example</b>. </p> <p>You must
-     * configure the customer managed CMK as follows:</p> <dl> <dt>Status</dt> <dd>
+     * <p>The Amazon resource name (ARN) for a customer managed key in Key Management
+     * Service (KMS). The <code>KeyManagementServiceArn</code> must be unique for each
+     * key-signing key (KSK) in a single hosted zone. To see an example of
+     * <code>KeyManagementServiceArn</code> that grants the correct permissions for
+     * DNSSEC, scroll down to <b>Example</b>. </p> <p>You must configure the customer
+     * managed customer managed key as follows:</p> <dl> <dt>Status</dt> <dd>
      * <p>Enabled</p> </dd> <dt>Key spec</dt> <dd> <p>ECC_NIST_P256</p> </dd> <dt>Key
      * usage</dt> <dd> <p>Sign and verify</p> </dd> <dt>Key policy</dt> <dd> <p>The key
      * policy must give permission for the following actions:</p> <ul> <li>
@@ -254,7 +254,7 @@ namespace Model
      * </ul> <p>The key policy must also include the Amazon Route 53 service in the
      * principal for your account. Specify the following:</p> <ul> <li> <p>
      * <code>"Service": "dnssec-route53.amazonaws.com"</code> </p> </li> </ul> </dd>
-     * </dl> <p>For more information about working with a customer managed CMK in KMS,
+     * </dl> <p>For more information about working with a customer managed key in KMS,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
      * Management Service concepts</a>.</p>
@@ -262,12 +262,12 @@ namespace Model
     inline CreateKeySigningKeyRequest& WithKeyManagementServiceArn(Aws::String&& value) { SetKeyManagementServiceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon resource name (ARN) for a customer managed customer master key
-     * (CMK) in Key Management Service (KMS). The <code>KeyManagementServiceArn</code>
-     * must be unique for each key-signing key (KSK) in a single hosted zone. To see an
-     * example of <code>KeyManagementServiceArn</code> that grants the correct
-     * permissions for DNSSEC, scroll down to <b>Example</b>. </p> <p>You must
-     * configure the customer managed CMK as follows:</p> <dl> <dt>Status</dt> <dd>
+     * <p>The Amazon resource name (ARN) for a customer managed key in Key Management
+     * Service (KMS). The <code>KeyManagementServiceArn</code> must be unique for each
+     * key-signing key (KSK) in a single hosted zone. To see an example of
+     * <code>KeyManagementServiceArn</code> that grants the correct permissions for
+     * DNSSEC, scroll down to <b>Example</b>. </p> <p>You must configure the customer
+     * managed customer managed key as follows:</p> <dl> <dt>Status</dt> <dd>
      * <p>Enabled</p> </dd> <dt>Key spec</dt> <dd> <p>ECC_NIST_P256</p> </dd> <dt>Key
      * usage</dt> <dd> <p>Sign and verify</p> </dd> <dt>Key policy</dt> <dd> <p>The key
      * policy must give permission for the following actions:</p> <ul> <li>
@@ -275,7 +275,7 @@ namespace Model
      * </ul> <p>The key policy must also include the Amazon Route 53 service in the
      * principal for your account. Specify the following:</p> <ul> <li> <p>
      * <code>"Service": "dnssec-route53.amazonaws.com"</code> </p> </li> </ul> </dd>
-     * </dl> <p>For more information about working with a customer managed CMK in KMS,
+     * </dl> <p>For more information about working with a customer managed key in KMS,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
      * Management Service concepts</a>.</p>

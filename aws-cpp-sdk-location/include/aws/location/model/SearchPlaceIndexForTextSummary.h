@@ -41,43 +41,71 @@ namespace Model
 
     /**
      * <p>Contains the coordinates for the optional bias position specified in the
-     * request.</p>
+     * request.</p> <p>This parameter contains a pair of numbers. The first number
+     * represents the X coordinate, or longitude; the second number represents the Y
+     * coordinate, or latitude.</p> <p>For example, <code>[-123.1174, 49.2847]</code>
+     * represents the position with longitude <code>-123.1174</code> and latitude
+     * <code>49.2847</code>.</p>
      */
     inline const Aws::Vector<double>& GetBiasPosition() const{ return m_biasPosition; }
 
     /**
      * <p>Contains the coordinates for the optional bias position specified in the
-     * request.</p>
+     * request.</p> <p>This parameter contains a pair of numbers. The first number
+     * represents the X coordinate, or longitude; the second number represents the Y
+     * coordinate, or latitude.</p> <p>For example, <code>[-123.1174, 49.2847]</code>
+     * represents the position with longitude <code>-123.1174</code> and latitude
+     * <code>49.2847</code>.</p>
      */
     inline bool BiasPositionHasBeenSet() const { return m_biasPositionHasBeenSet; }
 
     /**
      * <p>Contains the coordinates for the optional bias position specified in the
-     * request.</p>
+     * request.</p> <p>This parameter contains a pair of numbers. The first number
+     * represents the X coordinate, or longitude; the second number represents the Y
+     * coordinate, or latitude.</p> <p>For example, <code>[-123.1174, 49.2847]</code>
+     * represents the position with longitude <code>-123.1174</code> and latitude
+     * <code>49.2847</code>.</p>
      */
     inline void SetBiasPosition(const Aws::Vector<double>& value) { m_biasPositionHasBeenSet = true; m_biasPosition = value; }
 
     /**
      * <p>Contains the coordinates for the optional bias position specified in the
-     * request.</p>
+     * request.</p> <p>This parameter contains a pair of numbers. The first number
+     * represents the X coordinate, or longitude; the second number represents the Y
+     * coordinate, or latitude.</p> <p>For example, <code>[-123.1174, 49.2847]</code>
+     * represents the position with longitude <code>-123.1174</code> and latitude
+     * <code>49.2847</code>.</p>
      */
     inline void SetBiasPosition(Aws::Vector<double>&& value) { m_biasPositionHasBeenSet = true; m_biasPosition = std::move(value); }
 
     /**
      * <p>Contains the coordinates for the optional bias position specified in the
-     * request.</p>
+     * request.</p> <p>This parameter contains a pair of numbers. The first number
+     * represents the X coordinate, or longitude; the second number represents the Y
+     * coordinate, or latitude.</p> <p>For example, <code>[-123.1174, 49.2847]</code>
+     * represents the position with longitude <code>-123.1174</code> and latitude
+     * <code>49.2847</code>.</p>
      */
     inline SearchPlaceIndexForTextSummary& WithBiasPosition(const Aws::Vector<double>& value) { SetBiasPosition(value); return *this;}
 
     /**
      * <p>Contains the coordinates for the optional bias position specified in the
-     * request.</p>
+     * request.</p> <p>This parameter contains a pair of numbers. The first number
+     * represents the X coordinate, or longitude; the second number represents the Y
+     * coordinate, or latitude.</p> <p>For example, <code>[-123.1174, 49.2847]</code>
+     * represents the position with longitude <code>-123.1174</code> and latitude
+     * <code>49.2847</code>.</p>
      */
     inline SearchPlaceIndexForTextSummary& WithBiasPosition(Aws::Vector<double>&& value) { SetBiasPosition(std::move(value)); return *this;}
 
     /**
      * <p>Contains the coordinates for the optional bias position specified in the
-     * request.</p>
+     * request.</p> <p>This parameter contains a pair of numbers. The first number
+     * represents the X coordinate, or longitude; the second number represents the Y
+     * coordinate, or latitude.</p> <p>For example, <code>[-123.1174, 49.2847]</code>
+     * represents the position with longitude <code>-123.1174</code> and latitude
+     * <code>49.2847</code>.</p>
      */
     inline SearchPlaceIndexForTextSummary& AddBiasPosition(double value) { m_biasPositionHasBeenSet = true; m_biasPosition.push_back(value); return *this; }
 
