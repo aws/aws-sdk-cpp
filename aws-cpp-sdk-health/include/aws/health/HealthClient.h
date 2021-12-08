@@ -124,17 +124,17 @@ namespace Model
    * href="https://phd.aws.amazon.com/phd/home#/">Personal Health Dashboard</a>. You
    * can use the API operations to get information about events that might affect
    * your Amazon Web Services services and resources.</p>  <ul> <li> <p>You
-   * must have a Business or Enterprise Support plan from <a
+   * must have a Business, Enterprise On-Ramp, or Enterprise Support plan from <a
    * href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a> to
    * use the Health API. If you call the Health API from an Amazon Web Services
-   * account that doesn't have a Business or Enterprise Support plan, you receive a
-   * <code>SubscriptionRequiredException</code> error.</p> </li> <li> <p>You can use
-   * the Health endpoint health.us-east-1.amazonaws.com (HTTPS) to call the Health
-   * API operations. Health supports a multi-Region application architecture and has
-   * two regional endpoints in an active-passive configuration. You can use the high
-   * availability endpoint example to determine which Amazon Web Services Region is
-   * active, so that you can get the latest information from the API. For more
-   * information, see <a
+   * account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support
+   * plan, you receive a <code>SubscriptionRequiredException</code> error.</p> </li>
+   * <li> <p>You can use the Health endpoint health.us-east-1.amazonaws.com (HTTPS)
+   * to call the Health API operations. Health supports a multi-Region application
+   * architecture and has two regional endpoints in an active-passive configuration.
+   * You can use the high availability endpoint example to determine which Amazon Web
+   * Services Region is active, so that you can get the latest information from the
+   * API. For more information, see <a
    * href="https://docs.aws.amazon.com/health/latest/ug/health-api.html">Accessing
    * the Health API</a> in the <i>Health User Guide</i>.</p> </li> </ul> 
    * <p>For authentication of requests, Health uses the <a
@@ -958,13 +958,13 @@ namespace Model
          * organization in a centralized location. </p> <p>This operation also creates a
          * service-linked role for the management account in the organization. </p> 
          * <p>To call this operation, you must meet the following requirements:</p> <ul>
-         * <li> <p>You must have a Business or Enterprise Support plan from <a
-         * href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a> to
-         * use the Health API. If you call the Health API from an Amazon Web Services
-         * account that doesn't have a Business or Enterprise Support plan, you receive a
-         * <code>SubscriptionRequiredException</code> error.</p> </li> <li> <p>You must
-         * have permission to call this operation from the organization's management
-         * account. For example IAM policies, see <a
+         * <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan
+         * from <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
+         * Support</a> to use the Health API. If you call the Health API from an Amazon Web
+         * Services account that doesn't have a Business, Enterprise On-Ramp, or Enterprise
+         * Support plan, you receive a <code>SubscriptionRequiredException</code>
+         * error.</p> </li> <li> <p>You must have permission to call this operation from
+         * the organization's management account. For example IAM policies, see <a
          * href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html">Health
          * identity-based policy examples</a>.</p> </li> </ul>  <p>If you don't have
          * the required support plan, you can instead use the Health console to enable the
@@ -982,13 +982,13 @@ namespace Model
          * organization in a centralized location. </p> <p>This operation also creates a
          * service-linked role for the management account in the organization. </p> 
          * <p>To call this operation, you must meet the following requirements:</p> <ul>
-         * <li> <p>You must have a Business or Enterprise Support plan from <a
-         * href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a> to
-         * use the Health API. If you call the Health API from an Amazon Web Services
-         * account that doesn't have a Business or Enterprise Support plan, you receive a
-         * <code>SubscriptionRequiredException</code> error.</p> </li> <li> <p>You must
-         * have permission to call this operation from the organization's management
-         * account. For example IAM policies, see <a
+         * <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan
+         * from <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
+         * Support</a> to use the Health API. If you call the Health API from an Amazon Web
+         * Services account that doesn't have a Business, Enterprise On-Ramp, or Enterprise
+         * Support plan, you receive a <code>SubscriptionRequiredException</code>
+         * error.</p> </li> <li> <p>You must have permission to call this operation from
+         * the organization's management account. For example IAM policies, see <a
          * href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html">Health
          * identity-based policy examples</a>.</p> </li> </ul>  <p>If you don't have
          * the required support plan, you can instead use the Health console to enable the
@@ -1008,13 +1008,13 @@ namespace Model
          * organization in a centralized location. </p> <p>This operation also creates a
          * service-linked role for the management account in the organization. </p> 
          * <p>To call this operation, you must meet the following requirements:</p> <ul>
-         * <li> <p>You must have a Business or Enterprise Support plan from <a
-         * href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a> to
-         * use the Health API. If you call the Health API from an Amazon Web Services
-         * account that doesn't have a Business or Enterprise Support plan, you receive a
-         * <code>SubscriptionRequiredException</code> error.</p> </li> <li> <p>You must
-         * have permission to call this operation from the organization's management
-         * account. For example IAM policies, see <a
+         * <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan
+         * from <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
+         * Support</a> to use the Health API. If you call the Health API from an Amazon Web
+         * Services account that doesn't have a Business, Enterprise On-Ramp, or Enterprise
+         * Support plan, you receive a <code>SubscriptionRequiredException</code>
+         * error.</p> </li> <li> <p>You must have permission to call this operation from
+         * the organization's management account. For example IAM policies, see <a
          * href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html">Health
          * identity-based policy examples</a>.</p> </li> </ul>  <p>If you don't have
          * the required support plan, you can instead use the Health console to enable the

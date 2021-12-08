@@ -111,56 +111,56 @@ namespace Model
 
 
     /**
-     * <p>The path to the output data files in the S3 bucket. Amazon Comprehend Medical
+     * <p>The path to the output data files in the S3 bucket. Comprehend Medical;
      * creates an output directory using the job ID so that the output from one job
      * does not overwrite the output of another.</p>
      */
     inline const Aws::String& GetS3Key() const{ return m_s3Key; }
 
     /**
-     * <p>The path to the output data files in the S3 bucket. Amazon Comprehend Medical
+     * <p>The path to the output data files in the S3 bucket. Comprehend Medical;
      * creates an output directory using the job ID so that the output from one job
      * does not overwrite the output of another.</p>
      */
     inline bool S3KeyHasBeenSet() const { return m_s3KeyHasBeenSet; }
 
     /**
-     * <p>The path to the output data files in the S3 bucket. Amazon Comprehend Medical
+     * <p>The path to the output data files in the S3 bucket. Comprehend Medical;
      * creates an output directory using the job ID so that the output from one job
      * does not overwrite the output of another.</p>
      */
     inline void SetS3Key(const Aws::String& value) { m_s3KeyHasBeenSet = true; m_s3Key = value; }
 
     /**
-     * <p>The path to the output data files in the S3 bucket. Amazon Comprehend Medical
+     * <p>The path to the output data files in the S3 bucket. Comprehend Medical;
      * creates an output directory using the job ID so that the output from one job
      * does not overwrite the output of another.</p>
      */
     inline void SetS3Key(Aws::String&& value) { m_s3KeyHasBeenSet = true; m_s3Key = std::move(value); }
 
     /**
-     * <p>The path to the output data files in the S3 bucket. Amazon Comprehend Medical
+     * <p>The path to the output data files in the S3 bucket. Comprehend Medical;
      * creates an output directory using the job ID so that the output from one job
      * does not overwrite the output of another.</p>
      */
     inline void SetS3Key(const char* value) { m_s3KeyHasBeenSet = true; m_s3Key.assign(value); }
 
     /**
-     * <p>The path to the output data files in the S3 bucket. Amazon Comprehend Medical
+     * <p>The path to the output data files in the S3 bucket. Comprehend Medical;
      * creates an output directory using the job ID so that the output from one job
      * does not overwrite the output of another.</p>
      */
     inline OutputDataConfig& WithS3Key(const Aws::String& value) { SetS3Key(value); return *this;}
 
     /**
-     * <p>The path to the output data files in the S3 bucket. Amazon Comprehend Medical
+     * <p>The path to the output data files in the S3 bucket. Comprehend Medical;
      * creates an output directory using the job ID so that the output from one job
      * does not overwrite the output of another.</p>
      */
     inline OutputDataConfig& WithS3Key(Aws::String&& value) { SetS3Key(std::move(value)); return *this;}
 
     /**
-     * <p>The path to the output data files in the S3 bucket. Amazon Comprehend Medical
+     * <p>The path to the output data files in the S3 bucket. Comprehend Medical;
      * creates an output directory using the job ID so that the output from one job
      * does not overwrite the output of another.</p>
      */

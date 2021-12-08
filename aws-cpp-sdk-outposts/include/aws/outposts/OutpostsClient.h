@@ -30,6 +30,7 @@
 #include <aws/outposts/model/ListTagsForResourceResult.h>
 #include <aws/outposts/model/TagResourceResult.h>
 #include <aws/outposts/model/UntagResourceResult.h>
+#include <aws/outposts/model/UpdateOutpostResult.h>
 #include <aws/outposts/model/UpdateSiteResult.h>
 #include <aws/outposts/model/UpdateSiteAddressResult.h>
 #include <aws/outposts/model/UpdateSiteRackPhysicalPropertiesResult.h>
@@ -91,6 +92,7 @@ namespace Model
         class ListTagsForResourceRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
+        class UpdateOutpostRequest;
         class UpdateSiteRequest;
         class UpdateSiteAddressRequest;
         class UpdateSiteRackPhysicalPropertiesRequest;
@@ -114,6 +116,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, OutpostsError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, OutpostsError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, OutpostsError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateOutpostResult, OutpostsError> UpdateOutpostOutcome;
         typedef Aws::Utils::Outcome<UpdateSiteResult, OutpostsError> UpdateSiteOutcome;
         typedef Aws::Utils::Outcome<UpdateSiteAddressResult, OutpostsError> UpdateSiteAddressOutcome;
         typedef Aws::Utils::Outcome<UpdateSiteRackPhysicalPropertiesResult, OutpostsError> UpdateSiteRackPhysicalPropertiesOutcome;
@@ -137,6 +140,7 @@ namespace Model
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+        typedef std::future<UpdateOutpostOutcome> UpdateOutpostOutcomeCallable;
         typedef std::future<UpdateSiteOutcome> UpdateSiteOutcomeCallable;
         typedef std::future<UpdateSiteAddressOutcome> UpdateSiteAddressOutcomeCallable;
         typedef std::future<UpdateSiteRackPhysicalPropertiesOutcome> UpdateSiteRackPhysicalPropertiesOutcomeCallable;
@@ -163,6 +167,7 @@ namespace Model
     typedef std::function<void(const OutpostsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const OutpostsClient*, const Model::UpdateOutpostRequest&, const Model::UpdateOutpostOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateOutpostResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::UpdateSiteRequest&, const Model::UpdateSiteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSiteResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::UpdateSiteAddressRequest&, const Model::UpdateSiteAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSiteAddressResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::UpdateSiteRackPhysicalPropertiesRequest&, const Model::UpdateSiteRackPhysicalPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSiteRackPhysicalPropertiesResponseReceivedHandler;
@@ -724,6 +729,31 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Updates an Outpost. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/UpdateOutpost">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateOutpostOutcome UpdateOutpost(const Model::UpdateOutpostRequest& request) const;
+
+        /**
+         * <p> Updates an Outpost. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/UpdateOutpost">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateOutpostOutcomeCallable UpdateOutpostCallable(const Model::UpdateOutpostRequest& request) const;
+
+        /**
+         * <p> Updates an Outpost. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/UpdateOutpost">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateOutpostAsync(const Model::UpdateOutpostRequest& request, const UpdateOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Updates the site. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/UpdateSite">AWS
          * API Reference</a></p>
@@ -851,6 +881,7 @@ namespace Model
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateOutpostAsyncHelper(const Model::UpdateOutpostRequest& request, const UpdateOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSiteAsyncHelper(const Model::UpdateSiteRequest& request, const UpdateSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSiteAddressAsyncHelper(const Model::UpdateSiteAddressRequest& request, const UpdateSiteAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSiteRackPhysicalPropertiesAsyncHelper(const Model::UpdateSiteRackPhysicalPropertiesRequest& request, const UpdateSiteRackPhysicalPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

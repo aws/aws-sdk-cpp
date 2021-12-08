@@ -206,6 +206,19 @@ namespace Model
     inline PipelineExecutionStep& WithCacheHitResult(CacheHitResult&& value) { SetCacheHitResult(std::move(value)); return *this;}
 
 
+    
+    inline int GetAttemptCount() const{ return m_attemptCount; }
+
+    
+    inline bool AttemptCountHasBeenSet() const { return m_attemptCountHasBeenSet; }
+
+    
+    inline void SetAttemptCount(int value) { m_attemptCountHasBeenSet = true; m_attemptCount = value; }
+
+    
+    inline PipelineExecutionStep& WithAttemptCount(int value) { SetAttemptCount(value); return *this;}
+
+
     /**
      * <p>The reason why the step failed execution. This is only returned if the step
      * failed its execution.</p>
@@ -301,6 +314,9 @@ namespace Model
 
     CacheHitResult m_cacheHitResult;
     bool m_cacheHitResultHasBeenSet;
+
+    int m_attemptCount;
+    bool m_attemptCountHasBeenSet;
 
     Aws::String m_failureReason;
     bool m_failureReasonHasBeenSet;

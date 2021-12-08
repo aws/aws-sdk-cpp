@@ -374,6 +374,47 @@ namespace Model
      */
     inline CreateAuthorizerRequest& WithSigningDisabled(bool value) { SetSigningDisabled(value); return *this;}
 
+
+    /**
+     * <p>When <code>true</code>, the result from the authorizer’s Lambda function is
+     * cached for clients that use persistent HTTP connections. The results are cached
+     * for the time specified by the Lambda function in
+     * <code>refreshAfterInSeconds</code>. This value does not affect authorization of
+     * clients that use MQTT connections.</p> <p>The default value is
+     * <code>false</code>.</p>
+     */
+    inline bool GetEnableCachingForHttp() const{ return m_enableCachingForHttp; }
+
+    /**
+     * <p>When <code>true</code>, the result from the authorizer’s Lambda function is
+     * cached for clients that use persistent HTTP connections. The results are cached
+     * for the time specified by the Lambda function in
+     * <code>refreshAfterInSeconds</code>. This value does not affect authorization of
+     * clients that use MQTT connections.</p> <p>The default value is
+     * <code>false</code>.</p>
+     */
+    inline bool EnableCachingForHttpHasBeenSet() const { return m_enableCachingForHttpHasBeenSet; }
+
+    /**
+     * <p>When <code>true</code>, the result from the authorizer’s Lambda function is
+     * cached for clients that use persistent HTTP connections. The results are cached
+     * for the time specified by the Lambda function in
+     * <code>refreshAfterInSeconds</code>. This value does not affect authorization of
+     * clients that use MQTT connections.</p> <p>The default value is
+     * <code>false</code>.</p>
+     */
+    inline void SetEnableCachingForHttp(bool value) { m_enableCachingForHttpHasBeenSet = true; m_enableCachingForHttp = value; }
+
+    /**
+     * <p>When <code>true</code>, the result from the authorizer’s Lambda function is
+     * cached for clients that use persistent HTTP connections. The results are cached
+     * for the time specified by the Lambda function in
+     * <code>refreshAfterInSeconds</code>. This value does not affect authorization of
+     * clients that use MQTT connections.</p> <p>The default value is
+     * <code>false</code>.</p>
+     */
+    inline CreateAuthorizerRequest& WithEnableCachingForHttp(bool value) { SetEnableCachingForHttp(value); return *this;}
+
   private:
 
     Aws::String m_authorizerName;
@@ -396,6 +437,9 @@ namespace Model
 
     bool m_signingDisabled;
     bool m_signingDisabledHasBeenSet;
+
+    bool m_enableCachingForHttp;
+    bool m_enableCachingForHttpHasBeenSet;
   };
 
 } // namespace Model

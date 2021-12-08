@@ -25,6 +25,8 @@ PipelineExecutionStep::PipelineExecutionStep() :
     m_stepStatus(StepStatus::NOT_SET),
     m_stepStatusHasBeenSet(false),
     m_cacheHitResultHasBeenSet(false),
+    m_attemptCount(0),
+    m_attemptCountHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_metadataHasBeenSet(false)
 {
@@ -37,6 +39,8 @@ PipelineExecutionStep::PipelineExecutionStep(JsonView jsonValue) :
     m_stepStatus(StepStatus::NOT_SET),
     m_stepStatusHasBeenSet(false),
     m_cacheHitResultHasBeenSet(false),
+    m_attemptCount(0),
+    m_attemptCountHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_metadataHasBeenSet(false)
 {
@@ -78,6 +82,13 @@ PipelineExecutionStep& PipelineExecutionStep::operator =(JsonView jsonValue)
     m_cacheHitResult = jsonValue.GetObject("CacheHitResult");
 
     m_cacheHitResultHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AttemptCount"))
+  {
+    m_attemptCount = jsonValue.GetInteger("AttemptCount");
+
+    m_attemptCountHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("FailureReason"))
@@ -125,6 +136,12 @@ JsonValue PipelineExecutionStep::Jsonize() const
   if(m_cacheHitResultHasBeenSet)
   {
    payload.WithObject("CacheHitResult", m_cacheHitResult.Jsonize());
+
+  }
+
+  if(m_attemptCountHasBeenSet)
+  {
+   payload.WithInteger("AttemptCount", m_attemptCount);
 
   }
 

@@ -28,13 +28,16 @@
 #include <aws/lookoutvision/model/DeleteProjectRequest.h>
 #include <aws/lookoutvision/model/DescribeDatasetRequest.h>
 #include <aws/lookoutvision/model/DescribeModelRequest.h>
+#include <aws/lookoutvision/model/DescribeModelPackagingJobRequest.h>
 #include <aws/lookoutvision/model/DescribeProjectRequest.h>
 #include <aws/lookoutvision/model/DetectAnomaliesRequest.h>
 #include <aws/lookoutvision/model/ListDatasetEntriesRequest.h>
+#include <aws/lookoutvision/model/ListModelPackagingJobsRequest.h>
 #include <aws/lookoutvision/model/ListModelsRequest.h>
 #include <aws/lookoutvision/model/ListProjectsRequest.h>
 #include <aws/lookoutvision/model/ListTagsForResourceRequest.h>
 #include <aws/lookoutvision/model/StartModelRequest.h>
+#include <aws/lookoutvision/model/StartModelPackagingJobRequest.h>
 #include <aws/lookoutvision/model/StopModelRequest.h>
 #include <aws/lookoutvision/model/TagResourceRequest.h>
 #include <aws/lookoutvision/model/UntagResourceRequest.h>
@@ -385,6 +388,44 @@ void LookoutforVisionClient::DescribeModelAsyncHelper(const DescribeModelRequest
   handler(this, request, DescribeModel(request), context);
 }
 
+DescribeModelPackagingJobOutcome LookoutforVisionClient::DescribeModelPackagingJob(const DescribeModelPackagingJobRequest& request) const
+{
+  if (!request.ProjectNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeModelPackagingJob", "Required field: ProjectName, is not set");
+    return DescribeModelPackagingJobOutcome(Aws::Client::AWSError<LookoutforVisionErrors>(LookoutforVisionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectName]", false));
+  }
+  if (!request.JobNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeModelPackagingJob", "Required field: JobName, is not set");
+    return DescribeModelPackagingJobOutcome(Aws::Client::AWSError<LookoutforVisionErrors>(LookoutforVisionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-11-20/projects/");
+  uri.AddPathSegment(request.GetProjectName());
+  uri.AddPathSegments("/modelpackagingjobs/");
+  uri.AddPathSegment(request.GetJobName());
+  return DescribeModelPackagingJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeModelPackagingJobOutcomeCallable LookoutforVisionClient::DescribeModelPackagingJobCallable(const DescribeModelPackagingJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeModelPackagingJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeModelPackagingJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LookoutforVisionClient::DescribeModelPackagingJobAsync(const DescribeModelPackagingJobRequest& request, const DescribeModelPackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeModelPackagingJobAsyncHelper( request, handler, context ); } );
+}
+
+void LookoutforVisionClient::DescribeModelPackagingJobAsyncHelper(const DescribeModelPackagingJobRequest& request, const DescribeModelPackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeModelPackagingJob(request), context);
+}
+
 DescribeProjectOutcome LookoutforVisionClient::DescribeProject(const DescribeProjectRequest& request) const
 {
   if (!request.ProjectNameHasBeenSet())
@@ -492,6 +533,38 @@ void LookoutforVisionClient::ListDatasetEntriesAsync(const ListDatasetEntriesReq
 void LookoutforVisionClient::ListDatasetEntriesAsyncHelper(const ListDatasetEntriesRequest& request, const ListDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListDatasetEntries(request), context);
+}
+
+ListModelPackagingJobsOutcome LookoutforVisionClient::ListModelPackagingJobs(const ListModelPackagingJobsRequest& request) const
+{
+  if (!request.ProjectNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListModelPackagingJobs", "Required field: ProjectName, is not set");
+    return ListModelPackagingJobsOutcome(Aws::Client::AWSError<LookoutforVisionErrors>(LookoutforVisionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-11-20/projects/");
+  uri.AddPathSegment(request.GetProjectName());
+  uri.AddPathSegments("/modelpackagingjobs");
+  return ListModelPackagingJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListModelPackagingJobsOutcomeCallable LookoutforVisionClient::ListModelPackagingJobsCallable(const ListModelPackagingJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListModelPackagingJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListModelPackagingJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LookoutforVisionClient::ListModelPackagingJobsAsync(const ListModelPackagingJobsRequest& request, const ListModelPackagingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListModelPackagingJobsAsyncHelper( request, handler, context ); } );
+}
+
+void LookoutforVisionClient::ListModelPackagingJobsAsyncHelper(const ListModelPackagingJobsRequest& request, const ListModelPackagingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListModelPackagingJobs(request), context);
 }
 
 ListModelsOutcome LookoutforVisionClient::ListModels(const ListModelsRequest& request) const
@@ -619,6 +692,38 @@ void LookoutforVisionClient::StartModelAsync(const StartModelRequest& request, c
 void LookoutforVisionClient::StartModelAsyncHelper(const StartModelRequest& request, const StartModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartModel(request), context);
+}
+
+StartModelPackagingJobOutcome LookoutforVisionClient::StartModelPackagingJob(const StartModelPackagingJobRequest& request) const
+{
+  if (!request.ProjectNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartModelPackagingJob", "Required field: ProjectName, is not set");
+    return StartModelPackagingJobOutcome(Aws::Client::AWSError<LookoutforVisionErrors>(LookoutforVisionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-11-20/projects/");
+  uri.AddPathSegment(request.GetProjectName());
+  uri.AddPathSegments("/modelpackagingjobs");
+  return StartModelPackagingJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartModelPackagingJobOutcomeCallable LookoutforVisionClient::StartModelPackagingJobCallable(const StartModelPackagingJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartModelPackagingJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartModelPackagingJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LookoutforVisionClient::StartModelPackagingJobAsync(const StartModelPackagingJobRequest& request, const StartModelPackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartModelPackagingJobAsyncHelper( request, handler, context ); } );
+}
+
+void LookoutforVisionClient::StartModelPackagingJobAsyncHelper(const StartModelPackagingJobRequest& request, const StartModelPackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartModelPackagingJob(request), context);
 }
 
 StopModelOutcome LookoutforVisionClient::StopModel(const StopModelRequest& request) const

@@ -39,6 +39,7 @@
 #include <aws/outposts/model/ListTagsForResourceRequest.h>
 #include <aws/outposts/model/TagResourceRequest.h>
 #include <aws/outposts/model/UntagResourceRequest.h>
+#include <aws/outposts/model/UpdateOutpostRequest.h>
 #include <aws/outposts/model/UpdateSiteRequest.h>
 #include <aws/outposts/model/UpdateSiteAddressRequest.h>
 #include <aws/outposts/model/UpdateSiteRackPhysicalPropertiesRequest.h>
@@ -674,6 +675,37 @@ void OutpostsClient::UntagResourceAsync(const UntagResourceRequest& request, con
 void OutpostsClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateOutpostOutcome OutpostsClient::UpdateOutpost(const UpdateOutpostRequest& request) const
+{
+  if (!request.OutpostIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateOutpost", "Required field: OutpostId, is not set");
+    return UpdateOutpostOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OutpostId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/outposts/");
+  uri.AddPathSegment(request.GetOutpostId());
+  return UpdateOutpostOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateOutpostOutcomeCallable OutpostsClient::UpdateOutpostCallable(const UpdateOutpostRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateOutpostOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateOutpost(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OutpostsClient::UpdateOutpostAsync(const UpdateOutpostRequest& request, const UpdateOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateOutpostAsyncHelper( request, handler, context ); } );
+}
+
+void OutpostsClient::UpdateOutpostAsyncHelper(const UpdateOutpostRequest& request, const UpdateOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateOutpost(request), context);
 }
 
 UpdateSiteOutcome OutpostsClient::UpdateSite(const UpdateSiteRequest& request) const

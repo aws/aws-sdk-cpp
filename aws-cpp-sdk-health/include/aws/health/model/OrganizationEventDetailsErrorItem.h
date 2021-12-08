@@ -229,7 +229,8 @@ namespace Model
      * must enter a null value for the Amazon Web Services account ID in the
      * request.</p> </li> <li> <p>Your Amazon Web Services account doesn't include the
      * Amazon Web Services Support plan required to use the Health API. You must have
-     * either a Business or Enterprise Support plan.</p> </li> </ul>
+     * either a Business, Enterprise On-Ramp, or Enterprise Support plan.</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
 
@@ -244,7 +245,8 @@ namespace Model
      * must enter a null value for the Amazon Web Services account ID in the
      * request.</p> </li> <li> <p>Your Amazon Web Services account doesn't include the
      * Amazon Web Services Support plan required to use the Health API. You must have
-     * either a Business or Enterprise Support plan.</p> </li> </ul>
+     * either a Business, Enterprise On-Ramp, or Enterprise Support plan.</p> </li>
+     * </ul>
      */
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
@@ -259,7 +261,8 @@ namespace Model
      * must enter a null value for the Amazon Web Services account ID in the
      * request.</p> </li> <li> <p>Your Amazon Web Services account doesn't include the
      * Amazon Web Services Support plan required to use the Health API. You must have
-     * either a Business or Enterprise Support plan.</p> </li> </ul>
+     * either a Business, Enterprise On-Ramp, or Enterprise Support plan.</p> </li>
+     * </ul>
      */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
 
@@ -274,7 +277,8 @@ namespace Model
      * must enter a null value for the Amazon Web Services account ID in the
      * request.</p> </li> <li> <p>Your Amazon Web Services account doesn't include the
      * Amazon Web Services Support plan required to use the Health API. You must have
-     * either a Business or Enterprise Support plan.</p> </li> </ul>
+     * either a Business, Enterprise On-Ramp, or Enterprise Support plan.</p> </li>
+     * </ul>
      */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
 
@@ -289,7 +293,8 @@ namespace Model
      * must enter a null value for the Amazon Web Services account ID in the
      * request.</p> </li> <li> <p>Your Amazon Web Services account doesn't include the
      * Amazon Web Services Support plan required to use the Health API. You must have
-     * either a Business or Enterprise Support plan.</p> </li> </ul>
+     * either a Business, Enterprise On-Ramp, or Enterprise Support plan.</p> </li>
+     * </ul>
      */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
 
@@ -304,7 +309,8 @@ namespace Model
      * must enter a null value for the Amazon Web Services account ID in the
      * request.</p> </li> <li> <p>Your Amazon Web Services account doesn't include the
      * Amazon Web Services Support plan required to use the Health API. You must have
-     * either a Business or Enterprise Support plan.</p> </li> </ul>
+     * either a Business, Enterprise On-Ramp, or Enterprise Support plan.</p> </li>
+     * </ul>
      */
     inline OrganizationEventDetailsErrorItem& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
 
@@ -319,7 +325,8 @@ namespace Model
      * must enter a null value for the Amazon Web Services account ID in the
      * request.</p> </li> <li> <p>Your Amazon Web Services account doesn't include the
      * Amazon Web Services Support plan required to use the Health API. You must have
-     * either a Business or Enterprise Support plan.</p> </li> </ul>
+     * either a Business, Enterprise On-Ramp, or Enterprise Support plan.</p> </li>
+     * </ul>
      */
     inline OrganizationEventDetailsErrorItem& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
@@ -334,7 +341,8 @@ namespace Model
      * must enter a null value for the Amazon Web Services account ID in the
      * request.</p> </li> <li> <p>Your Amazon Web Services account doesn't include the
      * Amazon Web Services Support plan required to use the Health API. You must have
-     * either a Business or Enterprise Support plan.</p> </li> </ul>
+     * either a Business, Enterprise On-Ramp, or Enterprise Support plan.</p> </li>
+     * </ul>
      */
     inline OrganizationEventDetailsErrorItem& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 

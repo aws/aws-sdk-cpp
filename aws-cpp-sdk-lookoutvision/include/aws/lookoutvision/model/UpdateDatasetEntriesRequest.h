@@ -176,112 +176,136 @@ namespace Model
     /**
      * <p>ClientToken is an idempotency token that ensures a call to
      * <code>UpdateDatasetEntries</code> completes only once. You choose the value to
-     * pass. For example, An issue, such as an network outage, might prevent you from
-     * getting a response from <code>UpdateDatasetEntries</code>. In this case, safely
-     * retry your call to <code>UpdateDatasetEntries</code> by using the same
-     * <code>ClientToken</code> parameter value. An error occurs if the other input
-     * parameters are not the same as in the first request. Using a different value for
-     * <code>ClientToken</code> is considered a new call to
-     * <code>UpdateDatasetEntries</code>. An idempotency token is active for 8 hours.
-     * </p>
+     * pass. For example, An issue might prevent you from getting a response from
+     * <code>UpdateDatasetEntries</code>. In this case, safely retry your call to
+     * <code>UpdateDatasetEntries</code> by using the same <code>ClientToken</code>
+     * parameter value.</p> <p>If you don't supply a value for
+     * <code>ClientToken</code>, the AWS SDK you are using inserts a value for you.
+     * This prevents retries after a network error from making multiple updates with
+     * the same dataset entries. You'll need to provide your own value for other use
+     * cases. </p> <p>An error occurs if the other input parameters are not the same as
+     * in the first request. Using a different value for <code>ClientToken</code> is
+     * considered a new call to <code>UpdateDatasetEntries</code>. An idempotency token
+     * is active for 8 hours. </p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>ClientToken is an idempotency token that ensures a call to
      * <code>UpdateDatasetEntries</code> completes only once. You choose the value to
-     * pass. For example, An issue, such as an network outage, might prevent you from
-     * getting a response from <code>UpdateDatasetEntries</code>. In this case, safely
-     * retry your call to <code>UpdateDatasetEntries</code> by using the same
-     * <code>ClientToken</code> parameter value. An error occurs if the other input
-     * parameters are not the same as in the first request. Using a different value for
-     * <code>ClientToken</code> is considered a new call to
-     * <code>UpdateDatasetEntries</code>. An idempotency token is active for 8 hours.
-     * </p>
+     * pass. For example, An issue might prevent you from getting a response from
+     * <code>UpdateDatasetEntries</code>. In this case, safely retry your call to
+     * <code>UpdateDatasetEntries</code> by using the same <code>ClientToken</code>
+     * parameter value.</p> <p>If you don't supply a value for
+     * <code>ClientToken</code>, the AWS SDK you are using inserts a value for you.
+     * This prevents retries after a network error from making multiple updates with
+     * the same dataset entries. You'll need to provide your own value for other use
+     * cases. </p> <p>An error occurs if the other input parameters are not the same as
+     * in the first request. Using a different value for <code>ClientToken</code> is
+     * considered a new call to <code>UpdateDatasetEntries</code>. An idempotency token
+     * is active for 8 hours. </p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>ClientToken is an idempotency token that ensures a call to
      * <code>UpdateDatasetEntries</code> completes only once. You choose the value to
-     * pass. For example, An issue, such as an network outage, might prevent you from
-     * getting a response from <code>UpdateDatasetEntries</code>. In this case, safely
-     * retry your call to <code>UpdateDatasetEntries</code> by using the same
-     * <code>ClientToken</code> parameter value. An error occurs if the other input
-     * parameters are not the same as in the first request. Using a different value for
-     * <code>ClientToken</code> is considered a new call to
-     * <code>UpdateDatasetEntries</code>. An idempotency token is active for 8 hours.
-     * </p>
+     * pass. For example, An issue might prevent you from getting a response from
+     * <code>UpdateDatasetEntries</code>. In this case, safely retry your call to
+     * <code>UpdateDatasetEntries</code> by using the same <code>ClientToken</code>
+     * parameter value.</p> <p>If you don't supply a value for
+     * <code>ClientToken</code>, the AWS SDK you are using inserts a value for you.
+     * This prevents retries after a network error from making multiple updates with
+     * the same dataset entries. You'll need to provide your own value for other use
+     * cases. </p> <p>An error occurs if the other input parameters are not the same as
+     * in the first request. Using a different value for <code>ClientToken</code> is
+     * considered a new call to <code>UpdateDatasetEntries</code>. An idempotency token
+     * is active for 8 hours. </p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>ClientToken is an idempotency token that ensures a call to
      * <code>UpdateDatasetEntries</code> completes only once. You choose the value to
-     * pass. For example, An issue, such as an network outage, might prevent you from
-     * getting a response from <code>UpdateDatasetEntries</code>. In this case, safely
-     * retry your call to <code>UpdateDatasetEntries</code> by using the same
-     * <code>ClientToken</code> parameter value. An error occurs if the other input
-     * parameters are not the same as in the first request. Using a different value for
-     * <code>ClientToken</code> is considered a new call to
-     * <code>UpdateDatasetEntries</code>. An idempotency token is active for 8 hours.
-     * </p>
+     * pass. For example, An issue might prevent you from getting a response from
+     * <code>UpdateDatasetEntries</code>. In this case, safely retry your call to
+     * <code>UpdateDatasetEntries</code> by using the same <code>ClientToken</code>
+     * parameter value.</p> <p>If you don't supply a value for
+     * <code>ClientToken</code>, the AWS SDK you are using inserts a value for you.
+     * This prevents retries after a network error from making multiple updates with
+     * the same dataset entries. You'll need to provide your own value for other use
+     * cases. </p> <p>An error occurs if the other input parameters are not the same as
+     * in the first request. Using a different value for <code>ClientToken</code> is
+     * considered a new call to <code>UpdateDatasetEntries</code>. An idempotency token
+     * is active for 8 hours. </p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>ClientToken is an idempotency token that ensures a call to
      * <code>UpdateDatasetEntries</code> completes only once. You choose the value to
-     * pass. For example, An issue, such as an network outage, might prevent you from
-     * getting a response from <code>UpdateDatasetEntries</code>. In this case, safely
-     * retry your call to <code>UpdateDatasetEntries</code> by using the same
-     * <code>ClientToken</code> parameter value. An error occurs if the other input
-     * parameters are not the same as in the first request. Using a different value for
-     * <code>ClientToken</code> is considered a new call to
-     * <code>UpdateDatasetEntries</code>. An idempotency token is active for 8 hours.
-     * </p>
+     * pass. For example, An issue might prevent you from getting a response from
+     * <code>UpdateDatasetEntries</code>. In this case, safely retry your call to
+     * <code>UpdateDatasetEntries</code> by using the same <code>ClientToken</code>
+     * parameter value.</p> <p>If you don't supply a value for
+     * <code>ClientToken</code>, the AWS SDK you are using inserts a value for you.
+     * This prevents retries after a network error from making multiple updates with
+     * the same dataset entries. You'll need to provide your own value for other use
+     * cases. </p> <p>An error occurs if the other input parameters are not the same as
+     * in the first request. Using a different value for <code>ClientToken</code> is
+     * considered a new call to <code>UpdateDatasetEntries</code>. An idempotency token
+     * is active for 8 hours. </p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>ClientToken is an idempotency token that ensures a call to
      * <code>UpdateDatasetEntries</code> completes only once. You choose the value to
-     * pass. For example, An issue, such as an network outage, might prevent you from
-     * getting a response from <code>UpdateDatasetEntries</code>. In this case, safely
-     * retry your call to <code>UpdateDatasetEntries</code> by using the same
-     * <code>ClientToken</code> parameter value. An error occurs if the other input
-     * parameters are not the same as in the first request. Using a different value for
-     * <code>ClientToken</code> is considered a new call to
-     * <code>UpdateDatasetEntries</code>. An idempotency token is active for 8 hours.
-     * </p>
+     * pass. For example, An issue might prevent you from getting a response from
+     * <code>UpdateDatasetEntries</code>. In this case, safely retry your call to
+     * <code>UpdateDatasetEntries</code> by using the same <code>ClientToken</code>
+     * parameter value.</p> <p>If you don't supply a value for
+     * <code>ClientToken</code>, the AWS SDK you are using inserts a value for you.
+     * This prevents retries after a network error from making multiple updates with
+     * the same dataset entries. You'll need to provide your own value for other use
+     * cases. </p> <p>An error occurs if the other input parameters are not the same as
+     * in the first request. Using a different value for <code>ClientToken</code> is
+     * considered a new call to <code>UpdateDatasetEntries</code>. An idempotency token
+     * is active for 8 hours. </p>
      */
     inline UpdateDatasetEntriesRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>ClientToken is an idempotency token that ensures a call to
      * <code>UpdateDatasetEntries</code> completes only once. You choose the value to
-     * pass. For example, An issue, such as an network outage, might prevent you from
-     * getting a response from <code>UpdateDatasetEntries</code>. In this case, safely
-     * retry your call to <code>UpdateDatasetEntries</code> by using the same
-     * <code>ClientToken</code> parameter value. An error occurs if the other input
-     * parameters are not the same as in the first request. Using a different value for
-     * <code>ClientToken</code> is considered a new call to
-     * <code>UpdateDatasetEntries</code>. An idempotency token is active for 8 hours.
-     * </p>
+     * pass. For example, An issue might prevent you from getting a response from
+     * <code>UpdateDatasetEntries</code>. In this case, safely retry your call to
+     * <code>UpdateDatasetEntries</code> by using the same <code>ClientToken</code>
+     * parameter value.</p> <p>If you don't supply a value for
+     * <code>ClientToken</code>, the AWS SDK you are using inserts a value for you.
+     * This prevents retries after a network error from making multiple updates with
+     * the same dataset entries. You'll need to provide your own value for other use
+     * cases. </p> <p>An error occurs if the other input parameters are not the same as
+     * in the first request. Using a different value for <code>ClientToken</code> is
+     * considered a new call to <code>UpdateDatasetEntries</code>. An idempotency token
+     * is active for 8 hours. </p>
      */
     inline UpdateDatasetEntriesRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>ClientToken is an idempotency token that ensures a call to
      * <code>UpdateDatasetEntries</code> completes only once. You choose the value to
-     * pass. For example, An issue, such as an network outage, might prevent you from
-     * getting a response from <code>UpdateDatasetEntries</code>. In this case, safely
-     * retry your call to <code>UpdateDatasetEntries</code> by using the same
-     * <code>ClientToken</code> parameter value. An error occurs if the other input
-     * parameters are not the same as in the first request. Using a different value for
-     * <code>ClientToken</code> is considered a new call to
-     * <code>UpdateDatasetEntries</code>. An idempotency token is active for 8 hours.
-     * </p>
+     * pass. For example, An issue might prevent you from getting a response from
+     * <code>UpdateDatasetEntries</code>. In this case, safely retry your call to
+     * <code>UpdateDatasetEntries</code> by using the same <code>ClientToken</code>
+     * parameter value.</p> <p>If you don't supply a value for
+     * <code>ClientToken</code>, the AWS SDK you are using inserts a value for you.
+     * This prevents retries after a network error from making multiple updates with
+     * the same dataset entries. You'll need to provide your own value for other use
+     * cases. </p> <p>An error occurs if the other input parameters are not the same as
+     * in the first request. Using a different value for <code>ClientToken</code> is
+     * considered a new call to <code>UpdateDatasetEntries</code>. An idempotency token
+     * is active for 8 hours. </p>
      */
     inline UpdateDatasetEntriesRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

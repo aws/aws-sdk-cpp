@@ -400,6 +400,35 @@ namespace Model
      */
     inline AuthorizerDescription& WithSigningDisabled(bool value) { SetSigningDisabled(value); return *this;}
 
+
+    /**
+     * <p>When <code>true</code>, the result from the authorizer’s Lambda function is
+     * cached for the time specified in <code>refreshAfterInSeconds</code>. The cached
+     * result is used while the device reuses the same HTTP connection.</p>
+     */
+    inline bool GetEnableCachingForHttp() const{ return m_enableCachingForHttp; }
+
+    /**
+     * <p>When <code>true</code>, the result from the authorizer’s Lambda function is
+     * cached for the time specified in <code>refreshAfterInSeconds</code>. The cached
+     * result is used while the device reuses the same HTTP connection.</p>
+     */
+    inline bool EnableCachingForHttpHasBeenSet() const { return m_enableCachingForHttpHasBeenSet; }
+
+    /**
+     * <p>When <code>true</code>, the result from the authorizer’s Lambda function is
+     * cached for the time specified in <code>refreshAfterInSeconds</code>. The cached
+     * result is used while the device reuses the same HTTP connection.</p>
+     */
+    inline void SetEnableCachingForHttp(bool value) { m_enableCachingForHttpHasBeenSet = true; m_enableCachingForHttp = value; }
+
+    /**
+     * <p>When <code>true</code>, the result from the authorizer’s Lambda function is
+     * cached for the time specified in <code>refreshAfterInSeconds</code>. The cached
+     * result is used while the device reuses the same HTTP connection.</p>
+     */
+    inline AuthorizerDescription& WithEnableCachingForHttp(bool value) { SetEnableCachingForHttp(value); return *this;}
+
   private:
 
     Aws::String m_authorizerName;
@@ -428,6 +457,9 @@ namespace Model
 
     bool m_signingDisabled;
     bool m_signingDisabledHasBeenSet;
+
+    bool m_enableCachingForHttp;
+    bool m_enableCachingForHttpHasBeenSet;
   };
 
 } // namespace Model
