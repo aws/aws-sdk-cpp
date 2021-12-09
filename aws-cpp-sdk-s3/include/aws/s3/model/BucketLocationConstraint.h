@@ -41,7 +41,8 @@ namespace Model
     us_gov_west_1,
     us_west_1,
     us_west_2,
-    us_east_1
+    us_east_1,
+    us_iso_west_1
   };
 
 namespace BucketLocationConstraintMapper
