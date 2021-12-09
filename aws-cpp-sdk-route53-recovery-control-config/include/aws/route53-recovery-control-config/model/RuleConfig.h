@@ -26,8 +26,8 @@ namespace Model
   /**
    * <p>The rule configuration for an assertion rule. That is, the criteria that you
    * set for specific assertion controls (routing controls) that specify how many
-   * controls must be enabled after a transaction completes.</p><p><h3>See Also:</h3>
-   * <a
+   * control states must be ON after a transaction completes.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/RuleConfig">AWS
    * API Reference</a></p>
    */

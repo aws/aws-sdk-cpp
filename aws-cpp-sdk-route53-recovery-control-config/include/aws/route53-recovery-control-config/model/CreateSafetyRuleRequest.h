@@ -9,6 +9,7 @@
 #include <aws/route53-recovery-control-config/model/NewAssertionRule.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53-recovery-control-config/model/NewGatingRule.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -39,83 +40,189 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    
+    /**
+     * <p>The assertion rule requested.</p>
+     */
     inline const NewAssertionRule& GetAssertionRule() const{ return m_assertionRule; }
 
-    
+    /**
+     * <p>The assertion rule requested.</p>
+     */
     inline bool AssertionRuleHasBeenSet() const { return m_assertionRuleHasBeenSet; }
 
-    
+    /**
+     * <p>The assertion rule requested.</p>
+     */
     inline void SetAssertionRule(const NewAssertionRule& value) { m_assertionRuleHasBeenSet = true; m_assertionRule = value; }
 
-    
+    /**
+     * <p>The assertion rule requested.</p>
+     */
     inline void SetAssertionRule(NewAssertionRule&& value) { m_assertionRuleHasBeenSet = true; m_assertionRule = std::move(value); }
 
-    
+    /**
+     * <p>The assertion rule requested.</p>
+     */
     inline CreateSafetyRuleRequest& WithAssertionRule(const NewAssertionRule& value) { SetAssertionRule(value); return *this;}
 
-    
+    /**
+     * <p>The assertion rule requested.</p>
+     */
     inline CreateSafetyRuleRequest& WithAssertionRule(NewAssertionRule&& value) { SetAssertionRule(std::move(value)); return *this;}
 
 
     /**
-     * <p>Unique client idempotency token.</p>
+     * <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an
+     * idempotent API request with an action, specify a client token in the
+     * request.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>Unique client idempotency token.</p>
+     * <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an
+     * idempotent API request with an action, specify a client token in the
+     * request.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>Unique client idempotency token.</p>
+     * <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an
+     * idempotent API request with an action, specify a client token in the
+     * request.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>Unique client idempotency token.</p>
+     * <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an
+     * idempotent API request with an action, specify a client token in the
+     * request.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>Unique client idempotency token.</p>
+     * <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an
+     * idempotent API request with an action, specify a client token in the
+     * request.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>Unique client idempotency token.</p>
+     * <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an
+     * idempotent API request with an action, specify a client token in the
+     * request.</p>
      */
     inline CreateSafetyRuleRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>Unique client idempotency token.</p>
+     * <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an
+     * idempotent API request with an action, specify a client token in the
+     * request.</p>
      */
     inline CreateSafetyRuleRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>Unique client idempotency token.</p>
+     * <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an
+     * idempotent API request with an action, specify a client token in the
+     * request.</p>
      */
     inline CreateSafetyRuleRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
 
-    
+    /**
+     * <p>The gating rule requested.</p>
+     */
     inline const NewGatingRule& GetGatingRule() const{ return m_gatingRule; }
 
-    
+    /**
+     * <p>The gating rule requested.</p>
+     */
     inline bool GatingRuleHasBeenSet() const { return m_gatingRuleHasBeenSet; }
 
-    
+    /**
+     * <p>The gating rule requested.</p>
+     */
     inline void SetGatingRule(const NewGatingRule& value) { m_gatingRuleHasBeenSet = true; m_gatingRule = value; }
 
-    
+    /**
+     * <p>The gating rule requested.</p>
+     */
     inline void SetGatingRule(NewGatingRule&& value) { m_gatingRuleHasBeenSet = true; m_gatingRule = std::move(value); }
 
-    
+    /**
+     * <p>The gating rule requested.</p>
+     */
     inline CreateSafetyRuleRequest& WithGatingRule(const NewGatingRule& value) { SetGatingRule(value); return *this;}
 
-    
+    /**
+     * <p>The gating rule requested.</p>
+     */
     inline CreateSafetyRuleRequest& WithGatingRule(NewGatingRule&& value) { SetGatingRule(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The tags associated with the safety rule.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags associated with the safety rule.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags associated with the safety rule.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags associated with the safety rule.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags associated with the safety rule.</p>
+     */
+    inline CreateSafetyRuleRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags associated with the safety rule.</p>
+     */
+    inline CreateSafetyRuleRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags associated with the safety rule.</p>
+     */
+    inline CreateSafetyRuleRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags associated with the safety rule.</p>
+     */
+    inline CreateSafetyRuleRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags associated with the safety rule.</p>
+     */
+    inline CreateSafetyRuleRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags associated with the safety rule.</p>
+     */
+    inline CreateSafetyRuleRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags associated with the safety rule.</p>
+     */
+    inline CreateSafetyRuleRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags associated with the safety rule.</p>
+     */
+    inline CreateSafetyRuleRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags associated with the safety rule.</p>
+     */
+    inline CreateSafetyRuleRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
 
@@ -127,6 +234,9 @@ namespace Model
 
     NewGatingRule m_gatingRule;
     bool m_gatingRuleHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

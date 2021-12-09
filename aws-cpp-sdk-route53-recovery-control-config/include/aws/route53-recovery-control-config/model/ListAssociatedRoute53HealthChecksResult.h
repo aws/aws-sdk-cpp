@@ -75,37 +75,37 @@ namespace Model
 
 
     /**
-     * <p>The token that identifies which batch of results you want to see.</p>
+     * <p>Next token for listing health checks.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token that identifies which batch of results you want to see.</p>
+     * <p>Next token for listing health checks.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The token that identifies which batch of results you want to see.</p>
+     * <p>Next token for listing health checks.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The token that identifies which batch of results you want to see.</p>
+     * <p>Next token for listing health checks.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The token that identifies which batch of results you want to see.</p>
+     * <p>Next token for listing health checks.</p>
      */
     inline ListAssociatedRoute53HealthChecksResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token that identifies which batch of results you want to see.</p>
+     * <p>Next token for listing health checks.</p>
      */
     inline ListAssociatedRoute53HealthChecksResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token that identifies which batch of results you want to see.</p>
+     * <p>Next token for listing health checks.</p>
      */
     inline ListAssociatedRoute53HealthChecksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

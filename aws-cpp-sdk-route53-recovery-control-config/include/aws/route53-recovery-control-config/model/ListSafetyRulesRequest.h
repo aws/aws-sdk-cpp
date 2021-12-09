@@ -39,50 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the control panel that you're getting
-     * details for.</p>
+     * <p>The Amazon Resource Name (ARN) of the control panel.</p>
      */
     inline const Aws::String& GetControlPanelArn() const{ return m_controlPanelArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the control panel that you're getting
-     * details for.</p>
+     * <p>The Amazon Resource Name (ARN) of the control panel.</p>
      */
     inline bool ControlPanelArnHasBeenSet() const { return m_controlPanelArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the control panel that you're getting
-     * details for.</p>
+     * <p>The Amazon Resource Name (ARN) of the control panel.</p>
      */
     inline void SetControlPanelArn(const Aws::String& value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the control panel that you're getting
-     * details for.</p>
+     * <p>The Amazon Resource Name (ARN) of the control panel.</p>
      */
     inline void SetControlPanelArn(Aws::String&& value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the control panel that you're getting
-     * details for.</p>
+     * <p>The Amazon Resource Name (ARN) of the control panel.</p>
      */
     inline void SetControlPanelArn(const char* value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the control panel that you're getting
-     * details for.</p>
+     * <p>The Amazon Resource Name (ARN) of the control panel.</p>
      */
     inline ListSafetyRulesRequest& WithControlPanelArn(const Aws::String& value) { SetControlPanelArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the control panel that you're getting
-     * details for.</p>
+     * <p>The Amazon Resource Name (ARN) of the control panel.</p>
      */
     inline ListSafetyRulesRequest& WithControlPanelArn(Aws::String&& value) { SetControlPanelArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the control panel that you're getting
-     * details for.</p>
+     * <p>The Amazon Resource Name (ARN) of the control panel.</p>
      */
     inline ListSafetyRulesRequest& WithControlPanelArn(const char* value) { SetControlPanelArn(value); return *this;}
 

@@ -23,7 +23,9 @@ SlotTypeSummary::SlotTypeSummary() :
     m_slotTypeNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_parentSlotTypeSignatureHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+    m_lastUpdatedDateTimeHasBeenSet(false),
+    m_slotTypeCategory(SlotTypeCategory::NOT_SET),
+    m_slotTypeCategoryHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ SlotTypeSummary::SlotTypeSummary(JsonView jsonValue) :
     m_slotTypeNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_parentSlotTypeSignatureHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+    m_lastUpdatedDateTimeHasBeenSet(false),
+    m_slotTypeCategory(SlotTypeCategory::NOT_SET),
+    m_slotTypeCategoryHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +78,13 @@ SlotTypeSummary& SlotTypeSummary::operator =(JsonView jsonValue)
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("slotTypeCategory"))
+  {
+    m_slotTypeCategory = SlotTypeCategoryMapper::GetSlotTypeCategoryForName(jsonValue.GetString("slotTypeCategory"));
+
+    m_slotTypeCategoryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +119,11 @@ JsonValue SlotTypeSummary::Jsonize() const
   if(m_lastUpdatedDateTimeHasBeenSet)
   {
    payload.WithDouble("lastUpdatedDateTime", m_lastUpdatedDateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_slotTypeCategoryHasBeenSet)
+  {
+   payload.WithString("slotTypeCategory", SlotTypeCategoryMapper::GetNameForSlotTypeCategory(m_slotTypeCategory));
   }
 
   return payload;

@@ -16,7 +16,8 @@ namespace Model
   enum class SlotTypeFilterName
   {
     NOT_SET,
-    SlotTypeName
+    SlotTypeName,
+    ExternalSourceType
   };
 
 namespace SlotTypeFilterNameMapper

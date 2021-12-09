@@ -24,6 +24,7 @@
 #include <aws/route53domains/model/CancelDomainTransferToAnotherAwsAccountRequest.h>
 #include <aws/route53domains/model/CheckDomainAvailabilityRequest.h>
 #include <aws/route53domains/model/CheckDomainTransferabilityRequest.h>
+#include <aws/route53domains/model/DeleteDomainRequest.h>
 #include <aws/route53domains/model/DeleteTagsForDomainRequest.h>
 #include <aws/route53domains/model/DisableDomainAutoRenewRequest.h>
 #include <aws/route53domains/model/DisableDomainTransferLockRequest.h>
@@ -35,6 +36,7 @@
 #include <aws/route53domains/model/GetOperationDetailRequest.h>
 #include <aws/route53domains/model/ListDomainsRequest.h>
 #include <aws/route53domains/model/ListOperationsRequest.h>
+#include <aws/route53domains/model/ListPricesRequest.h>
 #include <aws/route53domains/model/ListTagsForDomainRequest.h>
 #include <aws/route53domains/model/RegisterDomainRequest.h>
 #include <aws/route53domains/model/RejectDomainTransferFromAnotherAwsAccountRequest.h>
@@ -216,6 +218,30 @@ void Route53DomainsClient::CheckDomainTransferabilityAsync(const CheckDomainTran
 void Route53DomainsClient::CheckDomainTransferabilityAsyncHelper(const CheckDomainTransferabilityRequest& request, const CheckDomainTransferabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CheckDomainTransferability(request), context);
+}
+
+DeleteDomainOutcome Route53DomainsClient::DeleteDomain(const DeleteDomainRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteDomainOutcomeCallable Route53DomainsClient::DeleteDomainCallable(const DeleteDomainRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDomain(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53DomainsClient::DeleteDomainAsync(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteDomainAsyncHelper( request, handler, context ); } );
+}
+
+void Route53DomainsClient::DeleteDomainAsyncHelper(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteDomain(request), context);
 }
 
 DeleteTagsForDomainOutcome Route53DomainsClient::DeleteTagsForDomain(const DeleteTagsForDomainRequest& request) const
@@ -480,6 +506,30 @@ void Route53DomainsClient::ListOperationsAsync(const ListOperationsRequest& requ
 void Route53DomainsClient::ListOperationsAsyncHelper(const ListOperationsRequest& request, const ListOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListOperations(request), context);
+}
+
+ListPricesOutcome Route53DomainsClient::ListPrices(const ListPricesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListPricesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListPricesOutcomeCallable Route53DomainsClient::ListPricesCallable(const ListPricesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListPricesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPrices(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53DomainsClient::ListPricesAsync(const ListPricesRequest& request, const ListPricesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListPricesAsyncHelper( request, handler, context ); } );
+}
+
+void Route53DomainsClient::ListPricesAsyncHelper(const ListPricesRequest& request, const ListPricesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListPrices(request), context);
 }
 
 ListTagsForDomainOutcome Route53DomainsClient::ListTagsForDomain(const ListTagsForDomainRequest& request) const

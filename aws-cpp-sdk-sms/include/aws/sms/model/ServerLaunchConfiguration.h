@@ -73,42 +73,42 @@ namespace Model
 
 
     /**
-     * <p>The logical ID of the server in the AWS CloudFormation template.</p>
+     * <p>The logical ID of the server in the CloudFormation template.</p>
      */
     inline const Aws::String& GetLogicalId() const{ return m_logicalId; }
 
     /**
-     * <p>The logical ID of the server in the AWS CloudFormation template.</p>
+     * <p>The logical ID of the server in the CloudFormation template.</p>
      */
     inline bool LogicalIdHasBeenSet() const { return m_logicalIdHasBeenSet; }
 
     /**
-     * <p>The logical ID of the server in the AWS CloudFormation template.</p>
+     * <p>The logical ID of the server in the CloudFormation template.</p>
      */
     inline void SetLogicalId(const Aws::String& value) { m_logicalIdHasBeenSet = true; m_logicalId = value; }
 
     /**
-     * <p>The logical ID of the server in the AWS CloudFormation template.</p>
+     * <p>The logical ID of the server in the CloudFormation template.</p>
      */
     inline void SetLogicalId(Aws::String&& value) { m_logicalIdHasBeenSet = true; m_logicalId = std::move(value); }
 
     /**
-     * <p>The logical ID of the server in the AWS CloudFormation template.</p>
+     * <p>The logical ID of the server in the CloudFormation template.</p>
      */
     inline void SetLogicalId(const char* value) { m_logicalIdHasBeenSet = true; m_logicalId.assign(value); }
 
     /**
-     * <p>The logical ID of the server in the AWS CloudFormation template.</p>
+     * <p>The logical ID of the server in the CloudFormation template.</p>
      */
     inline ServerLaunchConfiguration& WithLogicalId(const Aws::String& value) { SetLogicalId(value); return *this;}
 
     /**
-     * <p>The logical ID of the server in the AWS CloudFormation template.</p>
+     * <p>The logical ID of the server in the CloudFormation template.</p>
      */
     inline ServerLaunchConfiguration& WithLogicalId(Aws::String&& value) { SetLogicalId(std::move(value)); return *this;}
 
     /**
-     * <p>The logical ID of the server in the AWS CloudFormation template.</p>
+     * <p>The logical ID of the server in the CloudFormation template.</p>
      */
     inline ServerLaunchConfiguration& WithLogicalId(const char* value) { SetLogicalId(value); return *this;}
 

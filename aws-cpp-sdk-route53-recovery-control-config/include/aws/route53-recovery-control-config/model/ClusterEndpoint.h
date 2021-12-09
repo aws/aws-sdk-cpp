@@ -42,7 +42,7 @@ namespace Model
      * <p>A cluster endpoint. Specify an endpoint and Amazon Web Services Region when
      * you want to set or retrieve a routing control state in the cluster.</p> <p>To
      * get or update the routing control state, see the Amazon Route 53 Application
-     * Recovery Controller Cluster (Data Plane) Actions.</p>
+     * Recovery Controller Routing Control Actions.</p>
      */
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
 
@@ -50,7 +50,7 @@ namespace Model
      * <p>A cluster endpoint. Specify an endpoint and Amazon Web Services Region when
      * you want to set or retrieve a routing control state in the cluster.</p> <p>To
      * get or update the routing control state, see the Amazon Route 53 Application
-     * Recovery Controller Cluster (Data Plane) Actions.</p>
+     * Recovery Controller Routing Control Actions.</p>
      */
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
 
@@ -58,7 +58,7 @@ namespace Model
      * <p>A cluster endpoint. Specify an endpoint and Amazon Web Services Region when
      * you want to set or retrieve a routing control state in the cluster.</p> <p>To
      * get or update the routing control state, see the Amazon Route 53 Application
-     * Recovery Controller Cluster (Data Plane) Actions.</p>
+     * Recovery Controller Routing Control Actions.</p>
      */
     inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
@@ -66,7 +66,7 @@ namespace Model
      * <p>A cluster endpoint. Specify an endpoint and Amazon Web Services Region when
      * you want to set or retrieve a routing control state in the cluster.</p> <p>To
      * get or update the routing control state, see the Amazon Route 53 Application
-     * Recovery Controller Cluster (Data Plane) Actions.</p>
+     * Recovery Controller Routing Control Actions.</p>
      */
     inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
 
@@ -74,7 +74,7 @@ namespace Model
      * <p>A cluster endpoint. Specify an endpoint and Amazon Web Services Region when
      * you want to set or retrieve a routing control state in the cluster.</p> <p>To
      * get or update the routing control state, see the Amazon Route 53 Application
-     * Recovery Controller Cluster (Data Plane) Actions.</p>
+     * Recovery Controller Routing Control Actions.</p>
      */
     inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
 
@@ -82,7 +82,7 @@ namespace Model
      * <p>A cluster endpoint. Specify an endpoint and Amazon Web Services Region when
      * you want to set or retrieve a routing control state in the cluster.</p> <p>To
      * get or update the routing control state, see the Amazon Route 53 Application
-     * Recovery Controller Cluster (Data Plane) Actions.</p>
+     * Recovery Controller Routing Control Actions.</p>
      */
     inline ClusterEndpoint& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
 
@@ -90,7 +90,7 @@ namespace Model
      * <p>A cluster endpoint. Specify an endpoint and Amazon Web Services Region when
      * you want to set or retrieve a routing control state in the cluster.</p> <p>To
      * get or update the routing control state, see the Amazon Route 53 Application
-     * Recovery Controller Cluster (Data Plane) Actions.</p>
+     * Recovery Controller Routing Control Actions.</p>
      */
     inline ClusterEndpoint& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
 
@@ -98,7 +98,7 @@ namespace Model
      * <p>A cluster endpoint. Specify an endpoint and Amazon Web Services Region when
      * you want to set or retrieve a routing control state in the cluster.</p> <p>To
      * get or update the routing control state, see the Amazon Route 53 Application
-     * Recovery Controller Cluster (Data Plane) Actions.</p>
+     * Recovery Controller Routing Control Actions.</p>
      */
     inline ClusterEndpoint& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
 

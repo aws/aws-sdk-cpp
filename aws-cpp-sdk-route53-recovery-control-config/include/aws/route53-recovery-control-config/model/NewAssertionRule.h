@@ -204,61 +204,61 @@ namespace Model
 
     /**
      * <p>The criteria that you set for specific assertion controls (routing controls)
-     * that designate how many controls must be enabled as the result of a transaction.
-     * For example, if you have three assertion controls, you might specify atleast 2
-     * for your rule configuration. This means that at least two assertion controls
-     * must be enabled, so that at least two Amazon Web Services Regions are
-     * enabled.</p>
+     * that designate how many control states must be ON as the result of a
+     * transaction. For example, if you have three assertion controls, you might
+     * specify ATLEAST 2for your rule configuration. This means that at least two
+     * assertion controls must be ON, so that at least two Amazon Web Services Regions
+     * have traffic flowing to them.</p>
      */
     inline const RuleConfig& GetRuleConfig() const{ return m_ruleConfig; }
 
     /**
      * <p>The criteria that you set for specific assertion controls (routing controls)
-     * that designate how many controls must be enabled as the result of a transaction.
-     * For example, if you have three assertion controls, you might specify atleast 2
-     * for your rule configuration. This means that at least two assertion controls
-     * must be enabled, so that at least two Amazon Web Services Regions are
-     * enabled.</p>
+     * that designate how many control states must be ON as the result of a
+     * transaction. For example, if you have three assertion controls, you might
+     * specify ATLEAST 2for your rule configuration. This means that at least two
+     * assertion controls must be ON, so that at least two Amazon Web Services Regions
+     * have traffic flowing to them.</p>
      */
     inline bool RuleConfigHasBeenSet() const { return m_ruleConfigHasBeenSet; }
 
     /**
      * <p>The criteria that you set for specific assertion controls (routing controls)
-     * that designate how many controls must be enabled as the result of a transaction.
-     * For example, if you have three assertion controls, you might specify atleast 2
-     * for your rule configuration. This means that at least two assertion controls
-     * must be enabled, so that at least two Amazon Web Services Regions are
-     * enabled.</p>
+     * that designate how many control states must be ON as the result of a
+     * transaction. For example, if you have three assertion controls, you might
+     * specify ATLEAST 2for your rule configuration. This means that at least two
+     * assertion controls must be ON, so that at least two Amazon Web Services Regions
+     * have traffic flowing to them.</p>
      */
     inline void SetRuleConfig(const RuleConfig& value) { m_ruleConfigHasBeenSet = true; m_ruleConfig = value; }
 
     /**
      * <p>The criteria that you set for specific assertion controls (routing controls)
-     * that designate how many controls must be enabled as the result of a transaction.
-     * For example, if you have three assertion controls, you might specify atleast 2
-     * for your rule configuration. This means that at least two assertion controls
-     * must be enabled, so that at least two Amazon Web Services Regions are
-     * enabled.</p>
+     * that designate how many control states must be ON as the result of a
+     * transaction. For example, if you have three assertion controls, you might
+     * specify ATLEAST 2for your rule configuration. This means that at least two
+     * assertion controls must be ON, so that at least two Amazon Web Services Regions
+     * have traffic flowing to them.</p>
      */
     inline void SetRuleConfig(RuleConfig&& value) { m_ruleConfigHasBeenSet = true; m_ruleConfig = std::move(value); }
 
     /**
      * <p>The criteria that you set for specific assertion controls (routing controls)
-     * that designate how many controls must be enabled as the result of a transaction.
-     * For example, if you have three assertion controls, you might specify atleast 2
-     * for your rule configuration. This means that at least two assertion controls
-     * must be enabled, so that at least two Amazon Web Services Regions are
-     * enabled.</p>
+     * that designate how many control states must be ON as the result of a
+     * transaction. For example, if you have three assertion controls, you might
+     * specify ATLEAST 2for your rule configuration. This means that at least two
+     * assertion controls must be ON, so that at least two Amazon Web Services Regions
+     * have traffic flowing to them.</p>
      */
     inline NewAssertionRule& WithRuleConfig(const RuleConfig& value) { SetRuleConfig(value); return *this;}
 
     /**
      * <p>The criteria that you set for specific assertion controls (routing controls)
-     * that designate how many controls must be enabled as the result of a transaction.
-     * For example, if you have three assertion controls, you might specify atleast 2
-     * for your rule configuration. This means that at least two assertion controls
-     * must be enabled, so that at least two Amazon Web Services Regions are
-     * enabled.</p>
+     * that designate how many control states must be ON as the result of a
+     * transaction. For example, if you have three assertion controls, you might
+     * specify ATLEAST 2for your rule configuration. This means that at least two
+     * assertion controls must be ON, so that at least two Amazon Web Services Regions
+     * have traffic flowing to them.</p>
      */
     inline NewAssertionRule& WithRuleConfig(RuleConfig&& value) { SetRuleConfig(std::move(value)); return *this;}
 

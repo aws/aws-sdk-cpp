@@ -16,7 +16,8 @@ CreateControlPanelRequest::CreateControlPanelRequest() :
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_clusterArnHasBeenSet(false),
-    m_controlPanelNameHasBeenSet(false)
+    m_controlPanelNameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -39,6 +40,17 @@ Aws::String CreateControlPanelRequest::SerializePayload() const
   if(m_controlPanelNameHasBeenSet)
   {
    payload.WithString("ControlPanelName", m_controlPanelName);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

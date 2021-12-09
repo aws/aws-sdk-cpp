@@ -21,7 +21,8 @@ UpdateSlotTypeRequest::UpdateSlotTypeRequest() :
     m_parentSlotTypeSignatureHasBeenSet(false),
     m_botIdHasBeenSet(false),
     m_botVersionHasBeenSet(false),
-    m_localeIdHasBeenSet(false)
+    m_localeIdHasBeenSet(false),
+    m_externalSourceSettingHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,12 @@ Aws::String UpdateSlotTypeRequest::SerializePayload() const
   if(m_parentSlotTypeSignatureHasBeenSet)
   {
    payload.WithString("parentSlotTypeSignature", m_parentSlotTypeSignature);
+
+  }
+
+  if(m_externalSourceSettingHasBeenSet)
+  {
+   payload.WithObject("externalSourceSetting", m_externalSourceSetting.Jsonize());
 
   }
 

@@ -40,67 +40,67 @@ namespace Model
 
     /**
      * <p>Indicates how to manage the order of stateful rule evaluation for the policy.
-     * By default, Network Firewall leaves the rule evaluation order up to the Suricata
-     * rule processing engine. If you set this to <code>STRICT_ORDER</code>, your rules
-     * are evaluated in the exact order that you provide them in the policy. With
-     * strict ordering, the rule groups are evaluated by order of priority, starting
-     * from the lowest number, and the rules in each rule group are processed in the
-     * order that they're defined. </p>
+     * <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are
+     * provided to the rule engine as Suricata compatible strings, and Suricata
+     * evaluates them based on certain settings. For more information, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
+     * order for stateful rules</a> in the <i>AWS Network Firewall Developer Guide</i>.
+     * </p>
      */
     inline const RuleOrder& GetRuleOrder() const{ return m_ruleOrder; }
 
     /**
      * <p>Indicates how to manage the order of stateful rule evaluation for the policy.
-     * By default, Network Firewall leaves the rule evaluation order up to the Suricata
-     * rule processing engine. If you set this to <code>STRICT_ORDER</code>, your rules
-     * are evaluated in the exact order that you provide them in the policy. With
-     * strict ordering, the rule groups are evaluated by order of priority, starting
-     * from the lowest number, and the rules in each rule group are processed in the
-     * order that they're defined. </p>
+     * <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are
+     * provided to the rule engine as Suricata compatible strings, and Suricata
+     * evaluates them based on certain settings. For more information, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
+     * order for stateful rules</a> in the <i>AWS Network Firewall Developer Guide</i>.
+     * </p>
      */
     inline bool RuleOrderHasBeenSet() const { return m_ruleOrderHasBeenSet; }
 
     /**
      * <p>Indicates how to manage the order of stateful rule evaluation for the policy.
-     * By default, Network Firewall leaves the rule evaluation order up to the Suricata
-     * rule processing engine. If you set this to <code>STRICT_ORDER</code>, your rules
-     * are evaluated in the exact order that you provide them in the policy. With
-     * strict ordering, the rule groups are evaluated by order of priority, starting
-     * from the lowest number, and the rules in each rule group are processed in the
-     * order that they're defined. </p>
+     * <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are
+     * provided to the rule engine as Suricata compatible strings, and Suricata
+     * evaluates them based on certain settings. For more information, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
+     * order for stateful rules</a> in the <i>AWS Network Firewall Developer Guide</i>.
+     * </p>
      */
     inline void SetRuleOrder(const RuleOrder& value) { m_ruleOrderHasBeenSet = true; m_ruleOrder = value; }
 
     /**
      * <p>Indicates how to manage the order of stateful rule evaluation for the policy.
-     * By default, Network Firewall leaves the rule evaluation order up to the Suricata
-     * rule processing engine. If you set this to <code>STRICT_ORDER</code>, your rules
-     * are evaluated in the exact order that you provide them in the policy. With
-     * strict ordering, the rule groups are evaluated by order of priority, starting
-     * from the lowest number, and the rules in each rule group are processed in the
-     * order that they're defined. </p>
+     * <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are
+     * provided to the rule engine as Suricata compatible strings, and Suricata
+     * evaluates them based on certain settings. For more information, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
+     * order for stateful rules</a> in the <i>AWS Network Firewall Developer Guide</i>.
+     * </p>
      */
     inline void SetRuleOrder(RuleOrder&& value) { m_ruleOrderHasBeenSet = true; m_ruleOrder = std::move(value); }
 
     /**
      * <p>Indicates how to manage the order of stateful rule evaluation for the policy.
-     * By default, Network Firewall leaves the rule evaluation order up to the Suricata
-     * rule processing engine. If you set this to <code>STRICT_ORDER</code>, your rules
-     * are evaluated in the exact order that you provide them in the policy. With
-     * strict ordering, the rule groups are evaluated by order of priority, starting
-     * from the lowest number, and the rules in each rule group are processed in the
-     * order that they're defined. </p>
+     * <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are
+     * provided to the rule engine as Suricata compatible strings, and Suricata
+     * evaluates them based on certain settings. For more information, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
+     * order for stateful rules</a> in the <i>AWS Network Firewall Developer Guide</i>.
+     * </p>
      */
     inline StatefulEngineOptions& WithRuleOrder(const RuleOrder& value) { SetRuleOrder(value); return *this;}
 
     /**
      * <p>Indicates how to manage the order of stateful rule evaluation for the policy.
-     * By default, Network Firewall leaves the rule evaluation order up to the Suricata
-     * rule processing engine. If you set this to <code>STRICT_ORDER</code>, your rules
-     * are evaluated in the exact order that you provide them in the policy. With
-     * strict ordering, the rule groups are evaluated by order of priority, starting
-     * from the lowest number, and the rules in each rule group are processed in the
-     * order that they're defined. </p>
+     * <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are
+     * provided to the rule engine as Suricata compatible strings, and Suricata
+     * evaluates them based on certain settings. For more information, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
+     * order for stateful rules</a> in the <i>AWS Network Firewall Developer Guide</i>.
+     * </p>
      */
     inline StatefulEngineOptions& WithRuleOrder(RuleOrder&& value) { SetRuleOrder(std::move(value)); return *this;}
 

@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int SlotTypeName_HASH = HashingUtils::HashString("SlotTypeName");
+        static const int ExternalSourceType_HASH = HashingUtils::HashString("ExternalSourceType");
 
 
         SlotTypeFilterName GetSlotTypeFilterNameForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == SlotTypeName_HASH)
           {
             return SlotTypeFilterName::SlotTypeName;
+          }
+          else if (hashCode == ExternalSourceType_HASH)
+          {
+            return SlotTypeFilterName::ExternalSourceType;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case SlotTypeFilterName::SlotTypeName:
             return "SlotTypeName";
+          case SlotTypeFilterName::ExternalSourceType:
+            return "ExternalSourceType";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -27,10 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>A cluster is a set of five consensus-forming Regional endpoints that
-   * represent the infrastructure that hosts your routing controls. Typically, you
-   * host together on one cluster all of the routing controls for your
-   * applications.</p><p><h3>See Also:</h3>   <a
+   * <p>A set of five redundant Regional endpoints against which you can execute API
+   * calls to update or get the state of routing controls. You can host multiple
+   * control panels and routing controls on one cluster.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/Cluster">AWS
    * API Reference</a></p>
    */
@@ -88,7 +88,7 @@ namespace Model
      * <p>Endpoints for a cluster. Specify one of these endpoints when you want to set
      * or retrieve a routing control state in the cluster.</p> <p>To get or update the
      * routing control state, see the Amazon Route 53 Application Recovery Controller
-     * Cluster (Data Plane) Actions.</p>
+     * Routing Control Actions.</p>
      */
     inline const Aws::Vector<ClusterEndpoint>& GetClusterEndpoints() const{ return m_clusterEndpoints; }
 
@@ -96,7 +96,7 @@ namespace Model
      * <p>Endpoints for a cluster. Specify one of these endpoints when you want to set
      * or retrieve a routing control state in the cluster.</p> <p>To get or update the
      * routing control state, see the Amazon Route 53 Application Recovery Controller
-     * Cluster (Data Plane) Actions.</p>
+     * Routing Control Actions.</p>
      */
     inline bool ClusterEndpointsHasBeenSet() const { return m_clusterEndpointsHasBeenSet; }
 
@@ -104,7 +104,7 @@ namespace Model
      * <p>Endpoints for a cluster. Specify one of these endpoints when you want to set
      * or retrieve a routing control state in the cluster.</p> <p>To get or update the
      * routing control state, see the Amazon Route 53 Application Recovery Controller
-     * Cluster (Data Plane) Actions.</p>
+     * Routing Control Actions.</p>
      */
     inline void SetClusterEndpoints(const Aws::Vector<ClusterEndpoint>& value) { m_clusterEndpointsHasBeenSet = true; m_clusterEndpoints = value; }
 
@@ -112,7 +112,7 @@ namespace Model
      * <p>Endpoints for a cluster. Specify one of these endpoints when you want to set
      * or retrieve a routing control state in the cluster.</p> <p>To get or update the
      * routing control state, see the Amazon Route 53 Application Recovery Controller
-     * Cluster (Data Plane) Actions.</p>
+     * Routing Control Actions.</p>
      */
     inline void SetClusterEndpoints(Aws::Vector<ClusterEndpoint>&& value) { m_clusterEndpointsHasBeenSet = true; m_clusterEndpoints = std::move(value); }
 
@@ -120,7 +120,7 @@ namespace Model
      * <p>Endpoints for a cluster. Specify one of these endpoints when you want to set
      * or retrieve a routing control state in the cluster.</p> <p>To get or update the
      * routing control state, see the Amazon Route 53 Application Recovery Controller
-     * Cluster (Data Plane) Actions.</p>
+     * Routing Control Actions.</p>
      */
     inline Cluster& WithClusterEndpoints(const Aws::Vector<ClusterEndpoint>& value) { SetClusterEndpoints(value); return *this;}
 
@@ -128,7 +128,7 @@ namespace Model
      * <p>Endpoints for a cluster. Specify one of these endpoints when you want to set
      * or retrieve a routing control state in the cluster.</p> <p>To get or update the
      * routing control state, see the Amazon Route 53 Application Recovery Controller
-     * Cluster (Data Plane) Actions.</p>
+     * Routing Control Actions.</p>
      */
     inline Cluster& WithClusterEndpoints(Aws::Vector<ClusterEndpoint>&& value) { SetClusterEndpoints(std::move(value)); return *this;}
 
@@ -136,7 +136,7 @@ namespace Model
      * <p>Endpoints for a cluster. Specify one of these endpoints when you want to set
      * or retrieve a routing control state in the cluster.</p> <p>To get or update the
      * routing control state, see the Amazon Route 53 Application Recovery Controller
-     * Cluster (Data Plane) Actions.</p>
+     * Routing Control Actions.</p>
      */
     inline Cluster& AddClusterEndpoints(const ClusterEndpoint& value) { m_clusterEndpointsHasBeenSet = true; m_clusterEndpoints.push_back(value); return *this; }
 
@@ -144,7 +144,7 @@ namespace Model
      * <p>Endpoints for a cluster. Specify one of these endpoints when you want to set
      * or retrieve a routing control state in the cluster.</p> <p>To get or update the
      * routing control state, see the Amazon Route 53 Application Recovery Controller
-     * Cluster (Data Plane) Actions.</p>
+     * Routing Control Actions.</p>
      */
     inline Cluster& AddClusterEndpoints(ClusterEndpoint&& value) { m_clusterEndpointsHasBeenSet = true; m_clusterEndpoints.push_back(std::move(value)); return *this; }
 

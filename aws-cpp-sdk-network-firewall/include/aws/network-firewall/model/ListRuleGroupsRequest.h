@@ -7,6 +7,7 @@
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/NetworkFirewallRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/network-firewall/model/ResourceManagedStatus.h>
 #include <utility>
 
 namespace Aws
@@ -139,6 +140,49 @@ namespace Model
      */
     inline ListRuleGroupsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>The scope of the request. The default setting of <code>ACCOUNT</code> or a
+     * setting of <code>NULL</code> returns all of the rule groups in your account. A
+     * setting of <code>MANAGED</code> returns all available managed rule groups.</p>
+     */
+    inline const ResourceManagedStatus& GetScope() const{ return m_scope; }
+
+    /**
+     * <p>The scope of the request. The default setting of <code>ACCOUNT</code> or a
+     * setting of <code>NULL</code> returns all of the rule groups in your account. A
+     * setting of <code>MANAGED</code> returns all available managed rule groups.</p>
+     */
+    inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
+
+    /**
+     * <p>The scope of the request. The default setting of <code>ACCOUNT</code> or a
+     * setting of <code>NULL</code> returns all of the rule groups in your account. A
+     * setting of <code>MANAGED</code> returns all available managed rule groups.</p>
+     */
+    inline void SetScope(const ResourceManagedStatus& value) { m_scopeHasBeenSet = true; m_scope = value; }
+
+    /**
+     * <p>The scope of the request. The default setting of <code>ACCOUNT</code> or a
+     * setting of <code>NULL</code> returns all of the rule groups in your account. A
+     * setting of <code>MANAGED</code> returns all available managed rule groups.</p>
+     */
+    inline void SetScope(ResourceManagedStatus&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
+
+    /**
+     * <p>The scope of the request. The default setting of <code>ACCOUNT</code> or a
+     * setting of <code>NULL</code> returns all of the rule groups in your account. A
+     * setting of <code>MANAGED</code> returns all available managed rule groups.</p>
+     */
+    inline ListRuleGroupsRequest& WithScope(const ResourceManagedStatus& value) { SetScope(value); return *this;}
+
+    /**
+     * <p>The scope of the request. The default setting of <code>ACCOUNT</code> or a
+     * setting of <code>NULL</code> returns all of the rule groups in your account. A
+     * setting of <code>MANAGED</code> returns all available managed rule groups.</p>
+     */
+    inline ListRuleGroupsRequest& WithScope(ResourceManagedStatus&& value) { SetScope(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -146,6 +190,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
+    ResourceManagedStatus m_scope;
+    bool m_scopeHasBeenSet;
   };
 
 } // namespace Model

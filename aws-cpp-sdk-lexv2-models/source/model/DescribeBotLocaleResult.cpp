@@ -132,6 +132,15 @@ DescribeBotLocaleResult& DescribeBotLocaleResult::operator =(const Aws::AmazonWe
     }
   }
 
+  if(jsonValue.ValueExists("recommendedActions"))
+  {
+    Array<JsonView> recommendedActionsJsonList = jsonValue.GetArray("recommendedActions");
+    for(unsigned recommendedActionsIndex = 0; recommendedActionsIndex < recommendedActionsJsonList.GetLength(); ++recommendedActionsIndex)
+    {
+      m_recommendedActions.push_back(recommendedActionsJsonList[recommendedActionsIndex].AsString());
+    }
+  }
+
 
 
   return *this;

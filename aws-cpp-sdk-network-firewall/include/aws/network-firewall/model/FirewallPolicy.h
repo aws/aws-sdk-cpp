@@ -475,55 +475,109 @@ namespace Model
 
     /**
      * <p>The default actions to take on a packet that doesn't match any stateful
-     * rules.</p>
+     * rules. The stateful default action is optional, and is only valid when using the
+     * strict rule order.</p> <p>Valid values of the stateful default action:</p> <ul>
+     * <li> <p>aws:drop_strict</p> </li> <li> <p>aws:drop_established</p> </li> <li>
+     * <p>aws:alert_strict</p> </li> <li> <p>aws:alert_established</p> </li> </ul>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-strict-rule-evaluation-order.html">Strict
+     * evaluation order</a> in the <i>AWS Network Firewall Developer Guide</i>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetStatefulDefaultActions() const{ return m_statefulDefaultActions; }
 
     /**
      * <p>The default actions to take on a packet that doesn't match any stateful
-     * rules.</p>
+     * rules. The stateful default action is optional, and is only valid when using the
+     * strict rule order.</p> <p>Valid values of the stateful default action:</p> <ul>
+     * <li> <p>aws:drop_strict</p> </li> <li> <p>aws:drop_established</p> </li> <li>
+     * <p>aws:alert_strict</p> </li> <li> <p>aws:alert_established</p> </li> </ul>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-strict-rule-evaluation-order.html">Strict
+     * evaluation order</a> in the <i>AWS Network Firewall Developer Guide</i>. </p>
      */
     inline bool StatefulDefaultActionsHasBeenSet() const { return m_statefulDefaultActionsHasBeenSet; }
 
     /**
      * <p>The default actions to take on a packet that doesn't match any stateful
-     * rules.</p>
+     * rules. The stateful default action is optional, and is only valid when using the
+     * strict rule order.</p> <p>Valid values of the stateful default action:</p> <ul>
+     * <li> <p>aws:drop_strict</p> </li> <li> <p>aws:drop_established</p> </li> <li>
+     * <p>aws:alert_strict</p> </li> <li> <p>aws:alert_established</p> </li> </ul>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-strict-rule-evaluation-order.html">Strict
+     * evaluation order</a> in the <i>AWS Network Firewall Developer Guide</i>. </p>
      */
     inline void SetStatefulDefaultActions(const Aws::Vector<Aws::String>& value) { m_statefulDefaultActionsHasBeenSet = true; m_statefulDefaultActions = value; }
 
     /**
      * <p>The default actions to take on a packet that doesn't match any stateful
-     * rules.</p>
+     * rules. The stateful default action is optional, and is only valid when using the
+     * strict rule order.</p> <p>Valid values of the stateful default action:</p> <ul>
+     * <li> <p>aws:drop_strict</p> </li> <li> <p>aws:drop_established</p> </li> <li>
+     * <p>aws:alert_strict</p> </li> <li> <p>aws:alert_established</p> </li> </ul>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-strict-rule-evaluation-order.html">Strict
+     * evaluation order</a> in the <i>AWS Network Firewall Developer Guide</i>. </p>
      */
     inline void SetStatefulDefaultActions(Aws::Vector<Aws::String>&& value) { m_statefulDefaultActionsHasBeenSet = true; m_statefulDefaultActions = std::move(value); }
 
     /**
      * <p>The default actions to take on a packet that doesn't match any stateful
-     * rules.</p>
+     * rules. The stateful default action is optional, and is only valid when using the
+     * strict rule order.</p> <p>Valid values of the stateful default action:</p> <ul>
+     * <li> <p>aws:drop_strict</p> </li> <li> <p>aws:drop_established</p> </li> <li>
+     * <p>aws:alert_strict</p> </li> <li> <p>aws:alert_established</p> </li> </ul>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-strict-rule-evaluation-order.html">Strict
+     * evaluation order</a> in the <i>AWS Network Firewall Developer Guide</i>. </p>
      */
     inline FirewallPolicy& WithStatefulDefaultActions(const Aws::Vector<Aws::String>& value) { SetStatefulDefaultActions(value); return *this;}
 
     /**
      * <p>The default actions to take on a packet that doesn't match any stateful
-     * rules.</p>
+     * rules. The stateful default action is optional, and is only valid when using the
+     * strict rule order.</p> <p>Valid values of the stateful default action:</p> <ul>
+     * <li> <p>aws:drop_strict</p> </li> <li> <p>aws:drop_established</p> </li> <li>
+     * <p>aws:alert_strict</p> </li> <li> <p>aws:alert_established</p> </li> </ul>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-strict-rule-evaluation-order.html">Strict
+     * evaluation order</a> in the <i>AWS Network Firewall Developer Guide</i>. </p>
      */
     inline FirewallPolicy& WithStatefulDefaultActions(Aws::Vector<Aws::String>&& value) { SetStatefulDefaultActions(std::move(value)); return *this;}
 
     /**
      * <p>The default actions to take on a packet that doesn't match any stateful
-     * rules.</p>
+     * rules. The stateful default action is optional, and is only valid when using the
+     * strict rule order.</p> <p>Valid values of the stateful default action:</p> <ul>
+     * <li> <p>aws:drop_strict</p> </li> <li> <p>aws:drop_established</p> </li> <li>
+     * <p>aws:alert_strict</p> </li> <li> <p>aws:alert_established</p> </li> </ul>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-strict-rule-evaluation-order.html">Strict
+     * evaluation order</a> in the <i>AWS Network Firewall Developer Guide</i>. </p>
      */
     inline FirewallPolicy& AddStatefulDefaultActions(const Aws::String& value) { m_statefulDefaultActionsHasBeenSet = true; m_statefulDefaultActions.push_back(value); return *this; }
 
     /**
      * <p>The default actions to take on a packet that doesn't match any stateful
-     * rules.</p>
+     * rules. The stateful default action is optional, and is only valid when using the
+     * strict rule order.</p> <p>Valid values of the stateful default action:</p> <ul>
+     * <li> <p>aws:drop_strict</p> </li> <li> <p>aws:drop_established</p> </li> <li>
+     * <p>aws:alert_strict</p> </li> <li> <p>aws:alert_established</p> </li> </ul>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-strict-rule-evaluation-order.html">Strict
+     * evaluation order</a> in the <i>AWS Network Firewall Developer Guide</i>. </p>
      */
     inline FirewallPolicy& AddStatefulDefaultActions(Aws::String&& value) { m_statefulDefaultActionsHasBeenSet = true; m_statefulDefaultActions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The default actions to take on a packet that doesn't match any stateful
-     * rules.</p>
+     * rules. The stateful default action is optional, and is only valid when using the
+     * strict rule order.</p> <p>Valid values of the stateful default action:</p> <ul>
+     * <li> <p>aws:drop_strict</p> </li> <li> <p>aws:drop_established</p> </li> <li>
+     * <p>aws:alert_strict</p> </li> <li> <p>aws:alert_established</p> </li> </ul>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-strict-rule-evaluation-order.html">Strict
+     * evaluation order</a> in the <i>AWS Network Firewall Developer Guide</i>. </p>
      */
     inline FirewallPolicy& AddStatefulDefaultActions(const char* value) { m_statefulDefaultActionsHasBeenSet = true; m_statefulDefaultActions.push_back(value); return *this; }
 

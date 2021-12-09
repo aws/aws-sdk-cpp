@@ -7,6 +7,7 @@
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/lexv2-models/model/SlotTypeCategory.h>
 #include <utility>
 
 namespace Aws
@@ -240,6 +241,97 @@ namespace Model
      */
     inline SlotTypeSummary& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates the type of the slot type.</p> <ul> <li> <p> <code>Custom</code> -
+     * A slot type that you created using custom values. For more information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating
+     * custom slot types</a>.</p> </li> <li> <p> <code>Extended</code> - A slot type
+     * created by extending the AMAZON.AlphaNumeric built-in slot type. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.</p>
+     * </li> <li> <p> <code>ExternalGrammar</code> - A slot type using a custom GRXML
+     * grammar to define values. For more information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a
+     * custom grammar slot type</a>.</p> </li> </ul>
+     */
+    inline const SlotTypeCategory& GetSlotTypeCategory() const{ return m_slotTypeCategory; }
+
+    /**
+     * <p>Indicates the type of the slot type.</p> <ul> <li> <p> <code>Custom</code> -
+     * A slot type that you created using custom values. For more information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating
+     * custom slot types</a>.</p> </li> <li> <p> <code>Extended</code> - A slot type
+     * created by extending the AMAZON.AlphaNumeric built-in slot type. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.</p>
+     * </li> <li> <p> <code>ExternalGrammar</code> - A slot type using a custom GRXML
+     * grammar to define values. For more information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a
+     * custom grammar slot type</a>.</p> </li> </ul>
+     */
+    inline bool SlotTypeCategoryHasBeenSet() const { return m_slotTypeCategoryHasBeenSet; }
+
+    /**
+     * <p>Indicates the type of the slot type.</p> <ul> <li> <p> <code>Custom</code> -
+     * A slot type that you created using custom values. For more information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating
+     * custom slot types</a>.</p> </li> <li> <p> <code>Extended</code> - A slot type
+     * created by extending the AMAZON.AlphaNumeric built-in slot type. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.</p>
+     * </li> <li> <p> <code>ExternalGrammar</code> - A slot type using a custom GRXML
+     * grammar to define values. For more information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a
+     * custom grammar slot type</a>.</p> </li> </ul>
+     */
+    inline void SetSlotTypeCategory(const SlotTypeCategory& value) { m_slotTypeCategoryHasBeenSet = true; m_slotTypeCategory = value; }
+
+    /**
+     * <p>Indicates the type of the slot type.</p> <ul> <li> <p> <code>Custom</code> -
+     * A slot type that you created using custom values. For more information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating
+     * custom slot types</a>.</p> </li> <li> <p> <code>Extended</code> - A slot type
+     * created by extending the AMAZON.AlphaNumeric built-in slot type. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.</p>
+     * </li> <li> <p> <code>ExternalGrammar</code> - A slot type using a custom GRXML
+     * grammar to define values. For more information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a
+     * custom grammar slot type</a>.</p> </li> </ul>
+     */
+    inline void SetSlotTypeCategory(SlotTypeCategory&& value) { m_slotTypeCategoryHasBeenSet = true; m_slotTypeCategory = std::move(value); }
+
+    /**
+     * <p>Indicates the type of the slot type.</p> <ul> <li> <p> <code>Custom</code> -
+     * A slot type that you created using custom values. For more information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating
+     * custom slot types</a>.</p> </li> <li> <p> <code>Extended</code> - A slot type
+     * created by extending the AMAZON.AlphaNumeric built-in slot type. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.</p>
+     * </li> <li> <p> <code>ExternalGrammar</code> - A slot type using a custom GRXML
+     * grammar to define values. For more information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a
+     * custom grammar slot type</a>.</p> </li> </ul>
+     */
+    inline SlotTypeSummary& WithSlotTypeCategory(const SlotTypeCategory& value) { SetSlotTypeCategory(value); return *this;}
+
+    /**
+     * <p>Indicates the type of the slot type.</p> <ul> <li> <p> <code>Custom</code> -
+     * A slot type that you created using custom values. For more information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating
+     * custom slot types</a>.</p> </li> <li> <p> <code>Extended</code> - A slot type
+     * created by extending the AMAZON.AlphaNumeric built-in slot type. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.</p>
+     * </li> <li> <p> <code>ExternalGrammar</code> - A slot type using a custom GRXML
+     * grammar to define values. For more information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a
+     * custom grammar slot type</a>.</p> </li> </ul>
+     */
+    inline SlotTypeSummary& WithSlotTypeCategory(SlotTypeCategory&& value) { SetSlotTypeCategory(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_slotTypeId;
@@ -256,6 +348,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
     bool m_lastUpdatedDateTimeHasBeenSet;
+
+    SlotTypeCategory m_slotTypeCategory;
+    bool m_slotTypeCategoryHasBeenSet;
   };
 
 } // namespace Model

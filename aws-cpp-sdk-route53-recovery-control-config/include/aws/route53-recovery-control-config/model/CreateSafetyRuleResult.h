@@ -33,35 +33,55 @@ namespace Model
     CreateSafetyRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The assertion rule created.</p>
+     */
     inline const AssertionRule& GetAssertionRule() const{ return m_assertionRule; }
 
-    
+    /**
+     * <p>The assertion rule created.</p>
+     */
     inline void SetAssertionRule(const AssertionRule& value) { m_assertionRule = value; }
 
-    
+    /**
+     * <p>The assertion rule created.</p>
+     */
     inline void SetAssertionRule(AssertionRule&& value) { m_assertionRule = std::move(value); }
 
-    
+    /**
+     * <p>The assertion rule created.</p>
+     */
     inline CreateSafetyRuleResult& WithAssertionRule(const AssertionRule& value) { SetAssertionRule(value); return *this;}
 
-    
+    /**
+     * <p>The assertion rule created.</p>
+     */
     inline CreateSafetyRuleResult& WithAssertionRule(AssertionRule&& value) { SetAssertionRule(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The gating rule created.</p>
+     */
     inline const GatingRule& GetGatingRule() const{ return m_gatingRule; }
 
-    
+    /**
+     * <p>The gating rule created.</p>
+     */
     inline void SetGatingRule(const GatingRule& value) { m_gatingRule = value; }
 
-    
+    /**
+     * <p>The gating rule created.</p>
+     */
     inline void SetGatingRule(GatingRule&& value) { m_gatingRule = std::move(value); }
 
-    
+    /**
+     * <p>The gating rule created.</p>
+     */
     inline CreateSafetyRuleResult& WithGatingRule(const GatingRule& value) { SetGatingRule(value); return *this;}
 
-    
+    /**
+     * <p>The gating rule created.</p>
+     */
     inline CreateSafetyRuleResult& WithGatingRule(GatingRule&& value) { SetGatingRule(std::move(value)); return *this;}
 
   private:

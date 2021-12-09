@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lexv2-models/model/SlotValueSelectionSetting.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/lexv2-models/model/ExternalSourceSetting.h>
 #include <aws/lexv2-models/model/SlotTypeValue.h>
 #include <utility>
 
@@ -420,6 +421,22 @@ namespace Model
      */
     inline UpdateSlotTypeResult& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
 
+
+    
+    inline const ExternalSourceSetting& GetExternalSourceSetting() const{ return m_externalSourceSetting; }
+
+    
+    inline void SetExternalSourceSetting(const ExternalSourceSetting& value) { m_externalSourceSetting = value; }
+
+    
+    inline void SetExternalSourceSetting(ExternalSourceSetting&& value) { m_externalSourceSetting = std::move(value); }
+
+    
+    inline UpdateSlotTypeResult& WithExternalSourceSetting(const ExternalSourceSetting& value) { SetExternalSourceSetting(value); return *this;}
+
+    
+    inline UpdateSlotTypeResult& WithExternalSourceSetting(ExternalSourceSetting&& value) { SetExternalSourceSetting(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_slotTypeId;
@@ -443,6 +460,8 @@ namespace Model
     Aws::Utils::DateTime m_creationDateTime;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
+
+    ExternalSourceSetting m_externalSourceSetting;
   };
 
 } // namespace Model

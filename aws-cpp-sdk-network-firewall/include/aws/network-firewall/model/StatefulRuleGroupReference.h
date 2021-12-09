@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/network-firewall/model/StatefulRuleGroupOverride.h>
 #include <utility>
 
 namespace Aws
@@ -131,6 +132,43 @@ namespace Model
      */
     inline StatefulRuleGroupReference& WithPriority(int value) { SetPriority(value); return *this;}
 
+
+    /**
+     * <p>The action that allows the policy owner to override the behavior of the rule
+     * group within a policy.</p>
+     */
+    inline const StatefulRuleGroupOverride& GetOverride() const{ return m_override; }
+
+    /**
+     * <p>The action that allows the policy owner to override the behavior of the rule
+     * group within a policy.</p>
+     */
+    inline bool OverrideHasBeenSet() const { return m_overrideHasBeenSet; }
+
+    /**
+     * <p>The action that allows the policy owner to override the behavior of the rule
+     * group within a policy.</p>
+     */
+    inline void SetOverride(const StatefulRuleGroupOverride& value) { m_overrideHasBeenSet = true; m_override = value; }
+
+    /**
+     * <p>The action that allows the policy owner to override the behavior of the rule
+     * group within a policy.</p>
+     */
+    inline void SetOverride(StatefulRuleGroupOverride&& value) { m_overrideHasBeenSet = true; m_override = std::move(value); }
+
+    /**
+     * <p>The action that allows the policy owner to override the behavior of the rule
+     * group within a policy.</p>
+     */
+    inline StatefulRuleGroupReference& WithOverride(const StatefulRuleGroupOverride& value) { SetOverride(value); return *this;}
+
+    /**
+     * <p>The action that allows the policy owner to override the behavior of the rule
+     * group within a policy.</p>
+     */
+    inline StatefulRuleGroupReference& WithOverride(StatefulRuleGroupOverride&& value) { SetOverride(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_resourceArn;
@@ -138,6 +176,9 @@ namespace Model
 
     int m_priority;
     bool m_priorityHasBeenSet;
+
+    StatefulRuleGroupOverride m_override;
+    bool m_overrideHasBeenSet;
   };
 
 } // namespace Model

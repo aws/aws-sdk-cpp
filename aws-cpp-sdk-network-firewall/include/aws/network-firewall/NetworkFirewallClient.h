@@ -25,6 +25,7 @@
 #include <aws/network-firewall/model/DescribeLoggingConfigurationResult.h>
 #include <aws/network-firewall/model/DescribeResourcePolicyResult.h>
 #include <aws/network-firewall/model/DescribeRuleGroupResult.h>
+#include <aws/network-firewall/model/DescribeRuleGroupMetadataResult.h>
 #include <aws/network-firewall/model/DisassociateSubnetsResult.h>
 #include <aws/network-firewall/model/ListFirewallPoliciesResult.h>
 #include <aws/network-firewall/model/ListFirewallsResult.h>
@@ -93,6 +94,7 @@ namespace Model
         class DescribeLoggingConfigurationRequest;
         class DescribeResourcePolicyRequest;
         class DescribeRuleGroupRequest;
+        class DescribeRuleGroupMetadataRequest;
         class DisassociateSubnetsRequest;
         class ListFirewallPoliciesRequest;
         class ListFirewallsRequest;
@@ -123,6 +125,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeLoggingConfigurationResult, NetworkFirewallError> DescribeLoggingConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribeResourcePolicyResult, NetworkFirewallError> DescribeResourcePolicyOutcome;
         typedef Aws::Utils::Outcome<DescribeRuleGroupResult, NetworkFirewallError> DescribeRuleGroupOutcome;
+        typedef Aws::Utils::Outcome<DescribeRuleGroupMetadataResult, NetworkFirewallError> DescribeRuleGroupMetadataOutcome;
         typedef Aws::Utils::Outcome<DisassociateSubnetsResult, NetworkFirewallError> DisassociateSubnetsOutcome;
         typedef Aws::Utils::Outcome<ListFirewallPoliciesResult, NetworkFirewallError> ListFirewallPoliciesOutcome;
         typedef Aws::Utils::Outcome<ListFirewallsResult, NetworkFirewallError> ListFirewallsOutcome;
@@ -153,6 +156,7 @@ namespace Model
         typedef std::future<DescribeLoggingConfigurationOutcome> DescribeLoggingConfigurationOutcomeCallable;
         typedef std::future<DescribeResourcePolicyOutcome> DescribeResourcePolicyOutcomeCallable;
         typedef std::future<DescribeRuleGroupOutcome> DescribeRuleGroupOutcomeCallable;
+        typedef std::future<DescribeRuleGroupMetadataOutcome> DescribeRuleGroupMetadataOutcomeCallable;
         typedef std::future<DisassociateSubnetsOutcome> DisassociateSubnetsOutcomeCallable;
         typedef std::future<ListFirewallPoliciesOutcome> ListFirewallPoliciesOutcomeCallable;
         typedef std::future<ListFirewallsOutcome> ListFirewallsOutcomeCallable;
@@ -186,6 +190,7 @@ namespace Model
     typedef std::function<void(const NetworkFirewallClient*, const Model::DescribeLoggingConfigurationRequest&, const Model::DescribeLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLoggingConfigurationResponseReceivedHandler;
     typedef std::function<void(const NetworkFirewallClient*, const Model::DescribeResourcePolicyRequest&, const Model::DescribeResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const NetworkFirewallClient*, const Model::DescribeRuleGroupRequest&, const Model::DescribeRuleGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRuleGroupResponseReceivedHandler;
+    typedef std::function<void(const NetworkFirewallClient*, const Model::DescribeRuleGroupMetadataRequest&, const Model::DescribeRuleGroupMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRuleGroupMetadataResponseReceivedHandler;
     typedef std::function<void(const NetworkFirewallClient*, const Model::DisassociateSubnetsRequest&, const Model::DisassociateSubnetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateSubnetsResponseReceivedHandler;
     typedef std::function<void(const NetworkFirewallClient*, const Model::ListFirewallPoliciesRequest&, const Model::ListFirewallPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFirewallPoliciesResponseReceivedHandler;
     typedef std::function<void(const NetworkFirewallClient*, const Model::ListFirewallsRequest&, const Model::ListFirewallsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFirewallsResponseReceivedHandler;
@@ -772,6 +777,40 @@ namespace Model
         virtual void DescribeRuleGroupAsync(const Model::DescribeRuleGroupRequest& request, const DescribeRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>High-level information about a rule group, returned by operations like create
+         * and describe. You can use the information provided in the metadata to retrieve
+         * and manage a rule group. You can retrieve all objects for a rule group by
+         * calling <a>DescribeRuleGroup</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroupMetadata">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRuleGroupMetadataOutcome DescribeRuleGroupMetadata(const Model::DescribeRuleGroupMetadataRequest& request) const;
+
+        /**
+         * <p>High-level information about a rule group, returned by operations like create
+         * and describe. You can use the information provided in the metadata to retrieve
+         * and manage a rule group. You can retrieve all objects for a rule group by
+         * calling <a>DescribeRuleGroup</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroupMetadata">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeRuleGroupMetadataOutcomeCallable DescribeRuleGroupMetadataCallable(const Model::DescribeRuleGroupMetadataRequest& request) const;
+
+        /**
+         * <p>High-level information about a rule group, returned by operations like create
+         * and describe. You can use the information provided in the metadata to retrieve
+         * and manage a rule group. You can retrieve all objects for a rule group by
+         * calling <a>DescribeRuleGroup</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroupMetadata">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeRuleGroupMetadataAsync(const Model::DescribeRuleGroupMetadataRequest& request, const DescribeRuleGroupMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Removes the specified subnet associations from the firewall. This removes the
          * firewall endpoints from the subnets and removes any network filtering
          * protections that the endpoints were providing. </p><p><h3>See Also:</h3>   <a
@@ -1200,14 +1239,20 @@ namespace Model
         virtual void UpdateFirewallPolicyAsync(const Model::UpdateFirewallPolicyRequest& request, const UpdateFirewallPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p/><p><h3>See Also:</h3>   <a
+         * <p>Modifies the flag, <code>ChangeProtection</code>, which indicates whether it
+         * is possible to change the firewall. If the flag is set to <code>TRUE</code>, the
+         * firewall is protected from changes. This setting helps protect against
+         * accidentally changing a firewall that's in use.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallPolicyChangeProtection">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateFirewallPolicyChangeProtectionOutcome UpdateFirewallPolicyChangeProtection(const Model::UpdateFirewallPolicyChangeProtectionRequest& request) const;
 
         /**
-         * <p/><p><h3>See Also:</h3>   <a
+         * <p>Modifies the flag, <code>ChangeProtection</code>, which indicates whether it
+         * is possible to change the firewall. If the flag is set to <code>TRUE</code>, the
+         * firewall is protected from changes. This setting helps protect against
+         * accidentally changing a firewall that's in use.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallPolicyChangeProtection">AWS
          * API Reference</a></p>
          *
@@ -1216,7 +1261,10 @@ namespace Model
         virtual Model::UpdateFirewallPolicyChangeProtectionOutcomeCallable UpdateFirewallPolicyChangeProtectionCallable(const Model::UpdateFirewallPolicyChangeProtectionRequest& request) const;
 
         /**
-         * <p/><p><h3>See Also:</h3>   <a
+         * <p>Modifies the flag, <code>ChangeProtection</code>, which indicates whether it
+         * is possible to change the firewall. If the flag is set to <code>TRUE</code>, the
+         * firewall is protected from changes. This setting helps protect against
+         * accidentally changing a firewall that's in use.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallPolicyChangeProtection">AWS
          * API Reference</a></p>
          *
@@ -1383,6 +1431,7 @@ namespace Model
         void DescribeLoggingConfigurationAsyncHelper(const Model::DescribeLoggingConfigurationRequest& request, const DescribeLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeResourcePolicyAsyncHelper(const Model::DescribeResourcePolicyRequest& request, const DescribeResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRuleGroupAsyncHelper(const Model::DescribeRuleGroupRequest& request, const DescribeRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeRuleGroupMetadataAsyncHelper(const Model::DescribeRuleGroupMetadataRequest& request, const DescribeRuleGroupMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateSubnetsAsyncHelper(const Model::DisassociateSubnetsRequest& request, const DisassociateSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFirewallPoliciesAsyncHelper(const Model::ListFirewallPoliciesRequest& request, const ListFirewallPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFirewallsAsyncHelper(const Model::ListFirewallsRequest& request, const ListFirewallsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lexv2-models/model/SlotValueSelectionSetting.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/lexv2-models/model/ExternalSourceSetting.h>
 #include <aws/lexv2-models/model/SlotTypeValue.h>
 #include <utility>
 
@@ -394,6 +395,32 @@ namespace Model
      */
     inline CreateSlotTypeResult& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The type of external information used to create the slot type.</p>
+     */
+    inline const ExternalSourceSetting& GetExternalSourceSetting() const{ return m_externalSourceSetting; }
+
+    /**
+     * <p>The type of external information used to create the slot type.</p>
+     */
+    inline void SetExternalSourceSetting(const ExternalSourceSetting& value) { m_externalSourceSetting = value; }
+
+    /**
+     * <p>The type of external information used to create the slot type.</p>
+     */
+    inline void SetExternalSourceSetting(ExternalSourceSetting&& value) { m_externalSourceSetting = std::move(value); }
+
+    /**
+     * <p>The type of external information used to create the slot type.</p>
+     */
+    inline CreateSlotTypeResult& WithExternalSourceSetting(const ExternalSourceSetting& value) { SetExternalSourceSetting(value); return *this;}
+
+    /**
+     * <p>The type of external information used to create the slot type.</p>
+     */
+    inline CreateSlotTypeResult& WithExternalSourceSetting(ExternalSourceSetting&& value) { SetExternalSourceSetting(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_slotTypeId;
@@ -415,6 +442,8 @@ namespace Model
     Aws::String m_localeId;
 
     Aws::Utils::DateTime m_creationDateTime;
+
+    ExternalSourceSetting m_externalSourceSetting;
   };
 
 } // namespace Model

@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 CreateClusterRequest::CreateClusterRequest() : 
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_clusterNameHasBeenSet(false)
+    m_clusterNameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -32,6 +33,17 @@ Aws::String CreateClusterRequest::SerializePayload() const
   if(m_clusterNameHasBeenSet)
   {
    payload.WithString("ClusterName", m_clusterName);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

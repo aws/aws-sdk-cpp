@@ -91,6 +91,12 @@ CreateSlotTypeResult& CreateSlotTypeResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("externalSourceSetting"))
+  {
+    m_externalSourceSetting = jsonValue.GetObject("externalSourceSetting");
+
+  }
+
 
 
   return *this;

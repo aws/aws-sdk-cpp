@@ -16,7 +16,8 @@ CreateSafetyRuleRequest::CreateSafetyRuleRequest() :
     m_assertionRuleHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_gatingRuleHasBeenSet(false)
+    m_gatingRuleHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -39,6 +40,17 @@ Aws::String CreateSafetyRuleRequest::SerializePayload() const
   if(m_gatingRuleHasBeenSet)
   {
    payload.WithObject("GatingRule", m_gatingRule.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

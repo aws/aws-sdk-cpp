@@ -178,43 +178,43 @@ namespace Model
 
     /**
      * <p>The criteria that you set for specific gating controls (routing controls)
-     * that designates how many controls must be enabled to allow you to change (set or
-     * unset) the target controls.</p>
+     * that designates how many control states must be ON to allow you to change (set
+     * or unset) the target control states.</p>
      */
     inline const RuleConfig& GetRuleConfig() const{ return m_ruleConfig; }
 
     /**
      * <p>The criteria that you set for specific gating controls (routing controls)
-     * that designates how many controls must be enabled to allow you to change (set or
-     * unset) the target controls.</p>
+     * that designates how many control states must be ON to allow you to change (set
+     * or unset) the target control states.</p>
      */
     inline bool RuleConfigHasBeenSet() const { return m_ruleConfigHasBeenSet; }
 
     /**
      * <p>The criteria that you set for specific gating controls (routing controls)
-     * that designates how many controls must be enabled to allow you to change (set or
-     * unset) the target controls.</p>
+     * that designates how many control states must be ON to allow you to change (set
+     * or unset) the target control states.</p>
      */
     inline void SetRuleConfig(const RuleConfig& value) { m_ruleConfigHasBeenSet = true; m_ruleConfig = value; }
 
     /**
      * <p>The criteria that you set for specific gating controls (routing controls)
-     * that designates how many controls must be enabled to allow you to change (set or
-     * unset) the target controls.</p>
+     * that designates how many control states must be ON to allow you to change (set
+     * or unset) the target control states.</p>
      */
     inline void SetRuleConfig(RuleConfig&& value) { m_ruleConfigHasBeenSet = true; m_ruleConfig = std::move(value); }
 
     /**
      * <p>The criteria that you set for specific gating controls (routing controls)
-     * that designates how many controls must be enabled to allow you to change (set or
-     * unset) the target controls.</p>
+     * that designates how many control states must be ON to allow you to change (set
+     * or unset) the target control states.</p>
      */
     inline NewGatingRule& WithRuleConfig(const RuleConfig& value) { SetRuleConfig(value); return *this;}
 
     /**
      * <p>The criteria that you set for specific gating controls (routing controls)
-     * that designates how many controls must be enabled to allow you to change (set or
-     * unset) the target controls.</p>
+     * that designates how many control states must be ON to allow you to change (set
+     * or unset) the target control states.</p>
      */
     inline NewGatingRule& WithRuleConfig(RuleConfig&& value) { SetRuleConfig(std::move(value)); return *this;}
 

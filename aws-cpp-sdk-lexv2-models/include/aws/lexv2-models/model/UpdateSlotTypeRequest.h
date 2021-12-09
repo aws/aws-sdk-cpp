@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lexv2-models/model/SlotValueSelectionSetting.h>
+#include <aws/lexv2-models/model/ExternalSourceSetting.h>
 #include <aws/lexv2-models/model/SlotTypeValue.h>
 #include <utility>
 
@@ -447,6 +448,25 @@ namespace Model
      */
     inline UpdateSlotTypeRequest& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
 
+
+    
+    inline const ExternalSourceSetting& GetExternalSourceSetting() const{ return m_externalSourceSetting; }
+
+    
+    inline bool ExternalSourceSettingHasBeenSet() const { return m_externalSourceSettingHasBeenSet; }
+
+    
+    inline void SetExternalSourceSetting(const ExternalSourceSetting& value) { m_externalSourceSettingHasBeenSet = true; m_externalSourceSetting = value; }
+
+    
+    inline void SetExternalSourceSetting(ExternalSourceSetting&& value) { m_externalSourceSettingHasBeenSet = true; m_externalSourceSetting = std::move(value); }
+
+    
+    inline UpdateSlotTypeRequest& WithExternalSourceSetting(const ExternalSourceSetting& value) { SetExternalSourceSetting(value); return *this;}
+
+    
+    inline UpdateSlotTypeRequest& WithExternalSourceSetting(ExternalSourceSetting&& value) { SetExternalSourceSetting(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_slotTypeId;
@@ -475,6 +495,9 @@ namespace Model
 
     Aws::String m_localeId;
     bool m_localeIdHasBeenSet;
+
+    ExternalSourceSetting m_externalSourceSetting;
+    bool m_externalSourceSettingHasBeenSet;
   };
 
 } // namespace Model

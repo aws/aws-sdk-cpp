@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lexv2-models/model/SlotValueSelectionSetting.h>
+#include <aws/lexv2-models/model/ExternalSourceSetting.h>
 #include <aws/lexv2-models/model/SlotTypeValue.h>
 #include <utility>
 
@@ -496,6 +497,37 @@ namespace Model
      */
     inline CreateSlotTypeRequest& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
 
+
+    /**
+     * <p>Sets the type of external information used to create the slot type.</p>
+     */
+    inline const ExternalSourceSetting& GetExternalSourceSetting() const{ return m_externalSourceSetting; }
+
+    /**
+     * <p>Sets the type of external information used to create the slot type.</p>
+     */
+    inline bool ExternalSourceSettingHasBeenSet() const { return m_externalSourceSettingHasBeenSet; }
+
+    /**
+     * <p>Sets the type of external information used to create the slot type.</p>
+     */
+    inline void SetExternalSourceSetting(const ExternalSourceSetting& value) { m_externalSourceSettingHasBeenSet = true; m_externalSourceSetting = value; }
+
+    /**
+     * <p>Sets the type of external information used to create the slot type.</p>
+     */
+    inline void SetExternalSourceSetting(ExternalSourceSetting&& value) { m_externalSourceSettingHasBeenSet = true; m_externalSourceSetting = std::move(value); }
+
+    /**
+     * <p>Sets the type of external information used to create the slot type.</p>
+     */
+    inline CreateSlotTypeRequest& WithExternalSourceSetting(const ExternalSourceSetting& value) { SetExternalSourceSetting(value); return *this;}
+
+    /**
+     * <p>Sets the type of external information used to create the slot type.</p>
+     */
+    inline CreateSlotTypeRequest& WithExternalSourceSetting(ExternalSourceSetting&& value) { SetExternalSourceSetting(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_slotTypeName;
@@ -521,6 +553,9 @@ namespace Model
 
     Aws::String m_localeId;
     bool m_localeIdHasBeenSet;
+
+    ExternalSourceSetting m_externalSourceSetting;
+    bool m_externalSourceSettingHasBeenSet;
   };
 
 } // namespace Model

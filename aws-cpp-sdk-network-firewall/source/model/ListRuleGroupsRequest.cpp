@@ -15,7 +15,9 @@ using namespace Aws::Utils;
 ListRuleGroupsRequest::ListRuleGroupsRequest() : 
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_scope(ResourceManagedStatus::NOT_SET),
+    m_scopeHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,11 @@ Aws::String ListRuleGroupsRequest::SerializePayload() const
   {
    payload.WithInteger("MaxResults", m_maxResults);
 
+  }
+
+  if(m_scopeHasBeenSet)
+  {
+   payload.WithString("Scope", ResourceManagedStatusMapper::GetNameForResourceManagedStatus(m_scope));
   }
 
   return payload.View().WriteReadable();

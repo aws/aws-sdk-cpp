@@ -127,11 +127,11 @@ namespace Model
 
     /**
      * <p>For an initial request for a list of billing records, omit this element. If
-     * the number of billing records that are associated with the current AWS account
-     * during the specified period is greater than the value that you specified for
-     * <code>MaxItems</code>, you can use <code>Marker</code> to return additional
-     * billing records. Get the value of <code>NextPageMarker</code> from the previous
-     * response, and submit another request that includes the value of
+     * the number of billing records that are associated with the current Amazon Web
+     * Services account during the specified period is greater than the value that you
+     * specified for <code>MaxItems</code>, you can use <code>Marker</code> to return
+     * additional billing records. Get the value of <code>NextPageMarker</code> from
+     * the previous response, and submit another request that includes the value of
      * <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
      * <p>Constraints: The marker must match the value of <code>NextPageMarker</code>
      * that was returned in the previous response.</p>
@@ -140,11 +140,11 @@ namespace Model
 
     /**
      * <p>For an initial request for a list of billing records, omit this element. If
-     * the number of billing records that are associated with the current AWS account
-     * during the specified period is greater than the value that you specified for
-     * <code>MaxItems</code>, you can use <code>Marker</code> to return additional
-     * billing records. Get the value of <code>NextPageMarker</code> from the previous
-     * response, and submit another request that includes the value of
+     * the number of billing records that are associated with the current Amazon Web
+     * Services account during the specified period is greater than the value that you
+     * specified for <code>MaxItems</code>, you can use <code>Marker</code> to return
+     * additional billing records. Get the value of <code>NextPageMarker</code> from
+     * the previous response, and submit another request that includes the value of
      * <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
      * <p>Constraints: The marker must match the value of <code>NextPageMarker</code>
      * that was returned in the previous response.</p>
@@ -153,11 +153,11 @@ namespace Model
 
     /**
      * <p>For an initial request for a list of billing records, omit this element. If
-     * the number of billing records that are associated with the current AWS account
-     * during the specified period is greater than the value that you specified for
-     * <code>MaxItems</code>, you can use <code>Marker</code> to return additional
-     * billing records. Get the value of <code>NextPageMarker</code> from the previous
-     * response, and submit another request that includes the value of
+     * the number of billing records that are associated with the current Amazon Web
+     * Services account during the specified period is greater than the value that you
+     * specified for <code>MaxItems</code>, you can use <code>Marker</code> to return
+     * additional billing records. Get the value of <code>NextPageMarker</code> from
+     * the previous response, and submit another request that includes the value of
      * <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
      * <p>Constraints: The marker must match the value of <code>NextPageMarker</code>
      * that was returned in the previous response.</p>
@@ -166,11 +166,11 @@ namespace Model
 
     /**
      * <p>For an initial request for a list of billing records, omit this element. If
-     * the number of billing records that are associated with the current AWS account
-     * during the specified period is greater than the value that you specified for
-     * <code>MaxItems</code>, you can use <code>Marker</code> to return additional
-     * billing records. Get the value of <code>NextPageMarker</code> from the previous
-     * response, and submit another request that includes the value of
+     * the number of billing records that are associated with the current Amazon Web
+     * Services account during the specified period is greater than the value that you
+     * specified for <code>MaxItems</code>, you can use <code>Marker</code> to return
+     * additional billing records. Get the value of <code>NextPageMarker</code> from
+     * the previous response, and submit another request that includes the value of
      * <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
      * <p>Constraints: The marker must match the value of <code>NextPageMarker</code>
      * that was returned in the previous response.</p>
@@ -179,11 +179,11 @@ namespace Model
 
     /**
      * <p>For an initial request for a list of billing records, omit this element. If
-     * the number of billing records that are associated with the current AWS account
-     * during the specified period is greater than the value that you specified for
-     * <code>MaxItems</code>, you can use <code>Marker</code> to return additional
-     * billing records. Get the value of <code>NextPageMarker</code> from the previous
-     * response, and submit another request that includes the value of
+     * the number of billing records that are associated with the current Amazon Web
+     * Services account during the specified period is greater than the value that you
+     * specified for <code>MaxItems</code>, you can use <code>Marker</code> to return
+     * additional billing records. Get the value of <code>NextPageMarker</code> from
+     * the previous response, and submit another request that includes the value of
      * <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
      * <p>Constraints: The marker must match the value of <code>NextPageMarker</code>
      * that was returned in the previous response.</p>
@@ -192,11 +192,11 @@ namespace Model
 
     /**
      * <p>For an initial request for a list of billing records, omit this element. If
-     * the number of billing records that are associated with the current AWS account
-     * during the specified period is greater than the value that you specified for
-     * <code>MaxItems</code>, you can use <code>Marker</code> to return additional
-     * billing records. Get the value of <code>NextPageMarker</code> from the previous
-     * response, and submit another request that includes the value of
+     * the number of billing records that are associated with the current Amazon Web
+     * Services account during the specified period is greater than the value that you
+     * specified for <code>MaxItems</code>, you can use <code>Marker</code> to return
+     * additional billing records. Get the value of <code>NextPageMarker</code> from
+     * the previous response, and submit another request that includes the value of
      * <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
      * <p>Constraints: The marker must match the value of <code>NextPageMarker</code>
      * that was returned in the previous response.</p>
@@ -205,11 +205,11 @@ namespace Model
 
     /**
      * <p>For an initial request for a list of billing records, omit this element. If
-     * the number of billing records that are associated with the current AWS account
-     * during the specified period is greater than the value that you specified for
-     * <code>MaxItems</code>, you can use <code>Marker</code> to return additional
-     * billing records. Get the value of <code>NextPageMarker</code> from the previous
-     * response, and submit another request that includes the value of
+     * the number of billing records that are associated with the current Amazon Web
+     * Services account during the specified period is greater than the value that you
+     * specified for <code>MaxItems</code>, you can use <code>Marker</code> to return
+     * additional billing records. Get the value of <code>NextPageMarker</code> from
+     * the previous response, and submit another request that includes the value of
      * <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
      * <p>Constraints: The marker must match the value of <code>NextPageMarker</code>
      * that was returned in the previous response.</p>
@@ -218,11 +218,11 @@ namespace Model
 
     /**
      * <p>For an initial request for a list of billing records, omit this element. If
-     * the number of billing records that are associated with the current AWS account
-     * during the specified period is greater than the value that you specified for
-     * <code>MaxItems</code>, you can use <code>Marker</code> to return additional
-     * billing records. Get the value of <code>NextPageMarker</code> from the previous
-     * response, and submit another request that includes the value of
+     * the number of billing records that are associated with the current Amazon Web
+     * Services account during the specified period is greater than the value that you
+     * specified for <code>MaxItems</code>, you can use <code>Marker</code> to return
+     * additional billing records. Get the value of <code>NextPageMarker</code> from
+     * the previous response, and submit another request that includes the value of
      * <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
      * <p>Constraints: The marker must match the value of <code>NextPageMarker</code>
      * that was returned in the previous response.</p>

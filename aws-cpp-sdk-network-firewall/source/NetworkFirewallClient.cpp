@@ -34,6 +34,7 @@
 #include <aws/network-firewall/model/DescribeLoggingConfigurationRequest.h>
 #include <aws/network-firewall/model/DescribeResourcePolicyRequest.h>
 #include <aws/network-firewall/model/DescribeRuleGroupRequest.h>
+#include <aws/network-firewall/model/DescribeRuleGroupMetadataRequest.h>
 #include <aws/network-firewall/model/DisassociateSubnetsRequest.h>
 #include <aws/network-firewall/model/ListFirewallPoliciesRequest.h>
 #include <aws/network-firewall/model/ListFirewallsRequest.h>
@@ -457,6 +458,30 @@ void NetworkFirewallClient::DescribeRuleGroupAsync(const DescribeRuleGroupReques
 void NetworkFirewallClient::DescribeRuleGroupAsyncHelper(const DescribeRuleGroupRequest& request, const DescribeRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeRuleGroup(request), context);
+}
+
+DescribeRuleGroupMetadataOutcome NetworkFirewallClient::DescribeRuleGroupMetadata(const DescribeRuleGroupMetadataRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeRuleGroupMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeRuleGroupMetadataOutcomeCallable NetworkFirewallClient::DescribeRuleGroupMetadataCallable(const DescribeRuleGroupMetadataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeRuleGroupMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRuleGroupMetadata(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NetworkFirewallClient::DescribeRuleGroupMetadataAsync(const DescribeRuleGroupMetadataRequest& request, const DescribeRuleGroupMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeRuleGroupMetadataAsyncHelper( request, handler, context ); } );
+}
+
+void NetworkFirewallClient::DescribeRuleGroupMetadataAsyncHelper(const DescribeRuleGroupMetadataRequest& request, const DescribeRuleGroupMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeRuleGroupMetadata(request), context);
 }
 
 DisassociateSubnetsOutcome NetworkFirewallClient::DisassociateSubnets(const DisassociateSubnetsRequest& request) const

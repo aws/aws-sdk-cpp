@@ -89,18 +89,34 @@ namespace Model
      * Canada)</p> </li> <li> <p> <code>TDM</code> (Trademark registered in Canada)</p>
      * </li> <li> <p> <code>TRD</code> (Canadian Trade Union)</p> </li> <li> <p>
      * <code>TRS</code> (Trust established in Canada)</p> </li> </ul> </li> </ul> </dd>
-     * <dt>.es</dt> <dd> <ul> <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>Specify
-     * the applicable value:</p> <ul> <li> <p> <b>For contacts inside Spain:</b> Enter
-     * your passport ID.</p> </li> <li> <p> <b>For contacts outside of Spain:</b> Enter
-     * the VAT identification number for the company.</p>  <p>For .es domains,
-     * the value of <code>ContactType</code> must be <code>PERSON</code>.</p> 
-     * </li> </ul> </li> <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p> <p>Valid
-     * values include the following:</p> <ul> <li> <p> <code>DNI_AND_NIF</code> (For
-     * Spanish contacts)</p> </li> <li> <p> <code>NIE</code> (For foreigners with legal
-     * residence)</p> </li> <li> <p> <code>OTHER</code> (For contacts outside of
-     * Spain)</p> </li> </ul> </li> <li> <p> <code>ES_LEGAL_FORM</code> </p> <p>Valid
-     * values include the following:</p> <ul> <li> <p> <code>ASSOCIATION</code> </p>
-     * </li> <li> <p> <code>CENTRAL_GOVERNMENT_BODY</code> </p> </li> <li> <p>
+     * <dt>.es</dt> <dd> <ul> <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>The value
+     * of <code>ES_IDENTIFICATION</code> depends on the following values:</p> <ul> <li>
+     * <p>The value of <code>ES_LEGAL_FORM</code> </p> </li> <li> <p>The value of
+     * <code>ES_IDENTIFICATION_TYPE</code> </p> </li> </ul> <p> <b>If
+     * <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b>
+     * </p> <ul> <li> <p>Specify 1 letter + 8 numbers (CIF [Certificado de
+     * Identificación Fiscal])</p> </li> <li> <p>Example: B12345678</p> </li> </ul> <p>
+     * <b>If <code>ES_LEGAL_FORM</code> is <code>INDIVIDUAL</code>, the value that you
+     * specify for <code>ES_IDENTIFICATION</code> depends on the value of
+     * <code>ES_IDENTIFICATION_TYPE</code>:</b> </p> <ul> <li> <p>If
+     * <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish
+     * contacts):</p> <ul> <li> <p>Specify 8 numbers + 1 letter (DNI [Documento
+     * Nacional de Identidad], NIF [Número de Identificación Fiscal])</p> </li> <li>
+     * <p>Example: 12345678M</p> </li> </ul> </li> <li> <p>If
+     * <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with
+     * legal residence):</p> <ul> <li> <p>Specify 1 letter + 7 numbers + 1 letter ( NIE
+     * [Número de Identidad de Extranjero])</p> </li> <li> <p>Example: Y1234567X</p>
+     * </li> </ul> </li> <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is
+     * <code>OTHER</code> (for contacts outside of Spain):</p> <ul> <li> <p>Specify a
+     * passport number, drivers license number, or national identity card number</p>
+     * </li> </ul> </li> </ul> </li> <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p>
+     * <p>Valid values include the following:</p> <ul> <li> <p>
+     * <code>DNI_AND_NIF</code> (For Spanish contacts)</p> </li> <li> <p>
+     * <code>NIE</code> (For foreigners with legal residence)</p> </li> <li> <p>
+     * <code>OTHER</code> (For contacts outside of Spain)</p> </li> </ul> </li> <li>
+     * <p> <code>ES_LEGAL_FORM</code> </p> <p>Valid values include the following:</p>
+     * <ul> <li> <p> <code>ASSOCIATION</code> </p> </li> <li> <p>
+     * <code>CENTRAL_GOVERNMENT_BODY</code> </p> </li> <li> <p>
      * <code>CIVIL_SOCIETY</code> </p> </li> <li> <p> <code>COMMUNITY_OF_OWNERS</code>
      * </p> </li> <li> <p> <code>COMMUNITY_PROPERTY</code> </p> </li> <li> <p>
      * <code>CONSULATE</code> </p> </li> <li> <p> <code>COOPERATIVE</code> </p> </li>
@@ -131,8 +147,9 @@ namespace Model
      * <code>TEMPORARY_ALLIANCE_OF_ENTERPRISES</code> </p> </li> <li> <p>
      * <code>TRADE_UNION</code> </p> </li> <li> <p> <code>WORKER_OWNED_COMPANY</code>
      * </p> </li> <li> <p> <code>WORKER_OWNED_LIMITED_COMPANY</code> </p> </li> </ul>
-     * </li> </ul> </dd> <dt>.fi</dt> <dd> <ul> <li> <p>
-     * <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> <li> <p>
+     * </li> </ul> </dd> <dt>.eu</dt> <dd> <ul> <li> <p> <code>
+     * EU_COUNTRY_OF_CITIZENSHIP</code> </p> </li> </ul> </dd> <dt>.fi</dt> <dd> <ul>
+     * <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> <li> <p>
      * <code>FI_BUSINESS_NUMBER</code> </p> </li> <li> <p> <code>FI_ID_NUMBER</code>
      * </p> </li> <li> <p> <code>FI_NATIONALITY</code> </p> <p>Valid values include the
      * following:</p> <ul> <li> <p> <code>FINNISH</code> </p> </li> <li> <p>
@@ -239,18 +256,34 @@ namespace Model
      * Canada)</p> </li> <li> <p> <code>TDM</code> (Trademark registered in Canada)</p>
      * </li> <li> <p> <code>TRD</code> (Canadian Trade Union)</p> </li> <li> <p>
      * <code>TRS</code> (Trust established in Canada)</p> </li> </ul> </li> </ul> </dd>
-     * <dt>.es</dt> <dd> <ul> <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>Specify
-     * the applicable value:</p> <ul> <li> <p> <b>For contacts inside Spain:</b> Enter
-     * your passport ID.</p> </li> <li> <p> <b>For contacts outside of Spain:</b> Enter
-     * the VAT identification number for the company.</p>  <p>For .es domains,
-     * the value of <code>ContactType</code> must be <code>PERSON</code>.</p> 
-     * </li> </ul> </li> <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p> <p>Valid
-     * values include the following:</p> <ul> <li> <p> <code>DNI_AND_NIF</code> (For
-     * Spanish contacts)</p> </li> <li> <p> <code>NIE</code> (For foreigners with legal
-     * residence)</p> </li> <li> <p> <code>OTHER</code> (For contacts outside of
-     * Spain)</p> </li> </ul> </li> <li> <p> <code>ES_LEGAL_FORM</code> </p> <p>Valid
-     * values include the following:</p> <ul> <li> <p> <code>ASSOCIATION</code> </p>
-     * </li> <li> <p> <code>CENTRAL_GOVERNMENT_BODY</code> </p> </li> <li> <p>
+     * <dt>.es</dt> <dd> <ul> <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>The value
+     * of <code>ES_IDENTIFICATION</code> depends on the following values:</p> <ul> <li>
+     * <p>The value of <code>ES_LEGAL_FORM</code> </p> </li> <li> <p>The value of
+     * <code>ES_IDENTIFICATION_TYPE</code> </p> </li> </ul> <p> <b>If
+     * <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b>
+     * </p> <ul> <li> <p>Specify 1 letter + 8 numbers (CIF [Certificado de
+     * Identificación Fiscal])</p> </li> <li> <p>Example: B12345678</p> </li> </ul> <p>
+     * <b>If <code>ES_LEGAL_FORM</code> is <code>INDIVIDUAL</code>, the value that you
+     * specify for <code>ES_IDENTIFICATION</code> depends on the value of
+     * <code>ES_IDENTIFICATION_TYPE</code>:</b> </p> <ul> <li> <p>If
+     * <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish
+     * contacts):</p> <ul> <li> <p>Specify 8 numbers + 1 letter (DNI [Documento
+     * Nacional de Identidad], NIF [Número de Identificación Fiscal])</p> </li> <li>
+     * <p>Example: 12345678M</p> </li> </ul> </li> <li> <p>If
+     * <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with
+     * legal residence):</p> <ul> <li> <p>Specify 1 letter + 7 numbers + 1 letter ( NIE
+     * [Número de Identidad de Extranjero])</p> </li> <li> <p>Example: Y1234567X</p>
+     * </li> </ul> </li> <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is
+     * <code>OTHER</code> (for contacts outside of Spain):</p> <ul> <li> <p>Specify a
+     * passport number, drivers license number, or national identity card number</p>
+     * </li> </ul> </li> </ul> </li> <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p>
+     * <p>Valid values include the following:</p> <ul> <li> <p>
+     * <code>DNI_AND_NIF</code> (For Spanish contacts)</p> </li> <li> <p>
+     * <code>NIE</code> (For foreigners with legal residence)</p> </li> <li> <p>
+     * <code>OTHER</code> (For contacts outside of Spain)</p> </li> </ul> </li> <li>
+     * <p> <code>ES_LEGAL_FORM</code> </p> <p>Valid values include the following:</p>
+     * <ul> <li> <p> <code>ASSOCIATION</code> </p> </li> <li> <p>
+     * <code>CENTRAL_GOVERNMENT_BODY</code> </p> </li> <li> <p>
      * <code>CIVIL_SOCIETY</code> </p> </li> <li> <p> <code>COMMUNITY_OF_OWNERS</code>
      * </p> </li> <li> <p> <code>COMMUNITY_PROPERTY</code> </p> </li> <li> <p>
      * <code>CONSULATE</code> </p> </li> <li> <p> <code>COOPERATIVE</code> </p> </li>
@@ -281,8 +314,9 @@ namespace Model
      * <code>TEMPORARY_ALLIANCE_OF_ENTERPRISES</code> </p> </li> <li> <p>
      * <code>TRADE_UNION</code> </p> </li> <li> <p> <code>WORKER_OWNED_COMPANY</code>
      * </p> </li> <li> <p> <code>WORKER_OWNED_LIMITED_COMPANY</code> </p> </li> </ul>
-     * </li> </ul> </dd> <dt>.fi</dt> <dd> <ul> <li> <p>
-     * <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> <li> <p>
+     * </li> </ul> </dd> <dt>.eu</dt> <dd> <ul> <li> <p> <code>
+     * EU_COUNTRY_OF_CITIZENSHIP</code> </p> </li> </ul> </dd> <dt>.fi</dt> <dd> <ul>
+     * <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> <li> <p>
      * <code>FI_BUSINESS_NUMBER</code> </p> </li> <li> <p> <code>FI_ID_NUMBER</code>
      * </p> </li> <li> <p> <code>FI_NATIONALITY</code> </p> <p>Valid values include the
      * following:</p> <ul> <li> <p> <code>FINNISH</code> </p> </li> <li> <p>
@@ -389,18 +423,34 @@ namespace Model
      * Canada)</p> </li> <li> <p> <code>TDM</code> (Trademark registered in Canada)</p>
      * </li> <li> <p> <code>TRD</code> (Canadian Trade Union)</p> </li> <li> <p>
      * <code>TRS</code> (Trust established in Canada)</p> </li> </ul> </li> </ul> </dd>
-     * <dt>.es</dt> <dd> <ul> <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>Specify
-     * the applicable value:</p> <ul> <li> <p> <b>For contacts inside Spain:</b> Enter
-     * your passport ID.</p> </li> <li> <p> <b>For contacts outside of Spain:</b> Enter
-     * the VAT identification number for the company.</p>  <p>For .es domains,
-     * the value of <code>ContactType</code> must be <code>PERSON</code>.</p> 
-     * </li> </ul> </li> <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p> <p>Valid
-     * values include the following:</p> <ul> <li> <p> <code>DNI_AND_NIF</code> (For
-     * Spanish contacts)</p> </li> <li> <p> <code>NIE</code> (For foreigners with legal
-     * residence)</p> </li> <li> <p> <code>OTHER</code> (For contacts outside of
-     * Spain)</p> </li> </ul> </li> <li> <p> <code>ES_LEGAL_FORM</code> </p> <p>Valid
-     * values include the following:</p> <ul> <li> <p> <code>ASSOCIATION</code> </p>
-     * </li> <li> <p> <code>CENTRAL_GOVERNMENT_BODY</code> </p> </li> <li> <p>
+     * <dt>.es</dt> <dd> <ul> <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>The value
+     * of <code>ES_IDENTIFICATION</code> depends on the following values:</p> <ul> <li>
+     * <p>The value of <code>ES_LEGAL_FORM</code> </p> </li> <li> <p>The value of
+     * <code>ES_IDENTIFICATION_TYPE</code> </p> </li> </ul> <p> <b>If
+     * <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b>
+     * </p> <ul> <li> <p>Specify 1 letter + 8 numbers (CIF [Certificado de
+     * Identificación Fiscal])</p> </li> <li> <p>Example: B12345678</p> </li> </ul> <p>
+     * <b>If <code>ES_LEGAL_FORM</code> is <code>INDIVIDUAL</code>, the value that you
+     * specify for <code>ES_IDENTIFICATION</code> depends on the value of
+     * <code>ES_IDENTIFICATION_TYPE</code>:</b> </p> <ul> <li> <p>If
+     * <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish
+     * contacts):</p> <ul> <li> <p>Specify 8 numbers + 1 letter (DNI [Documento
+     * Nacional de Identidad], NIF [Número de Identificación Fiscal])</p> </li> <li>
+     * <p>Example: 12345678M</p> </li> </ul> </li> <li> <p>If
+     * <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with
+     * legal residence):</p> <ul> <li> <p>Specify 1 letter + 7 numbers + 1 letter ( NIE
+     * [Número de Identidad de Extranjero])</p> </li> <li> <p>Example: Y1234567X</p>
+     * </li> </ul> </li> <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is
+     * <code>OTHER</code> (for contacts outside of Spain):</p> <ul> <li> <p>Specify a
+     * passport number, drivers license number, or national identity card number</p>
+     * </li> </ul> </li> </ul> </li> <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p>
+     * <p>Valid values include the following:</p> <ul> <li> <p>
+     * <code>DNI_AND_NIF</code> (For Spanish contacts)</p> </li> <li> <p>
+     * <code>NIE</code> (For foreigners with legal residence)</p> </li> <li> <p>
+     * <code>OTHER</code> (For contacts outside of Spain)</p> </li> </ul> </li> <li>
+     * <p> <code>ES_LEGAL_FORM</code> </p> <p>Valid values include the following:</p>
+     * <ul> <li> <p> <code>ASSOCIATION</code> </p> </li> <li> <p>
+     * <code>CENTRAL_GOVERNMENT_BODY</code> </p> </li> <li> <p>
      * <code>CIVIL_SOCIETY</code> </p> </li> <li> <p> <code>COMMUNITY_OF_OWNERS</code>
      * </p> </li> <li> <p> <code>COMMUNITY_PROPERTY</code> </p> </li> <li> <p>
      * <code>CONSULATE</code> </p> </li> <li> <p> <code>COOPERATIVE</code> </p> </li>
@@ -431,8 +481,9 @@ namespace Model
      * <code>TEMPORARY_ALLIANCE_OF_ENTERPRISES</code> </p> </li> <li> <p>
      * <code>TRADE_UNION</code> </p> </li> <li> <p> <code>WORKER_OWNED_COMPANY</code>
      * </p> </li> <li> <p> <code>WORKER_OWNED_LIMITED_COMPANY</code> </p> </li> </ul>
-     * </li> </ul> </dd> <dt>.fi</dt> <dd> <ul> <li> <p>
-     * <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> <li> <p>
+     * </li> </ul> </dd> <dt>.eu</dt> <dd> <ul> <li> <p> <code>
+     * EU_COUNTRY_OF_CITIZENSHIP</code> </p> </li> </ul> </dd> <dt>.fi</dt> <dd> <ul>
+     * <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> <li> <p>
      * <code>FI_BUSINESS_NUMBER</code> </p> </li> <li> <p> <code>FI_ID_NUMBER</code>
      * </p> </li> <li> <p> <code>FI_NATIONALITY</code> </p> <p>Valid values include the
      * following:</p> <ul> <li> <p> <code>FINNISH</code> </p> </li> <li> <p>
@@ -539,18 +590,34 @@ namespace Model
      * Canada)</p> </li> <li> <p> <code>TDM</code> (Trademark registered in Canada)</p>
      * </li> <li> <p> <code>TRD</code> (Canadian Trade Union)</p> </li> <li> <p>
      * <code>TRS</code> (Trust established in Canada)</p> </li> </ul> </li> </ul> </dd>
-     * <dt>.es</dt> <dd> <ul> <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>Specify
-     * the applicable value:</p> <ul> <li> <p> <b>For contacts inside Spain:</b> Enter
-     * your passport ID.</p> </li> <li> <p> <b>For contacts outside of Spain:</b> Enter
-     * the VAT identification number for the company.</p>  <p>For .es domains,
-     * the value of <code>ContactType</code> must be <code>PERSON</code>.</p> 
-     * </li> </ul> </li> <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p> <p>Valid
-     * values include the following:</p> <ul> <li> <p> <code>DNI_AND_NIF</code> (For
-     * Spanish contacts)</p> </li> <li> <p> <code>NIE</code> (For foreigners with legal
-     * residence)</p> </li> <li> <p> <code>OTHER</code> (For contacts outside of
-     * Spain)</p> </li> </ul> </li> <li> <p> <code>ES_LEGAL_FORM</code> </p> <p>Valid
-     * values include the following:</p> <ul> <li> <p> <code>ASSOCIATION</code> </p>
-     * </li> <li> <p> <code>CENTRAL_GOVERNMENT_BODY</code> </p> </li> <li> <p>
+     * <dt>.es</dt> <dd> <ul> <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>The value
+     * of <code>ES_IDENTIFICATION</code> depends on the following values:</p> <ul> <li>
+     * <p>The value of <code>ES_LEGAL_FORM</code> </p> </li> <li> <p>The value of
+     * <code>ES_IDENTIFICATION_TYPE</code> </p> </li> </ul> <p> <b>If
+     * <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b>
+     * </p> <ul> <li> <p>Specify 1 letter + 8 numbers (CIF [Certificado de
+     * Identificación Fiscal])</p> </li> <li> <p>Example: B12345678</p> </li> </ul> <p>
+     * <b>If <code>ES_LEGAL_FORM</code> is <code>INDIVIDUAL</code>, the value that you
+     * specify for <code>ES_IDENTIFICATION</code> depends on the value of
+     * <code>ES_IDENTIFICATION_TYPE</code>:</b> </p> <ul> <li> <p>If
+     * <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish
+     * contacts):</p> <ul> <li> <p>Specify 8 numbers + 1 letter (DNI [Documento
+     * Nacional de Identidad], NIF [Número de Identificación Fiscal])</p> </li> <li>
+     * <p>Example: 12345678M</p> </li> </ul> </li> <li> <p>If
+     * <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with
+     * legal residence):</p> <ul> <li> <p>Specify 1 letter + 7 numbers + 1 letter ( NIE
+     * [Número de Identidad de Extranjero])</p> </li> <li> <p>Example: Y1234567X</p>
+     * </li> </ul> </li> <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is
+     * <code>OTHER</code> (for contacts outside of Spain):</p> <ul> <li> <p>Specify a
+     * passport number, drivers license number, or national identity card number</p>
+     * </li> </ul> </li> </ul> </li> <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p>
+     * <p>Valid values include the following:</p> <ul> <li> <p>
+     * <code>DNI_AND_NIF</code> (For Spanish contacts)</p> </li> <li> <p>
+     * <code>NIE</code> (For foreigners with legal residence)</p> </li> <li> <p>
+     * <code>OTHER</code> (For contacts outside of Spain)</p> </li> </ul> </li> <li>
+     * <p> <code>ES_LEGAL_FORM</code> </p> <p>Valid values include the following:</p>
+     * <ul> <li> <p> <code>ASSOCIATION</code> </p> </li> <li> <p>
+     * <code>CENTRAL_GOVERNMENT_BODY</code> </p> </li> <li> <p>
      * <code>CIVIL_SOCIETY</code> </p> </li> <li> <p> <code>COMMUNITY_OF_OWNERS</code>
      * </p> </li> <li> <p> <code>COMMUNITY_PROPERTY</code> </p> </li> <li> <p>
      * <code>CONSULATE</code> </p> </li> <li> <p> <code>COOPERATIVE</code> </p> </li>
@@ -581,8 +648,9 @@ namespace Model
      * <code>TEMPORARY_ALLIANCE_OF_ENTERPRISES</code> </p> </li> <li> <p>
      * <code>TRADE_UNION</code> </p> </li> <li> <p> <code>WORKER_OWNED_COMPANY</code>
      * </p> </li> <li> <p> <code>WORKER_OWNED_LIMITED_COMPANY</code> </p> </li> </ul>
-     * </li> </ul> </dd> <dt>.fi</dt> <dd> <ul> <li> <p>
-     * <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> <li> <p>
+     * </li> </ul> </dd> <dt>.eu</dt> <dd> <ul> <li> <p> <code>
+     * EU_COUNTRY_OF_CITIZENSHIP</code> </p> </li> </ul> </dd> <dt>.fi</dt> <dd> <ul>
+     * <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> <li> <p>
      * <code>FI_BUSINESS_NUMBER</code> </p> </li> <li> <p> <code>FI_ID_NUMBER</code>
      * </p> </li> <li> <p> <code>FI_NATIONALITY</code> </p> <p>Valid values include the
      * following:</p> <ul> <li> <p> <code>FINNISH</code> </p> </li> <li> <p>
@@ -689,18 +757,34 @@ namespace Model
      * Canada)</p> </li> <li> <p> <code>TDM</code> (Trademark registered in Canada)</p>
      * </li> <li> <p> <code>TRD</code> (Canadian Trade Union)</p> </li> <li> <p>
      * <code>TRS</code> (Trust established in Canada)</p> </li> </ul> </li> </ul> </dd>
-     * <dt>.es</dt> <dd> <ul> <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>Specify
-     * the applicable value:</p> <ul> <li> <p> <b>For contacts inside Spain:</b> Enter
-     * your passport ID.</p> </li> <li> <p> <b>For contacts outside of Spain:</b> Enter
-     * the VAT identification number for the company.</p>  <p>For .es domains,
-     * the value of <code>ContactType</code> must be <code>PERSON</code>.</p> 
-     * </li> </ul> </li> <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p> <p>Valid
-     * values include the following:</p> <ul> <li> <p> <code>DNI_AND_NIF</code> (For
-     * Spanish contacts)</p> </li> <li> <p> <code>NIE</code> (For foreigners with legal
-     * residence)</p> </li> <li> <p> <code>OTHER</code> (For contacts outside of
-     * Spain)</p> </li> </ul> </li> <li> <p> <code>ES_LEGAL_FORM</code> </p> <p>Valid
-     * values include the following:</p> <ul> <li> <p> <code>ASSOCIATION</code> </p>
-     * </li> <li> <p> <code>CENTRAL_GOVERNMENT_BODY</code> </p> </li> <li> <p>
+     * <dt>.es</dt> <dd> <ul> <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>The value
+     * of <code>ES_IDENTIFICATION</code> depends on the following values:</p> <ul> <li>
+     * <p>The value of <code>ES_LEGAL_FORM</code> </p> </li> <li> <p>The value of
+     * <code>ES_IDENTIFICATION_TYPE</code> </p> </li> </ul> <p> <b>If
+     * <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b>
+     * </p> <ul> <li> <p>Specify 1 letter + 8 numbers (CIF [Certificado de
+     * Identificación Fiscal])</p> </li> <li> <p>Example: B12345678</p> </li> </ul> <p>
+     * <b>If <code>ES_LEGAL_FORM</code> is <code>INDIVIDUAL</code>, the value that you
+     * specify for <code>ES_IDENTIFICATION</code> depends on the value of
+     * <code>ES_IDENTIFICATION_TYPE</code>:</b> </p> <ul> <li> <p>If
+     * <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish
+     * contacts):</p> <ul> <li> <p>Specify 8 numbers + 1 letter (DNI [Documento
+     * Nacional de Identidad], NIF [Número de Identificación Fiscal])</p> </li> <li>
+     * <p>Example: 12345678M</p> </li> </ul> </li> <li> <p>If
+     * <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with
+     * legal residence):</p> <ul> <li> <p>Specify 1 letter + 7 numbers + 1 letter ( NIE
+     * [Número de Identidad de Extranjero])</p> </li> <li> <p>Example: Y1234567X</p>
+     * </li> </ul> </li> <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is
+     * <code>OTHER</code> (for contacts outside of Spain):</p> <ul> <li> <p>Specify a
+     * passport number, drivers license number, or national identity card number</p>
+     * </li> </ul> </li> </ul> </li> <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p>
+     * <p>Valid values include the following:</p> <ul> <li> <p>
+     * <code>DNI_AND_NIF</code> (For Spanish contacts)</p> </li> <li> <p>
+     * <code>NIE</code> (For foreigners with legal residence)</p> </li> <li> <p>
+     * <code>OTHER</code> (For contacts outside of Spain)</p> </li> </ul> </li> <li>
+     * <p> <code>ES_LEGAL_FORM</code> </p> <p>Valid values include the following:</p>
+     * <ul> <li> <p> <code>ASSOCIATION</code> </p> </li> <li> <p>
+     * <code>CENTRAL_GOVERNMENT_BODY</code> </p> </li> <li> <p>
      * <code>CIVIL_SOCIETY</code> </p> </li> <li> <p> <code>COMMUNITY_OF_OWNERS</code>
      * </p> </li> <li> <p> <code>COMMUNITY_PROPERTY</code> </p> </li> <li> <p>
      * <code>CONSULATE</code> </p> </li> <li> <p> <code>COOPERATIVE</code> </p> </li>
@@ -731,8 +815,9 @@ namespace Model
      * <code>TEMPORARY_ALLIANCE_OF_ENTERPRISES</code> </p> </li> <li> <p>
      * <code>TRADE_UNION</code> </p> </li> <li> <p> <code>WORKER_OWNED_COMPANY</code>
      * </p> </li> <li> <p> <code>WORKER_OWNED_LIMITED_COMPANY</code> </p> </li> </ul>
-     * </li> </ul> </dd> <dt>.fi</dt> <dd> <ul> <li> <p>
-     * <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> <li> <p>
+     * </li> </ul> </dd> <dt>.eu</dt> <dd> <ul> <li> <p> <code>
+     * EU_COUNTRY_OF_CITIZENSHIP</code> </p> </li> </ul> </dd> <dt>.fi</dt> <dd> <ul>
+     * <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> <li> <p>
      * <code>FI_BUSINESS_NUMBER</code> </p> </li> <li> <p> <code>FI_ID_NUMBER</code>
      * </p> </li> <li> <p> <code>FI_NATIONALITY</code> </p> <p>Valid values include the
      * following:</p> <ul> <li> <p> <code>FINNISH</code> </p> </li> <li> <p>
@@ -839,18 +924,34 @@ namespace Model
      * Canada)</p> </li> <li> <p> <code>TDM</code> (Trademark registered in Canada)</p>
      * </li> <li> <p> <code>TRD</code> (Canadian Trade Union)</p> </li> <li> <p>
      * <code>TRS</code> (Trust established in Canada)</p> </li> </ul> </li> </ul> </dd>
-     * <dt>.es</dt> <dd> <ul> <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>Specify
-     * the applicable value:</p> <ul> <li> <p> <b>For contacts inside Spain:</b> Enter
-     * your passport ID.</p> </li> <li> <p> <b>For contacts outside of Spain:</b> Enter
-     * the VAT identification number for the company.</p>  <p>For .es domains,
-     * the value of <code>ContactType</code> must be <code>PERSON</code>.</p> 
-     * </li> </ul> </li> <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p> <p>Valid
-     * values include the following:</p> <ul> <li> <p> <code>DNI_AND_NIF</code> (For
-     * Spanish contacts)</p> </li> <li> <p> <code>NIE</code> (For foreigners with legal
-     * residence)</p> </li> <li> <p> <code>OTHER</code> (For contacts outside of
-     * Spain)</p> </li> </ul> </li> <li> <p> <code>ES_LEGAL_FORM</code> </p> <p>Valid
-     * values include the following:</p> <ul> <li> <p> <code>ASSOCIATION</code> </p>
-     * </li> <li> <p> <code>CENTRAL_GOVERNMENT_BODY</code> </p> </li> <li> <p>
+     * <dt>.es</dt> <dd> <ul> <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>The value
+     * of <code>ES_IDENTIFICATION</code> depends on the following values:</p> <ul> <li>
+     * <p>The value of <code>ES_LEGAL_FORM</code> </p> </li> <li> <p>The value of
+     * <code>ES_IDENTIFICATION_TYPE</code> </p> </li> </ul> <p> <b>If
+     * <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b>
+     * </p> <ul> <li> <p>Specify 1 letter + 8 numbers (CIF [Certificado de
+     * Identificación Fiscal])</p> </li> <li> <p>Example: B12345678</p> </li> </ul> <p>
+     * <b>If <code>ES_LEGAL_FORM</code> is <code>INDIVIDUAL</code>, the value that you
+     * specify for <code>ES_IDENTIFICATION</code> depends on the value of
+     * <code>ES_IDENTIFICATION_TYPE</code>:</b> </p> <ul> <li> <p>If
+     * <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish
+     * contacts):</p> <ul> <li> <p>Specify 8 numbers + 1 letter (DNI [Documento
+     * Nacional de Identidad], NIF [Número de Identificación Fiscal])</p> </li> <li>
+     * <p>Example: 12345678M</p> </li> </ul> </li> <li> <p>If
+     * <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with
+     * legal residence):</p> <ul> <li> <p>Specify 1 letter + 7 numbers + 1 letter ( NIE
+     * [Número de Identidad de Extranjero])</p> </li> <li> <p>Example: Y1234567X</p>
+     * </li> </ul> </li> <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is
+     * <code>OTHER</code> (for contacts outside of Spain):</p> <ul> <li> <p>Specify a
+     * passport number, drivers license number, or national identity card number</p>
+     * </li> </ul> </li> </ul> </li> <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p>
+     * <p>Valid values include the following:</p> <ul> <li> <p>
+     * <code>DNI_AND_NIF</code> (For Spanish contacts)</p> </li> <li> <p>
+     * <code>NIE</code> (For foreigners with legal residence)</p> </li> <li> <p>
+     * <code>OTHER</code> (For contacts outside of Spain)</p> </li> </ul> </li> <li>
+     * <p> <code>ES_LEGAL_FORM</code> </p> <p>Valid values include the following:</p>
+     * <ul> <li> <p> <code>ASSOCIATION</code> </p> </li> <li> <p>
+     * <code>CENTRAL_GOVERNMENT_BODY</code> </p> </li> <li> <p>
      * <code>CIVIL_SOCIETY</code> </p> </li> <li> <p> <code>COMMUNITY_OF_OWNERS</code>
      * </p> </li> <li> <p> <code>COMMUNITY_PROPERTY</code> </p> </li> <li> <p>
      * <code>CONSULATE</code> </p> </li> <li> <p> <code>COOPERATIVE</code> </p> </li>
@@ -881,8 +982,9 @@ namespace Model
      * <code>TEMPORARY_ALLIANCE_OF_ENTERPRISES</code> </p> </li> <li> <p>
      * <code>TRADE_UNION</code> </p> </li> <li> <p> <code>WORKER_OWNED_COMPANY</code>
      * </p> </li> <li> <p> <code>WORKER_OWNED_LIMITED_COMPANY</code> </p> </li> </ul>
-     * </li> </ul> </dd> <dt>.fi</dt> <dd> <ul> <li> <p>
-     * <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> <li> <p>
+     * </li> </ul> </dd> <dt>.eu</dt> <dd> <ul> <li> <p> <code>
+     * EU_COUNTRY_OF_CITIZENSHIP</code> </p> </li> </ul> </dd> <dt>.fi</dt> <dd> <ul>
+     * <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> <li> <p>
      * <code>FI_BUSINESS_NUMBER</code> </p> </li> <li> <p> <code>FI_ID_NUMBER</code>
      * </p> </li> <li> <p> <code>FI_NATIONALITY</code> </p> <p>Valid values include the
      * following:</p> <ul> <li> <p> <code>FINNISH</code> </p> </li> <li> <p>

@@ -21,14 +21,16 @@ namespace Model
 StatefulRuleGroupReference::StatefulRuleGroupReference() : 
     m_resourceArnHasBeenSet(false),
     m_priority(0),
-    m_priorityHasBeenSet(false)
+    m_priorityHasBeenSet(false),
+    m_overrideHasBeenSet(false)
 {
 }
 
 StatefulRuleGroupReference::StatefulRuleGroupReference(JsonView jsonValue) : 
     m_resourceArnHasBeenSet(false),
     m_priority(0),
-    m_priorityHasBeenSet(false)
+    m_priorityHasBeenSet(false),
+    m_overrideHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +51,13 @@ StatefulRuleGroupReference& StatefulRuleGroupReference::operator =(JsonView json
     m_priorityHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Override"))
+  {
+    m_override = jsonValue.GetObject("Override");
+
+    m_overrideHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -65,6 +74,12 @@ JsonValue StatefulRuleGroupReference::Jsonize() const
   if(m_priorityHasBeenSet)
   {
    payload.WithInteger("Priority", m_priority);
+
+  }
+
+  if(m_overrideHasBeenSet)
+  {
+   payload.WithObject("Override", m_override.Jsonize());
 
   }
 

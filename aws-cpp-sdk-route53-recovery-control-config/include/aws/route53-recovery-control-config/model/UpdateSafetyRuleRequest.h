@@ -18,6 +18,11 @@ namespace Model
 {
 
   /**
+   * <p>A rule that you add to Application Recovery Controller to ensure that
+   * recovery actions don't accidentally impair your application's
+   * availability.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UpdateSafetyRuleRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53RECOVERYCONTROLCONFIG_API UpdateSafetyRuleRequest : public Route53RecoveryControlConfigRequest
   {
@@ -33,41 +38,65 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    
+    /**
+     * <p>The assertion rule to update.</p>
+     */
     inline const AssertionRuleUpdate& GetAssertionRuleUpdate() const{ return m_assertionRuleUpdate; }
 
-    
+    /**
+     * <p>The assertion rule to update.</p>
+     */
     inline bool AssertionRuleUpdateHasBeenSet() const { return m_assertionRuleUpdateHasBeenSet; }
 
-    
+    /**
+     * <p>The assertion rule to update.</p>
+     */
     inline void SetAssertionRuleUpdate(const AssertionRuleUpdate& value) { m_assertionRuleUpdateHasBeenSet = true; m_assertionRuleUpdate = value; }
 
-    
+    /**
+     * <p>The assertion rule to update.</p>
+     */
     inline void SetAssertionRuleUpdate(AssertionRuleUpdate&& value) { m_assertionRuleUpdateHasBeenSet = true; m_assertionRuleUpdate = std::move(value); }
 
-    
+    /**
+     * <p>The assertion rule to update.</p>
+     */
     inline UpdateSafetyRuleRequest& WithAssertionRuleUpdate(const AssertionRuleUpdate& value) { SetAssertionRuleUpdate(value); return *this;}
 
-    
+    /**
+     * <p>The assertion rule to update.</p>
+     */
     inline UpdateSafetyRuleRequest& WithAssertionRuleUpdate(AssertionRuleUpdate&& value) { SetAssertionRuleUpdate(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The gating rule to update.</p>
+     */
     inline const GatingRuleUpdate& GetGatingRuleUpdate() const{ return m_gatingRuleUpdate; }
 
-    
+    /**
+     * <p>The gating rule to update.</p>
+     */
     inline bool GatingRuleUpdateHasBeenSet() const { return m_gatingRuleUpdateHasBeenSet; }
 
-    
+    /**
+     * <p>The gating rule to update.</p>
+     */
     inline void SetGatingRuleUpdate(const GatingRuleUpdate& value) { m_gatingRuleUpdateHasBeenSet = true; m_gatingRuleUpdate = value; }
 
-    
+    /**
+     * <p>The gating rule to update.</p>
+     */
     inline void SetGatingRuleUpdate(GatingRuleUpdate&& value) { m_gatingRuleUpdateHasBeenSet = true; m_gatingRuleUpdate = std::move(value); }
 
-    
+    /**
+     * <p>The gating rule to update.</p>
+     */
     inline UpdateSafetyRuleRequest& WithGatingRuleUpdate(const GatingRuleUpdate& value) { SetGatingRuleUpdate(value); return *this;}
 
-    
+    /**
+     * <p>The gating rule to update.</p>
+     */
     inline UpdateSafetyRuleRequest& WithGatingRuleUpdate(GatingRuleUpdate&& value) { SetGatingRuleUpdate(std::move(value)); return *this;}
 
   private:

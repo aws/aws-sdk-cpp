@@ -28,6 +28,9 @@
 #include <aws/route53-recovery-control-config/model/ListControlPanelsResult.h>
 #include <aws/route53-recovery-control-config/model/ListRoutingControlsResult.h>
 #include <aws/route53-recovery-control-config/model/ListSafetyRulesResult.h>
+#include <aws/route53-recovery-control-config/model/ListTagsForResourceResult.h>
+#include <aws/route53-recovery-control-config/model/TagResourceResult.h>
+#include <aws/route53-recovery-control-config/model/UntagResourceResult.h>
 #include <aws/route53-recovery-control-config/model/UpdateControlPanelResult.h>
 #include <aws/route53-recovery-control-config/model/UpdateRoutingControlResult.h>
 #include <aws/route53-recovery-control-config/model/UpdateSafetyRuleResult.h>
@@ -87,6 +90,9 @@ namespace Model
         class ListControlPanelsRequest;
         class ListRoutingControlsRequest;
         class ListSafetyRulesRequest;
+        class ListTagsForResourceRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdateControlPanelRequest;
         class UpdateRoutingControlRequest;
         class UpdateSafetyRuleRequest;
@@ -108,6 +114,9 @@ namespace Model
         typedef Aws::Utils::Outcome<ListControlPanelsResult, Route53RecoveryControlConfigError> ListControlPanelsOutcome;
         typedef Aws::Utils::Outcome<ListRoutingControlsResult, Route53RecoveryControlConfigError> ListRoutingControlsOutcome;
         typedef Aws::Utils::Outcome<ListSafetyRulesResult, Route53RecoveryControlConfigError> ListSafetyRulesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Route53RecoveryControlConfigError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Route53RecoveryControlConfigError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Route53RecoveryControlConfigError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateControlPanelResult, Route53RecoveryControlConfigError> UpdateControlPanelOutcome;
         typedef Aws::Utils::Outcome<UpdateRoutingControlResult, Route53RecoveryControlConfigError> UpdateRoutingControlOutcome;
         typedef Aws::Utils::Outcome<UpdateSafetyRuleResult, Route53RecoveryControlConfigError> UpdateSafetyRuleOutcome;
@@ -129,6 +138,9 @@ namespace Model
         typedef std::future<ListControlPanelsOutcome> ListControlPanelsOutcomeCallable;
         typedef std::future<ListRoutingControlsOutcome> ListRoutingControlsOutcomeCallable;
         typedef std::future<ListSafetyRulesOutcome> ListSafetyRulesOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateControlPanelOutcome> UpdateControlPanelOutcomeCallable;
         typedef std::future<UpdateRoutingControlOutcome> UpdateRoutingControlOutcomeCallable;
         typedef std::future<UpdateSafetyRuleOutcome> UpdateSafetyRuleOutcomeCallable;
@@ -153,6 +165,9 @@ namespace Model
     typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::ListControlPanelsRequest&, const Model::ListControlPanelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListControlPanelsResponseReceivedHandler;
     typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::ListRoutingControlsRequest&, const Model::ListRoutingControlsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRoutingControlsResponseReceivedHandler;
     typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::ListSafetyRulesRequest&, const Model::ListSafetyRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSafetyRulesResponseReceivedHandler;
+    typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::UpdateControlPanelRequest&, const Model::UpdateControlPanelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateControlPanelResponseReceivedHandler;
     typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::UpdateRoutingControlRequest&, const Model::UpdateRoutingControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRoutingControlResponseReceivedHandler;
     typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::UpdateSafetyRuleRequest&, const Model::UpdateSafetyRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSafetyRuleResponseReceivedHandler;
@@ -193,9 +208,8 @@ namespace Model
          * against which you can run API calls to update or get the state of one or more
          * routing controls. Each cluster has a name, status, Amazon Resource Name (ARN),
          * and an array of the five cluster endpoints (one for each supported Amazon Web
-         * Services Region) that you can use with API calls to the Amazon Route 53
-         * Application Recovery Controller cluster data plane.</p><p><h3>See Also:</h3>  
-         * <a
+         * Services Region) that you can use with API calls to the cluster data
+         * plane.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/CreateCluster">AWS
          * API Reference</a></p>
          */
@@ -206,9 +220,8 @@ namespace Model
          * against which you can run API calls to update or get the state of one or more
          * routing controls. Each cluster has a name, status, Amazon Resource Name (ARN),
          * and an array of the five cluster endpoints (one for each supported Amazon Web
-         * Services Region) that you can use with API calls to the Amazon Route 53
-         * Application Recovery Controller cluster data plane.</p><p><h3>See Also:</h3>  
-         * <a
+         * Services Region) that you can use with API calls to the cluster data
+         * plane.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/CreateCluster">AWS
          * API Reference</a></p>
          *
@@ -221,9 +234,8 @@ namespace Model
          * against which you can run API calls to update or get the state of one or more
          * routing controls. Each cluster has a name, status, Amazon Resource Name (ARN),
          * and an array of the five cluster endpoints (one for each supported Amazon Web
-         * Services Region) that you can use with API calls to the Amazon Route 53
-         * Application Recovery Controller cluster data plane.</p><p><h3>See Also:</h3>  
-         * <a
+         * Services Region) that you can use with API calls to the cluster data
+         * plane.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/CreateCluster">AWS
          * API Reference</a></p>
          *
@@ -236,8 +248,8 @@ namespace Model
          * controls that can be changed together in a single transaction. You can use a
          * control panel to centrally view the operational status of applications across
          * your organization, and trigger multi-app failovers in a single transaction, for
-         * example, to fail over an Availability Zone or AWS Region.</p><p><h3>See
-         * Also:</h3>   <a
+         * example, to fail over an Availability Zone or Amazon Web Services
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/CreateControlPanel">AWS
          * API Reference</a></p>
          */
@@ -248,8 +260,8 @@ namespace Model
          * controls that can be changed together in a single transaction. You can use a
          * control panel to centrally view the operational status of applications across
          * your organization, and trigger multi-app failovers in a single transaction, for
-         * example, to fail over an Availability Zone or AWS Region.</p><p><h3>See
-         * Also:</h3>   <a
+         * example, to fail over an Availability Zone or Amazon Web Services
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/CreateControlPanel">AWS
          * API Reference</a></p>
          *
@@ -262,8 +274,8 @@ namespace Model
          * controls that can be changed together in a single transaction. You can use a
          * control panel to centrally view the operational status of applications across
          * your organization, and trigger multi-app failovers in a single transaction, for
-         * example, to fail over an Availability Zone or AWS Region.</p><p><h3>See
-         * Also:</h3>   <a
+         * example, to fail over an Availability Zone or Amazon Web Services
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/CreateControlPanel">AWS
          * API Reference</a></p>
          *
@@ -313,16 +325,21 @@ namespace Model
 
         /**
          * <p>Creates a safety rule in a control panel. Safety rules let you add safeguards
-         * around enabling and disabling routing controls, to help prevent unexpected
-         * outcomes.</p> <p>There are two types of safety rules: assertion rules and gating
-         * rules.</p> <p>Assertion rule: An assertion rule enforces that, when a routing
-         * control state is changed, the criteria set by the rule configuration is met.
-         * Otherwise, the change to the routing control is not accepted.</p> <p>Gating
-         * rule: A gating rule verifies that a set of gating controls evaluates as true,
-         * based on a rule configuration that you specify. If the gating rule evaluates to
-         * true, Amazon Route 53 Application Recovery Controller allows a set of routing
-         * control state changes to run and complete against the set of target
-         * controls.</p><p><h3>See Also:</h3>   <a
+         * around changing routing control states, and for enabling and disabling routing
+         * controls, to help prevent unexpected outcomes.</p> <p>There are two types of
+         * safety rules: assertion rules and gating rules.</p> <p>Assertion rule: An
+         * assertion rule enforces that, when you change a routing control state, that a
+         * certain criteria is met. For example, the criteria might be that at least one
+         * routing control state is On after the transation so that traffic continues to
+         * flow to at least one cell for the application. This ensures that you avoid a
+         * fail-open scenario.</p> <p>Gating rule: A gating rule lets you configure a
+         * gating routing control as an overall "on/off" switch for a group of routing
+         * controls. Or, you can configure more complex gating scenarios, for example by
+         * configuring multiple gating routing controls.</p> <p>For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.safety-rules.html">Safety
+         * rules</a> in the Amazon Route 53 Application Recovery Controller Developer
+         * Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/CreateSafetyRule">AWS
          * API Reference</a></p>
          */
@@ -330,16 +347,21 @@ namespace Model
 
         /**
          * <p>Creates a safety rule in a control panel. Safety rules let you add safeguards
-         * around enabling and disabling routing controls, to help prevent unexpected
-         * outcomes.</p> <p>There are two types of safety rules: assertion rules and gating
-         * rules.</p> <p>Assertion rule: An assertion rule enforces that, when a routing
-         * control state is changed, the criteria set by the rule configuration is met.
-         * Otherwise, the change to the routing control is not accepted.</p> <p>Gating
-         * rule: A gating rule verifies that a set of gating controls evaluates as true,
-         * based on a rule configuration that you specify. If the gating rule evaluates to
-         * true, Amazon Route 53 Application Recovery Controller allows a set of routing
-         * control state changes to run and complete against the set of target
-         * controls.</p><p><h3>See Also:</h3>   <a
+         * around changing routing control states, and for enabling and disabling routing
+         * controls, to help prevent unexpected outcomes.</p> <p>There are two types of
+         * safety rules: assertion rules and gating rules.</p> <p>Assertion rule: An
+         * assertion rule enforces that, when you change a routing control state, that a
+         * certain criteria is met. For example, the criteria might be that at least one
+         * routing control state is On after the transation so that traffic continues to
+         * flow to at least one cell for the application. This ensures that you avoid a
+         * fail-open scenario.</p> <p>Gating rule: A gating rule lets you configure a
+         * gating routing control as an overall "on/off" switch for a group of routing
+         * controls. Or, you can configure more complex gating scenarios, for example by
+         * configuring multiple gating routing controls.</p> <p>For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.safety-rules.html">Safety
+         * rules</a> in the Amazon Route 53 Application Recovery Controller Developer
+         * Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/CreateSafetyRule">AWS
          * API Reference</a></p>
          *
@@ -349,16 +371,21 @@ namespace Model
 
         /**
          * <p>Creates a safety rule in a control panel. Safety rules let you add safeguards
-         * around enabling and disabling routing controls, to help prevent unexpected
-         * outcomes.</p> <p>There are two types of safety rules: assertion rules and gating
-         * rules.</p> <p>Assertion rule: An assertion rule enforces that, when a routing
-         * control state is changed, the criteria set by the rule configuration is met.
-         * Otherwise, the change to the routing control is not accepted.</p> <p>Gating
-         * rule: A gating rule verifies that a set of gating controls evaluates as true,
-         * based on a rule configuration that you specify. If the gating rule evaluates to
-         * true, Amazon Route 53 Application Recovery Controller allows a set of routing
-         * control state changes to run and complete against the set of target
-         * controls.</p><p><h3>See Also:</h3>   <a
+         * around changing routing control states, and for enabling and disabling routing
+         * controls, to help prevent unexpected outcomes.</p> <p>There are two types of
+         * safety rules: assertion rules and gating rules.</p> <p>Assertion rule: An
+         * assertion rule enforces that, when you change a routing control state, that a
+         * certain criteria is met. For example, the criteria might be that at least one
+         * routing control state is On after the transation so that traffic continues to
+         * flow to at least one cell for the application. This ensures that you avoid a
+         * fail-open scenario.</p> <p>Gating rule: A gating rule lets you configure a
+         * gating routing control as an overall "on/off" switch for a group of routing
+         * controls. Or, you can configure more complex gating scenarios, for example by
+         * configuring multiple gating routing controls.</p> <p>For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.safety-rules.html">Safety
+         * rules</a> in the Amazon Route 53 Application Recovery Controller Developer
+         * Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/CreateSafetyRule">AWS
          * API Reference</a></p>
          *
@@ -560,16 +587,14 @@ namespace Model
         virtual void DescribeRoutingControlAsync(const Model::DescribeRoutingControlRequest& request, const DescribeRoutingControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the safety rules (that is, the assertion rules and gating rules)
-         * for the routing controls in a control panel.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about a safety rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/DescribeSafetyRule">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeSafetyRuleOutcome DescribeSafetyRule(const Model::DescribeSafetyRuleRequest& request) const;
 
         /**
-         * <p>Describes the safety rules (that is, the assertion rules and gating rules)
-         * for the routing controls in a control panel.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about a safety rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/DescribeSafetyRule">AWS
          * API Reference</a></p>
          *
@@ -578,8 +603,7 @@ namespace Model
         virtual Model::DescribeSafetyRuleOutcomeCallable DescribeSafetyRuleCallable(const Model::DescribeSafetyRuleRequest& request) const;
 
         /**
-         * <p>Describes the safety rules (that is, the assertion rules and gating rules)
-         * for the routing controls in a control panel.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about a safety rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/DescribeSafetyRule">AWS
          * API Reference</a></p>
          *
@@ -644,16 +668,16 @@ namespace Model
         virtual void ListClustersAsync(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns an array of control panels for a cluster.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Returns an array of control panels in an account or in a
+         * cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListControlPanels">AWS
          * API Reference</a></p>
          */
         virtual Model::ListControlPanelsOutcome ListControlPanels(const Model::ListControlPanelsRequest& request) const;
 
         /**
-         * <p>Returns an array of control panels for a cluster.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Returns an array of control panels in an account or in a
+         * cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListControlPanels">AWS
          * API Reference</a></p>
          *
@@ -662,8 +686,8 @@ namespace Model
         virtual Model::ListControlPanelsOutcomeCallable ListControlPanelsCallable(const Model::ListControlPanelsRequest& request) const;
 
         /**
-         * <p>Returns an array of control panels for a cluster.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Returns an array of control panels in an account or in a
+         * cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListControlPanels">AWS
          * API Reference</a></p>
          *
@@ -740,6 +764,81 @@ namespace Model
         virtual void ListSafetyRulesAsync(const Model::ListSafetyRulesRequest& request, const ListSafetyRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the tags for a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Lists the tags for a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Lists the tags for a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds a tag to a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds a tag to a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds a tag to a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes a tag from a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes a tag from a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes a tag from a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates a control panel. The only update you can make to a control panel is
          * to change the name of the control panel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UpdateControlPanel">AWS
@@ -802,20 +901,18 @@ namespace Model
         virtual void UpdateRoutingControlAsync(const Model::UpdateRoutingControlRequest& request, const UpdateRoutingControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Update a safety rule (an assertion rule or gating rule) for the routing
-         * controls in a control panel. You can only update the name and the waiting period
-         * for a safety rule. To make other updates, delete the safety rule and create a
-         * new safety rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Update a safety rule (an assertion rule or gating rule). You can only update
+         * the name and the waiting period for a safety rule. To make other updates, delete
+         * the safety rule and create a new one.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UpdateSafetyRule">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateSafetyRuleOutcome UpdateSafetyRule(const Model::UpdateSafetyRuleRequest& request) const;
 
         /**
-         * <p>Update a safety rule (an assertion rule or gating rule) for the routing
-         * controls in a control panel. You can only update the name and the waiting period
-         * for a safety rule. To make other updates, delete the safety rule and create a
-         * new safety rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Update a safety rule (an assertion rule or gating rule). You can only update
+         * the name and the waiting period for a safety rule. To make other updates, delete
+         * the safety rule and create a new one.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UpdateSafetyRule">AWS
          * API Reference</a></p>
          *
@@ -824,10 +921,9 @@ namespace Model
         virtual Model::UpdateSafetyRuleOutcomeCallable UpdateSafetyRuleCallable(const Model::UpdateSafetyRuleRequest& request) const;
 
         /**
-         * <p>Update a safety rule (an assertion rule or gating rule) for the routing
-         * controls in a control panel. You can only update the name and the waiting period
-         * for a safety rule. To make other updates, delete the safety rule and create a
-         * new safety rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Update a safety rule (an assertion rule or gating rule). You can only update
+         * the name and the waiting period for a safety rule. To make other updates, delete
+         * the safety rule and create a new one.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UpdateSafetyRule">AWS
          * API Reference</a></p>
          *
@@ -856,6 +952,9 @@ namespace Model
         void ListControlPanelsAsyncHelper(const Model::ListControlPanelsRequest& request, const ListControlPanelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRoutingControlsAsyncHelper(const Model::ListRoutingControlsRequest& request, const ListRoutingControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSafetyRulesAsyncHelper(const Model::ListSafetyRulesRequest& request, const ListSafetyRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateControlPanelAsyncHelper(const Model::UpdateControlPanelRequest& request, const UpdateControlPanelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRoutingControlAsyncHelper(const Model::UpdateRoutingControlRequest& request, const UpdateRoutingControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSafetyRuleAsyncHelper(const Model::UpdateSafetyRuleRequest& request, const UpdateSafetyRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

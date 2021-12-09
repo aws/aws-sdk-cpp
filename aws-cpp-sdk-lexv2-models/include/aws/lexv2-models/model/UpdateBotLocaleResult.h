@@ -408,6 +408,55 @@ namespace Model
      */
     inline UpdateBotLocaleResult& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Recommended actions to take to resolve an error in the
+     * <code>failureReasons</code> field.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetRecommendedActions() const{ return m_recommendedActions; }
+
+    /**
+     * <p>Recommended actions to take to resolve an error in the
+     * <code>failureReasons</code> field.</p>
+     */
+    inline void SetRecommendedActions(const Aws::Vector<Aws::String>& value) { m_recommendedActions = value; }
+
+    /**
+     * <p>Recommended actions to take to resolve an error in the
+     * <code>failureReasons</code> field.</p>
+     */
+    inline void SetRecommendedActions(Aws::Vector<Aws::String>&& value) { m_recommendedActions = std::move(value); }
+
+    /**
+     * <p>Recommended actions to take to resolve an error in the
+     * <code>failureReasons</code> field.</p>
+     */
+    inline UpdateBotLocaleResult& WithRecommendedActions(const Aws::Vector<Aws::String>& value) { SetRecommendedActions(value); return *this;}
+
+    /**
+     * <p>Recommended actions to take to resolve an error in the
+     * <code>failureReasons</code> field.</p>
+     */
+    inline UpdateBotLocaleResult& WithRecommendedActions(Aws::Vector<Aws::String>&& value) { SetRecommendedActions(std::move(value)); return *this;}
+
+    /**
+     * <p>Recommended actions to take to resolve an error in the
+     * <code>failureReasons</code> field.</p>
+     */
+    inline UpdateBotLocaleResult& AddRecommendedActions(const Aws::String& value) { m_recommendedActions.push_back(value); return *this; }
+
+    /**
+     * <p>Recommended actions to take to resolve an error in the
+     * <code>failureReasons</code> field.</p>
+     */
+    inline UpdateBotLocaleResult& AddRecommendedActions(Aws::String&& value) { m_recommendedActions.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Recommended actions to take to resolve an error in the
+     * <code>failureReasons</code> field.</p>
+     */
+    inline UpdateBotLocaleResult& AddRecommendedActions(const char* value) { m_recommendedActions.push_back(value); return *this; }
+
   private:
 
     Aws::String m_botId;
@@ -431,6 +480,8 @@ namespace Model
     Aws::Utils::DateTime m_creationDateTime;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
+
+    Aws::Vector<Aws::String> m_recommendedActions;
   };
 
 } // namespace Model
