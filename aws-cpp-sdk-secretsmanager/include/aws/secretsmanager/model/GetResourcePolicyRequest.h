@@ -35,66 +35,58 @@ namespace Model
 
 
     /**
-     * <p>Specifies the secret that you want to retrieve the attached resource-based
-     * policy for. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.</p> <p>For an ARN, we recommend that you specify a
-     * complete ARN rather than a partial ARN.</p>
+     * <p>The ARN or name of the secret to retrieve the attached resource-based policy
+     * for.</p> <p>For an ARN, we recommend that you specify a complete ARN rather than
+     * a partial ARN.</p>
      */
     inline const Aws::String& GetSecretId() const{ return m_secretId; }
 
     /**
-     * <p>Specifies the secret that you want to retrieve the attached resource-based
-     * policy for. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.</p> <p>For an ARN, we recommend that you specify a
-     * complete ARN rather than a partial ARN.</p>
+     * <p>The ARN or name of the secret to retrieve the attached resource-based policy
+     * for.</p> <p>For an ARN, we recommend that you specify a complete ARN rather than
+     * a partial ARN.</p>
      */
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
 
     /**
-     * <p>Specifies the secret that you want to retrieve the attached resource-based
-     * policy for. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.</p> <p>For an ARN, we recommend that you specify a
-     * complete ARN rather than a partial ARN.</p>
+     * <p>The ARN or name of the secret to retrieve the attached resource-based policy
+     * for.</p> <p>For an ARN, we recommend that you specify a complete ARN rather than
+     * a partial ARN.</p>
      */
     inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
 
     /**
-     * <p>Specifies the secret that you want to retrieve the attached resource-based
-     * policy for. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.</p> <p>For an ARN, we recommend that you specify a
-     * complete ARN rather than a partial ARN.</p>
+     * <p>The ARN or name of the secret to retrieve the attached resource-based policy
+     * for.</p> <p>For an ARN, we recommend that you specify a complete ARN rather than
+     * a partial ARN.</p>
      */
     inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
 
     /**
-     * <p>Specifies the secret that you want to retrieve the attached resource-based
-     * policy for. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.</p> <p>For an ARN, we recommend that you specify a
-     * complete ARN rather than a partial ARN.</p>
+     * <p>The ARN or name of the secret to retrieve the attached resource-based policy
+     * for.</p> <p>For an ARN, we recommend that you specify a complete ARN rather than
+     * a partial ARN.</p>
      */
     inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
 
     /**
-     * <p>Specifies the secret that you want to retrieve the attached resource-based
-     * policy for. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.</p> <p>For an ARN, we recommend that you specify a
-     * complete ARN rather than a partial ARN.</p>
+     * <p>The ARN or name of the secret to retrieve the attached resource-based policy
+     * for.</p> <p>For an ARN, we recommend that you specify a complete ARN rather than
+     * a partial ARN.</p>
      */
     inline GetResourcePolicyRequest& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
 
     /**
-     * <p>Specifies the secret that you want to retrieve the attached resource-based
-     * policy for. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.</p> <p>For an ARN, we recommend that you specify a
-     * complete ARN rather than a partial ARN.</p>
+     * <p>The ARN or name of the secret to retrieve the attached resource-based policy
+     * for.</p> <p>For an ARN, we recommend that you specify a complete ARN rather than
+     * a partial ARN.</p>
      */
     inline GetResourcePolicyRequest& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the secret that you want to retrieve the attached resource-based
-     * policy for. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.</p> <p>For an ARN, we recommend that you specify a
-     * complete ARN rather than a partial ARN.</p>
+     * <p>The ARN or name of the secret to retrieve the attached resource-based policy
+     * for.</p> <p>For an ARN, we recommend that you specify a complete ARN rather than
+     * a partial ARN.</p>
      */
     inline GetResourcePolicyRequest& WithSecretId(const char* value) { SetSecretId(value); return *this;}
 

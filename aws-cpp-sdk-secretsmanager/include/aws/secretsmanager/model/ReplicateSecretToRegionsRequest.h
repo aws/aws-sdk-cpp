@@ -37,108 +37,108 @@ namespace Model
 
 
     /**
-     * <p>Use the <code>Secret Id</code> to replicate a secret to regions.</p>
+     * <p>The ARN or name of the secret to replicate.</p>
      */
     inline const Aws::String& GetSecretId() const{ return m_secretId; }
 
     /**
-     * <p>Use the <code>Secret Id</code> to replicate a secret to regions.</p>
+     * <p>The ARN or name of the secret to replicate.</p>
      */
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
 
     /**
-     * <p>Use the <code>Secret Id</code> to replicate a secret to regions.</p>
+     * <p>The ARN or name of the secret to replicate.</p>
      */
     inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
 
     /**
-     * <p>Use the <code>Secret Id</code> to replicate a secret to regions.</p>
+     * <p>The ARN or name of the secret to replicate.</p>
      */
     inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
 
     /**
-     * <p>Use the <code>Secret Id</code> to replicate a secret to regions.</p>
+     * <p>The ARN or name of the secret to replicate.</p>
      */
     inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
 
     /**
-     * <p>Use the <code>Secret Id</code> to replicate a secret to regions.</p>
+     * <p>The ARN or name of the secret to replicate.</p>
      */
     inline ReplicateSecretToRegionsRequest& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
 
     /**
-     * <p>Use the <code>Secret Id</code> to replicate a secret to regions.</p>
+     * <p>The ARN or name of the secret to replicate.</p>
      */
     inline ReplicateSecretToRegionsRequest& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
 
     /**
-     * <p>Use the <code>Secret Id</code> to replicate a secret to regions.</p>
+     * <p>The ARN or name of the secret to replicate.</p>
      */
     inline ReplicateSecretToRegionsRequest& WithSecretId(const char* value) { SetSecretId(value); return *this;}
 
 
     /**
-     * <p>Add Regions to replicate the secret.</p>
+     * <p>A list of Regions in which to replicate the secret.</p>
      */
     inline const Aws::Vector<ReplicaRegionType>& GetAddReplicaRegions() const{ return m_addReplicaRegions; }
 
     /**
-     * <p>Add Regions to replicate the secret.</p>
+     * <p>A list of Regions in which to replicate the secret.</p>
      */
     inline bool AddReplicaRegionsHasBeenSet() const { return m_addReplicaRegionsHasBeenSet; }
 
     /**
-     * <p>Add Regions to replicate the secret.</p>
+     * <p>A list of Regions in which to replicate the secret.</p>
      */
     inline void SetAddReplicaRegions(const Aws::Vector<ReplicaRegionType>& value) { m_addReplicaRegionsHasBeenSet = true; m_addReplicaRegions = value; }
 
     /**
-     * <p>Add Regions to replicate the secret.</p>
+     * <p>A list of Regions in which to replicate the secret.</p>
      */
     inline void SetAddReplicaRegions(Aws::Vector<ReplicaRegionType>&& value) { m_addReplicaRegionsHasBeenSet = true; m_addReplicaRegions = std::move(value); }
 
     /**
-     * <p>Add Regions to replicate the secret.</p>
+     * <p>A list of Regions in which to replicate the secret.</p>
      */
     inline ReplicateSecretToRegionsRequest& WithAddReplicaRegions(const Aws::Vector<ReplicaRegionType>& value) { SetAddReplicaRegions(value); return *this;}
 
     /**
-     * <p>Add Regions to replicate the secret.</p>
+     * <p>A list of Regions in which to replicate the secret.</p>
      */
     inline ReplicateSecretToRegionsRequest& WithAddReplicaRegions(Aws::Vector<ReplicaRegionType>&& value) { SetAddReplicaRegions(std::move(value)); return *this;}
 
     /**
-     * <p>Add Regions to replicate the secret.</p>
+     * <p>A list of Regions in which to replicate the secret.</p>
      */
     inline ReplicateSecretToRegionsRequest& AddAddReplicaRegions(const ReplicaRegionType& value) { m_addReplicaRegionsHasBeenSet = true; m_addReplicaRegions.push_back(value); return *this; }
 
     /**
-     * <p>Add Regions to replicate the secret.</p>
+     * <p>A list of Regions in which to replicate the secret.</p>
      */
     inline ReplicateSecretToRegionsRequest& AddAddReplicaRegions(ReplicaRegionType&& value) { m_addReplicaRegionsHasBeenSet = true; m_addReplicaRegions.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>(Optional) If set, Secrets Manager replication overwrites a secret with the
-     * same name in the destination region.</p>
+     * <p>Specifies whether to overwrite a secret with the same name in the destination
+     * Region.</p>
      */
     inline bool GetForceOverwriteReplicaSecret() const{ return m_forceOverwriteReplicaSecret; }
 
     /**
-     * <p>(Optional) If set, Secrets Manager replication overwrites a secret with the
-     * same name in the destination region.</p>
+     * <p>Specifies whether to overwrite a secret with the same name in the destination
+     * Region.</p>
      */
     inline bool ForceOverwriteReplicaSecretHasBeenSet() const { return m_forceOverwriteReplicaSecretHasBeenSet; }
 
     /**
-     * <p>(Optional) If set, Secrets Manager replication overwrites a secret with the
-     * same name in the destination region.</p>
+     * <p>Specifies whether to overwrite a secret with the same name in the destination
+     * Region.</p>
      */
     inline void SetForceOverwriteReplicaSecret(bool value) { m_forceOverwriteReplicaSecretHasBeenSet = true; m_forceOverwriteReplicaSecret = value; }
 
     /**
-     * <p>(Optional) If set, Secrets Manager replication overwrites a secret with the
-     * same name in the destination region.</p>
+     * <p>Specifies whether to overwrite a secret with the same name in the destination
+     * Region.</p>
      */
     inline ReplicateSecretToRegionsRequest& WithForceOverwriteReplicaSecret(bool value) { SetForceOverwriteReplicaSecret(value); return *this;}
 

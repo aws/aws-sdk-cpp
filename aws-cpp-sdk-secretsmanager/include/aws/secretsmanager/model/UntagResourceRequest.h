@@ -36,66 +36,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the secret that you want to remove tags from. You can
-     * specify either the Amazon Resource Name (ARN) or the friendly name of the
-     * secret.</p> <p>For an ARN, we recommend that you specify a complete ARN rather
-     * than a partial ARN.</p>
+     * <p>The ARN or name of the secret.</p> <p>For an ARN, we recommend that you
+     * specify a complete ARN rather than a partial ARN.</p>
      */
     inline const Aws::String& GetSecretId() const{ return m_secretId; }
 
     /**
-     * <p>The identifier for the secret that you want to remove tags from. You can
-     * specify either the Amazon Resource Name (ARN) or the friendly name of the
-     * secret.</p> <p>For an ARN, we recommend that you specify a complete ARN rather
-     * than a partial ARN.</p>
+     * <p>The ARN or name of the secret.</p> <p>For an ARN, we recommend that you
+     * specify a complete ARN rather than a partial ARN.</p>
      */
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
 
     /**
-     * <p>The identifier for the secret that you want to remove tags from. You can
-     * specify either the Amazon Resource Name (ARN) or the friendly name of the
-     * secret.</p> <p>For an ARN, we recommend that you specify a complete ARN rather
-     * than a partial ARN.</p>
+     * <p>The ARN or name of the secret.</p> <p>For an ARN, we recommend that you
+     * specify a complete ARN rather than a partial ARN.</p>
      */
     inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
 
     /**
-     * <p>The identifier for the secret that you want to remove tags from. You can
-     * specify either the Amazon Resource Name (ARN) or the friendly name of the
-     * secret.</p> <p>For an ARN, we recommend that you specify a complete ARN rather
-     * than a partial ARN.</p>
+     * <p>The ARN or name of the secret.</p> <p>For an ARN, we recommend that you
+     * specify a complete ARN rather than a partial ARN.</p>
      */
     inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
 
     /**
-     * <p>The identifier for the secret that you want to remove tags from. You can
-     * specify either the Amazon Resource Name (ARN) or the friendly name of the
-     * secret.</p> <p>For an ARN, we recommend that you specify a complete ARN rather
-     * than a partial ARN.</p>
+     * <p>The ARN or name of the secret.</p> <p>For an ARN, we recommend that you
+     * specify a complete ARN rather than a partial ARN.</p>
      */
     inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
 
     /**
-     * <p>The identifier for the secret that you want to remove tags from. You can
-     * specify either the Amazon Resource Name (ARN) or the friendly name of the
-     * secret.</p> <p>For an ARN, we recommend that you specify a complete ARN rather
-     * than a partial ARN.</p>
+     * <p>The ARN or name of the secret.</p> <p>For an ARN, we recommend that you
+     * specify a complete ARN rather than a partial ARN.</p>
      */
     inline UntagResourceRequest& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
 
     /**
-     * <p>The identifier for the secret that you want to remove tags from. You can
-     * specify either the Amazon Resource Name (ARN) or the friendly name of the
-     * secret.</p> <p>For an ARN, we recommend that you specify a complete ARN rather
-     * than a partial ARN.</p>
+     * <p>The ARN or name of the secret.</p> <p>For an ARN, we recommend that you
+     * specify a complete ARN rather than a partial ARN.</p>
      */
     inline UntagResourceRequest& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the secret that you want to remove tags from. You can
-     * specify either the Amazon Resource Name (ARN) or the friendly name of the
-     * secret.</p> <p>For an ARN, we recommend that you specify a complete ARN rather
-     * than a partial ARN.</p>
+     * <p>The ARN or name of the secret.</p> <p>For an ARN, we recommend that you
+     * specify a complete ARN rather than a partial ARN.</p>
      */
     inline UntagResourceRequest& WithSecretId(const char* value) { SetSecretId(value); return *this;}
 
@@ -103,9 +87,9 @@ namespace Model
     /**
      * <p>A list of tag key names to remove from the secret. You don't specify the
      * value. Both the key and its associated value are removed.</p> <p>This parameter
-     * to the API requires a JSON text string argument.</p> <p>For storing multiple
-     * values, we recommend that you use a JSON text string argument and specify
-     * key/value pairs. For more information, see <a
+     * requires a JSON text string argument.</p> <p>For storing multiple values, we
+     * recommend that you use a JSON text string argument and specify key/value pairs.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying
      * parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services
      * CLI User Guide.</p>
@@ -115,9 +99,9 @@ namespace Model
     /**
      * <p>A list of tag key names to remove from the secret. You don't specify the
      * value. Both the key and its associated value are removed.</p> <p>This parameter
-     * to the API requires a JSON text string argument.</p> <p>For storing multiple
-     * values, we recommend that you use a JSON text string argument and specify
-     * key/value pairs. For more information, see <a
+     * requires a JSON text string argument.</p> <p>For storing multiple values, we
+     * recommend that you use a JSON text string argument and specify key/value pairs.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying
      * parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services
      * CLI User Guide.</p>
@@ -127,9 +111,9 @@ namespace Model
     /**
      * <p>A list of tag key names to remove from the secret. You don't specify the
      * value. Both the key and its associated value are removed.</p> <p>This parameter
-     * to the API requires a JSON text string argument.</p> <p>For storing multiple
-     * values, we recommend that you use a JSON text string argument and specify
-     * key/value pairs. For more information, see <a
+     * requires a JSON text string argument.</p> <p>For storing multiple values, we
+     * recommend that you use a JSON text string argument and specify key/value pairs.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying
      * parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services
      * CLI User Guide.</p>
@@ -139,9 +123,9 @@ namespace Model
     /**
      * <p>A list of tag key names to remove from the secret. You don't specify the
      * value. Both the key and its associated value are removed.</p> <p>This parameter
-     * to the API requires a JSON text string argument.</p> <p>For storing multiple
-     * values, we recommend that you use a JSON text string argument and specify
-     * key/value pairs. For more information, see <a
+     * requires a JSON text string argument.</p> <p>For storing multiple values, we
+     * recommend that you use a JSON text string argument and specify key/value pairs.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying
      * parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services
      * CLI User Guide.</p>
@@ -151,9 +135,9 @@ namespace Model
     /**
      * <p>A list of tag key names to remove from the secret. You don't specify the
      * value. Both the key and its associated value are removed.</p> <p>This parameter
-     * to the API requires a JSON text string argument.</p> <p>For storing multiple
-     * values, we recommend that you use a JSON text string argument and specify
-     * key/value pairs. For more information, see <a
+     * requires a JSON text string argument.</p> <p>For storing multiple values, we
+     * recommend that you use a JSON text string argument and specify key/value pairs.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying
      * parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services
      * CLI User Guide.</p>
@@ -163,9 +147,9 @@ namespace Model
     /**
      * <p>A list of tag key names to remove from the secret. You don't specify the
      * value. Both the key and its associated value are removed.</p> <p>This parameter
-     * to the API requires a JSON text string argument.</p> <p>For storing multiple
-     * values, we recommend that you use a JSON text string argument and specify
-     * key/value pairs. For more information, see <a
+     * requires a JSON text string argument.</p> <p>For storing multiple values, we
+     * recommend that you use a JSON text string argument and specify key/value pairs.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying
      * parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services
      * CLI User Guide.</p>
@@ -175,9 +159,9 @@ namespace Model
     /**
      * <p>A list of tag key names to remove from the secret. You don't specify the
      * value. Both the key and its associated value are removed.</p> <p>This parameter
-     * to the API requires a JSON text string argument.</p> <p>For storing multiple
-     * values, we recommend that you use a JSON text string argument and specify
-     * key/value pairs. For more information, see <a
+     * requires a JSON text string argument.</p> <p>For storing multiple values, we
+     * recommend that you use a JSON text string argument and specify key/value pairs.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying
      * parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services
      * CLI User Guide.</p>
@@ -187,9 +171,9 @@ namespace Model
     /**
      * <p>A list of tag key names to remove from the secret. You don't specify the
      * value. Both the key and its associated value are removed.</p> <p>This parameter
-     * to the API requires a JSON text string argument.</p> <p>For storing multiple
-     * values, we recommend that you use a JSON text string argument and specify
-     * key/value pairs. For more information, see <a
+     * requires a JSON text string argument.</p> <p>For storing multiple values, we
+     * recommend that you use a JSON text string argument and specify key/value pairs.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying
      * parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services
      * CLI User Guide.</p>
@@ -199,9 +183,9 @@ namespace Model
     /**
      * <p>A list of tag key names to remove from the secret. You don't specify the
      * value. Both the key and its associated value are removed.</p> <p>This parameter
-     * to the API requires a JSON text string argument.</p> <p>For storing multiple
-     * values, we recommend that you use a JSON text string argument and specify
-     * key/value pairs. For more information, see <a
+     * requires a JSON text string argument.</p> <p>For storing multiple values, we
+     * recommend that you use a JSON text string argument and specify key/value pairs.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying
      * parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services
      * CLI User Guide.</p>

@@ -35,50 +35,42 @@ namespace Model
 
 
     /**
-     * <p>Response to <code>StopReplicationToReplica</code> of a secret, based on the
-     * <code>SecretId</code>.</p>
+     * <p>The ARN of the primary secret. </p>
      */
     inline const Aws::String& GetSecretId() const{ return m_secretId; }
 
     /**
-     * <p>Response to <code>StopReplicationToReplica</code> of a secret, based on the
-     * <code>SecretId</code>.</p>
+     * <p>The ARN of the primary secret. </p>
      */
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
 
     /**
-     * <p>Response to <code>StopReplicationToReplica</code> of a secret, based on the
-     * <code>SecretId</code>.</p>
+     * <p>The ARN of the primary secret. </p>
      */
     inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
 
     /**
-     * <p>Response to <code>StopReplicationToReplica</code> of a secret, based on the
-     * <code>SecretId</code>.</p>
+     * <p>The ARN of the primary secret. </p>
      */
     inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
 
     /**
-     * <p>Response to <code>StopReplicationToReplica</code> of a secret, based on the
-     * <code>SecretId</code>.</p>
+     * <p>The ARN of the primary secret. </p>
      */
     inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
 
     /**
-     * <p>Response to <code>StopReplicationToReplica</code> of a secret, based on the
-     * <code>SecretId</code>.</p>
+     * <p>The ARN of the primary secret. </p>
      */
     inline StopReplicationToReplicaRequest& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
 
     /**
-     * <p>Response to <code>StopReplicationToReplica</code> of a secret, based on the
-     * <code>SecretId</code>.</p>
+     * <p>The ARN of the primary secret. </p>
      */
     inline StopReplicationToReplicaRequest& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
 
     /**
-     * <p>Response to <code>StopReplicationToReplica</code> of a secret, based on the
-     * <code>SecretId</code>.</p>
+     * <p>The ARN of the primary secret. </p>
      */
     inline StopReplicationToReplicaRequest& WithSecretId(const char* value) { SetSecretId(value); return *this;}
 

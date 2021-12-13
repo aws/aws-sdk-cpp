@@ -46,66 +46,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the secret.</p> <p>For more information
-     * about ARNs in Secrets Manager, see <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
-     * Resources</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret.</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the secret.</p> <p>For more information
-     * about ARNs in Secrets Manager, see <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
-     * Resources</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret.</p>
      */
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the secret.</p> <p>For more information
-     * about ARNs in Secrets Manager, see <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
-     * Resources</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret.</p>
      */
     inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the secret.</p> <p>For more information
-     * about ARNs in Secrets Manager, see <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
-     * Resources</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret.</p>
      */
     inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the secret.</p> <p>For more information
-     * about ARNs in Secrets Manager, see <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
-     * Resources</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret.</p>
      */
     inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the secret.</p> <p>For more information
-     * about ARNs in Secrets Manager, see <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
-     * Resources</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret.</p>
      */
     inline SecretListEntry& WithARN(const Aws::String& value) { SetARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the secret.</p> <p>For more information
-     * about ARNs in Secrets Manager, see <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
-     * Resources</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret.</p>
      */
     inline SecretListEntry& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the secret.</p> <p>For more information
-     * about ARNs in Secrets Manager, see <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
-     * Resources</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret.</p>
      */
     inline SecretListEntry& WithARN(const char* value) { SetARN(value); return *this;}
 
@@ -217,74 +193,58 @@ namespace Model
 
 
     /**
-     * <p>The ARN or alias of the Amazon Web Services KMS customer master key (CMK)
-     * used to encrypt the <code>SecretString</code> and <code>SecretBinary</code>
-     * fields in each version of the secret. If you don't provide a key, then Secrets
-     * Manager defaults to encrypting the secret fields with the default KMS CMK, the
-     * key named <code>awssecretsmanager</code>, for this account.</p>
+     * <p>The ARN of the KMS key that Secrets Manager uses to encrypt the secret value.
+     * If the secret is encrypted with the Amazon Web Services managed key
+     * <code>aws/secretsmanager</code>, this field is omitted.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The ARN or alias of the Amazon Web Services KMS customer master key (CMK)
-     * used to encrypt the <code>SecretString</code> and <code>SecretBinary</code>
-     * fields in each version of the secret. If you don't provide a key, then Secrets
-     * Manager defaults to encrypting the secret fields with the default KMS CMK, the
-     * key named <code>awssecretsmanager</code>, for this account.</p>
+     * <p>The ARN of the KMS key that Secrets Manager uses to encrypt the secret value.
+     * If the secret is encrypted with the Amazon Web Services managed key
+     * <code>aws/secretsmanager</code>, this field is omitted.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The ARN or alias of the Amazon Web Services KMS customer master key (CMK)
-     * used to encrypt the <code>SecretString</code> and <code>SecretBinary</code>
-     * fields in each version of the secret. If you don't provide a key, then Secrets
-     * Manager defaults to encrypting the secret fields with the default KMS CMK, the
-     * key named <code>awssecretsmanager</code>, for this account.</p>
+     * <p>The ARN of the KMS key that Secrets Manager uses to encrypt the secret value.
+     * If the secret is encrypted with the Amazon Web Services managed key
+     * <code>aws/secretsmanager</code>, this field is omitted.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The ARN or alias of the Amazon Web Services KMS customer master key (CMK)
-     * used to encrypt the <code>SecretString</code> and <code>SecretBinary</code>
-     * fields in each version of the secret. If you don't provide a key, then Secrets
-     * Manager defaults to encrypting the secret fields with the default KMS CMK, the
-     * key named <code>awssecretsmanager</code>, for this account.</p>
+     * <p>The ARN of the KMS key that Secrets Manager uses to encrypt the secret value.
+     * If the secret is encrypted with the Amazon Web Services managed key
+     * <code>aws/secretsmanager</code>, this field is omitted.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The ARN or alias of the Amazon Web Services KMS customer master key (CMK)
-     * used to encrypt the <code>SecretString</code> and <code>SecretBinary</code>
-     * fields in each version of the secret. If you don't provide a key, then Secrets
-     * Manager defaults to encrypting the secret fields with the default KMS CMK, the
-     * key named <code>awssecretsmanager</code>, for this account.</p>
+     * <p>The ARN of the KMS key that Secrets Manager uses to encrypt the secret value.
+     * If the secret is encrypted with the Amazon Web Services managed key
+     * <code>aws/secretsmanager</code>, this field is omitted.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The ARN or alias of the Amazon Web Services KMS customer master key (CMK)
-     * used to encrypt the <code>SecretString</code> and <code>SecretBinary</code>
-     * fields in each version of the secret. If you don't provide a key, then Secrets
-     * Manager defaults to encrypting the secret fields with the default KMS CMK, the
-     * key named <code>awssecretsmanager</code>, for this account.</p>
+     * <p>The ARN of the KMS key that Secrets Manager uses to encrypt the secret value.
+     * If the secret is encrypted with the Amazon Web Services managed key
+     * <code>aws/secretsmanager</code>, this field is omitted.</p>
      */
     inline SecretListEntry& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ARN or alias of the Amazon Web Services KMS customer master key (CMK)
-     * used to encrypt the <code>SecretString</code> and <code>SecretBinary</code>
-     * fields in each version of the secret. If you don't provide a key, then Secrets
-     * Manager defaults to encrypting the secret fields with the default KMS CMK, the
-     * key named <code>awssecretsmanager</code>, for this account.</p>
+     * <p>The ARN of the KMS key that Secrets Manager uses to encrypt the secret value.
+     * If the secret is encrypted with the Amazon Web Services managed key
+     * <code>aws/secretsmanager</code>, this field is omitted.</p>
      */
     inline SecretListEntry& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN or alias of the Amazon Web Services KMS customer master key (CMK)
-     * used to encrypt the <code>SecretString</code> and <code>SecretBinary</code>
-     * fields in each version of the secret. If you don't provide a key, then Secrets
-     * Manager defaults to encrypting the secret fields with the default KMS CMK, the
-     * key named <code>awssecretsmanager</code>, for this account.</p>
+     * <p>The ARN of the KMS key that Secrets Manager uses to encrypt the secret value.
+     * If the secret is encrypted with the Amazon Web Services managed key
+     * <code>aws/secretsmanager</code>, this field is omitted.</p>
      */
     inline SecretListEntry& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

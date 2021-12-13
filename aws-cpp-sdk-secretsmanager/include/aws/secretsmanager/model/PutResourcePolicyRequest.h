@@ -35,176 +35,152 @@ namespace Model
 
 
     /**
-     * <p>Specifies the secret that you want to attach the resource-based policy. You
-     * can specify either the ARN or the friendly name of the secret.</p> <p>For an
-     * ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+     * <p>The ARN or name of the secret to attach the resource-based policy.</p> <p>For
+     * an ARN, we recommend that you specify a complete ARN rather than a partial
+     * ARN.</p>
      */
     inline const Aws::String& GetSecretId() const{ return m_secretId; }
 
     /**
-     * <p>Specifies the secret that you want to attach the resource-based policy. You
-     * can specify either the ARN or the friendly name of the secret.</p> <p>For an
-     * ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+     * <p>The ARN or name of the secret to attach the resource-based policy.</p> <p>For
+     * an ARN, we recommend that you specify a complete ARN rather than a partial
+     * ARN.</p>
      */
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
 
     /**
-     * <p>Specifies the secret that you want to attach the resource-based policy. You
-     * can specify either the ARN or the friendly name of the secret.</p> <p>For an
-     * ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+     * <p>The ARN or name of the secret to attach the resource-based policy.</p> <p>For
+     * an ARN, we recommend that you specify a complete ARN rather than a partial
+     * ARN.</p>
      */
     inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
 
     /**
-     * <p>Specifies the secret that you want to attach the resource-based policy. You
-     * can specify either the ARN or the friendly name of the secret.</p> <p>For an
-     * ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+     * <p>The ARN or name of the secret to attach the resource-based policy.</p> <p>For
+     * an ARN, we recommend that you specify a complete ARN rather than a partial
+     * ARN.</p>
      */
     inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
 
     /**
-     * <p>Specifies the secret that you want to attach the resource-based policy. You
-     * can specify either the ARN or the friendly name of the secret.</p> <p>For an
-     * ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+     * <p>The ARN or name of the secret to attach the resource-based policy.</p> <p>For
+     * an ARN, we recommend that you specify a complete ARN rather than a partial
+     * ARN.</p>
      */
     inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
 
     /**
-     * <p>Specifies the secret that you want to attach the resource-based policy. You
-     * can specify either the ARN or the friendly name of the secret.</p> <p>For an
-     * ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+     * <p>The ARN or name of the secret to attach the resource-based policy.</p> <p>For
+     * an ARN, we recommend that you specify a complete ARN rather than a partial
+     * ARN.</p>
      */
     inline PutResourcePolicyRequest& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
 
     /**
-     * <p>Specifies the secret that you want to attach the resource-based policy. You
-     * can specify either the ARN or the friendly name of the secret.</p> <p>For an
-     * ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+     * <p>The ARN or name of the secret to attach the resource-based policy.</p> <p>For
+     * an ARN, we recommend that you specify a complete ARN rather than a partial
+     * ARN.</p>
      */
     inline PutResourcePolicyRequest& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the secret that you want to attach the resource-based policy. You
-     * can specify either the ARN or the friendly name of the secret.</p> <p>For an
-     * ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+     * <p>The ARN or name of the secret to attach the resource-based policy.</p> <p>For
+     * an ARN, we recommend that you specify a complete ARN rather than a partial
+     * ARN.</p>
      */
     inline PutResourcePolicyRequest& WithSecretId(const char* value) { SetSecretId(value); return *this;}
 
 
     /**
-     * <p>A JSON-formatted string constructed according to the grammar and syntax for
-     * an Amazon Web Services resource-based policy. The policy in the string
-     * identifies who can access or manage this secret and its versions. For
-     * information on how to format a JSON parameter for the various command line tool
-     * environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
+     * <p>A JSON-formatted string for an Amazon Web Services resource-based policy. For
+     * example policies, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions
+     * policy examples</a>.</p>
      */
     inline const Aws::String& GetResourcePolicy() const{ return m_resourcePolicy; }
 
     /**
-     * <p>A JSON-formatted string constructed according to the grammar and syntax for
-     * an Amazon Web Services resource-based policy. The policy in the string
-     * identifies who can access or manage this secret and its versions. For
-     * information on how to format a JSON parameter for the various command line tool
-     * environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
+     * <p>A JSON-formatted string for an Amazon Web Services resource-based policy. For
+     * example policies, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions
+     * policy examples</a>.</p>
      */
     inline bool ResourcePolicyHasBeenSet() const { return m_resourcePolicyHasBeenSet; }
 
     /**
-     * <p>A JSON-formatted string constructed according to the grammar and syntax for
-     * an Amazon Web Services resource-based policy. The policy in the string
-     * identifies who can access or manage this secret and its versions. For
-     * information on how to format a JSON parameter for the various command line tool
-     * environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
+     * <p>A JSON-formatted string for an Amazon Web Services resource-based policy. For
+     * example policies, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions
+     * policy examples</a>.</p>
      */
     inline void SetResourcePolicy(const Aws::String& value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy = value; }
 
     /**
-     * <p>A JSON-formatted string constructed according to the grammar and syntax for
-     * an Amazon Web Services resource-based policy. The policy in the string
-     * identifies who can access or manage this secret and its versions. For
-     * information on how to format a JSON parameter for the various command line tool
-     * environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
+     * <p>A JSON-formatted string for an Amazon Web Services resource-based policy. For
+     * example policies, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions
+     * policy examples</a>.</p>
      */
     inline void SetResourcePolicy(Aws::String&& value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy = std::move(value); }
 
     /**
-     * <p>A JSON-formatted string constructed according to the grammar and syntax for
-     * an Amazon Web Services resource-based policy. The policy in the string
-     * identifies who can access or manage this secret and its versions. For
-     * information on how to format a JSON parameter for the various command line tool
-     * environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
+     * <p>A JSON-formatted string for an Amazon Web Services resource-based policy. For
+     * example policies, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions
+     * policy examples</a>.</p>
      */
     inline void SetResourcePolicy(const char* value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy.assign(value); }
 
     /**
-     * <p>A JSON-formatted string constructed according to the grammar and syntax for
-     * an Amazon Web Services resource-based policy. The policy in the string
-     * identifies who can access or manage this secret and its versions. For
-     * information on how to format a JSON parameter for the various command line tool
-     * environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
+     * <p>A JSON-formatted string for an Amazon Web Services resource-based policy. For
+     * example policies, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions
+     * policy examples</a>.</p>
      */
     inline PutResourcePolicyRequest& WithResourcePolicy(const Aws::String& value) { SetResourcePolicy(value); return *this;}
 
     /**
-     * <p>A JSON-formatted string constructed according to the grammar and syntax for
-     * an Amazon Web Services resource-based policy. The policy in the string
-     * identifies who can access or manage this secret and its versions. For
-     * information on how to format a JSON parameter for the various command line tool
-     * environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
+     * <p>A JSON-formatted string for an Amazon Web Services resource-based policy. For
+     * example policies, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions
+     * policy examples</a>.</p>
      */
     inline PutResourcePolicyRequest& WithResourcePolicy(Aws::String&& value) { SetResourcePolicy(std::move(value)); return *this;}
 
     /**
-     * <p>A JSON-formatted string constructed according to the grammar and syntax for
-     * an Amazon Web Services resource-based policy. The policy in the string
-     * identifies who can access or manage this secret and its versions. For
-     * information on how to format a JSON parameter for the various command line tool
-     * environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
+     * <p>A JSON-formatted string for an Amazon Web Services resource-based policy. For
+     * example policies, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions
+     * policy examples</a>.</p>
      */
     inline PutResourcePolicyRequest& WithResourcePolicy(const char* value) { SetResourcePolicy(value); return *this;}
 
 
     /**
-     * <p>(Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true,
-     * then you block resource-based policies that allow broad access to the
-     * secret.</p>
+     * <p>Specifies whether to block resource-based policies that allow broad access to
+     * the secret. By default, Secrets Manager blocks policies that allow broad access,
+     * for example those that use a wildcard for the principal.</p>
      */
     inline bool GetBlockPublicPolicy() const{ return m_blockPublicPolicy; }
 
     /**
-     * <p>(Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true,
-     * then you block resource-based policies that allow broad access to the
-     * secret.</p>
+     * <p>Specifies whether to block resource-based policies that allow broad access to
+     * the secret. By default, Secrets Manager blocks policies that allow broad access,
+     * for example those that use a wildcard for the principal.</p>
      */
     inline bool BlockPublicPolicyHasBeenSet() const { return m_blockPublicPolicyHasBeenSet; }
 
     /**
-     * <p>(Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true,
-     * then you block resource-based policies that allow broad access to the
-     * secret.</p>
+     * <p>Specifies whether to block resource-based policies that allow broad access to
+     * the secret. By default, Secrets Manager blocks policies that allow broad access,
+     * for example those that use a wildcard for the principal.</p>
      */
     inline void SetBlockPublicPolicy(bool value) { m_blockPublicPolicyHasBeenSet = true; m_blockPublicPolicy = value; }
 
     /**
-     * <p>(Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true,
-     * then you block resource-based policies that allow broad access to the
-     * secret.</p>
+     * <p>Specifies whether to block resource-based policies that allow broad access to
+     * the secret. By default, Secrets Manager blocks policies that allow broad access,
+     * for example those that use a wildcard for the principal.</p>
      */
     inline PutResourcePolicyRequest& WithBlockPublicPolicy(bool value) { SetBlockPublicPolicy(value); return *this;}
 

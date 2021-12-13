@@ -33,44 +33,44 @@ namespace Model
 
 
     /**
-     * <p>Response <code>StopReplicationToReplica</code> of a secret, based on the
-     * <code>ARN,</code>.</p>
+     * <p>The ARN of the promoted secret. The ARN is the same as the original primary
+     * secret except the Region is changed.</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
 
     /**
-     * <p>Response <code>StopReplicationToReplica</code> of a secret, based on the
-     * <code>ARN,</code>.</p>
+     * <p>The ARN of the promoted secret. The ARN is the same as the original primary
+     * secret except the Region is changed.</p>
      */
     inline void SetARN(const Aws::String& value) { m_aRN = value; }
 
     /**
-     * <p>Response <code>StopReplicationToReplica</code> of a secret, based on the
-     * <code>ARN,</code>.</p>
+     * <p>The ARN of the promoted secret. The ARN is the same as the original primary
+     * secret except the Region is changed.</p>
      */
     inline void SetARN(Aws::String&& value) { m_aRN = std::move(value); }
 
     /**
-     * <p>Response <code>StopReplicationToReplica</code> of a secret, based on the
-     * <code>ARN,</code>.</p>
+     * <p>The ARN of the promoted secret. The ARN is the same as the original primary
+     * secret except the Region is changed.</p>
      */
     inline void SetARN(const char* value) { m_aRN.assign(value); }
 
     /**
-     * <p>Response <code>StopReplicationToReplica</code> of a secret, based on the
-     * <code>ARN,</code>.</p>
+     * <p>The ARN of the promoted secret. The ARN is the same as the original primary
+     * secret except the Region is changed.</p>
      */
     inline StopReplicationToReplicaResult& WithARN(const Aws::String& value) { SetARN(value); return *this;}
 
     /**
-     * <p>Response <code>StopReplicationToReplica</code> of a secret, based on the
-     * <code>ARN,</code>.</p>
+     * <p>The ARN of the promoted secret. The ARN is the same as the original primary
+     * secret except the Region is changed.</p>
      */
     inline StopReplicationToReplicaResult& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
 
     /**
-     * <p>Response <code>StopReplicationToReplica</code> of a secret, based on the
-     * <code>ARN,</code>.</p>
+     * <p>The ARN of the promoted secret. The ARN is the same as the original primary
+     * secret except the Region is changed.</p>
      */
     inline StopReplicationToReplicaResult& WithARN(const char* value) { SetARN(value); return *this;}
 

@@ -35,80 +35,73 @@ namespace Model
 
 
     /**
-     * <p>The secret <code>ARN</code> removed from replication regions.</p>
+     * <p>The ARN of the primary secret.</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
 
     /**
-     * <p>The secret <code>ARN</code> removed from replication regions.</p>
+     * <p>The ARN of the primary secret.</p>
      */
     inline void SetARN(const Aws::String& value) { m_aRN = value; }
 
     /**
-     * <p>The secret <code>ARN</code> removed from replication regions.</p>
+     * <p>The ARN of the primary secret.</p>
      */
     inline void SetARN(Aws::String&& value) { m_aRN = std::move(value); }
 
     /**
-     * <p>The secret <code>ARN</code> removed from replication regions.</p>
+     * <p>The ARN of the primary secret.</p>
      */
     inline void SetARN(const char* value) { m_aRN.assign(value); }
 
     /**
-     * <p>The secret <code>ARN</code> removed from replication regions.</p>
+     * <p>The ARN of the primary secret.</p>
      */
     inline RemoveRegionsFromReplicationResult& WithARN(const Aws::String& value) { SetARN(value); return *this;}
 
     /**
-     * <p>The secret <code>ARN</code> removed from replication regions.</p>
+     * <p>The ARN of the primary secret.</p>
      */
     inline RemoveRegionsFromReplicationResult& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
 
     /**
-     * <p>The secret <code>ARN</code> removed from replication regions.</p>
+     * <p>The ARN of the primary secret.</p>
      */
     inline RemoveRegionsFromReplicationResult& WithARN(const char* value) { SetARN(value); return *this;}
 
 
     /**
-     * <p>Describes the remaining replication status after you remove regions from the
-     * replication list.</p>
+     * <p>The status of replicas for this secret after you remove Regions.</p>
      */
     inline const Aws::Vector<ReplicationStatusType>& GetReplicationStatus() const{ return m_replicationStatus; }
 
     /**
-     * <p>Describes the remaining replication status after you remove regions from the
-     * replication list.</p>
+     * <p>The status of replicas for this secret after you remove Regions.</p>
      */
     inline void SetReplicationStatus(const Aws::Vector<ReplicationStatusType>& value) { m_replicationStatus = value; }
 
     /**
-     * <p>Describes the remaining replication status after you remove regions from the
-     * replication list.</p>
+     * <p>The status of replicas for this secret after you remove Regions.</p>
      */
     inline void SetReplicationStatus(Aws::Vector<ReplicationStatusType>&& value) { m_replicationStatus = std::move(value); }
 
     /**
-     * <p>Describes the remaining replication status after you remove regions from the
-     * replication list.</p>
+     * <p>The status of replicas for this secret after you remove Regions.</p>
      */
     inline RemoveRegionsFromReplicationResult& WithReplicationStatus(const Aws::Vector<ReplicationStatusType>& value) { SetReplicationStatus(value); return *this;}
 
     /**
-     * <p>Describes the remaining replication status after you remove regions from the
-     * replication list.</p>
+     * <p>The status of replicas for this secret after you remove Regions.</p>
      */
     inline RemoveRegionsFromReplicationResult& WithReplicationStatus(Aws::Vector<ReplicationStatusType>&& value) { SetReplicationStatus(std::move(value)); return *this;}
 
     /**
-     * <p>Describes the remaining replication status after you remove regions from the
-     * replication list.</p>
+     * <p>The status of replicas for this secret after you remove Regions.</p>
      */
     inline RemoveRegionsFromReplicationResult& AddReplicationStatus(const ReplicationStatusType& value) { m_replicationStatus.push_back(value); return *this; }
 
     /**
-     * <p>Describes the remaining replication status after you remove regions from the
-     * replication list.</p>
+     * <p>The status of replicas for this secret after you remove Regions.</p>
      */
     inline RemoveRegionsFromReplicationResult& AddReplicationStatus(ReplicationStatusType&& value) { m_replicationStatus.push_back(std::move(value)); return *this; }
 

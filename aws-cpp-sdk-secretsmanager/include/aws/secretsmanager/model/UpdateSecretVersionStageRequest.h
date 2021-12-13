@@ -35,66 +35,58 @@ namespace Model
 
 
     /**
-     * <p>Specifies the secret with the version with the list of staging labels you
-     * want to modify. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.</p> <p>For an ARN, we recommend that you specify a
-     * complete ARN rather than a partial ARN.</p>
+     * <p>The ARN or the name of the secret with the version and staging labelsto
+     * modify.</p> <p>For an ARN, we recommend that you specify a complete ARN rather
+     * than a partial ARN.</p>
      */
     inline const Aws::String& GetSecretId() const{ return m_secretId; }
 
     /**
-     * <p>Specifies the secret with the version with the list of staging labels you
-     * want to modify. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.</p> <p>For an ARN, we recommend that you specify a
-     * complete ARN rather than a partial ARN.</p>
+     * <p>The ARN or the name of the secret with the version and staging labelsto
+     * modify.</p> <p>For an ARN, we recommend that you specify a complete ARN rather
+     * than a partial ARN.</p>
      */
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
 
     /**
-     * <p>Specifies the secret with the version with the list of staging labels you
-     * want to modify. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.</p> <p>For an ARN, we recommend that you specify a
-     * complete ARN rather than a partial ARN.</p>
+     * <p>The ARN or the name of the secret with the version and staging labelsto
+     * modify.</p> <p>For an ARN, we recommend that you specify a complete ARN rather
+     * than a partial ARN.</p>
      */
     inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
 
     /**
-     * <p>Specifies the secret with the version with the list of staging labels you
-     * want to modify. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.</p> <p>For an ARN, we recommend that you specify a
-     * complete ARN rather than a partial ARN.</p>
+     * <p>The ARN or the name of the secret with the version and staging labelsto
+     * modify.</p> <p>For an ARN, we recommend that you specify a complete ARN rather
+     * than a partial ARN.</p>
      */
     inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
 
     /**
-     * <p>Specifies the secret with the version with the list of staging labels you
-     * want to modify. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.</p> <p>For an ARN, we recommend that you specify a
-     * complete ARN rather than a partial ARN.</p>
+     * <p>The ARN or the name of the secret with the version and staging labelsto
+     * modify.</p> <p>For an ARN, we recommend that you specify a complete ARN rather
+     * than a partial ARN.</p>
      */
     inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
 
     /**
-     * <p>Specifies the secret with the version with the list of staging labels you
-     * want to modify. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.</p> <p>For an ARN, we recommend that you specify a
-     * complete ARN rather than a partial ARN.</p>
+     * <p>The ARN or the name of the secret with the version and staging labelsto
+     * modify.</p> <p>For an ARN, we recommend that you specify a complete ARN rather
+     * than a partial ARN.</p>
      */
     inline UpdateSecretVersionStageRequest& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
 
     /**
-     * <p>Specifies the secret with the version with the list of staging labels you
-     * want to modify. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.</p> <p>For an ARN, we recommend that you specify a
-     * complete ARN rather than a partial ARN.</p>
+     * <p>The ARN or the name of the secret with the version and staging labelsto
+     * modify.</p> <p>For an ARN, we recommend that you specify a complete ARN rather
+     * than a partial ARN.</p>
      */
     inline UpdateSecretVersionStageRequest& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the secret with the version with the list of staging labels you
-     * want to modify. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.</p> <p>For an ARN, we recommend that you specify a
-     * complete ARN rather than a partial ARN.</p>
+     * <p>The ARN or the name of the secret with the version and staging labelsto
+     * modify.</p> <p>For an ARN, we recommend that you specify a complete ARN rather
+     * than a partial ARN.</p>
      */
     inline UpdateSecretVersionStageRequest& WithSecretId(const char* value) { SetSecretId(value); return *this;}
 
@@ -141,155 +133,147 @@ namespace Model
 
 
     /**
-     * <p>Specifies the secret version ID of the version that the staging label is to
-     * be removed from. If the staging label you are trying to attach to one version is
-     * already attached to a different version, then you must include this parameter
-     * and specify the version that the label is to be removed from. If the label is
-     * attached and you either do not specify this parameter, or the version ID does
-     * not match, then the operation fails.</p>
+     * <p>The ID of the version that the staging label is to be removed from. If the
+     * staging label you are trying to attach to one version is already attached to a
+     * different version, then you must include this parameter and specify the version
+     * that the label is to be removed from. If the label is attached and you either do
+     * not specify this parameter, or the version ID does not match, then the operation
+     * fails.</p>
      */
     inline const Aws::String& GetRemoveFromVersionId() const{ return m_removeFromVersionId; }
 
     /**
-     * <p>Specifies the secret version ID of the version that the staging label is to
-     * be removed from. If the staging label you are trying to attach to one version is
-     * already attached to a different version, then you must include this parameter
-     * and specify the version that the label is to be removed from. If the label is
-     * attached and you either do not specify this parameter, or the version ID does
-     * not match, then the operation fails.</p>
+     * <p>The ID of the version that the staging label is to be removed from. If the
+     * staging label you are trying to attach to one version is already attached to a
+     * different version, then you must include this parameter and specify the version
+     * that the label is to be removed from. If the label is attached and you either do
+     * not specify this parameter, or the version ID does not match, then the operation
+     * fails.</p>
      */
     inline bool RemoveFromVersionIdHasBeenSet() const { return m_removeFromVersionIdHasBeenSet; }
 
     /**
-     * <p>Specifies the secret version ID of the version that the staging label is to
-     * be removed from. If the staging label you are trying to attach to one version is
-     * already attached to a different version, then you must include this parameter
-     * and specify the version that the label is to be removed from. If the label is
-     * attached and you either do not specify this parameter, or the version ID does
-     * not match, then the operation fails.</p>
+     * <p>The ID of the version that the staging label is to be removed from. If the
+     * staging label you are trying to attach to one version is already attached to a
+     * different version, then you must include this parameter and specify the version
+     * that the label is to be removed from. If the label is attached and you either do
+     * not specify this parameter, or the version ID does not match, then the operation
+     * fails.</p>
      */
     inline void SetRemoveFromVersionId(const Aws::String& value) { m_removeFromVersionIdHasBeenSet = true; m_removeFromVersionId = value; }
 
     /**
-     * <p>Specifies the secret version ID of the version that the staging label is to
-     * be removed from. If the staging label you are trying to attach to one version is
-     * already attached to a different version, then you must include this parameter
-     * and specify the version that the label is to be removed from. If the label is
-     * attached and you either do not specify this parameter, or the version ID does
-     * not match, then the operation fails.</p>
+     * <p>The ID of the version that the staging label is to be removed from. If the
+     * staging label you are trying to attach to one version is already attached to a
+     * different version, then you must include this parameter and specify the version
+     * that the label is to be removed from. If the label is attached and you either do
+     * not specify this parameter, or the version ID does not match, then the operation
+     * fails.</p>
      */
     inline void SetRemoveFromVersionId(Aws::String&& value) { m_removeFromVersionIdHasBeenSet = true; m_removeFromVersionId = std::move(value); }
 
     /**
-     * <p>Specifies the secret version ID of the version that the staging label is to
-     * be removed from. If the staging label you are trying to attach to one version is
-     * already attached to a different version, then you must include this parameter
-     * and specify the version that the label is to be removed from. If the label is
-     * attached and you either do not specify this parameter, or the version ID does
-     * not match, then the operation fails.</p>
+     * <p>The ID of the version that the staging label is to be removed from. If the
+     * staging label you are trying to attach to one version is already attached to a
+     * different version, then you must include this parameter and specify the version
+     * that the label is to be removed from. If the label is attached and you either do
+     * not specify this parameter, or the version ID does not match, then the operation
+     * fails.</p>
      */
     inline void SetRemoveFromVersionId(const char* value) { m_removeFromVersionIdHasBeenSet = true; m_removeFromVersionId.assign(value); }
 
     /**
-     * <p>Specifies the secret version ID of the version that the staging label is to
-     * be removed from. If the staging label you are trying to attach to one version is
-     * already attached to a different version, then you must include this parameter
-     * and specify the version that the label is to be removed from. If the label is
-     * attached and you either do not specify this parameter, or the version ID does
-     * not match, then the operation fails.</p>
+     * <p>The ID of the version that the staging label is to be removed from. If the
+     * staging label you are trying to attach to one version is already attached to a
+     * different version, then you must include this parameter and specify the version
+     * that the label is to be removed from. If the label is attached and you either do
+     * not specify this parameter, or the version ID does not match, then the operation
+     * fails.</p>
      */
     inline UpdateSecretVersionStageRequest& WithRemoveFromVersionId(const Aws::String& value) { SetRemoveFromVersionId(value); return *this;}
 
     /**
-     * <p>Specifies the secret version ID of the version that the staging label is to
-     * be removed from. If the staging label you are trying to attach to one version is
-     * already attached to a different version, then you must include this parameter
-     * and specify the version that the label is to be removed from. If the label is
-     * attached and you either do not specify this parameter, or the version ID does
-     * not match, then the operation fails.</p>
+     * <p>The ID of the version that the staging label is to be removed from. If the
+     * staging label you are trying to attach to one version is already attached to a
+     * different version, then you must include this parameter and specify the version
+     * that the label is to be removed from. If the label is attached and you either do
+     * not specify this parameter, or the version ID does not match, then the operation
+     * fails.</p>
      */
     inline UpdateSecretVersionStageRequest& WithRemoveFromVersionId(Aws::String&& value) { SetRemoveFromVersionId(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the secret version ID of the version that the staging label is to
-     * be removed from. If the staging label you are trying to attach to one version is
-     * already attached to a different version, then you must include this parameter
-     * and specify the version that the label is to be removed from. If the label is
-     * attached and you either do not specify this parameter, or the version ID does
-     * not match, then the operation fails.</p>
+     * <p>The ID of the version that the staging label is to be removed from. If the
+     * staging label you are trying to attach to one version is already attached to a
+     * different version, then you must include this parameter and specify the version
+     * that the label is to be removed from. If the label is attached and you either do
+     * not specify this parameter, or the version ID does not match, then the operation
+     * fails.</p>
      */
     inline UpdateSecretVersionStageRequest& WithRemoveFromVersionId(const char* value) { SetRemoveFromVersionId(value); return *this;}
 
 
     /**
-     * <p>(Optional) The secret version ID that you want to add the staging label. If
-     * you want to remove a label from a version, then do not specify this
-     * parameter.</p> <p>If the staging label is already attached to a different
-     * version of the secret, then you must also specify the
-     * <code>RemoveFromVersionId</code> parameter. </p>
+     * <p>The ID of the version to add the staging label to. To remove a label from a
+     * version, then do not specify this parameter.</p> <p>If the staging label is
+     * already attached to a different version of the secret, then you must also
+     * specify the <code>RemoveFromVersionId</code> parameter. </p>
      */
     inline const Aws::String& GetMoveToVersionId() const{ return m_moveToVersionId; }
 
     /**
-     * <p>(Optional) The secret version ID that you want to add the staging label. If
-     * you want to remove a label from a version, then do not specify this
-     * parameter.</p> <p>If the staging label is already attached to a different
-     * version of the secret, then you must also specify the
-     * <code>RemoveFromVersionId</code> parameter. </p>
+     * <p>The ID of the version to add the staging label to. To remove a label from a
+     * version, then do not specify this parameter.</p> <p>If the staging label is
+     * already attached to a different version of the secret, then you must also
+     * specify the <code>RemoveFromVersionId</code> parameter. </p>
      */
     inline bool MoveToVersionIdHasBeenSet() const { return m_moveToVersionIdHasBeenSet; }
 
     /**
-     * <p>(Optional) The secret version ID that you want to add the staging label. If
-     * you want to remove a label from a version, then do not specify this
-     * parameter.</p> <p>If the staging label is already attached to a different
-     * version of the secret, then you must also specify the
-     * <code>RemoveFromVersionId</code> parameter. </p>
+     * <p>The ID of the version to add the staging label to. To remove a label from a
+     * version, then do not specify this parameter.</p> <p>If the staging label is
+     * already attached to a different version of the secret, then you must also
+     * specify the <code>RemoveFromVersionId</code> parameter. </p>
      */
     inline void SetMoveToVersionId(const Aws::String& value) { m_moveToVersionIdHasBeenSet = true; m_moveToVersionId = value; }
 
     /**
-     * <p>(Optional) The secret version ID that you want to add the staging label. If
-     * you want to remove a label from a version, then do not specify this
-     * parameter.</p> <p>If the staging label is already attached to a different
-     * version of the secret, then you must also specify the
-     * <code>RemoveFromVersionId</code> parameter. </p>
+     * <p>The ID of the version to add the staging label to. To remove a label from a
+     * version, then do not specify this parameter.</p> <p>If the staging label is
+     * already attached to a different version of the secret, then you must also
+     * specify the <code>RemoveFromVersionId</code> parameter. </p>
      */
     inline void SetMoveToVersionId(Aws::String&& value) { m_moveToVersionIdHasBeenSet = true; m_moveToVersionId = std::move(value); }
 
     /**
-     * <p>(Optional) The secret version ID that you want to add the staging label. If
-     * you want to remove a label from a version, then do not specify this
-     * parameter.</p> <p>If the staging label is already attached to a different
-     * version of the secret, then you must also specify the
-     * <code>RemoveFromVersionId</code> parameter. </p>
+     * <p>The ID of the version to add the staging label to. To remove a label from a
+     * version, then do not specify this parameter.</p> <p>If the staging label is
+     * already attached to a different version of the secret, then you must also
+     * specify the <code>RemoveFromVersionId</code> parameter. </p>
      */
     inline void SetMoveToVersionId(const char* value) { m_moveToVersionIdHasBeenSet = true; m_moveToVersionId.assign(value); }
 
     /**
-     * <p>(Optional) The secret version ID that you want to add the staging label. If
-     * you want to remove a label from a version, then do not specify this
-     * parameter.</p> <p>If the staging label is already attached to a different
-     * version of the secret, then you must also specify the
-     * <code>RemoveFromVersionId</code> parameter. </p>
+     * <p>The ID of the version to add the staging label to. To remove a label from a
+     * version, then do not specify this parameter.</p> <p>If the staging label is
+     * already attached to a different version of the secret, then you must also
+     * specify the <code>RemoveFromVersionId</code> parameter. </p>
      */
     inline UpdateSecretVersionStageRequest& WithMoveToVersionId(const Aws::String& value) { SetMoveToVersionId(value); return *this;}
 
     /**
-     * <p>(Optional) The secret version ID that you want to add the staging label. If
-     * you want to remove a label from a version, then do not specify this
-     * parameter.</p> <p>If the staging label is already attached to a different
-     * version of the secret, then you must also specify the
-     * <code>RemoveFromVersionId</code> parameter. </p>
+     * <p>The ID of the version to add the staging label to. To remove a label from a
+     * version, then do not specify this parameter.</p> <p>If the staging label is
+     * already attached to a different version of the secret, then you must also
+     * specify the <code>RemoveFromVersionId</code> parameter. </p>
      */
     inline UpdateSecretVersionStageRequest& WithMoveToVersionId(Aws::String&& value) { SetMoveToVersionId(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) The secret version ID that you want to add the staging label. If
-     * you want to remove a label from a version, then do not specify this
-     * parameter.</p> <p>If the staging label is already attached to a different
-     * version of the secret, then you must also specify the
-     * <code>RemoveFromVersionId</code> parameter. </p>
+     * <p>The ID of the version to add the staging label to. To remove a label from a
+     * version, then do not specify this parameter.</p> <p>If the staging label is
+     * already attached to a different version of the secret, then you must also
+     * specify the <code>RemoveFromVersionId</code> parameter. </p>
      */
     inline UpdateSecretVersionStageRequest& WithMoveToVersionId(const char* value) { SetMoveToVersionId(value); return *this;}
 

@@ -36,88 +36,88 @@ namespace Model
 
 
     /**
-     * <p>Remove a secret by <code>SecretId</code> from replica Regions.</p>
+     * <p>The ARN or name of the secret.</p>
      */
     inline const Aws::String& GetSecretId() const{ return m_secretId; }
 
     /**
-     * <p>Remove a secret by <code>SecretId</code> from replica Regions.</p>
+     * <p>The ARN or name of the secret.</p>
      */
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
 
     /**
-     * <p>Remove a secret by <code>SecretId</code> from replica Regions.</p>
+     * <p>The ARN or name of the secret.</p>
      */
     inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
 
     /**
-     * <p>Remove a secret by <code>SecretId</code> from replica Regions.</p>
+     * <p>The ARN or name of the secret.</p>
      */
     inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
 
     /**
-     * <p>Remove a secret by <code>SecretId</code> from replica Regions.</p>
+     * <p>The ARN or name of the secret.</p>
      */
     inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
 
     /**
-     * <p>Remove a secret by <code>SecretId</code> from replica Regions.</p>
+     * <p>The ARN or name of the secret.</p>
      */
     inline RemoveRegionsFromReplicationRequest& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
 
     /**
-     * <p>Remove a secret by <code>SecretId</code> from replica Regions.</p>
+     * <p>The ARN or name of the secret.</p>
      */
     inline RemoveRegionsFromReplicationRequest& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
 
     /**
-     * <p>Remove a secret by <code>SecretId</code> from replica Regions.</p>
+     * <p>The ARN or name of the secret.</p>
      */
     inline RemoveRegionsFromReplicationRequest& WithSecretId(const char* value) { SetSecretId(value); return *this;}
 
 
     /**
-     * <p>Remove replication from specific Regions.</p>
+     * <p>The Regions of the replicas to remove.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRemoveReplicaRegions() const{ return m_removeReplicaRegions; }
 
     /**
-     * <p>Remove replication from specific Regions.</p>
+     * <p>The Regions of the replicas to remove.</p>
      */
     inline bool RemoveReplicaRegionsHasBeenSet() const { return m_removeReplicaRegionsHasBeenSet; }
 
     /**
-     * <p>Remove replication from specific Regions.</p>
+     * <p>The Regions of the replicas to remove.</p>
      */
     inline void SetRemoveReplicaRegions(const Aws::Vector<Aws::String>& value) { m_removeReplicaRegionsHasBeenSet = true; m_removeReplicaRegions = value; }
 
     /**
-     * <p>Remove replication from specific Regions.</p>
+     * <p>The Regions of the replicas to remove.</p>
      */
     inline void SetRemoveReplicaRegions(Aws::Vector<Aws::String>&& value) { m_removeReplicaRegionsHasBeenSet = true; m_removeReplicaRegions = std::move(value); }
 
     /**
-     * <p>Remove replication from specific Regions.</p>
+     * <p>The Regions of the replicas to remove.</p>
      */
     inline RemoveRegionsFromReplicationRequest& WithRemoveReplicaRegions(const Aws::Vector<Aws::String>& value) { SetRemoveReplicaRegions(value); return *this;}
 
     /**
-     * <p>Remove replication from specific Regions.</p>
+     * <p>The Regions of the replicas to remove.</p>
      */
     inline RemoveRegionsFromReplicationRequest& WithRemoveReplicaRegions(Aws::Vector<Aws::String>&& value) { SetRemoveReplicaRegions(std::move(value)); return *this;}
 
     /**
-     * <p>Remove replication from specific Regions.</p>
+     * <p>The Regions of the replicas to remove.</p>
      */
     inline RemoveRegionsFromReplicationRequest& AddRemoveReplicaRegions(const Aws::String& value) { m_removeReplicaRegionsHasBeenSet = true; m_removeReplicaRegions.push_back(value); return *this; }
 
     /**
-     * <p>Remove replication from specific Regions.</p>
+     * <p>The Regions of the replicas to remove.</p>
      */
     inline RemoveRegionsFromReplicationRequest& AddRemoveReplicaRegions(Aws::String&& value) { m_removeReplicaRegionsHasBeenSet = true; m_removeReplicaRegions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Remove replication from specific Regions.</p>
+     * <p>The Regions of the replicas to remove.</p>
      */
     inline RemoveRegionsFromReplicationRequest& AddRemoveReplicaRegions(const char* value) { m_removeReplicaRegionsHasBeenSet = true; m_removeReplicaRegions.push_back(value); return *this; }
 

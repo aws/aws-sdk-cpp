@@ -45,8 +45,8 @@ namespace Aws
         static const int us_gov_west_1_HASH = HashingUtils::HashString("us-gov-west-1");
         static const int us_west_1_HASH = HashingUtils::HashString("us-west-1");
         static const int us_west_2_HASH = HashingUtils::HashString("us-west-2");
-        static const int us_east_1_HASH = HashingUtils::HashString("us-east-1");
         static const int us_iso_west_1_HASH = HashingUtils::HashString("us-iso-west-1");
+        static const int us_east_1_HASH = HashingUtils::HashString("us-east-1");
 
 
         BucketLocationConstraint GetBucketLocationConstraintForName(const Aws::String& name)
