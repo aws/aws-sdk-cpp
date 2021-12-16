@@ -7,7 +7,10 @@
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/core/utils/Outcome.h>
+#include <aws/core/utils/memory/stl/AWSSet.h>
+
+#include <cmath>
+#include <thread>
 
 using namespace Aws::Utils::Threading;
 
