@@ -26,6 +26,7 @@ DataShare::DataShare() :
     m_allowPubliclyAccessibleConsumers(false),
     m_allowPubliclyAccessibleConsumersHasBeenSet(false),
     m_dataShareAssociationsHasBeenSet(false),
+    m_managedByHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
 }
@@ -36,6 +37,7 @@ DataShare::DataShare(const XmlNode& xmlNode) :
     m_allowPubliclyAccessibleConsumers(false),
     m_allowPubliclyAccessibleConsumersHasBeenSet(false),
     m_dataShareAssociationsHasBeenSet(false),
+    m_managedByHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
   *this = xmlNode;
@@ -77,6 +79,12 @@ DataShare& DataShare::operator =(const XmlNode& xmlNode)
 
       m_dataShareAssociationsHasBeenSet = true;
     }
+    XmlNode managedByNode = resultNode.FirstChild("ManagedBy");
+    if(!managedByNode.IsNull())
+    {
+      m_managedBy = Aws::Utils::Xml::DecodeEscapedXmlText(managedByNode.GetText());
+      m_managedByHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -108,6 +116,11 @@ void DataShare::OutputToStream(Aws::OStream& oStream, const char* location, unsi
         dataShareAssociationsSs << location << index << locationValue << ".DataShareAssociations.member." << dataShareAssociationsIdx++;
         item.OutputToStream(oStream, dataShareAssociationsSs.str().c_str());
       }
+  }
+
+  if(m_managedByHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ManagedBy=" << StringUtils::URLEncode(m_managedBy.c_str()) << "&";
   }
 
   if(m_responseMetadataHasBeenSet)
@@ -142,6 +155,10 @@ void DataShare::OutputToStream(Aws::OStream& oStream, const char* location) cons
         dataShareAssociationsSs << location <<  ".DataShareAssociations.member." << dataShareAssociationsIdx++;
         item.OutputToStream(oStream, dataShareAssociationsSs.str().c_str());
       }
+  }
+  if(m_managedByHasBeenSet)
+  {
+      oStream << location << ".ManagedBy=" << StringUtils::URLEncode(m_managedBy.c_str()) << "&";
   }
   if(m_responseMetadataHasBeenSet)
   {

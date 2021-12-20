@@ -164,16 +164,24 @@ namespace Model
     inline ForecastSummary& WithPredictorArn(const char* value) { SetPredictorArn(value); return *this;}
 
 
-    
+    /**
+     * <p>Whether the Forecast was created from an AutoPredictor.</p>
+     */
     inline bool GetCreatedUsingAutoPredictor() const{ return m_createdUsingAutoPredictor; }
 
-    
+    /**
+     * <p>Whether the Forecast was created from an AutoPredictor.</p>
+     */
     inline bool CreatedUsingAutoPredictorHasBeenSet() const { return m_createdUsingAutoPredictorHasBeenSet; }
 
-    
+    /**
+     * <p>Whether the Forecast was created from an AutoPredictor.</p>
+     */
     inline void SetCreatedUsingAutoPredictor(bool value) { m_createdUsingAutoPredictorHasBeenSet = true; m_createdUsingAutoPredictor = value; }
 
-    
+    /**
+     * <p>Whether the Forecast was created from an AutoPredictor.</p>
+     */
     inline ForecastSummary& WithCreatedUsingAutoPredictor(bool value) { SetCreatedUsingAutoPredictor(value); return *this;}
 
 

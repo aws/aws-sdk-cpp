@@ -67,6 +67,15 @@ DescribeAutoPredictorResult& DescribeAutoPredictorResult::operator =(const Aws::
 
   }
 
+  if(jsonValue.ValueExists("ForecastDimensions"))
+  {
+    Array<JsonView> forecastDimensionsJsonList = jsonValue.GetArray("ForecastDimensions");
+    for(unsigned forecastDimensionsIndex = 0; forecastDimensionsIndex < forecastDimensionsJsonList.GetLength(); ++forecastDimensionsIndex)
+    {
+      m_forecastDimensions.push_back(forecastDimensionsJsonList[forecastDimensionsIndex].AsString());
+    }
+  }
+
   if(jsonValue.ValueExists("DatasetImportJobArns"))
   {
     Array<JsonView> datasetImportJobArnsJsonList = jsonValue.GetArray("DatasetImportJobArns");

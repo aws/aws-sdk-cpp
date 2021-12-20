@@ -24,13 +24,16 @@ namespace Model
 {
 
   /**
-   * <p>Describes a supplementary feature of a dataset group. This object is part of
-   * the <a>InputDataConfig</a> object. Forecast supports the Weather Index and
-   * Holidays built-in featurizations.</p> <p> <b>Weather Index</b> </p> <p>The
-   * Amazon Forecast Weather Index is a built-in featurization that incorporates
-   * historical and projected weather information into your model. The Weather Index
-   * supplements your datasets with over two years of historical weather data and up
-   * to 14 days of projected weather data. For more information, see <a
+   *  <p>This object belongs to the <a>CreatePredictor</a> operation. If you
+   * created your predictor with <a>CreateAutoPredictor</a>, see
+   * <a>AdditionalDataset</a>.</p>  <p>Describes a supplementary feature of a
+   * dataset group. This object is part of the <a>InputDataConfig</a> object.
+   * Forecast supports the Weather Index and Holidays built-in featurizations.</p>
+   * <p> <b>Weather Index</b> </p> <p>The Amazon Forecast Weather Index is a built-in
+   * featurization that incorporates historical and projected weather information
+   * into your model. The Weather Index supplements your datasets with over two years
+   * of historical weather data and up to 14 days of projected weather data. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/forecast/latest/dg/weather.html">Amazon
    * Forecast Weather Index</a>.</p> <p> <b>Holidays</b> </p> <p>Holidays is a
    * built-in featurization that incorporates a feature-engineered dataset of

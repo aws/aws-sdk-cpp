@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/securityhub/model/StandardsStatus.h>
+#include <aws/securityhub/model/StandardsStatusReason.h>
 #include <utility>
 
 namespace Aws
@@ -262,6 +263,37 @@ namespace Model
      */
     inline StandardsSubscription& WithStandardsStatus(StandardsStatus&& value) { SetStandardsStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The reason for the current status.</p>
+     */
+    inline const StandardsStatusReason& GetStandardsStatusReason() const{ return m_standardsStatusReason; }
+
+    /**
+     * <p>The reason for the current status.</p>
+     */
+    inline bool StandardsStatusReasonHasBeenSet() const { return m_standardsStatusReasonHasBeenSet; }
+
+    /**
+     * <p>The reason for the current status.</p>
+     */
+    inline void SetStandardsStatusReason(const StandardsStatusReason& value) { m_standardsStatusReasonHasBeenSet = true; m_standardsStatusReason = value; }
+
+    /**
+     * <p>The reason for the current status.</p>
+     */
+    inline void SetStandardsStatusReason(StandardsStatusReason&& value) { m_standardsStatusReasonHasBeenSet = true; m_standardsStatusReason = std::move(value); }
+
+    /**
+     * <p>The reason for the current status.</p>
+     */
+    inline StandardsSubscription& WithStandardsStatusReason(const StandardsStatusReason& value) { SetStandardsStatusReason(value); return *this;}
+
+    /**
+     * <p>The reason for the current status.</p>
+     */
+    inline StandardsSubscription& WithStandardsStatusReason(StandardsStatusReason&& value) { SetStandardsStatusReason(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_standardsSubscriptionArn;
@@ -275,6 +307,9 @@ namespace Model
 
     StandardsStatus m_standardsStatus;
     bool m_standardsStatusHasBeenSet;
+
+    StandardsStatusReason m_standardsStatusReason;
+    bool m_standardsStatusReasonHasBeenSet;
   };
 
 } // namespace Model

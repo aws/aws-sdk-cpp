@@ -254,6 +254,139 @@ namespace Model
      */
     inline GetIntegrationResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>A map in which each key is an event type from an external application such as
+     * Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template)
+     * used to ingest the event. It supports the following event types:
+     * <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>,
+     * <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>,
+     * <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and
+     * <code>ShopifyUpdatedOrders</code>.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetObjectTypeNames() const{ return m_objectTypeNames; }
+
+    /**
+     * <p>A map in which each key is an event type from an external application such as
+     * Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template)
+     * used to ingest the event. It supports the following event types:
+     * <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>,
+     * <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>,
+     * <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and
+     * <code>ShopifyUpdatedOrders</code>.</p>
+     */
+    inline void SetObjectTypeNames(const Aws::Map<Aws::String, Aws::String>& value) { m_objectTypeNames = value; }
+
+    /**
+     * <p>A map in which each key is an event type from an external application such as
+     * Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template)
+     * used to ingest the event. It supports the following event types:
+     * <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>,
+     * <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>,
+     * <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and
+     * <code>ShopifyUpdatedOrders</code>.</p>
+     */
+    inline void SetObjectTypeNames(Aws::Map<Aws::String, Aws::String>&& value) { m_objectTypeNames = std::move(value); }
+
+    /**
+     * <p>A map in which each key is an event type from an external application such as
+     * Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template)
+     * used to ingest the event. It supports the following event types:
+     * <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>,
+     * <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>,
+     * <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and
+     * <code>ShopifyUpdatedOrders</code>.</p>
+     */
+    inline GetIntegrationResult& WithObjectTypeNames(const Aws::Map<Aws::String, Aws::String>& value) { SetObjectTypeNames(value); return *this;}
+
+    /**
+     * <p>A map in which each key is an event type from an external application such as
+     * Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template)
+     * used to ingest the event. It supports the following event types:
+     * <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>,
+     * <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>,
+     * <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and
+     * <code>ShopifyUpdatedOrders</code>.</p>
+     */
+    inline GetIntegrationResult& WithObjectTypeNames(Aws::Map<Aws::String, Aws::String>&& value) { SetObjectTypeNames(std::move(value)); return *this;}
+
+    /**
+     * <p>A map in which each key is an event type from an external application such as
+     * Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template)
+     * used to ingest the event. It supports the following event types:
+     * <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>,
+     * <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>,
+     * <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and
+     * <code>ShopifyUpdatedOrders</code>.</p>
+     */
+    inline GetIntegrationResult& AddObjectTypeNames(const Aws::String& key, const Aws::String& value) { m_objectTypeNames.emplace(key, value); return *this; }
+
+    /**
+     * <p>A map in which each key is an event type from an external application such as
+     * Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template)
+     * used to ingest the event. It supports the following event types:
+     * <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>,
+     * <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>,
+     * <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and
+     * <code>ShopifyUpdatedOrders</code>.</p>
+     */
+    inline GetIntegrationResult& AddObjectTypeNames(Aws::String&& key, const Aws::String& value) { m_objectTypeNames.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map in which each key is an event type from an external application such as
+     * Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template)
+     * used to ingest the event. It supports the following event types:
+     * <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>,
+     * <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>,
+     * <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and
+     * <code>ShopifyUpdatedOrders</code>.</p>
+     */
+    inline GetIntegrationResult& AddObjectTypeNames(const Aws::String& key, Aws::String&& value) { m_objectTypeNames.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map in which each key is an event type from an external application such as
+     * Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template)
+     * used to ingest the event. It supports the following event types:
+     * <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>,
+     * <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>,
+     * <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and
+     * <code>ShopifyUpdatedOrders</code>.</p>
+     */
+    inline GetIntegrationResult& AddObjectTypeNames(Aws::String&& key, Aws::String&& value) { m_objectTypeNames.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A map in which each key is an event type from an external application such as
+     * Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template)
+     * used to ingest the event. It supports the following event types:
+     * <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>,
+     * <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>,
+     * <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and
+     * <code>ShopifyUpdatedOrders</code>.</p>
+     */
+    inline GetIntegrationResult& AddObjectTypeNames(const char* key, Aws::String&& value) { m_objectTypeNames.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map in which each key is an event type from an external application such as
+     * Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template)
+     * used to ingest the event. It supports the following event types:
+     * <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>,
+     * <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>,
+     * <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and
+     * <code>ShopifyUpdatedOrders</code>.</p>
+     */
+    inline GetIntegrationResult& AddObjectTypeNames(Aws::String&& key, const char* value) { m_objectTypeNames.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map in which each key is an event type from an external application such as
+     * Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template)
+     * used to ingest the event. It supports the following event types:
+     * <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>,
+     * <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>,
+     * <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and
+     * <code>ShopifyUpdatedOrders</code>.</p>
+     */
+    inline GetIntegrationResult& AddObjectTypeNames(const char* key, const char* value) { m_objectTypeNames.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_domainName;
@@ -267,6 +400,8 @@ namespace Model
     Aws::Utils::DateTime m_lastUpdatedAt;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    Aws::Map<Aws::String, Aws::String> m_objectTypeNames;
   };
 
 } // namespace Model

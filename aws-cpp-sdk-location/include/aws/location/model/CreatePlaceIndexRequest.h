@@ -318,7 +318,7 @@ namespace Model
 
     /**
      * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A��Z, a–z, 0–9), hyphens (-), periods
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
      * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
      * resource name.</p> </li> <li> <p>No spaces allowed. For example,
      * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
@@ -327,7 +327,7 @@ namespace Model
 
     /**
      * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A��Z, a–z, 0–9), hyphens (-), periods
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
      * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
      * resource name.</p> </li> <li> <p>No spaces allowed. For example,
      * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
@@ -336,7 +336,7 @@ namespace Model
 
     /**
      * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A��Z, a–z, 0–9), hyphens (-), periods
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
      * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
      * resource name.</p> </li> <li> <p>No spaces allowed. For example,
      * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
@@ -345,7 +345,7 @@ namespace Model
 
     /**
      * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A��Z, a–z, 0–9), hyphens (-), periods
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
      * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
      * resource name.</p> </li> <li> <p>No spaces allowed. For example,
      * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
@@ -354,7 +354,7 @@ namespace Model
 
     /**
      * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A��Z, a–z, 0–9), hyphens (-), periods
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
      * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
      * resource name.</p> </li> <li> <p>No spaces allowed. For example,
      * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
@@ -363,7 +363,7 @@ namespace Model
 
     /**
      * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A��Z, a–z, 0–9), hyphens (-), periods
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
      * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
      * resource name.</p> </li> <li> <p>No spaces allowed. For example,
      * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
@@ -372,7 +372,7 @@ namespace Model
 
     /**
      * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A��Z, a–z, 0–9), hyphens (-), periods
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
      * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
      * resource name.</p> </li> <li> <p>No spaces allowed. For example,
      * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
@@ -381,7 +381,7 @@ namespace Model
 
     /**
      * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A��Z, a–z, 0–9), hyphens (-), periods
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
      * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
      * resource name.</p> </li> <li> <p>No spaces allowed. For example,
      * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
@@ -390,48 +390,54 @@ namespace Model
 
 
     /**
-     * <p>Specifies the pricing plan for your place index resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see <a
+     * <p>Optionally specifies the pricing plan for the place index resource. Defaults
+     * to <code>RequestBasedUsage</code>.</p> <p>For additional details and
+     * restrictions on each pricing plan option, see <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
      * pricing</a>.</p>
      */
     inline const PricingPlan& GetPricingPlan() const{ return m_pricingPlan; }
 
     /**
-     * <p>Specifies the pricing plan for your place index resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see <a
+     * <p>Optionally specifies the pricing plan for the place index resource. Defaults
+     * to <code>RequestBasedUsage</code>.</p> <p>For additional details and
+     * restrictions on each pricing plan option, see <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
      * pricing</a>.</p>
      */
     inline bool PricingPlanHasBeenSet() const { return m_pricingPlanHasBeenSet; }
 
     /**
-     * <p>Specifies the pricing plan for your place index resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see <a
+     * <p>Optionally specifies the pricing plan for the place index resource. Defaults
+     * to <code>RequestBasedUsage</code>.</p> <p>For additional details and
+     * restrictions on each pricing plan option, see <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
      * pricing</a>.</p>
      */
     inline void SetPricingPlan(const PricingPlan& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = value; }
 
     /**
-     * <p>Specifies the pricing plan for your place index resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see <a
+     * <p>Optionally specifies the pricing plan for the place index resource. Defaults
+     * to <code>RequestBasedUsage</code>.</p> <p>For additional details and
+     * restrictions on each pricing plan option, see <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
      * pricing</a>.</p>
      */
     inline void SetPricingPlan(PricingPlan&& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = std::move(value); }
 
     /**
-     * <p>Specifies the pricing plan for your place index resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see <a
+     * <p>Optionally specifies the pricing plan for the place index resource. Defaults
+     * to <code>RequestBasedUsage</code>.</p> <p>For additional details and
+     * restrictions on each pricing plan option, see <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
      * pricing</a>.</p>
      */
     inline CreatePlaceIndexRequest& WithPricingPlan(const PricingPlan& value) { SetPricingPlan(value); return *this;}
 
     /**
-     * <p>Specifies the pricing plan for your place index resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see <a
+     * <p>Optionally specifies the pricing plan for the place index resource. Defaults
+     * to <code>RequestBasedUsage</code>.</p> <p>For additional details and
+     * restrictions on each pricing plan option, see <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
      * pricing</a>.</p>
      */

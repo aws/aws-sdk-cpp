@@ -66,6 +66,11 @@ DeauthorizeDataShareResult& DeauthorizeDataShareResult::operator =(const Aws::Am
       }
 
     }
+    XmlNode managedByNode = resultNode.FirstChild("ManagedBy");
+    if(!managedByNode.IsNull())
+    {
+      m_managedBy = Aws::Utils::Xml::DecodeEscapedXmlText(managedByNode.GetText());
+    }
   }
 
   if (!rootNode.IsNull()) {

@@ -20,7 +20,8 @@ GetChangesetResult::GetChangesetResult() :
     m_changeType(ChangeType::NOT_SET),
     m_createTime(0),
     m_status(IngestionStatus::NOT_SET),
-    m_activeUntilTimestamp(0)
+    m_activeUntilTimestamp(0),
+    m_activeFromTimestamp(0)
 {
 }
 
@@ -28,7 +29,8 @@ GetChangesetResult::GetChangesetResult(const Aws::AmazonWebServiceResult<JsonVal
     m_changeType(ChangeType::NOT_SET),
     m_createTime(0),
     m_status(IngestionStatus::NOT_SET),
-    m_activeUntilTimestamp(0)
+    m_activeUntilTimestamp(0),
+    m_activeFromTimestamp(0)
 {
   *this = result;
 }
@@ -99,6 +101,12 @@ GetChangesetResult& GetChangesetResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("activeUntilTimestamp"))
   {
     m_activeUntilTimestamp = jsonValue.GetInt64("activeUntilTimestamp");
+
+  }
+
+  if(jsonValue.ValueExists("activeFromTimestamp"))
+  {
+    m_activeFromTimestamp = jsonValue.GetInt64("activeFromTimestamp");
 
   }
 

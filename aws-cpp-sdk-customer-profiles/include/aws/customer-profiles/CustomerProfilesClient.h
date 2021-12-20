@@ -718,7 +718,6 @@ namespace Model
         virtual void GetIntegrationAsync(const Model::GetIntegrationRequest& request, const GetIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and subject to change.</p>
          * <p>Before calling this API, use <a
          * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
          * or <a
@@ -754,7 +753,6 @@ namespace Model
         virtual Model::GetMatchesOutcome GetMatches(const Model::GetMatchesRequest& request) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and subject to change.</p>
          * <p>Before calling this API, use <a
          * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
          * or <a
@@ -792,7 +790,6 @@ namespace Model
         virtual Model::GetMatchesOutcomeCallable GetMatchesCallable(const Model::GetMatchesRequest& request) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and subject to change.</p>
          * <p>Before calling this API, use <a
          * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
          * or <a
@@ -1119,7 +1116,6 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and subject to change.</p>
          * <p>Runs an AWS Lambda job that does the following:</p> <ol> <li> <p>All the
          * profileKeys in the <code>ProfileToBeMerged</code> will be moved to the main
          * profile.</p> </li> <li> <p>All the objects in the <code>ProfileToBeMerged</code>
@@ -1144,7 +1140,6 @@ namespace Model
         virtual Model::MergeProfilesOutcome MergeProfiles(const Model::MergeProfilesRequest& request) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and subject to change.</p>
          * <p>Runs an AWS Lambda job that does the following:</p> <ol> <li> <p>All the
          * profileKeys in the <code>ProfileToBeMerged</code> will be moved to the main
          * profile.</p> </li> <li> <p>All the objects in the <code>ProfileToBeMerged</code>
@@ -1171,7 +1166,6 @@ namespace Model
         virtual Model::MergeProfilesOutcomeCallable MergeProfilesCallable(const Model::MergeProfilesRequest& request) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and subject to change.</p>
          * <p>Runs an AWS Lambda job that does the following:</p> <ol> <li> <p>All the
          * profileKeys in the <code>ProfileToBeMerged</code> will be moved to the main
          * profile.</p> </li> <li> <p>All the objects in the <code>ProfileToBeMerged</code>

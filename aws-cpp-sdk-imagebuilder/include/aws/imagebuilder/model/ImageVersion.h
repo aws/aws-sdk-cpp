@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/imagebuilder/model/ImageType.h>
 #include <aws/imagebuilder/model/Platform.h>
+#include <aws/imagebuilder/model/BuildType.h>
 #include <utility>
 
 namespace Aws
@@ -539,6 +540,67 @@ namespace Model
      */
     inline ImageVersion& WithDateCreated(const char* value) { SetDateCreated(value); return *this;}
 
+
+    /**
+     * <p>Indicates the type of build that created this image. The build can be
+     * initiated in the following ways:</p> <ul> <li> <p> <b>USER_INITIATED</b> – A
+     * manual pipeline build request.</p> </li> <li> <p> <b>SCHEDULED</b> – A pipeline
+     * build initiated by a cron expression in the Image Builder pipeline, or from
+     * EventBridge.</p> </li> <li> <p> <b>IMPORT</b> – A VM import created the image to
+     * use as the base image for the recipe.</p> </li> </ul>
+     */
+    inline const BuildType& GetBuildType() const{ return m_buildType; }
+
+    /**
+     * <p>Indicates the type of build that created this image. The build can be
+     * initiated in the following ways:</p> <ul> <li> <p> <b>USER_INITIATED</b> – A
+     * manual pipeline build request.</p> </li> <li> <p> <b>SCHEDULED</b> – A pipeline
+     * build initiated by a cron expression in the Image Builder pipeline, or from
+     * EventBridge.</p> </li> <li> <p> <b>IMPORT</b> – A VM import created the image to
+     * use as the base image for the recipe.</p> </li> </ul>
+     */
+    inline bool BuildTypeHasBeenSet() const { return m_buildTypeHasBeenSet; }
+
+    /**
+     * <p>Indicates the type of build that created this image. The build can be
+     * initiated in the following ways:</p> <ul> <li> <p> <b>USER_INITIATED</b> – A
+     * manual pipeline build request.</p> </li> <li> <p> <b>SCHEDULED</b> – A pipeline
+     * build initiated by a cron expression in the Image Builder pipeline, or from
+     * EventBridge.</p> </li> <li> <p> <b>IMPORT</b> – A VM import created the image to
+     * use as the base image for the recipe.</p> </li> </ul>
+     */
+    inline void SetBuildType(const BuildType& value) { m_buildTypeHasBeenSet = true; m_buildType = value; }
+
+    /**
+     * <p>Indicates the type of build that created this image. The build can be
+     * initiated in the following ways:</p> <ul> <li> <p> <b>USER_INITIATED</b> – A
+     * manual pipeline build request.</p> </li> <li> <p> <b>SCHEDULED</b> – A pipeline
+     * build initiated by a cron expression in the Image Builder pipeline, or from
+     * EventBridge.</p> </li> <li> <p> <b>IMPORT</b> – A VM import created the image to
+     * use as the base image for the recipe.</p> </li> </ul>
+     */
+    inline void SetBuildType(BuildType&& value) { m_buildTypeHasBeenSet = true; m_buildType = std::move(value); }
+
+    /**
+     * <p>Indicates the type of build that created this image. The build can be
+     * initiated in the following ways:</p> <ul> <li> <p> <b>USER_INITIATED</b> – A
+     * manual pipeline build request.</p> </li> <li> <p> <b>SCHEDULED</b> – A pipeline
+     * build initiated by a cron expression in the Image Builder pipeline, or from
+     * EventBridge.</p> </li> <li> <p> <b>IMPORT</b> – A VM import created the image to
+     * use as the base image for the recipe.</p> </li> </ul>
+     */
+    inline ImageVersion& WithBuildType(const BuildType& value) { SetBuildType(value); return *this;}
+
+    /**
+     * <p>Indicates the type of build that created this image. The build can be
+     * initiated in the following ways:</p> <ul> <li> <p> <b>USER_INITIATED</b> – A
+     * manual pipeline build request.</p> </li> <li> <p> <b>SCHEDULED</b> – A pipeline
+     * build initiated by a cron expression in the Image Builder pipeline, or from
+     * EventBridge.</p> </li> <li> <p> <b>IMPORT</b> – A VM import created the image to
+     * use as the base image for the recipe.</p> </li> </ul>
+     */
+    inline ImageVersion& WithBuildType(BuildType&& value) { SetBuildType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -564,6 +626,9 @@ namespace Model
 
     Aws::String m_dateCreated;
     bool m_dateCreatedHasBeenSet;
+
+    BuildType m_buildType;
+    bool m_buildTypeHasBeenSet;
   };
 
 } // namespace Model

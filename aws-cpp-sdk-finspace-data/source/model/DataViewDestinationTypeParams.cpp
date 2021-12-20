@@ -19,12 +19,18 @@ namespace Model
 {
 
 DataViewDestinationTypeParams::DataViewDestinationTypeParams() : 
-    m_destinationTypeHasBeenSet(false)
+    m_destinationTypeHasBeenSet(false),
+    m_s3DestinationExportFileFormat(ExportFileFormat::NOT_SET),
+    m_s3DestinationExportFileFormatHasBeenSet(false),
+    m_s3DestinationExportFileFormatOptionsHasBeenSet(false)
 {
 }
 
 DataViewDestinationTypeParams::DataViewDestinationTypeParams(JsonView jsonValue) : 
-    m_destinationTypeHasBeenSet(false)
+    m_destinationTypeHasBeenSet(false),
+    m_s3DestinationExportFileFormat(ExportFileFormat::NOT_SET),
+    m_s3DestinationExportFileFormatHasBeenSet(false),
+    m_s3DestinationExportFileFormatOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +44,23 @@ DataViewDestinationTypeParams& DataViewDestinationTypeParams::operator =(JsonVie
     m_destinationTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("s3DestinationExportFileFormat"))
+  {
+    m_s3DestinationExportFileFormat = ExportFileFormatMapper::GetExportFileFormatForName(jsonValue.GetString("s3DestinationExportFileFormat"));
+
+    m_s3DestinationExportFileFormatHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("s3DestinationExportFileFormatOptions"))
+  {
+    Aws::Map<Aws::String, JsonView> s3DestinationExportFileFormatOptionsJsonMap = jsonValue.GetObject("s3DestinationExportFileFormatOptions").GetAllObjects();
+    for(auto& s3DestinationExportFileFormatOptionsItem : s3DestinationExportFileFormatOptionsJsonMap)
+    {
+      m_s3DestinationExportFileFormatOptions[s3DestinationExportFileFormatOptionsItem.first] = s3DestinationExportFileFormatOptionsItem.second.AsString();
+    }
+    m_s3DestinationExportFileFormatOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +71,22 @@ JsonValue DataViewDestinationTypeParams::Jsonize() const
   if(m_destinationTypeHasBeenSet)
   {
    payload.WithString("destinationType", m_destinationType);
+
+  }
+
+  if(m_s3DestinationExportFileFormatHasBeenSet)
+  {
+   payload.WithString("s3DestinationExportFileFormat", ExportFileFormatMapper::GetNameForExportFileFormat(m_s3DestinationExportFileFormat));
+  }
+
+  if(m_s3DestinationExportFileFormatOptionsHasBeenSet)
+  {
+   JsonValue s3DestinationExportFileFormatOptionsJsonMap;
+   for(auto& s3DestinationExportFileFormatOptionsItem : m_s3DestinationExportFileFormatOptions)
+   {
+     s3DestinationExportFileFormatOptionsJsonMap.WithString(s3DestinationExportFileFormatOptionsItem.first, s3DestinationExportFileFormatOptionsItem.second);
+   }
+   payload.WithObject("s3DestinationExportFileFormatOptions", std::move(s3DestinationExportFileFormatOptionsJsonMap));
 
   }
 

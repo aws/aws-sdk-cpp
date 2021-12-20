@@ -515,6 +515,19 @@ namespace Model
     inline ChangesetSummary& WithActiveUntilTimestamp(long long value) { SetActiveUntilTimestamp(value); return *this;}
 
 
+    
+    inline long long GetActiveFromTimestamp() const{ return m_activeFromTimestamp; }
+
+    
+    inline bool ActiveFromTimestampHasBeenSet() const { return m_activeFromTimestampHasBeenSet; }
+
+    
+    inline void SetActiveFromTimestamp(long long value) { m_activeFromTimestampHasBeenSet = true; m_activeFromTimestamp = value; }
+
+    
+    inline ChangesetSummary& WithActiveFromTimestamp(long long value) { SetActiveFromTimestamp(value); return *this;}
+
+
     /**
      * <p>The unique identifier of the Changeset that is updated.</p>
      */
@@ -627,6 +640,9 @@ namespace Model
 
     long long m_activeUntilTimestamp;
     bool m_activeUntilTimestampHasBeenSet;
+
+    long long m_activeFromTimestamp;
+    bool m_activeFromTimestampHasBeenSet;
 
     Aws::String m_updatesChangesetId;
     bool m_updatesChangesetIdHasBeenSet;

@@ -24,7 +24,8 @@ ListIntegrationItem::ListIntegrationItem() :
     m_objectTypeNameHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_objectTypeNamesHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ ListIntegrationItem::ListIntegrationItem(JsonView jsonValue) :
     m_objectTypeNameHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_objectTypeNamesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +88,16 @@ ListIntegrationItem& ListIntegrationItem::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ObjectTypeNames"))
+  {
+    Aws::Map<Aws::String, JsonView> objectTypeNamesJsonMap = jsonValue.GetObject("ObjectTypeNames").GetAllObjects();
+    for(auto& objectTypeNamesItem : objectTypeNamesJsonMap)
+    {
+      m_objectTypeNames[objectTypeNamesItem.first] = objectTypeNamesItem.second.AsString();
+    }
+    m_objectTypeNamesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -129,6 +141,17 @@ JsonValue ListIntegrationItem::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_objectTypeNamesHasBeenSet)
+  {
+   JsonValue objectTypeNamesJsonMap;
+   for(auto& objectTypeNamesItem : m_objectTypeNames)
+   {
+     objectTypeNamesJsonMap.WithString(objectTypeNamesItem.first, objectTypeNamesItem.second);
+   }
+   payload.WithObject("ObjectTypeNames", std::move(objectTypeNamesJsonMap));
 
   }
 

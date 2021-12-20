@@ -306,7 +306,7 @@ namespace Model
          * <p>Creates an Amazon Forecast predictor.</p> <p>Amazon Forecast creates
          * predictors with AutoPredictor, which involves applying the optimal combination
          * of algorithms to each time series in your datasets. You can use
-         * CreateAutoPredictor to create new predictors or upgrade/retrain existing
+         * <a>CreateAutoPredictor</a> to create new predictors or upgrade/retrain existing
          * predictors.</p> <p> <b>Creating new predictors</b> </p> <p>The following
          * parameters are required when creating a new predictor:</p> <ul> <li> <p>
          * <code>PredictorName</code> - A unique name for the predictor.</p> </li> <li> <p>
@@ -332,7 +332,7 @@ namespace Model
          * <p>Creates an Amazon Forecast predictor.</p> <p>Amazon Forecast creates
          * predictors with AutoPredictor, which involves applying the optimal combination
          * of algorithms to each time series in your datasets. You can use
-         * CreateAutoPredictor to create new predictors or upgrade/retrain existing
+         * <a>CreateAutoPredictor</a> to create new predictors or upgrade/retrain existing
          * predictors.</p> <p> <b>Creating new predictors</b> </p> <p>The following
          * parameters are required when creating a new predictor:</p> <ul> <li> <p>
          * <code>PredictorName</code> - A unique name for the predictor.</p> </li> <li> <p>
@@ -360,7 +360,7 @@ namespace Model
          * <p>Creates an Amazon Forecast predictor.</p> <p>Amazon Forecast creates
          * predictors with AutoPredictor, which involves applying the optimal combination
          * of algorithms to each time series in your datasets. You can use
-         * CreateAutoPredictor to create new predictors or upgrade/retrain existing
+         * <a>CreateAutoPredictor</a> to create new predictors or upgrade/retrain existing
          * predictors.</p> <p> <b>Creating new predictors</b> </p> <p>The following
          * parameters are required when creating a new predictor:</p> <ul> <li> <p>
          * <code>PredictorName</code> - A unique name for the predictor.</p> </li> <li> <p>
@@ -627,8 +627,8 @@ namespace Model
          * “SPECIFIC”.</p> </li> <li> <p> <code>EndDateTime</code> - Only valid when
          * TimePointGranularity is “SPECIFIC”.</p> </li> </ul> <p> <b>CreateExplainability
          * with a Forecast ARN</b> </p>  <p>You can specify a maximum of 50 time
-         * series and 1500 time points.</p>  <p>The following parameters are
-         * required when providing a Predictor ARN:</p> <ul> <li> <p>
+         * series and 500 time points.</p>  <p>The following parameters are required
+         * when providing a Predictor ARN:</p> <ul> <li> <p>
          * <code>ExplainabilityName</code> - A unique name for the Explainability.</p>
          * </li> <li> <p> <code>ResourceArn</code> - The Arn of the forecast.</p> </li>
          * <li> <p> <code>TimePointGranularity</code> - Either “ALL” or “SPECIFIC”.</p>
@@ -677,8 +677,8 @@ namespace Model
          * “SPECIFIC”.</p> </li> <li> <p> <code>EndDateTime</code> - Only valid when
          * TimePointGranularity is “SPECIFIC”.</p> </li> </ul> <p> <b>CreateExplainability
          * with a Forecast ARN</b> </p>  <p>You can specify a maximum of 50 time
-         * series and 1500 time points.</p>  <p>The following parameters are
-         * required when providing a Predictor ARN:</p> <ul> <li> <p>
+         * series and 500 time points.</p>  <p>The following parameters are required
+         * when providing a Predictor ARN:</p> <ul> <li> <p>
          * <code>ExplainabilityName</code> - A unique name for the Explainability.</p>
          * </li> <li> <p> <code>ResourceArn</code> - The Arn of the forecast.</p> </li>
          * <li> <p> <code>TimePointGranularity</code> - Either “ALL” or “SPECIFIC”.</p>
@@ -729,8 +729,8 @@ namespace Model
          * “SPECIFIC”.</p> </li> <li> <p> <code>EndDateTime</code> - Only valid when
          * TimePointGranularity is “SPECIFIC”.</p> </li> </ul> <p> <b>CreateExplainability
          * with a Forecast ARN</b> </p>  <p>You can specify a maximum of 50 time
-         * series and 1500 time points.</p>  <p>The following parameters are
-         * required when providing a Predictor ARN:</p> <ul> <li> <p>
+         * series and 500 time points.</p>  <p>The following parameters are required
+         * when providing a Predictor ARN:</p> <ul> <li> <p>
          * <code>ExplainabilityName</code> - A unique name for the Explainability.</p>
          * </li> <li> <p> <code>ResourceArn</code> - The Arn of the forecast.</p> </li>
          * <li> <p> <code>TimePointGranularity</code> - Either “ALL” or “SPECIFIC”.</p>
@@ -940,19 +940,19 @@ namespace Model
         /**
          *  <p> This operation creates a legacy predictor that does not include all
          * the predictor functionalities provided by Amazon Forecast. To create a predictor
-         * that is compatible with all aspects of Forecast, use CreateAutoPredictor.</p>
-         *  <p>Creates an Amazon Forecast predictor.</p> <p>In the request, provide
-         * a dataset group and either specify an algorithm or let Amazon Forecast choose an
-         * algorithm for you using AutoML. If you specify an algorithm, you also can
-         * override algorithm-specific hyperparameters.</p> <p>Amazon Forecast uses the
-         * algorithm to train a predictor using the latest version of the datasets in the
-         * specified dataset group. You can then generate a forecast using the
-         * <a>CreateForecast</a> operation.</p> <p> To see the evaluation metrics, use the
-         * <a>GetAccuracyMetrics</a> operation. </p> <p>You can specify a featurization
-         * configuration to fill and aggregate the data fields in the
-         * <code>TARGET_TIME_SERIES</code> dataset to improve model training. For more
-         * information, see <a>FeaturizationConfig</a>.</p> <p>For RELATED_TIME_SERIES
-         * datasets, <code>CreatePredictor</code> verifies that the
+         * that is compatible with all aspects of Forecast, use
+         * <a>CreateAutoPredictor</a>.</p>  <p>Creates an Amazon Forecast
+         * predictor.</p> <p>In the request, provide a dataset group and either specify an
+         * algorithm or let Amazon Forecast choose an algorithm for you using AutoML. If
+         * you specify an algorithm, you also can override algorithm-specific
+         * hyperparameters.</p> <p>Amazon Forecast uses the algorithm to train a predictor
+         * using the latest version of the datasets in the specified dataset group. You can
+         * then generate a forecast using the <a>CreateForecast</a> operation.</p> <p> To
+         * see the evaluation metrics, use the <a>GetAccuracyMetrics</a> operation. </p>
+         * <p>You can specify a featurization configuration to fill and aggregate the data
+         * fields in the <code>TARGET_TIME_SERIES</code> dataset to improve model training.
+         * For more information, see <a>FeaturizationConfig</a>.</p> <p>For
+         * RELATED_TIME_SERIES datasets, <code>CreatePredictor</code> verifies that the
          * <code>DataFrequency</code> specified when the dataset was created matches the
          * <code>ForecastFrequency</code>. TARGET_TIME_SERIES datasets don't have this
          * restriction. Amazon Forecast also verifies the delimiter and timestamp format.
@@ -983,19 +983,19 @@ namespace Model
         /**
          *  <p> This operation creates a legacy predictor that does not include all
          * the predictor functionalities provided by Amazon Forecast. To create a predictor
-         * that is compatible with all aspects of Forecast, use CreateAutoPredictor.</p>
-         *  <p>Creates an Amazon Forecast predictor.</p> <p>In the request, provide
-         * a dataset group and either specify an algorithm or let Amazon Forecast choose an
-         * algorithm for you using AutoML. If you specify an algorithm, you also can
-         * override algorithm-specific hyperparameters.</p> <p>Amazon Forecast uses the
-         * algorithm to train a predictor using the latest version of the datasets in the
-         * specified dataset group. You can then generate a forecast using the
-         * <a>CreateForecast</a> operation.</p> <p> To see the evaluation metrics, use the
-         * <a>GetAccuracyMetrics</a> operation. </p> <p>You can specify a featurization
-         * configuration to fill and aggregate the data fields in the
-         * <code>TARGET_TIME_SERIES</code> dataset to improve model training. For more
-         * information, see <a>FeaturizationConfig</a>.</p> <p>For RELATED_TIME_SERIES
-         * datasets, <code>CreatePredictor</code> verifies that the
+         * that is compatible with all aspects of Forecast, use
+         * <a>CreateAutoPredictor</a>.</p>  <p>Creates an Amazon Forecast
+         * predictor.</p> <p>In the request, provide a dataset group and either specify an
+         * algorithm or let Amazon Forecast choose an algorithm for you using AutoML. If
+         * you specify an algorithm, you also can override algorithm-specific
+         * hyperparameters.</p> <p>Amazon Forecast uses the algorithm to train a predictor
+         * using the latest version of the datasets in the specified dataset group. You can
+         * then generate a forecast using the <a>CreateForecast</a> operation.</p> <p> To
+         * see the evaluation metrics, use the <a>GetAccuracyMetrics</a> operation. </p>
+         * <p>You can specify a featurization configuration to fill and aggregate the data
+         * fields in the <code>TARGET_TIME_SERIES</code> dataset to improve model training.
+         * For more information, see <a>FeaturizationConfig</a>.</p> <p>For
+         * RELATED_TIME_SERIES datasets, <code>CreatePredictor</code> verifies that the
          * <code>DataFrequency</code> specified when the dataset was created matches the
          * <code>ForecastFrequency</code>. TARGET_TIME_SERIES datasets don't have this
          * restriction. Amazon Forecast also verifies the delimiter and timestamp format.
@@ -1028,19 +1028,19 @@ namespace Model
         /**
          *  <p> This operation creates a legacy predictor that does not include all
          * the predictor functionalities provided by Amazon Forecast. To create a predictor
-         * that is compatible with all aspects of Forecast, use CreateAutoPredictor.</p>
-         *  <p>Creates an Amazon Forecast predictor.</p> <p>In the request, provide
-         * a dataset group and either specify an algorithm or let Amazon Forecast choose an
-         * algorithm for you using AutoML. If you specify an algorithm, you also can
-         * override algorithm-specific hyperparameters.</p> <p>Amazon Forecast uses the
-         * algorithm to train a predictor using the latest version of the datasets in the
-         * specified dataset group. You can then generate a forecast using the
-         * <a>CreateForecast</a> operation.</p> <p> To see the evaluation metrics, use the
-         * <a>GetAccuracyMetrics</a> operation. </p> <p>You can specify a featurization
-         * configuration to fill and aggregate the data fields in the
-         * <code>TARGET_TIME_SERIES</code> dataset to improve model training. For more
-         * information, see <a>FeaturizationConfig</a>.</p> <p>For RELATED_TIME_SERIES
-         * datasets, <code>CreatePredictor</code> verifies that the
+         * that is compatible with all aspects of Forecast, use
+         * <a>CreateAutoPredictor</a>.</p>  <p>Creates an Amazon Forecast
+         * predictor.</p> <p>In the request, provide a dataset group and either specify an
+         * algorithm or let Amazon Forecast choose an algorithm for you using AutoML. If
+         * you specify an algorithm, you also can override algorithm-specific
+         * hyperparameters.</p> <p>Amazon Forecast uses the algorithm to train a predictor
+         * using the latest version of the datasets in the specified dataset group. You can
+         * then generate a forecast using the <a>CreateForecast</a> operation.</p> <p> To
+         * see the evaluation metrics, use the <a>GetAccuracyMetrics</a> operation. </p>
+         * <p>You can specify a featurization configuration to fill and aggregate the data
+         * fields in the <code>TARGET_TIME_SERIES</code> dataset to improve model training.
+         * For more information, see <a>FeaturizationConfig</a>.</p> <p>For
+         * RELATED_TIME_SERIES datasets, <code>CreatePredictor</code> verifies that the
          * <code>DataFrequency</code> specified when the dataset was created matches the
          * <code>ForecastFrequency</code>. TARGET_TIME_SERIES datasets don't have this
          * restriction. Amazon Forecast also verifies the delimiter and timestamp format.
@@ -1072,9 +1072,9 @@ namespace Model
 
         /**
          * <p>Exports backtest forecasts and accuracy metrics generated by the
-         * <a>CreatePredictor</a> operation. Two folders containing CSV files are exported
-         * to your specified S3 bucket.</p> <p> The export file names will match the
-         * following conventions:</p> <p>
+         * <a>CreateAutoPredictor</a> or <a>CreatePredictor</a> operations. Two folders
+         * containing CSV files are exported to your specified S3 bucket.</p> <p> The
+         * export file names will match the following conventions:</p> <p>
          * <code>&lt;ExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PartNumber&gt;.csv</code>
          * </p> <p>The &lt;ExportTimestamp&gt; component is in Java SimpleDate format
          * (yyyy-MM-ddTHH-mm-ssZ).</p> <p>You must specify a <a>DataDestination</a> object
@@ -1092,9 +1092,9 @@ namespace Model
 
         /**
          * <p>Exports backtest forecasts and accuracy metrics generated by the
-         * <a>CreatePredictor</a> operation. Two folders containing CSV files are exported
-         * to your specified S3 bucket.</p> <p> The export file names will match the
-         * following conventions:</p> <p>
+         * <a>CreateAutoPredictor</a> or <a>CreatePredictor</a> operations. Two folders
+         * containing CSV files are exported to your specified S3 bucket.</p> <p> The
+         * export file names will match the following conventions:</p> <p>
          * <code>&lt;ExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PartNumber&gt;.csv</code>
          * </p> <p>The &lt;ExportTimestamp&gt; component is in Java SimpleDate format
          * (yyyy-MM-ddTHH-mm-ssZ).</p> <p>You must specify a <a>DataDestination</a> object
@@ -1114,9 +1114,9 @@ namespace Model
 
         /**
          * <p>Exports backtest forecasts and accuracy metrics generated by the
-         * <a>CreatePredictor</a> operation. Two folders containing CSV files are exported
-         * to your specified S3 bucket.</p> <p> The export file names will match the
-         * following conventions:</p> <p>
+         * <a>CreateAutoPredictor</a> or <a>CreatePredictor</a> operations. Two folders
+         * containing CSV files are exported to your specified S3 bucket.</p> <p> The
+         * export file names will match the following conventions:</p> <p>
          * <code>&lt;ExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PartNumber&gt;.csv</code>
          * </p> <p>The &lt;ExportTimestamp&gt; component is in Java SimpleDate format
          * (yyyy-MM-ddTHH-mm-ssZ).</p> <p>You must specify a <a>DataDestination</a> object
@@ -1286,14 +1286,14 @@ namespace Model
         virtual void DeleteExplainabilityAsync(const Model::DeleteExplainabilityRequest& request, const DeleteExplainabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an Explainability export job.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Explainability export.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteExplainabilityExport">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteExplainabilityExportOutcome DeleteExplainabilityExport(const Model::DeleteExplainabilityExportRequest& request) const;
 
         /**
-         * <p>Deletes an Explainability export job.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Explainability export.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteExplainabilityExport">AWS
          * API Reference</a></p>
          *
@@ -1302,7 +1302,7 @@ namespace Model
         virtual Model::DeleteExplainabilityExportOutcomeCallable DeleteExplainabilityExportCallable(const Model::DeleteExplainabilityExportRequest& request) const;
 
         /**
-         * <p>Deletes an Explainability export job.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Explainability export.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteExplainabilityExport">AWS
          * API Reference</a></p>
          *
@@ -1388,20 +1388,20 @@ namespace Model
         virtual void DeleteForecastExportJobAsync(const Model::DeleteForecastExportJobRequest& request, const DeleteForecastExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a predictor created using the <a>CreatePredictor</a> operation. You
-         * can delete only predictor that have a status of <code>ACTIVE</code> or
-         * <code>CREATE_FAILED</code>. To get the status, use the <a>DescribePredictor</a>
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a predictor created using the <a>DescribePredictor</a> or
+         * <a>CreatePredictor</a> operations. You can delete only predictor that have a
+         * status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status,
+         * use the <a>DescribePredictor</a> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeletePredictor">AWS
          * API Reference</a></p>
          */
         virtual Model::DeletePredictorOutcome DeletePredictor(const Model::DeletePredictorRequest& request) const;
 
         /**
-         * <p>Deletes a predictor created using the <a>CreatePredictor</a> operation. You
-         * can delete only predictor that have a status of <code>ACTIVE</code> or
-         * <code>CREATE_FAILED</code>. To get the status, use the <a>DescribePredictor</a>
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a predictor created using the <a>DescribePredictor</a> or
+         * <a>CreatePredictor</a> operations. You can delete only predictor that have a
+         * status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status,
+         * use the <a>DescribePredictor</a> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeletePredictor">AWS
          * API Reference</a></p>
          *
@@ -1410,10 +1410,10 @@ namespace Model
         virtual Model::DeletePredictorOutcomeCallable DeletePredictorCallable(const Model::DeletePredictorRequest& request) const;
 
         /**
-         * <p>Deletes a predictor created using the <a>CreatePredictor</a> operation. You
-         * can delete only predictor that have a status of <code>ACTIVE</code> or
-         * <code>CREATE_FAILED</code>. To get the status, use the <a>DescribePredictor</a>
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a predictor created using the <a>DescribePredictor</a> or
+         * <a>CreatePredictor</a> operations. You can delete only predictor that have a
+         * status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status,
+         * use the <a>DescribePredictor</a> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeletePredictor">AWS
          * API Reference</a></p>
          *
@@ -1818,9 +1818,8 @@ namespace Model
         /**
          *  <p> This operation is only valid for legacy predictors created with
          * CreatePredictor. If you are not using a legacy predictor, use
-         * DescribeAutoPredictor.</p> <p>To upgrade a legacy predictor to AutoPredictor,
-         * see Upgrading to AutoPredictor.</p>  <p>Describes a predictor created
-         * using the <a>CreatePredictor</a> operation.</p> <p>In addition to listing the
+         * <a>DescribeAutoPredictor</a>.</p>  <p>Describes a predictor created using
+         * the <a>CreatePredictor</a> operation.</p> <p>In addition to listing the
          * properties provided in the <code>CreatePredictor</code> request, this operation
          * lists the following properties:</p> <ul> <li> <p>
          * <code>DatasetImportJobArns</code> - The dataset import jobs used to import
@@ -1838,9 +1837,8 @@ namespace Model
         /**
          *  <p> This operation is only valid for legacy predictors created with
          * CreatePredictor. If you are not using a legacy predictor, use
-         * DescribeAutoPredictor.</p> <p>To upgrade a legacy predictor to AutoPredictor,
-         * see Upgrading to AutoPredictor.</p>  <p>Describes a predictor created
-         * using the <a>CreatePredictor</a> operation.</p> <p>In addition to listing the
+         * <a>DescribeAutoPredictor</a>.</p>  <p>Describes a predictor created using
+         * the <a>CreatePredictor</a> operation.</p> <p>In addition to listing the
          * properties provided in the <code>CreatePredictor</code> request, this operation
          * lists the following properties:</p> <ul> <li> <p>
          * <code>DatasetImportJobArns</code> - The dataset import jobs used to import
@@ -1860,9 +1858,8 @@ namespace Model
         /**
          *  <p> This operation is only valid for legacy predictors created with
          * CreatePredictor. If you are not using a legacy predictor, use
-         * DescribeAutoPredictor.</p> <p>To upgrade a legacy predictor to AutoPredictor,
-         * see Upgrading to AutoPredictor.</p>  <p>Describes a predictor created
-         * using the <a>CreatePredictor</a> operation.</p> <p>In addition to listing the
+         * <a>DescribeAutoPredictor</a>.</p>  <p>Describes a predictor created using
+         * the <a>CreatePredictor</a> operation.</p> <p>In addition to listing the
          * properties provided in the <code>CreatePredictor</code> request, this operation
          * lists the following properties:</p> <ul> <li> <p>
          * <code>DatasetImportJobArns</code> - The dataset import jobs used to import
@@ -2319,24 +2316,26 @@ namespace Model
         virtual void ListPredictorBacktestExportJobsAsync(const Model::ListPredictorBacktestExportJobsRequest& request, const ListPredictorBacktestExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of predictors created using the <a>CreatePredictor</a>
-         * operation. For each predictor, this operation returns a summary of its
-         * properties, including its Amazon Resource Name (ARN). You can retrieve the
-         * complete set of properties by using the ARN with the <a>DescribePredictor</a>
-         * operation. You can filter the list using an array of <a>Filter</a>
-         * objects.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of predictors created using the <a>CreateAutoPredictor</a> or
+         * <a>CreatePredictor</a> operations. For each predictor, this operation returns a
+         * summary of its properties, including its Amazon Resource Name (ARN). </p> <p>You
+         * can retrieve the complete set of properties by using the ARN with the
+         * <a>DescribeAutoPredictor</a> and <a>DescribePredictor</a> operations. You can
+         * filter the list using an array of <a>Filter</a> objects.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListPredictors">AWS
          * API Reference</a></p>
          */
         virtual Model::ListPredictorsOutcome ListPredictors(const Model::ListPredictorsRequest& request) const;
 
         /**
-         * <p>Returns a list of predictors created using the <a>CreatePredictor</a>
-         * operation. For each predictor, this operation returns a summary of its
-         * properties, including its Amazon Resource Name (ARN). You can retrieve the
-         * complete set of properties by using the ARN with the <a>DescribePredictor</a>
-         * operation. You can filter the list using an array of <a>Filter</a>
-         * objects.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of predictors created using the <a>CreateAutoPredictor</a> or
+         * <a>CreatePredictor</a> operations. For each predictor, this operation returns a
+         * summary of its properties, including its Amazon Resource Name (ARN). </p> <p>You
+         * can retrieve the complete set of properties by using the ARN with the
+         * <a>DescribeAutoPredictor</a> and <a>DescribePredictor</a> operations. You can
+         * filter the list using an array of <a>Filter</a> objects.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListPredictors">AWS
          * API Reference</a></p>
          *
@@ -2345,12 +2344,13 @@ namespace Model
         virtual Model::ListPredictorsOutcomeCallable ListPredictorsCallable(const Model::ListPredictorsRequest& request) const;
 
         /**
-         * <p>Returns a list of predictors created using the <a>CreatePredictor</a>
-         * operation. For each predictor, this operation returns a summary of its
-         * properties, including its Amazon Resource Name (ARN). You can retrieve the
-         * complete set of properties by using the ARN with the <a>DescribePredictor</a>
-         * operation. You can filter the list using an array of <a>Filter</a>
-         * objects.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of predictors created using the <a>CreateAutoPredictor</a> or
+         * <a>CreatePredictor</a> operations. For each predictor, this operation returns a
+         * summary of its properties, including its Amazon Resource Name (ARN). </p> <p>You
+         * can retrieve the complete set of properties by using the ARN with the
+         * <a>DescribeAutoPredictor</a> and <a>DescribePredictor</a> operations. You can
+         * filter the list using an array of <a>Filter</a> objects.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListPredictors">AWS
          * API Reference</a></p>
          *
@@ -2390,6 +2390,7 @@ namespace Model
          * following resources (and their corresponding child resources):</p> <ul> <li>
          * <p>Dataset Import Job</p> </li> <li> <p>Predictor Job</p> </li> <li> <p>Forecast
          * Job</p> </li> <li> <p>Forecast Export Job</p> </li> <li> <p>Predictor Backtest
+         * Export Job</p> </li> <li> <p>Explainability Job</p> </li> <li> <p>Explainability
          * Export Job</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/StopResource">AWS
          * API Reference</a></p>
@@ -2403,6 +2404,7 @@ namespace Model
          * following resources (and their corresponding child resources):</p> <ul> <li>
          * <p>Dataset Import Job</p> </li> <li> <p>Predictor Job</p> </li> <li> <p>Forecast
          * Job</p> </li> <li> <p>Forecast Export Job</p> </li> <li> <p>Predictor Backtest
+         * Export Job</p> </li> <li> <p>Explainability Job</p> </li> <li> <p>Explainability
          * Export Job</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/StopResource">AWS
          * API Reference</a></p>
@@ -2418,6 +2420,7 @@ namespace Model
          * following resources (and their corresponding child resources):</p> <ul> <li>
          * <p>Dataset Import Job</p> </li> <li> <p>Predictor Job</p> </li> <li> <p>Forecast
          * Job</p> </li> <li> <p>Forecast Export Job</p> </li> <li> <p>Predictor Backtest
+         * Export Job</p> </li> <li> <p>Explainability Job</p> </li> <li> <p>Explainability
          * Export Job</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/StopResource">AWS
          * API Reference</a></p>

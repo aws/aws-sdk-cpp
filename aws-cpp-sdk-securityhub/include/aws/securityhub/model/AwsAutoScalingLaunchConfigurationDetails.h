@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/model/AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails.h>
+#include <aws/securityhub/model/AwsAutoScalingLaunchConfigurationMetadataOptions.h>
 #include <aws/securityhub/model/AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails.h>
 #include <utility>
 
@@ -838,6 +839,37 @@ namespace Model
      */
     inline AwsAutoScalingLaunchConfigurationDetails& WithUserData(const char* value) { SetUserData(value); return *this;}
 
+
+    /**
+     * <p>The metadata options for the instances.</p>
+     */
+    inline const AwsAutoScalingLaunchConfigurationMetadataOptions& GetMetadataOptions() const{ return m_metadataOptions; }
+
+    /**
+     * <p>The metadata options for the instances.</p>
+     */
+    inline bool MetadataOptionsHasBeenSet() const { return m_metadataOptionsHasBeenSet; }
+
+    /**
+     * <p>The metadata options for the instances.</p>
+     */
+    inline void SetMetadataOptions(const AwsAutoScalingLaunchConfigurationMetadataOptions& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = value; }
+
+    /**
+     * <p>The metadata options for the instances.</p>
+     */
+    inline void SetMetadataOptions(AwsAutoScalingLaunchConfigurationMetadataOptions&& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = std::move(value); }
+
+    /**
+     * <p>The metadata options for the instances.</p>
+     */
+    inline AwsAutoScalingLaunchConfigurationDetails& WithMetadataOptions(const AwsAutoScalingLaunchConfigurationMetadataOptions& value) { SetMetadataOptions(value); return *this;}
+
+    /**
+     * <p>The metadata options for the instances.</p>
+     */
+    inline AwsAutoScalingLaunchConfigurationDetails& WithMetadataOptions(AwsAutoScalingLaunchConfigurationMetadataOptions&& value) { SetMetadataOptions(std::move(value)); return *this;}
+
   private:
 
     bool m_associatePublicIpAddress;
@@ -893,6 +925,9 @@ namespace Model
 
     Aws::String m_userData;
     bool m_userDataHasBeenSet;
+
+    AwsAutoScalingLaunchConfigurationMetadataOptions m_metadataOptions;
+    bool m_metadataOptionsHasBeenSet;
   };
 
 } // namespace Model

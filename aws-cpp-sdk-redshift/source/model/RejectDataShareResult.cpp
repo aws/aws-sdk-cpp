@@ -66,6 +66,11 @@ RejectDataShareResult& RejectDataShareResult::operator =(const Aws::AmazonWebSer
       }
 
     }
+    XmlNode managedByNode = resultNode.FirstChild("ManagedBy");
+    if(!managedByNode.IsNull())
+    {
+      m_managedBy = Aws::Utils::Xml::DecodeEscapedXmlText(managedByNode.GetText());
+    }
   }
 
   if (!rootNode.IsNull()) {

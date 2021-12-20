@@ -879,9 +879,9 @@ namespace Model
 
         /**
          * <p>From a data producer account, authorizes the sharing of a datashare with one
-         * or more consumer accounts. To authorize a datashare for a data consumer, the
-         * producer account must have the correct access privileges.</p><p><h3>See
-         * Also:</h3>   <a
+         * or more consumer accounts or managing entities. To authorize a datashare for a
+         * data consumer, the producer account must have the correct access
+         * privileges.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeDataShare">AWS
          * API Reference</a></p>
          */
@@ -889,9 +889,9 @@ namespace Model
 
         /**
          * <p>From a data producer account, authorizes the sharing of a datashare with one
-         * or more consumer accounts. To authorize a datashare for a data consumer, the
-         * producer account must have the correct access privileges.</p><p><h3>See
-         * Also:</h3>   <a
+         * or more consumer accounts or managing entities. To authorize a datashare for a
+         * data consumer, the producer account must have the correct access
+         * privileges.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeDataShare">AWS
          * API Reference</a></p>
          *
@@ -901,9 +901,9 @@ namespace Model
 
         /**
          * <p>From a data producer account, authorizes the sharing of a datashare with one
-         * or more consumer accounts. To authorize a datashare for a data consumer, the
-         * producer account must have the correct access privileges.</p><p><h3>See
-         * Also:</h3>   <a
+         * or more consumer accounts or managing entities. To authorize a datashare for a
+         * data consumer, the producer account must have the correct access
+         * privileges.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeDataShare">AWS
          * API Reference</a></p>
          *

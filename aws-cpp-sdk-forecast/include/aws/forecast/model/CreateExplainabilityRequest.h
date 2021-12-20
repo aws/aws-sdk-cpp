@@ -231,98 +231,114 @@ namespace Model
 
     /**
      * <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define
-     * the first point for the Explainability.</p>
+     * the first point for the Explainability.</p> <p>Use the following timestamp
+     * format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
      */
     inline const Aws::String& GetStartDateTime() const{ return m_startDateTime; }
 
     /**
      * <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define
-     * the first point for the Explainability.</p>
+     * the first point for the Explainability.</p> <p>Use the following timestamp
+     * format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
      */
     inline bool StartDateTimeHasBeenSet() const { return m_startDateTimeHasBeenSet; }
 
     /**
      * <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define
-     * the first point for the Explainability.</p>
+     * the first point for the Explainability.</p> <p>Use the following timestamp
+     * format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
      */
     inline void SetStartDateTime(const Aws::String& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = value; }
 
     /**
      * <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define
-     * the first point for the Explainability.</p>
+     * the first point for the Explainability.</p> <p>Use the following timestamp
+     * format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
      */
     inline void SetStartDateTime(Aws::String&& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = std::move(value); }
 
     /**
      * <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define
-     * the first point for the Explainability.</p>
+     * the first point for the Explainability.</p> <p>Use the following timestamp
+     * format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
      */
     inline void SetStartDateTime(const char* value) { m_startDateTimeHasBeenSet = true; m_startDateTime.assign(value); }
 
     /**
      * <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define
-     * the first point for the Explainability.</p>
+     * the first point for the Explainability.</p> <p>Use the following timestamp
+     * format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
      */
     inline CreateExplainabilityRequest& WithStartDateTime(const Aws::String& value) { SetStartDateTime(value); return *this;}
 
     /**
      * <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define
-     * the first point for the Explainability.</p>
+     * the first point for the Explainability.</p> <p>Use the following timestamp
+     * format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
      */
     inline CreateExplainabilityRequest& WithStartDateTime(Aws::String&& value) { SetStartDateTime(std::move(value)); return *this;}
 
     /**
      * <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define
-     * the first point for the Explainability.</p>
+     * the first point for the Explainability.</p> <p>Use the following timestamp
+     * format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
      */
     inline CreateExplainabilityRequest& WithStartDateTime(const char* value) { SetStartDateTime(value); return *this;}
 
 
     /**
      * <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define
-     * the last time point for the Explainability.</p>
+     * the last time point for the Explainability.</p> <p>Use the following timestamp
+     * format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
      */
     inline const Aws::String& GetEndDateTime() const{ return m_endDateTime; }
 
     /**
      * <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define
-     * the last time point for the Explainability.</p>
+     * the last time point for the Explainability.</p> <p>Use the following timestamp
+     * format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
      */
     inline bool EndDateTimeHasBeenSet() const { return m_endDateTimeHasBeenSet; }
 
     /**
      * <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define
-     * the last time point for the Explainability.</p>
+     * the last time point for the Explainability.</p> <p>Use the following timestamp
+     * format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
      */
     inline void SetEndDateTime(const Aws::String& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
 
     /**
      * <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define
-     * the last time point for the Explainability.</p>
+     * the last time point for the Explainability.</p> <p>Use the following timestamp
+     * format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
      */
     inline void SetEndDateTime(Aws::String&& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = std::move(value); }
 
     /**
      * <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define
-     * the last time point for the Explainability.</p>
+     * the last time point for the Explainability.</p> <p>Use the following timestamp
+     * format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
      */
     inline void SetEndDateTime(const char* value) { m_endDateTimeHasBeenSet = true; m_endDateTime.assign(value); }
 
     /**
      * <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define
-     * the last time point for the Explainability.</p>
+     * the last time point for the Explainability.</p> <p>Use the following timestamp
+     * format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
      */
     inline CreateExplainabilityRequest& WithEndDateTime(const Aws::String& value) { SetEndDateTime(value); return *this;}
 
     /**
      * <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define
-     * the last time point for the Explainability.</p>
+     * the last time point for the Explainability.</p> <p>Use the following timestamp
+     * format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
      */
     inline CreateExplainabilityRequest& WithEndDateTime(Aws::String&& value) { SetEndDateTime(std::move(value)); return *this;}
 
     /**
      * <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define
-     * the last time point for the Explainability.</p>
+     * the last time point for the Explainability.</p> <p>Use the following timestamp
+     * format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
      */
     inline CreateExplainabilityRequest& WithEndDateTime(const char* value) { SetEndDateTime(value); return *this;}
 

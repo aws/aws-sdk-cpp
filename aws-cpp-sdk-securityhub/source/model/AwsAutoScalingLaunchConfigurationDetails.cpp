@@ -38,7 +38,8 @@ AwsAutoScalingLaunchConfigurationDetails::AwsAutoScalingLaunchConfigurationDetai
     m_ramdiskIdHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_spotPriceHasBeenSet(false),
-    m_userDataHasBeenSet(false)
+    m_userDataHasBeenSet(false),
+    m_metadataOptionsHasBeenSet(false)
 {
 }
 
@@ -62,7 +63,8 @@ AwsAutoScalingLaunchConfigurationDetails::AwsAutoScalingLaunchConfigurationDetai
     m_ramdiskIdHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_spotPriceHasBeenSet(false),
-    m_userDataHasBeenSet(false)
+    m_userDataHasBeenSet(false),
+    m_metadataOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -204,6 +206,13 @@ AwsAutoScalingLaunchConfigurationDetails& AwsAutoScalingLaunchConfigurationDetai
     m_userDataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MetadataOptions"))
+  {
+    m_metadataOptions = jsonValue.GetObject("MetadataOptions");
+
+    m_metadataOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -331,6 +340,12 @@ JsonValue AwsAutoScalingLaunchConfigurationDetails::Jsonize() const
   if(m_userDataHasBeenSet)
   {
    payload.WithString("UserData", m_userData);
+
+  }
+
+  if(m_metadataOptionsHasBeenSet)
+  {
+   payload.WithObject("MetadataOptions", m_metadataOptions.Jsonize());
 
   }
 

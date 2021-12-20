@@ -190,6 +190,42 @@ namespace Model
     inline AuthorizeDataShareResult& AddDataShareAssociations(DataShareAssociation&& value) { m_dataShareAssociations.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>The identifier of a datashare to show its managing entity.</p>
+     */
+    inline const Aws::String& GetManagedBy() const{ return m_managedBy; }
+
+    /**
+     * <p>The identifier of a datashare to show its managing entity.</p>
+     */
+    inline void SetManagedBy(const Aws::String& value) { m_managedBy = value; }
+
+    /**
+     * <p>The identifier of a datashare to show its managing entity.</p>
+     */
+    inline void SetManagedBy(Aws::String&& value) { m_managedBy = std::move(value); }
+
+    /**
+     * <p>The identifier of a datashare to show its managing entity.</p>
+     */
+    inline void SetManagedBy(const char* value) { m_managedBy.assign(value); }
+
+    /**
+     * <p>The identifier of a datashare to show its managing entity.</p>
+     */
+    inline AuthorizeDataShareResult& WithManagedBy(const Aws::String& value) { SetManagedBy(value); return *this;}
+
+    /**
+     * <p>The identifier of a datashare to show its managing entity.</p>
+     */
+    inline AuthorizeDataShareResult& WithManagedBy(Aws::String&& value) { SetManagedBy(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of a datashare to show its managing entity.</p>
+     */
+    inline AuthorizeDataShareResult& WithManagedBy(const char* value) { SetManagedBy(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -214,6 +250,8 @@ namespace Model
     bool m_allowPubliclyAccessibleConsumers;
 
     Aws::Vector<DataShareAssociation> m_dataShareAssociations;
+
+    Aws::String m_managedBy;
 
     ResponseMetadata m_responseMetadata;
   };

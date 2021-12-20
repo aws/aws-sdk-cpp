@@ -22,7 +22,8 @@ AutoMLChannel::AutoMLChannel() :
     m_dataSourceHasBeenSet(false),
     m_compressionType(CompressionType::NOT_SET),
     m_compressionTypeHasBeenSet(false),
-    m_targetAttributeNameHasBeenSet(false)
+    m_targetAttributeNameHasBeenSet(false),
+    m_contentTypeHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ AutoMLChannel::AutoMLChannel(JsonView jsonValue) :
     m_dataSourceHasBeenSet(false),
     m_compressionType(CompressionType::NOT_SET),
     m_compressionTypeHasBeenSet(false),
-    m_targetAttributeNameHasBeenSet(false)
+    m_targetAttributeNameHasBeenSet(false),
+    m_contentTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +60,13 @@ AutoMLChannel& AutoMLChannel::operator =(JsonView jsonValue)
     m_targetAttributeNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ContentType"))
+  {
+    m_contentType = jsonValue.GetString("ContentType");
+
+    m_contentTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -79,6 +88,12 @@ JsonValue AutoMLChannel::Jsonize() const
   if(m_targetAttributeNameHasBeenSet)
   {
    payload.WithString("TargetAttributeName", m_targetAttributeName);
+
+  }
+
+  if(m_contentTypeHasBeenSet)
+  {
+   payload.WithString("ContentType", m_contentType);
 
   }
 

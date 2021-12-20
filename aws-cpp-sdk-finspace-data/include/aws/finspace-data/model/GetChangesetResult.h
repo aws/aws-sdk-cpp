@@ -425,6 +425,16 @@ namespace Model
     inline GetChangesetResult& WithActiveUntilTimestamp(long long value) { SetActiveUntilTimestamp(value); return *this;}
 
 
+    
+    inline long long GetActiveFromTimestamp() const{ return m_activeFromTimestamp; }
+
+    
+    inline void SetActiveFromTimestamp(long long value) { m_activeFromTimestamp = value; }
+
+    
+    inline GetChangesetResult& WithActiveFromTimestamp(long long value) { SetActiveFromTimestamp(value); return *this;}
+
+
     /**
      * <p>The unique identifier of the Changeset that is being updated.</p>
      */
@@ -517,6 +527,8 @@ namespace Model
     ChangesetErrorInfo m_errorInfo;
 
     long long m_activeUntilTimestamp;
+
+    long long m_activeFromTimestamp;
 
     Aws::String m_updatesChangesetId;
 

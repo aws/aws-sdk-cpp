@@ -22,7 +22,8 @@ namespace Model
     UNIQUE,
     SECONDARY,
     LOOKUP_ONLY,
-    NEW_ONLY
+    NEW_ONLY,
+    ORDER
   };
 
 namespace StandardIdentifierMapper

@@ -12,6 +12,7 @@
 #include <aws/securityhub/model/AwsS3BucketLoggingConfiguration.h>
 #include <aws/securityhub/model/AwsS3BucketWebsiteConfiguration.h>
 #include <aws/securityhub/model/AwsS3BucketNotificationConfiguration.h>
+#include <aws/securityhub/model/AwsS3BucketBucketVersioningConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -479,6 +480,37 @@ namespace Model
      */
     inline AwsS3BucketDetails& WithBucketNotificationConfiguration(AwsS3BucketNotificationConfiguration&& value) { SetBucketNotificationConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The versioning state of an S3 bucket.</p>
+     */
+    inline const AwsS3BucketBucketVersioningConfiguration& GetBucketVersioningConfiguration() const{ return m_bucketVersioningConfiguration; }
+
+    /**
+     * <p>The versioning state of an S3 bucket.</p>
+     */
+    inline bool BucketVersioningConfigurationHasBeenSet() const { return m_bucketVersioningConfigurationHasBeenSet; }
+
+    /**
+     * <p>The versioning state of an S3 bucket.</p>
+     */
+    inline void SetBucketVersioningConfiguration(const AwsS3BucketBucketVersioningConfiguration& value) { m_bucketVersioningConfigurationHasBeenSet = true; m_bucketVersioningConfiguration = value; }
+
+    /**
+     * <p>The versioning state of an S3 bucket.</p>
+     */
+    inline void SetBucketVersioningConfiguration(AwsS3BucketBucketVersioningConfiguration&& value) { m_bucketVersioningConfigurationHasBeenSet = true; m_bucketVersioningConfiguration = std::move(value); }
+
+    /**
+     * <p>The versioning state of an S3 bucket.</p>
+     */
+    inline AwsS3BucketDetails& WithBucketVersioningConfiguration(const AwsS3BucketBucketVersioningConfiguration& value) { SetBucketVersioningConfiguration(value); return *this;}
+
+    /**
+     * <p>The versioning state of an S3 bucket.</p>
+     */
+    inline AwsS3BucketDetails& WithBucketVersioningConfiguration(AwsS3BucketBucketVersioningConfiguration&& value) { SetBucketVersioningConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_ownerId;
@@ -513,6 +545,9 @@ namespace Model
 
     AwsS3BucketNotificationConfiguration m_bucketNotificationConfiguration;
     bool m_bucketNotificationConfigurationHasBeenSet;
+
+    AwsS3BucketBucketVersioningConfiguration m_bucketVersioningConfiguration;
+    bool m_bucketVersioningConfigurationHasBeenSet;
   };
 
 } // namespace Model

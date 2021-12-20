@@ -156,6 +156,71 @@ namespace Model
      */
     inline AutoMLChannel& WithTargetAttributeName(const char* value) { SetTargetAttributeName(value); return *this;}
 
+
+    /**
+     * <p>The content type of the data from the input source. You can use
+     * <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p>
+     */
+    inline const Aws::String& GetContentType() const{ return m_contentType; }
+
+    /**
+     * <p>The content type of the data from the input source. You can use
+     * <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p>
+     */
+    inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
+
+    /**
+     * <p>The content type of the data from the input source. You can use
+     * <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p>
+     */
+    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
+
+    /**
+     * <p>The content type of the data from the input source. You can use
+     * <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p>
+     */
+    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
+
+    /**
+     * <p>The content type of the data from the input source. You can use
+     * <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p>
+     */
+    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
+
+    /**
+     * <p>The content type of the data from the input source. You can use
+     * <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p>
+     */
+    inline AutoMLChannel& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
+
+    /**
+     * <p>The content type of the data from the input source. You can use
+     * <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p>
+     */
+    inline AutoMLChannel& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
+
+    /**
+     * <p>The content type of the data from the input source. You can use
+     * <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p>
+     */
+    inline AutoMLChannel& WithContentType(const char* value) { SetContentType(value); return *this;}
+
   private:
 
     AutoMLDataSource m_dataSource;
@@ -166,6 +231,9 @@ namespace Model
 
     Aws::String m_targetAttributeName;
     bool m_targetAttributeNameHasBeenSet;
+
+    Aws::String m_contentType;
+    bool m_contentTypeHasBeenSet;
   };
 
 } // namespace Model

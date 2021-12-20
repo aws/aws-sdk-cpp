@@ -23,7 +23,8 @@ Distribution::Distribution() :
     m_amiDistributionConfigurationHasBeenSet(false),
     m_containerDistributionConfigurationHasBeenSet(false),
     m_licenseConfigurationArnsHasBeenSet(false),
-    m_launchTemplateConfigurationsHasBeenSet(false)
+    m_launchTemplateConfigurationsHasBeenSet(false),
+    m_s3ExportConfigurationHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ Distribution::Distribution(JsonView jsonValue) :
     m_amiDistributionConfigurationHasBeenSet(false),
     m_containerDistributionConfigurationHasBeenSet(false),
     m_licenseConfigurationArnsHasBeenSet(false),
-    m_launchTemplateConfigurationsHasBeenSet(false)
+    m_launchTemplateConfigurationsHasBeenSet(false),
+    m_s3ExportConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -80,6 +82,13 @@ Distribution& Distribution::operator =(JsonView jsonValue)
     m_launchTemplateConfigurationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("s3ExportConfiguration"))
+  {
+    m_s3ExportConfiguration = jsonValue.GetObject("s3ExportConfiguration");
+
+    m_s3ExportConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -124,6 +133,12 @@ JsonValue Distribution::Jsonize() const
      launchTemplateConfigurationsJsonList[launchTemplateConfigurationsIndex].AsObject(m_launchTemplateConfigurations[launchTemplateConfigurationsIndex].Jsonize());
    }
    payload.WithArray("launchTemplateConfigurations", std::move(launchTemplateConfigurationsJsonList));
+
+  }
+
+  if(m_s3ExportConfigurationHasBeenSet)
+  {
+   payload.WithObject("s3ExportConfiguration", m_s3ExportConfiguration.Jsonize());
 
   }
 

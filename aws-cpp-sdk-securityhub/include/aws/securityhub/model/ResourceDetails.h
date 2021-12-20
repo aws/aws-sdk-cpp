@@ -64,6 +64,9 @@
 #include <aws/securityhub/model/AwsWafRegionalRateBasedRuleDetails.h>
 #include <aws/securityhub/model/AwsEcrRepositoryDetails.h>
 #include <aws/securityhub/model/AwsEksClusterDetails.h>
+#include <aws/securityhub/model/AwsNetworkFirewallFirewallPolicyDetails.h>
+#include <aws/securityhub/model/AwsNetworkFirewallFirewallDetails.h>
+#include <aws/securityhub/model/AwsNetworkFirewallRuleGroupDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -2076,6 +2079,99 @@ namespace Model
      */
     inline ResourceDetails& WithAwsEksCluster(AwsEksClusterDetails&& value) { SetAwsEksCluster(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Details about an Network Firewall firewall policy.</p>
+     */
+    inline const AwsNetworkFirewallFirewallPolicyDetails& GetAwsNetworkFirewallFirewallPolicy() const{ return m_awsNetworkFirewallFirewallPolicy; }
+
+    /**
+     * <p>Details about an Network Firewall firewall policy.</p>
+     */
+    inline bool AwsNetworkFirewallFirewallPolicyHasBeenSet() const { return m_awsNetworkFirewallFirewallPolicyHasBeenSet; }
+
+    /**
+     * <p>Details about an Network Firewall firewall policy.</p>
+     */
+    inline void SetAwsNetworkFirewallFirewallPolicy(const AwsNetworkFirewallFirewallPolicyDetails& value) { m_awsNetworkFirewallFirewallPolicyHasBeenSet = true; m_awsNetworkFirewallFirewallPolicy = value; }
+
+    /**
+     * <p>Details about an Network Firewall firewall policy.</p>
+     */
+    inline void SetAwsNetworkFirewallFirewallPolicy(AwsNetworkFirewallFirewallPolicyDetails&& value) { m_awsNetworkFirewallFirewallPolicyHasBeenSet = true; m_awsNetworkFirewallFirewallPolicy = std::move(value); }
+
+    /**
+     * <p>Details about an Network Firewall firewall policy.</p>
+     */
+    inline ResourceDetails& WithAwsNetworkFirewallFirewallPolicy(const AwsNetworkFirewallFirewallPolicyDetails& value) { SetAwsNetworkFirewallFirewallPolicy(value); return *this;}
+
+    /**
+     * <p>Details about an Network Firewall firewall policy.</p>
+     */
+    inline ResourceDetails& WithAwsNetworkFirewallFirewallPolicy(AwsNetworkFirewallFirewallPolicyDetails&& value) { SetAwsNetworkFirewallFirewallPolicy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about an Network Firewall firewall.</p>
+     */
+    inline const AwsNetworkFirewallFirewallDetails& GetAwsNetworkFirewallFirewall() const{ return m_awsNetworkFirewallFirewall; }
+
+    /**
+     * <p>Details about an Network Firewall firewall.</p>
+     */
+    inline bool AwsNetworkFirewallFirewallHasBeenSet() const { return m_awsNetworkFirewallFirewallHasBeenSet; }
+
+    /**
+     * <p>Details about an Network Firewall firewall.</p>
+     */
+    inline void SetAwsNetworkFirewallFirewall(const AwsNetworkFirewallFirewallDetails& value) { m_awsNetworkFirewallFirewallHasBeenSet = true; m_awsNetworkFirewallFirewall = value; }
+
+    /**
+     * <p>Details about an Network Firewall firewall.</p>
+     */
+    inline void SetAwsNetworkFirewallFirewall(AwsNetworkFirewallFirewallDetails&& value) { m_awsNetworkFirewallFirewallHasBeenSet = true; m_awsNetworkFirewallFirewall = std::move(value); }
+
+    /**
+     * <p>Details about an Network Firewall firewall.</p>
+     */
+    inline ResourceDetails& WithAwsNetworkFirewallFirewall(const AwsNetworkFirewallFirewallDetails& value) { SetAwsNetworkFirewallFirewall(value); return *this;}
+
+    /**
+     * <p>Details about an Network Firewall firewall.</p>
+     */
+    inline ResourceDetails& WithAwsNetworkFirewallFirewall(AwsNetworkFirewallFirewallDetails&& value) { SetAwsNetworkFirewallFirewall(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about an Network Firewall rule group.</p>
+     */
+    inline const AwsNetworkFirewallRuleGroupDetails& GetAwsNetworkFirewallRuleGroup() const{ return m_awsNetworkFirewallRuleGroup; }
+
+    /**
+     * <p>Details about an Network Firewall rule group.</p>
+     */
+    inline bool AwsNetworkFirewallRuleGroupHasBeenSet() const { return m_awsNetworkFirewallRuleGroupHasBeenSet; }
+
+    /**
+     * <p>Details about an Network Firewall rule group.</p>
+     */
+    inline void SetAwsNetworkFirewallRuleGroup(const AwsNetworkFirewallRuleGroupDetails& value) { m_awsNetworkFirewallRuleGroupHasBeenSet = true; m_awsNetworkFirewallRuleGroup = value; }
+
+    /**
+     * <p>Details about an Network Firewall rule group.</p>
+     */
+    inline void SetAwsNetworkFirewallRuleGroup(AwsNetworkFirewallRuleGroupDetails&& value) { m_awsNetworkFirewallRuleGroupHasBeenSet = true; m_awsNetworkFirewallRuleGroup = std::move(value); }
+
+    /**
+     * <p>Details about an Network Firewall rule group.</p>
+     */
+    inline ResourceDetails& WithAwsNetworkFirewallRuleGroup(const AwsNetworkFirewallRuleGroupDetails& value) { SetAwsNetworkFirewallRuleGroup(value); return *this;}
+
+    /**
+     * <p>Details about an Network Firewall rule group.</p>
+     */
+    inline ResourceDetails& WithAwsNetworkFirewallRuleGroup(AwsNetworkFirewallRuleGroupDetails&& value) { SetAwsNetworkFirewallRuleGroup(std::move(value)); return *this;}
+
   private:
 
     AwsAutoScalingAutoScalingGroupDetails m_awsAutoScalingAutoScalingGroup;
@@ -2254,6 +2350,15 @@ namespace Model
 
     AwsEksClusterDetails m_awsEksCluster;
     bool m_awsEksClusterHasBeenSet;
+
+    AwsNetworkFirewallFirewallPolicyDetails m_awsNetworkFirewallFirewallPolicy;
+    bool m_awsNetworkFirewallFirewallPolicyHasBeenSet;
+
+    AwsNetworkFirewallFirewallDetails m_awsNetworkFirewallFirewall;
+    bool m_awsNetworkFirewallFirewallHasBeenSet;
+
+    AwsNetworkFirewallRuleGroupDetails m_awsNetworkFirewallRuleGroup;
+    bool m_awsNetworkFirewallRuleGroupHasBeenSet;
   };
 
 } // namespace Model

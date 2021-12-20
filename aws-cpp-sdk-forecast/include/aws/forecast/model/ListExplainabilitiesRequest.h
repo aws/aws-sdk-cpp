@@ -122,7 +122,7 @@ namespace Model
      * <b>Filter properties</b> </p> <ul> <li> <p> <code>Condition</code> - The
      * condition to apply. Valid values are <code>IS</code> and
      * <code>IS_NOT</code>.</p> </li> <li> <p> <code>Key</code> - The name of the
-     * parameter to filter on. Valid values are <code>PredictorArn</code> and
+     * parameter to filter on. Valid values are <code>ResourceArn</code> and
      * <code>Status</code>.</p> </li> <li> <p> <code>Value</code> - The value to
      * match.</p> </li> </ul>
      */
@@ -136,7 +136,7 @@ namespace Model
      * <b>Filter properties</b> </p> <ul> <li> <p> <code>Condition</code> - The
      * condition to apply. Valid values are <code>IS</code> and
      * <code>IS_NOT</code>.</p> </li> <li> <p> <code>Key</code> - The name of the
-     * parameter to filter on. Valid values are <code>PredictorArn</code> and
+     * parameter to filter on. Valid values are <code>ResourceArn</code> and
      * <code>Status</code>.</p> </li> <li> <p> <code>Value</code> - The value to
      * match.</p> </li> </ul>
      */
@@ -150,7 +150,7 @@ namespace Model
      * <b>Filter properties</b> </p> <ul> <li> <p> <code>Condition</code> - The
      * condition to apply. Valid values are <code>IS</code> and
      * <code>IS_NOT</code>.</p> </li> <li> <p> <code>Key</code> - The name of the
-     * parameter to filter on. Valid values are <code>PredictorArn</code> and
+     * parameter to filter on. Valid values are <code>ResourceArn</code> and
      * <code>Status</code>.</p> </li> <li> <p> <code>Value</code> - The value to
      * match.</p> </li> </ul>
      */
@@ -164,7 +164,7 @@ namespace Model
      * <b>Filter properties</b> </p> <ul> <li> <p> <code>Condition</code> - The
      * condition to apply. Valid values are <code>IS</code> and
      * <code>IS_NOT</code>.</p> </li> <li> <p> <code>Key</code> - The name of the
-     * parameter to filter on. Valid values are <code>PredictorArn</code> and
+     * parameter to filter on. Valid values are <code>ResourceArn</code> and
      * <code>Status</code>.</p> </li> <li> <p> <code>Value</code> - The value to
      * match.</p> </li> </ul>
      */
@@ -178,7 +178,7 @@ namespace Model
      * <b>Filter properties</b> </p> <ul> <li> <p> <code>Condition</code> - The
      * condition to apply. Valid values are <code>IS</code> and
      * <code>IS_NOT</code>.</p> </li> <li> <p> <code>Key</code> - The name of the
-     * parameter to filter on. Valid values are <code>PredictorArn</code> and
+     * parameter to filter on. Valid values are <code>ResourceArn</code> and
      * <code>Status</code>.</p> </li> <li> <p> <code>Value</code> - The value to
      * match.</p> </li> </ul>
      */
@@ -192,7 +192,7 @@ namespace Model
      * <b>Filter properties</b> </p> <ul> <li> <p> <code>Condition</code> - The
      * condition to apply. Valid values are <code>IS</code> and
      * <code>IS_NOT</code>.</p> </li> <li> <p> <code>Key</code> - The name of the
-     * parameter to filter on. Valid values are <code>PredictorArn</code> and
+     * parameter to filter on. Valid values are <code>ResourceArn</code> and
      * <code>Status</code>.</p> </li> <li> <p> <code>Value</code> - The value to
      * match.</p> </li> </ul>
      */
@@ -206,7 +206,7 @@ namespace Model
      * <b>Filter properties</b> </p> <ul> <li> <p> <code>Condition</code> - The
      * condition to apply. Valid values are <code>IS</code> and
      * <code>IS_NOT</code>.</p> </li> <li> <p> <code>Key</code> - The name of the
-     * parameter to filter on. Valid values are <code>PredictorArn</code> and
+     * parameter to filter on. Valid values are <code>ResourceArn</code> and
      * <code>Status</code>.</p> </li> <li> <p> <code>Value</code> - The value to
      * match.</p> </li> </ul>
      */
@@ -220,7 +220,7 @@ namespace Model
      * <b>Filter properties</b> </p> <ul> <li> <p> <code>Condition</code> - The
      * condition to apply. Valid values are <code>IS</code> and
      * <code>IS_NOT</code>.</p> </li> <li> <p> <code>Key</code> - The name of the
-     * parameter to filter on. Valid values are <code>PredictorArn</code> and
+     * parameter to filter on. Valid values are <code>ResourceArn</code> and
      * <code>Status</code>.</p> </li> <li> <p> <code>Value</code> - The value to
      * match.</p> </li> </ul>
      */

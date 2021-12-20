@@ -43,105 +43,113 @@ namespace Model
 
     /**
      * <p>The types of keys that a ProfileObject can have. Each ProfileObject can have
-     * only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET or CASE means that
-     * this key can be used to tie an object to a PROFILE, ASSET or CASE respectively.
-     * UNIQUE means that it can be used to uniquely identify an object. If a key a is
-     * marked as SECONDARY, it will be used to search for profiles after all other
-     * PROFILE keys have been searched. A LOOKUP_ONLY key is only used to match a
-     * profile but is not persisted to be used for searching of the profile. A NEW_ONLY
-     * key is only used if the profile does not already exist before the object is
-     * ingested, otherwise it is only used for matching objects to profiles.</p>
+     * only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET, CASE, or ORDER
+     * means that this key can be used to tie an object to a PROFILE, ASSET, CASE, or
+     * ORDER respectively. UNIQUE means that it can be used to uniquely identify an
+     * object. If a key a is marked as SECONDARY, it will be used to search for
+     * profiles after all other PROFILE keys have been searched. A LOOKUP_ONLY key is
+     * only used to match a profile but is not persisted to be used for searching of
+     * the profile. A NEW_ONLY key is only used if the profile does not already exist
+     * before the object is ingested, otherwise it is only used for matching objects to
+     * profiles.</p>
      */
     inline const Aws::Vector<StandardIdentifier>& GetStandardIdentifiers() const{ return m_standardIdentifiers; }
 
     /**
      * <p>The types of keys that a ProfileObject can have. Each ProfileObject can have
-     * only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET or CASE means that
-     * this key can be used to tie an object to a PROFILE, ASSET or CASE respectively.
-     * UNIQUE means that it can be used to uniquely identify an object. If a key a is
-     * marked as SECONDARY, it will be used to search for profiles after all other
-     * PROFILE keys have been searched. A LOOKUP_ONLY key is only used to match a
-     * profile but is not persisted to be used for searching of the profile. A NEW_ONLY
-     * key is only used if the profile does not already exist before the object is
-     * ingested, otherwise it is only used for matching objects to profiles.</p>
+     * only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET, CASE, or ORDER
+     * means that this key can be used to tie an object to a PROFILE, ASSET, CASE, or
+     * ORDER respectively. UNIQUE means that it can be used to uniquely identify an
+     * object. If a key a is marked as SECONDARY, it will be used to search for
+     * profiles after all other PROFILE keys have been searched. A LOOKUP_ONLY key is
+     * only used to match a profile but is not persisted to be used for searching of
+     * the profile. A NEW_ONLY key is only used if the profile does not already exist
+     * before the object is ingested, otherwise it is only used for matching objects to
+     * profiles.</p>
      */
     inline bool StandardIdentifiersHasBeenSet() const { return m_standardIdentifiersHasBeenSet; }
 
     /**
      * <p>The types of keys that a ProfileObject can have. Each ProfileObject can have
-     * only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET or CASE means that
-     * this key can be used to tie an object to a PROFILE, ASSET or CASE respectively.
-     * UNIQUE means that it can be used to uniquely identify an object. If a key a is
-     * marked as SECONDARY, it will be used to search for profiles after all other
-     * PROFILE keys have been searched. A LOOKUP_ONLY key is only used to match a
-     * profile but is not persisted to be used for searching of the profile. A NEW_ONLY
-     * key is only used if the profile does not already exist before the object is
-     * ingested, otherwise it is only used for matching objects to profiles.</p>
+     * only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET, CASE, or ORDER
+     * means that this key can be used to tie an object to a PROFILE, ASSET, CASE, or
+     * ORDER respectively. UNIQUE means that it can be used to uniquely identify an
+     * object. If a key a is marked as SECONDARY, it will be used to search for
+     * profiles after all other PROFILE keys have been searched. A LOOKUP_ONLY key is
+     * only used to match a profile but is not persisted to be used for searching of
+     * the profile. A NEW_ONLY key is only used if the profile does not already exist
+     * before the object is ingested, otherwise it is only used for matching objects to
+     * profiles.</p>
      */
     inline void SetStandardIdentifiers(const Aws::Vector<StandardIdentifier>& value) { m_standardIdentifiersHasBeenSet = true; m_standardIdentifiers = value; }
 
     /**
      * <p>The types of keys that a ProfileObject can have. Each ProfileObject can have
-     * only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET or CASE means that
-     * this key can be used to tie an object to a PROFILE, ASSET or CASE respectively.
-     * UNIQUE means that it can be used to uniquely identify an object. If a key a is
-     * marked as SECONDARY, it will be used to search for profiles after all other
-     * PROFILE keys have been searched. A LOOKUP_ONLY key is only used to match a
-     * profile but is not persisted to be used for searching of the profile. A NEW_ONLY
-     * key is only used if the profile does not already exist before the object is
-     * ingested, otherwise it is only used for matching objects to profiles.</p>
+     * only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET, CASE, or ORDER
+     * means that this key can be used to tie an object to a PROFILE, ASSET, CASE, or
+     * ORDER respectively. UNIQUE means that it can be used to uniquely identify an
+     * object. If a key a is marked as SECONDARY, it will be used to search for
+     * profiles after all other PROFILE keys have been searched. A LOOKUP_ONLY key is
+     * only used to match a profile but is not persisted to be used for searching of
+     * the profile. A NEW_ONLY key is only used if the profile does not already exist
+     * before the object is ingested, otherwise it is only used for matching objects to
+     * profiles.</p>
      */
     inline void SetStandardIdentifiers(Aws::Vector<StandardIdentifier>&& value) { m_standardIdentifiersHasBeenSet = true; m_standardIdentifiers = std::move(value); }
 
     /**
      * <p>The types of keys that a ProfileObject can have. Each ProfileObject can have
-     * only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET or CASE means that
-     * this key can be used to tie an object to a PROFILE, ASSET or CASE respectively.
-     * UNIQUE means that it can be used to uniquely identify an object. If a key a is
-     * marked as SECONDARY, it will be used to search for profiles after all other
-     * PROFILE keys have been searched. A LOOKUP_ONLY key is only used to match a
-     * profile but is not persisted to be used for searching of the profile. A NEW_ONLY
-     * key is only used if the profile does not already exist before the object is
-     * ingested, otherwise it is only used for matching objects to profiles.</p>
+     * only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET, CASE, or ORDER
+     * means that this key can be used to tie an object to a PROFILE, ASSET, CASE, or
+     * ORDER respectively. UNIQUE means that it can be used to uniquely identify an
+     * object. If a key a is marked as SECONDARY, it will be used to search for
+     * profiles after all other PROFILE keys have been searched. A LOOKUP_ONLY key is
+     * only used to match a profile but is not persisted to be used for searching of
+     * the profile. A NEW_ONLY key is only used if the profile does not already exist
+     * before the object is ingested, otherwise it is only used for matching objects to
+     * profiles.</p>
      */
     inline ObjectTypeKey& WithStandardIdentifiers(const Aws::Vector<StandardIdentifier>& value) { SetStandardIdentifiers(value); return *this;}
 
     /**
      * <p>The types of keys that a ProfileObject can have. Each ProfileObject can have
-     * only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET or CASE means that
-     * this key can be used to tie an object to a PROFILE, ASSET or CASE respectively.
-     * UNIQUE means that it can be used to uniquely identify an object. If a key a is
-     * marked as SECONDARY, it will be used to search for profiles after all other
-     * PROFILE keys have been searched. A LOOKUP_ONLY key is only used to match a
-     * profile but is not persisted to be used for searching of the profile. A NEW_ONLY
-     * key is only used if the profile does not already exist before the object is
-     * ingested, otherwise it is only used for matching objects to profiles.</p>
+     * only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET, CASE, or ORDER
+     * means that this key can be used to tie an object to a PROFILE, ASSET, CASE, or
+     * ORDER respectively. UNIQUE means that it can be used to uniquely identify an
+     * object. If a key a is marked as SECONDARY, it will be used to search for
+     * profiles after all other PROFILE keys have been searched. A LOOKUP_ONLY key is
+     * only used to match a profile but is not persisted to be used for searching of
+     * the profile. A NEW_ONLY key is only used if the profile does not already exist
+     * before the object is ingested, otherwise it is only used for matching objects to
+     * profiles.</p>
      */
     inline ObjectTypeKey& WithStandardIdentifiers(Aws::Vector<StandardIdentifier>&& value) { SetStandardIdentifiers(std::move(value)); return *this;}
 
     /**
      * <p>The types of keys that a ProfileObject can have. Each ProfileObject can have
-     * only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET or CASE means that
-     * this key can be used to tie an object to a PROFILE, ASSET or CASE respectively.
-     * UNIQUE means that it can be used to uniquely identify an object. If a key a is
-     * marked as SECONDARY, it will be used to search for profiles after all other
-     * PROFILE keys have been searched. A LOOKUP_ONLY key is only used to match a
-     * profile but is not persisted to be used for searching of the profile. A NEW_ONLY
-     * key is only used if the profile does not already exist before the object is
-     * ingested, otherwise it is only used for matching objects to profiles.</p>
+     * only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET, CASE, or ORDER
+     * means that this key can be used to tie an object to a PROFILE, ASSET, CASE, or
+     * ORDER respectively. UNIQUE means that it can be used to uniquely identify an
+     * object. If a key a is marked as SECONDARY, it will be used to search for
+     * profiles after all other PROFILE keys have been searched. A LOOKUP_ONLY key is
+     * only used to match a profile but is not persisted to be used for searching of
+     * the profile. A NEW_ONLY key is only used if the profile does not already exist
+     * before the object is ingested, otherwise it is only used for matching objects to
+     * profiles.</p>
      */
     inline ObjectTypeKey& AddStandardIdentifiers(const StandardIdentifier& value) { m_standardIdentifiersHasBeenSet = true; m_standardIdentifiers.push_back(value); return *this; }
 
     /**
      * <p>The types of keys that a ProfileObject can have. Each ProfileObject can have
-     * only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET or CASE means that
-     * this key can be used to tie an object to a PROFILE, ASSET or CASE respectively.
-     * UNIQUE means that it can be used to uniquely identify an object. If a key a is
-     * marked as SECONDARY, it will be used to search for profiles after all other
-     * PROFILE keys have been searched. A LOOKUP_ONLY key is only used to match a
-     * profile but is not persisted to be used for searching of the profile. A NEW_ONLY
-     * key is only used if the profile does not already exist before the object is
-     * ingested, otherwise it is only used for matching objects to profiles.</p>
+     * only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET, CASE, or ORDER
+     * means that this key can be used to tie an object to a PROFILE, ASSET, CASE, or
+     * ORDER respectively. UNIQUE means that it can be used to uniquely identify an
+     * object. If a key a is marked as SECONDARY, it will be used to search for
+     * profiles after all other PROFILE keys have been searched. A LOOKUP_ONLY key is
+     * only used to match a profile but is not persisted to be used for searching of
+     * the profile. A NEW_ONLY key is only used if the profile does not already exist
+     * before the object is ingested, otherwise it is only used for matching objects to
+     * profiles.</p>
      */
     inline ObjectTypeKey& AddStandardIdentifiers(StandardIdentifier&& value) { m_standardIdentifiersHasBeenSet = true; m_standardIdentifiers.push_back(std::move(value)); return *this; }
 

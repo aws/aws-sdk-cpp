@@ -122,7 +122,7 @@ namespace Model
      * properties</b> </p> <ul> <li> <p> <code>Condition</code> - The condition to
      * apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li> <li>
      * <p> <code>Key</code> - The name of the parameter to filter on. Valid values are
-     * <code>PredictorArn</code> and <code>Status</code>.</p> </li> <li> <p>
+     * <code>ResourceArn</code> and <code>Status</code>.</p> </li> <li> <p>
      * <code>Value</code> - The value to match.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
@@ -135,7 +135,7 @@ namespace Model
      * properties</b> </p> <ul> <li> <p> <code>Condition</code> - The condition to
      * apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li> <li>
      * <p> <code>Key</code> - The name of the parameter to filter on. Valid values are
-     * <code>PredictorArn</code> and <code>Status</code>.</p> </li> <li> <p>
+     * <code>ResourceArn</code> and <code>Status</code>.</p> </li> <li> <p>
      * <code>Value</code> - The value to match.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
@@ -148,7 +148,7 @@ namespace Model
      * properties</b> </p> <ul> <li> <p> <code>Condition</code> - The condition to
      * apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li> <li>
      * <p> <code>Key</code> - The name of the parameter to filter on. Valid values are
-     * <code>PredictorArn</code> and <code>Status</code>.</p> </li> <li> <p>
+     * <code>ResourceArn</code> and <code>Status</code>.</p> </li> <li> <p>
      * <code>Value</code> - The value to match.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
@@ -161,7 +161,7 @@ namespace Model
      * properties</b> </p> <ul> <li> <p> <code>Condition</code> - The condition to
      * apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li> <li>
      * <p> <code>Key</code> - The name of the parameter to filter on. Valid values are
-     * <code>PredictorArn</code> and <code>Status</code>.</p> </li> <li> <p>
+     * <code>ResourceArn</code> and <code>Status</code>.</p> </li> <li> <p>
      * <code>Value</code> - The value to match.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
@@ -174,7 +174,7 @@ namespace Model
      * properties</b> </p> <ul> <li> <p> <code>Condition</code> - The condition to
      * apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li> <li>
      * <p> <code>Key</code> - The name of the parameter to filter on. Valid values are
-     * <code>PredictorArn</code> and <code>Status</code>.</p> </li> <li> <p>
+     * <code>ResourceArn</code> and <code>Status</code>.</p> </li> <li> <p>
      * <code>Value</code> - The value to match.</p> </li> </ul>
      */
     inline ListExplainabilityExportsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
@@ -187,7 +187,7 @@ namespace Model
      * properties</b> </p> <ul> <li> <p> <code>Condition</code> - The condition to
      * apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li> <li>
      * <p> <code>Key</code> - The name of the parameter to filter on. Valid values are
-     * <code>PredictorArn</code> and <code>Status</code>.</p> </li> <li> <p>
+     * <code>ResourceArn</code> and <code>Status</code>.</p> </li> <li> <p>
      * <code>Value</code> - The value to match.</p> </li> </ul>
      */
     inline ListExplainabilityExportsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
@@ -200,7 +200,7 @@ namespace Model
      * properties</b> </p> <ul> <li> <p> <code>Condition</code> - The condition to
      * apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li> <li>
      * <p> <code>Key</code> - The name of the parameter to filter on. Valid values are
-     * <code>PredictorArn</code> and <code>Status</code>.</p> </li> <li> <p>
+     * <code>ResourceArn</code> and <code>Status</code>.</p> </li> <li> <p>
      * <code>Value</code> - The value to match.</p> </li> </ul>
      */
     inline ListExplainabilityExportsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
@@ -213,7 +213,7 @@ namespace Model
      * properties</b> </p> <ul> <li> <p> <code>Condition</code> - The condition to
      * apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li> <li>
      * <p> <code>Key</code> - The name of the parameter to filter on. Valid values are
-     * <code>PredictorArn</code> and <code>Status</code>.</p> </li> <li> <p>
+     * <code>ResourceArn</code> and <code>Status</code>.</p> </li> <li> <p>
      * <code>Value</code> - The value to match.</p> </li> </ul>
      */
     inline ListExplainabilityExportsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }

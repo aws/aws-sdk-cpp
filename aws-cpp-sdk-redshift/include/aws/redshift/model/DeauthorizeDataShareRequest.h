@@ -87,49 +87,57 @@ namespace Model
 
     /**
      * <p>The identifier of the data consumer that is to have authorization removed
-     * from the datashare. This identifier is an Amazon Web Services account ID.</p>
+     * from the datashare. This identifier is an Amazon Web Services account ID or a
+     * keyword, such as ADX.</p>
      */
     inline const Aws::String& GetConsumerIdentifier() const{ return m_consumerIdentifier; }
 
     /**
      * <p>The identifier of the data consumer that is to have authorization removed
-     * from the datashare. This identifier is an Amazon Web Services account ID.</p>
+     * from the datashare. This identifier is an Amazon Web Services account ID or a
+     * keyword, such as ADX.</p>
      */
     inline bool ConsumerIdentifierHasBeenSet() const { return m_consumerIdentifierHasBeenSet; }
 
     /**
      * <p>The identifier of the data consumer that is to have authorization removed
-     * from the datashare. This identifier is an Amazon Web Services account ID.</p>
+     * from the datashare. This identifier is an Amazon Web Services account ID or a
+     * keyword, such as ADX.</p>
      */
     inline void SetConsumerIdentifier(const Aws::String& value) { m_consumerIdentifierHasBeenSet = true; m_consumerIdentifier = value; }
 
     /**
      * <p>The identifier of the data consumer that is to have authorization removed
-     * from the datashare. This identifier is an Amazon Web Services account ID.</p>
+     * from the datashare. This identifier is an Amazon Web Services account ID or a
+     * keyword, such as ADX.</p>
      */
     inline void SetConsumerIdentifier(Aws::String&& value) { m_consumerIdentifierHasBeenSet = true; m_consumerIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the data consumer that is to have authorization removed
-     * from the datashare. This identifier is an Amazon Web Services account ID.</p>
+     * from the datashare. This identifier is an Amazon Web Services account ID or a
+     * keyword, such as ADX.</p>
      */
     inline void SetConsumerIdentifier(const char* value) { m_consumerIdentifierHasBeenSet = true; m_consumerIdentifier.assign(value); }
 
     /**
      * <p>The identifier of the data consumer that is to have authorization removed
-     * from the datashare. This identifier is an Amazon Web Services account ID.</p>
+     * from the datashare. This identifier is an Amazon Web Services account ID or a
+     * keyword, such as ADX.</p>
      */
     inline DeauthorizeDataShareRequest& WithConsumerIdentifier(const Aws::String& value) { SetConsumerIdentifier(value); return *this;}
 
     /**
      * <p>The identifier of the data consumer that is to have authorization removed
-     * from the datashare. This identifier is an Amazon Web Services account ID.</p>
+     * from the datashare. This identifier is an Amazon Web Services account ID or a
+     * keyword, such as ADX.</p>
      */
     inline DeauthorizeDataShareRequest& WithConsumerIdentifier(Aws::String&& value) { SetConsumerIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the data consumer that is to have authorization removed
-     * from the datashare. This identifier is an Amazon Web Services account ID.</p>
+     * from the datashare. This identifier is an Amazon Web Services account ID or a
+     * keyword, such as ADX.</p>
      */
     inline DeauthorizeDataShareRequest& WithConsumerIdentifier(const char* value) { SetConsumerIdentifier(value); return *this;}
 

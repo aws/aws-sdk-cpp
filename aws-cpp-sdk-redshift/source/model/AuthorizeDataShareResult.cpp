@@ -66,6 +66,11 @@ AuthorizeDataShareResult& AuthorizeDataShareResult::operator =(const Aws::Amazon
       }
 
     }
+    XmlNode managedByNode = resultNode.FirstChild("ManagedBy");
+    if(!managedByNode.IsNull())
+    {
+      m_managedBy = Aws::Utils::Xml::DecodeEscapedXmlText(managedByNode.GetText());
+    }
   }
 
   if (!rootNode.IsNull()) {

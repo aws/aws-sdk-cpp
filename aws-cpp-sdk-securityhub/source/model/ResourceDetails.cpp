@@ -77,7 +77,10 @@ ResourceDetails::ResourceDetails() :
     m_awsWafRateBasedRuleHasBeenSet(false),
     m_awsWafRegionalRateBasedRuleHasBeenSet(false),
     m_awsEcrRepositoryHasBeenSet(false),
-    m_awsEksClusterHasBeenSet(false)
+    m_awsEksClusterHasBeenSet(false),
+    m_awsNetworkFirewallFirewallPolicyHasBeenSet(false),
+    m_awsNetworkFirewallFirewallHasBeenSet(false),
+    m_awsNetworkFirewallRuleGroupHasBeenSet(false)
 {
 }
 
@@ -140,7 +143,10 @@ ResourceDetails::ResourceDetails(JsonView jsonValue) :
     m_awsWafRateBasedRuleHasBeenSet(false),
     m_awsWafRegionalRateBasedRuleHasBeenSet(false),
     m_awsEcrRepositoryHasBeenSet(false),
-    m_awsEksClusterHasBeenSet(false)
+    m_awsEksClusterHasBeenSet(false),
+    m_awsNetworkFirewallFirewallPolicyHasBeenSet(false),
+    m_awsNetworkFirewallFirewallHasBeenSet(false),
+    m_awsNetworkFirewallRuleGroupHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -563,6 +569,27 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsEksClusterHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AwsNetworkFirewallFirewallPolicy"))
+  {
+    m_awsNetworkFirewallFirewallPolicy = jsonValue.GetObject("AwsNetworkFirewallFirewallPolicy");
+
+    m_awsNetworkFirewallFirewallPolicyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsNetworkFirewallFirewall"))
+  {
+    m_awsNetworkFirewallFirewall = jsonValue.GetObject("AwsNetworkFirewallFirewall");
+
+    m_awsNetworkFirewallFirewallHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsNetworkFirewallRuleGroup"))
+  {
+    m_awsNetworkFirewallRuleGroup = jsonValue.GetObject("AwsNetworkFirewallRuleGroup");
+
+    m_awsNetworkFirewallRuleGroupHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -926,6 +953,24 @@ JsonValue ResourceDetails::Jsonize() const
   if(m_awsEksClusterHasBeenSet)
   {
    payload.WithObject("AwsEksCluster", m_awsEksCluster.Jsonize());
+
+  }
+
+  if(m_awsNetworkFirewallFirewallPolicyHasBeenSet)
+  {
+   payload.WithObject("AwsNetworkFirewallFirewallPolicy", m_awsNetworkFirewallFirewallPolicy.Jsonize());
+
+  }
+
+  if(m_awsNetworkFirewallFirewallHasBeenSet)
+  {
+   payload.WithObject("AwsNetworkFirewallFirewall", m_awsNetworkFirewallFirewall.Jsonize());
+
+  }
+
+  if(m_awsNetworkFirewallRuleGroupHasBeenSet)
+  {
+   payload.WithObject("AwsNetworkFirewallRuleGroup", m_awsNetworkFirewallRuleGroup.Jsonize());
 
   }
 

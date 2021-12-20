@@ -37,7 +37,7 @@ namespace Model
 
 
     /**
-     * <p>A subdirectory in the location’s path. This subdirectory in the Amazon FSx
+     * <p>A subdirectory in the location's path. This subdirectory in the Amazon FSx
      * for Windows File Server file system is used to read data from the Amazon FSx for
      * Windows File Server source location or write data to the FSx for Windows File
      * Server destination.</p>
@@ -45,7 +45,7 @@ namespace Model
     inline const Aws::String& GetSubdirectory() const{ return m_subdirectory; }
 
     /**
-     * <p>A subdirectory in the location’s path. This subdirectory in the Amazon FSx
+     * <p>A subdirectory in the location's path. This subdirectory in the Amazon FSx
      * for Windows File Server file system is used to read data from the Amazon FSx for
      * Windows File Server source location or write data to the FSx for Windows File
      * Server destination.</p>
@@ -53,7 +53,7 @@ namespace Model
     inline bool SubdirectoryHasBeenSet() const { return m_subdirectoryHasBeenSet; }
 
     /**
-     * <p>A subdirectory in the location’s path. This subdirectory in the Amazon FSx
+     * <p>A subdirectory in the location's path. This subdirectory in the Amazon FSx
      * for Windows File Server file system is used to read data from the Amazon FSx for
      * Windows File Server source location or write data to the FSx for Windows File
      * Server destination.</p>
@@ -61,7 +61,7 @@ namespace Model
     inline void SetSubdirectory(const Aws::String& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = value; }
 
     /**
-     * <p>A subdirectory in the location’s path. This subdirectory in the Amazon FSx
+     * <p>A subdirectory in the location's path. This subdirectory in the Amazon FSx
      * for Windows File Server file system is used to read data from the Amazon FSx for
      * Windows File Server source location or write data to the FSx for Windows File
      * Server destination.</p>
@@ -69,7 +69,7 @@ namespace Model
     inline void SetSubdirectory(Aws::String&& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = std::move(value); }
 
     /**
-     * <p>A subdirectory in the location’s path. This subdirectory in the Amazon FSx
+     * <p>A subdirectory in the location's path. This subdirectory in the Amazon FSx
      * for Windows File Server file system is used to read data from the Amazon FSx for
      * Windows File Server source location or write data to the FSx for Windows File
      * Server destination.</p>
@@ -77,7 +77,7 @@ namespace Model
     inline void SetSubdirectory(const char* value) { m_subdirectoryHasBeenSet = true; m_subdirectory.assign(value); }
 
     /**
-     * <p>A subdirectory in the location’s path. This subdirectory in the Amazon FSx
+     * <p>A subdirectory in the location's path. This subdirectory in the Amazon FSx
      * for Windows File Server file system is used to read data from the Amazon FSx for
      * Windows File Server source location or write data to the FSx for Windows File
      * Server destination.</p>
@@ -85,7 +85,7 @@ namespace Model
     inline CreateLocationFsxWindowsRequest& WithSubdirectory(const Aws::String& value) { SetSubdirectory(value); return *this;}
 
     /**
-     * <p>A subdirectory in the location’s path. This subdirectory in the Amazon FSx
+     * <p>A subdirectory in the location's path. This subdirectory in the Amazon FSx
      * for Windows File Server file system is used to read data from the Amazon FSx for
      * Windows File Server source location or write data to the FSx for Windows File
      * Server destination.</p>
@@ -93,7 +93,7 @@ namespace Model
     inline CreateLocationFsxWindowsRequest& WithSubdirectory(Aws::String&& value) { SetSubdirectory(std::move(value)); return *this;}
 
     /**
-     * <p>A subdirectory in the location’s path. This subdirectory in the Amazon FSx
+     * <p>A subdirectory in the location's path. This subdirectory in the Amazon FSx
      * for Windows File Server file system is used to read data from the Amazon FSx for
      * Windows File Server source location or write data to the FSx for Windows File
      * Server destination.</p>
@@ -151,55 +151,55 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the security groups that are to use to
+     * <p>The Amazon Resource Names (ARNs) of the security groups that are used to
      * configure the FSx for Windows File Server file system.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupArns() const{ return m_securityGroupArns; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the security groups that are to use to
+     * <p>The Amazon Resource Names (ARNs) of the security groups that are used to
      * configure the FSx for Windows File Server file system.</p>
      */
     inline bool SecurityGroupArnsHasBeenSet() const { return m_securityGroupArnsHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the security groups that are to use to
+     * <p>The Amazon Resource Names (ARNs) of the security groups that are used to
      * configure the FSx for Windows File Server file system.</p>
      */
     inline void SetSecurityGroupArns(const Aws::Vector<Aws::String>& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns = value; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the security groups that are to use to
+     * <p>The Amazon Resource Names (ARNs) of the security groups that are used to
      * configure the FSx for Windows File Server file system.</p>
      */
     inline void SetSecurityGroupArns(Aws::Vector<Aws::String>&& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the security groups that are to use to
+     * <p>The Amazon Resource Names (ARNs) of the security groups that are used to
      * configure the FSx for Windows File Server file system.</p>
      */
     inline CreateLocationFsxWindowsRequest& WithSecurityGroupArns(const Aws::Vector<Aws::String>& value) { SetSecurityGroupArns(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the security groups that are to use to
+     * <p>The Amazon Resource Names (ARNs) of the security groups that are used to
      * configure the FSx for Windows File Server file system.</p>
      */
     inline CreateLocationFsxWindowsRequest& WithSecurityGroupArns(Aws::Vector<Aws::String>&& value) { SetSecurityGroupArns(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the security groups that are to use to
+     * <p>The Amazon Resource Names (ARNs) of the security groups that are used to
      * configure the FSx for Windows File Server file system.</p>
      */
     inline CreateLocationFsxWindowsRequest& AddSecurityGroupArns(const Aws::String& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the security groups that are to use to
+     * <p>The Amazon Resource Names (ARNs) of the security groups that are used to
      * configure the FSx for Windows File Server file system.</p>
      */
     inline CreateLocationFsxWindowsRequest& AddSecurityGroupArns(Aws::String&& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the security groups that are to use to
+     * <p>The Amazon Resource Names (ARNs) of the security groups that are used to
      * configure the FSx for Windows File Server file system.</p>
      */
     inline CreateLocationFsxWindowsRequest& AddSecurityGroupArns(const char* value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns.push_back(value); return *this; }

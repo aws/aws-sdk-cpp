@@ -517,16 +517,24 @@ namespace Model
     inline CreateAutoPredictorRequest& WithOptimizationMetric(OptimizationMetric&& value) { SetOptimizationMetric(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Create an Explainability resource for the predictor.</p>
+     */
     inline bool GetExplainPredictor() const{ return m_explainPredictor; }
 
-    
+    /**
+     * <p>Create an Explainability resource for the predictor.</p>
+     */
     inline bool ExplainPredictorHasBeenSet() const { return m_explainPredictorHasBeenSet; }
 
-    
+    /**
+     * <p>Create an Explainability resource for the predictor.</p>
+     */
     inline void SetExplainPredictor(bool value) { m_explainPredictorHasBeenSet = true; m_explainPredictor = value; }
 
-    
+    /**
+     * <p>Create an Explainability resource for the predictor.</p>
+     */
     inline CreateAutoPredictorRequest& WithExplainPredictor(bool value) { SetExplainPredictor(value); return *this;}
 
 

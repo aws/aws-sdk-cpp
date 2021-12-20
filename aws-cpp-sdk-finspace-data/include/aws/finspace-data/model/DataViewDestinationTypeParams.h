@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/finspace-data/FinSpaceData_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/finspace-data/model/ExportFileFormat.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -86,10 +88,75 @@ namespace Model
      */
     inline DataViewDestinationTypeParams& WithDestinationType(const char* value) { SetDestinationType(value); return *this;}
 
+
+    
+    inline const ExportFileFormat& GetS3DestinationExportFileFormat() const{ return m_s3DestinationExportFileFormat; }
+
+    
+    inline bool S3DestinationExportFileFormatHasBeenSet() const { return m_s3DestinationExportFileFormatHasBeenSet; }
+
+    
+    inline void SetS3DestinationExportFileFormat(const ExportFileFormat& value) { m_s3DestinationExportFileFormatHasBeenSet = true; m_s3DestinationExportFileFormat = value; }
+
+    
+    inline void SetS3DestinationExportFileFormat(ExportFileFormat&& value) { m_s3DestinationExportFileFormatHasBeenSet = true; m_s3DestinationExportFileFormat = std::move(value); }
+
+    
+    inline DataViewDestinationTypeParams& WithS3DestinationExportFileFormat(const ExportFileFormat& value) { SetS3DestinationExportFileFormat(value); return *this;}
+
+    
+    inline DataViewDestinationTypeParams& WithS3DestinationExportFileFormat(ExportFileFormat&& value) { SetS3DestinationExportFileFormat(std::move(value)); return *this;}
+
+
+    
+    inline const Aws::Map<Aws::String, Aws::String>& GetS3DestinationExportFileFormatOptions() const{ return m_s3DestinationExportFileFormatOptions; }
+
+    
+    inline bool S3DestinationExportFileFormatOptionsHasBeenSet() const { return m_s3DestinationExportFileFormatOptionsHasBeenSet; }
+
+    
+    inline void SetS3DestinationExportFileFormatOptions(const Aws::Map<Aws::String, Aws::String>& value) { m_s3DestinationExportFileFormatOptionsHasBeenSet = true; m_s3DestinationExportFileFormatOptions = value; }
+
+    
+    inline void SetS3DestinationExportFileFormatOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_s3DestinationExportFileFormatOptionsHasBeenSet = true; m_s3DestinationExportFileFormatOptions = std::move(value); }
+
+    
+    inline DataViewDestinationTypeParams& WithS3DestinationExportFileFormatOptions(const Aws::Map<Aws::String, Aws::String>& value) { SetS3DestinationExportFileFormatOptions(value); return *this;}
+
+    
+    inline DataViewDestinationTypeParams& WithS3DestinationExportFileFormatOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetS3DestinationExportFileFormatOptions(std::move(value)); return *this;}
+
+    
+    inline DataViewDestinationTypeParams& AddS3DestinationExportFileFormatOptions(const Aws::String& key, const Aws::String& value) { m_s3DestinationExportFileFormatOptionsHasBeenSet = true; m_s3DestinationExportFileFormatOptions.emplace(key, value); return *this; }
+
+    
+    inline DataViewDestinationTypeParams& AddS3DestinationExportFileFormatOptions(Aws::String&& key, const Aws::String& value) { m_s3DestinationExportFileFormatOptionsHasBeenSet = true; m_s3DestinationExportFileFormatOptions.emplace(std::move(key), value); return *this; }
+
+    
+    inline DataViewDestinationTypeParams& AddS3DestinationExportFileFormatOptions(const Aws::String& key, Aws::String&& value) { m_s3DestinationExportFileFormatOptionsHasBeenSet = true; m_s3DestinationExportFileFormatOptions.emplace(key, std::move(value)); return *this; }
+
+    
+    inline DataViewDestinationTypeParams& AddS3DestinationExportFileFormatOptions(Aws::String&& key, Aws::String&& value) { m_s3DestinationExportFileFormatOptionsHasBeenSet = true; m_s3DestinationExportFileFormatOptions.emplace(std::move(key), std::move(value)); return *this; }
+
+    
+    inline DataViewDestinationTypeParams& AddS3DestinationExportFileFormatOptions(const char* key, Aws::String&& value) { m_s3DestinationExportFileFormatOptionsHasBeenSet = true; m_s3DestinationExportFileFormatOptions.emplace(key, std::move(value)); return *this; }
+
+    
+    inline DataViewDestinationTypeParams& AddS3DestinationExportFileFormatOptions(Aws::String&& key, const char* value) { m_s3DestinationExportFileFormatOptionsHasBeenSet = true; m_s3DestinationExportFileFormatOptions.emplace(std::move(key), value); return *this; }
+
+    
+    inline DataViewDestinationTypeParams& AddS3DestinationExportFileFormatOptions(const char* key, const char* value) { m_s3DestinationExportFileFormatOptionsHasBeenSet = true; m_s3DestinationExportFileFormatOptions.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_destinationType;
     bool m_destinationTypeHasBeenSet;
+
+    ExportFileFormat m_s3DestinationExportFileFormat;
+    bool m_s3DestinationExportFileFormatHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_s3DestinationExportFileFormatOptions;
+    bool m_s3DestinationExportFileFormatOptionsHasBeenSet;
   };
 
 } // namespace Model

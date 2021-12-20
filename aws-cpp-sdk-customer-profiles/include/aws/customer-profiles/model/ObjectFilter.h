@@ -27,7 +27,7 @@ namespace Model
   /**
    * <p>The filter applied to ListProfileObjects response to include profile objects
    * with the specified index values. This filter is only supported for
-   * ObjectTypeName _asset and _case.</p><p><h3>See Also:</h3>   <a
+   * ObjectTypeName _asset, _case and _order.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ObjectFilter">AWS
    * API Reference</a></p>
    */
@@ -43,56 +43,64 @@ namespace Model
     /**
      * <p>A searchable identifier of a standard profile object. The predefined keys you
      * can use to search for _asset include: _assetId, _assetName, _serialNumber. The
-     * predefined keys you can use to search for _case include: _caseId.</p>
+     * predefined keys you can use to search for _case include: _caseId. The predefined
+     * keys you can use to search for _order include: _orderId.</p>
      */
     inline const Aws::String& GetKeyName() const{ return m_keyName; }
 
     /**
      * <p>A searchable identifier of a standard profile object. The predefined keys you
      * can use to search for _asset include: _assetId, _assetName, _serialNumber. The
-     * predefined keys you can use to search for _case include: _caseId.</p>
+     * predefined keys you can use to search for _case include: _caseId. The predefined
+     * keys you can use to search for _order include: _orderId.</p>
      */
     inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
 
     /**
      * <p>A searchable identifier of a standard profile object. The predefined keys you
      * can use to search for _asset include: _assetId, _assetName, _serialNumber. The
-     * predefined keys you can use to search for _case include: _caseId.</p>
+     * predefined keys you can use to search for _case include: _caseId. The predefined
+     * keys you can use to search for _order include: _orderId.</p>
      */
     inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
 
     /**
      * <p>A searchable identifier of a standard profile object. The predefined keys you
      * can use to search for _asset include: _assetId, _assetName, _serialNumber. The
-     * predefined keys you can use to search for _case include: _caseId.</p>
+     * predefined keys you can use to search for _case include: _caseId. The predefined
+     * keys you can use to search for _order include: _orderId.</p>
      */
     inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
 
     /**
      * <p>A searchable identifier of a standard profile object. The predefined keys you
      * can use to search for _asset include: _assetId, _assetName, _serialNumber. The
-     * predefined keys you can use to search for _case include: _caseId.</p>
+     * predefined keys you can use to search for _case include: _caseId. The predefined
+     * keys you can use to search for _order include: _orderId.</p>
      */
     inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
 
     /**
      * <p>A searchable identifier of a standard profile object. The predefined keys you
      * can use to search for _asset include: _assetId, _assetName, _serialNumber. The
-     * predefined keys you can use to search for _case include: _caseId.</p>
+     * predefined keys you can use to search for _case include: _caseId. The predefined
+     * keys you can use to search for _order include: _orderId.</p>
      */
     inline ObjectFilter& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
 
     /**
      * <p>A searchable identifier of a standard profile object. The predefined keys you
      * can use to search for _asset include: _assetId, _assetName, _serialNumber. The
-     * predefined keys you can use to search for _case include: _caseId.</p>
+     * predefined keys you can use to search for _case include: _caseId. The predefined
+     * keys you can use to search for _order include: _orderId.</p>
      */
     inline ObjectFilter& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
 
     /**
      * <p>A searchable identifier of a standard profile object. The predefined keys you
      * can use to search for _asset include: _assetId, _assetName, _serialNumber. The
-     * predefined keys you can use to search for _case include: _caseId.</p>
+     * predefined keys you can use to search for _case include: _caseId. The predefined
+     * keys you can use to search for _order include: _orderId.</p>
      */
     inline ObjectFilter& WithKeyName(const char* value) { SetKeyName(value); return *this;}
 

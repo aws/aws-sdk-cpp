@@ -237,6 +237,55 @@ namespace Model
 
 
     /**
+     * <p>An array of dimension (field) names that specify the attributes used to group
+     * your time series.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetForecastDimensions() const{ return m_forecastDimensions; }
+
+    /**
+     * <p>An array of dimension (field) names that specify the attributes used to group
+     * your time series.</p>
+     */
+    inline void SetForecastDimensions(const Aws::Vector<Aws::String>& value) { m_forecastDimensions = value; }
+
+    /**
+     * <p>An array of dimension (field) names that specify the attributes used to group
+     * your time series.</p>
+     */
+    inline void SetForecastDimensions(Aws::Vector<Aws::String>&& value) { m_forecastDimensions = std::move(value); }
+
+    /**
+     * <p>An array of dimension (field) names that specify the attributes used to group
+     * your time series.</p>
+     */
+    inline DescribeAutoPredictorResult& WithForecastDimensions(const Aws::Vector<Aws::String>& value) { SetForecastDimensions(value); return *this;}
+
+    /**
+     * <p>An array of dimension (field) names that specify the attributes used to group
+     * your time series.</p>
+     */
+    inline DescribeAutoPredictorResult& WithForecastDimensions(Aws::Vector<Aws::String>&& value) { SetForecastDimensions(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of dimension (field) names that specify the attributes used to group
+     * your time series.</p>
+     */
+    inline DescribeAutoPredictorResult& AddForecastDimensions(const Aws::String& value) { m_forecastDimensions.push_back(value); return *this; }
+
+    /**
+     * <p>An array of dimension (field) names that specify the attributes used to group
+     * your time series.</p>
+     */
+    inline DescribeAutoPredictorResult& AddForecastDimensions(Aws::String&& value) { m_forecastDimensions.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>An array of dimension (field) names that specify the attributes used to group
+     * your time series.</p>
+     */
+    inline DescribeAutoPredictorResult& AddForecastDimensions(const char* value) { m_forecastDimensions.push_back(value); return *this; }
+
+
+    /**
      * <p>An array of the ARNs of the dataset import jobs used to import training data
      * for the predictor.</p>
      */
@@ -597,19 +646,29 @@ namespace Model
     inline DescribeAutoPredictorResult& WithOptimizationMetric(OptimizationMetric&& value) { SetOptimizationMetric(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Provides the status and ARN of the Predictor Explainability.</p>
+     */
     inline const ExplainabilityInfo& GetExplainabilityInfo() const{ return m_explainabilityInfo; }
 
-    
+    /**
+     * <p>Provides the status and ARN of the Predictor Explainability.</p>
+     */
     inline void SetExplainabilityInfo(const ExplainabilityInfo& value) { m_explainabilityInfo = value; }
 
-    
+    /**
+     * <p>Provides the status and ARN of the Predictor Explainability.</p>
+     */
     inline void SetExplainabilityInfo(ExplainabilityInfo&& value) { m_explainabilityInfo = std::move(value); }
 
-    
+    /**
+     * <p>Provides the status and ARN of the Predictor Explainability.</p>
+     */
     inline DescribeAutoPredictorResult& WithExplainabilityInfo(const ExplainabilityInfo& value) { SetExplainabilityInfo(value); return *this;}
 
-    
+    /**
+     * <p>Provides the status and ARN of the Predictor Explainability.</p>
+     */
     inline DescribeAutoPredictorResult& WithExplainabilityInfo(ExplainabilityInfo&& value) { SetExplainabilityInfo(std::move(value)); return *this;}
 
   private:
@@ -623,6 +682,8 @@ namespace Model
     Aws::Vector<Aws::String> m_forecastTypes;
 
     Aws::String m_forecastFrequency;
+
+    Aws::Vector<Aws::String> m_forecastDimensions;
 
     Aws::Vector<Aws::String> m_datasetImportJobArns;
 

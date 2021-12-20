@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     AWS_CLOUD_FORMATION,
     AWS_SERVICE,
-    AWS_ACCOUNT
+    AWS_ACCOUNT,
+    AWS_TAGS
   };
 
 namespace OrganizationResourceCollectionTypeMapper

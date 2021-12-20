@@ -29,7 +29,8 @@ AwsS3BucketDetails::AwsS3BucketDetails() :
     m_accessControlListHasBeenSet(false),
     m_bucketLoggingConfigurationHasBeenSet(false),
     m_bucketWebsiteConfigurationHasBeenSet(false),
-    m_bucketNotificationConfigurationHasBeenSet(false)
+    m_bucketNotificationConfigurationHasBeenSet(false),
+    m_bucketVersioningConfigurationHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ AwsS3BucketDetails::AwsS3BucketDetails(JsonView jsonValue) :
     m_accessControlListHasBeenSet(false),
     m_bucketLoggingConfigurationHasBeenSet(false),
     m_bucketWebsiteConfigurationHasBeenSet(false),
-    m_bucketNotificationConfigurationHasBeenSet(false)
+    m_bucketNotificationConfigurationHasBeenSet(false),
+    m_bucketVersioningConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -128,6 +130,13 @@ AwsS3BucketDetails& AwsS3BucketDetails::operator =(JsonView jsonValue)
     m_bucketNotificationConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BucketVersioningConfiguration"))
+  {
+    m_bucketVersioningConfiguration = jsonValue.GetObject("BucketVersioningConfiguration");
+
+    m_bucketVersioningConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -198,6 +207,12 @@ JsonValue AwsS3BucketDetails::Jsonize() const
   if(m_bucketNotificationConfigurationHasBeenSet)
   {
    payload.WithObject("BucketNotificationConfiguration", m_bucketNotificationConfiguration.Jsonize());
+
+  }
+
+  if(m_bucketVersioningConfigurationHasBeenSet)
+  {
+   payload.WithObject("BucketVersioningConfiguration", m_bucketVersioningConfiguration.Jsonize());
 
   }
 

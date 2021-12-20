@@ -10,6 +10,7 @@
 #include <aws/devops-guru/model/CloudFormationHealth.h>
 #include <aws/devops-guru/model/ServiceHealth.h>
 #include <aws/devops-guru/model/AccountHealth.h>
+#include <aws/devops-guru/model/TagHealth.h>
 #include <utility>
 
 namespace Aws
@@ -214,6 +215,217 @@ namespace Model
      */
     inline DescribeOrganizationResourceCollectionHealthResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>Tags help you identify and organize your Amazon Web Services resources. Many
+     * Amazon Web Services services support tagging, so you can assign the same tag to
+     * resources from different services to indicate that the resources are related.
+     * For example, you can assign the same tag to an Amazon DynamoDB table resource
+     * that you assign to an Lambda function. For more information about using tags,
+     * see the <a
+     * href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
+     * best practices</a> whitepaper. </p> <p>Each Amazon Web Services tag has two
+     * parts. </p> <ul> <li> <p>A tag <i>key</i> (for example, <code>CostCenter</code>,
+     * <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
+     * <i>keys</i> are case-sensitive.</p> </li> <li> <p>An optional field known as a
+     * tag <i>value</i> (for example, <code>111122223333</code>,
+     * <code>Production</code>, or a team name). Omitting the tag <i>value</i> is the
+     * same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are
+     * case-sensitive.</p> </li> </ul> <p>Together these are known as
+     * <i>key</i>-<i>value</i> pairs.</p>  <p>The string used for a
+     * <i>key</i> in a tag that you use to define your resource coverage must begin
+     * with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
+     * <code>Devops-guru-deployment-application</code> or
+     * <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive,
+     * the case of <i>key</i> characters don't matter to DevOps Guru. For example,
+     * DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a
+     * <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i>
+     * pairs in your application might be
+     * <code>Devops-Guru-production-application/RDS</code> or
+     * <code>Devops-Guru-production-application/containers</code>.</p> 
+     */
+    inline const Aws::Vector<TagHealth>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Tags help you identify and organize your Amazon Web Services resources. Many
+     * Amazon Web Services services support tagging, so you can assign the same tag to
+     * resources from different services to indicate that the resources are related.
+     * For example, you can assign the same tag to an Amazon DynamoDB table resource
+     * that you assign to an Lambda function. For more information about using tags,
+     * see the <a
+     * href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
+     * best practices</a> whitepaper. </p> <p>Each Amazon Web Services tag has two
+     * parts. </p> <ul> <li> <p>A tag <i>key</i> (for example, <code>CostCenter</code>,
+     * <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
+     * <i>keys</i> are case-sensitive.</p> </li> <li> <p>An optional field known as a
+     * tag <i>value</i> (for example, <code>111122223333</code>,
+     * <code>Production</code>, or a team name). Omitting the tag <i>value</i> is the
+     * same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are
+     * case-sensitive.</p> </li> </ul> <p>Together these are known as
+     * <i>key</i>-<i>value</i> pairs.</p>  <p>The string used for a
+     * <i>key</i> in a tag that you use to define your resource coverage must begin
+     * with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
+     * <code>Devops-guru-deployment-application</code> or
+     * <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive,
+     * the case of <i>key</i> characters don't matter to DevOps Guru. For example,
+     * DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a
+     * <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i>
+     * pairs in your application might be
+     * <code>Devops-Guru-production-application/RDS</code> or
+     * <code>Devops-Guru-production-application/containers</code>.</p> 
+     */
+    inline void SetTags(const Aws::Vector<TagHealth>& value) { m_tags = value; }
+
+    /**
+     * <p>Tags help you identify and organize your Amazon Web Services resources. Many
+     * Amazon Web Services services support tagging, so you can assign the same tag to
+     * resources from different services to indicate that the resources are related.
+     * For example, you can assign the same tag to an Amazon DynamoDB table resource
+     * that you assign to an Lambda function. For more information about using tags,
+     * see the <a
+     * href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
+     * best practices</a> whitepaper. </p> <p>Each Amazon Web Services tag has two
+     * parts. </p> <ul> <li> <p>A tag <i>key</i> (for example, <code>CostCenter</code>,
+     * <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
+     * <i>keys</i> are case-sensitive.</p> </li> <li> <p>An optional field known as a
+     * tag <i>value</i> (for example, <code>111122223333</code>,
+     * <code>Production</code>, or a team name). Omitting the tag <i>value</i> is the
+     * same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are
+     * case-sensitive.</p> </li> </ul> <p>Together these are known as
+     * <i>key</i>-<i>value</i> pairs.</p>  <p>The string used for a
+     * <i>key</i> in a tag that you use to define your resource coverage must begin
+     * with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
+     * <code>Devops-guru-deployment-application</code> or
+     * <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive,
+     * the case of <i>key</i> characters don't matter to DevOps Guru. For example,
+     * DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a
+     * <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i>
+     * pairs in your application might be
+     * <code>Devops-Guru-production-application/RDS</code> or
+     * <code>Devops-Guru-production-application/containers</code>.</p> 
+     */
+    inline void SetTags(Aws::Vector<TagHealth>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>Tags help you identify and organize your Amazon Web Services resources. Many
+     * Amazon Web Services services support tagging, so you can assign the same tag to
+     * resources from different services to indicate that the resources are related.
+     * For example, you can assign the same tag to an Amazon DynamoDB table resource
+     * that you assign to an Lambda function. For more information about using tags,
+     * see the <a
+     * href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
+     * best practices</a> whitepaper. </p> <p>Each Amazon Web Services tag has two
+     * parts. </p> <ul> <li> <p>A tag <i>key</i> (for example, <code>CostCenter</code>,
+     * <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
+     * <i>keys</i> are case-sensitive.</p> </li> <li> <p>An optional field known as a
+     * tag <i>value</i> (for example, <code>111122223333</code>,
+     * <code>Production</code>, or a team name). Omitting the tag <i>value</i> is the
+     * same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are
+     * case-sensitive.</p> </li> </ul> <p>Together these are known as
+     * <i>key</i>-<i>value</i> pairs.</p>  <p>The string used for a
+     * <i>key</i> in a tag that you use to define your resource coverage must begin
+     * with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
+     * <code>Devops-guru-deployment-application</code> or
+     * <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive,
+     * the case of <i>key</i> characters don't matter to DevOps Guru. For example,
+     * DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a
+     * <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i>
+     * pairs in your application might be
+     * <code>Devops-Guru-production-application/RDS</code> or
+     * <code>Devops-Guru-production-application/containers</code>.</p> 
+     */
+    inline DescribeOrganizationResourceCollectionHealthResult& WithTags(const Aws::Vector<TagHealth>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Tags help you identify and organize your Amazon Web Services resources. Many
+     * Amazon Web Services services support tagging, so you can assign the same tag to
+     * resources from different services to indicate that the resources are related.
+     * For example, you can assign the same tag to an Amazon DynamoDB table resource
+     * that you assign to an Lambda function. For more information about using tags,
+     * see the <a
+     * href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
+     * best practices</a> whitepaper. </p> <p>Each Amazon Web Services tag has two
+     * parts. </p> <ul> <li> <p>A tag <i>key</i> (for example, <code>CostCenter</code>,
+     * <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
+     * <i>keys</i> are case-sensitive.</p> </li> <li> <p>An optional field known as a
+     * tag <i>value</i> (for example, <code>111122223333</code>,
+     * <code>Production</code>, or a team name). Omitting the tag <i>value</i> is the
+     * same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are
+     * case-sensitive.</p> </li> </ul> <p>Together these are known as
+     * <i>key</i>-<i>value</i> pairs.</p>  <p>The string used for a
+     * <i>key</i> in a tag that you use to define your resource coverage must begin
+     * with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
+     * <code>Devops-guru-deployment-application</code> or
+     * <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive,
+     * the case of <i>key</i> characters don't matter to DevOps Guru. For example,
+     * DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a
+     * <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i>
+     * pairs in your application might be
+     * <code>Devops-Guru-production-application/RDS</code> or
+     * <code>Devops-Guru-production-application/containers</code>.</p> 
+     */
+    inline DescribeOrganizationResourceCollectionHealthResult& WithTags(Aws::Vector<TagHealth>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Tags help you identify and organize your Amazon Web Services resources. Many
+     * Amazon Web Services services support tagging, so you can assign the same tag to
+     * resources from different services to indicate that the resources are related.
+     * For example, you can assign the same tag to an Amazon DynamoDB table resource
+     * that you assign to an Lambda function. For more information about using tags,
+     * see the <a
+     * href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
+     * best practices</a> whitepaper. </p> <p>Each Amazon Web Services tag has two
+     * parts. </p> <ul> <li> <p>A tag <i>key</i> (for example, <code>CostCenter</code>,
+     * <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
+     * <i>keys</i> are case-sensitive.</p> </li> <li> <p>An optional field known as a
+     * tag <i>value</i> (for example, <code>111122223333</code>,
+     * <code>Production</code>, or a team name). Omitting the tag <i>value</i> is the
+     * same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are
+     * case-sensitive.</p> </li> </ul> <p>Together these are known as
+     * <i>key</i>-<i>value</i> pairs.</p>  <p>The string used for a
+     * <i>key</i> in a tag that you use to define your resource coverage must begin
+     * with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
+     * <code>Devops-guru-deployment-application</code> or
+     * <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive,
+     * the case of <i>key</i> characters don't matter to DevOps Guru. For example,
+     * DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a
+     * <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i>
+     * pairs in your application might be
+     * <code>Devops-Guru-production-application/RDS</code> or
+     * <code>Devops-Guru-production-application/containers</code>.</p> 
+     */
+    inline DescribeOrganizationResourceCollectionHealthResult& AddTags(const TagHealth& value) { m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Tags help you identify and organize your Amazon Web Services resources. Many
+     * Amazon Web Services services support tagging, so you can assign the same tag to
+     * resources from different services to indicate that the resources are related.
+     * For example, you can assign the same tag to an Amazon DynamoDB table resource
+     * that you assign to an Lambda function. For more information about using tags,
+     * see the <a
+     * href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
+     * best practices</a> whitepaper. </p> <p>Each Amazon Web Services tag has two
+     * parts. </p> <ul> <li> <p>A tag <i>key</i> (for example, <code>CostCenter</code>,
+     * <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
+     * <i>keys</i> are case-sensitive.</p> </li> <li> <p>An optional field known as a
+     * tag <i>value</i> (for example, <code>111122223333</code>,
+     * <code>Production</code>, or a team name). Omitting the tag <i>value</i> is the
+     * same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are
+     * case-sensitive.</p> </li> </ul> <p>Together these are known as
+     * <i>key</i>-<i>value</i> pairs.</p>  <p>The string used for a
+     * <i>key</i> in a tag that you use to define your resource coverage must begin
+     * with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
+     * <code>Devops-guru-deployment-application</code> or
+     * <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive,
+     * the case of <i>key</i> characters don't matter to DevOps Guru. For example,
+     * DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a
+     * <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i>
+     * pairs in your application might be
+     * <code>Devops-Guru-production-application/RDS</code> or
+     * <code>Devops-Guru-production-application/containers</code>.</p> 
+     */
+    inline DescribeOrganizationResourceCollectionHealthResult& AddTags(TagHealth&& value) { m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<CloudFormationHealth> m_cloudFormation;
@@ -223,6 +435,8 @@ namespace Model
     Aws::Vector<AccountHealth> m_account;
 
     Aws::String m_nextToken;
+
+    Aws::Vector<TagHealth> m_tags;
   };
 
 } // namespace Model

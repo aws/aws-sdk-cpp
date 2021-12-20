@@ -99,7 +99,7 @@ namespace Model
 
 
     /**
-     * <p>Represents a list of URLs of a location. <code>LocationUri</code> returns an
+     * <p>Represents a list of URIs of a location. <code>LocationUri</code> returns an
      * array that contains a list of locations when the <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a>
      * operation is called.</p> <p>Format: <code>TYPE://GLOBAL_ID/SUBDIR</code>.</p>
@@ -116,7 +116,7 @@ namespace Model
     inline const Aws::String& GetLocationUri() const{ return m_locationUri; }
 
     /**
-     * <p>Represents a list of URLs of a location. <code>LocationUri</code> returns an
+     * <p>Represents a list of URIs of a location. <code>LocationUri</code> returns an
      * array that contains a list of locations when the <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a>
      * operation is called.</p> <p>Format: <code>TYPE://GLOBAL_ID/SUBDIR</code>.</p>
@@ -133,7 +133,7 @@ namespace Model
     inline bool LocationUriHasBeenSet() const { return m_locationUriHasBeenSet; }
 
     /**
-     * <p>Represents a list of URLs of a location. <code>LocationUri</code> returns an
+     * <p>Represents a list of URIs of a location. <code>LocationUri</code> returns an
      * array that contains a list of locations when the <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a>
      * operation is called.</p> <p>Format: <code>TYPE://GLOBAL_ID/SUBDIR</code>.</p>
@@ -150,7 +150,7 @@ namespace Model
     inline void SetLocationUri(const Aws::String& value) { m_locationUriHasBeenSet = true; m_locationUri = value; }
 
     /**
-     * <p>Represents a list of URLs of a location. <code>LocationUri</code> returns an
+     * <p>Represents a list of URIs of a location. <code>LocationUri</code> returns an
      * array that contains a list of locations when the <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a>
      * operation is called.</p> <p>Format: <code>TYPE://GLOBAL_ID/SUBDIR</code>.</p>
@@ -167,7 +167,7 @@ namespace Model
     inline void SetLocationUri(Aws::String&& value) { m_locationUriHasBeenSet = true; m_locationUri = std::move(value); }
 
     /**
-     * <p>Represents a list of URLs of a location. <code>LocationUri</code> returns an
+     * <p>Represents a list of URIs of a location. <code>LocationUri</code> returns an
      * array that contains a list of locations when the <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a>
      * operation is called.</p> <p>Format: <code>TYPE://GLOBAL_ID/SUBDIR</code>.</p>
@@ -184,7 +184,7 @@ namespace Model
     inline void SetLocationUri(const char* value) { m_locationUriHasBeenSet = true; m_locationUri.assign(value); }
 
     /**
-     * <p>Represents a list of URLs of a location. <code>LocationUri</code> returns an
+     * <p>Represents a list of URIs of a location. <code>LocationUri</code> returns an
      * array that contains a list of locations when the <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a>
      * operation is called.</p> <p>Format: <code>TYPE://GLOBAL_ID/SUBDIR</code>.</p>
@@ -201,7 +201,7 @@ namespace Model
     inline LocationListEntry& WithLocationUri(const Aws::String& value) { SetLocationUri(value); return *this;}
 
     /**
-     * <p>Represents a list of URLs of a location. <code>LocationUri</code> returns an
+     * <p>Represents a list of URIs of a location. <code>LocationUri</code> returns an
      * array that contains a list of locations when the <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a>
      * operation is called.</p> <p>Format: <code>TYPE://GLOBAL_ID/SUBDIR</code>.</p>
@@ -218,7 +218,7 @@ namespace Model
     inline LocationListEntry& WithLocationUri(Aws::String&& value) { SetLocationUri(std::move(value)); return *this;}
 
     /**
-     * <p>Represents a list of URLs of a location. <code>LocationUri</code> returns an
+     * <p>Represents a list of URIs of a location. <code>LocationUri</code> returns an
      * array that contains a list of locations when the <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a>
      * operation is called.</p> <p>Format: <code>TYPE://GLOBAL_ID/SUBDIR</code>.</p>

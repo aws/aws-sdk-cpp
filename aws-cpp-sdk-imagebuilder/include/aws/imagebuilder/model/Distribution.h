@@ -9,6 +9,7 @@
 #include <aws/imagebuilder/model/AmiDistributionConfiguration.h>
 #include <aws/imagebuilder/model/ContainerDistributionConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/imagebuilder/model/S3ExportConfiguration.h>
 #include <aws/imagebuilder/model/LaunchTemplateConfiguration.h>
 #include <utility>
 
@@ -253,6 +254,43 @@ namespace Model
      */
     inline Distribution& AddLaunchTemplateConfigurations(LaunchTemplateConfiguration&& value) { m_launchTemplateConfigurationsHasBeenSet = true; m_launchTemplateConfigurations.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Configure export settings to deliver disk images created from your image
+     * build, using a file format that is compatible with your VMs in that Region.</p>
+     */
+    inline const S3ExportConfiguration& GetS3ExportConfiguration() const{ return m_s3ExportConfiguration; }
+
+    /**
+     * <p>Configure export settings to deliver disk images created from your image
+     * build, using a file format that is compatible with your VMs in that Region.</p>
+     */
+    inline bool S3ExportConfigurationHasBeenSet() const { return m_s3ExportConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configure export settings to deliver disk images created from your image
+     * build, using a file format that is compatible with your VMs in that Region.</p>
+     */
+    inline void SetS3ExportConfiguration(const S3ExportConfiguration& value) { m_s3ExportConfigurationHasBeenSet = true; m_s3ExportConfiguration = value; }
+
+    /**
+     * <p>Configure export settings to deliver disk images created from your image
+     * build, using a file format that is compatible with your VMs in that Region.</p>
+     */
+    inline void SetS3ExportConfiguration(S3ExportConfiguration&& value) { m_s3ExportConfigurationHasBeenSet = true; m_s3ExportConfiguration = std::move(value); }
+
+    /**
+     * <p>Configure export settings to deliver disk images created from your image
+     * build, using a file format that is compatible with your VMs in that Region.</p>
+     */
+    inline Distribution& WithS3ExportConfiguration(const S3ExportConfiguration& value) { SetS3ExportConfiguration(value); return *this;}
+
+    /**
+     * <p>Configure export settings to deliver disk images created from your image
+     * build, using a file format that is compatible with your VMs in that Region.</p>
+     */
+    inline Distribution& WithS3ExportConfiguration(S3ExportConfiguration&& value) { SetS3ExportConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_region;
@@ -269,6 +307,9 @@ namespace Model
 
     Aws::Vector<LaunchTemplateConfiguration> m_launchTemplateConfigurations;
     bool m_launchTemplateConfigurationsHasBeenSet;
+
+    S3ExportConfiguration m_s3ExportConfiguration;
+    bool m_s3ExportConfigurationHasBeenSet;
   };
 
 } // namespace Model

@@ -24,7 +24,9 @@ AwsAutoScalingAutoScalingGroupDetails::AwsAutoScalingAutoScalingGroupDetails() :
     m_healthCheckTypeHasBeenSet(false),
     m_healthCheckGracePeriod(0),
     m_healthCheckGracePeriodHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_mixedInstancesPolicyHasBeenSet(false),
+    m_availabilityZonesHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ AwsAutoScalingAutoScalingGroupDetails::AwsAutoScalingAutoScalingGroupDetails(Jso
     m_healthCheckTypeHasBeenSet(false),
     m_healthCheckGracePeriod(0),
     m_healthCheckGracePeriodHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_mixedInstancesPolicyHasBeenSet(false),
+    m_availabilityZonesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -79,6 +83,23 @@ AwsAutoScalingAutoScalingGroupDetails& AwsAutoScalingAutoScalingGroupDetails::op
     m_createdTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MixedInstancesPolicy"))
+  {
+    m_mixedInstancesPolicy = jsonValue.GetObject("MixedInstancesPolicy");
+
+    m_mixedInstancesPolicyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AvailabilityZones"))
+  {
+    Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
+    for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
+    {
+      m_availabilityZones.push_back(availabilityZonesJsonList[availabilityZonesIndex].AsObject());
+    }
+    m_availabilityZonesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -118,6 +139,23 @@ JsonValue AwsAutoScalingAutoScalingGroupDetails::Jsonize() const
   if(m_createdTimeHasBeenSet)
   {
    payload.WithString("CreatedTime", m_createdTime);
+
+  }
+
+  if(m_mixedInstancesPolicyHasBeenSet)
+  {
+   payload.WithObject("MixedInstancesPolicy", m_mixedInstancesPolicy.Jsonize());
+
+  }
+
+  if(m_availabilityZonesHasBeenSet)
+  {
+   Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
+   for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
+   {
+     availabilityZonesJsonList[availabilityZonesIndex].AsObject(m_availabilityZones[availabilityZonesIndex].Jsonize());
+   }
+   payload.WithArray("AvailabilityZones", std::move(availabilityZonesJsonList));
 
   }
 

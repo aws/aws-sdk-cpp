@@ -33,6 +33,8 @@ ChangesetSummary::ChangesetSummary() :
     m_errorInfoHasBeenSet(false),
     m_activeUntilTimestamp(0),
     m_activeUntilTimestampHasBeenSet(false),
+    m_activeFromTimestamp(0),
+    m_activeFromTimestampHasBeenSet(false),
     m_updatesChangesetIdHasBeenSet(false),
     m_updatedByChangesetIdHasBeenSet(false)
 {
@@ -53,6 +55,8 @@ ChangesetSummary::ChangesetSummary(JsonView jsonValue) :
     m_errorInfoHasBeenSet(false),
     m_activeUntilTimestamp(0),
     m_activeUntilTimestampHasBeenSet(false),
+    m_activeFromTimestamp(0),
+    m_activeFromTimestampHasBeenSet(false),
     m_updatesChangesetIdHasBeenSet(false),
     m_updatedByChangesetIdHasBeenSet(false)
 {
@@ -135,6 +139,13 @@ ChangesetSummary& ChangesetSummary::operator =(JsonView jsonValue)
     m_activeUntilTimestamp = jsonValue.GetInt64("activeUntilTimestamp");
 
     m_activeUntilTimestampHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("activeFromTimestamp"))
+  {
+    m_activeFromTimestamp = jsonValue.GetInt64("activeFromTimestamp");
+
+    m_activeFromTimestampHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("updatesChangesetId"))
@@ -223,6 +234,12 @@ JsonValue ChangesetSummary::Jsonize() const
   if(m_activeUntilTimestampHasBeenSet)
   {
    payload.WithInt64("activeUntilTimestamp", m_activeUntilTimestamp);
+
+  }
+
+  if(m_activeFromTimestampHasBeenSet)
+  {
+   payload.WithInt64("activeFromTimestamp", m_activeFromTimestamp);
 
   }
 

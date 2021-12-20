@@ -47,6 +47,7 @@
 #include <aws/imagebuilder/model/GetImageRecipePolicyRequest.h>
 #include <aws/imagebuilder/model/GetInfrastructureConfigurationRequest.h>
 #include <aws/imagebuilder/model/ImportComponentRequest.h>
+#include <aws/imagebuilder/model/ImportVmImageRequest.h>
 #include <aws/imagebuilder/model/ListComponentBuildVersionsRequest.h>
 #include <aws/imagebuilder/model/ListComponentsRequest.h>
 #include <aws/imagebuilder/model/ListContainerRecipesRequest.h>
@@ -906,6 +907,31 @@ void ImagebuilderClient::ImportComponentAsync(const ImportComponentRequest& requ
 void ImagebuilderClient::ImportComponentAsyncHelper(const ImportComponentRequest& request, const ImportComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ImportComponent(request), context);
+}
+
+ImportVmImageOutcome ImagebuilderClient::ImportVmImage(const ImportVmImageRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/ImportVmImage");
+  return ImportVmImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+ImportVmImageOutcomeCallable ImagebuilderClient::ImportVmImageCallable(const ImportVmImageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ImportVmImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportVmImage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ImagebuilderClient::ImportVmImageAsync(const ImportVmImageRequest& request, const ImportVmImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ImportVmImageAsyncHelper( request, handler, context ); } );
+}
+
+void ImagebuilderClient::ImportVmImageAsyncHelper(const ImportVmImageRequest& request, const ImportVmImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ImportVmImage(request), context);
 }
 
 ListComponentBuildVersionsOutcome ImagebuilderClient::ListComponentBuildVersions(const ListComponentBuildVersionsRequest& request) const

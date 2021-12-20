@@ -23,6 +23,7 @@ namespace Aws
         static const int AWS_CLOUD_FORMATION_HASH = HashingUtils::HashString("AWS_CLOUD_FORMATION");
         static const int AWS_SERVICE_HASH = HashingUtils::HashString("AWS_SERVICE");
         static const int AWS_ACCOUNT_HASH = HashingUtils::HashString("AWS_ACCOUNT");
+        static const int AWS_TAGS_HASH = HashingUtils::HashString("AWS_TAGS");
 
 
         OrganizationResourceCollectionType GetOrganizationResourceCollectionTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == AWS_ACCOUNT_HASH)
           {
             return OrganizationResourceCollectionType::AWS_ACCOUNT;
+          }
+          else if (hashCode == AWS_TAGS_HASH)
+          {
+            return OrganizationResourceCollectionType::AWS_TAGS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "AWS_SERVICE";
           case OrganizationResourceCollectionType::AWS_ACCOUNT:
             return "AWS_ACCOUNT";
+          case OrganizationResourceCollectionType::AWS_TAGS:
+            return "AWS_TAGS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
