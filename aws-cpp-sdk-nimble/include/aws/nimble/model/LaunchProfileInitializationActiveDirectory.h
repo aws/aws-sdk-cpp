@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The Launch Profile Initialization Active Directory contains information
+   * required for the launch profile to connect to the Active
+   * Directory.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/LaunchProfileInitializationActiveDirectory">AWS
    * API Reference</a></p>
    */

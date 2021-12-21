@@ -234,22 +234,26 @@ namespace Model
 
 
     /**
-     * The maximum latency in milliseconds for Zixi-based streams.
+     * The maximum latency in milliseconds. This parameter applies only to RIST-based,
+     * Zixi-based, and Fujitsu-based streams.
      */
     inline int GetMaxLatency() const{ return m_maxLatency; }
 
     /**
-     * The maximum latency in milliseconds for Zixi-based streams.
+     * The maximum latency in milliseconds. This parameter applies only to RIST-based,
+     * Zixi-based, and Fujitsu-based streams.
      */
     inline bool MaxLatencyHasBeenSet() const { return m_maxLatencyHasBeenSet; }
 
     /**
-     * The maximum latency in milliseconds for Zixi-based streams.
+     * The maximum latency in milliseconds. This parameter applies only to RIST-based,
+     * Zixi-based, and Fujitsu-based streams.
      */
     inline void SetMaxLatency(int value) { m_maxLatencyHasBeenSet = true; m_maxLatency = value; }
 
     /**
-     * The maximum latency in milliseconds for Zixi-based streams.
+     * The maximum latency in milliseconds. This parameter applies only to RIST-based,
+     * Zixi-based, and Fujitsu-based streams.
      */
     inline AddOutputRequest& WithMaxLatency(int value) { SetMaxLatency(value); return *this;}
 
@@ -475,6 +479,31 @@ namespace Model
 
 
     /**
+     * The port that the flow uses to send outbound requests to initiate connection
+     * with the sender.
+     */
+    inline int GetSenderControlPort() const{ return m_senderControlPort; }
+
+    /**
+     * The port that the flow uses to send outbound requests to initiate connection
+     * with the sender.
+     */
+    inline bool SenderControlPortHasBeenSet() const { return m_senderControlPortHasBeenSet; }
+
+    /**
+     * The port that the flow uses to send outbound requests to initiate connection
+     * with the sender.
+     */
+    inline void SetSenderControlPort(int value) { m_senderControlPortHasBeenSet = true; m_senderControlPort = value; }
+
+    /**
+     * The port that the flow uses to send outbound requests to initiate connection
+     * with the sender.
+     */
+    inline AddOutputRequest& WithSenderControlPort(int value) { SetSenderControlPort(value); return *this;}
+
+
+    /**
      * The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
      */
     inline int GetSmoothingLatency() const{ return m_smoothingLatency; }
@@ -608,6 +637,9 @@ namespace Model
 
     Aws::String m_remoteId;
     bool m_remoteIdHasBeenSet;
+
+    int m_senderControlPort;
+    bool m_senderControlPortHasBeenSet;
 
     int m_smoothingLatency;
     bool m_smoothingLatencyHasBeenSet;

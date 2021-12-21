@@ -19,12 +19,16 @@ namespace Model
 {
 
 ProtocolDetails::ProtocolDetails() : 
-    m_passiveIpHasBeenSet(false)
+    m_passiveIpHasBeenSet(false),
+    m_tlsSessionResumptionMode(TlsSessionResumptionMode::NOT_SET),
+    m_tlsSessionResumptionModeHasBeenSet(false)
 {
 }
 
 ProtocolDetails::ProtocolDetails(JsonView jsonValue) : 
-    m_passiveIpHasBeenSet(false)
+    m_passiveIpHasBeenSet(false),
+    m_tlsSessionResumptionMode(TlsSessionResumptionMode::NOT_SET),
+    m_tlsSessionResumptionModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +42,13 @@ ProtocolDetails& ProtocolDetails::operator =(JsonView jsonValue)
     m_passiveIpHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TlsSessionResumptionMode"))
+  {
+    m_tlsSessionResumptionMode = TlsSessionResumptionModeMapper::GetTlsSessionResumptionModeForName(jsonValue.GetString("TlsSessionResumptionMode"));
+
+    m_tlsSessionResumptionModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -49,6 +60,11 @@ JsonValue ProtocolDetails::Jsonize() const
   {
    payload.WithString("PassiveIp", m_passiveIp);
 
+  }
+
+  if(m_tlsSessionResumptionModeHasBeenSet)
+  {
+   payload.WithString("TlsSessionResumptionMode", TlsSessionResumptionModeMapper::GetNameForTlsSessionResumptionMode(m_tlsSessionResumptionMode));
   }
 
   return payload;

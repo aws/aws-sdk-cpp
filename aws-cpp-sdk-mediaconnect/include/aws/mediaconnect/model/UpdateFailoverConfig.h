@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * The settings for source failover<p><h3>See Also:</h3>   <a
+   * The settings for source failover.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFailoverConfig">AWS
    * API Reference</a></p>
    */

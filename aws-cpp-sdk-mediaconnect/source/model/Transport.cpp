@@ -31,6 +31,9 @@ Transport::Transport() :
     m_protocol(Protocol::NOT_SET),
     m_protocolHasBeenSet(false),
     m_remoteIdHasBeenSet(false),
+    m_senderControlPort(0),
+    m_senderControlPortHasBeenSet(false),
+    m_senderIpAddressHasBeenSet(false),
     m_smoothingLatency(0),
     m_smoothingLatencyHasBeenSet(false),
     m_streamIdHasBeenSet(false)
@@ -50,6 +53,9 @@ Transport::Transport(JsonView jsonValue) :
     m_protocol(Protocol::NOT_SET),
     m_protocolHasBeenSet(false),
     m_remoteIdHasBeenSet(false),
+    m_senderControlPort(0),
+    m_senderControlPortHasBeenSet(false),
+    m_senderIpAddressHasBeenSet(false),
     m_smoothingLatency(0),
     m_smoothingLatencyHasBeenSet(false),
     m_streamIdHasBeenSet(false)
@@ -109,6 +115,20 @@ Transport& Transport::operator =(JsonView jsonValue)
     m_remoteId = jsonValue.GetString("remoteId");
 
     m_remoteIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("senderControlPort"))
+  {
+    m_senderControlPort = jsonValue.GetInteger("senderControlPort");
+
+    m_senderControlPortHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("senderIpAddress"))
+  {
+    m_senderIpAddress = jsonValue.GetString("senderIpAddress");
+
+    m_senderIpAddressHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("smoothingLatency"))
@@ -175,6 +195,18 @@ JsonValue Transport::Jsonize() const
   if(m_remoteIdHasBeenSet)
   {
    payload.WithString("remoteId", m_remoteId);
+
+  }
+
+  if(m_senderControlPortHasBeenSet)
+  {
+   payload.WithInteger("senderControlPort", m_senderControlPort);
+
+  }
+
+  if(m_senderIpAddressHasBeenSet)
+  {
+   payload.WithString("senderIpAddress", m_senderIpAddress);
 
   }
 

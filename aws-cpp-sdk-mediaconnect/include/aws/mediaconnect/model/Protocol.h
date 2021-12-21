@@ -23,7 +23,8 @@ namespace Model
     rist,
     st2110_jpegxs,
     cdi,
-    srt_listener
+    srt_listener,
+    fujitsu_qos
   };
 
 namespace ProtocolMapper

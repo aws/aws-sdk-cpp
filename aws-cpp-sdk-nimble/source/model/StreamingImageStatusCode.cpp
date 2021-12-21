@@ -26,6 +26,7 @@ namespace Aws
         static const int STREAMING_IMAGE_DELETED_HASH = HashingUtils::HashString("STREAMING_IMAGE_DELETED");
         static const int STREAMING_IMAGE_UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("STREAMING_IMAGE_UPDATE_IN_PROGRESS");
         static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
+        static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
 
 
         StreamingImageStatusCode GetStreamingImageStatusCodeForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return StreamingImageStatusCode::INTERNAL_ERROR;
           }
+          else if (hashCode == ACCESS_DENIED_HASH)
+          {
+            return StreamingImageStatusCode::ACCESS_DENIED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +86,8 @@ namespace Aws
             return "STREAMING_IMAGE_UPDATE_IN_PROGRESS";
           case StreamingImageStatusCode::INTERNAL_ERROR:
             return "INTERNAL_ERROR";
+          case StreamingImageStatusCode::ACCESS_DENIED:
+            return "ACCESS_DENIED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

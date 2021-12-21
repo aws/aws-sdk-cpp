@@ -238,7 +238,10 @@ namespace Model
      * <p> The protocol settings that are configured for your server. </p> <p> Use the
      * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
      * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
-     * address of a firewall, router, or load balancer. </p>
+     * address of a firewall, router, or load balancer. </p> <p>Use the
+     * <code>TlsSessionResumptionMode</code> parameter to determine whether or not your
+     * Transfer server resumes recent, negotiated sessions through a unique session
+     * ID.</p>
      */
     inline const ProtocolDetails& GetProtocolDetails() const{ return m_protocolDetails; }
 
@@ -246,7 +249,10 @@ namespace Model
      * <p> The protocol settings that are configured for your server. </p> <p> Use the
      * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
      * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
-     * address of a firewall, router, or load balancer. </p>
+     * address of a firewall, router, or load balancer. </p> <p>Use the
+     * <code>TlsSessionResumptionMode</code> parameter to determine whether or not your
+     * Transfer server resumes recent, negotiated sessions through a unique session
+     * ID.</p>
      */
     inline bool ProtocolDetailsHasBeenSet() const { return m_protocolDetailsHasBeenSet; }
 
@@ -254,7 +260,10 @@ namespace Model
      * <p> The protocol settings that are configured for your server. </p> <p> Use the
      * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
      * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
-     * address of a firewall, router, or load balancer. </p>
+     * address of a firewall, router, or load balancer. </p> <p>Use the
+     * <code>TlsSessionResumptionMode</code> parameter to determine whether or not your
+     * Transfer server resumes recent, negotiated sessions through a unique session
+     * ID.</p>
      */
     inline void SetProtocolDetails(const ProtocolDetails& value) { m_protocolDetailsHasBeenSet = true; m_protocolDetails = value; }
 
@@ -262,7 +271,10 @@ namespace Model
      * <p> The protocol settings that are configured for your server. </p> <p> Use the
      * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
      * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
-     * address of a firewall, router, or load balancer. </p>
+     * address of a firewall, router, or load balancer. </p> <p>Use the
+     * <code>TlsSessionResumptionMode</code> parameter to determine whether or not your
+     * Transfer server resumes recent, negotiated sessions through a unique session
+     * ID.</p>
      */
     inline void SetProtocolDetails(ProtocolDetails&& value) { m_protocolDetailsHasBeenSet = true; m_protocolDetails = std::move(value); }
 
@@ -270,7 +282,10 @@ namespace Model
      * <p> The protocol settings that are configured for your server. </p> <p> Use the
      * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
      * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
-     * address of a firewall, router, or load balancer. </p>
+     * address of a firewall, router, or load balancer. </p> <p>Use the
+     * <code>TlsSessionResumptionMode</code> parameter to determine whether or not your
+     * Transfer server resumes recent, negotiated sessions through a unique session
+     * ID.</p>
      */
     inline UpdateServerRequest& WithProtocolDetails(const ProtocolDetails& value) { SetProtocolDetails(value); return *this;}
 
@@ -278,7 +293,10 @@ namespace Model
      * <p> The protocol settings that are configured for your server. </p> <p> Use the
      * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
      * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
-     * address of a firewall, router, or load balancer. </p>
+     * address of a firewall, router, or load balancer. </p> <p>Use the
+     * <code>TlsSessionResumptionMode</code> parameter to determine whether or not your
+     * Transfer server resumes recent, negotiated sessions through a unique session
+     * ID.</p>
      */
     inline UpdateServerRequest& WithProtocolDetails(ProtocolDetails&& value) { SetProtocolDetails(std::move(value)); return *this;}
 

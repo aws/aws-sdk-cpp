@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * Immutable and has to be a unique against other VpcInterfaces in this Flow
+     * Immutable and has to be a unique against other VpcInterfaces in this Flow.
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * Immutable and has to be a unique against other VpcInterfaces in this Flow
+     * Immutable and has to be a unique against other VpcInterfaces in this Flow.
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * Immutable and has to be a unique against other VpcInterfaces in this Flow
+     * Immutable and has to be a unique against other VpcInterfaces in this Flow.
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * Immutable and has to be a unique against other VpcInterfaces in this Flow
+     * Immutable and has to be a unique against other VpcInterfaces in this Flow.
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * Immutable and has to be a unique against other VpcInterfaces in this Flow
+     * Immutable and has to be a unique against other VpcInterfaces in this Flow.
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * Immutable and has to be a unique against other VpcInterfaces in this Flow
+     * Immutable and has to be a unique against other VpcInterfaces in this Flow.
      */
     inline VpcInterface& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * Immutable and has to be a unique against other VpcInterfaces in this Flow
+     * Immutable and has to be a unique against other VpcInterfaces in this Flow.
      */
     inline VpcInterface& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * Immutable and has to be a unique against other VpcInterfaces in this Flow
+     * Immutable and has to be a unique against other VpcInterfaces in this Flow.
      */
     inline VpcInterface& WithName(const char* value) { SetName(value); return *this;}
 

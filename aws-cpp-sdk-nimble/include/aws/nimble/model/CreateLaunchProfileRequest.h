@@ -21,9 +21,6 @@ namespace Model
 {
 
   /**
-   * <zonbook></zonbook><xhtml></xhtml><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateLaunchProfileRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_NIMBLESTUDIO_API CreateLaunchProfileRequest : public NimbleStudioRequest
   {

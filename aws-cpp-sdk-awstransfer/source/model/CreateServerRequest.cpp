@@ -25,6 +25,7 @@ CreateServerRequest::CreateServerRequest() :
     m_identityProviderTypeHasBeenSet(false),
     m_loggingRoleHasBeenSet(false),
     m_protocolsHasBeenSet(false),
+    m_protocolDetailsHasBeenSet(false),
     m_securityPolicyNameHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_workflowDetailsHasBeenSet(false)
@@ -88,6 +89,12 @@ Aws::String CreateServerRequest::SerializePayload() const
      protocolsJsonList[protocolsIndex].AsString(ProtocolMapper::GetNameForProtocol(m_protocols[protocolsIndex]));
    }
    payload.WithArray("Protocols", std::move(protocolsJsonList));
+
+  }
+
+  if(m_protocolDetailsHasBeenSet)
+  {
+   payload.WithObject("ProtocolDetails", m_protocolDetails.Jsonize());
 
   }
 

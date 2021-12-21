@@ -79,56 +79,72 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal stream to write data records to a Kinesis Data Streams
-     * resource.</p>
+     * resource.</p> <p>To pass a role to QLDB when requesting a journal stream, you
+     * must have permissions to perform the <code>iam:PassRole</code> action on the IAM
+     * role resource. This is required for all journal stream requests.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal stream to write data records to a Kinesis Data Streams
-     * resource.</p>
+     * resource.</p> <p>To pass a role to QLDB when requesting a journal stream, you
+     * must have permissions to perform the <code>iam:PassRole</code> action on the IAM
+     * role resource. This is required for all journal stream requests.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal stream to write data records to a Kinesis Data Streams
-     * resource.</p>
+     * resource.</p> <p>To pass a role to QLDB when requesting a journal stream, you
+     * must have permissions to perform the <code>iam:PassRole</code> action on the IAM
+     * role resource. This is required for all journal stream requests.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal stream to write data records to a Kinesis Data Streams
-     * resource.</p>
+     * resource.</p> <p>To pass a role to QLDB when requesting a journal stream, you
+     * must have permissions to perform the <code>iam:PassRole</code> action on the IAM
+     * role resource. This is required for all journal stream requests.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal stream to write data records to a Kinesis Data Streams
-     * resource.</p>
+     * resource.</p> <p>To pass a role to QLDB when requesting a journal stream, you
+     * must have permissions to perform the <code>iam:PassRole</code> action on the IAM
+     * role resource. This is required for all journal stream requests.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal stream to write data records to a Kinesis Data Streams
-     * resource.</p>
+     * resource.</p> <p>To pass a role to QLDB when requesting a journal stream, you
+     * must have permissions to perform the <code>iam:PassRole</code> action on the IAM
+     * role resource. This is required for all journal stream requests.</p>
      */
     inline StreamJournalToKinesisRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal stream to write data records to a Kinesis Data Streams
-     * resource.</p>
+     * resource.</p> <p>To pass a role to QLDB when requesting a journal stream, you
+     * must have permissions to perform the <code>iam:PassRole</code> action on the IAM
+     * role resource. This is required for all journal stream requests.</p>
      */
     inline StreamJournalToKinesisRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal stream to write data records to a Kinesis Data Streams
-     * resource.</p>
+     * resource.</p> <p>To pass a role to QLDB when requesting a journal stream, you
+     * must have permissions to perform the <code>iam:PassRole</code> action on the IAM
+     * role resource. This is required for all journal stream requests.</p>
      */
     inline StreamJournalToKinesisRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

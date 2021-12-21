@@ -31,6 +31,7 @@
 #include <aws/workmail/model/CreateUserRequest.h>
 #include <aws/workmail/model/DeleteAccessControlRuleRequest.h>
 #include <aws/workmail/model/DeleteAliasRequest.h>
+#include <aws/workmail/model/DeleteEmailMonitoringConfigurationRequest.h>
 #include <aws/workmail/model/DeleteGroupRequest.h>
 #include <aws/workmail/model/DeleteMailboxPermissionsRequest.h>
 #include <aws/workmail/model/DeleteMobileDeviceAccessOverrideRequest.h>
@@ -41,6 +42,7 @@
 #include <aws/workmail/model/DeleteUserRequest.h>
 #include <aws/workmail/model/DeregisterFromWorkMailRequest.h>
 #include <aws/workmail/model/DeregisterMailDomainRequest.h>
+#include <aws/workmail/model/DescribeEmailMonitoringConfigurationRequest.h>
 #include <aws/workmail/model/DescribeGroupRequest.h>
 #include <aws/workmail/model/DescribeInboundDmarcSettingsRequest.h>
 #include <aws/workmail/model/DescribeMailboxExportJobRequest.h>
@@ -70,6 +72,7 @@
 #include <aws/workmail/model/ListTagsForResourceRequest.h>
 #include <aws/workmail/model/ListUsersRequest.h>
 #include <aws/workmail/model/PutAccessControlRuleRequest.h>
+#include <aws/workmail/model/PutEmailMonitoringConfigurationRequest.h>
 #include <aws/workmail/model/PutInboundDmarcSettingsRequest.h>
 #include <aws/workmail/model/PutMailboxPermissionsRequest.h>
 #include <aws/workmail/model/PutMobileDeviceAccessOverrideRequest.h>
@@ -423,6 +426,30 @@ void WorkMailClient::DeleteAliasAsyncHelper(const DeleteAliasRequest& request, c
   handler(this, request, DeleteAlias(request), context);
 }
 
+DeleteEmailMonitoringConfigurationOutcome WorkMailClient::DeleteEmailMonitoringConfiguration(const DeleteEmailMonitoringConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteEmailMonitoringConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteEmailMonitoringConfigurationOutcomeCallable WorkMailClient::DeleteEmailMonitoringConfigurationCallable(const DeleteEmailMonitoringConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteEmailMonitoringConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEmailMonitoringConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::DeleteEmailMonitoringConfigurationAsync(const DeleteEmailMonitoringConfigurationRequest& request, const DeleteEmailMonitoringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteEmailMonitoringConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::DeleteEmailMonitoringConfigurationAsyncHelper(const DeleteEmailMonitoringConfigurationRequest& request, const DeleteEmailMonitoringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteEmailMonitoringConfiguration(request), context);
+}
+
 DeleteGroupOutcome WorkMailClient::DeleteGroup(const DeleteGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -661,6 +688,30 @@ void WorkMailClient::DeregisterMailDomainAsync(const DeregisterMailDomainRequest
 void WorkMailClient::DeregisterMailDomainAsyncHelper(const DeregisterMailDomainRequest& request, const DeregisterMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeregisterMailDomain(request), context);
+}
+
+DescribeEmailMonitoringConfigurationOutcome WorkMailClient::DescribeEmailMonitoringConfiguration(const DescribeEmailMonitoringConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeEmailMonitoringConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeEmailMonitoringConfigurationOutcomeCallable WorkMailClient::DescribeEmailMonitoringConfigurationCallable(const DescribeEmailMonitoringConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEmailMonitoringConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEmailMonitoringConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::DescribeEmailMonitoringConfigurationAsync(const DescribeEmailMonitoringConfigurationRequest& request, const DescribeEmailMonitoringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEmailMonitoringConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::DescribeEmailMonitoringConfigurationAsyncHelper(const DescribeEmailMonitoringConfigurationRequest& request, const DescribeEmailMonitoringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeEmailMonitoringConfiguration(request), context);
 }
 
 DescribeGroupOutcome WorkMailClient::DescribeGroup(const DescribeGroupRequest& request) const
@@ -1357,6 +1408,30 @@ void WorkMailClient::PutAccessControlRuleAsync(const PutAccessControlRuleRequest
 void WorkMailClient::PutAccessControlRuleAsyncHelper(const PutAccessControlRuleRequest& request, const PutAccessControlRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutAccessControlRule(request), context);
+}
+
+PutEmailMonitoringConfigurationOutcome WorkMailClient::PutEmailMonitoringConfiguration(const PutEmailMonitoringConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return PutEmailMonitoringConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutEmailMonitoringConfigurationOutcomeCallable WorkMailClient::PutEmailMonitoringConfigurationCallable(const PutEmailMonitoringConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutEmailMonitoringConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutEmailMonitoringConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::PutEmailMonitoringConfigurationAsync(const PutEmailMonitoringConfigurationRequest& request, const PutEmailMonitoringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutEmailMonitoringConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::PutEmailMonitoringConfigurationAsyncHelper(const PutEmailMonitoringConfigurationRequest& request, const PutEmailMonitoringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutEmailMonitoringConfiguration(request), context);
 }
 
 PutInboundDmarcSettingsOutcome WorkMailClient::PutInboundDmarcSettings(const PutInboundDmarcSettingsRequest& request) const

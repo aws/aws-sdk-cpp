@@ -29,6 +29,9 @@ Source::Source() :
     m_ingestPortHasBeenSet(false),
     m_mediaStreamSourceConfigurationsHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_senderControlPort(0),
+    m_senderControlPortHasBeenSet(false),
+    m_senderIpAddressHasBeenSet(false),
     m_sourceArnHasBeenSet(false),
     m_transportHasBeenSet(false),
     m_vpcInterfaceNameHasBeenSet(false),
@@ -47,6 +50,9 @@ Source::Source(JsonView jsonValue) :
     m_ingestPortHasBeenSet(false),
     m_mediaStreamSourceConfigurationsHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_senderControlPort(0),
+    m_senderControlPortHasBeenSet(false),
+    m_senderIpAddressHasBeenSet(false),
     m_sourceArnHasBeenSet(false),
     m_transportHasBeenSet(false),
     m_vpcInterfaceNameHasBeenSet(false),
@@ -114,6 +120,20 @@ Source& Source::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("senderControlPort"))
+  {
+    m_senderControlPort = jsonValue.GetInteger("senderControlPort");
+
+    m_senderControlPortHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("senderIpAddress"))
+  {
+    m_senderIpAddress = jsonValue.GetString("senderIpAddress");
+
+    m_senderIpAddressHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sourceArn"))
@@ -201,6 +221,18 @@ JsonValue Source::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_senderControlPortHasBeenSet)
+  {
+   payload.WithInteger("senderControlPort", m_senderControlPort);
+
+  }
+
+  if(m_senderIpAddressHasBeenSet)
+  {
+   payload.WithString("senderIpAddress", m_senderIpAddress);
 
   }
 

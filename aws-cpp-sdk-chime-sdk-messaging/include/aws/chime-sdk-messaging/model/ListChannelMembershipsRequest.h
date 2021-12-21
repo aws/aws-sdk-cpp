@@ -84,55 +84,49 @@ namespace Model
 
     /**
      * <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>.
-     * Default members are always returned as part of
-     * <code>ListChannelMemberships</code>. Hidden members are only returned if the
-     * type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>.
-     * Otherwise hidden members are not returned.</p>
+     * Default members are returned as part of <code>ListChannelMemberships</code> if
+     * no type is specified. Hidden members are only returned if the type filter in
+     * <code>ListChannelMemberships</code> equals <code>HIDDEN</code>.</p>
      */
     inline const ChannelMembershipType& GetType() const{ return m_type; }
 
     /**
      * <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>.
-     * Default members are always returned as part of
-     * <code>ListChannelMemberships</code>. Hidden members are only returned if the
-     * type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>.
-     * Otherwise hidden members are not returned.</p>
+     * Default members are returned as part of <code>ListChannelMemberships</code> if
+     * no type is specified. Hidden members are only returned if the type filter in
+     * <code>ListChannelMemberships</code> equals <code>HIDDEN</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>.
-     * Default members are always returned as part of
-     * <code>ListChannelMemberships</code>. Hidden members are only returned if the
-     * type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>.
-     * Otherwise hidden members are not returned.</p>
+     * Default members are returned as part of <code>ListChannelMemberships</code> if
+     * no type is specified. Hidden members are only returned if the type filter in
+     * <code>ListChannelMemberships</code> equals <code>HIDDEN</code>.</p>
      */
     inline void SetType(const ChannelMembershipType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>.
-     * Default members are always returned as part of
-     * <code>ListChannelMemberships</code>. Hidden members are only returned if the
-     * type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>.
-     * Otherwise hidden members are not returned.</p>
+     * Default members are returned as part of <code>ListChannelMemberships</code> if
+     * no type is specified. Hidden members are only returned if the type filter in
+     * <code>ListChannelMemberships</code> equals <code>HIDDEN</code>.</p>
      */
     inline void SetType(ChannelMembershipType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>.
-     * Default members are always returned as part of
-     * <code>ListChannelMemberships</code>. Hidden members are only returned if the
-     * type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>.
-     * Otherwise hidden members are not returned.</p>
+     * Default members are returned as part of <code>ListChannelMemberships</code> if
+     * no type is specified. Hidden members are only returned if the type filter in
+     * <code>ListChannelMemberships</code> equals <code>HIDDEN</code>.</p>
      */
     inline ListChannelMembershipsRequest& WithType(const ChannelMembershipType& value) { SetType(value); return *this;}
 
     /**
      * <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>.
-     * Default members are always returned as part of
-     * <code>ListChannelMemberships</code>. Hidden members are only returned if the
-     * type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>.
-     * Otherwise hidden members are not returned.</p>
+     * Default members are returned as part of <code>ListChannelMemberships</code> if
+     * no type is specified. Hidden members are only returned if the type filter in
+     * <code>ListChannelMemberships</code> equals <code>HIDDEN</code>.</p>
      */
     inline ListChannelMembershipsRequest& WithType(ChannelMembershipType&& value) { SetType(std::move(value)); return *this;}
 

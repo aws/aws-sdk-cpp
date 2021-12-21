@@ -450,42 +450,74 @@ namespace Model
 
 
     /**
-     * <p>The SNS topic on which to send image build events.</p>
+     * <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build
+     * event notifications.</p>  <p>EC2 Image Builder is unable to send
+     * notifications to SNS topics that are encrypted using keys from other accounts.
+     * The key that is used to encrypt the SNS topic must reside in the account that
+     * the Image Builder service runs under.</p> 
      */
     inline const Aws::String& GetSnsTopicArn() const{ return m_snsTopicArn; }
 
     /**
-     * <p>The SNS topic on which to send image build events.</p>
+     * <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build
+     * event notifications.</p>  <p>EC2 Image Builder is unable to send
+     * notifications to SNS topics that are encrypted using keys from other accounts.
+     * The key that is used to encrypt the SNS topic must reside in the account that
+     * the Image Builder service runs under.</p> 
      */
     inline bool SnsTopicArnHasBeenSet() const { return m_snsTopicArnHasBeenSet; }
 
     /**
-     * <p>The SNS topic on which to send image build events.</p>
+     * <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build
+     * event notifications.</p>  <p>EC2 Image Builder is unable to send
+     * notifications to SNS topics that are encrypted using keys from other accounts.
+     * The key that is used to encrypt the SNS topic must reside in the account that
+     * the Image Builder service runs under.</p> 
      */
     inline void SetSnsTopicArn(const Aws::String& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = value; }
 
     /**
-     * <p>The SNS topic on which to send image build events.</p>
+     * <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build
+     * event notifications.</p>  <p>EC2 Image Builder is unable to send
+     * notifications to SNS topics that are encrypted using keys from other accounts.
+     * The key that is used to encrypt the SNS topic must reside in the account that
+     * the Image Builder service runs under.</p> 
      */
     inline void SetSnsTopicArn(Aws::String&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::move(value); }
 
     /**
-     * <p>The SNS topic on which to send image build events.</p>
+     * <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build
+     * event notifications.</p>  <p>EC2 Image Builder is unable to send
+     * notifications to SNS topics that are encrypted using keys from other accounts.
+     * The key that is used to encrypt the SNS topic must reside in the account that
+     * the Image Builder service runs under.</p> 
      */
     inline void SetSnsTopicArn(const char* value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn.assign(value); }
 
     /**
-     * <p>The SNS topic on which to send image build events.</p>
+     * <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build
+     * event notifications.</p>  <p>EC2 Image Builder is unable to send
+     * notifications to SNS topics that are encrypted using keys from other accounts.
+     * The key that is used to encrypt the SNS topic must reside in the account that
+     * the Image Builder service runs under.</p> 
      */
     inline CreateInfrastructureConfigurationRequest& WithSnsTopicArn(const Aws::String& value) { SetSnsTopicArn(value); return *this;}
 
     /**
-     * <p>The SNS topic on which to send image build events.</p>
+     * <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build
+     * event notifications.</p>  <p>EC2 Image Builder is unable to send
+     * notifications to SNS topics that are encrypted using keys from other accounts.
+     * The key that is used to encrypt the SNS topic must reside in the account that
+     * the Image Builder service runs under.</p> 
      */
     inline CreateInfrastructureConfigurationRequest& WithSnsTopicArn(Aws::String&& value) { SetSnsTopicArn(std::move(value)); return *this;}
 
     /**
-     * <p>The SNS topic on which to send image build events.</p>
+     * <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build
+     * event notifications.</p>  <p>EC2 Image Builder is unable to send
+     * notifications to SNS topics that are encrypted using keys from other accounts.
+     * The key that is used to encrypt the SNS topic must reside in the account that
+     * the Image Builder service runs under.</p> 
      */
     inline CreateInfrastructureConfigurationRequest& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
 

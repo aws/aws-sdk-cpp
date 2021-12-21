@@ -7,6 +7,7 @@
 #include <aws/nimble/NimbleStudio_EXPORTS.h>
 #include <aws/nimble/model/StreamingClipboardMode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/nimble/model/StreamConfigurationSessionStorage.h>
 #include <aws/nimble/model/StreamingInstanceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -161,36 +162,101 @@ namespace Model
 
 
     /**
-     * <p>The length of time, in minutes, that a streaming session can be active before
-     * it is stopped or terminated. After this point, Nimble Studio automatically
-     * terminates or stops the session. The default length of time is 690 minutes, and
-     * the maximum length of time is 30 days.</p>
+     * <p>Integer that determines if you can start and stop your sessions and how long
+     * a session can stay in the STOPPED state. The default value is 0. The maximum
+     * value is 5760.</p> <p>If the value is missing or set to 0, your sessions can’t
+     * be stopped. If you then call StopStreamingSession, the session fails. If the
+     * time that a session stays in the READY state exceeds the
+     * maxSessionLengthInMinutes value, the session will automatically be terminated by
+     * AWS (instead of stopped).</p> <p>If the value is set to a positive number, the
+     * session can be stopped. You can call StopStreamingSession to stop sessions in
+     * the READY state. If the time that a session stays in the READY state exceeds the
+     * maxSessionLengthInMinutes value, the session will automatically be stopped by
+     * AWS (instead of terminated).</p>
      */
     inline int GetMaxStoppedSessionLengthInMinutes() const{ return m_maxStoppedSessionLengthInMinutes; }
 
     /**
-     * <p>The length of time, in minutes, that a streaming session can be active before
-     * it is stopped or terminated. After this point, Nimble Studio automatically
-     * terminates or stops the session. The default length of time is 690 minutes, and
-     * the maximum length of time is 30 days.</p>
+     * <p>Integer that determines if you can start and stop your sessions and how long
+     * a session can stay in the STOPPED state. The default value is 0. The maximum
+     * value is 5760.</p> <p>If the value is missing or set to 0, your sessions can’t
+     * be stopped. If you then call StopStreamingSession, the session fails. If the
+     * time that a session stays in the READY state exceeds the
+     * maxSessionLengthInMinutes value, the session will automatically be terminated by
+     * AWS (instead of stopped).</p> <p>If the value is set to a positive number, the
+     * session can be stopped. You can call StopStreamingSession to stop sessions in
+     * the READY state. If the time that a session stays in the READY state exceeds the
+     * maxSessionLengthInMinutes value, the session will automatically be stopped by
+     * AWS (instead of terminated).</p>
      */
     inline bool MaxStoppedSessionLengthInMinutesHasBeenSet() const { return m_maxStoppedSessionLengthInMinutesHasBeenSet; }
 
     /**
-     * <p>The length of time, in minutes, that a streaming session can be active before
-     * it is stopped or terminated. After this point, Nimble Studio automatically
-     * terminates or stops the session. The default length of time is 690 minutes, and
-     * the maximum length of time is 30 days.</p>
+     * <p>Integer that determines if you can start and stop your sessions and how long
+     * a session can stay in the STOPPED state. The default value is 0. The maximum
+     * value is 5760.</p> <p>If the value is missing or set to 0, your sessions can’t
+     * be stopped. If you then call StopStreamingSession, the session fails. If the
+     * time that a session stays in the READY state exceeds the
+     * maxSessionLengthInMinutes value, the session will automatically be terminated by
+     * AWS (instead of stopped).</p> <p>If the value is set to a positive number, the
+     * session can be stopped. You can call StopStreamingSession to stop sessions in
+     * the READY state. If the time that a session stays in the READY state exceeds the
+     * maxSessionLengthInMinutes value, the session will automatically be stopped by
+     * AWS (instead of terminated).</p>
      */
     inline void SetMaxStoppedSessionLengthInMinutes(int value) { m_maxStoppedSessionLengthInMinutesHasBeenSet = true; m_maxStoppedSessionLengthInMinutes = value; }
 
     /**
-     * <p>The length of time, in minutes, that a streaming session can be active before
-     * it is stopped or terminated. After this point, Nimble Studio automatically
-     * terminates or stops the session. The default length of time is 690 minutes, and
-     * the maximum length of time is 30 days.</p>
+     * <p>Integer that determines if you can start and stop your sessions and how long
+     * a session can stay in the STOPPED state. The default value is 0. The maximum
+     * value is 5760.</p> <p>If the value is missing or set to 0, your sessions can’t
+     * be stopped. If you then call StopStreamingSession, the session fails. If the
+     * time that a session stays in the READY state exceeds the
+     * maxSessionLengthInMinutes value, the session will automatically be terminated by
+     * AWS (instead of stopped).</p> <p>If the value is set to a positive number, the
+     * session can be stopped. You can call StopStreamingSession to stop sessions in
+     * the READY state. If the time that a session stays in the READY state exceeds the
+     * maxSessionLengthInMinutes value, the session will automatically be stopped by
+     * AWS (instead of terminated).</p>
      */
     inline StreamConfigurationCreate& WithMaxStoppedSessionLengthInMinutes(int value) { SetMaxStoppedSessionLengthInMinutes(value); return *this;}
+
+
+    /**
+     * <p>(Optional) The upload storage for a streaming workstation that is created
+     * using this launch profile.</p>
+     */
+    inline const StreamConfigurationSessionStorage& GetSessionStorage() const{ return m_sessionStorage; }
+
+    /**
+     * <p>(Optional) The upload storage for a streaming workstation that is created
+     * using this launch profile.</p>
+     */
+    inline bool SessionStorageHasBeenSet() const { return m_sessionStorageHasBeenSet; }
+
+    /**
+     * <p>(Optional) The upload storage for a streaming workstation that is created
+     * using this launch profile.</p>
+     */
+    inline void SetSessionStorage(const StreamConfigurationSessionStorage& value) { m_sessionStorageHasBeenSet = true; m_sessionStorage = value; }
+
+    /**
+     * <p>(Optional) The upload storage for a streaming workstation that is created
+     * using this launch profile.</p>
+     */
+    inline void SetSessionStorage(StreamConfigurationSessionStorage&& value) { m_sessionStorageHasBeenSet = true; m_sessionStorage = std::move(value); }
+
+    /**
+     * <p>(Optional) The upload storage for a streaming workstation that is created
+     * using this launch profile.</p>
+     */
+    inline StreamConfigurationCreate& WithSessionStorage(const StreamConfigurationSessionStorage& value) { SetSessionStorage(value); return *this;}
+
+    /**
+     * <p>(Optional) The upload storage for a streaming workstation that is created
+     * using this launch profile.</p>
+     */
+    inline StreamConfigurationCreate& WithSessionStorage(StreamConfigurationSessionStorage&& value) { SetSessionStorage(std::move(value)); return *this;}
 
 
     /**
@@ -260,6 +326,9 @@ namespace Model
 
     int m_maxStoppedSessionLengthInMinutes;
     bool m_maxStoppedSessionLengthInMinutesHasBeenSet;
+
+    StreamConfigurationSessionStorage m_sessionStorage;
+    bool m_sessionStorageHasBeenSet;
 
     Aws::Vector<Aws::String> m_streamingImageIds;
     bool m_streamingImageIdsHasBeenSet;

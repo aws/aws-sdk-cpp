@@ -27,7 +27,9 @@ JournalS3ExportDescription::JournalS3ExportDescription() :
     m_inclusiveStartTimeHasBeenSet(false),
     m_exclusiveEndTimeHasBeenSet(false),
     m_s3ExportConfigurationHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_outputFormat(OutputFormat::NOT_SET),
+    m_outputFormatHasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ JournalS3ExportDescription::JournalS3ExportDescription(JsonView jsonValue) :
     m_inclusiveStartTimeHasBeenSet(false),
     m_exclusiveEndTimeHasBeenSet(false),
     m_s3ExportConfigurationHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_outputFormat(OutputFormat::NOT_SET),
+    m_outputFormatHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -103,6 +107,13 @@ JournalS3ExportDescription& JournalS3ExportDescription::operator =(JsonView json
     m_roleArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OutputFormat"))
+  {
+    m_outputFormat = OutputFormatMapper::GetOutputFormatForName(jsonValue.GetString("OutputFormat"));
+
+    m_outputFormatHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -152,6 +163,11 @@ JsonValue JournalS3ExportDescription::Jsonize() const
   {
    payload.WithString("RoleArn", m_roleArn);
 
+  }
+
+  if(m_outputFormatHasBeenSet)
+  {
+   payload.WithString("OutputFormat", OutputFormatMapper::GetNameForOutputFormat(m_outputFormat));
   }
 
   return payload;

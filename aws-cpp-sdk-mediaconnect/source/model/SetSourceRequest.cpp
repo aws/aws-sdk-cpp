@@ -36,6 +36,9 @@ SetSourceRequest::SetSourceRequest() :
     m_nameHasBeenSet(false),
     m_protocol(Protocol::NOT_SET),
     m_protocolHasBeenSet(false),
+    m_senderControlPort(0),
+    m_senderControlPortHasBeenSet(false),
+    m_senderIpAddressHasBeenSet(false),
     m_streamIdHasBeenSet(false),
     m_vpcInterfaceNameHasBeenSet(false),
     m_whitelistCidrHasBeenSet(false)
@@ -60,6 +63,9 @@ SetSourceRequest::SetSourceRequest(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_protocol(Protocol::NOT_SET),
     m_protocolHasBeenSet(false),
+    m_senderControlPort(0),
+    m_senderControlPortHasBeenSet(false),
+    m_senderIpAddressHasBeenSet(false),
     m_streamIdHasBeenSet(false),
     m_vpcInterfaceNameHasBeenSet(false),
     m_whitelistCidrHasBeenSet(false)
@@ -147,6 +153,20 @@ SetSourceRequest& SetSourceRequest::operator =(JsonView jsonValue)
     m_protocol = ProtocolMapper::GetProtocolForName(jsonValue.GetString("protocol"));
 
     m_protocolHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("senderControlPort"))
+  {
+    m_senderControlPort = jsonValue.GetInteger("senderControlPort");
+
+    m_senderControlPortHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("senderIpAddress"))
+  {
+    m_senderIpAddress = jsonValue.GetString("senderIpAddress");
+
+    m_senderIpAddressHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("streamId"))
@@ -245,6 +265,18 @@ JsonValue SetSourceRequest::Jsonize() const
   if(m_protocolHasBeenSet)
   {
    payload.WithString("protocol", ProtocolMapper::GetNameForProtocol(m_protocol));
+  }
+
+  if(m_senderControlPortHasBeenSet)
+  {
+   payload.WithInteger("senderControlPort", m_senderControlPort);
+
+  }
+
+  if(m_senderIpAddressHasBeenSet)
+  {
+   payload.WithString("senderIpAddress", m_senderIpAddress);
+
   }
 
   if(m_streamIdHasBeenSet)

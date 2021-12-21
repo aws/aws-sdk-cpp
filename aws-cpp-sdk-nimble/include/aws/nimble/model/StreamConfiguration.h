@@ -7,6 +7,7 @@
 #include <aws/nimble/NimbleStudio_EXPORTS.h>
 #include <aws/nimble/model/StreamingClipboardMode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/nimble/model/StreamConfigurationSessionStorage.h>
 #include <aws/nimble/model/StreamingInstanceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -221,6 +222,37 @@ namespace Model
 
 
     /**
+     * <p>(Optional) The upload storage for a streaming session.</p>
+     */
+    inline const StreamConfigurationSessionStorage& GetSessionStorage() const{ return m_sessionStorage; }
+
+    /**
+     * <p>(Optional) The upload storage for a streaming session.</p>
+     */
+    inline bool SessionStorageHasBeenSet() const { return m_sessionStorageHasBeenSet; }
+
+    /**
+     * <p>(Optional) The upload storage for a streaming session.</p>
+     */
+    inline void SetSessionStorage(const StreamConfigurationSessionStorage& value) { m_sessionStorageHasBeenSet = true; m_sessionStorage = value; }
+
+    /**
+     * <p>(Optional) The upload storage for a streaming session.</p>
+     */
+    inline void SetSessionStorage(StreamConfigurationSessionStorage&& value) { m_sessionStorageHasBeenSet = true; m_sessionStorage = std::move(value); }
+
+    /**
+     * <p>(Optional) The upload storage for a streaming session.</p>
+     */
+    inline StreamConfiguration& WithSessionStorage(const StreamConfigurationSessionStorage& value) { SetSessionStorage(value); return *this;}
+
+    /**
+     * <p>(Optional) The upload storage for a streaming session.</p>
+     */
+    inline StreamConfiguration& WithSessionStorage(StreamConfigurationSessionStorage&& value) { SetSessionStorage(std::move(value)); return *this;}
+
+
+    /**
      * <p>The streaming images that users can select from when launching a streaming
      * session with this launch profile.</p>
      */
@@ -287,6 +319,9 @@ namespace Model
 
     int m_maxStoppedSessionLengthInMinutes;
     bool m_maxStoppedSessionLengthInMinutesHasBeenSet;
+
+    StreamConfigurationSessionStorage m_sessionStorage;
+    bool m_sessionStorageHasBeenSet;
 
     Aws::Vector<Aws::String> m_streamingImageIds;
     bool m_streamingImageIdsHasBeenSet;

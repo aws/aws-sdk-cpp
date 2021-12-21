@@ -1241,14 +1241,18 @@ namespace Model
         virtual void ListStudioComponentsAsync(const Model::ListStudioComponentsRequest& request, const ListStudioComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get all users in a given studio membership.</p><p><h3>See Also:</h3>   <a
+         * <p>Get all users in a given studio membership.</p>  <p>
+         * <code>ListStudioMembers</code> only returns admin members.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStudioMembers">AWS
          * API Reference</a></p>
          */
         virtual Model::ListStudioMembersOutcome ListStudioMembers(const Model::ListStudioMembersRequest& request) const;
 
         /**
-         * <p>Get all users in a given studio membership.</p><p><h3>See Also:</h3>   <a
+         * <p>Get all users in a given studio membership.</p>  <p>
+         * <code>ListStudioMembers</code> only returns admin members.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStudioMembers">AWS
          * API Reference</a></p>
          *
@@ -1257,7 +1261,9 @@ namespace Model
         virtual Model::ListStudioMembersOutcomeCallable ListStudioMembersCallable(const Model::ListStudioMembersRequest& request) const;
 
         /**
-         * <p>Get all users in a given studio membership.</p><p><h3>See Also:</h3>   <a
+         * <p>Get all users in a given studio membership.</p>  <p>
+         * <code>ListStudioMembers</code> only returns admin members.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStudioMembers">AWS
          * API Reference</a></p>
          *

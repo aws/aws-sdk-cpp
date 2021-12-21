@@ -24,11 +24,6 @@ namespace NimbleStudio
 {
 namespace Model
 {
-  /**
-   * <p/><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/UpdateStreamingImageResponse">AWS
-   * API Reference</a></p>
-   */
   class AWS_NIMBLESTUDIO_API UpdateStreamingImageResult
   {
   public:
@@ -37,29 +32,19 @@ namespace Model
     UpdateStreamingImageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    /**
-     * <p/>
-     */
+    
     inline const StreamingImage& GetStreamingImage() const{ return m_streamingImage; }
 
-    /**
-     * <p/>
-     */
+    
     inline void SetStreamingImage(const StreamingImage& value) { m_streamingImage = value; }
 
-    /**
-     * <p/>
-     */
+    
     inline void SetStreamingImage(StreamingImage&& value) { m_streamingImage = std::move(value); }
 
-    /**
-     * <p/>
-     */
+    
     inline UpdateStreamingImageResult& WithStreamingImage(const StreamingImage& value) { SetStreamingImage(value); return *this;}
 
-    /**
-     * <p/>
-     */
+    
     inline UpdateStreamingImageResult& WithStreamingImage(StreamingImage&& value) { SetStreamingImage(std::move(value)); return *this;}
 
   private:

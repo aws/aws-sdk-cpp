@@ -27,6 +27,7 @@
 #include <aws/lookoutmetrics/model/GetSampleDataResult.h>
 #include <aws/lookoutmetrics/model/ListAlertsResult.h>
 #include <aws/lookoutmetrics/model/ListAnomalyDetectorsResult.h>
+#include <aws/lookoutmetrics/model/ListAnomalyGroupRelatedMetricsResult.h>
 #include <aws/lookoutmetrics/model/ListAnomalyGroupSummariesResult.h>
 #include <aws/lookoutmetrics/model/ListAnomalyGroupTimeSeriesResult.h>
 #include <aws/lookoutmetrics/model/ListMetricSetsResult.h>
@@ -91,6 +92,7 @@ namespace Model
         class GetSampleDataRequest;
         class ListAlertsRequest;
         class ListAnomalyDetectorsRequest;
+        class ListAnomalyGroupRelatedMetricsRequest;
         class ListAnomalyGroupSummariesRequest;
         class ListAnomalyGroupTimeSeriesRequest;
         class ListMetricSetsRequest;
@@ -117,6 +119,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetSampleDataResult, LookoutMetricsError> GetSampleDataOutcome;
         typedef Aws::Utils::Outcome<ListAlertsResult, LookoutMetricsError> ListAlertsOutcome;
         typedef Aws::Utils::Outcome<ListAnomalyDetectorsResult, LookoutMetricsError> ListAnomalyDetectorsOutcome;
+        typedef Aws::Utils::Outcome<ListAnomalyGroupRelatedMetricsResult, LookoutMetricsError> ListAnomalyGroupRelatedMetricsOutcome;
         typedef Aws::Utils::Outcome<ListAnomalyGroupSummariesResult, LookoutMetricsError> ListAnomalyGroupSummariesOutcome;
         typedef Aws::Utils::Outcome<ListAnomalyGroupTimeSeriesResult, LookoutMetricsError> ListAnomalyGroupTimeSeriesOutcome;
         typedef Aws::Utils::Outcome<ListMetricSetsResult, LookoutMetricsError> ListMetricSetsOutcome;
@@ -143,6 +146,7 @@ namespace Model
         typedef std::future<GetSampleDataOutcome> GetSampleDataOutcomeCallable;
         typedef std::future<ListAlertsOutcome> ListAlertsOutcomeCallable;
         typedef std::future<ListAnomalyDetectorsOutcome> ListAnomalyDetectorsOutcomeCallable;
+        typedef std::future<ListAnomalyGroupRelatedMetricsOutcome> ListAnomalyGroupRelatedMetricsOutcomeCallable;
         typedef std::future<ListAnomalyGroupSummariesOutcome> ListAnomalyGroupSummariesOutcomeCallable;
         typedef std::future<ListAnomalyGroupTimeSeriesOutcome> ListAnomalyGroupTimeSeriesOutcomeCallable;
         typedef std::future<ListMetricSetsOutcome> ListMetricSetsOutcomeCallable;
@@ -172,6 +176,7 @@ namespace Model
     typedef std::function<void(const LookoutMetricsClient*, const Model::GetSampleDataRequest&, const Model::GetSampleDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSampleDataResponseReceivedHandler;
     typedef std::function<void(const LookoutMetricsClient*, const Model::ListAlertsRequest&, const Model::ListAlertsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAlertsResponseReceivedHandler;
     typedef std::function<void(const LookoutMetricsClient*, const Model::ListAnomalyDetectorsRequest&, const Model::ListAnomalyDetectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAnomalyDetectorsResponseReceivedHandler;
+    typedef std::function<void(const LookoutMetricsClient*, const Model::ListAnomalyGroupRelatedMetricsRequest&, const Model::ListAnomalyGroupRelatedMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAnomalyGroupRelatedMetricsResponseReceivedHandler;
     typedef std::function<void(const LookoutMetricsClient*, const Model::ListAnomalyGroupSummariesRequest&, const Model::ListAnomalyGroupSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAnomalyGroupSummariesResponseReceivedHandler;
     typedef std::function<void(const LookoutMetricsClient*, const Model::ListAnomalyGroupTimeSeriesRequest&, const Model::ListAnomalyGroupTimeSeriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAnomalyGroupTimeSeriesResponseReceivedHandler;
     typedef std::function<void(const LookoutMetricsClient*, const Model::ListMetricSetsRequest&, const Model::ListMetricSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMetricSetsResponseReceivedHandler;
@@ -679,6 +684,34 @@ namespace Model
         virtual void ListAnomalyDetectorsAsync(const Model::ListAnomalyDetectorsRequest& request, const ListAnomalyDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of measures that are potential causes or effects of an anomaly
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAnomalyGroupRelatedMetrics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAnomalyGroupRelatedMetricsOutcome ListAnomalyGroupRelatedMetrics(const Model::ListAnomalyGroupRelatedMetricsRequest& request) const;
+
+        /**
+         * <p>Returns a list of measures that are potential causes or effects of an anomaly
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAnomalyGroupRelatedMetrics">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAnomalyGroupRelatedMetricsOutcomeCallable ListAnomalyGroupRelatedMetricsCallable(const Model::ListAnomalyGroupRelatedMetricsRequest& request) const;
+
+        /**
+         * <p>Returns a list of measures that are potential causes or effects of an anomaly
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAnomalyGroupRelatedMetrics">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAnomalyGroupRelatedMetricsAsync(const Model::ListAnomalyGroupRelatedMetricsRequest& request, const ListAnomalyGroupRelatedMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a list of anomaly groups.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAnomalyGroupSummaries">AWS
          * API Reference</a></p>
@@ -956,6 +989,7 @@ namespace Model
         void GetSampleDataAsyncHelper(const Model::GetSampleDataRequest& request, const GetSampleDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAlertsAsyncHelper(const Model::ListAlertsRequest& request, const ListAlertsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAnomalyDetectorsAsyncHelper(const Model::ListAnomalyDetectorsRequest& request, const ListAnomalyDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListAnomalyGroupRelatedMetricsAsyncHelper(const Model::ListAnomalyGroupRelatedMetricsRequest& request, const ListAnomalyGroupRelatedMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAnomalyGroupSummariesAsyncHelper(const Model::ListAnomalyGroupSummariesRequest& request, const ListAnomalyGroupSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAnomalyGroupTimeSeriesAsyncHelper(const Model::ListAnomalyGroupTimeSeriesRequest& request, const ListAnomalyGroupTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMetricSetsAsyncHelper(const Model::ListMetricSetsRequest& request, const ListMetricSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

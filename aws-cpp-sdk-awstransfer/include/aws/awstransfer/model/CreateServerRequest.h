@@ -13,6 +13,7 @@
 #include <aws/awstransfer/model/IdentityProviderDetails.h>
 #include <aws/awstransfer/model/IdentityProviderType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/awstransfer/model/ProtocolDetails.h>
 #include <aws/awstransfer/model/WorkflowDetails.h>
 #include <aws/awstransfer/model/Protocol.h>
 #include <aws/awstransfer/model/Tag.h>
@@ -650,7 +651,7 @@ namespace Model
      * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
      * Gateway endpoint URL to call for authentication using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
-     * <code>LAMBDA</code> value to directly use a Lambda function as your identity
+     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
      * provider. If you choose this value, you must specify the ARN for the lambda
      * function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.</p>
@@ -670,7 +671,7 @@ namespace Model
      * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
      * Gateway endpoint URL to call for authentication using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
-     * <code>LAMBDA</code> value to directly use a Lambda function as your identity
+     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
      * provider. If you choose this value, you must specify the ARN for the lambda
      * function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.</p>
@@ -690,7 +691,7 @@ namespace Model
      * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
      * Gateway endpoint URL to call for authentication using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
-     * <code>LAMBDA</code> value to directly use a Lambda function as your identity
+     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
      * provider. If you choose this value, you must specify the ARN for the lambda
      * function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.</p>
@@ -710,7 +711,7 @@ namespace Model
      * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
      * Gateway endpoint URL to call for authentication using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
-     * <code>LAMBDA</code> value to directly use a Lambda function as your identity
+     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
      * provider. If you choose this value, you must specify the ARN for the lambda
      * function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.</p>
@@ -730,7 +731,7 @@ namespace Model
      * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
      * Gateway endpoint URL to call for authentication using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
-     * <code>LAMBDA</code> value to directly use a Lambda function as your identity
+     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
      * provider. If you choose this value, you must specify the ARN for the lambda
      * function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.</p>
@@ -750,7 +751,7 @@ namespace Model
      * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
      * Gateway endpoint URL to call for authentication using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
-     * <code>LAMBDA</code> value to directly use a Lambda function as your identity
+     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
      * provider. If you choose this value, you must specify the ARN for the lambda
      * function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.</p>
@@ -1009,6 +1010,73 @@ namespace Model
 
 
     /**
+     * <p>The protocol settings that are configured for your server.</p> <p> Use the
+     * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
+     * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
+     * address of a firewall, router, or load balancer. </p> <p>Use the
+     * <code>TlsSessionResumptionMode</code> parameter to determine whether or not your
+     * Transfer server resumes recent, negotiated sessions through a unique session
+     * ID.</p>
+     */
+    inline const ProtocolDetails& GetProtocolDetails() const{ return m_protocolDetails; }
+
+    /**
+     * <p>The protocol settings that are configured for your server.</p> <p> Use the
+     * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
+     * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
+     * address of a firewall, router, or load balancer. </p> <p>Use the
+     * <code>TlsSessionResumptionMode</code> parameter to determine whether or not your
+     * Transfer server resumes recent, negotiated sessions through a unique session
+     * ID.</p>
+     */
+    inline bool ProtocolDetailsHasBeenSet() const { return m_protocolDetailsHasBeenSet; }
+
+    /**
+     * <p>The protocol settings that are configured for your server.</p> <p> Use the
+     * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
+     * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
+     * address of a firewall, router, or load balancer. </p> <p>Use the
+     * <code>TlsSessionResumptionMode</code> parameter to determine whether or not your
+     * Transfer server resumes recent, negotiated sessions through a unique session
+     * ID.</p>
+     */
+    inline void SetProtocolDetails(const ProtocolDetails& value) { m_protocolDetailsHasBeenSet = true; m_protocolDetails = value; }
+
+    /**
+     * <p>The protocol settings that are configured for your server.</p> <p> Use the
+     * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
+     * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
+     * address of a firewall, router, or load balancer. </p> <p>Use the
+     * <code>TlsSessionResumptionMode</code> parameter to determine whether or not your
+     * Transfer server resumes recent, negotiated sessions through a unique session
+     * ID.</p>
+     */
+    inline void SetProtocolDetails(ProtocolDetails&& value) { m_protocolDetailsHasBeenSet = true; m_protocolDetails = std::move(value); }
+
+    /**
+     * <p>The protocol settings that are configured for your server.</p> <p> Use the
+     * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
+     * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
+     * address of a firewall, router, or load balancer. </p> <p>Use the
+     * <code>TlsSessionResumptionMode</code> parameter to determine whether or not your
+     * Transfer server resumes recent, negotiated sessions through a unique session
+     * ID.</p>
+     */
+    inline CreateServerRequest& WithProtocolDetails(const ProtocolDetails& value) { SetProtocolDetails(value); return *this;}
+
+    /**
+     * <p>The protocol settings that are configured for your server.</p> <p> Use the
+     * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
+     * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
+     * address of a firewall, router, or load balancer. </p> <p>Use the
+     * <code>TlsSessionResumptionMode</code> parameter to determine whether or not your
+     * Transfer server resumes recent, negotiated sessions through a unique session
+     * ID.</p>
+     */
+    inline CreateServerRequest& WithProtocolDetails(ProtocolDetails&& value) { SetProtocolDetails(std::move(value)); return *this;}
+
+
+    /**
      * <p>Specifies the name of the security policy that is attached to the server.</p>
      */
     inline const Aws::String& GetSecurityPolicyName() const{ return m_securityPolicyName; }
@@ -1154,6 +1222,9 @@ namespace Model
 
     Aws::Vector<Protocol> m_protocols;
     bool m_protocolsHasBeenSet;
+
+    ProtocolDetails m_protocolDetails;
+    bool m_protocolDetailsHasBeenSet;
 
     Aws::String m_securityPolicyName;
     bool m_securityPolicyNameHasBeenSet;

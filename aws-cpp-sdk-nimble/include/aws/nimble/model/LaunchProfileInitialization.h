@@ -29,7 +29,7 @@ namespace Model
 
   /**
    * <p>A Launch Profile Initialization contains information required for a
-   * workstation or server to connect to a launch profile</p> <p>This includes
+   * workstation or server to connect to a launch profile.</p> <p>This includes
    * scripts, endpoints, security groups, subnets, and other
    * configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/LaunchProfileInitialization">AWS

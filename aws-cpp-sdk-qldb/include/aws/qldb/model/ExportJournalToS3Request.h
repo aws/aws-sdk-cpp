@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/qldb/model/S3ExportConfiguration.h>
+#include <aws/qldb/model/OutputFormat.h>
 #include <utility>
 
 namespace Aws
@@ -256,8 +257,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal export job to do the following:</p> <ul> <li> <p>Write objects
      * into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> <li>
-     * <p>(Optional) Use your customer master key (CMK) in Key Management Service (KMS)
-     * for server-side encryption of your exported data.</p> </li> </ul>
+     * <p>(Optional) Use your customer managed key in Key Management Service (KMS) for
+     * server-side encryption of your exported data.</p> </li> </ul> <p>To pass a role
+     * to QLDB when requesting a journal export, you must have permissions to perform
+     * the <code>iam:PassRole</code> action on the IAM role resource. This is required
+     * for all journal export requests.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
@@ -265,8 +269,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal export job to do the following:</p> <ul> <li> <p>Write objects
      * into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> <li>
-     * <p>(Optional) Use your customer master key (CMK) in Key Management Service (KMS)
-     * for server-side encryption of your exported data.</p> </li> </ul>
+     * <p>(Optional) Use your customer managed key in Key Management Service (KMS) for
+     * server-side encryption of your exported data.</p> </li> </ul> <p>To pass a role
+     * to QLDB when requesting a journal export, you must have permissions to perform
+     * the <code>iam:PassRole</code> action on the IAM role resource. This is required
+     * for all journal export requests.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
@@ -274,8 +281,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal export job to do the following:</p> <ul> <li> <p>Write objects
      * into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> <li>
-     * <p>(Optional) Use your customer master key (CMK) in Key Management Service (KMS)
-     * for server-side encryption of your exported data.</p> </li> </ul>
+     * <p>(Optional) Use your customer managed key in Key Management Service (KMS) for
+     * server-side encryption of your exported data.</p> </li> </ul> <p>To pass a role
+     * to QLDB when requesting a journal export, you must have permissions to perform
+     * the <code>iam:PassRole</code> action on the IAM role resource. This is required
+     * for all journal export requests.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
@@ -283,8 +293,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal export job to do the following:</p> <ul> <li> <p>Write objects
      * into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> <li>
-     * <p>(Optional) Use your customer master key (CMK) in Key Management Service (KMS)
-     * for server-side encryption of your exported data.</p> </li> </ul>
+     * <p>(Optional) Use your customer managed key in Key Management Service (KMS) for
+     * server-side encryption of your exported data.</p> </li> </ul> <p>To pass a role
+     * to QLDB when requesting a journal export, you must have permissions to perform
+     * the <code>iam:PassRole</code> action on the IAM role resource. This is required
+     * for all journal export requests.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
@@ -292,8 +305,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal export job to do the following:</p> <ul> <li> <p>Write objects
      * into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> <li>
-     * <p>(Optional) Use your customer master key (CMK) in Key Management Service (KMS)
-     * for server-side encryption of your exported data.</p> </li> </ul>
+     * <p>(Optional) Use your customer managed key in Key Management Service (KMS) for
+     * server-side encryption of your exported data.</p> </li> </ul> <p>To pass a role
+     * to QLDB when requesting a journal export, you must have permissions to perform
+     * the <code>iam:PassRole</code> action on the IAM role resource. This is required
+     * for all journal export requests.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
@@ -301,8 +317,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal export job to do the following:</p> <ul> <li> <p>Write objects
      * into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> <li>
-     * <p>(Optional) Use your customer master key (CMK) in Key Management Service (KMS)
-     * for server-side encryption of your exported data.</p> </li> </ul>
+     * <p>(Optional) Use your customer managed key in Key Management Service (KMS) for
+     * server-side encryption of your exported data.</p> </li> </ul> <p>To pass a role
+     * to QLDB when requesting a journal export, you must have permissions to perform
+     * the <code>iam:PassRole</code> action on the IAM role resource. This is required
+     * for all journal export requests.</p>
      */
     inline ExportJournalToS3Request& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
@@ -310,8 +329,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal export job to do the following:</p> <ul> <li> <p>Write objects
      * into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> <li>
-     * <p>(Optional) Use your customer master key (CMK) in Key Management Service (KMS)
-     * for server-side encryption of your exported data.</p> </li> </ul>
+     * <p>(Optional) Use your customer managed key in Key Management Service (KMS) for
+     * server-side encryption of your exported data.</p> </li> </ul> <p>To pass a role
+     * to QLDB when requesting a journal export, you must have permissions to perform
+     * the <code>iam:PassRole</code> action on the IAM role resource. This is required
+     * for all journal export requests.</p>
      */
     inline ExportJournalToS3Request& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
@@ -319,10 +341,50 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal export job to do the following:</p> <ul> <li> <p>Write objects
      * into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> <li>
-     * <p>(Optional) Use your customer master key (CMK) in Key Management Service (KMS)
-     * for server-side encryption of your exported data.</p> </li> </ul>
+     * <p>(Optional) Use your customer managed key in Key Management Service (KMS) for
+     * server-side encryption of your exported data.</p> </li> </ul> <p>To pass a role
+     * to QLDB when requesting a journal export, you must have permissions to perform
+     * the <code>iam:PassRole</code> action on the IAM role resource. This is required
+     * for all journal export requests.</p>
      */
     inline ExportJournalToS3Request& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
+
+    /**
+     * <p>The output format of your exported journal data. If this parameter is not
+     * specified, the exported data defaults to <code>ION_TEXT</code> format.</p>
+     */
+    inline const OutputFormat& GetOutputFormat() const{ return m_outputFormat; }
+
+    /**
+     * <p>The output format of your exported journal data. If this parameter is not
+     * specified, the exported data defaults to <code>ION_TEXT</code> format.</p>
+     */
+    inline bool OutputFormatHasBeenSet() const { return m_outputFormatHasBeenSet; }
+
+    /**
+     * <p>The output format of your exported journal data. If this parameter is not
+     * specified, the exported data defaults to <code>ION_TEXT</code> format.</p>
+     */
+    inline void SetOutputFormat(const OutputFormat& value) { m_outputFormatHasBeenSet = true; m_outputFormat = value; }
+
+    /**
+     * <p>The output format of your exported journal data. If this parameter is not
+     * specified, the exported data defaults to <code>ION_TEXT</code> format.</p>
+     */
+    inline void SetOutputFormat(OutputFormat&& value) { m_outputFormatHasBeenSet = true; m_outputFormat = std::move(value); }
+
+    /**
+     * <p>The output format of your exported journal data. If this parameter is not
+     * specified, the exported data defaults to <code>ION_TEXT</code> format.</p>
+     */
+    inline ExportJournalToS3Request& WithOutputFormat(const OutputFormat& value) { SetOutputFormat(value); return *this;}
+
+    /**
+     * <p>The output format of your exported journal data. If this parameter is not
+     * specified, the exported data defaults to <code>ION_TEXT</code> format.</p>
+     */
+    inline ExportJournalToS3Request& WithOutputFormat(OutputFormat&& value) { SetOutputFormat(std::move(value)); return *this;}
 
   private:
 
@@ -340,6 +402,9 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
+    OutputFormat m_outputFormat;
+    bool m_outputFormatHasBeenSet;
   };
 
 } // namespace Model

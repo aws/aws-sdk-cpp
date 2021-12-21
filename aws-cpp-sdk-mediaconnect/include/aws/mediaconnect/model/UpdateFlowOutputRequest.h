@@ -273,22 +273,26 @@ namespace Model
 
 
     /**
-     * The maximum latency in milliseconds for Zixi-based streams.
+     * The maximum latency in milliseconds. This parameter applies only to RIST-based,
+     * Zixi-based, and Fujitsu-based streams.
      */
     inline int GetMaxLatency() const{ return m_maxLatency; }
 
     /**
-     * The maximum latency in milliseconds for Zixi-based streams.
+     * The maximum latency in milliseconds. This parameter applies only to RIST-based,
+     * Zixi-based, and Fujitsu-based streams.
      */
     inline bool MaxLatencyHasBeenSet() const { return m_maxLatencyHasBeenSet; }
 
     /**
-     * The maximum latency in milliseconds for Zixi-based streams.
+     * The maximum latency in milliseconds. This parameter applies only to RIST-based,
+     * Zixi-based, and Fujitsu-based streams.
      */
     inline void SetMaxLatency(int value) { m_maxLatencyHasBeenSet = true; m_maxLatency = value; }
 
     /**
-     * The maximum latency in milliseconds for Zixi-based streams.
+     * The maximum latency in milliseconds. This parameter applies only to RIST-based,
+     * Zixi-based, and Fujitsu-based streams.
      */
     inline UpdateFlowOutputRequest& WithMaxLatency(int value) { SetMaxLatency(value); return *this;}
 
@@ -514,6 +518,80 @@ namespace Model
 
 
     /**
+     * The port that the flow uses to send outbound requests to initiate connection
+     * with the sender.
+     */
+    inline int GetSenderControlPort() const{ return m_senderControlPort; }
+
+    /**
+     * The port that the flow uses to send outbound requests to initiate connection
+     * with the sender.
+     */
+    inline bool SenderControlPortHasBeenSet() const { return m_senderControlPortHasBeenSet; }
+
+    /**
+     * The port that the flow uses to send outbound requests to initiate connection
+     * with the sender.
+     */
+    inline void SetSenderControlPort(int value) { m_senderControlPortHasBeenSet = true; m_senderControlPort = value; }
+
+    /**
+     * The port that the flow uses to send outbound requests to initiate connection
+     * with the sender.
+     */
+    inline UpdateFlowOutputRequest& WithSenderControlPort(int value) { SetSenderControlPort(value); return *this;}
+
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline const Aws::String& GetSenderIpAddress() const{ return m_senderIpAddress; }
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline bool SenderIpAddressHasBeenSet() const { return m_senderIpAddressHasBeenSet; }
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline void SetSenderIpAddress(const Aws::String& value) { m_senderIpAddressHasBeenSet = true; m_senderIpAddress = value; }
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline void SetSenderIpAddress(Aws::String&& value) { m_senderIpAddressHasBeenSet = true; m_senderIpAddress = std::move(value); }
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline void SetSenderIpAddress(const char* value) { m_senderIpAddressHasBeenSet = true; m_senderIpAddress.assign(value); }
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline UpdateFlowOutputRequest& WithSenderIpAddress(const Aws::String& value) { SetSenderIpAddress(value); return *this;}
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline UpdateFlowOutputRequest& WithSenderIpAddress(Aws::String&& value) { SetSenderIpAddress(std::move(value)); return *this;}
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline UpdateFlowOutputRequest& WithSenderIpAddress(const char* value) { SetSenderIpAddress(value); return *this;}
+
+
+    /**
      * The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
      */
     inline int GetSmoothingLatency() const{ return m_smoothingLatency; }
@@ -650,6 +728,12 @@ namespace Model
 
     Aws::String m_remoteId;
     bool m_remoteIdHasBeenSet;
+
+    int m_senderControlPort;
+    bool m_senderControlPortHasBeenSet;
+
+    Aws::String m_senderIpAddress;
+    bool m_senderIpAddressHasBeenSet;
 
     int m_smoothingLatency;
     bool m_smoothingLatencyHasBeenSet;

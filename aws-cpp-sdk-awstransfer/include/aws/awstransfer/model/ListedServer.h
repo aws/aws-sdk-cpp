@@ -141,7 +141,7 @@ namespace Model
      * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
      * Gateway endpoint URL to call for authentication using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
-     * <code>LAMBDA</code> value to directly use a Lambda function as your identity
+     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
      * provider. If you choose this value, you must specify the ARN for the lambda
      * function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.</p>
@@ -161,7 +161,7 @@ namespace Model
      * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
      * Gateway endpoint URL to call for authentication using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
-     * <code>LAMBDA</code> value to directly use a Lambda function as your identity
+     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
      * provider. If you choose this value, you must specify the ARN for the lambda
      * function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.</p>
@@ -181,7 +181,7 @@ namespace Model
      * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
      * Gateway endpoint URL to call for authentication using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
-     * <code>LAMBDA</code> value to directly use a Lambda function as your identity
+     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
      * provider. If you choose this value, you must specify the ARN for the lambda
      * function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.</p>
@@ -201,7 +201,7 @@ namespace Model
      * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
      * Gateway endpoint URL to call for authentication using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
-     * <code>LAMBDA</code> value to directly use a Lambda function as your identity
+     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
      * provider. If you choose this value, you must specify the ARN for the lambda
      * function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.</p>
@@ -221,7 +221,7 @@ namespace Model
      * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
      * Gateway endpoint URL to call for authentication using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
-     * <code>LAMBDA</code> value to directly use a Lambda function as your identity
+     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
      * provider. If you choose this value, you must specify the ARN for the lambda
      * function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.</p>
@@ -241,7 +241,7 @@ namespace Model
      * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
      * Gateway endpoint URL to call for authentication using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
-     * <code>LAMBDA</code> value to directly use a Lambda function as your identity
+     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
      * provider. If you choose this value, you must specify the ARN for the lambda
      * function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.</p>

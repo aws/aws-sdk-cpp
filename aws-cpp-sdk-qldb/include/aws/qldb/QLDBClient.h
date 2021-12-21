@@ -225,16 +225,16 @@ namespace Model
         virtual void CancelJournalKinesisStreamAsync(const Model::CancelJournalKinesisStreamRequest& request, const CancelJournalKinesisStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new ledger in your account in the current Region.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new ledger in your Amazon Web Services account in the current
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CreateLedger">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateLedgerOutcome CreateLedger(const Model::CreateLedgerRequest& request) const;
 
         /**
-         * <p>Creates a new ledger in your account in the current Region.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new ledger in your Amazon Web Services account in the current
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CreateLedger">AWS
          * API Reference</a></p>
          *
@@ -243,8 +243,8 @@ namespace Model
         virtual Model::CreateLedgerOutcomeCallable CreateLedgerCallable(const Model::CreateLedgerRequest& request) const;
 
         /**
-         * <p>Creates a new ledger in your account in the current Region.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new ledger in your Amazon Web Services account in the current
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CreateLedger">AWS
          * API Reference</a></p>
          *
@@ -417,9 +417,15 @@ namespace Model
 
         /**
          * <p>Exports journal contents within a date and time range from a ledger into a
-         * specified Amazon Simple Storage Service (Amazon S3) bucket. The data is written
-         * as files in Amazon Ion format.</p> <p>If the ledger with the given
-         * <code>Name</code> doesn't exist, then throws
+         * specified Amazon Simple Storage Service (Amazon S3) bucket. A journal export job
+         * can write the data objects in either the text or binary representation of Amazon
+         * Ion format, or in <i>JSON Lines</i> text format.</p> <p>In JSON Lines format,
+         * each journal block in the exported data object is a valid JSON object that is
+         * delimited by a newline. You can use this format to easily integrate JSON exports
+         * with analytics tools such as Glue and Amazon Athena because these services can
+         * parse newline-delimited JSON automatically. For more information about the
+         * format, see <a href="https://jsonlines.org/">JSON Lines</a>.</p> <p>If the
+         * ledger with the given <code>Name</code> doesn't exist, then throws
          * <code>ResourceNotFoundException</code>.</p> <p>If the ledger with the given
          * <code>Name</code> is in <code>CREATING</code> status, then throws
          * <code>ResourcePreconditionNotMetException</code>.</p> <p>You can initiate up to
@@ -433,9 +439,15 @@ namespace Model
 
         /**
          * <p>Exports journal contents within a date and time range from a ledger into a
-         * specified Amazon Simple Storage Service (Amazon S3) bucket. The data is written
-         * as files in Amazon Ion format.</p> <p>If the ledger with the given
-         * <code>Name</code> doesn't exist, then throws
+         * specified Amazon Simple Storage Service (Amazon S3) bucket. A journal export job
+         * can write the data objects in either the text or binary representation of Amazon
+         * Ion format, or in <i>JSON Lines</i> text format.</p> <p>In JSON Lines format,
+         * each journal block in the exported data object is a valid JSON object that is
+         * delimited by a newline. You can use this format to easily integrate JSON exports
+         * with analytics tools such as Glue and Amazon Athena because these services can
+         * parse newline-delimited JSON automatically. For more information about the
+         * format, see <a href="https://jsonlines.org/">JSON Lines</a>.</p> <p>If the
+         * ledger with the given <code>Name</code> doesn't exist, then throws
          * <code>ResourceNotFoundException</code>.</p> <p>If the ledger with the given
          * <code>Name</code> is in <code>CREATING</code> status, then throws
          * <code>ResourcePreconditionNotMetException</code>.</p> <p>You can initiate up to
@@ -451,9 +463,15 @@ namespace Model
 
         /**
          * <p>Exports journal contents within a date and time range from a ledger into a
-         * specified Amazon Simple Storage Service (Amazon S3) bucket. The data is written
-         * as files in Amazon Ion format.</p> <p>If the ledger with the given
-         * <code>Name</code> doesn't exist, then throws
+         * specified Amazon Simple Storage Service (Amazon S3) bucket. A journal export job
+         * can write the data objects in either the text or binary representation of Amazon
+         * Ion format, or in <i>JSON Lines</i> text format.</p> <p>In JSON Lines format,
+         * each journal block in the exported data object is a valid JSON object that is
+         * delimited by a newline. You can use this format to easily integrate JSON exports
+         * with analytics tools such as Glue and Amazon Athena because these services can
+         * parse newline-delimited JSON automatically. For more information about the
+         * format, see <a href="https://jsonlines.org/">JSON Lines</a>.</p> <p>If the
+         * ledger with the given <code>Name</code> doesn't exist, then throws
          * <code>ResourceNotFoundException</code>.</p> <p>If the ledger with the given
          * <code>Name</code> is in <code>CREATING</code> status, then throws
          * <code>ResourcePreconditionNotMetException</code>.</p> <p>You can initiate up to
@@ -638,11 +656,11 @@ namespace Model
 
         /**
          * <p>Returns an array of journal export job descriptions for all ledgers that are
-         * associated with the current account and Region.</p> <p>This action returns a
-         * maximum of <code>MaxResults</code> items, and is paginated so that you can
-         * retrieve all the items by calling <code>ListJournalS3Exports</code> multiple
-         * times.</p> <p>This action does not return any expired export jobs. For more
-         * information, see <a
+         * associated with the current Amazon Web Services account and Region.</p> <p>This
+         * action returns a maximum of <code>MaxResults</code> items, and is paginated so
+         * that you can retrieve all the items by calling <code>ListJournalS3Exports</code>
+         * multiple times.</p> <p>This action does not return any expired export jobs. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
          * job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -653,11 +671,11 @@ namespace Model
 
         /**
          * <p>Returns an array of journal export job descriptions for all ledgers that are
-         * associated with the current account and Region.</p> <p>This action returns a
-         * maximum of <code>MaxResults</code> items, and is paginated so that you can
-         * retrieve all the items by calling <code>ListJournalS3Exports</code> multiple
-         * times.</p> <p>This action does not return any expired export jobs. For more
-         * information, see <a
+         * associated with the current Amazon Web Services account and Region.</p> <p>This
+         * action returns a maximum of <code>MaxResults</code> items, and is paginated so
+         * that you can retrieve all the items by calling <code>ListJournalS3Exports</code>
+         * multiple times.</p> <p>This action does not return any expired export jobs. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
          * job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -670,11 +688,11 @@ namespace Model
 
         /**
          * <p>Returns an array of journal export job descriptions for all ledgers that are
-         * associated with the current account and Region.</p> <p>This action returns a
-         * maximum of <code>MaxResults</code> items, and is paginated so that you can
-         * retrieve all the items by calling <code>ListJournalS3Exports</code> multiple
-         * times.</p> <p>This action does not return any expired export jobs. For more
-         * information, see <a
+         * associated with the current Amazon Web Services account and Region.</p> <p>This
+         * action returns a maximum of <code>MaxResults</code> items, and is paginated so
+         * that you can retrieve all the items by calling <code>ListJournalS3Exports</code>
+         * multiple times.</p> <p>This action does not return any expired export jobs. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
          * job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -733,8 +751,8 @@ namespace Model
 
         /**
          * <p>Returns an array of ledger summaries that are associated with the current
-         * account and Region.</p> <p>This action returns a maximum of 100 items and is
-         * paginated so that you can retrieve all the items by calling
+         * Amazon Web Services account and Region.</p> <p>This action returns a maximum of
+         * 100 items and is paginated so that you can retrieve all the items by calling
          * <code>ListLedgers</code> multiple times.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListLedgers">AWS
          * API Reference</a></p>
@@ -743,8 +761,8 @@ namespace Model
 
         /**
          * <p>Returns an array of ledger summaries that are associated with the current
-         * account and Region.</p> <p>This action returns a maximum of 100 items and is
-         * paginated so that you can retrieve all the items by calling
+         * Amazon Web Services account and Region.</p> <p>This action returns a maximum of
+         * 100 items and is paginated so that you can retrieve all the items by calling
          * <code>ListLedgers</code> multiple times.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListLedgers">AWS
          * API Reference</a></p>
@@ -755,8 +773,8 @@ namespace Model
 
         /**
          * <p>Returns an array of ledger summaries that are associated with the current
-         * account and Region.</p> <p>This action returns a maximum of 100 items and is
-         * paginated so that you can retrieve all the items by calling
+         * Amazon Web Services account and Region.</p> <p>This action returns a maximum of
+         * 100 items and is paginated so that you can retrieve all the items by calling
          * <code>ListLedgers</code> multiple times.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListLedgers">AWS
          * API Reference</a></p>

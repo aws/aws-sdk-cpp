@@ -30,6 +30,9 @@ UpdateFlowSourceRequest::UpdateFlowSourceRequest() :
     m_minLatencyHasBeenSet(false),
     m_protocol(Protocol::NOT_SET),
     m_protocolHasBeenSet(false),
+    m_senderControlPort(0),
+    m_senderControlPortHasBeenSet(false),
+    m_senderIpAddressHasBeenSet(false),
     m_sourceArnHasBeenSet(false),
     m_streamIdHasBeenSet(false),
     m_vpcInterfaceNameHasBeenSet(false),
@@ -103,6 +106,18 @@ Aws::String UpdateFlowSourceRequest::SerializePayload() const
   if(m_protocolHasBeenSet)
   {
    payload.WithString("protocol", ProtocolMapper::GetNameForProtocol(m_protocol));
+  }
+
+  if(m_senderControlPortHasBeenSet)
+  {
+   payload.WithInteger("senderControlPort", m_senderControlPort);
+
+  }
+
+  if(m_senderIpAddressHasBeenSet)
+  {
+   payload.WithString("senderIpAddress", m_senderIpAddress);
+
   }
 
   if(m_streamIdHasBeenSet)

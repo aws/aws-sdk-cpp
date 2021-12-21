@@ -21,14 +21,18 @@ namespace Model
 ChannelMessageCallback::ChannelMessageCallback() : 
     m_messageIdHasBeenSet(false),
     m_contentHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+    m_metadataHasBeenSet(false),
+    m_pushNotificationHasBeenSet(false),
+    m_messageAttributesHasBeenSet(false)
 {
 }
 
 ChannelMessageCallback::ChannelMessageCallback(JsonView jsonValue) : 
     m_messageIdHasBeenSet(false),
     m_contentHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+    m_metadataHasBeenSet(false),
+    m_pushNotificationHasBeenSet(false),
+    m_messageAttributesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +60,23 @@ ChannelMessageCallback& ChannelMessageCallback::operator =(JsonView jsonValue)
     m_metadataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PushNotification"))
+  {
+    m_pushNotification = jsonValue.GetObject("PushNotification");
+
+    m_pushNotificationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MessageAttributes"))
+  {
+    Aws::Map<Aws::String, JsonView> messageAttributesJsonMap = jsonValue.GetObject("MessageAttributes").GetAllObjects();
+    for(auto& messageAttributesItem : messageAttributesJsonMap)
+    {
+      m_messageAttributes[messageAttributesItem.first] = messageAttributesItem.second.AsObject();
+    }
+    m_messageAttributesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +99,23 @@ JsonValue ChannelMessageCallback::Jsonize() const
   if(m_metadataHasBeenSet)
   {
    payload.WithString("Metadata", m_metadata);
+
+  }
+
+  if(m_pushNotificationHasBeenSet)
+  {
+   payload.WithObject("PushNotification", m_pushNotification.Jsonize());
+
+  }
+
+  if(m_messageAttributesHasBeenSet)
+  {
+   JsonValue messageAttributesJsonMap;
+   for(auto& messageAttributesItem : m_messageAttributes)
+   {
+     messageAttributesJsonMap.WithObject(messageAttributesItem.first, messageAttributesItem.second.Jsonize());
+   }
+   payload.WithObject("MessageAttributes", std::move(messageAttributesJsonMap));
 
   }
 

@@ -29,6 +29,9 @@ UpdateFlowOutputRequest::UpdateFlowOutputRequest() :
     m_protocol(Protocol::NOT_SET),
     m_protocolHasBeenSet(false),
     m_remoteIdHasBeenSet(false),
+    m_senderControlPort(0),
+    m_senderControlPortHasBeenSet(false),
+    m_senderIpAddressHasBeenSet(false),
     m_smoothingLatency(0),
     m_smoothingLatencyHasBeenSet(false),
     m_streamIdHasBeenSet(false),
@@ -106,6 +109,18 @@ Aws::String UpdateFlowOutputRequest::SerializePayload() const
   if(m_remoteIdHasBeenSet)
   {
    payload.WithString("remoteId", m_remoteId);
+
+  }
+
+  if(m_senderControlPortHasBeenSet)
+  {
+   payload.WithInteger("senderControlPort", m_senderControlPort);
+
+  }
+
+  if(m_senderIpAddressHasBeenSet)
+  {
+   payload.WithString("senderIpAddress", m_senderIpAddress);
 
   }
 

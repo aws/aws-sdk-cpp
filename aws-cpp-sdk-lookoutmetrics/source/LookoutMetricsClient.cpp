@@ -36,6 +36,7 @@
 #include <aws/lookoutmetrics/model/GetSampleDataRequest.h>
 #include <aws/lookoutmetrics/model/ListAlertsRequest.h>
 #include <aws/lookoutmetrics/model/ListAnomalyDetectorsRequest.h>
+#include <aws/lookoutmetrics/model/ListAnomalyGroupRelatedMetricsRequest.h>
 #include <aws/lookoutmetrics/model/ListAnomalyGroupSummariesRequest.h>
 #include <aws/lookoutmetrics/model/ListAnomalyGroupTimeSeriesRequest.h>
 #include <aws/lookoutmetrics/model/ListMetricSetsRequest.h>
@@ -517,6 +518,31 @@ void LookoutMetricsClient::ListAnomalyDetectorsAsync(const ListAnomalyDetectorsR
 void LookoutMetricsClient::ListAnomalyDetectorsAsyncHelper(const ListAnomalyDetectorsRequest& request, const ListAnomalyDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListAnomalyDetectors(request), context);
+}
+
+ListAnomalyGroupRelatedMetricsOutcome LookoutMetricsClient::ListAnomalyGroupRelatedMetrics(const ListAnomalyGroupRelatedMetricsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/ListAnomalyGroupRelatedMetrics");
+  return ListAnomalyGroupRelatedMetricsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAnomalyGroupRelatedMetricsOutcomeCallable LookoutMetricsClient::ListAnomalyGroupRelatedMetricsCallable(const ListAnomalyGroupRelatedMetricsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAnomalyGroupRelatedMetricsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAnomalyGroupRelatedMetrics(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LookoutMetricsClient::ListAnomalyGroupRelatedMetricsAsync(const ListAnomalyGroupRelatedMetricsRequest& request, const ListAnomalyGroupRelatedMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAnomalyGroupRelatedMetricsAsyncHelper( request, handler, context ); } );
+}
+
+void LookoutMetricsClient::ListAnomalyGroupRelatedMetricsAsyncHelper(const ListAnomalyGroupRelatedMetricsRequest& request, const ListAnomalyGroupRelatedMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAnomalyGroupRelatedMetrics(request), context);
 }
 
 ListAnomalyGroupSummariesOutcome LookoutMetricsClient::ListAnomalyGroupSummaries(const ListAnomalyGroupSummariesRequest& request) const

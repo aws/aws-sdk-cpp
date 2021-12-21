@@ -28,6 +28,7 @@ namespace Aws
         static const int st2110_jpegxs_HASH = HashingUtils::HashString("st2110-jpegxs");
         static const int cdi_HASH = HashingUtils::HashString("cdi");
         static const int srt_listener_HASH = HashingUtils::HashString("srt-listener");
+        static const int fujitsu_qos_HASH = HashingUtils::HashString("fujitsu-qos");
 
 
         Protocol GetProtocolForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return Protocol::srt_listener;
           }
+          else if (hashCode == fujitsu_qos_HASH)
+          {
+            return Protocol::fujitsu_qos;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -95,6 +100,8 @@ namespace Aws
             return "cdi";
           case Protocol::srt_listener:
             return "srt-listener";
+          case Protocol::fujitsu_qos:
+            return "fujitsu-qos";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

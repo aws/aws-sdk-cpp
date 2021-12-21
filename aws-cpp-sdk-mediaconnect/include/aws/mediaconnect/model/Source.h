@@ -352,6 +352,80 @@ namespace Model
 
 
     /**
+     * The port that the flow uses to send outbound requests to initiate connection
+     * with the sender.
+     */
+    inline int GetSenderControlPort() const{ return m_senderControlPort; }
+
+    /**
+     * The port that the flow uses to send outbound requests to initiate connection
+     * with the sender.
+     */
+    inline bool SenderControlPortHasBeenSet() const { return m_senderControlPortHasBeenSet; }
+
+    /**
+     * The port that the flow uses to send outbound requests to initiate connection
+     * with the sender.
+     */
+    inline void SetSenderControlPort(int value) { m_senderControlPortHasBeenSet = true; m_senderControlPort = value; }
+
+    /**
+     * The port that the flow uses to send outbound requests to initiate connection
+     * with the sender.
+     */
+    inline Source& WithSenderControlPort(int value) { SetSenderControlPort(value); return *this;}
+
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline const Aws::String& GetSenderIpAddress() const{ return m_senderIpAddress; }
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline bool SenderIpAddressHasBeenSet() const { return m_senderIpAddressHasBeenSet; }
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline void SetSenderIpAddress(const Aws::String& value) { m_senderIpAddressHasBeenSet = true; m_senderIpAddress = value; }
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline void SetSenderIpAddress(Aws::String&& value) { m_senderIpAddressHasBeenSet = true; m_senderIpAddress = std::move(value); }
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline void SetSenderIpAddress(const char* value) { m_senderIpAddressHasBeenSet = true; m_senderIpAddress.assign(value); }
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline Source& WithSenderIpAddress(const Aws::String& value) { SetSenderIpAddress(value); return *this;}
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline Source& WithSenderIpAddress(Aws::String&& value) { SetSenderIpAddress(std::move(value)); return *this;}
+
+    /**
+     * The IP address that the flow communicates with to initiate connection with the
+     * sender.
+     */
+    inline Source& WithSenderIpAddress(const char* value) { SetSenderIpAddress(value); return *this;}
+
+
+    /**
      * The ARN of the source.
      */
     inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
@@ -545,6 +619,12 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    int m_senderControlPort;
+    bool m_senderControlPortHasBeenSet;
+
+    Aws::String m_senderIpAddress;
+    bool m_senderIpAddressHasBeenSet;
 
     Aws::String m_sourceArn;
     bool m_sourceArnHasBeenSet;
