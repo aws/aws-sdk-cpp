@@ -44,6 +44,8 @@ namespace Aws
             inline void SetSsoAccountId(const Aws::String& value) { m_ssoAccountId = value; }
             inline const Aws::String& GetSsoRoleName() const { return m_ssoRoleName; }
             inline void SetSsoRoleName(const Aws::String& value) { m_ssoRoleName = value; }
+            inline const Aws::String& GetDefaultsMode() const { return m_defaultsMode; }
+            inline void SetDefaultsMode(const Aws::String& value) { m_defaultsMode = value; }
             inline const Aws::String& GetSourceProfile() const { return m_sourceProfile; }
             inline void SetSourceProfile(const Aws::String& value ) { m_sourceProfile = value; }
             inline const Aws::String& GetCredentialProcess() const { return m_credentialProcess; }
@@ -68,6 +70,7 @@ namespace Aws
             Aws::String m_ssoRegion;
             Aws::String m_ssoAccountId;
             Aws::String m_ssoRoleName;
+            Aws::String m_defaultsMode;
             Aws::Map<Aws::String, Aws::String> m_allKeyValPairs;
         };
 

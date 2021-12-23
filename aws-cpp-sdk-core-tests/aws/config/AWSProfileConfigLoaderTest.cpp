@@ -82,6 +82,8 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileLoad)
     ASSERT_TRUE(profiles["sso-test"].GetCredentials().GetAWSAccessKeyId().empty());
     ASSERT_TRUE(profiles["sso-test"].GetCredentials().GetSessionToken().empty());
     ASSERT_TRUE(profiles["sso-test"].GetCredentials().GetAWSSecretKey().empty());
+
+    Aws::FileSystem::RemoveFileIfExists(configFile.GetFileName().c_str());
 }
 
 TEST(AWSConfigFileProfileConfigLoaderTest, TestConfigFileLoad)
@@ -122,6 +124,8 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestConfigFileLoad)
     ASSERT_TRUE(profiles["sso-test"].GetCredentials().GetAWSAccessKeyId().empty());
     ASSERT_TRUE(profiles["sso-test"].GetCredentials().GetSessionToken().empty());
     ASSERT_TRUE(profiles["sso-test"].GetCredentials().GetAWSSecretKey().empty());
+
+    Aws::FileSystem::RemoveFileIfExists(configFile.GetFileName().c_str());
 }
 
 TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileEmpty)

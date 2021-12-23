@@ -141,7 +141,7 @@ public:
 
 protected:
     RetryTokenBucket m_retryTokenBucket;
-    bool m_fastFail;
+    bool m_fastFail = false;
 
 private:
     /**

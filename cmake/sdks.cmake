@@ -2,7 +2,7 @@ include(sdksCommon)
 
 set(SDK_DEPENDENCY_BUILD_LIST "")
 
-if(REGENERATE_CLIENTS)
+if(REGENERATE_CLIENTS OR REGENERATE_DEFAULTS)
     message(STATUS "Checking for SDK generation requirements")
     include(FindJava)
 
@@ -77,6 +77,13 @@ if(ADD_CUSTOM_CLIENTS OR REGENERATE_CLIENTS)
     )
 endif()
 
+if(REGENERATE_DEFAULTS)
+    execute_process(
+            COMMAND ${PYTHON_CMD} scripts/generate_defaults.py --prepareTools
+            WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+    )
+endif()
+
 
 if(ENABLE_VIRTUAL_OPERATIONS) # it could be set to 0/1 or ON/OFF
     set(ENABLE_VIRTUAL_OPERATIONS_ARG "--enableVirtualOperations")
@@ -109,6 +116,25 @@ if(REGENERATE_CLIENTS)
         endif()
     endforeach()
 endif()
+
+if(REGENERATE_DEFAULTS)
+    message(STATUS "Regenerating default client configurations.")
+
+    if(TRUE )#EXISTS ${SDK_C2J_FILE})
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --clientConfigDefaults "${CMAKE_CURRENT_SOURCE_DIR}/code-generation/defaults/sdk-default-configuration.json" --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+        message(STATUS "Generated defaults into ${CMAKE_CURRENT_SOURCE_DIR}")
+    else()
+        message(STATUS "Defaults configuration missing")
+    endif()
+
+    set(MERGED_BUILD_LIST ${SDK_BUILD_LIST})
+    list(APPEND MERGED_BUILD_LIST ${SDK_DEPENDENCY_BUILD_LIST})
+    LIST(REMOVE_DUPLICATES MERGED_BUILD_LIST)
+endif()
+
 
 #at this point, if user has specified some customized clients, generate them and add them to the build here.
 foreach(custom_client ${ADD_CUSTOM_CLIENTS})

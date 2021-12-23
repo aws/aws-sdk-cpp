@@ -269,6 +269,7 @@ Mappings:
               - mkdir build
               - cd build
               - cmake .. -DREGENERATE_CLIENTS=ON
+              - cmake .. -DREGENERATE_DEFAULTS=ON
               - cd ..
               - rm -rf build
           post_build:

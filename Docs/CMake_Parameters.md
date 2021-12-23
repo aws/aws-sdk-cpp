@@ -22,6 +22,12 @@ This argument will wipe out all generated code and generate the client directori
 -DREGENERATE_CLIENTS=1
 ```
 
+### REGENERATE_DEFAULTS
+This argument will wipe out all generated defaults code and generate it again from the code-generation/defaults folder. To use this argument, you need to have python 2.7, java, jdk1.8, and maven installed in your executable path. Example:
+```sh
+-DREGENERATE_DEFAULTS=1
+```
+
 ### CUSTOM_MEMORY_MANAGEMENT
 To use a custom memory manager, set the value to ON. You can install a custom allocator, and all STL types will use the custom allocation interface. If the value is set to OFF, you still might want to use the STL template types to help with DLL safety on Windows.
 

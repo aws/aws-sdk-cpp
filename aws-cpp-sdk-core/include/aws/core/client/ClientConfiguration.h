@@ -60,6 +60,13 @@ namespace Aws
             ClientConfiguration(const char* profileName);
 
             /**
+             * Create a configuration with a predefined smart defaults
+             * @param useSmartDefaults, required to differentiate c-tors
+             * @param defaultMode, default mode to use
+             */
+            explicit ClientConfiguration(bool useSmartDefaults, const char* defaultMode = "legacy");
+
+            /**
              * User Agent string user for http calls. This is filled in for you in the constructor. Don't override this unless you have a really good reason.
              */
             Aws::String userAgent;
@@ -114,7 +121,7 @@ namespace Aws
              */
             unsigned long lowSpeedLimit;
             /**
-             * Strategy to use in case of failed requests. Default is DefaultRetryStrategy (e.g. exponential backoff)
+             * Strategy to use in case of failed requests. Default is DefaultRetryStrategy (i.e. exponential backoff)
              */
             std::shared_ptr<RetryStrategy> retryStrategy;
             /**
@@ -247,6 +254,12 @@ namespace Aws
              */
             Aws::String profileName;
         };
+
+        /**
+         * A helper function to initialize a retry strategy.
+         * Default is DefaultRetryStrategy (i.e. exponential backoff)
+         */
+        std::shared_ptr<RetryStrategy> InitRetryStrategy(Aws::String retryMode = "");
 
     } // namespace Client
 } // namespace Aws

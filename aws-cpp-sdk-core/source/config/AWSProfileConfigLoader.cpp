@@ -76,6 +76,7 @@ namespace Aws
         static const char CREDENTIAL_PROCESS_COMMAND[]       = "credential_process";
         static const char SOURCE_PROFILE_KEY[]               = "source_profile";
         static const char PROFILE_PREFIX[]                   = "profile ";
+        static const char DEFAULTS_MODE[]                    = "defaults_mode";
         static const char EQ                                 = '=';
         static const char LEFT_BRACKET                       = '[';
         static const char RIGHT_BRACKET                      = ']';
@@ -243,6 +244,13 @@ namespace Aws
                         profile.SetCredentialProcess(credentialProcessIter->second);
                     }
                     profile.SetAllKeyValPairs(m_profileKeyValuePairs);
+
+                    auto defaultsModeIter = m_profileKeyValuePairs.find(DEFAULTS_MODE);
+                    if (defaultsModeIter != m_profileKeyValuePairs.end())
+                    {
+                        AWS_LOGSTREAM_DEBUG(PARSER_TAG, "found defaults mode " << defaultsModeIter->second);
+                        profile.SetDefaultsMode(defaultsModeIter->second);
+                    }
 
                     m_foundProfiles[profile.GetName()] = std::move(profile);
                     m_currentWorkingProfile.clear();
