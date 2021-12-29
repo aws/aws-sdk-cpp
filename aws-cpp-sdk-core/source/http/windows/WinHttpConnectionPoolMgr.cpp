@@ -7,7 +7,7 @@
 
 #include <aws/core/utils/StringUtils.h>
 
-#include <Windows.h>
+#include <windows.h>
 #include <winhttp.h>
 
 using namespace Aws::Http;

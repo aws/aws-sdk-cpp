@@ -14,6 +14,10 @@
 #pragma warning(disable : 4592)
 #endif
 
+#ifdef interface
+#undef interface
+#endif
+
 namespace Aws
 {
     namespace Monitoring

@@ -147,7 +147,7 @@ elseif(ENABLE_WINDOWS_CLIENT)
         # https://docs.microsoft.com/en-us/windows/desktop/WinHttp/option-flags#WINHTTP_OPTION_ENABLE_HTTP_PROTOCOL
         set(CMAKE_REQUIRED_LIBRARIES "WinHttp.lib")
         check_cxx_source_runs("
-        #include <Windows.h>
+        #include <windows.h>
         #include <winhttp.h>
         int main() {
 
@@ -167,7 +167,7 @@ elseif(ENABLE_WINDOWS_CLIENT)
 
         set(CMAKE_REQUIRED_LIBRARIES "Wininet.lib")
         check_cxx_source_runs("
-        #include <Windows.h>
+        #include <windows.h>
         #include <WinInet.h>
         int main() {
         auto handle = InternetOpenA(\"aws-cpp-sdk\"/*lpszAgent*/,

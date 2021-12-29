@@ -37,6 +37,11 @@ static const char EC2_METADATA_CLIENT_LOG_TAG[] = "EC2MetadataClient";
 static const char ECS_CREDENTIALS_CLIENT_LOG_TAG[] = "ECSCredentialsClient";
 static const char SSO_GET_ROLE_RESOURCE[] = "/federation/credentials";
 
+//undef winapi
+#ifdef GetObject
+#undef GetObject
+#endif
+
 namespace Aws
 {
     namespace Client

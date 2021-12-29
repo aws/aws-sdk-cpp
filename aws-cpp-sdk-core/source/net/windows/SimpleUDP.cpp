@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <WinSock2.h>
-#include <Ws2ipdef.h>
-#include <Ws2tcpip.h>
+#include <winsock2.h>
+#include <ws2ipdef.h>
+#include <ws2tcpip.h>
 #include <cassert>
 #include <aws/core/net/SimpleUDP.h>
 #include <aws/core/utils/logging/LogMacros.h>

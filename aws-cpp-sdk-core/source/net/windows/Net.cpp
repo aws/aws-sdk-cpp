@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <WinSock2.h>
+#include <winsock2.h>
 #include <cassert>
 #include <aws/core/utils/logging/LogMacros.h>
 

@@ -16,7 +16,7 @@
 #include <aws/core/utils/ratelimiter/RateLimiterInterface.h>
 #include <aws/core/utils/UnreferencedParam.h>
 
-#include <Windows.h>
+#include <windows.h>
 #include <WinInet.h>
 #include <sstream>
 #include <iostream>

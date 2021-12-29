@@ -31,11 +31,12 @@ function(set_compiler_warnings target)
     endif()
 endfunction()
 
+check_c_compiler_flag(-fPIC HAS_FPIC_FLAG)
 
 macro(set_gcc_flags)
     list(APPEND AWS_COMPILER_FLAGS "-fno-exceptions" "-std=c++${CPP_STANDARD}")
 
-    if(NOT BUILD_SHARED_LIBS)
+    if(NOT BUILD_SHARED_LIBS AND HAS_FPIC_FLAG)
         list(APPEND AWS_COMPILER_FLAGS "-fPIC")
     endif()
 

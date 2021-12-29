@@ -11,6 +11,10 @@
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
+#ifdef GetObject
+#undef GetObject
+#endif
+
 using namespace Aws::Utils;
 
 Document::Document() : m_wasParseSuccessful(true)

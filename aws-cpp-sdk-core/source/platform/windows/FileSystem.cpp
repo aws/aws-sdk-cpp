@@ -9,9 +9,11 @@
 #include <aws/core/utils/StringUtils.h>
 #include <cassert>
 #include <iostream>
-#include <Userenv.h>
+#include <userenv.h>
 
+#ifdef _MSC_VER
 #pragma warning( disable : 4996)
+#endif
 
 using namespace Aws::Utils;
 namespace Aws

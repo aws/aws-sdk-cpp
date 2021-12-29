@@ -14,7 +14,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/ratelimiter/RateLimiterInterface.h>
 
-#include <Windows.h>
+#include <windows.h>
 #include <sstream>
 #include <iostream>
 

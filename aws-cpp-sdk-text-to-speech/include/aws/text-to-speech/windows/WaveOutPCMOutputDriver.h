@@ -10,7 +10,7 @@
 
 #include <mutex>
 
-#include <Windows.h>
+#include <windows.h>
 
 namespace Aws
 {

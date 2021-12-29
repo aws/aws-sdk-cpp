@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/http/windows/WinINetConnectionPoolMgr.h>
-#include <Windows.h>
+#include <windows.h>
 #include <WinInet.h>
 
 using namespace Aws::Http;

@@ -15,6 +15,10 @@
 
 #include <utility>
 
+#ifdef GetObject
+#undef GetObject
+#endif
+
 namespace Aws
 {
     namespace Utils

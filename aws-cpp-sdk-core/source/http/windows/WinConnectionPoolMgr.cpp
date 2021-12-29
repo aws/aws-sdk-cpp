@@ -6,7 +6,7 @@
 #include <aws/core/http/windows/WinConnectionPoolMgr.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/AWSMemory.h>
-#include <Windows.h>
+#include <windows.h>
 #include <algorithm>
 
 using namespace Aws::Utils::Logging;

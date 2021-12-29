@@ -11,6 +11,10 @@
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/Document.h>
 
+#ifdef GetObject
+#undef GetObject
+#endif
+
 using namespace Aws::Utils;
 using namespace Aws::Utils::Json;
 
