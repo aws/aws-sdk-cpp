@@ -16,6 +16,7 @@
 #include <aws/sagemaker/model/LambdaStepMetadata.h>
 #include <aws/sagemaker/model/QualityCheckStepMetadata.h>
 #include <aws/sagemaker/model/ClarifyCheckStepMetadata.h>
+#include <aws/sagemaker/model/EMRStepMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -567,6 +568,37 @@ namespace Model
      */
     inline PipelineExecutionStepMetadata& WithClarifyCheck(ClarifyCheckStepMetadata&& value) { SetClarifyCheck(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configurations and outcomes of an EMR step execution.</p>
+     */
+    inline const EMRStepMetadata& GetEMR() const{ return m_eMR; }
+
+    /**
+     * <p>The configurations and outcomes of an EMR step execution.</p>
+     */
+    inline bool EMRHasBeenSet() const { return m_eMRHasBeenSet; }
+
+    /**
+     * <p>The configurations and outcomes of an EMR step execution.</p>
+     */
+    inline void SetEMR(const EMRStepMetadata& value) { m_eMRHasBeenSet = true; m_eMR = value; }
+
+    /**
+     * <p>The configurations and outcomes of an EMR step execution.</p>
+     */
+    inline void SetEMR(EMRStepMetadata&& value) { m_eMRHasBeenSet = true; m_eMR = std::move(value); }
+
+    /**
+     * <p>The configurations and outcomes of an EMR step execution.</p>
+     */
+    inline PipelineExecutionStepMetadata& WithEMR(const EMRStepMetadata& value) { SetEMR(value); return *this;}
+
+    /**
+     * <p>The configurations and outcomes of an EMR step execution.</p>
+     */
+    inline PipelineExecutionStepMetadata& WithEMR(EMRStepMetadata&& value) { SetEMR(std::move(value)); return *this;}
+
   private:
 
     TrainingJobStepMetadata m_trainingJob;
@@ -601,6 +633,9 @@ namespace Model
 
     ClarifyCheckStepMetadata m_clarifyCheck;
     bool m_clarifyCheckHasBeenSet;
+
+    EMRStepMetadata m_eMR;
+    bool m_eMRHasBeenSet;
   };
 
 } // namespace Model

@@ -20,6 +20,7 @@
 #include <aws/greengrassv2/GreengrassV2Client.h>
 #include <aws/greengrassv2/GreengrassV2Endpoint.h>
 #include <aws/greengrassv2/GreengrassV2ErrorMarshaller.h>
+#include <aws/greengrassv2/model/AssociateServiceRoleToAccountRequest.h>
 #include <aws/greengrassv2/model/BatchAssociateClientDeviceWithCoreDeviceRequest.h>
 #include <aws/greengrassv2/model/BatchDisassociateClientDeviceFromCoreDeviceRequest.h>
 #include <aws/greengrassv2/model/CancelDeploymentRequest.h>
@@ -28,10 +29,13 @@
 #include <aws/greengrassv2/model/DeleteComponentRequest.h>
 #include <aws/greengrassv2/model/DeleteCoreDeviceRequest.h>
 #include <aws/greengrassv2/model/DescribeComponentRequest.h>
+#include <aws/greengrassv2/model/DisassociateServiceRoleFromAccountRequest.h>
 #include <aws/greengrassv2/model/GetComponentRequest.h>
 #include <aws/greengrassv2/model/GetComponentVersionArtifactRequest.h>
+#include <aws/greengrassv2/model/GetConnectivityInfoRequest.h>
 #include <aws/greengrassv2/model/GetCoreDeviceRequest.h>
 #include <aws/greengrassv2/model/GetDeploymentRequest.h>
+#include <aws/greengrassv2/model/GetServiceRoleForAccountRequest.h>
 #include <aws/greengrassv2/model/ListClientDevicesAssociatedWithCoreDeviceRequest.h>
 #include <aws/greengrassv2/model/ListComponentVersionsRequest.h>
 #include <aws/greengrassv2/model/ListComponentsRequest.h>
@@ -43,6 +47,7 @@
 #include <aws/greengrassv2/model/ResolveComponentCandidatesRequest.h>
 #include <aws/greengrassv2/model/TagResourceRequest.h>
 #include <aws/greengrassv2/model/UntagResourceRequest.h>
+#include <aws/greengrassv2/model/UpdateConnectivityInfoRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -115,6 +120,31 @@ void GreengrassV2Client::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+AssociateServiceRoleToAccountOutcome GreengrassV2Client::AssociateServiceRoleToAccount(const AssociateServiceRoleToAccountRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/greengrass/servicerole");
+  return AssociateServiceRoleToAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateServiceRoleToAccountOutcomeCallable GreengrassV2Client::AssociateServiceRoleToAccountCallable(const AssociateServiceRoleToAccountRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateServiceRoleToAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateServiceRoleToAccount(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassV2Client::AssociateServiceRoleToAccountAsync(const AssociateServiceRoleToAccountRequest& request, const AssociateServiceRoleToAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateServiceRoleToAccountAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassV2Client::AssociateServiceRoleToAccountAsyncHelper(const AssociateServiceRoleToAccountRequest& request, const AssociateServiceRoleToAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateServiceRoleToAccount(request), context);
 }
 
 BatchAssociateClientDeviceWithCoreDeviceOutcome GreengrassV2Client::BatchAssociateClientDeviceWithCoreDevice(const BatchAssociateClientDeviceWithCoreDeviceRequest& request) const
@@ -357,6 +387,31 @@ void GreengrassV2Client::DescribeComponentAsyncHelper(const DescribeComponentReq
   handler(this, request, DescribeComponent(request), context);
 }
 
+DisassociateServiceRoleFromAccountOutcome GreengrassV2Client::DisassociateServiceRoleFromAccount(const DisassociateServiceRoleFromAccountRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/greengrass/servicerole");
+  return DisassociateServiceRoleFromAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateServiceRoleFromAccountOutcomeCallable GreengrassV2Client::DisassociateServiceRoleFromAccountCallable(const DisassociateServiceRoleFromAccountRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateServiceRoleFromAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateServiceRoleFromAccount(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassV2Client::DisassociateServiceRoleFromAccountAsync(const DisassociateServiceRoleFromAccountRequest& request, const DisassociateServiceRoleFromAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateServiceRoleFromAccountAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassV2Client::DisassociateServiceRoleFromAccountAsyncHelper(const DisassociateServiceRoleFromAccountRequest& request, const DisassociateServiceRoleFromAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateServiceRoleFromAccount(request), context);
+}
+
 GetComponentOutcome GreengrassV2Client::GetComponent(const GetComponentRequest& request) const
 {
   if (!request.ArnHasBeenSet())
@@ -426,6 +481,38 @@ void GreengrassV2Client::GetComponentVersionArtifactAsyncHelper(const GetCompone
   handler(this, request, GetComponentVersionArtifact(request), context);
 }
 
+GetConnectivityInfoOutcome GreengrassV2Client::GetConnectivityInfo(const GetConnectivityInfoRequest& request) const
+{
+  if (!request.ThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetConnectivityInfo", "Required field: ThingName, is not set");
+    return GetConnectivityInfoOutcome(Aws::Client::AWSError<GreengrassV2Errors>(GreengrassV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/greengrass/things/");
+  uri.AddPathSegment(request.GetThingName());
+  uri.AddPathSegments("/connectivityInfo");
+  return GetConnectivityInfoOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetConnectivityInfoOutcomeCallable GreengrassV2Client::GetConnectivityInfoCallable(const GetConnectivityInfoRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetConnectivityInfoOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetConnectivityInfo(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassV2Client::GetConnectivityInfoAsync(const GetConnectivityInfoRequest& request, const GetConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetConnectivityInfoAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassV2Client::GetConnectivityInfoAsyncHelper(const GetConnectivityInfoRequest& request, const GetConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetConnectivityInfo(request), context);
+}
+
 GetCoreDeviceOutcome GreengrassV2Client::GetCoreDevice(const GetCoreDeviceRequest& request) const
 {
   if (!request.CoreDeviceThingNameHasBeenSet())
@@ -486,6 +573,31 @@ void GreengrassV2Client::GetDeploymentAsync(const GetDeploymentRequest& request,
 void GreengrassV2Client::GetDeploymentAsyncHelper(const GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetDeployment(request), context);
+}
+
+GetServiceRoleForAccountOutcome GreengrassV2Client::GetServiceRoleForAccount(const GetServiceRoleForAccountRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/greengrass/servicerole");
+  return GetServiceRoleForAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetServiceRoleForAccountOutcomeCallable GreengrassV2Client::GetServiceRoleForAccountCallable(const GetServiceRoleForAccountRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetServiceRoleForAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetServiceRoleForAccount(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassV2Client::GetServiceRoleForAccountAsync(const GetServiceRoleForAccountRequest& request, const GetServiceRoleForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetServiceRoleForAccountAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassV2Client::GetServiceRoleForAccountAsyncHelper(const GetServiceRoleForAccountRequest& request, const GetServiceRoleForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetServiceRoleForAccount(request), context);
 }
 
 ListClientDevicesAssociatedWithCoreDeviceOutcome GreengrassV2Client::ListClientDevicesAssociatedWithCoreDevice(const ListClientDevicesAssociatedWithCoreDeviceRequest& request) const
@@ -812,5 +924,37 @@ void GreengrassV2Client::UntagResourceAsync(const UntagResourceRequest& request,
 void GreengrassV2Client::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateConnectivityInfoOutcome GreengrassV2Client::UpdateConnectivityInfo(const UpdateConnectivityInfoRequest& request) const
+{
+  if (!request.ThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateConnectivityInfo", "Required field: ThingName, is not set");
+    return UpdateConnectivityInfoOutcome(Aws::Client::AWSError<GreengrassV2Errors>(GreengrassV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/greengrass/things/");
+  uri.AddPathSegment(request.GetThingName());
+  uri.AddPathSegments("/connectivityInfo");
+  return UpdateConnectivityInfoOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateConnectivityInfoOutcomeCallable GreengrassV2Client::UpdateConnectivityInfoCallable(const UpdateConnectivityInfoRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateConnectivityInfoOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateConnectivityInfo(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassV2Client::UpdateConnectivityInfoAsync(const UpdateConnectivityInfoRequest& request, const UpdateConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateConnectivityInfoAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassV2Client::UpdateConnectivityInfoAsyncHelper(const UpdateConnectivityInfoRequest& request, const UpdateConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateConnectivityInfo(request), context);
 }
 

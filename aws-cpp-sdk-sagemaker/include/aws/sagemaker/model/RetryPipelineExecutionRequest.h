@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/model/ParallelismConfiguration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -132,6 +133,43 @@ namespace Model
      */
     inline RetryPipelineExecutionRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
+
+    /**
+     * <p>This configuration, if specified, overrides the parallelism configuration of
+     * the parent pipeline.</p>
+     */
+    inline const ParallelismConfiguration& GetParallelismConfiguration() const{ return m_parallelismConfiguration; }
+
+    /**
+     * <p>This configuration, if specified, overrides the parallelism configuration of
+     * the parent pipeline.</p>
+     */
+    inline bool ParallelismConfigurationHasBeenSet() const { return m_parallelismConfigurationHasBeenSet; }
+
+    /**
+     * <p>This configuration, if specified, overrides the parallelism configuration of
+     * the parent pipeline.</p>
+     */
+    inline void SetParallelismConfiguration(const ParallelismConfiguration& value) { m_parallelismConfigurationHasBeenSet = true; m_parallelismConfiguration = value; }
+
+    /**
+     * <p>This configuration, if specified, overrides the parallelism configuration of
+     * the parent pipeline.</p>
+     */
+    inline void SetParallelismConfiguration(ParallelismConfiguration&& value) { m_parallelismConfigurationHasBeenSet = true; m_parallelismConfiguration = std::move(value); }
+
+    /**
+     * <p>This configuration, if specified, overrides the parallelism configuration of
+     * the parent pipeline.</p>
+     */
+    inline RetryPipelineExecutionRequest& WithParallelismConfiguration(const ParallelismConfiguration& value) { SetParallelismConfiguration(value); return *this;}
+
+    /**
+     * <p>This configuration, if specified, overrides the parallelism configuration of
+     * the parent pipeline.</p>
+     */
+    inline RetryPipelineExecutionRequest& WithParallelismConfiguration(ParallelismConfiguration&& value) { SetParallelismConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_pipelineExecutionArn;
@@ -139,6 +177,9 @@ namespace Model
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
+
+    ParallelismConfiguration m_parallelismConfiguration;
+    bool m_parallelismConfigurationHasBeenSet;
   };
 
 } // namespace Model

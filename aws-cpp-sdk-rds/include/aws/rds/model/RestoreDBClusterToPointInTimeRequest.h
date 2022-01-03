@@ -1467,81 +1467,65 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the each DB instance in the
-     * Multi-AZ DB cluster.</p> <p> Valid values: <code>standard | gp2 | io1</code>
-     * </p> <p> If you specify <code>io1</code>, also include a value for the
-     * <code>Iops</code> parameter. </p> <p> Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
-     * <p>Valid for: Multi-AZ DB clusters only</p>
+     * Multi-AZ DB cluster.</p> <p> Valid values: <code>io1</code> </p> <p> When
+     * specified, a value for the <code>Iops</code> parameter is required. </p> <p>
+     * Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
      * <p>Specifies the storage type to be associated with the each DB instance in the
-     * Multi-AZ DB cluster.</p> <p> Valid values: <code>standard | gp2 | io1</code>
-     * </p> <p> If you specify <code>io1</code>, also include a value for the
-     * <code>Iops</code> parameter. </p> <p> Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
-     * <p>Valid for: Multi-AZ DB clusters only</p>
+     * Multi-AZ DB cluster.</p> <p> Valid values: <code>io1</code> </p> <p> When
+     * specified, a value for the <code>Iops</code> parameter is required. </p> <p>
+     * Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
      * <p>Specifies the storage type to be associated with the each DB instance in the
-     * Multi-AZ DB cluster.</p> <p> Valid values: <code>standard | gp2 | io1</code>
-     * </p> <p> If you specify <code>io1</code>, also include a value for the
-     * <code>Iops</code> parameter. </p> <p> Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
-     * <p>Valid for: Multi-AZ DB clusters only</p>
+     * Multi-AZ DB cluster.</p> <p> Valid values: <code>io1</code> </p> <p> When
+     * specified, a value for the <code>Iops</code> parameter is required. </p> <p>
+     * Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
      * <p>Specifies the storage type to be associated with the each DB instance in the
-     * Multi-AZ DB cluster.</p> <p> Valid values: <code>standard | gp2 | io1</code>
-     * </p> <p> If you specify <code>io1</code>, also include a value for the
-     * <code>Iops</code> parameter. </p> <p> Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
-     * <p>Valid for: Multi-AZ DB clusters only</p>
+     * Multi-AZ DB cluster.</p> <p> Valid values: <code>io1</code> </p> <p> When
+     * specified, a value for the <code>Iops</code> parameter is required. </p> <p>
+     * Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
      * <p>Specifies the storage type to be associated with the each DB instance in the
-     * Multi-AZ DB cluster.</p> <p> Valid values: <code>standard | gp2 | io1</code>
-     * </p> <p> If you specify <code>io1</code>, also include a value for the
-     * <code>Iops</code> parameter. </p> <p> Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
-     * <p>Valid for: Multi-AZ DB clusters only</p>
+     * Multi-AZ DB cluster.</p> <p> Valid values: <code>io1</code> </p> <p> When
+     * specified, a value for the <code>Iops</code> parameter is required. </p> <p>
+     * Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
      * <p>Specifies the storage type to be associated with the each DB instance in the
-     * Multi-AZ DB cluster.</p> <p> Valid values: <code>standard | gp2 | io1</code>
-     * </p> <p> If you specify <code>io1</code>, also include a value for the
-     * <code>Iops</code> parameter. </p> <p> Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
-     * <p>Valid for: Multi-AZ DB clusters only</p>
+     * Multi-AZ DB cluster.</p> <p> Valid values: <code>io1</code> </p> <p> When
+     * specified, a value for the <code>Iops</code> parameter is required. </p> <p>
+     * Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
      * <p>Specifies the storage type to be associated with the each DB instance in the
-     * Multi-AZ DB cluster.</p> <p> Valid values: <code>standard | gp2 | io1</code>
-     * </p> <p> If you specify <code>io1</code>, also include a value for the
-     * <code>Iops</code> parameter. </p> <p> Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
-     * <p>Valid for: Multi-AZ DB clusters only</p>
+     * Multi-AZ DB cluster.</p> <p> Valid values: <code>io1</code> </p> <p> When
+     * specified, a value for the <code>Iops</code> parameter is required. </p> <p>
+     * Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the storage type to be associated with the each DB instance in the
-     * Multi-AZ DB cluster.</p> <p> Valid values: <code>standard | gp2 | io1</code>
-     * </p> <p> If you specify <code>io1</code>, also include a value for the
-     * <code>Iops</code> parameter. </p> <p> Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
-     * <p>Valid for: Multi-AZ DB clusters only</p>
+     * Multi-AZ DB cluster.</p> <p> Valid values: <code>io1</code> </p> <p> When
+     * specified, a value for the <code>Iops</code> parameter is required. </p> <p>
+     * Default: <code>io1</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 

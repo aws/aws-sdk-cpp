@@ -1024,74 +1024,90 @@ namespace Model
 
 
     /**
-     * <p>Specifies the framework version to use.</p> <p>This API field is only
-     * supported for PyTorch framework versions <code>1.4</code>, <code>1.5</code>, and
-     * <code>1.6</code> for cloud instance target devices: <code>ml_c4</code>,
-     * <code>ml_c5</code>, <code>ml_m4</code>, <code>ml_m5</code>, <code>ml_p2</code>,
-     * <code>ml_p3</code>, and <code>ml_g4dn</code>.</p>
+     * <p>Specifies the framework version to use. This API field is only supported for
+     * the PyTorch and TensorFlow frameworks.</p> <p>For information about framework
+     * versions supported for cloud targets and edge devices, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud
+     * Supported Instance Types and Frameworks</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge
+     * Supported Frameworks</a>.</p>
      */
     inline const Aws::String& GetFrameworkVersion() const{ return m_frameworkVersion; }
 
     /**
-     * <p>Specifies the framework version to use.</p> <p>This API field is only
-     * supported for PyTorch framework versions <code>1.4</code>, <code>1.5</code>, and
-     * <code>1.6</code> for cloud instance target devices: <code>ml_c4</code>,
-     * <code>ml_c5</code>, <code>ml_m4</code>, <code>ml_m5</code>, <code>ml_p2</code>,
-     * <code>ml_p3</code>, and <code>ml_g4dn</code>.</p>
+     * <p>Specifies the framework version to use. This API field is only supported for
+     * the PyTorch and TensorFlow frameworks.</p> <p>For information about framework
+     * versions supported for cloud targets and edge devices, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud
+     * Supported Instance Types and Frameworks</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge
+     * Supported Frameworks</a>.</p>
      */
     inline bool FrameworkVersionHasBeenSet() const { return m_frameworkVersionHasBeenSet; }
 
     /**
-     * <p>Specifies the framework version to use.</p> <p>This API field is only
-     * supported for PyTorch framework versions <code>1.4</code>, <code>1.5</code>, and
-     * <code>1.6</code> for cloud instance target devices: <code>ml_c4</code>,
-     * <code>ml_c5</code>, <code>ml_m4</code>, <code>ml_m5</code>, <code>ml_p2</code>,
-     * <code>ml_p3</code>, and <code>ml_g4dn</code>.</p>
+     * <p>Specifies the framework version to use. This API field is only supported for
+     * the PyTorch and TensorFlow frameworks.</p> <p>For information about framework
+     * versions supported for cloud targets and edge devices, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud
+     * Supported Instance Types and Frameworks</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge
+     * Supported Frameworks</a>.</p>
      */
     inline void SetFrameworkVersion(const Aws::String& value) { m_frameworkVersionHasBeenSet = true; m_frameworkVersion = value; }
 
     /**
-     * <p>Specifies the framework version to use.</p> <p>This API field is only
-     * supported for PyTorch framework versions <code>1.4</code>, <code>1.5</code>, and
-     * <code>1.6</code> for cloud instance target devices: <code>ml_c4</code>,
-     * <code>ml_c5</code>, <code>ml_m4</code>, <code>ml_m5</code>, <code>ml_p2</code>,
-     * <code>ml_p3</code>, and <code>ml_g4dn</code>.</p>
+     * <p>Specifies the framework version to use. This API field is only supported for
+     * the PyTorch and TensorFlow frameworks.</p> <p>For information about framework
+     * versions supported for cloud targets and edge devices, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud
+     * Supported Instance Types and Frameworks</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge
+     * Supported Frameworks</a>.</p>
      */
     inline void SetFrameworkVersion(Aws::String&& value) { m_frameworkVersionHasBeenSet = true; m_frameworkVersion = std::move(value); }
 
     /**
-     * <p>Specifies the framework version to use.</p> <p>This API field is only
-     * supported for PyTorch framework versions <code>1.4</code>, <code>1.5</code>, and
-     * <code>1.6</code> for cloud instance target devices: <code>ml_c4</code>,
-     * <code>ml_c5</code>, <code>ml_m4</code>, <code>ml_m5</code>, <code>ml_p2</code>,
-     * <code>ml_p3</code>, and <code>ml_g4dn</code>.</p>
+     * <p>Specifies the framework version to use. This API field is only supported for
+     * the PyTorch and TensorFlow frameworks.</p> <p>For information about framework
+     * versions supported for cloud targets and edge devices, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud
+     * Supported Instance Types and Frameworks</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge
+     * Supported Frameworks</a>.</p>
      */
     inline void SetFrameworkVersion(const char* value) { m_frameworkVersionHasBeenSet = true; m_frameworkVersion.assign(value); }
 
     /**
-     * <p>Specifies the framework version to use.</p> <p>This API field is only
-     * supported for PyTorch framework versions <code>1.4</code>, <code>1.5</code>, and
-     * <code>1.6</code> for cloud instance target devices: <code>ml_c4</code>,
-     * <code>ml_c5</code>, <code>ml_m4</code>, <code>ml_m5</code>, <code>ml_p2</code>,
-     * <code>ml_p3</code>, and <code>ml_g4dn</code>.</p>
+     * <p>Specifies the framework version to use. This API field is only supported for
+     * the PyTorch and TensorFlow frameworks.</p> <p>For information about framework
+     * versions supported for cloud targets and edge devices, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud
+     * Supported Instance Types and Frameworks</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge
+     * Supported Frameworks</a>.</p>
      */
     inline InputConfig& WithFrameworkVersion(const Aws::String& value) { SetFrameworkVersion(value); return *this;}
 
     /**
-     * <p>Specifies the framework version to use.</p> <p>This API field is only
-     * supported for PyTorch framework versions <code>1.4</code>, <code>1.5</code>, and
-     * <code>1.6</code> for cloud instance target devices: <code>ml_c4</code>,
-     * <code>ml_c5</code>, <code>ml_m4</code>, <code>ml_m5</code>, <code>ml_p2</code>,
-     * <code>ml_p3</code>, and <code>ml_g4dn</code>.</p>
+     * <p>Specifies the framework version to use. This API field is only supported for
+     * the PyTorch and TensorFlow frameworks.</p> <p>For information about framework
+     * versions supported for cloud targets and edge devices, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud
+     * Supported Instance Types and Frameworks</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge
+     * Supported Frameworks</a>.</p>
      */
     inline InputConfig& WithFrameworkVersion(Aws::String&& value) { SetFrameworkVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the framework version to use.</p> <p>This API field is only
-     * supported for PyTorch framework versions <code>1.4</code>, <code>1.5</code>, and
-     * <code>1.6</code> for cloud instance target devices: <code>ml_c4</code>,
-     * <code>ml_c5</code>, <code>ml_m4</code>, <code>ml_m5</code>, <code>ml_p2</code>,
-     * <code>ml_p3</code>, and <code>ml_g4dn</code>.</p>
+     * <p>Specifies the framework version to use. This API field is only supported for
+     * the PyTorch and TensorFlow frameworks.</p> <p>For information about framework
+     * versions supported for cloud targets and edge devices, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud
+     * Supported Instance Types and Frameworks</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge
+     * Supported Frameworks</a>.</p>
      */
     inline InputConfig& WithFrameworkVersion(const char* value) { SetFrameworkVersion(value); return *this;}
 

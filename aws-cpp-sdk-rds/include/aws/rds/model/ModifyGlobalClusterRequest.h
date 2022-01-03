@@ -212,13 +212,13 @@ namespace Model
      * describe-db-engine-versions --engine aurora --query
      * '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p> <p>To
      * list all of the available engine versions for <code>aurora-mysql</code> (for
-     * MySQL 5.7-compatible Aurora), use the following command:</p> <p> <code>aws rds
-     * describe-db-engine-versions --engine aurora-mysql --query
-     * '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p> <p>To
-     * list all of the available engine versions for <code>aurora-postgresql</code>,
-     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
-     * --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases ==
-     * `true`].[EngineVersion]'</code> </p>
+     * MySQL 5.7-compatible and MySQL 8.0-compatible Aurora), use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql
+     * --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
+     * <p>To list all of the available engine versions for
+     * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine aurora-postgresql --query
+     * '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
@@ -231,13 +231,13 @@ namespace Model
      * describe-db-engine-versions --engine aurora --query
      * '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p> <p>To
      * list all of the available engine versions for <code>aurora-mysql</code> (for
-     * MySQL 5.7-compatible Aurora), use the following command:</p> <p> <code>aws rds
-     * describe-db-engine-versions --engine aurora-mysql --query
-     * '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p> <p>To
-     * list all of the available engine versions for <code>aurora-postgresql</code>,
-     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
-     * --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases ==
-     * `true`].[EngineVersion]'</code> </p>
+     * MySQL 5.7-compatible and MySQL 8.0-compatible Aurora), use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql
+     * --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
+     * <p>To list all of the available engine versions for
+     * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine aurora-postgresql --query
+     * '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
@@ -250,13 +250,13 @@ namespace Model
      * describe-db-engine-versions --engine aurora --query
      * '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p> <p>To
      * list all of the available engine versions for <code>aurora-mysql</code> (for
-     * MySQL 5.7-compatible Aurora), use the following command:</p> <p> <code>aws rds
-     * describe-db-engine-versions --engine aurora-mysql --query
-     * '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p> <p>To
-     * list all of the available engine versions for <code>aurora-postgresql</code>,
-     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
-     * --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases ==
-     * `true`].[EngineVersion]'</code> </p>
+     * MySQL 5.7-compatible and MySQL 8.0-compatible Aurora), use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql
+     * --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
+     * <p>To list all of the available engine versions for
+     * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine aurora-postgresql --query
+     * '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
@@ -269,13 +269,13 @@ namespace Model
      * describe-db-engine-versions --engine aurora --query
      * '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p> <p>To
      * list all of the available engine versions for <code>aurora-mysql</code> (for
-     * MySQL 5.7-compatible Aurora), use the following command:</p> <p> <code>aws rds
-     * describe-db-engine-versions --engine aurora-mysql --query
-     * '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p> <p>To
-     * list all of the available engine versions for <code>aurora-postgresql</code>,
-     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
-     * --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases ==
-     * `true`].[EngineVersion]'</code> </p>
+     * MySQL 5.7-compatible and MySQL 8.0-compatible Aurora), use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql
+     * --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
+     * <p>To list all of the available engine versions for
+     * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine aurora-postgresql --query
+     * '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
@@ -288,13 +288,13 @@ namespace Model
      * describe-db-engine-versions --engine aurora --query
      * '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p> <p>To
      * list all of the available engine versions for <code>aurora-mysql</code> (for
-     * MySQL 5.7-compatible Aurora), use the following command:</p> <p> <code>aws rds
-     * describe-db-engine-versions --engine aurora-mysql --query
-     * '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p> <p>To
-     * list all of the available engine versions for <code>aurora-postgresql</code>,
-     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
-     * --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases ==
-     * `true`].[EngineVersion]'</code> </p>
+     * MySQL 5.7-compatible and MySQL 8.0-compatible Aurora), use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql
+     * --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
+     * <p>To list all of the available engine versions for
+     * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine aurora-postgresql --query
+     * '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
@@ -307,13 +307,13 @@ namespace Model
      * describe-db-engine-versions --engine aurora --query
      * '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p> <p>To
      * list all of the available engine versions for <code>aurora-mysql</code> (for
-     * MySQL 5.7-compatible Aurora), use the following command:</p> <p> <code>aws rds
-     * describe-db-engine-versions --engine aurora-mysql --query
-     * '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p> <p>To
-     * list all of the available engine versions for <code>aurora-postgresql</code>,
-     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
-     * --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases ==
-     * `true`].[EngineVersion]'</code> </p>
+     * MySQL 5.7-compatible and MySQL 8.0-compatible Aurora), use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql
+     * --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
+     * <p>To list all of the available engine versions for
+     * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine aurora-postgresql --query
+     * '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
      */
     inline ModifyGlobalClusterRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
@@ -326,13 +326,13 @@ namespace Model
      * describe-db-engine-versions --engine aurora --query
      * '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p> <p>To
      * list all of the available engine versions for <code>aurora-mysql</code> (for
-     * MySQL 5.7-compatible Aurora), use the following command:</p> <p> <code>aws rds
-     * describe-db-engine-versions --engine aurora-mysql --query
-     * '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p> <p>To
-     * list all of the available engine versions for <code>aurora-postgresql</code>,
-     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
-     * --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases ==
-     * `true`].[EngineVersion]'</code> </p>
+     * MySQL 5.7-compatible and MySQL 8.0-compatible Aurora), use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql
+     * --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
+     * <p>To list all of the available engine versions for
+     * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine aurora-postgresql --query
+     * '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
      */
     inline ModifyGlobalClusterRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
@@ -345,13 +345,13 @@ namespace Model
      * describe-db-engine-versions --engine aurora --query
      * '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p> <p>To
      * list all of the available engine versions for <code>aurora-mysql</code> (for
-     * MySQL 5.7-compatible Aurora), use the following command:</p> <p> <code>aws rds
-     * describe-db-engine-versions --engine aurora-mysql --query
-     * '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p> <p>To
-     * list all of the available engine versions for <code>aurora-postgresql</code>,
-     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
-     * --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases ==
-     * `true`].[EngineVersion]'</code> </p>
+     * MySQL 5.7-compatible and MySQL 8.0-compatible Aurora), use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql
+     * --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
+     * <p>To list all of the available engine versions for
+     * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine aurora-postgresql --query
+     * '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code> </p>
      */
     inline ModifyGlobalClusterRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 

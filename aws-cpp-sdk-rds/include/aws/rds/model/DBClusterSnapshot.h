@@ -338,42 +338,58 @@ namespace Model
 
 
     /**
-     * <p>Specifies the status of this DB cluster snapshot.</p>
+     * <p>Specifies the status of this DB cluster snapshot. Valid statuses are the
+     * following:</p> <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
+     * <code>copying</code> </p> </li> <li> <p> <code>creating</code> </p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Specifies the status of this DB cluster snapshot.</p>
+     * <p>Specifies the status of this DB cluster snapshot. Valid statuses are the
+     * following:</p> <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
+     * <code>copying</code> </p> </li> <li> <p> <code>creating</code> </p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>Specifies the status of this DB cluster snapshot.</p>
+     * <p>Specifies the status of this DB cluster snapshot. Valid statuses are the
+     * following:</p> <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
+     * <code>copying</code> </p> </li> <li> <p> <code>creating</code> </p> </li> </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Specifies the status of this DB cluster snapshot.</p>
+     * <p>Specifies the status of this DB cluster snapshot. Valid statuses are the
+     * following:</p> <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
+     * <code>copying</code> </p> </li> <li> <p> <code>creating</code> </p> </li> </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Specifies the status of this DB cluster snapshot.</p>
+     * <p>Specifies the status of this DB cluster snapshot. Valid statuses are the
+     * following:</p> <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
+     * <code>copying</code> </p> </li> <li> <p> <code>creating</code> </p> </li> </ul>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>Specifies the status of this DB cluster snapshot.</p>
+     * <p>Specifies the status of this DB cluster snapshot. Valid statuses are the
+     * following:</p> <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
+     * <code>copying</code> </p> </li> <li> <p> <code>creating</code> </p> </li> </ul>
      */
     inline DBClusterSnapshot& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Specifies the status of this DB cluster snapshot.</p>
+     * <p>Specifies the status of this DB cluster snapshot. Valid statuses are the
+     * following:</p> <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
+     * <code>copying</code> </p> </li> <li> <p> <code>creating</code> </p> </li> </ul>
      */
     inline DBClusterSnapshot& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the status of this DB cluster snapshot.</p>
+     * <p>Specifies the status of this DB cluster snapshot. Valid statuses are the
+     * following:</p> <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
+     * <code>copying</code> </p> </li> <li> <p> <code>creating</code> </p> </li> </ul>
      */
     inline DBClusterSnapshot& WithStatus(const char* value) { SetStatus(value); return *this;}
 

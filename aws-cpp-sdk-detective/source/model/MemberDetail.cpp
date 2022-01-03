@@ -31,7 +31,9 @@ MemberDetail::MemberDetail() :
     m_updatedTimeHasBeenSet(false),
     m_volumeUsageInBytes(0),
     m_volumeUsageInBytesHasBeenSet(false),
-    m_volumeUsageUpdatedTimeHasBeenSet(false)
+    m_volumeUsageUpdatedTimeHasBeenSet(false),
+    m_invitationType(InvitationType::NOT_SET),
+    m_invitationTypeHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ MemberDetail::MemberDetail(JsonView jsonValue) :
     m_updatedTimeHasBeenSet(false),
     m_volumeUsageInBytes(0),
     m_volumeUsageInBytesHasBeenSet(false),
-    m_volumeUsageUpdatedTimeHasBeenSet(false)
+    m_volumeUsageUpdatedTimeHasBeenSet(false),
+    m_invitationType(InvitationType::NOT_SET),
+    m_invitationTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -125,6 +129,13 @@ MemberDetail& MemberDetail::operator =(JsonView jsonValue)
     m_volumeUsageUpdatedTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InvitationType"))
+  {
+    m_invitationType = InvitationTypeMapper::GetInvitationTypeForName(jsonValue.GetString("InvitationType"));
+
+    m_invitationTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -185,6 +196,11 @@ JsonValue MemberDetail::Jsonize() const
   if(m_volumeUsageUpdatedTimeHasBeenSet)
   {
    payload.WithString("VolumeUsageUpdatedTime", m_volumeUsageUpdatedTime.ToGmtString(DateFormat::ISO_8601));
+  }
+
+  if(m_invitationTypeHasBeenSet)
+  {
+   payload.WithString("InvitationType", InvitationTypeMapper::GetNameForInvitationType(m_invitationType));
   }
 
   return payload;

@@ -562,9 +562,10 @@ namespace Model
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
      * Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
-     * <code>mysql</code> </p> </li> <li> <p> <code>postgres</code> </p> </li> </ul>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> </ul> <p>Valid for: Aurora DB clusters
+     * and Multi-AZ DB clusters</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
@@ -572,9 +573,10 @@ namespace Model
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
      * Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
-     * <code>mysql</code> </p> </li> <li> <p> <code>postgres</code> </p> </li> </ul>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> </ul> <p>Valid for: Aurora DB clusters
+     * and Multi-AZ DB clusters</p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
@@ -582,9 +584,10 @@ namespace Model
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
      * Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
-     * <code>mysql</code> </p> </li> <li> <p> <code>postgres</code> </p> </li> </ul>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> </ul> <p>Valid for: Aurora DB clusters
+     * and Multi-AZ DB clusters</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
@@ -592,9 +595,10 @@ namespace Model
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
      * Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
-     * <code>mysql</code> </p> </li> <li> <p> <code>postgres</code> </p> </li> </ul>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> </ul> <p>Valid for: Aurora DB clusters
+     * and Multi-AZ DB clusters</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
@@ -602,9 +606,10 @@ namespace Model
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
      * Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
-     * <code>mysql</code> </p> </li> <li> <p> <code>postgres</code> </p> </li> </ul>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> </ul> <p>Valid for: Aurora DB clusters
+     * and Multi-AZ DB clusters</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
@@ -612,9 +617,10 @@ namespace Model
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
      * Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
-     * <code>mysql</code> </p> </li> <li> <p> <code>postgres</code> </p> </li> </ul>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> </ul> <p>Valid for: Aurora DB clusters
+     * and Multi-AZ DB clusters</p>
      */
     inline CreateDBClusterRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
@@ -622,9 +628,10 @@ namespace Model
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
      * Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
-     * <code>mysql</code> </p> </li> <li> <p> <code>postgres</code> </p> </li> </ul>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> </ul> <p>Valid for: Aurora DB clusters
+     * and Multi-AZ DB clusters</p>
      */
     inline CreateDBClusterRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
@@ -632,9 +639,10 @@ namespace Model
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
      * Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
-     * <code>mysql</code> </p> </li> <li> <p> <code>postgres</code> </p> </li> </ul>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mysql</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> </ul> <p>Valid for: Aurora DB clusters
+     * and Multi-AZ DB clusters</p>
      */
     inline CreateDBClusterRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -644,11 +652,12 @@ namespace Model
      * available engine versions for MySQL 5.6-compatible Aurora, use the following
      * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora
      * --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the
-     * available engine versions for MySQL 5.7-compatible Aurora, use the following
-     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql
-     * --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the
-     * available engine versions for Aurora PostgreSQL, use the following command:</p>
-     * <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query
+     * available engine versions for MySQL 5.7-compatible and MySQL 8.0-compatible
+     * Aurora, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine aurora-mysql --query
+     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
+     * engine versions for Aurora PostgreSQL, use the following command:</p> <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query
      * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
      * engine versions for RDS for MySQL, use the following command:</p> <p> <code>aws
      * rds describe-db-engine-versions --engine mysql --query
@@ -677,11 +686,12 @@ namespace Model
      * available engine versions for MySQL 5.6-compatible Aurora, use the following
      * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora
      * --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the
-     * available engine versions for MySQL 5.7-compatible Aurora, use the following
-     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql
-     * --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the
-     * available engine versions for Aurora PostgreSQL, use the following command:</p>
-     * <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query
+     * available engine versions for MySQL 5.7-compatible and MySQL 8.0-compatible
+     * Aurora, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine aurora-mysql --query
+     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
+     * engine versions for Aurora PostgreSQL, use the following command:</p> <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query
      * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
      * engine versions for RDS for MySQL, use the following command:</p> <p> <code>aws
      * rds describe-db-engine-versions --engine mysql --query
@@ -710,11 +720,12 @@ namespace Model
      * available engine versions for MySQL 5.6-compatible Aurora, use the following
      * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora
      * --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the
-     * available engine versions for MySQL 5.7-compatible Aurora, use the following
-     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql
-     * --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the
-     * available engine versions for Aurora PostgreSQL, use the following command:</p>
-     * <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query
+     * available engine versions for MySQL 5.7-compatible and MySQL 8.0-compatible
+     * Aurora, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine aurora-mysql --query
+     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
+     * engine versions for Aurora PostgreSQL, use the following command:</p> <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query
      * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
      * engine versions for RDS for MySQL, use the following command:</p> <p> <code>aws
      * rds describe-db-engine-versions --engine mysql --query
@@ -743,11 +754,12 @@ namespace Model
      * available engine versions for MySQL 5.6-compatible Aurora, use the following
      * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora
      * --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the
-     * available engine versions for MySQL 5.7-compatible Aurora, use the following
-     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql
-     * --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the
-     * available engine versions for Aurora PostgreSQL, use the following command:</p>
-     * <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query
+     * available engine versions for MySQL 5.7-compatible and MySQL 8.0-compatible
+     * Aurora, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine aurora-mysql --query
+     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
+     * engine versions for Aurora PostgreSQL, use the following command:</p> <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query
      * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
      * engine versions for RDS for MySQL, use the following command:</p> <p> <code>aws
      * rds describe-db-engine-versions --engine mysql --query
@@ -776,11 +788,12 @@ namespace Model
      * available engine versions for MySQL 5.6-compatible Aurora, use the following
      * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora
      * --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the
-     * available engine versions for MySQL 5.7-compatible Aurora, use the following
-     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql
-     * --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the
-     * available engine versions for Aurora PostgreSQL, use the following command:</p>
-     * <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query
+     * available engine versions for MySQL 5.7-compatible and MySQL 8.0-compatible
+     * Aurora, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine aurora-mysql --query
+     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
+     * engine versions for Aurora PostgreSQL, use the following command:</p> <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query
      * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
      * engine versions for RDS for MySQL, use the following command:</p> <p> <code>aws
      * rds describe-db-engine-versions --engine mysql --query
@@ -809,11 +822,12 @@ namespace Model
      * available engine versions for MySQL 5.6-compatible Aurora, use the following
      * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora
      * --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the
-     * available engine versions for MySQL 5.7-compatible Aurora, use the following
-     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql
-     * --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the
-     * available engine versions for Aurora PostgreSQL, use the following command:</p>
-     * <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query
+     * available engine versions for MySQL 5.7-compatible and MySQL 8.0-compatible
+     * Aurora, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine aurora-mysql --query
+     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
+     * engine versions for Aurora PostgreSQL, use the following command:</p> <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query
      * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
      * engine versions for RDS for MySQL, use the following command:</p> <p> <code>aws
      * rds describe-db-engine-versions --engine mysql --query
@@ -842,11 +856,12 @@ namespace Model
      * available engine versions for MySQL 5.6-compatible Aurora, use the following
      * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora
      * --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the
-     * available engine versions for MySQL 5.7-compatible Aurora, use the following
-     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql
-     * --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the
-     * available engine versions for Aurora PostgreSQL, use the following command:</p>
-     * <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query
+     * available engine versions for MySQL 5.7-compatible and MySQL 8.0-compatible
+     * Aurora, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine aurora-mysql --query
+     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
+     * engine versions for Aurora PostgreSQL, use the following command:</p> <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query
      * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
      * engine versions for RDS for MySQL, use the following command:</p> <p> <code>aws
      * rds describe-db-engine-versions --engine mysql --query
@@ -875,11 +890,12 @@ namespace Model
      * available engine versions for MySQL 5.6-compatible Aurora, use the following
      * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora
      * --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the
-     * available engine versions for MySQL 5.7-compatible Aurora, use the following
-     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql
-     * --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the
-     * available engine versions for Aurora PostgreSQL, use the following command:</p>
-     * <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query
+     * available engine versions for MySQL 5.7-compatible and MySQL 8.0-compatible
+     * Aurora, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --engine aurora-mysql --query
+     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
+     * engine versions for Aurora PostgreSQL, use the following command:</p> <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query
      * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
      * engine versions for RDS for MySQL, use the following command:</p> <p> <code>aws
      * rds describe-db-engine-versions --engine mysql --query
@@ -2949,80 +2965,72 @@ namespace Model
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>This
      * setting is required to create a Multi-AZ DB cluster.</p> <p> Valid values:
-     * <code>standard | gp2 | io1</code> </p> <p> If you specify <code>io1</code>, also
-     * include a value for the <code>Iops</code> parameter. </p> <p> Default:
-     * <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
-     * <code>gp2</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * <code>io1</code> </p> <p> When specified, a value for the <code>Iops</code>
+     * parameter is required. </p> <p> Default: <code>io1</code> </p> <p>Valid for:
+     * Multi-AZ DB clusters only</p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>This
      * setting is required to create a Multi-AZ DB cluster.</p> <p> Valid values:
-     * <code>standard | gp2 | io1</code> </p> <p> If you specify <code>io1</code>, also
-     * include a value for the <code>Iops</code> parameter. </p> <p> Default:
-     * <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
-     * <code>gp2</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * <code>io1</code> </p> <p> When specified, a value for the <code>Iops</code>
+     * parameter is required. </p> <p> Default: <code>io1</code> </p> <p>Valid for:
+     * Multi-AZ DB clusters only</p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>This
      * setting is required to create a Multi-AZ DB cluster.</p> <p> Valid values:
-     * <code>standard | gp2 | io1</code> </p> <p> If you specify <code>io1</code>, also
-     * include a value for the <code>Iops</code> parameter. </p> <p> Default:
-     * <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
-     * <code>gp2</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * <code>io1</code> </p> <p> When specified, a value for the <code>Iops</code>
+     * parameter is required. </p> <p> Default: <code>io1</code> </p> <p>Valid for:
+     * Multi-AZ DB clusters only</p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>This
      * setting is required to create a Multi-AZ DB cluster.</p> <p> Valid values:
-     * <code>standard | gp2 | io1</code> </p> <p> If you specify <code>io1</code>, also
-     * include a value for the <code>Iops</code> parameter. </p> <p> Default:
-     * <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
-     * <code>gp2</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * <code>io1</code> </p> <p> When specified, a value for the <code>Iops</code>
+     * parameter is required. </p> <p> Default: <code>io1</code> </p> <p>Valid for:
+     * Multi-AZ DB clusters only</p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>This
      * setting is required to create a Multi-AZ DB cluster.</p> <p> Valid values:
-     * <code>standard | gp2 | io1</code> </p> <p> If you specify <code>io1</code>, also
-     * include a value for the <code>Iops</code> parameter. </p> <p> Default:
-     * <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
-     * <code>gp2</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * <code>io1</code> </p> <p> When specified, a value for the <code>Iops</code>
+     * parameter is required. </p> <p> Default: <code>io1</code> </p> <p>Valid for:
+     * Multi-AZ DB clusters only</p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>This
      * setting is required to create a Multi-AZ DB cluster.</p> <p> Valid values:
-     * <code>standard | gp2 | io1</code> </p> <p> If you specify <code>io1</code>, also
-     * include a value for the <code>Iops</code> parameter. </p> <p> Default:
-     * <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
-     * <code>gp2</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * <code>io1</code> </p> <p> When specified, a value for the <code>Iops</code>
+     * parameter is required. </p> <p> Default: <code>io1</code> </p> <p>Valid for:
+     * Multi-AZ DB clusters only</p>
      */
     inline CreateDBClusterRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>This
      * setting is required to create a Multi-AZ DB cluster.</p> <p> Valid values:
-     * <code>standard | gp2 | io1</code> </p> <p> If you specify <code>io1</code>, also
-     * include a value for the <code>Iops</code> parameter. </p> <p> Default:
-     * <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
-     * <code>gp2</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * <code>io1</code> </p> <p> When specified, a value for the <code>Iops</code>
+     * parameter is required. </p> <p> Default: <code>io1</code> </p> <p>Valid for:
+     * Multi-AZ DB clusters only</p>
      */
     inline CreateDBClusterRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>This
      * setting is required to create a Multi-AZ DB cluster.</p> <p> Valid values:
-     * <code>standard | gp2 | io1</code> </p> <p> If you specify <code>io1</code>, also
-     * include a value for the <code>Iops</code> parameter. </p> <p> Default:
-     * <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
-     * <code>gp2</code> </p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * <code>io1</code> </p> <p> When specified, a value for the <code>Iops</code>
+     * parameter is required. </p> <p> Default: <code>io1</code> </p> <p>Valid for:
+     * Multi-AZ DB clusters only</p>
      */
     inline CreateDBClusterRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 

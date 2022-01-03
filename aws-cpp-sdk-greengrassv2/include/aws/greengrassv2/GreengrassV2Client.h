@@ -11,16 +11,20 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/greengrassv2/model/AssociateServiceRoleToAccountResult.h>
 #include <aws/greengrassv2/model/BatchAssociateClientDeviceWithCoreDeviceResult.h>
 #include <aws/greengrassv2/model/BatchDisassociateClientDeviceFromCoreDeviceResult.h>
 #include <aws/greengrassv2/model/CancelDeploymentResult.h>
 #include <aws/greengrassv2/model/CreateComponentVersionResult.h>
 #include <aws/greengrassv2/model/CreateDeploymentResult.h>
 #include <aws/greengrassv2/model/DescribeComponentResult.h>
+#include <aws/greengrassv2/model/DisassociateServiceRoleFromAccountResult.h>
 #include <aws/greengrassv2/model/GetComponentResult.h>
 #include <aws/greengrassv2/model/GetComponentVersionArtifactResult.h>
+#include <aws/greengrassv2/model/GetConnectivityInfoResult.h>
 #include <aws/greengrassv2/model/GetCoreDeviceResult.h>
 #include <aws/greengrassv2/model/GetDeploymentResult.h>
+#include <aws/greengrassv2/model/GetServiceRoleForAccountResult.h>
 #include <aws/greengrassv2/model/ListClientDevicesAssociatedWithCoreDeviceResult.h>
 #include <aws/greengrassv2/model/ListComponentVersionsResult.h>
 #include <aws/greengrassv2/model/ListComponentsResult.h>
@@ -32,6 +36,7 @@
 #include <aws/greengrassv2/model/ResolveComponentCandidatesResult.h>
 #include <aws/greengrassv2/model/TagResourceResult.h>
 #include <aws/greengrassv2/model/UntagResourceResult.h>
+#include <aws/greengrassv2/model/UpdateConnectivityInfoResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -72,6 +77,7 @@ namespace GreengrassV2
 
 namespace Model
 {
+        class AssociateServiceRoleToAccountRequest;
         class BatchAssociateClientDeviceWithCoreDeviceRequest;
         class BatchDisassociateClientDeviceFromCoreDeviceRequest;
         class CancelDeploymentRequest;
@@ -80,10 +86,13 @@ namespace Model
         class DeleteComponentRequest;
         class DeleteCoreDeviceRequest;
         class DescribeComponentRequest;
+        class DisassociateServiceRoleFromAccountRequest;
         class GetComponentRequest;
         class GetComponentVersionArtifactRequest;
+        class GetConnectivityInfoRequest;
         class GetCoreDeviceRequest;
         class GetDeploymentRequest;
+        class GetServiceRoleForAccountRequest;
         class ListClientDevicesAssociatedWithCoreDeviceRequest;
         class ListComponentVersionsRequest;
         class ListComponentsRequest;
@@ -95,7 +104,9 @@ namespace Model
         class ResolveComponentCandidatesRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
+        class UpdateConnectivityInfoRequest;
 
+        typedef Aws::Utils::Outcome<AssociateServiceRoleToAccountResult, GreengrassV2Error> AssociateServiceRoleToAccountOutcome;
         typedef Aws::Utils::Outcome<BatchAssociateClientDeviceWithCoreDeviceResult, GreengrassV2Error> BatchAssociateClientDeviceWithCoreDeviceOutcome;
         typedef Aws::Utils::Outcome<BatchDisassociateClientDeviceFromCoreDeviceResult, GreengrassV2Error> BatchDisassociateClientDeviceFromCoreDeviceOutcome;
         typedef Aws::Utils::Outcome<CancelDeploymentResult, GreengrassV2Error> CancelDeploymentOutcome;
@@ -104,10 +115,13 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, GreengrassV2Error> DeleteComponentOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, GreengrassV2Error> DeleteCoreDeviceOutcome;
         typedef Aws::Utils::Outcome<DescribeComponentResult, GreengrassV2Error> DescribeComponentOutcome;
+        typedef Aws::Utils::Outcome<DisassociateServiceRoleFromAccountResult, GreengrassV2Error> DisassociateServiceRoleFromAccountOutcome;
         typedef Aws::Utils::Outcome<GetComponentResult, GreengrassV2Error> GetComponentOutcome;
         typedef Aws::Utils::Outcome<GetComponentVersionArtifactResult, GreengrassV2Error> GetComponentVersionArtifactOutcome;
+        typedef Aws::Utils::Outcome<GetConnectivityInfoResult, GreengrassV2Error> GetConnectivityInfoOutcome;
         typedef Aws::Utils::Outcome<GetCoreDeviceResult, GreengrassV2Error> GetCoreDeviceOutcome;
         typedef Aws::Utils::Outcome<GetDeploymentResult, GreengrassV2Error> GetDeploymentOutcome;
+        typedef Aws::Utils::Outcome<GetServiceRoleForAccountResult, GreengrassV2Error> GetServiceRoleForAccountOutcome;
         typedef Aws::Utils::Outcome<ListClientDevicesAssociatedWithCoreDeviceResult, GreengrassV2Error> ListClientDevicesAssociatedWithCoreDeviceOutcome;
         typedef Aws::Utils::Outcome<ListComponentVersionsResult, GreengrassV2Error> ListComponentVersionsOutcome;
         typedef Aws::Utils::Outcome<ListComponentsResult, GreengrassV2Error> ListComponentsOutcome;
@@ -119,7 +133,9 @@ namespace Model
         typedef Aws::Utils::Outcome<ResolveComponentCandidatesResult, GreengrassV2Error> ResolveComponentCandidatesOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, GreengrassV2Error> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, GreengrassV2Error> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateConnectivityInfoResult, GreengrassV2Error> UpdateConnectivityInfoOutcome;
 
+        typedef std::future<AssociateServiceRoleToAccountOutcome> AssociateServiceRoleToAccountOutcomeCallable;
         typedef std::future<BatchAssociateClientDeviceWithCoreDeviceOutcome> BatchAssociateClientDeviceWithCoreDeviceOutcomeCallable;
         typedef std::future<BatchDisassociateClientDeviceFromCoreDeviceOutcome> BatchDisassociateClientDeviceFromCoreDeviceOutcomeCallable;
         typedef std::future<CancelDeploymentOutcome> CancelDeploymentOutcomeCallable;
@@ -128,10 +144,13 @@ namespace Model
         typedef std::future<DeleteComponentOutcome> DeleteComponentOutcomeCallable;
         typedef std::future<DeleteCoreDeviceOutcome> DeleteCoreDeviceOutcomeCallable;
         typedef std::future<DescribeComponentOutcome> DescribeComponentOutcomeCallable;
+        typedef std::future<DisassociateServiceRoleFromAccountOutcome> DisassociateServiceRoleFromAccountOutcomeCallable;
         typedef std::future<GetComponentOutcome> GetComponentOutcomeCallable;
         typedef std::future<GetComponentVersionArtifactOutcome> GetComponentVersionArtifactOutcomeCallable;
+        typedef std::future<GetConnectivityInfoOutcome> GetConnectivityInfoOutcomeCallable;
         typedef std::future<GetCoreDeviceOutcome> GetCoreDeviceOutcomeCallable;
         typedef std::future<GetDeploymentOutcome> GetDeploymentOutcomeCallable;
+        typedef std::future<GetServiceRoleForAccountOutcome> GetServiceRoleForAccountOutcomeCallable;
         typedef std::future<ListClientDevicesAssociatedWithCoreDeviceOutcome> ListClientDevicesAssociatedWithCoreDeviceOutcomeCallable;
         typedef std::future<ListComponentVersionsOutcome> ListComponentVersionsOutcomeCallable;
         typedef std::future<ListComponentsOutcome> ListComponentsOutcomeCallable;
@@ -143,10 +162,12 @@ namespace Model
         typedef std::future<ResolveComponentCandidatesOutcome> ResolveComponentCandidatesOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+        typedef std::future<UpdateConnectivityInfoOutcome> UpdateConnectivityInfoOutcomeCallable;
 } // namespace Model
 
   class GreengrassV2Client;
 
+    typedef std::function<void(const GreengrassV2Client*, const Model::AssociateServiceRoleToAccountRequest&, const Model::AssociateServiceRoleToAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateServiceRoleToAccountResponseReceivedHandler;
     typedef std::function<void(const GreengrassV2Client*, const Model::BatchAssociateClientDeviceWithCoreDeviceRequest&, const Model::BatchAssociateClientDeviceWithCoreDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchAssociateClientDeviceWithCoreDeviceResponseReceivedHandler;
     typedef std::function<void(const GreengrassV2Client*, const Model::BatchDisassociateClientDeviceFromCoreDeviceRequest&, const Model::BatchDisassociateClientDeviceFromCoreDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDisassociateClientDeviceFromCoreDeviceResponseReceivedHandler;
     typedef std::function<void(const GreengrassV2Client*, const Model::CancelDeploymentRequest&, const Model::CancelDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelDeploymentResponseReceivedHandler;
@@ -155,10 +176,13 @@ namespace Model
     typedef std::function<void(const GreengrassV2Client*, const Model::DeleteComponentRequest&, const Model::DeleteComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteComponentResponseReceivedHandler;
     typedef std::function<void(const GreengrassV2Client*, const Model::DeleteCoreDeviceRequest&, const Model::DeleteCoreDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCoreDeviceResponseReceivedHandler;
     typedef std::function<void(const GreengrassV2Client*, const Model::DescribeComponentRequest&, const Model::DescribeComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeComponentResponseReceivedHandler;
+    typedef std::function<void(const GreengrassV2Client*, const Model::DisassociateServiceRoleFromAccountRequest&, const Model::DisassociateServiceRoleFromAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateServiceRoleFromAccountResponseReceivedHandler;
     typedef std::function<void(const GreengrassV2Client*, const Model::GetComponentRequest&, const Model::GetComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComponentResponseReceivedHandler;
     typedef std::function<void(const GreengrassV2Client*, const Model::GetComponentVersionArtifactRequest&, const Model::GetComponentVersionArtifactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComponentVersionArtifactResponseReceivedHandler;
+    typedef std::function<void(const GreengrassV2Client*, const Model::GetConnectivityInfoRequest&, const Model::GetConnectivityInfoOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConnectivityInfoResponseReceivedHandler;
     typedef std::function<void(const GreengrassV2Client*, const Model::GetCoreDeviceRequest&, const Model::GetCoreDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCoreDeviceResponseReceivedHandler;
     typedef std::function<void(const GreengrassV2Client*, const Model::GetDeploymentRequest&, const Model::GetDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeploymentResponseReceivedHandler;
+    typedef std::function<void(const GreengrassV2Client*, const Model::GetServiceRoleForAccountRequest&, const Model::GetServiceRoleForAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceRoleForAccountResponseReceivedHandler;
     typedef std::function<void(const GreengrassV2Client*, const Model::ListClientDevicesAssociatedWithCoreDeviceRequest&, const Model::ListClientDevicesAssociatedWithCoreDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClientDevicesAssociatedWithCoreDeviceResponseReceivedHandler;
     typedef std::function<void(const GreengrassV2Client*, const Model::ListComponentVersionsRequest&, const Model::ListComponentVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComponentVersionsResponseReceivedHandler;
     typedef std::function<void(const GreengrassV2Client*, const Model::ListComponentsRequest&, const Model::ListComponentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComponentsResponseReceivedHandler;
@@ -170,6 +194,7 @@ namespace Model
     typedef std::function<void(const GreengrassV2Client*, const Model::ResolveComponentCandidatesRequest&, const Model::ResolveComponentCandidatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResolveComponentCandidatesResponseReceivedHandler;
     typedef std::function<void(const GreengrassV2Client*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const GreengrassV2Client*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const GreengrassV2Client*, const Model::UpdateConnectivityInfoRequest&, const Model::UpdateConnectivityInfoOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConnectivityInfoResponseReceivedHandler;
 
   /**
    * <p>IoT Greengrass brings local compute, messaging, data management, sync, and ML
@@ -215,11 +240,63 @@ namespace Model
 
 
         /**
-         * <p>Associate a list of client devices with a core device. Use this API operation
-         * to specify which client devices can discover a core device through cloud
-         * discovery. With cloud discovery, client devices connect to IoT Greengrass to
-         * retrieve associated core devices' connectivity information and certificates. For
-         * more information, see <a
+         * <p>Associates a Greengrass service role with IoT Greengrass for your Amazon Web
+         * Services account in this Amazon Web Services Region. IoT Greengrass uses this
+         * role to verify the identity of client devices and manage core device
+         * connectivity information. The role must include the <a
+         * href="https://console.aws.amazon.com/iam/home#/policies/arn:awsiam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy">AWSGreengrassResourceAccessRolePolicy</a>
+         * managed policy or a custom policy that defines equivalent permissions for the
+         * IoT Greengrass features that you use. For more information, see <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-service-role.html">Greengrass
+         * service role</a> in the <i>IoT Greengrass Version 2 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/AssociateServiceRoleToAccount">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateServiceRoleToAccountOutcome AssociateServiceRoleToAccount(const Model::AssociateServiceRoleToAccountRequest& request) const;
+
+        /**
+         * <p>Associates a Greengrass service role with IoT Greengrass for your Amazon Web
+         * Services account in this Amazon Web Services Region. IoT Greengrass uses this
+         * role to verify the identity of client devices and manage core device
+         * connectivity information. The role must include the <a
+         * href="https://console.aws.amazon.com/iam/home#/policies/arn:awsiam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy">AWSGreengrassResourceAccessRolePolicy</a>
+         * managed policy or a custom policy that defines equivalent permissions for the
+         * IoT Greengrass features that you use. For more information, see <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-service-role.html">Greengrass
+         * service role</a> in the <i>IoT Greengrass Version 2 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/AssociateServiceRoleToAccount">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateServiceRoleToAccountOutcomeCallable AssociateServiceRoleToAccountCallable(const Model::AssociateServiceRoleToAccountRequest& request) const;
+
+        /**
+         * <p>Associates a Greengrass service role with IoT Greengrass for your Amazon Web
+         * Services account in this Amazon Web Services Region. IoT Greengrass uses this
+         * role to verify the identity of client devices and manage core device
+         * connectivity information. The role must include the <a
+         * href="https://console.aws.amazon.com/iam/home#/policies/arn:awsiam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy">AWSGreengrassResourceAccessRolePolicy</a>
+         * managed policy or a custom policy that defines equivalent permissions for the
+         * IoT Greengrass features that you use. For more information, see <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-service-role.html">Greengrass
+         * service role</a> in the <i>IoT Greengrass Version 2 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/AssociateServiceRoleToAccount">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateServiceRoleToAccountAsync(const Model::AssociateServiceRoleToAccountRequest& request, const AssociateServiceRoleToAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associates a list of client devices with a core device. Use this API
+         * operation to specify which client devices can discover a core device through
+         * cloud discovery. With cloud discovery, client devices connect to IoT Greengrass
+         * to retrieve associated core devices' connectivity information and certificates.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-cloud-discovery.html">Configure
          * cloud discovery</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p> 
          * <p>Client devices are local IoT devices that connect to and communicate with an
@@ -236,11 +313,11 @@ namespace Model
         virtual Model::BatchAssociateClientDeviceWithCoreDeviceOutcome BatchAssociateClientDeviceWithCoreDevice(const Model::BatchAssociateClientDeviceWithCoreDeviceRequest& request) const;
 
         /**
-         * <p>Associate a list of client devices with a core device. Use this API operation
-         * to specify which client devices can discover a core device through cloud
-         * discovery. With cloud discovery, client devices connect to IoT Greengrass to
-         * retrieve associated core devices' connectivity information and certificates. For
-         * more information, see <a
+         * <p>Associates a list of client devices with a core device. Use this API
+         * operation to specify which client devices can discover a core device through
+         * cloud discovery. With cloud discovery, client devices connect to IoT Greengrass
+         * to retrieve associated core devices' connectivity information and certificates.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-cloud-discovery.html">Configure
          * cloud discovery</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p> 
          * <p>Client devices are local IoT devices that connect to and communicate with an
@@ -259,11 +336,11 @@ namespace Model
         virtual Model::BatchAssociateClientDeviceWithCoreDeviceOutcomeCallable BatchAssociateClientDeviceWithCoreDeviceCallable(const Model::BatchAssociateClientDeviceWithCoreDeviceRequest& request) const;
 
         /**
-         * <p>Associate a list of client devices with a core device. Use this API operation
-         * to specify which client devices can discover a core device through cloud
-         * discovery. With cloud discovery, client devices connect to IoT Greengrass to
-         * retrieve associated core devices' connectivity information and certificates. For
-         * more information, see <a
+         * <p>Associates a list of client devices with a core device. Use this API
+         * operation to specify which client devices can discover a core device through
+         * cloud discovery. With cloud discovery, client devices connect to IoT Greengrass
+         * to retrieve associated core devices' connectivity information and certificates.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-cloud-discovery.html">Configure
          * cloud discovery</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p> 
          * <p>Client devices are local IoT devices that connect to and communicate with an
@@ -282,7 +359,7 @@ namespace Model
         virtual void BatchAssociateClientDeviceWithCoreDeviceAsync(const Model::BatchAssociateClientDeviceWithCoreDeviceRequest& request, const BatchAssociateClientDeviceWithCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disassociate a list of client devices from a core device. After you
+         * <p>Disassociates a list of client devices from a core device. After you
          * disassociate a client device from a core device, the client device won't be able
          * to use cloud discovery to retrieve the core device's connectivity information
          * and certificates.</p><p><h3>See Also:</h3>   <a
@@ -292,7 +369,7 @@ namespace Model
         virtual Model::BatchDisassociateClientDeviceFromCoreDeviceOutcome BatchDisassociateClientDeviceFromCoreDevice(const Model::BatchDisassociateClientDeviceFromCoreDeviceRequest& request) const;
 
         /**
-         * <p>Disassociate a list of client devices from a core device. After you
+         * <p>Disassociates a list of client devices from a core device. After you
          * disassociate a client device from a core device, the client device won't be able
          * to use cloud discovery to retrieve the core device's connectivity information
          * and certificates.</p><p><h3>See Also:</h3>   <a
@@ -304,7 +381,7 @@ namespace Model
         virtual Model::BatchDisassociateClientDeviceFromCoreDeviceOutcomeCallable BatchDisassociateClientDeviceFromCoreDeviceCallable(const Model::BatchDisassociateClientDeviceFromCoreDeviceRequest& request) const;
 
         /**
-         * <p>Disassociate a list of client devices from a core device. After you
+         * <p>Disassociates a list of client devices from a core device. After you
          * disassociate a client device from a core device, the client device won't be able
          * to use cloud discovery to retrieve the core device's connectivity information
          * and certificates.</p><p><h3>See Also:</h3>   <a
@@ -616,6 +693,49 @@ namespace Model
         virtual void DescribeComponentAsync(const Model::DescribeComponentRequest& request, const DescribeComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Disassociates the Greengrass service role from IoT Greengrass for your Amazon
+         * Web Services account in this Amazon Web Services Region. Without a service role,
+         * IoT Greengrass can't verify the identity of client devices or manage core device
+         * connectivity information. For more information, see <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-service-role.html">Greengrass
+         * service role</a> in the <i>IoT Greengrass Version 2 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/DisassociateServiceRoleFromAccount">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateServiceRoleFromAccountOutcome DisassociateServiceRoleFromAccount(const Model::DisassociateServiceRoleFromAccountRequest& request) const;
+
+        /**
+         * <p>Disassociates the Greengrass service role from IoT Greengrass for your Amazon
+         * Web Services account in this Amazon Web Services Region. Without a service role,
+         * IoT Greengrass can't verify the identity of client devices or manage core device
+         * connectivity information. For more information, see <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-service-role.html">Greengrass
+         * service role</a> in the <i>IoT Greengrass Version 2 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/DisassociateServiceRoleFromAccount">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateServiceRoleFromAccountOutcomeCallable DisassociateServiceRoleFromAccountCallable(const Model::DisassociateServiceRoleFromAccountRequest& request) const;
+
+        /**
+         * <p>Disassociates the Greengrass service role from IoT Greengrass for your Amazon
+         * Web Services account in this Amazon Web Services Region. Without a service role,
+         * IoT Greengrass can't verify the identity of client devices or manage core device
+         * connectivity information. For more information, see <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-service-role.html">Greengrass
+         * service role</a> in the <i>IoT Greengrass Version 2 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/DisassociateServiceRoleFromAccount">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateServiceRoleFromAccountAsync(const Model::DisassociateServiceRoleFromAccountRequest& request, const DisassociateServiceRoleFromAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets the recipe for a version of a component. Core devices can call this
          * operation to identify the artifacts and requirements to install a
          * component.</p><p><h3>See Also:</h3>   <a
@@ -678,6 +798,61 @@ namespace Model
         virtual void GetComponentVersionArtifactAsync(const Model::GetComponentVersionArtifactRequest& request, const GetComponentVersionArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves connectivity information for a Greengrass core device.</p>
+         * <p>Connectivity information includes endpoints and ports where client devices
+         * can connect to an MQTT broker on the core device. When a client device calls the
+         * <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-discover-api.html">Greengrass
+         * discovery API</a>, IoT Greengrass returns connectivity information for all of
+         * the core devices where the client device can connect. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/connect-client-devices.html">Connect
+         * client devices to core devices</a> in the <i>IoT Greengrass Version 2 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/GetConnectivityInfo">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetConnectivityInfoOutcome GetConnectivityInfo(const Model::GetConnectivityInfoRequest& request) const;
+
+        /**
+         * <p>Retrieves connectivity information for a Greengrass core device.</p>
+         * <p>Connectivity information includes endpoints and ports where client devices
+         * can connect to an MQTT broker on the core device. When a client device calls the
+         * <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-discover-api.html">Greengrass
+         * discovery API</a>, IoT Greengrass returns connectivity information for all of
+         * the core devices where the client device can connect. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/connect-client-devices.html">Connect
+         * client devices to core devices</a> in the <i>IoT Greengrass Version 2 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/GetConnectivityInfo">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetConnectivityInfoOutcomeCallable GetConnectivityInfoCallable(const Model::GetConnectivityInfoRequest& request) const;
+
+        /**
+         * <p>Retrieves connectivity information for a Greengrass core device.</p>
+         * <p>Connectivity information includes endpoints and ports where client devices
+         * can connect to an MQTT broker on the core device. When a client device calls the
+         * <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-discover-api.html">Greengrass
+         * discovery API</a>, IoT Greengrass returns connectivity information for all of
+         * the core devices where the client device can connect. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/connect-client-devices.html">Connect
+         * client devices to core devices</a> in the <i>IoT Greengrass Version 2 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/GetConnectivityInfo">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetConnectivityInfoAsync(const Model::GetConnectivityInfoRequest& request, const GetConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves metadata for a Greengrass core device.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/GetCoreDevice">AWS
@@ -732,6 +907,49 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDeploymentAsync(const Model::GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the service role associated with IoT Greengrass for your Amazon Web
+         * Services account in this Amazon Web Services Region. IoT Greengrass uses this
+         * role to verify the identity of client devices and manage core device
+         * connectivity information. For more information, see <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-service-role.html">Greengrass
+         * service role</a> in the <i>IoT Greengrass Version 2 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/GetServiceRoleForAccount">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetServiceRoleForAccountOutcome GetServiceRoleForAccount(const Model::GetServiceRoleForAccountRequest& request) const;
+
+        /**
+         * <p>Gets the service role associated with IoT Greengrass for your Amazon Web
+         * Services account in this Amazon Web Services Region. IoT Greengrass uses this
+         * role to verify the identity of client devices and manage core device
+         * connectivity information. For more information, see <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-service-role.html">Greengrass
+         * service role</a> in the <i>IoT Greengrass Version 2 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/GetServiceRoleForAccount">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetServiceRoleForAccountOutcomeCallable GetServiceRoleForAccountCallable(const Model::GetServiceRoleForAccountRequest& request) const;
+
+        /**
+         * <p>Gets the service role associated with IoT Greengrass for your Amazon Web
+         * Services account in this Amazon Web Services Region. IoT Greengrass uses this
+         * role to verify the identity of client devices and manage core device
+         * connectivity information. For more information, see <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-service-role.html">Greengrass
+         * service role</a> in the <i>IoT Greengrass Version 2 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/GetServiceRoleForAccount">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetServiceRoleForAccountAsync(const Model::GetServiceRoleForAccountRequest& request, const GetServiceRoleForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a paginated list of client devices that are associated with a core
@@ -1077,10 +1295,66 @@ namespace Model
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates connectivity information for a Greengrass core device.</p>
+         * <p>Connectivity information includes endpoints and ports where client devices
+         * can connect to an MQTT broker on the core device. When a client device calls the
+         * <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-discover-api.html">Greengrass
+         * discovery API</a>, IoT Greengrass returns connectivity information for all of
+         * the core devices where the client device can connect. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/connect-client-devices.html">Connect
+         * client devices to core devices</a> in the <i>IoT Greengrass Version 2 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/UpdateConnectivityInfo">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateConnectivityInfoOutcome UpdateConnectivityInfo(const Model::UpdateConnectivityInfoRequest& request) const;
+
+        /**
+         * <p>Updates connectivity information for a Greengrass core device.</p>
+         * <p>Connectivity information includes endpoints and ports where client devices
+         * can connect to an MQTT broker on the core device. When a client device calls the
+         * <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-discover-api.html">Greengrass
+         * discovery API</a>, IoT Greengrass returns connectivity information for all of
+         * the core devices where the client device can connect. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/connect-client-devices.html">Connect
+         * client devices to core devices</a> in the <i>IoT Greengrass Version 2 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/UpdateConnectivityInfo">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateConnectivityInfoOutcomeCallable UpdateConnectivityInfoCallable(const Model::UpdateConnectivityInfoRequest& request) const;
+
+        /**
+         * <p>Updates connectivity information for a Greengrass core device.</p>
+         * <p>Connectivity information includes endpoints and ports where client devices
+         * can connect to an MQTT broker on the core device. When a client device calls the
+         * <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-discover-api.html">Greengrass
+         * discovery API</a>, IoT Greengrass returns connectivity information for all of
+         * the core devices where the client device can connect. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/connect-client-devices.html">Connect
+         * client devices to core devices</a> in the <i>IoT Greengrass Version 2 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/UpdateConnectivityInfo">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateConnectivityInfoAsync(const Model::UpdateConnectivityInfoRequest& request, const UpdateConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void AssociateServiceRoleToAccountAsyncHelper(const Model::AssociateServiceRoleToAccountRequest& request, const AssociateServiceRoleToAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchAssociateClientDeviceWithCoreDeviceAsyncHelper(const Model::BatchAssociateClientDeviceWithCoreDeviceRequest& request, const BatchAssociateClientDeviceWithCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchDisassociateClientDeviceFromCoreDeviceAsyncHelper(const Model::BatchDisassociateClientDeviceFromCoreDeviceRequest& request, const BatchDisassociateClientDeviceFromCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelDeploymentAsyncHelper(const Model::CancelDeploymentRequest& request, const CancelDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1089,10 +1363,13 @@ namespace Model
         void DeleteComponentAsyncHelper(const Model::DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCoreDeviceAsyncHelper(const Model::DeleteCoreDeviceRequest& request, const DeleteCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeComponentAsyncHelper(const Model::DescribeComponentRequest& request, const DescribeComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateServiceRoleFromAccountAsyncHelper(const Model::DisassociateServiceRoleFromAccountRequest& request, const DisassociateServiceRoleFromAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetComponentAsyncHelper(const Model::GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetComponentVersionArtifactAsyncHelper(const Model::GetComponentVersionArtifactRequest& request, const GetComponentVersionArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetConnectivityInfoAsyncHelper(const Model::GetConnectivityInfoRequest& request, const GetConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCoreDeviceAsyncHelper(const Model::GetCoreDeviceRequest& request, const GetCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDeploymentAsyncHelper(const Model::GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetServiceRoleForAccountAsyncHelper(const Model::GetServiceRoleForAccountRequest& request, const GetServiceRoleForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListClientDevicesAssociatedWithCoreDeviceAsyncHelper(const Model::ListClientDevicesAssociatedWithCoreDeviceRequest& request, const ListClientDevicesAssociatedWithCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListComponentVersionsAsyncHelper(const Model::ListComponentVersionsRequest& request, const ListComponentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListComponentsAsyncHelper(const Model::ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1104,6 +1381,7 @@ namespace Model
         void ResolveComponentCandidatesAsyncHelper(const Model::ResolveComponentCandidatesRequest& request, const ResolveComponentCandidatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateConnectivityInfoAsyncHelper(const Model::UpdateConnectivityInfoRequest& request, const UpdateConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

@@ -34,43 +34,43 @@ namespace Model
 
 
     /**
-     * <p>The list of errors (if any) for the entries in the request. Each error entry
+     * <p>The list of any errors for the entries in the request. Each error entry
      * contains the name of the IoT thing that failed to disassociate.</p>
      */
     inline const Aws::Vector<DisassociateClientDeviceFromCoreDeviceErrorEntry>& GetErrorEntries() const{ return m_errorEntries; }
 
     /**
-     * <p>The list of errors (if any) for the entries in the request. Each error entry
+     * <p>The list of any errors for the entries in the request. Each error entry
      * contains the name of the IoT thing that failed to disassociate.</p>
      */
     inline void SetErrorEntries(const Aws::Vector<DisassociateClientDeviceFromCoreDeviceErrorEntry>& value) { m_errorEntries = value; }
 
     /**
-     * <p>The list of errors (if any) for the entries in the request. Each error entry
+     * <p>The list of any errors for the entries in the request. Each error entry
      * contains the name of the IoT thing that failed to disassociate.</p>
      */
     inline void SetErrorEntries(Aws::Vector<DisassociateClientDeviceFromCoreDeviceErrorEntry>&& value) { m_errorEntries = std::move(value); }
 
     /**
-     * <p>The list of errors (if any) for the entries in the request. Each error entry
+     * <p>The list of any errors for the entries in the request. Each error entry
      * contains the name of the IoT thing that failed to disassociate.</p>
      */
     inline BatchDisassociateClientDeviceFromCoreDeviceResult& WithErrorEntries(const Aws::Vector<DisassociateClientDeviceFromCoreDeviceErrorEntry>& value) { SetErrorEntries(value); return *this;}
 
     /**
-     * <p>The list of errors (if any) for the entries in the request. Each error entry
+     * <p>The list of any errors for the entries in the request. Each error entry
      * contains the name of the IoT thing that failed to disassociate.</p>
      */
     inline BatchDisassociateClientDeviceFromCoreDeviceResult& WithErrorEntries(Aws::Vector<DisassociateClientDeviceFromCoreDeviceErrorEntry>&& value) { SetErrorEntries(std::move(value)); return *this;}
 
     /**
-     * <p>The list of errors (if any) for the entries in the request. Each error entry
+     * <p>The list of any errors for the entries in the request. Each error entry
      * contains the name of the IoT thing that failed to disassociate.</p>
      */
     inline BatchDisassociateClientDeviceFromCoreDeviceResult& AddErrorEntries(const DisassociateClientDeviceFromCoreDeviceErrorEntry& value) { m_errorEntries.push_back(value); return *this; }
 
     /**
-     * <p>The list of errors (if any) for the entries in the request. Each error entry
+     * <p>The list of any errors for the entries in the request. Each error entry
      * contains the name of the IoT thing that failed to disassociate.</p>
      */
     inline BatchDisassociateClientDeviceFromCoreDeviceResult& AddErrorEntries(DisassociateClientDeviceFromCoreDeviceErrorEntry&& value) { m_errorEntries.push_back(std::move(value)); return *this; }

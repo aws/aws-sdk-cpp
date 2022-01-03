@@ -83,6 +83,88 @@ namespace Model
 
 
     /**
+     * <p>The display name of the step.</p>
+     */
+    inline const Aws::String& GetStepDisplayName() const{ return m_stepDisplayName; }
+
+    /**
+     * <p>The display name of the step.</p>
+     */
+    inline bool StepDisplayNameHasBeenSet() const { return m_stepDisplayNameHasBeenSet; }
+
+    /**
+     * <p>The display name of the step.</p>
+     */
+    inline void SetStepDisplayName(const Aws::String& value) { m_stepDisplayNameHasBeenSet = true; m_stepDisplayName = value; }
+
+    /**
+     * <p>The display name of the step.</p>
+     */
+    inline void SetStepDisplayName(Aws::String&& value) { m_stepDisplayNameHasBeenSet = true; m_stepDisplayName = std::move(value); }
+
+    /**
+     * <p>The display name of the step.</p>
+     */
+    inline void SetStepDisplayName(const char* value) { m_stepDisplayNameHasBeenSet = true; m_stepDisplayName.assign(value); }
+
+    /**
+     * <p>The display name of the step.</p>
+     */
+    inline PipelineExecutionStep& WithStepDisplayName(const Aws::String& value) { SetStepDisplayName(value); return *this;}
+
+    /**
+     * <p>The display name of the step.</p>
+     */
+    inline PipelineExecutionStep& WithStepDisplayName(Aws::String&& value) { SetStepDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>The display name of the step.</p>
+     */
+    inline PipelineExecutionStep& WithStepDisplayName(const char* value) { SetStepDisplayName(value); return *this;}
+
+
+    /**
+     * <p>The description of the step.</p>
+     */
+    inline const Aws::String& GetStepDescription() const{ return m_stepDescription; }
+
+    /**
+     * <p>The description of the step.</p>
+     */
+    inline bool StepDescriptionHasBeenSet() const { return m_stepDescriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the step.</p>
+     */
+    inline void SetStepDescription(const Aws::String& value) { m_stepDescriptionHasBeenSet = true; m_stepDescription = value; }
+
+    /**
+     * <p>The description of the step.</p>
+     */
+    inline void SetStepDescription(Aws::String&& value) { m_stepDescriptionHasBeenSet = true; m_stepDescription = std::move(value); }
+
+    /**
+     * <p>The description of the step.</p>
+     */
+    inline void SetStepDescription(const char* value) { m_stepDescriptionHasBeenSet = true; m_stepDescription.assign(value); }
+
+    /**
+     * <p>The description of the step.</p>
+     */
+    inline PipelineExecutionStep& WithStepDescription(const Aws::String& value) { SetStepDescription(value); return *this;}
+
+    /**
+     * <p>The description of the step.</p>
+     */
+    inline PipelineExecutionStep& WithStepDescription(Aws::String&& value) { SetStepDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The description of the step.</p>
+     */
+    inline PipelineExecutionStep& WithStepDescription(const char* value) { SetStepDescription(value); return *this;}
+
+
+    /**
      * <p>The time that the step started executing.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
@@ -206,16 +288,32 @@ namespace Model
     inline PipelineExecutionStep& WithCacheHitResult(CacheHitResult&& value) { SetCacheHitResult(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The current attempt of the execution step. For more information, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
+     * Policy for Amazon SageMaker Pipelines steps</a>.</p>
+     */
     inline int GetAttemptCount() const{ return m_attemptCount; }
 
-    
+    /**
+     * <p>The current attempt of the execution step. For more information, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
+     * Policy for Amazon SageMaker Pipelines steps</a>.</p>
+     */
     inline bool AttemptCountHasBeenSet() const { return m_attemptCountHasBeenSet; }
 
-    
+    /**
+     * <p>The current attempt of the execution step. For more information, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
+     * Policy for Amazon SageMaker Pipelines steps</a>.</p>
+     */
     inline void SetAttemptCount(int value) { m_attemptCountHasBeenSet = true; m_attemptCount = value; }
 
-    
+    /**
+     * <p>The current attempt of the execution step. For more information, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
+     * Policy for Amazon SageMaker Pipelines steps</a>.</p>
+     */
     inline PipelineExecutionStep& WithAttemptCount(int value) { SetAttemptCount(value); return *this;}
 
 
@@ -302,6 +400,12 @@ namespace Model
 
     Aws::String m_stepName;
     bool m_stepNameHasBeenSet;
+
+    Aws::String m_stepDisplayName;
+    bool m_stepDisplayNameHasBeenSet;
+
+    Aws::String m_stepDescription;
+    bool m_stepDescriptionHasBeenSet;
 
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;

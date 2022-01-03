@@ -9,8 +9,8 @@
 #include <aws/greengrassv2/model/ConflictException.h>
 #include <aws/greengrassv2/model/ThrottlingException.h>
 #include <aws/greengrassv2/model/ServiceQuotaExceededException.h>
-#include <aws/greengrassv2/model/ResourceNotFoundException.h>
 #include <aws/greengrassv2/model/InternalServerException.h>
+#include <aws/greengrassv2/model/ResourceNotFoundException.h>
 #include <aws/greengrassv2/model/ValidationException.h>
 
 using namespace Aws::Client;
@@ -40,16 +40,16 @@ template<> AWS_GREENGRASSV2_API ServiceQuotaExceededException GreengrassV2Error:
   return ServiceQuotaExceededException(this->GetJsonPayload().View());
 }
 
-template<> AWS_GREENGRASSV2_API ResourceNotFoundException GreengrassV2Error::GetModeledError()
-{
-  assert(this->GetErrorType() == GreengrassV2Errors::RESOURCE_NOT_FOUND);
-  return ResourceNotFoundException(this->GetJsonPayload().View());
-}
-
 template<> AWS_GREENGRASSV2_API InternalServerException GreengrassV2Error::GetModeledError()
 {
   assert(this->GetErrorType() == GreengrassV2Errors::INTERNAL_SERVER);
   return InternalServerException(this->GetJsonPayload().View());
+}
+
+template<> AWS_GREENGRASSV2_API ResourceNotFoundException GreengrassV2Error::GetModeledError()
+{
+  assert(this->GetErrorType() == GreengrassV2Errors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetJsonPayload().View());
 }
 
 template<> AWS_GREENGRASSV2_API ValidationException GreengrassV2Error::GetModeledError()

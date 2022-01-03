@@ -9188,13 +9188,13 @@ namespace Model
          * <p>Stops a pipeline execution.</p> <p> <b>Callback Step</b> </p> <p>A pipeline
          * execution won't stop while a callback step is running. When you call
          * <code>StopPipelineExecution</code> on a pipeline execution with a running
-         * callback step, SageMaker Pipelines sends an additional Amazon SQS message to the
-         * specified SQS queue. The body of the SQS message contains a "Status" field which
-         * is set to "Stopping".</p> <p>You should add logic to your Amazon SQS message
-         * consumer to take any needed action (for example, resource cleanup) upon receipt
-         * of the message followed by a call to
+         * callback step, Amazon SageMaker Pipelines sends an additional Amazon SQS message
+         * to the specified SQS queue. The body of the SQS message contains a "Status"
+         * field which is set to "Stopping".</p> <p>You should add logic to your Amazon SQS
+         * message consumer to take any needed action (for example, resource cleanup) upon
+         * receipt of the message followed by a call to
          * <code>SendPipelineExecutionStepSuccess</code> or
-         * <code>SendPipelineExecutionStepFailure</code>.</p> <p>Only when SageMaker
+         * <code>SendPipelineExecutionStepFailure</code>.</p> <p>Only when Amazon SageMaker
          * Pipelines receives one of these calls will it stop the pipeline execution.</p>
          * <p> <b>Lambda Step</b> </p> <p>A pipeline execution can't be stopped while a
          * lambda step is running because the Lambda function invoked by the lambda step
@@ -9213,13 +9213,13 @@ namespace Model
          * <p>Stops a pipeline execution.</p> <p> <b>Callback Step</b> </p> <p>A pipeline
          * execution won't stop while a callback step is running. When you call
          * <code>StopPipelineExecution</code> on a pipeline execution with a running
-         * callback step, SageMaker Pipelines sends an additional Amazon SQS message to the
-         * specified SQS queue. The body of the SQS message contains a "Status" field which
-         * is set to "Stopping".</p> <p>You should add logic to your Amazon SQS message
-         * consumer to take any needed action (for example, resource cleanup) upon receipt
-         * of the message followed by a call to
+         * callback step, Amazon SageMaker Pipelines sends an additional Amazon SQS message
+         * to the specified SQS queue. The body of the SQS message contains a "Status"
+         * field which is set to "Stopping".</p> <p>You should add logic to your Amazon SQS
+         * message consumer to take any needed action (for example, resource cleanup) upon
+         * receipt of the message followed by a call to
          * <code>SendPipelineExecutionStepSuccess</code> or
-         * <code>SendPipelineExecutionStepFailure</code>.</p> <p>Only when SageMaker
+         * <code>SendPipelineExecutionStepFailure</code>.</p> <p>Only when Amazon SageMaker
          * Pipelines receives one of these calls will it stop the pipeline execution.</p>
          * <p> <b>Lambda Step</b> </p> <p>A pipeline execution can't be stopped while a
          * lambda step is running because the Lambda function invoked by the lambda step
@@ -9240,13 +9240,13 @@ namespace Model
          * <p>Stops a pipeline execution.</p> <p> <b>Callback Step</b> </p> <p>A pipeline
          * execution won't stop while a callback step is running. When you call
          * <code>StopPipelineExecution</code> on a pipeline execution with a running
-         * callback step, SageMaker Pipelines sends an additional Amazon SQS message to the
-         * specified SQS queue. The body of the SQS message contains a "Status" field which
-         * is set to "Stopping".</p> <p>You should add logic to your Amazon SQS message
-         * consumer to take any needed action (for example, resource cleanup) upon receipt
-         * of the message followed by a call to
+         * callback step, Amazon SageMaker Pipelines sends an additional Amazon SQS message
+         * to the specified SQS queue. The body of the SQS message contains a "Status"
+         * field which is set to "Stopping".</p> <p>You should add logic to your Amazon SQS
+         * message consumer to take any needed action (for example, resource cleanup) upon
+         * receipt of the message followed by a call to
          * <code>SendPipelineExecutionStepSuccess</code> or
-         * <code>SendPipelineExecutionStepFailure</code>.</p> <p>Only when SageMaker
+         * <code>SendPipelineExecutionStepFailure</code>.</p> <p>Only when Amazon SageMaker
          * Pipelines receives one of these calls will it stop the pipeline execution.</p>
          * <p> <b>Lambda Step</b> </p> <p>A pipeline execution can't be stopped while a
          * lambda step is running because the Lambda function invoked by the lambda step
@@ -9332,24 +9332,24 @@ namespace Model
         virtual void StopTrainingJobAsync(const Model::StopTrainingJobRequest& request, const StopTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stops a transform job.</p> <p>When Amazon SageMaker receives a
+         * <p>Stops a batch transform job.</p> <p>When Amazon SageMaker receives a
          * <code>StopTransformJob</code> request, the status of the job changes to
          * <code>Stopping</code>. After Amazon SageMaker stops the job, the status is set
-         * to <code>Stopped</code>. When you stop a transform job before it is completed,
-         * Amazon SageMaker doesn't store the job's output in Amazon S3.</p><p><h3>See
-         * Also:</h3>   <a
+         * to <code>Stopped</code>. When you stop a batch transform job before it is
+         * completed, Amazon SageMaker doesn't store the job's output in Amazon
+         * S3.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopTransformJob">AWS
          * API Reference</a></p>
          */
         virtual Model::StopTransformJobOutcome StopTransformJob(const Model::StopTransformJobRequest& request) const;
 
         /**
-         * <p>Stops a transform job.</p> <p>When Amazon SageMaker receives a
+         * <p>Stops a batch transform job.</p> <p>When Amazon SageMaker receives a
          * <code>StopTransformJob</code> request, the status of the job changes to
          * <code>Stopping</code>. After Amazon SageMaker stops the job, the status is set
-         * to <code>Stopped</code>. When you stop a transform job before it is completed,
-         * Amazon SageMaker doesn't store the job's output in Amazon S3.</p><p><h3>See
-         * Also:</h3>   <a
+         * to <code>Stopped</code>. When you stop a batch transform job before it is
+         * completed, Amazon SageMaker doesn't store the job's output in Amazon
+         * S3.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopTransformJob">AWS
          * API Reference</a></p>
          *
@@ -9358,12 +9358,12 @@ namespace Model
         virtual Model::StopTransformJobOutcomeCallable StopTransformJobCallable(const Model::StopTransformJobRequest& request) const;
 
         /**
-         * <p>Stops a transform job.</p> <p>When Amazon SageMaker receives a
+         * <p>Stops a batch transform job.</p> <p>When Amazon SageMaker receives a
          * <code>StopTransformJob</code> request, the status of the job changes to
          * <code>Stopping</code>. After Amazon SageMaker stops the job, the status is set
-         * to <code>Stopped</code>. When you stop a transform job before it is completed,
-         * Amazon SageMaker doesn't store the job's output in Amazon S3.</p><p><h3>See
-         * Also:</h3>   <a
+         * to <code>Stopped</code>. When you stop a batch transform job before it is
+         * completed, Amazon SageMaker doesn't store the job's output in Amazon
+         * S3.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopTransformJob">AWS
          * API Reference</a></p>
          *

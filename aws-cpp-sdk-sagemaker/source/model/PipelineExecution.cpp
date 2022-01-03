@@ -31,6 +31,7 @@ PipelineExecution::PipelineExecution() :
     m_lastModifiedTimeHasBeenSet(false),
     m_createdByHasBeenSet(false),
     m_lastModifiedByHasBeenSet(false),
+    m_parallelismConfigurationHasBeenSet(false),
     m_pipelineParametersHasBeenSet(false)
 {
 }
@@ -48,6 +49,7 @@ PipelineExecution::PipelineExecution(JsonView jsonValue) :
     m_lastModifiedTimeHasBeenSet(false),
     m_createdByHasBeenSet(false),
     m_lastModifiedByHasBeenSet(false),
+    m_parallelismConfigurationHasBeenSet(false),
     m_pipelineParametersHasBeenSet(false)
 {
   *this = jsonValue;
@@ -132,6 +134,13 @@ PipelineExecution& PipelineExecution::operator =(JsonView jsonValue)
     m_lastModifiedByHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ParallelismConfiguration"))
+  {
+    m_parallelismConfiguration = jsonValue.GetObject("ParallelismConfiguration");
+
+    m_parallelismConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("PipelineParameters"))
   {
     Array<JsonView> pipelineParametersJsonList = jsonValue.GetArray("PipelineParameters");
@@ -209,6 +218,12 @@ JsonValue PipelineExecution::Jsonize() const
   if(m_lastModifiedByHasBeenSet)
   {
    payload.WithObject("LastModifiedBy", m_lastModifiedBy.Jsonize());
+
+  }
+
+  if(m_parallelismConfigurationHasBeenSet)
+  {
+   payload.WithObject("ParallelismConfiguration", m_parallelismConfiguration.Jsonize());
 
   }
 

@@ -10,6 +10,7 @@
 #include <aws/sagemaker/model/PipelineExperimentConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/UserContext.h>
+#include <aws/sagemaker/model/ParallelismConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -341,6 +342,32 @@ namespace Model
     
     inline DescribePipelineExecutionResult& WithLastModifiedBy(UserContext&& value) { SetLastModifiedBy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The parallelism configuration applied to the pipeline.</p>
+     */
+    inline const ParallelismConfiguration& GetParallelismConfiguration() const{ return m_parallelismConfiguration; }
+
+    /**
+     * <p>The parallelism configuration applied to the pipeline.</p>
+     */
+    inline void SetParallelismConfiguration(const ParallelismConfiguration& value) { m_parallelismConfiguration = value; }
+
+    /**
+     * <p>The parallelism configuration applied to the pipeline.</p>
+     */
+    inline void SetParallelismConfiguration(ParallelismConfiguration&& value) { m_parallelismConfiguration = std::move(value); }
+
+    /**
+     * <p>The parallelism configuration applied to the pipeline.</p>
+     */
+    inline DescribePipelineExecutionResult& WithParallelismConfiguration(const ParallelismConfiguration& value) { SetParallelismConfiguration(value); return *this;}
+
+    /**
+     * <p>The parallelism configuration applied to the pipeline.</p>
+     */
+    inline DescribePipelineExecutionResult& WithParallelismConfiguration(ParallelismConfiguration&& value) { SetParallelismConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_pipelineArn;
@@ -364,6 +391,8 @@ namespace Model
     UserContext m_createdBy;
 
     UserContext m_lastModifiedBy;
+
+    ParallelismConfiguration m_parallelismConfiguration;
   };
 
 } // namespace Model

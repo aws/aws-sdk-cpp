@@ -10,6 +10,7 @@
 #include <aws/sagemaker/model/PipelineExperimentConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/UserContext.h>
+#include <aws/sagemaker/model/ParallelismConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/Parameter.h>
 #include <utility>
@@ -399,6 +400,37 @@ namespace Model
 
 
     /**
+     * <p>The parallelism configuration applied to the pipeline execution.</p>
+     */
+    inline const ParallelismConfiguration& GetParallelismConfiguration() const{ return m_parallelismConfiguration; }
+
+    /**
+     * <p>The parallelism configuration applied to the pipeline execution.</p>
+     */
+    inline bool ParallelismConfigurationHasBeenSet() const { return m_parallelismConfigurationHasBeenSet; }
+
+    /**
+     * <p>The parallelism configuration applied to the pipeline execution.</p>
+     */
+    inline void SetParallelismConfiguration(const ParallelismConfiguration& value) { m_parallelismConfigurationHasBeenSet = true; m_parallelismConfiguration = value; }
+
+    /**
+     * <p>The parallelism configuration applied to the pipeline execution.</p>
+     */
+    inline void SetParallelismConfiguration(ParallelismConfiguration&& value) { m_parallelismConfigurationHasBeenSet = true; m_parallelismConfiguration = std::move(value); }
+
+    /**
+     * <p>The parallelism configuration applied to the pipeline execution.</p>
+     */
+    inline PipelineExecution& WithParallelismConfiguration(const ParallelismConfiguration& value) { SetParallelismConfiguration(value); return *this;}
+
+    /**
+     * <p>The parallelism configuration applied to the pipeline execution.</p>
+     */
+    inline PipelineExecution& WithParallelismConfiguration(ParallelismConfiguration&& value) { SetParallelismConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>Contains a list of pipeline parameters. This list can be empty. </p>
      */
     inline const Aws::Vector<Parameter>& GetPipelineParameters() const{ return m_pipelineParameters; }
@@ -472,6 +504,9 @@ namespace Model
 
     UserContext m_lastModifiedBy;
     bool m_lastModifiedByHasBeenSet;
+
+    ParallelismConfiguration m_parallelismConfiguration;
+    bool m_parallelismConfigurationHasBeenSet;
 
     Aws::Vector<Parameter> m_pipelineParameters;
     bool m_pipelineParametersHasBeenSet;

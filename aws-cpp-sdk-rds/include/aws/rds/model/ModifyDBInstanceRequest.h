@@ -151,8 +151,8 @@ namespace Model
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>. </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
      * during the next maintenance window, unless <code>ApplyImmediately</code> is
-     * enabled for this request. </p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>Default: Uses existing setting</p>
+     * enabled for this request. </p> <p>This setting doesn't apply to RDS Custom for
+     * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
@@ -165,8 +165,8 @@ namespace Model
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>. </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
      * during the next maintenance window, unless <code>ApplyImmediately</code> is
-     * enabled for this request. </p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>Default: Uses existing setting</p>
+     * enabled for this request. </p> <p>This setting doesn't apply to RDS Custom for
+     * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
 
@@ -179,8 +179,8 @@ namespace Model
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>. </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
      * during the next maintenance window, unless <code>ApplyImmediately</code> is
-     * enabled for this request. </p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>Default: Uses existing setting</p>
+     * enabled for this request. </p> <p>This setting doesn't apply to RDS Custom for
+     * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
@@ -193,8 +193,8 @@ namespace Model
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>. </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
      * during the next maintenance window, unless <code>ApplyImmediately</code> is
-     * enabled for this request. </p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>Default: Uses existing setting</p>
+     * enabled for this request. </p> <p>This setting doesn't apply to RDS Custom for
+     * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
@@ -207,8 +207,8 @@ namespace Model
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>. </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
      * during the next maintenance window, unless <code>ApplyImmediately</code> is
-     * enabled for this request. </p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>Default: Uses existing setting</p>
+     * enabled for this request. </p> <p>This setting doesn't apply to RDS Custom for
+     * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
@@ -221,8 +221,8 @@ namespace Model
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>. </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
      * during the next maintenance window, unless <code>ApplyImmediately</code> is
-     * enabled for this request. </p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>Default: Uses existing setting</p>
+     * enabled for this request. </p> <p>This setting doesn't apply to RDS Custom for
+     * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
@@ -235,8 +235,8 @@ namespace Model
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>. </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
      * during the next maintenance window, unless <code>ApplyImmediately</code> is
-     * enabled for this request. </p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>Default: Uses existing setting</p>
+     * enabled for this request. </p> <p>This setting doesn't apply to RDS Custom for
+     * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
@@ -249,8 +249,8 @@ namespace Model
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>. </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
      * during the next maintenance window, unless <code>ApplyImmediately</code> is
-     * enabled for this request. </p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>Default: Uses existing setting</p>
+     * enabled for this request. </p> <p>This setting doesn't apply to RDS Custom for
+     * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
@@ -562,13 +562,13 @@ namespace Model
      * <p>A value that indicates whether the modifications in this request and any
      * pending modifications are asynchronously applied as soon as possible, regardless
      * of the <code>PreferredMaintenanceWindow</code> setting for the DB instance. By
-     * default, this parameter is disabled. </p> <p> If this parameter is disabled,
+     * default, this parameter is disabled.</p> <p> If this parameter is disabled,
      * changes to the DB instance are applied during the next maintenance window. Some
      * parameter changes can cause an outage and are applied on the next call to
      * <a>RebootDBInstance</a>, or the next failure reboot. Review the table of
      * parameters in <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
-     * a DB Instance</a> in the <i>Amazon RDS User Guide.</i> to see the impact of
+     * a DB Instance</a> in the <i>Amazon RDS User Guide</i> to see the impact of
      * enabling or disabling <code>ApplyImmediately</code> for each modified parameter
      * and to determine when the changes are applied. </p>
      */
@@ -578,13 +578,13 @@ namespace Model
      * <p>A value that indicates whether the modifications in this request and any
      * pending modifications are asynchronously applied as soon as possible, regardless
      * of the <code>PreferredMaintenanceWindow</code> setting for the DB instance. By
-     * default, this parameter is disabled. </p> <p> If this parameter is disabled,
+     * default, this parameter is disabled.</p> <p> If this parameter is disabled,
      * changes to the DB instance are applied during the next maintenance window. Some
      * parameter changes can cause an outage and are applied on the next call to
      * <a>RebootDBInstance</a>, or the next failure reboot. Review the table of
      * parameters in <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
-     * a DB Instance</a> in the <i>Amazon RDS User Guide.</i> to see the impact of
+     * a DB Instance</a> in the <i>Amazon RDS User Guide</i> to see the impact of
      * enabling or disabling <code>ApplyImmediately</code> for each modified parameter
      * and to determine when the changes are applied. </p>
      */
@@ -594,13 +594,13 @@ namespace Model
      * <p>A value that indicates whether the modifications in this request and any
      * pending modifications are asynchronously applied as soon as possible, regardless
      * of the <code>PreferredMaintenanceWindow</code> setting for the DB instance. By
-     * default, this parameter is disabled. </p> <p> If this parameter is disabled,
+     * default, this parameter is disabled.</p> <p> If this parameter is disabled,
      * changes to the DB instance are applied during the next maintenance window. Some
      * parameter changes can cause an outage and are applied on the next call to
      * <a>RebootDBInstance</a>, or the next failure reboot. Review the table of
      * parameters in <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
-     * a DB Instance</a> in the <i>Amazon RDS User Guide.</i> to see the impact of
+     * a DB Instance</a> in the <i>Amazon RDS User Guide</i> to see the impact of
      * enabling or disabling <code>ApplyImmediately</code> for each modified parameter
      * and to determine when the changes are applied. </p>
      */
@@ -610,13 +610,13 @@ namespace Model
      * <p>A value that indicates whether the modifications in this request and any
      * pending modifications are asynchronously applied as soon as possible, regardless
      * of the <code>PreferredMaintenanceWindow</code> setting for the DB instance. By
-     * default, this parameter is disabled. </p> <p> If this parameter is disabled,
+     * default, this parameter is disabled.</p> <p> If this parameter is disabled,
      * changes to the DB instance are applied during the next maintenance window. Some
      * parameter changes can cause an outage and are applied on the next call to
      * <a>RebootDBInstance</a>, or the next failure reboot. Review the table of
      * parameters in <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
-     * a DB Instance</a> in the <i>Amazon RDS User Guide.</i> to see the impact of
+     * a DB Instance</a> in the <i>Amazon RDS User Guide</i> to see the impact of
      * enabling or disabling <code>ApplyImmediately</code> for each modified parameter
      * and to determine when the changes are applied. </p>
      */
@@ -927,10 +927,10 @@ namespace Model
      * see <code>ModifyDBCluster</code>.</p> <p>Default: Uses existing setting</p>
      * <p>Constraints:</p> <ul> <li> <p>It must be a value from 0 to 35. It can't be
      * set to 0 if the DB instance is a source to read replicas. It can't be set to 0
-     * or 35 for an RDS Custom DB instance.</p> </li> <li> <p>It can be specified for a
-     * MySQL read replica only if the source is running MySQL 5.6 or later.</p> </li>
-     * <li> <p>It can be specified for a PostgreSQL read replica only if the source is
-     * running PostgreSQL 9.3.5.</p> </li> </ul>
+     * or 35 for an RDS Custom for Oracle DB instance.</p> </li> <li> <p>It can be
+     * specified for a MySQL read replica only if the source is running MySQL 5.6 or
+     * later.</p> </li> <li> <p>It can be specified for a PostgreSQL read replica only
+     * if the source is running PostgreSQL 9.3.5.</p> </li> </ul>
      */
     inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
 
@@ -948,10 +948,10 @@ namespace Model
      * see <code>ModifyDBCluster</code>.</p> <p>Default: Uses existing setting</p>
      * <p>Constraints:</p> <ul> <li> <p>It must be a value from 0 to 35. It can't be
      * set to 0 if the DB instance is a source to read replicas. It can't be set to 0
-     * or 35 for an RDS Custom DB instance.</p> </li> <li> <p>It can be specified for a
-     * MySQL read replica only if the source is running MySQL 5.6 or later.</p> </li>
-     * <li> <p>It can be specified for a PostgreSQL read replica only if the source is
-     * running PostgreSQL 9.3.5.</p> </li> </ul>
+     * or 35 for an RDS Custom for Oracle DB instance.</p> </li> <li> <p>It can be
+     * specified for a MySQL read replica only if the source is running MySQL 5.6 or
+     * later.</p> </li> <li> <p>It can be specified for a PostgreSQL read replica only
+     * if the source is running PostgreSQL 9.3.5.</p> </li> </ul>
      */
     inline bool BackupRetentionPeriodHasBeenSet() const { return m_backupRetentionPeriodHasBeenSet; }
 
@@ -969,10 +969,10 @@ namespace Model
      * see <code>ModifyDBCluster</code>.</p> <p>Default: Uses existing setting</p>
      * <p>Constraints:</p> <ul> <li> <p>It must be a value from 0 to 35. It can't be
      * set to 0 if the DB instance is a source to read replicas. It can't be set to 0
-     * or 35 for an RDS Custom DB instance.</p> </li> <li> <p>It can be specified for a
-     * MySQL read replica only if the source is running MySQL 5.6 or later.</p> </li>
-     * <li> <p>It can be specified for a PostgreSQL read replica only if the source is
-     * running PostgreSQL 9.3.5.</p> </li> </ul>
+     * or 35 for an RDS Custom for Oracle DB instance.</p> </li> <li> <p>It can be
+     * specified for a MySQL read replica only if the source is running MySQL 5.6 or
+     * later.</p> </li> <li> <p>It can be specified for a PostgreSQL read replica only
+     * if the source is running PostgreSQL 9.3.5.</p> </li> </ul>
      */
     inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
@@ -990,10 +990,10 @@ namespace Model
      * see <code>ModifyDBCluster</code>.</p> <p>Default: Uses existing setting</p>
      * <p>Constraints:</p> <ul> <li> <p>It must be a value from 0 to 35. It can't be
      * set to 0 if the DB instance is a source to read replicas. It can't be set to 0
-     * or 35 for an RDS Custom DB instance.</p> </li> <li> <p>It can be specified for a
-     * MySQL read replica only if the source is running MySQL 5.6 or later.</p> </li>
-     * <li> <p>It can be specified for a PostgreSQL read replica only if the source is
-     * running PostgreSQL 9.3.5.</p> </li> </ul>
+     * or 35 for an RDS Custom for Oracle DB instance.</p> </li> <li> <p>It can be
+     * specified for a MySQL read replica only if the source is running MySQL 5.6 or
+     * later.</p> </li> <li> <p>It can be specified for a PostgreSQL read replica only
+     * if the source is running PostgreSQL 9.3.5.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
 
@@ -1336,8 +1336,8 @@ namespace Model
      * you specify only a major version, Amazon RDS will update the DB instance to the
      * default minor version if the current minor version is lower. For information
      * about valid engine versions, see <code>CreateDBInstance</code>, or call
-     * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom, this parameter is
-     * supported for read replicas only if they are in the
+     * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom for Oracle, this
+     * parameter is supported for read replicas only if they are in the
      * <code>PATCH_DB_FAILURE</code> lifecycle. </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
@@ -1353,8 +1353,8 @@ namespace Model
      * you specify only a major version, Amazon RDS will update the DB instance to the
      * default minor version if the current minor version is lower. For information
      * about valid engine versions, see <code>CreateDBInstance</code>, or call
-     * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom, this parameter is
-     * supported for read replicas only if they are in the
+     * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom for Oracle, this
+     * parameter is supported for read replicas only if they are in the
      * <code>PATCH_DB_FAILURE</code> lifecycle. </p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
@@ -1370,8 +1370,8 @@ namespace Model
      * you specify only a major version, Amazon RDS will update the DB instance to the
      * default minor version if the current minor version is lower. For information
      * about valid engine versions, see <code>CreateDBInstance</code>, or call
-     * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom, this parameter is
-     * supported for read replicas only if they are in the
+     * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom for Oracle, this
+     * parameter is supported for read replicas only if they are in the
      * <code>PATCH_DB_FAILURE</code> lifecycle. </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
@@ -1387,8 +1387,8 @@ namespace Model
      * you specify only a major version, Amazon RDS will update the DB instance to the
      * default minor version if the current minor version is lower. For information
      * about valid engine versions, see <code>CreateDBInstance</code>, or call
-     * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom, this parameter is
-     * supported for read replicas only if they are in the
+     * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom for Oracle, this
+     * parameter is supported for read replicas only if they are in the
      * <code>PATCH_DB_FAILURE</code> lifecycle. </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
@@ -1404,8 +1404,8 @@ namespace Model
      * you specify only a major version, Amazon RDS will update the DB instance to the
      * default minor version if the current minor version is lower. For information
      * about valid engine versions, see <code>CreateDBInstance</code>, or call
-     * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom, this parameter is
-     * supported for read replicas only if they are in the
+     * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom for Oracle, this
+     * parameter is supported for read replicas only if they are in the
      * <code>PATCH_DB_FAILURE</code> lifecycle. </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
@@ -1421,8 +1421,8 @@ namespace Model
      * you specify only a major version, Amazon RDS will update the DB instance to the
      * default minor version if the current minor version is lower. For information
      * about valid engine versions, see <code>CreateDBInstance</code>, or call
-     * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom, this parameter is
-     * supported for read replicas only if they are in the
+     * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom for Oracle, this
+     * parameter is supported for read replicas only if they are in the
      * <code>PATCH_DB_FAILURE</code> lifecycle. </p>
      */
     inline ModifyDBInstanceRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
@@ -1438,8 +1438,8 @@ namespace Model
      * you specify only a major version, Amazon RDS will update the DB instance to the
      * default minor version if the current minor version is lower. For information
      * about valid engine versions, see <code>CreateDBInstance</code>, or call
-     * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom, this parameter is
-     * supported for read replicas only if they are in the
+     * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom for Oracle, this
+     * parameter is supported for read replicas only if they are in the
      * <code>PATCH_DB_FAILURE</code> lifecycle. </p>
      */
     inline ModifyDBInstanceRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
@@ -1455,8 +1455,8 @@ namespace Model
      * you specify only a major version, Amazon RDS will update the DB instance to the
      * default minor version if the current minor version is lower. For information
      * about valid engine versions, see <code>CreateDBInstance</code>, or call
-     * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom, this parameter is
-     * supported for read replicas only if they are in the
+     * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom for Oracle, this
+     * parameter is supported for read replicas only if they are in the
      * <code>PATCH_DB_FAILURE</code> lifecycle. </p>
      */
     inline ModifyDBInstanceRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
@@ -2534,7 +2534,7 @@ namespace Model
      * <code>PubliclyAccessible</code> must be enabled for it to be publicly
      * accessible. </p> <p>Changes to the <code>PubliclyAccessible</code> parameter are
      * applied immediately regardless of the value of the <code>ApplyImmediately</code>
-     * parameter.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * parameter.</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
@@ -2552,7 +2552,7 @@ namespace Model
      * <code>PubliclyAccessible</code> must be enabled for it to be publicly
      * accessible. </p> <p>Changes to the <code>PubliclyAccessible</code> parameter are
      * applied immediately regardless of the value of the <code>ApplyImmediately</code>
-     * parameter.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * parameter.</p>
      */
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
 
@@ -2570,7 +2570,7 @@ namespace Model
      * <code>PubliclyAccessible</code> must be enabled for it to be publicly
      * accessible. </p> <p>Changes to the <code>PubliclyAccessible</code> parameter are
      * applied immediately regardless of the value of the <code>ApplyImmediately</code>
-     * parameter.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * parameter.</p>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
@@ -2588,7 +2588,7 @@ namespace Model
      * <code>PubliclyAccessible</code> must be enabled for it to be publicly
      * accessible. </p> <p>Changes to the <code>PubliclyAccessible</code> parameter are
      * applied immediately regardless of the value of the <code>ApplyImmediately</code>
-     * parameter.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * parameter.</p>
      */
     inline ModifyDBInstanceRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 

@@ -96,6 +96,12 @@ DescribePipelineExecutionResult& DescribePipelineExecutionResult::operator =(con
 
   }
 
+  if(jsonValue.ValueExists("ParallelismConfiguration"))
+  {
+    m_parallelismConfiguration = jsonValue.GetObject("ParallelismConfiguration");
+
+  }
+
 
 
   return *this;

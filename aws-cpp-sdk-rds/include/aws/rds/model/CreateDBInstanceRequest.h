@@ -67,13 +67,14 @@ namespace Model
      * <code>ORCL</code> is used. You can't specify the string NULL, or any other
      * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
-     * </ul> <p> <b>Amazon RDS Custom</b> </p> <p>The Oracle System ID (SID) of the
-     * created RDS Custom DB instance. If you don't specify a value, the default value
-     * is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * </ul> <p> <b>Amazon RDS Custom for Oracle</b> </p> <p>The Oracle System ID (SID)
+     * of the created RDS Custom DB instance. If you don't specify a value, the default
+     * value is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 8 alphanumeric
      * characters.</p> </li> <li> <p>It must contain a letter.</p> </li> <li> <p>It
-     * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>SQL
-     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora
+     * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>Amazon
+     * RDS Custom for SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p>
+     * <b>SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora
      * MySQL</b> </p> <p>The name of the database to create when the primary DB
      * instance of the Aurora MySQL DB cluster is created. If this parameter isn't
      * specified for an Aurora MySQL DB cluster, no database is created in the DB
@@ -116,13 +117,14 @@ namespace Model
      * <code>ORCL</code> is used. You can't specify the string NULL, or any other
      * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
-     * </ul> <p> <b>Amazon RDS Custom</b> </p> <p>The Oracle System ID (SID) of the
-     * created RDS Custom DB instance. If you don't specify a value, the default value
-     * is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * </ul> <p> <b>Amazon RDS Custom for Oracle</b> </p> <p>The Oracle System ID (SID)
+     * of the created RDS Custom DB instance. If you don't specify a value, the default
+     * value is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 8 alphanumeric
      * characters.</p> </li> <li> <p>It must contain a letter.</p> </li> <li> <p>It
-     * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>SQL
-     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora
+     * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>Amazon
+     * RDS Custom for SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p>
+     * <b>SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora
      * MySQL</b> </p> <p>The name of the database to create when the primary DB
      * instance of the Aurora MySQL DB cluster is created. If this parameter isn't
      * specified for an Aurora MySQL DB cluster, no database is created in the DB
@@ -165,13 +167,14 @@ namespace Model
      * <code>ORCL</code> is used. You can't specify the string NULL, or any other
      * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
-     * </ul> <p> <b>Amazon RDS Custom</b> </p> <p>The Oracle System ID (SID) of the
-     * created RDS Custom DB instance. If you don't specify a value, the default value
-     * is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * </ul> <p> <b>Amazon RDS Custom for Oracle</b> </p> <p>The Oracle System ID (SID)
+     * of the created RDS Custom DB instance. If you don't specify a value, the default
+     * value is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 8 alphanumeric
      * characters.</p> </li> <li> <p>It must contain a letter.</p> </li> <li> <p>It
-     * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>SQL
-     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora
+     * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>Amazon
+     * RDS Custom for SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p>
+     * <b>SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora
      * MySQL</b> </p> <p>The name of the database to create when the primary DB
      * instance of the Aurora MySQL DB cluster is created. If this parameter isn't
      * specified for an Aurora MySQL DB cluster, no database is created in the DB
@@ -214,13 +217,14 @@ namespace Model
      * <code>ORCL</code> is used. You can't specify the string NULL, or any other
      * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
-     * </ul> <p> <b>Amazon RDS Custom</b> </p> <p>The Oracle System ID (SID) of the
-     * created RDS Custom DB instance. If you don't specify a value, the default value
-     * is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * </ul> <p> <b>Amazon RDS Custom for Oracle</b> </p> <p>The Oracle System ID (SID)
+     * of the created RDS Custom DB instance. If you don't specify a value, the default
+     * value is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 8 alphanumeric
      * characters.</p> </li> <li> <p>It must contain a letter.</p> </li> <li> <p>It
-     * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>SQL
-     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora
+     * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>Amazon
+     * RDS Custom for SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p>
+     * <b>SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora
      * MySQL</b> </p> <p>The name of the database to create when the primary DB
      * instance of the Aurora MySQL DB cluster is created. If this parameter isn't
      * specified for an Aurora MySQL DB cluster, no database is created in the DB
@@ -263,13 +267,14 @@ namespace Model
      * <code>ORCL</code> is used. You can't specify the string NULL, or any other
      * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
-     * </ul> <p> <b>Amazon RDS Custom</b> </p> <p>The Oracle System ID (SID) of the
-     * created RDS Custom DB instance. If you don't specify a value, the default value
-     * is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * </ul> <p> <b>Amazon RDS Custom for Oracle</b> </p> <p>The Oracle System ID (SID)
+     * of the created RDS Custom DB instance. If you don't specify a value, the default
+     * value is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 8 alphanumeric
      * characters.</p> </li> <li> <p>It must contain a letter.</p> </li> <li> <p>It
-     * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>SQL
-     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora
+     * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>Amazon
+     * RDS Custom for SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p>
+     * <b>SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora
      * MySQL</b> </p> <p>The name of the database to create when the primary DB
      * instance of the Aurora MySQL DB cluster is created. If this parameter isn't
      * specified for an Aurora MySQL DB cluster, no database is created in the DB
@@ -312,13 +317,14 @@ namespace Model
      * <code>ORCL</code> is used. You can't specify the string NULL, or any other
      * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
-     * </ul> <p> <b>Amazon RDS Custom</b> </p> <p>The Oracle System ID (SID) of the
-     * created RDS Custom DB instance. If you don't specify a value, the default value
-     * is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * </ul> <p> <b>Amazon RDS Custom for Oracle</b> </p> <p>The Oracle System ID (SID)
+     * of the created RDS Custom DB instance. If you don't specify a value, the default
+     * value is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 8 alphanumeric
      * characters.</p> </li> <li> <p>It must contain a letter.</p> </li> <li> <p>It
-     * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>SQL
-     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora
+     * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>Amazon
+     * RDS Custom for SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p>
+     * <b>SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora
      * MySQL</b> </p> <p>The name of the database to create when the primary DB
      * instance of the Aurora MySQL DB cluster is created. If this parameter isn't
      * specified for an Aurora MySQL DB cluster, no database is created in the DB
@@ -361,13 +367,14 @@ namespace Model
      * <code>ORCL</code> is used. You can't specify the string NULL, or any other
      * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
-     * </ul> <p> <b>Amazon RDS Custom</b> </p> <p>The Oracle System ID (SID) of the
-     * created RDS Custom DB instance. If you don't specify a value, the default value
-     * is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * </ul> <p> <b>Amazon RDS Custom for Oracle</b> </p> <p>The Oracle System ID (SID)
+     * of the created RDS Custom DB instance. If you don't specify a value, the default
+     * value is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 8 alphanumeric
      * characters.</p> </li> <li> <p>It must contain a letter.</p> </li> <li> <p>It
-     * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>SQL
-     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora
+     * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>Amazon
+     * RDS Custom for SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p>
+     * <b>SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora
      * MySQL</b> </p> <p>The name of the database to create when the primary DB
      * instance of the Aurora MySQL DB cluster is created. If this parameter isn't
      * specified for an Aurora MySQL DB cluster, no database is created in the DB
@@ -410,13 +417,14 @@ namespace Model
      * <code>ORCL</code> is used. You can't specify the string NULL, or any other
      * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
-     * </ul> <p> <b>Amazon RDS Custom</b> </p> <p>The Oracle System ID (SID) of the
-     * created RDS Custom DB instance. If you don't specify a value, the default value
-     * is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * </ul> <p> <b>Amazon RDS Custom for Oracle</b> </p> <p>The Oracle System ID (SID)
+     * of the created RDS Custom DB instance. If you don't specify a value, the default
+     * value is <code>ORCL</code>. </p> <p>Default: <code>ORCL</code> </p>
      * <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 8 alphanumeric
      * characters.</p> </li> <li> <p>It must contain a letter.</p> </li> <li> <p>It
-     * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>SQL
-     * Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora
+     * can't be a word reserved by the database engine.</p> </li> </ul> <p> <b>Amazon
+     * RDS Custom for SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p>
+     * <b>SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p> <b>Amazon Aurora
      * MySQL</b> </p> <p>The name of the database to create when the primary DB
      * instance of the Aurora MySQL DB cluster is created. If this parameter isn't
      * specified for an Aurora MySQL DB cluster, no database is created in the DB
@@ -515,39 +523,41 @@ namespace Model
      * increases, though you are only charged for the space that you use in an Aurora
      * cluster volume.</p> <p> <b>Amazon RDS Custom</b> </p> <p>Constraints to the
      * amount of storage for each storage type are the following: </p> <ul> <li>
-     * <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536.</p>
-     * </li> <li> <p>Provisioned IOPS storage (io1): Must be an integer from 40 to
-     * 65536.</p> </li> </ul> <p> <b>MySQL</b> </p> <p>Constraints to the amount of
-     * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
-     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
-     * 3072.</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>Constraints to the amount of
-     * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
-     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
-     * 3072.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints to the amount of
-     * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
-     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
-     * 3072.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints to the amount of
-     * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
-     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 10 to
-     * 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Constraints to the amount of
-     * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2):</p> <ul> <li> <p>Enterprise and Standard editions:
-     * Must be an integer from 200 to 16384.</p> </li> <li> <p>Web and Express
-     * editions: Must be an integer from 20 to 16384.</p> </li> </ul> </li> <li>
-     * <p>Provisioned IOPS storage (io1):</p> <ul> <li> <p>Enterprise and Standard
-     * editions: Must be an integer from 200 to 16384.</p> </li> <li> <p>Web and
-     * Express editions: Must be an integer from 100 to 16384.</p> </li> </ul> </li>
-     * <li> <p>Magnetic storage (standard):</p> <ul> <li> <p>Enterprise and Standard
-     * editions: Must be an integer from 200 to 1024.</p> </li> <li> <p>Web and Express
-     * editions: Must be an integer from 20 to 1024.</p> </li> </ul> </li> </ul>
+     * <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536 for
+     * RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS
+     * Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> </ul> <p>
+     * <b>MySQL</b> </p> <p>Constraints to the amount of storage for each storage type
+     * are the following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must
+     * be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
+     * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
+     * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
+     * <b>MariaDB</b> </p> <p>Constraints to the amount of storage for each storage
+     * type are the following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
+     * Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
+     * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
+     * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
+     * <b>PostgreSQL</b> </p> <p>Constraints to the amount of storage for each storage
+     * type are the following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
+     * Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
+     * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
+     * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p> <b>Oracle</b>
+     * </p> <p>Constraints to the amount of storage for each storage type are the
+     * following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must be an
+     * integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage (io1): Must
+     * be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage (standard):
+     * Must be an integer from 10 to 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p>
+     * <p>Constraints to the amount of storage for each storage type are the following:
+     * </p> <ul> <li> <p>General Purpose (SSD) storage (gp2):</p> <ul> <li>
+     * <p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p>
+     * </li> <li> <p>Web and Express editions: Must be an integer from 20 to 16384.</p>
+     * </li> </ul> </li> <li> <p>Provisioned IOPS storage (io1):</p> <ul> <li>
+     * <p>Enterprise and Standard editions: Must be an integer from 100 to 16384.</p>
+     * </li> <li> <p>Web and Express editions: Must be an integer from 100 to
+     * 16384.</p> </li> </ul> </li> <li> <p>Magnetic storage (standard):</p> <ul> <li>
+     * <p>Enterprise and Standard editions: Must be an integer from 20 to 1024.</p>
+     * </li> <li> <p>Web and Express editions: Must be an integer from 20 to 1024.</p>
+     * </li> </ul> </li> </ul>
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
@@ -558,39 +568,41 @@ namespace Model
      * increases, though you are only charged for the space that you use in an Aurora
      * cluster volume.</p> <p> <b>Amazon RDS Custom</b> </p> <p>Constraints to the
      * amount of storage for each storage type are the following: </p> <ul> <li>
-     * <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536.</p>
-     * </li> <li> <p>Provisioned IOPS storage (io1): Must be an integer from 40 to
-     * 65536.</p> </li> </ul> <p> <b>MySQL</b> </p> <p>Constraints to the amount of
-     * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
-     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
-     * 3072.</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>Constraints to the amount of
-     * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
-     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
-     * 3072.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints to the amount of
-     * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
-     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
-     * 3072.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints to the amount of
-     * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
-     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 10 to
-     * 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Constraints to the amount of
-     * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2):</p> <ul> <li> <p>Enterprise and Standard editions:
-     * Must be an integer from 200 to 16384.</p> </li> <li> <p>Web and Express
-     * editions: Must be an integer from 20 to 16384.</p> </li> </ul> </li> <li>
-     * <p>Provisioned IOPS storage (io1):</p> <ul> <li> <p>Enterprise and Standard
-     * editions: Must be an integer from 200 to 16384.</p> </li> <li> <p>Web and
-     * Express editions: Must be an integer from 100 to 16384.</p> </li> </ul> </li>
-     * <li> <p>Magnetic storage (standard):</p> <ul> <li> <p>Enterprise and Standard
-     * editions: Must be an integer from 200 to 1024.</p> </li> <li> <p>Web and Express
-     * editions: Must be an integer from 20 to 1024.</p> </li> </ul> </li> </ul>
+     * <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536 for
+     * RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS
+     * Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> </ul> <p>
+     * <b>MySQL</b> </p> <p>Constraints to the amount of storage for each storage type
+     * are the following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must
+     * be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
+     * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
+     * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
+     * <b>MariaDB</b> </p> <p>Constraints to the amount of storage for each storage
+     * type are the following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
+     * Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
+     * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
+     * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
+     * <b>PostgreSQL</b> </p> <p>Constraints to the amount of storage for each storage
+     * type are the following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
+     * Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
+     * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
+     * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p> <b>Oracle</b>
+     * </p> <p>Constraints to the amount of storage for each storage type are the
+     * following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must be an
+     * integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage (io1): Must
+     * be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage (standard):
+     * Must be an integer from 10 to 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p>
+     * <p>Constraints to the amount of storage for each storage type are the following:
+     * </p> <ul> <li> <p>General Purpose (SSD) storage (gp2):</p> <ul> <li>
+     * <p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p>
+     * </li> <li> <p>Web and Express editions: Must be an integer from 20 to 16384.</p>
+     * </li> </ul> </li> <li> <p>Provisioned IOPS storage (io1):</p> <ul> <li>
+     * <p>Enterprise and Standard editions: Must be an integer from 100 to 16384.</p>
+     * </li> <li> <p>Web and Express editions: Must be an integer from 100 to
+     * 16384.</p> </li> </ul> </li> <li> <p>Magnetic storage (standard):</p> <ul> <li>
+     * <p>Enterprise and Standard editions: Must be an integer from 20 to 1024.</p>
+     * </li> <li> <p>Web and Express editions: Must be an integer from 20 to 1024.</p>
+     * </li> </ul> </li> </ul>
      */
     inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
 
@@ -601,39 +613,41 @@ namespace Model
      * increases, though you are only charged for the space that you use in an Aurora
      * cluster volume.</p> <p> <b>Amazon RDS Custom</b> </p> <p>Constraints to the
      * amount of storage for each storage type are the following: </p> <ul> <li>
-     * <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536.</p>
-     * </li> <li> <p>Provisioned IOPS storage (io1): Must be an integer from 40 to
-     * 65536.</p> </li> </ul> <p> <b>MySQL</b> </p> <p>Constraints to the amount of
-     * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
-     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
-     * 3072.</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>Constraints to the amount of
-     * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
-     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
-     * 3072.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints to the amount of
-     * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
-     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
-     * 3072.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints to the amount of
-     * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
-     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 10 to
-     * 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Constraints to the amount of
-     * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2):</p> <ul> <li> <p>Enterprise and Standard editions:
-     * Must be an integer from 200 to 16384.</p> </li> <li> <p>Web and Express
-     * editions: Must be an integer from 20 to 16384.</p> </li> </ul> </li> <li>
-     * <p>Provisioned IOPS storage (io1):</p> <ul> <li> <p>Enterprise and Standard
-     * editions: Must be an integer from 200 to 16384.</p> </li> <li> <p>Web and
-     * Express editions: Must be an integer from 100 to 16384.</p> </li> </ul> </li>
-     * <li> <p>Magnetic storage (standard):</p> <ul> <li> <p>Enterprise and Standard
-     * editions: Must be an integer from 200 to 1024.</p> </li> <li> <p>Web and Express
-     * editions: Must be an integer from 20 to 1024.</p> </li> </ul> </li> </ul>
+     * <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536 for
+     * RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS
+     * Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> </ul> <p>
+     * <b>MySQL</b> </p> <p>Constraints to the amount of storage for each storage type
+     * are the following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must
+     * be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
+     * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
+     * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
+     * <b>MariaDB</b> </p> <p>Constraints to the amount of storage for each storage
+     * type are the following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
+     * Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
+     * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
+     * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
+     * <b>PostgreSQL</b> </p> <p>Constraints to the amount of storage for each storage
+     * type are the following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
+     * Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
+     * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
+     * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p> <b>Oracle</b>
+     * </p> <p>Constraints to the amount of storage for each storage type are the
+     * following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must be an
+     * integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage (io1): Must
+     * be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage (standard):
+     * Must be an integer from 10 to 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p>
+     * <p>Constraints to the amount of storage for each storage type are the following:
+     * </p> <ul> <li> <p>General Purpose (SSD) storage (gp2):</p> <ul> <li>
+     * <p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p>
+     * </li> <li> <p>Web and Express editions: Must be an integer from 20 to 16384.</p>
+     * </li> </ul> </li> <li> <p>Provisioned IOPS storage (io1):</p> <ul> <li>
+     * <p>Enterprise and Standard editions: Must be an integer from 100 to 16384.</p>
+     * </li> <li> <p>Web and Express editions: Must be an integer from 100 to
+     * 16384.</p> </li> </ul> </li> <li> <p>Magnetic storage (standard):</p> <ul> <li>
+     * <p>Enterprise and Standard editions: Must be an integer from 20 to 1024.</p>
+     * </li> <li> <p>Web and Express editions: Must be an integer from 20 to 1024.</p>
+     * </li> </ul> </li> </ul>
      */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
@@ -644,39 +658,41 @@ namespace Model
      * increases, though you are only charged for the space that you use in an Aurora
      * cluster volume.</p> <p> <b>Amazon RDS Custom</b> </p> <p>Constraints to the
      * amount of storage for each storage type are the following: </p> <ul> <li>
-     * <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536.</p>
-     * </li> <li> <p>Provisioned IOPS storage (io1): Must be an integer from 40 to
-     * 65536.</p> </li> </ul> <p> <b>MySQL</b> </p> <p>Constraints to the amount of
-     * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
-     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
-     * 3072.</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>Constraints to the amount of
-     * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
-     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
-     * 3072.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints to the amount of
-     * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
-     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
-     * 3072.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints to the amount of
-     * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
-     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 10 to
-     * 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Constraints to the amount of
-     * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2):</p> <ul> <li> <p>Enterprise and Standard editions:
-     * Must be an integer from 200 to 16384.</p> </li> <li> <p>Web and Express
-     * editions: Must be an integer from 20 to 16384.</p> </li> </ul> </li> <li>
-     * <p>Provisioned IOPS storage (io1):</p> <ul> <li> <p>Enterprise and Standard
-     * editions: Must be an integer from 200 to 16384.</p> </li> <li> <p>Web and
-     * Express editions: Must be an integer from 100 to 16384.</p> </li> </ul> </li>
-     * <li> <p>Magnetic storage (standard):</p> <ul> <li> <p>Enterprise and Standard
-     * editions: Must be an integer from 200 to 1024.</p> </li> <li> <p>Web and Express
-     * editions: Must be an integer from 20 to 1024.</p> </li> </ul> </li> </ul>
+     * <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536 for
+     * RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS
+     * Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> </ul> <p>
+     * <b>MySQL</b> </p> <p>Constraints to the amount of storage for each storage type
+     * are the following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must
+     * be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
+     * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
+     * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
+     * <b>MariaDB</b> </p> <p>Constraints to the amount of storage for each storage
+     * type are the following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
+     * Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
+     * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
+     * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
+     * <b>PostgreSQL</b> </p> <p>Constraints to the amount of storage for each storage
+     * type are the following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
+     * Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
+     * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
+     * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p> <b>Oracle</b>
+     * </p> <p>Constraints to the amount of storage for each storage type are the
+     * following: </p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must be an
+     * integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage (io1): Must
+     * be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage (standard):
+     * Must be an integer from 10 to 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p>
+     * <p>Constraints to the amount of storage for each storage type are the following:
+     * </p> <ul> <li> <p>General Purpose (SSD) storage (gp2):</p> <ul> <li>
+     * <p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p>
+     * </li> <li> <p>Web and Express editions: Must be an integer from 20 to 16384.</p>
+     * </li> </ul> </li> <li> <p>Provisioned IOPS storage (io1):</p> <ul> <li>
+     * <p>Enterprise and Standard editions: Must be an integer from 100 to 16384.</p>
+     * </li> <li> <p>Web and Express editions: Must be an integer from 100 to
+     * 16384.</p> </li> </ul> </li> <li> <p>Magnetic storage (standard):</p> <ul> <li>
+     * <p>Enterprise and Standard editions: Must be an integer from 20 to 1024.</p>
+     * </li> <li> <p>Web and Express editions: Must be an integer from 20 to 1024.</p>
+     * </li> </ul> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
@@ -767,15 +783,20 @@ namespace Model
      * every database engine is available for every Amazon Web Services Region. </p>
      * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
      * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
-     * 5.7-compatible Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p>
-     * </li> <li> <p> <code>custom-oracle-ee (for RDS Custom instances)</code> </p>
-     * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
-     * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
-     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
-     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
-     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
-     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
-     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
+     * 5.7-compatible and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee (for
+     * RDS Custom for Oracle instances)</code> </p> </li> <li> <p>
+     * <code>custom-sqlserver-ee (for RDS Custom for SQL Server instances)</code> </p>
+     * </li> <li> <p> <code>custom-sqlserver-se (for RDS Custom for SQL Server
+     * instances)</code> </p> </li> <li> <p> <code>custom-sqlserver-web (for RDS Custom
+     * for SQL Server instances)</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
@@ -784,15 +805,20 @@ namespace Model
      * every database engine is available for every Amazon Web Services Region. </p>
      * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
      * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
-     * 5.7-compatible Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p>
-     * </li> <li> <p> <code>custom-oracle-ee (for RDS Custom instances)</code> </p>
-     * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
-     * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
-     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
-     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
-     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
-     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
-     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
+     * 5.7-compatible and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee (for
+     * RDS Custom for Oracle instances)</code> </p> </li> <li> <p>
+     * <code>custom-sqlserver-ee (for RDS Custom for SQL Server instances)</code> </p>
+     * </li> <li> <p> <code>custom-sqlserver-se (for RDS Custom for SQL Server
+     * instances)</code> </p> </li> <li> <p> <code>custom-sqlserver-web (for RDS Custom
+     * for SQL Server instances)</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
@@ -801,15 +827,20 @@ namespace Model
      * every database engine is available for every Amazon Web Services Region. </p>
      * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
      * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
-     * 5.7-compatible Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p>
-     * </li> <li> <p> <code>custom-oracle-ee (for RDS Custom instances)</code> </p>
-     * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
-     * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
-     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
-     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
-     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
-     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
-     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
+     * 5.7-compatible and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee (for
+     * RDS Custom for Oracle instances)</code> </p> </li> <li> <p>
+     * <code>custom-sqlserver-ee (for RDS Custom for SQL Server instances)</code> </p>
+     * </li> <li> <p> <code>custom-sqlserver-se (for RDS Custom for SQL Server
+     * instances)</code> </p> </li> <li> <p> <code>custom-sqlserver-web (for RDS Custom
+     * for SQL Server instances)</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
@@ -818,15 +849,20 @@ namespace Model
      * every database engine is available for every Amazon Web Services Region. </p>
      * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
      * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
-     * 5.7-compatible Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p>
-     * </li> <li> <p> <code>custom-oracle-ee (for RDS Custom instances)</code> </p>
-     * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
-     * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
-     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
-     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
-     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
-     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
-     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
+     * 5.7-compatible and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee (for
+     * RDS Custom for Oracle instances)</code> </p> </li> <li> <p>
+     * <code>custom-sqlserver-ee (for RDS Custom for SQL Server instances)</code> </p>
+     * </li> <li> <p> <code>custom-sqlserver-se (for RDS Custom for SQL Server
+     * instances)</code> </p> </li> <li> <p> <code>custom-sqlserver-web (for RDS Custom
+     * for SQL Server instances)</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
@@ -835,15 +871,20 @@ namespace Model
      * every database engine is available for every Amazon Web Services Region. </p>
      * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
      * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
-     * 5.7-compatible Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p>
-     * </li> <li> <p> <code>custom-oracle-ee (for RDS Custom instances)</code> </p>
-     * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
-     * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
-     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
-     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
-     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
-     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
-     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
+     * 5.7-compatible and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee (for
+     * RDS Custom for Oracle instances)</code> </p> </li> <li> <p>
+     * <code>custom-sqlserver-ee (for RDS Custom for SQL Server instances)</code> </p>
+     * </li> <li> <p> <code>custom-sqlserver-se (for RDS Custom for SQL Server
+     * instances)</code> </p> </li> <li> <p> <code>custom-sqlserver-web (for RDS Custom
+     * for SQL Server instances)</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
@@ -852,15 +893,20 @@ namespace Model
      * every database engine is available for every Amazon Web Services Region. </p>
      * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
      * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
-     * 5.7-compatible Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p>
-     * </li> <li> <p> <code>custom-oracle-ee (for RDS Custom instances)</code> </p>
-     * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
-     * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
-     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
-     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
-     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
-     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
-     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
+     * 5.7-compatible and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee (for
+     * RDS Custom for Oracle instances)</code> </p> </li> <li> <p>
+     * <code>custom-sqlserver-ee (for RDS Custom for SQL Server instances)</code> </p>
+     * </li> <li> <p> <code>custom-sqlserver-se (for RDS Custom for SQL Server
+     * instances)</code> </p> </li> <li> <p> <code>custom-sqlserver-web (for RDS Custom
+     * for SQL Server instances)</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
@@ -869,15 +915,20 @@ namespace Model
      * every database engine is available for every Amazon Web Services Region. </p>
      * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
      * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
-     * 5.7-compatible Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p>
-     * </li> <li> <p> <code>custom-oracle-ee (for RDS Custom instances)</code> </p>
-     * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
-     * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
-     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
-     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
-     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
-     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
-     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
+     * 5.7-compatible and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee (for
+     * RDS Custom for Oracle instances)</code> </p> </li> <li> <p>
+     * <code>custom-sqlserver-ee (for RDS Custom for SQL Server instances)</code> </p>
+     * </li> <li> <p> <code>custom-sqlserver-se (for RDS Custom for SQL Server
+     * instances)</code> </p> </li> <li> <p> <code>custom-sqlserver-web (for RDS Custom
+     * for SQL Server instances)</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
@@ -886,15 +937,20 @@ namespace Model
      * every database engine is available for every Amazon Web Services Region. </p>
      * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
      * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
-     * 5.7-compatible Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p>
-     * </li> <li> <p> <code>custom-oracle-ee (for RDS Custom instances)</code> </p>
-     * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
-     * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
-     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
-     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
-     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
-     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
-     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
+     * 5.7-compatible and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee (for
+     * RDS Custom for Oracle instances)</code> </p> </li> <li> <p>
+     * <code>custom-sqlserver-ee (for RDS Custom for SQL Server instances)</code> </p>
+     * </li> <li> <p> <code>custom-sqlserver-se (for RDS Custom for SQL Server
+     * instances)</code> </p> </li> <li> <p> <code>custom-sqlserver-web (for RDS Custom
+     * for SQL Server instances)</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -1217,15 +1273,16 @@ namespace Model
      * <p> The Availability Zone (AZ) where the database will be created. For
      * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
-     * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
-     * Availability Zone in the endpoint's Amazon Web Services Region.</p> <p> Example:
-     * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
-     * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
-     * specified Availability Zone must be in the same Amazon Web Services Region as
-     * the current endpoint. </p>  <p>If you're creating a DB instance in an RDS
-     * on VMware environment, specify the identifier of the custom Availability Zone to
-     * create the DB instance in.</p> <p>For more information about RDS on VMware, see
-     * the <a
+     * and Availability Zones</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. Availability Zones are managed by the DB cluster. </p> <p>Default: A
+     * random, system-chosen Availability Zone in the endpoint's Amazon Web Services
+     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
+     * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
+     * a Multi-AZ deployment. The specified Availability Zone must be in the same
+     * Amazon Web Services Region as the current endpoint. </p>  <p>If you're
+     * creating a DB instance in an RDS on VMware environment, specify the identifier
+     * of the custom Availability Zone to create the DB instance in.</p> <p>For more
+     * information about RDS on VMware, see the <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
      * RDS on VMware User Guide.</a> </p> 
      */
@@ -1235,15 +1292,16 @@ namespace Model
      * <p> The Availability Zone (AZ) where the database will be created. For
      * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
-     * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
-     * Availability Zone in the endpoint's Amazon Web Services Region.</p> <p> Example:
-     * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
-     * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
-     * specified Availability Zone must be in the same Amazon Web Services Region as
-     * the current endpoint. </p>  <p>If you're creating a DB instance in an RDS
-     * on VMware environment, specify the identifier of the custom Availability Zone to
-     * create the DB instance in.</p> <p>For more information about RDS on VMware, see
-     * the <a
+     * and Availability Zones</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. Availability Zones are managed by the DB cluster. </p> <p>Default: A
+     * random, system-chosen Availability Zone in the endpoint's Amazon Web Services
+     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
+     * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
+     * a Multi-AZ deployment. The specified Availability Zone must be in the same
+     * Amazon Web Services Region as the current endpoint. </p>  <p>If you're
+     * creating a DB instance in an RDS on VMware environment, specify the identifier
+     * of the custom Availability Zone to create the DB instance in.</p> <p>For more
+     * information about RDS on VMware, see the <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
      * RDS on VMware User Guide.</a> </p> 
      */
@@ -1253,15 +1311,16 @@ namespace Model
      * <p> The Availability Zone (AZ) where the database will be created. For
      * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
-     * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
-     * Availability Zone in the endpoint's Amazon Web Services Region.</p> <p> Example:
-     * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
-     * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
-     * specified Availability Zone must be in the same Amazon Web Services Region as
-     * the current endpoint. </p>  <p>If you're creating a DB instance in an RDS
-     * on VMware environment, specify the identifier of the custom Availability Zone to
-     * create the DB instance in.</p> <p>For more information about RDS on VMware, see
-     * the <a
+     * and Availability Zones</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. Availability Zones are managed by the DB cluster. </p> <p>Default: A
+     * random, system-chosen Availability Zone in the endpoint's Amazon Web Services
+     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
+     * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
+     * a Multi-AZ deployment. The specified Availability Zone must be in the same
+     * Amazon Web Services Region as the current endpoint. </p>  <p>If you're
+     * creating a DB instance in an RDS on VMware environment, specify the identifier
+     * of the custom Availability Zone to create the DB instance in.</p> <p>For more
+     * information about RDS on VMware, see the <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
      * RDS on VMware User Guide.</a> </p> 
      */
@@ -1271,15 +1330,16 @@ namespace Model
      * <p> The Availability Zone (AZ) where the database will be created. For
      * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
-     * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
-     * Availability Zone in the endpoint's Amazon Web Services Region.</p> <p> Example:
-     * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
-     * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
-     * specified Availability Zone must be in the same Amazon Web Services Region as
-     * the current endpoint. </p>  <p>If you're creating a DB instance in an RDS
-     * on VMware environment, specify the identifier of the custom Availability Zone to
-     * create the DB instance in.</p> <p>For more information about RDS on VMware, see
-     * the <a
+     * and Availability Zones</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. Availability Zones are managed by the DB cluster. </p> <p>Default: A
+     * random, system-chosen Availability Zone in the endpoint's Amazon Web Services
+     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
+     * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
+     * a Multi-AZ deployment. The specified Availability Zone must be in the same
+     * Amazon Web Services Region as the current endpoint. </p>  <p>If you're
+     * creating a DB instance in an RDS on VMware environment, specify the identifier
+     * of the custom Availability Zone to create the DB instance in.</p> <p>For more
+     * information about RDS on VMware, see the <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
      * RDS on VMware User Guide.</a> </p> 
      */
@@ -1289,15 +1349,16 @@ namespace Model
      * <p> The Availability Zone (AZ) where the database will be created. For
      * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
-     * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
-     * Availability Zone in the endpoint's Amazon Web Services Region.</p> <p> Example:
-     * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
-     * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
-     * specified Availability Zone must be in the same Amazon Web Services Region as
-     * the current endpoint. </p>  <p>If you're creating a DB instance in an RDS
-     * on VMware environment, specify the identifier of the custom Availability Zone to
-     * create the DB instance in.</p> <p>For more information about RDS on VMware, see
-     * the <a
+     * and Availability Zones</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. Availability Zones are managed by the DB cluster. </p> <p>Default: A
+     * random, system-chosen Availability Zone in the endpoint's Amazon Web Services
+     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
+     * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
+     * a Multi-AZ deployment. The specified Availability Zone must be in the same
+     * Amazon Web Services Region as the current endpoint. </p>  <p>If you're
+     * creating a DB instance in an RDS on VMware environment, specify the identifier
+     * of the custom Availability Zone to create the DB instance in.</p> <p>For more
+     * information about RDS on VMware, see the <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
      * RDS on VMware User Guide.</a> </p> 
      */
@@ -1307,15 +1368,16 @@ namespace Model
      * <p> The Availability Zone (AZ) where the database will be created. For
      * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
-     * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
-     * Availability Zone in the endpoint's Amazon Web Services Region.</p> <p> Example:
-     * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
-     * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
-     * specified Availability Zone must be in the same Amazon Web Services Region as
-     * the current endpoint. </p>  <p>If you're creating a DB instance in an RDS
-     * on VMware environment, specify the identifier of the custom Availability Zone to
-     * create the DB instance in.</p> <p>For more information about RDS on VMware, see
-     * the <a
+     * and Availability Zones</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. Availability Zones are managed by the DB cluster. </p> <p>Default: A
+     * random, system-chosen Availability Zone in the endpoint's Amazon Web Services
+     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
+     * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
+     * a Multi-AZ deployment. The specified Availability Zone must be in the same
+     * Amazon Web Services Region as the current endpoint. </p>  <p>If you're
+     * creating a DB instance in an RDS on VMware environment, specify the identifier
+     * of the custom Availability Zone to create the DB instance in.</p> <p>For more
+     * information about RDS on VMware, see the <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
      * RDS on VMware User Guide.</a> </p> 
      */
@@ -1325,15 +1387,16 @@ namespace Model
      * <p> The Availability Zone (AZ) where the database will be created. For
      * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
-     * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
-     * Availability Zone in the endpoint's Amazon Web Services Region.</p> <p> Example:
-     * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
-     * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
-     * specified Availability Zone must be in the same Amazon Web Services Region as
-     * the current endpoint. </p>  <p>If you're creating a DB instance in an RDS
-     * on VMware environment, specify the identifier of the custom Availability Zone to
-     * create the DB instance in.</p> <p>For more information about RDS on VMware, see
-     * the <a
+     * and Availability Zones</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. Availability Zones are managed by the DB cluster. </p> <p>Default: A
+     * random, system-chosen Availability Zone in the endpoint's Amazon Web Services
+     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
+     * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
+     * a Multi-AZ deployment. The specified Availability Zone must be in the same
+     * Amazon Web Services Region as the current endpoint. </p>  <p>If you're
+     * creating a DB instance in an RDS on VMware environment, specify the identifier
+     * of the custom Availability Zone to create the DB instance in.</p> <p>For more
+     * information about RDS on VMware, see the <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
      * RDS on VMware User Guide.</a> </p> 
      */
@@ -1343,15 +1406,16 @@ namespace Model
      * <p> The Availability Zone (AZ) where the database will be created. For
      * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
-     * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
-     * Availability Zone in the endpoint's Amazon Web Services Region.</p> <p> Example:
-     * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
-     * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
-     * specified Availability Zone must be in the same Amazon Web Services Region as
-     * the current endpoint. </p>  <p>If you're creating a DB instance in an RDS
-     * on VMware environment, specify the identifier of the custom Availability Zone to
-     * create the DB instance in.</p> <p>For more information about RDS on VMware, see
-     * the <a
+     * and Availability Zones</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. Availability Zones are managed by the DB cluster. </p> <p>Default: A
+     * random, system-chosen Availability Zone in the endpoint's Amazon Web Services
+     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
+     * <code>AvailabilityZone</code> parameter can't be specified if the DB instance is
+     * a Multi-AZ deployment. The specified Availability Zone must be in the same
+     * Amazon Web Services Region as the current endpoint. </p>  <p>If you're
+     * creating a DB instance in an RDS on VMware environment, specify the identifier
+     * of the custom Availability Zone to create the DB instance in.</p> <p>For more
+     * information about RDS on VMware, see the <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
      * RDS on VMware User Guide.</a> </p> 
      */
@@ -1592,8 +1656,8 @@ namespace Model
      * The retention period for automated backups is managed by the DB cluster.</p>
      * <p>Default: 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to
      * 35</p> </li> <li> <p>Can't be set to 0 if the DB instance is a source to read
-     * replicas</p> </li> <li> <p>Can't be set to 0 or 35 for an RDS Custom DB
-     * instance</p> </li> </ul>
+     * replicas</p> </li> <li> <p>Can't be set to 0 or 35 for an RDS Custom for Oracle
+     * DB instance</p> </li> </ul>
      */
     inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
 
@@ -1604,8 +1668,8 @@ namespace Model
      * The retention period for automated backups is managed by the DB cluster.</p>
      * <p>Default: 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to
      * 35</p> </li> <li> <p>Can't be set to 0 if the DB instance is a source to read
-     * replicas</p> </li> <li> <p>Can't be set to 0 or 35 for an RDS Custom DB
-     * instance</p> </li> </ul>
+     * replicas</p> </li> <li> <p>Can't be set to 0 or 35 for an RDS Custom for Oracle
+     * DB instance</p> </li> </ul>
      */
     inline bool BackupRetentionPeriodHasBeenSet() const { return m_backupRetentionPeriodHasBeenSet; }
 
@@ -1616,8 +1680,8 @@ namespace Model
      * The retention period for automated backups is managed by the DB cluster.</p>
      * <p>Default: 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to
      * 35</p> </li> <li> <p>Can't be set to 0 if the DB instance is a source to read
-     * replicas</p> </li> <li> <p>Can't be set to 0 or 35 for an RDS Custom DB
-     * instance</p> </li> </ul>
+     * replicas</p> </li> <li> <p>Can't be set to 0 or 35 for an RDS Custom for Oracle
+     * DB instance</p> </li> </ul>
      */
     inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
@@ -1628,8 +1692,8 @@ namespace Model
      * The retention period for automated backups is managed by the DB cluster.</p>
      * <p>Default: 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to
      * 35</p> </li> <li> <p>Can't be set to 0 if the DB instance is a source to read
-     * replicas</p> </li> <li> <p>Can't be set to 0 or 35 for an RDS Custom DB
-     * instance</p> </li> </ul>
+     * replicas</p> </li> <li> <p>Can't be set to 0 or 35 for an RDS Custom for Oracle
+     * DB instance</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
 
@@ -1869,13 +1933,16 @@ namespace Model
      * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The version number of the database engine to
      * be used by the DB instance is managed by the DB cluster.</p> <p> <b>Amazon RDS
-     * Custom</b> </p> <p>A custom engine version (CEV) that you have previously
-     * created. This setting is required for RDS Custom. The CEV name has the following
-     * format: <code>19.<i>customized_string</i> </code>. An example identifier is
-     * <code>19.my_cev1</code>. For more information, see <a
+     * Custom for Oracle</b> </p> <p>A custom engine version (CEV) that you have
+     * previously created. This setting is required for RDS Custom for Oracle. The CEV
+     * name has the following format: <code>19.<i>customized_string</i> </code>. An
+     * example identifier is <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
-     * Creating an RDS Custom DB instance</a> in the <i>Amazon RDS User Guide.</i>.</p>
-     * <p> <b>MariaDB</b> </p> <p>For information, see <a
+     * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
+     * Guide.</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.reqsMS">RDS
+     * Custom for SQL Server general requirements</a> in the <i>Amazon RDS User
+     * Guide.</i> </p> <p> <b>MariaDB</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>For information, see <a
@@ -1902,13 +1969,16 @@ namespace Model
      * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The version number of the database engine to
      * be used by the DB instance is managed by the DB cluster.</p> <p> <b>Amazon RDS
-     * Custom</b> </p> <p>A custom engine version (CEV) that you have previously
-     * created. This setting is required for RDS Custom. The CEV name has the following
-     * format: <code>19.<i>customized_string</i> </code>. An example identifier is
-     * <code>19.my_cev1</code>. For more information, see <a
+     * Custom for Oracle</b> </p> <p>A custom engine version (CEV) that you have
+     * previously created. This setting is required for RDS Custom for Oracle. The CEV
+     * name has the following format: <code>19.<i>customized_string</i> </code>. An
+     * example identifier is <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
-     * Creating an RDS Custom DB instance</a> in the <i>Amazon RDS User Guide.</i>.</p>
-     * <p> <b>MariaDB</b> </p> <p>For information, see <a
+     * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
+     * Guide.</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.reqsMS">RDS
+     * Custom for SQL Server general requirements</a> in the <i>Amazon RDS User
+     * Guide.</i> </p> <p> <b>MariaDB</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>For information, see <a
@@ -1935,13 +2005,16 @@ namespace Model
      * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The version number of the database engine to
      * be used by the DB instance is managed by the DB cluster.</p> <p> <b>Amazon RDS
-     * Custom</b> </p> <p>A custom engine version (CEV) that you have previously
-     * created. This setting is required for RDS Custom. The CEV name has the following
-     * format: <code>19.<i>customized_string</i> </code>. An example identifier is
-     * <code>19.my_cev1</code>. For more information, see <a
+     * Custom for Oracle</b> </p> <p>A custom engine version (CEV) that you have
+     * previously created. This setting is required for RDS Custom for Oracle. The CEV
+     * name has the following format: <code>19.<i>customized_string</i> </code>. An
+     * example identifier is <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
-     * Creating an RDS Custom DB instance</a> in the <i>Amazon RDS User Guide.</i>.</p>
-     * <p> <b>MariaDB</b> </p> <p>For information, see <a
+     * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
+     * Guide.</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.reqsMS">RDS
+     * Custom for SQL Server general requirements</a> in the <i>Amazon RDS User
+     * Guide.</i> </p> <p> <b>MariaDB</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>For information, see <a
@@ -1968,13 +2041,16 @@ namespace Model
      * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The version number of the database engine to
      * be used by the DB instance is managed by the DB cluster.</p> <p> <b>Amazon RDS
-     * Custom</b> </p> <p>A custom engine version (CEV) that you have previously
-     * created. This setting is required for RDS Custom. The CEV name has the following
-     * format: <code>19.<i>customized_string</i> </code>. An example identifier is
-     * <code>19.my_cev1</code>. For more information, see <a
+     * Custom for Oracle</b> </p> <p>A custom engine version (CEV) that you have
+     * previously created. This setting is required for RDS Custom for Oracle. The CEV
+     * name has the following format: <code>19.<i>customized_string</i> </code>. An
+     * example identifier is <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
-     * Creating an RDS Custom DB instance</a> in the <i>Amazon RDS User Guide.</i>.</p>
-     * <p> <b>MariaDB</b> </p> <p>For information, see <a
+     * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
+     * Guide.</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.reqsMS">RDS
+     * Custom for SQL Server general requirements</a> in the <i>Amazon RDS User
+     * Guide.</i> </p> <p> <b>MariaDB</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>For information, see <a
@@ -2001,13 +2077,16 @@ namespace Model
      * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The version number of the database engine to
      * be used by the DB instance is managed by the DB cluster.</p> <p> <b>Amazon RDS
-     * Custom</b> </p> <p>A custom engine version (CEV) that you have previously
-     * created. This setting is required for RDS Custom. The CEV name has the following
-     * format: <code>19.<i>customized_string</i> </code>. An example identifier is
-     * <code>19.my_cev1</code>. For more information, see <a
+     * Custom for Oracle</b> </p> <p>A custom engine version (CEV) that you have
+     * previously created. This setting is required for RDS Custom for Oracle. The CEV
+     * name has the following format: <code>19.<i>customized_string</i> </code>. An
+     * example identifier is <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
-     * Creating an RDS Custom DB instance</a> in the <i>Amazon RDS User Guide.</i>.</p>
-     * <p> <b>MariaDB</b> </p> <p>For information, see <a
+     * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
+     * Guide.</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.reqsMS">RDS
+     * Custom for SQL Server general requirements</a> in the <i>Amazon RDS User
+     * Guide.</i> </p> <p> <b>MariaDB</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>For information, see <a
@@ -2034,13 +2113,16 @@ namespace Model
      * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The version number of the database engine to
      * be used by the DB instance is managed by the DB cluster.</p> <p> <b>Amazon RDS
-     * Custom</b> </p> <p>A custom engine version (CEV) that you have previously
-     * created. This setting is required for RDS Custom. The CEV name has the following
-     * format: <code>19.<i>customized_string</i> </code>. An example identifier is
-     * <code>19.my_cev1</code>. For more information, see <a
+     * Custom for Oracle</b> </p> <p>A custom engine version (CEV) that you have
+     * previously created. This setting is required for RDS Custom for Oracle. The CEV
+     * name has the following format: <code>19.<i>customized_string</i> </code>. An
+     * example identifier is <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
-     * Creating an RDS Custom DB instance</a> in the <i>Amazon RDS User Guide.</i>.</p>
-     * <p> <b>MariaDB</b> </p> <p>For information, see <a
+     * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
+     * Guide.</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.reqsMS">RDS
+     * Custom for SQL Server general requirements</a> in the <i>Amazon RDS User
+     * Guide.</i> </p> <p> <b>MariaDB</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>For information, see <a
@@ -2067,13 +2149,16 @@ namespace Model
      * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The version number of the database engine to
      * be used by the DB instance is managed by the DB cluster.</p> <p> <b>Amazon RDS
-     * Custom</b> </p> <p>A custom engine version (CEV) that you have previously
-     * created. This setting is required for RDS Custom. The CEV name has the following
-     * format: <code>19.<i>customized_string</i> </code>. An example identifier is
-     * <code>19.my_cev1</code>. For more information, see <a
+     * Custom for Oracle</b> </p> <p>A custom engine version (CEV) that you have
+     * previously created. This setting is required for RDS Custom for Oracle. The CEV
+     * name has the following format: <code>19.<i>customized_string</i> </code>. An
+     * example identifier is <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
-     * Creating an RDS Custom DB instance</a> in the <i>Amazon RDS User Guide.</i>.</p>
-     * <p> <b>MariaDB</b> </p> <p>For information, see <a
+     * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
+     * Guide.</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.reqsMS">RDS
+     * Custom for SQL Server general requirements</a> in the <i>Amazon RDS User
+     * Guide.</i> </p> <p> <b>MariaDB</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>For information, see <a
@@ -2100,13 +2185,16 @@ namespace Model
      * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The version number of the database engine to
      * be used by the DB instance is managed by the DB cluster.</p> <p> <b>Amazon RDS
-     * Custom</b> </p> <p>A custom engine version (CEV) that you have previously
-     * created. This setting is required for RDS Custom. The CEV name has the following
-     * format: <code>19.<i>customized_string</i> </code>. An example identifier is
-     * <code>19.my_cev1</code>. For more information, see <a
+     * Custom for Oracle</b> </p> <p>A custom engine version (CEV) that you have
+     * previously created. This setting is required for RDS Custom for Oracle. The CEV
+     * name has the following format: <code>19.<i>customized_string</i> </code>. An
+     * example identifier is <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
-     * Creating an RDS Custom DB instance</a> in the <i>Amazon RDS User Guide.</i>.</p>
-     * <p> <b>MariaDB</b> </p> <p>For information, see <a
+     * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
+     * Guide.</i>.</p> <p> <b>Amazon RDS Custom for SQL Server</b> </p> <p>See <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.reqsMS">RDS
+     * Custom for SQL Server general requirements</a> in the <i>Amazon RDS User
+     * Guide.</i> </p> <p> <b>MariaDB</b> </p> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>For information, see <a
@@ -2848,8 +2936,8 @@ namespace Model
 
     /**
      * <p>A value that indicates whether the DB instance is encrypted. By default, it
-     * isn't encrypted.</p> <p>For RDS Custom Oracle instances, either set this
-     * parameter to <code>true</code> or leave it unset. If you set this parameter to
+     * isn't encrypted.</p> <p>For RDS Custom instances, either set this parameter to
+     * <code>true</code> or leave it unset. If you set this parameter to
      * <code>false</code>, RDS reports an error.</p> <p> <b>Amazon Aurora</b> </p>
      * <p>Not applicable. The encryption for DB instances is managed by the DB
      * cluster.</p>
@@ -2858,8 +2946,8 @@ namespace Model
 
     /**
      * <p>A value that indicates whether the DB instance is encrypted. By default, it
-     * isn't encrypted.</p> <p>For RDS Custom Oracle instances, either set this
-     * parameter to <code>true</code> or leave it unset. If you set this parameter to
+     * isn't encrypted.</p> <p>For RDS Custom instances, either set this parameter to
+     * <code>true</code> or leave it unset. If you set this parameter to
      * <code>false</code>, RDS reports an error.</p> <p> <b>Amazon Aurora</b> </p>
      * <p>Not applicable. The encryption for DB instances is managed by the DB
      * cluster.</p>
@@ -2868,8 +2956,8 @@ namespace Model
 
     /**
      * <p>A value that indicates whether the DB instance is encrypted. By default, it
-     * isn't encrypted.</p> <p>For RDS Custom Oracle instances, either set this
-     * parameter to <code>true</code> or leave it unset. If you set this parameter to
+     * isn't encrypted.</p> <p>For RDS Custom instances, either set this parameter to
+     * <code>true</code> or leave it unset. If you set this parameter to
      * <code>false</code>, RDS reports an error.</p> <p> <b>Amazon Aurora</b> </p>
      * <p>Not applicable. The encryption for DB instances is managed by the DB
      * cluster.</p>
@@ -2878,8 +2966,8 @@ namespace Model
 
     /**
      * <p>A value that indicates whether the DB instance is encrypted. By default, it
-     * isn't encrypted.</p> <p>For RDS Custom Oracle instances, either set this
-     * parameter to <code>true</code> or leave it unset. If you set this parameter to
+     * isn't encrypted.</p> <p>For RDS Custom instances, either set this parameter to
+     * <code>true</code> or leave it unset. If you set this parameter to
      * <code>false</code>, RDS reports an error.</p> <p> <b>Amazon Aurora</b> </p>
      * <p>Not applicable. The encryption for DB instances is managed by the DB
      * cluster.</p>
@@ -2899,10 +2987,10 @@ namespace Model
      * key. There is a default KMS key for your Amazon Web Services account. Your
      * Amazon Web Services account has a different default KMS key for each Amazon Web
      * Services Region.</p> <p> <b>Amazon RDS Custom</b> </p> <p>A KMS key is required
-     * for RDS Custom Oracle instances. For most RDS engines, if you leave this
-     * parameter empty while enabling <code>StorageEncrypted</code>, the engine uses
-     * the default KMS key. However, RDS Custom for Oracle doesn't use the default key
-     * when this parameter is empty. You must explicitly specify a key.</p>
+     * for RDS Custom instances. For most RDS engines, if you leave this parameter
+     * empty while enabling <code>StorageEncrypted</code>, the engine uses the default
+     * KMS key. However, RDS Custom doesn't use the default key when this parameter is
+     * empty. You must explicitly specify a key.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
@@ -2918,10 +3006,10 @@ namespace Model
      * key. There is a default KMS key for your Amazon Web Services account. Your
      * Amazon Web Services account has a different default KMS key for each Amazon Web
      * Services Region.</p> <p> <b>Amazon RDS Custom</b> </p> <p>A KMS key is required
-     * for RDS Custom Oracle instances. For most RDS engines, if you leave this
-     * parameter empty while enabling <code>StorageEncrypted</code>, the engine uses
-     * the default KMS key. However, RDS Custom for Oracle doesn't use the default key
-     * when this parameter is empty. You must explicitly specify a key.</p>
+     * for RDS Custom instances. For most RDS engines, if you leave this parameter
+     * empty while enabling <code>StorageEncrypted</code>, the engine uses the default
+     * KMS key. However, RDS Custom doesn't use the default key when this parameter is
+     * empty. You must explicitly specify a key.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
@@ -2937,10 +3025,10 @@ namespace Model
      * key. There is a default KMS key for your Amazon Web Services account. Your
      * Amazon Web Services account has a different default KMS key for each Amazon Web
      * Services Region.</p> <p> <b>Amazon RDS Custom</b> </p> <p>A KMS key is required
-     * for RDS Custom Oracle instances. For most RDS engines, if you leave this
-     * parameter empty while enabling <code>StorageEncrypted</code>, the engine uses
-     * the default KMS key. However, RDS Custom for Oracle doesn't use the default key
-     * when this parameter is empty. You must explicitly specify a key.</p>
+     * for RDS Custom instances. For most RDS engines, if you leave this parameter
+     * empty while enabling <code>StorageEncrypted</code>, the engine uses the default
+     * KMS key. However, RDS Custom doesn't use the default key when this parameter is
+     * empty. You must explicitly specify a key.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
@@ -2956,10 +3044,10 @@ namespace Model
      * key. There is a default KMS key for your Amazon Web Services account. Your
      * Amazon Web Services account has a different default KMS key for each Amazon Web
      * Services Region.</p> <p> <b>Amazon RDS Custom</b> </p> <p>A KMS key is required
-     * for RDS Custom Oracle instances. For most RDS engines, if you leave this
-     * parameter empty while enabling <code>StorageEncrypted</code>, the engine uses
-     * the default KMS key. However, RDS Custom for Oracle doesn't use the default key
-     * when this parameter is empty. You must explicitly specify a key.</p>
+     * for RDS Custom instances. For most RDS engines, if you leave this parameter
+     * empty while enabling <code>StorageEncrypted</code>, the engine uses the default
+     * KMS key. However, RDS Custom doesn't use the default key when this parameter is
+     * empty. You must explicitly specify a key.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
@@ -2975,10 +3063,10 @@ namespace Model
      * key. There is a default KMS key for your Amazon Web Services account. Your
      * Amazon Web Services account has a different default KMS key for each Amazon Web
      * Services Region.</p> <p> <b>Amazon RDS Custom</b> </p> <p>A KMS key is required
-     * for RDS Custom Oracle instances. For most RDS engines, if you leave this
-     * parameter empty while enabling <code>StorageEncrypted</code>, the engine uses
-     * the default KMS key. However, RDS Custom for Oracle doesn't use the default key
-     * when this parameter is empty. You must explicitly specify a key.</p>
+     * for RDS Custom instances. For most RDS engines, if you leave this parameter
+     * empty while enabling <code>StorageEncrypted</code>, the engine uses the default
+     * KMS key. However, RDS Custom doesn't use the default key when this parameter is
+     * empty. You must explicitly specify a key.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
@@ -2994,10 +3082,10 @@ namespace Model
      * key. There is a default KMS key for your Amazon Web Services account. Your
      * Amazon Web Services account has a different default KMS key for each Amazon Web
      * Services Region.</p> <p> <b>Amazon RDS Custom</b> </p> <p>A KMS key is required
-     * for RDS Custom Oracle instances. For most RDS engines, if you leave this
-     * parameter empty while enabling <code>StorageEncrypted</code>, the engine uses
-     * the default KMS key. However, RDS Custom for Oracle doesn't use the default key
-     * when this parameter is empty. You must explicitly specify a key.</p>
+     * for RDS Custom instances. For most RDS engines, if you leave this parameter
+     * empty while enabling <code>StorageEncrypted</code>, the engine uses the default
+     * KMS key. However, RDS Custom doesn't use the default key when this parameter is
+     * empty. You must explicitly specify a key.</p>
      */
     inline CreateDBInstanceRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
@@ -3013,10 +3101,10 @@ namespace Model
      * key. There is a default KMS key for your Amazon Web Services account. Your
      * Amazon Web Services account has a different default KMS key for each Amazon Web
      * Services Region.</p> <p> <b>Amazon RDS Custom</b> </p> <p>A KMS key is required
-     * for RDS Custom Oracle instances. For most RDS engines, if you leave this
-     * parameter empty while enabling <code>StorageEncrypted</code>, the engine uses
-     * the default KMS key. However, RDS Custom for Oracle doesn't use the default key
-     * when this parameter is empty. You must explicitly specify a key.</p>
+     * for RDS Custom instances. For most RDS engines, if you leave this parameter
+     * empty while enabling <code>StorageEncrypted</code>, the engine uses the default
+     * KMS key. However, RDS Custom doesn't use the default key when this parameter is
+     * empty. You must explicitly specify a key.</p>
      */
     inline CreateDBInstanceRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
@@ -3032,10 +3120,10 @@ namespace Model
      * key. There is a default KMS key for your Amazon Web Services account. Your
      * Amazon Web Services account has a different default KMS key for each Amazon Web
      * Services Region.</p> <p> <b>Amazon RDS Custom</b> </p> <p>A KMS key is required
-     * for RDS Custom Oracle instances. For most RDS engines, if you leave this
-     * parameter empty while enabling <code>StorageEncrypted</code>, the engine uses
-     * the default KMS key. However, RDS Custom for Oracle doesn't use the default key
-     * when this parameter is empty. You must explicitly specify a key.</p>
+     * for RDS Custom instances. For most RDS engines, if you leave this parameter
+     * empty while enabling <code>StorageEncrypted</code>, the engine uses the default
+     * KMS key. However, RDS Custom doesn't use the default key when this parameter is
+     * empty. You must explicitly specify a key.</p>
      */
     inline CreateDBInstanceRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

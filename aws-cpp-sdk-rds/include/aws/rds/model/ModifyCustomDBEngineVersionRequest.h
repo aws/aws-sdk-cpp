@@ -80,64 +80,64 @@ namespace Model
 
     /**
      * <p>The custom engine version (CEV) that you want to modify. This option is
-     * required for RDS Custom, but optional for Amazon RDS. The combination of
-     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
+     * required for RDS Custom for Oracle, but optional for Amazon RDS. The combination
+     * of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
      * Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
      * <p>The custom engine version (CEV) that you want to modify. This option is
-     * required for RDS Custom, but optional for Amazon RDS. The combination of
-     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
+     * required for RDS Custom for Oracle, but optional for Amazon RDS. The combination
+     * of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
      * Amazon Web Services Region.</p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p>The custom engine version (CEV) that you want to modify. This option is
-     * required for RDS Custom, but optional for Amazon RDS. The combination of
-     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
+     * required for RDS Custom for Oracle, but optional for Amazon RDS. The combination
+     * of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
      * Amazon Web Services Region.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
      * <p>The custom engine version (CEV) that you want to modify. This option is
-     * required for RDS Custom, but optional for Amazon RDS. The combination of
-     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
+     * required for RDS Custom for Oracle, but optional for Amazon RDS. The combination
+     * of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
      * Amazon Web Services Region.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
      * <p>The custom engine version (CEV) that you want to modify. This option is
-     * required for RDS Custom, but optional for Amazon RDS. The combination of
-     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
+     * required for RDS Custom for Oracle, but optional for Amazon RDS. The combination
+     * of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
      * Amazon Web Services Region.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
      * <p>The custom engine version (CEV) that you want to modify. This option is
-     * required for RDS Custom, but optional for Amazon RDS. The combination of
-     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
+     * required for RDS Custom for Oracle, but optional for Amazon RDS. The combination
+     * of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
      * Amazon Web Services Region.</p>
      */
     inline ModifyCustomDBEngineVersionRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
      * <p>The custom engine version (CEV) that you want to modify. This option is
-     * required for RDS Custom, but optional for Amazon RDS. The combination of
-     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
+     * required for RDS Custom for Oracle, but optional for Amazon RDS. The combination
+     * of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
      * Amazon Web Services Region.</p>
      */
     inline ModifyCustomDBEngineVersionRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>The custom engine version (CEV) that you want to modify. This option is
-     * required for RDS Custom, but optional for Amazon RDS. The combination of
-     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
+     * required for RDS Custom for Oracle, but optional for Amazon RDS. The combination
+     * of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
      * Amazon Web Services Region.</p>
      */
     inline ModifyCustomDBEngineVersionRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}

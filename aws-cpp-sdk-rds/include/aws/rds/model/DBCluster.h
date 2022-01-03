@@ -2550,50 +2550,50 @@ namespace Model
 
 
     /**
-     * <p>The storage type associated with DB instance.</p> <p>This setting is only for
-     * non-Aurora Multi-AZ DB clusters.</p>
+     * <p>The storage type associated with the DB cluster.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
-     * <p>The storage type associated with DB instance.</p> <p>This setting is only for
-     * non-Aurora Multi-AZ DB clusters.</p>
+     * <p>The storage type associated with the DB cluster.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
-     * <p>The storage type associated with DB instance.</p> <p>This setting is only for
-     * non-Aurora Multi-AZ DB clusters.</p>
+     * <p>The storage type associated with the DB cluster.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
-     * <p>The storage type associated with DB instance.</p> <p>This setting is only for
-     * non-Aurora Multi-AZ DB clusters.</p>
+     * <p>The storage type associated with the DB cluster.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
-     * <p>The storage type associated with DB instance.</p> <p>This setting is only for
-     * non-Aurora Multi-AZ DB clusters.</p>
+     * <p>The storage type associated with the DB cluster.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
-     * <p>The storage type associated with DB instance.</p> <p>This setting is only for
-     * non-Aurora Multi-AZ DB clusters.</p>
+     * <p>The storage type associated with the DB cluster.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
      */
     inline DBCluster& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
-     * <p>The storage type associated with DB instance.</p> <p>This setting is only for
-     * non-Aurora Multi-AZ DB clusters.</p>
+     * <p>The storage type associated with the DB cluster.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
      */
     inline DBCluster& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
-     * <p>The storage type associated with DB instance.</p> <p>This setting is only for
-     * non-Aurora Multi-AZ DB clusters.</p>
+     * <p>The storage type associated with the DB cluster.</p> <p>This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
      */
     inline DBCluster& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 

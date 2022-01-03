@@ -20,6 +20,8 @@ namespace Model
 
 PipelineExecutionStep::PipelineExecutionStep() : 
     m_stepNameHasBeenSet(false),
+    m_stepDisplayNameHasBeenSet(false),
+    m_stepDescriptionHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_stepStatus(StepStatus::NOT_SET),
@@ -34,6 +36,8 @@ PipelineExecutionStep::PipelineExecutionStep() :
 
 PipelineExecutionStep::PipelineExecutionStep(JsonView jsonValue) : 
     m_stepNameHasBeenSet(false),
+    m_stepDisplayNameHasBeenSet(false),
+    m_stepDescriptionHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_stepStatus(StepStatus::NOT_SET),
@@ -54,6 +58,20 @@ PipelineExecutionStep& PipelineExecutionStep::operator =(JsonView jsonValue)
     m_stepName = jsonValue.GetString("StepName");
 
     m_stepNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StepDisplayName"))
+  {
+    m_stepDisplayName = jsonValue.GetString("StepDisplayName");
+
+    m_stepDisplayNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StepDescription"))
+  {
+    m_stepDescription = jsonValue.GetString("StepDescription");
+
+    m_stepDescriptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("StartTime"))
@@ -115,6 +133,18 @@ JsonValue PipelineExecutionStep::Jsonize() const
   if(m_stepNameHasBeenSet)
   {
    payload.WithString("StepName", m_stepName);
+
+  }
+
+  if(m_stepDisplayNameHasBeenSet)
+  {
+   payload.WithString("StepDisplayName", m_stepDisplayName);
+
+  }
+
+  if(m_stepDescriptionHasBeenSet)
+  {
+   payload.WithString("StepDescription", m_stepDescription);
 
   }
 
