@@ -6,9 +6,12 @@
 #include <aws/identity-management/auth/STSAssumeRoleCredentialsProvider.h>
 #include <aws/sts/model/AssumeRoleRequest.h>
 #include <aws/sts/STSClient.h>
-#include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/external/gtest.h>
+#include <aws/core/utils/memory/stl/AWSSet.h>
+
+#include <cmath>
+#include <thread>
 
 using namespace Aws::Auth;
 using namespace Aws::STS;
