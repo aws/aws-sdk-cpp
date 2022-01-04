@@ -35,6 +35,7 @@ public class CppViewHelper {
         CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("string", "Aws::String");
         CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("timestamp", "Aws::Utils::DateTime");
         CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("boolean", "bool");
+        CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("sensitive_boolean", "bool");
         CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("double", "double");
         CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("float", "double");
         CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("blob", "Aws::Utils::ByteBuffer");
@@ -44,6 +45,7 @@ public class CppViewHelper {
         CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.put("integer", "Integer");
         CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.put("string", "String");
         CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.put("boolean", "Bool");
+        CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.put("sensitive_boolean", "Bool");
         CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.put("double", "Double");
         CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.put("map", "Object");
         CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.put("list", "Array");
@@ -58,12 +60,14 @@ public class CppViewHelper {
         CORAL_TYPE_TO_XML_CONVERSION_MAPPING.put("long", "StringUtils::ConvertToInt64");
         CORAL_TYPE_TO_XML_CONVERSION_MAPPING.put("integer", "StringUtils::ConvertToInt32");
         CORAL_TYPE_TO_XML_CONVERSION_MAPPING.put("boolean", "StringUtils::ConvertToBool");
+        CORAL_TYPE_TO_XML_CONVERSION_MAPPING.put("sensitive_boolean", "StringUtils::ConvertToBool");
         CORAL_TYPE_TO_XML_CONVERSION_MAPPING.put("double", "StringUtils::ConvertToDouble");
         CORAL_TYPE_TO_XML_CONVERSION_MAPPING.put("float", "StringUtils::ConvertToDouble");
 
         CORAL_TYPE_TO_DEFAULT_VALUES.put("long", "0");
         CORAL_TYPE_TO_DEFAULT_VALUES.put("integer", "0");
         CORAL_TYPE_TO_DEFAULT_VALUES.put("boolean", "false");
+        CORAL_TYPE_TO_DEFAULT_VALUES.put("sensitive_boolean", "false");
         CORAL_TYPE_TO_DEFAULT_VALUES.put("double", "0.0");
         CORAL_TYPE_TO_DEFAULT_VALUES.put("float", "0.0");
 
