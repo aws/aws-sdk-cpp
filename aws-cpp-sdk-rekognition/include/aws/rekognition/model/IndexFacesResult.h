@@ -203,44 +203,58 @@ namespace Model
 
 
     /**
-     * <p>The version number of the face detection model that's associated with the
-     * input collection (<code>CollectionId</code>).</p>
+     * <p>Latest face model being used with the collection. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model
+     * versioning</a>.</p>
      */
     inline const Aws::String& GetFaceModelVersion() const{ return m_faceModelVersion; }
 
     /**
-     * <p>The version number of the face detection model that's associated with the
-     * input collection (<code>CollectionId</code>).</p>
+     * <p>Latest face model being used with the collection. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model
+     * versioning</a>.</p>
      */
     inline void SetFaceModelVersion(const Aws::String& value) { m_faceModelVersion = value; }
 
     /**
-     * <p>The version number of the face detection model that's associated with the
-     * input collection (<code>CollectionId</code>).</p>
+     * <p>Latest face model being used with the collection. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model
+     * versioning</a>.</p>
      */
     inline void SetFaceModelVersion(Aws::String&& value) { m_faceModelVersion = std::move(value); }
 
     /**
-     * <p>The version number of the face detection model that's associated with the
-     * input collection (<code>CollectionId</code>).</p>
+     * <p>Latest face model being used with the collection. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model
+     * versioning</a>.</p>
      */
     inline void SetFaceModelVersion(const char* value) { m_faceModelVersion.assign(value); }
 
     /**
-     * <p>The version number of the face detection model that's associated with the
-     * input collection (<code>CollectionId</code>).</p>
+     * <p>Latest face model being used with the collection. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model
+     * versioning</a>.</p>
      */
     inline IndexFacesResult& WithFaceModelVersion(const Aws::String& value) { SetFaceModelVersion(value); return *this;}
 
     /**
-     * <p>The version number of the face detection model that's associated with the
-     * input collection (<code>CollectionId</code>).</p>
+     * <p>Latest face model being used with the collection. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model
+     * versioning</a>.</p>
      */
     inline IndexFacesResult& WithFaceModelVersion(Aws::String&& value) { SetFaceModelVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version number of the face detection model that's associated with the
-     * input collection (<code>CollectionId</code>).</p>
+     * <p>Latest face model being used with the collection. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model
+     * versioning</a>.</p>
      */
     inline IndexFacesResult& WithFaceModelVersion(const char* value) { SetFaceModelVersion(value); return *this;}
 

@@ -2931,13 +2931,13 @@ namespace Model
          * attributes (by using the <code>detectionAttributes</code> parameter), Amazon
          * Rekognition returns detailed facial attributes, such as facial landmarks (for
          * example, location of eye and mouth) and other facial attributes. If you provide
-         * the same image, specify the same collection, and use the same external ID in the
-         * <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate
-         * face metadata.</p> <p/> <p>The input image is passed either as base64-encoded
-         * image bytes, or as a reference to an image in an Amazon S3 bucket. If you use
-         * the AWS CLI to call Amazon Rekognition operations, passing image bytes isn't
-         * supported. The image must be formatted as a PNG or JPEG file. </p> <p>This
-         * operation requires permissions to perform the
+         * the same image, specify the same collection, use the same external ID, and use
+         * the same model version in the <code>IndexFaces</code> operation, Amazon
+         * Rekognition doesn't save duplicate face metadata.</p> <p/> <p>The input image is
+         * passed either as base64-encoded image bytes, or as a reference to an image in an
+         * Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations,
+         * passing image bytes isn't supported. The image must be formatted as a PNG or
+         * JPEG file. </p> <p>This operation requires permissions to perform the
          * <code>rekognition:IndexFaces</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/IndexFaces">AWS
          * API Reference</a></p>
@@ -3002,13 +3002,13 @@ namespace Model
          * attributes (by using the <code>detectionAttributes</code> parameter), Amazon
          * Rekognition returns detailed facial attributes, such as facial landmarks (for
          * example, location of eye and mouth) and other facial attributes. If you provide
-         * the same image, specify the same collection, and use the same external ID in the
-         * <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate
-         * face metadata.</p> <p/> <p>The input image is passed either as base64-encoded
-         * image bytes, or as a reference to an image in an Amazon S3 bucket. If you use
-         * the AWS CLI to call Amazon Rekognition operations, passing image bytes isn't
-         * supported. The image must be formatted as a PNG or JPEG file. </p> <p>This
-         * operation requires permissions to perform the
+         * the same image, specify the same collection, use the same external ID, and use
+         * the same model version in the <code>IndexFaces</code> operation, Amazon
+         * Rekognition doesn't save duplicate face metadata.</p> <p/> <p>The input image is
+         * passed either as base64-encoded image bytes, or as a reference to an image in an
+         * Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations,
+         * passing image bytes isn't supported. The image must be formatted as a PNG or
+         * JPEG file. </p> <p>This operation requires permissions to perform the
          * <code>rekognition:IndexFaces</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/IndexFaces">AWS
          * API Reference</a></p>
@@ -3075,13 +3075,13 @@ namespace Model
          * attributes (by using the <code>detectionAttributes</code> parameter), Amazon
          * Rekognition returns detailed facial attributes, such as facial landmarks (for
          * example, location of eye and mouth) and other facial attributes. If you provide
-         * the same image, specify the same collection, and use the same external ID in the
-         * <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate
-         * face metadata.</p> <p/> <p>The input image is passed either as base64-encoded
-         * image bytes, or as a reference to an image in an Amazon S3 bucket. If you use
-         * the AWS CLI to call Amazon Rekognition operations, passing image bytes isn't
-         * supported. The image must be formatted as a PNG or JPEG file. </p> <p>This
-         * operation requires permissions to perform the
+         * the same image, specify the same collection, use the same external ID, and use
+         * the same model version in the <code>IndexFaces</code> operation, Amazon
+         * Rekognition doesn't save duplicate face metadata.</p> <p/> <p>The input image is
+         * passed either as base64-encoded image bytes, or as a reference to an image in an
+         * Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations,
+         * passing image bytes isn't supported. The image must be formatted as a PNG or
+         * JPEG file. </p> <p>This operation requires permissions to perform the
          * <code>rekognition:IndexFaces</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/IndexFaces">AWS
          * API Reference</a></p>

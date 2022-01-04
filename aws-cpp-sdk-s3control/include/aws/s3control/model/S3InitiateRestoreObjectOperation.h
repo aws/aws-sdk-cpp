@@ -42,70 +42,74 @@ namespace Model
 
 
     /**
-     * <p>This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive
-     * object remains available in Amazon S3. S3 Initiate Restore Object jobs that
-     * target S3 Glacier and S3 Glacier Deep Archive objects require
-     * <code>ExpirationInDays</code> set to 1 or greater.</p> <p>Conversely, do
-     * <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore
-     * Object jobs that target S3 Intelligent-Tiering Archive Access and Deep Archive
-     * Access tier objects. Objects in S3 Intelligent-Tiering archive access tiers are
-     * not subject to restore expiry, so specifying <code>ExpirationInDays</code>
-     * results in restore request failure.</p> <p>S3 Batch Operations jobs can operate
-     * either on S3 Glacier and S3 Glacier Deep Archive storage class objects or on S3
-     * Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects,
-     * but not both types in the same job. If you need to restore objects of both types
-     * you <i>must</i> create separate Batch Operations jobs. </p>
+     * <p>This argument specifies how long the S3 Glacier Flexible Retrieval or S3
+     * Glacier Deep Archive object remains available in Amazon S3. S3 Initiate Restore
+     * Object jobs that target S3 Glacier Flexible Retrieval and S3 Glacier Deep
+     * Archive objects require <code>ExpirationInDays</code> set to 1 or greater.</p>
+     * <p>Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3
+     * Initiate Restore Object jobs that target S3 Intelligent-Tiering Archive Access
+     * and Deep Archive Access tier objects. Objects in S3 Intelligent-Tiering archive
+     * access tiers are not subject to restore expiry, so specifying
+     * <code>ExpirationInDays</code> results in restore request failure.</p> <p>S3
+     * Batch Operations jobs can operate either on S3 Glacier Flexible Retrieval and S3
+     * Glacier Deep Archive storage class objects or on S3 Intelligent-Tiering Archive
+     * Access and Deep Archive Access storage tier objects, but not both types in the
+     * same job. If you need to restore objects of both types you <i>must</i> create
+     * separate Batch Operations jobs. </p>
      */
     inline int GetExpirationInDays() const{ return m_expirationInDays; }
 
     /**
-     * <p>This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive
-     * object remains available in Amazon S3. S3 Initiate Restore Object jobs that
-     * target S3 Glacier and S3 Glacier Deep Archive objects require
-     * <code>ExpirationInDays</code> set to 1 or greater.</p> <p>Conversely, do
-     * <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore
-     * Object jobs that target S3 Intelligent-Tiering Archive Access and Deep Archive
-     * Access tier objects. Objects in S3 Intelligent-Tiering archive access tiers are
-     * not subject to restore expiry, so specifying <code>ExpirationInDays</code>
-     * results in restore request failure.</p> <p>S3 Batch Operations jobs can operate
-     * either on S3 Glacier and S3 Glacier Deep Archive storage class objects or on S3
-     * Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects,
-     * but not both types in the same job. If you need to restore objects of both types
-     * you <i>must</i> create separate Batch Operations jobs. </p>
+     * <p>This argument specifies how long the S3 Glacier Flexible Retrieval or S3
+     * Glacier Deep Archive object remains available in Amazon S3. S3 Initiate Restore
+     * Object jobs that target S3 Glacier Flexible Retrieval and S3 Glacier Deep
+     * Archive objects require <code>ExpirationInDays</code> set to 1 or greater.</p>
+     * <p>Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3
+     * Initiate Restore Object jobs that target S3 Intelligent-Tiering Archive Access
+     * and Deep Archive Access tier objects. Objects in S3 Intelligent-Tiering archive
+     * access tiers are not subject to restore expiry, so specifying
+     * <code>ExpirationInDays</code> results in restore request failure.</p> <p>S3
+     * Batch Operations jobs can operate either on S3 Glacier Flexible Retrieval and S3
+     * Glacier Deep Archive storage class objects or on S3 Intelligent-Tiering Archive
+     * Access and Deep Archive Access storage tier objects, but not both types in the
+     * same job. If you need to restore objects of both types you <i>must</i> create
+     * separate Batch Operations jobs. </p>
      */
     inline bool ExpirationInDaysHasBeenSet() const { return m_expirationInDaysHasBeenSet; }
 
     /**
-     * <p>This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive
-     * object remains available in Amazon S3. S3 Initiate Restore Object jobs that
-     * target S3 Glacier and S3 Glacier Deep Archive objects require
-     * <code>ExpirationInDays</code> set to 1 or greater.</p> <p>Conversely, do
-     * <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore
-     * Object jobs that target S3 Intelligent-Tiering Archive Access and Deep Archive
-     * Access tier objects. Objects in S3 Intelligent-Tiering archive access tiers are
-     * not subject to restore expiry, so specifying <code>ExpirationInDays</code>
-     * results in restore request failure.</p> <p>S3 Batch Operations jobs can operate
-     * either on S3 Glacier and S3 Glacier Deep Archive storage class objects or on S3
-     * Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects,
-     * but not both types in the same job. If you need to restore objects of both types
-     * you <i>must</i> create separate Batch Operations jobs. </p>
+     * <p>This argument specifies how long the S3 Glacier Flexible Retrieval or S3
+     * Glacier Deep Archive object remains available in Amazon S3. S3 Initiate Restore
+     * Object jobs that target S3 Glacier Flexible Retrieval and S3 Glacier Deep
+     * Archive objects require <code>ExpirationInDays</code> set to 1 or greater.</p>
+     * <p>Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3
+     * Initiate Restore Object jobs that target S3 Intelligent-Tiering Archive Access
+     * and Deep Archive Access tier objects. Objects in S3 Intelligent-Tiering archive
+     * access tiers are not subject to restore expiry, so specifying
+     * <code>ExpirationInDays</code> results in restore request failure.</p> <p>S3
+     * Batch Operations jobs can operate either on S3 Glacier Flexible Retrieval and S3
+     * Glacier Deep Archive storage class objects or on S3 Intelligent-Tiering Archive
+     * Access and Deep Archive Access storage tier objects, but not both types in the
+     * same job. If you need to restore objects of both types you <i>must</i> create
+     * separate Batch Operations jobs. </p>
      */
     inline void SetExpirationInDays(int value) { m_expirationInDaysHasBeenSet = true; m_expirationInDays = value; }
 
     /**
-     * <p>This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive
-     * object remains available in Amazon S3. S3 Initiate Restore Object jobs that
-     * target S3 Glacier and S3 Glacier Deep Archive objects require
-     * <code>ExpirationInDays</code> set to 1 or greater.</p> <p>Conversely, do
-     * <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore
-     * Object jobs that target S3 Intelligent-Tiering Archive Access and Deep Archive
-     * Access tier objects. Objects in S3 Intelligent-Tiering archive access tiers are
-     * not subject to restore expiry, so specifying <code>ExpirationInDays</code>
-     * results in restore request failure.</p> <p>S3 Batch Operations jobs can operate
-     * either on S3 Glacier and S3 Glacier Deep Archive storage class objects or on S3
-     * Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects,
-     * but not both types in the same job. If you need to restore objects of both types
-     * you <i>must</i> create separate Batch Operations jobs. </p>
+     * <p>This argument specifies how long the S3 Glacier Flexible Retrieval or S3
+     * Glacier Deep Archive object remains available in Amazon S3. S3 Initiate Restore
+     * Object jobs that target S3 Glacier Flexible Retrieval and S3 Glacier Deep
+     * Archive objects require <code>ExpirationInDays</code> set to 1 or greater.</p>
+     * <p>Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3
+     * Initiate Restore Object jobs that target S3 Intelligent-Tiering Archive Access
+     * and Deep Archive Access tier objects. Objects in S3 Intelligent-Tiering archive
+     * access tiers are not subject to restore expiry, so specifying
+     * <code>ExpirationInDays</code> results in restore request failure.</p> <p>S3
+     * Batch Operations jobs can operate either on S3 Glacier Flexible Retrieval and S3
+     * Glacier Deep Archive storage class objects or on S3 Intelligent-Tiering Archive
+     * Access and Deep Archive Access storage tier objects, but not both types in the
+     * same job. If you need to restore objects of both types you <i>must</i> create
+     * separate Batch Operations jobs. </p>
      */
     inline S3InitiateRestoreObjectOperation& WithExpirationInDays(int value) { SetExpirationInDays(value); return *this;}
 

@@ -218,6 +218,55 @@ namespace Model
      */
     inline Face& WithConfidence(double value) { SetConfidence(value); return *this;}
 
+
+    /**
+     * <p> The version of the face detect and storage model that was used when indexing
+     * the face vector. </p>
+     */
+    inline const Aws::String& GetIndexFacesModelVersion() const{ return m_indexFacesModelVersion; }
+
+    /**
+     * <p> The version of the face detect and storage model that was used when indexing
+     * the face vector. </p>
+     */
+    inline bool IndexFacesModelVersionHasBeenSet() const { return m_indexFacesModelVersionHasBeenSet; }
+
+    /**
+     * <p> The version of the face detect and storage model that was used when indexing
+     * the face vector. </p>
+     */
+    inline void SetIndexFacesModelVersion(const Aws::String& value) { m_indexFacesModelVersionHasBeenSet = true; m_indexFacesModelVersion = value; }
+
+    /**
+     * <p> The version of the face detect and storage model that was used when indexing
+     * the face vector. </p>
+     */
+    inline void SetIndexFacesModelVersion(Aws::String&& value) { m_indexFacesModelVersionHasBeenSet = true; m_indexFacesModelVersion = std::move(value); }
+
+    /**
+     * <p> The version of the face detect and storage model that was used when indexing
+     * the face vector. </p>
+     */
+    inline void SetIndexFacesModelVersion(const char* value) { m_indexFacesModelVersionHasBeenSet = true; m_indexFacesModelVersion.assign(value); }
+
+    /**
+     * <p> The version of the face detect and storage model that was used when indexing
+     * the face vector. </p>
+     */
+    inline Face& WithIndexFacesModelVersion(const Aws::String& value) { SetIndexFacesModelVersion(value); return *this;}
+
+    /**
+     * <p> The version of the face detect and storage model that was used when indexing
+     * the face vector. </p>
+     */
+    inline Face& WithIndexFacesModelVersion(Aws::String&& value) { SetIndexFacesModelVersion(std::move(value)); return *this;}
+
+    /**
+     * <p> The version of the face detect and storage model that was used when indexing
+     * the face vector. </p>
+     */
+    inline Face& WithIndexFacesModelVersion(const char* value) { SetIndexFacesModelVersion(value); return *this;}
+
   private:
 
     Aws::String m_faceId;
@@ -234,6 +283,9 @@ namespace Model
 
     double m_confidence;
     bool m_confidenceHasBeenSet;
+
+    Aws::String m_indexFacesModelVersion;
+    bool m_indexFacesModelVersionHasBeenSet;
   };
 
 } // namespace Model
