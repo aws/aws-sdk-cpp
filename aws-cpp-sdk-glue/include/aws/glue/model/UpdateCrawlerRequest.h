@@ -12,6 +12,7 @@
 #include <aws/glue/model/SchemaChangePolicy.h>
 #include <aws/glue/model/RecrawlPolicy.h>
 #include <aws/glue/model/LineageConfiguration.h>
+#include <aws/glue/model/LakeFormationConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -519,6 +520,25 @@ namespace Model
     inline UpdateCrawlerRequest& WithLineageConfiguration(LineageConfiguration&& value) { SetLineageConfiguration(std::move(value)); return *this;}
 
 
+    
+    inline const LakeFormationConfiguration& GetLakeFormationConfiguration() const{ return m_lakeFormationConfiguration; }
+
+    
+    inline bool LakeFormationConfigurationHasBeenSet() const { return m_lakeFormationConfigurationHasBeenSet; }
+
+    
+    inline void SetLakeFormationConfiguration(const LakeFormationConfiguration& value) { m_lakeFormationConfigurationHasBeenSet = true; m_lakeFormationConfiguration = value; }
+
+    
+    inline void SetLakeFormationConfiguration(LakeFormationConfiguration&& value) { m_lakeFormationConfigurationHasBeenSet = true; m_lakeFormationConfiguration = std::move(value); }
+
+    
+    inline UpdateCrawlerRequest& WithLakeFormationConfiguration(const LakeFormationConfiguration& value) { SetLakeFormationConfiguration(value); return *this;}
+
+    
+    inline UpdateCrawlerRequest& WithLakeFormationConfiguration(LakeFormationConfiguration&& value) { SetLakeFormationConfiguration(std::move(value)); return *this;}
+
+
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
@@ -666,6 +686,9 @@ namespace Model
 
     LineageConfiguration m_lineageConfiguration;
     bool m_lineageConfigurationHasBeenSet;
+
+    LakeFormationConfiguration m_lakeFormationConfiguration;
+    bool m_lakeFormationConfigurationHasBeenSet;
 
     Aws::String m_configuration;
     bool m_configurationHasBeenSet;

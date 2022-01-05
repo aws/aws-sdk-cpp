@@ -283,32 +283,38 @@ namespace Model
 
 
     /**
-     * <p>A wildcard with exclusions.</p>
+     * <p>A wildcard with exclusions.</p> <p>You must specify either a
+     * <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
      */
     inline const ColumnWildcard& GetColumnWildcard() const{ return m_columnWildcard; }
 
     /**
-     * <p>A wildcard with exclusions.</p>
+     * <p>A wildcard with exclusions.</p> <p>You must specify either a
+     * <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
      */
     inline bool ColumnWildcardHasBeenSet() const { return m_columnWildcardHasBeenSet; }
 
     /**
-     * <p>A wildcard with exclusions.</p>
+     * <p>A wildcard with exclusions.</p> <p>You must specify either a
+     * <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
      */
     inline void SetColumnWildcard(const ColumnWildcard& value) { m_columnWildcardHasBeenSet = true; m_columnWildcard = value; }
 
     /**
-     * <p>A wildcard with exclusions.</p>
+     * <p>A wildcard with exclusions.</p> <p>You must specify either a
+     * <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
      */
     inline void SetColumnWildcard(ColumnWildcard&& value) { m_columnWildcardHasBeenSet = true; m_columnWildcard = std::move(value); }
 
     /**
-     * <p>A wildcard with exclusions.</p>
+     * <p>A wildcard with exclusions.</p> <p>You must specify either a
+     * <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
      */
     inline DataCellsFilter& WithColumnWildcard(const ColumnWildcard& value) { SetColumnWildcard(value); return *this;}
 
     /**
-     * <p>A wildcard with exclusions.</p>
+     * <p>A wildcard with exclusions.</p> <p>You must specify either a
+     * <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
      */
     inline DataCellsFilter& WithColumnWildcard(ColumnWildcard&& value) { SetColumnWildcard(std::move(value)); return *this;}
 

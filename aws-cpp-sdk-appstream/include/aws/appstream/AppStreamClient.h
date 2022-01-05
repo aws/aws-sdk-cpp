@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/appstream/model/AssociateApplicationFleetResult.h>
+#include <aws/appstream/model/AssociateApplicationToEntitlementResult.h>
 #include <aws/appstream/model/AssociateFleetResult.h>
 #include <aws/appstream/model/BatchAssociateUserStackResult.h>
 #include <aws/appstream/model/BatchDisassociateUserStackResult.h>
@@ -19,6 +20,7 @@
 #include <aws/appstream/model/CreateAppBlockResult.h>
 #include <aws/appstream/model/CreateApplicationResult.h>
 #include <aws/appstream/model/CreateDirectoryConfigResult.h>
+#include <aws/appstream/model/CreateEntitlementResult.h>
 #include <aws/appstream/model/CreateFleetResult.h>
 #include <aws/appstream/model/CreateImageBuilderResult.h>
 #include <aws/appstream/model/CreateImageBuilderStreamingURLResult.h>
@@ -30,6 +32,7 @@
 #include <aws/appstream/model/DeleteAppBlockResult.h>
 #include <aws/appstream/model/DeleteApplicationResult.h>
 #include <aws/appstream/model/DeleteDirectoryConfigResult.h>
+#include <aws/appstream/model/DeleteEntitlementResult.h>
 #include <aws/appstream/model/DeleteFleetResult.h>
 #include <aws/appstream/model/DeleteImageResult.h>
 #include <aws/appstream/model/DeleteImageBuilderResult.h>
@@ -41,6 +44,7 @@
 #include <aws/appstream/model/DescribeApplicationFleetAssociationsResult.h>
 #include <aws/appstream/model/DescribeApplicationsResult.h>
 #include <aws/appstream/model/DescribeDirectoryConfigsResult.h>
+#include <aws/appstream/model/DescribeEntitlementsResult.h>
 #include <aws/appstream/model/DescribeFleetsResult.h>
 #include <aws/appstream/model/DescribeImageBuildersResult.h>
 #include <aws/appstream/model/DescribeImagePermissionsResult.h>
@@ -52,11 +56,13 @@
 #include <aws/appstream/model/DescribeUsersResult.h>
 #include <aws/appstream/model/DisableUserResult.h>
 #include <aws/appstream/model/DisassociateApplicationFleetResult.h>
+#include <aws/appstream/model/DisassociateApplicationFromEntitlementResult.h>
 #include <aws/appstream/model/DisassociateFleetResult.h>
 #include <aws/appstream/model/EnableUserResult.h>
 #include <aws/appstream/model/ExpireSessionResult.h>
 #include <aws/appstream/model/ListAssociatedFleetsResult.h>
 #include <aws/appstream/model/ListAssociatedStacksResult.h>
+#include <aws/appstream/model/ListEntitledApplicationsResult.h>
 #include <aws/appstream/model/ListTagsForResourceResult.h>
 #include <aws/appstream/model/StartFleetResult.h>
 #include <aws/appstream/model/StartImageBuilderResult.h>
@@ -66,6 +72,7 @@
 #include <aws/appstream/model/UntagResourceResult.h>
 #include <aws/appstream/model/UpdateApplicationResult.h>
 #include <aws/appstream/model/UpdateDirectoryConfigResult.h>
+#include <aws/appstream/model/UpdateEntitlementResult.h>
 #include <aws/appstream/model/UpdateFleetResult.h>
 #include <aws/appstream/model/UpdateImagePermissionsResult.h>
 #include <aws/appstream/model/UpdateStackResult.h>
@@ -109,6 +116,7 @@ namespace AppStream
 namespace Model
 {
         class AssociateApplicationFleetRequest;
+        class AssociateApplicationToEntitlementRequest;
         class AssociateFleetRequest;
         class BatchAssociateUserStackRequest;
         class BatchDisassociateUserStackRequest;
@@ -116,6 +124,7 @@ namespace Model
         class CreateAppBlockRequest;
         class CreateApplicationRequest;
         class CreateDirectoryConfigRequest;
+        class CreateEntitlementRequest;
         class CreateFleetRequest;
         class CreateImageBuilderRequest;
         class CreateImageBuilderStreamingURLRequest;
@@ -127,6 +136,7 @@ namespace Model
         class DeleteAppBlockRequest;
         class DeleteApplicationRequest;
         class DeleteDirectoryConfigRequest;
+        class DeleteEntitlementRequest;
         class DeleteFleetRequest;
         class DeleteImageRequest;
         class DeleteImageBuilderRequest;
@@ -138,6 +148,7 @@ namespace Model
         class DescribeApplicationFleetAssociationsRequest;
         class DescribeApplicationsRequest;
         class DescribeDirectoryConfigsRequest;
+        class DescribeEntitlementsRequest;
         class DescribeFleetsRequest;
         class DescribeImageBuildersRequest;
         class DescribeImagePermissionsRequest;
@@ -149,11 +160,13 @@ namespace Model
         class DescribeUsersRequest;
         class DisableUserRequest;
         class DisassociateApplicationFleetRequest;
+        class DisassociateApplicationFromEntitlementRequest;
         class DisassociateFleetRequest;
         class EnableUserRequest;
         class ExpireSessionRequest;
         class ListAssociatedFleetsRequest;
         class ListAssociatedStacksRequest;
+        class ListEntitledApplicationsRequest;
         class ListTagsForResourceRequest;
         class StartFleetRequest;
         class StartImageBuilderRequest;
@@ -163,11 +176,13 @@ namespace Model
         class UntagResourceRequest;
         class UpdateApplicationRequest;
         class UpdateDirectoryConfigRequest;
+        class UpdateEntitlementRequest;
         class UpdateFleetRequest;
         class UpdateImagePermissionsRequest;
         class UpdateStackRequest;
 
         typedef Aws::Utils::Outcome<AssociateApplicationFleetResult, AppStreamError> AssociateApplicationFleetOutcome;
+        typedef Aws::Utils::Outcome<AssociateApplicationToEntitlementResult, AppStreamError> AssociateApplicationToEntitlementOutcome;
         typedef Aws::Utils::Outcome<AssociateFleetResult, AppStreamError> AssociateFleetOutcome;
         typedef Aws::Utils::Outcome<BatchAssociateUserStackResult, AppStreamError> BatchAssociateUserStackOutcome;
         typedef Aws::Utils::Outcome<BatchDisassociateUserStackResult, AppStreamError> BatchDisassociateUserStackOutcome;
@@ -175,6 +190,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateAppBlockResult, AppStreamError> CreateAppBlockOutcome;
         typedef Aws::Utils::Outcome<CreateApplicationResult, AppStreamError> CreateApplicationOutcome;
         typedef Aws::Utils::Outcome<CreateDirectoryConfigResult, AppStreamError> CreateDirectoryConfigOutcome;
+        typedef Aws::Utils::Outcome<CreateEntitlementResult, AppStreamError> CreateEntitlementOutcome;
         typedef Aws::Utils::Outcome<CreateFleetResult, AppStreamError> CreateFleetOutcome;
         typedef Aws::Utils::Outcome<CreateImageBuilderResult, AppStreamError> CreateImageBuilderOutcome;
         typedef Aws::Utils::Outcome<CreateImageBuilderStreamingURLResult, AppStreamError> CreateImageBuilderStreamingURLOutcome;
@@ -186,6 +202,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteAppBlockResult, AppStreamError> DeleteAppBlockOutcome;
         typedef Aws::Utils::Outcome<DeleteApplicationResult, AppStreamError> DeleteApplicationOutcome;
         typedef Aws::Utils::Outcome<DeleteDirectoryConfigResult, AppStreamError> DeleteDirectoryConfigOutcome;
+        typedef Aws::Utils::Outcome<DeleteEntitlementResult, AppStreamError> DeleteEntitlementOutcome;
         typedef Aws::Utils::Outcome<DeleteFleetResult, AppStreamError> DeleteFleetOutcome;
         typedef Aws::Utils::Outcome<DeleteImageResult, AppStreamError> DeleteImageOutcome;
         typedef Aws::Utils::Outcome<DeleteImageBuilderResult, AppStreamError> DeleteImageBuilderOutcome;
@@ -197,6 +214,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeApplicationFleetAssociationsResult, AppStreamError> DescribeApplicationFleetAssociationsOutcome;
         typedef Aws::Utils::Outcome<DescribeApplicationsResult, AppStreamError> DescribeApplicationsOutcome;
         typedef Aws::Utils::Outcome<DescribeDirectoryConfigsResult, AppStreamError> DescribeDirectoryConfigsOutcome;
+        typedef Aws::Utils::Outcome<DescribeEntitlementsResult, AppStreamError> DescribeEntitlementsOutcome;
         typedef Aws::Utils::Outcome<DescribeFleetsResult, AppStreamError> DescribeFleetsOutcome;
         typedef Aws::Utils::Outcome<DescribeImageBuildersResult, AppStreamError> DescribeImageBuildersOutcome;
         typedef Aws::Utils::Outcome<DescribeImagePermissionsResult, AppStreamError> DescribeImagePermissionsOutcome;
@@ -208,11 +226,13 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeUsersResult, AppStreamError> DescribeUsersOutcome;
         typedef Aws::Utils::Outcome<DisableUserResult, AppStreamError> DisableUserOutcome;
         typedef Aws::Utils::Outcome<DisassociateApplicationFleetResult, AppStreamError> DisassociateApplicationFleetOutcome;
+        typedef Aws::Utils::Outcome<DisassociateApplicationFromEntitlementResult, AppStreamError> DisassociateApplicationFromEntitlementOutcome;
         typedef Aws::Utils::Outcome<DisassociateFleetResult, AppStreamError> DisassociateFleetOutcome;
         typedef Aws::Utils::Outcome<EnableUserResult, AppStreamError> EnableUserOutcome;
         typedef Aws::Utils::Outcome<ExpireSessionResult, AppStreamError> ExpireSessionOutcome;
         typedef Aws::Utils::Outcome<ListAssociatedFleetsResult, AppStreamError> ListAssociatedFleetsOutcome;
         typedef Aws::Utils::Outcome<ListAssociatedStacksResult, AppStreamError> ListAssociatedStacksOutcome;
+        typedef Aws::Utils::Outcome<ListEntitledApplicationsResult, AppStreamError> ListEntitledApplicationsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, AppStreamError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<StartFleetResult, AppStreamError> StartFleetOutcome;
         typedef Aws::Utils::Outcome<StartImageBuilderResult, AppStreamError> StartImageBuilderOutcome;
@@ -222,11 +242,13 @@ namespace Model
         typedef Aws::Utils::Outcome<UntagResourceResult, AppStreamError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateApplicationResult, AppStreamError> UpdateApplicationOutcome;
         typedef Aws::Utils::Outcome<UpdateDirectoryConfigResult, AppStreamError> UpdateDirectoryConfigOutcome;
+        typedef Aws::Utils::Outcome<UpdateEntitlementResult, AppStreamError> UpdateEntitlementOutcome;
         typedef Aws::Utils::Outcome<UpdateFleetResult, AppStreamError> UpdateFleetOutcome;
         typedef Aws::Utils::Outcome<UpdateImagePermissionsResult, AppStreamError> UpdateImagePermissionsOutcome;
         typedef Aws::Utils::Outcome<UpdateStackResult, AppStreamError> UpdateStackOutcome;
 
         typedef std::future<AssociateApplicationFleetOutcome> AssociateApplicationFleetOutcomeCallable;
+        typedef std::future<AssociateApplicationToEntitlementOutcome> AssociateApplicationToEntitlementOutcomeCallable;
         typedef std::future<AssociateFleetOutcome> AssociateFleetOutcomeCallable;
         typedef std::future<BatchAssociateUserStackOutcome> BatchAssociateUserStackOutcomeCallable;
         typedef std::future<BatchDisassociateUserStackOutcome> BatchDisassociateUserStackOutcomeCallable;
@@ -234,6 +256,7 @@ namespace Model
         typedef std::future<CreateAppBlockOutcome> CreateAppBlockOutcomeCallable;
         typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
         typedef std::future<CreateDirectoryConfigOutcome> CreateDirectoryConfigOutcomeCallable;
+        typedef std::future<CreateEntitlementOutcome> CreateEntitlementOutcomeCallable;
         typedef std::future<CreateFleetOutcome> CreateFleetOutcomeCallable;
         typedef std::future<CreateImageBuilderOutcome> CreateImageBuilderOutcomeCallable;
         typedef std::future<CreateImageBuilderStreamingURLOutcome> CreateImageBuilderStreamingURLOutcomeCallable;
@@ -245,6 +268,7 @@ namespace Model
         typedef std::future<DeleteAppBlockOutcome> DeleteAppBlockOutcomeCallable;
         typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
         typedef std::future<DeleteDirectoryConfigOutcome> DeleteDirectoryConfigOutcomeCallable;
+        typedef std::future<DeleteEntitlementOutcome> DeleteEntitlementOutcomeCallable;
         typedef std::future<DeleteFleetOutcome> DeleteFleetOutcomeCallable;
         typedef std::future<DeleteImageOutcome> DeleteImageOutcomeCallable;
         typedef std::future<DeleteImageBuilderOutcome> DeleteImageBuilderOutcomeCallable;
@@ -256,6 +280,7 @@ namespace Model
         typedef std::future<DescribeApplicationFleetAssociationsOutcome> DescribeApplicationFleetAssociationsOutcomeCallable;
         typedef std::future<DescribeApplicationsOutcome> DescribeApplicationsOutcomeCallable;
         typedef std::future<DescribeDirectoryConfigsOutcome> DescribeDirectoryConfigsOutcomeCallable;
+        typedef std::future<DescribeEntitlementsOutcome> DescribeEntitlementsOutcomeCallable;
         typedef std::future<DescribeFleetsOutcome> DescribeFleetsOutcomeCallable;
         typedef std::future<DescribeImageBuildersOutcome> DescribeImageBuildersOutcomeCallable;
         typedef std::future<DescribeImagePermissionsOutcome> DescribeImagePermissionsOutcomeCallable;
@@ -267,11 +292,13 @@ namespace Model
         typedef std::future<DescribeUsersOutcome> DescribeUsersOutcomeCallable;
         typedef std::future<DisableUserOutcome> DisableUserOutcomeCallable;
         typedef std::future<DisassociateApplicationFleetOutcome> DisassociateApplicationFleetOutcomeCallable;
+        typedef std::future<DisassociateApplicationFromEntitlementOutcome> DisassociateApplicationFromEntitlementOutcomeCallable;
         typedef std::future<DisassociateFleetOutcome> DisassociateFleetOutcomeCallable;
         typedef std::future<EnableUserOutcome> EnableUserOutcomeCallable;
         typedef std::future<ExpireSessionOutcome> ExpireSessionOutcomeCallable;
         typedef std::future<ListAssociatedFleetsOutcome> ListAssociatedFleetsOutcomeCallable;
         typedef std::future<ListAssociatedStacksOutcome> ListAssociatedStacksOutcomeCallable;
+        typedef std::future<ListEntitledApplicationsOutcome> ListEntitledApplicationsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<StartFleetOutcome> StartFleetOutcomeCallable;
         typedef std::future<StartImageBuilderOutcome> StartImageBuilderOutcomeCallable;
@@ -281,6 +308,7 @@ namespace Model
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
         typedef std::future<UpdateDirectoryConfigOutcome> UpdateDirectoryConfigOutcomeCallable;
+        typedef std::future<UpdateEntitlementOutcome> UpdateEntitlementOutcomeCallable;
         typedef std::future<UpdateFleetOutcome> UpdateFleetOutcomeCallable;
         typedef std::future<UpdateImagePermissionsOutcome> UpdateImagePermissionsOutcomeCallable;
         typedef std::future<UpdateStackOutcome> UpdateStackOutcomeCallable;
@@ -289,6 +317,7 @@ namespace Model
   class AppStreamClient;
 
     typedef std::function<void(const AppStreamClient*, const Model::AssociateApplicationFleetRequest&, const Model::AssociateApplicationFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateApplicationFleetResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::AssociateApplicationToEntitlementRequest&, const Model::AssociateApplicationToEntitlementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateApplicationToEntitlementResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::AssociateFleetRequest&, const Model::AssociateFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateFleetResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::BatchAssociateUserStackRequest&, const Model::BatchAssociateUserStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchAssociateUserStackResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::BatchDisassociateUserStackRequest&, const Model::BatchDisassociateUserStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDisassociateUserStackResponseReceivedHandler;
@@ -296,6 +325,7 @@ namespace Model
     typedef std::function<void(const AppStreamClient*, const Model::CreateAppBlockRequest&, const Model::CreateAppBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAppBlockResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::CreateDirectoryConfigRequest&, const Model::CreateDirectoryConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDirectoryConfigResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::CreateEntitlementRequest&, const Model::CreateEntitlementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEntitlementResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::CreateFleetRequest&, const Model::CreateFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFleetResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::CreateImageBuilderRequest&, const Model::CreateImageBuilderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImageBuilderResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::CreateImageBuilderStreamingURLRequest&, const Model::CreateImageBuilderStreamingURLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImageBuilderStreamingURLResponseReceivedHandler;
@@ -307,6 +337,7 @@ namespace Model
     typedef std::function<void(const AppStreamClient*, const Model::DeleteAppBlockRequest&, const Model::DeleteAppBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAppBlockResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DeleteApplicationRequest&, const Model::DeleteApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DeleteDirectoryConfigRequest&, const Model::DeleteDirectoryConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDirectoryConfigResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::DeleteEntitlementRequest&, const Model::DeleteEntitlementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEntitlementResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DeleteFleetRequest&, const Model::DeleteFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFleetResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DeleteImageRequest&, const Model::DeleteImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImageResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DeleteImageBuilderRequest&, const Model::DeleteImageBuilderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImageBuilderResponseReceivedHandler;
@@ -318,6 +349,7 @@ namespace Model
     typedef std::function<void(const AppStreamClient*, const Model::DescribeApplicationFleetAssociationsRequest&, const Model::DescribeApplicationFleetAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeApplicationFleetAssociationsResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeApplicationsRequest&, const Model::DescribeApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeApplicationsResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeDirectoryConfigsRequest&, const Model::DescribeDirectoryConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDirectoryConfigsResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::DescribeEntitlementsRequest&, const Model::DescribeEntitlementsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEntitlementsResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeFleetsRequest&, const Model::DescribeFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetsResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeImageBuildersRequest&, const Model::DescribeImageBuildersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImageBuildersResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DescribeImagePermissionsRequest&, const Model::DescribeImagePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImagePermissionsResponseReceivedHandler;
@@ -329,11 +361,13 @@ namespace Model
     typedef std::function<void(const AppStreamClient*, const Model::DescribeUsersRequest&, const Model::DescribeUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUsersResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DisableUserRequest&, const Model::DisableUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableUserResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DisassociateApplicationFleetRequest&, const Model::DisassociateApplicationFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateApplicationFleetResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::DisassociateApplicationFromEntitlementRequest&, const Model::DisassociateApplicationFromEntitlementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateApplicationFromEntitlementResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::DisassociateFleetRequest&, const Model::DisassociateFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateFleetResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::EnableUserRequest&, const Model::EnableUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableUserResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::ExpireSessionRequest&, const Model::ExpireSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExpireSessionResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::ListAssociatedFleetsRequest&, const Model::ListAssociatedFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociatedFleetsResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::ListAssociatedStacksRequest&, const Model::ListAssociatedStacksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociatedStacksResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::ListEntitledApplicationsRequest&, const Model::ListEntitledApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEntitledApplicationsResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::StartFleetRequest&, const Model::StartFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartFleetResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::StartImageBuilderRequest&, const Model::StartImageBuilderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartImageBuilderResponseReceivedHandler;
@@ -343,6 +377,7 @@ namespace Model
     typedef std::function<void(const AppStreamClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::UpdateDirectoryConfigRequest&, const Model::UpdateDirectoryConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDirectoryConfigResponseReceivedHandler;
+    typedef std::function<void(const AppStreamClient*, const Model::UpdateEntitlementRequest&, const Model::UpdateEntitlementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEntitlementResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::UpdateFleetRequest&, const Model::UpdateFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFleetResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::UpdateImagePermissionsRequest&, const Model::UpdateImagePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateImagePermissionsResponseReceivedHandler;
     typedef std::function<void(const AppStreamClient*, const Model::UpdateStackRequest&, const Model::UpdateStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStackResponseReceivedHandler;
@@ -420,6 +455,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateApplicationFleetAsync(const Model::AssociateApplicationFleetRequest& request, const AssociateApplicationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associates an application to entitle.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateApplicationToEntitlement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateApplicationToEntitlementOutcome AssociateApplicationToEntitlement(const Model::AssociateApplicationToEntitlementRequest& request) const;
+
+        /**
+         * <p>Associates an application to entitle.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateApplicationToEntitlement">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateApplicationToEntitlementOutcomeCallable AssociateApplicationToEntitlementCallable(const Model::AssociateApplicationToEntitlementRequest& request) const;
+
+        /**
+         * <p>Associates an application to entitle.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateApplicationToEntitlement">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateApplicationToEntitlementAsync(const Model::AssociateApplicationToEntitlementRequest& request, const AssociateApplicationToEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates the specified fleet with the specified stack.</p><p><h3>See
@@ -655,6 +715,49 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateDirectoryConfigAsync(const Model::CreateDirectoryConfigRequest& request, const CreateDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new entitlement. Entitlements control access to specific
+         * applications within a stack, based on user attributes. Entitlements apply to
+         * SAML 2.0 federated user identities. Amazon AppStream 2.0 user pool and streaming
+         * URL users are entitled to all applications in a stack. Entitlements don't apply
+         * to the desktop stream view application, or to applications managed by a dynamic
+         * app provider using the Dynamic Application Framework.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateEntitlement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateEntitlementOutcome CreateEntitlement(const Model::CreateEntitlementRequest& request) const;
+
+        /**
+         * <p>Creates a new entitlement. Entitlements control access to specific
+         * applications within a stack, based on user attributes. Entitlements apply to
+         * SAML 2.0 federated user identities. Amazon AppStream 2.0 user pool and streaming
+         * URL users are entitled to all applications in a stack. Entitlements don't apply
+         * to the desktop stream view application, or to applications managed by a dynamic
+         * app provider using the Dynamic Application Framework.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateEntitlement">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateEntitlementOutcomeCallable CreateEntitlementCallable(const Model::CreateEntitlementRequest& request) const;
+
+        /**
+         * <p>Creates a new entitlement. Entitlements control access to specific
+         * applications within a stack, based on user attributes. Entitlements apply to
+         * SAML 2.0 federated user identities. Amazon AppStream 2.0 user pool and streaming
+         * URL users are entitled to all applications in a stack. Entitlements don't apply
+         * to the desktop stream view application, or to applications managed by a dynamic
+         * app provider using the Dynamic Application Framework.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateEntitlement">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateEntitlementAsync(const Model::CreateEntitlementRequest& request, const CreateEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a fleet. A fleet consists of streaming instances that run a specified
@@ -981,6 +1084,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteDirectoryConfigAsync(const Model::DeleteDirectoryConfigRequest& request, const DeleteDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified entitlement.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteEntitlement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteEntitlementOutcome DeleteEntitlement(const Model::DeleteEntitlementRequest& request) const;
+
+        /**
+         * <p>Deletes the specified entitlement.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteEntitlement">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteEntitlementOutcomeCallable DeleteEntitlementCallable(const Model::DeleteEntitlementRequest& request) const;
+
+        /**
+         * <p>Deletes the specified entitlement.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteEntitlement">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteEntitlementAsync(const Model::DeleteEntitlementRequest& request, const DeleteEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified fleet.</p><p><h3>See Also:</h3>   <a
@@ -1310,6 +1438,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeDirectoryConfigsAsync(const Model::DescribeDirectoryConfigsRequest& request, const DescribeDirectoryConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves a list that describes one of more entitlements.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeEntitlements">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeEntitlementsOutcome DescribeEntitlements(const Model::DescribeEntitlementsRequest& request) const;
+
+        /**
+         * <p>Retrieves a list that describes one of more entitlements.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeEntitlements">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeEntitlementsOutcomeCallable DescribeEntitlementsCallable(const Model::DescribeEntitlementsRequest& request) const;
+
+        /**
+         * <p>Retrieves a list that describes one of more entitlements.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeEntitlements">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeEntitlementsAsync(const Model::DescribeEntitlementsRequest& request, const DescribeEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list that describes one or more specified fleets, if the fleet
@@ -1653,6 +1809,34 @@ namespace Model
         virtual void DisassociateApplicationFleetAsync(const Model::DisassociateApplicationFleetRequest& request, const DisassociateApplicationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes the specified application from the specified
+         * entitlement.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateApplicationFromEntitlement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateApplicationFromEntitlementOutcome DisassociateApplicationFromEntitlement(const Model::DisassociateApplicationFromEntitlementRequest& request) const;
+
+        /**
+         * <p>Deletes the specified application from the specified
+         * entitlement.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateApplicationFromEntitlement">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateApplicationFromEntitlementOutcomeCallable DisassociateApplicationFromEntitlementCallable(const Model::DisassociateApplicationFromEntitlementRequest& request) const;
+
+        /**
+         * <p>Deletes the specified application from the specified
+         * entitlement.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateApplicationFromEntitlement">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateApplicationFromEntitlementAsync(const Model::DisassociateApplicationFromEntitlementRequest& request, const DisassociateApplicationFromEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Disassociates the specified fleet from the specified stack.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet">AWS
@@ -1794,6 +1978,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAssociatedStacksAsync(const Model::ListAssociatedStacksRequest& request, const ListAssociatedStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves a list of entitled applications.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListEntitledApplications">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListEntitledApplicationsOutcome ListEntitledApplications(const Model::ListEntitledApplicationsRequest& request) const;
+
+        /**
+         * <p>Retrieves a list of entitled applications.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListEntitledApplications">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListEntitledApplicationsOutcomeCallable ListEntitledApplicationsCallable(const Model::ListEntitledApplicationsRequest& request) const;
+
+        /**
+         * <p>Retrieves a list of entitled applications.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListEntitledApplications">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListEntitledApplicationsAsync(const Model::ListEntitledApplicationsRequest& request, const ListEntitledApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of all tags for the specified AppStream 2.0 resource. You
@@ -2084,6 +2293,31 @@ namespace Model
         virtual void UpdateDirectoryConfigAsync(const Model::UpdateDirectoryConfigRequest& request, const UpdateDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the specified entitlement.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateEntitlement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateEntitlementOutcome UpdateEntitlement(const Model::UpdateEntitlementRequest& request) const;
+
+        /**
+         * <p>Updates the specified entitlement.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateEntitlement">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateEntitlementOutcomeCallable UpdateEntitlementCallable(const Model::UpdateEntitlementRequest& request) const;
+
+        /**
+         * <p>Updates the specified entitlement.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateEntitlement">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateEntitlementAsync(const Model::UpdateEntitlementRequest& request, const UpdateEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the specified fleet.</p> <p>If the fleet is in the
          * <code>STOPPED</code> state, you can update any attribute except the fleet
          * name.</p> <p>If the fleet is in the <code>RUNNING</code> state, you can update
@@ -2208,6 +2442,7 @@ namespace Model
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AssociateApplicationFleetAsyncHelper(const Model::AssociateApplicationFleetRequest& request, const AssociateApplicationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociateApplicationToEntitlementAsyncHelper(const Model::AssociateApplicationToEntitlementRequest& request, const AssociateApplicationToEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateFleetAsyncHelper(const Model::AssociateFleetRequest& request, const AssociateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchAssociateUserStackAsyncHelper(const Model::BatchAssociateUserStackRequest& request, const BatchAssociateUserStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchDisassociateUserStackAsyncHelper(const Model::BatchDisassociateUserStackRequest& request, const BatchDisassociateUserStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2215,6 +2450,7 @@ namespace Model
         void CreateAppBlockAsyncHelper(const Model::CreateAppBlockRequest& request, const CreateAppBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateApplicationAsyncHelper(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDirectoryConfigAsyncHelper(const Model::CreateDirectoryConfigRequest& request, const CreateDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateEntitlementAsyncHelper(const Model::CreateEntitlementRequest& request, const CreateEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateFleetAsyncHelper(const Model::CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateImageBuilderAsyncHelper(const Model::CreateImageBuilderRequest& request, const CreateImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateImageBuilderStreamingURLAsyncHelper(const Model::CreateImageBuilderStreamingURLRequest& request, const CreateImageBuilderStreamingURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2226,6 +2462,7 @@ namespace Model
         void DeleteAppBlockAsyncHelper(const Model::DeleteAppBlockRequest& request, const DeleteAppBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteApplicationAsyncHelper(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDirectoryConfigAsyncHelper(const Model::DeleteDirectoryConfigRequest& request, const DeleteDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteEntitlementAsyncHelper(const Model::DeleteEntitlementRequest& request, const DeleteEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFleetAsyncHelper(const Model::DeleteFleetRequest& request, const DeleteFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteImageAsyncHelper(const Model::DeleteImageRequest& request, const DeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteImageBuilderAsyncHelper(const Model::DeleteImageBuilderRequest& request, const DeleteImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2237,6 +2474,7 @@ namespace Model
         void DescribeApplicationFleetAssociationsAsyncHelper(const Model::DescribeApplicationFleetAssociationsRequest& request, const DescribeApplicationFleetAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeApplicationsAsyncHelper(const Model::DescribeApplicationsRequest& request, const DescribeApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDirectoryConfigsAsyncHelper(const Model::DescribeDirectoryConfigsRequest& request, const DescribeDirectoryConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeEntitlementsAsyncHelper(const Model::DescribeEntitlementsRequest& request, const DescribeEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFleetsAsyncHelper(const Model::DescribeFleetsRequest& request, const DescribeFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeImageBuildersAsyncHelper(const Model::DescribeImageBuildersRequest& request, const DescribeImageBuildersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeImagePermissionsAsyncHelper(const Model::DescribeImagePermissionsRequest& request, const DescribeImagePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2248,11 +2486,13 @@ namespace Model
         void DescribeUsersAsyncHelper(const Model::DescribeUsersRequest& request, const DescribeUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableUserAsyncHelper(const Model::DisableUserRequest& request, const DisableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateApplicationFleetAsyncHelper(const Model::DisassociateApplicationFleetRequest& request, const DisassociateApplicationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateApplicationFromEntitlementAsyncHelper(const Model::DisassociateApplicationFromEntitlementRequest& request, const DisassociateApplicationFromEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateFleetAsyncHelper(const Model::DisassociateFleetRequest& request, const DisassociateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableUserAsyncHelper(const Model::EnableUserRequest& request, const EnableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExpireSessionAsyncHelper(const Model::ExpireSessionRequest& request, const ExpireSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssociatedFleetsAsyncHelper(const Model::ListAssociatedFleetsRequest& request, const ListAssociatedFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssociatedStacksAsyncHelper(const Model::ListAssociatedStacksRequest& request, const ListAssociatedStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListEntitledApplicationsAsyncHelper(const Model::ListEntitledApplicationsRequest& request, const ListEntitledApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartFleetAsyncHelper(const Model::StartFleetRequest& request, const StartFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartImageBuilderAsyncHelper(const Model::StartImageBuilderRequest& request, const StartImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2262,6 +2502,7 @@ namespace Model
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateApplicationAsyncHelper(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDirectoryConfigAsyncHelper(const Model::UpdateDirectoryConfigRequest& request, const UpdateDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateEntitlementAsyncHelper(const Model::UpdateEntitlementRequest& request, const UpdateEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFleetAsyncHelper(const Model::UpdateFleetRequest& request, const UpdateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateImagePermissionsAsyncHelper(const Model::UpdateImagePermissionsRequest& request, const UpdateImagePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateStackAsyncHelper(const Model::UpdateStackRequest& request, const UpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

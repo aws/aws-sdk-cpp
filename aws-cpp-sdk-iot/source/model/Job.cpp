@@ -41,6 +41,7 @@ Job::Job() :
     m_timeoutConfigHasBeenSet(false),
     m_namespaceIdHasBeenSet(false),
     m_jobTemplateArnHasBeenSet(false),
+    m_jobExecutionsRetryConfigHasBeenSet(false),
     m_documentParametersHasBeenSet(false)
 {
 }
@@ -68,6 +69,7 @@ Job::Job(JsonView jsonValue) :
     m_timeoutConfigHasBeenSet(false),
     m_namespaceIdHasBeenSet(false),
     m_jobTemplateArnHasBeenSet(false),
+    m_jobExecutionsRetryConfigHasBeenSet(false),
     m_documentParametersHasBeenSet(false)
 {
   *this = jsonValue;
@@ -211,6 +213,13 @@ Job& Job::operator =(JsonView jsonValue)
     m_jobTemplateArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("jobExecutionsRetryConfig"))
+  {
+    m_jobExecutionsRetryConfig = jsonValue.GetObject("jobExecutionsRetryConfig");
+
+    m_jobExecutionsRetryConfigHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("documentParameters"))
   {
     Aws::Map<Aws::String, JsonView> documentParametersJsonMap = jsonValue.GetObject("documentParameters").GetAllObjects();
@@ -339,6 +348,12 @@ JsonValue Job::Jsonize() const
   if(m_jobTemplateArnHasBeenSet)
   {
    payload.WithString("jobTemplateArn", m_jobTemplateArn);
+
+  }
+
+  if(m_jobExecutionsRetryConfigHasBeenSet)
+  {
+   payload.WithObject("jobExecutionsRetryConfig", m_jobExecutionsRetryConfig.Jsonize());
 
   }
 

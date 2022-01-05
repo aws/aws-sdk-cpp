@@ -22,7 +22,8 @@ CreateJobTemplateRequest::CreateJobTemplateRequest() :
     m_jobExecutionsRolloutConfigHasBeenSet(false),
     m_abortConfigHasBeenSet(false),
     m_timeoutConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_jobExecutionsRetryConfigHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,12 @@ Aws::String CreateJobTemplateRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_jobExecutionsRetryConfigHasBeenSet)
+  {
+   payload.WithObject("jobExecutionsRetryConfig", m_jobExecutionsRetryConfig.Jsonize());
 
   }
 

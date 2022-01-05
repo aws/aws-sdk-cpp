@@ -88,6 +88,12 @@ DescribeJobTemplateResult& DescribeJobTemplateResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("jobExecutionsRetryConfig"))
+  {
+    m_jobExecutionsRetryConfig = jsonValue.GetObject("jobExecutionsRetryConfig");
+
+  }
+
 
 
   return *this;

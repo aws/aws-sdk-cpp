@@ -26,6 +26,7 @@ static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("Concur
 static const int CRAWLER_RUNNING_HASH = HashingUtils::HashString("CrawlerRunningException");
 static const int GLUE_ENCRYPTION_HASH = HashingUtils::HashString("GlueEncryptionException");
 static const int M_L_TRANSFORM_NOT_READY_HASH = HashingUtils::HashString("MLTransformNotReadyException");
+static const int PERMISSION_TYPE_MISMATCH_HASH = HashingUtils::HashString("PermissionTypeMismatchException");
 static const int RESOURCE_NUMBER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceNumberLimitExceededException");
 static const int OPERATION_TIMEOUT_HASH = HashingUtils::HashString("OperationTimeoutException");
 static const int VERSION_MISMATCH_HASH = HashingUtils::HashString("VersionMismatchException");
@@ -80,6 +81,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == M_L_TRANSFORM_NOT_READY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::M_L_TRANSFORM_NOT_READY), false);
+  }
+  else if (hashCode == PERMISSION_TYPE_MISMATCH_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::PERMISSION_TYPE_MISMATCH), false);
   }
   else if (hashCode == RESOURCE_NUMBER_LIMIT_EXCEEDED_HASH)
   {

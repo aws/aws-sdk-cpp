@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ServiceState.h>
 #include <aws/ec2/model/PrivateDnsNameConfiguration.h>
+#include <aws/ec2/model/PayerResponsibility.h>
 #include <aws/ec2/model/ServiceTypeDetail.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
@@ -524,6 +525,37 @@ namespace Model
 
 
     /**
+     * <p>The payer responsibility.</p>
+     */
+    inline const PayerResponsibility& GetPayerResponsibility() const{ return m_payerResponsibility; }
+
+    /**
+     * <p>The payer responsibility.</p>
+     */
+    inline bool PayerResponsibilityHasBeenSet() const { return m_payerResponsibilityHasBeenSet; }
+
+    /**
+     * <p>The payer responsibility.</p>
+     */
+    inline void SetPayerResponsibility(const PayerResponsibility& value) { m_payerResponsibilityHasBeenSet = true; m_payerResponsibility = value; }
+
+    /**
+     * <p>The payer responsibility.</p>
+     */
+    inline void SetPayerResponsibility(PayerResponsibility&& value) { m_payerResponsibilityHasBeenSet = true; m_payerResponsibility = std::move(value); }
+
+    /**
+     * <p>The payer responsibility.</p>
+     */
+    inline ServiceConfiguration& WithPayerResponsibility(const PayerResponsibility& value) { SetPayerResponsibility(value); return *this;}
+
+    /**
+     * <p>The payer responsibility.</p>
+     */
+    inline ServiceConfiguration& WithPayerResponsibility(PayerResponsibility&& value) { SetPayerResponsibility(std::move(value)); return *this;}
+
+
+    /**
      * <p>Any tags assigned to the service.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -600,6 +632,9 @@ namespace Model
 
     PrivateDnsNameConfiguration m_privateDnsNameConfiguration;
     bool m_privateDnsNameConfigurationHasBeenSet;
+
+    PayerResponsibility m_payerResponsibility;
+    bool m_payerResponsibilityHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

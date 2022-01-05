@@ -11,6 +11,7 @@
 #include <aws/iot/model/JobExecutionsRolloutConfig.h>
 #include <aws/iot/model/AbortConfig.h>
 #include <aws/iot/model/TimeoutConfig.h>
+#include <aws/iot/model/JobExecutionsRetryConfig.h>
 #include <utility>
 
 namespace Aws
@@ -306,6 +307,37 @@ namespace Model
     
     inline DescribeJobTemplateResult& WithTimeoutConfig(TimeoutConfig&& value) { SetTimeoutConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configuration that determines how many retries are allowed for each
+     * failure type for a job.</p>
+     */
+    inline const JobExecutionsRetryConfig& GetJobExecutionsRetryConfig() const{ return m_jobExecutionsRetryConfig; }
+
+    /**
+     * <p>The configuration that determines how many retries are allowed for each
+     * failure type for a job.</p>
+     */
+    inline void SetJobExecutionsRetryConfig(const JobExecutionsRetryConfig& value) { m_jobExecutionsRetryConfig = value; }
+
+    /**
+     * <p>The configuration that determines how many retries are allowed for each
+     * failure type for a job.</p>
+     */
+    inline void SetJobExecutionsRetryConfig(JobExecutionsRetryConfig&& value) { m_jobExecutionsRetryConfig = std::move(value); }
+
+    /**
+     * <p>The configuration that determines how many retries are allowed for each
+     * failure type for a job.</p>
+     */
+    inline DescribeJobTemplateResult& WithJobExecutionsRetryConfig(const JobExecutionsRetryConfig& value) { SetJobExecutionsRetryConfig(value); return *this;}
+
+    /**
+     * <p>The configuration that determines how many retries are allowed for each
+     * failure type for a job.</p>
+     */
+    inline DescribeJobTemplateResult& WithJobExecutionsRetryConfig(JobExecutionsRetryConfig&& value) { SetJobExecutionsRetryConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_jobTemplateArn;
@@ -327,6 +359,8 @@ namespace Model
     AbortConfig m_abortConfig;
 
     TimeoutConfig m_timeoutConfig;
+
+    JobExecutionsRetryConfig m_jobExecutionsRetryConfig;
   };
 
 } // namespace Model

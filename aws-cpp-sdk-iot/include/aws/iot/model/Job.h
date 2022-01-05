@@ -15,6 +15,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/iot/model/JobProcessDetails.h>
 #include <aws/iot/model/TimeoutConfig.h>
+#include <aws/iot/model/JobExecutionsRetryConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -839,6 +840,37 @@ namespace Model
 
 
     /**
+     * <p>The configuration for the criteria to retry the job.</p>
+     */
+    inline const JobExecutionsRetryConfig& GetJobExecutionsRetryConfig() const{ return m_jobExecutionsRetryConfig; }
+
+    /**
+     * <p>The configuration for the criteria to retry the job.</p>
+     */
+    inline bool JobExecutionsRetryConfigHasBeenSet() const { return m_jobExecutionsRetryConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration for the criteria to retry the job.</p>
+     */
+    inline void SetJobExecutionsRetryConfig(const JobExecutionsRetryConfig& value) { m_jobExecutionsRetryConfigHasBeenSet = true; m_jobExecutionsRetryConfig = value; }
+
+    /**
+     * <p>The configuration for the criteria to retry the job.</p>
+     */
+    inline void SetJobExecutionsRetryConfig(JobExecutionsRetryConfig&& value) { m_jobExecutionsRetryConfigHasBeenSet = true; m_jobExecutionsRetryConfig = std::move(value); }
+
+    /**
+     * <p>The configuration for the criteria to retry the job.</p>
+     */
+    inline Job& WithJobExecutionsRetryConfig(const JobExecutionsRetryConfig& value) { SetJobExecutionsRetryConfig(value); return *this;}
+
+    /**
+     * <p>The configuration for the criteria to retry the job.</p>
+     */
+    inline Job& WithJobExecutionsRetryConfig(JobExecutionsRetryConfig&& value) { SetJobExecutionsRetryConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>A key-value map that pairs the patterns that need to be replaced in a managed
      * template job document schema. You can use the description of each key as a
      * guidance to specify the inputs during runtime when creating a job.</p>
@@ -987,6 +1019,9 @@ namespace Model
 
     Aws::String m_jobTemplateArn;
     bool m_jobTemplateArnHasBeenSet;
+
+    JobExecutionsRetryConfig m_jobExecutionsRetryConfig;
+    bool m_jobExecutionsRetryConfigHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_documentParameters;
     bool m_documentParametersHasBeenSet;

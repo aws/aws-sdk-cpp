@@ -25,7 +25,9 @@ JobExecutionSummary::JobExecutionSummary() :
     m_startedAtHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
     m_executionNumber(0),
-    m_executionNumberHasBeenSet(false)
+    m_executionNumberHasBeenSet(false),
+    m_retryAttempt(0),
+    m_retryAttemptHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ JobExecutionSummary::JobExecutionSummary(JsonView jsonValue) :
     m_startedAtHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
     m_executionNumber(0),
-    m_executionNumberHasBeenSet(false)
+    m_executionNumberHasBeenSet(false),
+    m_retryAttempt(0),
+    m_retryAttemptHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -78,6 +82,13 @@ JobExecutionSummary& JobExecutionSummary::operator =(JsonView jsonValue)
     m_executionNumberHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("retryAttempt"))
+  {
+    m_retryAttempt = jsonValue.GetInteger("retryAttempt");
+
+    m_retryAttemptHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +119,12 @@ JsonValue JobExecutionSummary::Jsonize() const
   if(m_executionNumberHasBeenSet)
   {
    payload.WithInt64("executionNumber", m_executionNumber);
+
+  }
+
+  if(m_retryAttemptHasBeenSet)
+  {
+   payload.WithInteger("retryAttempt", m_retryAttempt);
 
   }
 

@@ -860,14 +860,16 @@ namespace Model
         virtual void CreateDashboardAsync(const Model::CreateDashboardRequest& request, const CreateDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a dataset.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a dataset. This operation doesn't support datasets that include
+         * uploaded files as a source.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateDataSet">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDataSetOutcome CreateDataSet(const Model::CreateDataSetRequest& request) const;
 
         /**
-         * <p>Creates a dataset.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a dataset. This operation doesn't support datasets that include
+         * uploaded files as a source.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateDataSet">AWS
          * API Reference</a></p>
          *
@@ -876,7 +878,8 @@ namespace Model
         virtual Model::CreateDataSetOutcomeCallable CreateDataSetCallable(const Model::CreateDataSetRequest& request) const;
 
         /**
-         * <p>Creates a dataset.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a dataset. This operation doesn't support datasets that include
+         * uploaded files as a source.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateDataSet">AWS
          * API Reference</a></p>
          *
@@ -1059,9 +1062,13 @@ namespace Model
         virtual void CreateIAMPolicyAssignmentAsync(const Model::CreateIAMPolicyAssignmentRequest& request, const CreateIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates and starts a new SPICE ingestion on a dataset</p> <p>Any ingestions
-         * operating on tagged datasets inherit the same tags automatically for use in
-         * access control. For an example, see <a
+         * <p>Creates and starts a new SPICE ingestion for a dataset. You can manually
+         * refresh datasets in an Enterprise edition account 32 times in a 24-hour period.
+         * You can manually refresh datasets in a Standard edition account 8 times in a
+         * 24-hour period. Each 24-hour period is measured starting 24 hours before the
+         * current date and time.</p> <p>Any ingestions operating on tagged datasets
+         * inherit the same tags automatically for use in access control. For an example,
+         * see <a
          * href="http://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How
          * do I create an IAM policy to control access to Amazon EC2 resources using
          * tags?</a> in the Amazon Web Services Knowledge Center. Tags are visible on the
@@ -1072,9 +1079,13 @@ namespace Model
         virtual Model::CreateIngestionOutcome CreateIngestion(const Model::CreateIngestionRequest& request) const;
 
         /**
-         * <p>Creates and starts a new SPICE ingestion on a dataset</p> <p>Any ingestions
-         * operating on tagged datasets inherit the same tags automatically for use in
-         * access control. For an example, see <a
+         * <p>Creates and starts a new SPICE ingestion for a dataset. You can manually
+         * refresh datasets in an Enterprise edition account 32 times in a 24-hour period.
+         * You can manually refresh datasets in a Standard edition account 8 times in a
+         * 24-hour period. Each 24-hour period is measured starting 24 hours before the
+         * current date and time.</p> <p>Any ingestions operating on tagged datasets
+         * inherit the same tags automatically for use in access control. For an example,
+         * see <a
          * href="http://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How
          * do I create an IAM policy to control access to Amazon EC2 resources using
          * tags?</a> in the Amazon Web Services Knowledge Center. Tags are visible on the
@@ -1087,9 +1098,13 @@ namespace Model
         virtual Model::CreateIngestionOutcomeCallable CreateIngestionCallable(const Model::CreateIngestionRequest& request) const;
 
         /**
-         * <p>Creates and starts a new SPICE ingestion on a dataset</p> <p>Any ingestions
-         * operating on tagged datasets inherit the same tags automatically for use in
-         * access control. For an example, see <a
+         * <p>Creates and starts a new SPICE ingestion for a dataset. You can manually
+         * refresh datasets in an Enterprise edition account 32 times in a 24-hour period.
+         * You can manually refresh datasets in a Standard edition account 8 times in a
+         * 24-hour period. Each 24-hour period is measured starting 24 hours before the
+         * current date and time.</p> <p>Any ingestions operating on tagged datasets
+         * inherit the same tags automatically for use in access control. For an example,
+         * see <a
          * href="http://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How
          * do I create an IAM policy to control access to Amazon EC2 resources using
          * tags?</a> in the Amazon Web Services Knowledge Center. Tags are visible on the
@@ -2087,14 +2102,16 @@ namespace Model
         virtual void DescribeDashboardPermissionsAsync(const Model::DescribeDashboardPermissionsRequest& request, const DescribeDashboardPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes a dataset. </p><p><h3>See Also:</h3>   <a
+         * <p>Describes a dataset. This operation doesn't support datasets that include
+         * uploaded files as a source.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDataSet">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeDataSetOutcome DescribeDataSet(const Model::DescribeDataSetRequest& request) const;
 
         /**
-         * <p>Describes a dataset. </p><p><h3>See Also:</h3>   <a
+         * <p>Describes a dataset. This operation doesn't support datasets that include
+         * uploaded files as a source.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDataSet">AWS
          * API Reference</a></p>
          *
@@ -2103,7 +2120,8 @@ namespace Model
         virtual Model::DescribeDataSetOutcomeCallable DescribeDataSetCallable(const Model::DescribeDataSetRequest& request) const;
 
         /**
-         * <p>Describes a dataset. </p><p><h3>See Also:</h3>   <a
+         * <p>Describes a dataset. This operation doesn't support datasets that include
+         * uploaded files as a source.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDataSet">AWS
          * API Reference</a></p>
          *
@@ -3976,14 +3994,16 @@ namespace Model
         virtual void UpdateDashboardPublishedVersionAsync(const Model::UpdateDashboardPublishedVersionRequest& request, const UpdateDashboardPublishedVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a dataset.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a dataset. This operation doesn't support datasets that include
+         * uploaded files as a source.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDataSet">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateDataSetOutcome UpdateDataSet(const Model::UpdateDataSetRequest& request) const;
 
         /**
-         * <p>Updates a dataset.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a dataset. This operation doesn't support datasets that include
+         * uploaded files as a source.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDataSet">AWS
          * API Reference</a></p>
          *
@@ -3992,7 +4012,8 @@ namespace Model
         virtual Model::UpdateDataSetOutcomeCallable UpdateDataSetCallable(const Model::UpdateDataSetRequest& request) const;
 
         /**
-         * <p>Updates a dataset.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a dataset. This operation doesn't support datasets that include
+         * uploaded files as a source.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDataSet">AWS
          * API Reference</a></p>
          *

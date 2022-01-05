@@ -48,6 +48,8 @@ enum class AppStreamErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CONCURRENT_MODIFICATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ENTITLEMENT_ALREADY_EXISTS,
+  ENTITLEMENT_NOT_FOUND,
   INCOMPATIBLE_IMAGE,
   INVALID_ACCOUNT_STATUS,
   INVALID_ROLE,

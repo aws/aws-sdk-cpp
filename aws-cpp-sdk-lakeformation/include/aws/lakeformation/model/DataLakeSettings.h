@@ -423,6 +423,191 @@ namespace Model
      */
     inline DataLakeSettings& AddTrustedResourceOwners(const char* value) { m_trustedResourceOwnersHasBeenSet = true; m_trustedResourceOwners.push_back(value); return *this; }
 
+
+    /**
+     * <p>Whether to allow Amazon EMR clusters to access data managed by Lake
+     * Formation. </p> <p>If true, you allow Amazon EMR clusters to access data in
+     * Amazon S3 locations that are registered with Lake Formation.</p> <p>If false or
+     * null, no Amazon EMR clusters will be able to access data in Amazon S3 locations
+     * that are registered with Lake Formation.</p> <p>For more information, see <a
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional)
+     * Allow Data Filtering on Amazon EMR</a>.</p>
+     */
+    inline bool GetAllowExternalDataFiltering() const{ return m_allowExternalDataFiltering; }
+
+    /**
+     * <p>Whether to allow Amazon EMR clusters to access data managed by Lake
+     * Formation. </p> <p>If true, you allow Amazon EMR clusters to access data in
+     * Amazon S3 locations that are registered with Lake Formation.</p> <p>If false or
+     * null, no Amazon EMR clusters will be able to access data in Amazon S3 locations
+     * that are registered with Lake Formation.</p> <p>For more information, see <a
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional)
+     * Allow Data Filtering on Amazon EMR</a>.</p>
+     */
+    inline bool AllowExternalDataFilteringHasBeenSet() const { return m_allowExternalDataFilteringHasBeenSet; }
+
+    /**
+     * <p>Whether to allow Amazon EMR clusters to access data managed by Lake
+     * Formation. </p> <p>If true, you allow Amazon EMR clusters to access data in
+     * Amazon S3 locations that are registered with Lake Formation.</p> <p>If false or
+     * null, no Amazon EMR clusters will be able to access data in Amazon S3 locations
+     * that are registered with Lake Formation.</p> <p>For more information, see <a
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional)
+     * Allow Data Filtering on Amazon EMR</a>.</p>
+     */
+    inline void SetAllowExternalDataFiltering(bool value) { m_allowExternalDataFilteringHasBeenSet = true; m_allowExternalDataFiltering = value; }
+
+    /**
+     * <p>Whether to allow Amazon EMR clusters to access data managed by Lake
+     * Formation. </p> <p>If true, you allow Amazon EMR clusters to access data in
+     * Amazon S3 locations that are registered with Lake Formation.</p> <p>If false or
+     * null, no Amazon EMR clusters will be able to access data in Amazon S3 locations
+     * that are registered with Lake Formation.</p> <p>For more information, see <a
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional)
+     * Allow Data Filtering on Amazon EMR</a>.</p>
+     */
+    inline DataLakeSettings& WithAllowExternalDataFiltering(bool value) { SetAllowExternalDataFiltering(value); return *this;}
+
+
+    /**
+     * <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR
+     * clusters that are to perform data filtering.&gt;</p>
+     */
+    inline const Aws::Vector<DataLakePrincipal>& GetExternalDataFilteringAllowList() const{ return m_externalDataFilteringAllowList; }
+
+    /**
+     * <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR
+     * clusters that are to perform data filtering.&gt;</p>
+     */
+    inline bool ExternalDataFilteringAllowListHasBeenSet() const { return m_externalDataFilteringAllowListHasBeenSet; }
+
+    /**
+     * <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR
+     * clusters that are to perform data filtering.&gt;</p>
+     */
+    inline void SetExternalDataFilteringAllowList(const Aws::Vector<DataLakePrincipal>& value) { m_externalDataFilteringAllowListHasBeenSet = true; m_externalDataFilteringAllowList = value; }
+
+    /**
+     * <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR
+     * clusters that are to perform data filtering.&gt;</p>
+     */
+    inline void SetExternalDataFilteringAllowList(Aws::Vector<DataLakePrincipal>&& value) { m_externalDataFilteringAllowListHasBeenSet = true; m_externalDataFilteringAllowList = std::move(value); }
+
+    /**
+     * <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR
+     * clusters that are to perform data filtering.&gt;</p>
+     */
+    inline DataLakeSettings& WithExternalDataFilteringAllowList(const Aws::Vector<DataLakePrincipal>& value) { SetExternalDataFilteringAllowList(value); return *this;}
+
+    /**
+     * <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR
+     * clusters that are to perform data filtering.&gt;</p>
+     */
+    inline DataLakeSettings& WithExternalDataFilteringAllowList(Aws::Vector<DataLakePrincipal>&& value) { SetExternalDataFilteringAllowList(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR
+     * clusters that are to perform data filtering.&gt;</p>
+     */
+    inline DataLakeSettings& AddExternalDataFilteringAllowList(const DataLakePrincipal& value) { m_externalDataFilteringAllowListHasBeenSet = true; m_externalDataFilteringAllowList.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the account IDs of Amazon Web Services accounts with Amazon EMR
+     * clusters that are to perform data filtering.&gt;</p>
+     */
+    inline DataLakeSettings& AddExternalDataFilteringAllowList(DataLakePrincipal&& value) { m_externalDataFilteringAllowListHasBeenSet = true; m_externalDataFilteringAllowList.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Lake Formation relies on a privileged process secured by Amazon EMR or the
+     * third party integrator to tag the user's role while assuming it. Lake Formation
+     * will publish the acceptable key-value pair, for example key =
+     * "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator
+     * must properly tag the temporary security credentials that will be used to call
+     * Lake Formation's administrative APIs.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAuthorizedSessionTagValueList() const{ return m_authorizedSessionTagValueList; }
+
+    /**
+     * <p>Lake Formation relies on a privileged process secured by Amazon EMR or the
+     * third party integrator to tag the user's role while assuming it. Lake Formation
+     * will publish the acceptable key-value pair, for example key =
+     * "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator
+     * must properly tag the temporary security credentials that will be used to call
+     * Lake Formation's administrative APIs.</p>
+     */
+    inline bool AuthorizedSessionTagValueListHasBeenSet() const { return m_authorizedSessionTagValueListHasBeenSet; }
+
+    /**
+     * <p>Lake Formation relies on a privileged process secured by Amazon EMR or the
+     * third party integrator to tag the user's role while assuming it. Lake Formation
+     * will publish the acceptable key-value pair, for example key =
+     * "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator
+     * must properly tag the temporary security credentials that will be used to call
+     * Lake Formation's administrative APIs.</p>
+     */
+    inline void SetAuthorizedSessionTagValueList(const Aws::Vector<Aws::String>& value) { m_authorizedSessionTagValueListHasBeenSet = true; m_authorizedSessionTagValueList = value; }
+
+    /**
+     * <p>Lake Formation relies on a privileged process secured by Amazon EMR or the
+     * third party integrator to tag the user's role while assuming it. Lake Formation
+     * will publish the acceptable key-value pair, for example key =
+     * "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator
+     * must properly tag the temporary security credentials that will be used to call
+     * Lake Formation's administrative APIs.</p>
+     */
+    inline void SetAuthorizedSessionTagValueList(Aws::Vector<Aws::String>&& value) { m_authorizedSessionTagValueListHasBeenSet = true; m_authorizedSessionTagValueList = std::move(value); }
+
+    /**
+     * <p>Lake Formation relies on a privileged process secured by Amazon EMR or the
+     * third party integrator to tag the user's role while assuming it. Lake Formation
+     * will publish the acceptable key-value pair, for example key =
+     * "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator
+     * must properly tag the temporary security credentials that will be used to call
+     * Lake Formation's administrative APIs.</p>
+     */
+    inline DataLakeSettings& WithAuthorizedSessionTagValueList(const Aws::Vector<Aws::String>& value) { SetAuthorizedSessionTagValueList(value); return *this;}
+
+    /**
+     * <p>Lake Formation relies on a privileged process secured by Amazon EMR or the
+     * third party integrator to tag the user's role while assuming it. Lake Formation
+     * will publish the acceptable key-value pair, for example key =
+     * "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator
+     * must properly tag the temporary security credentials that will be used to call
+     * Lake Formation's administrative APIs.</p>
+     */
+    inline DataLakeSettings& WithAuthorizedSessionTagValueList(Aws::Vector<Aws::String>&& value) { SetAuthorizedSessionTagValueList(std::move(value)); return *this;}
+
+    /**
+     * <p>Lake Formation relies on a privileged process secured by Amazon EMR or the
+     * third party integrator to tag the user's role while assuming it. Lake Formation
+     * will publish the acceptable key-value pair, for example key =
+     * "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator
+     * must properly tag the temporary security credentials that will be used to call
+     * Lake Formation's administrative APIs.</p>
+     */
+    inline DataLakeSettings& AddAuthorizedSessionTagValueList(const Aws::String& value) { m_authorizedSessionTagValueListHasBeenSet = true; m_authorizedSessionTagValueList.push_back(value); return *this; }
+
+    /**
+     * <p>Lake Formation relies on a privileged process secured by Amazon EMR or the
+     * third party integrator to tag the user's role while assuming it. Lake Formation
+     * will publish the acceptable key-value pair, for example key =
+     * "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator
+     * must properly tag the temporary security credentials that will be used to call
+     * Lake Formation's administrative APIs.</p>
+     */
+    inline DataLakeSettings& AddAuthorizedSessionTagValueList(Aws::String&& value) { m_authorizedSessionTagValueListHasBeenSet = true; m_authorizedSessionTagValueList.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Lake Formation relies on a privileged process secured by Amazon EMR or the
+     * third party integrator to tag the user's role while assuming it. Lake Formation
+     * will publish the acceptable key-value pair, for example key =
+     * "LakeFormationTrustedCaller" and value = "TRUE" and the third party integrator
+     * must properly tag the temporary security credentials that will be used to call
+     * Lake Formation's administrative APIs.</p>
+     */
+    inline DataLakeSettings& AddAuthorizedSessionTagValueList(const char* value) { m_authorizedSessionTagValueListHasBeenSet = true; m_authorizedSessionTagValueList.push_back(value); return *this; }
+
   private:
 
     Aws::Vector<DataLakePrincipal> m_dataLakeAdmins;
@@ -436,6 +621,15 @@ namespace Model
 
     Aws::Vector<Aws::String> m_trustedResourceOwners;
     bool m_trustedResourceOwnersHasBeenSet;
+
+    bool m_allowExternalDataFiltering;
+    bool m_allowExternalDataFilteringHasBeenSet;
+
+    Aws::Vector<DataLakePrincipal> m_externalDataFilteringAllowList;
+    bool m_externalDataFilteringAllowListHasBeenSet;
+
+    Aws::Vector<Aws::String> m_authorizedSessionTagValueList;
+    bool m_authorizedSessionTagValueListHasBeenSet;
   };
 
 } // namespace Model

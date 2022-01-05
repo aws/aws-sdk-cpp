@@ -267,6 +267,47 @@ namespace Model
      */
     inline ListJobExecutionsForThingRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The unique identifier you assigned to this job when it was created.</p>
+     */
+    inline const Aws::String& GetJobId() const{ return m_jobId; }
+
+    /**
+     * <p>The unique identifier you assigned to this job when it was created.</p>
+     */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier you assigned to this job when it was created.</p>
+     */
+    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
+
+    /**
+     * <p>The unique identifier you assigned to this job when it was created.</p>
+     */
+    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
+
+    /**
+     * <p>The unique identifier you assigned to this job when it was created.</p>
+     */
+    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
+
+    /**
+     * <p>The unique identifier you assigned to this job when it was created.</p>
+     */
+    inline ListJobExecutionsForThingRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
+
+    /**
+     * <p>The unique identifier you assigned to this job when it was created.</p>
+     */
+    inline ListJobExecutionsForThingRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique identifier you assigned to this job when it was created.</p>
+     */
+    inline ListJobExecutionsForThingRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+
   private:
 
     Aws::String m_thingName;
@@ -283,6 +324,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
+    Aws::String m_jobId;
+    bool m_jobIdHasBeenSet;
   };
 
 } // namespace Model

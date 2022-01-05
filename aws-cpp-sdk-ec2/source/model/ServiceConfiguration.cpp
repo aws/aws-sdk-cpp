@@ -36,6 +36,8 @@ ServiceConfiguration::ServiceConfiguration() :
     m_baseEndpointDnsNamesHasBeenSet(false),
     m_privateDnsNameHasBeenSet(false),
     m_privateDnsNameConfigurationHasBeenSet(false),
+    m_payerResponsibility(PayerResponsibility::NOT_SET),
+    m_payerResponsibilityHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -56,6 +58,8 @@ ServiceConfiguration::ServiceConfiguration(const XmlNode& xmlNode) :
     m_baseEndpointDnsNamesHasBeenSet(false),
     m_privateDnsNameHasBeenSet(false),
     m_privateDnsNameConfigurationHasBeenSet(false),
+    m_payerResponsibility(PayerResponsibility::NOT_SET),
+    m_payerResponsibilityHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -169,6 +173,12 @@ ServiceConfiguration& ServiceConfiguration::operator =(const XmlNode& xmlNode)
       m_privateDnsNameConfiguration = privateDnsNameConfigurationNode;
       m_privateDnsNameConfigurationHasBeenSet = true;
     }
+    XmlNode payerResponsibilityNode = resultNode.FirstChild("payerResponsibility");
+    if(!payerResponsibilityNode.IsNull())
+    {
+      m_payerResponsibility = PayerResponsibilityMapper::GetPayerResponsibilityForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(payerResponsibilityNode.GetText()).c_str()).c_str());
+      m_payerResponsibilityHasBeenSet = true;
+    }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
@@ -272,6 +282,11 @@ void ServiceConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
       m_privateDnsNameConfiguration.OutputToStream(oStream, privateDnsNameConfigurationLocationAndMemberSs.str().c_str());
   }
 
+  if(m_payerResponsibilityHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PayerResponsibility=" << PayerResponsibilityMapper::GetNameForPayerResponsibility(m_payerResponsibility) << "&";
+  }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -358,6 +373,10 @@ void ServiceConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
       Aws::String privateDnsNameConfigurationLocationAndMember(location);
       privateDnsNameConfigurationLocationAndMember += ".PrivateDnsNameConfiguration";
       m_privateDnsNameConfiguration.OutputToStream(oStream, privateDnsNameConfigurationLocationAndMember.c_str());
+  }
+  if(m_payerResponsibilityHasBeenSet)
+  {
+      oStream << location << ".PayerResponsibility=" << PayerResponsibilityMapper::GetNameForPayerResponsibility(m_payerResponsibility) << "&";
   }
   if(m_tagsHasBeenSet)
   {

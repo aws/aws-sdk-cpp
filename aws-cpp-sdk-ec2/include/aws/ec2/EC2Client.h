@@ -411,6 +411,7 @@
 #include <aws/ec2/model/ModifyVpcEndpointResponse.h>
 #include <aws/ec2/model/ModifyVpcEndpointConnectionNotificationResponse.h>
 #include <aws/ec2/model/ModifyVpcEndpointServiceConfigurationResponse.h>
+#include <aws/ec2/model/ModifyVpcEndpointServicePayerResponsibilityResponse.h>
 #include <aws/ec2/model/ModifyVpcEndpointServicePermissionsResponse.h>
 #include <aws/ec2/model/ModifyVpcPeeringConnectionOptionsResponse.h>
 #include <aws/ec2/model/ModifyVpcTenancyResponse.h>
@@ -961,6 +962,7 @@ namespace Model
         class ModifyVpcEndpointRequest;
         class ModifyVpcEndpointConnectionNotificationRequest;
         class ModifyVpcEndpointServiceConfigurationRequest;
+        class ModifyVpcEndpointServicePayerResponsibilityRequest;
         class ModifyVpcEndpointServicePermissionsRequest;
         class ModifyVpcPeeringConnectionOptionsRequest;
         class ModifyVpcTenancyRequest;
@@ -1477,6 +1479,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ModifyVpcEndpointResponse, EC2Error> ModifyVpcEndpointOutcome;
         typedef Aws::Utils::Outcome<ModifyVpcEndpointConnectionNotificationResponse, EC2Error> ModifyVpcEndpointConnectionNotificationOutcome;
         typedef Aws::Utils::Outcome<ModifyVpcEndpointServiceConfigurationResponse, EC2Error> ModifyVpcEndpointServiceConfigurationOutcome;
+        typedef Aws::Utils::Outcome<ModifyVpcEndpointServicePayerResponsibilityResponse, EC2Error> ModifyVpcEndpointServicePayerResponsibilityOutcome;
         typedef Aws::Utils::Outcome<ModifyVpcEndpointServicePermissionsResponse, EC2Error> ModifyVpcEndpointServicePermissionsOutcome;
         typedef Aws::Utils::Outcome<ModifyVpcPeeringConnectionOptionsResponse, EC2Error> ModifyVpcPeeringConnectionOptionsOutcome;
         typedef Aws::Utils::Outcome<ModifyVpcTenancyResponse, EC2Error> ModifyVpcTenancyOutcome;
@@ -1993,6 +1996,7 @@ namespace Model
         typedef std::future<ModifyVpcEndpointOutcome> ModifyVpcEndpointOutcomeCallable;
         typedef std::future<ModifyVpcEndpointConnectionNotificationOutcome> ModifyVpcEndpointConnectionNotificationOutcomeCallable;
         typedef std::future<ModifyVpcEndpointServiceConfigurationOutcome> ModifyVpcEndpointServiceConfigurationOutcomeCallable;
+        typedef std::future<ModifyVpcEndpointServicePayerResponsibilityOutcome> ModifyVpcEndpointServicePayerResponsibilityOutcomeCallable;
         typedef std::future<ModifyVpcEndpointServicePermissionsOutcome> ModifyVpcEndpointServicePermissionsOutcomeCallable;
         typedef std::future<ModifyVpcPeeringConnectionOptionsOutcome> ModifyVpcPeeringConnectionOptionsOutcomeCallable;
         typedef std::future<ModifyVpcTenancyOutcome> ModifyVpcTenancyOutcomeCallable;
@@ -2512,6 +2516,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ModifyVpcEndpointRequest&, const Model::ModifyVpcEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpcEndpointResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyVpcEndpointConnectionNotificationRequest&, const Model::ModifyVpcEndpointConnectionNotificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpcEndpointConnectionNotificationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyVpcEndpointServiceConfigurationRequest&, const Model::ModifyVpcEndpointServiceConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpcEndpointServiceConfigurationResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ModifyVpcEndpointServicePayerResponsibilityRequest&, const Model::ModifyVpcEndpointServicePayerResponsibilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpcEndpointServicePayerResponsibilityResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyVpcEndpointServicePermissionsRequest&, const Model::ModifyVpcEndpointServicePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpcEndpointServicePermissionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyVpcPeeringConnectionOptionsRequest&, const Model::ModifyVpcPeeringConnectionOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpcPeeringConnectionOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyVpcTenancyRequest&, const Model::ModifyVpcTenancyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpcTenancyResponseReceivedHandler;
@@ -20971,6 +20976,34 @@ namespace Model
         virtual void ModifyVpcEndpointServiceConfigurationAsync(const Model::ModifyVpcEndpointServiceConfigurationRequest& request, const ModifyVpcEndpointServiceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modifies the payer responsibility for your VPC endpoint
+         * service.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePayerResponsibility">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyVpcEndpointServicePayerResponsibilityOutcome ModifyVpcEndpointServicePayerResponsibility(const Model::ModifyVpcEndpointServicePayerResponsibilityRequest& request) const;
+
+        /**
+         * <p>Modifies the payer responsibility for your VPC endpoint
+         * service.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePayerResponsibility">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyVpcEndpointServicePayerResponsibilityOutcomeCallable ModifyVpcEndpointServicePayerResponsibilityCallable(const Model::ModifyVpcEndpointServicePayerResponsibilityRequest& request) const;
+
+        /**
+         * <p>Modifies the payer responsibility for your VPC endpoint
+         * service.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePayerResponsibility">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyVpcEndpointServicePayerResponsibilityAsync(const Model::ModifyVpcEndpointServicePayerResponsibilityRequest& request, const ModifyVpcEndpointServicePayerResponsibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Modifies the permissions for your <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
          * endpoint service</a>. You can add or remove permissions for service consumers
@@ -24852,6 +24885,7 @@ namespace Model
         void ModifyVpcEndpointAsyncHelper(const Model::ModifyVpcEndpointRequest& request, const ModifyVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyVpcEndpointConnectionNotificationAsyncHelper(const Model::ModifyVpcEndpointConnectionNotificationRequest& request, const ModifyVpcEndpointConnectionNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyVpcEndpointServiceConfigurationAsyncHelper(const Model::ModifyVpcEndpointServiceConfigurationRequest& request, const ModifyVpcEndpointServiceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyVpcEndpointServicePayerResponsibilityAsyncHelper(const Model::ModifyVpcEndpointServicePayerResponsibilityRequest& request, const ModifyVpcEndpointServicePayerResponsibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyVpcEndpointServicePermissionsAsyncHelper(const Model::ModifyVpcEndpointServicePermissionsRequest& request, const ModifyVpcEndpointServicePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyVpcPeeringConnectionOptionsAsyncHelper(const Model::ModifyVpcPeeringConnectionOptionsRequest& request, const ModifyVpcPeeringConnectionOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyVpcTenancyAsyncHelper(const Model::ModifyVpcTenancyRequest& request, const ModifyVpcTenancyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

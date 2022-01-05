@@ -13,6 +13,7 @@
 #include <aws/iot/model/JobExecutionsRolloutConfig.h>
 #include <aws/iot/model/AbortConfig.h>
 #include <aws/iot/model/TimeoutConfig.h>
+#include <aws/iot/model/JobExecutionsRetryConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/iot/model/Tag.h>
 #include <utility>
@@ -446,32 +447,32 @@ namespace Model
 
 
     /**
-     * <p>Allows you to create criteria to abort a job.</p>
+     * <p>Allows you to create the criteria to abort a job.</p>
      */
     inline const AbortConfig& GetAbortConfig() const{ return m_abortConfig; }
 
     /**
-     * <p>Allows you to create criteria to abort a job.</p>
+     * <p>Allows you to create the criteria to abort a job.</p>
      */
     inline bool AbortConfigHasBeenSet() const { return m_abortConfigHasBeenSet; }
 
     /**
-     * <p>Allows you to create criteria to abort a job.</p>
+     * <p>Allows you to create the criteria to abort a job.</p>
      */
     inline void SetAbortConfig(const AbortConfig& value) { m_abortConfigHasBeenSet = true; m_abortConfig = value; }
 
     /**
-     * <p>Allows you to create criteria to abort a job.</p>
+     * <p>Allows you to create the criteria to abort a job.</p>
      */
     inline void SetAbortConfig(AbortConfig&& value) { m_abortConfigHasBeenSet = true; m_abortConfig = std::move(value); }
 
     /**
-     * <p>Allows you to create criteria to abort a job.</p>
+     * <p>Allows you to create the criteria to abort a job.</p>
      */
     inline CreateJobRequest& WithAbortConfig(const AbortConfig& value) { SetAbortConfig(value); return *this;}
 
     /**
-     * <p>Allows you to create criteria to abort a job.</p>
+     * <p>Allows you to create the criteria to abort a job.</p>
      */
     inline CreateJobRequest& WithAbortConfig(AbortConfig&& value) { SetAbortConfig(std::move(value)); return *this;}
 
@@ -703,6 +704,37 @@ namespace Model
 
 
     /**
+     * <p>Allows you to create the criteria to retry a job.</p>
+     */
+    inline const JobExecutionsRetryConfig& GetJobExecutionsRetryConfig() const{ return m_jobExecutionsRetryConfig; }
+
+    /**
+     * <p>Allows you to create the criteria to retry a job.</p>
+     */
+    inline bool JobExecutionsRetryConfigHasBeenSet() const { return m_jobExecutionsRetryConfigHasBeenSet; }
+
+    /**
+     * <p>Allows you to create the criteria to retry a job.</p>
+     */
+    inline void SetJobExecutionsRetryConfig(const JobExecutionsRetryConfig& value) { m_jobExecutionsRetryConfigHasBeenSet = true; m_jobExecutionsRetryConfig = value; }
+
+    /**
+     * <p>Allows you to create the criteria to retry a job.</p>
+     */
+    inline void SetJobExecutionsRetryConfig(JobExecutionsRetryConfig&& value) { m_jobExecutionsRetryConfigHasBeenSet = true; m_jobExecutionsRetryConfig = std::move(value); }
+
+    /**
+     * <p>Allows you to create the criteria to retry a job.</p>
+     */
+    inline CreateJobRequest& WithJobExecutionsRetryConfig(const JobExecutionsRetryConfig& value) { SetJobExecutionsRetryConfig(value); return *this;}
+
+    /**
+     * <p>Allows you to create the criteria to retry a job.</p>
+     */
+    inline CreateJobRequest& WithJobExecutionsRetryConfig(JobExecutionsRetryConfig&& value) { SetJobExecutionsRetryConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>Parameters of a managed template that you can specify to create the job
      * document.</p>
      */
@@ -820,6 +852,9 @@ namespace Model
 
     Aws::String m_jobTemplateArn;
     bool m_jobTemplateArnHasBeenSet;
+
+    JobExecutionsRetryConfig m_jobExecutionsRetryConfig;
+    bool m_jobExecutionsRetryConfigHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_documentParameters;
     bool m_documentParametersHasBeenSet;

@@ -32,6 +32,8 @@
 #include <aws/lakeformation/model/GetQueryStatisticsResult.h>
 #include <aws/lakeformation/model/GetResourceLFTagsResult.h>
 #include <aws/lakeformation/model/GetTableObjectsResult.h>
+#include <aws/lakeformation/model/GetTemporaryGluePartitionCredentialsResult.h>
+#include <aws/lakeformation/model/GetTemporaryGlueTableCredentialsResult.h>
 #include <aws/lakeformation/model/GetWorkUnitResultsResult.h>
 #include <aws/lakeformation/model/GetWorkUnitsResult.h>
 #include <aws/lakeformation/model/GrantPermissionsResult.h>
@@ -113,6 +115,8 @@ namespace Model
         class GetQueryStatisticsRequest;
         class GetResourceLFTagsRequest;
         class GetTableObjectsRequest;
+        class GetTemporaryGluePartitionCredentialsRequest;
+        class GetTemporaryGlueTableCredentialsRequest;
         class GetWorkUnitResultsRequest;
         class GetWorkUnitsRequest;
         class GrantPermissionsRequest;
@@ -156,6 +160,8 @@ namespace Model
         typedef Aws::Utils::Outcome<GetQueryStatisticsResult, LakeFormationError> GetQueryStatisticsOutcome;
         typedef Aws::Utils::Outcome<GetResourceLFTagsResult, LakeFormationError> GetResourceLFTagsOutcome;
         typedef Aws::Utils::Outcome<GetTableObjectsResult, LakeFormationError> GetTableObjectsOutcome;
+        typedef Aws::Utils::Outcome<GetTemporaryGluePartitionCredentialsResult, LakeFormationError> GetTemporaryGluePartitionCredentialsOutcome;
+        typedef Aws::Utils::Outcome<GetTemporaryGlueTableCredentialsResult, LakeFormationError> GetTemporaryGlueTableCredentialsOutcome;
         typedef Aws::Utils::Outcome<GetWorkUnitResultsResult, LakeFormationError> GetWorkUnitResultsOutcome;
         typedef Aws::Utils::Outcome<GetWorkUnitsResult, LakeFormationError> GetWorkUnitsOutcome;
         typedef Aws::Utils::Outcome<GrantPermissionsResult, LakeFormationError> GrantPermissionsOutcome;
@@ -199,6 +205,8 @@ namespace Model
         typedef std::future<GetQueryStatisticsOutcome> GetQueryStatisticsOutcomeCallable;
         typedef std::future<GetResourceLFTagsOutcome> GetResourceLFTagsOutcomeCallable;
         typedef std::future<GetTableObjectsOutcome> GetTableObjectsOutcomeCallable;
+        typedef std::future<GetTemporaryGluePartitionCredentialsOutcome> GetTemporaryGluePartitionCredentialsOutcomeCallable;
+        typedef std::future<GetTemporaryGlueTableCredentialsOutcome> GetTemporaryGlueTableCredentialsOutcomeCallable;
         typedef std::future<GetWorkUnitResultsOutcome> GetWorkUnitResultsOutcomeCallable;
         typedef std::future<GetWorkUnitsOutcome> GetWorkUnitsOutcomeCallable;
         typedef std::future<GrantPermissionsOutcome> GrantPermissionsOutcomeCallable;
@@ -245,6 +253,8 @@ namespace Model
     typedef std::function<void(const LakeFormationClient*, const Model::GetQueryStatisticsRequest&, const Model::GetQueryStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQueryStatisticsResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::GetResourceLFTagsRequest&, const Model::GetResourceLFTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceLFTagsResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::GetTableObjectsRequest&, const Model::GetTableObjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTableObjectsResponseReceivedHandler;
+    typedef std::function<void(const LakeFormationClient*, const Model::GetTemporaryGluePartitionCredentialsRequest&, const Model::GetTemporaryGluePartitionCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTemporaryGluePartitionCredentialsResponseReceivedHandler;
+    typedef std::function<void(const LakeFormationClient*, const Model::GetTemporaryGlueTableCredentialsRequest&, const Model::GetTemporaryGlueTableCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTemporaryGlueTableCredentialsResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::GetWorkUnitResultsRequest&, Model::GetWorkUnitResultsOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkUnitResultsResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::GetWorkUnitsRequest&, const Model::GetWorkUnitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkUnitsResponseReceivedHandler;
     typedef std::function<void(const LakeFormationClient*, const Model::GrantPermissionsRequest&, const Model::GrantPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GrantPermissionsResponseReceivedHandler;
@@ -936,6 +946,80 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetTableObjectsAsync(const Model::GetTableObjectsRequest& request, const GetTableObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This API is identical to <code>GetTemporaryTableCredentials</code> except
+         * that this is used when the target Data Catalog resource is of type Partition.
+         * Lake Formation restricts the permission of the vended credentials with the same
+         * scope down policy which restricts access to a single Amazon S3
+         * prefix.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryGluePartitionCredentials">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTemporaryGluePartitionCredentialsOutcome GetTemporaryGluePartitionCredentials(const Model::GetTemporaryGluePartitionCredentialsRequest& request) const;
+
+        /**
+         * <p>This API is identical to <code>GetTemporaryTableCredentials</code> except
+         * that this is used when the target Data Catalog resource is of type Partition.
+         * Lake Formation restricts the permission of the vended credentials with the same
+         * scope down policy which restricts access to a single Amazon S3
+         * prefix.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryGluePartitionCredentials">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetTemporaryGluePartitionCredentialsOutcomeCallable GetTemporaryGluePartitionCredentialsCallable(const Model::GetTemporaryGluePartitionCredentialsRequest& request) const;
+
+        /**
+         * <p>This API is identical to <code>GetTemporaryTableCredentials</code> except
+         * that this is used when the target Data Catalog resource is of type Partition.
+         * Lake Formation restricts the permission of the vended credentials with the same
+         * scope down policy which restricts access to a single Amazon S3
+         * prefix.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryGluePartitionCredentials">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetTemporaryGluePartitionCredentialsAsync(const Model::GetTemporaryGluePartitionCredentialsRequest& request, const GetTemporaryGluePartitionCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Allows a caller in a secure environment to assume a role with permission to
+         * access Amazon S3. In order to vend such credentials, Lake Formation assumes the
+         * role associated with a registered location, for example an Amazon S3 bucket,
+         * with a scope down policy which restricts the access to a single
+         * prefix.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryGlueTableCredentials">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTemporaryGlueTableCredentialsOutcome GetTemporaryGlueTableCredentials(const Model::GetTemporaryGlueTableCredentialsRequest& request) const;
+
+        /**
+         * <p>Allows a caller in a secure environment to assume a role with permission to
+         * access Amazon S3. In order to vend such credentials, Lake Formation assumes the
+         * role associated with a registered location, for example an Amazon S3 bucket,
+         * with a scope down policy which restricts the access to a single
+         * prefix.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryGlueTableCredentials">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetTemporaryGlueTableCredentialsOutcomeCallable GetTemporaryGlueTableCredentialsCallable(const Model::GetTemporaryGlueTableCredentialsRequest& request) const;
+
+        /**
+         * <p>Allows a caller in a secure environment to assume a role with permission to
+         * access Amazon S3. In order to vend such credentials, Lake Formation assumes the
+         * role associated with a registered location, for example an Amazon S3 bucket,
+         * with a scope down policy which restricts the access to a single
+         * prefix.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryGlueTableCredentials">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetTemporaryGlueTableCredentialsAsync(const Model::GetTemporaryGlueTableCredentialsRequest& request, const GetTemporaryGlueTableCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the work units resulting from the query. Work units can be executed
@@ -1691,6 +1775,8 @@ namespace Model
         void GetQueryStatisticsAsyncHelper(const Model::GetQueryStatisticsRequest& request, const GetQueryStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResourceLFTagsAsyncHelper(const Model::GetResourceLFTagsRequest& request, const GetResourceLFTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTableObjectsAsyncHelper(const Model::GetTableObjectsRequest& request, const GetTableObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetTemporaryGluePartitionCredentialsAsyncHelper(const Model::GetTemporaryGluePartitionCredentialsRequest& request, const GetTemporaryGluePartitionCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetTemporaryGlueTableCredentialsAsyncHelper(const Model::GetTemporaryGlueTableCredentialsRequest& request, const GetTemporaryGlueTableCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetWorkUnitResultsAsyncHelper(const Model::GetWorkUnitResultsRequest& request, const GetWorkUnitResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetWorkUnitsAsyncHelper(const Model::GetWorkUnitsRequest& request, const GetWorkUnitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GrantPermissionsAsyncHelper(const Model::GrantPermissionsRequest& request, const GrantPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

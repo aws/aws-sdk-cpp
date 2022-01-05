@@ -28,6 +28,7 @@ static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServi
 static const int TRANSACTION_COMMIT_IN_PROGRESS_HASH = HashingUtils::HashString("TransactionCommitInProgressException");
 static const int ENTITY_NOT_FOUND_HASH = HashingUtils::HashString("EntityNotFoundException");
 static const int GLUE_ENCRYPTION_HASH = HashingUtils::HashString("GlueEncryptionException");
+static const int PERMISSION_TYPE_MISMATCH_HASH = HashingUtils::HashString("PermissionTypeMismatchException");
 static const int RESOURCE_NUMBER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceNumberLimitExceededException");
 static const int STATISTICS_NOT_READY_YET_HASH = HashingUtils::HashString("StatisticsNotReadyYetException");
 static const int EXPIRED_HASH = HashingUtils::HashString("ExpiredException");
@@ -78,6 +79,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == GLUE_ENCRYPTION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LakeFormationErrors::GLUE_ENCRYPTION), false);
+  }
+  else if (hashCode == PERMISSION_TYPE_MISMATCH_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LakeFormationErrors::PERMISSION_TYPE_MISMATCH), false);
   }
   else if (hashCode == RESOURCE_NUMBER_LIMIT_EXCEEDED_HASH)
   {

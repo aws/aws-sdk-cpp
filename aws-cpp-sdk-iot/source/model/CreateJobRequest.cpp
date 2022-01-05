@@ -27,6 +27,7 @@ CreateJobRequest::CreateJobRequest() :
     m_tagsHasBeenSet(false),
     m_namespaceIdHasBeenSet(false),
     m_jobTemplateArnHasBeenSet(false),
+    m_jobExecutionsRetryConfigHasBeenSet(false),
     m_documentParametersHasBeenSet(false)
 {
 }
@@ -113,6 +114,12 @@ Aws::String CreateJobRequest::SerializePayload() const
   if(m_jobTemplateArnHasBeenSet)
   {
    payload.WithString("jobTemplateArn", m_jobTemplateArn);
+
+  }
+
+  if(m_jobExecutionsRetryConfigHasBeenSet)
+  {
+   payload.WithObject("jobExecutionsRetryConfig", m_jobExecutionsRetryConfig.Jsonize());
 
   }
 

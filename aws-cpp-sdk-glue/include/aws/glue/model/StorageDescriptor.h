@@ -142,6 +142,34 @@ namespace Model
     inline StorageDescriptor& WithLocation(const char* value) { SetLocation(value); return *this;}
 
 
+    
+    inline const Aws::Vector<Aws::String>& GetAdditionalLocations() const{ return m_additionalLocations; }
+
+    
+    inline bool AdditionalLocationsHasBeenSet() const { return m_additionalLocationsHasBeenSet; }
+
+    
+    inline void SetAdditionalLocations(const Aws::Vector<Aws::String>& value) { m_additionalLocationsHasBeenSet = true; m_additionalLocations = value; }
+
+    
+    inline void SetAdditionalLocations(Aws::Vector<Aws::String>&& value) { m_additionalLocationsHasBeenSet = true; m_additionalLocations = std::move(value); }
+
+    
+    inline StorageDescriptor& WithAdditionalLocations(const Aws::Vector<Aws::String>& value) { SetAdditionalLocations(value); return *this;}
+
+    
+    inline StorageDescriptor& WithAdditionalLocations(Aws::Vector<Aws::String>&& value) { SetAdditionalLocations(std::move(value)); return *this;}
+
+    
+    inline StorageDescriptor& AddAdditionalLocations(const Aws::String& value) { m_additionalLocationsHasBeenSet = true; m_additionalLocations.push_back(value); return *this; }
+
+    
+    inline StorageDescriptor& AddAdditionalLocations(Aws::String&& value) { m_additionalLocationsHasBeenSet = true; m_additionalLocations.push_back(std::move(value)); return *this; }
+
+    
+    inline StorageDescriptor& AddAdditionalLocations(const char* value) { m_additionalLocationsHasBeenSet = true; m_additionalLocations.push_back(value); return *this; }
+
+
     /**
      * <p>The input format: <code>SequenceFileInputFormat</code> (binary), or
      * <code>TextInputFormat</code>, or a custom format.</p>
@@ -590,6 +618,9 @@ namespace Model
 
     Aws::String m_location;
     bool m_locationHasBeenSet;
+
+    Aws::Vector<Aws::String> m_additionalLocations;
+    bool m_additionalLocationsHasBeenSet;
 
     Aws::String m_inputFormat;
     bool m_inputFormatHasBeenSet;

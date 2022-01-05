@@ -21,6 +21,7 @@
 #include <aws/appstream/AppStreamEndpoint.h>
 #include <aws/appstream/AppStreamErrorMarshaller.h>
 #include <aws/appstream/model/AssociateApplicationFleetRequest.h>
+#include <aws/appstream/model/AssociateApplicationToEntitlementRequest.h>
 #include <aws/appstream/model/AssociateFleetRequest.h>
 #include <aws/appstream/model/BatchAssociateUserStackRequest.h>
 #include <aws/appstream/model/BatchDisassociateUserStackRequest.h>
@@ -28,6 +29,7 @@
 #include <aws/appstream/model/CreateAppBlockRequest.h>
 #include <aws/appstream/model/CreateApplicationRequest.h>
 #include <aws/appstream/model/CreateDirectoryConfigRequest.h>
+#include <aws/appstream/model/CreateEntitlementRequest.h>
 #include <aws/appstream/model/CreateFleetRequest.h>
 #include <aws/appstream/model/CreateImageBuilderRequest.h>
 #include <aws/appstream/model/CreateImageBuilderStreamingURLRequest.h>
@@ -39,6 +41,7 @@
 #include <aws/appstream/model/DeleteAppBlockRequest.h>
 #include <aws/appstream/model/DeleteApplicationRequest.h>
 #include <aws/appstream/model/DeleteDirectoryConfigRequest.h>
+#include <aws/appstream/model/DeleteEntitlementRequest.h>
 #include <aws/appstream/model/DeleteFleetRequest.h>
 #include <aws/appstream/model/DeleteImageRequest.h>
 #include <aws/appstream/model/DeleteImageBuilderRequest.h>
@@ -50,6 +53,7 @@
 #include <aws/appstream/model/DescribeApplicationFleetAssociationsRequest.h>
 #include <aws/appstream/model/DescribeApplicationsRequest.h>
 #include <aws/appstream/model/DescribeDirectoryConfigsRequest.h>
+#include <aws/appstream/model/DescribeEntitlementsRequest.h>
 #include <aws/appstream/model/DescribeFleetsRequest.h>
 #include <aws/appstream/model/DescribeImageBuildersRequest.h>
 #include <aws/appstream/model/DescribeImagePermissionsRequest.h>
@@ -61,11 +65,13 @@
 #include <aws/appstream/model/DescribeUsersRequest.h>
 #include <aws/appstream/model/DisableUserRequest.h>
 #include <aws/appstream/model/DisassociateApplicationFleetRequest.h>
+#include <aws/appstream/model/DisassociateApplicationFromEntitlementRequest.h>
 #include <aws/appstream/model/DisassociateFleetRequest.h>
 #include <aws/appstream/model/EnableUserRequest.h>
 #include <aws/appstream/model/ExpireSessionRequest.h>
 #include <aws/appstream/model/ListAssociatedFleetsRequest.h>
 #include <aws/appstream/model/ListAssociatedStacksRequest.h>
+#include <aws/appstream/model/ListEntitledApplicationsRequest.h>
 #include <aws/appstream/model/ListTagsForResourceRequest.h>
 #include <aws/appstream/model/StartFleetRequest.h>
 #include <aws/appstream/model/StartImageBuilderRequest.h>
@@ -75,6 +81,7 @@
 #include <aws/appstream/model/UntagResourceRequest.h>
 #include <aws/appstream/model/UpdateApplicationRequest.h>
 #include <aws/appstream/model/UpdateDirectoryConfigRequest.h>
+#include <aws/appstream/model/UpdateEntitlementRequest.h>
 #include <aws/appstream/model/UpdateFleetRequest.h>
 #include <aws/appstream/model/UpdateImagePermissionsRequest.h>
 #include <aws/appstream/model/UpdateStackRequest.h>
@@ -174,6 +181,30 @@ void AppStreamClient::AssociateApplicationFleetAsync(const AssociateApplicationF
 void AppStreamClient::AssociateApplicationFleetAsyncHelper(const AssociateApplicationFleetRequest& request, const AssociateApplicationFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AssociateApplicationFleet(request), context);
+}
+
+AssociateApplicationToEntitlementOutcome AppStreamClient::AssociateApplicationToEntitlement(const AssociateApplicationToEntitlementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return AssociateApplicationToEntitlementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateApplicationToEntitlementOutcomeCallable AppStreamClient::AssociateApplicationToEntitlementCallable(const AssociateApplicationToEntitlementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateApplicationToEntitlementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateApplicationToEntitlement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::AssociateApplicationToEntitlementAsync(const AssociateApplicationToEntitlementRequest& request, const AssociateApplicationToEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateApplicationToEntitlementAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::AssociateApplicationToEntitlementAsyncHelper(const AssociateApplicationToEntitlementRequest& request, const AssociateApplicationToEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateApplicationToEntitlement(request), context);
 }
 
 AssociateFleetOutcome AppStreamClient::AssociateFleet(const AssociateFleetRequest& request) const
@@ -342,6 +373,30 @@ void AppStreamClient::CreateDirectoryConfigAsync(const CreateDirectoryConfigRequ
 void AppStreamClient::CreateDirectoryConfigAsyncHelper(const CreateDirectoryConfigRequest& request, const CreateDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateDirectoryConfig(request), context);
+}
+
+CreateEntitlementOutcome AppStreamClient::CreateEntitlement(const CreateEntitlementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateEntitlementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateEntitlementOutcomeCallable AppStreamClient::CreateEntitlementCallable(const CreateEntitlementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateEntitlementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEntitlement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::CreateEntitlementAsync(const CreateEntitlementRequest& request, const CreateEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateEntitlementAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::CreateEntitlementAsyncHelper(const CreateEntitlementRequest& request, const CreateEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateEntitlement(request), context);
 }
 
 CreateFleetOutcome AppStreamClient::CreateFleet(const CreateFleetRequest& request) const
@@ -608,6 +663,30 @@ void AppStreamClient::DeleteDirectoryConfigAsyncHelper(const DeleteDirectoryConf
   handler(this, request, DeleteDirectoryConfig(request), context);
 }
 
+DeleteEntitlementOutcome AppStreamClient::DeleteEntitlement(const DeleteEntitlementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteEntitlementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteEntitlementOutcomeCallable AppStreamClient::DeleteEntitlementCallable(const DeleteEntitlementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteEntitlementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEntitlement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::DeleteEntitlementAsync(const DeleteEntitlementRequest& request, const DeleteEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteEntitlementAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::DeleteEntitlementAsyncHelper(const DeleteEntitlementRequest& request, const DeleteEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteEntitlement(request), context);
+}
+
 DeleteFleetOutcome AppStreamClient::DeleteFleet(const DeleteFleetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -870,6 +949,30 @@ void AppStreamClient::DescribeDirectoryConfigsAsync(const DescribeDirectoryConfi
 void AppStreamClient::DescribeDirectoryConfigsAsyncHelper(const DescribeDirectoryConfigsRequest& request, const DescribeDirectoryConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeDirectoryConfigs(request), context);
+}
+
+DescribeEntitlementsOutcome AppStreamClient::DescribeEntitlements(const DescribeEntitlementsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeEntitlementsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeEntitlementsOutcomeCallable AppStreamClient::DescribeEntitlementsCallable(const DescribeEntitlementsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEntitlementsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEntitlements(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::DescribeEntitlementsAsync(const DescribeEntitlementsRequest& request, const DescribeEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEntitlementsAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::DescribeEntitlementsAsyncHelper(const DescribeEntitlementsRequest& request, const DescribeEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeEntitlements(request), context);
 }
 
 DescribeFleetsOutcome AppStreamClient::DescribeFleets(const DescribeFleetsRequest& request) const
@@ -1136,6 +1239,30 @@ void AppStreamClient::DisassociateApplicationFleetAsyncHelper(const Disassociate
   handler(this, request, DisassociateApplicationFleet(request), context);
 }
 
+DisassociateApplicationFromEntitlementOutcome AppStreamClient::DisassociateApplicationFromEntitlement(const DisassociateApplicationFromEntitlementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DisassociateApplicationFromEntitlementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateApplicationFromEntitlementOutcomeCallable AppStreamClient::DisassociateApplicationFromEntitlementCallable(const DisassociateApplicationFromEntitlementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateApplicationFromEntitlementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateApplicationFromEntitlement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::DisassociateApplicationFromEntitlementAsync(const DisassociateApplicationFromEntitlementRequest& request, const DisassociateApplicationFromEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateApplicationFromEntitlementAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::DisassociateApplicationFromEntitlementAsyncHelper(const DisassociateApplicationFromEntitlementRequest& request, const DisassociateApplicationFromEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateApplicationFromEntitlement(request), context);
+}
+
 DisassociateFleetOutcome AppStreamClient::DisassociateFleet(const DisassociateFleetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1254,6 +1381,30 @@ void AppStreamClient::ListAssociatedStacksAsync(const ListAssociatedStacksReques
 void AppStreamClient::ListAssociatedStacksAsyncHelper(const ListAssociatedStacksRequest& request, const ListAssociatedStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListAssociatedStacks(request), context);
+}
+
+ListEntitledApplicationsOutcome AppStreamClient::ListEntitledApplications(const ListEntitledApplicationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListEntitledApplicationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListEntitledApplicationsOutcomeCallable AppStreamClient::ListEntitledApplicationsCallable(const ListEntitledApplicationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListEntitledApplicationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEntitledApplications(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::ListEntitledApplicationsAsync(const ListEntitledApplicationsRequest& request, const ListEntitledApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListEntitledApplicationsAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::ListEntitledApplicationsAsyncHelper(const ListEntitledApplicationsRequest& request, const ListEntitledApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListEntitledApplications(request), context);
 }
 
 ListTagsForResourceOutcome AppStreamClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1470,6 +1621,30 @@ void AppStreamClient::UpdateDirectoryConfigAsync(const UpdateDirectoryConfigRequ
 void AppStreamClient::UpdateDirectoryConfigAsyncHelper(const UpdateDirectoryConfigRequest& request, const UpdateDirectoryConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateDirectoryConfig(request), context);
+}
+
+UpdateEntitlementOutcome AppStreamClient::UpdateEntitlement(const UpdateEntitlementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateEntitlementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateEntitlementOutcomeCallable AppStreamClient::UpdateEntitlementCallable(const UpdateEntitlementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateEntitlementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEntitlement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppStreamClient::UpdateEntitlementAsync(const UpdateEntitlementRequest& request, const UpdateEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateEntitlementAsyncHelper( request, handler, context ); } );
+}
+
+void AppStreamClient::UpdateEntitlementAsyncHelper(const UpdateEntitlementRequest& request, const UpdateEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateEntitlement(request), context);
 }
 
 UpdateFleetOutcome AppStreamClient::UpdateFleet(const UpdateFleetRequest& request) const

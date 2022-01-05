@@ -15,6 +15,7 @@
 #include <aws/glue/model/Schedule.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/glue/model/LastCrawlInfo.h>
+#include <aws/glue/model/LakeFormationConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -772,6 +773,25 @@ namespace Model
      */
     inline Crawler& WithCrawlerSecurityConfiguration(const char* value) { SetCrawlerSecurityConfiguration(value); return *this;}
 
+
+    
+    inline const LakeFormationConfiguration& GetLakeFormationConfiguration() const{ return m_lakeFormationConfiguration; }
+
+    
+    inline bool LakeFormationConfigurationHasBeenSet() const { return m_lakeFormationConfigurationHasBeenSet; }
+
+    
+    inline void SetLakeFormationConfiguration(const LakeFormationConfiguration& value) { m_lakeFormationConfigurationHasBeenSet = true; m_lakeFormationConfiguration = value; }
+
+    
+    inline void SetLakeFormationConfiguration(LakeFormationConfiguration&& value) { m_lakeFormationConfigurationHasBeenSet = true; m_lakeFormationConfiguration = std::move(value); }
+
+    
+    inline Crawler& WithLakeFormationConfiguration(const LakeFormationConfiguration& value) { SetLakeFormationConfiguration(value); return *this;}
+
+    
+    inline Crawler& WithLakeFormationConfiguration(LakeFormationConfiguration&& value) { SetLakeFormationConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -830,6 +850,9 @@ namespace Model
 
     Aws::String m_crawlerSecurityConfiguration;
     bool m_crawlerSecurityConfigurationHasBeenSet;
+
+    LakeFormationConfiguration m_lakeFormationConfiguration;
+    bool m_lakeFormationConfigurationHasBeenSet;
   };
 
 } // namespace Model
