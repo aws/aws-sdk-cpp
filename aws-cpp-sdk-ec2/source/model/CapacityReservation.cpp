@@ -50,7 +50,8 @@ CapacityReservation::CapacityReservation() :
     m_createDateHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_outpostArnHasBeenSet(false),
-    m_capacityReservationFleetIdHasBeenSet(false)
+    m_capacityReservationFleetIdHasBeenSet(false),
+    m_placementGroupArnHasBeenSet(false)
 {
 }
 
@@ -84,7 +85,8 @@ CapacityReservation::CapacityReservation(const XmlNode& xmlNode) :
     m_createDateHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_outpostArnHasBeenSet(false),
-    m_capacityReservationFleetIdHasBeenSet(false)
+    m_capacityReservationFleetIdHasBeenSet(false),
+    m_placementGroupArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -227,6 +229,12 @@ CapacityReservation& CapacityReservation::operator =(const XmlNode& xmlNode)
       m_capacityReservationFleetId = Aws::Utils::Xml::DecodeEscapedXmlText(capacityReservationFleetIdNode.GetText());
       m_capacityReservationFleetIdHasBeenSet = true;
     }
+    XmlNode placementGroupArnNode = resultNode.FirstChild("placementGroupArn");
+    if(!placementGroupArnNode.IsNull())
+    {
+      m_placementGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(placementGroupArnNode.GetText());
+      m_placementGroupArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -345,6 +353,11 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".CapacityReservationFleetId=" << StringUtils::URLEncode(m_capacityReservationFleetId.c_str()) << "&";
   }
 
+  if(m_placementGroupArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PlacementGroupArn=" << StringUtils::URLEncode(m_placementGroupArn.c_str()) << "&";
+  }
+
 }
 
 void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -438,6 +451,10 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_capacityReservationFleetIdHasBeenSet)
   {
       oStream << location << ".CapacityReservationFleetId=" << StringUtils::URLEncode(m_capacityReservationFleetId.c_str()) << "&";
+  }
+  if(m_placementGroupArnHasBeenSet)
+  {
+      oStream << location << ".PlacementGroupArn=" << StringUtils::URLEncode(m_placementGroupArn.c_str()) << "&";
   }
 }
 

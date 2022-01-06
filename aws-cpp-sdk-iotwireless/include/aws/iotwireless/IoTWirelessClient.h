@@ -32,6 +32,7 @@
 #include <aws/iotwireless/model/DeleteDeviceProfileResult.h>
 #include <aws/iotwireless/model/DeleteFuotaTaskResult.h>
 #include <aws/iotwireless/model/DeleteMulticastGroupResult.h>
+#include <aws/iotwireless/model/DeleteQueuedMessagesResult.h>
 #include <aws/iotwireless/model/DeleteServiceProfileResult.h>
 #include <aws/iotwireless/model/DeleteWirelessDeviceResult.h>
 #include <aws/iotwireless/model/DeleteWirelessGatewayResult.h>
@@ -70,6 +71,7 @@
 #include <aws/iotwireless/model/ListMulticastGroupsResult.h>
 #include <aws/iotwireless/model/ListMulticastGroupsByFuotaTaskResult.h>
 #include <aws/iotwireless/model/ListPartnerAccountsResult.h>
+#include <aws/iotwireless/model/ListQueuedMessagesResult.h>
 #include <aws/iotwireless/model/ListServiceProfilesResult.h>
 #include <aws/iotwireless/model/ListTagsForResourceResult.h>
 #include <aws/iotwireless/model/ListWirelessDevicesResult.h>
@@ -156,6 +158,7 @@ namespace Model
         class DeleteDeviceProfileRequest;
         class DeleteFuotaTaskRequest;
         class DeleteMulticastGroupRequest;
+        class DeleteQueuedMessagesRequest;
         class DeleteServiceProfileRequest;
         class DeleteWirelessDeviceRequest;
         class DeleteWirelessGatewayRequest;
@@ -194,6 +197,7 @@ namespace Model
         class ListMulticastGroupsRequest;
         class ListMulticastGroupsByFuotaTaskRequest;
         class ListPartnerAccountsRequest;
+        class ListQueuedMessagesRequest;
         class ListServiceProfilesRequest;
         class ListTagsForResourceRequest;
         class ListWirelessDevicesRequest;
@@ -242,6 +246,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteDeviceProfileResult, IoTWirelessError> DeleteDeviceProfileOutcome;
         typedef Aws::Utils::Outcome<DeleteFuotaTaskResult, IoTWirelessError> DeleteFuotaTaskOutcome;
         typedef Aws::Utils::Outcome<DeleteMulticastGroupResult, IoTWirelessError> DeleteMulticastGroupOutcome;
+        typedef Aws::Utils::Outcome<DeleteQueuedMessagesResult, IoTWirelessError> DeleteQueuedMessagesOutcome;
         typedef Aws::Utils::Outcome<DeleteServiceProfileResult, IoTWirelessError> DeleteServiceProfileOutcome;
         typedef Aws::Utils::Outcome<DeleteWirelessDeviceResult, IoTWirelessError> DeleteWirelessDeviceOutcome;
         typedef Aws::Utils::Outcome<DeleteWirelessGatewayResult, IoTWirelessError> DeleteWirelessGatewayOutcome;
@@ -280,6 +285,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListMulticastGroupsResult, IoTWirelessError> ListMulticastGroupsOutcome;
         typedef Aws::Utils::Outcome<ListMulticastGroupsByFuotaTaskResult, IoTWirelessError> ListMulticastGroupsByFuotaTaskOutcome;
         typedef Aws::Utils::Outcome<ListPartnerAccountsResult, IoTWirelessError> ListPartnerAccountsOutcome;
+        typedef Aws::Utils::Outcome<ListQueuedMessagesResult, IoTWirelessError> ListQueuedMessagesOutcome;
         typedef Aws::Utils::Outcome<ListServiceProfilesResult, IoTWirelessError> ListServiceProfilesOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, IoTWirelessError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListWirelessDevicesResult, IoTWirelessError> ListWirelessDevicesOutcome;
@@ -328,6 +334,7 @@ namespace Model
         typedef std::future<DeleteDeviceProfileOutcome> DeleteDeviceProfileOutcomeCallable;
         typedef std::future<DeleteFuotaTaskOutcome> DeleteFuotaTaskOutcomeCallable;
         typedef std::future<DeleteMulticastGroupOutcome> DeleteMulticastGroupOutcomeCallable;
+        typedef std::future<DeleteQueuedMessagesOutcome> DeleteQueuedMessagesOutcomeCallable;
         typedef std::future<DeleteServiceProfileOutcome> DeleteServiceProfileOutcomeCallable;
         typedef std::future<DeleteWirelessDeviceOutcome> DeleteWirelessDeviceOutcomeCallable;
         typedef std::future<DeleteWirelessGatewayOutcome> DeleteWirelessGatewayOutcomeCallable;
@@ -366,6 +373,7 @@ namespace Model
         typedef std::future<ListMulticastGroupsOutcome> ListMulticastGroupsOutcomeCallable;
         typedef std::future<ListMulticastGroupsByFuotaTaskOutcome> ListMulticastGroupsByFuotaTaskOutcomeCallable;
         typedef std::future<ListPartnerAccountsOutcome> ListPartnerAccountsOutcomeCallable;
+        typedef std::future<ListQueuedMessagesOutcome> ListQueuedMessagesOutcomeCallable;
         typedef std::future<ListServiceProfilesOutcome> ListServiceProfilesOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListWirelessDevicesOutcome> ListWirelessDevicesOutcomeCallable;
@@ -417,6 +425,7 @@ namespace Model
     typedef std::function<void(const IoTWirelessClient*, const Model::DeleteDeviceProfileRequest&, const Model::DeleteDeviceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDeviceProfileResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::DeleteFuotaTaskRequest&, const Model::DeleteFuotaTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFuotaTaskResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::DeleteMulticastGroupRequest&, const Model::DeleteMulticastGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMulticastGroupResponseReceivedHandler;
+    typedef std::function<void(const IoTWirelessClient*, const Model::DeleteQueuedMessagesRequest&, const Model::DeleteQueuedMessagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteQueuedMessagesResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::DeleteServiceProfileRequest&, const Model::DeleteServiceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServiceProfileResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::DeleteWirelessDeviceRequest&, const Model::DeleteWirelessDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWirelessDeviceResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::DeleteWirelessGatewayRequest&, const Model::DeleteWirelessGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWirelessGatewayResponseReceivedHandler;
@@ -455,6 +464,7 @@ namespace Model
     typedef std::function<void(const IoTWirelessClient*, const Model::ListMulticastGroupsRequest&, const Model::ListMulticastGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMulticastGroupsResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::ListMulticastGroupsByFuotaTaskRequest&, const Model::ListMulticastGroupsByFuotaTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMulticastGroupsByFuotaTaskResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::ListPartnerAccountsRequest&, const Model::ListPartnerAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPartnerAccountsResponseReceivedHandler;
+    typedef std::function<void(const IoTWirelessClient*, const Model::ListQueuedMessagesRequest&, const Model::ListQueuedMessagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQueuedMessagesResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::ListServiceProfilesRequest&, const Model::ListServiceProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServiceProfilesResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::ListWirelessDevicesRequest&, const Model::ListWirelessDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWirelessDevicesResponseReceivedHandler;
@@ -483,7 +493,19 @@ namespace Model
     typedef std::function<void(const IoTWirelessClient*, const Model::UpdateWirelessGatewayRequest&, const Model::UpdateWirelessGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWirelessGatewayResponseReceivedHandler;
 
   /**
-   * <p>AWS IoT Wireless API documentation</p>
+   * <p>AWS IoT Wireless provides bi-directional communication between
+   * internet-connected wireless devices and the AWS Cloud. To onboard both LoRaWAN
+   * and Sidewalk devices to AWS IoT, use the IoT Wireless API. These wireless
+   * devices use the Low Power Wide Area Networking (LPWAN) communication protocol to
+   * communicate with AWS IoT.</p> <p>Using the API, you can perform create, read,
+   * update, and delete operations for your wireless devices, gateways, destinations,
+   * and profiles. After onboarding your devices, you can use the API operations to
+   * set log levels and monitor your devices with CloudWatch.</p> <p>You can also use
+   * the API operations to create multicast groups and schedule a multicast session
+   * for sending a downlink message to devices in the group. By using Firmware
+   * Updates Over-The-Air (FUOTA) API operations, you can create a FUOTA task and
+   * schedule a session to update the firmware of individual devices or an entire
+   * group of devices in a multicast group.</p>
    */
   class AWS_IOTWIRELESS_API IoTWirelessClient : public Aws::Client::AWSJsonClient
   {
@@ -1051,6 +1073,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteMulticastGroupAsync(const Model::DeleteMulticastGroupRequest& request, const DeleteMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> The operation to delete queued messages. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteQueuedMessages">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteQueuedMessagesOutcome DeleteQueuedMessages(const Model::DeleteQueuedMessagesRequest& request) const;
+
+        /**
+         * <p> The operation to delete queued messages. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteQueuedMessages">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteQueuedMessagesOutcomeCallable DeleteQueuedMessagesCallable(const Model::DeleteQueuedMessagesRequest& request) const;
+
+        /**
+         * <p> The operation to delete queued messages. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteQueuedMessages">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteQueuedMessagesAsync(const Model::DeleteQueuedMessagesRequest& request, const DeleteQueuedMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a service profile.</p><p><h3>See Also:</h3>   <a
@@ -2099,6 +2146,31 @@ namespace Model
         virtual void ListPartnerAccountsAsync(const Model::ListPartnerAccountsRequest& request, const ListPartnerAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>The operation to list queued messages. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListQueuedMessages">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListQueuedMessagesOutcome ListQueuedMessages(const Model::ListQueuedMessagesRequest& request) const;
+
+        /**
+         * <p>The operation to list queued messages. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListQueuedMessages">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListQueuedMessagesOutcomeCallable ListQueuedMessagesCallable(const Model::ListQueuedMessagesRequest& request) const;
+
+        /**
+         * <p>The operation to list queued messages. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListQueuedMessages">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListQueuedMessagesAsync(const Model::ListQueuedMessagesRequest& request, const ListQueuedMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the service profiles registered to your AWS account.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListServiceProfiles">AWS
@@ -2830,6 +2902,7 @@ namespace Model
         void DeleteDeviceProfileAsyncHelper(const Model::DeleteDeviceProfileRequest& request, const DeleteDeviceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFuotaTaskAsyncHelper(const Model::DeleteFuotaTaskRequest& request, const DeleteFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMulticastGroupAsyncHelper(const Model::DeleteMulticastGroupRequest& request, const DeleteMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteQueuedMessagesAsyncHelper(const Model::DeleteQueuedMessagesRequest& request, const DeleteQueuedMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteServiceProfileAsyncHelper(const Model::DeleteServiceProfileRequest& request, const DeleteServiceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteWirelessDeviceAsyncHelper(const Model::DeleteWirelessDeviceRequest& request, const DeleteWirelessDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteWirelessGatewayAsyncHelper(const Model::DeleteWirelessGatewayRequest& request, const DeleteWirelessGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2868,6 +2941,7 @@ namespace Model
         void ListMulticastGroupsAsyncHelper(const Model::ListMulticastGroupsRequest& request, const ListMulticastGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMulticastGroupsByFuotaTaskAsyncHelper(const Model::ListMulticastGroupsByFuotaTaskRequest& request, const ListMulticastGroupsByFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPartnerAccountsAsyncHelper(const Model::ListPartnerAccountsRequest& request, const ListPartnerAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListQueuedMessagesAsyncHelper(const Model::ListQueuedMessagesRequest& request, const ListQueuedMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListServiceProfilesAsyncHelper(const Model::ListServiceProfilesRequest& request, const ListServiceProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListWirelessDevicesAsyncHelper(const Model::ListWirelessDevicesRequest& request, const ListWirelessDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

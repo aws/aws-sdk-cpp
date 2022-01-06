@@ -7,6 +7,7 @@
 #include <aws/mwaa/MWAA_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/mwaa/model/UpdateError.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mwaa/model/UpdateStatus.h>
 #include <utility>
 
@@ -26,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>The status of the last update on the environment, and any errors that were
-   * encountered.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the status of the last update on the environment, and any errors
+   * that were encountered.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/LastUpdate">AWS API
    * Reference</a></p>
    */
@@ -103,38 +104,81 @@ namespace Model
 
 
     /**
-     * <p>The status of the last update on the environment. Valid values:
-     * <code>SUCCESS</code>, <code>PENDING</code>, <code>FAILED</code>.</p>
+     * <p>The source of the last update to the environment. Includes internal processes
+     * by Amazon MWAA, such as an environment maintenance update.</p>
+     */
+    inline const Aws::String& GetSource() const{ return m_source; }
+
+    /**
+     * <p>The source of the last update to the environment. Includes internal processes
+     * by Amazon MWAA, such as an environment maintenance update.</p>
+     */
+    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+
+    /**
+     * <p>The source of the last update to the environment. Includes internal processes
+     * by Amazon MWAA, such as an environment maintenance update.</p>
+     */
+    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
+
+    /**
+     * <p>The source of the last update to the environment. Includes internal processes
+     * by Amazon MWAA, such as an environment maintenance update.</p>
+     */
+    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
+
+    /**
+     * <p>The source of the last update to the environment. Includes internal processes
+     * by Amazon MWAA, such as an environment maintenance update.</p>
+     */
+    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
+
+    /**
+     * <p>The source of the last update to the environment. Includes internal processes
+     * by Amazon MWAA, such as an environment maintenance update.</p>
+     */
+    inline LastUpdate& WithSource(const Aws::String& value) { SetSource(value); return *this;}
+
+    /**
+     * <p>The source of the last update to the environment. Includes internal processes
+     * by Amazon MWAA, such as an environment maintenance update.</p>
+     */
+    inline LastUpdate& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
+
+    /**
+     * <p>The source of the last update to the environment. Includes internal processes
+     * by Amazon MWAA, such as an environment maintenance update.</p>
+     */
+    inline LastUpdate& WithSource(const char* value) { SetSource(value); return *this;}
+
+
+    /**
+     * <p>The status of the last update on the environment.</p>
      */
     inline const UpdateStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the last update on the environment. Valid values:
-     * <code>SUCCESS</code>, <code>PENDING</code>, <code>FAILED</code>.</p>
+     * <p>The status of the last update on the environment.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the last update on the environment. Valid values:
-     * <code>SUCCESS</code>, <code>PENDING</code>, <code>FAILED</code>.</p>
+     * <p>The status of the last update on the environment.</p>
      */
     inline void SetStatus(const UpdateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the last update on the environment. Valid values:
-     * <code>SUCCESS</code>, <code>PENDING</code>, <code>FAILED</code>.</p>
+     * <p>The status of the last update on the environment.</p>
      */
     inline void SetStatus(UpdateStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the last update on the environment. Valid values:
-     * <code>SUCCESS</code>, <code>PENDING</code>, <code>FAILED</code>.</p>
+     * <p>The status of the last update on the environment.</p>
      */
     inline LastUpdate& WithStatus(const UpdateStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the last update on the environment. Valid values:
-     * <code>SUCCESS</code>, <code>PENDING</code>, <code>FAILED</code>.</p>
+     * <p>The status of the last update on the environment.</p>
      */
     inline LastUpdate& WithStatus(UpdateStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -145,6 +189,9 @@ namespace Model
 
     UpdateError m_error;
     bool m_errorHasBeenSet;
+
+    Aws::String m_source;
+    bool m_sourceHasBeenSet;
 
     UpdateStatus m_status;
     bool m_statusHasBeenSet;

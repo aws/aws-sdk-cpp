@@ -22,7 +22,11 @@ namespace Model
 {
 
   /**
-   * <p>Internal only API.</p><p><h3>See Also:</h3>   <a
+   * <p> <b>Internal only</b>. Represents a set of statistics that describe a
+   * specific metric. To learn more about the metrics published to Amazon CloudWatch,
+   * see <a
+   * href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon
+   * MWAA performance metrics in Amazon CloudWatch</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/StatisticSet">AWS
    * API Reference</a></p>
    */
@@ -36,85 +40,85 @@ namespace Model
 
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The maximum value of the sample set.</p>
      */
     inline double GetMaximum() const{ return m_maximum; }
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The maximum value of the sample set.</p>
      */
     inline bool MaximumHasBeenSet() const { return m_maximumHasBeenSet; }
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The maximum value of the sample set.</p>
      */
     inline void SetMaximum(double value) { m_maximumHasBeenSet = true; m_maximum = value; }
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The maximum value of the sample set.</p>
      */
     inline StatisticSet& WithMaximum(double value) { SetMaximum(value); return *this;}
 
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The minimum value of the sample set.</p>
      */
     inline double GetMinimum() const{ return m_minimum; }
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The minimum value of the sample set.</p>
      */
     inline bool MinimumHasBeenSet() const { return m_minimumHasBeenSet; }
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The minimum value of the sample set.</p>
      */
     inline void SetMinimum(double value) { m_minimumHasBeenSet = true; m_minimum = value; }
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The minimum value of the sample set.</p>
      */
     inline StatisticSet& WithMinimum(double value) { SetMinimum(value); return *this;}
 
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The number of samples used for the statistic set.</p>
      */
     inline int GetSampleCount() const{ return m_sampleCount; }
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The number of samples used for the statistic set.</p>
      */
     inline bool SampleCountHasBeenSet() const { return m_sampleCountHasBeenSet; }
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The number of samples used for the statistic set.</p>
      */
     inline void SetSampleCount(int value) { m_sampleCountHasBeenSet = true; m_sampleCount = value; }
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The number of samples used for the statistic set.</p>
      */
     inline StatisticSet& WithSampleCount(int value) { SetSampleCount(value); return *this;}
 
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The sum of values for the sample set.</p>
      */
     inline double GetSum() const{ return m_sum; }
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The sum of values for the sample set.</p>
      */
     inline bool SumHasBeenSet() const { return m_sumHasBeenSet; }
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The sum of values for the sample set.</p>
      */
     inline void SetSum(double value) { m_sumHasBeenSet = true; m_sum = value; }
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The sum of values for the sample set.</p>
      */
     inline StatisticSet& WithSum(double value) { SetSum(value); return *this;}
 

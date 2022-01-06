@@ -10,6 +10,7 @@
 #include <aws/ec2/model/HttpTokensState.h>
 #include <aws/ec2/model/InstanceMetadataEndpointState.h>
 #include <aws/ec2/model/InstanceMetadataProtocolState.h>
+#include <aws/ec2/model/InstanceMetadataTagsState.h>
 #include <utility>
 
 namespace Aws
@@ -205,7 +206,7 @@ namespace Model
 
 
     /**
-     * <p>Enables or disables the HTTP metadata endpoint on your instances. If the
+     * <p>Enables or disables the HTTP metadata endpoint on your instances. If this
      * parameter is not specified, the existing state is maintained.</p> <p>If you
      * specify a value of <code>disabled</code>, you cannot access your instance
      * metadata.</p>
@@ -213,7 +214,7 @@ namespace Model
     inline const InstanceMetadataEndpointState& GetHttpEndpoint() const{ return m_httpEndpoint; }
 
     /**
-     * <p>Enables or disables the HTTP metadata endpoint on your instances. If the
+     * <p>Enables or disables the HTTP metadata endpoint on your instances. If this
      * parameter is not specified, the existing state is maintained.</p> <p>If you
      * specify a value of <code>disabled</code>, you cannot access your instance
      * metadata.</p>
@@ -221,7 +222,7 @@ namespace Model
     inline bool HttpEndpointHasBeenSet() const { return m_httpEndpointHasBeenSet; }
 
     /**
-     * <p>Enables or disables the HTTP metadata endpoint on your instances. If the
+     * <p>Enables or disables the HTTP metadata endpoint on your instances. If this
      * parameter is not specified, the existing state is maintained.</p> <p>If you
      * specify a value of <code>disabled</code>, you cannot access your instance
      * metadata.</p>
@@ -229,7 +230,7 @@ namespace Model
     inline void SetHttpEndpoint(const InstanceMetadataEndpointState& value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = value; }
 
     /**
-     * <p>Enables or disables the HTTP metadata endpoint on your instances. If the
+     * <p>Enables or disables the HTTP metadata endpoint on your instances. If this
      * parameter is not specified, the existing state is maintained.</p> <p>If you
      * specify a value of <code>disabled</code>, you cannot access your instance
      * metadata.</p>
@@ -237,7 +238,7 @@ namespace Model
     inline void SetHttpEndpoint(InstanceMetadataEndpointState&& value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = std::move(value); }
 
     /**
-     * <p>Enables or disables the HTTP metadata endpoint on your instances. If the
+     * <p>Enables or disables the HTTP metadata endpoint on your instances. If this
      * parameter is not specified, the existing state is maintained.</p> <p>If you
      * specify a value of <code>disabled</code>, you cannot access your instance
      * metadata.</p>
@@ -245,7 +246,7 @@ namespace Model
     inline ModifyInstanceMetadataOptionsRequest& WithHttpEndpoint(const InstanceMetadataEndpointState& value) { SetHttpEndpoint(value); return *this;}
 
     /**
-     * <p>Enables or disables the HTTP metadata endpoint on your instances. If the
+     * <p>Enables or disables the HTTP metadata endpoint on your instances. If this
      * parameter is not specified, the existing state is maintained.</p> <p>If you
      * specify a value of <code>disabled</code>, you cannot access your instance
      * metadata.</p>
@@ -322,6 +323,67 @@ namespace Model
      */
     inline ModifyInstanceMetadataOptionsRequest& WithHttpProtocolIpv6(InstanceMetadataProtocolState&& value) { SetHttpProtocolIpv6(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Set to <code>enabled</code> to allow access to instance tags from the
+     * instance metadata. Set to <code>disabled</code> to turn off access to instance
+     * tags from the instance metadata. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
+     * with instance tags using the instance metadata</a>.</p> <p>Default:
+     * <code>disabled</code> </p>
+     */
+    inline const InstanceMetadataTagsState& GetInstanceMetadataTags() const{ return m_instanceMetadataTags; }
+
+    /**
+     * <p>Set to <code>enabled</code> to allow access to instance tags from the
+     * instance metadata. Set to <code>disabled</code> to turn off access to instance
+     * tags from the instance metadata. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
+     * with instance tags using the instance metadata</a>.</p> <p>Default:
+     * <code>disabled</code> </p>
+     */
+    inline bool InstanceMetadataTagsHasBeenSet() const { return m_instanceMetadataTagsHasBeenSet; }
+
+    /**
+     * <p>Set to <code>enabled</code> to allow access to instance tags from the
+     * instance metadata. Set to <code>disabled</code> to turn off access to instance
+     * tags from the instance metadata. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
+     * with instance tags using the instance metadata</a>.</p> <p>Default:
+     * <code>disabled</code> </p>
+     */
+    inline void SetInstanceMetadataTags(const InstanceMetadataTagsState& value) { m_instanceMetadataTagsHasBeenSet = true; m_instanceMetadataTags = value; }
+
+    /**
+     * <p>Set to <code>enabled</code> to allow access to instance tags from the
+     * instance metadata. Set to <code>disabled</code> to turn off access to instance
+     * tags from the instance metadata. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
+     * with instance tags using the instance metadata</a>.</p> <p>Default:
+     * <code>disabled</code> </p>
+     */
+    inline void SetInstanceMetadataTags(InstanceMetadataTagsState&& value) { m_instanceMetadataTagsHasBeenSet = true; m_instanceMetadataTags = std::move(value); }
+
+    /**
+     * <p>Set to <code>enabled</code> to allow access to instance tags from the
+     * instance metadata. Set to <code>disabled</code> to turn off access to instance
+     * tags from the instance metadata. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
+     * with instance tags using the instance metadata</a>.</p> <p>Default:
+     * <code>disabled</code> </p>
+     */
+    inline ModifyInstanceMetadataOptionsRequest& WithInstanceMetadataTags(const InstanceMetadataTagsState& value) { SetInstanceMetadataTags(value); return *this;}
+
+    /**
+     * <p>Set to <code>enabled</code> to allow access to instance tags from the
+     * instance metadata. Set to <code>disabled</code> to turn off access to instance
+     * tags from the instance metadata. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
+     * with instance tags using the instance metadata</a>.</p> <p>Default:
+     * <code>disabled</code> </p>
+     */
+    inline ModifyInstanceMetadataOptionsRequest& WithInstanceMetadataTags(InstanceMetadataTagsState&& value) { SetInstanceMetadataTags(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_instanceId;
@@ -341,6 +403,9 @@ namespace Model
 
     InstanceMetadataProtocolState m_httpProtocolIpv6;
     bool m_httpProtocolIpv6HasBeenSet;
+
+    InstanceMetadataTagsState m_instanceMetadataTags;
+    bool m_instanceMetadataTagsHasBeenSet;
   };
 
 } // namespace Model

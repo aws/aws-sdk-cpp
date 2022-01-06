@@ -42,10 +42,13 @@ namespace Model
      * <p>The filters.</p> <ul> <li> <p> <code>snapshot-id</code> - The snapshot
      * ID.</p> </li> <li> <p> <code>volume-id</code> - The ID of the volume the
      * snapshot is for.</p> </li> <li> <p> <code>last-tiering-operation</code> - The
-     * state of the last archive or restore action. (<code>archiving</code> |
-     * <code>archival_error</code> | <code>archival_complete</code> |
-     * <code>restoring</code> | <code>restore_error</code> |
-     * <code>restore_complete</code>)</p> </li> </ul>
+     * state of the last archive or restore action. (<code>archival-in-progress</code>
+     * | <code>archival-completed</code> | <code>archival-failed</code> |
+     * <code>permanent-restore-in-progress</code> |
+     * <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code>
+     * | <code>temporary-restore-in-progress</code> |
+     * <code>temporary-restore-completed</code> |
+     * <code>temporary-restore-failed</code>)</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -53,10 +56,13 @@ namespace Model
      * <p>The filters.</p> <ul> <li> <p> <code>snapshot-id</code> - The snapshot
      * ID.</p> </li> <li> <p> <code>volume-id</code> - The ID of the volume the
      * snapshot is for.</p> </li> <li> <p> <code>last-tiering-operation</code> - The
-     * state of the last archive or restore action. (<code>archiving</code> |
-     * <code>archival_error</code> | <code>archival_complete</code> |
-     * <code>restoring</code> | <code>restore_error</code> |
-     * <code>restore_complete</code>)</p> </li> </ul>
+     * state of the last archive or restore action. (<code>archival-in-progress</code>
+     * | <code>archival-completed</code> | <code>archival-failed</code> |
+     * <code>permanent-restore-in-progress</code> |
+     * <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code>
+     * | <code>temporary-restore-in-progress</code> |
+     * <code>temporary-restore-completed</code> |
+     * <code>temporary-restore-failed</code>)</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -64,10 +70,13 @@ namespace Model
      * <p>The filters.</p> <ul> <li> <p> <code>snapshot-id</code> - The snapshot
      * ID.</p> </li> <li> <p> <code>volume-id</code> - The ID of the volume the
      * snapshot is for.</p> </li> <li> <p> <code>last-tiering-operation</code> - The
-     * state of the last archive or restore action. (<code>archiving</code> |
-     * <code>archival_error</code> | <code>archival_complete</code> |
-     * <code>restoring</code> | <code>restore_error</code> |
-     * <code>restore_complete</code>)</p> </li> </ul>
+     * state of the last archive or restore action. (<code>archival-in-progress</code>
+     * | <code>archival-completed</code> | <code>archival-failed</code> |
+     * <code>permanent-restore-in-progress</code> |
+     * <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code>
+     * | <code>temporary-restore-in-progress</code> |
+     * <code>temporary-restore-completed</code> |
+     * <code>temporary-restore-failed</code>)</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -75,10 +84,13 @@ namespace Model
      * <p>The filters.</p> <ul> <li> <p> <code>snapshot-id</code> - The snapshot
      * ID.</p> </li> <li> <p> <code>volume-id</code> - The ID of the volume the
      * snapshot is for.</p> </li> <li> <p> <code>last-tiering-operation</code> - The
-     * state of the last archive or restore action. (<code>archiving</code> |
-     * <code>archival_error</code> | <code>archival_complete</code> |
-     * <code>restoring</code> | <code>restore_error</code> |
-     * <code>restore_complete</code>)</p> </li> </ul>
+     * state of the last archive or restore action. (<code>archival-in-progress</code>
+     * | <code>archival-completed</code> | <code>archival-failed</code> |
+     * <code>permanent-restore-in-progress</code> |
+     * <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code>
+     * | <code>temporary-restore-in-progress</code> |
+     * <code>temporary-restore-completed</code> |
+     * <code>temporary-restore-failed</code>)</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -86,10 +98,13 @@ namespace Model
      * <p>The filters.</p> <ul> <li> <p> <code>snapshot-id</code> - The snapshot
      * ID.</p> </li> <li> <p> <code>volume-id</code> - The ID of the volume the
      * snapshot is for.</p> </li> <li> <p> <code>last-tiering-operation</code> - The
-     * state of the last archive or restore action. (<code>archiving</code> |
-     * <code>archival_error</code> | <code>archival_complete</code> |
-     * <code>restoring</code> | <code>restore_error</code> |
-     * <code>restore_complete</code>)</p> </li> </ul>
+     * state of the last archive or restore action. (<code>archival-in-progress</code>
+     * | <code>archival-completed</code> | <code>archival-failed</code> |
+     * <code>permanent-restore-in-progress</code> |
+     * <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code>
+     * | <code>temporary-restore-in-progress</code> |
+     * <code>temporary-restore-completed</code> |
+     * <code>temporary-restore-failed</code>)</p> </li> </ul>
      */
     inline DescribeSnapshotTierStatusRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -97,10 +112,13 @@ namespace Model
      * <p>The filters.</p> <ul> <li> <p> <code>snapshot-id</code> - The snapshot
      * ID.</p> </li> <li> <p> <code>volume-id</code> - The ID of the volume the
      * snapshot is for.</p> </li> <li> <p> <code>last-tiering-operation</code> - The
-     * state of the last archive or restore action. (<code>archiving</code> |
-     * <code>archival_error</code> | <code>archival_complete</code> |
-     * <code>restoring</code> | <code>restore_error</code> |
-     * <code>restore_complete</code>)</p> </li> </ul>
+     * state of the last archive or restore action. (<code>archival-in-progress</code>
+     * | <code>archival-completed</code> | <code>archival-failed</code> |
+     * <code>permanent-restore-in-progress</code> |
+     * <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code>
+     * | <code>temporary-restore-in-progress</code> |
+     * <code>temporary-restore-completed</code> |
+     * <code>temporary-restore-failed</code>)</p> </li> </ul>
      */
     inline DescribeSnapshotTierStatusRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -108,10 +126,13 @@ namespace Model
      * <p>The filters.</p> <ul> <li> <p> <code>snapshot-id</code> - The snapshot
      * ID.</p> </li> <li> <p> <code>volume-id</code> - The ID of the volume the
      * snapshot is for.</p> </li> <li> <p> <code>last-tiering-operation</code> - The
-     * state of the last archive or restore action. (<code>archiving</code> |
-     * <code>archival_error</code> | <code>archival_complete</code> |
-     * <code>restoring</code> | <code>restore_error</code> |
-     * <code>restore_complete</code>)</p> </li> </ul>
+     * state of the last archive or restore action. (<code>archival-in-progress</code>
+     * | <code>archival-completed</code> | <code>archival-failed</code> |
+     * <code>permanent-restore-in-progress</code> |
+     * <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code>
+     * | <code>temporary-restore-in-progress</code> |
+     * <code>temporary-restore-completed</code> |
+     * <code>temporary-restore-failed</code>)</p> </li> </ul>
      */
     inline DescribeSnapshotTierStatusRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -119,10 +140,13 @@ namespace Model
      * <p>The filters.</p> <ul> <li> <p> <code>snapshot-id</code> - The snapshot
      * ID.</p> </li> <li> <p> <code>volume-id</code> - The ID of the volume the
      * snapshot is for.</p> </li> <li> <p> <code>last-tiering-operation</code> - The
-     * state of the last archive or restore action. (<code>archiving</code> |
-     * <code>archival_error</code> | <code>archival_complete</code> |
-     * <code>restoring</code> | <code>restore_error</code> |
-     * <code>restore_complete</code>)</p> </li> </ul>
+     * state of the last archive or restore action. (<code>archival-in-progress</code>
+     * | <code>archival-completed</code> | <code>archival-failed</code> |
+     * <code>permanent-restore-in-progress</code> |
+     * <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code>
+     * | <code>temporary-restore-in-progress</code> |
+     * <code>temporary-restore-completed</code> |
+     * <code>temporary-restore-failed</code>)</p> </li> </ul>
      */
     inline DescribeSnapshotTierStatusRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

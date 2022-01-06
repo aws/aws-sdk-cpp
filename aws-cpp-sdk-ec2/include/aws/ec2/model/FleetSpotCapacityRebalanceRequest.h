@@ -27,7 +27,7 @@ namespace Model
    * <p>The Spot Instance replacement strategy to use when Amazon EC2 emits a
    * rebalance notification signal that your Spot Instance is at an elevated risk of
    * being interrupted. For more information, see <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-capacity-rebalance">Capacity
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-capacity-rebalance.html">Capacity
    * rebalancing</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/FleetSpotCapacityRebalanceRequest">AWS
@@ -137,37 +137,45 @@ namespace Model
 
     /**
      * <p>The amount of time (in seconds) that Amazon EC2 waits before terminating the
-     * old Spot Instance after launching a new replacement Spot Instance.</p> <p>Valid
-     * only when <code>ReplacementStrategy</code> is set to
-     * <code>launch-before-terminate</code>.</p> <p>Valid values: Minimum value of
-     * <code>120</code> seconds. Maximum value of <code>7200</code> seconds.</p>
+     * old Spot Instance after launching a new replacement Spot Instance.</p>
+     * <p>Required when <code>ReplacementStrategy</code> is set to
+     * <code>launch-before-terminate</code>.</p> <p>Not valid when
+     * <code>ReplacementStrategy</code> is set to <code>launch</code>.</p> <p>Valid
+     * values: Minimum value of <code>120</code> seconds. Maximum value of
+     * <code>7200</code> seconds.</p>
      */
     inline int GetTerminationDelay() const{ return m_terminationDelay; }
 
     /**
      * <p>The amount of time (in seconds) that Amazon EC2 waits before terminating the
-     * old Spot Instance after launching a new replacement Spot Instance.</p> <p>Valid
-     * only when <code>ReplacementStrategy</code> is set to
-     * <code>launch-before-terminate</code>.</p> <p>Valid values: Minimum value of
-     * <code>120</code> seconds. Maximum value of <code>7200</code> seconds.</p>
+     * old Spot Instance after launching a new replacement Spot Instance.</p>
+     * <p>Required when <code>ReplacementStrategy</code> is set to
+     * <code>launch-before-terminate</code>.</p> <p>Not valid when
+     * <code>ReplacementStrategy</code> is set to <code>launch</code>.</p> <p>Valid
+     * values: Minimum value of <code>120</code> seconds. Maximum value of
+     * <code>7200</code> seconds.</p>
      */
     inline bool TerminationDelayHasBeenSet() const { return m_terminationDelayHasBeenSet; }
 
     /**
      * <p>The amount of time (in seconds) that Amazon EC2 waits before terminating the
-     * old Spot Instance after launching a new replacement Spot Instance.</p> <p>Valid
-     * only when <code>ReplacementStrategy</code> is set to
-     * <code>launch-before-terminate</code>.</p> <p>Valid values: Minimum value of
-     * <code>120</code> seconds. Maximum value of <code>7200</code> seconds.</p>
+     * old Spot Instance after launching a new replacement Spot Instance.</p>
+     * <p>Required when <code>ReplacementStrategy</code> is set to
+     * <code>launch-before-terminate</code>.</p> <p>Not valid when
+     * <code>ReplacementStrategy</code> is set to <code>launch</code>.</p> <p>Valid
+     * values: Minimum value of <code>120</code> seconds. Maximum value of
+     * <code>7200</code> seconds.</p>
      */
     inline void SetTerminationDelay(int value) { m_terminationDelayHasBeenSet = true; m_terminationDelay = value; }
 
     /**
      * <p>The amount of time (in seconds) that Amazon EC2 waits before terminating the
-     * old Spot Instance after launching a new replacement Spot Instance.</p> <p>Valid
-     * only when <code>ReplacementStrategy</code> is set to
-     * <code>launch-before-terminate</code>.</p> <p>Valid values: Minimum value of
-     * <code>120</code> seconds. Maximum value of <code>7200</code> seconds.</p>
+     * old Spot Instance after launching a new replacement Spot Instance.</p>
+     * <p>Required when <code>ReplacementStrategy</code> is set to
+     * <code>launch-before-terminate</code>.</p> <p>Not valid when
+     * <code>ReplacementStrategy</code> is set to <code>launch</code>.</p> <p>Valid
+     * values: Minimum value of <code>120</code> seconds. Maximum value of
+     * <code>7200</code> seconds.</p>
      */
     inline FleetSpotCapacityRebalanceRequest& WithTerminationDelay(int value) { SetTerminationDelay(value); return *this;}
 

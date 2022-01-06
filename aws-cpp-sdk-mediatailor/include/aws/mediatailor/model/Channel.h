@@ -197,44 +197,44 @@ namespace Model
 
 
     /**
-     * <p>Contains information about the slate used to fill gaps between programs in
-     * the schedule. You must configure FillerSlate if your channel uses an LINEAR
-     * PlaybackMode.</p>
+     * <p>The slate used to fill gaps between programs in the schedule. You must
+     * configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor
+     * doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
      */
     inline const SlateSource& GetFillerSlate() const{ return m_fillerSlate; }
 
     /**
-     * <p>Contains information about the slate used to fill gaps between programs in
-     * the schedule. You must configure FillerSlate if your channel uses an LINEAR
-     * PlaybackMode.</p>
+     * <p>The slate used to fill gaps between programs in the schedule. You must
+     * configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor
+     * doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
      */
     inline bool FillerSlateHasBeenSet() const { return m_fillerSlateHasBeenSet; }
 
     /**
-     * <p>Contains information about the slate used to fill gaps between programs in
-     * the schedule. You must configure FillerSlate if your channel uses an LINEAR
-     * PlaybackMode.</p>
+     * <p>The slate used to fill gaps between programs in the schedule. You must
+     * configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor
+     * doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
      */
     inline void SetFillerSlate(const SlateSource& value) { m_fillerSlateHasBeenSet = true; m_fillerSlate = value; }
 
     /**
-     * <p>Contains information about the slate used to fill gaps between programs in
-     * the schedule. You must configure FillerSlate if your channel uses an LINEAR
-     * PlaybackMode.</p>
+     * <p>The slate used to fill gaps between programs in the schedule. You must
+     * configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor
+     * doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
      */
     inline void SetFillerSlate(SlateSource&& value) { m_fillerSlateHasBeenSet = true; m_fillerSlate = std::move(value); }
 
     /**
-     * <p>Contains information about the slate used to fill gaps between programs in
-     * the schedule. You must configure FillerSlate if your channel uses an LINEAR
-     * PlaybackMode.</p>
+     * <p>The slate used to fill gaps between programs in the schedule. You must
+     * configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor
+     * doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
      */
     inline Channel& WithFillerSlate(const SlateSource& value) { SetFillerSlate(value); return *this;}
 
     /**
-     * <p>Contains information about the slate used to fill gaps between programs in
-     * the schedule. You must configure FillerSlate if your channel uses an LINEAR
-     * PlaybackMode.</p>
+     * <p>The slate used to fill gaps between programs in the schedule. You must
+     * configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor
+     * doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
      */
     inline Channel& WithFillerSlate(SlateSource&& value) { SetFillerSlate(std::move(value)); return *this;}
 

@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>An object containing the error encountered with the last update:
-   * <code>ErrorCode</code>, <code>ErrorMessage</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the error(s) encountered with the last update of the
+   * environment.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/UpdateError">AWS
    * API Reference</a></p>
    */

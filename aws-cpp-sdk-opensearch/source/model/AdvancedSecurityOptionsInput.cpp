@@ -24,7 +24,9 @@ AdvancedSecurityOptionsInput::AdvancedSecurityOptionsInput() :
     m_internalUserDatabaseEnabled(false),
     m_internalUserDatabaseEnabledHasBeenSet(false),
     m_masterUserOptionsHasBeenSet(false),
-    m_sAMLOptionsHasBeenSet(false)
+    m_sAMLOptionsHasBeenSet(false),
+    m_anonymousAuthEnabled(false),
+    m_anonymousAuthEnabledHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ AdvancedSecurityOptionsInput::AdvancedSecurityOptionsInput(JsonView jsonValue) :
     m_internalUserDatabaseEnabled(false),
     m_internalUserDatabaseEnabledHasBeenSet(false),
     m_masterUserOptionsHasBeenSet(false),
-    m_sAMLOptionsHasBeenSet(false)
+    m_sAMLOptionsHasBeenSet(false),
+    m_anonymousAuthEnabled(false),
+    m_anonymousAuthEnabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -69,6 +73,13 @@ AdvancedSecurityOptionsInput& AdvancedSecurityOptionsInput::operator =(JsonView 
     m_sAMLOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AnonymousAuthEnabled"))
+  {
+    m_anonymousAuthEnabled = jsonValue.GetBool("AnonymousAuthEnabled");
+
+    m_anonymousAuthEnabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -97,6 +108,12 @@ JsonValue AdvancedSecurityOptionsInput::Jsonize() const
   if(m_sAMLOptionsHasBeenSet)
   {
    payload.WithObject("SAMLOptions", m_sAMLOptions.Jsonize());
+
+  }
+
+  if(m_anonymousAuthEnabledHasBeenSet)
+  {
+   payload.WithBool("AnonymousAuthEnabled", m_anonymousAuthEnabled);
 
   }
 

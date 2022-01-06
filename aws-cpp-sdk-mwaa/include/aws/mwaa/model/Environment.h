@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>The Amazon Managed Workflows for Apache Airflow (MWAA)
+   * <p>Describes an Amazon Managed Workflows for Apache Airflow (MWAA)
    * environment.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/Environment">AWS
    * API Reference</a></p>
@@ -151,50 +151,50 @@ namespace Model
 
 
     /**
-     * <p>The Apache Airflow version on your environment. For example,
-     * <code>v1.10.12</code>.</p>
+     * <p>The Apache Airflow version on your environment. Valid values:
+     * <code>1.10.12</code>, <code>2.0.2</code>.</p>
      */
     inline const Aws::String& GetAirflowVersion() const{ return m_airflowVersion; }
 
     /**
-     * <p>The Apache Airflow version on your environment. For example,
-     * <code>v1.10.12</code>.</p>
+     * <p>The Apache Airflow version on your environment. Valid values:
+     * <code>1.10.12</code>, <code>2.0.2</code>.</p>
      */
     inline bool AirflowVersionHasBeenSet() const { return m_airflowVersionHasBeenSet; }
 
     /**
-     * <p>The Apache Airflow version on your environment. For example,
-     * <code>v1.10.12</code>.</p>
+     * <p>The Apache Airflow version on your environment. Valid values:
+     * <code>1.10.12</code>, <code>2.0.2</code>.</p>
      */
     inline void SetAirflowVersion(const Aws::String& value) { m_airflowVersionHasBeenSet = true; m_airflowVersion = value; }
 
     /**
-     * <p>The Apache Airflow version on your environment. For example,
-     * <code>v1.10.12</code>.</p>
+     * <p>The Apache Airflow version on your environment. Valid values:
+     * <code>1.10.12</code>, <code>2.0.2</code>.</p>
      */
     inline void SetAirflowVersion(Aws::String&& value) { m_airflowVersionHasBeenSet = true; m_airflowVersion = std::move(value); }
 
     /**
-     * <p>The Apache Airflow version on your environment. For example,
-     * <code>v1.10.12</code>.</p>
+     * <p>The Apache Airflow version on your environment. Valid values:
+     * <code>1.10.12</code>, <code>2.0.2</code>.</p>
      */
     inline void SetAirflowVersion(const char* value) { m_airflowVersionHasBeenSet = true; m_airflowVersion.assign(value); }
 
     /**
-     * <p>The Apache Airflow version on your environment. For example,
-     * <code>v1.10.12</code>.</p>
+     * <p>The Apache Airflow version on your environment. Valid values:
+     * <code>1.10.12</code>, <code>2.0.2</code>.</p>
      */
     inline Environment& WithAirflowVersion(const Aws::String& value) { SetAirflowVersion(value); return *this;}
 
     /**
-     * <p>The Apache Airflow version on your environment. For example,
-     * <code>v1.10.12</code>.</p>
+     * <p>The Apache Airflow version on your environment. Valid values:
+     * <code>1.10.12</code>, <code>2.0.2</code>.</p>
      */
     inline Environment& WithAirflowVersion(Aws::String&& value) { SetAirflowVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The Apache Airflow version on your environment. For example,
-     * <code>v1.10.12</code>.</p>
+     * <p>The Apache Airflow version on your environment. Valid values:
+     * <code>1.10.12</code>, <code>2.0.2</code>.</p>
      */
     inline Environment& WithAirflowVersion(const char* value) { SetAirflowVersion(value); return *this;}
 
@@ -403,7 +403,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA
-     * to access AWS resources in your environment. For example,
+     * to access Amazon Web Services resources in your environment. For example,
      * <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see
      * <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
@@ -413,7 +413,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA
-     * to access AWS resources in your environment. For example,
+     * to access Amazon Web Services resources in your environment. For example,
      * <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see
      * <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
@@ -423,7 +423,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA
-     * to access AWS resources in your environment. For example,
+     * to access Amazon Web Services resources in your environment. For example,
      * <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see
      * <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
@@ -433,7 +433,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA
-     * to access AWS resources in your environment. For example,
+     * to access Amazon Web Services resources in your environment. For example,
      * <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see
      * <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
@@ -443,7 +443,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA
-     * to access AWS resources in your environment. For example,
+     * to access Amazon Web Services resources in your environment. For example,
      * <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see
      * <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
@@ -453,7 +453,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA
-     * to access AWS resources in your environment. For example,
+     * to access Amazon Web Services resources in your environment. For example,
      * <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see
      * <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
@@ -463,7 +463,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA
-     * to access AWS resources in your environment. For example,
+     * to access Amazon Web Services resources in your environment. For example,
      * <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see
      * <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
@@ -473,7 +473,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA
-     * to access AWS resources in your environment. For example,
+     * to access Amazon Web Services resources in your environment. For example,
      * <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see
      * <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
@@ -483,112 +483,112 @@ namespace Model
 
 
     /**
-     * <p>The Key Management Service (KMS) encryption key used to encrypt the data in
-     * your environment.</p>
+     * <p>The Amazon Web Services Key Management Service (KMS) encryption key used to
+     * encrypt the data in your environment.</p>
      */
     inline const Aws::String& GetKmsKey() const{ return m_kmsKey; }
 
     /**
-     * <p>The Key Management Service (KMS) encryption key used to encrypt the data in
-     * your environment.</p>
+     * <p>The Amazon Web Services Key Management Service (KMS) encryption key used to
+     * encrypt the data in your environment.</p>
      */
     inline bool KmsKeyHasBeenSet() const { return m_kmsKeyHasBeenSet; }
 
     /**
-     * <p>The Key Management Service (KMS) encryption key used to encrypt the data in
-     * your environment.</p>
+     * <p>The Amazon Web Services Key Management Service (KMS) encryption key used to
+     * encrypt the data in your environment.</p>
      */
     inline void SetKmsKey(const Aws::String& value) { m_kmsKeyHasBeenSet = true; m_kmsKey = value; }
 
     /**
-     * <p>The Key Management Service (KMS) encryption key used to encrypt the data in
-     * your environment.</p>
+     * <p>The Amazon Web Services Key Management Service (KMS) encryption key used to
+     * encrypt the data in your environment.</p>
      */
     inline void SetKmsKey(Aws::String&& value) { m_kmsKeyHasBeenSet = true; m_kmsKey = std::move(value); }
 
     /**
-     * <p>The Key Management Service (KMS) encryption key used to encrypt the data in
-     * your environment.</p>
+     * <p>The Amazon Web Services Key Management Service (KMS) encryption key used to
+     * encrypt the data in your environment.</p>
      */
     inline void SetKmsKey(const char* value) { m_kmsKeyHasBeenSet = true; m_kmsKey.assign(value); }
 
     /**
-     * <p>The Key Management Service (KMS) encryption key used to encrypt the data in
-     * your environment.</p>
+     * <p>The Amazon Web Services Key Management Service (KMS) encryption key used to
+     * encrypt the data in your environment.</p>
      */
     inline Environment& WithKmsKey(const Aws::String& value) { SetKmsKey(value); return *this;}
 
     /**
-     * <p>The Key Management Service (KMS) encryption key used to encrypt the data in
-     * your environment.</p>
+     * <p>The Amazon Web Services Key Management Service (KMS) encryption key used to
+     * encrypt the data in your environment.</p>
      */
     inline Environment& WithKmsKey(Aws::String&& value) { SetKmsKey(std::move(value)); return *this;}
 
     /**
-     * <p>The Key Management Service (KMS) encryption key used to encrypt the data in
-     * your environment.</p>
+     * <p>The Amazon Web Services Key Management Service (KMS) encryption key used to
+     * encrypt the data in your environment.</p>
      */
     inline Environment& WithKmsKey(const char* value) { SetKmsKey(value); return *this;}
 
 
-    
+    /**
+     * <p>The status of the last update on the environment.</p>
+     */
     inline const LastUpdate& GetLastUpdate() const{ return m_lastUpdate; }
 
-    
+    /**
+     * <p>The status of the last update on the environment.</p>
+     */
     inline bool LastUpdateHasBeenSet() const { return m_lastUpdateHasBeenSet; }
 
-    
+    /**
+     * <p>The status of the last update on the environment.</p>
+     */
     inline void SetLastUpdate(const LastUpdate& value) { m_lastUpdateHasBeenSet = true; m_lastUpdate = value; }
 
-    
+    /**
+     * <p>The status of the last update on the environment.</p>
+     */
     inline void SetLastUpdate(LastUpdate&& value) { m_lastUpdateHasBeenSet = true; m_lastUpdate = std::move(value); }
 
-    
+    /**
+     * <p>The status of the last update on the environment.</p>
+     */
     inline Environment& WithLastUpdate(const LastUpdate& value) { SetLastUpdate(value); return *this;}
 
-    
+    /**
+     * <p>The status of the last update on the environment.</p>
+     */
     inline Environment& WithLastUpdate(LastUpdate&& value) { SetLastUpdate(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Apache Airflow logs being sent to CloudWatch Logs:
-     * <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>,
-     * <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.</p>
+     * <p>The Apache Airflow logs published to CloudWatch Logs.</p>
      */
     inline const LoggingConfiguration& GetLoggingConfiguration() const{ return m_loggingConfiguration; }
 
     /**
-     * <p>The Apache Airflow logs being sent to CloudWatch Logs:
-     * <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>,
-     * <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.</p>
+     * <p>The Apache Airflow logs published to CloudWatch Logs.</p>
      */
     inline bool LoggingConfigurationHasBeenSet() const { return m_loggingConfigurationHasBeenSet; }
 
     /**
-     * <p>The Apache Airflow logs being sent to CloudWatch Logs:
-     * <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>,
-     * <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.</p>
+     * <p>The Apache Airflow logs published to CloudWatch Logs.</p>
      */
     inline void SetLoggingConfiguration(const LoggingConfiguration& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = value; }
 
     /**
-     * <p>The Apache Airflow logs being sent to CloudWatch Logs:
-     * <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>,
-     * <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.</p>
+     * <p>The Apache Airflow logs published to CloudWatch Logs.</p>
      */
     inline void SetLoggingConfiguration(LoggingConfiguration&& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = std::move(value); }
 
     /**
-     * <p>The Apache Airflow logs being sent to CloudWatch Logs:
-     * <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>,
-     * <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.</p>
+     * <p>The Apache Airflow logs published to CloudWatch Logs.</p>
      */
     inline Environment& WithLoggingConfiguration(const LoggingConfiguration& value) { SetLoggingConfiguration(value); return *this;}
 
     /**
-     * <p>The Apache Airflow logs being sent to CloudWatch Logs:
-     * <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>,
-     * <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.</p>
+     * <p>The Apache Airflow logs published to CloudWatch Logs.</p>
      */
     inline Environment& WithLoggingConfiguration(LoggingConfiguration&& value) { SetLoggingConfiguration(std::move(value)); return *this;}
 
@@ -692,22 +692,58 @@ namespace Model
     inline Environment& WithName(const char* value) { SetName(value); return *this;}
 
 
-    
+    /**
+     * <p>Describes the VPC networking components used to secure and enable network
+     * traffic between the Amazon Web Services resources for your environment. To learn
+     * more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
+     * networking on Amazon MWAA</a>.</p>
+     */
     inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
 
-    
+    /**
+     * <p>Describes the VPC networking components used to secure and enable network
+     * traffic between the Amazon Web Services resources for your environment. To learn
+     * more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
+     * networking on Amazon MWAA</a>.</p>
+     */
     inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p>Describes the VPC networking components used to secure and enable network
+     * traffic between the Amazon Web Services resources for your environment. To learn
+     * more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
+     * networking on Amazon MWAA</a>.</p>
+     */
     inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
 
-    
+    /**
+     * <p>Describes the VPC networking components used to secure and enable network
+     * traffic between the Amazon Web Services resources for your environment. To learn
+     * more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
+     * networking on Amazon MWAA</a>.</p>
+     */
     inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>Describes the VPC networking components used to secure and enable network
+     * traffic between the Amazon Web Services resources for your environment. To learn
+     * more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
+     * networking on Amazon MWAA</a>.</p>
+     */
     inline Environment& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>Describes the VPC networking components used to secure and enable network
+     * traffic between the Amazon Web Services resources for your environment. To learn
+     * more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
+     * networking on Amazon MWAA</a>.</p>
+     */
     inline Environment& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
 
 
@@ -1271,7 +1307,7 @@ namespace Model
      * <p>The key-value tag pairs associated to your environment. For example,
      * <code>"Environment": "Staging"</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a>.</p>
+     * Amazon Web Services resources</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
@@ -1279,7 +1315,7 @@ namespace Model
      * <p>The key-value tag pairs associated to your environment. For example,
      * <code>"Environment": "Staging"</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a>.</p>
+     * Amazon Web Services resources</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -1287,7 +1323,7 @@ namespace Model
      * <p>The key-value tag pairs associated to your environment. For example,
      * <code>"Environment": "Staging"</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a>.</p>
+     * Amazon Web Services resources</a>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -1295,7 +1331,7 @@ namespace Model
      * <p>The key-value tag pairs associated to your environment. For example,
      * <code>"Environment": "Staging"</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a>.</p>
+     * Amazon Web Services resources</a>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -1303,7 +1339,7 @@ namespace Model
      * <p>The key-value tag pairs associated to your environment. For example,
      * <code>"Environment": "Staging"</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a>.</p>
+     * Amazon Web Services resources</a>.</p>
      */
     inline Environment& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
@@ -1311,7 +1347,7 @@ namespace Model
      * <p>The key-value tag pairs associated to your environment. For example,
      * <code>"Environment": "Staging"</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a>.</p>
+     * Amazon Web Services resources</a>.</p>
      */
     inline Environment& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -1319,7 +1355,7 @@ namespace Model
      * <p>The key-value tag pairs associated to your environment. For example,
      * <code>"Environment": "Staging"</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a>.</p>
+     * Amazon Web Services resources</a>.</p>
      */
     inline Environment& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -1327,7 +1363,7 @@ namespace Model
      * <p>The key-value tag pairs associated to your environment. For example,
      * <code>"Environment": "Staging"</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a>.</p>
+     * Amazon Web Services resources</a>.</p>
      */
     inline Environment& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -1335,7 +1371,7 @@ namespace Model
      * <p>The key-value tag pairs associated to your environment. For example,
      * <code>"Environment": "Staging"</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a>.</p>
+     * Amazon Web Services resources</a>.</p>
      */
     inline Environment& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -1343,7 +1379,7 @@ namespace Model
      * <p>The key-value tag pairs associated to your environment. For example,
      * <code>"Environment": "Staging"</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a>.</p>
+     * Amazon Web Services resources</a>.</p>
      */
     inline Environment& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -1351,7 +1387,7 @@ namespace Model
      * <p>The key-value tag pairs associated to your environment. For example,
      * <code>"Environment": "Staging"</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a>.</p>
+     * Amazon Web Services resources</a>.</p>
      */
     inline Environment& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -1359,7 +1395,7 @@ namespace Model
      * <p>The key-value tag pairs associated to your environment. For example,
      * <code>"Environment": "Staging"</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a>.</p>
+     * Amazon Web Services resources</a>.</p>
      */
     inline Environment& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -1367,7 +1403,7 @@ namespace Model
      * <p>The key-value tag pairs associated to your environment. For example,
      * <code>"Environment": "Staging"</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a>.</p>
+     * Amazon Web Services resources</a>.</p>
      */
     inline Environment& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -1481,50 +1517,58 @@ namespace Model
 
 
     /**
-     * <p>The day and time of the week that weekly maintenance updates are scheduled.
-     * For example: <code>TUE:03:30</code>.</p>
+     * <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour
+     * standard time that weekly maintenance updates are scheduled. For example:
+     * <code>TUE:03:30</code>.</p>
      */
     inline const Aws::String& GetWeeklyMaintenanceWindowStart() const{ return m_weeklyMaintenanceWindowStart; }
 
     /**
-     * <p>The day and time of the week that weekly maintenance updates are scheduled.
-     * For example: <code>TUE:03:30</code>.</p>
+     * <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour
+     * standard time that weekly maintenance updates are scheduled. For example:
+     * <code>TUE:03:30</code>.</p>
      */
     inline bool WeeklyMaintenanceWindowStartHasBeenSet() const { return m_weeklyMaintenanceWindowStartHasBeenSet; }
 
     /**
-     * <p>The day and time of the week that weekly maintenance updates are scheduled.
-     * For example: <code>TUE:03:30</code>.</p>
+     * <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour
+     * standard time that weekly maintenance updates are scheduled. For example:
+     * <code>TUE:03:30</code>.</p>
      */
     inline void SetWeeklyMaintenanceWindowStart(const Aws::String& value) { m_weeklyMaintenanceWindowStartHasBeenSet = true; m_weeklyMaintenanceWindowStart = value; }
 
     /**
-     * <p>The day and time of the week that weekly maintenance updates are scheduled.
-     * For example: <code>TUE:03:30</code>.</p>
+     * <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour
+     * standard time that weekly maintenance updates are scheduled. For example:
+     * <code>TUE:03:30</code>.</p>
      */
     inline void SetWeeklyMaintenanceWindowStart(Aws::String&& value) { m_weeklyMaintenanceWindowStartHasBeenSet = true; m_weeklyMaintenanceWindowStart = std::move(value); }
 
     /**
-     * <p>The day and time of the week that weekly maintenance updates are scheduled.
-     * For example: <code>TUE:03:30</code>.</p>
+     * <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour
+     * standard time that weekly maintenance updates are scheduled. For example:
+     * <code>TUE:03:30</code>.</p>
      */
     inline void SetWeeklyMaintenanceWindowStart(const char* value) { m_weeklyMaintenanceWindowStartHasBeenSet = true; m_weeklyMaintenanceWindowStart.assign(value); }
 
     /**
-     * <p>The day and time of the week that weekly maintenance updates are scheduled.
-     * For example: <code>TUE:03:30</code>.</p>
+     * <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour
+     * standard time that weekly maintenance updates are scheduled. For example:
+     * <code>TUE:03:30</code>.</p>
      */
     inline Environment& WithWeeklyMaintenanceWindowStart(const Aws::String& value) { SetWeeklyMaintenanceWindowStart(value); return *this;}
 
     /**
-     * <p>The day and time of the week that weekly maintenance updates are scheduled.
-     * For example: <code>TUE:03:30</code>.</p>
+     * <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour
+     * standard time that weekly maintenance updates are scheduled. For example:
+     * <code>TUE:03:30</code>.</p>
      */
     inline Environment& WithWeeklyMaintenanceWindowStart(Aws::String&& value) { SetWeeklyMaintenanceWindowStart(std::move(value)); return *this;}
 
     /**
-     * <p>The day and time of the week that weekly maintenance updates are scheduled.
-     * For example: <code>TUE:03:30</code>.</p>
+     * <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour
+     * standard time that weekly maintenance updates are scheduled. For example:
+     * <code>TUE:03:30</code>.</p>
      */
     inline Environment& WithWeeklyMaintenanceWindowStart(const char* value) { SetWeeklyMaintenanceWindowStart(value); return *this;}
 

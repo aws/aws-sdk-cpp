@@ -142,58 +142,58 @@ namespace Model
 
 
     /**
-     * <p>The Apache Airflow version for your environment. For example,
-     * <code>v1.10.12</code>. If no value is specified, defaults to the latest version.
-     * Valid values: <code>v1.10.12</code>.</p>
+     * <p>The Apache Airflow version for your environment. If no value is specified,
+     * defaults to the latest version. Valid values: <code>1.10.12</code>,
+     * <code>2.0.2</code>.</p>
      */
     inline const Aws::String& GetAirflowVersion() const{ return m_airflowVersion; }
 
     /**
-     * <p>The Apache Airflow version for your environment. For example,
-     * <code>v1.10.12</code>. If no value is specified, defaults to the latest version.
-     * Valid values: <code>v1.10.12</code>.</p>
+     * <p>The Apache Airflow version for your environment. If no value is specified,
+     * defaults to the latest version. Valid values: <code>1.10.12</code>,
+     * <code>2.0.2</code>.</p>
      */
     inline bool AirflowVersionHasBeenSet() const { return m_airflowVersionHasBeenSet; }
 
     /**
-     * <p>The Apache Airflow version for your environment. For example,
-     * <code>v1.10.12</code>. If no value is specified, defaults to the latest version.
-     * Valid values: <code>v1.10.12</code>.</p>
+     * <p>The Apache Airflow version for your environment. If no value is specified,
+     * defaults to the latest version. Valid values: <code>1.10.12</code>,
+     * <code>2.0.2</code>.</p>
      */
     inline void SetAirflowVersion(const Aws::String& value) { m_airflowVersionHasBeenSet = true; m_airflowVersion = value; }
 
     /**
-     * <p>The Apache Airflow version for your environment. For example,
-     * <code>v1.10.12</code>. If no value is specified, defaults to the latest version.
-     * Valid values: <code>v1.10.12</code>.</p>
+     * <p>The Apache Airflow version for your environment. If no value is specified,
+     * defaults to the latest version. Valid values: <code>1.10.12</code>,
+     * <code>2.0.2</code>.</p>
      */
     inline void SetAirflowVersion(Aws::String&& value) { m_airflowVersionHasBeenSet = true; m_airflowVersion = std::move(value); }
 
     /**
-     * <p>The Apache Airflow version for your environment. For example,
-     * <code>v1.10.12</code>. If no value is specified, defaults to the latest version.
-     * Valid values: <code>v1.10.12</code>.</p>
+     * <p>The Apache Airflow version for your environment. If no value is specified,
+     * defaults to the latest version. Valid values: <code>1.10.12</code>,
+     * <code>2.0.2</code>.</p>
      */
     inline void SetAirflowVersion(const char* value) { m_airflowVersionHasBeenSet = true; m_airflowVersion.assign(value); }
 
     /**
-     * <p>The Apache Airflow version for your environment. For example,
-     * <code>v1.10.12</code>. If no value is specified, defaults to the latest version.
-     * Valid values: <code>v1.10.12</code>.</p>
+     * <p>The Apache Airflow version for your environment. If no value is specified,
+     * defaults to the latest version. Valid values: <code>1.10.12</code>,
+     * <code>2.0.2</code>.</p>
      */
     inline UpdateEnvironmentRequest& WithAirflowVersion(const Aws::String& value) { SetAirflowVersion(value); return *this;}
 
     /**
-     * <p>The Apache Airflow version for your environment. For example,
-     * <code>v1.10.12</code>. If no value is specified, defaults to the latest version.
-     * Valid values: <code>v1.10.12</code>.</p>
+     * <p>The Apache Airflow version for your environment. If no value is specified,
+     * defaults to the latest version. Valid values: <code>1.10.12</code>,
+     * <code>2.0.2</code>.</p>
      */
     inline UpdateEnvironmentRequest& WithAirflowVersion(Aws::String&& value) { SetAirflowVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The Apache Airflow version for your environment. For example,
-     * <code>v1.10.12</code>. If no value is specified, defaults to the latest version.
-     * Valid values: <code>v1.10.12</code>.</p>
+     * <p>The Apache Airflow version for your environment. If no value is specified,
+     * defaults to the latest version. Valid values: <code>1.10.12</code>,
+     * <code>2.0.2</code>.</p>
      */
     inline UpdateEnvironmentRequest& WithAirflowVersion(const char* value) { SetAirflowVersion(value); return *this;}
 
@@ -330,7 +330,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA
-     * to access AWS resources in your environment. For example,
+     * to access Amazon Web Services resources in your environment. For example,
      * <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see
      * <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
@@ -340,7 +340,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA
-     * to access AWS resources in your environment. For example,
+     * to access Amazon Web Services resources in your environment. For example,
      * <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see
      * <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
@@ -350,7 +350,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA
-     * to access AWS resources in your environment. For example,
+     * to access Amazon Web Services resources in your environment. For example,
      * <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see
      * <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
@@ -360,7 +360,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA
-     * to access AWS resources in your environment. For example,
+     * to access Amazon Web Services resources in your environment. For example,
      * <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see
      * <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
@@ -370,7 +370,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA
-     * to access AWS resources in your environment. For example,
+     * to access Amazon Web Services resources in your environment. For example,
      * <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see
      * <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
@@ -380,7 +380,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA
-     * to access AWS resources in your environment. For example,
+     * to access Amazon Web Services resources in your environment. For example,
      * <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see
      * <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
@@ -390,7 +390,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA
-     * to access AWS resources in your environment. For example,
+     * to access Amazon Web Services resources in your environment. For example,
      * <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see
      * <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
@@ -400,7 +400,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA
-     * to access AWS resources in your environment. For example,
+     * to access Amazon Web Services resources in your environment. For example,
      * <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see
      * <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
@@ -410,44 +410,32 @@ namespace Model
 
 
     /**
-     * <p>Defines the Apache Airflow logs to send to CloudWatch Logs:
-     * <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>,
-     * <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.</p>
+     * <p>The Apache Airflow log types to send to CloudWatch Logs.</p>
      */
     inline const LoggingConfigurationInput& GetLoggingConfiguration() const{ return m_loggingConfiguration; }
 
     /**
-     * <p>Defines the Apache Airflow logs to send to CloudWatch Logs:
-     * <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>,
-     * <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.</p>
+     * <p>The Apache Airflow log types to send to CloudWatch Logs.</p>
      */
     inline bool LoggingConfigurationHasBeenSet() const { return m_loggingConfigurationHasBeenSet; }
 
     /**
-     * <p>Defines the Apache Airflow logs to send to CloudWatch Logs:
-     * <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>,
-     * <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.</p>
+     * <p>The Apache Airflow log types to send to CloudWatch Logs.</p>
      */
     inline void SetLoggingConfiguration(const LoggingConfigurationInput& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = value; }
 
     /**
-     * <p>Defines the Apache Airflow logs to send to CloudWatch Logs:
-     * <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>,
-     * <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.</p>
+     * <p>The Apache Airflow log types to send to CloudWatch Logs.</p>
      */
     inline void SetLoggingConfiguration(LoggingConfigurationInput&& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = std::move(value); }
 
     /**
-     * <p>Defines the Apache Airflow logs to send to CloudWatch Logs:
-     * <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>,
-     * <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.</p>
+     * <p>The Apache Airflow log types to send to CloudWatch Logs.</p>
      */
     inline UpdateEnvironmentRequest& WithLoggingConfiguration(const LoggingConfigurationInput& value) { SetLoggingConfiguration(value); return *this;}
 
     /**
-     * <p>Defines the Apache Airflow logs to send to CloudWatch Logs:
-     * <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>,
-     * <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.</p>
+     * <p>The Apache Airflow log types to send to CloudWatch Logs.</p>
      */
     inline UpdateEnvironmentRequest& WithLoggingConfiguration(LoggingConfigurationInput&& value) { SetLoggingConfiguration(std::move(value)); return *this;}
 
@@ -581,7 +569,8 @@ namespace Model
 
     /**
      * <p>The VPC networking components used to secure and enable network traffic
-     * between the AWS resources for your environment. To learn more, see <a
+     * between the Amazon Web Services resources for your environment. To learn more,
+     * see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
      * networking on Amazon MWAA</a>.</p>
      */
@@ -589,7 +578,8 @@ namespace Model
 
     /**
      * <p>The VPC networking components used to secure and enable network traffic
-     * between the AWS resources for your environment. To learn more, see <a
+     * between the Amazon Web Services resources for your environment. To learn more,
+     * see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
      * networking on Amazon MWAA</a>.</p>
      */
@@ -597,7 +587,8 @@ namespace Model
 
     /**
      * <p>The VPC networking components used to secure and enable network traffic
-     * between the AWS resources for your environment. To learn more, see <a
+     * between the Amazon Web Services resources for your environment. To learn more,
+     * see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
      * networking on Amazon MWAA</a>.</p>
      */
@@ -605,7 +596,8 @@ namespace Model
 
     /**
      * <p>The VPC networking components used to secure and enable network traffic
-     * between the AWS resources for your environment. To learn more, see <a
+     * between the Amazon Web Services resources for your environment. To learn more,
+     * see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
      * networking on Amazon MWAA</a>.</p>
      */
@@ -613,7 +605,8 @@ namespace Model
 
     /**
      * <p>The VPC networking components used to secure and enable network traffic
-     * between the AWS resources for your environment. To learn more, see <a
+     * between the Amazon Web Services resources for your environment. To learn more,
+     * see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
      * networking on Amazon MWAA</a>.</p>
      */
@@ -621,7 +614,8 @@ namespace Model
 
     /**
      * <p>The VPC networking components used to secure and enable network traffic
-     * between the AWS resources for your environment. To learn more, see <a
+     * between the Amazon Web Services resources for your environment. To learn more,
+     * see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
      * networking on Amazon MWAA</a>.</p>
      */
@@ -1054,74 +1048,66 @@ namespace Model
 
 
     /**
-     * <p>The day and time of the week to start weekly maintenance updates of your
-     * environment in the following format: <code>DAY:HH:MM</code>. For example:
-     * <code>TUE:03:30</code>. You can specify a start time in 30 minute increments
-     * only. Supported input includes the following:</p> <ul> <li>
-     * <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p> </li> </ul>
+     * <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour
+     * standard time to start weekly maintenance updates of your environment in the
+     * following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>.
+     * You can specify a start time in 30 minute increments only.</p>
      */
     inline const Aws::String& GetWeeklyMaintenanceWindowStart() const{ return m_weeklyMaintenanceWindowStart; }
 
     /**
-     * <p>The day and time of the week to start weekly maintenance updates of your
-     * environment in the following format: <code>DAY:HH:MM</code>. For example:
-     * <code>TUE:03:30</code>. You can specify a start time in 30 minute increments
-     * only. Supported input includes the following:</p> <ul> <li>
-     * <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p> </li> </ul>
+     * <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour
+     * standard time to start weekly maintenance updates of your environment in the
+     * following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>.
+     * You can specify a start time in 30 minute increments only.</p>
      */
     inline bool WeeklyMaintenanceWindowStartHasBeenSet() const { return m_weeklyMaintenanceWindowStartHasBeenSet; }
 
     /**
-     * <p>The day and time of the week to start weekly maintenance updates of your
-     * environment in the following format: <code>DAY:HH:MM</code>. For example:
-     * <code>TUE:03:30</code>. You can specify a start time in 30 minute increments
-     * only. Supported input includes the following:</p> <ul> <li>
-     * <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p> </li> </ul>
+     * <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour
+     * standard time to start weekly maintenance updates of your environment in the
+     * following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>.
+     * You can specify a start time in 30 minute increments only.</p>
      */
     inline void SetWeeklyMaintenanceWindowStart(const Aws::String& value) { m_weeklyMaintenanceWindowStartHasBeenSet = true; m_weeklyMaintenanceWindowStart = value; }
 
     /**
-     * <p>The day and time of the week to start weekly maintenance updates of your
-     * environment in the following format: <code>DAY:HH:MM</code>. For example:
-     * <code>TUE:03:30</code>. You can specify a start time in 30 minute increments
-     * only. Supported input includes the following:</p> <ul> <li>
-     * <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p> </li> </ul>
+     * <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour
+     * standard time to start weekly maintenance updates of your environment in the
+     * following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>.
+     * You can specify a start time in 30 minute increments only.</p>
      */
     inline void SetWeeklyMaintenanceWindowStart(Aws::String&& value) { m_weeklyMaintenanceWindowStartHasBeenSet = true; m_weeklyMaintenanceWindowStart = std::move(value); }
 
     /**
-     * <p>The day and time of the week to start weekly maintenance updates of your
-     * environment in the following format: <code>DAY:HH:MM</code>. For example:
-     * <code>TUE:03:30</code>. You can specify a start time in 30 minute increments
-     * only. Supported input includes the following:</p> <ul> <li>
-     * <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p> </li> </ul>
+     * <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour
+     * standard time to start weekly maintenance updates of your environment in the
+     * following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>.
+     * You can specify a start time in 30 minute increments only.</p>
      */
     inline void SetWeeklyMaintenanceWindowStart(const char* value) { m_weeklyMaintenanceWindowStartHasBeenSet = true; m_weeklyMaintenanceWindowStart.assign(value); }
 
     /**
-     * <p>The day and time of the week to start weekly maintenance updates of your
-     * environment in the following format: <code>DAY:HH:MM</code>. For example:
-     * <code>TUE:03:30</code>. You can specify a start time in 30 minute increments
-     * only. Supported input includes the following:</p> <ul> <li>
-     * <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p> </li> </ul>
+     * <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour
+     * standard time to start weekly maintenance updates of your environment in the
+     * following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>.
+     * You can specify a start time in 30 minute increments only.</p>
      */
     inline UpdateEnvironmentRequest& WithWeeklyMaintenanceWindowStart(const Aws::String& value) { SetWeeklyMaintenanceWindowStart(value); return *this;}
 
     /**
-     * <p>The day and time of the week to start weekly maintenance updates of your
-     * environment in the following format: <code>DAY:HH:MM</code>. For example:
-     * <code>TUE:03:30</code>. You can specify a start time in 30 minute increments
-     * only. Supported input includes the following:</p> <ul> <li>
-     * <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p> </li> </ul>
+     * <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour
+     * standard time to start weekly maintenance updates of your environment in the
+     * following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>.
+     * You can specify a start time in 30 minute increments only.</p>
      */
     inline UpdateEnvironmentRequest& WithWeeklyMaintenanceWindowStart(Aws::String&& value) { SetWeeklyMaintenanceWindowStart(std::move(value)); return *this;}
 
     /**
-     * <p>The day and time of the week to start weekly maintenance updates of your
-     * environment in the following format: <code>DAY:HH:MM</code>. For example:
-     * <code>TUE:03:30</code>. You can specify a start time in 30 minute increments
-     * only. Supported input includes the following:</p> <ul> <li>
-     * <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p> </li> </ul>
+     * <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour
+     * standard time to start weekly maintenance updates of your environment in the
+     * following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>.
+     * You can specify a start time in 30 minute increments only.</p>
      */
     inline UpdateEnvironmentRequest& WithWeeklyMaintenanceWindowStart(const char* value) { SetWeeklyMaintenanceWindowStart(value); return *this;}
 

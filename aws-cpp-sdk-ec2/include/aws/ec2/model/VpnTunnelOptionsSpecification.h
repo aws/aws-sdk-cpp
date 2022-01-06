@@ -445,25 +445,25 @@ namespace Model
 
     /**
      * <p>The number of seconds after which a DPD timeout occurs.</p> <p>Constraints: A
-     * value between 0 and 30.</p> <p>Default: <code>30</code> </p>
+     * value greater than or equal to 30.</p> <p>Default: <code>30</code> </p>
      */
     inline int GetDPDTimeoutSeconds() const{ return m_dPDTimeoutSeconds; }
 
     /**
      * <p>The number of seconds after which a DPD timeout occurs.</p> <p>Constraints: A
-     * value between 0 and 30.</p> <p>Default: <code>30</code> </p>
+     * value greater than or equal to 30.</p> <p>Default: <code>30</code> </p>
      */
     inline bool DPDTimeoutSecondsHasBeenSet() const { return m_dPDTimeoutSecondsHasBeenSet; }
 
     /**
      * <p>The number of seconds after which a DPD timeout occurs.</p> <p>Constraints: A
-     * value between 0 and 30.</p> <p>Default: <code>30</code> </p>
+     * value greater than or equal to 30.</p> <p>Default: <code>30</code> </p>
      */
     inline void SetDPDTimeoutSeconds(int value) { m_dPDTimeoutSecondsHasBeenSet = true; m_dPDTimeoutSeconds = value; }
 
     /**
      * <p>The number of seconds after which a DPD timeout occurs.</p> <p>Constraints: A
-     * value between 0 and 30.</p> <p>Default: <code>30</code> </p>
+     * value greater than or equal to 30.</p> <p>Default: <code>30</code> </p>
      */
     inline VpnTunnelOptionsSpecification& WithDPDTimeoutSeconds(int value) { SetDPDTimeoutSeconds(value); return *this;}
 

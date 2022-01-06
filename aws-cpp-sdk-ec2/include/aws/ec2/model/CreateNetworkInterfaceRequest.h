@@ -594,11 +594,7 @@ namespace Model
      * (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"> Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. To
-     * create a trunk network interface, specify <code>efa</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/eni-trunking.html">
-     * Network interface trunking</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * create a trunk network interface, specify <code>trunk</code>.</p>
      */
     inline const NetworkInterfaceCreationType& GetInterfaceType() const{ return m_interfaceType; }
 
@@ -607,11 +603,7 @@ namespace Model
      * (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"> Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. To
-     * create a trunk network interface, specify <code>efa</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/eni-trunking.html">
-     * Network interface trunking</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * create a trunk network interface, specify <code>trunk</code>.</p>
      */
     inline bool InterfaceTypeHasBeenSet() const { return m_interfaceTypeHasBeenSet; }
 
@@ -620,11 +612,7 @@ namespace Model
      * (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"> Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. To
-     * create a trunk network interface, specify <code>efa</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/eni-trunking.html">
-     * Network interface trunking</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * create a trunk network interface, specify <code>trunk</code>.</p>
      */
     inline void SetInterfaceType(const NetworkInterfaceCreationType& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = value; }
 
@@ -633,11 +621,7 @@ namespace Model
      * (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"> Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. To
-     * create a trunk network interface, specify <code>efa</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/eni-trunking.html">
-     * Network interface trunking</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * create a trunk network interface, specify <code>trunk</code>.</p>
      */
     inline void SetInterfaceType(NetworkInterfaceCreationType&& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = std::move(value); }
 
@@ -646,11 +630,7 @@ namespace Model
      * (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"> Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. To
-     * create a trunk network interface, specify <code>efa</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/eni-trunking.html">
-     * Network interface trunking</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * create a trunk network interface, specify <code>trunk</code>.</p>
      */
     inline CreateNetworkInterfaceRequest& WithInterfaceType(const NetworkInterfaceCreationType& value) { SetInterfaceType(value); return *this;}
 
@@ -659,11 +639,7 @@ namespace Model
      * (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"> Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. To
-     * create a trunk network interface, specify <code>efa</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/eni-trunking.html">
-     * Network interface trunking</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * create a trunk network interface, specify <code>trunk</code>.</p>
      */
     inline CreateNetworkInterfaceRequest& WithInterfaceType(NetworkInterfaceCreationType&& value) { SetInterfaceType(std::move(value)); return *this;}
 

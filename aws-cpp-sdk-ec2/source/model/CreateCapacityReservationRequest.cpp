@@ -33,7 +33,8 @@ CreateCapacityReservationRequest::CreateCapacityReservationRequest() :
     m_tagSpecificationsHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_outpostArnHasBeenSet(false)
+    m_outpostArnHasBeenSet(false),
+    m_placementGroupArnHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,11 @@ Aws::String CreateCapacityReservationRequest::SerializePayload() const
   if(m_outpostArnHasBeenSet)
   {
     ss << "OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
+  }
+
+  if(m_placementGroupArnHasBeenSet)
+  {
+    ss << "PlacementGroupArn=" << StringUtils::URLEncode(m_placementGroupArn.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

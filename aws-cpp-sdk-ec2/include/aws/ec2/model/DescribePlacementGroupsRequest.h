@@ -40,8 +40,9 @@ namespace Model
 
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
-     * placement group.</p> </li> <li> <p> <code>state</code> - The state of the
-     * placement group (<code>pending</code> | <code>available</code> |
+     * placement group.</p> </li> <li> <p> <code>group-arn</code> - The Amazon Resource
+     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>state</code> - The
+     * state of the placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
      * (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>
@@ -58,8 +59,9 @@ namespace Model
 
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
-     * placement group.</p> </li> <li> <p> <code>state</code> - The state of the
-     * placement group (<code>pending</code> | <code>available</code> |
+     * placement group.</p> </li> <li> <p> <code>group-arn</code> - The Amazon Resource
+     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>state</code> - The
+     * state of the placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
      * (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>
@@ -76,8 +78,9 @@ namespace Model
 
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
-     * placement group.</p> </li> <li> <p> <code>state</code> - The state of the
-     * placement group (<code>pending</code> | <code>available</code> |
+     * placement group.</p> </li> <li> <p> <code>group-arn</code> - The Amazon Resource
+     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>state</code> - The
+     * state of the placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
      * (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>
@@ -94,8 +97,9 @@ namespace Model
 
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
-     * placement group.</p> </li> <li> <p> <code>state</code> - The state of the
-     * placement group (<code>pending</code> | <code>available</code> |
+     * placement group.</p> </li> <li> <p> <code>group-arn</code> - The Amazon Resource
+     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>state</code> - The
+     * state of the placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
      * (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>
@@ -112,8 +116,9 @@ namespace Model
 
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
-     * placement group.</p> </li> <li> <p> <code>state</code> - The state of the
-     * placement group (<code>pending</code> | <code>available</code> |
+     * placement group.</p> </li> <li> <p> <code>group-arn</code> - The Amazon Resource
+     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>state</code> - The
+     * state of the placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
      * (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>
@@ -130,8 +135,9 @@ namespace Model
 
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
-     * placement group.</p> </li> <li> <p> <code>state</code> - The state of the
-     * placement group (<code>pending</code> | <code>available</code> |
+     * placement group.</p> </li> <li> <p> <code>group-arn</code> - The Amazon Resource
+     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>state</code> - The
+     * state of the placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
      * (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>
@@ -148,8 +154,9 @@ namespace Model
 
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
-     * placement group.</p> </li> <li> <p> <code>state</code> - The state of the
-     * placement group (<code>pending</code> | <code>available</code> |
+     * placement group.</p> </li> <li> <p> <code>group-arn</code> - The Amazon Resource
+     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>state</code> - The
+     * state of the placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
      * (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>
@@ -166,8 +173,9 @@ namespace Model
 
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
-     * placement group.</p> </li> <li> <p> <code>state</code> - The state of the
-     * placement group (<code>pending</code> | <code>available</code> |
+     * placement group.</p> </li> <li> <p> <code>group-arn</code> - The Amazon Resource
+     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>state</code> - The
+     * state of the placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
      * (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>

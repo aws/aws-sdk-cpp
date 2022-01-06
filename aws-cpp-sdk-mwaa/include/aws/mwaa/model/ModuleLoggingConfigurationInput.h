@@ -24,10 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Defines the type of logs to send for the Apache Airflow log type (e.g.
-   * <code>DagProcessingLogs</code>). Valid values:
-   * <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>,
-   * <code>LogLevel</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>Enables the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) and
+   * defines the log level to send to CloudWatch Logs (e.g.
+   * <code>INFO</code>).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/ModuleLoggingConfigurationInput">AWS
    * API Reference</a></p>
    */
@@ -42,74 +41,62 @@ namespace Model
 
     /**
      * <p>Indicates whether to enable the Apache Airflow log type (e.g.
-     * <code>DagProcessingLogs</code>) in CloudWatch Logs.</p>
+     * <code>DagProcessingLogs</code>).</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
      * <p>Indicates whether to enable the Apache Airflow log type (e.g.
-     * <code>DagProcessingLogs</code>) in CloudWatch Logs.</p>
+     * <code>DagProcessingLogs</code>).</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
      * <p>Indicates whether to enable the Apache Airflow log type (e.g.
-     * <code>DagProcessingLogs</code>) in CloudWatch Logs.</p>
+     * <code>DagProcessingLogs</code>).</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
      * <p>Indicates whether to enable the Apache Airflow log type (e.g.
-     * <code>DagProcessingLogs</code>) in CloudWatch Logs.</p>
+     * <code>DagProcessingLogs</code>).</p>
      */
     inline ModuleLoggingConfigurationInput& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
 
     /**
-     * <p>Defines the Apache Airflow logs to send for the log type (e.g.
-     * <code>DagProcessingLogs</code>) to CloudWatch Logs. Valid values:
-     * <code>CRITICAL</code>, <code>ERROR</code>, <code>WARNING</code>,
-     * <code>INFO</code>.</p>
+     * <p>Defines the Apache Airflow log level (e.g. <code>INFO</code>) to send to
+     * CloudWatch Logs.</p>
      */
     inline const LoggingLevel& GetLogLevel() const{ return m_logLevel; }
 
     /**
-     * <p>Defines the Apache Airflow logs to send for the log type (e.g.
-     * <code>DagProcessingLogs</code>) to CloudWatch Logs. Valid values:
-     * <code>CRITICAL</code>, <code>ERROR</code>, <code>WARNING</code>,
-     * <code>INFO</code>.</p>
+     * <p>Defines the Apache Airflow log level (e.g. <code>INFO</code>) to send to
+     * CloudWatch Logs.</p>
      */
     inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
 
     /**
-     * <p>Defines the Apache Airflow logs to send for the log type (e.g.
-     * <code>DagProcessingLogs</code>) to CloudWatch Logs. Valid values:
-     * <code>CRITICAL</code>, <code>ERROR</code>, <code>WARNING</code>,
-     * <code>INFO</code>.</p>
+     * <p>Defines the Apache Airflow log level (e.g. <code>INFO</code>) to send to
+     * CloudWatch Logs.</p>
      */
     inline void SetLogLevel(const LoggingLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
 
     /**
-     * <p>Defines the Apache Airflow logs to send for the log type (e.g.
-     * <code>DagProcessingLogs</code>) to CloudWatch Logs. Valid values:
-     * <code>CRITICAL</code>, <code>ERROR</code>, <code>WARNING</code>,
-     * <code>INFO</code>.</p>
+     * <p>Defines the Apache Airflow log level (e.g. <code>INFO</code>) to send to
+     * CloudWatch Logs.</p>
      */
     inline void SetLogLevel(LoggingLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
 
     /**
-     * <p>Defines the Apache Airflow logs to send for the log type (e.g.
-     * <code>DagProcessingLogs</code>) to CloudWatch Logs. Valid values:
-     * <code>CRITICAL</code>, <code>ERROR</code>, <code>WARNING</code>,
-     * <code>INFO</code>.</p>
+     * <p>Defines the Apache Airflow log level (e.g. <code>INFO</code>) to send to
+     * CloudWatch Logs.</p>
      */
     inline ModuleLoggingConfigurationInput& WithLogLevel(const LoggingLevel& value) { SetLogLevel(value); return *this;}
 
     /**
-     * <p>Defines the Apache Airflow logs to send for the log type (e.g.
-     * <code>DagProcessingLogs</code>) to CloudWatch Logs. Valid values:
-     * <code>CRITICAL</code>, <code>ERROR</code>, <code>WARNING</code>,
-     * <code>INFO</code>.</p>
+     * <p>Defines the Apache Airflow log level (e.g. <code>INFO</code>) to send to
+     * CloudWatch Logs.</p>
      */
     inline ModuleLoggingConfigurationInput& WithLogLevel(LoggingLevel&& value) { SetLogLevel(std::move(value)); return *this;}
 

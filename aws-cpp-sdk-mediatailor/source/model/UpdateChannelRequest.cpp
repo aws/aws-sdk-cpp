@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 UpdateChannelRequest::UpdateChannelRequest() : 
     m_channelNameHasBeenSet(false),
+    m_fillerSlateHasBeenSet(false),
     m_outputsHasBeenSet(false)
 {
 }
@@ -21,6 +22,12 @@ UpdateChannelRequest::UpdateChannelRequest() :
 Aws::String UpdateChannelRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_fillerSlateHasBeenSet)
+  {
+   payload.WithObject("FillerSlate", m_fillerSlate.Jsonize());
+
+  }
 
   if(m_outputsHasBeenSet)
   {

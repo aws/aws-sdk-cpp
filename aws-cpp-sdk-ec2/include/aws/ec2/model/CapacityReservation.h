@@ -1025,6 +1025,79 @@ namespace Model
      */
     inline CapacityReservation& WithCapacityReservationFleetId(const char* value) { SetCapacityReservationFleetId(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the cluster placement group in which the
+     * Capacity Reservation was created. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html"> Capacity
+     * Reservations for cluster placement groups</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
+     */
+    inline const Aws::String& GetPlacementGroupArn() const{ return m_placementGroupArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the cluster placement group in which the
+     * Capacity Reservation was created. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html"> Capacity
+     * Reservations for cluster placement groups</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
+     */
+    inline bool PlacementGroupArnHasBeenSet() const { return m_placementGroupArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the cluster placement group in which the
+     * Capacity Reservation was created. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html"> Capacity
+     * Reservations for cluster placement groups</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
+     */
+    inline void SetPlacementGroupArn(const Aws::String& value) { m_placementGroupArnHasBeenSet = true; m_placementGroupArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the cluster placement group in which the
+     * Capacity Reservation was created. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html"> Capacity
+     * Reservations for cluster placement groups</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
+     */
+    inline void SetPlacementGroupArn(Aws::String&& value) { m_placementGroupArnHasBeenSet = true; m_placementGroupArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the cluster placement group in which the
+     * Capacity Reservation was created. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html"> Capacity
+     * Reservations for cluster placement groups</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
+     */
+    inline void SetPlacementGroupArn(const char* value) { m_placementGroupArnHasBeenSet = true; m_placementGroupArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the cluster placement group in which the
+     * Capacity Reservation was created. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html"> Capacity
+     * Reservations for cluster placement groups</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
+     */
+    inline CapacityReservation& WithPlacementGroupArn(const Aws::String& value) { SetPlacementGroupArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the cluster placement group in which the
+     * Capacity Reservation was created. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html"> Capacity
+     * Reservations for cluster placement groups</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
+     */
+    inline CapacityReservation& WithPlacementGroupArn(Aws::String&& value) { SetPlacementGroupArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the cluster placement group in which the
+     * Capacity Reservation was created. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html"> Capacity
+     * Reservations for cluster placement groups</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
+     */
+    inline CapacityReservation& WithPlacementGroupArn(const char* value) { SetPlacementGroupArn(value); return *this;}
+
   private:
 
     Aws::String m_capacityReservationId;
@@ -1089,6 +1162,9 @@ namespace Model
 
     Aws::String m_capacityReservationFleetId;
     bool m_capacityReservationFleetIdHasBeenSet;
+
+    Aws::String m_placementGroupArn;
+    bool m_placementGroupArnHasBeenSet;
   };
 
 } // namespace Model

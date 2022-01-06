@@ -481,6 +481,27 @@ namespace Model
      */
     inline CreateResolverRequest& WithCachingConfig(CachingConfig&& value) { SetCachingConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The maximum batching size for a resolver.</p>
+     */
+    inline int GetMaxBatchSize() const{ return m_maxBatchSize; }
+
+    /**
+     * <p>The maximum batching size for a resolver.</p>
+     */
+    inline bool MaxBatchSizeHasBeenSet() const { return m_maxBatchSizeHasBeenSet; }
+
+    /**
+     * <p>The maximum batching size for a resolver.</p>
+     */
+    inline void SetMaxBatchSize(int value) { m_maxBatchSizeHasBeenSet = true; m_maxBatchSize = value; }
+
+    /**
+     * <p>The maximum batching size for a resolver.</p>
+     */
+    inline CreateResolverRequest& WithMaxBatchSize(int value) { SetMaxBatchSize(value); return *this;}
+
   private:
 
     Aws::String m_apiId;
@@ -512,6 +533,9 @@ namespace Model
 
     CachingConfig m_cachingConfig;
     bool m_cachingConfigHasBeenSet;
+
+    int m_maxBatchSize;
+    bool m_maxBatchSizeHasBeenSet;
   };
 
 } // namespace Model

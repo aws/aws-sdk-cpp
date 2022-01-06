@@ -86,7 +86,7 @@ namespace Model
      * <p>The key-value tag pairs you want to associate to your environment. For
      * example, <code>"Environment": "Staging"</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a>.</p>
+     * Amazon Web Services resources</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
@@ -94,7 +94,7 @@ namespace Model
      * <p>The key-value tag pairs you want to associate to your environment. For
      * example, <code>"Environment": "Staging"</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a>.</p>
+     * Amazon Web Services resources</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -102,7 +102,7 @@ namespace Model
      * <p>The key-value tag pairs you want to associate to your environment. For
      * example, <code>"Environment": "Staging"</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a>.</p>
+     * Amazon Web Services resources</a>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -110,7 +110,7 @@ namespace Model
      * <p>The key-value tag pairs you want to associate to your environment. For
      * example, <code>"Environment": "Staging"</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a>.</p>
+     * Amazon Web Services resources</a>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -118,7 +118,7 @@ namespace Model
      * <p>The key-value tag pairs you want to associate to your environment. For
      * example, <code>"Environment": "Staging"</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a>.</p>
+     * Amazon Web Services resources</a>.</p>
      */
     inline TagResourceRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
@@ -126,7 +126,7 @@ namespace Model
      * <p>The key-value tag pairs you want to associate to your environment. For
      * example, <code>"Environment": "Staging"</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a>.</p>
+     * Amazon Web Services resources</a>.</p>
      */
     inline TagResourceRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -134,7 +134,7 @@ namespace Model
      * <p>The key-value tag pairs you want to associate to your environment. For
      * example, <code>"Environment": "Staging"</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a>.</p>
+     * Amazon Web Services resources</a>.</p>
      */
     inline TagResourceRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -142,7 +142,7 @@ namespace Model
      * <p>The key-value tag pairs you want to associate to your environment. For
      * example, <code>"Environment": "Staging"</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a>.</p>
+     * Amazon Web Services resources</a>.</p>
      */
     inline TagResourceRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -150,7 +150,7 @@ namespace Model
      * <p>The key-value tag pairs you want to associate to your environment. For
      * example, <code>"Environment": "Staging"</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a>.</p>
+     * Amazon Web Services resources</a>.</p>
      */
     inline TagResourceRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -158,7 +158,7 @@ namespace Model
      * <p>The key-value tag pairs you want to associate to your environment. For
      * example, <code>"Environment": "Staging"</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a>.</p>
+     * Amazon Web Services resources</a>.</p>
      */
     inline TagResourceRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -166,7 +166,7 @@ namespace Model
      * <p>The key-value tag pairs you want to associate to your environment. For
      * example, <code>"Environment": "Staging"</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a>.</p>
+     * Amazon Web Services resources</a>.</p>
      */
     inline TagResourceRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -174,7 +174,7 @@ namespace Model
      * <p>The key-value tag pairs you want to associate to your environment. For
      * example, <code>"Environment": "Staging"</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a>.</p>
+     * Amazon Web Services resources</a>.</p>
      */
     inline TagResourceRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -182,7 +182,7 @@ namespace Model
      * <p>The key-value tag pairs you want to associate to your environment. For
      * example, <code>"Environment": "Staging"</code>. To learn more, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a>.</p>
+     * Amazon Web Services resources</a>.</p>
      */
     inline TagResourceRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

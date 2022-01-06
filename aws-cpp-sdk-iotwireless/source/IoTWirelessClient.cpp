@@ -41,6 +41,7 @@
 #include <aws/iotwireless/model/DeleteDeviceProfileRequest.h>
 #include <aws/iotwireless/model/DeleteFuotaTaskRequest.h>
 #include <aws/iotwireless/model/DeleteMulticastGroupRequest.h>
+#include <aws/iotwireless/model/DeleteQueuedMessagesRequest.h>
 #include <aws/iotwireless/model/DeleteServiceProfileRequest.h>
 #include <aws/iotwireless/model/DeleteWirelessDeviceRequest.h>
 #include <aws/iotwireless/model/DeleteWirelessGatewayRequest.h>
@@ -79,6 +80,7 @@
 #include <aws/iotwireless/model/ListMulticastGroupsRequest.h>
 #include <aws/iotwireless/model/ListMulticastGroupsByFuotaTaskRequest.h>
 #include <aws/iotwireless/model/ListPartnerAccountsRequest.h>
+#include <aws/iotwireless/model/ListQueuedMessagesRequest.h>
 #include <aws/iotwireless/model/ListServiceProfilesRequest.h>
 #include <aws/iotwireless/model/ListTagsForResourceRequest.h>
 #include <aws/iotwireless/model/ListWirelessDevicesRequest.h>
@@ -782,6 +784,43 @@ void IoTWirelessClient::DeleteMulticastGroupAsync(const DeleteMulticastGroupRequ
 void IoTWirelessClient::DeleteMulticastGroupAsyncHelper(const DeleteMulticastGroupRequest& request, const DeleteMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteMulticastGroup(request), context);
+}
+
+DeleteQueuedMessagesOutcome IoTWirelessClient::DeleteQueuedMessages(const DeleteQueuedMessagesRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteQueuedMessages", "Required field: Id, is not set");
+    return DeleteQueuedMessagesOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  if (!request.MessageIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteQueuedMessages", "Required field: MessageId, is not set");
+    return DeleteQueuedMessagesOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MessageId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/wireless-devices/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/data");
+  return DeleteQueuedMessagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteQueuedMessagesOutcomeCallable IoTWirelessClient::DeleteQueuedMessagesCallable(const DeleteQueuedMessagesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteQueuedMessagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteQueuedMessages(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::DeleteQueuedMessagesAsync(const DeleteQueuedMessagesRequest& request, const DeleteQueuedMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteQueuedMessagesAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::DeleteQueuedMessagesAsyncHelper(const DeleteQueuedMessagesRequest& request, const DeleteQueuedMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteQueuedMessages(request), context);
 }
 
 DeleteServiceProfileOutcome IoTWirelessClient::DeleteServiceProfile(const DeleteServiceProfileRequest& request) const
@@ -1980,6 +2019,38 @@ void IoTWirelessClient::ListPartnerAccountsAsync(const ListPartnerAccountsReques
 void IoTWirelessClient::ListPartnerAccountsAsyncHelper(const ListPartnerAccountsRequest& request, const ListPartnerAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListPartnerAccounts(request), context);
+}
+
+ListQueuedMessagesOutcome IoTWirelessClient::ListQueuedMessages(const ListQueuedMessagesRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListQueuedMessages", "Required field: Id, is not set");
+    return ListQueuedMessagesOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/wireless-devices/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/data");
+  return ListQueuedMessagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListQueuedMessagesOutcomeCallable IoTWirelessClient::ListQueuedMessagesCallable(const ListQueuedMessagesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListQueuedMessagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListQueuedMessages(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::ListQueuedMessagesAsync(const ListQueuedMessagesRequest& request, const ListQueuedMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListQueuedMessagesAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::ListQueuedMessagesAsyncHelper(const ListQueuedMessagesRequest& request, const ListQueuedMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListQueuedMessages(request), context);
 }
 
 ListServiceProfilesOutcome IoTWirelessClient::ListServiceProfiles(const ListServiceProfilesRequest& request) const

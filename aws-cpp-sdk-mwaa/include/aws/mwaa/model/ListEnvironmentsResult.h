@@ -34,42 +34,42 @@ namespace Model
 
 
     /**
-     * <p>Returns the list of Amazon MWAA environments.</p>
+     * <p>Returns a list of Amazon MWAA environments.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEnvironments() const{ return m_environments; }
 
     /**
-     * <p>Returns the list of Amazon MWAA environments.</p>
+     * <p>Returns a list of Amazon MWAA environments.</p>
      */
     inline void SetEnvironments(const Aws::Vector<Aws::String>& value) { m_environments = value; }
 
     /**
-     * <p>Returns the list of Amazon MWAA environments.</p>
+     * <p>Returns a list of Amazon MWAA environments.</p>
      */
     inline void SetEnvironments(Aws::Vector<Aws::String>&& value) { m_environments = std::move(value); }
 
     /**
-     * <p>Returns the list of Amazon MWAA environments.</p>
+     * <p>Returns a list of Amazon MWAA environments.</p>
      */
     inline ListEnvironmentsResult& WithEnvironments(const Aws::Vector<Aws::String>& value) { SetEnvironments(value); return *this;}
 
     /**
-     * <p>Returns the list of Amazon MWAA environments.</p>
+     * <p>Returns a list of Amazon MWAA environments.</p>
      */
     inline ListEnvironmentsResult& WithEnvironments(Aws::Vector<Aws::String>&& value) { SetEnvironments(std::move(value)); return *this;}
 
     /**
-     * <p>Returns the list of Amazon MWAA environments.</p>
+     * <p>Returns a list of Amazon MWAA environments.</p>
      */
     inline ListEnvironmentsResult& AddEnvironments(const Aws::String& value) { m_environments.push_back(value); return *this; }
 
     /**
-     * <p>Returns the list of Amazon MWAA environments.</p>
+     * <p>Returns a list of Amazon MWAA environments.</p>
      */
     inline ListEnvironmentsResult& AddEnvironments(Aws::String&& value) { m_environments.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Returns the list of Amazon MWAA environments.</p>
+     * <p>Returns a list of Amazon MWAA environments.</p>
      */
     inline ListEnvironmentsResult& AddEnvironments(const char* value) { m_environments.push_back(value); return *this; }
 

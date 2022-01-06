@@ -7,6 +7,7 @@
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/mediatailor/MediaTailorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediatailor/model/SlateSource.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediatailor/model/RequestOutputItem.h>
 #include <utility>
@@ -76,6 +77,49 @@ namespace Model
 
 
     /**
+     * <p>The slate used to fill gaps between programs in the schedule. You must
+     * configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor
+     * doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+     */
+    inline const SlateSource& GetFillerSlate() const{ return m_fillerSlate; }
+
+    /**
+     * <p>The slate used to fill gaps between programs in the schedule. You must
+     * configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor
+     * doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+     */
+    inline bool FillerSlateHasBeenSet() const { return m_fillerSlateHasBeenSet; }
+
+    /**
+     * <p>The slate used to fill gaps between programs in the schedule. You must
+     * configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor
+     * doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+     */
+    inline void SetFillerSlate(const SlateSource& value) { m_fillerSlateHasBeenSet = true; m_fillerSlate = value; }
+
+    /**
+     * <p>The slate used to fill gaps between programs in the schedule. You must
+     * configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor
+     * doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+     */
+    inline void SetFillerSlate(SlateSource&& value) { m_fillerSlateHasBeenSet = true; m_fillerSlate = std::move(value); }
+
+    /**
+     * <p>The slate used to fill gaps between programs in the schedule. You must
+     * configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor
+     * doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+     */
+    inline UpdateChannelRequest& WithFillerSlate(const SlateSource& value) { SetFillerSlate(value); return *this;}
+
+    /**
+     * <p>The slate used to fill gaps between programs in the schedule. You must
+     * configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor
+     * doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+     */
+    inline UpdateChannelRequest& WithFillerSlate(SlateSource&& value) { SetFillerSlate(std::move(value)); return *this;}
+
+
+    /**
      * <p>The channel's output properties.</p>
      */
     inline const Aws::Vector<RequestOutputItem>& GetOutputs() const{ return m_outputs; }
@@ -119,6 +163,9 @@ namespace Model
 
     Aws::String m_channelName;
     bool m_channelNameHasBeenSet;
+
+    SlateSource m_fillerSlate;
+    bool m_fillerSlateHasBeenSet;
 
     Aws::Vector<RequestOutputItem> m_outputs;
     bool m_outputsHasBeenSet;
