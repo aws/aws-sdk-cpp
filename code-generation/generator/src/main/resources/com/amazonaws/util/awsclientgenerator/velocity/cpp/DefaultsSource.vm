@@ -11,7 +11,9 @@
 #set($defaultsNamespace = $metadata.namespace)
 \#include <aws/common/platform.h>  // for AWS_OS_IOS macro
 \#include <aws/core/config/defaults/ClientConfigurationDefaults.h>
+\#include <aws/core/config/AWSProfileConfigLoader.h>
 \#include <aws/core/client/ClientConfiguration.h>
+\#include <aws/core/internal/AWSHttpResourceClient.h>
 \#include <aws/core/platform/Environment.h>
 \#include <aws/core/utils/StringUtils.h>
 \#include <aws/core/utils/logging/LogMacros.h>

@@ -27,10 +27,10 @@ namespace Aws
              * @param hasEc2MetadataRegion, if ec2 metadata region has been already queried
              * @param ec2MetadataRegion, a region resolved by EC2 Instance Metadata service
              */
-            void SetSmartDefaultsConfigurationParameters(Aws::Client::ClientConfiguration& clientConfig,
-                                                         const Aws::String& defaultMode,
-                                                         bool hasEc2MetadataRegion,
-                                                         const Aws::String& ec2MetadataRegion);
+            AWS_CORE_API void SetSmartDefaultsConfigurationParameters(Aws::Client::ClientConfiguration& clientConfig,
+                                                                      const Aws::String& defaultMode,
+                                                                      bool hasEc2MetadataRegion,
+                                                                      const Aws::String& ec2MetadataRegion);
 
             /**
              * Resolve the name of an actual mode for a default mode "auto"
@@ -43,8 +43,8 @@ namespace Aws
 #end
 #end
              */
-            const char* ResolveAutoClientConfiguration(const Aws::Client::ClientConfiguration& clientConfig,
-                                                       const Aws::String& ec2MetadataRegion);
+            AWS_CORE_API const char* ResolveAutoClientConfiguration(const Aws::Client::ClientConfiguration& clientConfig,
+                                                                    const Aws::String& ec2MetadataRegion);
 
 #foreach($defaultMode in $defaultsModel.defaultsModes)
 #if ($defaultMode.name != "auto")
@@ -59,7 +59,7 @@ namespace Aws
              *#if(!$docStr.isEmpty()) #end${docStr}
 #end
              */
-            void Set${defaultModeNameCamel}ClientConfiguration(Aws::Client::ClientConfiguration& clientConfig);
+            AWS_CORE_API void Set${defaultModeNameCamel}ClientConfiguration(Aws::Client::ClientConfiguration& clientConfig);
 #if( $foreach.hasNext )
 
 #end
@@ -75,11 +75,11 @@ namespace Aws
              * @param hasEc2MetadataRegion, if ec2 metadata region has been already queried
              * @param ec2MetadataRegion, a region resolved by EC2 Instance Metadata service
              */
-            Aws::String ResolveDefaultModeName(const Aws::Client::ClientConfiguration& clientConfig,
-                                               Aws::String requestedDefaultMode,
-                                               const Aws::String& configFileDefaultMode,
-                                               bool hasEc2MetadataRegion,
-                                               Aws::String ec2MetadataRegion);
+            AWS_CORE_API Aws::String ResolveDefaultModeName(const Aws::Client::ClientConfiguration& clientConfig,
+                                                            Aws::String requestedDefaultMode,
+                                                            const Aws::String& configFileDefaultMode,
+                                                            bool hasEc2MetadataRegion,
+                                                            Aws::String ec2MetadataRegion);
         } //namespace Defaults
     } //namespace Config
 } //namespace Aws

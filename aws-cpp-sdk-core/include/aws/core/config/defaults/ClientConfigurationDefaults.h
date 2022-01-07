@@ -27,10 +27,10 @@ namespace Aws
              * @param hasEc2MetadataRegion, if ec2 metadata region has been already queried
              * @param ec2MetadataRegion, a region resolved by EC2 Instance Metadata service
              */
-            void SetSmartDefaultsConfigurationParameters(Aws::Client::ClientConfiguration& clientConfig,
-                                                         const Aws::String& defaultMode,
-                                                         bool hasEc2MetadataRegion,
-                                                         const Aws::String& ec2MetadataRegion);
+            AWS_CORE_API void SetSmartDefaultsConfigurationParameters(Aws::Client::ClientConfiguration& clientConfig,
+                                                                      const Aws::String& defaultMode,
+                                                                      bool hasEc2MetadataRegion,
+                                                                      const Aws::String& ec2MetadataRegion);
 
             /**
              * Resolve the name of an actual mode for a default mode "auto"
@@ -45,8 +45,8 @@ namespace Aws
              * might introduce latency. Therefore we recommend choosing an explicit
              * defaults_mode instead if startup latency is critical to your application.
              */
-            const char* ResolveAutoClientConfiguration(const Aws::Client::ClientConfiguration& clientConfig,
-                                                       const Aws::String& ec2MetadataRegion);
+            AWS_CORE_API const char* ResolveAutoClientConfiguration(const Aws::Client::ClientConfiguration& clientConfig,
+                                                                    const Aws::String& ec2MetadataRegion);
 
             /**
              * Default mode "legacy"
@@ -54,7 +54,7 @@ namespace Aws
              * The LEGACY mode provides default settings that vary per SDK and were used prior
              * to establishment of defaults_mode.
              */
-            void SetLegacyClientConfiguration(Aws::Client::ClientConfiguration& clientConfig);
+            AWS_CORE_API void SetLegacyClientConfiguration(Aws::Client::ClientConfiguration& clientConfig);
 
             /**
              * Default mode "standard"
@@ -66,7 +66,7 @@ namespace Aws
              * practices may evolve. As a result, it is encouraged to perform tests when
              * upgrading the SDK.
              */
-            void SetStandardClientConfiguration(Aws::Client::ClientConfiguration& clientConfig);
+            AWS_CORE_API void SetStandardClientConfiguration(Aws::Client::ClientConfiguration& clientConfig);
 
             /**
              * Default mode "in-region"
@@ -79,7 +79,7 @@ namespace Aws
              * practices may evolve. As a result, it is encouraged to perform tests when
              * upgrading the SDK.
              */
-            void SetInRegionClientConfiguration(Aws::Client::ClientConfiguration& clientConfig);
+            AWS_CORE_API void SetInRegionClientConfiguration(Aws::Client::ClientConfiguration& clientConfig);
 
             /**
              * Default mode "cross-region"
@@ -91,7 +91,7 @@ namespace Aws
              * practices may evolve. As a result, it is encouraged to perform tests when
              * upgrading the SDK.
              */
-            void SetCrossRegionClientConfiguration(Aws::Client::ClientConfiguration& clientConfig);
+            AWS_CORE_API void SetCrossRegionClientConfiguration(Aws::Client::ClientConfiguration& clientConfig);
 
             /**
              * Default mode "mobile"
@@ -103,7 +103,7 @@ namespace Aws
              * practices may evolve. As a result, it is encouraged to perform tests when
              * upgrading the SDK.
              */
-            void SetMobileClientConfiguration(Aws::Client::ClientConfiguration& clientConfig);
+            AWS_CORE_API void SetMobileClientConfiguration(Aws::Client::ClientConfiguration& clientConfig);
 
             /** 
              * Internal helper function to resolve smart defaults mode if not provided
@@ -114,11 +114,11 @@ namespace Aws
              * @param hasEc2MetadataRegion, if ec2 metadata region has been already queried
              * @param ec2MetadataRegion, a region resolved by EC2 Instance Metadata service
              */
-            Aws::String ResolveDefaultModeName(const Aws::Client::ClientConfiguration& clientConfig,
-                                               Aws::String requestedDefaultMode,
-                                               const Aws::String& configFileDefaultMode,
-                                               bool hasEc2MetadataRegion,
-                                               Aws::String ec2MetadataRegion);
+            AWS_CORE_API Aws::String ResolveDefaultModeName(const Aws::Client::ClientConfiguration& clientConfig,
+                                                            Aws::String requestedDefaultMode,
+                                                            const Aws::String& configFileDefaultMode,
+                                                            bool hasEc2MetadataRegion,
+                                                            Aws::String ec2MetadataRegion);
         } //namespace Defaults
     } //namespace Config
 } //namespace Aws

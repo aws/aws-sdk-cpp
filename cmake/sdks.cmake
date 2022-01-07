@@ -70,16 +70,9 @@ else()
 endif()
 
 # SDK_BUILD_LIST is now a list of present SDKs that can be processed unconditionally
-if(ADD_CUSTOM_CLIENTS OR REGENERATE_CLIENTS)
+if(ADD_CUSTOM_CLIENTS OR REGENERATE_CLIENTS OR REGENERATE_DEFAULTS)
     execute_process(
         COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --prepareTools
-            WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    )
-endif()
-
-if(REGENERATE_DEFAULTS)
-    execute_process(
-            COMMAND ${PYTHON_CMD} scripts/generate_defaults.py --prepareTools
             WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
     )
 endif()

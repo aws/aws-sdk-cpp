@@ -4,6 +4,7 @@
  */
 
 #include <aws/external/gtest.h>
+#include <aws/core/platform/Environment.h>
 #include <aws/testing/platform/PlatformTesting.h>
 
 #include <aws/core/config/defaults/ClientConfigurationDefaults.h>
@@ -12,26 +13,18 @@ class ClientConfigurationDefaultsTest : public ::testing::Test
 {
 
 public:
-    // env vars tests set and original presence and value
-    std::unordered_map<std::string,
-            std::pair<bool, std::string>> originalEnvVars;
-    const std::vector<std::string> ENV_VARS_TO_RESTORE =
+    // original env vars and their value
+    std::unordered_map<Aws::String, Aws::String> originalEnvVars;
+    const std::vector<Aws::String> ENV_VARS_TO_RESTORE =
             {"AWS_EC2_METADATA_DISABLED", "AWS_DEFAULTS_MODE", "AWS_EXECUTION_ENV",
              "AWS_REGION", "AWS_DEFAULT_REGION"};
 
     virtual void SetUp()
     {
-        for (const std::string& origEnvVarName : ENV_VARS_TO_RESTORE)
+        for (const Aws::String& origEnvVarName : ENV_VARS_TO_RESTORE)
         {
-            const char* origEnvVarValue = getenv(origEnvVarName.c_str());
-            if (origEnvVarValue)
-            {
-                originalEnvVars[origEnvVarName] = std::make_pair(true, std::string(origEnvVarValue));
-            }
-            else
-            {
-                originalEnvVars[origEnvVarName] = std::make_pair(false, std::string());
-            }
+            const Aws::String& origEnvVarValue = Aws::Environment::GetEnv(origEnvVarName.c_str());
+            originalEnvVars[origEnvVarName] = origEnvVarValue;
         }
     }
 
@@ -39,9 +32,9 @@ public:
     {
         for (const auto& origEnvVar : originalEnvVars)
         {
-            if(origEnvVar.second.first)
+            if(!origEnvVar.second.empty())
             {
-                Aws::Environment::SetEnv(origEnvVar.first.c_str(), origEnvVar.second.second.c_str(), true);
+                Aws::Environment::SetEnv(origEnvVar.first.c_str(), origEnvVar.second.c_str(), true);
             }
             else
             {
