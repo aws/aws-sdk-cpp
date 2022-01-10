@@ -1,0 +1,57 @@
+name: "\U0001F4AC General Issue"
+description: Create a new issue. If you don't know which type to choose, choose this one.
+title: "(short issue description)"
+labels: [guidance, needs-triage]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the issue
+      description: A clear and concise description of the issue.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: |
+        Provide a self-contained, concise snippet of code that can be used to reproduce the issue.
+        For more complex issues provide a repo with the smallest reproducible example.
+
+        Avoid including business logic or unrelated code, it makes diagnosis more difficult.
+    validations:
+      required: false
+
+  - type: textarea
+    id: current
+    attributes:
+      label: Current behavior
+      description: |
+        Tell us what happens instead of the expected behavior.
+
+        Include full errors, uncaught exceptions, stack traces, and relevant logs.
+    validations:
+      required: false
+
+  - type: input
+    id: cpp-sdk-version
+    attributes:
+      label: AWS CPP SDK version used
+    validations:
+      required: true
+
+  - type: input
+    id: compiler-version
+    attributes:
+      label: compiler and version used
+      description: gcc --version / Visual Studio / clang --version
+    validations:
+      required: true
+
+  - type: input
+    id: operating-system
+    attributes:
+      label: Operating System and version
+    validations:
+      required: true
