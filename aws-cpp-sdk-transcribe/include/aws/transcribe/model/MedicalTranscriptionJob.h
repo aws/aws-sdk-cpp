@@ -175,9 +175,7 @@ namespace Model
      * <p>The sample rate, in Hertz, of the source audio containing medical
      * information.</p> <p>If you don't specify the sample rate, Amazon Transcribe
      * Medical determines it for you. If you choose to specify the sample rate, it must
-     * match the rate detected by Amazon Transcribe Medical. In most cases, you should
-     * leave the <code>MedicalMediaSampleHertz</code> blank and let Amazon Transcribe
-     * Medical determine the sample rate.</p>
+     * match the rate detected by Amazon Transcribe Medical.</p>
      */
     inline int GetMediaSampleRateHertz() const{ return m_mediaSampleRateHertz; }
 
@@ -185,9 +183,7 @@ namespace Model
      * <p>The sample rate, in Hertz, of the source audio containing medical
      * information.</p> <p>If you don't specify the sample rate, Amazon Transcribe
      * Medical determines it for you. If you choose to specify the sample rate, it must
-     * match the rate detected by Amazon Transcribe Medical. In most cases, you should
-     * leave the <code>MedicalMediaSampleHertz</code> blank and let Amazon Transcribe
-     * Medical determine the sample rate.</p>
+     * match the rate detected by Amazon Transcribe Medical.</p>
      */
     inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
 
@@ -195,9 +191,7 @@ namespace Model
      * <p>The sample rate, in Hertz, of the source audio containing medical
      * information.</p> <p>If you don't specify the sample rate, Amazon Transcribe
      * Medical determines it for you. If you choose to specify the sample rate, it must
-     * match the rate detected by Amazon Transcribe Medical. In most cases, you should
-     * leave the <code>MedicalMediaSampleHertz</code> blank and let Amazon Transcribe
-     * Medical determine the sample rate.</p>
+     * match the rate detected by Amazon Transcribe Medical.</p>
      */
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
 
@@ -205,9 +199,7 @@ namespace Model
      * <p>The sample rate, in Hertz, of the source audio containing medical
      * information.</p> <p>If you don't specify the sample rate, Amazon Transcribe
      * Medical determines it for you. If you choose to specify the sample rate, it must
-     * match the rate detected by Amazon Transcribe Medical. In most cases, you should
-     * leave the <code>MedicalMediaSampleHertz</code> blank and let Amazon Transcribe
-     * Medical determine the sample rate.</p>
+     * match the rate detected by Amazon Transcribe Medical.</p>
      */
     inline MedicalTranscriptionJob& WithMediaSampleRateHertz(int value) { SetMediaSampleRateHertz(value); return *this;}
 
@@ -414,13 +406,13 @@ namespace Model
      * is larger than what Amazon Transcribe Medical can process. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
-     * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i> </p> </li> <li> <p>
+     * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i>.</p> </li> <li> <p>
      * <code>Invalid number of channels: number of channels too large</code>- Your
      * audio contains more channels than Amazon Transcribe Medical is configured to
      * process. To request additional channels, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/transcribe-medical.html">Amazon
      * Transcribe Medical Endpoints and Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i> </p> </li> </ul>
+     * General Reference</i>.</p> </li> </ul>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
 
@@ -446,13 +438,13 @@ namespace Model
      * is larger than what Amazon Transcribe Medical can process. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
-     * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i> </p> </li> <li> <p>
+     * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i>.</p> </li> <li> <p>
      * <code>Invalid number of channels: number of channels too large</code>- Your
      * audio contains more channels than Amazon Transcribe Medical is configured to
      * process. To request additional channels, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/transcribe-medical.html">Amazon
      * Transcribe Medical Endpoints and Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i> </p> </li> </ul>
+     * General Reference</i>.</p> </li> </ul>
      */
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
 
@@ -478,13 +470,13 @@ namespace Model
      * is larger than what Amazon Transcribe Medical can process. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
-     * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i> </p> </li> <li> <p>
+     * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i>.</p> </li> <li> <p>
      * <code>Invalid number of channels: number of channels too large</code>- Your
      * audio contains more channels than Amazon Transcribe Medical is configured to
      * process. To request additional channels, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/transcribe-medical.html">Amazon
      * Transcribe Medical Endpoints and Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i> </p> </li> </ul>
+     * General Reference</i>.</p> </li> </ul>
      */
     inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
 
@@ -510,13 +502,13 @@ namespace Model
      * is larger than what Amazon Transcribe Medical can process. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
-     * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i> </p> </li> <li> <p>
+     * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i>.</p> </li> <li> <p>
      * <code>Invalid number of channels: number of channels too large</code>- Your
      * audio contains more channels than Amazon Transcribe Medical is configured to
      * process. To request additional channels, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/transcribe-medical.html">Amazon
      * Transcribe Medical Endpoints and Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i> </p> </li> </ul>
+     * General Reference</i>.</p> </li> </ul>
      */
     inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
 
@@ -542,13 +534,13 @@ namespace Model
      * is larger than what Amazon Transcribe Medical can process. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
-     * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i> </p> </li> <li> <p>
+     * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i>.</p> </li> <li> <p>
      * <code>Invalid number of channels: number of channels too large</code>- Your
      * audio contains more channels than Amazon Transcribe Medical is configured to
      * process. To request additional channels, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/transcribe-medical.html">Amazon
      * Transcribe Medical Endpoints and Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i> </p> </li> </ul>
+     * General Reference</i>.</p> </li> </ul>
      */
     inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
 
@@ -574,13 +566,13 @@ namespace Model
      * is larger than what Amazon Transcribe Medical can process. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
-     * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i> </p> </li> <li> <p>
+     * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i>.</p> </li> <li> <p>
      * <code>Invalid number of channels: number of channels too large</code>- Your
      * audio contains more channels than Amazon Transcribe Medical is configured to
      * process. To request additional channels, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/transcribe-medical.html">Amazon
      * Transcribe Medical Endpoints and Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i> </p> </li> </ul>
+     * General Reference</i>.</p> </li> </ul>
      */
     inline MedicalTranscriptionJob& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
 
@@ -606,13 +598,13 @@ namespace Model
      * is larger than what Amazon Transcribe Medical can process. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
-     * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i> </p> </li> <li> <p>
+     * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i>.</p> </li> <li> <p>
      * <code>Invalid number of channels: number of channels too large</code>- Your
      * audio contains more channels than Amazon Transcribe Medical is configured to
      * process. To request additional channels, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/transcribe-medical.html">Amazon
      * Transcribe Medical Endpoints and Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i> </p> </li> </ul>
+     * General Reference</i>.</p> </li> </ul>
      */
     inline MedicalTranscriptionJob& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
 
@@ -638,13 +630,13 @@ namespace Model
      * is larger than what Amazon Transcribe Medical can process. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
-     * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i> </p> </li> <li> <p>
+     * and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i>.</p> </li> <li> <p>
      * <code>Invalid number of channels: number of channels too large</code>- Your
      * audio contains more channels than Amazon Transcribe Medical is configured to
      * process. To request additional channels, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/transcribe-medical.html">Amazon
      * Transcribe Medical Endpoints and Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i> </p> </li> </ul>
+     * General Reference</i>.</p> </li> </ul>
      */
     inline MedicalTranscriptionJob& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 

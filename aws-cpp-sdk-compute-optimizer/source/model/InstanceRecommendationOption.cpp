@@ -26,7 +26,9 @@ InstanceRecommendationOption::InstanceRecommendationOption() :
     m_performanceRiskHasBeenSet(false),
     m_rank(0),
     m_rankHasBeenSet(false),
-    m_savingsOpportunityHasBeenSet(false)
+    m_savingsOpportunityHasBeenSet(false),
+    m_migrationEffort(MigrationEffort::NOT_SET),
+    m_migrationEffortHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ InstanceRecommendationOption::InstanceRecommendationOption(JsonView jsonValue) :
     m_performanceRiskHasBeenSet(false),
     m_rank(0),
     m_rankHasBeenSet(false),
-    m_savingsOpportunityHasBeenSet(false)
+    m_savingsOpportunityHasBeenSet(false),
+    m_migrationEffort(MigrationEffort::NOT_SET),
+    m_migrationEffortHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -93,6 +97,13 @@ InstanceRecommendationOption& InstanceRecommendationOption::operator =(JsonView 
     m_savingsOpportunityHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("migrationEffort"))
+  {
+    m_migrationEffort = MigrationEffortMapper::GetMigrationEffortForName(jsonValue.GetString("migrationEffort"));
+
+    m_migrationEffortHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -144,6 +155,11 @@ JsonValue InstanceRecommendationOption::Jsonize() const
   {
    payload.WithObject("savingsOpportunity", m_savingsOpportunity.Jsonize());
 
+  }
+
+  if(m_migrationEffortHasBeenSet)
+  {
+   payload.WithString("migrationEffort", MigrationEffortMapper::GetNameForMigrationEffort(m_migrationEffort));
   }
 
   return payload;

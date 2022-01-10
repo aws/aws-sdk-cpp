@@ -104,37 +104,37 @@ namespace Model
 
     /**
      * <p>The language code of the vocabulary entries. For a list of languages and
-     * their corresponding language codes, see <a>transcribe-whatis</a>.</p>
+     * their corresponding language codes, see <a>table-language-matrix</a>.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
      * <p>The language code of the vocabulary entries. For a list of languages and
-     * their corresponding language codes, see <a>transcribe-whatis</a>.</p>
+     * their corresponding language codes, see <a>table-language-matrix</a>.</p>
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
      * <p>The language code of the vocabulary entries. For a list of languages and
-     * their corresponding language codes, see <a>transcribe-whatis</a>.</p>
+     * their corresponding language codes, see <a>table-language-matrix</a>.</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
      * <p>The language code of the vocabulary entries. For a list of languages and
-     * their corresponding language codes, see <a>transcribe-whatis</a>.</p>
+     * their corresponding language codes, see <a>table-language-matrix</a>.</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
      * <p>The language code of the vocabulary entries. For a list of languages and
-     * their corresponding language codes, see <a>transcribe-whatis</a>.</p>
+     * their corresponding language codes, see <a>table-language-matrix</a>.</p>
      */
     inline CreateVocabularyRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
      * <p>The language code of the vocabulary entries. For a list of languages and
-     * their corresponding language codes, see <a>transcribe-whatis</a>.</p>
+     * their corresponding language codes, see <a>table-language-matrix</a>.</p>
      */
     inline CreateVocabularyRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 
@@ -188,12 +188,15 @@ namespace Model
     /**
      * <p>The S3 location of the text file that contains the definition of the custom
      * vocabulary. The URI must be in the same region as the API endpoint that you are
-     * calling. The general form is:</p> <p>For more information about S3 object names,
-     * see <a
+     * calling. The general form is:</p> <p> <code>https://s3.&lt;Amazon Web
+     * Services-region&gt;.amazonaws.com/&lt;AWSDOC-EXAMPLE-BUCKET&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
+     * </code> </p> <p>For example:</p> <p>
+     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
+     * </p> <p>For more information about S3 object names, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom
      * vocabularies</a>.</p>
      */
     inline const Aws::String& GetVocabularyFileUri() const{ return m_vocabularyFileUri; }
@@ -201,12 +204,15 @@ namespace Model
     /**
      * <p>The S3 location of the text file that contains the definition of the custom
      * vocabulary. The URI must be in the same region as the API endpoint that you are
-     * calling. The general form is:</p> <p>For more information about S3 object names,
-     * see <a
+     * calling. The general form is:</p> <p> <code>https://s3.&lt;Amazon Web
+     * Services-region&gt;.amazonaws.com/&lt;AWSDOC-EXAMPLE-BUCKET&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
+     * </code> </p> <p>For example:</p> <p>
+     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
+     * </p> <p>For more information about S3 object names, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom
      * vocabularies</a>.</p>
      */
     inline bool VocabularyFileUriHasBeenSet() const { return m_vocabularyFileUriHasBeenSet; }
@@ -214,12 +220,15 @@ namespace Model
     /**
      * <p>The S3 location of the text file that contains the definition of the custom
      * vocabulary. The URI must be in the same region as the API endpoint that you are
-     * calling. The general form is:</p> <p>For more information about S3 object names,
-     * see <a
+     * calling. The general form is:</p> <p> <code>https://s3.&lt;Amazon Web
+     * Services-region&gt;.amazonaws.com/&lt;AWSDOC-EXAMPLE-BUCKET&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
+     * </code> </p> <p>For example:</p> <p>
+     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
+     * </p> <p>For more information about S3 object names, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom
      * vocabularies</a>.</p>
      */
     inline void SetVocabularyFileUri(const Aws::String& value) { m_vocabularyFileUriHasBeenSet = true; m_vocabularyFileUri = value; }
@@ -227,12 +236,15 @@ namespace Model
     /**
      * <p>The S3 location of the text file that contains the definition of the custom
      * vocabulary. The URI must be in the same region as the API endpoint that you are
-     * calling. The general form is:</p> <p>For more information about S3 object names,
-     * see <a
+     * calling. The general form is:</p> <p> <code>https://s3.&lt;Amazon Web
+     * Services-region&gt;.amazonaws.com/&lt;AWSDOC-EXAMPLE-BUCKET&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
+     * </code> </p> <p>For example:</p> <p>
+     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
+     * </p> <p>For more information about S3 object names, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom
      * vocabularies</a>.</p>
      */
     inline void SetVocabularyFileUri(Aws::String&& value) { m_vocabularyFileUriHasBeenSet = true; m_vocabularyFileUri = std::move(value); }
@@ -240,12 +252,15 @@ namespace Model
     /**
      * <p>The S3 location of the text file that contains the definition of the custom
      * vocabulary. The URI must be in the same region as the API endpoint that you are
-     * calling. The general form is:</p> <p>For more information about S3 object names,
-     * see <a
+     * calling. The general form is:</p> <p> <code>https://s3.&lt;Amazon Web
+     * Services-region&gt;.amazonaws.com/&lt;AWSDOC-EXAMPLE-BUCKET&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
+     * </code> </p> <p>For example:</p> <p>
+     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
+     * </p> <p>For more information about S3 object names, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom
      * vocabularies</a>.</p>
      */
     inline void SetVocabularyFileUri(const char* value) { m_vocabularyFileUriHasBeenSet = true; m_vocabularyFileUri.assign(value); }
@@ -253,12 +268,15 @@ namespace Model
     /**
      * <p>The S3 location of the text file that contains the definition of the custom
      * vocabulary. The URI must be in the same region as the API endpoint that you are
-     * calling. The general form is:</p> <p>For more information about S3 object names,
-     * see <a
+     * calling. The general form is:</p> <p> <code>https://s3.&lt;Amazon Web
+     * Services-region&gt;.amazonaws.com/&lt;AWSDOC-EXAMPLE-BUCKET&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
+     * </code> </p> <p>For example:</p> <p>
+     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
+     * </p> <p>For more information about S3 object names, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom
      * vocabularies</a>.</p>
      */
     inline CreateVocabularyRequest& WithVocabularyFileUri(const Aws::String& value) { SetVocabularyFileUri(value); return *this;}
@@ -266,12 +284,15 @@ namespace Model
     /**
      * <p>The S3 location of the text file that contains the definition of the custom
      * vocabulary. The URI must be in the same region as the API endpoint that you are
-     * calling. The general form is:</p> <p>For more information about S3 object names,
-     * see <a
+     * calling. The general form is:</p> <p> <code>https://s3.&lt;Amazon Web
+     * Services-region&gt;.amazonaws.com/&lt;AWSDOC-EXAMPLE-BUCKET&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
+     * </code> </p> <p>For example:</p> <p>
+     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
+     * </p> <p>For more information about S3 object names, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom
      * vocabularies</a>.</p>
      */
     inline CreateVocabularyRequest& WithVocabularyFileUri(Aws::String&& value) { SetVocabularyFileUri(std::move(value)); return *this;}
@@ -279,12 +300,15 @@ namespace Model
     /**
      * <p>The S3 location of the text file that contains the definition of the custom
      * vocabulary. The URI must be in the same region as the API endpoint that you are
-     * calling. The general form is:</p> <p>For more information about S3 object names,
-     * see <a
+     * calling. The general form is:</p> <p> <code>https://s3.&lt;Amazon Web
+     * Services-region&gt;.amazonaws.com/&lt;AWSDOC-EXAMPLE-BUCKET&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
+     * </code> </p> <p>For example:</p> <p>
+     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
+     * </p> <p>For more information about S3 object names, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom
      * vocabularies</a>.</p>
      */
     inline CreateVocabularyRequest& WithVocabularyFileUri(const char* value) { SetVocabularyFileUri(value); return *this;}

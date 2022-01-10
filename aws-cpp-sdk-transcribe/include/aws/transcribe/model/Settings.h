@@ -164,7 +164,7 @@ namespace Model
 
     /**
      * <p>Instructs Amazon Transcribe to process each audio channel separately and then
-     * merge the transcription output of each channel into a single transcription. </p>
+     * merge the transcription output of each channel into a single transcription.</p>
      * <p>Amazon Transcribe also produces a transcription of each item detected on an
      * audio channel, including the start time and end time of the item and alternative
      * transcriptions of the item including the confidence that Amazon Transcribe has
@@ -176,7 +176,7 @@ namespace Model
 
     /**
      * <p>Instructs Amazon Transcribe to process each audio channel separately and then
-     * merge the transcription output of each channel into a single transcription. </p>
+     * merge the transcription output of each channel into a single transcription.</p>
      * <p>Amazon Transcribe also produces a transcription of each item detected on an
      * audio channel, including the start time and end time of the item and alternative
      * transcriptions of the item including the confidence that Amazon Transcribe has
@@ -188,7 +188,7 @@ namespace Model
 
     /**
      * <p>Instructs Amazon Transcribe to process each audio channel separately and then
-     * merge the transcription output of each channel into a single transcription. </p>
+     * merge the transcription output of each channel into a single transcription.</p>
      * <p>Amazon Transcribe also produces a transcription of each item detected on an
      * audio channel, including the start time and end time of the item and alternative
      * transcriptions of the item including the confidence that Amazon Transcribe has
@@ -200,7 +200,7 @@ namespace Model
 
     /**
      * <p>Instructs Amazon Transcribe to process each audio channel separately and then
-     * merge the transcription output of each channel into a single transcription. </p>
+     * merge the transcription output of each channel into a single transcription.</p>
      * <p>Amazon Transcribe also produces a transcription of each item detected on an
      * audio channel, including the start time and end time of the item and alternative
      * transcriptions of the item including the confidence that Amazon Transcribe has

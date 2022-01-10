@@ -81,7 +81,7 @@ namespace Model
      * <p>To create a category, you must specify between 1 and 20 rules. For each rule,
      * you specify a filter to be applied to the attributes of the call. For example,
      * you can specify a sentiment filter to detect if the customer's sentiment was
-     * negative or neutral. </p>
+     * negative or neutral.</p>
      */
     inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
 
@@ -89,7 +89,7 @@ namespace Model
      * <p>To create a category, you must specify between 1 and 20 rules. For each rule,
      * you specify a filter to be applied to the attributes of the call. For example,
      * you can specify a sentiment filter to detect if the customer's sentiment was
-     * negative or neutral. </p>
+     * negative or neutral.</p>
      */
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
 
@@ -97,7 +97,7 @@ namespace Model
      * <p>To create a category, you must specify between 1 and 20 rules. For each rule,
      * you specify a filter to be applied to the attributes of the call. For example,
      * you can specify a sentiment filter to detect if the customer's sentiment was
-     * negative or neutral. </p>
+     * negative or neutral.</p>
      */
     inline void SetRules(const Aws::Vector<Rule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
 
@@ -105,7 +105,7 @@ namespace Model
      * <p>To create a category, you must specify between 1 and 20 rules. For each rule,
      * you specify a filter to be applied to the attributes of the call. For example,
      * you can specify a sentiment filter to detect if the customer's sentiment was
-     * negative or neutral. </p>
+     * negative or neutral.</p>
      */
     inline void SetRules(Aws::Vector<Rule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
 
@@ -113,7 +113,7 @@ namespace Model
      * <p>To create a category, you must specify between 1 and 20 rules. For each rule,
      * you specify a filter to be applied to the attributes of the call. For example,
      * you can specify a sentiment filter to detect if the customer's sentiment was
-     * negative or neutral. </p>
+     * negative or neutral.</p>
      */
     inline CreateCallAnalyticsCategoryRequest& WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
 
@@ -121,7 +121,7 @@ namespace Model
      * <p>To create a category, you must specify between 1 and 20 rules. For each rule,
      * you specify a filter to be applied to the attributes of the call. For example,
      * you can specify a sentiment filter to detect if the customer's sentiment was
-     * negative or neutral. </p>
+     * negative or neutral.</p>
      */
     inline CreateCallAnalyticsCategoryRequest& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
 
@@ -129,7 +129,7 @@ namespace Model
      * <p>To create a category, you must specify between 1 and 20 rules. For each rule,
      * you specify a filter to be applied to the attributes of the call. For example,
      * you can specify a sentiment filter to detect if the customer's sentiment was
-     * negative or neutral. </p>
+     * negative or neutral.</p>
      */
     inline CreateCallAnalyticsCategoryRequest& AddRules(const Rule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
 
@@ -137,7 +137,7 @@ namespace Model
      * <p>To create a category, you must specify between 1 and 20 rules. For each rule,
      * you specify a filter to be applied to the attributes of the call. For example,
      * you can specify a sentiment filter to detect if the customer's sentiment was
-     * negative or neutral. </p>
+     * negative or neutral.</p>
      */
     inline CreateCallAnalyticsCategoryRequest& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 

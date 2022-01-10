@@ -17,7 +17,9 @@ PutRecommendationPreferencesRequest::PutRecommendationPreferencesRequest() :
     m_resourceTypeHasBeenSet(false),
     m_scopeHasBeenSet(false),
     m_enhancedInfrastructureMetrics(EnhancedInfrastructureMetrics::NOT_SET),
-    m_enhancedInfrastructureMetricsHasBeenSet(false)
+    m_enhancedInfrastructureMetricsHasBeenSet(false),
+    m_inferredWorkloadTypes(InferredWorkloadTypesPreference::NOT_SET),
+    m_inferredWorkloadTypesHasBeenSet(false)
 {
 }
 
@@ -39,6 +41,11 @@ Aws::String PutRecommendationPreferencesRequest::SerializePayload() const
   if(m_enhancedInfrastructureMetricsHasBeenSet)
   {
    payload.WithString("enhancedInfrastructureMetrics", EnhancedInfrastructureMetricsMapper::GetNameForEnhancedInfrastructureMetrics(m_enhancedInfrastructureMetrics));
+  }
+
+  if(m_inferredWorkloadTypesHasBeenSet)
+  {
+   payload.WithString("inferredWorkloadTypes", InferredWorkloadTypesPreferenceMapper::GetNameForInferredWorkloadTypesPreference(m_inferredWorkloadTypes));
   }
 
   return payload.View().WriteReadable();

@@ -7,6 +7,7 @@
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/compute-optimizer/model/EnhancedInfrastructureMetrics.h>
+#include <aws/compute-optimizer/model/InferredWorkloadTypesPreference.h>
 #include <aws/compute-optimizer/model/CpuVendorArchitecture.h>
 #include <utility>
 
@@ -173,7 +174,10 @@ namespace Model
      * <p>Describes the activation status of the enhanced infrastructure metrics
      * preference.</p> <p>A status of <code>Active</code> confirms that the preference
      * is applied in the latest recommendation refresh, and a status of
-     * <code>Inactive</code> confirms that it's not yet applied.</p>
+     * <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced
+     * infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline const EnhancedInfrastructureMetrics& GetEnhancedInfrastructureMetrics() const{ return m_enhancedInfrastructureMetrics; }
 
@@ -181,7 +185,10 @@ namespace Model
      * <p>Describes the activation status of the enhanced infrastructure metrics
      * preference.</p> <p>A status of <code>Active</code> confirms that the preference
      * is applied in the latest recommendation refresh, and a status of
-     * <code>Inactive</code> confirms that it's not yet applied.</p>
+     * <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced
+     * infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline bool EnhancedInfrastructureMetricsHasBeenSet() const { return m_enhancedInfrastructureMetricsHasBeenSet; }
 
@@ -189,7 +196,10 @@ namespace Model
      * <p>Describes the activation status of the enhanced infrastructure metrics
      * preference.</p> <p>A status of <code>Active</code> confirms that the preference
      * is applied in the latest recommendation refresh, and a status of
-     * <code>Inactive</code> confirms that it's not yet applied.</p>
+     * <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced
+     * infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline void SetEnhancedInfrastructureMetrics(const EnhancedInfrastructureMetrics& value) { m_enhancedInfrastructureMetricsHasBeenSet = true; m_enhancedInfrastructureMetrics = value; }
 
@@ -197,7 +207,10 @@ namespace Model
      * <p>Describes the activation status of the enhanced infrastructure metrics
      * preference.</p> <p>A status of <code>Active</code> confirms that the preference
      * is applied in the latest recommendation refresh, and a status of
-     * <code>Inactive</code> confirms that it's not yet applied.</p>
+     * <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced
+     * infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline void SetEnhancedInfrastructureMetrics(EnhancedInfrastructureMetrics&& value) { m_enhancedInfrastructureMetricsHasBeenSet = true; m_enhancedInfrastructureMetrics = std::move(value); }
 
@@ -205,7 +218,10 @@ namespace Model
      * <p>Describes the activation status of the enhanced infrastructure metrics
      * preference.</p> <p>A status of <code>Active</code> confirms that the preference
      * is applied in the latest recommendation refresh, and a status of
-     * <code>Inactive</code> confirms that it's not yet applied.</p>
+     * <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced
+     * infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline EffectiveRecommendationPreferences& WithEnhancedInfrastructureMetrics(const EnhancedInfrastructureMetrics& value) { SetEnhancedInfrastructureMetrics(value); return *this;}
 
@@ -213,9 +229,61 @@ namespace Model
      * <p>Describes the activation status of the enhanced infrastructure metrics
      * preference.</p> <p>A status of <code>Active</code> confirms that the preference
      * is applied in the latest recommendation refresh, and a status of
-     * <code>Inactive</code> confirms that it's not yet applied.</p>
+     * <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced
+     * infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline EffectiveRecommendationPreferences& WithEnhancedInfrastructureMetrics(EnhancedInfrastructureMetrics&& value) { SetEnhancedInfrastructureMetrics(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Describes the activation status of the inferred workload types
+     * preference.</p> <p>A status of <code>Active</code> confirms that the preference
+     * is applied in the latest recommendation refresh. A status of
+     * <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+     */
+    inline const InferredWorkloadTypesPreference& GetInferredWorkloadTypes() const{ return m_inferredWorkloadTypes; }
+
+    /**
+     * <p>Describes the activation status of the inferred workload types
+     * preference.</p> <p>A status of <code>Active</code> confirms that the preference
+     * is applied in the latest recommendation refresh. A status of
+     * <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+     */
+    inline bool InferredWorkloadTypesHasBeenSet() const { return m_inferredWorkloadTypesHasBeenSet; }
+
+    /**
+     * <p>Describes the activation status of the inferred workload types
+     * preference.</p> <p>A status of <code>Active</code> confirms that the preference
+     * is applied in the latest recommendation refresh. A status of
+     * <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+     */
+    inline void SetInferredWorkloadTypes(const InferredWorkloadTypesPreference& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes = value; }
+
+    /**
+     * <p>Describes the activation status of the inferred workload types
+     * preference.</p> <p>A status of <code>Active</code> confirms that the preference
+     * is applied in the latest recommendation refresh. A status of
+     * <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+     */
+    inline void SetInferredWorkloadTypes(InferredWorkloadTypesPreference&& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes = std::move(value); }
+
+    /**
+     * <p>Describes the activation status of the inferred workload types
+     * preference.</p> <p>A status of <code>Active</code> confirms that the preference
+     * is applied in the latest recommendation refresh. A status of
+     * <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+     */
+    inline EffectiveRecommendationPreferences& WithInferredWorkloadTypes(const InferredWorkloadTypesPreference& value) { SetInferredWorkloadTypes(value); return *this;}
+
+    /**
+     * <p>Describes the activation status of the inferred workload types
+     * preference.</p> <p>A status of <code>Active</code> confirms that the preference
+     * is applied in the latest recommendation refresh. A status of
+     * <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+     */
+    inline EffectiveRecommendationPreferences& WithInferredWorkloadTypes(InferredWorkloadTypesPreference&& value) { SetInferredWorkloadTypes(std::move(value)); return *this;}
 
   private:
 
@@ -224,6 +292,9 @@ namespace Model
 
     EnhancedInfrastructureMetrics m_enhancedInfrastructureMetrics;
     bool m_enhancedInfrastructureMetricsHasBeenSet;
+
+    InferredWorkloadTypesPreference m_inferredWorkloadTypes;
+    bool m_inferredWorkloadTypesHasBeenSet;
   };
 
 } // namespace Model

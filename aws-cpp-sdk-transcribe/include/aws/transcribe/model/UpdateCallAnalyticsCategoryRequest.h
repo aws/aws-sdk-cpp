@@ -95,49 +95,49 @@ namespace Model
 
     /**
      * <p>The rules used for the updated analytics category. The rules that you provide
-     * in this field replace the ones that are currently being used. </p>
+     * in this field replace the ones that are currently being used.</p>
      */
     inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
 
     /**
      * <p>The rules used for the updated analytics category. The rules that you provide
-     * in this field replace the ones that are currently being used. </p>
+     * in this field replace the ones that are currently being used.</p>
      */
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
 
     /**
      * <p>The rules used for the updated analytics category. The rules that you provide
-     * in this field replace the ones that are currently being used. </p>
+     * in this field replace the ones that are currently being used.</p>
      */
     inline void SetRules(const Aws::Vector<Rule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
 
     /**
      * <p>The rules used for the updated analytics category. The rules that you provide
-     * in this field replace the ones that are currently being used. </p>
+     * in this field replace the ones that are currently being used.</p>
      */
     inline void SetRules(Aws::Vector<Rule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
 
     /**
      * <p>The rules used for the updated analytics category. The rules that you provide
-     * in this field replace the ones that are currently being used. </p>
+     * in this field replace the ones that are currently being used.</p>
      */
     inline UpdateCallAnalyticsCategoryRequest& WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
 
     /**
      * <p>The rules used for the updated analytics category. The rules that you provide
-     * in this field replace the ones that are currently being used. </p>
+     * in this field replace the ones that are currently being used.</p>
      */
     inline UpdateCallAnalyticsCategoryRequest& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
 
     /**
      * <p>The rules used for the updated analytics category. The rules that you provide
-     * in this field replace the ones that are currently being used. </p>
+     * in this field replace the ones that are currently being used.</p>
      */
     inline UpdateCallAnalyticsCategoryRequest& AddRules(const Rule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
 
     /**
      * <p>The rules used for the updated analytics category. The rules that you provide
-     * in this field replace the ones that are currently being used. </p>
+     * in this field replace the ones that are currently being used.</p>
      */
     inline UpdateCallAnalyticsCategoryRequest& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 

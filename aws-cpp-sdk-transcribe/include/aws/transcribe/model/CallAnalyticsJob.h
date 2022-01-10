@@ -126,8 +126,8 @@ namespace Model
      * automatically identify the language. To improve the accuracy of language
      * identification, you can provide an array containing the possible language codes
      * for the language spoken in your audio. Refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported
-     * languages and language-specific features</a> for additional information.</p>
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+     * languages</a> for additional information.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
@@ -138,8 +138,8 @@ namespace Model
      * automatically identify the language. To improve the accuracy of language
      * identification, you can provide an array containing the possible language codes
      * for the language spoken in your audio. Refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported
-     * languages and language-specific features</a> for additional information.</p>
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+     * languages</a> for additional information.</p>
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
@@ -150,8 +150,8 @@ namespace Model
      * automatically identify the language. To improve the accuracy of language
      * identification, you can provide an array containing the possible language codes
      * for the language spoken in your audio. Refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported
-     * languages and language-specific features</a> for additional information.</p>
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+     * languages</a> for additional information.</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
@@ -162,8 +162,8 @@ namespace Model
      * automatically identify the language. To improve the accuracy of language
      * identification, you can provide an array containing the possible language codes
      * for the language spoken in your audio. Refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported
-     * languages and language-specific features</a> for additional information.</p>
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+     * languages</a> for additional information.</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
@@ -174,8 +174,8 @@ namespace Model
      * automatically identify the language. To improve the accuracy of language
      * identification, you can provide an array containing the possible language codes
      * for the language spoken in your audio. Refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported
-     * languages and language-specific features</a> for additional information.</p>
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+     * languages</a> for additional information.</p>
      */
     inline CallAnalyticsJob& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
@@ -186,8 +186,8 @@ namespace Model
      * automatically identify the language. To improve the accuracy of language
      * identification, you can provide an array containing the possible language codes
      * for the language spoken in your audio. Refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported
-     * languages and language-specific features</a> for additional information.</p>
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+     * languages</a> for additional information.</p>
      */
     inline CallAnalyticsJob& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 
@@ -215,37 +215,37 @@ namespace Model
 
     /**
      * <p>The format of the input audio file. Note: for call analytics jobs, only the
-     * following media formats are supported: MP3, MP4, WAV, FLAC, OGG, and WebM. </p>
+     * following media formats are supported: MP3, MP4, WAV, FLAC, OGG, and WebM.</p>
      */
     inline const MediaFormat& GetMediaFormat() const{ return m_mediaFormat; }
 
     /**
      * <p>The format of the input audio file. Note: for call analytics jobs, only the
-     * following media formats are supported: MP3, MP4, WAV, FLAC, OGG, and WebM. </p>
+     * following media formats are supported: MP3, MP4, WAV, FLAC, OGG, and WebM.</p>
      */
     inline bool MediaFormatHasBeenSet() const { return m_mediaFormatHasBeenSet; }
 
     /**
      * <p>The format of the input audio file. Note: for call analytics jobs, only the
-     * following media formats are supported: MP3, MP4, WAV, FLAC, OGG, and WebM. </p>
+     * following media formats are supported: MP3, MP4, WAV, FLAC, OGG, and WebM.</p>
      */
     inline void SetMediaFormat(const MediaFormat& value) { m_mediaFormatHasBeenSet = true; m_mediaFormat = value; }
 
     /**
      * <p>The format of the input audio file. Note: for call analytics jobs, only the
-     * following media formats are supported: MP3, MP4, WAV, FLAC, OGG, and WebM. </p>
+     * following media formats are supported: MP3, MP4, WAV, FLAC, OGG, and WebM.</p>
      */
     inline void SetMediaFormat(MediaFormat&& value) { m_mediaFormatHasBeenSet = true; m_mediaFormat = std::move(value); }
 
     /**
      * <p>The format of the input audio file. Note: for call analytics jobs, only the
-     * following media formats are supported: MP3, MP4, WAV, FLAC, OGG, and WebM. </p>
+     * following media formats are supported: MP3, MP4, WAV, FLAC, OGG, and WebM.</p>
      */
     inline CallAnalyticsJob& WithMediaFormat(const MediaFormat& value) { SetMediaFormat(value); return *this;}
 
     /**
      * <p>The format of the input audio file. Note: for call analytics jobs, only the
-     * following media formats are supported: MP3, MP4, WAV, FLAC, OGG, and WebM. </p>
+     * following media formats are supported: MP3, MP4, WAV, FLAC, OGG, and WebM.</p>
      */
     inline CallAnalyticsJob& WithMediaFormat(MediaFormat&& value) { SetMediaFormat(std::move(value)); return *this;}
 
@@ -683,7 +683,7 @@ namespace Model
      * <p>A value between zero and one that Amazon Transcribe assigned to the language
      * that it identified in the source audio. This value appears only when you don't
      * provide a single language code. Larger values indicate that Amazon Transcribe
-     * has higher confidence in the language that it identified</p>
+     * has higher confidence in the language that it identified.</p>
      */
     inline double GetIdentifiedLanguageScore() const{ return m_identifiedLanguageScore; }
 
@@ -691,7 +691,7 @@ namespace Model
      * <p>A value between zero and one that Amazon Transcribe assigned to the language
      * that it identified in the source audio. This value appears only when you don't
      * provide a single language code. Larger values indicate that Amazon Transcribe
-     * has higher confidence in the language that it identified</p>
+     * has higher confidence in the language that it identified.</p>
      */
     inline bool IdentifiedLanguageScoreHasBeenSet() const { return m_identifiedLanguageScoreHasBeenSet; }
 
@@ -699,7 +699,7 @@ namespace Model
      * <p>A value between zero and one that Amazon Transcribe assigned to the language
      * that it identified in the source audio. This value appears only when you don't
      * provide a single language code. Larger values indicate that Amazon Transcribe
-     * has higher confidence in the language that it identified</p>
+     * has higher confidence in the language that it identified.</p>
      */
     inline void SetIdentifiedLanguageScore(double value) { m_identifiedLanguageScoreHasBeenSet = true; m_identifiedLanguageScore = value; }
 
@@ -707,7 +707,7 @@ namespace Model
      * <p>A value between zero and one that Amazon Transcribe assigned to the language
      * that it identified in the source audio. This value appears only when you don't
      * provide a single language code. Larger values indicate that Amazon Transcribe
-     * has higher confidence in the language that it identified</p>
+     * has higher confidence in the language that it identified.</p>
      */
     inline CallAnalyticsJob& WithIdentifiedLanguageScore(double value) { SetIdentifiedLanguageScore(value); return *this;}
 

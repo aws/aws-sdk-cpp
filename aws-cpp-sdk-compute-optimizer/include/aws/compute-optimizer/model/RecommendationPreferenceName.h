@@ -16,7 +16,8 @@ namespace Model
   enum class RecommendationPreferenceName
   {
     NOT_SET,
-    EnhancedInfrastructureMetrics
+    EnhancedInfrastructureMetrics,
+    InferredWorkloadTypes
   };
 
 namespace RecommendationPreferenceNameMapper

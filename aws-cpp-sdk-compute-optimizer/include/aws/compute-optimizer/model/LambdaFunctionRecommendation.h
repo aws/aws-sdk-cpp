@@ -740,42 +740,42 @@ namespace Model
     /**
      * <p>The risk of the current Lambda function not meeting the performance needs of
      * its workloads. The higher the risk, the more likely the current Lambda function
-     * configuration is underperforming in its workload.</p>
+     * requires more memory.</p>
      */
     inline const CurrentPerformanceRisk& GetCurrentPerformanceRisk() const{ return m_currentPerformanceRisk; }
 
     /**
      * <p>The risk of the current Lambda function not meeting the performance needs of
      * its workloads. The higher the risk, the more likely the current Lambda function
-     * configuration is underperforming in its workload.</p>
+     * requires more memory.</p>
      */
     inline bool CurrentPerformanceRiskHasBeenSet() const { return m_currentPerformanceRiskHasBeenSet; }
 
     /**
      * <p>The risk of the current Lambda function not meeting the performance needs of
      * its workloads. The higher the risk, the more likely the current Lambda function
-     * configuration is underperforming in its workload.</p>
+     * requires more memory.</p>
      */
     inline void SetCurrentPerformanceRisk(const CurrentPerformanceRisk& value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = value; }
 
     /**
      * <p>The risk of the current Lambda function not meeting the performance needs of
      * its workloads. The higher the risk, the more likely the current Lambda function
-     * configuration is underperforming in its workload.</p>
+     * requires more memory.</p>
      */
     inline void SetCurrentPerformanceRisk(CurrentPerformanceRisk&& value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = std::move(value); }
 
     /**
      * <p>The risk of the current Lambda function not meeting the performance needs of
      * its workloads. The higher the risk, the more likely the current Lambda function
-     * configuration is underperforming in its workload.</p>
+     * requires more memory.</p>
      */
     inline LambdaFunctionRecommendation& WithCurrentPerformanceRisk(const CurrentPerformanceRisk& value) { SetCurrentPerformanceRisk(value); return *this;}
 
     /**
      * <p>The risk of the current Lambda function not meeting the performance needs of
      * its workloads. The higher the risk, the more likely the current Lambda function
-     * configuration is underperforming in its workload.</p>
+     * requires more memory.</p>
      */
     inline LambdaFunctionRecommendation& WithCurrentPerformanceRisk(CurrentPerformanceRisk&& value) { SetCurrentPerformanceRisk(std::move(value)); return *this;}
 

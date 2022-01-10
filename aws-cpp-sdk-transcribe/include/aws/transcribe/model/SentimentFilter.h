@@ -201,25 +201,25 @@ namespace Model
 
     /**
      * <p>Set to <code>TRUE</code> to look for sentiments that weren't specified in the
-     * request. </p>
+     * request.</p>
      */
     inline bool GetNegate() const{ return m_negate; }
 
     /**
      * <p>Set to <code>TRUE</code> to look for sentiments that weren't specified in the
-     * request. </p>
+     * request.</p>
      */
     inline bool NegateHasBeenSet() const { return m_negateHasBeenSet; }
 
     /**
      * <p>Set to <code>TRUE</code> to look for sentiments that weren't specified in the
-     * request. </p>
+     * request.</p>
      */
     inline void SetNegate(bool value) { m_negateHasBeenSet = true; m_negate = value; }
 
     /**
      * <p>Set to <code>TRUE</code> to look for sentiments that weren't specified in the
-     * request. </p>
+     * request.</p>
      */
     inline SentimentFilter& WithNegate(bool value) { SetNegate(value); return *this;}
 

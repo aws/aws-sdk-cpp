@@ -119,7 +119,9 @@ namespace Model
      * CheckExpression starts with a column reference, then ColumnSelectors in the rule
      * should be null. If ColumnSelectors has been defined, then there should be no
      * columnn reference in the left side of a condition, for example, <code>is_between
-     * :val1 and :val2</code>.</p>
+     * :val1 and :val2</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available
+     * checks</a> </p>
      */
     inline const Aws::String& GetCheckExpression() const{ return m_checkExpression; }
 
@@ -134,7 +136,9 @@ namespace Model
      * CheckExpression starts with a column reference, then ColumnSelectors in the rule
      * should be null. If ColumnSelectors has been defined, then there should be no
      * columnn reference in the left side of a condition, for example, <code>is_between
-     * :val1 and :val2</code>.</p>
+     * :val1 and :val2</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available
+     * checks</a> </p>
      */
     inline bool CheckExpressionHasBeenSet() const { return m_checkExpressionHasBeenSet; }
 
@@ -149,7 +153,9 @@ namespace Model
      * CheckExpression starts with a column reference, then ColumnSelectors in the rule
      * should be null. If ColumnSelectors has been defined, then there should be no
      * columnn reference in the left side of a condition, for example, <code>is_between
-     * :val1 and :val2</code>.</p>
+     * :val1 and :val2</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available
+     * checks</a> </p>
      */
     inline void SetCheckExpression(const Aws::String& value) { m_checkExpressionHasBeenSet = true; m_checkExpression = value; }
 
@@ -164,7 +170,9 @@ namespace Model
      * CheckExpression starts with a column reference, then ColumnSelectors in the rule
      * should be null. If ColumnSelectors has been defined, then there should be no
      * columnn reference in the left side of a condition, for example, <code>is_between
-     * :val1 and :val2</code>.</p>
+     * :val1 and :val2</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available
+     * checks</a> </p>
      */
     inline void SetCheckExpression(Aws::String&& value) { m_checkExpressionHasBeenSet = true; m_checkExpression = std::move(value); }
 
@@ -179,7 +187,9 @@ namespace Model
      * CheckExpression starts with a column reference, then ColumnSelectors in the rule
      * should be null. If ColumnSelectors has been defined, then there should be no
      * columnn reference in the left side of a condition, for example, <code>is_between
-     * :val1 and :val2</code>.</p>
+     * :val1 and :val2</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available
+     * checks</a> </p>
      */
     inline void SetCheckExpression(const char* value) { m_checkExpressionHasBeenSet = true; m_checkExpression.assign(value); }
 
@@ -194,7 +204,9 @@ namespace Model
      * CheckExpression starts with a column reference, then ColumnSelectors in the rule
      * should be null. If ColumnSelectors has been defined, then there should be no
      * columnn reference in the left side of a condition, for example, <code>is_between
-     * :val1 and :val2</code>.</p>
+     * :val1 and :val2</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available
+     * checks</a> </p>
      */
     inline Rule& WithCheckExpression(const Aws::String& value) { SetCheckExpression(value); return *this;}
 
@@ -209,7 +221,9 @@ namespace Model
      * CheckExpression starts with a column reference, then ColumnSelectors in the rule
      * should be null. If ColumnSelectors has been defined, then there should be no
      * columnn reference in the left side of a condition, for example, <code>is_between
-     * :val1 and :val2</code>.</p>
+     * :val1 and :val2</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available
+     * checks</a> </p>
      */
     inline Rule& WithCheckExpression(Aws::String&& value) { SetCheckExpression(std::move(value)); return *this;}
 
@@ -224,7 +238,9 @@ namespace Model
      * CheckExpression starts with a column reference, then ColumnSelectors in the rule
      * should be null. If ColumnSelectors has been defined, then there should be no
      * columnn reference in the left side of a condition, for example, <code>is_between
-     * :val1 and :val2</code>.</p>
+     * :val1 and :val2</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available
+     * checks</a> </p>
      */
     inline Rule& WithCheckExpression(const char* value) { SetCheckExpression(value); return *this;}
 

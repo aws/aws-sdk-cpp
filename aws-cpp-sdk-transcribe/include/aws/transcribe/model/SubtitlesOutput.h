@@ -42,49 +42,49 @@ namespace Model
 
     /**
      * <p>Specify the output format for your subtitle file; if you select both SRT and
-     * VTT formats, two output files are genereated.</p>
+     * VTT formats, two output files are generated.</p>
      */
     inline const Aws::Vector<SubtitleFormat>& GetFormats() const{ return m_formats; }
 
     /**
      * <p>Specify the output format for your subtitle file; if you select both SRT and
-     * VTT formats, two output files are genereated.</p>
+     * VTT formats, two output files are generated.</p>
      */
     inline bool FormatsHasBeenSet() const { return m_formatsHasBeenSet; }
 
     /**
      * <p>Specify the output format for your subtitle file; if you select both SRT and
-     * VTT formats, two output files are genereated.</p>
+     * VTT formats, two output files are generated.</p>
      */
     inline void SetFormats(const Aws::Vector<SubtitleFormat>& value) { m_formatsHasBeenSet = true; m_formats = value; }
 
     /**
      * <p>Specify the output format for your subtitle file; if you select both SRT and
-     * VTT formats, two output files are genereated.</p>
+     * VTT formats, two output files are generated.</p>
      */
     inline void SetFormats(Aws::Vector<SubtitleFormat>&& value) { m_formatsHasBeenSet = true; m_formats = std::move(value); }
 
     /**
      * <p>Specify the output format for your subtitle file; if you select both SRT and
-     * VTT formats, two output files are genereated.</p>
+     * VTT formats, two output files are generated.</p>
      */
     inline SubtitlesOutput& WithFormats(const Aws::Vector<SubtitleFormat>& value) { SetFormats(value); return *this;}
 
     /**
      * <p>Specify the output format for your subtitle file; if you select both SRT and
-     * VTT formats, two output files are genereated.</p>
+     * VTT formats, two output files are generated.</p>
      */
     inline SubtitlesOutput& WithFormats(Aws::Vector<SubtitleFormat>&& value) { SetFormats(std::move(value)); return *this;}
 
     /**
      * <p>Specify the output format for your subtitle file; if you select both SRT and
-     * VTT formats, two output files are genereated.</p>
+     * VTT formats, two output files are generated.</p>
      */
     inline SubtitlesOutput& AddFormats(const SubtitleFormat& value) { m_formatsHasBeenSet = true; m_formats.push_back(value); return *this; }
 
     /**
      * <p>Specify the output format for your subtitle file; if you select both SRT and
-     * VTT formats, two output files are genereated.</p>
+     * VTT formats, two output files are generated.</p>
      */
     inline SubtitlesOutput& AddFormats(SubtitleFormat&& value) { m_formatsHasBeenSet = true; m_formats.push_back(std::move(value)); return *this; }
 

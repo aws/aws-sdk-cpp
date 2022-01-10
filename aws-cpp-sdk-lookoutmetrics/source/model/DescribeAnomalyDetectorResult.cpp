@@ -17,12 +17,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeAnomalyDetectorResult::DescribeAnomalyDetectorResult() : 
-    m_status(AnomalyDetectorStatus::NOT_SET)
+    m_status(AnomalyDetectorStatus::NOT_SET),
+    m_failureType(AnomalyDetectorFailureType::NOT_SET)
 {
 }
 
 DescribeAnomalyDetectorResult::DescribeAnomalyDetectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(AnomalyDetectorStatus::NOT_SET)
+    m_status(AnomalyDetectorStatus::NOT_SET),
+    m_failureType(AnomalyDetectorFailureType::NOT_SET)
 {
   *this = result;
 }
@@ -81,6 +83,12 @@ DescribeAnomalyDetectorResult& DescribeAnomalyDetectorResult::operator =(const A
   if(jsonValue.ValueExists("KmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
+
+  }
+
+  if(jsonValue.ValueExists("FailureType"))
+  {
+    m_failureType = AnomalyDetectorFailureTypeMapper::GetAnomalyDetectorFailureTypeForName(jsonValue.GetString("FailureType"));
 
   }
 

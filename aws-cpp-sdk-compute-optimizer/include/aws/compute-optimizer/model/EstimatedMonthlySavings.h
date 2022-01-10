@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the estimated monthly savings amount possible for a given resource
-   * based on On-Demand instance pricing</p> <p>For more information, see <a
+   * <p>Describes the estimated monthly savings amount possible, based on On-Demand
+   * instance pricing, by adopting Compute Optimizer recommendations for a given
+   * resource.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/view-ec2-recommendations.html#ec2-savings-calculation">Estimated
    * monthly savings and savings opportunities</a> in the <i>Compute Optimizer User
    * Guide</i>.</p><p><h3>See Also:</h3>   <a

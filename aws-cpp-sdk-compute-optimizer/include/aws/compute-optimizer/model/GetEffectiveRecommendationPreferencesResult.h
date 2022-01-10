@@ -37,11 +37,15 @@ namespace Model
      * Considers all applicable preferences that you might have set at the resource,
      * account, and organization level.</p> <p>A status of <code>Active</code> confirms
      * that the preference is applied in the latest recommendation refresh, and a
-     * status of <code>Inactive</code> confirms that it's not yet applied.</p> <p>To
-     * validate whether the preference is applied to your last generated set of
-     * recommendations, review the <code>effectiveRecommendationPreferences</code>
-     * value in the response of the <a>GetAutoScalingGroupRecommendations</a> and
-     * <a>GetEC2InstanceRecommendations</a> actions.</p>
+     * status of <code>Inactive</code> confirms that it's not yet applied to
+     * recommendations.</p> <p>To validate whether the preference is applied to your
+     * last generated set of recommendations, review the
+     * <code>effectiveRecommendationPreferences</code> value in the response of the
+     * <a>GetAutoScalingGroupRecommendations</a> and
+     * <a>GetEC2InstanceRecommendations</a> actions.</p> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced
+     * infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline const EnhancedInfrastructureMetrics& GetEnhancedInfrastructureMetrics() const{ return m_enhancedInfrastructureMetrics; }
 
@@ -50,11 +54,15 @@ namespace Model
      * Considers all applicable preferences that you might have set at the resource,
      * account, and organization level.</p> <p>A status of <code>Active</code> confirms
      * that the preference is applied in the latest recommendation refresh, and a
-     * status of <code>Inactive</code> confirms that it's not yet applied.</p> <p>To
-     * validate whether the preference is applied to your last generated set of
-     * recommendations, review the <code>effectiveRecommendationPreferences</code>
-     * value in the response of the <a>GetAutoScalingGroupRecommendations</a> and
-     * <a>GetEC2InstanceRecommendations</a> actions.</p>
+     * status of <code>Inactive</code> confirms that it's not yet applied to
+     * recommendations.</p> <p>To validate whether the preference is applied to your
+     * last generated set of recommendations, review the
+     * <code>effectiveRecommendationPreferences</code> value in the response of the
+     * <a>GetAutoScalingGroupRecommendations</a> and
+     * <a>GetEC2InstanceRecommendations</a> actions.</p> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced
+     * infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline void SetEnhancedInfrastructureMetrics(const EnhancedInfrastructureMetrics& value) { m_enhancedInfrastructureMetrics = value; }
 
@@ -63,11 +71,15 @@ namespace Model
      * Considers all applicable preferences that you might have set at the resource,
      * account, and organization level.</p> <p>A status of <code>Active</code> confirms
      * that the preference is applied in the latest recommendation refresh, and a
-     * status of <code>Inactive</code> confirms that it's not yet applied.</p> <p>To
-     * validate whether the preference is applied to your last generated set of
-     * recommendations, review the <code>effectiveRecommendationPreferences</code>
-     * value in the response of the <a>GetAutoScalingGroupRecommendations</a> and
-     * <a>GetEC2InstanceRecommendations</a> actions.</p>
+     * status of <code>Inactive</code> confirms that it's not yet applied to
+     * recommendations.</p> <p>To validate whether the preference is applied to your
+     * last generated set of recommendations, review the
+     * <code>effectiveRecommendationPreferences</code> value in the response of the
+     * <a>GetAutoScalingGroupRecommendations</a> and
+     * <a>GetEC2InstanceRecommendations</a> actions.</p> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced
+     * infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline void SetEnhancedInfrastructureMetrics(EnhancedInfrastructureMetrics&& value) { m_enhancedInfrastructureMetrics = std::move(value); }
 
@@ -76,11 +88,15 @@ namespace Model
      * Considers all applicable preferences that you might have set at the resource,
      * account, and organization level.</p> <p>A status of <code>Active</code> confirms
      * that the preference is applied in the latest recommendation refresh, and a
-     * status of <code>Inactive</code> confirms that it's not yet applied.</p> <p>To
-     * validate whether the preference is applied to your last generated set of
-     * recommendations, review the <code>effectiveRecommendationPreferences</code>
-     * value in the response of the <a>GetAutoScalingGroupRecommendations</a> and
-     * <a>GetEC2InstanceRecommendations</a> actions.</p>
+     * status of <code>Inactive</code> confirms that it's not yet applied to
+     * recommendations.</p> <p>To validate whether the preference is applied to your
+     * last generated set of recommendations, review the
+     * <code>effectiveRecommendationPreferences</code> value in the response of the
+     * <a>GetAutoScalingGroupRecommendations</a> and
+     * <a>GetEC2InstanceRecommendations</a> actions.</p> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced
+     * infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline GetEffectiveRecommendationPreferencesResult& WithEnhancedInfrastructureMetrics(const EnhancedInfrastructureMetrics& value) { SetEnhancedInfrastructureMetrics(value); return *this;}
 
@@ -89,11 +105,15 @@ namespace Model
      * Considers all applicable preferences that you might have set at the resource,
      * account, and organization level.</p> <p>A status of <code>Active</code> confirms
      * that the preference is applied in the latest recommendation refresh, and a
-     * status of <code>Inactive</code> confirms that it's not yet applied.</p> <p>To
-     * validate whether the preference is applied to your last generated set of
-     * recommendations, review the <code>effectiveRecommendationPreferences</code>
-     * value in the response of the <a>GetAutoScalingGroupRecommendations</a> and
-     * <a>GetEC2InstanceRecommendations</a> actions.</p>
+     * status of <code>Inactive</code> confirms that it's not yet applied to
+     * recommendations.</p> <p>To validate whether the preference is applied to your
+     * last generated set of recommendations, review the
+     * <code>effectiveRecommendationPreferences</code> value in the response of the
+     * <a>GetAutoScalingGroupRecommendations</a> and
+     * <a>GetEC2InstanceRecommendations</a> actions.</p> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced
+     * infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
     inline GetEffectiveRecommendationPreferencesResult& WithEnhancedInfrastructureMetrics(EnhancedInfrastructureMetrics&& value) { SetEnhancedInfrastructureMetrics(std::move(value)); return *this;}
 

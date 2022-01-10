@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew
-   * can read input data, or write output from a job.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key)
+   * where DataBrew can read input data, or write output from a job.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/S3Location">AWS
    * API Reference</a></p>
    */
@@ -119,6 +120,47 @@ namespace Model
      */
     inline S3Location& WithKey(const char* value) { SetKey(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Web Services account ID of the bucket owner.</p>
+     */
+    inline const Aws::String& GetBucketOwner() const{ return m_bucketOwner; }
+
+    /**
+     * <p>The Amazon Web Services account ID of the bucket owner.</p>
+     */
+    inline bool BucketOwnerHasBeenSet() const { return m_bucketOwnerHasBeenSet; }
+
+    /**
+     * <p>The Amazon Web Services account ID of the bucket owner.</p>
+     */
+    inline void SetBucketOwner(const Aws::String& value) { m_bucketOwnerHasBeenSet = true; m_bucketOwner = value; }
+
+    /**
+     * <p>The Amazon Web Services account ID of the bucket owner.</p>
+     */
+    inline void SetBucketOwner(Aws::String&& value) { m_bucketOwnerHasBeenSet = true; m_bucketOwner = std::move(value); }
+
+    /**
+     * <p>The Amazon Web Services account ID of the bucket owner.</p>
+     */
+    inline void SetBucketOwner(const char* value) { m_bucketOwnerHasBeenSet = true; m_bucketOwner.assign(value); }
+
+    /**
+     * <p>The Amazon Web Services account ID of the bucket owner.</p>
+     */
+    inline S3Location& WithBucketOwner(const Aws::String& value) { SetBucketOwner(value); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account ID of the bucket owner.</p>
+     */
+    inline S3Location& WithBucketOwner(Aws::String&& value) { SetBucketOwner(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account ID of the bucket owner.</p>
+     */
+    inline S3Location& WithBucketOwner(const char* value) { SetBucketOwner(value); return *this;}
+
   private:
 
     Aws::String m_bucket;
@@ -126,6 +168,9 @@ namespace Model
 
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
+    Aws::String m_bucketOwner;
+    bool m_bucketOwnerHasBeenSet;
   };
 
 } // namespace Model

@@ -98,7 +98,7 @@ namespace Model
      * you'd want to find the interruption. For example, you could search for an
      * interruption between the 30,000 millisecond mark and the 45,000 millisecond
      * mark. You could also specify the time period as the first 15,000 milliseconds or
-     * the last 15,000 milliseconds. </p>
+     * the last 15,000 milliseconds.</p>
      */
     inline const AbsoluteTimeRange& GetAbsoluteTimeRange() const{ return m_absoluteTimeRange; }
 
@@ -107,7 +107,7 @@ namespace Model
      * you'd want to find the interruption. For example, you could search for an
      * interruption between the 30,000 millisecond mark and the 45,000 millisecond
      * mark. You could also specify the time period as the first 15,000 milliseconds or
-     * the last 15,000 milliseconds. </p>
+     * the last 15,000 milliseconds.</p>
      */
     inline bool AbsoluteTimeRangeHasBeenSet() const { return m_absoluteTimeRangeHasBeenSet; }
 
@@ -116,7 +116,7 @@ namespace Model
      * you'd want to find the interruption. For example, you could search for an
      * interruption between the 30,000 millisecond mark and the 45,000 millisecond
      * mark. You could also specify the time period as the first 15,000 milliseconds or
-     * the last 15,000 milliseconds. </p>
+     * the last 15,000 milliseconds.</p>
      */
     inline void SetAbsoluteTimeRange(const AbsoluteTimeRange& value) { m_absoluteTimeRangeHasBeenSet = true; m_absoluteTimeRange = value; }
 
@@ -125,7 +125,7 @@ namespace Model
      * you'd want to find the interruption. For example, you could search for an
      * interruption between the 30,000 millisecond mark and the 45,000 millisecond
      * mark. You could also specify the time period as the first 15,000 milliseconds or
-     * the last 15,000 milliseconds. </p>
+     * the last 15,000 milliseconds.</p>
      */
     inline void SetAbsoluteTimeRange(AbsoluteTimeRange&& value) { m_absoluteTimeRangeHasBeenSet = true; m_absoluteTimeRange = std::move(value); }
 
@@ -134,7 +134,7 @@ namespace Model
      * you'd want to find the interruption. For example, you could search for an
      * interruption between the 30,000 millisecond mark and the 45,000 millisecond
      * mark. You could also specify the time period as the first 15,000 milliseconds or
-     * the last 15,000 milliseconds. </p>
+     * the last 15,000 milliseconds.</p>
      */
     inline InterruptionFilter& WithAbsoluteTimeRange(const AbsoluteTimeRange& value) { SetAbsoluteTimeRange(value); return *this;}
 
@@ -143,7 +143,7 @@ namespace Model
      * you'd want to find the interruption. For example, you could search for an
      * interruption between the 30,000 millisecond mark and the 45,000 millisecond
      * mark. You could also specify the time period as the first 15,000 milliseconds or
-     * the last 15,000 milliseconds. </p>
+     * the last 15,000 milliseconds.</p>
      */
     inline InterruptionFilter& WithAbsoluteTimeRange(AbsoluteTimeRange&& value) { SetAbsoluteTimeRange(std::move(value)); return *this;}
 

@@ -66,7 +66,10 @@ namespace Model
     RecommendationOptionsEstimatedMonthlySavingsCurrency,
     RecommendationOptionsEstimatedMonthlySavingsValue,
     EffectiveRecommendationPreferencesCpuVendorArchitectures,
-    EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics
+    EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics,
+    EffectiveRecommendationPreferencesInferredWorkloadTypes,
+    InferredWorkloadTypes,
+    RecommendationOptionsMigrationEffort
   };
 
 namespace ExportableAutoScalingGroupFieldMapper

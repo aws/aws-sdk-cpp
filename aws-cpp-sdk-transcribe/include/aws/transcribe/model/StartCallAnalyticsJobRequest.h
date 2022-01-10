@@ -138,11 +138,11 @@ namespace Model
      * at the root level of the bucket.</p> </li> <li>
      * <p>s3://DOC-EXAMPLE-BUCKET1/folder/</p> <p>f you specify a path, Amazon
      * Transcribe saves the output of the analytics job as
-     * s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json</p> <p>If you
+     * s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json.</p> <p>If you
      * specify a folder, you must provide a trailing slash.</p> </li> <li>
-     * <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json</p> <p> If you provide a path
+     * <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json.</p> <p> If you provide a path
      * that has the filename specified, Amazon Transcribe saves the output of the
-     * analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json</p> </li> </ul>
+     * analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json.</p> </li> </ul>
      * <p>You can specify an Amazon Web Services Key Management Service (KMS) key to
      * encrypt the output of our analytics job using the
      * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
@@ -159,11 +159,11 @@ namespace Model
      * at the root level of the bucket.</p> </li> <li>
      * <p>s3://DOC-EXAMPLE-BUCKET1/folder/</p> <p>f you specify a path, Amazon
      * Transcribe saves the output of the analytics job as
-     * s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json</p> <p>If you
+     * s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json.</p> <p>If you
      * specify a folder, you must provide a trailing slash.</p> </li> <li>
-     * <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json</p> <p> If you provide a path
+     * <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json.</p> <p> If you provide a path
      * that has the filename specified, Amazon Transcribe saves the output of the
-     * analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json</p> </li> </ul>
+     * analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json.</p> </li> </ul>
      * <p>You can specify an Amazon Web Services Key Management Service (KMS) key to
      * encrypt the output of our analytics job using the
      * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
@@ -180,11 +180,11 @@ namespace Model
      * at the root level of the bucket.</p> </li> <li>
      * <p>s3://DOC-EXAMPLE-BUCKET1/folder/</p> <p>f you specify a path, Amazon
      * Transcribe saves the output of the analytics job as
-     * s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json</p> <p>If you
+     * s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json.</p> <p>If you
      * specify a folder, you must provide a trailing slash.</p> </li> <li>
-     * <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json</p> <p> If you provide a path
+     * <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json.</p> <p> If you provide a path
      * that has the filename specified, Amazon Transcribe saves the output of the
-     * analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json</p> </li> </ul>
+     * analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json.</p> </li> </ul>
      * <p>You can specify an Amazon Web Services Key Management Service (KMS) key to
      * encrypt the output of our analytics job using the
      * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
@@ -201,11 +201,11 @@ namespace Model
      * at the root level of the bucket.</p> </li> <li>
      * <p>s3://DOC-EXAMPLE-BUCKET1/folder/</p> <p>f you specify a path, Amazon
      * Transcribe saves the output of the analytics job as
-     * s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json</p> <p>If you
+     * s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json.</p> <p>If you
      * specify a folder, you must provide a trailing slash.</p> </li> <li>
-     * <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json</p> <p> If you provide a path
+     * <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json.</p> <p> If you provide a path
      * that has the filename specified, Amazon Transcribe saves the output of the
-     * analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json</p> </li> </ul>
+     * analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json.</p> </li> </ul>
      * <p>You can specify an Amazon Web Services Key Management Service (KMS) key to
      * encrypt the output of our analytics job using the
      * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
@@ -222,11 +222,11 @@ namespace Model
      * at the root level of the bucket.</p> </li> <li>
      * <p>s3://DOC-EXAMPLE-BUCKET1/folder/</p> <p>f you specify a path, Amazon
      * Transcribe saves the output of the analytics job as
-     * s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json</p> <p>If you
+     * s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json.</p> <p>If you
      * specify a folder, you must provide a trailing slash.</p> </li> <li>
-     * <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json</p> <p> If you provide a path
+     * <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json.</p> <p> If you provide a path
      * that has the filename specified, Amazon Transcribe saves the output of the
-     * analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json</p> </li> </ul>
+     * analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json.</p> </li> </ul>
      * <p>You can specify an Amazon Web Services Key Management Service (KMS) key to
      * encrypt the output of our analytics job using the
      * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
@@ -243,11 +243,11 @@ namespace Model
      * at the root level of the bucket.</p> </li> <li>
      * <p>s3://DOC-EXAMPLE-BUCKET1/folder/</p> <p>f you specify a path, Amazon
      * Transcribe saves the output of the analytics job as
-     * s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json</p> <p>If you
+     * s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json.</p> <p>If you
      * specify a folder, you must provide a trailing slash.</p> </li> <li>
-     * <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json</p> <p> If you provide a path
+     * <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json.</p> <p> If you provide a path
      * that has the filename specified, Amazon Transcribe saves the output of the
-     * analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json</p> </li> </ul>
+     * analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json.</p> </li> </ul>
      * <p>You can specify an Amazon Web Services Key Management Service (KMS) key to
      * encrypt the output of our analytics job using the
      * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
@@ -264,11 +264,11 @@ namespace Model
      * at the root level of the bucket.</p> </li> <li>
      * <p>s3://DOC-EXAMPLE-BUCKET1/folder/</p> <p>f you specify a path, Amazon
      * Transcribe saves the output of the analytics job as
-     * s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json</p> <p>If you
+     * s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json.</p> <p>If you
      * specify a folder, you must provide a trailing slash.</p> </li> <li>
-     * <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json</p> <p> If you provide a path
+     * <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json.</p> <p> If you provide a path
      * that has the filename specified, Amazon Transcribe saves the output of the
-     * analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json</p> </li> </ul>
+     * analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json.</p> </li> </ul>
      * <p>You can specify an Amazon Web Services Key Management Service (KMS) key to
      * encrypt the output of our analytics job using the
      * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
@@ -285,11 +285,11 @@ namespace Model
      * at the root level of the bucket.</p> </li> <li>
      * <p>s3://DOC-EXAMPLE-BUCKET1/folder/</p> <p>f you specify a path, Amazon
      * Transcribe saves the output of the analytics job as
-     * s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json</p> <p>If you
+     * s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json.</p> <p>If you
      * specify a folder, you must provide a trailing slash.</p> </li> <li>
-     * <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json</p> <p> If you provide a path
+     * <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json.</p> <p> If you provide a path
      * that has the filename specified, Amazon Transcribe saves the output of the
-     * analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json</p> </li> </ul>
+     * analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json.</p> </li> </ul>
      * <p>You can specify an Amazon Web Services Key Management Service (KMS) key to
      * encrypt the output of our analytics job using the
      * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
@@ -311,7 +311,7 @@ namespace Model
      * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
      * account: "arn:aws:kms:region:account
      * ID:key/1234abcd-12ab-34cd-56ef1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
+     * Alias: "arn:aws:kms:region:accountID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the call analytics job is
      * encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS
      * key to encrypt your output, you must also specify an output location in the
@@ -331,7 +331,7 @@ namespace Model
      * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
      * account: "arn:aws:kms:region:account
      * ID:key/1234abcd-12ab-34cd-56ef1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
+     * Alias: "arn:aws:kms:region:accountID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the call analytics job is
      * encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS
      * key to encrypt your output, you must also specify an output location in the
@@ -351,7 +351,7 @@ namespace Model
      * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
      * account: "arn:aws:kms:region:account
      * ID:key/1234abcd-12ab-34cd-56ef1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
+     * Alias: "arn:aws:kms:region:accountID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the call analytics job is
      * encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS
      * key to encrypt your output, you must also specify an output location in the
@@ -371,7 +371,7 @@ namespace Model
      * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
      * account: "arn:aws:kms:region:account
      * ID:key/1234abcd-12ab-34cd-56ef1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
+     * Alias: "arn:aws:kms:region:accountID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the call analytics job is
      * encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS
      * key to encrypt your output, you must also specify an output location in the
@@ -391,7 +391,7 @@ namespace Model
      * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
      * account: "arn:aws:kms:region:account
      * ID:key/1234abcd-12ab-34cd-56ef1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
+     * Alias: "arn:aws:kms:region:accountID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the call analytics job is
      * encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS
      * key to encrypt your output, you must also specify an output location in the
@@ -411,7 +411,7 @@ namespace Model
      * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
      * account: "arn:aws:kms:region:account
      * ID:key/1234abcd-12ab-34cd-56ef1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
+     * Alias: "arn:aws:kms:region:accountID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the call analytics job is
      * encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS
      * key to encrypt your output, you must also specify an output location in the
@@ -431,7 +431,7 @@ namespace Model
      * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
      * account: "arn:aws:kms:region:account
      * ID:key/1234abcd-12ab-34cd-56ef1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
+     * Alias: "arn:aws:kms:region:accountID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the call analytics job is
      * encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS
      * key to encrypt your output, you must also specify an output location in the
@@ -451,7 +451,7 @@ namespace Model
      * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
      * account: "arn:aws:kms:region:account
      * ID:key/1234abcd-12ab-34cd-56ef1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
-     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
+     * Alias: "arn:aws:kms:region:accountID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the call analytics job is
      * encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS
      * key to encrypt your output, you must also specify an output location in the
@@ -535,37 +535,37 @@ namespace Model
 
     /**
      * <p>A <code>Settings</code> object that provides optional settings for a call
-     * analytics job. </p>
+     * analytics job.</p>
      */
     inline const CallAnalyticsJobSettings& GetSettings() const{ return m_settings; }
 
     /**
      * <p>A <code>Settings</code> object that provides optional settings for a call
-     * analytics job. </p>
+     * analytics job.</p>
      */
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
 
     /**
      * <p>A <code>Settings</code> object that provides optional settings for a call
-     * analytics job. </p>
+     * analytics job.</p>
      */
     inline void SetSettings(const CallAnalyticsJobSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
     /**
      * <p>A <code>Settings</code> object that provides optional settings for a call
-     * analytics job. </p>
+     * analytics job.</p>
      */
     inline void SetSettings(CallAnalyticsJobSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
 
     /**
      * <p>A <code>Settings</code> object that provides optional settings for a call
-     * analytics job. </p>
+     * analytics job.</p>
      */
     inline StartCallAnalyticsJobRequest& WithSettings(const CallAnalyticsJobSettings& value) { SetSettings(value); return *this;}
 
     /**
      * <p>A <code>Settings</code> object that provides optional settings for a call
-     * analytics job. </p>
+     * analytics job.</p>
      */
     inline StartCallAnalyticsJobRequest& WithSettings(CallAnalyticsJobSettings&& value) { SetSettings(std::move(value)); return *this;}
 

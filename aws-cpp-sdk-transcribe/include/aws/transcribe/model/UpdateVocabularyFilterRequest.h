@@ -96,7 +96,7 @@ namespace Model
      * <p>The words to use in the vocabulary filter. Only use characters from the
      * character set defined for custom vocabularies. For a list of character sets, see
      * <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
      * Sets for Custom Vocabularies</a>.</p> <p>If you provide a list of words in the
      * <code>Words</code> parameter, you can't use the
      * <code>VocabularyFilterFileUri</code> parameter.</p>
@@ -107,7 +107,7 @@ namespace Model
      * <p>The words to use in the vocabulary filter. Only use characters from the
      * character set defined for custom vocabularies. For a list of character sets, see
      * <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
      * Sets for Custom Vocabularies</a>.</p> <p>If you provide a list of words in the
      * <code>Words</code> parameter, you can't use the
      * <code>VocabularyFilterFileUri</code> parameter.</p>
@@ -118,7 +118,7 @@ namespace Model
      * <p>The words to use in the vocabulary filter. Only use characters from the
      * character set defined for custom vocabularies. For a list of character sets, see
      * <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
      * Sets for Custom Vocabularies</a>.</p> <p>If you provide a list of words in the
      * <code>Words</code> parameter, you can't use the
      * <code>VocabularyFilterFileUri</code> parameter.</p>
@@ -129,7 +129,7 @@ namespace Model
      * <p>The words to use in the vocabulary filter. Only use characters from the
      * character set defined for custom vocabularies. For a list of character sets, see
      * <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
      * Sets for Custom Vocabularies</a>.</p> <p>If you provide a list of words in the
      * <code>Words</code> parameter, you can't use the
      * <code>VocabularyFilterFileUri</code> parameter.</p>
@@ -140,7 +140,7 @@ namespace Model
      * <p>The words to use in the vocabulary filter. Only use characters from the
      * character set defined for custom vocabularies. For a list of character sets, see
      * <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
      * Sets for Custom Vocabularies</a>.</p> <p>If you provide a list of words in the
      * <code>Words</code> parameter, you can't use the
      * <code>VocabularyFilterFileUri</code> parameter.</p>
@@ -151,7 +151,7 @@ namespace Model
      * <p>The words to use in the vocabulary filter. Only use characters from the
      * character set defined for custom vocabularies. For a list of character sets, see
      * <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
      * Sets for Custom Vocabularies</a>.</p> <p>If you provide a list of words in the
      * <code>Words</code> parameter, you can't use the
      * <code>VocabularyFilterFileUri</code> parameter.</p>
@@ -162,7 +162,7 @@ namespace Model
      * <p>The words to use in the vocabulary filter. Only use characters from the
      * character set defined for custom vocabularies. For a list of character sets, see
      * <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
      * Sets for Custom Vocabularies</a>.</p> <p>If you provide a list of words in the
      * <code>Words</code> parameter, you can't use the
      * <code>VocabularyFilterFileUri</code> parameter.</p>
@@ -173,7 +173,7 @@ namespace Model
      * <p>The words to use in the vocabulary filter. Only use characters from the
      * character set defined for custom vocabularies. For a list of character sets, see
      * <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
      * Sets for Custom Vocabularies</a>.</p> <p>If you provide a list of words in the
      * <code>Words</code> parameter, you can't use the
      * <code>VocabularyFilterFileUri</code> parameter.</p>
@@ -184,7 +184,7 @@ namespace Model
      * <p>The words to use in the vocabulary filter. Only use characters from the
      * character set defined for custom vocabularies. For a list of character sets, see
      * <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
      * Sets for Custom Vocabularies</a>.</p> <p>If you provide a list of words in the
      * <code>Words</code> parameter, you can't use the
      * <code>VocabularyFilterFileUri</code> parameter.</p>
@@ -196,7 +196,7 @@ namespace Model
      * <p>The Amazon S3 location of a text file used as input to create the vocabulary
      * filter. Only use characters from the character set defined for custom
      * vocabularies. For a list of character sets, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
      * Sets for Custom Vocabularies</a>.</p> <p>The specified file must be less than 50
      * KB of UTF-8 characters.</p> <p>If you provide the location of a list of words in
      * the <code>VocabularyFilterFileUri</code> parameter, you can't use the
@@ -208,7 +208,7 @@ namespace Model
      * <p>The Amazon S3 location of a text file used as input to create the vocabulary
      * filter. Only use characters from the character set defined for custom
      * vocabularies. For a list of character sets, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
      * Sets for Custom Vocabularies</a>.</p> <p>The specified file must be less than 50
      * KB of UTF-8 characters.</p> <p>If you provide the location of a list of words in
      * the <code>VocabularyFilterFileUri</code> parameter, you can't use the
@@ -220,7 +220,7 @@ namespace Model
      * <p>The Amazon S3 location of a text file used as input to create the vocabulary
      * filter. Only use characters from the character set defined for custom
      * vocabularies. For a list of character sets, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
      * Sets for Custom Vocabularies</a>.</p> <p>The specified file must be less than 50
      * KB of UTF-8 characters.</p> <p>If you provide the location of a list of words in
      * the <code>VocabularyFilterFileUri</code> parameter, you can't use the
@@ -232,7 +232,7 @@ namespace Model
      * <p>The Amazon S3 location of a text file used as input to create the vocabulary
      * filter. Only use characters from the character set defined for custom
      * vocabularies. For a list of character sets, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
      * Sets for Custom Vocabularies</a>.</p> <p>The specified file must be less than 50
      * KB of UTF-8 characters.</p> <p>If you provide the location of a list of words in
      * the <code>VocabularyFilterFileUri</code> parameter, you can't use the
@@ -244,7 +244,7 @@ namespace Model
      * <p>The Amazon S3 location of a text file used as input to create the vocabulary
      * filter. Only use characters from the character set defined for custom
      * vocabularies. For a list of character sets, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
      * Sets for Custom Vocabularies</a>.</p> <p>The specified file must be less than 50
      * KB of UTF-8 characters.</p> <p>If you provide the location of a list of words in
      * the <code>VocabularyFilterFileUri</code> parameter, you can't use the
@@ -256,7 +256,7 @@ namespace Model
      * <p>The Amazon S3 location of a text file used as input to create the vocabulary
      * filter. Only use characters from the character set defined for custom
      * vocabularies. For a list of character sets, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
      * Sets for Custom Vocabularies</a>.</p> <p>The specified file must be less than 50
      * KB of UTF-8 characters.</p> <p>If you provide the location of a list of words in
      * the <code>VocabularyFilterFileUri</code> parameter, you can't use the
@@ -268,7 +268,7 @@ namespace Model
      * <p>The Amazon S3 location of a text file used as input to create the vocabulary
      * filter. Only use characters from the character set defined for custom
      * vocabularies. For a list of character sets, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
      * Sets for Custom Vocabularies</a>.</p> <p>The specified file must be less than 50
      * KB of UTF-8 characters.</p> <p>If you provide the location of a list of words in
      * the <code>VocabularyFilterFileUri</code> parameter, you can't use the
@@ -280,7 +280,7 @@ namespace Model
      * <p>The Amazon S3 location of a text file used as input to create the vocabulary
      * filter. Only use characters from the character set defined for custom
      * vocabularies. For a list of character sets, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
      * Sets for Custom Vocabularies</a>.</p> <p>The specified file must be less than 50
      * KB of UTF-8 characters.</p> <p>If you provide the location of a list of words in
      * the <code>VocabularyFilterFileUri</code> parameter, you can't use the

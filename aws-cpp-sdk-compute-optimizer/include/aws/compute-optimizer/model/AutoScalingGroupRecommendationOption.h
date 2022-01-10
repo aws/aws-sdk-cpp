@@ -8,6 +8,7 @@
 #include <aws/compute-optimizer/model/AutoScalingGroupConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/compute-optimizer/model/SavingsOpportunity.h>
+#include <aws/compute-optimizer/model/MigrationEffort.h>
 #include <aws/compute-optimizer/model/UtilizationMetric.h>
 #include <utility>
 
@@ -305,6 +306,79 @@ namespace Model
      */
     inline AutoScalingGroupRecommendationOption& WithSavingsOpportunity(SavingsOpportunity&& value) { SetSavingsOpportunity(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The level of effort required to migrate from the current instance type to the
+     * recommended instance type.</p> <p>For example, the migration effort is
+     * <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web
+     * Services Graviton instance type is recommended. The migration effort is
+     * <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web
+     * Services Graviton instance type is recommended. The migration effort is
+     * <code>VeryLow</code> if both the current and recommended instance types are of
+     * the same CPU architecture.</p>
+     */
+    inline const MigrationEffort& GetMigrationEffort() const{ return m_migrationEffort; }
+
+    /**
+     * <p>The level of effort required to migrate from the current instance type to the
+     * recommended instance type.</p> <p>For example, the migration effort is
+     * <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web
+     * Services Graviton instance type is recommended. The migration effort is
+     * <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web
+     * Services Graviton instance type is recommended. The migration effort is
+     * <code>VeryLow</code> if both the current and recommended instance types are of
+     * the same CPU architecture.</p>
+     */
+    inline bool MigrationEffortHasBeenSet() const { return m_migrationEffortHasBeenSet; }
+
+    /**
+     * <p>The level of effort required to migrate from the current instance type to the
+     * recommended instance type.</p> <p>For example, the migration effort is
+     * <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web
+     * Services Graviton instance type is recommended. The migration effort is
+     * <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web
+     * Services Graviton instance type is recommended. The migration effort is
+     * <code>VeryLow</code> if both the current and recommended instance types are of
+     * the same CPU architecture.</p>
+     */
+    inline void SetMigrationEffort(const MigrationEffort& value) { m_migrationEffortHasBeenSet = true; m_migrationEffort = value; }
+
+    /**
+     * <p>The level of effort required to migrate from the current instance type to the
+     * recommended instance type.</p> <p>For example, the migration effort is
+     * <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web
+     * Services Graviton instance type is recommended. The migration effort is
+     * <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web
+     * Services Graviton instance type is recommended. The migration effort is
+     * <code>VeryLow</code> if both the current and recommended instance types are of
+     * the same CPU architecture.</p>
+     */
+    inline void SetMigrationEffort(MigrationEffort&& value) { m_migrationEffortHasBeenSet = true; m_migrationEffort = std::move(value); }
+
+    /**
+     * <p>The level of effort required to migrate from the current instance type to the
+     * recommended instance type.</p> <p>For example, the migration effort is
+     * <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web
+     * Services Graviton instance type is recommended. The migration effort is
+     * <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web
+     * Services Graviton instance type is recommended. The migration effort is
+     * <code>VeryLow</code> if both the current and recommended instance types are of
+     * the same CPU architecture.</p>
+     */
+    inline AutoScalingGroupRecommendationOption& WithMigrationEffort(const MigrationEffort& value) { SetMigrationEffort(value); return *this;}
+
+    /**
+     * <p>The level of effort required to migrate from the current instance type to the
+     * recommended instance type.</p> <p>For example, the migration effort is
+     * <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web
+     * Services Graviton instance type is recommended. The migration effort is
+     * <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web
+     * Services Graviton instance type is recommended. The migration effort is
+     * <code>VeryLow</code> if both the current and recommended instance types are of
+     * the same CPU architecture.</p>
+     */
+    inline AutoScalingGroupRecommendationOption& WithMigrationEffort(MigrationEffort&& value) { SetMigrationEffort(std::move(value)); return *this;}
+
   private:
 
     AutoScalingGroupConfiguration m_configuration;
@@ -321,6 +395,9 @@ namespace Model
 
     SavingsOpportunity m_savingsOpportunity;
     bool m_savingsOpportunityHasBeenSet;
+
+    MigrationEffort m_migrationEffort;
+    bool m_migrationEffortHasBeenSet;
   };
 
 } // namespace Model

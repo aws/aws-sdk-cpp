@@ -19,7 +19,8 @@ namespace Model
     Ec2Instance,
     AutoScalingGroup,
     EbsVolume,
-    LambdaFunction
+    LambdaFunction,
+    NotApplicable
   };
 
 namespace ResourceTypeMapper

@@ -27,8 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about a custom vocabulary. </p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Provides information about a custom vocabulary.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/VocabularyInfo">AWS
    * API Reference</a></p>
    */

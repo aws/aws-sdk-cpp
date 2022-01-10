@@ -1344,8 +1344,8 @@ namespace Model
         /**
          * <p>Updates the call analytics category with new values. The
          * <code>UpdateCallAnalyticsCategory</code> operation overwrites all of the
-         * existing information with the values that you provide in the request.
-         * </p><p><h3>See Also:</h3>   <a
+         * existing information with the values that you provide in the
+         * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateCallAnalyticsCategory">AWS
          * API Reference</a></p>
          */
@@ -1354,8 +1354,8 @@ namespace Model
         /**
          * <p>Updates the call analytics category with new values. The
          * <code>UpdateCallAnalyticsCategory</code> operation overwrites all of the
-         * existing information with the values that you provide in the request.
-         * </p><p><h3>See Also:</h3>   <a
+         * existing information with the values that you provide in the
+         * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateCallAnalyticsCategory">AWS
          * API Reference</a></p>
          *
@@ -1366,8 +1366,8 @@ namespace Model
         /**
          * <p>Updates the call analytics category with new values. The
          * <code>UpdateCallAnalyticsCategory</code> operation overwrites all of the
-         * existing information with the values that you provide in the request.
-         * </p><p><h3>See Also:</h3>   <a
+         * existing information with the values that you provide in the
+         * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateCallAnalyticsCategory">AWS
          * API Reference</a></p>
          *

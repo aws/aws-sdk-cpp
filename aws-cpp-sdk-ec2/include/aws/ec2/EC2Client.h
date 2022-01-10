@@ -194,6 +194,7 @@
 #include <aws/ec2/model/DescribeElasticGpusResponse.h>
 #include <aws/ec2/model/DescribeExportImageTasksResponse.h>
 #include <aws/ec2/model/DescribeExportTasksResponse.h>
+#include <aws/ec2/model/DescribeFastLaunchImagesResponse.h>
 #include <aws/ec2/model/DescribeFastSnapshotRestoresResponse.h>
 #include <aws/ec2/model/DescribeFleetHistoryResponse.h>
 #include <aws/ec2/model/DescribeFleetInstancesResponse.h>
@@ -305,6 +306,7 @@
 #include <aws/ec2/model/DetachClassicLinkVpcResponse.h>
 #include <aws/ec2/model/DetachVolumeResponse.h>
 #include <aws/ec2/model/DisableEbsEncryptionByDefaultResponse.h>
+#include <aws/ec2/model/DisableFastLaunchResponse.h>
 #include <aws/ec2/model/DisableFastSnapshotRestoresResponse.h>
 #include <aws/ec2/model/DisableImageDeprecationResponse.h>
 #include <aws/ec2/model/DisableIpamOrganizationAdminAccountResponse.h>
@@ -322,6 +324,7 @@
 #include <aws/ec2/model/DisassociateTrunkInterfaceResponse.h>
 #include <aws/ec2/model/DisassociateVpcCidrBlockResponse.h>
 #include <aws/ec2/model/EnableEbsEncryptionByDefaultResponse.h>
+#include <aws/ec2/model/EnableFastLaunchResponse.h>
 #include <aws/ec2/model/EnableFastSnapshotRestoresResponse.h>
 #include <aws/ec2/model/EnableImageDeprecationResponse.h>
 #include <aws/ec2/model/EnableIpamOrganizationAdminAccountResponse.h>
@@ -728,6 +731,7 @@ namespace Model
         class DescribeElasticGpusRequest;
         class DescribeExportImageTasksRequest;
         class DescribeExportTasksRequest;
+        class DescribeFastLaunchImagesRequest;
         class DescribeFastSnapshotRestoresRequest;
         class DescribeFleetHistoryRequest;
         class DescribeFleetInstancesRequest;
@@ -842,6 +846,7 @@ namespace Model
         class DetachVolumeRequest;
         class DetachVpnGatewayRequest;
         class DisableEbsEncryptionByDefaultRequest;
+        class DisableFastLaunchRequest;
         class DisableFastSnapshotRestoresRequest;
         class DisableImageDeprecationRequest;
         class DisableIpamOrganizationAdminAccountRequest;
@@ -862,6 +867,7 @@ namespace Model
         class DisassociateTrunkInterfaceRequest;
         class DisassociateVpcCidrBlockRequest;
         class EnableEbsEncryptionByDefaultRequest;
+        class EnableFastLaunchRequest;
         class EnableFastSnapshotRestoresRequest;
         class EnableImageDeprecationRequest;
         class EnableIpamOrganizationAdminAccountRequest;
@@ -1245,6 +1251,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeElasticGpusResponse, EC2Error> DescribeElasticGpusOutcome;
         typedef Aws::Utils::Outcome<DescribeExportImageTasksResponse, EC2Error> DescribeExportImageTasksOutcome;
         typedef Aws::Utils::Outcome<DescribeExportTasksResponse, EC2Error> DescribeExportTasksOutcome;
+        typedef Aws::Utils::Outcome<DescribeFastLaunchImagesResponse, EC2Error> DescribeFastLaunchImagesOutcome;
         typedef Aws::Utils::Outcome<DescribeFastSnapshotRestoresResponse, EC2Error> DescribeFastSnapshotRestoresOutcome;
         typedef Aws::Utils::Outcome<DescribeFleetHistoryResponse, EC2Error> DescribeFleetHistoryOutcome;
         typedef Aws::Utils::Outcome<DescribeFleetInstancesResponse, EC2Error> DescribeFleetInstancesOutcome;
@@ -1359,6 +1366,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DetachVolumeResponse, EC2Error> DetachVolumeOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DetachVpnGatewayOutcome;
         typedef Aws::Utils::Outcome<DisableEbsEncryptionByDefaultResponse, EC2Error> DisableEbsEncryptionByDefaultOutcome;
+        typedef Aws::Utils::Outcome<DisableFastLaunchResponse, EC2Error> DisableFastLaunchOutcome;
         typedef Aws::Utils::Outcome<DisableFastSnapshotRestoresResponse, EC2Error> DisableFastSnapshotRestoresOutcome;
         typedef Aws::Utils::Outcome<DisableImageDeprecationResponse, EC2Error> DisableImageDeprecationOutcome;
         typedef Aws::Utils::Outcome<DisableIpamOrganizationAdminAccountResponse, EC2Error> DisableIpamOrganizationAdminAccountOutcome;
@@ -1379,6 +1387,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DisassociateTrunkInterfaceResponse, EC2Error> DisassociateTrunkInterfaceOutcome;
         typedef Aws::Utils::Outcome<DisassociateVpcCidrBlockResponse, EC2Error> DisassociateVpcCidrBlockOutcome;
         typedef Aws::Utils::Outcome<EnableEbsEncryptionByDefaultResponse, EC2Error> EnableEbsEncryptionByDefaultOutcome;
+        typedef Aws::Utils::Outcome<EnableFastLaunchResponse, EC2Error> EnableFastLaunchOutcome;
         typedef Aws::Utils::Outcome<EnableFastSnapshotRestoresResponse, EC2Error> EnableFastSnapshotRestoresOutcome;
         typedef Aws::Utils::Outcome<EnableImageDeprecationResponse, EC2Error> EnableImageDeprecationOutcome;
         typedef Aws::Utils::Outcome<EnableIpamOrganizationAdminAccountResponse, EC2Error> EnableIpamOrganizationAdminAccountOutcome;
@@ -1762,6 +1771,7 @@ namespace Model
         typedef std::future<DescribeElasticGpusOutcome> DescribeElasticGpusOutcomeCallable;
         typedef std::future<DescribeExportImageTasksOutcome> DescribeExportImageTasksOutcomeCallable;
         typedef std::future<DescribeExportTasksOutcome> DescribeExportTasksOutcomeCallable;
+        typedef std::future<DescribeFastLaunchImagesOutcome> DescribeFastLaunchImagesOutcomeCallable;
         typedef std::future<DescribeFastSnapshotRestoresOutcome> DescribeFastSnapshotRestoresOutcomeCallable;
         typedef std::future<DescribeFleetHistoryOutcome> DescribeFleetHistoryOutcomeCallable;
         typedef std::future<DescribeFleetInstancesOutcome> DescribeFleetInstancesOutcomeCallable;
@@ -1876,6 +1886,7 @@ namespace Model
         typedef std::future<DetachVolumeOutcome> DetachVolumeOutcomeCallable;
         typedef std::future<DetachVpnGatewayOutcome> DetachVpnGatewayOutcomeCallable;
         typedef std::future<DisableEbsEncryptionByDefaultOutcome> DisableEbsEncryptionByDefaultOutcomeCallable;
+        typedef std::future<DisableFastLaunchOutcome> DisableFastLaunchOutcomeCallable;
         typedef std::future<DisableFastSnapshotRestoresOutcome> DisableFastSnapshotRestoresOutcomeCallable;
         typedef std::future<DisableImageDeprecationOutcome> DisableImageDeprecationOutcomeCallable;
         typedef std::future<DisableIpamOrganizationAdminAccountOutcome> DisableIpamOrganizationAdminAccountOutcomeCallable;
@@ -1896,6 +1907,7 @@ namespace Model
         typedef std::future<DisassociateTrunkInterfaceOutcome> DisassociateTrunkInterfaceOutcomeCallable;
         typedef std::future<DisassociateVpcCidrBlockOutcome> DisassociateVpcCidrBlockOutcomeCallable;
         typedef std::future<EnableEbsEncryptionByDefaultOutcome> EnableEbsEncryptionByDefaultOutcomeCallable;
+        typedef std::future<EnableFastLaunchOutcome> EnableFastLaunchOutcomeCallable;
         typedef std::future<EnableFastSnapshotRestoresOutcome> EnableFastSnapshotRestoresOutcomeCallable;
         typedef std::future<EnableImageDeprecationOutcome> EnableImageDeprecationOutcomeCallable;
         typedef std::future<EnableIpamOrganizationAdminAccountOutcome> EnableIpamOrganizationAdminAccountOutcomeCallable;
@@ -2282,6 +2294,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DescribeElasticGpusRequest&, const Model::DescribeElasticGpusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeElasticGpusResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeExportImageTasksRequest&, const Model::DescribeExportImageTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExportImageTasksResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeExportTasksRequest&, const Model::DescribeExportTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExportTasksResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeFastLaunchImagesRequest&, const Model::DescribeFastLaunchImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFastLaunchImagesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeFastSnapshotRestoresRequest&, const Model::DescribeFastSnapshotRestoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFastSnapshotRestoresResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeFleetHistoryRequest&, const Model::DescribeFleetHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetHistoryResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeFleetInstancesRequest&, const Model::DescribeFleetInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetInstancesResponseReceivedHandler;
@@ -2396,6 +2409,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DetachVolumeRequest&, const Model::DetachVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachVolumeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DetachVpnGatewayRequest&, const Model::DetachVpnGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachVpnGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableEbsEncryptionByDefaultRequest&, const Model::DisableEbsEncryptionByDefaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableEbsEncryptionByDefaultResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DisableFastLaunchRequest&, const Model::DisableFastLaunchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableFastLaunchResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableFastSnapshotRestoresRequest&, const Model::DisableFastSnapshotRestoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableFastSnapshotRestoresResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableImageDeprecationRequest&, const Model::DisableImageDeprecationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableImageDeprecationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableIpamOrganizationAdminAccountRequest&, const Model::DisableIpamOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableIpamOrganizationAdminAccountResponseReceivedHandler;
@@ -2416,6 +2430,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DisassociateTrunkInterfaceRequest&, const Model::DisassociateTrunkInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTrunkInterfaceResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateVpcCidrBlockRequest&, const Model::DisassociateVpcCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateVpcCidrBlockResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableEbsEncryptionByDefaultRequest&, const Model::EnableEbsEncryptionByDefaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableEbsEncryptionByDefaultResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::EnableFastLaunchRequest&, const Model::EnableFastLaunchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableFastLaunchResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableFastSnapshotRestoresRequest&, const Model::EnableFastSnapshotRestoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableFastSnapshotRestoresResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableImageDeprecationRequest&, const Model::EnableImageDeprecationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableImageDeprecationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableIpamOrganizationAdminAccountRequest&, const Model::EnableIpamOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableIpamOrganizationAdminAccountResponseReceivedHandler;
@@ -11626,6 +11641,34 @@ namespace Model
         virtual void DescribeExportTasksAsync(const Model::DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describe details for Windows AMIs that are configured for faster
+         * launching.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastLaunchImages">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFastLaunchImagesOutcome DescribeFastLaunchImages(const Model::DescribeFastLaunchImagesRequest& request) const;
+
+        /**
+         * <p>Describe details for Windows AMIs that are configured for faster
+         * launching.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastLaunchImages">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeFastLaunchImagesOutcomeCallable DescribeFastLaunchImagesCallable(const Model::DescribeFastLaunchImagesRequest& request) const;
+
+        /**
+         * <p>Describe details for Windows AMIs that are configured for faster
+         * launching.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastLaunchImages">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeFastLaunchImagesAsync(const Model::DescribeFastLaunchImagesRequest& request, const DescribeFastLaunchImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes the state of fast snapshot restores for your
          * snapshots.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastSnapshotRestores">AWS
@@ -16075,6 +16118,43 @@ namespace Model
         virtual void DisableEbsEncryptionByDefaultAsync(const Model::DisableEbsEncryptionByDefaultRequest& request, const DisableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Discontinue faster launching for a Windows AMI, and clean up existing
+         * pre-provisioned snapshots. When you disable faster launching, the AMI uses the
+         * standard launch process for each instance. All pre-provisioned snapshots must be
+         * removed before you can enable faster launching again.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastLaunch">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableFastLaunchOutcome DisableFastLaunch(const Model::DisableFastLaunchRequest& request) const;
+
+        /**
+         * <p>Discontinue faster launching for a Windows AMI, and clean up existing
+         * pre-provisioned snapshots. When you disable faster launching, the AMI uses the
+         * standard launch process for each instance. All pre-provisioned snapshots must be
+         * removed before you can enable faster launching again.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastLaunch">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisableFastLaunchOutcomeCallable DisableFastLaunchCallable(const Model::DisableFastLaunchRequest& request) const;
+
+        /**
+         * <p>Discontinue faster launching for a Windows AMI, and clean up existing
+         * pre-provisioned snapshots. When you disable faster launching, the AMI uses the
+         * standard launch process for each instance. All pre-provisioned snapshots must be
+         * removed before you can enable faster launching again.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastLaunch">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisableFastLaunchAsync(const Model::DisableFastLaunchRequest& request, const DisableFastLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Disables fast snapshot restores for the specified snapshots in the specified
          * Availability Zones.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastSnapshotRestores">AWS
@@ -16804,6 +16884,49 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void EnableEbsEncryptionByDefaultAsync(const Model::EnableEbsEncryptionByDefaultRequest& request, const EnableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>When you enable faster launching for a Windows AMI, images are
+         * pre-provisioned, using snapshots to launch instances up to 65% faster. To create
+         * the optimized Windows image, Amazon EC2 launches an instance and runs through
+         * Sysprep steps, rebooting as required. Then it creates a set of reserved
+         * snapshots that are used for subsequent launches. The reserved snapshots are
+         * automatically replenished as they are used, depending on your settings for
+         * launch frequency.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastLaunch">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableFastLaunchOutcome EnableFastLaunch(const Model::EnableFastLaunchRequest& request) const;
+
+        /**
+         * <p>When you enable faster launching for a Windows AMI, images are
+         * pre-provisioned, using snapshots to launch instances up to 65% faster. To create
+         * the optimized Windows image, Amazon EC2 launches an instance and runs through
+         * Sysprep steps, rebooting as required. Then it creates a set of reserved
+         * snapshots that are used for subsequent launches. The reserved snapshots are
+         * automatically replenished as they are used, depending on your settings for
+         * launch frequency.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastLaunch">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::EnableFastLaunchOutcomeCallable EnableFastLaunchCallable(const Model::EnableFastLaunchRequest& request) const;
+
+        /**
+         * <p>When you enable faster launching for a Windows AMI, images are
+         * pre-provisioned, using snapshots to launch instances up to 65% faster. To create
+         * the optimized Windows image, Amazon EC2 launches an instance and runs through
+         * Sysprep steps, rebooting as required. Then it creates a set of reserved
+         * snapshots that are used for subsequent launches. The reserved snapshots are
+         * automatically replenished as they are used, depending on your settings for
+         * launch frequency.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastLaunch">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void EnableFastLaunchAsync(const Model::EnableFastLaunchRequest& request, const EnableFastLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables fast snapshot restores for the specified snapshots in the specified
@@ -24655,6 +24778,7 @@ namespace Model
         void DescribeElasticGpusAsyncHelper(const Model::DescribeElasticGpusRequest& request, const DescribeElasticGpusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeExportImageTasksAsyncHelper(const Model::DescribeExportImageTasksRequest& request, const DescribeExportImageTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeExportTasksAsyncHelper(const Model::DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeFastLaunchImagesAsyncHelper(const Model::DescribeFastLaunchImagesRequest& request, const DescribeFastLaunchImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFastSnapshotRestoresAsyncHelper(const Model::DescribeFastSnapshotRestoresRequest& request, const DescribeFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFleetHistoryAsyncHelper(const Model::DescribeFleetHistoryRequest& request, const DescribeFleetHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFleetInstancesAsyncHelper(const Model::DescribeFleetInstancesRequest& request, const DescribeFleetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -24769,6 +24893,7 @@ namespace Model
         void DetachVolumeAsyncHelper(const Model::DetachVolumeRequest& request, const DetachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetachVpnGatewayAsyncHelper(const Model::DetachVpnGatewayRequest& request, const DetachVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableEbsEncryptionByDefaultAsyncHelper(const Model::DisableEbsEncryptionByDefaultRequest& request, const DisableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisableFastLaunchAsyncHelper(const Model::DisableFastLaunchRequest& request, const DisableFastLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableFastSnapshotRestoresAsyncHelper(const Model::DisableFastSnapshotRestoresRequest& request, const DisableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableImageDeprecationAsyncHelper(const Model::DisableImageDeprecationRequest& request, const DisableImageDeprecationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableIpamOrganizationAdminAccountAsyncHelper(const Model::DisableIpamOrganizationAdminAccountRequest& request, const DisableIpamOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -24789,6 +24914,7 @@ namespace Model
         void DisassociateTrunkInterfaceAsyncHelper(const Model::DisassociateTrunkInterfaceRequest& request, const DisassociateTrunkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateVpcCidrBlockAsyncHelper(const Model::DisassociateVpcCidrBlockRequest& request, const DisassociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableEbsEncryptionByDefaultAsyncHelper(const Model::EnableEbsEncryptionByDefaultRequest& request, const EnableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void EnableFastLaunchAsyncHelper(const Model::EnableFastLaunchRequest& request, const EnableFastLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableFastSnapshotRestoresAsyncHelper(const Model::EnableFastSnapshotRestoresRequest& request, const EnableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableImageDeprecationAsyncHelper(const Model::EnableImageDeprecationRequest& request, const EnableImageDeprecationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableIpamOrganizationAdminAccountAsyncHelper(const Model::EnableIpamOrganizationAdminAccountRequest& request, const EnableIpamOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

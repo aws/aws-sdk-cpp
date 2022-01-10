@@ -78,7 +78,7 @@ namespace Model
      * absolute time range, you must specify a start time and an end time. For example,
      * if you specify the following values:</p> <ul> <li> <p>StartTime - 10000</p>
      * </li> <li> <p>Endtime - 50000</p> </li> </ul> <p>The time range is set between
-     * 10,000 milliseconds and 50,000 milliseconds into the call. </p>
+     * 10,000 milliseconds and 50,000 milliseconds into the call.</p>
      */
     inline long long GetEndTime() const{ return m_endTime; }
 
@@ -87,7 +87,7 @@ namespace Model
      * absolute time range, you must specify a start time and an end time. For example,
      * if you specify the following values:</p> <ul> <li> <p>StartTime - 10000</p>
      * </li> <li> <p>Endtime - 50000</p> </li> </ul> <p>The time range is set between
-     * 10,000 milliseconds and 50,000 milliseconds into the call. </p>
+     * 10,000 milliseconds and 50,000 milliseconds into the call.</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
@@ -96,7 +96,7 @@ namespace Model
      * absolute time range, you must specify a start time and an end time. For example,
      * if you specify the following values:</p> <ul> <li> <p>StartTime - 10000</p>
      * </li> <li> <p>Endtime - 50000</p> </li> </ul> <p>The time range is set between
-     * 10,000 milliseconds and 50,000 milliseconds into the call. </p>
+     * 10,000 milliseconds and 50,000 milliseconds into the call.</p>
      */
     inline void SetEndTime(long long value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
@@ -105,65 +105,65 @@ namespace Model
      * absolute time range, you must specify a start time and an end time. For example,
      * if you specify the following values:</p> <ul> <li> <p>StartTime - 10000</p>
      * </li> <li> <p>Endtime - 50000</p> </li> </ul> <p>The time range is set between
-     * 10,000 milliseconds and 50,000 milliseconds into the call. </p>
+     * 10,000 milliseconds and 50,000 milliseconds into the call.</p>
      */
     inline AbsoluteTimeRange& WithEndTime(long long value) { SetEndTime(value); return *this;}
 
 
     /**
      * <p>A time range from the beginning of the call to the value that you've
-     * specified. For example, if you specify 100000, the time range is set to the
-     * first 100,000 milliseconds of the call.</p>
+     * specified. For example, if you specify <code>100000</code>, the time range is
+     * set to the first 100,000 milliseconds of the call.</p>
      */
     inline long long GetFirst() const{ return m_first; }
 
     /**
      * <p>A time range from the beginning of the call to the value that you've
-     * specified. For example, if you specify 100000, the time range is set to the
-     * first 100,000 milliseconds of the call.</p>
+     * specified. For example, if you specify <code>100000</code>, the time range is
+     * set to the first 100,000 milliseconds of the call.</p>
      */
     inline bool FirstHasBeenSet() const { return m_firstHasBeenSet; }
 
     /**
      * <p>A time range from the beginning of the call to the value that you've
-     * specified. For example, if you specify 100000, the time range is set to the
-     * first 100,000 milliseconds of the call.</p>
+     * specified. For example, if you specify <code>100000</code>, the time range is
+     * set to the first 100,000 milliseconds of the call.</p>
      */
     inline void SetFirst(long long value) { m_firstHasBeenSet = true; m_first = value; }
 
     /**
      * <p>A time range from the beginning of the call to the value that you've
-     * specified. For example, if you specify 100000, the time range is set to the
-     * first 100,000 milliseconds of the call.</p>
+     * specified. For example, if you specify <code>100000</code>, the time range is
+     * set to the first 100,000 milliseconds of the call.</p>
      */
     inline AbsoluteTimeRange& WithFirst(long long value) { SetFirst(value); return *this;}
 
 
     /**
      * <p>A time range from the value that you've specified to the end of the call. For
-     * example, if you specify 100000, the time range is set to the last 100,000
-     * milliseconds of the call.</p>
+     * example, if you specify <code>100000</code>, the time range is set to the last
+     * 100,000 milliseconds of the call.</p>
      */
     inline long long GetLast() const{ return m_last; }
 
     /**
      * <p>A time range from the value that you've specified to the end of the call. For
-     * example, if you specify 100000, the time range is set to the last 100,000
-     * milliseconds of the call.</p>
+     * example, if you specify <code>100000</code>, the time range is set to the last
+     * 100,000 milliseconds of the call.</p>
      */
     inline bool LastHasBeenSet() const { return m_lastHasBeenSet; }
 
     /**
      * <p>A time range from the value that you've specified to the end of the call. For
-     * example, if you specify 100000, the time range is set to the last 100,000
-     * milliseconds of the call.</p>
+     * example, if you specify <code>100000</code>, the time range is set to the last
+     * 100,000 milliseconds of the call.</p>
      */
     inline void SetLast(long long value) { m_lastHasBeenSet = true; m_last = value; }
 
     /**
      * <p>A time range from the value that you've specified to the end of the call. For
-     * example, if you specify 100000, the time range is set to the last 100,000
-     * milliseconds of the call.</p>
+     * example, if you specify <code>100000</code>, the time range is set to the last
+     * 100,000 milliseconds of the call.</p>
      */
     inline AbsoluteTimeRange& WithLast(long long value) { SetLast(value); return *this;}
 

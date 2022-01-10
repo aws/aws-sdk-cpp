@@ -21,14 +21,18 @@ namespace Model
 EffectiveRecommendationPreferences::EffectiveRecommendationPreferences() : 
     m_cpuVendorArchitecturesHasBeenSet(false),
     m_enhancedInfrastructureMetrics(EnhancedInfrastructureMetrics::NOT_SET),
-    m_enhancedInfrastructureMetricsHasBeenSet(false)
+    m_enhancedInfrastructureMetricsHasBeenSet(false),
+    m_inferredWorkloadTypes(InferredWorkloadTypesPreference::NOT_SET),
+    m_inferredWorkloadTypesHasBeenSet(false)
 {
 }
 
 EffectiveRecommendationPreferences::EffectiveRecommendationPreferences(JsonView jsonValue) : 
     m_cpuVendorArchitecturesHasBeenSet(false),
     m_enhancedInfrastructureMetrics(EnhancedInfrastructureMetrics::NOT_SET),
-    m_enhancedInfrastructureMetricsHasBeenSet(false)
+    m_enhancedInfrastructureMetricsHasBeenSet(false),
+    m_inferredWorkloadTypes(InferredWorkloadTypesPreference::NOT_SET),
+    m_inferredWorkloadTypesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -52,6 +56,13 @@ EffectiveRecommendationPreferences& EffectiveRecommendationPreferences::operator
     m_enhancedInfrastructureMetricsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("inferredWorkloadTypes"))
+  {
+    m_inferredWorkloadTypes = InferredWorkloadTypesPreferenceMapper::GetInferredWorkloadTypesPreferenceForName(jsonValue.GetString("inferredWorkloadTypes"));
+
+    m_inferredWorkloadTypesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +84,11 @@ JsonValue EffectiveRecommendationPreferences::Jsonize() const
   if(m_enhancedInfrastructureMetricsHasBeenSet)
   {
    payload.WithString("enhancedInfrastructureMetrics", EnhancedInfrastructureMetricsMapper::GetNameForEnhancedInfrastructureMetrics(m_enhancedInfrastructureMetrics));
+  }
+
+  if(m_inferredWorkloadTypesHasBeenSet)
+  {
+   payload.WithString("inferredWorkloadTypes", InferredWorkloadTypesPreferenceMapper::GetNameForInferredWorkloadTypesPreference(m_inferredWorkloadTypes));
   }
 
   return payload;

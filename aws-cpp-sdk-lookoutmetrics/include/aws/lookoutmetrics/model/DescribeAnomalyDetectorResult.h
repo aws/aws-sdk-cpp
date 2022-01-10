@@ -9,6 +9,7 @@
 #include <aws/lookoutmetrics/model/AnomalyDetectorConfigSummary.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/lookoutmetrics/model/AnomalyDetectorStatus.h>
+#include <aws/lookoutmetrics/model/AnomalyDetectorFailureType.h>
 #include <utility>
 
 namespace Aws
@@ -248,37 +249,37 @@ namespace Model
 
 
     /**
-     * <p>The reason that the detector failed, if any.</p>
+     * <p>The reason that the detector failed.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
 
     /**
-     * <p>The reason that the detector failed, if any.</p>
+     * <p>The reason that the detector failed.</p>
      */
     inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
 
     /**
-     * <p>The reason that the detector failed, if any.</p>
+     * <p>The reason that the detector failed.</p>
      */
     inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
 
     /**
-     * <p>The reason that the detector failed, if any.</p>
+     * <p>The reason that the detector failed.</p>
      */
     inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
 
     /**
-     * <p>The reason that the detector failed, if any.</p>
+     * <p>The reason that the detector failed.</p>
      */
     inline DescribeAnomalyDetectorResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
 
     /**
-     * <p>The reason that the detector failed, if any.</p>
+     * <p>The reason that the detector failed.</p>
      */
     inline DescribeAnomalyDetectorResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
 
     /**
-     * <p>The reason that the detector failed, if any.</p>
+     * <p>The reason that the detector failed.</p>
      */
     inline DescribeAnomalyDetectorResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
@@ -318,6 +319,32 @@ namespace Model
      */
     inline DescribeAnomalyDetectorResult& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 
+
+    /**
+     * <p>The process that caused the detector to fail.</p>
+     */
+    inline const AnomalyDetectorFailureType& GetFailureType() const{ return m_failureType; }
+
+    /**
+     * <p>The process that caused the detector to fail.</p>
+     */
+    inline void SetFailureType(const AnomalyDetectorFailureType& value) { m_failureType = value; }
+
+    /**
+     * <p>The process that caused the detector to fail.</p>
+     */
+    inline void SetFailureType(AnomalyDetectorFailureType&& value) { m_failureType = std::move(value); }
+
+    /**
+     * <p>The process that caused the detector to fail.</p>
+     */
+    inline DescribeAnomalyDetectorResult& WithFailureType(const AnomalyDetectorFailureType& value) { SetFailureType(value); return *this;}
+
+    /**
+     * <p>The process that caused the detector to fail.</p>
+     */
+    inline DescribeAnomalyDetectorResult& WithFailureType(AnomalyDetectorFailureType&& value) { SetFailureType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_anomalyDetectorArn;
@@ -337,6 +364,8 @@ namespace Model
     Aws::String m_failureReason;
 
     Aws::String m_kmsKeyArn;
+
+    AnomalyDetectorFailureType m_failureType;
   };
 
 } // namespace Model

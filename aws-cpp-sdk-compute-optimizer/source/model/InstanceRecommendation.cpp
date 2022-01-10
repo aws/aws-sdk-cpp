@@ -34,7 +34,8 @@ InstanceRecommendation::InstanceRecommendation() :
     m_lastRefreshTimestampHasBeenSet(false),
     m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
     m_currentPerformanceRiskHasBeenSet(false),
-    m_effectiveRecommendationPreferencesHasBeenSet(false)
+    m_effectiveRecommendationPreferencesHasBeenSet(false),
+    m_inferredWorkloadTypesHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ InstanceRecommendation::InstanceRecommendation(JsonView jsonValue) :
     m_lastRefreshTimestampHasBeenSet(false),
     m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
     m_currentPerformanceRiskHasBeenSet(false),
-    m_effectiveRecommendationPreferencesHasBeenSet(false)
+    m_effectiveRecommendationPreferencesHasBeenSet(false),
+    m_inferredWorkloadTypesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -164,6 +166,16 @@ InstanceRecommendation& InstanceRecommendation::operator =(JsonView jsonValue)
     m_effectiveRecommendationPreferencesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("inferredWorkloadTypes"))
+  {
+    Array<JsonView> inferredWorkloadTypesJsonList = jsonValue.GetArray("inferredWorkloadTypes");
+    for(unsigned inferredWorkloadTypesIndex = 0; inferredWorkloadTypesIndex < inferredWorkloadTypesJsonList.GetLength(); ++inferredWorkloadTypesIndex)
+    {
+      m_inferredWorkloadTypes.push_back(InferredWorkloadTypeMapper::GetInferredWorkloadTypeForName(inferredWorkloadTypesJsonList[inferredWorkloadTypesIndex].AsString()));
+    }
+    m_inferredWorkloadTypesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -263,6 +275,17 @@ JsonValue InstanceRecommendation::Jsonize() const
   if(m_effectiveRecommendationPreferencesHasBeenSet)
   {
    payload.WithObject("effectiveRecommendationPreferences", m_effectiveRecommendationPreferences.Jsonize());
+
+  }
+
+  if(m_inferredWorkloadTypesHasBeenSet)
+  {
+   Array<JsonValue> inferredWorkloadTypesJsonList(m_inferredWorkloadTypes.size());
+   for(unsigned inferredWorkloadTypesIndex = 0; inferredWorkloadTypesIndex < inferredWorkloadTypesJsonList.GetLength(); ++inferredWorkloadTypesIndex)
+   {
+     inferredWorkloadTypesJsonList[inferredWorkloadTypesIndex].AsString(InferredWorkloadTypeMapper::GetNameForInferredWorkloadType(m_inferredWorkloadTypes[inferredWorkloadTypesIndex]));
+   }
+   payload.WithArray("inferredWorkloadTypes", std::move(inferredWorkloadTypesJsonList));
 
   }
 

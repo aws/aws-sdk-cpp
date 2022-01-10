@@ -14,6 +14,7 @@
 #include <aws/compute-optimizer/model/EffectiveRecommendationPreferences.h>
 #include <aws/compute-optimizer/model/UtilizationMetric.h>
 #include <aws/compute-optimizer/model/AutoScalingGroupRecommendationOption.h>
+#include <aws/compute-optimizer/model/InferredWorkloadType.h>
 #include <utility>
 
 namespace Aws
@@ -529,6 +530,143 @@ namespace Model
      */
     inline AutoScalingGroupRecommendation& WithEffectiveRecommendationPreferences(EffectiveRecommendationPreferences&& value) { SetEffectiveRecommendationPreferences(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The applications that might be running on the instances in the Auto Scaling
+     * group as inferred by Compute Optimizer.</p> <p>Compute Optimizer can infer if
+     * one of the following applications might be running on the instances:</p> <ul>
+     * <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the
+     * instances.</p> </li> <li> <p> <code>ApacheCassandra</code> - Infers that Apache
+     * Cassandra might be running on the instances.</p> </li> <li> <p>
+     * <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the
+     * instances.</p> </li> <li> <p> <code>Memcached</code> - Infers that Memcached
+     * might be running on the instances.</p> </li> <li> <p> <code>NGINX</code> -
+     * Infers that NGINX might be running on the instances.</p> </li> <li> <p>
+     * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
+     * instances.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
+     * running on the instances.</p> </li> </ul>
+     */
+    inline const Aws::Vector<InferredWorkloadType>& GetInferredWorkloadTypes() const{ return m_inferredWorkloadTypes; }
+
+    /**
+     * <p>The applications that might be running on the instances in the Auto Scaling
+     * group as inferred by Compute Optimizer.</p> <p>Compute Optimizer can infer if
+     * one of the following applications might be running on the instances:</p> <ul>
+     * <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the
+     * instances.</p> </li> <li> <p> <code>ApacheCassandra</code> - Infers that Apache
+     * Cassandra might be running on the instances.</p> </li> <li> <p>
+     * <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the
+     * instances.</p> </li> <li> <p> <code>Memcached</code> - Infers that Memcached
+     * might be running on the instances.</p> </li> <li> <p> <code>NGINX</code> -
+     * Infers that NGINX might be running on the instances.</p> </li> <li> <p>
+     * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
+     * instances.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
+     * running on the instances.</p> </li> </ul>
+     */
+    inline bool InferredWorkloadTypesHasBeenSet() const { return m_inferredWorkloadTypesHasBeenSet; }
+
+    /**
+     * <p>The applications that might be running on the instances in the Auto Scaling
+     * group as inferred by Compute Optimizer.</p> <p>Compute Optimizer can infer if
+     * one of the following applications might be running on the instances:</p> <ul>
+     * <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the
+     * instances.</p> </li> <li> <p> <code>ApacheCassandra</code> - Infers that Apache
+     * Cassandra might be running on the instances.</p> </li> <li> <p>
+     * <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the
+     * instances.</p> </li> <li> <p> <code>Memcached</code> - Infers that Memcached
+     * might be running on the instances.</p> </li> <li> <p> <code>NGINX</code> -
+     * Infers that NGINX might be running on the instances.</p> </li> <li> <p>
+     * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
+     * instances.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
+     * running on the instances.</p> </li> </ul>
+     */
+    inline void SetInferredWorkloadTypes(const Aws::Vector<InferredWorkloadType>& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes = value; }
+
+    /**
+     * <p>The applications that might be running on the instances in the Auto Scaling
+     * group as inferred by Compute Optimizer.</p> <p>Compute Optimizer can infer if
+     * one of the following applications might be running on the instances:</p> <ul>
+     * <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the
+     * instances.</p> </li> <li> <p> <code>ApacheCassandra</code> - Infers that Apache
+     * Cassandra might be running on the instances.</p> </li> <li> <p>
+     * <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the
+     * instances.</p> </li> <li> <p> <code>Memcached</code> - Infers that Memcached
+     * might be running on the instances.</p> </li> <li> <p> <code>NGINX</code> -
+     * Infers that NGINX might be running on the instances.</p> </li> <li> <p>
+     * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
+     * instances.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
+     * running on the instances.</p> </li> </ul>
+     */
+    inline void SetInferredWorkloadTypes(Aws::Vector<InferredWorkloadType>&& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes = std::move(value); }
+
+    /**
+     * <p>The applications that might be running on the instances in the Auto Scaling
+     * group as inferred by Compute Optimizer.</p> <p>Compute Optimizer can infer if
+     * one of the following applications might be running on the instances:</p> <ul>
+     * <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the
+     * instances.</p> </li> <li> <p> <code>ApacheCassandra</code> - Infers that Apache
+     * Cassandra might be running on the instances.</p> </li> <li> <p>
+     * <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the
+     * instances.</p> </li> <li> <p> <code>Memcached</code> - Infers that Memcached
+     * might be running on the instances.</p> </li> <li> <p> <code>NGINX</code> -
+     * Infers that NGINX might be running on the instances.</p> </li> <li> <p>
+     * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
+     * instances.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
+     * running on the instances.</p> </li> </ul>
+     */
+    inline AutoScalingGroupRecommendation& WithInferredWorkloadTypes(const Aws::Vector<InferredWorkloadType>& value) { SetInferredWorkloadTypes(value); return *this;}
+
+    /**
+     * <p>The applications that might be running on the instances in the Auto Scaling
+     * group as inferred by Compute Optimizer.</p> <p>Compute Optimizer can infer if
+     * one of the following applications might be running on the instances:</p> <ul>
+     * <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the
+     * instances.</p> </li> <li> <p> <code>ApacheCassandra</code> - Infers that Apache
+     * Cassandra might be running on the instances.</p> </li> <li> <p>
+     * <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the
+     * instances.</p> </li> <li> <p> <code>Memcached</code> - Infers that Memcached
+     * might be running on the instances.</p> </li> <li> <p> <code>NGINX</code> -
+     * Infers that NGINX might be running on the instances.</p> </li> <li> <p>
+     * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
+     * instances.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
+     * running on the instances.</p> </li> </ul>
+     */
+    inline AutoScalingGroupRecommendation& WithInferredWorkloadTypes(Aws::Vector<InferredWorkloadType>&& value) { SetInferredWorkloadTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The applications that might be running on the instances in the Auto Scaling
+     * group as inferred by Compute Optimizer.</p> <p>Compute Optimizer can infer if
+     * one of the following applications might be running on the instances:</p> <ul>
+     * <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the
+     * instances.</p> </li> <li> <p> <code>ApacheCassandra</code> - Infers that Apache
+     * Cassandra might be running on the instances.</p> </li> <li> <p>
+     * <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the
+     * instances.</p> </li> <li> <p> <code>Memcached</code> - Infers that Memcached
+     * might be running on the instances.</p> </li> <li> <p> <code>NGINX</code> -
+     * Infers that NGINX might be running on the instances.</p> </li> <li> <p>
+     * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
+     * instances.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
+     * running on the instances.</p> </li> </ul>
+     */
+    inline AutoScalingGroupRecommendation& AddInferredWorkloadTypes(const InferredWorkloadType& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The applications that might be running on the instances in the Auto Scaling
+     * group as inferred by Compute Optimizer.</p> <p>Compute Optimizer can infer if
+     * one of the following applications might be running on the instances:</p> <ul>
+     * <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the
+     * instances.</p> </li> <li> <p> <code>ApacheCassandra</code> - Infers that Apache
+     * Cassandra might be running on the instances.</p> </li> <li> <p>
+     * <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the
+     * instances.</p> </li> <li> <p> <code>Memcached</code> - Infers that Memcached
+     * might be running on the instances.</p> </li> <li> <p> <code>NGINX</code> -
+     * Infers that NGINX might be running on the instances.</p> </li> <li> <p>
+     * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
+     * instances.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
+     * running on the instances.</p> </li> </ul>
+     */
+    inline AutoScalingGroupRecommendation& AddInferredWorkloadTypes(InferredWorkloadType&& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_accountId;
@@ -563,6 +701,9 @@ namespace Model
 
     EffectiveRecommendationPreferences m_effectiveRecommendationPreferences;
     bool m_effectiveRecommendationPreferencesHasBeenSet;
+
+    Aws::Vector<InferredWorkloadType> m_inferredWorkloadTypes;
+    bool m_inferredWorkloadTypesHasBeenSet;
   };
 
 } // namespace Model

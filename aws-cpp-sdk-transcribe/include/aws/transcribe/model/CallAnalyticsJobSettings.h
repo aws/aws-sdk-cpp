@@ -271,8 +271,8 @@ namespace Model
      * machine learning to identify the language for you. To improve the ability of
      * Amazon Transcribe to correctly identify the language, you can provide an array
      * of the languages that can be present in the audio. Refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported
-     * languages and language-specific features</a> for additional information.</p>
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+     * languages</a> for additional information.</p>
      */
     inline const Aws::Vector<LanguageCode>& GetLanguageOptions() const{ return m_languageOptions; }
 
@@ -284,8 +284,8 @@ namespace Model
      * machine learning to identify the language for you. To improve the ability of
      * Amazon Transcribe to correctly identify the language, you can provide an array
      * of the languages that can be present in the audio. Refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported
-     * languages and language-specific features</a> for additional information.</p>
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+     * languages</a> for additional information.</p>
      */
     inline bool LanguageOptionsHasBeenSet() const { return m_languageOptionsHasBeenSet; }
 
@@ -297,8 +297,8 @@ namespace Model
      * machine learning to identify the language for you. To improve the ability of
      * Amazon Transcribe to correctly identify the language, you can provide an array
      * of the languages that can be present in the audio. Refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported
-     * languages and language-specific features</a> for additional information.</p>
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+     * languages</a> for additional information.</p>
      */
     inline void SetLanguageOptions(const Aws::Vector<LanguageCode>& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = value; }
 
@@ -310,8 +310,8 @@ namespace Model
      * machine learning to identify the language for you. To improve the ability of
      * Amazon Transcribe to correctly identify the language, you can provide an array
      * of the languages that can be present in the audio. Refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported
-     * languages and language-specific features</a> for additional information.</p>
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+     * languages</a> for additional information.</p>
      */
     inline void SetLanguageOptions(Aws::Vector<LanguageCode>&& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = std::move(value); }
 
@@ -323,8 +323,8 @@ namespace Model
      * machine learning to identify the language for you. To improve the ability of
      * Amazon Transcribe to correctly identify the language, you can provide an array
      * of the languages that can be present in the audio. Refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported
-     * languages and language-specific features</a> for additional information.</p>
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+     * languages</a> for additional information.</p>
      */
     inline CallAnalyticsJobSettings& WithLanguageOptions(const Aws::Vector<LanguageCode>& value) { SetLanguageOptions(value); return *this;}
 
@@ -336,8 +336,8 @@ namespace Model
      * machine learning to identify the language for you. To improve the ability of
      * Amazon Transcribe to correctly identify the language, you can provide an array
      * of the languages that can be present in the audio. Refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported
-     * languages and language-specific features</a> for additional information.</p>
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+     * languages</a> for additional information.</p>
      */
     inline CallAnalyticsJobSettings& WithLanguageOptions(Aws::Vector<LanguageCode>&& value) { SetLanguageOptions(std::move(value)); return *this;}
 
@@ -349,8 +349,8 @@ namespace Model
      * machine learning to identify the language for you. To improve the ability of
      * Amazon Transcribe to correctly identify the language, you can provide an array
      * of the languages that can be present in the audio. Refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported
-     * languages and language-specific features</a> for additional information.</p>
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+     * languages</a> for additional information.</p>
      */
     inline CallAnalyticsJobSettings& AddLanguageOptions(const LanguageCode& value) { m_languageOptionsHasBeenSet = true; m_languageOptions.push_back(value); return *this; }
 
@@ -362,8 +362,8 @@ namespace Model
      * machine learning to identify the language for you. To improve the ability of
      * Amazon Transcribe to correctly identify the language, you can provide an array
      * of the languages that can be present in the audio. Refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported
-     * languages and language-specific features</a> for additional information.</p>
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+     * languages</a> for additional information.</p>
      */
     inline CallAnalyticsJobSettings& AddLanguageOptions(LanguageCode&& value) { m_languageOptionsHasBeenSet = true; m_languageOptions.push_back(std::move(value)); return *this; }
 

@@ -71,6 +71,9 @@ namespace Aws
         static const int RecommendationOptionsEstimatedMonthlySavingsValue_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsValue");
         static const int EffectiveRecommendationPreferencesCpuVendorArchitectures_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesCpuVendorArchitectures");
         static const int EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics");
+        static const int EffectiveRecommendationPreferencesInferredWorkloadTypes_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesInferredWorkloadTypes");
+        static const int InferredWorkloadTypes_HASH = HashingUtils::HashString("InferredWorkloadTypes");
+        static const int RecommendationOptionsMigrationEffort_HASH = HashingUtils::HashString("RecommendationOptionsMigrationEffort");
 
 
         ExportableAutoScalingGroupField GetExportableAutoScalingGroupFieldForName(const Aws::String& name)
@@ -280,6 +283,18 @@ namespace Aws
           {
             return ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics;
           }
+          else if (hashCode == EffectiveRecommendationPreferencesInferredWorkloadTypes_HASH)
+          {
+            return ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesInferredWorkloadTypes;
+          }
+          else if (hashCode == InferredWorkloadTypes_HASH)
+          {
+            return ExportableAutoScalingGroupField::InferredWorkloadTypes;
+          }
+          else if (hashCode == RecommendationOptionsMigrationEffort_HASH)
+          {
+            return ExportableAutoScalingGroupField::RecommendationOptionsMigrationEffort;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -396,6 +411,12 @@ namespace Aws
             return "EffectiveRecommendationPreferencesCpuVendorArchitectures";
           case ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics:
             return "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics";
+          case ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesInferredWorkloadTypes:
+            return "EffectiveRecommendationPreferencesInferredWorkloadTypes";
+          case ExportableAutoScalingGroupField::InferredWorkloadTypes:
+            return "InferredWorkloadTypes";
+          case ExportableAutoScalingGroupField::RecommendationOptionsMigrationEffort:
+            return "RecommendationOptionsMigrationEffort";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

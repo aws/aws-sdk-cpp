@@ -23,7 +23,9 @@ RecommendationPreferencesDetail::RecommendationPreferencesDetail() :
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_enhancedInfrastructureMetrics(EnhancedInfrastructureMetrics::NOT_SET),
-    m_enhancedInfrastructureMetricsHasBeenSet(false)
+    m_enhancedInfrastructureMetricsHasBeenSet(false),
+    m_inferredWorkloadTypes(InferredWorkloadTypesPreference::NOT_SET),
+    m_inferredWorkloadTypesHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ RecommendationPreferencesDetail::RecommendationPreferencesDetail(JsonView jsonVa
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_enhancedInfrastructureMetrics(EnhancedInfrastructureMetrics::NOT_SET),
-    m_enhancedInfrastructureMetricsHasBeenSet(false)
+    m_enhancedInfrastructureMetricsHasBeenSet(false),
+    m_inferredWorkloadTypes(InferredWorkloadTypesPreference::NOT_SET),
+    m_inferredWorkloadTypesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +64,13 @@ RecommendationPreferencesDetail& RecommendationPreferencesDetail::operator =(Jso
     m_enhancedInfrastructureMetricsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("inferredWorkloadTypes"))
+  {
+    m_inferredWorkloadTypes = InferredWorkloadTypesPreferenceMapper::GetInferredWorkloadTypesPreferenceForName(jsonValue.GetString("inferredWorkloadTypes"));
+
+    m_inferredWorkloadTypesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -81,6 +92,11 @@ JsonValue RecommendationPreferencesDetail::Jsonize() const
   if(m_enhancedInfrastructureMetricsHasBeenSet)
   {
    payload.WithString("enhancedInfrastructureMetrics", EnhancedInfrastructureMetricsMapper::GetNameForEnhancedInfrastructureMetrics(m_enhancedInfrastructureMetrics));
+  }
+
+  if(m_inferredWorkloadTypesHasBeenSet)
+  {
+   payload.WithString("inferredWorkloadTypes", InferredWorkloadTypesPreferenceMapper::GetNameForInferredWorkloadTypesPreference(m_inferredWorkloadTypes));
   }
 
   return payload;

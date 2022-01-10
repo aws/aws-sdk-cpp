@@ -157,22 +157,26 @@ namespace Model
 
 
     /**
-     * <p>The sample rate, in Hertz, of the audio track in the input media file. </p>
+     * <p>The sample rate, in Hertz (Hz), of the audio track in the input media
+     * file.</p>
      */
     inline int GetMediaSampleRateHertz() const{ return m_mediaSampleRateHertz; }
 
     /**
-     * <p>The sample rate, in Hertz, of the audio track in the input media file. </p>
+     * <p>The sample rate, in Hertz (Hz), of the audio track in the input media
+     * file.</p>
      */
     inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
 
     /**
-     * <p>The sample rate, in Hertz, of the audio track in the input media file. </p>
+     * <p>The sample rate, in Hertz (Hz), of the audio track in the input media
+     * file.</p>
      */
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
 
     /**
-     * <p>The sample rate, in Hertz, of the audio track in the input media file. </p>
+     * <p>The sample rate, in Hertz (Hz), of the audio track in the input media
+     * file.</p>
      */
     inline TranscriptionJob& WithMediaSampleRateHertz(int value) { SetMediaSampleRateHertz(value); return *this;}
 
@@ -939,7 +943,7 @@ namespace Model
      * <p>Language-specific settings that can be specified when language identification
      * is enabled for your transcription job. These settings include
      * <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
-     * <code>LanguageModelName</code>LanguageModelName.</p>
+     * <code>LanguageModelName</code>.</p>
      */
     inline const Aws::Map<LanguageCode, LanguageIdSettings>& GetLanguageIdSettings() const{ return m_languageIdSettings; }
 
@@ -947,7 +951,7 @@ namespace Model
      * <p>Language-specific settings that can be specified when language identification
      * is enabled for your transcription job. These settings include
      * <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
-     * <code>LanguageModelName</code>LanguageModelName.</p>
+     * <code>LanguageModelName</code>.</p>
      */
     inline bool LanguageIdSettingsHasBeenSet() const { return m_languageIdSettingsHasBeenSet; }
 
@@ -955,7 +959,7 @@ namespace Model
      * <p>Language-specific settings that can be specified when language identification
      * is enabled for your transcription job. These settings include
      * <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
-     * <code>LanguageModelName</code>LanguageModelName.</p>
+     * <code>LanguageModelName</code>.</p>
      */
     inline void SetLanguageIdSettings(const Aws::Map<LanguageCode, LanguageIdSettings>& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings = value; }
 
@@ -963,7 +967,7 @@ namespace Model
      * <p>Language-specific settings that can be specified when language identification
      * is enabled for your transcription job. These settings include
      * <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
-     * <code>LanguageModelName</code>LanguageModelName.</p>
+     * <code>LanguageModelName</code>.</p>
      */
     inline void SetLanguageIdSettings(Aws::Map<LanguageCode, LanguageIdSettings>&& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings = std::move(value); }
 
@@ -971,7 +975,7 @@ namespace Model
      * <p>Language-specific settings that can be specified when language identification
      * is enabled for your transcription job. These settings include
      * <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
-     * <code>LanguageModelName</code>LanguageModelName.</p>
+     * <code>LanguageModelName</code>.</p>
      */
     inline TranscriptionJob& WithLanguageIdSettings(const Aws::Map<LanguageCode, LanguageIdSettings>& value) { SetLanguageIdSettings(value); return *this;}
 
@@ -979,7 +983,7 @@ namespace Model
      * <p>Language-specific settings that can be specified when language identification
      * is enabled for your transcription job. These settings include
      * <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
-     * <code>LanguageModelName</code>LanguageModelName.</p>
+     * <code>LanguageModelName</code>.</p>
      */
     inline TranscriptionJob& WithLanguageIdSettings(Aws::Map<LanguageCode, LanguageIdSettings>&& value) { SetLanguageIdSettings(std::move(value)); return *this;}
 
@@ -987,7 +991,7 @@ namespace Model
      * <p>Language-specific settings that can be specified when language identification
      * is enabled for your transcription job. These settings include
      * <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
-     * <code>LanguageModelName</code>LanguageModelName.</p>
+     * <code>LanguageModelName</code>.</p>
      */
     inline TranscriptionJob& AddLanguageIdSettings(const LanguageCode& key, const LanguageIdSettings& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(key, value); return *this; }
 
@@ -995,7 +999,7 @@ namespace Model
      * <p>Language-specific settings that can be specified when language identification
      * is enabled for your transcription job. These settings include
      * <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
-     * <code>LanguageModelName</code>LanguageModelName.</p>
+     * <code>LanguageModelName</code>.</p>
      */
     inline TranscriptionJob& AddLanguageIdSettings(LanguageCode&& key, const LanguageIdSettings& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(std::move(key), value); return *this; }
 
@@ -1003,7 +1007,7 @@ namespace Model
      * <p>Language-specific settings that can be specified when language identification
      * is enabled for your transcription job. These settings include
      * <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
-     * <code>LanguageModelName</code>LanguageModelName.</p>
+     * <code>LanguageModelName</code>.</p>
      */
     inline TranscriptionJob& AddLanguageIdSettings(const LanguageCode& key, LanguageIdSettings&& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(key, std::move(value)); return *this; }
 
@@ -1011,7 +1015,7 @@ namespace Model
      * <p>Language-specific settings that can be specified when language identification
      * is enabled for your transcription job. These settings include
      * <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
-     * <code>LanguageModelName</code>LanguageModelName.</p>
+     * <code>LanguageModelName</code>.</p>
      */
     inline TranscriptionJob& AddLanguageIdSettings(LanguageCode&& key, LanguageIdSettings&& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(std::move(key), std::move(value)); return *this; }
 
