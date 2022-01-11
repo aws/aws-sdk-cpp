@@ -26,7 +26,13 @@ namespace Model
     Windows_with_SQL_Server_Web,
     Linux_with_SQL_Server_Standard,
     Linux_with_SQL_Server_Web,
-    Linux_with_SQL_Server_Enterprise
+    Linux_with_SQL_Server_Enterprise,
+    RHEL_with_SQL_Server_Standard,
+    RHEL_with_SQL_Server_Enterprise,
+    RHEL_with_SQL_Server_Web,
+    RHEL_with_HA,
+    RHEL_with_HA_and_SQL_Server_Standard,
+    RHEL_with_HA_and_SQL_Server_Enterprise
   };
 
 namespace CapacityReservationInstancePlatformMapper

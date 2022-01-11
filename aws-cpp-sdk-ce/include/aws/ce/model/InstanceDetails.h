@@ -191,38 +191,38 @@ namespace Model
 
 
     /**
-     * <p>The Amazon ES instances that Amazon Web Services recommends that you
-     * purchase.</p>
+     * <p>The Amazon OpenSearch Service instances that Amazon Web Services recommends
+     * that you purchase.</p>
      */
     inline const ESInstanceDetails& GetESInstanceDetails() const{ return m_eSInstanceDetails; }
 
     /**
-     * <p>The Amazon ES instances that Amazon Web Services recommends that you
-     * purchase.</p>
+     * <p>The Amazon OpenSearch Service instances that Amazon Web Services recommends
+     * that you purchase.</p>
      */
     inline bool ESInstanceDetailsHasBeenSet() const { return m_eSInstanceDetailsHasBeenSet; }
 
     /**
-     * <p>The Amazon ES instances that Amazon Web Services recommends that you
-     * purchase.</p>
+     * <p>The Amazon OpenSearch Service instances that Amazon Web Services recommends
+     * that you purchase.</p>
      */
     inline void SetESInstanceDetails(const ESInstanceDetails& value) { m_eSInstanceDetailsHasBeenSet = true; m_eSInstanceDetails = value; }
 
     /**
-     * <p>The Amazon ES instances that Amazon Web Services recommends that you
-     * purchase.</p>
+     * <p>The Amazon OpenSearch Service instances that Amazon Web Services recommends
+     * that you purchase.</p>
      */
     inline void SetESInstanceDetails(ESInstanceDetails&& value) { m_eSInstanceDetailsHasBeenSet = true; m_eSInstanceDetails = std::move(value); }
 
     /**
-     * <p>The Amazon ES instances that Amazon Web Services recommends that you
-     * purchase.</p>
+     * <p>The Amazon OpenSearch Service instances that Amazon Web Services recommends
+     * that you purchase.</p>
      */
     inline InstanceDetails& WithESInstanceDetails(const ESInstanceDetails& value) { SetESInstanceDetails(value); return *this;}
 
     /**
-     * <p>The Amazon ES instances that Amazon Web Services recommends that you
-     * purchase.</p>
+     * <p>The Amazon OpenSearch Service instances that Amazon Web Services recommends
+     * that you purchase.</p>
      */
     inline InstanceDetails& WithESInstanceDetails(ESInstanceDetails&& value) { SetESInstanceDetails(std::move(value)); return *this;}
 

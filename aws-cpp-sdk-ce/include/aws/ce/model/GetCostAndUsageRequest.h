@@ -156,7 +156,12 @@ namespace Model
      * nest <code>Expression</code> objects to define any combination of dimension
      * filters. For more information, see <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
-     * </p>
+     * </p> <p>The default values are <code>EQUALS</code> and
+     * <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for
+     * <code>Dimensions</code> are <code>EQUALS</code> and
+     * <code>CASE_SENSITIVE</code>.</p> <p>Valid values for <code>MatchOptions</code>
+     * for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
+     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
      */
     inline const Expression& GetFilter() const{ return m_filter; }
 
@@ -167,7 +172,12 @@ namespace Model
      * nest <code>Expression</code> objects to define any combination of dimension
      * filters. For more information, see <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
-     * </p>
+     * </p> <p>The default values are <code>EQUALS</code> and
+     * <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for
+     * <code>Dimensions</code> are <code>EQUALS</code> and
+     * <code>CASE_SENSITIVE</code>.</p> <p>Valid values for <code>MatchOptions</code>
+     * for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
+     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
      */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
@@ -178,7 +188,12 @@ namespace Model
      * nest <code>Expression</code> objects to define any combination of dimension
      * filters. For more information, see <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
-     * </p>
+     * </p> <p>The default values are <code>EQUALS</code> and
+     * <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for
+     * <code>Dimensions</code> are <code>EQUALS</code> and
+     * <code>CASE_SENSITIVE</code>.</p> <p>Valid values for <code>MatchOptions</code>
+     * for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
+     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
      */
     inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
 
@@ -189,7 +204,12 @@ namespace Model
      * nest <code>Expression</code> objects to define any combination of dimension
      * filters. For more information, see <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
-     * </p>
+     * </p> <p>The default values are <code>EQUALS</code> and
+     * <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for
+     * <code>Dimensions</code> are <code>EQUALS</code> and
+     * <code>CASE_SENSITIVE</code>.</p> <p>Valid values for <code>MatchOptions</code>
+     * for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
+     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
      */
     inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
@@ -200,7 +220,12 @@ namespace Model
      * nest <code>Expression</code> objects to define any combination of dimension
      * filters. For more information, see <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
-     * </p>
+     * </p> <p>The default values are <code>EQUALS</code> and
+     * <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for
+     * <code>Dimensions</code> are <code>EQUALS</code> and
+     * <code>CASE_SENSITIVE</code>.</p> <p>Valid values for <code>MatchOptions</code>
+     * for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
+     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
      */
     inline GetCostAndUsageRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
 
@@ -211,7 +236,12 @@ namespace Model
      * nest <code>Expression</code> objects to define any combination of dimension
      * filters. For more information, see <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
-     * </p>
+     * </p> <p>The default values are <code>EQUALS</code> and
+     * <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for
+     * <code>Dimensions</code> are <code>EQUALS</code> and
+     * <code>CASE_SENSITIVE</code>.</p> <p>Valid values for <code>MatchOptions</code>
+     * for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
+     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
      */
     inline GetCostAndUsageRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
 

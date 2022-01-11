@@ -41,42 +41,42 @@ namespace Model
 
 
     /**
-     * <p>A token used to ensure idempotency.</p>
+     * <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>A token used to ensure idempotency.</p>
+     * <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>A token used to ensure idempotency.</p>
+     * <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>A token used to ensure idempotency.</p>
+     * <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>A token used to ensure idempotency.</p>
+     * <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>A token used to ensure idempotency.</p>
+     * <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
      */
     inline CreateDatasetRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>A token used to ensure idempotency.</p>
+     * <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
      */
     inline CreateDatasetRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token used to ensure idempotency.</p>
+     * <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
      */
     inline CreateDatasetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

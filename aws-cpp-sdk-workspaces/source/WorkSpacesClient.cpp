@@ -24,12 +24,14 @@
 #include <aws/workspaces/model/AssociateIpGroupsRequest.h>
 #include <aws/workspaces/model/AuthorizeIpRulesRequest.h>
 #include <aws/workspaces/model/CopyWorkspaceImageRequest.h>
+#include <aws/workspaces/model/CreateConnectClientAddInRequest.h>
 #include <aws/workspaces/model/CreateConnectionAliasRequest.h>
 #include <aws/workspaces/model/CreateIpGroupRequest.h>
 #include <aws/workspaces/model/CreateTagsRequest.h>
 #include <aws/workspaces/model/CreateUpdatedWorkspaceImageRequest.h>
 #include <aws/workspaces/model/CreateWorkspaceBundleRequest.h>
 #include <aws/workspaces/model/CreateWorkspacesRequest.h>
+#include <aws/workspaces/model/DeleteConnectClientAddInRequest.h>
 #include <aws/workspaces/model/DeleteConnectionAliasRequest.h>
 #include <aws/workspaces/model/DeleteIpGroupRequest.h>
 #include <aws/workspaces/model/DeleteTagsRequest.h>
@@ -39,6 +41,7 @@
 #include <aws/workspaces/model/DescribeAccountRequest.h>
 #include <aws/workspaces/model/DescribeAccountModificationsRequest.h>
 #include <aws/workspaces/model/DescribeClientPropertiesRequest.h>
+#include <aws/workspaces/model/DescribeConnectClientAddInsRequest.h>
 #include <aws/workspaces/model/DescribeConnectionAliasPermissionsRequest.h>
 #include <aws/workspaces/model/DescribeConnectionAliasesRequest.h>
 #include <aws/workspaces/model/DescribeIpGroupsRequest.h>
@@ -70,6 +73,7 @@
 #include <aws/workspaces/model/StartWorkspacesRequest.h>
 #include <aws/workspaces/model/StopWorkspacesRequest.h>
 #include <aws/workspaces/model/TerminateWorkspacesRequest.h>
+#include <aws/workspaces/model/UpdateConnectClientAddInRequest.h>
 #include <aws/workspaces/model/UpdateConnectionAliasPermissionRequest.h>
 #include <aws/workspaces/model/UpdateRulesOfIpGroupRequest.h>
 #include <aws/workspaces/model/UpdateWorkspaceBundleRequest.h>
@@ -244,6 +248,30 @@ void WorkSpacesClient::CopyWorkspaceImageAsyncHelper(const CopyWorkspaceImageReq
   handler(this, request, CopyWorkspaceImage(request), context);
 }
 
+CreateConnectClientAddInOutcome WorkSpacesClient::CreateConnectClientAddIn(const CreateConnectClientAddInRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateConnectClientAddInOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateConnectClientAddInOutcomeCallable WorkSpacesClient::CreateConnectClientAddInCallable(const CreateConnectClientAddInRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateConnectClientAddInOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateConnectClientAddIn(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::CreateConnectClientAddInAsync(const CreateConnectClientAddInRequest& request, const CreateConnectClientAddInResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateConnectClientAddInAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::CreateConnectClientAddInAsyncHelper(const CreateConnectClientAddInRequest& request, const CreateConnectClientAddInResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateConnectClientAddIn(request), context);
+}
+
 CreateConnectionAliasOutcome WorkSpacesClient::CreateConnectionAlias(const CreateConnectionAliasRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -386,6 +414,30 @@ void WorkSpacesClient::CreateWorkspacesAsync(const CreateWorkspacesRequest& requ
 void WorkSpacesClient::CreateWorkspacesAsyncHelper(const CreateWorkspacesRequest& request, const CreateWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateWorkspaces(request), context);
+}
+
+DeleteConnectClientAddInOutcome WorkSpacesClient::DeleteConnectClientAddIn(const DeleteConnectClientAddInRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteConnectClientAddInOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteConnectClientAddInOutcomeCallable WorkSpacesClient::DeleteConnectClientAddInCallable(const DeleteConnectClientAddInRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteConnectClientAddInOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteConnectClientAddIn(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::DeleteConnectClientAddInAsync(const DeleteConnectClientAddInRequest& request, const DeleteConnectClientAddInResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteConnectClientAddInAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::DeleteConnectClientAddInAsyncHelper(const DeleteConnectClientAddInRequest& request, const DeleteConnectClientAddInResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteConnectClientAddIn(request), context);
 }
 
 DeleteConnectionAliasOutcome WorkSpacesClient::DeleteConnectionAlias(const DeleteConnectionAliasRequest& request) const
@@ -602,6 +654,30 @@ void WorkSpacesClient::DescribeClientPropertiesAsync(const DescribeClientPropert
 void WorkSpacesClient::DescribeClientPropertiesAsyncHelper(const DescribeClientPropertiesRequest& request, const DescribeClientPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeClientProperties(request), context);
+}
+
+DescribeConnectClientAddInsOutcome WorkSpacesClient::DescribeConnectClientAddIns(const DescribeConnectClientAddInsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeConnectClientAddInsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeConnectClientAddInsOutcomeCallable WorkSpacesClient::DescribeConnectClientAddInsCallable(const DescribeConnectClientAddInsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeConnectClientAddInsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeConnectClientAddIns(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::DescribeConnectClientAddInsAsync(const DescribeConnectClientAddInsRequest& request, const DescribeConnectClientAddInsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeConnectClientAddInsAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::DescribeConnectClientAddInsAsyncHelper(const DescribeConnectClientAddInsRequest& request, const DescribeConnectClientAddInsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeConnectClientAddIns(request), context);
 }
 
 DescribeConnectionAliasPermissionsOutcome WorkSpacesClient::DescribeConnectionAliasPermissions(const DescribeConnectionAliasPermissionsRequest& request) const
@@ -1346,6 +1422,30 @@ void WorkSpacesClient::TerminateWorkspacesAsync(const TerminateWorkspacesRequest
 void WorkSpacesClient::TerminateWorkspacesAsyncHelper(const TerminateWorkspacesRequest& request, const TerminateWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, TerminateWorkspaces(request), context);
+}
+
+UpdateConnectClientAddInOutcome WorkSpacesClient::UpdateConnectClientAddIn(const UpdateConnectClientAddInRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateConnectClientAddInOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateConnectClientAddInOutcomeCallable WorkSpacesClient::UpdateConnectClientAddInCallable(const UpdateConnectClientAddInRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateConnectClientAddInOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateConnectClientAddIn(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::UpdateConnectClientAddInAsync(const UpdateConnectClientAddInRequest& request, const UpdateConnectClientAddInResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateConnectClientAddInAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::UpdateConnectClientAddInAsyncHelper(const UpdateConnectClientAddInRequest& request, const UpdateConnectClientAddInResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateConnectClientAddIn(request), context);
 }
 
 UpdateConnectionAliasPermissionOutcome WorkSpacesClient::UpdateConnectionAliasPermission(const UpdateConnectionAliasPermissionRequest& request) const

@@ -261,8 +261,7 @@ namespace Model
      * </ul> <p> <code>GetReservationCoverage</code> uses the same <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension. You can nest only one level deep. If there are multiple values
-     * for a dimension, they are OR'd together.</p> <p>If you don't provide a
+     * each dimension. You can nest only one level deep.</p> <p>If you don't provide a
      * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p> <p>Cost category
      * is also supported.</p>
      */
@@ -278,8 +277,7 @@ namespace Model
      * </ul> <p> <code>GetReservationCoverage</code> uses the same <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension. You can nest only one level deep. If there are multiple values
-     * for a dimension, they are OR'd together.</p> <p>If you don't provide a
+     * each dimension. You can nest only one level deep.</p> <p>If you don't provide a
      * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p> <p>Cost category
      * is also supported.</p>
      */
@@ -295,8 +293,7 @@ namespace Model
      * </ul> <p> <code>GetReservationCoverage</code> uses the same <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension. You can nest only one level deep. If there are multiple values
-     * for a dimension, they are OR'd together.</p> <p>If you don't provide a
+     * each dimension. You can nest only one level deep.</p> <p>If you don't provide a
      * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p> <p>Cost category
      * is also supported.</p>
      */
@@ -312,8 +309,7 @@ namespace Model
      * </ul> <p> <code>GetReservationCoverage</code> uses the same <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension. You can nest only one level deep. If there are multiple values
-     * for a dimension, they are OR'd together.</p> <p>If you don't provide a
+     * each dimension. You can nest only one level deep.</p> <p>If you don't provide a
      * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p> <p>Cost category
      * is also supported.</p>
      */
@@ -329,8 +325,7 @@ namespace Model
      * </ul> <p> <code>GetReservationCoverage</code> uses the same <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension. You can nest only one level deep. If there are multiple values
-     * for a dimension, they are OR'd together.</p> <p>If you don't provide a
+     * each dimension. You can nest only one level deep.</p> <p>If you don't provide a
      * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p> <p>Cost category
      * is also supported.</p>
      */
@@ -346,8 +341,7 @@ namespace Model
      * </ul> <p> <code>GetReservationCoverage</code> uses the same <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension. You can nest only one level deep. If there are multiple values
-     * for a dimension, they are OR'd together.</p> <p>If you don't provide a
+     * each dimension. You can nest only one level deep.</p> <p>If you don't provide a
      * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p> <p>Cost category
      * is also supported.</p>
      */

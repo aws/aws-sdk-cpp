@@ -113,12 +113,12 @@ namespace Model
     typedef std::function<void(const IoTEventsDataClient*, const Model::ListDetectorsRequest&, const Model::ListDetectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDetectorsResponseReceivedHandler;
 
   /**
-   * <p>AWS IoT Events monitors your equipment or device fleets for failures or
-   * changes in operation, and triggers actions when such events occur. You can use
-   * AWS IoT Events Data API commands to send inputs to detectors, list detectors,
-   * and view or update a detector's status.</p> <p> For more information, see <a
+   * <p>IoT Events monitors your equipment or device fleets for failures or changes
+   * in operation, and triggers actions when such events occur. You can use IoT
+   * Events Data API commands to send inputs to detectors, list detectors, and view
+   * or update a detector's status.</p> <p> For more information, see <a
    * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/what-is-iotevents.html">What
-   * is AWS IoT Events?</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
+   * is IoT Events?</a> in the <i>IoT Events Developer Guide</i>.</p>
    */
   class AWS_IOTEVENTSDATA_API IoTEventsDataClient : public Aws::Client::AWSJsonClient
   {
@@ -235,7 +235,7 @@ namespace Model
         virtual void BatchEnableAlarmAsync(const Model::BatchEnableAlarmRequest& request, const BatchEnableAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sends a set of messages to the AWS IoT Events system. Each message payload is
+         * <p>Sends a set of messages to the IoT Events system. Each message payload is
          * transformed into the input you specify (<code>"inputName"</code>) and ingested
          * into any detectors that monitor that input. If multiple messages are sent, the
          * order in which the messages are processed isn't guaranteed. To guarantee
@@ -247,7 +247,7 @@ namespace Model
         virtual Model::BatchPutMessageOutcome BatchPutMessage(const Model::BatchPutMessageRequest& request) const;
 
         /**
-         * <p>Sends a set of messages to the AWS IoT Events system. Each message payload is
+         * <p>Sends a set of messages to the IoT Events system. Each message payload is
          * transformed into the input you specify (<code>"inputName"</code>) and ingested
          * into any detectors that monitor that input. If multiple messages are sent, the
          * order in which the messages are processed isn't guaranteed. To guarantee
@@ -261,7 +261,7 @@ namespace Model
         virtual Model::BatchPutMessageOutcomeCallable BatchPutMessageCallable(const Model::BatchPutMessageRequest& request) const;
 
         /**
-         * <p>Sends a set of messages to the AWS IoT Events system. Each message payload is
+         * <p>Sends a set of messages to the IoT Events system. Each message payload is
          * transformed into the input you specify (<code>"inputName"</code>) and ingested
          * into any detectors that monitor that input. If multiple messages are sent, the
          * order in which the messages are processed isn't guaranteed. To guarantee

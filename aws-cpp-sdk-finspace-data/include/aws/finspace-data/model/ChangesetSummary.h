@@ -515,16 +515,32 @@ namespace Model
     inline ChangesetSummary& WithActiveUntilTimestamp(long long value) { SetActiveUntilTimestamp(value); return *this;}
 
 
-    
+    /**
+     * <p>Beginning time from which the Changeset is active. The value is determined as
+     * Epoch time in milliseconds. For example, the value for Monday, November 1, 2021
+     * 12:00:00 PM UTC is specified as 1635768000000.</p>
+     */
     inline long long GetActiveFromTimestamp() const{ return m_activeFromTimestamp; }
 
-    
+    /**
+     * <p>Beginning time from which the Changeset is active. The value is determined as
+     * Epoch time in milliseconds. For example, the value for Monday, November 1, 2021
+     * 12:00:00 PM UTC is specified as 1635768000000.</p>
+     */
     inline bool ActiveFromTimestampHasBeenSet() const { return m_activeFromTimestampHasBeenSet; }
 
-    
+    /**
+     * <p>Beginning time from which the Changeset is active. The value is determined as
+     * Epoch time in milliseconds. For example, the value for Monday, November 1, 2021
+     * 12:00:00 PM UTC is specified as 1635768000000.</p>
+     */
     inline void SetActiveFromTimestamp(long long value) { m_activeFromTimestampHasBeenSet = true; m_activeFromTimestamp = value; }
 
-    
+    /**
+     * <p>Beginning time from which the Changeset is active. The value is determined as
+     * Epoch time in milliseconds. For example, the value for Monday, November 1, 2021
+     * 12:00:00 PM UTC is specified as 1635768000000.</p>
+     */
     inline ChangesetSummary& WithActiveFromTimestamp(long long value) { SetActiveFromTimestamp(value); return *this;}
 
 

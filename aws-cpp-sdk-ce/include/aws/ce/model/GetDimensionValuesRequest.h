@@ -144,42 +144,48 @@ namespace Model
 
     /**
      * <p>The name of the dimension. Each <code>Dimension</code> is available for a
-     * different <code>Context</code>. For more information, see <code>Context</code>.
+     * different <code>Context</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html#awscostmanagement-GetDimensionValues-request-Context">Context</a>.
      * </p>
      */
     inline const Dimension& GetDimension() const{ return m_dimension; }
 
     /**
      * <p>The name of the dimension. Each <code>Dimension</code> is available for a
-     * different <code>Context</code>. For more information, see <code>Context</code>.
+     * different <code>Context</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html#awscostmanagement-GetDimensionValues-request-Context">Context</a>.
      * </p>
      */
     inline bool DimensionHasBeenSet() const { return m_dimensionHasBeenSet; }
 
     /**
      * <p>The name of the dimension. Each <code>Dimension</code> is available for a
-     * different <code>Context</code>. For more information, see <code>Context</code>.
+     * different <code>Context</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html#awscostmanagement-GetDimensionValues-request-Context">Context</a>.
      * </p>
      */
     inline void SetDimension(const Dimension& value) { m_dimensionHasBeenSet = true; m_dimension = value; }
 
     /**
      * <p>The name of the dimension. Each <code>Dimension</code> is available for a
-     * different <code>Context</code>. For more information, see <code>Context</code>.
+     * different <code>Context</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html#awscostmanagement-GetDimensionValues-request-Context">Context</a>.
      * </p>
      */
     inline void SetDimension(Dimension&& value) { m_dimensionHasBeenSet = true; m_dimension = std::move(value); }
 
     /**
      * <p>The name of the dimension. Each <code>Dimension</code> is available for a
-     * different <code>Context</code>. For more information, see <code>Context</code>.
+     * different <code>Context</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html#awscostmanagement-GetDimensionValues-request-Context">Context</a>.
      * </p>
      */
     inline GetDimensionValuesRequest& WithDimension(const Dimension& value) { SetDimension(value); return *this;}
 
     /**
      * <p>The name of the dimension. Each <code>Dimension</code> is available for a
-     * different <code>Context</code>. For more information, see <code>Context</code>.
+     * different <code>Context</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html#awscostmanagement-GetDimensionValues-request-Context">Context</a>.
      * </p>
      */
     inline GetDimensionValuesRequest& WithDimension(Dimension&& value) { SetDimension(std::move(value)); return *this;}

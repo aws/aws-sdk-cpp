@@ -37,7 +37,12 @@ namespace Model
    * the required permissions to use Amazon Web Services SSO with Amazon Kendra. For
    * more information, see <a
    * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html#iam-roles-aws-sso">IAM
-   * roles for Amazon Web Services SSO</a>.</p><p><h3>See Also:</h3>   <a
+   * roles for Amazon Web Services SSO</a>.</p> <p>Amazon Kendra currently does not
+   * support using <code>UserGroupResolutionConfiguration</code> with an Amazon Web
+   * Services organization member account for your Amazon Web Services SSO identify
+   * source. You must create your index in the parent account for the organization in
+   * order to use <code>UserGroupResolutionConfiguration</code>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UserGroupResolutionConfiguration">AWS
    * API Reference</a></p>
    */

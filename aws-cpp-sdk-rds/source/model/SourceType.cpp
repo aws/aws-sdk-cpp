@@ -27,6 +27,7 @@ namespace Aws
         static const int db_cluster_HASH = HashingUtils::HashString("db-cluster");
         static const int db_cluster_snapshot_HASH = HashingUtils::HashString("db-cluster-snapshot");
         static const int custom_engine_version_HASH = HashingUtils::HashString("custom-engine-version");
+        static const int db_proxy_HASH = HashingUtils::HashString("db-proxy");
 
 
         SourceType GetSourceTypeForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return SourceType::custom_engine_version;
           }
+          else if (hashCode == db_proxy_HASH)
+          {
+            return SourceType::db_proxy;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +93,8 @@ namespace Aws
             return "db-cluster-snapshot";
           case SourceType::custom_engine_version:
             return "custom-engine-version";
+          case SourceType::db_proxy:
+            return "db-proxy";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -26,8 +26,12 @@ namespace Model
 {
 
   /**
-   * <p>Permission group parameters for Dataset permissions.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Permission group parameters for Dataset permissions.</p> <p>Here is an
+   * example of how you could specify the <code>PermissionGroupParams</code>:</p> <p>
+   * <code> { "permissionGroupId": "0r6fCRtSTUk4XPfXQe3M0g", "datasetPermissions": [
+   * {"permission": "ViewDatasetDetails"}, {"permission": "AddDatasetData"},
+   * {"permission": "EditDatasetMetadata"}, {"permission": "DeleteDataset"} ] }
+   * </code> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/PermissionGroupParams">AWS
    * API Reference</a></p>
    */

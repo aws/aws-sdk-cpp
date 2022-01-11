@@ -702,7 +702,8 @@ namespace Model
 
         /**
          * <p>Creates an new set of frequently asked question (FAQ) questions and
-         * answers.</p><p><h3>See Also:</h3>   <a
+         * answers.</p> <p>Adding FAQs to an index is an asynchronous
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateFaq">AWS
          * API Reference</a></p>
          */
@@ -710,7 +711,8 @@ namespace Model
 
         /**
          * <p>Creates an new set of frequently asked question (FAQ) questions and
-         * answers.</p><p><h3>See Also:</h3>   <a
+         * answers.</p> <p>Adding FAQs to an index is an asynchronous
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateFaq">AWS
          * API Reference</a></p>
          *
@@ -720,7 +722,8 @@ namespace Model
 
         /**
          * <p>Creates an new set of frequently asked question (FAQ) questions and
-         * answers.</p><p><h3>See Also:</h3>   <a
+         * answers.</p> <p>Adding FAQs to an index is an asynchronous
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateFaq">AWS
          * API Reference</a></p>
          *

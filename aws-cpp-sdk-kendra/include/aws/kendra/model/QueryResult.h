@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kendra/model/QueryResultItem.h>
 #include <aws/kendra/model/FacetResult.h>
+#include <aws/kendra/model/Warning.h>
 #include <utility>
 
 namespace Aws
@@ -185,6 +186,77 @@ namespace Model
      */
     inline QueryResult& WithTotalNumberOfResults(int value) { SetTotalNumberOfResults(value); return *this;}
 
+
+    /**
+     * <p>A list of warning codes and their messages on problems with your query.</p>
+     * <p>Amazon Kendra currently only supports one type of warning, which is a warning
+     * on invalid syntax used in the query. For examples of invalid query syntax, see
+     * <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching
+     * with advanced query syntax</a>.</p>
+     */
+    inline const Aws::Vector<Warning>& GetWarnings() const{ return m_warnings; }
+
+    /**
+     * <p>A list of warning codes and their messages on problems with your query.</p>
+     * <p>Amazon Kendra currently only supports one type of warning, which is a warning
+     * on invalid syntax used in the query. For examples of invalid query syntax, see
+     * <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching
+     * with advanced query syntax</a>.</p>
+     */
+    inline void SetWarnings(const Aws::Vector<Warning>& value) { m_warnings = value; }
+
+    /**
+     * <p>A list of warning codes and their messages on problems with your query.</p>
+     * <p>Amazon Kendra currently only supports one type of warning, which is a warning
+     * on invalid syntax used in the query. For examples of invalid query syntax, see
+     * <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching
+     * with advanced query syntax</a>.</p>
+     */
+    inline void SetWarnings(Aws::Vector<Warning>&& value) { m_warnings = std::move(value); }
+
+    /**
+     * <p>A list of warning codes and their messages on problems with your query.</p>
+     * <p>Amazon Kendra currently only supports one type of warning, which is a warning
+     * on invalid syntax used in the query. For examples of invalid query syntax, see
+     * <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching
+     * with advanced query syntax</a>.</p>
+     */
+    inline QueryResult& WithWarnings(const Aws::Vector<Warning>& value) { SetWarnings(value); return *this;}
+
+    /**
+     * <p>A list of warning codes and their messages on problems with your query.</p>
+     * <p>Amazon Kendra currently only supports one type of warning, which is a warning
+     * on invalid syntax used in the query. For examples of invalid query syntax, see
+     * <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching
+     * with advanced query syntax</a>.</p>
+     */
+    inline QueryResult& WithWarnings(Aws::Vector<Warning>&& value) { SetWarnings(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of warning codes and their messages on problems with your query.</p>
+     * <p>Amazon Kendra currently only supports one type of warning, which is a warning
+     * on invalid syntax used in the query. For examples of invalid query syntax, see
+     * <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching
+     * with advanced query syntax</a>.</p>
+     */
+    inline QueryResult& AddWarnings(const Warning& value) { m_warnings.push_back(value); return *this; }
+
+    /**
+     * <p>A list of warning codes and their messages on problems with your query.</p>
+     * <p>Amazon Kendra currently only supports one type of warning, which is a warning
+     * on invalid syntax used in the query. For examples of invalid query syntax, see
+     * <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching
+     * with advanced query syntax</a>.</p>
+     */
+    inline QueryResult& AddWarnings(Warning&& value) { m_warnings.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_queryId;
@@ -194,6 +266,8 @@ namespace Model
     Aws::Vector<FacetResult> m_facetResults;
 
     int m_totalNumberOfResults;
+
+    Aws::Vector<Warning> m_warnings;
   };
 
 } // namespace Model

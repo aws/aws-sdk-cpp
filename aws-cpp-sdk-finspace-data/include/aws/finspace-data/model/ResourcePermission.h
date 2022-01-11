@@ -24,7 +24,19 @@ namespace Model
 {
 
   /**
-   * <p>Resource permission for a Dataset.</p><p><h3>See Also:</h3>   <a
+   * <p>Resource permission for a dataset. When you create a dataset, all the other
+   * members of the same user group inherit access to the dataset. You can only
+   * create a dataset if your user group has application permission for Create
+   * Datasets.</p> <p>The following is a list of valid dataset permissions that you
+   * can apply: </p> <ul> <li> <p> <code>ViewDatasetDetails</code> </p> </li> <li>
+   * <p> <code>ReadDatasetDetails</code> </p> </li> <li> <p>
+   * <code>AddDatasetData</code> </p> </li> <li> <p> <code>CreateSnapshot</code> </p>
+   * </li> <li> <p> <code>EditDatasetMetadata</code> </p> </li> <li> <p>
+   * <code>DeleteDataset</code> </p> </li> </ul> <p>For more information on the
+   * ataset permissions, see <a
+   * href="https://docs.aws.amazon.com/finspace/latest/userguide/managing-user-permissions.html#supported-dataset-permissions">Supported
+   * Dataset Permissions</a> in the FinSpace User Guide.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ResourcePermission">AWS
    * API Reference</a></p>
    */
