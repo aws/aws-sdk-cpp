@@ -103,8 +103,8 @@ namespace Model
      * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
      * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
-     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
-     * onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * for Redis engine version 6.0 onward and Memcached engine version 1.5.16 onward):
+     * <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
      * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
@@ -174,8 +174,8 @@ namespace Model
      * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
      * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
-     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
-     * onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * for Redis engine version 6.0 onward and Memcached engine version 1.5.16 onward):
+     * <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
      * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
@@ -245,8 +245,8 @@ namespace Model
      * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
      * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
-     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
-     * onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * for Redis engine version 6.0 onward and Memcached engine version 1.5.16 onward):
+     * <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
      * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
@@ -316,8 +316,8 @@ namespace Model
      * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
      * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
-     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
-     * onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * for Redis engine version 6.0 onward and Memcached engine version 1.5.16 onward):
+     * <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
      * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
@@ -387,8 +387,8 @@ namespace Model
      * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
      * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
-     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
-     * onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * for Redis engine version 6.0 onward and Memcached engine version 1.5.16 onward):
+     * <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
      * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
@@ -458,8 +458,8 @@ namespace Model
      * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
      * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
-     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
-     * onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * for Redis engine version 6.0 onward and Memcached engine version 1.5.16 onward):
+     * <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
      * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
@@ -529,8 +529,8 @@ namespace Model
      * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
      * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
-     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
-     * onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * for Redis engine version 6.0 onward and Memcached engine version 1.5.16 onward):
+     * <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
      * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
@@ -600,8 +600,8 @@ namespace Model
      * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
      * <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only
-     * for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16
-     * onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+     * for Redis engine version 6.0 onward and Memcached engine version 1.5.16 onward):
+     * <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
      * <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b>
      * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>

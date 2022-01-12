@@ -20,13 +20,15 @@ namespace Model
 
 ImportResourceSpecification::ImportResourceSpecification() : 
     m_botImportSpecificationHasBeenSet(false),
-    m_botLocaleImportSpecificationHasBeenSet(false)
+    m_botLocaleImportSpecificationHasBeenSet(false),
+    m_customVocabularyImportSpecificationHasBeenSet(false)
 {
 }
 
 ImportResourceSpecification::ImportResourceSpecification(JsonView jsonValue) : 
     m_botImportSpecificationHasBeenSet(false),
-    m_botLocaleImportSpecificationHasBeenSet(false)
+    m_botLocaleImportSpecificationHasBeenSet(false),
+    m_customVocabularyImportSpecificationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ ImportResourceSpecification& ImportResourceSpecification::operator =(JsonView js
     m_botLocaleImportSpecificationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("customVocabularyImportSpecification"))
+  {
+    m_customVocabularyImportSpecification = jsonValue.GetObject("customVocabularyImportSpecification");
+
+    m_customVocabularyImportSpecificationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue ImportResourceSpecification::Jsonize() const
   if(m_botLocaleImportSpecificationHasBeenSet)
   {
    payload.WithObject("botLocaleImportSpecification", m_botLocaleImportSpecification.Jsonize());
+
+  }
+
+  if(m_customVocabularyImportSpecificationHasBeenSet)
+  {
+   payload.WithObject("customVocabularyImportSpecification", m_customVocabularyImportSpecification.Jsonize());
 
   }
 

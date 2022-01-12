@@ -74,47 +74,56 @@ namespace Model
 
 
     /**
-     * <p>The values to use to filter the response.</p>
+     * <p>The values to use to filter the response. The values must be
+     * <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
 
     /**
-     * <p>The values to use to filter the response.</p>
+     * <p>The values to use to filter the response. The values must be
+     * <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
      */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
-     * <p>The values to use to filter the response.</p>
+     * <p>The values to use to filter the response. The values must be
+     * <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
      */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
-     * <p>The values to use to filter the response.</p>
+     * <p>The values to use to filter the response. The values must be
+     * <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
      */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
-     * <p>The values to use to filter the response.</p>
+     * <p>The values to use to filter the response. The values must be
+     * <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
      */
     inline ExportFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
 
     /**
-     * <p>The values to use to filter the response.</p>
+     * <p>The values to use to filter the response. The values must be
+     * <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
      */
     inline ExportFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
-     * <p>The values to use to filter the response.</p>
+     * <p>The values to use to filter the response. The values must be
+     * <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
      */
     inline ExportFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     /**
-     * <p>The values to use to filter the response.</p>
+     * <p>The values to use to filter the response. The values must be
+     * <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
      */
     inline ExportFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The values to use to filter the response.</p>
+     * <p>The values to use to filter the response. The values must be
+     * <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
      */
     inline ExportFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 

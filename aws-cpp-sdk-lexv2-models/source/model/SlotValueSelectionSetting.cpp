@@ -21,14 +21,16 @@ namespace Model
 SlotValueSelectionSetting::SlotValueSelectionSetting() : 
     m_resolutionStrategy(SlotValueResolutionStrategy::NOT_SET),
     m_resolutionStrategyHasBeenSet(false),
-    m_regexFilterHasBeenSet(false)
+    m_regexFilterHasBeenSet(false),
+    m_advancedRecognitionSettingHasBeenSet(false)
 {
 }
 
 SlotValueSelectionSetting::SlotValueSelectionSetting(JsonView jsonValue) : 
     m_resolutionStrategy(SlotValueResolutionStrategy::NOT_SET),
     m_resolutionStrategyHasBeenSet(false),
-    m_regexFilterHasBeenSet(false)
+    m_regexFilterHasBeenSet(false),
+    m_advancedRecognitionSettingHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +51,13 @@ SlotValueSelectionSetting& SlotValueSelectionSetting::operator =(JsonView jsonVa
     m_regexFilterHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("advancedRecognitionSetting"))
+  {
+    m_advancedRecognitionSetting = jsonValue.GetObject("advancedRecognitionSetting");
+
+    m_advancedRecognitionSettingHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -64,6 +73,12 @@ JsonValue SlotValueSelectionSetting::Jsonize() const
   if(m_regexFilterHasBeenSet)
   {
    payload.WithObject("regexFilter", m_regexFilter.Jsonize());
+
+  }
+
+  if(m_advancedRecognitionSettingHasBeenSet)
+  {
+   payload.WithObject("advancedRecognitionSetting", m_advancedRecognitionSetting.Jsonize());
 
   }
 

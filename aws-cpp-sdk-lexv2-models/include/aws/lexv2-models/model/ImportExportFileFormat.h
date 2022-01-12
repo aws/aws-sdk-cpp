@@ -16,7 +16,8 @@ namespace Model
   enum class ImportExportFileFormat
   {
     NOT_SET,
-    LexJson
+    LexJson,
+    TSV
   };
 
 namespace ImportExportFileFormatMapper

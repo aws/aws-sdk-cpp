@@ -241,16 +241,17 @@ namespace Model
      * Web Services Resource Types Reference</a>. To apply this policy to multiple
      * resource types, specify a resource type of <code>ResourceTypeList</code> and
      * then specify the resource types in a <code>ResourceTypeList</code>.</p> <p>For
-     * WAF and Shield Advanced, example resource types include
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and
-     * <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
-     * valid values are <code>AWS::EC2::NetworkInterface</code> and
-     * <code>AWS::EC2::Instance</code>. For a security group content audit policy,
-     * valid values are <code>AWS::EC2::SecurityGroup</code>,
-     * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
-     * For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS
-     * Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
+     * WAF and Shield Advanced, resource types include
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>,
+     * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>. For
+     * a security group common policy, valid values are
+     * <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For
+     * a security group content audit policy, valid values are
+     * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>,
+     * and <code>AWS::EC2::Instance</code>. For a security group usage audit policy,
+     * the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall
+     * policy or DNS Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
@@ -261,16 +262,17 @@ namespace Model
      * Web Services Resource Types Reference</a>. To apply this policy to multiple
      * resource types, specify a resource type of <code>ResourceTypeList</code> and
      * then specify the resource types in a <code>ResourceTypeList</code>.</p> <p>For
-     * WAF and Shield Advanced, example resource types include
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and
-     * <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
-     * valid values are <code>AWS::EC2::NetworkInterface</code> and
-     * <code>AWS::EC2::Instance</code>. For a security group content audit policy,
-     * valid values are <code>AWS::EC2::SecurityGroup</code>,
-     * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
-     * For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS
-     * Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
+     * WAF and Shield Advanced, resource types include
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>,
+     * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>. For
+     * a security group common policy, valid values are
+     * <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For
+     * a security group content audit policy, valid values are
+     * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>,
+     * and <code>AWS::EC2::Instance</code>. For a security group usage audit policy,
+     * the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall
+     * policy or DNS Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
@@ -281,16 +283,17 @@ namespace Model
      * Web Services Resource Types Reference</a>. To apply this policy to multiple
      * resource types, specify a resource type of <code>ResourceTypeList</code> and
      * then specify the resource types in a <code>ResourceTypeList</code>.</p> <p>For
-     * WAF and Shield Advanced, example resource types include
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and
-     * <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
-     * valid values are <code>AWS::EC2::NetworkInterface</code> and
-     * <code>AWS::EC2::Instance</code>. For a security group content audit policy,
-     * valid values are <code>AWS::EC2::SecurityGroup</code>,
-     * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
-     * For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS
-     * Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
+     * WAF and Shield Advanced, resource types include
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>,
+     * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>. For
+     * a security group common policy, valid values are
+     * <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For
+     * a security group content audit policy, valid values are
+     * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>,
+     * and <code>AWS::EC2::Instance</code>. For a security group usage audit policy,
+     * the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall
+     * policy or DNS Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
@@ -301,16 +304,17 @@ namespace Model
      * Web Services Resource Types Reference</a>. To apply this policy to multiple
      * resource types, specify a resource type of <code>ResourceTypeList</code> and
      * then specify the resource types in a <code>ResourceTypeList</code>.</p> <p>For
-     * WAF and Shield Advanced, example resource types include
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and
-     * <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
-     * valid values are <code>AWS::EC2::NetworkInterface</code> and
-     * <code>AWS::EC2::Instance</code>. For a security group content audit policy,
-     * valid values are <code>AWS::EC2::SecurityGroup</code>,
-     * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
-     * For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS
-     * Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
+     * WAF and Shield Advanced, resource types include
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>,
+     * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>. For
+     * a security group common policy, valid values are
+     * <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For
+     * a security group content audit policy, valid values are
+     * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>,
+     * and <code>AWS::EC2::Instance</code>. For a security group usage audit policy,
+     * the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall
+     * policy or DNS Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
@@ -321,16 +325,17 @@ namespace Model
      * Web Services Resource Types Reference</a>. To apply this policy to multiple
      * resource types, specify a resource type of <code>ResourceTypeList</code> and
      * then specify the resource types in a <code>ResourceTypeList</code>.</p> <p>For
-     * WAF and Shield Advanced, example resource types include
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and
-     * <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
-     * valid values are <code>AWS::EC2::NetworkInterface</code> and
-     * <code>AWS::EC2::Instance</code>. For a security group content audit policy,
-     * valid values are <code>AWS::EC2::SecurityGroup</code>,
-     * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
-     * For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS
-     * Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
+     * WAF and Shield Advanced, resource types include
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>,
+     * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>. For
+     * a security group common policy, valid values are
+     * <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For
+     * a security group content audit policy, valid values are
+     * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>,
+     * and <code>AWS::EC2::Instance</code>. For a security group usage audit policy,
+     * the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall
+     * policy or DNS Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
@@ -341,16 +346,17 @@ namespace Model
      * Web Services Resource Types Reference</a>. To apply this policy to multiple
      * resource types, specify a resource type of <code>ResourceTypeList</code> and
      * then specify the resource types in a <code>ResourceTypeList</code>.</p> <p>For
-     * WAF and Shield Advanced, example resource types include
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and
-     * <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
-     * valid values are <code>AWS::EC2::NetworkInterface</code> and
-     * <code>AWS::EC2::Instance</code>. For a security group content audit policy,
-     * valid values are <code>AWS::EC2::SecurityGroup</code>,
-     * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
-     * For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS
-     * Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
+     * WAF and Shield Advanced, resource types include
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>,
+     * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>. For
+     * a security group common policy, valid values are
+     * <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For
+     * a security group content audit policy, valid values are
+     * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>,
+     * and <code>AWS::EC2::Instance</code>. For a security group usage audit policy,
+     * the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall
+     * policy or DNS Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
      */
     inline Policy& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
@@ -361,16 +367,17 @@ namespace Model
      * Web Services Resource Types Reference</a>. To apply this policy to multiple
      * resource types, specify a resource type of <code>ResourceTypeList</code> and
      * then specify the resource types in a <code>ResourceTypeList</code>.</p> <p>For
-     * WAF and Shield Advanced, example resource types include
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and
-     * <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
-     * valid values are <code>AWS::EC2::NetworkInterface</code> and
-     * <code>AWS::EC2::Instance</code>. For a security group content audit policy,
-     * valid values are <code>AWS::EC2::SecurityGroup</code>,
-     * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
-     * For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS
-     * Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
+     * WAF and Shield Advanced, resource types include
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>,
+     * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>. For
+     * a security group common policy, valid values are
+     * <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For
+     * a security group content audit policy, valid values are
+     * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>,
+     * and <code>AWS::EC2::Instance</code>. For a security group usage audit policy,
+     * the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall
+     * policy or DNS Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
      */
     inline Policy& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
@@ -381,16 +388,17 @@ namespace Model
      * Web Services Resource Types Reference</a>. To apply this policy to multiple
      * resource types, specify a resource type of <code>ResourceTypeList</code> and
      * then specify the resource types in a <code>ResourceTypeList</code>.</p> <p>For
-     * WAF and Shield Advanced, example resource types include
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and
-     * <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
-     * valid values are <code>AWS::EC2::NetworkInterface</code> and
-     * <code>AWS::EC2::Instance</code>. For a security group content audit policy,
-     * valid values are <code>AWS::EC2::SecurityGroup</code>,
-     * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
-     * For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS
-     * Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
+     * WAF and Shield Advanced, resource types include
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>,
+     * <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>. For
+     * a security group common policy, valid values are
+     * <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For
+     * a security group content audit policy, valid values are
+     * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>,
+     * and <code>AWS::EC2::Instance</code>. For a security group usage audit policy,
+     * the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall
+     * policy or DNS Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
      */
     inline Policy& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
@@ -555,38 +563,50 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether Firewall Manager should delete Firewall Manager managed
-     * resources, such as web ACLs and security groups, when they are not in use by the
-     * Firewall Manager policy. By default, Firewall Manager doesn't delete unused
-     * Firewall Manager managed resources. This option is not available for Shield
-     * Advanced or WAF Classic policies.</p>
+     * <p>Indicates whether Firewall Manager should automatically remove protections
+     * from resources that leave the policy scope and clean up resources that Firewall
+     * Manager is managing for accounts when those accounts leave policy scope. For
+     * example, Firewall Manager will disassociate a Firewall Manager managed web ACL
+     * from a protected customer resource when the customer resource leaves policy
+     * scope. </p> <p>By default, Firewall Manager doesn't remove protections or delete
+     * Firewall Manager managed resources. </p> <p>This option is not available for
+     * Shield Advanced or WAF Classic policies.</p>
      */
     inline bool GetDeleteUnusedFMManagedResources() const{ return m_deleteUnusedFMManagedResources; }
 
     /**
-     * <p>Indicates whether Firewall Manager should delete Firewall Manager managed
-     * resources, such as web ACLs and security groups, when they are not in use by the
-     * Firewall Manager policy. By default, Firewall Manager doesn't delete unused
-     * Firewall Manager managed resources. This option is not available for Shield
-     * Advanced or WAF Classic policies.</p>
+     * <p>Indicates whether Firewall Manager should automatically remove protections
+     * from resources that leave the policy scope and clean up resources that Firewall
+     * Manager is managing for accounts when those accounts leave policy scope. For
+     * example, Firewall Manager will disassociate a Firewall Manager managed web ACL
+     * from a protected customer resource when the customer resource leaves policy
+     * scope. </p> <p>By default, Firewall Manager doesn't remove protections or delete
+     * Firewall Manager managed resources. </p> <p>This option is not available for
+     * Shield Advanced or WAF Classic policies.</p>
      */
     inline bool DeleteUnusedFMManagedResourcesHasBeenSet() const { return m_deleteUnusedFMManagedResourcesHasBeenSet; }
 
     /**
-     * <p>Indicates whether Firewall Manager should delete Firewall Manager managed
-     * resources, such as web ACLs and security groups, when they are not in use by the
-     * Firewall Manager policy. By default, Firewall Manager doesn't delete unused
-     * Firewall Manager managed resources. This option is not available for Shield
-     * Advanced or WAF Classic policies.</p>
+     * <p>Indicates whether Firewall Manager should automatically remove protections
+     * from resources that leave the policy scope and clean up resources that Firewall
+     * Manager is managing for accounts when those accounts leave policy scope. For
+     * example, Firewall Manager will disassociate a Firewall Manager managed web ACL
+     * from a protected customer resource when the customer resource leaves policy
+     * scope. </p> <p>By default, Firewall Manager doesn't remove protections or delete
+     * Firewall Manager managed resources. </p> <p>This option is not available for
+     * Shield Advanced or WAF Classic policies.</p>
      */
     inline void SetDeleteUnusedFMManagedResources(bool value) { m_deleteUnusedFMManagedResourcesHasBeenSet = true; m_deleteUnusedFMManagedResources = value; }
 
     /**
-     * <p>Indicates whether Firewall Manager should delete Firewall Manager managed
-     * resources, such as web ACLs and security groups, when they are not in use by the
-     * Firewall Manager policy. By default, Firewall Manager doesn't delete unused
-     * Firewall Manager managed resources. This option is not available for Shield
-     * Advanced or WAF Classic policies.</p>
+     * <p>Indicates whether Firewall Manager should automatically remove protections
+     * from resources that leave the policy scope and clean up resources that Firewall
+     * Manager is managing for accounts when those accounts leave policy scope. For
+     * example, Firewall Manager will disassociate a Firewall Manager managed web ACL
+     * from a protected customer resource when the customer resource leaves policy
+     * scope. </p> <p>By default, Firewall Manager doesn't remove protections or delete
+     * Firewall Manager managed resources. </p> <p>This option is not available for
+     * Shield Advanced or WAF Classic policies.</p>
      */
     inline Policy& WithDeleteUnusedFMManagedResources(bool value) { SetDeleteUnusedFMManagedResources(value); return *this;}
 

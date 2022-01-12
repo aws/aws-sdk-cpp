@@ -9,6 +9,7 @@
 #include <aws/lexv2-models/model/ImportStatus.h>
 #include <aws/lexv2-models/model/MergeStrategy.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/lexv2-models/model/ImportResourceType.h>
 #include <utility>
 
 namespace Aws
@@ -299,6 +300,37 @@ namespace Model
      */
     inline ImportSummary& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The type of resource that was imported.</p>
+     */
+    inline const ImportResourceType& GetImportedResourceType() const{ return m_importedResourceType; }
+
+    /**
+     * <p>The type of resource that was imported.</p>
+     */
+    inline bool ImportedResourceTypeHasBeenSet() const { return m_importedResourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of resource that was imported.</p>
+     */
+    inline void SetImportedResourceType(const ImportResourceType& value) { m_importedResourceTypeHasBeenSet = true; m_importedResourceType = value; }
+
+    /**
+     * <p>The type of resource that was imported.</p>
+     */
+    inline void SetImportedResourceType(ImportResourceType&& value) { m_importedResourceTypeHasBeenSet = true; m_importedResourceType = std::move(value); }
+
+    /**
+     * <p>The type of resource that was imported.</p>
+     */
+    inline ImportSummary& WithImportedResourceType(const ImportResourceType& value) { SetImportedResourceType(value); return *this;}
+
+    /**
+     * <p>The type of resource that was imported.</p>
+     */
+    inline ImportSummary& WithImportedResourceType(ImportResourceType&& value) { SetImportedResourceType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_importId;
@@ -321,6 +353,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
     bool m_lastUpdatedDateTimeHasBeenSet;
+
+    ImportResourceType m_importedResourceType;
+    bool m_importedResourceTypeHasBeenSet;
   };
 
 } // namespace Model

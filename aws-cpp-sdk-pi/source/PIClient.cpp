@@ -22,7 +22,10 @@
 #include <aws/pi/PIErrorMarshaller.h>
 #include <aws/pi/model/DescribeDimensionKeysRequest.h>
 #include <aws/pi/model/GetDimensionKeyDetailsRequest.h>
+#include <aws/pi/model/GetResourceMetadataRequest.h>
 #include <aws/pi/model/GetResourceMetricsRequest.h>
+#include <aws/pi/model/ListAvailableResourceDimensionsRequest.h>
+#include <aws/pi/model/ListAvailableResourceMetricsRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -145,6 +148,30 @@ void PIClient::GetDimensionKeyDetailsAsyncHelper(const GetDimensionKeyDetailsReq
   handler(this, request, GetDimensionKeyDetails(request), context);
 }
 
+GetResourceMetadataOutcome PIClient::GetResourceMetadata(const GetResourceMetadataRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetResourceMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetResourceMetadataOutcomeCallable PIClient::GetResourceMetadataCallable(const GetResourceMetadataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetResourceMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResourceMetadata(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PIClient::GetResourceMetadataAsync(const GetResourceMetadataRequest& request, const GetResourceMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetResourceMetadataAsyncHelper( request, handler, context ); } );
+}
+
+void PIClient::GetResourceMetadataAsyncHelper(const GetResourceMetadataRequest& request, const GetResourceMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetResourceMetadata(request), context);
+}
+
 GetResourceMetricsOutcome PIClient::GetResourceMetrics(const GetResourceMetricsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -167,5 +194,53 @@ void PIClient::GetResourceMetricsAsync(const GetResourceMetricsRequest& request,
 void PIClient::GetResourceMetricsAsyncHelper(const GetResourceMetricsRequest& request, const GetResourceMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetResourceMetrics(request), context);
+}
+
+ListAvailableResourceDimensionsOutcome PIClient::ListAvailableResourceDimensions(const ListAvailableResourceDimensionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListAvailableResourceDimensionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAvailableResourceDimensionsOutcomeCallable PIClient::ListAvailableResourceDimensionsCallable(const ListAvailableResourceDimensionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAvailableResourceDimensionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAvailableResourceDimensions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PIClient::ListAvailableResourceDimensionsAsync(const ListAvailableResourceDimensionsRequest& request, const ListAvailableResourceDimensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAvailableResourceDimensionsAsyncHelper( request, handler, context ); } );
+}
+
+void PIClient::ListAvailableResourceDimensionsAsyncHelper(const ListAvailableResourceDimensionsRequest& request, const ListAvailableResourceDimensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAvailableResourceDimensions(request), context);
+}
+
+ListAvailableResourceMetricsOutcome PIClient::ListAvailableResourceMetrics(const ListAvailableResourceMetricsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListAvailableResourceMetricsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAvailableResourceMetricsOutcomeCallable PIClient::ListAvailableResourceMetricsCallable(const ListAvailableResourceMetricsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAvailableResourceMetricsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAvailableResourceMetrics(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PIClient::ListAvailableResourceMetricsAsync(const ListAvailableResourceMetricsRequest& request, const ListAvailableResourceMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAvailableResourceMetricsAsyncHelper( request, handler, context ); } );
+}
+
+void PIClient::ListAvailableResourceMetricsAsyncHelper(const ListAvailableResourceMetricsRequest& request, const ListAvailableResourceMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAvailableResourceMetrics(request), context);
 }
 

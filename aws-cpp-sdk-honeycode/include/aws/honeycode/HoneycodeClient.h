@@ -21,8 +21,11 @@
 #include <aws/honeycode/model/ListTableColumnsResult.h>
 #include <aws/honeycode/model/ListTableRowsResult.h>
 #include <aws/honeycode/model/ListTablesResult.h>
+#include <aws/honeycode/model/ListTagsForResourceResult.h>
 #include <aws/honeycode/model/QueryTableRowsResult.h>
 #include <aws/honeycode/model/StartTableDataImportJobResult.h>
+#include <aws/honeycode/model/TagResourceResult.h>
+#include <aws/honeycode/model/UntagResourceResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -72,8 +75,11 @@ namespace Model
         class ListTableColumnsRequest;
         class ListTableRowsRequest;
         class ListTablesRequest;
+        class ListTagsForResourceRequest;
         class QueryTableRowsRequest;
         class StartTableDataImportJobRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
 
         typedef Aws::Utils::Outcome<BatchCreateTableRowsResult, HoneycodeError> BatchCreateTableRowsOutcome;
         typedef Aws::Utils::Outcome<BatchDeleteTableRowsResult, HoneycodeError> BatchDeleteTableRowsOutcome;
@@ -85,8 +91,11 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTableColumnsResult, HoneycodeError> ListTableColumnsOutcome;
         typedef Aws::Utils::Outcome<ListTableRowsResult, HoneycodeError> ListTableRowsOutcome;
         typedef Aws::Utils::Outcome<ListTablesResult, HoneycodeError> ListTablesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, HoneycodeError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<QueryTableRowsResult, HoneycodeError> QueryTableRowsOutcome;
         typedef Aws::Utils::Outcome<StartTableDataImportJobResult, HoneycodeError> StartTableDataImportJobOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, HoneycodeError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, HoneycodeError> UntagResourceOutcome;
 
         typedef std::future<BatchCreateTableRowsOutcome> BatchCreateTableRowsOutcomeCallable;
         typedef std::future<BatchDeleteTableRowsOutcome> BatchDeleteTableRowsOutcomeCallable;
@@ -98,8 +107,11 @@ namespace Model
         typedef std::future<ListTableColumnsOutcome> ListTableColumnsOutcomeCallable;
         typedef std::future<ListTableRowsOutcome> ListTableRowsOutcomeCallable;
         typedef std::future<ListTablesOutcome> ListTablesOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<QueryTableRowsOutcome> QueryTableRowsOutcomeCallable;
         typedef std::future<StartTableDataImportJobOutcome> StartTableDataImportJobOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 } // namespace Model
 
   class HoneycodeClient;
@@ -114,8 +126,11 @@ namespace Model
     typedef std::function<void(const HoneycodeClient*, const Model::ListTableColumnsRequest&, const Model::ListTableColumnsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTableColumnsResponseReceivedHandler;
     typedef std::function<void(const HoneycodeClient*, const Model::ListTableRowsRequest&, const Model::ListTableRowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTableRowsResponseReceivedHandler;
     typedef std::function<void(const HoneycodeClient*, const Model::ListTablesRequest&, const Model::ListTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTablesResponseReceivedHandler;
+    typedef std::function<void(const HoneycodeClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const HoneycodeClient*, const Model::QueryTableRowsRequest&, const Model::QueryTableRowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > QueryTableRowsResponseReceivedHandler;
     typedef std::function<void(const HoneycodeClient*, const Model::StartTableDataImportJobRequest&, const Model::StartTableDataImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartTableDataImportJobResponseReceivedHandler;
+    typedef std::function<void(const HoneycodeClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const HoneycodeClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
 
   /**
    * <p> Amazon Honeycode is a fully managed service that allows you to quickly build
@@ -509,6 +524,34 @@ namespace Model
         virtual void ListTablesAsync(const Model::ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> The ListTagsForResource API allows you to return a resource's tags.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p> The ListTagsForResource API allows you to return a resource's tags.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p> The ListTagsForResource API allows you to return a resource's tags.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> The QueryTableRows API allows you to use a filter formula to query for
          * specific rows in a table. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/QueryTableRows">AWS
@@ -570,6 +613,68 @@ namespace Model
          */
         virtual void StartTableDataImportJobAsync(const Model::StartTableDataImportJobRequest& request, const StartTableDataImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p> The TagResource API allows you to add tags to an ARN-able resource. Resource
+         * includes workbook, table, screen and screen-automation. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p> The TagResource API allows you to add tags to an ARN-able resource. Resource
+         * includes workbook, table, screen and screen-automation. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p> The TagResource API allows you to add tags to an ARN-able resource. Resource
+         * includes workbook, table, screen and screen-automation. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> The UntagResource API allows you to removes tags from an ARN-able resource.
+         * Resource includes workbook, table, screen and screen-automation. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p> The UntagResource API allows you to removes tags from an ARN-able resource.
+         * Resource includes workbook, table, screen and screen-automation. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p> The UntagResource API allows you to removes tags from an ARN-able resource.
+         * Resource includes workbook, table, screen and screen-automation. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -584,8 +689,11 @@ namespace Model
         void ListTableColumnsAsyncHelper(const Model::ListTableColumnsRequest& request, const ListTableColumnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTableRowsAsyncHelper(const Model::ListTableRowsRequest& request, const ListTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTablesAsyncHelper(const Model::ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void QueryTableRowsAsyncHelper(const Model::QueryTableRowsRequest& request, const QueryTableRowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartTableDataImportJobAsyncHelper(const Model::StartTableDataImportJobRequest& request, const StartTableDataImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

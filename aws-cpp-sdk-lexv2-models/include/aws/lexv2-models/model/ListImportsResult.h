@@ -233,6 +233,42 @@ namespace Model
      */
     inline ListImportsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The locale specified in the request.</p>
+     */
+    inline const Aws::String& GetLocaleId() const{ return m_localeId; }
+
+    /**
+     * <p>The locale specified in the request.</p>
+     */
+    inline void SetLocaleId(const Aws::String& value) { m_localeId = value; }
+
+    /**
+     * <p>The locale specified in the request.</p>
+     */
+    inline void SetLocaleId(Aws::String&& value) { m_localeId = std::move(value); }
+
+    /**
+     * <p>The locale specified in the request.</p>
+     */
+    inline void SetLocaleId(const char* value) { m_localeId.assign(value); }
+
+    /**
+     * <p>The locale specified in the request.</p>
+     */
+    inline ListImportsResult& WithLocaleId(const Aws::String& value) { SetLocaleId(value); return *this;}
+
+    /**
+     * <p>The locale specified in the request.</p>
+     */
+    inline ListImportsResult& WithLocaleId(Aws::String&& value) { SetLocaleId(std::move(value)); return *this;}
+
+    /**
+     * <p>The locale specified in the request.</p>
+     */
+    inline ListImportsResult& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
+
   private:
 
     Aws::String m_botId;
@@ -242,6 +278,8 @@ namespace Model
     Aws::Vector<ImportSummary> m_importSummaries;
 
     Aws::String m_nextToken;
+
+    Aws::String m_localeId;
   };
 
 } // namespace Model

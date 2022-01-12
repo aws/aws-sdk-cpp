@@ -27,7 +27,9 @@ ImportSummary::ImportSummary() :
     m_mergeStrategy(MergeStrategy::NOT_SET),
     m_mergeStrategyHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+    m_lastUpdatedDateTimeHasBeenSet(false),
+    m_importedResourceType(ImportResourceType::NOT_SET),
+    m_importedResourceTypeHasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ ImportSummary::ImportSummary(JsonView jsonValue) :
     m_mergeStrategy(MergeStrategy::NOT_SET),
     m_mergeStrategyHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+    m_lastUpdatedDateTimeHasBeenSet(false),
+    m_importedResourceType(ImportResourceType::NOT_SET),
+    m_importedResourceTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -96,6 +100,13 @@ ImportSummary& ImportSummary::operator =(JsonView jsonValue)
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("importedResourceType"))
+  {
+    m_importedResourceType = ImportResourceTypeMapper::GetImportResourceTypeForName(jsonValue.GetString("importedResourceType"));
+
+    m_importedResourceTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -139,6 +150,11 @@ JsonValue ImportSummary::Jsonize() const
   if(m_lastUpdatedDateTimeHasBeenSet)
   {
    payload.WithDouble("lastUpdatedDateTime", m_lastUpdatedDateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_importedResourceTypeHasBeenSet)
+  {
+   payload.WithString("importedResourceType", ImportResourceTypeMapper::GetNameForImportResourceType(m_importedResourceType));
   }
 
   return payload;

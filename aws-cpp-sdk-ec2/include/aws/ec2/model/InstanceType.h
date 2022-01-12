@@ -165,6 +165,7 @@ namespace Model
     g5g_16xlarge,
     g5g_metal,
     hi1_4xlarge,
+    hpc6a_48xlarge,
     hs1_8xlarge,
     h1_2xlarge,
     h1_4xlarge,

@@ -19,7 +19,8 @@ ListImportsRequest::ListImportsRequest() :
     m_filtersHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_localeIdHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,12 @@ Aws::String ListImportsRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("nextToken", m_nextToken);
+
+  }
+
+  if(m_localeIdHasBeenSet)
+  {
+   payload.WithString("localeId", m_localeId);
 
   }
 

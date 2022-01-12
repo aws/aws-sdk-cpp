@@ -7,6 +7,7 @@
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/lexv2-models/model/BotExportSpecification.h>
 #include <aws/lexv2-models/model/BotLocaleExportSpecification.h>
+#include <aws/lexv2-models/model/CustomVocabularyExportSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -102,6 +103,37 @@ namespace Model
      */
     inline ExportResourceSpecification& WithBotLocaleExportSpecification(BotLocaleExportSpecification&& value) { SetBotLocaleExportSpecification(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The parameters required to export a custom vocabulary.</p>
+     */
+    inline const CustomVocabularyExportSpecification& GetCustomVocabularyExportSpecification() const{ return m_customVocabularyExportSpecification; }
+
+    /**
+     * <p>The parameters required to export a custom vocabulary.</p>
+     */
+    inline bool CustomVocabularyExportSpecificationHasBeenSet() const { return m_customVocabularyExportSpecificationHasBeenSet; }
+
+    /**
+     * <p>The parameters required to export a custom vocabulary.</p>
+     */
+    inline void SetCustomVocabularyExportSpecification(const CustomVocabularyExportSpecification& value) { m_customVocabularyExportSpecificationHasBeenSet = true; m_customVocabularyExportSpecification = value; }
+
+    /**
+     * <p>The parameters required to export a custom vocabulary.</p>
+     */
+    inline void SetCustomVocabularyExportSpecification(CustomVocabularyExportSpecification&& value) { m_customVocabularyExportSpecificationHasBeenSet = true; m_customVocabularyExportSpecification = std::move(value); }
+
+    /**
+     * <p>The parameters required to export a custom vocabulary.</p>
+     */
+    inline ExportResourceSpecification& WithCustomVocabularyExportSpecification(const CustomVocabularyExportSpecification& value) { SetCustomVocabularyExportSpecification(value); return *this;}
+
+    /**
+     * <p>The parameters required to export a custom vocabulary.</p>
+     */
+    inline ExportResourceSpecification& WithCustomVocabularyExportSpecification(CustomVocabularyExportSpecification&& value) { SetCustomVocabularyExportSpecification(std::move(value)); return *this;}
+
   private:
 
     BotExportSpecification m_botExportSpecification;
@@ -109,6 +141,9 @@ namespace Model
 
     BotLocaleExportSpecification m_botLocaleExportSpecification;
     bool m_botLocaleExportSpecificationHasBeenSet;
+
+    CustomVocabularyExportSpecification m_customVocabularyExportSpecification;
+    bool m_customVocabularyExportSpecificationHasBeenSet;
   };
 
 } // namespace Model

@@ -243,66 +243,147 @@ namespace Model
     /**
      * <p>If the response from the <code>ListExports</code> operation contains more
      * results that specified in the <code>maxResults</code> parameter, a token is
-     * returned in the response. Use that token in the <code>nextToken</code> parameter
-     * to return the next page of results.</p>
+     * returned in the response. </p> <p>Use the returned token in the
+     * <code>nextToken</code> parameter of a <code>ListExports</code> request to return
+     * the next page of results. For a complete set of results, call the
+     * <code>ListExports</code> operation until the <code>nextToken</code> returned in
+     * the response is null.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>If the response from the <code>ListExports</code> operation contains more
      * results that specified in the <code>maxResults</code> parameter, a token is
-     * returned in the response. Use that token in the <code>nextToken</code> parameter
-     * to return the next page of results.</p>
+     * returned in the response. </p> <p>Use the returned token in the
+     * <code>nextToken</code> parameter of a <code>ListExports</code> request to return
+     * the next page of results. For a complete set of results, call the
+     * <code>ListExports</code> operation until the <code>nextToken</code> returned in
+     * the response is null.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>If the response from the <code>ListExports</code> operation contains more
      * results that specified in the <code>maxResults</code> parameter, a token is
-     * returned in the response. Use that token in the <code>nextToken</code> parameter
-     * to return the next page of results.</p>
+     * returned in the response. </p> <p>Use the returned token in the
+     * <code>nextToken</code> parameter of a <code>ListExports</code> request to return
+     * the next page of results. For a complete set of results, call the
+     * <code>ListExports</code> operation until the <code>nextToken</code> returned in
+     * the response is null.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>If the response from the <code>ListExports</code> operation contains more
      * results that specified in the <code>maxResults</code> parameter, a token is
-     * returned in the response. Use that token in the <code>nextToken</code> parameter
-     * to return the next page of results.</p>
+     * returned in the response. </p> <p>Use the returned token in the
+     * <code>nextToken</code> parameter of a <code>ListExports</code> request to return
+     * the next page of results. For a complete set of results, call the
+     * <code>ListExports</code> operation until the <code>nextToken</code> returned in
+     * the response is null.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>If the response from the <code>ListExports</code> operation contains more
      * results that specified in the <code>maxResults</code> parameter, a token is
-     * returned in the response. Use that token in the <code>nextToken</code> parameter
-     * to return the next page of results.</p>
+     * returned in the response. </p> <p>Use the returned token in the
+     * <code>nextToken</code> parameter of a <code>ListExports</code> request to return
+     * the next page of results. For a complete set of results, call the
+     * <code>ListExports</code> operation until the <code>nextToken</code> returned in
+     * the response is null.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p>If the response from the <code>ListExports</code> operation contains more
      * results that specified in the <code>maxResults</code> parameter, a token is
-     * returned in the response. Use that token in the <code>nextToken</code> parameter
-     * to return the next page of results.</p>
+     * returned in the response. </p> <p>Use the returned token in the
+     * <code>nextToken</code> parameter of a <code>ListExports</code> request to return
+     * the next page of results. For a complete set of results, call the
+     * <code>ListExports</code> operation until the <code>nextToken</code> returned in
+     * the response is null.</p>
      */
     inline ListExportsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>If the response from the <code>ListExports</code> operation contains more
      * results that specified in the <code>maxResults</code> parameter, a token is
-     * returned in the response. Use that token in the <code>nextToken</code> parameter
-     * to return the next page of results.</p>
+     * returned in the response. </p> <p>Use the returned token in the
+     * <code>nextToken</code> parameter of a <code>ListExports</code> request to return
+     * the next page of results. For a complete set of results, call the
+     * <code>ListExports</code> operation until the <code>nextToken</code> returned in
+     * the response is null.</p>
      */
     inline ListExportsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the response from the <code>ListExports</code> operation contains more
      * results that specified in the <code>maxResults</code> parameter, a token is
-     * returned in the response. Use that token in the <code>nextToken</code> parameter
-     * to return the next page of results.</p>
+     * returned in the response. </p> <p>Use the returned token in the
+     * <code>nextToken</code> parameter of a <code>ListExports</code> request to return
+     * the next page of results. For a complete set of results, call the
+     * <code>ListExports</code> operation until the <code>nextToken</code> returned in
+     * the response is null.</p>
      */
     inline ListExportsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
+
+    /**
+     * <p>Specifies the resources that should be exported. If you don't specify a
+     * resource type in the <code>filters</code> parameter, both bot locales and custom
+     * vocabularies are exported.</p>
+     */
+    inline const Aws::String& GetLocaleId() const{ return m_localeId; }
+
+    /**
+     * <p>Specifies the resources that should be exported. If you don't specify a
+     * resource type in the <code>filters</code> parameter, both bot locales and custom
+     * vocabularies are exported.</p>
+     */
+    inline bool LocaleIdHasBeenSet() const { return m_localeIdHasBeenSet; }
+
+    /**
+     * <p>Specifies the resources that should be exported. If you don't specify a
+     * resource type in the <code>filters</code> parameter, both bot locales and custom
+     * vocabularies are exported.</p>
+     */
+    inline void SetLocaleId(const Aws::String& value) { m_localeIdHasBeenSet = true; m_localeId = value; }
+
+    /**
+     * <p>Specifies the resources that should be exported. If you don't specify a
+     * resource type in the <code>filters</code> parameter, both bot locales and custom
+     * vocabularies are exported.</p>
+     */
+    inline void SetLocaleId(Aws::String&& value) { m_localeIdHasBeenSet = true; m_localeId = std::move(value); }
+
+    /**
+     * <p>Specifies the resources that should be exported. If you don't specify a
+     * resource type in the <code>filters</code> parameter, both bot locales and custom
+     * vocabularies are exported.</p>
+     */
+    inline void SetLocaleId(const char* value) { m_localeIdHasBeenSet = true; m_localeId.assign(value); }
+
+    /**
+     * <p>Specifies the resources that should be exported. If you don't specify a
+     * resource type in the <code>filters</code> parameter, both bot locales and custom
+     * vocabularies are exported.</p>
+     */
+    inline ListExportsRequest& WithLocaleId(const Aws::String& value) { SetLocaleId(value); return *this;}
+
+    /**
+     * <p>Specifies the resources that should be exported. If you don't specify a
+     * resource type in the <code>filters</code> parameter, both bot locales and custom
+     * vocabularies are exported.</p>
+     */
+    inline ListExportsRequest& WithLocaleId(Aws::String&& value) { SetLocaleId(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the resources that should be exported. If you don't specify a
+     * resource type in the <code>filters</code> parameter, both bot locales and custom
+     * vocabularies are exported.</p>
+     */
+    inline ListExportsRequest& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
 
   private:
 
@@ -323,6 +404,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
+    Aws::String m_localeId;
+    bool m_localeIdHasBeenSet;
   };
 
 } // namespace Model

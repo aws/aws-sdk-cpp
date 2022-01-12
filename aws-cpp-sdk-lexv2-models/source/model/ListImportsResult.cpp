@@ -55,6 +55,12 @@ ListImportsResult& ListImportsResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
+  if(jsonValue.ValueExists("localeId"))
+  {
+    m_localeId = jsonValue.GetString("localeId");
+
+  }
+
 
 
   return *this;

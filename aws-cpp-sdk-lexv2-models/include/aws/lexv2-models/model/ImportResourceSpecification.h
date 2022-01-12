@@ -7,6 +7,7 @@
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/lexv2-models/model/BotImportSpecification.h>
 #include <aws/lexv2-models/model/BotLocaleImportSpecification.h>
+#include <aws/lexv2-models/model/CustomVocabularyImportSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -102,6 +103,25 @@ namespace Model
      */
     inline ImportResourceSpecification& WithBotLocaleImportSpecification(BotLocaleImportSpecification&& value) { SetBotLocaleImportSpecification(std::move(value)); return *this;}
 
+
+    
+    inline const CustomVocabularyImportSpecification& GetCustomVocabularyImportSpecification() const{ return m_customVocabularyImportSpecification; }
+
+    
+    inline bool CustomVocabularyImportSpecificationHasBeenSet() const { return m_customVocabularyImportSpecificationHasBeenSet; }
+
+    
+    inline void SetCustomVocabularyImportSpecification(const CustomVocabularyImportSpecification& value) { m_customVocabularyImportSpecificationHasBeenSet = true; m_customVocabularyImportSpecification = value; }
+
+    
+    inline void SetCustomVocabularyImportSpecification(CustomVocabularyImportSpecification&& value) { m_customVocabularyImportSpecificationHasBeenSet = true; m_customVocabularyImportSpecification = std::move(value); }
+
+    
+    inline ImportResourceSpecification& WithCustomVocabularyImportSpecification(const CustomVocabularyImportSpecification& value) { SetCustomVocabularyImportSpecification(value); return *this;}
+
+    
+    inline ImportResourceSpecification& WithCustomVocabularyImportSpecification(CustomVocabularyImportSpecification&& value) { SetCustomVocabularyImportSpecification(std::move(value)); return *this;}
+
   private:
 
     BotImportSpecification m_botImportSpecification;
@@ -109,6 +129,9 @@ namespace Model
 
     BotLocaleImportSpecification m_botLocaleImportSpecification;
     bool m_botLocaleImportSpecificationHasBeenSet;
+
+    CustomVocabularyImportSpecification m_customVocabularyImportSpecification;
+    bool m_customVocabularyImportSpecificationHasBeenSet;
   };
 
 } // namespace Model

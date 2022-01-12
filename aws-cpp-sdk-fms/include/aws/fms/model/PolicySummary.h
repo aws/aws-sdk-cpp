@@ -363,38 +363,50 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether Firewall Manager should delete Firewall Manager managed
-     * resources, such as web ACLs and security groups, when they are not in use by the
-     * Firewall Manager policy. By default, Firewall Manager doesn't delete unused
-     * Firewall Manager managed resources. This option is not available for Shield
-     * Advanced or WAF Classic policies.</p>
+     * <p>Indicates whether Firewall Manager should automatically remove protections
+     * from resources that leave the policy scope and clean up resources that Firewall
+     * Manager is managing for accounts when those accounts leave policy scope. For
+     * example, Firewall Manager will disassociate a Firewall Manager managed web ACL
+     * from a protected customer resource when the customer resource leaves policy
+     * scope. </p> <p>By default, Firewall Manager doesn't remove protections or delete
+     * Firewall Manager managed resources. </p> <p>This option is not available for
+     * Shield Advanced or WAF Classic policies.</p>
      */
     inline bool GetDeleteUnusedFMManagedResources() const{ return m_deleteUnusedFMManagedResources; }
 
     /**
-     * <p>Indicates whether Firewall Manager should delete Firewall Manager managed
-     * resources, such as web ACLs and security groups, when they are not in use by the
-     * Firewall Manager policy. By default, Firewall Manager doesn't delete unused
-     * Firewall Manager managed resources. This option is not available for Shield
-     * Advanced or WAF Classic policies.</p>
+     * <p>Indicates whether Firewall Manager should automatically remove protections
+     * from resources that leave the policy scope and clean up resources that Firewall
+     * Manager is managing for accounts when those accounts leave policy scope. For
+     * example, Firewall Manager will disassociate a Firewall Manager managed web ACL
+     * from a protected customer resource when the customer resource leaves policy
+     * scope. </p> <p>By default, Firewall Manager doesn't remove protections or delete
+     * Firewall Manager managed resources. </p> <p>This option is not available for
+     * Shield Advanced or WAF Classic policies.</p>
      */
     inline bool DeleteUnusedFMManagedResourcesHasBeenSet() const { return m_deleteUnusedFMManagedResourcesHasBeenSet; }
 
     /**
-     * <p>Indicates whether Firewall Manager should delete Firewall Manager managed
-     * resources, such as web ACLs and security groups, when they are not in use by the
-     * Firewall Manager policy. By default, Firewall Manager doesn't delete unused
-     * Firewall Manager managed resources. This option is not available for Shield
-     * Advanced or WAF Classic policies.</p>
+     * <p>Indicates whether Firewall Manager should automatically remove protections
+     * from resources that leave the policy scope and clean up resources that Firewall
+     * Manager is managing for accounts when those accounts leave policy scope. For
+     * example, Firewall Manager will disassociate a Firewall Manager managed web ACL
+     * from a protected customer resource when the customer resource leaves policy
+     * scope. </p> <p>By default, Firewall Manager doesn't remove protections or delete
+     * Firewall Manager managed resources. </p> <p>This option is not available for
+     * Shield Advanced or WAF Classic policies.</p>
      */
     inline void SetDeleteUnusedFMManagedResources(bool value) { m_deleteUnusedFMManagedResourcesHasBeenSet = true; m_deleteUnusedFMManagedResources = value; }
 
     /**
-     * <p>Indicates whether Firewall Manager should delete Firewall Manager managed
-     * resources, such as web ACLs and security groups, when they are not in use by the
-     * Firewall Manager policy. By default, Firewall Manager doesn't delete unused
-     * Firewall Manager managed resources. This option is not available for Shield
-     * Advanced or WAF Classic policies.</p>
+     * <p>Indicates whether Firewall Manager should automatically remove protections
+     * from resources that leave the policy scope and clean up resources that Firewall
+     * Manager is managing for accounts when those accounts leave policy scope. For
+     * example, Firewall Manager will disassociate a Firewall Manager managed web ACL
+     * from a protected customer resource when the customer resource leaves policy
+     * scope. </p> <p>By default, Firewall Manager doesn't remove protections or delete
+     * Firewall Manager managed resources. </p> <p>This option is not available for
+     * Shield Advanced or WAF Classic policies.</p>
      */
     inline PolicySummary& WithDeleteUnusedFMManagedResources(bool value) { SetDeleteUnusedFMManagedResources(value); return *this;}
 

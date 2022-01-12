@@ -118,58 +118,58 @@ namespace Model
 
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use a DB instance as a
-     * data source, you specify its <code>DbiResourceId</code> value - for example:
-     * <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * <p>An immutable, Amazon Web Services Region-unique identifier for a data source.
+     * Performance Insights gathers metrics from this data source. </p> <p>To use a DB
+     * instance as a data source, you specify its <code>DbiResourceId</code> value -
+     * for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use a DB instance as a
-     * data source, you specify its <code>DbiResourceId</code> value - for example:
-     * <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * <p>An immutable, Amazon Web Services Region-unique identifier for a data source.
+     * Performance Insights gathers metrics from this data source. </p> <p>To use a DB
+     * instance as a data source, you specify its <code>DbiResourceId</code> value -
+     * for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
      */
     inline void SetIdentifier(const Aws::String& value) { m_identifier = value; }
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use a DB instance as a
-     * data source, you specify its <code>DbiResourceId</code> value - for example:
-     * <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * <p>An immutable, Amazon Web Services Region-unique identifier for a data source.
+     * Performance Insights gathers metrics from this data source. </p> <p>To use a DB
+     * instance as a data source, you specify its <code>DbiResourceId</code> value -
+     * for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
      */
     inline void SetIdentifier(Aws::String&& value) { m_identifier = std::move(value); }
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use a DB instance as a
-     * data source, you specify its <code>DbiResourceId</code> value - for example:
-     * <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * <p>An immutable, Amazon Web Services Region-unique identifier for a data source.
+     * Performance Insights gathers metrics from this data source. </p> <p>To use a DB
+     * instance as a data source, you specify its <code>DbiResourceId</code> value -
+     * for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
      */
     inline void SetIdentifier(const char* value) { m_identifier.assign(value); }
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use a DB instance as a
-     * data source, you specify its <code>DbiResourceId</code> value - for example:
-     * <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * <p>An immutable, Amazon Web Services Region-unique identifier for a data source.
+     * Performance Insights gathers metrics from this data source. </p> <p>To use a DB
+     * instance as a data source, you specify its <code>DbiResourceId</code> value -
+     * for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
      */
     inline GetResourceMetricsResult& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use a DB instance as a
-     * data source, you specify its <code>DbiResourceId</code> value - for example:
-     * <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * <p>An immutable, Amazon Web Services Region-unique identifier for a data source.
+     * Performance Insights gathers metrics from this data source. </p> <p>To use a DB
+     * instance as a data source, you specify its <code>DbiResourceId</code> value -
+     * for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
      */
     inline GetResourceMetricsResult& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
-     * Insights gathers metrics from this data source.</p> <p>To use a DB instance as a
-     * data source, you specify its <code>DbiResourceId</code> value - for example:
-     * <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     * <p>An immutable, Amazon Web Services Region-unique identifier for a data source.
+     * Performance Insights gathers metrics from this data source. </p> <p>To use a DB
+     * instance as a data source, you specify its <code>DbiResourceId</code> value -
+     * for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
      */
     inline GetResourceMetricsResult& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
 
@@ -220,49 +220,49 @@ namespace Model
     /**
      * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>.</p>
+     * to the value specified by <code>MaxRecords</code>. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>.</p>
+     * to the value specified by <code>MaxRecords</code>. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
      * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>.</p>
+     * to the value specified by <code>MaxRecords</code>. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>.</p>
+     * to the value specified by <code>MaxRecords</code>. </p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
      * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>.</p>
+     * to the value specified by <code>MaxRecords</code>. </p>
      */
     inline GetResourceMetricsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>.</p>
+     * to the value specified by <code>MaxRecords</code>. </p>
      */
     inline GetResourceMetricsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the token, up
-     * to the value specified by <code>MaxRecords</code>.</p>
+     * to the value specified by <code>MaxRecords</code>. </p>
      */
     inline GetResourceMetricsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

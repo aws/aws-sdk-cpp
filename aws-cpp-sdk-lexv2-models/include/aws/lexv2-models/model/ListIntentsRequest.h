@@ -314,64 +314,88 @@ namespace Model
     /**
      * <p>If the response from the <code>ListIntents</code> operation contains more
      * results than specified in the <code>maxResults</code> parameter, a token is
-     * returned in the response. Use that token in the <code>nextToken</code> parameter
-     * to return the next page of results.</p>
+     * returned in the response.</p> <p>Use the returned token in the
+     * <code>nextToken</code> parameter of a <code>ListIntents</code> request to return
+     * the next page of results. For a complete set of results, call the
+     * <code>ListIntents</code> operation until the <code>nextToken</code> returned in
+     * the response is null.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>If the response from the <code>ListIntents</code> operation contains more
      * results than specified in the <code>maxResults</code> parameter, a token is
-     * returned in the response. Use that token in the <code>nextToken</code> parameter
-     * to return the next page of results.</p>
+     * returned in the response.</p> <p>Use the returned token in the
+     * <code>nextToken</code> parameter of a <code>ListIntents</code> request to return
+     * the next page of results. For a complete set of results, call the
+     * <code>ListIntents</code> operation until the <code>nextToken</code> returned in
+     * the response is null.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>If the response from the <code>ListIntents</code> operation contains more
      * results than specified in the <code>maxResults</code> parameter, a token is
-     * returned in the response. Use that token in the <code>nextToken</code> parameter
-     * to return the next page of results.</p>
+     * returned in the response.</p> <p>Use the returned token in the
+     * <code>nextToken</code> parameter of a <code>ListIntents</code> request to return
+     * the next page of results. For a complete set of results, call the
+     * <code>ListIntents</code> operation until the <code>nextToken</code> returned in
+     * the response is null.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>If the response from the <code>ListIntents</code> operation contains more
      * results than specified in the <code>maxResults</code> parameter, a token is
-     * returned in the response. Use that token in the <code>nextToken</code> parameter
-     * to return the next page of results.</p>
+     * returned in the response.</p> <p>Use the returned token in the
+     * <code>nextToken</code> parameter of a <code>ListIntents</code> request to return
+     * the next page of results. For a complete set of results, call the
+     * <code>ListIntents</code> operation until the <code>nextToken</code> returned in
+     * the response is null.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>If the response from the <code>ListIntents</code> operation contains more
      * results than specified in the <code>maxResults</code> parameter, a token is
-     * returned in the response. Use that token in the <code>nextToken</code> parameter
-     * to return the next page of results.</p>
+     * returned in the response.</p> <p>Use the returned token in the
+     * <code>nextToken</code> parameter of a <code>ListIntents</code> request to return
+     * the next page of results. For a complete set of results, call the
+     * <code>ListIntents</code> operation until the <code>nextToken</code> returned in
+     * the response is null.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p>If the response from the <code>ListIntents</code> operation contains more
      * results than specified in the <code>maxResults</code> parameter, a token is
-     * returned in the response. Use that token in the <code>nextToken</code> parameter
-     * to return the next page of results.</p>
+     * returned in the response.</p> <p>Use the returned token in the
+     * <code>nextToken</code> parameter of a <code>ListIntents</code> request to return
+     * the next page of results. For a complete set of results, call the
+     * <code>ListIntents</code> operation until the <code>nextToken</code> returned in
+     * the response is null.</p>
      */
     inline ListIntentsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>If the response from the <code>ListIntents</code> operation contains more
      * results than specified in the <code>maxResults</code> parameter, a token is
-     * returned in the response. Use that token in the <code>nextToken</code> parameter
-     * to return the next page of results.</p>
+     * returned in the response.</p> <p>Use the returned token in the
+     * <code>nextToken</code> parameter of a <code>ListIntents</code> request to return
+     * the next page of results. For a complete set of results, call the
+     * <code>ListIntents</code> operation until the <code>nextToken</code> returned in
+     * the response is null.</p>
      */
     inline ListIntentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the response from the <code>ListIntents</code> operation contains more
      * results than specified in the <code>maxResults</code> parameter, a token is
-     * returned in the response. Use that token in the <code>nextToken</code> parameter
-     * to return the next page of results.</p>
+     * returned in the response.</p> <p>Use the returned token in the
+     * <code>nextToken</code> parameter of a <code>ListIntents</code> request to return
+     * the next page of results. For a complete set of results, call the
+     * <code>ListIntents</code> operation until the <code>nextToken</code> returned in
+     * the response is null.</p>
      */
     inline ListIntentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

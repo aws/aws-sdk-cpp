@@ -22,6 +22,7 @@ DescribeDimensionKeysRequest::DescribeDimensionKeysRequest() :
     m_periodInSeconds(0),
     m_periodInSecondsHasBeenSet(false),
     m_groupByHasBeenSet(false),
+    m_additionalMetricsHasBeenSet(false),
     m_partitionByHasBeenSet(false),
     m_filterHasBeenSet(false),
     m_maxResults(0),
@@ -70,6 +71,17 @@ Aws::String DescribeDimensionKeysRequest::SerializePayload() const
   if(m_groupByHasBeenSet)
   {
    payload.WithObject("GroupBy", m_groupBy.Jsonize());
+
+  }
+
+  if(m_additionalMetricsHasBeenSet)
+  {
+   Array<JsonValue> additionalMetricsJsonList(m_additionalMetrics.size());
+   for(unsigned additionalMetricsIndex = 0; additionalMetricsIndex < additionalMetricsJsonList.GetLength(); ++additionalMetricsIndex)
+   {
+     additionalMetricsJsonList[additionalMetricsIndex].AsString(m_additionalMetrics[additionalMetricsIndex]);
+   }
+   payload.WithArray("AdditionalMetrics", std::move(additionalMetricsJsonList));
 
   }
 

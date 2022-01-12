@@ -36,6 +36,7 @@
 #include <aws/lexv2-models/model/DeleteBotAliasRequest.h>
 #include <aws/lexv2-models/model/DeleteBotLocaleRequest.h>
 #include <aws/lexv2-models/model/DeleteBotVersionRequest.h>
+#include <aws/lexv2-models/model/DeleteCustomVocabularyRequest.h>
 #include <aws/lexv2-models/model/DeleteExportRequest.h>
 #include <aws/lexv2-models/model/DeleteImportRequest.h>
 #include <aws/lexv2-models/model/DeleteIntentRequest.h>
@@ -49,6 +50,7 @@
 #include <aws/lexv2-models/model/DescribeBotLocaleRequest.h>
 #include <aws/lexv2-models/model/DescribeBotRecommendationRequest.h>
 #include <aws/lexv2-models/model/DescribeBotVersionRequest.h>
+#include <aws/lexv2-models/model/DescribeCustomVocabularyMetadataRequest.h>
 #include <aws/lexv2-models/model/DescribeExportRequest.h>
 #include <aws/lexv2-models/model/DescribeImportRequest.h>
 #include <aws/lexv2-models/model/DescribeIntentRequest.h>
@@ -741,6 +743,52 @@ void LexModelsV2Client::DeleteBotVersionAsyncHelper(const DeleteBotVersionReques
   handler(this, request, DeleteBotVersion(request), context);
 }
 
+DeleteCustomVocabularyOutcome LexModelsV2Client::DeleteCustomVocabulary(const DeleteCustomVocabularyRequest& request) const
+{
+  if (!request.BotIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteCustomVocabulary", "Required field: BotId, is not set");
+    return DeleteCustomVocabularyOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
+  }
+  if (!request.BotVersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteCustomVocabulary", "Required field: BotVersion, is not set");
+    return DeleteCustomVocabularyOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotVersion]", false));
+  }
+  if (!request.LocaleIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteCustomVocabulary", "Required field: LocaleId, is not set");
+    return DeleteCustomVocabularyOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LocaleId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetBotId());
+  uri.AddPathSegments("/botversions/");
+  uri.AddPathSegment(request.GetBotVersion());
+  uri.AddPathSegments("/botlocales/");
+  uri.AddPathSegment(request.GetLocaleId());
+  uri.AddPathSegments("/customvocabulary");
+  return DeleteCustomVocabularyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteCustomVocabularyOutcomeCallable LexModelsV2Client::DeleteCustomVocabularyCallable(const DeleteCustomVocabularyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteCustomVocabularyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCustomVocabulary(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelsV2Client::DeleteCustomVocabularyAsync(const DeleteCustomVocabularyRequest& request, const DeleteCustomVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteCustomVocabularyAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelsV2Client::DeleteCustomVocabularyAsyncHelper(const DeleteCustomVocabularyRequest& request, const DeleteCustomVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteCustomVocabulary(request), context);
+}
+
 DeleteExportOutcome LexModelsV2Client::DeleteExport(const DeleteExportRequest& request) const
 {
   if (!request.ExportIdHasBeenSet())
@@ -1269,6 +1317,52 @@ void LexModelsV2Client::DescribeBotVersionAsync(const DescribeBotVersionRequest&
 void LexModelsV2Client::DescribeBotVersionAsyncHelper(const DescribeBotVersionRequest& request, const DescribeBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeBotVersion(request), context);
+}
+
+DescribeCustomVocabularyMetadataOutcome LexModelsV2Client::DescribeCustomVocabularyMetadata(const DescribeCustomVocabularyMetadataRequest& request) const
+{
+  if (!request.BotIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeCustomVocabularyMetadata", "Required field: BotId, is not set");
+    return DescribeCustomVocabularyMetadataOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
+  }
+  if (!request.BotVersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeCustomVocabularyMetadata", "Required field: BotVersion, is not set");
+    return DescribeCustomVocabularyMetadataOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotVersion]", false));
+  }
+  if (!request.LocaleIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeCustomVocabularyMetadata", "Required field: LocaleId, is not set");
+    return DescribeCustomVocabularyMetadataOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LocaleId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetBotId());
+  uri.AddPathSegments("/botversions/");
+  uri.AddPathSegment(request.GetBotVersion());
+  uri.AddPathSegments("/botlocales/");
+  uri.AddPathSegment(request.GetLocaleId());
+  uri.AddPathSegments("/customvocabulary/DEFAULT/metadata");
+  return DescribeCustomVocabularyMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeCustomVocabularyMetadataOutcomeCallable LexModelsV2Client::DescribeCustomVocabularyMetadataCallable(const DescribeCustomVocabularyMetadataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeCustomVocabularyMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeCustomVocabularyMetadata(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelsV2Client::DescribeCustomVocabularyMetadataAsync(const DescribeCustomVocabularyMetadataRequest& request, const DescribeCustomVocabularyMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeCustomVocabularyMetadataAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelsV2Client::DescribeCustomVocabularyMetadataAsyncHelper(const DescribeCustomVocabularyMetadataRequest& request, const DescribeCustomVocabularyMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeCustomVocabularyMetadata(request), context);
 }
 
 DescribeExportOutcome LexModelsV2Client::DescribeExport(const DescribeExportRequest& request) const

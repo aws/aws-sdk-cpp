@@ -7,6 +7,7 @@
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/lexv2-models/model/SlotValueResolutionStrategy.h>
 #include <aws/lexv2-models/model/SlotValueRegexFilter.h>
+#include <aws/lexv2-models/model/AdvancedRecognitionSetting.h>
 #include <utility>
 
 namespace Aws
@@ -142,6 +143,43 @@ namespace Model
      */
     inline SlotValueSelectionSetting& WithRegexFilter(SlotValueRegexFilter&& value) { SetRegexFilter(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides settings that enable advanced recognition settings for slot
+     * values.</p>
+     */
+    inline const AdvancedRecognitionSetting& GetAdvancedRecognitionSetting() const{ return m_advancedRecognitionSetting; }
+
+    /**
+     * <p>Provides settings that enable advanced recognition settings for slot
+     * values.</p>
+     */
+    inline bool AdvancedRecognitionSettingHasBeenSet() const { return m_advancedRecognitionSettingHasBeenSet; }
+
+    /**
+     * <p>Provides settings that enable advanced recognition settings for slot
+     * values.</p>
+     */
+    inline void SetAdvancedRecognitionSetting(const AdvancedRecognitionSetting& value) { m_advancedRecognitionSettingHasBeenSet = true; m_advancedRecognitionSetting = value; }
+
+    /**
+     * <p>Provides settings that enable advanced recognition settings for slot
+     * values.</p>
+     */
+    inline void SetAdvancedRecognitionSetting(AdvancedRecognitionSetting&& value) { m_advancedRecognitionSettingHasBeenSet = true; m_advancedRecognitionSetting = std::move(value); }
+
+    /**
+     * <p>Provides settings that enable advanced recognition settings for slot
+     * values.</p>
+     */
+    inline SlotValueSelectionSetting& WithAdvancedRecognitionSetting(const AdvancedRecognitionSetting& value) { SetAdvancedRecognitionSetting(value); return *this;}
+
+    /**
+     * <p>Provides settings that enable advanced recognition settings for slot
+     * values.</p>
+     */
+    inline SlotValueSelectionSetting& WithAdvancedRecognitionSetting(AdvancedRecognitionSetting&& value) { SetAdvancedRecognitionSetting(std::move(value)); return *this;}
+
   private:
 
     SlotValueResolutionStrategy m_resolutionStrategy;
@@ -149,6 +187,9 @@ namespace Model
 
     SlotValueRegexFilter m_regexFilter;
     bool m_regexFilterHasBeenSet;
+
+    AdvancedRecognitionSetting m_advancedRecognitionSetting;
+    bool m_advancedRecognitionSettingHasBeenSet;
   };
 
 } // namespace Model

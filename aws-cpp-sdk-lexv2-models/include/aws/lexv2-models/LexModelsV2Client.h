@@ -27,6 +27,7 @@
 #include <aws/lexv2-models/model/DeleteBotAliasResult.h>
 #include <aws/lexv2-models/model/DeleteBotLocaleResult.h>
 #include <aws/lexv2-models/model/DeleteBotVersionResult.h>
+#include <aws/lexv2-models/model/DeleteCustomVocabularyResult.h>
 #include <aws/lexv2-models/model/DeleteExportResult.h>
 #include <aws/lexv2-models/model/DeleteImportResult.h>
 #include <aws/lexv2-models/model/DeleteResourcePolicyResult.h>
@@ -37,6 +38,7 @@
 #include <aws/lexv2-models/model/DescribeBotLocaleResult.h>
 #include <aws/lexv2-models/model/DescribeBotRecommendationResult.h>
 #include <aws/lexv2-models/model/DescribeBotVersionResult.h>
+#include <aws/lexv2-models/model/DescribeCustomVocabularyMetadataResult.h>
 #include <aws/lexv2-models/model/DescribeExportResult.h>
 #include <aws/lexv2-models/model/DescribeImportResult.h>
 #include <aws/lexv2-models/model/DescribeIntentResult.h>
@@ -128,6 +130,7 @@ namespace Model
         class DeleteBotAliasRequest;
         class DeleteBotLocaleRequest;
         class DeleteBotVersionRequest;
+        class DeleteCustomVocabularyRequest;
         class DeleteExportRequest;
         class DeleteImportRequest;
         class DeleteIntentRequest;
@@ -141,6 +144,7 @@ namespace Model
         class DescribeBotLocaleRequest;
         class DescribeBotRecommendationRequest;
         class DescribeBotVersionRequest;
+        class DescribeCustomVocabularyMetadataRequest;
         class DescribeExportRequest;
         class DescribeImportRequest;
         class DescribeIntentRequest;
@@ -193,6 +197,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteBotAliasResult, LexModelsV2Error> DeleteBotAliasOutcome;
         typedef Aws::Utils::Outcome<DeleteBotLocaleResult, LexModelsV2Error> DeleteBotLocaleOutcome;
         typedef Aws::Utils::Outcome<DeleteBotVersionResult, LexModelsV2Error> DeleteBotVersionOutcome;
+        typedef Aws::Utils::Outcome<DeleteCustomVocabularyResult, LexModelsV2Error> DeleteCustomVocabularyOutcome;
         typedef Aws::Utils::Outcome<DeleteExportResult, LexModelsV2Error> DeleteExportOutcome;
         typedef Aws::Utils::Outcome<DeleteImportResult, LexModelsV2Error> DeleteImportOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, LexModelsV2Error> DeleteIntentOutcome;
@@ -206,6 +211,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeBotLocaleResult, LexModelsV2Error> DescribeBotLocaleOutcome;
         typedef Aws::Utils::Outcome<DescribeBotRecommendationResult, LexModelsV2Error> DescribeBotRecommendationOutcome;
         typedef Aws::Utils::Outcome<DescribeBotVersionResult, LexModelsV2Error> DescribeBotVersionOutcome;
+        typedef Aws::Utils::Outcome<DescribeCustomVocabularyMetadataResult, LexModelsV2Error> DescribeCustomVocabularyMetadataOutcome;
         typedef Aws::Utils::Outcome<DescribeExportResult, LexModelsV2Error> DescribeExportOutcome;
         typedef Aws::Utils::Outcome<DescribeImportResult, LexModelsV2Error> DescribeImportOutcome;
         typedef Aws::Utils::Outcome<DescribeIntentResult, LexModelsV2Error> DescribeIntentOutcome;
@@ -258,6 +264,7 @@ namespace Model
         typedef std::future<DeleteBotAliasOutcome> DeleteBotAliasOutcomeCallable;
         typedef std::future<DeleteBotLocaleOutcome> DeleteBotLocaleOutcomeCallable;
         typedef std::future<DeleteBotVersionOutcome> DeleteBotVersionOutcomeCallable;
+        typedef std::future<DeleteCustomVocabularyOutcome> DeleteCustomVocabularyOutcomeCallable;
         typedef std::future<DeleteExportOutcome> DeleteExportOutcomeCallable;
         typedef std::future<DeleteImportOutcome> DeleteImportOutcomeCallable;
         typedef std::future<DeleteIntentOutcome> DeleteIntentOutcomeCallable;
@@ -271,6 +278,7 @@ namespace Model
         typedef std::future<DescribeBotLocaleOutcome> DescribeBotLocaleOutcomeCallable;
         typedef std::future<DescribeBotRecommendationOutcome> DescribeBotRecommendationOutcomeCallable;
         typedef std::future<DescribeBotVersionOutcome> DescribeBotVersionOutcomeCallable;
+        typedef std::future<DescribeCustomVocabularyMetadataOutcome> DescribeCustomVocabularyMetadataOutcomeCallable;
         typedef std::future<DescribeExportOutcome> DescribeExportOutcomeCallable;
         typedef std::future<DescribeImportOutcome> DescribeImportOutcomeCallable;
         typedef std::future<DescribeIntentOutcome> DescribeIntentOutcomeCallable;
@@ -326,6 +334,7 @@ namespace Model
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteBotAliasRequest&, const Model::DeleteBotAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBotAliasResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteBotLocaleRequest&, const Model::DeleteBotLocaleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBotLocaleResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteBotVersionRequest&, const Model::DeleteBotVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBotVersionResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::DeleteCustomVocabularyRequest&, const Model::DeleteCustomVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomVocabularyResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteExportRequest&, const Model::DeleteExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteExportResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteImportRequest&, const Model::DeleteImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImportResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteIntentRequest&, const Model::DeleteIntentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIntentResponseReceivedHandler;
@@ -339,6 +348,7 @@ namespace Model
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeBotLocaleRequest&, const Model::DescribeBotLocaleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBotLocaleResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeBotRecommendationRequest&, const Model::DescribeBotRecommendationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBotRecommendationResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeBotVersionRequest&, const Model::DescribeBotVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBotVersionResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::DescribeCustomVocabularyMetadataRequest&, const Model::DescribeCustomVocabularyMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCustomVocabularyMetadataResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeExportRequest&, const Model::DescribeExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExportResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeImportRequest&, const Model::DescribeImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImportResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeIntentRequest&, const Model::DescribeIntentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIntentResponseReceivedHandler;
@@ -989,6 +999,34 @@ namespace Model
         virtual void DeleteBotVersionAsync(const Model::DeleteBotVersionRequest& request, const DeleteBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Removes a custom vocabulary from the specified locale in the specified
+         * bot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteCustomVocabulary">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCustomVocabularyOutcome DeleteCustomVocabulary(const Model::DeleteCustomVocabularyRequest& request) const;
+
+        /**
+         * <p>Removes a custom vocabulary from the specified locale in the specified
+         * bot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteCustomVocabulary">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteCustomVocabularyOutcomeCallable DeleteCustomVocabularyCallable(const Model::DeleteCustomVocabularyRequest& request) const;
+
+        /**
+         * <p>Removes a custom vocabulary from the specified locale in the specified
+         * bot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteCustomVocabulary">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteCustomVocabularyAsync(const Model::DeleteCustomVocabularyRequest& request, const DeleteCustomVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Removes a previous export and the associated files stored in an S3
          * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteExport">AWS
@@ -1384,6 +1422,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeBotVersionAsync(const Model::DescribeBotVersionRequest& request, const DescribeBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Provides metadata information about a custom vocabulary.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeCustomVocabularyMetadata">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeCustomVocabularyMetadataOutcome DescribeCustomVocabularyMetadata(const Model::DescribeCustomVocabularyMetadataRequest& request) const;
+
+        /**
+         * <p>Provides metadata information about a custom vocabulary.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeCustomVocabularyMetadata">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeCustomVocabularyMetadataOutcomeCallable DescribeCustomVocabularyMetadataCallable(const Model::DescribeCustomVocabularyMetadataRequest& request) const;
+
+        /**
+         * <p>Provides metadata information about a custom vocabulary.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeCustomVocabularyMetadata">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeCustomVocabularyMetadataAsync(const Model::DescribeCustomVocabularyMetadataRequest& request, const DescribeCustomVocabularyMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a specific export.</p><p><h3>See Also:</h3>   <a
@@ -1817,16 +1883,16 @@ namespace Model
         virtual void ListBuiltInSlotTypesAsync(const Model::ListBuiltInSlotTypesRequest& request, const ListBuiltInSlotTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the exports for a bot or bot locale. Exports are kept in the list for 7
-         * days.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the exports for a bot, bot locale, or custom vocabulary. Exports are
+         * kept in the list for 7 days.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListExports">AWS
          * API Reference</a></p>
          */
         virtual Model::ListExportsOutcome ListExports(const Model::ListExportsRequest& request) const;
 
         /**
-         * <p>Lists the exports for a bot or bot locale. Exports are kept in the list for 7
-         * days.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the exports for a bot, bot locale, or custom vocabulary. Exports are
+         * kept in the list for 7 days.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListExports">AWS
          * API Reference</a></p>
          *
@@ -1835,8 +1901,8 @@ namespace Model
         virtual Model::ListExportsOutcomeCallable ListExportsCallable(const Model::ListExportsRequest& request) const;
 
         /**
-         * <p>Lists the exports for a bot or bot locale. Exports are kept in the list for 7
-         * days.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the exports for a bot, bot locale, or custom vocabulary. Exports are
+         * kept in the list for 7 days.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListExports">AWS
          * API Reference</a></p>
          *
@@ -1845,16 +1911,16 @@ namespace Model
         virtual void ListExportsAsync(const Model::ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the imports for a bot or bot locale. Imports are kept in the list for 7
-         * days.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the imports for a bot, bot locale, or custom vocabulary. Imports are
+         * kept in the list for 7 days.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListImports">AWS
          * API Reference</a></p>
          */
         virtual Model::ListImportsOutcome ListImports(const Model::ListImportsRequest& request) const;
 
         /**
-         * <p>Lists the imports for a bot or bot locale. Imports are kept in the list for 7
-         * days.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the imports for a bot, bot locale, or custom vocabulary. Imports are
+         * kept in the list for 7 days.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListImports">AWS
          * API Reference</a></p>
          *
@@ -1863,8 +1929,8 @@ namespace Model
         virtual Model::ListImportsOutcomeCallable ListImportsCallable(const Model::ListImportsRequest& request) const;
 
         /**
-         * <p>Lists the imports for a bot or bot locale. Imports are kept in the list for 7
-         * days.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the imports for a bot, bot locale, or custom vocabulary. Imports are
+         * kept in the list for 7 days.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListImports">AWS
          * API Reference</a></p>
          *
@@ -2069,16 +2135,16 @@ namespace Model
         virtual void StartBotRecommendationAsync(const Model::StartBotRecommendationRequest& request, const StartBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts importing a bot or bot locale from a zip archive that you uploaded to
-         * an S3 bucket.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts importing a bot, bot locale, or custom vocabulary from a zip archive
+         * that you uploaded to an S3 bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartImport">AWS
          * API Reference</a></p>
          */
         virtual Model::StartImportOutcome StartImport(const Model::StartImportRequest& request) const;
 
         /**
-         * <p>Starts importing a bot or bot locale from a zip archive that you uploaded to
-         * an S3 bucket.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts importing a bot, bot locale, or custom vocabulary from a zip archive
+         * that you uploaded to an S3 bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartImport">AWS
          * API Reference</a></p>
          *
@@ -2087,8 +2153,8 @@ namespace Model
         virtual Model::StartImportOutcomeCallable StartImportCallable(const Model::StartImportRequest& request) const;
 
         /**
-         * <p>Starts importing a bot or bot locale from a zip archive that you uploaded to
-         * an S3 bucket.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts importing a bot, bot locale, or custom vocabulary from a zip archive
+         * that you uploaded to an S3 bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartImport">AWS
          * API Reference</a></p>
          *
@@ -2430,6 +2496,7 @@ namespace Model
         void DeleteBotAliasAsyncHelper(const Model::DeleteBotAliasRequest& request, const DeleteBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBotLocaleAsyncHelper(const Model::DeleteBotLocaleRequest& request, const DeleteBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBotVersionAsyncHelper(const Model::DeleteBotVersionRequest& request, const DeleteBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteCustomVocabularyAsyncHelper(const Model::DeleteCustomVocabularyRequest& request, const DeleteCustomVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteExportAsyncHelper(const Model::DeleteExportRequest& request, const DeleteExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteImportAsyncHelper(const Model::DeleteImportRequest& request, const DeleteImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteIntentAsyncHelper(const Model::DeleteIntentRequest& request, const DeleteIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2443,6 +2510,7 @@ namespace Model
         void DescribeBotLocaleAsyncHelper(const Model::DescribeBotLocaleRequest& request, const DescribeBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBotRecommendationAsyncHelper(const Model::DescribeBotRecommendationRequest& request, const DescribeBotRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBotVersionAsyncHelper(const Model::DescribeBotVersionRequest& request, const DescribeBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeCustomVocabularyMetadataAsyncHelper(const Model::DescribeCustomVocabularyMetadataRequest& request, const DescribeCustomVocabularyMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeExportAsyncHelper(const Model::DescribeExportRequest& request, const DescribeExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeImportAsyncHelper(const Model::DescribeImportRequest& request, const DescribeImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeIntentAsyncHelper(const Model::DescribeIntentRequest& request, const DescribeIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

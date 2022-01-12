@@ -105,27 +105,27 @@ namespace Model
 
 
     /**
-     * <p>The file format used in the files that describe the bot or bot locale.</p>
+     * <p>The file format used in the files that describe the resource. </p>
      */
     inline const ImportExportFileFormat& GetFileFormat() const{ return m_fileFormat; }
 
     /**
-     * <p>The file format used in the files that describe the bot or bot locale.</p>
+     * <p>The file format used in the files that describe the resource. </p>
      */
     inline void SetFileFormat(const ImportExportFileFormat& value) { m_fileFormat = value; }
 
     /**
-     * <p>The file format used in the files that describe the bot or bot locale.</p>
+     * <p>The file format used in the files that describe the resource. </p>
      */
     inline void SetFileFormat(ImportExportFileFormat&& value) { m_fileFormat = std::move(value); }
 
     /**
-     * <p>The file format used in the files that describe the bot or bot locale.</p>
+     * <p>The file format used in the files that describe the resource. </p>
      */
     inline DescribeExportResult& WithFileFormat(const ImportExportFileFormat& value) { SetFileFormat(value); return *this;}
 
     /**
-     * <p>The file format used in the files that describe the bot or bot locale.</p>
+     * <p>The file format used in the files that describe the resource. </p>
      */
     inline DescribeExportResult& WithFileFormat(ImportExportFileFormat&& value) { SetFileFormat(std::move(value)); return *this;}
 

@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int LexJson_HASH = HashingUtils::HashString("LexJson");
+        static const int TSV_HASH = HashingUtils::HashString("TSV");
 
 
         ImportExportFileFormat GetImportExportFileFormatForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == LexJson_HASH)
           {
             return ImportExportFileFormat::LexJson;
+          }
+          else if (hashCode == TSV_HASH)
+          {
+            return ImportExportFileFormat::TSV;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case ImportExportFileFormat::LexJson:
             return "LexJson";
+          case ImportExportFileFormat::TSV:
+            return "TSV";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -37,103 +37,103 @@ namespace Model
 
 
     /**
-     * <p>The AWS service for which Performance Insights returns data. The only valid
-     * value is <code>RDS</code>.</p>
+     * <p>The Amazon Web Services service for which Performance Insights returns data.
+     * The only valid value is <code>RDS</code>.</p>
      */
     inline const ServiceType& GetServiceType() const{ return m_serviceType; }
 
     /**
-     * <p>The AWS service for which Performance Insights returns data. The only valid
-     * value is <code>RDS</code>.</p>
+     * <p>The Amazon Web Services service for which Performance Insights returns data.
+     * The only valid value is <code>RDS</code>.</p>
      */
     inline bool ServiceTypeHasBeenSet() const { return m_serviceTypeHasBeenSet; }
 
     /**
-     * <p>The AWS service for which Performance Insights returns data. The only valid
-     * value is <code>RDS</code>.</p>
+     * <p>The Amazon Web Services service for which Performance Insights returns data.
+     * The only valid value is <code>RDS</code>.</p>
      */
     inline void SetServiceType(const ServiceType& value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
 
     /**
-     * <p>The AWS service for which Performance Insights returns data. The only valid
-     * value is <code>RDS</code>.</p>
+     * <p>The Amazon Web Services service for which Performance Insights returns data.
+     * The only valid value is <code>RDS</code>.</p>
      */
     inline void SetServiceType(ServiceType&& value) { m_serviceTypeHasBeenSet = true; m_serviceType = std::move(value); }
 
     /**
-     * <p>The AWS service for which Performance Insights returns data. The only valid
-     * value is <code>RDS</code>.</p>
+     * <p>The Amazon Web Services service for which Performance Insights returns data.
+     * The only valid value is <code>RDS</code>.</p>
      */
     inline GetDimensionKeyDetailsRequest& WithServiceType(const ServiceType& value) { SetServiceType(value); return *this;}
 
     /**
-     * <p>The AWS service for which Performance Insights returns data. The only valid
-     * value is <code>RDS</code>.</p>
+     * <p>The Amazon Web Services service for which Performance Insights returns data.
+     * The only valid value is <code>RDS</code>.</p>
      */
     inline GetDimensionKeyDetailsRequest& WithServiceType(ServiceType&& value) { SetServiceType(std::move(value)); return *this;}
 
 
     /**
      * <p>The ID for a data source from which to gather dimension data. This ID must be
-     * immutable and unique within an AWS Region. When a DB instance is the data
-     * source, specify its <code>DbiResourceId</code> value. For example, specify
-     * <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
+     * immutable and unique within an Amazon Web Services Region. When a DB instance is
+     * the data source, specify its <code>DbiResourceId</code> value. For example,
+     * specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
 
     /**
      * <p>The ID for a data source from which to gather dimension data. This ID must be
-     * immutable and unique within an AWS Region. When a DB instance is the data
-     * source, specify its <code>DbiResourceId</code> value. For example, specify
-     * <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
+     * immutable and unique within an Amazon Web Services Region. When a DB instance is
+     * the data source, specify its <code>DbiResourceId</code> value. For example,
+     * specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
      */
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
 
     /**
      * <p>The ID for a data source from which to gather dimension data. This ID must be
-     * immutable and unique within an AWS Region. When a DB instance is the data
-     * source, specify its <code>DbiResourceId</code> value. For example, specify
-     * <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
+     * immutable and unique within an Amazon Web Services Region. When a DB instance is
+     * the data source, specify its <code>DbiResourceId</code> value. For example,
+     * specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
      */
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
 
     /**
      * <p>The ID for a data source from which to gather dimension data. This ID must be
-     * immutable and unique within an AWS Region. When a DB instance is the data
-     * source, specify its <code>DbiResourceId</code> value. For example, specify
-     * <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
+     * immutable and unique within an Amazon Web Services Region. When a DB instance is
+     * the data source, specify its <code>DbiResourceId</code> value. For example,
+     * specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
      */
     inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
 
     /**
      * <p>The ID for a data source from which to gather dimension data. This ID must be
-     * immutable and unique within an AWS Region. When a DB instance is the data
-     * source, specify its <code>DbiResourceId</code> value. For example, specify
-     * <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
+     * immutable and unique within an Amazon Web Services Region. When a DB instance is
+     * the data source, specify its <code>DbiResourceId</code> value. For example,
+     * specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
      */
     inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
 
     /**
      * <p>The ID for a data source from which to gather dimension data. This ID must be
-     * immutable and unique within an AWS Region. When a DB instance is the data
-     * source, specify its <code>DbiResourceId</code> value. For example, specify
-     * <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
+     * immutable and unique within an Amazon Web Services Region. When a DB instance is
+     * the data source, specify its <code>DbiResourceId</code> value. For example,
+     * specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
      */
     inline GetDimensionKeyDetailsRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
 
     /**
      * <p>The ID for a data source from which to gather dimension data. This ID must be
-     * immutable and unique within an AWS Region. When a DB instance is the data
-     * source, specify its <code>DbiResourceId</code> value. For example, specify
-     * <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
+     * immutable and unique within an Amazon Web Services Region. When a DB instance is
+     * the data source, specify its <code>DbiResourceId</code> value. For example,
+     * specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
      */
     inline GetDimensionKeyDetailsRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The ID for a data source from which to gather dimension data. This ID must be
-     * immutable and unique within an AWS Region. When a DB instance is the data
-     * source, specify its <code>DbiResourceId</code> value. For example, specify
-     * <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
+     * immutable and unique within an Amazon Web Services Region. When a DB instance is
+     * the data source, specify its <code>DbiResourceId</code> value. For example,
+     * specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
      */
     inline GetDimensionKeyDetailsRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
 
@@ -249,7 +249,7 @@ namespace Model
      * dimension group. For the dimension group <code>db.sql</code>, specify either the
      * full dimension name <code>db.sql.statement</code> or the short dimension name
      * <code>statement</code>. If you don't specify this parameter, Performance
-     * Insights returns all dimension data within the specified dimension group.</p>
+     * Insights returns all dimension data within the specified dimension group. </p>
      */
     inline const Aws::Vector<Aws::String>& GetRequestedDimensions() const{ return m_requestedDimensions; }
 
@@ -258,7 +258,7 @@ namespace Model
      * dimension group. For the dimension group <code>db.sql</code>, specify either the
      * full dimension name <code>db.sql.statement</code> or the short dimension name
      * <code>statement</code>. If you don't specify this parameter, Performance
-     * Insights returns all dimension data within the specified dimension group.</p>
+     * Insights returns all dimension data within the specified dimension group. </p>
      */
     inline bool RequestedDimensionsHasBeenSet() const { return m_requestedDimensionsHasBeenSet; }
 
@@ -267,7 +267,7 @@ namespace Model
      * dimension group. For the dimension group <code>db.sql</code>, specify either the
      * full dimension name <code>db.sql.statement</code> or the short dimension name
      * <code>statement</code>. If you don't specify this parameter, Performance
-     * Insights returns all dimension data within the specified dimension group.</p>
+     * Insights returns all dimension data within the specified dimension group. </p>
      */
     inline void SetRequestedDimensions(const Aws::Vector<Aws::String>& value) { m_requestedDimensionsHasBeenSet = true; m_requestedDimensions = value; }
 
@@ -276,7 +276,7 @@ namespace Model
      * dimension group. For the dimension group <code>db.sql</code>, specify either the
      * full dimension name <code>db.sql.statement</code> or the short dimension name
      * <code>statement</code>. If you don't specify this parameter, Performance
-     * Insights returns all dimension data within the specified dimension group.</p>
+     * Insights returns all dimension data within the specified dimension group. </p>
      */
     inline void SetRequestedDimensions(Aws::Vector<Aws::String>&& value) { m_requestedDimensionsHasBeenSet = true; m_requestedDimensions = std::move(value); }
 
@@ -285,7 +285,7 @@ namespace Model
      * dimension group. For the dimension group <code>db.sql</code>, specify either the
      * full dimension name <code>db.sql.statement</code> or the short dimension name
      * <code>statement</code>. If you don't specify this parameter, Performance
-     * Insights returns all dimension data within the specified dimension group.</p>
+     * Insights returns all dimension data within the specified dimension group. </p>
      */
     inline GetDimensionKeyDetailsRequest& WithRequestedDimensions(const Aws::Vector<Aws::String>& value) { SetRequestedDimensions(value); return *this;}
 
@@ -294,7 +294,7 @@ namespace Model
      * dimension group. For the dimension group <code>db.sql</code>, specify either the
      * full dimension name <code>db.sql.statement</code> or the short dimension name
      * <code>statement</code>. If you don't specify this parameter, Performance
-     * Insights returns all dimension data within the specified dimension group.</p>
+     * Insights returns all dimension data within the specified dimension group. </p>
      */
     inline GetDimensionKeyDetailsRequest& WithRequestedDimensions(Aws::Vector<Aws::String>&& value) { SetRequestedDimensions(std::move(value)); return *this;}
 
@@ -303,7 +303,7 @@ namespace Model
      * dimension group. For the dimension group <code>db.sql</code>, specify either the
      * full dimension name <code>db.sql.statement</code> or the short dimension name
      * <code>statement</code>. If you don't specify this parameter, Performance
-     * Insights returns all dimension data within the specified dimension group.</p>
+     * Insights returns all dimension data within the specified dimension group. </p>
      */
     inline GetDimensionKeyDetailsRequest& AddRequestedDimensions(const Aws::String& value) { m_requestedDimensionsHasBeenSet = true; m_requestedDimensions.push_back(value); return *this; }
 
@@ -312,7 +312,7 @@ namespace Model
      * dimension group. For the dimension group <code>db.sql</code>, specify either the
      * full dimension name <code>db.sql.statement</code> or the short dimension name
      * <code>statement</code>. If you don't specify this parameter, Performance
-     * Insights returns all dimension data within the specified dimension group.</p>
+     * Insights returns all dimension data within the specified dimension group. </p>
      */
     inline GetDimensionKeyDetailsRequest& AddRequestedDimensions(Aws::String&& value) { m_requestedDimensionsHasBeenSet = true; m_requestedDimensions.push_back(std::move(value)); return *this; }
 
@@ -321,7 +321,7 @@ namespace Model
      * dimension group. For the dimension group <code>db.sql</code>, specify either the
      * full dimension name <code>db.sql.statement</code> or the short dimension name
      * <code>statement</code>. If you don't specify this parameter, Performance
-     * Insights returns all dimension data within the specified dimension group.</p>
+     * Insights returns all dimension data within the specified dimension group. </p>
      */
     inline GetDimensionKeyDetailsRequest& AddRequestedDimensions(const char* value) { m_requestedDimensionsHasBeenSet = true; m_requestedDimensions.push_back(value); return *this; }
 

@@ -930,7 +930,7 @@ namespace Model
          * groups across your Amazon Web Services organization. </p> </li> <li> <p>An
          * Network Firewall policy, which provides firewall rules to filter network traffic
          * in specified Amazon VPCs.</p> </li> <li> <p>A DNS Firewall policy, which
-         * provides Route 53 Resolver DNS Firewall rules to filter DNS queries for
+         * provides Route 53 Resolver DNS Firewall rules to filter DNS queries for
          * specified VPCs.</p> </li> </ul> <p>Each policy is specific to one of the types.
          * If you want to enforce more than one policy type across accounts, create
          * multiple policies. You can create multiple policies for each type.</p> <p>You
@@ -954,7 +954,7 @@ namespace Model
          * groups across your Amazon Web Services organization. </p> </li> <li> <p>An
          * Network Firewall policy, which provides firewall rules to filter network traffic
          * in specified Amazon VPCs.</p> </li> <li> <p>A DNS Firewall policy, which
-         * provides Route 53 Resolver DNS Firewall rules to filter DNS queries for
+         * provides Route 53 Resolver DNS Firewall rules to filter DNS queries for
          * specified VPCs.</p> </li> </ul> <p>Each policy is specific to one of the types.
          * If you want to enforce more than one policy type across accounts, create
          * multiple policies. You can create multiple policies for each type.</p> <p>You
@@ -980,7 +980,7 @@ namespace Model
          * groups across your Amazon Web Services organization. </p> </li> <li> <p>An
          * Network Firewall policy, which provides firewall rules to filter network traffic
          * in specified Amazon VPCs.</p> </li> <li> <p>A DNS Firewall policy, which
-         * provides Route 53 Resolver DNS Firewall rules to filter DNS queries for
+         * provides Route 53 Resolver DNS Firewall rules to filter DNS queries for
          * specified VPCs.</p> </li> </ul> <p>Each policy is specific to one of the types.
          * If you want to enforce more than one policy type across accounts, create
          * multiple policies. You can create multiple policies for each type.</p> <p>You

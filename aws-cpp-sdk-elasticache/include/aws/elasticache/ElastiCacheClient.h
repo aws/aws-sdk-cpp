@@ -2758,7 +2758,7 @@ namespace Model
          * (cluster mode enabled) clusters.</p> <p>If you make changes to parameters that
          * require a Redis (cluster mode enabled) cluster reboot for the changes to be
          * applied, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/nodes.rebooting.html">Rebooting
          * a Cluster</a> for an alternate process.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebootCacheCluster">AWS
          * API Reference</a></p>
@@ -2777,7 +2777,7 @@ namespace Model
          * (cluster mode enabled) clusters.</p> <p>If you make changes to parameters that
          * require a Redis (cluster mode enabled) cluster reboot for the changes to be
          * applied, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/nodes.rebooting.html">Rebooting
          * a Cluster</a> for an alternate process.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebootCacheCluster">AWS
          * API Reference</a></p>
@@ -2798,7 +2798,7 @@ namespace Model
          * (cluster mode enabled) clusters.</p> <p>If you make changes to parameters that
          * require a Redis (cluster mode enabled) cluster reboot for the changes to be
          * applied, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/nodes.rebooting.html">Rebooting
          * a Cluster</a> for an alternate process.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebootCacheCluster">AWS
          * API Reference</a></p>

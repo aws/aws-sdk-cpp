@@ -73,27 +73,27 @@ namespace Model
 
 
     /**
-     * <p>The parameters used when importing the bot or bot locale.</p>
+     * <p>The parameters used when importing the resource.</p>
      */
     inline const ImportResourceSpecification& GetResourceSpecification() const{ return m_resourceSpecification; }
 
     /**
-     * <p>The parameters used when importing the bot or bot locale.</p>
+     * <p>The parameters used when importing the resource.</p>
      */
     inline void SetResourceSpecification(const ImportResourceSpecification& value) { m_resourceSpecification = value; }
 
     /**
-     * <p>The parameters used when importing the bot or bot locale.</p>
+     * <p>The parameters used when importing the resource.</p>
      */
     inline void SetResourceSpecification(ImportResourceSpecification&& value) { m_resourceSpecification = std::move(value); }
 
     /**
-     * <p>The parameters used when importing the bot or bot locale.</p>
+     * <p>The parameters used when importing the resource.</p>
      */
     inline StartImportResult& WithResourceSpecification(const ImportResourceSpecification& value) { SetResourceSpecification(value); return *this;}
 
     /**
-     * <p>The parameters used when importing the bot or bot locale.</p>
+     * <p>The parameters used when importing the resource.</p>
      */
     inline StartImportResult& WithResourceSpecification(ImportResourceSpecification&& value) { SetResourceSpecification(std::move(value)); return *this;}
 
@@ -141,31 +141,31 @@ namespace Model
 
     /**
      * <p>The current status of the import. When the status is <code>Complete</code>
-     * the bot or bot alias is ready to use.</p>
+     * the bot, bot alias, or custom vocabulary is ready to use.</p>
      */
     inline const ImportStatus& GetImportStatus() const{ return m_importStatus; }
 
     /**
      * <p>The current status of the import. When the status is <code>Complete</code>
-     * the bot or bot alias is ready to use.</p>
+     * the bot, bot alias, or custom vocabulary is ready to use.</p>
      */
     inline void SetImportStatus(const ImportStatus& value) { m_importStatus = value; }
 
     /**
      * <p>The current status of the import. When the status is <code>Complete</code>
-     * the bot or bot alias is ready to use.</p>
+     * the bot, bot alias, or custom vocabulary is ready to use.</p>
      */
     inline void SetImportStatus(ImportStatus&& value) { m_importStatus = std::move(value); }
 
     /**
      * <p>The current status of the import. When the status is <code>Complete</code>
-     * the bot or bot alias is ready to use.</p>
+     * the bot, bot alias, or custom vocabulary is ready to use.</p>
      */
     inline StartImportResult& WithImportStatus(const ImportStatus& value) { SetImportStatus(value); return *this;}
 
     /**
      * <p>The current status of the import. When the status is <code>Complete</code>
-     * the bot or bot alias is ready to use.</p>
+     * the bot, bot alias, or custom vocabulary is ready to use.</p>
      */
     inline StartImportResult& WithImportStatus(ImportStatus&& value) { SetImportStatus(std::move(value)); return *this;}
 

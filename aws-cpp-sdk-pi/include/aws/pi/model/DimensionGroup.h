@@ -47,8 +47,8 @@ namespace Model
     /**
      * <p>The name of the dimension group. Valid values are:</p> <ul> <li> <p>
      * <code>db</code> - The name of the database to which the client is connected
-     * (only Aurora PostgreSQL, RDS PostgreSQL, Aurora MySQL, RDS MySQL, and
-     * MariaDB)</p> </li> <li> <p> <code>db.application</code> - The name of the
+     * (only Aurora PostgreSQL, Amazon RDS PostgreSQL, Aurora MySQL, Amazon RDS MySQL,
+     * and MariaDB)</p> </li> <li> <p> <code>db.application</code> - The name of the
      * application that is connected to the database (only Aurora PostgreSQL and RDS
      * PostgreSQL)</p> </li> <li> <p> <code>db.host</code> - The host name of the
      * connected client (all engines)</p> </li> <li> <p> <code>db.session_type</code> -
@@ -66,8 +66,8 @@ namespace Model
     /**
      * <p>The name of the dimension group. Valid values are:</p> <ul> <li> <p>
      * <code>db</code> - The name of the database to which the client is connected
-     * (only Aurora PostgreSQL, RDS PostgreSQL, Aurora MySQL, RDS MySQL, and
-     * MariaDB)</p> </li> <li> <p> <code>db.application</code> - The name of the
+     * (only Aurora PostgreSQL, Amazon RDS PostgreSQL, Aurora MySQL, Amazon RDS MySQL,
+     * and MariaDB)</p> </li> <li> <p> <code>db.application</code> - The name of the
      * application that is connected to the database (only Aurora PostgreSQL and RDS
      * PostgreSQL)</p> </li> <li> <p> <code>db.host</code> - The host name of the
      * connected client (all engines)</p> </li> <li> <p> <code>db.session_type</code> -
@@ -85,8 +85,8 @@ namespace Model
     /**
      * <p>The name of the dimension group. Valid values are:</p> <ul> <li> <p>
      * <code>db</code> - The name of the database to which the client is connected
-     * (only Aurora PostgreSQL, RDS PostgreSQL, Aurora MySQL, RDS MySQL, and
-     * MariaDB)</p> </li> <li> <p> <code>db.application</code> - The name of the
+     * (only Aurora PostgreSQL, Amazon RDS PostgreSQL, Aurora MySQL, Amazon RDS MySQL,
+     * and MariaDB)</p> </li> <li> <p> <code>db.application</code> - The name of the
      * application that is connected to the database (only Aurora PostgreSQL and RDS
      * PostgreSQL)</p> </li> <li> <p> <code>db.host</code> - The host name of the
      * connected client (all engines)</p> </li> <li> <p> <code>db.session_type</code> -
@@ -104,8 +104,8 @@ namespace Model
     /**
      * <p>The name of the dimension group. Valid values are:</p> <ul> <li> <p>
      * <code>db</code> - The name of the database to which the client is connected
-     * (only Aurora PostgreSQL, RDS PostgreSQL, Aurora MySQL, RDS MySQL, and
-     * MariaDB)</p> </li> <li> <p> <code>db.application</code> - The name of the
+     * (only Aurora PostgreSQL, Amazon RDS PostgreSQL, Aurora MySQL, Amazon RDS MySQL,
+     * and MariaDB)</p> </li> <li> <p> <code>db.application</code> - The name of the
      * application that is connected to the database (only Aurora PostgreSQL and RDS
      * PostgreSQL)</p> </li> <li> <p> <code>db.host</code> - The host name of the
      * connected client (all engines)</p> </li> <li> <p> <code>db.session_type</code> -
@@ -123,8 +123,8 @@ namespace Model
     /**
      * <p>The name of the dimension group. Valid values are:</p> <ul> <li> <p>
      * <code>db</code> - The name of the database to which the client is connected
-     * (only Aurora PostgreSQL, RDS PostgreSQL, Aurora MySQL, RDS MySQL, and
-     * MariaDB)</p> </li> <li> <p> <code>db.application</code> - The name of the
+     * (only Aurora PostgreSQL, Amazon RDS PostgreSQL, Aurora MySQL, Amazon RDS MySQL,
+     * and MariaDB)</p> </li> <li> <p> <code>db.application</code> - The name of the
      * application that is connected to the database (only Aurora PostgreSQL and RDS
      * PostgreSQL)</p> </li> <li> <p> <code>db.host</code> - The host name of the
      * connected client (all engines)</p> </li> <li> <p> <code>db.session_type</code> -
@@ -142,8 +142,8 @@ namespace Model
     /**
      * <p>The name of the dimension group. Valid values are:</p> <ul> <li> <p>
      * <code>db</code> - The name of the database to which the client is connected
-     * (only Aurora PostgreSQL, RDS PostgreSQL, Aurora MySQL, RDS MySQL, and
-     * MariaDB)</p> </li> <li> <p> <code>db.application</code> - The name of the
+     * (only Aurora PostgreSQL, Amazon RDS PostgreSQL, Aurora MySQL, Amazon RDS MySQL,
+     * and MariaDB)</p> </li> <li> <p> <code>db.application</code> - The name of the
      * application that is connected to the database (only Aurora PostgreSQL and RDS
      * PostgreSQL)</p> </li> <li> <p> <code>db.host</code> - The host name of the
      * connected client (all engines)</p> </li> <li> <p> <code>db.session_type</code> -
@@ -161,8 +161,8 @@ namespace Model
     /**
      * <p>The name of the dimension group. Valid values are:</p> <ul> <li> <p>
      * <code>db</code> - The name of the database to which the client is connected
-     * (only Aurora PostgreSQL, RDS PostgreSQL, Aurora MySQL, RDS MySQL, and
-     * MariaDB)</p> </li> <li> <p> <code>db.application</code> - The name of the
+     * (only Aurora PostgreSQL, Amazon RDS PostgreSQL, Aurora MySQL, Amazon RDS MySQL,
+     * and MariaDB)</p> </li> <li> <p> <code>db.application</code> - The name of the
      * application that is connected to the database (only Aurora PostgreSQL and RDS
      * PostgreSQL)</p> </li> <li> <p> <code>db.host</code> - The host name of the
      * connected client (all engines)</p> </li> <li> <p> <code>db.session_type</code> -
@@ -180,8 +180,8 @@ namespace Model
     /**
      * <p>The name of the dimension group. Valid values are:</p> <ul> <li> <p>
      * <code>db</code> - The name of the database to which the client is connected
-     * (only Aurora PostgreSQL, RDS PostgreSQL, Aurora MySQL, RDS MySQL, and
-     * MariaDB)</p> </li> <li> <p> <code>db.application</code> - The name of the
+     * (only Aurora PostgreSQL, Amazon RDS PostgreSQL, Aurora MySQL, Amazon RDS MySQL,
+     * and MariaDB)</p> </li> <li> <p> <code>db.application</code> - The name of the
      * application that is connected to the database (only Aurora PostgreSQL and RDS
      * PostgreSQL)</p> </li> <li> <p> <code>db.host</code> - The host name of the
      * connected client (all engines)</p> </li> <li> <p> <code>db.session_type</code> -
@@ -207,8 +207,8 @@ namespace Model
      * <code>db.host.id</code> - The host ID of the connected client (all engines)</p>
      * </li> <li> <p> <code>db.host.name</code> - The host name of the connected client
      * (all engines)</p> </li> <li> <p> <code>db.name</code> - The name of the database
-     * to which the client is connected (only Aurora PostgreSQL, RDS PostgreSQL, Aurora
-     * MySQL, RDS MySQL, and MariaDB)</p> </li> <li> <p>
+     * to which the client is connected (only Aurora PostgreSQL, Amazon RDS PostgreSQL,
+     * Aurora MySQL, Amazon RDS MySQL, and MariaDB)</p> </li> <li> <p>
      * <code>db.session_type.name</code> - The type of the current session (only Aurora
      * PostgreSQL and RDS PostgreSQL)</p> </li> <li> <p> <code>db.sql.id</code> - The
      * SQL ID generated by Performance Insights (all engines)</p> </li> <li> <p>
@@ -241,8 +241,8 @@ namespace Model
      * <code>db.host.id</code> - The host ID of the connected client (all engines)</p>
      * </li> <li> <p> <code>db.host.name</code> - The host name of the connected client
      * (all engines)</p> </li> <li> <p> <code>db.name</code> - The name of the database
-     * to which the client is connected (only Aurora PostgreSQL, RDS PostgreSQL, Aurora
-     * MySQL, RDS MySQL, and MariaDB)</p> </li> <li> <p>
+     * to which the client is connected (only Aurora PostgreSQL, Amazon RDS PostgreSQL,
+     * Aurora MySQL, Amazon RDS MySQL, and MariaDB)</p> </li> <li> <p>
      * <code>db.session_type.name</code> - The type of the current session (only Aurora
      * PostgreSQL and RDS PostgreSQL)</p> </li> <li> <p> <code>db.sql.id</code> - The
      * SQL ID generated by Performance Insights (all engines)</p> </li> <li> <p>
@@ -275,8 +275,8 @@ namespace Model
      * <code>db.host.id</code> - The host ID of the connected client (all engines)</p>
      * </li> <li> <p> <code>db.host.name</code> - The host name of the connected client
      * (all engines)</p> </li> <li> <p> <code>db.name</code> - The name of the database
-     * to which the client is connected (only Aurora PostgreSQL, RDS PostgreSQL, Aurora
-     * MySQL, RDS MySQL, and MariaDB)</p> </li> <li> <p>
+     * to which the client is connected (only Aurora PostgreSQL, Amazon RDS PostgreSQL,
+     * Aurora MySQL, Amazon RDS MySQL, and MariaDB)</p> </li> <li> <p>
      * <code>db.session_type.name</code> - The type of the current session (only Aurora
      * PostgreSQL and RDS PostgreSQL)</p> </li> <li> <p> <code>db.sql.id</code> - The
      * SQL ID generated by Performance Insights (all engines)</p> </li> <li> <p>
@@ -309,8 +309,8 @@ namespace Model
      * <code>db.host.id</code> - The host ID of the connected client (all engines)</p>
      * </li> <li> <p> <code>db.host.name</code> - The host name of the connected client
      * (all engines)</p> </li> <li> <p> <code>db.name</code> - The name of the database
-     * to which the client is connected (only Aurora PostgreSQL, RDS PostgreSQL, Aurora
-     * MySQL, RDS MySQL, and MariaDB)</p> </li> <li> <p>
+     * to which the client is connected (only Aurora PostgreSQL, Amazon RDS PostgreSQL,
+     * Aurora MySQL, Amazon RDS MySQL, and MariaDB)</p> </li> <li> <p>
      * <code>db.session_type.name</code> - The type of the current session (only Aurora
      * PostgreSQL and RDS PostgreSQL)</p> </li> <li> <p> <code>db.sql.id</code> - The
      * SQL ID generated by Performance Insights (all engines)</p> </li> <li> <p>
@@ -343,8 +343,8 @@ namespace Model
      * <code>db.host.id</code> - The host ID of the connected client (all engines)</p>
      * </li> <li> <p> <code>db.host.name</code> - The host name of the connected client
      * (all engines)</p> </li> <li> <p> <code>db.name</code> - The name of the database
-     * to which the client is connected (only Aurora PostgreSQL, RDS PostgreSQL, Aurora
-     * MySQL, RDS MySQL, and MariaDB)</p> </li> <li> <p>
+     * to which the client is connected (only Aurora PostgreSQL, Amazon RDS PostgreSQL,
+     * Aurora MySQL, Amazon RDS MySQL, and MariaDB)</p> </li> <li> <p>
      * <code>db.session_type.name</code> - The type of the current session (only Aurora
      * PostgreSQL and RDS PostgreSQL)</p> </li> <li> <p> <code>db.sql.id</code> - The
      * SQL ID generated by Performance Insights (all engines)</p> </li> <li> <p>
@@ -377,8 +377,8 @@ namespace Model
      * <code>db.host.id</code> - The host ID of the connected client (all engines)</p>
      * </li> <li> <p> <code>db.host.name</code> - The host name of the connected client
      * (all engines)</p> </li> <li> <p> <code>db.name</code> - The name of the database
-     * to which the client is connected (only Aurora PostgreSQL, RDS PostgreSQL, Aurora
-     * MySQL, RDS MySQL, and MariaDB)</p> </li> <li> <p>
+     * to which the client is connected (only Aurora PostgreSQL, Amazon RDS PostgreSQL,
+     * Aurora MySQL, Amazon RDS MySQL, and MariaDB)</p> </li> <li> <p>
      * <code>db.session_type.name</code> - The type of the current session (only Aurora
      * PostgreSQL and RDS PostgreSQL)</p> </li> <li> <p> <code>db.sql.id</code> - The
      * SQL ID generated by Performance Insights (all engines)</p> </li> <li> <p>
@@ -411,8 +411,8 @@ namespace Model
      * <code>db.host.id</code> - The host ID of the connected client (all engines)</p>
      * </li> <li> <p> <code>db.host.name</code> - The host name of the connected client
      * (all engines)</p> </li> <li> <p> <code>db.name</code> - The name of the database
-     * to which the client is connected (only Aurora PostgreSQL, RDS PostgreSQL, Aurora
-     * MySQL, RDS MySQL, and MariaDB)</p> </li> <li> <p>
+     * to which the client is connected (only Aurora PostgreSQL, Amazon RDS PostgreSQL,
+     * Aurora MySQL, Amazon RDS MySQL, and MariaDB)</p> </li> <li> <p>
      * <code>db.session_type.name</code> - The type of the current session (only Aurora
      * PostgreSQL and RDS PostgreSQL)</p> </li> <li> <p> <code>db.sql.id</code> - The
      * SQL ID generated by Performance Insights (all engines)</p> </li> <li> <p>
@@ -445,8 +445,8 @@ namespace Model
      * <code>db.host.id</code> - The host ID of the connected client (all engines)</p>
      * </li> <li> <p> <code>db.host.name</code> - The host name of the connected client
      * (all engines)</p> </li> <li> <p> <code>db.name</code> - The name of the database
-     * to which the client is connected (only Aurora PostgreSQL, RDS PostgreSQL, Aurora
-     * MySQL, RDS MySQL, and MariaDB)</p> </li> <li> <p>
+     * to which the client is connected (only Aurora PostgreSQL, Amazon RDS PostgreSQL,
+     * Aurora MySQL, Amazon RDS MySQL, and MariaDB)</p> </li> <li> <p>
      * <code>db.session_type.name</code> - The type of the current session (only Aurora
      * PostgreSQL and RDS PostgreSQL)</p> </li> <li> <p> <code>db.sql.id</code> - The
      * SQL ID generated by Performance Insights (all engines)</p> </li> <li> <p>
@@ -479,8 +479,8 @@ namespace Model
      * <code>db.host.id</code> - The host ID of the connected client (all engines)</p>
      * </li> <li> <p> <code>db.host.name</code> - The host name of the connected client
      * (all engines)</p> </li> <li> <p> <code>db.name</code> - The name of the database
-     * to which the client is connected (only Aurora PostgreSQL, RDS PostgreSQL, Aurora
-     * MySQL, RDS MySQL, and MariaDB)</p> </li> <li> <p>
+     * to which the client is connected (only Aurora PostgreSQL, Amazon RDS PostgreSQL,
+     * Aurora MySQL, Amazon RDS MySQL, and MariaDB)</p> </li> <li> <p>
      * <code>db.session_type.name</code> - The type of the current session (only Aurora
      * PostgreSQL and RDS PostgreSQL)</p> </li> <li> <p> <code>db.sql.id</code> - The
      * SQL ID generated by Performance Insights (all engines)</p> </li> <li> <p>

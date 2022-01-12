@@ -100,32 +100,32 @@ namespace Model
 
 
     /**
-     * <p>Parameters for creating the bot or bot locale.</p>
+     * <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
      */
     inline const ImportResourceSpecification& GetResourceSpecification() const{ return m_resourceSpecification; }
 
     /**
-     * <p>Parameters for creating the bot or bot locale.</p>
+     * <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
      */
     inline bool ResourceSpecificationHasBeenSet() const { return m_resourceSpecificationHasBeenSet; }
 
     /**
-     * <p>Parameters for creating the bot or bot locale.</p>
+     * <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
      */
     inline void SetResourceSpecification(const ImportResourceSpecification& value) { m_resourceSpecificationHasBeenSet = true; m_resourceSpecification = value; }
 
     /**
-     * <p>Parameters for creating the bot or bot locale.</p>
+     * <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
      */
     inline void SetResourceSpecification(ImportResourceSpecification&& value) { m_resourceSpecificationHasBeenSet = true; m_resourceSpecification = std::move(value); }
 
     /**
-     * <p>Parameters for creating the bot or bot locale.</p>
+     * <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
      */
     inline StartImportRequest& WithResourceSpecification(const ImportResourceSpecification& value) { SetResourceSpecification(value); return *this;}
 
     /**
-     * <p>Parameters for creating the bot or bot locale.</p>
+     * <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
      */
     inline StartImportRequest& WithResourceSpecification(ImportResourceSpecification&& value) { SetResourceSpecification(std::move(value)); return *this;}
 
@@ -180,58 +180,58 @@ namespace Model
 
 
     /**
-     * <p>The password used to encrypt the zip archive that contains the bot or bot
-     * locale definition. You should always encrypt the zip archive to protect it
-     * during transit between your site and Amazon Lex.</p>
+     * <p>The password used to encrypt the zip archive that contains the resource
+     * definition. You should always encrypt the zip archive to protect it during
+     * transit between your site and Amazon Lex.</p>
      */
     inline const Aws::String& GetFilePassword() const{ return m_filePassword; }
 
     /**
-     * <p>The password used to encrypt the zip archive that contains the bot or bot
-     * locale definition. You should always encrypt the zip archive to protect it
-     * during transit between your site and Amazon Lex.</p>
+     * <p>The password used to encrypt the zip archive that contains the resource
+     * definition. You should always encrypt the zip archive to protect it during
+     * transit between your site and Amazon Lex.</p>
      */
     inline bool FilePasswordHasBeenSet() const { return m_filePasswordHasBeenSet; }
 
     /**
-     * <p>The password used to encrypt the zip archive that contains the bot or bot
-     * locale definition. You should always encrypt the zip archive to protect it
-     * during transit between your site and Amazon Lex.</p>
+     * <p>The password used to encrypt the zip archive that contains the resource
+     * definition. You should always encrypt the zip archive to protect it during
+     * transit between your site and Amazon Lex.</p>
      */
     inline void SetFilePassword(const Aws::String& value) { m_filePasswordHasBeenSet = true; m_filePassword = value; }
 
     /**
-     * <p>The password used to encrypt the zip archive that contains the bot or bot
-     * locale definition. You should always encrypt the zip archive to protect it
-     * during transit between your site and Amazon Lex.</p>
+     * <p>The password used to encrypt the zip archive that contains the resource
+     * definition. You should always encrypt the zip archive to protect it during
+     * transit between your site and Amazon Lex.</p>
      */
     inline void SetFilePassword(Aws::String&& value) { m_filePasswordHasBeenSet = true; m_filePassword = std::move(value); }
 
     /**
-     * <p>The password used to encrypt the zip archive that contains the bot or bot
-     * locale definition. You should always encrypt the zip archive to protect it
-     * during transit between your site and Amazon Lex.</p>
+     * <p>The password used to encrypt the zip archive that contains the resource
+     * definition. You should always encrypt the zip archive to protect it during
+     * transit between your site and Amazon Lex.</p>
      */
     inline void SetFilePassword(const char* value) { m_filePasswordHasBeenSet = true; m_filePassword.assign(value); }
 
     /**
-     * <p>The password used to encrypt the zip archive that contains the bot or bot
-     * locale definition. You should always encrypt the zip archive to protect it
-     * during transit between your site and Amazon Lex.</p>
+     * <p>The password used to encrypt the zip archive that contains the resource
+     * definition. You should always encrypt the zip archive to protect it during
+     * transit between your site and Amazon Lex.</p>
      */
     inline StartImportRequest& WithFilePassword(const Aws::String& value) { SetFilePassword(value); return *this;}
 
     /**
-     * <p>The password used to encrypt the zip archive that contains the bot or bot
-     * locale definition. You should always encrypt the zip archive to protect it
-     * during transit between your site and Amazon Lex.</p>
+     * <p>The password used to encrypt the zip archive that contains the resource
+     * definition. You should always encrypt the zip archive to protect it during
+     * transit between your site and Amazon Lex.</p>
      */
     inline StartImportRequest& WithFilePassword(Aws::String&& value) { SetFilePassword(std::move(value)); return *this;}
 
     /**
-     * <p>The password used to encrypt the zip archive that contains the bot or bot
-     * locale definition. You should always encrypt the zip archive to protect it
-     * during transit between your site and Amazon Lex.</p>
+     * <p>The password used to encrypt the zip archive that contains the resource
+     * definition. You should always encrypt the zip archive to protect it during
+     * transit between your site and Amazon Lex.</p>
      */
     inline StartImportRequest& WithFilePassword(const char* value) { SetFilePassword(value); return *this;}
 

@@ -74,27 +74,27 @@ namespace Model
 
 
     /**
-     * <p>The specifications of the imported bot or bot locale.</p>
+     * <p>The specifications of the imported bot, bot locale, or custom vocabulary.</p>
      */
     inline const ImportResourceSpecification& GetResourceSpecification() const{ return m_resourceSpecification; }
 
     /**
-     * <p>The specifications of the imported bot or bot locale.</p>
+     * <p>The specifications of the imported bot, bot locale, or custom vocabulary.</p>
      */
     inline void SetResourceSpecification(const ImportResourceSpecification& value) { m_resourceSpecification = value; }
 
     /**
-     * <p>The specifications of the imported bot or bot locale.</p>
+     * <p>The specifications of the imported bot, bot locale, or custom vocabulary.</p>
      */
     inline void SetResourceSpecification(ImportResourceSpecification&& value) { m_resourceSpecification = std::move(value); }
 
     /**
-     * <p>The specifications of the imported bot or bot locale.</p>
+     * <p>The specifications of the imported bot, bot locale, or custom vocabulary.</p>
      */
     inline DescribeImportResult& WithResourceSpecification(const ImportResourceSpecification& value) { SetResourceSpecification(value); return *this;}
 
     /**
-     * <p>The specifications of the imported bot or bot locale.</p>
+     * <p>The specifications of the imported bot, bot locale, or custom vocabulary.</p>
      */
     inline DescribeImportResult& WithResourceSpecification(ImportResourceSpecification&& value) { SetResourceSpecification(std::move(value)); return *this;}
 

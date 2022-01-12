@@ -102,14 +102,28 @@ namespace Model
 
     /**
      * <p>Details about the service that are specific to the service type, in JSON
-     * format. For service type <code>SHIELD_ADVANCED</code>, this is an empty
-     * string.</p> <ul> <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p>
+     * format. </p> <ul> <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p>
      * <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
      * </p>  <p>Valid values for <code>preProcessRuleGroups</code> are between 1
      * and 99. Valid values for <code>postProcessRuleGroups</code> are between 9901 and
      * 10000.</p>  </li> <li> <p>Example: <code>NETWORK_FIREWALL</code> </p> <p>
      * <code>"{\"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateless-rulegroup/rulegroup2\",\"priority\":10}],\"networkFirewallStatelessDefaultActions\":[\"aws:pass\",\"custom1\"],\"networkFirewallStatelessFragmentDefaultActions\":[\"custom2\",\"aws:pass\"],\"networkFirewallStatelessCustomActions\":[{\"actionName\":\"custom1\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension1\"}]}}},{\"actionName\":\"custom2\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension2\"}]}}}],\"networkFirewallStatefulRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateful-rulegroup/rulegroup1\"}],\"networkFirewallOrchestrationConfig\":{\"singleFirewallEndpointPerVPC\":true,\"allowedIPV4CidrList\":[\"10.24.34.0/28\"]}
-     * }"</code> </p> </li> <li> <p>Example: <code>WAFV2</code> </p> <p>
+     * }"</code> </p> </li> <li> <p>Specification for <code>SHIELD_ADVANCED</code> for
+     * Amazon CloudFront distributions </p> <p>
+     * <code>"{\"type\":\"SHIELD_ADVANCED\",\"automaticResponseConfiguration\":
+     * {\"automaticResponseStatus\":\"ENABLED|IGNORED|DISABLED\",
+     * \"automaticResponseAction\":\"BLOCK|COUNT\"},
+     * \"overrideCustomerWebaclClassic\":true|false}"</code> </p> <p>For example:
+     * <code>"{\"type\":\"SHIELD_ADVANCED\",\"automaticResponseConfiguration\":
+     * {\"automaticResponseStatus\":\"ENABLED\",
+     * \"automaticResponseAction\":\"COUNT\"}}"</code> </p> <p>The default value for
+     * <code>automaticResponseStatus</code> is <code>IGNORED</code>. The value for
+     * <code>automaticResponseAction</code> is only required when
+     * <code>automaticResponseStatus</code> is set to <code>ENABLED</code>. The default
+     * value for <code>overrideCustomerWebaclClassic</code> is <code>false</code>.</p>
+     * <p>For other resource types that you can protect with a Shield Advanced policy,
+     * this <code>ManagedServiceData</code> configuration is an empty string.</p> </li>
+     * <li> <p>Example: <code>WAFV2</code> </p> <p>
      * <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesAmazonIpReputationList\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[{\"name\":\"NoUserAgent_HEADER\"}]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code>
      * </p> <p>In the <code>loggingConfiguration</code>, you can specify one
      * <code>logDestinationConfigs</code>, you can optionally provide up to 20
@@ -143,14 +157,28 @@ namespace Model
 
     /**
      * <p>Details about the service that are specific to the service type, in JSON
-     * format. For service type <code>SHIELD_ADVANCED</code>, this is an empty
-     * string.</p> <ul> <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p>
+     * format. </p> <ul> <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p>
      * <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
      * </p>  <p>Valid values for <code>preProcessRuleGroups</code> are between 1
      * and 99. Valid values for <code>postProcessRuleGroups</code> are between 9901 and
      * 10000.</p>  </li> <li> <p>Example: <code>NETWORK_FIREWALL</code> </p> <p>
      * <code>"{\"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateless-rulegroup/rulegroup2\",\"priority\":10}],\"networkFirewallStatelessDefaultActions\":[\"aws:pass\",\"custom1\"],\"networkFirewallStatelessFragmentDefaultActions\":[\"custom2\",\"aws:pass\"],\"networkFirewallStatelessCustomActions\":[{\"actionName\":\"custom1\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension1\"}]}}},{\"actionName\":\"custom2\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension2\"}]}}}],\"networkFirewallStatefulRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateful-rulegroup/rulegroup1\"}],\"networkFirewallOrchestrationConfig\":{\"singleFirewallEndpointPerVPC\":true,\"allowedIPV4CidrList\":[\"10.24.34.0/28\"]}
-     * }"</code> </p> </li> <li> <p>Example: <code>WAFV2</code> </p> <p>
+     * }"</code> </p> </li> <li> <p>Specification for <code>SHIELD_ADVANCED</code> for
+     * Amazon CloudFront distributions </p> <p>
+     * <code>"{\"type\":\"SHIELD_ADVANCED\",\"automaticResponseConfiguration\":
+     * {\"automaticResponseStatus\":\"ENABLED|IGNORED|DISABLED\",
+     * \"automaticResponseAction\":\"BLOCK|COUNT\"},
+     * \"overrideCustomerWebaclClassic\":true|false}"</code> </p> <p>For example:
+     * <code>"{\"type\":\"SHIELD_ADVANCED\",\"automaticResponseConfiguration\":
+     * {\"automaticResponseStatus\":\"ENABLED\",
+     * \"automaticResponseAction\":\"COUNT\"}}"</code> </p> <p>The default value for
+     * <code>automaticResponseStatus</code> is <code>IGNORED</code>. The value for
+     * <code>automaticResponseAction</code> is only required when
+     * <code>automaticResponseStatus</code> is set to <code>ENABLED</code>. The default
+     * value for <code>overrideCustomerWebaclClassic</code> is <code>false</code>.</p>
+     * <p>For other resource types that you can protect with a Shield Advanced policy,
+     * this <code>ManagedServiceData</code> configuration is an empty string.</p> </li>
+     * <li> <p>Example: <code>WAFV2</code> </p> <p>
      * <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesAmazonIpReputationList\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[{\"name\":\"NoUserAgent_HEADER\"}]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code>
      * </p> <p>In the <code>loggingConfiguration</code>, you can specify one
      * <code>logDestinationConfigs</code>, you can optionally provide up to 20
@@ -184,14 +212,28 @@ namespace Model
 
     /**
      * <p>Details about the service that are specific to the service type, in JSON
-     * format. For service type <code>SHIELD_ADVANCED</code>, this is an empty
-     * string.</p> <ul> <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p>
+     * format. </p> <ul> <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p>
      * <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
      * </p>  <p>Valid values for <code>preProcessRuleGroups</code> are between 1
      * and 99. Valid values for <code>postProcessRuleGroups</code> are between 9901 and
      * 10000.</p>  </li> <li> <p>Example: <code>NETWORK_FIREWALL</code> </p> <p>
      * <code>"{\"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateless-rulegroup/rulegroup2\",\"priority\":10}],\"networkFirewallStatelessDefaultActions\":[\"aws:pass\",\"custom1\"],\"networkFirewallStatelessFragmentDefaultActions\":[\"custom2\",\"aws:pass\"],\"networkFirewallStatelessCustomActions\":[{\"actionName\":\"custom1\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension1\"}]}}},{\"actionName\":\"custom2\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension2\"}]}}}],\"networkFirewallStatefulRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateful-rulegroup/rulegroup1\"}],\"networkFirewallOrchestrationConfig\":{\"singleFirewallEndpointPerVPC\":true,\"allowedIPV4CidrList\":[\"10.24.34.0/28\"]}
-     * }"</code> </p> </li> <li> <p>Example: <code>WAFV2</code> </p> <p>
+     * }"</code> </p> </li> <li> <p>Specification for <code>SHIELD_ADVANCED</code> for
+     * Amazon CloudFront distributions </p> <p>
+     * <code>"{\"type\":\"SHIELD_ADVANCED\",\"automaticResponseConfiguration\":
+     * {\"automaticResponseStatus\":\"ENABLED|IGNORED|DISABLED\",
+     * \"automaticResponseAction\":\"BLOCK|COUNT\"},
+     * \"overrideCustomerWebaclClassic\":true|false}"</code> </p> <p>For example:
+     * <code>"{\"type\":\"SHIELD_ADVANCED\",\"automaticResponseConfiguration\":
+     * {\"automaticResponseStatus\":\"ENABLED\",
+     * \"automaticResponseAction\":\"COUNT\"}}"</code> </p> <p>The default value for
+     * <code>automaticResponseStatus</code> is <code>IGNORED</code>. The value for
+     * <code>automaticResponseAction</code> is only required when
+     * <code>automaticResponseStatus</code> is set to <code>ENABLED</code>. The default
+     * value for <code>overrideCustomerWebaclClassic</code> is <code>false</code>.</p>
+     * <p>For other resource types that you can protect with a Shield Advanced policy,
+     * this <code>ManagedServiceData</code> configuration is an empty string.</p> </li>
+     * <li> <p>Example: <code>WAFV2</code> </p> <p>
      * <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesAmazonIpReputationList\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[{\"name\":\"NoUserAgent_HEADER\"}]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code>
      * </p> <p>In the <code>loggingConfiguration</code>, you can specify one
      * <code>logDestinationConfigs</code>, you can optionally provide up to 20
@@ -225,14 +267,28 @@ namespace Model
 
     /**
      * <p>Details about the service that are specific to the service type, in JSON
-     * format. For service type <code>SHIELD_ADVANCED</code>, this is an empty
-     * string.</p> <ul> <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p>
+     * format. </p> <ul> <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p>
      * <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
      * </p>  <p>Valid values for <code>preProcessRuleGroups</code> are between 1
      * and 99. Valid values for <code>postProcessRuleGroups</code> are between 9901 and
      * 10000.</p>  </li> <li> <p>Example: <code>NETWORK_FIREWALL</code> </p> <p>
      * <code>"{\"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateless-rulegroup/rulegroup2\",\"priority\":10}],\"networkFirewallStatelessDefaultActions\":[\"aws:pass\",\"custom1\"],\"networkFirewallStatelessFragmentDefaultActions\":[\"custom2\",\"aws:pass\"],\"networkFirewallStatelessCustomActions\":[{\"actionName\":\"custom1\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension1\"}]}}},{\"actionName\":\"custom2\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension2\"}]}}}],\"networkFirewallStatefulRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateful-rulegroup/rulegroup1\"}],\"networkFirewallOrchestrationConfig\":{\"singleFirewallEndpointPerVPC\":true,\"allowedIPV4CidrList\":[\"10.24.34.0/28\"]}
-     * }"</code> </p> </li> <li> <p>Example: <code>WAFV2</code> </p> <p>
+     * }"</code> </p> </li> <li> <p>Specification for <code>SHIELD_ADVANCED</code> for
+     * Amazon CloudFront distributions </p> <p>
+     * <code>"{\"type\":\"SHIELD_ADVANCED\",\"automaticResponseConfiguration\":
+     * {\"automaticResponseStatus\":\"ENABLED|IGNORED|DISABLED\",
+     * \"automaticResponseAction\":\"BLOCK|COUNT\"},
+     * \"overrideCustomerWebaclClassic\":true|false}"</code> </p> <p>For example:
+     * <code>"{\"type\":\"SHIELD_ADVANCED\",\"automaticResponseConfiguration\":
+     * {\"automaticResponseStatus\":\"ENABLED\",
+     * \"automaticResponseAction\":\"COUNT\"}}"</code> </p> <p>The default value for
+     * <code>automaticResponseStatus</code> is <code>IGNORED</code>. The value for
+     * <code>automaticResponseAction</code> is only required when
+     * <code>automaticResponseStatus</code> is set to <code>ENABLED</code>. The default
+     * value for <code>overrideCustomerWebaclClassic</code> is <code>false</code>.</p>
+     * <p>For other resource types that you can protect with a Shield Advanced policy,
+     * this <code>ManagedServiceData</code> configuration is an empty string.</p> </li>
+     * <li> <p>Example: <code>WAFV2</code> </p> <p>
      * <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesAmazonIpReputationList\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[{\"name\":\"NoUserAgent_HEADER\"}]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code>
      * </p> <p>In the <code>loggingConfiguration</code>, you can specify one
      * <code>logDestinationConfigs</code>, you can optionally provide up to 20
@@ -266,14 +322,28 @@ namespace Model
 
     /**
      * <p>Details about the service that are specific to the service type, in JSON
-     * format. For service type <code>SHIELD_ADVANCED</code>, this is an empty
-     * string.</p> <ul> <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p>
+     * format. </p> <ul> <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p>
      * <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
      * </p>  <p>Valid values for <code>preProcessRuleGroups</code> are between 1
      * and 99. Valid values for <code>postProcessRuleGroups</code> are between 9901 and
      * 10000.</p>  </li> <li> <p>Example: <code>NETWORK_FIREWALL</code> </p> <p>
      * <code>"{\"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateless-rulegroup/rulegroup2\",\"priority\":10}],\"networkFirewallStatelessDefaultActions\":[\"aws:pass\",\"custom1\"],\"networkFirewallStatelessFragmentDefaultActions\":[\"custom2\",\"aws:pass\"],\"networkFirewallStatelessCustomActions\":[{\"actionName\":\"custom1\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension1\"}]}}},{\"actionName\":\"custom2\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension2\"}]}}}],\"networkFirewallStatefulRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateful-rulegroup/rulegroup1\"}],\"networkFirewallOrchestrationConfig\":{\"singleFirewallEndpointPerVPC\":true,\"allowedIPV4CidrList\":[\"10.24.34.0/28\"]}
-     * }"</code> </p> </li> <li> <p>Example: <code>WAFV2</code> </p> <p>
+     * }"</code> </p> </li> <li> <p>Specification for <code>SHIELD_ADVANCED</code> for
+     * Amazon CloudFront distributions </p> <p>
+     * <code>"{\"type\":\"SHIELD_ADVANCED\",\"automaticResponseConfiguration\":
+     * {\"automaticResponseStatus\":\"ENABLED|IGNORED|DISABLED\",
+     * \"automaticResponseAction\":\"BLOCK|COUNT\"},
+     * \"overrideCustomerWebaclClassic\":true|false}"</code> </p> <p>For example:
+     * <code>"{\"type\":\"SHIELD_ADVANCED\",\"automaticResponseConfiguration\":
+     * {\"automaticResponseStatus\":\"ENABLED\",
+     * \"automaticResponseAction\":\"COUNT\"}}"</code> </p> <p>The default value for
+     * <code>automaticResponseStatus</code> is <code>IGNORED</code>. The value for
+     * <code>automaticResponseAction</code> is only required when
+     * <code>automaticResponseStatus</code> is set to <code>ENABLED</code>. The default
+     * value for <code>overrideCustomerWebaclClassic</code> is <code>false</code>.</p>
+     * <p>For other resource types that you can protect with a Shield Advanced policy,
+     * this <code>ManagedServiceData</code> configuration is an empty string.</p> </li>
+     * <li> <p>Example: <code>WAFV2</code> </p> <p>
      * <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesAmazonIpReputationList\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[{\"name\":\"NoUserAgent_HEADER\"}]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code>
      * </p> <p>In the <code>loggingConfiguration</code>, you can specify one
      * <code>logDestinationConfigs</code>, you can optionally provide up to 20
@@ -307,14 +377,28 @@ namespace Model
 
     /**
      * <p>Details about the service that are specific to the service type, in JSON
-     * format. For service type <code>SHIELD_ADVANCED</code>, this is an empty
-     * string.</p> <ul> <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p>
+     * format. </p> <ul> <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p>
      * <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
      * </p>  <p>Valid values for <code>preProcessRuleGroups</code> are between 1
      * and 99. Valid values for <code>postProcessRuleGroups</code> are between 9901 and
      * 10000.</p>  </li> <li> <p>Example: <code>NETWORK_FIREWALL</code> </p> <p>
      * <code>"{\"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateless-rulegroup/rulegroup2\",\"priority\":10}],\"networkFirewallStatelessDefaultActions\":[\"aws:pass\",\"custom1\"],\"networkFirewallStatelessFragmentDefaultActions\":[\"custom2\",\"aws:pass\"],\"networkFirewallStatelessCustomActions\":[{\"actionName\":\"custom1\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension1\"}]}}},{\"actionName\":\"custom2\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension2\"}]}}}],\"networkFirewallStatefulRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateful-rulegroup/rulegroup1\"}],\"networkFirewallOrchestrationConfig\":{\"singleFirewallEndpointPerVPC\":true,\"allowedIPV4CidrList\":[\"10.24.34.0/28\"]}
-     * }"</code> </p> </li> <li> <p>Example: <code>WAFV2</code> </p> <p>
+     * }"</code> </p> </li> <li> <p>Specification for <code>SHIELD_ADVANCED</code> for
+     * Amazon CloudFront distributions </p> <p>
+     * <code>"{\"type\":\"SHIELD_ADVANCED\",\"automaticResponseConfiguration\":
+     * {\"automaticResponseStatus\":\"ENABLED|IGNORED|DISABLED\",
+     * \"automaticResponseAction\":\"BLOCK|COUNT\"},
+     * \"overrideCustomerWebaclClassic\":true|false}"</code> </p> <p>For example:
+     * <code>"{\"type\":\"SHIELD_ADVANCED\",\"automaticResponseConfiguration\":
+     * {\"automaticResponseStatus\":\"ENABLED\",
+     * \"automaticResponseAction\":\"COUNT\"}}"</code> </p> <p>The default value for
+     * <code>automaticResponseStatus</code> is <code>IGNORED</code>. The value for
+     * <code>automaticResponseAction</code> is only required when
+     * <code>automaticResponseStatus</code> is set to <code>ENABLED</code>. The default
+     * value for <code>overrideCustomerWebaclClassic</code> is <code>false</code>.</p>
+     * <p>For other resource types that you can protect with a Shield Advanced policy,
+     * this <code>ManagedServiceData</code> configuration is an empty string.</p> </li>
+     * <li> <p>Example: <code>WAFV2</code> </p> <p>
      * <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesAmazonIpReputationList\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[{\"name\":\"NoUserAgent_HEADER\"}]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code>
      * </p> <p>In the <code>loggingConfiguration</code>, you can specify one
      * <code>logDestinationConfigs</code>, you can optionally provide up to 20
@@ -348,14 +432,28 @@ namespace Model
 
     /**
      * <p>Details about the service that are specific to the service type, in JSON
-     * format. For service type <code>SHIELD_ADVANCED</code>, this is an empty
-     * string.</p> <ul> <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p>
+     * format. </p> <ul> <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p>
      * <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
      * </p>  <p>Valid values for <code>preProcessRuleGroups</code> are between 1
      * and 99. Valid values for <code>postProcessRuleGroups</code> are between 9901 and
      * 10000.</p>  </li> <li> <p>Example: <code>NETWORK_FIREWALL</code> </p> <p>
      * <code>"{\"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateless-rulegroup/rulegroup2\",\"priority\":10}],\"networkFirewallStatelessDefaultActions\":[\"aws:pass\",\"custom1\"],\"networkFirewallStatelessFragmentDefaultActions\":[\"custom2\",\"aws:pass\"],\"networkFirewallStatelessCustomActions\":[{\"actionName\":\"custom1\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension1\"}]}}},{\"actionName\":\"custom2\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension2\"}]}}}],\"networkFirewallStatefulRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateful-rulegroup/rulegroup1\"}],\"networkFirewallOrchestrationConfig\":{\"singleFirewallEndpointPerVPC\":true,\"allowedIPV4CidrList\":[\"10.24.34.0/28\"]}
-     * }"</code> </p> </li> <li> <p>Example: <code>WAFV2</code> </p> <p>
+     * }"</code> </p> </li> <li> <p>Specification for <code>SHIELD_ADVANCED</code> for
+     * Amazon CloudFront distributions </p> <p>
+     * <code>"{\"type\":\"SHIELD_ADVANCED\",\"automaticResponseConfiguration\":
+     * {\"automaticResponseStatus\":\"ENABLED|IGNORED|DISABLED\",
+     * \"automaticResponseAction\":\"BLOCK|COUNT\"},
+     * \"overrideCustomerWebaclClassic\":true|false}"</code> </p> <p>For example:
+     * <code>"{\"type\":\"SHIELD_ADVANCED\",\"automaticResponseConfiguration\":
+     * {\"automaticResponseStatus\":\"ENABLED\",
+     * \"automaticResponseAction\":\"COUNT\"}}"</code> </p> <p>The default value for
+     * <code>automaticResponseStatus</code> is <code>IGNORED</code>. The value for
+     * <code>automaticResponseAction</code> is only required when
+     * <code>automaticResponseStatus</code> is set to <code>ENABLED</code>. The default
+     * value for <code>overrideCustomerWebaclClassic</code> is <code>false</code>.</p>
+     * <p>For other resource types that you can protect with a Shield Advanced policy,
+     * this <code>ManagedServiceData</code> configuration is an empty string.</p> </li>
+     * <li> <p>Example: <code>WAFV2</code> </p> <p>
      * <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesAmazonIpReputationList\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[{\"name\":\"NoUserAgent_HEADER\"}]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code>
      * </p> <p>In the <code>loggingConfiguration</code>, you can specify one
      * <code>logDestinationConfigs</code>, you can optionally provide up to 20
@@ -389,14 +487,28 @@ namespace Model
 
     /**
      * <p>Details about the service that are specific to the service type, in JSON
-     * format. For service type <code>SHIELD_ADVANCED</code>, this is an empty
-     * string.</p> <ul> <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p>
+     * format. </p> <ul> <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p>
      * <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
      * </p>  <p>Valid values for <code>preProcessRuleGroups</code> are between 1
      * and 99. Valid values for <code>postProcessRuleGroups</code> are between 9901 and
      * 10000.</p>  </li> <li> <p>Example: <code>NETWORK_FIREWALL</code> </p> <p>
      * <code>"{\"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateless-rulegroup/rulegroup2\",\"priority\":10}],\"networkFirewallStatelessDefaultActions\":[\"aws:pass\",\"custom1\"],\"networkFirewallStatelessFragmentDefaultActions\":[\"custom2\",\"aws:pass\"],\"networkFirewallStatelessCustomActions\":[{\"actionName\":\"custom1\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension1\"}]}}},{\"actionName\":\"custom2\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension2\"}]}}}],\"networkFirewallStatefulRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateful-rulegroup/rulegroup1\"}],\"networkFirewallOrchestrationConfig\":{\"singleFirewallEndpointPerVPC\":true,\"allowedIPV4CidrList\":[\"10.24.34.0/28\"]}
-     * }"</code> </p> </li> <li> <p>Example: <code>WAFV2</code> </p> <p>
+     * }"</code> </p> </li> <li> <p>Specification for <code>SHIELD_ADVANCED</code> for
+     * Amazon CloudFront distributions </p> <p>
+     * <code>"{\"type\":\"SHIELD_ADVANCED\",\"automaticResponseConfiguration\":
+     * {\"automaticResponseStatus\":\"ENABLED|IGNORED|DISABLED\",
+     * \"automaticResponseAction\":\"BLOCK|COUNT\"},
+     * \"overrideCustomerWebaclClassic\":true|false}"</code> </p> <p>For example:
+     * <code>"{\"type\":\"SHIELD_ADVANCED\",\"automaticResponseConfiguration\":
+     * {\"automaticResponseStatus\":\"ENABLED\",
+     * \"automaticResponseAction\":\"COUNT\"}}"</code> </p> <p>The default value for
+     * <code>automaticResponseStatus</code> is <code>IGNORED</code>. The value for
+     * <code>automaticResponseAction</code> is only required when
+     * <code>automaticResponseStatus</code> is set to <code>ENABLED</code>. The default
+     * value for <code>overrideCustomerWebaclClassic</code> is <code>false</code>.</p>
+     * <p>For other resource types that you can protect with a Shield Advanced policy,
+     * this <code>ManagedServiceData</code> configuration is an empty string.</p> </li>
+     * <li> <p>Example: <code>WAFV2</code> </p> <p>
      * <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesAmazonIpReputationList\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[{\"name\":\"NoUserAgent_HEADER\"}]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code>
      * </p> <p>In the <code>loggingConfiguration</code>, you can specify one
      * <code>logDestinationConfigs</code>, you can optionally provide up to 20
