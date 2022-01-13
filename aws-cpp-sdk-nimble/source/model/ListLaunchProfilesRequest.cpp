@@ -58,7 +58,7 @@ void ListLaunchProfilesRequest::AddQueryStringParameters(URI& uri) const
     {
       for(const auto& item : m_states)
       {
-        ss << item;
+        ss << LaunchProfileStateMapper::GetNameForLaunchProfileState(item);
         uri.AddQueryStringParameter("states", ss.str());
         ss.str("");
       }

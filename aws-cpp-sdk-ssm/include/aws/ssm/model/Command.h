@@ -518,7 +518,7 @@ namespace Model
      * status of Failed. This is a terminal state.</p> </li> <li> <p>Incomplete: The
      * command was attempted on all managed nodes and one or more invocations doesn't
      * have a value of Success but not enough invocations failed for the status to be
-     * Failed. This is a terminal state.</p> </li> <li> <p>Canceled: The command was
+     * Failed. This is a terminal state.</p> </li> <li> <p>Cancelled: The command was
      * terminated before it was completed. This is a terminal state.</p> </li> <li>
      * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
      * the account limit for pending invocations. The system has canceled the command
@@ -547,7 +547,7 @@ namespace Model
      * status of Failed. This is a terminal state.</p> </li> <li> <p>Incomplete: The
      * command was attempted on all managed nodes and one or more invocations doesn't
      * have a value of Success but not enough invocations failed for the status to be
-     * Failed. This is a terminal state.</p> </li> <li> <p>Canceled: The command was
+     * Failed. This is a terminal state.</p> </li> <li> <p>Cancelled: The command was
      * terminated before it was completed. This is a terminal state.</p> </li> <li>
      * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
      * the account limit for pending invocations. The system has canceled the command
@@ -576,7 +576,7 @@ namespace Model
      * status of Failed. This is a terminal state.</p> </li> <li> <p>Incomplete: The
      * command was attempted on all managed nodes and one or more invocations doesn't
      * have a value of Success but not enough invocations failed for the status to be
-     * Failed. This is a terminal state.</p> </li> <li> <p>Canceled: The command was
+     * Failed. This is a terminal state.</p> </li> <li> <p>Cancelled: The command was
      * terminated before it was completed. This is a terminal state.</p> </li> <li>
      * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
      * the account limit for pending invocations. The system has canceled the command
@@ -605,7 +605,7 @@ namespace Model
      * status of Failed. This is a terminal state.</p> </li> <li> <p>Incomplete: The
      * command was attempted on all managed nodes and one or more invocations doesn't
      * have a value of Success but not enough invocations failed for the status to be
-     * Failed. This is a terminal state.</p> </li> <li> <p>Canceled: The command was
+     * Failed. This is a terminal state.</p> </li> <li> <p>Cancelled: The command was
      * terminated before it was completed. This is a terminal state.</p> </li> <li>
      * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
      * the account limit for pending invocations. The system has canceled the command
@@ -634,7 +634,7 @@ namespace Model
      * status of Failed. This is a terminal state.</p> </li> <li> <p>Incomplete: The
      * command was attempted on all managed nodes and one or more invocations doesn't
      * have a value of Success but not enough invocations failed for the status to be
-     * Failed. This is a terminal state.</p> </li> <li> <p>Canceled: The command was
+     * Failed. This is a terminal state.</p> </li> <li> <p>Cancelled: The command was
      * terminated before it was completed. This is a terminal state.</p> </li> <li>
      * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
      * the account limit for pending invocations. The system has canceled the command
@@ -663,7 +663,7 @@ namespace Model
      * status of Failed. This is a terminal state.</p> </li> <li> <p>Incomplete: The
      * command was attempted on all managed nodes and one or more invocations doesn't
      * have a value of Success but not enough invocations failed for the status to be
-     * Failed. This is a terminal state.</p> </li> <li> <p>Canceled: The command was
+     * Failed. This is a terminal state.</p> </li> <li> <p>Cancelled: The command was
      * terminated before it was completed. This is a terminal state.</p> </li> <li>
      * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
      * the account limit for pending invocations. The system has canceled the command
@@ -692,7 +692,7 @@ namespace Model
      * status of Failed. This is a terminal state.</p> </li> <li> <p>Incomplete: The
      * command was attempted on all managed nodes and one or more invocations doesn't
      * have a value of Success but not enough invocations failed for the status to be
-     * Failed. This is a terminal state.</p> </li> <li> <p>Canceled: The command was
+     * Failed. This is a terminal state.</p> </li> <li> <p>Cancelled: The command was
      * terminated before it was completed. This is a terminal state.</p> </li> <li>
      * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
      * the account limit for pending invocations. The system has canceled the command
@@ -721,7 +721,7 @@ namespace Model
      * status of Failed. This is a terminal state.</p> </li> <li> <p>Incomplete: The
      * command was attempted on all managed nodes and one or more invocations doesn't
      * have a value of Success but not enough invocations failed for the status to be
-     * Failed. This is a terminal state.</p> </li> <li> <p>Canceled: The command was
+     * Failed. This is a terminal state.</p> </li> <li> <p>Cancelled: The command was
      * terminated before it was completed. This is a terminal state.</p> </li> <li>
      * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
      * the account limit for pending invocations. The system has canceled the command
@@ -1087,28 +1087,28 @@ namespace Model
     /**
      * <p>The number of targets for which the command invocation reached a terminal
      * state. Terminal states include the following: Success, Failed, Execution Timed
-     * Out, Delivery Timed Out, Canceled, Terminated, or Undeliverable.</p>
+     * Out, Delivery Timed Out, Cancelled, Terminated, or Undeliverable.</p>
      */
     inline int GetCompletedCount() const{ return m_completedCount; }
 
     /**
      * <p>The number of targets for which the command invocation reached a terminal
      * state. Terminal states include the following: Success, Failed, Execution Timed
-     * Out, Delivery Timed Out, Canceled, Terminated, or Undeliverable.</p>
+     * Out, Delivery Timed Out, Cancelled, Terminated, or Undeliverable.</p>
      */
     inline bool CompletedCountHasBeenSet() const { return m_completedCountHasBeenSet; }
 
     /**
      * <p>The number of targets for which the command invocation reached a terminal
      * state. Terminal states include the following: Success, Failed, Execution Timed
-     * Out, Delivery Timed Out, Canceled, Terminated, or Undeliverable.</p>
+     * Out, Delivery Timed Out, Cancelled, Terminated, or Undeliverable.</p>
      */
     inline void SetCompletedCount(int value) { m_completedCountHasBeenSet = true; m_completedCount = value; }
 
     /**
      * <p>The number of targets for which the command invocation reached a terminal
      * state. Terminal states include the following: Success, Failed, Execution Timed
-     * Out, Delivery Timed Out, Canceled, Terminated, or Undeliverable.</p>
+     * Out, Delivery Timed Out, Cancelled, Terminated, or Undeliverable.</p>
      */
     inline Command& WithCompletedCount(int value) { SetCompletedCount(value); return *this;}
 

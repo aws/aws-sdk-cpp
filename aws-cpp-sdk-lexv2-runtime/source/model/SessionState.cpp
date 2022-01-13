@@ -23,7 +23,8 @@ SessionState::SessionState() :
     m_intentHasBeenSet(false),
     m_activeContextsHasBeenSet(false),
     m_sessionAttributesHasBeenSet(false),
-    m_originatingRequestIdHasBeenSet(false)
+    m_originatingRequestIdHasBeenSet(false),
+    m_runtimeHintsHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ SessionState::SessionState(JsonView jsonValue) :
     m_intentHasBeenSet(false),
     m_activeContextsHasBeenSet(false),
     m_sessionAttributesHasBeenSet(false),
-    m_originatingRequestIdHasBeenSet(false)
+    m_originatingRequestIdHasBeenSet(false),
+    m_runtimeHintsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -80,6 +82,13 @@ SessionState& SessionState::operator =(JsonView jsonValue)
     m_originatingRequestIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("runtimeHints"))
+  {
+    m_runtimeHints = jsonValue.GetObject("runtimeHints");
+
+    m_runtimeHintsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -124,6 +133,12 @@ JsonValue SessionState::Jsonize() const
   if(m_originatingRequestIdHasBeenSet)
   {
    payload.WithString("originatingRequestId", m_originatingRequestId);
+
+  }
+
+  if(m_runtimeHintsHasBeenSet)
+  {
+   payload.WithObject("runtimeHints", m_runtimeHints.Jsonize());
 
   }
 

@@ -37,7 +37,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes a Amazon Web Services Systems Manager document (SSM document).
+   * <p>Describes an Amazon Web Services Systems Manager document (SSM document).
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DocumentDescription">AWS
    * API Reference</a></p>
@@ -609,42 +609,50 @@ namespace Model
 
 
     /**
-     * <p>The list of OS platforms compatible with this SSM document. </p>
+     * <p>The list of operating system (OS) platforms compatible with this SSM
+     * document. </p>
      */
     inline const Aws::Vector<PlatformType>& GetPlatformTypes() const{ return m_platformTypes; }
 
     /**
-     * <p>The list of OS platforms compatible with this SSM document. </p>
+     * <p>The list of operating system (OS) platforms compatible with this SSM
+     * document. </p>
      */
     inline bool PlatformTypesHasBeenSet() const { return m_platformTypesHasBeenSet; }
 
     /**
-     * <p>The list of OS platforms compatible with this SSM document. </p>
+     * <p>The list of operating system (OS) platforms compatible with this SSM
+     * document. </p>
      */
     inline void SetPlatformTypes(const Aws::Vector<PlatformType>& value) { m_platformTypesHasBeenSet = true; m_platformTypes = value; }
 
     /**
-     * <p>The list of OS platforms compatible with this SSM document. </p>
+     * <p>The list of operating system (OS) platforms compatible with this SSM
+     * document. </p>
      */
     inline void SetPlatformTypes(Aws::Vector<PlatformType>&& value) { m_platformTypesHasBeenSet = true; m_platformTypes = std::move(value); }
 
     /**
-     * <p>The list of OS platforms compatible with this SSM document. </p>
+     * <p>The list of operating system (OS) platforms compatible with this SSM
+     * document. </p>
      */
     inline DocumentDescription& WithPlatformTypes(const Aws::Vector<PlatformType>& value) { SetPlatformTypes(value); return *this;}
 
     /**
-     * <p>The list of OS platforms compatible with this SSM document. </p>
+     * <p>The list of operating system (OS) platforms compatible with this SSM
+     * document. </p>
      */
     inline DocumentDescription& WithPlatformTypes(Aws::Vector<PlatformType>&& value) { SetPlatformTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The list of OS platforms compatible with this SSM document. </p>
+     * <p>The list of operating system (OS) platforms compatible with this SSM
+     * document. </p>
      */
     inline DocumentDescription& AddPlatformTypes(const PlatformType& value) { m_platformTypesHasBeenSet = true; m_platformTypes.push_back(value); return *this; }
 
     /**
-     * <p>The list of OS platforms compatible with this SSM document. </p>
+     * <p>The list of operating system (OS) platforms compatible with this SSM
+     * document. </p>
      */
     inline DocumentDescription& AddPlatformTypes(PlatformType&& value) { m_platformTypesHasBeenSet = true; m_platformTypes.push_back(std::move(value)); return *this; }
 
@@ -1264,6 +1272,107 @@ namespace Model
      */
     inline DocumentDescription& WithReviewStatus(ReviewStatus&& value) { SetReviewStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The classification of a document to help you identify and categorize its
+     * use.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetCategory() const{ return m_category; }
+
+    /**
+     * <p>The classification of a document to help you identify and categorize its
+     * use.</p>
+     */
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+
+    /**
+     * <p>The classification of a document to help you identify and categorize its
+     * use.</p>
+     */
+    inline void SetCategory(const Aws::Vector<Aws::String>& value) { m_categoryHasBeenSet = true; m_category = value; }
+
+    /**
+     * <p>The classification of a document to help you identify and categorize its
+     * use.</p>
+     */
+    inline void SetCategory(Aws::Vector<Aws::String>&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
+
+    /**
+     * <p>The classification of a document to help you identify and categorize its
+     * use.</p>
+     */
+    inline DocumentDescription& WithCategory(const Aws::Vector<Aws::String>& value) { SetCategory(value); return *this;}
+
+    /**
+     * <p>The classification of a document to help you identify and categorize its
+     * use.</p>
+     */
+    inline DocumentDescription& WithCategory(Aws::Vector<Aws::String>&& value) { SetCategory(std::move(value)); return *this;}
+
+    /**
+     * <p>The classification of a document to help you identify and categorize its
+     * use.</p>
+     */
+    inline DocumentDescription& AddCategory(const Aws::String& value) { m_categoryHasBeenSet = true; m_category.push_back(value); return *this; }
+
+    /**
+     * <p>The classification of a document to help you identify and categorize its
+     * use.</p>
+     */
+    inline DocumentDescription& AddCategory(Aws::String&& value) { m_categoryHasBeenSet = true; m_category.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The classification of a document to help you identify and categorize its
+     * use.</p>
+     */
+    inline DocumentDescription& AddCategory(const char* value) { m_categoryHasBeenSet = true; m_category.push_back(value); return *this; }
+
+
+    /**
+     * <p>The value that identifies a document's category.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetCategoryEnum() const{ return m_categoryEnum; }
+
+    /**
+     * <p>The value that identifies a document's category.</p>
+     */
+    inline bool CategoryEnumHasBeenSet() const { return m_categoryEnumHasBeenSet; }
+
+    /**
+     * <p>The value that identifies a document's category.</p>
+     */
+    inline void SetCategoryEnum(const Aws::Vector<Aws::String>& value) { m_categoryEnumHasBeenSet = true; m_categoryEnum = value; }
+
+    /**
+     * <p>The value that identifies a document's category.</p>
+     */
+    inline void SetCategoryEnum(Aws::Vector<Aws::String>&& value) { m_categoryEnumHasBeenSet = true; m_categoryEnum = std::move(value); }
+
+    /**
+     * <p>The value that identifies a document's category.</p>
+     */
+    inline DocumentDescription& WithCategoryEnum(const Aws::Vector<Aws::String>& value) { SetCategoryEnum(value); return *this;}
+
+    /**
+     * <p>The value that identifies a document's category.</p>
+     */
+    inline DocumentDescription& WithCategoryEnum(Aws::Vector<Aws::String>&& value) { SetCategoryEnum(std::move(value)); return *this;}
+
+    /**
+     * <p>The value that identifies a document's category.</p>
+     */
+    inline DocumentDescription& AddCategoryEnum(const Aws::String& value) { m_categoryEnumHasBeenSet = true; m_categoryEnum.push_back(value); return *this; }
+
+    /**
+     * <p>The value that identifies a document's category.</p>
+     */
+    inline DocumentDescription& AddCategoryEnum(Aws::String&& value) { m_categoryEnumHasBeenSet = true; m_categoryEnum.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The value that identifies a document's category.</p>
+     */
+    inline DocumentDescription& AddCategoryEnum(const char* value) { m_categoryEnumHasBeenSet = true; m_categoryEnum.push_back(value); return *this; }
+
   private:
 
     Aws::String m_sha1;
@@ -1349,6 +1458,12 @@ namespace Model
 
     ReviewStatus m_reviewStatus;
     bool m_reviewStatusHasBeenSet;
+
+    Aws::Vector<Aws::String> m_category;
+    bool m_categoryHasBeenSet;
+
+    Aws::Vector<Aws::String> m_categoryEnum;
+    bool m_categoryEnumHasBeenSet;
   };
 
 } // namespace Model

@@ -12,6 +12,7 @@
 #include <aws/nimble/model/LaunchProfileStatusCode.h>
 #include <aws/nimble/model/StreamConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/nimble/model/ValidationResult.h>
 #include <utility>
 
 namespace Aws
@@ -726,6 +727,47 @@ namespace Model
      */
     inline LaunchProfile& WithUpdatedBy(const char* value) { SetUpdatedBy(value); return *this;}
 
+
+    /**
+     * <p>The list of the latest validation results.</p>
+     */
+    inline const Aws::Vector<ValidationResult>& GetValidationResults() const{ return m_validationResults; }
+
+    /**
+     * <p>The list of the latest validation results.</p>
+     */
+    inline bool ValidationResultsHasBeenSet() const { return m_validationResultsHasBeenSet; }
+
+    /**
+     * <p>The list of the latest validation results.</p>
+     */
+    inline void SetValidationResults(const Aws::Vector<ValidationResult>& value) { m_validationResultsHasBeenSet = true; m_validationResults = value; }
+
+    /**
+     * <p>The list of the latest validation results.</p>
+     */
+    inline void SetValidationResults(Aws::Vector<ValidationResult>&& value) { m_validationResultsHasBeenSet = true; m_validationResults = std::move(value); }
+
+    /**
+     * <p>The list of the latest validation results.</p>
+     */
+    inline LaunchProfile& WithValidationResults(const Aws::Vector<ValidationResult>& value) { SetValidationResults(value); return *this;}
+
+    /**
+     * <p>The list of the latest validation results.</p>
+     */
+    inline LaunchProfile& WithValidationResults(Aws::Vector<ValidationResult>&& value) { SetValidationResults(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of the latest validation results.</p>
+     */
+    inline LaunchProfile& AddValidationResults(const ValidationResult& value) { m_validationResultsHasBeenSet = true; m_validationResults.push_back(value); return *this; }
+
+    /**
+     * <p>The list of the latest validation results.</p>
+     */
+    inline LaunchProfile& AddValidationResults(ValidationResult&& value) { m_validationResultsHasBeenSet = true; m_validationResults.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_arn;
@@ -775,6 +817,9 @@ namespace Model
 
     Aws::String m_updatedBy;
     bool m_updatedByHasBeenSet;
+
+    Aws::Vector<ValidationResult> m_validationResults;
+    bool m_validationResultsHasBeenSet;
   };
 
 } // namespace Model

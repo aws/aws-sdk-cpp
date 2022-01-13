@@ -741,11 +741,11 @@ namespace Model
    * configuration of your managed nodes. A <i>managed node</i> is any Amazon Elastic
    * Compute Cloud (Amazon EC2) instance, edge device, or on-premises server or
    * virtual machine (VM) that has been configured for Systems Manager. </p> 
-   * <p>With support for IoT Greengrass Version 2 devices, the phrase <i>managed
+   * <p>With support for IoT Greengrass core devices, the phrase <i>managed
    * instance</i> has been changed to <i>managed node</i> in most of the Systems
    * Manager documentation. The Systems Manager console, API calls, error messages,
-   * and SSM documents still use the term instance.</p>  <p>This reference is
-   * intended to be used with the <a
+   * and SSM documents still use the term <i>instance</i>.</p>  <p>This
+   * reference is intended to be used with the <a
    * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/">Amazon Web
    * Services Systems Manager User Guide</a>.</p> <p>To get started, verify
    * prerequisites and configure managed nodes. For more information, see <a
@@ -5216,15 +5216,24 @@ namespace Model
         /**
          * <p>Updates an association. You can update the association name and version, the
          * document version, schedule, parameters, and Amazon Simple Storage Service
-         * (Amazon S3) output. </p> <p>In order to call this API operation, your Identity
-         * and Access Management (IAM) user account, group, or role must be configured with
-         * permission to call the <a>DescribeAssociation</a> API operation. If you don't
-         * have permission to call <code>DescribeAssociation</code>, then you receive the
-         * following error: <code>An error occurred (AccessDeniedException) when calling
-         * the UpdateAssociation operation: User: &lt;user_arn&gt; isn't authorized to
-         * perform: ssm:DescribeAssociation on resource: &lt;resource_arn&gt;</code> </p>
-         *  <p>When you update an association, the association immediately runs
-         * against the specified targets.</p> <p><h3>See Also:</h3>   <a
+         * (Amazon S3) output. When you call <code>UpdateAssociation</code>, the system
+         * drops all optional parameters from the request and overwrites the association
+         * with null values for those parameters. This is by design. You must specify all
+         * optional parameters in the call, even if you are not changing the parameters.
+         * This includes the <code>Name</code> parameter. Before calling this API action,
+         * we recommend that you call the <a>DescribeAssociation</a> API operation and make
+         * a note of all optional parameters required for your
+         * <code>UpdateAssociation</code> call.</p> <p>In order to call this API operation,
+         * your Identity and Access Management (IAM) user account, group, or role must be
+         * configured with permission to call the <a>DescribeAssociation</a> API operation.
+         * If you don't have permission to call <code>DescribeAssociation</code>, then you
+         * receive the following error: <code>An error occurred (AccessDeniedException)
+         * when calling the UpdateAssociation operation: User: &lt;user_arn&gt; isn't
+         * authorized to perform: ssm:DescribeAssociation on resource:
+         * &lt;resource_arn&gt;</code> </p>  <p>When you update an association,
+         * the association immediately runs against the specified targets. You can add the
+         * <code>ApplyOnlyAtCronInterval</code> parameter to run the association during the
+         * next schedule run.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">AWS
          * API Reference</a></p>
          */
@@ -5233,15 +5242,24 @@ namespace Model
         /**
          * <p>Updates an association. You can update the association name and version, the
          * document version, schedule, parameters, and Amazon Simple Storage Service
-         * (Amazon S3) output. </p> <p>In order to call this API operation, your Identity
-         * and Access Management (IAM) user account, group, or role must be configured with
-         * permission to call the <a>DescribeAssociation</a> API operation. If you don't
-         * have permission to call <code>DescribeAssociation</code>, then you receive the
-         * following error: <code>An error occurred (AccessDeniedException) when calling
-         * the UpdateAssociation operation: User: &lt;user_arn&gt; isn't authorized to
-         * perform: ssm:DescribeAssociation on resource: &lt;resource_arn&gt;</code> </p>
-         *  <p>When you update an association, the association immediately runs
-         * against the specified targets.</p> <p><h3>See Also:</h3>   <a
+         * (Amazon S3) output. When you call <code>UpdateAssociation</code>, the system
+         * drops all optional parameters from the request and overwrites the association
+         * with null values for those parameters. This is by design. You must specify all
+         * optional parameters in the call, even if you are not changing the parameters.
+         * This includes the <code>Name</code> parameter. Before calling this API action,
+         * we recommend that you call the <a>DescribeAssociation</a> API operation and make
+         * a note of all optional parameters required for your
+         * <code>UpdateAssociation</code> call.</p> <p>In order to call this API operation,
+         * your Identity and Access Management (IAM) user account, group, or role must be
+         * configured with permission to call the <a>DescribeAssociation</a> API operation.
+         * If you don't have permission to call <code>DescribeAssociation</code>, then you
+         * receive the following error: <code>An error occurred (AccessDeniedException)
+         * when calling the UpdateAssociation operation: User: &lt;user_arn&gt; isn't
+         * authorized to perform: ssm:DescribeAssociation on resource:
+         * &lt;resource_arn&gt;</code> </p>  <p>When you update an association,
+         * the association immediately runs against the specified targets. You can add the
+         * <code>ApplyOnlyAtCronInterval</code> parameter to run the association during the
+         * next schedule run.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">AWS
          * API Reference</a></p>
          *
@@ -5252,15 +5270,24 @@ namespace Model
         /**
          * <p>Updates an association. You can update the association name and version, the
          * document version, schedule, parameters, and Amazon Simple Storage Service
-         * (Amazon S3) output. </p> <p>In order to call this API operation, your Identity
-         * and Access Management (IAM) user account, group, or role must be configured with
-         * permission to call the <a>DescribeAssociation</a> API operation. If you don't
-         * have permission to call <code>DescribeAssociation</code>, then you receive the
-         * following error: <code>An error occurred (AccessDeniedException) when calling
-         * the UpdateAssociation operation: User: &lt;user_arn&gt; isn't authorized to
-         * perform: ssm:DescribeAssociation on resource: &lt;resource_arn&gt;</code> </p>
-         *  <p>When you update an association, the association immediately runs
-         * against the specified targets.</p> <p><h3>See Also:</h3>   <a
+         * (Amazon S3) output. When you call <code>UpdateAssociation</code>, the system
+         * drops all optional parameters from the request and overwrites the association
+         * with null values for those parameters. This is by design. You must specify all
+         * optional parameters in the call, even if you are not changing the parameters.
+         * This includes the <code>Name</code> parameter. Before calling this API action,
+         * we recommend that you call the <a>DescribeAssociation</a> API operation and make
+         * a note of all optional parameters required for your
+         * <code>UpdateAssociation</code> call.</p> <p>In order to call this API operation,
+         * your Identity and Access Management (IAM) user account, group, or role must be
+         * configured with permission to call the <a>DescribeAssociation</a> API operation.
+         * If you don't have permission to call <code>DescribeAssociation</code>, then you
+         * receive the following error: <code>An error occurred (AccessDeniedException)
+         * when calling the UpdateAssociation operation: User: &lt;user_arn&gt; isn't
+         * authorized to perform: ssm:DescribeAssociation on resource:
+         * &lt;resource_arn&gt;</code> </p>  <p>When you update an association,
+         * the association immediately runs against the specified targets. You can add the
+         * <code>ApplyOnlyAtCronInterval</code> parameter to run the association during the
+         * next schedule run.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">AWS
          * API Reference</a></p>
          *

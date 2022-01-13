@@ -44,32 +44,38 @@ namespace Model
 
 
     /**
-     * <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a>.</p>
+     * <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a> or
+     * engine-log..</p>
      */
     inline const LogType& GetLogType() const{ return m_logType; }
 
     /**
-     * <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a>.</p>
+     * <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a> or
+     * engine-log..</p>
      */
     inline bool LogTypeHasBeenSet() const { return m_logTypeHasBeenSet; }
 
     /**
-     * <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a>.</p>
+     * <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a> or
+     * engine-log..</p>
      */
     inline void SetLogType(const LogType& value) { m_logTypeHasBeenSet = true; m_logType = value; }
 
     /**
-     * <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a>.</p>
+     * <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a> or
+     * engine-log..</p>
      */
     inline void SetLogType(LogType&& value) { m_logTypeHasBeenSet = true; m_logType = std::move(value); }
 
     /**
-     * <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a>.</p>
+     * <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a> or
+     * engine-log..</p>
      */
     inline LogDeliveryConfigurationRequest& WithLogType(const LogType& value) { SetLogType(value); return *this;}
 
     /**
-     * <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a>.</p>
+     * <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a> or
+     * engine-log..</p>
      */
     inline LogDeliveryConfigurationRequest& WithLogType(LogType&& value) { SetLogType(std::move(value)); return *this;}
 

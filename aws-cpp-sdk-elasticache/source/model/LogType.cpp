@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int slow_log_HASH = HashingUtils::HashString("slow-log");
+        static const int engine_log_HASH = HashingUtils::HashString("engine-log");
 
 
         LogType GetLogTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == slow_log_HASH)
           {
             return LogType::slow_log;
+          }
+          else if (hashCode == engine_log_HASH)
+          {
+            return LogType::engine_log;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case LogType::slow_log:
             return "slow-log";
+          case LogType::engine_log:
+            return "engine-log";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

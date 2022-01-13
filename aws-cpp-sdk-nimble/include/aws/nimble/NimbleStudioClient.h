@@ -911,7 +911,7 @@ namespace Model
         virtual void GetStreamingImageAsync(const Model::GetStreamingImageRequest& request, const GetStreamingImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets StreamingSession resource.</p> <p>anvoke this operation to poll for a
+         * <p>Gets StreamingSession resource.</p> <p>Invoke this operation to poll for a
          * streaming session state while creating or deleting a session.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStreamingSession">AWS
@@ -920,7 +920,7 @@ namespace Model
         virtual Model::GetStreamingSessionOutcome GetStreamingSession(const Model::GetStreamingSessionRequest& request) const;
 
         /**
-         * <p>Gets StreamingSession resource.</p> <p>anvoke this operation to poll for a
+         * <p>Gets StreamingSession resource.</p> <p>Invoke this operation to poll for a
          * streaming session state while creating or deleting a session.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStreamingSession">AWS
@@ -931,7 +931,7 @@ namespace Model
         virtual Model::GetStreamingSessionOutcomeCallable GetStreamingSessionCallable(const Model::GetStreamingSessionRequest& request) const;
 
         /**
-         * <p>Gets StreamingSession resource.</p> <p>anvoke this operation to poll for a
+         * <p>Gets StreamingSession resource.</p> <p>Invoke this operation to poll for a
          * streaming session state while creating or deleting a session.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStreamingSession">AWS

@@ -16,7 +16,8 @@ namespace Model
   enum class LogType
   {
     NOT_SET,
-    slow_log
+    slow_log,
+    engine_log
   };
 
 namespace LogTypeMapper

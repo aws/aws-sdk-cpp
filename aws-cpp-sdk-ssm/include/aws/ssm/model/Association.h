@@ -215,42 +215,98 @@ namespace Model
 
 
     /**
-     * <p>The version of the document used in the association.</p>
+     * <p>The version of the document used in the association.</p>  <p>State
+     * Manager doesn't support running associations that use a new version of a
+     * document if that document is shared from another account. State Manager always
+     * runs the <code>default</code> version of a document if shared from another
+     * account, even though the Systems Manager console shows that a new version was
+     * processed. If you want to run an association using a new version of a document
+     * shared form another account, you must set the document version to
+     * <code>default</code>.</p> 
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
 
     /**
-     * <p>The version of the document used in the association.</p>
+     * <p>The version of the document used in the association.</p>  <p>State
+     * Manager doesn't support running associations that use a new version of a
+     * document if that document is shared from another account. State Manager always
+     * runs the <code>default</code> version of a document if shared from another
+     * account, even though the Systems Manager console shows that a new version was
+     * processed. If you want to run an association using a new version of a document
+     * shared form another account, you must set the document version to
+     * <code>default</code>.</p> 
      */
     inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
 
     /**
-     * <p>The version of the document used in the association.</p>
+     * <p>The version of the document used in the association.</p>  <p>State
+     * Manager doesn't support running associations that use a new version of a
+     * document if that document is shared from another account. State Manager always
+     * runs the <code>default</code> version of a document if shared from another
+     * account, even though the Systems Manager console shows that a new version was
+     * processed. If you want to run an association using a new version of a document
+     * shared form another account, you must set the document version to
+     * <code>default</code>.</p> 
      */
     inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
 
     /**
-     * <p>The version of the document used in the association.</p>
+     * <p>The version of the document used in the association.</p>  <p>State
+     * Manager doesn't support running associations that use a new version of a
+     * document if that document is shared from another account. State Manager always
+     * runs the <code>default</code> version of a document if shared from another
+     * account, even though the Systems Manager console shows that a new version was
+     * processed. If you want to run an association using a new version of a document
+     * shared form another account, you must set the document version to
+     * <code>default</code>.</p> 
      */
     inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
 
     /**
-     * <p>The version of the document used in the association.</p>
+     * <p>The version of the document used in the association.</p>  <p>State
+     * Manager doesn't support running associations that use a new version of a
+     * document if that document is shared from another account. State Manager always
+     * runs the <code>default</code> version of a document if shared from another
+     * account, even though the Systems Manager console shows that a new version was
+     * processed. If you want to run an association using a new version of a document
+     * shared form another account, you must set the document version to
+     * <code>default</code>.</p> 
      */
     inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
 
     /**
-     * <p>The version of the document used in the association.</p>
+     * <p>The version of the document used in the association.</p>  <p>State
+     * Manager doesn't support running associations that use a new version of a
+     * document if that document is shared from another account. State Manager always
+     * runs the <code>default</code> version of a document if shared from another
+     * account, even though the Systems Manager console shows that a new version was
+     * processed. If you want to run an association using a new version of a document
+     * shared form another account, you must set the document version to
+     * <code>default</code>.</p> 
      */
     inline Association& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
 
     /**
-     * <p>The version of the document used in the association.</p>
+     * <p>The version of the document used in the association.</p>  <p>State
+     * Manager doesn't support running associations that use a new version of a
+     * document if that document is shared from another account. State Manager always
+     * runs the <code>default</code> version of a document if shared from another
+     * account, even though the Systems Manager console shows that a new version was
+     * processed. If you want to run an association using a new version of a document
+     * shared form another account, you must set the document version to
+     * <code>default</code>.</p> 
      */
     inline Association& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of the document used in the association.</p>
+     * <p>The version of the document used in the association.</p>  <p>State
+     * Manager doesn't support running associations that use a new version of a
+     * document if that document is shared from another account. State Manager always
+     * runs the <code>default</code> version of a document if shared from another
+     * account, even though the Systems Manager console shows that a new version was
+     * processed. If you want to run an association using a new version of a document
+     * shared form another account, you must set the document version to
+     * <code>default</code>.</p> 
      */
     inline Association& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 

@@ -35,6 +35,7 @@ namespace Aws
         static const int STREAMING_SESSION_STARTED_HASH = HashingUtils::HashString("STREAMING_SESSION_STARTED");
         static const int STREAMING_SESSION_STOP_IN_PROGRESS_HASH = HashingUtils::HashString("STREAMING_SESSION_STOP_IN_PROGRESS");
         static const int STREAMING_SESSION_START_IN_PROGRESS_HASH = HashingUtils::HashString("STREAMING_SESSION_START_IN_PROGRESS");
+        static const int AMI_VALIDATION_ERROR_HASH = HashingUtils::HashString("AMI_VALIDATION_ERROR");
 
 
         StreamingSessionStatusCode GetStreamingSessionStatusCodeForName(const Aws::String& name)
@@ -100,6 +101,10 @@ namespace Aws
           {
             return StreamingSessionStatusCode::STREAMING_SESSION_START_IN_PROGRESS;
           }
+          else if (hashCode == AMI_VALIDATION_ERROR_HASH)
+          {
+            return StreamingSessionStatusCode::AMI_VALIDATION_ERROR;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -144,6 +149,8 @@ namespace Aws
             return "STREAMING_SESSION_STOP_IN_PROGRESS";
           case StreamingSessionStatusCode::STREAMING_SESSION_START_IN_PROGRESS:
             return "STREAMING_SESSION_START_IN_PROGRESS";
+          case StreamingSessionStatusCode::AMI_VALIDATION_ERROR:
+            return "AMI_VALIDATION_ERROR";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

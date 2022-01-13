@@ -36,7 +36,8 @@ LaunchProfile::LaunchProfile() :
     m_studioComponentIdsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false)
+    m_updatedByHasBeenSet(false),
+    m_validationResultsHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ LaunchProfile::LaunchProfile(JsonView jsonValue) :
     m_studioComponentIdsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false)
+    m_updatedByHasBeenSet(false),
+    m_validationResultsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -189,6 +191,16 @@ LaunchProfile& LaunchProfile::operator =(JsonView jsonValue)
     m_updatedByHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("validationResults"))
+  {
+    Array<JsonView> validationResultsJsonList = jsonValue.GetArray("validationResults");
+    for(unsigned validationResultsIndex = 0; validationResultsIndex < validationResultsJsonList.GetLength(); ++validationResultsIndex)
+    {
+      m_validationResults.push_back(validationResultsJsonList[validationResultsIndex].AsObject());
+    }
+    m_validationResultsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -305,6 +317,17 @@ JsonValue LaunchProfile::Jsonize() const
   if(m_updatedByHasBeenSet)
   {
    payload.WithString("updatedBy", m_updatedBy);
+
+  }
+
+  if(m_validationResultsHasBeenSet)
+  {
+   Array<JsonValue> validationResultsJsonList(m_validationResults.size());
+   for(unsigned validationResultsIndex = 0; validationResultsIndex < validationResultsJsonList.GetLength(); ++validationResultsIndex)
+   {
+     validationResultsJsonList[validationResultsIndex].AsObject(m_validationResults[validationResultsIndex].Jsonize());
+   }
+   payload.WithArray("validationResults", std::move(validationResultsJsonList));
 
   }
 

@@ -51,7 +51,9 @@ DocumentDescription::DocumentDescription() :
     m_approvedVersionHasBeenSet(false),
     m_pendingReviewVersionHasBeenSet(false),
     m_reviewStatus(ReviewStatus::NOT_SET),
-    m_reviewStatusHasBeenSet(false)
+    m_reviewStatusHasBeenSet(false),
+    m_categoryHasBeenSet(false),
+    m_categoryEnumHasBeenSet(false)
 {
 }
 
@@ -88,7 +90,9 @@ DocumentDescription::DocumentDescription(JsonView jsonValue) :
     m_approvedVersionHasBeenSet(false),
     m_pendingReviewVersionHasBeenSet(false),
     m_reviewStatus(ReviewStatus::NOT_SET),
-    m_reviewStatusHasBeenSet(false)
+    m_reviewStatusHasBeenSet(false),
+    m_categoryHasBeenSet(false),
+    m_categoryEnumHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -309,6 +313,26 @@ DocumentDescription& DocumentDescription::operator =(JsonView jsonValue)
     m_reviewStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Category"))
+  {
+    Array<JsonView> categoryJsonList = jsonValue.GetArray("Category");
+    for(unsigned categoryIndex = 0; categoryIndex < categoryJsonList.GetLength(); ++categoryIndex)
+    {
+      m_category.push_back(categoryJsonList[categoryIndex].AsString());
+    }
+    m_categoryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CategoryEnum"))
+  {
+    Array<JsonView> categoryEnumJsonList = jsonValue.GetArray("CategoryEnum");
+    for(unsigned categoryEnumIndex = 0; categoryEnumIndex < categoryEnumJsonList.GetLength(); ++categoryEnumIndex)
+    {
+      m_categoryEnum.push_back(categoryEnumJsonList[categoryEnumIndex].AsString());
+    }
+    m_categoryEnumHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -506,6 +530,28 @@ JsonValue DocumentDescription::Jsonize() const
   if(m_reviewStatusHasBeenSet)
   {
    payload.WithString("ReviewStatus", ReviewStatusMapper::GetNameForReviewStatus(m_reviewStatus));
+  }
+
+  if(m_categoryHasBeenSet)
+  {
+   Array<JsonValue> categoryJsonList(m_category.size());
+   for(unsigned categoryIndex = 0; categoryIndex < categoryJsonList.GetLength(); ++categoryIndex)
+   {
+     categoryJsonList[categoryIndex].AsString(m_category[categoryIndex]);
+   }
+   payload.WithArray("Category", std::move(categoryJsonList));
+
+  }
+
+  if(m_categoryEnumHasBeenSet)
+  {
+   Array<JsonValue> categoryEnumJsonList(m_categoryEnum.size());
+   for(unsigned categoryEnumIndex = 0; categoryEnumIndex < categoryEnumJsonList.GetLength(); ++categoryEnumIndex)
+   {
+     categoryEnumJsonList[categoryEnumIndex].AsString(m_categoryEnum[categoryEnumIndex]);
+   }
+   payload.WithArray("CategoryEnum", std::move(categoryEnumJsonList));
+
   }
 
   return payload;

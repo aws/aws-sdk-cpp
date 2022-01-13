@@ -8,6 +8,8 @@
 #include <aws/nimble/NimbleStudioRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/nimble/model/StudioComponentState.h>
+#include <aws/nimble/model/StudioComponentType.h>
 #include <utility>
 
 namespace Aws
@@ -105,7 +107,7 @@ namespace Model
      * <p>Filters the request to studio components that are in one of the given states.
      * </p>
      */
-    inline const Aws::Vector<Aws::String>& GetStates() const{ return m_states; }
+    inline const Aws::Vector<StudioComponentState>& GetStates() const{ return m_states; }
 
     /**
      * <p>Filters the request to studio components that are in one of the given states.
@@ -117,43 +119,37 @@ namespace Model
      * <p>Filters the request to studio components that are in one of the given states.
      * </p>
      */
-    inline void SetStates(const Aws::Vector<Aws::String>& value) { m_statesHasBeenSet = true; m_states = value; }
+    inline void SetStates(const Aws::Vector<StudioComponentState>& value) { m_statesHasBeenSet = true; m_states = value; }
 
     /**
      * <p>Filters the request to studio components that are in one of the given states.
      * </p>
      */
-    inline void SetStates(Aws::Vector<Aws::String>&& value) { m_statesHasBeenSet = true; m_states = std::move(value); }
+    inline void SetStates(Aws::Vector<StudioComponentState>&& value) { m_statesHasBeenSet = true; m_states = std::move(value); }
 
     /**
      * <p>Filters the request to studio components that are in one of the given states.
      * </p>
      */
-    inline ListStudioComponentsRequest& WithStates(const Aws::Vector<Aws::String>& value) { SetStates(value); return *this;}
+    inline ListStudioComponentsRequest& WithStates(const Aws::Vector<StudioComponentState>& value) { SetStates(value); return *this;}
 
     /**
      * <p>Filters the request to studio components that are in one of the given states.
      * </p>
      */
-    inline ListStudioComponentsRequest& WithStates(Aws::Vector<Aws::String>&& value) { SetStates(std::move(value)); return *this;}
+    inline ListStudioComponentsRequest& WithStates(Aws::Vector<StudioComponentState>&& value) { SetStates(std::move(value)); return *this;}
 
     /**
      * <p>Filters the request to studio components that are in one of the given states.
      * </p>
      */
-    inline ListStudioComponentsRequest& AddStates(const Aws::String& value) { m_statesHasBeenSet = true; m_states.push_back(value); return *this; }
+    inline ListStudioComponentsRequest& AddStates(const StudioComponentState& value) { m_statesHasBeenSet = true; m_states.push_back(value); return *this; }
 
     /**
      * <p>Filters the request to studio components that are in one of the given states.
      * </p>
      */
-    inline ListStudioComponentsRequest& AddStates(Aws::String&& value) { m_statesHasBeenSet = true; m_states.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Filters the request to studio components that are in one of the given states.
-     * </p>
-     */
-    inline ListStudioComponentsRequest& AddStates(const char* value) { m_statesHasBeenSet = true; m_states.push_back(value); return *this; }
+    inline ListStudioComponentsRequest& AddStates(StudioComponentState&& value) { m_statesHasBeenSet = true; m_states.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -201,7 +197,7 @@ namespace Model
      * <p>Filters the request to studio components that are of one of the given
      * types.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTypes() const{ return m_types; }
+    inline const Aws::Vector<StudioComponentType>& GetTypes() const{ return m_types; }
 
     /**
      * <p>Filters the request to studio components that are of one of the given
@@ -213,43 +209,37 @@ namespace Model
      * <p>Filters the request to studio components that are of one of the given
      * types.</p>
      */
-    inline void SetTypes(const Aws::Vector<Aws::String>& value) { m_typesHasBeenSet = true; m_types = value; }
+    inline void SetTypes(const Aws::Vector<StudioComponentType>& value) { m_typesHasBeenSet = true; m_types = value; }
 
     /**
      * <p>Filters the request to studio components that are of one of the given
      * types.</p>
      */
-    inline void SetTypes(Aws::Vector<Aws::String>&& value) { m_typesHasBeenSet = true; m_types = std::move(value); }
+    inline void SetTypes(Aws::Vector<StudioComponentType>&& value) { m_typesHasBeenSet = true; m_types = std::move(value); }
 
     /**
      * <p>Filters the request to studio components that are of one of the given
      * types.</p>
      */
-    inline ListStudioComponentsRequest& WithTypes(const Aws::Vector<Aws::String>& value) { SetTypes(value); return *this;}
+    inline ListStudioComponentsRequest& WithTypes(const Aws::Vector<StudioComponentType>& value) { SetTypes(value); return *this;}
 
     /**
      * <p>Filters the request to studio components that are of one of the given
      * types.</p>
      */
-    inline ListStudioComponentsRequest& WithTypes(Aws::Vector<Aws::String>&& value) { SetTypes(std::move(value)); return *this;}
+    inline ListStudioComponentsRequest& WithTypes(Aws::Vector<StudioComponentType>&& value) { SetTypes(std::move(value)); return *this;}
 
     /**
      * <p>Filters the request to studio components that are of one of the given
      * types.</p>
      */
-    inline ListStudioComponentsRequest& AddTypes(const Aws::String& value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
+    inline ListStudioComponentsRequest& AddTypes(const StudioComponentType& value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
 
     /**
      * <p>Filters the request to studio components that are of one of the given
      * types.</p>
      */
-    inline ListStudioComponentsRequest& AddTypes(Aws::String&& value) { m_typesHasBeenSet = true; m_types.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Filters the request to studio components that are of one of the given
-     * types.</p>
-     */
-    inline ListStudioComponentsRequest& AddTypes(const char* value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
+    inline ListStudioComponentsRequest& AddTypes(StudioComponentType&& value) { m_typesHasBeenSet = true; m_types.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -259,13 +249,13 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
 
-    Aws::Vector<Aws::String> m_states;
+    Aws::Vector<StudioComponentState> m_states;
     bool m_statesHasBeenSet;
 
     Aws::String m_studioId;
     bool m_studioIdHasBeenSet;
 
-    Aws::Vector<Aws::String> m_types;
+    Aws::Vector<StudioComponentType> m_types;
     bool m_typesHasBeenSet;
   };
 

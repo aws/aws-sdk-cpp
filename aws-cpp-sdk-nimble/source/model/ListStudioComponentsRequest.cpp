@@ -51,7 +51,7 @@ void ListStudioComponentsRequest::AddQueryStringParameters(URI& uri) const
     {
       for(const auto& item : m_states)
       {
-        ss << item;
+        ss << StudioComponentStateMapper::GetNameForStudioComponentState(item);
         uri.AddQueryStringParameter("states", ss.str());
         ss.str("");
       }
@@ -61,7 +61,7 @@ void ListStudioComponentsRequest::AddQueryStringParameters(URI& uri) const
     {
       for(const auto& item : m_types)
       {
-        ss << item;
+        ss << StudioComponentTypeMapper::GetNameForStudioComponentType(item);
         uri.AddQueryStringParameter("types", ss.str());
         ss.str("");
       }

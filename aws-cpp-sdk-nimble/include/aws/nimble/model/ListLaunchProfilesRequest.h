@@ -8,6 +8,7 @@
 #include <aws/nimble/NimbleStudioRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/nimble/model/LaunchProfileState.h>
 #include <utility>
 
 namespace Aws
@@ -153,7 +154,7 @@ namespace Model
     /**
      * <p>Filter this request to launch profiles in any of the given states.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStates() const{ return m_states; }
+    inline const Aws::Vector<LaunchProfileState>& GetStates() const{ return m_states; }
 
     /**
      * <p>Filter this request to launch profiles in any of the given states.</p>
@@ -163,37 +164,32 @@ namespace Model
     /**
      * <p>Filter this request to launch profiles in any of the given states.</p>
      */
-    inline void SetStates(const Aws::Vector<Aws::String>& value) { m_statesHasBeenSet = true; m_states = value; }
+    inline void SetStates(const Aws::Vector<LaunchProfileState>& value) { m_statesHasBeenSet = true; m_states = value; }
 
     /**
      * <p>Filter this request to launch profiles in any of the given states.</p>
      */
-    inline void SetStates(Aws::Vector<Aws::String>&& value) { m_statesHasBeenSet = true; m_states = std::move(value); }
+    inline void SetStates(Aws::Vector<LaunchProfileState>&& value) { m_statesHasBeenSet = true; m_states = std::move(value); }
 
     /**
      * <p>Filter this request to launch profiles in any of the given states.</p>
      */
-    inline ListLaunchProfilesRequest& WithStates(const Aws::Vector<Aws::String>& value) { SetStates(value); return *this;}
+    inline ListLaunchProfilesRequest& WithStates(const Aws::Vector<LaunchProfileState>& value) { SetStates(value); return *this;}
 
     /**
      * <p>Filter this request to launch profiles in any of the given states.</p>
      */
-    inline ListLaunchProfilesRequest& WithStates(Aws::Vector<Aws::String>&& value) { SetStates(std::move(value)); return *this;}
+    inline ListLaunchProfilesRequest& WithStates(Aws::Vector<LaunchProfileState>&& value) { SetStates(std::move(value)); return *this;}
 
     /**
      * <p>Filter this request to launch profiles in any of the given states.</p>
      */
-    inline ListLaunchProfilesRequest& AddStates(const Aws::String& value) { m_statesHasBeenSet = true; m_states.push_back(value); return *this; }
+    inline ListLaunchProfilesRequest& AddStates(const LaunchProfileState& value) { m_statesHasBeenSet = true; m_states.push_back(value); return *this; }
 
     /**
      * <p>Filter this request to launch profiles in any of the given states.</p>
      */
-    inline ListLaunchProfilesRequest& AddStates(Aws::String&& value) { m_statesHasBeenSet = true; m_states.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Filter this request to launch profiles in any of the given states.</p>
-     */
-    inline ListLaunchProfilesRequest& AddStates(const char* value) { m_statesHasBeenSet = true; m_states.push_back(value); return *this; }
+    inline ListLaunchProfilesRequest& AddStates(LaunchProfileState&& value) { m_statesHasBeenSet = true; m_states.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -247,7 +243,7 @@ namespace Model
     Aws::String m_principalId;
     bool m_principalIdHasBeenSet;
 
-    Aws::Vector<Aws::String> m_states;
+    Aws::Vector<LaunchProfileState> m_states;
     bool m_statesHasBeenSet;
 
     Aws::String m_studioId;

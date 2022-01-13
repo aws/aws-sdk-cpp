@@ -389,7 +389,7 @@ namespace Model
      * code wasn't zero. For a command invocation, this indicates that the result code
      * for one or more plugins wasn't zero. Invocation failures count against the
      * <code>MaxErrors</code> limit of the parent command. This is a terminal
-     * state.</p> </li> <li> <p>Canceled: The command was terminated before it was
+     * state.</p> </li> <li> <p>Cancelled: The command was terminated before it was
      * completed. This is a terminal state.</p> </li> <li> <p>Undeliverable: The
      * command can't be delivered to the managed node. The managed node might not exist
      * or might not be responding. Undeliverable invocations don't count against the
@@ -426,7 +426,7 @@ namespace Model
      * code wasn't zero. For a command invocation, this indicates that the result code
      * for one or more plugins wasn't zero. Invocation failures count against the
      * <code>MaxErrors</code> limit of the parent command. This is a terminal
-     * state.</p> </li> <li> <p>Canceled: The command was terminated before it was
+     * state.</p> </li> <li> <p>Cancelled: The command was terminated before it was
      * completed. This is a terminal state.</p> </li> <li> <p>Undeliverable: The
      * command can't be delivered to the managed node. The managed node might not exist
      * or might not be responding. Undeliverable invocations don't count against the
@@ -463,7 +463,7 @@ namespace Model
      * code wasn't zero. For a command invocation, this indicates that the result code
      * for one or more plugins wasn't zero. Invocation failures count against the
      * <code>MaxErrors</code> limit of the parent command. This is a terminal
-     * state.</p> </li> <li> <p>Canceled: The command was terminated before it was
+     * state.</p> </li> <li> <p>Cancelled: The command was terminated before it was
      * completed. This is a terminal state.</p> </li> <li> <p>Undeliverable: The
      * command can't be delivered to the managed node. The managed node might not exist
      * or might not be responding. Undeliverable invocations don't count against the
@@ -500,7 +500,7 @@ namespace Model
      * code wasn't zero. For a command invocation, this indicates that the result code
      * for one or more plugins wasn't zero. Invocation failures count against the
      * <code>MaxErrors</code> limit of the parent command. This is a terminal
-     * state.</p> </li> <li> <p>Canceled: The command was terminated before it was
+     * state.</p> </li> <li> <p>Cancelled: The command was terminated before it was
      * completed. This is a terminal state.</p> </li> <li> <p>Undeliverable: The
      * command can't be delivered to the managed node. The managed node might not exist
      * or might not be responding. Undeliverable invocations don't count against the
@@ -537,7 +537,7 @@ namespace Model
      * code wasn't zero. For a command invocation, this indicates that the result code
      * for one or more plugins wasn't zero. Invocation failures count against the
      * <code>MaxErrors</code> limit of the parent command. This is a terminal
-     * state.</p> </li> <li> <p>Canceled: The command was terminated before it was
+     * state.</p> </li> <li> <p>Cancelled: The command was terminated before it was
      * completed. This is a terminal state.</p> </li> <li> <p>Undeliverable: The
      * command can't be delivered to the managed node. The managed node might not exist
      * or might not be responding. Undeliverable invocations don't count against the
@@ -574,7 +574,7 @@ namespace Model
      * code wasn't zero. For a command invocation, this indicates that the result code
      * for one or more plugins wasn't zero. Invocation failures count against the
      * <code>MaxErrors</code> limit of the parent command. This is a terminal
-     * state.</p> </li> <li> <p>Canceled: The command was terminated before it was
+     * state.</p> </li> <li> <p>Cancelled: The command was terminated before it was
      * completed. This is a terminal state.</p> </li> <li> <p>Undeliverable: The
      * command can't be delivered to the managed node. The managed node might not exist
      * or might not be responding. Undeliverable invocations don't count against the
@@ -611,7 +611,7 @@ namespace Model
      * code wasn't zero. For a command invocation, this indicates that the result code
      * for one or more plugins wasn't zero. Invocation failures count against the
      * <code>MaxErrors</code> limit of the parent command. This is a terminal
-     * state.</p> </li> <li> <p>Canceled: The command was terminated before it was
+     * state.</p> </li> <li> <p>Cancelled: The command was terminated before it was
      * completed. This is a terminal state.</p> </li> <li> <p>Undeliverable: The
      * command can't be delivered to the managed node. The managed node might not exist
      * or might not be responding. Undeliverable invocations don't count against the
@@ -648,7 +648,7 @@ namespace Model
      * code wasn't zero. For a command invocation, this indicates that the result code
      * for one or more plugins wasn't zero. Invocation failures count against the
      * <code>MaxErrors</code> limit of the parent command. This is a terminal
-     * state.</p> </li> <li> <p>Canceled: The command was terminated before it was
+     * state.</p> </li> <li> <p>Cancelled: The command was terminated before it was
      * completed. This is a terminal state.</p> </li> <li> <p>Undeliverable: The
      * command can't be delivered to the managed node. The managed node might not exist
      * or might not be responding. Undeliverable invocations don't count against the

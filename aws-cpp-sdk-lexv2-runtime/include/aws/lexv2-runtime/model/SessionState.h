@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-runtime/model/RuntimeHints.h>
 #include <aws/lexv2-runtime/model/ActiveContext.h>
 #include <utility>
 
@@ -261,44 +262,81 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>A unique identifier for a specific request.</p>
      */
     inline const Aws::String& GetOriginatingRequestId() const{ return m_originatingRequestId; }
 
     /**
-     * <p/>
+     * <p>A unique identifier for a specific request.</p>
      */
     inline bool OriginatingRequestIdHasBeenSet() const { return m_originatingRequestIdHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>A unique identifier for a specific request.</p>
      */
     inline void SetOriginatingRequestId(const Aws::String& value) { m_originatingRequestIdHasBeenSet = true; m_originatingRequestId = value; }
 
     /**
-     * <p/>
+     * <p>A unique identifier for a specific request.</p>
      */
     inline void SetOriginatingRequestId(Aws::String&& value) { m_originatingRequestIdHasBeenSet = true; m_originatingRequestId = std::move(value); }
 
     /**
-     * <p/>
+     * <p>A unique identifier for a specific request.</p>
      */
     inline void SetOriginatingRequestId(const char* value) { m_originatingRequestIdHasBeenSet = true; m_originatingRequestId.assign(value); }
 
     /**
-     * <p/>
+     * <p>A unique identifier for a specific request.</p>
      */
     inline SessionState& WithOriginatingRequestId(const Aws::String& value) { SetOriginatingRequestId(value); return *this;}
 
     /**
-     * <p/>
+     * <p>A unique identifier for a specific request.</p>
      */
     inline SessionState& WithOriginatingRequestId(Aws::String&& value) { SetOriginatingRequestId(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>A unique identifier for a specific request.</p>
      */
     inline SessionState& WithOriginatingRequestId(const char* value) { SetOriginatingRequestId(value); return *this;}
+
+
+    /**
+     * <p>Hints for phrases that a customer is likely to use for a slot. Amazon Lex V2
+     * uses the hints to help determine the correct value of a slot.</p>
+     */
+    inline const RuntimeHints& GetRuntimeHints() const{ return m_runtimeHints; }
+
+    /**
+     * <p>Hints for phrases that a customer is likely to use for a slot. Amazon Lex V2
+     * uses the hints to help determine the correct value of a slot.</p>
+     */
+    inline bool RuntimeHintsHasBeenSet() const { return m_runtimeHintsHasBeenSet; }
+
+    /**
+     * <p>Hints for phrases that a customer is likely to use for a slot. Amazon Lex V2
+     * uses the hints to help determine the correct value of a slot.</p>
+     */
+    inline void SetRuntimeHints(const RuntimeHints& value) { m_runtimeHintsHasBeenSet = true; m_runtimeHints = value; }
+
+    /**
+     * <p>Hints for phrases that a customer is likely to use for a slot. Amazon Lex V2
+     * uses the hints to help determine the correct value of a slot.</p>
+     */
+    inline void SetRuntimeHints(RuntimeHints&& value) { m_runtimeHintsHasBeenSet = true; m_runtimeHints = std::move(value); }
+
+    /**
+     * <p>Hints for phrases that a customer is likely to use for a slot. Amazon Lex V2
+     * uses the hints to help determine the correct value of a slot.</p>
+     */
+    inline SessionState& WithRuntimeHints(const RuntimeHints& value) { SetRuntimeHints(value); return *this;}
+
+    /**
+     * <p>Hints for phrases that a customer is likely to use for a slot. Amazon Lex V2
+     * uses the hints to help determine the correct value of a slot.</p>
+     */
+    inline SessionState& WithRuntimeHints(RuntimeHints&& value) { SetRuntimeHints(std::move(value)); return *this;}
 
   private:
 
@@ -316,6 +354,9 @@ namespace Model
 
     Aws::String m_originatingRequestId;
     bool m_originatingRequestIdHasBeenSet;
+
+    RuntimeHints m_runtimeHints;
+    bool m_runtimeHintsHasBeenSet;
   };
 
 } // namespace Model
