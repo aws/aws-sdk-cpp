@@ -129,6 +129,12 @@ namespace Aws
         static const int AWS_EFS_FileSystem_HASH = HashingUtils::HashString("AWS::EFS::FileSystem");
         static const int AWS_EKS_Cluster_HASH = HashingUtils::HashString("AWS::EKS::Cluster");
         static const int AWS_OpenSearch_Domain_HASH = HashingUtils::HashString("AWS::OpenSearch::Domain");
+        static const int AWS_EC2_TransitGateway_HASH = HashingUtils::HashString("AWS::EC2::TransitGateway");
+        static const int AWS_Kinesis_Stream_HASH = HashingUtils::HashString("AWS::Kinesis::Stream");
+        static const int AWS_Kinesis_StreamConsumer_HASH = HashingUtils::HashString("AWS::Kinesis::StreamConsumer");
+        static const int AWS_CodeDeploy_Application_HASH = HashingUtils::HashString("AWS::CodeDeploy::Application");
+        static const int AWS_CodeDeploy_DeploymentConfig_HASH = HashingUtils::HashString("AWS::CodeDeploy::DeploymentConfig");
+        static const int AWS_CodeDeploy_DeploymentGroup_HASH = HashingUtils::HashString("AWS::CodeDeploy::DeploymentGroup");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -570,6 +576,30 @@ namespace Aws
           {
             return ResourceType::AWS_OpenSearch_Domain;
           }
+          else if (hashCode == AWS_EC2_TransitGateway_HASH)
+          {
+            return ResourceType::AWS_EC2_TransitGateway;
+          }
+          else if (hashCode == AWS_Kinesis_Stream_HASH)
+          {
+            return ResourceType::AWS_Kinesis_Stream;
+          }
+          else if (hashCode == AWS_Kinesis_StreamConsumer_HASH)
+          {
+            return ResourceType::AWS_Kinesis_StreamConsumer;
+          }
+          else if (hashCode == AWS_CodeDeploy_Application_HASH)
+          {
+            return ResourceType::AWS_CodeDeploy_Application;
+          }
+          else if (hashCode == AWS_CodeDeploy_DeploymentConfig_HASH)
+          {
+            return ResourceType::AWS_CodeDeploy_DeploymentConfig;
+          }
+          else if (hashCode == AWS_CodeDeploy_DeploymentGroup_HASH)
+          {
+            return ResourceType::AWS_CodeDeploy_DeploymentGroup;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -802,6 +832,18 @@ namespace Aws
             return "AWS::EKS::Cluster";
           case ResourceType::AWS_OpenSearch_Domain:
             return "AWS::OpenSearch::Domain";
+          case ResourceType::AWS_EC2_TransitGateway:
+            return "AWS::EC2::TransitGateway";
+          case ResourceType::AWS_Kinesis_Stream:
+            return "AWS::Kinesis::Stream";
+          case ResourceType::AWS_Kinesis_StreamConsumer:
+            return "AWS::Kinesis::StreamConsumer";
+          case ResourceType::AWS_CodeDeploy_Application:
+            return "AWS::CodeDeploy::Application";
+          case ResourceType::AWS_CodeDeploy_DeploymentConfig:
+            return "AWS::CodeDeploy::DeploymentConfig";
+          case ResourceType::AWS_CodeDeploy_DeploymentGroup:
+            return "AWS::CodeDeploy::DeploymentGroup";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

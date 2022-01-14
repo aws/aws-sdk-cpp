@@ -34,6 +34,7 @@
 #include <aws/ram/model/GetResourceShareInvitationsRequest.h>
 #include <aws/ram/model/GetResourceSharesRequest.h>
 #include <aws/ram/model/ListPendingInvitationResourcesRequest.h>
+#include <aws/ram/model/ListPermissionVersionsRequest.h>
 #include <aws/ram/model/ListPermissionsRequest.h>
 #include <aws/ram/model/ListPrincipalsRequest.h>
 #include <aws/ram/model/ListResourceSharePermissionsRequest.h>
@@ -471,6 +472,31 @@ void RAMClient::ListPendingInvitationResourcesAsync(const ListPendingInvitationR
 void RAMClient::ListPendingInvitationResourcesAsyncHelper(const ListPendingInvitationResourcesRequest& request, const ListPendingInvitationResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListPendingInvitationResources(request), context);
+}
+
+ListPermissionVersionsOutcome RAMClient::ListPermissionVersions(const ListPermissionVersionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/listpermissionversions");
+  return ListPermissionVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListPermissionVersionsOutcomeCallable RAMClient::ListPermissionVersionsCallable(const ListPermissionVersionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListPermissionVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPermissionVersions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RAMClient::ListPermissionVersionsAsync(const ListPermissionVersionsRequest& request, const ListPermissionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListPermissionVersionsAsyncHelper( request, handler, context ); } );
+}
+
+void RAMClient::ListPermissionVersionsAsyncHelper(const ListPermissionVersionsRequest& request, const ListPermissionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListPermissionVersions(request), context);
 }
 
 ListPermissionsOutcome RAMClient::ListPermissions(const ListPermissionsRequest& request) const

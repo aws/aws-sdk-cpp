@@ -25,6 +25,7 @@
 #include <aws/ram/model/GetResourceShareInvitationsResult.h>
 #include <aws/ram/model/GetResourceSharesResult.h>
 #include <aws/ram/model/ListPendingInvitationResourcesResult.h>
+#include <aws/ram/model/ListPermissionVersionsResult.h>
 #include <aws/ram/model/ListPermissionsResult.h>
 #include <aws/ram/model/ListPrincipalsResult.h>
 #include <aws/ram/model/ListResourceSharePermissionsResult.h>
@@ -88,6 +89,7 @@ namespace Model
         class GetResourceShareInvitationsRequest;
         class GetResourceSharesRequest;
         class ListPendingInvitationResourcesRequest;
+        class ListPermissionVersionsRequest;
         class ListPermissionsRequest;
         class ListPrincipalsRequest;
         class ListResourceSharePermissionsRequest;
@@ -113,6 +115,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetResourceShareInvitationsResult, RAMError> GetResourceShareInvitationsOutcome;
         typedef Aws::Utils::Outcome<GetResourceSharesResult, RAMError> GetResourceSharesOutcome;
         typedef Aws::Utils::Outcome<ListPendingInvitationResourcesResult, RAMError> ListPendingInvitationResourcesOutcome;
+        typedef Aws::Utils::Outcome<ListPermissionVersionsResult, RAMError> ListPermissionVersionsOutcome;
         typedef Aws::Utils::Outcome<ListPermissionsResult, RAMError> ListPermissionsOutcome;
         typedef Aws::Utils::Outcome<ListPrincipalsResult, RAMError> ListPrincipalsOutcome;
         typedef Aws::Utils::Outcome<ListResourceSharePermissionsResult, RAMError> ListResourceSharePermissionsOutcome;
@@ -138,6 +141,7 @@ namespace Model
         typedef std::future<GetResourceShareInvitationsOutcome> GetResourceShareInvitationsOutcomeCallable;
         typedef std::future<GetResourceSharesOutcome> GetResourceSharesOutcomeCallable;
         typedef std::future<ListPendingInvitationResourcesOutcome> ListPendingInvitationResourcesOutcomeCallable;
+        typedef std::future<ListPermissionVersionsOutcome> ListPermissionVersionsOutcomeCallable;
         typedef std::future<ListPermissionsOutcome> ListPermissionsOutcomeCallable;
         typedef std::future<ListPrincipalsOutcome> ListPrincipalsOutcomeCallable;
         typedef std::future<ListResourceSharePermissionsOutcome> ListResourceSharePermissionsOutcomeCallable;
@@ -166,6 +170,7 @@ namespace Model
     typedef std::function<void(const RAMClient*, const Model::GetResourceShareInvitationsRequest&, const Model::GetResourceShareInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceShareInvitationsResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::GetResourceSharesRequest&, const Model::GetResourceSharesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceSharesResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::ListPendingInvitationResourcesRequest&, const Model::ListPendingInvitationResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPendingInvitationResourcesResponseReceivedHandler;
+    typedef std::function<void(const RAMClient*, const Model::ListPermissionVersionsRequest&, const Model::ListPermissionVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPermissionVersionsResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::ListPermissionsRequest&, const Model::ListPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPermissionsResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::ListPrincipalsRequest&, const Model::ListPrincipalsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPrincipalsResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::ListResourceSharePermissionsRequest&, const Model::ListResourceSharePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceSharePermissionsResponseReceivedHandler;
@@ -694,6 +699,34 @@ namespace Model
         virtual void ListPendingInvitationResourcesAsync(const Model::ListPendingInvitationResourcesRequest& request, const ListPendingInvitationResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the available versions of the specified RAM permission.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissionVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPermissionVersionsOutcome ListPermissionVersions(const Model::ListPermissionVersionsRequest& request) const;
+
+        /**
+         * <p>Lists the available versions of the specified RAM permission.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissionVersions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListPermissionVersionsOutcomeCallable ListPermissionVersionsCallable(const Model::ListPermissionVersionsRequest& request) const;
+
+        /**
+         * <p>Lists the available versions of the specified RAM permission.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissionVersions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListPermissionVersionsAsync(const Model::ListPermissionVersionsRequest& request, const ListPermissionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves a list of available RAM permissions that you can use for the
          * supported resource types. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissions">AWS
@@ -1009,6 +1042,7 @@ namespace Model
         void GetResourceShareInvitationsAsyncHelper(const Model::GetResourceShareInvitationsRequest& request, const GetResourceShareInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResourceSharesAsyncHelper(const Model::GetResourceSharesRequest& request, const GetResourceSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPendingInvitationResourcesAsyncHelper(const Model::ListPendingInvitationResourcesRequest& request, const ListPendingInvitationResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListPermissionVersionsAsyncHelper(const Model::ListPermissionVersionsRequest& request, const ListPermissionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPermissionsAsyncHelper(const Model::ListPermissionsRequest& request, const ListPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPrincipalsAsyncHelper(const Model::ListPrincipalsRequest& request, const ListPrincipalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListResourceSharePermissionsAsyncHelper(const Model::ListResourceSharePermissionsRequest& request, const ListResourceSharePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

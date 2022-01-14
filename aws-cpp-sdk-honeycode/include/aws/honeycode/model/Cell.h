@@ -7,6 +7,7 @@
 #include <aws/honeycode/Honeycode_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/honeycode/model/Format.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -154,11 +155,22 @@ namespace Model
      * table that displays task status might have "Completed" as the formatted value
      * and
      * "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03"
-     * as the raw value. </p> <p> Cells with format AUTO or cells without any format
-     * that are auto-detected as one of the formats above will contain the raw and
-     * formatted values as mentioned above, based on the auto-detected formats. If
-     * there is no auto-detected format, the raw and formatted values will be the same
-     * as the data in the cell. </p>
+     * as the raw value. </p> <p> Cells with format ROWSET (aka multi-select or
+     * multi-record picklist) will by default have the first column of each of the
+     * linked rows as the formatted value in the list, and the rowset id of the linked
+     * rows as the raw value. For example, a cell containing a multi-select picklist to
+     * a table that contains items might have "Item A", "Item B" in the formatted value
+     * list and "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/
+     * [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]" as
+     * the raw value. </p> <p> Cells with format ATTACHMENT will have the name of the
+     * attachment as the formatted value and the attachment id as the raw value. For
+     * example, a cell containing an attachment named "image.jpeg" will have
+     * "image.jpeg" as the formatted value and
+     * "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p> <p>
+     * Cells with format AUTO or cells without any format that are auto-detected as one
+     * of the formats above will contain the raw and formatted values as mentioned
+     * above, based on the auto-detected formats. If there is no auto-detected format,
+     * the raw and formatted values will be the same as the data in the cell. </p>
      */
     inline const Aws::String& GetRawValue() const{ return m_rawValue; }
 
@@ -192,11 +204,22 @@ namespace Model
      * table that displays task status might have "Completed" as the formatted value
      * and
      * "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03"
-     * as the raw value. </p> <p> Cells with format AUTO or cells without any format
-     * that are auto-detected as one of the formats above will contain the raw and
-     * formatted values as mentioned above, based on the auto-detected formats. If
-     * there is no auto-detected format, the raw and formatted values will be the same
-     * as the data in the cell. </p>
+     * as the raw value. </p> <p> Cells with format ROWSET (aka multi-select or
+     * multi-record picklist) will by default have the first column of each of the
+     * linked rows as the formatted value in the list, and the rowset id of the linked
+     * rows as the raw value. For example, a cell containing a multi-select picklist to
+     * a table that contains items might have "Item A", "Item B" in the formatted value
+     * list and "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/
+     * [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]" as
+     * the raw value. </p> <p> Cells with format ATTACHMENT will have the name of the
+     * attachment as the formatted value and the attachment id as the raw value. For
+     * example, a cell containing an attachment named "image.jpeg" will have
+     * "image.jpeg" as the formatted value and
+     * "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p> <p>
+     * Cells with format AUTO or cells without any format that are auto-detected as one
+     * of the formats above will contain the raw and formatted values as mentioned
+     * above, based on the auto-detected formats. If there is no auto-detected format,
+     * the raw and formatted values will be the same as the data in the cell. </p>
      */
     inline bool RawValueHasBeenSet() const { return m_rawValueHasBeenSet; }
 
@@ -230,11 +253,22 @@ namespace Model
      * table that displays task status might have "Completed" as the formatted value
      * and
      * "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03"
-     * as the raw value. </p> <p> Cells with format AUTO or cells without any format
-     * that are auto-detected as one of the formats above will contain the raw and
-     * formatted values as mentioned above, based on the auto-detected formats. If
-     * there is no auto-detected format, the raw and formatted values will be the same
-     * as the data in the cell. </p>
+     * as the raw value. </p> <p> Cells with format ROWSET (aka multi-select or
+     * multi-record picklist) will by default have the first column of each of the
+     * linked rows as the formatted value in the list, and the rowset id of the linked
+     * rows as the raw value. For example, a cell containing a multi-select picklist to
+     * a table that contains items might have "Item A", "Item B" in the formatted value
+     * list and "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/
+     * [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]" as
+     * the raw value. </p> <p> Cells with format ATTACHMENT will have the name of the
+     * attachment as the formatted value and the attachment id as the raw value. For
+     * example, a cell containing an attachment named "image.jpeg" will have
+     * "image.jpeg" as the formatted value and
+     * "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p> <p>
+     * Cells with format AUTO or cells without any format that are auto-detected as one
+     * of the formats above will contain the raw and formatted values as mentioned
+     * above, based on the auto-detected formats. If there is no auto-detected format,
+     * the raw and formatted values will be the same as the data in the cell. </p>
      */
     inline void SetRawValue(const Aws::String& value) { m_rawValueHasBeenSet = true; m_rawValue = value; }
 
@@ -268,11 +302,22 @@ namespace Model
      * table that displays task status might have "Completed" as the formatted value
      * and
      * "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03"
-     * as the raw value. </p> <p> Cells with format AUTO or cells without any format
-     * that are auto-detected as one of the formats above will contain the raw and
-     * formatted values as mentioned above, based on the auto-detected formats. If
-     * there is no auto-detected format, the raw and formatted values will be the same
-     * as the data in the cell. </p>
+     * as the raw value. </p> <p> Cells with format ROWSET (aka multi-select or
+     * multi-record picklist) will by default have the first column of each of the
+     * linked rows as the formatted value in the list, and the rowset id of the linked
+     * rows as the raw value. For example, a cell containing a multi-select picklist to
+     * a table that contains items might have "Item A", "Item B" in the formatted value
+     * list and "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/
+     * [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]" as
+     * the raw value. </p> <p> Cells with format ATTACHMENT will have the name of the
+     * attachment as the formatted value and the attachment id as the raw value. For
+     * example, a cell containing an attachment named "image.jpeg" will have
+     * "image.jpeg" as the formatted value and
+     * "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p> <p>
+     * Cells with format AUTO or cells without any format that are auto-detected as one
+     * of the formats above will contain the raw and formatted values as mentioned
+     * above, based on the auto-detected formats. If there is no auto-detected format,
+     * the raw and formatted values will be the same as the data in the cell. </p>
      */
     inline void SetRawValue(Aws::String&& value) { m_rawValueHasBeenSet = true; m_rawValue = std::move(value); }
 
@@ -306,11 +351,22 @@ namespace Model
      * table that displays task status might have "Completed" as the formatted value
      * and
      * "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03"
-     * as the raw value. </p> <p> Cells with format AUTO or cells without any format
-     * that are auto-detected as one of the formats above will contain the raw and
-     * formatted values as mentioned above, based on the auto-detected formats. If
-     * there is no auto-detected format, the raw and formatted values will be the same
-     * as the data in the cell. </p>
+     * as the raw value. </p> <p> Cells with format ROWSET (aka multi-select or
+     * multi-record picklist) will by default have the first column of each of the
+     * linked rows as the formatted value in the list, and the rowset id of the linked
+     * rows as the raw value. For example, a cell containing a multi-select picklist to
+     * a table that contains items might have "Item A", "Item B" in the formatted value
+     * list and "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/
+     * [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]" as
+     * the raw value. </p> <p> Cells with format ATTACHMENT will have the name of the
+     * attachment as the formatted value and the attachment id as the raw value. For
+     * example, a cell containing an attachment named "image.jpeg" will have
+     * "image.jpeg" as the formatted value and
+     * "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p> <p>
+     * Cells with format AUTO or cells without any format that are auto-detected as one
+     * of the formats above will contain the raw and formatted values as mentioned
+     * above, based on the auto-detected formats. If there is no auto-detected format,
+     * the raw and formatted values will be the same as the data in the cell. </p>
      */
     inline void SetRawValue(const char* value) { m_rawValueHasBeenSet = true; m_rawValue.assign(value); }
 
@@ -344,11 +400,22 @@ namespace Model
      * table that displays task status might have "Completed" as the formatted value
      * and
      * "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03"
-     * as the raw value. </p> <p> Cells with format AUTO or cells without any format
-     * that are auto-detected as one of the formats above will contain the raw and
-     * formatted values as mentioned above, based on the auto-detected formats. If
-     * there is no auto-detected format, the raw and formatted values will be the same
-     * as the data in the cell. </p>
+     * as the raw value. </p> <p> Cells with format ROWSET (aka multi-select or
+     * multi-record picklist) will by default have the first column of each of the
+     * linked rows as the formatted value in the list, and the rowset id of the linked
+     * rows as the raw value. For example, a cell containing a multi-select picklist to
+     * a table that contains items might have "Item A", "Item B" in the formatted value
+     * list and "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/
+     * [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]" as
+     * the raw value. </p> <p> Cells with format ATTACHMENT will have the name of the
+     * attachment as the formatted value and the attachment id as the raw value. For
+     * example, a cell containing an attachment named "image.jpeg" will have
+     * "image.jpeg" as the formatted value and
+     * "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p> <p>
+     * Cells with format AUTO or cells without any format that are auto-detected as one
+     * of the formats above will contain the raw and formatted values as mentioned
+     * above, based on the auto-detected formats. If there is no auto-detected format,
+     * the raw and formatted values will be the same as the data in the cell. </p>
      */
     inline Cell& WithRawValue(const Aws::String& value) { SetRawValue(value); return *this;}
 
@@ -382,11 +449,22 @@ namespace Model
      * table that displays task status might have "Completed" as the formatted value
      * and
      * "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03"
-     * as the raw value. </p> <p> Cells with format AUTO or cells without any format
-     * that are auto-detected as one of the formats above will contain the raw and
-     * formatted values as mentioned above, based on the auto-detected formats. If
-     * there is no auto-detected format, the raw and formatted values will be the same
-     * as the data in the cell. </p>
+     * as the raw value. </p> <p> Cells with format ROWSET (aka multi-select or
+     * multi-record picklist) will by default have the first column of each of the
+     * linked rows as the formatted value in the list, and the rowset id of the linked
+     * rows as the raw value. For example, a cell containing a multi-select picklist to
+     * a table that contains items might have "Item A", "Item B" in the formatted value
+     * list and "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/
+     * [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]" as
+     * the raw value. </p> <p> Cells with format ATTACHMENT will have the name of the
+     * attachment as the formatted value and the attachment id as the raw value. For
+     * example, a cell containing an attachment named "image.jpeg" will have
+     * "image.jpeg" as the formatted value and
+     * "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p> <p>
+     * Cells with format AUTO or cells without any format that are auto-detected as one
+     * of the formats above will contain the raw and formatted values as mentioned
+     * above, based on the auto-detected formats. If there is no auto-detected format,
+     * the raw and formatted values will be the same as the data in the cell. </p>
      */
     inline Cell& WithRawValue(Aws::String&& value) { SetRawValue(std::move(value)); return *this;}
 
@@ -420,11 +498,22 @@ namespace Model
      * table that displays task status might have "Completed" as the formatted value
      * and
      * "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03"
-     * as the raw value. </p> <p> Cells with format AUTO or cells without any format
-     * that are auto-detected as one of the formats above will contain the raw and
-     * formatted values as mentioned above, based on the auto-detected formats. If
-     * there is no auto-detected format, the raw and formatted values will be the same
-     * as the data in the cell. </p>
+     * as the raw value. </p> <p> Cells with format ROWSET (aka multi-select or
+     * multi-record picklist) will by default have the first column of each of the
+     * linked rows as the formatted value in the list, and the rowset id of the linked
+     * rows as the raw value. For example, a cell containing a multi-select picklist to
+     * a table that contains items might have "Item A", "Item B" in the formatted value
+     * list and "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/
+     * [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]" as
+     * the raw value. </p> <p> Cells with format ATTACHMENT will have the name of the
+     * attachment as the formatted value and the attachment id as the raw value. For
+     * example, a cell containing an attachment named "image.jpeg" will have
+     * "image.jpeg" as the formatted value and
+     * "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03" as the raw value. </p> <p>
+     * Cells with format AUTO or cells without any format that are auto-detected as one
+     * of the formats above will contain the raw and formatted values as mentioned
+     * above, based on the auto-detected formats. If there is no auto-detected format,
+     * the raw and formatted values will be the same as the data in the cell. </p>
      */
     inline Cell& WithRawValue(const char* value) { SetRawValue(value); return *this;}
 
@@ -517,6 +606,79 @@ namespace Model
      */
     inline Cell& WithFormattedValue(const char* value) { SetFormattedValue(value); return *this;}
 
+
+    /**
+     * <p> A list of formatted values of the cell. This field is only returned when the
+     * cell is ROWSET format (aka multi-select or multi-record picklist). Values in the
+     * list are always represented as strings. The formattedValue field will be empty
+     * if this field is returned. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetFormattedValues() const{ return m_formattedValues; }
+
+    /**
+     * <p> A list of formatted values of the cell. This field is only returned when the
+     * cell is ROWSET format (aka multi-select or multi-record picklist). Values in the
+     * list are always represented as strings. The formattedValue field will be empty
+     * if this field is returned. </p>
+     */
+    inline bool FormattedValuesHasBeenSet() const { return m_formattedValuesHasBeenSet; }
+
+    /**
+     * <p> A list of formatted values of the cell. This field is only returned when the
+     * cell is ROWSET format (aka multi-select or multi-record picklist). Values in the
+     * list are always represented as strings. The formattedValue field will be empty
+     * if this field is returned. </p>
+     */
+    inline void SetFormattedValues(const Aws::Vector<Aws::String>& value) { m_formattedValuesHasBeenSet = true; m_formattedValues = value; }
+
+    /**
+     * <p> A list of formatted values of the cell. This field is only returned when the
+     * cell is ROWSET format (aka multi-select or multi-record picklist). Values in the
+     * list are always represented as strings. The formattedValue field will be empty
+     * if this field is returned. </p>
+     */
+    inline void SetFormattedValues(Aws::Vector<Aws::String>&& value) { m_formattedValuesHasBeenSet = true; m_formattedValues = std::move(value); }
+
+    /**
+     * <p> A list of formatted values of the cell. This field is only returned when the
+     * cell is ROWSET format (aka multi-select or multi-record picklist). Values in the
+     * list are always represented as strings. The formattedValue field will be empty
+     * if this field is returned. </p>
+     */
+    inline Cell& WithFormattedValues(const Aws::Vector<Aws::String>& value) { SetFormattedValues(value); return *this;}
+
+    /**
+     * <p> A list of formatted values of the cell. This field is only returned when the
+     * cell is ROWSET format (aka multi-select or multi-record picklist). Values in the
+     * list are always represented as strings. The formattedValue field will be empty
+     * if this field is returned. </p>
+     */
+    inline Cell& WithFormattedValues(Aws::Vector<Aws::String>&& value) { SetFormattedValues(std::move(value)); return *this;}
+
+    /**
+     * <p> A list of formatted values of the cell. This field is only returned when the
+     * cell is ROWSET format (aka multi-select or multi-record picklist). Values in the
+     * list are always represented as strings. The formattedValue field will be empty
+     * if this field is returned. </p>
+     */
+    inline Cell& AddFormattedValues(const Aws::String& value) { m_formattedValuesHasBeenSet = true; m_formattedValues.push_back(value); return *this; }
+
+    /**
+     * <p> A list of formatted values of the cell. This field is only returned when the
+     * cell is ROWSET format (aka multi-select or multi-record picklist). Values in the
+     * list are always represented as strings. The formattedValue field will be empty
+     * if this field is returned. </p>
+     */
+    inline Cell& AddFormattedValues(Aws::String&& value) { m_formattedValuesHasBeenSet = true; m_formattedValues.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p> A list of formatted values of the cell. This field is only returned when the
+     * cell is ROWSET format (aka multi-select or multi-record picklist). Values in the
+     * list are always represented as strings. The formattedValue field will be empty
+     * if this field is returned. </p>
+     */
+    inline Cell& AddFormattedValues(const char* value) { m_formattedValuesHasBeenSet = true; m_formattedValues.push_back(value); return *this; }
+
   private:
 
     Aws::String m_formula;
@@ -530,6 +692,9 @@ namespace Model
 
     Aws::String m_formattedValue;
     bool m_formattedValueHasBeenSet;
+
+    Aws::Vector<Aws::String> m_formattedValues;
+    bool m_formattedValuesHasBeenSet;
   };
 
 } // namespace Model

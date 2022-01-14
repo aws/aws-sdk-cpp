@@ -16,6 +16,7 @@
 #include <aws/lookoutmetrics/model/CreateAlertResult.h>
 #include <aws/lookoutmetrics/model/CreateAnomalyDetectorResult.h>
 #include <aws/lookoutmetrics/model/CreateMetricSetResult.h>
+#include <aws/lookoutmetrics/model/DeactivateAnomalyDetectorResult.h>
 #include <aws/lookoutmetrics/model/DeleteAlertResult.h>
 #include <aws/lookoutmetrics/model/DeleteAnomalyDetectorResult.h>
 #include <aws/lookoutmetrics/model/DescribeAlertResult.h>
@@ -81,6 +82,7 @@ namespace Model
         class CreateAlertRequest;
         class CreateAnomalyDetectorRequest;
         class CreateMetricSetRequest;
+        class DeactivateAnomalyDetectorRequest;
         class DeleteAlertRequest;
         class DeleteAnomalyDetectorRequest;
         class DescribeAlertRequest;
@@ -108,6 +110,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateAlertResult, LookoutMetricsError> CreateAlertOutcome;
         typedef Aws::Utils::Outcome<CreateAnomalyDetectorResult, LookoutMetricsError> CreateAnomalyDetectorOutcome;
         typedef Aws::Utils::Outcome<CreateMetricSetResult, LookoutMetricsError> CreateMetricSetOutcome;
+        typedef Aws::Utils::Outcome<DeactivateAnomalyDetectorResult, LookoutMetricsError> DeactivateAnomalyDetectorOutcome;
         typedef Aws::Utils::Outcome<DeleteAlertResult, LookoutMetricsError> DeleteAlertOutcome;
         typedef Aws::Utils::Outcome<DeleteAnomalyDetectorResult, LookoutMetricsError> DeleteAnomalyDetectorOutcome;
         typedef Aws::Utils::Outcome<DescribeAlertResult, LookoutMetricsError> DescribeAlertOutcome;
@@ -135,6 +138,7 @@ namespace Model
         typedef std::future<CreateAlertOutcome> CreateAlertOutcomeCallable;
         typedef std::future<CreateAnomalyDetectorOutcome> CreateAnomalyDetectorOutcomeCallable;
         typedef std::future<CreateMetricSetOutcome> CreateMetricSetOutcomeCallable;
+        typedef std::future<DeactivateAnomalyDetectorOutcome> DeactivateAnomalyDetectorOutcomeCallable;
         typedef std::future<DeleteAlertOutcome> DeleteAlertOutcomeCallable;
         typedef std::future<DeleteAnomalyDetectorOutcome> DeleteAnomalyDetectorOutcomeCallable;
         typedef std::future<DescribeAlertOutcome> DescribeAlertOutcomeCallable;
@@ -165,6 +169,7 @@ namespace Model
     typedef std::function<void(const LookoutMetricsClient*, const Model::CreateAlertRequest&, const Model::CreateAlertOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAlertResponseReceivedHandler;
     typedef std::function<void(const LookoutMetricsClient*, const Model::CreateAnomalyDetectorRequest&, const Model::CreateAnomalyDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAnomalyDetectorResponseReceivedHandler;
     typedef std::function<void(const LookoutMetricsClient*, const Model::CreateMetricSetRequest&, const Model::CreateMetricSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMetricSetResponseReceivedHandler;
+    typedef std::function<void(const LookoutMetricsClient*, const Model::DeactivateAnomalyDetectorRequest&, const Model::DeactivateAnomalyDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeactivateAnomalyDetectorResponseReceivedHandler;
     typedef std::function<void(const LookoutMetricsClient*, const Model::DeleteAlertRequest&, const Model::DeleteAlertOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAlertResponseReceivedHandler;
     typedef std::function<void(const LookoutMetricsClient*, const Model::DeleteAnomalyDetectorRequest&, const Model::DeleteAnomalyDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAnomalyDetectorResponseReceivedHandler;
     typedef std::function<void(const LookoutMetricsClient*, const Model::DescribeAlertRequest&, const Model::DescribeAlertOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAlertResponseReceivedHandler;
@@ -347,6 +352,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateMetricSetAsync(const Model::CreateMetricSetRequest& request, const CreateMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deactivates an anomaly detector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DeactivateAnomalyDetector">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeactivateAnomalyDetectorOutcome DeactivateAnomalyDetector(const Model::DeactivateAnomalyDetectorRequest& request) const;
+
+        /**
+         * <p>Deactivates an anomaly detector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DeactivateAnomalyDetector">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeactivateAnomalyDetectorOutcomeCallable DeactivateAnomalyDetectorCallable(const Model::DeactivateAnomalyDetectorRequest& request) const;
+
+        /**
+         * <p>Deactivates an anomaly detector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DeactivateAnomalyDetector">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeactivateAnomalyDetectorAsync(const Model::DeactivateAnomalyDetectorRequest& request, const DeactivateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an alert.</p><p><h3>See Also:</h3>   <a
@@ -978,6 +1008,7 @@ namespace Model
         void CreateAlertAsyncHelper(const Model::CreateAlertRequest& request, const CreateAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAnomalyDetectorAsyncHelper(const Model::CreateAnomalyDetectorRequest& request, const CreateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateMetricSetAsyncHelper(const Model::CreateMetricSetRequest& request, const CreateMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeactivateAnomalyDetectorAsyncHelper(const Model::DeactivateAnomalyDetectorRequest& request, const DeactivateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAlertAsyncHelper(const Model::DeleteAlertRequest& request, const DeleteAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAnomalyDetectorAsyncHelper(const Model::DeleteAnomalyDetectorRequest& request, const DeleteAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAlertAsyncHelper(const Model::DescribeAlertRequest& request, const DescribeAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

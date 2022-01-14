@@ -23,6 +23,7 @@ namespace Aws
         static const int ACTIVATION_FAILURE_HASH = HashingUtils::HashString("ACTIVATION_FAILURE");
         static const int BACK_TEST_ACTIVATION_FAILURE_HASH = HashingUtils::HashString("BACK_TEST_ACTIVATION_FAILURE");
         static const int DELETION_FAILURE_HASH = HashingUtils::HashString("DELETION_FAILURE");
+        static const int DEACTIVATION_FAILURE_HASH = HashingUtils::HashString("DEACTIVATION_FAILURE");
 
 
         AnomalyDetectorFailureType GetAnomalyDetectorFailureTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == DELETION_FAILURE_HASH)
           {
             return AnomalyDetectorFailureType::DELETION_FAILURE;
+          }
+          else if (hashCode == DEACTIVATION_FAILURE_HASH)
+          {
+            return AnomalyDetectorFailureType::DEACTIVATION_FAILURE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "BACK_TEST_ACTIVATION_FAILURE";
           case AnomalyDetectorFailureType::DELETION_FAILURE:
             return "DELETION_FAILURE";
+          case AnomalyDetectorFailureType::DEACTIVATION_FAILURE:
+            return "DEACTIVATION_FAILURE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

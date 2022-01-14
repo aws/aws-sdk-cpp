@@ -25,6 +25,7 @@
 #include <aws/lookoutmetrics/model/CreateAlertRequest.h>
 #include <aws/lookoutmetrics/model/CreateAnomalyDetectorRequest.h>
 #include <aws/lookoutmetrics/model/CreateMetricSetRequest.h>
+#include <aws/lookoutmetrics/model/DeactivateAnomalyDetectorRequest.h>
 #include <aws/lookoutmetrics/model/DeleteAlertRequest.h>
 #include <aws/lookoutmetrics/model/DeleteAnomalyDetectorRequest.h>
 #include <aws/lookoutmetrics/model/DescribeAlertRequest.h>
@@ -243,6 +244,31 @@ void LookoutMetricsClient::CreateMetricSetAsync(const CreateMetricSetRequest& re
 void LookoutMetricsClient::CreateMetricSetAsyncHelper(const CreateMetricSetRequest& request, const CreateMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateMetricSet(request), context);
+}
+
+DeactivateAnomalyDetectorOutcome LookoutMetricsClient::DeactivateAnomalyDetector(const DeactivateAnomalyDetectorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/DeactivateAnomalyDetector");
+  return DeactivateAnomalyDetectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeactivateAnomalyDetectorOutcomeCallable LookoutMetricsClient::DeactivateAnomalyDetectorCallable(const DeactivateAnomalyDetectorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeactivateAnomalyDetectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeactivateAnomalyDetector(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LookoutMetricsClient::DeactivateAnomalyDetectorAsync(const DeactivateAnomalyDetectorRequest& request, const DeactivateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeactivateAnomalyDetectorAsyncHelper( request, handler, context ); } );
+}
+
+void LookoutMetricsClient::DeactivateAnomalyDetectorAsyncHelper(const DeactivateAnomalyDetectorRequest& request, const DeactivateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeactivateAnomalyDetector(request), context);
 }
 
 DeleteAlertOutcome LookoutMetricsClient::DeleteAlert(const DeleteAlertRequest& request) const

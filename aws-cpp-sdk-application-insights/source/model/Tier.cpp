@@ -36,6 +36,8 @@ namespace Aws
         static const int SAP_HANA_SINGLE_NODE_HASH = HashingUtils::HashString("SAP_HANA_SINGLE_NODE");
         static const int SAP_HANA_HIGH_AVAILABILITY_HASH = HashingUtils::HashString("SAP_HANA_HIGH_AVAILABILITY");
         static const int SQL_SERVER_FAILOVER_CLUSTER_INSTANCE_HASH = HashingUtils::HashString("SQL_SERVER_FAILOVER_CLUSTER_INSTANCE");
+        static const int SHAREPOINT_HASH = HashingUtils::HashString("SHAREPOINT");
+        static const int ACTIVE_DIRECTORY_HASH = HashingUtils::HashString("ACTIVE_DIRECTORY");
 
 
         Tier GetTierForName(const Aws::String& name)
@@ -105,6 +107,14 @@ namespace Aws
           {
             return Tier::SQL_SERVER_FAILOVER_CLUSTER_INSTANCE;
           }
+          else if (hashCode == SHAREPOINT_HASH)
+          {
+            return Tier::SHAREPOINT;
+          }
+          else if (hashCode == ACTIVE_DIRECTORY_HASH)
+          {
+            return Tier::ACTIVE_DIRECTORY;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -151,6 +161,10 @@ namespace Aws
             return "SAP_HANA_HIGH_AVAILABILITY";
           case Tier::SQL_SERVER_FAILOVER_CLUSTER_INSTANCE:
             return "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE";
+          case Tier::SHAREPOINT:
+            return "SHAREPOINT";
+          case Tier::ACTIVE_DIRECTORY:
+            return "ACTIVE_DIRECTORY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

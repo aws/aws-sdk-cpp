@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     ACTIVATION_FAILURE,
     BACK_TEST_ACTIVATION_FAILURE,
-    DELETION_FAILURE
+    DELETION_FAILURE,
+    DEACTIVATION_FAILURE
   };
 
 namespace AnomalyDetectorFailureTypeMapper

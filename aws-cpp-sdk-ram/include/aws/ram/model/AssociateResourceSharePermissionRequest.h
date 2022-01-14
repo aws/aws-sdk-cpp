@@ -343,28 +343,32 @@ namespace Model
     /**
      * <p>Specifies the version of the RAM permission to associate with the resource
      * share. If you don't specify this parameter, the operation uses the version
-     * designated as the default.</p>
+     * designated as the default. You can use the <a>ListPermissionVersions</a>
+     * operation to discover the available versions of a permission.</p>
      */
     inline int GetPermissionVersion() const{ return m_permissionVersion; }
 
     /**
      * <p>Specifies the version of the RAM permission to associate with the resource
      * share. If you don't specify this parameter, the operation uses the version
-     * designated as the default.</p>
+     * designated as the default. You can use the <a>ListPermissionVersions</a>
+     * operation to discover the available versions of a permission.</p>
      */
     inline bool PermissionVersionHasBeenSet() const { return m_permissionVersionHasBeenSet; }
 
     /**
      * <p>Specifies the version of the RAM permission to associate with the resource
      * share. If you don't specify this parameter, the operation uses the version
-     * designated as the default.</p>
+     * designated as the default. You can use the <a>ListPermissionVersions</a>
+     * operation to discover the available versions of a permission.</p>
      */
     inline void SetPermissionVersion(int value) { m_permissionVersionHasBeenSet = true; m_permissionVersion = value; }
 
     /**
      * <p>Specifies the version of the RAM permission to associate with the resource
      * share. If you don't specify this parameter, the operation uses the version
-     * designated as the default.</p>
+     * designated as the default. You can use the <a>ListPermissionVersions</a>
+     * operation to discover the available versions of a permission.</p>
      */
     inline AssociateResourceSharePermissionRequest& WithPermissionVersion(int value) { SetPermissionVersion(value); return *this;}
 

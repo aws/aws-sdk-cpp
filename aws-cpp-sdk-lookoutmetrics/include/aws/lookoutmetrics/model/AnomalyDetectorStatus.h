@@ -24,7 +24,9 @@ namespace Model
     LEARNING,
     BACK_TEST_ACTIVATING,
     BACK_TEST_ACTIVE,
-    BACK_TEST_COMPLETE
+    BACK_TEST_COMPLETE,
+    DEACTIVATED,
+    DEACTIVATING
   };
 
 namespace AnomalyDetectorStatusMapper

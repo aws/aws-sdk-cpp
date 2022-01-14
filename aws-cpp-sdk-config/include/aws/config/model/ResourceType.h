@@ -124,7 +124,13 @@ namespace Model
     AWS_EFS_AccessPoint,
     AWS_EFS_FileSystem,
     AWS_EKS_Cluster,
-    AWS_OpenSearch_Domain
+    AWS_OpenSearch_Domain,
+    AWS_EC2_TransitGateway,
+    AWS_Kinesis_Stream,
+    AWS_Kinesis_StreamConsumer,
+    AWS_CodeDeploy_Application,
+    AWS_CodeDeploy_DeploymentConfig,
+    AWS_CodeDeploy_DeploymentGroup
   };
 
 namespace ResourceTypeMapper

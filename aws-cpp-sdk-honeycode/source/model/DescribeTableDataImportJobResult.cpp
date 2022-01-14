@@ -17,12 +17,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeTableDataImportJobResult::DescribeTableDataImportJobResult() : 
-    m_jobStatus(TableDataImportJobStatus::NOT_SET)
+    m_jobStatus(TableDataImportJobStatus::NOT_SET),
+    m_errorCode(ErrorCode::NOT_SET)
 {
 }
 
 DescribeTableDataImportJobResult::DescribeTableDataImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_jobStatus(TableDataImportJobStatus::NOT_SET)
+    m_jobStatus(TableDataImportJobStatus::NOT_SET),
+    m_errorCode(ErrorCode::NOT_SET)
 {
   *this = result;
 }
@@ -45,6 +47,12 @@ DescribeTableDataImportJobResult& DescribeTableDataImportJobResult::operator =(c
   if(jsonValue.ValueExists("jobMetadata"))
   {
     m_jobMetadata = jsonValue.GetObject("jobMetadata");
+
+  }
+
+  if(jsonValue.ValueExists("errorCode"))
+  {
+    m_errorCode = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("errorCode"));
 
   }
 

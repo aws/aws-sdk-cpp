@@ -29,6 +29,8 @@ namespace Aws
         static const int BACK_TEST_ACTIVATING_HASH = HashingUtils::HashString("BACK_TEST_ACTIVATING");
         static const int BACK_TEST_ACTIVE_HASH = HashingUtils::HashString("BACK_TEST_ACTIVE");
         static const int BACK_TEST_COMPLETE_HASH = HashingUtils::HashString("BACK_TEST_COMPLETE");
+        static const int DEACTIVATED_HASH = HashingUtils::HashString("DEACTIVATED");
+        static const int DEACTIVATING_HASH = HashingUtils::HashString("DEACTIVATING");
 
 
         AnomalyDetectorStatus GetAnomalyDetectorStatusForName(const Aws::String& name)
@@ -70,6 +72,14 @@ namespace Aws
           {
             return AnomalyDetectorStatus::BACK_TEST_COMPLETE;
           }
+          else if (hashCode == DEACTIVATED_HASH)
+          {
+            return AnomalyDetectorStatus::DEACTIVATED;
+          }
+          else if (hashCode == DEACTIVATING_HASH)
+          {
+            return AnomalyDetectorStatus::DEACTIVATING;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -102,6 +112,10 @@ namespace Aws
             return "BACK_TEST_ACTIVE";
           case AnomalyDetectorStatus::BACK_TEST_COMPLETE:
             return "BACK_TEST_COMPLETE";
+          case AnomalyDetectorStatus::DEACTIVATED:
+            return "DEACTIVATED";
+          case AnomalyDetectorStatus::DEACTIVATING:
+            return "DEACTIVATING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
