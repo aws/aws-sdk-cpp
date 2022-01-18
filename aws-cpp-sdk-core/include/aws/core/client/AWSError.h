@@ -92,7 +92,7 @@ namespace Aws
             /**
              * Move assignment operator
              */
-            AWSError& operator=(AWSError<ERROR_TYPE>&& other) = default;
+            AWSError& operator=(AWSError<ERROR_TYPE>&&) = default;
 
             /**
              * Gets underlying errorType.
