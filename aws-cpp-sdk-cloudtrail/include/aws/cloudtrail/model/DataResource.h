@@ -89,7 +89,8 @@ namespace Model
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Stream</code> </p> </li> </ul>
+     * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
+     * <code>AWS::Glue::Table</code> </p> </li> </ul>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
@@ -108,7 +109,8 @@ namespace Model
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Stream</code> </p> </li> </ul>
+     * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
+     * <code>AWS::Glue::Table</code> </p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -127,7 +129,8 @@ namespace Model
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Stream</code> </p> </li> </ul>
+     * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
+     * <code>AWS::Glue::Table</code> </p> </li> </ul>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -146,7 +149,8 @@ namespace Model
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Stream</code> </p> </li> </ul>
+     * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
+     * <code>AWS::Glue::Table</code> </p> </li> </ul>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -165,7 +169,8 @@ namespace Model
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Stream</code> </p> </li> </ul>
+     * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
+     * <code>AWS::Glue::Table</code> </p> </li> </ul>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
@@ -184,7 +189,8 @@ namespace Model
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Stream</code> </p> </li> </ul>
+     * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
+     * <code>AWS::Glue::Table</code> </p> </li> </ul>
      */
     inline DataResource& WithType(const Aws::String& value) { SetType(value); return *this;}
 
@@ -203,7 +209,8 @@ namespace Model
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Stream</code> </p> </li> </ul>
+     * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
+     * <code>AWS::Glue::Table</code> </p> </li> </ul>
      */
     inline DataResource& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
@@ -222,7 +229,8 @@ namespace Model
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Stream</code> </p> </li> </ul>
+     * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
+     * <code>AWS::Glue::Table</code> </p> </li> </ul>
      */
     inline DataResource& WithType(const char* value) { SetType(value); return *this;}
 

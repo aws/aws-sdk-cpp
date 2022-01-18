@@ -22,9 +22,6 @@ ListGeofenceCollectionsResponseEntry::ListGeofenceCollectionsResponseEntry() :
     m_collectionNameHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_pricingPlan(PricingPlan::NOT_SET),
-    m_pricingPlanHasBeenSet(false),
-    m_pricingPlanDataSourceHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
 }
@@ -33,9 +30,6 @@ ListGeofenceCollectionsResponseEntry::ListGeofenceCollectionsResponseEntry(JsonV
     m_collectionNameHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_pricingPlan(PricingPlan::NOT_SET),
-    m_pricingPlanHasBeenSet(false),
-    m_pricingPlanDataSourceHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -62,20 +56,6 @@ ListGeofenceCollectionsResponseEntry& ListGeofenceCollectionsResponseEntry::oper
     m_description = jsonValue.GetString("Description");
 
     m_descriptionHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("PricingPlan"))
-  {
-    m_pricingPlan = PricingPlanMapper::GetPricingPlanForName(jsonValue.GetString("PricingPlan"));
-
-    m_pricingPlanHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("PricingPlanDataSource"))
-  {
-    m_pricingPlanDataSource = jsonValue.GetString("PricingPlanDataSource");
-
-    m_pricingPlanDataSourceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("UpdateTime"))
@@ -106,17 +86,6 @@ JsonValue ListGeofenceCollectionsResponseEntry::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
-
-  }
-
-  if(m_pricingPlanHasBeenSet)
-  {
-   payload.WithString("PricingPlan", PricingPlanMapper::GetNameForPricingPlan(m_pricingPlan));
-  }
-
-  if(m_pricingPlanDataSourceHasBeenSet)
-  {
-   payload.WithString("PricingPlanDataSource", m_pricingPlanDataSource);
 
   }
 

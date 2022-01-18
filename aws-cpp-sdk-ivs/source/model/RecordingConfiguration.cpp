@@ -24,7 +24,8 @@ RecordingConfiguration::RecordingConfiguration() :
     m_nameHasBeenSet(false),
     m_state(RecordingConfigurationState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_thumbnailConfigurationHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ RecordingConfiguration::RecordingConfiguration(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_state(RecordingConfigurationState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_thumbnailConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -79,6 +81,13 @@ RecordingConfiguration& RecordingConfiguration::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("thumbnailConfiguration"))
+  {
+    m_thumbnailConfiguration = jsonValue.GetObject("thumbnailConfiguration");
+
+    m_thumbnailConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -117,6 +126,12 @@ JsonValue RecordingConfiguration::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_thumbnailConfigurationHasBeenSet)
+  {
+   payload.WithObject("thumbnailConfiguration", m_thumbnailConfiguration.Jsonize());
 
   }
 

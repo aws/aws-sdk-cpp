@@ -28,6 +28,7 @@
 #include <aws/location/model/BatchPutGeofenceRequest.h>
 #include <aws/location/model/BatchUpdateDevicePositionRequest.h>
 #include <aws/location/model/CalculateRouteRequest.h>
+#include <aws/location/model/CalculateRouteMatrixRequest.h>
 #include <aws/location/model/CreateGeofenceCollectionRequest.h>
 #include <aws/location/model/CreateMapRequest.h>
 #include <aws/location/model/CreatePlaceIndexRequest.h>
@@ -480,6 +481,47 @@ void LocationServiceClient::CalculateRouteAsync(const CalculateRouteRequest& req
 void LocationServiceClient::CalculateRouteAsyncHelper(const CalculateRouteRequest& request, const CalculateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CalculateRoute(request), context);
+}
+
+CalculateRouteMatrixOutcome LocationServiceClient::CalculateRouteMatrix(const CalculateRouteMatrixRequest& request) const
+{
+  if (!request.CalculatorNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CalculateRouteMatrix", "Required field: CalculatorName, is not set");
+    return CalculateRouteMatrixOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CalculatorName]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("routes." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("CalculateRouteMatrix", "Invalid DNS host: " << uri.GetAuthority());
+      return CalculateRouteMatrixOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/routes/v0/calculators/");
+  uri.AddPathSegment(request.GetCalculatorName());
+  uri.AddPathSegments("/calculate/route-matrix");
+  return CalculateRouteMatrixOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CalculateRouteMatrixOutcomeCallable LocationServiceClient::CalculateRouteMatrixCallable(const CalculateRouteMatrixRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CalculateRouteMatrixOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CalculateRouteMatrix(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LocationServiceClient::CalculateRouteMatrixAsync(const CalculateRouteMatrixRequest& request, const CalculateRouteMatrixResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CalculateRouteMatrixAsyncHelper( request, handler, context ); } );
+}
+
+void LocationServiceClient::CalculateRouteMatrixAsyncHelper(const CalculateRouteMatrixRequest& request, const CalculateRouteMatrixResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CalculateRouteMatrix(request), context);
 }
 
 CreateGeofenceCollectionOutcome LocationServiceClient::CreateGeofenceCollection(const CreateGeofenceCollectionRequest& request) const

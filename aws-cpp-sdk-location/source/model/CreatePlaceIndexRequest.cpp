@@ -17,8 +17,6 @@ CreatePlaceIndexRequest::CreatePlaceIndexRequest() :
     m_dataSourceConfigurationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_indexNameHasBeenSet(false),
-    m_pricingPlan(PricingPlan::NOT_SET),
-    m_pricingPlanHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -49,11 +47,6 @@ Aws::String CreatePlaceIndexRequest::SerializePayload() const
   {
    payload.WithString("IndexName", m_indexName);
 
-  }
-
-  if(m_pricingPlanHasBeenSet)
-  {
-   payload.WithString("PricingPlan", PricingPlanMapper::GetNameForPricingPlan(m_pricingPlan));
   }
 
   if(m_tagsHasBeenSet)

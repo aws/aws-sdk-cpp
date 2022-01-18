@@ -16,13 +16,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeRouteCalculatorResult::DescribeRouteCalculatorResult() : 
-    m_pricingPlan(PricingPlan::NOT_SET)
+DescribeRouteCalculatorResult::DescribeRouteCalculatorResult()
 {
 }
 
-DescribeRouteCalculatorResult::DescribeRouteCalculatorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_pricingPlan(PricingPlan::NOT_SET)
+DescribeRouteCalculatorResult::DescribeRouteCalculatorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
@@ -57,12 +55,6 @@ DescribeRouteCalculatorResult& DescribeRouteCalculatorResult::operator =(const A
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
-  }
-
-  if(jsonValue.ValueExists("PricingPlan"))
-  {
-    m_pricingPlan = PricingPlanMapper::GetPricingPlanForName(jsonValue.GetString("PricingPlan"));
 
   }
 

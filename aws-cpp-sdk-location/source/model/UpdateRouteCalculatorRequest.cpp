@@ -14,9 +14,7 @@ using namespace Aws::Utils;
 
 UpdateRouteCalculatorRequest::UpdateRouteCalculatorRequest() : 
     m_calculatorNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_pricingPlan(PricingPlan::NOT_SET),
-    m_pricingPlanHasBeenSet(false)
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -28,11 +26,6 @@ Aws::String UpdateRouteCalculatorRequest::SerializePayload() const
   {
    payload.WithString("Description", m_description);
 
-  }
-
-  if(m_pricingPlanHasBeenSet)
-  {
-   payload.WithString("PricingPlan", PricingPlanMapper::GetNameForPricingPlan(m_pricingPlan));
   }
 
   return payload.View().WriteReadable();

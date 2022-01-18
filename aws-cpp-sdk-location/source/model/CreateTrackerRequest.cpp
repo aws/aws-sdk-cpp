@@ -17,9 +17,6 @@ CreateTrackerRequest::CreateTrackerRequest() :
     m_kmsKeyIdHasBeenSet(false),
     m_positionFiltering(PositionFiltering::NOT_SET),
     m_positionFilteringHasBeenSet(false),
-    m_pricingPlan(PricingPlan::NOT_SET),
-    m_pricingPlanHasBeenSet(false),
-    m_pricingPlanDataSourceHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_trackerNameHasBeenSet(false)
 {
@@ -44,17 +41,6 @@ Aws::String CreateTrackerRequest::SerializePayload() const
   if(m_positionFilteringHasBeenSet)
   {
    payload.WithString("PositionFiltering", PositionFilteringMapper::GetNameForPositionFiltering(m_positionFiltering));
-  }
-
-  if(m_pricingPlanHasBeenSet)
-  {
-   payload.WithString("PricingPlan", PricingPlanMapper::GetNameForPricingPlan(m_pricingPlan));
-  }
-
-  if(m_pricingPlanDataSourceHasBeenSet)
-  {
-   payload.WithString("PricingPlanDataSource", m_pricingPlanDataSource);
-
   }
 
   if(m_tagsHasBeenSet)

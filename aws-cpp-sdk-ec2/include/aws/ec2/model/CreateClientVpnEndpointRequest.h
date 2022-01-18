@@ -12,6 +12,7 @@
 #include <aws/ec2/model/TransportProtocol.h>
 #include <aws/ec2/model/SelfServicePortal.h>
 #include <aws/ec2/model/ClientConnectOptions.h>
+#include <aws/ec2/model/ClientLoginBannerOptions.h>
 #include <aws/ec2/model/ClientVpnAuthenticationRequest.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
@@ -816,6 +817,38 @@ namespace Model
      */
     inline CreateClientVpnEndpointRequest& WithClientConnectOptions(ClientConnectOptions&& value) { SetClientConnectOptions(std::move(value)); return *this;}
 
+
+    
+    inline int GetSessionTimeoutHours() const{ return m_sessionTimeoutHours; }
+
+    
+    inline bool SessionTimeoutHoursHasBeenSet() const { return m_sessionTimeoutHoursHasBeenSet; }
+
+    
+    inline void SetSessionTimeoutHours(int value) { m_sessionTimeoutHoursHasBeenSet = true; m_sessionTimeoutHours = value; }
+
+    
+    inline CreateClientVpnEndpointRequest& WithSessionTimeoutHours(int value) { SetSessionTimeoutHours(value); return *this;}
+
+
+    
+    inline const ClientLoginBannerOptions& GetClientLoginBannerOptions() const{ return m_clientLoginBannerOptions; }
+
+    
+    inline bool ClientLoginBannerOptionsHasBeenSet() const { return m_clientLoginBannerOptionsHasBeenSet; }
+
+    
+    inline void SetClientLoginBannerOptions(const ClientLoginBannerOptions& value) { m_clientLoginBannerOptionsHasBeenSet = true; m_clientLoginBannerOptions = value; }
+
+    
+    inline void SetClientLoginBannerOptions(ClientLoginBannerOptions&& value) { m_clientLoginBannerOptionsHasBeenSet = true; m_clientLoginBannerOptions = std::move(value); }
+
+    
+    inline CreateClientVpnEndpointRequest& WithClientLoginBannerOptions(const ClientLoginBannerOptions& value) { SetClientLoginBannerOptions(value); return *this;}
+
+    
+    inline CreateClientVpnEndpointRequest& WithClientLoginBannerOptions(ClientLoginBannerOptions&& value) { SetClientLoginBannerOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clientCidrBlock;
@@ -865,6 +898,12 @@ namespace Model
 
     ClientConnectOptions m_clientConnectOptions;
     bool m_clientConnectOptionsHasBeenSet;
+
+    int m_sessionTimeoutHours;
+    bool m_sessionTimeoutHoursHasBeenSet;
+
+    ClientLoginBannerOptions m_clientLoginBannerOptions;
+    bool m_clientLoginBannerOptionsHasBeenSet;
   };
 
 } // namespace Model

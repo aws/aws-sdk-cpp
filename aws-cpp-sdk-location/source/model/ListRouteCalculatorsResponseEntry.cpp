@@ -23,8 +23,6 @@ ListRouteCalculatorsResponseEntry::ListRouteCalculatorsResponseEntry() :
     m_createTimeHasBeenSet(false),
     m_dataSourceHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_pricingPlan(PricingPlan::NOT_SET),
-    m_pricingPlanHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
 }
@@ -34,8 +32,6 @@ ListRouteCalculatorsResponseEntry::ListRouteCalculatorsResponseEntry(JsonView js
     m_createTimeHasBeenSet(false),
     m_dataSourceHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_pricingPlan(PricingPlan::NOT_SET),
-    m_pricingPlanHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -69,13 +65,6 @@ ListRouteCalculatorsResponseEntry& ListRouteCalculatorsResponseEntry::operator =
     m_description = jsonValue.GetString("Description");
 
     m_descriptionHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("PricingPlan"))
-  {
-    m_pricingPlan = PricingPlanMapper::GetPricingPlanForName(jsonValue.GetString("PricingPlan"));
-
-    m_pricingPlanHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("UpdateTime"))
@@ -113,11 +102,6 @@ JsonValue ListRouteCalculatorsResponseEntry::Jsonize() const
   {
    payload.WithString("Description", m_description);
 
-  }
-
-  if(m_pricingPlanHasBeenSet)
-  {
-   payload.WithString("PricingPlan", PricingPlanMapper::GetNameForPricingPlan(m_pricingPlan));
   }
 
   if(m_updateTimeHasBeenSet)

@@ -45,12 +45,14 @@ namespace Model
      * <code>eventSource</code> (for management events), <code>eventName</code>,
      * <code>resources.type</code>, and <code>resources.ARN</code>. </p> <ul> <li> <p>
      * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a
-     * value of <code>true</code> or <code>false</code>. A value of <code>false</code>
-     * logs both <code>read</code> and <code>write</code> events.</p> </li> <li> <p>
-     * <b> <code>eventSource</code> </b> - For filtering management events only. This
-     * can be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p>
-     * </li> <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can
-     * use it to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
+     * value of <code>true</code> or <code>false</code>. If you do not add this field,
+     * CloudTrail logs both both <code>read</code> and <code>write</code> events. A
+     * value of <code>true</code> logs only <code>read</code> events. A value of
+     * <code>false</code> logs only <code>write</code> events.</p> </li> <li> <p> <b>
+     * <code>eventSource</code> </b> - For filtering management events only. This can
+     * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
+     * <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it
+     * to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
      * <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple
      * values for this ﬁeld, separated by commas.</p> </li> <li> <p> <b>
      * <code>eventCategory</code> </b> - This is required. It must be set to
@@ -66,7 +68,8 @@ namespace Model
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Stream</code> </p> </li> </ul> <p> You can have only one
+     * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
+     * <code>AWS::Glue::Table</code> </p> </li> </ul> <p> You can have only one
      * <code>resources.type</code> ﬁeld per selector. To log data events on more than
      * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
@@ -126,6 +129,11 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;/stream/&lt;date_time&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
      * </p> </li> </ul> </li> </ul>
      */
     inline const Aws::String& GetField() const{ return m_field; }
@@ -136,12 +144,14 @@ namespace Model
      * <code>eventSource</code> (for management events), <code>eventName</code>,
      * <code>resources.type</code>, and <code>resources.ARN</code>. </p> <ul> <li> <p>
      * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a
-     * value of <code>true</code> or <code>false</code>. A value of <code>false</code>
-     * logs both <code>read</code> and <code>write</code> events.</p> </li> <li> <p>
-     * <b> <code>eventSource</code> </b> - For filtering management events only. This
-     * can be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p>
-     * </li> <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can
-     * use it to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
+     * value of <code>true</code> or <code>false</code>. If you do not add this field,
+     * CloudTrail logs both both <code>read</code> and <code>write</code> events. A
+     * value of <code>true</code> logs only <code>read</code> events. A value of
+     * <code>false</code> logs only <code>write</code> events.</p> </li> <li> <p> <b>
+     * <code>eventSource</code> </b> - For filtering management events only. This can
+     * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
+     * <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it
+     * to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
      * <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple
      * values for this ﬁeld, separated by commas.</p> </li> <li> <p> <b>
      * <code>eventCategory</code> </b> - This is required. It must be set to
@@ -157,7 +167,8 @@ namespace Model
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Stream</code> </p> </li> </ul> <p> You can have only one
+     * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
+     * <code>AWS::Glue::Table</code> </p> </li> </ul> <p> You can have only one
      * <code>resources.type</code> ﬁeld per selector. To log data events on more than
      * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
@@ -217,6 +228,11 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;/stream/&lt;date_time&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
      * </p> </li> </ul> </li> </ul>
      */
     inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }
@@ -227,12 +243,14 @@ namespace Model
      * <code>eventSource</code> (for management events), <code>eventName</code>,
      * <code>resources.type</code>, and <code>resources.ARN</code>. </p> <ul> <li> <p>
      * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a
-     * value of <code>true</code> or <code>false</code>. A value of <code>false</code>
-     * logs both <code>read</code> and <code>write</code> events.</p> </li> <li> <p>
-     * <b> <code>eventSource</code> </b> - For filtering management events only. This
-     * can be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p>
-     * </li> <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can
-     * use it to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
+     * value of <code>true</code> or <code>false</code>. If you do not add this field,
+     * CloudTrail logs both both <code>read</code> and <code>write</code> events. A
+     * value of <code>true</code> logs only <code>read</code> events. A value of
+     * <code>false</code> logs only <code>write</code> events.</p> </li> <li> <p> <b>
+     * <code>eventSource</code> </b> - For filtering management events only. This can
+     * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
+     * <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it
+     * to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
      * <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple
      * values for this ﬁeld, separated by commas.</p> </li> <li> <p> <b>
      * <code>eventCategory</code> </b> - This is required. It must be set to
@@ -248,7 +266,8 @@ namespace Model
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Stream</code> </p> </li> </ul> <p> You can have only one
+     * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
+     * <code>AWS::Glue::Table</code> </p> </li> </ul> <p> You can have only one
      * <code>resources.type</code> ﬁeld per selector. To log data events on more than
      * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
@@ -308,6 +327,11 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;/stream/&lt;date_time&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
      * </p> </li> </ul> </li> </ul>
      */
     inline void SetField(const Aws::String& value) { m_fieldHasBeenSet = true; m_field = value; }
@@ -318,12 +342,14 @@ namespace Model
      * <code>eventSource</code> (for management events), <code>eventName</code>,
      * <code>resources.type</code>, and <code>resources.ARN</code>. </p> <ul> <li> <p>
      * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a
-     * value of <code>true</code> or <code>false</code>. A value of <code>false</code>
-     * logs both <code>read</code> and <code>write</code> events.</p> </li> <li> <p>
-     * <b> <code>eventSource</code> </b> - For filtering management events only. This
-     * can be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p>
-     * </li> <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can
-     * use it to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
+     * value of <code>true</code> or <code>false</code>. If you do not add this field,
+     * CloudTrail logs both both <code>read</code> and <code>write</code> events. A
+     * value of <code>true</code> logs only <code>read</code> events. A value of
+     * <code>false</code> logs only <code>write</code> events.</p> </li> <li> <p> <b>
+     * <code>eventSource</code> </b> - For filtering management events only. This can
+     * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
+     * <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it
+     * to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
      * <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple
      * values for this ﬁeld, separated by commas.</p> </li> <li> <p> <b>
      * <code>eventCategory</code> </b> - This is required. It must be set to
@@ -339,7 +365,8 @@ namespace Model
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Stream</code> </p> </li> </ul> <p> You can have only one
+     * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
+     * <code>AWS::Glue::Table</code> </p> </li> </ul> <p> You can have only one
      * <code>resources.type</code> ﬁeld per selector. To log data events on more than
      * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
@@ -399,6 +426,11 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;/stream/&lt;date_time&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
      * </p> </li> </ul> </li> </ul>
      */
     inline void SetField(Aws::String&& value) { m_fieldHasBeenSet = true; m_field = std::move(value); }
@@ -409,12 +441,14 @@ namespace Model
      * <code>eventSource</code> (for management events), <code>eventName</code>,
      * <code>resources.type</code>, and <code>resources.ARN</code>. </p> <ul> <li> <p>
      * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a
-     * value of <code>true</code> or <code>false</code>. A value of <code>false</code>
-     * logs both <code>read</code> and <code>write</code> events.</p> </li> <li> <p>
-     * <b> <code>eventSource</code> </b> - For filtering management events only. This
-     * can be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p>
-     * </li> <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can
-     * use it to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
+     * value of <code>true</code> or <code>false</code>. If you do not add this field,
+     * CloudTrail logs both both <code>read</code> and <code>write</code> events. A
+     * value of <code>true</code> logs only <code>read</code> events. A value of
+     * <code>false</code> logs only <code>write</code> events.</p> </li> <li> <p> <b>
+     * <code>eventSource</code> </b> - For filtering management events only. This can
+     * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
+     * <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it
+     * to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
      * <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple
      * values for this ﬁeld, separated by commas.</p> </li> <li> <p> <b>
      * <code>eventCategory</code> </b> - This is required. It must be set to
@@ -430,7 +464,8 @@ namespace Model
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Stream</code> </p> </li> </ul> <p> You can have only one
+     * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
+     * <code>AWS::Glue::Table</code> </p> </li> </ul> <p> You can have only one
      * <code>resources.type</code> ﬁeld per selector. To log data events on more than
      * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
@@ -490,6 +525,11 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;/stream/&lt;date_time&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
      * </p> </li> </ul> </li> </ul>
      */
     inline void SetField(const char* value) { m_fieldHasBeenSet = true; m_field.assign(value); }
@@ -500,12 +540,14 @@ namespace Model
      * <code>eventSource</code> (for management events), <code>eventName</code>,
      * <code>resources.type</code>, and <code>resources.ARN</code>. </p> <ul> <li> <p>
      * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a
-     * value of <code>true</code> or <code>false</code>. A value of <code>false</code>
-     * logs both <code>read</code> and <code>write</code> events.</p> </li> <li> <p>
-     * <b> <code>eventSource</code> </b> - For filtering management events only. This
-     * can be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p>
-     * </li> <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can
-     * use it to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
+     * value of <code>true</code> or <code>false</code>. If you do not add this field,
+     * CloudTrail logs both both <code>read</code> and <code>write</code> events. A
+     * value of <code>true</code> logs only <code>read</code> events. A value of
+     * <code>false</code> logs only <code>write</code> events.</p> </li> <li> <p> <b>
+     * <code>eventSource</code> </b> - For filtering management events only. This can
+     * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
+     * <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it
+     * to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
      * <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple
      * values for this ﬁeld, separated by commas.</p> </li> <li> <p> <b>
      * <code>eventCategory</code> </b> - This is required. It must be set to
@@ -521,7 +563,8 @@ namespace Model
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Stream</code> </p> </li> </ul> <p> You can have only one
+     * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
+     * <code>AWS::Glue::Table</code> </p> </li> </ul> <p> You can have only one
      * <code>resources.type</code> ﬁeld per selector. To log data events on more than
      * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
@@ -581,6 +624,11 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;/stream/&lt;date_time&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
      * </p> </li> </ul> </li> </ul>
      */
     inline AdvancedFieldSelector& WithField(const Aws::String& value) { SetField(value); return *this;}
@@ -591,12 +639,14 @@ namespace Model
      * <code>eventSource</code> (for management events), <code>eventName</code>,
      * <code>resources.type</code>, and <code>resources.ARN</code>. </p> <ul> <li> <p>
      * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a
-     * value of <code>true</code> or <code>false</code>. A value of <code>false</code>
-     * logs both <code>read</code> and <code>write</code> events.</p> </li> <li> <p>
-     * <b> <code>eventSource</code> </b> - For filtering management events only. This
-     * can be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p>
-     * </li> <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can
-     * use it to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
+     * value of <code>true</code> or <code>false</code>. If you do not add this field,
+     * CloudTrail logs both both <code>read</code> and <code>write</code> events. A
+     * value of <code>true</code> logs only <code>read</code> events. A value of
+     * <code>false</code> logs only <code>write</code> events.</p> </li> <li> <p> <b>
+     * <code>eventSource</code> </b> - For filtering management events only. This can
+     * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
+     * <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it
+     * to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
      * <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple
      * values for this ﬁeld, separated by commas.</p> </li> <li> <p> <b>
      * <code>eventCategory</code> </b> - This is required. It must be set to
@@ -612,7 +662,8 @@ namespace Model
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Stream</code> </p> </li> </ul> <p> You can have only one
+     * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
+     * <code>AWS::Glue::Table</code> </p> </li> </ul> <p> You can have only one
      * <code>resources.type</code> ﬁeld per selector. To log data events on more than
      * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
@@ -672,6 +723,11 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;/stream/&lt;date_time&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
      * </p> </li> </ul> </li> </ul>
      */
     inline AdvancedFieldSelector& WithField(Aws::String&& value) { SetField(std::move(value)); return *this;}
@@ -682,12 +738,14 @@ namespace Model
      * <code>eventSource</code> (for management events), <code>eventName</code>,
      * <code>resources.type</code>, and <code>resources.ARN</code>. </p> <ul> <li> <p>
      * <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a
-     * value of <code>true</code> or <code>false</code>. A value of <code>false</code>
-     * logs both <code>read</code> and <code>write</code> events.</p> </li> <li> <p>
-     * <b> <code>eventSource</code> </b> - For filtering management events only. This
-     * can be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p>
-     * </li> <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can
-     * use it to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
+     * value of <code>true</code> or <code>false</code>. If you do not add this field,
+     * CloudTrail logs both both <code>read</code> and <code>write</code> events. A
+     * value of <code>true</code> logs only <code>read</code> events. A value of
+     * <code>false</code> logs only <code>write</code> events.</p> </li> <li> <p> <b>
+     * <code>eventSource</code> </b> - For filtering management events only. This can
+     * be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
+     * <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it
+     * to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as
      * <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple
      * values for this ﬁeld, separated by commas.</p> </li> <li> <p> <b>
      * <code>eventCategory</code> </b> - This is required. It must be set to
@@ -703,7 +761,8 @@ namespace Model
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Stream</code> </p> </li> </ul> <p> You can have only one
+     * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
+     * <code>AWS::Glue::Table</code> </p> </li> </ul> <p> You can have only one
      * <code>resources.type</code> ﬁeld per selector. To log data events on more than
      * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
@@ -763,6 +822,11 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;/stream/&lt;date_time&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
      * </p> </li> </ul> </li> </ul>
      */
     inline AdvancedFieldSelector& WithField(const char* value) { SetField(value); return *this;}

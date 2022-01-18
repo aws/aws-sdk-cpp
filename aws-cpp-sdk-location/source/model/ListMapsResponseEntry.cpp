@@ -23,8 +23,6 @@ ListMapsResponseEntry::ListMapsResponseEntry() :
     m_dataSourceHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_mapNameHasBeenSet(false),
-    m_pricingPlan(PricingPlan::NOT_SET),
-    m_pricingPlanHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
 }
@@ -34,8 +32,6 @@ ListMapsResponseEntry::ListMapsResponseEntry(JsonView jsonValue) :
     m_dataSourceHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_mapNameHasBeenSet(false),
-    m_pricingPlan(PricingPlan::NOT_SET),
-    m_pricingPlanHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -69,13 +65,6 @@ ListMapsResponseEntry& ListMapsResponseEntry::operator =(JsonView jsonValue)
     m_mapName = jsonValue.GetString("MapName");
 
     m_mapNameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("PricingPlan"))
-  {
-    m_pricingPlan = PricingPlanMapper::GetPricingPlanForName(jsonValue.GetString("PricingPlan"));
-
-    m_pricingPlanHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("UpdateTime"))
@@ -113,11 +102,6 @@ JsonValue ListMapsResponseEntry::Jsonize() const
   {
    payload.WithString("MapName", m_mapName);
 
-  }
-
-  if(m_pricingPlanHasBeenSet)
-  {
-   payload.WithString("PricingPlan", PricingPlanMapper::GetNameForPricingPlan(m_pricingPlan));
   }
 
   if(m_updateTimeHasBeenSet)

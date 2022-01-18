@@ -13,6 +13,7 @@
 #include <aws/ec2/model/TransportProtocol.h>
 #include <aws/ec2/model/ConnectionLogResponseOptions.h>
 #include <aws/ec2/model/ClientConnectResponseOptions.h>
+#include <aws/ec2/model/ClientLoginBannerResponseOptions.h>
 #include <aws/ec2/model/ClientVpnAuthentication.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
@@ -834,6 +835,38 @@ namespace Model
      */
     inline ClientVpnEndpoint& WithClientConnectOptions(ClientConnectResponseOptions&& value) { SetClientConnectOptions(std::move(value)); return *this;}
 
+
+    
+    inline int GetSessionTimeoutHours() const{ return m_sessionTimeoutHours; }
+
+    
+    inline bool SessionTimeoutHoursHasBeenSet() const { return m_sessionTimeoutHoursHasBeenSet; }
+
+    
+    inline void SetSessionTimeoutHours(int value) { m_sessionTimeoutHoursHasBeenSet = true; m_sessionTimeoutHours = value; }
+
+    
+    inline ClientVpnEndpoint& WithSessionTimeoutHours(int value) { SetSessionTimeoutHours(value); return *this;}
+
+
+    
+    inline const ClientLoginBannerResponseOptions& GetClientLoginBannerOptions() const{ return m_clientLoginBannerOptions; }
+
+    
+    inline bool ClientLoginBannerOptionsHasBeenSet() const { return m_clientLoginBannerOptionsHasBeenSet; }
+
+    
+    inline void SetClientLoginBannerOptions(const ClientLoginBannerResponseOptions& value) { m_clientLoginBannerOptionsHasBeenSet = true; m_clientLoginBannerOptions = value; }
+
+    
+    inline void SetClientLoginBannerOptions(ClientLoginBannerResponseOptions&& value) { m_clientLoginBannerOptionsHasBeenSet = true; m_clientLoginBannerOptions = std::move(value); }
+
+    
+    inline ClientVpnEndpoint& WithClientLoginBannerOptions(const ClientLoginBannerResponseOptions& value) { SetClientLoginBannerOptions(value); return *this;}
+
+    
+    inline ClientVpnEndpoint& WithClientLoginBannerOptions(ClientLoginBannerResponseOptions&& value) { SetClientLoginBannerOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clientVpnEndpointId;
@@ -895,6 +928,12 @@ namespace Model
 
     ClientConnectResponseOptions m_clientConnectOptions;
     bool m_clientConnectOptionsHasBeenSet;
+
+    int m_sessionTimeoutHours;
+    bool m_sessionTimeoutHoursHasBeenSet;
+
+    ClientLoginBannerResponseOptions m_clientLoginBannerOptions;
+    bool m_clientLoginBannerOptionsHasBeenSet;
   };
 
 } // namespace Model

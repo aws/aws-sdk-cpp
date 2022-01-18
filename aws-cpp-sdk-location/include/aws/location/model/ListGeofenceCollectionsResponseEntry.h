@@ -7,7 +7,6 @@
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/location/model/PricingPlan.h>
 #include <utility>
 
 namespace Aws
@@ -165,96 +164,6 @@ namespace Model
 
 
     /**
-     * <p>The pricing plan for the specified geofence collection.</p> <p>For additional
-     * details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-     * page</a>.</p>
-     */
-    inline const PricingPlan& GetPricingPlan() const{ return m_pricingPlan; }
-
-    /**
-     * <p>The pricing plan for the specified geofence collection.</p> <p>For additional
-     * details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-     * page</a>.</p>
-     */
-    inline bool PricingPlanHasBeenSet() const { return m_pricingPlanHasBeenSet; }
-
-    /**
-     * <p>The pricing plan for the specified geofence collection.</p> <p>For additional
-     * details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-     * page</a>.</p>
-     */
-    inline void SetPricingPlan(const PricingPlan& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = value; }
-
-    /**
-     * <p>The pricing plan for the specified geofence collection.</p> <p>For additional
-     * details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-     * page</a>.</p>
-     */
-    inline void SetPricingPlan(PricingPlan&& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = std::move(value); }
-
-    /**
-     * <p>The pricing plan for the specified geofence collection.</p> <p>For additional
-     * details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-     * page</a>.</p>
-     */
-    inline ListGeofenceCollectionsResponseEntry& WithPricingPlan(const PricingPlan& value) { SetPricingPlan(value); return *this;}
-
-    /**
-     * <p>The pricing plan for the specified geofence collection.</p> <p>For additional
-     * details and restrictions on each pricing plan option, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-     * page</a>.</p>
-     */
-    inline ListGeofenceCollectionsResponseEntry& WithPricingPlan(PricingPlan&& value) { SetPricingPlan(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The specified data provider for the geofence collection.</p>
-     */
-    inline const Aws::String& GetPricingPlanDataSource() const{ return m_pricingPlanDataSource; }
-
-    /**
-     * <p>The specified data provider for the geofence collection.</p>
-     */
-    inline bool PricingPlanDataSourceHasBeenSet() const { return m_pricingPlanDataSourceHasBeenSet; }
-
-    /**
-     * <p>The specified data provider for the geofence collection.</p>
-     */
-    inline void SetPricingPlanDataSource(const Aws::String& value) { m_pricingPlanDataSourceHasBeenSet = true; m_pricingPlanDataSource = value; }
-
-    /**
-     * <p>The specified data provider for the geofence collection.</p>
-     */
-    inline void SetPricingPlanDataSource(Aws::String&& value) { m_pricingPlanDataSourceHasBeenSet = true; m_pricingPlanDataSource = std::move(value); }
-
-    /**
-     * <p>The specified data provider for the geofence collection.</p>
-     */
-    inline void SetPricingPlanDataSource(const char* value) { m_pricingPlanDataSourceHasBeenSet = true; m_pricingPlanDataSource.assign(value); }
-
-    /**
-     * <p>The specified data provider for the geofence collection.</p>
-     */
-    inline ListGeofenceCollectionsResponseEntry& WithPricingPlanDataSource(const Aws::String& value) { SetPricingPlanDataSource(value); return *this;}
-
-    /**
-     * <p>The specified data provider for the geofence collection.</p>
-     */
-    inline ListGeofenceCollectionsResponseEntry& WithPricingPlanDataSource(Aws::String&& value) { SetPricingPlanDataSource(std::move(value)); return *this;}
-
-    /**
-     * <p>The specified data provider for the geofence collection.</p>
-     */
-    inline ListGeofenceCollectionsResponseEntry& WithPricingPlanDataSource(const char* value) { SetPricingPlanDataSource(value); return *this;}
-
-
-    /**
      * <p>Specifies a timestamp for when the resource was last updated in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
@@ -306,12 +215,6 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
-
-    PricingPlan m_pricingPlan;
-    bool m_pricingPlanHasBeenSet;
-
-    Aws::String m_pricingPlanDataSource;
-    bool m_pricingPlanDataSourceHasBeenSet;
 
     Aws::Utils::DateTime m_updateTime;
     bool m_updateTimeHasBeenSet;

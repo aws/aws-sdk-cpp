@@ -16,8 +16,6 @@ CreateRouteCalculatorRequest::CreateRouteCalculatorRequest() :
     m_calculatorNameHasBeenSet(false),
     m_dataSourceHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_pricingPlan(PricingPlan::NOT_SET),
-    m_pricingPlanHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -42,11 +40,6 @@ Aws::String CreateRouteCalculatorRequest::SerializePayload() const
   {
    payload.WithString("Description", m_description);
 
-  }
-
-  if(m_pricingPlanHasBeenSet)
-  {
-   payload.WithString("PricingPlan", PricingPlanMapper::GetNameForPricingPlan(m_pricingPlan));
   }
 
   if(m_tagsHasBeenSet)

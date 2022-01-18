@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 CreateRecordingConfigurationRequest::CreateRecordingConfigurationRequest() : 
     m_destinationConfigurationHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_thumbnailConfigurationHasBeenSet(false)
 {
 }
 
@@ -43,6 +44,12 @@ Aws::String CreateRecordingConfigurationRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_thumbnailConfigurationHasBeenSet)
+  {
+   payload.WithObject("thumbnailConfiguration", m_thumbnailConfiguration.Jsonize());
 
   }
 

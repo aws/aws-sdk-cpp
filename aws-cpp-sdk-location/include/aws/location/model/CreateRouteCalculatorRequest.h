@@ -7,7 +7,6 @@
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/location/LocationServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/location/model/PricingPlan.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -342,61 +341,6 @@ namespace Model
 
 
     /**
-     * <p>Optionally specifies the pricing plan for the route calculator resource.
-     * Defaults to <code>RequestBasedUsage</code>.</p> <p>For additional details and
-     * restrictions on each pricing plan option, see <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
-     * pricing</a>.</p>
-     */
-    inline const PricingPlan& GetPricingPlan() const{ return m_pricingPlan; }
-
-    /**
-     * <p>Optionally specifies the pricing plan for the route calculator resource.
-     * Defaults to <code>RequestBasedUsage</code>.</p> <p>For additional details and
-     * restrictions on each pricing plan option, see <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
-     * pricing</a>.</p>
-     */
-    inline bool PricingPlanHasBeenSet() const { return m_pricingPlanHasBeenSet; }
-
-    /**
-     * <p>Optionally specifies the pricing plan for the route calculator resource.
-     * Defaults to <code>RequestBasedUsage</code>.</p> <p>For additional details and
-     * restrictions on each pricing plan option, see <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
-     * pricing</a>.</p>
-     */
-    inline void SetPricingPlan(const PricingPlan& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = value; }
-
-    /**
-     * <p>Optionally specifies the pricing plan for the route calculator resource.
-     * Defaults to <code>RequestBasedUsage</code>.</p> <p>For additional details and
-     * restrictions on each pricing plan option, see <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
-     * pricing</a>.</p>
-     */
-    inline void SetPricingPlan(PricingPlan&& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = std::move(value); }
-
-    /**
-     * <p>Optionally specifies the pricing plan for the route calculator resource.
-     * Defaults to <code>RequestBasedUsage</code>.</p> <p>For additional details and
-     * restrictions on each pricing plan option, see <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
-     * pricing</a>.</p>
-     */
-    inline CreateRouteCalculatorRequest& WithPricingPlan(const PricingPlan& value) { SetPricingPlan(value); return *this;}
-
-    /**
-     * <p>Optionally specifies the pricing plan for the route calculator resource.
-     * Defaults to <code>RequestBasedUsage</code>.</p> <p>For additional details and
-     * restrictions on each pricing plan option, see <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
-     * pricing</a>.</p>
-     */
-    inline CreateRouteCalculatorRequest& WithPricingPlan(PricingPlan&& value) { SetPricingPlan(std::move(value)); return *this;}
-
-
-    /**
      * <p>Applies one or more tags to the route calculator resource. A tag is a
      * key-value pair helps manage, identify, search, and filter your resources by
      * labelling them.</p> <ul> <li> <p>For example: { <code>"tag1" : "value1"</code>,
@@ -601,9 +545,6 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
-
-    PricingPlan m_pricingPlan;
-    bool m_pricingPlanHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

@@ -16,13 +16,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeMapResult::DescribeMapResult() : 
-    m_pricingPlan(PricingPlan::NOT_SET)
+DescribeMapResult::DescribeMapResult()
 {
 }
 
-DescribeMapResult::DescribeMapResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_pricingPlan(PricingPlan::NOT_SET)
+DescribeMapResult::DescribeMapResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
@@ -63,12 +61,6 @@ DescribeMapResult& DescribeMapResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("MapName"))
   {
     m_mapName = jsonValue.GetString("MapName");
-
-  }
-
-  if(jsonValue.ValueExists("PricingPlan"))
-  {
-    m_pricingPlan = PricingPlanMapper::GetPricingPlanForName(jsonValue.GetString("PricingPlan"));
 
   }
 

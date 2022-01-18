@@ -9,6 +9,7 @@
 #include <aws/ivs/model/DestinationConfiguration.h>
 #include <aws/ivs/model/RecordingConfigurationState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/ivs/model/ThumbnailConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -281,6 +282,49 @@ namespace Model
      */
     inline RecordingConfiguration& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>A complex type that allows you to enable/disable the recording of thumbnails
+     * for a live session and modify the interval at which thumbnails are generated for
+     * the live session.</p>
+     */
+    inline const ThumbnailConfiguration& GetThumbnailConfiguration() const{ return m_thumbnailConfiguration; }
+
+    /**
+     * <p>A complex type that allows you to enable/disable the recording of thumbnails
+     * for a live session and modify the interval at which thumbnails are generated for
+     * the live session.</p>
+     */
+    inline bool ThumbnailConfigurationHasBeenSet() const { return m_thumbnailConfigurationHasBeenSet; }
+
+    /**
+     * <p>A complex type that allows you to enable/disable the recording of thumbnails
+     * for a live session and modify the interval at which thumbnails are generated for
+     * the live session.</p>
+     */
+    inline void SetThumbnailConfiguration(const ThumbnailConfiguration& value) { m_thumbnailConfigurationHasBeenSet = true; m_thumbnailConfiguration = value; }
+
+    /**
+     * <p>A complex type that allows you to enable/disable the recording of thumbnails
+     * for a live session and modify the interval at which thumbnails are generated for
+     * the live session.</p>
+     */
+    inline void SetThumbnailConfiguration(ThumbnailConfiguration&& value) { m_thumbnailConfigurationHasBeenSet = true; m_thumbnailConfiguration = std::move(value); }
+
+    /**
+     * <p>A complex type that allows you to enable/disable the recording of thumbnails
+     * for a live session and modify the interval at which thumbnails are generated for
+     * the live session.</p>
+     */
+    inline RecordingConfiguration& WithThumbnailConfiguration(const ThumbnailConfiguration& value) { SetThumbnailConfiguration(value); return *this;}
+
+    /**
+     * <p>A complex type that allows you to enable/disable the recording of thumbnails
+     * for a live session and modify the interval at which thumbnails are generated for
+     * the live session.</p>
+     */
+    inline RecordingConfiguration& WithThumbnailConfiguration(ThumbnailConfiguration&& value) { SetThumbnailConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -297,6 +341,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    ThumbnailConfiguration m_thumbnailConfiguration;
+    bool m_thumbnailConfigurationHasBeenSet;
   };
 
 } // namespace Model

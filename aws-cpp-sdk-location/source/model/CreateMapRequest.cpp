@@ -16,8 +16,6 @@ CreateMapRequest::CreateMapRequest() :
     m_configurationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_mapNameHasBeenSet(false),
-    m_pricingPlan(PricingPlan::NOT_SET),
-    m_pricingPlanHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -42,11 +40,6 @@ Aws::String CreateMapRequest::SerializePayload() const
   {
    payload.WithString("MapName", m_mapName);
 
-  }
-
-  if(m_pricingPlanHasBeenSet)
-  {
-   payload.WithString("PricingPlan", PricingPlanMapper::GetNameForPricingPlan(m_pricingPlan));
   }
 
   if(m_tagsHasBeenSet)

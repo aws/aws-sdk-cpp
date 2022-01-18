@@ -8,7 +8,6 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/location/model/DataSourceConfiguration.h>
-#include <aws/location/model/PricingPlan.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -292,47 +291,6 @@ namespace Model
 
 
     /**
-     * <p>The pricing plan selected for the specified place index resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
-     * pricing</a>.</p>
-     */
-    inline const PricingPlan& GetPricingPlan() const{ return m_pricingPlan; }
-
-    /**
-     * <p>The pricing plan selected for the specified place index resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
-     * pricing</a>.</p>
-     */
-    inline void SetPricingPlan(const PricingPlan& value) { m_pricingPlan = value; }
-
-    /**
-     * <p>The pricing plan selected for the specified place index resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
-     * pricing</a>.</p>
-     */
-    inline void SetPricingPlan(PricingPlan&& value) { m_pricingPlan = std::move(value); }
-
-    /**
-     * <p>The pricing plan selected for the specified place index resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
-     * pricing</a>.</p>
-     */
-    inline DescribePlaceIndexResult& WithPricingPlan(const PricingPlan& value) { SetPricingPlan(value); return *this;}
-
-    /**
-     * <p>The pricing plan selected for the specified place index resource.</p> <p>For
-     * additional details and restrictions on each pricing plan option, see <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
-     * pricing</a>.</p>
-     */
-    inline DescribePlaceIndexResult& WithPricingPlan(PricingPlan&& value) { SetPricingPlan(std::move(value)); return *this;}
-
-
-    /**
      * <p>Tags associated with place index resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -441,8 +399,6 @@ namespace Model
     Aws::String m_indexArn;
 
     Aws::String m_indexName;
-
-    PricingPlan m_pricingPlan;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
 

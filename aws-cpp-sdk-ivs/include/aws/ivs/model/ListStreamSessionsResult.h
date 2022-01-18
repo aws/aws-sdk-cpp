@@ -78,37 +78,37 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>List of stream sessions.</p>
      */
     inline const Aws::Vector<StreamSessionSummary>& GetStreamSessions() const{ return m_streamSessions; }
 
     /**
-     * <p/>
+     * <p>List of stream sessions.</p>
      */
     inline void SetStreamSessions(const Aws::Vector<StreamSessionSummary>& value) { m_streamSessions = value; }
 
     /**
-     * <p/>
+     * <p>List of stream sessions.</p>
      */
     inline void SetStreamSessions(Aws::Vector<StreamSessionSummary>&& value) { m_streamSessions = std::move(value); }
 
     /**
-     * <p/>
+     * <p>List of stream sessions.</p>
      */
     inline ListStreamSessionsResult& WithStreamSessions(const Aws::Vector<StreamSessionSummary>& value) { SetStreamSessions(value); return *this;}
 
     /**
-     * <p/>
+     * <p>List of stream sessions.</p>
      */
     inline ListStreamSessionsResult& WithStreamSessions(Aws::Vector<StreamSessionSummary>&& value) { SetStreamSessions(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>List of stream sessions.</p>
      */
     inline ListStreamSessionsResult& AddStreamSessions(const StreamSessionSummary& value) { m_streamSessions.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>List of stream sessions.</p>
      */
     inline ListStreamSessionsResult& AddStreamSessions(StreamSessionSummary&& value) { m_streamSessions.push_back(std::move(value)); return *this; }
 

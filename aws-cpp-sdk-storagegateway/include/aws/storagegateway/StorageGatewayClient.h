@@ -1553,8 +1553,8 @@ namespace Model
          * upload and download bandwidth rate limit, or you can delete both. If you delete
          * only one of the limits, the other limit remains unchanged. To specify which
          * gateway to work with, use the Amazon Resource Name (ARN) of the gateway in your
-         * request. This operation is supported for the stored volume, cached volume and
-         * tape gateway types.</p><p><h3>See Also:</h3>   <a
+         * request. This operation is supported only for the stored volume, cached volume,
+         * and tape gateway types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteBandwidthRateLimit">AWS
          * API Reference</a></p>
          */
@@ -1565,8 +1565,8 @@ namespace Model
          * upload and download bandwidth rate limit, or you can delete both. If you delete
          * only one of the limits, the other limit remains unchanged. To specify which
          * gateway to work with, use the Amazon Resource Name (ARN) of the gateway in your
-         * request. This operation is supported for the stored volume, cached volume and
-         * tape gateway types.</p><p><h3>See Also:</h3>   <a
+         * request. This operation is supported only for the stored volume, cached volume,
+         * and tape gateway types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteBandwidthRateLimit">AWS
          * API Reference</a></p>
          *
@@ -1579,8 +1579,8 @@ namespace Model
          * upload and download bandwidth rate limit, or you can delete both. If you delete
          * only one of the limits, the other limit remains unchanged. To specify which
          * gateway to work with, use the Amazon Resource Name (ARN) of the gateway in your
-         * request. This operation is supported for the stored volume, cached volume and
-         * tape gateway types.</p><p><h3>See Also:</h3>   <a
+         * request. This operation is supported only for the stored volume, cached volume,
+         * and tape gateway types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteBandwidthRateLimit">AWS
          * API Reference</a></p>
          *
@@ -1963,12 +1963,13 @@ namespace Model
         /**
          * <p>Returns the bandwidth rate limits of a gateway. By default, these limits are
          * not set, which means no bandwidth rate limiting is in effect. This operation is
-         * supported for the stored volume, cached volume, and tape gateway types.</p>
-         * <p>This operation only returns a value for a bandwidth rate limit only if the
-         * limit is set. If no limits are set for the gateway, then this operation returns
-         * only the gateway ARN in the response body. To specify which gateway to describe,
-         * use the Amazon Resource Name (ARN) of the gateway in your request.</p><p><h3>See
-         * Also:</h3>   <a
+         * supported only for the stored volume, cached volume, and tape gateway types. To
+         * describe bandwidth rate limits for S3 file gateways, use
+         * <a>DescribeBandwidthRateLimitSchedule</a>.</p> <p>This operation returns a value
+         * for a bandwidth rate limit only if the limit is set. If no limits are set for
+         * the gateway, then this operation returns only the gateway ARN in the response
+         * body. To specify which gateway to describe, use the Amazon Resource Name (ARN)
+         * of the gateway in your request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimit">AWS
          * API Reference</a></p>
          */
@@ -1977,12 +1978,13 @@ namespace Model
         /**
          * <p>Returns the bandwidth rate limits of a gateway. By default, these limits are
          * not set, which means no bandwidth rate limiting is in effect. This operation is
-         * supported for the stored volume, cached volume, and tape gateway types.</p>
-         * <p>This operation only returns a value for a bandwidth rate limit only if the
-         * limit is set. If no limits are set for the gateway, then this operation returns
-         * only the gateway ARN in the response body. To specify which gateway to describe,
-         * use the Amazon Resource Name (ARN) of the gateway in your request.</p><p><h3>See
-         * Also:</h3>   <a
+         * supported only for the stored volume, cached volume, and tape gateway types. To
+         * describe bandwidth rate limits for S3 file gateways, use
+         * <a>DescribeBandwidthRateLimitSchedule</a>.</p> <p>This operation returns a value
+         * for a bandwidth rate limit only if the limit is set. If no limits are set for
+         * the gateway, then this operation returns only the gateway ARN in the response
+         * body. To specify which gateway to describe, use the Amazon Resource Name (ARN)
+         * of the gateway in your request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimit">AWS
          * API Reference</a></p>
          *
@@ -1993,12 +1995,13 @@ namespace Model
         /**
          * <p>Returns the bandwidth rate limits of a gateway. By default, these limits are
          * not set, which means no bandwidth rate limiting is in effect. This operation is
-         * supported for the stored volume, cached volume, and tape gateway types.</p>
-         * <p>This operation only returns a value for a bandwidth rate limit only if the
-         * limit is set. If no limits are set for the gateway, then this operation returns
-         * only the gateway ARN in the response body. To specify which gateway to describe,
-         * use the Amazon Resource Name (ARN) of the gateway in your request.</p><p><h3>See
-         * Also:</h3>   <a
+         * supported only for the stored volume, cached volume, and tape gateway types. To
+         * describe bandwidth rate limits for S3 file gateways, use
+         * <a>DescribeBandwidthRateLimitSchedule</a>.</p> <p>This operation returns a value
+         * for a bandwidth rate limit only if the limit is set. If no limits are set for
+         * the gateway, then this operation returns only the gateway ARN in the response
+         * body. To specify which gateway to describe, use the Amazon Resource Name (ARN)
+         * of the gateway in your request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimit">AWS
          * API Reference</a></p>
          *
@@ -2009,18 +2012,19 @@ namespace Model
         /**
          * <p> Returns information about the bandwidth rate limit schedule of a gateway. By
          * default, gateways do not have bandwidth rate limit schedules, which means no
-         * bandwidth rate limiting is in effect. This operation is supported only in the
-         * volume and tape gateway types. </p> <p>This operation returns information about
-         * a gateway's bandwidth rate limit schedule. A bandwidth rate limit schedule
-         * consists of one or more bandwidth rate limit intervals. A bandwidth rate limit
-         * interval defines a period of time on one or more days of the week, during which
-         * bandwidth rate limits are specified for uploading, downloading, or both. </p>
-         * <p> A bandwidth rate limit interval consists of one or more days of the week, a
-         * start hour and minute, an ending hour and minute, and bandwidth rate limits for
-         * uploading and downloading </p> <p> If no bandwidth rate limit schedule intervals
-         * are set for the gateway, this operation returns an empty response. To specify
-         * which gateway to describe, use the Amazon Resource Name (ARN) of the gateway in
-         * your request.</p><p><h3>See Also:</h3>   <a
+         * bandwidth rate limiting is in effect. This operation is supported only for
+         * volume, tape and S3 file gateways. FSx file gateways do not support bandwidth
+         * rate limits.</p> <p>This operation returns information about a gateway's
+         * bandwidth rate limit schedule. A bandwidth rate limit schedule consists of one
+         * or more bandwidth rate limit intervals. A bandwidth rate limit interval defines
+         * a period of time on one or more days of the week, during which bandwidth rate
+         * limits are specified for uploading, downloading, or both. </p> <p> A bandwidth
+         * rate limit interval consists of one or more days of the week, a start hour and
+         * minute, an ending hour and minute, and bandwidth rate limits for uploading and
+         * downloading </p> <p> If no bandwidth rate limit schedule intervals are set for
+         * the gateway, this operation returns an empty response. To specify which gateway
+         * to describe, use the Amazon Resource Name (ARN) of the gateway in your
+         * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimitSchedule">AWS
          * API Reference</a></p>
          */
@@ -2029,18 +2033,19 @@ namespace Model
         /**
          * <p> Returns information about the bandwidth rate limit schedule of a gateway. By
          * default, gateways do not have bandwidth rate limit schedules, which means no
-         * bandwidth rate limiting is in effect. This operation is supported only in the
-         * volume and tape gateway types. </p> <p>This operation returns information about
-         * a gateway's bandwidth rate limit schedule. A bandwidth rate limit schedule
-         * consists of one or more bandwidth rate limit intervals. A bandwidth rate limit
-         * interval defines a period of time on one or more days of the week, during which
-         * bandwidth rate limits are specified for uploading, downloading, or both. </p>
-         * <p> A bandwidth rate limit interval consists of one or more days of the week, a
-         * start hour and minute, an ending hour and minute, and bandwidth rate limits for
-         * uploading and downloading </p> <p> If no bandwidth rate limit schedule intervals
-         * are set for the gateway, this operation returns an empty response. To specify
-         * which gateway to describe, use the Amazon Resource Name (ARN) of the gateway in
-         * your request.</p><p><h3>See Also:</h3>   <a
+         * bandwidth rate limiting is in effect. This operation is supported only for
+         * volume, tape and S3 file gateways. FSx file gateways do not support bandwidth
+         * rate limits.</p> <p>This operation returns information about a gateway's
+         * bandwidth rate limit schedule. A bandwidth rate limit schedule consists of one
+         * or more bandwidth rate limit intervals. A bandwidth rate limit interval defines
+         * a period of time on one or more days of the week, during which bandwidth rate
+         * limits are specified for uploading, downloading, or both. </p> <p> A bandwidth
+         * rate limit interval consists of one or more days of the week, a start hour and
+         * minute, an ending hour and minute, and bandwidth rate limits for uploading and
+         * downloading </p> <p> If no bandwidth rate limit schedule intervals are set for
+         * the gateway, this operation returns an empty response. To specify which gateway
+         * to describe, use the Amazon Resource Name (ARN) of the gateway in your
+         * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimitSchedule">AWS
          * API Reference</a></p>
          *
@@ -2051,18 +2056,19 @@ namespace Model
         /**
          * <p> Returns information about the bandwidth rate limit schedule of a gateway. By
          * default, gateways do not have bandwidth rate limit schedules, which means no
-         * bandwidth rate limiting is in effect. This operation is supported only in the
-         * volume and tape gateway types. </p> <p>This operation returns information about
-         * a gateway's bandwidth rate limit schedule. A bandwidth rate limit schedule
-         * consists of one or more bandwidth rate limit intervals. A bandwidth rate limit
-         * interval defines a period of time on one or more days of the week, during which
-         * bandwidth rate limits are specified for uploading, downloading, or both. </p>
-         * <p> A bandwidth rate limit interval consists of one or more days of the week, a
-         * start hour and minute, an ending hour and minute, and bandwidth rate limits for
-         * uploading and downloading </p> <p> If no bandwidth rate limit schedule intervals
-         * are set for the gateway, this operation returns an empty response. To specify
-         * which gateway to describe, use the Amazon Resource Name (ARN) of the gateway in
-         * your request.</p><p><h3>See Also:</h3>   <a
+         * bandwidth rate limiting is in effect. This operation is supported only for
+         * volume, tape and S3 file gateways. FSx file gateways do not support bandwidth
+         * rate limits.</p> <p>This operation returns information about a gateway's
+         * bandwidth rate limit schedule. A bandwidth rate limit schedule consists of one
+         * or more bandwidth rate limit intervals. A bandwidth rate limit interval defines
+         * a period of time on one or more days of the week, during which bandwidth rate
+         * limits are specified for uploading, downloading, or both. </p> <p> A bandwidth
+         * rate limit interval consists of one or more days of the week, a start hour and
+         * minute, an ending hour and minute, and bandwidth rate limits for uploading and
+         * downloading </p> <p> If no bandwidth rate limit schedule intervals are set for
+         * the gateway, this operation returns an empty response. To specify which gateway
+         * to describe, use the Amazon Resource Name (ARN) of the gateway in your
+         * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimitSchedule">AWS
          * API Reference</a></p>
          *
@@ -3888,12 +3894,14 @@ namespace Model
          * <p>Updates the bandwidth rate limits of a gateway. You can update both the
          * upload and download bandwidth rate limit or specify only one of the two. If you
          * don't set a bandwidth rate limit, the existing rate limit remains. This
-         * operation is supported for the stored volume, cached volume, and tape gateway
-         * types.</p> <p>By default, a gateway's bandwidth rate limits are not set. If you
-         * don't set any limit, the gateway does not have any limitations on its bandwidth
-         * usage and could potentially use the maximum available bandwidth.</p> <p>To
-         * specify which gateway to update, use the Amazon Resource Name (ARN) of the
-         * gateway in your request.</p><p><h3>See Also:</h3>   <a
+         * operation is supported only for the stored volume, cached volume, and tape
+         * gateway types. To update bandwidth rate limits for S3 file gateways, use
+         * <a>UpdateBandwidthRateLimitSchedule</a>.</p> <p>By default, a gateway's
+         * bandwidth rate limits are not set. If you don't set any limit, the gateway does
+         * not have any limitations on its bandwidth usage and could potentially use the
+         * maximum available bandwidth.</p> <p>To specify which gateway to update, use the
+         * Amazon Resource Name (ARN) of the gateway in your request.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimit">AWS
          * API Reference</a></p>
          */
@@ -3903,12 +3911,14 @@ namespace Model
          * <p>Updates the bandwidth rate limits of a gateway. You can update both the
          * upload and download bandwidth rate limit or specify only one of the two. If you
          * don't set a bandwidth rate limit, the existing rate limit remains. This
-         * operation is supported for the stored volume, cached volume, and tape gateway
-         * types.</p> <p>By default, a gateway's bandwidth rate limits are not set. If you
-         * don't set any limit, the gateway does not have any limitations on its bandwidth
-         * usage and could potentially use the maximum available bandwidth.</p> <p>To
-         * specify which gateway to update, use the Amazon Resource Name (ARN) of the
-         * gateway in your request.</p><p><h3>See Also:</h3>   <a
+         * operation is supported only for the stored volume, cached volume, and tape
+         * gateway types. To update bandwidth rate limits for S3 file gateways, use
+         * <a>UpdateBandwidthRateLimitSchedule</a>.</p> <p>By default, a gateway's
+         * bandwidth rate limits are not set. If you don't set any limit, the gateway does
+         * not have any limitations on its bandwidth usage and could potentially use the
+         * maximum available bandwidth.</p> <p>To specify which gateway to update, use the
+         * Amazon Resource Name (ARN) of the gateway in your request.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimit">AWS
          * API Reference</a></p>
          *
@@ -3920,12 +3930,14 @@ namespace Model
          * <p>Updates the bandwidth rate limits of a gateway. You can update both the
          * upload and download bandwidth rate limit or specify only one of the two. If you
          * don't set a bandwidth rate limit, the existing rate limit remains. This
-         * operation is supported for the stored volume, cached volume, and tape gateway
-         * types.</p> <p>By default, a gateway's bandwidth rate limits are not set. If you
-         * don't set any limit, the gateway does not have any limitations on its bandwidth
-         * usage and could potentially use the maximum available bandwidth.</p> <p>To
-         * specify which gateway to update, use the Amazon Resource Name (ARN) of the
-         * gateway in your request.</p><p><h3>See Also:</h3>   <a
+         * operation is supported only for the stored volume, cached volume, and tape
+         * gateway types. To update bandwidth rate limits for S3 file gateways, use
+         * <a>UpdateBandwidthRateLimitSchedule</a>.</p> <p>By default, a gateway's
+         * bandwidth rate limits are not set. If you don't set any limit, the gateway does
+         * not have any limitations on its bandwidth usage and could potentially use the
+         * maximum available bandwidth.</p> <p>To specify which gateway to update, use the
+         * Amazon Resource Name (ARN) of the gateway in your request.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimit">AWS
          * API Reference</a></p>
          *
@@ -3937,8 +3949,9 @@ namespace Model
          * <p> Updates the bandwidth rate limit schedule for a specified gateway. By
          * default, gateways do not have bandwidth rate limit schedules, which means no
          * bandwidth rate limiting is in effect. Use this to initiate or update a gateway's
-         * bandwidth rate limit schedule. This operation is supported in the volume and
-         * tape gateway types. </p><p><h3>See Also:</h3>   <a
+         * bandwidth rate limit schedule. This operation is supported only for volume, tape
+         * and S3 file gateways. FSx file gateways do not support bandwidth rate
+         * limits.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimitSchedule">AWS
          * API Reference</a></p>
          */
@@ -3948,8 +3961,9 @@ namespace Model
          * <p> Updates the bandwidth rate limit schedule for a specified gateway. By
          * default, gateways do not have bandwidth rate limit schedules, which means no
          * bandwidth rate limiting is in effect. Use this to initiate or update a gateway's
-         * bandwidth rate limit schedule. This operation is supported in the volume and
-         * tape gateway types. </p><p><h3>See Also:</h3>   <a
+         * bandwidth rate limit schedule. This operation is supported only for volume, tape
+         * and S3 file gateways. FSx file gateways do not support bandwidth rate
+         * limits.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimitSchedule">AWS
          * API Reference</a></p>
          *
@@ -3961,8 +3975,9 @@ namespace Model
          * <p> Updates the bandwidth rate limit schedule for a specified gateway. By
          * default, gateways do not have bandwidth rate limit schedules, which means no
          * bandwidth rate limiting is in effect. Use this to initiate or update a gateway's
-         * bandwidth rate limit schedule. This operation is supported in the volume and
-         * tape gateway types. </p><p><h3>See Also:</h3>   <a
+         * bandwidth rate limit schedule. This operation is supported only for volume, tape
+         * and S3 file gateways. FSx file gateways do not support bandwidth rate
+         * limits.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimitSchedule">AWS
          * API Reference</a></p>
          *

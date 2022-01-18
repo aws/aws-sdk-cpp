@@ -173,7 +173,7 @@ namespace Model
      * <code>[longitude, latitude]</code>.</p> <ul> <li> <p>For example,
      * <code>[-123.115, 49.285]</code> </p> </li> </ul>  <p>If you specify a
      * departure that's not located on a road, Amazon Location <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. If Esri is the provider for your route
      * calculator, specifying a route that is longer than 400 km returns a <code>400
      * RoutesValidationException</code> error.</p>  <p>Valid Values: <code>[-180
@@ -187,7 +187,7 @@ namespace Model
      * <code>[longitude, latitude]</code>.</p> <ul> <li> <p>For example,
      * <code>[-123.115, 49.285]</code> </p> </li> </ul>  <p>If you specify a
      * departure that's not located on a road, Amazon Location <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. If Esri is the provider for your route
      * calculator, specifying a route that is longer than 400 km returns a <code>400
      * RoutesValidationException</code> error.</p>  <p>Valid Values: <code>[-180
@@ -201,7 +201,7 @@ namespace Model
      * <code>[longitude, latitude]</code>.</p> <ul> <li> <p>For example,
      * <code>[-123.115, 49.285]</code> </p> </li> </ul>  <p>If you specify a
      * departure that's not located on a road, Amazon Location <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. If Esri is the provider for your route
      * calculator, specifying a route that is longer than 400 km returns a <code>400
      * RoutesValidationException</code> error.</p>  <p>Valid Values: <code>[-180
@@ -215,7 +215,7 @@ namespace Model
      * <code>[longitude, latitude]</code>.</p> <ul> <li> <p>For example,
      * <code>[-123.115, 49.285]</code> </p> </li> </ul>  <p>If you specify a
      * departure that's not located on a road, Amazon Location <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. If Esri is the provider for your route
      * calculator, specifying a route that is longer than 400 km returns a <code>400
      * RoutesValidationException</code> error.</p>  <p>Valid Values: <code>[-180
@@ -229,7 +229,7 @@ namespace Model
      * <code>[longitude, latitude]</code>.</p> <ul> <li> <p>For example,
      * <code>[-123.115, 49.285]</code> </p> </li> </ul>  <p>If you specify a
      * departure that's not located on a road, Amazon Location <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. If Esri is the provider for your route
      * calculator, specifying a route that is longer than 400 km returns a <code>400
      * RoutesValidationException</code> error.</p>  <p>Valid Values: <code>[-180
@@ -243,7 +243,7 @@ namespace Model
      * <code>[longitude, latitude]</code>.</p> <ul> <li> <p>For example,
      * <code>[-123.115, 49.285]</code> </p> </li> </ul>  <p>If you specify a
      * departure that's not located on a road, Amazon Location <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. If Esri is the provider for your route
      * calculator, specifying a route that is longer than 400 km returns a <code>400
      * RoutesValidationException</code> error.</p>  <p>Valid Values: <code>[-180
@@ -257,7 +257,7 @@ namespace Model
      * <code>[longitude, latitude]</code>.</p> <ul> <li> <p>For example,
      * <code>[-123.115, 49.285]</code> </p> </li> </ul>  <p>If you specify a
      * departure that's not located on a road, Amazon Location <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. If Esri is the provider for your route
      * calculator, specifying a route that is longer than 400 km returns a <code>400
      * RoutesValidationException</code> error.</p>  <p>Valid Values: <code>[-180
@@ -345,7 +345,7 @@ namespace Model
      * <code>[longitude, latitude]</code>.</p> <ul> <li> <p> For example,
      * <code>[-122.339, 47.615]</code> </p> </li> </ul>  <p>If you specify a
      * destination that's not located on a road, Amazon Location <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. </p>  <p>Valid Values: <code>[-180
      * to 180,-90 to 90]</code> </p>
      */
@@ -357,7 +357,7 @@ namespace Model
      * <code>[longitude, latitude]</code>.</p> <ul> <li> <p> For example,
      * <code>[-122.339, 47.615]</code> </p> </li> </ul>  <p>If you specify a
      * destination that's not located on a road, Amazon Location <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. </p>  <p>Valid Values: <code>[-180
      * to 180,-90 to 90]</code> </p>
      */
@@ -369,7 +369,7 @@ namespace Model
      * <code>[longitude, latitude]</code>.</p> <ul> <li> <p> For example,
      * <code>[-122.339, 47.615]</code> </p> </li> </ul>  <p>If you specify a
      * destination that's not located on a road, Amazon Location <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. </p>  <p>Valid Values: <code>[-180
      * to 180,-90 to 90]</code> </p>
      */
@@ -381,7 +381,7 @@ namespace Model
      * <code>[longitude, latitude]</code>.</p> <ul> <li> <p> For example,
      * <code>[-122.339, 47.615]</code> </p> </li> </ul>  <p>If you specify a
      * destination that's not located on a road, Amazon Location <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. </p>  <p>Valid Values: <code>[-180
      * to 180,-90 to 90]</code> </p>
      */
@@ -393,7 +393,7 @@ namespace Model
      * <code>[longitude, latitude]</code>.</p> <ul> <li> <p> For example,
      * <code>[-122.339, 47.615]</code> </p> </li> </ul>  <p>If you specify a
      * destination that's not located on a road, Amazon Location <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. </p>  <p>Valid Values: <code>[-180
      * to 180,-90 to 90]</code> </p>
      */
@@ -405,7 +405,7 @@ namespace Model
      * <code>[longitude, latitude]</code>.</p> <ul> <li> <p> For example,
      * <code>[-122.339, 47.615]</code> </p> </li> </ul>  <p>If you specify a
      * destination that's not located on a road, Amazon Location <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. </p>  <p>Valid Values: <code>[-180
      * to 180,-90 to 90]</code> </p>
      */
@@ -417,7 +417,7 @@ namespace Model
      * <code>[longitude, latitude]</code>.</p> <ul> <li> <p> For example,
      * <code>[-122.339, 47.615]</code> </p> </li> </ul>  <p>If you specify a
      * destination that's not located on a road, Amazon Location <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. </p>  <p>Valid Values: <code>[-180
      * to 180,-90 to 90]</code> </p>
      */
@@ -493,9 +493,9 @@ namespace Model
     /**
      * <p>Specifies the mode of transport when calculating a route. Used in estimating
      * the speed of travel and road compatibility.</p> <p>The <code>TravelMode</code>
-     * you specify determines how you specify route preferences: </p> <ul> <li> <p>If
-     * traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p>
-     * </li> <li> <p>If traveling by <code>Truck</code> use the
+     * you specify also determines how you specify route preferences: </p> <ul> <li>
+     * <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code>
+     * parameter.</p> </li> <li> <p>If traveling by <code>Truck</code> use the
      * <code>TruckModeOptions</code> parameter.</p> </li> </ul> <p>Default Value:
      * <code>Car</code> </p>
      */
@@ -504,9 +504,9 @@ namespace Model
     /**
      * <p>Specifies the mode of transport when calculating a route. Used in estimating
      * the speed of travel and road compatibility.</p> <p>The <code>TravelMode</code>
-     * you specify determines how you specify route preferences: </p> <ul> <li> <p>If
-     * traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p>
-     * </li> <li> <p>If traveling by <code>Truck</code> use the
+     * you specify also determines how you specify route preferences: </p> <ul> <li>
+     * <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code>
+     * parameter.</p> </li> <li> <p>If traveling by <code>Truck</code> use the
      * <code>TruckModeOptions</code> parameter.</p> </li> </ul> <p>Default Value:
      * <code>Car</code> </p>
      */
@@ -515,9 +515,9 @@ namespace Model
     /**
      * <p>Specifies the mode of transport when calculating a route. Used in estimating
      * the speed of travel and road compatibility.</p> <p>The <code>TravelMode</code>
-     * you specify determines how you specify route preferences: </p> <ul> <li> <p>If
-     * traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p>
-     * </li> <li> <p>If traveling by <code>Truck</code> use the
+     * you specify also determines how you specify route preferences: </p> <ul> <li>
+     * <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code>
+     * parameter.</p> </li> <li> <p>If traveling by <code>Truck</code> use the
      * <code>TruckModeOptions</code> parameter.</p> </li> </ul> <p>Default Value:
      * <code>Car</code> </p>
      */
@@ -526,9 +526,9 @@ namespace Model
     /**
      * <p>Specifies the mode of transport when calculating a route. Used in estimating
      * the speed of travel and road compatibility.</p> <p>The <code>TravelMode</code>
-     * you specify determines how you specify route preferences: </p> <ul> <li> <p>If
-     * traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p>
-     * </li> <li> <p>If traveling by <code>Truck</code> use the
+     * you specify also determines how you specify route preferences: </p> <ul> <li>
+     * <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code>
+     * parameter.</p> </li> <li> <p>If traveling by <code>Truck</code> use the
      * <code>TruckModeOptions</code> parameter.</p> </li> </ul> <p>Default Value:
      * <code>Car</code> </p>
      */
@@ -537,9 +537,9 @@ namespace Model
     /**
      * <p>Specifies the mode of transport when calculating a route. Used in estimating
      * the speed of travel and road compatibility.</p> <p>The <code>TravelMode</code>
-     * you specify determines how you specify route preferences: </p> <ul> <li> <p>If
-     * traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p>
-     * </li> <li> <p>If traveling by <code>Truck</code> use the
+     * you specify also determines how you specify route preferences: </p> <ul> <li>
+     * <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code>
+     * parameter.</p> </li> <li> <p>If traveling by <code>Truck</code> use the
      * <code>TruckModeOptions</code> parameter.</p> </li> </ul> <p>Default Value:
      * <code>Car</code> </p>
      */
@@ -548,9 +548,9 @@ namespace Model
     /**
      * <p>Specifies the mode of transport when calculating a route. Used in estimating
      * the speed of travel and road compatibility.</p> <p>The <code>TravelMode</code>
-     * you specify determines how you specify route preferences: </p> <ul> <li> <p>If
-     * traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p>
-     * </li> <li> <p>If traveling by <code>Truck</code> use the
+     * you specify also determines how you specify route preferences: </p> <ul> <li>
+     * <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code>
+     * parameter.</p> </li> <li> <p>If traveling by <code>Truck</code> use the
      * <code>TruckModeOptions</code> parameter.</p> </li> </ul> <p>Default Value:
      * <code>Car</code> </p>
      */
@@ -614,7 +614,7 @@ namespace Model
      * given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code> </p> </li> </ul>
      *  <p>If you specify a waypoint position that's not located on a road,
      * Amazon Location <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. </p> <p>Specifying more than 23 waypoints
      * returns a <code>400 ValidationException</code> error.</p> <p>If Esri is the
      * provider for your route calculator, specifying a route that is longer than 400
@@ -631,7 +631,7 @@ namespace Model
      * given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code> </p> </li> </ul>
      *  <p>If you specify a waypoint position that's not located on a road,
      * Amazon Location <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. </p> <p>Specifying more than 23 waypoints
      * returns a <code>400 ValidationException</code> error.</p> <p>If Esri is the
      * provider for your route calculator, specifying a route that is longer than 400
@@ -648,7 +648,7 @@ namespace Model
      * given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code> </p> </li> </ul>
      *  <p>If you specify a waypoint position that's not located on a road,
      * Amazon Location <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. </p> <p>Specifying more than 23 waypoints
      * returns a <code>400 ValidationException</code> error.</p> <p>If Esri is the
      * provider for your route calculator, specifying a route that is longer than 400
@@ -665,7 +665,7 @@ namespace Model
      * given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code> </p> </li> </ul>
      *  <p>If you specify a waypoint position that's not located on a road,
      * Amazon Location <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. </p> <p>Specifying more than 23 waypoints
      * returns a <code>400 ValidationException</code> error.</p> <p>If Esri is the
      * provider for your route calculator, specifying a route that is longer than 400
@@ -682,7 +682,7 @@ namespace Model
      * given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code> </p> </li> </ul>
      *  <p>If you specify a waypoint position that's not located on a road,
      * Amazon Location <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. </p> <p>Specifying more than 23 waypoints
      * returns a <code>400 ValidationException</code> error.</p> <p>If Esri is the
      * provider for your route calculator, specifying a route that is longer than 400
@@ -699,7 +699,7 @@ namespace Model
      * given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code> </p> </li> </ul>
      *  <p>If you specify a waypoint position that's not located on a road,
      * Amazon Location <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. </p> <p>Specifying more than 23 waypoints
      * returns a <code>400 ValidationException</code> error.</p> <p>If Esri is the
      * provider for your route calculator, specifying a route that is longer than 400
@@ -716,7 +716,7 @@ namespace Model
      * given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code> </p> </li> </ul>
      *  <p>If you specify a waypoint position that's not located on a road,
      * Amazon Location <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. </p> <p>Specifying more than 23 waypoints
      * returns a <code>400 ValidationException</code> error.</p> <p>If Esri is the
      * provider for your route calculator, specifying a route that is longer than 400
@@ -733,7 +733,7 @@ namespace Model
      * given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code> </p> </li> </ul>
      *  <p>If you specify a waypoint position that's not located on a road,
      * Amazon Location <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
      * the position to the nearest road</a>. </p> <p>Specifying more than 23 waypoints
      * returns a <code>400 ValidationException</code> error.</p> <p>If Esri is the
      * provider for your route calculator, specifying a route that is longer than 400

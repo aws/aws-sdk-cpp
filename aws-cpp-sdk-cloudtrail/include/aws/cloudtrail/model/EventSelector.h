@@ -270,7 +270,8 @@ namespace Model
      * Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or
      * <code>rdsdata.amazonaws.com</code>. By default,
      * <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data
-     * API events are logged to your trail.</p>
+     * API events are logged to your trail. You can exclude management event sources
+     * only in regions that support the event source.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExcludeManagementEventSources() const{ return m_excludeManagementEventSources; }
 
@@ -281,7 +282,8 @@ namespace Model
      * Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or
      * <code>rdsdata.amazonaws.com</code>. By default,
      * <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data
-     * API events are logged to your trail.</p>
+     * API events are logged to your trail. You can exclude management event sources
+     * only in regions that support the event source.</p>
      */
     inline bool ExcludeManagementEventSourcesHasBeenSet() const { return m_excludeManagementEventSourcesHasBeenSet; }
 
@@ -292,7 +294,8 @@ namespace Model
      * Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or
      * <code>rdsdata.amazonaws.com</code>. By default,
      * <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data
-     * API events are logged to your trail.</p>
+     * API events are logged to your trail. You can exclude management event sources
+     * only in regions that support the event source.</p>
      */
     inline void SetExcludeManagementEventSources(const Aws::Vector<Aws::String>& value) { m_excludeManagementEventSourcesHasBeenSet = true; m_excludeManagementEventSources = value; }
 
@@ -303,7 +306,8 @@ namespace Model
      * Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or
      * <code>rdsdata.amazonaws.com</code>. By default,
      * <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data
-     * API events are logged to your trail.</p>
+     * API events are logged to your trail. You can exclude management event sources
+     * only in regions that support the event source.</p>
      */
     inline void SetExcludeManagementEventSources(Aws::Vector<Aws::String>&& value) { m_excludeManagementEventSourcesHasBeenSet = true; m_excludeManagementEventSources = std::move(value); }
 
@@ -314,7 +318,8 @@ namespace Model
      * Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or
      * <code>rdsdata.amazonaws.com</code>. By default,
      * <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data
-     * API events are logged to your trail.</p>
+     * API events are logged to your trail. You can exclude management event sources
+     * only in regions that support the event source.</p>
      */
     inline EventSelector& WithExcludeManagementEventSources(const Aws::Vector<Aws::String>& value) { SetExcludeManagementEventSources(value); return *this;}
 
@@ -325,7 +330,8 @@ namespace Model
      * Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or
      * <code>rdsdata.amazonaws.com</code>. By default,
      * <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data
-     * API events are logged to your trail.</p>
+     * API events are logged to your trail. You can exclude management event sources
+     * only in regions that support the event source.</p>
      */
     inline EventSelector& WithExcludeManagementEventSources(Aws::Vector<Aws::String>&& value) { SetExcludeManagementEventSources(std::move(value)); return *this;}
 
@@ -336,7 +342,8 @@ namespace Model
      * Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or
      * <code>rdsdata.amazonaws.com</code>. By default,
      * <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data
-     * API events are logged to your trail.</p>
+     * API events are logged to your trail. You can exclude management event sources
+     * only in regions that support the event source.</p>
      */
     inline EventSelector& AddExcludeManagementEventSources(const Aws::String& value) { m_excludeManagementEventSourcesHasBeenSet = true; m_excludeManagementEventSources.push_back(value); return *this; }
 
@@ -347,7 +354,8 @@ namespace Model
      * Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or
      * <code>rdsdata.amazonaws.com</code>. By default,
      * <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data
-     * API events are logged to your trail.</p>
+     * API events are logged to your trail. You can exclude management event sources
+     * only in regions that support the event source.</p>
      */
     inline EventSelector& AddExcludeManagementEventSources(Aws::String&& value) { m_excludeManagementEventSourcesHasBeenSet = true; m_excludeManagementEventSources.push_back(std::move(value)); return *this; }
 
@@ -358,7 +366,8 @@ namespace Model
      * Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or
      * <code>rdsdata.amazonaws.com</code>. By default,
      * <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data
-     * API events are logged to your trail.</p>
+     * API events are logged to your trail. You can exclude management event sources
+     * only in regions that support the event source.</p>
      */
     inline EventSelector& AddExcludeManagementEventSources(const char* value) { m_excludeManagementEventSourcesHasBeenSet = true; m_excludeManagementEventSources.push_back(value); return *this; }
 

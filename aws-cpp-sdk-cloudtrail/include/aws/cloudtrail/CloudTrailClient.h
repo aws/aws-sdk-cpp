@@ -389,14 +389,17 @@ namespace Model
         /**
          * <p>Disables the event data store specified by <code>EventDataStore</code>, which
          * accepts an event data store ARN. After you run
-         * <code>DeleteEventDataStore</code>, the event data store is automatically deleted
-         * after a wait period of seven days. <code>TerminationProtectionEnabled</code>
-         * must be set to <code>False</code> on the event data store; this operation cannot
-         * work if <code>TerminationProtectionEnabled</code> is <code>True</code>.</p>
-         * <p>After you run <code>DeleteEventDataStore</code> on an event data store, you
-         * cannot run <code>ListQueries</code>, <code>DescribeQuery</code>, or
+         * <code>DeleteEventDataStore</code>, the event data store enters a
+         * <code>PENDING_DELETION</code> state, and is automatically deleted after a wait
+         * period of seven days. <code>TerminationProtectionEnabled</code> must be set to
+         * <code>False</code> on the event data store; this operation cannot work if
+         * <code>TerminationProtectionEnabled</code> is <code>True</code>.</p> <p>After you
+         * run <code>DeleteEventDataStore</code> on an event data store, you cannot run
+         * <code>ListQueries</code>, <code>DescribeQuery</code>, or
          * <code>GetQueryResults</code> on queries that are using an event data store in a
-         * <code>PENDING_DELETION</code> state.</p><p><h3>See Also:</h3>   <a
+         * <code>PENDING_DELETION</code> state. An event data store in the
+         * <code>PENDING_DELETION</code> state does not incur costs.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteEventDataStore">AWS
          * API Reference</a></p>
          */
@@ -405,14 +408,17 @@ namespace Model
         /**
          * <p>Disables the event data store specified by <code>EventDataStore</code>, which
          * accepts an event data store ARN. After you run
-         * <code>DeleteEventDataStore</code>, the event data store is automatically deleted
-         * after a wait period of seven days. <code>TerminationProtectionEnabled</code>
-         * must be set to <code>False</code> on the event data store; this operation cannot
-         * work if <code>TerminationProtectionEnabled</code> is <code>True</code>.</p>
-         * <p>After you run <code>DeleteEventDataStore</code> on an event data store, you
-         * cannot run <code>ListQueries</code>, <code>DescribeQuery</code>, or
+         * <code>DeleteEventDataStore</code>, the event data store enters a
+         * <code>PENDING_DELETION</code> state, and is automatically deleted after a wait
+         * period of seven days. <code>TerminationProtectionEnabled</code> must be set to
+         * <code>False</code> on the event data store; this operation cannot work if
+         * <code>TerminationProtectionEnabled</code> is <code>True</code>.</p> <p>After you
+         * run <code>DeleteEventDataStore</code> on an event data store, you cannot run
+         * <code>ListQueries</code>, <code>DescribeQuery</code>, or
          * <code>GetQueryResults</code> on queries that are using an event data store in a
-         * <code>PENDING_DELETION</code> state.</p><p><h3>See Also:</h3>   <a
+         * <code>PENDING_DELETION</code> state. An event data store in the
+         * <code>PENDING_DELETION</code> state does not incur costs.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteEventDataStore">AWS
          * API Reference</a></p>
          *
@@ -423,14 +429,17 @@ namespace Model
         /**
          * <p>Disables the event data store specified by <code>EventDataStore</code>, which
          * accepts an event data store ARN. After you run
-         * <code>DeleteEventDataStore</code>, the event data store is automatically deleted
-         * after a wait period of seven days. <code>TerminationProtectionEnabled</code>
-         * must be set to <code>False</code> on the event data store; this operation cannot
-         * work if <code>TerminationProtectionEnabled</code> is <code>True</code>.</p>
-         * <p>After you run <code>DeleteEventDataStore</code> on an event data store, you
-         * cannot run <code>ListQueries</code>, <code>DescribeQuery</code>, or
+         * <code>DeleteEventDataStore</code>, the event data store enters a
+         * <code>PENDING_DELETION</code> state, and is automatically deleted after a wait
+         * period of seven days. <code>TerminationProtectionEnabled</code> must be set to
+         * <code>False</code> on the event data store; this operation cannot work if
+         * <code>TerminationProtectionEnabled</code> is <code>True</code>.</p> <p>After you
+         * run <code>DeleteEventDataStore</code> on an event data store, you cannot run
+         * <code>ListQueries</code>, <code>DescribeQuery</code>, or
          * <code>GetQueryResults</code> on queries that are using an event data store in a
-         * <code>PENDING_DELETION</code> state.</p><p><h3>See Also:</h3>   <a
+         * <code>PENDING_DELETION</code> state. An event data store in the
+         * <code>PENDING_DELETION</code> state does not incur costs.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteEventDataStore">AWS
          * API Reference</a></p>
          *

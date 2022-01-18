@@ -16,9 +16,6 @@ CreateGeofenceCollectionRequest::CreateGeofenceCollectionRequest() :
     m_collectionNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
-    m_pricingPlan(PricingPlan::NOT_SET),
-    m_pricingPlanHasBeenSet(false),
-    m_pricingPlanDataSourceHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -42,17 +39,6 @@ Aws::String CreateGeofenceCollectionRequest::SerializePayload() const
   if(m_kmsKeyIdHasBeenSet)
   {
    payload.WithString("KmsKeyId", m_kmsKeyId);
-
-  }
-
-  if(m_pricingPlanHasBeenSet)
-  {
-   payload.WithString("PricingPlan", PricingPlanMapper::GetNameForPricingPlan(m_pricingPlan));
-  }
-
-  if(m_pricingPlanDataSourceHasBeenSet)
-  {
-   payload.WithString("PricingPlanDataSource", m_pricingPlanDataSource);
 
   }
 

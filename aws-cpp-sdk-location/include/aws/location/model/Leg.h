@@ -31,7 +31,7 @@ namespace Model
    * number of positions in the request. </p> <p>For example, a route with a
    * departure position and destination position returns one leg with the positions
    * <a
-   * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
    * to a nearby road</a>:</p> <ul> <li> <p>The <code>StartPosition</code> is the
    * departure position.</p> </li> <li> <p>The <code>EndPosition</code> is the
    * destination position.</p> </li> </ul> <p>A route with a waypoint between the
@@ -119,7 +119,7 @@ namespace Model
      * <p>The terminating position of the leg. Follows the format
      * <code>[longitude,latitude]</code>.</p>  <p>If the <code>EndPosition</code>
      * isn't located on a road, it's <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped
      * to a nearby road</a>. </p> 
      */
     inline const Aws::Vector<double>& GetEndPosition() const{ return m_endPosition; }
@@ -128,7 +128,7 @@ namespace Model
      * <p>The terminating position of the leg. Follows the format
      * <code>[longitude,latitude]</code>.</p>  <p>If the <code>EndPosition</code>
      * isn't located on a road, it's <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped
      * to a nearby road</a>. </p> 
      */
     inline bool EndPositionHasBeenSet() const { return m_endPositionHasBeenSet; }
@@ -137,7 +137,7 @@ namespace Model
      * <p>The terminating position of the leg. Follows the format
      * <code>[longitude,latitude]</code>.</p>  <p>If the <code>EndPosition</code>
      * isn't located on a road, it's <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped
      * to a nearby road</a>. </p> 
      */
     inline void SetEndPosition(const Aws::Vector<double>& value) { m_endPositionHasBeenSet = true; m_endPosition = value; }
@@ -146,7 +146,7 @@ namespace Model
      * <p>The terminating position of the leg. Follows the format
      * <code>[longitude,latitude]</code>.</p>  <p>If the <code>EndPosition</code>
      * isn't located on a road, it's <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped
      * to a nearby road</a>. </p> 
      */
     inline void SetEndPosition(Aws::Vector<double>&& value) { m_endPositionHasBeenSet = true; m_endPosition = std::move(value); }
@@ -155,7 +155,7 @@ namespace Model
      * <p>The terminating position of the leg. Follows the format
      * <code>[longitude,latitude]</code>.</p>  <p>If the <code>EndPosition</code>
      * isn't located on a road, it's <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped
      * to a nearby road</a>. </p> 
      */
     inline Leg& WithEndPosition(const Aws::Vector<double>& value) { SetEndPosition(value); return *this;}
@@ -164,7 +164,7 @@ namespace Model
      * <p>The terminating position of the leg. Follows the format
      * <code>[longitude,latitude]</code>.</p>  <p>If the <code>EndPosition</code>
      * isn't located on a road, it's <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped
      * to a nearby road</a>. </p> 
      */
     inline Leg& WithEndPosition(Aws::Vector<double>&& value) { SetEndPosition(std::move(value)); return *this;}
@@ -173,7 +173,7 @@ namespace Model
      * <p>The terminating position of the leg. Follows the format
      * <code>[longitude,latitude]</code>.</p>  <p>If the <code>EndPosition</code>
      * isn't located on a road, it's <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped
      * to a nearby road</a>. </p> 
      */
     inline Leg& AddEndPosition(double value) { m_endPositionHasBeenSet = true; m_endPosition.push_back(value); return *this; }
@@ -214,7 +214,7 @@ namespace Model
      * <p>The starting position of the leg. Follows the format
      * <code>[longitude,latitude]</code>.</p>  <p>If the
      * <code>StartPosition</code> isn't located on a road, it's <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
      * to a nearby road</a>. </p> 
      */
     inline const Aws::Vector<double>& GetStartPosition() const{ return m_startPosition; }
@@ -223,7 +223,7 @@ namespace Model
      * <p>The starting position of the leg. Follows the format
      * <code>[longitude,latitude]</code>.</p>  <p>If the
      * <code>StartPosition</code> isn't located on a road, it's <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
      * to a nearby road</a>. </p> 
      */
     inline bool StartPositionHasBeenSet() const { return m_startPositionHasBeenSet; }
@@ -232,7 +232,7 @@ namespace Model
      * <p>The starting position of the leg. Follows the format
      * <code>[longitude,latitude]</code>.</p>  <p>If the
      * <code>StartPosition</code> isn't located on a road, it's <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
      * to a nearby road</a>. </p> 
      */
     inline void SetStartPosition(const Aws::Vector<double>& value) { m_startPositionHasBeenSet = true; m_startPosition = value; }
@@ -241,7 +241,7 @@ namespace Model
      * <p>The starting position of the leg. Follows the format
      * <code>[longitude,latitude]</code>.</p>  <p>If the
      * <code>StartPosition</code> isn't located on a road, it's <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
      * to a nearby road</a>. </p> 
      */
     inline void SetStartPosition(Aws::Vector<double>&& value) { m_startPositionHasBeenSet = true; m_startPosition = std::move(value); }
@@ -250,7 +250,7 @@ namespace Model
      * <p>The starting position of the leg. Follows the format
      * <code>[longitude,latitude]</code>.</p>  <p>If the
      * <code>StartPosition</code> isn't located on a road, it's <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
      * to a nearby road</a>. </p> 
      */
     inline Leg& WithStartPosition(const Aws::Vector<double>& value) { SetStartPosition(value); return *this;}
@@ -259,7 +259,7 @@ namespace Model
      * <p>The starting position of the leg. Follows the format
      * <code>[longitude,latitude]</code>.</p>  <p>If the
      * <code>StartPosition</code> isn't located on a road, it's <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
      * to a nearby road</a>. </p> 
      */
     inline Leg& WithStartPosition(Aws::Vector<double>&& value) { SetStartPosition(std::move(value)); return *this;}
@@ -268,7 +268,7 @@ namespace Model
      * <p>The starting position of the leg. Follows the format
      * <code>[longitude,latitude]</code>.</p>  <p>If the
      * <code>StartPosition</code> isn't located on a road, it's <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
      * to a nearby road</a>. </p> 
      */
     inline Leg& AddStartPosition(double value) { m_startPositionHasBeenSet = true; m_startPosition.push_back(value); return *this; }

@@ -15,9 +15,7 @@ using namespace Aws::Utils;
 UpdatePlaceIndexRequest::UpdatePlaceIndexRequest() : 
     m_dataSourceConfigurationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_indexNameHasBeenSet(false),
-    m_pricingPlan(PricingPlan::NOT_SET),
-    m_pricingPlanHasBeenSet(false)
+    m_indexNameHasBeenSet(false)
 {
 }
 
@@ -35,11 +33,6 @@ Aws::String UpdatePlaceIndexRequest::SerializePayload() const
   {
    payload.WithString("Description", m_description);
 
-  }
-
-  if(m_pricingPlanHasBeenSet)
-  {
-   payload.WithString("PricingPlan", PricingPlanMapper::GetNameForPricingPlan(m_pricingPlan));
   }
 
   return payload.View().WriteReadable();

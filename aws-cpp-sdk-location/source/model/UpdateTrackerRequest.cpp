@@ -16,9 +16,6 @@ UpdateTrackerRequest::UpdateTrackerRequest() :
     m_descriptionHasBeenSet(false),
     m_positionFiltering(PositionFiltering::NOT_SET),
     m_positionFilteringHasBeenSet(false),
-    m_pricingPlan(PricingPlan::NOT_SET),
-    m_pricingPlanHasBeenSet(false),
-    m_pricingPlanDataSourceHasBeenSet(false),
     m_trackerNameHasBeenSet(false)
 {
 }
@@ -36,17 +33,6 @@ Aws::String UpdateTrackerRequest::SerializePayload() const
   if(m_positionFilteringHasBeenSet)
   {
    payload.WithString("PositionFiltering", PositionFilteringMapper::GetNameForPositionFiltering(m_positionFiltering));
-  }
-
-  if(m_pricingPlanHasBeenSet)
-  {
-   payload.WithString("PricingPlan", PricingPlanMapper::GetNameForPricingPlan(m_pricingPlan));
-  }
-
-  if(m_pricingPlanDataSourceHasBeenSet)
-  {
-   payload.WithString("PricingPlanDataSource", m_pricingPlanDataSource);
-
   }
 
   return payload.View().WriteReadable();

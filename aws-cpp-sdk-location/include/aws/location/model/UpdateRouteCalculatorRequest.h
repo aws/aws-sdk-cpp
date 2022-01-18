@@ -7,7 +7,6 @@
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/location/LocationServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/location/model/PricingPlan.h>
 #include <utility>
 
 namespace Aws
@@ -114,55 +113,6 @@ namespace Model
      */
     inline UpdateRouteCalculatorRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
-
-    /**
-     * <p>Updates the pricing plan for the route calculator resource.</p> <p>For more
-     * information about each pricing plan option restrictions, see <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
-     * pricing</a>.</p>
-     */
-    inline const PricingPlan& GetPricingPlan() const{ return m_pricingPlan; }
-
-    /**
-     * <p>Updates the pricing plan for the route calculator resource.</p> <p>For more
-     * information about each pricing plan option restrictions, see <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
-     * pricing</a>.</p>
-     */
-    inline bool PricingPlanHasBeenSet() const { return m_pricingPlanHasBeenSet; }
-
-    /**
-     * <p>Updates the pricing plan for the route calculator resource.</p> <p>For more
-     * information about each pricing plan option restrictions, see <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
-     * pricing</a>.</p>
-     */
-    inline void SetPricingPlan(const PricingPlan& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = value; }
-
-    /**
-     * <p>Updates the pricing plan for the route calculator resource.</p> <p>For more
-     * information about each pricing plan option restrictions, see <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
-     * pricing</a>.</p>
-     */
-    inline void SetPricingPlan(PricingPlan&& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = std::move(value); }
-
-    /**
-     * <p>Updates the pricing plan for the route calculator resource.</p> <p>For more
-     * information about each pricing plan option restrictions, see <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
-     * pricing</a>.</p>
-     */
-    inline UpdateRouteCalculatorRequest& WithPricingPlan(const PricingPlan& value) { SetPricingPlan(value); return *this;}
-
-    /**
-     * <p>Updates the pricing plan for the route calculator resource.</p> <p>For more
-     * information about each pricing plan option restrictions, see <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
-     * pricing</a>.</p>
-     */
-    inline UpdateRouteCalculatorRequest& WithPricingPlan(PricingPlan&& value) { SetPricingPlan(std::move(value)); return *this;}
-
   private:
 
     Aws::String m_calculatorName;
@@ -170,9 +120,6 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
-
-    PricingPlan m_pricingPlan;
-    bool m_pricingPlanHasBeenSet;
   };
 
 } // namespace Model
