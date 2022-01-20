@@ -10,7 +10,9 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/mediatailor/model/DefaultSegmentDeliveryConfiguration.h>
 #include <aws/mediatailor/model/HttpConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/mediatailor/model/SegmentDeliveryConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -239,6 +241,31 @@ namespace Model
     inline SourceLocation& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
 
+    
+    inline const Aws::Vector<SegmentDeliveryConfiguration>& GetSegmentDeliveryConfigurations() const{ return m_segmentDeliveryConfigurations; }
+
+    
+    inline bool SegmentDeliveryConfigurationsHasBeenSet() const { return m_segmentDeliveryConfigurationsHasBeenSet; }
+
+    
+    inline void SetSegmentDeliveryConfigurations(const Aws::Vector<SegmentDeliveryConfiguration>& value) { m_segmentDeliveryConfigurationsHasBeenSet = true; m_segmentDeliveryConfigurations = value; }
+
+    
+    inline void SetSegmentDeliveryConfigurations(Aws::Vector<SegmentDeliveryConfiguration>&& value) { m_segmentDeliveryConfigurationsHasBeenSet = true; m_segmentDeliveryConfigurations = std::move(value); }
+
+    
+    inline SourceLocation& WithSegmentDeliveryConfigurations(const Aws::Vector<SegmentDeliveryConfiguration>& value) { SetSegmentDeliveryConfigurations(value); return *this;}
+
+    
+    inline SourceLocation& WithSegmentDeliveryConfigurations(Aws::Vector<SegmentDeliveryConfiguration>&& value) { SetSegmentDeliveryConfigurations(std::move(value)); return *this;}
+
+    
+    inline SourceLocation& AddSegmentDeliveryConfigurations(const SegmentDeliveryConfiguration& value) { m_segmentDeliveryConfigurationsHasBeenSet = true; m_segmentDeliveryConfigurations.push_back(value); return *this; }
+
+    
+    inline SourceLocation& AddSegmentDeliveryConfigurations(SegmentDeliveryConfiguration&& value) { m_segmentDeliveryConfigurationsHasBeenSet = true; m_segmentDeliveryConfigurations.push_back(std::move(value)); return *this; }
+
+
     /**
      * <p>The name of the source location.</p>
      */
@@ -364,6 +391,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastModifiedTime;
     bool m_lastModifiedTimeHasBeenSet;
+
+    Aws::Vector<SegmentDeliveryConfiguration> m_segmentDeliveryConfigurations;
+    bool m_segmentDeliveryConfigurationsHasBeenSet;
 
     Aws::String m_sourceLocationName;
     bool m_sourceLocationNameHasBeenSet;

@@ -295,13 +295,18 @@ namespace Model
      * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
      * </li> <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p>
      * </li> <li> <p>service.additionalInfo.threatListName</p> </li> <li>
-     * <p>service.archived</p> <p>When this attribute is set to TRUE, only archived
-     * findings are listed. When it's set to FALSE, only unarchived findings are
-     * listed. When this attribute is not set, all existing findings are listed.</p>
-     * </li> <li> <p>service.resourceRole</p> </li> <li> <p>severity</p> </li> <li>
-     * <p>type</p> </li> <li> <p>updatedAt</p> <p>Type: ISO 8601 string format:
-     * YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value
-     * contains milliseconds.</p> </li> </ul>
+     * <p>resource.s3BucketDetails.publicAccess.effectivePermissions</p> </li> <li>
+     * <p>resource.s3BucketDetails.name</p> </li> <li>
+     * <p>resource.s3BucketDetails.tags.key</p> </li> <li>
+     * <p>resource.s3BucketDetails.tags.value</p> </li> <li>
+     * <p>resource.s3BucketDetails.type</p> </li> <li> <p>service.archived</p> <p>When
+     * this attribute is set to TRUE, only archived findings are listed. When it's set
+     * to FALSE, only unarchived findings are listed. When this attribute is not set,
+     * all existing findings are listed.</p> </li> <li> <p>service.resourceRole</p>
+     * </li> <li> <p>severity</p> </li> <li> <p>type</p> </li> <li> <p>updatedAt</p>
+     * <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or
+     * YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p>
+     * </li> </ul>
      */
     inline const FindingCriteria& GetFindingCriteria() const{ return m_findingCriteria; }
 
@@ -355,13 +360,18 @@ namespace Model
      * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
      * </li> <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p>
      * </li> <li> <p>service.additionalInfo.threatListName</p> </li> <li>
-     * <p>service.archived</p> <p>When this attribute is set to TRUE, only archived
-     * findings are listed. When it's set to FALSE, only unarchived findings are
-     * listed. When this attribute is not set, all existing findings are listed.</p>
-     * </li> <li> <p>service.resourceRole</p> </li> <li> <p>severity</p> </li> <li>
-     * <p>type</p> </li> <li> <p>updatedAt</p> <p>Type: ISO 8601 string format:
-     * YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value
-     * contains milliseconds.</p> </li> </ul>
+     * <p>resource.s3BucketDetails.publicAccess.effectivePermissions</p> </li> <li>
+     * <p>resource.s3BucketDetails.name</p> </li> <li>
+     * <p>resource.s3BucketDetails.tags.key</p> </li> <li>
+     * <p>resource.s3BucketDetails.tags.value</p> </li> <li>
+     * <p>resource.s3BucketDetails.type</p> </li> <li> <p>service.archived</p> <p>When
+     * this attribute is set to TRUE, only archived findings are listed. When it's set
+     * to FALSE, only unarchived findings are listed. When this attribute is not set,
+     * all existing findings are listed.</p> </li> <li> <p>service.resourceRole</p>
+     * </li> <li> <p>severity</p> </li> <li> <p>type</p> </li> <li> <p>updatedAt</p>
+     * <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or
+     * YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p>
+     * </li> </ul>
      */
     inline bool FindingCriteriaHasBeenSet() const { return m_findingCriteriaHasBeenSet; }
 
@@ -415,13 +425,18 @@ namespace Model
      * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
      * </li> <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p>
      * </li> <li> <p>service.additionalInfo.threatListName</p> </li> <li>
-     * <p>service.archived</p> <p>When this attribute is set to TRUE, only archived
-     * findings are listed. When it's set to FALSE, only unarchived findings are
-     * listed. When this attribute is not set, all existing findings are listed.</p>
-     * </li> <li> <p>service.resourceRole</p> </li> <li> <p>severity</p> </li> <li>
-     * <p>type</p> </li> <li> <p>updatedAt</p> <p>Type: ISO 8601 string format:
-     * YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value
-     * contains milliseconds.</p> </li> </ul>
+     * <p>resource.s3BucketDetails.publicAccess.effectivePermissions</p> </li> <li>
+     * <p>resource.s3BucketDetails.name</p> </li> <li>
+     * <p>resource.s3BucketDetails.tags.key</p> </li> <li>
+     * <p>resource.s3BucketDetails.tags.value</p> </li> <li>
+     * <p>resource.s3BucketDetails.type</p> </li> <li> <p>service.archived</p> <p>When
+     * this attribute is set to TRUE, only archived findings are listed. When it's set
+     * to FALSE, only unarchived findings are listed. When this attribute is not set,
+     * all existing findings are listed.</p> </li> <li> <p>service.resourceRole</p>
+     * </li> <li> <p>severity</p> </li> <li> <p>type</p> </li> <li> <p>updatedAt</p>
+     * <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or
+     * YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p>
+     * </li> </ul>
      */
     inline void SetFindingCriteria(const FindingCriteria& value) { m_findingCriteriaHasBeenSet = true; m_findingCriteria = value; }
 
@@ -475,13 +490,18 @@ namespace Model
      * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
      * </li> <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p>
      * </li> <li> <p>service.additionalInfo.threatListName</p> </li> <li>
-     * <p>service.archived</p> <p>When this attribute is set to TRUE, only archived
-     * findings are listed. When it's set to FALSE, only unarchived findings are
-     * listed. When this attribute is not set, all existing findings are listed.</p>
-     * </li> <li> <p>service.resourceRole</p> </li> <li> <p>severity</p> </li> <li>
-     * <p>type</p> </li> <li> <p>updatedAt</p> <p>Type: ISO 8601 string format:
-     * YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value
-     * contains milliseconds.</p> </li> </ul>
+     * <p>resource.s3BucketDetails.publicAccess.effectivePermissions</p> </li> <li>
+     * <p>resource.s3BucketDetails.name</p> </li> <li>
+     * <p>resource.s3BucketDetails.tags.key</p> </li> <li>
+     * <p>resource.s3BucketDetails.tags.value</p> </li> <li>
+     * <p>resource.s3BucketDetails.type</p> </li> <li> <p>service.archived</p> <p>When
+     * this attribute is set to TRUE, only archived findings are listed. When it's set
+     * to FALSE, only unarchived findings are listed. When this attribute is not set,
+     * all existing findings are listed.</p> </li> <li> <p>service.resourceRole</p>
+     * </li> <li> <p>severity</p> </li> <li> <p>type</p> </li> <li> <p>updatedAt</p>
+     * <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or
+     * YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p>
+     * </li> </ul>
      */
     inline void SetFindingCriteria(FindingCriteria&& value) { m_findingCriteriaHasBeenSet = true; m_findingCriteria = std::move(value); }
 
@@ -535,13 +555,18 @@ namespace Model
      * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
      * </li> <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p>
      * </li> <li> <p>service.additionalInfo.threatListName</p> </li> <li>
-     * <p>service.archived</p> <p>When this attribute is set to TRUE, only archived
-     * findings are listed. When it's set to FALSE, only unarchived findings are
-     * listed. When this attribute is not set, all existing findings are listed.</p>
-     * </li> <li> <p>service.resourceRole</p> </li> <li> <p>severity</p> </li> <li>
-     * <p>type</p> </li> <li> <p>updatedAt</p> <p>Type: ISO 8601 string format:
-     * YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value
-     * contains milliseconds.</p> </li> </ul>
+     * <p>resource.s3BucketDetails.publicAccess.effectivePermissions</p> </li> <li>
+     * <p>resource.s3BucketDetails.name</p> </li> <li>
+     * <p>resource.s3BucketDetails.tags.key</p> </li> <li>
+     * <p>resource.s3BucketDetails.tags.value</p> </li> <li>
+     * <p>resource.s3BucketDetails.type</p> </li> <li> <p>service.archived</p> <p>When
+     * this attribute is set to TRUE, only archived findings are listed. When it's set
+     * to FALSE, only unarchived findings are listed. When this attribute is not set,
+     * all existing findings are listed.</p> </li> <li> <p>service.resourceRole</p>
+     * </li> <li> <p>severity</p> </li> <li> <p>type</p> </li> <li> <p>updatedAt</p>
+     * <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or
+     * YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p>
+     * </li> </ul>
      */
     inline CreateFilterRequest& WithFindingCriteria(const FindingCriteria& value) { SetFindingCriteria(value); return *this;}
 
@@ -595,13 +620,18 @@ namespace Model
      * <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
      * </li> <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p>
      * </li> <li> <p>service.additionalInfo.threatListName</p> </li> <li>
-     * <p>service.archived</p> <p>When this attribute is set to TRUE, only archived
-     * findings are listed. When it's set to FALSE, only unarchived findings are
-     * listed. When this attribute is not set, all existing findings are listed.</p>
-     * </li> <li> <p>service.resourceRole</p> </li> <li> <p>severity</p> </li> <li>
-     * <p>type</p> </li> <li> <p>updatedAt</p> <p>Type: ISO 8601 string format:
-     * YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value
-     * contains milliseconds.</p> </li> </ul>
+     * <p>resource.s3BucketDetails.publicAccess.effectivePermissions</p> </li> <li>
+     * <p>resource.s3BucketDetails.name</p> </li> <li>
+     * <p>resource.s3BucketDetails.tags.key</p> </li> <li>
+     * <p>resource.s3BucketDetails.tags.value</p> </li> <li>
+     * <p>resource.s3BucketDetails.type</p> </li> <li> <p>service.archived</p> <p>When
+     * this attribute is set to TRUE, only archived findings are listed. When it's set
+     * to FALSE, only unarchived findings are listed. When this attribute is not set,
+     * all existing findings are listed.</p> </li> <li> <p>service.resourceRole</p>
+     * </li> <li> <p>severity</p> </li> <li> <p>type</p> </li> <li> <p>updatedAt</p>
+     * <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or
+     * YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p>
+     * </li> </ul>
      */
     inline CreateFilterRequest& WithFindingCriteria(FindingCriteria&& value) { SetFindingCriteria(std::move(value)); return *this;}
 

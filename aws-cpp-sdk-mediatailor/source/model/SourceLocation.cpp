@@ -25,6 +25,7 @@ SourceLocation::SourceLocation() :
     m_defaultSegmentDeliveryConfigurationHasBeenSet(false),
     m_httpConfigurationHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
+    m_segmentDeliveryConfigurationsHasBeenSet(false),
     m_sourceLocationNameHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -37,6 +38,7 @@ SourceLocation::SourceLocation(JsonView jsonValue) :
     m_defaultSegmentDeliveryConfigurationHasBeenSet(false),
     m_httpConfigurationHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
+    m_segmentDeliveryConfigurationsHasBeenSet(false),
     m_sourceLocationNameHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -85,6 +87,16 @@ SourceLocation& SourceLocation::operator =(JsonView jsonValue)
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
 
     m_lastModifiedTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SegmentDeliveryConfigurations"))
+  {
+    Array<JsonView> segmentDeliveryConfigurationsJsonList = jsonValue.GetArray("SegmentDeliveryConfigurations");
+    for(unsigned segmentDeliveryConfigurationsIndex = 0; segmentDeliveryConfigurationsIndex < segmentDeliveryConfigurationsJsonList.GetLength(); ++segmentDeliveryConfigurationsIndex)
+    {
+      m_segmentDeliveryConfigurations.push_back(segmentDeliveryConfigurationsJsonList[segmentDeliveryConfigurationsIndex].AsObject());
+    }
+    m_segmentDeliveryConfigurationsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SourceLocationName"))
@@ -143,6 +155,17 @@ JsonValue SourceLocation::Jsonize() const
   if(m_lastModifiedTimeHasBeenSet)
   {
    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_segmentDeliveryConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> segmentDeliveryConfigurationsJsonList(m_segmentDeliveryConfigurations.size());
+   for(unsigned segmentDeliveryConfigurationsIndex = 0; segmentDeliveryConfigurationsIndex < segmentDeliveryConfigurationsJsonList.GetLength(); ++segmentDeliveryConfigurationsIndex)
+   {
+     segmentDeliveryConfigurationsJsonList[segmentDeliveryConfigurationsIndex].AsObject(m_segmentDeliveryConfigurations[segmentDeliveryConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("SegmentDeliveryConfigurations", std::move(segmentDeliveryConfigurationsJsonList));
+
   }
 
   if(m_sourceLocationNameHasBeenSet)

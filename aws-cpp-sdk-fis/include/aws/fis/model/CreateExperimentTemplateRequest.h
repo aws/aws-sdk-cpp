@@ -88,50 +88,42 @@ namespace Model
 
 
     /**
-     * <p>A description for the experiment template. Can contain up to 64 letters (A-Z
-     * and a-z).</p>
+     * <p>A description for the experiment template.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A description for the experiment template. Can contain up to 64 letters (A-Z
-     * and a-z).</p>
+     * <p>A description for the experiment template.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A description for the experiment template. Can contain up to 64 letters (A-Z
-     * and a-z).</p>
+     * <p>A description for the experiment template.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A description for the experiment template. Can contain up to 64 letters (A-Z
-     * and a-z).</p>
+     * <p>A description for the experiment template.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A description for the experiment template. Can contain up to 64 letters (A-Z
-     * and a-z).</p>
+     * <p>A description for the experiment template.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A description for the experiment template. Can contain up to 64 letters (A-Z
-     * and a-z).</p>
+     * <p>A description for the experiment template.</p>
      */
     inline CreateExperimentTemplateRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A description for the experiment template. Can contain up to 64 letters (A-Z
-     * and a-z).</p>
+     * <p>A description for the experiment template.</p>
      */
     inline CreateExperimentTemplateRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description for the experiment template. Can contain up to 64 letters (A-Z
-     * and a-z).</p>
+     * <p>A description for the experiment template.</p>
      */
     inline CreateExperimentTemplateRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -300,49 +292,49 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service
+     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service
      * permission to perform service actions on your behalf.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service
+     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service
      * permission to perform service actions on your behalf.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service
+     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service
      * permission to perform service actions on your behalf.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service
+     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service
      * permission to perform service actions on your behalf.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service
+     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service
      * permission to perform service actions on your behalf.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service
+     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service
      * permission to perform service actions on your behalf.</p>
      */
     inline CreateExperimentTemplateRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service
+     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service
      * permission to perform service actions on your behalf.</p>
      */
     inline CreateExperimentTemplateRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service
+     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service
      * permission to perform service actions on your behalf.</p>
      */
     inline CreateExperimentTemplateRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}

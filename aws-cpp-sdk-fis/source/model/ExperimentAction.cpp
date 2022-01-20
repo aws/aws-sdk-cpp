@@ -24,7 +24,9 @@ ExperimentAction::ExperimentAction() :
     m_parametersHasBeenSet(false),
     m_targetsHasBeenSet(false),
     m_startAfterHasBeenSet(false),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ ExperimentAction::ExperimentAction(JsonView jsonValue) :
     m_parametersHasBeenSet(false),
     m_targetsHasBeenSet(false),
     m_startAfterHasBeenSet(false),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -90,6 +94,20 @@ ExperimentAction& ExperimentAction::operator =(JsonView jsonValue)
     m_state = jsonValue.GetObject("state");
 
     m_stateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("startTime"))
+  {
+    m_startTime = jsonValue.GetDouble("startTime");
+
+    m_startTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("endTime"))
+  {
+    m_endTime = jsonValue.GetDouble("endTime");
+
+    m_endTimeHasBeenSet = true;
   }
 
   return *this;
@@ -148,6 +166,16 @@ JsonValue ExperimentAction::Jsonize() const
   {
    payload.WithObject("state", m_state.Jsonize());
 
+  }
+
+  if(m_startTimeHasBeenSet)
+  {
+   payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
+  }
+
+  if(m_endTimeHasBeenSet)
+  {
+   payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
   }
 
   return payload;

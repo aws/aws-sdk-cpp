@@ -16,6 +16,7 @@ CreateSourceLocationRequest::CreateSourceLocationRequest() :
     m_accessConfigurationHasBeenSet(false),
     m_defaultSegmentDeliveryConfigurationHasBeenSet(false),
     m_httpConfigurationHasBeenSet(false),
+    m_segmentDeliveryConfigurationsHasBeenSet(false),
     m_sourceLocationNameHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -40,6 +41,17 @@ Aws::String CreateSourceLocationRequest::SerializePayload() const
   if(m_httpConfigurationHasBeenSet)
   {
    payload.WithObject("HttpConfiguration", m_httpConfiguration.Jsonize());
+
+  }
+
+  if(m_segmentDeliveryConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> segmentDeliveryConfigurationsJsonList(m_segmentDeliveryConfigurations.size());
+   for(unsigned segmentDeliveryConfigurationsIndex = 0; segmentDeliveryConfigurationsIndex < segmentDeliveryConfigurationsJsonList.GetLength(); ++segmentDeliveryConfigurationsIndex)
+   {
+     segmentDeliveryConfigurationsJsonList[segmentDeliveryConfigurationsIndex].AsObject(m_segmentDeliveryConfigurations[segmentDeliveryConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("SegmentDeliveryConfigurations", std::move(segmentDeliveryConfigurationsJsonList));
 
   }
 

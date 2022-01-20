@@ -64,6 +64,15 @@ CreateSourceLocationResult& CreateSourceLocationResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("SegmentDeliveryConfigurations"))
+  {
+    Array<JsonView> segmentDeliveryConfigurationsJsonList = jsonValue.GetArray("SegmentDeliveryConfigurations");
+    for(unsigned segmentDeliveryConfigurationsIndex = 0; segmentDeliveryConfigurationsIndex < segmentDeliveryConfigurationsJsonList.GetLength(); ++segmentDeliveryConfigurationsIndex)
+    {
+      m_segmentDeliveryConfigurations.push_back(segmentDeliveryConfigurationsJsonList[segmentDeliveryConfigurationsIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("SourceLocationName"))
   {
     m_sourceLocationName = jsonValue.GetString("SourceLocationName");

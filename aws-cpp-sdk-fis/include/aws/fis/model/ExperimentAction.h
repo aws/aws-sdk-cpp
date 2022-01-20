@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/fis/model/ExperimentActionState.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -330,6 +331,68 @@ namespace Model
      */
     inline ExperimentAction& WithState(ExperimentActionState&& value) { SetState(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The time that the action started.</p>
+     */
+    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+
+    /**
+     * <p>The time that the action started.</p>
+     */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>The time that the action started.</p>
+     */
+    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+
+    /**
+     * <p>The time that the action started.</p>
+     */
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
+
+    /**
+     * <p>The time that the action started.</p>
+     */
+    inline ExperimentAction& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
+
+    /**
+     * <p>The time that the action started.</p>
+     */
+    inline ExperimentAction& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The time that the action ended.</p>
+     */
+    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+
+    /**
+     * <p>The time that the action ended.</p>
+     */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+
+    /**
+     * <p>The time that the action ended.</p>
+     */
+    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+
+    /**
+     * <p>The time that the action ended.</p>
+     */
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
+
+    /**
+     * <p>The time that the action ended.</p>
+     */
+    inline ExperimentAction& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
+
+    /**
+     * <p>The time that the action ended.</p>
+     */
+    inline ExperimentAction& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_actionId;
@@ -349,6 +412,12 @@ namespace Model
 
     ExperimentActionState m_state;
     bool m_stateHasBeenSet;
+
+    Aws::Utils::DateTime m_startTime;
+    bool m_startTimeHasBeenSet;
+
+    Aws::Utils::DateTime m_endTime;
+    bool m_endTimeHasBeenSet;
   };
 
 } // namespace Model

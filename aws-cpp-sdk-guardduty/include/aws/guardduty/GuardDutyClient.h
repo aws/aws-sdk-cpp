@@ -349,20 +349,21 @@ namespace Model
 
   /**
    * <p>Amazon GuardDuty is a continuous security monitoring service that analyzes
-   * and processes the following data sources: VPC Flow Logs, AWS CloudTrail event
-   * logs, and DNS logs. It uses threat intelligence feeds (such as lists of
-   * malicious IPs and domains) and machine learning to identify unexpected,
-   * potentially unauthorized, and malicious activity within your AWS environment.
-   * This can include issues like escalations of privileges, uses of exposed
-   * credentials, or communication with malicious IPs, URLs, or domains. For example,
-   * GuardDuty can detect compromised EC2 instances that serve malware or mine
-   * bitcoin. </p> <p>GuardDuty also monitors AWS account access behavior for signs
-   * of compromise. Some examples of this are unauthorized infrastructure deployments
-   * such as EC2 instances deployed in a Region that has never been used, or unusual
-   * API calls like a password policy change to reduce password strength. </p>
-   * <p>GuardDuty informs you of the status of your AWS environment by producing
-   * security findings that you can view in the GuardDuty console or through Amazon
-   * CloudWatch events. For more information, see the <i> <a
+   * and processes the following data sources: VPC Flow Logs, Amazon Web Services
+   * CloudTrail event logs, and DNS logs. It uses threat intelligence feeds (such as
+   * lists of malicious IPs and domains) and machine learning to identify unexpected,
+   * potentially unauthorized, and malicious activity within your Amazon Web Services
+   * environment. This can include issues like escalations of privileges, uses of
+   * exposed credentials, or communication with malicious IPs, URLs, or domains. For
+   * example, GuardDuty can detect compromised EC2 instances that serve malware or
+   * mine bitcoin. </p> <p>GuardDuty also monitors Amazon Web Services account access
+   * behavior for signs of compromise. Some examples of this are unauthorized
+   * infrastructure deployments such as EC2 instances deployed in a Region that has
+   * never been used, or unusual API calls like a password policy change to reduce
+   * password strength. </p> <p>GuardDuty informs you of the status of your Amazon
+   * Web Services environment by producing security findings that you can view in the
+   * GuardDuty console or through Amazon CloudWatch events. For more information, see
+   * the <i> <a
    * href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">Amazon
    * GuardDuty User Guide</a> </i>. </p>
    */
@@ -523,9 +524,10 @@ namespace Model
         /**
          * <p>Creates a new IPSet, which is called a trusted IP list in the console user
          * interface. An IPSet is a list of IP addresses that are trusted for secure
-         * communication with AWS infrastructure and applications. GuardDuty doesn't
-         * generate findings for IP addresses that are included in IPSets. Only users from
-         * the administrator account can use this operation.</p><p><h3>See Also:</h3>   <a
+         * communication with Amazon Web Services infrastructure and applications.
+         * GuardDuty doesn't generate findings for IP addresses that are included in
+         * IPSets. Only users from the administrator account can use this
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateIPSet">AWS
          * API Reference</a></p>
          */
@@ -534,9 +536,10 @@ namespace Model
         /**
          * <p>Creates a new IPSet, which is called a trusted IP list in the console user
          * interface. An IPSet is a list of IP addresses that are trusted for secure
-         * communication with AWS infrastructure and applications. GuardDuty doesn't
-         * generate findings for IP addresses that are included in IPSets. Only users from
-         * the administrator account can use this operation.</p><p><h3>See Also:</h3>   <a
+         * communication with Amazon Web Services infrastructure and applications.
+         * GuardDuty doesn't generate findings for IP addresses that are included in
+         * IPSets. Only users from the administrator account can use this
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateIPSet">AWS
          * API Reference</a></p>
          *
@@ -547,9 +550,10 @@ namespace Model
         /**
          * <p>Creates a new IPSet, which is called a trusted IP list in the console user
          * interface. An IPSet is a list of IP addresses that are trusted for secure
-         * communication with AWS infrastructure and applications. GuardDuty doesn't
-         * generate findings for IP addresses that are included in IPSets. Only users from
-         * the administrator account can use this operation.</p><p><h3>See Also:</h3>   <a
+         * communication with Amazon Web Services infrastructure and applications.
+         * GuardDuty doesn't generate findings for IP addresses that are included in
+         * IPSets. Only users from the administrator account can use this
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateIPSet">AWS
          * API Reference</a></p>
          *
@@ -558,15 +562,15 @@ namespace Model
         virtual void CreateIPSetAsync(const Model::CreateIPSetRequest& request, const CreateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates member accounts of the current AWS account by specifying a list of
-         * AWS account IDs. This step is a prerequisite for managing the associated member
-         * accounts either by invitation or through an organization.</p> <p>When using
-         * <code>Create Members</code> as an organizations delegated administrator this
-         * action will enable GuardDuty in the added member accounts, with the exception of
-         * the organization delegated administrator account, which must enable GuardDuty
-         * prior to being added as a member.</p> <p>If you are adding accounts by
-         * invitation use this action after GuardDuty has been enabled in potential member
-         * accounts and before using <a
+         * <p>Creates member accounts of the current Amazon Web Services account by
+         * specifying a list of Amazon Web Services account IDs. This step is a
+         * prerequisite for managing the associated member accounts either by invitation or
+         * through an organization.</p> <p>When using <code>Create Members</code> as an
+         * organizations delegated administrator this action will enable GuardDuty in the
+         * added member accounts, with the exception of the organization delegated
+         * administrator account, which must enable GuardDuty prior to being added as a
+         * member.</p> <p>If you are adding accounts by invitation use this action after
+         * GuardDuty has been enabled in potential member accounts and before using <a
          * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">
          * <code>Invite Members</code> </a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateMembers">AWS
@@ -575,15 +579,15 @@ namespace Model
         virtual Model::CreateMembersOutcome CreateMembers(const Model::CreateMembersRequest& request) const;
 
         /**
-         * <p>Creates member accounts of the current AWS account by specifying a list of
-         * AWS account IDs. This step is a prerequisite for managing the associated member
-         * accounts either by invitation or through an organization.</p> <p>When using
-         * <code>Create Members</code> as an organizations delegated administrator this
-         * action will enable GuardDuty in the added member accounts, with the exception of
-         * the organization delegated administrator account, which must enable GuardDuty
-         * prior to being added as a member.</p> <p>If you are adding accounts by
-         * invitation use this action after GuardDuty has been enabled in potential member
-         * accounts and before using <a
+         * <p>Creates member accounts of the current Amazon Web Services account by
+         * specifying a list of Amazon Web Services account IDs. This step is a
+         * prerequisite for managing the associated member accounts either by invitation or
+         * through an organization.</p> <p>When using <code>Create Members</code> as an
+         * organizations delegated administrator this action will enable GuardDuty in the
+         * added member accounts, with the exception of the organization delegated
+         * administrator account, which must enable GuardDuty prior to being added as a
+         * member.</p> <p>If you are adding accounts by invitation use this action after
+         * GuardDuty has been enabled in potential member accounts and before using <a
          * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">
          * <code>Invite Members</code> </a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateMembers">AWS
@@ -594,15 +598,15 @@ namespace Model
         virtual Model::CreateMembersOutcomeCallable CreateMembersCallable(const Model::CreateMembersRequest& request) const;
 
         /**
-         * <p>Creates member accounts of the current AWS account by specifying a list of
-         * AWS account IDs. This step is a prerequisite for managing the associated member
-         * accounts either by invitation or through an organization.</p> <p>When using
-         * <code>Create Members</code> as an organizations delegated administrator this
-         * action will enable GuardDuty in the added member accounts, with the exception of
-         * the organization delegated administrator account, which must enable GuardDuty
-         * prior to being added as a member.</p> <p>If you are adding accounts by
-         * invitation use this action after GuardDuty has been enabled in potential member
-         * accounts and before using <a
+         * <p>Creates member accounts of the current Amazon Web Services account by
+         * specifying a list of Amazon Web Services account IDs. This step is a
+         * prerequisite for managing the associated member accounts either by invitation or
+         * through an organization.</p> <p>When using <code>Create Members</code> as an
+         * organizations delegated administrator this action will enable GuardDuty in the
+         * added member accounts, with the exception of the organization delegated
+         * administrator account, which must enable GuardDuty prior to being added as a
+         * member.</p> <p>If you are adding accounts by invitation use this action after
+         * GuardDuty has been enabled in potential member accounts and before using <a
          * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">
          * <code>Invite Members</code> </a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateMembers">AWS
@@ -706,16 +710,16 @@ namespace Model
         virtual void CreateThreatIntelSetAsync(const Model::CreateThreatIntelSetRequest& request, const CreateThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Declines invitations sent to the current member account by AWS accounts
-         * specified by their account IDs.</p><p><h3>See Also:</h3>   <a
+         * <p>Declines invitations sent to the current member account by Amazon Web
+         * Services accounts specified by their account IDs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeclineInvitations">AWS
          * API Reference</a></p>
          */
         virtual Model::DeclineInvitationsOutcome DeclineInvitations(const Model::DeclineInvitationsRequest& request) const;
 
         /**
-         * <p>Declines invitations sent to the current member account by AWS accounts
-         * specified by their account IDs.</p><p><h3>See Also:</h3>   <a
+         * <p>Declines invitations sent to the current member account by Amazon Web
+         * Services accounts specified by their account IDs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeclineInvitations">AWS
          * API Reference</a></p>
          *
@@ -724,8 +728,8 @@ namespace Model
         virtual Model::DeclineInvitationsOutcomeCallable DeclineInvitationsCallable(const Model::DeclineInvitationsRequest& request) const;
 
         /**
-         * <p>Declines invitations sent to the current member account by AWS accounts
-         * specified by their account IDs.</p><p><h3>See Also:</h3>   <a
+         * <p>Declines invitations sent to the current member account by Amazon Web
+         * Services accounts specified by their account IDs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeclineInvitations">AWS
          * API Reference</a></p>
          *
@@ -818,16 +822,16 @@ namespace Model
         virtual void DeleteIPSetAsync(const Model::DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes invitations sent to the current member account by AWS accounts
-         * specified by their account IDs.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes invitations sent to the current member account by Amazon Web Services
+         * accounts specified by their account IDs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteInvitations">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteInvitationsOutcome DeleteInvitations(const Model::DeleteInvitationsRequest& request) const;
 
         /**
-         * <p>Deletes invitations sent to the current member account by AWS accounts
-         * specified by their account IDs.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes invitations sent to the current member account by Amazon Web Services
+         * accounts specified by their account IDs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteInvitations">AWS
          * API Reference</a></p>
          *
@@ -836,8 +840,8 @@ namespace Model
         virtual Model::DeleteInvitationsOutcomeCallable DeleteInvitationsCallable(const Model::DeleteInvitationsRequest& request) const;
 
         /**
-         * <p>Deletes invitations sent to the current member account by AWS accounts
-         * specified by their account IDs.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes invitations sent to the current member account by Amazon Web Services
+         * accounts specified by their account IDs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteInvitations">AWS
          * API Reference</a></p>
          *
@@ -986,16 +990,16 @@ namespace Model
         virtual void DescribePublishingDestinationAsync(const Model::DescribePublishingDestinationRequest& request, const DescribePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disables an AWS account within the Organization as the GuardDuty delegated
-         * administrator.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables an Amazon Web Services account within the Organization as the
+         * GuardDuty delegated administrator.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          */
         virtual Model::DisableOrganizationAdminAccountOutcome DisableOrganizationAdminAccount(const Model::DisableOrganizationAdminAccountRequest& request) const;
 
         /**
-         * <p>Disables an AWS account within the Organization as the GuardDuty delegated
-         * administrator.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables an Amazon Web Services account within the Organization as the
+         * GuardDuty delegated administrator.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          *
@@ -1004,8 +1008,8 @@ namespace Model
         virtual Model::DisableOrganizationAdminAccountOutcomeCallable DisableOrganizationAdminAccountCallable(const Model::DisableOrganizationAdminAccountRequest& request) const;
 
         /**
-         * <p>Disables an AWS account within the Organization as the GuardDuty delegated
-         * administrator.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables an Amazon Web Services account within the Organization as the
+         * GuardDuty delegated administrator.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          *
@@ -1073,16 +1077,16 @@ namespace Model
         virtual void DisassociateMembersAsync(const Model::DisassociateMembersRequest& request, const DisassociateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Enables an AWS account within the organization as the GuardDuty delegated
-         * administrator.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables an Amazon Web Services account within the organization as the
+         * GuardDuty delegated administrator.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/EnableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          */
         virtual Model::EnableOrganizationAdminAccountOutcome EnableOrganizationAdminAccount(const Model::EnableOrganizationAdminAccountRequest& request) const;
 
         /**
-         * <p>Enables an AWS account within the organization as the GuardDuty delegated
-         * administrator.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables an Amazon Web Services account within the organization as the
+         * GuardDuty delegated administrator.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/EnableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          *
@@ -1091,8 +1095,8 @@ namespace Model
         virtual Model::EnableOrganizationAdminAccountOutcomeCallable EnableOrganizationAdminAccountCallable(const Model::EnableOrganizationAdminAccountRequest& request) const;
 
         /**
-         * <p>Enables an AWS account within the organization as the GuardDuty delegated
-         * administrator.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables an Amazon Web Services account within the organization as the
+         * GuardDuty delegated administrator.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/EnableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          *
@@ -1427,20 +1431,22 @@ namespace Model
         virtual void GetUsageStatisticsAsync(const Model::GetUsageStatisticsRequest& request, const GetUsageStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Invites other AWS accounts (created as members of the current AWS account by
-         * CreateMembers) to enable GuardDuty, and allow the current AWS account to view
-         * and manage these accounts' findings on their behalf as the GuardDuty
-         * administrator account.</p><p><h3>See Also:</h3>   <a
+         * <p>Invites other Amazon Web Services accounts (created as members of the current
+         * Amazon Web Services account by CreateMembers) to enable GuardDuty, and allow the
+         * current Amazon Web Services account to view and manage these accounts' findings
+         * on their behalf as the GuardDuty administrator account.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/InviteMembers">AWS
          * API Reference</a></p>
          */
         virtual Model::InviteMembersOutcome InviteMembers(const Model::InviteMembersRequest& request) const;
 
         /**
-         * <p>Invites other AWS accounts (created as members of the current AWS account by
-         * CreateMembers) to enable GuardDuty, and allow the current AWS account to view
-         * and manage these accounts' findings on their behalf as the GuardDuty
-         * administrator account.</p><p><h3>See Also:</h3>   <a
+         * <p>Invites other Amazon Web Services accounts (created as members of the current
+         * Amazon Web Services account by CreateMembers) to enable GuardDuty, and allow the
+         * current Amazon Web Services account to view and manage these accounts' findings
+         * on their behalf as the GuardDuty administrator account.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/InviteMembers">AWS
          * API Reference</a></p>
          *
@@ -1449,10 +1455,11 @@ namespace Model
         virtual Model::InviteMembersOutcomeCallable InviteMembersCallable(const Model::InviteMembersRequest& request) const;
 
         /**
-         * <p>Invites other AWS accounts (created as members of the current AWS account by
-         * CreateMembers) to enable GuardDuty, and allow the current AWS account to view
-         * and manage these accounts' findings on their behalf as the GuardDuty
-         * administrator account.</p><p><h3>See Also:</h3>   <a
+         * <p>Invites other Amazon Web Services accounts (created as members of the current
+         * Amazon Web Services account by CreateMembers) to enable GuardDuty, and allow the
+         * current Amazon Web Services account to view and manage these accounts' findings
+         * on their behalf as the GuardDuty administrator account.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/InviteMembers">AWS
          * API Reference</a></p>
          *
@@ -1576,16 +1583,16 @@ namespace Model
         virtual void ListIPSetsAsync(const Model::ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all GuardDuty membership invitations that were sent to the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all GuardDuty membership invitations that were sent to the current
+         * Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListInvitations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListInvitationsOutcome ListInvitations(const Model::ListInvitationsRequest& request) const;
 
         /**
-         * <p>Lists all GuardDuty membership invitations that were sent to the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all GuardDuty membership invitations that were sent to the current
+         * Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListInvitations">AWS
          * API Reference</a></p>
          *
@@ -1594,8 +1601,8 @@ namespace Model
         virtual Model::ListInvitationsOutcomeCallable ListInvitationsCallable(const Model::ListInvitationsRequest& request) const;
 
         /**
-         * <p>Lists all GuardDuty membership invitations that were sent to the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all GuardDuty membership invitations that were sent to the current
+         * Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListInvitations">AWS
          * API Reference</a></p>
          *
@@ -1661,7 +1668,7 @@ namespace Model
 
         /**
          * <p>Returns a list of publishing destinations associated with the specified
-         * <code>dectectorId</code>.</p><p><h3>See Also:</h3>   <a
+         * <code>detectorId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListPublishingDestinations">AWS
          * API Reference</a></p>
          */
@@ -1669,7 +1676,7 @@ namespace Model
 
         /**
          * <p>Returns a list of publishing destinations associated with the specified
-         * <code>dectectorId</code>.</p><p><h3>See Also:</h3>   <a
+         * <code>detectorId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListPublishingDestinations">AWS
          * API Reference</a></p>
          *
@@ -1679,7 +1686,7 @@ namespace Model
 
         /**
          * <p>Returns a list of publishing destinations associated with the specified
-         * <code>dectectorId</code>.</p><p><h3>See Also:</h3>   <a
+         * <code>detectorId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListPublishingDestinations">AWS
          * API Reference</a></p>
          *

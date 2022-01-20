@@ -26,7 +26,11 @@ namespace Model
 {
 
   /**
-   * <p>Specifies an action for an experiment template.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies an action for an experiment template.</p> <p>For more information,
+   * see <a
+   * href="https://docs.aws.amazon.com/fis/latest/userguide/actions.html">Actions</a>
+   * in the <i>Fault Injection Simulator User Guide</i>.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/CreateExperimentTemplateActionInput">AWS
    * API Reference</a></p>
    */
@@ -40,42 +44,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the action.</p>
+     * <p>The ID of the action. The format of the action ID is:
+     * aws:<i>service-name</i>:<i>action-type</i>.</p>
      */
     inline const Aws::String& GetActionId() const{ return m_actionId; }
 
     /**
-     * <p>The ID of the action.</p>
+     * <p>The ID of the action. The format of the action ID is:
+     * aws:<i>service-name</i>:<i>action-type</i>.</p>
      */
     inline bool ActionIdHasBeenSet() const { return m_actionIdHasBeenSet; }
 
     /**
-     * <p>The ID of the action.</p>
+     * <p>The ID of the action. The format of the action ID is:
+     * aws:<i>service-name</i>:<i>action-type</i>.</p>
      */
     inline void SetActionId(const Aws::String& value) { m_actionIdHasBeenSet = true; m_actionId = value; }
 
     /**
-     * <p>The ID of the action.</p>
+     * <p>The ID of the action. The format of the action ID is:
+     * aws:<i>service-name</i>:<i>action-type</i>.</p>
      */
     inline void SetActionId(Aws::String&& value) { m_actionIdHasBeenSet = true; m_actionId = std::move(value); }
 
     /**
-     * <p>The ID of the action.</p>
+     * <p>The ID of the action. The format of the action ID is:
+     * aws:<i>service-name</i>:<i>action-type</i>.</p>
      */
     inline void SetActionId(const char* value) { m_actionIdHasBeenSet = true; m_actionId.assign(value); }
 
     /**
-     * <p>The ID of the action.</p>
+     * <p>The ID of the action. The format of the action ID is:
+     * aws:<i>service-name</i>:<i>action-type</i>.</p>
      */
     inline CreateExperimentTemplateActionInput& WithActionId(const Aws::String& value) { SetActionId(value); return *this;}
 
     /**
-     * <p>The ID of the action.</p>
+     * <p>The ID of the action. The format of the action ID is:
+     * aws:<i>service-name</i>:<i>action-type</i>.</p>
      */
     inline CreateExperimentTemplateActionInput& WithActionId(Aws::String&& value) { SetActionId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the action.</p>
+     * <p>The ID of the action. The format of the action ID is:
+     * aws:<i>service-name</i>:<i>action-type</i>.</p>
      */
     inline CreateExperimentTemplateActionInput& WithActionId(const char* value) { SetActionId(value); return *this;}
 

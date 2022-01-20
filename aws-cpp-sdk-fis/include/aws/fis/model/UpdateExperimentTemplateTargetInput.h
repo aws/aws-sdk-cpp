@@ -43,50 +43,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS resource type. The resource type must be supported for the specified
-     * action.</p>
+     * <p>The Amazon Web Services resource type. The resource type must be supported
+     * for the specified action.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The AWS resource type. The resource type must be supported for the specified
-     * action.</p>
+     * <p>The Amazon Web Services resource type. The resource type must be supported
+     * for the specified action.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The AWS resource type. The resource type must be supported for the specified
-     * action.</p>
+     * <p>The Amazon Web Services resource type. The resource type must be supported
+     * for the specified action.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The AWS resource type. The resource type must be supported for the specified
-     * action.</p>
+     * <p>The Amazon Web Services resource type. The resource type must be supported
+     * for the specified action.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The AWS resource type. The resource type must be supported for the specified
-     * action.</p>
+     * <p>The Amazon Web Services resource type. The resource type must be supported
+     * for the specified action.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>The AWS resource type. The resource type must be supported for the specified
-     * action.</p>
+     * <p>The Amazon Web Services resource type. The resource type must be supported
+     * for the specified action.</p>
      */
     inline UpdateExperimentTemplateTargetInput& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The AWS resource type. The resource type must be supported for the specified
-     * action.</p>
+     * <p>The Amazon Web Services resource type. The resource type must be supported
+     * for the specified action.</p>
      */
     inline UpdateExperimentTemplateTargetInput& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS resource type. The resource type must be supported for the specified
-     * action.</p>
+     * <p>The Amazon Web Services resource type. The resource type must be supported
+     * for the specified action.</p>
      */
     inline UpdateExperimentTemplateTargetInput& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 

@@ -28,8 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the AWS resource associated with the activity that
-   * prompted GuardDuty to generate a finding.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about the Amazon Web Services resource associated with
+   * the activity that prompted GuardDuty to generate a finding.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Resource">AWS
    * API Reference</a></p>
    */
@@ -158,42 +159,42 @@ namespace Model
 
 
     /**
-     * <p>The type of AWS resource.</p>
+     * <p>The type of Amazon Web Services resource.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of AWS resource.</p>
+     * <p>The type of Amazon Web Services resource.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of AWS resource.</p>
+     * <p>The type of Amazon Web Services resource.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of AWS resource.</p>
+     * <p>The type of Amazon Web Services resource.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of AWS resource.</p>
+     * <p>The type of Amazon Web Services resource.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>The type of AWS resource.</p>
+     * <p>The type of Amazon Web Services resource.</p>
      */
     inline Resource& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of AWS resource.</p>
+     * <p>The type of Amazon Web Services resource.</p>
      */
     inline Resource& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of AWS resource.</p>
+     * <p>The type of Amazon Web Services resource.</p>
      */
     inline Resource& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 

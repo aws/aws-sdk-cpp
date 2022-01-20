@@ -658,8 +658,8 @@ namespace Model
    * make per second. For more information, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
    * Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-   * <p>You can connect programmatically to an AWS service by using an endpoint. For
-   * a list of Amazon Connect endpoints, see <a
+   * <p>You can connect programmatically to an Amazon Web Services service by using
+   * an endpoint. For a list of Amazon Connect endpoints, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
    * Connect Endpoints</a>.</p>  <p>Working with contact flows? Check out the
    * <a
@@ -1127,7 +1127,7 @@ namespace Model
         virtual void CreateInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an AWS resource association with an Amazon Connect
+         * <p>Creates an Amazon Web Services resource association with an Amazon Connect
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateIntegrationAssociation">AWS
          * API Reference</a></p>
@@ -1135,7 +1135,7 @@ namespace Model
         virtual Model::CreateIntegrationAssociationOutcome CreateIntegrationAssociation(const Model::CreateIntegrationAssociationRequest& request) const;
 
         /**
-         * <p>Creates an AWS resource association with an Amazon Connect
+         * <p>Creates an Amazon Web Services resource association with an Amazon Connect
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateIntegrationAssociation">AWS
          * API Reference</a></p>
@@ -1145,7 +1145,7 @@ namespace Model
         virtual Model::CreateIntegrationAssociationOutcomeCallable CreateIntegrationAssociationCallable(const Model::CreateIntegrationAssociationRequest& request) const;
 
         /**
-         * <p>Creates an AWS resource association with an Amazon Connect
+         * <p>Creates an Amazon Web Services resource association with an Amazon Connect
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateIntegrationAssociation">AWS
          * API Reference</a></p>
@@ -1484,18 +1484,18 @@ namespace Model
         virtual void DeleteInstanceAsync(const Model::DeleteInstanceRequest& request, const DeleteInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an AWS resource association from an Amazon Connect instance. The
-         * association must not have any use cases associated with it.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes an Amazon Web Services resource association from an Amazon Connect
+         * instance. The association must not have any use cases associated with
+         * it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteIntegrationAssociation">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteIntegrationAssociationOutcome DeleteIntegrationAssociation(const Model::DeleteIntegrationAssociationRequest& request) const;
 
         /**
-         * <p>Deletes an AWS resource association from an Amazon Connect instance. The
-         * association must not have any use cases associated with it.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes an Amazon Web Services resource association from an Amazon Connect
+         * instance. The association must not have any use cases associated with
+         * it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteIntegrationAssociation">AWS
          * API Reference</a></p>
          *
@@ -1504,9 +1504,9 @@ namespace Model
         virtual Model::DeleteIntegrationAssociationOutcomeCallable DeleteIntegrationAssociationCallable(const Model::DeleteIntegrationAssociationRequest& request) const;
 
         /**
-         * <p>Deletes an AWS resource association from an Amazon Connect instance. The
-         * association must not have any use cases associated with it.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes an Amazon Web Services resource association from an Amazon Connect
+         * instance. The association must not have any use cases associated with
+         * it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteIntegrationAssociation">AWS
          * API Reference</a></p>
          *
@@ -2829,16 +2829,18 @@ namespace Model
         virtual void ListInstancesAsync(const Model::ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides summary information about the AWS resource associations for the
-         * specified Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides summary information about the Amazon Web Services resource
+         * associations for the specified Amazon Connect instance.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListIntegrationAssociations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListIntegrationAssociationsOutcome ListIntegrationAssociations(const Model::ListIntegrationAssociationsRequest& request) const;
 
         /**
-         * <p>Provides summary information about the AWS resource associations for the
-         * specified Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides summary information about the Amazon Web Services resource
+         * associations for the specified Amazon Connect instance.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListIntegrationAssociations">AWS
          * API Reference</a></p>
          *
@@ -2847,8 +2849,9 @@ namespace Model
         virtual Model::ListIntegrationAssociationsOutcomeCallable ListIntegrationAssociationsCallable(const Model::ListIntegrationAssociationsRequest& request) const;
 
         /**
-         * <p>Provides summary information about the AWS resource associations for the
-         * specified Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides summary information about the Amazon Web Services resource
+         * associations for the specified Amazon Connect instance.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListIntegrationAssociations">AWS
          * API Reference</a></p>
          *

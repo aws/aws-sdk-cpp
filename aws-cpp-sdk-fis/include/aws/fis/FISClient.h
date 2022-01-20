@@ -128,10 +128,11 @@ namespace Model
     typedef std::function<void(const FISClient*, const Model::UpdateExperimentTemplateRequest&, const Model::UpdateExperimentTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateExperimentTemplateResponseReceivedHandler;
 
   /**
-   * <p>AWS Fault Injection Simulator is a managed service that enables you to
-   * perform fault injection experiments on your AWS workloads. For more information,
-   * see the <a href="https://docs.aws.amazon.com/fis/latest/userguide/">AWS Fault
-   * Injection Simulator User Guide</a>.</p>
+   * <p>Fault Injection Simulator is a managed service that enables you to perform
+   * fault injection experiments on your Amazon Web Services workloads. For more
+   * information, see the <a
+   * href="https://docs.aws.amazon.com/fis/latest/userguide/">Fault Injection
+   * Simulator User Guide</a>.</p>
    */
   class AWS_FIS_API FISClient : public Aws::Client::AWSJsonClient
   {
@@ -161,36 +162,38 @@ namespace Model
 
 
         /**
-         * <p>Creates an experiment template. </p> <p>To create a template, specify the
-         * following information: </p> <ul> <li> <p> <b>Targets</b>: A target can be a
-         * specific resource in your AWS environment, or one or more resources that match
-         * criteria that you specify, for example, resources that have specific tags.</p>
-         * </li> <li> <p> <b>Actions</b>: The actions to carry out on the target. You can
-         * specify multiple actions, the duration of each action, and when to start each
-         * action during an experiment.</p> </li> <li> <p> <b>Stop conditions</b>: If a
-         * stop condition is triggered while an experiment is running, the experiment is
-         * automatically stopped. You can define a stop condition as a CloudWatch
-         * alarm.</p> </li> </ul> <p>For more information, see the <a
-         * href="https://docs.aws.amazon.com/fis/latest/userguide/">AWS Fault Injection
-         * Simulator User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an experiment template. </p> <p>An experiment template includes the
+         * following components:</p> <ul> <li> <p> <b>Targets</b>: A target can be a
+         * specific resource in your Amazon Web Services environment, or one or more
+         * resources that match criteria that you specify, for example, resources that have
+         * specific tags.</p> </li> <li> <p> <b>Actions</b>: The actions to carry out on
+         * the target. You can specify multiple actions, the duration of each action, and
+         * when to start each action during an experiment.</p> </li> <li> <p> <b>Stop
+         * conditions</b>: If a stop condition is triggered while an experiment is running,
+         * the experiment is automatically stopped. You can define a stop condition as a
+         * CloudWatch alarm.</p> </li> </ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">Experiment
+         * templates</a> in the <i>Fault Injection Simulator User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/CreateExperimentTemplate">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateExperimentTemplateOutcome CreateExperimentTemplate(const Model::CreateExperimentTemplateRequest& request) const;
 
         /**
-         * <p>Creates an experiment template. </p> <p>To create a template, specify the
-         * following information: </p> <ul> <li> <p> <b>Targets</b>: A target can be a
-         * specific resource in your AWS environment, or one or more resources that match
-         * criteria that you specify, for example, resources that have specific tags.</p>
-         * </li> <li> <p> <b>Actions</b>: The actions to carry out on the target. You can
-         * specify multiple actions, the duration of each action, and when to start each
-         * action during an experiment.</p> </li> <li> <p> <b>Stop conditions</b>: If a
-         * stop condition is triggered while an experiment is running, the experiment is
-         * automatically stopped. You can define a stop condition as a CloudWatch
-         * alarm.</p> </li> </ul> <p>For more information, see the <a
-         * href="https://docs.aws.amazon.com/fis/latest/userguide/">AWS Fault Injection
-         * Simulator User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an experiment template. </p> <p>An experiment template includes the
+         * following components:</p> <ul> <li> <p> <b>Targets</b>: A target can be a
+         * specific resource in your Amazon Web Services environment, or one or more
+         * resources that match criteria that you specify, for example, resources that have
+         * specific tags.</p> </li> <li> <p> <b>Actions</b>: The actions to carry out on
+         * the target. You can specify multiple actions, the duration of each action, and
+         * when to start each action during an experiment.</p> </li> <li> <p> <b>Stop
+         * conditions</b>: If a stop condition is triggered while an experiment is running,
+         * the experiment is automatically stopped. You can define a stop condition as a
+         * CloudWatch alarm.</p> </li> </ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">Experiment
+         * templates</a> in the <i>Fault Injection Simulator User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/CreateExperimentTemplate">AWS
          * API Reference</a></p>
          *
@@ -199,18 +202,19 @@ namespace Model
         virtual Model::CreateExperimentTemplateOutcomeCallable CreateExperimentTemplateCallable(const Model::CreateExperimentTemplateRequest& request) const;
 
         /**
-         * <p>Creates an experiment template. </p> <p>To create a template, specify the
-         * following information: </p> <ul> <li> <p> <b>Targets</b>: A target can be a
-         * specific resource in your AWS environment, or one or more resources that match
-         * criteria that you specify, for example, resources that have specific tags.</p>
-         * </li> <li> <p> <b>Actions</b>: The actions to carry out on the target. You can
-         * specify multiple actions, the duration of each action, and when to start each
-         * action during an experiment.</p> </li> <li> <p> <b>Stop conditions</b>: If a
-         * stop condition is triggered while an experiment is running, the experiment is
-         * automatically stopped. You can define a stop condition as a CloudWatch
-         * alarm.</p> </li> </ul> <p>For more information, see the <a
-         * href="https://docs.aws.amazon.com/fis/latest/userguide/">AWS Fault Injection
-         * Simulator User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an experiment template. </p> <p>An experiment template includes the
+         * following components:</p> <ul> <li> <p> <b>Targets</b>: A target can be a
+         * specific resource in your Amazon Web Services environment, or one or more
+         * resources that match criteria that you specify, for example, resources that have
+         * specific tags.</p> </li> <li> <p> <b>Actions</b>: The actions to carry out on
+         * the target. You can specify multiple actions, the duration of each action, and
+         * when to start each action during an experiment.</p> </li> <li> <p> <b>Stop
+         * conditions</b>: If a stop condition is triggered while an experiment is running,
+         * the experiment is automatically stopped. You can define a stop condition as a
+         * CloudWatch alarm.</p> </li> </ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">Experiment
+         * templates</a> in the <i>Fault Injection Simulator User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/CreateExperimentTemplate">AWS
          * API Reference</a></p>
          *
@@ -244,14 +248,14 @@ namespace Model
         virtual void DeleteExperimentTemplateAsync(const Model::DeleteExperimentTemplateRequest& request, const DeleteExperimentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about the specified AWS FIS action.</p><p><h3>See Also:</h3>
+         * <p>Gets information about the specified FIS action.</p><p><h3>See Also:</h3>  
          * <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetAction">AWS
          * API Reference</a></p>
          */
         virtual Model::GetActionOutcome GetAction(const Model::GetActionRequest& request) const;
 
         /**
-         * <p>Gets information about the specified AWS FIS action.</p><p><h3>See Also:</h3>
+         * <p>Gets information about the specified FIS action.</p><p><h3>See Also:</h3>  
          * <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetAction">AWS
          * API Reference</a></p>
          *
@@ -260,7 +264,7 @@ namespace Model
         virtual Model::GetActionOutcomeCallable GetActionCallable(const Model::GetActionRequest& request) const;
 
         /**
-         * <p>Gets information about the specified AWS FIS action.</p><p><h3>See Also:</h3>
+         * <p>Gets information about the specified FIS action.</p><p><h3>See Also:</h3>  
          * <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetAction">AWS
          * API Reference</a></p>
          *
@@ -325,14 +329,14 @@ namespace Model
         virtual void GetExperimentTemplateAsync(const Model::GetExperimentTemplateRequest& request, const GetExperimentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the available AWS FIS actions.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the available FIS actions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListActions">AWS API
          * Reference</a></p>
          */
         virtual Model::ListActionsOutcome ListActions(const Model::ListActionsRequest& request) const;
 
         /**
-         * <p>Lists the available AWS FIS actions.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the available FIS actions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListActions">AWS API
          * Reference</a></p>
          *
@@ -341,7 +345,7 @@ namespace Model
         virtual Model::ListActionsOutcomeCallable ListActionsCallable(const Model::ListActionsRequest& request) const;
 
         /**
-         * <p>Lists the available AWS FIS actions.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the available FIS actions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListActions">AWS API
          * Reference</a></p>
          *

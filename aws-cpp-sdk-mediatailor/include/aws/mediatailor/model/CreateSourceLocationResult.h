@@ -10,7 +10,9 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/mediatailor/model/DefaultSegmentDeliveryConfiguration.h>
 #include <aws/mediatailor/model/HttpConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/mediatailor/model/SegmentDeliveryConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -203,6 +205,28 @@ namespace Model
     inline CreateSourceLocationResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
 
+    
+    inline const Aws::Vector<SegmentDeliveryConfiguration>& GetSegmentDeliveryConfigurations() const{ return m_segmentDeliveryConfigurations; }
+
+    
+    inline void SetSegmentDeliveryConfigurations(const Aws::Vector<SegmentDeliveryConfiguration>& value) { m_segmentDeliveryConfigurations = value; }
+
+    
+    inline void SetSegmentDeliveryConfigurations(Aws::Vector<SegmentDeliveryConfiguration>&& value) { m_segmentDeliveryConfigurations = std::move(value); }
+
+    
+    inline CreateSourceLocationResult& WithSegmentDeliveryConfigurations(const Aws::Vector<SegmentDeliveryConfiguration>& value) { SetSegmentDeliveryConfigurations(value); return *this;}
+
+    
+    inline CreateSourceLocationResult& WithSegmentDeliveryConfigurations(Aws::Vector<SegmentDeliveryConfiguration>&& value) { SetSegmentDeliveryConfigurations(std::move(value)); return *this;}
+
+    
+    inline CreateSourceLocationResult& AddSegmentDeliveryConfigurations(const SegmentDeliveryConfiguration& value) { m_segmentDeliveryConfigurations.push_back(value); return *this; }
+
+    
+    inline CreateSourceLocationResult& AddSegmentDeliveryConfigurations(SegmentDeliveryConfiguration&& value) { m_segmentDeliveryConfigurations.push_back(std::move(value)); return *this; }
+
+
     /**
      * <p>The name of the source location.</p>
      */
@@ -312,6 +336,8 @@ namespace Model
     HttpConfiguration m_httpConfiguration;
 
     Aws::Utils::DateTime m_lastModifiedTime;
+
+    Aws::Vector<SegmentDeliveryConfiguration> m_segmentDeliveryConfigurations;
 
     Aws::String m_sourceLocationName;
 

@@ -127,49 +127,49 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service
+     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service
      * permission to perform service actions on your behalf.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service
+     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service
      * permission to perform service actions on your behalf.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service
+     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service
      * permission to perform service actions on your behalf.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service
+     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service
      * permission to perform service actions on your behalf.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service
+     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service
      * permission to perform service actions on your behalf.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service
+     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service
      * permission to perform service actions on your behalf.</p>
      */
     inline Experiment& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service
+     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service
      * permission to perform service actions on your behalf.</p>
      */
     inline Experiment& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service
+     * <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service
      * permission to perform service actions on your behalf.</p>
      */
     inline Experiment& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
@@ -370,63 +370,63 @@ namespace Model
 
 
     /**
-     * <p>The time the experiment was created.</p>
+     * <p>The time that the experiment was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The time the experiment was created.</p>
+     * <p>The time that the experiment was created.</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p>The time the experiment was created.</p>
+     * <p>The time that the experiment was created.</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>The time the experiment was created.</p>
+     * <p>The time that the experiment was created.</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>The time the experiment was created.</p>
+     * <p>The time that the experiment was created.</p>
      */
     inline Experiment& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>The time the experiment was created.</p>
+     * <p>The time that the experiment was created.</p>
      */
     inline Experiment& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time that the experiment was started.</p>
+     * <p>The time that the experiment started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The time that the experiment was started.</p>
+     * <p>The time that the experiment started.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p>The time that the experiment was started.</p>
+     * <p>The time that the experiment started.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The time that the experiment was started.</p>
+     * <p>The time that the experiment started.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>The time that the experiment was started.</p>
+     * <p>The time that the experiment started.</p>
      */
     inline Experiment& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The time that the experiment was started.</p>
+     * <p>The time that the experiment started.</p>
      */
     inline Experiment& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 

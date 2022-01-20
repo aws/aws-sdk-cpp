@@ -24,7 +24,8 @@ AwsApiCallAction::AwsApiCallAction() :
     m_domainDetailsHasBeenSet(false),
     m_errorCodeHasBeenSet(false),
     m_remoteIpDetailsHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
+    m_serviceNameHasBeenSet(false),
+    m_remoteAccountDetailsHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ AwsApiCallAction::AwsApiCallAction(JsonView jsonValue) :
     m_domainDetailsHasBeenSet(false),
     m_errorCodeHasBeenSet(false),
     m_remoteIpDetailsHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
+    m_serviceNameHasBeenSet(false),
+    m_remoteAccountDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +85,13 @@ AwsApiCallAction& AwsApiCallAction::operator =(JsonView jsonValue)
     m_serviceNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("remoteAccountDetails"))
+  {
+    m_remoteAccountDetails = jsonValue.GetObject("remoteAccountDetails");
+
+    m_remoteAccountDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -123,6 +132,12 @@ JsonValue AwsApiCallAction::Jsonize() const
   if(m_serviceNameHasBeenSet)
   {
    payload.WithString("serviceName", m_serviceName);
+
+  }
+
+  if(m_remoteAccountDetailsHasBeenSet)
+  {
+   payload.WithObject("remoteAccountDetails", m_remoteAccountDetails.Jsonize());
 
   }
 

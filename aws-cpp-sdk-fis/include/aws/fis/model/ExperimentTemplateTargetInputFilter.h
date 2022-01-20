@@ -25,8 +25,11 @@ namespace Model
 {
 
   /**
-   * <p>Describes a filter used for the target resource input in an experiment
-   * template.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies a filter used for the target resource input in an experiment
+   * template.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/fis/latest/userguide/targets.html#target-filters">Resource
+   * filters</a> in the <i>Fault Injection Simulator User Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ExperimentTemplateTargetInputFilter">AWS
    * API Reference</a></p>
    */

@@ -173,50 +173,42 @@ namespace Model
 
 
     /**
-     * <p>The URI of the file that contains the ThreatIntelSet. For example:
-     * https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+     * <p>The URI of the file that contains the ThreatIntelSet. </p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
-     * <p>The URI of the file that contains the ThreatIntelSet. For example:
-     * https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+     * <p>The URI of the file that contains the ThreatIntelSet. </p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
-     * <p>The URI of the file that contains the ThreatIntelSet. For example:
-     * https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+     * <p>The URI of the file that contains the ThreatIntelSet. </p>
      */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * <p>The URI of the file that contains the ThreatIntelSet. For example:
-     * https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+     * <p>The URI of the file that contains the ThreatIntelSet. </p>
      */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * <p>The URI of the file that contains the ThreatIntelSet. For example:
-     * https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+     * <p>The URI of the file that contains the ThreatIntelSet. </p>
      */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
     /**
-     * <p>The URI of the file that contains the ThreatIntelSet. For example:
-     * https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+     * <p>The URI of the file that contains the ThreatIntelSet. </p>
      */
     inline CreateThreatIntelSetRequest& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
-     * <p>The URI of the file that contains the ThreatIntelSet. For example:
-     * https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+     * <p>The URI of the file that contains the ThreatIntelSet. </p>
      */
     inline CreateThreatIntelSetRequest& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
-     * <p>The URI of the file that contains the ThreatIntelSet. For example:
-     * https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+     * <p>The URI of the file that contains the ThreatIntelSet. </p>
      */
     inline CreateThreatIntelSetRequest& WithLocation(const char* value) { SetLocation(value); return *this;}
 

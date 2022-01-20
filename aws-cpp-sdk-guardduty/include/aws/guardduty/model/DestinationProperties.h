@@ -40,42 +40,58 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the resource to publish to.</p>
+     * <p>The ARN of the resource to publish to.</p> <p>To specify an S3 bucket folder
+     * use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code>
+     * </p>
      */
     inline const Aws::String& GetDestinationArn() const{ return m_destinationArn; }
 
     /**
-     * <p>The ARN of the resource to publish to.</p>
+     * <p>The ARN of the resource to publish to.</p> <p>To specify an S3 bucket folder
+     * use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code>
+     * </p>
      */
     inline bool DestinationArnHasBeenSet() const { return m_destinationArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the resource to publish to.</p>
+     * <p>The ARN of the resource to publish to.</p> <p>To specify an S3 bucket folder
+     * use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code>
+     * </p>
      */
     inline void SetDestinationArn(const Aws::String& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
 
     /**
-     * <p>The ARN of the resource to publish to.</p>
+     * <p>The ARN of the resource to publish to.</p> <p>To specify an S3 bucket folder
+     * use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code>
+     * </p>
      */
     inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::move(value); }
 
     /**
-     * <p>The ARN of the resource to publish to.</p>
+     * <p>The ARN of the resource to publish to.</p> <p>To specify an S3 bucket folder
+     * use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code>
+     * </p>
      */
     inline void SetDestinationArn(const char* value) { m_destinationArnHasBeenSet = true; m_destinationArn.assign(value); }
 
     /**
-     * <p>The ARN of the resource to publish to.</p>
+     * <p>The ARN of the resource to publish to.</p> <p>To specify an S3 bucket folder
+     * use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code>
+     * </p>
      */
     inline DestinationProperties& WithDestinationArn(const Aws::String& value) { SetDestinationArn(value); return *this;}
 
     /**
-     * <p>The ARN of the resource to publish to.</p>
+     * <p>The ARN of the resource to publish to.</p> <p>To specify an S3 bucket folder
+     * use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code>
+     * </p>
      */
     inline DestinationProperties& WithDestinationArn(Aws::String&& value) { SetDestinationArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the resource to publish to.</p>
+     * <p>The ARN of the resource to publish to.</p> <p>To specify an S3 bucket folder
+     * use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code>
+     * </p>
      */
     inline DestinationProperties& WithDestinationArn(const char* value) { SetDestinationArn(value); return *this;}
 
