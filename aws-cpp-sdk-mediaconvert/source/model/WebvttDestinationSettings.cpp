@@ -19,12 +19,16 @@ namespace Model
 {
 
 WebvttDestinationSettings::WebvttDestinationSettings() : 
+    m_accessibility(WebvttAccessibilitySubs::NOT_SET),
+    m_accessibilityHasBeenSet(false),
     m_stylePassthrough(WebvttStylePassthrough::NOT_SET),
     m_stylePassthroughHasBeenSet(false)
 {
 }
 
 WebvttDestinationSettings::WebvttDestinationSettings(JsonView jsonValue) : 
+    m_accessibility(WebvttAccessibilitySubs::NOT_SET),
+    m_accessibilityHasBeenSet(false),
     m_stylePassthrough(WebvttStylePassthrough::NOT_SET),
     m_stylePassthroughHasBeenSet(false)
 {
@@ -33,6 +37,13 @@ WebvttDestinationSettings::WebvttDestinationSettings(JsonView jsonValue) :
 
 WebvttDestinationSettings& WebvttDestinationSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("accessibility"))
+  {
+    m_accessibility = WebvttAccessibilitySubsMapper::GetWebvttAccessibilitySubsForName(jsonValue.GetString("accessibility"));
+
+    m_accessibilityHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("stylePassthrough"))
   {
     m_stylePassthrough = WebvttStylePassthroughMapper::GetWebvttStylePassthroughForName(jsonValue.GetString("stylePassthrough"));
@@ -46,6 +57,11 @@ WebvttDestinationSettings& WebvttDestinationSettings::operator =(JsonView jsonVa
 JsonValue WebvttDestinationSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_accessibilityHasBeenSet)
+  {
+   payload.WithString("accessibility", WebvttAccessibilitySubsMapper::GetNameForWebvttAccessibilitySubs(m_accessibility));
+  }
 
   if(m_stylePassthroughHasBeenSet)
   {

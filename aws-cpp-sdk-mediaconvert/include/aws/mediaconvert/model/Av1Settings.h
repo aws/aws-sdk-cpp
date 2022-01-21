@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/Av1AdaptiveQuantization.h>
+#include <aws/mediaconvert/model/Av1BitDepth.h>
 #include <aws/mediaconvert/model/Av1FramerateControl.h>
 #include <aws/mediaconvert/model/Av1FramerateConversionAlgorithm.h>
 #include <aws/mediaconvert/model/Av1QvbrSettings.h>
@@ -84,6 +85,43 @@ namespace Model
      * (spatialAdaptiveQuantization).
      */
     inline Av1Settings& WithAdaptiveQuantization(Av1AdaptiveQuantization&& value) { SetAdaptiveQuantization(std::move(value)); return *this;}
+
+
+    /**
+     * Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit
+     * (BIT_10).
+     */
+    inline const Av1BitDepth& GetBitDepth() const{ return m_bitDepth; }
+
+    /**
+     * Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit
+     * (BIT_10).
+     */
+    inline bool BitDepthHasBeenSet() const { return m_bitDepthHasBeenSet; }
+
+    /**
+     * Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit
+     * (BIT_10).
+     */
+    inline void SetBitDepth(const Av1BitDepth& value) { m_bitDepthHasBeenSet = true; m_bitDepth = value; }
+
+    /**
+     * Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit
+     * (BIT_10).
+     */
+    inline void SetBitDepth(Av1BitDepth&& value) { m_bitDepthHasBeenSet = true; m_bitDepth = std::move(value); }
+
+    /**
+     * Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit
+     * (BIT_10).
+     */
+    inline Av1Settings& WithBitDepth(const Av1BitDepth& value) { SetBitDepth(value); return *this;}
+
+    /**
+     * Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit
+     * (BIT_10).
+     */
+    inline Av1Settings& WithBitDepth(Av1BitDepth&& value) { SetBitDepth(std::move(value)); return *this;}
 
 
     /**
@@ -646,6 +684,9 @@ namespace Model
 
     Av1AdaptiveQuantization m_adaptiveQuantization;
     bool m_adaptiveQuantizationHasBeenSet;
+
+    Av1BitDepth m_bitDepth;
+    bool m_bitDepthHasBeenSet;
 
     Av1FramerateControl m_framerateControl;
     bool m_framerateControlHasBeenSet;

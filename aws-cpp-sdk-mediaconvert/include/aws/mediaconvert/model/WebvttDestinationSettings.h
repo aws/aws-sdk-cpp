@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/WebvttAccessibilitySubs.h>
 #include <aws/mediaconvert/model/WebvttStylePassthrough.h>
 #include <utility>
 
@@ -42,6 +43,61 @@ namespace Model
     WebvttDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
     WebvttDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Specify whether to flag this caption track as accessibility in your HLS/CMAF
+     * parent manifest. When you choose ENABLED, MediaConvert includes the parameters
+     * CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound"
+     * and AUTOSELECT="YES" in the EXT-X-MEDIA entry for this track. When you keep the
+     * default choice, DISABLED, MediaConvert leaves this parameter out.
+     */
+    inline const WebvttAccessibilitySubs& GetAccessibility() const{ return m_accessibility; }
+
+    /**
+     * Specify whether to flag this caption track as accessibility in your HLS/CMAF
+     * parent manifest. When you choose ENABLED, MediaConvert includes the parameters
+     * CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound"
+     * and AUTOSELECT="YES" in the EXT-X-MEDIA entry for this track. When you keep the
+     * default choice, DISABLED, MediaConvert leaves this parameter out.
+     */
+    inline bool AccessibilityHasBeenSet() const { return m_accessibilityHasBeenSet; }
+
+    /**
+     * Specify whether to flag this caption track as accessibility in your HLS/CMAF
+     * parent manifest. When you choose ENABLED, MediaConvert includes the parameters
+     * CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound"
+     * and AUTOSELECT="YES" in the EXT-X-MEDIA entry for this track. When you keep the
+     * default choice, DISABLED, MediaConvert leaves this parameter out.
+     */
+    inline void SetAccessibility(const WebvttAccessibilitySubs& value) { m_accessibilityHasBeenSet = true; m_accessibility = value; }
+
+    /**
+     * Specify whether to flag this caption track as accessibility in your HLS/CMAF
+     * parent manifest. When you choose ENABLED, MediaConvert includes the parameters
+     * CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound"
+     * and AUTOSELECT="YES" in the EXT-X-MEDIA entry for this track. When you keep the
+     * default choice, DISABLED, MediaConvert leaves this parameter out.
+     */
+    inline void SetAccessibility(WebvttAccessibilitySubs&& value) { m_accessibilityHasBeenSet = true; m_accessibility = std::move(value); }
+
+    /**
+     * Specify whether to flag this caption track as accessibility in your HLS/CMAF
+     * parent manifest. When you choose ENABLED, MediaConvert includes the parameters
+     * CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound"
+     * and AUTOSELECT="YES" in the EXT-X-MEDIA entry for this track. When you keep the
+     * default choice, DISABLED, MediaConvert leaves this parameter out.
+     */
+    inline WebvttDestinationSettings& WithAccessibility(const WebvttAccessibilitySubs& value) { SetAccessibility(value); return *this;}
+
+    /**
+     * Specify whether to flag this caption track as accessibility in your HLS/CMAF
+     * parent manifest. When you choose ENABLED, MediaConvert includes the parameters
+     * CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound"
+     * and AUTOSELECT="YES" in the EXT-X-MEDIA entry for this track. When you keep the
+     * default choice, DISABLED, MediaConvert leaves this parameter out.
+     */
+    inline WebvttDestinationSettings& WithAccessibility(WebvttAccessibilitySubs&& value) { SetAccessibility(std::move(value)); return *this;}
 
 
     /**
@@ -105,6 +161,9 @@ namespace Model
     inline WebvttDestinationSettings& WithStylePassthrough(WebvttStylePassthrough&& value) { SetStylePassthrough(std::move(value)); return *this;}
 
   private:
+
+    WebvttAccessibilitySubs m_accessibility;
+    bool m_accessibilityHasBeenSet;
 
     WebvttStylePassthrough m_stylePassthrough;
     bool m_stylePassthroughHasBeenSet;

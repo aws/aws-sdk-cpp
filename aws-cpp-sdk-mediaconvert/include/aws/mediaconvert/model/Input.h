@@ -487,6 +487,111 @@ namespace Model
 
 
     /**
+     * Use this setting only when your video source has Dolby Vision studio mastering
+     * metadata that is carried in a separate XML file. Specify the Amazon S3 location
+     * for the metadata XML file. MediaConvert uses this file to provide global and
+     * frame-level metadata for Dolby Vision preprocessing. When you specify a file
+     * here and your input also has interleaved global and frame level metadata,
+     * MediaConvert ignores the interleaved metadata and uses only the the metadata
+     * from this external XML file. Note that your IAM service role must grant
+     * MediaConvert read permissions to this file. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     */
+    inline const Aws::String& GetDolbyVisionMetadataXml() const{ return m_dolbyVisionMetadataXml; }
+
+    /**
+     * Use this setting only when your video source has Dolby Vision studio mastering
+     * metadata that is carried in a separate XML file. Specify the Amazon S3 location
+     * for the metadata XML file. MediaConvert uses this file to provide global and
+     * frame-level metadata for Dolby Vision preprocessing. When you specify a file
+     * here and your input also has interleaved global and frame level metadata,
+     * MediaConvert ignores the interleaved metadata and uses only the the metadata
+     * from this external XML file. Note that your IAM service role must grant
+     * MediaConvert read permissions to this file. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     */
+    inline bool DolbyVisionMetadataXmlHasBeenSet() const { return m_dolbyVisionMetadataXmlHasBeenSet; }
+
+    /**
+     * Use this setting only when your video source has Dolby Vision studio mastering
+     * metadata that is carried in a separate XML file. Specify the Amazon S3 location
+     * for the metadata XML file. MediaConvert uses this file to provide global and
+     * frame-level metadata for Dolby Vision preprocessing. When you specify a file
+     * here and your input also has interleaved global and frame level metadata,
+     * MediaConvert ignores the interleaved metadata and uses only the the metadata
+     * from this external XML file. Note that your IAM service role must grant
+     * MediaConvert read permissions to this file. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     */
+    inline void SetDolbyVisionMetadataXml(const Aws::String& value) { m_dolbyVisionMetadataXmlHasBeenSet = true; m_dolbyVisionMetadataXml = value; }
+
+    /**
+     * Use this setting only when your video source has Dolby Vision studio mastering
+     * metadata that is carried in a separate XML file. Specify the Amazon S3 location
+     * for the metadata XML file. MediaConvert uses this file to provide global and
+     * frame-level metadata for Dolby Vision preprocessing. When you specify a file
+     * here and your input also has interleaved global and frame level metadata,
+     * MediaConvert ignores the interleaved metadata and uses only the the metadata
+     * from this external XML file. Note that your IAM service role must grant
+     * MediaConvert read permissions to this file. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     */
+    inline void SetDolbyVisionMetadataXml(Aws::String&& value) { m_dolbyVisionMetadataXmlHasBeenSet = true; m_dolbyVisionMetadataXml = std::move(value); }
+
+    /**
+     * Use this setting only when your video source has Dolby Vision studio mastering
+     * metadata that is carried in a separate XML file. Specify the Amazon S3 location
+     * for the metadata XML file. MediaConvert uses this file to provide global and
+     * frame-level metadata for Dolby Vision preprocessing. When you specify a file
+     * here and your input also has interleaved global and frame level metadata,
+     * MediaConvert ignores the interleaved metadata and uses only the the metadata
+     * from this external XML file. Note that your IAM service role must grant
+     * MediaConvert read permissions to this file. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     */
+    inline void SetDolbyVisionMetadataXml(const char* value) { m_dolbyVisionMetadataXmlHasBeenSet = true; m_dolbyVisionMetadataXml.assign(value); }
+
+    /**
+     * Use this setting only when your video source has Dolby Vision studio mastering
+     * metadata that is carried in a separate XML file. Specify the Amazon S3 location
+     * for the metadata XML file. MediaConvert uses this file to provide global and
+     * frame-level metadata for Dolby Vision preprocessing. When you specify a file
+     * here and your input also has interleaved global and frame level metadata,
+     * MediaConvert ignores the interleaved metadata and uses only the the metadata
+     * from this external XML file. Note that your IAM service role must grant
+     * MediaConvert read permissions to this file. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     */
+    inline Input& WithDolbyVisionMetadataXml(const Aws::String& value) { SetDolbyVisionMetadataXml(value); return *this;}
+
+    /**
+     * Use this setting only when your video source has Dolby Vision studio mastering
+     * metadata that is carried in a separate XML file. Specify the Amazon S3 location
+     * for the metadata XML file. MediaConvert uses this file to provide global and
+     * frame-level metadata for Dolby Vision preprocessing. When you specify a file
+     * here and your input also has interleaved global and frame level metadata,
+     * MediaConvert ignores the interleaved metadata and uses only the the metadata
+     * from this external XML file. Note that your IAM service role must grant
+     * MediaConvert read permissions to this file. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     */
+    inline Input& WithDolbyVisionMetadataXml(Aws::String&& value) { SetDolbyVisionMetadataXml(std::move(value)); return *this;}
+
+    /**
+     * Use this setting only when your video source has Dolby Vision studio mastering
+     * metadata that is carried in a separate XML file. Specify the Amazon S3 location
+     * for the metadata XML file. MediaConvert uses this file to provide global and
+     * frame-level metadata for Dolby Vision preprocessing. When you specify a file
+     * here and your input also has interleaved global and frame level metadata,
+     * MediaConvert ignores the interleaved metadata and uses only the the metadata
+     * from this external XML file. Note that your IAM service role must grant
+     * MediaConvert read permissions to this file. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+     */
+    inline Input& WithDolbyVisionMetadataXml(const char* value) { SetDolbyVisionMetadataXml(value); return *this;}
+
+
+    /**
      * Specify the source file for your transcoding job. You can use multiple inputs in
      * a single job. The service concatenates these inputs, in the order that you
      * specify them in the job, to create the outputs. If your input format is IMF,
@@ -1320,6 +1425,9 @@ namespace Model
 
     InputDenoiseFilter m_denoiseFilter;
     bool m_denoiseFilterHasBeenSet;
+
+    Aws::String m_dolbyVisionMetadataXml;
+    bool m_dolbyVisionMetadataXmlHasBeenSet;
 
     Aws::String m_fileInput;
     bool m_fileInputHasBeenSet;

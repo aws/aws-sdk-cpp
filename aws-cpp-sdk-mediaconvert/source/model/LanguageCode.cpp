@@ -211,6 +211,7 @@ namespace Aws
         static const int ORJ_HASH = HashingUtils::HashString("ORJ");
         static const int QPC_HASH = HashingUtils::HashString("QPC");
         static const int TNG_HASH = HashingUtils::HashString("TNG");
+        static const int SRP_HASH = HashingUtils::HashString("SRP");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -1178,6 +1179,11 @@ namespace Aws
             enumValue = LanguageCode::TNG;
             return true;
           }
+          else if (hashCode == SRP_HASH)
+          {
+            enumValue = LanguageCode::SRP;
+            return true;
+          }
           return false;
         }
 
@@ -1765,6 +1771,9 @@ namespace Aws
             return true;
           case LanguageCode::TNG:
             value = "TNG";
+            return true;
+          case LanguageCode::SRP:
+            value = "SRP";
             return true;
           default:
             return false;

@@ -28,6 +28,7 @@ Input::Input() :
     m_decryptionSettingsHasBeenSet(false),
     m_denoiseFilter(InputDenoiseFilter::NOT_SET),
     m_denoiseFilterHasBeenSet(false),
+    m_dolbyVisionMetadataXmlHasBeenSet(false),
     m_fileInputHasBeenSet(false),
     m_filterEnable(InputFilterEnable::NOT_SET),
     m_filterEnableHasBeenSet(false),
@@ -60,6 +61,7 @@ Input::Input(JsonView jsonValue) :
     m_decryptionSettingsHasBeenSet(false),
     m_denoiseFilter(InputDenoiseFilter::NOT_SET),
     m_denoiseFilterHasBeenSet(false),
+    m_dolbyVisionMetadataXmlHasBeenSet(false),
     m_fileInputHasBeenSet(false),
     m_filterEnable(InputFilterEnable::NOT_SET),
     m_filterEnableHasBeenSet(false),
@@ -141,6 +143,13 @@ Input& Input::operator =(JsonView jsonValue)
     m_denoiseFilter = InputDenoiseFilterMapper::GetInputDenoiseFilterForName(jsonValue.GetString("denoiseFilter"));
 
     m_denoiseFilterHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dolbyVisionMetadataXml"))
+  {
+    m_dolbyVisionMetadataXml = jsonValue.GetString("dolbyVisionMetadataXml");
+
+    m_dolbyVisionMetadataXmlHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("fileInput"))
@@ -300,6 +309,12 @@ JsonValue Input::Jsonize() const
   if(m_denoiseFilterHasBeenSet)
   {
    payload.WithString("denoiseFilter", InputDenoiseFilterMapper::GetNameForInputDenoiseFilter(m_denoiseFilter));
+  }
+
+  if(m_dolbyVisionMetadataXmlHasBeenSet)
+  {
+   payload.WithString("dolbyVisionMetadataXml", m_dolbyVisionMetadataXml);
+
   }
 
   if(m_fileInputHasBeenSet)

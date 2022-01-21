@@ -10,6 +10,7 @@
 #include <aws/mediaconvert/model/MpdCaptionContainerType.h>
 #include <aws/mediaconvert/model/MpdScte35Esam.h>
 #include <aws/mediaconvert/model/MpdScte35Source.h>
+#include <aws/mediaconvert/model/MpdTimedMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -364,6 +365,43 @@ namespace Model
      */
     inline MpdSettings& WithScte35Source(MpdScte35Source&& value) { SetScte35Source(std::move(value)); return *this;}
 
+
+    /**
+     * Applies to DASH outputs. Use this setting to specify whether the service inserts
+     * the ID3 timed metadata from the input in this output.
+     */
+    inline const MpdTimedMetadata& GetTimedMetadata() const{ return m_timedMetadata; }
+
+    /**
+     * Applies to DASH outputs. Use this setting to specify whether the service inserts
+     * the ID3 timed metadata from the input in this output.
+     */
+    inline bool TimedMetadataHasBeenSet() const { return m_timedMetadataHasBeenSet; }
+
+    /**
+     * Applies to DASH outputs. Use this setting to specify whether the service inserts
+     * the ID3 timed metadata from the input in this output.
+     */
+    inline void SetTimedMetadata(const MpdTimedMetadata& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = value; }
+
+    /**
+     * Applies to DASH outputs. Use this setting to specify whether the service inserts
+     * the ID3 timed metadata from the input in this output.
+     */
+    inline void SetTimedMetadata(MpdTimedMetadata&& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = std::move(value); }
+
+    /**
+     * Applies to DASH outputs. Use this setting to specify whether the service inserts
+     * the ID3 timed metadata from the input in this output.
+     */
+    inline MpdSettings& WithTimedMetadata(const MpdTimedMetadata& value) { SetTimedMetadata(value); return *this;}
+
+    /**
+     * Applies to DASH outputs. Use this setting to specify whether the service inserts
+     * the ID3 timed metadata from the input in this output.
+     */
+    inline MpdSettings& WithTimedMetadata(MpdTimedMetadata&& value) { SetTimedMetadata(std::move(value)); return *this;}
+
   private:
 
     MpdAccessibilityCaptionHints m_accessibilityCaptionHints;
@@ -380,6 +418,9 @@ namespace Model
 
     MpdScte35Source m_scte35Source;
     bool m_scte35SourceHasBeenSet;
+
+    MpdTimedMetadata m_timedMetadata;
+    bool m_timedMetadataHasBeenSet;
   };
 
 } // namespace Model

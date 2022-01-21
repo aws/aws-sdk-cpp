@@ -32,7 +32,9 @@ CmfcSettings::CmfcSettings() :
     m_scte35Esam(CmfcScte35Esam::NOT_SET),
     m_scte35EsamHasBeenSet(false),
     m_scte35Source(CmfcScte35Source::NOT_SET),
-    m_scte35SourceHasBeenSet(false)
+    m_scte35SourceHasBeenSet(false),
+    m_timedMetadata(CmfcTimedMetadata::NOT_SET),
+    m_timedMetadataHasBeenSet(false)
 {
 }
 
@@ -50,7 +52,9 @@ CmfcSettings::CmfcSettings(JsonView jsonValue) :
     m_scte35Esam(CmfcScte35Esam::NOT_SET),
     m_scte35EsamHasBeenSet(false),
     m_scte35Source(CmfcScte35Source::NOT_SET),
-    m_scte35SourceHasBeenSet(false)
+    m_scte35SourceHasBeenSet(false),
+    m_timedMetadata(CmfcTimedMetadata::NOT_SET),
+    m_timedMetadataHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -113,6 +117,13 @@ CmfcSettings& CmfcSettings::operator =(JsonView jsonValue)
     m_scte35SourceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("timedMetadata"))
+  {
+    m_timedMetadata = CmfcTimedMetadataMapper::GetCmfcTimedMetadataForName(jsonValue.GetString("timedMetadata"));
+
+    m_timedMetadataHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -160,6 +171,11 @@ JsonValue CmfcSettings::Jsonize() const
   if(m_scte35SourceHasBeenSet)
   {
    payload.WithString("scte35Source", CmfcScte35SourceMapper::GetNameForCmfcScte35Source(m_scte35Source));
+  }
+
+  if(m_timedMetadataHasBeenSet)
+  {
+   payload.WithString("timedMetadata", CmfcTimedMetadataMapper::GetNameForCmfcTimedMetadata(m_timedMetadata));
   }
 
   return payload;

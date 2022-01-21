@@ -12,6 +12,7 @@
 #include <aws/mediaconvert/model/CmfcIFrameOnlyManifest.h>
 #include <aws/mediaconvert/model/CmfcScte35Esam.h>
 #include <aws/mediaconvert/model/CmfcScte35Source.h>
+#include <aws/mediaconvert/model/CmfcTimedMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -759,6 +760,43 @@ namespace Model
      */
     inline CmfcSettings& WithScte35Source(CmfcScte35Source&& value) { SetScte35Source(std::move(value)); return *this;}
 
+
+    /**
+     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
+     * the ID3 timed metadata from the input in this output.
+     */
+    inline const CmfcTimedMetadata& GetTimedMetadata() const{ return m_timedMetadata; }
+
+    /**
+     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
+     * the ID3 timed metadata from the input in this output.
+     */
+    inline bool TimedMetadataHasBeenSet() const { return m_timedMetadataHasBeenSet; }
+
+    /**
+     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
+     * the ID3 timed metadata from the input in this output.
+     */
+    inline void SetTimedMetadata(const CmfcTimedMetadata& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = value; }
+
+    /**
+     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
+     * the ID3 timed metadata from the input in this output.
+     */
+    inline void SetTimedMetadata(CmfcTimedMetadata&& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = std::move(value); }
+
+    /**
+     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
+     * the ID3 timed metadata from the input in this output.
+     */
+    inline CmfcSettings& WithTimedMetadata(const CmfcTimedMetadata& value) { SetTimedMetadata(value); return *this;}
+
+    /**
+     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
+     * the ID3 timed metadata from the input in this output.
+     */
+    inline CmfcSettings& WithTimedMetadata(CmfcTimedMetadata&& value) { SetTimedMetadata(std::move(value)); return *this;}
+
   private:
 
     CmfcAudioDuration m_audioDuration;
@@ -784,6 +822,9 @@ namespace Model
 
     CmfcScte35Source m_scte35Source;
     bool m_scte35SourceHasBeenSet;
+
+    CmfcTimedMetadata m_timedMetadata;
+    bool m_timedMetadataHasBeenSet;
   };
 
 } // namespace Model

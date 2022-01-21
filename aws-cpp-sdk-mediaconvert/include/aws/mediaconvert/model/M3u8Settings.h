@@ -609,38 +609,38 @@ namespace Model
 
 
     /**
-     * Applies only to HLS outputs. Use this setting to specify whether the service
-     * inserts the ID3 timed metadata from the input in this output.
+     * Applies to HLS outputs. Use this setting to specify whether the service inserts
+     * the ID3 timed metadata from the input in this output.
      */
     inline const TimedMetadata& GetTimedMetadata() const{ return m_timedMetadata; }
 
     /**
-     * Applies only to HLS outputs. Use this setting to specify whether the service
-     * inserts the ID3 timed metadata from the input in this output.
+     * Applies to HLS outputs. Use this setting to specify whether the service inserts
+     * the ID3 timed metadata from the input in this output.
      */
     inline bool TimedMetadataHasBeenSet() const { return m_timedMetadataHasBeenSet; }
 
     /**
-     * Applies only to HLS outputs. Use this setting to specify whether the service
-     * inserts the ID3 timed metadata from the input in this output.
+     * Applies to HLS outputs. Use this setting to specify whether the service inserts
+     * the ID3 timed metadata from the input in this output.
      */
     inline void SetTimedMetadata(const TimedMetadata& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = value; }
 
     /**
-     * Applies only to HLS outputs. Use this setting to specify whether the service
-     * inserts the ID3 timed metadata from the input in this output.
+     * Applies to HLS outputs. Use this setting to specify whether the service inserts
+     * the ID3 timed metadata from the input in this output.
      */
     inline void SetTimedMetadata(TimedMetadata&& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = std::move(value); }
 
     /**
-     * Applies only to HLS outputs. Use this setting to specify whether the service
-     * inserts the ID3 timed metadata from the input in this output.
+     * Applies to HLS outputs. Use this setting to specify whether the service inserts
+     * the ID3 timed metadata from the input in this output.
      */
     inline M3u8Settings& WithTimedMetadata(const TimedMetadata& value) { SetTimedMetadata(value); return *this;}
 
     /**
-     * Applies only to HLS outputs. Use this setting to specify whether the service
-     * inserts the ID3 timed metadata from the input in this output.
+     * Applies to HLS outputs. Use this setting to specify whether the service inserts
+     * the ID3 timed metadata from the input in this output.
      */
     inline M3u8Settings& WithTimedMetadata(TimedMetadata&& value) { SetTimedMetadata(std::move(value)); return *this;}
 

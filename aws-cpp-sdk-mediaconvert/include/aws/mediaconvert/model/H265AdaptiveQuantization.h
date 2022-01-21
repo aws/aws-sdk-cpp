@@ -21,7 +21,8 @@ namespace Model
     MEDIUM,
     HIGH,
     HIGHER,
-    MAX
+    MAX,
+    AUTO
   };
 
 namespace H265AdaptiveQuantizationMapper
