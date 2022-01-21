@@ -80,7 +80,7 @@ namespace Aws
         class AWS_CORE_API AWSProfileConfigLoader
         {
         public:
-            virtual ~AWSProfileConfigLoader() = default;
+            virtual ~AWSProfileConfigLoader() { m_profiles.clear(); }
 
             /**
              * Load the configuration
