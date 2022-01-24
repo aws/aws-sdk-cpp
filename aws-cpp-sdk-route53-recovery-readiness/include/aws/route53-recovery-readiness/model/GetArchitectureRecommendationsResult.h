@@ -36,104 +36,104 @@ namespace Model
 
 
     /**
-     * The time a Recovery Group was last assessed for recommendations in UTC ISO-8601
-     * format.
+     * <p>The time that a recovery group was last assessed for recommendations, in UTC
+     * ISO-8601 format.</p>
      */
     inline const Aws::Utils::DateTime& GetLastAuditTimestamp() const{ return m_lastAuditTimestamp; }
 
     /**
-     * The time a Recovery Group was last assessed for recommendations in UTC ISO-8601
-     * format.
+     * <p>The time that a recovery group was last assessed for recommendations, in UTC
+     * ISO-8601 format.</p>
      */
     inline void SetLastAuditTimestamp(const Aws::Utils::DateTime& value) { m_lastAuditTimestamp = value; }
 
     /**
-     * The time a Recovery Group was last assessed for recommendations in UTC ISO-8601
-     * format.
+     * <p>The time that a recovery group was last assessed for recommendations, in UTC
+     * ISO-8601 format.</p>
      */
     inline void SetLastAuditTimestamp(Aws::Utils::DateTime&& value) { m_lastAuditTimestamp = std::move(value); }
 
     /**
-     * The time a Recovery Group was last assessed for recommendations in UTC ISO-8601
-     * format.
+     * <p>The time that a recovery group was last assessed for recommendations, in UTC
+     * ISO-8601 format.</p>
      */
     inline GetArchitectureRecommendationsResult& WithLastAuditTimestamp(const Aws::Utils::DateTime& value) { SetLastAuditTimestamp(value); return *this;}
 
     /**
-     * The time a Recovery Group was last assessed for recommendations in UTC ISO-8601
-     * format.
+     * <p>The time that a recovery group was last assessed for recommendations, in UTC
+     * ISO-8601 format.</p>
      */
     inline GetArchitectureRecommendationsResult& WithLastAuditTimestamp(Aws::Utils::DateTime&& value) { SetLastAuditTimestamp(std::move(value)); return *this;}
 
 
     /**
-     * A token that can be used to resume pagination from the end of the collection
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * A token that can be used to resume pagination from the end of the collection
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * A token that can be used to resume pagination from the end of the collection
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * A token that can be used to resume pagination from the end of the collection
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * A token that can be used to resume pagination from the end of the collection
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline GetArchitectureRecommendationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * A token that can be used to resume pagination from the end of the collection
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline GetArchitectureRecommendationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * A token that can be used to resume pagination from the end of the collection
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline GetArchitectureRecommendationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * A list of recommendations for the customer's application
+     * <p>A list of the recommendations for the customer's application.</p>
      */
     inline const Aws::Vector<Recommendation>& GetRecommendations() const{ return m_recommendations; }
 
     /**
-     * A list of recommendations for the customer's application
+     * <p>A list of the recommendations for the customer's application.</p>
      */
     inline void SetRecommendations(const Aws::Vector<Recommendation>& value) { m_recommendations = value; }
 
     /**
-     * A list of recommendations for the customer's application
+     * <p>A list of the recommendations for the customer's application.</p>
      */
     inline void SetRecommendations(Aws::Vector<Recommendation>&& value) { m_recommendations = std::move(value); }
 
     /**
-     * A list of recommendations for the customer's application
+     * <p>A list of the recommendations for the customer's application.</p>
      */
     inline GetArchitectureRecommendationsResult& WithRecommendations(const Aws::Vector<Recommendation>& value) { SetRecommendations(value); return *this;}
 
     /**
-     * A list of recommendations for the customer's application
+     * <p>A list of the recommendations for the customer's application.</p>
      */
     inline GetArchitectureRecommendationsResult& WithRecommendations(Aws::Vector<Recommendation>&& value) { SetRecommendations(std::move(value)); return *this;}
 
     /**
-     * A list of recommendations for the customer's application
+     * <p>A list of the recommendations for the customer's application.</p>
      */
     inline GetArchitectureRecommendationsResult& AddRecommendations(const Recommendation& value) { m_recommendations.push_back(value); return *this; }
 
     /**
-     * A list of recommendations for the customer's application
+     * <p>A list of the recommendations for the customer's application.</p>
      */
     inline GetArchitectureRecommendationsResult& AddRecommendations(Recommendation&& value) { m_recommendations.push_back(std::move(value)); return *this; }
 

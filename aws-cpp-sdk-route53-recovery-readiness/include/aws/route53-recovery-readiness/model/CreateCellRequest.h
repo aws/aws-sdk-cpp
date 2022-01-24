@@ -19,9 +19,6 @@ namespace Model
 {
 
   /**
-   * The Cell to create<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/CreateCellRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_ROUTE53RECOVERYREADINESS_API CreateCellRequest : public Route53RecoveryReadinessRequest
   {
@@ -38,97 +35,106 @@ namespace Model
 
 
     /**
-     * The name of the Cell to create
+     * <p>The name of the cell to create.</p>
      */
     inline const Aws::String& GetCellName() const{ return m_cellName; }
 
     /**
-     * The name of the Cell to create
+     * <p>The name of the cell to create.</p>
      */
     inline bool CellNameHasBeenSet() const { return m_cellNameHasBeenSet; }
 
     /**
-     * The name of the Cell to create
+     * <p>The name of the cell to create.</p>
      */
     inline void SetCellName(const Aws::String& value) { m_cellNameHasBeenSet = true; m_cellName = value; }
 
     /**
-     * The name of the Cell to create
+     * <p>The name of the cell to create.</p>
      */
     inline void SetCellName(Aws::String&& value) { m_cellNameHasBeenSet = true; m_cellName = std::move(value); }
 
     /**
-     * The name of the Cell to create
+     * <p>The name of the cell to create.</p>
      */
     inline void SetCellName(const char* value) { m_cellNameHasBeenSet = true; m_cellName.assign(value); }
 
     /**
-     * The name of the Cell to create
+     * <p>The name of the cell to create.</p>
      */
     inline CreateCellRequest& WithCellName(const Aws::String& value) { SetCellName(value); return *this;}
 
     /**
-     * The name of the Cell to create
+     * <p>The name of the cell to create.</p>
      */
     inline CreateCellRequest& WithCellName(Aws::String&& value) { SetCellName(std::move(value)); return *this;}
 
     /**
-     * The name of the Cell to create
+     * <p>The name of the cell to create.</p>
      */
     inline CreateCellRequest& WithCellName(const char* value) { SetCellName(value); return *this;}
 
 
     /**
-     * A list of Cell arns contained within this Cell (for use in nested Cells, e.g.
-     * regions within which AZs)
+     * <p>A list of cell Amazon Resource Names (ARNs) contained within this cell, for
+     * use in nested cells. For example, Availability Zones within specific Amazon Web
+     * Services Regions.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCells() const{ return m_cells; }
 
     /**
-     * A list of Cell arns contained within this Cell (for use in nested Cells, e.g.
-     * regions within which AZs)
+     * <p>A list of cell Amazon Resource Names (ARNs) contained within this cell, for
+     * use in nested cells. For example, Availability Zones within specific Amazon Web
+     * Services Regions.</p>
      */
     inline bool CellsHasBeenSet() const { return m_cellsHasBeenSet; }
 
     /**
-     * A list of Cell arns contained within this Cell (for use in nested Cells, e.g.
-     * regions within which AZs)
+     * <p>A list of cell Amazon Resource Names (ARNs) contained within this cell, for
+     * use in nested cells. For example, Availability Zones within specific Amazon Web
+     * Services Regions.</p>
      */
     inline void SetCells(const Aws::Vector<Aws::String>& value) { m_cellsHasBeenSet = true; m_cells = value; }
 
     /**
-     * A list of Cell arns contained within this Cell (for use in nested Cells, e.g.
-     * regions within which AZs)
+     * <p>A list of cell Amazon Resource Names (ARNs) contained within this cell, for
+     * use in nested cells. For example, Availability Zones within specific Amazon Web
+     * Services Regions.</p>
      */
     inline void SetCells(Aws::Vector<Aws::String>&& value) { m_cellsHasBeenSet = true; m_cells = std::move(value); }
 
     /**
-     * A list of Cell arns contained within this Cell (for use in nested Cells, e.g.
-     * regions within which AZs)
+     * <p>A list of cell Amazon Resource Names (ARNs) contained within this cell, for
+     * use in nested cells. For example, Availability Zones within specific Amazon Web
+     * Services Regions.</p>
      */
     inline CreateCellRequest& WithCells(const Aws::Vector<Aws::String>& value) { SetCells(value); return *this;}
 
     /**
-     * A list of Cell arns contained within this Cell (for use in nested Cells, e.g.
-     * regions within which AZs)
+     * <p>A list of cell Amazon Resource Names (ARNs) contained within this cell, for
+     * use in nested cells. For example, Availability Zones within specific Amazon Web
+     * Services Regions.</p>
      */
     inline CreateCellRequest& WithCells(Aws::Vector<Aws::String>&& value) { SetCells(std::move(value)); return *this;}
 
     /**
-     * A list of Cell arns contained within this Cell (for use in nested Cells, e.g.
-     * regions within which AZs)
+     * <p>A list of cell Amazon Resource Names (ARNs) contained within this cell, for
+     * use in nested cells. For example, Availability Zones within specific Amazon Web
+     * Services Regions.</p>
      */
     inline CreateCellRequest& AddCells(const Aws::String& value) { m_cellsHasBeenSet = true; m_cells.push_back(value); return *this; }
 
     /**
-     * A list of Cell arns contained within this Cell (for use in nested Cells, e.g.
-     * regions within which AZs)
+     * <p>A list of cell Amazon Resource Names (ARNs) contained within this cell, for
+     * use in nested cells. For example, Availability Zones within specific Amazon Web
+     * Services Regions.</p>
      */
     inline CreateCellRequest& AddCells(Aws::String&& value) { m_cellsHasBeenSet = true; m_cells.push_back(std::move(value)); return *this; }
 
     /**
-     * A list of Cell arns contained within this Cell (for use in nested Cells, e.g.
-     * regions within which AZs)
+     * <p>A list of cell Amazon Resource Names (ARNs) contained within this cell, for
+     * use in nested cells. For example, Availability Zones within specific Amazon Web
+     * Services Regions.</p>
      */
     inline CreateCellRequest& AddCells(const char* value) { m_cellsHasBeenSet = true; m_cells.push_back(value); return *this; }
 

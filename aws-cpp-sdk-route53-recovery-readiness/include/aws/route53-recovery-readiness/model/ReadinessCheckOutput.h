@@ -25,8 +25,7 @@ namespace Model
 {
 
   /**
-   * A resource used for checking the readiness of a Resource Set<p><h3>See
-   * Also:</h3>   <a
+   * <p>A readiness check.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/ReadinessCheckOutput">AWS
    * API Reference</a></p>
    */
@@ -40,124 +39,124 @@ namespace Model
 
 
     /**
-     * Arn associated with ReadinessCheck
+     * <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
      */
     inline const Aws::String& GetReadinessCheckArn() const{ return m_readinessCheckArn; }
 
     /**
-     * Arn associated with ReadinessCheck
+     * <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
      */
     inline bool ReadinessCheckArnHasBeenSet() const { return m_readinessCheckArnHasBeenSet; }
 
     /**
-     * Arn associated with ReadinessCheck
+     * <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
      */
     inline void SetReadinessCheckArn(const Aws::String& value) { m_readinessCheckArnHasBeenSet = true; m_readinessCheckArn = value; }
 
     /**
-     * Arn associated with ReadinessCheck
+     * <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
      */
     inline void SetReadinessCheckArn(Aws::String&& value) { m_readinessCheckArnHasBeenSet = true; m_readinessCheckArn = std::move(value); }
 
     /**
-     * Arn associated with ReadinessCheck
+     * <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
      */
     inline void SetReadinessCheckArn(const char* value) { m_readinessCheckArnHasBeenSet = true; m_readinessCheckArn.assign(value); }
 
     /**
-     * Arn associated with ReadinessCheck
+     * <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
      */
     inline ReadinessCheckOutput& WithReadinessCheckArn(const Aws::String& value) { SetReadinessCheckArn(value); return *this;}
 
     /**
-     * Arn associated with ReadinessCheck
+     * <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
      */
     inline ReadinessCheckOutput& WithReadinessCheckArn(Aws::String&& value) { SetReadinessCheckArn(std::move(value)); return *this;}
 
     /**
-     * Arn associated with ReadinessCheck
+     * <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
      */
     inline ReadinessCheckOutput& WithReadinessCheckArn(const char* value) { SetReadinessCheckArn(value); return *this;}
 
 
     /**
-     * Name for a ReadinessCheck
+     * <p>Name of a readiness check.</p>
      */
     inline const Aws::String& GetReadinessCheckName() const{ return m_readinessCheckName; }
 
     /**
-     * Name for a ReadinessCheck
+     * <p>Name of a readiness check.</p>
      */
     inline bool ReadinessCheckNameHasBeenSet() const { return m_readinessCheckNameHasBeenSet; }
 
     /**
-     * Name for a ReadinessCheck
+     * <p>Name of a readiness check.</p>
      */
     inline void SetReadinessCheckName(const Aws::String& value) { m_readinessCheckNameHasBeenSet = true; m_readinessCheckName = value; }
 
     /**
-     * Name for a ReadinessCheck
+     * <p>Name of a readiness check.</p>
      */
     inline void SetReadinessCheckName(Aws::String&& value) { m_readinessCheckNameHasBeenSet = true; m_readinessCheckName = std::move(value); }
 
     /**
-     * Name for a ReadinessCheck
+     * <p>Name of a readiness check.</p>
      */
     inline void SetReadinessCheckName(const char* value) { m_readinessCheckNameHasBeenSet = true; m_readinessCheckName.assign(value); }
 
     /**
-     * Name for a ReadinessCheck
+     * <p>Name of a readiness check.</p>
      */
     inline ReadinessCheckOutput& WithReadinessCheckName(const Aws::String& value) { SetReadinessCheckName(value); return *this;}
 
     /**
-     * Name for a ReadinessCheck
+     * <p>Name of a readiness check.</p>
      */
     inline ReadinessCheckOutput& WithReadinessCheckName(Aws::String&& value) { SetReadinessCheckName(std::move(value)); return *this;}
 
     /**
-     * Name for a ReadinessCheck
+     * <p>Name of a readiness check.</p>
      */
     inline ReadinessCheckOutput& WithReadinessCheckName(const char* value) { SetReadinessCheckName(value); return *this;}
 
 
     /**
-     * Name of the ResourceSet to be checked
+     * <p>Name of the resource set to be checked.</p>
      */
     inline const Aws::String& GetResourceSet() const{ return m_resourceSet; }
 
     /**
-     * Name of the ResourceSet to be checked
+     * <p>Name of the resource set to be checked.</p>
      */
     inline bool ResourceSetHasBeenSet() const { return m_resourceSetHasBeenSet; }
 
     /**
-     * Name of the ResourceSet to be checked
+     * <p>Name of the resource set to be checked.</p>
      */
     inline void SetResourceSet(const Aws::String& value) { m_resourceSetHasBeenSet = true; m_resourceSet = value; }
 
     /**
-     * Name of the ResourceSet to be checked
+     * <p>Name of the resource set to be checked.</p>
      */
     inline void SetResourceSet(Aws::String&& value) { m_resourceSetHasBeenSet = true; m_resourceSet = std::move(value); }
 
     /**
-     * Name of the ResourceSet to be checked
+     * <p>Name of the resource set to be checked.</p>
      */
     inline void SetResourceSet(const char* value) { m_resourceSetHasBeenSet = true; m_resourceSet.assign(value); }
 
     /**
-     * Name of the ResourceSet to be checked
+     * <p>Name of the resource set to be checked.</p>
      */
     inline ReadinessCheckOutput& WithResourceSet(const Aws::String& value) { SetResourceSet(value); return *this;}
 
     /**
-     * Name of the ResourceSet to be checked
+     * <p>Name of the resource set to be checked.</p>
      */
     inline ReadinessCheckOutput& WithResourceSet(Aws::String&& value) { SetResourceSet(std::move(value)); return *this;}
 
     /**
-     * Name of the ResourceSet to be checked
+     * <p>Name of the resource set to be checked.</p>
      */
     inline ReadinessCheckOutput& WithResourceSet(const char* value) { SetResourceSet(value); return *this;}
 

@@ -18,9 +18,6 @@ namespace Model
 {
 
   /**
-   * The ReadinessCheck to create<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/CreateReadinessCheckRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_ROUTE53RECOVERYREADINESS_API CreateReadinessCheckRequest : public Route53RecoveryReadinessRequest
   {
@@ -37,83 +34,83 @@ namespace Model
 
 
     /**
-     * The name of the ReadinessCheck to create
+     * <p>The name of the readiness check to create.</p>
      */
     inline const Aws::String& GetReadinessCheckName() const{ return m_readinessCheckName; }
 
     /**
-     * The name of the ReadinessCheck to create
+     * <p>The name of the readiness check to create.</p>
      */
     inline bool ReadinessCheckNameHasBeenSet() const { return m_readinessCheckNameHasBeenSet; }
 
     /**
-     * The name of the ReadinessCheck to create
+     * <p>The name of the readiness check to create.</p>
      */
     inline void SetReadinessCheckName(const Aws::String& value) { m_readinessCheckNameHasBeenSet = true; m_readinessCheckName = value; }
 
     /**
-     * The name of the ReadinessCheck to create
+     * <p>The name of the readiness check to create.</p>
      */
     inline void SetReadinessCheckName(Aws::String&& value) { m_readinessCheckNameHasBeenSet = true; m_readinessCheckName = std::move(value); }
 
     /**
-     * The name of the ReadinessCheck to create
+     * <p>The name of the readiness check to create.</p>
      */
     inline void SetReadinessCheckName(const char* value) { m_readinessCheckNameHasBeenSet = true; m_readinessCheckName.assign(value); }
 
     /**
-     * The name of the ReadinessCheck to create
+     * <p>The name of the readiness check to create.</p>
      */
     inline CreateReadinessCheckRequest& WithReadinessCheckName(const Aws::String& value) { SetReadinessCheckName(value); return *this;}
 
     /**
-     * The name of the ReadinessCheck to create
+     * <p>The name of the readiness check to create.</p>
      */
     inline CreateReadinessCheckRequest& WithReadinessCheckName(Aws::String&& value) { SetReadinessCheckName(std::move(value)); return *this;}
 
     /**
-     * The name of the ReadinessCheck to create
+     * <p>The name of the readiness check to create.</p>
      */
     inline CreateReadinessCheckRequest& WithReadinessCheckName(const char* value) { SetReadinessCheckName(value); return *this;}
 
 
     /**
-     * The name of the ResourceSet to check
+     * <p>The name of the resource set to check.</p>
      */
     inline const Aws::String& GetResourceSetName() const{ return m_resourceSetName; }
 
     /**
-     * The name of the ResourceSet to check
+     * <p>The name of the resource set to check.</p>
      */
     inline bool ResourceSetNameHasBeenSet() const { return m_resourceSetNameHasBeenSet; }
 
     /**
-     * The name of the ResourceSet to check
+     * <p>The name of the resource set to check.</p>
      */
     inline void SetResourceSetName(const Aws::String& value) { m_resourceSetNameHasBeenSet = true; m_resourceSetName = value; }
 
     /**
-     * The name of the ResourceSet to check
+     * <p>The name of the resource set to check.</p>
      */
     inline void SetResourceSetName(Aws::String&& value) { m_resourceSetNameHasBeenSet = true; m_resourceSetName = std::move(value); }
 
     /**
-     * The name of the ResourceSet to check
+     * <p>The name of the resource set to check.</p>
      */
     inline void SetResourceSetName(const char* value) { m_resourceSetNameHasBeenSet = true; m_resourceSetName.assign(value); }
 
     /**
-     * The name of the ResourceSet to check
+     * <p>The name of the resource set to check.</p>
      */
     inline CreateReadinessCheckRequest& WithResourceSetName(const Aws::String& value) { SetResourceSetName(value); return *this;}
 
     /**
-     * The name of the ResourceSet to check
+     * <p>The name of the resource set to check.</p>
      */
     inline CreateReadinessCheckRequest& WithResourceSetName(Aws::String&& value) { SetResourceSetName(std::move(value)); return *this;}
 
     /**
-     * The name of the ResourceSet to check
+     * <p>The name of the resource set to check.</p>
      */
     inline CreateReadinessCheckRequest& WithResourceSetName(const char* value) { SetResourceSetName(value); return *this;}
 

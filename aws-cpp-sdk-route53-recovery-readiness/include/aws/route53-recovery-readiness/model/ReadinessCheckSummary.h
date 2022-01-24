@@ -25,8 +25,9 @@ namespace Model
 {
 
   /**
-   * Summary of ReadinessCheck status, paginated in GetRecoveryGroupReadinessSummary
-   * and GetCellReadinessSummary<p><h3>See Also:</h3>   <a
+   * <p>Summary of all readiness check statuses in a recovery group, paginated in
+   * GetRecoveryGroupReadinessSummary and GetCellReadinessSummary.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/ReadinessCheckSummary">AWS
    * API Reference</a></p>
    */
@@ -40,73 +41,73 @@ namespace Model
 
 
     /**
-     * The readiness of this ReadinessCheck
+     * <p>The readiness status of this readiness check.</p>
      */
     inline const Readiness& GetReadiness() const{ return m_readiness; }
 
     /**
-     * The readiness of this ReadinessCheck
+     * <p>The readiness status of this readiness check.</p>
      */
     inline bool ReadinessHasBeenSet() const { return m_readinessHasBeenSet; }
 
     /**
-     * The readiness of this ReadinessCheck
+     * <p>The readiness status of this readiness check.</p>
      */
     inline void SetReadiness(const Readiness& value) { m_readinessHasBeenSet = true; m_readiness = value; }
 
     /**
-     * The readiness of this ReadinessCheck
+     * <p>The readiness status of this readiness check.</p>
      */
     inline void SetReadiness(Readiness&& value) { m_readinessHasBeenSet = true; m_readiness = std::move(value); }
 
     /**
-     * The readiness of this ReadinessCheck
+     * <p>The readiness status of this readiness check.</p>
      */
     inline ReadinessCheckSummary& WithReadiness(const Readiness& value) { SetReadiness(value); return *this;}
 
     /**
-     * The readiness of this ReadinessCheck
+     * <p>The readiness status of this readiness check.</p>
      */
     inline ReadinessCheckSummary& WithReadiness(Readiness&& value) { SetReadiness(std::move(value)); return *this;}
 
 
     /**
-     * The name of a ReadinessCheck which is part of the given RecoveryGroup or Cell
+     * <p>The name of a readiness check.</p>
      */
     inline const Aws::String& GetReadinessCheckName() const{ return m_readinessCheckName; }
 
     /**
-     * The name of a ReadinessCheck which is part of the given RecoveryGroup or Cell
+     * <p>The name of a readiness check.</p>
      */
     inline bool ReadinessCheckNameHasBeenSet() const { return m_readinessCheckNameHasBeenSet; }
 
     /**
-     * The name of a ReadinessCheck which is part of the given RecoveryGroup or Cell
+     * <p>The name of a readiness check.</p>
      */
     inline void SetReadinessCheckName(const Aws::String& value) { m_readinessCheckNameHasBeenSet = true; m_readinessCheckName = value; }
 
     /**
-     * The name of a ReadinessCheck which is part of the given RecoveryGroup or Cell
+     * <p>The name of a readiness check.</p>
      */
     inline void SetReadinessCheckName(Aws::String&& value) { m_readinessCheckNameHasBeenSet = true; m_readinessCheckName = std::move(value); }
 
     /**
-     * The name of a ReadinessCheck which is part of the given RecoveryGroup or Cell
+     * <p>The name of a readiness check.</p>
      */
     inline void SetReadinessCheckName(const char* value) { m_readinessCheckNameHasBeenSet = true; m_readinessCheckName.assign(value); }
 
     /**
-     * The name of a ReadinessCheck which is part of the given RecoveryGroup or Cell
+     * <p>The name of a readiness check.</p>
      */
     inline ReadinessCheckSummary& WithReadinessCheckName(const Aws::String& value) { SetReadinessCheckName(value); return *this;}
 
     /**
-     * The name of a ReadinessCheck which is part of the given RecoveryGroup or Cell
+     * <p>The name of a readiness check.</p>
      */
     inline ReadinessCheckSummary& WithReadinessCheckName(Aws::String&& value) { SetReadinessCheckName(std::move(value)); return *this;}
 
     /**
-     * The name of a ReadinessCheck which is part of the given RecoveryGroup or Cell
+     * <p>The name of a readiness check.</p>
      */
     inline ReadinessCheckSummary& WithReadinessCheckName(const char* value) { SetReadinessCheckName(value); return *this;}
 

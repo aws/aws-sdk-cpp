@@ -19,9 +19,6 @@ namespace Model
 {
 
   /**
-   * The RecoveryGroup to create<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/CreateRecoveryGroupRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_ROUTE53RECOVERYREADINESS_API CreateRecoveryGroupRequest : public Route53RecoveryReadinessRequest
   {
@@ -38,88 +35,88 @@ namespace Model
 
 
     /**
-     * A list of Cell arns
+     * <p>A list of the cell Amazon Resource Names (ARNs) in the recovery group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCells() const{ return m_cells; }
 
     /**
-     * A list of Cell arns
+     * <p>A list of the cell Amazon Resource Names (ARNs) in the recovery group.</p>
      */
     inline bool CellsHasBeenSet() const { return m_cellsHasBeenSet; }
 
     /**
-     * A list of Cell arns
+     * <p>A list of the cell Amazon Resource Names (ARNs) in the recovery group.</p>
      */
     inline void SetCells(const Aws::Vector<Aws::String>& value) { m_cellsHasBeenSet = true; m_cells = value; }
 
     /**
-     * A list of Cell arns
+     * <p>A list of the cell Amazon Resource Names (ARNs) in the recovery group.</p>
      */
     inline void SetCells(Aws::Vector<Aws::String>&& value) { m_cellsHasBeenSet = true; m_cells = std::move(value); }
 
     /**
-     * A list of Cell arns
+     * <p>A list of the cell Amazon Resource Names (ARNs) in the recovery group.</p>
      */
     inline CreateRecoveryGroupRequest& WithCells(const Aws::Vector<Aws::String>& value) { SetCells(value); return *this;}
 
     /**
-     * A list of Cell arns
+     * <p>A list of the cell Amazon Resource Names (ARNs) in the recovery group.</p>
      */
     inline CreateRecoveryGroupRequest& WithCells(Aws::Vector<Aws::String>&& value) { SetCells(std::move(value)); return *this;}
 
     /**
-     * A list of Cell arns
+     * <p>A list of the cell Amazon Resource Names (ARNs) in the recovery group.</p>
      */
     inline CreateRecoveryGroupRequest& AddCells(const Aws::String& value) { m_cellsHasBeenSet = true; m_cells.push_back(value); return *this; }
 
     /**
-     * A list of Cell arns
+     * <p>A list of the cell Amazon Resource Names (ARNs) in the recovery group.</p>
      */
     inline CreateRecoveryGroupRequest& AddCells(Aws::String&& value) { m_cellsHasBeenSet = true; m_cells.push_back(std::move(value)); return *this; }
 
     /**
-     * A list of Cell arns
+     * <p>A list of the cell Amazon Resource Names (ARNs) in the recovery group.</p>
      */
     inline CreateRecoveryGroupRequest& AddCells(const char* value) { m_cellsHasBeenSet = true; m_cells.push_back(value); return *this; }
 
 
     /**
-     * The name of the RecoveryGroup to create
+     * <p>The name of the recovery group to create.</p>
      */
     inline const Aws::String& GetRecoveryGroupName() const{ return m_recoveryGroupName; }
 
     /**
-     * The name of the RecoveryGroup to create
+     * <p>The name of the recovery group to create.</p>
      */
     inline bool RecoveryGroupNameHasBeenSet() const { return m_recoveryGroupNameHasBeenSet; }
 
     /**
-     * The name of the RecoveryGroup to create
+     * <p>The name of the recovery group to create.</p>
      */
     inline void SetRecoveryGroupName(const Aws::String& value) { m_recoveryGroupNameHasBeenSet = true; m_recoveryGroupName = value; }
 
     /**
-     * The name of the RecoveryGroup to create
+     * <p>The name of the recovery group to create.</p>
      */
     inline void SetRecoveryGroupName(Aws::String&& value) { m_recoveryGroupNameHasBeenSet = true; m_recoveryGroupName = std::move(value); }
 
     /**
-     * The name of the RecoveryGroup to create
+     * <p>The name of the recovery group to create.</p>
      */
     inline void SetRecoveryGroupName(const char* value) { m_recoveryGroupNameHasBeenSet = true; m_recoveryGroupName.assign(value); }
 
     /**
-     * The name of the RecoveryGroup to create
+     * <p>The name of the recovery group to create.</p>
      */
     inline CreateRecoveryGroupRequest& WithRecoveryGroupName(const Aws::String& value) { SetRecoveryGroupName(value); return *this;}
 
     /**
-     * The name of the RecoveryGroup to create
+     * <p>The name of the recovery group to create.</p>
      */
     inline CreateRecoveryGroupRequest& WithRecoveryGroupName(Aws::String&& value) { SetRecoveryGroupName(std::move(value)); return *this;}
 
     /**
-     * The name of the RecoveryGroup to create
+     * <p>The name of the recovery group to create.</p>
      */
     inline CreateRecoveryGroupRequest& WithRecoveryGroupName(const char* value) { SetRecoveryGroupName(value); return *this;}
 

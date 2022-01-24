@@ -33,42 +33,42 @@ namespace Model
 
 
     /**
-     * The ResourceSet to get
+     * <p>Name of a resource set.</p>
      */
     inline const Aws::String& GetResourceSetName() const{ return m_resourceSetName; }
 
     /**
-     * The ResourceSet to get
+     * <p>Name of a resource set.</p>
      */
     inline bool ResourceSetNameHasBeenSet() const { return m_resourceSetNameHasBeenSet; }
 
     /**
-     * The ResourceSet to get
+     * <p>Name of a resource set.</p>
      */
     inline void SetResourceSetName(const Aws::String& value) { m_resourceSetNameHasBeenSet = true; m_resourceSetName = value; }
 
     /**
-     * The ResourceSet to get
+     * <p>Name of a resource set.</p>
      */
     inline void SetResourceSetName(Aws::String&& value) { m_resourceSetNameHasBeenSet = true; m_resourceSetName = std::move(value); }
 
     /**
-     * The ResourceSet to get
+     * <p>Name of a resource set.</p>
      */
     inline void SetResourceSetName(const char* value) { m_resourceSetNameHasBeenSet = true; m_resourceSetName.assign(value); }
 
     /**
-     * The ResourceSet to get
+     * <p>Name of a resource set.</p>
      */
     inline GetResourceSetRequest& WithResourceSetName(const Aws::String& value) { SetResourceSetName(value); return *this;}
 
     /**
-     * The ResourceSet to get
+     * <p>Name of a resource set.</p>
      */
     inline GetResourceSetRequest& WithResourceSetName(Aws::String&& value) { SetResourceSetName(std::move(value)); return *this;}
 
     /**
-     * The ResourceSet to get
+     * <p>Name of a resource set.</p>
      */
     inline GetResourceSetRequest& WithResourceSetName(const char* value) { SetResourceSetName(value); return *this;}
 

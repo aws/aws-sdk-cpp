@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * A collection of rules used in a readiness check<p><h3>See Also:</h3>   <a
+   * <p>Readiness rule information, including the resource type, rule ID, and rule
+   * description.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/ListRulesOutput">AWS
    * API Reference</a></p>
    */
@@ -38,124 +39,124 @@ namespace Model
 
 
     /**
-     * The resource type the rule applies to.
+     * <p>The resource type that the readiness rule applies to.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * The resource type the rule applies to.
+     * <p>The resource type that the readiness rule applies to.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * The resource type the rule applies to.
+     * <p>The resource type that the readiness rule applies to.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * The resource type the rule applies to.
+     * <p>The resource type that the readiness rule applies to.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * The resource type the rule applies to.
+     * <p>The resource type that the readiness rule applies to.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * The resource type the rule applies to.
+     * <p>The resource type that the readiness rule applies to.</p>
      */
     inline ListRulesOutput& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * The resource type the rule applies to.
+     * <p>The resource type that the readiness rule applies to.</p>
      */
     inline ListRulesOutput& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * The resource type the rule applies to.
+     * <p>The resource type that the readiness rule applies to.</p>
      */
     inline ListRulesOutput& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
 
     /**
-     * A description of the rule
+     * <p>The description of a readiness rule.</p>
      */
     inline const Aws::String& GetRuleDescription() const{ return m_ruleDescription; }
 
     /**
-     * A description of the rule
+     * <p>The description of a readiness rule.</p>
      */
     inline bool RuleDescriptionHasBeenSet() const { return m_ruleDescriptionHasBeenSet; }
 
     /**
-     * A description of the rule
+     * <p>The description of a readiness rule.</p>
      */
     inline void SetRuleDescription(const Aws::String& value) { m_ruleDescriptionHasBeenSet = true; m_ruleDescription = value; }
 
     /**
-     * A description of the rule
+     * <p>The description of a readiness rule.</p>
      */
     inline void SetRuleDescription(Aws::String&& value) { m_ruleDescriptionHasBeenSet = true; m_ruleDescription = std::move(value); }
 
     /**
-     * A description of the rule
+     * <p>The description of a readiness rule.</p>
      */
     inline void SetRuleDescription(const char* value) { m_ruleDescriptionHasBeenSet = true; m_ruleDescription.assign(value); }
 
     /**
-     * A description of the rule
+     * <p>The description of a readiness rule.</p>
      */
     inline ListRulesOutput& WithRuleDescription(const Aws::String& value) { SetRuleDescription(value); return *this;}
 
     /**
-     * A description of the rule
+     * <p>The description of a readiness rule.</p>
      */
     inline ListRulesOutput& WithRuleDescription(Aws::String&& value) { SetRuleDescription(std::move(value)); return *this;}
 
     /**
-     * A description of the rule
+     * <p>The description of a readiness rule.</p>
      */
     inline ListRulesOutput& WithRuleDescription(const char* value) { SetRuleDescription(value); return *this;}
 
 
     /**
-     * The Rule's ID.
+     * <p>The ID for the readiness rule.</p>
      */
     inline const Aws::String& GetRuleId() const{ return m_ruleId; }
 
     /**
-     * The Rule's ID.
+     * <p>The ID for the readiness rule.</p>
      */
     inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
 
     /**
-     * The Rule's ID.
+     * <p>The ID for the readiness rule.</p>
      */
     inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
 
     /**
-     * The Rule's ID.
+     * <p>The ID for the readiness rule.</p>
      */
     inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::move(value); }
 
     /**
-     * The Rule's ID.
+     * <p>The ID for the readiness rule.</p>
      */
     inline void SetRuleId(const char* value) { m_ruleIdHasBeenSet = true; m_ruleId.assign(value); }
 
     /**
-     * The Rule's ID.
+     * <p>The ID for the readiness rule.</p>
      */
     inline ListRulesOutput& WithRuleId(const Aws::String& value) { SetRuleId(value); return *this;}
 
     /**
-     * The Rule's ID.
+     * <p>The ID for the readiness rule.</p>
      */
     inline ListRulesOutput& WithRuleId(Aws::String&& value) { SetRuleId(std::move(value)); return *this;}
 
     /**
-     * The Rule's ID.
+     * <p>The ID for the readiness rule.</p>
      */
     inline ListRulesOutput& WithRuleId(const char* value) { SetRuleId(value); return *this;}
 

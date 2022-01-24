@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * The Route 53 resource a DNS Target Resource record points to<p><h3>See
-   * Also:</h3>   <a
+   * <p>The Route 53 resource that a DNS target resource record points
+   * to.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/R53ResourceRecord">AWS
    * API Reference</a></p>
    */
@@ -39,83 +39,83 @@ namespace Model
 
 
     /**
-     * The DNS target name
+     * <p>The DNS target domain name.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * The DNS target name
+     * <p>The DNS target domain name.</p>
      */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
-     * The DNS target name
+     * <p>The DNS target domain name.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * The DNS target name
+     * <p>The DNS target domain name.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * The DNS target name
+     * <p>The DNS target domain name.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * The DNS target name
+     * <p>The DNS target domain name.</p>
      */
     inline R53ResourceRecord& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * The DNS target name
+     * <p>The DNS target domain name.</p>
      */
     inline R53ResourceRecord& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * The DNS target name
+     * <p>The DNS target domain name.</p>
      */
     inline R53ResourceRecord& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
 
     /**
-     * The Resource Record set id
+     * <p>The Route 53 Resource Record Set ID.</p>
      */
     inline const Aws::String& GetRecordSetId() const{ return m_recordSetId; }
 
     /**
-     * The Resource Record set id
+     * <p>The Route 53 Resource Record Set ID.</p>
      */
     inline bool RecordSetIdHasBeenSet() const { return m_recordSetIdHasBeenSet; }
 
     /**
-     * The Resource Record set id
+     * <p>The Route 53 Resource Record Set ID.</p>
      */
     inline void SetRecordSetId(const Aws::String& value) { m_recordSetIdHasBeenSet = true; m_recordSetId = value; }
 
     /**
-     * The Resource Record set id
+     * <p>The Route 53 Resource Record Set ID.</p>
      */
     inline void SetRecordSetId(Aws::String&& value) { m_recordSetIdHasBeenSet = true; m_recordSetId = std::move(value); }
 
     /**
-     * The Resource Record set id
+     * <p>The Route 53 Resource Record Set ID.</p>
      */
     inline void SetRecordSetId(const char* value) { m_recordSetIdHasBeenSet = true; m_recordSetId.assign(value); }
 
     /**
-     * The Resource Record set id
+     * <p>The Route 53 Resource Record Set ID.</p>
      */
     inline R53ResourceRecord& WithRecordSetId(const Aws::String& value) { SetRecordSetId(value); return *this;}
 
     /**
-     * The Resource Record set id
+     * <p>The Route 53 Resource Record Set ID.</p>
      */
     inline R53ResourceRecord& WithRecordSetId(Aws::String&& value) { SetRecordSetId(std::move(value)); return *this;}
 
     /**
-     * The Resource Record set id
+     * <p>The Route 53 Resource Record Set ID.</p>
      */
     inline R53ResourceRecord& WithRecordSetId(const char* value) { SetRecordSetId(value); return *this;}
 

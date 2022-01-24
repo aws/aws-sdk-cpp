@@ -35,73 +35,73 @@ namespace Model
 
 
     /**
-     * A list of Cells
+     * <p>A list of cells.</p>
      */
     inline const Aws::Vector<CellOutput>& GetCells() const{ return m_cells; }
 
     /**
-     * A list of Cells
+     * <p>A list of cells.</p>
      */
     inline void SetCells(const Aws::Vector<CellOutput>& value) { m_cells = value; }
 
     /**
-     * A list of Cells
+     * <p>A list of cells.</p>
      */
     inline void SetCells(Aws::Vector<CellOutput>&& value) { m_cells = std::move(value); }
 
     /**
-     * A list of Cells
+     * <p>A list of cells.</p>
      */
     inline ListCellsResult& WithCells(const Aws::Vector<CellOutput>& value) { SetCells(value); return *this;}
 
     /**
-     * A list of Cells
+     * <p>A list of cells.</p>
      */
     inline ListCellsResult& WithCells(Aws::Vector<CellOutput>&& value) { SetCells(std::move(value)); return *this;}
 
     /**
-     * A list of Cells
+     * <p>A list of cells.</p>
      */
     inline ListCellsResult& AddCells(const CellOutput& value) { m_cells.push_back(value); return *this; }
 
     /**
-     * A list of Cells
+     * <p>A list of cells.</p>
      */
     inline ListCellsResult& AddCells(CellOutput&& value) { m_cells.push_back(std::move(value)); return *this; }
 
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline ListCellsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline ListCellsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline ListCellsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

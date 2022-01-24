@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * The cross account authorization
+     * <p>The cross-account authorization.</p>
      */
     inline const Aws::String& GetCrossAccountAuthorization() const{ return m_crossAccountAuthorization; }
 
     /**
-     * The cross account authorization
+     * <p>The cross-account authorization.</p>
      */
     inline void SetCrossAccountAuthorization(const Aws::String& value) { m_crossAccountAuthorization = value; }
 
     /**
-     * The cross account authorization
+     * <p>The cross-account authorization.</p>
      */
     inline void SetCrossAccountAuthorization(Aws::String&& value) { m_crossAccountAuthorization = std::move(value); }
 
     /**
-     * The cross account authorization
+     * <p>The cross-account authorization.</p>
      */
     inline void SetCrossAccountAuthorization(const char* value) { m_crossAccountAuthorization.assign(value); }
 
     /**
-     * The cross account authorization
+     * <p>The cross-account authorization.</p>
      */
     inline CreateCrossAccountAuthorizationResult& WithCrossAccountAuthorization(const Aws::String& value) { SetCrossAccountAuthorization(value); return *this;}
 
     /**
-     * The cross account authorization
+     * <p>The cross-account authorization.</p>
      */
     inline CreateCrossAccountAuthorizationResult& WithCrossAccountAuthorization(Aws::String&& value) { SetCrossAccountAuthorization(std::move(value)); return *this;}
 
     /**
-     * The cross account authorization
+     * <p>The cross-account authorization.</p>
      */
     inline CreateCrossAccountAuthorizationResult& WithCrossAccountAuthorization(const char* value) { SetCrossAccountAuthorization(value); return *this;}
 

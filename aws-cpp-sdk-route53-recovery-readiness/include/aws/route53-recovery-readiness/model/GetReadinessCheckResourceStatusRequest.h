@@ -39,145 +39,161 @@ namespace Model
 
 
     /**
-     * Upper bound on number of records to return.
+     * <p>The number of objects that you want to return with this call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * Upper bound on number of records to return.
+     * <p>The number of objects that you want to return with this call.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * Upper bound on number of records to return.
+     * <p>The number of objects that you want to return with this call.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * Upper bound on number of records to return.
+     * <p>The number of objects that you want to return with this call.</p>
      */
     inline GetReadinessCheckResourceStatusRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * A token used to resume pagination from the end of a previous request.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * A token used to resume pagination from the end of a previous request.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * A token used to resume pagination from the end of a previous request.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * A token used to resume pagination from the end of a previous request.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * A token used to resume pagination from the end of a previous request.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * A token used to resume pagination from the end of a previous request.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline GetReadinessCheckResourceStatusRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * A token used to resume pagination from the end of a previous request.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline GetReadinessCheckResourceStatusRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * A token used to resume pagination from the end of a previous request.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline GetReadinessCheckResourceStatusRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * The ReadinessCheck to get
+     * <p>Name of a readiness check.</p>
      */
     inline const Aws::String& GetReadinessCheckName() const{ return m_readinessCheckName; }
 
     /**
-     * The ReadinessCheck to get
+     * <p>Name of a readiness check.</p>
      */
     inline bool ReadinessCheckNameHasBeenSet() const { return m_readinessCheckNameHasBeenSet; }
 
     /**
-     * The ReadinessCheck to get
+     * <p>Name of a readiness check.</p>
      */
     inline void SetReadinessCheckName(const Aws::String& value) { m_readinessCheckNameHasBeenSet = true; m_readinessCheckName = value; }
 
     /**
-     * The ReadinessCheck to get
+     * <p>Name of a readiness check.</p>
      */
     inline void SetReadinessCheckName(Aws::String&& value) { m_readinessCheckNameHasBeenSet = true; m_readinessCheckName = std::move(value); }
 
     /**
-     * The ReadinessCheck to get
+     * <p>Name of a readiness check.</p>
      */
     inline void SetReadinessCheckName(const char* value) { m_readinessCheckNameHasBeenSet = true; m_readinessCheckName.assign(value); }
 
     /**
-     * The ReadinessCheck to get
+     * <p>Name of a readiness check.</p>
      */
     inline GetReadinessCheckResourceStatusRequest& WithReadinessCheckName(const Aws::String& value) { SetReadinessCheckName(value); return *this;}
 
     /**
-     * The ReadinessCheck to get
+     * <p>Name of a readiness check.</p>
      */
     inline GetReadinessCheckResourceStatusRequest& WithReadinessCheckName(Aws::String&& value) { SetReadinessCheckName(std::move(value)); return *this;}
 
     /**
-     * The ReadinessCheck to get
+     * <p>Name of a readiness check.</p>
      */
     inline GetReadinessCheckResourceStatusRequest& WithReadinessCheckName(const char* value) { SetReadinessCheckName(value); return *this;}
 
 
     /**
-     * The resource ARN or component Id to get
+     * <p>The resource identifier, which is the Amazon Resource Name (ARN) or the
+     * identifier generated for the resource by Application Recovery Controller (for
+     * example, for a DNS target resource).</p>
      */
     inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
 
     /**
-     * The resource ARN or component Id to get
+     * <p>The resource identifier, which is the Amazon Resource Name (ARN) or the
+     * identifier generated for the resource by Application Recovery Controller (for
+     * example, for a DNS target resource).</p>
      */
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
 
     /**
-     * The resource ARN or component Id to get
+     * <p>The resource identifier, which is the Amazon Resource Name (ARN) or the
+     * identifier generated for the resource by Application Recovery Controller (for
+     * example, for a DNS target resource).</p>
      */
     inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
 
     /**
-     * The resource ARN or component Id to get
+     * <p>The resource identifier, which is the Amazon Resource Name (ARN) or the
+     * identifier generated for the resource by Application Recovery Controller (for
+     * example, for a DNS target resource).</p>
      */
     inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
 
     /**
-     * The resource ARN or component Id to get
+     * <p>The resource identifier, which is the Amazon Resource Name (ARN) or the
+     * identifier generated for the resource by Application Recovery Controller (for
+     * example, for a DNS target resource).</p>
      */
     inline void SetResourceIdentifier(const char* value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.assign(value); }
 
     /**
-     * The resource ARN or component Id to get
+     * <p>The resource identifier, which is the Amazon Resource Name (ARN) or the
+     * identifier generated for the resource by Application Recovery Controller (for
+     * example, for a DNS target resource).</p>
      */
     inline GetReadinessCheckResourceStatusRequest& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
 
     /**
-     * The resource ARN or component Id to get
+     * <p>The resource identifier, which is the Amazon Resource Name (ARN) or the
+     * identifier generated for the resource by Application Recovery Controller (for
+     * example, for a DNS target resource).</p>
      */
     inline GetReadinessCheckResourceStatusRequest& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(std::move(value)); return *this;}
 
     /**
-     * The resource ARN or component Id to get
+     * <p>The resource identifier, which is the Amazon Resource Name (ARN) or the
+     * identifier generated for the resource by Application Recovery Controller (for
+     * example, for a DNS target resource).</p>
      */
     inline GetReadinessCheckResourceStatusRequest& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
 

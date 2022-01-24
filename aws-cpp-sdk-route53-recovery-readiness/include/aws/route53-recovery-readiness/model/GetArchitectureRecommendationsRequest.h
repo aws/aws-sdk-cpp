@@ -39,104 +39,104 @@ namespace Model
 
 
     /**
-     * Upper bound on number of records to return.
+     * <p>The number of objects that you want to return with this call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * Upper bound on number of records to return.
+     * <p>The number of objects that you want to return with this call.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * Upper bound on number of records to return.
+     * <p>The number of objects that you want to return with this call.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * Upper bound on number of records to return.
+     * <p>The number of objects that you want to return with this call.</p>
      */
     inline GetArchitectureRecommendationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline GetArchitectureRecommendationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline GetArchitectureRecommendationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * A token that can be used to resume pagination from the end of the collection.
+     * <p>The token that identifies which batch of results you want to see.</p>
      */
     inline GetArchitectureRecommendationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * Name of RecoveryGroup (top level resource) to be analyzed.
+     * <p>The name of a recovery group.</p>
      */
     inline const Aws::String& GetRecoveryGroupName() const{ return m_recoveryGroupName; }
 
     /**
-     * Name of RecoveryGroup (top level resource) to be analyzed.
+     * <p>The name of a recovery group.</p>
      */
     inline bool RecoveryGroupNameHasBeenSet() const { return m_recoveryGroupNameHasBeenSet; }
 
     /**
-     * Name of RecoveryGroup (top level resource) to be analyzed.
+     * <p>The name of a recovery group.</p>
      */
     inline void SetRecoveryGroupName(const Aws::String& value) { m_recoveryGroupNameHasBeenSet = true; m_recoveryGroupName = value; }
 
     /**
-     * Name of RecoveryGroup (top level resource) to be analyzed.
+     * <p>The name of a recovery group.</p>
      */
     inline void SetRecoveryGroupName(Aws::String&& value) { m_recoveryGroupNameHasBeenSet = true; m_recoveryGroupName = std::move(value); }
 
     /**
-     * Name of RecoveryGroup (top level resource) to be analyzed.
+     * <p>The name of a recovery group.</p>
      */
     inline void SetRecoveryGroupName(const char* value) { m_recoveryGroupNameHasBeenSet = true; m_recoveryGroupName.assign(value); }
 
     /**
-     * Name of RecoveryGroup (top level resource) to be analyzed.
+     * <p>The name of a recovery group.</p>
      */
     inline GetArchitectureRecommendationsRequest& WithRecoveryGroupName(const Aws::String& value) { SetRecoveryGroupName(value); return *this;}
 
     /**
-     * Name of RecoveryGroup (top level resource) to be analyzed.
+     * <p>The name of a recovery group.</p>
      */
     inline GetArchitectureRecommendationsRequest& WithRecoveryGroupName(Aws::String&& value) { SetRecoveryGroupName(std::move(value)); return *this;}
 
     /**
-     * Name of RecoveryGroup (top level resource) to be analyzed.
+     * <p>The name of a recovery group.</p>
      */
     inline GetArchitectureRecommendationsRequest& WithRecoveryGroupName(const char* value) { SetRecoveryGroupName(value); return *this;}
 

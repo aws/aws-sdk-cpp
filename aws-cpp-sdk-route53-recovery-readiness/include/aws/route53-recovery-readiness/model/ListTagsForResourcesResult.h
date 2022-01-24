@@ -33,40 +33,64 @@ namespace Model
     ListTagsForResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p></p>
+     */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
-    
+    /**
+     * <p></p>
+     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
-    
+    /**
+     * <p></p>
+     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
-    
+    /**
+     * <p></p>
+     */
     inline ListTagsForResourcesResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
-    
+    /**
+     * <p></p>
+     */
     inline ListTagsForResourcesResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
-    
+    /**
+     * <p></p>
+     */
     inline ListTagsForResourcesResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
-    
+    /**
+     * <p></p>
+     */
     inline ListTagsForResourcesResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
-    
+    /**
+     * <p></p>
+     */
     inline ListTagsForResourcesResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
-    
+    /**
+     * <p></p>
+     */
     inline ListTagsForResourcesResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
-    
+    /**
+     * <p></p>
+     */
     inline ListTagsForResourcesResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
-    
+    /**
+     * <p></p>
+     */
     inline ListTagsForResourcesResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
-    
+    /**
+     * <p></p>
+     */
     inline ListTagsForResourcesResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
   private:
