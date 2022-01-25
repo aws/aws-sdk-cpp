@@ -23,10 +23,12 @@
 #include <aws/elasticfilesystem/model/CreateAccessPointRequest.h>
 #include <aws/elasticfilesystem/model/CreateFileSystemRequest.h>
 #include <aws/elasticfilesystem/model/CreateMountTargetRequest.h>
+#include <aws/elasticfilesystem/model/CreateReplicationConfigurationRequest.h>
 #include <aws/elasticfilesystem/model/DeleteAccessPointRequest.h>
 #include <aws/elasticfilesystem/model/DeleteFileSystemRequest.h>
 #include <aws/elasticfilesystem/model/DeleteFileSystemPolicyRequest.h>
 #include <aws/elasticfilesystem/model/DeleteMountTargetRequest.h>
+#include <aws/elasticfilesystem/model/DeleteReplicationConfigurationRequest.h>
 #include <aws/elasticfilesystem/model/DescribeAccessPointsRequest.h>
 #include <aws/elasticfilesystem/model/DescribeAccountPreferencesRequest.h>
 #include <aws/elasticfilesystem/model/DescribeBackupPolicyRequest.h>
@@ -35,6 +37,7 @@
 #include <aws/elasticfilesystem/model/DescribeLifecycleConfigurationRequest.h>
 #include <aws/elasticfilesystem/model/DescribeMountTargetSecurityGroupsRequest.h>
 #include <aws/elasticfilesystem/model/DescribeMountTargetsRequest.h>
+#include <aws/elasticfilesystem/model/DescribeReplicationConfigurationsRequest.h>
 #include <aws/elasticfilesystem/model/ListTagsForResourceRequest.h>
 #include <aws/elasticfilesystem/model/ModifyMountTargetSecurityGroupsRequest.h>
 #include <aws/elasticfilesystem/model/PutAccountPreferencesRequest.h>
@@ -193,6 +196,38 @@ void EFSClient::CreateMountTargetAsyncHelper(const CreateMountTargetRequest& req
   handler(this, request, CreateMountTarget(request), context);
 }
 
+CreateReplicationConfigurationOutcome EFSClient::CreateReplicationConfiguration(const CreateReplicationConfigurationRequest& request) const
+{
+  if (!request.SourceFileSystemIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateReplicationConfiguration", "Required field: SourceFileSystemId, is not set");
+    return CreateReplicationConfigurationOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SourceFileSystemId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2015-02-01/file-systems/");
+  uri.AddPathSegment(request.GetSourceFileSystemId());
+  uri.AddPathSegments("/replication-configuration");
+  return CreateReplicationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateReplicationConfigurationOutcomeCallable EFSClient::CreateReplicationConfigurationCallable(const CreateReplicationConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateReplicationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateReplicationConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EFSClient::CreateReplicationConfigurationAsync(const CreateReplicationConfigurationRequest& request, const CreateReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateReplicationConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void EFSClient::CreateReplicationConfigurationAsyncHelper(const CreateReplicationConfigurationRequest& request, const CreateReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateReplicationConfiguration(request), context);
+}
+
 DeleteAccessPointOutcome EFSClient::DeleteAccessPoint(const DeleteAccessPointRequest& request) const
 {
   if (!request.AccessPointIdHasBeenSet())
@@ -316,6 +351,38 @@ void EFSClient::DeleteMountTargetAsync(const DeleteMountTargetRequest& request, 
 void EFSClient::DeleteMountTargetAsyncHelper(const DeleteMountTargetRequest& request, const DeleteMountTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteMountTarget(request), context);
+}
+
+DeleteReplicationConfigurationOutcome EFSClient::DeleteReplicationConfiguration(const DeleteReplicationConfigurationRequest& request) const
+{
+  if (!request.SourceFileSystemIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteReplicationConfiguration", "Required field: SourceFileSystemId, is not set");
+    return DeleteReplicationConfigurationOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SourceFileSystemId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2015-02-01/file-systems/");
+  uri.AddPathSegment(request.GetSourceFileSystemId());
+  uri.AddPathSegments("/replication-configuration");
+  return DeleteReplicationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteReplicationConfigurationOutcomeCallable EFSClient::DeleteReplicationConfigurationCallable(const DeleteReplicationConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteReplicationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteReplicationConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EFSClient::DeleteReplicationConfigurationAsync(const DeleteReplicationConfigurationRequest& request, const DeleteReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteReplicationConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void EFSClient::DeleteReplicationConfigurationAsyncHelper(const DeleteReplicationConfigurationRequest& request, const DeleteReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteReplicationConfiguration(request), context);
 }
 
 DescribeAccessPointsOutcome EFSClient::DescribeAccessPoints(const DescribeAccessPointsRequest& request) const
@@ -544,6 +611,31 @@ void EFSClient::DescribeMountTargetsAsync(const DescribeMountTargetsRequest& req
 void EFSClient::DescribeMountTargetsAsyncHelper(const DescribeMountTargetsRequest& request, const DescribeMountTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeMountTargets(request), context);
+}
+
+DescribeReplicationConfigurationsOutcome EFSClient::DescribeReplicationConfigurations(const DescribeReplicationConfigurationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2015-02-01/file-systems/replication-configurations");
+  return DescribeReplicationConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeReplicationConfigurationsOutcomeCallable EFSClient::DescribeReplicationConfigurationsCallable(const DescribeReplicationConfigurationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeReplicationConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeReplicationConfigurations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EFSClient::DescribeReplicationConfigurationsAsync(const DescribeReplicationConfigurationsRequest& request, const DescribeReplicationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeReplicationConfigurationsAsyncHelper( request, handler, context ); } );
+}
+
+void EFSClient::DescribeReplicationConfigurationsAsyncHelper(const DescribeReplicationConfigurationsRequest& request, const DescribeReplicationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeReplicationConfigurations(request), context);
 }
 
 ListTagsForResourceOutcome EFSClient::ListTagsForResource(const ListTagsForResourceRequest& request) const

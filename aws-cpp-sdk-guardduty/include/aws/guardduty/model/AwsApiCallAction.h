@@ -194,6 +194,31 @@ namespace Model
     inline AwsApiCallAction& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
 
 
+    
+    inline const Aws::String& GetUserAgent() const{ return m_userAgent; }
+
+    
+    inline bool UserAgentHasBeenSet() const { return m_userAgentHasBeenSet; }
+
+    
+    inline void SetUserAgent(const Aws::String& value) { m_userAgentHasBeenSet = true; m_userAgent = value; }
+
+    
+    inline void SetUserAgent(Aws::String&& value) { m_userAgentHasBeenSet = true; m_userAgent = std::move(value); }
+
+    
+    inline void SetUserAgent(const char* value) { m_userAgentHasBeenSet = true; m_userAgent.assign(value); }
+
+    
+    inline AwsApiCallAction& WithUserAgent(const Aws::String& value) { SetUserAgent(value); return *this;}
+
+    
+    inline AwsApiCallAction& WithUserAgent(Aws::String&& value) { SetUserAgent(std::move(value)); return *this;}
+
+    
+    inline AwsApiCallAction& WithUserAgent(const char* value) { SetUserAgent(value); return *this;}
+
+
     /**
      * <p>The remote IP information of the connection that initiated the Amazon Web
      * Services API call.</p>
@@ -321,6 +346,9 @@ namespace Model
 
     Aws::String m_errorCode;
     bool m_errorCodeHasBeenSet;
+
+    Aws::String m_userAgent;
+    bool m_userAgentHasBeenSet;
 
     RemoteIpDetails m_remoteIpDetails;
     bool m_remoteIpDetailsHasBeenSet;

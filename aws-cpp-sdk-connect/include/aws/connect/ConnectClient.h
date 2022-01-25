@@ -11,6 +11,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/connect/model/AssociateDefaultVocabularyResult.h>
 #include <aws/connect/model/AssociateInstanceStorageConfigResult.h>
 #include <aws/connect/model/AssociateSecurityKeyResult.h>
 #include <aws/connect/model/CreateAgentStatusResult.h>
@@ -26,7 +27,9 @@
 #include <aws/connect/model/CreateUseCaseResult.h>
 #include <aws/connect/model/CreateUserResult.h>
 #include <aws/connect/model/CreateUserHierarchyGroupResult.h>
+#include <aws/connect/model/CreateVocabularyResult.h>
 #include <aws/connect/model/DeleteContactFlowModuleResult.h>
+#include <aws/connect/model/DeleteVocabularyResult.h>
 #include <aws/connect/model/DescribeAgentStatusResult.h>
 #include <aws/connect/model/DescribeContactResult.h>
 #include <aws/connect/model/DescribeContactFlowResult.h>
@@ -42,6 +45,7 @@
 #include <aws/connect/model/DescribeUserResult.h>
 #include <aws/connect/model/DescribeUserHierarchyGroupResult.h>
 #include <aws/connect/model/DescribeUserHierarchyStructureResult.h>
+#include <aws/connect/model/DescribeVocabularyResult.h>
 #include <aws/connect/model/GetContactAttributesResult.h>
 #include <aws/connect/model/GetCurrentMetricDataResult.h>
 #include <aws/connect/model/GetFederationTokenResult.h>
@@ -52,6 +56,7 @@
 #include <aws/connect/model/ListContactFlowModulesResult.h>
 #include <aws/connect/model/ListContactFlowsResult.h>
 #include <aws/connect/model/ListContactReferencesResult.h>
+#include <aws/connect/model/ListDefaultVocabulariesResult.h>
 #include <aws/connect/model/ListHoursOfOperationsResult.h>
 #include <aws/connect/model/ListInstanceAttributesResult.h>
 #include <aws/connect/model/ListInstanceStorageConfigsResult.h>
@@ -74,6 +79,7 @@
 #include <aws/connect/model/ListUserHierarchyGroupsResult.h>
 #include <aws/connect/model/ListUsersResult.h>
 #include <aws/connect/model/ResumeContactRecordingResult.h>
+#include <aws/connect/model/SearchVocabulariesResult.h>
 #include <aws/connect/model/StartChatContactResult.h>
 #include <aws/connect/model/StartContactRecordingResult.h>
 #include <aws/connect/model/StartContactStreamingResult.h>
@@ -130,6 +136,7 @@ namespace Model
 {
         class AssociateApprovedOriginRequest;
         class AssociateBotRequest;
+        class AssociateDefaultVocabularyRequest;
         class AssociateInstanceStorageConfigRequest;
         class AssociateLambdaFunctionRequest;
         class AssociateLexBotRequest;
@@ -149,6 +156,7 @@ namespace Model
         class CreateUseCaseRequest;
         class CreateUserRequest;
         class CreateUserHierarchyGroupRequest;
+        class CreateVocabularyRequest;
         class DeleteContactFlowRequest;
         class DeleteContactFlowModuleRequest;
         class DeleteHoursOfOperationRequest;
@@ -159,6 +167,7 @@ namespace Model
         class DeleteUseCaseRequest;
         class DeleteUserRequest;
         class DeleteUserHierarchyGroupRequest;
+        class DeleteVocabularyRequest;
         class DescribeAgentStatusRequest;
         class DescribeContactRequest;
         class DescribeContactFlowRequest;
@@ -174,6 +183,7 @@ namespace Model
         class DescribeUserRequest;
         class DescribeUserHierarchyGroupRequest;
         class DescribeUserHierarchyStructureRequest;
+        class DescribeVocabularyRequest;
         class DisassociateApprovedOriginRequest;
         class DisassociateBotRequest;
         class DisassociateInstanceStorageConfigRequest;
@@ -192,6 +202,7 @@ namespace Model
         class ListContactFlowModulesRequest;
         class ListContactFlowsRequest;
         class ListContactReferencesRequest;
+        class ListDefaultVocabulariesRequest;
         class ListHoursOfOperationsRequest;
         class ListInstanceAttributesRequest;
         class ListInstanceStorageConfigsRequest;
@@ -214,6 +225,7 @@ namespace Model
         class ListUserHierarchyGroupsRequest;
         class ListUsersRequest;
         class ResumeContactRecordingRequest;
+        class SearchVocabulariesRequest;
         class StartChatContactRequest;
         class StartContactRecordingRequest;
         class StartContactStreamingRequest;
@@ -259,6 +271,7 @@ namespace Model
 
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateApprovedOriginOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateBotOutcome;
+        typedef Aws::Utils::Outcome<AssociateDefaultVocabularyResult, ConnectError> AssociateDefaultVocabularyOutcome;
         typedef Aws::Utils::Outcome<AssociateInstanceStorageConfigResult, ConnectError> AssociateInstanceStorageConfigOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateLambdaFunctionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateLexBotOutcome;
@@ -278,6 +291,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateUseCaseResult, ConnectError> CreateUseCaseOutcome;
         typedef Aws::Utils::Outcome<CreateUserResult, ConnectError> CreateUserOutcome;
         typedef Aws::Utils::Outcome<CreateUserHierarchyGroupResult, ConnectError> CreateUserHierarchyGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateVocabularyResult, ConnectError> CreateVocabularyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteContactFlowOutcome;
         typedef Aws::Utils::Outcome<DeleteContactFlowModuleResult, ConnectError> DeleteContactFlowModuleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteHoursOfOperationOutcome;
@@ -288,6 +302,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteUseCaseOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteUserOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteUserHierarchyGroupOutcome;
+        typedef Aws::Utils::Outcome<DeleteVocabularyResult, ConnectError> DeleteVocabularyOutcome;
         typedef Aws::Utils::Outcome<DescribeAgentStatusResult, ConnectError> DescribeAgentStatusOutcome;
         typedef Aws::Utils::Outcome<DescribeContactResult, ConnectError> DescribeContactOutcome;
         typedef Aws::Utils::Outcome<DescribeContactFlowResult, ConnectError> DescribeContactFlowOutcome;
@@ -303,6 +318,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeUserResult, ConnectError> DescribeUserOutcome;
         typedef Aws::Utils::Outcome<DescribeUserHierarchyGroupResult, ConnectError> DescribeUserHierarchyGroupOutcome;
         typedef Aws::Utils::Outcome<DescribeUserHierarchyStructureResult, ConnectError> DescribeUserHierarchyStructureOutcome;
+        typedef Aws::Utils::Outcome<DescribeVocabularyResult, ConnectError> DescribeVocabularyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateApprovedOriginOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateBotOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateInstanceStorageConfigOutcome;
@@ -321,6 +337,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListContactFlowModulesResult, ConnectError> ListContactFlowModulesOutcome;
         typedef Aws::Utils::Outcome<ListContactFlowsResult, ConnectError> ListContactFlowsOutcome;
         typedef Aws::Utils::Outcome<ListContactReferencesResult, ConnectError> ListContactReferencesOutcome;
+        typedef Aws::Utils::Outcome<ListDefaultVocabulariesResult, ConnectError> ListDefaultVocabulariesOutcome;
         typedef Aws::Utils::Outcome<ListHoursOfOperationsResult, ConnectError> ListHoursOfOperationsOutcome;
         typedef Aws::Utils::Outcome<ListInstanceAttributesResult, ConnectError> ListInstanceAttributesOutcome;
         typedef Aws::Utils::Outcome<ListInstanceStorageConfigsResult, ConnectError> ListInstanceStorageConfigsOutcome;
@@ -343,6 +360,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListUserHierarchyGroupsResult, ConnectError> ListUserHierarchyGroupsOutcome;
         typedef Aws::Utils::Outcome<ListUsersResult, ConnectError> ListUsersOutcome;
         typedef Aws::Utils::Outcome<ResumeContactRecordingResult, ConnectError> ResumeContactRecordingOutcome;
+        typedef Aws::Utils::Outcome<SearchVocabulariesResult, ConnectError> SearchVocabulariesOutcome;
         typedef Aws::Utils::Outcome<StartChatContactResult, ConnectError> StartChatContactOutcome;
         typedef Aws::Utils::Outcome<StartContactRecordingResult, ConnectError> StartContactRecordingOutcome;
         typedef Aws::Utils::Outcome<StartContactStreamingResult, ConnectError> StartContactStreamingOutcome;
@@ -388,6 +406,7 @@ namespace Model
 
         typedef std::future<AssociateApprovedOriginOutcome> AssociateApprovedOriginOutcomeCallable;
         typedef std::future<AssociateBotOutcome> AssociateBotOutcomeCallable;
+        typedef std::future<AssociateDefaultVocabularyOutcome> AssociateDefaultVocabularyOutcomeCallable;
         typedef std::future<AssociateInstanceStorageConfigOutcome> AssociateInstanceStorageConfigOutcomeCallable;
         typedef std::future<AssociateLambdaFunctionOutcome> AssociateLambdaFunctionOutcomeCallable;
         typedef std::future<AssociateLexBotOutcome> AssociateLexBotOutcomeCallable;
@@ -407,6 +426,7 @@ namespace Model
         typedef std::future<CreateUseCaseOutcome> CreateUseCaseOutcomeCallable;
         typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
         typedef std::future<CreateUserHierarchyGroupOutcome> CreateUserHierarchyGroupOutcomeCallable;
+        typedef std::future<CreateVocabularyOutcome> CreateVocabularyOutcomeCallable;
         typedef std::future<DeleteContactFlowOutcome> DeleteContactFlowOutcomeCallable;
         typedef std::future<DeleteContactFlowModuleOutcome> DeleteContactFlowModuleOutcomeCallable;
         typedef std::future<DeleteHoursOfOperationOutcome> DeleteHoursOfOperationOutcomeCallable;
@@ -417,6 +437,7 @@ namespace Model
         typedef std::future<DeleteUseCaseOutcome> DeleteUseCaseOutcomeCallable;
         typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
         typedef std::future<DeleteUserHierarchyGroupOutcome> DeleteUserHierarchyGroupOutcomeCallable;
+        typedef std::future<DeleteVocabularyOutcome> DeleteVocabularyOutcomeCallable;
         typedef std::future<DescribeAgentStatusOutcome> DescribeAgentStatusOutcomeCallable;
         typedef std::future<DescribeContactOutcome> DescribeContactOutcomeCallable;
         typedef std::future<DescribeContactFlowOutcome> DescribeContactFlowOutcomeCallable;
@@ -432,6 +453,7 @@ namespace Model
         typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
         typedef std::future<DescribeUserHierarchyGroupOutcome> DescribeUserHierarchyGroupOutcomeCallable;
         typedef std::future<DescribeUserHierarchyStructureOutcome> DescribeUserHierarchyStructureOutcomeCallable;
+        typedef std::future<DescribeVocabularyOutcome> DescribeVocabularyOutcomeCallable;
         typedef std::future<DisassociateApprovedOriginOutcome> DisassociateApprovedOriginOutcomeCallable;
         typedef std::future<DisassociateBotOutcome> DisassociateBotOutcomeCallable;
         typedef std::future<DisassociateInstanceStorageConfigOutcome> DisassociateInstanceStorageConfigOutcomeCallable;
@@ -450,6 +472,7 @@ namespace Model
         typedef std::future<ListContactFlowModulesOutcome> ListContactFlowModulesOutcomeCallable;
         typedef std::future<ListContactFlowsOutcome> ListContactFlowsOutcomeCallable;
         typedef std::future<ListContactReferencesOutcome> ListContactReferencesOutcomeCallable;
+        typedef std::future<ListDefaultVocabulariesOutcome> ListDefaultVocabulariesOutcomeCallable;
         typedef std::future<ListHoursOfOperationsOutcome> ListHoursOfOperationsOutcomeCallable;
         typedef std::future<ListInstanceAttributesOutcome> ListInstanceAttributesOutcomeCallable;
         typedef std::future<ListInstanceStorageConfigsOutcome> ListInstanceStorageConfigsOutcomeCallable;
@@ -472,6 +495,7 @@ namespace Model
         typedef std::future<ListUserHierarchyGroupsOutcome> ListUserHierarchyGroupsOutcomeCallable;
         typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
         typedef std::future<ResumeContactRecordingOutcome> ResumeContactRecordingOutcomeCallable;
+        typedef std::future<SearchVocabulariesOutcome> SearchVocabulariesOutcomeCallable;
         typedef std::future<StartChatContactOutcome> StartChatContactOutcomeCallable;
         typedef std::future<StartContactRecordingOutcome> StartContactRecordingOutcomeCallable;
         typedef std::future<StartContactStreamingOutcome> StartContactStreamingOutcomeCallable;
@@ -520,6 +544,7 @@ namespace Model
 
     typedef std::function<void(const ConnectClient*, const Model::AssociateApprovedOriginRequest&, const Model::AssociateApprovedOriginOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateApprovedOriginResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::AssociateBotRequest&, const Model::AssociateBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateBotResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::AssociateDefaultVocabularyRequest&, const Model::AssociateDefaultVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateDefaultVocabularyResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::AssociateInstanceStorageConfigRequest&, const Model::AssociateInstanceStorageConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateInstanceStorageConfigResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::AssociateLambdaFunctionRequest&, const Model::AssociateLambdaFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateLambdaFunctionResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::AssociateLexBotRequest&, const Model::AssociateLexBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateLexBotResponseReceivedHandler;
@@ -539,6 +564,7 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::CreateUseCaseRequest&, const Model::CreateUseCaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUseCaseResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateUserRequest&, const Model::CreateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateUserHierarchyGroupRequest&, const Model::CreateUserHierarchyGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserHierarchyGroupResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::CreateVocabularyRequest&, const Model::CreateVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVocabularyResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteContactFlowRequest&, const Model::DeleteContactFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContactFlowResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteContactFlowModuleRequest&, const Model::DeleteContactFlowModuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContactFlowModuleResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteHoursOfOperationRequest&, const Model::DeleteHoursOfOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHoursOfOperationResponseReceivedHandler;
@@ -549,6 +575,7 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::DeleteUseCaseRequest&, const Model::DeleteUseCaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUseCaseResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteUserHierarchyGroupRequest&, const Model::DeleteUserHierarchyGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserHierarchyGroupResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::DeleteVocabularyRequest&, const Model::DeleteVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVocabularyResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeAgentStatusRequest&, const Model::DescribeAgentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAgentStatusResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeContactRequest&, const Model::DescribeContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeContactFlowRequest&, const Model::DescribeContactFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContactFlowResponseReceivedHandler;
@@ -564,6 +591,7 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::DescribeUserRequest&, const Model::DescribeUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeUserHierarchyGroupRequest&, const Model::DescribeUserHierarchyGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserHierarchyGroupResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeUserHierarchyStructureRequest&, const Model::DescribeUserHierarchyStructureOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserHierarchyStructureResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::DescribeVocabularyRequest&, const Model::DescribeVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVocabularyResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DisassociateApprovedOriginRequest&, const Model::DisassociateApprovedOriginOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateApprovedOriginResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DisassociateBotRequest&, const Model::DisassociateBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateBotResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DisassociateInstanceStorageConfigRequest&, const Model::DisassociateInstanceStorageConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateInstanceStorageConfigResponseReceivedHandler;
@@ -582,6 +610,7 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::ListContactFlowModulesRequest&, const Model::ListContactFlowModulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContactFlowModulesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListContactFlowsRequest&, const Model::ListContactFlowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContactFlowsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListContactReferencesRequest&, const Model::ListContactReferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContactReferencesResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::ListDefaultVocabulariesRequest&, const Model::ListDefaultVocabulariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDefaultVocabulariesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListHoursOfOperationsRequest&, const Model::ListHoursOfOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHoursOfOperationsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListInstanceAttributesRequest&, const Model::ListInstanceAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInstanceAttributesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListInstanceStorageConfigsRequest&, const Model::ListInstanceStorageConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInstanceStorageConfigsResponseReceivedHandler;
@@ -604,6 +633,7 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::ListUserHierarchyGroupsRequest&, const Model::ListUserHierarchyGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUserHierarchyGroupsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ResumeContactRecordingRequest&, const Model::ResumeContactRecordingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeContactRecordingResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::SearchVocabulariesRequest&, const Model::SearchVocabulariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchVocabulariesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::StartChatContactRequest&, const Model::StartChatContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartChatContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::StartContactRecordingRequest&, const Model::StartContactRecordingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartContactRecordingResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::StartContactStreamingRequest&, const Model::StartContactStreamingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartContactStreamingResponseReceivedHandler;
@@ -754,6 +784,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateBotAsync(const Model::AssociateBotRequest& request, const AssociateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associates an existing vocabulary as the default. Contact Lens for Amazon
+         * Connect uses the vocabulary in post-call and real-time analysis sessions for the
+         * given language.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateDefaultVocabulary">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateDefaultVocabularyOutcome AssociateDefaultVocabulary(const Model::AssociateDefaultVocabularyRequest& request) const;
+
+        /**
+         * <p>Associates an existing vocabulary as the default. Contact Lens for Amazon
+         * Connect uses the vocabulary in post-call and real-time analysis sessions for the
+         * given language.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateDefaultVocabulary">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateDefaultVocabularyOutcomeCallable AssociateDefaultVocabularyCallable(const Model::AssociateDefaultVocabularyRequest& request) const;
+
+        /**
+         * <p>Associates an existing vocabulary as the default. Contact Lens for Amazon
+         * Connect uses the vocabulary in post-call and real-time analysis sessions for the
+         * given language.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateDefaultVocabulary">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateDefaultVocabularyAsync(const Model::AssociateDefaultVocabularyRequest& request, const AssociateDefaultVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
@@ -1360,6 +1421,43 @@ namespace Model
         virtual void CreateUserHierarchyGroupAsync(const Model::CreateUserHierarchyGroupRequest& request, const CreateUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a custom vocabulary associated with your Amazon Connect instance. You
+         * can set a custom vocabulary to be your default vocabulary for a given language.
+         * Contact Lens for Amazon Connect uses the default vocabulary in post-call and
+         * real-time contact analysis sessions for that language.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateVocabulary">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateVocabularyOutcome CreateVocabulary(const Model::CreateVocabularyRequest& request) const;
+
+        /**
+         * <p>Creates a custom vocabulary associated with your Amazon Connect instance. You
+         * can set a custom vocabulary to be your default vocabulary for a given language.
+         * Contact Lens for Amazon Connect uses the default vocabulary in post-call and
+         * real-time contact analysis sessions for that language.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateVocabulary">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateVocabularyOutcomeCallable CreateVocabularyCallable(const Model::CreateVocabularyRequest& request) const;
+
+        /**
+         * <p>Creates a custom vocabulary associated with your Amazon Connect instance. You
+         * can set a custom vocabulary to be your default vocabulary for a given language.
+         * Contact Lens for Amazon Connect uses the default vocabulary in post-call and
+         * real-time contact analysis sessions for that language.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateVocabulary">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateVocabularyAsync(const Model::CreateVocabularyRequest& request, const CreateVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a contact flow for the specified Amazon Connect
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlow">AWS
@@ -1662,6 +1760,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteUserHierarchyGroupAsync(const Model::DeleteUserHierarchyGroupRequest& request, const DeleteUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the vocabulary that has the given identifier.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteVocabulary">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteVocabularyOutcome DeleteVocabulary(const Model::DeleteVocabularyRequest& request) const;
+
+        /**
+         * <p>Deletes the vocabulary that has the given identifier.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteVocabulary">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteVocabularyOutcomeCallable DeleteVocabularyCallable(const Model::DeleteVocabularyRequest& request) const;
+
+        /**
+         * <p>Deletes the vocabulary that has the given identifier.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteVocabulary">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteVocabularyAsync(const Model::DeleteVocabularyRequest& request, const DeleteVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
@@ -2112,6 +2238,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeUserHierarchyStructureAsync(const Model::DescribeUserHierarchyStructureRequest& request, const DescribeUserHierarchyStructureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the specified vocabulary.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeVocabulary">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeVocabularyOutcome DescribeVocabulary(const Model::DescribeVocabularyRequest& request) const;
+
+        /**
+         * <p>Describes the specified vocabulary.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeVocabulary">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeVocabularyOutcomeCallable DescribeVocabularyCallable(const Model::DescribeVocabularyRequest& request) const;
+
+        /**
+         * <p>Describes the specified vocabulary.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeVocabulary">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeVocabularyAsync(const Model::DescribeVocabularyRequest& request, const DescribeVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
@@ -2691,6 +2842,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListContactReferencesAsync(const Model::ListContactReferencesRequest& request, const ListContactReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the default vocabularies for the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDefaultVocabularies">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDefaultVocabulariesOutcome ListDefaultVocabularies(const Model::ListDefaultVocabulariesRequest& request) const;
+
+        /**
+         * <p>Lists the default vocabularies for the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDefaultVocabularies">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListDefaultVocabulariesOutcomeCallable ListDefaultVocabulariesCallable(const Model::ListDefaultVocabulariesRequest& request) const;
+
+        /**
+         * <p>Lists the default vocabularies for the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDefaultVocabularies">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListDefaultVocabulariesAsync(const Model::ListDefaultVocabulariesRequest& request, const ListDefaultVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides information about the hours of operation for the specified Amazon
@@ -3436,6 +3615,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ResumeContactRecordingAsync(const Model::ResumeContactRecordingRequest& request, const ResumeContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Searches for vocabularies within a specific Amazon Connect instance using
+         * <code>State</code>, <code>NameStartsWith</code>, and
+         * <code>LanguageCode</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchVocabularies">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchVocabulariesOutcome SearchVocabularies(const Model::SearchVocabulariesRequest& request) const;
+
+        /**
+         * <p>Searches for vocabularies within a specific Amazon Connect instance using
+         * <code>State</code>, <code>NameStartsWith</code>, and
+         * <code>LanguageCode</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchVocabularies">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SearchVocabulariesOutcomeCallable SearchVocabulariesCallable(const Model::SearchVocabulariesRequest& request) const;
+
+        /**
+         * <p>Searches for vocabularies within a specific Amazon Connect instance using
+         * <code>State</code>, <code>NameStartsWith</code>, and
+         * <code>LanguageCode</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchVocabularies">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SearchVocabulariesAsync(const Model::SearchVocabulariesRequest& request, const SearchVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Initiates a contact flow to start a new chat for the customer. Response of
@@ -4910,6 +5120,7 @@ namespace Model
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AssociateApprovedOriginAsyncHelper(const Model::AssociateApprovedOriginRequest& request, const AssociateApprovedOriginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateBotAsyncHelper(const Model::AssociateBotRequest& request, const AssociateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociateDefaultVocabularyAsyncHelper(const Model::AssociateDefaultVocabularyRequest& request, const AssociateDefaultVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateInstanceStorageConfigAsyncHelper(const Model::AssociateInstanceStorageConfigRequest& request, const AssociateInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateLambdaFunctionAsyncHelper(const Model::AssociateLambdaFunctionRequest& request, const AssociateLambdaFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateLexBotAsyncHelper(const Model::AssociateLexBotRequest& request, const AssociateLexBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4929,6 +5140,7 @@ namespace Model
         void CreateUseCaseAsyncHelper(const Model::CreateUseCaseRequest& request, const CreateUseCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUserAsyncHelper(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUserHierarchyGroupAsyncHelper(const Model::CreateUserHierarchyGroupRequest& request, const CreateUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateVocabularyAsyncHelper(const Model::CreateVocabularyRequest& request, const CreateVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteContactFlowAsyncHelper(const Model::DeleteContactFlowRequest& request, const DeleteContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteContactFlowModuleAsyncHelper(const Model::DeleteContactFlowModuleRequest& request, const DeleteContactFlowModuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteHoursOfOperationAsyncHelper(const Model::DeleteHoursOfOperationRequest& request, const DeleteHoursOfOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4939,6 +5151,7 @@ namespace Model
         void DeleteUseCaseAsyncHelper(const Model::DeleteUseCaseRequest& request, const DeleteUseCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUserAsyncHelper(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUserHierarchyGroupAsyncHelper(const Model::DeleteUserHierarchyGroupRequest& request, const DeleteUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteVocabularyAsyncHelper(const Model::DeleteVocabularyRequest& request, const DeleteVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAgentStatusAsyncHelper(const Model::DescribeAgentStatusRequest& request, const DescribeAgentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeContactAsyncHelper(const Model::DescribeContactRequest& request, const DescribeContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeContactFlowAsyncHelper(const Model::DescribeContactFlowRequest& request, const DescribeContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4954,6 +5167,7 @@ namespace Model
         void DescribeUserAsyncHelper(const Model::DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUserHierarchyGroupAsyncHelper(const Model::DescribeUserHierarchyGroupRequest& request, const DescribeUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUserHierarchyStructureAsyncHelper(const Model::DescribeUserHierarchyStructureRequest& request, const DescribeUserHierarchyStructureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeVocabularyAsyncHelper(const Model::DescribeVocabularyRequest& request, const DescribeVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateApprovedOriginAsyncHelper(const Model::DisassociateApprovedOriginRequest& request, const DisassociateApprovedOriginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateBotAsyncHelper(const Model::DisassociateBotRequest& request, const DisassociateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateInstanceStorageConfigAsyncHelper(const Model::DisassociateInstanceStorageConfigRequest& request, const DisassociateInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4972,6 +5186,7 @@ namespace Model
         void ListContactFlowModulesAsyncHelper(const Model::ListContactFlowModulesRequest& request, const ListContactFlowModulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListContactFlowsAsyncHelper(const Model::ListContactFlowsRequest& request, const ListContactFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListContactReferencesAsyncHelper(const Model::ListContactReferencesRequest& request, const ListContactReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListDefaultVocabulariesAsyncHelper(const Model::ListDefaultVocabulariesRequest& request, const ListDefaultVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListHoursOfOperationsAsyncHelper(const Model::ListHoursOfOperationsRequest& request, const ListHoursOfOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInstanceAttributesAsyncHelper(const Model::ListInstanceAttributesRequest& request, const ListInstanceAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInstanceStorageConfigsAsyncHelper(const Model::ListInstanceStorageConfigsRequest& request, const ListInstanceStorageConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4994,6 +5209,7 @@ namespace Model
         void ListUserHierarchyGroupsAsyncHelper(const Model::ListUserHierarchyGroupsRequest& request, const ListUserHierarchyGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUsersAsyncHelper(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResumeContactRecordingAsyncHelper(const Model::ResumeContactRecordingRequest& request, const ResumeContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SearchVocabulariesAsyncHelper(const Model::SearchVocabulariesRequest& request, const SearchVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartChatContactAsyncHelper(const Model::StartChatContactRequest& request, const StartChatContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartContactRecordingAsyncHelper(const Model::StartContactRecordingRequest& request, const StartContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartContactStreamingAsyncHelper(const Model::StartContactStreamingRequest& request, const StartContactStreamingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

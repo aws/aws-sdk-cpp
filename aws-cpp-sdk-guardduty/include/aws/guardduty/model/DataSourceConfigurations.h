@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/model/S3LogsConfiguration.h>
+#include <aws/guardduty/model/KubernetesConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -68,10 +69,44 @@ namespace Model
      */
     inline DataSourceConfigurations& WithS3Logs(S3LogsConfiguration&& value) { SetS3Logs(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Describes whether any Kubernetes logs are enabled as data sources.</p>
+     */
+    inline const KubernetesConfiguration& GetKubernetes() const{ return m_kubernetes; }
+
+    /**
+     * <p>Describes whether any Kubernetes logs are enabled as data sources.</p>
+     */
+    inline bool KubernetesHasBeenSet() const { return m_kubernetesHasBeenSet; }
+
+    /**
+     * <p>Describes whether any Kubernetes logs are enabled as data sources.</p>
+     */
+    inline void SetKubernetes(const KubernetesConfiguration& value) { m_kubernetesHasBeenSet = true; m_kubernetes = value; }
+
+    /**
+     * <p>Describes whether any Kubernetes logs are enabled as data sources.</p>
+     */
+    inline void SetKubernetes(KubernetesConfiguration&& value) { m_kubernetesHasBeenSet = true; m_kubernetes = std::move(value); }
+
+    /**
+     * <p>Describes whether any Kubernetes logs are enabled as data sources.</p>
+     */
+    inline DataSourceConfigurations& WithKubernetes(const KubernetesConfiguration& value) { SetKubernetes(value); return *this;}
+
+    /**
+     * <p>Describes whether any Kubernetes logs are enabled as data sources.</p>
+     */
+    inline DataSourceConfigurations& WithKubernetes(KubernetesConfiguration&& value) { SetKubernetes(std::move(value)); return *this;}
+
   private:
 
     S3LogsConfiguration m_s3Logs;
     bool m_s3LogsHasBeenSet;
+
+    KubernetesConfiguration m_kubernetes;
+    bool m_kubernetesHasBeenSet;
   };
 
 } // namespace Model

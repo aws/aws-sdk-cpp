@@ -399,25 +399,25 @@ namespace Model
 
     /**
      * <p>Sets the throughput capacity for the file system that you're creating. Valid
-     * values are 512, 1024, and 2048 MBps.</p>
+     * values are 128, 256, 512, 1024, and 2048 MBps.</p>
      */
     inline int GetThroughputCapacity() const{ return m_throughputCapacity; }
 
     /**
      * <p>Sets the throughput capacity for the file system that you're creating. Valid
-     * values are 512, 1024, and 2048 MBps.</p>
+     * values are 128, 256, 512, 1024, and 2048 MBps.</p>
      */
     inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
 
     /**
      * <p>Sets the throughput capacity for the file system that you're creating. Valid
-     * values are 512, 1024, and 2048 MBps.</p>
+     * values are 128, 256, 512, 1024, and 2048 MBps.</p>
      */
     inline void SetThroughputCapacity(int value) { m_throughputCapacityHasBeenSet = true; m_throughputCapacity = value; }
 
     /**
      * <p>Sets the throughput capacity for the file system that you're creating. Valid
-     * values are 512, 1024, and 2048 MBps.</p>
+     * values are 128, 256, 512, 1024, and 2048 MBps.</p>
      */
     inline CreateFileSystemOntapConfiguration& WithThroughputCapacity(int value) { SetThroughputCapacity(value); return *this;}
 

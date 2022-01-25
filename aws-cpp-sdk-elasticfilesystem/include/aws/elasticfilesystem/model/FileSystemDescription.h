@@ -548,50 +548,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of an Key Management Service customer master key (CMK) that was used
-     * to protect the encrypted file system.</p>
+     * <p>The ID of an KMS key used to protect the encrypted file system.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The ID of an Key Management Service customer master key (CMK) that was used
-     * to protect the encrypted file system.</p>
+     * <p>The ID of an KMS key used to protect the encrypted file system.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID of an Key Management Service customer master key (CMK) that was used
-     * to protect the encrypted file system.</p>
+     * <p>The ID of an KMS key used to protect the encrypted file system.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The ID of an Key Management Service customer master key (CMK) that was used
-     * to protect the encrypted file system.</p>
+     * <p>The ID of an KMS key used to protect the encrypted file system.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The ID of an Key Management Service customer master key (CMK) that was used
-     * to protect the encrypted file system.</p>
+     * <p>The ID of an KMS key used to protect the encrypted file system.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The ID of an Key Management Service customer master key (CMK) that was used
-     * to protect the encrypted file system.</p>
+     * <p>The ID of an KMS key used to protect the encrypted file system.</p>
      */
     inline FileSystemDescription& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ID of an Key Management Service customer master key (CMK) that was used
-     * to protect the encrypted file system.</p>
+     * <p>The ID of an KMS key used to protect the encrypted file system.</p>
      */
     inline FileSystemDescription& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of an Key Management Service customer master key (CMK) that was used
-     * to protect the encrypted file system.</p>
+     * <p>The ID of an KMS key used to protect the encrypted file system.</p>
      */
     inline FileSystemDescription& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

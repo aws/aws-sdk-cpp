@@ -23,6 +23,7 @@ AwsApiCallAction::AwsApiCallAction() :
     m_callerTypeHasBeenSet(false),
     m_domainDetailsHasBeenSet(false),
     m_errorCodeHasBeenSet(false),
+    m_userAgentHasBeenSet(false),
     m_remoteIpDetailsHasBeenSet(false),
     m_serviceNameHasBeenSet(false),
     m_remoteAccountDetailsHasBeenSet(false)
@@ -34,6 +35,7 @@ AwsApiCallAction::AwsApiCallAction(JsonView jsonValue) :
     m_callerTypeHasBeenSet(false),
     m_domainDetailsHasBeenSet(false),
     m_errorCodeHasBeenSet(false),
+    m_userAgentHasBeenSet(false),
     m_remoteIpDetailsHasBeenSet(false),
     m_serviceNameHasBeenSet(false),
     m_remoteAccountDetailsHasBeenSet(false)
@@ -69,6 +71,13 @@ AwsApiCallAction& AwsApiCallAction::operator =(JsonView jsonValue)
     m_errorCode = jsonValue.GetString("errorCode");
 
     m_errorCodeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("userAgent"))
+  {
+    m_userAgent = jsonValue.GetString("userAgent");
+
+    m_userAgentHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("remoteIpDetails"))
@@ -120,6 +129,12 @@ JsonValue AwsApiCallAction::Jsonize() const
   if(m_errorCodeHasBeenSet)
   {
    payload.WithString("errorCode", m_errorCode);
+
+  }
+
+  if(m_userAgentHasBeenSet)
+  {
+   payload.WithString("userAgent", m_userAgent);
 
   }
 

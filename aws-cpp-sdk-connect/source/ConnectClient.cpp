@@ -22,6 +22,7 @@
 #include <aws/connect/ConnectErrorMarshaller.h>
 #include <aws/connect/model/AssociateApprovedOriginRequest.h>
 #include <aws/connect/model/AssociateBotRequest.h>
+#include <aws/connect/model/AssociateDefaultVocabularyRequest.h>
 #include <aws/connect/model/AssociateInstanceStorageConfigRequest.h>
 #include <aws/connect/model/AssociateLambdaFunctionRequest.h>
 #include <aws/connect/model/AssociateLexBotRequest.h>
@@ -41,6 +42,7 @@
 #include <aws/connect/model/CreateUseCaseRequest.h>
 #include <aws/connect/model/CreateUserRequest.h>
 #include <aws/connect/model/CreateUserHierarchyGroupRequest.h>
+#include <aws/connect/model/CreateVocabularyRequest.h>
 #include <aws/connect/model/DeleteContactFlowRequest.h>
 #include <aws/connect/model/DeleteContactFlowModuleRequest.h>
 #include <aws/connect/model/DeleteHoursOfOperationRequest.h>
@@ -51,6 +53,7 @@
 #include <aws/connect/model/DeleteUseCaseRequest.h>
 #include <aws/connect/model/DeleteUserRequest.h>
 #include <aws/connect/model/DeleteUserHierarchyGroupRequest.h>
+#include <aws/connect/model/DeleteVocabularyRequest.h>
 #include <aws/connect/model/DescribeAgentStatusRequest.h>
 #include <aws/connect/model/DescribeContactRequest.h>
 #include <aws/connect/model/DescribeContactFlowRequest.h>
@@ -66,6 +69,7 @@
 #include <aws/connect/model/DescribeUserRequest.h>
 #include <aws/connect/model/DescribeUserHierarchyGroupRequest.h>
 #include <aws/connect/model/DescribeUserHierarchyStructureRequest.h>
+#include <aws/connect/model/DescribeVocabularyRequest.h>
 #include <aws/connect/model/DisassociateApprovedOriginRequest.h>
 #include <aws/connect/model/DisassociateBotRequest.h>
 #include <aws/connect/model/DisassociateInstanceStorageConfigRequest.h>
@@ -84,6 +88,7 @@
 #include <aws/connect/model/ListContactFlowModulesRequest.h>
 #include <aws/connect/model/ListContactFlowsRequest.h>
 #include <aws/connect/model/ListContactReferencesRequest.h>
+#include <aws/connect/model/ListDefaultVocabulariesRequest.h>
 #include <aws/connect/model/ListHoursOfOperationsRequest.h>
 #include <aws/connect/model/ListInstanceAttributesRequest.h>
 #include <aws/connect/model/ListInstanceStorageConfigsRequest.h>
@@ -106,6 +111,7 @@
 #include <aws/connect/model/ListUserHierarchyGroupsRequest.h>
 #include <aws/connect/model/ListUsersRequest.h>
 #include <aws/connect/model/ResumeContactRecordingRequest.h>
+#include <aws/connect/model/SearchVocabulariesRequest.h>
 #include <aws/connect/model/StartChatContactRequest.h>
 #include <aws/connect/model/StartContactRecordingRequest.h>
 #include <aws/connect/model/StartContactStreamingRequest.h>
@@ -284,6 +290,43 @@ void ConnectClient::AssociateBotAsync(const AssociateBotRequest& request, const 
 void ConnectClient::AssociateBotAsyncHelper(const AssociateBotRequest& request, const AssociateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AssociateBot(request), context);
+}
+
+AssociateDefaultVocabularyOutcome ConnectClient::AssociateDefaultVocabulary(const AssociateDefaultVocabularyRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateDefaultVocabulary", "Required field: InstanceId, is not set");
+    return AssociateDefaultVocabularyOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.LanguageCodeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateDefaultVocabulary", "Required field: LanguageCode, is not set");
+    return AssociateDefaultVocabularyOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LanguageCode]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/default-vocabulary/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(VocabularyLanguageCodeMapper::GetNameForVocabularyLanguageCode(request.GetLanguageCode()));
+  return AssociateDefaultVocabularyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateDefaultVocabularyOutcomeCallable ConnectClient::AssociateDefaultVocabularyCallable(const AssociateDefaultVocabularyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateDefaultVocabularyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateDefaultVocabulary(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::AssociateDefaultVocabularyAsync(const AssociateDefaultVocabularyRequest& request, const AssociateDefaultVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateDefaultVocabularyAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::AssociateDefaultVocabularyAsyncHelper(const AssociateDefaultVocabularyRequest& request, const AssociateDefaultVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateDefaultVocabulary(request), context);
 }
 
 AssociateInstanceStorageConfigOutcome ConnectClient::AssociateInstanceStorageConfig(const AssociateInstanceStorageConfigRequest& request) const
@@ -896,6 +939,37 @@ void ConnectClient::CreateUserHierarchyGroupAsyncHelper(const CreateUserHierarch
   handler(this, request, CreateUserHierarchyGroup(request), context);
 }
 
+CreateVocabularyOutcome ConnectClient::CreateVocabulary(const CreateVocabularyRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateVocabulary", "Required field: InstanceId, is not set");
+    return CreateVocabularyOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/vocabulary/");
+  uri.AddPathSegment(request.GetInstanceId());
+  return CreateVocabularyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateVocabularyOutcomeCallable ConnectClient::CreateVocabularyCallable(const CreateVocabularyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateVocabularyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateVocabulary(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::CreateVocabularyAsync(const CreateVocabularyRequest& request, const CreateVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateVocabularyAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::CreateVocabularyAsyncHelper(const CreateVocabularyRequest& request, const CreateVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateVocabulary(request), context);
+}
+
 DeleteContactFlowOutcome ConnectClient::DeleteContactFlow(const DeleteContactFlowRequest& request) const
 {
   if (!request.InstanceIdHasBeenSet())
@@ -1267,6 +1341,43 @@ void ConnectClient::DeleteUserHierarchyGroupAsync(const DeleteUserHierarchyGroup
 void ConnectClient::DeleteUserHierarchyGroupAsyncHelper(const DeleteUserHierarchyGroupRequest& request, const DeleteUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteUserHierarchyGroup(request), context);
+}
+
+DeleteVocabularyOutcome ConnectClient::DeleteVocabulary(const DeleteVocabularyRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteVocabulary", "Required field: InstanceId, is not set");
+    return DeleteVocabularyOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.VocabularyIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteVocabulary", "Required field: VocabularyId, is not set");
+    return DeleteVocabularyOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VocabularyId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/vocabulary-remove/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetVocabularyId());
+  return DeleteVocabularyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteVocabularyOutcomeCallable ConnectClient::DeleteVocabularyCallable(const DeleteVocabularyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteVocabularyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVocabulary(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::DeleteVocabularyAsync(const DeleteVocabularyRequest& request, const DeleteVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteVocabularyAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::DeleteVocabularyAsyncHelper(const DeleteVocabularyRequest& request, const DeleteVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteVocabulary(request), context);
 }
 
 DescribeAgentStatusOutcome ConnectClient::DescribeAgentStatus(const DescribeAgentStatusRequest& request) const
@@ -1817,6 +1928,43 @@ void ConnectClient::DescribeUserHierarchyStructureAsync(const DescribeUserHierar
 void ConnectClient::DescribeUserHierarchyStructureAsyncHelper(const DescribeUserHierarchyStructureRequest& request, const DescribeUserHierarchyStructureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeUserHierarchyStructure(request), context);
+}
+
+DescribeVocabularyOutcome ConnectClient::DescribeVocabulary(const DescribeVocabularyRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeVocabulary", "Required field: InstanceId, is not set");
+    return DescribeVocabularyOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.VocabularyIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeVocabulary", "Required field: VocabularyId, is not set");
+    return DescribeVocabularyOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VocabularyId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/vocabulary/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetVocabularyId());
+  return DescribeVocabularyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeVocabularyOutcomeCallable ConnectClient::DescribeVocabularyCallable(const DescribeVocabularyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeVocabularyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeVocabulary(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::DescribeVocabularyAsync(const DescribeVocabularyRequest& request, const DescribeVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeVocabularyAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::DescribeVocabularyAsyncHelper(const DescribeVocabularyRequest& request, const DescribeVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeVocabulary(request), context);
 }
 
 DisassociateApprovedOriginOutcome ConnectClient::DisassociateApprovedOrigin(const DisassociateApprovedOriginRequest& request) const
@@ -2456,6 +2604,37 @@ void ConnectClient::ListContactReferencesAsync(const ListContactReferencesReques
 void ConnectClient::ListContactReferencesAsyncHelper(const ListContactReferencesRequest& request, const ListContactReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListContactReferences(request), context);
+}
+
+ListDefaultVocabulariesOutcome ConnectClient::ListDefaultVocabularies(const ListDefaultVocabulariesRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListDefaultVocabularies", "Required field: InstanceId, is not set");
+    return ListDefaultVocabulariesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/default-vocabulary-summary/");
+  uri.AddPathSegment(request.GetInstanceId());
+  return ListDefaultVocabulariesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListDefaultVocabulariesOutcomeCallable ConnectClient::ListDefaultVocabulariesCallable(const ListDefaultVocabulariesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDefaultVocabulariesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDefaultVocabularies(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::ListDefaultVocabulariesAsync(const ListDefaultVocabulariesRequest& request, const ListDefaultVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListDefaultVocabulariesAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::ListDefaultVocabulariesAsyncHelper(const ListDefaultVocabulariesRequest& request, const ListDefaultVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListDefaultVocabularies(request), context);
 }
 
 ListHoursOfOperationsOutcome ConnectClient::ListHoursOfOperations(const ListHoursOfOperationsRequest& request) const
@@ -3165,6 +3344,37 @@ void ConnectClient::ResumeContactRecordingAsync(const ResumeContactRecordingRequ
 void ConnectClient::ResumeContactRecordingAsyncHelper(const ResumeContactRecordingRequest& request, const ResumeContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ResumeContactRecording(request), context);
+}
+
+SearchVocabulariesOutcome ConnectClient::SearchVocabularies(const SearchVocabulariesRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SearchVocabularies", "Required field: InstanceId, is not set");
+    return SearchVocabulariesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/vocabulary-summary/");
+  uri.AddPathSegment(request.GetInstanceId());
+  return SearchVocabulariesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SearchVocabulariesOutcomeCallable ConnectClient::SearchVocabulariesCallable(const SearchVocabulariesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SearchVocabulariesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchVocabularies(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::SearchVocabulariesAsync(const SearchVocabulariesRequest& request, const SearchVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SearchVocabulariesAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::SearchVocabulariesAsyncHelper(const SearchVocabulariesRequest& request, const SearchVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SearchVocabularies(request), context);
 }
 
 StartChatContactOutcome ConnectClient::StartChatContact(const StartChatContactRequest& request) const

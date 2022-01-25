@@ -22,7 +22,8 @@ DataSourceConfigurationsResult::DataSourceConfigurationsResult() :
     m_cloudTrailHasBeenSet(false),
     m_dNSLogsHasBeenSet(false),
     m_flowLogsHasBeenSet(false),
-    m_s3LogsHasBeenSet(false)
+    m_s3LogsHasBeenSet(false),
+    m_kubernetesHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ DataSourceConfigurationsResult::DataSourceConfigurationsResult(JsonView jsonValu
     m_cloudTrailHasBeenSet(false),
     m_dNSLogsHasBeenSet(false),
     m_flowLogsHasBeenSet(false),
-    m_s3LogsHasBeenSet(false)
+    m_s3LogsHasBeenSet(false),
+    m_kubernetesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +67,13 @@ DataSourceConfigurationsResult& DataSourceConfigurationsResult::operator =(JsonV
     m_s3LogsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("kubernetes"))
+  {
+    m_kubernetes = jsonValue.GetObject("kubernetes");
+
+    m_kubernetesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +102,12 @@ JsonValue DataSourceConfigurationsResult::Jsonize() const
   if(m_s3LogsHasBeenSet)
   {
    payload.WithObject("s3Logs", m_s3Logs.Jsonize());
+
+  }
+
+  if(m_kubernetesHasBeenSet)
+  {
+   payload.WithObject("kubernetes", m_kubernetes.Jsonize());
 
   }
 

@@ -14,6 +14,7 @@
 #include <aws/elasticfilesystem/model/CreateAccessPointResult.h>
 #include <aws/elasticfilesystem/model/CreateFileSystemResult.h>
 #include <aws/elasticfilesystem/model/CreateMountTargetResult.h>
+#include <aws/elasticfilesystem/model/CreateReplicationConfigurationResult.h>
 #include <aws/elasticfilesystem/model/DescribeAccessPointsResult.h>
 #include <aws/elasticfilesystem/model/DescribeAccountPreferencesResult.h>
 #include <aws/elasticfilesystem/model/DescribeBackupPolicyResult.h>
@@ -22,6 +23,7 @@
 #include <aws/elasticfilesystem/model/DescribeLifecycleConfigurationResult.h>
 #include <aws/elasticfilesystem/model/DescribeMountTargetSecurityGroupsResult.h>
 #include <aws/elasticfilesystem/model/DescribeMountTargetsResult.h>
+#include <aws/elasticfilesystem/model/DescribeReplicationConfigurationsResult.h>
 #include <aws/elasticfilesystem/model/ListTagsForResourceResult.h>
 #include <aws/elasticfilesystem/model/PutAccountPreferencesResult.h>
 #include <aws/elasticfilesystem/model/PutBackupPolicyResult.h>
@@ -71,10 +73,12 @@ namespace Model
         class CreateAccessPointRequest;
         class CreateFileSystemRequest;
         class CreateMountTargetRequest;
+        class CreateReplicationConfigurationRequest;
         class DeleteAccessPointRequest;
         class DeleteFileSystemRequest;
         class DeleteFileSystemPolicyRequest;
         class DeleteMountTargetRequest;
+        class DeleteReplicationConfigurationRequest;
         class DescribeAccessPointsRequest;
         class DescribeAccountPreferencesRequest;
         class DescribeBackupPolicyRequest;
@@ -83,6 +87,7 @@ namespace Model
         class DescribeLifecycleConfigurationRequest;
         class DescribeMountTargetSecurityGroupsRequest;
         class DescribeMountTargetsRequest;
+        class DescribeReplicationConfigurationsRequest;
         class ListTagsForResourceRequest;
         class ModifyMountTargetSecurityGroupsRequest;
         class PutAccountPreferencesRequest;
@@ -96,10 +101,12 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateAccessPointResult, EFSError> CreateAccessPointOutcome;
         typedef Aws::Utils::Outcome<CreateFileSystemResult, EFSError> CreateFileSystemOutcome;
         typedef Aws::Utils::Outcome<CreateMountTargetResult, EFSError> CreateMountTargetOutcome;
+        typedef Aws::Utils::Outcome<CreateReplicationConfigurationResult, EFSError> CreateReplicationConfigurationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EFSError> DeleteAccessPointOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EFSError> DeleteFileSystemOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EFSError> DeleteFileSystemPolicyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EFSError> DeleteMountTargetOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, EFSError> DeleteReplicationConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribeAccessPointsResult, EFSError> DescribeAccessPointsOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountPreferencesResult, EFSError> DescribeAccountPreferencesOutcome;
         typedef Aws::Utils::Outcome<DescribeBackupPolicyResult, EFSError> DescribeBackupPolicyOutcome;
@@ -108,6 +115,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeLifecycleConfigurationResult, EFSError> DescribeLifecycleConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribeMountTargetSecurityGroupsResult, EFSError> DescribeMountTargetSecurityGroupsOutcome;
         typedef Aws::Utils::Outcome<DescribeMountTargetsResult, EFSError> DescribeMountTargetsOutcome;
+        typedef Aws::Utils::Outcome<DescribeReplicationConfigurationsResult, EFSError> DescribeReplicationConfigurationsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, EFSError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EFSError> ModifyMountTargetSecurityGroupsOutcome;
         typedef Aws::Utils::Outcome<PutAccountPreferencesResult, EFSError> PutAccountPreferencesOutcome;
@@ -121,10 +129,12 @@ namespace Model
         typedef std::future<CreateAccessPointOutcome> CreateAccessPointOutcomeCallable;
         typedef std::future<CreateFileSystemOutcome> CreateFileSystemOutcomeCallable;
         typedef std::future<CreateMountTargetOutcome> CreateMountTargetOutcomeCallable;
+        typedef std::future<CreateReplicationConfigurationOutcome> CreateReplicationConfigurationOutcomeCallable;
         typedef std::future<DeleteAccessPointOutcome> DeleteAccessPointOutcomeCallable;
         typedef std::future<DeleteFileSystemOutcome> DeleteFileSystemOutcomeCallable;
         typedef std::future<DeleteFileSystemPolicyOutcome> DeleteFileSystemPolicyOutcomeCallable;
         typedef std::future<DeleteMountTargetOutcome> DeleteMountTargetOutcomeCallable;
+        typedef std::future<DeleteReplicationConfigurationOutcome> DeleteReplicationConfigurationOutcomeCallable;
         typedef std::future<DescribeAccessPointsOutcome> DescribeAccessPointsOutcomeCallable;
         typedef std::future<DescribeAccountPreferencesOutcome> DescribeAccountPreferencesOutcomeCallable;
         typedef std::future<DescribeBackupPolicyOutcome> DescribeBackupPolicyOutcomeCallable;
@@ -133,6 +143,7 @@ namespace Model
         typedef std::future<DescribeLifecycleConfigurationOutcome> DescribeLifecycleConfigurationOutcomeCallable;
         typedef std::future<DescribeMountTargetSecurityGroupsOutcome> DescribeMountTargetSecurityGroupsOutcomeCallable;
         typedef std::future<DescribeMountTargetsOutcome> DescribeMountTargetsOutcomeCallable;
+        typedef std::future<DescribeReplicationConfigurationsOutcome> DescribeReplicationConfigurationsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ModifyMountTargetSecurityGroupsOutcome> ModifyMountTargetSecurityGroupsOutcomeCallable;
         typedef std::future<PutAccountPreferencesOutcome> PutAccountPreferencesOutcomeCallable;
@@ -149,10 +160,12 @@ namespace Model
     typedef std::function<void(const EFSClient*, const Model::CreateAccessPointRequest&, const Model::CreateAccessPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAccessPointResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::CreateFileSystemRequest&, const Model::CreateFileSystemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFileSystemResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::CreateMountTargetRequest&, const Model::CreateMountTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMountTargetResponseReceivedHandler;
+    typedef std::function<void(const EFSClient*, const Model::CreateReplicationConfigurationRequest&, const Model::CreateReplicationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReplicationConfigurationResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DeleteAccessPointRequest&, const Model::DeleteAccessPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccessPointResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DeleteFileSystemRequest&, const Model::DeleteFileSystemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFileSystemResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DeleteFileSystemPolicyRequest&, const Model::DeleteFileSystemPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFileSystemPolicyResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DeleteMountTargetRequest&, const Model::DeleteMountTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMountTargetResponseReceivedHandler;
+    typedef std::function<void(const EFSClient*, const Model::DeleteReplicationConfigurationRequest&, const Model::DeleteReplicationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReplicationConfigurationResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DescribeAccessPointsRequest&, const Model::DescribeAccessPointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccessPointsResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DescribeAccountPreferencesRequest&, const Model::DescribeAccountPreferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountPreferencesResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DescribeBackupPolicyRequest&, const Model::DescribeBackupPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBackupPolicyResponseReceivedHandler;
@@ -161,6 +174,7 @@ namespace Model
     typedef std::function<void(const EFSClient*, const Model::DescribeLifecycleConfigurationRequest&, const Model::DescribeLifecycleConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLifecycleConfigurationResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DescribeMountTargetSecurityGroupsRequest&, const Model::DescribeMountTargetSecurityGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMountTargetSecurityGroupsResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DescribeMountTargetsRequest&, const Model::DescribeMountTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMountTargetsResponseReceivedHandler;
+    typedef std::function<void(const EFSClient*, const Model::DescribeReplicationConfigurationsRequest&, const Model::DescribeReplicationConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReplicationConfigurationsResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::ModifyMountTargetSecurityGroupsRequest&, const Model::ModifyMountTargetSecurityGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyMountTargetSecurityGroupsResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::PutAccountPreferencesRequest&, const Model::PutAccountPreferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountPreferencesResponseReceivedHandler;
@@ -174,10 +188,10 @@ namespace Model
   /**
    * <fullname>Amazon Elastic File System</fullname> <p>Amazon Elastic File System
    * (Amazon EFS) provides simple, scalable file storage for use with Amazon EC2
-   * instances in the Amazon Web Services Cloud. With Amazon EFS, storage capacity is
-   * elastic, growing and shrinking automatically as you add and remove files, so
-   * your applications have the storage they need, when they need it. For more
-   * information, see the <a
+   * Linux and Mac instances in the Amazon Web Services Cloud. With Amazon EFS,
+   * storage capacity is elastic, growing and shrinking automatically as you add and
+   * remove files, so your applications have the storage they need, when they need
+   * it. For more information, see the <a
    * href="https://docs.aws.amazon.com/efs/latest/ug/api-reference.html">Amazon
    * Elastic File System API Reference</a> and the <a
    * href="https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html">Amazon Elastic
@@ -682,6 +696,151 @@ namespace Model
         virtual void CreateMountTargetAsync(const Model::CreateMountTargetRequest& request, const CreateMountTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a replication configuration that replicates an existing EFS file
+         * system to a new, read-only file system. For more information, see <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html">Amazon EFS
+         * replication</a>. The replication configuration specifies the following:</p> <ul>
+         * <li> <p> <b>Source file system</b> - an existing EFS file system that you want
+         * replicated. The source file system cannot be a destination file system in an
+         * existing replication configuration.</p> </li> <li> <p> <b>Destination file
+         * system configuration</b> - the configuration of the destination file system to
+         * which the source file system will be replicated. There can only be one
+         * destination file system in a replication configuration.</p> <ul> <li> <p>
+         * <b>Amazon Web Services Region</b> - The Amazon Web Services Region in which the
+         * destination file system is created. EFS Replication is available in all Amazon
+         * Web Services Region that Amazon EFS is available in, except the following
+         * regions: Asia Pacific (Hong Kong) Europe (Milan), Middle East (Bahrain), Africa
+         * (Cape Town), and Asia Pacific (Jakarta).</p> </li> <li> <p> <b>Availability
+         * zone</b> - If you want the destination file system to use One Zone availability
+         * and durability, you must specify the Availability Zone to create the file system
+         * in. For more information about EFS storage classes, see <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html"> Amazon
+         * EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p> </li> <li> <p>
+         * <b>Encryption</b> - All destination file systems are created with encryption at
+         * rest enabled. You can specify the KMS key that is used to encrypt the
+         * destination file system. Your service-managed KMS key for Amazon EFS is used if
+         * you don't specify a KMS key. You cannot change this after the file system is
+         * created.</p> </li> </ul> </li> </ul> <p>The following properties are set by
+         * default:</p> <ul> <li> <p> <b>Performance mode</b> - The destination file
+         * system's performance mode will match that of the source file system, unless the
+         * destination file system uses One Zone storage. In that case, the <i>General
+         * Purpose</i> performance mode is used. The Performance mode cannot be
+         * changed.</p> </li> <li> <p> <b>Throughput mode</b> - The destination file system
+         * use the Bursting throughput mode by default. You can modify the throughput mode
+         * once the file system is created.</p> </li> </ul> <p>The following properties are
+         * turned off by default:</p> <ul> <li> <p> <b>Lifecycle management</b> - EFS
+         * lifecycle management and intelligent tiering are not enabled on the destination
+         * file system. You can enable EFS lifecycle management and intelligent tiering
+         * after the destination file system is created.</p> </li> <li> <p> <b>Automatic
+         * backups</b> - Automatic daily backups not enabled on the destination file
+         * system. You can change this setting after the file system is created.</p> </li>
+         * </ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html">Amazon EFS
+         * replication</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateReplicationConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateReplicationConfigurationOutcome CreateReplicationConfiguration(const Model::CreateReplicationConfigurationRequest& request) const;
+
+        /**
+         * <p>Creates a replication configuration that replicates an existing EFS file
+         * system to a new, read-only file system. For more information, see <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html">Amazon EFS
+         * replication</a>. The replication configuration specifies the following:</p> <ul>
+         * <li> <p> <b>Source file system</b> - an existing EFS file system that you want
+         * replicated. The source file system cannot be a destination file system in an
+         * existing replication configuration.</p> </li> <li> <p> <b>Destination file
+         * system configuration</b> - the configuration of the destination file system to
+         * which the source file system will be replicated. There can only be one
+         * destination file system in a replication configuration.</p> <ul> <li> <p>
+         * <b>Amazon Web Services Region</b> - The Amazon Web Services Region in which the
+         * destination file system is created. EFS Replication is available in all Amazon
+         * Web Services Region that Amazon EFS is available in, except the following
+         * regions: Asia Pacific (Hong Kong) Europe (Milan), Middle East (Bahrain), Africa
+         * (Cape Town), and Asia Pacific (Jakarta).</p> </li> <li> <p> <b>Availability
+         * zone</b> - If you want the destination file system to use One Zone availability
+         * and durability, you must specify the Availability Zone to create the file system
+         * in. For more information about EFS storage classes, see <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html"> Amazon
+         * EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p> </li> <li> <p>
+         * <b>Encryption</b> - All destination file systems are created with encryption at
+         * rest enabled. You can specify the KMS key that is used to encrypt the
+         * destination file system. Your service-managed KMS key for Amazon EFS is used if
+         * you don't specify a KMS key. You cannot change this after the file system is
+         * created.</p> </li> </ul> </li> </ul> <p>The following properties are set by
+         * default:</p> <ul> <li> <p> <b>Performance mode</b> - The destination file
+         * system's performance mode will match that of the source file system, unless the
+         * destination file system uses One Zone storage. In that case, the <i>General
+         * Purpose</i> performance mode is used. The Performance mode cannot be
+         * changed.</p> </li> <li> <p> <b>Throughput mode</b> - The destination file system
+         * use the Bursting throughput mode by default. You can modify the throughput mode
+         * once the file system is created.</p> </li> </ul> <p>The following properties are
+         * turned off by default:</p> <ul> <li> <p> <b>Lifecycle management</b> - EFS
+         * lifecycle management and intelligent tiering are not enabled on the destination
+         * file system. You can enable EFS lifecycle management and intelligent tiering
+         * after the destination file system is created.</p> </li> <li> <p> <b>Automatic
+         * backups</b> - Automatic daily backups not enabled on the destination file
+         * system. You can change this setting after the file system is created.</p> </li>
+         * </ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html">Amazon EFS
+         * replication</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateReplicationConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateReplicationConfigurationOutcomeCallable CreateReplicationConfigurationCallable(const Model::CreateReplicationConfigurationRequest& request) const;
+
+        /**
+         * <p>Creates a replication configuration that replicates an existing EFS file
+         * system to a new, read-only file system. For more information, see <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html">Amazon EFS
+         * replication</a>. The replication configuration specifies the following:</p> <ul>
+         * <li> <p> <b>Source file system</b> - an existing EFS file system that you want
+         * replicated. The source file system cannot be a destination file system in an
+         * existing replication configuration.</p> </li> <li> <p> <b>Destination file
+         * system configuration</b> - the configuration of the destination file system to
+         * which the source file system will be replicated. There can only be one
+         * destination file system in a replication configuration.</p> <ul> <li> <p>
+         * <b>Amazon Web Services Region</b> - The Amazon Web Services Region in which the
+         * destination file system is created. EFS Replication is available in all Amazon
+         * Web Services Region that Amazon EFS is available in, except the following
+         * regions: Asia Pacific (Hong Kong) Europe (Milan), Middle East (Bahrain), Africa
+         * (Cape Town), and Asia Pacific (Jakarta).</p> </li> <li> <p> <b>Availability
+         * zone</b> - If you want the destination file system to use One Zone availability
+         * and durability, you must specify the Availability Zone to create the file system
+         * in. For more information about EFS storage classes, see <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html"> Amazon
+         * EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p> </li> <li> <p>
+         * <b>Encryption</b> - All destination file systems are created with encryption at
+         * rest enabled. You can specify the KMS key that is used to encrypt the
+         * destination file system. Your service-managed KMS key for Amazon EFS is used if
+         * you don't specify a KMS key. You cannot change this after the file system is
+         * created.</p> </li> </ul> </li> </ul> <p>The following properties are set by
+         * default:</p> <ul> <li> <p> <b>Performance mode</b> - The destination file
+         * system's performance mode will match that of the source file system, unless the
+         * destination file system uses One Zone storage. In that case, the <i>General
+         * Purpose</i> performance mode is used. The Performance mode cannot be
+         * changed.</p> </li> <li> <p> <b>Throughput mode</b> - The destination file system
+         * use the Bursting throughput mode by default. You can modify the throughput mode
+         * once the file system is created.</p> </li> </ul> <p>The following properties are
+         * turned off by default:</p> <ul> <li> <p> <b>Lifecycle management</b> - EFS
+         * lifecycle management and intelligent tiering are not enabled on the destination
+         * file system. You can enable EFS lifecycle management and intelligent tiering
+         * after the destination file system is created.</p> </li> <li> <p> <b>Automatic
+         * backups</b> - Automatic daily backups not enabled on the destination file
+         * system. You can change this setting after the file system is created.</p> </li>
+         * </ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html">Amazon EFS
+         * replication</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateReplicationConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateReplicationConfigurationAsync(const Model::CreateReplicationConfigurationRequest& request, const CreateReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified access point. After deletion is complete, new clients
          * can no longer connect to the access points. Clients connected to the access
          * point at the time of deletion will continue to function until they terminate
@@ -903,6 +1062,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteMountTargetAsync(const Model::DeleteMountTargetRequest& request, const DeleteMountTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an existing replication configuration. To delete a replication
+         * configuration, you must make the request from the Amazon Web Services Region in
+         * which the destination file system is located. Deleting a replication
+         * configuration ends the replication process. You can write to the destination
+         * file system once it's status becomes <code>Writeable</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteReplicationConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteReplicationConfigurationOutcome DeleteReplicationConfiguration(const Model::DeleteReplicationConfigurationRequest& request) const;
+
+        /**
+         * <p>Deletes an existing replication configuration. To delete a replication
+         * configuration, you must make the request from the Amazon Web Services Region in
+         * which the destination file system is located. Deleting a replication
+         * configuration ends the replication process. You can write to the destination
+         * file system once it's status becomes <code>Writeable</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteReplicationConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteReplicationConfigurationOutcomeCallable DeleteReplicationConfigurationCallable(const Model::DeleteReplicationConfigurationRequest& request) const;
+
+        /**
+         * <p>Deletes an existing replication configuration. To delete a replication
+         * configuration, you must make the request from the Amazon Web Services Region in
+         * which the destination file system is located. Deleting a replication
+         * configuration ends the replication process. You can write to the destination
+         * file system once it's status becomes <code>Writeable</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteReplicationConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteReplicationConfigurationAsync(const Model::DeleteReplicationConfigurationRequest& request, const DeleteReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the description of a specific Amazon EFS access point if the
@@ -1280,6 +1479,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeMountTargetsAsync(const Model::DescribeMountTargetsRequest& request, const DescribeMountTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the replication configurations for either a specific file system,
+         * or all configurations for the Amazon Web Services account in an Amazon Web
+         * Services Region if a file system is not specified.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeReplicationConfigurations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeReplicationConfigurationsOutcome DescribeReplicationConfigurations(const Model::DescribeReplicationConfigurationsRequest& request) const;
+
+        /**
+         * <p>Retrieves the replication configurations for either a specific file system,
+         * or all configurations for the Amazon Web Services account in an Amazon Web
+         * Services Region if a file system is not specified.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeReplicationConfigurations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeReplicationConfigurationsOutcomeCallable DescribeReplicationConfigurationsCallable(const Model::DescribeReplicationConfigurationsRequest& request) const;
+
+        /**
+         * <p>Retrieves the replication configurations for either a specific file system,
+         * or all configurations for the Amazon Web Services account in an Amazon Web
+         * Services Region if a file system is not specified.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeReplicationConfigurations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeReplicationConfigurationsAsync(const Model::DescribeReplicationConfigurationsRequest& request, const DescribeReplicationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all tags for a top-level EFS resource. You must provide the ID of the
@@ -1726,10 +1956,12 @@ namespace Model
         void CreateAccessPointAsyncHelper(const Model::CreateAccessPointRequest& request, const CreateAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateFileSystemAsyncHelper(const Model::CreateFileSystemRequest& request, const CreateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateMountTargetAsyncHelper(const Model::CreateMountTargetRequest& request, const CreateMountTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateReplicationConfigurationAsyncHelper(const Model::CreateReplicationConfigurationRequest& request, const CreateReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAccessPointAsyncHelper(const Model::DeleteAccessPointRequest& request, const DeleteAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFileSystemAsyncHelper(const Model::DeleteFileSystemRequest& request, const DeleteFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFileSystemPolicyAsyncHelper(const Model::DeleteFileSystemPolicyRequest& request, const DeleteFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMountTargetAsyncHelper(const Model::DeleteMountTargetRequest& request, const DeleteMountTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteReplicationConfigurationAsyncHelper(const Model::DeleteReplicationConfigurationRequest& request, const DeleteReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccessPointsAsyncHelper(const Model::DescribeAccessPointsRequest& request, const DescribeAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountPreferencesAsyncHelper(const Model::DescribeAccountPreferencesRequest& request, const DescribeAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBackupPolicyAsyncHelper(const Model::DescribeBackupPolicyRequest& request, const DescribeBackupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1738,6 +1970,7 @@ namespace Model
         void DescribeLifecycleConfigurationAsyncHelper(const Model::DescribeLifecycleConfigurationRequest& request, const DescribeLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMountTargetSecurityGroupsAsyncHelper(const Model::DescribeMountTargetSecurityGroupsRequest& request, const DescribeMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMountTargetsAsyncHelper(const Model::DescribeMountTargetsRequest& request, const DescribeMountTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeReplicationConfigurationsAsyncHelper(const Model::DescribeReplicationConfigurationsRequest& request, const DescribeReplicationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyMountTargetSecurityGroupsAsyncHelper(const Model::ModifyMountTargetSecurityGroupsRequest& request, const ModifyMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutAccountPreferencesAsyncHelper(const Model::PutAccountPreferencesRequest& request, const PutAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

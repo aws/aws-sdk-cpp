@@ -479,7 +479,7 @@ namespace Model
      * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
      * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
      * <p>Choose <code>PERSISTENT_1</code> for longer-term storage and for
-     * throughput-focused workloads that aren’t latency-sensitive. a.
+     * throughput-focused workloads that aren’t latency-sensitive.
      * <code>PERSISTENT_1</code> supports encryption of data in transit, and is
      * available in all Amazon Web Services Regions in which FSx for Lustre is
      * available.</p> <p>Choose <code>PERSISTENT_2</code> for longer-term storage and
@@ -513,7 +513,7 @@ namespace Model
      * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
      * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
      * <p>Choose <code>PERSISTENT_1</code> for longer-term storage and for
-     * throughput-focused workloads that aren’t latency-sensitive. a.
+     * throughput-focused workloads that aren’t latency-sensitive.
      * <code>PERSISTENT_1</code> supports encryption of data in transit, and is
      * available in all Amazon Web Services Regions in which FSx for Lustre is
      * available.</p> <p>Choose <code>PERSISTENT_2</code> for longer-term storage and
@@ -547,7 +547,7 @@ namespace Model
      * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
      * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
      * <p>Choose <code>PERSISTENT_1</code> for longer-term storage and for
-     * throughput-focused workloads that aren’t latency-sensitive. a.
+     * throughput-focused workloads that aren’t latency-sensitive.
      * <code>PERSISTENT_1</code> supports encryption of data in transit, and is
      * available in all Amazon Web Services Regions in which FSx for Lustre is
      * available.</p> <p>Choose <code>PERSISTENT_2</code> for longer-term storage and
@@ -581,7 +581,7 @@ namespace Model
      * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
      * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
      * <p>Choose <code>PERSISTENT_1</code> for longer-term storage and for
-     * throughput-focused workloads that aren’t latency-sensitive. a.
+     * throughput-focused workloads that aren’t latency-sensitive.
      * <code>PERSISTENT_1</code> supports encryption of data in transit, and is
      * available in all Amazon Web Services Regions in which FSx for Lustre is
      * available.</p> <p>Choose <code>PERSISTENT_2</code> for longer-term storage and
@@ -615,7 +615,7 @@ namespace Model
      * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
      * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
      * <p>Choose <code>PERSISTENT_1</code> for longer-term storage and for
-     * throughput-focused workloads that aren’t latency-sensitive. a.
+     * throughput-focused workloads that aren’t latency-sensitive.
      * <code>PERSISTENT_1</code> supports encryption of data in transit, and is
      * available in all Amazon Web Services Regions in which FSx for Lustre is
      * available.</p> <p>Choose <code>PERSISTENT_2</code> for longer-term storage and
@@ -649,7 +649,7 @@ namespace Model
      * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
      * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
      * <p>Choose <code>PERSISTENT_1</code> for longer-term storage and for
-     * throughput-focused workloads that aren’t latency-sensitive. a.
+     * throughput-focused workloads that aren’t latency-sensitive.
      * <code>PERSISTENT_1</code> supports encryption of data in transit, and is
      * available in all Amazon Web Services Regions in which FSx for Lustre is
      * available.</p> <p>Choose <code>PERSISTENT_2</code> for longer-term storage and
