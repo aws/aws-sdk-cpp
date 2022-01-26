@@ -56,6 +56,7 @@
 #include <aws/frauddetector/model/GetEntityTypesRequest.h>
 #include <aws/frauddetector/model/GetEventRequest.h>
 #include <aws/frauddetector/model/GetEventPredictionRequest.h>
+#include <aws/frauddetector/model/GetEventPredictionMetadataRequest.h>
 #include <aws/frauddetector/model/GetEventTypesRequest.h>
 #include <aws/frauddetector/model/GetExternalModelsRequest.h>
 #include <aws/frauddetector/model/GetLabelsRequest.h>
@@ -64,6 +65,7 @@
 #include <aws/frauddetector/model/GetOutcomesRequest.h>
 #include <aws/frauddetector/model/GetRulesRequest.h>
 #include <aws/frauddetector/model/GetVariablesRequest.h>
+#include <aws/frauddetector/model/ListEventPredictionsRequest.h>
 #include <aws/frauddetector/model/ListTagsForResourceRequest.h>
 #include <aws/frauddetector/model/PutDetectorRequest.h>
 #include <aws/frauddetector/model/PutEntityTypeRequest.h>
@@ -1023,6 +1025,30 @@ void FraudDetectorClient::GetEventPredictionAsyncHelper(const GetEventPrediction
   handler(this, request, GetEventPrediction(request), context);
 }
 
+GetEventPredictionMetadataOutcome FraudDetectorClient::GetEventPredictionMetadata(const GetEventPredictionMetadataRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetEventPredictionMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetEventPredictionMetadataOutcomeCallable FraudDetectorClient::GetEventPredictionMetadataCallable(const GetEventPredictionMetadataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetEventPredictionMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEventPredictionMetadata(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FraudDetectorClient::GetEventPredictionMetadataAsync(const GetEventPredictionMetadataRequest& request, const GetEventPredictionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetEventPredictionMetadataAsyncHelper( request, handler, context ); } );
+}
+
+void FraudDetectorClient::GetEventPredictionMetadataAsyncHelper(const GetEventPredictionMetadataRequest& request, const GetEventPredictionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetEventPredictionMetadata(request), context);
+}
+
 GetEventTypesOutcome FraudDetectorClient::GetEventTypes(const GetEventTypesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1238,6 +1264,30 @@ void FraudDetectorClient::GetVariablesAsync(const GetVariablesRequest& request, 
 void FraudDetectorClient::GetVariablesAsyncHelper(const GetVariablesRequest& request, const GetVariablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetVariables(request), context);
+}
+
+ListEventPredictionsOutcome FraudDetectorClient::ListEventPredictions(const ListEventPredictionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListEventPredictionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListEventPredictionsOutcomeCallable FraudDetectorClient::ListEventPredictionsCallable(const ListEventPredictionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListEventPredictionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEventPredictions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FraudDetectorClient::ListEventPredictionsAsync(const ListEventPredictionsRequest& request, const ListEventPredictionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListEventPredictionsAsyncHelper( request, handler, context ); } );
+}
+
+void FraudDetectorClient::ListEventPredictionsAsyncHelper(const ListEventPredictionsRequest& request, const ListEventPredictionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListEventPredictions(request), context);
 }
 
 ListTagsForResourceOutcome FraudDetectorClient::ListTagsForResource(const ListTagsForResourceRequest& request) const

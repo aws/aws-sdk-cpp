@@ -497,48 +497,42 @@ namespace Model
     /**
      * <p>Specifies configuration for how an endpoint performs asynchronous inference.
      * This is a required field in order for your Endpoint to be invoked using <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">
-     * <code>InvokeEndpointAsync</code> </a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html">InvokeEndpointAsync</a>.</p>
      */
     inline const AsyncInferenceConfig& GetAsyncInferenceConfig() const{ return m_asyncInferenceConfig; }
 
     /**
      * <p>Specifies configuration for how an endpoint performs asynchronous inference.
      * This is a required field in order for your Endpoint to be invoked using <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">
-     * <code>InvokeEndpointAsync</code> </a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html">InvokeEndpointAsync</a>.</p>
      */
     inline bool AsyncInferenceConfigHasBeenSet() const { return m_asyncInferenceConfigHasBeenSet; }
 
     /**
      * <p>Specifies configuration for how an endpoint performs asynchronous inference.
      * This is a required field in order for your Endpoint to be invoked using <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">
-     * <code>InvokeEndpointAsync</code> </a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html">InvokeEndpointAsync</a>.</p>
      */
     inline void SetAsyncInferenceConfig(const AsyncInferenceConfig& value) { m_asyncInferenceConfigHasBeenSet = true; m_asyncInferenceConfig = value; }
 
     /**
      * <p>Specifies configuration for how an endpoint performs asynchronous inference.
      * This is a required field in order for your Endpoint to be invoked using <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">
-     * <code>InvokeEndpointAsync</code> </a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html">InvokeEndpointAsync</a>.</p>
      */
     inline void SetAsyncInferenceConfig(AsyncInferenceConfig&& value) { m_asyncInferenceConfigHasBeenSet = true; m_asyncInferenceConfig = std::move(value); }
 
     /**
      * <p>Specifies configuration for how an endpoint performs asynchronous inference.
      * This is a required field in order for your Endpoint to be invoked using <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">
-     * <code>InvokeEndpointAsync</code> </a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html">InvokeEndpointAsync</a>.</p>
      */
     inline CreateEndpointConfigRequest& WithAsyncInferenceConfig(const AsyncInferenceConfig& value) { SetAsyncInferenceConfig(value); return *this;}
 
     /**
      * <p>Specifies configuration for how an endpoint performs asynchronous inference.
      * This is a required field in order for your Endpoint to be invoked using <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">
-     * <code>InvokeEndpointAsync</code> </a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html">InvokeEndpointAsync</a>.</p>
      */
     inline CreateEndpointConfigRequest& WithAsyncInferenceConfig(AsyncInferenceConfig&& value) { SetAsyncInferenceConfig(std::move(value)); return *this;}
 

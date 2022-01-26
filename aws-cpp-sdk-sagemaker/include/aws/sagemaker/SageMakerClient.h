@@ -9188,13 +9188,13 @@ namespace Model
          * <p>Stops a pipeline execution.</p> <p> <b>Callback Step</b> </p> <p>A pipeline
          * execution won't stop while a callback step is running. When you call
          * <code>StopPipelineExecution</code> on a pipeline execution with a running
-         * callback step, Amazon SageMaker Pipelines sends an additional Amazon SQS message
-         * to the specified SQS queue. The body of the SQS message contains a "Status"
-         * field which is set to "Stopping".</p> <p>You should add logic to your Amazon SQS
-         * message consumer to take any needed action (for example, resource cleanup) upon
-         * receipt of the message followed by a call to
+         * callback step, SageMaker Pipelines sends an additional Amazon SQS message to the
+         * specified SQS queue. The body of the SQS message contains a "Status" field which
+         * is set to "Stopping".</p> <p>You should add logic to your Amazon SQS message
+         * consumer to take any needed action (for example, resource cleanup) upon receipt
+         * of the message followed by a call to
          * <code>SendPipelineExecutionStepSuccess</code> or
-         * <code>SendPipelineExecutionStepFailure</code>.</p> <p>Only when Amazon SageMaker
+         * <code>SendPipelineExecutionStepFailure</code>.</p> <p>Only when SageMaker
          * Pipelines receives one of these calls will it stop the pipeline execution.</p>
          * <p> <b>Lambda Step</b> </p> <p>A pipeline execution can't be stopped while a
          * lambda step is running because the Lambda function invoked by the lambda step
@@ -9213,13 +9213,13 @@ namespace Model
          * <p>Stops a pipeline execution.</p> <p> <b>Callback Step</b> </p> <p>A pipeline
          * execution won't stop while a callback step is running. When you call
          * <code>StopPipelineExecution</code> on a pipeline execution with a running
-         * callback step, Amazon SageMaker Pipelines sends an additional Amazon SQS message
-         * to the specified SQS queue. The body of the SQS message contains a "Status"
-         * field which is set to "Stopping".</p> <p>You should add logic to your Amazon SQS
-         * message consumer to take any needed action (for example, resource cleanup) upon
-         * receipt of the message followed by a call to
+         * callback step, SageMaker Pipelines sends an additional Amazon SQS message to the
+         * specified SQS queue. The body of the SQS message contains a "Status" field which
+         * is set to "Stopping".</p> <p>You should add logic to your Amazon SQS message
+         * consumer to take any needed action (for example, resource cleanup) upon receipt
+         * of the message followed by a call to
          * <code>SendPipelineExecutionStepSuccess</code> or
-         * <code>SendPipelineExecutionStepFailure</code>.</p> <p>Only when Amazon SageMaker
+         * <code>SendPipelineExecutionStepFailure</code>.</p> <p>Only when SageMaker
          * Pipelines receives one of these calls will it stop the pipeline execution.</p>
          * <p> <b>Lambda Step</b> </p> <p>A pipeline execution can't be stopped while a
          * lambda step is running because the Lambda function invoked by the lambda step
@@ -9240,13 +9240,13 @@ namespace Model
          * <p>Stops a pipeline execution.</p> <p> <b>Callback Step</b> </p> <p>A pipeline
          * execution won't stop while a callback step is running. When you call
          * <code>StopPipelineExecution</code> on a pipeline execution with a running
-         * callback step, Amazon SageMaker Pipelines sends an additional Amazon SQS message
-         * to the specified SQS queue. The body of the SQS message contains a "Status"
-         * field which is set to "Stopping".</p> <p>You should add logic to your Amazon SQS
-         * message consumer to take any needed action (for example, resource cleanup) upon
-         * receipt of the message followed by a call to
+         * callback step, SageMaker Pipelines sends an additional Amazon SQS message to the
+         * specified SQS queue. The body of the SQS message contains a "Status" field which
+         * is set to "Stopping".</p> <p>You should add logic to your Amazon SQS message
+         * consumer to take any needed action (for example, resource cleanup) upon receipt
+         * of the message followed by a call to
          * <code>SendPipelineExecutionStepSuccess</code> or
-         * <code>SendPipelineExecutionStepFailure</code>.</p> <p>Only when Amazon SageMaker
+         * <code>SendPipelineExecutionStepFailure</code>.</p> <p>Only when SageMaker
          * Pipelines receives one of these calls will it stop the pipeline execution.</p>
          * <p> <b>Lambda Step</b> </p> <p>A pipeline execution can't be stopped while a
          * lambda step is running because the Lambda function invoked by the lambda step

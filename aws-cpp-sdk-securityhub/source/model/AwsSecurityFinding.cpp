@@ -62,7 +62,9 @@ AwsSecurityFinding::AwsSecurityFinding() :
     m_vulnerabilitiesHasBeenSet(false),
     m_patchSummaryHasBeenSet(false),
     m_actionHasBeenSet(false),
-    m_findingProviderFieldsHasBeenSet(false)
+    m_findingProviderFieldsHasBeenSet(false),
+    m_sample(false),
+    m_sampleHasBeenSet(false)
 {
 }
 
@@ -110,7 +112,9 @@ AwsSecurityFinding::AwsSecurityFinding(JsonView jsonValue) :
     m_vulnerabilitiesHasBeenSet(false),
     m_patchSummaryHasBeenSet(false),
     m_actionHasBeenSet(false),
-    m_findingProviderFieldsHasBeenSet(false)
+    m_findingProviderFieldsHasBeenSet(false),
+    m_sample(false),
+    m_sampleHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -417,6 +421,13 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
     m_findingProviderFieldsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Sample"))
+  {
+    m_sample = jsonValue.GetBool("Sample");
+
+    m_sampleHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -697,6 +708,12 @@ JsonValue AwsSecurityFinding::Jsonize() const
   if(m_findingProviderFieldsHasBeenSet)
   {
    payload.WithObject("FindingProviderFields", m_findingProviderFields.Jsonize());
+
+  }
+
+  if(m_sampleHasBeenSet)
+  {
+   payload.WithBool("Sample", m_sample);
 
   }
 

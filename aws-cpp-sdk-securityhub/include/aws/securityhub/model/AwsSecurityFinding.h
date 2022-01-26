@@ -2075,6 +2075,27 @@ namespace Model
      */
     inline AwsSecurityFinding& WithFindingProviderFields(FindingProviderFields&& value) { SetFindingProviderFields(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether the finding is a sample finding.</p>
+     */
+    inline bool GetSample() const{ return m_sample; }
+
+    /**
+     * <p>Indicates whether the finding is a sample finding.</p>
+     */
+    inline bool SampleHasBeenSet() const { return m_sampleHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the finding is a sample finding.</p>
+     */
+    inline void SetSample(bool value) { m_sampleHasBeenSet = true; m_sample = value; }
+
+    /**
+     * <p>Indicates whether the finding is a sample finding.</p>
+     */
+    inline AwsSecurityFinding& WithSample(bool value) { SetSample(value); return *this;}
+
   private:
 
     Aws::String m_schemaVersion;
@@ -2193,6 +2214,9 @@ namespace Model
 
     FindingProviderFields m_findingProviderFields;
     bool m_findingProviderFieldsHasBeenSet;
+
+    bool m_sample;
+    bool m_sampleHasBeenSet;
   };
 
 } // namespace Model

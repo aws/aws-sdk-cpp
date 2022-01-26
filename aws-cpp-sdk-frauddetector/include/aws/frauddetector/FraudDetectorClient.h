@@ -47,6 +47,7 @@
 #include <aws/frauddetector/model/GetEntityTypesResult.h>
 #include <aws/frauddetector/model/GetEventResult.h>
 #include <aws/frauddetector/model/GetEventPredictionResult.h>
+#include <aws/frauddetector/model/GetEventPredictionMetadataResult.h>
 #include <aws/frauddetector/model/GetEventTypesResult.h>
 #include <aws/frauddetector/model/GetExternalModelsResult.h>
 #include <aws/frauddetector/model/GetKMSEncryptionKeyResult.h>
@@ -56,6 +57,7 @@
 #include <aws/frauddetector/model/GetOutcomesResult.h>
 #include <aws/frauddetector/model/GetRulesResult.h>
 #include <aws/frauddetector/model/GetVariablesResult.h>
+#include <aws/frauddetector/model/ListEventPredictionsResult.h>
 #include <aws/frauddetector/model/ListTagsForResourceResult.h>
 #include <aws/frauddetector/model/PutDetectorResult.h>
 #include <aws/frauddetector/model/PutEntityTypeResult.h>
@@ -152,6 +154,7 @@ namespace Model
         class GetEntityTypesRequest;
         class GetEventRequest;
         class GetEventPredictionRequest;
+        class GetEventPredictionMetadataRequest;
         class GetEventTypesRequest;
         class GetExternalModelsRequest;
         class GetLabelsRequest;
@@ -160,6 +163,7 @@ namespace Model
         class GetOutcomesRequest;
         class GetRulesRequest;
         class GetVariablesRequest;
+        class ListEventPredictionsRequest;
         class ListTagsForResourceRequest;
         class PutDetectorRequest;
         class PutEntityTypeRequest;
@@ -218,6 +222,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetEntityTypesResult, FraudDetectorError> GetEntityTypesOutcome;
         typedef Aws::Utils::Outcome<GetEventResult, FraudDetectorError> GetEventOutcome;
         typedef Aws::Utils::Outcome<GetEventPredictionResult, FraudDetectorError> GetEventPredictionOutcome;
+        typedef Aws::Utils::Outcome<GetEventPredictionMetadataResult, FraudDetectorError> GetEventPredictionMetadataOutcome;
         typedef Aws::Utils::Outcome<GetEventTypesResult, FraudDetectorError> GetEventTypesOutcome;
         typedef Aws::Utils::Outcome<GetExternalModelsResult, FraudDetectorError> GetExternalModelsOutcome;
         typedef Aws::Utils::Outcome<GetKMSEncryptionKeyResult, FraudDetectorError> GetKMSEncryptionKeyOutcome;
@@ -227,6 +232,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetOutcomesResult, FraudDetectorError> GetOutcomesOutcome;
         typedef Aws::Utils::Outcome<GetRulesResult, FraudDetectorError> GetRulesOutcome;
         typedef Aws::Utils::Outcome<GetVariablesResult, FraudDetectorError> GetVariablesOutcome;
+        typedef Aws::Utils::Outcome<ListEventPredictionsResult, FraudDetectorError> ListEventPredictionsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, FraudDetectorError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutDetectorResult, FraudDetectorError> PutDetectorOutcome;
         typedef Aws::Utils::Outcome<PutEntityTypeResult, FraudDetectorError> PutEntityTypeOutcome;
@@ -285,6 +291,7 @@ namespace Model
         typedef std::future<GetEntityTypesOutcome> GetEntityTypesOutcomeCallable;
         typedef std::future<GetEventOutcome> GetEventOutcomeCallable;
         typedef std::future<GetEventPredictionOutcome> GetEventPredictionOutcomeCallable;
+        typedef std::future<GetEventPredictionMetadataOutcome> GetEventPredictionMetadataOutcomeCallable;
         typedef std::future<GetEventTypesOutcome> GetEventTypesOutcomeCallable;
         typedef std::future<GetExternalModelsOutcome> GetExternalModelsOutcomeCallable;
         typedef std::future<GetKMSEncryptionKeyOutcome> GetKMSEncryptionKeyOutcomeCallable;
@@ -294,6 +301,7 @@ namespace Model
         typedef std::future<GetOutcomesOutcome> GetOutcomesOutcomeCallable;
         typedef std::future<GetRulesOutcome> GetRulesOutcomeCallable;
         typedef std::future<GetVariablesOutcome> GetVariablesOutcomeCallable;
+        typedef std::future<ListEventPredictionsOutcome> ListEventPredictionsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutDetectorOutcome> PutDetectorOutcomeCallable;
         typedef std::future<PutEntityTypeOutcome> PutEntityTypeOutcomeCallable;
@@ -355,6 +363,7 @@ namespace Model
     typedef std::function<void(const FraudDetectorClient*, const Model::GetEntityTypesRequest&, const Model::GetEntityTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEntityTypesResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetEventRequest&, const Model::GetEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetEventPredictionRequest&, const Model::GetEventPredictionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventPredictionResponseReceivedHandler;
+    typedef std::function<void(const FraudDetectorClient*, const Model::GetEventPredictionMetadataRequest&, const Model::GetEventPredictionMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventPredictionMetadataResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetEventTypesRequest&, const Model::GetEventTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventTypesResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetExternalModelsRequest&, const Model::GetExternalModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetExternalModelsResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetKMSEncryptionKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetKMSEncryptionKeyResponseReceivedHandler;
@@ -364,6 +373,7 @@ namespace Model
     typedef std::function<void(const FraudDetectorClient*, const Model::GetOutcomesRequest&, const Model::GetOutcomesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOutcomesResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetRulesRequest&, const Model::GetRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRulesResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetVariablesRequest&, const Model::GetVariablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVariablesResponseReceivedHandler;
+    typedef std::function<void(const FraudDetectorClient*, const Model::ListEventPredictionsRequest&, const Model::ListEventPredictionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventPredictionsResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::PutDetectorRequest&, const Model::PutDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDetectorResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::PutEntityTypeRequest&, const Model::PutEntityTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEntityTypeResponseReceivedHandler;
@@ -1552,6 +1562,37 @@ namespace Model
         virtual void GetEventPredictionAsync(const Model::GetEventPredictionRequest& request, const GetEventPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Gets details of the past fraud predictions for the specified event ID, event
+         * type, detector ID, and detector version ID that was generated in the specified
+         * time period. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEventPredictionMetadata">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetEventPredictionMetadataOutcome GetEventPredictionMetadata(const Model::GetEventPredictionMetadataRequest& request) const;
+
+        /**
+         * <p> Gets details of the past fraud predictions for the specified event ID, event
+         * type, detector ID, and detector version ID that was generated in the specified
+         * time period. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEventPredictionMetadata">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetEventPredictionMetadataOutcomeCallable GetEventPredictionMetadataCallable(const Model::GetEventPredictionMetadataRequest& request) const;
+
+        /**
+         * <p> Gets details of the past fraud predictions for the specified event ID, event
+         * type, detector ID, and detector version ID that was generated in the specified
+         * time period. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEventPredictionMetadata">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetEventPredictionMetadataAsync(const Model::GetEventPredictionMetadataRequest& request, const GetEventPredictionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets all event types or a specific event type if name is provided. This is a
          * paginated API. If you provide a null <code>maxResults</code>, this action
          * retrieves a maximum of 10 records per page. If you provide a
@@ -1915,6 +1956,61 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetVariablesAsync(const Model::GetVariablesRequest& request, const GetVariablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets a list of past predictions. The list can be filtered by detector ID,
+         * detector version ID, event ID, event type, or by specifying a time period. If
+         * filter is not specified, the most recent prediction is returned.</p> <p>For
+         * example, the following filter lists all past predictions for <code>xyz</code>
+         * event type - <code>{ "eventType":{ "value": "xyz" }” } </code> </p> <p>This is a
+         * paginated API. If you provide a null <code>maxResults</code>, this action will
+         * retrieve a maximum of 10 records per page. If you provide a
+         * <code>maxResults</code>, the value must be between 50 and 100. To get the next
+         * page results, provide the <code>nextToken</code> from the response as part of
+         * your request. A null <code>nextToken</code> fetches the records from the
+         * beginning. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ListEventPredictions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListEventPredictionsOutcome ListEventPredictions(const Model::ListEventPredictionsRequest& request) const;
+
+        /**
+         * <p>Gets a list of past predictions. The list can be filtered by detector ID,
+         * detector version ID, event ID, event type, or by specifying a time period. If
+         * filter is not specified, the most recent prediction is returned.</p> <p>For
+         * example, the following filter lists all past predictions for <code>xyz</code>
+         * event type - <code>{ "eventType":{ "value": "xyz" }” } </code> </p> <p>This is a
+         * paginated API. If you provide a null <code>maxResults</code>, this action will
+         * retrieve a maximum of 10 records per page. If you provide a
+         * <code>maxResults</code>, the value must be between 50 and 100. To get the next
+         * page results, provide the <code>nextToken</code> from the response as part of
+         * your request. A null <code>nextToken</code> fetches the records from the
+         * beginning. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ListEventPredictions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListEventPredictionsOutcomeCallable ListEventPredictionsCallable(const Model::ListEventPredictionsRequest& request) const;
+
+        /**
+         * <p>Gets a list of past predictions. The list can be filtered by detector ID,
+         * detector version ID, event ID, event type, or by specifying a time period. If
+         * filter is not specified, the most recent prediction is returned.</p> <p>For
+         * example, the following filter lists all past predictions for <code>xyz</code>
+         * event type - <code>{ "eventType":{ "value": "xyz" }” } </code> </p> <p>This is a
+         * paginated API. If you provide a null <code>maxResults</code>, this action will
+         * retrieve a maximum of 10 records per page. If you provide a
+         * <code>maxResults</code>, the value must be between 50 and 100. To get the next
+         * page results, provide the <code>nextToken</code> from the response as part of
+         * your request. A null <code>nextToken</code> fetches the records from the
+         * beginning. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ListEventPredictions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListEventPredictionsAsync(const Model::ListEventPredictionsRequest& request, const ListEventPredictionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all tags associated with the resource. This is a paginated API. To get
@@ -2604,6 +2700,7 @@ namespace Model
         void GetEntityTypesAsyncHelper(const Model::GetEntityTypesRequest& request, const GetEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEventAsyncHelper(const Model::GetEventRequest& request, const GetEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEventPredictionAsyncHelper(const Model::GetEventPredictionRequest& request, const GetEventPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetEventPredictionMetadataAsyncHelper(const Model::GetEventPredictionMetadataRequest& request, const GetEventPredictionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEventTypesAsyncHelper(const Model::GetEventTypesRequest& request, const GetEventTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetExternalModelsAsyncHelper(const Model::GetExternalModelsRequest& request, const GetExternalModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetKMSEncryptionKeyAsyncHelper(const GetKMSEncryptionKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2613,6 +2710,7 @@ namespace Model
         void GetOutcomesAsyncHelper(const Model::GetOutcomesRequest& request, const GetOutcomesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRulesAsyncHelper(const Model::GetRulesRequest& request, const GetRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetVariablesAsyncHelper(const Model::GetVariablesRequest& request, const GetVariablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListEventPredictionsAsyncHelper(const Model::ListEventPredictionsRequest& request, const ListEventPredictionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutDetectorAsyncHelper(const Model::PutDetectorRequest& request, const PutDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutEntityTypeAsyncHelper(const Model::PutEntityTypeRequest& request, const PutEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

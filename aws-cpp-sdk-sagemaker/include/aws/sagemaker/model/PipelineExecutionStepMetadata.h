@@ -17,6 +17,7 @@
 #include <aws/sagemaker/model/QualityCheckStepMetadata.h>
 #include <aws/sagemaker/model/ClarifyCheckStepMetadata.h>
 #include <aws/sagemaker/model/EMRStepMetadata.h>
+#include <aws/sagemaker/model/FailStepMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -599,6 +600,37 @@ namespace Model
      */
     inline PipelineExecutionStepMetadata& WithEMR(EMRStepMetadata&& value) { SetEMR(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configurations and outcomes of a Fail step execution.</p>
+     */
+    inline const FailStepMetadata& GetFail() const{ return m_fail; }
+
+    /**
+     * <p>The configurations and outcomes of a Fail step execution.</p>
+     */
+    inline bool FailHasBeenSet() const { return m_failHasBeenSet; }
+
+    /**
+     * <p>The configurations and outcomes of a Fail step execution.</p>
+     */
+    inline void SetFail(const FailStepMetadata& value) { m_failHasBeenSet = true; m_fail = value; }
+
+    /**
+     * <p>The configurations and outcomes of a Fail step execution.</p>
+     */
+    inline void SetFail(FailStepMetadata&& value) { m_failHasBeenSet = true; m_fail = std::move(value); }
+
+    /**
+     * <p>The configurations and outcomes of a Fail step execution.</p>
+     */
+    inline PipelineExecutionStepMetadata& WithFail(const FailStepMetadata& value) { SetFail(value); return *this;}
+
+    /**
+     * <p>The configurations and outcomes of a Fail step execution.</p>
+     */
+    inline PipelineExecutionStepMetadata& WithFail(FailStepMetadata&& value) { SetFail(std::move(value)); return *this;}
+
   private:
 
     TrainingJobStepMetadata m_trainingJob;
@@ -636,6 +668,9 @@ namespace Model
 
     EMRStepMetadata m_eMR;
     bool m_eMRHasBeenSet;
+
+    FailStepMetadata m_fail;
+    bool m_failHasBeenSet;
   };
 
 } // namespace Model

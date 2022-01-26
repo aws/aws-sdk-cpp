@@ -11,6 +11,7 @@
 #include <aws/securityhub/model/NumberFilter.h>
 #include <aws/securityhub/model/MapFilter.h>
 #include <aws/securityhub/model/IpFilter.h>
+#include <aws/securityhub/model/BooleanFilter.h>
 #include <utility>
 
 namespace Aws
@@ -4367,6 +4368,55 @@ namespace Model
      */
     inline AwsSecurityFindingFilters& AddFindingProviderFieldsTypes(StringFilter&& value) { m_findingProviderFieldsTypesHasBeenSet = true; m_findingProviderFieldsTypes.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Indicates whether or not sample findings are included in the filter
+     * results.</p>
+     */
+    inline const Aws::Vector<BooleanFilter>& GetSample() const{ return m_sample; }
+
+    /**
+     * <p>Indicates whether or not sample findings are included in the filter
+     * results.</p>
+     */
+    inline bool SampleHasBeenSet() const { return m_sampleHasBeenSet; }
+
+    /**
+     * <p>Indicates whether or not sample findings are included in the filter
+     * results.</p>
+     */
+    inline void SetSample(const Aws::Vector<BooleanFilter>& value) { m_sampleHasBeenSet = true; m_sample = value; }
+
+    /**
+     * <p>Indicates whether or not sample findings are included in the filter
+     * results.</p>
+     */
+    inline void SetSample(Aws::Vector<BooleanFilter>&& value) { m_sampleHasBeenSet = true; m_sample = std::move(value); }
+
+    /**
+     * <p>Indicates whether or not sample findings are included in the filter
+     * results.</p>
+     */
+    inline AwsSecurityFindingFilters& WithSample(const Aws::Vector<BooleanFilter>& value) { SetSample(value); return *this;}
+
+    /**
+     * <p>Indicates whether or not sample findings are included in the filter
+     * results.</p>
+     */
+    inline AwsSecurityFindingFilters& WithSample(Aws::Vector<BooleanFilter>&& value) { SetSample(std::move(value)); return *this;}
+
+    /**
+     * <p>Indicates whether or not sample findings are included in the filter
+     * results.</p>
+     */
+    inline AwsSecurityFindingFilters& AddSample(const BooleanFilter& value) { m_sampleHasBeenSet = true; m_sample.push_back(value); return *this; }
+
+    /**
+     * <p>Indicates whether or not sample findings are included in the filter
+     * results.</p>
+     */
+    inline AwsSecurityFindingFilters& AddSample(BooleanFilter&& value) { m_sampleHasBeenSet = true; m_sample.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<StringFilter> m_productArn;
@@ -4638,6 +4688,9 @@ namespace Model
 
     Aws::Vector<StringFilter> m_findingProviderFieldsTypes;
     bool m_findingProviderFieldsTypesHasBeenSet;
+
+    Aws::Vector<BooleanFilter> m_sample;
+    bool m_sampleHasBeenSet;
   };
 
 } // namespace Model
