@@ -6,7 +6,7 @@ phases:
       - apt-get -y dist-upgrade
       - apt-get install -y flex bison
       - apt-get -y clean
-      - git clone -b Release_1_8_19 --depth 1 https://github.com/doxygen/doxygen.git
+      - git clone -b Release_1_9_3 --depth 1 https://github.com/doxygen/doxygen.git
       - cd doxygen
       - mkdir build
       - cd build
