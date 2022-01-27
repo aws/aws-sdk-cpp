@@ -496,42 +496,58 @@ namespace Model
 
 
     /**
-     * <p> The credentials for basic authorization for an Amplify app. </p>
+     * <p> The credentials for basic authorization for an Amplify app. You must
+     * base64-encode the authorization credentials and provide them in the format
+     * <code>user:password</code>.</p>
      */
     inline const Aws::String& GetBasicAuthCredentials() const{ return m_basicAuthCredentials; }
 
     /**
-     * <p> The credentials for basic authorization for an Amplify app. </p>
+     * <p> The credentials for basic authorization for an Amplify app. You must
+     * base64-encode the authorization credentials and provide them in the format
+     * <code>user:password</code>.</p>
      */
     inline bool BasicAuthCredentialsHasBeenSet() const { return m_basicAuthCredentialsHasBeenSet; }
 
     /**
-     * <p> The credentials for basic authorization for an Amplify app. </p>
+     * <p> The credentials for basic authorization for an Amplify app. You must
+     * base64-encode the authorization credentials and provide them in the format
+     * <code>user:password</code>.</p>
      */
     inline void SetBasicAuthCredentials(const Aws::String& value) { m_basicAuthCredentialsHasBeenSet = true; m_basicAuthCredentials = value; }
 
     /**
-     * <p> The credentials for basic authorization for an Amplify app. </p>
+     * <p> The credentials for basic authorization for an Amplify app. You must
+     * base64-encode the authorization credentials and provide them in the format
+     * <code>user:password</code>.</p>
      */
     inline void SetBasicAuthCredentials(Aws::String&& value) { m_basicAuthCredentialsHasBeenSet = true; m_basicAuthCredentials = std::move(value); }
 
     /**
-     * <p> The credentials for basic authorization for an Amplify app. </p>
+     * <p> The credentials for basic authorization for an Amplify app. You must
+     * base64-encode the authorization credentials and provide them in the format
+     * <code>user:password</code>.</p>
      */
     inline void SetBasicAuthCredentials(const char* value) { m_basicAuthCredentialsHasBeenSet = true; m_basicAuthCredentials.assign(value); }
 
     /**
-     * <p> The credentials for basic authorization for an Amplify app. </p>
+     * <p> The credentials for basic authorization for an Amplify app. You must
+     * base64-encode the authorization credentials and provide them in the format
+     * <code>user:password</code>.</p>
      */
     inline CreateAppRequest& WithBasicAuthCredentials(const Aws::String& value) { SetBasicAuthCredentials(value); return *this;}
 
     /**
-     * <p> The credentials for basic authorization for an Amplify app. </p>
+     * <p> The credentials for basic authorization for an Amplify app. You must
+     * base64-encode the authorization credentials and provide them in the format
+     * <code>user:password</code>.</p>
      */
     inline CreateAppRequest& WithBasicAuthCredentials(Aws::String&& value) { SetBasicAuthCredentials(std::move(value)); return *this;}
 
     /**
-     * <p> The credentials for basic authorization for an Amplify app. </p>
+     * <p> The credentials for basic authorization for an Amplify app. You must
+     * base64-encode the authorization credentials and provide them in the format
+     * <code>user:password</code>.</p>
      */
     inline CreateAppRequest& WithBasicAuthCredentials(const char* value) { SetBasicAuthCredentials(value); return *this;}
 

@@ -63,6 +63,12 @@ UpgradeDomainResult& UpgradeDomainResult::operator =(const Aws::AmazonWebService
     }
   }
 
+  if(jsonValue.ValueExists("ChangeProgressDetails"))
+  {
+    m_changeProgressDetails = jsonValue.GetObject("ChangeProgressDetails");
+
+  }
+
 
 
   return *this;

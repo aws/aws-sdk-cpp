@@ -483,6 +483,12 @@ namespace Aws
         static const int x1e_8xlarge_HASH = HashingUtils::HashString("x1e.8xlarge");
         static const int x1e_16xlarge_HASH = HashingUtils::HashString("x1e.16xlarge");
         static const int x1e_32xlarge_HASH = HashingUtils::HashString("x1e.32xlarge");
+        static const int x2iezn_2xlarge_HASH = HashingUtils::HashString("x2iezn.2xlarge");
+        static const int x2iezn_4xlarge_HASH = HashingUtils::HashString("x2iezn.4xlarge");
+        static const int x2iezn_6xlarge_HASH = HashingUtils::HashString("x2iezn.6xlarge");
+        static const int x2iezn_8xlarge_HASH = HashingUtils::HashString("x2iezn.8xlarge");
+        static const int x2iezn_12xlarge_HASH = HashingUtils::HashString("x2iezn.12xlarge");
+        static const int x2iezn_metal_HASH = HashingUtils::HashString("x2iezn.metal");
         static const int x2gd_medium_HASH = HashingUtils::HashString("x2gd.medium");
         static const int x2gd_large_HASH = HashingUtils::HashString("x2gd.large");
         static const int x2gd_xlarge_HASH = HashingUtils::HashString("x2gd.xlarge");
@@ -2834,6 +2840,36 @@ namespace Aws
             enumValue = InstanceType::x1e_32xlarge;
             return true;
           }
+          else if (hashCode == x2iezn_2xlarge_HASH)
+          {
+            enumValue = InstanceType::x2iezn_2xlarge;
+            return true;
+          }
+          else if (hashCode == x2iezn_4xlarge_HASH)
+          {
+            enumValue = InstanceType::x2iezn_4xlarge;
+            return true;
+          }
+          else if (hashCode == x2iezn_6xlarge_HASH)
+          {
+            enumValue = InstanceType::x2iezn_6xlarge;
+            return true;
+          }
+          else if (hashCode == x2iezn_8xlarge_HASH)
+          {
+            enumValue = InstanceType::x2iezn_8xlarge;
+            return true;
+          }
+          else if (hashCode == x2iezn_12xlarge_HASH)
+          {
+            enumValue = InstanceType::x2iezn_12xlarge;
+            return true;
+          }
+          else if (hashCode == x2iezn_metal_HASH)
+          {
+            enumValue = InstanceType::x2iezn_metal;
+            return true;
+          }
           else if (hashCode == x2gd_medium_HASH)
           {
             enumValue = InstanceType::x2gd_medium;
@@ -4333,6 +4369,24 @@ namespace Aws
             return true;
           case InstanceType::x1e_32xlarge:
             value = "x1e.32xlarge";
+            return true;
+          case InstanceType::x2iezn_2xlarge:
+            value = "x2iezn.2xlarge";
+            return true;
+          case InstanceType::x2iezn_4xlarge:
+            value = "x2iezn.4xlarge";
+            return true;
+          case InstanceType::x2iezn_6xlarge:
+            value = "x2iezn.6xlarge";
+            return true;
+          case InstanceType::x2iezn_8xlarge:
+            value = "x2iezn.8xlarge";
+            return true;
+          case InstanceType::x2iezn_12xlarge:
+            value = "x2iezn.12xlarge";
+            return true;
+          case InstanceType::x2iezn_metal:
+            value = "x2iezn.metal";
             return true;
           case InstanceType::x2gd_medium:
             value = "x2gd.medium";

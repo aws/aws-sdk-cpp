@@ -23,6 +23,7 @@
 #include <aws/opensearch/model/DeletePackageResult.h>
 #include <aws/opensearch/model/DescribeDomainResult.h>
 #include <aws/opensearch/model/DescribeDomainAutoTunesResult.h>
+#include <aws/opensearch/model/DescribeDomainChangeProgressResult.h>
 #include <aws/opensearch/model/DescribeDomainConfigResult.h>
 #include <aws/opensearch/model/DescribeDomainsResult.h>
 #include <aws/opensearch/model/DescribeInboundConnectionsResult.h>
@@ -101,6 +102,7 @@ namespace Model
         class DeletePackageRequest;
         class DescribeDomainRequest;
         class DescribeDomainAutoTunesRequest;
+        class DescribeDomainChangeProgressRequest;
         class DescribeDomainConfigRequest;
         class DescribeDomainsRequest;
         class DescribeInboundConnectionsRequest;
@@ -141,6 +143,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeletePackageResult, OpenSearchServiceError> DeletePackageOutcome;
         typedef Aws::Utils::Outcome<DescribeDomainResult, OpenSearchServiceError> DescribeDomainOutcome;
         typedef Aws::Utils::Outcome<DescribeDomainAutoTunesResult, OpenSearchServiceError> DescribeDomainAutoTunesOutcome;
+        typedef Aws::Utils::Outcome<DescribeDomainChangeProgressResult, OpenSearchServiceError> DescribeDomainChangeProgressOutcome;
         typedef Aws::Utils::Outcome<DescribeDomainConfigResult, OpenSearchServiceError> DescribeDomainConfigOutcome;
         typedef Aws::Utils::Outcome<DescribeDomainsResult, OpenSearchServiceError> DescribeDomainsOutcome;
         typedef Aws::Utils::Outcome<DescribeInboundConnectionsResult, OpenSearchServiceError> DescribeInboundConnectionsOutcome;
@@ -181,6 +184,7 @@ namespace Model
         typedef std::future<DeletePackageOutcome> DeletePackageOutcomeCallable;
         typedef std::future<DescribeDomainOutcome> DescribeDomainOutcomeCallable;
         typedef std::future<DescribeDomainAutoTunesOutcome> DescribeDomainAutoTunesOutcomeCallable;
+        typedef std::future<DescribeDomainChangeProgressOutcome> DescribeDomainChangeProgressOutcomeCallable;
         typedef std::future<DescribeDomainConfigOutcome> DescribeDomainConfigOutcomeCallable;
         typedef std::future<DescribeDomainsOutcome> DescribeDomainsOutcomeCallable;
         typedef std::future<DescribeInboundConnectionsOutcome> DescribeInboundConnectionsOutcomeCallable;
@@ -224,6 +228,7 @@ namespace Model
     typedef std::function<void(const OpenSearchServiceClient*, const Model::DeletePackageRequest&, const Model::DeletePackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePackageResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeDomainRequest&, const Model::DescribeDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeDomainAutoTunesRequest&, const Model::DescribeDomainAutoTunesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainAutoTunesResponseReceivedHandler;
+    typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeDomainChangeProgressRequest&, const Model::DescribeDomainChangeProgressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainChangeProgressResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeDomainConfigRequest&, const Model::DescribeDomainConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainConfigResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeDomainsRequest&, const Model::DescribeDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainsResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeInboundConnectionsRequest&, const Model::DescribeInboundConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInboundConnectionsResponseReceivedHandler;
@@ -683,6 +688,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeDomainAutoTunesAsync(const Model::DescribeDomainAutoTunesRequest& request, const DescribeDomainAutoTunesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about the current blue/green deployment happening on a
+         * domain, including a change ID, status, and progress stages.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainChangeProgress">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDomainChangeProgressOutcome DescribeDomainChangeProgress(const Model::DescribeDomainChangeProgressRequest& request) const;
+
+        /**
+         * <p>Returns information about the current blue/green deployment happening on a
+         * domain, including a change ID, status, and progress stages.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainChangeProgress">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeDomainChangeProgressOutcomeCallable DescribeDomainChangeProgressCallable(const Model::DescribeDomainChangeProgressRequest& request) const;
+
+        /**
+         * <p>Returns information about the current blue/green deployment happening on a
+         * domain, including a change ID, status, and progress stages.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainChangeProgress">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeDomainChangeProgressAsync(const Model::DescribeDomainChangeProgressRequest& request, const DescribeDomainChangeProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides cluster configuration information about the specified domain, such
@@ -1441,6 +1477,7 @@ namespace Model
         void DeletePackageAsyncHelper(const Model::DeletePackageRequest& request, const DeletePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDomainAsyncHelper(const Model::DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDomainAutoTunesAsyncHelper(const Model::DescribeDomainAutoTunesRequest& request, const DescribeDomainAutoTunesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeDomainChangeProgressAsyncHelper(const Model::DescribeDomainChangeProgressRequest& request, const DescribeDomainChangeProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDomainConfigAsyncHelper(const Model::DescribeDomainConfigRequest& request, const DescribeDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDomainsAsyncHelper(const Model::DescribeDomainsRequest& request, const DescribeDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInboundConnectionsAsyncHelper(const Model::DescribeInboundConnectionsRequest& request, const DescribeInboundConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

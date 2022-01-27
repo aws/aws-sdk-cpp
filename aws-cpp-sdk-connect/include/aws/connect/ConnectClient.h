@@ -3655,12 +3655,16 @@ namespace Model
          * successfully created, clients must subscribe to the participant’s connection for
          * the created chat within 5 minutes. This is achieved by invoking <a
          * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
-         * with WEBSOCKET and CONNECTION_CREDENTIALS. </p> <p>A 429 error occurs in two
-         * situations:</p> <ul> <li> <p>API rate limit is exceeded. API TPS throttling
-         * returns a <code>TooManyRequests</code> exception.</p> </li> <li> <p>The <a
+         * with WEBSOCKET and CONNECTION_CREDENTIALS. </p> <p>A 429 error occurs in the
+         * following situations:</p> <ul> <li> <p>API rate limit is exceeded. API TPS
+         * throttling returns a <code>TooManyRequests</code> exception.</p> </li> <li>
+         * <p>The <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">quota
          * for concurrent active chats</a> is exceeded. Active chat throttling returns a
-         * <code>LimitExceededException</code>.</p> </li> </ul> <p>For more information
+         * <code>LimitExceededException</code>.</p> </li> </ul> <p>If you use the
+         * <code>ChatDurationInMinutes</code> parameter and receive a 400 error, your
+         * account may not support the ability to configure custom chat durations. For more
+         * information, contact Amazon Web Services Support. </p> <p>For more information
          * about chat, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a>
          * in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -3677,12 +3681,16 @@ namespace Model
          * successfully created, clients must subscribe to the participant’s connection for
          * the created chat within 5 minutes. This is achieved by invoking <a
          * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
-         * with WEBSOCKET and CONNECTION_CREDENTIALS. </p> <p>A 429 error occurs in two
-         * situations:</p> <ul> <li> <p>API rate limit is exceeded. API TPS throttling
-         * returns a <code>TooManyRequests</code> exception.</p> </li> <li> <p>The <a
+         * with WEBSOCKET and CONNECTION_CREDENTIALS. </p> <p>A 429 error occurs in the
+         * following situations:</p> <ul> <li> <p>API rate limit is exceeded. API TPS
+         * throttling returns a <code>TooManyRequests</code> exception.</p> </li> <li>
+         * <p>The <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">quota
          * for concurrent active chats</a> is exceeded. Active chat throttling returns a
-         * <code>LimitExceededException</code>.</p> </li> </ul> <p>For more information
+         * <code>LimitExceededException</code>.</p> </li> </ul> <p>If you use the
+         * <code>ChatDurationInMinutes</code> parameter and receive a 400 error, your
+         * account may not support the ability to configure custom chat durations. For more
+         * information, contact Amazon Web Services Support. </p> <p>For more information
          * about chat, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a>
          * in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -3701,12 +3709,16 @@ namespace Model
          * successfully created, clients must subscribe to the participant’s connection for
          * the created chat within 5 minutes. This is achieved by invoking <a
          * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
-         * with WEBSOCKET and CONNECTION_CREDENTIALS. </p> <p>A 429 error occurs in two
-         * situations:</p> <ul> <li> <p>API rate limit is exceeded. API TPS throttling
-         * returns a <code>TooManyRequests</code> exception.</p> </li> <li> <p>The <a
+         * with WEBSOCKET and CONNECTION_CREDENTIALS. </p> <p>A 429 error occurs in the
+         * following situations:</p> <ul> <li> <p>API rate limit is exceeded. API TPS
+         * throttling returns a <code>TooManyRequests</code> exception.</p> </li> <li>
+         * <p>The <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">quota
          * for concurrent active chats</a> is exceeded. Active chat throttling returns a
-         * <code>LimitExceededException</code>.</p> </li> </ul> <p>For more information
+         * <code>LimitExceededException</code>.</p> </li> </ul> <p>If you use the
+         * <code>ChatDurationInMinutes</code> parameter and receive a 400 error, your
+         * account may not support the ability to configure custom chat durations. For more
+         * information, contact Amazon Web Services Support. </p> <p>For more information
          * about chat, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a>
          * in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a

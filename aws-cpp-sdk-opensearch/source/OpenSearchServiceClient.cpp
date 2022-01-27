@@ -33,6 +33,7 @@
 #include <aws/opensearch/model/DeletePackageRequest.h>
 #include <aws/opensearch/model/DescribeDomainRequest.h>
 #include <aws/opensearch/model/DescribeDomainAutoTunesRequest.h>
+#include <aws/opensearch/model/DescribeDomainChangeProgressRequest.h>
 #include <aws/opensearch/model/DescribeDomainConfigRequest.h>
 #include <aws/opensearch/model/DescribeDomainsRequest.h>
 #include <aws/opensearch/model/DescribeInboundConnectionsRequest.h>
@@ -512,6 +513,38 @@ void OpenSearchServiceClient::DescribeDomainAutoTunesAsync(const DescribeDomainA
 void OpenSearchServiceClient::DescribeDomainAutoTunesAsyncHelper(const DescribeDomainAutoTunesRequest& request, const DescribeDomainAutoTunesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeDomainAutoTunes(request), context);
+}
+
+DescribeDomainChangeProgressOutcome OpenSearchServiceClient::DescribeDomainChangeProgress(const DescribeDomainChangeProgressRequest& request) const
+{
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeDomainChangeProgress", "Required field: DomainName, is not set");
+    return DescribeDomainChangeProgressOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2021-01-01/opensearch/domain/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/progress");
+  return DescribeDomainChangeProgressOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeDomainChangeProgressOutcomeCallable OpenSearchServiceClient::DescribeDomainChangeProgressCallable(const DescribeDomainChangeProgressRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDomainChangeProgressOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDomainChangeProgress(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OpenSearchServiceClient::DescribeDomainChangeProgressAsync(const DescribeDomainChangeProgressRequest& request, const DescribeDomainChangeProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDomainChangeProgressAsyncHelper( request, handler, context ); } );
+}
+
+void OpenSearchServiceClient::DescribeDomainChangeProgressAsyncHelper(const DescribeDomainChangeProgressRequest& request, const DescribeDomainChangeProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDomainChangeProgress(request), context);
 }
 
 DescribeDomainConfigOutcome OpenSearchServiceClient::DescribeDomainConfig(const DescribeDomainConfigRequest& request) const

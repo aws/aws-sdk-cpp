@@ -19,7 +19,9 @@ StartChatContactRequest::StartChatContactRequest() :
     m_participantDetailsHasBeenSet(false),
     m_initialMessageHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_chatDurationInMinutes(0),
+    m_chatDurationInMinutesHasBeenSet(false)
 {
 }
 
@@ -65,6 +67,12 @@ Aws::String StartChatContactRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("ClientToken", m_clientToken);
+
+  }
+
+  if(m_chatDurationInMinutesHasBeenSet)
+  {
+   payload.WithInteger("ChatDurationInMinutes", m_chatDurationInMinutes);
 
   }
 

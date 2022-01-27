@@ -410,6 +410,35 @@ namespace Model
      */
     inline StartChatContactRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
+    /**
+     * <p>The total duration of the newly started chat session. If not specified, the
+     * chat session duration defaults to 25 hour. The minumum configurable time is 60
+     * minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
+     */
+    inline int GetChatDurationInMinutes() const{ return m_chatDurationInMinutes; }
+
+    /**
+     * <p>The total duration of the newly started chat session. If not specified, the
+     * chat session duration defaults to 25 hour. The minumum configurable time is 60
+     * minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
+     */
+    inline bool ChatDurationInMinutesHasBeenSet() const { return m_chatDurationInMinutesHasBeenSet; }
+
+    /**
+     * <p>The total duration of the newly started chat session. If not specified, the
+     * chat session duration defaults to 25 hour. The minumum configurable time is 60
+     * minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
+     */
+    inline void SetChatDurationInMinutes(int value) { m_chatDurationInMinutesHasBeenSet = true; m_chatDurationInMinutes = value; }
+
+    /**
+     * <p>The total duration of the newly started chat session. If not specified, the
+     * chat session duration defaults to 25 hour. The minumum configurable time is 60
+     * minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
+     */
+    inline StartChatContactRequest& WithChatDurationInMinutes(int value) { SetChatDurationInMinutes(value); return *this;}
+
   private:
 
     Aws::String m_instanceId;
@@ -429,6 +458,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
+    int m_chatDurationInMinutes;
+    bool m_chatDurationInMinutesHasBeenSet;
   };
 
 } // namespace Model
