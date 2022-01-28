@@ -26,7 +26,8 @@ namespace Model
 
   /**
    * <p> <i>This data type is no longer supported.</i> You can use it only for SMS
-   * MFA configurations. You can't use it for TOTP software token MFA
+   * multi-factor authentication (MFA) configurations. You can't use it for
+   * time-based one-time password (TOTP) software token MFA
    * configurations.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/MFAOptionType">AWS
    * API Reference</a></p>

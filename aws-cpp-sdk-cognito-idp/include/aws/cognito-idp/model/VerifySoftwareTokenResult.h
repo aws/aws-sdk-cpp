@@ -60,43 +60,43 @@ namespace Model
 
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
+     * <p>The session that should be passed both ways in challenge-response calls to
      * the service.</p>
      */
     inline const Aws::String& GetSession() const{ return m_session; }
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
+     * <p>The session that should be passed both ways in challenge-response calls to
      * the service.</p>
      */
     inline void SetSession(const Aws::String& value) { m_session = value; }
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
+     * <p>The session that should be passed both ways in challenge-response calls to
      * the service.</p>
      */
     inline void SetSession(Aws::String&& value) { m_session = std::move(value); }
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
+     * <p>The session that should be passed both ways in challenge-response calls to
      * the service.</p>
      */
     inline void SetSession(const char* value) { m_session.assign(value); }
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
+     * <p>The session that should be passed both ways in challenge-response calls to
      * the service.</p>
      */
     inline VerifySoftwareTokenResult& WithSession(const Aws::String& value) { SetSession(value); return *this;}
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
+     * <p>The session that should be passed both ways in challenge-response calls to
      * the service.</p>
      */
     inline VerifySoftwareTokenResult& WithSession(Aws::String&& value) { SetSession(std::move(value)); return *this;}
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
+     * <p>The session that should be passed both ways in challenge-response calls to
      * the service.</p>
      */
     inline VerifySoftwareTokenResult& WithSession(const char* value) { SetSession(value); return *this;}

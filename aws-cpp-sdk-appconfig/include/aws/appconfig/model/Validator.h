@@ -27,9 +27,10 @@ namespace Model
   /**
    * <p>A validator provides a syntactic or semantic check to ensure the
    * configuration that you want to deploy functions as intended. To validate your
-   * application configuration data, you provide a schema or a Lambda function that
-   * runs against the configuration. The configuration deployment or update can only
-   * proceed when the configuration data is valid.</p><p><h3>See Also:</h3>   <a
+   * application configuration data, you provide a schema or an Amazon Web Services
+   * Lambda function that runs against the configuration. The configuration
+   * deployment or update can only proceed when the configuration data is
+   * valid.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/Validator">AWS
    * API Reference</a></p>
    */

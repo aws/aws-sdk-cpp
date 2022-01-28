@@ -14,8 +14,8 @@ using namespace Aws::Utils;
 
 StartConfigurationSessionRequest::StartConfigurationSessionRequest() : 
     m_applicationIdentifierHasBeenSet(false),
-    m_configurationProfileIdentifierHasBeenSet(false),
     m_environmentIdentifierHasBeenSet(false),
+    m_configurationProfileIdentifierHasBeenSet(false),
     m_requiredMinimumPollIntervalInSeconds(0),
     m_requiredMinimumPollIntervalInSecondsHasBeenSet(false)
 {
@@ -31,15 +31,15 @@ Aws::String StartConfigurationSessionRequest::SerializePayload() const
 
   }
 
-  if(m_configurationProfileIdentifierHasBeenSet)
-  {
-   payload.WithString("ConfigurationProfileIdentifier", m_configurationProfileIdentifier);
-
-  }
-
   if(m_environmentIdentifierHasBeenSet)
   {
    payload.WithString("EnvironmentIdentifier", m_environmentIdentifier);
+
+  }
+
+  if(m_configurationProfileIdentifierHasBeenSet)
+  {
+   payload.WithString("ConfigurationProfileIdentifier", m_configurationProfileIdentifier);
 
   }
 

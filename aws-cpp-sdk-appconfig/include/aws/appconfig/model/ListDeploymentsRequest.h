@@ -121,71 +121,91 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of items to return for this call. The call also returns a
-     * token that you can specify in a subsequent call to get the next set of
-     * results.</p>
+     * <p>The maximum number of items that may be returned for this call. If there are
+     * items that have not yet been returned, the response will include a non-null
+     * <code>NextToken</code> that you can provide in a subsequent call to get the next
+     * set of results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of items to return for this call. The call also returns a
-     * token that you can specify in a subsequent call to get the next set of
-     * results.</p>
+     * <p>The maximum number of items that may be returned for this call. If there are
+     * items that have not yet been returned, the response will include a non-null
+     * <code>NextToken</code> that you can provide in a subsequent call to get the next
+     * set of results.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of items to return for this call. The call also returns a
-     * token that you can specify in a subsequent call to get the next set of
-     * results.</p>
+     * <p>The maximum number of items that may be returned for this call. If there are
+     * items that have not yet been returned, the response will include a non-null
+     * <code>NextToken</code> that you can provide in a subsequent call to get the next
+     * set of results.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of items to return for this call. The call also returns a
-     * token that you can specify in a subsequent call to get the next set of
-     * results.</p>
+     * <p>The maximum number of items that may be returned for this call. If there are
+     * items that have not yet been returned, the response will include a non-null
+     * <code>NextToken</code> that you can provide in a subsequent call to get the next
+     * set of results.</p>
      */
     inline ListDeploymentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>A token to start the list. Use this token to get the next set of results.</p>
+     * <p>The token returned by a prior call to this operation indicating the next set
+     * of results to be returned. If not specified, the operation will return the first
+     * set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A token to start the list. Use this token to get the next set of results.</p>
+     * <p>The token returned by a prior call to this operation indicating the next set
+     * of results to be returned. If not specified, the operation will return the first
+     * set of results.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>A token to start the list. Use this token to get the next set of results.</p>
+     * <p>The token returned by a prior call to this operation indicating the next set
+     * of results to be returned. If not specified, the operation will return the first
+     * set of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>A token to start the list. Use this token to get the next set of results.</p>
+     * <p>The token returned by a prior call to this operation indicating the next set
+     * of results to be returned. If not specified, the operation will return the first
+     * set of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>A token to start the list. Use this token to get the next set of results.</p>
+     * <p>The token returned by a prior call to this operation indicating the next set
+     * of results to be returned. If not specified, the operation will return the first
+     * set of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>A token to start the list. Use this token to get the next set of results.</p>
+     * <p>The token returned by a prior call to this operation indicating the next set
+     * of results to be returned. If not specified, the operation will return the first
+     * set of results.</p>
      */
     inline ListDeploymentsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A token to start the list. Use this token to get the next set of results.</p>
+     * <p>The token returned by a prior call to this operation indicating the next set
+     * of results to be returned. If not specified, the operation will return the first
+     * set of results.</p>
      */
     inline ListDeploymentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token to start the list. Use this token to get the next set of results.</p>
+     * <p>The token returned by a prior call to this operation indicating the next set
+     * of results to be returned. If not specified, the operation will return the first
+     * set of results.</p>
      */
     inline ListDeploymentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

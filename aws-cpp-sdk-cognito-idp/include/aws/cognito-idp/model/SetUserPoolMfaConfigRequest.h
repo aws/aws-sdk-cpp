@@ -141,74 +141,74 @@ namespace Model
 
 
     /**
-     * <p>The MFA configuration. Users who don't have an MFA factor set up won't be
-     * able to sign-in if you set the MfaConfiguration value to ‘ON’. See <a
+     * <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only
+     * users with an MFA factor set up can sign in. To learn more, see <a
      * href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
-     * Multi-Factor Authentication (MFA) to a User Pool</a> to learn more. Valid values
-     * include:</p> <ul> <li> <p> <code>OFF</code> MFA will not be used for any
-     * users.</p> </li> <li> <p> <code>ON</code> MFA is required for all users to sign
-     * in.</p> </li> <li> <p> <code>OPTIONAL</code> MFA will be required only for
-     * individual users who have an MFA factor enabled.</p> </li> </ul>
+     * Multi-Factor Authentication (MFA) to a User Pool</a>. Valid values include:</p>
+     * <ul> <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li> <li>
+     * <p> <code>ON</code> MFA is required for all users to sign in.</p> </li> <li> <p>
+     * <code>OPTIONAL</code> MFA will be required only for individual users who have an
+     * MFA factor activated.</p> </li> </ul>
      */
     inline const UserPoolMfaType& GetMfaConfiguration() const{ return m_mfaConfiguration; }
 
     /**
-     * <p>The MFA configuration. Users who don't have an MFA factor set up won't be
-     * able to sign-in if you set the MfaConfiguration value to ‘ON’. See <a
+     * <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only
+     * users with an MFA factor set up can sign in. To learn more, see <a
      * href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
-     * Multi-Factor Authentication (MFA) to a User Pool</a> to learn more. Valid values
-     * include:</p> <ul> <li> <p> <code>OFF</code> MFA will not be used for any
-     * users.</p> </li> <li> <p> <code>ON</code> MFA is required for all users to sign
-     * in.</p> </li> <li> <p> <code>OPTIONAL</code> MFA will be required only for
-     * individual users who have an MFA factor enabled.</p> </li> </ul>
+     * Multi-Factor Authentication (MFA) to a User Pool</a>. Valid values include:</p>
+     * <ul> <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li> <li>
+     * <p> <code>ON</code> MFA is required for all users to sign in.</p> </li> <li> <p>
+     * <code>OPTIONAL</code> MFA will be required only for individual users who have an
+     * MFA factor activated.</p> </li> </ul>
      */
     inline bool MfaConfigurationHasBeenSet() const { return m_mfaConfigurationHasBeenSet; }
 
     /**
-     * <p>The MFA configuration. Users who don't have an MFA factor set up won't be
-     * able to sign-in if you set the MfaConfiguration value to ‘ON’. See <a
+     * <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only
+     * users with an MFA factor set up can sign in. To learn more, see <a
      * href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
-     * Multi-Factor Authentication (MFA) to a User Pool</a> to learn more. Valid values
-     * include:</p> <ul> <li> <p> <code>OFF</code> MFA will not be used for any
-     * users.</p> </li> <li> <p> <code>ON</code> MFA is required for all users to sign
-     * in.</p> </li> <li> <p> <code>OPTIONAL</code> MFA will be required only for
-     * individual users who have an MFA factor enabled.</p> </li> </ul>
+     * Multi-Factor Authentication (MFA) to a User Pool</a>. Valid values include:</p>
+     * <ul> <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li> <li>
+     * <p> <code>ON</code> MFA is required for all users to sign in.</p> </li> <li> <p>
+     * <code>OPTIONAL</code> MFA will be required only for individual users who have an
+     * MFA factor activated.</p> </li> </ul>
      */
     inline void SetMfaConfiguration(const UserPoolMfaType& value) { m_mfaConfigurationHasBeenSet = true; m_mfaConfiguration = value; }
 
     /**
-     * <p>The MFA configuration. Users who don't have an MFA factor set up won't be
-     * able to sign-in if you set the MfaConfiguration value to ‘ON’. See <a
+     * <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only
+     * users with an MFA factor set up can sign in. To learn more, see <a
      * href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
-     * Multi-Factor Authentication (MFA) to a User Pool</a> to learn more. Valid values
-     * include:</p> <ul> <li> <p> <code>OFF</code> MFA will not be used for any
-     * users.</p> </li> <li> <p> <code>ON</code> MFA is required for all users to sign
-     * in.</p> </li> <li> <p> <code>OPTIONAL</code> MFA will be required only for
-     * individual users who have an MFA factor enabled.</p> </li> </ul>
+     * Multi-Factor Authentication (MFA) to a User Pool</a>. Valid values include:</p>
+     * <ul> <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li> <li>
+     * <p> <code>ON</code> MFA is required for all users to sign in.</p> </li> <li> <p>
+     * <code>OPTIONAL</code> MFA will be required only for individual users who have an
+     * MFA factor activated.</p> </li> </ul>
      */
     inline void SetMfaConfiguration(UserPoolMfaType&& value) { m_mfaConfigurationHasBeenSet = true; m_mfaConfiguration = std::move(value); }
 
     /**
-     * <p>The MFA configuration. Users who don't have an MFA factor set up won't be
-     * able to sign-in if you set the MfaConfiguration value to ‘ON’. See <a
+     * <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only
+     * users with an MFA factor set up can sign in. To learn more, see <a
      * href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
-     * Multi-Factor Authentication (MFA) to a User Pool</a> to learn more. Valid values
-     * include:</p> <ul> <li> <p> <code>OFF</code> MFA will not be used for any
-     * users.</p> </li> <li> <p> <code>ON</code> MFA is required for all users to sign
-     * in.</p> </li> <li> <p> <code>OPTIONAL</code> MFA will be required only for
-     * individual users who have an MFA factor enabled.</p> </li> </ul>
+     * Multi-Factor Authentication (MFA) to a User Pool</a>. Valid values include:</p>
+     * <ul> <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li> <li>
+     * <p> <code>ON</code> MFA is required for all users to sign in.</p> </li> <li> <p>
+     * <code>OPTIONAL</code> MFA will be required only for individual users who have an
+     * MFA factor activated.</p> </li> </ul>
      */
     inline SetUserPoolMfaConfigRequest& WithMfaConfiguration(const UserPoolMfaType& value) { SetMfaConfiguration(value); return *this;}
 
     /**
-     * <p>The MFA configuration. Users who don't have an MFA factor set up won't be
-     * able to sign-in if you set the MfaConfiguration value to ‘ON’. See <a
+     * <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only
+     * users with an MFA factor set up can sign in. To learn more, see <a
      * href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
-     * Multi-Factor Authentication (MFA) to a User Pool</a> to learn more. Valid values
-     * include:</p> <ul> <li> <p> <code>OFF</code> MFA will not be used for any
-     * users.</p> </li> <li> <p> <code>ON</code> MFA is required for all users to sign
-     * in.</p> </li> <li> <p> <code>OPTIONAL</code> MFA will be required only for
-     * individual users who have an MFA factor enabled.</p> </li> </ul>
+     * Multi-Factor Authentication (MFA) to a User Pool</a>. Valid values include:</p>
+     * <ul> <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li> <li>
+     * <p> <code>ON</code> MFA is required for all users to sign in.</p> </li> <li> <p>
+     * <code>OPTIONAL</code> MFA will be required only for individual users who have an
+     * MFA factor activated.</p> </li> </ul>
      */
     inline SetUserPoolMfaConfigRequest& WithMfaConfiguration(UserPoolMfaType&& value) { SetMfaConfiguration(std::move(value)); return *this;}
 

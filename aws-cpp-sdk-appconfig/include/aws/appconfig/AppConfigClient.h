@@ -17,7 +17,6 @@
 #include <aws/appconfig/model/CreateEnvironmentResult.h>
 #include <aws/appconfig/model/CreateHostedConfigurationVersionResult.h>
 #include <aws/appconfig/model/GetApplicationResult.h>
-#include <aws/appconfig/model/GetConfigurationResult.h>
 #include <aws/appconfig/model/GetConfigurationProfileResult.h>
 #include <aws/appconfig/model/GetDeploymentResult.h>
 #include <aws/appconfig/model/GetDeploymentStrategyResult.h>
@@ -87,7 +86,6 @@ namespace Model
         class DeleteEnvironmentRequest;
         class DeleteHostedConfigurationVersionRequest;
         class GetApplicationRequest;
-        class GetConfigurationRequest;
         class GetConfigurationProfileRequest;
         class GetDeploymentRequest;
         class GetDeploymentStrategyRequest;
@@ -121,7 +119,6 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> DeleteEnvironmentOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> DeleteHostedConfigurationVersionOutcome;
         typedef Aws::Utils::Outcome<GetApplicationResult, AppConfigError> GetApplicationOutcome;
-        typedef Aws::Utils::Outcome<GetConfigurationResult, AppConfigError> GetConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetConfigurationProfileResult, AppConfigError> GetConfigurationProfileOutcome;
         typedef Aws::Utils::Outcome<GetDeploymentResult, AppConfigError> GetDeploymentOutcome;
         typedef Aws::Utils::Outcome<GetDeploymentStrategyResult, AppConfigError> GetDeploymentStrategyOutcome;
@@ -155,7 +152,6 @@ namespace Model
         typedef std::future<DeleteEnvironmentOutcome> DeleteEnvironmentOutcomeCallable;
         typedef std::future<DeleteHostedConfigurationVersionOutcome> DeleteHostedConfigurationVersionOutcomeCallable;
         typedef std::future<GetApplicationOutcome> GetApplicationOutcomeCallable;
-        typedef std::future<GetConfigurationOutcome> GetConfigurationOutcomeCallable;
         typedef std::future<GetConfigurationProfileOutcome> GetConfigurationProfileOutcomeCallable;
         typedef std::future<GetDeploymentOutcome> GetDeploymentOutcomeCallable;
         typedef std::future<GetDeploymentStrategyOutcome> GetDeploymentStrategyOutcomeCallable;
@@ -192,7 +188,6 @@ namespace Model
     typedef std::function<void(const AppConfigClient*, const Model::DeleteEnvironmentRequest&, const Model::DeleteEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEnvironmentResponseReceivedHandler;
     typedef std::function<void(const AppConfigClient*, const Model::DeleteHostedConfigurationVersionRequest&, const Model::DeleteHostedConfigurationVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHostedConfigurationVersionResponseReceivedHandler;
     typedef std::function<void(const AppConfigClient*, const Model::GetApplicationRequest&, const Model::GetApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::GetConfigurationRequest&, Model::GetConfigurationOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConfigurationResponseReceivedHandler;
     typedef std::function<void(const AppConfigClient*, const Model::GetConfigurationProfileRequest&, const Model::GetConfigurationProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConfigurationProfileResponseReceivedHandler;
     typedef std::function<void(const AppConfigClient*, const Model::GetDeploymentRequest&, const Model::GetDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeploymentResponseReceivedHandler;
     typedef std::function<void(const AppConfigClient*, const Model::GetDeploymentStrategyRequest&, const Model::GetDeploymentStrategyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeploymentStrategyResponseReceivedHandler;
@@ -226,25 +221,25 @@ namespace Model
    * typo could cause an unexpected outage, AppConfig includes validators. A
    * validator provides a syntactic or semantic check to ensure that the
    * configuration you want to deploy works as intended. To validate your application
-   * configuration data, you provide a schema or a Lambda function that runs against
-   * the configuration. The configuration deployment or update can only proceed when
-   * the configuration data is valid.</p> <p>During a configuration deployment,
-   * AppConfig monitors the application to ensure that the deployment is successful.
-   * If the system encounters an error, AppConfig rolls back the change to minimize
-   * impact for your application users. You can configure a deployment strategy for
-   * each application or environment that includes deployment criteria, including
-   * velocity, bake time, and alarms to monitor. Similar to error monitoring, if a
-   * deployment triggers an alarm, AppConfig automatically rolls back to the previous
-   * version. </p> <p>AppConfig supports multiple use cases. Here are some
-   * examples:</p> <ul> <li> <p> <b>Application tuning</b>: Use AppConfig to
-   * carefully introduce changes to your application that can only be tested with
-   * production traffic.</p> </li> <li> <p> <b>Feature toggle</b>: Use AppConfig to
-   * turn on new features that require a timely deployment, such as a product launch
-   * or announcement. </p> </li> <li> <p> <b>Allow list</b>: Use AppConfig to allow
-   * premium subscribers to access paid content. </p> </li> <li> <p> <b>Operational
-   * issues</b>: Use AppConfig to reduce stress on your application when a dependency
-   * or other external factor impacts the system.</p> </li> </ul> <p>This reference
-   * is intended to be used with the <a
+   * configuration data, you provide a schema or an Amazon Web Services Lambda
+   * function that runs against the configuration. The configuration deployment or
+   * update can only proceed when the configuration data is valid.</p> <p>During a
+   * configuration deployment, AppConfig monitors the application to ensure that the
+   * deployment is successful. If the system encounters an error, AppConfig rolls
+   * back the change to minimize impact for your application users. You can configure
+   * a deployment strategy for each application or environment that includes
+   * deployment criteria, including velocity, bake time, and alarms to monitor.
+   * Similar to error monitoring, if a deployment triggers an alarm, AppConfig
+   * automatically rolls back to the previous version. </p> <p>AppConfig supports
+   * multiple use cases. Here are some examples:</p> <ul> <li> <p> <b>Feature
+   * flags</b>: Use AppConfig to turn on new features that require a timely
+   * deployment, such as a product launch or announcement. </p> </li> <li> <p>
+   * <b>Application tuning</b>: Use AppConfig to carefully introduce changes to your
+   * application that can only be tested with production traffic.</p> </li> <li> <p>
+   * <b>Allow list</b>: Use AppConfig to allow premium subscribers to access paid
+   * content. </p> </li> <li> <p> <b>Operational issues</b>: Use AppConfig to reduce
+   * stress on your application when a dependency or other external factor impacts
+   * the system.</p> </li> </ul> <p>This reference is intended to be used with the <a
    * href="http://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">AppConfig
    * User Guide</a>.</p>
    */
@@ -323,7 +318,8 @@ namespace Model
          * configuration data.</p> </li> <li> <p>The Identity and Access Management (IAM)
          * role that provides access to the configuration data.</p> </li> <li> <p>A
          * validator for the configuration data. Available validators include either a JSON
-         * Schema or an Lambda function.</p> </li> </ul> <p>For more information, see <a
+         * Schema or an Amazon Web Services Lambda function.</p> </li> </ul> <p>For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile.html">Create
          * a Configuration and a Configuration Profile</a> in the <i>AppConfig User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -343,7 +339,8 @@ namespace Model
          * configuration data.</p> </li> <li> <p>The Identity and Access Management (IAM)
          * role that provides access to the configuration data.</p> </li> <li> <p>A
          * validator for the configuration data. Available validators include either a JSON
-         * Schema or an Lambda function.</p> </li> </ul> <p>For more information, see <a
+         * Schema or an Amazon Web Services Lambda function.</p> </li> </ul> <p>For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile.html">Create
          * a Configuration and a Configuration Profile</a> in the <i>AppConfig User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -365,7 +362,8 @@ namespace Model
          * configuration data.</p> </li> <li> <p>The Identity and Access Management (IAM)
          * role that provides access to the configuration data.</p> </li> <li> <p>A
          * validator for the configuration data. Available validators include either a JSON
-         * Schema or an Lambda function.</p> </li> </ul> <p>For more information, see <a
+         * Schema or an Amazon Web Services Lambda function.</p> </li> </ul> <p>For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile.html">Create
          * a Configuration and a Configuration Profile</a> in the <i>AppConfig User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -656,64 +654,6 @@ namespace Model
         virtual void GetApplicationAsync(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about a configuration.</p>  <p>AppConfig
-         * uses the value of the <code>ClientConfigurationVersion</code> parameter to
-         * identify the configuration version on your clients. If you don’t send
-         * <code>ClientConfigurationVersion</code> with each call to
-         * <code>GetConfiguration</code>, your clients receive the current configuration.
-         * You are charged each time your clients receive a configuration.</p> <p>To avoid
-         * excess charges, we recommend that you include the
-         * <code>ClientConfigurationVersion</code> value with every call to
-         * <code>GetConfiguration</code>. This value must be saved on your client.
-         * Subsequent calls to <code>GetConfiguration</code> must pass this value by using
-         * the <code>ClientConfigurationVersion</code> parameter. </p>
-         * <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetConfiguration">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::GetConfigurationOutcome GetConfiguration(const Model::GetConfigurationRequest& request) const;
-
-        /**
-         * <p>Retrieves information about a configuration.</p>  <p>AppConfig
-         * uses the value of the <code>ClientConfigurationVersion</code> parameter to
-         * identify the configuration version on your clients. If you don’t send
-         * <code>ClientConfigurationVersion</code> with each call to
-         * <code>GetConfiguration</code>, your clients receive the current configuration.
-         * You are charged each time your clients receive a configuration.</p> <p>To avoid
-         * excess charges, we recommend that you include the
-         * <code>ClientConfigurationVersion</code> value with every call to
-         * <code>GetConfiguration</code>. This value must be saved on your client.
-         * Subsequent calls to <code>GetConfiguration</code> must pass this value by using
-         * the <code>ClientConfigurationVersion</code> parameter. </p>
-         * <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetConfiguration">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetConfigurationOutcomeCallable GetConfigurationCallable(const Model::GetConfigurationRequest& request) const;
-
-        /**
-         * <p>Retrieves information about a configuration.</p>  <p>AppConfig
-         * uses the value of the <code>ClientConfigurationVersion</code> parameter to
-         * identify the configuration version on your clients. If you don’t send
-         * <code>ClientConfigurationVersion</code> with each call to
-         * <code>GetConfiguration</code>, your clients receive the current configuration.
-         * You are charged each time your clients receive a configuration.</p> <p>To avoid
-         * excess charges, we recommend that you include the
-         * <code>ClientConfigurationVersion</code> value with every call to
-         * <code>GetConfiguration</code>. This value must be saved on your client.
-         * Subsequent calls to <code>GetConfiguration</code> must pass this value by using
-         * the <code>ClientConfigurationVersion</code> parameter. </p>
-         * <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetConfiguration">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetConfigurationAsync(const Model::GetConfigurationRequest& request, const GetConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
          * <p>Retrieves information about a configuration profile.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetConfigurationProfile">AWS
@@ -962,14 +902,16 @@ namespace Model
         virtual void ListDeploymentStrategiesAsync(const Model::ListDeploymentStrategiesRequest& request, const ListDeploymentStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the deployments for an environment.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the deployments for an environment in descending deployment number
+         * order.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListDeployments">AWS
          * API Reference</a></p>
          */
         virtual Model::ListDeploymentsOutcome ListDeployments(const Model::ListDeploymentsRequest& request) const;
 
         /**
-         * <p>Lists the deployments for an environment.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the deployments for an environment in descending deployment number
+         * order.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListDeployments">AWS
          * API Reference</a></p>
          *
@@ -978,7 +920,8 @@ namespace Model
         virtual Model::ListDeploymentsOutcomeCallable ListDeploymentsCallable(const Model::ListDeploymentsRequest& request) const;
 
         /**
-         * <p>Lists the deployments for an environment.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the deployments for an environment in descending deployment number
+         * order.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListDeployments">AWS
          * API Reference</a></p>
          *
@@ -1328,7 +1271,6 @@ namespace Model
         void DeleteEnvironmentAsyncHelper(const Model::DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteHostedConfigurationVersionAsyncHelper(const Model::DeleteHostedConfigurationVersionRequest& request, const DeleteHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApplicationAsyncHelper(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetConfigurationAsyncHelper(const Model::GetConfigurationRequest& request, const GetConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetConfigurationProfileAsyncHelper(const Model::GetConfigurationProfileRequest& request, const GetConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDeploymentAsyncHelper(const Model::GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDeploymentStrategyAsyncHelper(const Model::GetDeploymentStrategyRequest& request, const GetDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

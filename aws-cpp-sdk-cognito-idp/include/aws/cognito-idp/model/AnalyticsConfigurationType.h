@@ -25,11 +25,11 @@ namespace Model
 
   /**
    * <p>The Amazon Pinpoint analytics configuration for collecting metrics for a user
-   * pool.</p>  <p>In regions where Pinpoint is not available, Cognito User
-   * Pools only supports sending events to Amazon Pinpoint projects in us-east-1. In
-   * regions where Pinpoint is available, Cognito User Pools will support sending
-   * events to Amazon Pinpoint projects within that same region. </p>
-   * <p><h3>See Also:</h3>   <a
+   * pool.</p>  <p>In Regions where Pinpoint isn't available, User Pools only
+   * supports sending events to Amazon Pinpoint projects in us-east-1. In Regions
+   * where Pinpoint is available, User Pools will support sending events to Amazon
+   * Pinpoint projects within that same Region. </p> <p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AnalyticsConfigurationType">AWS
    * API Reference</a></p>
    */
@@ -85,114 +85,114 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
-     * Amazon Pinpoint project for Pinpoint integration with the chosen User Pool
-     * Client. Amazon Cognito publishes events to the pinpoint project declared by the
-     * app ARN.</p>
+     * Amazon Pinpoint project for integration with the chosen User Pool Client. Amazon
+     * Cognito publishes events to the Amazon Pinpointproject declared by the app
+     * ARN.</p>
      */
     inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
-     * Amazon Pinpoint project for Pinpoint integration with the chosen User Pool
-     * Client. Amazon Cognito publishes events to the pinpoint project declared by the
-     * app ARN.</p>
+     * Amazon Pinpoint project for integration with the chosen User Pool Client. Amazon
+     * Cognito publishes events to the Amazon Pinpointproject declared by the app
+     * ARN.</p>
      */
     inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
-     * Amazon Pinpoint project for Pinpoint integration with the chosen User Pool
-     * Client. Amazon Cognito publishes events to the pinpoint project declared by the
-     * app ARN.</p>
+     * Amazon Pinpoint project for integration with the chosen User Pool Client. Amazon
+     * Cognito publishes events to the Amazon Pinpointproject declared by the app
+     * ARN.</p>
      */
     inline void SetApplicationArn(const Aws::String& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
-     * Amazon Pinpoint project for Pinpoint integration with the chosen User Pool
-     * Client. Amazon Cognito publishes events to the pinpoint project declared by the
-     * app ARN.</p>
+     * Amazon Pinpoint project for integration with the chosen User Pool Client. Amazon
+     * Cognito publishes events to the Amazon Pinpointproject declared by the app
+     * ARN.</p>
      */
     inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
-     * Amazon Pinpoint project for Pinpoint integration with the chosen User Pool
-     * Client. Amazon Cognito publishes events to the pinpoint project declared by the
-     * app ARN.</p>
+     * Amazon Pinpoint project for integration with the chosen User Pool Client. Amazon
+     * Cognito publishes events to the Amazon Pinpointproject declared by the app
+     * ARN.</p>
      */
     inline void SetApplicationArn(const char* value) { m_applicationArnHasBeenSet = true; m_applicationArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
-     * Amazon Pinpoint project for Pinpoint integration with the chosen User Pool
-     * Client. Amazon Cognito publishes events to the pinpoint project declared by the
-     * app ARN.</p>
+     * Amazon Pinpoint project for integration with the chosen User Pool Client. Amazon
+     * Cognito publishes events to the Amazon Pinpointproject declared by the app
+     * ARN.</p>
      */
     inline AnalyticsConfigurationType& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
-     * Amazon Pinpoint project for Pinpoint integration with the chosen User Pool
-     * Client. Amazon Cognito publishes events to the pinpoint project declared by the
-     * app ARN.</p>
+     * Amazon Pinpoint project for integration with the chosen User Pool Client. Amazon
+     * Cognito publishes events to the Amazon Pinpointproject declared by the app
+     * ARN.</p>
      */
     inline AnalyticsConfigurationType& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
-     * Amazon Pinpoint project for Pinpoint integration with the chosen User Pool
-     * Client. Amazon Cognito publishes events to the pinpoint project declared by the
-     * app ARN.</p>
+     * Amazon Pinpoint project for integration with the chosen User Pool Client. Amazon
+     * Cognito publishes events to the Amazon Pinpointproject declared by the app
+     * ARN.</p>
      */
     inline AnalyticsConfigurationType& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
 
 
     /**
-     * <p>The ARN of an IAM role that authorizes Amazon Cognito to publish events to
-     * Amazon Pinpoint analytics.</p>
+     * <p>The ARN of an Identity and Access Management role that authorizes Amazon
+     * Cognito to publish events to Amazon Pinpoint analytics.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The ARN of an IAM role that authorizes Amazon Cognito to publish events to
-     * Amazon Pinpoint analytics.</p>
+     * <p>The ARN of an Identity and Access Management role that authorizes Amazon
+     * Cognito to publish events to Amazon Pinpoint analytics.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of an IAM role that authorizes Amazon Cognito to publish events to
-     * Amazon Pinpoint analytics.</p>
+     * <p>The ARN of an Identity and Access Management role that authorizes Amazon
+     * Cognito to publish events to Amazon Pinpoint analytics.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The ARN of an IAM role that authorizes Amazon Cognito to publish events to
-     * Amazon Pinpoint analytics.</p>
+     * <p>The ARN of an Identity and Access Management role that authorizes Amazon
+     * Cognito to publish events to Amazon Pinpoint analytics.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The ARN of an IAM role that authorizes Amazon Cognito to publish events to
-     * Amazon Pinpoint analytics.</p>
+     * <p>The ARN of an Identity and Access Management role that authorizes Amazon
+     * Cognito to publish events to Amazon Pinpoint analytics.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The ARN of an IAM role that authorizes Amazon Cognito to publish events to
-     * Amazon Pinpoint analytics.</p>
+     * <p>The ARN of an Identity and Access Management role that authorizes Amazon
+     * Cognito to publish events to Amazon Pinpoint analytics.</p>
      */
     inline AnalyticsConfigurationType& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of an IAM role that authorizes Amazon Cognito to publish events to
-     * Amazon Pinpoint analytics.</p>
+     * <p>The ARN of an Identity and Access Management role that authorizes Amazon
+     * Cognito to publish events to Amazon Pinpoint analytics.</p>
      */
     inline AnalyticsConfigurationType& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of an IAM role that authorizes Amazon Cognito to publish events to
-     * Amazon Pinpoint analytics.</p>
+     * <p>The ARN of an Identity and Access Management role that authorizes Amazon
+     * Cognito to publish events to Amazon Pinpoint analytics.</p>
      */
     inline AnalyticsConfigurationType& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

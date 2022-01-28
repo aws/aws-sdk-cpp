@@ -17,10 +17,6 @@ namespace Model
 {
 
   /**
-   * <p>Request parameters for the StartConfigurationSession API.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appconfigdata-2021-11-11/StartConfigurationSessionRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_APPCONFIGDATA_API StartConfigurationSessionRequest : public AppConfigDataRequest
   {
@@ -78,47 +74,6 @@ namespace Model
 
 
     /**
-     * <p>The configuration profile ID or the configuration profile name.</p>
-     */
-    inline const Aws::String& GetConfigurationProfileIdentifier() const{ return m_configurationProfileIdentifier; }
-
-    /**
-     * <p>The configuration profile ID or the configuration profile name.</p>
-     */
-    inline bool ConfigurationProfileIdentifierHasBeenSet() const { return m_configurationProfileIdentifierHasBeenSet; }
-
-    /**
-     * <p>The configuration profile ID or the configuration profile name.</p>
-     */
-    inline void SetConfigurationProfileIdentifier(const Aws::String& value) { m_configurationProfileIdentifierHasBeenSet = true; m_configurationProfileIdentifier = value; }
-
-    /**
-     * <p>The configuration profile ID or the configuration profile name.</p>
-     */
-    inline void SetConfigurationProfileIdentifier(Aws::String&& value) { m_configurationProfileIdentifierHasBeenSet = true; m_configurationProfileIdentifier = std::move(value); }
-
-    /**
-     * <p>The configuration profile ID or the configuration profile name.</p>
-     */
-    inline void SetConfigurationProfileIdentifier(const char* value) { m_configurationProfileIdentifierHasBeenSet = true; m_configurationProfileIdentifier.assign(value); }
-
-    /**
-     * <p>The configuration profile ID or the configuration profile name.</p>
-     */
-    inline StartConfigurationSessionRequest& WithConfigurationProfileIdentifier(const Aws::String& value) { SetConfigurationProfileIdentifier(value); return *this;}
-
-    /**
-     * <p>The configuration profile ID or the configuration profile name.</p>
-     */
-    inline StartConfigurationSessionRequest& WithConfigurationProfileIdentifier(Aws::String&& value) { SetConfigurationProfileIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The configuration profile ID or the configuration profile name.</p>
-     */
-    inline StartConfigurationSessionRequest& WithConfigurationProfileIdentifier(const char* value) { SetConfigurationProfileIdentifier(value); return *this;}
-
-
-    /**
      * <p>The environment ID or the environment name.</p>
      */
     inline const Aws::String& GetEnvironmentIdentifier() const{ return m_environmentIdentifier; }
@@ -160,30 +115,71 @@ namespace Model
 
 
     /**
-     * <p>The interval at which your client will poll for configuration. If provided,
-     * the service will throw a BadRequestException if the client polls before the
-     * specified poll interval. By default, client poll intervals are not enforced.</p>
+     * <p>The configuration profile ID or the configuration profile name.</p>
+     */
+    inline const Aws::String& GetConfigurationProfileIdentifier() const{ return m_configurationProfileIdentifier; }
+
+    /**
+     * <p>The configuration profile ID or the configuration profile name.</p>
+     */
+    inline bool ConfigurationProfileIdentifierHasBeenSet() const { return m_configurationProfileIdentifierHasBeenSet; }
+
+    /**
+     * <p>The configuration profile ID or the configuration profile name.</p>
+     */
+    inline void SetConfigurationProfileIdentifier(const Aws::String& value) { m_configurationProfileIdentifierHasBeenSet = true; m_configurationProfileIdentifier = value; }
+
+    /**
+     * <p>The configuration profile ID or the configuration profile name.</p>
+     */
+    inline void SetConfigurationProfileIdentifier(Aws::String&& value) { m_configurationProfileIdentifierHasBeenSet = true; m_configurationProfileIdentifier = std::move(value); }
+
+    /**
+     * <p>The configuration profile ID or the configuration profile name.</p>
+     */
+    inline void SetConfigurationProfileIdentifier(const char* value) { m_configurationProfileIdentifierHasBeenSet = true; m_configurationProfileIdentifier.assign(value); }
+
+    /**
+     * <p>The configuration profile ID or the configuration profile name.</p>
+     */
+    inline StartConfigurationSessionRequest& WithConfigurationProfileIdentifier(const Aws::String& value) { SetConfigurationProfileIdentifier(value); return *this;}
+
+    /**
+     * <p>The configuration profile ID or the configuration profile name.</p>
+     */
+    inline StartConfigurationSessionRequest& WithConfigurationProfileIdentifier(Aws::String&& value) { SetConfigurationProfileIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>The configuration profile ID or the configuration profile name.</p>
+     */
+    inline StartConfigurationSessionRequest& WithConfigurationProfileIdentifier(const char* value) { SetConfigurationProfileIdentifier(value); return *this;}
+
+
+    /**
+     * <p>Sets a constraint on a session. If you specify a value of, for example, 60
+     * seconds, then the client that established the session can't call
+     * <a>GetLatestConfiguration</a> more frequently then every 60 seconds.</p>
      */
     inline int GetRequiredMinimumPollIntervalInSeconds() const{ return m_requiredMinimumPollIntervalInSeconds; }
 
     /**
-     * <p>The interval at which your client will poll for configuration. If provided,
-     * the service will throw a BadRequestException if the client polls before the
-     * specified poll interval. By default, client poll intervals are not enforced.</p>
+     * <p>Sets a constraint on a session. If you specify a value of, for example, 60
+     * seconds, then the client that established the session can't call
+     * <a>GetLatestConfiguration</a> more frequently then every 60 seconds.</p>
      */
     inline bool RequiredMinimumPollIntervalInSecondsHasBeenSet() const { return m_requiredMinimumPollIntervalInSecondsHasBeenSet; }
 
     /**
-     * <p>The interval at which your client will poll for configuration. If provided,
-     * the service will throw a BadRequestException if the client polls before the
-     * specified poll interval. By default, client poll intervals are not enforced.</p>
+     * <p>Sets a constraint on a session. If you specify a value of, for example, 60
+     * seconds, then the client that established the session can't call
+     * <a>GetLatestConfiguration</a> more frequently then every 60 seconds.</p>
      */
     inline void SetRequiredMinimumPollIntervalInSeconds(int value) { m_requiredMinimumPollIntervalInSecondsHasBeenSet = true; m_requiredMinimumPollIntervalInSeconds = value; }
 
     /**
-     * <p>The interval at which your client will poll for configuration. If provided,
-     * the service will throw a BadRequestException if the client polls before the
-     * specified poll interval. By default, client poll intervals are not enforced.</p>
+     * <p>Sets a constraint on a session. If you specify a value of, for example, 60
+     * seconds, then the client that established the session can't call
+     * <a>GetLatestConfiguration</a> more frequently then every 60 seconds.</p>
      */
     inline StartConfigurationSessionRequest& WithRequiredMinimumPollIntervalInSeconds(int value) { SetRequiredMinimumPollIntervalInSeconds(value); return *this;}
 
@@ -192,11 +188,11 @@ namespace Model
     Aws::String m_applicationIdentifier;
     bool m_applicationIdentifierHasBeenSet;
 
-    Aws::String m_configurationProfileIdentifier;
-    bool m_configurationProfileIdentifierHasBeenSet;
-
     Aws::String m_environmentIdentifier;
     bool m_environmentIdentifierHasBeenSet;
+
+    Aws::String m_configurationProfileIdentifier;
+    bool m_configurationProfileIdentifierHasBeenSet;
 
     int m_requiredMinimumPollIntervalInSeconds;
     bool m_requiredMinimumPollIntervalInSecondsHasBeenSet;

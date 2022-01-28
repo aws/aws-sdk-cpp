@@ -35,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>The token that you want to revoke.</p>
+     * <p>The refresh token that you want to revoke.</p>
      */
     inline const Aws::String& GetToken() const{ return m_token; }
 
     /**
-     * <p>The token that you want to revoke.</p>
+     * <p>The refresh token that you want to revoke.</p>
      */
     inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
 
     /**
-     * <p>The token that you want to revoke.</p>
+     * <p>The refresh token that you want to revoke.</p>
      */
     inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
 
     /**
-     * <p>The token that you want to revoke.</p>
+     * <p>The refresh token that you want to revoke.</p>
      */
     inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
 
     /**
-     * <p>The token that you want to revoke.</p>
+     * <p>The refresh token that you want to revoke.</p>
      */
     inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
 
     /**
-     * <p>The token that you want to revoke.</p>
+     * <p>The refresh token that you want to revoke.</p>
      */
     inline RevokeTokenRequest& WithToken(const Aws::String& value) { SetToken(value); return *this;}
 
     /**
-     * <p>The token that you want to revoke.</p>
+     * <p>The refresh token that you want to revoke.</p>
      */
     inline RevokeTokenRequest& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token that you want to revoke.</p>
+     * <p>The refresh token that you want to revoke.</p>
      */
     inline RevokeTokenRequest& WithToken(const char* value) { SetToken(value); return *this;}
 

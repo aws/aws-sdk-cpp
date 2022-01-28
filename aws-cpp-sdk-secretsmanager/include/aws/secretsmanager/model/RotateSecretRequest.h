@@ -309,6 +309,59 @@ namespace Model
      */
     inline RotateSecretRequest& WithRotationRules(RotationRulesType&& value) { SetRotationRules(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies whether to rotate the secret immediately or wait until the next
+     * scheduled rotation window. The rotation schedule is defined in
+     * <a>RotateSecretRequest$RotationRules</a>.</p> <p>If you don't immediately rotate
+     * the secret, Secrets Manager tests the rotation configuration by running the <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">
+     * <code>testSecret</code> step</a> of the Lambda rotation function. The test
+     * creates an <code>AWSPENDING</code> version of the secret and then removes
+     * it.</p> <p>If you don't specify this value, then by default, Secrets Manager
+     * rotates the secret immediately.</p>
+     */
+    inline bool GetRotateImmediately() const{ return m_rotateImmediately; }
+
+    /**
+     * <p>Specifies whether to rotate the secret immediately or wait until the next
+     * scheduled rotation window. The rotation schedule is defined in
+     * <a>RotateSecretRequest$RotationRules</a>.</p> <p>If you don't immediately rotate
+     * the secret, Secrets Manager tests the rotation configuration by running the <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">
+     * <code>testSecret</code> step</a> of the Lambda rotation function. The test
+     * creates an <code>AWSPENDING</code> version of the secret and then removes
+     * it.</p> <p>If you don't specify this value, then by default, Secrets Manager
+     * rotates the secret immediately.</p>
+     */
+    inline bool RotateImmediatelyHasBeenSet() const { return m_rotateImmediatelyHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to rotate the secret immediately or wait until the next
+     * scheduled rotation window. The rotation schedule is defined in
+     * <a>RotateSecretRequest$RotationRules</a>.</p> <p>If you don't immediately rotate
+     * the secret, Secrets Manager tests the rotation configuration by running the <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">
+     * <code>testSecret</code> step</a> of the Lambda rotation function. The test
+     * creates an <code>AWSPENDING</code> version of the secret and then removes
+     * it.</p> <p>If you don't specify this value, then by default, Secrets Manager
+     * rotates the secret immediately.</p>
+     */
+    inline void SetRotateImmediately(bool value) { m_rotateImmediatelyHasBeenSet = true; m_rotateImmediately = value; }
+
+    /**
+     * <p>Specifies whether to rotate the secret immediately or wait until the next
+     * scheduled rotation window. The rotation schedule is defined in
+     * <a>RotateSecretRequest$RotationRules</a>.</p> <p>If you don't immediately rotate
+     * the secret, Secrets Manager tests the rotation configuration by running the <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">
+     * <code>testSecret</code> step</a> of the Lambda rotation function. The test
+     * creates an <code>AWSPENDING</code> version of the secret and then removes
+     * it.</p> <p>If you don't specify this value, then by default, Secrets Manager
+     * rotates the secret immediately.</p>
+     */
+    inline RotateSecretRequest& WithRotateImmediately(bool value) { SetRotateImmediately(value); return *this;}
+
   private:
 
     Aws::String m_secretId;
@@ -322,6 +375,9 @@ namespace Model
 
     RotationRulesType m_rotationRules;
     bool m_rotationRulesHasBeenSet;
+
+    bool m_rotateImmediately;
+    bool m_rotateImmediatelyHasBeenSet;
   };
 
 } // namespace Model

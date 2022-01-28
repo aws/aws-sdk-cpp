@@ -360,7 +360,7 @@ namespace Model
 
     /**
      * <p>A map of custom key-value pairs that you can provide as input for any custom
-     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * workflows that this action triggers.</p> <p>You create custom workflows by
      * assigning Lambda functions to user pool triggers. When you use the
      * ConfirmForgotPassword API action, Amazon Cognito invokes the function that is
      * assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes
@@ -372,20 +372,20 @@ namespace Model
      * needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to Lambda triggers
-     * that are assigned to a user pool to support custom workflows. If your user pool
-     * configuration does not include triggers, the ClientMetadata parameter serves no
-     * purpose.</p> </li> <li> <p>Amazon Cognito does not validate the ClientMetadata
-     * value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the ClientMetadata
-     * value, so don't use it to provide sensitive information.</p> </li> </ul> 
+     * Guide</i>.</p>  <p>When you use the ClientMetadata parameter, remember
+     * that Amazon Cognito won't do the following:</p> <ul> <li> <p>Store the
+     * ClientMetadata value. This data is available only to Lambda triggers that are
+     * assigned to a user pool to support custom workflows. If your user pool
+     * configuration doesn't include triggers, the ClientMetadata parameter serves no
+     * purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p> </li> <li>
+     * <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide
+     * sensitive information.</p> </li> </ul> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetClientMetadata() const{ return m_clientMetadata; }
 
     /**
      * <p>A map of custom key-value pairs that you can provide as input for any custom
-     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * workflows that this action triggers.</p> <p>You create custom workflows by
      * assigning Lambda functions to user pool triggers. When you use the
      * ConfirmForgotPassword API action, Amazon Cognito invokes the function that is
      * assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes
@@ -397,20 +397,20 @@ namespace Model
      * needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to Lambda triggers
-     * that are assigned to a user pool to support custom workflows. If your user pool
-     * configuration does not include triggers, the ClientMetadata parameter serves no
-     * purpose.</p> </li> <li> <p>Amazon Cognito does not validate the ClientMetadata
-     * value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the ClientMetadata
-     * value, so don't use it to provide sensitive information.</p> </li> </ul> 
+     * Guide</i>.</p>  <p>When you use the ClientMetadata parameter, remember
+     * that Amazon Cognito won't do the following:</p> <ul> <li> <p>Store the
+     * ClientMetadata value. This data is available only to Lambda triggers that are
+     * assigned to a user pool to support custom workflows. If your user pool
+     * configuration doesn't include triggers, the ClientMetadata parameter serves no
+     * purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p> </li> <li>
+     * <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide
+     * sensitive information.</p> </li> </ul> 
      */
     inline bool ClientMetadataHasBeenSet() const { return m_clientMetadataHasBeenSet; }
 
     /**
      * <p>A map of custom key-value pairs that you can provide as input for any custom
-     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * workflows that this action triggers.</p> <p>You create custom workflows by
      * assigning Lambda functions to user pool triggers. When you use the
      * ConfirmForgotPassword API action, Amazon Cognito invokes the function that is
      * assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes
@@ -422,20 +422,20 @@ namespace Model
      * needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to Lambda triggers
-     * that are assigned to a user pool to support custom workflows. If your user pool
-     * configuration does not include triggers, the ClientMetadata parameter serves no
-     * purpose.</p> </li> <li> <p>Amazon Cognito does not validate the ClientMetadata
-     * value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the ClientMetadata
-     * value, so don't use it to provide sensitive information.</p> </li> </ul> 
+     * Guide</i>.</p>  <p>When you use the ClientMetadata parameter, remember
+     * that Amazon Cognito won't do the following:</p> <ul> <li> <p>Store the
+     * ClientMetadata value. This data is available only to Lambda triggers that are
+     * assigned to a user pool to support custom workflows. If your user pool
+     * configuration doesn't include triggers, the ClientMetadata parameter serves no
+     * purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p> </li> <li>
+     * <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide
+     * sensitive information.</p> </li> </ul> 
      */
     inline void SetClientMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata = value; }
 
     /**
      * <p>A map of custom key-value pairs that you can provide as input for any custom
-     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * workflows that this action triggers.</p> <p>You create custom workflows by
      * assigning Lambda functions to user pool triggers. When you use the
      * ConfirmForgotPassword API action, Amazon Cognito invokes the function that is
      * assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes
@@ -447,20 +447,20 @@ namespace Model
      * needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to Lambda triggers
-     * that are assigned to a user pool to support custom workflows. If your user pool
-     * configuration does not include triggers, the ClientMetadata parameter serves no
-     * purpose.</p> </li> <li> <p>Amazon Cognito does not validate the ClientMetadata
-     * value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the ClientMetadata
-     * value, so don't use it to provide sensitive information.</p> </li> </ul> 
+     * Guide</i>.</p>  <p>When you use the ClientMetadata parameter, remember
+     * that Amazon Cognito won't do the following:</p> <ul> <li> <p>Store the
+     * ClientMetadata value. This data is available only to Lambda triggers that are
+     * assigned to a user pool to support custom workflows. If your user pool
+     * configuration doesn't include triggers, the ClientMetadata parameter serves no
+     * purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p> </li> <li>
+     * <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide
+     * sensitive information.</p> </li> </ul> 
      */
     inline void SetClientMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata = std::move(value); }
 
     /**
      * <p>A map of custom key-value pairs that you can provide as input for any custom
-     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * workflows that this action triggers.</p> <p>You create custom workflows by
      * assigning Lambda functions to user pool triggers. When you use the
      * ConfirmForgotPassword API action, Amazon Cognito invokes the function that is
      * assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes
@@ -472,20 +472,20 @@ namespace Model
      * needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to Lambda triggers
-     * that are assigned to a user pool to support custom workflows. If your user pool
-     * configuration does not include triggers, the ClientMetadata parameter serves no
-     * purpose.</p> </li> <li> <p>Amazon Cognito does not validate the ClientMetadata
-     * value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the ClientMetadata
-     * value, so don't use it to provide sensitive information.</p> </li> </ul> 
+     * Guide</i>.</p>  <p>When you use the ClientMetadata parameter, remember
+     * that Amazon Cognito won't do the following:</p> <ul> <li> <p>Store the
+     * ClientMetadata value. This data is available only to Lambda triggers that are
+     * assigned to a user pool to support custom workflows. If your user pool
+     * configuration doesn't include triggers, the ClientMetadata parameter serves no
+     * purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p> </li> <li>
+     * <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide
+     * sensitive information.</p> </li> </ul> 
      */
     inline ConfirmForgotPasswordRequest& WithClientMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetClientMetadata(value); return *this;}
 
     /**
      * <p>A map of custom key-value pairs that you can provide as input for any custom
-     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * workflows that this action triggers.</p> <p>You create custom workflows by
      * assigning Lambda functions to user pool triggers. When you use the
      * ConfirmForgotPassword API action, Amazon Cognito invokes the function that is
      * assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes
@@ -497,20 +497,20 @@ namespace Model
      * needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to Lambda triggers
-     * that are assigned to a user pool to support custom workflows. If your user pool
-     * configuration does not include triggers, the ClientMetadata parameter serves no
-     * purpose.</p> </li> <li> <p>Amazon Cognito does not validate the ClientMetadata
-     * value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the ClientMetadata
-     * value, so don't use it to provide sensitive information.</p> </li> </ul> 
+     * Guide</i>.</p>  <p>When you use the ClientMetadata parameter, remember
+     * that Amazon Cognito won't do the following:</p> <ul> <li> <p>Store the
+     * ClientMetadata value. This data is available only to Lambda triggers that are
+     * assigned to a user pool to support custom workflows. If your user pool
+     * configuration doesn't include triggers, the ClientMetadata parameter serves no
+     * purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p> </li> <li>
+     * <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide
+     * sensitive information.</p> </li> </ul> 
      */
     inline ConfirmForgotPasswordRequest& WithClientMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetClientMetadata(std::move(value)); return *this;}
 
     /**
      * <p>A map of custom key-value pairs that you can provide as input for any custom
-     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * workflows that this action triggers.</p> <p>You create custom workflows by
      * assigning Lambda functions to user pool triggers. When you use the
      * ConfirmForgotPassword API action, Amazon Cognito invokes the function that is
      * assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes
@@ -522,20 +522,20 @@ namespace Model
      * needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to Lambda triggers
-     * that are assigned to a user pool to support custom workflows. If your user pool
-     * configuration does not include triggers, the ClientMetadata parameter serves no
-     * purpose.</p> </li> <li> <p>Amazon Cognito does not validate the ClientMetadata
-     * value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the ClientMetadata
-     * value, so don't use it to provide sensitive information.</p> </li> </ul> 
+     * Guide</i>.</p>  <p>When you use the ClientMetadata parameter, remember
+     * that Amazon Cognito won't do the following:</p> <ul> <li> <p>Store the
+     * ClientMetadata value. This data is available only to Lambda triggers that are
+     * assigned to a user pool to support custom workflows. If your user pool
+     * configuration doesn't include triggers, the ClientMetadata parameter serves no
+     * purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p> </li> <li>
+     * <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide
+     * sensitive information.</p> </li> </ul> 
      */
     inline ConfirmForgotPasswordRequest& AddClientMetadata(const Aws::String& key, const Aws::String& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, value); return *this; }
 
     /**
      * <p>A map of custom key-value pairs that you can provide as input for any custom
-     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * workflows that this action triggers.</p> <p>You create custom workflows by
      * assigning Lambda functions to user pool triggers. When you use the
      * ConfirmForgotPassword API action, Amazon Cognito invokes the function that is
      * assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes
@@ -547,20 +547,20 @@ namespace Model
      * needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to Lambda triggers
-     * that are assigned to a user pool to support custom workflows. If your user pool
-     * configuration does not include triggers, the ClientMetadata parameter serves no
-     * purpose.</p> </li> <li> <p>Amazon Cognito does not validate the ClientMetadata
-     * value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the ClientMetadata
-     * value, so don't use it to provide sensitive information.</p> </li> </ul> 
+     * Guide</i>.</p>  <p>When you use the ClientMetadata parameter, remember
+     * that Amazon Cognito won't do the following:</p> <ul> <li> <p>Store the
+     * ClientMetadata value. This data is available only to Lambda triggers that are
+     * assigned to a user pool to support custom workflows. If your user pool
+     * configuration doesn't include triggers, the ClientMetadata parameter serves no
+     * purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p> </li> <li>
+     * <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide
+     * sensitive information.</p> </li> </ul> 
      */
     inline ConfirmForgotPasswordRequest& AddClientMetadata(Aws::String&& key, const Aws::String& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map of custom key-value pairs that you can provide as input for any custom
-     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * workflows that this action triggers.</p> <p>You create custom workflows by
      * assigning Lambda functions to user pool triggers. When you use the
      * ConfirmForgotPassword API action, Amazon Cognito invokes the function that is
      * assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes
@@ -572,20 +572,20 @@ namespace Model
      * needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to Lambda triggers
-     * that are assigned to a user pool to support custom workflows. If your user pool
-     * configuration does not include triggers, the ClientMetadata parameter serves no
-     * purpose.</p> </li> <li> <p>Amazon Cognito does not validate the ClientMetadata
-     * value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the ClientMetadata
-     * value, so don't use it to provide sensitive information.</p> </li> </ul> 
+     * Guide</i>.</p>  <p>When you use the ClientMetadata parameter, remember
+     * that Amazon Cognito won't do the following:</p> <ul> <li> <p>Store the
+     * ClientMetadata value. This data is available only to Lambda triggers that are
+     * assigned to a user pool to support custom workflows. If your user pool
+     * configuration doesn't include triggers, the ClientMetadata parameter serves no
+     * purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p> </li> <li>
+     * <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide
+     * sensitive information.</p> </li> </ul> 
      */
     inline ConfirmForgotPasswordRequest& AddClientMetadata(const Aws::String& key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of custom key-value pairs that you can provide as input for any custom
-     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * workflows that this action triggers.</p> <p>You create custom workflows by
      * assigning Lambda functions to user pool triggers. When you use the
      * ConfirmForgotPassword API action, Amazon Cognito invokes the function that is
      * assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes
@@ -597,20 +597,20 @@ namespace Model
      * needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to Lambda triggers
-     * that are assigned to a user pool to support custom workflows. If your user pool
-     * configuration does not include triggers, the ClientMetadata parameter serves no
-     * purpose.</p> </li> <li> <p>Amazon Cognito does not validate the ClientMetadata
-     * value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the ClientMetadata
-     * value, so don't use it to provide sensitive information.</p> </li> </ul> 
+     * Guide</i>.</p>  <p>When you use the ClientMetadata parameter, remember
+     * that Amazon Cognito won't do the following:</p> <ul> <li> <p>Store the
+     * ClientMetadata value. This data is available only to Lambda triggers that are
+     * assigned to a user pool to support custom workflows. If your user pool
+     * configuration doesn't include triggers, the ClientMetadata parameter serves no
+     * purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p> </li> <li>
+     * <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide
+     * sensitive information.</p> </li> </ul> 
      */
     inline ConfirmForgotPasswordRequest& AddClientMetadata(Aws::String&& key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A map of custom key-value pairs that you can provide as input for any custom
-     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * workflows that this action triggers.</p> <p>You create custom workflows by
      * assigning Lambda functions to user pool triggers. When you use the
      * ConfirmForgotPassword API action, Amazon Cognito invokes the function that is
      * assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes
@@ -622,20 +622,20 @@ namespace Model
      * needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to Lambda triggers
-     * that are assigned to a user pool to support custom workflows. If your user pool
-     * configuration does not include triggers, the ClientMetadata parameter serves no
-     * purpose.</p> </li> <li> <p>Amazon Cognito does not validate the ClientMetadata
-     * value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the ClientMetadata
-     * value, so don't use it to provide sensitive information.</p> </li> </ul> 
+     * Guide</i>.</p>  <p>When you use the ClientMetadata parameter, remember
+     * that Amazon Cognito won't do the following:</p> <ul> <li> <p>Store the
+     * ClientMetadata value. This data is available only to Lambda triggers that are
+     * assigned to a user pool to support custom workflows. If your user pool
+     * configuration doesn't include triggers, the ClientMetadata parameter serves no
+     * purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p> </li> <li>
+     * <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide
+     * sensitive information.</p> </li> </ul> 
      */
     inline ConfirmForgotPasswordRequest& AddClientMetadata(const char* key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of custom key-value pairs that you can provide as input for any custom
-     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * workflows that this action triggers.</p> <p>You create custom workflows by
      * assigning Lambda functions to user pool triggers. When you use the
      * ConfirmForgotPassword API action, Amazon Cognito invokes the function that is
      * assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes
@@ -647,20 +647,20 @@ namespace Model
      * needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to Lambda triggers
-     * that are assigned to a user pool to support custom workflows. If your user pool
-     * configuration does not include triggers, the ClientMetadata parameter serves no
-     * purpose.</p> </li> <li> <p>Amazon Cognito does not validate the ClientMetadata
-     * value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the ClientMetadata
-     * value, so don't use it to provide sensitive information.</p> </li> </ul> 
+     * Guide</i>.</p>  <p>When you use the ClientMetadata parameter, remember
+     * that Amazon Cognito won't do the following:</p> <ul> <li> <p>Store the
+     * ClientMetadata value. This data is available only to Lambda triggers that are
+     * assigned to a user pool to support custom workflows. If your user pool
+     * configuration doesn't include triggers, the ClientMetadata parameter serves no
+     * purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p> </li> <li>
+     * <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide
+     * sensitive information.</p> </li> </ul> 
      */
     inline ConfirmForgotPasswordRequest& AddClientMetadata(Aws::String&& key, const char* value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map of custom key-value pairs that you can provide as input for any custom
-     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * workflows that this action triggers.</p> <p>You create custom workflows by
      * assigning Lambda functions to user pool triggers. When you use the
      * ConfirmForgotPassword API action, Amazon Cognito invokes the function that is
      * assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes
@@ -672,14 +672,14 @@ namespace Model
      * needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p>  <p>Take the following limitations into consideration when
-     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
-     * store the ClientMetadata value. This data is available only to Lambda triggers
-     * that are assigned to a user pool to support custom workflows. If your user pool
-     * configuration does not include triggers, the ClientMetadata parameter serves no
-     * purpose.</p> </li> <li> <p>Amazon Cognito does not validate the ClientMetadata
-     * value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the ClientMetadata
-     * value, so don't use it to provide sensitive information.</p> </li> </ul> 
+     * Guide</i>.</p>  <p>When you use the ClientMetadata parameter, remember
+     * that Amazon Cognito won't do the following:</p> <ul> <li> <p>Store the
+     * ClientMetadata value. This data is available only to Lambda triggers that are
+     * assigned to a user pool to support custom workflows. If your user pool
+     * configuration doesn't include triggers, the ClientMetadata parameter serves no
+     * purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p> </li> <li>
+     * <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide
+     * sensitive information.</p> </li> </ul> 
      */
     inline ConfirmForgotPasswordRequest& AddClientMetadata(const char* key, const char* value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, value); return *this; }
 

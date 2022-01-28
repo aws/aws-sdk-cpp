@@ -174,48 +174,22 @@ namespace Model
    * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/introduction.html">Amazon
    * Web Services Secrets Manager User Guide</a>.</p> <p> <b>API Version</b> </p>
    * <p>This version of the Secrets Manager API Reference documents the Secrets
-   * Manager API version 2017-10-17.</p>  <p>As an alternative to using the
-   * API, you can use one of the Amazon Web Services SDKs, which consist of libraries
-   * and sample code for various programming languages and platforms such as Java,
-   * Ruby, .NET, iOS, and Android. The SDKs provide a convenient way to create
-   * programmatic access to Amazon Web Services Secrets Manager. For example, the
-   * SDKs provide cryptographically signing requests, managing errors, and retrying
-   * requests automatically. For more information about the Amazon Web Services SDKs,
-   * including downloading and installing them, see <a
-   * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.</p>
-   *  <p>We recommend you use the Amazon Web Services SDKs to make
-   * programmatic API calls to Secrets Manager. However, you also can use the Secrets
-   * Manager HTTP Query API to make direct calls to the Secrets Manager web service.
-   * To learn more about the Secrets Manager HTTP Query API, see <a
-   * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/query-requests.html">Making
-   * Query Requests</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.
-   * </p> <p>Secrets Manager API supports GET and POST requests for all actions, and
-   * doesn't require you to use GET for some actions and POST for others. However,
-   * GET requests are subject to the limitation size of a URL. Therefore, for
-   * operations that require larger sizes, use a POST request.</p> <p> <b>Support and
-   * Feedback for Amazon Web Services Secrets Manager</b> </p> <p>We welcome your
-   * feedback. Send your comments to <a
+   * Manager API version 2017-10-17.</p> <p> <b>Support and Feedback for Amazon Web
+   * Services Secrets Manager</b> </p> <p>We welcome your feedback. Send your
+   * comments to <a
    * href="mailto:awssecretsmanager-feedback@amazon.com">awssecretsmanager-feedback@amazon.com</a>,
    * or post your feedback and questions in the <a
    * href="http://forums.aws.amazon.com/forum.jspa?forumID=296">Amazon Web Services
    * Secrets Manager Discussion Forum</a>. For more information about the Amazon Web
    * Services Discussion Forums, see <a
-   * href="http://forums.aws.amazon.com/help.jspa">Forums Help</a>.</p> <p> <b>How
-   * examples are presented</b> </p> <p>The JSON that Amazon Web Services Secrets
-   * Manager expects as your request parameters and the service returns as a response
-   * to HTTP query requests contain single, long strings without line breaks or white
-   * space formatting. The JSON shown in the examples displays the code formatted
-   * with both line breaks and white space to improve readability. When example input
-   * parameters can also cause long strings extending beyond the screen, you can
-   * insert line breaks to enhance readability. You should always submit the input as
-   * a single JSON text string.</p> <p> <b>Logging API Requests</b> </p> <p>Amazon
-   * Web Services Secrets Manager supports Amazon Web Services CloudTrail, a service
-   * that records Amazon Web Services API calls for your Amazon Web Services account
-   * and delivers log files to an Amazon S3 bucket. By using information that's
-   * collected by Amazon Web Services CloudTrail, you can determine the requests
-   * successfully made to Secrets Manager, who made the request, when it was made,
-   * and so on. For more about Amazon Web Services Secrets Manager and support for
-   * Amazon Web Services CloudTrail, see <a
+   * href="http://forums.aws.amazon.com/help.jspa">Forums Help</a>.</p> <p>
+   * <b>Logging API Requests</b> </p> <p>Amazon Web Services Secrets Manager supports
+   * Amazon Web Services CloudTrail, a service that records Amazon Web Services API
+   * calls for your Amazon Web Services account and delivers log files to an Amazon
+   * S3 bucket. By using information that's collected by Amazon Web Services
+   * CloudTrail, you can determine the requests successfully made to Secrets Manager,
+   * who made the request, when it was made, and so on. For more about Amazon Web
+   * Services Secrets Manager and support for Amazon Web Services CloudTrail, see <a
    * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/monitoring.html#monitoring_cloudtrail">Logging
    * Amazon Web Services Secrets Manager Events with Amazon Web Services
    * CloudTrail</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>. To
@@ -260,8 +234,13 @@ namespace Model
          * <code>AWSPENDING</code> from the partially created version, specified by the
          * <code>VersionId</code> response value. We recommend you also evaluate the
          * partially rotated new version to see if it should be deleted. You can delete a
-         * version by removing all staging labels from it.</p> <p><h3>See Also:</h3>
-         * <a
+         * version by removing all staging labels from it.</p>  <p> <b>Required
+         * permissions: </b> <code>secretsmanager:CancelRotateSecret</code>. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/CancelRotateSecret">AWS
          * API Reference</a></p>
          */
@@ -276,8 +255,13 @@ namespace Model
          * <code>AWSPENDING</code> from the partially created version, specified by the
          * <code>VersionId</code> response value. We recommend you also evaluate the
          * partially rotated new version to see if it should be deleted. You can delete a
-         * version by removing all staging labels from it.</p> <p><h3>See Also:</h3>
-         * <a
+         * version by removing all staging labels from it.</p>  <p> <b>Required
+         * permissions: </b> <code>secretsmanager:CancelRotateSecret</code>. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/CancelRotateSecret">AWS
          * API Reference</a></p>
          *
@@ -294,8 +278,13 @@ namespace Model
          * <code>AWSPENDING</code> from the partially created version, specified by the
          * <code>VersionId</code> response value. We recommend you also evaluate the
          * partially rotated new version to see if it should be deleted. You can delete a
-         * version by removing all staging labels from it.</p> <p><h3>See Also:</h3>
-         * <a
+         * version by removing all staging labels from it.</p>  <p> <b>Required
+         * permissions: </b> <code>secretsmanager:CancelRotateSecret</code>. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/CancelRotateSecret">AWS
          * API Reference</a></p>
          *
@@ -326,8 +315,13 @@ namespace Model
          * result in a one-time significant delay in returning the result.</p> <p>If the
          * secret is in a different Amazon Web Services account from the credentials
          * calling the API, then you can't use <code>aws/secretsmanager</code> to encrypt
-         * the secret, and you must create and use a customer managed KMS key.
-         * </p><p><h3>See Also:</h3>   <a
+         * the secret, and you must create and use a customer managed KMS key. </p> <p>
+         * <b>Required permissions: </b> <code>secretsmanager:CreateSecret</code>. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/CreateSecret">AWS
          * API Reference</a></p>
          */
@@ -356,8 +350,13 @@ namespace Model
          * result in a one-time significant delay in returning the result.</p> <p>If the
          * secret is in a different Amazon Web Services account from the credentials
          * calling the API, then you can't use <code>aws/secretsmanager</code> to encrypt
-         * the secret, and you must create and use a customer managed KMS key.
-         * </p><p><h3>See Also:</h3>   <a
+         * the secret, and you must create and use a customer managed KMS key. </p> <p>
+         * <b>Required permissions: </b> <code>secretsmanager:CreateSecret</code>. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/CreateSecret">AWS
          * API Reference</a></p>
          *
@@ -388,8 +387,13 @@ namespace Model
          * result in a one-time significant delay in returning the result.</p> <p>If the
          * secret is in a different Amazon Web Services account from the credentials
          * calling the API, then you can't use <code>aws/secretsmanager</code> to encrypt
-         * the secret, and you must create and use a customer managed KMS key.
-         * </p><p><h3>See Also:</h3>   <a
+         * the secret, and you must create and use a customer managed KMS key. </p> <p>
+         * <b>Required permissions: </b> <code>secretsmanager:CreateSecret</code>. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/CreateSecret">AWS
          * API Reference</a></p>
          *
@@ -399,8 +403,13 @@ namespace Model
 
         /**
          * <p>Deletes the resource-based permission policy attached to the secret. To
-         * attach a policy to a secret, use <a>PutResourcePolicy</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * attach a policy to a secret, use <a>PutResourcePolicy</a>.</p> <p> <b>Required
+         * permissions: </b> <code>secretsmanager:DeleteResourcePolicy</code>. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteResourcePolicy">AWS
          * API Reference</a></p>
          */
@@ -408,8 +417,13 @@ namespace Model
 
         /**
          * <p>Deletes the resource-based permission policy attached to the secret. To
-         * attach a policy to a secret, use <a>PutResourcePolicy</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * attach a policy to a secret, use <a>PutResourcePolicy</a>.</p> <p> <b>Required
+         * permissions: </b> <code>secretsmanager:DeleteResourcePolicy</code>. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteResourcePolicy">AWS
          * API Reference</a></p>
          *
@@ -419,8 +433,13 @@ namespace Model
 
         /**
          * <p>Deletes the resource-based permission policy attached to the secret. To
-         * attach a policy to a secret, use <a>PutResourcePolicy</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * attach a policy to a secret, use <a>PutResourcePolicy</a>.</p> <p> <b>Required
+         * permissions: </b> <code>secretsmanager:DeleteResourcePolicy</code>. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteResourcePolicy">AWS
          * API Reference</a></p>
          *
@@ -444,8 +463,13 @@ namespace Model
          * remove the <code>DeletionDate</code> and cancel the deletion of the secret.</p>
          * <p>In a secret scheduled for deletion, you cannot access the encrypted secret
          * value. To access that information, first cancel the deletion with
-         * <a>RestoreSecret</a> and then retrieve the information.</p><p><h3>See Also:</h3>
-         * <a
+         * <a>RestoreSecret</a> and then retrieve the information.</p> <p> <b>Required
+         * permissions: </b> <code>secretsmanager:DeleteSecret</code>. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteSecret">AWS
          * API Reference</a></p>
          */
@@ -467,8 +491,13 @@ namespace Model
          * remove the <code>DeletionDate</code> and cancel the deletion of the secret.</p>
          * <p>In a secret scheduled for deletion, you cannot access the encrypted secret
          * value. To access that information, first cancel the deletion with
-         * <a>RestoreSecret</a> and then retrieve the information.</p><p><h3>See Also:</h3>
-         * <a
+         * <a>RestoreSecret</a> and then retrieve the information.</p> <p> <b>Required
+         * permissions: </b> <code>secretsmanager:DeleteSecret</code>. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteSecret">AWS
          * API Reference</a></p>
          *
@@ -492,8 +521,13 @@ namespace Model
          * remove the <code>DeletionDate</code> and cancel the deletion of the secret.</p>
          * <p>In a secret scheduled for deletion, you cannot access the encrypted secret
          * value. To access that information, first cancel the deletion with
-         * <a>RestoreSecret</a> and then retrieve the information.</p><p><h3>See Also:</h3>
-         * <a
+         * <a>RestoreSecret</a> and then retrieve the information.</p> <p> <b>Required
+         * permissions: </b> <code>secretsmanager:DeleteSecret</code>. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteSecret">AWS
          * API Reference</a></p>
          *
@@ -504,7 +538,12 @@ namespace Model
         /**
          * <p>Retrieves the details of a secret. It does not include the encrypted secret
          * value. Secrets Manager only returns fields that have a value in the response.
-         * </p><p><h3>See Also:</h3>   <a
+         * </p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:DescribeSecret</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DescribeSecret">AWS
          * API Reference</a></p>
          */
@@ -513,7 +552,12 @@ namespace Model
         /**
          * <p>Retrieves the details of a secret. It does not include the encrypted secret
          * value. Secrets Manager only returns fields that have a value in the response.
-         * </p><p><h3>See Also:</h3>   <a
+         * </p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:DescribeSecret</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DescribeSecret">AWS
          * API Reference</a></p>
          *
@@ -524,7 +568,12 @@ namespace Model
         /**
          * <p>Retrieves the details of a secret. It does not include the encrypted secret
          * value. Secrets Manager only returns fields that have a value in the response.
-         * </p><p><h3>See Also:</h3>   <a
+         * </p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:DescribeSecret</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DescribeSecret">AWS
          * API Reference</a></p>
          *
@@ -535,7 +584,12 @@ namespace Model
         /**
          * <p>Generates a random password. We recommend that you specify the maximum length
          * and include every character type that the system you are generating a password
-         * for can support.</p><p><h3>See Also:</h3>   <a
+         * for can support.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:GetRandomPassword</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetRandomPassword">AWS
          * API Reference</a></p>
          */
@@ -544,7 +598,12 @@ namespace Model
         /**
          * <p>Generates a random password. We recommend that you specify the maximum length
          * and include every character type that the system you are generating a password
-         * for can support.</p><p><h3>See Also:</h3>   <a
+         * for can support.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:GetRandomPassword</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetRandomPassword">AWS
          * API Reference</a></p>
          *
@@ -555,7 +614,12 @@ namespace Model
         /**
          * <p>Generates a random password. We recommend that you specify the maximum length
          * and include every character type that the system you are generating a password
-         * for can support.</p><p><h3>See Also:</h3>   <a
+         * for can support.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:GetRandomPassword</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetRandomPassword">AWS
          * API Reference</a></p>
          *
@@ -568,7 +632,12 @@ namespace Model
          * secret. For more information about permissions policies attached to a secret,
          * see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-policies.html">Permissions
-         * policies attached to a secret</a>.</p><p><h3>See Also:</h3>   <a
+         * policies attached to a secret</a>.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:GetResourcePolicy</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetResourcePolicy">AWS
          * API Reference</a></p>
          */
@@ -579,7 +648,12 @@ namespace Model
          * secret. For more information about permissions policies attached to a secret,
          * see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-policies.html">Permissions
-         * policies attached to a secret</a>.</p><p><h3>See Also:</h3>   <a
+         * policies attached to a secret</a>.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:GetResourcePolicy</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetResourcePolicy">AWS
          * API Reference</a></p>
          *
@@ -592,7 +666,12 @@ namespace Model
          * secret. For more information about permissions policies attached to a secret,
          * see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-policies.html">Permissions
-         * policies attached to a secret</a>.</p><p><h3>See Also:</h3>   <a
+         * policies attached to a secret</a>.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:GetResourcePolicy</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetResourcePolicy">AWS
          * API Reference</a></p>
          *
@@ -603,14 +682,19 @@ namespace Model
         /**
          * <p>Retrieves the contents of the encrypted fields <code>SecretString</code> or
          * <code>SecretBinary</code> from the specified version of a secret, whichever
-         * contains content.</p> <p>For information about retrieving the secret value in
-         * the console, see <a
-         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieving-secrets.html">Retrieve
-         * secrets</a>. </p> <p>To run this command, you must have
-         * <code>secretsmanager:GetSecretValue</code> permissions. If the secret is
-         * encrypted using a customer-managed key instead of the Amazon Web Services
-         * managed key <code>aws/secretsmanager</code>, then you also need
-         * <code>kms:Decrypt</code> permissions for that key.</p><p><h3>See Also:</h3>   <a
+         * contains content.</p> <p>We recommend that you cache your secret values by using
+         * client-side caching. Caching secrets improves speed and reduces your costs. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieving-secrets.html">Cache
+         * secrets for your applications</a>.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:GetSecretValue</code>. If the secret is encrypted using a
+         * customer-managed key instead of the Amazon Web Services managed key
+         * <code>aws/secretsmanager</code>, then you also need <code>kms:Decrypt</code>
+         * permissions for that key. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetSecretValue">AWS
          * API Reference</a></p>
          */
@@ -619,14 +703,19 @@ namespace Model
         /**
          * <p>Retrieves the contents of the encrypted fields <code>SecretString</code> or
          * <code>SecretBinary</code> from the specified version of a secret, whichever
-         * contains content.</p> <p>For information about retrieving the secret value in
-         * the console, see <a
-         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieving-secrets.html">Retrieve
-         * secrets</a>. </p> <p>To run this command, you must have
-         * <code>secretsmanager:GetSecretValue</code> permissions. If the secret is
-         * encrypted using a customer-managed key instead of the Amazon Web Services
-         * managed key <code>aws/secretsmanager</code>, then you also need
-         * <code>kms:Decrypt</code> permissions for that key.</p><p><h3>See Also:</h3>   <a
+         * contains content.</p> <p>We recommend that you cache your secret values by using
+         * client-side caching. Caching secrets improves speed and reduces your costs. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieving-secrets.html">Cache
+         * secrets for your applications</a>.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:GetSecretValue</code>. If the secret is encrypted using a
+         * customer-managed key instead of the Amazon Web Services managed key
+         * <code>aws/secretsmanager</code>, then you also need <code>kms:Decrypt</code>
+         * permissions for that key. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetSecretValue">AWS
          * API Reference</a></p>
          *
@@ -637,14 +726,19 @@ namespace Model
         /**
          * <p>Retrieves the contents of the encrypted fields <code>SecretString</code> or
          * <code>SecretBinary</code> from the specified version of a secret, whichever
-         * contains content.</p> <p>For information about retrieving the secret value in
-         * the console, see <a
-         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieving-secrets.html">Retrieve
-         * secrets</a>. </p> <p>To run this command, you must have
-         * <code>secretsmanager:GetSecretValue</code> permissions. If the secret is
-         * encrypted using a customer-managed key instead of the Amazon Web Services
-         * managed key <code>aws/secretsmanager</code>, then you also need
-         * <code>kms:Decrypt</code> permissions for that key.</p><p><h3>See Also:</h3>   <a
+         * contains content.</p> <p>We recommend that you cache your secret values by using
+         * client-side caching. Caching secrets improves speed and reduces your costs. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieving-secrets.html">Cache
+         * secrets for your applications</a>.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:GetSecretValue</code>. If the secret is encrypted using a
+         * customer-managed key instead of the Amazon Web Services managed key
+         * <code>aws/secretsmanager</code>, then you also need <code>kms:Decrypt</code>
+         * permissions for that key. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetSecretValue">AWS
          * API Reference</a></p>
          *
@@ -656,9 +750,12 @@ namespace Model
          * <p>Lists the versions for a secret. </p> <p>To list the secrets in the account,
          * use <a>ListSecrets</a>.</p> <p>To get the secret value from
          * <code>SecretString</code> or <code>SecretBinary</code>, call
-         * <a>GetSecretValue</a>.</p> <p> <b>Minimum permissions</b> </p> <p>To run this
-         * command, you must have <code>secretsmanager:ListSecretVersionIds</code>
-         * permissions.</p><p><h3>See Also:</h3>   <a
+         * <a>GetSecretValue</a>.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:ListSecretVersionIds</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ListSecretVersionIds">AWS
          * API Reference</a></p>
          */
@@ -668,9 +765,12 @@ namespace Model
          * <p>Lists the versions for a secret. </p> <p>To list the secrets in the account,
          * use <a>ListSecrets</a>.</p> <p>To get the secret value from
          * <code>SecretString</code> or <code>SecretBinary</code>, call
-         * <a>GetSecretValue</a>.</p> <p> <b>Minimum permissions</b> </p> <p>To run this
-         * command, you must have <code>secretsmanager:ListSecretVersionIds</code>
-         * permissions.</p><p><h3>See Also:</h3>   <a
+         * <a>GetSecretValue</a>.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:ListSecretVersionIds</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ListSecretVersionIds">AWS
          * API Reference</a></p>
          *
@@ -682,9 +782,12 @@ namespace Model
          * <p>Lists the versions for a secret. </p> <p>To list the secrets in the account,
          * use <a>ListSecrets</a>.</p> <p>To get the secret value from
          * <code>SecretString</code> or <code>SecretBinary</code>, call
-         * <a>GetSecretValue</a>.</p> <p> <b>Minimum permissions</b> </p> <p>To run this
-         * command, you must have <code>secretsmanager:ListSecretVersionIds</code>
-         * permissions.</p><p><h3>See Also:</h3>   <a
+         * <a>GetSecretValue</a>.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:ListSecretVersionIds</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ListSecretVersionIds">AWS
          * API Reference</a></p>
          *
@@ -700,10 +803,13 @@ namespace Model
          * <a>GetSecretValue</a>.</p> <p>For information about finding secrets in the
          * console, see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_search-secret.html">Enhanced
-         * search capabilities for secrets in Secrets Manager</a>.</p> <p> <b>Minimum
-         * permissions</b> </p> <p>To run this command, you must have
-         * <code>secretsmanager:ListSecrets</code> permissions.</p><p><h3>See Also:</h3>  
-         * <a
+         * search capabilities for secrets in Secrets Manager</a>.</p> <p> <b>Required
+         * permissions: </b> <code>secretsmanager:ListSecrets</code>. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ListSecrets">AWS
          * API Reference</a></p>
          */
@@ -717,10 +823,13 @@ namespace Model
          * <a>GetSecretValue</a>.</p> <p>For information about finding secrets in the
          * console, see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_search-secret.html">Enhanced
-         * search capabilities for secrets in Secrets Manager</a>.</p> <p> <b>Minimum
-         * permissions</b> </p> <p>To run this command, you must have
-         * <code>secretsmanager:ListSecrets</code> permissions.</p><p><h3>See Also:</h3>  
-         * <a
+         * search capabilities for secrets in Secrets Manager</a>.</p> <p> <b>Required
+         * permissions: </b> <code>secretsmanager:ListSecrets</code>. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ListSecrets">AWS
          * API Reference</a></p>
          *
@@ -736,10 +845,13 @@ namespace Model
          * <a>GetSecretValue</a>.</p> <p>For information about finding secrets in the
          * console, see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_search-secret.html">Enhanced
-         * search capabilities for secrets in Secrets Manager</a>.</p> <p> <b>Minimum
-         * permissions</b> </p> <p>To run this command, you must have
-         * <code>secretsmanager:ListSecrets</code> permissions.</p><p><h3>See Also:</h3>  
-         * <a
+         * search capabilities for secrets in Secrets Manager</a>.</p> <p> <b>Required
+         * permissions: </b> <code>secretsmanager:ListSecrets</code>. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ListSecrets">AWS
          * API Reference</a></p>
          *
@@ -754,7 +866,12 @@ namespace Model
          * and access control for Secrets Manager</a> </p> <p>For information about
          * attaching a policy in the console, see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html">Attach
-         * a permissions policy to a secret</a>.</p><p><h3>See Also:</h3>   <a
+         * a permissions policy to a secret</a>.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:PutResourcePolicy</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutResourcePolicy">AWS
          * API Reference</a></p>
          */
@@ -767,7 +884,12 @@ namespace Model
          * and access control for Secrets Manager</a> </p> <p>For information about
          * attaching a policy in the console, see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html">Attach
-         * a permissions policy to a secret</a>.</p><p><h3>See Also:</h3>   <a
+         * a permissions policy to a secret</a>.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:PutResourcePolicy</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutResourcePolicy">AWS
          * API Reference</a></p>
          *
@@ -782,7 +904,12 @@ namespace Model
          * and access control for Secrets Manager</a> </p> <p>For information about
          * attaching a policy in the console, see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html">Attach
-         * a permissions policy to a secret</a>.</p><p><h3>See Also:</h3>   <a
+         * a permissions policy to a secret</a>.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:PutResourcePolicy</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutResourcePolicy">AWS
          * API Reference</a></p>
          *
@@ -814,7 +941,12 @@ namespace Model
          * <code>ClientRequestToken</code> parameter already exists, and you specify the
          * same secret data, the operation succeeds but does nothing. However, if the
          * secret data is different, then the operation fails because you can't modify an
-         * existing version; you can only create new ones.</p><p><h3>See Also:</h3>   <a
+         * existing version; you can only create new ones.</p> <p> <b>Required permissions:
+         * </b> <code>secretsmanager:PutSecretValue</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutSecretValue">AWS
          * API Reference</a></p>
          */
@@ -844,7 +976,12 @@ namespace Model
          * <code>ClientRequestToken</code> parameter already exists, and you specify the
          * same secret data, the operation succeeds but does nothing. However, if the
          * secret data is different, then the operation fails because you can't modify an
-         * existing version; you can only create new ones.</p><p><h3>See Also:</h3>   <a
+         * existing version; you can only create new ones.</p> <p> <b>Required permissions:
+         * </b> <code>secretsmanager:PutSecretValue</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutSecretValue">AWS
          * API Reference</a></p>
          *
@@ -876,7 +1013,12 @@ namespace Model
          * <code>ClientRequestToken</code> parameter already exists, and you specify the
          * same secret data, the operation succeeds but does nothing. However, if the
          * secret data is different, then the operation fails because you can't modify an
-         * existing version; you can only create new ones.</p><p><h3>See Also:</h3>   <a
+         * existing version; you can only create new ones.</p> <p> <b>Required permissions:
+         * </b> <code>secretsmanager:PutSecretValue</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutSecretValue">AWS
          * API Reference</a></p>
          *
@@ -886,7 +1028,13 @@ namespace Model
 
         /**
          * <p>For a secret that is replicated to other Regions, deletes the secret replicas
-         * from the Regions you specify.</p><p><h3>See Also:</h3>   <a
+         * from the Regions you specify.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:RemoveRegionsFromReplication</code>. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RemoveRegionsFromReplication">AWS
          * API Reference</a></p>
          */
@@ -894,7 +1042,13 @@ namespace Model
 
         /**
          * <p>For a secret that is replicated to other Regions, deletes the secret replicas
-         * from the Regions you specify.</p><p><h3>See Also:</h3>   <a
+         * from the Regions you specify.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:RemoveRegionsFromReplication</code>. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RemoveRegionsFromReplication">AWS
          * API Reference</a></p>
          *
@@ -904,7 +1058,13 @@ namespace Model
 
         /**
          * <p>For a secret that is replicated to other Regions, deletes the secret replicas
-         * from the Regions you specify.</p><p><h3>See Also:</h3>   <a
+         * from the Regions you specify.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:RemoveRegionsFromReplication</code>. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RemoveRegionsFromReplication">AWS
          * API Reference</a></p>
          *
@@ -915,7 +1075,13 @@ namespace Model
         /**
          * <p>Replicates the secret to a new Regions. See <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create-manage-multi-region-secrets.html">Multi-Region
-         * secrets</a>.</p><p><h3>See Also:</h3>   <a
+         * secrets</a>.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:ReplicateSecretToRegions</code>. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ReplicateSecretToRegions">AWS
          * API Reference</a></p>
          */
@@ -924,7 +1090,13 @@ namespace Model
         /**
          * <p>Replicates the secret to a new Regions. See <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create-manage-multi-region-secrets.html">Multi-Region
-         * secrets</a>.</p><p><h3>See Also:</h3>   <a
+         * secrets</a>.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:ReplicateSecretToRegions</code>. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ReplicateSecretToRegions">AWS
          * API Reference</a></p>
          *
@@ -935,7 +1107,13 @@ namespace Model
         /**
          * <p>Replicates the secret to a new Regions. See <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create-manage-multi-region-secrets.html">Multi-Region
-         * secrets</a>.</p><p><h3>See Also:</h3>   <a
+         * secrets</a>.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:ReplicateSecretToRegions</code>. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ReplicateSecretToRegions">AWS
          * API Reference</a></p>
          *
@@ -946,7 +1124,12 @@ namespace Model
         /**
          * <p>Cancels the scheduled deletion of a secret by removing the
          * <code>DeletedDate</code> time stamp. You can access a secret again after it has
-         * been restored.</p><p><h3>See Also:</h3>   <a
+         * been restored.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:RestoreSecret</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RestoreSecret">AWS
          * API Reference</a></p>
          */
@@ -955,7 +1138,12 @@ namespace Model
         /**
          * <p>Cancels the scheduled deletion of a secret by removing the
          * <code>DeletedDate</code> time stamp. You can access a secret again after it has
-         * been restored.</p><p><h3>See Also:</h3>   <a
+         * been restored.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:RestoreSecret</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RestoreSecret">AWS
          * API Reference</a></p>
          *
@@ -966,7 +1154,12 @@ namespace Model
         /**
          * <p>Cancels the scheduled deletion of a secret by removing the
          * <code>DeletedDate</code> time stamp. You can access a secret again after it has
-         * been restored.</p><p><h3>See Also:</h3>   <a
+         * been restored.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:RestoreSecret</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RestoreSecret">AWS
          * API Reference</a></p>
          *
@@ -995,10 +1188,16 @@ namespace Model
          * version.</p> <p>If the <code>AWSPENDING</code> staging label is present but not
          * attached to the same version as <code>AWSCURRENT</code>, then any later
          * invocation of <code>RotateSecret</code> assumes that a previous rotation request
-         * is still in progress and returns an error.</p> <p>To run this command, you must
-         * have <code>secretsmanager:RotateSecret</code> permissions and
-         * <code>lambda:InvokeFunction</code> permissions on the function specified in the
-         * secret's metadata.</p><p><h3>See Also:</h3>   <a
+         * is still in progress and returns an error.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:RotateSecret</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. You also need
+         * <code>lambda:InvokeFunction</code> permissions on the rotation function. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets-required-permissions-function.html">
+         * Permissions for rotation</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RotateSecret">AWS
          * API Reference</a></p>
          */
@@ -1025,10 +1224,16 @@ namespace Model
          * version.</p> <p>If the <code>AWSPENDING</code> staging label is present but not
          * attached to the same version as <code>AWSCURRENT</code>, then any later
          * invocation of <code>RotateSecret</code> assumes that a previous rotation request
-         * is still in progress and returns an error.</p> <p>To run this command, you must
-         * have <code>secretsmanager:RotateSecret</code> permissions and
-         * <code>lambda:InvokeFunction</code> permissions on the function specified in the
-         * secret's metadata.</p><p><h3>See Also:</h3>   <a
+         * is still in progress and returns an error.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:RotateSecret</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. You also need
+         * <code>lambda:InvokeFunction</code> permissions on the rotation function. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets-required-permissions-function.html">
+         * Permissions for rotation</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RotateSecret">AWS
          * API Reference</a></p>
          *
@@ -1057,10 +1262,16 @@ namespace Model
          * version.</p> <p>If the <code>AWSPENDING</code> staging label is present but not
          * attached to the same version as <code>AWSCURRENT</code>, then any later
          * invocation of <code>RotateSecret</code> assumes that a previous rotation request
-         * is still in progress and returns an error.</p> <p>To run this command, you must
-         * have <code>secretsmanager:RotateSecret</code> permissions and
-         * <code>lambda:InvokeFunction</code> permissions on the function specified in the
-         * secret's metadata.</p><p><h3>See Also:</h3>   <a
+         * is still in progress and returns an error.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:RotateSecret</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. You also need
+         * <code>lambda:InvokeFunction</code> permissions on the rotation function. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets-required-permissions-function.html">
+         * Permissions for rotation</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RotateSecret">AWS
          * API Reference</a></p>
          *
@@ -1072,7 +1283,13 @@ namespace Model
          * <p>Removes the link between the replica secret and the primary secret and
          * promotes the replica to a primary secret in the replica Region.</p> <p>You must
          * call this operation from the Region in which you want to promote the replica to
-         * a primary secret.</p><p><h3>See Also:</h3>   <a
+         * a primary secret.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:StopReplicationToReplica</code>. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/StopReplicationToReplica">AWS
          * API Reference</a></p>
          */
@@ -1082,7 +1299,13 @@ namespace Model
          * <p>Removes the link between the replica secret and the primary secret and
          * promotes the replica to a primary secret in the replica Region.</p> <p>You must
          * call this operation from the Region in which you want to promote the replica to
-         * a primary secret.</p><p><h3>See Also:</h3>   <a
+         * a primary secret.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:StopReplicationToReplica</code>. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/StopReplicationToReplica">AWS
          * API Reference</a></p>
          *
@@ -1094,7 +1317,13 @@ namespace Model
          * <p>Removes the link between the replica secret and the primary secret and
          * promotes the replica to a primary secret in the replica Region.</p> <p>You must
          * call this operation from the Region in which you want to promote the replica to
-         * a primary secret.</p><p><h3>See Also:</h3>   <a
+         * a primary secret.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:StopReplicationToReplica</code>. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/StopReplicationToReplica">AWS
          * API Reference</a></p>
          *
@@ -1121,7 +1350,12 @@ namespace Model
          * part of your security strategy, then adding or removing a tag can change
          * permissions. If successfully completing this operation would result in you
          * losing your permissions for this secret, then the operation is blocked and
-         * returns an Access Denied error.</p> <p><h3>See Also:</h3>   <a
+         * returns an Access Denied error.</p>  <p> <b>Required permissions:
+         * </b> <code>secretsmanager:TagResource</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/TagResource">AWS
          * API Reference</a></p>
          */
@@ -1146,7 +1380,12 @@ namespace Model
          * part of your security strategy, then adding or removing a tag can change
          * permissions. If successfully completing this operation would result in you
          * losing your permissions for this secret, then the operation is blocked and
-         * returns an Access Denied error.</p> <p><h3>See Also:</h3>   <a
+         * returns an Access Denied error.</p>  <p> <b>Required permissions:
+         * </b> <code>secretsmanager:TagResource</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/TagResource">AWS
          * API Reference</a></p>
          *
@@ -1173,7 +1412,12 @@ namespace Model
          * part of your security strategy, then adding or removing a tag can change
          * permissions. If successfully completing this operation would result in you
          * losing your permissions for this secret, then the operation is blocked and
-         * returns an Access Denied error.</p> <p><h3>See Also:</h3>   <a
+         * returns an Access Denied error.</p>  <p> <b>Required permissions:
+         * </b> <code>secretsmanager:TagResource</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/TagResource">AWS
          * API Reference</a></p>
          *
@@ -1188,7 +1432,12 @@ namespace Model
          * security strategy, then removing a tag can change permissions. If successfully
          * completing this operation would result in you losing your permissions for this
          * secret, then the operation is blocked and returns an Access Denied error.</p>
-         * <p><h3>See Also:</h3>   <a
+         *  <p> <b>Required permissions: </b>
+         * <code>secretsmanager:UntagResource</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -1201,7 +1450,12 @@ namespace Model
          * security strategy, then removing a tag can change permissions. If successfully
          * completing this operation would result in you losing your permissions for this
          * secret, then the operation is blocked and returns an Access Denied error.</p>
-         * <p><h3>See Also:</h3>   <a
+         *  <p> <b>Required permissions: </b>
+         * <code>secretsmanager:UntagResource</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -1216,7 +1470,12 @@ namespace Model
          * security strategy, then removing a tag can change permissions. If successfully
          * completing this operation would result in you losing your permissions for this
          * secret, then the operation is blocked and returns an Access Denied error.</p>
-         * <p><h3>See Also:</h3>   <a
+         *  <p> <b>Required permissions: </b>
+         * <code>secretsmanager:UntagResource</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -1251,11 +1510,17 @@ namespace Model
          * result in a one-time significant delay in returning the result. </p> <p>If the
          * secret is in a different Amazon Web Services account from the credentials
          * calling the API, then you can't use <code>aws/secretsmanager</code> to encrypt
-         * the secret, and you must create and use a customer managed key. </p> <p>To run
-         * this command, you must have <code>secretsmanager:UpdateSecret</code>
-         * permissions. If you use a customer managed key, you must also have
-         * <code>kms:GenerateDataKey</code> and <code>kms:Decrypt</code> permissions
-         * .</p><p><h3>See Also:</h3>   <a
+         * the secret, and you must create and use a customer managed key. </p> <p>
+         * <b>Required permissions: </b> <code>secretsmanager:UpdateSecret</code>. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. If you use a customer managed key,
+         * you must also have <code>kms:GenerateDataKey</code> and <code>kms:Decrypt</code>
+         * permissions on the key. For more information, see <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html">
+         * Secret encryption and decryption</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UpdateSecret">AWS
          * API Reference</a></p>
          */
@@ -1288,11 +1553,17 @@ namespace Model
          * result in a one-time significant delay in returning the result. </p> <p>If the
          * secret is in a different Amazon Web Services account from the credentials
          * calling the API, then you can't use <code>aws/secretsmanager</code> to encrypt
-         * the secret, and you must create and use a customer managed key. </p> <p>To run
-         * this command, you must have <code>secretsmanager:UpdateSecret</code>
-         * permissions. If you use a customer managed key, you must also have
-         * <code>kms:GenerateDataKey</code> and <code>kms:Decrypt</code> permissions
-         * .</p><p><h3>See Also:</h3>   <a
+         * the secret, and you must create and use a customer managed key. </p> <p>
+         * <b>Required permissions: </b> <code>secretsmanager:UpdateSecret</code>. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. If you use a customer managed key,
+         * you must also have <code>kms:GenerateDataKey</code> and <code>kms:Decrypt</code>
+         * permissions on the key. For more information, see <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html">
+         * Secret encryption and decryption</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UpdateSecret">AWS
          * API Reference</a></p>
          *
@@ -1327,11 +1598,17 @@ namespace Model
          * result in a one-time significant delay in returning the result. </p> <p>If the
          * secret is in a different Amazon Web Services account from the credentials
          * calling the API, then you can't use <code>aws/secretsmanager</code> to encrypt
-         * the secret, and you must create and use a customer managed key. </p> <p>To run
-         * this command, you must have <code>secretsmanager:UpdateSecret</code>
-         * permissions. If you use a customer managed key, you must also have
-         * <code>kms:GenerateDataKey</code> and <code>kms:Decrypt</code> permissions
-         * .</p><p><h3>See Also:</h3>   <a
+         * the secret, and you must create and use a customer managed key. </p> <p>
+         * <b>Required permissions: </b> <code>secretsmanager:UpdateSecret</code>. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. If you use a customer managed key,
+         * you must also have <code>kms:GenerateDataKey</code> and <code>kms:Decrypt</code>
+         * permissions on the key. For more information, see <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html">
+         * Secret encryption and decryption</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UpdateSecret">AWS
          * API Reference</a></p>
          *
@@ -1356,7 +1633,13 @@ namespace Model
          * <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was removed
          * from.</p>  <p>If this action results in the last label being removed from
          * a version, then the version is considered to be 'deprecated' and can be deleted
-         * by Secrets Manager.</p><p><h3>See Also:</h3>   <a
+         * by Secrets Manager.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:UpdateSecretVersionStage</code>. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UpdateSecretVersionStage">AWS
          * API Reference</a></p>
          */
@@ -1379,7 +1662,13 @@ namespace Model
          * <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was removed
          * from.</p>  <p>If this action results in the last label being removed from
          * a version, then the version is considered to be 'deprecated' and can be deleted
-         * by Secrets Manager.</p><p><h3>See Also:</h3>   <a
+         * by Secrets Manager.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:UpdateSecretVersionStage</code>. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UpdateSecretVersionStage">AWS
          * API Reference</a></p>
          *
@@ -1404,7 +1693,13 @@ namespace Model
          * <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was removed
          * from.</p>  <p>If this action results in the last label being removed from
          * a version, then the version is considered to be 'deprecated' and can be deleted
-         * by Secrets Manager.</p><p><h3>See Also:</h3>   <a
+         * by Secrets Manager.</p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:UpdateSecretVersionStage</code>. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UpdateSecretVersionStage">AWS
          * API Reference</a></p>
          *
@@ -1421,8 +1716,13 @@ namespace Model
          * an automated reasoning engine, to ensure your resource policy does not allow
          * broad access to your secret, for example policies that use a wildcard for the
          * principal.</p> </li> <li> <p>Checks for correct syntax in a policy.</p> </li>
-         * <li> <p>Verifies the policy does not lock out a caller.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * <li> <p>Verifies the policy does not lock out a caller.</p> </li> </ul> <p>
+         * <b>Required permissions: </b>
+         * <code>secretsmanager:ValidateResourcePolicy</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ValidateResourcePolicy">AWS
          * API Reference</a></p>
          */
@@ -1437,8 +1737,13 @@ namespace Model
          * an automated reasoning engine, to ensure your resource policy does not allow
          * broad access to your secret, for example policies that use a wildcard for the
          * principal.</p> </li> <li> <p>Checks for correct syntax in a policy.</p> </li>
-         * <li> <p>Verifies the policy does not lock out a caller.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * <li> <p>Verifies the policy does not lock out a caller.</p> </li> </ul> <p>
+         * <b>Required permissions: </b>
+         * <code>secretsmanager:ValidateResourcePolicy</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ValidateResourcePolicy">AWS
          * API Reference</a></p>
          *
@@ -1455,8 +1760,13 @@ namespace Model
          * an automated reasoning engine, to ensure your resource policy does not allow
          * broad access to your secret, for example policies that use a wildcard for the
          * principal.</p> </li> <li> <p>Checks for correct syntax in a policy.</p> </li>
-         * <li> <p>Verifies the policy does not lock out a caller.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * <li> <p>Verifies the policy does not lock out a caller.</p> </li> </ul> <p>
+         * <b>Required permissions: </b>
+         * <code>secretsmanager:ValidateResourcePolicy</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+         * IAM policy actions for Secrets Manager</a> and <a
+         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+         * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ValidateResourcePolicy">AWS
          * API Reference</a></p>
          *

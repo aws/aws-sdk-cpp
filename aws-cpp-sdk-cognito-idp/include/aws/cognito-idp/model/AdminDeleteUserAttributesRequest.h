@@ -130,63 +130,63 @@ namespace Model
 
 
     /**
-     * <p>An array of strings representing the user attribute names you wish to
+     * <p>An array of strings representing the user attribute names you want to
      * delete.</p> <p>For custom attributes, you must prepend the <code>custom:</code>
      * prefix to the attribute name.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserAttributeNames() const{ return m_userAttributeNames; }
 
     /**
-     * <p>An array of strings representing the user attribute names you wish to
+     * <p>An array of strings representing the user attribute names you want to
      * delete.</p> <p>For custom attributes, you must prepend the <code>custom:</code>
      * prefix to the attribute name.</p>
      */
     inline bool UserAttributeNamesHasBeenSet() const { return m_userAttributeNamesHasBeenSet; }
 
     /**
-     * <p>An array of strings representing the user attribute names you wish to
+     * <p>An array of strings representing the user attribute names you want to
      * delete.</p> <p>For custom attributes, you must prepend the <code>custom:</code>
      * prefix to the attribute name.</p>
      */
     inline void SetUserAttributeNames(const Aws::Vector<Aws::String>& value) { m_userAttributeNamesHasBeenSet = true; m_userAttributeNames = value; }
 
     /**
-     * <p>An array of strings representing the user attribute names you wish to
+     * <p>An array of strings representing the user attribute names you want to
      * delete.</p> <p>For custom attributes, you must prepend the <code>custom:</code>
      * prefix to the attribute name.</p>
      */
     inline void SetUserAttributeNames(Aws::Vector<Aws::String>&& value) { m_userAttributeNamesHasBeenSet = true; m_userAttributeNames = std::move(value); }
 
     /**
-     * <p>An array of strings representing the user attribute names you wish to
+     * <p>An array of strings representing the user attribute names you want to
      * delete.</p> <p>For custom attributes, you must prepend the <code>custom:</code>
      * prefix to the attribute name.</p>
      */
     inline AdminDeleteUserAttributesRequest& WithUserAttributeNames(const Aws::Vector<Aws::String>& value) { SetUserAttributeNames(value); return *this;}
 
     /**
-     * <p>An array of strings representing the user attribute names you wish to
+     * <p>An array of strings representing the user attribute names you want to
      * delete.</p> <p>For custom attributes, you must prepend the <code>custom:</code>
      * prefix to the attribute name.</p>
      */
     inline AdminDeleteUserAttributesRequest& WithUserAttributeNames(Aws::Vector<Aws::String>&& value) { SetUserAttributeNames(std::move(value)); return *this;}
 
     /**
-     * <p>An array of strings representing the user attribute names you wish to
+     * <p>An array of strings representing the user attribute names you want to
      * delete.</p> <p>For custom attributes, you must prepend the <code>custom:</code>
      * prefix to the attribute name.</p>
      */
     inline AdminDeleteUserAttributesRequest& AddUserAttributeNames(const Aws::String& value) { m_userAttributeNamesHasBeenSet = true; m_userAttributeNames.push_back(value); return *this; }
 
     /**
-     * <p>An array of strings representing the user attribute names you wish to
+     * <p>An array of strings representing the user attribute names you want to
      * delete.</p> <p>For custom attributes, you must prepend the <code>custom:</code>
      * prefix to the attribute name.</p>
      */
     inline AdminDeleteUserAttributesRequest& AddUserAttributeNames(Aws::String&& value) { m_userAttributeNamesHasBeenSet = true; m_userAttributeNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of strings representing the user attribute names you wish to
+     * <p>An array of strings representing the user attribute names you want to
      * delete.</p> <p>For custom attributes, you must prepend the <code>custom:</code>
      * prefix to the attribute name.</p>
      */

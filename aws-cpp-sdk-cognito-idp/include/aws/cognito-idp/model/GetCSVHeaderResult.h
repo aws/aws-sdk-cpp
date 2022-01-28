@@ -27,7 +27,7 @@ namespace Model
 {
   /**
    * <p>Represents the response from the server to the request to get the header
-   * information for the .csv file for the user import job.</p><p><h3>See Also:</h3> 
+   * information of the CSV file for the user import job.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetCSVHeaderResponse">AWS
    * API Reference</a></p>
@@ -84,42 +84,42 @@ namespace Model
 
 
     /**
-     * <p>The header information for the .csv file for the user import job.</p>
+     * <p>The header information of the CSV file for the user import job.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCSVHeader() const{ return m_cSVHeader; }
 
     /**
-     * <p>The header information for the .csv file for the user import job.</p>
+     * <p>The header information of the CSV file for the user import job.</p>
      */
     inline void SetCSVHeader(const Aws::Vector<Aws::String>& value) { m_cSVHeader = value; }
 
     /**
-     * <p>The header information for the .csv file for the user import job.</p>
+     * <p>The header information of the CSV file for the user import job.</p>
      */
     inline void SetCSVHeader(Aws::Vector<Aws::String>&& value) { m_cSVHeader = std::move(value); }
 
     /**
-     * <p>The header information for the .csv file for the user import job.</p>
+     * <p>The header information of the CSV file for the user import job.</p>
      */
     inline GetCSVHeaderResult& WithCSVHeader(const Aws::Vector<Aws::String>& value) { SetCSVHeader(value); return *this;}
 
     /**
-     * <p>The header information for the .csv file for the user import job.</p>
+     * <p>The header information of the CSV file for the user import job.</p>
      */
     inline GetCSVHeaderResult& WithCSVHeader(Aws::Vector<Aws::String>&& value) { SetCSVHeader(std::move(value)); return *this;}
 
     /**
-     * <p>The header information for the .csv file for the user import job.</p>
+     * <p>The header information of the CSV file for the user import job.</p>
      */
     inline GetCSVHeaderResult& AddCSVHeader(const Aws::String& value) { m_cSVHeader.push_back(value); return *this; }
 
     /**
-     * <p>The header information for the .csv file for the user import job.</p>
+     * <p>The header information of the CSV file for the user import job.</p>
      */
     inline GetCSVHeaderResult& AddCSVHeader(Aws::String&& value) { m_cSVHeader.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The header information for the .csv file for the user import job.</p>
+     * <p>The header information of the CSV file for the user import job.</p>
      */
     inline GetCSVHeaderResult& AddCSVHeader(const char* value) { m_cSVHeader.push_back(value); return *this; }
 

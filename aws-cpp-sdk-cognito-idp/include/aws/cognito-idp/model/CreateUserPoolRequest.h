@@ -129,12 +129,12 @@ namespace Model
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
      *  <p>In a push model, event sources (such as Amazon S3 and custom
-     * applications) need permission to invoke a function. So you will need to make an
-     * extra call to add permission for these event sources to invoke your Lambda
+     * applications) need permission to invoke a function. So you must make an extra
+     * call to add permission for these event sources to invoke your Lambda
      * function.</p> <p/> <p>For more information on using the Lambda API to add
-     * permission, see <a
+     * permission, see<a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
-     * AddPermission </a>. </p> <p>For adding permission using the CLI, see <a
+     * AddPermission </a>. </p> <p>For adding permission using the CLI, see<a
      * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
      * add-permission </a>.</p> 
      */
@@ -143,12 +143,12 @@ namespace Model
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
      *  <p>In a push model, event sources (such as Amazon S3 and custom
-     * applications) need permission to invoke a function. So you will need to make an
-     * extra call to add permission for these event sources to invoke your Lambda
+     * applications) need permission to invoke a function. So you must make an extra
+     * call to add permission for these event sources to invoke your Lambda
      * function.</p> <p/> <p>For more information on using the Lambda API to add
-     * permission, see <a
+     * permission, see<a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
-     * AddPermission </a>. </p> <p>For adding permission using the CLI, see <a
+     * AddPermission </a>. </p> <p>For adding permission using the CLI, see<a
      * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
      * add-permission </a>.</p> 
      */
@@ -157,12 +157,12 @@ namespace Model
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
      *  <p>In a push model, event sources (such as Amazon S3 and custom
-     * applications) need permission to invoke a function. So you will need to make an
-     * extra call to add permission for these event sources to invoke your Lambda
+     * applications) need permission to invoke a function. So you must make an extra
+     * call to add permission for these event sources to invoke your Lambda
      * function.</p> <p/> <p>For more information on using the Lambda API to add
-     * permission, see <a
+     * permission, see<a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
-     * AddPermission </a>. </p> <p>For adding permission using the CLI, see <a
+     * AddPermission </a>. </p> <p>For adding permission using the CLI, see<a
      * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
      * add-permission </a>.</p> 
      */
@@ -171,12 +171,12 @@ namespace Model
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
      *  <p>In a push model, event sources (such as Amazon S3 and custom
-     * applications) need permission to invoke a function. So you will need to make an
-     * extra call to add permission for these event sources to invoke your Lambda
+     * applications) need permission to invoke a function. So you must make an extra
+     * call to add permission for these event sources to invoke your Lambda
      * function.</p> <p/> <p>For more information on using the Lambda API to add
-     * permission, see <a
+     * permission, see<a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
-     * AddPermission </a>. </p> <p>For adding permission using the CLI, see <a
+     * AddPermission </a>. </p> <p>For adding permission using the CLI, see<a
      * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
      * add-permission </a>.</p> 
      */
@@ -185,12 +185,12 @@ namespace Model
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
      *  <p>In a push model, event sources (such as Amazon S3 and custom
-     * applications) need permission to invoke a function. So you will need to make an
-     * extra call to add permission for these event sources to invoke your Lambda
+     * applications) need permission to invoke a function. So you must make an extra
+     * call to add permission for these event sources to invoke your Lambda
      * function.</p> <p/> <p>For more information on using the Lambda API to add
-     * permission, see <a
+     * permission, see<a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
-     * AddPermission </a>. </p> <p>For adding permission using the CLI, see <a
+     * AddPermission </a>. </p> <p>For adding permission using the CLI, see<a
      * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
      * add-permission </a>.</p> 
      */
@@ -199,12 +199,12 @@ namespace Model
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
      *  <p>In a push model, event sources (such as Amazon S3 and custom
-     * applications) need permission to invoke a function. So you will need to make an
-     * extra call to add permission for these event sources to invoke your Lambda
+     * applications) need permission to invoke a function. So you must make an extra
+     * call to add permission for these event sources to invoke your Lambda
      * function.</p> <p/> <p>For more information on using the Lambda API to add
-     * permission, see <a
+     * permission, see<a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
-     * AddPermission </a>. </p> <p>For adding permission using the CLI, see <a
+     * AddPermission </a>. </p> <p>For adding permission using the CLI, see<a
      * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
      * add-permission </a>.</p> 
      */
@@ -310,50 +310,50 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether email addresses or phone numbers can be specified as
-     * usernames when a user signs up.</p>
+     * <p>Specifies whether a user can use an email address or phone number as a
+     * username when they sign up.</p>
      */
     inline const Aws::Vector<UsernameAttributeType>& GetUsernameAttributes() const{ return m_usernameAttributes; }
 
     /**
-     * <p>Specifies whether email addresses or phone numbers can be specified as
-     * usernames when a user signs up.</p>
+     * <p>Specifies whether a user can use an email address or phone number as a
+     * username when they sign up.</p>
      */
     inline bool UsernameAttributesHasBeenSet() const { return m_usernameAttributesHasBeenSet; }
 
     /**
-     * <p>Specifies whether email addresses or phone numbers can be specified as
-     * usernames when a user signs up.</p>
+     * <p>Specifies whether a user can use an email address or phone number as a
+     * username when they sign up.</p>
      */
     inline void SetUsernameAttributes(const Aws::Vector<UsernameAttributeType>& value) { m_usernameAttributesHasBeenSet = true; m_usernameAttributes = value; }
 
     /**
-     * <p>Specifies whether email addresses or phone numbers can be specified as
-     * usernames when a user signs up.</p>
+     * <p>Specifies whether a user can use an email address or phone number as a
+     * username when they sign up.</p>
      */
     inline void SetUsernameAttributes(Aws::Vector<UsernameAttributeType>&& value) { m_usernameAttributesHasBeenSet = true; m_usernameAttributes = std::move(value); }
 
     /**
-     * <p>Specifies whether email addresses or phone numbers can be specified as
-     * usernames when a user signs up.</p>
+     * <p>Specifies whether a user can use an email address or phone number as a
+     * username when they sign up.</p>
      */
     inline CreateUserPoolRequest& WithUsernameAttributes(const Aws::Vector<UsernameAttributeType>& value) { SetUsernameAttributes(value); return *this;}
 
     /**
-     * <p>Specifies whether email addresses or phone numbers can be specified as
-     * usernames when a user signs up.</p>
+     * <p>Specifies whether a user can use an email address or phone number as a
+     * username when they sign up.</p>
      */
     inline CreateUserPoolRequest& WithUsernameAttributes(Aws::Vector<UsernameAttributeType>&& value) { SetUsernameAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies whether email addresses or phone numbers can be specified as
-     * usernames when a user signs up.</p>
+     * <p>Specifies whether a user can use an email address or phone number as a
+     * username when they sign up.</p>
      */
     inline CreateUserPoolRequest& AddUsernameAttributes(const UsernameAttributeType& value) { m_usernameAttributesHasBeenSet = true; m_usernameAttributes.push_back(value); return *this; }
 
     /**
-     * <p>Specifies whether email addresses or phone numbers can be specified as
-     * usernames when a user signs up.</p>
+     * <p>Specifies whether a user can use an email address or phone number as a
+     * username when they sign up.</p>
      */
     inline CreateUserPoolRequest& AddUsernameAttributes(UsernameAttributeType&& value) { m_usernameAttributesHasBeenSet = true; m_usernameAttributes.push_back(std::move(value)); return *this; }
 
@@ -904,160 +904,160 @@ namespace Model
 
 
     /**
-     * <p>Used to enable advanced security risk detection. Set the key
+     * <p>Enables advanced security risk detection. Set the key
      * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
      */
     inline const UserPoolAddOnsType& GetUserPoolAddOns() const{ return m_userPoolAddOns; }
 
     /**
-     * <p>Used to enable advanced security risk detection. Set the key
+     * <p>Enables advanced security risk detection. Set the key
      * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
      */
     inline bool UserPoolAddOnsHasBeenSet() const { return m_userPoolAddOnsHasBeenSet; }
 
     /**
-     * <p>Used to enable advanced security risk detection. Set the key
+     * <p>Enables advanced security risk detection. Set the key
      * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
      */
     inline void SetUserPoolAddOns(const UserPoolAddOnsType& value) { m_userPoolAddOnsHasBeenSet = true; m_userPoolAddOns = value; }
 
     /**
-     * <p>Used to enable advanced security risk detection. Set the key
+     * <p>Enables advanced security risk detection. Set the key
      * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
      */
     inline void SetUserPoolAddOns(UserPoolAddOnsType&& value) { m_userPoolAddOnsHasBeenSet = true; m_userPoolAddOns = std::move(value); }
 
     /**
-     * <p>Used to enable advanced security risk detection. Set the key
+     * <p>Enables advanced security risk detection. Set the key
      * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
      */
     inline CreateUserPoolRequest& WithUserPoolAddOns(const UserPoolAddOnsType& value) { SetUserPoolAddOns(value); return *this;}
 
     /**
-     * <p>Used to enable advanced security risk detection. Set the key
+     * <p>Enables advanced security risk detection. Set the key
      * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
      */
     inline CreateUserPoolRequest& WithUserPoolAddOns(UserPoolAddOnsType&& value) { SetUserPoolAddOns(std::move(value)); return *this;}
 
 
     /**
-     * <p>You can choose to set case sensitivity on the username input for the selected
-     * sign-in option. For example, when this is set to <code>False</code>, users will
-     * be able to sign in using either "username" or "Username". This configuration is
-     * immutable once it has been set. For more information, see <a
+     * <p>Case sensitivity on the username input for the selected sign-in option. For
+     * example, when case sensitivity is set to <code>False</code>, users can sign in
+     * using either "username" or "Username". This configuration is immutable once it
+     * has been set. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline const UsernameConfigurationType& GetUsernameConfiguration() const{ return m_usernameConfiguration; }
 
     /**
-     * <p>You can choose to set case sensitivity on the username input for the selected
-     * sign-in option. For example, when this is set to <code>False</code>, users will
-     * be able to sign in using either "username" or "Username". This configuration is
-     * immutable once it has been set. For more information, see <a
+     * <p>Case sensitivity on the username input for the selected sign-in option. For
+     * example, when case sensitivity is set to <code>False</code>, users can sign in
+     * using either "username" or "Username". This configuration is immutable once it
+     * has been set. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline bool UsernameConfigurationHasBeenSet() const { return m_usernameConfigurationHasBeenSet; }
 
     /**
-     * <p>You can choose to set case sensitivity on the username input for the selected
-     * sign-in option. For example, when this is set to <code>False</code>, users will
-     * be able to sign in using either "username" or "Username". This configuration is
-     * immutable once it has been set. For more information, see <a
+     * <p>Case sensitivity on the username input for the selected sign-in option. For
+     * example, when case sensitivity is set to <code>False</code>, users can sign in
+     * using either "username" or "Username". This configuration is immutable once it
+     * has been set. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline void SetUsernameConfiguration(const UsernameConfigurationType& value) { m_usernameConfigurationHasBeenSet = true; m_usernameConfiguration = value; }
 
     /**
-     * <p>You can choose to set case sensitivity on the username input for the selected
-     * sign-in option. For example, when this is set to <code>False</code>, users will
-     * be able to sign in using either "username" or "Username". This configuration is
-     * immutable once it has been set. For more information, see <a
+     * <p>Case sensitivity on the username input for the selected sign-in option. For
+     * example, when case sensitivity is set to <code>False</code>, users can sign in
+     * using either "username" or "Username". This configuration is immutable once it
+     * has been set. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline void SetUsernameConfiguration(UsernameConfigurationType&& value) { m_usernameConfigurationHasBeenSet = true; m_usernameConfiguration = std::move(value); }
 
     /**
-     * <p>You can choose to set case sensitivity on the username input for the selected
-     * sign-in option. For example, when this is set to <code>False</code>, users will
-     * be able to sign in using either "username" or "Username". This configuration is
-     * immutable once it has been set. For more information, see <a
+     * <p>Case sensitivity on the username input for the selected sign-in option. For
+     * example, when case sensitivity is set to <code>False</code>, users can sign in
+     * using either "username" or "Username". This configuration is immutable once it
+     * has been set. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline CreateUserPoolRequest& WithUsernameConfiguration(const UsernameConfigurationType& value) { SetUsernameConfiguration(value); return *this;}
 
     /**
-     * <p>You can choose to set case sensitivity on the username input for the selected
-     * sign-in option. For example, when this is set to <code>False</code>, users will
-     * be able to sign in using either "username" or "Username". This configuration is
-     * immutable once it has been set. For more information, see <a
+     * <p>Case sensitivity on the username input for the selected sign-in option. For
+     * example, when case sensitivity is set to <code>False</code>, users can sign in
+     * using either "username" or "Username". This configuration is immutable once it
+     * has been set. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline CreateUserPoolRequest& WithUsernameConfiguration(UsernameConfigurationType&& value) { SetUsernameConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>Use this setting to define which verified available method a user can use to
-     * recover their password when they call <code>ForgotPassword</code>. It allows you
-     * to define a preferred method when a user has more than one method available.
-     * With this setting, SMS does not qualify for a valid password recovery mechanism
-     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
-     * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p>
+     * <p>The available verified method a user can use to recover their password when
+     * they call <code>ForgotPassword</code>. You can use this setting to define a
+     * preferred method when a user has more than one method available. With this
+     * setting, SMS doesn't qualify for a valid password recovery mechanism if the user
+     * also has SMS multi-factor authentication (MFA) activated. In the absence of this
+     * setting, Amazon Cognito uses the legacy behavior to determine the recovery
+     * method where SMS is preferred through email.</p>
      */
     inline const AccountRecoverySettingType& GetAccountRecoverySetting() const{ return m_accountRecoverySetting; }
 
     /**
-     * <p>Use this setting to define which verified available method a user can use to
-     * recover their password when they call <code>ForgotPassword</code>. It allows you
-     * to define a preferred method when a user has more than one method available.
-     * With this setting, SMS does not qualify for a valid password recovery mechanism
-     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
-     * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p>
+     * <p>The available verified method a user can use to recover their password when
+     * they call <code>ForgotPassword</code>. You can use this setting to define a
+     * preferred method when a user has more than one method available. With this
+     * setting, SMS doesn't qualify for a valid password recovery mechanism if the user
+     * also has SMS multi-factor authentication (MFA) activated. In the absence of this
+     * setting, Amazon Cognito uses the legacy behavior to determine the recovery
+     * method where SMS is preferred through email.</p>
      */
     inline bool AccountRecoverySettingHasBeenSet() const { return m_accountRecoverySettingHasBeenSet; }
 
     /**
-     * <p>Use this setting to define which verified available method a user can use to
-     * recover their password when they call <code>ForgotPassword</code>. It allows you
-     * to define a preferred method when a user has more than one method available.
-     * With this setting, SMS does not qualify for a valid password recovery mechanism
-     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
-     * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p>
+     * <p>The available verified method a user can use to recover their password when
+     * they call <code>ForgotPassword</code>. You can use this setting to define a
+     * preferred method when a user has more than one method available. With this
+     * setting, SMS doesn't qualify for a valid password recovery mechanism if the user
+     * also has SMS multi-factor authentication (MFA) activated. In the absence of this
+     * setting, Amazon Cognito uses the legacy behavior to determine the recovery
+     * method where SMS is preferred through email.</p>
      */
     inline void SetAccountRecoverySetting(const AccountRecoverySettingType& value) { m_accountRecoverySettingHasBeenSet = true; m_accountRecoverySetting = value; }
 
     /**
-     * <p>Use this setting to define which verified available method a user can use to
-     * recover their password when they call <code>ForgotPassword</code>. It allows you
-     * to define a preferred method when a user has more than one method available.
-     * With this setting, SMS does not qualify for a valid password recovery mechanism
-     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
-     * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p>
+     * <p>The available verified method a user can use to recover their password when
+     * they call <code>ForgotPassword</code>. You can use this setting to define a
+     * preferred method when a user has more than one method available. With this
+     * setting, SMS doesn't qualify for a valid password recovery mechanism if the user
+     * also has SMS multi-factor authentication (MFA) activated. In the absence of this
+     * setting, Amazon Cognito uses the legacy behavior to determine the recovery
+     * method where SMS is preferred through email.</p>
      */
     inline void SetAccountRecoverySetting(AccountRecoverySettingType&& value) { m_accountRecoverySettingHasBeenSet = true; m_accountRecoverySetting = std::move(value); }
 
     /**
-     * <p>Use this setting to define which verified available method a user can use to
-     * recover their password when they call <code>ForgotPassword</code>. It allows you
-     * to define a preferred method when a user has more than one method available.
-     * With this setting, SMS does not qualify for a valid password recovery mechanism
-     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
-     * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p>
+     * <p>The available verified method a user can use to recover their password when
+     * they call <code>ForgotPassword</code>. You can use this setting to define a
+     * preferred method when a user has more than one method available. With this
+     * setting, SMS doesn't qualify for a valid password recovery mechanism if the user
+     * also has SMS multi-factor authentication (MFA) activated. In the absence of this
+     * setting, Amazon Cognito uses the legacy behavior to determine the recovery
+     * method where SMS is preferred through email.</p>
      */
     inline CreateUserPoolRequest& WithAccountRecoverySetting(const AccountRecoverySettingType& value) { SetAccountRecoverySetting(value); return *this;}
 
     /**
-     * <p>Use this setting to define which verified available method a user can use to
-     * recover their password when they call <code>ForgotPassword</code>. It allows you
-     * to define a preferred method when a user has more than one method available.
-     * With this setting, SMS does not qualify for a valid password recovery mechanism
-     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
-     * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p>
+     * <p>The available verified method a user can use to recover their password when
+     * they call <code>ForgotPassword</code>. You can use this setting to define a
+     * preferred method when a user has more than one method available. With this
+     * setting, SMS doesn't qualify for a valid password recovery mechanism if the user
+     * also has SMS multi-factor authentication (MFA) activated. In the absence of this
+     * setting, Amazon Cognito uses the legacy behavior to determine the recovery
+     * method where SMS is preferred through email.</p>
      */
     inline CreateUserPoolRequest& WithAccountRecoverySetting(AccountRecoverySettingType&& value) { SetAccountRecoverySetting(std::move(value)); return *this;}
 

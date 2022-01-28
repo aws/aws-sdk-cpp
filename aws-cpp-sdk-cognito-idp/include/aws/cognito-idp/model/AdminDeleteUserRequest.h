@@ -80,42 +80,42 @@ namespace Model
 
 
     /**
-     * <p>The user name of the user you wish to delete.</p>
+     * <p>The user name of the user you want to delete.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * <p>The user name of the user you wish to delete.</p>
+     * <p>The user name of the user you want to delete.</p>
      */
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
-     * <p>The user name of the user you wish to delete.</p>
+     * <p>The user name of the user you want to delete.</p>
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * <p>The user name of the user you wish to delete.</p>
+     * <p>The user name of the user you want to delete.</p>
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
-     * <p>The user name of the user you wish to delete.</p>
+     * <p>The user name of the user you want to delete.</p>
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
     /**
-     * <p>The user name of the user you wish to delete.</p>
+     * <p>The user name of the user you want to delete.</p>
      */
     inline AdminDeleteUserRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * <p>The user name of the user you wish to delete.</p>
+     * <p>The user name of the user you want to delete.</p>
      */
     inline AdminDeleteUserRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The user name of the user you wish to delete.</p>
+     * <p>The user name of the user you want to delete.</p>
      */
     inline AdminDeleteUserRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 

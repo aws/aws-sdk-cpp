@@ -20,17 +20,17 @@ namespace Model
 
 ResourceNotFoundException::ResourceNotFoundException() : 
     m_messageHasBeenSet(false),
-    m_referencedByHasBeenSet(false),
     m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_referencedByHasBeenSet(false)
 {
 }
 
 ResourceNotFoundException::ResourceNotFoundException(JsonView jsonValue) : 
     m_messageHasBeenSet(false),
-    m_referencedByHasBeenSet(false),
     m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_referencedByHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -44,6 +44,13 @@ ResourceNotFoundException& ResourceNotFoundException::operator =(JsonView jsonVa
     m_messageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ResourceType"))
+  {
+    m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
+
+    m_resourceTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ReferencedBy"))
   {
     Aws::Map<Aws::String, JsonView> referencedByJsonMap = jsonValue.GetObject("ReferencedBy").GetAllObjects();
@@ -52,13 +59,6 @@ ResourceNotFoundException& ResourceNotFoundException::operator =(JsonView jsonVa
       m_referencedBy[referencedByItem.first] = referencedByItem.second.AsString();
     }
     m_referencedByHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("ResourceType"))
-  {
-    m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
-
-    m_resourceTypeHasBeenSet = true;
   }
 
   return *this;
@@ -74,6 +74,11 @@ JsonValue ResourceNotFoundException::Jsonize() const
 
   }
 
+  if(m_resourceTypeHasBeenSet)
+  {
+   payload.WithString("ResourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
+  }
+
   if(m_referencedByHasBeenSet)
   {
    JsonValue referencedByJsonMap;
@@ -83,11 +88,6 @@ JsonValue ResourceNotFoundException::Jsonize() const
    }
    payload.WithObject("ReferencedBy", std::move(referencedByJsonMap));
 
-  }
-
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("ResourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
   }
 
   return payload;

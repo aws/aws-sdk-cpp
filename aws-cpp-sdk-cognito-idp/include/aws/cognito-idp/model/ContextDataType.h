@@ -123,42 +123,42 @@ namespace Model
 
 
     /**
-     * <p>Your server path where this API is invoked. </p>
+     * <p>Your server path where this API is invoked.</p>
      */
     inline const Aws::String& GetServerPath() const{ return m_serverPath; }
 
     /**
-     * <p>Your server path where this API is invoked. </p>
+     * <p>Your server path where this API is invoked.</p>
      */
     inline bool ServerPathHasBeenSet() const { return m_serverPathHasBeenSet; }
 
     /**
-     * <p>Your server path where this API is invoked. </p>
+     * <p>Your server path where this API is invoked.</p>
      */
     inline void SetServerPath(const Aws::String& value) { m_serverPathHasBeenSet = true; m_serverPath = value; }
 
     /**
-     * <p>Your server path where this API is invoked. </p>
+     * <p>Your server path where this API is invoked.</p>
      */
     inline void SetServerPath(Aws::String&& value) { m_serverPathHasBeenSet = true; m_serverPath = std::move(value); }
 
     /**
-     * <p>Your server path where this API is invoked. </p>
+     * <p>Your server path where this API is invoked.</p>
      */
     inline void SetServerPath(const char* value) { m_serverPathHasBeenSet = true; m_serverPath.assign(value); }
 
     /**
-     * <p>Your server path where this API is invoked. </p>
+     * <p>Your server path where this API is invoked.</p>
      */
     inline ContextDataType& WithServerPath(const Aws::String& value) { SetServerPath(value); return *this;}
 
     /**
-     * <p>Your server path where this API is invoked. </p>
+     * <p>Your server path where this API is invoked.</p>
      */
     inline ContextDataType& WithServerPath(Aws::String&& value) { SetServerPath(std::move(value)); return *this;}
 
     /**
-     * <p>Your server path where this API is invoked. </p>
+     * <p>Your server path where this API is invoked.</p>
      */
     inline ContextDataType& WithServerPath(const char* value) { SetServerPath(value); return *this;}
 
@@ -205,49 +205,49 @@ namespace Model
 
 
     /**
-     * <p>Encoded data containing device fingerprinting details, collected using the
+     * <p>Encoded data containing device fingerprinting details collected using the
      * Amazon Cognito context data collection library.</p>
      */
     inline const Aws::String& GetEncodedData() const{ return m_encodedData; }
 
     /**
-     * <p>Encoded data containing device fingerprinting details, collected using the
+     * <p>Encoded data containing device fingerprinting details collected using the
      * Amazon Cognito context data collection library.</p>
      */
     inline bool EncodedDataHasBeenSet() const { return m_encodedDataHasBeenSet; }
 
     /**
-     * <p>Encoded data containing device fingerprinting details, collected using the
+     * <p>Encoded data containing device fingerprinting details collected using the
      * Amazon Cognito context data collection library.</p>
      */
     inline void SetEncodedData(const Aws::String& value) { m_encodedDataHasBeenSet = true; m_encodedData = value; }
 
     /**
-     * <p>Encoded data containing device fingerprinting details, collected using the
+     * <p>Encoded data containing device fingerprinting details collected using the
      * Amazon Cognito context data collection library.</p>
      */
     inline void SetEncodedData(Aws::String&& value) { m_encodedDataHasBeenSet = true; m_encodedData = std::move(value); }
 
     /**
-     * <p>Encoded data containing device fingerprinting details, collected using the
+     * <p>Encoded data containing device fingerprinting details collected using the
      * Amazon Cognito context data collection library.</p>
      */
     inline void SetEncodedData(const char* value) { m_encodedDataHasBeenSet = true; m_encodedData.assign(value); }
 
     /**
-     * <p>Encoded data containing device fingerprinting details, collected using the
+     * <p>Encoded data containing device fingerprinting details collected using the
      * Amazon Cognito context data collection library.</p>
      */
     inline ContextDataType& WithEncodedData(const Aws::String& value) { SetEncodedData(value); return *this;}
 
     /**
-     * <p>Encoded data containing device fingerprinting details, collected using the
+     * <p>Encoded data containing device fingerprinting details collected using the
      * Amazon Cognito context data collection library.</p>
      */
     inline ContextDataType& WithEncodedData(Aws::String&& value) { SetEncodedData(std::move(value)); return *this;}
 
     /**
-     * <p>Encoded data containing device fingerprinting details, collected using the
+     * <p>Encoded data containing device fingerprinting details collected using the
      * Amazon Cognito context data collection library.</p>
      */
     inline ContextDataType& WithEncodedData(const char* value) { SetEncodedData(value); return *this;}

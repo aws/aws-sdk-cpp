@@ -38,57 +38,65 @@ namespace Model
 
     /**
      * <p>The name of the data catalog to update. The catalog name must be unique for
-     * the Amazon Web Services account and can use a maximum of 128 alphanumeric,
-     * underscore, at sign, or hyphen characters.</p>
+     * the Amazon Web Services account and can use a maximum of 127 alphanumeric,
+     * underscore, at sign, or hyphen characters. The remainder of the length
+     * constraint of 256 is reserved for use by Athena.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>The name of the data catalog to update. The catalog name must be unique for
-     * the Amazon Web Services account and can use a maximum of 128 alphanumeric,
-     * underscore, at sign, or hyphen characters.</p>
+     * the Amazon Web Services account and can use a maximum of 127 alphanumeric,
+     * underscore, at sign, or hyphen characters. The remainder of the length
+     * constraint of 256 is reserved for use by Athena.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the data catalog to update. The catalog name must be unique for
-     * the Amazon Web Services account and can use a maximum of 128 alphanumeric,
-     * underscore, at sign, or hyphen characters.</p>
+     * the Amazon Web Services account and can use a maximum of 127 alphanumeric,
+     * underscore, at sign, or hyphen characters. The remainder of the length
+     * constraint of 256 is reserved for use by Athena.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The name of the data catalog to update. The catalog name must be unique for
-     * the Amazon Web Services account and can use a maximum of 128 alphanumeric,
-     * underscore, at sign, or hyphen characters.</p>
+     * the Amazon Web Services account and can use a maximum of 127 alphanumeric,
+     * underscore, at sign, or hyphen characters. The remainder of the length
+     * constraint of 256 is reserved for use by Athena.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the data catalog to update. The catalog name must be unique for
-     * the Amazon Web Services account and can use a maximum of 128 alphanumeric,
-     * underscore, at sign, or hyphen characters.</p>
+     * the Amazon Web Services account and can use a maximum of 127 alphanumeric,
+     * underscore, at sign, or hyphen characters. The remainder of the length
+     * constraint of 256 is reserved for use by Athena.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>The name of the data catalog to update. The catalog name must be unique for
-     * the Amazon Web Services account and can use a maximum of 128 alphanumeric,
-     * underscore, at sign, or hyphen characters.</p>
+     * the Amazon Web Services account and can use a maximum of 127 alphanumeric,
+     * underscore, at sign, or hyphen characters. The remainder of the length
+     * constraint of 256 is reserved for use by Athena.</p>
      */
     inline UpdateDataCatalogRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>The name of the data catalog to update. The catalog name must be unique for
-     * the Amazon Web Services account and can use a maximum of 128 alphanumeric,
-     * underscore, at sign, or hyphen characters.</p>
+     * the Amazon Web Services account and can use a maximum of 127 alphanumeric,
+     * underscore, at sign, or hyphen characters. The remainder of the length
+     * constraint of 256 is reserved for use by Athena.</p>
      */
     inline UpdateDataCatalogRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the data catalog to update. The catalog name must be unique for
-     * the Amazon Web Services account and can use a maximum of 128 alphanumeric,
-     * underscore, at sign, or hyphen characters.</p>
+     * the Amazon Web Services account and can use a maximum of 127 alphanumeric,
+     * underscore, at sign, or hyphen characters. The remainder of the length
+     * constraint of 256 is reserved for use by Athena.</p>
      */
     inline UpdateDataCatalogRequest& WithName(const char* value) { SetName(value); return *this;}
 
