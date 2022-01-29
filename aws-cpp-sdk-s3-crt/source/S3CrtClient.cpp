@@ -484,8 +484,7 @@ static void GetObjectRequestShutdownCallback(void *user_data)
   auto *userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);
   // call user callback and release user_data
   S3Crt::Model::GetObjectOutcome outcome(userData->s3CrtClient->GenerateStreamOutcome(userData->response));
-  auto handler = static_cast<const GetObjectResponseReceivedHandler*>(userData->userCallback);
-  (*handler)(userData->s3CrtClient, *(reinterpret_cast<const GetObjectRequest*>(userData->originalRequest)), std::move(outcome), userData->userCallbackContext);
+  userData->getResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const GetObjectRequest*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
 
   Aws::Delete(userData);
 }
@@ -518,10 +517,9 @@ void S3CrtClient::GetObjectAsync(const GetObjectRequest& request, const GetObjec
   aws_s3_meta_request_options options;
   AWS_ZERO_STRUCT(options);
 
-  userData->userCallback = static_cast<const void*>(&handler);
-  userData->userCallbackContext = handlerContext;
-
-  InitCommonCrtRequestOption(userData, &options, &request, endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_GET);
+  userData->getResponseHandler = handler;
+  userData->asyncCallerContext = context;
+  InitCommonCrtRequestOption(userData, &options, &request, uri, Aws::Http::HttpMethod::HTTP_GET);
   options.shutdown_callback = GetObjectRequestShutdownCallback;
   options.type = AWS_S3_META_REQUEST_TYPE_GET_OBJECT;
   struct aws_signing_config_aws signing_config_override = m_s3CrtSigningConfig;
@@ -566,8 +564,7 @@ static void PutObjectRequestShutdownCallback(void *user_data)
   auto *userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);
   // call user callback and release user_data
   S3Crt::Model::PutObjectOutcome outcome(userData->s3CrtClient->GenerateXmlOutcome(userData->response));
-  auto handler = static_cast<const PutObjectResponseReceivedHandler*>(userData->userCallback);
-  (*handler)(userData->s3CrtClient, *(reinterpret_cast<const PutObjectRequest*>(userData->originalRequest)), std::move(outcome), userData->userCallbackContext);
+  userData->putResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const PutObjectRequest*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
 
   Aws::Delete(userData);
 }
@@ -600,10 +597,16 @@ void S3CrtClient::PutObjectAsync(const PutObjectRequest& request, const PutObjec
   aws_s3_meta_request_options options;
   AWS_ZERO_STRUCT(options);
 
+<<<<<<< HEAD
   userData->userCallback = static_cast<const void*>(&handler);
   userData->userCallbackContext = handlerContext;
 
   InitCommonCrtRequestOption(userData, &options, &request, endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_PUT);
+=======
+  userData->putResponseHandler = handler;
+  userData->asyncCallerContext = context;
+  InitCommonCrtRequestOption(userData, &options, &request, uri, Aws::Http::HttpMethod::HTTP_PUT);
+>>>>>>> bc51fa35ec (Resolves #1655)
   options.shutdown_callback = PutObjectRequestShutdownCallback;
   options.type = AWS_S3_META_REQUEST_TYPE_PUT_OBJECT;
   struct aws_signing_config_aws signing_config_override = m_s3CrtSigningConfig;
