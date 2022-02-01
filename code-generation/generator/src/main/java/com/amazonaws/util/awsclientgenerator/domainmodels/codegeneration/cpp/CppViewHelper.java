@@ -260,9 +260,14 @@ public class CppViewHelper {
             }
             if(next.isList())
             {
-                if(!visited.contains(next.getListMember().getShape().getName()))
-                {
-                    toVisit.add(next.getListMember().getShape());
+                Shape shapeInList = next.getListMember().getShape();
+                if(!visited.contains(shapeInList.getName())) {
+                    toVisit.add(shapeInList);
+                }
+                if (!shapeInList.isPrimitive() && shapeInList.isMutuallyReferencedWith(shape)) {
+                    // C++ requires both forward declaration AND include in the case of mutual reference
+                    // and if compile-time member object info required
+                    headers.add(formatModelIncludeName(projectName, shapeInList));
                 }
             }
             if(!next.isPrimitive()) {

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
 #include <aws/timestream-query/model/ScalarType.h>
+#include <aws/timestream-query/model/ColumnInfo.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 #include <memory>
