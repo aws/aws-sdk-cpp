@@ -15,17 +15,21 @@
 #include <aws/appflow/model/CreateFlowResult.h>
 #include <aws/appflow/model/DeleteConnectorProfileResult.h>
 #include <aws/appflow/model/DeleteFlowResult.h>
+#include <aws/appflow/model/DescribeConnectorResult.h>
 #include <aws/appflow/model/DescribeConnectorEntityResult.h>
 #include <aws/appflow/model/DescribeConnectorProfilesResult.h>
 #include <aws/appflow/model/DescribeConnectorsResult.h>
 #include <aws/appflow/model/DescribeFlowResult.h>
 #include <aws/appflow/model/DescribeFlowExecutionRecordsResult.h>
 #include <aws/appflow/model/ListConnectorEntitiesResult.h>
+#include <aws/appflow/model/ListConnectorsResult.h>
 #include <aws/appflow/model/ListFlowsResult.h>
 #include <aws/appflow/model/ListTagsForResourceResult.h>
+#include <aws/appflow/model/RegisterConnectorResult.h>
 #include <aws/appflow/model/StartFlowResult.h>
 #include <aws/appflow/model/StopFlowResult.h>
 #include <aws/appflow/model/TagResourceResult.h>
+#include <aws/appflow/model/UnregisterConnectorResult.h>
 #include <aws/appflow/model/UntagResourceResult.h>
 #include <aws/appflow/model/UpdateConnectorProfileResult.h>
 #include <aws/appflow/model/UpdateFlowResult.h>
@@ -72,17 +76,21 @@ namespace Model
         class CreateFlowRequest;
         class DeleteConnectorProfileRequest;
         class DeleteFlowRequest;
+        class DescribeConnectorRequest;
         class DescribeConnectorEntityRequest;
         class DescribeConnectorProfilesRequest;
         class DescribeConnectorsRequest;
         class DescribeFlowRequest;
         class DescribeFlowExecutionRecordsRequest;
         class ListConnectorEntitiesRequest;
+        class ListConnectorsRequest;
         class ListFlowsRequest;
         class ListTagsForResourceRequest;
+        class RegisterConnectorRequest;
         class StartFlowRequest;
         class StopFlowRequest;
         class TagResourceRequest;
+        class UnregisterConnectorRequest;
         class UntagResourceRequest;
         class UpdateConnectorProfileRequest;
         class UpdateFlowRequest;
@@ -91,17 +99,21 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateFlowResult, AppflowError> CreateFlowOutcome;
         typedef Aws::Utils::Outcome<DeleteConnectorProfileResult, AppflowError> DeleteConnectorProfileOutcome;
         typedef Aws::Utils::Outcome<DeleteFlowResult, AppflowError> DeleteFlowOutcome;
+        typedef Aws::Utils::Outcome<DescribeConnectorResult, AppflowError> DescribeConnectorOutcome;
         typedef Aws::Utils::Outcome<DescribeConnectorEntityResult, AppflowError> DescribeConnectorEntityOutcome;
         typedef Aws::Utils::Outcome<DescribeConnectorProfilesResult, AppflowError> DescribeConnectorProfilesOutcome;
         typedef Aws::Utils::Outcome<DescribeConnectorsResult, AppflowError> DescribeConnectorsOutcome;
         typedef Aws::Utils::Outcome<DescribeFlowResult, AppflowError> DescribeFlowOutcome;
         typedef Aws::Utils::Outcome<DescribeFlowExecutionRecordsResult, AppflowError> DescribeFlowExecutionRecordsOutcome;
         typedef Aws::Utils::Outcome<ListConnectorEntitiesResult, AppflowError> ListConnectorEntitiesOutcome;
+        typedef Aws::Utils::Outcome<ListConnectorsResult, AppflowError> ListConnectorsOutcome;
         typedef Aws::Utils::Outcome<ListFlowsResult, AppflowError> ListFlowsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, AppflowError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<RegisterConnectorResult, AppflowError> RegisterConnectorOutcome;
         typedef Aws::Utils::Outcome<StartFlowResult, AppflowError> StartFlowOutcome;
         typedef Aws::Utils::Outcome<StopFlowResult, AppflowError> StopFlowOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, AppflowError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UnregisterConnectorResult, AppflowError> UnregisterConnectorOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, AppflowError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateConnectorProfileResult, AppflowError> UpdateConnectorProfileOutcome;
         typedef Aws::Utils::Outcome<UpdateFlowResult, AppflowError> UpdateFlowOutcome;
@@ -110,17 +122,21 @@ namespace Model
         typedef std::future<CreateFlowOutcome> CreateFlowOutcomeCallable;
         typedef std::future<DeleteConnectorProfileOutcome> DeleteConnectorProfileOutcomeCallable;
         typedef std::future<DeleteFlowOutcome> DeleteFlowOutcomeCallable;
+        typedef std::future<DescribeConnectorOutcome> DescribeConnectorOutcomeCallable;
         typedef std::future<DescribeConnectorEntityOutcome> DescribeConnectorEntityOutcomeCallable;
         typedef std::future<DescribeConnectorProfilesOutcome> DescribeConnectorProfilesOutcomeCallable;
         typedef std::future<DescribeConnectorsOutcome> DescribeConnectorsOutcomeCallable;
         typedef std::future<DescribeFlowOutcome> DescribeFlowOutcomeCallable;
         typedef std::future<DescribeFlowExecutionRecordsOutcome> DescribeFlowExecutionRecordsOutcomeCallable;
         typedef std::future<ListConnectorEntitiesOutcome> ListConnectorEntitiesOutcomeCallable;
+        typedef std::future<ListConnectorsOutcome> ListConnectorsOutcomeCallable;
         typedef std::future<ListFlowsOutcome> ListFlowsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<RegisterConnectorOutcome> RegisterConnectorOutcomeCallable;
         typedef std::future<StartFlowOutcome> StartFlowOutcomeCallable;
         typedef std::future<StopFlowOutcome> StopFlowOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UnregisterConnectorOutcome> UnregisterConnectorOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateConnectorProfileOutcome> UpdateConnectorProfileOutcomeCallable;
         typedef std::future<UpdateFlowOutcome> UpdateFlowOutcomeCallable;
@@ -132,17 +148,21 @@ namespace Model
     typedef std::function<void(const AppflowClient*, const Model::CreateFlowRequest&, const Model::CreateFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFlowResponseReceivedHandler;
     typedef std::function<void(const AppflowClient*, const Model::DeleteConnectorProfileRequest&, const Model::DeleteConnectorProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConnectorProfileResponseReceivedHandler;
     typedef std::function<void(const AppflowClient*, const Model::DeleteFlowRequest&, const Model::DeleteFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFlowResponseReceivedHandler;
+    typedef std::function<void(const AppflowClient*, const Model::DescribeConnectorRequest&, const Model::DescribeConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConnectorResponseReceivedHandler;
     typedef std::function<void(const AppflowClient*, const Model::DescribeConnectorEntityRequest&, const Model::DescribeConnectorEntityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConnectorEntityResponseReceivedHandler;
     typedef std::function<void(const AppflowClient*, const Model::DescribeConnectorProfilesRequest&, const Model::DescribeConnectorProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConnectorProfilesResponseReceivedHandler;
     typedef std::function<void(const AppflowClient*, const Model::DescribeConnectorsRequest&, const Model::DescribeConnectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConnectorsResponseReceivedHandler;
     typedef std::function<void(const AppflowClient*, const Model::DescribeFlowRequest&, const Model::DescribeFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFlowResponseReceivedHandler;
     typedef std::function<void(const AppflowClient*, const Model::DescribeFlowExecutionRecordsRequest&, const Model::DescribeFlowExecutionRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFlowExecutionRecordsResponseReceivedHandler;
     typedef std::function<void(const AppflowClient*, const Model::ListConnectorEntitiesRequest&, const Model::ListConnectorEntitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConnectorEntitiesResponseReceivedHandler;
+    typedef std::function<void(const AppflowClient*, const Model::ListConnectorsRequest&, const Model::ListConnectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConnectorsResponseReceivedHandler;
     typedef std::function<void(const AppflowClient*, const Model::ListFlowsRequest&, const Model::ListFlowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFlowsResponseReceivedHandler;
     typedef std::function<void(const AppflowClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const AppflowClient*, const Model::RegisterConnectorRequest&, const Model::RegisterConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterConnectorResponseReceivedHandler;
     typedef std::function<void(const AppflowClient*, const Model::StartFlowRequest&, const Model::StartFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartFlowResponseReceivedHandler;
     typedef std::function<void(const AppflowClient*, const Model::StopFlowRequest&, const Model::StopFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopFlowResponseReceivedHandler;
     typedef std::function<void(const AppflowClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const AppflowClient*, const Model::UnregisterConnectorRequest&, const Model::UnregisterConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnregisterConnectorResponseReceivedHandler;
     typedef std::function<void(const AppflowClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const AppflowClient*, const Model::UpdateConnectorProfileRequest&, const Model::UpdateConnectorProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConnectorProfileResponseReceivedHandler;
     typedef std::function<void(const AppflowClient*, const Model::UpdateFlowRequest&, const Model::UpdateFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFlowResponseReceivedHandler;
@@ -340,6 +360,37 @@ namespace Model
         virtual void DeleteFlowAsync(const Model::DeleteFlowRequest& request, const DeleteFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes the given custom connector registered in your Amazon Web Services
+         * account. This API can be used for custom connectors that are registered in your
+         * account and also for Amazon authored connectors.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DescribeConnector">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeConnectorOutcome DescribeConnector(const Model::DescribeConnectorRequest& request) const;
+
+        /**
+         * <p>Describes the given custom connector registered in your Amazon Web Services
+         * account. This API can be used for custom connectors that are registered in your
+         * account and also for Amazon authored connectors.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DescribeConnector">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeConnectorOutcomeCallable DescribeConnectorCallable(const Model::DescribeConnectorRequest& request) const;
+
+        /**
+         * <p>Describes the given custom connector registered in your Amazon Web Services
+         * account. This API can be used for custom connectors that are registered in your
+         * account and also for Amazon authored connectors.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DescribeConnector">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeConnectorAsync(const Model::DescribeConnectorRequest& request, const DescribeConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Provides details regarding the entity used with the connector, with a
          * description of the data model for each entity. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DescribeConnectorEntity">AWS
@@ -535,6 +586,40 @@ namespace Model
         virtual void ListConnectorEntitiesAsync(const Model::ListConnectorEntitiesRequest& request, const ListConnectorEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the list of all registered custom connectors in your Amazon Web
+         * Services account. This API lists only custom connectors registered in this
+         * account, not the Amazon Web Services authored connectors. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ListConnectors">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListConnectorsOutcome ListConnectors(const Model::ListConnectorsRequest& request) const;
+
+        /**
+         * <p>Returns the list of all registered custom connectors in your Amazon Web
+         * Services account. This API lists only custom connectors registered in this
+         * account, not the Amazon Web Services authored connectors. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ListConnectors">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListConnectorsOutcomeCallable ListConnectorsCallable(const Model::ListConnectorsRequest& request) const;
+
+        /**
+         * <p>Returns the list of all registered custom connectors in your Amazon Web
+         * Services account. This API lists only custom connectors registered in this
+         * account, not the Amazon Web Services authored connectors. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ListConnectors">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListConnectorsAsync(const Model::ListConnectorsRequest& request, const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Lists all of the flows associated with your account. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ListFlows">AWS
@@ -589,6 +674,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Registers a new connector with your Amazon Web Services account. Before you
+         * can register the connector, you must deploy lambda in your
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/RegisterConnector">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RegisterConnectorOutcome RegisterConnector(const Model::RegisterConnectorRequest& request) const;
+
+        /**
+         * <p>Registers a new connector with your Amazon Web Services account. Before you
+         * can register the connector, you must deploy lambda in your
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/RegisterConnector">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RegisterConnectorOutcomeCallable RegisterConnectorCallable(const Model::RegisterConnectorRequest& request) const;
+
+        /**
+         * <p>Registers a new connector with your Amazon Web Services account. Before you
+         * can register the connector, you must deploy lambda in your
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/RegisterConnector">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RegisterConnectorAsync(const Model::RegisterConnectorRequest& request, const RegisterConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Activates an existing flow. For on-demand flows, this operation runs the
@@ -681,6 +797,34 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Unregisters the custom connector registered in your account that matches the
+         * connectorLabel provided in the request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/UnregisterConnector">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UnregisterConnectorOutcome UnregisterConnector(const Model::UnregisterConnectorRequest& request) const;
+
+        /**
+         * <p>Unregisters the custom connector registered in your account that matches the
+         * connectorLabel provided in the request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/UnregisterConnector">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UnregisterConnectorOutcomeCallable UnregisterConnectorCallable(const Model::UnregisterConnectorRequest& request) const;
+
+        /**
+         * <p>Unregisters the custom connector registered in your account that matches the
+         * connectorLabel provided in the request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/UnregisterConnector">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UnregisterConnectorAsync(const Model::UnregisterConnectorRequest& request, const UnregisterConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Removes a tag from the specified flow. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/UntagResource">AWS
          * API Reference</a></p>
@@ -766,17 +910,21 @@ namespace Model
         void CreateFlowAsyncHelper(const Model::CreateFlowRequest& request, const CreateFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConnectorProfileAsyncHelper(const Model::DeleteConnectorProfileRequest& request, const DeleteConnectorProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFlowAsyncHelper(const Model::DeleteFlowRequest& request, const DeleteFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeConnectorAsyncHelper(const Model::DescribeConnectorRequest& request, const DescribeConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeConnectorEntityAsyncHelper(const Model::DescribeConnectorEntityRequest& request, const DescribeConnectorEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeConnectorProfilesAsyncHelper(const Model::DescribeConnectorProfilesRequest& request, const DescribeConnectorProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeConnectorsAsyncHelper(const Model::DescribeConnectorsRequest& request, const DescribeConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFlowAsyncHelper(const Model::DescribeFlowRequest& request, const DescribeFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFlowExecutionRecordsAsyncHelper(const Model::DescribeFlowExecutionRecordsRequest& request, const DescribeFlowExecutionRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListConnectorEntitiesAsyncHelper(const Model::ListConnectorEntitiesRequest& request, const ListConnectorEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListConnectorsAsyncHelper(const Model::ListConnectorsRequest& request, const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFlowsAsyncHelper(const Model::ListFlowsRequest& request, const ListFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RegisterConnectorAsyncHelper(const Model::RegisterConnectorRequest& request, const RegisterConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartFlowAsyncHelper(const Model::StartFlowRequest& request, const StartFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopFlowAsyncHelper(const Model::StopFlowRequest& request, const StopFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UnregisterConnectorAsyncHelper(const Model::UnregisterConnectorRequest& request, const UnregisterConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateConnectorProfileAsyncHelper(const Model::UpdateConnectorProfileRequest& request, const UpdateConnectorProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFlowAsyncHelper(const Model::UpdateFlowRequest& request, const UpdateFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

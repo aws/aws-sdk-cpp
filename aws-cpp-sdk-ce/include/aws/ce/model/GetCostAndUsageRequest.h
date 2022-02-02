@@ -156,12 +156,12 @@ namespace Model
      * nest <code>Expression</code> objects to define any combination of dimension
      * filters. For more information, see <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
-     * </p> <p>The default values are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for
-     * <code>Dimensions</code> are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>.</p> <p>Valid values for <code>MatchOptions</code>
-     * for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
-     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
+     * </p> <p>Valid values for <code>MatchOptions</code> for
+     * <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
+     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p> <p>The default values
+     * are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid values for
+     * <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code>
+     * and <code>CASE_SENSITIVE</code>.</p>
      */
     inline const Expression& GetFilter() const{ return m_filter; }
 
@@ -172,12 +172,12 @@ namespace Model
      * nest <code>Expression</code> objects to define any combination of dimension
      * filters. For more information, see <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
-     * </p> <p>The default values are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for
-     * <code>Dimensions</code> are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>.</p> <p>Valid values for <code>MatchOptions</code>
-     * for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
-     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
+     * </p> <p>Valid values for <code>MatchOptions</code> for
+     * <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
+     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p> <p>The default values
+     * are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid values for
+     * <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code>
+     * and <code>CASE_SENSITIVE</code>.</p>
      */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
@@ -188,12 +188,12 @@ namespace Model
      * nest <code>Expression</code> objects to define any combination of dimension
      * filters. For more information, see <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
-     * </p> <p>The default values are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for
-     * <code>Dimensions</code> are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>.</p> <p>Valid values for <code>MatchOptions</code>
-     * for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
-     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
+     * </p> <p>Valid values for <code>MatchOptions</code> for
+     * <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
+     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p> <p>The default values
+     * are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid values for
+     * <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code>
+     * and <code>CASE_SENSITIVE</code>.</p>
      */
     inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
 
@@ -204,12 +204,12 @@ namespace Model
      * nest <code>Expression</code> objects to define any combination of dimension
      * filters. For more information, see <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
-     * </p> <p>The default values are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for
-     * <code>Dimensions</code> are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>.</p> <p>Valid values for <code>MatchOptions</code>
-     * for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
-     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
+     * </p> <p>Valid values for <code>MatchOptions</code> for
+     * <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
+     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p> <p>The default values
+     * are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid values for
+     * <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code>
+     * and <code>CASE_SENSITIVE</code>.</p>
      */
     inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
@@ -220,12 +220,12 @@ namespace Model
      * nest <code>Expression</code> objects to define any combination of dimension
      * filters. For more information, see <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
-     * </p> <p>The default values are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for
-     * <code>Dimensions</code> are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>.</p> <p>Valid values for <code>MatchOptions</code>
-     * for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
-     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
+     * </p> <p>Valid values for <code>MatchOptions</code> for
+     * <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
+     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p> <p>The default values
+     * are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid values for
+     * <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code>
+     * and <code>CASE_SENSITIVE</code>.</p>
      */
     inline GetCostAndUsageRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
 
@@ -236,12 +236,12 @@ namespace Model
      * nest <code>Expression</code> objects to define any combination of dimension
      * filters. For more information, see <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
-     * </p> <p>The default values are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for
-     * <code>Dimensions</code> are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>.</p> <p>Valid values for <code>MatchOptions</code>
-     * for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
-     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
+     * </p> <p>Valid values for <code>MatchOptions</code> for
+     * <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
+     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p> <p>The default values
+     * are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid values for
+     * <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code>
+     * and <code>CASE_SENSITIVE</code>.</p>
      */
     inline GetCostAndUsageRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
 
@@ -432,11 +432,11 @@ namespace Model
      * either dimensions, tag keys, cost categories, or any two group by types.</p>
      * <p>Valid values for the <code>DIMENSION</code> type are <code>AZ</code>,
      * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
-     * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
-     * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TENANCY</code>,
-     * <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p> <p>When you group by
-     * the <code>TAG</code> type and include a valid tag key, you get all tag values,
-     * including empty strings.</p>
+     * <code>INVOICING_ENTITY</code>, <code>LINKED_ACCOUNT</code>,
+     * <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>,
+     * <code>SERVICE</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and
+     * <code>USAGE_TYPE</code>.</p> <p>When you group by the <code>TAG</code> type and
+     * include a valid tag key, you get all tag values, including empty strings.</p>
      */
     inline const Aws::Vector<GroupDefinition>& GetGroupBy() const{ return m_groupBy; }
 
@@ -445,11 +445,11 @@ namespace Model
      * either dimensions, tag keys, cost categories, or any two group by types.</p>
      * <p>Valid values for the <code>DIMENSION</code> type are <code>AZ</code>,
      * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
-     * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
-     * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TENANCY</code>,
-     * <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p> <p>When you group by
-     * the <code>TAG</code> type and include a valid tag key, you get all tag values,
-     * including empty strings.</p>
+     * <code>INVOICING_ENTITY</code>, <code>LINKED_ACCOUNT</code>,
+     * <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>,
+     * <code>SERVICE</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and
+     * <code>USAGE_TYPE</code>.</p> <p>When you group by the <code>TAG</code> type and
+     * include a valid tag key, you get all tag values, including empty strings.</p>
      */
     inline bool GroupByHasBeenSet() const { return m_groupByHasBeenSet; }
 
@@ -458,11 +458,11 @@ namespace Model
      * either dimensions, tag keys, cost categories, or any two group by types.</p>
      * <p>Valid values for the <code>DIMENSION</code> type are <code>AZ</code>,
      * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
-     * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
-     * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TENANCY</code>,
-     * <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p> <p>When you group by
-     * the <code>TAG</code> type and include a valid tag key, you get all tag values,
-     * including empty strings.</p>
+     * <code>INVOICING_ENTITY</code>, <code>LINKED_ACCOUNT</code>,
+     * <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>,
+     * <code>SERVICE</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and
+     * <code>USAGE_TYPE</code>.</p> <p>When you group by the <code>TAG</code> type and
+     * include a valid tag key, you get all tag values, including empty strings.</p>
      */
     inline void SetGroupBy(const Aws::Vector<GroupDefinition>& value) { m_groupByHasBeenSet = true; m_groupBy = value; }
 
@@ -471,11 +471,11 @@ namespace Model
      * either dimensions, tag keys, cost categories, or any two group by types.</p>
      * <p>Valid values for the <code>DIMENSION</code> type are <code>AZ</code>,
      * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
-     * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
-     * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TENANCY</code>,
-     * <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p> <p>When you group by
-     * the <code>TAG</code> type and include a valid tag key, you get all tag values,
-     * including empty strings.</p>
+     * <code>INVOICING_ENTITY</code>, <code>LINKED_ACCOUNT</code>,
+     * <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>,
+     * <code>SERVICE</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and
+     * <code>USAGE_TYPE</code>.</p> <p>When you group by the <code>TAG</code> type and
+     * include a valid tag key, you get all tag values, including empty strings.</p>
      */
     inline void SetGroupBy(Aws::Vector<GroupDefinition>&& value) { m_groupByHasBeenSet = true; m_groupBy = std::move(value); }
 
@@ -484,11 +484,11 @@ namespace Model
      * either dimensions, tag keys, cost categories, or any two group by types.</p>
      * <p>Valid values for the <code>DIMENSION</code> type are <code>AZ</code>,
      * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
-     * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
-     * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TENANCY</code>,
-     * <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p> <p>When you group by
-     * the <code>TAG</code> type and include a valid tag key, you get all tag values,
-     * including empty strings.</p>
+     * <code>INVOICING_ENTITY</code>, <code>LINKED_ACCOUNT</code>,
+     * <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>,
+     * <code>SERVICE</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and
+     * <code>USAGE_TYPE</code>.</p> <p>When you group by the <code>TAG</code> type and
+     * include a valid tag key, you get all tag values, including empty strings.</p>
      */
     inline GetCostAndUsageRequest& WithGroupBy(const Aws::Vector<GroupDefinition>& value) { SetGroupBy(value); return *this;}
 
@@ -497,11 +497,11 @@ namespace Model
      * either dimensions, tag keys, cost categories, or any two group by types.</p>
      * <p>Valid values for the <code>DIMENSION</code> type are <code>AZ</code>,
      * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
-     * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
-     * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TENANCY</code>,
-     * <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p> <p>When you group by
-     * the <code>TAG</code> type and include a valid tag key, you get all tag values,
-     * including empty strings.</p>
+     * <code>INVOICING_ENTITY</code>, <code>LINKED_ACCOUNT</code>,
+     * <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>,
+     * <code>SERVICE</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and
+     * <code>USAGE_TYPE</code>.</p> <p>When you group by the <code>TAG</code> type and
+     * include a valid tag key, you get all tag values, including empty strings.</p>
      */
     inline GetCostAndUsageRequest& WithGroupBy(Aws::Vector<GroupDefinition>&& value) { SetGroupBy(std::move(value)); return *this;}
 
@@ -510,11 +510,11 @@ namespace Model
      * either dimensions, tag keys, cost categories, or any two group by types.</p>
      * <p>Valid values for the <code>DIMENSION</code> type are <code>AZ</code>,
      * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
-     * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
-     * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TENANCY</code>,
-     * <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p> <p>When you group by
-     * the <code>TAG</code> type and include a valid tag key, you get all tag values,
-     * including empty strings.</p>
+     * <code>INVOICING_ENTITY</code>, <code>LINKED_ACCOUNT</code>,
+     * <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>,
+     * <code>SERVICE</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and
+     * <code>USAGE_TYPE</code>.</p> <p>When you group by the <code>TAG</code> type and
+     * include a valid tag key, you get all tag values, including empty strings.</p>
      */
     inline GetCostAndUsageRequest& AddGroupBy(const GroupDefinition& value) { m_groupByHasBeenSet = true; m_groupBy.push_back(value); return *this; }
 
@@ -523,11 +523,11 @@ namespace Model
      * either dimensions, tag keys, cost categories, or any two group by types.</p>
      * <p>Valid values for the <code>DIMENSION</code> type are <code>AZ</code>,
      * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
-     * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
-     * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TENANCY</code>,
-     * <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p> <p>When you group by
-     * the <code>TAG</code> type and include a valid tag key, you get all tag values,
-     * including empty strings.</p>
+     * <code>INVOICING_ENTITY</code>, <code>LINKED_ACCOUNT</code>,
+     * <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>,
+     * <code>SERVICE</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and
+     * <code>USAGE_TYPE</code>.</p> <p>When you group by the <code>TAG</code> type and
+     * include a valid tag key, you get all tag values, including empty strings.</p>
      */
     inline GetCostAndUsageRequest& AddGroupBy(GroupDefinition&& value) { m_groupByHasBeenSet = true; m_groupBy.push_back(std::move(value)); return *this; }
 

@@ -999,14 +999,9 @@ namespace Model
          * can filter data for Savings Plans usage with the following dimensions:</p> <ul>
          * <li> <p> <code>LINKED_ACCOUNT</code> </p> </li> <li> <p> <code>REGION</code>
          * </p> </li> <li> <p> <code>SERVICE</code> </p> </li> <li> <p>
-         * <code>INSTANCE_FAMILY</code> </p> </li> </ul>  <p>
-         * <code>GetSavingsPlansCoverage</code> doesn't support filtering by tags.
-         * <code>GetSavingsPlansCoverage</code> also doesn't support the <code>OR</code>
-         * operator between filter dimensions. For the full request syntax with supported
-         * parameters, see <a
-         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansCoverage.html#API_GetSavingsPlansCoverage_Examples">Examples</a>.</p>
-         *  <p>To determine valid values for a dimension, use the
-         * <code>GetDimensionValues</code> operation.</p><p><h3>See Also:</h3>   <a
+         * <code>INSTANCE_FAMILY</code> </p> </li> </ul> <p>To determine valid values for a
+         * dimension, use the <code>GetDimensionValues</code> operation.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansCoverage">AWS
          * API Reference</a></p>
          */
@@ -1020,14 +1015,9 @@ namespace Model
          * can filter data for Savings Plans usage with the following dimensions:</p> <ul>
          * <li> <p> <code>LINKED_ACCOUNT</code> </p> </li> <li> <p> <code>REGION</code>
          * </p> </li> <li> <p> <code>SERVICE</code> </p> </li> <li> <p>
-         * <code>INSTANCE_FAMILY</code> </p> </li> </ul>  <p>
-         * <code>GetSavingsPlansCoverage</code> doesn't support filtering by tags.
-         * <code>GetSavingsPlansCoverage</code> also doesn't support the <code>OR</code>
-         * operator between filter dimensions. For the full request syntax with supported
-         * parameters, see <a
-         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansCoverage.html#API_GetSavingsPlansCoverage_Examples">Examples</a>.</p>
-         *  <p>To determine valid values for a dimension, use the
-         * <code>GetDimensionValues</code> operation.</p><p><h3>See Also:</h3>   <a
+         * <code>INSTANCE_FAMILY</code> </p> </li> </ul> <p>To determine valid values for a
+         * dimension, use the <code>GetDimensionValues</code> operation.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansCoverage">AWS
          * API Reference</a></p>
          *
@@ -1043,14 +1033,9 @@ namespace Model
          * can filter data for Savings Plans usage with the following dimensions:</p> <ul>
          * <li> <p> <code>LINKED_ACCOUNT</code> </p> </li> <li> <p> <code>REGION</code>
          * </p> </li> <li> <p> <code>SERVICE</code> </p> </li> <li> <p>
-         * <code>INSTANCE_FAMILY</code> </p> </li> </ul>  <p>
-         * <code>GetSavingsPlansCoverage</code> doesn't support filtering by tags.
-         * <code>GetSavingsPlansCoverage</code> also doesn't support the <code>OR</code>
-         * operator between filter dimensions. For the full request syntax with supported
-         * parameters, see <a
-         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansCoverage.html#API_GetSavingsPlansCoverage_Examples">Examples</a>.</p>
-         *  <p>To determine valid values for a dimension, use the
-         * <code>GetDimensionValues</code> operation.</p><p><h3>See Also:</h3>   <a
+         * <code>INSTANCE_FAMILY</code> </p> </li> </ul> <p>To determine valid values for a
+         * dimension, use the <code>GetDimensionValues</code> operation.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansCoverage">AWS
          * API Reference</a></p>
          *
@@ -1092,13 +1077,7 @@ namespace Model
          * access to member accounts. You can use <code>GetDimensionValues</code> in
          * <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p>
          *  <p>You cannot group by any dimension values for
-         * <code>GetSavingsPlansUtilization</code>.</p> <p>
-         * <code>GetSavingsPlansUtilization</code> doesn't support filtering by tags.
-         * <code>GetSavingsPlansUtilization</code> also doesn't support the <code>OR</code>
-         * operator between filter dimensions. For the full request syntax with supported
-         * parameters, see <a
-         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansUtilization.html#API_GetSavingsPlansUtilization_Examples">Examples</a>.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <code>GetSavingsPlansUtilization</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilization">AWS
          * API Reference</a></p>
          */
@@ -1110,13 +1089,7 @@ namespace Model
          * access to member accounts. You can use <code>GetDimensionValues</code> in
          * <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p>
          *  <p>You cannot group by any dimension values for
-         * <code>GetSavingsPlansUtilization</code>.</p> <p>
-         * <code>GetSavingsPlansUtilization</code> doesn't support filtering by tags.
-         * <code>GetSavingsPlansUtilization</code> also doesn't support the <code>OR</code>
-         * operator between filter dimensions. For the full request syntax with supported
-         * parameters, see <a
-         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansUtilization.html#API_GetSavingsPlansUtilization_Examples">Examples</a>.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <code>GetSavingsPlansUtilization</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilization">AWS
          * API Reference</a></p>
          *
@@ -1130,13 +1103,7 @@ namespace Model
          * access to member accounts. You can use <code>GetDimensionValues</code> in
          * <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p>
          *  <p>You cannot group by any dimension values for
-         * <code>GetSavingsPlansUtilization</code>.</p> <p>
-         * <code>GetSavingsPlansUtilization</code> doesn't support filtering by tags.
-         * <code>GetSavingsPlansUtilization</code> also doesn't support the <code>OR</code>
-         * operator between filter dimensions. For the full request syntax with supported
-         * parameters, see <a
-         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansUtilization.html#API_GetSavingsPlansUtilization_Examples">Examples</a>.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <code>GetSavingsPlansUtilization</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilization">AWS
          * API Reference</a></p>
          *
@@ -1153,13 +1120,7 @@ namespace Model
          * by providing individual dates. You can use <code>GetDimensionValues</code> in
          * <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p>
          *  <p> <code>GetSavingsPlanUtilizationDetails</code> internally groups data
-         * by <code>SavingsPlansArn</code>.</p> <p>
-         * <code>GetSavingsPlansUtilizationDetails</code> doesn't support filtering by
-         * tags. <code>GetSavingsPlansUtilizationDetails</code> also doesn't support the
-         * <code>OR</code> operator between filter dimensions. For the full request syntax
-         * with supported parameters, see <a
-         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansUtilizationDetails.html#API_GetSavingsPlansUtilizationDetails_Examples">Examples</a>.</p>
-         * <p><h3>See Also:</h3>   <a
+         * by <code>SavingsPlansArn</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilizationDetails">AWS
          * API Reference</a></p>
          */
@@ -1174,13 +1135,7 @@ namespace Model
          * by providing individual dates. You can use <code>GetDimensionValues</code> in
          * <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p>
          *  <p> <code>GetSavingsPlanUtilizationDetails</code> internally groups data
-         * by <code>SavingsPlansArn</code>.</p> <p>
-         * <code>GetSavingsPlansUtilizationDetails</code> doesn't support filtering by
-         * tags. <code>GetSavingsPlansUtilizationDetails</code> also doesn't support the
-         * <code>OR</code> operator between filter dimensions. For the full request syntax
-         * with supported parameters, see <a
-         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansUtilizationDetails.html#API_GetSavingsPlansUtilizationDetails_Examples">Examples</a>.</p>
-         * <p><h3>See Also:</h3>   <a
+         * by <code>SavingsPlansArn</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilizationDetails">AWS
          * API Reference</a></p>
          *
@@ -1197,13 +1152,7 @@ namespace Model
          * by providing individual dates. You can use <code>GetDimensionValues</code> in
          * <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p>
          *  <p> <code>GetSavingsPlanUtilizationDetails</code> internally groups data
-         * by <code>SavingsPlansArn</code>.</p> <p>
-         * <code>GetSavingsPlansUtilizationDetails</code> doesn't support filtering by
-         * tags. <code>GetSavingsPlansUtilizationDetails</code> also doesn't support the
-         * <code>OR</code> operator between filter dimensions. For the full request syntax
-         * with supported parameters, see <a
-         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansUtilizationDetails.html#API_GetSavingsPlansUtilizationDetails_Examples">Examples</a>.</p>
-         * <p><h3>See Also:</h3>   <a
+         * by <code>SavingsPlansArn</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilizationDetails">AWS
          * API Reference</a></p>
          *

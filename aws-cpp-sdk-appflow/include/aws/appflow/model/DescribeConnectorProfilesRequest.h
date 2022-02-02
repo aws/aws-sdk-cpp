@@ -121,6 +121,63 @@ namespace Model
 
 
     /**
+     * <p>The name of the connector. The name is unique for each
+     * <code>ConnectorRegistration</code> in your Amazon Web Services account. Only
+     * needed if calling for CUSTOMCONNECTOR connector type/.</p>
+     */
+    inline const Aws::String& GetConnectorLabel() const{ return m_connectorLabel; }
+
+    /**
+     * <p>The name of the connector. The name is unique for each
+     * <code>ConnectorRegistration</code> in your Amazon Web Services account. Only
+     * needed if calling for CUSTOMCONNECTOR connector type/.</p>
+     */
+    inline bool ConnectorLabelHasBeenSet() const { return m_connectorLabelHasBeenSet; }
+
+    /**
+     * <p>The name of the connector. The name is unique for each
+     * <code>ConnectorRegistration</code> in your Amazon Web Services account. Only
+     * needed if calling for CUSTOMCONNECTOR connector type/.</p>
+     */
+    inline void SetConnectorLabel(const Aws::String& value) { m_connectorLabelHasBeenSet = true; m_connectorLabel = value; }
+
+    /**
+     * <p>The name of the connector. The name is unique for each
+     * <code>ConnectorRegistration</code> in your Amazon Web Services account. Only
+     * needed if calling for CUSTOMCONNECTOR connector type/.</p>
+     */
+    inline void SetConnectorLabel(Aws::String&& value) { m_connectorLabelHasBeenSet = true; m_connectorLabel = std::move(value); }
+
+    /**
+     * <p>The name of the connector. The name is unique for each
+     * <code>ConnectorRegistration</code> in your Amazon Web Services account. Only
+     * needed if calling for CUSTOMCONNECTOR connector type/.</p>
+     */
+    inline void SetConnectorLabel(const char* value) { m_connectorLabelHasBeenSet = true; m_connectorLabel.assign(value); }
+
+    /**
+     * <p>The name of the connector. The name is unique for each
+     * <code>ConnectorRegistration</code> in your Amazon Web Services account. Only
+     * needed if calling for CUSTOMCONNECTOR connector type/.</p>
+     */
+    inline DescribeConnectorProfilesRequest& WithConnectorLabel(const Aws::String& value) { SetConnectorLabel(value); return *this;}
+
+    /**
+     * <p>The name of the connector. The name is unique for each
+     * <code>ConnectorRegistration</code> in your Amazon Web Services account. Only
+     * needed if calling for CUSTOMCONNECTOR connector type/.</p>
+     */
+    inline DescribeConnectorProfilesRequest& WithConnectorLabel(Aws::String&& value) { SetConnectorLabel(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the connector. The name is unique for each
+     * <code>ConnectorRegistration</code> in your Amazon Web Services account. Only
+     * needed if calling for CUSTOMCONNECTOR connector type/.</p>
+     */
+    inline DescribeConnectorProfilesRequest& WithConnectorLabel(const char* value) { SetConnectorLabel(value); return *this;}
+
+
+    /**
      * <p> Specifies the maximum number of items that should be returned in the result
      * set. The default for <code>maxResults</code> is 20 (for all paginated API
      * operations). </p>
@@ -196,6 +253,9 @@ namespace Model
 
     ConnectorType m_connectorType;
     bool m_connectorTypeHasBeenSet;
+
+    Aws::String m_connectorLabel;
+    bool m_connectorLabelHasBeenSet;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;

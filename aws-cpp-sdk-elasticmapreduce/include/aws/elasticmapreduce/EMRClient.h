@@ -413,8 +413,9 @@ namespace Model
          * considered complete, the main function must exit with a zero exit code and all
          * Hadoop jobs started while the step was running must have completed and run
          * successfully.</p> <p>You can only add steps to a cluster that is in one of the
-         * following states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.</p><p><h3>See
-         * Also:</h3>   <a
+         * following states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.</p> 
+         * <p>The string values passed into <code>HadoopJarStep</code> object cannot exceed
+         * a total of 10240 characters.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddJobFlowSteps">AWS
          * API Reference</a></p>
          */
@@ -438,8 +439,9 @@ namespace Model
          * considered complete, the main function must exit with a zero exit code and all
          * Hadoop jobs started while the step was running must have completed and run
          * successfully.</p> <p>You can only add steps to a cluster that is in one of the
-         * following states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.</p><p><h3>See
-         * Also:</h3>   <a
+         * following states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.</p> 
+         * <p>The string values passed into <code>HadoopJarStep</code> object cannot exceed
+         * a total of 10240 characters.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddJobFlowSteps">AWS
          * API Reference</a></p>
          *
@@ -465,8 +467,9 @@ namespace Model
          * considered complete, the main function must exit with a zero exit code and all
          * Hadoop jobs started while the step was running must have completed and run
          * successfully.</p> <p>You can only add steps to a cluster that is in one of the
-         * following states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.</p><p><h3>See
-         * Also:</h3>   <a
+         * following states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.</p> 
+         * <p>The string values passed into <code>HadoopJarStep</code> object cannot exceed
+         * a total of 10240 characters.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddJobFlowSteps">AWS
          * API Reference</a></p>
          *
@@ -1531,10 +1534,13 @@ namespace Model
         virtual void PutAutoScalingPolicyAsync(const Model::PutAutoScalingPolicyRequest& request, const PutAutoScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates or updates an auto-termination policy for an Amazon EMR cluster. An
-         * auto-termination policy defines the amount of idle time in seconds after which a
-         * cluster automatically terminates. For alternative cluster termination options,
-         * see <a
+         *  <p>Auto-termination is supported in Amazon EMR versions 5.30.0 and 6.1.0
+         * and later. For more information, see <a
+         * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-auto-termination-policy.html">Using
+         * an auto-termination policy</a>.</p>  <p>Creates or updates an
+         * auto-termination policy for an Amazon EMR cluster. An auto-termination policy
+         * defines the amount of idle time in seconds after which a cluster automatically
+         * terminates. For alternative cluster termination options, see <a
          * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control
          * cluster termination</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutAutoTerminationPolicy">AWS
@@ -1543,10 +1549,13 @@ namespace Model
         virtual Model::PutAutoTerminationPolicyOutcome PutAutoTerminationPolicy(const Model::PutAutoTerminationPolicyRequest& request) const;
 
         /**
-         * <p>Creates or updates an auto-termination policy for an Amazon EMR cluster. An
-         * auto-termination policy defines the amount of idle time in seconds after which a
-         * cluster automatically terminates. For alternative cluster termination options,
-         * see <a
+         *  <p>Auto-termination is supported in Amazon EMR versions 5.30.0 and 6.1.0
+         * and later. For more information, see <a
+         * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-auto-termination-policy.html">Using
+         * an auto-termination policy</a>.</p>  <p>Creates or updates an
+         * auto-termination policy for an Amazon EMR cluster. An auto-termination policy
+         * defines the amount of idle time in seconds after which a cluster automatically
+         * terminates. For alternative cluster termination options, see <a
          * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control
          * cluster termination</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutAutoTerminationPolicy">AWS
@@ -1557,10 +1566,13 @@ namespace Model
         virtual Model::PutAutoTerminationPolicyOutcomeCallable PutAutoTerminationPolicyCallable(const Model::PutAutoTerminationPolicyRequest& request) const;
 
         /**
-         * <p>Creates or updates an auto-termination policy for an Amazon EMR cluster. An
-         * auto-termination policy defines the amount of idle time in seconds after which a
-         * cluster automatically terminates. For alternative cluster termination options,
-         * see <a
+         *  <p>Auto-termination is supported in Amazon EMR versions 5.30.0 and 6.1.0
+         * and later. For more information, see <a
+         * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-auto-termination-policy.html">Using
+         * an auto-termination policy</a>.</p>  <p>Creates or updates an
+         * auto-termination policy for an Amazon EMR cluster. An auto-termination policy
+         * defines the amount of idle time in seconds after which a cluster automatically
+         * terminates. For alternative cluster termination options, see <a
          * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control
          * cluster termination</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutAutoTerminationPolicy">AWS
@@ -1936,7 +1948,12 @@ namespace Model
         virtual void SetTerminationProtectionAsync(const Model::SetTerminationProtectionRequest& request, const SetTerminationProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sets the <a>Cluster$VisibleToAllUsers</a> value for an EMR cluster. When
+         *  <p>The SetVisibleToAllUsers parameter is no longer supported. Your
+         * cluster may be visible to all users in your account. To restrict cluster access
+         * using an IAM policy, see <a
+         * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html">Identity
+         * and Access Management for EMR</a>. </p>  <p>Sets the
+         * <a>Cluster$VisibleToAllUsers</a> value for an EMR cluster. When
          * <code>true</code>, IAM principals in the Amazon Web Services account can perform
          * EMR cluster actions that their IAM policies allow. When <code>false</code>, only
          * the IAM principal that created the cluster and the Amazon Web Services account
@@ -1954,7 +1971,12 @@ namespace Model
         virtual Model::SetVisibleToAllUsersOutcome SetVisibleToAllUsers(const Model::SetVisibleToAllUsersRequest& request) const;
 
         /**
-         * <p>Sets the <a>Cluster$VisibleToAllUsers</a> value for an EMR cluster. When
+         *  <p>The SetVisibleToAllUsers parameter is no longer supported. Your
+         * cluster may be visible to all users in your account. To restrict cluster access
+         * using an IAM policy, see <a
+         * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html">Identity
+         * and Access Management for EMR</a>. </p>  <p>Sets the
+         * <a>Cluster$VisibleToAllUsers</a> value for an EMR cluster. When
          * <code>true</code>, IAM principals in the Amazon Web Services account can perform
          * EMR cluster actions that their IAM policies allow. When <code>false</code>, only
          * the IAM principal that created the cluster and the Amazon Web Services account
@@ -1974,7 +1996,12 @@ namespace Model
         virtual Model::SetVisibleToAllUsersOutcomeCallable SetVisibleToAllUsersCallable(const Model::SetVisibleToAllUsersRequest& request) const;
 
         /**
-         * <p>Sets the <a>Cluster$VisibleToAllUsers</a> value for an EMR cluster. When
+         *  <p>The SetVisibleToAllUsers parameter is no longer supported. Your
+         * cluster may be visible to all users in your account. To restrict cluster access
+         * using an IAM policy, see <a
+         * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html">Identity
+         * and Access Management for EMR</a>. </p>  <p>Sets the
+         * <a>Cluster$VisibleToAllUsers</a> value for an EMR cluster. When
          * <code>true</code>, IAM principals in the Amazon Web Services account can perform
          * EMR cluster actions that their IAM policies allow. When <code>false</code>, only
          * the IAM principal that created the cluster and the Amazon Web Services account

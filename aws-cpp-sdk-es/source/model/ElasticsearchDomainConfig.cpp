@@ -32,7 +32,8 @@ ElasticsearchDomainConfig::ElasticsearchDomainConfig() :
     m_logPublishingOptionsHasBeenSet(false),
     m_domainEndpointOptionsHasBeenSet(false),
     m_advancedSecurityOptionsHasBeenSet(false),
-    m_autoTuneOptionsHasBeenSet(false)
+    m_autoTuneOptionsHasBeenSet(false),
+    m_changeProgressDetailsHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ ElasticsearchDomainConfig::ElasticsearchDomainConfig(JsonView jsonValue) :
     m_logPublishingOptionsHasBeenSet(false),
     m_domainEndpointOptionsHasBeenSet(false),
     m_advancedSecurityOptionsHasBeenSet(false),
-    m_autoTuneOptionsHasBeenSet(false)
+    m_autoTuneOptionsHasBeenSet(false),
+    m_changeProgressDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -155,6 +157,13 @@ ElasticsearchDomainConfig& ElasticsearchDomainConfig::operator =(JsonView jsonVa
     m_autoTuneOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ChangeProgressDetails"))
+  {
+    m_changeProgressDetails = jsonValue.GetObject("ChangeProgressDetails");
+
+    m_changeProgressDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -243,6 +252,12 @@ JsonValue ElasticsearchDomainConfig::Jsonize() const
   if(m_autoTuneOptionsHasBeenSet)
   {
    payload.WithObject("AutoTuneOptions", m_autoTuneOptions.Jsonize());
+
+  }
+
+  if(m_changeProgressDetailsHasBeenSet)
+  {
+   payload.WithObject("ChangeProgressDetails", m_changeProgressDetails.Jsonize());
 
   }
 

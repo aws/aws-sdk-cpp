@@ -38,6 +38,7 @@ namespace Aws
         static const int PLATFORM_HASH = HashingUtils::HashString("PLATFORM");
         static const int SUBSCRIPTION_ID_HASH = HashingUtils::HashString("SUBSCRIPTION_ID");
         static const int LEGAL_ENTITY_NAME_HASH = HashingUtils::HashString("LEGAL_ENTITY_NAME");
+        static const int INVOICING_ENTITY_HASH = HashingUtils::HashString("INVOICING_ENTITY");
         static const int DEPLOYMENT_OPTION_HASH = HashingUtils::HashString("DEPLOYMENT_OPTION");
         static const int DATABASE_ENGINE_HASH = HashingUtils::HashString("DATABASE_ENGINE");
         static const int CACHE_ENGINE_HASH = HashingUtils::HashString("CACHE_ENGINE");
@@ -127,6 +128,10 @@ namespace Aws
           else if (hashCode == LEGAL_ENTITY_NAME_HASH)
           {
             return Dimension::LEGAL_ENTITY_NAME;
+          }
+          else if (hashCode == INVOICING_ENTITY_HASH)
+          {
+            return Dimension::INVOICING_ENTITY;
           }
           else if (hashCode == DEPLOYMENT_OPTION_HASH)
           {
@@ -230,6 +235,8 @@ namespace Aws
             return "SUBSCRIPTION_ID";
           case Dimension::LEGAL_ENTITY_NAME:
             return "LEGAL_ENTITY_NAME";
+          case Dimension::INVOICING_ENTITY:
+            return "INVOICING_ENTITY";
           case Dimension::DEPLOYMENT_OPTION:
             return "DEPLOYMENT_OPTION";
           case Dimension::DATABASE_ENGINE:

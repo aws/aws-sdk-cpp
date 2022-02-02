@@ -657,6 +657,119 @@ namespace Model
      */
     inline CreateEntityRecognizerRequest& WithModelKmsKeyId(const char* value) { SetModelKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>The JSON resource-based policy to attach to your custom entity recognizer
+     * model. You can use this policy to allow another AWS account to import your
+     * custom model.</p> <p>Provide your JSON as a UTF-8 encoded string without line
+     * breaks. To provide valid JSON for your policy, enclose the attribute names and
+     * values in double quotes. If the JSON body is also enclosed in double quotes,
+     * then you must escape the double quotes that are inside the policy:</p> <p>
+     * <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p> <p>To
+     * avoid escaping quotes, you can use single quotes to enclose the policy and
+     * double quotes to enclose the JSON names and values:</p> <p> <code>'{"attribute":
+     * "value", "attribute": ["value"]}'</code> </p>
+     */
+    inline const Aws::String& GetModelPolicy() const{ return m_modelPolicy; }
+
+    /**
+     * <p>The JSON resource-based policy to attach to your custom entity recognizer
+     * model. You can use this policy to allow another AWS account to import your
+     * custom model.</p> <p>Provide your JSON as a UTF-8 encoded string without line
+     * breaks. To provide valid JSON for your policy, enclose the attribute names and
+     * values in double quotes. If the JSON body is also enclosed in double quotes,
+     * then you must escape the double quotes that are inside the policy:</p> <p>
+     * <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p> <p>To
+     * avoid escaping quotes, you can use single quotes to enclose the policy and
+     * double quotes to enclose the JSON names and values:</p> <p> <code>'{"attribute":
+     * "value", "attribute": ["value"]}'</code> </p>
+     */
+    inline bool ModelPolicyHasBeenSet() const { return m_modelPolicyHasBeenSet; }
+
+    /**
+     * <p>The JSON resource-based policy to attach to your custom entity recognizer
+     * model. You can use this policy to allow another AWS account to import your
+     * custom model.</p> <p>Provide your JSON as a UTF-8 encoded string without line
+     * breaks. To provide valid JSON for your policy, enclose the attribute names and
+     * values in double quotes. If the JSON body is also enclosed in double quotes,
+     * then you must escape the double quotes that are inside the policy:</p> <p>
+     * <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p> <p>To
+     * avoid escaping quotes, you can use single quotes to enclose the policy and
+     * double quotes to enclose the JSON names and values:</p> <p> <code>'{"attribute":
+     * "value", "attribute": ["value"]}'</code> </p>
+     */
+    inline void SetModelPolicy(const Aws::String& value) { m_modelPolicyHasBeenSet = true; m_modelPolicy = value; }
+
+    /**
+     * <p>The JSON resource-based policy to attach to your custom entity recognizer
+     * model. You can use this policy to allow another AWS account to import your
+     * custom model.</p> <p>Provide your JSON as a UTF-8 encoded string without line
+     * breaks. To provide valid JSON for your policy, enclose the attribute names and
+     * values in double quotes. If the JSON body is also enclosed in double quotes,
+     * then you must escape the double quotes that are inside the policy:</p> <p>
+     * <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p> <p>To
+     * avoid escaping quotes, you can use single quotes to enclose the policy and
+     * double quotes to enclose the JSON names and values:</p> <p> <code>'{"attribute":
+     * "value", "attribute": ["value"]}'</code> </p>
+     */
+    inline void SetModelPolicy(Aws::String&& value) { m_modelPolicyHasBeenSet = true; m_modelPolicy = std::move(value); }
+
+    /**
+     * <p>The JSON resource-based policy to attach to your custom entity recognizer
+     * model. You can use this policy to allow another AWS account to import your
+     * custom model.</p> <p>Provide your JSON as a UTF-8 encoded string without line
+     * breaks. To provide valid JSON for your policy, enclose the attribute names and
+     * values in double quotes. If the JSON body is also enclosed in double quotes,
+     * then you must escape the double quotes that are inside the policy:</p> <p>
+     * <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p> <p>To
+     * avoid escaping quotes, you can use single quotes to enclose the policy and
+     * double quotes to enclose the JSON names and values:</p> <p> <code>'{"attribute":
+     * "value", "attribute": ["value"]}'</code> </p>
+     */
+    inline void SetModelPolicy(const char* value) { m_modelPolicyHasBeenSet = true; m_modelPolicy.assign(value); }
+
+    /**
+     * <p>The JSON resource-based policy to attach to your custom entity recognizer
+     * model. You can use this policy to allow another AWS account to import your
+     * custom model.</p> <p>Provide your JSON as a UTF-8 encoded string without line
+     * breaks. To provide valid JSON for your policy, enclose the attribute names and
+     * values in double quotes. If the JSON body is also enclosed in double quotes,
+     * then you must escape the double quotes that are inside the policy:</p> <p>
+     * <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p> <p>To
+     * avoid escaping quotes, you can use single quotes to enclose the policy and
+     * double quotes to enclose the JSON names and values:</p> <p> <code>'{"attribute":
+     * "value", "attribute": ["value"]}'</code> </p>
+     */
+    inline CreateEntityRecognizerRequest& WithModelPolicy(const Aws::String& value) { SetModelPolicy(value); return *this;}
+
+    /**
+     * <p>The JSON resource-based policy to attach to your custom entity recognizer
+     * model. You can use this policy to allow another AWS account to import your
+     * custom model.</p> <p>Provide your JSON as a UTF-8 encoded string without line
+     * breaks. To provide valid JSON for your policy, enclose the attribute names and
+     * values in double quotes. If the JSON body is also enclosed in double quotes,
+     * then you must escape the double quotes that are inside the policy:</p> <p>
+     * <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p> <p>To
+     * avoid escaping quotes, you can use single quotes to enclose the policy and
+     * double quotes to enclose the JSON names and values:</p> <p> <code>'{"attribute":
+     * "value", "attribute": ["value"]}'</code> </p>
+     */
+    inline CreateEntityRecognizerRequest& WithModelPolicy(Aws::String&& value) { SetModelPolicy(std::move(value)); return *this;}
+
+    /**
+     * <p>The JSON resource-based policy to attach to your custom entity recognizer
+     * model. You can use this policy to allow another AWS account to import your
+     * custom model.</p> <p>Provide your JSON as a UTF-8 encoded string without line
+     * breaks. To provide valid JSON for your policy, enclose the attribute names and
+     * values in double quotes. If the JSON body is also enclosed in double quotes,
+     * then you must escape the double quotes that are inside the policy:</p> <p>
+     * <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p> <p>To
+     * avoid escaping quotes, you can use single quotes to enclose the policy and
+     * double quotes to enclose the JSON names and values:</p> <p> <code>'{"attribute":
+     * "value", "attribute": ["value"]}'</code> </p>
+     */
+    inline CreateEntityRecognizerRequest& WithModelPolicy(const char* value) { SetModelPolicy(value); return *this;}
+
   private:
 
     Aws::String m_recognizerName;
@@ -688,6 +801,9 @@ namespace Model
 
     Aws::String m_modelKmsKeyId;
     bool m_modelKmsKeyIdHasBeenSet;
+
+    Aws::String m_modelPolicy;
+    bool m_modelPolicyHasBeenSet;
   };
 
 } // namespace Model

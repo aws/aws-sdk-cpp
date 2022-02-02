@@ -15,6 +15,7 @@
 #include <aws/appflow/model/HoneycodeDestinationProperties.h>
 #include <aws/appflow/model/CustomerProfilesDestinationProperties.h>
 #include <aws/appflow/model/ZendeskDestinationProperties.h>
+#include <aws/appflow/model/CustomConnectorDestinationProperties.h>
 #include <utility>
 
 namespace Aws
@@ -356,6 +357,37 @@ namespace Model
      */
     inline DestinationConnectorProperties& WithZendesk(ZendeskDestinationProperties&& value) { SetZendesk(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The properties that are required to query the custom Connector.</p>
+     */
+    inline const CustomConnectorDestinationProperties& GetCustomConnector() const{ return m_customConnector; }
+
+    /**
+     * <p>The properties that are required to query the custom Connector.</p>
+     */
+    inline bool CustomConnectorHasBeenSet() const { return m_customConnectorHasBeenSet; }
+
+    /**
+     * <p>The properties that are required to query the custom Connector.</p>
+     */
+    inline void SetCustomConnector(const CustomConnectorDestinationProperties& value) { m_customConnectorHasBeenSet = true; m_customConnector = value; }
+
+    /**
+     * <p>The properties that are required to query the custom Connector.</p>
+     */
+    inline void SetCustomConnector(CustomConnectorDestinationProperties&& value) { m_customConnectorHasBeenSet = true; m_customConnector = std::move(value); }
+
+    /**
+     * <p>The properties that are required to query the custom Connector.</p>
+     */
+    inline DestinationConnectorProperties& WithCustomConnector(const CustomConnectorDestinationProperties& value) { SetCustomConnector(value); return *this;}
+
+    /**
+     * <p>The properties that are required to query the custom Connector.</p>
+     */
+    inline DestinationConnectorProperties& WithCustomConnector(CustomConnectorDestinationProperties&& value) { SetCustomConnector(std::move(value)); return *this;}
+
   private:
 
     RedshiftDestinationProperties m_redshift;
@@ -387,6 +419,9 @@ namespace Model
 
     ZendeskDestinationProperties m_zendesk;
     bool m_zendeskHasBeenSet;
+
+    CustomConnectorDestinationProperties m_customConnector;
+    bool m_customConnectorHasBeenSet;
   };
 
 } // namespace Model

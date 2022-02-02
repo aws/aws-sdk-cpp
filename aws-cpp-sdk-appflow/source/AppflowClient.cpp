@@ -24,17 +24,21 @@
 #include <aws/appflow/model/CreateFlowRequest.h>
 #include <aws/appflow/model/DeleteConnectorProfileRequest.h>
 #include <aws/appflow/model/DeleteFlowRequest.h>
+#include <aws/appflow/model/DescribeConnectorRequest.h>
 #include <aws/appflow/model/DescribeConnectorEntityRequest.h>
 #include <aws/appflow/model/DescribeConnectorProfilesRequest.h>
 #include <aws/appflow/model/DescribeConnectorsRequest.h>
 #include <aws/appflow/model/DescribeFlowRequest.h>
 #include <aws/appflow/model/DescribeFlowExecutionRecordsRequest.h>
 #include <aws/appflow/model/ListConnectorEntitiesRequest.h>
+#include <aws/appflow/model/ListConnectorsRequest.h>
 #include <aws/appflow/model/ListFlowsRequest.h>
 #include <aws/appflow/model/ListTagsForResourceRequest.h>
+#include <aws/appflow/model/RegisterConnectorRequest.h>
 #include <aws/appflow/model/StartFlowRequest.h>
 #include <aws/appflow/model/StopFlowRequest.h>
 #include <aws/appflow/model/TagResourceRequest.h>
+#include <aws/appflow/model/UnregisterConnectorRequest.h>
 #include <aws/appflow/model/UntagResourceRequest.h>
 #include <aws/appflow/model/UpdateConnectorProfileRequest.h>
 #include <aws/appflow/model/UpdateFlowRequest.h>
@@ -212,6 +216,31 @@ void AppflowClient::DeleteFlowAsyncHelper(const DeleteFlowRequest& request, cons
   handler(this, request, DeleteFlow(request), context);
 }
 
+DescribeConnectorOutcome AppflowClient::DescribeConnector(const DescribeConnectorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/describe-connector");
+  return DescribeConnectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeConnectorOutcomeCallable AppflowClient::DescribeConnectorCallable(const DescribeConnectorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeConnectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeConnector(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppflowClient::DescribeConnectorAsync(const DescribeConnectorRequest& request, const DescribeConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeConnectorAsyncHelper( request, handler, context ); } );
+}
+
+void AppflowClient::DescribeConnectorAsyncHelper(const DescribeConnectorRequest& request, const DescribeConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeConnector(request), context);
+}
+
 DescribeConnectorEntityOutcome AppflowClient::DescribeConnectorEntity(const DescribeConnectorEntityRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -362,6 +391,31 @@ void AppflowClient::ListConnectorEntitiesAsyncHelper(const ListConnectorEntities
   handler(this, request, ListConnectorEntities(request), context);
 }
 
+ListConnectorsOutcome AppflowClient::ListConnectors(const ListConnectorsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/list-connectors");
+  return ListConnectorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListConnectorsOutcomeCallable AppflowClient::ListConnectorsCallable(const ListConnectorsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListConnectorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListConnectors(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppflowClient::ListConnectorsAsync(const ListConnectorsRequest& request, const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListConnectorsAsyncHelper( request, handler, context ); } );
+}
+
+void AppflowClient::ListConnectorsAsyncHelper(const ListConnectorsRequest& request, const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListConnectors(request), context);
+}
+
 ListFlowsOutcome AppflowClient::ListFlows(const ListFlowsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -416,6 +470,31 @@ void AppflowClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& r
 void AppflowClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+RegisterConnectorOutcome AppflowClient::RegisterConnector(const RegisterConnectorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/register-connector");
+  return RegisterConnectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RegisterConnectorOutcomeCallable AppflowClient::RegisterConnectorCallable(const RegisterConnectorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RegisterConnectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterConnector(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppflowClient::RegisterConnectorAsync(const RegisterConnectorRequest& request, const RegisterConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RegisterConnectorAsyncHelper( request, handler, context ); } );
+}
+
+void AppflowClient::RegisterConnectorAsyncHelper(const RegisterConnectorRequest& request, const RegisterConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RegisterConnector(request), context);
 }
 
 StartFlowOutcome AppflowClient::StartFlow(const StartFlowRequest& request) const
@@ -497,6 +576,31 @@ void AppflowClient::TagResourceAsync(const TagResourceRequest& request, const Ta
 void AppflowClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, TagResource(request), context);
+}
+
+UnregisterConnectorOutcome AppflowClient::UnregisterConnector(const UnregisterConnectorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/unregister-connector");
+  return UnregisterConnectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UnregisterConnectorOutcomeCallable AppflowClient::UnregisterConnectorCallable(const UnregisterConnectorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UnregisterConnectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UnregisterConnector(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppflowClient::UnregisterConnectorAsync(const UnregisterConnectorRequest& request, const UnregisterConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UnregisterConnectorAsyncHelper( request, handler, context ); } );
+}
+
+void AppflowClient::UnregisterConnectorAsyncHelper(const UnregisterConnectorRequest& request, const UnregisterConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UnregisterConnector(request), context);
 }
 
 UntagResourceOutcome AppflowClient::UntagResource(const UntagResourceRequest& request) const

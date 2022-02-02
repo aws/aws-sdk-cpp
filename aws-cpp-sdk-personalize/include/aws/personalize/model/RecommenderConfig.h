@@ -168,10 +168,38 @@ namespace Model
      */
     inline RecommenderConfig& AddItemExplorationConfig(const char* key, const char* value) { m_itemExplorationConfigHasBeenSet = true; m_itemExplorationConfig.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Specifies the requested minimum provisioned recommendation requests per
+     * second that Amazon Personalize will support.</p>
+     */
+    inline int GetMinRecommendationRequestsPerSecond() const{ return m_minRecommendationRequestsPerSecond; }
+
+    /**
+     * <p>Specifies the requested minimum provisioned recommendation requests per
+     * second that Amazon Personalize will support.</p>
+     */
+    inline bool MinRecommendationRequestsPerSecondHasBeenSet() const { return m_minRecommendationRequestsPerSecondHasBeenSet; }
+
+    /**
+     * <p>Specifies the requested minimum provisioned recommendation requests per
+     * second that Amazon Personalize will support.</p>
+     */
+    inline void SetMinRecommendationRequestsPerSecond(int value) { m_minRecommendationRequestsPerSecondHasBeenSet = true; m_minRecommendationRequestsPerSecond = value; }
+
+    /**
+     * <p>Specifies the requested minimum provisioned recommendation requests per
+     * second that Amazon Personalize will support.</p>
+     */
+    inline RecommenderConfig& WithMinRecommendationRequestsPerSecond(int value) { SetMinRecommendationRequestsPerSecond(value); return *this;}
+
   private:
 
     Aws::Map<Aws::String, Aws::String> m_itemExplorationConfig;
     bool m_itemExplorationConfigHasBeenSet;
+
+    int m_minRecommendationRequestsPerSecond;
+    bool m_minRecommendationRequestsPerSecondHasBeenSet;
   };
 
 } // namespace Model

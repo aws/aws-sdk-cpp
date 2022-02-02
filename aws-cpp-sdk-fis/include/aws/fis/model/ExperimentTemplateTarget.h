@@ -282,6 +282,72 @@ namespace Model
      */
     inline ExperimentTemplateTarget& WithSelectionMode(const char* value) { SetSelectionMode(value); return *this;}
 
+
+    /**
+     * <p>The resource type parameters.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>The resource type parameters.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+
+    /**
+     * <p>The resource type parameters.</p>
+     */
+    inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+
+    /**
+     * <p>The resource type parameters.</p>
+     */
+    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
+
+    /**
+     * <p>The resource type parameters.</p>
+     */
+    inline ExperimentTemplateTarget& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
+
+    /**
+     * <p>The resource type parameters.</p>
+     */
+    inline ExperimentTemplateTarget& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>The resource type parameters.</p>
+     */
+    inline ExperimentTemplateTarget& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+
+    /**
+     * <p>The resource type parameters.</p>
+     */
+    inline ExperimentTemplateTarget& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The resource type parameters.</p>
+     */
+    inline ExperimentTemplateTarget& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The resource type parameters.</p>
+     */
+    inline ExperimentTemplateTarget& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The resource type parameters.</p>
+     */
+    inline ExperimentTemplateTarget& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The resource type parameters.</p>
+     */
+    inline ExperimentTemplateTarget& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The resource type parameters.</p>
+     */
+    inline ExperimentTemplateTarget& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_resourceType;
@@ -298,6 +364,9 @@ namespace Model
 
     Aws::String m_selectionMode;
     bool m_selectionModeHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_parameters;
+    bool m_parametersHasBeenSet;
   };
 
 } // namespace Model

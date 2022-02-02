@@ -166,12 +166,12 @@ namespace Model
      * you either group by or filter by a <code>ResourceId</code>. It requires the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the
-     * filter.</p> <p>The default values are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for
-     * <code>Dimensions</code> are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>.</p> <p>Valid values for <code>MatchOptions</code>
-     * for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
-     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
+     * filter.</p> <p>Valid values for <code>MatchOptions</code> for
+     * <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
+     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p> <p>The default values
+     * are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid values for
+     * <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code>
+     * and <code>CASE_SENSITIVE</code>.</p>
      */
     inline const Expression& GetFilter() const{ return m_filter; }
 
@@ -186,12 +186,12 @@ namespace Model
      * you either group by or filter by a <code>ResourceId</code>. It requires the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the
-     * filter.</p> <p>The default values are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for
-     * <code>Dimensions</code> are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>.</p> <p>Valid values for <code>MatchOptions</code>
-     * for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
-     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
+     * filter.</p> <p>Valid values for <code>MatchOptions</code> for
+     * <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
+     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p> <p>The default values
+     * are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid values for
+     * <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code>
+     * and <code>CASE_SENSITIVE</code>.</p>
      */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
@@ -206,12 +206,12 @@ namespace Model
      * you either group by or filter by a <code>ResourceId</code>. It requires the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the
-     * filter.</p> <p>The default values are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for
-     * <code>Dimensions</code> are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>.</p> <p>Valid values for <code>MatchOptions</code>
-     * for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
-     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
+     * filter.</p> <p>Valid values for <code>MatchOptions</code> for
+     * <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
+     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p> <p>The default values
+     * are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid values for
+     * <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code>
+     * and <code>CASE_SENSITIVE</code>.</p>
      */
     inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
 
@@ -226,12 +226,12 @@ namespace Model
      * you either group by or filter by a <code>ResourceId</code>. It requires the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the
-     * filter.</p> <p>The default values are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for
-     * <code>Dimensions</code> are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>.</p> <p>Valid values for <code>MatchOptions</code>
-     * for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
-     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
+     * filter.</p> <p>Valid values for <code>MatchOptions</code> for
+     * <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
+     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p> <p>The default values
+     * are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid values for
+     * <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code>
+     * and <code>CASE_SENSITIVE</code>.</p>
      */
     inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
@@ -246,12 +246,12 @@ namespace Model
      * you either group by or filter by a <code>ResourceId</code>. It requires the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the
-     * filter.</p> <p>The default values are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for
-     * <code>Dimensions</code> are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>.</p> <p>Valid values for <code>MatchOptions</code>
-     * for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
-     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
+     * filter.</p> <p>Valid values for <code>MatchOptions</code> for
+     * <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
+     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p> <p>The default values
+     * are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid values for
+     * <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code>
+     * and <code>CASE_SENSITIVE</code>.</p>
      */
     inline GetCostAndUsageWithResourcesRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
 
@@ -266,12 +266,12 @@ namespace Model
      * you either group by or filter by a <code>ResourceId</code>. It requires the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the
-     * filter.</p> <p>The default values are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>. Valid values for <code>MatchOptions</code> for
-     * <code>Dimensions</code> are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>.</p> <p>Valid values for <code>MatchOptions</code>
-     * for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
-     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p>
+     * filter.</p> <p>Valid values for <code>MatchOptions</code> for
+     * <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
+     * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.</p> <p>The default values
+     * are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid values for
+     * <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code>
+     * and <code>CASE_SENSITIVE</code>.</p>
      */
     inline GetCostAndUsageWithResourcesRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
 

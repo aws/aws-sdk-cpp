@@ -22,6 +22,9 @@ namespace Aws
 
         static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
         static const int THING_GROUP_HASH = HashingUtils::HashString("THING_GROUP");
+        static const int CLIENT_ID_HASH = HashingUtils::HashString("CLIENT_ID");
+        static const int SOURCE_IP_HASH = HashingUtils::HashString("SOURCE_IP");
+        static const int PRINCIPAL_ID_HASH = HashingUtils::HashString("PRINCIPAL_ID");
 
 
         LogTargetType GetLogTargetTypeForName(const Aws::String& name)
@@ -34,6 +37,18 @@ namespace Aws
           else if (hashCode == THING_GROUP_HASH)
           {
             return LogTargetType::THING_GROUP;
+          }
+          else if (hashCode == CLIENT_ID_HASH)
+          {
+            return LogTargetType::CLIENT_ID;
+          }
+          else if (hashCode == SOURCE_IP_HASH)
+          {
+            return LogTargetType::SOURCE_IP;
+          }
+          else if (hashCode == PRINCIPAL_ID_HASH)
+          {
+            return LogTargetType::PRINCIPAL_ID;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +68,12 @@ namespace Aws
             return "DEFAULT";
           case LogTargetType::THING_GROUP:
             return "THING_GROUP";
+          case LogTargetType::CLIENT_ID:
+            return "CLIENT_ID";
+          case LogTargetType::SOURCE_IP:
+            return "SOURCE_IP";
+          case LogTargetType::PRINCIPAL_ID:
+            return "PRINCIPAL_ID";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

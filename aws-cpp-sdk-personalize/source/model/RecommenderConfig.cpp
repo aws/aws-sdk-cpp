@@ -19,12 +19,16 @@ namespace Model
 {
 
 RecommenderConfig::RecommenderConfig() : 
-    m_itemExplorationConfigHasBeenSet(false)
+    m_itemExplorationConfigHasBeenSet(false),
+    m_minRecommendationRequestsPerSecond(0),
+    m_minRecommendationRequestsPerSecondHasBeenSet(false)
 {
 }
 
 RecommenderConfig::RecommenderConfig(JsonView jsonValue) : 
-    m_itemExplorationConfigHasBeenSet(false)
+    m_itemExplorationConfigHasBeenSet(false),
+    m_minRecommendationRequestsPerSecond(0),
+    m_minRecommendationRequestsPerSecondHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -39,6 +43,13 @@ RecommenderConfig& RecommenderConfig::operator =(JsonView jsonValue)
       m_itemExplorationConfig[itemExplorationConfigItem.first] = itemExplorationConfigItem.second.AsString();
     }
     m_itemExplorationConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("minRecommendationRequestsPerSecond"))
+  {
+    m_minRecommendationRequestsPerSecond = jsonValue.GetInteger("minRecommendationRequestsPerSecond");
+
+    m_minRecommendationRequestsPerSecondHasBeenSet = true;
   }
 
   return *this;
@@ -56,6 +67,12 @@ JsonValue RecommenderConfig::Jsonize() const
      itemExplorationConfigJsonMap.WithString(itemExplorationConfigItem.first, itemExplorationConfigItem.second);
    }
    payload.WithObject("itemExplorationConfig", std::move(itemExplorationConfigJsonMap));
+
+  }
+
+  if(m_minRecommendationRequestsPerSecondHasBeenSet)
+  {
+   payload.WithInteger("minRecommendationRequestsPerSecond", m_minRecommendationRequestsPerSecond);
 
   }
 

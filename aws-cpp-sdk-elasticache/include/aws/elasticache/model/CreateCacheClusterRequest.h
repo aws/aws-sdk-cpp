@@ -1716,64 +1716,56 @@ namespace Model
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
      * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
-     * Clock UTC). The minimum maintenance window is a 60 minute period. Valid values
-     * for <code>ddd</code> are:</p>
+     * Clock UTC). The minimum maintenance window is a 60 minute period. </p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
      * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
-     * Clock UTC). The minimum maintenance window is a 60 minute period. Valid values
-     * for <code>ddd</code> are:</p>
+     * Clock UTC). The minimum maintenance window is a 60 minute period. </p>
      */
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
      * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
-     * Clock UTC). The minimum maintenance window is a 60 minute period. Valid values
-     * for <code>ddd</code> are:</p>
+     * Clock UTC). The minimum maintenance window is a 60 minute period. </p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
      * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
-     * Clock UTC). The minimum maintenance window is a 60 minute period. Valid values
-     * for <code>ddd</code> are:</p>
+     * Clock UTC). The minimum maintenance window is a 60 minute period. </p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
      * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
-     * Clock UTC). The minimum maintenance window is a 60 minute period. Valid values
-     * for <code>ddd</code> are:</p>
+     * Clock UTC). The minimum maintenance window is a 60 minute period. </p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
      * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
-     * Clock UTC). The minimum maintenance window is a 60 minute period. Valid values
-     * for <code>ddd</code> are:</p>
+     * Clock UTC). The minimum maintenance window is a 60 minute period. </p>
      */
     inline CreateCacheClusterRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
      * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
-     * Clock UTC). The minimum maintenance window is a 60 minute period. Valid values
-     * for <code>ddd</code> are:</p>
+     * Clock UTC). The minimum maintenance window is a 60 minute period. </p>
      */
     inline CreateCacheClusterRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
      * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
-     * Clock UTC). The minimum maintenance window is a 60 minute period. Valid values
-     * for <code>ddd</code> are:</p>
+     * Clock UTC). The minimum maintenance window is a 60 minute period. </p>
      */
     inline CreateCacheClusterRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 

@@ -23,6 +23,7 @@ ConnectorProfile::ConnectorProfile() :
     m_connectorProfileNameHasBeenSet(false),
     m_connectorType(ConnectorType::NOT_SET),
     m_connectorTypeHasBeenSet(false),
+    m_connectorLabelHasBeenSet(false),
     m_connectionMode(ConnectionMode::NOT_SET),
     m_connectionModeHasBeenSet(false),
     m_credentialsArnHasBeenSet(false),
@@ -38,6 +39,7 @@ ConnectorProfile::ConnectorProfile(JsonView jsonValue) :
     m_connectorProfileNameHasBeenSet(false),
     m_connectorType(ConnectorType::NOT_SET),
     m_connectorTypeHasBeenSet(false),
+    m_connectorLabelHasBeenSet(false),
     m_connectionMode(ConnectionMode::NOT_SET),
     m_connectionModeHasBeenSet(false),
     m_credentialsArnHasBeenSet(false),
@@ -70,6 +72,13 @@ ConnectorProfile& ConnectorProfile::operator =(JsonView jsonValue)
     m_connectorType = ConnectorTypeMapper::GetConnectorTypeForName(jsonValue.GetString("connectorType"));
 
     m_connectorTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("connectorLabel"))
+  {
+    m_connectorLabel = jsonValue.GetString("connectorLabel");
+
+    m_connectorLabelHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("connectionMode"))
@@ -136,6 +145,12 @@ JsonValue ConnectorProfile::Jsonize() const
   if(m_connectorTypeHasBeenSet)
   {
    payload.WithString("connectorType", ConnectorTypeMapper::GetNameForConnectorType(m_connectorType));
+  }
+
+  if(m_connectorLabelHasBeenSet)
+  {
+   payload.WithString("connectorLabel", m_connectorLabel);
+
   }
 
   if(m_connectionModeHasBeenSet)

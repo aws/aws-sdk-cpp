@@ -41,48 +41,42 @@ namespace Model
 
     /**
      * <p>The current state of point in time recovery:</p> <ul> <li> <p>
-     * <code>ENABLING</code> - Point in time recovery is being enabled.</p> </li> <li>
-     * <p> <code>ENABLED</code> - Point in time recovery is enabled.</p> </li> <li> <p>
+     * <code>ENABLED</code> - Point in time recovery is enabled.</p> </li> <li> <p>
      * <code>DISABLED</code> - Point in time recovery is disabled.</p> </li> </ul>
      */
     inline const PointInTimeRecoveryStatus& GetPointInTimeRecoveryStatus() const{ return m_pointInTimeRecoveryStatus; }
 
     /**
      * <p>The current state of point in time recovery:</p> <ul> <li> <p>
-     * <code>ENABLING</code> - Point in time recovery is being enabled.</p> </li> <li>
-     * <p> <code>ENABLED</code> - Point in time recovery is enabled.</p> </li> <li> <p>
+     * <code>ENABLED</code> - Point in time recovery is enabled.</p> </li> <li> <p>
      * <code>DISABLED</code> - Point in time recovery is disabled.</p> </li> </ul>
      */
     inline bool PointInTimeRecoveryStatusHasBeenSet() const { return m_pointInTimeRecoveryStatusHasBeenSet; }
 
     /**
      * <p>The current state of point in time recovery:</p> <ul> <li> <p>
-     * <code>ENABLING</code> - Point in time recovery is being enabled.</p> </li> <li>
-     * <p> <code>ENABLED</code> - Point in time recovery is enabled.</p> </li> <li> <p>
+     * <code>ENABLED</code> - Point in time recovery is enabled.</p> </li> <li> <p>
      * <code>DISABLED</code> - Point in time recovery is disabled.</p> </li> </ul>
      */
     inline void SetPointInTimeRecoveryStatus(const PointInTimeRecoveryStatus& value) { m_pointInTimeRecoveryStatusHasBeenSet = true; m_pointInTimeRecoveryStatus = value; }
 
     /**
      * <p>The current state of point in time recovery:</p> <ul> <li> <p>
-     * <code>ENABLING</code> - Point in time recovery is being enabled.</p> </li> <li>
-     * <p> <code>ENABLED</code> - Point in time recovery is enabled.</p> </li> <li> <p>
+     * <code>ENABLED</code> - Point in time recovery is enabled.</p> </li> <li> <p>
      * <code>DISABLED</code> - Point in time recovery is disabled.</p> </li> </ul>
      */
     inline void SetPointInTimeRecoveryStatus(PointInTimeRecoveryStatus&& value) { m_pointInTimeRecoveryStatusHasBeenSet = true; m_pointInTimeRecoveryStatus = std::move(value); }
 
     /**
      * <p>The current state of point in time recovery:</p> <ul> <li> <p>
-     * <code>ENABLING</code> - Point in time recovery is being enabled.</p> </li> <li>
-     * <p> <code>ENABLED</code> - Point in time recovery is enabled.</p> </li> <li> <p>
+     * <code>ENABLED</code> - Point in time recovery is enabled.</p> </li> <li> <p>
      * <code>DISABLED</code> - Point in time recovery is disabled.</p> </li> </ul>
      */
     inline PointInTimeRecoveryDescription& WithPointInTimeRecoveryStatus(const PointInTimeRecoveryStatus& value) { SetPointInTimeRecoveryStatus(value); return *this;}
 
     /**
      * <p>The current state of point in time recovery:</p> <ul> <li> <p>
-     * <code>ENABLING</code> - Point in time recovery is being enabled.</p> </li> <li>
-     * <p> <code>ENABLED</code> - Point in time recovery is enabled.</p> </li> <li> <p>
+     * <code>ENABLED</code> - Point in time recovery is enabled.</p> </li> <li> <p>
      * <code>DISABLED</code> - Point in time recovery is disabled.</p> </li> </ul>
      */
     inline PointInTimeRecoveryDescription& WithPointInTimeRecoveryStatus(PointInTimeRecoveryStatus&& value) { SetPointInTimeRecoveryStatus(std::move(value)); return *this;}

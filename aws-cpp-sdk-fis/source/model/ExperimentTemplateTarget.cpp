@@ -23,7 +23,8 @@ ExperimentTemplateTarget::ExperimentTemplateTarget() :
     m_resourceArnsHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_selectionModeHasBeenSet(false)
+    m_selectionModeHasBeenSet(false),
+    m_parametersHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ ExperimentTemplateTarget::ExperimentTemplateTarget(JsonView jsonValue) :
     m_resourceArnsHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_selectionModeHasBeenSet(false)
+    m_selectionModeHasBeenSet(false),
+    m_parametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -81,6 +83,16 @@ ExperimentTemplateTarget& ExperimentTemplateTarget::operator =(JsonView jsonValu
     m_selectionMode = jsonValue.GetString("selectionMode");
 
     m_selectionModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("parameters"))
+  {
+    Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
+    for(auto& parametersItem : parametersJsonMap)
+    {
+      m_parameters[parametersItem.first] = parametersItem.second.AsString();
+    }
+    m_parametersHasBeenSet = true;
   }
 
   return *this;
@@ -132,6 +144,17 @@ JsonValue ExperimentTemplateTarget::Jsonize() const
   if(m_selectionModeHasBeenSet)
   {
    payload.WithString("selectionMode", m_selectionMode);
+
+  }
+
+  if(m_parametersHasBeenSet)
+  {
+   JsonValue parametersJsonMap;
+   for(auto& parametersItem : m_parameters)
+   {
+     parametersJsonMap.WithString(parametersItem.first, parametersItem.second);
+   }
+   payload.WithObject("parameters", std::move(parametersJsonMap));
 
   }
 

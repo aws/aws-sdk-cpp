@@ -21,14 +21,22 @@ namespace Model
 FieldTypeDetails::FieldTypeDetails() : 
     m_fieldTypeHasBeenSet(false),
     m_filterOperatorsHasBeenSet(false),
-    m_supportedValuesHasBeenSet(false)
+    m_supportedValuesHasBeenSet(false),
+    m_valueRegexPatternHasBeenSet(false),
+    m_supportedDateFormatHasBeenSet(false),
+    m_fieldValueRangeHasBeenSet(false),
+    m_fieldLengthRangeHasBeenSet(false)
 {
 }
 
 FieldTypeDetails::FieldTypeDetails(JsonView jsonValue) : 
     m_fieldTypeHasBeenSet(false),
     m_filterOperatorsHasBeenSet(false),
-    m_supportedValuesHasBeenSet(false)
+    m_supportedValuesHasBeenSet(false),
+    m_valueRegexPatternHasBeenSet(false),
+    m_supportedDateFormatHasBeenSet(false),
+    m_fieldValueRangeHasBeenSet(false),
+    m_fieldLengthRangeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +68,34 @@ FieldTypeDetails& FieldTypeDetails::operator =(JsonView jsonValue)
       m_supportedValues.push_back(supportedValuesJsonList[supportedValuesIndex].AsString());
     }
     m_supportedValuesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("valueRegexPattern"))
+  {
+    m_valueRegexPattern = jsonValue.GetString("valueRegexPattern");
+
+    m_valueRegexPatternHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("supportedDateFormat"))
+  {
+    m_supportedDateFormat = jsonValue.GetString("supportedDateFormat");
+
+    m_supportedDateFormatHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fieldValueRange"))
+  {
+    m_fieldValueRange = jsonValue.GetObject("fieldValueRange");
+
+    m_fieldValueRangeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fieldLengthRange"))
+  {
+    m_fieldLengthRange = jsonValue.GetObject("fieldLengthRange");
+
+    m_fieldLengthRangeHasBeenSet = true;
   }
 
   return *this;
@@ -94,6 +130,30 @@ JsonValue FieldTypeDetails::Jsonize() const
      supportedValuesJsonList[supportedValuesIndex].AsString(m_supportedValues[supportedValuesIndex]);
    }
    payload.WithArray("supportedValues", std::move(supportedValuesJsonList));
+
+  }
+
+  if(m_valueRegexPatternHasBeenSet)
+  {
+   payload.WithString("valueRegexPattern", m_valueRegexPattern);
+
+  }
+
+  if(m_supportedDateFormatHasBeenSet)
+  {
+   payload.WithString("supportedDateFormat", m_supportedDateFormat);
+
+  }
+
+  if(m_fieldValueRangeHasBeenSet)
+  {
+   payload.WithObject("fieldValueRange", m_fieldValueRange.Jsonize());
+
+  }
+
+  if(m_fieldLengthRangeHasBeenSet)
+  {
+   payload.WithObject("fieldLengthRange", m_fieldLengthRange.Jsonize());
 
   }
 

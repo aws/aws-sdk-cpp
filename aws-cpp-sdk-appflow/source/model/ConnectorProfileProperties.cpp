@@ -35,7 +35,8 @@ ConnectorProfileProperties::ConnectorProfileProperties() :
     m_trendmicroHasBeenSet(false),
     m_veevaHasBeenSet(false),
     m_zendeskHasBeenSet(false),
-    m_sAPODataHasBeenSet(false)
+    m_sAPODataHasBeenSet(false),
+    m_customConnectorHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ ConnectorProfileProperties::ConnectorProfileProperties(JsonView jsonValue) :
     m_trendmicroHasBeenSet(false),
     m_veevaHasBeenSet(false),
     m_zendeskHasBeenSet(false),
-    m_sAPODataHasBeenSet(false)
+    m_sAPODataHasBeenSet(false),
+    m_customConnectorHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -182,6 +184,13 @@ ConnectorProfileProperties& ConnectorProfileProperties::operator =(JsonView json
     m_sAPODataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomConnector"))
+  {
+    m_customConnector = jsonValue.GetObject("CustomConnector");
+
+    m_customConnectorHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -288,6 +297,12 @@ JsonValue ConnectorProfileProperties::Jsonize() const
   if(m_sAPODataHasBeenSet)
   {
    payload.WithObject("SAPOData", m_sAPOData.Jsonize());
+
+  }
+
+  if(m_customConnectorHasBeenSet)
+  {
+   payload.WithObject("CustomConnector", m_customConnector.Jsonize());
 
   }
 

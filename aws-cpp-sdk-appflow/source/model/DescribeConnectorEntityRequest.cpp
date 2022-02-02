@@ -16,7 +16,8 @@ DescribeConnectorEntityRequest::DescribeConnectorEntityRequest() :
     m_connectorEntityNameHasBeenSet(false),
     m_connectorType(ConnectorType::NOT_SET),
     m_connectorTypeHasBeenSet(false),
-    m_connectorProfileNameHasBeenSet(false)
+    m_connectorProfileNameHasBeenSet(false),
+    m_apiVersionHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,12 @@ Aws::String DescribeConnectorEntityRequest::SerializePayload() const
   if(m_connectorProfileNameHasBeenSet)
   {
    payload.WithString("connectorProfileName", m_connectorProfileName);
+
+  }
+
+  if(m_apiVersionHasBeenSet)
+  {
+   payload.WithString("apiVersion", m_apiVersion);
 
   }
 

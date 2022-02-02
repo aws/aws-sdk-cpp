@@ -201,6 +201,47 @@ namespace Model
      */
     inline ListConnectorEntitiesRequest& WithEntitiesPath(const char* value) { SetEntitiesPath(value); return *this;}
 
+
+    /**
+     * <p>The version of the API that's used by the connector.</p>
+     */
+    inline const Aws::String& GetApiVersion() const{ return m_apiVersion; }
+
+    /**
+     * <p>The version of the API that's used by the connector.</p>
+     */
+    inline bool ApiVersionHasBeenSet() const { return m_apiVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the API that's used by the connector.</p>
+     */
+    inline void SetApiVersion(const Aws::String& value) { m_apiVersionHasBeenSet = true; m_apiVersion = value; }
+
+    /**
+     * <p>The version of the API that's used by the connector.</p>
+     */
+    inline void SetApiVersion(Aws::String&& value) { m_apiVersionHasBeenSet = true; m_apiVersion = std::move(value); }
+
+    /**
+     * <p>The version of the API that's used by the connector.</p>
+     */
+    inline void SetApiVersion(const char* value) { m_apiVersionHasBeenSet = true; m_apiVersion.assign(value); }
+
+    /**
+     * <p>The version of the API that's used by the connector.</p>
+     */
+    inline ListConnectorEntitiesRequest& WithApiVersion(const Aws::String& value) { SetApiVersion(value); return *this;}
+
+    /**
+     * <p>The version of the API that's used by the connector.</p>
+     */
+    inline ListConnectorEntitiesRequest& WithApiVersion(Aws::String&& value) { SetApiVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of the API that's used by the connector.</p>
+     */
+    inline ListConnectorEntitiesRequest& WithApiVersion(const char* value) { SetApiVersion(value); return *this;}
+
   private:
 
     Aws::String m_connectorProfileName;
@@ -211,6 +252,9 @@ namespace Model
 
     Aws::String m_entitiesPath;
     bool m_entitiesPathHasBeenSet;
+
+    Aws::String m_apiVersion;
+    bool m_apiVersionHasBeenSet;
   };
 
 } // namespace Model

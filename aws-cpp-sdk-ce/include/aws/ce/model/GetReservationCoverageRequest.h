@@ -115,8 +115,9 @@ namespace Model
      * <p>You can group the data by the following attributes:</p> <ul> <li> <p>AZ</p>
      * </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
      * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
-     * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
-     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p> </li> </ul>
+     * <p>INVOICING_ENTITY</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
+     * <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p>
+     * </li> <li> <p>TENANCY</p> </li> </ul>
      */
     inline const Aws::Vector<GroupDefinition>& GetGroupBy() const{ return m_groupBy; }
 
@@ -124,8 +125,9 @@ namespace Model
      * <p>You can group the data by the following attributes:</p> <ul> <li> <p>AZ</p>
      * </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
      * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
-     * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
-     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p> </li> </ul>
+     * <p>INVOICING_ENTITY</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
+     * <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p>
+     * </li> <li> <p>TENANCY</p> </li> </ul>
      */
     inline bool GroupByHasBeenSet() const { return m_groupByHasBeenSet; }
 
@@ -133,8 +135,9 @@ namespace Model
      * <p>You can group the data by the following attributes:</p> <ul> <li> <p>AZ</p>
      * </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
      * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
-     * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
-     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p> </li> </ul>
+     * <p>INVOICING_ENTITY</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
+     * <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p>
+     * </li> <li> <p>TENANCY</p> </li> </ul>
      */
     inline void SetGroupBy(const Aws::Vector<GroupDefinition>& value) { m_groupByHasBeenSet = true; m_groupBy = value; }
 
@@ -142,8 +145,9 @@ namespace Model
      * <p>You can group the data by the following attributes:</p> <ul> <li> <p>AZ</p>
      * </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
      * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
-     * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
-     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p> </li> </ul>
+     * <p>INVOICING_ENTITY</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
+     * <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p>
+     * </li> <li> <p>TENANCY</p> </li> </ul>
      */
     inline void SetGroupBy(Aws::Vector<GroupDefinition>&& value) { m_groupByHasBeenSet = true; m_groupBy = std::move(value); }
 
@@ -151,8 +155,9 @@ namespace Model
      * <p>You can group the data by the following attributes:</p> <ul> <li> <p>AZ</p>
      * </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
      * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
-     * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
-     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p> </li> </ul>
+     * <p>INVOICING_ENTITY</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
+     * <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p>
+     * </li> <li> <p>TENANCY</p> </li> </ul>
      */
     inline GetReservationCoverageRequest& WithGroupBy(const Aws::Vector<GroupDefinition>& value) { SetGroupBy(value); return *this;}
 
@@ -160,8 +165,9 @@ namespace Model
      * <p>You can group the data by the following attributes:</p> <ul> <li> <p>AZ</p>
      * </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
      * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
-     * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
-     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p> </li> </ul>
+     * <p>INVOICING_ENTITY</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
+     * <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p>
+     * </li> <li> <p>TENANCY</p> </li> </ul>
      */
     inline GetReservationCoverageRequest& WithGroupBy(Aws::Vector<GroupDefinition>&& value) { SetGroupBy(std::move(value)); return *this;}
 
@@ -169,8 +175,9 @@ namespace Model
      * <p>You can group the data by the following attributes:</p> <ul> <li> <p>AZ</p>
      * </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
      * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
-     * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
-     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p> </li> </ul>
+     * <p>INVOICING_ENTITY</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
+     * <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p>
+     * </li> <li> <p>TENANCY</p> </li> </ul>
      */
     inline GetReservationCoverageRequest& AddGroupBy(const GroupDefinition& value) { m_groupByHasBeenSet = true; m_groupBy.push_back(value); return *this; }
 
@@ -178,8 +185,9 @@ namespace Model
      * <p>You can group the data by the following attributes:</p> <ul> <li> <p>AZ</p>
      * </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
      * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
-     * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
-     * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p> </li> </ul>
+     * <p>INVOICING_ENTITY</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li>
+     * <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p>
+     * </li> <li> <p>TENANCY</p> </li> </ul>
      */
     inline GetReservationCoverageRequest& AddGroupBy(GroupDefinition&& value) { m_groupByHasBeenSet = true; m_groupBy.push_back(std::move(value)); return *this; }
 
@@ -261,7 +269,8 @@ namespace Model
      * </ul> <p> <code>GetReservationCoverage</code> uses the same <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension. You can nest only one level deep.</p> <p>If you don't provide a
+     * each dimension. You can nest only one level deep. If there are multiple values
+     * for a dimension, they are OR'd together.</p> <p>If you don't provide a
      * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p> <p>Cost category
      * is also supported.</p>
      */
@@ -277,7 +286,8 @@ namespace Model
      * </ul> <p> <code>GetReservationCoverage</code> uses the same <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension. You can nest only one level deep.</p> <p>If you don't provide a
+     * each dimension. You can nest only one level deep. If there are multiple values
+     * for a dimension, they are OR'd together.</p> <p>If you don't provide a
      * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p> <p>Cost category
      * is also supported.</p>
      */
@@ -293,7 +303,8 @@ namespace Model
      * </ul> <p> <code>GetReservationCoverage</code> uses the same <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension. You can nest only one level deep.</p> <p>If you don't provide a
+     * each dimension. You can nest only one level deep. If there are multiple values
+     * for a dimension, they are OR'd together.</p> <p>If you don't provide a
      * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p> <p>Cost category
      * is also supported.</p>
      */
@@ -309,7 +320,8 @@ namespace Model
      * </ul> <p> <code>GetReservationCoverage</code> uses the same <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension. You can nest only one level deep.</p> <p>If you don't provide a
+     * each dimension. You can nest only one level deep. If there are multiple values
+     * for a dimension, they are OR'd together.</p> <p>If you don't provide a
      * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p> <p>Cost category
      * is also supported.</p>
      */
@@ -325,7 +337,8 @@ namespace Model
      * </ul> <p> <code>GetReservationCoverage</code> uses the same <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension. You can nest only one level deep.</p> <p>If you don't provide a
+     * each dimension. You can nest only one level deep. If there are multiple values
+     * for a dimension, they are OR'd together.</p> <p>If you don't provide a
      * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p> <p>Cost category
      * is also supported.</p>
      */
@@ -341,7 +354,8 @@ namespace Model
      * </ul> <p> <code>GetReservationCoverage</code> uses the same <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension. You can nest only one level deep.</p> <p>If you don't provide a
+     * each dimension. You can nest only one level deep. If there are multiple values
+     * for a dimension, they are OR'd together.</p> <p>If you don't provide a
      * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p> <p>Cost category
      * is also supported.</p>
      */

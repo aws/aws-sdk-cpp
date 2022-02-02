@@ -25,10 +25,12 @@
 #include <aws/fis/model/GetActionRequest.h>
 #include <aws/fis/model/GetExperimentRequest.h>
 #include <aws/fis/model/GetExperimentTemplateRequest.h>
+#include <aws/fis/model/GetTargetResourceTypeRequest.h>
 #include <aws/fis/model/ListActionsRequest.h>
 #include <aws/fis/model/ListExperimentTemplatesRequest.h>
 #include <aws/fis/model/ListExperimentsRequest.h>
 #include <aws/fis/model/ListTagsForResourceRequest.h>
+#include <aws/fis/model/ListTargetResourceTypesRequest.h>
 #include <aws/fis/model/StartExperimentRequest.h>
 #include <aws/fis/model/StopExperimentRequest.h>
 #include <aws/fis/model/TagResourceRequest.h>
@@ -257,6 +259,37 @@ void FISClient::GetExperimentTemplateAsyncHelper(const GetExperimentTemplateRequ
   handler(this, request, GetExperimentTemplate(request), context);
 }
 
+GetTargetResourceTypeOutcome FISClient::GetTargetResourceType(const GetTargetResourceTypeRequest& request) const
+{
+  if (!request.ResourceTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetTargetResourceType", "Required field: ResourceType, is not set");
+    return GetTargetResourceTypeOutcome(Aws::Client::AWSError<FISErrors>(FISErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/targetResourceTypes/");
+  uri.AddPathSegment(request.GetResourceType());
+  return GetTargetResourceTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetTargetResourceTypeOutcomeCallable FISClient::GetTargetResourceTypeCallable(const GetTargetResourceTypeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetTargetResourceTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTargetResourceType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FISClient::GetTargetResourceTypeAsync(const GetTargetResourceTypeRequest& request, const GetTargetResourceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetTargetResourceTypeAsyncHelper( request, handler, context ); } );
+}
+
+void FISClient::GetTargetResourceTypeAsyncHelper(const GetTargetResourceTypeRequest& request, const GetTargetResourceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetTargetResourceType(request), context);
+}
+
 ListActionsOutcome FISClient::ListActions(const ListActionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -361,6 +394,31 @@ void FISClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& reque
 void FISClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+ListTargetResourceTypesOutcome FISClient::ListTargetResourceTypes(const ListTargetResourceTypesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/targetResourceTypes");
+  return ListTargetResourceTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListTargetResourceTypesOutcomeCallable FISClient::ListTargetResourceTypesCallable(const ListTargetResourceTypesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTargetResourceTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTargetResourceTypes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FISClient::ListTargetResourceTypesAsync(const ListTargetResourceTypesRequest& request, const ListTargetResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTargetResourceTypesAsyncHelper( request, handler, context ); } );
+}
+
+void FISClient::ListTargetResourceTypesAsyncHelper(const ListTargetResourceTypesRequest& request, const ListTargetResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTargetResourceTypes(request), context);
 }
 
 StartExperimentOutcome FISClient::StartExperiment(const StartExperimentRequest& request) const

@@ -22,6 +22,7 @@
 #include <aws/appflow/model/VeevaConnectorProfileProperties.h>
 #include <aws/appflow/model/ZendeskConnectorProfileProperties.h>
 #include <aws/appflow/model/SAPODataConnectorProfileProperties.h>
+#include <aws/appflow/model/CustomConnectorProfileProperties.h>
 #include <utility>
 
 namespace Aws
@@ -568,6 +569,37 @@ namespace Model
     
     inline ConnectorProfileProperties& WithSAPOData(SAPODataConnectorProfileProperties&& value) { SetSAPOData(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The properties required by the custom connector.</p>
+     */
+    inline const CustomConnectorProfileProperties& GetCustomConnector() const{ return m_customConnector; }
+
+    /**
+     * <p>The properties required by the custom connector.</p>
+     */
+    inline bool CustomConnectorHasBeenSet() const { return m_customConnectorHasBeenSet; }
+
+    /**
+     * <p>The properties required by the custom connector.</p>
+     */
+    inline void SetCustomConnector(const CustomConnectorProfileProperties& value) { m_customConnectorHasBeenSet = true; m_customConnector = value; }
+
+    /**
+     * <p>The properties required by the custom connector.</p>
+     */
+    inline void SetCustomConnector(CustomConnectorProfileProperties&& value) { m_customConnectorHasBeenSet = true; m_customConnector = std::move(value); }
+
+    /**
+     * <p>The properties required by the custom connector.</p>
+     */
+    inline ConnectorProfileProperties& WithCustomConnector(const CustomConnectorProfileProperties& value) { SetCustomConnector(value); return *this;}
+
+    /**
+     * <p>The properties required by the custom connector.</p>
+     */
+    inline ConnectorProfileProperties& WithCustomConnector(CustomConnectorProfileProperties&& value) { SetCustomConnector(std::move(value)); return *this;}
+
   private:
 
     AmplitudeConnectorProfileProperties m_amplitude;
@@ -620,6 +652,9 @@ namespace Model
 
     SAPODataConnectorProfileProperties m_sAPOData;
     bool m_sAPODataHasBeenSet;
+
+    CustomConnectorProfileProperties m_customConnector;
+    bool m_customConnectorHasBeenSet;
   };
 
 } // namespace Model
