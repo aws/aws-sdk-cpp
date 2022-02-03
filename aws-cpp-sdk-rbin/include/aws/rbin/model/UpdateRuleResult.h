@@ -196,31 +196,31 @@ namespace Model
 
     /**
      * <p>The state of the retention rule. Only retention rules that are in the
-     * <code>available</code> state retain snapshots.</p>
+     * <code>available</code> state retain resources.</p>
      */
     inline const RuleStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The state of the retention rule. Only retention rules that are in the
-     * <code>available</code> state retain snapshots.</p>
+     * <code>available</code> state retain resources.</p>
      */
     inline void SetStatus(const RuleStatus& value) { m_status = value; }
 
     /**
      * <p>The state of the retention rule. Only retention rules that are in the
-     * <code>available</code> state retain snapshots.</p>
+     * <code>available</code> state retain resources.</p>
      */
     inline void SetStatus(RuleStatus&& value) { m_status = std::move(value); }
 
     /**
      * <p>The state of the retention rule. Only retention rules that are in the
-     * <code>available</code> state retain snapshots.</p>
+     * <code>available</code> state retain resources.</p>
      */
     inline UpdateRuleResult& WithStatus(const RuleStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The state of the retention rule. Only retention rules that are in the
-     * <code>available</code> state retain snapshots.</p>
+     * <code>available</code> state retain resources.</p>
      */
     inline UpdateRuleResult& WithStatus(RuleStatus&& value) { SetStatus(std::move(value)); return *this;}
 

@@ -40,6 +40,12 @@ ResolveCustomerResult& ResolveCustomerResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("CustomerAWSAccountId"))
+  {
+    m_customerAWSAccountId = jsonValue.GetString("CustomerAWSAccountId");
+
+  }
+
 
 
   return *this;

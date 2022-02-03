@@ -376,6 +376,7 @@
 #include <aws/ec2/model/ImportKeyPairResponse.h>
 #include <aws/ec2/model/ImportSnapshotResponse.h>
 #include <aws/ec2/model/ImportVolumeResponse.h>
+#include <aws/ec2/model/ListImagesInRecycleBinResponse.h>
 #include <aws/ec2/model/ListSnapshotsInRecycleBinResponse.h>
 #include <aws/ec2/model/ModifyAddressAttributeResponse.h>
 #include <aws/ec2/model/ModifyAvailabilityZoneGroupResponse.h>
@@ -452,6 +453,7 @@
 #include <aws/ec2/model/ResetEbsDefaultKmsKeyIdResponse.h>
 #include <aws/ec2/model/ResetFpgaImageAttributeResponse.h>
 #include <aws/ec2/model/RestoreAddressToClassicResponse.h>
+#include <aws/ec2/model/RestoreImageFromRecycleBinResponse.h>
 #include <aws/ec2/model/RestoreManagedPrefixListVersionResponse.h>
 #include <aws/ec2/model/RestoreSnapshotFromRecycleBinResponse.h>
 #include <aws/ec2/model/RestoreSnapshotTierResponse.h>
@@ -921,6 +923,7 @@ namespace Model
         class ImportKeyPairRequest;
         class ImportSnapshotRequest;
         class ImportVolumeRequest;
+        class ListImagesInRecycleBinRequest;
         class ListSnapshotsInRecycleBinRequest;
         class ModifyAddressAttributeRequest;
         class ModifyAvailabilityZoneGroupRequest;
@@ -1015,6 +1018,7 @@ namespace Model
         class ResetNetworkInterfaceAttributeRequest;
         class ResetSnapshotAttributeRequest;
         class RestoreAddressToClassicRequest;
+        class RestoreImageFromRecycleBinRequest;
         class RestoreManagedPrefixListVersionRequest;
         class RestoreSnapshotFromRecycleBinRequest;
         class RestoreSnapshotTierRequest;
@@ -1441,6 +1445,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ImportKeyPairResponse, EC2Error> ImportKeyPairOutcome;
         typedef Aws::Utils::Outcome<ImportSnapshotResponse, EC2Error> ImportSnapshotOutcome;
         typedef Aws::Utils::Outcome<ImportVolumeResponse, EC2Error> ImportVolumeOutcome;
+        typedef Aws::Utils::Outcome<ListImagesInRecycleBinResponse, EC2Error> ListImagesInRecycleBinOutcome;
         typedef Aws::Utils::Outcome<ListSnapshotsInRecycleBinResponse, EC2Error> ListSnapshotsInRecycleBinOutcome;
         typedef Aws::Utils::Outcome<ModifyAddressAttributeResponse, EC2Error> ModifyAddressAttributeOutcome;
         typedef Aws::Utils::Outcome<ModifyAvailabilityZoneGroupResponse, EC2Error> ModifyAvailabilityZoneGroupOutcome;
@@ -1535,6 +1540,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> ResetNetworkInterfaceAttributeOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> ResetSnapshotAttributeOutcome;
         typedef Aws::Utils::Outcome<RestoreAddressToClassicResponse, EC2Error> RestoreAddressToClassicOutcome;
+        typedef Aws::Utils::Outcome<RestoreImageFromRecycleBinResponse, EC2Error> RestoreImageFromRecycleBinOutcome;
         typedef Aws::Utils::Outcome<RestoreManagedPrefixListVersionResponse, EC2Error> RestoreManagedPrefixListVersionOutcome;
         typedef Aws::Utils::Outcome<RestoreSnapshotFromRecycleBinResponse, EC2Error> RestoreSnapshotFromRecycleBinOutcome;
         typedef Aws::Utils::Outcome<RestoreSnapshotTierResponse, EC2Error> RestoreSnapshotTierOutcome;
@@ -1961,6 +1967,7 @@ namespace Model
         typedef std::future<ImportKeyPairOutcome> ImportKeyPairOutcomeCallable;
         typedef std::future<ImportSnapshotOutcome> ImportSnapshotOutcomeCallable;
         typedef std::future<ImportVolumeOutcome> ImportVolumeOutcomeCallable;
+        typedef std::future<ListImagesInRecycleBinOutcome> ListImagesInRecycleBinOutcomeCallable;
         typedef std::future<ListSnapshotsInRecycleBinOutcome> ListSnapshotsInRecycleBinOutcomeCallable;
         typedef std::future<ModifyAddressAttributeOutcome> ModifyAddressAttributeOutcomeCallable;
         typedef std::future<ModifyAvailabilityZoneGroupOutcome> ModifyAvailabilityZoneGroupOutcomeCallable;
@@ -2055,6 +2062,7 @@ namespace Model
         typedef std::future<ResetNetworkInterfaceAttributeOutcome> ResetNetworkInterfaceAttributeOutcomeCallable;
         typedef std::future<ResetSnapshotAttributeOutcome> ResetSnapshotAttributeOutcomeCallable;
         typedef std::future<RestoreAddressToClassicOutcome> RestoreAddressToClassicOutcomeCallable;
+        typedef std::future<RestoreImageFromRecycleBinOutcome> RestoreImageFromRecycleBinOutcomeCallable;
         typedef std::future<RestoreManagedPrefixListVersionOutcome> RestoreManagedPrefixListVersionOutcomeCallable;
         typedef std::future<RestoreSnapshotFromRecycleBinOutcome> RestoreSnapshotFromRecycleBinOutcomeCallable;
         typedef std::future<RestoreSnapshotTierOutcome> RestoreSnapshotTierOutcomeCallable;
@@ -2484,6 +2492,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ImportKeyPairRequest&, const Model::ImportKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportKeyPairResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ImportSnapshotRequest&, const Model::ImportSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportSnapshotResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ImportVolumeRequest&, const Model::ImportVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportVolumeResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ListImagesInRecycleBinRequest&, const Model::ListImagesInRecycleBinOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImagesInRecycleBinResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ListSnapshotsInRecycleBinRequest&, const Model::ListSnapshotsInRecycleBinOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSnapshotsInRecycleBinResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyAddressAttributeRequest&, const Model::ModifyAddressAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyAddressAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyAvailabilityZoneGroupRequest&, const Model::ModifyAvailabilityZoneGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyAvailabilityZoneGroupResponseReceivedHandler;
@@ -2578,6 +2587,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ResetNetworkInterfaceAttributeRequest&, const Model::ResetNetworkInterfaceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetNetworkInterfaceAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ResetSnapshotAttributeRequest&, const Model::ResetSnapshotAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetSnapshotAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RestoreAddressToClassicRequest&, const Model::RestoreAddressToClassicOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreAddressToClassicResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::RestoreImageFromRecycleBinRequest&, const Model::RestoreImageFromRecycleBinOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreImageFromRecycleBinResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RestoreManagedPrefixListVersionRequest&, const Model::RestoreManagedPrefixListVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreManagedPrefixListVersionResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RestoreSnapshotFromRecycleBinRequest&, const Model::RestoreSnapshotFromRecycleBinOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreSnapshotFromRecycleBinResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RestoreSnapshotTierRequest&, const Model::RestoreSnapshotTierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreSnapshotTierResponseReceivedHandler;
@@ -5618,11 +5628,17 @@ namespace Model
 
         /**
          * <p>Creates an Amazon EBS-backed AMI from an Amazon EBS-backed instance that is
-         * either running or stopped.</p> <p>If you customized your instance with instance
-         * store volumes or Amazon EBS volumes in addition to the root device volume, the
-         * new AMI contains block device mapping information for those volumes. When you
-         * launch an instance from this new AMI, the instance automatically launches with
-         * those additional volumes.</p> <p>For more information, see <a
+         * either running or stopped.</p>  <p>By default, Amazon EC2 shuts down
+         * and reboots the instance before creating the AMI to ensure that everything on
+         * the instance is stopped and in a consistent state during the creation process.
+         * If you're confident that your instance is in a consistent state appropriate for
+         * AMI creation, use the <b>NoReboot</b> parameter to prevent Amazon EC2 from
+         * shutting down and rebooting the instance. </p>  <p>If you customized
+         * your instance with instance store volumes or Amazon EBS volumes in addition to
+         * the root device volume, the new AMI contains block device mapping information
+         * for those volumes. When you launch an instance from this new AMI, the instance
+         * automatically launches with those additional volumes.</p> <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
          * Amazon EBS-Backed Linux AMIs</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -5633,11 +5649,17 @@ namespace Model
 
         /**
          * <p>Creates an Amazon EBS-backed AMI from an Amazon EBS-backed instance that is
-         * either running or stopped.</p> <p>If you customized your instance with instance
-         * store volumes or Amazon EBS volumes in addition to the root device volume, the
-         * new AMI contains block device mapping information for those volumes. When you
-         * launch an instance from this new AMI, the instance automatically launches with
-         * those additional volumes.</p> <p>For more information, see <a
+         * either running or stopped.</p>  <p>By default, Amazon EC2 shuts down
+         * and reboots the instance before creating the AMI to ensure that everything on
+         * the instance is stopped and in a consistent state during the creation process.
+         * If you're confident that your instance is in a consistent state appropriate for
+         * AMI creation, use the <b>NoReboot</b> parameter to prevent Amazon EC2 from
+         * shutting down and rebooting the instance. </p>  <p>If you customized
+         * your instance with instance store volumes or Amazon EBS volumes in addition to
+         * the root device volume, the new AMI contains block device mapping information
+         * for those volumes. When you launch an instance from this new AMI, the instance
+         * automatically launches with those additional volumes.</p> <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
          * Amazon EBS-Backed Linux AMIs</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -5650,11 +5672,17 @@ namespace Model
 
         /**
          * <p>Creates an Amazon EBS-backed AMI from an Amazon EBS-backed instance that is
-         * either running or stopped.</p> <p>If you customized your instance with instance
-         * store volumes or Amazon EBS volumes in addition to the root device volume, the
-         * new AMI contains block device mapping information for those volumes. When you
-         * launch an instance from this new AMI, the instance automatically launches with
-         * those additional volumes.</p> <p>For more information, see <a
+         * either running or stopped.</p>  <p>By default, Amazon EC2 shuts down
+         * and reboots the instance before creating the AMI to ensure that everything on
+         * the instance is stopped and in a consistent state during the creation process.
+         * If you're confident that your instance is in a consistent state appropriate for
+         * AMI creation, use the <b>NoReboot</b> parameter to prevent Amazon EC2 from
+         * shutting down and rebooting the instance. </p>  <p>If you customized
+         * your instance with instance store volumes or Amazon EBS volumes in addition to
+         * the root device volume, the new AMI contains block device mapping information
+         * for those volumes. When you launch an instance from this new AMI, the instance
+         * automatically launches with those additional volumes.</p> <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
          * Amazon EBS-Backed Linux AMIs</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -10636,13 +10664,18 @@ namespace Model
 
         /**
          * <p>Deregisters the specified AMI. After you deregister an AMI, it can't be used
-         * to launch new instances; however, it doesn't affect any instances that you've
-         * already launched from the AMI. You'll continue to incur usage costs for those
-         * instances until you terminate them.</p> <p>When you deregister an Amazon
-         * EBS-backed AMI, it doesn't affect the snapshot that was created for the root
-         * volume of the instance during the AMI creation process. When you deregister an
-         * instance store-backed AMI, it doesn't affect the files that you uploaded to
-         * Amazon S3 when you created the AMI.</p><p><h3>See Also:</h3>   <a
+         * to launch new instances.</p> <p>If you deregister an AMI that matches a Recycle
+         * Bin retention rule, the AMI is retained in the Recycle Bin for the specified
+         * retention period. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
+         * Bin</a> in the Amazon Elastic Compute Cloud User Guide.</p> <p>When you
+         * deregister an AMI, it doesn't affect any instances that you've already launched
+         * from the AMI. You'll continue to incur usage costs for those instances until you
+         * terminate them.</p> <p>When you deregister an Amazon EBS-backed AMI, it doesn't
+         * affect the snapshot that was created for the root volume of the instance during
+         * the AMI creation process. When you deregister an instance store-backed AMI, it
+         * doesn't affect the files that you uploaded to Amazon S3 when you created the
+         * AMI.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterImage">AWS
          * API Reference</a></p>
          */
@@ -10650,13 +10683,18 @@ namespace Model
 
         /**
          * <p>Deregisters the specified AMI. After you deregister an AMI, it can't be used
-         * to launch new instances; however, it doesn't affect any instances that you've
-         * already launched from the AMI. You'll continue to incur usage costs for those
-         * instances until you terminate them.</p> <p>When you deregister an Amazon
-         * EBS-backed AMI, it doesn't affect the snapshot that was created for the root
-         * volume of the instance during the AMI creation process. When you deregister an
-         * instance store-backed AMI, it doesn't affect the files that you uploaded to
-         * Amazon S3 when you created the AMI.</p><p><h3>See Also:</h3>   <a
+         * to launch new instances.</p> <p>If you deregister an AMI that matches a Recycle
+         * Bin retention rule, the AMI is retained in the Recycle Bin for the specified
+         * retention period. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
+         * Bin</a> in the Amazon Elastic Compute Cloud User Guide.</p> <p>When you
+         * deregister an AMI, it doesn't affect any instances that you've already launched
+         * from the AMI. You'll continue to incur usage costs for those instances until you
+         * terminate them.</p> <p>When you deregister an Amazon EBS-backed AMI, it doesn't
+         * affect the snapshot that was created for the root volume of the instance during
+         * the AMI creation process. When you deregister an instance store-backed AMI, it
+         * doesn't affect the files that you uploaded to Amazon S3 when you created the
+         * AMI.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterImage">AWS
          * API Reference</a></p>
          *
@@ -10666,13 +10704,18 @@ namespace Model
 
         /**
          * <p>Deregisters the specified AMI. After you deregister an AMI, it can't be used
-         * to launch new instances; however, it doesn't affect any instances that you've
-         * already launched from the AMI. You'll continue to incur usage costs for those
-         * instances until you terminate them.</p> <p>When you deregister an Amazon
-         * EBS-backed AMI, it doesn't affect the snapshot that was created for the root
-         * volume of the instance during the AMI creation process. When you deregister an
-         * instance store-backed AMI, it doesn't affect the files that you uploaded to
-         * Amazon S3 when you created the AMI.</p><p><h3>See Also:</h3>   <a
+         * to launch new instances.</p> <p>If you deregister an AMI that matches a Recycle
+         * Bin retention rule, the AMI is retained in the Recycle Bin for the specified
+         * retention period. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
+         * Bin</a> in the Amazon Elastic Compute Cloud User Guide.</p> <p>When you
+         * deregister an AMI, it doesn't affect any instances that you've already launched
+         * from the AMI. You'll continue to incur usage costs for those instances until you
+         * terminate them.</p> <p>When you deregister an Amazon EBS-backed AMI, it doesn't
+         * affect the snapshot that was created for the root volume of the instance during
+         * the AMI creation process. When you deregister an instance store-backed AMI, it
+         * doesn't affect the files that you uploaded to Amazon S3 when you created the
+         * AMI.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterImage">AWS
          * API Reference</a></p>
          *
@@ -16121,8 +16164,8 @@ namespace Model
          * <p>Discontinue faster launching for a Windows AMI, and clean up existing
          * pre-provisioned snapshots. When you disable faster launching, the AMI uses the
          * standard launch process for each instance. All pre-provisioned snapshots must be
-         * removed before you can enable faster launching again.</p><p><h3>See Also:</h3>  
-         * <a
+         * removed before you can enable faster launching again.</p>  <p>To change
+         * these settings, you must own the AMI.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastLaunch">AWS
          * API Reference</a></p>
          */
@@ -16132,8 +16175,8 @@ namespace Model
          * <p>Discontinue faster launching for a Windows AMI, and clean up existing
          * pre-provisioned snapshots. When you disable faster launching, the AMI uses the
          * standard launch process for each instance. All pre-provisioned snapshots must be
-         * removed before you can enable faster launching again.</p><p><h3>See Also:</h3>  
-         * <a
+         * removed before you can enable faster launching again.</p>  <p>To change
+         * these settings, you must own the AMI.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastLaunch">AWS
          * API Reference</a></p>
          *
@@ -16145,8 +16188,8 @@ namespace Model
          * <p>Discontinue faster launching for a Windows AMI, and clean up existing
          * pre-provisioned snapshots. When you disable faster launching, the AMI uses the
          * standard launch process for each instance. All pre-provisioned snapshots must be
-         * removed before you can enable faster launching again.</p><p><h3>See Also:</h3>  
-         * <a
+         * removed before you can enable faster launching again.</p>  <p>To change
+         * these settings, you must own the AMI.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastLaunch">AWS
          * API Reference</a></p>
          *
@@ -16892,7 +16935,8 @@ namespace Model
          * Sysprep steps, rebooting as required. Then it creates a set of reserved
          * snapshots that are used for subsequent launches. The reserved snapshots are
          * automatically replenished as they are used, depending on your settings for
-         * launch frequency.</p><p><h3>See Also:</h3>   <a
+         * launch frequency.</p>  <p>To change these settings, you must own the
+         * AMI.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastLaunch">AWS
          * API Reference</a></p>
          */
@@ -16905,7 +16949,8 @@ namespace Model
          * Sysprep steps, rebooting as required. Then it creates a set of reserved
          * snapshots that are used for subsequent launches. The reserved snapshots are
          * automatically replenished as they are used, depending on your settings for
-         * launch frequency.</p><p><h3>See Also:</h3>   <a
+         * launch frequency.</p>  <p>To change these settings, you must own the
+         * AMI.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastLaunch">AWS
          * API Reference</a></p>
          *
@@ -16920,7 +16965,8 @@ namespace Model
          * Sysprep steps, rebooting as required. Then it creates a set of reserved
          * snapshots that are used for subsequent launches. The reserved snapshots are
          * automatically replenished as they are used, depending on your settings for
-         * launch frequency.</p><p><h3>See Also:</h3>   <a
+         * launch frequency.</p>  <p>To change these settings, you must own the
+         * AMI.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastLaunch">AWS
          * API Reference</a></p>
          *
@@ -18936,6 +18982,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ImportVolumeAsync(const Model::ImportVolumeRequest& request, const ImportVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists one or more AMIs that are currently in the Recycle Bin. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
+         * Bin</a> in the Amazon Elastic Compute Cloud User Guide.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListImagesInRecycleBin">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListImagesInRecycleBinOutcome ListImagesInRecycleBin(const Model::ListImagesInRecycleBinRequest& request) const;
+
+        /**
+         * <p>Lists one or more AMIs that are currently in the Recycle Bin. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
+         * Bin</a> in the Amazon Elastic Compute Cloud User Guide.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListImagesInRecycleBin">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListImagesInRecycleBinOutcomeCallable ListImagesInRecycleBinCallable(const Model::ListImagesInRecycleBinRequest& request) const;
+
+        /**
+         * <p>Lists one or more AMIs that are currently in the Recycle Bin. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
+         * Bin</a> in the Amazon Elastic Compute Cloud User Guide.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListImagesInRecycleBin">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListImagesInRecycleBinAsync(const Model::ListImagesInRecycleBinRequest& request, const ListImagesInRecycleBinResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists one or more snapshots that are currently in the Recycle
@@ -23238,6 +23321,40 @@ namespace Model
         virtual void RestoreAddressToClassicAsync(const Model::RestoreAddressToClassicRequest& request, const RestoreAddressToClassicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Restores an AMI from the Recycle Bin. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
+         * Bin</a> in the Amazon Elastic Compute Cloud User Guide.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreImageFromRecycleBin">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RestoreImageFromRecycleBinOutcome RestoreImageFromRecycleBin(const Model::RestoreImageFromRecycleBinRequest& request) const;
+
+        /**
+         * <p>Restores an AMI from the Recycle Bin. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
+         * Bin</a> in the Amazon Elastic Compute Cloud User Guide.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreImageFromRecycleBin">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RestoreImageFromRecycleBinOutcomeCallable RestoreImageFromRecycleBinCallable(const Model::RestoreImageFromRecycleBinRequest& request) const;
+
+        /**
+         * <p>Restores an AMI from the Recycle Bin. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
+         * Bin</a> in the Amazon Elastic Compute Cloud User Guide.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreImageFromRecycleBin">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RestoreImageFromRecycleBinAsync(const Model::RestoreImageFromRecycleBinRequest& request, const RestoreImageFromRecycleBinResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Restores the entries from a previous version of a managed prefix list to a
          * new version of the prefix list.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreManagedPrefixListVersion">AWS
@@ -24968,6 +25085,7 @@ namespace Model
         void ImportKeyPairAsyncHelper(const Model::ImportKeyPairRequest& request, const ImportKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportSnapshotAsyncHelper(const Model::ImportSnapshotRequest& request, const ImportSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportVolumeAsyncHelper(const Model::ImportVolumeRequest& request, const ImportVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListImagesInRecycleBinAsyncHelper(const Model::ListImagesInRecycleBinRequest& request, const ListImagesInRecycleBinResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSnapshotsInRecycleBinAsyncHelper(const Model::ListSnapshotsInRecycleBinRequest& request, const ListSnapshotsInRecycleBinResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyAddressAttributeAsyncHelper(const Model::ModifyAddressAttributeRequest& request, const ModifyAddressAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyAvailabilityZoneGroupAsyncHelper(const Model::ModifyAvailabilityZoneGroupRequest& request, const ModifyAvailabilityZoneGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -25062,6 +25180,7 @@ namespace Model
         void ResetNetworkInterfaceAttributeAsyncHelper(const Model::ResetNetworkInterfaceAttributeRequest& request, const ResetNetworkInterfaceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResetSnapshotAttributeAsyncHelper(const Model::ResetSnapshotAttributeRequest& request, const ResetSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreAddressToClassicAsyncHelper(const Model::RestoreAddressToClassicRequest& request, const RestoreAddressToClassicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RestoreImageFromRecycleBinAsyncHelper(const Model::RestoreImageFromRecycleBinRequest& request, const RestoreImageFromRecycleBinResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreManagedPrefixListVersionAsyncHelper(const Model::RestoreManagedPrefixListVersionRequest& request, const RestoreManagedPrefixListVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreSnapshotFromRecycleBinAsyncHelper(const Model::RestoreSnapshotFromRecycleBinRequest& request, const RestoreSnapshotFromRecycleBinResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreSnapshotTierAsyncHelper(const Model::RestoreSnapshotTierRequest& request, const RestoreSnapshotTierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

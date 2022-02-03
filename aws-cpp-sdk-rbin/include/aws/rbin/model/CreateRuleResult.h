@@ -39,37 +39,37 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the retention rule.</p>
+     * <p>The unique ID of the retention rule.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
 
     /**
-     * <p>The unique identifier of the retention rule.</p>
+     * <p>The unique ID of the retention rule.</p>
      */
     inline void SetIdentifier(const Aws::String& value) { m_identifier = value; }
 
     /**
-     * <p>The unique identifier of the retention rule.</p>
+     * <p>The unique ID of the retention rule.</p>
      */
     inline void SetIdentifier(Aws::String&& value) { m_identifier = std::move(value); }
 
     /**
-     * <p>The unique identifier of the retention rule.</p>
+     * <p>The unique ID of the retention rule.</p>
      */
     inline void SetIdentifier(const char* value) { m_identifier.assign(value); }
 
     /**
-     * <p>The unique identifier of the retention rule.</p>
+     * <p>The unique ID of the retention rule.</p>
      */
     inline CreateRuleResult& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
 
     /**
-     * <p>The unique identifier of the retention rule.</p>
+     * <p>The unique ID of the retention rule.</p>
      */
     inline CreateRuleResult& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the retention rule.</p>
+     * <p>The unique ID of the retention rule.</p>
      */
     inline CreateRuleResult& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
 
@@ -127,37 +127,37 @@ namespace Model
 
 
     /**
-     * <p>The tags assigned to the retention rule.</p>
+     * <p>Information about the tags assigned to the retention rule.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags assigned to the retention rule.</p>
+     * <p>Information about the tags assigned to the retention rule.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
 
     /**
-     * <p>The tags assigned to the retention rule.</p>
+     * <p>Information about the tags assigned to the retention rule.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>The tags assigned to the retention rule.</p>
+     * <p>Information about the tags assigned to the retention rule.</p>
      */
     inline CreateRuleResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags assigned to the retention rule.</p>
+     * <p>Information about the tags assigned to the retention rule.</p>
      */
     inline CreateRuleResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags assigned to the retention rule.</p>
+     * <p>Information about the tags assigned to the retention rule.</p>
      */
     inline CreateRuleResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The tags assigned to the retention rule.</p>
+     * <p>Information about the tags assigned to the retention rule.</p>
      */
     inline CreateRuleResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
@@ -233,31 +233,31 @@ namespace Model
 
     /**
      * <p>The state of the retention rule. Only retention rules that are in the
-     * <code>available</code> state retain snapshots.</p>
+     * <code>available</code> state retain resources.</p>
      */
     inline const RuleStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The state of the retention rule. Only retention rules that are in the
-     * <code>available</code> state retain snapshots.</p>
+     * <code>available</code> state retain resources.</p>
      */
     inline void SetStatus(const RuleStatus& value) { m_status = value; }
 
     /**
      * <p>The state of the retention rule. Only retention rules that are in the
-     * <code>available</code> state retain snapshots.</p>
+     * <code>available</code> state retain resources.</p>
      */
     inline void SetStatus(RuleStatus&& value) { m_status = std::move(value); }
 
     /**
      * <p>The state of the retention rule. Only retention rules that are in the
-     * <code>available</code> state retain snapshots.</p>
+     * <code>available</code> state retain resources.</p>
      */
     inline CreateRuleResult& WithStatus(const RuleStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The state of the retention rule. Only retention rules that are in the
-     * <code>available</code> state retain snapshots.</p>
+     * <code>available</code> state retain resources.</p>
      */
     inline CreateRuleResult& WithStatus(RuleStatus&& value) { SetStatus(std::move(value)); return *this;}
 

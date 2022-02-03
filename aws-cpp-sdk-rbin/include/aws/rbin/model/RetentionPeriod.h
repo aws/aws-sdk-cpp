@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about the retention period for which a retention rule is to
+   * <p>Information about the retention period for which the retention rule is to
    * retain resources.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/RetentionPeriod">AWS
    * API Reference</a></p>

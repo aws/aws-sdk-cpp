@@ -80,79 +80,79 @@ namespace Model
 
 
     /**
-     * <p>The description for the retention rule.</p>
+     * <p>The retention rule description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description for the retention rule.</p>
+     * <p>The retention rule description.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The description for the retention rule.</p>
+     * <p>The retention rule description.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description for the retention rule.</p>
+     * <p>The retention rule description.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description for the retention rule.</p>
+     * <p>The retention rule description.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description for the retention rule.</p>
+     * <p>The retention rule description.</p>
      */
     inline RuleSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description for the retention rule.</p>
+     * <p>The retention rule description.</p>
      */
     inline RuleSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description for the retention rule.</p>
+     * <p>The retention rule description.</p>
      */
     inline RuleSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>Information about the retention period for which the retention rule retains
-     * resources</p>
+     * <p>Information about the retention period for which the retention rule is to
+     * retain resources.</p>
      */
     inline const RetentionPeriod& GetRetentionPeriod() const{ return m_retentionPeriod; }
 
     /**
-     * <p>Information about the retention period for which the retention rule retains
-     * resources</p>
+     * <p>Information about the retention period for which the retention rule is to
+     * retain resources.</p>
      */
     inline bool RetentionPeriodHasBeenSet() const { return m_retentionPeriodHasBeenSet; }
 
     /**
-     * <p>Information about the retention period for which the retention rule retains
-     * resources</p>
+     * <p>Information about the retention period for which the retention rule is to
+     * retain resources.</p>
      */
     inline void SetRetentionPeriod(const RetentionPeriod& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
 
     /**
-     * <p>Information about the retention period for which the retention rule retains
-     * resources</p>
+     * <p>Information about the retention period for which the retention rule is to
+     * retain resources.</p>
      */
     inline void SetRetentionPeriod(RetentionPeriod&& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = std::move(value); }
 
     /**
-     * <p>Information about the retention period for which the retention rule retains
-     * resources</p>
+     * <p>Information about the retention period for which the retention rule is to
+     * retain resources.</p>
      */
     inline RuleSummary& WithRetentionPeriod(const RetentionPeriod& value) { SetRetentionPeriod(value); return *this;}
 
     /**
-     * <p>Information about the retention period for which the retention rule retains
-     * resources</p>
+     * <p>Information about the retention period for which the retention rule is to
+     * retain resources.</p>
      */
     inline RuleSummary& WithRetentionPeriod(RetentionPeriod&& value) { SetRetentionPeriod(std::move(value)); return *this;}
 
