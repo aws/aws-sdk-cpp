@@ -152,7 +152,7 @@ namespace Model
      * present in the <code>OutputLocation</code> in
      * <code>ResultConfigurationUpdates</code> (the client-side setting), the
      * <code>OutputLocation</code> in the workgroup's <code>ResultConfiguration</code>
-     * will be updated with the new value. For more information, see <a
+     * is updated with the new value. For more information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
      */
@@ -165,7 +165,7 @@ namespace Model
      * present in the <code>OutputLocation</code> in
      * <code>ResultConfigurationUpdates</code> (the client-side setting), the
      * <code>OutputLocation</code> in the workgroup's <code>ResultConfiguration</code>
-     * will be updated with the new value. For more information, see <a
+     * is updated with the new value. For more information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
      */
@@ -178,7 +178,7 @@ namespace Model
      * present in the <code>OutputLocation</code> in
      * <code>ResultConfigurationUpdates</code> (the client-side setting), the
      * <code>OutputLocation</code> in the workgroup's <code>ResultConfiguration</code>
-     * will be updated with the new value. For more information, see <a
+     * is updated with the new value. For more information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
      */
@@ -191,7 +191,7 @@ namespace Model
      * present in the <code>OutputLocation</code> in
      * <code>ResultConfigurationUpdates</code> (the client-side setting), the
      * <code>OutputLocation</code> in the workgroup's <code>ResultConfiguration</code>
-     * will be updated with the new value. For more information, see <a
+     * is updated with the new value. For more information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
      */
@@ -236,7 +236,7 @@ namespace Model
      * value is present in the <code>EncryptionConfiguration</code> in
      * <code>ResultConfigurationUpdates</code> (the client-side setting), the
      * <code>EncryptionConfiguration</code> in the workgroup's
-     * <code>ResultConfiguration</code> will be updated with the new value. For more
+     * <code>ResultConfiguration</code> is updated with the new value. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
@@ -250,7 +250,7 @@ namespace Model
      * value is present in the <code>EncryptionConfiguration</code> in
      * <code>ResultConfigurationUpdates</code> (the client-side setting), the
      * <code>EncryptionConfiguration</code> in the workgroup's
-     * <code>ResultConfiguration</code> will be updated with the new value. For more
+     * <code>ResultConfiguration</code> is updated with the new value. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
@@ -264,7 +264,7 @@ namespace Model
      * value is present in the <code>EncryptionConfiguration</code> in
      * <code>ResultConfigurationUpdates</code> (the client-side setting), the
      * <code>EncryptionConfiguration</code> in the workgroup's
-     * <code>ResultConfiguration</code> will be updated with the new value. For more
+     * <code>ResultConfiguration</code> is updated with the new value. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
@@ -278,12 +278,202 @@ namespace Model
      * value is present in the <code>EncryptionConfiguration</code> in
      * <code>ResultConfigurationUpdates</code> (the client-side setting), the
      * <code>EncryptionConfiguration</code> in the workgroup's
-     * <code>ResultConfiguration</code> will be updated with the new value. For more
+     * <code>ResultConfiguration</code> is updated with the new value. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
      */
     inline ResultConfigurationUpdates& WithRemoveEncryptionConfiguration(bool value) { SetRemoveEncryptionConfiguration(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Web Services account ID that you expect to be the owner of the
+     * Amazon S3 bucket specified by <a>ResultConfiguration$OutputLocation</a>. If set,
+     * Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon
+     * S3 calls to your specified output location. If the
+     * <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match
+     * the actual owner of the Amazon S3 bucket, the call fails with a permissions
+     * error.</p> <p>If workgroup settings override client-side settings, then the
+     * query uses the <code>ExpectedBucketOwner</code> setting that is specified for
+     * the workgroup, and also uses the location for storing query results specified in
+     * the workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+     * Settings Override Client-Side Settings</a>.</p>
+     */
+    inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
+
+    /**
+     * <p>The Amazon Web Services account ID that you expect to be the owner of the
+     * Amazon S3 bucket specified by <a>ResultConfiguration$OutputLocation</a>. If set,
+     * Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon
+     * S3 calls to your specified output location. If the
+     * <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match
+     * the actual owner of the Amazon S3 bucket, the call fails with a permissions
+     * error.</p> <p>If workgroup settings override client-side settings, then the
+     * query uses the <code>ExpectedBucketOwner</code> setting that is specified for
+     * the workgroup, and also uses the location for storing query results specified in
+     * the workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+     * Settings Override Client-Side Settings</a>.</p>
+     */
+    inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
+
+    /**
+     * <p>The Amazon Web Services account ID that you expect to be the owner of the
+     * Amazon S3 bucket specified by <a>ResultConfiguration$OutputLocation</a>. If set,
+     * Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon
+     * S3 calls to your specified output location. If the
+     * <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match
+     * the actual owner of the Amazon S3 bucket, the call fails with a permissions
+     * error.</p> <p>If workgroup settings override client-side settings, then the
+     * query uses the <code>ExpectedBucketOwner</code> setting that is specified for
+     * the workgroup, and also uses the location for storing query results specified in
+     * the workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+     * Settings Override Client-Side Settings</a>.</p>
+     */
+    inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
+
+    /**
+     * <p>The Amazon Web Services account ID that you expect to be the owner of the
+     * Amazon S3 bucket specified by <a>ResultConfiguration$OutputLocation</a>. If set,
+     * Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon
+     * S3 calls to your specified output location. If the
+     * <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match
+     * the actual owner of the Amazon S3 bucket, the call fails with a permissions
+     * error.</p> <p>If workgroup settings override client-side settings, then the
+     * query uses the <code>ExpectedBucketOwner</code> setting that is specified for
+     * the workgroup, and also uses the location for storing query results specified in
+     * the workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+     * Settings Override Client-Side Settings</a>.</p>
+     */
+    inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
+
+    /**
+     * <p>The Amazon Web Services account ID that you expect to be the owner of the
+     * Amazon S3 bucket specified by <a>ResultConfiguration$OutputLocation</a>. If set,
+     * Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon
+     * S3 calls to your specified output location. If the
+     * <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match
+     * the actual owner of the Amazon S3 bucket, the call fails with a permissions
+     * error.</p> <p>If workgroup settings override client-side settings, then the
+     * query uses the <code>ExpectedBucketOwner</code> setting that is specified for
+     * the workgroup, and also uses the location for storing query results specified in
+     * the workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+     * Settings Override Client-Side Settings</a>.</p>
+     */
+    inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
+
+    /**
+     * <p>The Amazon Web Services account ID that you expect to be the owner of the
+     * Amazon S3 bucket specified by <a>ResultConfiguration$OutputLocation</a>. If set,
+     * Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon
+     * S3 calls to your specified output location. If the
+     * <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match
+     * the actual owner of the Amazon S3 bucket, the call fails with a permissions
+     * error.</p> <p>If workgroup settings override client-side settings, then the
+     * query uses the <code>ExpectedBucketOwner</code> setting that is specified for
+     * the workgroup, and also uses the location for storing query results specified in
+     * the workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+     * Settings Override Client-Side Settings</a>.</p>
+     */
+    inline ResultConfigurationUpdates& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account ID that you expect to be the owner of the
+     * Amazon S3 bucket specified by <a>ResultConfiguration$OutputLocation</a>. If set,
+     * Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon
+     * S3 calls to your specified output location. If the
+     * <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match
+     * the actual owner of the Amazon S3 bucket, the call fails with a permissions
+     * error.</p> <p>If workgroup settings override client-side settings, then the
+     * query uses the <code>ExpectedBucketOwner</code> setting that is specified for
+     * the workgroup, and also uses the location for storing query results specified in
+     * the workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+     * Settings Override Client-Side Settings</a>.</p>
+     */
+    inline ResultConfigurationUpdates& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account ID that you expect to be the owner of the
+     * Amazon S3 bucket specified by <a>ResultConfiguration$OutputLocation</a>. If set,
+     * Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon
+     * S3 calls to your specified output location. If the
+     * <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match
+     * the actual owner of the Amazon S3 bucket, the call fails with a permissions
+     * error.</p> <p>If workgroup settings override client-side settings, then the
+     * query uses the <code>ExpectedBucketOwner</code> setting that is specified for
+     * the workgroup, and also uses the location for storing query results specified in
+     * the workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+     * Settings Override Client-Side Settings</a>.</p>
+     */
+    inline ResultConfigurationUpdates& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
+
+
+    /**
+     * <p>If set to "true", removes the Amazon Web Services account ID previously
+     * specified for <a>ResultConfiguration$ExpectedBucketOwner</a>. If set to "false"
+     * or not set, and a value is present in the <code>ExpectedBucketOwner</code> in
+     * <code>ResultConfigurationUpdates</code> (the client-side setting), the
+     * <code>ExpectedBucketOwner</code> in the workgroup's
+     * <code>ResultConfiguration</code> is updated with the new value. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+     * Settings Override Client-Side Settings</a>.</p>
+     */
+    inline bool GetRemoveExpectedBucketOwner() const{ return m_removeExpectedBucketOwner; }
+
+    /**
+     * <p>If set to "true", removes the Amazon Web Services account ID previously
+     * specified for <a>ResultConfiguration$ExpectedBucketOwner</a>. If set to "false"
+     * or not set, and a value is present in the <code>ExpectedBucketOwner</code> in
+     * <code>ResultConfigurationUpdates</code> (the client-side setting), the
+     * <code>ExpectedBucketOwner</code> in the workgroup's
+     * <code>ResultConfiguration</code> is updated with the new value. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+     * Settings Override Client-Side Settings</a>.</p>
+     */
+    inline bool RemoveExpectedBucketOwnerHasBeenSet() const { return m_removeExpectedBucketOwnerHasBeenSet; }
+
+    /**
+     * <p>If set to "true", removes the Amazon Web Services account ID previously
+     * specified for <a>ResultConfiguration$ExpectedBucketOwner</a>. If set to "false"
+     * or not set, and a value is present in the <code>ExpectedBucketOwner</code> in
+     * <code>ResultConfigurationUpdates</code> (the client-side setting), the
+     * <code>ExpectedBucketOwner</code> in the workgroup's
+     * <code>ResultConfiguration</code> is updated with the new value. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+     * Settings Override Client-Side Settings</a>.</p>
+     */
+    inline void SetRemoveExpectedBucketOwner(bool value) { m_removeExpectedBucketOwnerHasBeenSet = true; m_removeExpectedBucketOwner = value; }
+
+    /**
+     * <p>If set to "true", removes the Amazon Web Services account ID previously
+     * specified for <a>ResultConfiguration$ExpectedBucketOwner</a>. If set to "false"
+     * or not set, and a value is present in the <code>ExpectedBucketOwner</code> in
+     * <code>ResultConfigurationUpdates</code> (the client-side setting), the
+     * <code>ExpectedBucketOwner</code> in the workgroup's
+     * <code>ResultConfiguration</code> is updated with the new value. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+     * Settings Override Client-Side Settings</a>.</p>
+     */
+    inline ResultConfigurationUpdates& WithRemoveExpectedBucketOwner(bool value) { SetRemoveExpectedBucketOwner(value); return *this;}
 
   private:
 
@@ -298,6 +488,12 @@ namespace Model
 
     bool m_removeEncryptionConfiguration;
     bool m_removeEncryptionConfigurationHasBeenSet;
+
+    Aws::String m_expectedBucketOwner;
+    bool m_expectedBucketOwnerHasBeenSet;
+
+    bool m_removeExpectedBucketOwner;
+    bool m_removeExpectedBucketOwnerHasBeenSet;
   };
 
 } // namespace Model

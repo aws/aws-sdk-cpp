@@ -266,7 +266,7 @@ namespace Model
      * applied during the next maintenance window, unless you enable
      * <code>ApplyImmediately</code>.</p> <p> This parameter doesn't apply to RDS
      * Custom.</p> <p>Constraints: If supplied, must match the name of an existing
-     * DBSubnetGroup.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     * DBSubnetGroup.</p> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
@@ -281,7 +281,7 @@ namespace Model
      * applied during the next maintenance window, unless you enable
      * <code>ApplyImmediately</code>.</p> <p> This parameter doesn't apply to RDS
      * Custom.</p> <p>Constraints: If supplied, must match the name of an existing
-     * DBSubnetGroup.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     * DBSubnetGroup.</p> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
 
@@ -296,7 +296,7 @@ namespace Model
      * applied during the next maintenance window, unless you enable
      * <code>ApplyImmediately</code>.</p> <p> This parameter doesn't apply to RDS
      * Custom.</p> <p>Constraints: If supplied, must match the name of an existing
-     * DBSubnetGroup.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     * DBSubnetGroup.</p> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
@@ -311,7 +311,7 @@ namespace Model
      * applied during the next maintenance window, unless you enable
      * <code>ApplyImmediately</code>.</p> <p> This parameter doesn't apply to RDS
      * Custom.</p> <p>Constraints: If supplied, must match the name of an existing
-     * DBSubnetGroup.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     * DBSubnetGroup.</p> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
@@ -326,7 +326,7 @@ namespace Model
      * applied during the next maintenance window, unless you enable
      * <code>ApplyImmediately</code>.</p> <p> This parameter doesn't apply to RDS
      * Custom.</p> <p>Constraints: If supplied, must match the name of an existing
-     * DBSubnetGroup.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     * DBSubnetGroup.</p> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
@@ -341,7 +341,7 @@ namespace Model
      * applied during the next maintenance window, unless you enable
      * <code>ApplyImmediately</code>.</p> <p> This parameter doesn't apply to RDS
      * Custom.</p> <p>Constraints: If supplied, must match the name of an existing
-     * DBSubnetGroup.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     * DBSubnetGroup.</p> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline ModifyDBInstanceRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
@@ -356,7 +356,7 @@ namespace Model
      * applied during the next maintenance window, unless you enable
      * <code>ApplyImmediately</code>.</p> <p> This parameter doesn't apply to RDS
      * Custom.</p> <p>Constraints: If supplied, must match the name of an existing
-     * DBSubnetGroup.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     * DBSubnetGroup.</p> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline ModifyDBInstanceRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
@@ -371,7 +371,7 @@ namespace Model
      * applied during the next maintenance window, unless you enable
      * <code>ApplyImmediately</code>.</p> <p> This parameter doesn't apply to RDS
      * Custom.</p> <p>Constraints: If supplied, must match the name of an existing
-     * DBSubnetGroup.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     * DBSubnetGroup.</p> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline ModifyDBInstanceRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 

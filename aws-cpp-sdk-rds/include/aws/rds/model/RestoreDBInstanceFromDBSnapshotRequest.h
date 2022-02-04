@@ -374,56 +374,56 @@ namespace Model
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
      * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
      * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
 
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
      * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
      * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
      * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
      * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
      * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
      * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 
@@ -1271,25 +1271,57 @@ namespace Model
 
     /**
      * <p>A value that indicates whether to copy all tags from the restored DB instance
-     * to snapshots of the DB instance. By default, tags are not copied.</p>
+     * to snapshots of the DB instance.</p> <p>In most cases, tags aren't copied by
+     * default. However, when you restore a DB instance from a DB snapshot, RDS checks
+     * whether you specify new tags. If yes, the new tags are added to the restored DB
+     * instance. If there are no new tags, RDS looks for the tags from the source DB
+     * instance for the DB snapshot, and then adds those tags to the restored DB
+     * instance.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.CopyTags">
+     * Copying tags to DB instance snapshots</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
      * <p>A value that indicates whether to copy all tags from the restored DB instance
-     * to snapshots of the DB instance. By default, tags are not copied.</p>
+     * to snapshots of the DB instance.</p> <p>In most cases, tags aren't copied by
+     * default. However, when you restore a DB instance from a DB snapshot, RDS checks
+     * whether you specify new tags. If yes, the new tags are added to the restored DB
+     * instance. If there are no new tags, RDS looks for the tags from the source DB
+     * instance for the DB snapshot, and then adds those tags to the restored DB
+     * instance.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.CopyTags">
+     * Copying tags to DB instance snapshots</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
 
     /**
      * <p>A value that indicates whether to copy all tags from the restored DB instance
-     * to snapshots of the DB instance. By default, tags are not copied.</p>
+     * to snapshots of the DB instance.</p> <p>In most cases, tags aren't copied by
+     * default. However, when you restore a DB instance from a DB snapshot, RDS checks
+     * whether you specify new tags. If yes, the new tags are added to the restored DB
+     * instance. If there are no new tags, RDS looks for the tags from the source DB
+     * instance for the DB snapshot, and then adds those tags to the restored DB
+     * instance.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.CopyTags">
+     * Copying tags to DB instance snapshots</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
      * <p>A value that indicates whether to copy all tags from the restored DB instance
-     * to snapshots of the DB instance. By default, tags are not copied.</p>
+     * to snapshots of the DB instance.</p> <p>In most cases, tags aren't copied by
+     * default. However, when you restore a DB instance from a DB snapshot, RDS checks
+     * whether you specify new tags. If yes, the new tags are added to the restored DB
+     * instance. If there are no new tags, RDS looks for the tags from the source DB
+     * instance for the DB snapshot, and then adds those tags to the restored DB
+     * instance.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.CopyTags">
+     * Copying tags to DB instance snapshots</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
@@ -1773,8 +1805,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline const Aws::String& GetCustomIamInstanceProfile() const{ return m_customIamInstanceProfile; }
 
@@ -1787,8 +1819,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline bool CustomIamInstanceProfileHasBeenSet() const { return m_customIamInstanceProfileHasBeenSet; }
 
@@ -1801,8 +1833,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline void SetCustomIamInstanceProfile(const Aws::String& value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile = value; }
 
@@ -1815,8 +1847,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline void SetCustomIamInstanceProfile(Aws::String&& value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile = std::move(value); }
 
@@ -1829,8 +1861,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline void SetCustomIamInstanceProfile(const char* value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile.assign(value); }
 
@@ -1843,8 +1875,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithCustomIamInstanceProfile(const Aws::String& value) { SetCustomIamInstanceProfile(value); return *this;}
 
@@ -1857,8 +1889,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithCustomIamInstanceProfile(Aws::String&& value) { SetCustomIamInstanceProfile(std::move(value)); return *this;}
 
@@ -1871,8 +1903,8 @@ namespace Model
      * name must start with the prefix <code>AWSRDSCustom</code>.</p> </li> </ul>
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-     * Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User
-     * Guide</i>.</p> <p>This setting is required for RDS Custom.</p>
+     * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting is required for RDS Custom.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithCustomIamInstanceProfile(const char* value) { SetCustomIamInstanceProfile(value); return *this;}
 

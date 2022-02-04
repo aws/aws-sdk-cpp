@@ -2905,7 +2905,7 @@
       "type":"structure",
       "members":{
       },
-      "documentation":"<p>SNS has responded that there is a problem with the SND topic specified.</p>",
+      "documentation":"<p>SNS has responded that there is a problem with the SNS topic specified.</p>",
       "error":{
         "code":"SNSInvalidTopic",
         "httpStatusCode":400,

@@ -665,42 +665,58 @@ namespace Model
 
 
     /**
-     * <p>A DB subnet group to associate with this DB instance.</p>
+     * <p>A DB subnet group to associate with this DB instance.</p> <p>Constraints: If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
     /**
-     * <p>A DB subnet group to associate with this DB instance.</p>
+     * <p>A DB subnet group to associate with this DB instance.</p> <p>Constraints: If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
 
     /**
-     * <p>A DB subnet group to associate with this DB instance.</p>
+     * <p>A DB subnet group to associate with this DB instance.</p> <p>Constraints: If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
-     * <p>A DB subnet group to associate with this DB instance.</p>
+     * <p>A DB subnet group to associate with this DB instance.</p> <p>Constraints: If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
     /**
-     * <p>A DB subnet group to associate with this DB instance.</p>
+     * <p>A DB subnet group to associate with this DB instance.</p> <p>Constraints: If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
     /**
-     * <p>A DB subnet group to associate with this DB instance.</p>
+     * <p>A DB subnet group to associate with this DB instance.</p> <p>Constraints: If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline RestoreDBInstanceFromS3Request& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
-     * <p>A DB subnet group to associate with this DB instance.</p>
+     * <p>A DB subnet group to associate with this DB instance.</p> <p>Constraints: If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline RestoreDBInstanceFromS3Request& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>A DB subnet group to associate with this DB instance.</p>
+     * <p>A DB subnet group to associate with this DB instance.</p> <p>Constraints: If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline RestoreDBInstanceFromS3Request& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 

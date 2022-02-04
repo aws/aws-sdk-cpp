@@ -489,8 +489,8 @@ namespace Model
      * <p>A DB subnet group to associate with this DB cluster.</p> <p>This setting is
      * required to create a Multi-AZ DB cluster.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
-     * clusters</p>
+     * <code>mydbsubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
@@ -498,8 +498,8 @@ namespace Model
      * <p>A DB subnet group to associate with this DB cluster.</p> <p>This setting is
      * required to create a Multi-AZ DB cluster.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
-     * clusters</p>
+     * <code>mydbsubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
 
@@ -507,8 +507,8 @@ namespace Model
      * <p>A DB subnet group to associate with this DB cluster.</p> <p>This setting is
      * required to create a Multi-AZ DB cluster.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
-     * clusters</p>
+     * <code>mydbsubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
@@ -516,8 +516,8 @@ namespace Model
      * <p>A DB subnet group to associate with this DB cluster.</p> <p>This setting is
      * required to create a Multi-AZ DB cluster.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
-     * clusters</p>
+     * <code>mydbsubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
@@ -525,8 +525,8 @@ namespace Model
      * <p>A DB subnet group to associate with this DB cluster.</p> <p>This setting is
      * required to create a Multi-AZ DB cluster.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
-     * clusters</p>
+     * <code>mydbsubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
@@ -534,8 +534,8 @@ namespace Model
      * <p>A DB subnet group to associate with this DB cluster.</p> <p>This setting is
      * required to create a Multi-AZ DB cluster.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
-     * clusters</p>
+     * <code>mydbsubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline CreateDBClusterRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
@@ -543,8 +543,8 @@ namespace Model
      * <p>A DB subnet group to associate with this DB cluster.</p> <p>This setting is
      * required to create a Multi-AZ DB cluster.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
-     * clusters</p>
+     * <code>mydbsubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline CreateDBClusterRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
@@ -552,8 +552,8 @@ namespace Model
      * <p>A DB subnet group to associate with this DB cluster.</p> <p>This setting is
      * required to create a Multi-AZ DB cluster.</p> <p>Constraints: Must match the
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ DB
-     * clusters</p>
+     * <code>mydbsubnetgroup</code> </p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline CreateDBClusterRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 

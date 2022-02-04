@@ -439,56 +439,56 @@ namespace Model
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
      * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
      * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
 
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
      * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
      * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
      * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
      * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
      * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
      * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mySubnetgroup</code> </p>
+     * <code>mydbsubnetgroup</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 

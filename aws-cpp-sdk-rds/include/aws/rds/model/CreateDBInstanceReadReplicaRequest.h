@@ -877,7 +877,8 @@ namespace Model
      * DB instance must either:&gt;</p> <ul> <li> <p>Specify DB subnet groups from the
      * same VPC. All these read replicas are created in the same VPC.</p> </li> <li>
      * <p>Not specify a DB subnet group. All these read replicas are created outside of
-     * any VPC.</p> </li> </ul> </li> </ul> <p>Example: <code>mySubnetgroup</code> </p>
+     * any VPC.</p> </li> </ul> </li> </ul> <p>Example: <code>mydbsubnetgroup</code>
+     * </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
@@ -894,7 +895,8 @@ namespace Model
      * DB instance must either:&gt;</p> <ul> <li> <p>Specify DB subnet groups from the
      * same VPC. All these read replicas are created in the same VPC.</p> </li> <li>
      * <p>Not specify a DB subnet group. All these read replicas are created outside of
-     * any VPC.</p> </li> </ul> </li> </ul> <p>Example: <code>mySubnetgroup</code> </p>
+     * any VPC.</p> </li> </ul> </li> </ul> <p>Example: <code>mydbsubnetgroup</code>
+     * </p>
      */
     inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
 
@@ -911,7 +913,8 @@ namespace Model
      * DB instance must either:&gt;</p> <ul> <li> <p>Specify DB subnet groups from the
      * same VPC. All these read replicas are created in the same VPC.</p> </li> <li>
      * <p>Not specify a DB subnet group. All these read replicas are created outside of
-     * any VPC.</p> </li> </ul> </li> </ul> <p>Example: <code>mySubnetgroup</code> </p>
+     * any VPC.</p> </li> </ul> </li> </ul> <p>Example: <code>mydbsubnetgroup</code>
+     * </p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
@@ -928,7 +931,8 @@ namespace Model
      * DB instance must either:&gt;</p> <ul> <li> <p>Specify DB subnet groups from the
      * same VPC. All these read replicas are created in the same VPC.</p> </li> <li>
      * <p>Not specify a DB subnet group. All these read replicas are created outside of
-     * any VPC.</p> </li> </ul> </li> </ul> <p>Example: <code>mySubnetgroup</code> </p>
+     * any VPC.</p> </li> </ul> </li> </ul> <p>Example: <code>mydbsubnetgroup</code>
+     * </p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
@@ -945,7 +949,8 @@ namespace Model
      * DB instance must either:&gt;</p> <ul> <li> <p>Specify DB subnet groups from the
      * same VPC. All these read replicas are created in the same VPC.</p> </li> <li>
      * <p>Not specify a DB subnet group. All these read replicas are created outside of
-     * any VPC.</p> </li> </ul> </li> </ul> <p>Example: <code>mySubnetgroup</code> </p>
+     * any VPC.</p> </li> </ul> </li> </ul> <p>Example: <code>mydbsubnetgroup</code>
+     * </p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
@@ -962,7 +967,8 @@ namespace Model
      * DB instance must either:&gt;</p> <ul> <li> <p>Specify DB subnet groups from the
      * same VPC. All these read replicas are created in the same VPC.</p> </li> <li>
      * <p>Not specify a DB subnet group. All these read replicas are created outside of
-     * any VPC.</p> </li> </ul> </li> </ul> <p>Example: <code>mySubnetgroup</code> </p>
+     * any VPC.</p> </li> </ul> </li> </ul> <p>Example: <code>mydbsubnetgroup</code>
+     * </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
@@ -979,7 +985,8 @@ namespace Model
      * DB instance must either:&gt;</p> <ul> <li> <p>Specify DB subnet groups from the
      * same VPC. All these read replicas are created in the same VPC.</p> </li> <li>
      * <p>Not specify a DB subnet group. All these read replicas are created outside of
-     * any VPC.</p> </li> </ul> </li> </ul> <p>Example: <code>mySubnetgroup</code> </p>
+     * any VPC.</p> </li> </ul> </li> </ul> <p>Example: <code>mydbsubnetgroup</code>
+     * </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
@@ -996,7 +1003,8 @@ namespace Model
      * DB instance must either:&gt;</p> <ul> <li> <p>Specify DB subnet groups from the
      * same VPC. All these read replicas are created in the same VPC.</p> </li> <li>
      * <p>Not specify a DB subnet group. All these read replicas are created outside of
-     * any VPC.</p> </li> </ul> </li> </ul> <p>Example: <code>mySubnetgroup</code> </p>
+     * any VPC.</p> </li> </ul> </li> </ul> <p>Example: <code>mydbsubnetgroup</code>
+     * </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 

@@ -20,13 +20,15 @@ namespace Model
 
 ResultConfiguration::ResultConfiguration() : 
     m_outputLocationHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false)
+    m_encryptionConfigurationHasBeenSet(false),
+    m_expectedBucketOwnerHasBeenSet(false)
 {
 }
 
 ResultConfiguration::ResultConfiguration(JsonView jsonValue) : 
     m_outputLocationHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false)
+    m_encryptionConfigurationHasBeenSet(false),
+    m_expectedBucketOwnerHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ ResultConfiguration& ResultConfiguration::operator =(JsonView jsonValue)
     m_encryptionConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ExpectedBucketOwner"))
+  {
+    m_expectedBucketOwner = jsonValue.GetString("ExpectedBucketOwner");
+
+    m_expectedBucketOwnerHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue ResultConfiguration::Jsonize() const
   if(m_encryptionConfigurationHasBeenSet)
   {
    payload.WithObject("EncryptionConfiguration", m_encryptionConfiguration.Jsonize());
+
+  }
+
+  if(m_expectedBucketOwnerHasBeenSet)
+  {
+   payload.WithString("ExpectedBucketOwner", m_expectedBucketOwner);
 
   }
 
