@@ -32,4 +32,4 @@ static const char* ALLOCATION_TAG = "${className}";
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceInit.vm")
 
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonServiceOperationsSource.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/serviceoperations/JsonServiceOperationsSource.vm")

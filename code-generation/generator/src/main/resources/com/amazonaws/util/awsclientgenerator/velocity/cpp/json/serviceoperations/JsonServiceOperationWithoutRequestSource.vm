@@ -1,0 +1,34 @@
+${operation.name}Outcome ${className}::${operation.name}() const
+{
+  Aws::StringStream ss;
+#if($metadata.hasEndpointTrait)
+  ss << m_baseUri << "${operation.http.requestUri}";
+#else
+  ss << m_uri << "${operation.http.requestUri}";
+#end
+#if($operation.result && $operation.result.shape.hasStreamMembers())
+  return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}"));
+#elseif($operation.request)
+  return ${operation.name}Outcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}"));
+#else
+  return ${operation.name}Outcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, Aws::Auth::SIGV4_SIGNER, "${operation.name}"));
+#end
+}
+
+${operation.name}OutcomeCallable ${className}::${operation.name}Callable() const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ${operation.name}Outcome() > >(ALLOCATION_TAG, [this](){ return this->${operation.name}(); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ${className}::${operation.name}Async(const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, handler, context](){ this->${operation.name}AsyncHelper( handler, context ); } );
+}
+
+void ${className}::${operation.name}AsyncHelper(const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, ${operation.name}(), context);
+}
