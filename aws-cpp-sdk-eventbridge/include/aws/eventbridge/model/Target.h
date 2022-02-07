@@ -59,42 +59,58 @@ namespace Model
 
 
     /**
-     * <p>The ID of the target. We recommend using a memorable and unique string.</p>
+     * <p>The ID of the target within the specified rule. Use this ID to reference the
+     * target when updating the rule. We recommend using a memorable and unique
+     * string.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The ID of the target. We recommend using a memorable and unique string.</p>
+     * <p>The ID of the target within the specified rule. Use this ID to reference the
+     * target when updating the rule. We recommend using a memorable and unique
+     * string.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The ID of the target. We recommend using a memorable and unique string.</p>
+     * <p>The ID of the target within the specified rule. Use this ID to reference the
+     * target when updating the rule. We recommend using a memorable and unique
+     * string.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The ID of the target. We recommend using a memorable and unique string.</p>
+     * <p>The ID of the target within the specified rule. Use this ID to reference the
+     * target when updating the rule. We recommend using a memorable and unique
+     * string.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The ID of the target. We recommend using a memorable and unique string.</p>
+     * <p>The ID of the target within the specified rule. Use this ID to reference the
+     * target when updating the rule. We recommend using a memorable and unique
+     * string.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The ID of the target. We recommend using a memorable and unique string.</p>
+     * <p>The ID of the target within the specified rule. Use this ID to reference the
+     * target when updating the rule. We recommend using a memorable and unique
+     * string.</p>
      */
     inline Target& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The ID of the target. We recommend using a memorable and unique string.</p>
+     * <p>The ID of the target within the specified rule. Use this ID to reference the
+     * target when updating the rule. We recommend using a memorable and unique
+     * string.</p>
      */
     inline Target& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the target. We recommend using a memorable and unique string.</p>
+     * <p>The ID of the target within the specified rule. Use this ID to reference the
+     * target when updating the rule. We recommend using a memorable and unique
+     * string.</p>
      */
     inline Target& WithId(const char* value) { SetId(value); return *this;}
 

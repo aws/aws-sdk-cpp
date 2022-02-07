@@ -1930,25 +1930,27 @@ namespace Model
         /**
          * <p>Adds the specified targets to the specified rule, or updates the targets if
          * they are already associated with the rule.</p> <p>Targets are the resources that
-         * are invoked when a rule is triggered.</p> <p>You can configure the following as
-         * targets for Events:</p> <ul> <li> <p> <a
+         * are invoked when a rule is triggered.</p>  <p>Each rule can have up to
+         * five (5) targets associated with it at one time.</p>  <p>You can
+         * configure the following as targets for Events:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-destinations.html">API
          * destination</a> </p> </li> <li> <p>Amazon API Gateway REST API endpoints</p>
          * </li> <li> <p>API Gateway</p> </li> <li> <p>Batch job queue</p> </li> <li>
          * <p>CloudWatch Logs group</p> </li> <li> <p>CodeBuild project</p> </li> <li>
          * <p>CodePipeline</p> </li> <li> <p>Amazon EC2 <code>CreateSnapshot</code> API
-         * call</p> </li> <li> <p>Amazon EC2 <code>RebootInstances</code> API call</p>
-         * </li> <li> <p>Amazon EC2 <code>StopInstances</code> API call</p> </li> <li>
-         * <p>Amazon EC2 <code>TerminateInstances</code> API call</p> </li> <li> <p>Amazon
-         * ECS tasks</p> </li> <li> <p>Event bus in a different Amazon Web Services account
-         * or Region.</p> <p>You can use an event bus in the US East (N. Virginia)
-         * us-east-1, US West (Oregon) us-west-2, or Europe (Ireland) eu-west-1 Regions as
-         * a target for a rule.</p> </li> <li> <p>Firehose delivery stream (Kinesis Data
+         * call</p> </li> <li> <p>EC2 Image Builder</p> </li> <li> <p>Amazon EC2
+         * <code>RebootInstances</code> API call</p> </li> <li> <p>Amazon EC2
+         * <code>StopInstances</code> API call</p> </li> <li> <p>Amazon EC2
+         * <code>TerminateInstances</code> API call</p> </li> <li> <p>Amazon ECS tasks</p>
+         * </li> <li> <p>Event bus in a different Amazon Web Services account or
+         * Region.</p> <p>You can use an event bus in the US East (N. Virginia) us-east-1,
+         * US West (Oregon) us-west-2, or Europe (Ireland) eu-west-1 Regions as a target
+         * for a rule.</p> </li> <li> <p>Firehose delivery stream (Kinesis Data
          * Firehose)</p> </li> <li> <p>Inspector assessment template (Amazon Inspector)</p>
          * </li> <li> <p>Kinesis stream (Kinesis Data Stream)</p> </li> <li> <p>Lambda
          * function</p> </li> <li> <p>Redshift clusters (Data API statement execution)</p>
          * </li> <li> <p>Amazon SNS topic</p> </li> <li> <p>Amazon SQS queues (includes
-         * FIFO queues</p> </li> <li> <p>SSM Automation</p> </li> <li> <p>SSM OpsItem</p>
+         * FIFO queues)</p> </li> <li> <p>SSM Automation</p> </li> <li> <p>SSM OpsItem</p>
          * </li> <li> <p>SSM Run Command</p> </li> <li> <p>Step Functions state
          * machines</p> </li> </ul> <p>Creating rules with built-in targets is supported
          * only in the Amazon Web Services Management Console. The built-in targets are
@@ -2020,25 +2022,27 @@ namespace Model
         /**
          * <p>Adds the specified targets to the specified rule, or updates the targets if
          * they are already associated with the rule.</p> <p>Targets are the resources that
-         * are invoked when a rule is triggered.</p> <p>You can configure the following as
-         * targets for Events:</p> <ul> <li> <p> <a
+         * are invoked when a rule is triggered.</p>  <p>Each rule can have up to
+         * five (5) targets associated with it at one time.</p>  <p>You can
+         * configure the following as targets for Events:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-destinations.html">API
          * destination</a> </p> </li> <li> <p>Amazon API Gateway REST API endpoints</p>
          * </li> <li> <p>API Gateway</p> </li> <li> <p>Batch job queue</p> </li> <li>
          * <p>CloudWatch Logs group</p> </li> <li> <p>CodeBuild project</p> </li> <li>
          * <p>CodePipeline</p> </li> <li> <p>Amazon EC2 <code>CreateSnapshot</code> API
-         * call</p> </li> <li> <p>Amazon EC2 <code>RebootInstances</code> API call</p>
-         * </li> <li> <p>Amazon EC2 <code>StopInstances</code> API call</p> </li> <li>
-         * <p>Amazon EC2 <code>TerminateInstances</code> API call</p> </li> <li> <p>Amazon
-         * ECS tasks</p> </li> <li> <p>Event bus in a different Amazon Web Services account
-         * or Region.</p> <p>You can use an event bus in the US East (N. Virginia)
-         * us-east-1, US West (Oregon) us-west-2, or Europe (Ireland) eu-west-1 Regions as
-         * a target for a rule.</p> </li> <li> <p>Firehose delivery stream (Kinesis Data
+         * call</p> </li> <li> <p>EC2 Image Builder</p> </li> <li> <p>Amazon EC2
+         * <code>RebootInstances</code> API call</p> </li> <li> <p>Amazon EC2
+         * <code>StopInstances</code> API call</p> </li> <li> <p>Amazon EC2
+         * <code>TerminateInstances</code> API call</p> </li> <li> <p>Amazon ECS tasks</p>
+         * </li> <li> <p>Event bus in a different Amazon Web Services account or
+         * Region.</p> <p>You can use an event bus in the US East (N. Virginia) us-east-1,
+         * US West (Oregon) us-west-2, or Europe (Ireland) eu-west-1 Regions as a target
+         * for a rule.</p> </li> <li> <p>Firehose delivery stream (Kinesis Data
          * Firehose)</p> </li> <li> <p>Inspector assessment template (Amazon Inspector)</p>
          * </li> <li> <p>Kinesis stream (Kinesis Data Stream)</p> </li> <li> <p>Lambda
          * function</p> </li> <li> <p>Redshift clusters (Data API statement execution)</p>
          * </li> <li> <p>Amazon SNS topic</p> </li> <li> <p>Amazon SQS queues (includes
-         * FIFO queues</p> </li> <li> <p>SSM Automation</p> </li> <li> <p>SSM OpsItem</p>
+         * FIFO queues)</p> </li> <li> <p>SSM Automation</p> </li> <li> <p>SSM OpsItem</p>
          * </li> <li> <p>SSM Run Command</p> </li> <li> <p>Step Functions state
          * machines</p> </li> </ul> <p>Creating rules with built-in targets is supported
          * only in the Amazon Web Services Management Console. The built-in targets are
@@ -2112,25 +2116,27 @@ namespace Model
         /**
          * <p>Adds the specified targets to the specified rule, or updates the targets if
          * they are already associated with the rule.</p> <p>Targets are the resources that
-         * are invoked when a rule is triggered.</p> <p>You can configure the following as
-         * targets for Events:</p> <ul> <li> <p> <a
+         * are invoked when a rule is triggered.</p>  <p>Each rule can have up to
+         * five (5) targets associated with it at one time.</p>  <p>You can
+         * configure the following as targets for Events:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-destinations.html">API
          * destination</a> </p> </li> <li> <p>Amazon API Gateway REST API endpoints</p>
          * </li> <li> <p>API Gateway</p> </li> <li> <p>Batch job queue</p> </li> <li>
          * <p>CloudWatch Logs group</p> </li> <li> <p>CodeBuild project</p> </li> <li>
          * <p>CodePipeline</p> </li> <li> <p>Amazon EC2 <code>CreateSnapshot</code> API
-         * call</p> </li> <li> <p>Amazon EC2 <code>RebootInstances</code> API call</p>
-         * </li> <li> <p>Amazon EC2 <code>StopInstances</code> API call</p> </li> <li>
-         * <p>Amazon EC2 <code>TerminateInstances</code> API call</p> </li> <li> <p>Amazon
-         * ECS tasks</p> </li> <li> <p>Event bus in a different Amazon Web Services account
-         * or Region.</p> <p>You can use an event bus in the US East (N. Virginia)
-         * us-east-1, US West (Oregon) us-west-2, or Europe (Ireland) eu-west-1 Regions as
-         * a target for a rule.</p> </li> <li> <p>Firehose delivery stream (Kinesis Data
+         * call</p> </li> <li> <p>EC2 Image Builder</p> </li> <li> <p>Amazon EC2
+         * <code>RebootInstances</code> API call</p> </li> <li> <p>Amazon EC2
+         * <code>StopInstances</code> API call</p> </li> <li> <p>Amazon EC2
+         * <code>TerminateInstances</code> API call</p> </li> <li> <p>Amazon ECS tasks</p>
+         * </li> <li> <p>Event bus in a different Amazon Web Services account or
+         * Region.</p> <p>You can use an event bus in the US East (N. Virginia) us-east-1,
+         * US West (Oregon) us-west-2, or Europe (Ireland) eu-west-1 Regions as a target
+         * for a rule.</p> </li> <li> <p>Firehose delivery stream (Kinesis Data
          * Firehose)</p> </li> <li> <p>Inspector assessment template (Amazon Inspector)</p>
          * </li> <li> <p>Kinesis stream (Kinesis Data Stream)</p> </li> <li> <p>Lambda
          * function</p> </li> <li> <p>Redshift clusters (Data API statement execution)</p>
          * </li> <li> <p>Amazon SNS topic</p> </li> <li> <p>Amazon SQS queues (includes
-         * FIFO queues</p> </li> <li> <p>SSM Automation</p> </li> <li> <p>SSM OpsItem</p>
+         * FIFO queues)</p> </li> <li> <p>SSM Automation</p> </li> <li> <p>SSM OpsItem</p>
          * </li> <li> <p>SSM Run Command</p> </li> <li> <p>Step Functions state
          * machines</p> </li> </ul> <p>Creating rules with built-in targets is supported
          * only in the Amazon Web Services Management Console. The built-in targets are
@@ -2246,13 +2252,16 @@ namespace Model
 
         /**
          * <p>Removes the specified targets from the specified rule. When the rule is
-         * triggered, those targets are no longer be invoked.</p> <p>When you remove a
-         * target, when the associated rule triggers, removed targets might continue to be
-         * invoked. Allow a short period of time for changes to take effect.</p> <p>This
-         * action can partially fail if too many requests are made at the same time. If
-         * that happens, <code>FailedEntryCount</code> is non-zero in the response and each
-         * entry in <code>FailedEntries</code> provides the ID of the failed target and the
-         * error code.</p><p><h3>See Also:</h3>   <a
+         * triggered, those targets are no longer be invoked.</p>  <p>A successful
+         * execution of <code>RemoveTargets</code> doesn't guarantee all targets are
+         * removed from the rule, it means that the target(s) listed in the request are
+         * removed.</p>  <p>When you remove a target, when the associated rule
+         * triggers, removed targets might continue to be invoked. Allow a short period of
+         * time for changes to take effect.</p> <p>This action can partially fail if too
+         * many requests are made at the same time. If that happens,
+         * <code>FailedEntryCount</code> is non-zero in the response and each entry in
+         * <code>FailedEntries</code> provides the ID of the failed target and the error
+         * code.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/RemoveTargets">AWS
          * API Reference</a></p>
          */
@@ -2260,13 +2269,16 @@ namespace Model
 
         /**
          * <p>Removes the specified targets from the specified rule. When the rule is
-         * triggered, those targets are no longer be invoked.</p> <p>When you remove a
-         * target, when the associated rule triggers, removed targets might continue to be
-         * invoked. Allow a short period of time for changes to take effect.</p> <p>This
-         * action can partially fail if too many requests are made at the same time. If
-         * that happens, <code>FailedEntryCount</code> is non-zero in the response and each
-         * entry in <code>FailedEntries</code> provides the ID of the failed target and the
-         * error code.</p><p><h3>See Also:</h3>   <a
+         * triggered, those targets are no longer be invoked.</p>  <p>A successful
+         * execution of <code>RemoveTargets</code> doesn't guarantee all targets are
+         * removed from the rule, it means that the target(s) listed in the request are
+         * removed.</p>  <p>When you remove a target, when the associated rule
+         * triggers, removed targets might continue to be invoked. Allow a short period of
+         * time for changes to take effect.</p> <p>This action can partially fail if too
+         * many requests are made at the same time. If that happens,
+         * <code>FailedEntryCount</code> is non-zero in the response and each entry in
+         * <code>FailedEntries</code> provides the ID of the failed target and the error
+         * code.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/RemoveTargets">AWS
          * API Reference</a></p>
          *
@@ -2276,13 +2288,16 @@ namespace Model
 
         /**
          * <p>Removes the specified targets from the specified rule. When the rule is
-         * triggered, those targets are no longer be invoked.</p> <p>When you remove a
-         * target, when the associated rule triggers, removed targets might continue to be
-         * invoked. Allow a short period of time for changes to take effect.</p> <p>This
-         * action can partially fail if too many requests are made at the same time. If
-         * that happens, <code>FailedEntryCount</code> is non-zero in the response and each
-         * entry in <code>FailedEntries</code> provides the ID of the failed target and the
-         * error code.</p><p><h3>See Also:</h3>   <a
+         * triggered, those targets are no longer be invoked.</p>  <p>A successful
+         * execution of <code>RemoveTargets</code> doesn't guarantee all targets are
+         * removed from the rule, it means that the target(s) listed in the request are
+         * removed.</p>  <p>When you remove a target, when the associated rule
+         * triggers, removed targets might continue to be invoked. Allow a short period of
+         * time for changes to take effect.</p> <p>This action can partially fail if too
+         * many requests are made at the same time. If that happens,
+         * <code>FailedEntryCount</code> is non-zero in the response and each entry in
+         * <code>FailedEntries</code> provides the ID of the failed target and the error
+         * code.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/RemoveTargets">AWS
          * API Reference</a></p>
          *

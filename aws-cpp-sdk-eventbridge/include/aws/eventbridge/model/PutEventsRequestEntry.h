@@ -355,7 +355,7 @@ namespace Model
 
 
     /**
-     * <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that
+     * <p>An X-Ray trace header, which is an http header (X-Amzn-Trace-Id) that
      * contains the trace-id associated with the event.</p> <p>To learn more about
      * X-Ray trace headers, see <a
      * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
@@ -364,7 +364,7 @@ namespace Model
     inline const Aws::String& GetTraceHeader() const{ return m_traceHeader; }
 
     /**
-     * <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that
+     * <p>An X-Ray trace header, which is an http header (X-Amzn-Trace-Id) that
      * contains the trace-id associated with the event.</p> <p>To learn more about
      * X-Ray trace headers, see <a
      * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
@@ -373,7 +373,7 @@ namespace Model
     inline bool TraceHeaderHasBeenSet() const { return m_traceHeaderHasBeenSet; }
 
     /**
-     * <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that
+     * <p>An X-Ray trace header, which is an http header (X-Amzn-Trace-Id) that
      * contains the trace-id associated with the event.</p> <p>To learn more about
      * X-Ray trace headers, see <a
      * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
@@ -382,7 +382,7 @@ namespace Model
     inline void SetTraceHeader(const Aws::String& value) { m_traceHeaderHasBeenSet = true; m_traceHeader = value; }
 
     /**
-     * <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that
+     * <p>An X-Ray trace header, which is an http header (X-Amzn-Trace-Id) that
      * contains the trace-id associated with the event.</p> <p>To learn more about
      * X-Ray trace headers, see <a
      * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
@@ -391,7 +391,7 @@ namespace Model
     inline void SetTraceHeader(Aws::String&& value) { m_traceHeaderHasBeenSet = true; m_traceHeader = std::move(value); }
 
     /**
-     * <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that
+     * <p>An X-Ray trace header, which is an http header (X-Amzn-Trace-Id) that
      * contains the trace-id associated with the event.</p> <p>To learn more about
      * X-Ray trace headers, see <a
      * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
@@ -400,7 +400,7 @@ namespace Model
     inline void SetTraceHeader(const char* value) { m_traceHeaderHasBeenSet = true; m_traceHeader.assign(value); }
 
     /**
-     * <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that
+     * <p>An X-Ray trace header, which is an http header (X-Amzn-Trace-Id) that
      * contains the trace-id associated with the event.</p> <p>To learn more about
      * X-Ray trace headers, see <a
      * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
@@ -409,7 +409,7 @@ namespace Model
     inline PutEventsRequestEntry& WithTraceHeader(const Aws::String& value) { SetTraceHeader(value); return *this;}
 
     /**
-     * <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that
+     * <p>An X-Ray trace header, which is an http header (X-Amzn-Trace-Id) that
      * contains the trace-id associated with the event.</p> <p>To learn more about
      * X-Ray trace headers, see <a
      * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
@@ -418,7 +418,7 @@ namespace Model
     inline PutEventsRequestEntry& WithTraceHeader(Aws::String&& value) { SetTraceHeader(std::move(value)); return *this;}
 
     /**
-     * <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that
+     * <p>An X-Ray trace header, which is an http header (X-Amzn-Trace-Id) that
      * contains the trace-id associated with the event.</p> <p>To learn more about
      * X-Ray trace headers, see <a
      * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing

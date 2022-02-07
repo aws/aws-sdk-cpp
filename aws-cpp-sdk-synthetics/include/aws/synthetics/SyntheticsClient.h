@@ -320,11 +320,17 @@ namespace Model
 
         /**
          * <p>This operation returns a list of the canaries in your account, along with
-         * full details about each canary.</p> <p>This operation does not have
-         * resource-level authorization, so if a user is able to use
-         * <code>DescribeCanaries</code>, the user can see all of the canaries in the
-         * account. A deny policy can only be used to restrict access to all canaries. It
-         * cannot be used on specific resources. </p><p><h3>See Also:</h3>   <a
+         * full details about each canary.</p> <p>This operation supports resource-level
+         * authorization using an IAM policy and the <code>Names</code> parameter. If you
+         * specify the <code>Names</code> parameter, the operation is successful only if
+         * you have authorization to view all the canaries that you specify in your
+         * request. If you do not have permission to view any of the canaries, the request
+         * fails with a 403 response.</p> <p>You are required to use the <code>Names</code>
+         * parameter if you are logged on to a user or role that has an IAM policy that
+         * restricts which canaries that you are allowed to view. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html">
+         * Limiting a user to viewing specific canaries</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/DescribeCanaries">AWS
          * API Reference</a></p>
          */
@@ -332,11 +338,17 @@ namespace Model
 
         /**
          * <p>This operation returns a list of the canaries in your account, along with
-         * full details about each canary.</p> <p>This operation does not have
-         * resource-level authorization, so if a user is able to use
-         * <code>DescribeCanaries</code>, the user can see all of the canaries in the
-         * account. A deny policy can only be used to restrict access to all canaries. It
-         * cannot be used on specific resources. </p><p><h3>See Also:</h3>   <a
+         * full details about each canary.</p> <p>This operation supports resource-level
+         * authorization using an IAM policy and the <code>Names</code> parameter. If you
+         * specify the <code>Names</code> parameter, the operation is successful only if
+         * you have authorization to view all the canaries that you specify in your
+         * request. If you do not have permission to view any of the canaries, the request
+         * fails with a 403 response.</p> <p>You are required to use the <code>Names</code>
+         * parameter if you are logged on to a user or role that has an IAM policy that
+         * restricts which canaries that you are allowed to view. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html">
+         * Limiting a user to viewing specific canaries</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/DescribeCanaries">AWS
          * API Reference</a></p>
          *
@@ -346,11 +358,17 @@ namespace Model
 
         /**
          * <p>This operation returns a list of the canaries in your account, along with
-         * full details about each canary.</p> <p>This operation does not have
-         * resource-level authorization, so if a user is able to use
-         * <code>DescribeCanaries</code>, the user can see all of the canaries in the
-         * account. A deny policy can only be used to restrict access to all canaries. It
-         * cannot be used on specific resources. </p><p><h3>See Also:</h3>   <a
+         * full details about each canary.</p> <p>This operation supports resource-level
+         * authorization using an IAM policy and the <code>Names</code> parameter. If you
+         * specify the <code>Names</code> parameter, the operation is successful only if
+         * you have authorization to view all the canaries that you specify in your
+         * request. If you do not have permission to view any of the canaries, the request
+         * fails with a 403 response.</p> <p>You are required to use the <code>Names</code>
+         * parameter if you are logged on to a user or role that has an IAM policy that
+         * restricts which canaries that you are allowed to view. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html">
+         * Limiting a user to viewing specific canaries</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/DescribeCanaries">AWS
          * API Reference</a></p>
          *
@@ -360,7 +378,17 @@ namespace Model
 
         /**
          * <p>Use this operation to see information from the most recent run of each canary
-         * that you have created.</p><p><h3>See Also:</h3>   <a
+         * that you have created.</p> <p>This operation supports resource-level
+         * authorization using an IAM policy and the <code>Names</code> parameter. If you
+         * specify the <code>Names</code> parameter, the operation is successful only if
+         * you have authorization to view all the canaries that you specify in your
+         * request. If you do not have permission to view any of the canaries, the request
+         * fails with a 403 response.</p> <p>You are required to use the <code>Names</code>
+         * parameter if you are logged on to a user or role that has an IAM policy that
+         * restricts which canaries that you are allowed to view. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html">
+         * Limiting a user to viewing specific canaries</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/DescribeCanariesLastRun">AWS
          * API Reference</a></p>
          */
@@ -368,7 +396,17 @@ namespace Model
 
         /**
          * <p>Use this operation to see information from the most recent run of each canary
-         * that you have created.</p><p><h3>See Also:</h3>   <a
+         * that you have created.</p> <p>This operation supports resource-level
+         * authorization using an IAM policy and the <code>Names</code> parameter. If you
+         * specify the <code>Names</code> parameter, the operation is successful only if
+         * you have authorization to view all the canaries that you specify in your
+         * request. If you do not have permission to view any of the canaries, the request
+         * fails with a 403 response.</p> <p>You are required to use the <code>Names</code>
+         * parameter if you are logged on to a user or role that has an IAM policy that
+         * restricts which canaries that you are allowed to view. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html">
+         * Limiting a user to viewing specific canaries</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/DescribeCanariesLastRun">AWS
          * API Reference</a></p>
          *
@@ -378,7 +416,17 @@ namespace Model
 
         /**
          * <p>Use this operation to see information from the most recent run of each canary
-         * that you have created.</p><p><h3>See Also:</h3>   <a
+         * that you have created.</p> <p>This operation supports resource-level
+         * authorization using an IAM policy and the <code>Names</code> parameter. If you
+         * specify the <code>Names</code> parameter, the operation is successful only if
+         * you have authorization to view all the canaries that you specify in your
+         * request. If you do not have permission to view any of the canaries, the request
+         * fails with a 403 response.</p> <p>You are required to use the <code>Names</code>
+         * parameter if you are logged on to a user or role that has an IAM policy that
+         * restricts which canaries that you are allowed to view. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html">
+         * Limiting a user to viewing specific canaries</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/DescribeCanariesLastRun">AWS
          * API Reference</a></p>
          *
